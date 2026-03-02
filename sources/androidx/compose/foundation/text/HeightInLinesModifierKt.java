@@ -39,7 +39,7 @@ public final class HeightInLinesModifierKt {
         return heightInLines(modifier, textStyle, i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier heightInLines$lambda$1(int i, int i2, TextStyle textStyle, Modifier modifier, Composer composer, int i3) {
         long j;
         composer.startReplaceGroup(408240218);
@@ -87,10 +87,10 @@ public final class HeightInLinesModifierKt {
             if (fontWeight == null) {
                 fontWeight = FontWeight.Companion.getNormal();
             }
-            FontStyle m7733getFontStyle4Lr2A7w = textStyle2.m7733getFontStyle4Lr2A7w();
-            int m7818unboximpl = m7733getFontStyle4Lr2A7w != null ? m7733getFontStyle4Lr2A7w.m7818unboximpl() : FontStyle.Companion.m7822getNormal_LCdwA();
-            FontSynthesis m7734getFontSynthesisZQGJjVo = textStyle2.m7734getFontSynthesisZQGJjVo();
-            rememberedValue2 = resolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, m7818unboximpl, m7734getFontSynthesisZQGJjVo != null ? m7734getFontSynthesisZQGJjVo.m7831unboximpl() : FontSynthesis.Companion.m7832getAllGVVA2EU());
+            FontStyle m7035getFontStyle4Lr2A7w = textStyle2.m7035getFontStyle4Lr2A7w();
+            int m7118unboximpl = m7035getFontStyle4Lr2A7w != null ? m7035getFontStyle4Lr2A7w.m7118unboximpl() : FontStyle.Companion.m7122getNormal_LCdwA();
+            FontSynthesis m7036getFontSynthesisZQGJjVo = textStyle2.m7036getFontSynthesisZQGJjVo();
+            rememberedValue2 = resolver.mo7088resolveDPcqOEQ(fontFamily, fontWeight, m7118unboximpl, m7036getFontSynthesisZQGJjVo != null ? m7036getFontSynthesisZQGJjVo.m7131unboximpl() : FontSynthesis.Companion.m7132getAllGVVA2EU());
             composer.updateRememberedValue(rememberedValue2);
         }
         State state = (State) rememberedValue2;
@@ -121,12 +121,12 @@ public final class HeightInLinesModifierKt {
         int i4 = intValue2 - intValue;
         Integer valueOf = i == 1 ? null : Integer.valueOf(((i - 1) * i4) + intValue);
         Integer valueOf2 = i2 != Integer.MAX_VALUE ? Integer.valueOf(intValue + (i4 * (i2 - 1))) : null;
-        Modifier m963heightInVpY3zN4 = SizeKt.m963heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo461toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m8278getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo461toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m8278getUnspecifiedD9Ej5fM());
+        Modifier m851heightInVpY3zN4 = SizeKt.m851heightInVpY3zN4(Modifier.Companion, valueOf != null ? density.mo402toDpu2uoSUM(valueOf.intValue()) : Dp.Companion.m7575getUnspecifiedD9Ej5fM(), valueOf2 != null ? density.mo402toDpu2uoSUM(valueOf2.intValue()) : Dp.Companion.m7575getUnspecifiedD9Ej5fM());
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m963heightInVpY3zN4;
+        return m851heightInVpY3zN4;
     }
 
     public static final void validateMinMaxLines(int i, int i2) {
@@ -162,9 +162,7 @@ public final class HeightInLinesModifierKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.text.HeightInLinesModifierKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier heightInLines$lambda$1;
-                heightInLines$lambda$1 = HeightInLinesModifierKt.heightInLines$lambda$1(i, i2, textStyle, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return heightInLines$lambda$1;
+                return HeightInLinesModifierKt.heightInLines$lambda$1(i, i2, textStyle, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }

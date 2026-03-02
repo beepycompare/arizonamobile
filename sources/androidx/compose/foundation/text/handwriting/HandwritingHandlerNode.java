@@ -21,17 +21,12 @@ public final class HandwritingHandlerNode extends Modifier.Node implements Focus
     private final Lazy composeImm$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.handwriting.HandwritingHandlerNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ComposeInputMethodManager composeImm_delegate$lambda$0;
-            composeImm_delegate$lambda$0 = HandwritingHandlerNode.composeImm_delegate$lambda$0(HandwritingHandlerNode.this);
-            return composeImm_delegate$lambda$0;
+            ComposeInputMethodManager ComposeInputMethodManager;
+            ComposeInputMethodManager = ComposeInputMethodManager_androidKt.ComposeInputMethodManager(DelegatableNode_androidKt.requireView(HandwritingHandlerNode.this));
+            return ComposeInputMethodManager;
         }
     });
     private FocusState focusState;
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ComposeInputMethodManager composeImm_delegate$lambda$0(HandwritingHandlerNode handwritingHandlerNode) {
-        return ComposeInputMethodManager_androidKt.ComposeInputMethodManager(DelegatableNode_androidKt.requireView(handwritingHandlerNode));
-    }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ComposeInputMethodManager getComposeImm() {

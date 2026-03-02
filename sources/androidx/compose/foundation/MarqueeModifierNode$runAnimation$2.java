@@ -54,9 +54,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
             if (FlowKt.collectLatest(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.MarqueeModifierNode$runAnimation$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Float invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = MarqueeModifierNode$runAnimation$2.invokeSuspend$lambda$0(MarqueeModifierNode.this);
-                    return invokeSuspend$lambda$0;
+                    return MarqueeModifierNode$runAnimation$2.invokeSuspend$lambda$0(MarqueeModifierNode.this);
                 }
             }), new AnonymousClass2(this.this$0, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -69,7 +67,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Float invokeSuspend$lambda$0(MarqueeModifierNode marqueeModifierNode) {
         int contentWidth;
         int containerWidth;
@@ -81,7 +79,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
         if (contentWidth <= containerWidth) {
             return null;
         }
-        if (MarqueeAnimationMode.m385equalsimpl0(marqueeModifierNode.m398getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m390getWhileFocusedZbEOnfQ())) {
+        if (MarqueeAnimationMode.m337equalsimpl0(marqueeModifierNode.m348getAnimationModeZbEOnfQ(), MarqueeAnimationMode.Companion.m342getWhileFocusedZbEOnfQ())) {
             hasFocus = marqueeModifierNode.getHasFocus();
             if (!hasFocus) {
                 return null;
@@ -135,7 +133,7 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
             int i2;
             int i3;
             float f;
-            AnimationSpec m306createMarqueeAnimationSpecZ4HSEVQ;
+            AnimationSpec m271createMarqueeAnimationSpecZ4HSEVQ;
             Animatable animatable2;
             Float f2;
             AnimationSpec animationSpec;
@@ -163,14 +161,14 @@ public final class MarqueeModifierNode$runAnimation$2 extends SuspendLambda impl
                     i2 = this.this$0.initialDelayMillis;
                     i3 = this.this$0.delayMillis;
                     f = this.this$0.velocity;
-                    m306createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m306createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
+                    m271createMarqueeAnimationSpecZ4HSEVQ = BasicMarqueeKt.m271createMarqueeAnimationSpecZ4HSEVQ(i, floatValue, i2, i3, f, DelegatableNodeKt.requireDensity(this.this$0));
                     animatable2 = this.this$0.offset;
                     this.L$0 = f3;
-                    this.L$1 = m306createMarqueeAnimationSpecZ4HSEVQ;
+                    this.L$1 = m271createMarqueeAnimationSpecZ4HSEVQ;
                     this.label = 1;
                     if (animatable2.snapTo(Boxing.boxFloat(0.0f), this) != coroutine_suspended) {
                         f2 = f3;
-                        animationSpec = m306createMarqueeAnimationSpecZ4HSEVQ;
+                        animationSpec = m271createMarqueeAnimationSpecZ4HSEVQ;
                     }
                     return coroutine_suspended;
                 }

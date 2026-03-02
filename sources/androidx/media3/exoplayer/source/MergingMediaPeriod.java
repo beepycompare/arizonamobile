@@ -45,10 +45,12 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
     }
 
     public MediaPeriod getChildPeriod(int i) {
-        if (this.periodsWithTimeOffsets[i]) {
-            return ((TimeOffsetMediaPeriod) this.periods[i]).getWrappedMediaPeriod();
+        boolean z = this.periodsWithTimeOffsets[i];
+        MediaPeriod[] mediaPeriodArr = this.periods;
+        if (z) {
+            return ((TimeOffsetMediaPeriod) mediaPeriodArr[i]).getWrappedMediaPeriod();
         }
-        return this.periods[i];
+        return mediaPeriodArr[i];
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod

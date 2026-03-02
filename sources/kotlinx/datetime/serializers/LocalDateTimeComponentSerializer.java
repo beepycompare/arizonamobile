@@ -27,9 +27,7 @@ public final class LocalDateTimeComponentSerializer implements KSerializer<Local
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.LocalDateTime/components", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.LocalDateTimeComponentSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$0;
-            descriptor$lambda$0 = LocalDateTimeComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$0;
+            return LocalDateTimeComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -111,7 +109,7 @@ public final class LocalDateTimeComponentSerializer implements KSerializer<Local
         CompositeEncoder beginStructure = encoder.beginStructure(descriptor2);
         LocalDateTimeComponentSerializer localDateTimeComponentSerializer = INSTANCE;
         beginStructure.encodeIntElement(localDateTimeComponentSerializer.getDescriptor(), 0, value.getYear());
-        beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m11877getMonth()));
+        beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m10787getMonth()));
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 2, (short) value.getDay());
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 3, (short) value.getHour());
         beginStructure.encodeShortElement(localDateTimeComponentSerializer.getDescriptor(), 4, (short) value.getMinute());
@@ -124,7 +122,7 @@ public final class LocalDateTimeComponentSerializer implements KSerializer<Local
         beginStructure.endStructure(descriptor2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("year", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

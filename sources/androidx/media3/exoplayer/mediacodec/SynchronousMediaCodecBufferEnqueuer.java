@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.mediacodec;
 import android.media.MediaCodec;
 import android.os.Bundle;
 import androidx.media3.decoder.CryptoInfo;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 class SynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
     private final MediaCodec codec;
 

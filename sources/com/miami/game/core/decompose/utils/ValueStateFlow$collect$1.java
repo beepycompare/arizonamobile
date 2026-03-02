@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ValueStateFlow.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.decompose.utils.ValueStateFlow", f = "ValueStateFlow.kt", i = {0, 0, 0, 0}, l = {21}, m = "collect", n = {"collector", "flow", "observer", "cancellation"}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.decompose.utils.ValueStateFlow", f = "ValueStateFlow.kt", i = {0, 0, 0, 0}, l = {21}, m = "collect", n = {"collector", "flow", "observer", "cancellation"}, nl = {23}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
 /* loaded from: classes4.dex */
 public final class ValueStateFlow$collect$1 extends ContinuationImpl {
     Object L$0;

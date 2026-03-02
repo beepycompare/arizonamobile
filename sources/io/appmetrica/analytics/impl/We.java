@@ -11,7 +11,7 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class We extends AbstractC0726yd implements Bo {
+public final class We extends AbstractC0725yd implements Bo {
     public static final long d = 0;
     public static final int e = -1;
     public static final String f = "";
@@ -33,10 +33,10 @@ public final class We extends AbstractC0726yd implements Bo {
         super(ha);
     }
 
-    public final We a(C0313i0 c0313i0) {
+    public final We a(C0312i0 c0312i0) {
         synchronized (this) {
-            b(j.b, c0313i0.f1035a);
-            b(k.b, c0313i0.b);
+            b(j.b, c0312i0.f1035a);
+            b(k.b, c0312i0.b);
         }
         return this;
     }
@@ -50,12 +50,12 @@ public final class We extends AbstractC0726yd implements Bo {
         return this.f853a.a();
     }
 
-    public final C0313i0 d() {
-        C0313i0 c0313i0;
+    public final C0312i0 d() {
+        C0312i0 c0312i0;
         synchronized (this) {
-            c0313i0 = new C0313i0(this.f853a.getString(j.b, "{}"), this.f853a.getLong(k.b, 0L));
+            c0312i0 = new C0312i0(this.f853a.getString(j.b, "{}"), this.f853a.getLong(k.b, 0L));
         }
-        return c0313i0;
+        return c0312i0;
     }
 
     public final String e() {
@@ -160,7 +160,7 @@ public final class We extends AbstractC0726yd implements Bo {
         return (We) b(h.b, j2);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0726yd
+    @Override // io.appmetrica.analytics.impl.AbstractC0725yd
     public final String f(String str) {
         return new Ye(str, null).b;
     }

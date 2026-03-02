@@ -72,8 +72,10 @@ public final class L7 {
                     deferredDeeplinkListener.onDeeplinkLoaded(str);
                     this.b = null;
                 }
-                if (!lo.a(this.d.f640a)) {
-                    Map<String, String> map = this.d.f640a;
+                boolean a2 = lo.a(this.d.f640a);
+                J7 j72 = this.d;
+                if (!a2) {
+                    Map<String, String> map = j72.f640a;
                     DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
                     if (deferredDeeplinkParametersListener != null) {
                         deferredDeeplinkParametersListener.onParametersLoaded(map);
@@ -82,7 +84,7 @@ public final class L7 {
                     }
                     return;
                 }
-                String str2 = this.d.c;
+                String str2 = j72.c;
                 DeferredDeeplinkParametersListener deferredDeeplinkParametersListener2 = this.c;
                 if (deferredDeeplinkParametersListener2 != null) {
                     deferredDeeplinkParametersListener2.onError(DeferredDeeplinkParametersListener.Error.PARSE_ERROR, (String) WrapUtils.getOrDefault(str2, ""));

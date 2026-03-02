@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zzp<TResult, TContinuationResult> implements OnSuccessListener<TContinuationResult>, OnFailureListener, OnCanceledListener, zzq {
     private final Executor zza;
@@ -16,26 +16,31 @@ final class zzp<TResult, TContinuationResult> implements OnSuccessListener<TCont
 
     @Override // com.google.android.gms.tasks.OnCanceledListener
     public final void onCanceled() {
-        this.zzc.zzc();
+        this.zzc.zze();
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public final void onFailure(Exception exc) {
-        this.zzc.zza(exc);
+        this.zzc.zzc(exc);
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public final void onSuccess(TContinuationResult tcontinuationresult) {
-        this.zzc.zzb(tcontinuationresult);
+        this.zzc.zza(tcontinuationresult);
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzc() {
+    public final void zza(Task task) {
+        this.zza.execute(new zzo(this, task));
+    }
+
+    @Override // com.google.android.gms.tasks.zzq
+    public final void zzb() {
         throw new UnsupportedOperationException();
     }
 
-    @Override // com.google.android.gms.tasks.zzq
-    public final void zzd(Task task) {
-        this.zza.execute(new zzo(this, task));
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ SuccessContinuation zzc() {
+        return this.zzb;
     }
 }

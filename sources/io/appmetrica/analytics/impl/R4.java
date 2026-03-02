@@ -8,15 +8,15 @@ public final class R4 {
     /* renamed from: a  reason: collision with root package name */
     public final CopyOnWriteArrayList f760a = new CopyOnWriteArrayList();
 
-    public final void a(InterfaceC0239f4 interfaceC0239f4) {
-        this.f760a.add(interfaceC0239f4);
+    public final void a(InterfaceC0238f4 interfaceC0238f4) {
+        this.f760a.add(interfaceC0238f4);
     }
 
-    public final void b(InterfaceC0239f4 interfaceC0239f4) {
-        this.f760a.remove(interfaceC0239f4);
+    public final void b(InterfaceC0238f4 interfaceC0238f4) {
+        this.f760a.remove(interfaceC0238f4);
     }
 
-    public final List<InterfaceC0239f4> a() {
+    public final List<InterfaceC0238f4> a() {
         return this.f760a;
     }
 }

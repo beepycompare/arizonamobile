@@ -6,12 +6,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageFetcher.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcher", f = "PageFetcher.kt", i = {0, 0}, l = {210}, m = "generateNewPagingSource", n = {"this", "previousPagingSource"}, s = {"L$0", "L$1"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcher", f = "PageFetcher.kt", i = {0}, l = {212}, m = "generateNewPagingSource", n = {"previousPagingSource"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcher$generateNewPagingSource$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ PageFetcher<Key, Value> this$0;

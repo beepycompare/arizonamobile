@@ -77,10 +77,11 @@ public final class SingleFromPublisher<T> extends Single<T> {
             this.done = true;
             T t = this.value;
             this.value = null;
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t == null) {
-                this.downstream.onError(new NoSuchElementException("The source Publisher is empty"));
+                singleObserver.onError(new NoSuchElementException("The source Publisher is empty"));
             } else {
-                this.downstream.onSuccess(t);
+                singleObserver.onSuccess(t);
             }
         }
 

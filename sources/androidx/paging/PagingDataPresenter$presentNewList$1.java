@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagingDataPresenter.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PagingDataPresenter", f = "PagingDataPresenter.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {478}, m = "presentNewList", n = {"this", "pages", "sourceLoadStates", "mediatorLoadStates", "newHintReceiver", "newPageStore", "placeholdersBefore", "placeholdersAfter", "dispatchLoadStates"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "Z$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PagingDataPresenter", f = "PagingDataPresenter.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {468}, m = "presentNewList", n = {"pages", "sourceLoadStates", "mediatorLoadStates", "newHintReceiver", "currentPageStore", "currentHintReceiver", "newPageStore", "placeholdersBefore", "placeholdersAfter", "dispatchLoadStates"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1", "Z$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PagingDataPresenter$presentNewList$1 extends ContinuationImpl {
     int I$0;
@@ -18,6 +18,7 @@ public final class PagingDataPresenter$presentNewList$1 extends ContinuationImpl
     Object L$3;
     Object L$4;
     Object L$5;
+    Object L$6;
     boolean Z$0;
     int label;
     /* synthetic */ Object result;

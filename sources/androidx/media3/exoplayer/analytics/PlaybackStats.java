@@ -359,15 +359,17 @@ public final class PlaybackStats {
         while (i < this.mediaTimeHistory.size() && this.mediaTimeHistory.get(i)[0] <= j) {
             i++;
         }
+        List<long[]> list = this.mediaTimeHistory;
         if (i == 0) {
-            return this.mediaTimeHistory.get(0)[1];
+            return list.get(0)[1];
         }
-        if (i == this.mediaTimeHistory.size()) {
-            List<long[]> list = this.mediaTimeHistory;
-            return list.get(list.size() - 1)[1];
+        int size = list.size();
+        List<long[]> list2 = this.mediaTimeHistory;
+        if (i == size) {
+            return list2.get(list2.size() - 1)[1];
         }
         int i2 = i - 1;
-        long j3 = this.mediaTimeHistory.get(i2)[0];
+        long j3 = list2.get(i2)[0];
         long j4 = this.mediaTimeHistory.get(i2)[1];
         long j5 = this.mediaTimeHistory.get(i)[0];
         long j6 = this.mediaTimeHistory.get(i)[1];

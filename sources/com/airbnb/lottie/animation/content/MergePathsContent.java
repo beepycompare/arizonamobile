@@ -103,10 +103,16 @@ public class MergePathsContent implements PathContent, GreedyContent {
     }
 
     private void opFirstPathWithRest(Path.Op op) {
+        List<PathContent> list;
         this.remainderPath.reset();
         this.firstPath.reset();
-        for (int size = this.pathContents.size() - 1; size >= 1; size--) {
-            PathContent pathContent = this.pathContents.get(size);
+        int size = this.pathContents.size() - 1;
+        while (true) {
+            list = this.pathContents;
+            if (size < 1) {
+                break;
+            }
+            PathContent pathContent = list.get(size);
             if (pathContent instanceof ContentGroup) {
                 ContentGroup contentGroup = (ContentGroup) pathContent;
                 List<PathContent> pathList = contentGroup.getPathList();
@@ -118,8 +124,9 @@ public class MergePathsContent implements PathContent, GreedyContent {
             } else {
                 this.remainderPath.addPath(pathContent.getPath());
             }
+            size--;
         }
-        PathContent pathContent2 = this.pathContents.get(0);
+        PathContent pathContent2 = list.get(0);
         if (pathContent2 instanceof ContentGroup) {
             ContentGroup contentGroup2 = (ContentGroup) pathContent2;
             List<PathContent> pathList2 = contentGroup2.getPathList();

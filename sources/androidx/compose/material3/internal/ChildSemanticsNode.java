@@ -33,15 +33,13 @@ public final class ChildSemanticsNode extends Modifier.Node implements Semantics
         TraversableNodeKt.traverseAncestors(this, ParentSemanticsNodeKey.INSTANCE, new Function1() { // from class: androidx.compose.material3.internal.ChildSemanticsNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$1;
-                applySemantics$lambda$1 = ChildSemanticsNode.applySemantics$lambda$1(SemanticsPropertyReceiver.this, (TraversableNode) obj);
-                return Boolean.valueOf(applySemantics$lambda$1);
+                return Boolean.valueOf(ChildSemanticsNode.applySemantics$lambda$1(SemanticsPropertyReceiver.this, (TraversableNode) obj));
             }
         });
         this.properties.invoke(semanticsPropertyReceiver);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$1(SemanticsPropertyReceiver semanticsPropertyReceiver, TraversableNode traversableNode) {
         Intrinsics.checkNotNull(traversableNode, "null cannot be cast to non-null type androidx.compose.material3.internal.ParentSemanticsNode");
         ((ParentSemanticsNode) traversableNode).obtainSemantics(semanticsPropertyReceiver);
@@ -54,14 +52,12 @@ public final class ChildSemanticsNode extends Modifier.Node implements Semantics
         TraversableNodeKt.traverseAncestors(this, ParentSemanticsNodeKey.INSTANCE, new Function1() { // from class: androidx.compose.material3.internal.ChildSemanticsNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean onDetach$lambda$2;
-                onDetach$lambda$2 = ChildSemanticsNode.onDetach$lambda$2((TraversableNode) obj);
-                return Boolean.valueOf(onDetach$lambda$2);
+                return Boolean.valueOf(ChildSemanticsNode.onDetach$lambda$2((TraversableNode) obj));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean onDetach$lambda$2(TraversableNode traversableNode) {
         Intrinsics.checkNotNull(traversableNode, "null cannot be cast to non-null type androidx.compose.material3.internal.ParentSemanticsNode");
         ((ParentSemanticsNode) traversableNode).releaseSemantics();

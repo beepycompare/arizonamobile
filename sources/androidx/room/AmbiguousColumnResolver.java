@@ -99,9 +99,7 @@ public final class AmbiguousColumnResolver {
             INSTANCE.rabinKarpSearch(build2, strArr4, new Function3() { // from class: androidx.room.AmbiguousColumnResolver$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit resolve$lambda$16$lambda$7;
-                    resolve$lambda$16$lambda$7 = AmbiguousColumnResolver.resolve$lambda$16$lambda$7(strArr4, arrayList2, i10, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), (List) obj3);
-                    return resolve$lambda$16$lambda$7;
+                    return AmbiguousColumnResolver.resolve$lambda$16$lambda$7(strArr4, arrayList2, i10, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), (List) obj3);
                 }
             });
             if (((List) arrayList2.get(i10)).isEmpty()) {
@@ -124,9 +122,7 @@ public final class AmbiguousColumnResolver {
                 dfs$default(INSTANCE, arrayList3, null, 0, new Function1() { // from class: androidx.room.AmbiguousColumnResolver$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit resolve$lambda$16$lambda$15;
-                        resolve$lambda$16$lambda$15 = AmbiguousColumnResolver.resolve$lambda$16$lambda$15(arrayList2, i10, (List) obj);
-                        return resolve$lambda$16$lambda$15;
+                        return AmbiguousColumnResolver.resolve$lambda$16$lambda$15(arrayList2, i10, (List) obj);
                     }
                 }, 6, null);
             }
@@ -147,9 +143,7 @@ public final class AmbiguousColumnResolver {
         dfs$default(INSTANCE, arrayList2, null, 0, new Function1() { // from class: androidx.room.AmbiguousColumnResolver$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit resolve$lambda$19;
-                resolve$lambda$19 = AmbiguousColumnResolver.resolve$lambda$19(Ref.ObjectRef.this, (List) obj);
-                return resolve$lambda$19;
+                return AmbiguousColumnResolver.resolve$lambda$19(Ref.ObjectRef.this, (List) obj);
             }
         }, 6, null);
         List<Match> matches = ((Solution) objectRef.element).getMatches();
@@ -160,7 +154,7 @@ public final class AmbiguousColumnResolver {
         return (int[][]) arrayList5.toArray(new int[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit resolve$lambda$16$lambda$15(List list, int i, List indices) {
         Intrinsics.checkNotNullParameter(indices, "indices");
         List list2 = indices;
@@ -190,7 +184,7 @@ public final class AmbiguousColumnResolver {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r2v1, types: [T, androidx.room.AmbiguousColumnResolver$Solution] */
     public static final Unit resolve$lambda$19(Ref.ObjectRef objectRef, List it) {
         Intrinsics.checkNotNullParameter(it, "it");
@@ -451,7 +445,7 @@ public final class AmbiguousColumnResolver {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit resolve$lambda$16$lambda$7(String[] strArr, List list, int i, int i2, int i3, List resultColumnsSublist) {
         Object obj;
         Intrinsics.checkNotNullParameter(resultColumnsSublist, "resultColumnsSublist");

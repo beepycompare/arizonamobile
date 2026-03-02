@@ -1,5 +1,5 @@
 package io.appmetrica.analytics;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AppMetricaDefaultValues {
     public static final boolean DEFAULT_ANR_COLLECTING_ENABLED = false;
     public static final int DEFAULT_ANR_TICKS_COUNT = 5;

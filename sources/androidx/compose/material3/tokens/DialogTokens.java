@@ -14,14 +14,14 @@ public final class DialogTokens {
     private static final TypographyKeyTokens ActionLabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens ActionPressedLabelTextColor = ColorSchemeKeyTokens.Primary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3978getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.HeadlineSmall;
     private static final ColorSchemeKeyTokens SupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens SupportingTextFont = TypographyKeyTokens.BodyMedium;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.Secondary;
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
 
     private DialogTokens() {
     }
@@ -51,7 +51,7 @@ public final class DialogTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3945getContainerElevationD9Ej5fM() {
+    public final float m3329getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -80,7 +80,7 @@ public final class DialogTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3946getIconSizeD9Ej5fM() {
+    public final float m3330getIconSizeD9Ej5fM() {
         return IconSize;
     }
 }

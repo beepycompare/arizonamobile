@@ -89,7 +89,8 @@ public class StateSet {
         if (i2 != i) {
             return true;
         }
-        State valueAt = i == -1 ? this.mStateList.valueAt(0) : this.mStateList.get(i2);
+        SparseArray<State> sparseArray = this.mStateList;
+        State valueAt = i == -1 ? sparseArray.valueAt(0) : sparseArray.get(i2);
         return (this.mCurrentConstraintNumber == -1 || !valueAt.mVariants.get(this.mCurrentConstraintNumber).match(f, f2)) && this.mCurrentConstraintNumber != valueAt.findMatch(f, f2);
     }
 
@@ -137,23 +138,24 @@ public class StateSet {
     public int updateConstraints(int i, int i2, float f, float f2) {
         State state;
         int findMatch;
-        if (i != i2) {
-            State state2 = this.mStateList.get(i2);
-            if (state2 == null) {
+        if (i == i2) {
+            SparseArray<State> sparseArray = this.mStateList;
+            if (i2 == -1) {
+                state = sparseArray.valueAt(0);
+            } else {
+                state = sparseArray.get(this.mCurrentStateId);
+            }
+            if (state == null) {
                 return -1;
             }
-            int findMatch2 = state2.findMatch(f, f2);
-            return findMatch2 == -1 ? state2.mConstraintID : state2.mVariants.get(findMatch2).mConstraintID;
+            return ((this.mCurrentConstraintNumber == -1 || !state.mVariants.get(i).match(f, f2)) && i != (findMatch = state.findMatch(f, f2))) ? findMatch == -1 ? state.mConstraintID : state.mVariants.get(findMatch).mConstraintID : i;
         }
-        if (i2 == -1) {
-            state = this.mStateList.valueAt(0);
-        } else {
-            state = this.mStateList.get(this.mCurrentStateId);
-        }
-        if (state == null) {
+        State state2 = this.mStateList.get(i2);
+        if (state2 == null) {
             return -1;
         }
-        return ((this.mCurrentConstraintNumber == -1 || !state.mVariants.get(i).match(f, f2)) && i != (findMatch = state.findMatch(f, f2))) ? findMatch == -1 ? state.mConstraintID : state.mVariants.get(findMatch).mConstraintID : i;
+        int findMatch2 = state2.findMatch(f, f2);
+        return findMatch2 == -1 ? state2.mConstraintID : state2.mVariants.get(findMatch2).mConstraintID;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -15,9 +15,9 @@ public final class LazyLayoutMeasuredItemKt {
     private static final Comparator<LazyLayoutMeasuredItem> LazyLayoutMeasuredItemIndexComparator = new Comparator() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItemKt$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int LazyLayoutMeasuredItemIndexComparator$lambda$0;
-            LazyLayoutMeasuredItemIndexComparator$lambda$0 = LazyLayoutMeasuredItemKt.LazyLayoutMeasuredItemIndexComparator$lambda$0((LazyLayoutMeasuredItem) obj, (LazyLayoutMeasuredItem) obj2);
-            return LazyLayoutMeasuredItemIndexComparator$lambda$0;
+            int compare;
+            compare = Intrinsics.compare(((LazyLayoutMeasuredItem) obj).getIndex(), ((LazyLayoutMeasuredItem) obj2).getIndex());
+            return compare;
         }
     };
 
@@ -39,12 +39,7 @@ public final class LazyLayoutMeasuredItemKt {
     }
 
     private static final int getMainAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo1054getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo1054getOffsetBjo55l4(0);
-        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8387getYimpl(mo1054getOffsetBjo55l4) : IntOffset.m8386getXimpl(mo1054getOffsetBjo55l4);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int LazyLayoutMeasuredItemIndexComparator$lambda$0(LazyLayoutMeasuredItem lazyLayoutMeasuredItem, LazyLayoutMeasuredItem lazyLayoutMeasuredItem2) {
-        return Intrinsics.compare(lazyLayoutMeasuredItem.getIndex(), lazyLayoutMeasuredItem2.getIndex());
+        long mo931getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo931getOffsetBjo55l4(0);
+        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7684getYimpl(mo931getOffsetBjo55l4) : IntOffset.m7683getXimpl(mo931getOffsetBjo55l4);
     }
 }

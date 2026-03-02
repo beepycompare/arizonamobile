@@ -13,8 +13,8 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$startLeftTimer$1", f = "Winter2025BattlePass.kt", i = {0, 0}, l = {1365}, m = "invokeSuspend", n = {"$this$launch", "timeLeft"}, s = {"L$0", "J$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$startLeftTimer$1", f = "Winter2025BattlePass.kt", i = {0, 0}, l = {1365}, m = "invokeSuspend", n = {"$this$launch", "timeLeft"}, nl = {1366}, s = {"L$0", "J$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen$startLeftTimer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $remainingMillis;
@@ -44,7 +44,7 @@ public final class Winter2025BattlePassScreen$startLeftTimer$1 extends SuspendLa
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x003f A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004a  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x004f  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:14:0x003d -> B:16:0x0040). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -53,11 +53,12 @@ public final class Winter2025BattlePassScreen$startLeftTimer$1 extends SuspendLa
     */
     public final Object invokeSuspend(Object obj) {
         long j;
+        int i;
         String leftTime;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.label;
-        if (i == 0) {
+        int i2 = this.label;
+        if (i2 == 0) {
             ResultKt.throwOnFailure(obj);
             j = this.$remainingMillis;
             if (CoroutineScopeKt.isActive(coroutineScope)) {
@@ -67,21 +68,24 @@ public final class Winter2025BattlePassScreen$startLeftTimer$1 extends SuspendLa
                 if (DelayKt.delay(1000L, this) == coroutine_suspended) {
                 }
                 j -= 1000;
-                if (j <= 0) {
+                i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+                Winter2025BattlePassScreen winter2025BattlePassScreen = this.this$0;
+                if (i <= 0) {
                 }
             }
             return Unit.INSTANCE;
-        } else if (i == 1) {
+        } else if (i2 == 1) {
             j = this.J$0;
             ResultKt.throwOnFailure(obj);
             j -= 1000;
-            if (j <= 0) {
-                this.this$0.updateBlockTime(null);
+            i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            Winter2025BattlePassScreen winter2025BattlePassScreen2 = this.this$0;
+            if (i <= 0) {
+                winter2025BattlePassScreen2.updateBlockTime(null);
                 return Unit.INSTANCE;
             }
-            Winter2025BattlePassScreen winter2025BattlePassScreen = this.this$0;
-            leftTime = winter2025BattlePassScreen.setLeftTime(j);
-            winter2025BattlePassScreen.updateBlockTime(leftTime);
+            leftTime = winter2025BattlePassScreen2.setLeftTime(j);
+            winter2025BattlePassScreen2.updateBlockTime(leftTime);
             if (CoroutineScopeKt.isActive(coroutineScope) && j > 0) {
                 this.L$0 = coroutineScope;
                 this.J$0 = j;
@@ -90,7 +94,9 @@ public final class Winter2025BattlePassScreen$startLeftTimer$1 extends SuspendLa
                     return coroutine_suspended;
                 }
                 j -= 1000;
-                if (j <= 0) {
+                i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+                Winter2025BattlePassScreen winter2025BattlePassScreen22 = this.this$0;
+                if (i <= 0) {
                 }
             }
             return Unit.INSTANCE;

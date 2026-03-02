@@ -19,17 +19,13 @@ public final class ProcessTextApi23Impl {
     private static Function1<? super Context, ? extends List<? extends ResolveInfo>> processTextActivitiesQuery = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.ProcessTextApi23Impl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            List processTextActivitiesQuery$lambda$0;
-            processTextActivitiesQuery$lambda$0 = ProcessTextApi23Impl.processTextActivitiesQuery$lambda$0((Context) obj);
-            return processTextActivitiesQuery$lambda$0;
+            return ProcessTextApi23Impl.processTextActivitiesQuery$lambda$0((Context) obj);
         }
     };
     private static Function5<? super Context, ? super ResolveInfo, ? super Boolean, ? super CharSequence, ? super TextRange, Unit> onClickProcessTextItem = new Function5() { // from class: androidx.compose.foundation.text.contextmenu.ProcessTextApi23Impl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function5
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-            Unit onClickProcessTextItem$lambda$0;
-            onClickProcessTextItem$lambda$0 = ProcessTextApi23Impl.onClickProcessTextItem$lambda$0((Context) obj, (ResolveInfo) obj2, ((Boolean) obj3).booleanValue(), (CharSequence) obj4, (TextRange) obj5);
-            return onClickProcessTextItem$lambda$0;
+            return ProcessTextApi23Impl.onClickProcessTextItem$lambda$0((Context) obj, (ResolveInfo) obj2, ((Boolean) obj3).booleanValue(), (CharSequence) obj4, (TextRange) obj5);
         }
     };
     public static final int $stable = 8;
@@ -51,7 +47,7 @@ public final class ProcessTextApi23Impl {
         processTextActivitiesQuery = function1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List processTextActivitiesQuery$lambda$0(Context context) {
         List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(INSTANCE.createProcessTextIntent(), 0);
         ArrayList arrayList = new ArrayList(queryIntentActivities.size());
@@ -73,9 +69,9 @@ public final class ProcessTextApi23Impl {
         onClickProcessTextItem = function5;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onClickProcessTextItem$lambda$0(Context context, ResolveInfo resolveInfo, boolean z, CharSequence charSequence, TextRange textRange) {
-        String obj = charSequence.subSequence(TextRange.m7699getMinimpl(textRange.m7705unboximpl()), TextRange.m7698getMaximpl(textRange.m7705unboximpl())).toString();
+        String obj = charSequence.subSequence(TextRange.m7001getMinimpl(textRange.m7007unboximpl()), TextRange.m7000getMaximpl(textRange.m7007unboximpl())).toString();
         Intent createProcessTextIntentForResolveInfo = INSTANCE.createProcessTextIntentForResolveInfo(resolveInfo, z);
         createProcessTextIntentForResolveInfo.putExtra("android.intent.extra.PROCESS_TEXT", obj);
         context.startActivity(createProcessTextIntentForResolveInfo);

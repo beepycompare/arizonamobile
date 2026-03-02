@@ -22,10 +22,12 @@ abstract class IncidentEdgeSet<N> extends AbstractSet<EndpointPair<N>> {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
-        if (this.graph.isDirected()) {
-            return (this.graph.inDegree(this.node) + this.graph.outDegree(this.node)) - (this.graph.successors((BaseGraph<N>) this.node).contains(this.node) ? 1 : 0);
+        boolean isDirected = this.graph.isDirected();
+        BaseGraph<N> baseGraph = this.graph;
+        if (isDirected) {
+            return (baseGraph.inDegree(this.node) + this.graph.outDegree(this.node)) - (this.graph.successors((BaseGraph<N>) this.node).contains(this.node) ? 1 : 0);
         }
-        return this.graph.adjacentNodes(this.node).size();
+        return baseGraph.adjacentNodes(this.node).size();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

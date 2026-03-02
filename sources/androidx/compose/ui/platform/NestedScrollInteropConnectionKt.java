@@ -47,7 +47,7 @@ public final class NestedScrollInteropConnectionKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toOffset-moWRBKg  reason: not valid java name */
-    public static final long m7409toOffsetmoWRBKg(int i, int i2, int[] iArr, long j) {
+    public static final long m6743toOffsetmoWRBKg(int i, int i2, int[] iArr, long j) {
         float coerceAtLeast;
         float coerceAtLeast2;
         float intBitsToFloat = (!ComposeUiFlags.isNestedScrollInteropIntegerPropagationEnabled || Math.abs(iArr[0]) == 0) ? 0.0f : Float.intBitsToFloat((int) (j >> 32)) - reverseAxis(i);
@@ -64,19 +64,19 @@ public final class NestedScrollInteropConnectionKt {
         } else {
             coerceAtLeast2 = RangesKt.coerceAtLeast(reverseAxis(iArr[1]) + intBitsToFloat2, Float.intBitsToFloat(i4));
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(coerceAtLeast) << 32) | (Float.floatToRawIntBits(coerceAtLeast2) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceAtLeast) << 32) | (Float.floatToRawIntBits(coerceAtLeast2) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: toViewType-GyEprt8  reason: not valid java name */
-    public static final int m7410toViewTypeGyEprt8(int i) {
-        return !NestedScrollSource.m6612equalsimpl0(i, NestedScrollSource.Companion.m6624getUserInputWNlRxjI()) ? 1 : 0;
+    public static final int m6744toViewTypeGyEprt8(int i) {
+        return !NestedScrollSource.m5953equalsimpl0(i, NestedScrollSource.Companion.m5965getUserInputWNlRxjI()) ? 1 : 0;
     }
 
     /* renamed from: scrollAxes-sF-c-tU  reason: not valid java name */
-    private static final int m7408scrollAxessFctU(long j, float f) {
-        int i = Math.abs(Velocity.m8496getXimpl(j)) >= f ? 1 : 0;
-        return Math.abs(Velocity.m8497getYimpl(j)) >= f ? i | 2 : i;
+    private static final int m6742scrollAxessFctU(long j, float f) {
+        int i = Math.abs(Velocity.m7793getXimpl(j)) >= f ? 1 : 0;
+        return Math.abs(Velocity.m7794getYimpl(j)) >= f ? i | 2 : i;
     }
 
     public static final NestedScrollConnection rememberNestedScrollInteropConnection(View view, Composer composer, int i, int i2) {
@@ -112,7 +112,7 @@ public final class NestedScrollInteropConnectionKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getScrollAxes-k-4lQ0M  reason: not valid java name */
-    public static final int m7407getScrollAxesk4lQ0M(long j) {
+    public static final int m6741getScrollAxesk4lQ0M(long j) {
         int i = Math.abs(Float.intBitsToFloat((int) (j >> 32))) >= 0.5f ? 1 : 0;
         return Math.abs(Float.intBitsToFloat((int) (j & 4294967295L))) >= 0.5f ? i | 2 : i;
     }

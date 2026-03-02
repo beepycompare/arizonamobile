@@ -122,16 +122,14 @@ public final class BasicSecureTextField_androidKt {
         Function1<Context, ContentResolverForSecureTextField> function1 = new Function1() { // from class: androidx.compose.foundation.text.BasicSecureTextField_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$0;
-                DefaultContentResolverForSecureTextField$lambda$0 = BasicSecureTextField_androidKt.DefaultContentResolverForSecureTextField$lambda$0((Context) obj);
-                return DefaultContentResolverForSecureTextField$lambda$0;
+                return BasicSecureTextField_androidKt.DefaultContentResolverForSecureTextField$lambda$0((Context) obj);
             }
         };
         DefaultContentResolverForSecureTextField = function1;
         contentResolverForSecureTextField = function1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r0v0, types: [androidx.compose.foundation.text.BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1] */
     public static final BasicSecureTextField_androidKt$DefaultContentResolverForSecureTextField$1$1 DefaultContentResolverForSecureTextField$lambda$0(Context context) {
         final ContentResolver contentResolver = context.getContentResolver();

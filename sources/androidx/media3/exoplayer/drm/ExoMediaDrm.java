@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface ExoMediaDrm {
     public static final int EVENT_KEY_EXPIRED = 3;
     public static final int EVENT_KEY_REQUIRED = 2;
@@ -26,22 +26,22 @@ public interface ExoMediaDrm {
     public static final int KEY_TYPE_RELEASE = 3;
     public static final int KEY_TYPE_STREAMING = 1;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface OnEventListener {
         void onEvent(ExoMediaDrm exoMediaDrm, byte[] bArr, int i, int i2, byte[] bArr2);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface OnExpirationUpdateListener {
         void onExpirationUpdate(ExoMediaDrm exoMediaDrm, byte[] bArr, long j);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface OnKeyStatusChangeListener {
         void onKeyStatusChange(ExoMediaDrm exoMediaDrm, byte[] bArr, List<KeyStatus> list, boolean z);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Provider {
         ExoMediaDrm acquireExoMediaDrm(UUID uuid);
     }
@@ -91,7 +91,7 @@ public interface ExoMediaDrm {
 
     void setPropertyString(String str, String str2);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class AppManagedProvider implements Provider {
         private final ExoMediaDrm exoMediaDrm;
 
@@ -106,7 +106,7 @@ public interface ExoMediaDrm {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class KeyStatus {
         private final byte[] keyId;
         private final int statusCode;
@@ -125,7 +125,7 @@ public interface ExoMediaDrm {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class KeyRequest {
         public static final int REQUEST_TYPE_INITIAL = 0;
         public static final int REQUEST_TYPE_NONE = 3;
@@ -140,7 +140,7 @@ public interface ExoMediaDrm {
         @Target({ElementType.TYPE_USE})
         @Documented
         @Retention(RetentionPolicy.SOURCE)
-        /* loaded from: classes3.dex */
+        /* loaded from: classes2.dex */
         public @interface RequestType {
         }
 
@@ -167,7 +167,7 @@ public interface ExoMediaDrm {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class ProvisionRequest {
         private final byte[] data;
         private final String defaultUrl;

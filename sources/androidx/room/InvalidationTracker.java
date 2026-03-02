@@ -72,17 +72,13 @@ public class InvalidationTracker {
         this.onRefreshScheduled = new Function0() { // from class: androidx.room.InvalidationTracker$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onRefreshScheduled$lambda$0;
-                onRefreshScheduled$lambda$0 = InvalidationTracker.onRefreshScheduled$lambda$0(InvalidationTracker.this);
-                return onRefreshScheduled$lambda$0;
+                return InvalidationTracker.onRefreshScheduled$lambda$0(InvalidationTracker.this);
             }
         };
         this.onRefreshCompleted = new Function0() { // from class: androidx.room.InvalidationTracker$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onRefreshCompleted$lambda$1;
-                onRefreshCompleted$lambda$1 = InvalidationTracker.onRefreshCompleted$lambda$1(InvalidationTracker.this);
-                return onRefreshCompleted$lambda$1;
+                return InvalidationTracker.onRefreshCompleted$lambda$1(InvalidationTracker.this);
             }
         };
         this.invalidationLiveDataContainer = new InvalidationLiveDataContainer(database);
@@ -90,9 +86,7 @@ public class InvalidationTracker {
         triggerBasedInvalidationTracker.setOnAllowRefresh$room_runtime(new Function0() { // from class: androidx.room.InvalidationTracker$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean _init_$lambda$2;
-                _init_$lambda$2 = InvalidationTracker._init_$lambda$2(InvalidationTracker.this);
-                return Boolean.valueOf(_init_$lambda$2);
+                return Boolean.valueOf(InvalidationTracker._init_$lambda$2(InvalidationTracker.this));
             }
         });
     }
@@ -105,7 +99,7 @@ public class InvalidationTracker {
         return this.tableNames;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onRefreshScheduled$lambda$0(InvalidationTracker invalidationTracker) {
         AutoCloser autoCloser = invalidationTracker.autoCloser;
         if (autoCloser != null) {
@@ -114,7 +108,7 @@ public class InvalidationTracker {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onRefreshCompleted$lambda$1(InvalidationTracker invalidationTracker) {
         AutoCloser autoCloser = invalidationTracker.autoCloser;
         if (autoCloser != null) {
@@ -131,7 +125,7 @@ public class InvalidationTracker {
         Intrinsics.checkNotNullParameter(tableNames, "tableNames");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$2(InvalidationTracker invalidationTracker) {
         return !invalidationTracker.database.inCompatibilityMode() || invalidationTracker.database.isOpenInternal$room_runtime();
     }
@@ -238,10 +232,12 @@ public class InvalidationTracker {
         ReentrantLock reentrantLock = this.observerMapLock;
         reentrantLock.lock();
         try {
-            if (this.observerMap.containsKey(observer)) {
-                put = (ObserverWrapper) MapsKt.getValue(this.observerMap, observer);
+            boolean containsKey = this.observerMap.containsKey(observer);
+            Map<Observer, ObserverWrapper> map = this.observerMap;
+            if (containsKey) {
+                put = (ObserverWrapper) MapsKt.getValue(map, observer);
             } else {
-                put = this.observerMap.put(observer, observerWrapper);
+                put = map.put(observer, observerWrapper);
             }
             return put == null && this.implementation.onObserverAdded$room_runtime(component2);
         } finally {

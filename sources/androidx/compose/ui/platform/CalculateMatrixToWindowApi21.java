@@ -25,39 +25,39 @@ public final class CalculateMatrixToWindowApi21 implements CalculateMatrixToWind
 
     @Override // androidx.compose.ui.platform.CalculateMatrixToWindow
     /* renamed from: calculateMatrixToWindow-EL8BTi8 */
-    public void mo7341calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
-        Matrix.m5679resetimpl(fArr);
-        m7344transformMatrixToWindowEL8BTi8(view, fArr);
+    public void mo6677calculateMatrixToWindowEL8BTi8(View view, float[] fArr) {
+        Matrix.m5025resetimpl(fArr);
+        m6680transformMatrixToWindowEL8BTi8(view, fArr);
     }
 
     /* renamed from: transformMatrixToWindow-EL8BTi8  reason: not valid java name */
-    private final void m7344transformMatrixToWindowEL8BTi8(View view, float[] fArr) {
+    private final void m6680transformMatrixToWindowEL8BTi8(View view, float[] fArr) {
         ViewParent parent = view.getParent();
         if (parent instanceof View) {
-            m7344transformMatrixToWindowEL8BTi8((View) parent, fArr);
-            m7343preTranslate3XD1CNM(fArr, -view.getScrollX(), -view.getScrollY());
-            m7343preTranslate3XD1CNM(fArr, view.getLeft(), view.getTop());
+            m6680transformMatrixToWindowEL8BTi8((View) parent, fArr);
+            m6679preTranslate3XD1CNM(fArr, -view.getScrollX(), -view.getScrollY());
+            m6679preTranslate3XD1CNM(fArr, view.getLeft(), view.getTop());
         } else {
             int[] iArr = this.tmpLocation;
             view.getLocationInWindow(iArr);
-            m7343preTranslate3XD1CNM(fArr, -view.getScrollX(), -view.getScrollY());
-            m7343preTranslate3XD1CNM(fArr, iArr[0], iArr[1]);
+            m6679preTranslate3XD1CNM(fArr, -view.getScrollX(), -view.getScrollY());
+            m6679preTranslate3XD1CNM(fArr, iArr[0], iArr[1]);
         }
         android.graphics.Matrix matrix = view.getMatrix();
         if (matrix.isIdentity()) {
             return;
         }
-        m7342preConcattUYjHk(fArr, matrix);
+        m6678preConcattUYjHk(fArr, matrix);
     }
 
     /* renamed from: preConcat-tU-YjHk  reason: not valid java name */
-    private final void m7342preConcattUYjHk(float[] fArr, android.graphics.Matrix matrix) {
-        AndroidMatrixConversions_androidKt.m5292setFromtUYjHk(this.tmpMatrix, matrix);
-        AndroidComposeView_androidKt.m7329preTransformJiSxe2E(fArr, this.tmpMatrix);
+    private final void m6678preConcattUYjHk(float[] fArr, android.graphics.Matrix matrix) {
+        AndroidMatrixConversions_androidKt.m4640setFromtUYjHk(this.tmpMatrix, matrix);
+        AndroidComposeView_androidKt.m6665preTransformJiSxe2E(fArr, this.tmpMatrix);
     }
 
     /* renamed from: preTranslate-3XD1CNM  reason: not valid java name */
-    private final void m7343preTranslate3XD1CNM(float[] fArr, float f, float f2) {
-        AndroidComposeView_androidKt.m7330preTranslatecG2Xzmc(fArr, f, f2, this.tmpMatrix);
+    private final void m6679preTranslate3XD1CNM(float[] fArr, float f, float f2) {
+        AndroidComposeView_androidKt.m6666preTranslatecG2Xzmc(fArr, f, f2, this.tmpMatrix);
     }
 }

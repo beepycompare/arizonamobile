@@ -226,9 +226,7 @@ public final class AnnotatedStringKt {
         List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> localAnnotations = getLocalAnnotations(annotatedString, i, i2, new Function1() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean substringWithoutParagraphStyles$lambda$0;
-                substringWithoutParagraphStyles$lambda$0 = AnnotatedStringKt.substringWithoutParagraphStyles$lambda$0((AnnotatedString.Annotation) obj);
-                return Boolean.valueOf(substringWithoutParagraphStyles$lambda$0);
+                return Boolean.valueOf(AnnotatedStringKt.substringWithoutParagraphStyles$lambda$0((AnnotatedString.Annotation) obj));
             }
         });
         if (localAnnotations == null) {
@@ -263,9 +261,7 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String upperCase$lambda$0;
-                upperCase$lambda$0 = AnnotatedStringKt.toUpperCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return upperCase$lambda$0;
+                return AnnotatedStringKt.toUpperCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
             }
         });
     }
@@ -287,9 +283,7 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String lowerCase$lambda$0;
-                lowerCase$lambda$0 = AnnotatedStringKt.toLowerCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return lowerCase$lambda$0;
+                return AnnotatedStringKt.toLowerCase$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
             }
         });
     }
@@ -311,9 +305,7 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String capitalize$lambda$0;
-                capitalize$lambda$0 = AnnotatedStringKt.capitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return capitalize$lambda$0;
+                return AnnotatedStringKt.capitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
             }
         });
     }
@@ -340,9 +332,7 @@ public final class AnnotatedStringKt {
         return JvmAnnotatedString_jvmKt.transform(annotatedString, new Function3() { // from class: androidx.compose.ui.text.AnnotatedStringKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                String decapitalize$lambda$0;
-                decapitalize$lambda$0 = AnnotatedStringKt.decapitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return decapitalize$lambda$0;
+                return AnnotatedStringKt.decapitalize$lambda$0(LocaleList.this, (String) obj, ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
             }
         });
     }

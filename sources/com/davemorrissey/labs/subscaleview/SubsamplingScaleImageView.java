@@ -506,23 +506,24 @@ public class SubsamplingScaleImageView extends View {
             public boolean onDoubleTap(MotionEvent motionEvent) {
                 if (SubsamplingScaleImageView.this.zoomEnabled && SubsamplingScaleImageView.this.readySent && SubsamplingScaleImageView.this.vTranslate != null) {
                     SubsamplingScaleImageView.this.setGestureDetector(context);
-                    if (SubsamplingScaleImageView.this.quickScaleEnabled) {
-                        SubsamplingScaleImageView.this.vCenterStart = new PointF(motionEvent.getX(), motionEvent.getY());
+                    boolean z = SubsamplingScaleImageView.this.quickScaleEnabled;
+                    SubsamplingScaleImageView subsamplingScaleImageView = SubsamplingScaleImageView.this;
+                    if (z) {
+                        subsamplingScaleImageView.vCenterStart = new PointF(motionEvent.getX(), motionEvent.getY());
                         SubsamplingScaleImageView.this.vTranslateStart = new PointF(SubsamplingScaleImageView.this.vTranslate.x, SubsamplingScaleImageView.this.vTranslate.y);
-                        SubsamplingScaleImageView subsamplingScaleImageView = SubsamplingScaleImageView.this;
-                        subsamplingScaleImageView.scaleStart = subsamplingScaleImageView.scale;
+                        SubsamplingScaleImageView subsamplingScaleImageView2 = SubsamplingScaleImageView.this;
+                        subsamplingScaleImageView2.scaleStart = subsamplingScaleImageView2.scale;
                         SubsamplingScaleImageView.this.isQuickScaling = true;
                         SubsamplingScaleImageView.this.isZooming = true;
                         SubsamplingScaleImageView.this.quickScaleLastDistance = -1.0f;
-                        SubsamplingScaleImageView subsamplingScaleImageView2 = SubsamplingScaleImageView.this;
-                        subsamplingScaleImageView2.quickScaleSCenter = subsamplingScaleImageView2.viewToSourceCoord(subsamplingScaleImageView2.vCenterStart);
+                        SubsamplingScaleImageView subsamplingScaleImageView3 = SubsamplingScaleImageView.this;
+                        subsamplingScaleImageView3.quickScaleSCenter = subsamplingScaleImageView3.viewToSourceCoord(subsamplingScaleImageView3.vCenterStart);
                         SubsamplingScaleImageView.this.quickScaleVStart = new PointF(motionEvent.getX(), motionEvent.getY());
                         SubsamplingScaleImageView.this.quickScaleVLastPoint = new PointF(SubsamplingScaleImageView.this.quickScaleSCenter.x, SubsamplingScaleImageView.this.quickScaleSCenter.y);
                         SubsamplingScaleImageView.this.quickScaleMoved = false;
                         return false;
                     }
-                    SubsamplingScaleImageView subsamplingScaleImageView3 = SubsamplingScaleImageView.this;
-                    subsamplingScaleImageView3.doubleTapZoom(subsamplingScaleImageView3.viewToSourceCoord(new PointF(motionEvent.getX(), motionEvent.getY())), new PointF(motionEvent.getX(), motionEvent.getY()));
+                    subsamplingScaleImageView.doubleTapZoom(subsamplingScaleImageView.viewToSourceCoord(new PointF(motionEvent.getX(), motionEvent.getY())), new PointF(motionEvent.getX(), motionEvent.getY()));
                     return true;
                 }
                 return super.onDoubleTapEvent(motionEvent);
@@ -665,12 +666,16 @@ public class SubsamplingScaleImageView extends View {
                                     this.scaleStart = this.scale;
                                     this.vDistStart = distance;
                                 }
-                            } else if (this.sRequestedCenter != null) {
-                                this.vTranslate.x = (getWidth() / 2) - (this.scale * this.sRequestedCenter.x);
-                                this.vTranslate.y = (getHeight() / 2) - (this.scale * this.sRequestedCenter.y);
                             } else {
-                                this.vTranslate.x = (getWidth() / 2) - (this.scale * (sWidth() / 2));
-                                this.vTranslate.y = (getHeight() / 2) - (this.scale * (sHeight() / 2));
+                                PointF pointF = this.sRequestedCenter;
+                                PointF pointF2 = this.vTranslate;
+                                if (pointF != null) {
+                                    pointF2.x = (getWidth() / 2) - (this.scale * this.sRequestedCenter.x);
+                                    this.vTranslate.y = (getHeight() / 2) - (this.scale * this.sRequestedCenter.y);
+                                } else {
+                                    pointF2.x = (getWidth() / 2) - (this.scale * (sWidth() / 2));
+                                    this.vTranslate.y = (getHeight() / 2) - (this.scale * (sHeight() / 2));
+                                }
                             }
                             fitToBounds(true);
                             refreshRequiredTiles(this.eagerLoadingEnabled);
@@ -706,12 +711,16 @@ public class SubsamplingScaleImageView extends View {
                                         this.scaleStart = this.scale;
                                         abs = 0.0f;
                                     }
-                                } else if (this.sRequestedCenter != null) {
-                                    this.vTranslate.x = (getWidth() / 2) - (this.scale * this.sRequestedCenter.x);
-                                    this.vTranslate.y = (getHeight() / 2) - (this.scale * this.sRequestedCenter.y);
                                 } else {
-                                    this.vTranslate.x = (getWidth() / 2) - (this.scale * (sWidth() / 2));
-                                    this.vTranslate.y = (getHeight() / 2) - (this.scale * (sHeight() / 2));
+                                    PointF pointF3 = this.sRequestedCenter;
+                                    PointF pointF4 = this.vTranslate;
+                                    if (pointF3 != null) {
+                                        pointF4.x = (getWidth() / 2) - (this.scale * this.sRequestedCenter.x);
+                                        this.vTranslate.y = (getHeight() / 2) - (this.scale * this.sRequestedCenter.y);
+                                    } else {
+                                        pointF4.x = (getWidth() / 2) - (this.scale * (sWidth() / 2));
+                                        this.vTranslate.y = (getHeight() / 2) - (this.scale * (sHeight() / 2));
+                                    }
                                 }
                             }
                             this.quickScaleLastDistance = abs;
@@ -773,10 +782,12 @@ public class SubsamplingScaleImageView extends View {
             if (z && pointerCount == 2) {
                 this.isPanning = true;
                 this.vTranslateStart.set(this.vTranslate.x, this.vTranslate.y);
-                if (motionEvent.getActionIndex() == 1) {
-                    this.vCenterStart.set(motionEvent.getX(0), motionEvent.getY(0));
+                int actionIndex = motionEvent.getActionIndex();
+                PointF pointF5 = this.vCenterStart;
+                if (actionIndex == 1) {
+                    pointF5.set(motionEvent.getX(0), motionEvent.getY(0));
                 } else {
-                    this.vCenterStart.set(motionEvent.getX(1), motionEvent.getY(1));
+                    pointF5.set(motionEvent.getX(1), motionEvent.getY(1));
                 }
             }
             if (pointerCount < 3) {
@@ -1854,10 +1865,14 @@ public class SubsamplingScaleImageView extends View {
             rect2.set(rect);
         } else if (getRequiredRotation() == 90) {
             rect2.set(rect.top, this.sHeight - rect.right, rect.bottom, this.sHeight - rect.left);
-        } else if (getRequiredRotation() == 180) {
-            rect2.set(this.sWidth - rect.right, this.sHeight - rect.bottom, this.sWidth - rect.left, this.sHeight - rect.top);
         } else {
-            rect2.set(this.sWidth - rect.bottom, rect.left, this.sWidth - rect.top, rect.right);
+            int requiredRotation = getRequiredRotation();
+            int i = this.sWidth;
+            if (requiredRotation == 180) {
+                rect2.set(i - rect.right, this.sHeight - rect.bottom, this.sWidth - rect.left, this.sHeight - rect.top);
+            } else {
+                rect2.set(i - rect.bottom, rect.left, this.sWidth - rect.top, rect.right);
+            }
         }
     }
 
@@ -2076,17 +2091,20 @@ public class SubsamplingScaleImageView extends View {
                 rectF.left = Math.max(0.0f, -(this.vTranslate.x - (getWidth() / 2)));
                 rectF.bottom = Math.max(0.0f, this.vTranslate.y - ((getHeight() / 2) - sHeight));
                 rectF.right = Math.max(0.0f, this.vTranslate.x - ((getWidth() / 2) - sWidth));
-            } else if (i == 2) {
-                rectF.top = Math.max(0.0f, -(this.vTranslate.y - getHeight()));
+                return;
+            }
+            PointF pointF = this.vTranslate;
+            if (i == 2) {
+                rectF.top = Math.max(0.0f, -(pointF.y - getHeight()));
                 rectF.left = Math.max(0.0f, -(this.vTranslate.x - getWidth()));
                 rectF.bottom = Math.max(0.0f, this.vTranslate.y + sHeight);
                 rectF.right = Math.max(0.0f, this.vTranslate.x + sWidth);
-            } else {
-                rectF.top = Math.max(0.0f, -this.vTranslate.y);
-                rectF.left = Math.max(0.0f, -this.vTranslate.x);
-                rectF.bottom = Math.max(0.0f, (sHeight + this.vTranslate.y) - getHeight());
-                rectF.right = Math.max(0.0f, (sWidth + this.vTranslate.x) - getWidth());
+                return;
             }
+            rectF.top = Math.max(0.0f, -pointF.y);
+            rectF.left = Math.max(0.0f, -this.vTranslate.x);
+            rectF.bottom = Math.max(0.0f, (sHeight + this.vTranslate.y) - getHeight());
+            rectF.right = Math.max(0.0f, (sWidth + this.vTranslate.x) - getWidth());
         }
     }
 

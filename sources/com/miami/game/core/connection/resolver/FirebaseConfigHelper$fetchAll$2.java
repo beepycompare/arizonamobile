@@ -17,8 +17,8 @@ import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FirebaseServerHandler.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper$fetchAll$2", f = "FirebaseServerHandler.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper$fetchAll$2", f = "FirebaseServerHandler.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class FirebaseConfigHelper$fetchAll$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Map<FirebaseConfigLinks, ? extends String>>, Object> {
     int label;

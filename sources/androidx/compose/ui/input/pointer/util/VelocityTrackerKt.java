@@ -25,12 +25,12 @@ public final class VelocityTrackerKt {
     }
 
     public static final void addPointerInputChange(VelocityTracker velocityTracker, PointerInputChange pointerInputChange) {
-        m6851addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m5195getZeroF1C5BW0());
+        m6192addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, Offset.Companion.m4543getZeroF1C5BW0());
     }
 
     /* renamed from: addPointerInputChange-0AR0LA0  reason: not valid java name */
-    public static final void m6851addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
-        velocityTracker.getPlatformVelocityTracker$ui().mo6838addPointerInputChangeUv8p0NA(pointerInputChange, j);
+    public static final void m6192addPointerInputChange0AR0LA0(VelocityTracker velocityTracker, PointerInputChange pointerInputChange, long j) {
+        velocityTracker.getPlatformVelocityTracker$ui().mo6179addPointerInputChangeUv8p0NA(pointerInputChange, j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -15,7 +15,7 @@ public final class Synchronization_jvmKt {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <R> R m7976synchronized(SynchronizedObject synchronizedObject, Function0<? extends R> function0) {
+    public static final <R> R m7273synchronized(SynchronizedObject synchronizedObject, Function0<? extends R> function0) {
         R invoke;
         synchronized (synchronizedObject) {
             invoke = function0.invoke();

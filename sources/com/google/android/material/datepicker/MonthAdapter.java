@@ -120,10 +120,14 @@ public class MonthAdapter extends BaseAdapter {
             textView.setSelected(z);
             if (z) {
                 calendarItemStyle = this.calendarStyle.selectedDay;
-            } else if (isToday(j)) {
-                calendarItemStyle = this.calendarStyle.todayDay;
             } else {
-                calendarItemStyle = this.calendarStyle.day;
+                boolean isToday = isToday(j);
+                CalendarStyle calendarStyle = this.calendarStyle;
+                if (isToday) {
+                    calendarItemStyle = calendarStyle.todayDay;
+                } else {
+                    calendarItemStyle = calendarStyle.day;
+                }
             }
         } else {
             z = false;

@@ -316,19 +316,21 @@ public class Transition implements TypedValues {
                     this.mEngine = decelerate;
                 }
                 decelerate.config(f, this.mDestination, f5);
-            } else if (this.mAutoCompleteMode == 0) {
-                StopEngine stopEngine2 = this.mEngine;
-                if (stopEngine2 instanceof StopLogicEngine) {
-                    stopLogicEngine = (StopLogicEngine) stopEngine2;
-                } else {
-                    stopLogicEngine = new StopLogicEngine();
-                    this.mEngine = stopLogicEngine;
-                }
-                stopLogicEngine.config(f, this.mDestination, f5, f3, this.mMaxAcceleration, this.mMaxVelocity);
             } else {
-                StopEngine stopEngine3 = this.mEngine;
-                if (stopEngine3 instanceof SpringStopEngine) {
-                    springStopEngine = (SpringStopEngine) stopEngine3;
+                int i = this.mAutoCompleteMode;
+                StopEngine stopEngine2 = this.mEngine;
+                if (i == 0) {
+                    if (stopEngine2 instanceof StopLogicEngine) {
+                        stopLogicEngine = (StopLogicEngine) stopEngine2;
+                    } else {
+                        stopLogicEngine = new StopLogicEngine();
+                        this.mEngine = stopLogicEngine;
+                    }
+                    stopLogicEngine.config(f, this.mDestination, f5, f3, this.mMaxAcceleration, this.mMaxVelocity);
+                    return;
+                }
+                if (stopEngine2 instanceof SpringStopEngine) {
+                    springStopEngine = (SpringStopEngine) stopEngine2;
                 } else {
                     springStopEngine = new SpringStopEngine();
                     this.mEngine = springStopEngine;

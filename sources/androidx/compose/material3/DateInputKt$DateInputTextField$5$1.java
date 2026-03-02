@@ -67,7 +67,7 @@ public final class DateInputKt$DateInputTextField$5$1 extends SuspendLambda impl
             MutableState<TextFieldValue> mutableState = this.$text$delegate;
             String formatWithPattern = calendarModel.formatWithPattern(l.longValue(), dateInputFormat.getPatternWithoutDelimiters(), locale);
             if (formatWithPattern.length() == 0) {
-                TextRange = TextRange.Companion.m7706getZerod9O1mEE();
+                TextRange = TextRange.Companion.m7008getZerod9O1mEE();
             } else {
                 TextRange = TextRangeKt.TextRange(formatWithPattern.length(), formatWithPattern.length());
             }

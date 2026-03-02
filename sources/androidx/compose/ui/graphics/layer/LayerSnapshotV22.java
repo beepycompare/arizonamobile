@@ -21,7 +21,7 @@ import kotlin.jdk7.AutoCloseableKt;
 import kotlinx.coroutines.CancellableContinuationImpl;
 /* compiled from: LayerSnapshot.android.kt */
 @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/graphics/layer/LayerSnapshotV22;", "Landroidx/compose/ui/graphics/layer/LayerSnapshotImpl;", "<init>", "()V", "toBitmap", "Landroid/graphics/Bitmap;", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "(Landroidx/compose/ui/graphics/layer/GraphicsLayer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class LayerSnapshotV22 implements LayerSnapshotImpl {
     public static final int $stable = 0;
     public static final LayerSnapshotV22 INSTANCE = new LayerSnapshotV22();
@@ -55,12 +55,12 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
                 i = layerSnapshotV22$toBitmap$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    long m6096getSizeYbymL2g = graphicsLayer.m6096getSizeYbymL2g();
+                    long m5437getSizeYbymL2g = graphicsLayer.m5437getSizeYbymL2g();
                     Looper myLooper = Looper.myLooper();
                     if (myLooper == null) {
                         myLooper = Looper.getMainLooper();
                     }
-                    ImageReader newInstance = ImageReader.newInstance((int) (m6096getSizeYbymL2g >> 32), (int) (m6096getSizeYbymL2g & 4294967295L), 1, 1);
+                    ImageReader newInstance = ImageReader.newInstance((int) (m5437getSizeYbymL2g >> 32), (int) (m5437getSizeYbymL2g & 4294967295L), 1, 1);
                     try {
                         ImageReader imageReader2 = newInstance;
                         layerSnapshotV22$toBitmap$1.L$0 = graphicsLayer;
@@ -76,12 +76,12 @@ public final class LayerSnapshotV22 implements LayerSnapshotImpl {
                             @Override // android.media.ImageReader.OnImageAvailableListener
                             public final void onImageAvailable(ImageReader imageReader3) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(imageReader3.acquireLatestImage()));
+                                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(imageReader3.acquireLatestImage()));
                             }
                         }, HandlerCompat.createAsync(myLooper));
                         Surface surface = imageReader2.getSurface();
                         Canvas lockCanvas = SurfaceUtils.INSTANCE.lockCanvas(surface);
-                        lockCanvas.drawColor(ColorKt.m5478toArgb8_81llA(Color.Companion.m5450getBlack0d7_KjU()), PorterDuff.Mode.CLEAR);
+                        lockCanvas.drawColor(ColorKt.m4826toArgb8_81llA(Color.Companion.m4798getBlack0d7_KjU()), PorterDuff.Mode.CLEAR);
                         graphicsLayer.draw$ui_graphics(AndroidCanvas_androidKt.Canvas(lockCanvas), null);
                         surface.unlockCanvasAndPost(lockCanvas);
                         obj = cancellableContinuationImpl.getResult();

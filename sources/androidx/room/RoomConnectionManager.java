@@ -100,9 +100,7 @@ public final class RoomConnectionManager extends BaseRoomConnectionManager {
         SupportSQLiteOpenHelper invoke = supportOpenHelperFactory.invoke(installOnOpenCallback(config, new Function1() { // from class: androidx.room.RoomConnectionManager$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$1;
-                _init_$lambda$1 = RoomConnectionManager._init_$lambda$1(RoomConnectionManager.this, (SupportSQLiteDatabase) obj);
-                return _init_$lambda$1;
+                return RoomConnectionManager._init_$lambda$1(RoomConnectionManager.this, (SupportSQLiteDatabase) obj);
             }
         }));
         this.supportOpenHelper = invoke;
@@ -112,7 +110,7 @@ public final class RoomConnectionManager extends BaseRoomConnectionManager {
         init();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$1(RoomConnectionManager roomConnectionManager, SupportSQLiteDatabase db) {
         Intrinsics.checkNotNullParameter(db, "db");
         roomConnectionManager.supportDatabase = db;

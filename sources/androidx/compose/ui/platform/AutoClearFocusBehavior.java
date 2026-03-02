@@ -10,53 +10,53 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class AutoClearFocusBehavior {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m7332constructorimpl(0);
-    private static final int CursorBased = m7332constructorimpl(1);
+    private static final int None = m6668constructorimpl(0);
+    private static final int CursorBased = m6668constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AutoClearFocusBehavior m7331boximpl(int i) {
+    public static final /* synthetic */ AutoClearFocusBehavior m6667boximpl(int i) {
         return new AutoClearFocusBehavior(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7332constructorimpl(int i) {
+    private static int m6668constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7333equalsimpl(int i, Object obj) {
-        return (obj instanceof AutoClearFocusBehavior) && i == ((AutoClearFocusBehavior) obj).m7337unboximpl();
+    public static boolean m6669equalsimpl(int i, Object obj) {
+        return (obj instanceof AutoClearFocusBehavior) && i == ((AutoClearFocusBehavior) obj).m6673unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7334equalsimpl0(int i, int i2) {
+    public static final boolean m6670equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7335hashCodeimpl(int i) {
+    public static int m6671hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7336toStringimpl(int i) {
+    public static String m6672toStringimpl(int i) {
         return "AutoClearFocusBehavior(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7333equalsimpl(this.value, obj);
+        return m6669equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7335hashCodeimpl(this.value);
+        return m6671hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m7336toStringimpl(this.value);
+        return m6672toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7337unboximpl() {
+    public final /* synthetic */ int m6673unboximpl() {
         return this.value;
     }
 
@@ -72,18 +72,18 @@ public final class AutoClearFocusBehavior {
         }
 
         /* renamed from: getNone-4UtRPd4  reason: not valid java name */
-        public final int m7340getNone4UtRPd4() {
+        public final int m6676getNone4UtRPd4() {
             return AutoClearFocusBehavior.None;
         }
 
         /* renamed from: getCursorBased-4UtRPd4  reason: not valid java name */
-        public final int m7338getCursorBased4UtRPd4() {
+        public final int m6674getCursorBased4UtRPd4() {
             return AutoClearFocusBehavior.CursorBased;
         }
 
         /* renamed from: getDefault-4UtRPd4  reason: not valid java name */
-        public final int m7339getDefault4UtRPd4() {
-            return m7338getCursorBased4UtRPd4();
+        public final int m6675getDefault4UtRPd4() {
+            return m6674getCursorBased4UtRPd4();
         }
     }
 

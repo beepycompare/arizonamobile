@@ -3,8 +3,8 @@ package io.appmetrica.analytics.impl;
 public final class G2 implements so {
     @Override // io.appmetrica.analytics.impl.so
     public final qo a(Object obj) {
-        C0259fo[] c0259foArr = ((C0336io) obj).f1051a;
-        if (c0259foArr != null && c0259foArr.length != 0) {
+        C0258fo[] c0258foArr = ((C0335io) obj).f1051a;
+        if (c0258foArr != null && c0258foArr.length != 0) {
             return new qo(this, true, "");
         }
         return new qo(this, false, "attributes list is empty");

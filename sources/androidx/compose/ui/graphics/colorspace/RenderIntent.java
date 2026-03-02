@@ -8,56 +8,56 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: RenderIntent.kt */
 @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/RenderIntent;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @JvmInline
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class RenderIntent {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Perceptual = m5877constructorimpl(0);
-    private static final int Relative = m5877constructorimpl(1);
-    private static final int Saturation = m5877constructorimpl(2);
-    private static final int Absolute = m5877constructorimpl(3);
+    private static final int Perceptual = m5223constructorimpl(0);
+    private static final int Relative = m5223constructorimpl(1);
+    private static final int Saturation = m5223constructorimpl(2);
+    private static final int Absolute = m5223constructorimpl(3);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ RenderIntent m5876boximpl(int i) {
+    public static final /* synthetic */ RenderIntent m5222boximpl(int i) {
         return new RenderIntent(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5877constructorimpl(int i) {
+    public static int m5223constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5878equalsimpl(int i, Object obj) {
-        return (obj instanceof RenderIntent) && i == ((RenderIntent) obj).m5882unboximpl();
+    public static boolean m5224equalsimpl(int i, Object obj) {
+        return (obj instanceof RenderIntent) && i == ((RenderIntent) obj).m5228unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5879equalsimpl0(int i, int i2) {
+    public static final boolean m5225equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5880hashCodeimpl(int i) {
+    public static int m5226hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5878equalsimpl(this.value, obj);
+        return m5224equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5880hashCodeimpl(this.value);
+        return m5226hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5882unboximpl() {
+    public final /* synthetic */ int m5228unboximpl() {
         return this.value;
     }
 
     /* compiled from: RenderIntent.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007R\u0013\u0010\t\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\n\u0010\u0007R\u0013\u0010\u000b\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\f\u0010\u0007R\u0013\u0010\r\u001a\u00020\u0005¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u000e\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;", "", "<init>", "()V", "Perceptual", "Landroidx/compose/ui/graphics/colorspace/RenderIntent;", "getPerceptual-uksYyKA", "()I", "I", "Relative", "getRelative-uksYyKA", ExifInterface.TAG_SATURATION, "getSaturation-uksYyKA", "Absolute", "getAbsolute-uksYyKA", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -67,22 +67,22 @@ public final class RenderIntent {
         }
 
         /* renamed from: getPerceptual-uksYyKA  reason: not valid java name */
-        public final int m5884getPerceptualuksYyKA() {
+        public final int m5230getPerceptualuksYyKA() {
             return RenderIntent.Perceptual;
         }
 
         /* renamed from: getRelative-uksYyKA  reason: not valid java name */
-        public final int m5885getRelativeuksYyKA() {
+        public final int m5231getRelativeuksYyKA() {
             return RenderIntent.Relative;
         }
 
         /* renamed from: getSaturation-uksYyKA  reason: not valid java name */
-        public final int m5886getSaturationuksYyKA() {
+        public final int m5232getSaturationuksYyKA() {
             return RenderIntent.Saturation;
         }
 
         /* renamed from: getAbsolute-uksYyKA  reason: not valid java name */
-        public final int m5883getAbsoluteuksYyKA() {
+        public final int m5229getAbsoluteuksYyKA() {
             return RenderIntent.Absolute;
         }
     }
@@ -92,11 +92,11 @@ public final class RenderIntent {
     }
 
     public String toString() {
-        return m5881toStringimpl(this.value);
+        return m5227toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5881toStringimpl(int i) {
-        return m5879equalsimpl0(i, Perceptual) ? "Perceptual" : m5879equalsimpl0(i, Relative) ? "Relative" : m5879equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5879equalsimpl0(i, Absolute) ? "Absolute" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+    public static String m5227toStringimpl(int i) {
+        return m5225equalsimpl0(i, Perceptual) ? "Perceptual" : m5225equalsimpl0(i, Relative) ? "Relative" : m5225equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5225equalsimpl0(i, Absolute) ? "Absolute" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
     }
 }

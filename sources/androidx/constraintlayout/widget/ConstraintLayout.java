@@ -417,14 +417,21 @@ public class ConstraintLayout extends ViewGroup {
 
         @Override // androidx.constraintlayout.core.widgets.analyzer.BasicMeasure.Measurer
         public final void didMeasures() {
+            ConstraintLayout constraintLayout;
             int childCount = this.mLayout.getChildCount();
-            for (int i = 0; i < childCount; i++) {
-                View childAt = this.mLayout.getChildAt(i);
+            int i = 0;
+            while (true) {
+                constraintLayout = this.mLayout;
+                if (i >= childCount) {
+                    break;
+                }
+                View childAt = constraintLayout.getChildAt(i);
                 if (childAt instanceof Placeholder) {
                     ((Placeholder) childAt).updatePostMeasure(this.mLayout);
                 }
+                i++;
             }
-            int size = this.mLayout.mConstraintHelpers.size();
+            int size = constraintLayout.mConstraintHelpers.size();
             if (size > 0) {
                 for (int i2 = 0; i2 < size; i2++) {
                     ((ConstraintHelper) this.mLayout.mConstraintHelpers.get(i2)).updatePostMeasure(this.mLayout);
@@ -2140,13 +2147,13 @@ public class ConstraintLayout extends ViewGroup {
             this.helped = false;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:17:0x004a  */
-        /* JADX WARN: Removed duplicated region for block: B:20:0x0051  */
-        /* JADX WARN: Removed duplicated region for block: B:23:0x0058  */
-        /* JADX WARN: Removed duplicated region for block: B:26:0x005e  */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x0064  */
-        /* JADX WARN: Removed duplicated region for block: B:38:0x007a  */
-        /* JADX WARN: Removed duplicated region for block: B:39:0x0082  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x004a  */
+        /* JADX WARN: Removed duplicated region for block: B:19:0x0051  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0058  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x005e  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x0064  */
+        /* JADX WARN: Removed duplicated region for block: B:37:0x007a  */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x0082  */
         @Override // android.view.ViewGroup.MarginLayoutParams, android.view.ViewGroup.LayoutParams
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -2175,8 +2182,8 @@ public class ConstraintLayout extends ViewGroup {
             this.mResolvedGuideEnd = i9;
             float f2 = this.guidePercent;
             this.mResolvedGuidePercent = f2;
+            int i10 = this.startToEnd;
             if (z2) {
-                int i10 = this.startToEnd;
                 if (i10 != -1) {
                     this.mResolvedRightToLeft = i10;
                 } else {
@@ -2241,59 +2248,58 @@ public class ConstraintLayout extends ViewGroup {
                     }
                 }
             } else {
-                int i12 = this.startToEnd;
+                if (i10 != -1) {
+                    this.mResolvedLeftToRight = i10;
+                }
+                int i12 = this.startToStart;
                 if (i12 != -1) {
-                    this.mResolvedLeftToRight = i12;
+                    this.mResolvedLeftToLeft = i12;
                 }
-                int i13 = this.startToStart;
+                int i13 = this.endToStart;
                 if (i13 != -1) {
-                    this.mResolvedLeftToLeft = i13;
+                    this.mResolvedRightToLeft = i13;
                 }
-                int i14 = this.endToStart;
+                int i14 = this.endToEnd;
                 if (i14 != -1) {
-                    this.mResolvedRightToLeft = i14;
+                    this.mResolvedRightToRight = i14;
                 }
-                int i15 = this.endToEnd;
-                if (i15 != -1) {
-                    this.mResolvedRightToRight = i15;
+                int i15 = this.goneStartMargin;
+                if (i15 != Integer.MIN_VALUE) {
+                    this.mResolveGoneLeftMargin = i15;
                 }
-                int i16 = this.goneStartMargin;
+                int i16 = this.goneEndMargin;
                 if (i16 != Integer.MIN_VALUE) {
-                    this.mResolveGoneLeftMargin = i16;
-                }
-                int i17 = this.goneEndMargin;
-                if (i17 != Integer.MIN_VALUE) {
-                    this.mResolveGoneRightMargin = i17;
+                    this.mResolveGoneRightMargin = i16;
                 }
             }
             if (this.endToStart == -1 && this.endToEnd == -1 && this.startToStart == -1 && this.startToEnd == -1) {
-                int i18 = this.rightToLeft;
-                if (i18 != -1) {
-                    this.mResolvedRightToLeft = i18;
+                int i17 = this.rightToLeft;
+                if (i17 != -1) {
+                    this.mResolvedRightToLeft = i17;
                     if (this.rightMargin <= 0 && i7 > 0) {
                         this.rightMargin = i7;
                     }
                 } else {
-                    int i19 = this.rightToRight;
-                    if (i19 != -1) {
-                        this.mResolvedRightToRight = i19;
+                    int i18 = this.rightToRight;
+                    if (i18 != -1) {
+                        this.mResolvedRightToRight = i18;
                         if (this.rightMargin <= 0 && i7 > 0) {
                             this.rightMargin = i7;
                         }
                     }
                 }
-                int i20 = this.leftToLeft;
-                if (i20 != -1) {
-                    this.mResolvedLeftToLeft = i20;
+                int i19 = this.leftToLeft;
+                if (i19 != -1) {
+                    this.mResolvedLeftToLeft = i19;
                     if (this.leftMargin > 0 || i6 <= 0) {
                         return;
                     }
                     this.leftMargin = i6;
                     return;
                 }
-                int i21 = this.leftToRight;
-                if (i21 != -1) {
-                    this.mResolvedLeftToRight = i21;
+                int i20 = this.leftToRight;
+                if (i20 != -1) {
+                    this.mResolvedLeftToRight = i20;
                     if (this.leftMargin > 0 || i6 <= 0) {
                         return;
                     }

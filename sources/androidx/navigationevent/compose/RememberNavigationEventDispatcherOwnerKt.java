@@ -59,9 +59,7 @@ public final class RememberNavigationEventDispatcherOwnerKt {
                 rememberedValue3 = new Function1() { // from class: androidx.navigationevent.compose.RememberNavigationEventDispatcherOwnerKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult rememberNavigationEventDispatcherOwner$lambda$5$lambda$4;
-                        rememberNavigationEventDispatcherOwner$lambda$5$lambda$4 = RememberNavigationEventDispatcherOwnerKt.rememberNavigationEventDispatcherOwner$lambda$5$lambda$4(NavigationEventDispatcher.this, (DisposableEffectScope) obj);
-                        return rememberNavigationEventDispatcherOwner$lambda$5$lambda$4;
+                        return RememberNavigationEventDispatcherOwnerKt.rememberNavigationEventDispatcherOwner$lambda$5$lambda$4(NavigationEventDispatcher.this, (DisposableEffectScope) obj);
                     }
                 };
                 composer.updateRememberedValue(rememberedValue3);
@@ -86,7 +84,7 @@ public final class RememberNavigationEventDispatcherOwnerKt {
         throw new IllegalStateException("No NavigationEventDispatcherOwner provided in LocalNavigationEventDispatcherOwner. If you intended to create a root dispatcher, explicitly pass null as the parent.".toString());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult rememberNavigationEventDispatcherOwner$lambda$5$lambda$4(final NavigationEventDispatcher navigationEventDispatcher, DisposableEffectScope disposableEffectScope) {
         return new DisposableEffectResult() { // from class: androidx.navigationevent.compose.RememberNavigationEventDispatcherOwnerKt$rememberNavigationEventDispatcherOwner$lambda$5$lambda$4$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult

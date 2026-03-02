@@ -8,7 +8,7 @@ public class N5 extends BaseRequestConfig {
     /* renamed from: a  reason: collision with root package name */
     public String f705a;
     public String b;
-    public C0257fm c;
+    public C0256fm c;
 
     public final String b() {
         return this.b;

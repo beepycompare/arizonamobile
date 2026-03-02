@@ -13,19 +13,14 @@ public final class UtilsKt {
     private static final Lazy instance$delegate = LazyKt.lazy(new Function0() { // from class: coil3.disk.UtilsKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DiskCache instance_delegate$lambda$0;
-            instance_delegate$lambda$0 = UtilsKt.instance_delegate$lambda$0();
-            return instance_delegate$lambda$0;
+            DiskCache build;
+            build = new DiskCache.Builder().directory(FileSystem.SYSTEM_TEMPORARY_DIRECTORY.resolve("coil3_disk_cache")).build();
+            return build;
         }
     });
 
     private static final DiskCache getInstance() {
         return (DiskCache) instance$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final DiskCache instance_delegate$lambda$0() {
-        return new DiskCache.Builder().directory(FileSystem.SYSTEM_TEMPORARY_DIRECTORY.resolve("coil3_disk_cache")).build();
     }
 
     public static final DiskCache singletonDiskCache() {

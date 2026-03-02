@@ -2,12 +2,12 @@ package com.google.android.gms.common.stats;
 
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public abstract class StatsEvent extends AbstractSafeParcelable implements ReflectedParcelable {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface Types {
         public static final int EVENT_TYPE_ACQUIRE_WAKE_LOCK = 7;

@@ -11,7 +11,7 @@ import androidx.media3.common.C;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.vending.expansion.downloader.Constants;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class GoogleApiAvailabilityLight {
     public static final String GOOGLE_PLAY_SERVICES_PACKAGE = "com.google.android.gms";

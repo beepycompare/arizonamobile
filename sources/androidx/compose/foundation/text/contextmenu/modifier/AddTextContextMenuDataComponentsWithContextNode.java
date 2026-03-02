@@ -22,9 +22,7 @@ public final class AddTextContextMenuDataComponentsWithContextNode extends Deleg
         delegate(new AddTextContextMenuDataComponentsNode(new Function1() { // from class: androidx.compose.foundation.text.contextmenu.modifier.AddTextContextMenuDataComponentsWithContextNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = AddTextContextMenuDataComponentsWithContextNode._init_$lambda$0(AddTextContextMenuDataComponentsWithContextNode.this, (TextContextMenuBuilderScope) obj);
-                return _init_$lambda$0;
+                return AddTextContextMenuDataComponentsWithContextNode._init_$lambda$0(AddTextContextMenuDataComponentsWithContextNode.this, (TextContextMenuBuilderScope) obj);
             }
         }));
     }
@@ -37,7 +35,7 @@ public final class AddTextContextMenuDataComponentsWithContextNode extends Deleg
         this.builder = function2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(AddTextContextMenuDataComponentsWithContextNode addTextContextMenuDataComponentsWithContextNode, TextContextMenuBuilderScope textContextMenuBuilderScope) {
         addTextContextMenuDataComponentsWithContextNode.builder.invoke(textContextMenuBuilderScope, CompositionLocalConsumerModifierNodeKt.currentValueOf(addTextContextMenuDataComponentsWithContextNode, AndroidCompositionLocals_androidKt.getLocalContext()));
         return Unit.INSTANCE;

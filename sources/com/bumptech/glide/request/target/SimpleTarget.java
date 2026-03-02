@@ -22,9 +22,11 @@ public abstract class SimpleTarget<Z> extends BaseTarget<Z> {
 
     @Override // com.bumptech.glide.request.target.Target
     public final void getSize(SizeReadyCallback sizeReadyCallback) {
-        if (!Util.isValidDimensions(this.width, this.height)) {
-            throw new IllegalArgumentException("Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: " + this.width + " and height: " + this.height + ", either provide dimensions in the constructor or call override()");
+        boolean isValidDimensions = Util.isValidDimensions(this.width, this.height);
+        int i = this.width;
+        if (!isValidDimensions) {
+            throw new IllegalArgumentException("Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: " + i + " and height: " + this.height + ", either provide dimensions in the constructor or call override()");
         }
-        sizeReadyCallback.onSizeReady(this.width, this.height);
+        sizeReadyCallback.onSizeReady(i, this.height);
     }
 }

@@ -82,15 +82,15 @@ public final class DatePickerKt$Year$2 implements Function2<Composer, Integer, U
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 1181166895, "C2161@97949L2,2164@98029L194,2158@97794L521:DatePicker.kt#uh7d8r");
@@ -101,15 +101,16 @@ public final class DatePickerKt$Year$2 implements Function2<Composer, Integer, U
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$Year$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$2$lambda$1$lambda$0;
-                    invoke$lambda$2$lambda$1$lambda$0 = DatePickerKt$Year$2.invoke$lambda$2$lambda$1$lambda$0((SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$2$lambda$1$lambda$0;
+                    Unit unit;
+                    SemanticsPropertyReceiver semanticsPropertyReceiver = (SemanticsPropertyReceiver) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3255TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), datePickerColors.yearContentColor$material3(z, z2, z3, composer, 0).getValue().m5434unboximpl(), null, 0L, null, null, null, 0L, null, TextAlign.m8129boximpl(TextAlign.Companion.m8136getCentere0LSkKk()), 0L, 0, false, 0, 0, null, null, composer, 0, 0, 261112);
+        TextKt.m2712TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), datePickerColors.yearContentColor$material3(z, z2, z3, composer, 0).getValue().m4782unboximpl(), null, 0L, null, null, null, 0L, null, TextAlign.m7426boximpl(TextAlign.Companion.m7433getCentere0LSkKk()), 0L, 0, false, 0, 0, null, null, composer, 0, 0, 261112);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();
@@ -119,10 +120,5 @@ public final class DatePickerKt$Year$2 implements Function2<Composer, Integer, U
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invoke$lambda$2$lambda$1$lambda$0(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return Unit.INSTANCE;
     }
 }

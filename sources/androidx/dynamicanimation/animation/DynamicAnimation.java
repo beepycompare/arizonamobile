@@ -401,26 +401,42 @@ public abstract class DynamicAnimation<T extends DynamicAnimation<T>> implements
     }
 
     private void endAnimationInternal(boolean z) {
+        int i = 0;
         this.mRunning = false;
         getAnimationHandler().removeCallback(this);
         this.mLastFrameTime = 0L;
         this.mStartValueIsSet = false;
-        for (int i = 0; i < this.mEndListeners.size(); i++) {
-            if (this.mEndListeners.get(i) != null) {
-                this.mEndListeners.get(i).onAnimationEnd(this, z, this.mValue, this.mVelocity);
+        while (true) {
+            int size = this.mEndListeners.size();
+            ArrayList<OnAnimationEndListener> arrayList = this.mEndListeners;
+            if (i < size) {
+                if (arrayList.get(i) != null) {
+                    this.mEndListeners.get(i).onAnimationEnd(this, z, this.mValue, this.mVelocity);
+                }
+                i++;
+            } else {
+                removeNullEntries(arrayList);
+                return;
             }
         }
-        removeNullEntries(this.mEndListeners);
     }
 
     void setPropertyValue(float f) {
         this.mProperty.setValue(this.mTarget, f);
-        for (int i = 0; i < this.mUpdateListeners.size(); i++) {
-            if (this.mUpdateListeners.get(i) != null) {
-                this.mUpdateListeners.get(i).onAnimationUpdate(this, this.mValue, this.mVelocity);
+        int i = 0;
+        while (true) {
+            int size = this.mUpdateListeners.size();
+            ArrayList<OnAnimationUpdateListener> arrayList = this.mUpdateListeners;
+            if (i < size) {
+                if (arrayList.get(i) != null) {
+                    this.mUpdateListeners.get(i).onAnimationUpdate(this, this.mValue, this.mVelocity);
+                }
+                i++;
+            } else {
+                removeNullEntries(arrayList);
+                return;
             }
         }
-        removeNullEntries(this.mUpdateListeners);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

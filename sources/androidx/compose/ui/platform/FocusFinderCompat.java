@@ -41,9 +41,7 @@ public final class FocusFinderCompat {
     private final UserSpecifiedFocusComparator userSpecifiedFocusComparator = new UserSpecifiedFocusComparator(new UserSpecifiedFocusComparator.NextFocusGetter() { // from class: androidx.compose.ui.platform.FocusFinderCompat$$ExternalSyntheticLambda0
         @Override // androidx.compose.ui.platform.FocusFinderCompat.UserSpecifiedFocusComparator.NextFocusGetter
         public final View get(View view, View view2) {
-            View userSpecifiedFocusComparator$lambda$0;
-            userSpecifiedFocusComparator$lambda$0 = FocusFinderCompat.userSpecifiedFocusComparator$lambda$0(FocusFinderCompat.this, view, view2);
-            return userSpecifiedFocusComparator$lambda$0;
+            return FocusFinderCompat.userSpecifiedFocusComparator$lambda$0(FocusFinderCompat.this, view, view2);
         }
     });
     private final ArrayList<View> tmpList = new ArrayList<>();
@@ -70,7 +68,7 @@ public final class FocusFinderCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final View userSpecifiedFocusComparator$lambda$0(FocusFinderCompat focusFinderCompat, View view, View view2) {
         View findUserSetNextFocus;
         if (focusFinderCompat.isValidId(view2.getNextFocusForwardId())) {
@@ -264,7 +262,7 @@ public final class FocusFinderCompat {
                 androidx.compose.ui.geometry.Rect composeRect2 = RectHelper_androidKt.toComposeRect(this.bestCandidateRect);
                 androidx.compose.ui.geometry.Rect composeRect3 = RectHelper_androidKt.toComposeRect(rect);
                 FocusDirection focusDirection = FocusInteropUtils_androidKt.toFocusDirection(i);
-                if (TwoDimensionalFocusSearchKt.m5127isBetterCandidateI7lrPNg(composeRect, composeRect2, composeRect3, focusDirection != null ? focusDirection.m5057unboximpl() : FocusDirection.Companion.m5062getNextdhqQ8s())) {
+                if (TwoDimensionalFocusSearchKt.m4475isBetterCandidateI7lrPNg(composeRect, composeRect2, composeRect3, focusDirection != null ? focusDirection.m4405unboximpl() : FocusDirection.Companion.m4410getNextdhqQ8s())) {
                     this.bestCandidateRect.set(this.otherRect);
                     view2 = view3;
                 }

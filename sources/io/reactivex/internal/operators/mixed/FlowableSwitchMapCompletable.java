@@ -106,10 +106,11 @@ public final class FlowableSwitchMapCompletable<T> extends Completable {
             this.done = true;
             if (this.inner.get() == null) {
                 Throwable terminate = this.errors.terminate();
+                CompletableObserver completableObserver = this.downstream;
                 if (terminate == null) {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 } else {
-                    this.downstream.onError(terminate);
+                    completableObserver.onError(terminate);
                 }
             }
         }
@@ -158,10 +159,11 @@ public final class FlowableSwitchMapCompletable<T> extends Completable {
         void innerComplete(SwitchMapInnerObserver switchMapInnerObserver) {
             if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.inner, switchMapInnerObserver, null) && this.done) {
                 Throwable terminate = this.errors.terminate();
+                CompletableObserver completableObserver = this.downstream;
                 if (terminate == null) {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 } else {
-                    this.downstream.onError(terminate);
+                    completableObserver.onError(terminate);
                 }
             }
         }

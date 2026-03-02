@@ -46,7 +46,7 @@ final class TriStateToggleableElement extends ModifierNodeElement<TriStateToggle
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(TriStateToggleableNode triStateToggleableNode) {
-        triStateToggleableNode.m1265updateO2vRcR0(this.state, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.role, this.onClick);
+        triStateToggleableNode.m1108updateO2vRcR0(this.state, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.role, this.onClick);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -80,6 +80,6 @@ final class TriStateToggleableElement extends ModifierNodeElement<TriStateToggle
         IndicationNodeFactory indicationNodeFactory = this.indicationNodeFactory;
         int hashCode3 = (((((hashCode2 + (indicationNodeFactory != null ? indicationNodeFactory.hashCode() : 0)) * 31) + Boolean.hashCode(this.useLocalIndication)) * 31) + Boolean.hashCode(this.enabled)) * 31;
         Role role = this.role;
-        return ((hashCode3 + (role != null ? Role.m7439hashCodeimpl(role.m7441unboximpl()) : 0)) * 31) + this.onClick.hashCode();
+        return ((hashCode3 + (role != null ? Role.m6771hashCodeimpl(role.m6773unboximpl()) : 0)) * 31) + this.onClick.hashCode();
     }
 }

@@ -229,11 +229,13 @@ public class ViewTransitionController {
                 if (sharedValueID != i || sharedValueCurrent == i2) {
                     return;
                 }
-                if (z) {
-                    if (sharedValue == i2) {
+                boolean z2 = z;
+                int i4 = sharedValue;
+                if (z2) {
+                    if (i4 == i2) {
                         int childCount = ViewTransitionController.this.mMotionLayout.getChildCount();
-                        for (int i4 = 0; i4 < childCount; i4++) {
-                            View childAt = ViewTransitionController.this.mMotionLayout.getChildAt(i4);
+                        for (int i5 = 0; i5 < childCount; i5++) {
+                            View childAt = ViewTransitionController.this.mMotionLayout.getChildAt(i5);
                             if (viewTransition.matchesView(childAt)) {
                                 int currentState = ViewTransitionController.this.mMotionLayout.getCurrentState();
                                 ConstraintSet constraintSet = ViewTransitionController.this.mMotionLayout.getConstraintSet(currentState);
@@ -243,10 +245,10 @@ public class ViewTransitionController {
                             }
                         }
                     }
-                } else if (sharedValue != i2) {
+                } else if (i4 != i2) {
                     int childCount2 = ViewTransitionController.this.mMotionLayout.getChildCount();
-                    for (int i5 = 0; i5 < childCount2; i5++) {
-                        View childAt2 = ViewTransitionController.this.mMotionLayout.getChildAt(i5);
+                    for (int i6 = 0; i6 < childCount2; i6++) {
+                        View childAt2 = ViewTransitionController.this.mMotionLayout.getChildAt(i6);
                         if (viewTransition.matchesView(childAt2)) {
                             int currentState2 = ViewTransitionController.this.mMotionLayout.getCurrentState();
                             ConstraintSet constraintSet2 = ViewTransitionController.this.mMotionLayout.getConstraintSet(currentState2);

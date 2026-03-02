@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import androidx.compose.material3.BottomAppBarState;
 import androidx.compose.runtime.saveable.ListSaverKt;
 import androidx.compose.runtime.saveable.Saver;
 import androidx.compose.runtime.saveable.SaverScope;
@@ -37,16 +36,17 @@ public interface BottomAppBarState {
         private static final Saver<BottomAppBarState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.BottomAppBarState$Companion$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                List Saver$lambda$0;
-                Saver$lambda$0 = BottomAppBarState.Companion.Saver$lambda$0((SaverScope) obj, (BottomAppBarState) obj2);
-                return Saver$lambda$0;
+                List listOf;
+                SaverScope saverScope = (SaverScope) obj;
+                listOf = CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(r2.getHeightOffsetLimit()), Float.valueOf(r2.getHeightOffset()), Float.valueOf(((BottomAppBarState) obj2).getContentOffset())});
+                return listOf;
             }
         }, new Function1() { // from class: androidx.compose.material3.BottomAppBarState$Companion$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                BottomAppBarState Saver$lambda$1;
-                Saver$lambda$1 = BottomAppBarState.Companion.Saver$lambda$1((List) obj);
-                return Saver$lambda$1;
+                BottomAppBarState BottomAppBarState;
+                BottomAppBarState = AppBarKt.BottomAppBarState(((Number) r1.get(0)).floatValue(), ((Number) r1.get(1)).floatValue(), ((Number) ((List) obj).get(2)).floatValue());
+                return BottomAppBarState;
             }
         });
 
@@ -55,16 +55,6 @@ public interface BottomAppBarState {
 
         public final Saver<BottomAppBarState, ?> getSaver() {
             return Saver;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List Saver$lambda$0(SaverScope saverScope, BottomAppBarState bottomAppBarState) {
-            return CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(bottomAppBarState.getHeightOffsetLimit()), Float.valueOf(bottomAppBarState.getHeightOffset()), Float.valueOf(bottomAppBarState.getContentOffset())});
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final BottomAppBarState Saver$lambda$1(List list) {
-            return AppBarKt.BottomAppBarState(((Number) list.get(0)).floatValue(), ((Number) list.get(1)).floatValue(), ((Number) list.get(2)).floatValue());
         }
     }
 }

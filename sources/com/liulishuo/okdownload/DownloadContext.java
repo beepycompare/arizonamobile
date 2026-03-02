@@ -153,11 +153,12 @@ public class DownloadContext {
 
         public Builder bindSetTask(DownloadTask downloadTask) {
             int indexOf = this.boundTaskList.indexOf(downloadTask);
+            ArrayList<DownloadTask> arrayList = this.boundTaskList;
             if (indexOf >= 0) {
-                this.boundTaskList.set(indexOf, downloadTask);
+                arrayList.set(indexOf, downloadTask);
                 return this;
             }
-            this.boundTaskList.add(downloadTask);
+            arrayList.add(downloadTask);
             return this;
         }
 

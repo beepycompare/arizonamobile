@@ -28,16 +28,16 @@ public final class DefaultVelocityTracker implements PlatformVelocityTracker {
         this.strategy = strategy;
         this.xVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
         this.yVelocityTracker = new VelocityTracker1D(false, strategy, 1, null);
-        this.currentPointerPositionAccumulator = Offset.Companion.m5195getZeroF1C5BW0();
+        this.currentPointerPositionAccumulator = Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* renamed from: getCurrentPointerPositionAccumulator-F1C5BW0$ui  reason: not valid java name */
-    public final long m6841getCurrentPointerPositionAccumulatorF1C5BW0$ui() {
+    public final long m6182getCurrentPointerPositionAccumulatorF1C5BW0$ui() {
         return this.currentPointerPositionAccumulator;
     }
 
     /* renamed from: setCurrentPointerPositionAccumulator-k-4lQ0M$ui  reason: not valid java name */
-    public final void m6842setCurrentPointerPositionAccumulatork4lQ0M$ui(long j) {
+    public final void m6183setCurrentPointerPositionAccumulatork4lQ0M$ui(long j) {
         this.currentPointerPositionAccumulator = j;
     }
 
@@ -51,27 +51,27 @@ public final class DefaultVelocityTracker implements PlatformVelocityTracker {
 
     @Override // androidx.compose.ui.input.pointer.util.PlatformVelocityTracker
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public void mo6839addPositionUv8p0NA(long j, long j2) {
+    public void mo6180addPositionUv8p0NA(long j, long j2) {
         this.xVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 >> 32)));
         this.yVelocityTracker.addDataPoint(j, Float.intBitsToFloat((int) (j2 & 4294967295L)));
     }
 
     @Override // androidx.compose.ui.input.pointer.util.PlatformVelocityTracker
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public long mo6840calculateVelocityAH228Gc(long j) {
-        if (!(Velocity.m8496getXimpl(j) > 0.0f && Velocity.m8497getYimpl(j) > 0.0f)) {
-            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m8503toStringimpl(j)));
+    public long mo6181calculateVelocityAH228Gc(long j) {
+        if (!(Velocity.m7793getXimpl(j) > 0.0f && Velocity.m7794getYimpl(j) > 0.0f)) {
+            InlineClassHelperKt.throwIllegalStateException("maximumVelocity should be a positive value. You specified=" + ((Object) Velocity.m7800toStringimpl(j)));
         }
-        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m8496getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m8497getYimpl(j)));
+        return VelocityKt.Velocity(this.xVelocityTracker.calculateVelocity(Velocity.m7793getXimpl(j)), this.yVelocityTracker.calculateVelocity(Velocity.m7794getYimpl(j)));
     }
 
     @Override // androidx.compose.ui.input.pointer.util.PlatformVelocityTracker
     /* renamed from: addPointerInputChange-Uv8p0NA  reason: not valid java name */
-    public void mo6838addPointerInputChangeUv8p0NA(PointerInputChange pointerInputChange, long j) {
+    public void mo6179addPointerInputChangeUv8p0NA(PointerInputChange pointerInputChange, long j) {
         if (VelocityTrackerKt.getVelocityTrackerAddPointsFix()) {
-            m6837addPointerInputChangeWithFixUv8p0NA(pointerInputChange, j);
+            m6178addPointerInputChangeWithFixUv8p0NA(pointerInputChange, j);
         } else {
-            m6836addPointerInputChangeLegacyUv8p0NA(pointerInputChange, j);
+            m6177addPointerInputChangeLegacyUv8p0NA(pointerInputChange, j);
         }
     }
 
@@ -83,30 +83,30 @@ public final class DefaultVelocityTracker implements PlatformVelocityTracker {
     }
 
     /* renamed from: addPointerInputChangeLegacy-Uv8p0NA  reason: not valid java name */
-    private final void m6836addPointerInputChangeLegacyUv8p0NA(PointerInputChange pointerInputChange, long j) {
+    private final void m6177addPointerInputChangeLegacyUv8p0NA(PointerInputChange pointerInputChange, long j) {
         if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
-            this.currentPointerPositionAccumulator = pointerInputChange.m6744getPositionF1C5BW0();
+            this.currentPointerPositionAccumulator = pointerInputChange.m6085getPositionF1C5BW0();
             resetTracking();
         }
-        long m6745getPreviousPositionF1C5BW0 = pointerInputChange.m6745getPreviousPositionF1C5BW0();
+        long m6086getPreviousPositionF1C5BW0 = pointerInputChange.m6086getPreviousPositionF1C5BW0();
         List<HistoricalChange> historical = pointerInputChange.getHistorical();
         int size = historical.size();
         int i = 0;
         while (i < size) {
             HistoricalChange historicalChange = historical.get(i);
-            long m5183minusMKHz9U = Offset.m5183minusMKHz9U(historicalChange.m6655getPositionF1C5BW0(), m6745getPreviousPositionF1C5BW0);
-            long m6655getPositionF1C5BW0 = historicalChange.m6655getPositionF1C5BW0();
-            this.currentPointerPositionAccumulator = Offset.m5184plusMKHz9U(this.currentPointerPositionAccumulator, m5183minusMKHz9U);
-            mo6839addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m5184plusMKHz9U(this.currentPointerPositionAccumulator, j));
+            long m4531minusMKHz9U = Offset.m4531minusMKHz9U(historicalChange.m5996getPositionF1C5BW0(), m6086getPreviousPositionF1C5BW0);
+            long m5996getPositionF1C5BW0 = historicalChange.m5996getPositionF1C5BW0();
+            this.currentPointerPositionAccumulator = Offset.m4532plusMKHz9U(this.currentPointerPositionAccumulator, m4531minusMKHz9U);
+            mo6180addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4532plusMKHz9U(this.currentPointerPositionAccumulator, j));
             i++;
-            m6745getPreviousPositionF1C5BW0 = m6655getPositionF1C5BW0;
+            m6086getPreviousPositionF1C5BW0 = m5996getPositionF1C5BW0;
         }
-        this.currentPointerPositionAccumulator = Offset.m5184plusMKHz9U(this.currentPointerPositionAccumulator, Offset.m5183minusMKHz9U(pointerInputChange.m6744getPositionF1C5BW0(), m6745getPreviousPositionF1C5BW0));
-        mo6839addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m5184plusMKHz9U(this.currentPointerPositionAccumulator, j));
+        this.currentPointerPositionAccumulator = Offset.m4532plusMKHz9U(this.currentPointerPositionAccumulator, Offset.m4531minusMKHz9U(pointerInputChange.m6085getPositionF1C5BW0(), m6086getPreviousPositionF1C5BW0));
+        mo6180addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4532plusMKHz9U(this.currentPointerPositionAccumulator, j));
     }
 
     /* renamed from: addPointerInputChangeWithFix-Uv8p0NA  reason: not valid java name */
-    private final void m6837addPointerInputChangeWithFixUv8p0NA(PointerInputChange pointerInputChange, long j) {
+    private final void m6178addPointerInputChangeWithFixUv8p0NA(PointerInputChange pointerInputChange, long j) {
         if (PointerEventKt.changedToDownIgnoreConsumed(pointerInputChange)) {
             resetTracking();
         }
@@ -115,9 +115,9 @@ public final class DefaultVelocityTracker implements PlatformVelocityTracker {
             int size = historical.size();
             for (int i = 0; i < size; i++) {
                 HistoricalChange historicalChange = historical.get(i);
-                mo6839addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m5184plusMKHz9U(historicalChange.m6654getOriginalEventPositionF1C5BW0$ui(), j));
+                mo6180addPositionUv8p0NA(historicalChange.getUptimeMillis(), Offset.m4532plusMKHz9U(historicalChange.m5995getOriginalEventPositionF1C5BW0$ui(), j));
             }
-            mo6839addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m5184plusMKHz9U(pointerInputChange.m6743getOriginalEventPositionF1C5BW0$ui(), j));
+            mo6180addPositionUv8p0NA(pointerInputChange.getUptimeMillis(), Offset.m4532plusMKHz9U(pointerInputChange.m6084getOriginalEventPositionF1C5BW0$ui(), j));
         }
         if (PointerEventKt.changedToUpIgnoreConsumed(pointerInputChange) && pointerInputChange.getUptimeMillis() - this.lastMoveEventTimeStamp > 40) {
             resetTracking();

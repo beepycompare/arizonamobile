@@ -11,7 +11,7 @@ import android.os.Handler;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.scheduler.RequirementsWatcher;
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class RequirementsWatcher {
     private final Context context;
     private final Handler handler = Util.createHandlerForCurrentOrMainLooper();
@@ -21,7 +21,7 @@ public final class RequirementsWatcher {
     private DeviceStatusChangeReceiver receiver;
     private final Requirements requirements;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface Listener {
         void onRequirementsStateChanged(RequirementsWatcher requirementsWatcher, int i);
     }
@@ -96,7 +96,7 @@ public final class RequirementsWatcher {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class DeviceStatusChangeReceiver extends BroadcastReceiver {
         private DeviceStatusChangeReceiver() {
         }
@@ -111,7 +111,7 @@ public final class RequirementsWatcher {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public final class NetworkCallback extends ConnectivityManager.NetworkCallback {
         private boolean networkValidated;
         private boolean receivedCapabilitiesChange;
@@ -156,14 +156,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m9001xcc18be42();
+                    RequirementsWatcher.NetworkCallback.this.m8279xcc18be42();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postCheckRequirements$0$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m9001xcc18be42() {
+        public /* synthetic */ void m8279xcc18be42() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.checkRequirements();
             }
@@ -173,14 +173,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m9002xfb2bca45();
+                    RequirementsWatcher.NetworkCallback.this.m8280xfb2bca45();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRecheckNotMetNetworkRequirements$1$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m9002xfb2bca45() {
+        public /* synthetic */ void m8280xfb2bca45() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.recheckNotMetNetworkRequirements();
             }

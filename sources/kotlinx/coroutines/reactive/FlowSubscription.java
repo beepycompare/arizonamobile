@@ -198,20 +198,21 @@ public final class FlowSubscription<T> extends AbstractCoroutine<Unit> implement
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
                 this.this$0.subscriber.onNext(t);
                 atomicLongFieldUpdater = FlowSubscription.requested$volatile$FU;
-                if (atomicLongFieldUpdater.decrementAndGet(this.this$0) <= 0) {
-                    FlowSubscription<T> flowSubscription = this.this$0;
-                    CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation2), 1);
-                    cancellableContinuationImpl.initCancellability();
-                    atomicReferenceFieldUpdater = FlowSubscription.producer$volatile$FU;
-                    atomicReferenceFieldUpdater.set(flowSubscription, cancellableContinuationImpl);
-                    Object result = cancellableContinuationImpl.getResult();
-                    if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
-                        DebugProbesKt.probeCoroutineSuspended(continuation2);
-                    }
-                    return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
+                int i = (atomicLongFieldUpdater.decrementAndGet(this.this$0) > 0L ? 1 : (atomicLongFieldUpdater.decrementAndGet(this.this$0) == 0L ? 0 : -1));
+                FlowSubscription<T> flowSubscription = this.this$0;
+                if (i > 0) {
+                    JobKt.ensureActive(flowSubscription.getCoroutineContext());
+                    return Unit.INSTANCE;
                 }
-                JobKt.ensureActive(this.this$0.getCoroutineContext());
-                return Unit.INSTANCE;
+                CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation2), 1);
+                cancellableContinuationImpl.initCancellability();
+                atomicReferenceFieldUpdater = FlowSubscription.producer$volatile$FU;
+                atomicReferenceFieldUpdater.set(flowSubscription, cancellableContinuationImpl);
+                Object result = cancellableContinuationImpl.getResult();
+                if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
+                    DebugProbesKt.probeCoroutineSuspended(continuation2);
+                }
+                return result == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? result : Unit.INSTANCE;
             }
         }, continuation);
         return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
@@ -245,7 +246,7 @@ public final class FlowSubscription<T> extends AbstractCoroutine<Unit> implement
                 continuation = (Continuation) producer$volatile$FU.getAndSet(this, null);
             } while (continuation == null);
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
         }
     }
 }

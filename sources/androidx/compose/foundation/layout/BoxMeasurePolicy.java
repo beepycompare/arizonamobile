@@ -70,53 +70,52 @@ public final class BoxMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(final MeasureScope measureScope, final List<? extends Measurable> list, long j) {
+    public MeasureResult mo41measure3p2s80s(final MeasureScope measureScope, final List<? extends Measurable> list, long j) {
         boolean matchesParentSize;
         boolean matchesParentSize2;
         boolean matchesParentSize3;
-        int m8213getMinWidthimpl;
-        int m8212getMinHeightimpl;
-        Placeable mo6875measureBRTryo0;
+        int m7510getMinWidthimpl;
+        int m7509getMinHeightimpl;
+        Placeable mo6216measureBRTryo0;
         if (list.isEmpty()) {
-            return MeasureScope.layout$default(measureScope, Constraints.m8213getMinWidthimpl(j), Constraints.m8212getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.layout.BoxMeasurePolicy$$ExternalSyntheticLambda0
+            return MeasureScope.layout$default(measureScope, Constraints.m7510getMinWidthimpl(j), Constraints.m7509getMinHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.layout.BoxMeasurePolicy$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$0;
-                    measure_3p2s80s$lambda$0 = BoxMeasurePolicy.measure_3p2s80s$lambda$0((Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$0;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, 4, null);
         }
-        long m8199constructorimpl = this.propagateMinConstraints ? j : Constraints.m8199constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
+        long m7496constructorimpl = this.propagateMinConstraints ? j : Constraints.m7496constructorimpl(j & ConstraintsKt.MaxDimensionsAndFocusMask);
         if (list.size() == 1) {
             final Measurable measurable = list.get(0);
             matchesParentSize3 = BoxKt.getMatchesParentSize(measurable);
             if (!matchesParentSize3) {
-                mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(m8199constructorimpl);
-                m8213getMinWidthimpl = Math.max(Constraints.m8213getMinWidthimpl(j), mo6875measureBRTryo0.getWidth());
-                m8212getMinHeightimpl = Math.max(Constraints.m8212getMinHeightimpl(j), mo6875measureBRTryo0.getHeight());
+                mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7496constructorimpl);
+                m7510getMinWidthimpl = Math.max(Constraints.m7510getMinWidthimpl(j), mo6216measureBRTryo0.getWidth());
+                m7509getMinHeightimpl = Math.max(Constraints.m7509getMinHeightimpl(j), mo6216measureBRTryo0.getHeight());
             } else {
-                m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
-                m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
-                mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(Constraints.m8213getMinWidthimpl(j), Constraints.m8212getMinHeightimpl(j)));
+                m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
+                m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
+                mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(Constraints.m7510getMinWidthimpl(j), Constraints.m7509getMinHeightimpl(j)));
             }
-            final int i = m8213getMinWidthimpl;
-            final int i2 = m8212getMinHeightimpl;
-            final Placeable placeable = mo6875measureBRTryo0;
+            final int i = m7510getMinWidthimpl;
+            final int i2 = m7509getMinHeightimpl;
+            final Placeable placeable = mo6216measureBRTryo0;
             return MeasureScope.layout$default(measureScope, i, i2, null, new Function1() { // from class: androidx.compose.foundation.layout.BoxMeasurePolicy$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$1;
-                    measure_3p2s80s$lambda$1 = BoxMeasurePolicy.measure_3p2s80s$lambda$1(Placeable.this, measurable, measureScope, i, i2, this, (Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$1;
+                    return BoxMeasurePolicy.measure_3p2s80s$lambda$1(Placeable.this, measurable, measureScope, i, i2, this, (Placeable.PlacementScope) obj);
                 }
             }, 4, null);
         }
         final Placeable[] placeableArr = new Placeable[list.size()];
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.element = Constraints.m8213getMinWidthimpl(j);
+        intRef.element = Constraints.m7510getMinWidthimpl(j);
         final Ref.IntRef intRef2 = new Ref.IntRef();
-        intRef2.element = Constraints.m8212getMinHeightimpl(j);
+        intRef2.element = Constraints.m7509getMinHeightimpl(j);
         List<? extends Measurable> list2 = list;
         int size = list2.size();
         boolean z = false;
@@ -126,10 +125,10 @@ public final class BoxMeasurePolicy implements MeasurePolicy {
             if (matchesParentSize2) {
                 z = true;
             } else {
-                Placeable mo6875measureBRTryo02 = measurable2.mo6875measureBRTryo0(m8199constructorimpl);
-                placeableArr[i3] = mo6875measureBRTryo02;
-                intRef.element = Math.max(intRef.element, mo6875measureBRTryo02.getWidth());
-                intRef2.element = Math.max(intRef2.element, mo6875measureBRTryo02.getHeight());
+                Placeable mo6216measureBRTryo02 = measurable2.mo6216measureBRTryo0(m7496constructorimpl);
+                placeableArr[i3] = mo6216measureBRTryo02;
+                intRef.element = Math.max(intRef.element, mo6216measureBRTryo02.getWidth());
+                intRef2.element = Math.max(intRef2.element, mo6216measureBRTryo02.getHeight());
             }
         }
         if (z) {
@@ -139,32 +138,25 @@ public final class BoxMeasurePolicy implements MeasurePolicy {
                 Measurable measurable3 = list.get(i4);
                 matchesParentSize = BoxKt.getMatchesParentSize(measurable3);
                 if (matchesParentSize) {
-                    placeableArr[i4] = measurable3.mo6875measureBRTryo0(Constraints);
+                    placeableArr[i4] = measurable3.mo6216measureBRTryo0(Constraints);
                 }
             }
         }
         return MeasureScope.layout$default(measureScope, intRef.element, intRef2.element, null, new Function1() { // from class: androidx.compose.foundation.layout.BoxMeasurePolicy$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$4;
-                measure_3p2s80s$lambda$4 = BoxMeasurePolicy.measure_3p2s80s$lambda$4(placeableArr, list, measureScope, intRef, intRef2, this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$4;
+                return BoxMeasurePolicy.measure_3p2s80s$lambda$4(placeableArr, list, measureScope, intRef, intRef2, this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(Placeable placeable, Measurable measurable, MeasureScope measureScope, int i, int i2, BoxMeasurePolicy boxMeasurePolicy, Placeable.PlacementScope placementScope) {
         BoxKt.placeInBox(placementScope, placeable, measurable, measureScope.getLayoutDirection(), i, i2, boxMeasurePolicy.alignment);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$4(Placeable[] placeableArr, List list, MeasureScope measureScope, Ref.IntRef intRef, Ref.IntRef intRef2, BoxMeasurePolicy boxMeasurePolicy, Placeable.PlacementScope placementScope) {
         int length = placeableArr.length;
         int i = 0;

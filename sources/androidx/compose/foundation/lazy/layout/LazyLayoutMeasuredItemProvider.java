@@ -19,10 +19,10 @@ public abstract class LazyLayoutMeasuredItemProvider<T extends LazyLayoutMeasure
     private final MutableIntObjectMap<List<Placeable>> placeablesCache = IntObjectMapKt.mutableIntObjectMapOf();
 
     /* renamed from: getAndMeasure--hBUhpc */
-    public abstract T mo1056getAndMeasurehBUhpc(int i, int i2, int i3, long j);
+    public abstract T mo933getAndMeasurehBUhpc(int i, int i2, int i3, long j);
 
     /* renamed from: getPlaceables-3p2s80s  reason: not valid java name */
-    public final List<Placeable> m1133getPlaceables3p2s80s(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j) {
+    public final List<Placeable> m995getPlaceables3p2s80s(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j) {
         List<Placeable> list = this.placeablesCache.get(i);
         if (list != null) {
             return list;
@@ -31,7 +31,7 @@ public abstract class LazyLayoutMeasuredItemProvider<T extends LazyLayoutMeasure
         int size = compose.size();
         ArrayList arrayList = new ArrayList(size);
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(compose.get(i2).mo6875measureBRTryo0(j));
+            arrayList.add(compose.get(i2).mo6216measureBRTryo0(j));
         }
         ArrayList arrayList2 = arrayList;
         this.placeablesCache.set(i, arrayList2);

@@ -38,10 +38,10 @@ public final class IndirectPointerInputDragCycleDetector {
     private final DragGestureNode node;
     private TouchSlopDetector touchSlopDetector;
     private VelocityTracker velocityTracker;
-    private long previousPositionOnScreen = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+    private long previousPositionOnScreen = Offset.Companion.m4542getUnspecifiedF1C5BW0();
     private final IndirectPointerInputEventSmoother touchSmooth = new IndirectPointerInputEventSmoother();
     private final OffsetSmoother offsetSmoother = new OffsetSmoother();
-    private long nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
+    private long nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
 
     /* compiled from: IndirectPointerInputDragCycleDetector.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -154,22 +154,22 @@ public final class IndirectPointerInputDragCycleDetector {
     }
 
     /* renamed from: moveToAwaitTouchSlopState-aWI9W7U$default  reason: not valid java name */
-    static /* synthetic */ void m577moveToAwaitTouchSlopStateaWI9W7U$default(IndirectPointerInputDragCycleDetector indirectPointerInputDragCycleDetector, IndirectPointerInputChange indirectPointerInputChange, long j, long j2, boolean z, int i, Object obj) {
+    static /* synthetic */ void m496moveToAwaitTouchSlopStateaWI9W7U$default(IndirectPointerInputDragCycleDetector indirectPointerInputDragCycleDetector, IndirectPointerInputChange indirectPointerInputChange, long j, long j2, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
-            j2 = Offset.Companion.m5195getZeroF1C5BW0();
+            j2 = Offset.Companion.m4543getZeroF1C5BW0();
         }
         long j3 = j2;
         if ((i & 8) != 0) {
             z = false;
         }
-        indirectPointerInputDragCycleDetector.m576moveToAwaitTouchSlopStateaWI9W7U(indirectPointerInputChange, j, j3, z);
+        indirectPointerInputDragCycleDetector.m495moveToAwaitTouchSlopStateaWI9W7U(indirectPointerInputChange, j, j3, z);
     }
 
     /* renamed from: moveToAwaitTouchSlopState-aWI9W7U  reason: not valid java name */
-    private final void m576moveToAwaitTouchSlopStateaWI9W7U(IndirectPointerInputChange indirectPointerInputChange, long j, long j2, boolean z) {
+    private final void m495moveToAwaitTouchSlopStateaWI9W7U(IndirectPointerInputChange indirectPointerInputChange, long j, long j2, boolean z) {
         DragDetectionState.AwaitTouchSlop awaitTouchSlopState = getAwaitTouchSlopState();
         awaitTouchSlopState.setInitialDown(indirectPointerInputChange);
-        awaitTouchSlopState.m585setPointerId0FcD4WY(j);
+        awaitTouchSlopState.m504setPointerId0FcD4WY(j);
         TouchSlopDetector touchSlopDetector = this.touchSlopDetector;
         if (touchSlopDetector == null) {
             this.touchSlopDetector = new TouchSlopDetector(this.node.getOrientationLock(), 0L, 2, null);
@@ -179,7 +179,7 @@ public final class IndirectPointerInputDragCycleDetector {
             }
             TouchSlopDetector touchSlopDetector2 = this.touchSlopDetector;
             if (touchSlopDetector2 != null) {
-                touchSlopDetector2.m692resetk4lQ0M(j2);
+                touchSlopDetector2.m607resetk4lQ0M(j2);
             }
         }
         awaitTouchSlopState.setVerifyConsumptionInFinalPass(z);
@@ -187,9 +187,9 @@ public final class IndirectPointerInputDragCycleDetector {
     }
 
     /* renamed from: moveToDraggingState-0FcD4WY  reason: not valid java name */
-    private final void m578moveToDraggingState0FcD4WY(long j) {
+    private final void m497moveToDraggingState0FcD4WY(long j) {
         DragDetectionState.Dragging draggingState = getDraggingState();
-        draggingState.m587setPointerId0FcD4WY(j);
+        draggingState.m506setPointerId0FcD4WY(j);
         this.currentDragState = draggingState;
     }
 
@@ -201,11 +201,11 @@ public final class IndirectPointerInputDragCycleDetector {
     }
 
     /* renamed from: moveToAwaitGesturePickupState-rnUCldI  reason: not valid java name */
-    private final void m575moveToAwaitGesturePickupStaternUCldI(IndirectPointerInputChange indirectPointerInputChange, long j, TouchSlopDetector touchSlopDetector) {
+    private final void m494moveToAwaitGesturePickupStaternUCldI(IndirectPointerInputChange indirectPointerInputChange, long j, TouchSlopDetector touchSlopDetector) {
         DragDetectionState.AwaitGesturePickup awaitGesturePickupState = getAwaitGesturePickupState();
         awaitGesturePickupState.setInitialDown(indirectPointerInputChange);
-        awaitGesturePickupState.m583setPointerId0FcD4WY(j);
-        TouchSlopDetector.m688resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
+        awaitGesturePickupState.m502setPointerId0FcD4WY(j);
+        TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
         awaitGesturePickupState.setTouchSlopDetector(touchSlopDetector);
         this.currentDragState = awaitGesturePickupState;
     }
@@ -239,11 +239,11 @@ public final class IndirectPointerInputDragCycleDetector {
             }
             if (pointerEventPass == PointerEventPass.Main) {
                 if (awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.Yes) {
-                    m577moveToAwaitTouchSlopStateaWI9W7U$default(this, indirectPointerInputChange, indirectPointerInputChange.m6271getIdJ3iCeTQ(), 0L, false, 12, null);
+                    m496moveToAwaitTouchSlopStateaWI9W7U$default(this, indirectPointerInputChange, indirectPointerInputChange.m5612getIdJ3iCeTQ(), 0L, false, 12, null);
                 } else if (awaitDown.getConsumedOnInitial()) {
-                    m580sendDragStart3f7A7Is(indirectPointerInputChange, indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m5195getZeroF1C5BW0());
-                    m579sendDragEventEu1f8Dk(indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m5195getZeroF1C5BW0());
-                    m578moveToDraggingState0FcD4WY(indirectPointerInputChange.m6271getIdJ3iCeTQ());
+                    m499sendDragStart3f7A7Is(indirectPointerInputChange, indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
+                    m498sendDragEventEu1f8Dk(indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), Offset.Companion.m4543getZeroF1C5BW0());
+                    m497moveToDraggingState0FcD4WY(indirectPointerInputChange.m5612getIdJ3iCeTQ());
                 }
             }
         }
@@ -253,8 +253,8 @@ public final class IndirectPointerInputDragCycleDetector {
         IndirectPointerInputChange indirectPointerInputChange;
         IndirectPointerInputChange indirectPointerInputChange2;
         boolean changedToUpIgnoreConsumed;
-        long m598primaryAxisPosition_bfSUIo;
-        long m600primaryAxisPreviousPosition_bfSUIo;
+        long m517primaryAxisPosition_bfSUIo;
+        long m519primaryAxisPreviousPosition_bfSUIo;
         IndirectPointerInputChange indirectPointerInputChange3;
         if (pointerEventPass == PointerEventPass.Initial) {
             return;
@@ -269,7 +269,7 @@ public final class IndirectPointerInputDragCycleDetector {
                 break;
             }
             indirectPointerInputChange2 = changes.get(i);
-            if (PointerId.m6726equalsimpl0(indirectPointerInputChange2.m6271getIdJ3iCeTQ(), awaitTouchSlop.m584getPointerIdJ3iCeTQ())) {
+            if (PointerId.m6067equalsimpl0(indirectPointerInputChange2.m5612getIdJ3iCeTQ(), awaitTouchSlop.m503getPointerIdJ3iCeTQ())) {
                 break;
             }
             i++;
@@ -295,7 +295,7 @@ public final class IndirectPointerInputDragCycleDetector {
                 moveToAwaitDownState();
                 return;
             }
-            awaitTouchSlop.m585setPointerId0FcD4WY(indirectPointerInputChange4.m6271getIdJ3iCeTQ());
+            awaitTouchSlop.m504setPointerId0FcD4WY(indirectPointerInputChange4.m5612getIdJ3iCeTQ());
         }
         IndirectPointerInputChange indirectPointerInputChange5 = indirectPointerInputChange4;
         if (pointerEventPass == PointerEventPass.Main) {
@@ -320,21 +320,21 @@ public final class IndirectPointerInputDragCycleDetector {
                     if (indirectPointerInputChange7 == null) {
                         moveToAwaitDownState();
                     } else {
-                        awaitTouchSlop.m585setPointerId0FcD4WY(indirectPointerInputChange7.m6271getIdJ3iCeTQ());
+                        awaitTouchSlop.m504setPointerId0FcD4WY(indirectPointerInputChange7.m5612getIdJ3iCeTQ());
                     }
                 } else {
-                    float m550pointerSlopE8SPZFQ = DragGestureDetectorKt.m550pointerSlopE8SPZFQ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.node, CompositionLocalsKt.getLocalViewConfiguration()), PointerType.Companion.m6822getTouchT8wyACA());
+                    float m476pointerSlopE8SPZFQ = DragGestureDetectorKt.m476pointerSlopE8SPZFQ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.node, CompositionLocalsKt.getLocalViewConfiguration()), PointerType.Companion.m6163getTouchT8wyACA());
                     TouchSlopDetector requireTouchSlopDetector = requireTouchSlopDetector();
-                    m598primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m598primaryAxisPosition_bfSUIo(indirectPointerInputChange5, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
-                    m600primaryAxisPreviousPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m600primaryAxisPreviousPosition_bfSUIo(indirectPointerInputChange5, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
-                    long m689addPositionsakrDWew = requireTouchSlopDetector.m689addPositionsakrDWew(m598primaryAxisPosition_bfSUIo, m600primaryAxisPreviousPosition_bfSUIo, m550pointerSlopE8SPZFQ);
-                    if ((9223372034707292159L & m689addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    m517primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m517primaryAxisPosition_bfSUIo(indirectPointerInputChange5, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
+                    m519primaryAxisPreviousPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m519primaryAxisPreviousPosition_bfSUIo(indirectPointerInputChange5, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
+                    long m604addPositionsakrDWew = requireTouchSlopDetector.m604addPositionsakrDWew(m517primaryAxisPosition_bfSUIo, m519primaryAxisPreviousPosition_bfSUIo, m476pointerSlopE8SPZFQ);
+                    if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
                         indirectPointerInputChange5.consume();
                         IndirectPointerInputChange initialDown = awaitTouchSlop.getInitialDown();
                         Intrinsics.checkNotNull(initialDown);
-                        m580sendDragStart3f7A7Is(initialDown, indirectPointerInputChange5, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()), m689addPositionsakrDWew);
-                        m579sendDragEventEu1f8Dk(indirectPointerInputChange5, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()), m689addPositionsakrDWew);
-                        m578moveToDraggingState0FcD4WY(indirectPointerInputChange5.m6271getIdJ3iCeTQ());
+                        m499sendDragStart3f7A7Is(initialDown, indirectPointerInputChange5, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), m604addPositionsakrDWew);
+                        m498sendDragEventEu1f8Dk(indirectPointerInputChange5, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), m604addPositionsakrDWew);
+                        m497moveToDraggingState0FcD4WY(indirectPointerInputChange5.m5612getIdJ3iCeTQ());
                     } else {
                         awaitTouchSlop.setVerifyConsumptionInFinalPass(true);
                     }
@@ -344,10 +344,10 @@ public final class IndirectPointerInputDragCycleDetector {
                 if (initialDown2 == null) {
                     throw new IllegalArgumentException("AwaitTouchSlop.initialDown was not initialized".toString());
                 }
-                long m584getPointerIdJ3iCeTQ = awaitTouchSlop.m584getPointerIdJ3iCeTQ();
+                long m503getPointerIdJ3iCeTQ = awaitTouchSlop.m503getPointerIdJ3iCeTQ();
                 TouchSlopDetector touchSlopDetector = this.touchSlopDetector;
                 if (touchSlopDetector != null) {
-                    m575moveToAwaitGesturePickupStaternUCldI(initialDown2, m584getPointerIdJ3iCeTQ, touchSlopDetector);
+                    m494moveToAwaitGesturePickupStaternUCldI(initialDown2, m503getPointerIdJ3iCeTQ, touchSlopDetector);
                 } else {
                     throw new IllegalArgumentException("AwaitTouchSlop.touchSlopDetector was not initialized".toString());
                 }
@@ -359,10 +359,10 @@ public final class IndirectPointerInputDragCycleDetector {
                 if (initialDown3 == null) {
                     throw new IllegalArgumentException("AwaitTouchSlop.initialDown was not initialized".toString());
                 }
-                long m584getPointerIdJ3iCeTQ2 = awaitTouchSlop.m584getPointerIdJ3iCeTQ();
+                long m503getPointerIdJ3iCeTQ2 = awaitTouchSlop.m503getPointerIdJ3iCeTQ();
                 TouchSlopDetector touchSlopDetector2 = this.touchSlopDetector;
                 if (touchSlopDetector2 != null) {
-                    m575moveToAwaitGesturePickupStaternUCldI(initialDown3, m584getPointerIdJ3iCeTQ2, touchSlopDetector2);
+                    m494moveToAwaitGesturePickupStaternUCldI(initialDown3, m503getPointerIdJ3iCeTQ2, touchSlopDetector2);
                     return;
                 }
                 throw new IllegalArgumentException("AwaitTouchSlop.touchSlopDetector was not initialized".toString());
@@ -373,8 +373,8 @@ public final class IndirectPointerInputDragCycleDetector {
 
     private final void processAwaitGesturePickup(IndirectPointerEvent indirectPointerEvent, PointerEventPass pointerEventPass, DragDetectionState.AwaitGesturePickup awaitGesturePickup) {
         boolean z;
-        long m598primaryAxisPosition_bfSUIo;
-        long m598primaryAxisPosition_bfSUIo2;
+        long m517primaryAxisPosition_bfSUIo;
+        long m517primaryAxisPosition_bfSUIo2;
         if (pointerEventPass != PointerEventPass.Final) {
             return;
         }
@@ -402,14 +402,14 @@ public final class IndirectPointerInputDragCycleDetector {
                 i++;
             } else if (!indirectPointerEvent.getChanges().isEmpty()) {
                 if (z) {
-                    m598primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m598primaryAxisPosition_bfSUIo((IndirectPointerInputChange) CollectionsKt.first((List<? extends Object>) indirectPointerEvent.getChanges()), this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
+                    m517primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m517primaryAxisPosition_bfSUIo((IndirectPointerInputChange) CollectionsKt.first((List<? extends Object>) indirectPointerEvent.getChanges()), this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
                     IndirectPointerInputChange initialDown = awaitGesturePickup.getInitialDown();
                     Intrinsics.checkNotNull(initialDown);
-                    m598primaryAxisPosition_bfSUIo2 = IndirectPointerInputDragCycleDetectorKt.m598primaryAxisPosition_bfSUIo(initialDown, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
-                    long m5183minusMKHz9U = Offset.m5183minusMKHz9U(m598primaryAxisPosition_bfSUIo, m598primaryAxisPosition_bfSUIo2);
+                    m517primaryAxisPosition_bfSUIo2 = IndirectPointerInputDragCycleDetectorKt.m517primaryAxisPosition_bfSUIo(initialDown, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
+                    long m4531minusMKHz9U = Offset.m4531minusMKHz9U(m517primaryAxisPosition_bfSUIo, m517primaryAxisPosition_bfSUIo2);
                     IndirectPointerInputChange initialDown2 = awaitGesturePickup.getInitialDown();
                     if (initialDown2 != null) {
-                        m577moveToAwaitTouchSlopStateaWI9W7U$default(this, initialDown2, awaitGesturePickup.m582getPointerIdJ3iCeTQ(), m5183minusMKHz9U, false, 8, null);
+                        m496moveToAwaitTouchSlopStateaWI9W7U$default(this, initialDown2, awaitGesturePickup.m501getPointerIdJ3iCeTQ(), m4531minusMKHz9U, false, 8, null);
                         return;
                     }
                     throw new IllegalArgumentException("AwaitGesturePickup.initialDown was not initialized.".toString());
@@ -424,13 +424,13 @@ public final class IndirectPointerInputDragCycleDetector {
         IndirectPointerInputChange indirectPointerInputChange;
         IndirectPointerInputChange indirectPointerInputChange2;
         boolean changedToUpIgnoreConsumed;
-        long m595positionChangeIgnoreConsumed_bfSUIo;
-        long m594positionChange_bfSUIo;
+        long m514positionChangeIgnoreConsumed_bfSUIo;
+        long m513positionChange_bfSUIo;
         boolean changedToUpIgnoreConsumed2;
         if (pointerEventPass != PointerEventPass.Main) {
             return;
         }
-        long m586getPointerIdJ3iCeTQ = dragging.m586getPointerIdJ3iCeTQ();
+        long m505getPointerIdJ3iCeTQ = dragging.m505getPointerIdJ3iCeTQ();
         List<IndirectPointerInputChange> changes = indirectPointerEvent.getChanges();
         int size = changes.size();
         int i = 0;
@@ -442,7 +442,7 @@ public final class IndirectPointerInputDragCycleDetector {
                 break;
             }
             indirectPointerInputChange2 = changes.get(i2);
-            if (PointerId.m6726equalsimpl0(indirectPointerInputChange2.m6271getIdJ3iCeTQ(), m586getPointerIdJ3iCeTQ)) {
+            if (PointerId.m6067equalsimpl0(indirectPointerInputChange2.m5612getIdJ3iCeTQ(), m505getPointerIdJ3iCeTQ)) {
                 break;
             }
             i2++;
@@ -471,7 +471,7 @@ public final class IndirectPointerInputDragCycleDetector {
                 if (!indirectPointerInputChange3.isConsumed()) {
                     changedToUpIgnoreConsumed2 = IndirectPointerInputDragCycleDetectorKt.changedToUpIgnoreConsumed(indirectPointerInputChange3);
                     if (changedToUpIgnoreConsumed2) {
-                        m581sendDragStoppedk92h6UU(indirectPointerInputChange3, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
+                        m500sendDragStoppedk92h6UU(indirectPointerInputChange3, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
                         moveToAwaitDownState();
                         return;
                     }
@@ -480,14 +480,14 @@ public final class IndirectPointerInputDragCycleDetector {
                 moveToAwaitDownState();
                 return;
             }
-            dragging.m587setPointerId0FcD4WY(indirectPointerInputChange5.m6271getIdJ3iCeTQ());
+            dragging.m506setPointerId0FcD4WY(indirectPointerInputChange5.m5612getIdJ3iCeTQ());
         } else if (!indirectPointerInputChange3.isConsumed()) {
-            m595positionChangeIgnoreConsumed_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m595positionChangeIgnoreConsumed_bfSUIo(indirectPointerInputChange3, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
-            if (Offset.m5177getDistanceimpl(m595positionChangeIgnoreConsumed_bfSUIo) == 0.0f) {
+            m514positionChangeIgnoreConsumed_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m514positionChangeIgnoreConsumed_bfSUIo(indirectPointerInputChange3, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
+            if (Offset.m4525getDistanceimpl(m514positionChangeIgnoreConsumed_bfSUIo) == 0.0f) {
                 return;
             }
-            m594positionChange_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m594positionChange_bfSUIo(indirectPointerInputChange3, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()));
-            m579sendDragEventEu1f8Dk(indirectPointerInputChange3, IndirectPointerEventPrimaryDirectionalMotionAxis.m6250boximpl(indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw()), m594positionChange_bfSUIo);
+            m513positionChange_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m513positionChange_bfSUIo(indirectPointerInputChange3, this.node.getOrientationLock(), IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()));
+            m498sendDragEventEu1f8Dk(indirectPointerInputChange3, IndirectPointerEventPrimaryDirectionalMotionAxis.m5591boximpl(indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw()), m513positionChange_bfSUIo);
             indirectPointerInputChange3.consume();
         } else {
             sendDragCancelled();
@@ -495,44 +495,44 @@ public final class IndirectPointerInputDragCycleDetector {
     }
 
     /* renamed from: sendDragStart-3f7A7Is  reason: not valid java name */
-    private final void m580sendDragStart3f7A7Is(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerInputChange indirectPointerInputChange2, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, long j) {
-        long m598primaryAxisPosition_bfSUIo;
+    private final void m499sendDragStart3f7A7Is(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerInputChange indirectPointerInputChange2, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, long j) {
+        long m517primaryAxisPosition_bfSUIo;
         if (this.velocityTracker == null) {
             this.velocityTracker = new VelocityTracker();
         }
-        this.nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
-        IndirectPointerInputDragCycleDetectorKt.m593addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
-        m598primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m598primaryAxisPosition_bfSUIo(indirectPointerInputChange2, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis);
-        long m5183minusMKHz9U = Offset.m5183minusMKHz9U(m598primaryAxisPosition_bfSUIo, j);
-        if (this.node.getCanDrag().invoke(PointerType.m6812boximpl(PointerType.Companion.m6822getTouchT8wyACA())).booleanValue()) {
+        this.nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
+        IndirectPointerInputDragCycleDetectorKt.m512addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
+        m517primaryAxisPosition_bfSUIo = IndirectPointerInputDragCycleDetectorKt.m517primaryAxisPosition_bfSUIo(indirectPointerInputChange2, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis);
+        long m4531minusMKHz9U = Offset.m4531minusMKHz9U(m517primaryAxisPosition_bfSUIo, j);
+        if (this.node.getCanDrag().invoke(PointerType.m6153boximpl(PointerType.Companion.m6163getTouchT8wyACA())).booleanValue()) {
             this.previousPositionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this.node));
-            this.node.onDragEvent(new DragEvent.DragStarted(m5183minusMKHz9U, null));
+            this.node.onDragEvent(new DragEvent.DragStarted(m4531minusMKHz9U, null));
         }
         this.offsetSmoother.reset();
     }
 
     /* renamed from: sendDragEvent-Eu1f8Dk  reason: not valid java name */
-    private final void m579sendDragEventEu1f8Dk(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, long j) {
+    private final void m498sendDragEventEu1f8Dk(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, long j) {
         long positionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this.node));
-        if (!Offset.m5176equalsimpl0(this.previousPositionOnScreen, Offset.Companion.m5194getUnspecifiedF1C5BW0()) && !Offset.m5176equalsimpl0(positionOnScreen, this.previousPositionOnScreen)) {
-            this.nodeOffset = Offset.m5184plusMKHz9U(this.nodeOffset, Offset.m5183minusMKHz9U(positionOnScreen, this.previousPositionOnScreen));
+        if (!Offset.m4524equalsimpl0(this.previousPositionOnScreen, Offset.Companion.m4542getUnspecifiedF1C5BW0()) && !Offset.m4524equalsimpl0(positionOnScreen, this.previousPositionOnScreen)) {
+            this.nodeOffset = Offset.m4532plusMKHz9U(this.nodeOffset, Offset.m4531minusMKHz9U(positionOnScreen, this.previousPositionOnScreen));
         }
         this.previousPositionOnScreen = positionOnScreen;
         Orientation orientationLock = this.node.getOrientationLock();
         Intrinsics.checkNotNull(orientationLock);
-        if (Math.abs(DraggableKt.m566toFloat3MmeM6k(j, orientationLock)) > 2.0f) {
-            IndirectPointerInputDragCycleDetectorKt.m593addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
-            this.node.onDragEvent(new DragEvent.DragDelta(this.offsetSmoother.m613smoothEventPositionMKHz9U(j), true, null));
+        if (Math.abs(DraggableKt.m486toFloat3MmeM6k(j, orientationLock)) > 2.0f) {
+            IndirectPointerInputDragCycleDetectorKt.m512addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
+            this.node.onDragEvent(new DragEvent.DragDelta(this.offsetSmoother.m532smoothEventPositionMKHz9U(j), true, null));
         }
     }
 
     /* renamed from: sendDragStopped-k92h6UU  reason: not valid java name */
-    private final void m581sendDragStoppedk92h6UU(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
-        IndirectPointerInputDragCycleDetectorKt.m593addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
+    private final void m500sendDragStoppedk92h6UU(IndirectPointerInputChange indirectPointerInputChange, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+        IndirectPointerInputDragCycleDetectorKt.m512addIndirectPointerInputChangeQf4Zb88(requireVelocityTracker(), indirectPointerInputChange, this.node.getOrientationLock(), indirectPointerEventPrimaryDirectionalMotionAxis, this.touchSmooth, this.nodeOffset);
         float maximumFlingVelocity = ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.node, CompositionLocalsKt.getLocalViewConfiguration())).getMaximumFlingVelocity();
-        long m6850calculateVelocityAH228Gc = requireVelocityTracker().m6850calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
+        long m6191calculateVelocityAH228Gc = requireVelocityTracker().m6191calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
         requireVelocityTracker().resetTracking();
-        this.node.onDragEvent(new DragEvent.DragStopped(DraggableKt.m568toValidVelocityTH1AsA0(m6850calculateVelocityAH228Gc), true, null));
+        this.node.onDragEvent(new DragEvent.DragStopped(DraggableKt.m488toValidVelocityTH1AsA0(m6191calculateVelocityAH228Gc), true, null));
     }
 
     private final void sendDragCancelled() {
@@ -658,16 +658,16 @@ public final class IndirectPointerInputDragCycleDetector {
             }
 
             public /* synthetic */ AwaitTouchSlop(IndirectPointerInputChange indirectPointerInputChange, long j, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this((i & 1) != 0 ? null : indirectPointerInputChange, (i & 2) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? false : z, null);
+                this((i & 1) != 0 ? null : indirectPointerInputChange, (i & 2) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? false : z, null);
             }
 
             /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-            public final long m584getPointerIdJ3iCeTQ() {
+            public final long m503getPointerIdJ3iCeTQ() {
                 return this.pointerId;
             }
 
             /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-            public final void m585setPointerId0FcD4WY(long j) {
+            public final void m504setPointerId0FcD4WY(long j) {
                 this.pointerId = j;
             }
 
@@ -709,16 +709,16 @@ public final class IndirectPointerInputDragCycleDetector {
             }
 
             public /* synthetic */ AwaitGesturePickup(IndirectPointerInputChange indirectPointerInputChange, long j, TouchSlopDetector touchSlopDetector, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this((i & 1) != 0 ? null : indirectPointerInputChange, (i & 2) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? null : touchSlopDetector, null);
+                this((i & 1) != 0 ? null : indirectPointerInputChange, (i & 2) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? null : touchSlopDetector, null);
             }
 
             /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-            public final long m582getPointerIdJ3iCeTQ() {
+            public final long m501getPointerIdJ3iCeTQ() {
                 return this.pointerId;
             }
 
             /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-            public final void m583setPointerId0FcD4WY(long j) {
+            public final void m502setPointerId0FcD4WY(long j) {
                 this.pointerId = j;
             }
 
@@ -748,16 +748,16 @@ public final class IndirectPointerInputDragCycleDetector {
             }
 
             public /* synthetic */ Dragging(long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this((i & 1) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, null);
+                this((i & 1) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, null);
             }
 
             /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-            public final long m586getPointerIdJ3iCeTQ() {
+            public final long m505getPointerIdJ3iCeTQ() {
                 return this.pointerId;
             }
 
             /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-            public final void m587setPointerId0FcD4WY(long j) {
+            public final void m506setPointerId0FcD4WY(long j) {
                 this.pointerId = j;
             }
         }

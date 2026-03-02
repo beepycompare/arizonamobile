@@ -207,10 +207,11 @@ public final class CodedInputStream {
 
         ByteBuffer getSkippedData() {
             ByteArrayOutputStream byteArrayOutputStream = this.byteArrayStream;
+            CodedInputStream codedInputStream = CodedInputStream.this;
             if (byteArrayOutputStream == null) {
-                return ByteBuffer.wrap(CodedInputStream.this.buffer, this.lastPos, CodedInputStream.this.bufferPos - this.lastPos);
+                return ByteBuffer.wrap(codedInputStream.buffer, this.lastPos, CodedInputStream.this.bufferPos - this.lastPos);
             }
-            byteArrayOutputStream.write(CodedInputStream.this.buffer, this.lastPos, CodedInputStream.this.bufferPos);
+            byteArrayOutputStream.write(codedInputStream.buffer, this.lastPos, CodedInputStream.this.bufferPos);
             return ByteBuffer.wrap(this.byteArrayStream.toByteArray());
         }
     }

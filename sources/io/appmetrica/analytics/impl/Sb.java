@@ -12,7 +12,7 @@ public final class Sb implements Pb, ToggleObserver {
 
     /* renamed from: a  reason: collision with root package name */
     public final ArrayList f779a = new ArrayList();
-    public final IHandlerExecutor b = C0449na.k().w().b();
+    public final IHandlerExecutor b = C0448na.k().w().b();
     public Kn c;
     public boolean d;
 

@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.elements.dialogs.AbstractDialog;
 import ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider;
 import ru.mrlargha.commonui.utils.ConverterKt;
 /* compiled from: TableDialog.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eBS\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\t0\t\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\u0007\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0005¢\u0006\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "tableData", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "leftButtonText", "rightButtonText", "useFirstRowAsHeader", "", "sampDialogId", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Ljava/util/List;Landroid/text/SpannableString;Landroid/text/SpannableString;ZI)V", "dialogLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "captionTextView", "Landroid/widget/TextView;", "button1", "Landroid/widget/Button;", "button2", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "maxLengthInRow", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eBS\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0012\u0010\b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\t0\t\u0012\u0006\u0010\u000b\u001a\u00020\u0007\u0012\u0006\u0010\f\u001a\u00020\u0007\u0012\u0006\u0010\r\u001a\u00020\u000e\u0012\u0006\u0010\u000f\u001a\u00020\u0005¢\u0006\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "tableData", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "leftButtonText", "rightButtonText", "useFirstRowAsHeader", "", "sampDialogId", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Ljava/util/List;Landroid/text/SpannableString;Landroid/text/SpannableString;ZI)V", "dialogLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "captionTextView", "Landroid/widget/TextView;", "button1", "Landroid/widget/Button;", "button2", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "maxLengthInRow", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TableDialog extends AbstractDialog {
     public static final Companion Companion = new Companion(null);
@@ -78,10 +78,12 @@ public final class TableDialog extends AbstractDialog {
                     }
                 }
             }
-            if (this.maxLengthInRow <= 37) {
-                this.recyclerView.getLayoutParams().width = ConverterKt.dpToPx(200, targetActivity);
+            int i3 = this.maxLengthInRow;
+            RecyclerView recyclerView2 = this.recyclerView;
+            if (i3 <= 37) {
+                recyclerView2.getLayoutParams().width = ConverterKt.dpToPx(200, targetActivity);
             } else {
-                this.recyclerView.getLayoutParams().width = ConverterKt.dpToPx(this.maxLengthInRow * 6, targetActivity);
+                recyclerView2.getLayoutParams().width = ConverterKt.dpToPx(this.maxLengthInRow * 6, targetActivity);
             }
         }
         this.recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -94,10 +96,12 @@ public final class TableDialog extends AbstractDialog {
         }
         setVisibility(true);
         SpannableString spannableString = leftButtonText;
-        if (spannableString.length() == 0) {
-            this.button1.setVisibility(8);
+        int length = spannableString.length();
+        Button button = this.button1;
+        if (length == 0) {
+            button.setVisibility(8);
         } else {
-            this.button1.setText(spannableString);
+            button.setText(spannableString);
             this.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -106,11 +110,13 @@ public final class TableDialog extends AbstractDialog {
             });
         }
         SpannableString spannableString2 = rightButtonText;
-        if (spannableString2.length() == 0) {
-            this.button2.setVisibility(8);
+        int length2 = spannableString2.length();
+        Button button2 = this.button2;
+        if (length2 == 0) {
+            button2.setVisibility(8);
             return;
         }
-        this.button2.setText(spannableString2);
+        button2.setText(spannableString2);
         this.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -119,7 +125,7 @@ public final class TableDialog extends AbstractDialog {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(Activity activity, int i, TableDialog tableDialog, boolean z, View view) {
         int selectedItemId;
         Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider");
@@ -138,7 +144,7 @@ public final class TableDialog extends AbstractDialog {
         tableDialog.getNotifier().destroyDialog();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(TableDialog tableDialog, int i, boolean z, View view) {
         int selectedItemId;
         IBackendNotifier notifier = tableDialog.getNotifier();
@@ -154,7 +160,7 @@ public final class TableDialog extends AbstractDialog {
     }
 
     /* compiled from: TableDialog.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010%\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog$Companion;", "", "<init>", "()V", "savedRows", "", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010%\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/TableDialog$Companion;", "", "<init>", "()V", "savedRows", "", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

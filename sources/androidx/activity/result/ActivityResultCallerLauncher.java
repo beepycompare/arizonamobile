@@ -29,9 +29,7 @@ public final class ActivityResultCallerLauncher<I, O> extends ActivityResultLaun
         this.resultContract$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.result.ActivityResultCallerLauncher$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ActivityResultCallerLauncher$resultContract$2$1 resultContract_delegate$lambda$0;
-                resultContract_delegate$lambda$0 = ActivityResultCallerLauncher.resultContract_delegate$lambda$0(ActivityResultCallerLauncher.this);
-                return resultContract_delegate$lambda$0;
+                return ActivityResultCallerLauncher.resultContract_delegate$lambda$0(ActivityResultCallerLauncher.this);
             }
         });
         this.contract = getResultContract();
@@ -49,7 +47,7 @@ public final class ActivityResultCallerLauncher<I, O> extends ActivityResultLaun
         return (ActivityResultContract) this.resultContract$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r0v0, types: [androidx.activity.result.ActivityResultCallerLauncher$resultContract$2$1] */
     public static final ActivityResultCallerLauncher$resultContract$2$1 resultContract_delegate$lambda$0(final ActivityResultCallerLauncher activityResultCallerLauncher) {
         return new ActivityResultContract<Unit, O>(activityResultCallerLauncher) { // from class: androidx.activity.result.ActivityResultCallerLauncher$resultContract$2$1

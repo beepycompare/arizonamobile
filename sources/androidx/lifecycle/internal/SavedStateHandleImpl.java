@@ -45,9 +45,7 @@ public final class SavedStateHandleImpl {
         this.savedStateProvider = new SavedStateRegistry.SavedStateProvider() { // from class: androidx.lifecycle.internal.SavedStateHandleImpl$$ExternalSyntheticLambda0
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle savedStateProvider$lambda$0;
-                savedStateProvider$lambda$0 = SavedStateHandleImpl.savedStateProvider$lambda$0(SavedStateHandleImpl.this);
-                return savedStateProvider$lambda$0;
+                return SavedStateHandleImpl.savedStateProvider$lambda$0(SavedStateHandleImpl.this);
             }
         };
     }
@@ -68,7 +66,7 @@ public final class SavedStateHandleImpl {
         return this.savedStateProvider;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle savedStateProvider$lambda$0(SavedStateHandleImpl savedStateHandleImpl) {
         Pair[] pairArr;
         for (Map.Entry entry : MapsKt.toMap(savedStateHandleImpl.mutableFlows).entrySet()) {
@@ -88,7 +86,7 @@ public final class SavedStateHandleImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         return bundleOf;
     }
 

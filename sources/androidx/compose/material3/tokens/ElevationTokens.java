@@ -9,43 +9,43 @@ import kotlin.Metadata;
 public final class ElevationTokens {
     public static final int $stable = 0;
     public static final ElevationTokens INSTANCE = new ElevationTokens();
-    private static final float Level0 = Dp.m8258constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    private static final float Level1 = Dp.m8258constructorimpl((float) 1.0d);
-    private static final float Level2 = Dp.m8258constructorimpl((float) 3.0d);
-    private static final float Level3 = Dp.m8258constructorimpl((float) 6.0d);
-    private static final float Level4 = Dp.m8258constructorimpl((float) 8.0d);
-    private static final float Level5 = Dp.m8258constructorimpl((float) 12.0d);
+    private static final float Level0 = Dp.m7555constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float Level1 = Dp.m7555constructorimpl((float) 1.0d);
+    private static final float Level2 = Dp.m7555constructorimpl((float) 3.0d);
+    private static final float Level3 = Dp.m7555constructorimpl((float) 6.0d);
+    private static final float Level4 = Dp.m7555constructorimpl((float) 8.0d);
+    private static final float Level5 = Dp.m7555constructorimpl((float) 12.0d);
 
     private ElevationTokens() {
     }
 
     /* renamed from: getLevel0-D9Ej5fM  reason: not valid java name */
-    public final float m3975getLevel0D9Ej5fM() {
+    public final float m3359getLevel0D9Ej5fM() {
         return Level0;
     }
 
     /* renamed from: getLevel1-D9Ej5fM  reason: not valid java name */
-    public final float m3976getLevel1D9Ej5fM() {
+    public final float m3360getLevel1D9Ej5fM() {
         return Level1;
     }
 
     /* renamed from: getLevel2-D9Ej5fM  reason: not valid java name */
-    public final float m3977getLevel2D9Ej5fM() {
+    public final float m3361getLevel2D9Ej5fM() {
         return Level2;
     }
 
     /* renamed from: getLevel3-D9Ej5fM  reason: not valid java name */
-    public final float m3978getLevel3D9Ej5fM() {
+    public final float m3362getLevel3D9Ej5fM() {
         return Level3;
     }
 
     /* renamed from: getLevel4-D9Ej5fM  reason: not valid java name */
-    public final float m3979getLevel4D9Ej5fM() {
+    public final float m3363getLevel4D9Ej5fM() {
         return Level4;
     }
 
     /* renamed from: getLevel5-D9Ej5fM  reason: not valid java name */
-    public final float m3980getLevel5D9Ej5fM() {
+    public final float m3364getLevel5D9Ej5fM() {
         return Level5;
     }
 }

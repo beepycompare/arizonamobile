@@ -15,7 +15,7 @@ public final class TextDrawStyleKt {
     public static final TextForegroundStyle lerp(TextForegroundStyle textForegroundStyle, TextForegroundStyle textForegroundStyle2, float f) {
         boolean z = textForegroundStyle instanceof BrushStyle;
         if (!z && !(textForegroundStyle2 instanceof BrushStyle)) {
-            return TextForegroundStyle.Companion.m8163from8_81llA(ColorKt.m5475lerpjxsXWHM(textForegroundStyle.mo8016getColor0d7_KjU(), textForegroundStyle2.mo8016getColor0d7_KjU(), f));
+            return TextForegroundStyle.Companion.m7460from8_81llA(ColorKt.m4823lerpjxsXWHM(textForegroundStyle.mo7313getColor0d7_KjU(), textForegroundStyle2.mo7313getColor0d7_KjU(), f));
         }
         if (z && (textForegroundStyle2 instanceof BrushStyle)) {
             BrushStyle brushStyle = (BrushStyle) textForegroundStyle;
@@ -26,8 +26,8 @@ public final class TextDrawStyleKt {
     }
 
     /* renamed from: modulate-DxMtmZc */
-    public static final long m8162modulateDxMtmZc(long j, float f) {
-        return (Float.isNaN(f) || f >= 1.0f) ? j : Color.m5423copywmQWz5c$default(j, Color.m5426getAlphaimpl(j) * f, 0.0f, 0.0f, 0.0f, 14, null);
+    public static final long m7459modulateDxMtmZc(long j, float f) {
+        return (Float.isNaN(f) || f >= 1.0f) ? j : Color.m4771copywmQWz5c$default(j, Color.m4774getAlphaimpl(j) * f, 0.0f, 0.0f, 0.0f, 14, null);
     }
 
     public static final float takeOrElse(float f, Function0<Float> function0) {

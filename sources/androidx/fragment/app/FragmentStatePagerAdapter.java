@@ -79,14 +79,20 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
+        ArrayList<Fragment.SavedState> arrayList;
         Fragment fragment = (Fragment) obj;
         if (this.mCurTransaction == null) {
             this.mCurTransaction = this.mFragmentManager.beginTransaction();
         }
-        while (this.mSavedState.size() <= i) {
-            this.mSavedState.add(null);
+        while (true) {
+            int size = this.mSavedState.size();
+            arrayList = this.mSavedState;
+            if (size > i) {
+                break;
+            }
+            arrayList.add(null);
         }
-        this.mSavedState.set(i, fragment.isAdded() ? this.mFragmentManager.saveFragmentInstanceState(fragment) : null);
+        arrayList.set(i, fragment.isAdded() ? this.mFragmentManager.saveFragmentInstanceState(fragment) : null);
         this.mFragments.set(i, null);
         this.mCurTransaction.remove(fragment);
         if (fragment.equals(this.mCurrentPrimaryItem)) {

@@ -9,7 +9,7 @@ import kotlin.ranges.IntRange;
 /* loaded from: classes.dex */
 public interface DatePickerState {
     /* renamed from: getDisplayMode-jFl-4v0  reason: not valid java name */
-    int mo2328getDisplayModejFl4v0();
+    int mo1996getDisplayModejFl4v0();
 
     long getDisplayedMonthMillis();
 
@@ -22,7 +22,7 @@ public interface DatePickerState {
     IntRange getYearRange();
 
     /* renamed from: setDisplayMode-vCnGnXg  reason: not valid java name */
-    void mo2329setDisplayModevCnGnXg(int i);
+    void mo1997setDisplayModevCnGnXg(int i);
 
     void setDisplayedMonthMillis(long j);
 

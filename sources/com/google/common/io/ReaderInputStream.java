@@ -88,10 +88,13 @@ final class ReaderInputStream extends InputStream {
             while (true) {
                 if (this.doneFlushing) {
                     encode = CoderResult.UNDERFLOW;
-                } else if (z) {
-                    encode = this.encoder.flush(this.byteBuffer);
                 } else {
-                    encode = this.encoder.encode(this.charBuffer, this.byteBuffer, this.endOfInput);
+                    CharsetEncoder charsetEncoder = this.encoder;
+                    if (z) {
+                        encode = charsetEncoder.flush(this.byteBuffer);
+                    } else {
+                        encode = charsetEncoder.encode(this.charBuffer, this.byteBuffer, this.endOfInput);
+                    }
                 }
                 if (encode.isOverflow()) {
                     startDraining(true);
@@ -123,10 +126,12 @@ final class ReaderInputStream extends InputStream {
 
     private void readMoreChars() throws IOException {
         if (availableCapacity(this.charBuffer) == 0) {
-            if (this.charBuffer.position() > 0) {
-                Java8Compatibility.flip(this.charBuffer.compact());
+            int position = this.charBuffer.position();
+            CharBuffer charBuffer = this.charBuffer;
+            if (position > 0) {
+                Java8Compatibility.flip(charBuffer.compact());
             } else {
-                this.charBuffer = grow(this.charBuffer);
+                this.charBuffer = grow(charBuffer);
             }
         }
         int limit = this.charBuffer.limit();

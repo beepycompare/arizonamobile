@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 interface CalculateMatrixToWindow {
     /* renamed from: calculateMatrixToWindow-EL8BTi8  reason: not valid java name */
-    void mo7341calculateMatrixToWindowEL8BTi8(View view, float[] fArr);
+    void mo6677calculateMatrixToWindowEL8BTi8(View view, float[] fArr);
 }

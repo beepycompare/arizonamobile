@@ -78,19 +78,19 @@ import kotlinx.coroutines.flow.StateFlowKt;
 @Metadata(d1 = {"\u0000V\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a}\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u00062\u0006\u0010\u0007\u001a\u00020\b2\b\b\u0002\u0010\t\u001a\u00020\n2\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00052\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\r2\b\b\u0002\u0010\u000f\u001a\u00020\r2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u0011\u001aP\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u000e\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\r0\u00142\u0006\u0010\u000f\u001a\u00020\r2\b\b\u0002\u0010\t\u001a\u00020\n2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0015\u001a^\u0010\u0016\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\b2\u000e\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00052\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\f\u001a\u00020\r2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\r0\u00142\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0003¢\u0006\u0002\u0010\u0019\u001a\u001c\u0010\u001a\u001a\u00020\n*\u00020\n2\u0006\u0010\u001b\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\bH\u0002\u001a,\u0010\u001c\u001a\u00020\n*\u00020\n2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001b\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002\u001a:\u0010\u001f\u001a\u00020\n*\u00020\n2\u0006\u0010\u001b\u001a\u00020\r2\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\r2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\r0\u0014H\u0002\u001a+\u0010 \u001a\u00020\b2\b\b\u0002\u0010!\u001a\u00020\r2\b\b\u0002\u0010\"\u001a\u00020\r2\b\b\u0002\u0010#\u001a\u00020$H\u0001¢\u0006\u0002\u0010%\u001a&\u0010&\u001a\u00020\b2\b\b\u0002\u0010!\u001a\u00020\r2\b\b\u0002\u0010\"\u001a\u00020\r2\b\b\u0002\u0010#\u001a\u00020$H\u0001\u001a\u0013\u0010'\u001a\b\u0012\u0004\u0012\u00020\r0(H\u0003¢\u0006\u0002\u0010)¨\u0006*"}, d2 = {"BasicTooltipBox", "", "positionProvider", "Landroidx/compose/ui/window/PopupPositionProvider;", "tooltip", "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/TooltipState;", "modifier", "Landroidx/compose/ui/Modifier;", "onDismissRequest", "focusable", "", "enableUserInput", "hasAction", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/ui/window/PopupPositionProvider;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/TooltipState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;ZZZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "WrappedAnchor", "forceKeyboardFocusable", "Landroidx/compose/runtime/MutableState;", "(ZLandroidx/compose/material3/TooltipState;Landroidx/compose/runtime/MutableState;ZLandroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "TooltipPopup", "scope", "Lkotlinx/coroutines/CoroutineScope;", "(Landroidx/compose/ui/window/PopupPositionProvider;Landroidx/compose/material3/TooltipState;Lkotlin/jvm/functions/Function0;Lkotlinx/coroutines/CoroutineScope;ZLandroidx/compose/runtime/MutableState;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "handleGestures", "enabled", "anchorSemantics", Constants.ScionAnalytics.PARAM_LABEL, "", "keyboardBehavior", "rememberBasicTooltipState", "initialIsVisible", "isPersistent", "mutatorMutex", "Landroidx/compose/foundation/MutatorMutex;", "(ZZLandroidx/compose/foundation/MutatorMutex;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/TooltipState;", "BasicTooltipState", "rememberTouchExplorationOrSwitchAccessServiceState", "Landroidx/compose/runtime/State;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicTooltipKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTooltipBox$lambda$5(PopupPositionProvider popupPositionProvider, Function2 function2, TooltipState tooltipState, Modifier modifier, Function0 function0, boolean z, boolean z2, boolean z3, Function2 function22, int i, int i2, Composer composer, int i3) {
         BasicTooltipBox(popupPositionProvider, function2, tooltipState, modifier, function0, z, z2, z3, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TooltipPopup$lambda$10(PopupPositionProvider popupPositionProvider, TooltipState tooltipState, Function0 function0, CoroutineScope coroutineScope, boolean z, MutableState mutableState, Function2 function2, int i, Composer composer, int i2) {
         TooltipPopup(popupPositionProvider, tooltipState, function0, coroutineScope, z, mutableState, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit WrappedAnchor$lambda$7(boolean z, TooltipState tooltipState, MutableState mutableState, boolean z2, Modifier modifier, Function2 function2, int i, int i2, Composer composer, int i3) {
         WrappedAnchor(z, tooltipState, mutableState, z2, modifier, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -257,15 +257,15 @@ public final class BasicTooltipKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1891254757, "C125@5760L264:BasicTooltip.kt#mqatfk");
@@ -313,9 +313,7 @@ public final class BasicTooltipKt {
                                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda2
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj4) {
-                                        DisposableEffectResult BasicTooltipBox$lambda$4$lambda$3;
-                                        BasicTooltipBox$lambda$4$lambda$3 = BasicTooltipKt.BasicTooltipBox$lambda$4$lambda$3(TooltipState.this, (DisposableEffectScope) obj4);
-                                        return BasicTooltipBox$lambda$4$lambda$3;
+                                        return BasicTooltipKt.BasicTooltipBox$lambda$4$lambda$3(TooltipState.this, (DisposableEffectScope) obj4);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -337,9 +335,7 @@ public final class BasicTooltipKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj4, Object obj5) {
-                                    Unit BasicTooltipBox$lambda$5;
-                                    BasicTooltipBox$lambda$5 = BasicTooltipKt.BasicTooltipBox$lambda$5(PopupPositionProvider.this, function2, tooltipState3, modifier2, function02, z15, z5, z6, function22, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                    return BasicTooltipBox$lambda$5;
+                                    return BasicTooltipKt.BasicTooltipBox$lambda$5(PopupPositionProvider.this, function2, tooltipState3, modifier2, function02, z15, z5, z6, function22, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                                 }
                             });
                             return;
@@ -531,15 +527,15 @@ public final class BasicTooltipKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 918653216, "C156@6739L9:BasicTooltip.kt#mqatfk");
@@ -560,9 +556,7 @@ public final class BasicTooltipKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit WrappedAnchor$lambda$7;
-                            WrappedAnchor$lambda$7 = BasicTooltipKt.WrappedAnchor$lambda$7(z, tooltipState, mutableState, z2, modifier2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                            return WrappedAnchor$lambda$7;
+                            return BasicTooltipKt.WrappedAnchor$lambda$7(z, tooltipState, mutableState, z2, modifier2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -637,9 +631,7 @@ public final class BasicTooltipKt {
                 rememberedValue = new Function0() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit TooltipPopup$lambda$9$lambda$8;
-                        TooltipPopup$lambda$9$lambda$8 = BasicTooltipKt.TooltipPopup$lambda$9$lambda$8(Function0.this, tooltipState, coroutineScope, mutableState);
-                        return TooltipPopup$lambda$9$lambda$8;
+                        return BasicTooltipKt.TooltipPopup$lambda$9$lambda$8(Function0.this, tooltipState, coroutineScope, mutableState);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -655,15 +647,13 @@ public final class BasicTooltipKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TooltipPopup$lambda$10;
-                    TooltipPopup$lambda$10 = BasicTooltipKt.TooltipPopup$lambda$10(PopupPositionProvider.this, tooltipState, function0, coroutineScope, z, mutableState, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TooltipPopup$lambda$10;
+                    return BasicTooltipKt.TooltipPopup$lambda$10(PopupPositionProvider.this, tooltipState, function0, coroutineScope, z, mutableState, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TooltipPopup$lambda$9$lambda$8(Function0 function0, TooltipState tooltipState, CoroutineScope coroutineScope, MutableState mutableState) {
         if (function0 == null) {
             if (tooltipState.isVisible()) {
@@ -837,8 +827,8 @@ public final class BasicTooltipKt {
                                 mutableStateFlow = (MutableStateFlow) this.L$1;
                                 awaitFirstDown$default = obj;
                             }
-                            int m6747getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6747getTypeT8wyACA();
-                            if (PointerType.m6815equalsimpl0(m6747getTypeT8wyACA, PointerType.Companion.m6822getTouchT8wyACA()) || PointerType.m6815equalsimpl0(m6747getTypeT8wyACA, PointerType.Companion.m6821getStylusT8wyACA())) {
+                            int m6088getTypeT8wyACA = ((PointerInputChange) awaitFirstDown$default).m6088getTypeT8wyACA();
+                            if (PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6163getTouchT8wyACA()) || PointerType.m6156equalsimpl0(m6088getTypeT8wyACA, PointerType.Companion.m6162getStylusT8wyACA())) {
                                 try {
                                     this.L$0 = awaitPointerEventScope;
                                     this.L$1 = mutableStateFlow;
@@ -1189,15 +1179,15 @@ public final class BasicTooltipKt {
                             r5 = 0
                             java.lang.Object r4 = r4.get(r5)
                             androidx.compose.ui.input.pointer.PointerInputChange r4 = (androidx.compose.ui.input.pointer.PointerInputChange) r4
-                            int r4 = r4.m6747getTypeT8wyACA()
+                            int r4 = r4.m6088getTypeT8wyACA()
                             androidx.compose.ui.input.pointer.PointerType$Companion r5 = androidx.compose.ui.input.pointer.PointerType.Companion
-                            int r5 = r5.m6820getMouseT8wyACA()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6815equalsimpl0(r4, r5)
+                            int r5 = r5.m6161getMouseT8wyACA()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerType.m6156equalsimpl0(r4, r5)
                             if (r4 == 0) goto L29
-                            int r12 = r12.m6686getType7fucELk()
+                            int r12 = r12.m6027getType7fucELk()
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6697getEnter7fucELk()
-                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6693equalsimpl0(r12, r4)
+                            int r4 = r4.m6038getEnter7fucELk()
+                            boolean r4 = androidx.compose.ui.input.pointer.PointerEventType.m6034equalsimpl0(r12, r4)
                             if (r4 == 0) goto L7a
                             kotlinx.coroutines.CoroutineScope r5 = r11.$$this$coroutineScope
                             androidx.compose.material3.internal.BasicTooltipKt$handleGestures$2$1$1$1 r12 = new androidx.compose.material3.internal.BasicTooltipKt$handleGestures$2$1$1$1
@@ -1213,8 +1203,8 @@ public final class BasicTooltipKt {
                             goto L29
                         L7a:
                             androidx.compose.ui.input.pointer.PointerEventType$Companion r4 = androidx.compose.ui.input.pointer.PointerEventType.Companion
-                            int r4 = r4.m6698getExit7fucELk()
-                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6693equalsimpl0(r12, r4)
+                            int r4 = r4.m6039getExit7fucELk()
+                            boolean r12 = androidx.compose.ui.input.pointer.PointerEventType.m6034equalsimpl0(r12, r4)
                             if (r12 == 0) goto L29
                             androidx.compose.material3.TooltipState r12 = r11.$state
                             r12.dismiss()
@@ -1300,27 +1290,23 @@ public final class BasicTooltipKt {
         return z ? ChildParentSemanticsKt.parentSemantics(modifier, new Function1() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit anchorSemantics$lambda$12;
-                anchorSemantics$lambda$12 = BasicTooltipKt.anchorSemantics$lambda$12(str, coroutineScope, tooltipState, (SemanticsPropertyReceiver) obj);
-                return anchorSemantics$lambda$12;
+                return BasicTooltipKt.anchorSemantics$lambda$12(str, coroutineScope, tooltipState, (SemanticsPropertyReceiver) obj);
             }
         }) : modifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit anchorSemantics$lambda$12(String str, final CoroutineScope coroutineScope, final TooltipState tooltipState, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.onLongClick(semanticsPropertyReceiver, str, new Function0() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean anchorSemantics$lambda$12$lambda$11;
-                anchorSemantics$lambda$12$lambda$11 = BasicTooltipKt.anchorSemantics$lambda$12$lambda$11(CoroutineScope.this, tooltipState);
-                return Boolean.valueOf(anchorSemantics$lambda$12$lambda$11);
+                return Boolean.valueOf(BasicTooltipKt.anchorSemantics$lambda$12$lambda$11(CoroutineScope.this, tooltipState));
             }
         });
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean anchorSemantics$lambda$12$lambda$11(CoroutineScope coroutineScope, TooltipState tooltipState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new BasicTooltipKt$anchorSemantics$1$1$1(tooltipState, null), 3, null);
         return true;
@@ -1331,22 +1317,20 @@ public final class BasicTooltipKt {
             return KeyInputModifierKt.onPreviewKeyEvent(FocusChangedModifierKt.onFocusChanged(modifier, new Function1() { // from class: androidx.compose.material3.internal.BasicTooltipKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit keyboardBehavior$lambda$13;
-                    keyboardBehavior$lambda$13 = BasicTooltipKt.keyboardBehavior$lambda$13(CoroutineScope.this, tooltipState, (FocusState) obj);
-                    return keyboardBehavior$lambda$13;
+                    return BasicTooltipKt.keyboardBehavior$lambda$13(CoroutineScope.this, tooltipState, (FocusState) obj);
                 }
             }), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.material3.internal.BasicTooltipKt$keyboardBehavior$2
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                    return m3602invokeZmokQxo(keyEvent.m6576unboximpl());
+                    return m2994invokeZmokQxo(keyEvent.m5917unboximpl());
                 }
 
                 /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-                public final Boolean m3602invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                public final Boolean m2994invokeZmokQxo(android.view.KeyEvent keyEvent) {
                     if (!TooltipState.this.isVisible()) {
                         mutableState.setValue(false);
                     }
-                    if (!z2 || !KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6584getKeyDownCS__XNY()) || !Key.m6279equalsimpl0(KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent), Key.Companion.m6515getTabEK5gGoQ()) || !TooltipState.this.isVisible()) {
+                    if (!z2 || !KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5925getKeyDownCS__XNY()) || !Key.m5620equalsimpl0(KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent), Key.Companion.m5856getTabEK5gGoQ()) || !TooltipState.this.isVisible()) {
                         return false;
                     }
                     mutableState.setValue(true);
@@ -1358,7 +1342,7 @@ public final class BasicTooltipKt {
         return modifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit keyboardBehavior$lambda$13(CoroutineScope coroutineScope, TooltipState tooltipState, FocusState focusState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new BasicTooltipKt$keyboardBehavior$1$1(focusState, tooltipState, null), 3, null);
         return Unit.INSTANCE;
@@ -1424,7 +1408,7 @@ public final class BasicTooltipKt {
         return rememberAccessibilityServiceState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult BasicTooltipBox$lambda$4$lambda$3(final TooltipState tooltipState, DisposableEffectScope disposableEffectScope) {
         return new DisposableEffectResult() { // from class: androidx.compose.material3.internal.BasicTooltipKt$BasicTooltipBox$lambda$4$lambda$3$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult

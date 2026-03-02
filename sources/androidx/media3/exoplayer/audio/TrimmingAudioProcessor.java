@@ -4,7 +4,7 @@ import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class TrimmingAudioProcessor extends BaseAudioProcessor {
     private byte[] endBuffer = Util.EMPTY_BYTE_ARRAY;
     private int endBufferSize;

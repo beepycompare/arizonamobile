@@ -21,7 +21,7 @@ public final class ModalWideNavigationRailState implements WideNavigationRailSta
     private final AnchoredDraggableState<WideNavigationRailValue> anchoredDraggableState;
     private final AnimationSpec<Float> animationSpec;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float anchoredDraggableState$lambda$0(float f) {
         return f * 0.5f;
     }
@@ -32,16 +32,14 @@ public final class ModalWideNavigationRailState implements WideNavigationRailSta
         this.anchoredDraggableState = new AnchoredDraggableState<>(wideNavigationRailState.getTargetValue(), new Function1() { // from class: androidx.compose.material3.ModalWideNavigationRailState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                float anchoredDraggableState$lambda$0;
-                anchoredDraggableState$lambda$0 = ModalWideNavigationRailState.anchoredDraggableState$lambda$0(((Float) obj).floatValue());
-                return Float.valueOf(anchoredDraggableState$lambda$0);
+                return Float.valueOf(ModalWideNavigationRailState.anchoredDraggableState$lambda$0(((Float) obj).floatValue()));
             }
         }, new Function0() { // from class: androidx.compose.material3.ModalWideNavigationRailState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float anchoredDraggableState$lambda$2;
-                anchoredDraggableState$lambda$2 = ModalWideNavigationRailState.anchoredDraggableState$lambda$2(Density.this);
-                return Float.valueOf(anchoredDraggableState$lambda$2);
+                float mo405toPx0680j_4;
+                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl(400));
+                return Float.valueOf(mo405toPx0680j_4);
             }
         }, new Function0() { // from class: androidx.compose.material3.ModalWideNavigationRailState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
@@ -124,10 +122,5 @@ public final class ModalWideNavigationRailState implements WideNavigationRailSta
     public final Object animateTo(WideNavigationRailValue wideNavigationRailValue, AnimationSpec<Float> animationSpec, float f, Continuation<? super Unit> continuation) {
         Object anchoredDrag$default = AnchoredDraggableState.anchoredDrag$default(this.anchoredDraggableState, wideNavigationRailValue, null, new ModalWideNavigationRailState$animateTo$2(this, f, animationSpec, null), continuation, 2, null);
         return anchoredDrag$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? anchoredDrag$default : Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float anchoredDraggableState$lambda$2(Density density) {
-        return density.mo464toPx0680j_4(Dp.m8258constructorimpl(400));
     }
 }

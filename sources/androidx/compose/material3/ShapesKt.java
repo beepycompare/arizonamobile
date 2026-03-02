@@ -21,9 +21,7 @@ public final class ShapesKt {
     private static final ProvidableCompositionLocal<Shapes> LocalShapes = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.ShapesKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Shapes LocalShapes$lambda$0;
-            LocalShapes$lambda$0 = ShapesKt.LocalShapes$lambda$0();
-            return LocalShapes$lambda$0;
+            return ShapesKt.LocalShapes$lambda$0();
         }
     });
 

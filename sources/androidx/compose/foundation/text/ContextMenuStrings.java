@@ -14,49 +14,49 @@ public final class ContextMenuStrings {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ContextMenuStrings m1346boximpl(int i) {
+    public static final /* synthetic */ ContextMenuStrings m1179boximpl(int i) {
         return new ContextMenuStrings(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1347constructorimpl(int i) {
+    public static int m1180constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1348equalsimpl(int i, Object obj) {
-        return (obj instanceof ContextMenuStrings) && i == ((ContextMenuStrings) obj).m1352unboximpl();
+    public static boolean m1181equalsimpl(int i, Object obj) {
+        return (obj instanceof ContextMenuStrings) && i == ((ContextMenuStrings) obj).m1185unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1349equalsimpl0(int i, int i2) {
+    public static final boolean m1182equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1350hashCodeimpl(int i) {
+    public static int m1183hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1351toStringimpl(int i) {
+    public static String m1184toStringimpl(int i) {
         return "ContextMenuStrings(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1348equalsimpl(this.value, obj);
+        return m1181equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1350hashCodeimpl(this.value);
+        return m1183hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1351toStringimpl(this.value);
+        return m1184toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1352unboximpl() {
+    public final /* synthetic */ int m1185unboximpl() {
         return this.value;
     }
 
@@ -72,28 +72,28 @@ public final class ContextMenuStrings {
         }
 
         /* renamed from: getCut-9Hzcbyc  reason: not valid java name */
-        public final int m1355getCut9Hzcbyc() {
-            return ContextMenuStrings.m1347constructorimpl(17039363);
+        public final int m1188getCut9Hzcbyc() {
+            return ContextMenuStrings.m1180constructorimpl(17039363);
         }
 
         /* renamed from: getCopy-9Hzcbyc  reason: not valid java name */
-        public final int m1354getCopy9Hzcbyc() {
-            return ContextMenuStrings.m1347constructorimpl(17039361);
+        public final int m1187getCopy9Hzcbyc() {
+            return ContextMenuStrings.m1180constructorimpl(17039361);
         }
 
         /* renamed from: getPaste-9Hzcbyc  reason: not valid java name */
-        public final int m1356getPaste9Hzcbyc() {
-            return ContextMenuStrings.m1347constructorimpl(17039371);
+        public final int m1189getPaste9Hzcbyc() {
+            return ContextMenuStrings.m1180constructorimpl(17039371);
         }
 
         /* renamed from: getSelectAll-9Hzcbyc  reason: not valid java name */
-        public final int m1357getSelectAll9Hzcbyc() {
-            return ContextMenuStrings.m1347constructorimpl(17039373);
+        public final int m1190getSelectAll9Hzcbyc() {
+            return ContextMenuStrings.m1180constructorimpl(17039373);
         }
 
         /* renamed from: getAutofill-9Hzcbyc  reason: not valid java name */
-        public final int m1353getAutofill9Hzcbyc() {
-            return ContextMenuStrings.m1347constructorimpl(Build.VERSION.SDK_INT <= 26 ? R.string.androidx_compose_foundation_autofill : 17039386);
+        public final int m1186getAutofill9Hzcbyc() {
+            return ContextMenuStrings.m1180constructorimpl(Build.VERSION.SDK_INT <= 26 ? R.string.androidx_compose_foundation_autofill : 17039386);
         }
     }
 

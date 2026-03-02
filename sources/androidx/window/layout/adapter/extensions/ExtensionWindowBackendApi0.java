@@ -19,11 +19,6 @@ public class ExtensionWindowBackendApi0 implements WindowBackend {
         Intrinsics.checkNotNullParameter(callback, "callback");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void registerLayoutChangeCallback$lambda$0(Consumer consumer) {
-        consumer.accept(new WindowLayoutInfo(CollectionsKt.emptyList()));
-    }
-
     @Override // androidx.window.layout.adapter.WindowBackend
     public void registerLayoutChangeCallback(Context context, Executor executor, final Consumer<WindowLayoutInfo> callback) {
         Intrinsics.checkNotNullParameter(context, "context");
@@ -32,7 +27,7 @@ public class ExtensionWindowBackendApi0 implements WindowBackend {
         executor.execute(new Runnable() { // from class: androidx.window.layout.adapter.extensions.ExtensionWindowBackendApi0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ExtensionWindowBackendApi0.registerLayoutChangeCallback$lambda$0(Consumer.this);
+                Consumer.this.accept(new WindowLayoutInfo(CollectionsKt.emptyList()));
             }
         });
     }

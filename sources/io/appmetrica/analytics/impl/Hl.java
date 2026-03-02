@@ -6,9 +6,9 @@ import java.util.HashMap;
 public final class Hl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0499pa f618a = new C0499pa();
+    public final C0498pa f618a = new C0498pa();
     public final HashMap b = new HashMap();
-    public C0257fm c = null;
+    public C0256fm c = null;
     public final Fl d = new Fl(this);
 
     public static final Hl a() {
@@ -38,9 +38,9 @@ public final class Hl {
     public final void a(Q4 q4, Ql ql) {
         synchronized (this.b) {
             this.f618a.a(q4.f748a, ql);
-            C0257fm c0257fm = this.c;
-            if (c0257fm != null) {
-                ql.a(c0257fm);
+            C0256fm c0256fm = this.c;
+            if (c0256fm != null) {
+                ql.a(c0256fm);
             }
         }
     }

@@ -65,14 +65,14 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
     }
 
     /* renamed from: getHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3498getHeightD9Ej5fM() {
+    public final float m2930getHeightD9Ej5fM() {
         return this.height;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
         Integer num;
-        int i2 = intrinsicMeasureScope.mo458roundToPx0680j_4(this.height);
+        int i2 = intrinsicMeasureScope.mo399roundToPx0680j_4(this.height);
         if (list.isEmpty()) {
             num = null;
         } else {
@@ -100,7 +100,7 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     public int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
         Integer num;
-        int i2 = intrinsicMeasureScope.mo458roundToPx0680j_4(this.height);
+        int i2 = intrinsicMeasureScope.mo399roundToPx0680j_4(this.height);
         if (list.isEmpty()) {
             num = null;
         } else {
@@ -126,18 +126,16 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
     }
 
     /* renamed from: placeTopAppBar-mpW86Vk  reason: not valid java name */
-    private final MeasureResult m3497placeTopAppBarmpW86Vk(final MeasureScope measureScope, final long j, final int i, final int i2, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, final int i3) {
-        return MeasureScope.layout$default(measureScope, Constraints.m8211getMaxWidthimpl(j), i, null, new Function1() { // from class: androidx.compose.material3.TopAppBarMeasurePolicy$$ExternalSyntheticLambda0
+    private final MeasureResult m2929placeTopAppBarmpW86Vk(final MeasureScope measureScope, final long j, final int i, final int i2, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, final int i3) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7508getMaxWidthimpl(j), i, null, new Function1() { // from class: androidx.compose.material3.TopAppBarMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeTopAppBar_mpW86Vk$lambda$8;
-                placeTopAppBar_mpW86Vk$lambda$8 = TopAppBarMeasurePolicy.placeTopAppBar_mpW86Vk$lambda$8(Placeable.this, i, placeable2, placeable3, j, measureScope, this, i3, i2, (Placeable.PlacementScope) obj);
-                return placeTopAppBar_mpW86Vk$lambda$8;
+                return TopAppBarMeasurePolicy.placeTopAppBar_mpW86Vk$lambda$8(Placeable.this, i, placeable2, placeable3, j, measureScope, this, i3, i2, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Removed duplicated region for block: B:11:0x0068  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x0072  */
     /*
@@ -145,18 +143,18 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
     */
     public static final Unit placeTopAppBar_mpW86Vk$lambda$8(Placeable placeable, int i, Placeable placeable2, Placeable placeable3, long j, MeasureScope measureScope, TopAppBarMeasurePolicy topAppBarMeasurePolicy, int i2, int i3, Placeable.PlacementScope placementScope) {
         float f;
-        int m8211getMaxWidthimpl;
+        int m7508getMaxWidthimpl;
         Arrangement.Vertical vertical;
         int i4;
         int height;
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, 0, (i - placeable.getHeight()) / 2, 0.0f, 4, null);
         f = AppBarKt.TopAppBarTitleInset;
-        int max = Math.max(measureScope.mo458roundToPx0680j_4(f), placeable.getWidth());
+        int max = Math.max(measureScope.mo399roundToPx0680j_4(f), placeable.getWidth());
         int width = placeable3.getWidth();
-        int align = topAppBarMeasurePolicy.titleHorizontalAlignment.align(placeable2.getWidth(), Constraints.m8211getMaxWidthimpl(j), LayoutDirection.Ltr);
+        int align = topAppBarMeasurePolicy.titleHorizontalAlignment.align(placeable2.getWidth(), Constraints.m7508getMaxWidthimpl(j), LayoutDirection.Ltr);
         if (align >= max) {
-            if (placeable2.getWidth() + align > Constraints.m8211getMaxWidthimpl(j) - width) {
-                m8211getMaxWidthimpl = (Constraints.m8211getMaxWidthimpl(j) - width) - (placeable2.getWidth() + align);
+            if (placeable2.getWidth() + align > Constraints.m7508getMaxWidthimpl(j) - width) {
+                m7508getMaxWidthimpl = (Constraints.m7508getMaxWidthimpl(j) - width) - (placeable2.getWidth() + align);
             }
             int i5 = align;
             vertical = topAppBarMeasurePolicy.titleVerticalArrangement;
@@ -176,30 +174,30 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
                     }
                 }
                 Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i5, i4, 0.0f, 4, null);
-                Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m8211getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
+                Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m7508getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
                 return Unit.INSTANCE;
             }
             height = (i - placeable2.getHeight()) / 2;
             i4 = height;
             Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i5, i4, 0.0f, 4, null);
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m8211getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m7508getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
             return Unit.INSTANCE;
         }
-        m8211getMaxWidthimpl = max - align;
-        align += m8211getMaxWidthimpl;
+        m7508getMaxWidthimpl = max - align;
+        align += m7508getMaxWidthimpl;
         int i52 = align;
         vertical = topAppBarMeasurePolicy.titleVerticalArrangement;
         if (Intrinsics.areEqual(vertical, Arrangement.INSTANCE.getCenter())) {
         }
         i4 = height;
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i52, i4, 0.0f, 4, null);
-        Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m8211getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
+        Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, Constraints.m7508getMaxWidthimpl(j) - placeable3.getWidth(), (i - placeable3.getHeight()) / 2, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         int coerceAtLeast;
         TopAppBarMeasurePolicy topAppBarMeasurePolicy = this;
         List<? extends Measurable> list2 = list;
@@ -208,17 +206,17 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
         while (i < size) {
             Measurable measurable = list.get(i);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "navigationIcon")) {
-                Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
+                Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
                 int size2 = list2.size();
                 int i2 = 0;
                 while (i2 < size2) {
                     Measurable measurable2 = list.get(i2);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "actionIcons")) {
-                        Placeable mo6875measureBRTryo02 = measurable2.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
-                        if (Constraints.m8211getMaxWidthimpl(j) == Integer.MAX_VALUE) {
-                            coerceAtLeast = Constraints.m8211getMaxWidthimpl(j);
+                        Placeable mo6216measureBRTryo02 = measurable2.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 14, null));
+                        if (Constraints.m7508getMaxWidthimpl(j) == Integer.MAX_VALUE) {
+                            coerceAtLeast = Constraints.m7508getMaxWidthimpl(j);
                         } else {
-                            coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m8211getMaxWidthimpl(j) - mo6875measureBRTryo0.getWidth()) - mo6875measureBRTryo02.getWidth(), 0);
+                            coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7508getMaxWidthimpl(j) - mo6216measureBRTryo0.getWidth()) - mo6216measureBRTryo02.getWidth(), 0);
                         }
                         int i3 = coerceAtLeast;
                         int size3 = list2.size();
@@ -226,12 +224,12 @@ public final class TopAppBarMeasurePolicy implements MeasurePolicy {
                         while (i4 < size3) {
                             Measurable measurable3 = list.get(i4);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "title")) {
-                                Placeable mo6875measureBRTryo03 = measurable3.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, i3, 0, 0, 12, null));
-                                int i5 = mo6875measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) != Integer.MIN_VALUE ? mo6875measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) : 0;
+                                Placeable mo6216measureBRTryo03 = measurable3.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, i3, 0, 0, 12, null));
+                                int i5 = mo6216measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) != Integer.MIN_VALUE ? mo6216measureBRTryo03.get(AlignmentLineKt.getLastBaseline()) : 0;
                                 float invoke = topAppBarMeasurePolicy.scrolledOffset.invoke();
                                 int roundToInt = Float.isNaN(invoke) ? 0 : MathKt.roundToInt(invoke);
-                                int max = Math.max(measureScope.mo458roundToPx0680j_4(topAppBarMeasurePolicy.height), mo6875measureBRTryo03.getHeight());
-                                return topAppBarMeasurePolicy.m3497placeTopAppBarmpW86Vk(measureScope, j, Constraints.m8210getMaxHeightimpl(j) == Integer.MAX_VALUE ? max : RangesKt.coerceAtLeast(roundToInt + max, 0), max, mo6875measureBRTryo0, mo6875measureBRTryo03, mo6875measureBRTryo02, i5);
+                                int max = Math.max(measureScope.mo399roundToPx0680j_4(topAppBarMeasurePolicy.height), mo6216measureBRTryo03.getHeight());
+                                return topAppBarMeasurePolicy.m2929placeTopAppBarmpW86Vk(measureScope, j, Constraints.m7507getMaxHeightimpl(j) == Integer.MAX_VALUE ? max : RangesKt.coerceAtLeast(roundToInt + max, 0), max, mo6216measureBRTryo0, mo6216measureBRTryo03, mo6216measureBRTryo02, i5);
                             }
                             i4++;
                             topAppBarMeasurePolicy = this;

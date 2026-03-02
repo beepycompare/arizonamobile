@@ -45,17 +45,17 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InputField.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u001a-\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¢\u0006\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"InputField", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/runtime/MutableState;", "", "width", "Landroidx/compose/ui/unit/Dp;", "bgId", "", "InputField-rAjV9yQ", "(Landroidx/compose/runtime/MutableState;FILandroidx/compose/runtime/Composer;I)V", "dialogs_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u001a-\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u00032\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0007¢\u0006\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"InputField", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/runtime/MutableState;", "", "width", "Landroidx/compose/ui/unit/Dp;", "bgId", "", "InputField-rAjV9yQ", "(Landroidx/compose/runtime/MutableState;FILandroidx/compose/runtime/Composer;I)V", "dialogs"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class InputFieldKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit InputField_rAjV9yQ$lambda$1(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
-        m10089InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m9091InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: InputField-rAjV9yQ  reason: not valid java name */
-    public static final void m10089InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
+    public static final void m9091InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(state, "state");
         Composer startRestartGroup = composer.startRestartGroup(-155401538);
@@ -96,21 +96,21 @@ public final class InputFieldKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -561676279, "C41@1521L21,41@1505L166,49@1880L10,50@1934L13,51@1978L13,48@1804L36,45@1681L518:InputField.kt#yp5s1q");
             int i4 = i3;
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i3 >> 6) & 14), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
-            Modifier m981width3ABfNKs = SizeKt.m981width3ABfNKs(Modifier.Companion, f);
+            Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
             float f2 = 24;
-            TextStyle m7714copyp1EtxEg$default = TextStyle.m7714copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m7016copyp1EtxEg$default = TextStyle.m7016copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -126,7 +126,7 @@ public final class InputFieldKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m981width3ABfNKs, false, false, m7714copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m10085getLambda$1682333503$dialogs_release(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
+            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m869width3ABfNKs, false, false, m7016copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m9090getLambda$1682333503$dialogs(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -143,9 +143,7 @@ public final class InputFieldKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.connection.InputFieldKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit InputField_rAjV9yQ$lambda$1;
-                    InputField_rAjV9yQ$lambda$1 = InputFieldKt.InputField_rAjV9yQ$lambda$1(MutableState.this, f, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return InputField_rAjV9yQ$lambda$1;
+                    return InputFieldKt.InputField_rAjV9yQ$lambda$1(MutableState.this, f, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

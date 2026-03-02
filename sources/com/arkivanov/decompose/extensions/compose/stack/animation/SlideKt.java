@@ -108,29 +108,25 @@ public final class SlideKt {
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                MeasureResult offsetXFactor$lambda$1;
-                offsetXFactor$lambda$1 = SlideKt.offsetXFactor$lambda$1(f, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
-                return offsetXFactor$lambda$1;
+                return SlideKt.offsetXFactor$lambda$1(f, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult offsetXFactor$lambda$1(final float f, MeasureScope layout, Measurable measurable, Constraints constraints) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Intrinsics.checkNotNullParameter(measurable, "measurable");
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(constraints.m8217unboximpl());
-        return MeasureScope.layout$default(layout, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda0
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
+        return MeasureScope.layout$default(layout, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit offsetXFactor$lambda$1$lambda$0;
-                offsetXFactor$lambda$1$lambda$0 = SlideKt.offsetXFactor$lambda$1$lambda$0(Placeable.this, f, (Placeable.PlacementScope) obj);
-                return offsetXFactor$lambda$1$lambda$0;
+                return SlideKt.offsetXFactor$lambda$1$lambda$0(Placeable.this, f, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit offsetXFactor$lambda$1$lambda$0(Placeable placeable, float f, Placeable.PlacementScope layout) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Placeable.PlacementScope.placeRelative$default(layout, placeable, (int) (placeable.getWidth() * f), 0, 0.0f, 4, null);
@@ -142,29 +138,25 @@ public final class SlideKt {
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                MeasureResult offsetYFactor$lambda$3;
-                offsetYFactor$lambda$3 = SlideKt.offsetYFactor$lambda$3(f, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
-                return offsetYFactor$lambda$3;
+                return SlideKt.offsetYFactor$lambda$3(f, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult offsetYFactor$lambda$3(final float f, MeasureScope layout, Measurable measurable, Constraints constraints) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Intrinsics.checkNotNullParameter(measurable, "measurable");
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(constraints.m8217unboximpl());
-        return MeasureScope.layout$default(layout, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda3
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
+        return MeasureScope.layout$default(layout, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.SlideKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit offsetYFactor$lambda$3$lambda$2;
-                offsetYFactor$lambda$3$lambda$2 = SlideKt.offsetYFactor$lambda$3$lambda$2(Placeable.this, f, (Placeable.PlacementScope) obj);
-                return offsetYFactor$lambda$3$lambda$2;
+                return SlideKt.offsetYFactor$lambda$3$lambda$2(Placeable.this, f, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit offsetYFactor$lambda$3$lambda$2(Placeable placeable, float f, Placeable.PlacementScope layout) {
         Intrinsics.checkNotNullParameter(layout, "$this$layout");
         Placeable.PlacementScope.placeRelative$default(layout, placeable, 0, (int) (placeable.getHeight() * f), 0.0f, 4, null);

@@ -46,21 +46,21 @@ public abstract class ExposedDropdownMenuBoxScope {
         this();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenu$lambda$9(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, Function3 function3, int i, int i2, Composer composer, int i3) {
         exposedDropdownMenuBoxScope.ExposedDropdownMenu(z, function0, modifier, scrollState, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenu_kbRbctU$lambda$8(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        exposedDropdownMenuBoxScope.m2437ExposedDropdownMenukbRbctU(z, function0, modifier, scrollState, z2, z3, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        exposedDropdownMenuBoxScope.m2065ExposedDropdownMenukbRbctU(z, function0, modifier, scrollState, z2, z3, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenu_vNxi1II$lambda$7(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, boolean z, Function0 function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        exposedDropdownMenuBoxScope.m2438ExposedDropdownMenuvNxi1II(z, function0, modifier, scrollState, z2, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        exposedDropdownMenuBoxScope.m2066ExposedDropdownMenuvNxi1II(z, function0, modifier, scrollState, z2, shape, j, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -69,21 +69,21 @@ public abstract class ExposedDropdownMenuBoxScope {
     public abstract boolean getAlwaysFocusable$material3();
 
     /* renamed from: getAnchorType-oYjWRB4$material3  reason: not valid java name */
-    public abstract String mo2439getAnchorTypeoYjWRB4$material3();
+    public abstract String mo2067getAnchorTypeoYjWRB4$material3();
 
     /* renamed from: menuAnchor-2Hz36ac  reason: not valid java name */
-    public abstract Modifier mo2440menuAnchor2Hz36ac(Modifier modifier, String str, boolean z);
+    public abstract Modifier mo2068menuAnchor2Hz36ac(Modifier modifier, String str, boolean z);
 
     private ExposedDropdownMenuBoxScope() {
     }
 
     /* renamed from: menuAnchor-2Hz36ac$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m2436menuAnchor2Hz36ac$default(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, Modifier modifier, String str, boolean z, int i, Object obj) {
+    public static /* synthetic */ Modifier m2064menuAnchor2Hz36ac$default(ExposedDropdownMenuBoxScope exposedDropdownMenuBoxScope, Modifier modifier, String str, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
                 z = true;
             }
-            return exposedDropdownMenuBoxScope.mo2440menuAnchor2Hz36ac(modifier, str, z);
+            return exposedDropdownMenuBoxScope.mo2068menuAnchor2Hz36ac(modifier, str, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: menuAnchor-2Hz36ac");
     }
@@ -134,7 +134,7 @@ public abstract class ExposedDropdownMenuBoxScope {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2438ExposedDropdownMenuvNxi1II(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public final void m2066ExposedDropdownMenuvNxi1II(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -299,15 +299,15 @@ public abstract class ExposedDropdownMenuBoxScope {
                                             j2 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
                                             i4 &= -3670017;
                                         }
-                                        float m2632getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM() : f;
-                                        float m2631getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM() : f2;
+                                        float m2235getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM() : f;
+                                        float m2234getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM() : f2;
                                         if (i11 != 0) {
                                             modifier3 = companion;
-                                            f5 = m2632getTonalElevationD9Ej5fM;
+                                            f5 = m2235getTonalElevationD9Ej5fM;
                                             j3 = j2;
                                             shape4 = shape3;
                                             scrollState5 = scrollState4;
-                                            f6 = m2631getShadowElevationD9Ej5fM;
+                                            f6 = m2234getShadowElevationD9Ej5fM;
                                             z5 = z3;
                                             borderStroke3 = null;
                                             startRestartGroup.endDefaults();
@@ -336,9 +336,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                                     rememberedValue5 = new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda2
                                                         @Override // kotlin.jvm.functions.Function0
                                                         public final Object invoke() {
-                                                            Unit ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1;
-                                                            ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1(MutableState.this);
-                                                            return ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1;
+                                                            return ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1(MutableState.this);
                                                         }
                                                     };
                                                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -365,7 +363,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1642232720, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                                                 rememberedValue3 = startRestartGroup.rememberedValue();
                                                 if (rememberedValue3 == Composer.Companion.getEmpty()) {
-                                                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m5826boximpl(TransformOrigin.Companion.m5839getCenterSzJe1aQ()), null, 2, null);
+                                                    rememberedValue3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m5172boximpl(TransformOrigin.Companion.m5185getCenterSzJe1aQ()), null, 2, null);
                                                     startRestartGroup.updateRememberedValue(rememberedValue3);
                                                 }
                                                 final MutableState mutableState2 = (MutableState) rememberedValue3;
@@ -377,15 +375,13 @@ public abstract class ExposedDropdownMenuBoxScope {
                                                     rememberedValue4 = new ExposedDropdownMenuPositionProvider(density, top, mutableState, 0, new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda3
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public final Object invoke(Object obj3, Object obj4) {
-                                                            Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
-                                                            ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
-                                                            return ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
+                                                            return ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
                                                         }
                                                     }, 8, null);
                                                     startRestartGroup.updateRememberedValue(rememberedValue4);
                                                 }
                                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                                AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2459popupPropertiesForAnchorTypeBTG8q0(mo2439getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
+                                                AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2084popupPropertiesForAnchorTypeBTG8q0(mo2067getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
                                                     @Override // kotlin.jvm.functions.Function2
                                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                                         invoke(composer3, num.intValue());
@@ -401,7 +397,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventStart(2063119149, i15, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.kt:355)");
                                                         }
-                                                        MenuKt.m2646DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState2, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                                        MenuKt.m2248DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState2, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                                                         if (ComposerKt.isTraceInProgress()) {
                                                             ComposerKt.traceEventEnd();
                                                         }
@@ -428,11 +424,11 @@ public abstract class ExposedDropdownMenuBoxScope {
                                         } else {
                                             borderStroke3 = borderStroke;
                                             modifier3 = companion;
-                                            f5 = m2632getTonalElevationD9Ej5fM;
+                                            f5 = m2235getTonalElevationD9Ej5fM;
                                             j3 = j2;
                                             shape4 = shape3;
                                             scrollState5 = scrollState4;
-                                            f6 = m2631getShadowElevationD9Ej5fM;
+                                            f6 = m2234getShadowElevationD9Ej5fM;
                                         }
                                     }
                                     z5 = z3;
@@ -477,14 +473,12 @@ public abstract class ExposedDropdownMenuBoxScope {
                                     rememberedValue4 = new ExposedDropdownMenuPositionProvider(density2, top2, mutableState, 0, new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda3
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj3, Object obj4) {
-                                            Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
-                                            ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
-                                            return ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5;
+                                            return ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState.this, (IntRect) obj3, (IntRect) obj4);
                                         }
                                     }, 8, null);
                                     startRestartGroup.updateRememberedValue(rememberedValue4);
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                    AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2459popupPropertiesForAnchorTypeBTG8q0(mo2439getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
+                                    AndroidPopup_androidKt.Popup((ExposedDropdownMenuPositionProvider) rememberedValue4, obj, ExposedDropdownMenu_androidKt.m2084popupPropertiesForAnchorTypeBTG8q0(mo2067getAnchorTypeoYjWRB4$material3(), getAlwaysFocusable$material3(), startRestartGroup, 0), ComposableLambdaKt.rememberComposableLambda(2063119149, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$ExposedDropdownMenu$2
                                         @Override // kotlin.jvm.functions.Function2
                                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                             invoke(composer3, num.intValue());
@@ -500,7 +494,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(2063119149, i15, -1, "androidx.compose.material3.ExposedDropdownMenuBoxScope.ExposedDropdownMenu.<anonymous> (ExposedDropdownMenu.kt:355)");
                                             }
-                                            MenuKt.m2646DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState22, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                            MenuKt.m2248DropdownMenuContentQj0Zi0g(ExposedDropdownMenuBoxScope.this.exposedDropdownSize(modifier3, z5), mutableTransitionState, mutableState22, scrollState5, shape4, j3, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
@@ -534,9 +528,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj3, Object obj4) {
-                                            Unit ExposedDropdownMenu_vNxi1II$lambda$7;
-                                            ExposedDropdownMenu_vNxi1II$lambda$7 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$7(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState3, z4, shape2, j2, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                            return ExposedDropdownMenu_vNxi1II$lambda$7;
+                                            return ExposedDropdownMenuBoxScope.ExposedDropdownMenu_vNxi1II$lambda$7(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState3, z4, shape2, j2, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                         }
                                     });
                                     return;
@@ -676,21 +668,21 @@ public abstract class ExposedDropdownMenuBoxScope {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenu_vNxi1II$lambda$2$lambda$1(MutableState mutableState) {
         mutableState.setValue(Unit.INSTANCE);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenu_vNxi1II$lambda$6$lambda$5(MutableState mutableState, IntRect intRect, IntRect intRect2) {
-        mutableState.setValue(TransformOrigin.m5826boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+        mutableState.setValue(TransformOrigin.m5172boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
         return Unit.INSTANCE;
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Use overload that takes ExposedDropdownMenuAnchorType and enabled parameters", replaceWith = @ReplaceWith(expression = "menuAnchor(type, enabled)", imports = {}))
     public final Modifier menuAnchor(Modifier modifier) {
-        return m2436menuAnchor2Hz36ac$default(this, modifier, ExposedDropdownMenuAnchorType.Companion.m2432getPrimaryNotEditableoYjWRB4(), false, 2, null);
+        return m2064menuAnchor2Hz36ac$default(this, modifier, ExposedDropdownMenuAnchorType.Companion.m2062getPrimaryNotEditableoYjWRB4(), false, 2, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0129  */
@@ -723,7 +715,7 @@ public abstract class ExposedDropdownMenuBoxScope {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2437ExposedDropdownMenukbRbctU(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public final void m2065ExposedDropdownMenukbRbctU(final boolean z, final Function0<Unit> function0, Modifier modifier, ScrollState scrollState, boolean z2, boolean z3, Shape shape, long j, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -886,22 +878,22 @@ public abstract class ExposedDropdownMenuBoxScope {
                                     j2 = MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6);
                                     i4 &= -29360129;
                                 }
-                                float m2632getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM() : f;
-                                float m2631getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM() : f2;
+                                float m2235getTonalElevationD9Ej5fM = i7 != 0 ? MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM() : f;
+                                float m2234getShadowElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM() : f2;
                                 if (i11 != 0) {
                                     scrollState4 = scrollState3;
-                                    f5 = m2632getTonalElevationD9Ej5fM;
+                                    f5 = m2235getTonalElevationD9Ej5fM;
                                     z8 = z9;
                                     shape4 = shape3;
-                                    f6 = m2631getShadowElevationD9Ej5fM;
+                                    f6 = m2234getShadowElevationD9Ej5fM;
                                     borderStroke3 = null;
                                 } else {
                                     borderStroke3 = borderStroke;
                                     scrollState4 = scrollState3;
-                                    f5 = m2632getTonalElevationD9Ej5fM;
+                                    f5 = m2235getTonalElevationD9Ej5fM;
                                     z8 = z9;
                                     shape4 = shape3;
-                                    f6 = m2631getShadowElevationD9Ej5fM;
+                                    f6 = m2234getShadowElevationD9Ej5fM;
                                 }
                             }
                             long j4 = j2;
@@ -912,7 +904,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                             }
                             int i15 = i4 >> 3;
                             composer2 = startRestartGroup;
-                            m2438ExposedDropdownMenuvNxi1II(z, obj, modifier3, scrollState4, z8, shape4, j4, f5, f6, borderStroke3, function3, composer2, (i4 & 8190) | (57344 & i15) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | ((i13 << 27) & 1879048192), (i13 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
+                            m2066ExposedDropdownMenuvNxi1II(z, obj, modifier3, scrollState4, z8, shape4, j4, f5, f6, borderStroke3, function3, composer2, (i4 & 8190) | (57344 & i15) | (458752 & i15) | (3670016 & i15) | (29360128 & i15) | (i15 & 234881024) | ((i13 << 27) & 1879048192), (i13 >> 3) & WebSocketProtocol.PAYLOAD_SHORT, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -943,9 +935,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit ExposedDropdownMenu_kbRbctU$lambda$8;
-                                    ExposedDropdownMenu_kbRbctU$lambda$8 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu_kbRbctU$lambda$8(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState2, z6, z5, shape2, j3, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return ExposedDropdownMenu_kbRbctU$lambda$8;
+                                    return ExposedDropdownMenuBoxScope.ExposedDropdownMenu_kbRbctU$lambda$8(ExposedDropdownMenuBoxScope.this, z, function0, modifier2, scrollState2, z6, z5, shape2, j3, f3, f4, borderStroke2, function3, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -1145,7 +1135,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                                 }
                                 int i6 = i3 >> 9;
                                 composer2 = startRestartGroup;
-                                exposedDropdownMenuBoxScope.m2437ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i6 & 112) | 6 | (i6 & 896), 16);
+                                exposedDropdownMenuBoxScope.m2065ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i6 & 112) | 6 | (i6 & 896), 16);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1161,7 +1151,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                         }
                         int i62 = i3 >> 9;
                         composer2 = startRestartGroup;
-                        exposedDropdownMenuBoxScope.m2437ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i62 & 112) | 6 | (i62 & 896), 16);
+                        exposedDropdownMenuBoxScope.m2065ExposedDropdownMenukbRbctU(z2, function02, modifier2, rememberScrollState, false, true, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM(), null, obj2, composer2, (i3 & 14) | 906166272 | (i3 & 112) | (i3 & 896) | (i3 & 7168), (i62 & 112) | 6 | (i62 & 896), 16);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         obj = modifier2;
@@ -1175,9 +1165,7 @@ public abstract class ExposedDropdownMenuBoxScope {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuBoxScope$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit ExposedDropdownMenu$lambda$9;
-                                ExposedDropdownMenu$lambda$9 = ExposedDropdownMenuBoxScope.ExposedDropdownMenu$lambda$9(ExposedDropdownMenuBoxScope.this, z, function0, obj, scrollState2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return ExposedDropdownMenu$lambda$9;
+                                return ExposedDropdownMenuBoxScope.ExposedDropdownMenu$lambda$9(ExposedDropdownMenuBoxScope.this, z, function0, obj, scrollState2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;

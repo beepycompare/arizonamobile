@@ -42,9 +42,7 @@ public final class OkioStorage<T> implements Storage<T> {
         this.canonicalPath$delegate = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.okio.OkioStorage$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Path canonicalPath_delegate$lambda$0;
-                canonicalPath_delegate$lambda$0 = OkioStorage.canonicalPath_delegate$lambda$0(OkioStorage.this);
-                return canonicalPath_delegate$lambda$0;
+                return OkioStorage.canonicalPath_delegate$lambda$0(OkioStorage.this);
             }
         });
     }
@@ -53,14 +51,12 @@ public final class OkioStorage<T> implements Storage<T> {
         this(fileSystem, okioSerializer, (i & 4) != 0 ? new Function2() { // from class: androidx.datastore.core.okio.OkioStorage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                InterProcessCoordinator _init_$lambda$0;
-                _init_$lambda$0 = OkioStorage._init_$lambda$0((Path) obj, (FileSystem) obj2);
-                return _init_$lambda$0;
+                return OkioStorage._init_$lambda$0((Path) obj, (FileSystem) obj2);
             }
         } : function2, function0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InterProcessCoordinator _init_$lambda$0(Path path, FileSystem fileSystem) {
         Intrinsics.checkNotNullParameter(path, "path");
         Intrinsics.checkNotNullParameter(fileSystem, "<unused var>");
@@ -71,7 +67,7 @@ public final class OkioStorage<T> implements Storage<T> {
         return (Path) this.canonicalPath$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Path canonicalPath_delegate$lambda$0(OkioStorage okioStorage) {
         Path invoke = okioStorage.producePath.invoke();
         if (!invoke.isAbsolute()) {
@@ -93,14 +89,12 @@ public final class OkioStorage<T> implements Storage<T> {
         return new OkioStorageConnection(this.fileSystem, getCanonicalPath(), this.serializer, this.coordinatorProducer.invoke(getCanonicalPath(), this.fileSystem), new Function0() { // from class: androidx.datastore.core.okio.OkioStorage$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit createConnection$lambda$1;
-                createConnection$lambda$1 = OkioStorage.createConnection$lambda$1(OkioStorage.this);
-                return createConnection$lambda$1;
+                return OkioStorage.createConnection$lambda$1(OkioStorage.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit createConnection$lambda$1(OkioStorage okioStorage) {
         synchronized (activeFilesLock) {
             activeFiles.remove(okioStorage.getCanonicalPath().toString());

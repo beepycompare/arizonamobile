@@ -288,15 +288,15 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
     private final void insertIntoTail(Object[] objArr, int i, E e) {
         int tailSize = tailSize();
         Object[] makeMutable = makeMutable(this.tail);
+        Object[] objArr2 = this.tail;
         if (tailSize < 32) {
-            ArraysKt.copyInto(this.tail, makeMutable, i + 1, i, tailSize);
+            ArraysKt.copyInto(objArr2, makeMutable, i + 1, i, tailSize);
             makeMutable[i] = e;
             this.root = objArr;
             this.tail = makeMutable;
             this.size = size() + 1;
             return;
         }
-        Object[] objArr2 = this.tail;
         Object obj = objArr2[31];
         ArraysKt.copyInto(objArr2, makeMutable, i + 1, i, 31);
         makeMutable[i] = e;
@@ -345,7 +345,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
         int i2 = (i >> 5) << 5;
         int size = (((size() - i2) + collection.size()) - 1) / 32;
         if (size == 0) {
-            CommonFunctionsKt.m4792assert(i >= rootSize());
+            CommonFunctionsKt.m4157assert(i >= rootSize());
             int i3 = i & 31;
             Object[] objArr2 = this.tail;
             Object[] copyInto2 = ArraysKt.copyInto(objArr2, makeMutable(objArr2), (((i + collection.size()) - 1) & 31) + 1, i3, tailSize());
@@ -366,15 +366,16 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
         } else {
             persistentVectorBuilder = this;
             collection2 = collection;
+            Object[] objArr4 = persistentVectorBuilder.tail;
             if (tailSize2 > tailSize) {
                 int i4 = tailSize2 - tailSize;
-                Object[] makeMutableShiftingRight = makeMutableShiftingRight(persistentVectorBuilder.tail, i4);
+                Object[] makeMutableShiftingRight = makeMutableShiftingRight(objArr4, i4);
                 persistentVectorBuilder.insertIntoRoot(collection2, i, i4, objArr3, size, makeMutableShiftingRight);
                 objArr = objArr3;
                 copyInto = makeMutableShiftingRight;
             } else {
                 int i5 = tailSize - tailSize2;
-                copyInto = ArraysKt.copyInto(persistentVectorBuilder.tail, mutableBuffer(), 0, i5, tailSize);
+                copyInto = ArraysKt.copyInto(objArr4, mutableBuffer(), 0, i5, tailSize);
                 int i6 = 32 - i5;
                 Object[] makeMutableShiftingRight2 = makeMutableShiftingRight(persistentVectorBuilder.tail, i6);
                 int i7 = size - 1;
@@ -495,13 +496,13 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
 
     private final Object removeFromTailAt(Object[] objArr, int i, int i2, int i3) {
         int size = size() - i;
-        CommonFunctionsKt.m4792assert(i3 < size);
+        CommonFunctionsKt.m4157assert(i3 < size);
+        Object[] objArr2 = this.tail;
         if (size == 1) {
-            Object obj = this.tail[0];
+            Object obj = objArr2[0];
             pullLastBufferFromRoot(objArr, i, i2);
             return obj;
         }
-        Object[] objArr2 = this.tail;
         Object obj2 = objArr2[i3];
         Object[] copyInto = ArraysKt.copyInto(objArr2, makeMutable(objArr2), i3, i3 + 1, size);
         copyInto[size - 1] = null;
@@ -610,7 +611,6 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
     }
 
     private final boolean removeAll(Function1<? super E, Boolean> function1) {
-        Object[] pushBuffers;
         int tailSize = tailSize();
         ObjectRef objectRef = new ObjectRef(null);
         if (this.root == null) {
@@ -622,7 +622,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
             i = removeAll(function1, leafBufferIterator.next(), 32, objectRef);
         }
         if (i == 32) {
-            CommonFunctionsKt.m4792assert(!leafBufferIterator.hasNext());
+            CommonFunctionsKt.m4157assert(!leafBufferIterator.hasNext());
             int removeAllFromTail = removeAllFromTail(function1, tailSize, objectRef);
             if (removeAllFromTail == 0) {
                 pullLastBufferFromRoot(this.root, size(), this.rootShift);
@@ -641,14 +641,15 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
         Intrinsics.checkNotNull(value, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
         Object[] objArr = (Object[]) value;
         ArraysKt.fill(objArr, (Object) null, recyclableRemoveAll, 32);
-        if (arrayList.isEmpty()) {
-            pushBuffers = this.root;
-            Intrinsics.checkNotNull(pushBuffers);
+        boolean isEmpty = arrayList.isEmpty();
+        Object[] objArr2 = this.root;
+        if (isEmpty) {
+            Intrinsics.checkNotNull(objArr2);
         } else {
-            pushBuffers = pushBuffers(this.root, previousIndex, this.rootShift, arrayList.iterator());
+            objArr2 = pushBuffers(objArr2, previousIndex, this.rootShift, arrayList.iterator());
         }
         int size = previousIndex + (arrayList.size() << 5);
-        this.root = retainFirst(pushBuffers, size);
+        this.root = retainFirst(objArr2, size);
         this.tail = objArr;
         this.size = size + recyclableRemoveAll;
         return true;
@@ -707,7 +708,7 @@ public final class PersistentVectorBuilder<E> extends AbstractMutableList<E> imp
     private final int removeAllFromTail(Function1<? super E, Boolean> function1, int i, ObjectRef objectRef) {
         int removeAll = removeAll(function1, this.tail, i, objectRef);
         if (removeAll == i) {
-            CommonFunctionsKt.m4792assert(objectRef.getValue() == this.tail);
+            CommonFunctionsKt.m4157assert(objectRef.getValue() == this.tail);
             return i;
         }
         Object value = objectRef.getValue();

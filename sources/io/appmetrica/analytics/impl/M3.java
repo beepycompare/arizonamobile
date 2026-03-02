@@ -23,7 +23,7 @@ public final class M3 extends P5 {
 
     public static P5 b(String str, String str2) {
         P5 p5 = new P5("", 0);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         p5.d = 5376;
         p5.a(str, str2);
         return p5;
@@ -31,23 +31,25 @@ public final class M3 extends P5 {
 
     public static P5 n() {
         P5 p5 = new P5("", 0);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         p5.d = 5632;
         return p5;
     }
 
     public static P5 o() {
         P5 p5 = new P5("", 0);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         p5.d = 40961;
         return p5;
     }
 
     public final void a(String str, String str2, L3 l3) {
-        if (!StringUtils.equalsNullSafety(str, str2)) {
-            this.q.put(l3, Integer.valueOf(StringUtils.getUTF8Bytes(str).length - StringUtils.getUTF8Bytes(str2).length));
+        boolean equalsNullSafety = StringUtils.equalsNullSafety(str, str2);
+        HashMap hashMap = this.q;
+        if (!equalsNullSafety) {
+            hashMap.put(l3, Integer.valueOf(StringUtils.getUTF8Bytes(str).length - StringUtils.getUTF8Bytes(str2).length));
         } else {
-            this.q.remove(l3);
+            hashMap.remove(l3);
         }
         int i = 0;
         for (Integer num : this.q.values()) {
@@ -142,10 +144,13 @@ public final class M3 extends P5 {
         z2.getClass();
         byte[] a2 = z2.a(bArr);
         L3 l3 = L3.VALUE;
-        if (bArr.length != a2.length) {
-            this.q.put(l3, Integer.valueOf(bArr.length - a2.length));
+        int length = bArr.length;
+        int length2 = a2.length;
+        HashMap hashMap = this.q;
+        if (length != length2) {
+            hashMap.put(l3, Integer.valueOf(bArr.length - a2.length));
         } else {
-            this.q.remove(l3);
+            hashMap.remove(l3);
         }
         int i = 0;
         for (Integer num : this.q.values()) {
@@ -155,16 +160,16 @@ public final class M3 extends P5 {
         super.setValueBytes(a2);
     }
 
-    public static P5 a(C0336io c0336io) {
+    public static P5 a(C0335io c0335io) {
         P5 o = o();
-        o.setValue(new String(Base64.encode(MessageNano.toByteArray(c0336io), 0)));
+        o.setValue(new String(Base64.encode(MessageNano.toByteArray(c0335io), 0)));
         return o;
     }
 
     public static M3 a(PublicLogger publicLogger, Oi oi) {
         int i;
         M3 m3 = new M3(publicLogger);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         m3.d = 40976;
         Mi mi = new Mi();
         mi.b = oi.f726a.currency.getCurrencyCode().getBytes();
@@ -201,7 +206,7 @@ public final class M3 extends P5 {
 
     public static M3 a(PublicLogger publicLogger, E e) {
         M3 m3 = new M3(publicLogger);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         m3.d = 40977;
         kotlin.Pair a2 = e.a();
         m3.b = m3.e(new String(Base64.encode((byte[]) a2.getFirst(), 0)));

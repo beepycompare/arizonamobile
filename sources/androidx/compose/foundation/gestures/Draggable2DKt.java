@@ -19,17 +19,19 @@ public final class Draggable2DKt {
     private static final Function1<Offset, Unit> NoOpOnDragStart = new Function1() { // from class: androidx.compose.foundation.gestures.Draggable2DKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit NoOpOnDragStart$lambda$0;
-            NoOpOnDragStart$lambda$0 = Draggable2DKt.NoOpOnDragStart$lambda$0((Offset) obj);
-            return NoOpOnDragStart$lambda$0;
+            Unit unit;
+            Offset offset = (Offset) obj;
+            unit = Unit.INSTANCE;
+            return unit;
         }
     };
     private static final Function1<Velocity, Unit> NoOpOnDragStop = new Function1() { // from class: androidx.compose.foundation.gestures.Draggable2DKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit NoOpOnDragStop$lambda$0;
-            NoOpOnDragStop$lambda$0 = Draggable2DKt.NoOpOnDragStop$lambda$0((Velocity) obj);
-            return NoOpOnDragStop$lambda$0;
+            Unit unit;
+            Velocity velocity = (Velocity) obj;
+            unit = Unit.INSTANCE;
+            return unit;
         }
     };
 
@@ -73,15 +75,5 @@ public final class Draggable2DKt {
 
     public static final Modifier draggable2D(Modifier modifier, Draggable2DState draggable2DState, boolean z, MutableInteractionSource mutableInteractionSource, boolean z2, Function1<? super Offset, Unit> function1, Function1<? super Velocity, Unit> function12, boolean z3) {
         return modifier.then(new Draggable2DElement(draggable2DState, z, mutableInteractionSource, z2, function1, function12, z3));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoOpOnDragStart$lambda$0(Offset offset) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoOpOnDragStop$lambda$0(Velocity velocity) {
-        return Unit.INSTANCE;
     }
 }

@@ -31,14 +31,14 @@ public class DeviceProfileWriter {
         this.mExecutor.execute(new Runnable() { // from class: androidx.profileinstaller.DeviceProfileWriter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DeviceProfileWriter.this.m9177lambda$result$0$androidxprofileinstallerDeviceProfileWriter(i, obj);
+                DeviceProfileWriter.this.m8399lambda$result$0$androidxprofileinstallerDeviceProfileWriter(i, obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$result$0$androidx-profileinstaller-DeviceProfileWriter  reason: not valid java name */
-    public /* synthetic */ void m9177lambda$result$0$androidxprofileinstallerDeviceProfileWriter(int i, Object obj) {
+    public /* synthetic */ void m8399lambda$result$0$androidxprofileinstallerDeviceProfileWriter(int i, Object obj) {
         this.mDiagnostics.onResultReceived(i, obj);
     }
 
@@ -57,14 +57,16 @@ public class DeviceProfileWriter {
             result(3, Integer.valueOf(Build.VERSION.SDK_INT));
             return false;
         }
-        if (this.mCurProfile.exists()) {
-            if (!this.mCurProfile.canWrite()) {
+        boolean exists = this.mCurProfile.exists();
+        File file = this.mCurProfile;
+        if (exists) {
+            if (!file.canWrite()) {
                 result(4, null);
                 return false;
             }
         } else {
             try {
-                if (!this.mCurProfile.createNewFile()) {
+                if (!file.createNewFile()) {
                     result(4, null);
                     return false;
                 }

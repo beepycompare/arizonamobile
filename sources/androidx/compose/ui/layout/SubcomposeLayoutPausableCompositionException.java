@@ -27,43 +27,43 @@ public final class SubcomposeLayoutPausableCompositionException extends IllegalS
         List createListBuilder = CollectionsKt.createListBuilder();
         for (int i = this.operations._size - 1; i >= 0; i--) {
             int i2 = this.operations.get(i);
-            int m6958constructorimpl = SLOperation.m6958constructorimpl(i2);
-            if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6965getCancelPausedPrecompositionNjRlDlw())) {
+            int m6299constructorimpl = SLOperation.m6299constructorimpl(i2);
+            if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6306getCancelPausedPrecompositionNjRlDlw())) {
                 str = "CancelPausedPrecomposition";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6971getReuseForceSyncDeactivationNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6312getReuseForceSyncDeactivationNjRlDlw())) {
                 str = "ReuseForceSyncDeactivation";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6972getReuseScheduleOutOfFrameDeactivationNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6313getReuseScheduleOutOfFrameDeactivationNjRlDlw())) {
                 str = "ReuseScheduleOutOfFrameDeactivation";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6973getReuseSyncDeactivationNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6314getReuseSyncDeactivationNjRlDlw())) {
                 str = "ReuseSyncDeactivation";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6970getReuseDeactivationViaHostNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6311getReuseDeactivationViaHostNjRlDlw())) {
                 str = "ReuseDeactivationViaHost";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6981getTookFromPrecomposeMapNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6322getTookFromPrecomposeMapNjRlDlw())) {
                 str = "TookFromPrecomposeMap";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6977getSubcomposeNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6318getSubcomposeNjRlDlw())) {
                 str = "Subcompose";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6979getSubcomposeNewNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6320getSubcomposeNewNjRlDlw())) {
                 str = "SubcomposeNew";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6980getSubcomposePausableNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6321getSubcomposePausableNjRlDlw())) {
                 str = "SubcomposePausable";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6978getSubcomposeForceReuseNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6319getSubcomposeForceReuseNjRlDlw())) {
                 str = "SubcomposeForceReuse";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6966getDeactivateOutOfFrameNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6307getDeactivateOutOfFrameNjRlDlw())) {
                 str = "DeactivateOutOfFrame";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6967getDeactivateOutOfFrameCancelledNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6308getDeactivateOutOfFrameCancelledNjRlDlw())) {
                 str = "DeactivateOutOfFrameCancelled";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6975getSlotToReusedFromOnDeactivateNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6316getSlotToReusedFromOnDeactivateNjRlDlw())) {
                 str = "SlotToReusedFromOnDeactivate";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6976getSlotToReusedFromOnReuseNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6317getSlotToReusedFromOnReuseNjRlDlw())) {
                 str = "SlotToReusedFromOnReuse";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6974getReusedNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6315getReusedNjRlDlw())) {
                 str = "Reused";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6969getResumePausedNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6310getResumePausedNjRlDlw())) {
                 str = "ResumePaused";
-            } else if (SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6968getPausePausedNjRlDlw())) {
+            } else if (SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6309getPausePausedNjRlDlw())) {
                 str = "PausePaused";
             } else {
-                str = SLOperation.m6960equalsimpl0(m6958constructorimpl, SLOperation.Companion.m6964getApplyPausedNjRlDlw()) ? "ApplyPaused" : "Unexpected " + i2;
+                str = SLOperation.m6301equalsimpl0(m6299constructorimpl, SLOperation.Companion.m6305getApplyPausedNjRlDlw()) ? "ApplyPaused" : "Unexpected " + i2;
             }
             createListBuilder.add(i + ": " + str);
         }

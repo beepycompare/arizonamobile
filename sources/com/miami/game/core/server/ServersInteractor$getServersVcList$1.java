@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 0, 2, 2, 2}, l = {396, 372, 376}, m = "getServersVcList", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend", "serverList", "it", "$i$a$-let-ServersInteractor$getServersVcList$4"}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 0, 2, 2, 2}, l = {397, 373, 377}, m = "getServersVcList", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend", "serverList", "it", "$i$a$-let-ServersInteractor$getServersVcList$4"}, nl = {340, 421, 379}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 2)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$getServersVcList$1 extends ContinuationImpl {
     int I$0;

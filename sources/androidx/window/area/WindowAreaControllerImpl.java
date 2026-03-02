@@ -112,17 +112,12 @@ public final class WindowAreaControllerImpl extends WindowAreaController {
             executor.execute(new Runnable() { // from class: androidx.window.area.WindowAreaControllerImpl$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WindowAreaControllerImpl.transferActivityToWindowArea$lambda$1(WindowAreaSessionCallback.this);
+                    WindowAreaSessionCallback.this.onSessionEnded(new IllegalArgumentException("Invalid WindowAreaInfo token"));
                 }
             });
         } else {
             startRearDisplayMode(activity, executor, windowAreaSessionCallback);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void transferActivityToWindowArea$lambda$1(WindowAreaSessionCallback windowAreaSessionCallback) {
-        windowAreaSessionCallback.onSessionEnded(new IllegalArgumentException("Invalid WindowAreaInfo token"));
     }
 
     @Override // androidx.window.area.WindowAreaController
@@ -135,17 +130,12 @@ public final class WindowAreaControllerImpl extends WindowAreaController {
             executor.execute(new Runnable() { // from class: androidx.window.area.WindowAreaControllerImpl$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WindowAreaControllerImpl.presentContentOnWindowArea$lambda$2(WindowAreaPresentationSessionCallback.this);
+                    WindowAreaPresentationSessionCallback.this.onSessionEnded(new IllegalArgumentException("Invalid WindowAreaInfo token"));
                 }
             });
         } else {
             startRearDisplayPresentationMode(activity, executor, windowAreaPresentationSessionCallback);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void presentContentOnWindowArea$lambda$2(WindowAreaPresentationSessionCallback windowAreaPresentationSessionCallback) {
-        windowAreaPresentationSessionCallback.onSessionEnded(new IllegalArgumentException("Invalid WindowAreaInfo token"));
     }
 
     private final void startRearDisplayMode(Activity activity, Executor executor, WindowAreaSessionCallback windowAreaSessionCallback) {
@@ -214,14 +204,9 @@ public final class WindowAreaControllerImpl extends WindowAreaController {
             this.executor.execute(new Runnable() { // from class: androidx.window.area.WindowAreaControllerImpl$RearDisplaySessionConsumer$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WindowAreaControllerImpl.RearDisplaySessionConsumer.onSessionStarted$lambda$1$lambda$0(WindowAreaControllerImpl.RearDisplaySessionConsumer.this, rearDisplaySessionImpl);
+                    WindowAreaControllerImpl.RearDisplaySessionConsumer.this.appCallback.onSessionStarted(rearDisplaySessionImpl);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void onSessionStarted$lambda$1$lambda$0(RearDisplaySessionConsumer rearDisplaySessionConsumer, WindowAreaSession windowAreaSession) {
-            rearDisplaySessionConsumer.appCallback.onSessionStarted(windowAreaSession);
         }
 
         private final void onSessionFinished() {
@@ -230,14 +215,9 @@ public final class WindowAreaControllerImpl extends WindowAreaController {
             this.executor.execute(new Runnable() { // from class: androidx.window.area.WindowAreaControllerImpl$RearDisplaySessionConsumer$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WindowAreaControllerImpl.RearDisplaySessionConsumer.onSessionFinished$lambda$2(WindowAreaControllerImpl.RearDisplaySessionConsumer.this);
+                    WindowAreaControllerImpl.RearDisplaySessionConsumer.this.appCallback.onSessionEnded(null);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void onSessionFinished$lambda$2(RearDisplaySessionConsumer rearDisplaySessionConsumer) {
-            rearDisplaySessionConsumer.appCallback.onSessionEnded(null);
         }
     }
 
@@ -279,7 +259,7 @@ public final class WindowAreaControllerImpl extends WindowAreaController {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void accept$lambda$0(int i, int i2, RearDisplayPresentationSessionConsumer rearDisplayPresentationSessionConsumer, WindowAreaControllerImpl windowAreaControllerImpl) {
             if (i == 0) {
                 windowAreaControllerImpl.presentationSessionActive = false;

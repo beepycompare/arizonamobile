@@ -19,8 +19,8 @@ public final class RoundedCornerShapeKt {
         return new CornerSize() { // from class: androidx.compose.foundation.shape.RoundedCornerShapeKt$lerp$1
             @Override // androidx.compose.foundation.shape.CornerSize
             /* renamed from: toPx-TmRCtEA */
-            public float mo1274toPxTmRCtEA(long j, Density density) {
-                return MathHelpersKt.lerp(CornerSize.this.mo1274toPxTmRCtEA(j, density), cornerSize2.mo1274toPxTmRCtEA(j, density), f);
+            public float mo1117toPxTmRCtEA(long j, Density density) {
+                return MathHelpersKt.lerp(CornerSize.this.mo1117toPxTmRCtEA(j, density), cornerSize2.mo1117toPxTmRCtEA(j, density), f);
             }
         };
     }
@@ -34,8 +34,8 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-0680j_4  reason: not valid java name */
-    public static final RoundedCornerShape m1283RoundedCornerShape0680j_4(float f) {
-        return RoundedCornerShape(CornerSizeKt.m1275CornerSize0680j_4(f));
+    public static final RoundedCornerShape m1126RoundedCornerShape0680j_4(float f) {
+        return RoundedCornerShape(CornerSizeKt.m1118CornerSize0680j_4(f));
     }
 
     public static final RoundedCornerShape RoundedCornerShape(float f) {
@@ -47,8 +47,8 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-a9UjIt4  reason: not valid java name */
-    public static final RoundedCornerShape m1284RoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
-        return new RoundedCornerShape(CornerSizeKt.m1275CornerSize0680j_4(f), CornerSizeKt.m1275CornerSize0680j_4(f2), CornerSizeKt.m1275CornerSize0680j_4(f3), CornerSizeKt.m1275CornerSize0680j_4(f4));
+    public static final RoundedCornerShape m1127RoundedCornerShapea9UjIt4(float f, float f2, float f3, float f4) {
+        return new RoundedCornerShape(CornerSizeKt.m1118CornerSize0680j_4(f), CornerSizeKt.m1118CornerSize0680j_4(f2), CornerSizeKt.m1118CornerSize0680j_4(f3), CornerSizeKt.m1118CornerSize0680j_4(f4));
     }
 
     public static /* synthetic */ RoundedCornerShape RoundedCornerShape$default(float f, float f2, float f3, float f4, int i, Object obj) {
@@ -92,19 +92,19 @@ public final class RoundedCornerShapeKt {
     }
 
     /* renamed from: RoundedCornerShape-a9UjIt4$default  reason: not valid java name */
-    public static /* synthetic */ RoundedCornerShape m1285RoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ RoundedCornerShape m1128RoundedCornerShapea9UjIt4$default(float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m8258constructorimpl(0);
+            f = Dp.m7555constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m8258constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0);
         }
         if ((i & 4) != 0) {
-            f3 = Dp.m8258constructorimpl(0);
+            f3 = Dp.m7555constructorimpl(0);
         }
         if ((i & 8) != 0) {
-            f4 = Dp.m8258constructorimpl(0);
+            f4 = Dp.m7555constructorimpl(0);
         }
-        return m1284RoundedCornerShapea9UjIt4(f, f2, f3, f4);
+        return m1127RoundedCornerShapea9UjIt4(f, f2, f3, f4);
     }
 }

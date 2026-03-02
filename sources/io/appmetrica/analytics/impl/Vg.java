@@ -21,8 +21,8 @@ public final class Vg extends Rg {
         this(x4, new SafePackageManager());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d0, TryCatch #0 {all -> 0x00d0, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0094, B:25:0x0098), top: B:28:0x0043 }] */
     @Override // io.appmetrica.analytics.impl.Rg
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -47,10 +47,10 @@ public final class Vg extends Rg {
                     }
                     b = b();
                     if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
-                        C0373k9 c0373k9 = x4.n;
-                        int i2 = c0373k9.j;
-                        c0373k9.l = i2;
-                        c0373k9.f1079a.a(i2).b();
+                        C0372k9 c0372k9 = x4.n;
+                        int i2 = c0372k9.j;
+                        c0372k9.l = i2;
+                        c0372k9.f1079a.a(i2).b();
                     } else {
                         JSONArray jSONArray2 = new JSONArray();
                         Iterator it = b.iterator();
@@ -65,11 +65,11 @@ public final class Vg extends Rg {
                             jSONArray2.put(put);
                         }
                         P5 a2 = P5.a(p5, new JSONObject().put("features", jSONArray2).toString());
-                        C0373k9 c0373k92 = x4.n;
-                        c0373k92.a(a2, Rk.a(c0373k92.c.b(a2), a2.i));
-                        int i4 = c0373k92.j;
-                        c0373k92.l = i4;
-                        c0373k92.f1079a.a(i4).b();
+                        C0372k9 c0372k92 = x4.n;
+                        c0372k92.a(a2, Rk.a(c0372k92.c.b(a2), a2.i));
+                        int i4 = c0372k92.j;
+                        c0372k92.l = i4;
+                        c0372k92.f1079a.a(i4).b();
                         we.i(jSONArray2.toString());
                     }
                 }

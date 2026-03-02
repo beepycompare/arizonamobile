@@ -107,18 +107,20 @@ public final class MpeghReader implements ElementaryStreamReader {
                 if (i == 1) {
                     copyData(parsableByteArray, this.headerScratchBytes, false);
                     if (this.headerScratchBytes.bytesLeft() == 0) {
-                        if (parseHeader()) {
-                            this.headerScratchBytes.setPosition(0);
+                        boolean parseHeader = parseHeader();
+                        ParsableByteArray parsableByteArray2 = this.headerScratchBytes;
+                        if (parseHeader) {
+                            parsableByteArray2.setPosition(0);
                             TrackOutput trackOutput = this.output;
-                            ParsableByteArray parsableByteArray2 = this.headerScratchBytes;
-                            trackOutput.sampleData(parsableByteArray2, parsableByteArray2.limit());
+                            ParsableByteArray parsableByteArray3 = this.headerScratchBytes;
+                            trackOutput.sampleData(parsableByteArray3, parsableByteArray3.limit());
                             this.headerScratchBytes.reset(2);
                             this.dataScratchBytes.reset(this.header.packetLength);
                             this.headerDataFinished = true;
                             this.state = 2;
-                        } else if (this.headerScratchBytes.limit() < 15) {
-                            ParsableByteArray parsableByteArray3 = this.headerScratchBytes;
-                            parsableByteArray3.setLimit(parsableByteArray3.limit() + 1);
+                        } else if (parsableByteArray2.limit() < 15) {
+                            ParsableByteArray parsableByteArray4 = this.headerScratchBytes;
+                            parsableByteArray4.setLimit(parsableByteArray4.limit() + 1);
                             this.headerDataFinished = false;
                         }
                     } else {

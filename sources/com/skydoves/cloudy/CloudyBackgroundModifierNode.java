@@ -76,8 +76,8 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
         this.tint = j;
         this.cpuBlurEnabled = z;
         this.onStateChanged = onStateChanged;
-        this.positionInRoot = Offset.Companion.m5195getZeroF1C5BW0();
-        this.size = IntSize.Companion.m8434getZeroYbymL2g();
+        this.positionInRoot = Offset.Companion.m4543getZeroF1C5BW0();
+        this.size = IntSize.Companion.m7731getZeroYbymL2g();
         this.cachedContentVersion = -1L;
         this.pendingContentVersion = -1L;
         this.queuedVersion = -1L;
@@ -106,11 +106,11 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
     }
 
     /* renamed from: update-Bx497Mc  reason: not valid java name */
-    public final void m10196updateBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
+    public final void m9139updateBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
         Intrinsics.checkNotNullParameter(sky, "sky");
         Intrinsics.checkNotNullParameter(progressive, "progressive");
         Intrinsics.checkNotNullParameter(onStateChanged, "onStateChanged");
-        boolean z2 = (Intrinsics.areEqual(this.sky, sky) && this.radius == i && Intrinsics.areEqual(this.progressive, progressive) && Color.m5425equalsimpl0(this.tint, j) && this.cpuBlurEnabled == z) ? false : true;
+        boolean z2 = (Intrinsics.areEqual(this.sky, sky) && this.radius == i && Intrinsics.areEqual(this.progressive, progressive) && Color.m4773equalsimpl0(this.tint, j) && this.cpuBlurEnabled == z) ? false : true;
         this.sky = sky;
         this.radius = i;
         this.progressive = progressive;
@@ -136,7 +136,7 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo453onRemeasuredozmzZPI(long j) {
+    public void mo394onRemeasuredozmzZPI(long j) {
         this.size = j;
     }
 
@@ -152,13 +152,13 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
             contentDrawScope.drawContent();
         } else {
             Rect sourceBounds$cloudy_release = this.sky.getSourceBounds$cloudy_release();
-            SkySnapshot m10205fromProgressivePE3pjmc = SkySnapshot.Companion.m10205fromProgressivePE3pjmc(this.radius, Float.intBitsToFloat((int) (this.positionInRoot >> 32)) - sourceBounds$cloudy_release.getLeft(), Float.intBitsToFloat((int) (this.positionInRoot & 4294967295L)) - sourceBounds$cloudy_release.getTop(), Float.intBitsToFloat((int) (contentDrawScope.mo6005getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (4294967295L & contentDrawScope.mo6005getSizeNHjbRc())), this.progressive, this.tint);
+            SkySnapshot m9147fromProgressivePE3pjmc = SkySnapshot.Companion.m9147fromProgressivePE3pjmc(this.radius, Float.intBitsToFloat((int) (this.positionInRoot >> 32)) - sourceBounds$cloudy_release.getLeft(), Float.intBitsToFloat((int) (this.positionInRoot & 4294967295L)) - sourceBounds$cloudy_release.getTop(), Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32)), Float.intBitsToFloat((int) (4294967295L & contentDrawScope.mo5346getSizeNHjbRc())), this.progressive, this.tint);
             if (Build.VERSION.SDK_INT >= 31) {
-                drawWithRenderEffect(contentDrawScope, backgroundLayer$cloudy_release, m10205fromProgressivePE3pjmc);
+                drawWithRenderEffect(contentDrawScope, backgroundLayer$cloudy_release, m9147fromProgressivePE3pjmc);
             } else if (this.cpuBlurEnabled) {
-                drawWithBitmap(contentDrawScope, backgroundLayer$cloudy_release, m10205fromProgressivePE3pjmc);
+                drawWithBitmap(contentDrawScope, backgroundLayer$cloudy_release, m9147fromProgressivePE3pjmc);
             } else {
-                drawScrimFallback(contentDrawScope, backgroundLayer$cloudy_release, m10205fromProgressivePE3pjmc);
+                drawScrimFallback(contentDrawScope, backgroundLayer$cloudy_release, m9147fromProgressivePE3pjmc);
             }
             contentDrawScope.drawContent();
         }
@@ -173,49 +173,49 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         GraphicsLayerKt.drawLayer(contentDrawScope2, graphicsLayer);
         contentDrawScope.getDrawContext().getCanvas().restore();
-        if (!Color.m5425equalsimpl0(this.tint, Color.Companion.m5459getTransparent0d7_KjU())) {
-            DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope2, this.tint, 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 62, null);
+        if (!Color.m4773equalsimpl0(this.tint, Color.Companion.m4807getTransparent0d7_KjU())) {
+            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, this.tint, 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 62, null);
         }
         this.onStateChanged.invoke(CloudyState.Success.Applied.INSTANCE);
     }
 
     private final void drawScrimFallback(ContentDrawScope contentDrawScope, GraphicsLayer graphicsLayer, SkySnapshot skySnapshot) {
-        long m10204getTintColor0d7_KjU;
+        long m9146getTintColor0d7_KjU;
         long j;
         contentDrawScope.getDrawContext().getCanvas().save();
         contentDrawScope.getDrawContext().getCanvas().translate(-skySnapshot.getOffsetX(), -skySnapshot.getOffsetY());
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         GraphicsLayerKt.drawLayer(contentDrawScope2, graphicsLayer);
         contentDrawScope.getDrawContext().getCanvas().restore();
-        if (Color.m5425equalsimpl0(skySnapshot.m10204getTintColor0d7_KjU(), Color.Companion.m5459getTransparent0d7_KjU())) {
-            m10204getTintColor0d7_KjU = CloudyDefaults.INSTANCE.m10199getDefaultScrimColor0d7_KjU();
+        if (Color.m4773equalsimpl0(skySnapshot.m9146getTintColor0d7_KjU(), Color.Companion.m4807getTransparent0d7_KjU())) {
+            m9146getTintColor0d7_KjU = CloudyDefaults.INSTANCE.m9142getDefaultScrimColor0d7_KjU();
         } else {
-            m10204getTintColor0d7_KjU = skySnapshot.m10204getTintColor0d7_KjU();
+            m9146getTintColor0d7_KjU = skySnapshot.m9146getTintColor0d7_KjU();
         }
-        long j2 = m10204getTintColor0d7_KjU;
-        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() & 4294967295L));
-        int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+        long j2 = m9146getTintColor0d7_KjU;
+        float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
+        int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5929clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m5413getIntersectrtfAjoo);
+            drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m4761getIntersectrtfAjoo);
             try {
-                DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope2, j2, 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 62, null);
+                DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, j2, 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 62, null);
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
                 this.onStateChanged.invoke(CloudyState.Success.Scrim.INSTANCE);
             } catch (Throwable th) {
                 th = th;
-                j = mo5926getSizeNHjbRc;
+                j = mo5267getSizeNHjbRc;
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(j);
+                drawContext.mo5268setSizeuvyYCjk(j);
                 throw th;
             }
         } catch (Throwable th2) {
             th = th2;
-            j = mo5926getSizeNHjbRc;
+            j = mo5267getSizeNHjbRc;
         }
     }
 
@@ -233,45 +233,43 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
         GraphicsContext requireGraphicsContext = DelegatableNodeKt.requireGraphicsContext(this);
         GraphicsLayer createGraphicsLayer = requireGraphicsContext.createGraphicsLayer();
         try {
-            DrawScope.m6003recordJVtK1S4$default(contentDrawScope, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyBackgroundModifierNode$$ExternalSyntheticLambda0
+            DrawScope.m5344recordJVtK1S4$default(contentDrawScope, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyBackgroundModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit drawWithRenderEffect$lambda$0;
-                    drawWithRenderEffect$lambda$0 = CloudyBackgroundModifierNode.drawWithRenderEffect$lambda$0(SkySnapshot.this, graphicsLayer, (DrawScope) obj);
-                    return drawWithRenderEffect$lambda$0;
+                    return CloudyBackgroundModifierNode.drawWithRenderEffect$lambda$0(SkySnapshot.this, graphicsLayer, (DrawScope) obj);
                 }
             }, 1, null);
             createGraphicsLayer.setRenderEffect(asComposeRenderEffect);
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() & 4294967295L));
-            int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
+            int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
             DrawContext drawContext = contentDrawScope2.getDrawContext();
-            long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+            long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5929clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m5413getIntersectrtfAjoo);
+                drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m4761getIntersectrtfAjoo);
                 GraphicsLayerKt.drawLayer(contentDrawScope2, createGraphicsLayer);
-                if (Color.m5425equalsimpl0(skySnapshot.m10204getTintColor0d7_KjU(), Color.Companion.m5459getTransparent0d7_KjU())) {
+                if (Color.m4773equalsimpl0(skySnapshot.m9146getTintColor0d7_KjU(), Color.Companion.m4807getTransparent0d7_KjU())) {
                     graphicsContext2 = requireGraphicsContext;
-                    j = mo5926getSizeNHjbRc;
+                    j = mo5267getSizeNHjbRc;
                 } else {
                     try {
                         graphicsContext2 = requireGraphicsContext;
-                        j = mo5926getSizeNHjbRc;
+                        j = mo5267getSizeNHjbRc;
                     } catch (Throwable th) {
                         th = th;
                         graphicsContext2 = requireGraphicsContext;
-                        j = mo5926getSizeNHjbRc;
+                        j = mo5267getSizeNHjbRc;
                     }
                     try {
-                        DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope2, skySnapshot.m10204getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 62, null);
+                        DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, skySnapshot.m9146getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 62, null);
                     } catch (Throwable th2) {
                         th = th2;
                         graphicsContext = graphicsContext2;
                         try {
                             drawContext.getCanvas().restore();
-                            drawContext.mo5927setSizeuvyYCjk(j);
+                            drawContext.mo5268setSizeuvyYCjk(j);
                             throw th;
                         } catch (Throwable th3) {
                             th = th3;
@@ -282,7 +280,7 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
                 }
                 try {
                     drawContext.getCanvas().restore();
-                    drawContext.mo5927setSizeuvyYCjk(j);
+                    drawContext.mo5268setSizeuvyYCjk(j);
                     try {
                         this.onStateChanged.invoke(CloudyState.Success.Applied.INSTANCE);
                         graphicsContext2.releaseGraphicsLayer(createGraphicsLayer);
@@ -298,7 +296,7 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
             } catch (Throwable th6) {
                 th = th6;
                 graphicsContext = requireGraphicsContext;
-                j = mo5926getSizeNHjbRc;
+                j = mo5267getSizeNHjbRc;
             }
         } catch (Throwable th7) {
             th = th7;
@@ -306,7 +304,7 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit drawWithRenderEffect$lambda$0(SkySnapshot skySnapshot, GraphicsLayer graphicsLayer, DrawScope record) {
         Intrinsics.checkNotNullParameter(record, "$this$record");
         record.getDrawContext().getCanvas().save();
@@ -331,55 +329,55 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
         PlatformBitmap platformBitmap = this.blurredBitmap;
         if (platformBitmap != null && !platformBitmap.getBitmap().isRecycled() && this.cachedContentVersion == contentVersion$cloudy_release) {
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() >> 32));
-            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() & 4294967295L));
-            int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+            float intBitsToFloat = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L));
+            int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
             DrawContext drawContext = contentDrawScope2.getDrawContext();
-            long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+            long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5929clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m5413getIntersectrtfAjoo);
-                DrawScope.m5988drawImageAZ2fEMs$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0L, 0L, IntSize.m8424constructorimpl((4294967295L & ((int) Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() & 4294967295L)))) | (((int) Float.intBitsToFloat((int) (contentDrawScope2.mo6005getSizeNHjbRc() >> 32))) << 32)), 0.0f, null, null, 0, 0, 1006, null);
-                if (!Color.m5425equalsimpl0(skySnapshot.m10204getTintColor0d7_KjU(), Color.Companion.m5459getTransparent0d7_KjU())) {
-                    DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope2, skySnapshot.m10204getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 62, null);
+                drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m4761getIntersectrtfAjoo);
+                DrawScope.m5329drawImageAZ2fEMs$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0L, 0L, IntSize.m7721constructorimpl((4294967295L & ((int) Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() & 4294967295L)))) | (((int) Float.intBitsToFloat((int) (contentDrawScope2.mo5346getSizeNHjbRc() >> 32))) << 32)), 0.0f, null, null, 0, 0, 1006, null);
+                if (!Color.m4773equalsimpl0(skySnapshot.m9146getTintColor0d7_KjU(), Color.Companion.m4807getTransparent0d7_KjU())) {
+                    DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, skySnapshot.m9146getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 62, null);
                 }
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
                 this.onStateChanged.invoke(new CloudyState.Success.Captured(platformBitmap));
                 return;
             } catch (Throwable th) {
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
                 throw th;
             }
         }
         if (platformBitmap != null && !platformBitmap.getBitmap().isRecycled()) {
             ContentDrawScope contentDrawScope3 = contentDrawScope;
-            float intBitsToFloat3 = Float.intBitsToFloat((int) (contentDrawScope3.mo6005getSizeNHjbRc() >> 32));
-            float intBitsToFloat4 = Float.intBitsToFloat((int) (contentDrawScope3.mo6005getSizeNHjbRc() & 4294967295L));
-            int m5413getIntersectrtfAjoo2 = ClipOp.Companion.m5413getIntersectrtfAjoo();
+            float intBitsToFloat3 = Float.intBitsToFloat((int) (contentDrawScope3.mo5346getSizeNHjbRc() >> 32));
+            float intBitsToFloat4 = Float.intBitsToFloat((int) (contentDrawScope3.mo5346getSizeNHjbRc() & 4294967295L));
+            int m4761getIntersectrtfAjoo2 = ClipOp.Companion.m4761getIntersectrtfAjoo();
             DrawContext drawContext2 = contentDrawScope3.getDrawContext();
-            long mo5926getSizeNHjbRc2 = drawContext2.mo5926getSizeNHjbRc();
+            long mo5267getSizeNHjbRc2 = drawContext2.mo5267getSizeNHjbRc();
             drawContext2.getCanvas().save();
             try {
-                j = mo5926getSizeNHjbRc2;
+                j = mo5267getSizeNHjbRc2;
                 try {
-                    drawContext2.getTransform().mo5929clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat3, intBitsToFloat4, m5413getIntersectrtfAjoo2);
-                    DrawScope.m5988drawImageAZ2fEMs$default(contentDrawScope3, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0L, 0L, IntSize.m8424constructorimpl((((int) Float.intBitsToFloat((int) (contentDrawScope3.mo6005getSizeNHjbRc() >> 32))) << 32) | (((int) Float.intBitsToFloat((int) (contentDrawScope3.mo6005getSizeNHjbRc() & 4294967295L))) & 4294967295L)), 0.0f, null, null, 0, 0, 1006, null);
-                    if (!Color.m5425equalsimpl0(skySnapshot.m10204getTintColor0d7_KjU(), Color.Companion.m5459getTransparent0d7_KjU())) {
-                        DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope3, skySnapshot.m10204getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 62, null);
+                    drawContext2.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat3, intBitsToFloat4, m4761getIntersectrtfAjoo2);
+                    DrawScope.m5329drawImageAZ2fEMs$default(contentDrawScope3, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0L, 0L, IntSize.m7721constructorimpl((((int) Float.intBitsToFloat((int) (contentDrawScope3.mo5346getSizeNHjbRc() >> 32))) << 32) | (((int) Float.intBitsToFloat((int) (contentDrawScope3.mo5346getSizeNHjbRc() & 4294967295L))) & 4294967295L)), 0.0f, null, null, 0, 0, 1006, null);
+                    if (!Color.m4773equalsimpl0(skySnapshot.m9146getTintColor0d7_KjU(), Color.Companion.m4807getTransparent0d7_KjU())) {
+                        DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope3, skySnapshot.m9146getTintColor0d7_KjU(), 0L, 0L, 0.0f, null, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 62, null);
                     }
                     drawContext2.getCanvas().restore();
-                    drawContext2.mo5927setSizeuvyYCjk(j);
+                    drawContext2.mo5268setSizeuvyYCjk(j);
                 } catch (Throwable th2) {
                     th = th2;
                     drawContext2.getCanvas().restore();
-                    drawContext2.mo5927setSizeuvyYCjk(j);
+                    drawContext2.mo5268setSizeuvyYCjk(j);
                     throw th;
                 }
             } catch (Throwable th3) {
                 th = th3;
-                j = mo5926getSizeNHjbRc2;
+                j = mo5267getSizeNHjbRc2;
             }
         }
         if (this.isProcessing) {
@@ -395,8 +393,8 @@ final class CloudyBackgroundModifierNode extends Modifier.Node implements DrawMo
             this.isProcessing = true;
             this.pendingContentVersion = contentVersion$cloudy_release;
             this.onStateChanged.invoke(CloudyState.Loading.INSTANCE);
-            SkySnapshot m10201copyfnh65Uc$default = SkySnapshot.m10201copyfnh65Uc$default(skySnapshot, 0, 0.0f, 0.0f, 0.0f, 0.0f, null, 0.0f, 0.0f, null, 0L, 1023, null);
-            launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), Dispatchers.getMain(), null, new CloudyBackgroundModifierNode$drawWithBitmap$3(graphicsLayer, this, (int) m10201copyfnh65Uc$default.getChildWidth(), (int) m10201copyfnh65Uc$default.getChildHeight(), m10201copyfnh65Uc$default, this, contentVersion$cloudy_release, null), 2, null);
+            SkySnapshot m9143copyfnh65Uc$default = SkySnapshot.m9143copyfnh65Uc$default(skySnapshot, 0, 0.0f, 0.0f, 0.0f, 0.0f, null, 0.0f, 0.0f, null, 0L, 1023, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), Dispatchers.getMain(), null, new CloudyBackgroundModifierNode$drawWithBitmap$3(graphicsLayer, this, (int) m9143copyfnh65Uc$default.getChildWidth(), (int) m9143copyfnh65Uc$default.getChildHeight(), m9143copyfnh65Uc$default, this, contentVersion$cloudy_release, null), 2, null);
             this.blurJob = launch$default;
         }
     }

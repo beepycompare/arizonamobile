@@ -34,7 +34,7 @@ public final class SharedElement {
     private final Object key;
     private final SharedTransitionScopeImpl scope;
     private final SharedTransitionStateMachine stateMachine = new SharedTransitionStateMachine(this);
-    private final Animatable<Offset, AnimationVector2D> momentumAnimation = new Animatable<>(Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0()), VectorConvertersKt.getVectorConverter(Offset.Companion), null, null, 12, null);
+    private final Animatable<Offset, AnimationVector2D> momentumAnimation = new Animatable<>(Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0()), VectorConvertersKt.getVectorConverter(Offset.Companion), null, null, 12, null);
     private final Function0<Offset> momentumAnimationOffset = new Function0<Offset>() { // from class: androidx.compose.animation.SharedElement$momentumAnimationOffset$1
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -43,11 +43,11 @@ public final class SharedElement {
 
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Offset invoke() {
-            return Offset.m5168boximpl(m134invokeF1C5BW0());
+            return Offset.m4516boximpl(m121invokeF1C5BW0());
         }
 
         /* renamed from: invoke-F1C5BW0  reason: not valid java name */
-        public final long m134invokeF1C5BW0() {
+        public final long m121invokeF1C5BW0() {
             boolean z;
             Animatable animatable;
             Animatable animatable2;
@@ -76,14 +76,14 @@ public final class SharedElement {
                         FiniteAnimationSpec<Rect> animationSpec = sharedElementEntry2.getBoundsAnimation().getAnimationSpec();
                         if (animationSpec instanceof SpringSpec) {
                             SpringSpec springSpec = (SpringSpec) animationSpec;
-                            BuildersKt__Builders_commonKt.launch$default(sharedElement.getScope().getCoroutineScope(), null, null, new SharedElement$momentumAnimationOffset$1$2$1(sharedElement, AnimationSpecKt.spring(springSpec.getDampingRatio(), springSpec.getStiffness(), Offset.m5168boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion))), null), 3, null);
+                            BuildersKt__Builders_commonKt.launch$default(sharedElement.getScope().getCoroutineScope(), null, null, new SharedElement$momentumAnimationOffset$1$2$1(sharedElement, AnimationSpecKt.spring(springSpec.getDampingRatio(), springSpec.getStiffness(), Offset.m4516boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion))), null), 3, null);
                         }
                         sharedElement.animationSpecFinalized = true;
                     }
                 }
             }
             animatable = SharedElement.this.momentumAnimation;
-            return ((Offset) animatable.getValue()).m5189unboximpl();
+            return ((Offset) animatable.getValue()).m4537unboximpl();
         }
     };
     private final SnapshotStateList<SharedElementEntry> _allEntries = SnapshotStateKt.mutableStateListOf();
@@ -177,7 +177,7 @@ public final class SharedElement {
     }
 
     /* renamed from: updateExitVelocity-TH1AsA0$animation  reason: not valid java name */
-    public final void m133updateExitVelocityTH1AsA0$animation(long j) {
+    public final void m120updateExitVelocityTH1AsA0$animation(long j) {
         BuildersKt__Builders_commonKt.launch$default(this.scope.getCoroutineScope(), null, null, new SharedElement$updateExitVelocity$1(this, j, null), 3, null);
     }
 
@@ -215,10 +215,10 @@ public final class SharedElement {
         }
         SharedTransitionStateMachine.State state$animation = getState$animation();
         if (sharedElementEntry.getBoundsAnimation().getTarget() && state$animation.getActiveMatchFound() && (coordinates = placementScope.getCoordinates()) != null) {
-            long m8441toSizeozmzZPI = IntSizeKt.m8441toSizeozmzZPI(coordinates.mo6883getSizeYbymL2g());
-            long m6905localLookaheadPositionOfauaQtc$default = LookaheadScope.m6905localLookaheadPositionOfauaQtc$default(sharedElementEntry.getSharedElement().scope, sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
+            long m7738toSizeozmzZPI = IntSizeKt.m7738toSizeozmzZPI(coordinates.mo6224getSizeYbymL2g());
+            long m6246localLookaheadPositionOfauaQtc$default = LookaheadScope.m6246localLookaheadPositionOfauaQtc$default(sharedElementEntry.getSharedElement().scope, sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 6, null);
             SharedTransitionScopeImpl sharedTransitionScopeImpl = sharedElementEntry.getSharedElement().scope;
-            this.stateMachine.m142configureActiveMatchL7TYDSY(m8441toSizeozmzZPI, m6905localLookaheadPositionOfauaQtc$default, LayoutCoordinates.m6882localPositionOfS_NoaFU$default(sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null));
+            this.stateMachine.m129configureActiveMatchL7TYDSY(m7738toSizeozmzZPI, m6246localLookaheadPositionOfauaQtc$default, LayoutCoordinates.m6223localPositionOfS_NoaFU$default(sharedElementEntry.getSharedElement().scope.getLookaheadRoot$animation(), coordinates, 0L, false, 2, null));
         }
     }
 

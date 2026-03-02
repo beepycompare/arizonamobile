@@ -78,7 +78,7 @@ public final class ModalWideNavigationRailOverrideScope {
     }
 
     /* renamed from: getExpandedHeaderTopPadding-D9Ej5fM  reason: not valid java name */
-    public final float m2671getExpandedHeaderTopPaddingD9Ej5fM() {
+    public final float m2258getExpandedHeaderTopPaddingD9Ej5fM() {
         return this.expandedHeaderTopPadding;
     }
 

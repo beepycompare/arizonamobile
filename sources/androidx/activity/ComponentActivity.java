@@ -139,9 +139,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         this.fullyDrawnReporter$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                FullyDrawnReporter fullyDrawnReporter_delegate$lambda$0;
-                fullyDrawnReporter_delegate$lambda$0 = ComponentActivity.fullyDrawnReporter_delegate$lambda$0(ComponentActivity.this);
-                return fullyDrawnReporter_delegate$lambda$0;
+                return ComponentActivity.fullyDrawnReporter_delegate$lambda$0(ComponentActivity.this);
             }
         });
         this.nextLocalRequestCode = new AtomicInteger();
@@ -155,9 +153,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         this.onBackPressedInput$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                DirectNavigationEventInput onBackPressedInput_delegate$lambda$0;
-                onBackPressedInput_delegate$lambda$0 = ComponentActivity.onBackPressedInput_delegate$lambda$0(ComponentActivity.this);
-                return onBackPressedInput_delegate$lambda$0;
+                return ComponentActivity.onBackPressedInput_delegate$lambda$0(ComponentActivity.this);
             }
         });
         if (getLifecycle() == null) {
@@ -189,9 +185,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         getSavedStateRegistry().registerSavedStateProvider(ACTIVITY_RESULT_TAG, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda8
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle _init_$lambda$3;
-                _init_$lambda$3 = ComponentActivity._init_$lambda$3(ComponentActivity.this);
-                return _init_$lambda$3;
+                return ComponentActivity._init_$lambda$3(ComponentActivity.this);
             }
         });
         addOnContextAvailableListener(new OnContextAvailableListener() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda9
@@ -203,17 +197,13 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         this.defaultViewModelProviderFactory$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$0;
-                defaultViewModelProviderFactory_delegate$lambda$0 = ComponentActivity.defaultViewModelProviderFactory_delegate$lambda$0(ComponentActivity.this);
-                return defaultViewModelProviderFactory_delegate$lambda$0;
+                return ComponentActivity.defaultViewModelProviderFactory_delegate$lambda$0(ComponentActivity.this);
             }
         });
         this.onBackPressedDispatcher$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0;
-                onBackPressedDispatcher_delegate$lambda$0 = ComponentActivity.onBackPressedDispatcher_delegate$lambda$0(ComponentActivity.this);
-                return onBackPressedDispatcher_delegate$lambda$0;
+                return ComponentActivity.onBackPressedDispatcher_delegate$lambda$0(ComponentActivity.this);
             }
         });
     }
@@ -247,7 +237,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         return (FullyDrawnReporter) this.fullyDrawnReporter$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final FullyDrawnReporter fullyDrawnReporter_delegate$lambda$0(final ComponentActivity componentActivity) {
         return new FullyDrawnReporter(componentActivity.reportFullyDrawnExecutor, new Function0() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
@@ -274,14 +264,14 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         return (DirectNavigationEventInput) this.onBackPressedInput$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DirectNavigationEventInput onBackPressedInput_delegate$lambda$0(ComponentActivity componentActivity) {
         DirectNavigationEventInput directNavigationEventInput = new DirectNavigationEventInput();
         componentActivity.getNavigationEventDispatcher().addInput(directNavigationEventInput);
         return directNavigationEventInput;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Window window;
         View peekDecorView;
@@ -293,7 +283,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         peekDecorView.cancelPendingInputEvents();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -306,14 +296,14 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle _init_$lambda$3(ComponentActivity componentActivity) {
         Bundle bundle = new Bundle();
         componentActivity.activityResultRegistry.onSaveInstanceState(bundle);
         return bundle;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$4(ComponentActivity componentActivity, Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Bundle consumeRestoredStateForKey = componentActivity.getSavedStateRegistry().consumeRestoredStateForKey(ACTIVITY_RESULT_TAG);
@@ -563,7 +553,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         return (ViewModelProvider.Factory) this.defaultViewModelProviderFactory$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedStateViewModelFactory defaultViewModelProviderFactory_delegate$lambda$0(ComponentActivity componentActivity) {
         return new SavedStateViewModelFactory(componentActivity.getApplication(), componentActivity, componentActivity.getIntent() != null ? componentActivity.getIntent().getExtras() : null);
     }
@@ -595,7 +585,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         return (OnBackPressedDispatcher) this.onBackPressedDispatcher$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0(final ComponentActivity componentActivity) {
         final OnBackPressedDispatcher onBackPressedDispatcher = new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentActivity$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
@@ -648,7 +638,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void addObserverForBackInvoker$lambda$0(OnBackPressedDispatcher onBackPressedDispatcher, ComponentActivity componentActivity, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -992,7 +982,7 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void execute$lambda$0(ReportFullyDrawnExecutorImpl reportFullyDrawnExecutorImpl) {
             Runnable runnable = reportFullyDrawnExecutorImpl.currentRunnable;
             if (runnable != null) {

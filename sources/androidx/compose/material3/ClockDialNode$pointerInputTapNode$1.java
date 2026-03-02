@@ -45,11 +45,11 @@ public final class ClockDialNode$pointerInputTapNode$1 implements PointerInputEv
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m2156invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m1844invoked4ec7I(pressGestureScope, offset.m4537unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m2156invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m1844invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);
@@ -76,15 +76,13 @@ public final class ClockDialNode$pointerInputTapNode$1 implements PointerInputEv
         Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, anonymousClass1, new Function1() { // from class: androidx.compose.material3.ClockDialNode$pointerInputTapNode$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = ClockDialNode$pointerInputTapNode$1.invoke$lambda$0(ClockDialNode.this, (Offset) obj);
-                return invoke$lambda$0;
+                return ClockDialNode$pointerInputTapNode$1.invoke$lambda$0(ClockDialNode.this, (Offset) obj);
             }
         }, continuation, 3, null);
         return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(ClockDialNode clockDialNode, Offset offset) {
         BuildersKt__Builders_commonKt.launch$default(clockDialNode.getCoroutineScope(), null, null, new ClockDialNode$pointerInputTapNode$1$2$1(clockDialNode, offset, null), 3, null);
         return Unit.INSTANCE;

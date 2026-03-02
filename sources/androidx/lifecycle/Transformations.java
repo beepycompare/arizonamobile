@@ -24,15 +24,13 @@ public final class Transformations {
         mediatorLiveData.addSource(liveData, new Transformations$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.Transformations$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit map$lambda$0;
-                map$lambda$0 = Transformations.map$lambda$0(MediatorLiveData.this, transform, obj);
-                return map$lambda$0;
+                return Transformations.map$lambda$0(MediatorLiveData.this, transform, obj);
             }
         }));
         return mediatorLiveData;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit map$lambda$0(MediatorLiveData mediatorLiveData, Function1 function1, Object obj) {
         mediatorLiveData.setValue(function1.invoke(obj));
         return Unit.INSTANCE;
@@ -46,15 +44,13 @@ public final class Transformations {
         mediatorLiveData.addSource(liveData, new Transformations$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.Transformations$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit map$lambda$1;
-                map$lambda$1 = Transformations.map$lambda$1(MediatorLiveData.this, mapFunction, obj);
-                return map$lambda$1;
+                return Transformations.map$lambda$1(MediatorLiveData.this, mapFunction, obj);
             }
         }));
         return mediatorLiveData;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit map$lambda$1(MediatorLiveData mediatorLiveData, Function function, Object obj) {
         mediatorLiveData.setValue(function.apply(obj));
         return Unit.INSTANCE;
@@ -78,15 +74,13 @@ public final class Transformations {
         mediatorLiveData.addSource(liveData, new Transformations$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.Transformations$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit switchMap$lambda$0;
-                switchMap$lambda$0 = Transformations.switchMap$lambda$0(Function1.this, objectRef, mediatorLiveData, obj);
-                return switchMap$lambda$0;
+                return Transformations.switchMap$lambda$0(Function1.this, objectRef, mediatorLiveData, obj);
             }
         }));
         return mediatorLiveData;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r0v2, types: [androidx.lifecycle.LiveData, T] */
     public static final Unit switchMap$lambda$0(Function1 function1, Ref.ObjectRef objectRef, final MediatorLiveData mediatorLiveData, Object obj) {
         ?? r0 = (LiveData) function1.invoke(obj);
@@ -142,15 +136,13 @@ public final class Transformations {
         mediatorLiveData.addSource(liveData, new Transformations$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.Transformations$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit distinctUntilChanged$lambda$0;
-                distinctUntilChanged$lambda$0 = Transformations.distinctUntilChanged$lambda$0(MediatorLiveData.this, booleanRef, obj);
-                return distinctUntilChanged$lambda$0;
+                return Transformations.distinctUntilChanged$lambda$0(MediatorLiveData.this, booleanRef, obj);
             }
         }));
         return mediatorLiveData;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit distinctUntilChanged$lambda$0(MediatorLiveData mediatorLiveData, Ref.BooleanRef booleanRef, Object obj) {
         T value = mediatorLiveData.getValue();
         if (booleanRef.element || ((value == 0 && obj != null) || (value != 0 && !Intrinsics.areEqual(value, obj)))) {

@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class HudCaptBinding implements ViewBinding {
     public final LinearLayout btnOpenList;
     public final ImageView ivArrow;

@@ -78,14 +78,12 @@ final class CloudyModifierNodeElement extends ModifierNodeElement<CloudyModifier
         this((i2 & 1) != 0 ? 10 : i, (i2 & 2) != 0 ? new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNodeElement$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = CloudyModifierNodeElement._init_$lambda$0((CloudyState) obj);
-                return _init_$lambda$0;
+                return CloudyModifierNodeElement._init_$lambda$0((CloudyState) obj);
             }
         } : function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(CloudyState it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;

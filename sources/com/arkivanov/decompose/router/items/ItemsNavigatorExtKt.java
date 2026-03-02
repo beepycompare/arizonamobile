@@ -18,14 +18,12 @@ public final class ItemsNavigatorExtKt {
         itemsNavigator.navigate(transformer, new Function2() { // from class: com.arkivanov.decompose.router.items.ItemsNavigatorExtKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit navigate$lambda$0;
-                navigate$lambda$0 = ItemsNavigatorExtKt.navigate$lambda$0((Items) obj, (Items) obj2);
-                return navigate$lambda$0;
+                return ItemsNavigatorExtKt.navigate$lambda$0((Items) obj, (Items) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit navigate$lambda$0(Items items, Items items2) {
         Intrinsics.checkNotNullParameter(items, "<unused var>");
         Intrinsics.checkNotNullParameter(items2, "<unused var>");

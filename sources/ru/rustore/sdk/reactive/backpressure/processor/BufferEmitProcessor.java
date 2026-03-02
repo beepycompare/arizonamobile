@@ -64,10 +64,13 @@ public abstract class BufferEmitProcessor<T> implements Disposable {
             if (this.streamDone) {
                 return;
             }
-            if (this.buffer.size() >= this.bufferSize) {
-                onOverflow(this.buffer, new BufferItemType.Item<>(t));
+            int size = this.buffer.size();
+            int i = this.bufferSize;
+            Buffer<T> buffer = this.buffer;
+            if (size >= i) {
+                onOverflow(buffer, new BufferItemType.Item<>(t));
             } else {
-                this.buffer.offer(new BufferItemType.Item(t));
+                buffer.offer(new BufferItemType.Item(t));
             }
             Unit unit = Unit.INSTANCE;
         }

@@ -98,16 +98,16 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$onImeActionPerformed$1
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m7956invokeKlQnJC8(int i) {
+            public final void m7254invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m7956invokeKlQnJC8(imeAction.m7876unboximpl());
+                m7254invokeKlQnJC8(imeAction.m7174unboximpl());
                 return Unit.INSTANCE;
             }
         };
-        this.state = new TextFieldValue("", TextRange.Companion.m7706getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
+        this.state = new TextFieldValue("", TextRange.Companion.m7008getZerod9O1mEE(), (TextRange) null, 4, (DefaultConstructorMarker) null);
         this.imeOptions = ImeOptions.Companion.getDefault();
         this.ics = new ArrayList();
         this.baseInputConnection$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, (Function0) new Function0<BaseInputConnection>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$baseInputConnection$2
@@ -201,10 +201,10 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
                 /* renamed from: onImeAction-KlQnJC8 */
-                public void mo7905onImeActionKlQnJC8(int i) {
+                public void mo7203onImeActionKlQnJC8(int i) {
                     Function1 function1;
                     function1 = TextInputServiceAndroid.this.onImeActionPerformed;
-                    function1.invoke(ImeAction.m7870boximpl(i));
+                    function1.invoke(ImeAction.m7168boximpl(i));
                 }
 
                 @Override // androidx.compose.ui.text.input.InputEventCallback2
@@ -279,12 +279,12 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         };
         this.onImeActionPerformed = new Function1<ImeAction, Unit>() { // from class: androidx.compose.ui.text.input.TextInputServiceAndroid$stopInput$2
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m7957invokeKlQnJC8(int i) {
+            public final void m7255invokeKlQnJC8(int i) {
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m7957invokeKlQnJC8(imeAction.m7876unboximpl());
+                m7255invokeKlQnJC8(imeAction.m7174unboximpl());
                 return Unit.INSTANCE;
             }
         };
@@ -316,7 +316,7 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendInputCommand$lambda$0(TextInputServiceAndroid textInputServiceAndroid) {
         textInputServiceAndroid.frameCallback = null;
         textInputServiceAndroid.processInputCommands();
@@ -373,7 +373,7 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
 
     @Override // androidx.compose.ui.text.input.PlatformTextInputService
     public void updateState(TextFieldValue textFieldValue, TextFieldValue textFieldValue2) {
-        boolean z = (TextRange.m7694equalsimpl0(this.state.m7955getSelectiond9O1mEE(), textFieldValue2.m7955getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m7954getCompositionMzsxiRA(), textFieldValue2.m7954getCompositionMzsxiRA())) ? false : true;
+        boolean z = (TextRange.m6996equalsimpl0(this.state.m7253getSelectiond9O1mEE(), textFieldValue2.m7253getSelectiond9O1mEE()) && Intrinsics.areEqual(this.state.m7252getCompositionMzsxiRA(), textFieldValue2.m7252getCompositionMzsxiRA())) ? false : true;
         this.state = textFieldValue2;
         int size = this.ics.size();
         for (int i = 0; i < size; i++) {
@@ -386,14 +386,14 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
         if (Intrinsics.areEqual(textFieldValue, textFieldValue2)) {
             if (z) {
                 InputMethodManager inputMethodManager = this.inputMethodManager;
-                int m7699getMinimpl = TextRange.m7699getMinimpl(textFieldValue2.m7955getSelectiond9O1mEE());
-                int m7698getMaximpl = TextRange.m7698getMaximpl(textFieldValue2.m7955getSelectiond9O1mEE());
-                TextRange m7954getCompositionMzsxiRA = this.state.m7954getCompositionMzsxiRA();
-                int m7699getMinimpl2 = m7954getCompositionMzsxiRA != null ? TextRange.m7699getMinimpl(m7954getCompositionMzsxiRA.m7705unboximpl()) : -1;
-                TextRange m7954getCompositionMzsxiRA2 = this.state.m7954getCompositionMzsxiRA();
-                inputMethodManager.updateSelection(m7699getMinimpl, m7698getMaximpl, m7699getMinimpl2, m7954getCompositionMzsxiRA2 != null ? TextRange.m7698getMaximpl(m7954getCompositionMzsxiRA2.m7705unboximpl()) : -1);
+                int m7001getMinimpl = TextRange.m7001getMinimpl(textFieldValue2.m7253getSelectiond9O1mEE());
+                int m7000getMaximpl = TextRange.m7000getMaximpl(textFieldValue2.m7253getSelectiond9O1mEE());
+                TextRange m7252getCompositionMzsxiRA = this.state.m7252getCompositionMzsxiRA();
+                int m7001getMinimpl2 = m7252getCompositionMzsxiRA != null ? TextRange.m7001getMinimpl(m7252getCompositionMzsxiRA.m7007unboximpl()) : -1;
+                TextRange m7252getCompositionMzsxiRA2 = this.state.m7252getCompositionMzsxiRA();
+                inputMethodManager.updateSelection(m7001getMinimpl, m7000getMaximpl, m7001getMinimpl2, m7252getCompositionMzsxiRA2 != null ? TextRange.m7000getMaximpl(m7252getCompositionMzsxiRA2.m7007unboximpl()) : -1);
             }
-        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m7694equalsimpl0(textFieldValue.m7955getSelectiond9O1mEE(), textFieldValue2.m7955getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m7954getCompositionMzsxiRA(), textFieldValue2.m7954getCompositionMzsxiRA())))) {
+        } else if (textFieldValue != null && (!Intrinsics.areEqual(textFieldValue.getText(), textFieldValue2.getText()) || (TextRange.m6996equalsimpl0(textFieldValue.m7253getSelectiond9O1mEE(), textFieldValue2.m7253getSelectiond9O1mEE()) && !Intrinsics.areEqual(textFieldValue.m7252getCompositionMzsxiRA(), textFieldValue2.m7252getCompositionMzsxiRA())))) {
             restartInputImmediately();
         } else {
             int size2 = this.ics.size();
@@ -427,10 +427,11 @@ public final class TextInputServiceAndroid implements PlatformTextInputService {
     }
 
     private final void setKeyboardVisibleImmediately(boolean z) {
+        InputMethodManager inputMethodManager = this.inputMethodManager;
         if (z) {
-            this.inputMethodManager.showSoftInput();
+            inputMethodManager.showSoftInput();
         } else {
-            this.inputMethodManager.hideSoftInput();
+            inputMethodManager.hideSoftInput();
         }
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.gms.common.internal;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class BinderWrapper implements Parcelable {
     public static final Parcelable.Creator<BinderWrapper> CREATOR = new zzh();

@@ -34,17 +34,18 @@ public final class FractionalSecondDirective extends DecimalFractionFieldFormatD
         if (i == 1 && this.maxDigits == 9) {
             return "secondFraction()";
         }
-        if (i == 1) {
-            return "secondFraction(maxLength = " + this.maxDigits + ')';
-        }
         int i2 = this.maxDigits;
+        if (i == 1) {
+            return "secondFraction(maxLength = " + i2 + ')';
+        }
         if (i2 == 1) {
             return "secondFraction(minLength = " + this.minDigits + ')';
         }
+        int i3 = this.minDigits;
         if (i2 == i) {
-            return "secondFraction(" + this.minDigits + ')';
+            return "secondFraction(" + i3 + ')';
         }
-        return "secondFraction(" + this.minDigits + ", " + this.maxDigits + ')';
+        return "secondFraction(" + i3 + ", " + this.maxDigits + ')';
     }
 
     public boolean equals(Object obj) {

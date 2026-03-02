@@ -7,8 +7,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Separators.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.SeparatorsKt", f = "Separators.kt", i = {0, 0, 0, 0, 0, 0}, l = {82}, m = "insertInternalSeparators", n = {"$this$insertInternalSeparators", "generator", "outputList", "outputIndices", "item", CmcdData.OBJECT_TYPE_INIT_SEGMENT}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.SeparatorsKt", f = "Separators.kt", i = {0, 0, 0, 0, 0, 0}, l = {82}, m = "insertInternalSeparators", n = {"$this$insertInternalSeparators", "generator", "outputList", "outputIndices", "item", CmcdData.OBJECT_TYPE_INIT_SEGMENT}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class SeparatorsKt$insertInternalSeparators$1<R, T extends R> extends ContinuationImpl {
     int I$0;

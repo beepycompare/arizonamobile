@@ -40,9 +40,9 @@ public final class KeyCycleScope extends BaseKeyFrameScope {
         this.rotationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.rotationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         float f = 0;
-        this.translationX$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m8256boximpl(Dp.m8258constructorimpl(f)), null, 2, null);
-        this.translationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m8256boximpl(Dp.m8258constructorimpl(f)), null, 2, null);
-        this.translationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m8256boximpl(Dp.m8258constructorimpl(f)), null, 2, null);
+        this.translationX$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
+        this.translationY$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
+        this.translationZ$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, Dp.m7553boximpl(Dp.m7555constructorimpl(f)), null, 2, null);
         this.period$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.offset$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
         this.phase$delegate = BaseKeyFrameScope.addOnPropertyChange$default(keyCycleScope, valueOf2, null, 2, null);
@@ -97,33 +97,33 @@ public final class KeyCycleScope extends BaseKeyFrameScope {
     }
 
     /* renamed from: getTranslationX-D9Ej5fM  reason: not valid java name */
-    public final float m8645getTranslationXD9Ej5fM() {
-        return ((Dp) this.translationX$delegate.getValue(this, $$delegatedProperties[6])).m8272unboximpl();
+    public final float m7942getTranslationXD9Ej5fM() {
+        return ((Dp) this.translationX$delegate.getValue(this, $$delegatedProperties[6])).m7569unboximpl();
     }
 
     /* renamed from: setTranslationX-0680j_4  reason: not valid java name */
-    public final void m8648setTranslationX0680j_4(float f) {
-        this.translationX$delegate.setValue(this, $$delegatedProperties[6], Dp.m8256boximpl(f));
+    public final void m7945setTranslationX0680j_4(float f) {
+        this.translationX$delegate.setValue(this, $$delegatedProperties[6], Dp.m7553boximpl(f));
     }
 
     /* renamed from: getTranslationY-D9Ej5fM  reason: not valid java name */
-    public final float m8646getTranslationYD9Ej5fM() {
-        return ((Dp) this.translationY$delegate.getValue(this, $$delegatedProperties[7])).m8272unboximpl();
+    public final float m7943getTranslationYD9Ej5fM() {
+        return ((Dp) this.translationY$delegate.getValue(this, $$delegatedProperties[7])).m7569unboximpl();
     }
 
     /* renamed from: setTranslationY-0680j_4  reason: not valid java name */
-    public final void m8649setTranslationY0680j_4(float f) {
-        this.translationY$delegate.setValue(this, $$delegatedProperties[7], Dp.m8256boximpl(f));
+    public final void m7946setTranslationY0680j_4(float f) {
+        this.translationY$delegate.setValue(this, $$delegatedProperties[7], Dp.m7553boximpl(f));
     }
 
     /* renamed from: getTranslationZ-D9Ej5fM  reason: not valid java name */
-    public final float m8647getTranslationZD9Ej5fM() {
-        return ((Dp) this.translationZ$delegate.getValue(this, $$delegatedProperties[8])).m8272unboximpl();
+    public final float m7944getTranslationZD9Ej5fM() {
+        return ((Dp) this.translationZ$delegate.getValue(this, $$delegatedProperties[8])).m7569unboximpl();
     }
 
     /* renamed from: setTranslationZ-0680j_4  reason: not valid java name */
-    public final void m8650setTranslationZ0680j_4(float f) {
-        this.translationZ$delegate.setValue(this, $$delegatedProperties[8], Dp.m8256boximpl(f));
+    public final void m7947setTranslationZ0680j_4(float f) {
+        this.translationZ$delegate.setValue(this, $$delegatedProperties[8], Dp.m7553boximpl(f));
     }
 
     public final float getPeriod() {

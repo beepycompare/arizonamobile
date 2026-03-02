@@ -60,9 +60,7 @@ final class LifecycleKt$eventFlow$1 extends SuspendLambda implements Function2<P
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.lifecycle.LifecycleKt$eventFlow$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$1;
-                    invokeSuspend$lambda$1 = LifecycleKt$eventFlow$1.invokeSuspend$lambda$1(Lifecycle.this, lifecycleEventObserver);
-                    return invokeSuspend$lambda$1;
+                    return LifecycleKt$eventFlow$1.invokeSuspend$lambda$1(Lifecycle.this, lifecycleEventObserver);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -75,15 +73,15 @@ final class LifecycleKt$eventFlow$1 extends SuspendLambda implements Function2<P
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        producerScope.mo9174trySendJP2dKIU(event);
+        producerScope.mo8396trySendJP2dKIU(event);
         if (event == Lifecycle.Event.ON_DESTROY) {
             SendChannel.DefaultImpls.close$default(producerScope, null, 1, null);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(Lifecycle lifecycle, LifecycleEventObserver lifecycleEventObserver) {
         lifecycle.removeObserver(lifecycleEventObserver);
         return Unit.INSTANCE;

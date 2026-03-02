@@ -12,7 +12,7 @@ public final class Kn {
     public final ConjunctiveCompositeThreadSafeToggle c;
 
     public Kn(Toggle toggle) {
-        E3 e3 = new E3(C0449na.k().y());
+        E3 e3 = new E3(C0448na.k().y());
         this.f664a = e3;
         Do r1 = new Do();
         this.b = r1;

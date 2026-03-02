@@ -33,24 +33,24 @@ public final class BorderKt {
     }
 
     public static final Modifier border(Modifier modifier, BorderStroke borderStroke, Shape shape) {
-        return m316borderziNgDLE(modifier, borderStroke.m331getWidthD9Ej5fM(), borderStroke.getBrush(), shape);
+        return m277borderziNgDLE(modifier, borderStroke.m289getWidthD9Ej5fM(), borderStroke.getBrush(), shape);
     }
 
     /* renamed from: border-xT4_qwU$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m315borderxT4_qwU$default(Modifier modifier, float f, long j, Shape shape, int i, Object obj) {
+    public static /* synthetic */ Modifier m276borderxT4_qwU$default(Modifier modifier, float f, long j, Shape shape, int i, Object obj) {
         if ((i & 4) != 0) {
             shape = RectangleShapeKt.getRectangleShape();
         }
-        return m314borderxT4_qwU(modifier, f, j, shape);
+        return m275borderxT4_qwU(modifier, f, j, shape);
     }
 
     /* renamed from: border-xT4_qwU  reason: not valid java name */
-    public static final Modifier m314borderxT4_qwU(Modifier modifier, float f, long j, Shape shape) {
-        return m316borderziNgDLE(modifier, f, new SolidColor(j, null), shape);
+    public static final Modifier m275borderxT4_qwU(Modifier modifier, float f, long j, Shape shape) {
+        return m277borderziNgDLE(modifier, f, new SolidColor(j, null), shape);
     }
 
     /* renamed from: border-ziNgDLE  reason: not valid java name */
-    public static final Modifier m316borderziNgDLE(Modifier modifier, float f, Brush brush, Shape shape) {
+    public static final Modifier m277borderziNgDLE(Modifier modifier, float f, Brush brush, Shape shape) {
         return modifier.then(new BorderModifierNodeElement(f, brush, shape, null));
     }
 
@@ -59,14 +59,12 @@ public final class BorderKt {
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.BorderKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit drawContentWithoutBorder$lambda$0;
-                drawContentWithoutBorder$lambda$0 = BorderKt.drawContentWithoutBorder$lambda$0((ContentDrawScope) obj);
-                return drawContentWithoutBorder$lambda$0;
+                return BorderKt.drawContentWithoutBorder$lambda$0((ContentDrawScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit drawContentWithoutBorder$lambda$0(ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
         return Unit.INSTANCE;
@@ -74,24 +72,22 @@ public final class BorderKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: drawRectBorder-NsqcLGU  reason: not valid java name */
-    public static final DrawResult m317drawRectBorderNsqcLGU(CacheDrawScope cacheDrawScope, final Brush brush, long j, long j2, boolean z, float f) {
-        final long m5195getZeroF1C5BW0 = z ? Offset.Companion.m5195getZeroF1C5BW0() : j;
-        final long m4959getSizeNHjbRc = z ? cacheDrawScope.m4959getSizeNHjbRc() : j2;
+    public static final DrawResult m278drawRectBorderNsqcLGU(CacheDrawScope cacheDrawScope, final Brush brush, long j, long j2, boolean z, float f) {
+        final long m4543getZeroF1C5BW0 = z ? Offset.Companion.m4543getZeroF1C5BW0() : j;
+        final long m4307getSizeNHjbRc = z ? cacheDrawScope.m4307getSizeNHjbRc() : j2;
         final DrawStyle stroke = z ? Fill.INSTANCE : new Stroke(f, 0.0f, 0, 0, null, 30, null);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.BorderKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit drawRectBorder_NsqcLGU$lambda$0;
-                drawRectBorder_NsqcLGU$lambda$0 = BorderKt.drawRectBorder_NsqcLGU$lambda$0(Brush.this, m5195getZeroF1C5BW0, m4959getSizeNHjbRc, stroke, (ContentDrawScope) obj);
-                return drawRectBorder_NsqcLGU$lambda$0;
+                return BorderKt.drawRectBorder_NsqcLGU$lambda$0(Brush.this, m4543getZeroF1C5BW0, m4307getSizeNHjbRc, stroke, (ContentDrawScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit drawRectBorder_NsqcLGU$lambda$0(Brush brush, long j, long j2, DrawStyle drawStyle, ContentDrawScope contentDrawScope) {
         contentDrawScope.drawContent();
-        DrawScope.m5998drawRectAsUm42w$default(contentDrawScope, brush, j, j2, 0.0f, drawStyle, null, 0, 104, null);
+        DrawScope.m5339drawRectAsUm42w$default(contentDrawScope, brush, j, j2, 0.0f, drawStyle, null, 0, 104, null);
         return Unit.INSTANCE;
     }
 
@@ -102,18 +98,18 @@ public final class BorderKt {
         if (!z) {
             Path Path = AndroidPath_androidKt.Path();
             Path.addRoundRect$default(Path, createInsetRoundedRect(f, roundRect), null, 2, null);
-            path.mo5313opN5in7k0(path, Path, PathOperation.Companion.m5732getDifferenceb3I0S0c());
+            path.mo4661opN5in7k0(path, Path, PathOperation.Companion.m5078getDifferenceb3I0S0c());
         }
         return path;
     }
 
     private static final RoundRect createInsetRoundedRect(float f, RoundRect roundRect) {
-        return new RoundRect(f, f, roundRect.getWidth() - f, roundRect.getHeight() - f, m318shrinkKibmq7A(roundRect.m5229getTopLeftCornerRadiuskKHJgLs(), f), m318shrinkKibmq7A(roundRect.m5230getTopRightCornerRadiuskKHJgLs(), f), m318shrinkKibmq7A(roundRect.m5228getBottomRightCornerRadiuskKHJgLs(), f), m318shrinkKibmq7A(roundRect.m5227getBottomLeftCornerRadiuskKHJgLs(), f), null);
+        return new RoundRect(f, f, roundRect.getWidth() - f, roundRect.getHeight() - f, m279shrinkKibmq7A(roundRect.m4577getTopLeftCornerRadiuskKHJgLs(), f), m279shrinkKibmq7A(roundRect.m4578getTopRightCornerRadiuskKHJgLs(), f), m279shrinkKibmq7A(roundRect.m4576getBottomRightCornerRadiuskKHJgLs(), f), m279shrinkKibmq7A(roundRect.m4575getBottomLeftCornerRadiuskKHJgLs(), f), null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: shrink-Kibmq7A  reason: not valid java name */
-    public static final long m318shrinkKibmq7A(long j, float f) {
-        return CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - f)) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - f)) & 4294967295L));
+    public static final long m279shrinkKibmq7A(long j, float f) {
+        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j >> 32)) - f)) << 32) | (Float.floatToRawIntBits(Math.max(0.0f, Float.intBitsToFloat((int) (j & 4294967295L)) - f)) & 4294967295L));
     }
 }

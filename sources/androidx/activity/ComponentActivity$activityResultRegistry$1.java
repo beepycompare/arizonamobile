@@ -37,7 +37,7 @@ public final class ComponentActivity$activityResultRegistry$1 extends ActivityRe
             new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity$activityResultRegistry$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ComponentActivity$activityResultRegistry$1.onLaunch$lambda$0(ComponentActivity$activityResultRegistry$1.this, i, synchronousResult);
+                    ComponentActivity$activityResultRegistry$1.this.dispatchResult(i, synchronousResult.getValue());
                 }
             });
             return;
@@ -78,7 +78,7 @@ public final class ComponentActivity$activityResultRegistry$1 extends ActivityRe
                     Boolean.valueOf(new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: androidx.activity.ComponentActivity$activityResultRegistry$1$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ComponentActivity$activityResultRegistry$1.onLaunch$lambda$1(ComponentActivity$activityResultRegistry$1.this, i3, sendIntentException);
+                            ComponentActivity$activityResultRegistry$1.this.dispatchResult(i3, 0, new Intent().setAction(ActivityResultContracts.StartIntentSenderForResult.ACTION_INTENT_SENDER_REQUEST).putExtra(ActivityResultContracts.StartIntentSenderForResult.EXTRA_SEND_INTENT_EXCEPTION, sendIntentException));
                         }
                     }));
                 }
@@ -89,15 +89,5 @@ public final class ComponentActivity$activityResultRegistry$1 extends ActivityRe
         } else {
             ActivityCompat.startActivityForResult(componentActivity, createIntent, i, bundle2);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onLaunch$lambda$0(ComponentActivity$activityResultRegistry$1 componentActivity$activityResultRegistry$1, int i, ActivityResultContract.SynchronousResult synchronousResult) {
-        componentActivity$activityResultRegistry$1.dispatchResult(i, synchronousResult.getValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onLaunch$lambda$1(ComponentActivity$activityResultRegistry$1 componentActivity$activityResultRegistry$1, int i, IntentSender.SendIntentException sendIntentException) {
-        componentActivity$activityResultRegistry$1.dispatchResult(i, 0, new Intent().setAction(ActivityResultContracts.StartIntentSenderForResult.ACTION_INTENT_SENDER_REQUEST).putExtra(ActivityResultContracts.StartIntentSenderForResult.EXTRA_SEND_INTENT_EXCEPTION, sendIntentException));
     }
 }

@@ -48,7 +48,7 @@ public final class ScrollableNode$onWheelScrollStopped$1 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             scrollingLogic = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic.m669onScrollStoppedBMRW4eQ(this.f15$$v$c$androidxcomposeuiunitVelocity$velocity$0, true, this) == coroutine_suspended) {
+            if (scrollingLogic.m586onScrollStoppedBMRW4eQ(this.f15$$v$c$androidxcomposeuiunitVelocity$velocity$0, true, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

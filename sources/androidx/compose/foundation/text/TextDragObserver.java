@@ -9,13 +9,13 @@ public interface TextDragObserver {
     void onCancel();
 
     /* renamed from: onDown-k-4lQ0M  reason: not valid java name */
-    void mo1427onDownk4lQ0M(long j);
+    void mo1253onDownk4lQ0M(long j);
 
     /* renamed from: onDrag-k-4lQ0M  reason: not valid java name */
-    void mo1428onDragk4lQ0M(long j);
+    void mo1254onDragk4lQ0M(long j);
 
     /* renamed from: onStart-3MmeM6k  reason: not valid java name */
-    void mo1429onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment);
+    void mo1255onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment);
 
     void onStop();
 

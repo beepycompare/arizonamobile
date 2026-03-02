@@ -82,9 +82,7 @@ public final class SplashScreenViewProvider {
             this._splashScreenView$delegate = LazyKt.lazy(new Function0() { // from class: androidx.core.splashscreen.SplashScreenViewProvider$ViewImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    ViewGroup _splashScreenView_delegate$lambda$0;
-                    _splashScreenView_delegate$lambda$0 = SplashScreenViewProvider.ViewImpl._splashScreenView_delegate$lambda$0(SplashScreenViewProvider.ViewImpl.this);
-                    return _splashScreenView_delegate$lambda$0;
+                    return SplashScreenViewProvider.ViewImpl._splashScreenView_delegate$lambda$0(SplashScreenViewProvider.ViewImpl.this);
                 }
             });
         }
@@ -97,7 +95,7 @@ public final class SplashScreenViewProvider {
             return (ViewGroup) this._splashScreenView$delegate.getValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final ViewGroup _splashScreenView_delegate$lambda$0(ViewImpl viewImpl) {
             View inflate = FrameLayout.inflate(viewImpl.activity, R.layout.splash_screen_view, null);
             Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type android.view.ViewGroup");

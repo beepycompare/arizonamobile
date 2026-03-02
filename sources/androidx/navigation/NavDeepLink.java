@@ -76,17 +76,13 @@ public final class NavDeepLink {
         this.pathPattern$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Regex pathPattern_delegate$lambda$1;
-                pathPattern_delegate$lambda$1 = NavDeepLink.pathPattern_delegate$lambda$1(NavDeepLink.this);
-                return pathPattern_delegate$lambda$1;
+                return NavDeepLink.pathPattern_delegate$lambda$1(NavDeepLink.this);
             }
         });
         this.isParameterizedQuery$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isParameterizedQuery_delegate$lambda$2;
-                isParameterizedQuery_delegate$lambda$2 = NavDeepLink.isParameterizedQuery_delegate$lambda$2(NavDeepLink.this);
-                return Boolean.valueOf(isParameterizedQuery_delegate$lambda$2);
+                return Boolean.valueOf(NavDeepLink.isParameterizedQuery_delegate$lambda$2(NavDeepLink.this));
             }
         });
         this.queryArgsMap$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda2
@@ -108,33 +104,25 @@ public final class NavDeepLink {
         this.fragArgs$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List fragArgs_delegate$lambda$5;
-                fragArgs_delegate$lambda$5 = NavDeepLink.fragArgs_delegate$lambda$5(NavDeepLink.this);
-                return fragArgs_delegate$lambda$5;
+                return NavDeepLink.fragArgs_delegate$lambda$5(NavDeepLink.this);
             }
         });
         this.fragRegex$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String fragRegex_delegate$lambda$6;
-                fragRegex_delegate$lambda$6 = NavDeepLink.fragRegex_delegate$lambda$6(NavDeepLink.this);
-                return fragRegex_delegate$lambda$6;
+                return NavDeepLink.fragRegex_delegate$lambda$6(NavDeepLink.this);
             }
         });
         this.fragPattern$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Regex fragPattern_delegate$lambda$8;
-                fragPattern_delegate$lambda$8 = NavDeepLink.fragPattern_delegate$lambda$8(NavDeepLink.this);
-                return fragPattern_delegate$lambda$8;
+                return NavDeepLink.fragPattern_delegate$lambda$8(NavDeepLink.this);
             }
         });
         this.mimeTypePattern$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Regex mimeTypePattern_delegate$lambda$10;
-                mimeTypePattern_delegate$lambda$10 = NavDeepLink.mimeTypePattern_delegate$lambda$10(NavDeepLink.this);
-                return mimeTypePattern_delegate$lambda$10;
+                return NavDeepLink.mimeTypePattern_delegate$lambda$10(NavDeepLink.this);
             }
         });
         parsePath();
@@ -157,7 +145,7 @@ public final class NavDeepLink {
         return (Regex) this.pathPattern$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Regex pathPattern_delegate$lambda$1(NavDeepLink navDeepLink) {
         String str = navDeepLink.pathRegex;
         if (str != null) {
@@ -170,7 +158,7 @@ public final class NavDeepLink {
         return ((Boolean) this.isParameterizedQuery$delegate.getValue()).booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isParameterizedQuery_delegate$lambda$2(NavDeepLink navDeepLink) {
         String str = navDeepLink.uriPattern;
         return str != null && QUERY_PATTERN.matches(str);
@@ -184,7 +172,7 @@ public final class NavDeepLink {
         return (Pair) this.fragArgsAndRegex$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List fragArgs_delegate$lambda$5(NavDeepLink navDeepLink) {
         List<String> first;
         Pair<List<String>, String> fragArgsAndRegex = navDeepLink.getFragArgsAndRegex();
@@ -195,7 +183,7 @@ public final class NavDeepLink {
         return (List) this.fragArgs$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String fragRegex_delegate$lambda$6(NavDeepLink navDeepLink) {
         Pair<List<String>, String> fragArgsAndRegex = navDeepLink.getFragArgsAndRegex();
         if (fragArgsAndRegex != null) {
@@ -208,7 +196,7 @@ public final class NavDeepLink {
         return (String) this.fragRegex$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Regex fragPattern_delegate$lambda$8(NavDeepLink navDeepLink) {
         String fragRegex = navDeepLink.getFragRegex();
         if (fragRegex != null) {
@@ -225,7 +213,7 @@ public final class NavDeepLink {
         return (Regex) this.mimeTypePattern$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Regex mimeTypePattern_delegate$lambda$10(NavDeepLink navDeepLink) {
         String str = navDeepLink.mimeTypeRegex;
         if (str != null) {
@@ -358,16 +346,14 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         final Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         if (getMatchingPathArguments(matchEntire, bundleOf, arguments)) {
             if (!isParameterizedQuery() || getMatchingQueryArguments(deepLink, bundleOf, arguments)) {
                 getMatchingUriFragment(deepLink.getFragment(), bundleOf, arguments);
                 if (NavArgumentKt.missingRequiredArguments(arguments, new Function1() { // from class: androidx.navigation.NavDeepLink$$ExternalSyntheticLambda8
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean matchingArguments$lambda$13;
-                        matchingArguments$lambda$13 = NavDeepLink.getMatchingArguments$lambda$13(bundleOf, (String) obj);
-                        return Boolean.valueOf(matchingArguments$lambda$13);
+                        return Boolean.valueOf(NavDeepLink.getMatchingArguments$lambda$13(bundleOf, (String) obj));
                     }
                 }).isEmpty()) {
                     return bundleOf;
@@ -463,7 +449,7 @@ public final class NavDeepLink {
         if (navArgument != null) {
             navArgument.getType().parseAndPut(bundle, str, str2);
         } else {
-            SavedStateWriter.m9328putStringimpl(SavedStateWriter.m9295constructorimpl(bundle), str, str2);
+            SavedStateWriter.m8533putStringimpl(SavedStateWriter.m8500constructorimpl(bundle), str, str2);
         }
     }
 
@@ -856,7 +842,7 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         if (uri != null && (pathPattern = getPathPattern()) != null && (matchEntire = pathPattern.matchEntire(uri.toString())) != null) {
             getMatchingPathArguments(matchEntire, bundleOf, arguments);
             if (isParameterizedQuery()) {
@@ -880,7 +866,7 @@ public final class NavDeepLink {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         Iterator<T> it = paramQuery.getArguments().iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -916,7 +902,7 @@ public final class NavDeepLink {
                 }
                 NavArgument navArgument2 = map.get(str3);
                 try {
-                    if (!SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(bundleOf), str3)) {
+                    if (!SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(bundleOf), str3)) {
                         parseArgument(bundleOf, str3, value, navArgument2);
                         obj = Unit.INSTANCE;
                     } else {
@@ -929,12 +915,12 @@ public final class NavDeepLink {
                 i = i2;
             }
         }
-        SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundle), bundleOf);
+        SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundle), bundleOf);
         return true;
     }
 
     private final boolean parseArgumentForRepeatedParam(Bundle bundle, String str, String str2, NavArgument navArgument) {
-        if (SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(bundle), str)) {
+        if (SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(bundle), str)) {
             if (navArgument != null) {
                 NavType<Object> type = navArgument.getType();
                 type.parseAndPut(bundle, str, str2, type.get(bundle, str));
@@ -945,9 +931,9 @@ public final class NavDeepLink {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean getMatchingArguments$lambda$13(Bundle bundle, String argName) {
         Intrinsics.checkNotNullParameter(argName, "argName");
-        return !SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(bundle), argName);
+        return !SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(bundle), argName);
     }
 }

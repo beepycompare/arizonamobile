@@ -43,53 +43,51 @@ public final class ConstantFormatStructure<T> implements NonConcatenatedFormatSt
 
     @Override // kotlinx.datetime.internal.format.FormatStructure
     public ParserStructure<T> parser() {
-        String str;
         List build;
         if (this.string.length() == 0) {
             build = CollectionsKt.emptyList();
         } else {
             List createListBuilder = CollectionsKt.createListBuilder();
+            boolean isAsciiDigit = UtilKt.isAsciiDigit(this.string.charAt(0));
+            String str = this.string;
             String str2 = "";
-            if (UtilKt.isAsciiDigit(this.string.charAt(0))) {
-                String str3 = this.string;
-                int length = str3.length();
+            if (isAsciiDigit) {
+                int length = str.length();
                 int i = 0;
                 while (true) {
                     if (i >= length) {
                         break;
-                    } else if (!UtilKt.isAsciiDigit(str3.charAt(i))) {
-                        str3 = str3.substring(0, i);
-                        Intrinsics.checkNotNullExpressionValue(str3, "substring(...)");
+                    } else if (!UtilKt.isAsciiDigit(str.charAt(i))) {
+                        str = str.substring(0, i);
+                        Intrinsics.checkNotNullExpressionValue(str, "substring(...)");
                         break;
                     } else {
                         i++;
                     }
                 }
-                createListBuilder.add(new NumberSpanParserOperation(CollectionsKt.listOf(new ConstantNumberConsumer(str3))));
-                String str4 = this.string;
-                int length2 = str4.length();
+                createListBuilder.add(new NumberSpanParserOperation(CollectionsKt.listOf(new ConstantNumberConsumer(str))));
+                String str3 = this.string;
+                int length2 = str3.length();
                 int i2 = 0;
                 while (true) {
                     if (i2 >= length2) {
                         str = "";
                         break;
-                    } else if (!UtilKt.isAsciiDigit(str4.charAt(i2))) {
-                        str = str4.substring(i2);
+                    } else if (!UtilKt.isAsciiDigit(str3.charAt(i2))) {
+                        str = str3.substring(i2);
                         Intrinsics.checkNotNullExpressionValue(str, "substring(...)");
                         break;
                     } else {
                         i2++;
                     }
                 }
-            } else {
-                str = this.string;
             }
-            String str5 = str;
-            if (str5.length() > 0) {
+            String str4 = str;
+            if (str4.length() > 0) {
                 if (!UtilKt.isAsciiDigit(str.charAt(str.length() - 1))) {
                     createListBuilder.add(new PlainStringParserOperation(str));
                 } else {
-                    int lastIndex = StringsKt.getLastIndex(str5);
+                    int lastIndex = StringsKt.getLastIndex(str4);
                     while (true) {
                         if (-1 >= lastIndex) {
                             break;
@@ -102,7 +100,7 @@ public final class ConstantFormatStructure<T> implements NonConcatenatedFormatSt
                         }
                     }
                     createListBuilder.add(new PlainStringParserOperation(str2));
-                    int lastIndex2 = StringsKt.getLastIndex(str5);
+                    int lastIndex2 = StringsKt.getLastIndex(str4);
                     while (true) {
                         if (-1 >= lastIndex2) {
                             break;

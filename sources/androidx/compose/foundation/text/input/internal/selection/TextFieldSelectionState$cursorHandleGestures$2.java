@@ -199,9 +199,7 @@ public final class TextFieldSelectionState$cursorHandleGestures$2 extends Suspen
                 if (TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$cursorHandleGestures$2$3$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = TextFieldSelectionState$cursorHandleGestures$2.AnonymousClass3.invokeSuspend$lambda$0(TextFieldSelectionState.this, (Offset) obj2);
-                        return invokeSuspend$lambda$0;
+                        return TextFieldSelectionState$cursorHandleGestures$2.AnonymousClass3.invokeSuspend$lambda$0(TextFieldSelectionState.this, (Offset) obj2);
                     }
                 }, this, 7, null) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -214,7 +212,7 @@ public final class TextFieldSelectionState$cursorHandleGestures$2 extends Suspen
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(TextFieldSelectionState textFieldSelectionState, Offset offset) {
             TextToolbarState textToolbarState;
             textToolbarState = textFieldSelectionState.getTextToolbarState();

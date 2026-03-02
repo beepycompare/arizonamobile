@@ -15,45 +15,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Focusability {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Always = m5107constructorimpl(1);
-    private static final int SystemDefined = m5107constructorimpl(0);
-    private static final int Never = m5107constructorimpl(2);
+    private static final int Always = m4455constructorimpl(1);
+    private static final int SystemDefined = m4455constructorimpl(0);
+    private static final int Never = m4455constructorimpl(2);
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ Focusability m5105boximpl(int i) {
+    public static final /* synthetic */ Focusability m4453boximpl(int i) {
         return new Focusability(i);
     }
 
     /* renamed from: constructor-impl */
-    private static int m5107constructorimpl(int i) {
+    private static int m4455constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m5108equalsimpl(int i, Object obj) {
-        return (obj instanceof Focusability) && i == ((Focusability) obj).m5112unboximpl();
+    public static boolean m4456equalsimpl(int i, Object obj) {
+        return (obj instanceof Focusability) && i == ((Focusability) obj).m4460unboximpl();
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m5109equalsimpl0(int i, int i2) {
+    public static final boolean m4457equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl */
-    public static int m5110hashCodeimpl(int i) {
+    public static int m4458hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5108equalsimpl(this.value, obj);
+        return m4456equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5110hashCodeimpl(this.value);
+        return m4458hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ int m5112unboximpl() {
+    public final /* synthetic */ int m4460unboximpl() {
         return this.value;
     }
 
@@ -69,17 +69,17 @@ public final class Focusability {
         }
 
         /* renamed from: getAlways-LCbbffg */
-        public final int m5113getAlwaysLCbbffg() {
+        public final int m4461getAlwaysLCbbffg() {
             return Focusability.Always;
         }
 
         /* renamed from: getSystemDefined-LCbbffg */
-        public final int m5115getSystemDefinedLCbbffg() {
+        public final int m4463getSystemDefinedLCbbffg() {
             return Focusability.SystemDefined;
         }
 
         /* renamed from: getNever-LCbbffg */
-        public final int m5114getNeverLCbbffg() {
+        public final int m4462getNeverLCbbffg() {
             return Focusability.Never;
         }
     }
@@ -89,32 +89,32 @@ public final class Focusability {
     }
 
     public String toString() {
-        return m5111toStringimpl(this.value);
+        return m4459toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl */
-    public static String m5111toStringimpl(int i) {
-        if (m5109equalsimpl0(i, Always)) {
+    public static String m4459toStringimpl(int i) {
+        if (m4457equalsimpl0(i, Always)) {
             return "Always";
         }
-        if (m5109equalsimpl0(i, SystemDefined)) {
+        if (m4457equalsimpl0(i, SystemDefined)) {
             return "SystemDefined";
         }
-        if (m5109equalsimpl0(i, Never)) {
+        if (m4457equalsimpl0(i, Never)) {
             return "Never";
         }
         throw new IllegalStateException("Unknown Focusability".toString());
     }
 
     /* renamed from: canFocus-impl$ui */
-    public static final boolean m5106canFocusimpl$ui(int i, CompositionLocalConsumerModifierNode compositionLocalConsumerModifierNode) {
-        if (m5109equalsimpl0(i, Always)) {
+    public static final boolean m4454canFocusimpl$ui(int i, CompositionLocalConsumerModifierNode compositionLocalConsumerModifierNode) {
+        if (m4457equalsimpl0(i, Always)) {
             return true;
         }
-        if (m5109equalsimpl0(i, SystemDefined)) {
-            return !InputMode.m6237equalsimpl0(((InputModeManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(compositionLocalConsumerModifierNode, CompositionLocalsKt.getLocalInputModeManager())).mo6243getInputModeaOaMEAU(), InputMode.Companion.m6242getTouchaOaMEAU());
+        if (m4457equalsimpl0(i, SystemDefined)) {
+            return !InputMode.m5578equalsimpl0(((InputModeManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(compositionLocalConsumerModifierNode, CompositionLocalsKt.getLocalInputModeManager())).mo5584getInputModeaOaMEAU(), InputMode.Companion.m5583getTouchaOaMEAU());
         }
-        if (m5109equalsimpl0(i, Never)) {
+        if (m4457equalsimpl0(i, Never)) {
             return false;
         }
         throw new IllegalStateException("Unknown Focusability".toString());

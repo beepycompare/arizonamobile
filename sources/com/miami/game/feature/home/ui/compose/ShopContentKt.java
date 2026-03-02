@@ -15,10 +15,10 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ShopContent.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0007H\u0007¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"ShopContent", "", "xdonate", "", "isArizona", "", "onClickShop", "Lkotlin/Function0;", "(IZLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "home_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0007H\u0007¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"ShopContent", "", "xdonate", "", "isArizona", "", "onClickShop", "Lkotlin/Function0;", "(IZLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ShopContentKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ShopContent$lambda$1(int i, boolean z, Function0 function0, int i2, Composer composer, int i3) {
         ShopContent(i, z, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
@@ -52,9 +52,7 @@ public final class ShopContentKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(-1126410593, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ShopContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit ShopContent$lambda$0;
-                    ShopContent$lambda$0 = ShopContentKt.ShopContent$lambda$0(i, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return ShopContent$lambda$0;
+                    return ShopContentKt.ShopContent$lambda$0(i, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -66,15 +64,13 @@ public final class ShopContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.ShopContentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ShopContent$lambda$1;
-                    ShopContent$lambda$1 = ShopContentKt.ShopContent$lambda$1(i, z, function0, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ShopContent$lambda$1;
+                    return ShopContentKt.ShopContent$lambda$1(i, z, function0, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ShopContent$lambda$0(int i, boolean z, BoxScope ScalingButton, Composer composer, int i2) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C8@301L39:ShopContent.kt#dswm0d");

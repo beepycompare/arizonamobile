@@ -68,15 +68,19 @@ public class AppUpdateInfo {
 
     public Set<Integer> getFailedUpdatePreconditions(AppUpdateOptions appUpdateOptions) {
         if (appUpdateOptions.allowAssetPackDeletion()) {
-            if (appUpdateOptions.appUpdateType() == 0) {
-                return zze((Set) this.zzo.get("nonblocking.destructive.intent"));
+            int appUpdateType = appUpdateOptions.appUpdateType();
+            Map map = this.zzo;
+            if (appUpdateType == 0) {
+                return zze((Set) map.get("nonblocking.destructive.intent"));
             }
-            return zze((Set) this.zzo.get("blocking.destructive.intent"));
-        } else if (appUpdateOptions.appUpdateType() == 0) {
-            return zze((Set) this.zzo.get("nonblocking.intent"));
-        } else {
-            return zze((Set) this.zzo.get("blocking.intent"));
+            return zze((Set) map.get("blocking.destructive.intent"));
         }
+        int appUpdateType2 = appUpdateOptions.appUpdateType();
+        Map map2 = this.zzo;
+        if (appUpdateType2 == 0) {
+            return zze((Set) map2.get("nonblocking.intent"));
+        }
+        return zze((Set) map2.get("blocking.intent"));
     }
 
     public int installStatus() {

@@ -50,22 +50,22 @@ public final class FixupList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.InsertNodeFixup insertNodeFixup = Operation.InsertNodeFixup.INSTANCE;
         operations.pushOp(insertNodeFixup);
-        Operations m4738constructorimpl = Operations.WriteScope.m4738constructorimpl(operations);
+        Operations m4103constructorimpl = Operations.WriteScope.m4103constructorimpl(operations);
         Operation.InsertNodeFixup insertNodeFixup2 = Operation.InsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m4746setObjectDKhxnng(m4738constructorimpl, Operation.ObjectParameter.m4712constructorimpl(0), function0);
+        Operations.WriteScope.m4111setObjectDKhxnng(m4103constructorimpl, Operation.ObjectParameter.m4080constructorimpl(0), function0);
         Operation.InsertNodeFixup insertNodeFixup3 = Operation.InsertNodeFixup.INSTANCE;
-        m4738constructorimpl.intArgs[m4738constructorimpl.intArgsSize - m4738constructorimpl.opCodes[m4738constructorimpl.opCodesSize - 1].getInts()] = i;
+        m4103constructorimpl.intArgs[m4103constructorimpl.intArgsSize - m4103constructorimpl.opCodes[m4103constructorimpl.opCodesSize - 1].getInts()] = i;
         Operation.InsertNodeFixup insertNodeFixup4 = Operation.InsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m4746setObjectDKhxnng(m4738constructorimpl, Operation.ObjectParameter.m4712constructorimpl(1), anchor);
+        Operations.WriteScope.m4111setObjectDKhxnng(m4103constructorimpl, Operation.ObjectParameter.m4080constructorimpl(1), anchor);
         operations.ensureAllArgumentsPushedFor(insertNodeFixup);
         Operations operations2 = this.pendingOperations;
         Operation.PostInsertNodeFixup postInsertNodeFixup = Operation.PostInsertNodeFixup.INSTANCE;
         operations2.pushOp(postInsertNodeFixup);
-        Operations m4738constructorimpl2 = Operations.WriteScope.m4738constructorimpl(operations2);
+        Operations m4103constructorimpl2 = Operations.WriteScope.m4103constructorimpl(operations2);
         Operation.PostInsertNodeFixup postInsertNodeFixup2 = Operation.PostInsertNodeFixup.INSTANCE;
-        m4738constructorimpl2.intArgs[m4738constructorimpl2.intArgsSize - m4738constructorimpl2.opCodes[m4738constructorimpl2.opCodesSize - 1].getInts()] = i;
+        m4103constructorimpl2.intArgs[m4103constructorimpl2.intArgsSize - m4103constructorimpl2.opCodes[m4103constructorimpl2.opCodesSize - 1].getInts()] = i;
         Operation.PostInsertNodeFixup postInsertNodeFixup3 = Operation.PostInsertNodeFixup.INSTANCE;
-        Operations.WriteScope.m4746setObjectDKhxnng(m4738constructorimpl2, Operation.ObjectParameter.m4712constructorimpl(0), anchor);
+        Operations.WriteScope.m4111setObjectDKhxnng(m4103constructorimpl2, Operation.ObjectParameter.m4080constructorimpl(0), anchor);
         operations2.ensureAllArgumentsPushedFor(postInsertNodeFixup);
     }
 
@@ -80,13 +80,13 @@ public final class FixupList extends OperationsDebugStringFormattable {
         Operations operations = this.operations;
         Operation.UpdateNode updateNode = Operation.UpdateNode.INSTANCE;
         operations.pushOp(updateNode);
-        Operations m4738constructorimpl = Operations.WriteScope.m4738constructorimpl(operations);
+        Operations m4103constructorimpl = Operations.WriteScope.m4103constructorimpl(operations);
         Operation.UpdateNode updateNode2 = Operation.UpdateNode.INSTANCE;
-        Operations.WriteScope.m4746setObjectDKhxnng(m4738constructorimpl, Operation.ObjectParameter.m4712constructorimpl(0), v);
+        Operations.WriteScope.m4111setObjectDKhxnng(m4103constructorimpl, Operation.ObjectParameter.m4080constructorimpl(0), v);
         Operation.UpdateNode updateNode3 = Operation.UpdateNode.INSTANCE;
-        int m4712constructorimpl = Operation.ObjectParameter.m4712constructorimpl(1);
+        int m4080constructorimpl = Operation.ObjectParameter.m4080constructorimpl(1);
         Intrinsics.checkNotNull(function2, "null cannot be cast to non-null type @[ExtensionFunctionType] kotlin.Function2<kotlin.Any?, kotlin.Any?, kotlin.Unit>");
-        Operations.WriteScope.m4746setObjectDKhxnng(m4738constructorimpl, m4712constructorimpl, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
+        Operations.WriteScope.m4111setObjectDKhxnng(m4103constructorimpl, m4080constructorimpl, (Function2) TypeIntrinsics.beforeCheckcastToFunctionOfArity(function2, 2));
         operations.ensureAllArgumentsPushedFor(updateNode);
     }
 

@@ -6,7 +6,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.audio.AudioTrackPositionTracker;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 final class AudioTimestampPoller {
     private static final int ERROR_POLL_INTERVAL_US = 500000;
     private static final int FAST_POLL_INTERVAL_US = 10000;
@@ -37,52 +37,51 @@ final class AudioTimestampPoller {
         reset();
     }
 
-    public void maybePollTimestamp(long j, float f, long j2) {
-        if (j - this.lastTimestampSampleTimeUs < this.sampleIntervalUs) {
-            return;
-        }
-        this.lastTimestampSampleTimeUs = j;
-        boolean maybeUpdateTimestamp = this.audioTimestamp.maybeUpdateTimestamp();
-        if (maybeUpdateTimestamp) {
-            checkTimestampIsPlausibleAndUpdateErrorState(j, f, j2);
-        }
-        int i = this.state;
-        if (i == 0) {
+    public void maybePollTimestamp(long j, float f, long j2, boolean z) {
+        if (z || j - this.lastTimestampSampleTimeUs >= this.sampleIntervalUs) {
+            this.lastTimestampSampleTimeUs = j;
+            boolean maybeUpdateTimestamp = this.audioTimestamp.maybeUpdateTimestamp();
             if (maybeUpdateTimestamp) {
-                if (this.audioTimestamp.getTimestampSystemTimeUs() >= this.initializeSystemTimeUs) {
-                    this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
-                    this.initialTimestampSystemTimeUs = this.audioTimestamp.getTimestampSystemTimeUs();
-                    updateState(1);
-                }
-            } else if (j - this.initializeSystemTimeUs > 500000) {
-                updateState(3);
+                checkTimestampIsPlausibleAndUpdateErrorState(j, f, j2);
             }
-        } else if (i == 1) {
-            if (maybeUpdateTimestamp) {
-                if (isTimestampAdvancingFromInitialTimestamp(j, f)) {
-                    updateState(2);
-                    return;
-                } else if (j - this.initializeSystemTimeUs > SilenceSkippingAudioProcessor.DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US) {
+            int i = this.state;
+            if (i == 0) {
+                if (maybeUpdateTimestamp) {
+                    if (this.audioTimestamp.getTimestampSystemTimeUs() >= this.initializeSystemTimeUs) {
+                        this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
+                        this.initialTimestampSystemTimeUs = this.audioTimestamp.getTimestampSystemTimeUs();
+                        updateState(1);
+                    }
+                } else if (j - this.initializeSystemTimeUs > 500000) {
                     updateState(3);
-                    return;
-                } else {
-                    this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
-                    this.initialTimestampSystemTimeUs = this.audioTimestamp.getTimestampSystemTimeUs();
+                }
+            } else if (i == 1) {
+                if (maybeUpdateTimestamp) {
+                    if (isTimestampAdvancingFromInitialTimestamp(j, f)) {
+                        updateState(2);
+                        return;
+                    } else if (j - this.initializeSystemTimeUs > SilenceSkippingAudioProcessor.DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US) {
+                        updateState(3);
+                        return;
+                    } else {
+                        this.initialTimestampPositionFrames = this.audioTimestamp.getTimestampPositionFrames();
+                        this.initialTimestampSystemTimeUs = this.audioTimestamp.getTimestampSystemTimeUs();
+                        return;
+                    }
+                }
+                reset();
+            } else if (i == 2) {
+                if (maybeUpdateTimestamp) {
                     return;
                 }
+                reset();
+            } else if (i != 3) {
+                if (i != 4) {
+                    throw new IllegalStateException();
+                }
+            } else if (maybeUpdateTimestamp) {
+                reset();
             }
-            reset();
-        } else if (i == 2) {
-            if (maybeUpdateTimestamp) {
-                return;
-            }
-            reset();
-        } else if (i != 3) {
-            if (i != 4) {
-                throw new IllegalStateException();
-            }
-        } else if (maybeUpdateTimestamp) {
-            reset();
         }
     }
 
@@ -158,7 +157,7 @@ final class AudioTimestampPoller {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class AudioTimestampWrapper {
         private long accumulatedRawTimestampFramePosition;
         private final AudioTimestamp audioTimestamp = new AudioTimestamp();

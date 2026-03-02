@@ -56,13 +56,13 @@ public class FabTransformationSheetBehavior extends FabTransformationBehavior {
                 View childAt = coordinatorLayout.getChildAt(i);
                 boolean z2 = (childAt.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) && (((CoordinatorLayout.LayoutParams) childAt.getLayoutParams()).getBehavior() instanceof FabTransformationScrimBehavior);
                 if (childAt != view && !z2) {
+                    Map<View, Integer> map = this.importantForAccessibilityMap;
                     if (!z) {
-                        Map<View, Integer> map = this.importantForAccessibilityMap;
                         if (map != null && map.containsKey(childAt)) {
                             childAt.setImportantForAccessibility(this.importantForAccessibilityMap.get(childAt).intValue());
                         }
                     } else {
-                        this.importantForAccessibilityMap.put(childAt, Integer.valueOf(childAt.getImportantForAccessibility()));
+                        map.put(childAt, Integer.valueOf(childAt.getImportantForAccessibility()));
                         childAt.setImportantForAccessibility(4);
                     }
                 }

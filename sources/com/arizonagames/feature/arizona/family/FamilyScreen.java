@@ -36,6 +36,7 @@ import com.arizonagames.feature.arizona.family.data.FamilyCharterData;
 import com.arizonagames.feature.arizona.family.data.FamilyCreateData;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.FamilyEstateData;
+import com.arizonagames.feature.arizona.family.data.FamilyMembersCount;
 import com.arizonagames.feature.arizona.family.data.FamilySettingsData;
 import com.arizonagames.feature.arizona.family.data.FamilyWarData;
 import com.arizonagames.feature.arizona.family.data.FrameMapData;
@@ -88,7 +89,7 @@ import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.ui.kit.FlagsKt;
 /* compiled from: FamilyScreen.kt */
-@Metadata(d1 = {"\u0000ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u008a\u0001\u008b\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00107\u001a\u0002082\u0006\u00109\u001a\u00020\u0011H\u0016J\u0018\u0010:\u001a\u0002082\u0006\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020\u0006H\u0016J\u0010\u0010>\u001a\u0002082\u0006\u0010?\u001a\u00020\u001aH\u0002J\u0010\u0010@\u001a\u0002082\u0006\u0010?\u001a\u00020AH\u0002J\u0010\u0010B\u001a\u0002082\u0006\u0010?\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u0002082\u0006\u0010?\u001a\u00020EH\u0002J\u0010\u0010F\u001a\u0002082\u0006\u0010?\u001a\u00020GH\u0002J\u0016\u0010H\u001a\u0002082\f\u0010?\u001a\b\u0012\u0004\u0012\u00020\u00060IH\u0002J\u0010\u0010J\u001a\u0002082\u0006\u0010?\u001a\u00020\u0018H\u0002J\b\u0010K\u001a\u000208H\u0002J\b\u0010L\u001a\u000208H\u0002J\b\u0010M\u001a\u000208H\u0002J\u0010\u0010N\u001a\u0002082\u0006\u0010O\u001a\u00020\u0006H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010Q\u001a\u00020<H\u0002J\u0010\u0010R\u001a\u0002082\u0006\u0010O\u001a\u00020\u0006H\u0002J\u0010\u0010S\u001a\u0002082\u0006\u0010Q\u001a\u00020<H\u0002J\u0010\u0010T\u001a\u0002082\u0006\u0010O\u001a\u00020\u0006H\u0002J\b\u0010U\u001a\u000208H\u0002J\b\u0010V\u001a\u000208H\u0002J\b\u0010W\u001a\u000208H\u0002J\b\u0010X\u001a\u000208H\u0002J\b\u0010Y\u001a\u000208H\u0002J\u0016\u0010Z\u001a\u0002082\f\u0010;\u001a\b\u0012\u0004\u0012\u00020[0IH\u0002J\b\u0010\\\u001a\u000208H\u0002J\u0010\u0010]\u001a\u0002082\u0006\u0010;\u001a\u00020^H\u0002J\u0010\u0010_\u001a\u0002082\u0006\u0010`\u001a\u00020aH\u0002J\u0018\u0010b\u001a\u0002082\u0006\u0010c\u001a\u00020\u00062\u0006\u0010Q\u001a\u00020<H\u0002J\b\u0010d\u001a\u000208H\u0002J\b\u0010e\u001a\u000208H\u0002J\b\u0010f\u001a\u000208H\u0002J\u0010\u0010g\u001a\u0002082\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0010\u0010h\u001a\u0002082\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0010\u0010i\u001a\u0002082\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0010\u0010j\u001a\u0002082\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0010\u0010k\u001a\u0002082\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0010\u0010l\u001a\u0002082\u0006\u0010`\u001a\u00020mH\u0002J\u0010\u0010n\u001a\u0002082\u0006\u0010`\u001a\u00020aH\u0002J\b\u0010o\u001a\u000208H\u0002J\u0010\u0010p\u001a\u0002082\u0006\u0010`\u001a\u00020^H\u0002J\b\u0010q\u001a\u000208H\u0002J\b\u0010r\u001a\u000208H\u0002J\b\u0010s\u001a\u000208H\u0002J\b\u0010t\u001a\u000208H\u0002J\b\u0010v\u001a\u000208H\u0002J\b\u0010x\u001a\u000208H\u0002J\b\u0010z\u001a\u000208H\u0002J\b\u0010|\u001a\u000208H\u0002J\b\u0010~\u001a\u000208H\u0002J\t\u0010\u0080\u0001\u001a\u000208H\u0002J\t\u0010\u0082\u0001\u001a\u000208H\u0002J\t\u0010\u0084\u0001\u001a\u000208H\u0002J\t\u0010\u0086\u0001\u001a\u000208H\u0002J\u0013\u0010\u0087\u0001\u001a\u0002082\b\u0010\u0088\u0001\u001a\u00030\u0089\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00101\u001a\u000202¢\u0006\b\n\u0000\u001a\u0004\b3\u00104R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010u\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010w\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010y\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010}\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u008c\u0001"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/family/databinding/FamilyMainBinding;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "familyData", "Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "createInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCreateData;", "colorsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "estateAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "charterAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterAdapter;", "warAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "membersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/RatingAdapter;", "territoryAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lcom/arizonagames/feature/arizona/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "setCreateInfo", "info", "setWarInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "setCharterInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCharterData;", "setSettingsInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "setEstateInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lcom/arizonagames/feature/arizona/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lcom/arizonagames/feature/arizona/family/data/FrameMapData;", "setFrameCharter", "item", "Lcom/arizonagames/feature/arizona/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "family_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ö\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u001b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0004\u008c\u0001\u008d\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020\u0011H\u0016J\u0018\u0010<\u001a\u00020:2\u0006\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020\u0006H\u0016J\u0010\u0010@\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001cH\u0002J\u0010\u0010B\u001a\u00020:2\u0006\u0010A\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020:2\u0006\u0010A\u001a\u00020EH\u0002J\u0010\u0010F\u001a\u00020:2\u0006\u0010A\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u00020:2\u0006\u0010A\u001a\u00020IH\u0002J\u0016\u0010J\u001a\u00020:2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00060KH\u0002J\u0010\u0010L\u001a\u00020:2\u0006\u0010A\u001a\u00020\u001aH\u0002J\b\u0010M\u001a\u00020:H\u0002J\b\u0010N\u001a\u00020:H\u0002J\b\u0010O\u001a\u00020:H\u0002J\u0010\u0010P\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010R\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010T\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\u0010\u0010U\u001a\u00020:2\u0006\u0010S\u001a\u00020>H\u0002J\u0010\u0010V\u001a\u00020:2\u0006\u0010Q\u001a\u00020\u0006H\u0002J\b\u0010W\u001a\u00020:H\u0002J\b\u0010X\u001a\u00020:H\u0002J\b\u0010Y\u001a\u00020:H\u0002J\b\u0010Z\u001a\u00020:H\u0002J\b\u0010[\u001a\u00020:H\u0002J\u0016\u0010\\\u001a\u00020:2\f\u0010=\u001a\b\u0012\u0004\u0012\u00020]0KH\u0002J\b\u0010^\u001a\u00020:H\u0002J\u0010\u0010_\u001a\u00020:2\u0006\u0010=\u001a\u00020`H\u0002J\u0010\u0010a\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\u0018\u0010d\u001a\u00020:2\u0006\u0010e\u001a\u00020\u00062\u0006\u0010S\u001a\u00020>H\u0002J\b\u0010f\u001a\u00020:H\u0002J\b\u0010g\u001a\u00020:H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0010\u0010i\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010j\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010k\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010l\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010m\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010n\u001a\u00020:2\u0006\u0010b\u001a\u00020oH\u0002J\u0010\u0010p\u001a\u00020:2\u0006\u0010b\u001a\u00020cH\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0010\u0010r\u001a\u00020:2\u0006\u0010b\u001a\u00020`H\u0002J\b\u0010s\u001a\u00020:H\u0002J\b\u0010t\u001a\u00020:H\u0002J\b\u0010u\u001a\u00020:H\u0002J\b\u0010v\u001a\u00020:H\u0002J\b\u0010x\u001a\u00020:H\u0002J\b\u0010z\u001a\u00020:H\u0002J\b\u0010|\u001a\u00020:H\u0002J\b\u0010~\u001a\u00020:H\u0002J\t\u0010\u0080\u0001\u001a\u00020:H\u0002J\t\u0010\u0082\u0001\u001a\u00020:H\u0002J\t\u0010\u0084\u0001\u001a\u00020:H\u0002J\t\u0010\u0086\u0001\u001a\u00020:H\u0002J\t\u0010\u0088\u0001\u001a\u00020:H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020:2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00103\u001a\u000204¢\u0006\b\n\u0000\u001a\u0004\b5\u00106R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010w\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010y\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010{\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010}\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u007f\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0081\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0083\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0085\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000f\u0010\u0087\u0001\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u008e\u0001"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lcom/arizonagames/feature/arizona/family/databinding/FamilyMainBinding;", "createSelectedImage", "createSelectedImageMax", "createIsTitleDone", "", "createIsSloganDone", "mapCells", "xMargin", "", "yMargin", "membersCount", "Lcom/arizonagames/feature/arizona/family/data/FamilyMembersCount;", "familyData", "Lcom/arizonagames/feature/arizona/family/data/FamilyData;", "createInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCreateData;", "colorsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CreateClanColorAdapter;", "mainMenuItemsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MainMenuAdapter;", "settingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/SettingsAdapter;", "estateAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/EstateAdapter;", "charterAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterAdapter;", "warAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/WarsAdapter;", "membersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MembersAdapter;", "charterMembersAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/CharterMembersAdapter;", "ratingAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/RatingAdapter;", "territoryAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/TerritoryAdapter;", "meetingsAdapter", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lcom/arizonagames/feature/arizona/family/FamilyApi;", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "setCreateInfo", "info", "setWarInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyWarData;", "setCharterInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyCharterData;", "setSettingsInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilySettingsData;", "setEstateInfo", "Lcom/arizonagames/feature/arizona/family/data/FamilyEstateData;", "setMainMenu", "", "setFamilyInfo", "setupAdapters", "clearAdapters", "setupNavigation", "requestMembers", "page", "requestMembersName", "name", "requestCharterMembers", "requestCharterMembersName", "requestRating", "requestTerritories", "requestTopTerritories", "requestMeetings", "loadMapRetrofit", "loadMembersCount", "setUniqCells", "Lcom/arizonagames/feature/arizona/family/data/UniqCellItem;", "setMap", "setFrameMap", "Lcom/arizonagames/feature/arizona/family/data/FrameMapData;", "setFrameCharter", "item", "Lcom/arizonagames/feature/arizona/family/data/CharterItem;", "setFrameMember", "id", "onClickMembersFrame", "setupCreateClanPage", "checkCreateBntState", "selectMenuItem", "selectSettingsItem", "selectEstateItem", "selectCharterItem", "selectWarItem", "selectMemberItem", "Lcom/arizonagames/feature/arizona/family/data/MemberItem;", "selectCharterMemberItem", "selectRatingItem", "selectTerritoryItem", "setupSort", "sortTerritory1", "sortTerritory2", "sortTerritory3", "sortcharter1state", "sortcharter1", "sortcharter2state", "sortcharter2", "sortcharter3state", "sortcharter3", "sortcharter4state", "sortcharter4", "sortMeetings1state", "sortMeetings1", "sortMeetings2state", "sortMeetings2", "sortMeetings3state", "sortMeetings3", "sortMembers1state", "sortMembers1", "sortMembers2state", "sortMembers2", "navigateTo", "nav", "Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "Navigation", "Spawner", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FamilyScreen extends SAMPUIElement implements InterfaceController {
     private final FamilyApi api;
@@ -108,6 +109,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private final int mapCells;
     private final MeetingsAdapter meetingsAdapter;
     private final MembersAdapter membersAdapter;
+    private FamilyMembersCount membersCount;
     private final RatingAdapter ratingAdapter;
     private final View screen;
     private final SettingsAdapter settingsAdapter;
@@ -126,7 +128,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private float yMargin;
 
     /* compiled from: FamilyScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -200,7 +202,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private final void selectRatingItem() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupNavigation$lambda$0(View view) {
     }
 
@@ -221,101 +223,75 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.mainMenuItemsAdapter = new MainMenuAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda40
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mainMenuItemsAdapter$lambda$0;
-                mainMenuItemsAdapter$lambda$0 = FamilyScreen.mainMenuItemsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
-                return mainMenuItemsAdapter$lambda$0;
+                return FamilyScreen.mainMenuItemsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.settingsAdapter = new SettingsAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda45
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit unit;
-                unit = FamilyScreen.settingsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
-                return unit;
+                return FamilyScreen.settingsAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.estateAdapter = new EstateAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda46
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit estateAdapter$lambda$0;
-                estateAdapter$lambda$0 = FamilyScreen.estateAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
-                return estateAdapter$lambda$0;
+                return FamilyScreen.estateAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.charterAdapter = new CharterAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda47
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit charterAdapter$lambda$0;
-                charterAdapter$lambda$0 = FamilyScreen.charterAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
-                return charterAdapter$lambda$0;
+                return FamilyScreen.charterAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.warAdapter = new WarsAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda48
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit warAdapter$lambda$0;
-                warAdapter$lambda$0 = FamilyScreen.warAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
-                return warAdapter$lambda$0;
+                return FamilyScreen.warAdapter$lambda$0(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.membersAdapter = new MembersAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda49
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit membersAdapter$lambda$0;
-                membersAdapter$lambda$0 = FamilyScreen.membersAdapter$lambda$0(FamilyScreen.this, (MemberItem) obj);
-                return membersAdapter$lambda$0;
+                return FamilyScreen.membersAdapter$lambda$0(FamilyScreen.this, (MemberItem) obj);
             }
         }, new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda50
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit membersAdapter$lambda$1;
-                membersAdapter$lambda$1 = FamilyScreen.membersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
-                return membersAdapter$lambda$1;
+                return FamilyScreen.membersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.charterMembersAdapter = new CharterMembersAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda51
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit charterMembersAdapter$lambda$0;
-                charterMembersAdapter$lambda$0 = FamilyScreen.charterMembersAdapter$lambda$0(FamilyScreen.this, (CharterItem) obj);
-                return charterMembersAdapter$lambda$0;
+                return FamilyScreen.charterMembersAdapter$lambda$0(FamilyScreen.this, (CharterItem) obj);
             }
         }, new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda52
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit charterMembersAdapter$lambda$1;
-                charterMembersAdapter$lambda$1 = FamilyScreen.charterMembersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
-                return charterMembersAdapter$lambda$1;
+                return FamilyScreen.charterMembersAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.ratingAdapter = new RatingAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda53
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ratingAdapter$lambda$0;
-                ratingAdapter$lambda$0 = FamilyScreen.ratingAdapter$lambda$0(FamilyScreen.this, (RatingItem) obj);
-                return ratingAdapter$lambda$0;
+                return FamilyScreen.ratingAdapter$lambda$0(FamilyScreen.this, (RatingItem) obj);
             }
         }, new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ratingAdapter$lambda$1;
-                ratingAdapter$lambda$1 = FamilyScreen.ratingAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
-                return ratingAdapter$lambda$1;
+                return FamilyScreen.ratingAdapter$lambda$1(FamilyScreen.this, ((Integer) obj).intValue());
             }
         });
         this.territoryAdapter = new TerritoryAdapter(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda42
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit territoryAdapter$lambda$0;
-                territoryAdapter$lambda$0 = FamilyScreen.territoryAdapter$lambda$0(FamilyScreen.this, (FrameMapData) obj);
-                return territoryAdapter$lambda$0;
+                return FamilyScreen.territoryAdapter$lambda$0(FamilyScreen.this, (FrameMapData) obj);
             }
         }, new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda43
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit territoryAdapter$lambda$1;
-                territoryAdapter$lambda$1 = FamilyScreen.territoryAdapter$lambda$1(FamilyScreen.this, (GangZoneItem) obj);
-                return territoryAdapter$lambda$1;
+                return FamilyScreen.territoryAdapter$lambda$1(FamilyScreen.this, (GangZoneItem) obj);
             }
         });
         this.meetingsAdapter = new MeetingsAdapter();
@@ -339,83 +315,83 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.sortMembers2state = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit mainMenuItemsAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectMenuItem(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit settingsAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectSettingsItem(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit estateAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectEstateItem(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit charterAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectCharterItem(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit warAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectWarItem(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit membersAdapter$lambda$0(FamilyScreen familyScreen, MemberItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectMemberItem(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit membersAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestMembers(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit charterMembersAdapter$lambda$0(FamilyScreen familyScreen, CharterItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectCharterMemberItem(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit charterMembersAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestCharterMembers(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ratingAdapter$lambda$0(FamilyScreen familyScreen, RatingItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectRatingItem();
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ratingAdapter$lambda$1(FamilyScreen familyScreen, int i) {
         familyScreen.requestRating(i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit territoryAdapter$lambda$0(FamilyScreen familyScreen, FrameMapData it) {
         Intrinsics.checkNotNullParameter(it, "it");
         familyScreen.selectTerritoryItem(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit territoryAdapter$lambda$1(FamilyScreen familyScreen, GangZoneItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         SAMPUIElement.notifyClick$default(familyScreen, 8, it.getId(), null, 4, null);
@@ -2182,7 +2158,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: FamilyScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0010\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0011"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Create", "Menu", "Settings", "Members", "Rating", "Map", "Estate", "Charter", "War", "Home", "CharterMembers", "Territories", "Meetings", "family_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0010\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0011"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Create", "Menu", "Settings", "Members", "Rating", "Map", "Estate", "Charter", "War", "Home", "CharterMembers", "Territories", "Meetings", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Navigation {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -2228,7 +2204,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* compiled from: FamilyScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "family_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lcom/arizonagames/feature/arizona/family/FamilyScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.FAMILY_ARIZONA);

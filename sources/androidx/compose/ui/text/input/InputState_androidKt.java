@@ -14,8 +14,8 @@ public final class InputState_androidKt {
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = textFieldValue.getText().length();
         extractedText.partialStartOffset = -1;
-        extractedText.selectionStart = TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE());
-        extractedText.selectionEnd = TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE());
+        extractedText.selectionStart = TextRange.m7001getMinimpl(textFieldValue.m7253getSelectiond9O1mEE());
+        extractedText.selectionEnd = TextRange.m7000getMaximpl(textFieldValue.m7253getSelectiond9O1mEE());
         extractedText.flags = !StringsKt.contains$default((CharSequence) textFieldValue.getText(), '\n', false, 2, (Object) null) ? 1 : 0;
         return extractedText;
     }

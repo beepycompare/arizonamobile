@@ -24,16 +24,16 @@ public final class U implements Aa {
     public final String c = "advertising identifiers collecting is forbidden by client configuration";
     public final String d = "advertising identifiers collecting is forbidden by startup";
     public final String e = "advertising identifiers collecting is forbidden by unknown reason";
-    public final N f = new N(new C0754zg(Constants.REFERRER_API_GOOGLE));
-    public final N g = new N(new C0754zg("huawei"));
-    public final N h = new N(new C0754zg("yandex"));
+    public final N f = new N(new C0753zg(Constants.REFERRER_API_GOOGLE));
+    public final N g = new N(new C0753zg("huawei"));
+    public final N h = new N(new C0753zg("yandex"));
     public volatile AdvertisingIdsHolder k = new AdvertisingIdsHolder();
     public G l = new G(4, 4, 4);
 
-    public U(Context context, ICommonExecutor iCommonExecutor, C0257fm c0257fm) {
+    public U(Context context, ICommonExecutor iCommonExecutor, C0256fm c0256fm) {
         this.f804a = context;
         this.b = iCommonExecutor;
-        this.j = new J(c0257fm);
+        this.j = new J(c0256fm);
     }
 
     public static final Void e(U u) {
@@ -61,9 +61,9 @@ public final class U implements Aa {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.Aa, io.appmetrica.analytics.impl.InterfaceC0386km
-    public final synchronized void a(C0257fm c0257fm) {
-        this.j.a(c0257fm);
+    @Override // io.appmetrica.analytics.impl.Aa, io.appmetrica.analytics.impl.InterfaceC0385km
+    public final synchronized void a(C0256fm c0256fm) {
+        this.j.a(c0256fm);
         a((Gi) new Xd(), false);
     }
 

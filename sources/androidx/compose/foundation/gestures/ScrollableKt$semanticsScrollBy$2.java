@@ -53,16 +53,14 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
-            float m672toFloatk4lQ0M = this.$this_semanticsScrollBy.m672toFloatk4lQ0M(this.f14$$v$c$androidxcomposeuigeometryOffset$offset$0);
+            float m589toFloatk4lQ0M = this.$this_semanticsScrollBy.m589toFloatk4lQ0M(this.f14$$v$c$androidxcomposeuigeometryOffset$offset$0);
             final Ref.FloatRef floatRef = this.$previousValue;
             final ScrollingLogic scrollingLogic = this.$this_semanticsScrollBy;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(0.0f, m672toFloatk4lQ0M, 0.0f, null, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(0.0f, m589toFloatk4lQ0M, 0.0f, null, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollableKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = ScrollableKt$semanticsScrollBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollingLogic, nestedScrollScope, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
-                    return invokeSuspend$lambda$0;
+                    return ScrollableKt$semanticsScrollBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollingLogic, nestedScrollScope, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
                 }
             }, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -75,9 +73,9 @@ public final class ScrollableKt$semanticsScrollBy$2 extends SuspendLambda implem
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, NestedScrollScope nestedScrollScope, float f, float f2) {
-        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m672toFloatk4lQ0M(nestedScrollScope.mo611scrollByOzD1aCk(scrollingLogic.m673toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m6624getUserInputWNlRxjI())));
+        floatRef.element += scrollingLogic.reverseIfNeeded(scrollingLogic.m589toFloatk4lQ0M(nestedScrollScope.mo530scrollByOzD1aCk(scrollingLogic.m590toOffsettuRUvjQ(scrollingLogic.reverseIfNeeded(f - floatRef.element)), NestedScrollSource.Companion.m5965getUserInputWNlRxjI())));
         return Unit.INSTANCE;
     }
 }

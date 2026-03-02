@@ -417,8 +417,9 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             }
             Drawable icon = tab.getIcon();
             CharSequence text = tab.getText();
+            ImageView imageView2 = this.mIconView;
             if (icon != null) {
-                if (this.mIconView == null) {
+                if (imageView2 == null) {
                     AppCompatImageView appCompatImageView = new AppCompatImageView(getContext());
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
                     layoutParams.gravity = 16;
@@ -428,16 +429,14 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
                 }
                 this.mIconView.setImageDrawable(icon);
                 this.mIconView.setVisibility(0);
-            } else {
-                ImageView imageView2 = this.mIconView;
-                if (imageView2 != null) {
-                    imageView2.setVisibility(8);
-                    this.mIconView.setImageDrawable(null);
-                }
+            } else if (imageView2 != null) {
+                imageView2.setVisibility(8);
+                this.mIconView.setImageDrawable(null);
             }
             boolean isEmpty = TextUtils.isEmpty(text);
+            TextView textView2 = this.mTextView;
             if (!isEmpty) {
-                if (this.mTextView == null) {
+                if (textView2 == null) {
                     AppCompatTextView appCompatTextView = new AppCompatTextView(getContext(), null, R.attr.actionBarTabTextStyle);
                     appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
@@ -448,12 +447,9 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
                 }
                 this.mTextView.setText(text);
                 this.mTextView.setVisibility(0);
-            } else {
-                TextView textView2 = this.mTextView;
-                if (textView2 != null) {
-                    textView2.setVisibility(8);
-                    this.mTextView.setText((CharSequence) null);
-                }
+            } else if (textView2 != null) {
+                textView2.setVisibility(8);
+                this.mTextView.setText((CharSequence) null);
             }
             ImageView imageView3 = this.mIconView;
             if (imageView3 != null) {

@@ -30,9 +30,7 @@ public final class JvmAnnotatedString_jvmKt {
         CollectionsKt.windowed$default(sortedSetOf, 2, 0, false, new Function1() { // from class: androidx.compose.ui.text.JvmAnnotatedString_jvmKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Integer transform$lambda$0;
-                transform$lambda$0 = JvmAnnotatedString_jvmKt.transform$lambda$0(Ref.ObjectRef.this, function3, annotatedString, mutableMapOf, (List) obj);
-                return transform$lambda$0;
+                return JvmAnnotatedString_jvmKt.transform$lambda$0(Ref.ObjectRef.this, function3, annotatedString, mutableMapOf, (List) obj);
             }
         }, 6, null);
         List<AnnotatedString.Range<? extends AnnotatedString.Annotation>> annotations$ui_text = annotatedString.getAnnotations$ui_text();
@@ -56,7 +54,7 @@ public final class JvmAnnotatedString_jvmKt {
         return new AnnotatedString(arrayList, (String) objectRef.element);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r4v4, types: [T, java.lang.String] */
     public static final Integer transform$lambda$0(Ref.ObjectRef objectRef, Function3 function3, AnnotatedString annotatedString, Map map, List list) {
         int intValue = ((Number) list.get(0)).intValue();

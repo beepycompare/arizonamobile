@@ -37,9 +37,9 @@ import kotlinx.coroutines.CoroutineScope;
 @Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0090\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\r2\b\u0010\u0011\u001a\u0004\u0018\u00010\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00142\u0017\u0010\u0016\u001a\u0013\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00010\u0017¢\u0006\u0002\b\u0019H\u0001¢\u0006\u0004\b\u001a\u0010\u001b¨\u0006\u001c"}, d2 = {"LazyStaggeredGrid", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;", "orientation", "Landroidx/compose/foundation/gestures/Orientation;", "slots", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyGridStaggeredGridSlotsProvider;", "modifier", "Landroidx/compose/ui/Modifier;", "contentPadding", "Landroidx/compose/foundation/layout/PaddingValues;", "reverseLayout", "", "flingBehavior", "Landroidx/compose/foundation/gestures/FlingBehavior;", "userScrollEnabled", "overscrollEffect", "Landroidx/compose/foundation/OverscrollEffect;", "mainAxisSpacing", "Landroidx/compose/ui/unit/Dp;", "crossAxisSpacing", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridScope;", "Lkotlin/ExtensionFunctionType;", "LazyStaggeredGrid-w41Enmo", "(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/lazy/staggeredgrid/LazyGridStaggeredGridSlotsProvider;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/gestures/FlingBehavior;ZLandroidx/compose/foundation/OverscrollEffect;FFLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LazyStaggeredGridKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LazyStaggeredGrid_w41Enmo$lambda$0(LazyStaggeredGridState lazyStaggeredGridState, Orientation orientation, LazyGridStaggeredGridSlotsProvider lazyGridStaggeredGridSlotsProvider, Modifier modifier, PaddingValues paddingValues, boolean z, FlingBehavior flingBehavior, boolean z2, OverscrollEffect overscrollEffect, float f, float f2, Function1 function1, int i, int i2, int i3, Composer composer, int i4) {
-        m1179LazyStaggeredGridw41Enmo(lazyStaggeredGridState, orientation, lazyGridStaggeredGridSlotsProvider, modifier, paddingValues, z, flingBehavior, z2, overscrollEffect, f, f2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m1033LazyStaggeredGridw41Enmo(lazyStaggeredGridState, orientation, lazyGridStaggeredGridSlotsProvider, modifier, paddingValues, z, flingBehavior, z2, overscrollEffect, f, f2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -66,7 +66,7 @@ public final class LazyStaggeredGridKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1179LazyStaggeredGridw41Enmo(final LazyStaggeredGridState lazyStaggeredGridState, final Orientation orientation, final LazyGridStaggeredGridSlotsProvider lazyGridStaggeredGridSlotsProvider, Modifier modifier, PaddingValues paddingValues, boolean z, FlingBehavior flingBehavior, boolean z2, final OverscrollEffect overscrollEffect, float f, float f2, final Function1<? super LazyStaggeredGridScope, Unit> function1, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1033LazyStaggeredGridw41Enmo(final LazyStaggeredGridState lazyStaggeredGridState, final Orientation orientation, final LazyGridStaggeredGridSlotsProvider lazyGridStaggeredGridSlotsProvider, Modifier modifier, PaddingValues paddingValues, boolean z, FlingBehavior flingBehavior, boolean z2, final OverscrollEffect overscrollEffect, float f, float f2, final Function1<? super LazyStaggeredGridScope, Unit> function1, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -94,8 +94,8 @@ public final class LazyStaggeredGridKt {
         ScopeUpdateScope endRestartGroup;
         int i15;
         boolean z7;
-        float m8258constructorimpl;
-        float m8258constructorimpl2;
+        float m7555constructorimpl;
+        float m7555constructorimpl2;
         Modifier modifier3;
         FlingBehavior flingBehavior4;
         PaddingValues paddingValues3;
@@ -183,21 +183,21 @@ public final class LazyStaggeredGridKt {
                         if ((i & 1) != 0 && !startRestartGroup.getDefaultsInvalid()) {
                             startRestartGroup.skipToGroupEnd();
                             if ((i3 & 64) != 0) {
-                                m8258constructorimpl2 = f2;
+                                m7555constructorimpl2 = f2;
                                 i15 = i14 & (-3670017);
                             } else {
-                                m8258constructorimpl2 = f2;
+                                m7555constructorimpl2 = f2;
                                 i15 = i14;
                             }
                             flingBehavior4 = flingBehavior2;
                             z7 = z4;
                             paddingValues3 = obj2;
-                            m8258constructorimpl = f;
+                            m7555constructorimpl = f;
                             z8 = z3;
                             modifier3 = obj;
                         } else {
                             Modifier.Companion companion2 = i16 != 0 ? Modifier.Companion : obj;
-                            PaddingValues m921PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)) : obj2;
+                            PaddingValues m811PaddingValues0680j_4 = i5 != 0 ? PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)) : obj2;
                             if (i6 != 0) {
                                 z3 = false;
                             }
@@ -208,11 +208,11 @@ public final class LazyStaggeredGridKt {
                                 i15 = i14;
                             }
                             z7 = i7 == 0 ? z4 : true;
-                            m8258constructorimpl = i9 != 0 ? Dp.m8258constructorimpl(0) : f;
-                            m8258constructorimpl2 = i11 != 0 ? Dp.m8258constructorimpl(0) : f2;
+                            m7555constructorimpl = i9 != 0 ? Dp.m7555constructorimpl(0) : f;
+                            m7555constructorimpl2 = i11 != 0 ? Dp.m7555constructorimpl(0) : f2;
                             modifier3 = companion2;
                             flingBehavior4 = flingBehavior2;
-                            paddingValues3 = m921PaddingValues0680j_4;
+                            paddingValues3 = m811PaddingValues0680j_4;
                             z8 = z3;
                         }
                         startRestartGroup.endDefaults();
@@ -238,9 +238,9 @@ public final class LazyStaggeredGridKt {
                         int i20 = (i18 & 7168) | (i18 & 896) | i17 | ((i15 << 9) & 57344) | (i19 & 458752) | ((i13 << 18) & 3670016);
                         int i21 = i15;
                         boolean z9 = z8;
-                        float f5 = m8258constructorimpl;
-                        float f6 = m8258constructorimpl2;
-                        LazyLayoutMeasurePolicy m1191rememberStaggeredGridMeasurePolicyqKj4JfE = LazyStaggeredGridMeasurePolicyKt.m1191rememberStaggeredGridMeasurePolicyqKj4JfE(lazyStaggeredGridState, rememberStaggeredGridItemProviderLambda, paddingValues3, z9, orientation, f5, f6, (CoroutineScope) rememberedValue, lazyGridStaggeredGridSlotsProvider, (GraphicsContext) consume, startRestartGroup, ((i15 << 18) & 234881024) | i20);
+                        float f5 = m7555constructorimpl;
+                        float f6 = m7555constructorimpl2;
+                        LazyLayoutMeasurePolicy m1045rememberStaggeredGridMeasurePolicyqKj4JfE = LazyStaggeredGridMeasurePolicyKt.m1045rememberStaggeredGridMeasurePolicyqKj4JfE(lazyStaggeredGridState, rememberStaggeredGridItemProviderLambda, paddingValues3, z9, orientation, f5, f6, (CoroutineScope) rememberedValue, lazyGridStaggeredGridSlotsProvider, (GraphicsContext) consume, startRestartGroup, ((i15 << 18) & 234881024) | i20);
                         PaddingValues paddingValues4 = paddingValues3;
                         LazyLayoutSemanticState rememberLazyStaggeredGridSemanticState = LazyStaggeredGridSemanticsKt.rememberLazyStaggeredGridSemanticState(lazyStaggeredGridState, z9, startRestartGroup, (i19 & 112) | i17);
                         if (z7) {
@@ -255,7 +255,7 @@ public final class LazyStaggeredGridKt {
                         }
                         boolean z10 = z7;
                         FlingBehavior flingBehavior5 = flingBehavior4;
-                        LazyLayoutKt.LazyLayout(rememberStaggeredGridItemProviderLambda, ScrollableAreaKt.scrollableArea$default(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier3.then(lazyStaggeredGridState.getRemeasurementModifier$foundation()).then(lazyStaggeredGridState.getAwaitLayoutModifier$foundation()), rememberStaggeredGridItemProviderLambda, rememberLazyStaggeredGridSemanticState, orientation, z10, z9, startRestartGroup, (i21 & 458752) | ((i21 << 6) & 7168) | ((i21 >> 9) & 57344)).then(companion).then(lazyStaggeredGridState.getItemAnimator$foundation().getModifier()), lazyStaggeredGridState, orientation, overscrollEffect, z10, z9, flingBehavior5, lazyStaggeredGridState.getMutableInteractionSource$foundation(), null, 128, null), lazyStaggeredGridState.getPrefetchState$foundation(), m1191rememberStaggeredGridMeasurePolicyqKj4JfE, startRestartGroup, 0, 0);
+                        LazyLayoutKt.LazyLayout(rememberStaggeredGridItemProviderLambda, ScrollableAreaKt.scrollableArea$default(LazyLayoutSemanticsKt.lazyLayoutSemantics(modifier3.then(lazyStaggeredGridState.getRemeasurementModifier$foundation()).then(lazyStaggeredGridState.getAwaitLayoutModifier$foundation()), rememberStaggeredGridItemProviderLambda, rememberLazyStaggeredGridSemanticState, orientation, z10, z9, startRestartGroup, (i21 & 458752) | ((i21 << 6) & 7168) | ((i21 >> 9) & 57344)).then(companion).then(lazyStaggeredGridState.getItemAnimator$foundation().getModifier()), lazyStaggeredGridState, orientation, overscrollEffect, z10, z9, flingBehavior5, lazyStaggeredGridState.getMutableInteractionSource$foundation(), null, 128, null), lazyStaggeredGridState.getPrefetchState$foundation(), m1045rememberStaggeredGridMeasurePolicyqKj4JfE, startRestartGroup, 0, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -283,9 +283,7 @@ public final class LazyStaggeredGridKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit LazyStaggeredGrid_w41Enmo$lambda$0;
-                                LazyStaggeredGrid_w41Enmo$lambda$0 = LazyStaggeredGridKt.LazyStaggeredGrid_w41Enmo$lambda$0(LazyStaggeredGridState.this, orientation, lazyGridStaggeredGridSlotsProvider, modifier2, paddingValues2, z6, flingBehavior3, z5, overscrollEffect, f4, f3, function1, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                return LazyStaggeredGrid_w41Enmo$lambda$0;
+                                return LazyStaggeredGridKt.LazyStaggeredGrid_w41Enmo$lambda$0(LazyStaggeredGridState.this, orientation, lazyGridStaggeredGridSlotsProvider, modifier2, paddingValues2, z6, flingBehavior3, z5, overscrollEffect, f4, f3, function1, i, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;

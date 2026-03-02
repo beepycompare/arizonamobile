@@ -36,14 +36,12 @@ public interface PagesNavigation<C> extends PagesNavigator<C>, NavigationSource<
             this(function1, (i & 2) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigation$Event$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = PagesNavigation.Event._init_$lambda$0((Pages) obj, (Pages) obj2);
-                    return _init_$lambda$0;
+                    return PagesNavigation.Event._init_$lambda$0((Pages) obj, (Pages) obj2);
                 }
             } : function2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit _init_$lambda$0(Pages pages, Pages pages2) {
             Intrinsics.checkNotNullParameter(pages, "<unused var>");
             Intrinsics.checkNotNullParameter(pages2, "<unused var>");

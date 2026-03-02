@@ -123,10 +123,11 @@ final class RecyclerAttacher extends DotsIndicatorAttacher<RecyclerView, Recycle
 
             @Override // com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator.Pager
             public void setCurrentItem(int i, boolean z) {
+                RecyclerView recyclerView = attachable;
                 if (z) {
-                    attachable.smoothScrollToPosition(i);
+                    recyclerView.smoothScrollToPosition(i);
                 } else {
-                    attachable.scrollToPosition(i);
+                    recyclerView.scrollToPosition(i);
                 }
             }
 

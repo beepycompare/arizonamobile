@@ -20,38 +20,32 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes.dex */
 public final class TextFieldKeyInputKt {
     /* renamed from: textFieldKeyInput-2WJ9YEU$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m1453textFieldKeyInput2WJ9YEU$default(Modifier modifier, LegacyTextFieldState legacyTextFieldState, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, Function1 function1, boolean z, boolean z2, OffsetMapping offsetMapping, UndoManager undoManager, int i, int i2, Object obj) {
+    public static /* synthetic */ Modifier m1277textFieldKeyInput2WJ9YEU$default(Modifier modifier, LegacyTextFieldState legacyTextFieldState, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, Function1 function1, boolean z, boolean z2, OffsetMapping offsetMapping, UndoManager undoManager, int i, int i2, Object obj) {
         if ((i2 & 8) != 0) {
             function1 = new Function1() { // from class: androidx.compose.foundation.text.TextFieldKeyInputKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit textFieldKeyInput_2WJ9YEU$lambda$0;
-                    textFieldKeyInput_2WJ9YEU$lambda$0 = TextFieldKeyInputKt.textFieldKeyInput_2WJ9YEU$lambda$0((TextFieldValue) obj2);
-                    return textFieldKeyInput_2WJ9YEU$lambda$0;
+                    Unit unit;
+                    TextFieldValue textFieldValue2 = (TextFieldValue) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
-        return m1452textFieldKeyInput2WJ9YEU(modifier, legacyTextFieldState, textFieldSelectionManager, textFieldValue, function1, z, z2, offsetMapping, undoManager, i);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit textFieldKeyInput_2WJ9YEU$lambda$0(TextFieldValue textFieldValue) {
-        return Unit.INSTANCE;
+        return m1276textFieldKeyInput2WJ9YEU(modifier, legacyTextFieldState, textFieldSelectionManager, textFieldValue, function1, z, z2, offsetMapping, undoManager, i);
     }
 
     /* renamed from: textFieldKeyInput-2WJ9YEU  reason: not valid java name */
-    public static final Modifier m1452textFieldKeyInput2WJ9YEU(Modifier modifier, final LegacyTextFieldState legacyTextFieldState, final TextFieldSelectionManager textFieldSelectionManager, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, final boolean z, final boolean z2, final OffsetMapping offsetMapping, final UndoManager undoManager, final int i) {
+    public static final Modifier m1276textFieldKeyInput2WJ9YEU(Modifier modifier, final LegacyTextFieldState legacyTextFieldState, final TextFieldSelectionManager textFieldSelectionManager, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, final boolean z, final boolean z2, final OffsetMapping offsetMapping, final UndoManager undoManager, final int i) {
         return ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.TextFieldKeyInputKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier textFieldKeyInput_2WJ9YEU$lambda$1;
-                textFieldKeyInput_2WJ9YEU$lambda$1 = TextFieldKeyInputKt.textFieldKeyInput_2WJ9YEU$lambda$1(LegacyTextFieldState.this, textFieldSelectionManager, textFieldValue, z, z2, offsetMapping, undoManager, function1, i, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return textFieldKeyInput_2WJ9YEU$lambda$1;
+                return TextFieldKeyInputKt.textFieldKeyInput_2WJ9YEU$lambda$1(LegacyTextFieldState.this, textFieldSelectionManager, textFieldValue, z, z2, offsetMapping, undoManager, function1, i, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier textFieldKeyInput_2WJ9YEU$lambda$1(LegacyTextFieldState legacyTextFieldState, TextFieldSelectionManager textFieldSelectionManager, TextFieldValue textFieldValue, boolean z, boolean z2, OffsetMapping offsetMapping, UndoManager undoManager, Function1 function1, int i, Modifier modifier, Composer composer, int i2) {
         composer.startReplaceGroup(851809892);
         ComposerKt.sourceInformation(composer, "C255@11924L41,256@11988L30,271@12524L18:TextFieldKeyInput.kt#423gt5");

@@ -4,7 +4,7 @@ import android.database.AbstractWindowedCursor;
 import android.database.CrossProcessCursor;
 import android.database.Cursor;
 import android.database.CursorWindow;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class CursorWrapper extends android.database.CursorWrapper implements CrossProcessCursor {
     private AbstractWindowedCursor zza;

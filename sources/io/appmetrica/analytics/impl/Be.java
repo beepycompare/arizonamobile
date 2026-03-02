@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class Be implements InterfaceC0366k2 {
+public final class Be implements InterfaceC0365k2 {
 
     /* renamed from: a  reason: collision with root package name */
     public final int f519a = 10;
     public final int b = 13;
     public final Regex c = new Regex("^[0-9()\\-+\\s]+$");
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0366k2
+    @Override // io.appmetrica.analytics.impl.InterfaceC0365k2
     public final String a(String str) {
         StringBuilder sb = new StringBuilder();
         int length = str.length();

@@ -27,20 +27,15 @@ public final class LazyLayoutSemanticStateKt$LazyLayoutSemanticState$1 implement
         this.totalItemsCount$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.lazy.LazyLayoutSemanticStateKt$LazyLayoutSemanticState$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int i;
-                i = LazyLayoutSemanticStateKt$LazyLayoutSemanticState$1.totalItemsCount_delegate$lambda$0(LazyListState.this);
-                return Integer.valueOf(i);
+                int totalItemsCount;
+                totalItemsCount = LazyListState.this.getLayoutInfo().getTotalItemsCount();
+                return Integer.valueOf(totalItemsCount);
             }
         });
     }
 
     private final int getTotalItemsCount() {
         return ((Number) this.totalItemsCount$delegate.getValue()).intValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int totalItemsCount_delegate$lambda$0(LazyListState lazyListState) {
-        return lazyListState.getLayoutInfo().getTotalItemsCount();
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
@@ -69,13 +64,16 @@ public final class LazyLayoutSemanticStateKt$LazyLayoutSemanticState$1 implement
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
     public int getViewport() {
-        long mo1046getViewportSizeYbymL2g;
-        if (this.$state.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-            mo1046getViewportSizeYbymL2g = this.$state.getLayoutInfo().mo1046getViewportSizeYbymL2g() & 4294967295L;
+        long mo923getViewportSizeYbymL2g;
+        Orientation orientation = this.$state.getLayoutInfo().getOrientation();
+        Orientation orientation2 = Orientation.Vertical;
+        LazyListState lazyListState = this.$state;
+        if (orientation == orientation2) {
+            mo923getViewportSizeYbymL2g = lazyListState.getLayoutInfo().mo923getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1046getViewportSizeYbymL2g = this.$state.getLayoutInfo().mo1046getViewportSizeYbymL2g() >> 32;
+            mo923getViewportSizeYbymL2g = lazyListState.getLayoutInfo().mo923getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1046getViewportSizeYbymL2g;
+        return (int) mo923getViewportSizeYbymL2g;
     }
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

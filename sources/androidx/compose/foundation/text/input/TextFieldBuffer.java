@@ -42,10 +42,10 @@ public final class TextFieldBuffer implements Appendable {
         int getChangeCount();
 
         /* renamed from: getOriginalRange--jx7JFs  reason: not valid java name */
-        long mo1533getOriginalRangejx7JFs(int i);
+        long mo1332getOriginalRangejx7JFs(int i);
 
         /* renamed from: getRange--jx7JFs  reason: not valid java name */
-        long mo1534getRangejx7JFs(int i);
+        long mo1333getRangejx7JFs(int i);
     }
 
     public static /* synthetic */ void getChanges$annotations() {
@@ -58,17 +58,17 @@ public final class TextFieldBuffer implements Appendable {
         this.buffer = new PartialGapBuffer(textFieldCharSequence);
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = null;
         this.backingChangeTracker = changeTracker != null ? new ChangeTracker(changeTracker) : null;
-        this.selectionInChars = textFieldCharSequence.m1537getSelectiond9O1mEE();
-        this.composition = textFieldCharSequence.m1536getCompositionMzsxiRA();
+        this.selectionInChars = textFieldCharSequence.m1336getSelectiond9O1mEE();
+        this.composition = textFieldCharSequence.m1335getCompositionMzsxiRA();
         List<AnnotatedString.Range<AnnotatedString.Annotation>> composingAnnotations = textFieldCharSequence.getComposingAnnotations();
         if (composingAnnotations != null && !composingAnnotations.isEmpty()) {
             int size = textFieldCharSequence.getComposingAnnotations().size();
             Function1 function1 = new Function1() { // from class: androidx.compose.foundation.text.input.TextFieldBuffer$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AnnotatedString.Range composingAnnotations$lambda$0;
-                    composingAnnotations$lambda$0 = TextFieldBuffer.composingAnnotations$lambda$0(TextFieldCharSequence.this, ((Integer) obj).intValue());
-                    return composingAnnotations$lambda$0;
+                    AnnotatedString.Range range;
+                    range = TextFieldCharSequence.this.getComposingAnnotations().get(((Integer) obj).intValue());
+                    return range;
                 }
             };
             AnnotatedString.Range[] rangeArr = new AnnotatedString.Range[size];
@@ -108,8 +108,8 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: getOriginalSelection-d9O1mEE  reason: not valid java name */
-    public final long m1528getOriginalSelectiond9O1mEE() {
-        return this.originalValue.m1537getSelectiond9O1mEE();
+    public final long m1327getOriginalSelectiond9O1mEE() {
+        return this.originalValue.m1336getSelectiond9O1mEE();
     }
 
     public final ChangeList getChanges() {
@@ -117,29 +117,29 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     public final boolean hasSelection() {
-        return !TextRange.m7695getCollapsedimpl(m1529getSelectiond9O1mEE());
+        return !TextRange.m6997getCollapsedimpl(m1328getSelectiond9O1mEE());
     }
 
     /* renamed from: getSelection-d9O1mEE  reason: not valid java name */
-    public final long m1529getSelectiond9O1mEE() {
+    public final long m1328getSelectiond9O1mEE() {
         return this.selectionInChars;
     }
 
     /* renamed from: setSelection-5zc-tL8  reason: not valid java name */
-    public final void m1531setSelection5zctL8(long j) {
-        m1524requireValidRange5zctL8(j);
+    public final void m1330setSelection5zctL8(long j) {
+        m1323requireValidRange5zctL8(j);
         this.selectionInChars = j;
         this.highlight = null;
     }
 
     /* renamed from: getComposition-MzsxiRA$foundation  reason: not valid java name */
-    public final TextRange m1527getCompositionMzsxiRA$foundation() {
+    public final TextRange m1326getCompositionMzsxiRA$foundation() {
         return this.composition;
     }
 
     /* renamed from: setComposition-OEnZFl4  reason: not valid java name */
-    private final void m1525setCompositionOEnZFl4(TextRange textRange) {
-        if (textRange == null || TextRange.m7695getCollapsedimpl(textRange.m7705unboximpl())) {
+    private final void m1324setCompositionOEnZFl4(TextRange textRange) {
+        if (textRange == null || TextRange.m6997getCollapsedimpl(textRange.m7007unboximpl())) {
             this.composition = null;
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
             if (mutableVector != null) {
@@ -155,17 +155,12 @@ public final class TextFieldBuffer implements Appendable {
         return this.composingAnnotations;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final AnnotatedString.Range composingAnnotations$lambda$0(TextFieldCharSequence textFieldCharSequence, int i) {
-        return textFieldCharSequence.getComposingAnnotations().get(i);
-    }
-
     public final boolean hasComposition$foundation() {
         return this.composition != null;
     }
 
     public final void commitComposition$foundation() {
-        m1525setCompositionOEnZFl4(null);
+        m1324setCompositionOEnZFl4(null);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -186,7 +181,7 @@ public final class TextFieldBuffer implements Appendable {
         if (i >= i2) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i + " > " + i2);
         }
-        m1525setCompositionOEnZFl4(TextRange.m7689boximpl(TextRangeKt.TextRange(i, i2)));
+        m1324setCompositionOEnZFl4(TextRange.m6991boximpl(TextRangeKt.TextRange(i, i2)));
         MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = this.composingAnnotations;
         if (mutableVector != null) {
             mutableVector.clear();
@@ -213,11 +208,11 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: setHighlight-K7f2yys$foundation  reason: not valid java name */
-    public final void m1530setHighlightK7f2yys$foundation(int i, int i2, int i3) {
+    public final void m1329setHighlightK7f2yys$foundation(int i, int i2, int i3) {
         if (i2 >= i3) {
             throw new IllegalArgumentException("Do not set reversed or empty range: " + i2 + " > " + i3);
         }
-        this.highlight = new Pair<>(TextHighlightType.m1543boximpl(i), TextRange.m7689boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
+        this.highlight = new Pair<>(TextHighlightType.m1342boximpl(i), TextRange.m6991boximpl(TextRangeKt.TextRange(RangesKt.coerceIn(i2, 0, getLength()), RangesKt.coerceIn(i3, 0, getLength()))));
     }
 
     public final void clearHighlight$foundation() {
@@ -331,7 +326,7 @@ public final class TextFieldBuffer implements Appendable {
         if (offsetMappingCalculator != null) {
             offsetMappingCalculator.recordEditOperation(i, i2, i3);
         }
-        this.selectionInChars = TextFieldBufferKt.m1535adjustTextRangevJH6DeI(m1529getSelectiond9O1mEE(), i, i2, i3);
+        this.selectionInChars = TextFieldBufferKt.m1334adjustTextRangevJH6DeI(m1328getSelectiond9O1mEE(), i, i2, i3);
     }
 
     public final char charAt(int i) {
@@ -352,7 +347,7 @@ public final class TextFieldBuffer implements Appendable {
 
     public final void revertAllChanges() {
         replace(0, getLength(), this.originalValue.toString());
-        m1531setSelection5zctL8(this.originalValue.m1537getSelectiond9O1mEE());
+        m1330setSelection5zctL8(this.originalValue.m1336getSelectiond9O1mEE());
         clearChangeList();
     }
 
@@ -367,10 +362,10 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldCharSequence m1526toTextFieldCharSequencewFTz33Y$foundation$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, List list2, int i, Object obj) {
+    public static /* synthetic */ TextFieldCharSequence m1325toTextFieldCharSequencewFTz33Y$foundation$default(TextFieldBuffer textFieldBuffer, long j, TextRange textRange, List list, List list2, int i, Object obj) {
         List<AnnotatedString.Range<AnnotatedString.Annotation>> asMutableList;
         if ((i & 1) != 0) {
-            j = textFieldBuffer.m1529getSelectiond9O1mEE();
+            j = textFieldBuffer.m1328getSelectiond9O1mEE();
         }
         long j2 = j;
         if ((i & 2) != 0) {
@@ -381,11 +376,11 @@ public final class TextFieldBuffer implements Appendable {
             MutableVector<AnnotatedString.Range<AnnotatedString.Annotation>> mutableVector = textFieldBuffer.composingAnnotations;
             list = (mutableVector == null || (asMutableList = mutableVector.asMutableList()) == null || asMutableList.isEmpty()) ? null : asMutableList;
         }
-        return textFieldBuffer.m1532toTextFieldCharSequencewFTz33Y$foundation(j2, textRange2, list, (i & 8) != 0 ? null : list2);
+        return textFieldBuffer.m1331toTextFieldCharSequencewFTz33Y$foundation(j2, textRange2, list, (i & 8) != 0 ? null : list2);
     }
 
     /* renamed from: toTextFieldCharSequence-wFTz33Y$foundation  reason: not valid java name */
-    public final TextFieldCharSequence m1532toTextFieldCharSequencewFTz33Y$foundation(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list, List<AnnotatedString.Range<AnnotatedString.Annotation>> list2) {
+    public final TextFieldCharSequence m1331toTextFieldCharSequencewFTz33Y$foundation(long j, TextRange textRange, List<AnnotatedString.Range<AnnotatedString.Annotation>> list, List<AnnotatedString.Range<AnnotatedString.Annotation>> list2) {
         return new TextFieldCharSequence(this.buffer.toString(), j, textRange, null, list, list2, 8, null);
     }
 
@@ -403,12 +398,12 @@ public final class TextFieldBuffer implements Appendable {
     }
 
     /* renamed from: requireValidRange-5zc-tL8  reason: not valid java name */
-    private final void m1524requireValidRange5zctL8(long j) {
+    private final void m1323requireValidRange5zctL8(long j) {
         long TextRange = TextRangeKt.TextRange(0, getLength());
-        if (TextRange.m7691contains5zctL8(TextRange, j)) {
+        if (TextRange.m6993contains5zctL8(TextRange, j)) {
             return;
         }
-        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m7704toStringimpl(j)) + " to be in " + ((Object) TextRange.m7704toStringimpl(TextRange)));
+        InlineClassHelperKt.throwIllegalArgumentException("Expected " + ((Object) TextRange.m7006toStringimpl(j)) + " to be in " + ((Object) TextRange.m7006toStringimpl(TextRange)));
     }
 
     public final boolean getCanCallAddStyle$foundation() {

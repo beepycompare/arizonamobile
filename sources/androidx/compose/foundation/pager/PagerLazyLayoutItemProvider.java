@@ -27,7 +27,7 @@ public final class PagerLazyLayoutItemProvider implements LazyLayoutItemProvider
     private final PagerScopeImpl pagerScopeImpl = PagerScopeImpl.INSTANCE;
     private final PagerState state;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$1(PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i, Object obj, int i2, Composer composer, int i3) {
         pagerLazyLayoutItemProvider.Item(i, obj, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
@@ -75,9 +75,7 @@ public final class PagerLazyLayoutItemProvider implements LazyLayoutItemProvider
             LazyLayoutPinnableItemKt.LazyLayoutPinnableItem(obj2, i4, this.state.getPinnedPages$foundation(), ComposableLambdaKt.rememberComposableLambda(1142237095, true, new Function2() { // from class: androidx.compose.foundation.pager.PagerLazyLayoutItemProvider$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$0;
-                    Item$lambda$0 = PagerLazyLayoutItemProvider.Item$lambda$0(PagerLazyLayoutItemProvider.this, i, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$0;
+                    return PagerLazyLayoutItemProvider.Item$lambda$0(PagerLazyLayoutItemProvider.this, i, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 3) & 14) | 3072 | ((i3 << 3) & 112));
             if (ComposerKt.isTraceInProgress()) {
@@ -89,15 +87,13 @@ public final class PagerLazyLayoutItemProvider implements LazyLayoutItemProvider
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.pager.PagerLazyLayoutItemProvider$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$1;
-                    Item$lambda$1 = PagerLazyLayoutItemProvider.Item$lambda$1(PagerLazyLayoutItemProvider.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$1;
+                    return PagerLazyLayoutItemProvider.Item$lambda$1(PagerLazyLayoutItemProvider.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$0(PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "C*211@9143L32:LazyLayoutPager.kt#g6yjnt");
         if (!composer.shouldExecute((i2 & 3) != 2, i2 & 1)) {

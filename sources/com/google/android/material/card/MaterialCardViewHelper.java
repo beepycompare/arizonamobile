@@ -213,7 +213,10 @@ public class MaterialCardViewHelper {
     public void animateCheckedIcon(boolean z) {
         int i;
         float f = z ? 1.0f : 0.0f;
-        float f2 = z ? 1.0f - this.checkedAnimationProgress : this.checkedAnimationProgress;
+        float f2 = this.checkedAnimationProgress;
+        if (z) {
+            f2 = 1.0f - f2;
+        }
         ValueAnimator valueAnimator = this.iconAnimator;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -224,7 +227,7 @@ public class MaterialCardViewHelper {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.card.MaterialCardViewHelper$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                MaterialCardViewHelper.this.m9820xa4d79c2b(valueAnimator2);
+                MaterialCardViewHelper.this.m8850xa4d79c2b(valueAnimator2);
             }
         });
         this.iconAnimator.setInterpolator(this.iconFadeAnimInterpolator);
@@ -240,7 +243,7 @@ public class MaterialCardViewHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$animateCheckedIcon$0$com-google-android-material-card-MaterialCardViewHelper  reason: not valid java name */
-    public /* synthetic */ void m9820xa4d79c2b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8850xa4d79c2b(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.checkedIcon.setAlpha((int) (255.0f * floatValue));
         this.checkedAnimationProgress = floatValue;
@@ -386,10 +389,6 @@ public class MaterialCardViewHelper {
         int i4;
         int i5;
         int i6;
-        int i7;
-        int i8;
-        int i9;
-        int i10;
         if (this.clickableForegroundDrawable != null) {
             if (this.materialCardView.getUseCompatPadding()) {
                 i3 = (int) Math.ceil(calculateVerticalBackgroundPadding() * 2.0f);
@@ -398,36 +397,36 @@ public class MaterialCardViewHelper {
                 i3 = 0;
                 i4 = 0;
             }
-            if (isCheckedIconEnd()) {
-                i5 = ((i - this.checkedIconMargin) - this.checkedIconSize) - i4;
-            } else {
-                i5 = this.checkedIconMargin;
+            boolean isCheckedIconEnd = isCheckedIconEnd();
+            int i7 = this.checkedIconMargin;
+            if (isCheckedIconEnd) {
+                i7 = ((i - i7) - this.checkedIconSize) - i4;
             }
-            if (isCheckedIconBottom()) {
-                i6 = this.checkedIconMargin;
-            } else {
-                i6 = ((i2 - this.checkedIconMargin) - this.checkedIconSize) - i3;
+            boolean isCheckedIconBottom = isCheckedIconBottom();
+            int i8 = this.checkedIconMargin;
+            if (!isCheckedIconBottom) {
+                i8 = ((i2 - i8) - this.checkedIconSize) - i3;
             }
-            int i11 = i6;
-            if (isCheckedIconEnd()) {
-                i7 = this.checkedIconMargin;
-            } else {
-                i7 = ((i - this.checkedIconMargin) - this.checkedIconSize) - i4;
+            int i9 = i8;
+            boolean isCheckedIconEnd2 = isCheckedIconEnd();
+            int i10 = this.checkedIconMargin;
+            if (!isCheckedIconEnd2) {
+                i10 = ((i - i10) - this.checkedIconSize) - i4;
             }
-            if (isCheckedIconBottom()) {
-                i8 = ((i2 - this.checkedIconMargin) - this.checkedIconSize) - i3;
-            } else {
-                i8 = this.checkedIconMargin;
+            boolean isCheckedIconBottom2 = isCheckedIconBottom();
+            int i11 = this.checkedIconMargin;
+            if (isCheckedIconBottom2) {
+                i11 = ((i2 - i11) - this.checkedIconSize) - i3;
             }
-            int i12 = i8;
+            int i12 = i11;
             if (this.materialCardView.getLayoutDirection() == 1) {
-                i10 = i7;
-                i9 = i5;
+                i6 = i7;
+                i5 = i10;
             } else {
-                i9 = i7;
-                i10 = i5;
+                i5 = i7;
+                i6 = i10;
             }
-            this.clickableForegroundDrawable.setLayerInset(2, i10, i12, i9, i11);
+            this.clickableForegroundDrawable.setLayerInset(2, i5, i12, i6, i9);
         }
     }
 
@@ -464,10 +463,12 @@ public class MaterialCardViewHelper {
     }
 
     private void updateInsetForeground(Drawable drawable) {
-        if (this.materialCardView.getForeground() instanceof InsetDrawable) {
-            ((InsetDrawable) this.materialCardView.getForeground()).setDrawable(drawable);
+        boolean z = this.materialCardView.getForeground() instanceof InsetDrawable;
+        MaterialCardView materialCardView = this.materialCardView;
+        if (z) {
+            ((InsetDrawable) materialCardView.getForeground()).setDrawable(drawable);
         } else {
-            this.materialCardView.setForeground(insetDrawable(drawable));
+            materialCardView.setForeground(insetDrawable(drawable));
         }
     }
 

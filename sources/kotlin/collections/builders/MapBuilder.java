@@ -521,23 +521,24 @@ public final class MapBuilder<K, V> implements Map<K, V>, Serializable, KMutable
         do {
             i = i == 0 ? getHashSize() - 1 : i - 1;
             i2++;
-            if (i2 > this.maxProbeDistance) {
-                this.hashArray[i3] = 0;
-                return;
-            }
+            int i4 = this.maxProbeDistance;
             int[] iArr = this.hashArray;
-            int i4 = iArr[i];
-            if (i4 == 0) {
+            if (i2 > i4) {
                 iArr[i3] = 0;
                 return;
             }
-            if (i4 < 0) {
+            int i5 = iArr[i];
+            if (i5 == 0) {
+                iArr[i3] = 0;
+                return;
+            }
+            if (i5 < 0) {
                 iArr[i3] = -1;
             } else {
-                int i5 = i4 - 1;
-                if (((hash(this.keysArray[i5]) - i) & (getHashSize() - 1)) >= i2) {
-                    this.hashArray[i3] = i4;
-                    this.presenceArray[i5] = i3;
+                int i6 = i5 - 1;
+                if (((hash(this.keysArray[i6]) - i) & (getHashSize() - 1)) >= i2) {
+                    this.hashArray[i3] = i5;
+                    this.presenceArray[i6] = i3;
                 }
                 coerceAtMost--;
             }

@@ -41,24 +41,24 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u001aó\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0018\u0010\u0005\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00070\u00062!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010\u001f\u001aí\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0094\u0001\b\u0002\u0010\u0012\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u00182 \b\u0002\u0010\u0015\u001a\u001a\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u001c\u0012\u0004\u0012\u00020\u00030\t2F\u0010\u0019\u001aB\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0013\u0012\u0011H\u0004¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u00010\u001d¢\u0006\u0002\b\u0018¢\u0006\u0002\b\u001aH\u0007¢\u0006\u0002\u0010 \u001a\u0097\u0001\u0010!\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"\u001a\u0097\u0001\u0010#\u001a\u008d\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013j\u0002`\u001b¢\u0006\u0002\b\u0018¢\u0006\u0002\u0010\"*\u009a\u0002\u0010$\"\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u00182\u0089\u0001\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0014\u0012.\u0012,\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00030\t¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0015\u0012>\u0012<\u0012\u0004\u0012\u00020\u0017\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\u0016¢\u0006\u0002\b\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019¢\u0006\u0002\b\u001a\u0012\u0004\u0012\u00020\u00010\u0013¢\u0006\u0002\b\u0018¨\u0006%²\u0006*\u0010&\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u0007\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003X\u008a\u0084\u0002"}, d2 = {"ChildPages", "", "C", "", ExifInterface.GPS_DIRECTION_TRUE, "pages", "Lcom/arkivanov/decompose/value/Value;", "Lcom/arkivanov/decompose/router/pages/ChildPages;", "onPageSelected", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "modifier", "Landroidx/compose/ui/Modifier;", "scrollAnimation", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;", "pager", "Lkotlin/Function4;", "Landroidx/compose/foundation/pager/PagerState;", "key", "Lkotlin/Function2;", "Landroidx/compose/foundation/pager/PagerScope;", "Landroidx/compose/runtime/Composable;", "pageContent", "Lkotlin/ExtensionFunctionType;", "Lcom/arkivanov/decompose/extensions/compose/pages/ChildPagesPager;", "Lcom/arkivanov/decompose/Child;", "Lkotlin/Function3;", "page", "(Lcom/arkivanov/decompose/value/Value;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "(Lcom/arkivanov/decompose/router/pages/ChildPages;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;Lkotlin/jvm/functions/Function6;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function5;Landroidx/compose/runtime/Composer;II)V", "defaultHorizontalPager", "()Lkotlin/jvm/functions/Function6;", "defaultVerticalPager", "ChildPagesPager", "extensions-compose_release", RemoteConfigConstants.ResponseFieldKey.STATE}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ChildPagesKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ChildPages$lambda$12(ChildPages childPages, Function1 function1, Modifier modifier, PagesScrollAnimation pagesScrollAnimation, Function6 function6, Function1 function12, Function5 function5, int i, int i2, Composer composer, int i3) {
         ChildPages(childPages, function1, modifier, pagesScrollAnimation, function6, function12, function5, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ChildPages$lambda$2(Value value, Function1 function1, Modifier modifier, PagesScrollAnimation pagesScrollAnimation, Function6 function6, Function1 function12, Function5 function5, int i, int i2, Composer composer, int i3) {
         ChildPages(value, function1, modifier, pagesScrollAnimation, function6, function12, function5, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultHorizontalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m9703getLambda1$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m8791getLambda1$extensions_compose_release();
     }
 
     public static final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> defaultVerticalPager() {
-        return ComposableSingletons$ChildPagesKt.INSTANCE.m9704getLambda2$extensions_compose_release();
+        return ComposableSingletons$ChildPagesKt.INSTANCE.m8792getLambda2$extensions_compose_release();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0124  */
@@ -227,9 +227,7 @@ public final class ChildPagesKt {
                     endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit ChildPages$lambda$2;
-                            ChildPages$lambda$2 = ChildPagesKt.ChildPages$lambda$2(Value.this, onPageSelected, modifier3, pagesScrollAnimation3, function64, function13, pageContent, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                            return ChildPages$lambda$2;
+                            return ChildPagesKt.ChildPages$lambda$2(Value.this, onPageSelected, modifier3, pagesScrollAnimation3, function64, function13, pageContent, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -458,9 +456,9 @@ public final class ChildPagesKt {
                             rememberedValue = PagerStateKt.PagerState$default(coerceAtLeast, 0.0f, new Function0() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    int ChildPages$lambda$5$lambda$4;
-                                    ChildPages$lambda$5$lambda$4 = ChildPagesKt.ChildPages$lambda$5$lambda$4(State.this);
-                                    return Integer.valueOf(ChildPages$lambda$5$lambda$4);
+                                    int intValue;
+                                    intValue = ((Number) State.this.getValue()).intValue();
+                                    return Integer.valueOf(intValue);
                                 }
                             }, 2, null);
                             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -486,9 +484,7 @@ public final class ChildPagesKt {
                             rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                                    ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
-                                    return ChildPages$lambda$9$lambda$8;
+                                    return ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -502,9 +498,9 @@ public final class ChildPagesKt {
                             rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Object ChildPages$lambda$11$lambda$10;
-                                    ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
-                                    return ChildPages$lambda$11$lambda$10;
+                                    Object invoke;
+                                    invoke = Function1.this.invoke(pages.getItems().get(((Integer) obj2).intValue()));
+                                    return invoke;
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -591,9 +587,7 @@ public final class ChildPagesKt {
                 rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                        ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
-                        return ChildPages$lambda$9$lambda$8;
+                        return ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -607,9 +601,9 @@ public final class ChildPagesKt {
                 rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Object ChildPages$lambda$11$lambda$10;
-                        ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
-                        return ChildPages$lambda$11$lambda$10;
+                        Object invoke;
+                        invoke = Function1.this.invoke(pages.getItems().get(((Integer) obj2).intValue()));
+                        return invoke;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -665,9 +659,7 @@ public final class ChildPagesKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit ChildPages$lambda$12;
-                        ChildPages$lambda$12 = ChildPagesKt.ChildPages$lambda$12(ChildPages.this, onPageSelected, modifier2, pagesScrollAnimation2, function63, function13, pageContent, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ChildPages$lambda$12;
+                        return ChildPagesKt.ChildPages$lambda$12(ChildPages.this, onPageSelected, modifier2, pagesScrollAnimation2, function63, function13, pageContent, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -732,9 +724,7 @@ public final class ChildPagesKt {
         rememberedValue3 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                DisposableEffectResult ChildPages$lambda$9$lambda$8;
-                ChildPages$lambda$9$lambda$8 = ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
-                return ChildPages$lambda$9$lambda$8;
+                return ChildPagesKt.ChildPages$lambda$9$lambda$8(PagerState.this, onPageSelected, (DisposableEffectScope) obj2);
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -748,9 +738,9 @@ public final class ChildPagesKt {
         rememberedValue4 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.pages.ChildPagesKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Object ChildPages$lambda$11$lambda$10;
-                ChildPages$lambda$11$lambda$10 = ChildPagesKt.ChildPages$lambda$11$lambda$10(Function1.this, pages, ((Integer) obj2).intValue());
-                return ChildPages$lambda$11$lambda$10;
+                Object invoke;
+                invoke = Function1.this.invoke(pages.getItems().get(((Integer) obj2).intValue()));
+                return invoke;
             }
         };
         startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -801,12 +791,7 @@ public final class ChildPagesKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int ChildPages$lambda$5$lambda$4(State state) {
-        return ((Number) state.getValue()).intValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult ChildPages$lambda$9$lambda$8(PagerState pagerState, Function1 function1, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         if (pagerState.getCurrentPage() == pagerState.getTargetPage()) {
@@ -817,11 +802,6 @@ public final class ChildPagesKt {
             public void dispose() {
             }
         };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Object ChildPages$lambda$11$lambda$10(Function1 function1, ChildPages childPages, int i) {
-        return function1.invoke(childPages.getItems().get(i));
     }
 
     private static final <C, T> ChildPages<C, T> ChildPages$lambda$1(State<? extends ChildPages<? extends C, ? extends T>> state) {

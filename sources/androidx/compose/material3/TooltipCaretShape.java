@@ -42,32 +42,32 @@ final class TooltipCaretShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         this.tooltipPath.reset();
         this.combinedPath.reset();
         this.caretPath.reset();
-        Outline mo365createOutlinePq9zytI = this.tooltipShape.mo365createOutlinePq9zytI(j, layoutDirection, density);
-        Outline mo365createOutlinePq9zytI2 = this.caretShape.mo365createOutlinePq9zytI(j, layoutDirection, density);
-        if (mo365createOutlinePq9zytI instanceof Outline.Generic) {
-            Path.m5710addPathUv8p0NA$default(this.tooltipPath, ((Outline.Generic) mo365createOutlinePq9zytI).getPath(), 0L, 2, null);
-        } else if (mo365createOutlinePq9zytI instanceof Outline.Rounded) {
-            Path.addRoundRect$default(this.tooltipPath, ((Outline.Rounded) mo365createOutlinePq9zytI).getRoundRect(), null, 2, null);
-        } else if (!(mo365createOutlinePq9zytI instanceof Outline.Rectangle)) {
+        Outline mo320createOutlinePq9zytI = this.tooltipShape.mo320createOutlinePq9zytI(j, layoutDirection, density);
+        Outline mo320createOutlinePq9zytI2 = this.caretShape.mo320createOutlinePq9zytI(j, layoutDirection, density);
+        if (mo320createOutlinePq9zytI instanceof Outline.Generic) {
+            Path.m5056addPathUv8p0NA$default(this.tooltipPath, ((Outline.Generic) mo320createOutlinePq9zytI).getPath(), 0L, 2, null);
+        } else if (mo320createOutlinePq9zytI instanceof Outline.Rounded) {
+            Path.addRoundRect$default(this.tooltipPath, ((Outline.Rounded) mo320createOutlinePq9zytI).getRoundRect(), null, 2, null);
+        } else if (!(mo320createOutlinePq9zytI instanceof Outline.Rectangle)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Path.addRect$default(this.tooltipPath, ((Outline.Rectangle) mo365createOutlinePq9zytI).getRect(), null, 2, null);
+            Path.addRect$default(this.tooltipPath, ((Outline.Rectangle) mo320createOutlinePq9zytI).getRect(), null, 2, null);
         }
-        if (mo365createOutlinePq9zytI2 instanceof Outline.Generic) {
-            Path.m5710addPathUv8p0NA$default(this.caretPath, ((Outline.Generic) mo365createOutlinePq9zytI2).getPath(), 0L, 2, null);
-        } else if (mo365createOutlinePq9zytI2 instanceof Outline.Rounded) {
-            Path.addRoundRect$default(this.caretPath, ((Outline.Rounded) mo365createOutlinePq9zytI2).getRoundRect(), null, 2, null);
-        } else if (!(mo365createOutlinePq9zytI2 instanceof Outline.Rectangle)) {
+        if (mo320createOutlinePq9zytI2 instanceof Outline.Generic) {
+            Path.m5056addPathUv8p0NA$default(this.caretPath, ((Outline.Generic) mo320createOutlinePq9zytI2).getPath(), 0L, 2, null);
+        } else if (mo320createOutlinePq9zytI2 instanceof Outline.Rounded) {
+            Path.addRoundRect$default(this.caretPath, ((Outline.Rounded) mo320createOutlinePq9zytI2).getRoundRect(), null, 2, null);
+        } else if (!(mo320createOutlinePq9zytI2 instanceof Outline.Rectangle)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            Path.addRect$default(this.caretPath, ((Outline.Rectangle) mo365createOutlinePq9zytI2).getRect(), null, 2, null);
+            Path.addRect$default(this.caretPath, ((Outline.Rectangle) mo320createOutlinePq9zytI2).getRect(), null, 2, null);
         }
-        this.caretPath.mo5315transform58bKbWc(this.transformationMatrix.getValue().m5693unboximpl());
-        this.combinedPath.mo5313opN5in7k0(this.tooltipPath, this.caretPath, PathOperation.Companion.m5735getUnionb3I0S0c());
+        this.caretPath.mo4663transform58bKbWc(this.transformationMatrix.getValue().m5039unboximpl());
+        this.combinedPath.mo4661opN5in7k0(this.tooltipPath, this.caretPath, PathOperation.Companion.m5081getUnionb3I0S0c());
         return new Outline.Generic(this.combinedPath);
     }
 }

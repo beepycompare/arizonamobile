@@ -1,7 +1,6 @@
 package androidx.paging;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,8 +15,8 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleScan$1", f = "FlowExt.kt", i = {0, 0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_MARGIN_BASELINE, ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE}, m = "invokeSuspend", n = {"$this$flow", "accumulator"}, s = {"L$0", "L$1"})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleScan$1", f = "FlowExt.kt", i = {0, 0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_TAG, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF}, m = "invokeSuspend", n = {"$this$flow", "accumulator"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes3.dex */
 final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2<FlowCollector<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ R $initial;
@@ -96,7 +95,7 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FlowExt.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"}, k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.paging.FlowExtKt$simpleScan$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
@@ -111,11 +110,11 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
             this.$$this$flow = flowCollector;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x006e, code lost:
-            if (r2.$$this$flow.emit(r8, r0) != r1) goto L11;
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0065, code lost:
+            if (r7.$$this$flow.emit(r9, r0) != r1) goto L11;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -124,7 +123,6 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
             FlowExtKt$simpleScan$1$1$emit$1 flowExtKt$simpleScan$1$1$emit$1;
             int i;
             Ref.ObjectRef<R> objectRef;
-            AnonymousClass1<T> anonymousClass1;
             if (continuation instanceof FlowExtKt$simpleScan$1$1$emit$1) {
                 flowExtKt$simpleScan$1$1$emit$1 = (FlowExtKt$simpleScan$1$1$emit$1) continuation;
                 if ((flowExtKt$simpleScan$1$1$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -137,14 +135,12 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
                         Ref.ObjectRef<R> objectRef2 = this.$accumulator;
                         Function3<R, T, Continuation<? super R>, Object> function3 = this.$operation;
                         R r = objectRef2.element;
-                        flowExtKt$simpleScan$1$1$emit$1.L$0 = this;
-                        flowExtKt$simpleScan$1$1$emit$1.L$1 = objectRef2;
+                        flowExtKt$simpleScan$1$1$emit$1.L$0 = objectRef2;
                         flowExtKt$simpleScan$1$1$emit$1.label = 1;
                         Object invoke = function3.invoke(r, t, flowExtKt$simpleScan$1$1$emit$1);
                         if (invoke != coroutine_suspended) {
                             t2 = invoke;
                             objectRef = objectRef2;
-                            anonymousClass1 = this;
                         }
                         return coroutine_suspended;
                     } else if (i != 1) {
@@ -154,14 +150,12 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        objectRef = (Ref.ObjectRef) flowExtKt$simpleScan$1$1$emit$1.L$1;
-                        anonymousClass1 = (AnonymousClass1) flowExtKt$simpleScan$1$1$emit$1.L$0;
+                        objectRef = (Ref.ObjectRef) flowExtKt$simpleScan$1$1$emit$1.L$0;
                         ResultKt.throwOnFailure(t2);
                     }
                     objectRef.element = t2;
-                    R r2 = anonymousClass1.$accumulator.element;
+                    R r2 = this.$accumulator.element;
                     flowExtKt$simpleScan$1$1$emit$1.L$0 = null;
-                    flowExtKt$simpleScan$1$1$emit$1.L$1 = null;
                     flowExtKt$simpleScan$1$1$emit$1.label = 2;
                 }
             }
@@ -172,9 +166,8 @@ final class FlowExtKt$simpleScan$1<R> extends SuspendLambda implements Function2
             if (i != 0) {
             }
             objectRef.element = t22;
-            R r22 = anonymousClass1.$accumulator.element;
+            R r22 = this.$accumulator.element;
             flowExtKt$simpleScan$1$1$emit$1.L$0 = null;
-            flowExtKt$simpleScan$1$1$emit$1.L$1 = null;
             flowExtKt$simpleScan$1$1$emit$1.label = 2;
         }
     }

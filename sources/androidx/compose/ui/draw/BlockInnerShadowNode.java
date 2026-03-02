@@ -39,10 +39,10 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
     private Shape shape;
     private float spread;
     private Shadow targetShadow;
-    private long offset = Offset.Companion.m5195getZeroF1C5BW0();
-    private long color = Color.Companion.m5450getBlack0d7_KjU();
+    private long offset = Offset.Companion.m4543getZeroF1C5BW0();
+    private long color = Color.Companion.m4798getBlack0d7_KjU();
     private float alpha = 1.0f;
-    private int blendMode = BlendMode.Companion.m5364getSrcOver0nO6VwU();
+    private int blendMode = BlendMode.Companion.m4712getSrcOver0nO6VwU();
 
     public BlockInnerShadowNode(Shape shape, Function1<? super InnerShadowScope, Unit> function1) {
         this.shape = shape;
@@ -105,14 +105,14 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getOffset-F1C5BW0 */
-    public long mo4940getOffsetF1C5BW0() {
+    public long mo4288getOffsetF1C5BW0() {
         return this.offset;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setOffset-k-4lQ0M */
-    public void mo4943setOffsetk4lQ0M(long j) {
-        if (Offset.m5176equalsimpl0(this.offset, j)) {
+    public void mo4291setOffsetk4lQ0M(long j) {
+        if (Offset.m4524equalsimpl0(this.offset, j)) {
             return;
         }
         this.offset = j;
@@ -121,17 +121,17 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getColor-0d7_KjU */
-    public long mo4939getColor0d7_KjU() {
+    public long mo4287getColor0d7_KjU() {
         return this.color;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setColor-8_81llA */
-    public void mo4942setColor8_81llA(long j) {
+    public void mo4290setColor8_81llA(long j) {
         if (j == 16) {
-            j = Color.Companion.m5450getBlack0d7_KjU();
+            j = Color.Companion.m4798getBlack0d7_KjU();
         }
-        if (Color.m5425equalsimpl0(this.color, j)) {
+        if (Color.m4773equalsimpl0(this.color, j)) {
             return;
         }
         this.color = j;
@@ -168,14 +168,14 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: getBlendMode-0nO6VwU */
-    public int mo4938getBlendMode0nO6VwU() {
+    public int mo4286getBlendMode0nO6VwU() {
         return this.blendMode;
     }
 
     @Override // androidx.compose.ui.draw.ShadowScope
     /* renamed from: setBlendMode-s9anfk8 */
-    public void mo4941setBlendModes9anfk8(int i) {
-        if (BlendMode.m5333equalsimpl0(this.blendMode, i)) {
+    public void mo4289setBlendModes9anfk8(int i) {
+        if (BlendMode.m4681equalsimpl0(this.blendMode, i)) {
             return;
         }
         this.blendMode = i;
@@ -212,7 +212,7 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        Painter.m6130drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo6005getSizeNHjbRc(), 0.0f, null, 6, null);
+        Painter.m5471drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo5346getSizeNHjbRc(), 0.0f, null, 6, null);
         contentDrawScope.drawContent();
     }
 
@@ -244,18 +244,18 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
         Shadow shadow2 = this.targetShadow;
         InnerShadowPainter innerShadowPainter = this.shadowPainter;
         Brush brush = getBrush();
-        float f = mo460toDpu2uoSUM(getRadius());
-        float f2 = mo460toDpu2uoSUM(getSpread());
-        float f3 = mo460toDpu2uoSUM(Float.intBitsToFloat((int) (mo4940getOffsetF1C5BW0() >> 32)));
-        float f4 = mo460toDpu2uoSUM(Float.intBitsToFloat((int) (mo4940getOffsetF1C5BW0() & 4294967295L)));
-        long m8314constructorimpl = DpOffset.m8314constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f3) << 32));
-        if (innerShadowPainter != null && shadow2 != null && Dp.m8263equalsimpl0(shadow2.m6151getRadiusD9Ej5fM(), f) && Dp.m8263equalsimpl0(shadow2.m6152getSpreadD9Ej5fM(), f2) && Color.m5425equalsimpl0(shadow2.m6149getColor0d7_KjU(), mo4939getColor0d7_KjU()) && Intrinsics.areEqual(shadow2.getBrush(), brush) && shadow2.getAlpha() == getAlpha() && BlendMode.m5333equalsimpl0(shadow2.m6148getBlendMode0nO6VwU(), mo4938getBlendMode0nO6VwU()) && DpOffset.m8318equalsimpl0(shadow2.m6150getOffsetRKDOV3M(), m8314constructorimpl)) {
+        float f = mo401toDpu2uoSUM(getRadius());
+        float f2 = mo401toDpu2uoSUM(getSpread());
+        float f3 = mo401toDpu2uoSUM(Float.intBitsToFloat((int) (mo4288getOffsetF1C5BW0() >> 32)));
+        float f4 = mo401toDpu2uoSUM(Float.intBitsToFloat((int) (mo4288getOffsetF1C5BW0() & 4294967295L)));
+        long m7611constructorimpl = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(f4) & 4294967295L) | (Float.floatToRawIntBits(f3) << 32));
+        if (innerShadowPainter != null && shadow2 != null && Dp.m7560equalsimpl0(shadow2.m5492getRadiusD9Ej5fM(), f) && Dp.m7560equalsimpl0(shadow2.m5493getSpreadD9Ej5fM(), f2) && Color.m4773equalsimpl0(shadow2.m5490getColor0d7_KjU(), mo4287getColor0d7_KjU()) && Intrinsics.areEqual(shadow2.getBrush(), brush) && shadow2.getAlpha() == getAlpha() && BlendMode.m4681equalsimpl0(shadow2.m5489getBlendMode0nO6VwU(), mo4286getBlendMode0nO6VwU()) && DpOffset.m7615equalsimpl0(shadow2.m5491getOffsetRKDOV3M(), m7611constructorimpl)) {
             return innerShadowPainter;
         }
         if (brush != null) {
-            shadow = new Shadow(f, brush, f2, m8314constructorimpl, getAlpha(), mo4938getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
+            shadow = new Shadow(f, brush, f2, m7611constructorimpl, getAlpha(), mo4286getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
         } else {
-            shadow = new Shadow(f, mo4939getColor0d7_KjU(), f2, m8314constructorimpl, getAlpha(), mo4938getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
+            shadow = new Shadow(f, mo4287getColor0d7_KjU(), f2, m7611constructorimpl, getAlpha(), mo4286getBlendMode0nO6VwU(), (DefaultConstructorMarker) null);
         }
         this.targetShadow = shadow;
         InnerShadowPainter createInnerShadowPainter = DelegatableNodeKt.requireGraphicsContext(this).getShadowContext().createInnerShadowPainter(this.shape, shadow);
@@ -281,14 +281,14 @@ public final class BlockInnerShadowNode extends Modifier.Node implements DrawMod
         }
         if (obj != null && (obj instanceof BlockInnerShadowNode)) {
             BlockInnerShadowNode blockInnerShadowNode = (BlockInnerShadowNode) obj;
-            return getAlpha() == blockInnerShadowNode.getAlpha() && Intrinsics.areEqual(this.shape, blockInnerShadowNode.shape) && this.block == blockInnerShadowNode.block && getRadius() == blockInnerShadowNode.getRadius() && getSpread() == blockInnerShadowNode.getSpread() && Offset.m5176equalsimpl0(mo4940getOffsetF1C5BW0(), blockInnerShadowNode.mo4940getOffsetF1C5BW0()) && Color.m5425equalsimpl0(mo4939getColor0d7_KjU(), blockInnerShadowNode.mo4939getColor0d7_KjU()) && Intrinsics.areEqual(getBrush(), blockInnerShadowNode.getBrush()) && BlendMode.m5333equalsimpl0(mo4938getBlendMode0nO6VwU(), blockInnerShadowNode.mo4938getBlendMode0nO6VwU());
+            return getAlpha() == blockInnerShadowNode.getAlpha() && Intrinsics.areEqual(this.shape, blockInnerShadowNode.shape) && this.block == blockInnerShadowNode.block && getRadius() == blockInnerShadowNode.getRadius() && getSpread() == blockInnerShadowNode.getSpread() && Offset.m4524equalsimpl0(mo4288getOffsetF1C5BW0(), blockInnerShadowNode.mo4288getOffsetF1C5BW0()) && Color.m4773equalsimpl0(mo4287getColor0d7_KjU(), blockInnerShadowNode.mo4287getColor0d7_KjU()) && Intrinsics.areEqual(getBrush(), blockInnerShadowNode.getBrush()) && BlendMode.m4681equalsimpl0(mo4286getBlendMode0nO6VwU(), blockInnerShadowNode.mo4286getBlendMode0nO6VwU());
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((((((((((Float.hashCode(getAlpha()) * 31) + this.shape.hashCode()) * 31) + this.block.hashCode()) * 31) + Float.hashCode(getRadius())) * 31) + Float.hashCode(getSpread())) * 31) + Offset.m5181hashCodeimpl(mo4940getOffsetF1C5BW0())) * 31) + Color.m5431hashCodeimpl(mo4939getColor0d7_KjU())) * 31;
+        int hashCode = ((((((((((((Float.hashCode(getAlpha()) * 31) + this.shape.hashCode()) * 31) + this.block.hashCode()) * 31) + Float.hashCode(getRadius())) * 31) + Float.hashCode(getSpread())) * 31) + Offset.m4529hashCodeimpl(mo4288getOffsetF1C5BW0())) * 31) + Color.m4779hashCodeimpl(mo4287getColor0d7_KjU())) * 31;
         Brush brush = getBrush();
-        return ((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + BlendMode.m5334hashCodeimpl(mo4938getBlendMode0nO6VwU());
+        return ((hashCode + (brush != null ? brush.hashCode() : 0)) * 31) + BlendMode.m4682hashCodeimpl(mo4286getBlendMode0nO6VwU());
     }
 }

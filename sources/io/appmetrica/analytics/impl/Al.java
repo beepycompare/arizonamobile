@@ -12,8 +12,8 @@ public final class Al implements K2 {
         this.f502a = context;
     }
 
-    @Override // io.appmetrica.analytics.impl.K2, io.appmetrica.analytics.impl.InterfaceC0386km
-    public final void a(C0257fm c0257fm) {
+    @Override // io.appmetrica.analytics.impl.K2, io.appmetrica.analytics.impl.InterfaceC0385km
+    public final void a(C0256fm c0256fm) {
     }
 
     public final Context b() {

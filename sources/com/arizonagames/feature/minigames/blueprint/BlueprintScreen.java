@@ -40,7 +40,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: BlueprintScreen.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\b\u0010\u001d\u001a\u00020\u0015H\u0002J\u0010\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J\b\u0010&\u001a\u00020\u0015H\u0002J&\u0010'\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010+\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010,\u001a\u00020\u0015H\u0002J\u0018\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0016J\u0010\u00101\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/H\u0002J\u0010\u00102\u001a\u00020\u00152\u0006\u00103\u001a\u000204H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00066"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "showSnowmen", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setSelectedItem", "setVisibility", "visible", "", "Spawner", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\b\u0010\u001d\u001a\u00020\u0015H\u0002J\u0010\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J\b\u0010&\u001a\u00020\u0015H\u0002J&\u0010'\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010+\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010,\u001a\u00020\u0015H\u0002J\u0018\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0016J\u0010\u00101\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/H\u0002J\u0010\u00102\u001a\u00020\u00152\u0006\u00103\u001a\u000204H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00066"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "showSnowmen", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setSelectedItem", "setVisibility", "visible", "", "Spawner", "blueprint"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BlueprintScreen extends SAMPUIElement {
     private final BlueprintScreenBinding blueprintBinding;
@@ -51,7 +51,7 @@ public final class BlueprintScreen extends SAMPUIElement {
     private final HalloweenAdapter topHalloweenAdapter;
 
     /* compiled from: BlueprintScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -127,16 +127,12 @@ public final class BlueprintScreen extends SAMPUIElement {
         this.topHalloweenAdapter = new HalloweenAdapter(new Function1() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda40
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit unit;
-                unit = BlueprintScreen.topHalloweenAdapter$lambda$0(BlueprintScreen.this, ((Integer) obj).intValue());
-                return unit;
+                return BlueprintScreen.topHalloweenAdapter$lambda$0(BlueprintScreen.this, ((Integer) obj).intValue());
             }
         }, new Function0() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit unit;
-                unit = BlueprintScreen.topHalloweenAdapter$lambda$1(BlueprintScreen.this);
-                return unit;
+                return BlueprintScreen.topHalloweenAdapter$lambda$1(BlueprintScreen.this);
             }
         });
         addViewToConstraintLayout(constraintLayout, -1, -1);
@@ -153,7 +149,7 @@ public final class BlueprintScreen extends SAMPUIElement {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit topHalloweenAdapter$lambda$0(BlueprintScreen blueprintScreen, int i) {
         blueprintScreen.soundPool.play(blueprintScreen.soundId, 1.0f, 1.0f, 0, 0, 1.0f);
         SAMPUIElement.notifyClick$default(blueprintScreen, 2, i, null, 4, null);
@@ -161,7 +157,7 @@ public final class BlueprintScreen extends SAMPUIElement {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit topHalloweenAdapter$lambda$1(final BlueprintScreen blueprintScreen) {
         blueprintScreen.startLastAreaTimer(new Function0() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function0
@@ -1105,14 +1101,12 @@ public final class BlueprintScreen extends SAMPUIElement {
         clickOnWeapon(view, view2, new Function0() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit clickOnPipe$lambda$0;
-                clickOnPipe$lambda$0 = BlueprintScreen.clickOnPipe$lambda$0(Function0.this, this, load);
-                return clickOnPipe$lambda$0;
+                return BlueprintScreen.clickOnPipe$lambda$0(Function0.this, this, load);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit clickOnPipe$lambda$0(Function0 function0, BlueprintScreen blueprintScreen, int i) {
         function0.invoke();
         blueprintScreen.soundPool.play(i, 1.0f, 1.0f, 0, 0, 1.0f);
@@ -1135,7 +1129,7 @@ public final class BlueprintScreen extends SAMPUIElement {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void clickOnWeapon$lambda$0(View view, Function0 function0, View view2) {
         Intrinsics.checkNotNull(view2);
         view2.setVisibility(8);
@@ -1196,7 +1190,7 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* compiled from: BlueprintScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "blueprint"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.BLUEPRINT);

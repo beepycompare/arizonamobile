@@ -138,7 +138,7 @@ public final /* synthetic */ class RoomDatabaseKt__RoomDatabase_androidKt {
                             continuation = (Continuation) this.L$0;
                             ResultKt.throwOnFailure(obj);
                         }
-                        continuation.resumeWith(Result.m10243constructorimpl(obj));
+                        continuation.resumeWith(Result.m9182constructorimpl(obj));
                         return Unit.INSTANCE;
                     }
                 }

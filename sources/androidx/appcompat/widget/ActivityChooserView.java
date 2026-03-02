@@ -76,11 +76,13 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
                 if (ActivityChooserView.this.isShowingPopup()) {
-                    if (!ActivityChooserView.this.isShown()) {
-                        ActivityChooserView.this.getListPopupWindow().dismiss();
+                    boolean isShown = ActivityChooserView.this.isShown();
+                    ActivityChooserView activityChooserView = ActivityChooserView.this;
+                    if (!isShown) {
+                        activityChooserView.getListPopupWindow().dismiss();
                         return;
                     }
-                    ActivityChooserView.this.getListPopupWindow().show();
+                    activityChooserView.getListPopupWindow().show();
                     if (ActivityChooserView.this.mProvider != null) {
                         ActivityChooserView.this.mProvider.subUiVisibilityChanged(true);
                     }
@@ -308,10 +310,12 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     }
 
     void updateAppearance() {
-        if (this.mAdapter.getCount() > 0) {
-            this.mExpandActivityOverflowButton.setEnabled(true);
+        int count = this.mAdapter.getCount();
+        FrameLayout frameLayout = this.mExpandActivityOverflowButton;
+        if (count > 0) {
+            frameLayout.setEnabled(true);
         } else {
-            this.mExpandActivityOverflowButton.setEnabled(false);
+            frameLayout.setEnabled(false);
         }
         int activityCount = this.mAdapter.getActivityCount();
         int historySize = this.mAdapter.getHistorySize();
@@ -326,10 +330,12 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         } else {
             this.mDefaultActivityButton.setVisibility(8);
         }
-        if (this.mDefaultActivityButton.getVisibility() == 0) {
-            this.mActivityChooserContent.setBackgroundDrawable(this.mActivityChooserContentBackground);
+        int visibility = this.mDefaultActivityButton.getVisibility();
+        View view = this.mActivityChooserContent;
+        if (visibility == 0) {
+            view.setBackgroundDrawable(this.mActivityChooserContentBackground);
         } else {
-            this.mActivityChooserContent.setBackgroundDrawable(null);
+            view.setBackgroundDrawable(null);
         }
     }
 
@@ -369,17 +375,19 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
-            if (view == ActivityChooserView.this.mDefaultActivityButton) {
-                ActivityChooserView.this.dismissPopup();
+            FrameLayout frameLayout = ActivityChooserView.this.mDefaultActivityButton;
+            ActivityChooserView activityChooserView = ActivityChooserView.this;
+            if (view == frameLayout) {
+                activityChooserView.dismissPopup();
                 Intent chooseActivity = ActivityChooserView.this.mAdapter.getDataModel().chooseActivity(ActivityChooserView.this.mAdapter.getDataModel().getActivityIndex(ActivityChooserView.this.mAdapter.getDefaultActivity()));
                 if (chooseActivity != null) {
                     chooseActivity.addFlags(524288);
                     ActivityChooserView.this.getContext().startActivity(chooseActivity);
                 }
-            } else if (view == ActivityChooserView.this.mExpandActivityOverflowButton) {
+            } else if (view == activityChooserView.mExpandActivityOverflowButton) {
                 ActivityChooserView.this.mIsSelectingDefaultActivity = false;
-                ActivityChooserView activityChooserView = ActivityChooserView.this;
-                activityChooserView.showPopupUnchecked(activityChooserView.mInitialActivityCount);
+                ActivityChooserView activityChooserView2 = ActivityChooserView.this;
+                activityChooserView2.showPopupUnchecked(activityChooserView2.mInitialActivityCount);
             } else {
                 throw new IllegalArgumentException();
             }

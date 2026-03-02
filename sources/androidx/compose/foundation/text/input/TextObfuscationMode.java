@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextObfuscationMode {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Visible = m1553constructorimpl(0);
-    private static final int RevealLastTyped = m1553constructorimpl(1);
-    private static final int Hidden = m1553constructorimpl(2);
+    private static final int Visible = m1352constructorimpl(0);
+    private static final int RevealLastTyped = m1352constructorimpl(1);
+    private static final int Hidden = m1352constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextObfuscationMode m1552boximpl(int i) {
+    public static final /* synthetic */ TextObfuscationMode m1351boximpl(int i) {
         return new TextObfuscationMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1553constructorimpl(int i) {
+    public static int m1352constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1554equalsimpl(int i, Object obj) {
-        return (obj instanceof TextObfuscationMode) && i == ((TextObfuscationMode) obj).m1558unboximpl();
+    public static boolean m1353equalsimpl(int i, Object obj) {
+        return (obj instanceof TextObfuscationMode) && i == ((TextObfuscationMode) obj).m1357unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1555equalsimpl0(int i, int i2) {
+    public static final boolean m1354equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1556hashCodeimpl(int i) {
+    public static int m1355hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1557toStringimpl(int i) {
+    public static String m1356toStringimpl(int i) {
         return "TextObfuscationMode(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1554equalsimpl(this.value, obj);
+        return m1353equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1556hashCodeimpl(this.value);
+        return m1355hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1557toStringimpl(this.value);
+        return m1356toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1558unboximpl() {
+    public final /* synthetic */ int m1357unboximpl() {
         return this.value;
     }
 
@@ -73,17 +73,17 @@ public final class TextObfuscationMode {
         }
 
         /* renamed from: getVisible-vTwcZD0  reason: not valid java name */
-        public final int m1561getVisiblevTwcZD0() {
+        public final int m1360getVisiblevTwcZD0() {
             return TextObfuscationMode.Visible;
         }
 
         /* renamed from: getRevealLastTyped-vTwcZD0  reason: not valid java name */
-        public final int m1560getRevealLastTypedvTwcZD0() {
+        public final int m1359getRevealLastTypedvTwcZD0() {
             return TextObfuscationMode.RevealLastTyped;
         }
 
         /* renamed from: getHidden-vTwcZD0  reason: not valid java name */
-        public final int m1559getHiddenvTwcZD0() {
+        public final int m1358getHiddenvTwcZD0() {
             return TextObfuscationMode.Hidden;
         }
     }

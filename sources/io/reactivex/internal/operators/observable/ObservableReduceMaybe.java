@@ -84,10 +84,11 @@ public final class ObservableReduceMaybe<T> extends Maybe<T> {
             this.done = true;
             T t = this.value;
             this.value = null;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                maybeObserver.onSuccess(t);
             } else {
-                this.downstream.onComplete();
+                maybeObserver.onComplete();
             }
         }
 

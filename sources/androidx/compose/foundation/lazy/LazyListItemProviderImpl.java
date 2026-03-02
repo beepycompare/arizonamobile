@@ -26,7 +26,7 @@ public final class LazyListItemProviderImpl implements LazyListItemProvider {
     private final LazyLayoutKeyIndexMap keyIndexMap;
     private final LazyListState state;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$1(LazyListItemProviderImpl lazyListItemProviderImpl, int i, Object obj, int i2, Composer composer, int i3) {
         lazyListItemProviderImpl.Item(i, obj, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
@@ -85,9 +85,7 @@ public final class LazyListItemProviderImpl implements LazyListItemProvider {
             LazyLayoutPinnableItemKt.LazyLayoutPinnableItem(obj2, i4, this.state.getPinnedItems$foundation(), ComposableLambdaKt.rememberComposableLambda(-824725566, true, new Function2() { // from class: androidx.compose.foundation.lazy.LazyListItemProviderImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$0;
-                    Item$lambda$0 = LazyListItemProviderImpl.Item$lambda$0(LazyListItemProviderImpl.this, i, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$0;
+                    return LazyListItemProviderImpl.Item$lambda$0(LazyListItemProviderImpl.this, i, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 3) & 14) | 3072 | ((i3 << 3) & 112));
             if (ComposerKt.isTraceInProgress()) {
@@ -99,15 +97,13 @@ public final class LazyListItemProviderImpl implements LazyListItemProvider {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListItemProviderImpl$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$1;
-                    Item$lambda$1 = LazyListItemProviderImpl.Item$lambda$1(LazyListItemProviderImpl.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$1;
+                    return LazyListItemProviderImpl.Item$lambda$1(LazyListItemProviderImpl.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$0(LazyListItemProviderImpl lazyListItemProviderImpl, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "C*79@3059L27:LazyListItemProvider.kt#428nma");
         if (!composer.shouldExecute((i2 & 3) != 2, i2 & 1)) {

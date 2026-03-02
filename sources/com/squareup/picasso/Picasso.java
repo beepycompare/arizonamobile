@@ -312,11 +312,12 @@ public class Picasso {
     /* JADX INFO: Access modifiers changed from: package-private */
     public Bitmap quickMemoryCacheCheck(String str) {
         Bitmap bitmap = this.cache.get(str);
+        Stats stats = this.stats;
         if (bitmap != null) {
-            this.stats.dispatchCacheHit();
+            stats.dispatchCacheHit();
             return bitmap;
         }
-        this.stats.dispatchCacheMiss();
+        stats.dispatchCacheMiss();
         return bitmap;
     }
 

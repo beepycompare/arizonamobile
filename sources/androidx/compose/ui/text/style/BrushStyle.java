@@ -70,8 +70,8 @@ public final class BrushStyle implements TextForegroundStyle {
 
     @Override // androidx.compose.ui.text.style.TextForegroundStyle
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public long mo8016getColor0d7_KjU() {
-        return Color.Companion.m5460getUnspecified0d7_KjU();
+    public long mo7313getColor0d7_KjU() {
+        return Color.Companion.m4808getUnspecified0d7_KjU();
     }
 
     @Override // androidx.compose.ui.text.style.TextForegroundStyle

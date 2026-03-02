@@ -27,8 +27,8 @@ public final class DimensionSymbol {
     }
 
     /* renamed from: update-0680j_4  reason: not valid java name */
-    public final void m8616update0680j_4(float f) {
-        this.value = Dp.m8256boximpl(f);
+    public final void m7913update0680j_4(float f) {
+        this.value = Dp.m7553boximpl(f);
         this.symbol = null;
     }
 
@@ -44,7 +44,7 @@ public final class DimensionSymbol {
     public final CLElement asCLElement() {
         Dp dp = this.value;
         if (dp != null) {
-            return new CLNumber(dp.m8272unboximpl());
+            return new CLNumber(dp.m7569unboximpl());
         }
         String str = this.symbol;
         if (str != null) {

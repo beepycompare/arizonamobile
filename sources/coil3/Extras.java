@@ -100,11 +100,12 @@ public final class Extras {
         }
 
         public final <T> Builder set(Key<T> key, T t) {
+            Map<Key<?>, Object> map = this.data;
             if (t != null) {
-                this.data.put(key, t);
+                map.put(key, t);
                 return this;
             }
-            this.data.remove(key);
+            map.remove(key);
             return this;
         }
 

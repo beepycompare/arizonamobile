@@ -92,9 +92,7 @@ final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<P
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: kotlinx.coroutines.rx2.RxConvertKt$asFlow$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = RxConvertKt$asFlow$1.invokeSuspend$lambda$0(atomicReference);
-                    return invokeSuspend$lambda$0;
+                    return RxConvertKt$asFlow$1.invokeSuspend$lambda$0(atomicReference);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -107,7 +105,7 @@ final class RxConvertKt$asFlow$1<T> extends SuspendLambda implements Function2<P
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(AtomicReference atomicReference) {
         Disposable disposable = (Disposable) atomicReference.getAndSet(Disposables.disposed());
         if (disposable != null) {

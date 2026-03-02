@@ -150,7 +150,7 @@ public final class DotsIndicator extends BaseDotsIndicator {
         linearLayout.addView(inflate);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void addDot$lambda$0(DotsIndicator this$0, int i, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (this$0.getDotsClickable()) {

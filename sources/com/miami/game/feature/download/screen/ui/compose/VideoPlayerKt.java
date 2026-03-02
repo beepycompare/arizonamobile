@@ -25,10 +25,10 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: VideoPlayer.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen_release", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"ExoPlayerView", "", "uri", "Landroid/net/Uri;", "isSoundOn", "", "(Landroid/net/Uri;ZLandroidx/compose/runtime/Composer;I)V", "download-screen", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class VideoPlayerKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExoPlayerView$lambda$7(Uri uri, boolean z, int i, Composer composer, int i2) {
         ExoPlayerView(uri, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -134,9 +134,7 @@ public final class VideoPlayerKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.VideoPlayerKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ExoPlayerView$lambda$7;
-                    ExoPlayerView$lambda$7 = VideoPlayerKt.ExoPlayerView$lambda$7(uri, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ExoPlayerView$lambda$7;
+                    return VideoPlayerKt.ExoPlayerView$lambda$7(uri, z, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

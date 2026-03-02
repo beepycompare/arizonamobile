@@ -47,13 +47,13 @@ final class UIntProgressionIterator implements Iterator<UInt>, KMappedMarker {
             compare = Integer.compare(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE);
         }
         this.hasNext = z;
-        this.step = UInt.m10343constructorimpl(i3);
+        this.step = UInt.m9282constructorimpl(i3);
         this.next = this.hasNext ? i : i2;
     }
 
     @Override // java.util.Iterator
     public /* bridge */ /* synthetic */ UInt next() {
-        return UInt.m10337boximpl(m11491nextpVg5ArA());
+        return UInt.m9276boximpl(m10428nextpVg5ArA());
     }
 
     @Override // java.util.Iterator
@@ -62,7 +62,7 @@ final class UIntProgressionIterator implements Iterator<UInt>, KMappedMarker {
     }
 
     /* renamed from: next-pVg5ArA  reason: not valid java name */
-    public int m11491nextpVg5ArA() {
+    public int m10428nextpVg5ArA() {
         int i = this.next;
         if (i == this.finalElement) {
             if (!this.hasNext) {
@@ -71,7 +71,7 @@ final class UIntProgressionIterator implements Iterator<UInt>, KMappedMarker {
             this.hasNext = false;
             return i;
         }
-        this.next = UInt.m10343constructorimpl(this.step + i);
+        this.next = UInt.m9282constructorimpl(this.step + i);
         return i;
     }
 }

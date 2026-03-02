@@ -272,12 +272,16 @@ public class FlexBuffersBuilder {
 
     public int endVector(String str, int i, boolean z, boolean z2) {
         Value createVector = createVector(putKey(str), i, this.stack.size() - i, z, z2, null);
-        while (this.stack.size() > i) {
+        while (true) {
+            int size = this.stack.size();
             ArrayList<Value> arrayList = this.stack;
-            arrayList.remove(arrayList.size() - 1);
+            if (size > i) {
+                arrayList.remove(arrayList.size() - 1);
+            } else {
+                arrayList.add(createVector);
+                return (int) createVector.iValue;
+            }
         }
-        this.stack.add(createVector);
-        return (int) createVector.iValue;
     }
 
     public ByteBuffer finish() {
@@ -379,12 +383,16 @@ public class FlexBuffersBuilder {
         ArrayList<Value> arrayList = this.stack;
         Collections.sort(arrayList.subList(i, arrayList.size()), this.keyComparator);
         Value createVector = createVector(putKey, i, this.stack.size() - i, false, false, createKeyVector(i, this.stack.size() - i));
-        while (this.stack.size() > i) {
+        while (true) {
+            int size = this.stack.size();
             ArrayList<Value> arrayList2 = this.stack;
-            arrayList2.remove(arrayList2.size() - 1);
+            if (size > i) {
+                arrayList2.remove(arrayList2.size() - 1);
+            } else {
+                arrayList2.add(createVector);
+                return (int) createVector.iValue;
+            }
         }
-        this.stack.add(createVector);
-        return (int) createVector.iValue;
     }
 
     private Value createKeyVector(int i, int i2) {
@@ -501,10 +509,9 @@ public class FlexBuffersBuilder {
         }
 
         private int storedWidth(int i) {
-            if (FlexBuffers.isTypeInline(this.type)) {
-                return Math.max(this.minBitWidth, i);
-            }
-            return this.minBitWidth;
+            boolean isTypeInline = FlexBuffers.isTypeInline(this.type);
+            int i2 = this.minBitWidth;
+            return isTypeInline ? Math.max(i2, i) : i2;
         }
 
         /* JADX INFO: Access modifiers changed from: private */

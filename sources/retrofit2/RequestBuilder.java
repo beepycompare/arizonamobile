@@ -68,13 +68,16 @@ public final class RequestBuilder {
         if ("Content-Type".equalsIgnoreCase(str)) {
             try {
                 this.contentType = MediaType.get(str2);
+                return;
             } catch (IllegalArgumentException e) {
                 throw new IllegalArgumentException("Malformed content type: " + str2, e);
             }
-        } else if (z) {
-            this.headersBuilder.addUnsafeNonAscii(str, str2);
+        }
+        Headers.Builder builder = this.headersBuilder;
+        if (z) {
+            builder.addUnsafeNonAscii(str, str2);
         } else {
-            this.headersBuilder.add(str, str2);
+            builder.add(str, str2);
         }
     }
 
@@ -150,19 +153,21 @@ public final class RequestBuilder {
             }
             this.relativeUrl = null;
         }
+        HttpUrl.Builder builder = this.urlBuilder;
         if (z) {
-            this.urlBuilder.addEncodedQueryParameter(str, str2);
+            builder.addEncodedQueryParameter(str, str2);
         } else {
-            this.urlBuilder.addQueryParameter(str, str2);
+            builder.addQueryParameter(str, str2);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void addFormField(String str, String str2, boolean z) {
+        FormBody.Builder builder = this.formBuilder;
         if (z) {
-            this.formBuilder.addEncoded(str, str2);
+            builder.addEncoded(str, str2);
         } else {
-            this.formBuilder.add(str, str2);
+            builder.add(str, str2);
         }
     }
 

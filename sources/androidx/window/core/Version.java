@@ -45,9 +45,10 @@ public final class Version implements Comparable<Version> {
         this.bigInteger$delegate = LazyKt.lazy(new Function0() { // from class: androidx.window.core.Version$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                BigInteger bigInteger_delegate$lambda$0;
-                bigInteger_delegate$lambda$0 = Version.bigInteger_delegate$lambda$0(Version.this);
-                return bigInteger_delegate$lambda$0;
+                BigInteger or;
+                Version version = Version.this;
+                or = BigInteger.valueOf(version.major).shiftLeft(32).or(BigInteger.valueOf(version.minor)).shiftLeft(32).or(BigInteger.valueOf(version.patch));
+                return or;
             }
         });
     }
@@ -72,11 +73,6 @@ public final class Version implements Comparable<Version> {
         Object value = this.bigInteger$delegate.getValue();
         Intrinsics.checkNotNullExpressionValue(value, "getValue(...)");
         return (BigInteger) value;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final BigInteger bigInteger_delegate$lambda$0(Version version) {
-        return BigInteger.valueOf(version.major).shiftLeft(32).or(BigInteger.valueOf(version.minor)).shiftLeft(32).or(BigInteger.valueOf(version.patch));
     }
 
     public String toString() {

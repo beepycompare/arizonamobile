@@ -63,12 +63,12 @@ public final class Cloudy_androidKt {
             Object consume = composer.consume(InspectionModeKt.getLocalInspectionMode());
             ComposerKt.sourceInformationMarkerEnd(composer);
             if (((Boolean) consume).booleanValue()) {
-                Modifier m4947blurF8QBwvs$default = BlurKt.m4947blurF8QBwvs$default(modifier, Dp.m8258constructorimpl(i4), null, 2, null);
+                Modifier m4295blurF8QBwvs$default = BlurKt.m4295blurF8QBwvs$default(modifier, Dp.m7555constructorimpl(i4), null, 2, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 composer.endReplaceGroup();
-                return m4947blurF8QBwvs$default;
+                return m4295blurF8QBwvs$default;
             }
             if (Build.VERSION.SDK_INT >= 31) {
                 cloudyLegacyBlurStrategy = CloudyRenderEffectStrategy.INSTANCE;

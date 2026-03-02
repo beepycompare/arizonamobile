@@ -10,6 +10,6 @@ public final class H7 {
     }
 
     public H7() {
-        this(new Tm(C0449na.k().g(), "appmetrica_startup_hosts"));
+        this(new Tm(C0448na.k().g(), "appmetrica_startup_hosts"));
     }
 }

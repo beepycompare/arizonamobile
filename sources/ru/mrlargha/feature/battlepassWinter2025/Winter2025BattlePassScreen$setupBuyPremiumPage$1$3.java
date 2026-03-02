@@ -21,8 +21,8 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassBuyPremiumLayoutBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Winter2025BattlePass.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setupBuyPremiumPage$1$3", f = "Winter2025BattlePass.kt", i = {1, 2, 2}, l = {415, TypedValues.CycleType.TYPE_CUSTOM_WAVE_SHAPE, 429}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, s = {"L$0", "L$0", "L$1"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setupBuyPremiumPage$1$3", f = "Winter2025BattlePass.kt", i = {1, 2, 2}, l = {415, TypedValues.CycleType.TYPE_CUSTOM_WAVE_SHAPE, 429}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, nl = {418, TypedValues.CycleType.TYPE_WAVE_PHASE, 432}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ WinterBattlepassBuyPremiumLayoutBinding $this_apply;
@@ -52,13 +52,13 @@ public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends Su
     /* JADX WARN: Code restructure failed: missing block: B:13:0x004c, code lost:
         if (r9 == r0) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x008e, code lost:
         if (r9 == r0) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00d8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00d4, code lost:
         if (r9 == r0) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00d6, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -84,12 +84,13 @@ public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends Su
                 Bitmap bitmap3 = (Bitmap) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 Bitmap bitmap4 = (Bitmap) obj;
+                WinterBattlepassBuyPremiumLayoutBinding winterBattlepassBuyPremiumLayoutBinding = this.$this_apply;
                 if (bitmap4 != null) {
-                    ImageView premiumImage3 = this.$this_apply.premiumImage3;
+                    ImageView premiumImage3 = winterBattlepassBuyPremiumLayoutBinding.premiumImage3;
                     Intrinsics.checkNotNullExpressionValue(premiumImage3, "premiumImage3");
                     UtilsKt.setImage(premiumImage3, bitmap4);
                 } else {
-                    ImageView premiumImage32 = this.$this_apply.premiumImage3;
+                    ImageView premiumImage32 = winterBattlepassBuyPremiumLayoutBinding.premiumImage3;
                     Intrinsics.checkNotNullExpressionValue(premiumImage32, "premiumImage3");
                     targetActivity3 = this.this$0.getTargetActivity();
                     UtilsKt.setNotLoadedImage(premiumImage32, targetActivity3);
@@ -101,12 +102,13 @@ public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends Su
             bitmap = (Bitmap) this.L$0;
             ResultKt.throwOnFailure(obj);
             Bitmap bitmap5 = (Bitmap) obj;
+            WinterBattlepassBuyPremiumLayoutBinding winterBattlepassBuyPremiumLayoutBinding2 = this.$this_apply;
             if (bitmap5 != null) {
-                ImageView premiumImage2 = this.$this_apply.premiumImage2;
+                ImageView premiumImage2 = winterBattlepassBuyPremiumLayoutBinding2.premiumImage2;
                 Intrinsics.checkNotNullExpressionValue(premiumImage2, "premiumImage2");
                 UtilsKt.setImage(premiumImage2, bitmap5);
             } else {
-                ImageView premiumImage22 = this.$this_apply.premiumImage2;
+                ImageView premiumImage22 = winterBattlepassBuyPremiumLayoutBinding2.premiumImage2;
                 Intrinsics.checkNotNullExpressionValue(premiumImage22, "premiumImage2");
                 targetActivity2 = this.this$0.getTargetActivity();
                 UtilsKt.setNotLoadedImage(premiumImage22, targetActivity2);
@@ -117,12 +119,13 @@ public final class Winter2025BattlePassScreen$setupBuyPremiumPage$1$3 extends Su
             obj = BuildersKt.withContext(Dispatchers.getIO(), new Winter2025BattlePassScreen$setupBuyPremiumPage$1$3$bitmap3$1(null), this);
         }
         bitmap = (Bitmap) obj;
+        WinterBattlepassBuyPremiumLayoutBinding winterBattlepassBuyPremiumLayoutBinding3 = this.$this_apply;
         if (bitmap != null) {
-            ImageView premiumImage1 = this.$this_apply.premiumImage1;
+            ImageView premiumImage1 = winterBattlepassBuyPremiumLayoutBinding3.premiumImage1;
             Intrinsics.checkNotNullExpressionValue(premiumImage1, "premiumImage1");
             UtilsKt.setImage(premiumImage1, bitmap);
         } else {
-            ImageView premiumImage12 = this.$this_apply.premiumImage1;
+            ImageView premiumImage12 = winterBattlepassBuyPremiumLayoutBinding3.premiumImage1;
             Intrinsics.checkNotNullExpressionValue(premiumImage12, "premiumImage1");
             targetActivity = this.this$0.getTargetActivity();
             UtilsKt.setNotLoadedImage(premiumImage12, targetActivity);

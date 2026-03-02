@@ -67,10 +67,10 @@ public final class ComposeScrollCaptureCallback$scrollTracker$1 extends SuspendL
                 if (reverseScrolling) {
                     f = -f;
                 }
-                Offset m5168boximpl = Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)));
+                Offset m4516boximpl = Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)));
                 this.Z$0 = reverseScrolling;
                 this.label = 1;
-                obj = scrollCaptureScrollByAction.invoke(m5168boximpl, this);
+                obj = scrollCaptureScrollByAction.invoke(m4516boximpl, this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -85,7 +85,7 @@ public final class ComposeScrollCaptureCallback$scrollTracker$1 extends SuspendL
             z = this.Z$0;
             ResultKt.throwOnFailure(obj);
         }
-        long m5189unboximpl = ((Offset) obj).m5189unboximpl();
-        return Boxing.boxFloat(z ? -Float.intBitsToFloat((int) (m5189unboximpl & 4294967295L)) : Float.intBitsToFloat((int) (m5189unboximpl & 4294967295L)));
+        long m4537unboximpl = ((Offset) obj).m4537unboximpl();
+        return Boxing.boxFloat(z ? -Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)) : Float.intBitsToFloat((int) (m4537unboximpl & 4294967295L)));
     }
 }

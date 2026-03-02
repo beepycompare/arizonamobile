@@ -13,9 +13,9 @@ public final class Ao {
 
     public Ao(Context context) {
         this.f504a = context;
-        C0142ba c0142ba = new C0142ba(context, "appmetrica_vital.dat");
-        this.c = new wo(C0449na.k().y(), c0142ba);
-        this.d = new wo(new Ze(C0449na.k().B().e(context)), c0142ba);
+        C0141ba c0141ba = new C0141ba(context, "appmetrica_vital.dat");
+        this.c = new wo(C0448na.k().y(), c0141ba);
+        this.d = new wo(new Ze(C0448na.k().B().e(context)), c0141ba);
     }
 
     public final wo a() {

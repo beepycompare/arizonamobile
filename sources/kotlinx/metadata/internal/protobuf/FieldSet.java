@@ -64,12 +64,20 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public FieldSet<FieldDescriptorType> clone() {
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
         FieldSet<FieldDescriptorType> newFieldSet = newFieldSet();
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);
+        int i = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            smallSortedMap = this.fields;
+            if (i >= numArrayEntries) {
+                break;
+            }
+            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = smallSortedMap.getArrayEntryAt(i);
             newFieldSet.setField(arrayEntryAt.getKey(), arrayEntryAt.getValue());
+            i++;
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
+        for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
             newFieldSet.setField(entry.getKey(), entry.getValue());
         }
         newFieldSet.hasLazyField = this.hasLazyField;
@@ -82,20 +90,30 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public Map<FieldDescriptorType, Object> getAllFields() {
-        if (!this.hasLazyField) {
-            return this.fields.isImmutable() ? this.fields : Collections.unmodifiableMap(this.fields);
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
+        if (this.hasLazyField) {
+            SmallSortedMap newFieldMap = SmallSortedMap.newFieldMap(16);
+            int i = 0;
+            while (true) {
+                int numArrayEntries = this.fields.getNumArrayEntries();
+                smallSortedMap = this.fields;
+                if (i >= numArrayEntries) {
+                    break;
+                }
+                cloneFieldEntry(newFieldMap, smallSortedMap.getArrayEntryAt(i));
+                i++;
+            }
+            for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
+                cloneFieldEntry(newFieldMap, entry);
+            }
+            if (this.fields.isImmutable()) {
+                newFieldMap.makeImmutable();
+            }
+            return newFieldMap;
         }
-        SmallSortedMap newFieldMap = SmallSortedMap.newFieldMap(16);
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            cloneFieldEntry(newFieldMap, this.fields.getArrayEntryAt(i));
-        }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
-            cloneFieldEntry(newFieldMap, entry);
-        }
-        if (this.fields.isImmutable()) {
-            newFieldMap.makeImmutable();
-        }
-        return newFieldMap;
+        boolean isImmutable = this.fields.isImmutable();
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap2 = this.fields;
+        return isImmutable ? smallSortedMap2 : Collections.unmodifiableMap(smallSortedMap2);
     }
 
     private void cloneFieldEntry(Map<FieldDescriptorType, Object> map, Map.Entry<FieldDescriptorType, Object> entry) {
@@ -267,17 +285,24 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public boolean isInitialized() {
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            if (!isInitialized(this.fields.getArrayEntryAt(i))) {
-                return false;
+        int i = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            SmallSortedMap<FieldDescriptorType, Object> smallSortedMap = this.fields;
+            if (i < numArrayEntries) {
+                if (!isInitialized(smallSortedMap.getArrayEntryAt(i))) {
+                    return false;
+                }
+                i++;
+            } else {
+                for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
+                    if (!isInitialized(entry)) {
+                        return false;
+                    }
+                }
+                return true;
             }
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
-            if (!isInitialized(entry)) {
-                return false;
-            }
-        }
-        return true;
     }
 
     private boolean isInitialized(Map.Entry<FieldDescriptorType, Object> entry) {
@@ -529,20 +554,36 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = this.fields.getArrayEntryAt(i);
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
+        int i = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            smallSortedMap = this.fields;
+            if (i >= numArrayEntries) {
+                break;
+            }
+            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = smallSortedMap.getArrayEntryAt(i);
             writeField(arrayEntryAt.getKey(), arrayEntryAt.getValue(), codedOutputStream);
+            i++;
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
+        for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
             writeField(entry.getKey(), entry.getValue(), codedOutputStream);
         }
     }
 
     public void writeMessageSetTo(CodedOutputStream codedOutputStream) throws IOException {
-        for (int i = 0; i < this.fields.getNumArrayEntries(); i++) {
-            writeMessageSetTo(this.fields.getArrayEntryAt(i), codedOutputStream);
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
+        int i = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            smallSortedMap = this.fields;
+            if (i >= numArrayEntries) {
+                break;
+            }
+            writeMessageSetTo(smallSortedMap.getArrayEntryAt(i), codedOutputStream);
+            i++;
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
+        for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
             writeMessageSetTo(entry, codedOutputStream);
         }
     }
@@ -668,26 +709,42 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public int getSerializedSize() {
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
         int i = 0;
-        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
-            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = this.fields.getArrayEntryAt(i2);
-            i += computeFieldSize(arrayEntryAt.getKey(), arrayEntryAt.getValue());
+        int i2 = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            smallSortedMap = this.fields;
+            if (i >= numArrayEntries) {
+                break;
+            }
+            Map.Entry<FieldDescriptorType, Object> arrayEntryAt = smallSortedMap.getArrayEntryAt(i);
+            i2 += computeFieldSize(arrayEntryAt.getKey(), arrayEntryAt.getValue());
+            i++;
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
-            i += computeFieldSize(entry.getKey(), entry.getValue());
+        for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
+            i2 += computeFieldSize(entry.getKey(), entry.getValue());
         }
-        return i;
+        return i2;
     }
 
     public int getMessageSetSerializedSize() {
+        SmallSortedMap<FieldDescriptorType, Object> smallSortedMap;
         int i = 0;
-        for (int i2 = 0; i2 < this.fields.getNumArrayEntries(); i2++) {
-            i += getMessageSetSerializedSize(this.fields.getArrayEntryAt(i2));
+        int i2 = 0;
+        while (true) {
+            int numArrayEntries = this.fields.getNumArrayEntries();
+            smallSortedMap = this.fields;
+            if (i >= numArrayEntries) {
+                break;
+            }
+            i2 += getMessageSetSerializedSize(smallSortedMap.getArrayEntryAt(i));
+            i++;
         }
-        for (Map.Entry<FieldDescriptorType, Object> entry : this.fields.getOverflowEntries()) {
-            i += getMessageSetSerializedSize(entry);
+        for (Map.Entry<FieldDescriptorType, Object> entry : smallSortedMap.getOverflowEntries()) {
+            i2 += getMessageSetSerializedSize(entry);
         }
-        return i;
+        return i2;
     }
 
     private int getMessageSetSerializedSize(Map.Entry<FieldDescriptorType, Object> entry) {

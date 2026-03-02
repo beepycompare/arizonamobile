@@ -85,13 +85,15 @@ public final class TrieNode<E> {
         Object[] addElementAtIndex;
         Object[] addElementAtIndex2;
         int indexOfCellAt$runtime = indexOfCellAt$runtime(i);
-        if (this.ownedBy == mutabilityOwnership) {
-            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime, e);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(objArr, indexOfCellAt$runtime, e);
             this.buffer = addElementAtIndex2;
             this.bitmap = i | this.bitmap;
             return this;
         }
-        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, indexOfCellAt$runtime, e);
+        addElementAtIndex = TrieNodeKt.addElementAtIndex(objArr, indexOfCellAt$runtime, e);
         return new TrieNode<>(i | this.bitmap, addElementAtIndex, mutabilityOwnership);
     }
 
@@ -132,11 +134,12 @@ public final class TrieNode<E> {
                 trieNode = r02;
             }
         }
-        if (this.ownedBy == mutabilityOwnership) {
-            this.buffer[i] = trieNode;
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            objArr[i] = trieNode;
             return this;
         }
-        Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         copyOf[i] = trieNode;
@@ -157,11 +160,12 @@ public final class TrieNode<E> {
     }
 
     private final TrieNode<E> mutableMoveElementToNode(int i, int i2, E e, int i3, MutabilityOwnership mutabilityOwnership) {
-        if (this.ownedBy == mutabilityOwnership) {
-            this.buffer[i] = makeNodeAtIndex(i, i2, e, i3, mutabilityOwnership);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            objArr[i] = makeNodeAtIndex(i, i2, e, i3, mutabilityOwnership);
             return this;
         }
-        Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         copyOf[i] = makeNodeAtIndex(i, i2, e, i3, mutabilityOwnership);
@@ -189,13 +193,15 @@ public final class TrieNode<E> {
     private final TrieNode<E> mutableRemoveCellAtIndex(int i, int i2, MutabilityOwnership mutabilityOwnership) {
         Object[] removeCellAtIndex;
         Object[] removeCellAtIndex2;
-        if (this.ownedBy == mutabilityOwnership) {
-            removeCellAtIndex2 = TrieNodeKt.removeCellAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            removeCellAtIndex2 = TrieNodeKt.removeCellAtIndex(objArr, i);
             this.buffer = removeCellAtIndex2;
             this.bitmap ^= i2;
             return this;
         }
-        removeCellAtIndex = TrieNodeKt.removeCellAtIndex(this.buffer, i);
+        removeCellAtIndex = TrieNodeKt.removeCellAtIndex(objArr, i);
         return new TrieNode<>(i2 ^ this.bitmap, removeCellAtIndex, mutabilityOwnership);
     }
 
@@ -208,12 +214,14 @@ public final class TrieNode<E> {
     private final TrieNode<E> mutableCollisionRemoveElementAtIndex(int i, MutabilityOwnership mutabilityOwnership) {
         Object[] removeCellAtIndex;
         Object[] removeCellAtIndex2;
-        if (this.ownedBy == mutabilityOwnership) {
-            removeCellAtIndex2 = TrieNodeKt.removeCellAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            removeCellAtIndex2 = TrieNodeKt.removeCellAtIndex(objArr, i);
             this.buffer = removeCellAtIndex2;
             return this;
         }
-        removeCellAtIndex = TrieNodeKt.removeCellAtIndex(this.buffer, i);
+        removeCellAtIndex = TrieNodeKt.removeCellAtIndex(objArr, i);
         return new TrieNode<>(0, removeCellAtIndex, mutabilityOwnership);
     }
 
@@ -237,12 +245,15 @@ public final class TrieNode<E> {
             return this;
         }
         persistentHashSetBuilder.setSize(persistentHashSetBuilder.size() + 1);
-        if (this.ownedBy == persistentHashSetBuilder.getOwnership$runtime()) {
-            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(this.buffer, 0, e);
+        MutabilityOwnership mutabilityOwnership = this.ownedBy;
+        MutabilityOwnership ownership$runtime = persistentHashSetBuilder.getOwnership$runtime();
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership == ownership$runtime) {
+            addElementAtIndex2 = TrieNodeKt.addElementAtIndex(objArr, 0, e);
             this.buffer = addElementAtIndex2;
             return this;
         }
-        addElementAtIndex = TrieNodeKt.addElementAtIndex(this.buffer, 0, e);
+        addElementAtIndex = TrieNodeKt.addElementAtIndex(objArr, 0, e);
         return new TrieNode<>(0, addElementAtIndex, persistentHashSetBuilder.getOwnership$runtime());
     }
 
@@ -261,11 +272,11 @@ public final class TrieNode<E> {
     }
 
     private final TrieNode<E> mutableCollisionAddAll(TrieNode<E> trieNode, DeltaCounter deltaCounter, MutabilityOwnership mutabilityOwnership) {
+        Object[] objArr = this.buffer;
         if (this == trieNode) {
-            deltaCounter.plusAssign(this.buffer.length);
+            deltaCounter.plusAssign(objArr.length);
             return this;
         }
-        Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length + trieNode.buffer.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         Object[] objArr2 = trieNode.buffer;
@@ -273,11 +284,11 @@ public final class TrieNode<E> {
         int i = 0;
         int i2 = 0;
         while (i < objArr2.length) {
-            CommonFunctionsKt.m4792assert(i2 <= i);
+            CommonFunctionsKt.m4157assert(i2 <= i);
             if (!collisionContainsElement((E) objArr2[i])) {
                 copyOf[length + i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4792assert(length + i2 <= copyOf.length);
+                CommonFunctionsKt.m4157assert(length + i2 <= copyOf.length);
             }
             i++;
         }
@@ -305,7 +316,11 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(this.buffer.length);
             return this;
         }
-        Object[] objArr = Intrinsics.areEqual(mutabilityOwnership, this.ownedBy) ? this.buffer : new Object[Math.min(this.buffer.length, trieNode.buffer.length)];
+        boolean areEqual = Intrinsics.areEqual(mutabilityOwnership, this.ownedBy);
+        Object[] objArr = this.buffer;
+        if (!areEqual) {
+            objArr = new Object[Math.min(objArr.length, trieNode.buffer.length)];
+        }
         Object[] objArr2 = this.buffer;
         int i = 0;
         int i2 = 0;
@@ -313,11 +328,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m4792assert(i2 <= i);
+            CommonFunctionsKt.m4157assert(i2 <= i);
             if (trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4792assert(i2 <= objArr.length);
+                CommonFunctionsKt.m4157assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -347,7 +362,11 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(this.buffer.length);
             return EMPTY;
         }
-        Object[] objArr = Intrinsics.areEqual(mutabilityOwnership, this.ownedBy) ? this.buffer : new Object[this.buffer.length];
+        boolean areEqual = Intrinsics.areEqual(mutabilityOwnership, this.ownedBy);
+        Object[] objArr = this.buffer;
+        if (!areEqual) {
+            objArr = new Object[objArr.length];
+        }
         Object[] objArr2 = this.buffer;
         int i = 0;
         int i2 = 0;
@@ -355,11 +374,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m4792assert(i2 <= i);
+            CommonFunctionsKt.m4157assert(i2 <= i);
             if (!trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m4792assert(i2 <= objArr.length);
+                CommonFunctionsKt.m4157assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -382,15 +401,16 @@ public final class TrieNode<E> {
     }
 
     private final int calculateSize() {
-        Object[] objArr;
-        if (this.bitmap == 0) {
-            return this.buffer.length;
+        int i = this.bitmap;
+        Object[] objArr = this.buffer;
+        if (i == 0) {
+            return objArr.length;
         }
-        int i = 0;
-        for (Object obj : this.buffer) {
-            i += obj instanceof TrieNode ? ((TrieNode) obj).calculateSize() : 1;
+        int i2 = 0;
+        for (Object obj : objArr) {
+            i2 += obj instanceof TrieNode ? ((TrieNode) obj).calculateSize() : 1;
         }
-        return i;
+        return i2;
     }
 
     private final boolean elementsIdentityEquals(TrieNode<E> trieNode) {
@@ -448,47 +468,51 @@ public final class TrieNode<E> {
                 Object[] objArr2 = trieNode2.buffer;
                 if (hasNoCellAt(lowestOneBit)) {
                     makeNode = (TrieNode<E>) trieNode.buffer[indexOfCellAt$runtime2];
-                } else if (trieNode.hasNoCellAt(lowestOneBit)) {
-                    makeNode = (E) this.buffer[indexOfCellAt$runtime];
                 } else {
-                    E e = (E) this.buffer[indexOfCellAt$runtime];
-                    E e2 = (E) trieNode.buffer[indexOfCellAt$runtime2];
-                    boolean z = e instanceof TrieNode;
-                    boolean z2 = e2 instanceof TrieNode;
-                    if (z && z2) {
-                        Intrinsics.checkNotNull(e, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        makeNode = (E) ((TrieNode) e).mutableAddAll((TrieNode) e2, i + 5, deltaCounter, persistentHashSetBuilder);
-                    } else if (z) {
-                        Intrinsics.checkNotNull(e, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        TrieNode trieNode3 = (TrieNode) e;
-                        int size = persistentHashSetBuilder.size();
-                        E e3 = (E) trieNode3.mutableAdd(e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder);
-                        if (persistentHashSetBuilder.size() == size) {
-                            deltaCounter.setCount(deltaCounter.getCount() + 1);
-                        }
-                        Unit unit = Unit.INSTANCE;
-                        makeNode = e3;
-                    } else if (z2) {
-                        Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        TrieNode trieNode4 = (TrieNode) e2;
-                        int size2 = persistentHashSetBuilder.size();
-                        E e4 = (E) trieNode4.mutableAdd(e != null ? e.hashCode() : 0, e, i + 5, persistentHashSetBuilder);
-                        if (persistentHashSetBuilder.size() == size2) {
-                            deltaCounter.setCount(deltaCounter.getCount() + 1);
-                        }
-                        Unit unit2 = Unit.INSTANCE;
-                        makeNode = e4;
-                    } else if (Intrinsics.areEqual(e, e2)) {
-                        deltaCounter.setCount(deltaCounter.getCount() + 1);
-                        Unit unit3 = Unit.INSTANCE;
-                        makeNode = e;
+                    boolean hasNoCellAt = trieNode.hasNoCellAt(lowestOneBit);
+                    Object[] objArr3 = this.buffer;
+                    if (hasNoCellAt) {
+                        makeNode = (E) objArr3[indexOfCellAt$runtime];
                     } else {
-                        objArr = objArr2;
-                        makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder.getOwnership$runtime());
-                        objArr[i5] = makeNode;
-                        i5++;
-                        i4 ^= lowestOneBit;
+                        E e = (E) objArr3[indexOfCellAt$runtime];
+                        E e2 = (E) trieNode.buffer[indexOfCellAt$runtime2];
+                        boolean z = e instanceof TrieNode;
+                        boolean z2 = e2 instanceof TrieNode;
+                        if (z && z2) {
+                            Intrinsics.checkNotNull(e, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            makeNode = (E) ((TrieNode) e).mutableAddAll((TrieNode) e2, i + 5, deltaCounter, persistentHashSetBuilder);
+                        } else if (z) {
+                            Intrinsics.checkNotNull(e, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            TrieNode trieNode3 = (TrieNode) e;
+                            int size = persistentHashSetBuilder.size();
+                            E e3 = (E) trieNode3.mutableAdd(e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder);
+                            if (persistentHashSetBuilder.size() == size) {
+                                deltaCounter.setCount(deltaCounter.getCount() + 1);
+                            }
+                            Unit unit = Unit.INSTANCE;
+                            makeNode = e3;
+                        } else if (z2) {
+                            Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            TrieNode trieNode4 = (TrieNode) e2;
+                            int size2 = persistentHashSetBuilder.size();
+                            E e4 = (E) trieNode4.mutableAdd(e != null ? e.hashCode() : 0, e, i + 5, persistentHashSetBuilder);
+                            if (persistentHashSetBuilder.size() == size2) {
+                                deltaCounter.setCount(deltaCounter.getCount() + 1);
+                            }
+                            Unit unit2 = Unit.INSTANCE;
+                            makeNode = e4;
+                        } else if (Intrinsics.areEqual(e, e2)) {
+                            deltaCounter.setCount(deltaCounter.getCount() + 1);
+                            Unit unit3 = Unit.INSTANCE;
+                            makeNode = e;
+                        } else {
+                            objArr = objArr2;
+                            makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, persistentHashSetBuilder.getOwnership$runtime());
+                            objArr[i5] = makeNode;
+                            i5++;
+                            i4 ^= lowestOneBit;
+                        }
                     }
                 }
                 objArr = objArr2;
@@ -570,11 +594,11 @@ public final class TrieNode<E> {
                 int i6 = 0;
                 int i7 = 0;
                 while (i6 < objArr2.length) {
-                    CommonFunctionsKt.m4792assert(i7 <= i6);
+                    CommonFunctionsKt.m4157assert(i7 <= i6);
                     if (objArr2[i6] != Companion.getEMPTY$runtime()) {
                         objArr[i7] = objArr2[i6];
                         i7++;
-                        CommonFunctionsKt.m4792assert(i7 <= bitCount);
+                        CommonFunctionsKt.m4157assert(i7 <= bitCount);
                     }
                     i6++;
                 }
@@ -665,11 +689,11 @@ public final class TrieNode<E> {
                     int i5 = 0;
                     int i6 = 0;
                     while (i5 < objArr4.length) {
-                        CommonFunctionsKt.m4792assert(i6 <= i5);
+                        CommonFunctionsKt.m4157assert(i6 <= i5);
                         if (objArr4[i5] != Companion.getEMPTY$runtime()) {
                             objArr3[i6] = objArr4[i5];
                             i6++;
-                            CommonFunctionsKt.m4792assert(i6 <= bitCount);
+                            CommonFunctionsKt.m4157assert(i6 <= bitCount);
                         }
                         i5++;
                     }

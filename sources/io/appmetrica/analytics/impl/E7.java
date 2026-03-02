@@ -14,20 +14,20 @@ public final class E7 implements ServiceComponentsInitializer {
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer
     public final void onCreate(Context context) {
-        Sc sc = C0449na.I.s;
+        Sc sc = C0448na.I.s;
         List<String> list = this.f563a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (String str : list) {
-            arrayList.add(new C0519q5(str));
+            arrayList.add(new C0518q5(str));
         }
-        Object[] array = arrayList.toArray(new C0519q5[0]);
+        Object[] array = arrayList.toArray(new C0518q5[0]);
         if (array != null) {
-            C0519q5[] c0519q5Arr = (C0519q5[]) array;
-            Rc[] rcArr = (Rc[]) Arrays.copyOf(c0519q5Arr, c0519q5Arr.length);
+            C0518q5[] c0518q5Arr = (C0518q5[]) array;
+            Rc[] rcArr = (Rc[]) Arrays.copyOf(c0518q5Arr, c0518q5Arr.length);
             synchronized (sc) {
                 CollectionsKt.addAll(sc.f780a, rcArr);
             }
-            C0449na.I.s.a(new Ue(context, "io.appmetrica.analytics.modules.ads", "lsm"));
+            C0448na.I.s.a(new Ue(context, "io.appmetrica.analytics.modules.ads", "lsm"));
             return;
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");

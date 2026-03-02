@@ -83,13 +83,13 @@ public final class SavedStateRegistryImpl {
         if (bundle == null) {
             return null;
         }
-        Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
-        Bundle m9266getSavedStateimpl = SavedStateReader.m9210containsimpl(m9209constructorimpl, key) ? SavedStateReader.m9266getSavedStateimpl(m9209constructorimpl, key) : null;
-        SavedStateWriter.m9331removeimpl(SavedStateWriter.m9295constructorimpl(bundle), key);
-        if (SavedStateReader.m9287isEmptyimpl(SavedStateReader.m9209constructorimpl(bundle))) {
+        Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
+        Bundle m8471getSavedStateimpl = SavedStateReader.m8415containsimpl(m8414constructorimpl, key) ? SavedStateReader.m8471getSavedStateimpl(m8414constructorimpl, key) : null;
+        SavedStateWriter.m8536removeimpl(SavedStateWriter.m8500constructorimpl(bundle), key);
+        if (SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(bundle))) {
             this.restoredState = null;
         }
-        return m9266getSavedStateimpl;
+        return m8471getSavedStateimpl;
     }
 
     public final void registerSavedStateProvider(String key, SavedStateRegistry.SavedStateProvider provider) {
@@ -150,7 +150,7 @@ public final class SavedStateRegistryImpl {
         this.attached = true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void performAttach$lambda$12(SavedStateRegistryImpl savedStateRegistryImpl, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -173,9 +173,9 @@ public final class SavedStateRegistryImpl {
         }
         Bundle bundle2 = null;
         if (bundle != null) {
-            Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
-            if (SavedStateReader.m9210containsimpl(m9209constructorimpl, SAVED_COMPONENTS_KEY)) {
-                bundle2 = SavedStateReader.m9266getSavedStateimpl(m9209constructorimpl, SAVED_COMPONENTS_KEY);
+            Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
+            if (SavedStateReader.m8415containsimpl(m8414constructorimpl, SAVED_COMPONENTS_KEY)) {
+                bundle2 = SavedStateReader.m8471getSavedStateimpl(m8414constructorimpl, SAVED_COMPONENTS_KEY);
             }
         }
         this.restoredState = bundle2;
@@ -208,20 +208,20 @@ public final class SavedStateRegistryImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf);
+        Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
         Bundle bundle = this.restoredState;
         if (bundle != null) {
-            SavedStateWriter.m9299putAllimpl(m9295constructorimpl, bundle);
+            SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundle);
         }
         synchronized (this.lock) {
             for (Map.Entry entry2 : this.keyToProviders.entrySet()) {
-                SavedStateWriter.m9322putSavedStateimpl(m9295constructorimpl, (String) entry2.getKey(), ((SavedStateRegistry.SavedStateProvider) entry2.getValue()).saveState());
+                SavedStateWriter.m8527putSavedStateimpl(m8500constructorimpl, (String) entry2.getKey(), ((SavedStateRegistry.SavedStateProvider) entry2.getValue()).saveState());
             }
             Unit unit = Unit.INSTANCE;
         }
-        if (SavedStateReader.m9287isEmptyimpl(SavedStateReader.m9209constructorimpl(bundleOf))) {
+        if (SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(bundleOf))) {
             return;
         }
-        SavedStateWriter.m9322putSavedStateimpl(SavedStateWriter.m9295constructorimpl(outBundle), SAVED_COMPONENTS_KEY, bundleOf);
+        SavedStateWriter.m8527putSavedStateimpl(SavedStateWriter.m8500constructorimpl(outBundle), SAVED_COMPONENTS_KEY, bundleOf);
     }
 }

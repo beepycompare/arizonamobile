@@ -17,13 +17,11 @@ public final class LocalNavigationEventDispatcherOwner {
     private static final ProvidableCompositionLocal<NavigationEventDispatcherOwner> LocalNavigationEventDispatcherOwner = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.navigationevent.compose.LocalNavigationEventDispatcherOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            NavigationEventDispatcherOwner LocalNavigationEventDispatcherOwner$lambda$0;
-            LocalNavigationEventDispatcherOwner$lambda$0 = LocalNavigationEventDispatcherOwner.LocalNavigationEventDispatcherOwner$lambda$0();
-            return LocalNavigationEventDispatcherOwner$lambda$0;
+            return LocalNavigationEventDispatcherOwner.LocalNavigationEventDispatcherOwner$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavigationEventDispatcherOwner LocalNavigationEventDispatcherOwner$lambda$0() {
         return null;
     }

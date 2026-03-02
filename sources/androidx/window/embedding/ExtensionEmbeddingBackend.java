@@ -69,9 +69,7 @@ public final class ExtensionEmbeddingBackend implements EmbeddingBackend {
         this.splitSupportStatus$delegate = LazyKt.lazy(new Function0() { // from class: androidx.window.embedding.ExtensionEmbeddingBackend$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SplitController.SplitSupportStatus splitSupportStatus_delegate$lambda$6;
-                splitSupportStatus_delegate$lambda$6 = ExtensionEmbeddingBackend.splitSupportStatus_delegate$lambda$6(ExtensionEmbeddingBackend.this);
-                return splitSupportStatus_delegate$lambda$6;
+                return ExtensionEmbeddingBackend.splitSupportStatus_delegate$lambda$6(ExtensionEmbeddingBackend.this);
             }
         });
     }
@@ -325,14 +323,9 @@ public final class ExtensionEmbeddingBackend implements EmbeddingBackend {
             this.executor.execute(new Runnable() { // from class: androidx.window.embedding.ExtensionEmbeddingBackend$SplitListenerWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ExtensionEmbeddingBackend.SplitListenerWrapper.accept$lambda$1(ExtensionEmbeddingBackend.SplitListenerWrapper.this, arrayList2);
+                    ExtensionEmbeddingBackend.SplitListenerWrapper.this.callback.accept(arrayList2);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void accept$lambda$1(SplitListenerWrapper splitListenerWrapper, List list) {
-            splitListenerWrapper.callback.accept(list);
         }
     }
 
@@ -437,7 +430,7 @@ public final class ExtensionEmbeddingBackend implements EmbeddingBackend {
         return (SplitController.SplitSupportStatus) this.splitSupportStatus$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SplitController.SplitSupportStatus splitSupportStatus_delegate$lambda$6(ExtensionEmbeddingBackend extensionEmbeddingBackend) {
         if (!extensionEmbeddingBackend.areExtensionsAvailable()) {
             return SplitController.SplitSupportStatus.SPLIT_UNAVAILABLE;

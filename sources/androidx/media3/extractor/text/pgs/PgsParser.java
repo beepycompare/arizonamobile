@@ -169,8 +169,11 @@ public final class PgsParser implements SubtitleParser {
                 } else {
                     int readUnsignedByte2 = this.bitmapData.readUnsignedByte();
                     if (readUnsignedByte2 != 0) {
-                        i = ((readUnsignedByte2 & 64) == 0 ? readUnsignedByte2 & 63 : ((readUnsignedByte2 & 63) << 8) | this.bitmapData.readUnsignedByte()) + i3;
-                        Arrays.fill(iArr, i3, i, (readUnsignedByte2 & 128) == 0 ? this.colors[0] : this.colors[this.bitmapData.readUnsignedByte()]);
+                        int readUnsignedByte3 = (readUnsignedByte2 & 64) == 0 ? readUnsignedByte2 & 63 : ((readUnsignedByte2 & 63) << 8) | this.bitmapData.readUnsignedByte();
+                        int i4 = readUnsignedByte2 & 128;
+                        int[] iArr2 = this.colors;
+                        i = readUnsignedByte3 + i3;
+                        Arrays.fill(iArr, i3, i, i4 == 0 ? iArr2[0] : iArr2[this.bitmapData.readUnsignedByte()]);
                     }
                 }
                 i3 = i;

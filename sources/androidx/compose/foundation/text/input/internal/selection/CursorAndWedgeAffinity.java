@@ -32,54 +32,54 @@ public final class CursorAndWedgeAffinity {
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ CursorAndWedgeAffinity m1701boximpl(long j) {
+    public static final /* synthetic */ CursorAndWedgeAffinity m1473boximpl(long j) {
         return new CursorAndWedgeAffinity(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1706constructorimpl(long j) {
+    public static long m1478constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1707equalsimpl(long j, Object obj) {
-        return (obj instanceof CursorAndWedgeAffinity) && j == ((CursorAndWedgeAffinity) obj).m1713unboximpl();
+    public static boolean m1479equalsimpl(long j, Object obj) {
+        return (obj instanceof CursorAndWedgeAffinity) && j == ((CursorAndWedgeAffinity) obj).m1485unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1708equalsimpl0(long j, long j2) {
+    public static final boolean m1480equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getCursor-impl  reason: not valid java name */
-    public static final int m1709getCursorimpl(long j) {
+    public static final int m1481getCursorimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1711hashCodeimpl(long j) {
+    public static int m1483hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1712toStringimpl(long j) {
+    public static String m1484toStringimpl(long j) {
         return "CursorAndWedgeAffinity(value=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1707equalsimpl(this.value, obj);
+        return m1479equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1711hashCodeimpl(this.value);
+        return m1483hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1712toStringimpl(this.value);
+        return m1484toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m1713unboximpl() {
+    public final /* synthetic */ long m1485unboximpl() {
         return this.value;
     }
 
@@ -88,12 +88,12 @@ public final class CursorAndWedgeAffinity {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1704constructorimpl(int i) {
-        return m1706constructorimpl((i << 32) | ((-1) & 4294967295L));
+    public static long m1476constructorimpl(int i) {
+        return m1478constructorimpl((i << 32) | ((-1) & 4294967295L));
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1705constructorimpl(int i, WedgeAffinity wedgeAffinity) {
+    public static long m1477constructorimpl(int i, WedgeAffinity wedgeAffinity) {
         int i2 = -1;
         int i3 = wedgeAffinity == null ? -1 : WhenMappings.$EnumSwitchMapping$0[wedgeAffinity.ordinal()];
         if (i3 != -1) {
@@ -104,11 +104,11 @@ public final class CursorAndWedgeAffinity {
                 throw new NoWhenBranchMatchedException();
             }
         }
-        return m1706constructorimpl((i << 32) | (i2 & 4294967295L));
+        return m1478constructorimpl((i << 32) | (i2 & 4294967295L));
     }
 
     /* renamed from: getWedgeAffinity-impl  reason: not valid java name */
-    public static final WedgeAffinity m1710getWedgeAffinityimpl(long j) {
+    public static final WedgeAffinity m1482getWedgeAffinityimpl(long j) {
         int i = (int) (j & 4294967295L);
         if (i < 0) {
             return null;
@@ -120,12 +120,12 @@ public final class CursorAndWedgeAffinity {
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final int m1702component1impl(long j) {
-        return m1709getCursorimpl(j);
+    public static final int m1474component1impl(long j) {
+        return m1481getCursorimpl(j);
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final WedgeAffinity m1703component2impl(long j) {
-        return m1710getWedgeAffinityimpl(j);
+    public static final WedgeAffinity m1475component2impl(long j) {
+        return m1482getWedgeAffinityimpl(j);
     }
 }

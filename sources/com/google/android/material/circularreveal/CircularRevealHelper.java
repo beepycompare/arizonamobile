@@ -116,17 +116,19 @@ public class CircularRevealHelper {
 
     public void draw(Canvas canvas) {
         Canvas canvas2;
-        if (shouldDrawCircularReveal()) {
-            this.delegate.actualDraw(canvas);
+        boolean shouldDrawCircularReveal = shouldDrawCircularReveal();
+        Delegate delegate = this.delegate;
+        if (shouldDrawCircularReveal) {
+            delegate.actualDraw(canvas);
             if (shouldDrawScrim()) {
+                canvas.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
                 canvas2 = canvas;
-                canvas2.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
             } else {
                 canvas2 = canvas;
             }
         } else {
             canvas2 = canvas;
-            this.delegate.actualDraw(canvas2);
+            delegate.actualDraw(canvas2);
             if (shouldDrawScrim()) {
                 canvas2.drawRect(0.0f, 0.0f, this.view.getWidth(), this.view.getHeight(), this.scrimPaint);
             }

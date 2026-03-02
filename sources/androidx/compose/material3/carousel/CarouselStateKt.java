@@ -49,15 +49,13 @@ public final class CarouselStateKt {
             rememberedValue = new Function0() { // from class: androidx.compose.material3.carousel.CarouselStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    CarouselState rememberCarouselState$lambda$1$lambda$0;
-                    rememberCarouselState$lambda$1$lambda$0 = CarouselStateKt.rememberCarouselState$lambda$1$lambda$0(i, function0);
-                    return rememberCarouselState$lambda$1$lambda$0;
+                    return CarouselStateKt.rememberCarouselState$lambda$1$lambda$0(i, function0);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        CarouselState carouselState = (CarouselState) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        CarouselState carouselState = (CarouselState) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         carouselState.getPagerState$material3().getPageCountState().setValue(function0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
@@ -66,7 +64,7 @@ public final class CarouselStateKt {
         return carouselState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CarouselState rememberCarouselState$lambda$1$lambda$0(int i, Function0 function0) {
         return new CarouselState(i, 0.0f, function0);
     }
@@ -90,22 +88,20 @@ public final class CarouselStateKt {
         Object animate$default = SuspendAnimationKt.animate$default(0.0f, calculateScrollDistanceTo, 0.0f, animationSpec, new Function2() { // from class: androidx.compose.material3.carousel.CarouselStateKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit animateScrollToPage$lambda$3;
-                animateScrollToPage$lambda$3 = CarouselStateKt.animateScrollToPage$lambda$3(Ref.FloatRef.this, lazyLayoutScrollScope, ((Float) obj).floatValue(), ((Float) obj2).floatValue());
-                return animateScrollToPage$lambda$3;
+                return CarouselStateKt.animateScrollToPage$lambda$3(Ref.FloatRef.this, lazyLayoutScrollScope, ((Float) obj).floatValue(), ((Float) obj2).floatValue());
             }
         }, continuation, 4, null);
         return animate$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animate$default : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit animateScrollToPage$lambda$3(Ref.FloatRef floatRef, LazyLayoutScrollScope lazyLayoutScrollScope, float f, float f2) {
         floatRef.element += lazyLayoutScrollScope.scrollBy(f - floatRef.element);
         return Unit.INSTANCE;
     }
 
     private static final float calculateScrollDistanceTo(PagerState pagerState, int i, int i2) {
-        int mo1225getViewportSizeYbymL2g = (int) (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal ? pagerState.getLayoutInfo().mo1225getViewportSizeYbymL2g() >> 32 : pagerState.getLayoutInfo().mo1225getViewportSizeYbymL2g() & 4294967295L);
-        return ((i2 - i) * (pagerState.getLayoutInfo().getPageSize() + pagerState.getLayoutInfo().getPageSpacing())) + (pagerState.getLayoutInfo().getSnapPosition().position(mo1225getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i, pagerState.getPageCount()) - pagerState.getLayoutInfo().getSnapPosition().position(mo1225getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i2, pagerState.getPageCount()));
+        int mo1076getViewportSizeYbymL2g = (int) (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal ? pagerState.getLayoutInfo().mo1076getViewportSizeYbymL2g() >> 32 : pagerState.getLayoutInfo().mo1076getViewportSizeYbymL2g() & 4294967295L);
+        return ((i2 - i) * (pagerState.getLayoutInfo().getPageSize() + pagerState.getLayoutInfo().getPageSpacing())) + (pagerState.getLayoutInfo().getSnapPosition().position(mo1076getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i, pagerState.getPageCount()) - pagerState.getLayoutInfo().getSnapPosition().position(mo1076getViewportSizeYbymL2g, pagerState.getLayoutInfo().getPageSize(), pagerState.getLayoutInfo().getBeforeContentPadding(), pagerState.getLayoutInfo().getAfterContentPadding(), i2, pagerState.getPageCount()));
     }
 }

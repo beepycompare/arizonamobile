@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IFragmentWrapper;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class SupportFragmentWrapper extends IFragmentWrapper.Stub {
     private final Fragment zza;

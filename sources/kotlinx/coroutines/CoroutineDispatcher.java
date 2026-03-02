@@ -25,7 +25,7 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
     public static final Key Key = new Key(null);
 
     /* renamed from: dispatch */
-    public abstract void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable);
+    public abstract void mo10758dispatch(CoroutineContext coroutineContext, Runnable runnable);
 
     public boolean isDispatchNeeded(CoroutineContext coroutineContext) {
         return true;
@@ -62,14 +62,12 @@ public abstract class CoroutineDispatcher extends AbstractCoroutineContextElemen
             super(ContinuationInterceptor.Key, new Function1() { // from class: kotlinx.coroutines.CoroutineDispatcher$Key$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    CoroutineDispatcher _init_$lambda$0;
-                    _init_$lambda$0 = CoroutineDispatcher.Key._init_$lambda$0((CoroutineContext.Element) obj);
-                    return _init_$lambda$0;
+                    return CoroutineDispatcher.Key._init_$lambda$0((CoroutineContext.Element) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final CoroutineDispatcher _init_$lambda$0(CoroutineContext.Element element) {
             if (element instanceof CoroutineDispatcher) {
                 return (CoroutineDispatcher) element;

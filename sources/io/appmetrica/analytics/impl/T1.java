@@ -7,12 +7,12 @@ public final class T1 {
 
     /* renamed from: a  reason: collision with root package name */
     public final List f790a;
-    public final C0690x2 b;
+    public final C0689x2 b;
     public final List c;
 
-    public T1(List list, C0690x2 c0690x2, List list2) {
+    public T1(List list, C0689x2 c0689x2, List list2) {
         this.f790a = list;
-        this.b = c0690x2;
+        this.b = c0689x2;
         this.c = list2;
     }
 

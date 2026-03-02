@@ -10,55 +10,55 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class BaselineShift {
     private final float multiplier;
     public static final Companion Companion = new Companion(null);
-    private static final float Superscript = m7999constructorimpl(0.5f);
-    private static final float Subscript = m7999constructorimpl(-0.5f);
-    private static final float None = m7999constructorimpl(0.0f);
-    private static final float Unspecified = m7999constructorimpl(Float.NaN);
+    private static final float Superscript = m7296constructorimpl(0.5f);
+    private static final float Subscript = m7296constructorimpl(-0.5f);
+    private static final float None = m7296constructorimpl(0.0f);
+    private static final float Unspecified = m7296constructorimpl(Float.NaN);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ BaselineShift m7998boximpl(float f) {
+    public static final /* synthetic */ BaselineShift m7295boximpl(float f) {
         return new BaselineShift(f);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float m7999constructorimpl(float f) {
+    public static float m7296constructorimpl(float f) {
         return f;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8000equalsimpl(float f, Object obj) {
-        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m8004unboximpl()) == 0;
+    public static boolean m7297equalsimpl(float f, Object obj) {
+        return (obj instanceof BaselineShift) && Float.compare(f, ((BaselineShift) obj).m7301unboximpl()) == 0;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8001equalsimpl0(float f, float f2) {
+    public static final boolean m7298equalsimpl0(float f, float f2) {
         return Float.compare(f, f2) == 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8002hashCodeimpl(float f) {
+    public static int m7299hashCodeimpl(float f) {
         return Float.hashCode(f);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8003toStringimpl(float f) {
+    public static String m7300toStringimpl(float f) {
         return "BaselineShift(multiplier=" + f + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8000equalsimpl(this.multiplier, obj);
+        return m7297equalsimpl(this.multiplier, obj);
     }
 
     public int hashCode() {
-        return m8002hashCodeimpl(this.multiplier);
+        return m7299hashCodeimpl(this.multiplier);
     }
 
     public String toString() {
-        return m8003toStringimpl(this.multiplier);
+        return m7300toStringimpl(this.multiplier);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float m8004unboximpl() {
+    public final /* synthetic */ float m7301unboximpl() {
         return this.multiplier;
     }
 
@@ -71,41 +71,41 @@ public final class BaselineShift {
         }
 
         /* renamed from: getNone-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8005getNoney9eOQZs$annotations() {
+        public static /* synthetic */ void m7302getNoney9eOQZs$annotations() {
         }
 
         /* renamed from: getSubscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8006getSubscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7303getSubscripty9eOQZs$annotations() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8007getSuperscripty9eOQZs$annotations() {
+        public static /* synthetic */ void m7304getSuperscripty9eOQZs$annotations() {
         }
 
         /* renamed from: getUnspecified-y9eOQZs$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8008getUnspecifiedy9eOQZs$annotations() {
+        public static /* synthetic */ void m7305getUnspecifiedy9eOQZs$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getSuperscript-y9eOQZs  reason: not valid java name */
-        public final float m8011getSuperscripty9eOQZs() {
+        public final float m7308getSuperscripty9eOQZs() {
             return BaselineShift.Superscript;
         }
 
         /* renamed from: getSubscript-y9eOQZs  reason: not valid java name */
-        public final float m8010getSubscripty9eOQZs() {
+        public final float m7307getSubscripty9eOQZs() {
             return BaselineShift.Subscript;
         }
 
         /* renamed from: getNone-y9eOQZs  reason: not valid java name */
-        public final float m8009getNoney9eOQZs() {
+        public final float m7306getNoney9eOQZs() {
             return BaselineShift.None;
         }
 
         /* renamed from: getUnspecified-y9eOQZs  reason: not valid java name */
-        public final float m8012getUnspecifiedy9eOQZs() {
+        public final float m7309getUnspecifiedy9eOQZs() {
             return BaselineShift.Unspecified;
         }
     }

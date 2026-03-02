@@ -45,7 +45,7 @@ public final class CoreTextFieldKt$CoreTextField$8$1$1$2 implements MeasurePolic
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Snapshot.Companion companion = Snapshot.Companion;
         LegacyTextFieldState legacyTextFieldState = this.$state;
         Snapshot currentThreadSnapshot = companion.getCurrentThreadSnapshot();
@@ -54,32 +54,28 @@ public final class CoreTextFieldKt$CoreTextField$8$1$1$2 implements MeasurePolic
         try {
             TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
             TextLayoutResult value = layoutResult != null ? layoutResult.getValue() : null;
-            Triple<Integer, Integer, TextLayoutResult> m1437layout_EkL_Y$foundation = TextFieldDelegate.Companion.m1437layout_EkL_Y$foundation(this.$state.getTextDelegate(), j, measureScope.getLayoutDirection(), value);
-            int intValue = m1437layout_EkL_Y$foundation.component1().intValue();
-            int intValue2 = m1437layout_EkL_Y$foundation.component2().intValue();
-            TextLayoutResult component3 = m1437layout_EkL_Y$foundation.component3();
+            Triple<Integer, Integer, TextLayoutResult> m1263layout_EkL_Y$foundation = TextFieldDelegate.Companion.m1263layout_EkL_Y$foundation(this.$state.getTextDelegate(), j, measureScope.getLayoutDirection(), value);
+            int intValue = m1263layout_EkL_Y$foundation.component1().intValue();
+            int intValue2 = m1263layout_EkL_Y$foundation.component2().intValue();
+            TextLayoutResult component3 = m1263layout_EkL_Y$foundation.component3();
             if (!Intrinsics.areEqual(value, component3)) {
                 this.$state.setLayoutResult(new TextLayoutResultProxy(component3, null, layoutResult != null ? layoutResult.getDecorationBoxCoordinates() : null, 2, null));
                 this.$onTextLayout.invoke(component3);
                 CoreTextFieldKt.notifyFocusedRect(this.$state, this.$value, this.$offsetMapping);
             }
-            this.$state.m1396setMinHeightForSingleLineField0680j_4(this.$density.mo461toDpu2uoSUM(this.$maxLines == 1 ? TextDelegateKt.ceilToIntPx(component3.getLineBottom(0)) : 0));
+            this.$state.m1223setMinHeightForSingleLineField0680j_4(this.$density.mo402toDpu2uoSUM(this.$maxLines == 1 ? TextDelegateKt.ceilToIntPx(component3.getLineBottom(0)) : 0));
             return measureScope.layout(intValue, intValue2, MapsKt.mapOf(TuplesKt.to(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(component3.getFirstBaseline()))), TuplesKt.to(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(component3.getLastBaseline())))), new Function1() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$8$1$1$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$2;
-                    measure_3p2s80s$lambda$2 = CoreTextFieldKt$CoreTextField$8$1$1$2.measure_3p2s80s$lambda$2((Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$2;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             });
         } finally {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$2(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.ui.layout.MeasurePolicy

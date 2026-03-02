@@ -14,7 +14,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MediaPeriodQueue {
     public static final long INITIAL_RENDERER_POSITION_OFFSET_US = 1000000000000L;
     private static final int MAXIMUM_BUFFER_AHEAD_PERIODS = 100;
@@ -464,14 +464,14 @@ public final class MediaPeriodQueue {
         this.analyticsCollectorHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaPeriodQueue.this.m8922x6b40a91a(builder, mediaPeriodId);
+                MediaPeriodQueue.this.m8199x6b40a91a(builder, mediaPeriodId);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$notifyQueueUpdate$0$androidx-media3-exoplayer-MediaPeriodQueue  reason: not valid java name */
-    public /* synthetic */ void m8922x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
+    public /* synthetic */ void m8199x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
         this.analyticsCollector.updateMediaPeriodQueueInfo(builder.build(), mediaPeriodId);
     }
 
@@ -681,17 +681,18 @@ public final class MediaPeriodQueue {
         long j7 = j;
         timeline.getPeriodByUid(obj, this.period);
         int adGroupIndexAfterPositionUs = this.period.getAdGroupIndexAfterPositionUs(j7);
+        Timeline.Period period = this.period;
         int i = 1;
         if (adGroupIndexAfterPositionUs == -1) {
-            if (this.period.getAdGroupCount() > 0) {
-                Timeline.Period period = this.period;
-                if (period.isServerSideInsertedAdGroup(period.getRemovedAdGroupCount())) {
+            if (period.getAdGroupCount() > 0) {
+                Timeline.Period period2 = this.period;
+                if (period2.isServerSideInsertedAdGroup(period2.getRemovedAdGroupCount())) {
                     z2 = true;
                 }
             }
             z2 = false;
         } else {
-            if (this.period.isServerSideInsertedAdGroup(adGroupIndexAfterPositionUs) && this.period.getAdGroupTimeUs(adGroupIndexAfterPositionUs) == this.period.durationUs && this.period.hasPlayedAdGroup(adGroupIndexAfterPositionUs)) {
+            if (period.isServerSideInsertedAdGroup(adGroupIndexAfterPositionUs) && this.period.getAdGroupTimeUs(adGroupIndexAfterPositionUs) == this.period.durationUs && this.period.hasPlayedAdGroup(adGroupIndexAfterPositionUs)) {
                 z2 = true;
                 adGroupIndexAfterPositionUs = -1;
             }
@@ -749,9 +750,11 @@ public final class MediaPeriodQueue {
     private long getMinStartPositionAfterAdGroupUs(Timeline timeline, Object obj, int i) {
         timeline.getPeriodByUid(obj, this.period);
         long adGroupTimeUs = this.period.getAdGroupTimeUs(i);
-        if (adGroupTimeUs == Long.MIN_VALUE) {
-            return this.period.durationUs;
+        int i2 = (adGroupTimeUs > Long.MIN_VALUE ? 1 : (adGroupTimeUs == Long.MIN_VALUE ? 0 : -1));
+        Timeline.Period period = this.period;
+        if (i2 == 0) {
+            return period.durationUs;
         }
-        return adGroupTimeUs + this.period.getContentResumeOffsetUs(i);
+        return adGroupTimeUs + period.getContentResumeOffsetUs(i);
     }
 }

@@ -9,9 +9,9 @@ public final class k implements BillingInfoStorage {
 
     /* renamed from: a  reason: collision with root package name */
     public final ProtobufStateStorage f313a;
-    public C0096a b;
+    public C0095a b;
 
-    public k(ProtobufStateStorage<C0096a> protobufStateStorage) {
+    public k(ProtobufStateStorage<C0095a> protobufStateStorage) {
         this.f313a = protobufStateStorage;
         this.b = protobufStateStorage.read();
     }
@@ -30,8 +30,8 @@ public final class k implements BillingInfoStorage {
     public final void saveInfo(List<? extends BillingInfo> list, boolean z) {
         for (BillingInfo billingInfo : list) {
         }
-        C0096a c0096a = new C0096a(list, z);
-        this.b = c0096a;
-        this.f313a.save(c0096a);
+        C0095a c0095a = new C0095a(list, z);
+        this.b = c0095a;
+        this.f313a.save(c0095a);
     }
 }

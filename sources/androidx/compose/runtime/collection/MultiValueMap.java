@@ -23,49 +23,49 @@ public final class MultiValueMap<K, V> {
     private final MutableScatterMap<Object, Object> map;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ MultiValueMap m4753boximpl(MutableScatterMap mutableScatterMap) {
+    public static final /* synthetic */ MultiValueMap m4118boximpl(MutableScatterMap mutableScatterMap) {
         return new MultiValueMap(mutableScatterMap);
     }
 
     /* renamed from: constructor-impl */
-    public static <K, V> MutableScatterMap<Object, Object> m4755constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static <K, V> MutableScatterMap<Object, Object> m4120constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m4758equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
-        return (obj instanceof MultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((MultiValueMap) obj).m4771unboximpl());
+    public static boolean m4123equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+        return (obj instanceof MultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((MultiValueMap) obj).m4136unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m4759equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
+    public static final boolean m4124equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
         return Intrinsics.areEqual(mutableScatterMap, mutableScatterMap2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m4763hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static int m4128hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m4769toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static String m4134toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return "MultiValueMap(map=" + mutableScatterMap + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4758equalsimpl(this.map, obj);
+        return m4123equalsimpl(this.map, obj);
     }
 
     public int hashCode() {
-        return m4763hashCodeimpl(this.map);
+        return m4128hashCodeimpl(this.map);
     }
 
     public String toString() {
-        return m4769toStringimpl(this.map);
+        return m4134toStringimpl(this.map);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableScatterMap m4771unboximpl() {
+    public final /* synthetic */ MutableScatterMap m4136unboximpl() {
         return this.map;
     }
 
@@ -74,25 +74,25 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableScatterMap m4756constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableScatterMap m4121constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableScatterMap = new MutableScatterMap(0, 1, null);
         }
-        return m4755constructorimpl(mutableScatterMap);
+        return m4120constructorimpl(mutableScatterMap);
     }
 
     /* renamed from: clear-impl */
-    public static final void m4754clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final void m4119clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         mutableScatterMap.clear();
     }
 
     /* renamed from: contains-impl */
-    public static final boolean m4757containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final boolean m4122containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         return mutableScatterMap.contains(k);
     }
 
     /* renamed from: get-impl */
-    public static final ObjectList<V> m4762getimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final ObjectList<V> m4127getimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         Object obj = mutableScatterMap.get(k);
         if (obj == null) {
             return ObjectListKt.emptyObjectList();
@@ -101,17 +101,17 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: isEmpty-impl */
-    public static final boolean m4764isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m4129isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isEmpty();
     }
 
     /* renamed from: isNotEmpty-impl */
-    public static final boolean m4765isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m4130isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isNotEmpty();
     }
 
     /* renamed from: removeLast-impl */
-    public static final V m4767removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final V m4132removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         V v = (V) mutableScatterMap.get(k);
         if (v == null) {
             return null;
@@ -133,7 +133,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: removeFirst-impl */
-    public static final V m4766removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final V m4131removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         V v = (V) mutableScatterMap.get(k);
         if (v == null) {
             return null;
@@ -154,7 +154,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: values-impl */
-    public static final ObjectList<V> m4770valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final ObjectList<V> m4135valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         if (mutableScatterMap.isEmpty()) {
             return ObjectListKt.emptyObjectList();
         }
@@ -196,7 +196,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: forEachValue-impl */
-    public static final void m4760forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
+    public static final void m4125forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
         Object obj = mutableScatterMap.get(k);
         if (obj != null) {
             if (obj instanceof MutableObjectList) {
@@ -215,7 +215,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: forEachValue-impl */
-    public static final void m4761forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super V, Unit> function1) {
+    public static final void m4126forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super V, Unit> function1) {
         MutableScatterMap<Object, Object> mutableScatterMap2 = mutableScatterMap;
         Object[] objArr = mutableScatterMap2.values;
         long[] jArr = mutableScatterMap2.metadata;
@@ -259,7 +259,7 @@ public final class MultiValueMap<K, V> {
     }
 
     /* renamed from: removeValueIf-impl */
-    public static final void m4768removeValueIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Boolean> function1) {
+    public static final void m4133removeValueIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Boolean> function1) {
         Object obj = mutableScatterMap.get(k);
         if (obj != null) {
             if (obj instanceof MutableObjectList) {
@@ -298,7 +298,7 @@ public final class MultiValueMap<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: add-impl */
-    public static final void m4752addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
+    public static final void m4117addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
         int findInsertIndex = mutableScatterMap.findInsertIndex(k);
         boolean z = findInsertIndex < 0;
         Object obj = z ? null : mutableScatterMap.values[findInsertIndex];

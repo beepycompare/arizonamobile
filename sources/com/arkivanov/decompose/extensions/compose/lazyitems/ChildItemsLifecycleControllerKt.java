@@ -33,19 +33,19 @@ import kotlin.ranges.RangesKt;
 @Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\u001aY\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0010\u0010\u0004\u001a\f\u0012\u0004\u0012\u0002H\u0002\u0012\u0002\b\u00030\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\t2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\nH\u0007¢\u0006\u0002\u0010\r\u001aY\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0010\u0010\u0004\u001a\f\u0012\u0004\u0012\u0002H\u0002\u0012\u0002\b\u00030\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\t2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\nH\u0007¢\u0006\u0002\u0010\u0010\u001a]\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0010\u0010\u0004\u001a\f\u0012\u0004\u0012\u0002H\u0002\u0012\u0002\b\u00030\u00052\u0006\u0010\f\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\n2\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\t2\u0006\u0010\u0011\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\nH\u0003¢\u0006\u0002\u0010\u0013¨\u0006\u0014²\u0006\n\u0010\u0011\u001a\u00020\nX\u008a\u0084\u0002²\u0006\n\u0010\u0012\u001a\u00020\nX\u008a\u0084\u0002²\u0006\n\u0010\u0011\u001a\u00020\nX\u008a\u0084\u0002²\u0006\n\u0010\u0012\u001a\u00020\nX\u008a\u0084\u0002²\u0006 \u0010\u0015\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00030\u0016\"\b\b\u0000\u0010\u0002*\u00020\u0003X\u008a\u0084\u0002²\u0006\u0016\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\tX\u008a\u0084\u0002"}, d2 = {"ChildItemsLifecycleController", "", "C", "", "items", "Lcom/arkivanov/decompose/router/items/LazyChildItems;", "lazyListState", "Landroidx/compose/foundation/lazy/LazyListState;", "itemIndexConverter", "Lkotlin/Function1;", "", "forwardPreloadCount", "backwardPreloadCount", "(Lcom/arkivanov/decompose/router/items/LazyChildItems;Landroidx/compose/foundation/lazy/LazyListState;Lkotlin/jvm/functions/Function1;IILandroidx/compose/runtime/Composer;II)V", "lazyGridState", "Landroidx/compose/foundation/lazy/grid/LazyGridState;", "(Lcom/arkivanov/decompose/router/items/LazyChildItems;Landroidx/compose/foundation/lazy/grid/LazyGridState;Lkotlin/jvm/functions/Function1;IILandroidx/compose/runtime/Composer;II)V", "firstIndex", "lastIndex", "(Lcom/arkivanov/decompose/router/items/LazyChildItems;IILkotlin/jvm/functions/Function1;IILandroidx/compose/runtime/Composer;I)V", "extensions-compose_release", "childItems", "Lcom/arkivanov/decompose/router/items/ChildItems;", "itemIndexConverterRef"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ChildItemsLifecycleControllerKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ChildItemsLifecycleController$lambda$13(LazyChildItems lazyChildItems, LazyGridState lazyGridState, Function1 function1, int i, int i2, int i3, int i4, Composer composer, int i5) {
         ChildItemsLifecycleController(lazyChildItems, lazyGridState, function1, i, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ChildItemsLifecycleController$lambda$21(LazyChildItems lazyChildItems, int i, int i2, Function1 function1, int i3, int i4, int i5, Composer composer, int i6) {
         ChildItemsLifecycleController(lazyChildItems, i, i2, function1, i3, i4, composer, RecomposeScopeImplKt.updateChangedFlags(i5 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ChildItemsLifecycleController$lambda$6(LazyChildItems lazyChildItems, LazyListState lazyListState, Function1 function1, int i, int i2, int i3, int i4, Composer composer, int i5) {
         ChildItemsLifecycleController(lazyChildItems, lazyListState, function1, i, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
@@ -131,9 +131,7 @@ public final class ChildItemsLifecycleControllerKt {
                         rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                int ChildItemsLifecycleController$lambda$1$lambda$0;
-                                ChildItemsLifecycleController$lambda$1$lambda$0 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this);
-                                return Integer.valueOf(ChildItemsLifecycleController$lambda$1$lambda$0);
+                                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this));
                             }
                         });
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -147,9 +145,7 @@ public final class ChildItemsLifecycleControllerKt {
                         rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda3
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                int ChildItemsLifecycleController$lambda$4$lambda$3;
-                                ChildItemsLifecycleController$lambda$4$lambda$3 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this);
-                                return Integer.valueOf(ChildItemsLifecycleController$lambda$4$lambda$3);
+                                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this));
                             }
                         });
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -176,9 +172,7 @@ public final class ChildItemsLifecycleControllerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ChildItemsLifecycleController$lambda$6;
-                            ChildItemsLifecycleController$lambda$6 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$6(LazyChildItems.this, lazyListState, itemIndexConverter, i10, i9, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
-                            return ChildItemsLifecycleController$lambda$6;
+                            return ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$6(LazyChildItems.this, lazyListState, itemIndexConverter, i10, i9, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -204,9 +198,7 @@ public final class ChildItemsLifecycleControllerKt {
             rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    int ChildItemsLifecycleController$lambda$1$lambda$0;
-                    ChildItemsLifecycleController$lambda$1$lambda$0 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this);
-                    return Integer.valueOf(ChildItemsLifecycleController$lambda$1$lambda$0);
+                    return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this));
                 }
             });
             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -221,9 +213,7 @@ public final class ChildItemsLifecycleControllerKt {
             rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    int ChildItemsLifecycleController$lambda$4$lambda$3;
-                    ChildItemsLifecycleController$lambda$4$lambda$3 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this);
-                    return Integer.valueOf(ChildItemsLifecycleController$lambda$4$lambda$3);
+                    return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this));
                 }
             });
             startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -265,9 +255,7 @@ public final class ChildItemsLifecycleControllerKt {
         rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int ChildItemsLifecycleController$lambda$1$lambda$0;
-                ChildItemsLifecycleController$lambda$1$lambda$0 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this);
-                return Integer.valueOf(ChildItemsLifecycleController$lambda$1$lambda$0);
+                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState.this));
             }
         });
         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -282,9 +270,7 @@ public final class ChildItemsLifecycleControllerKt {
         rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int ChildItemsLifecycleController$lambda$4$lambda$3;
-                ChildItemsLifecycleController$lambda$4$lambda$3 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this);
-                return Integer.valueOf(ChildItemsLifecycleController$lambda$4$lambda$3);
+                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState.this));
             }
         });
         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -304,7 +290,7 @@ public final class ChildItemsLifecycleControllerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int ChildItemsLifecycleController$lambda$1$lambda$0(LazyListState lazyListState) {
         LazyListItemInfo lazyListItemInfo = (LazyListItemInfo) CollectionsKt.firstOrNull((List<? extends Object>) lazyListState.getLayoutInfo().getVisibleItemsInfo());
         if (lazyListItemInfo != null) {
@@ -313,7 +299,7 @@ public final class ChildItemsLifecycleControllerKt {
         return -1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int ChildItemsLifecycleController$lambda$4$lambda$3(LazyListState lazyListState) {
         LazyListItemInfo lazyListItemInfo = (LazyListItemInfo) CollectionsKt.lastOrNull((List<? extends Object>) lazyListState.getLayoutInfo().getVisibleItemsInfo());
         if (lazyListItemInfo != null) {
@@ -402,9 +388,7 @@ public final class ChildItemsLifecycleControllerKt {
                         rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda5
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                int ChildItemsLifecycleController$lambda$8$lambda$7;
-                                ChildItemsLifecycleController$lambda$8$lambda$7 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this);
-                                return Integer.valueOf(ChildItemsLifecycleController$lambda$8$lambda$7);
+                                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this));
                             }
                         });
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -418,9 +402,7 @@ public final class ChildItemsLifecycleControllerKt {
                         rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda6
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                int ChildItemsLifecycleController$lambda$11$lambda$10;
-                                ChildItemsLifecycleController$lambda$11$lambda$10 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this);
-                                return Integer.valueOf(ChildItemsLifecycleController$lambda$11$lambda$10);
+                                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this));
                             }
                         });
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -447,9 +429,7 @@ public final class ChildItemsLifecycleControllerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ChildItemsLifecycleController$lambda$13;
-                            ChildItemsLifecycleController$lambda$13 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$13(LazyChildItems.this, lazyGridState, itemIndexConverter, i10, i9, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
-                            return ChildItemsLifecycleController$lambda$13;
+                            return ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$13(LazyChildItems.this, lazyGridState, itemIndexConverter, i10, i9, i3, i4, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -475,9 +455,7 @@ public final class ChildItemsLifecycleControllerKt {
             rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    int ChildItemsLifecycleController$lambda$8$lambda$7;
-                    ChildItemsLifecycleController$lambda$8$lambda$7 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this);
-                    return Integer.valueOf(ChildItemsLifecycleController$lambda$8$lambda$7);
+                    return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this));
                 }
             });
             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -492,9 +470,7 @@ public final class ChildItemsLifecycleControllerKt {
             rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    int ChildItemsLifecycleController$lambda$11$lambda$10;
-                    ChildItemsLifecycleController$lambda$11$lambda$10 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this);
-                    return Integer.valueOf(ChildItemsLifecycleController$lambda$11$lambda$10);
+                    return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this));
                 }
             });
             startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -536,9 +512,7 @@ public final class ChildItemsLifecycleControllerKt {
         rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int ChildItemsLifecycleController$lambda$8$lambda$7;
-                ChildItemsLifecycleController$lambda$8$lambda$7 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this);
-                return Integer.valueOf(ChildItemsLifecycleController$lambda$8$lambda$7);
+                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState.this));
             }
         });
         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -553,9 +527,7 @@ public final class ChildItemsLifecycleControllerKt {
         rememberedValue2 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int ChildItemsLifecycleController$lambda$11$lambda$10;
-                ChildItemsLifecycleController$lambda$11$lambda$10 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this);
-                return Integer.valueOf(ChildItemsLifecycleController$lambda$11$lambda$10);
+                return Integer.valueOf(ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState.this));
             }
         });
         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -575,7 +547,7 @@ public final class ChildItemsLifecycleControllerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int ChildItemsLifecycleController$lambda$8$lambda$7(LazyGridState lazyGridState) {
         LazyGridItemInfo lazyGridItemInfo = (LazyGridItemInfo) CollectionsKt.firstOrNull((List<? extends Object>) lazyGridState.getLayoutInfo().getVisibleItemsInfo());
         if (lazyGridItemInfo != null) {
@@ -584,7 +556,7 @@ public final class ChildItemsLifecycleControllerKt {
         return -1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int ChildItemsLifecycleController$lambda$11$lambda$10(LazyGridState lazyGridState) {
         LazyGridItemInfo lazyGridItemInfo = (LazyGridItemInfo) CollectionsKt.lastOrNull((List<? extends Object>) lazyGridState.getLayoutInfo().getVisibleItemsInfo());
         if (lazyGridItemInfo != null) {
@@ -635,9 +607,7 @@ public final class ChildItemsLifecycleControllerKt {
                 Function1 function12 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult ChildItemsLifecycleController$lambda$20$lambda$19;
-                        ChildItemsLifecycleController$lambda$20$lambda$19 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$20$lambda$19(LazyChildItems.this, i3, i4, i, i2, items, rememberUpdatedState, (DisposableEffectScope) obj);
-                        return ChildItemsLifecycleController$lambda$20$lambda$19;
+                        return ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$20$lambda$19(LazyChildItems.this, i3, i4, i, i2, items, rememberUpdatedState, (DisposableEffectScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(function12);
@@ -659,15 +629,13 @@ public final class ChildItemsLifecycleControllerKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ChildItemsLifecycleController$lambda$21;
-                    ChildItemsLifecycleController$lambda$21 = ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$21(LazyChildItems.this, i, i2, function1, i3, i4, i5, (Composer) obj, ((Integer) obj2).intValue());
-                    return ChildItemsLifecycleController$lambda$21;
+                    return ChildItemsLifecycleControllerKt.ChildItemsLifecycleController$lambda$21(LazyChildItems.this, i, i2, function1, i3, i4, i5, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult ChildItemsLifecycleController$lambda$20$lambda$19(LazyChildItems lazyChildItems, final int i, final int i2, final int i3, final int i4, final List list, final State state, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         lazyChildItems.navigate(new Function1<Items<C>, Items<C>>() { // from class: com.arkivanov.decompose.extensions.compose.lazyitems.ChildItemsLifecycleControllerKt$ChildItemsLifecycleController$lambda$20$lambda$19$$inlined$setActiveItems$1

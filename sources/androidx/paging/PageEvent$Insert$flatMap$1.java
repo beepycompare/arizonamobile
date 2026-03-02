@@ -6,10 +6,11 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageEvent.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageEvent$Insert", f = "PageEvent.kt", i = {0, 0, 0, 0, 0, 0, 0, 0}, l = {140}, m = "flatMap", n = {"transform", "this_$iv$iv", "destination$iv$iv$iv", "it", "data", "originalIndices", "index$iv", FirebaseAnalytics.Param.INDEX}, s = {"L$0", "L$1", "L$3", "L$5", "L$6", "L$7", "I$0", "I$1"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageEvent$Insert", f = "PageEvent.kt", i = {0, 0, 0, 0, 0, 0, 0, 0}, l = {BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER}, m = "flatMap", n = {"transform", "this_$iv$iv", "destination$iv$iv$iv", "it", "data", "originalIndices", "index$iv", FirebaseAnalytics.Param.INDEX}, s = {"L$0", "L$1", "L$3", "L$5", "L$6", "L$7", "I$0", "I$1"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageEvent$Insert$flatMap$1<R> extends ContinuationImpl {
     int I$0;

@@ -32,14 +32,12 @@ public final class LazyStaggeredGridMeasureResultKt {
         return (LazyStaggeredGridItemInfo) CollectionsKt.getOrNull(lazyStaggeredGridLayoutInfo.getVisibleItemsInfo(), CollectionsKt.binarySearch$default(lazyStaggeredGridLayoutInfo.getVisibleItemsInfo(), 0, 0, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasureResultKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                int findVisibleItem$lambda$0;
-                findVisibleItem$lambda$0 = LazyStaggeredGridMeasureResultKt.findVisibleItem$lambda$0(i, (LazyStaggeredGridItemInfo) obj);
-                return Integer.valueOf(findVisibleItem$lambda$0);
+                return Integer.valueOf(LazyStaggeredGridMeasureResultKt.findVisibleItem$lambda$0(i, (LazyStaggeredGridItemInfo) obj));
             }
         }, 3, (Object) null));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int findVisibleItem$lambda$0(int i, LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo) {
         return lazyStaggeredGridItemInfo.getIndex() - i;
     }
@@ -75,7 +73,7 @@ public final class LazyStaggeredGridMeasureResultKt {
             }
         };
         MeasureResult measureResult2 = measureResult;
-        EmptyLazyStaggeredGridLayoutInfo = new LazyStaggeredGridMeasureResult(iArr, iArr, 0.0f, measureResult2, 0.0f, false, false, false, new LazyStaggeredGridSlots(iArr, iArr), new LazyStaggeredGridSpanProvider(new MutableIntervalList()), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, CollectionsKt.emptyList(), IntSize.Companion.m8434getZeroYbymL2g(), 0, 0, 0, 0, 0, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), null);
+        EmptyLazyStaggeredGridLayoutInfo = new LazyStaggeredGridMeasureResult(iArr, iArr, 0.0f, measureResult2, 0.0f, false, false, false, new LazyStaggeredGridSlots(iArr, iArr), new LazyStaggeredGridSpanProvider(new MutableIntervalList()), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, CollectionsKt.emptyList(), IntSize.Companion.m7731getZeroYbymL2g(), 0, 0, 0, 0, 0, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), null);
     }
 
     public static final LazyStaggeredGridMeasureResult getEmptyLazyStaggeredGridLayoutInfo() {
@@ -83,7 +81,7 @@ public final class LazyStaggeredGridMeasureResultKt {
     }
 
     public static final int visibleItemsAverageSize(LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo) {
-        long mo1175getSizeYbymL2g;
+        long mo1031getSizeYbymL2g;
         List<LazyStaggeredGridItemInfo> visibleItemsInfo = lazyStaggeredGridLayoutInfo.getVisibleItemsInfo();
         if (visibleItemsInfo.isEmpty()) {
             return 0;
@@ -93,11 +91,11 @@ public final class LazyStaggeredGridMeasureResultKt {
         for (int i2 = 0; i2 < size; i2++) {
             LazyStaggeredGridItemInfo lazyStaggeredGridItemInfo = visibleItemsInfo.get(i2);
             if (lazyStaggeredGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-                mo1175getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1175getSizeYbymL2g() & 4294967295L;
+                mo1031getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1031getSizeYbymL2g() & 4294967295L;
             } else {
-                mo1175getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1175getSizeYbymL2g() >> 32;
+                mo1031getSizeYbymL2g = lazyStaggeredGridItemInfo.mo1031getSizeYbymL2g() >> 32;
             }
-            i += (int) mo1175getSizeYbymL2g;
+            i += (int) mo1031getSizeYbymL2g;
         }
         return (i / visibleItemsInfo.size()) + lazyStaggeredGridLayoutInfo.getMainAxisItemSpacing();
     }
@@ -108,12 +106,12 @@ public final class LazyStaggeredGridMeasureResultKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyStaggeredGridLayoutInfo lazyStaggeredGridLayoutInfo) {
-        long mo1180getViewportSizeYbymL2g;
+        long mo1034getViewportSizeYbymL2g;
         if (lazyStaggeredGridLayoutInfo.getOrientation() == Orientation.Vertical) {
-            mo1180getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1180getViewportSizeYbymL2g() & 4294967295L;
+            mo1034getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1034getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1180getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1180getViewportSizeYbymL2g() >> 32;
+            mo1034getViewportSizeYbymL2g = lazyStaggeredGridLayoutInfo.mo1034getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1180getViewportSizeYbymL2g;
+        return (int) mo1034getViewportSizeYbymL2g;
     }
 }

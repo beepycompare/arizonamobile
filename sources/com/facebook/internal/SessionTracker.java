@@ -101,11 +101,21 @@ public class SessionTracker {
     }
 
     public void setSession(Session session) {
-        if (session == null) {
-            Session session2 = this.session;
+        Session session2 = this.session;
+        if (session != null) {
             if (session2 == null) {
-                return;
+                Session activeSession = Session.getActiveSession();
+                if (activeSession != null) {
+                    activeSession.removeCallback(this.callback);
+                }
+                this.broadcastManager.unregisterReceiver(this.receiver);
+            } else {
+                session2.removeCallback(this.callback);
             }
+            this.session = session;
+        } else if (session2 == null) {
+            return;
+        } else {
             session2.removeCallback(this.callback);
             this.session = null;
             addBroadcastReceiver();
@@ -113,18 +123,6 @@ public class SessionTracker {
                 return;
             }
             session = getSession();
-        } else {
-            Session session3 = this.session;
-            if (session3 == null) {
-                Session activeSession = Session.getActiveSession();
-                if (activeSession != null) {
-                    activeSession.removeCallback(this.callback);
-                }
-                this.broadcastManager.unregisterReceiver(this.receiver);
-            } else {
-                session3.removeCallback(this.callback);
-            }
-            this.session = session;
         }
         session.addCallback(this.callback);
     }

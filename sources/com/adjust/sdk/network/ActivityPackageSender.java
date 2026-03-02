@@ -213,13 +213,15 @@ public class ActivityPackageSender implements IActivityPackageSender {
             this.logger.debug("Will not retry with current url strategy, already got a valid json response", new Object[0]);
             this.urlStrategy.resetAfterSuccess();
             return false;
-        } else if (this.urlStrategy.shouldRetryAfterFailure(responseData.activityKind)) {
-            this.logger.error("Failed with current url strategy, but it will retry with new", new Object[0]);
-            return true;
-        } else {
-            this.logger.error("Failed with current url strategy and it will not retry", new Object[0]);
-            return false;
         }
+        boolean shouldRetryAfterFailure = this.urlStrategy.shouldRetryAfterFailure(responseData.activityKind);
+        ILogger iLogger = this.logger;
+        if (shouldRetryAfterFailure) {
+            iLogger.error("Failed with current url strategy, but it will retry with new", new Object[0]);
+            return true;
+        }
+        iLogger.error("Failed with current url strategy and it will not retry", new Object[0]);
+        return false;
     }
 
     private Map<String, String> signParameters(ActivityPackage activityPackage, Map<String, String> map) {
@@ -535,26 +537,30 @@ public class ActivityPackageSender implements IActivityPackageSender {
             if (sb.length() == 0) {
                 this.logger.error("Empty response string buffer", new Object[0]);
                 return num;
-            } else if (num.intValue() == 429) {
-                this.logger.error("Too frequent requests to the endpoint (429)", new Object[0]);
-                return num;
-            } else {
-                String sb2 = sb.toString();
-                this.logger.debug("Response string: %s", sb2);
-                parseResponse(responseData, sb2);
-                if (responseData.controlParams != null) {
-                    SharedPreferencesManager.getDefaultInstance(this.context).saveControlParams(responseData.controlParams);
-                }
-                String str = responseData.message;
-                if (str != null) {
-                    if (num.intValue() == 200) {
-                        this.logger.info("Response message: %s", str);
-                    } else {
-                        this.logger.error("Response message: %s", str);
-                    }
-                }
+            }
+            int intValue = num.intValue();
+            ILogger iLogger = this.logger;
+            if (intValue == 429) {
+                iLogger.error("Too frequent requests to the endpoint (429)", new Object[0]);
                 return num;
             }
+            String sb2 = sb.toString();
+            iLogger.debug("Response string: %s", sb2);
+            parseResponse(responseData, sb2);
+            if (responseData.controlParams != null) {
+                SharedPreferencesManager.getDefaultInstance(this.context).saveControlParams(responseData.controlParams);
+            }
+            String str = responseData.message;
+            if (str != null) {
+                int intValue2 = num.intValue();
+                ILogger iLogger2 = this.logger;
+                if (intValue2 == 200) {
+                    iLogger2.info("Response message: %s", str);
+                } else {
+                    iLogger2.error("Response message: %s", str);
+                }
+            }
+            return num;
         } catch (Throwable th) {
             if (httpsURLConnection != null) {
                 httpsURLConnection.disconnect();

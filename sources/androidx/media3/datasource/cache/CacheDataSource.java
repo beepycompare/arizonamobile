@@ -372,15 +372,19 @@ public final class CacheDataSource implements DataSource {
         String str = (String) Util.castNonNull(dataSpec.key);
         if (this.currentRequestIgnoresCache) {
             startReadWrite = null;
-        } else if (this.blockOnCache) {
-            try {
-                startReadWrite = this.cache.startReadWrite(str, this.readPosition, this.bytesRemaining);
-            } catch (InterruptedException unused) {
-                Thread.currentThread().interrupt();
-                throw new InterruptedIOException();
-            }
         } else {
-            startReadWrite = this.cache.startReadWriteNonBlocking(str, this.readPosition, this.bytesRemaining);
+            boolean z2 = this.blockOnCache;
+            Cache cache = this.cache;
+            if (z2) {
+                try {
+                    startReadWrite = cache.startReadWrite(str, this.readPosition, this.bytesRemaining);
+                } catch (InterruptedException unused) {
+                    Thread.currentThread().interrupt();
+                    throw new InterruptedIOException();
+                }
+            } else {
+                startReadWrite = cache.startReadWriteNonBlocking(str, this.readPosition, this.bytesRemaining);
+            }
         }
         if (startReadWrite == null) {
             dataSource = this.upstreamDataSource;

@@ -37,7 +37,7 @@ final class DateRangePickerKt$DateRangePicker$5 implements Function2<Composer, I
             ComposerKt.traceEventStart(1343236786, i, -1, "androidx.compose.material3.DateRangePicker.<anonymous> (DateRangePicker.kt:139)");
         }
         Modifier padding = PaddingKt.padding(Modifier.Companion, DatePickerKt.getDatePickerModeTogglePadding());
-        int mo2359getDisplayModejFl4v0 = this.$state.mo2359getDisplayModejFl4v0();
+        int mo2014getDisplayModejFl4v0 = this.$state.mo2014getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, -1934597276, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DateRangePickerState dateRangePickerState = this.$state;
@@ -46,23 +46,21 @@ final class DateRangePickerKt$DateRangePicker$5 implements Function2<Composer, I
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$5$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateRangePickerKt$DateRangePicker$5.invoke$lambda$1$lambda$0(DateRangePickerState.this, (DisplayMode) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DateRangePickerKt$DateRangePicker$5.invoke$lambda$1$lambda$0(DateRangePickerState.this, (DisplayMode) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DatePickerKt.m2320DisplayModeToggleButtoniUJLfQg(padding, mo2359getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
+        DatePickerKt.m1991DisplayModeToggleButtoniUJLfQg(padding, mo2014getDisplayModejFl4v0, (Function1) rememberedValue, this.$colors, composer, 6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(DateRangePickerState dateRangePickerState, DisplayMode displayMode) {
-        dateRangePickerState.mo2360setDisplayModevCnGnXg(displayMode.m2393unboximpl());
+        dateRangePickerState.mo2015setDisplayModevCnGnXg(displayMode.m2034unboximpl());
         return Unit.INSTANCE;
     }
 }

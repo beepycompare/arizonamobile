@@ -26,12 +26,12 @@ public final class LazyListLayoutInfoKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyListLayoutInfo lazyListLayoutInfo) {
-        long mo1046getViewportSizeYbymL2g;
+        long mo923getViewportSizeYbymL2g;
         if (lazyListLayoutInfo.getOrientation() == Orientation.Vertical) {
-            mo1046getViewportSizeYbymL2g = lazyListLayoutInfo.mo1046getViewportSizeYbymL2g() & 4294967295L;
+            mo923getViewportSizeYbymL2g = lazyListLayoutInfo.mo923getViewportSizeYbymL2g() & 4294967295L;
         } else {
-            mo1046getViewportSizeYbymL2g = lazyListLayoutInfo.mo1046getViewportSizeYbymL2g() >> 32;
+            mo923getViewportSizeYbymL2g = lazyListLayoutInfo.mo923getViewportSizeYbymL2g() >> 32;
         }
-        return (int) mo1046getViewportSizeYbymL2g;
+        return (int) mo923getViewportSizeYbymL2g;
     }
 }

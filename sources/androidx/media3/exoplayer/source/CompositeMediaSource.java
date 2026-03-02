@@ -32,7 +32,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: onChildSourceInfoRefreshed */
-    public abstract void m9003x28f9175(T t, MediaSource mediaSource, Timeline timeline);
+    public abstract void m8281x28f9175(T t, MediaSource mediaSource, Timeline timeline);
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.media3.exoplayer.source.BaseMediaSource
@@ -80,7 +80,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         MediaSource.MediaSourceCaller mediaSourceCaller = new MediaSource.MediaSourceCaller() { // from class: androidx.media3.exoplayer.source.CompositeMediaSource$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.source.MediaSource.MediaSourceCaller
             public final void onSourceInfoRefreshed(MediaSource mediaSource2, Timeline timeline) {
-                CompositeMediaSource.this.m9003x28f9175(t, mediaSource2, timeline);
+                CompositeMediaSource.this.m8281x28f9175(t, mediaSource2, timeline);
             }
         };
         ForwardingEventListener forwardingEventListener = new ForwardingEventListener(t);

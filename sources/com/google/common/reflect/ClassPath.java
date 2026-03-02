@@ -187,10 +187,9 @@ public final class ClassPath {
                 return CharMatcher.inRange('0', '9').trimLeadingFrom(this.className.substring(lastIndexOf + 1));
             }
             String packageName = getPackageName();
-            if (packageName.isEmpty()) {
-                return this.className;
-            }
-            return this.className.substring(packageName.length() + 1);
+            boolean isEmpty = packageName.isEmpty();
+            String str = this.className;
+            return isEmpty ? str : str.substring(packageName.length() + 1);
         }
 
         public String getName() {

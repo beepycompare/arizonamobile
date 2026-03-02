@@ -66,23 +66,19 @@ public final class NetworkObserver {
         NetworkBroadcastReceiver networkBroadcastReceiver = new NetworkBroadcastReceiver(new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit doObserveNetworkLegacy$lambda$2;
-                doObserveNetworkLegacy$lambda$2 = NetworkObserver.doObserveNetworkLegacy$lambda$2(NetworkObserver.this);
-                return doObserveNetworkLegacy$lambda$2;
+                return NetworkObserver.doObserveNetworkLegacy$lambda$2(NetworkObserver.this);
             }
         }, new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit doObserveNetworkLegacy$lambda$4;
-                doObserveNetworkLegacy$lambda$4 = NetworkObserver.doObserveNetworkLegacy$lambda$4(NetworkObserver.this);
-                return doObserveNetworkLegacy$lambda$4;
+                return NetworkObserver.doObserveNetworkLegacy$lambda$4(NetworkObserver.this);
             }
         });
         this.networkBroadcastReceiver = networkBroadcastReceiver;
         context.registerReceiver(networkBroadcastReceiver, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit doObserveNetworkLegacy$lambda$2(NetworkObserver networkObserver) {
         for (Listener listener : networkObserver.listeners) {
             listener.onNetworkAvailable();
@@ -90,7 +86,7 @@ public final class NetworkObserver {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit doObserveNetworkLegacy$lambda$4(NetworkObserver networkObserver) {
         for (Listener listener : networkObserver.listeners) {
             listener.onNetworkUnavailable();

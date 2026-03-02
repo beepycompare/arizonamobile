@@ -193,10 +193,16 @@ public final class ObservableBuffer<T, U extends Collection<? super T>> extends 
 
         @Override // io.reactivex.Observer
         public void onComplete() {
-            while (!this.buffers.isEmpty()) {
-                this.downstream.onNext(this.buffers.poll());
+            while (true) {
+                boolean isEmpty = this.buffers.isEmpty();
+                Observer<? super U> observer = this.downstream;
+                if (!isEmpty) {
+                    observer.onNext(this.buffers.poll());
+                } else {
+                    observer.onComplete();
+                    return;
+                }
             }
-            this.downstream.onComplete();
         }
     }
 }

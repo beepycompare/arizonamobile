@@ -108,7 +108,7 @@ public final class SplashScreen {
         private SplashScreenViewProvider mSplashScreenViewProvider;
         private KeepOnScreenCondition splashScreenWaitPredicate;
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean splashScreenWaitPredicate$lambda$0() {
             return false;
         }
@@ -119,9 +119,7 @@ public final class SplashScreen {
             this.splashScreenWaitPredicate = new KeepOnScreenCondition() { // from class: androidx.core.splashscreen.SplashScreen$Impl$$ExternalSyntheticLambda0
                 @Override // androidx.core.splashscreen.SplashScreen.KeepOnScreenCondition
                 public final boolean shouldKeepOnScreen() {
-                    boolean splashScreenWaitPredicate$lambda$0;
-                    splashScreenWaitPredicate$lambda$0 = SplashScreen.Impl.splashScreenWaitPredicate$lambda$0();
-                    return splashScreenWaitPredicate$lambda$0;
+                    return SplashScreen.Impl.splashScreenWaitPredicate$lambda$0();
                 }
             };
         }
@@ -254,11 +252,13 @@ public final class SplashScreen {
                     Intrinsics.checkNotNullParameter(view2, "view");
                     if (view2.isAttachedToWindow()) {
                         view2.removeOnLayoutChangeListener(this);
-                        if (!SplashScreen.Impl.this.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
-                            SplashScreen.Impl.this.dispatchOnExitAnimation(splashScreenViewProvider);
-                            return;
+                        boolean shouldKeepOnScreen = SplashScreen.Impl.this.getSplashScreenWaitPredicate().shouldKeepOnScreen();
+                        SplashScreen.Impl impl = SplashScreen.Impl.this;
+                        if (shouldKeepOnScreen) {
+                            impl.mSplashScreenViewProvider = splashScreenViewProvider;
+                        } else {
+                            impl.dispatchOnExitAnimation(splashScreenViewProvider);
                         }
-                        SplashScreen.Impl.this.mSplashScreenViewProvider = splashScreenViewProvider;
                     }
                 }
             });
@@ -294,7 +294,7 @@ public final class SplashScreen {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void dispatchOnExitAnimation$lambda$3(SplashScreenViewProvider splashScreenViewProvider, OnExitAnimationListener onExitAnimationListener) {
             splashScreenViewProvider.getView().bringToFront();
             onExitAnimationListener.onSplashScreenExit(splashScreenViewProvider);
@@ -407,7 +407,7 @@ public final class SplashScreen {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void setOnExitAnimationListener$lambda$0(Impl31 impl31, OnExitAnimationListener onExitAnimationListener, SplashScreenView splashScreenView) {
             Intrinsics.checkNotNullParameter(splashScreenView, "splashScreenView");
             if (Build.VERSION.SDK_INT < 33) {

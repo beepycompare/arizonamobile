@@ -87,8 +87,9 @@ public final class FlowableRefCount<T> extends Flowable<T> {
 
     void terminated(RefConnection refConnection) {
         synchronized (this) {
-            if (this.source instanceof FlowablePublishClassic) {
-                RefConnection refConnection2 = this.connection;
+            boolean z = this.source instanceof FlowablePublishClassic;
+            RefConnection refConnection2 = this.connection;
+            if (z) {
                 if (refConnection2 != null && refConnection2 == refConnection) {
                     this.connection = null;
                     clearTimer(refConnection);
@@ -98,16 +99,13 @@ public final class FlowableRefCount<T> extends Flowable<T> {
                 if (j == 0) {
                     reset(refConnection);
                 }
-            } else {
-                RefConnection refConnection3 = this.connection;
-                if (refConnection3 != null && refConnection3 == refConnection) {
-                    clearTimer(refConnection);
-                    long j2 = refConnection.subscriberCount - 1;
-                    refConnection.subscriberCount = j2;
-                    if (j2 == 0) {
-                        this.connection = null;
-                        reset(refConnection);
-                    }
+            } else if (refConnection2 != null && refConnection2 == refConnection) {
+                clearTimer(refConnection);
+                long j2 = refConnection.subscriberCount - 1;
+                refConnection.subscriberCount = j2;
+                if (j2 == 0) {
+                    this.connection = null;
+                    reset(refConnection);
                 }
             }
         }

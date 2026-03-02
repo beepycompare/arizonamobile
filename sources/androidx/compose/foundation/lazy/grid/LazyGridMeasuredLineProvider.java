@@ -33,19 +33,20 @@ public abstract class LazyGridMeasuredLineProvider {
     }
 
     /* renamed from: childConstraints-JhjzzOo$foundation  reason: not valid java name */
-    public final long m1094childConstraintsJhjzzOo$foundation(int i, int i2) {
+    public final long m962childConstraintsJhjzzOo$foundation(int i, int i2) {
         int i3;
+        LazyGridSlots lazyGridSlots = this.slots;
         if (i2 == 1) {
-            i3 = this.slots.getSizes()[i];
+            i3 = lazyGridSlots.getSizes()[i];
         } else {
             int i4 = (i2 + i) - 1;
-            i3 = (this.slots.getPositions()[i4] + this.slots.getSizes()[i4]) - this.slots.getPositions()[i];
+            i3 = (lazyGridSlots.getPositions()[i4] + this.slots.getSizes()[i4]) - this.slots.getPositions()[i];
         }
         int coerceAtLeast = RangesKt.coerceAtLeast(i3, 0);
         if (this.isVertical) {
-            return Constraints.Companion.m8223fixedWidthOenEA2s(coerceAtLeast);
+            return Constraints.Companion.m7520fixedWidthOenEA2s(coerceAtLeast);
         }
-        return Constraints.Companion.m8222fixedHeightOenEA2s(coerceAtLeast);
+        return Constraints.Companion.m7519fixedHeightOenEA2s(coerceAtLeast);
     }
 
     public final int spanOf(int i) {
@@ -60,11 +61,11 @@ public abstract class LazyGridMeasuredLineProvider {
         LazyGridMeasuredItem[] lazyGridMeasuredItemArr = new LazyGridMeasuredItem[size];
         int i3 = 0;
         for (int i4 = 0; i4 < size; i4++) {
-            int m1067getCurrentLineSpanimpl = GridItemSpan.m1067getCurrentLineSpanimpl(lineConfiguration.getSpans().get(i4).m1070unboximpl());
-            LazyGridMeasuredItem m1093getAndMeasurem8Kt_7k = this.measuredItemProvider.m1093getAndMeasurem8Kt_7k(lineConfiguration.getFirstItemIndex() + i4, m1094childConstraintsJhjzzOo$foundation(i3, m1067getCurrentLineSpanimpl), i3, m1067getCurrentLineSpanimpl, i2);
-            i3 += m1067getCurrentLineSpanimpl;
+            int m942getCurrentLineSpanimpl = GridItemSpan.m942getCurrentLineSpanimpl(lineConfiguration.getSpans().get(i4).m945unboximpl());
+            LazyGridMeasuredItem m961getAndMeasurem8Kt_7k = this.measuredItemProvider.m961getAndMeasurem8Kt_7k(lineConfiguration.getFirstItemIndex() + i4, m962childConstraintsJhjzzOo$foundation(i3, m942getCurrentLineSpanimpl), i3, m942getCurrentLineSpanimpl, i2);
+            i3 += m942getCurrentLineSpanimpl;
             Unit unit = Unit.INSTANCE;
-            lazyGridMeasuredItemArr[i4] = m1093getAndMeasurem8Kt_7k;
+            lazyGridMeasuredItemArr[i4] = m961getAndMeasurem8Kt_7k;
         }
         return createLine(i, lazyGridMeasuredItemArr, lineConfiguration.getSpans(), i2);
     }

@@ -23,12 +23,12 @@ public final class LazyListIntervalContent extends LazyLayoutIntervalContent<Laz
     private MutableIntList _headerIndexes;
     private final MutableIntervalList<LazyListInterval> intervals = new MutableIntervalList<>();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object item$lambda$0(Object obj, int i) {
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object item$lambda$1(Object obj, int i) {
         return obj;
     }
@@ -59,28 +59,22 @@ public final class LazyListIntervalContent extends LazyLayoutIntervalContent<Laz
         getIntervals().addInterval(1, new LazyListInterval(obj != null ? new Function1() { // from class: androidx.compose.foundation.lazy.LazyListIntervalContent$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj3) {
-                Object item$lambda$0;
-                item$lambda$0 = LazyListIntervalContent.item$lambda$0(obj, ((Integer) obj3).intValue());
-                return item$lambda$0;
+                return LazyListIntervalContent.item$lambda$0(obj, ((Integer) obj3).intValue());
             }
         } : null, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListIntervalContent$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj3) {
-                Object item$lambda$1;
-                item$lambda$1 = LazyListIntervalContent.item$lambda$1(obj2, ((Integer) obj3).intValue());
-                return item$lambda$1;
+                return LazyListIntervalContent.item$lambda$1(obj2, ((Integer) obj3).intValue());
             }
         }, ComposableLambdaKt.composableLambdaInstance(-857469575, true, new Function4() { // from class: androidx.compose.foundation.lazy.LazyListIntervalContent$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj3, Object obj4, Object obj5, Object obj6) {
-                Unit item$lambda$2;
-                item$lambda$2 = LazyListIntervalContent.item$lambda$2(Function3.this, (LazyItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
-                return item$lambda$2;
+                return LazyListIntervalContent.item$lambda$2(Function3.this, (LazyItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
             }
         })));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit item$lambda$2(Function3 function3, LazyItemScope lazyItemScope, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "CN(it)56@2074L9:LazyListIntervalContent.kt#428nma");
         if ((i2 & 6) == 0) {
@@ -112,14 +106,12 @@ public final class LazyListIntervalContent extends LazyLayoutIntervalContent<Laz
         item(obj, obj2, ComposableLambdaKt.composableLambdaInstance(-1588696110, true, new Function3() { // from class: androidx.compose.foundation.lazy.LazyListIntervalContent$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj3, Object obj4, Object obj5) {
-                Unit stickyHeader$lambda$1;
-                stickyHeader$lambda$1 = LazyListIntervalContent.stickyHeader$lambda$1(Function4.this, size, (LazyItemScope) obj3, (Composer) obj4, ((Integer) obj5).intValue());
-                return stickyHeader$lambda$1;
+                return LazyListIntervalContent.stickyHeader$lambda$1(Function4.this, size, (LazyItemScope) obj3, (Composer) obj4, ((Integer) obj5).intValue());
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit stickyHeader$lambda$1(Function4 function4, int i, LazyItemScope lazyItemScope, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "C70@2475L20:LazyListIntervalContent.kt#428nma");
         if ((i2 & 6) == 0) {

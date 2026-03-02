@@ -21,19 +21,19 @@ public final class PaddingValuesImpl implements PaddingValues {
     }
 
     /* renamed from: getBottom-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m946getBottomD9Ej5fM$annotations() {
+    public static /* synthetic */ void m835getBottomD9Ej5fM$annotations() {
     }
 
     /* renamed from: getEnd-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m947getEndD9Ej5fM$annotations() {
+    public static /* synthetic */ void m836getEndD9Ej5fM$annotations() {
     }
 
     /* renamed from: getStart-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m948getStartD9Ej5fM$annotations() {
+    public static /* synthetic */ void m837getStartD9Ej5fM$annotations() {
     }
 
     /* renamed from: getTop-D9Ej5fM$annotations  reason: not valid java name */
-    public static /* synthetic */ void m949getTopD9Ej5fM$annotations() {
+    public static /* synthetic */ void m838getTopD9Ej5fM$annotations() {
     }
 
     private PaddingValuesImpl(float f, float f2, float f3, float f4) {
@@ -47,66 +47,66 @@ public final class PaddingValuesImpl implements PaddingValues {
     }
 
     /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
-    public final float m952getStartD9Ej5fM() {
+    public final float m841getStartD9Ej5fM() {
         return this.start;
     }
 
     /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m953getTopD9Ej5fM() {
+    public final float m842getTopD9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
-    public final float m951getEndD9Ej5fM() {
+    public final float m840getEndD9Ej5fM() {
         return this.end;
     }
 
     /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m950getBottomD9Ej5fM() {
+    public final float m839getBottomD9Ej5fM() {
         return this.bottom;
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateLeftPadding-u2uoSUM */
-    public float mo873calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
+    public float mo768calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
         return layoutDirection == LayoutDirection.Ltr ? this.start : this.end;
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateTopPadding-D9Ej5fM */
-    public float mo875calculateTopPaddingD9Ej5fM() {
+    public float mo770calculateTopPaddingD9Ej5fM() {
         return this.top;
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateRightPadding-u2uoSUM */
-    public float mo874calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
+    public float mo769calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
         return layoutDirection == LayoutDirection.Ltr ? this.end : this.start;
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateBottomPadding-D9Ej5fM */
-    public float mo872calculateBottomPaddingD9Ej5fM() {
+    public float mo767calculateBottomPaddingD9Ej5fM() {
         return this.bottom;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof PaddingValuesImpl) {
             PaddingValuesImpl paddingValuesImpl = (PaddingValuesImpl) obj;
-            return Dp.m8263equalsimpl0(this.start, paddingValuesImpl.start) && Dp.m8263equalsimpl0(this.top, paddingValuesImpl.top) && Dp.m8263equalsimpl0(this.end, paddingValuesImpl.end) && Dp.m8263equalsimpl0(this.bottom, paddingValuesImpl.bottom);
+            return Dp.m7560equalsimpl0(this.start, paddingValuesImpl.start) && Dp.m7560equalsimpl0(this.top, paddingValuesImpl.top) && Dp.m7560equalsimpl0(this.end, paddingValuesImpl.end) && Dp.m7560equalsimpl0(this.bottom, paddingValuesImpl.bottom);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m8264hashCodeimpl(this.start) * 31) + Dp.m8264hashCodeimpl(this.top)) * 31) + Dp.m8264hashCodeimpl(this.end)) * 31) + Dp.m8264hashCodeimpl(this.bottom);
+        return (((((Dp.m7561hashCodeimpl(this.start) * 31) + Dp.m7561hashCodeimpl(this.top)) * 31) + Dp.m7561hashCodeimpl(this.end)) * 31) + Dp.m7561hashCodeimpl(this.bottom);
     }
 
     public String toString() {
-        return "PaddingValues(start=" + ((Object) Dp.m8269toStringimpl(this.start)) + ", top=" + ((Object) Dp.m8269toStringimpl(this.top)) + ", end=" + ((Object) Dp.m8269toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m8269toStringimpl(this.bottom)) + ')';
+        return "PaddingValues(start=" + ((Object) Dp.m7566toStringimpl(this.start)) + ", top=" + ((Object) Dp.m7566toStringimpl(this.top)) + ", end=" + ((Object) Dp.m7566toStringimpl(this.end)) + ", bottom=" + ((Object) Dp.m7566toStringimpl(this.bottom)) + ')';
     }
 
     public /* synthetic */ PaddingValuesImpl(float f, float f2, float f3, float f4, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7555constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7555constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7555constructorimpl(0) : f4, null);
     }
 }

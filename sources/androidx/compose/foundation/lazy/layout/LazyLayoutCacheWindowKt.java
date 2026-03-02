@@ -7,7 +7,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class LazyLayoutCacheWindowKt {
     /* renamed from: LazyLayoutCacheWindow-YgX7TsA  reason: not valid java name */
-    public static final LazyLayoutCacheWindow m1109LazyLayoutCacheWindowYgX7TsA(float f, float f2) {
+    public static final LazyLayoutCacheWindow m974LazyLayoutCacheWindowYgX7TsA(float f, float f2) {
         return new DpLazyLayoutCacheWindow(f, f2, null);
     }
 
@@ -26,13 +26,13 @@ public final class LazyLayoutCacheWindowKt {
     }
 
     /* renamed from: LazyLayoutCacheWindow-YgX7TsA$default  reason: not valid java name */
-    public static /* synthetic */ LazyLayoutCacheWindow m1110LazyLayoutCacheWindowYgX7TsA$default(float f, float f2, int i, Object obj) {
+    public static /* synthetic */ LazyLayoutCacheWindow m975LazyLayoutCacheWindowYgX7TsA$default(float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.m8258constructorimpl(0);
+            f = Dp.m7555constructorimpl(0);
         }
         if ((i & 2) != 0) {
-            f2 = Dp.m8258constructorimpl(0);
+            f2 = Dp.m7555constructorimpl(0);
         }
-        return m1109LazyLayoutCacheWindowYgX7TsA(f, f2);
+        return m974LazyLayoutCacheWindowYgX7TsA(f, f2);
     }
 }

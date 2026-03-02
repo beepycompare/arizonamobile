@@ -84,8 +84,10 @@ public class WaitingRequestManager implements Request.NetworkRequestCompleteList
     /* JADX INFO: Access modifiers changed from: package-private */
     public synchronized boolean maybeAddToWaitingRequests(Request<?> request) {
         String cacheKey = request.getCacheKey();
-        if (this.mWaitingRequests.containsKey(cacheKey)) {
-            List<Request<?>> list = this.mWaitingRequests.get(cacheKey);
+        boolean containsKey = this.mWaitingRequests.containsKey(cacheKey);
+        Map<String, List<Request<?>>> map = this.mWaitingRequests;
+        if (containsKey) {
+            List<Request<?>> list = map.get(cacheKey);
             if (list == null) {
                 list = new ArrayList<>();
             }
@@ -97,7 +99,7 @@ public class WaitingRequestManager implements Request.NetworkRequestCompleteList
             }
             return true;
         }
-        this.mWaitingRequests.put(cacheKey, null);
+        map.put(cacheKey, null);
         request.setNetworkRequestCompleteListener(this);
         if (VolleyLog.DEBUG) {
             VolleyLog.d("new request, sending to network %s", cacheKey);

@@ -316,10 +316,17 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
             foldingFeatureObserver.unregisterLayoutStateChangeCallback();
         }
         int size = this.mPostedRunnables.size();
-        for (int i = 0; i < size; i++) {
-            this.mPostedRunnables.get(i).run();
+        int i = 0;
+        while (true) {
+            ArrayList<DisableLayerRunnable> arrayList = this.mPostedRunnables;
+            if (i < size) {
+                arrayList.get(i).run();
+                i++;
+            } else {
+                arrayList.clear();
+                return;
+            }
         }
-        this.mPostedRunnables.clear();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0087, code lost:
@@ -727,31 +734,33 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
 
     @Override // android.view.ViewGroup
     protected boolean drawChild(Canvas canvas, View view, long j) {
-        if (isLayoutRtlSupport() ^ isOpen()) {
-            this.mDragHelper.setEdgeTrackingEnabled(1);
+        boolean isLayoutRtlSupport = isLayoutRtlSupport() ^ isOpen();
+        ViewDragHelper viewDragHelper = this.mDragHelper;
+        if (isLayoutRtlSupport) {
+            viewDragHelper.setEdgeTrackingEnabled(1);
             Insets systemGestureInsets = getSystemGestureInsets();
             if (systemGestureInsets != null) {
-                ViewDragHelper viewDragHelper = this.mDragHelper;
-                viewDragHelper.setEdgeSize(Math.max(viewDragHelper.getDefaultEdgeSize(), systemGestureInsets.left));
+                ViewDragHelper viewDragHelper2 = this.mDragHelper;
+                viewDragHelper2.setEdgeSize(Math.max(viewDragHelper2.getDefaultEdgeSize(), systemGestureInsets.left));
             }
         } else {
-            this.mDragHelper.setEdgeTrackingEnabled(2);
+            viewDragHelper.setEdgeTrackingEnabled(2);
             Insets systemGestureInsets2 = getSystemGestureInsets();
             if (systemGestureInsets2 != null) {
-                ViewDragHelper viewDragHelper2 = this.mDragHelper;
-                viewDragHelper2.setEdgeSize(Math.max(viewDragHelper2.getDefaultEdgeSize(), systemGestureInsets2.right));
+                ViewDragHelper viewDragHelper3 = this.mDragHelper;
+                viewDragHelper3.setEdgeSize(Math.max(viewDragHelper3.getDefaultEdgeSize(), systemGestureInsets2.right));
             }
         }
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
         int save = canvas.save();
         if (this.mCanSlide && !layoutParams.slideable && this.mSlideableView != null) {
             canvas.getClipBounds(this.mTmpRect);
-            if (isLayoutRtlSupport()) {
-                Rect rect = this.mTmpRect;
+            boolean isLayoutRtlSupport2 = isLayoutRtlSupport();
+            Rect rect = this.mTmpRect;
+            if (isLayoutRtlSupport2) {
                 rect.left = Math.max(rect.left, this.mSlideableView.getRight());
             } else {
-                Rect rect2 = this.mTmpRect;
-                rect2.right = Math.min(rect2.right, this.mSlideableView.getLeft());
+                rect.right = Math.min(rect.right, this.mSlideableView.getLeft());
             }
             canvas.clipRect(this.mTmpRect);
         }
@@ -973,16 +982,16 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         @Override // androidx.customview.widget.ViewDragHelper.Callback
         public void onViewDragStateChanged(int i) {
             if (SlidingPaneLayout.this.mDragHelper.getViewDragState() == 0) {
-                if (SlidingPaneLayout.this.mSlideOffset == 1.0f) {
-                    SlidingPaneLayout slidingPaneLayout = SlidingPaneLayout.this;
+                int i2 = (SlidingPaneLayout.this.mSlideOffset > 1.0f ? 1 : (SlidingPaneLayout.this.mSlideOffset == 1.0f ? 0 : -1));
+                SlidingPaneLayout slidingPaneLayout = SlidingPaneLayout.this;
+                if (i2 == 0) {
                     slidingPaneLayout.updateObscuredViewsVisibility(slidingPaneLayout.mSlideableView);
                     SlidingPaneLayout slidingPaneLayout2 = SlidingPaneLayout.this;
                     slidingPaneLayout2.dispatchOnPanelClosed(slidingPaneLayout2.mSlideableView);
                     SlidingPaneLayout.this.mPreservedOpenState = false;
                     return;
                 }
-                SlidingPaneLayout slidingPaneLayout3 = SlidingPaneLayout.this;
-                slidingPaneLayout3.dispatchOnPanelOpened(slidingPaneLayout3.mSlideableView);
+                slidingPaneLayout.dispatchOnPanelOpened(slidingPaneLayout.mSlideableView);
                 SlidingPaneLayout.this.mPreservedOpenState = true;
             }
         }
@@ -1002,14 +1011,16 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         public void onViewReleased(View view, float f, float f2) {
             int paddingLeft;
             LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-            if (SlidingPaneLayout.this.isLayoutRtlSupport()) {
-                int paddingRight = SlidingPaneLayout.this.getPaddingRight() + layoutParams.rightMargin;
+            boolean isLayoutRtlSupport = SlidingPaneLayout.this.isLayoutRtlSupport();
+            SlidingPaneLayout slidingPaneLayout = SlidingPaneLayout.this;
+            if (isLayoutRtlSupport) {
+                int paddingRight = slidingPaneLayout.getPaddingRight() + layoutParams.rightMargin;
                 if (f < 0.0f || (f == 0.0f && SlidingPaneLayout.this.mSlideOffset > 0.5f)) {
                     paddingRight += SlidingPaneLayout.this.mSlideRange;
                 }
                 paddingLeft = (SlidingPaneLayout.this.getWidth() - paddingRight) - SlidingPaneLayout.this.mSlideableView.getWidth();
             } else {
-                paddingLeft = layoutParams.leftMargin + SlidingPaneLayout.this.getPaddingLeft();
+                paddingLeft = layoutParams.leftMargin + slidingPaneLayout.getPaddingLeft();
                 int i = (f > 0.0f ? 1 : (f == 0.0f ? 0 : -1));
                 if (i > 0 || (i == 0 && SlidingPaneLayout.this.mSlideOffset > 0.5f)) {
                     paddingLeft += SlidingPaneLayout.this.mSlideRange;
@@ -1027,11 +1038,13 @@ public class SlidingPaneLayout extends ViewGroup implements Openable {
         @Override // androidx.customview.widget.ViewDragHelper.Callback
         public int clampViewPositionHorizontal(View view, int i, int i2) {
             LayoutParams layoutParams = (LayoutParams) SlidingPaneLayout.this.mSlideableView.getLayoutParams();
-            if (SlidingPaneLayout.this.isLayoutRtlSupport()) {
-                int width = SlidingPaneLayout.this.getWidth() - ((SlidingPaneLayout.this.getPaddingRight() + layoutParams.rightMargin) + SlidingPaneLayout.this.mSlideableView.getWidth());
+            boolean isLayoutRtlSupport = SlidingPaneLayout.this.isLayoutRtlSupport();
+            SlidingPaneLayout slidingPaneLayout = SlidingPaneLayout.this;
+            if (isLayoutRtlSupport) {
+                int width = slidingPaneLayout.getWidth() - ((SlidingPaneLayout.this.getPaddingRight() + layoutParams.rightMargin) + SlidingPaneLayout.this.mSlideableView.getWidth());
                 return Math.max(Math.min(i, width), width - SlidingPaneLayout.this.mSlideRange);
             }
-            int paddingLeft = SlidingPaneLayout.this.getPaddingLeft() + layoutParams.leftMargin;
+            int paddingLeft = slidingPaneLayout.getPaddingLeft() + layoutParams.leftMargin;
             return Math.min(Math.max(i, paddingLeft), SlidingPaneLayout.this.mSlideRange + paddingLeft);
         }
 

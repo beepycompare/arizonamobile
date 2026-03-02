@@ -8,9 +8,9 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ModifierUtilsKt {
     /* renamed from: maxWidthForTextLayout-R2G3SPE  reason: not valid java name */
-    public static final int m1789maxWidthForTextLayoutR2G3SPE(long j, boolean z, int i) {
-        if ((z || TextOverflow.m8184equalsimpl0(i, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) && Constraints.m8207getHasBoundedWidthimpl(j)) {
-            return Constraints.m8211getMaxWidthimpl(j);
+    public static final int m1551maxWidthForTextLayoutR2G3SPE(long j, boolean z, int i) {
+        if ((z || TextOverflow.m7481equalsimpl0(i, TextOverflow.Companion.m7491getEllipsisgIe3tQ8())) && Constraints.m7504getHasBoundedWidthimpl(j)) {
+            return Constraints.m7508getMaxWidthimpl(j);
         }
         return Integer.MAX_VALUE;
     }

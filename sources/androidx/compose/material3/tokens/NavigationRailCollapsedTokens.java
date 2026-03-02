@@ -8,19 +8,19 @@ import kotlin.Metadata;
 public final class NavigationRailCollapsedTokens {
     public static final int $stable = 0;
     public static final NavigationRailCollapsedTokens INSTANCE = new NavigationRailCollapsedTokens();
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float ContainerWidth = Dp.m8258constructorimpl((float) 96.0d);
-    private static final float ItemVerticalSpace = Dp.m8258constructorimpl((float) 4.0d);
-    private static final float TopSpace = Dp.m8258constructorimpl((float) 44.0d);
+    private static final float ContainerWidth = Dp.m7555constructorimpl((float) 96.0d);
+    private static final float ItemVerticalSpace = Dp.m7555constructorimpl((float) 4.0d);
+    private static final float TopSpace = Dp.m7555constructorimpl((float) 44.0d);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float NarrowContainerWidth = Dp.m8258constructorimpl((float) 80.0d);
+    private static final float NarrowContainerWidth = Dp.m7555constructorimpl((float) 80.0d);
 
     private NavigationRailCollapsedTokens() {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4175getContainerElevationD9Ej5fM() {
+    public final float m3559getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -29,17 +29,17 @@ public final class NavigationRailCollapsedTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4176getContainerWidthD9Ej5fM() {
+    public final float m3560getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getItemVerticalSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4177getItemVerticalSpaceD9Ej5fM() {
+    public final float m3561getItemVerticalSpaceD9Ej5fM() {
         return ItemVerticalSpace;
     }
 
     /* renamed from: getTopSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4179getTopSpaceD9Ej5fM() {
+    public final float m3563getTopSpaceD9Ej5fM() {
         return TopSpace;
     }
 
@@ -48,7 +48,7 @@ public final class NavigationRailCollapsedTokens {
     }
 
     /* renamed from: getNarrowContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4178getNarrowContainerWidthD9Ej5fM() {
+    public final float m3562getNarrowContainerWidthD9Ej5fM() {
         return NarrowContainerWidth;
     }
 }

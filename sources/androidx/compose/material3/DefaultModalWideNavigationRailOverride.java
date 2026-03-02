@@ -53,7 +53,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
     public static final int $stable = 0;
     public static final DefaultModalWideNavigationRailOverride INSTANCE = new DefaultModalWideNavigationRailOverride();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRail$lambda$23(DefaultModalWideNavigationRailOverride defaultModalWideNavigationRailOverride, ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope, int i, Composer composer, int i2) {
         defaultModalWideNavigationRailOverride.ModalWideNavigationRail(modalWideNavigationRailOverrideScope, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -136,9 +136,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                 rememberedValue3 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean ModalWideNavigationRail$lambda$3$lambda$2;
-                        ModalWideNavigationRail$lambda$3$lambda$2 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$3$lambda$2(State.this);
-                        return Boolean.valueOf(ModalWideNavigationRail$lambda$3$lambda$2);
+                        return Boolean.valueOf(DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$3$lambda$2(State.this));
                     }
                 });
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -151,9 +149,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                 rememberedValue4 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean ModalWideNavigationRail$lambda$6$lambda$5;
-                        ModalWideNavigationRail$lambda$6$lambda$5 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$6$lambda$5(State.this);
-                        return Boolean.valueOf(ModalWideNavigationRail$lambda$6$lambda$5);
+                        return Boolean.valueOf(DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$6$lambda$5(State.this));
                     }
                 });
                 startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -224,13 +220,13 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                 if (!modalWideNavigationRailOverrideScope.getShouldHideOnCollapse()) {
                     startRestartGroup.startReplaceGroup(98472731);
                     ComposerKt.sourceInformation(startRestartGroup, "578@27806L197");
-                    Modifier m298backgroundbw27NRU = BackgroundKt.m298backgroundbw27NRU(Modifier.Companion, modalWideNavigationRailOverrideScope.getColors().m3513getContainerColor0d7_KjU(), modalWideNavigationRailOverrideScope.getCollapsedShape());
+                    Modifier m263backgroundbw27NRU = BackgroundKt.m263backgroundbw27NRU(Modifier.Companion, modalWideNavigationRailOverrideScope.getColors().m2943getContainerColor0d7_KjU(), modalWideNavigationRailOverrideScope.getCollapsedShape());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                     CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m298backgroundbw27NRU);
+                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m263backgroundbw27NRU);
                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                     if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -242,23 +238,23 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1258502535, "C579@27908L77:WideNavigationRail.kt#uh7d8r");
                     Modifier modifier = modalWideNavigationRailOverrideScope.getModifier();
                     f = WideNavigationRailKt.CollapsedRailWidth;
-                    Modifier m983widthInVpY3zN4$default = SizeKt.m983widthInVpY3zN4$default(modifier, f, 0.0f, 2, r4);
+                    Modifier m871widthInVpY3zN4$default = SizeKt.m871widthInVpY3zN4$default(modifier, f, 0.0f, 2, r4);
                     z = true;
-                    SpacerKt.Spacer(SizeKt.fillMaxHeight$default(m983widthInVpY3zN4$default, 0.0f, 1, r4), startRestartGroup, 0);
+                    SpacerKt.Spacer(SizeKt.fillMaxHeight$default(m871widthInVpY3zN4$default, 0.0f, 1, r4), startRestartGroup, 0);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     startRestartGroup.endNode();
@@ -305,9 +301,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                     rememberedValue12 = new Function0() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ModalWideNavigationRail$lambda$16$lambda$15;
-                            ModalWideNavigationRail$lambda$16$lambda$15 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$16$lambda$15(Channel.this, modalWideNavigationRailOverrideScope);
-                            return ModalWideNavigationRail$lambda$16$lambda$15;
+                            return DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$16$lambda$15(Channel.this, modalWideNavigationRailOverrideScope);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue12);
@@ -327,9 +321,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                     rememberedValue13 = new Function0() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ModalWideNavigationRail$lambda$18$lambda$17;
-                            ModalWideNavigationRail$lambda$18$lambda$17 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$18$lambda$17(CoroutineScope.this, modalWideNavigationRailOverrideScope);
-                            return ModalWideNavigationRail$lambda$18$lambda$17;
+                            return DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$18$lambda$17(CoroutineScope.this, modalWideNavigationRailOverrideScope);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue13);
@@ -343,9 +335,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                     rememberedValue14 = new Function1() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit ModalWideNavigationRail$lambda$20$lambda$19;
-                            ModalWideNavigationRail$lambda$20$lambda$19 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$20$lambda$19(CoroutineScope.this, animatable, ((Float) obj).floatValue());
-                            return ModalWideNavigationRail$lambda$20$lambda$19;
+                            return DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$20$lambda$19(CoroutineScope.this, animatable, ((Float) obj).floatValue());
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue14);
@@ -359,9 +349,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                     rememberedValue15 = new Function0() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ModalWideNavigationRail$lambda$22$lambda$21;
-                            ModalWideNavigationRail$lambda$22$lambda$21 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$22$lambda$21(CoroutineScope.this, animatable);
-                            return ModalWideNavigationRail$lambda$22$lambda$21;
+                            return DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$22$lambda$21(CoroutineScope.this, animatable);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue15);
@@ -419,15 +407,15 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                         } else {
                             composer2.useNode();
                         }
-                        Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer2);
-                        Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer2);
+                        Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                            m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                            m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                        if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                            m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                            m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                         }
-                        Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(composer2, 238599055, "C608@29206L195,625@30078L201,614@29423L1098:WideNavigationRail.kt#uh7d8r");
@@ -437,7 +425,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                         } else {
                             z4 = modalWideNavigationRailState2.getTargetValue() != WideNavigationRailValue.Collapsed;
                         }
-                        WideNavigationRailKt.m3528Scrim3JVO9M(modalWideNavigationRailOverrideScope3.getColors().m3517getModalScrimColor0d7_KjU(), function13, z4, composer2, 0);
+                        WideNavigationRailKt.m2953Scrim3JVO9M(modalWideNavigationRailOverrideScope3.getColors().m2947getModalScrimColor0d7_KjU(), function13, z4, composer2, 0);
                         if (!modalWideNavigationRailOverrideScope3.getShouldHideOnCollapse()) {
                             ModalWideNavigationRail$lambda$72 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$7(state4);
                             if (!ModalWideNavigationRail$lambda$72) {
@@ -447,7 +435,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                                 WideNavigationRailColors colors = modalWideNavigationRailOverrideScope3.getColors();
                                 Shape expandedShape = modalWideNavigationRailOverrideScope3.getExpandedShape();
                                 f2 = WideNavigationRailKt.ExpandedRailMaxWidth;
-                                WideNavigationRailKt.m3527ModalWideNavigationRailContentpU6N4AM(z5, shouldHideOnCollapse, animatable2, railPredictiveBackState2, function25, modifier2, modalWideNavigationRailState2, colors, expandedShape, f2, ComposableLambdaKt.rememberComposableLambda(208840989, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$7$1$1
+                                WideNavigationRailKt.m2952ModalWideNavigationRailContentpU6N4AM(z5, shouldHideOnCollapse, animatable2, railPredictiveBackState2, function25, modifier2, modalWideNavigationRailState2, colors, expandedShape, f2, ComposableLambdaKt.rememberComposableLambda(208840989, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$7$1$1
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                         invoke(composer3, num.intValue());
@@ -463,14 +451,14 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(208840989, i7, -1, "androidx.compose.material3.DefaultModalWideNavigationRailOverride.ModalWideNavigationRail.<anonymous>.<anonymous>.<anonymous> (WideNavigationRail.kt:626)");
                                         }
-                                        Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, 0.0f, ModalWideNavigationRailOverrideScope.this.m2671getExpandedHeaderTopPaddingD9Ej5fM(), 0.0f, 0.0f, 13, null);
+                                        Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, ModalWideNavigationRailOverrideScope.this.m2258getExpandedHeaderTopPaddingD9Ej5fM(), 0.0f, 0.0f, 13, null);
                                         ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope4 = ModalWideNavigationRailOverrideScope.this;
                                         ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                         MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                         int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                         CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, m932paddingqDBjuR0$default);
+                                        Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, m822paddingqDBjuR0$default);
                                         Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
                                         ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                         if (!(composer3.getApplier() instanceof Applier)) {
@@ -482,15 +470,15 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m4673constructorimpl3 = Updater.m4673constructorimpl(composer3);
-                                        Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4041constructorimpl3 = Updater.m4041constructorimpl(composer3);
+                                        Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                            m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                            m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                        if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                            m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                            m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                         }
-                                        Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                         BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1627808976, "C:WideNavigationRail.kt#uh7d8r");
@@ -533,7 +521,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                         WideNavigationRailColors colors2 = modalWideNavigationRailOverrideScope3.getColors();
                         Shape expandedShape2 = modalWideNavigationRailOverrideScope3.getExpandedShape();
                         f2 = WideNavigationRailKt.ExpandedRailMaxWidth;
-                        WideNavigationRailKt.m3527ModalWideNavigationRailContentpU6N4AM(z5, shouldHideOnCollapse2, animatable2, railPredictiveBackState2, function25, modifier22, modalWideNavigationRailState2, colors2, expandedShape2, f2, ComposableLambdaKt.rememberComposableLambda(208840989, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$7$1$1
+                        WideNavigationRailKt.m2952ModalWideNavigationRailContentpU6N4AM(z5, shouldHideOnCollapse2, animatable2, railPredictiveBackState2, function25, modifier22, modalWideNavigationRailState2, colors2, expandedShape2, f2, ComposableLambdaKt.rememberComposableLambda(208840989, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$7$1$1
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                 invoke(composer3, num.intValue());
@@ -549,14 +537,14 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(208840989, i7, -1, "androidx.compose.material3.DefaultModalWideNavigationRailOverride.ModalWideNavigationRail.<anonymous>.<anonymous>.<anonymous> (WideNavigationRail.kt:626)");
                                 }
-                                Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, 0.0f, ModalWideNavigationRailOverrideScope.this.m2671getExpandedHeaderTopPaddingD9Ej5fM(), 0.0f, 0.0f, 13, null);
+                                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, ModalWideNavigationRailOverrideScope.this.m2258getExpandedHeaderTopPaddingD9Ej5fM(), 0.0f, 0.0f, 13, null);
                                 ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope4 = ModalWideNavigationRailOverrideScope.this;
                                 ComposerKt.sourceInformationMarkerStart(composer3, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                 int currentCompositeKeyHash3 = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                 CompositionLocalMap currentCompositionLocalMap3 = composer3.getCurrentCompositionLocalMap();
-                                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, m932paddingqDBjuR0$default);
+                                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(composer3, m822paddingqDBjuR0$default);
                                 Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
                                 ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                 if (!(composer3.getApplier() instanceof Applier)) {
@@ -568,15 +556,15 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
                                 } else {
                                     composer3.useNode();
                                 }
-                                Composer m4673constructorimpl3 = Updater.m4673constructorimpl(composer3);
-                                Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4041constructorimpl3 = Updater.m4041constructorimpl(composer3);
+                                Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                                if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                    m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                    m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                                 }
-                                Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(composer3, -1627808976, "C:WideNavigationRail.kt#uh7d8r");
@@ -627,43 +615,41 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DefaultModalWideNavigationRailOverride$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ModalWideNavigationRail$lambda$23;
-                    ModalWideNavigationRail$lambda$23 = DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$23(DefaultModalWideNavigationRailOverride.this, modalWideNavigationRailOverrideScope2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ModalWideNavigationRail$lambda$23;
+                    return DefaultModalWideNavigationRailOverride.ModalWideNavigationRail$lambda$23(DefaultModalWideNavigationRailOverride.this, modalWideNavigationRailOverrideScope2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean ModalWideNavigationRail$lambda$3$lambda$2(State state) {
         return ((Number) state.getValue()).floatValue() == 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean ModalWideNavigationRail$lambda$6$lambda$5(State state) {
         return ((Number) state.getValue()).floatValue() >= 0.3f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRail$lambda$16$lambda$15(Channel channel, ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope) {
-        channel.mo9174trySendJP2dKIU(Boolean.valueOf(WideNavigationRailStateKt.isExpanded(modalWideNavigationRailOverrideScope.getState().getTargetValue())));
+        channel.mo8396trySendJP2dKIU(Boolean.valueOf(WideNavigationRailStateKt.isExpanded(modalWideNavigationRailOverrideScope.getState().getTargetValue())));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRail$lambda$18$lambda$17(CoroutineScope coroutineScope, ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$4$1$1(modalWideNavigationRailOverrideScope, null), 3, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRail$lambda$20$lambda$19(CoroutineScope coroutineScope, Animatable animatable, float f) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$5$1$1(animatable, f, null), 3, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRail$lambda$22$lambda$21(CoroutineScope coroutineScope, Animatable animatable) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$6$1$1(animatable, null), 3, null);
         return Unit.INSTANCE;

@@ -150,11 +150,13 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
 
         @Override // com.google.android.material.internal.TextWatcherAdapter, android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
-            if (TextUtils.isEmpty(editable)) {
-                ChipTextInputComboView.this.chip.setText(ChipTextInputComboView.this.formatText(DEFAULT_TEXT));
+            boolean isEmpty = TextUtils.isEmpty(editable);
+            ChipTextInputComboView chipTextInputComboView = ChipTextInputComboView.this;
+            if (isEmpty) {
+                chipTextInputComboView.chip.setText(ChipTextInputComboView.this.formatText(DEFAULT_TEXT));
                 return;
             }
-            String formatText = ChipTextInputComboView.this.formatText(editable);
+            String formatText = chipTextInputComboView.formatText(editable);
             Chip chip = ChipTextInputComboView.this.chip;
             if (TextUtils.isEmpty(formatText)) {
                 formatText = ChipTextInputComboView.this.formatText(DEFAULT_TEXT);

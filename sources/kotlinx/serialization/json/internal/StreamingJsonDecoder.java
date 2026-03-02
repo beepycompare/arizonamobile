@@ -21,6 +21,7 @@ import kotlinx.serialization.encoding.ChunkedDecoder;
 import kotlinx.serialization.encoding.CompositeDecoder;
 import kotlinx.serialization.encoding.Decoder;
 import kotlinx.serialization.internal.AbstractPolymorphicSerializer;
+import kotlinx.serialization.internal.JsonInternalDependenciesKt;
 import kotlinx.serialization.json.Json;
 import kotlinx.serialization.json.JsonConfiguration;
 import kotlinx.serialization.json.JsonDecoder;
@@ -30,7 +31,7 @@ import kotlinx.serialization.json.JsonObject;
 import kotlinx.serialization.json.JsonPrimitive;
 import kotlinx.serialization.modules.SerializersModule;
 /* compiled from: StreamingJsonDecoder.kt */
-@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u000e\n\u0002\u0010\u0005\n\u0000\n\u0002\u0010\n\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\f\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0010\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0001UB1\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u0016\u0010\u0012\u001a\u00020\u0013*\u0004\u0018\u00010\r2\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020!H\u0016J!\u0010\"\u001a\u0002H#\"\u0004\b\u0000\u0010#2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%H\u0016¢\u0006\u0002\u0010&J\u0010\u0010'\u001a\u00020(2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010)\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010+\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\b\u0010,\u001a\u00020\u0013H\u0016J\n\u0010-\u001a\u0004\u0018\u00010.H\u0016J\b\u0010/\u001a\u00020*H\u0002J;\u00100\u001a\u0002H#\"\u0004\b\u0000\u0010#2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001b2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%2\b\u00102\u001a\u0004\u0018\u0001H#H\u0016¢\u0006\u0002\u00103J\u0010\u00104\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\b\u00105\u001a\u00020\u001bH\u0002J\u0018\u00106\u001a\u00020\u00132\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001bH\u0002J\u0010\u00107\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0010\u00108\u001a\u00020\u00132\u0006\u00109\u001a\u00020\u0015H\u0002J\b\u0010:\u001a\u00020\u001bH\u0002J\b\u0010;\u001a\u00020\u0013H\u0016J\b\u0010<\u001a\u00020=H\u0016J\b\u0010>\u001a\u00020?H\u0016J\b\u0010@\u001a\u00020\u001bH\u0016J\b\u0010A\u001a\u00020BH\u0016J\b\u0010C\u001a\u00020DH\u0016J\b\u0010E\u001a\u00020FH\u0016J\b\u0010G\u001a\u00020HH\u0016J\b\u0010I\u001a\u00020\u0015H\u0002J\b\u0010J\u001a\u00020\u0015H\u0016J+\u0010K\u001a\u00020*2!\u0010L\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\bN\u0012\b\bO\u0012\u0004\b\b(P\u0012\u0004\u0012\u00020*0MH\u0016J\u0010\u0010Q\u001a\u00020R2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010S\u001a\u00020\u001b2\u0006\u0010T\u001a\u00020\u000bH\u0016R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\t8\u0000X\u0081\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\u00020\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder;", "Lkotlinx/serialization/json/JsonDecoder;", "Lkotlinx/serialization/encoding/ChunkedDecoder;", "Lkotlinx/serialization/encoding/AbstractDecoder;", "json", "Lkotlinx/serialization/json/Json;", UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/json/internal/WriteMode;", "lexer", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "discriminatorHolder", "Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/internal/WriteMode;Lkotlinx/serialization/json/internal/AbstractJsonLexer;Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;)V", "getJson", "()Lkotlinx/serialization/json/Json;", "trySkip", "", "unknownKey", "", "serializersModule", "Lkotlinx/serialization/modules/SerializersModule;", "getSerializersModule", "()Lkotlinx/serialization/modules/SerializersModule;", "currentIndex", "", "configuration", "Lkotlinx/serialization/json/JsonConfiguration;", "elementMarker", "Lkotlinx/serialization/json/internal/JsonElementMarker;", "decodeJsonElement", "Lkotlinx/serialization/json/JsonElement;", "decodeSerializableValue", ExifInterface.GPS_DIRECTION_TRUE, "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "(Lkotlinx/serialization/DeserializationStrategy;)Ljava/lang/Object;", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "skipLeftoverElements", "decodeNotNullMark", "decodeNull", "", "checkLeadingComma", "decodeSerializableElement", FirebaseAnalytics.Param.INDEX, "previousValue", "(Lkotlinx/serialization/descriptors/SerialDescriptor;ILkotlinx/serialization/DeserializationStrategy;Ljava/lang/Object;)Ljava/lang/Object;", "decodeElementIndex", "decodeMapIndex", "coerceInputValue", "decodeObjectIndex", "handleUnknown", "key", "decodeListIndex", "decodeBoolean", "decodeByte", "", "decodeShort", "", "decodeInt", "decodeLong", "", "decodeFloat", "", "decodeDouble", "", "decodeChar", "", "decodeStringKey", "decodeString", "decodeStringChunked", "consumeChunk", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "chunk", "decodeInline", "Lkotlinx/serialization/encoding/Decoder;", "decodeEnum", "enumDescriptor", "DiscriminatorHolder", "kotlinx-serialization-json"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u0001\n\u0002\b\u000e\n\u0002\u0010\u0005\n\u0000\n\u0002\u0010\n\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\f\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0010\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u0003:\u0001UB3\bF\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\b\u0010\f\u001a\u0004\u0018\u00010\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u0018\u0010\u0012\u001a\u00020\u0013*\u0004\u0018\u00010\r2\u0006\u0010\u0014\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010 \u001a\u00020!H\u0096\u0080\u0004J#\u0010\"\u001a\u0002H#\"\u0004\b\u0000\u0010#2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%H\u0096\u0080\u0004¢\u0006\u0002\u0010&J\u0012\u0010'\u001a\u00020(2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010)\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010+\u001a\u00020*2\u0006\u0010\n\u001a\u00020\u000bH\u0082\u0080\u0004J\n\u0010,\u001a\u00020\u0013H\u0096\u0080\u0004J\f\u0010-\u001a\u0004\u0018\u00010.H\u0096\u0080\u0004J\n\u0010/\u001a\u00020*H\u0082\u0080\u0004J=\u00100\u001a\u0002H#\"\u0004\b\u0000\u0010#2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001b2\f\u0010$\u001a\b\u0012\u0004\u0012\u0002H#0%2\b\u00102\u001a\u0004\u0018\u0001H#H\u0096\u0080\u0004¢\u0006\u0002\u00103J\u0012\u00104\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\n\u00105\u001a\u00020\u001bH\u0082\u0080\u0004J\u001a\u00106\u001a\u00020\u00132\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00101\u001a\u00020\u001bH\u0082\u0080\u0004J\u0012\u00107\u001a\u00020\u001b2\u0006\u0010\n\u001a\u00020\u000bH\u0082\u0080\u0004J\u001a\u00108\u001a\u00020\u00132\u0006\u0010\n\u001a\u00020\u000b2\u0006\u00109\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010:\u001a\u00020\u001bH\u0082\u0080\u0004J\n\u0010;\u001a\u00020\u0013H\u0096\u0080\u0004J\n\u0010<\u001a\u00020=H\u0096\u0080\u0004J\n\u0010>\u001a\u00020?H\u0096\u0080\u0004J\n\u0010@\u001a\u00020\u001bH\u0096\u0080\u0004J\n\u0010A\u001a\u00020BH\u0096\u0080\u0004J\n\u0010C\u001a\u00020DH\u0096\u0080\u0004J\n\u0010E\u001a\u00020FH\u0096\u0080\u0004J\n\u0010G\u001a\u00020HH\u0096\u0080\u0004J\n\u0010I\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010J\u001a\u00020\u0015H\u0096\u0080\u0004J-\u0010K\u001a\u00020*2!\u0010L\u001a\u001d\u0012\u0013\u0012\u00110\u0015¢\u0006\f\bN\u0012\b\bO\u0012\u0004\b\b(P\u0012\u0004\u0012\u00020*0MH\u0096\u0080\u0004J\u0012\u0010Q\u001a\u00020R2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010S\u001a\u00020\u001b2\u0006\u0010T\u001a\u00020\u000bH\u0096\u0080\u0004R\u0015\u0010\u0004\u001a\u00020\u0005X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000f\u0010\u0006\u001a\u00020\u0007X\u0082\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\b\u001a\u00020\t8\u0000X\u0081\u0084\b¢\u0006\u0002\n\u0000R\u0015\u0010\u0016\u001a\u00020\u0017X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u000f\u0010\u001a\u001a\u00020\u001bX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u0011\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u000f\u0010\u001c\u001a\u00020\u001dX\u0082\u0084\b¢\u0006\u0002\n\u0000R\u0011\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0084\b¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder;", "Lkotlinx/serialization/json/JsonDecoder;", "Lkotlinx/serialization/encoding/ChunkedDecoder;", "Lkotlinx/serialization/encoding/AbstractDecoder;", "json", "Lkotlinx/serialization/json/Json;", UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/json/internal/WriteMode;", "lexer", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "discriminatorHolder", "Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/internal/WriteMode;Lkotlinx/serialization/json/internal/AbstractJsonLexer;Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;)V", "getJson", "()Lkotlinx/serialization/json/Json;", "trySkip", "", "unknownKey", "", "serializersModule", "Lkotlinx/serialization/modules/SerializersModule;", "getSerializersModule", "()Lkotlinx/serialization/modules/SerializersModule;", "currentIndex", "", "configuration", "Lkotlinx/serialization/json/JsonConfiguration;", "elementMarker", "Lkotlinx/serialization/json/internal/JsonElementMarker;", "decodeJsonElement", "Lkotlinx/serialization/json/JsonElement;", "decodeSerializableValue", ExifInterface.GPS_DIRECTION_TRUE, "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "(Lkotlinx/serialization/DeserializationStrategy;)Ljava/lang/Object;", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "skipLeftoverElements", "decodeNotNullMark", "decodeNull", "", "checkLeadingComma", "decodeSerializableElement", FirebaseAnalytics.Param.INDEX, "previousValue", "(Lkotlinx/serialization/descriptors/SerialDescriptor;ILkotlinx/serialization/DeserializationStrategy;Ljava/lang/Object;)Ljava/lang/Object;", "decodeElementIndex", "decodeMapIndex", "coerceInputValue", "decodeObjectIndex", "handleUnknown", "key", "decodeListIndex", "decodeBoolean", "decodeByte", "", "decodeShort", "", "decodeInt", "decodeLong", "", "decodeFloat", "", "decodeDouble", "", "decodeChar", "", "decodeStringKey", "decodeString", "decodeStringChunked", "consumeChunk", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "chunk", "decodeInline", "Lkotlinx/serialization/encoding/Decoder;", "decodeEnum", "enumDescriptor", "DiscriminatorHolder", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder, ChunkedDecoder {
     private final JsonConfiguration configuration;
@@ -43,9 +44,9 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
     private final SerializersModule serializersModule;
 
     /* compiled from: StreamingJsonDecoder.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -75,11 +76,6 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         return null;
     }
 
-    @Override // kotlinx.serialization.json.JsonDecoder
-    public final Json getJson() {
-        return this.json;
-    }
-
     public StreamingJsonDecoder(Json json, WriteMode mode, AbstractJsonLexer lexer, SerialDescriptor descriptor, DiscriminatorHolder discriminatorHolder) {
         Intrinsics.checkNotNullParameter(json, "json");
         Intrinsics.checkNotNullParameter(mode, "mode");
@@ -96,8 +92,13 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         this.elementMarker = configuration.getExplicitNulls() ? null : new JsonElementMarker(descriptor);
     }
 
+    @Override // kotlinx.serialization.json.JsonDecoder
+    public final Json getJson() {
+        return this.json;
+    }
+
     /* compiled from: StreamingJsonDecoder.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0014\u0010\u0002\u001a\u0004\u0018\u00010\u00038\u0006@\u0006X\u0087\u000e¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "", "discriminatorToSkip", "", "<init>", "(Ljava/lang/String;)V", "kotlinx-serialization-json"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0013\bF\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u00038\u0006@\u0006X\u0087\u008e\b¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/json/internal/StreamingJsonDecoder$DiscriminatorHolder;", "", "discriminatorToSkip", "", "<init>", "(Ljava/lang/String;)V", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class DiscriminatorHolder {
         public String discriminatorToSkip;
@@ -185,7 +186,7 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
             message = e.getMessage();
             Intrinsics.checkNotNull(message);
             if (StringsKt.contains$default((CharSequence) message, (CharSequence) "at path", false, 2, (Object) null)) {
-                throw new MissingFieldException(e.getMissingFields(), e.getMessage() + " at path: " + this.lexer.path.getPath(), e);
+                throw JsonInternalDependenciesKt.missingFieldExceptionWithNewMessage(e, e.getMessage() + " at path: " + this.lexer.path.getPath());
             }
             throw e;
         }
@@ -209,7 +210,7 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.CompositeDecoder
     public void endStructure(SerialDescriptor descriptor) {
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
-        if (this.json.getConfiguration().getIgnoreUnknownKeys() && descriptor.getElementsCount() == 0) {
+        if (descriptor.getElementsCount() == 0 && JsonNamesMapKt.ignoreUnknownKeys(descriptor, this.json)) {
             skipLeftoverElements(descriptor);
         }
         if (this.lexer.tryConsumeComma() && !this.json.getConfiguration().getAllowTrailingComma()) {
@@ -283,26 +284,25 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         }
         if (this.lexer.canConsumeValue()) {
             if (z2) {
-                if (this.currentIndex != -1) {
-                    AbstractJsonLexer abstractJsonLexer = this.lexer;
-                    boolean z3 = z;
-                    int i2 = abstractJsonLexer.currentPosition;
-                    if (!z3) {
-                        AbstractJsonLexer.fail$default(abstractJsonLexer, "Expected comma after the key-value pair", i2, null, 4, null);
+                int i2 = this.currentIndex;
+                AbstractJsonLexer abstractJsonLexer = this.lexer;
+                if (i2 == -1) {
+                    int i3 = abstractJsonLexer.currentPosition;
+                    if (z) {
+                        AbstractJsonLexer.fail$default(abstractJsonLexer, "Unexpected leading comma", i3, null, 4, null);
                         throw new KotlinNothingValueException();
                     }
                 } else {
-                    AbstractJsonLexer abstractJsonLexer2 = this.lexer;
-                    int i3 = abstractJsonLexer2.currentPosition;
-                    if (z) {
-                        AbstractJsonLexer.fail$default(abstractJsonLexer2, "Unexpected leading comma", i3, null, 4, null);
+                    int i4 = abstractJsonLexer.currentPosition;
+                    if (!z) {
+                        AbstractJsonLexer.fail$default(abstractJsonLexer, "Expected comma after the key-value pair", i4, null, 4, null);
                         throw new KotlinNothingValueException();
                     }
                 }
             }
-            int i4 = this.currentIndex + 1;
-            this.currentIndex = i4;
-            return i4;
+            int i5 = this.currentIndex + 1;
+            this.currentIndex = i5;
+            return i5;
         } else if (!z || this.json.getConfiguration().getAllowTrailingComma()) {
             return -1;
         } else {
@@ -349,7 +349,7 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
                     z = this.lexer.tryConsumeComma();
                     z2 = false;
                 }
-                tryConsumeComma = z2 ? handleUnknown(decodeStringKey) : z;
+                tryConsumeComma = z2 ? handleUnknown(serialDescriptor, decodeStringKey) : z;
             } else if (tryConsumeComma && !this.json.getConfiguration().getAllowTrailingComma()) {
                 JsonExceptionsKt.invalidTrailingComma$default(this.lexer, null, 1, null);
                 throw new KotlinNothingValueException();
@@ -368,10 +368,11 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         return jsonNameIndex;
     }
 
-    private final boolean handleUnknown(String str) {
-        if (this.configuration.getIgnoreUnknownKeys() || trySkip(this.discriminatorHolder, str)) {
+    private final boolean handleUnknown(SerialDescriptor serialDescriptor, String str) {
+        if (JsonNamesMapKt.ignoreUnknownKeys(serialDescriptor, this.json) || trySkip(this.discriminatorHolder, str)) {
             this.lexer.skipElement(this.configuration.isLenient());
         } else {
+            this.lexer.path.popDescriptor();
             this.lexer.failOnUnknownKey(str);
         }
         return this.lexer.tryConsumeComma();
@@ -445,14 +446,11 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         String consumeStringLenient = abstractJsonLexer.consumeStringLenient();
         try {
             float parseFloat = Float.parseFloat(consumeStringLenient);
-            if (this.json.getConfiguration().getAllowSpecialFloatingPointValues()) {
+            if (this.json.getConfiguration().getAllowSpecialFloatingPointValues() || Math.abs(parseFloat) <= Float.MAX_VALUE) {
                 return parseFloat;
             }
-            if (Float.isInfinite(parseFloat) || Float.isNaN(parseFloat)) {
-                JsonExceptionsKt.throwInvalidFloatingPointDecoded(this.lexer, Float.valueOf(parseFloat));
-                throw new KotlinNothingValueException();
-            }
-            return parseFloat;
+            JsonExceptionsKt.throwInvalidFloatingPointDecoded(this.lexer, Float.valueOf(parseFloat));
+            throw new KotlinNothingValueException();
         } catch (IllegalArgumentException unused) {
             AbstractJsonLexer.fail$default(abstractJsonLexer, "Failed to parse type 'float' for input '" + consumeStringLenient + '\'', 0, null, 6, null);
             throw new KotlinNothingValueException();
@@ -465,14 +463,11 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
         String consumeStringLenient = abstractJsonLexer.consumeStringLenient();
         try {
             double parseDouble = Double.parseDouble(consumeStringLenient);
-            if (this.json.getConfiguration().getAllowSpecialFloatingPointValues()) {
+            if (this.json.getConfiguration().getAllowSpecialFloatingPointValues() || Math.abs(parseDouble) <= Double.MAX_VALUE) {
                 return parseDouble;
             }
-            if (Double.isInfinite(parseDouble) || Double.isNaN(parseDouble)) {
-                JsonExceptionsKt.throwInvalidFloatingPointDecoded(this.lexer, Double.valueOf(parseDouble));
-                throw new KotlinNothingValueException();
-            }
-            return parseDouble;
+            JsonExceptionsKt.throwInvalidFloatingPointDecoded(this.lexer, Double.valueOf(parseDouble));
+            throw new KotlinNothingValueException();
         } catch (IllegalArgumentException unused) {
             AbstractJsonLexer.fail$default(abstractJsonLexer, "Failed to parse type 'double' for input '" + consumeStringLenient + '\'', 0, null, 6, null);
             throw new KotlinNothingValueException();
@@ -490,18 +485,22 @@ public class StreamingJsonDecoder extends AbstractDecoder implements JsonDecoder
     }
 
     private final String decodeStringKey() {
-        if (this.configuration.isLenient()) {
-            return this.lexer.consumeStringLenientNotNull();
+        boolean isLenient = this.configuration.isLenient();
+        AbstractJsonLexer abstractJsonLexer = this.lexer;
+        if (isLenient) {
+            return abstractJsonLexer.consumeStringLenientNotNull();
         }
-        return this.lexer.consumeKeyString();
+        return abstractJsonLexer.consumeKeyString();
     }
 
     @Override // kotlinx.serialization.encoding.AbstractDecoder, kotlinx.serialization.encoding.Decoder
     public String decodeString() {
-        if (this.configuration.isLenient()) {
-            return this.lexer.consumeStringLenientNotNull();
+        boolean isLenient = this.configuration.isLenient();
+        AbstractJsonLexer abstractJsonLexer = this.lexer;
+        if (isLenient) {
+            return abstractJsonLexer.consumeStringLenientNotNull();
         }
-        return this.lexer.consumeString();
+        return abstractJsonLexer.consumeString();
     }
 
     @Override // kotlinx.serialization.encoding.ChunkedDecoder

@@ -6,7 +6,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class FocusOwnerImplKt {
     /* renamed from: is1dFocusSearch-3ESFkO8  reason: not valid java name */
-    public static final boolean m5081is1dFocusSearch3ESFkO8(int i) {
-        return FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5062getNextdhqQ8s()) || FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5063getPreviousdhqQ8s());
+    public static final boolean m4429is1dFocusSearch3ESFkO8(int i) {
+        return FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4410getNextdhqQ8s()) || FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4411getPreviousdhqQ8s());
     }
 }

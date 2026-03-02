@@ -52,7 +52,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
                 i = constraintsSizeResolver$size$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    if (Constraints.m8215isZeroimpl(this.latestConstraints)) {
+                    if (Constraints.m7512isZeroimpl(this.latestConstraints)) {
                         Ref.ObjectRef objectRef2 = new Ref.ObjectRef();
                         try {
                             constraintsSizeResolver$size$1.L$0 = objectRef2;
@@ -78,7 +78,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
                             throw th;
                         }
                     }
-                    return UtilsKt.m9430toSizeBRTryo0(this.latestConstraints);
+                    return UtilsKt.m8576toSizeBRTryo0(this.latestConstraints);
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -93,7 +93,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
                     }
                 }
                 TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-                return UtilsKt.m9430toSizeBRTryo0(this.latestConstraints);
+                return UtilsKt.m8576toSizeBRTryo0(this.latestConstraints);
             }
         }
         constraintsSizeResolver$size$1 = new ConstraintsSizeResolver$size$1(this, continuation);
@@ -103,34 +103,32 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
         if (i != 0) {
         }
         TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-        return UtilsKt.m9430toSizeBRTryo0(this.latestConstraints);
+        return UtilsKt.m8576toSizeBRTryo0(this.latestConstraints);
     }
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo1371measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        m9402setConstraintsBRTryo0(j);
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: coil3.compose.ConstraintsSizeResolver$$ExternalSyntheticLambda0
+    public MeasureResult mo1198measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        m8552setConstraintsBRTryo0(j);
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: coil3.compose.ConstraintsSizeResolver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = ConstraintsSizeResolver.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return ConstraintsSizeResolver.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
     /* renamed from: setConstraints-BRTryo0  reason: not valid java name */
-    public final void m9402setConstraintsBRTryo0(long j) {
+    public final void m8552setConstraintsBRTryo0(long j) {
         this.latestConstraints = j;
-        if (Constraints.m8215isZeroimpl(j)) {
+        if (Constraints.m7512isZeroimpl(j)) {
             return;
         }
         List<Continuation<Unit>> list = this.continuations;
@@ -141,7 +139,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
         Iterator<T> it = list.iterator();
         while (it.hasNext()) {
             Result.Companion companion = Result.Companion;
-            ((Continuation) it.next()).resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+            ((Continuation) it.next()).resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
         }
     }
 }

@@ -45,16 +45,16 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SwitchButton.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001a\u0015\u0010\t\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"SwitchButton", "", "text", "", "onClick", "Lkotlin/Function0;", "checked", "", "(Ljava/lang/String;Lkotlin/jvm/functions/Function0;ZLandroidx/compose/runtime/Composer;I)V", "CustomToggleSwitch", "(ZLandroidx/compose/runtime/Composer;I)V", "settings_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001a\u0015\u0010\t\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"SwitchButton", "", "text", "", "onClick", "Lkotlin/Function0;", "checked", "", "(Ljava/lang/String;Lkotlin/jvm/functions/Function0;ZLandroidx/compose/runtime/Composer;I)V", "CustomToggleSwitch", "(ZLandroidx/compose/runtime/Composer;I)V", "settings"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SwitchButtonKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CustomToggleSwitch$lambda$1(boolean z, int i, Composer composer, int i2) {
         CustomToggleSwitch(z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwitchButton$lambda$1(String str, Function0 function0, boolean z, int i, Composer composer, int i2) {
         SwitchButton(str, function0, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -89,9 +89,7 @@ public final class SwitchButtonKt {
             ScalingButtonKt.ScalingButton(function0, null, ComposableLambdaKt.rememberComposableLambda(-1706652927, true, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit SwitchButton$lambda$0;
-                    SwitchButton$lambda$0 = SwitchButtonKt.SwitchButton$lambda$0(text, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SwitchButton$lambda$0;
+                    return SwitchButtonKt.SwitchButton$lambda$0(text, z, (BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             if (ComposerKt.isTraceInProgress()) {
@@ -103,15 +101,13 @@ public final class SwitchButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SwitchButton$lambda$1;
-                    SwitchButton$lambda$1 = SwitchButtonKt.SwitchButton$lambda$1(text, function0, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SwitchButton$lambda$1;
+                    return SwitchButtonKt.SwitchButton$lambda$1(text, function0, z, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwitchButton$lambda$0(String str, boolean z, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C35@1505L933:SwitchButton.kt#1gr92h");
@@ -122,14 +118,14 @@ public final class SwitchButtonKt {
                 ComposerKt.traceEventStart(-1706652927, i, -1, "com.miami.game.feature.settings.ui.compose.SwitchButton.<anonymous> (SwitchButton.kt:35)");
             }
             float f = 8;
-            Modifier m929paddingVpY3zN4 = PaddingKt.m929paddingVpY3zN4(BorderKt.m316borderziNgDLE(BackgroundKt.m298backgroundbw27NRU(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(260)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1283RoundedCornerShape0680j_4(Dp.m8258constructorimpl(f))), Dp.m8258constructorimpl(1), Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1283RoundedCornerShape0680j_4(Dp.m8258constructorimpl(f))), Dp.m8258constructorimpl(20), Dp.m8258constructorimpl(16));
+            Modifier m819paddingVpY3zN4 = PaddingKt.m819paddingVpY3zN4(BorderKt.m277borderziNgDLE(BackgroundKt.m263backgroundbw27NRU(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(260)), ColorKt.Color(3205437478L), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(f))), Dp.m7555constructorimpl(1), Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.1f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), RoundedCornerShapeKt.m1126RoundedCornerShape0680j_4(Dp.m7555constructorimpl(f))), Dp.m7555constructorimpl(20), Dp.m7555constructorimpl(16));
             Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), centerVertically, composer, 54);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
             CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m929paddingVpY3zN4);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m819paddingVpY3zN4);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(composer.getApplier() instanceof Applier)) {
@@ -141,12 +137,12 @@ public final class SwitchButtonKt {
             } else {
                 composer.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-            Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -246736908, "C57@2346L42,59@2401L27:SwitchButton.kt#1gr92h");
@@ -182,15 +178,15 @@ public final class SwitchButtonKt {
             }
             Color.Companion companion = Color.Companion;
             if (z) {
-                companion.m5450getBlack0d7_KjU();
+                companion.m4798getBlack0d7_KjU();
             } else {
-                companion.m5452getCyan0d7_KjU();
+                companion.m4800getCyan0d7_KjU();
             }
             Color.Companion companion2 = Color.Companion;
             if (z) {
-                companion2.m5451getBlue0d7_KjU();
+                companion2.m4799getBlue0d7_KjU();
             } else {
-                companion2.m5455getGreen0d7_KjU();
+                companion2.m4803getGreen0d7_KjU();
             }
             int i3 = z ? R.drawable.thumb_active : R.drawable.thumb_not_active;
             Alignment.Companion companion3 = Alignment.Companion;
@@ -212,17 +208,17 @@ public final class SwitchButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C84@2959L37,84@2943L217,89@3185L24,89@3169L193:SwitchButton.kt#1gr92h");
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(12)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
-            ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(20)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(20)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -238,9 +234,7 @@ public final class SwitchButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SwitchButtonKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CustomToggleSwitch$lambda$1;
-                    CustomToggleSwitch$lambda$1 = SwitchButtonKt.CustomToggleSwitch$lambda$1(z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CustomToggleSwitch$lambda$1;
+                    return SwitchButtonKt.CustomToggleSwitch$lambda$1(z, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

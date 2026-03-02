@@ -16,14 +16,14 @@ public interface ComparableTimeMark extends TimeMark, Comparable<ComparableTimeM
 
     @Override // kotlin.time.TimeMark
     /* renamed from: minus-LRDsOJo */
-    ComparableTimeMark mo11594minusLRDsOJo(long j);
+    ComparableTimeMark mo10527minusLRDsOJo(long j);
 
     /* renamed from: minus-UwyO8pc */
-    long mo11595minusUwyO8pc(ComparableTimeMark comparableTimeMark);
+    long mo10528minusUwyO8pc(ComparableTimeMark comparableTimeMark);
 
     @Override // kotlin.time.TimeMark
     /* renamed from: plus-LRDsOJo */
-    ComparableTimeMark mo11596plusLRDsOJo(long j);
+    ComparableTimeMark mo10529plusLRDsOJo(long j);
 
     /* compiled from: TimeSource.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
@@ -38,13 +38,13 @@ public interface ComparableTimeMark extends TimeMark, Comparable<ComparableTimeM
         }
 
         /* renamed from: minus-LRDsOJo  reason: not valid java name */
-        public static ComparableTimeMark m11598minusLRDsOJo(ComparableTimeMark comparableTimeMark, long j) {
-            return comparableTimeMark.mo11596plusLRDsOJo(Duration.m11649unaryMinusUwyO8pc(j));
+        public static ComparableTimeMark m10531minusLRDsOJo(ComparableTimeMark comparableTimeMark, long j) {
+            return comparableTimeMark.mo10529plusLRDsOJo(Duration.m10582unaryMinusUwyO8pc(j));
         }
 
         public static int compareTo(ComparableTimeMark comparableTimeMark, ComparableTimeMark other) {
             Intrinsics.checkNotNullParameter(other, "other");
-            return Duration.m11604compareToLRDsOJo(comparableTimeMark.mo11595minusUwyO8pc(other), Duration.Companion.m11700getZEROUwyO8pc());
+            return Duration.m10537compareToLRDsOJo(comparableTimeMark.mo10528minusUwyO8pc(other), Duration.Companion.m10633getZEROUwyO8pc());
         }
     }
 }

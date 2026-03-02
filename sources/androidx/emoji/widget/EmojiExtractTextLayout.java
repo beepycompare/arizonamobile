@@ -71,10 +71,12 @@ public class EmojiExtractTextLayout extends LinearLayout {
             if (editorInfo.actionLabel != null || ((editorInfo.imeOptions & 255) != 1 && (editorInfo.imeOptions & C.BUFFER_FLAG_LAST_SAMPLE) == 0 && editorInfo.inputType != 0)) {
                 this.mExtractAccessories.setVisibility(0);
                 if (this.mExtractAction != null) {
-                    if (editorInfo.actionLabel != null) {
-                        this.mExtractAction.setText(editorInfo.actionLabel);
+                    CharSequence charSequence = editorInfo.actionLabel;
+                    ExtractButtonCompat extractButtonCompat = this.mExtractAction;
+                    if (charSequence != null) {
+                        extractButtonCompat.setText(editorInfo.actionLabel);
                     } else {
-                        this.mExtractAction.setText(inputMethodService.getTextForImeAction(editorInfo.imeOptions));
+                        extractButtonCompat.setText(inputMethodService.getTextForImeAction(editorInfo.imeOptions));
                     }
                     this.mExtractAction.setOnClickListener(getButtonClickListener(inputMethodService));
                     return;
@@ -82,9 +84,9 @@ public class EmojiExtractTextLayout extends LinearLayout {
                 return;
             }
             this.mExtractAccessories.setVisibility(8);
-            ExtractButtonCompat extractButtonCompat = this.mExtractAction;
-            if (extractButtonCompat != null) {
-                extractButtonCompat.setOnClickListener(null);
+            ExtractButtonCompat extractButtonCompat2 = this.mExtractAction;
+            if (extractButtonCompat2 != null) {
+                extractButtonCompat2.setOnClickListener(null);
             }
         }
     }

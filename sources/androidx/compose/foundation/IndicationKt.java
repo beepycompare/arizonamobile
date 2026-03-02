@@ -22,9 +22,9 @@ public final class IndicationKt {
     private static final ProvidableCompositionLocal<Indication> LocalIndication = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.IndicationKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Indication LocalIndication$lambda$0;
-            LocalIndication$lambda$0 = IndicationKt.LocalIndication$lambda$0();
-            return LocalIndication$lambda$0;
+            Indication indication;
+            indication = DefaultDebugIndication.INSTANCE;
+            return indication;
         }
     }, 1, null);
     private static final String RememberUpdatedInstanceDeprecationMessage = "rememberUpdatedInstance has been deprecated - implementers should instead implement IndicationNodeFactory#create for improved performance and efficiency. Callers should check if the Indication is an IndicationNodeFactory, and call that API instead. For a migration guide and background information, please visit developer.android.com";
@@ -57,14 +57,12 @@ public final class IndicationKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.IndicationKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier indication$lambda$1;
-                indication$lambda$1 = IndicationKt.indication$lambda$1(Indication.this, interactionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return indication$lambda$1;
+                return IndicationKt.indication$lambda$1(Indication.this, interactionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier indication$lambda$1(Indication indication, InteractionSource interactionSource, Modifier modifier, Composer composer, int i) {
         composer.startReplaceGroup(-353972293);
         ComposerKt.sourceInformation(composer, "C177@8952L42,178@9007L51:Indication.kt#71ulvw");
@@ -86,11 +84,6 @@ public final class IndicationKt {
         }
         composer.endReplaceGroup();
         return indicationModifier;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Indication LocalIndication$lambda$0() {
-        return DefaultDebugIndication.INSTANCE;
     }
 
     public static final ProvidableCompositionLocal<Indication> getLocalIndication() {

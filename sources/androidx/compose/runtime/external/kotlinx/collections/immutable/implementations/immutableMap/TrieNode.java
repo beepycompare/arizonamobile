@@ -121,12 +121,14 @@ public final class TrieNode<K, V> {
 
     private final TrieNode<K, V> mutableInsertEntryAt(int i, K k, V v, MutabilityOwnership mutabilityOwnership) {
         int entryKeyIndex$runtime = entryKeyIndex$runtime(i);
-        if (this.ownedBy == mutabilityOwnership) {
-            this.buffer = TrieNodeKt.access$insertEntryAtIndex(this.buffer, entryKeyIndex$runtime, k, v);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            this.buffer = TrieNodeKt.access$insertEntryAtIndex(objArr, entryKeyIndex$runtime, k, v);
             this.dataMap = i | this.dataMap;
             return this;
         }
-        return new TrieNode<>(i | this.dataMap, this.nodeMap, TrieNodeKt.access$insertEntryAtIndex(this.buffer, entryKeyIndex$runtime, k, v), mutabilityOwnership);
+        return new TrieNode<>(i | this.dataMap, this.nodeMap, TrieNodeKt.access$insertEntryAtIndex(objArr, entryKeyIndex$runtime, k, v), mutabilityOwnership);
     }
 
     private final TrieNode<K, V> updateValueAtIndex(int i, V v) {
@@ -248,12 +250,15 @@ public final class TrieNode<K, V> {
         if (this.buffer.length == 2) {
             return null;
         }
-        if (this.ownedBy == persistentHashMapBuilder.getOwnership()) {
-            this.buffer = TrieNodeKt.access$removeEntryAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership = this.ownedBy;
+        MutabilityOwnership ownership = persistentHashMapBuilder.getOwnership();
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership == ownership) {
+            this.buffer = TrieNodeKt.access$removeEntryAtIndex(objArr, i);
             this.dataMap ^= i2;
             return this;
         }
-        return new TrieNode<>(i2 ^ this.dataMap, this.nodeMap, TrieNodeKt.access$removeEntryAtIndex(this.buffer, i), persistentHashMapBuilder.getOwnership());
+        return new TrieNode<>(i2 ^ this.dataMap, this.nodeMap, TrieNodeKt.access$removeEntryAtIndex(objArr, i), persistentHashMapBuilder.getOwnership());
     }
 
     private final TrieNode<K, V> collisionRemoveEntryAtIndex(int i) {
@@ -270,11 +275,14 @@ public final class TrieNode<K, V> {
         if (this.buffer.length == 2) {
             return null;
         }
-        if (this.ownedBy == persistentHashMapBuilder.getOwnership()) {
-            this.buffer = TrieNodeKt.access$removeEntryAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership = this.ownedBy;
+        MutabilityOwnership ownership = persistentHashMapBuilder.getOwnership();
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership == ownership) {
+            this.buffer = TrieNodeKt.access$removeEntryAtIndex(objArr, i);
             return this;
         }
-        return new TrieNode<>(0, 0, TrieNodeKt.access$removeEntryAtIndex(this.buffer, i), persistentHashMapBuilder.getOwnership());
+        return new TrieNode<>(0, 0, TrieNodeKt.access$removeEntryAtIndex(objArr, i), persistentHashMapBuilder.getOwnership());
     }
 
     private final boolean collisionContainsKey(K k) {
@@ -434,10 +442,10 @@ public final class TrieNode<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     private final TrieNode<K, V> mutableCollisionPutAll(TrieNode<K, V> trieNode, DeltaCounter deltaCounter, MutabilityOwnership mutabilityOwnership) {
-        CommonFunctionsKt.m4792assert(this.nodeMap == 0);
-        CommonFunctionsKt.m4792assert(this.dataMap == 0);
-        CommonFunctionsKt.m4792assert(trieNode.nodeMap == 0);
-        CommonFunctionsKt.m4792assert(trieNode.dataMap == 0);
+        CommonFunctionsKt.m4157assert(this.nodeMap == 0);
+        CommonFunctionsKt.m4157assert(this.dataMap == 0);
+        CommonFunctionsKt.m4157assert(trieNode.nodeMap == 0);
+        CommonFunctionsKt.m4157assert(trieNode.dataMap == 0);
         Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length + trieNode.buffer.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");

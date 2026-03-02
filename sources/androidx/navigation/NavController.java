@@ -132,18 +132,14 @@ public class NavController {
         this.impl = new NavControllerImpl(this, new Function0() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit impl$lambda$0;
-                impl$lambda$0 = NavController.impl$lambda$0(NavController.this);
-                return impl$lambda$0;
+                return NavController.impl$lambda$0(NavController.this);
             }
         });
         this.navContext = new NavContext(context);
         Iterator it = SequencesKt.generateSequence(context, new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Context activity$lambda$1;
-                activity$lambda$1 = NavController.activity$lambda$1((Context) obj2);
-                return activity$lambda$1;
+                return NavController.activity$lambda$1((Context) obj2);
             }
         }).iterator();
         while (true) {
@@ -174,9 +170,7 @@ public class NavController {
         this.navInflater$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NavInflater navInflater_delegate$lambda$10;
-                navInflater_delegate$lambda$10 = NavController.navInflater_delegate$lambda$10(NavController.this);
-                return navInflater_delegate$lambda$10;
+                return NavController.navInflater_delegate$lambda$10(NavController.this);
             }
         });
     }
@@ -185,7 +179,7 @@ public class NavController {
         return this.context;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit impl$lambda$0(NavController navController) {
         navController.updateOnBackPressedCallbackEnabled();
         return Unit.INSTANCE;
@@ -195,7 +189,7 @@ public class NavController {
         return this.navContext;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Context activity$lambda$1(Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it instanceof ContextWrapper) {
@@ -272,7 +266,7 @@ public class NavController {
             return this.this$0.impl.createBackStackEntry$navigation_runtime_release(destination, bundle);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit pop$lambda$0(NavControllerNavigatorState navControllerNavigatorState, NavBackStackEntry navBackStackEntry, boolean z) {
             super.pop(navBackStackEntry, z);
             return Unit.INSTANCE;
@@ -284,9 +278,7 @@ public class NavController {
             this.this$0.impl.pop$navigation_runtime_release(this, popUpTo, z, new Function0() { // from class: androidx.navigation.NavController$NavControllerNavigatorState$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit pop$lambda$0;
-                    pop$lambda$0 = NavController.NavControllerNavigatorState.pop$lambda$0(NavController.NavControllerNavigatorState.this, popUpTo, z);
-                    return pop$lambda$0;
+                    return NavController.NavControllerNavigatorState.pop$lambda$0(NavController.NavControllerNavigatorState.this, popUpTo, z);
                 }
             });
         }
@@ -297,7 +289,7 @@ public class NavController {
             super.popWithTransition(popUpTo, z);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit markTransitionComplete$lambda$1(NavControllerNavigatorState navControllerNavigatorState, NavBackStackEntry navBackStackEntry) {
             super.markTransitionComplete(navBackStackEntry);
             return Unit.INSTANCE;
@@ -309,9 +301,7 @@ public class NavController {
             this.this$0.impl.markTransitionComplete$navigation_runtime_release(this, entry, new Function0() { // from class: androidx.navigation.NavController$NavControllerNavigatorState$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit markTransitionComplete$lambda$1;
-                    markTransitionComplete$lambda$1 = NavController.NavControllerNavigatorState.markTransitionComplete$lambda$1(NavController.NavControllerNavigatorState.this, entry);
-                    return markTransitionComplete$lambda$1;
+                    return NavController.NavControllerNavigatorState.markTransitionComplete$lambda$1(NavController.NavControllerNavigatorState.this, entry);
                 }
             });
         }
@@ -503,12 +493,12 @@ public class NavController {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf);
+            Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
             Intrinsics.checkNotNull(intent);
-            SavedStateWriter.m9319putParcelableimpl(m9295constructorimpl, KEY_DEEP_LINK_INTENT, intent);
+            SavedStateWriter.m8524putParcelableimpl(m8500constructorimpl, KEY_DEEP_LINK_INTENT, intent);
             Bundle bundle2 = extras.getBundle(KEY_DEEP_LINK_EXTRAS);
             if (bundle2 != null) {
-                SavedStateWriter.m9299putAllimpl(m9295constructorimpl, bundle2);
+                SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundle2);
             }
             createDeepLink.setArguments(bundleOf);
             for (Object obj : mutableList) {
@@ -551,7 +541,7 @@ public class NavController {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf);
+                Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
                 Activity activity = this.activity;
                 if (activity != null) {
                     Intrinsics.checkNotNull(activity);
@@ -563,7 +553,7 @@ public class NavController {
                             Intrinsics.checkNotNull(activity3);
                             Intent intent = activity3.getIntent();
                             Intrinsics.checkNotNullExpressionValue(intent, "getIntent(...)");
-                            SavedStateWriter.m9319putParcelableimpl(m9295constructorimpl, KEY_DEEP_LINK_INTENT, intent);
+                            SavedStateWriter.m8524putParcelableimpl(m8500constructorimpl, KEY_DEEP_LINK_INTENT, intent);
                             NavGraph topGraph$navigation_runtime_release = this.impl.getTopGraph$navigation_runtime_release();
                             Activity activity4 = this.activity;
                             Intrinsics.checkNotNull(activity4);
@@ -571,7 +561,7 @@ public class NavController {
                             Intrinsics.checkNotNullExpressionValue(intent2, "getIntent(...)");
                             NavDestination.DeepLinkMatch matchDeepLinkComprehensive = topGraph$navigation_runtime_release.matchDeepLinkComprehensive(NavControllerKt.NavDeepLinkRequest(intent2), true, true, topGraph$navigation_runtime_release);
                             if ((matchDeepLinkComprehensive != null ? matchDeepLinkComprehensive.getMatchingArgs() : null) != null && (addInDefaultArgs = matchDeepLinkComprehensive.getDestination().addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs())) != null) {
-                                SavedStateWriter.m9299putAllimpl(m9295constructorimpl, addInDefaultArgs);
+                                SavedStateWriter.m8504putAllimpl(m8500constructorimpl, addInDefaultArgs);
                             }
                         }
                     }
@@ -605,7 +595,7 @@ public class NavController {
         return (NavInflater) this.navInflater$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavInflater navInflater_delegate$lambda$10(NavController navController) {
         NavInflater navInflater = navController.inflater;
         return navInflater == null ? new NavInflater(navController.context, navController.impl.get_navigatorProvider$navigation_runtime_release()) : navInflater;
@@ -677,17 +667,17 @@ public class NavController {
                 pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m9295constructorimpl(bundleOf);
+            SavedStateWriter.m8500constructorimpl(bundleOf);
             bundle = extras == null ? extras.getBundle(KEY_DEEP_LINK_EXTRAS) : null;
             if (bundle != null) {
-                SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundleOf), bundle);
+                SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundleOf), bundle);
             }
             if ((intArray != null || intArray.length == 0) && (matchDeepLinkComprehensive = (topGraph$navigation_runtime_release = this.impl.getTopGraph$navigation_runtime_release()).matchDeepLinkComprehensive(NavControllerKt.NavDeepLinkRequest(intent), true, true, topGraph$navigation_runtime_release)) != null) {
                 NavDestination destination = matchDeepLinkComprehensive.getDestination();
                 int[] buildDeepLinkIds$default = NavDestination.buildDeepLinkIds$default(destination, null, 1, null);
                 addInDefaultArgs = destination.addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs());
                 if (addInDefaultArgs != null) {
-                    SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundleOf), addInDefaultArgs);
+                    SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundleOf), addInDefaultArgs);
                 }
                 intArray = buildDeepLinkIds$default;
             } else {
@@ -701,7 +691,7 @@ public class NavController {
                 androidx.navigation.internal.Log.Companion.i(NavControllerImpl.TAG, "Could not find destination " + findInvalidDestinationDisplayNameInDeepLink + " in the navigation graph, ignoring the deep link from " + intent);
                 return false;
             }
-            SavedStateWriter.m9319putParcelableimpl(SavedStateWriter.m9295constructorimpl(bundleOf), KEY_DEEP_LINK_INTENT, intent);
+            SavedStateWriter.m8524putParcelableimpl(SavedStateWriter.m8500constructorimpl(bundleOf), KEY_DEEP_LINK_INTENT, intent);
             int length = intArray.length;
             Bundle[] bundleArr = new Bundle[length];
             for (int i = 0; i < length; i++) {
@@ -716,10 +706,10 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList3.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf2);
-                SavedStateWriter.m9299putAllimpl(m9295constructorimpl, bundleOf);
+                Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf2);
+                SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundleOf);
                 if (arrayList != null && (bundle2 = (Bundle) arrayList.get(i)) != null) {
-                    SavedStateWriter.m9299putAllimpl(m9295constructorimpl, bundle2);
+                    SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundle2);
                 }
                 bundleArr[i] = bundleOf2;
             }
@@ -746,7 +736,7 @@ public class NavController {
         if (!emptyMap.isEmpty()) {
         }
         Bundle bundleOf3 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf3);
+        SavedStateWriter.m8500constructorimpl(bundleOf3);
         if (extras == null) {
         }
         if (bundle != null) {
@@ -784,10 +774,10 @@ public class NavController {
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf);
+            Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
             Bundle addInDefaultArgs = destination.addInDefaultArgs(matchDeepLinkComprehensive.getMatchingArgs());
             if (addInDefaultArgs != null) {
-                SavedStateWriter.m9299putAllimpl(m9295constructorimpl, addInDefaultArgs);
+                SavedStateWriter.m8504putAllimpl(m8500constructorimpl, addInDefaultArgs);
             }
             int length = buildDeepLinkIds$default.length;
             Bundle[] bundleArr = new Bundle[length];
@@ -803,7 +793,7 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList2.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundleOf2), bundleOf);
+                SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundleOf2), bundleOf);
                 bundleArr[i] = bundleOf2;
             }
             return handleDeepLink(buildDeepLinkIds$default, bundleArr, true);
@@ -811,12 +801,59 @@ public class NavController {
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit handleDeepLink$lambda$21(NavDestination navDestination, NavController navController, NavOptionsBuilder navOptions) {
+        Intrinsics.checkNotNullParameter(navOptions, "$this$navOptions");
+        navOptions.anim(new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return NavController.handleDeepLink$lambda$21$lambda$18((AnimBuilder) obj);
+            }
+        });
+        if (navDestination instanceof NavGraph) {
+            Iterator<NavDestination> it = NavDestination.Companion.getHierarchy(navDestination).iterator();
+            while (true) {
+                if (it.hasNext()) {
+                    NavDestination next = it.next();
+                    NavDestination currentDestination = navController.getCurrentDestination();
+                    if (Intrinsics.areEqual(next, currentDestination != null ? currentDestination.getParent() : null)) {
+                        break;
+                    }
+                } else if (deepLinkSaveState) {
+                    navOptions.popUpTo(NavGraph.Companion.findStartDestination(navController.getGraph()).getId(), new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda1
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj) {
+                            return NavController.handleDeepLink$lambda$21$lambda$20((PopUpToBuilder) obj);
+                        }
+                    });
+                }
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit handleDeepLink$lambda$21$lambda$18(AnimBuilder anim) {
+        Intrinsics.checkNotNullParameter(anim, "$this$anim");
+        anim.setEnter(0);
+        anim.setExit(0);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit handleDeepLink$lambda$21$lambda$20(PopUpToBuilder popUpTo) {
+        Intrinsics.checkNotNullParameter(popUpTo, "$this$popUpTo");
+        popUpTo.setSaveState(true);
+        return Unit.INSTANCE;
+    }
+
     private final boolean handleDeepLink(int[] iArr, Bundle[] bundleArr, boolean z) {
         NavGraph findNode;
         NavGraph navGraph;
+        NavControllerImpl navControllerImpl = this.impl;
         int i = 0;
         if (z) {
-            if (!this.impl.getBackQueue$navigation_runtime_release().isEmpty()) {
+            if (!navControllerImpl.getBackQueue$navigation_runtime_release().isEmpty()) {
                 NavGraph navGraph2 = this.impl.get_graph$navigation_runtime_release();
                 Intrinsics.checkNotNull(navGraph2);
                 popBackStackInternal$default(this, navGraph2.getId(), true, false, 4, null);
@@ -832,9 +869,7 @@ public class NavController {
                 navigate(findDestination$default, bundle, NavOptionsBuilderKt.navOptions(new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit handleDeepLink$lambda$21;
-                        handleDeepLink$lambda$21 = NavController.handleDeepLink$lambda$21(NavDestination.this, this, (NavOptionsBuilder) obj);
-                        return handleDeepLink$lambda$21;
+                        return NavController.handleDeepLink$lambda$21(NavDestination.this, this, (NavOptionsBuilder) obj);
                     }
                 }), (Navigator.Extras) null);
                 i = i3;
@@ -842,7 +877,7 @@ public class NavController {
             this.deepLinkHandled = true;
             return true;
         }
-        NavGraph navGraph3 = this.impl.get_graph$navigation_runtime_release();
+        NavGraph navGraph3 = navControllerImpl.get_graph$navigation_runtime_release();
         int length = iArr.length;
         for (int i4 = 0; i4 < length; i4++) {
             int i5 = iArr[i4];
@@ -877,56 +912,6 @@ public class NavController {
         }
         this.deepLinkHandled = true;
         return true;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit handleDeepLink$lambda$21(NavDestination navDestination, NavController navController, NavOptionsBuilder navOptions) {
-        Intrinsics.checkNotNullParameter(navOptions, "$this$navOptions");
-        navOptions.anim(new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit handleDeepLink$lambda$21$lambda$18;
-                handleDeepLink$lambda$21$lambda$18 = NavController.handleDeepLink$lambda$21$lambda$18((AnimBuilder) obj);
-                return handleDeepLink$lambda$21$lambda$18;
-            }
-        });
-        if (navDestination instanceof NavGraph) {
-            Iterator<NavDestination> it = NavDestination.Companion.getHierarchy(navDestination).iterator();
-            while (true) {
-                if (it.hasNext()) {
-                    NavDestination next = it.next();
-                    NavDestination currentDestination = navController.getCurrentDestination();
-                    if (Intrinsics.areEqual(next, currentDestination != null ? currentDestination.getParent() : null)) {
-                        break;
-                    }
-                } else if (deepLinkSaveState) {
-                    navOptions.popUpTo(NavGraph.Companion.findStartDestination(navController.getGraph()).getId(), new Function1() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda1
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj) {
-                            Unit handleDeepLink$lambda$21$lambda$20;
-                            handleDeepLink$lambda$21$lambda$20 = NavController.handleDeepLink$lambda$21$lambda$20((PopUpToBuilder) obj);
-                            return handleDeepLink$lambda$21$lambda$20;
-                        }
-                    });
-                }
-            }
-        }
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit handleDeepLink$lambda$21$lambda$18(AnimBuilder anim) {
-        Intrinsics.checkNotNullParameter(anim, "$this$anim");
-        anim.setEnter(0);
-        anim.setExit(0);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit handleDeepLink$lambda$21$lambda$20(PopUpToBuilder popUpTo) {
-        Intrinsics.checkNotNullParameter(popUpTo, "$this$popUpTo");
-        popUpTo.setSaveState(true);
-        return Unit.INSTANCE;
     }
 
     private final String findInvalidDestinationDisplayNameInDeepLink(int[] iArr) {
@@ -983,9 +968,9 @@ public class NavController {
         navigate(i, bundle, navOptions, (Navigator.Extras) null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01ca  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -994,7 +979,9 @@ public class NavController {
         Bundle bundle2;
         Pair[] pairArr;
         Pair[] pairArr2;
-        NavGraph destination = this.impl.getBackQueue$navigation_runtime_release().isEmpty() ? this.impl.get_graph$navigation_runtime_release() : this.impl.getBackQueue$navigation_runtime_release().last().getDestination();
+        boolean isEmpty = this.impl.getBackQueue$navigation_runtime_release().isEmpty();
+        NavControllerImpl navControllerImpl = this.impl;
+        NavGraph destination = isEmpty ? navControllerImpl.get_graph$navigation_runtime_release() : navControllerImpl.getBackQueue$navigation_runtime_release().last().getDestination();
         if (destination == null) {
             throw new IllegalStateException("No current destination found. Ensure a navigation graph has been set for NavController " + this + '.');
         }
@@ -1017,7 +1004,7 @@ public class NavController {
                     pairArr2 = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 bundle2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundle2), defaultArguments);
+                SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundle2), defaultArguments);
                 if (bundle != null) {
                     if (bundle2 == null) {
                         Map emptyMap2 = MapsKt.emptyMap();
@@ -1031,9 +1018,9 @@ public class NavController {
                             pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
                         }
                         bundle2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                        SavedStateWriter.m9295constructorimpl(bundle2);
+                        SavedStateWriter.m8500constructorimpl(bundle2);
                     }
-                    SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundle2), bundle);
+                    SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundle2), bundle);
                 }
                 if (i2 != 0 && navOptions != null && (navOptions.getPopUpToId() != -1 || navOptions.getPopUpToRoute() != null || navOptions.getPopUpToRouteClass() != null)) {
                     if (navOptions.getPopUpToRoute() != null) {
@@ -1115,7 +1102,7 @@ public class NavController {
         Intent intent = new Intent();
         intent.setDataAndType(request.getUri(), request.getMimeType());
         intent.setAction(request.getAction());
-        SavedStateWriter.m9319putParcelableimpl(SavedStateWriter.m9295constructorimpl(args), KEY_DEEP_LINK_INTENT, intent);
+        SavedStateWriter.m8524putParcelableimpl(SavedStateWriter.m8500constructorimpl(args), KEY_DEEP_LINK_INTENT, intent);
     }
 
     private final void navigate(NavDestination navDestination, Bundle bundle, NavOptions navOptions, Navigator.Extras extras) {
@@ -1206,9 +1193,9 @@ public class NavController {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 saveState$navigation_runtime_release = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9295constructorimpl(saveState$navigation_runtime_release);
+                SavedStateWriter.m8500constructorimpl(saveState$navigation_runtime_release);
             }
-            SavedStateWriter.m9301putBooleanimpl(SavedStateWriter.m9295constructorimpl(saveState$navigation_runtime_release), KEY_DEEP_LINK_HANDLED, this.deepLinkHandled);
+            SavedStateWriter.m8506putBooleanimpl(SavedStateWriter.m8500constructorimpl(saveState$navigation_runtime_release), KEY_DEEP_LINK_HANDLED, this.deepLinkHandled);
         }
         return saveState$navigation_runtime_release;
     }
@@ -1219,8 +1206,8 @@ public class NavController {
         }
         this.impl.restoreState$navigation_runtime_release(bundle);
         if (bundle != null) {
-            Boolean m9221getBooleanOrNullimpl = SavedStateReader.m9221getBooleanOrNullimpl(SavedStateReader.m9209constructorimpl(bundle), KEY_DEEP_LINK_HANDLED);
-            this.deepLinkHandled = m9221getBooleanOrNullimpl != null ? m9221getBooleanOrNullimpl.booleanValue() : false;
+            Boolean m8426getBooleanOrNullimpl = SavedStateReader.m8426getBooleanOrNullimpl(SavedStateReader.m8414constructorimpl(bundle), KEY_DEEP_LINK_HANDLED);
+            this.deepLinkHandled = m8426getBooleanOrNullimpl != null ? m8426getBooleanOrNullimpl.booleanValue() : false;
         }
     }
 

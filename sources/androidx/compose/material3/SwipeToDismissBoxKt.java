@@ -55,21 +55,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000L\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a<\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032#\b\u0002\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005H\u0007¢\u0006\u0002\u0010\n\u001aR\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0014\b\u0002\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\f0\u00052#\b\u0002\u0010\u0004\u001a\u001d\u0012\u0013\u0012\u00110\u0006¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0004\u0012\u00020\u00060\u0005H\u0007¢\u0006\u0002\u0010\r\u001a\u008f\u0001\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00012\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\f2\b\b\u0002\u0010\u0018\u001a\u00020\f2\b\b\u0002\u0010\u0019\u001a\u00020\f2\u0014\b\u0002\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u000f0\u00052\u001c\u0010\u001b\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u0014H\u0007¢\u0006\u0002\u0010\u001c\u001ay\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00012\u001c\u0010\u0011\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u00162\b\b\u0002\u0010\u0017\u001a\u00020\f2\b\b\u0002\u0010\u0018\u001a\u00020\f2\b\b\u0002\u0010\u0019\u001a\u00020\f2\u001c\u0010\u001b\u001a\u0018\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u000f0\u0005¢\u0006\u0002\b\u0013¢\u0006\u0002\b\u0014H\u0007¢\u0006\u0002\u0010\u001d\"\u0010\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010 ¨\u0006!"}, d2 = {"rememberSwipeToDismissBoxState", "Landroidx/compose/material3/SwipeToDismissBoxState;", "initialValue", "Landroidx/compose/material3/SwipeToDismissBoxValue;", "positionalThreshold", "Lkotlin/Function1;", "", "Lkotlin/ParameterName;", "name", "totalDistance", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "confirmValueChange", "", "(Landroidx/compose/material3/SwipeToDismissBoxValue;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Landroidx/compose/material3/SwipeToDismissBoxState;", "SwipeToDismissBox", "", RemoteConfigConstants.ResponseFieldKey.STATE, "backgroundContent", "Landroidx/compose/foundation/layout/RowScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enableDismissFromStartToEnd", "enableDismissFromEndToStart", "gesturesEnabled", "onDismiss", FirebaseAnalytics.Param.CONTENT, "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/compose/material3/SwipeToDismissBoxState;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;ZZZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DismissVelocityThreshold", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SwipeToDismissBoxKt {
-    private static final float DismissVelocityThreshold = Dp.m8258constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float DismissVelocityThreshold = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwipeToDismissBox$lambda$13(SwipeToDismissBoxState swipeToDismissBoxState, Function3 function3, Modifier modifier, boolean z, boolean z2, boolean z3, Function1 function1, Function3 function32, int i, int i2, Composer composer, int i3) {
         SwipeToDismissBox(swipeToDismissBoxState, function3, modifier, z, z2, z3, function1, function32, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwipeToDismissBox$lambda$16(SwipeToDismissBoxState swipeToDismissBoxState, Function3 function3, Modifier modifier, boolean z, boolean z2, boolean z3, Function3 function32, int i, int i2, Composer composer, int i3) {
         SwipeToDismissBox(swipeToDismissBoxState, function3, modifier, z, z2, z3, function32, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean rememberSwipeToDismissBoxState$lambda$3$lambda$2(SwipeToDismissBoxValue swipeToDismissBoxValue) {
         return true;
     }
@@ -99,15 +99,13 @@ public final class SwipeToDismissBoxKt {
             rememberedValue = new Function0() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$1$lambda$0;
-                    rememberSwipeToDismissBoxState$lambda$1$lambda$0 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$1$lambda$0(SwipeToDismissBoxValue.this, function1);
-                    return rememberSwipeToDismissBoxState$lambda$1$lambda$0;
+                    return SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$1$lambda$0(SwipeToDismissBoxValue.this, function1);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -115,7 +113,7 @@ public final class SwipeToDismissBoxKt {
         return swipeToDismissBoxState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$1$lambda$0(SwipeToDismissBoxValue swipeToDismissBoxValue, Function1 function1) {
         return new SwipeToDismissBoxState(swipeToDismissBoxValue, function1);
     }
@@ -133,9 +131,7 @@ public final class SwipeToDismissBoxKt {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean rememberSwipeToDismissBoxState$lambda$3$lambda$2;
-                        rememberSwipeToDismissBoxState$lambda$3$lambda$2 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$3$lambda$2((SwipeToDismissBoxValue) obj);
-                        return Boolean.valueOf(rememberSwipeToDismissBoxState$lambda$3$lambda$2);
+                        return Boolean.valueOf(SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$3$lambda$2((SwipeToDismissBoxValue) obj));
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -167,15 +163,13 @@ public final class SwipeToDismissBoxKt {
             rememberedValue2 = new Function0() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$5$lambda$4;
-                    rememberSwipeToDismissBoxState$lambda$5$lambda$4 = SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$5$lambda$4(SwipeToDismissBoxValue.this, density, function1, function12);
-                    return rememberSwipeToDismissBoxState$lambda$5$lambda$4;
+                    return SwipeToDismissBoxKt.rememberSwipeToDismissBoxState$lambda$5$lambda$4(SwipeToDismissBoxValue.this, density, function1, function12);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        SwipeToDismissBoxState swipeToDismissBoxState = (SwipeToDismissBoxState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -183,14 +177,9 @@ public final class SwipeToDismissBoxKt {
         return swipeToDismissBoxState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SwipeToDismissBoxState rememberSwipeToDismissBoxState$lambda$5$lambda$4(SwipeToDismissBoxValue swipeToDismissBoxValue, Density density, Function1 function1, Function1 function12) {
         return new SwipeToDismissBoxState(swipeToDismissBoxValue, density, function1, function12);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SwipeToDismissBox$lambda$7$lambda$6(SwipeToDismissBoxValue swipeToDismissBoxValue) {
-        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:185:0x049f  */
@@ -306,9 +295,10 @@ public final class SwipeToDismissBoxKt {
                                     rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj2) {
-                                            Unit SwipeToDismissBox$lambda$7$lambda$6;
-                                            SwipeToDismissBox$lambda$7$lambda$6 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$7$lambda$6((SwipeToDismissBoxValue) obj2);
-                                            return SwipeToDismissBox$lambda$7$lambda$6;
+                                            Unit unit;
+                                            SwipeToDismissBoxValue swipeToDismissBoxValue = (SwipeToDismissBoxValue) obj2;
+                                            unit = Unit.INSTANCE;
+                                            return unit;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -356,15 +346,15 @@ public final class SwipeToDismissBoxKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1704030332, "C330@13789L71,334@14026L583,331@13869L751:SwipeToDismissBox.kt#uh7d8r");
                             Modifier matchParentSize = BoxScopeInstance.INSTANCE.matchParentSize(Modifier.Companion);
@@ -386,15 +376,15 @@ public final class SwipeToDismissBoxKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl2, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                             function3.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i10 >> 6) & 112) | 6));
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -412,9 +402,16 @@ public final class SwipeToDismissBoxKt {
                                 rememberedValue2 = new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda5
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj2, Object obj3) {
-                                        Pair SwipeToDismissBox$lambda$11$lambda$10$lambda$9;
-                                        SwipeToDismissBox$lambda$11$lambda$10$lambda$9 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$11$lambda$10$lambda$9(SwipeToDismissBoxState.this, z12, z13, (IntSize) obj2, (Constraints) obj3);
-                                        return SwipeToDismissBox$lambda$11$lambda$10$lambda$9;
+                                        Pair pair;
+                                        IntSize intSize = (IntSize) obj2;
+                                        Constraints constraints = (Constraints) obj3;
+                                        pair = TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda7
+                                            @Override // kotlin.jvm.functions.Function1
+                                            public final Object invoke(Object obj4) {
+                                                return SwipeToDismissBoxKt.SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8(IntSize.this, r2, r3, (DraggableAnchorsConfig) obj4);
+                                            }
+                                        }), SwipeToDismissBoxState.this.getTargetValue());
+                                        return pair;
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -439,15 +436,15 @@ public final class SwipeToDismissBoxKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            Composer m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            Composer m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl3, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                            if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                             function32.invoke(RowScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i11 >> 6) & 112) | 6));
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -485,9 +482,7 @@ public final class SwipeToDismissBoxKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda6
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit SwipeToDismissBox$lambda$13;
-                                    SwipeToDismissBox$lambda$13 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$13(SwipeToDismissBoxState.this, function3, modifier2, z8, z9, z7, function12, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return SwipeToDismissBox$lambda$13;
+                                    return SwipeToDismissBoxKt.SwipeToDismissBox$lambda$13(SwipeToDismissBoxState.this, function3, modifier2, z8, z9, z7, function12, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;
@@ -563,27 +558,15 @@ public final class SwipeToDismissBoxKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Pair SwipeToDismissBox$lambda$11$lambda$10$lambda$9(SwipeToDismissBoxState swipeToDismissBoxState, final boolean z, final boolean z2, final IntSize intSize, Constraints constraints) {
-        return TuplesKt.to(AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda7
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8;
-                SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8(IntSize.this, z, z2, (DraggableAnchorsConfig) obj);
-                return SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8;
-            }
-        }), swipeToDismissBoxState.getTargetValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwipeToDismissBox$lambda$11$lambda$10$lambda$9$lambda$8(IntSize intSize, boolean z, boolean z2, DraggableAnchorsConfig draggableAnchorsConfig) {
-        float m8433unboximpl = (int) (intSize.m8433unboximpl() >> 32);
+        float m7730unboximpl = (int) (intSize.m7730unboximpl() >> 32);
         draggableAnchorsConfig.at(SwipeToDismissBoxValue.Settled, 0.0f);
         if (z) {
-            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, m8433unboximpl);
+            draggableAnchorsConfig.at(SwipeToDismissBoxValue.StartToEnd, m7730unboximpl);
         }
         if (z2) {
-            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, -m8433unboximpl);
+            draggableAnchorsConfig.at(SwipeToDismissBoxValue.EndToStart, -m7730unboximpl);
         }
         return Unit.INSTANCE;
     }
@@ -690,9 +673,10 @@ public final class SwipeToDismissBoxKt {
                                     rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda2
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj2) {
-                                            Unit SwipeToDismissBox$lambda$15$lambda$14;
-                                            SwipeToDismissBox$lambda$15$lambda$14 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$15$lambda$14((SwipeToDismissBoxValue) obj2);
-                                            return SwipeToDismissBox$lambda$15$lambda$14;
+                                            Unit unit;
+                                            SwipeToDismissBoxValue swipeToDismissBoxValue = (SwipeToDismissBoxValue) obj2;
+                                            unit = Unit.INSTANCE;
+                                            return unit;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -713,9 +697,7 @@ public final class SwipeToDismissBoxKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxKt$$ExternalSyntheticLambda3
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj2, Object obj3) {
-                                        Unit SwipeToDismissBox$lambda$16;
-                                        SwipeToDismissBox$lambda$16 = SwipeToDismissBoxKt.SwipeToDismissBox$lambda$16(SwipeToDismissBoxState.this, function3, modifier2, z6, z5, z7, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                                        return SwipeToDismissBox$lambda$16;
+                                        return SwipeToDismissBoxKt.SwipeToDismissBox$lambda$16(SwipeToDismissBoxState.this, function3, modifier2, z6, z5, z7, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                                     }
                                 });
                                 return;
@@ -780,10 +762,5 @@ public final class SwipeToDismissBoxKt {
         endRestartGroup = composer2.endRestartGroup();
         if (endRestartGroup == null) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SwipeToDismissBox$lambda$15$lambda$14(SwipeToDismissBoxValue swipeToDismissBoxValue) {
-        return Unit.INSTANCE;
     }
 }

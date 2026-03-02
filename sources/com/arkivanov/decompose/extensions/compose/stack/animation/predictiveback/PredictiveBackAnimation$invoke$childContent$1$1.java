@@ -49,9 +49,7 @@ final class PredictiveBackAnimation$invoke$childContent$1$1<C, T> implements Fun
             rememberedValue = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimation$invoke$childContent$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult invoke$lambda$2$lambda$1;
-                    invoke$lambda$2$lambda$1 = PredictiveBackAnimation$invoke$childContent$1$1.invoke$lambda$2$lambda$1(hashSet, child, (DisposableEffectScope) obj);
-                    return invoke$lambda$2$lambda$1;
+                    return PredictiveBackAnimation$invoke$childContent$1$1.invoke$lambda$2$lambda$1(hashSet, child, (DisposableEffectScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -64,7 +62,7 @@ final class PredictiveBackAnimation$invoke$childContent$1$1<C, T> implements Fun
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult invoke$lambda$2$lambda$1(final HashSet hashSet, final Child.Created created, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         hashSet.add(created.getKey());

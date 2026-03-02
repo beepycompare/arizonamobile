@@ -81,10 +81,11 @@ public final class CompletableMergeDelayErrorArray extends Completable {
         void tryTerminate() {
             if (this.wip.decrementAndGet() == 0) {
                 Throwable terminate = this.error.terminate();
+                CompletableObserver completableObserver = this.downstream;
                 if (terminate == null) {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 } else {
-                    this.downstream.onError(terminate);
+                    completableObserver.onError(terminate);
                 }
             }
         }

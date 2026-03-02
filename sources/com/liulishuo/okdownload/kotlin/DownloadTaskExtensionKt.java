@@ -961,14 +961,15 @@ public final class DownloadTaskExtensionKt {
             public final void invoke2(DownloadTask downloadTask2, EndCause cause, Exception exc) {
                 Intrinsics.checkParameterIsNotNull(downloadTask2, "<anonymous parameter 0>");
                 Intrinsics.checkParameterIsNotNull(cause, "cause");
+                CancellableContinuation cancellableContinuation = CancellableContinuation.this;
                 if (exc != null) {
                     Result.Companion companion = Result.Companion;
-                    CancellableContinuation.this.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(exc)));
+                    cancellableContinuation.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(exc)));
                     return;
                 }
                 DownloadResult downloadResult = new DownloadResult(cause);
                 Result.Companion companion2 = Result.Companion;
-                CancellableContinuation.this.resumeWith(Result.m10243constructorimpl(downloadResult));
+                cancellableContinuation.resumeWith(Result.m9182constructorimpl(downloadResult));
             }
         }));
         function0.invoke();

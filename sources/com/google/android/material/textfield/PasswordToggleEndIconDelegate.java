@@ -19,16 +19,18 @@ public class PasswordToggleEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-textfield-PasswordToggleEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9914x4cc26475(View view) {
+    public /* synthetic */ void m8944x4cc26475(View view) {
         EditText editText = this.editText;
         if (editText == null) {
             return;
         }
         int selectionEnd = editText.getSelectionEnd();
-        if (hasPasswordTransformation()) {
-            this.editText.setTransformationMethod(null);
+        boolean hasPasswordTransformation = hasPasswordTransformation();
+        EditText editText2 = this.editText;
+        if (hasPasswordTransformation) {
+            editText2.setTransformationMethod(null);
         } else {
-            this.editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            editText2.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
         if (selectionEnd >= 0) {
             this.editText.setSelection(selectionEnd);
@@ -43,7 +45,7 @@ public class PasswordToggleEndIconDelegate extends EndIconDelegate {
         this.onIconClickListener = new View.OnClickListener() { // from class: com.google.android.material.textfield.PasswordToggleEndIconDelegate$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                PasswordToggleEndIconDelegate.this.m9914x4cc26475(view);
+                PasswordToggleEndIconDelegate.this.m8944x4cc26475(view);
             }
         };
         if (i != 0) {

@@ -17,8 +17,8 @@ public final class TextFieldLayoutStateCache_androidKt {
             resolve = DigitDirectionalityApi24.INSTANCE.resolve(locale);
         }
         if (resolve == 1 || resolve == 2) {
-            return TextDirection.Companion.m8157getRtls_7Xco();
+            return TextDirection.Companion.m7454getRtls_7Xco();
         }
-        return TextDirection.Companion.m8156getLtrs_7Xco();
+        return TextDirection.Companion.m7453getLtrs_7Xco();
     }
 }

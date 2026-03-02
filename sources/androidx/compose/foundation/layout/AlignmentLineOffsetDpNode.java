@@ -36,30 +36,30 @@ final class AlignmentLineOffsetDpNode extends Modifier.Node implements LayoutMod
     }
 
     /* renamed from: getBefore-D9Ej5fM  reason: not valid java name */
-    public final float m760getBeforeD9Ej5fM() {
+    public final float m669getBeforeD9Ej5fM() {
         return this.before;
     }
 
     /* renamed from: setBefore-0680j_4  reason: not valid java name */
-    public final void m762setBefore0680j_4(float f) {
+    public final void m671setBefore0680j_4(float f) {
         this.before = f;
     }
 
     /* renamed from: getAfter-D9Ej5fM  reason: not valid java name */
-    public final float m759getAfterD9Ej5fM() {
+    public final float m668getAfterD9Ej5fM() {
         return this.after;
     }
 
     /* renamed from: setAfter-0680j_4  reason: not valid java name */
-    public final void m761setAfter0680j_4(float f) {
+    public final void m670setAfter0680j_4(float f) {
         this.after = f;
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        MeasureResult m748alignmentLineOffsetMeasuretjqqzMA;
-        m748alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m748alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, this.before, this.after, measurable, j);
-        return m748alignmentLineOffsetMeasuretjqqzMA;
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        MeasureResult m657alignmentLineOffsetMeasuretjqqzMA;
+        m657alignmentLineOffsetMeasuretjqqzMA = AlignmentLineKt.m657alignmentLineOffsetMeasuretjqqzMA(measureScope, this.alignmentLine, this.before, this.after, measurable, j);
+        return m657alignmentLineOffsetMeasuretjqqzMA;
     }
 }

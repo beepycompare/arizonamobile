@@ -111,10 +111,12 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         long j = Long.MAX_VALUE;
         if (uri.startsWith(RESOURCE_PREFIX)) {
             String authority = this.uri.getAuthority();
-            if (this.context.getPackageName().equals(authority)) {
-                resourcesForApplication = this.context.getResources();
+            boolean equals = this.context.getPackageName().equals(authority);
+            Context context = this.context;
+            if (equals) {
+                resourcesForApplication = context.getResources();
             } else {
-                resourcesForApplication = this.context.getPackageManager().getResourcesForApplication(authority);
+                resourcesForApplication = context.getPackageManager().getResourcesForApplication(authority);
             }
             List<String> pathSegments = this.uri.getPathSegments();
             int size = pathSegments.size();

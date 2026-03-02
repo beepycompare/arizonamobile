@@ -39,14 +39,12 @@ public final class TabRowKt$ScrollableTabRowImpl$1$scope$1$1 implements TabIndic
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1$scope$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                MeasureResult tabIndicatorLayout$lambda$0;
-                tabIndicatorLayout$lambda$0 = TabRowKt$ScrollableTabRowImpl$1$scope$1$1.tabIndicatorLayout$lambda$0(Function4.this, this, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
-                return tabIndicatorLayout$lambda$0;
+                return TabRowKt$ScrollableTabRowImpl$1$scope$1$1.tabIndicatorLayout$lambda$0(Function4.this, this, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult tabIndicatorLayout$lambda$0(Function4 function4, TabRowKt$ScrollableTabRowImpl$1$scope$1$1 tabRowKt$ScrollableTabRowImpl$1$scope$1$1, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
         return (MeasureResult) function4.invoke(measureScope, measurable, constraints, tabRowKt$ScrollableTabRowImpl$1$scope$1$1.tabPositions.getValue());
     }

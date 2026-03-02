@@ -125,10 +125,12 @@ class AppCompatTextHelper {
         }
         Typeface typeface = this.mFontTypeface;
         if (typeface != null) {
-            if (this.mFontWeight == -1) {
-                this.mView.setTypeface(typeface, this.mStyle);
+            int i3 = this.mFontWeight;
+            TextView textView2 = this.mView;
+            if (i3 == -1) {
+                textView2.setTypeface(typeface, this.mStyle);
             } else {
-                this.mView.setTypeface(typeface);
+                textView2.setTypeface(typeface);
             }
         }
         if (str2 != null) {
@@ -141,10 +143,12 @@ class AppCompatTextHelper {
         if (ViewUtils.SDK_LEVEL_SUPPORTS_AUTOSIZE && this.mAutoSizeTextHelper.getAutoSizeTextType() != 0) {
             int[] autoSizeTextAvailableSizes = this.mAutoSizeTextHelper.getAutoSizeTextAvailableSizes();
             if (autoSizeTextAvailableSizes.length > 0) {
-                if (Api26Impl.getAutoSizeStepGranularity(this.mView) != -1.0f) {
-                    Api26Impl.setAutoSizeTextTypeUniformWithConfiguration(this.mView, this.mAutoSizeTextHelper.getAutoSizeMinTextSize(), this.mAutoSizeTextHelper.getAutoSizeMaxTextSize(), this.mAutoSizeTextHelper.getAutoSizeStepGranularity(), 0);
+                int i4 = (Api26Impl.getAutoSizeStepGranularity(this.mView) > (-1.0f) ? 1 : (Api26Impl.getAutoSizeStepGranularity(this.mView) == (-1.0f) ? 0 : -1));
+                TextView textView3 = this.mView;
+                if (i4 != 0) {
+                    Api26Impl.setAutoSizeTextTypeUniformWithConfiguration(textView3, this.mAutoSizeTextHelper.getAutoSizeMinTextSize(), this.mAutoSizeTextHelper.getAutoSizeMaxTextSize(), this.mAutoSizeTextHelper.getAutoSizeStepGranularity(), 0);
                 } else {
-                    Api26Impl.setAutoSizeTextTypeUniformWithPresetSizes(this.mView, autoSizeTextAvailableSizes, 0);
+                    Api26Impl.setAutoSizeTextTypeUniformWithPresetSizes(textView3, autoSizeTextAvailableSizes, 0);
                 }
             }
         }
@@ -190,10 +194,11 @@ class AppCompatTextHelper {
             TextViewCompat.setLastBaselineToBottomHeight(this.mView, dimensionPixelSize2);
         }
         if (f != -1.0f) {
+            TextView textView4 = this.mView;
             if (i2 == -1) {
-                TextViewCompat.setLineHeight(this.mView, (int) f);
+                TextViewCompat.setLineHeight(textView4, (int) f);
             } else {
-                TextViewCompat.setLineHeight(this.mView, i2, f);
+                TextViewCompat.setLineHeight(textView4, i2, f);
             }
         }
     }
@@ -273,17 +278,18 @@ class AppCompatTextHelper {
             this.mFontTypeface = typeface;
             final TextView textView = weakReference.get();
             if (textView != null) {
-                if (textView.isAttachedToWindow()) {
-                    final int i = this.mStyle;
+                boolean isAttachedToWindow = textView.isAttachedToWindow();
+                final int i = this.mStyle;
+                if (isAttachedToWindow) {
                     textView.post(new Runnable() { // from class: androidx.appcompat.widget.AppCompatTextHelper.2
                         @Override // java.lang.Runnable
                         public void run() {
                             textView.setTypeface(typeface, i);
                         }
                     });
-                    return;
+                } else {
+                    textView.setTypeface(typeface, i);
                 }
-                textView.setTypeface(typeface, this.mStyle);
             }
         }
     }

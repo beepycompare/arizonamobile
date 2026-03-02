@@ -16,9 +16,14 @@ public final class LocalTimeFormatKt {
     private static final Lazy ISO_TIME$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            LocalTimeFormat ISO_TIME_delegate$lambda$4;
-            ISO_TIME_delegate$lambda$4 = LocalTimeFormatKt.ISO_TIME_delegate$lambda$4();
-            return ISO_TIME_delegate$lambda$4;
+            LocalTimeFormat build;
+            build = LocalTimeFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda2
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3((DateTimeFormatBuilder.WithTime) obj);
+                }
+            });
+            return build;
         }
     });
     private static final IncompleteLocalTime emptyIncompleteLocalTime = new IncompleteLocalTime(null, null, null, null, null, null, 63, null);
@@ -31,36 +36,21 @@ public final class LocalTimeFormatKt {
         return (LocalTimeFormat) ISO_TIME$delegate.getValue();
     }
 
-    public static final LocalTimeFormat ISO_TIME_delegate$lambda$4() {
-        return LocalTimeFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit ISO_TIME_delegate$lambda$4$lambda$3;
-                ISO_TIME_delegate$lambda$4$lambda$3 = LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3((DateTimeFormatBuilder.WithTime) obj);
-                return ISO_TIME_delegate$lambda$4$lambda$3;
-            }
-        });
-    }
-
     public static final Unit ISO_TIME_delegate$lambda$4$lambda$3(DateTimeFormatBuilder.WithTime build) {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         DateTimeFormatBuilder.WithTime.hour$default(build, null, 1, null);
         DateTimeFormatBuilder.WithTime withTime = build;
-        DateTimeFormatBuilderKt.m11885char(withTime, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m10789char(withTime, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithTime.minute$default(build, null, 1, null);
         DateTimeFormatBuilderKt.alternativeParsing(withTime, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$0;
-                ISO_TIME_delegate$lambda$4$lambda$3$lambda$0 = LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$0((DateTimeFormatBuilder.WithTime) obj);
-                return ISO_TIME_delegate$lambda$4$lambda$3$lambda$0;
+                return LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$0((DateTimeFormatBuilder.WithTime) obj);
             }
         }}, new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2;
-                ISO_TIME_delegate$lambda$4$lambda$3$lambda$2 = LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$2((DateTimeFormatBuilder.WithTime) obj);
-                return ISO_TIME_delegate$lambda$4$lambda$3$lambda$2;
+                return LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$2((DateTimeFormatBuilder.WithTime) obj);
             }
         });
         return Unit.INSTANCE;
@@ -74,14 +64,12 @@ public final class LocalTimeFormatKt {
     public static final Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2(DateTimeFormatBuilder.WithTime alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
         DateTimeFormatBuilder.WithTime withTime = alternativeParsing;
-        DateTimeFormatBuilderKt.m11885char(withTime, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m10789char(withTime, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithTime.second$default(alternativeParsing, null, 1, null);
         DateTimeFormatBuilderKt.optional$default(withTime, null, new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1;
-                ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1 = LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1((DateTimeFormatBuilder.WithTime) obj);
-                return ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1;
+                return LocalTimeFormatKt.ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1((DateTimeFormatBuilder.WithTime) obj);
             }
         }, 1, null);
         return Unit.INSTANCE;
@@ -89,7 +77,7 @@ public final class LocalTimeFormatKt {
 
     public static final Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1(DateTimeFormatBuilder.WithTime optional) {
         Intrinsics.checkNotNullParameter(optional, "$this$optional");
-        DateTimeFormatBuilderKt.m11885char(optional, '.');
+        DateTimeFormatBuilderKt.m10789char(optional, '.');
         optional.secondFraction(1, 9);
         return Unit.INSTANCE;
     }

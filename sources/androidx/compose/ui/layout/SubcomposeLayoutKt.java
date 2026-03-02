@@ -147,14 +147,14 @@ public final class SubcomposeLayoutKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, subcomposeLayoutState, subcomposeLayoutState.getSetRoot$ui());
-            Updater.m4681setimpl(m4673constructorimpl, rememberCompositionContext, subcomposeLayoutState.getSetCompositionContext$ui());
-            Updater.m4681setimpl(m4673constructorimpl, function2, subcomposeLayoutState.getSetMeasurePolicy$ui());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, subcomposeLayoutState, subcomposeLayoutState.getSetRoot$ui());
+            Updater.m4049setimpl(m4041constructorimpl, rememberCompositionContext, subcomposeLayoutState.getSetCompositionContext$ui());
+            Updater.m4049setimpl(m4041constructorimpl, function2, subcomposeLayoutState.getSetMeasurePolicy$ui());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             if (startRestartGroup.getSkipping()) {

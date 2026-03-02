@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public @interface KeepFieldType {
 }

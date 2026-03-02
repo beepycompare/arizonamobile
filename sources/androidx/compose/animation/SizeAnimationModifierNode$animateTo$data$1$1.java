@@ -54,7 +54,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m8421boximpl(this.f1$$v$c$androidxcomposeuiunitIntSize$targetSize$0), this.this$0.getAnimationSpec(), null, null, this, 12, null);
+            obj = Animatable.animateTo$default(this.$this_apply.getAnim(), IntSize.m7718boximpl(this.f1$$v$c$androidxcomposeuiunitIntSize$targetSize$0), this.this$0.getAnimationSpec(), null, null, this, 12, null);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -65,7 +65,7 @@ final class SizeAnimationModifierNode$animateTo$data$1$1 extends SuspendLambda i
         }
         AnimationResult animationResult = (AnimationResult) obj;
         if (animationResult.getEndReason() == AnimationEndReason.Finished && (listener = this.this$0.getListener()) != null) {
-            listener.invoke(IntSize.m8421boximpl(this.$this_apply.m154getStartSizeYbymL2g()), animationResult.getEndState().getValue());
+            listener.invoke(IntSize.m7718boximpl(this.$this_apply.m141getStartSizeYbymL2g()), animationResult.getEndState().getValue());
         }
         return Unit.INSTANCE;
     }

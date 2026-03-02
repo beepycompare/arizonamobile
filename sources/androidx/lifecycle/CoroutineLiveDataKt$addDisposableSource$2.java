@@ -49,15 +49,13 @@ public final class CoroutineLiveDataKt$addDisposableSource$2 extends SuspendLamb
         mediatorLiveData.addSource(this.$source, new CoroutineLiveDataKt$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.CoroutineLiveDataKt$addDisposableSource$2$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Unit invokeSuspend$lambda$0;
-                invokeSuspend$lambda$0 = CoroutineLiveDataKt$addDisposableSource$2.invokeSuspend$lambda$0(MediatorLiveData.this, obj2);
-                return invokeSuspend$lambda$0;
+                return CoroutineLiveDataKt$addDisposableSource$2.invokeSuspend$lambda$0(MediatorLiveData.this, obj2);
             }
         }));
         return new EmittedSource(this.$source, this.$this_addDisposableSource);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(MediatorLiveData mediatorLiveData, Object obj) {
         mediatorLiveData.setValue(obj);
         return Unit.INSTANCE;

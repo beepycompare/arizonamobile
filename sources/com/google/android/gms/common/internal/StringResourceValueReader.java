@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.gms.common.R;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class StringResourceValueReader {
     private final Resources zza;

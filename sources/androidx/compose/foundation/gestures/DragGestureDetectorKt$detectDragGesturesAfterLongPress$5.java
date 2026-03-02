@@ -104,17 +104,15 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
                 ResultKt.throwOnFailure(obj);
                 pointerInputChange = (PointerInputChange) obj;
                 if (pointerInputChange != null) {
-                    this.$onDragStart.invoke(Offset.m5168boximpl(pointerInputChange.m6744getPositionF1C5BW0()));
-                    long m6742getIdJ3iCeTQ = pointerInputChange.m6742getIdJ3iCeTQ();
+                    this.$onDragStart.invoke(Offset.m4516boximpl(pointerInputChange.m6085getPositionF1C5BW0()));
+                    long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
                     final Function2<PointerInputChange, Offset, Unit> function2 = this.$onDrag;
                     this.L$0 = awaitPointerEventScope;
                     this.label = 3;
-                    obj = DragGestureDetectorKt.m547dragjO51t88(awaitPointerEventScope, m6742getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
+                    obj = DragGestureDetectorKt.m473dragjO51t88(awaitPointerEventScope, m6083getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectDragGesturesAfterLongPress$5$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit invokeSuspend$lambda$0;
-                            invokeSuspend$lambda$0 = DragGestureDetectorKt$detectDragGesturesAfterLongPress$5.invokeSuspend$lambda$0(Function2.this, (PointerInputChange) obj2);
-                            return invokeSuspend$lambda$0;
+                            return DragGestureDetectorKt$detectDragGesturesAfterLongPress$5.invokeSuspend$lambda$0(Function2.this, (PointerInputChange) obj2);
                         }
                     }, this);
                     if (obj != coroutine_suspended) {
@@ -131,7 +129,7 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
             }
             this.L$0 = awaitPointerEventScope;
             this.label = 2;
-            obj = DragGestureDetectorKt.m537awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6742getIdJ3iCeTQ(), this);
+            obj = DragGestureDetectorKt.m463awaitLongPressOrCancellationrnUCldI(awaitPointerEventScope, ((PointerInputChange) obj).m6083getIdJ3iCeTQ(), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -145,9 +143,9 @@ public final class DragGestureDetectorKt$detectDragGesturesAfterLongPress$5 exte
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Function2 function2, PointerInputChange pointerInputChange) {
-        function2.invoke(pointerInputChange, Offset.m5168boximpl(PointerEventKt.positionChange(pointerInputChange)));
+        function2.invoke(pointerInputChange, Offset.m4516boximpl(PointerEventKt.positionChange(pointerInputChange)));
         pointerInputChange.consume();
         return Unit.INSTANCE;
     }

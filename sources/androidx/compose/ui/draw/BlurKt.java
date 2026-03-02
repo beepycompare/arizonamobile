@@ -16,27 +16,27 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class BlurKt {
     /* renamed from: blur-1fqS-gw$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m4945blur1fqSgw$default(Modifier modifier, float f, float f2, BlurredEdgeTreatment blurredEdgeTreatment, int i, Object obj) {
+    public static /* synthetic */ Modifier m4293blur1fqSgw$default(Modifier modifier, float f, float f2, BlurredEdgeTreatment blurredEdgeTreatment, int i, Object obj) {
         if ((i & 4) != 0) {
-            blurredEdgeTreatment = BlurredEdgeTreatment.m4948boximpl(BlurredEdgeTreatment.Companion.m4955getRectangleGoahg());
+            blurredEdgeTreatment = BlurredEdgeTreatment.m4296boximpl(BlurredEdgeTreatment.Companion.m4303getRectangleGoahg());
         }
-        return m4944blur1fqSgw(modifier, f, f2, blurredEdgeTreatment.m4954unboximpl());
+        return m4292blur1fqSgw(modifier, f, f2, blurredEdgeTreatment.m4302unboximpl());
     }
 
     /* renamed from: blur-1fqS-gw  reason: not valid java name */
-    public static final Modifier m4944blur1fqSgw(Modifier modifier, final float f, final float f2, final Shape shape) {
-        int m5822getDecal3opZhB0;
+    public static final Modifier m4292blur1fqSgw(Modifier modifier, final float f, final float f2, final Shape shape) {
+        int m5168getDecal3opZhB0;
         final boolean z;
         if (shape != null) {
-            m5822getDecal3opZhB0 = TileMode.Companion.m5821getClamp3opZhB0();
+            m5168getDecal3opZhB0 = TileMode.Companion.m5167getClamp3opZhB0();
             z = true;
         } else {
-            m5822getDecal3opZhB0 = TileMode.Companion.m5822getDecal3opZhB0();
+            m5168getDecal3opZhB0 = TileMode.Companion.m5168getDecal3opZhB0();
             z = false;
         }
-        final int i = m5822getDecal3opZhB0;
+        final int i = m5168getDecal3opZhB0;
         float f3 = 0;
-        return ((Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl(f3)) <= 0 || Dp.m8257compareTo0680j_4(f2, Dp.m8258constructorimpl(f3)) <= 0) && !z) ? modifier : GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.ui.draw.BlurKt$blur$1
+        return ((Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(f3)) <= 0 || Dp.m7554compareTo0680j_4(f2, Dp.m7555constructorimpl(f3)) <= 0) && !z) ? modifier : GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.ui.draw.BlurKt$blur$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -51,9 +51,9 @@ public final class BlurKt {
 
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(GraphicsLayerScope graphicsLayerScope) {
-                float f4 = graphicsLayerScope.mo464toPx0680j_4(f);
-                float f5 = graphicsLayerScope.mo464toPx0680j_4(f2);
-                graphicsLayerScope.setRenderEffect((f4 <= 0.0f || f5 <= 0.0f) ? null : RenderEffectKt.m5750BlurEffect3YTHUZs(f4, f5, i));
+                float f4 = graphicsLayerScope.mo405toPx0680j_4(f);
+                float f5 = graphicsLayerScope.mo405toPx0680j_4(f2);
+                graphicsLayerScope.setRenderEffect((f4 <= 0.0f || f5 <= 0.0f) ? null : RenderEffectKt.m5096BlurEffect3YTHUZs(f4, f5, i));
                 Shape shape2 = shape;
                 if (shape2 == null) {
                     shape2 = RectangleShapeKt.getRectangleShape();
@@ -65,15 +65,15 @@ public final class BlurKt {
     }
 
     /* renamed from: blur-F8QBwvs$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m4947blurF8QBwvs$default(Modifier modifier, float f, BlurredEdgeTreatment blurredEdgeTreatment, int i, Object obj) {
+    public static /* synthetic */ Modifier m4295blurF8QBwvs$default(Modifier modifier, float f, BlurredEdgeTreatment blurredEdgeTreatment, int i, Object obj) {
         if ((i & 2) != 0) {
-            blurredEdgeTreatment = BlurredEdgeTreatment.m4948boximpl(BlurredEdgeTreatment.Companion.m4955getRectangleGoahg());
+            blurredEdgeTreatment = BlurredEdgeTreatment.m4296boximpl(BlurredEdgeTreatment.Companion.m4303getRectangleGoahg());
         }
-        return m4946blurF8QBwvs(modifier, f, blurredEdgeTreatment.m4954unboximpl());
+        return m4294blurF8QBwvs(modifier, f, blurredEdgeTreatment.m4302unboximpl());
     }
 
     /* renamed from: blur-F8QBwvs  reason: not valid java name */
-    public static final Modifier m4946blurF8QBwvs(Modifier modifier, float f, Shape shape) {
-        return m4944blur1fqSgw(modifier, f, f, shape);
+    public static final Modifier m4294blurF8QBwvs(Modifier modifier, float f, Shape shape) {
+        return m4292blur1fqSgw(modifier, f, f, shape);
     }
 }

@@ -24,16 +24,15 @@ public final class PullToRefreshStateImpl implements PullToRefreshState {
     private static final Saver<PullToRefreshStateImpl, Float> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshStateImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Float Saver$lambda$0;
-            Saver$lambda$0 = PullToRefreshStateImpl.Saver$lambda$0((SaverScope) obj, (PullToRefreshStateImpl) obj2);
-            return Saver$lambda$0;
+            Float value;
+            SaverScope saverScope = (SaverScope) obj;
+            value = ((PullToRefreshStateImpl) obj2).anim.getValue();
+            return value;
         }
     }, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshStateImpl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            PullToRefreshStateImpl Saver$lambda$1;
-            Saver$lambda$1 = PullToRefreshStateImpl.Saver$lambda$1(((Float) obj).floatValue());
-            return Saver$lambda$1;
+            return PullToRefreshStateImpl.Saver$lambda$1(((Float) obj).floatValue());
         }
     });
     private final Animatable<Float, AnimationVector1D> anim;
@@ -90,12 +89,7 @@ public final class PullToRefreshStateImpl implements PullToRefreshState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Float Saver$lambda$0(SaverScope saverScope, PullToRefreshStateImpl pullToRefreshStateImpl) {
-        return pullToRefreshStateImpl.anim.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PullToRefreshStateImpl Saver$lambda$1(float f) {
         return new PullToRefreshStateImpl(new Animatable(Float.valueOf(f), VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE), null, null, 12, null));
     }

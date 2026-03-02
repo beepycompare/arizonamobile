@@ -14,16 +14,16 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class ThrottledCallbacksKt {
     /* renamed from: rectInfoFor-Dg36KO4  reason: not valid java name */
-    public static final RelativeLayoutBounds m7484rectInfoForDg36KO4(DelegatableNode delegatableNode, long j, long j2, long j3, long j4, long j5, float[] fArr) {
-        NodeCoordinator m7046requireCoordinator64DMado = DelegatableNodeKt.m7046requireCoordinator64DMado(delegatableNode, NodeKind.m7195constructorimpl(2));
+    public static final RelativeLayoutBounds m6816rectInfoForDg36KO4(DelegatableNode delegatableNode, long j, long j2, long j3, long j4, long j5, float[] fArr) {
+        NodeCoordinator m6387requireCoordinator64DMado = DelegatableNodeKt.m6387requireCoordinator64DMado(delegatableNode, NodeKind.m6535constructorimpl(2));
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(delegatableNode);
         if (requireLayoutNode.isPlaced()) {
-            if (requireLayoutNode.getOuterCoordinator$ui() != m7046requireCoordinator64DMado) {
-                long m8380constructorimpl = IntOffset.m8380constructorimpl(j);
-                long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(IntOffset.m8386getXimpl(m8380constructorimpl)) << 32) | (Float.floatToRawIntBits(IntOffset.m8387getYimpl(m8380constructorimpl)) & 4294967295L));
-                long mo6883getSizeYbymL2g = m7046requireCoordinator64DMado.getCoordinates().mo6883getSizeYbymL2g();
-                long m8403roundk4lQ0M = IntOffsetKt.m8403roundk4lQ0M(requireLayoutNode.getOuterCoordinator$ui().getCoordinates().mo6884localPositionOfR5De75A(m7046requireCoordinator64DMado, m5171constructorimpl));
-                return new RelativeLayoutBounds(m8403roundk4lQ0M, IntOffset.m8380constructorimpl(((IntOffset.m8386getXimpl(m8403roundk4lQ0M) + ((int) (mo6883getSizeYbymL2g >> 32))) << 32) | ((IntOffset.m8387getYimpl(m8403roundk4lQ0M) + ((int) (mo6883getSizeYbymL2g & 4294967295L))) & 4294967295L)), j3, j4, j5, fArr, delegatableNode, null);
+            if (requireLayoutNode.getOuterCoordinator$ui() != m6387requireCoordinator64DMado) {
+                long m7677constructorimpl = IntOffset.m7677constructorimpl(j);
+                long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(m7677constructorimpl)) << 32) | (Float.floatToRawIntBits(IntOffset.m7684getYimpl(m7677constructorimpl)) & 4294967295L));
+                long mo6224getSizeYbymL2g = m6387requireCoordinator64DMado.getCoordinates().mo6224getSizeYbymL2g();
+                long m7700roundk4lQ0M = IntOffsetKt.m7700roundk4lQ0M(requireLayoutNode.getOuterCoordinator$ui().getCoordinates().mo6225localPositionOfR5De75A(m6387requireCoordinator64DMado, m4519constructorimpl));
+                return new RelativeLayoutBounds(m7700roundk4lQ0M, IntOffset.m7677constructorimpl(((IntOffset.m7683getXimpl(m7700roundk4lQ0M) + ((int) (mo6224getSizeYbymL2g >> 32))) << 32) | ((IntOffset.m7684getYimpl(m7700roundk4lQ0M) + ((int) (mo6224getSizeYbymL2g & 4294967295L))) & 4294967295L)), j3, j4, j5, fArr, delegatableNode, null);
             }
             return new RelativeLayoutBounds(j, j2, j3, j4, j5, fArr, delegatableNode, null);
         }

@@ -33,13 +33,13 @@ import kotlin.jvm.functions.Function3;
 public final class LazyLayoutKt {
     private static final int MaxItemsToRetainForReuse = 7;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LazyLayout$lambda$0(Function0 function0, Modifier modifier, LazyLayoutPrefetchState lazyLayoutPrefetchState, Function2 function2, int i, int i2, Composer composer, int i3) {
         LazyLayout(function0, modifier, lazyLayoutPrefetchState, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LazyLayout$lambda$2(Function0 function0, Modifier modifier, LazyLayoutPrefetchState lazyLayoutPrefetchState, LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy, int i, int i2, Composer composer, int i3) {
         LazyLayout(function0, modifier, lazyLayoutPrefetchState, lazyLayoutMeasurePolicy, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -97,9 +97,7 @@ public final class LazyLayoutKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LazyLayout$lambda$0;
-                    LazyLayout$lambda$0 = LazyLayoutKt.LazyLayout$lambda$0(Function0.this, modifier2, lazyLayoutPrefetchState2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return LazyLayout$lambda$0;
+                    return LazyLayoutKt.LazyLayout$lambda$0(Function0.this, modifier2, lazyLayoutPrefetchState2, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -145,9 +143,7 @@ public final class LazyLayoutKt {
             LazySaveableStateHolderKt.LazySaveableStateHolderProvider(ComposableLambdaKt.rememberComposableLambda(-933153643, true, new Function3() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit LazyLayout$lambda$1;
-                    LazyLayout$lambda$1 = LazyLayoutKt.LazyLayout$lambda$1(LazyLayoutPrefetchState.this, modifier, lazyLayoutMeasurePolicy, rememberUpdatedState, (SaveableStateHolder) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return LazyLayout$lambda$1;
+                    return LazyLayoutKt.LazyLayout$lambda$1(LazyLayoutPrefetchState.this, modifier, lazyLayoutMeasurePolicy, rememberUpdatedState, (SaveableStateHolder) obj, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, 6);
             if (ComposerKt.isTraceInProgress()) {
@@ -161,15 +157,13 @@ public final class LazyLayoutKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LazyLayout$lambda$2;
-                    LazyLayout$lambda$2 = LazyLayoutKt.LazyLayout$lambda$2(Function0.this, modifier2, lazyLayoutPrefetchState2, lazyLayoutMeasurePolicy, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return LazyLayout$lambda$2;
+                    return LazyLayoutKt.LazyLayout$lambda$2(Function0.this, modifier2, lazyLayoutPrefetchState2, lazyLayoutMeasurePolicy, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v0, types: [androidx.compose.runtime.Composer] */
     /* JADX WARN: Type inference failed for: r8v4 */
@@ -279,6 +273,6 @@ public final class LazyLayoutKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult LazyLayout$lambda$1$3$0(LazyLayoutItemContentFactory lazyLayoutItemContentFactory, LazyLayoutMeasurePolicy lazyLayoutMeasurePolicy, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        return lazyLayoutMeasurePolicy.mo1043measure0kLqBqw(new LazyLayoutMeasureScopeImpl(lazyLayoutItemContentFactory, subcomposeMeasureScope), constraints.m8217unboximpl());
+        return lazyLayoutMeasurePolicy.mo920measure0kLqBqw(new LazyLayoutMeasureScopeImpl(lazyLayoutItemContentFactory, subcomposeMeasureScope), constraints.m7514unboximpl());
     }
 }

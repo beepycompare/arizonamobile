@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class AndroidUtilsLight {
     public static final /* synthetic */ int zza = 0;

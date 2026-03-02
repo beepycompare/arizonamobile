@@ -154,10 +154,11 @@ final class zza extends zzc {
         if (i != 0) {
             if (i != 1) {
                 if (i != 2) {
+                    zzlj zzljVar = this.zzb;
                     if (i == 3) {
-                        return this.zzb.zzl();
+                        return zzljVar.zzl();
                     }
-                    return this.zzb.zzi();
+                    return zzljVar.zzi();
                 }
                 return this.zzb.zzm();
             }

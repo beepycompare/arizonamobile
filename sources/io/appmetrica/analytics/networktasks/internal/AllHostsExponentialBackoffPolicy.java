@@ -19,15 +19,16 @@ public final class AllHostsExponentialBackoffPolicy implements ExponentialBackof
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ExponentialBackoffPolicy
-    public void onAllHostsAttemptsFinished(boolean z) {
-        if (z) {
-            this.f1400a.reset();
-        } else {
-            this.f1400a.updateLastAttemptInfo();
-        }
+    public void onHostAttemptFinished(boolean z) {
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ExponentialBackoffPolicy
-    public void onHostAttemptFinished(boolean z) {
+    public void onAllHostsAttemptsFinished(boolean z) {
+        ExponentialBackoffDataHolder exponentialBackoffDataHolder = this.f1400a;
+        if (z) {
+            exponentialBackoffDataHolder.reset();
+        } else {
+            exponentialBackoffDataHolder.updateLastAttemptInfo();
+        }
     }
 }

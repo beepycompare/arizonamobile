@@ -6,43 +6,63 @@ import com.google.android.gms.internal.ads_identifier.zzk;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 /* loaded from: classes4.dex */
 public final class zze {
     public static final void zza(String str) {
         try {
             try {
-                zzk.zzb(263);
+                zzk.zza(263);
                 URL url = new URL(str);
                 int i = zzh.zzb;
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 try {
                     int responseCode = httpURLConnection.getResponseCode();
                     if (responseCode < 200 || responseCode >= 300) {
-                        Log.w("HttpUrlPinger", "Received non-success response code " + responseCode + " from pinging URL: " + str);
+                        StringBuilder sb = new StringBuilder(String.valueOf(responseCode).length() + 54 + String.valueOf(str).length());
+                        sb.append("Received non-success response code ");
+                        sb.append(responseCode);
+                        sb.append(" from pinging URL: ");
+                        sb.append(str);
+                        Log.w("HttpUrlPinger", sb.toString());
                     }
-                    zzk.zza();
+                    zzk.zzb();
                 } finally {
                     httpURLConnection.disconnect();
                 }
-            } catch (IOException e) {
-                e = e;
-                String message = e.getMessage();
-                Log.w("HttpUrlPinger", "Error while pinging URL: " + str + ". " + message, e);
-                zzk.zza();
-            } catch (IndexOutOfBoundsException e2) {
-                String message2 = e2.getMessage();
-                Log.w("HttpUrlPinger", "Error while parsing ping URL: " + str + ". " + message2, e2);
-                zzk.zza();
-            } catch (RuntimeException e3) {
-                e = e3;
-                String message3 = e.getMessage();
-                Log.w("HttpUrlPinger", "Error while pinging URL: " + str + ". " + message3, e);
-                zzk.zza();
+            } catch (Throwable th) {
+                zzk.zzb();
+                throw th;
             }
-        } catch (Throwable th) {
-            zzk.zza();
-            throw th;
+        } catch (IOException e) {
+            e = e;
+            String message = e.getMessage();
+            StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + 27 + String.valueOf(message).length());
+            sb2.append("Error while pinging URL: ");
+            sb2.append(str);
+            sb2.append(". ");
+            sb2.append(message);
+            Log.w("HttpUrlPinger", sb2.toString(), e);
+            zzk.zzb();
+        } catch (IndexOutOfBoundsException e2) {
+            String message2 = e2.getMessage();
+            StringBuilder sb3 = new StringBuilder(String.valueOf(str).length() + 32 + String.valueOf(message2).length());
+            sb3.append("Error while parsing ping URL: ");
+            sb3.append(str);
+            sb3.append(". ");
+            sb3.append(message2);
+            Log.w("HttpUrlPinger", sb3.toString(), e2);
+            zzk.zzb();
+        } catch (RuntimeException e3) {
+            e = e3;
+            String message3 = e.getMessage();
+            StringBuilder sb22 = new StringBuilder(String.valueOf(str).length() + 27 + String.valueOf(message3).length());
+            sb22.append("Error while pinging URL: ");
+            sb22.append(str);
+            sb22.append(". ");
+            sb22.append(message3);
+            Log.w("HttpUrlPinger", sb22.toString(), e);
+            zzk.zzb();
         }
     }
 }

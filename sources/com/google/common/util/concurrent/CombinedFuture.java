@@ -94,10 +94,14 @@ public final class CombinedFuture<V> extends AggregateFuture<Object, V> {
             CombinedFuture.this.task = null;
             if (error instanceof ExecutionException) {
                 CombinedFuture.this.setException(((ExecutionException) error).getCause());
-            } else if (error instanceof CancellationException) {
-                CombinedFuture.this.cancel(false);
+                return;
+            }
+            boolean z = error instanceof CancellationException;
+            CombinedFuture combinedFuture = CombinedFuture.this;
+            if (z) {
+                combinedFuture.cancel(false);
             } else {
-                CombinedFuture.this.setException(error);
+                combinedFuture.setException(error);
             }
         }
     }

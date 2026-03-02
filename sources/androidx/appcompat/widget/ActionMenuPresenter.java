@@ -207,8 +207,9 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 z2 = true;
             }
         }
+        OverflowMenuButton overflowMenuButton = this.mOverflowButton;
         if (z2) {
-            if (this.mOverflowButton == null) {
+            if (overflowMenuButton == null) {
                 this.mOverflowButton = new OverflowMenuButton(this.mSystemContext);
             }
             ViewGroup viewGroup = (ViewGroup) this.mOverflowButton.getParent();
@@ -219,11 +220,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
                 ActionMenuView actionMenuView = (ActionMenuView) this.mMenuView;
                 actionMenuView.addView(this.mOverflowButton, actionMenuView.generateOverflowButtonLayoutParams());
             }
-        } else {
-            OverflowMenuButton overflowMenuButton = this.mOverflowButton;
-            if (overflowMenuButton != null && overflowMenuButton.getParent() == this.mMenuView) {
-                ((ViewGroup) this.mMenuView).removeView(this.mOverflowButton);
-            }
+        } else if (overflowMenuButton != null && overflowMenuButton.getParent() == this.mMenuView) {
+            ((ViewGroup) this.mMenuView).removeView(this.mOverflowButton);
         }
         ((ActionMenuView) this.mMenuView).setOverflowReserved(this.mReserveOverflow);
     }

@@ -40,6 +40,7 @@ public final class OnPositionedDispatcher {
     }
 
     public final void dispatch() {
+        MutableVector<LayoutNode> mutableVector;
         this.layoutNodes.sortWith(Companion.DepthComparator.INSTANCE);
         int size = this.layoutNodes.getSize();
         LayoutNode[] layoutNodeArr = this.cachedNodes;
@@ -47,10 +48,16 @@ public final class OnPositionedDispatcher {
             layoutNodeArr = new LayoutNode[Math.max(16, this.layoutNodes.getSize())];
         }
         this.cachedNodes = null;
-        for (int i = 0; i < size; i++) {
-            layoutNodeArr[i] = this.layoutNodes.content[i];
+        int i = 0;
+        while (true) {
+            mutableVector = this.layoutNodes;
+            if (i >= size) {
+                break;
+            }
+            layoutNodeArr[i] = mutableVector.content[i];
+            i++;
         }
-        this.layoutNodes.clear();
+        mutableVector.clear();
         while (true) {
             size--;
             if (-1 < size) {

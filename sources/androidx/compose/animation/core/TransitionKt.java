@@ -49,17 +49,13 @@ public final class TransitionKt {
     private static final Function1<SeekableTransitionState<?>, Unit> SeekableTransitionStateTotalDurationChanged = new Function1() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit SeekableTransitionStateTotalDurationChanged$lambda$0;
-            SeekableTransitionStateTotalDurationChanged$lambda$0 = TransitionKt.SeekableTransitionStateTotalDurationChanged$lambda$0((SeekableTransitionState) obj);
-            return SeekableTransitionStateTotalDurationChanged$lambda$0;
+            return TransitionKt.SeekableTransitionStateTotalDurationChanged$lambda$0((SeekableTransitionState) obj);
         }
     };
     private static final Lazy SeekableStateObserver$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SnapshotStateObserver SeekableStateObserver_delegate$lambda$0;
-            SeekableStateObserver_delegate$lambda$0 = TransitionKt.SeekableStateObserver_delegate$lambda$0();
-            return SeekableStateObserver_delegate$lambda$0;
+            return TransitionKt.SeekableStateObserver_delegate$lambda$0();
         }
     });
 
@@ -553,9 +549,7 @@ public final class TransitionKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.animation.core.TransitionKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit UpdateInitialAndTargetValues$lambda$0;
-                    UpdateInitialAndTargetValues$lambda$0 = TransitionKt.UpdateInitialAndTargetValues$lambda$0(Transition.this, transitionAnimationState, t, t2, finiteAnimationSpec, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return UpdateInitialAndTargetValues$lambda$0;
+                    return TransitionKt.UpdateInitialAndTargetValues$lambda$0(Transition.this, transitionAnimationState, t, t2, finiteAnimationSpec, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -657,7 +651,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1953972046, i3, -1, "androidx.compose.animation.core.animateDp.<anonymous> (Transition.kt:1977)");
                 }
-                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m8256boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
+                SpringSpec<Dp> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Dp.m7553boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Dp.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -739,7 +733,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-1662821959, i3, -1, "androidx.compose.animation.core.animateOffset.<anonymous> (Transition.kt:2007)");
                 }
-                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m5168boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
+                SpringSpec<Offset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Offset.m4516boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Offset.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -821,7 +815,7 @@ public final class TransitionKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(493329511, i3, -1, "androidx.compose.animation.core.animateSize.<anonymous> (Transition.kt:2037)");
                 }
-                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m5236boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
+                SpringSpec<Size> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, Size.m4584boximpl(VisibilityThresholdsKt.getVisibilityThreshold(Size.Companion)), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -904,7 +898,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(-428458074, i3, -1, "androidx.compose.animation.core.animateIntOffset.<anonymous> (Transition.kt:2070)");
                 }
                 long j = 1;
-                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntOffset> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1069,7 +1063,7 @@ public final class TransitionKt {
                     ComposerKt.traceEventStart(811932052, i3, -1, "androidx.compose.animation.core.animateIntSize.<anonymous> (Transition.kt:2132)");
                 }
                 long j = 1;
-                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m8421boximpl(IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
+                SpringSpec<IntSize> spring$default = AnimationSpecKt.spring$default(0.0f, 0.0f, IntSize.m7718boximpl(IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32))), 3, null);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

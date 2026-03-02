@@ -6,7 +6,7 @@ import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
     private int[] outputChannels;
     private int[] pendingOutputChannels;

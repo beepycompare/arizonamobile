@@ -531,7 +531,8 @@ public abstract class ExploreByTouchHelper extends AccessibilityDelegateCompat {
 
         @Override // androidx.core.view.accessibility.AccessibilityNodeProviderCompat
         public AccessibilityNodeInfoCompat findFocus(int i) {
-            int i2 = i == 2 ? ExploreByTouchHelper.this.mAccessibilityFocusedVirtualViewId : ExploreByTouchHelper.this.mKeyboardFocusedVirtualViewId;
+            ExploreByTouchHelper exploreByTouchHelper = ExploreByTouchHelper.this;
+            int i2 = i == 2 ? exploreByTouchHelper.mAccessibilityFocusedVirtualViewId : exploreByTouchHelper.mKeyboardFocusedVirtualViewId;
             if (i2 == Integer.MIN_VALUE) {
                 return null;
             }

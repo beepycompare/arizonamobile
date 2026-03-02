@@ -277,7 +277,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
             }
         }
         return z;
@@ -406,9 +406,9 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
     }
 
     public final Continuation<Unit>[] updateCollectorIndexLocked$kotlinx_coroutines_core(long j) {
-        int i;
         long j2;
         long j3;
+        Continuation<Unit>[] continuationArr;
         Object bufferAt;
         Object bufferAt2;
         AbstractSharedFlowSlot[] access$getSlots;
@@ -437,15 +437,15 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                     return AbstractSharedFlowKt.EMPTY_RESUMES;
                 }
                 long bufferEndIndex = getBufferEndIndex();
-                if (getNCollectors() > 0) {
-                    i = Math.min(this.queueSize, this.bufferCapacity - ((int) (bufferEndIndex - j4)));
-                } else {
-                    i = this.queueSize;
+                int nCollectors = getNCollectors();
+                int i = this.queueSize;
+                if (nCollectors > 0) {
+                    i = Math.min(i, this.bufferCapacity - ((int) (bufferEndIndex - j4)));
                 }
-                Continuation<Unit>[] continuationArr = AbstractSharedFlowKt.EMPTY_RESUMES;
+                Continuation<Unit>[] continuationArr2 = AbstractSharedFlowKt.EMPTY_RESUMES;
                 long j5 = this.queueSize + bufferEndIndex;
                 if (i > 0) {
-                    continuationArr = new Continuation[i];
+                    Continuation<Unit>[] continuationArr3 = new Continuation[i];
                     Object[] objArr = this.buffer;
                     Intrinsics.checkNotNull(objArr);
                     j3 = 1;
@@ -462,7 +462,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                             Intrinsics.checkNotNull(bufferAt2, "null cannot be cast to non-null type kotlinx.coroutines.flow.SharedFlowImpl.Emitter");
                             Emitter emitter = (Emitter) bufferAt2;
                             int i3 = i2 + 1;
-                            continuationArr[i2] = emitter.cont;
+                            continuationArr3[i2] = emitter.cont;
                             SharedFlowKt.setBufferAt(objArr, bufferEndIndex, SharedFlowKt.NO_VALUE);
                             SharedFlowKt.setBufferAt(objArr, j6, emitter.value);
                             j6++;
@@ -474,12 +474,13 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                         bufferEndIndex++;
                         head = j2;
                     }
+                    continuationArr = continuationArr3;
                     bufferEndIndex = j6;
                 } else {
                     j2 = head;
                     j3 = 1;
+                    continuationArr = continuationArr2;
                 }
-                Continuation<Unit>[] continuationArr2 = continuationArr;
                 int i4 = (int) (bufferEndIndex - j2);
                 if (getNCollectors() == 0) {
                     j4 = bufferEndIndex;
@@ -496,7 +497,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 }
                 updateBufferLocked(max, j4, bufferEndIndex, j5);
                 cleanupTailLocked();
-                return !(continuationArr2.length == 0) ? findSlotsToResumeLocked(continuationArr2) : continuationArr2;
+                return !(continuationArr.length == 0) ? findSlotsToResumeLocked(continuationArr) : continuationArr;
             }
             throw new AssertionError();
         }
@@ -562,7 +563,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
         for (Continuation<Unit> continuation : continuationArr) {
             if (continuation != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                continuation.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
             }
         }
         return obj;
@@ -695,7 +696,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 if (tryEmitLocked(t)) {
                     try {
                         Result.Companion companion = Result.Companion;
-                        cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                        cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
                         findSlotsToResumeLocked = findSlotsToResumeLocked(continuationArr);
                         emitter = null;
                     } catch (Throwable th2) {
@@ -724,7 +725,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 for (Continuation<Unit> continuation2 : findSlotsToResumeLocked) {
                     if (continuation2 != null) {
                         Result.Companion companion2 = Result.Companion;
-                        continuation2.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                        continuation2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
                     }
                 }
                 Object result = cancellableContinuationImpl.getResult();
@@ -768,7 +769,7 @@ public class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implem
                 sharedFlowSlot.cont = cancellableContinuationImpl2;
             } else {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
             }
             Unit unit = Unit.INSTANCE;
         }

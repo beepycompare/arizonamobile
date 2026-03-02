@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ConveyorGameScreen.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ConveyorGameScreen$itemAdapter$2 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

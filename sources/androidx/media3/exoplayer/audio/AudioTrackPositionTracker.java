@@ -7,10 +7,10 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.Method;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 final class AudioTrackPositionTracker {
     private static final long FORCE_RESET_WORKAROUND_TIMEOUT_MS = 200;
-    private static final long MAX_LATENCY_US = 5000000;
+    private static final long MAX_LATENCY_US = 10000000;
     private static final int MAX_PLAYHEAD_OFFSET_COUNT = 10;
     private static final long MAX_POSITION_DRIFT_FOR_SMOOTHING_US = 1000000;
     private static final int MAX_POSITION_SMOOTHING_SPEED_CHANGE_PERCENT = 10;
@@ -46,7 +46,7 @@ final class AudioTrackPositionTracker {
     private long stopTimestampUs;
     private long sumRawPlaybackHeadPosition;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         void onInvalidLatency(long j);
 
@@ -218,28 +218,28 @@ final class AudioTrackPositionTracker {
                 return;
             }
         }
-        maybeUpdateLatency(nanoTime);
-        this.audioTimestampPoller.maybePollTimestamp(nanoTime, this.audioTrackPlaybackSpeed, getPlaybackHeadPositionEstimateUs(nanoTime));
+        this.audioTimestampPoller.maybePollTimestamp(nanoTime, this.audioTrackPlaybackSpeed, getPlaybackHeadPositionEstimateUs(nanoTime), maybeUpdateLatency(nanoTime));
     }
 
-    private void maybeUpdateLatency(long j) {
+    private boolean maybeUpdateLatency(long j) {
         Method method;
-        if (!this.isOutputPcm || (method = this.getLatencyMethod) == null || j - this.lastLatencySampleTimeUs < 500000) {
-            return;
-        }
-        try {
-            long intValue = (((Integer) Util.castNonNull((Integer) method.invoke(Preconditions.checkNotNull(this.audioTrack), new Object[0]))).intValue() * 1000) - this.bufferSizeUs;
-            this.latencyUs = intValue;
-            long max = Math.max(intValue, 0L);
-            this.latencyUs = max;
-            if (max > MAX_LATENCY_US) {
-                this.listener.onInvalidLatency(max);
-                this.latencyUs = 0L;
+        long j2 = this.latencyUs;
+        if (this.isOutputPcm && (method = this.getLatencyMethod) != null && j - this.lastLatencySampleTimeUs >= 500000) {
+            try {
+                long intValue = (((Integer) Util.castNonNull((Integer) method.invoke(Preconditions.checkNotNull(this.audioTrack), new Object[0]))).intValue() * 1000) - this.bufferSizeUs;
+                this.latencyUs = intValue;
+                long max = Math.max(intValue, 0L);
+                this.latencyUs = max;
+                if (max > MAX_LATENCY_US) {
+                    this.listener.onInvalidLatency(max);
+                    this.latencyUs = 0L;
+                }
+            } catch (Exception unused) {
+                this.getLatencyMethod = null;
             }
-        } catch (Exception unused) {
-            this.getLatencyMethod = null;
+            this.lastLatencySampleTimeUs = j;
         }
-        this.lastLatencySampleTimeUs = j;
+        return j2 != this.latencyUs;
     }
 
     private long getPlaybackHeadPositionEstimateUs(long j) {

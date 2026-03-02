@@ -79,10 +79,11 @@ public final class CompletableDelay extends Completable {
         public void run() {
             Throwable th = this.error;
             this.error = null;
+            CompletableObserver completableObserver = this.downstream;
             if (th != null) {
-                this.downstream.onError(th);
+                completableObserver.onError(th);
             } else {
-                this.downstream.onComplete();
+                completableObserver.onComplete();
             }
         }
     }

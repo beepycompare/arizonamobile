@@ -45,16 +45,16 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0084, code lost:
-        if (r12 == r0) goto L20;
+        if (r13 == r0) goto L20;
      */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009d  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00dd  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x0070 -> B:37:0x00c2). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00db  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x0070 -> B:37:0x00c0). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00b3 -> B:34:0x00b4). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00b6 -> B:36:0x00bf). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00b6 -> B:36:0x00bd). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -85,8 +85,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
             ResultKt.throwOnFailure(obj);
             i = i3;
             coroutineScope = coroutineScope3;
-            obj2 = this.$dragChannel.mo11777tryReceivePtdJZtk();
-            if (ChannelResult.m11794isSuccessimpl(obj2)) {
+            obj2 = this.$dragChannel.mo10702tryReceivePtdJZtk();
+            if (ChannelResult.m10719isSuccessimpl(obj2)) {
             }
             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
             }
@@ -99,9 +99,9 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                 coroutineScope = coroutineScope2;
                 i = i2;
                 motionDragState = null;
-                obj2 = this.$dragChannel.mo11777tryReceivePtdJZtk();
-                if (ChannelResult.m11794isSuccessimpl(obj2)) {
-                    motionDragState = (MotionDragState) ChannelResult.m11790getOrThrowimpl(obj2);
+                obj2 = this.$dragChannel.mo10702tryReceivePtdJZtk();
+                if (ChannelResult.m10719isSuccessimpl(obj2)) {
+                    motionDragState = (MotionDragState) ChannelResult.m10715getOrThrowimpl(obj2);
                     if (motionDragState.isDragging()) {
                         i = 0;
                     }
@@ -117,8 +117,8 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                             i3 = i;
                             i = i3;
                             coroutineScope = coroutineScope3;
-                            obj2 = this.$dragChannel.mo11777tryReceivePtdJZtk();
-                            if (ChannelResult.m11794isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo10702tryReceivePtdJZtk();
+                            if (ChannelResult.m10719isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }
@@ -135,30 +135,31 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
                         JobKt.ensureActive(coroutineScope2.getCoroutineContext());
                         isDragging = motionDragState2.isDragging();
                         i2 = !isDragging;
+                        TransitionHandler transitionHandler = this.$swipeHandler;
                         if (isDragging != 0) {
                             this.L$0 = coroutineScope2;
                             this.L$1 = null;
                             this.I$0 = i2;
                             this.label = 3;
-                            if (this.$swipeHandler.m8728onTouchUpsFctU(motionDragState2.m8669getVelocity9UxMQ8M(), this) != coroutine_suspended) {
+                            if (transitionHandler.m8025onTouchUpsFctU(motionDragState2.m7966getVelocity9UxMQ8M(), this) != coroutine_suspended) {
                                 i5 = i2;
                                 i2 = i5;
                                 coroutineScope = coroutineScope2;
                                 i = i2;
                                 motionDragState = null;
-                                obj2 = this.$dragChannel.mo11777tryReceivePtdJZtk();
-                                if (ChannelResult.m11794isSuccessimpl(obj2)) {
+                                obj2 = this.$dragChannel.mo10702tryReceivePtdJZtk();
+                                if (ChannelResult.m10719isSuccessimpl(obj2)) {
                                 }
                                 if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                                 }
                             }
                         } else {
-                            this.$swipeHandler.m8729updateProgressOnDragk4lQ0M(motionDragState2.m8668getDragAmountF1C5BW0());
+                            transitionHandler.m8026updateProgressOnDragk4lQ0M(motionDragState2.m7965getDragAmountF1C5BW0());
                             coroutineScope = coroutineScope2;
                             i = i2;
                             motionDragState = null;
-                            obj2 = this.$dragChannel.mo11777tryReceivePtdJZtk();
-                            if (ChannelResult.m11794isSuccessimpl(obj2)) {
+                            obj2 = this.$dragChannel.mo10702tryReceivePtdJZtk();
+                            if (ChannelResult.m10719isSuccessimpl(obj2)) {
                             }
                             if (JobKt.isActive(coroutineScope.getCoroutineContext())) {
                             }
@@ -178,6 +179,7 @@ final class MotionDragHandlerKt$motionPointerInput$2$1$1 extends SuspendLambda i
             JobKt.ensureActive(coroutineScope2.getCoroutineContext());
             isDragging = motionDragState22.isDragging();
             i2 = !isDragging;
+            TransitionHandler transitionHandler2 = this.$swipeHandler;
             if (isDragging != 0) {
             }
         }

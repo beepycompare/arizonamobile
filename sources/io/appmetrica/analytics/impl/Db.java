@@ -1,20 +1,20 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Db implements InterfaceC0157c {
+public final class Db implements InterfaceC0156c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0261g0 f548a;
+    public final InterfaceC0260g0 f548a;
     public final Dn b = new Dn();
 
-    public Db(InterfaceC0261g0 interfaceC0261g0) {
-        this.f548a = interfaceC0261g0;
+    public Db(InterfaceC0260g0 interfaceC0260g0) {
+        this.f548a = interfaceC0260g0;
     }
 
     public static final void a(Db db, V v) {
         db.f548a.a(v);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0157c
+    @Override // io.appmetrica.analytics.impl.InterfaceC0156c
     public final void onAppNotResponding() {
         StackTraceElement[] stackTraceElementArr;
         Dn dn = this.b;
@@ -30,8 +30,8 @@ public final class Db implements InterfaceC0157c {
         } catch (SecurityException unused2) {
             stackTraceElementArr = null;
         }
-        final V v = new V((C0686wn) dn.b.apply(a2, stackTraceElementArr), dn.a(a2, null), dn.c.a());
-        ((C0747z9) C0136b4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Db$$ExternalSyntheticLambda0
+        final V v = new V((C0685wn) dn.b.apply(a2, stackTraceElementArr), dn.a(a2, null), dn.c.a());
+        ((C0746z9) C0135b4.l().c.a()).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.Db$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 Db.a(Db.this, v);

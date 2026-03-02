@@ -70,13 +70,13 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     private final Function1<PointerType, Boolean> _canDrag = new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            boolean _canDrag$lambda$0;
-            _canDrag$lambda$0 = DragGestureNode._canDrag$lambda$0(DragGestureNode.this, (PointerType) obj);
-            return Boolean.valueOf(_canDrag$lambda$0);
+            boolean booleanValue;
+            booleanValue = DragGestureNode.this.canDrag.invoke((PointerType) obj).booleanValue();
+            return Boolean.valueOf(booleanValue);
         }
     };
-    private long previousPositionOnScreen = Offset.Companion.m5194getUnspecifiedF1C5BW0();
-    private long nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
+    private long previousPositionOnScreen = Offset.Companion.m4542getUnspecifiedF1C5BW0();
+    private long nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
 
     /* compiled from: Draggable.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -97,7 +97,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     public abstract Object drag(Function2<? super Function1<? super DragEvent.DragDelta, Unit>, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super Unit> continuation);
 
     /* renamed from: onDragStarted-k-4lQ0M */
-    public abstract void mo485onDragStartedk4lQ0M(long j);
+    public abstract void mo423onDragStartedk4lQ0M(long j);
 
     public abstract void onDragStopped(DragEvent.DragStopped dragStopped);
 
@@ -129,11 +129,6 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
 
     protected final MutableInteractionSource getInteractionSource() {
         return this.interactionSource;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _canDrag$lambda$0(DragGestureNode dragGestureNode, PointerType pointerType) {
-        return dragGestureNode.canDrag.invoke(pointerType).booleanValue();
     }
 
     public final boolean isListeningForEvents$foundation() {
@@ -229,15 +224,17 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     public void onDetach() {
         this.isListeningForEvents = false;
         disposeInteractionSource();
-        this.nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
+        this.nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         this.isListeningForPointerInputEvents = true;
-        if (ComposeFoundationFlags.isNonSuspendingPointerInputInDraggableEnabled) {
-            if (this.enabled) {
+        boolean z = ComposeFoundationFlags.isNonSuspendingPointerInputInDraggableEnabled;
+        boolean z2 = this.enabled;
+        if (z) {
+            if (z2) {
                 if (this.currentDragState == null) {
                     this.currentDragState = getAwaitDownState();
                 }
@@ -246,12 +243,12 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             }
             return;
         }
-        if (this.enabled && this.pointerInputNode == null) {
+        if (z2 && this.pointerInputNode == null) {
             this.pointerInputNode = (SuspendingPointerInputModifierNode) delegate(initializePointerInputNode());
         }
         SuspendingPointerInputModifierNode suspendingPointerInputModifierNode = this.pointerInputNode;
         if (suspendingPointerInputModifierNode != null) {
-            suspendingPointerInputModifierNode.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+            suspendingPointerInputModifierNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
         }
     }
 
@@ -331,7 +328,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                         start = start2;
                         dragStarted = dragStarted2;
                         this.dragInteraction = start;
-                        mo485onDragStartedk4lQ0M(dragStarted.m524getStartPointF1C5BW0());
+                        mo423onDragStartedk4lQ0M(dragStarted.m455getStartPointF1C5BW0());
                         return Unit.INSTANCE;
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -354,7 +351,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                     return coroutine_suspended;
                 }
                 this.dragInteraction = start;
-                mo485onDragStartedk4lQ0M(dragStarted.m524getStartPointF1C5BW0());
+                mo423onDragStartedk4lQ0M(dragStarted.m455getStartPointF1C5BW0());
                 return Unit.INSTANCE;
             }
         }
@@ -369,7 +366,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         if (mutableInteractionSource != null) {
         }
         this.dragInteraction = start;
-        mo485onDragStartedk4lQ0M(dragStarted.m524getStartPointF1C5BW0());
+        mo423onDragStartedk4lQ0M(dragStarted.m455getStartPointF1C5BW0());
         return Unit.INSTANCE;
     }
 
@@ -454,7 +451,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                             }
                         }
                     }
-                    onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m8507getZero9UxMQ8M(), false, null));
+                    onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m7804getZero9UxMQ8M(), false, null));
                     return Unit.INSTANCE;
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -462,7 +459,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                     ResultKt.throwOnFailure(obj);
                 }
                 this.dragInteraction = null;
-                onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m8507getZero9UxMQ8M(), false, null));
+                onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m7804getZero9UxMQ8M(), false, null));
                 return Unit.INSTANCE;
             }
         }
@@ -473,7 +470,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         if (i != 0) {
         }
         this.dragInteraction = null;
-        onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m8507getZero9UxMQ8M(), false, null));
+        onDragStopped(new DragEvent.DragStopped(Velocity.Companion.m7804getZero9UxMQ8M(), false, null));
         return Unit.INSTANCE;
     }
 
@@ -581,25 +578,25 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     }
 
     /* renamed from: moveToAwaitTouchSlopState-aWI9W7U$default  reason: not valid java name */
-    static /* synthetic */ void m556moveToAwaitTouchSlopStateaWI9W7U$default(DragGestureNode dragGestureNode, PointerInputChange pointerInputChange, long j, long j2, boolean z, int i, Object obj) {
+    static /* synthetic */ void m480moveToAwaitTouchSlopStateaWI9W7U$default(DragGestureNode dragGestureNode, PointerInputChange pointerInputChange, long j, long j2, boolean z, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: moveToAwaitTouchSlopState-aWI9W7U");
         }
         if ((i & 4) != 0) {
-            j2 = Offset.Companion.m5195getZeroF1C5BW0();
+            j2 = Offset.Companion.m4543getZeroF1C5BW0();
         }
         long j3 = j2;
         if ((i & 8) != 0) {
             z = false;
         }
-        dragGestureNode.m555moveToAwaitTouchSlopStateaWI9W7U(pointerInputChange, j, j3, z);
+        dragGestureNode.m479moveToAwaitTouchSlopStateaWI9W7U(pointerInputChange, j, j3, z);
     }
 
     /* renamed from: moveToAwaitTouchSlopState-aWI9W7U  reason: not valid java name */
-    private final void m555moveToAwaitTouchSlopStateaWI9W7U(PointerInputChange pointerInputChange, long j, long j2, boolean z) {
+    private final void m479moveToAwaitTouchSlopStateaWI9W7U(PointerInputChange pointerInputChange, long j, long j2, boolean z) {
         DragDetectionState.AwaitTouchSlop awaitTouchSlopState = getAwaitTouchSlopState();
         awaitTouchSlopState.setInitialDown(pointerInputChange);
-        awaitTouchSlopState.m520setPointerId0FcD4WY(j);
+        awaitTouchSlopState.m451setPointerId0FcD4WY(j);
         TouchSlopDetector touchSlopDetector = this.touchSlopDetector;
         if (touchSlopDetector == null) {
             this.touchSlopDetector = new TouchSlopDetector(this.orientationLock, 0L, 2, null);
@@ -609,7 +606,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             }
             TouchSlopDetector touchSlopDetector2 = this.touchSlopDetector;
             if (touchSlopDetector2 != null) {
-                touchSlopDetector2.m692resetk4lQ0M(j2);
+                touchSlopDetector2.m607resetk4lQ0M(j2);
             }
         }
         awaitTouchSlopState.setVerifyConsumptionInFinalPass(z);
@@ -617,9 +614,9 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     }
 
     /* renamed from: moveToDraggingState-0FcD4WY  reason: not valid java name */
-    private final void m557moveToDraggingState0FcD4WY(long j) {
+    private final void m481moveToDraggingState0FcD4WY(long j) {
         DragDetectionState.Dragging draggingState = getDraggingState();
-        draggingState.m522setPointerId0FcD4WY(j);
+        draggingState.m453setPointerId0FcD4WY(j);
         this.currentDragState = draggingState;
     }
 
@@ -631,11 +628,11 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
     }
 
     /* renamed from: moveToAwaitGesturePickupState-rnUCldI  reason: not valid java name */
-    private final void m554moveToAwaitGesturePickupStaternUCldI(PointerInputChange pointerInputChange, long j, TouchSlopDetector touchSlopDetector) {
+    private final void m478moveToAwaitGesturePickupStaternUCldI(PointerInputChange pointerInputChange, long j, TouchSlopDetector touchSlopDetector) {
         DragDetectionState.AwaitGesturePickup awaitGesturePickupState = getAwaitGesturePickupState();
         awaitGesturePickupState.setInitialDown(pointerInputChange);
-        awaitGesturePickupState.m518setPointerId0FcD4WY(j);
-        TouchSlopDetector.m688resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
+        awaitGesturePickupState.m449setPointerId0FcD4WY(j);
+        TouchSlopDetector.m603resetk4lQ0M$default(touchSlopDetector, 0L, 1, null);
         awaitGesturePickupState.setTouchSlopDetector(touchSlopDetector);
         this.currentDragState = awaitGesturePickupState;
     }
@@ -660,11 +657,11 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             }
             if (pointerEventPass == PointerEventPass.Main) {
                 if (awaitTouchSlop == DragDetectionState.AwaitDown.AwaitTouchSlop.Yes) {
-                    m556moveToAwaitTouchSlopStateaWI9W7U$default(this, pointerInputChange, pointerInputChange.m6742getIdJ3iCeTQ(), 0L, false, 12, null);
+                    m480moveToAwaitTouchSlopStateaWI9W7U$default(this, pointerInputChange, pointerInputChange.m6083getIdJ3iCeTQ(), 0L, false, 12, null);
                 } else if (awaitDown.getConsumedOnInitial()) {
-                    m559sendDragStart0AR0LA0(pointerInputChange, pointerInputChange, Offset.Companion.m5195getZeroF1C5BW0());
-                    m558sendDragEventUv8p0NA(pointerInputChange, Offset.Companion.m5195getZeroF1C5BW0());
-                    m557moveToDraggingState0FcD4WY(pointerInputChange.m6742getIdJ3iCeTQ());
+                    m483sendDragStart0AR0LA0(pointerInputChange, pointerInputChange, Offset.Companion.m4543getZeroF1C5BW0());
+                    m482sendDragEventUv8p0NA(pointerInputChange, Offset.Companion.m4543getZeroF1C5BW0());
+                    m481moveToDraggingState0FcD4WY(pointerInputChange.m6083getIdJ3iCeTQ());
                 }
             }
         }
@@ -687,7 +684,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 break;
             }
             pointerInputChange2 = changes.get(i);
-            if (PointerId.m6726equalsimpl0(pointerInputChange2.m6742getIdJ3iCeTQ(), awaitTouchSlop.m519getPointerIdJ3iCeTQ())) {
+            if (PointerId.m6067equalsimpl0(pointerInputChange2.m6083getIdJ3iCeTQ(), awaitTouchSlop.m450getPointerIdJ3iCeTQ())) {
                 break;
             }
             i++;
@@ -713,7 +710,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 moveToAwaitDownState();
                 return;
             }
-            awaitTouchSlop.m520setPointerId0FcD4WY(pointerInputChange4.m6742getIdJ3iCeTQ());
+            awaitTouchSlop.m451setPointerId0FcD4WY(pointerInputChange4.m6083getIdJ3iCeTQ());
         }
         if (pointerEventPass == PointerEventPass.Main) {
             if (!pointerInputChange4.isConsumed()) {
@@ -736,17 +733,17 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                     if (pointerInputChange6 == null) {
                         moveToAwaitDownState();
                     } else {
-                        awaitTouchSlop.m520setPointerId0FcD4WY(pointerInputChange6.m6742getIdJ3iCeTQ());
+                        awaitTouchSlop.m451setPointerId0FcD4WY(pointerInputChange6.m6083getIdJ3iCeTQ());
                     }
                 } else {
-                    long m689addPositionsakrDWew = requireTouchSlopDetector().m689addPositionsakrDWew(pointerInputChange4.m6744getPositionF1C5BW0(), pointerInputChange4.m6745getPreviousPositionF1C5BW0(), DragGestureDetectorKt.m550pointerSlopE8SPZFQ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration()), pointerInputChange4.m6747getTypeT8wyACA()));
-                    if ((9223372034707292159L & m689addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    long m604addPositionsakrDWew = requireTouchSlopDetector().m604addPositionsakrDWew(pointerInputChange4.m6085getPositionF1C5BW0(), pointerInputChange4.m6086getPreviousPositionF1C5BW0(), DragGestureDetectorKt.m476pointerSlopE8SPZFQ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration()), pointerInputChange4.m6088getTypeT8wyACA()));
+                    if ((9223372034707292159L & m604addPositionsakrDWew) != InlineClassHelperKt.UnspecifiedPackedFloats) {
                         pointerInputChange4.consume();
                         PointerInputChange initialDown = awaitTouchSlop.getInitialDown();
                         Intrinsics.checkNotNull(initialDown);
-                        m559sendDragStart0AR0LA0(initialDown, pointerInputChange4, m689addPositionsakrDWew);
-                        m558sendDragEventUv8p0NA(pointerInputChange4, m689addPositionsakrDWew);
-                        m557moveToDraggingState0FcD4WY(pointerInputChange4.m6742getIdJ3iCeTQ());
+                        m483sendDragStart0AR0LA0(initialDown, pointerInputChange4, m604addPositionsakrDWew);
+                        m482sendDragEventUv8p0NA(pointerInputChange4, m604addPositionsakrDWew);
+                        m481moveToDraggingState0FcD4WY(pointerInputChange4.m6083getIdJ3iCeTQ());
                     } else {
                         awaitTouchSlop.setVerifyConsumptionInFinalPass(true);
                     }
@@ -756,10 +753,10 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 if (initialDown2 == null) {
                     throw new IllegalArgumentException("AwaitTouchSlop.initialDown was not initialized".toString());
                 }
-                long m519getPointerIdJ3iCeTQ = awaitTouchSlop.m519getPointerIdJ3iCeTQ();
+                long m450getPointerIdJ3iCeTQ = awaitTouchSlop.m450getPointerIdJ3iCeTQ();
                 TouchSlopDetector touchSlopDetector = this.touchSlopDetector;
                 if (touchSlopDetector != null) {
-                    m554moveToAwaitGesturePickupStaternUCldI(initialDown2, m519getPointerIdJ3iCeTQ, touchSlopDetector);
+                    m478moveToAwaitGesturePickupStaternUCldI(initialDown2, m450getPointerIdJ3iCeTQ, touchSlopDetector);
                 } else {
                     throw new IllegalArgumentException("AwaitTouchSlop.touchSlopDetector was not initialized".toString());
                 }
@@ -771,10 +768,10 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 if (initialDown3 == null) {
                     throw new IllegalArgumentException("AwaitTouchSlop.initialDown was not initialized".toString());
                 }
-                long m519getPointerIdJ3iCeTQ2 = awaitTouchSlop.m519getPointerIdJ3iCeTQ();
+                long m450getPointerIdJ3iCeTQ2 = awaitTouchSlop.m450getPointerIdJ3iCeTQ();
                 TouchSlopDetector touchSlopDetector2 = this.touchSlopDetector;
                 if (touchSlopDetector2 != null) {
-                    m554moveToAwaitGesturePickupStaternUCldI(initialDown3, m519getPointerIdJ3iCeTQ2, touchSlopDetector2);
+                    m478moveToAwaitGesturePickupStaternUCldI(initialDown3, m450getPointerIdJ3iCeTQ2, touchSlopDetector2);
                     return;
                 }
                 throw new IllegalArgumentException("AwaitTouchSlop.touchSlopDetector was not initialized".toString());
@@ -812,13 +809,13 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 i++;
             } else if (!pointerEvent.getChanges().isEmpty()) {
                 if (z) {
-                    long m6744getPositionF1C5BW0 = ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).m6744getPositionF1C5BW0();
+                    long m6085getPositionF1C5BW0 = ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).m6085getPositionF1C5BW0();
                     PointerInputChange initialDown = awaitGesturePickup.getInitialDown();
                     Intrinsics.checkNotNull(initialDown);
-                    long m5183minusMKHz9U = Offset.m5183minusMKHz9U(m6744getPositionF1C5BW0, initialDown.m6744getPositionF1C5BW0());
+                    long m4531minusMKHz9U = Offset.m4531minusMKHz9U(m6085getPositionF1C5BW0, initialDown.m6085getPositionF1C5BW0());
                     PointerInputChange initialDown2 = awaitGesturePickup.getInitialDown();
                     if (initialDown2 != null) {
-                        m556moveToAwaitTouchSlopStateaWI9W7U$default(this, initialDown2, awaitGesturePickup.m517getPointerIdJ3iCeTQ(), m5183minusMKHz9U, false, 8, null);
+                        m480moveToAwaitTouchSlopStateaWI9W7U$default(this, initialDown2, awaitGesturePickup.m448getPointerIdJ3iCeTQ(), m4531minusMKHz9U, false, 8, null);
                         return;
                     }
                     throw new IllegalArgumentException("AwaitGesturePickup.initialDown was not initialized.".toString());
@@ -835,7 +832,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         if (pointerEventPass != PointerEventPass.Main) {
             return;
         }
-        long m521getPointerIdJ3iCeTQ = dragging.m521getPointerIdJ3iCeTQ();
+        long m452getPointerIdJ3iCeTQ = dragging.m452getPointerIdJ3iCeTQ();
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         int i = 0;
@@ -847,7 +844,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 break;
             }
             pointerInputChange2 = changes.get(i2);
-            if (PointerId.m6726equalsimpl0(pointerInputChange2.m6742getIdJ3iCeTQ(), m521getPointerIdJ3iCeTQ)) {
+            if (PointerId.m6067equalsimpl0(pointerInputChange2.m6083getIdJ3iCeTQ(), m452getPointerIdJ3iCeTQ)) {
                 break;
             }
             i2++;
@@ -880,25 +877,25 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 moveToAwaitDownState();
                 return;
             }
-            dragging.m522setPointerId0FcD4WY(pointerInputChange5.m6742getIdJ3iCeTQ());
+            dragging.m453setPointerId0FcD4WY(pointerInputChange5.m6083getIdJ3iCeTQ());
         } else if (pointerInputChange3.isConsumed()) {
             sendDragCancelled();
-        } else if (Offset.m5177getDistanceimpl(PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3)) == 0.0f) {
+        } else if (Offset.m4525getDistanceimpl(PointerEventKt.positionChangeIgnoreConsumed(pointerInputChange3)) == 0.0f) {
         } else {
-            m558sendDragEventUv8p0NA(pointerInputChange3, PointerEventKt.positionChange(pointerInputChange3));
+            m482sendDragEventUv8p0NA(pointerInputChange3, PointerEventKt.positionChange(pointerInputChange3));
             pointerInputChange3.consume();
         }
     }
 
     /* renamed from: sendDragStart-0AR0LA0  reason: not valid java name */
-    private final void m559sendDragStart0AR0LA0(PointerInputChange pointerInputChange, PointerInputChange pointerInputChange2, long j) {
+    private final void m483sendDragStart0AR0LA0(PointerInputChange pointerInputChange, PointerInputChange pointerInputChange2, long j) {
         if (this.velocityTracker == null) {
             this.velocityTracker = new VelocityTracker();
         }
         VelocityTrackerKt.addPointerInputChange(requireVelocityTracker(), pointerInputChange);
-        long m5183minusMKHz9U = Offset.m5183minusMKHz9U(pointerInputChange2.m6744getPositionF1C5BW0(), j);
-        this.nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
-        if (this.canDrag.invoke(PointerType.m6812boximpl(pointerInputChange.m6747getTypeT8wyACA())).booleanValue()) {
+        long m4531minusMKHz9U = Offset.m4531minusMKHz9U(pointerInputChange2.m6085getPositionF1C5BW0(), j);
+        this.nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
+        if (this.canDrag.invoke(PointerType.m6153boximpl(pointerInputChange.m6088getTypeT8wyACA())).booleanValue()) {
             if (!this.isListeningForEvents) {
                 if (this.channel == null) {
                     this.channel = ChannelKt.Channel$default(Integer.MAX_VALUE, null, null, 6, null);
@@ -906,32 +903,32 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 startListeningForEvents();
             }
             this.previousPositionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this));
-            requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragStarted(m5183minusMKHz9U, null));
+            requireChannel().mo8396trySendJP2dKIU(new DragEvent.DragStarted(m4531minusMKHz9U, null));
         }
     }
 
     /* renamed from: sendDragEvent-Uv8p0NA  reason: not valid java name */
-    private final void m558sendDragEventUv8p0NA(PointerInputChange pointerInputChange, long j) {
+    private final void m482sendDragEventUv8p0NA(PointerInputChange pointerInputChange, long j) {
         long positionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(getNode()));
-        if (!Offset.m5176equalsimpl0(this.previousPositionOnScreen, Offset.Companion.m5194getUnspecifiedF1C5BW0()) && !Offset.m5176equalsimpl0(positionOnScreen, this.previousPositionOnScreen)) {
-            this.nodeOffset = Offset.m5184plusMKHz9U(this.nodeOffset, Offset.m5183minusMKHz9U(positionOnScreen, this.previousPositionOnScreen));
+        if (!Offset.m4524equalsimpl0(this.previousPositionOnScreen, Offset.Companion.m4542getUnspecifiedF1C5BW0()) && !Offset.m4524equalsimpl0(positionOnScreen, this.previousPositionOnScreen)) {
+            this.nodeOffset = Offset.m4532plusMKHz9U(this.nodeOffset, Offset.m4531minusMKHz9U(positionOnScreen, this.previousPositionOnScreen));
         }
         this.previousPositionOnScreen = positionOnScreen;
-        VelocityTrackerKt.m6851addPointerInputChange0AR0LA0(requireVelocityTracker(), pointerInputChange, this.nodeOffset);
-        requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragDelta(j, false, null));
+        VelocityTrackerKt.m6192addPointerInputChange0AR0LA0(requireVelocityTracker(), pointerInputChange, this.nodeOffset);
+        requireChannel().mo8396trySendJP2dKIU(new DragEvent.DragDelta(j, false, null));
     }
 
     private final void sendDragStopped(PointerInputChange pointerInputChange) {
         VelocityTrackerKt.addPointerInputChange(requireVelocityTracker(), pointerInputChange);
         float maximumFlingVelocity = ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration())).getMaximumFlingVelocity();
-        long m6850calculateVelocityAH228Gc = requireVelocityTracker().m6850calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
+        long m6191calculateVelocityAH228Gc = requireVelocityTracker().m6191calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
         requireVelocityTracker().resetTracking();
-        requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m568toValidVelocityTH1AsA0(m6850calculateVelocityAH228Gc), false, null));
+        requireChannel().mo8396trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m488toValidVelocityTH1AsA0(m6191calculateVelocityAH228Gc), false, null));
         this.isListeningForPointerInputEvents = false;
     }
 
     private final void sendDragCancelled() {
-        requireChannel().mo9174trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE);
+        requireChannel().mo8396trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE);
     }
 
     public final void onDragEvent(DragEvent dragEvent) {
@@ -939,6 +936,6 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             this.isListeningForEvents = true;
             startListeningForEvents();
         }
-        requireChannel().mo9174trySendJP2dKIU(dragEvent);
+        requireChannel().mo8396trySendJP2dKIU(dragEvent);
     }
 }

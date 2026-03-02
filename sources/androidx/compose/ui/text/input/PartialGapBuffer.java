@@ -45,7 +45,11 @@ public final class PartialGapBuffer {
 
     public final int getLength() {
         GapBuffer gapBuffer = this.buffer;
-        return gapBuffer == null ? this.text.length() : (this.text.length() - (this.bufEnd - this.bufStart)) + gapBuffer.length();
+        String str = this.text;
+        if (gapBuffer == null) {
+            return str.length();
+        }
+        return (str.length() - (this.bufEnd - this.bufStart)) + gapBuffer.length();
     }
 
     public final void replace(int i, int i2, String str) {
@@ -104,14 +108,15 @@ public final class PartialGapBuffer {
 
     public String toString() {
         GapBuffer gapBuffer = this.buffer;
+        String str = this.text;
         if (gapBuffer == null) {
-            return this.text;
+            return str;
         }
         StringBuilder sb = new StringBuilder();
-        sb.append((CharSequence) this.text, 0, this.bufStart);
+        sb.append((CharSequence) str, 0, this.bufStart);
         gapBuffer.append(sb);
-        String str = this.text;
-        sb.append((CharSequence) str, this.bufEnd, str.length());
+        String str2 = this.text;
+        sb.append((CharSequence) str2, this.bufEnd, str2.length());
         return sb.toString();
     }
 }

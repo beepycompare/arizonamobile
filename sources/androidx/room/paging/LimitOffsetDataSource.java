@@ -146,8 +146,10 @@ public abstract class LimitOffsetDataSource<T> extends PositionalDataSource<T> {
 
     public List<T> loadRange(int i, int i2) {
         RoomSQLiteQuery sQLiteQuery = getSQLiteQuery(i, i2);
-        if (this.mInTransaction) {
-            this.mDb.beginTransaction();
+        boolean z = this.mInTransaction;
+        RoomDatabase roomDatabase = this.mDb;
+        if (z) {
+            roomDatabase.beginTransaction();
             Cursor cursor = null;
             try {
                 cursor = this.mDb.query(sQLiteQuery);
@@ -162,7 +164,7 @@ public abstract class LimitOffsetDataSource<T> extends PositionalDataSource<T> {
                 sQLiteQuery.release();
             }
         }
-        Cursor query = this.mDb.query(sQLiteQuery);
+        Cursor query = roomDatabase.query(sQLiteQuery);
         try {
             return convertRows(query);
         } finally {

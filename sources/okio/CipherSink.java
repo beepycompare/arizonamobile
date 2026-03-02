@@ -114,9 +114,9 @@ public final class CipherSink implements Sink {
         if (outputSize == 0) {
             return null;
         }
+        BufferedSink bufferedSink = this.sink;
         if (outputSize > 8192) {
             try {
-                BufferedSink bufferedSink = this.sink;
                 byte[] doFinal = this.cipher.doFinal();
                 Intrinsics.checkNotNullExpressionValue(doFinal, "doFinal(...)");
                 bufferedSink.write(doFinal);
@@ -125,7 +125,7 @@ public final class CipherSink implements Sink {
                 return th2;
             }
         }
-        Buffer buffer = this.sink.getBuffer();
+        Buffer buffer = bufferedSink.getBuffer();
         Segment writableSegment$okio = buffer.writableSegment$okio(outputSize);
         try {
             int doFinal2 = this.cipher.doFinal(writableSegment$okio.data, writableSegment$okio.limit);

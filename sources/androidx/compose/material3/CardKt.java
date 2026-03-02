@@ -35,37 +35,37 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000N\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a_\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0011\u001a\u0083\u0001\u0010\u0000\u001a\u00020\u00012\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00010\u00132\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u000b2\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0018\u001aS\u0010\u0019\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001a\u001aw\u0010\u0019\u001a\u00020\u00012\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00010\u00132\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u001b\u001a]\u0010\u001c\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0011\u001a\u0081\u0001\u0010\u001c\u001a\u00020\u00012\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00010\u00132\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0014\u001a\u00020\u00152\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00172\u001c\u0010\f\u001a\u0018\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\r¢\u0006\u0002\b\u000f¢\u0006\u0002\b\u0010H\u0007¢\u0006\u0002\u0010\u0018¨\u0006\u001d"}, d2 = {"Card", "", "modifier", "Landroidx/compose/ui/Modifier;", "shape", "Landroidx/compose/ui/graphics/Shape;", "colors", "Landroidx/compose/material3/CardColors;", "elevation", "Landroidx/compose/material3/CardElevation;", "border", "Landroidx/compose/foundation/BorderStroke;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/ColumnScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "onClick", "Lkotlin/Function0;", "enabled", "", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/BorderStroke;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ElevatedCard", "(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "OutlinedCard", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class CardKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Card$lambda$0(Modifier modifier, Shape shape, CardColors cardColors, CardElevation cardElevation, BorderStroke borderStroke, Function3 function3, int i, int i2, Composer composer, int i3) {
         Card(modifier, shape, cardColors, cardElevation, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Card$lambda$2(Function0 function0, Modifier modifier, boolean z, Shape shape, CardColors cardColors, CardElevation cardElevation, BorderStroke borderStroke, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, Composer composer, int i3) {
         Card(function0, modifier, z, shape, cardColors, cardElevation, borderStroke, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ElevatedCard$lambda$3(Modifier modifier, Shape shape, CardColors cardColors, CardElevation cardElevation, Function3 function3, int i, int i2, Composer composer, int i3) {
         ElevatedCard(modifier, shape, cardColors, cardElevation, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ElevatedCard$lambda$4(Function0 function0, Modifier modifier, boolean z, Shape shape, CardColors cardColors, CardElevation cardElevation, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, Composer composer, int i3) {
         ElevatedCard(function0, modifier, z, shape, cardColors, cardElevation, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit OutlinedCard$lambda$5(Modifier modifier, Shape shape, CardColors cardColors, CardElevation cardElevation, BorderStroke borderStroke, Function3 function3, int i, int i2, Composer composer, int i3) {
         OutlinedCard(modifier, shape, cardColors, cardElevation, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit OutlinedCard$lambda$6(Function0 function0, Modifier modifier, boolean z, Shape shape, CardColors cardColors, CardElevation cardElevation, BorderStroke borderStroke, MutableInteractionSource mutableInteractionSource, Function3 function3, int i, int i2, Composer composer, int i3) {
         OutlinedCard(function0, modifier, z, shape, cardColors, cardElevation, borderStroke, mutableInteractionSource, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -210,7 +210,7 @@ public final class CardKt {
                     }
                     if ((i2 & 8) != 0) {
                         z = true;
-                        cardElevation2 = CardDefaults.INSTANCE.m2083cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                        cardElevation2 = CardDefaults.INSTANCE.m1784cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                         i3 &= -7169;
                     } else {
                         z = true;
@@ -230,7 +230,7 @@ public final class CardKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(1359693790, i3, -1, "androidx.compose.material3.Card (Card.kt:86)");
                 }
-                SurfaceKt.m3083SurfaceT9BRK9s(modifier3, shape4, cardColors3.m2075containerColorvNxB06k$material3(z), cardColors3.m2076contentColorvNxB06k$material3(z), 0.0f, cardElevation4.shadowElevation$material3(z, null, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m8272unboximpl(), borderStroke3, ComposableLambdaKt.rememberComposableLambda(-97109725, z, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
+                SurfaceKt.m2569SurfaceT9BRK9s(modifier3, shape4, cardColors3.m1776containerColorvNxB06k$material3(z), cardColors3.m1777contentColorvNxB06k$material3(z), 0.0f, cardElevation4.shadowElevation$material3(z, null, startRestartGroup, ((i3 >> 3) & 896) | 54).getValue().m7569unboximpl(), borderStroke3, ComposableLambdaKt.rememberComposableLambda(-97109725, z, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$1
                     @Override // kotlin.jvm.functions.Function2
                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer2, Integer num) {
                         invoke(composer2, num.intValue());
@@ -264,15 +264,15 @@ public final class CardKt {
                         } else {
                             composer2.useNode();
                         }
-                        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer2);
-                        Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
+                        Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(composer2, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                         function32.invoke(ColumnScopeInstance.INSTANCE, composer2, 6);
                         ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -307,9 +307,7 @@ public final class CardKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj5, Object obj6) {
-                        Unit Card$lambda$0;
-                        Card$lambda$0 = CardKt.Card$lambda$0(Modifier.this, shape2, cardColors2, cardElevation3, borderStroke2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
-                        return Card$lambda$0;
+                        return CardKt.Card$lambda$0(Modifier.this, shape2, cardColors2, cardElevation3, borderStroke2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
                     }
                 });
                 return;
@@ -486,7 +484,7 @@ public final class CardKt {
                             if ((i2 & 32) != 0) {
                                 z4 = true;
                                 i7 = i6;
-                                cardElevation3 = CardDefaults.INSTANCE.m2083cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                cardElevation3 = CardDefaults.INSTANCE.m1784cardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 composer3 = startRestartGroup;
                                 i3 &= -458753;
                             } else {
@@ -526,7 +524,7 @@ public final class CardKt {
                                     mutableInteractionSource4 = mutableInteractionSource3;
                                 }
                                 composer2 = composer3;
-                                SurfaceKt.m3086Surfaceo_FOJdg(function0, modifier3, z5, shape3, cardColors3.m2075containerColorvNxB06k$material3(z5), cardColors3.m2076contentColorvNxB06k$material3(z5), 0.0f, cardElevation3.shadowElevation$material3(z5, mutableInteractionSource4, composer3, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m8272unboximpl(), borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1347531112, z4, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
+                                SurfaceKt.m2572Surfaceo_FOJdg(function0, modifier3, z5, shape3, cardColors3.m1776containerColorvNxB06k$material3(z5), cardColors3.m1777contentColorvNxB06k$material3(z5), 0.0f, cardElevation3.shadowElevation$material3(z5, mutableInteractionSource4, composer3, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7569unboximpl(), borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1347531112, z4, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
                                     @Override // kotlin.jvm.functions.Function2
                                     public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                         invoke(composer4, num.intValue());
@@ -560,15 +558,15 @@ public final class CardKt {
                                         } else {
                                             composer4.useNode();
                                         }
-                                        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer4);
-                                        Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer4);
+                                        Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                         }
-                                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         ComposerKt.sourceInformationMarkerStart(composer4, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                         function32.invoke(ColumnScopeInstance.INSTANCE, composer4, 6);
                                         ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -626,7 +624,7 @@ public final class CardKt {
                         if (mutableInteractionSource3 != null) {
                         }
                         composer2 = composer3;
-                        SurfaceKt.m3086Surfaceo_FOJdg(function0, modifier3, z5, shape3, cardColors3.m2075containerColorvNxB06k$material3(z5), cardColors3.m2076contentColorvNxB06k$material3(z5), 0.0f, cardElevation3.shadowElevation$material3(z5, mutableInteractionSource4, composer3, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m8272unboximpl(), borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1347531112, z4, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
+                        SurfaceKt.m2572Surfaceo_FOJdg(function0, modifier3, z5, shape3, cardColors3.m1776containerColorvNxB06k$material3(z5), cardColors3.m1777contentColorvNxB06k$material3(z5), 0.0f, cardElevation3.shadowElevation$material3(z5, mutableInteractionSource4, composer3, ((i8 >> 6) & 14) | ((i8 >> 9) & 896)).getValue().m7569unboximpl(), borderStroke3, mutableInteractionSource4, ComposableLambdaKt.rememberComposableLambda(-1347531112, z4, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.CardKt$Card$3
                             @Override // kotlin.jvm.functions.Function2
                             public /* bridge */ /* synthetic */ Unit invoke(Composer composer4, Integer num) {
                                 invoke(composer4, num.intValue());
@@ -660,15 +658,15 @@ public final class CardKt {
                                 } else {
                                     composer4.useNode();
                                 }
-                                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer4);
-                                Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4041constructorimpl = Updater.m4041constructorimpl(composer4);
+                                Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(composer4, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                 function32.invoke(ColumnScopeInstance.INSTANCE, composer4, 6);
                                 ComposerKt.sourceInformationMarkerEnd(composer4);
@@ -706,9 +704,7 @@ public final class CardKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj4, Object obj5) {
-                                Unit Card$lambda$2;
-                                Card$lambda$2 = CardKt.Card$lambda$2(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, borderStroke2, mutableInteractionSource2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                return Card$lambda$2;
+                                return CardKt.Card$lambda$2(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, borderStroke2, mutableInteractionSource2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                             }
                         });
                         return;
@@ -908,7 +904,7 @@ public final class CardKt {
                         modifier3 = companion;
                         shape4 = shape3;
                         cardColors4 = cardColors3;
-                        cardElevation3 = CardDefaults.INSTANCE.m2085elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
+                        cardElevation3 = CardDefaults.INSTANCE.m1786elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
                     } else {
                         composer3 = startRestartGroup;
                         shape4 = shape3;
@@ -944,9 +940,7 @@ public final class CardKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj5, Object obj6) {
-                        Unit ElevatedCard$lambda$3;
-                        ElevatedCard$lambda$3 = CardKt.ElevatedCard$lambda$3(Modifier.this, shape2, cardColors2, cardElevation2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
-                        return ElevatedCard$lambda$3;
+                        return CardKt.ElevatedCard$lambda$3(Modifier.this, shape2, cardColors2, cardElevation2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
                     }
                 });
                 return;
@@ -1114,7 +1108,7 @@ public final class CardKt {
                                 if ((i2 & 32) != 0) {
                                     composer3 = startRestartGroup;
                                     i3 &= -458753;
-                                    obj4 = CardDefaults.INSTANCE.m2085elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
+                                    obj4 = CardDefaults.INSTANCE.m1786elevatedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
                                 } else {
                                     composer3 = startRestartGroup;
                                 }
@@ -1185,9 +1179,7 @@ public final class CardKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj6, Object obj7) {
-                                    Unit ElevatedCard$lambda$4;
-                                    ElevatedCard$lambda$4 = CardKt.ElevatedCard$lambda$4(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, mutableInteractionSource2, function3, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                                    return ElevatedCard$lambda$4;
+                                    return CardKt.ElevatedCard$lambda$4(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, mutableInteractionSource2, function3, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                                 }
                             });
                             return;
@@ -1408,7 +1400,7 @@ public final class CardKt {
                         composer3 = startRestartGroup;
                         i3 &= -7169;
                         i4 = 1;
-                        obj4 = CardDefaults.INSTANCE.m2087outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
+                        obj4 = CardDefaults.INSTANCE.m1788outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, composer3, 1572864, 63);
                     } else {
                         z = false;
                         i4 = 1;
@@ -1458,9 +1450,7 @@ public final class CardKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj6, Object obj7) {
-                        Unit OutlinedCard$lambda$5;
-                        OutlinedCard$lambda$5 = CardKt.OutlinedCard$lambda$5(Modifier.this, shape2, cardColors2, cardElevation2, borderStroke2, function3, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                        return OutlinedCard$lambda$5;
+                        return CardKt.OutlinedCard$lambda$5(Modifier.this, shape2, cardColors2, cardElevation2, borderStroke2, function3, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                     }
                 });
                 return;
@@ -1638,7 +1628,7 @@ public final class CardKt {
                                     i7 = i5;
                                     composer3 = startRestartGroup;
                                     i3 &= -458753;
-                                    obj3 = CardDefaults.INSTANCE.m2087outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
+                                    obj3 = CardDefaults.INSTANCE.m1788outlinedCardElevationaqJV_2Y(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, startRestartGroup, 1572864, 63);
                                 } else {
                                     composer3 = startRestartGroup;
                                     i6 = 0;
@@ -1717,9 +1707,7 @@ public final class CardKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CardKt$$ExternalSyntheticLambda5
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj5, Object obj6) {
-                                    Unit OutlinedCard$lambda$6;
-                                    OutlinedCard$lambda$6 = CardKt.OutlinedCard$lambda$6(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, borderStroke2, mutableInteractionSource2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
-                                    return OutlinedCard$lambda$6;
+                                    return CardKt.OutlinedCard$lambda$6(Function0.this, modifier2, z3, shape2, cardColors2, cardElevation2, borderStroke2, mutableInteractionSource2, function3, i, i2, (Composer) obj5, ((Integer) obj6).intValue());
                                 }
                             });
                             return;

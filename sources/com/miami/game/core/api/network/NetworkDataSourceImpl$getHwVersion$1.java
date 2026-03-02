@@ -1,13 +1,14 @@
 package com.miami.game.core.api.network;
 
+import androidx.compose.runtime.ComposerImplKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkDataSourceImpl.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {124}, m = "getHwVersion", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {124}, m = "getHwVersion", n = {}, nl = {ComposerImplKt.nodeKey}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class NetworkDataSourceImpl$getHwVersion$1 extends ContinuationImpl {
     int label;

@@ -19,17 +19,27 @@ public final class LocalDateFormatKt {
     private static final Lazy ISO_DATE$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormat ISO_DATE_delegate$lambda$1;
-            ISO_DATE_delegate$lambda$1 = LocalDateFormatKt.ISO_DATE_delegate$lambda$1();
-            return ISO_DATE_delegate$lambda$1;
+            DateTimeFormat build;
+            build = LocalDateFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda3
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return LocalDateFormatKt.ISO_DATE_delegate$lambda$1$lambda$0((DateTimeFormatBuilder.WithDate) obj);
+                }
+            });
+            return build;
         }
     });
     private static final Lazy ISO_DATE_BASIC$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormat ISO_DATE_BASIC_delegate$lambda$3;
-            ISO_DATE_BASIC_delegate$lambda$3 = LocalDateFormatKt.ISO_DATE_BASIC_delegate$lambda$3();
-            return ISO_DATE_BASIC_delegate$lambda$3;
+            DateTimeFormat build;
+            build = LocalDateFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return LocalDateFormatKt.ISO_DATE_BASIC_delegate$lambda$3$lambda$2((DateTimeFormatBuilder.WithDate) obj);
+                }
+            });
+            return build;
         }
     });
     private static final IncompleteLocalDate emptyIncompleteLocalDate = new IncompleteLocalDate(null, null, null, null, 15, null);
@@ -55,42 +65,20 @@ public final class LocalDateFormatKt {
         return (DateTimeFormat) ISO_DATE$delegate.getValue();
     }
 
-    public static final DateTimeFormat ISO_DATE_delegate$lambda$1() {
-        return LocalDateFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda3
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit ISO_DATE_delegate$lambda$1$lambda$0;
-                ISO_DATE_delegate$lambda$1$lambda$0 = LocalDateFormatKt.ISO_DATE_delegate$lambda$1$lambda$0((DateTimeFormatBuilder.WithDate) obj);
-                return ISO_DATE_delegate$lambda$1$lambda$0;
-            }
-        });
-    }
-
     public static final Unit ISO_DATE_delegate$lambda$1$lambda$0(DateTimeFormatBuilder.WithDate build) {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         DateTimeFormatBuilder.WithDate withDate = build;
         DateTimeFormatBuilder.WithYearMonth.year$default(withDate, null, 1, null);
         DateTimeFormatBuilder.WithDate withDate2 = build;
-        DateTimeFormatBuilderKt.m11885char(withDate2, '-');
+        DateTimeFormatBuilderKt.m10789char(withDate2, '-');
         DateTimeFormatBuilder.WithYearMonth.monthNumber$default(withDate, null, 1, null);
-        DateTimeFormatBuilderKt.m11885char(withDate2, '-');
+        DateTimeFormatBuilderKt.m10789char(withDate2, '-');
         DateTimeFormatBuilder.WithDate.day$default(build, null, 1, null);
         return Unit.INSTANCE;
     }
 
     public static final DateTimeFormat<LocalDate> getISO_DATE_BASIC() {
         return (DateTimeFormat) ISO_DATE_BASIC$delegate.getValue();
-    }
-
-    public static final DateTimeFormat ISO_DATE_BASIC_delegate$lambda$3() {
-        return LocalDateFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateFormatKt$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit ISO_DATE_BASIC_delegate$lambda$3$lambda$2;
-                ISO_DATE_BASIC_delegate$lambda$3$lambda$2 = LocalDateFormatKt.ISO_DATE_BASIC_delegate$lambda$3$lambda$2((DateTimeFormatBuilder.WithDate) obj);
-                return ISO_DATE_BASIC_delegate$lambda$3$lambda$2;
-            }
-        });
     }
 
     public static final Unit ISO_DATE_BASIC_delegate$lambda$3$lambda$2(DateTimeFormatBuilder.WithDate build) {

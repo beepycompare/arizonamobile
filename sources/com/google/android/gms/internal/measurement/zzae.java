@@ -140,10 +140,11 @@ public final class zzae implements Iterable, zzao, zzak {
 
     @Override // com.google.android.gms.internal.measurement.zzak
     public final void zzm(String str, zzao zzaoVar) {
+        Map map = this.zzb;
         if (zzaoVar == null) {
-            this.zzb.remove(str);
+            map.remove(str);
         } else {
-            this.zzb.put(str, zzaoVar);
+            map.put(str, zzaoVar);
         }
     }
 
@@ -220,30 +221,15 @@ public final class zzae implements Iterable, zzao, zzak {
     public final zzao zzt() {
         zzae zzaeVar = new zzae();
         for (Map.Entry entry : this.zza.entrySet()) {
-            if (entry.getValue() instanceof zzak) {
-                zzaeVar.zza.put((Integer) entry.getKey(), (zzao) entry.getValue());
+            boolean z = entry.getValue() instanceof zzak;
+            SortedMap sortedMap = zzaeVar.zza;
+            if (z) {
+                sortedMap.put((Integer) entry.getKey(), (zzao) entry.getValue());
             } else {
-                zzaeVar.zza.put((Integer) entry.getKey(), ((zzao) entry.getValue()).zzt());
+                sortedMap.put((Integer) entry.getKey(), ((zzao) entry.getValue()).zzt());
             }
         }
         return zzaeVar;
-    }
-
-    @RequiresNonNull({"elements"})
-    public final void zzn(int i, zzao zzaoVar) {
-        if (i > 32468) {
-            throw new IllegalStateException("Array too large");
-        }
-        if (i < 0) {
-            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 21);
-            sb.append("Out of bounds index: ");
-            sb.append(i);
-            throw new IndexOutOfBoundsException(sb.toString());
-        } else if (zzaoVar == null) {
-            this.zza.remove(Integer.valueOf(i));
-        } else {
-            this.zza.put(Integer.valueOf(i), zzaoVar);
-        }
     }
 
     public final void zzq(int i, zzao zzaoVar) {
@@ -274,6 +260,25 @@ public final class zzae implements Iterable, zzao, zzak {
             for (int i = 0; i < list.size(); i++) {
                 zzn(i, (zzao) list.get(i));
             }
+        }
+    }
+
+    @RequiresNonNull({"elements"})
+    public final void zzn(int i, zzao zzaoVar) {
+        if (i > 32468) {
+            throw new IllegalStateException("Array too large");
+        }
+        if (i < 0) {
+            StringBuilder sb = new StringBuilder(String.valueOf(i).length() + 21);
+            sb.append("Out of bounds index: ");
+            sb.append(i);
+            throw new IndexOutOfBoundsException(sb.toString());
+        }
+        SortedMap sortedMap = this.zza;
+        if (zzaoVar == null) {
+            sortedMap.remove(Integer.valueOf(i));
+        } else {
+            sortedMap.put(Integer.valueOf(i), zzaoVar);
         }
     }
 }

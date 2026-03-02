@@ -82,7 +82,7 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
             if (!Intrinsics.areEqual(startDestinationRoute, navDestination.getRoute())) {
                 NavDestination.DeepLinkMatch matchRoute = navDestination.matchRoute(startDestinationRoute);
                 Bundle matchingArgs = matchRoute != null ? matchRoute.getMatchingArgs() : null;
-                if (matchingArgs != null && !SavedStateReader.m9287isEmptyimpl(SavedStateReader.m9209constructorimpl(matchingArgs))) {
+                if (matchingArgs != null && !SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(matchingArgs))) {
                     Map emptyMap = MapsKt.emptyMap();
                     if (emptyMap.isEmpty()) {
                         pairArr = new Pair[0];
@@ -94,11 +94,11 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
                         pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                     }
                     ?? bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                    Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundleOf);
-                    SavedStateWriter.m9299putAllimpl(m9295constructorimpl, matchingArgs);
+                    Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundleOf);
+                    SavedStateWriter.m8504putAllimpl(m8500constructorimpl, matchingArgs);
                     Bundle bundle = (Bundle) objectRef.element;
                     if (bundle != null) {
-                        SavedStateWriter.m9299putAllimpl(m9295constructorimpl, bundle);
+                        SavedStateWriter.m8504putAllimpl(m8500constructorimpl, bundle);
                     }
                     objectRef.element = bundleOf;
                 }
@@ -107,9 +107,7 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
                 List<String> missingRequiredArguments = NavArgumentKt.missingRequiredArguments(navDestination.getArguments(), new Function1() { // from class: androidx.navigation.NavGraphNavigator$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean navigate$lambda$6;
-                        navigate$lambda$6 = NavGraphNavigator.navigate$lambda$6(Ref.ObjectRef.this, (String) obj);
-                        return Boolean.valueOf(navigate$lambda$6);
+                        return Boolean.valueOf(NavGraphNavigator.navigate$lambda$6(Ref.ObjectRef.this, (String) obj));
                     }
                 });
                 if (!missingRequiredArguments.isEmpty()) {
@@ -120,10 +118,10 @@ public class NavGraphNavigator extends Navigator<NavGraph> {
         this.navigatorProvider.getNavigator(navDestination.getNavigatorName()).navigate(CollectionsKt.listOf(getState().createBackStackEntry(navDestination, navDestination.addInDefaultArgs((Bundle) objectRef.element))), navOptions, extras);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean navigate$lambda$6(Ref.ObjectRef objectRef, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return objectRef.element == 0 || !SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl((Bundle) objectRef.element), key);
+        return objectRef.element == 0 || !SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl((Bundle) objectRef.element), key);
     }
 
     /* compiled from: NavGraphNavigator.kt */

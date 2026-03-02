@@ -180,8 +180,9 @@ public final class RatingCompat implements Parcelable {
 
     public Object getRating() {
         if (this.mRatingObj == null) {
-            if (isRated()) {
-                int i = this.mRatingStyle;
+            boolean isRated = isRated();
+            int i = this.mRatingStyle;
+            if (isRated) {
                 switch (i) {
                     case 1:
                         this.mRatingObj = Rating.newHeartRating(hasHeart());
@@ -201,7 +202,7 @@ public final class RatingCompat implements Parcelable {
                         return null;
                 }
             } else {
-                this.mRatingObj = Rating.newUnratedRating(this.mRatingStyle);
+                this.mRatingObj = Rating.newUnratedRating(i);
             }
         }
         return this.mRatingObj;

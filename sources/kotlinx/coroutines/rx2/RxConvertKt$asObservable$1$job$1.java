@@ -45,7 +45,7 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
         return ((RxConvertKt$asObservable$1$job$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -54,6 +54,7 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
     public final Object invokeSuspend(Object obj) {
         CoroutineScope coroutineScope;
         Throwable th;
+        boolean z;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -77,7 +78,9 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
             } catch (Throwable th2) {
                 coroutineScope = coroutineScope2;
                 th = th2;
-                if (th instanceof CancellationException) {
+                z = th instanceof CancellationException;
+                ObservableEmitter<T> observableEmitter2 = this.$emitter;
+                if (z) {
                 }
                 return Unit.INSTANCE;
             }
@@ -89,12 +92,14 @@ public final class RxConvertKt$asObservable$1$job$1 extends SuspendLambda implem
                 ResultKt.throwOnFailure(obj);
             } catch (Throwable th3) {
                 th = th3;
-                if (th instanceof CancellationException) {
-                    if (!this.$emitter.tryOnError(th)) {
+                z = th instanceof CancellationException;
+                ObservableEmitter<T> observableEmitter22 = this.$emitter;
+                if (z) {
+                    if (!observableEmitter22.tryOnError(th)) {
                         RxCancellableKt.handleUndeliverableException(th, coroutineScope.getCoroutineContext());
                     }
                 } else {
-                    this.$emitter.onComplete();
+                    observableEmitter22.onComplete();
                 }
                 return Unit.INSTANCE;
             }

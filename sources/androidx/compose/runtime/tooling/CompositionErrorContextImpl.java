@@ -45,16 +45,11 @@ public final class CompositionErrorContextImpl implements CompositionErrorContex
         return ComposeStackTraceKt.tryAttachComposeStackTrace(th, new Function0() { // from class: androidx.compose.runtime.tooling.CompositionErrorContextImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ComposeStackTrace attachComposeStackTrace$lambda$0;
-                attachComposeStackTrace$lambda$0 = CompositionErrorContextImpl.attachComposeStackTrace$lambda$0(CompositionErrorContextImpl.this, obj);
-                return attachComposeStackTrace$lambda$0;
+                ComposeStackTrace stackTraceForValue$runtime;
+                stackTraceForValue$runtime = CompositionErrorContextImpl.this.composer.stackTraceForValue$runtime(obj);
+                return stackTraceForValue$runtime;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ComposeStackTrace attachComposeStackTrace$lambda$0(CompositionErrorContextImpl compositionErrorContextImpl, Object obj) {
-        return compositionErrorContextImpl.composer.stackTraceForValue$runtime(obj);
     }
 
     @Override // androidx.compose.runtime.changelist.OperationErrorContext

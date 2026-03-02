@@ -89,10 +89,11 @@ public final class ObservableSingleSingle<T> extends Single<T> {
             if (t == null) {
                 t = this.defaultValue;
             }
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                singleObserver.onSuccess(t);
             } else {
-                this.downstream.onError(new NoSuchElementException());
+                singleObserver.onError(new NoSuchElementException());
             }
         }
     }

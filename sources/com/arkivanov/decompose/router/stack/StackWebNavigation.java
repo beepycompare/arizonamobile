@@ -30,7 +30,7 @@ public final class StackWebNavigation<C, T> implements WebNavigation<C> {
     private final Function1<Child.Created<? extends C, ? extends T>, String> pathMapper;
     private final KSerializer<C> serializer;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List navigate$lambda$2(List list, List it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return list;
@@ -55,9 +55,7 @@ public final class StackWebNavigation<C, T> implements WebNavigation<C> {
         this.history = MapKt.map(stack, new Function1() { // from class: com.arkivanov.decompose.router.stack.StackWebNavigation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List history$lambda$0;
-                history$lambda$0 = StackWebNavigation.history$lambda$0(StackWebNavigation.this, (ChildStack) obj);
-                return history$lambda$0;
+                return StackWebNavigation.history$lambda$0(StackWebNavigation.this, (ChildStack) obj);
             }
         });
     }
@@ -67,7 +65,7 @@ public final class StackWebNavigation<C, T> implements WebNavigation<C> {
         return this.serializer;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List history$lambda$0(StackWebNavigation stackWebNavigation, ChildStack it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return stackWebNavigation.toHistory(it);
@@ -111,9 +109,7 @@ public final class StackWebNavigation<C, T> implements WebNavigation<C> {
         StackNavigatorExtKt.navigate(this.navigator, new Function1() { // from class: com.arkivanov.decompose.router.stack.StackWebNavigation$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List navigate$lambda$2;
-                navigate$lambda$2 = StackWebNavigation.navigate$lambda$2(history, (List) obj);
-                return navigate$lambda$2;
+                return StackWebNavigation.navigate$lambda$2(history, (List) obj);
             }
         });
     }

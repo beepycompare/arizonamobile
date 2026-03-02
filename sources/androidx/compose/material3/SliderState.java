@@ -81,9 +81,7 @@ public final class SliderState implements DraggableState {
         this.gestureEndAction = new Function0() { // from class: androidx.compose.material3.SliderState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit gestureEndAction$lambda$1;
-                gestureEndAction$lambda$1 = SliderState.gestureEndAction$lambda$1(SliderState.this);
-                return gestureEndAction$lambda$1;
+                return SliderState.gestureEndAction$lambda$1(SliderState.this);
             }
         };
         this.rawOffset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(scaleToOffset(0.0f, 0.0f, f));
@@ -275,7 +273,7 @@ public final class SliderState implements DraggableState {
         return this.gestureEndAction;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit gestureEndAction$lambda$1(SliderState sliderState) {
         Function0<Unit> function0;
         if (!sliderState.isDragging() && (function0 = sliderState.onValueChangeFinished) != null) {
@@ -285,7 +283,7 @@ public final class SliderState implements DraggableState {
     }
 
     /* renamed from: onPress-k-4lQ0M$material3  reason: not valid java name */
-    public final void m3063onPressk4lQ0M$material3(long j) {
+    public final void m2551onPressk4lQ0M$material3(long j) {
         float intBitsToFloat;
         float totalWidth;
         float intBitsToFloat2;
@@ -350,26 +348,20 @@ public final class SliderState implements DraggableState {
             return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.SliderState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List Saver$lambda$0;
-                    Saver$lambda$0 = SliderState.Companion.Saver$lambda$0((SaverScope) obj, (SliderState) obj2);
-                    return Saver$lambda$0;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf(Float.valueOf(r2.getValue()), Integer.valueOf(((SliderState) obj2).getSteps()));
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.material3.SliderState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SliderState Saver$lambda$1;
-                    Saver$lambda$1 = SliderState.Companion.Saver$lambda$1(Function0.this, closedFloatingPointRange, (List) obj);
-                    return Saver$lambda$1;
+                    return SliderState.Companion.Saver$lambda$1(Function0.this, closedFloatingPointRange, (List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List Saver$lambda$0(SaverScope saverScope, SliderState sliderState) {
-            return CollectionsKt.listOf(Float.valueOf(sliderState.getValue()), Integer.valueOf(sliderState.getSteps()));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SliderState Saver$lambda$1(Function0 function0, ClosedFloatingPointRange closedFloatingPointRange, List list) {
             Object obj = list.get(0);
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");

@@ -1,5 +1,6 @@
 package com.google.firebase.installations.local;
 
+import android.util.Log;
 import com.google.firebase.FirebaseApp;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -17,6 +18,7 @@ public class PersistedInstallation {
     private static final String PERSISTED_STATUS_KEY = "Status";
     private static final String REFRESH_TOKEN_KEY = "RefreshToken";
     private static final String SETTINGS_FILE_NAME_PREFIX = "PersistedInstallation";
+    private static final String TAG = "PersistedInstallation";
     private static final String TOKEN_CREATION_TIME_IN_SECONDS_KEY = "TokenCreationEpochInSecs";
     private File dataFile;
     private final FirebaseApp firebaseApp;
@@ -38,11 +40,25 @@ public class PersistedInstallation {
         if (this.dataFile == null) {
             synchronized (this) {
                 if (this.dataFile == null) {
-                    this.dataFile = new File(this.firebaseApp.getApplicationContext().getFilesDir(), "PersistedInstallation." + this.firebaseApp.getPersistenceKey() + ".json");
+                    String str = "PersistedInstallation." + this.firebaseApp.getPersistenceKey() + ".json";
+                    File file = new File(this.firebaseApp.getApplicationContext().getNoBackupFilesDir(), str);
+                    this.dataFile = file;
+                    if (file.exists()) {
+                        return this.dataFile;
+                    }
+                    File file2 = new File(this.firebaseApp.getApplicationContext().getFilesDir(), str);
+                    if (file2.exists() && !file2.renameTo(this.dataFile)) {
+                        Log.e("PersistedInstallation", "Unable to move the file from back up to non back up directory", new IOException("Unable to move the file from back up to non back up directory"));
+                        return file2;
+                    }
                 }
             }
         }
         return this.dataFile;
+    }
+
+    public void clearDataFile() {
+        getDataFile().delete();
     }
 
     public PersistedInstallationEntry readPersistedInstallationEntryValue() {
@@ -87,7 +103,7 @@ public class PersistedInstallation {
             jSONObject.put(TOKEN_CREATION_TIME_IN_SECONDS_KEY, persistedInstallationEntry.getTokenCreationEpochInSecs());
             jSONObject.put(EXPIRES_IN_SECONDS_KEY, persistedInstallationEntry.getExpiresInSecs());
             jSONObject.put(FIS_ERROR_KEY, persistedInstallationEntry.getFisError());
-            createTempFile = File.createTempFile(SETTINGS_FILE_NAME_PREFIX, "tmp", this.firebaseApp.getApplicationContext().getFilesDir());
+            createTempFile = File.createTempFile("PersistedInstallation", "tmp", this.firebaseApp.getApplicationContext().getFilesDir());
             FileOutputStream fileOutputStream = new FileOutputStream(createTempFile);
             fileOutputStream.write(jSONObject.toString().getBytes("UTF-8"));
             fileOutputStream.close();

@@ -113,8 +113,8 @@ public final class LazyStaggeredGridLaneInfo {
             int max = Math.max(i - (this.lanes.length / 2), 0);
             this.anchor = max;
             int i4 = max - i2;
+            int[] iArr = this.lanes;
             if (i4 >= 0) {
-                int[] iArr = this.lanes;
                 if (i4 < iArr.length) {
                     ArraysKt.copyInto(iArr, iArr, 0, i4, iArr.length);
                 }
@@ -122,15 +122,14 @@ public final class LazyStaggeredGridLaneInfo {
                 ArraysKt.fill(iArr2, 0, Math.max(0, iArr2.length - i4), this.lanes.length);
             } else {
                 int i5 = -i4;
-                int[] iArr3 = this.lanes;
-                if (iArr3.length + i5 < 131072) {
-                    ensureCapacity(iArr3.length + i5 + 1, i5);
+                if (iArr.length + i5 < 131072) {
+                    ensureCapacity(iArr.length + i5 + 1, i5);
                 } else {
-                    if (i5 < iArr3.length) {
-                        ArraysKt.copyInto(iArr3, iArr3, i5, 0, iArr3.length - i5);
+                    if (i5 < iArr.length) {
+                        ArraysKt.copyInto(iArr, iArr, i5, 0, iArr.length - i5);
                     }
-                    int[] iArr4 = this.lanes;
-                    ArraysKt.fill(iArr4, 0, 0, Math.min(iArr4.length, i5));
+                    int[] iArr3 = this.lanes;
+                    ArraysKt.fill(iArr3, 0, 0, Math.min(iArr3.length, i5));
                 }
             }
         }
@@ -161,10 +160,13 @@ public final class LazyStaggeredGridLaneInfo {
                 return;
             }
             this.spannedItems.add(-(binarySearch + 1), new SpannedItem(i, iArr));
-        } else if (iArr == null) {
-            this.spannedItems.remove(binarySearch);
+            return;
+        }
+        ArrayDeque<SpannedItem> arrayDeque2 = this.spannedItems;
+        if (iArr == null) {
+            arrayDeque2.remove(binarySearch);
         } else {
-            this.spannedItems.get(binarySearch).setGaps(iArr);
+            arrayDeque2.get(binarySearch).setGaps(iArr);
         }
     }
 

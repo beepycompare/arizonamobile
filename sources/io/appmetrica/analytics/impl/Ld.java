@@ -4,10 +4,10 @@ public final class Ld {
 
     /* renamed from: a  reason: collision with root package name */
     public final G0 f677a;
-    public final EnumC0143bb b;
+    public final EnumC0142bb b;
 
-    public Ld(G0 g0, EnumC0143bb enumC0143bb) {
+    public Ld(G0 g0, EnumC0142bb enumC0142bb) {
         this.f677a = g0;
-        this.b = enumC0143bb;
+        this.b = enumC0142bb;
     }
 }

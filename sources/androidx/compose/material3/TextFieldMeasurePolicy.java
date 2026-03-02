@@ -60,7 +60,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo41measure3p2s80s(final MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Measurable measurable;
         Measurable measurable2;
         long j2;
@@ -76,9 +76,9 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
         int i;
         final Placeable placeable3;
         final float invoke = this.labelProgress.invoke();
-        int i2 = measureScope.mo458roundToPx0680j_4(this.paddingValues.mo875calculateTopPaddingD9Ej5fM());
-        int i3 = measureScope.mo458roundToPx0680j_4(this.paddingValues.mo872calculateBottomPaddingD9Ej5fM());
-        long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        int i2 = measureScope.mo399roundToPx0680j_4(this.paddingValues.mo770calculateTopPaddingD9Ej5fM());
+        int i3 = measureScope.mo399roundToPx0680j_4(this.paddingValues.mo767calculateBottomPaddingD9Ej5fM());
+        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         List<? extends Measurable> list2 = list;
         int size = list2.size();
         int i4 = 0;
@@ -94,9 +94,9 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
             i4++;
         }
         Measurable measurable8 = measurable;
-        Placeable mo6875measureBRTryo0 = measurable8 != null ? measurable8.mo6875measureBRTryo0(m8201copyZbe2FdA$default) : null;
-        int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo0);
-        int max = Math.max(0, LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo0));
+        Placeable mo6216measureBRTryo0 = measurable8 != null ? measurable8.mo6216measureBRTryo0(m7498copyZbe2FdA$default) : null;
+        int widthOrZero = LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo0);
+        int max = Math.max(0, LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo0));
         int size2 = list2.size();
         int i5 = 0;
         while (true) {
@@ -112,10 +112,10 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
         }
         Measurable measurable9 = measurable2;
         if (measurable9 != null) {
-            j2 = m8201copyZbe2FdA$default;
-            placeable = measurable9.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(j2, -widthOrZero, 0, 2, null));
+            j2 = m7498copyZbe2FdA$default;
+            placeable = measurable9.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(j2, -widthOrZero, 0, 2, null));
         } else {
-            j2 = m8201copyZbe2FdA$default;
+            j2 = m7498copyZbe2FdA$default;
             placeable = null;
         }
         int widthOrZero2 = widthOrZero + LayoutUtilKt.getWidthOrZero(placeable);
@@ -134,9 +134,9 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
             i6++;
         }
         Measurable measurable10 = measurable3;
-        Placeable mo6875measureBRTryo02 = measurable10 != null ? measurable10.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(j2, -widthOrZero2, 0, 2, null)) : null;
-        int widthOrZero3 = widthOrZero2 + LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo02);
-        int max3 = Math.max(max2, LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo02));
+        Placeable mo6216measureBRTryo02 = measurable10 != null ? measurable10.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(j2, -widthOrZero2, 0, 2, null)) : null;
+        int widthOrZero3 = widthOrZero2 + LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo02);
+        int max3 = Math.max(max2, LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo02));
         int size4 = list2.size();
         int i7 = 0;
         while (true) {
@@ -153,7 +153,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
         Measurable measurable11 = measurable4;
         if (measurable11 != null) {
             j3 = j2;
-            placeable2 = measurable11.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(j2, -widthOrZero3, 0, 2, null));
+            placeable2 = measurable11.mo6216measureBRTryo0(ConstraintsKt.m7528offsetNN6EwU$default(j2, -widthOrZero3, 0, 2, null));
         } else {
             j3 = j2;
             placeable2 = null;
@@ -177,10 +177,10 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
         Measurable measurable12 = measurable5;
         Ref.ObjectRef objectRef = new Ref.ObjectRef();
         if (!z) {
-            objectRef.element = measurable12 != null ? measurable12.mo6875measureBRTryo0(ConstraintsKt.m8230offsetNN6EwU(j3, -widthOrZero4, -i3)) : 0;
+            objectRef.element = measurable12 != null ? measurable12.mo6216measureBRTryo0(ConstraintsKt.m7527offsetNN6EwU(j3, -widthOrZero4, -i3)) : 0;
             minIntrinsicHeight = 0;
         } else {
-            minIntrinsicHeight = measurable12 != null ? measurable12.minIntrinsicHeight(Constraints.m8213getMinWidthimpl(j)) : 0;
+            minIntrinsicHeight = measurable12 != null ? measurable12.minIntrinsicHeight(Constraints.m7510getMinWidthimpl(j)) : 0;
         }
         int size6 = list2.size();
         int i9 = 0;
@@ -196,9 +196,9 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
             i9++;
         }
         Measurable measurable13 = measurable6;
-        int minIntrinsicHeight2 = measurable13 != null ? measurable13.minIntrinsicHeight(Constraints.m8213getMinWidthimpl(j)) : 0;
+        int minIntrinsicHeight2 = measurable13 != null ? measurable13.minIntrinsicHeight(Constraints.m7510getMinWidthimpl(j)) : 0;
         int heightOrZero = i2 + LayoutUtilKt.getHeightOrZero((Placeable) objectRef.element) + minIntrinsicHeight;
-        long m8230offsetNN6EwU = ConstraintsKt.m8230offsetNN6EwU(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null), -widthOrZero4, ((-heightOrZero) - i3) - minIntrinsicHeight2);
+        long m7527offsetNN6EwU = ConstraintsKt.m7527offsetNN6EwU(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 11, null), -widthOrZero4, ((-heightOrZero) - i3) - minIntrinsicHeight2);
         int size7 = list2.size();
         int i10 = 0;
         while (i10 < size7) {
@@ -206,8 +206,8 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
             int i11 = size7;
             int i12 = heightOrZero;
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable14), TextFieldImplKt.TextFieldId)) {
-                final Placeable mo6875measureBRTryo03 = measurable14.mo6875measureBRTryo0(m8230offsetNN6EwU);
-                long m8201copyZbe2FdA$default2 = Constraints.m8201copyZbe2FdA$default(m8230offsetNN6EwU, 0, 0, 0, 0, 14, null);
+                final Placeable mo6216measureBRTryo03 = measurable14.mo6216measureBRTryo0(m7527offsetNN6EwU);
+                long m7498copyZbe2FdA$default2 = Constraints.m7498copyZbe2FdA$default(m7527offsetNN6EwU, 0, 0, 0, 0, 14, null);
                 int size8 = list2.size();
                 int i13 = 0;
                 while (true) {
@@ -224,53 +224,51 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
                     size8 = i14;
                 }
                 Measurable measurable15 = measurable7;
-                Placeable mo6875measureBRTryo04 = measurable15 != null ? measurable15.mo6875measureBRTryo0(m8201copyZbe2FdA$default2) : null;
-                int max5 = Math.max(max4, Math.max(LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo03), LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo04)) + i12 + i3);
+                Placeable mo6216measureBRTryo04 = measurable15 != null ? measurable15.mo6216measureBRTryo0(m7498copyZbe2FdA$default2) : null;
+                int max5 = Math.max(max4, Math.max(LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo03), LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo04)) + i12 + i3);
                 long j4 = j3;
                 boolean z2 = z;
                 final Placeable placeable4 = placeable2;
                 Ref.ObjectRef objectRef2 = objectRef;
-                final int m3247calculateWidthyeHjK3Y = m3247calculateWidthyeHjK3Y(LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo0), LayoutUtilKt.getWidthOrZero(placeable), LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo02), LayoutUtilKt.getWidthOrZero(placeable2), mo6875measureBRTryo03.getWidth(), LayoutUtilKt.getWidthOrZero((Placeable) objectRef.element), LayoutUtilKt.getWidthOrZero(mo6875measureBRTryo04), j);
+                final int m2708calculateWidthyeHjK3Y = m2708calculateWidthyeHjK3Y(LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo0), LayoutUtilKt.getWidthOrZero(placeable), LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo02), LayoutUtilKt.getWidthOrZero(placeable2), mo6216measureBRTryo03.getWidth(), LayoutUtilKt.getWidthOrZero((Placeable) objectRef.element), LayoutUtilKt.getWidthOrZero(mo6216measureBRTryo04), j);
                 if (z2) {
-                    objectRef2.element = measurable12 != null ? measurable12.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j4, 0, m3247calculateWidthyeHjK3Y, 0, minIntrinsicHeight, 5, null)) : 0;
+                    objectRef2.element = measurable12 != null ? measurable12.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j4, 0, m2708calculateWidthyeHjK3Y, 0, minIntrinsicHeight, 5, null)) : 0;
                 }
-                long m8201copyZbe2FdA$default3 = Constraints.m8201copyZbe2FdA$default(ConstraintsKt.m8231offsetNN6EwU$default(j4, 0, -max5, 1, null), 0, m3247calculateWidthyeHjK3Y, 0, 0, 9, null);
+                long m7498copyZbe2FdA$default3 = Constraints.m7498copyZbe2FdA$default(ConstraintsKt.m7528offsetNN6EwU$default(j4, 0, -max5, 1, null), 0, m2708calculateWidthyeHjK3Y, 0, 0, 9, null);
                 if (measurable13 != null) {
                     i = i2;
-                    placeable3 = measurable13.mo6875measureBRTryo0(m8201copyZbe2FdA$default3);
+                    placeable3 = measurable13.mo6216measureBRTryo0(m7498copyZbe2FdA$default3);
                 } else {
                     i = i2;
                     placeable3 = null;
                 }
                 int heightOrZero2 = LayoutUtilKt.getHeightOrZero(placeable3);
                 boolean z3 = z2;
-                int m3246calculateHeightmKXJcVc = m3246calculateHeightmKXJcVc(measureScope, mo6875measureBRTryo03.getHeight(), LayoutUtilKt.getHeightOrZero((Placeable) objectRef2.element), LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo0), LayoutUtilKt.getHeightOrZero(placeable), LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo02), LayoutUtilKt.getHeightOrZero(placeable4), LayoutUtilKt.getHeightOrZero(mo6875measureBRTryo04), LayoutUtilKt.getHeightOrZero(placeable3), j, z3, invoke);
-                final int heightOrZero3 = (m3246calculateHeightmKXJcVc - heightOrZero2) - (z3 ? LayoutUtilKt.getHeightOrZero((Placeable) objectRef2.element) : 0);
+                int m2707calculateHeightmKXJcVc = m2707calculateHeightmKXJcVc(measureScope, mo6216measureBRTryo03.getHeight(), LayoutUtilKt.getHeightOrZero((Placeable) objectRef2.element), LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo0), LayoutUtilKt.getHeightOrZero(placeable), LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo02), LayoutUtilKt.getHeightOrZero(placeable4), LayoutUtilKt.getHeightOrZero(mo6216measureBRTryo04), LayoutUtilKt.getHeightOrZero(placeable3), j, z3, invoke);
+                final int heightOrZero3 = (m2707calculateHeightmKXJcVc - heightOrZero2) - (z3 ? LayoutUtilKt.getHeightOrZero((Placeable) objectRef2.element) : 0);
                 int size9 = list2.size();
                 int i15 = 0;
                 while (i15 < size9) {
                     Measurable measurable16 = list.get(i15);
                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable16), TextFieldImplKt.ContainerId)) {
-                        final Placeable mo6875measureBRTryo05 = measurable16.mo6875measureBRTryo0(ConstraintsKt.Constraints(m3247calculateWidthyeHjK3Y != Integer.MAX_VALUE ? m3247calculateWidthyeHjK3Y : 0, m3247calculateWidthyeHjK3Y, heightOrZero3 != Integer.MAX_VALUE ? heightOrZero3 : 0, heightOrZero3));
-                        final int i16 = m3246calculateHeightmKXJcVc;
+                        final Placeable mo6216measureBRTryo05 = measurable16.mo6216measureBRTryo0(ConstraintsKt.Constraints(m2708calculateWidthyeHjK3Y != Integer.MAX_VALUE ? m2708calculateWidthyeHjK3Y : 0, m2708calculateWidthyeHjK3Y, heightOrZero3 != Integer.MAX_VALUE ? heightOrZero3 : 0, heightOrZero3));
+                        final int i16 = m2707calculateHeightmKXJcVc;
                         final boolean z4 = z3;
                         final Ref.ObjectRef objectRef3 = objectRef2;
                         final int i17 = i;
-                        final Placeable placeable5 = mo6875measureBRTryo0;
+                        final Placeable placeable5 = mo6216measureBRTryo0;
                         final Placeable placeable6 = placeable;
-                        final Placeable placeable7 = mo6875measureBRTryo04;
-                        final Placeable placeable8 = mo6875measureBRTryo02;
-                        return MeasureScope.layout$default(measureScope, m3247calculateWidthyeHjK3Y, i16, null, new Function1() { // from class: androidx.compose.material3.TextFieldMeasurePolicy$$ExternalSyntheticLambda2
+                        final Placeable placeable7 = mo6216measureBRTryo04;
+                        final Placeable placeable8 = mo6216measureBRTryo02;
+                        return MeasureScope.layout$default(measureScope, m2708calculateWidthyeHjK3Y, i16, null, new Function1() { // from class: androidx.compose.material3.TextFieldMeasurePolicy$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                Unit measure_3p2s80s$lambda$9;
-                                measure_3p2s80s$lambda$9 = TextFieldMeasurePolicy.measure_3p2s80s$lambda$9(Ref.ObjectRef.this, z4, this, heightOrZero3, i17, measureScope, m3247calculateWidthyeHjK3Y, i16, mo6875measureBRTryo03, placeable7, placeable5, placeable6, placeable8, placeable4, mo6875measureBRTryo05, placeable3, invoke, (Placeable.PlacementScope) obj);
-                                return measure_3p2s80s$lambda$9;
+                                return TextFieldMeasurePolicy.measure_3p2s80s$lambda$9(Ref.ObjectRef.this, z4, this, heightOrZero3, i17, measureScope, m2708calculateWidthyeHjK3Y, i16, mo6216measureBRTryo03, placeable7, placeable5, placeable6, placeable8, placeable4, mo6216measureBRTryo05, placeable3, invoke, (Placeable.PlacementScope) obj);
                             }
                         }, 4, null);
                     }
                     i15++;
-                    m3246calculateHeightmKXJcVc = m3246calculateHeightmKXJcVc;
+                    m2707calculateHeightmKXJcVc = m2707calculateHeightmKXJcVc;
                     z3 = z3;
                     objectRef2 = objectRef2;
                     heightOrZero3 = heightOrZero3;
@@ -283,13 +281,13 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
             heightOrZero = i12;
             z = z;
             objectRef = objectRef;
-            m8230offsetNN6EwU = m8230offsetNN6EwU;
+            m7527offsetNN6EwU = m7527offsetNN6EwU;
         }
         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
         throw new KotlinNothingValueException();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$9(Ref.ObjectRef objectRef, boolean z, TextFieldMeasurePolicy textFieldMeasurePolicy, int i, int i2, MeasureScope measureScope, int i3, int i4, Placeable placeable, Placeable placeable2, Placeable placeable3, Placeable placeable4, Placeable placeable5, Placeable placeable6, Placeable placeable7, Placeable placeable8, float f, Placeable.PlacementScope placementScope) {
         MeasureScope measureScope2;
         int i5;
@@ -304,7 +302,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
                     measureScope2 = measureScope;
                 } else {
                     measureScope2 = measureScope;
-                    i5 = i2 + measureScope2.mo458roundToPx0680j_4(textFieldMeasurePolicy.minimizedLabelHalfHeight);
+                    i5 = i2 + measureScope2.mo399roundToPx0680j_4(textFieldMeasurePolicy.minimizedLabelHalfHeight);
                 }
                 i6 = i5;
             }
@@ -364,18 +362,18 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
     }
 
     /* renamed from: calculateWidth-yeHjK3Y  reason: not valid java name */
-    private final int m3247calculateWidthyeHjK3Y(int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
+    private final int m2708calculateWidthyeHjK3Y(int i, int i2, int i3, int i4, int i5, int i6, int i7, long j) {
         int i8 = i3 + i4;
-        return ConstraintsKt.m8228constrainWidthK40F9xA(j, i + Math.max(i5 + i8, Math.max(i7 + i8, i6)) + i2);
+        return ConstraintsKt.m7525constrainWidthK40F9xA(j, i + Math.max(i5 + i8, Math.max(i7 + i8, i6)) + i2);
     }
 
     /* renamed from: calculateHeight-mKXJcVc  reason: not valid java name */
-    private final int m3246calculateHeightmKXJcVc(Density density, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, boolean z, float f) {
-        int mo458roundToPx0680j_4 = density.mo458roundToPx0680j_4(Dp.m8258constructorimpl(this.paddingValues.mo875calculateTopPaddingD9Ej5fM() + this.paddingValues.mo872calculateBottomPaddingD9Ej5fM())) + ((i2 <= 0 || z) ? 0 : Math.max(density.mo458roundToPx0680j_4(Dp.m8258constructorimpl(this.minimizedLabelHalfHeight * 2)), MathHelpersKt.lerp(0, i2, MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier().transform(f)))) + ComparisonsKt.maxOf(i, i7, i5, i6, z ? 0 : MathHelpersKt.lerp(i2, 0, f));
+    private final int m2707calculateHeightmKXJcVc(Density density, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, boolean z, float f) {
+        int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.paddingValues.mo770calculateTopPaddingD9Ej5fM() + this.paddingValues.mo767calculateBottomPaddingD9Ej5fM())) + ((i2 <= 0 || z) ? 0 : Math.max(density.mo399roundToPx0680j_4(Dp.m7555constructorimpl(this.minimizedLabelHalfHeight * 2)), MathHelpersKt.lerp(0, i2, MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier().transform(f)))) + ComparisonsKt.maxOf(i, i7, i5, i6, z ? 0 : MathHelpersKt.lerp(i2, 0, f));
         if (!z) {
             i2 = 0;
         }
-        return ConstraintsKt.m8227constrainHeightK40F9xA(j, i2 + Math.max(i3, Math.max(i4, mo458roundToPx0680j_4)) + i8);
+        return ConstraintsKt.m7524constrainHeightK40F9xA(j, i2 + Math.max(i3, Math.max(i4, mo399roundToPx0680j_4)) + i8);
     }
 
     private final void placeWithLabel(Placeable.PlacementScope placementScope, int i, int i2, Placeable placeable, Placeable placeable2, Placeable placeable3, Placeable placeable4, Placeable placeable5, Placeable placeable6, Placeable placeable7, Placeable placeable8, Placeable placeable9, int i3, int i4, boolean z, float f, int i5, LayoutDirection layoutDirection) {
@@ -413,9 +411,9 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
     }
 
     private final void placeWithoutLabel(Placeable.PlacementScope placementScope, int i, int i2, Placeable placeable, Placeable placeable2, Placeable placeable3, Placeable placeable4, Placeable placeable5, Placeable placeable6, Placeable placeable7, Placeable placeable8, float f) {
-        Placeable.PlacementScope.m6941place70tqf50$default(placementScope, placeable7, IntOffset.Companion.m8397getZeronOccac(), 0.0f, 2, null);
+        Placeable.PlacementScope.m6282place70tqf50$default(placementScope, placeable7, IntOffset.Companion.m7694getZeronOccac(), 0.0f, 2, null);
         int heightOrZero = i2 - LayoutUtilKt.getHeightOrZero(placeable8);
-        int roundToInt = MathKt.roundToInt(this.paddingValues.mo875calculateTopPaddingD9Ej5fM() * f);
+        int roundToInt = MathKt.roundToInt(this.paddingValues.mo770calculateTopPaddingD9Ej5fM() * f);
         if (placeable3 != null) {
             Placeable.PlacementScope.placeRelative$default(placementScope, placeable3, 0, Alignment.Companion.getCenterVertically().align(placeable3.getHeight(), heightOrZero), 0.0f, 4, null);
         }
@@ -545,7 +543,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
                     i8++;
                 }
                 IntrinsicMeasurable intrinsicMeasurable14 = intrinsicMeasurable;
-                return m3247calculateWidthyeHjK3Y(intValue6, intValue3, intValue4, intValue5, intValue, intValue2, intrinsicMeasurable14 != null ? function2.invoke(intrinsicMeasurable14, Integer.valueOf(i)).intValue() : 0, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
+                return m2708calculateWidthyeHjK3Y(intValue6, intValue3, intValue4, intValue5, intValue, intValue2, intrinsicMeasurable14 != null ? function2.invoke(intrinsicMeasurable14, Integer.valueOf(i)).intValue() : 0, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null));
             }
         }
         ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -709,7 +707,7 @@ public final class TextFieldMeasurePolicy implements MeasurePolicy {
                     i16++;
                 }
                 IntrinsicMeasurable intrinsicMeasurable15 = intrinsicMeasurable7;
-                return textFieldMeasurePolicy.m3246calculateHeightmKXJcVc(intrinsicMeasureScope, intValue3, intValue, i4, i5, i7, i8, intValue4, intrinsicMeasurable15 != null ? function2.invoke(intrinsicMeasurable15, Integer.valueOf(i2)).intValue() : 0, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), textFieldMeasurePolicy.labelPosition instanceof TextFieldLabelPosition.Above, textFieldMeasurePolicy.labelProgress.invoke());
+                return textFieldMeasurePolicy.m2707calculateHeightmKXJcVc(intrinsicMeasureScope, intValue3, intValue, i4, i5, i7, i8, intValue4, intrinsicMeasurable15 != null ? function2.invoke(intrinsicMeasurable15, Integer.valueOf(i2)).intValue() : 0, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), textFieldMeasurePolicy.labelPosition instanceof TextFieldLabelPosition.Above, textFieldMeasurePolicy.labelProgress.invoke());
             }
             i14++;
             textFieldMeasurePolicy = this;

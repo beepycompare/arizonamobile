@@ -1,5 +1,5 @@
 package com.google.android.gms.tasks;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class DuplicateTaskCompletionException extends IllegalStateException {
     private DuplicateTaskCompletionException(String str, Throwable th) {
@@ -15,7 +15,9 @@ public final class DuplicateTaskCompletionException extends IllegalStateExceptio
         if (exception != null) {
             str = "failure";
         } else if (task.isSuccessful()) {
-            str = "result ".concat(String.valueOf(String.valueOf(task.getResult())));
+            String valueOf = String.valueOf(task.getResult());
+            String.valueOf(valueOf);
+            str = "result ".concat(String.valueOf(valueOf));
         } else {
             str = task.isCanceled() ? "cancellation" : "unknown issue";
         }

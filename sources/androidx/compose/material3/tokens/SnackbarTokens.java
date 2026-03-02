@@ -14,17 +14,17 @@ public final class SnackbarTokens {
     private static final TypographyKeyTokens ActionLabelTextFont = TypographyKeyTokens.LabelLarge;
     private static final ColorSchemeKeyTokens ActionPressedLabelTextColor = ColorSchemeKeyTokens.InversePrimary;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.InverseSurface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3978getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraSmall;
     private static final ColorSchemeKeyTokens IconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.InverseOnSurface;
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens SupportingTextColor = ColorSchemeKeyTokens.InverseOnSurface;
     private static final TypographyKeyTokens SupportingTextFont = TypographyKeyTokens.BodyMedium;
-    private static final float SingleLineContainerHeight = Dp.m8258constructorimpl((float) 48.0d);
-    private static final float TwoLinesContainerHeight = Dp.m8258constructorimpl((float) 68.0d);
+    private static final float SingleLineContainerHeight = Dp.m7555constructorimpl((float) 48.0d);
+    private static final float TwoLinesContainerHeight = Dp.m7555constructorimpl((float) 68.0d);
 
     private SnackbarTokens() {
     }
@@ -54,7 +54,7 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4358getContainerElevationD9Ej5fM() {
+    public final float m3742getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -79,7 +79,7 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4359getIconSizeD9Ej5fM() {
+    public final float m3743getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -92,12 +92,12 @@ public final class SnackbarTokens {
     }
 
     /* renamed from: getSingleLineContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4360getSingleLineContainerHeightD9Ej5fM() {
+    public final float m3744getSingleLineContainerHeightD9Ej5fM() {
         return SingleLineContainerHeight;
     }
 
     /* renamed from: getTwoLinesContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4361getTwoLinesContainerHeightD9Ej5fM() {
+    public final float m3745getTwoLinesContainerHeightD9Ej5fM() {
         return TwoLinesContainerHeight;
     }
 }

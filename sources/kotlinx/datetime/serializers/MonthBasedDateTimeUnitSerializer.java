@@ -29,9 +29,14 @@ public final class MonthBasedDateTimeUnitSerializer implements KSerializer<DateT
     private static final Lazy descriptor$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: kotlinx.datetime.serializers.MonthBasedDateTimeUnitSerializer$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SerialDescriptor descriptor_delegate$lambda$1;
-            descriptor_delegate$lambda$1 = MonthBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1();
-            return descriptor_delegate$lambda$1;
+            SerialDescriptor buildClassSerialDescriptor;
+            buildClassSerialDescriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.MonthBased", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.MonthBasedDateTimeUnitSerializer$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return MonthBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1$lambda$0((ClassSerialDescriptorBuilder) obj);
+                }
+            });
+            return buildClassSerialDescriptor;
         }
     });
 
@@ -41,18 +46,6 @@ public final class MonthBasedDateTimeUnitSerializer implements KSerializer<DateT
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
     public SerialDescriptor getDescriptor() {
         return (SerialDescriptor) descriptor$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor_delegate$lambda$1() {
-        return SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.MonthBased", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.MonthBasedDateTimeUnitSerializer$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit descriptor_delegate$lambda$1$lambda$0;
-                descriptor_delegate$lambda$1$lambda$0 = MonthBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1$lambda$0((ClassSerialDescriptorBuilder) obj);
-                return descriptor_delegate$lambda$1$lambda$0;
-            }
-        });
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
@@ -100,7 +93,7 @@ public final class MonthBasedDateTimeUnitSerializer implements KSerializer<DateT
         return new DateTimeUnit.MonthBased(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor_delegate$lambda$1$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("months", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

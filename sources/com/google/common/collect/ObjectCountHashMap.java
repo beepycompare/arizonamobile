@@ -185,13 +185,15 @@ public class ObjectCountHashMap<K> {
 
         public int setCount(int count) {
             updateLastKnownIndex();
-            if (this.lastKnownIndex == -1) {
-                ObjectCountHashMap.this.put(this.key, count);
+            int i = this.lastKnownIndex;
+            ObjectCountHashMap objectCountHashMap = ObjectCountHashMap.this;
+            if (i == -1) {
+                objectCountHashMap.put(this.key, count);
                 return 0;
             }
-            int i = ObjectCountHashMap.this.values[this.lastKnownIndex];
+            int i2 = objectCountHashMap.values[this.lastKnownIndex];
             ObjectCountHashMap.this.values[this.lastKnownIndex] = count;
-            return i;
+            return i2;
         }
     }
 
@@ -368,8 +370,8 @@ public class ObjectCountHashMap<K> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void moveLastEntry(int dstIndex) {
         int size = size() - 1;
+        Object[] objArr = this.keys;
         if (dstIndex < size) {
-            Object[] objArr = this.keys;
             objArr[dstIndex] = objArr[size];
             int[] iArr = this.values;
             iArr[dstIndex] = iArr[size];
@@ -396,7 +398,7 @@ public class ObjectCountHashMap<K> {
                 i = next;
             }
         } else {
-            this.keys[dstIndex] = null;
+            objArr[dstIndex] = null;
             this.values[dstIndex] = 0;
             this.entries[dstIndex] = -1;
         }

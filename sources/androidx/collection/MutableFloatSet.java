@@ -238,7 +238,7 @@ public final class MutableFloatSet extends FloatSet {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10422constructorimpl(ULong.m10422constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10422constructorimpl(ULong.m10422constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m9361constructorimpl(ULong.m9361constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m9361constructorimpl(ULong.m9361constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

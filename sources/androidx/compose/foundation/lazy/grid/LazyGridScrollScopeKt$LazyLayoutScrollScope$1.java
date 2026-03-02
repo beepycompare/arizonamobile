@@ -87,10 +87,10 @@ public final class LazyGridScrollScopeKt$LazyLayoutScrollScope$1 implements Lazy
             LazyGridItemInfo lazyGridItemInfo2 = lazyGridItemInfo;
             if (layoutInfo.getOrientation() == Orientation.Vertical) {
                 if (lazyGridItemInfo2 != null) {
-                    num = Integer.valueOf(IntOffset.m8387getYimpl(lazyGridItemInfo2.mo1081getOffsetnOccac()));
+                    num = Integer.valueOf(IntOffset.m7684getYimpl(lazyGridItemInfo2.mo951getOffsetnOccac()));
                 }
             } else if (lazyGridItemInfo2 != null) {
-                num = Integer.valueOf(IntOffset.m8386getXimpl(lazyGridItemInfo2.mo1081getOffsetnOccac()));
+                num = Integer.valueOf(IntOffset.m7683getXimpl(lazyGridItemInfo2.mo951getOffsetnOccac()));
             }
             if (num != null) {
                 r2 = num.intValue();

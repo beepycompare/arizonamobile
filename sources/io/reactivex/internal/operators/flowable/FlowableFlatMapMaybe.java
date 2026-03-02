@@ -136,11 +136,12 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
                         SpscLinkedArrayQueue<R> spscLinkedArrayQueue = this.queue.get();
                         if (z && (spscLinkedArrayQueue == null || spscLinkedArrayQueue.isEmpty())) {
                             Throwable terminate = this.errors.terminate();
+                            Subscriber<? super R> subscriber = this.downstream;
                             if (terminate != null) {
-                                this.downstream.onError(terminate);
+                                subscriber.onError(terminate);
                                 return;
                             } else {
-                                this.downstream.onComplete();
+                                subscriber.onComplete();
                                 return;
                             }
                         }
@@ -207,11 +208,12 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
                     SpscLinkedArrayQueue<R> spscLinkedArrayQueue = this.queue.get();
                     if (z && (spscLinkedArrayQueue == null || spscLinkedArrayQueue.isEmpty())) {
                         Throwable terminate = this.errors.terminate();
+                        Subscriber<? super R> subscriber = this.downstream;
                         if (terminate != null) {
-                            this.downstream.onError(terminate);
+                            subscriber.onError(terminate);
                             return;
                         } else {
-                            this.downstream.onComplete();
+                            subscriber.onComplete();
                             return;
                         }
                     }

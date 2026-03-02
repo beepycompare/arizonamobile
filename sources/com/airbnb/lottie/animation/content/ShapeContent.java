@@ -79,10 +79,11 @@ public class ShapeContent implements PathContent, BaseKeyframeAnimation.Animatio
             return this.path;
         }
         Path value = this.shapeAnimation.getValue();
+        Path path = this.path;
         if (value == null) {
-            return this.path;
+            return path;
         }
-        this.path.set(value);
+        path.set(value);
         this.path.setFillType(Path.FillType.EVEN_ODD);
         this.trimPaths.apply(this.path);
         this.isPathValid = true;

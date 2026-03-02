@@ -531,12 +531,14 @@ public class CollapsingToolbarLayout extends FrameLayout {
             int i6 = this.tmpRect.top + this.expandedMarginTop;
             int i7 = (i3 - i) - (z3 ? this.expandedMarginStart : this.expandedMarginEnd);
             int i8 = (i4 - i2) - this.expandedMarginBottom;
-            if (TextUtils.isEmpty(this.collapsingSubtitleHelper.getText())) {
-                this.collapsingTitleHelper.setExpandedBounds(i5, i6, i7, i8);
+            boolean isEmpty = TextUtils.isEmpty(this.collapsingSubtitleHelper.getText());
+            CollapsingTextHelper collapsingTextHelper = this.collapsingTitleHelper;
+            if (isEmpty) {
+                collapsingTextHelper.setExpandedBounds(i5, i6, i7, i8);
                 this.collapsingTitleHelper.recalculate(z);
                 return;
             }
-            this.collapsingTitleHelper.setExpandedBounds(i5, i6, i7, (int) ((i8 - (this.collapsingSubtitleHelper.getExpandedTextFullSingleLineHeight() + this.extraMultilineSubtitleHeight)) - this.expandedTitleSpacing), false);
+            collapsingTextHelper.setExpandedBounds(i5, i6, i7, (int) ((i8 - (this.collapsingSubtitleHelper.getExpandedTextFullSingleLineHeight() + this.extraMultilineSubtitleHeight)) - this.expandedTitleSpacing), false);
             this.collapsingSubtitleHelper.setExpandedBounds(i5, (int) (i6 + this.collapsingTitleHelper.getExpandedTextFullSingleLineHeight() + this.extraMultilineTitleHeight + this.expandedTitleSpacing), i7, i8, false);
             this.collapsingTitleHelper.recalculate(z);
             this.collapsingSubtitleHelper.recalculate(z);
@@ -598,10 +600,12 @@ public class CollapsingToolbarLayout extends FrameLayout {
         int i8 = (this.tmpRect.bottom + maxOffsetForPinChild) - i2;
         int collapsedFullSingleLineHeight = (int) (i8 - this.collapsingSubtitleHelper.getCollapsedFullSingleLineHeight());
         int collapsedFullSingleLineHeight2 = (int) (i7 + this.collapsingTitleHelper.getCollapsedFullSingleLineHeight());
-        if (TextUtils.isEmpty(this.collapsingSubtitleHelper.getText())) {
-            this.collapsingTitleHelper.setCollapsedBounds(i5, i7, i6, i8);
+        boolean isEmpty = TextUtils.isEmpty(this.collapsingSubtitleHelper.getText());
+        CollapsingTextHelper collapsingTextHelper = this.collapsingTitleHelper;
+        if (isEmpty) {
+            collapsingTextHelper.setCollapsedBounds(i5, i7, i6, i8);
         } else {
-            this.collapsingTitleHelper.setCollapsedBounds(i5, i7, i6, collapsedFullSingleLineHeight);
+            collapsingTextHelper.setCollapsedBounds(i5, i7, i6, collapsedFullSingleLineHeight);
             this.collapsingSubtitleHelper.setCollapsedBounds(i5, collapsedFullSingleLineHeight2, i6, i8);
         }
         if (this.collapsedTitleGravityMode == 0) {
@@ -612,11 +616,13 @@ public class CollapsingToolbarLayout extends FrameLayout {
                 i = i3;
             }
             int i11 = i10 - i;
-            if (TextUtils.isEmpty(this.collapsingSubtitleHelper.getText())) {
-                this.collapsingTitleHelper.setCollapsedBoundsForOffsets(i9, i7, i11, i8);
+            boolean isEmpty2 = TextUtils.isEmpty(this.collapsingSubtitleHelper.getText());
+            CollapsingTextHelper collapsingTextHelper2 = this.collapsingTitleHelper;
+            if (isEmpty2) {
+                collapsingTextHelper2.setCollapsedBoundsForOffsets(i9, i7, i11, i8);
                 return;
             }
-            this.collapsingTitleHelper.setCollapsedBoundsForOffsets(i9, i7, i11, collapsedFullSingleLineHeight);
+            collapsingTextHelper2.setCollapsedBoundsForOffsets(i9, i7, i11, collapsedFullSingleLineHeight);
             this.collapsingSubtitleHelper.setCollapsedBoundsForOffsets(i9, collapsedFullSingleLineHeight2, i11, i8);
         }
     }
@@ -1304,11 +1310,17 @@ public class CollapsingToolbarLayout extends FrameLayout {
 
         @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
         public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+            CollapsingToolbarLayout collapsingToolbarLayout;
             CollapsingToolbarLayout.this.currentOffset = i;
             int systemWindowInsetTop = CollapsingToolbarLayout.this.lastInsets != null ? CollapsingToolbarLayout.this.lastInsets.getSystemWindowInsetTop() : 0;
             int childCount = CollapsingToolbarLayout.this.getChildCount();
-            for (int i2 = 0; i2 < childCount; i2++) {
-                View childAt = CollapsingToolbarLayout.this.getChildAt(i2);
+            int i2 = 0;
+            while (true) {
+                collapsingToolbarLayout = CollapsingToolbarLayout.this;
+                if (i2 >= childCount) {
+                    break;
+                }
+                View childAt = collapsingToolbarLayout.getChildAt(i2);
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
                 ViewOffsetHelper viewOffsetHelper = CollapsingToolbarLayout.getViewOffsetHelper(childAt);
                 int i3 = layoutParams.collapseMode;
@@ -1317,8 +1329,9 @@ public class CollapsingToolbarLayout extends FrameLayout {
                 } else if (i3 == 2) {
                     viewOffsetHelper.setTopAndBottomOffset(Math.round((-i) * layoutParams.parallaxMult));
                 }
+                i2++;
             }
-            CollapsingToolbarLayout.this.updateScrimVisibility();
+            collapsingToolbarLayout.updateScrimVisibility();
             if (CollapsingToolbarLayout.this.statusBarScrim != null && systemWindowInsetTop > 0) {
                 CollapsingToolbarLayout.this.postInvalidateOnAnimation();
             }

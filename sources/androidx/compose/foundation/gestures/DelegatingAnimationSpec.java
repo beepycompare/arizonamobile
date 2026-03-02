@@ -65,7 +65,7 @@ final class DelegatingAnimationSpec implements AnimationSpec<AnimationData> {
             }
 
             private final AnimationVector2D offsetVector(AnimationData animationData) {
-                return VectorConvertersKt.getVectorConverter(Offset.Companion).getConvertToVector().invoke(Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (animationData.m497getOffsetF1C5BW0() >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (animationData.m497getOffsetF1C5BW0() & 4294967295L))) & 4294967295L))));
+                return VectorConvertersKt.getVectorConverter(Offset.Companion).getConvertToVector().invoke(Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (animationData.m430getOffsetF1C5BW0() >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (animationData.m430getOffsetF1C5BW0() & 4294967295L))) & 4294967295L))));
             }
 
             private final AnimationVector1D degreesVector(AnimationData animationData) {
@@ -78,7 +78,7 @@ final class DelegatingAnimationSpec implements AnimationSpec<AnimationData> {
                 float value = animationVector1D.getValue();
                 float v1 = animationVector2D.getV1();
                 float v2 = animationVector2D.getV2();
-                return (AnimationVector) convertToVector.invoke(new AnimationData(value, Offset.m5171constructorimpl((Float.floatToRawIntBits(v2) & 4294967295L) | (Float.floatToRawIntBits(v1) << 32)), animationVector1D2.getValue(), null));
+                return (AnimationVector) convertToVector.invoke(new AnimationData(value, Offset.m4519constructorimpl((Float.floatToRawIntBits(v2) & 4294967295L) | (Float.floatToRawIntBits(v1) << 32)), animationVector1D2.getValue(), null));
             }
         };
     }

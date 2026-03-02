@@ -76,12 +76,13 @@ public class SampledXYSeries implements FastXYSeries, OrderedXYSeries {
             return;
         }
         int zoomIndex = getZoomIndex(d, getRatio());
-        if (zoomIndex < this.zoomLevels.size()) {
-            this.activeSeries = this.zoomLevels.get(zoomIndex);
-            return;
-        }
+        int size = this.zoomLevels.size();
         List<EditableXYSeries> list = this.zoomLevels;
-        this.activeSeries = list.get(list.size() - 1);
+        if (zoomIndex < size) {
+            this.activeSeries = list.get(zoomIndex);
+        } else {
+            this.activeSeries = list.get(list.size() - 1);
+        }
     }
 
     protected static int getZoomIndex(double d, double d2) {

@@ -47,14 +47,15 @@ public class AppCompatImageHelper {
     }
 
     public void setImageResource(int i) {
+        ImageView imageView = this.mView;
         if (i != 0) {
-            Drawable drawable = AppCompatResources.getDrawable(this.mView.getContext(), i);
+            Drawable drawable = AppCompatResources.getDrawable(imageView.getContext(), i);
             if (drawable != null) {
                 DrawableUtils.fixDrawable(drawable);
             }
             this.mView.setImageDrawable(drawable);
         } else {
-            this.mView.setImageDrawable(null);
+            imageView.setImageDrawable(null);
         }
         applySupportImageTint();
     }

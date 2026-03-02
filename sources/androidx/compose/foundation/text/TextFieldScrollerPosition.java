@@ -30,16 +30,15 @@ public final class TextFieldScrollerPosition {
     private static final Saver<TextFieldScrollerPosition, Object> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.text.TextFieldScrollerPosition$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = TextFieldScrollerPosition.Saver$lambda$0((SaverScope) obj, (TextFieldScrollerPosition) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf(Float.valueOf(((TextFieldScrollerPosition) obj2).getOffset()), Boolean.valueOf(r2.getOrientation() == Orientation.Vertical));
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.text.TextFieldScrollerPosition$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TextFieldScrollerPosition Saver$lambda$1;
-            Saver$lambda$1 = TextFieldScrollerPosition.Saver$lambda$1((List) obj);
-            return Saver$lambda$1;
+            return TextFieldScrollerPosition.Saver$lambda$1((List) obj);
         }
     });
     private final MutableFloatState maximum$delegate;
@@ -54,7 +53,7 @@ public final class TextFieldScrollerPosition {
         this.maximum$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
         this.viewportSize$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
         this.previousCursorRect = Rect.Companion.getZero();
-        this.previousSelection = TextRange.Companion.m7706getZerod9O1mEE();
+        this.previousSelection = TextRange.Companion.m7008getZerod9O1mEE();
         this.orientation$delegate = SnapshotStateKt.mutableStateOf(orientation, SnapshotStateKt.structuralEqualityPolicy());
     }
 
@@ -91,12 +90,12 @@ public final class TextFieldScrollerPosition {
     }
 
     /* renamed from: getPreviousSelection-d9O1mEE  reason: not valid java name */
-    public final long m1460getPreviousSelectiond9O1mEE() {
+    public final long m1282getPreviousSelectiond9O1mEE() {
         return this.previousSelection;
     }
 
     /* renamed from: setPreviousSelection-5zc-tL8  reason: not valid java name */
-    public final void m1461setPreviousSelection5zctL8(long j) {
+    public final void m1283setPreviousSelection5zctL8(long j) {
         this.previousSelection = j;
     }
 
@@ -129,8 +128,8 @@ public final class TextFieldScrollerPosition {
     }
 
     /* renamed from: getOffsetToFollow-5zc-tL8  reason: not valid java name */
-    public final int m1459getOffsetToFollow5zctL8(long j) {
-        return TextRange.m7701getStartimpl(j) != TextRange.m7701getStartimpl(this.previousSelection) ? TextRange.m7701getStartimpl(j) : TextRange.m7696getEndimpl(j) != TextRange.m7696getEndimpl(this.previousSelection) ? TextRange.m7696getEndimpl(j) : TextRange.m7699getMinimpl(j);
+    public final int m1281getOffsetToFollow5zctL8(long j) {
+        return TextRange.m7003getStartimpl(j) != TextRange.m7003getStartimpl(this.previousSelection) ? TextRange.m7003getStartimpl(j) : TextRange.m6998getEndimpl(j) != TextRange.m6998getEndimpl(this.previousSelection) ? TextRange.m6998getEndimpl(j) : TextRange.m7001getMinimpl(j);
     }
 
     /* compiled from: TextFieldScroll.kt */
@@ -149,12 +148,7 @@ public final class TextFieldScrollerPosition {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, TextFieldScrollerPosition textFieldScrollerPosition) {
-        return CollectionsKt.listOf(Float.valueOf(textFieldScrollerPosition.getOffset()), Boolean.valueOf(textFieldScrollerPosition.getOrientation() == Orientation.Vertical));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextFieldScrollerPosition Saver$lambda$1(List list) {
         Object obj = list.get(1);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Boolean");

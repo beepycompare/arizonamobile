@@ -37,13 +37,13 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         Integer valueOf;
-        long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
         ArrayList arrayList = new ArrayList(list.size());
         int size = list.size();
         for (int i = 0; i < size; i++) {
-            arrayList.add(list.get(i).mo6875measureBRTryo0(m8201copyZbe2FdA$default));
+            arrayList.add(list.get(i).mo6216measureBRTryo0(m7498copyZbe2FdA$default));
         }
         final ArrayList arrayList2 = arrayList;
         Integer num = null;
@@ -96,14 +96,12 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
         return MeasureScope.layout$default(measureScope, i4, intValue2, null, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$ModalNavigationDrawer$2$6$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$5;
-                measure_3p2s80s$lambda$5 = NavigationDrawerKt$ModalNavigationDrawer$2$6$1.measure_3p2s80s$lambda$5(DrawerState.this, i4, arrayList2, mutableState, mutableFloatState, f, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$5;
+                return NavigationDrawerKt$ModalNavigationDrawer$2$6$1.measure_3p2s80s$lambda$5(DrawerState.this, i4, arrayList2, mutableState, mutableFloatState, f, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$5(DrawerState drawerState, int i, List list, MutableState mutableState, final MutableFloatState mutableFloatState, final float f, Placeable.PlacementScope placementScope) {
         boolean ModalNavigationDrawer_FHprtrg$lambda$5;
         boolean ModalNavigationDrawer_FHprtrg$lambda$52;
@@ -119,9 +117,7 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
             AnchoredDraggableState.updateAnchors$default(drawerState.getAnchoredDraggableState$material3(), AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$ModalNavigationDrawer$2$6$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$5$lambda$3;
-                    measure_3p2s80s$lambda$5$lambda$3 = NavigationDrawerKt$ModalNavigationDrawer$2$6$1.measure_3p2s80s$lambda$5$lambda$3(f, mutableFloatState, (DraggableAnchorsConfig) obj);
-                    return measure_3p2s80s$lambda$5$lambda$3;
+                    return NavigationDrawerKt$ModalNavigationDrawer$2$6$1.measure_3p2s80s$lambda$5$lambda$3(f, mutableFloatState, (DraggableAnchorsConfig) obj);
                 }
             }), null, 2, null);
         }
@@ -132,7 +128,7 @@ public final class NavigationDrawerKt$ModalNavigationDrawer$2$6$1 implements Mea
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$5$lambda$3(float f, MutableFloatState mutableFloatState, DraggableAnchorsConfig draggableAnchorsConfig) {
         float ModalNavigationDrawer_FHprtrg$lambda$8;
         DrawerValue drawerValue = DrawerValue.Closed;

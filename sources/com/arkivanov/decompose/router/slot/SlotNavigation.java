@@ -1,7 +1,6 @@
 package com.arkivanov.decompose.router.slot;
 
 import com.arkivanov.decompose.router.children.NavigationSource;
-import com.arkivanov.decompose.router.slot.SlotNavigation;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -36,16 +35,11 @@ public interface SlotNavigation<C> extends SlotNavigator<C>, NavigationSource<Ev
             this(function1, (i & 2) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.slot.SlotNavigation$Event$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = SlotNavigation.Event._init_$lambda$0(obj, obj2);
-                    return _init_$lambda$0;
+                    Unit unit;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             } : function2);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit _init_$lambda$0(Object obj, Object obj2) {
-            return Unit.INSTANCE;
         }
 
         public final Function2<C, C, Unit> getOnComplete() {

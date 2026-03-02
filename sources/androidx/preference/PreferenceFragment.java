@@ -410,10 +410,11 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
             int preferenceAdapterPosition;
             this.mAdapter.unregisterAdapterDataObserver(this);
             Preference preference = this.mPreference;
+            RecyclerView.Adapter<?> adapter = this.mAdapter;
             if (preference != null) {
-                preferenceAdapterPosition = ((PreferenceGroup.PreferencePositionCallback) this.mAdapter).getPreferenceAdapterPosition(preference);
+                preferenceAdapterPosition = ((PreferenceGroup.PreferencePositionCallback) adapter).getPreferenceAdapterPosition(preference);
             } else {
-                preferenceAdapterPosition = ((PreferenceGroup.PreferencePositionCallback) this.mAdapter).getPreferenceAdapterPosition(this.mKey);
+                preferenceAdapterPosition = ((PreferenceGroup.PreferencePositionCallback) adapter).getPreferenceAdapterPosition(this.mKey);
             }
             if (preferenceAdapterPosition != -1) {
                 this.mList.scrollToPosition(preferenceAdapterPosition);

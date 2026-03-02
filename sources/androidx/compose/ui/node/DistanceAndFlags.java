@@ -10,59 +10,59 @@ public final class DistanceAndFlags {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DistanceAndFlags m7063boximpl(long j) {
+    public static final /* synthetic */ DistanceAndFlags m6404boximpl(long j) {
         return new DistanceAndFlags(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7065constructorimpl(long j) {
+    public static long m6406constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7066equalsimpl(long j, Object obj) {
-        return (obj instanceof DistanceAndFlags) && j == ((DistanceAndFlags) obj).m7073unboximpl();
+    public static boolean m6407equalsimpl(long j, Object obj) {
+        return (obj instanceof DistanceAndFlags) && j == ((DistanceAndFlags) obj).m6414unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7067equalsimpl0(long j, long j2) {
+    public static final boolean m6408equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7069hashCodeimpl(long j) {
+    public static int m6410hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: isInExpandedBounds-impl  reason: not valid java name */
-    public static final boolean m7070isInExpandedBoundsimpl(long j) {
+    public static final boolean m6411isInExpandedBoundsimpl(long j) {
         return (j & 2) != 0;
     }
 
     /* renamed from: isInLayer-impl  reason: not valid java name */
-    public static final boolean m7071isInLayerimpl(long j) {
+    public static final boolean m6412isInLayerimpl(long j) {
         return (j & 1) != 0;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7072toStringimpl(long j) {
+    public static String m6413toStringimpl(long j) {
         return "DistanceAndFlags(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7066equalsimpl(this.packedValue, obj);
+        return m6407equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7069hashCodeimpl(this.packedValue);
+        return m6410hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m7072toStringimpl(this.packedValue);
+        return m6413toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7073unboximpl() {
+    public final /* synthetic */ long m6414unboximpl() {
         return this.packedValue;
     }
 
@@ -75,16 +75,16 @@ public final class DistanceAndFlags {
     }
 
     /* renamed from: compareTo-9YPOF3E  reason: not valid java name */
-    public static final int m7064compareTo9YPOF3E(long j, long j2) {
-        boolean m7071isInLayerimpl = m7071isInLayerimpl(j);
-        if (m7071isInLayerimpl != m7071isInLayerimpl(j2)) {
-            return m7071isInLayerimpl ? -1 : 1;
+    public static final int m6405compareTo9YPOF3E(long j, long j2) {
+        boolean m6412isInLayerimpl = m6412isInLayerimpl(j);
+        if (m6412isInLayerimpl != m6412isInLayerimpl(j2)) {
+            return m6412isInLayerimpl ? -1 : 1;
         }
-        return (Math.min(m7068getDistanceimpl(j), m7068getDistanceimpl(j2)) >= 0.0f && m7070isInExpandedBoundsimpl(j) != m7070isInExpandedBoundsimpl(j2)) ? m7070isInExpandedBoundsimpl(j) ? -1 : 1 : (int) Math.signum(m7068getDistanceimpl(j) - m7068getDistanceimpl(j2));
+        return (Math.min(m6409getDistanceimpl(j), m6409getDistanceimpl(j2)) >= 0.0f && m6411isInExpandedBoundsimpl(j) != m6411isInExpandedBoundsimpl(j2)) ? m6411isInExpandedBoundsimpl(j) ? -1 : 1 : (int) Math.signum(m6409getDistanceimpl(j) - m6409getDistanceimpl(j2));
     }
 
     /* renamed from: getDistance-impl  reason: not valid java name */
-    public static final float m7068getDistanceimpl(long j) {
+    public static final float m6409getDistanceimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 }

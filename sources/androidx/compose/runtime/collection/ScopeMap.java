@@ -22,49 +22,49 @@ public final class ScopeMap<Key, Scope> {
     private final MutableScatterMap<Object, Object> map;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ ScopeMap m4775boximpl(MutableScatterMap mutableScatterMap) {
+    public static final /* synthetic */ ScopeMap m4140boximpl(MutableScatterMap mutableScatterMap) {
         return new ScopeMap(mutableScatterMap);
     }
 
     /* renamed from: constructor-impl */
-    public static <Key, Scope> MutableScatterMap<Object, Object> m4777constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static <Key, Scope> MutableScatterMap<Object, Object> m4142constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m4780equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
-        return (obj instanceof ScopeMap) && Intrinsics.areEqual(mutableScatterMap, ((ScopeMap) obj).m4791unboximpl());
+    public static boolean m4145equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+        return (obj instanceof ScopeMap) && Intrinsics.areEqual(mutableScatterMap, ((ScopeMap) obj).m4156unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m4781equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
+    public static final boolean m4146equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
         return Intrinsics.areEqual(mutableScatterMap, mutableScatterMap2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m4784hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static int m4149hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m4790toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static String m4155toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return "ScopeMap(map=" + mutableScatterMap + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4780equalsimpl(this.map, obj);
+        return m4145equalsimpl(this.map, obj);
     }
 
     public int hashCode() {
-        return m4784hashCodeimpl(this.map);
+        return m4149hashCodeimpl(this.map);
     }
 
     public String toString() {
-        return m4790toStringimpl(this.map);
+        return m4155toStringimpl(this.map);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ MutableScatterMap m4791unboximpl() {
+    public final /* synthetic */ MutableScatterMap m4156unboximpl() {
         return this.map;
     }
 
@@ -73,11 +73,11 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: constructor-impl$default */
-    public static /* synthetic */ MutableScatterMap m4778constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableScatterMap m4143constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableScatterMap = ScatterMapKt.mutableScatterMapOf();
         }
-        return m4777constructorimpl(mutableScatterMap);
+        return m4142constructorimpl(mutableScatterMap);
     }
 
     public final MutableScatterMap<Object, Object> getMap() {
@@ -85,22 +85,22 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: getSize-impl */
-    public static final int m4783getSizeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final int m4148getSizeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.getSize();
     }
 
     /* renamed from: set-impl */
-    public static final void m4789setimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final void m4154setimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         mutableScatterMap.set(key, scope);
     }
 
     /* renamed from: contains-impl */
-    public static final boolean m4779containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key) {
+    public static final boolean m4144containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key) {
         return mutableScatterMap.containsKey(key);
     }
 
     /* renamed from: forEachScopeOf-impl */
-    public static final void m4782forEachScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Unit> function1) {
+    public static final void m4147forEachScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Unit> function1) {
         Object obj = mutableScatterMap.get(key);
         if (obj == null) {
             return;
@@ -139,12 +139,12 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: clear-impl */
-    public static final void m4776clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final void m4141clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         mutableScatterMap.clear();
     }
 
     /* renamed from: remove-impl */
-    public static final boolean m4785removeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final boolean m4150removeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         Object obj = mutableScatterMap.get(key);
         if (obj == null) {
             return false;
@@ -165,7 +165,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: asMap-impl */
-    public static final Map<Key, Set<Scope>> m4774asMapimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final Map<Key, Set<Scope>> m4139asMapimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         Set mutableSetOf;
         HashMap hashMap = new HashMap();
         MutableScatterMap<Object, Object> mutableScatterMap2 = mutableScatterMap;
@@ -215,7 +215,7 @@ public final class ScopeMap<Key, Scope> {
     /* JADX WARN: Type inference failed for: r5v1 */
     /* JADX WARN: Type inference failed for: r6v1, types: [androidx.collection.MutableScatterSet] */
     /* renamed from: add-impl */
-    public static final void m4772addimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
+    public static final void m4137addimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Scope scope) {
         int findInsertIndex = mutableScatterMap.findInsertIndex(key);
         boolean z = findInsertIndex < 0;
         Scope scope2 = z ? null : mutableScatterMap.values[findInsertIndex];
@@ -242,7 +242,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: anyScopeOf-impl */
-    public static final boolean m4773anyScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Boolean> function1) {
+    public static final boolean m4138anyScopeOfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Key key, Function1<? super Scope, Boolean> function1) {
         Object obj = mutableScatterMap.get(key);
         if (obj != null) {
             if (obj instanceof MutableScatterSet) {
@@ -280,7 +280,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeScopeIf-impl */
-    public static final void m4788removeScopeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super Scope, Boolean> function1) {
+    public static final void m4153removeScopeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super Scope, Boolean> function1) {
         long[] jArr;
         long[] jArr2;
         long j;
@@ -416,7 +416,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeIf-impl */
-    public static final void m4786removeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Key, ? super Scope, Boolean> function2) {
+    public static final void m4151removeIfimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function2<? super Key, ? super Scope, Boolean> function2) {
         long[] jArr;
         long[] jArr2;
         long j;
@@ -546,7 +546,7 @@ public final class ScopeMap<Key, Scope> {
     }
 
     /* renamed from: removeScope-impl */
-    public static final void m4787removeScopeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Scope scope) {
+    public static final void m4152removeScopeimpl(MutableScatterMap<Object, Object> mutableScatterMap, Scope scope) {
         boolean z;
         long[] jArr = mutableScatterMap.metadata;
         int length = jArr.length - 2;

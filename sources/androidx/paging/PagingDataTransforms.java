@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-@Metadata(d1 = {"androidx/paging/PagingDataTransforms__PagingDataTransformsKt", "androidx/paging/PagingDataTransforms__PagingDataTransforms_jvmKt"}, k = 4, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"androidx/paging/PagingDataTransforms__PagingDataTransformsKt", "androidx/paging/PagingDataTransforms__PagingDataTransforms_jvmKt"}, k = 4, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class PagingDataTransforms {
     public static final <T> PagingData<T> filter(PagingData<T> pagingData, Executor executor, Function1<? super T, Boolean> function1) {

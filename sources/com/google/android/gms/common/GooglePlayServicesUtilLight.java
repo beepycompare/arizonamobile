@@ -19,7 +19,7 @@ import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.util.UidVerifier;
 import com.google.android.gms.common.wrappers.Wrappers;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class GooglePlayServicesUtilLight {
     static final int GMS_AVAILABILITY_NOTIFICATION_ID = 10436;

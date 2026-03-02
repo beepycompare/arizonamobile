@@ -60,15 +60,13 @@ public final class FutureKt {
         deferred.invokeOnCompletion(new Function1() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit asCompletableFuture$lambda$1;
-                asCompletableFuture$lambda$1 = FutureKt.asCompletableFuture$lambda$1(completableFuture, deferred, (Throwable) obj);
-                return asCompletableFuture$lambda$1;
+                return FutureKt.asCompletableFuture$lambda$1(completableFuture, deferred, (Throwable) obj);
             }
         });
         return completableFuture;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit asCompletableFuture$lambda$1(CompletableFuture completableFuture, Deferred deferred, Throwable th) {
         try {
             completableFuture.complete(deferred.getCompleted());
@@ -84,15 +82,13 @@ public final class FutureKt {
         job.invokeOnCompletion(new Function1() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit asCompletableFuture$lambda$2;
-                asCompletableFuture$lambda$2 = FutureKt.asCompletableFuture$lambda$2(completableFuture, (Throwable) obj);
-                return asCompletableFuture$lambda$2;
+                return FutureKt.asCompletableFuture$lambda$2(completableFuture, (Throwable) obj);
             }
         });
         return completableFuture;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit asCompletableFuture$lambda$2(CompletableFuture completableFuture, Throwable th) {
         if (th == null) {
             completableFuture.complete(Unit.INSTANCE);
@@ -124,14 +120,12 @@ public final class FutureKt {
         completableFuture.handle(new BiFunction() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda4
             @Override // java.util.function.BiFunction
             public final Object apply(Object obj, Object obj2) {
-                Unit unit;
-                unit = FutureKt.setupCancellation$lambda$3(Function2.this, obj, (Throwable) obj2);
-                return unit;
+                return FutureKt.setupCancellation$lambda$3(Function2.this, obj, (Throwable) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit setupCancellation$lambda$3(Function2 function2, Object obj, Throwable th) {
         return (Unit) function2.invoke(obj, th);
     }
@@ -157,9 +151,7 @@ public final class FutureKt {
         final Function2 function2 = new Function2() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Object asDeferred$lambda$5;
-                asDeferred$lambda$5 = FutureKt.asDeferred$lambda$5(CompletableDeferred.this, obj, (Throwable) obj2);
-                return asDeferred$lambda$5;
+                return FutureKt.asDeferred$lambda$5(CompletableDeferred.this, obj, (Throwable) obj2);
             }
         };
         completionStage.handle(new BiFunction() { // from class: kotlinx.coroutines.future.FutureKt$$ExternalSyntheticLambda2
@@ -174,7 +166,7 @@ public final class FutureKt {
         return CompletableDeferred$default2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object asDeferred$lambda$5(CompletableDeferred completableDeferred, Object obj, Throwable th) {
         boolean completeExceptionally;
         Throwable cause;

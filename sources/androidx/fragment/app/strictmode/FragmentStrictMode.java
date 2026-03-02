@@ -265,14 +265,14 @@ public final class FragmentStrictMode {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void handlePolicyViolation$lambda$0(Policy policy, Violation violation) {
         Intrinsics.checkNotNullParameter(policy, "$policy");
         Intrinsics.checkNotNullParameter(violation, "$violation");
         policy.getListener$fragment_release().onViolation(violation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void handlePolicyViolation$lambda$1(String str, Violation violation) {
         Intrinsics.checkNotNullParameter(violation, "$violation");
         Log.e(TAG, "Policy violation with PENALTY_DEATH in " + str, violation);

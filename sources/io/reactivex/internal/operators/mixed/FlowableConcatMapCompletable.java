@@ -168,11 +168,12 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
                     boolean z2 = poll == null;
                     if (z && z2) {
                         Throwable terminate = this.errors.terminate();
+                        CompletableObserver completableObserver = this.downstream;
                         if (terminate != null) {
-                            this.downstream.onError(terminate);
+                            completableObserver.onError(terminate);
                             return;
                         } else {
-                            this.downstream.onComplete();
+                            completableObserver.onComplete();
                             return;
                         }
                     } else if (!z2) {

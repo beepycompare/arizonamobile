@@ -55,7 +55,7 @@ import ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyTrackListAdap
 import ru.mrlargha.feature.mobile.presentation.page.spotify.api.SpotifyApi;
 import ru.mrlargha.feature.mobile.presentation.page.spotify.api.obj.ArizonaSpotifyTrackResponse;
 /* compiled from: SpotifyPage.kt */
-@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0005\u0018\u0000 =2\u00020\u0001:\u0002<=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010#\u001a\u00020\u00122\u0006\u0010$\u001a\u00020%H\u0002J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u0012H\u0002J\b\u0010)\u001a\u00020'H\u0002J\u0014\u0010*\u001a\u00020'2\f\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00120,J\u000e\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0012J\u000e\u0010/\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0012J\u0014\u00100\u001a\u00020'2\f\u00101\u001a\b\u0012\u0004\u0012\u0002020,J\u000e\u00103\u001a\u00020'2\u0006\u00104\u001a\u00020\u0012J\u0016\u00105\u001a\u00020'2\u0006\u00104\u001a\u00020\u00122\u0006\u00106\u001a\u00020\u0012J\u000e\u00107\u001a\u00020'2\u0006\u00108\u001a\u000209J\b\u0010:\u001a\u00020'H\u0016J\b\u0010;\u001a\u00020'H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u0017\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "mobileContext", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "spotifyPage", "Landroidx/constraintlayout/widget/ConstraintLayout;", "spotifyPageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneSpotifyPageBinding;", "stateMachine", "", "", "spotifyGenreAdapter", "Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyGenreAdapter;", "spotifyTrackListAdapter", "Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyTrackListAdapter;", "playingTrackId", "Ljava/lang/Integer;", "timer", "Landroid/os/CountDownTimer;", "currentCategoryId", "currentTrackProgressInSec", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/mobile/presentation/page/spotify/api/SpotifyApi;", "getCategoryIdByName", "categoryName", "", "spotifyState", "", "stateId", "hideAllDynamicView", "initFavourite", "favouriteList", "", "addToFavourite", "favouriteId", "removeFromFavourite", "changeArtistNameRadio", "changeArtistNameRadioRequest", "Lru/mrlargha/feature/mobile/domain/obj/ChangeArtistNameRadioRequest;", "playRadio", "trackId", "addPlayedTrack", "second", "playerInfoVisible", "isPlayerInfoVisible", "", "renderPage", "removePage", "SpotifyState", "Companion", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0005\u0018\u0000 =2\u00020\u0001:\u0002<=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010#\u001a\u00020\u00122\u0006\u0010$\u001a\u00020%H\u0002J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u0012H\u0002J\b\u0010)\u001a\u00020'H\u0002J\u0014\u0010*\u001a\u00020'2\f\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00120,J\u000e\u0010-\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0012J\u000e\u0010/\u001a\u00020'2\u0006\u0010.\u001a\u00020\u0012J\u0014\u00100\u001a\u00020'2\f\u00101\u001a\b\u0012\u0004\u0012\u0002020,J\u000e\u00103\u001a\u00020'2\u0006\u00104\u001a\u00020\u0012J\u0016\u00105\u001a\u00020'2\u0006\u00104\u001a\u00020\u00122\u0006\u00106\u001a\u00020\u0012J\u000e\u00107\u001a\u00020'2\u0006\u00108\u001a\u000209J\b\u0010:\u001a\u00020'H\u0016J\b\u0010;\u001a\u00020'H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u0017\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "mobileContext", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "spotifyPage", "Landroidx/constraintlayout/widget/ConstraintLayout;", "spotifyPageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneSpotifyPageBinding;", "stateMachine", "", "", "spotifyGenreAdapter", "Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyGenreAdapter;", "spotifyTrackListAdapter", "Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyTrackListAdapter;", "playingTrackId", "Ljava/lang/Integer;", "timer", "Landroid/os/CountDownTimer;", "currentCategoryId", "currentTrackProgressInSec", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/mobile/presentation/page/spotify/api/SpotifyApi;", "getCategoryIdByName", "categoryName", "", "spotifyState", "", "stateId", "hideAllDynamicView", "initFavourite", "favouriteList", "", "addToFavourite", "favouriteId", "removeFromFavourite", "changeArtistNameRadio", "changeArtistNameRadioRequest", "Lru/mrlargha/feature/mobile/domain/obj/ChangeArtistNameRadioRequest;", "playRadio", "trackId", "addPlayedTrack", "second", "playerInfoVisible", "isPlayerInfoVisible", "", "renderPage", "removePage", "SpotifyState", "Companion", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class SpotifyPage implements MobileController {
     private static boolean isTrackPlaying;
@@ -146,10 +146,11 @@ public final class SpotifyPage implements MobileController {
         spotifyTrackListAdapter.setOnFavouriteClickListener(new SpotifyTrackListAdapter.OnFavouriteClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$1$4
             @Override // ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyTrackListAdapter.OnFavouriteClickListener
             public void callback(int i, boolean z) {
+                SpotifyPage spotifyPage = SpotifyPage.this;
                 if (z) {
-                    SpotifyPage.this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 20);
+                    spotifyPage.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 20);
                 } else {
-                    SpotifyPage.this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 19);
+                    spotifyPage.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 19);
                 }
             }
         });
@@ -200,47 +201,13 @@ public final class SpotifyPage implements MobileController {
                 Intrinsics.checkNotNullParameter(genre, "genre");
                 SpotifyPage spotifyPage = SpotifyPage.this;
                 spotifyPage.currentCategoryId = spotifyPage.getCategoryIdByName(genre);
-                if (Intrinsics.areEqual(genre, "favourites")) {
-                    SpotifyPage.this.spotifyTrackListAdapter.clearTrackList();
+                boolean areEqual = Intrinsics.areEqual(genre, "favourites");
+                SpotifyPage spotifyPage2 = SpotifyPage.this;
+                if (areEqual) {
+                    spotifyPage2.spotifyTrackListAdapter.clearTrackList();
                     Call<List<ArizonaSpotifyTrackResponse>> trackListByFavourites = SpotifyPage.this.api.getTrackListByFavourites(SpotifyPage.this.spotifyTrackListAdapter.getFavourites());
-                    final SpotifyPage spotifyPage2 = SpotifyPage.this;
-                    trackListByFavourites.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$2$callback$1
-                        @Override // retrofit2.Callback
-                        public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
-                            Intrinsics.checkNotNullParameter(call, "call");
-                            Intrinsics.checkNotNullParameter(response, "response");
-                            List<? extends ArizonaSpotifyTrackResponse> body = response.body();
-                            if (body != null) {
-                                SpotifyPage spotifyPage3 = SpotifyPage.this;
-                                String str = genre;
-                                spotifyPage3.spotifyTrackListAdapter.clearTrackList();
-                                int i2 = 0;
-                                int progressionLastElement = ProgressionUtilKt.getProgressionLastElement(0, body.size() - 1, 20);
-                                if (progressionLastElement >= 0) {
-                                    while (true) {
-                                        int i3 = i2 + 20;
-                                        spotifyPage3.spotifyTrackListAdapter.addTrackList(CollectionsKt.slice((List) body, RangesKt.until(i2, RangesKt.coerceAtMost(i3, body.size()))), str);
-                                        if (i2 == progressionLastElement) {
-                                            break;
-                                        }
-                                        i2 = i3;
-                                    }
-                                }
-                                spotifyPage3.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), spotifyPage3.currentCategoryId, 23);
-                            }
-                        }
-
-                        @Override // retrofit2.Callback
-                        public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
-                            Intrinsics.checkNotNullParameter(call, "call");
-                            Intrinsics.checkNotNullParameter(t, "t");
-                            Log.w("SpotifyPage", "error get favourite tracks");
-                        }
-                    });
-                } else {
-                    Call<List<ArizonaSpotifyTrackResponse>> trackListByCategory = SpotifyPage.this.api.getTrackListByCategory(genre);
                     final SpotifyPage spotifyPage3 = SpotifyPage.this;
-                    trackListByCategory.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$2$callback$2
+                    trackListByFavourites.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$2$callback$1
                         @Override // retrofit2.Callback
                         public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
                             Intrinsics.checkNotNullParameter(call, "call");
@@ -270,24 +237,60 @@ public final class SpotifyPage implements MobileController {
                         public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
                             Intrinsics.checkNotNullParameter(call, "call");
                             Intrinsics.checkNotNullParameter(t, "t");
+                            Log.w("SpotifyPage", "error get favourite tracks");
+                        }
+                    });
+                } else {
+                    Call<List<ArizonaSpotifyTrackResponse>> trackListByCategory = spotifyPage2.api.getTrackListByCategory(genre);
+                    final SpotifyPage spotifyPage4 = SpotifyPage.this;
+                    trackListByCategory.enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$2$callback$2
+                        @Override // retrofit2.Callback
+                        public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
+                            Intrinsics.checkNotNullParameter(call, "call");
+                            Intrinsics.checkNotNullParameter(response, "response");
+                            List<? extends ArizonaSpotifyTrackResponse> body = response.body();
+                            if (body != null) {
+                                SpotifyPage spotifyPage5 = SpotifyPage.this;
+                                String str = genre;
+                                spotifyPage5.spotifyTrackListAdapter.clearTrackList();
+                                int i2 = 0;
+                                int progressionLastElement = ProgressionUtilKt.getProgressionLastElement(0, body.size() - 1, 20);
+                                if (progressionLastElement >= 0) {
+                                    while (true) {
+                                        int i3 = i2 + 20;
+                                        spotifyPage5.spotifyTrackListAdapter.addTrackList(CollectionsKt.slice((List) body, RangesKt.until(i2, RangesKt.coerceAtMost(i3, body.size()))), str);
+                                        if (i2 == progressionLastElement) {
+                                            break;
+                                        }
+                                        i2 = i3;
+                                    }
+                                }
+                                spotifyPage5.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), spotifyPage5.currentCategoryId, 23);
+                            }
+                        }
+
+                        @Override // retrofit2.Callback
+                        public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
+                            Intrinsics.checkNotNullParameter(call, "call");
+                            Intrinsics.checkNotNullParameter(t, "t");
                             Log.w("SpotifyPage", "error get track category");
                         }
                     });
                 }
                 MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding = SpotifyPage.this.spotifyPageBinding;
-                SpotifyPage spotifyPage4 = SpotifyPage.this;
+                SpotifyPage spotifyPage5 = SpotifyPage.this;
                 mobilePhoneSpotifyPageBinding.mpSpotifyLogoTitle.setText(SpotifyPage.Companion.getMapGenre().get(genre));
                 AppCompatImageView appCompatImageView = mobilePhoneSpotifyPageBinding.mpSpotifyLogoImg;
                 Integer num = SpotifyPage.Companion.getMapImage().get(genre);
                 if (num != null) {
-                    drawable = ContextCompat.getDrawable(spotifyPage4.mobileContext, num.intValue());
+                    drawable = ContextCompat.getDrawable(spotifyPage5.mobileContext, num.intValue());
                 } else {
                     drawable = null;
                 }
                 appCompatImageView.setImageDrawable(drawable);
                 SpotifyPage.this.stateMachine.set(0, Integer.valueOf(SpotifyState.CATEGORY_TRACK_LIST.getStateId()));
-                SpotifyPage spotifyPage5 = SpotifyPage.this;
-                spotifyPage5.spotifyState(((Number) spotifyPage5.stateMachine.get(0)).intValue());
+                SpotifyPage spotifyPage6 = SpotifyPage.this;
+                spotifyPage6.spotifyState(((Number) spotifyPage6.stateMachine.get(0)).intValue());
             }
         });
         spotifyTrackListAdapter.setOnPlayTrackClickListener(new SpotifyTrackListAdapter.OnPlayTrackClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage.3
@@ -315,13 +318,14 @@ public final class SpotifyPage implements MobileController {
                     SpotifyPage.isTrackPlaying = true;
                     SpotifyPage.this.spotifyPageBinding.mpSpotifySeekBar.setProgress(0);
                     SpotifyPage.this.spotifyPageBinding.mpSpotifyPlay.setImageResource(R.drawable.spotify_play_off);
-                    if (Intrinsics.areEqual(SpotifyPage.this.spotifyPageBinding.mpSpotifyLogoTitle.getText(), "Радио")) {
-                        SpotifyPage.this.playRadio(i);
-                        SpotifyPage.this.spotifyPageBinding.mpSpotifySeekBar.setVisibility(8);
-                    } else {
-                        SpotifyPage spotifyPage = SpotifyPage.this;
+                    boolean areEqual = Intrinsics.areEqual(SpotifyPage.this.spotifyPageBinding.mpSpotifyLogoTitle.getText(), "Радио");
+                    SpotifyPage spotifyPage = SpotifyPage.this;
+                    if (!areEqual) {
                         spotifyPage.addPlayedTrack(i, spotifyPage.currentTrackProgressInSec);
                         SpotifyPage.this.spotifyPageBinding.mpSpotifySeekBar.setVisibility(0);
+                    } else {
+                        spotifyPage.playRadio(i);
+                        SpotifyPage.this.spotifyPageBinding.mpSpotifySeekBar.setVisibility(8);
                     }
                 } else {
                     SpotifyPage.this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 18);
@@ -778,7 +782,7 @@ public final class SpotifyPage implements MobileController {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: SpotifyPage.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000b¨\u0006\f"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage$SpotifyState;", "", "stateId", "", "<init>", "(Ljava/lang/String;II)V", "getStateId", "()I", "INIT", "SEARCH", "TRACK_LIST", "CATEGORY_TRACK_LIST", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000b¨\u0006\f"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage$SpotifyState;", "", "stateId", "", "<init>", "(Ljava/lang/String;II)V", "getStateId", "()I", "INIT", "SEARCH", "TRACK_LIST", "CATEGORY_TRACK_LIST", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class SpotifyState {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -833,7 +837,7 @@ public final class SpotifyPage implements MobileController {
     }
 
     /* compiled from: SpotifyPage.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u001d\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\n¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage$Companion;", "", "<init>", "()V", "isTrackPlaying", "", "mapGenre", "", "", "getMapGenre", "()Ljava/util/Map;", "mapImage", "", "getMapImage", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001d\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u001d\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\f0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\n¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/spotify/SpotifyPage$Companion;", "", "<init>", "()V", "isTrackPlaying", "", "mapGenre", "", "", "getMapGenre", "()Ljava/util/Map;", "mapImage", "", "getMapImage", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

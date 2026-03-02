@@ -36,6 +36,7 @@ public final class SingleSampleMediaChunk extends BaseMediaChunk {
     public void load() throws IOException {
         BaseMediaChunkOutput output = getOutput();
         output.setSampleOffsetUs(0L);
+        int i = 0;
         TrackOutput track = output.track(0, this.trackType);
         track.format(this.sampleFormat);
         try {
@@ -44,12 +45,18 @@ public final class SingleSampleMediaChunk extends BaseMediaChunk {
                 open += this.nextLoadPosition;
             }
             DefaultExtractorInput defaultExtractorInput = new DefaultExtractorInput(this.dataSource, this.nextLoadPosition, open);
-            for (int i = 0; i != -1; i = track.sampleData((DataReader) defaultExtractorInput, Integer.MAX_VALUE, true)) {
-                this.nextLoadPosition += i;
+            while (true) {
+                long j = this.nextLoadPosition;
+                if (i != -1) {
+                    this.nextLoadPosition = j + i;
+                    i = track.sampleData((DataReader) defaultExtractorInput, Integer.MAX_VALUE, true);
+                } else {
+                    track.sampleMetadata(this.startTimeUs, 1, (int) j, 0, null);
+                    DataSourceUtil.closeQuietly(this.dataSource);
+                    this.loadCompleted = true;
+                    return;
+                }
             }
-            track.sampleMetadata(this.startTimeUs, 1, (int) this.nextLoadPosition, 0, null);
-            DataSourceUtil.closeQuietly(this.dataSource);
-            this.loadCompleted = true;
         } catch (Throwable th) {
             DataSourceUtil.closeQuietly(this.dataSource);
             throw th;

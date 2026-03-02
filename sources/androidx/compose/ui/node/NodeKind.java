@@ -11,59 +11,59 @@ public final class NodeKind<T> {
     private final int mask;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ NodeKind m7194boximpl(int i) {
+    public static final /* synthetic */ NodeKind m6534boximpl(int i) {
         return new NodeKind(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> int m7195constructorimpl(int i) {
+    public static <T> int m6535constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7196equalsimpl(int i, Object obj) {
-        return (obj instanceof NodeKind) && i == ((NodeKind) obj).m7202unboximpl();
+    public static boolean m6536equalsimpl(int i, Object obj) {
+        return (obj instanceof NodeKind) && i == ((NodeKind) obj).m6542unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7197equalsimpl0(int i, int i2) {
+    public static final boolean m6537equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7198hashCodeimpl(int i) {
+    public static int m6538hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: or-H91voCI  reason: not valid java name */
-    public static final int m7199orH91voCI(int i, int i2) {
+    public static final int m6539orH91voCI(int i, int i2) {
         return i | i2;
     }
 
     /* renamed from: or-impl  reason: not valid java name */
-    public static final int m7200orimpl(int i, int i2) {
+    public static final int m6540orimpl(int i, int i2) {
         return i | i2;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7201toStringimpl(int i) {
+    public static String m6541toStringimpl(int i) {
         return "NodeKind(mask=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7196equalsimpl(this.mask, obj);
+        return m6536equalsimpl(this.mask, obj);
     }
 
     public int hashCode() {
-        return m7198hashCodeimpl(this.mask);
+        return m6538hashCodeimpl(this.mask);
     }
 
     public String toString() {
-        return m7201toStringimpl(this.mask);
+        return m6541toStringimpl(this.mask);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7202unboximpl() {
+    public final /* synthetic */ int m6542unboximpl() {
         return this.mask;
     }
 

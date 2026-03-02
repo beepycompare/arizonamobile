@@ -111,10 +111,11 @@ public final class MenuItemImpl implements SupportMenuItem {
 
     @Override // android.view.MenuItem
     public MenuItem setEnabled(boolean z) {
+        int i = this.mFlags;
         if (z) {
-            this.mFlags |= 16;
+            this.mFlags = i | 16;
         } else {
-            this.mFlags &= -17;
+            this.mFlags = i & (-17);
         }
         this.mMenu.onItemsChanged(false);
         return this;
@@ -541,10 +542,11 @@ public final class MenuItemImpl implements SupportMenuItem {
     }
 
     public void setIsActionButton(boolean z) {
+        int i = this.mFlags;
         if (z) {
-            this.mFlags |= 32;
+            this.mFlags = i | 32;
         } else {
-            this.mFlags &= -33;
+            this.mFlags = i & (-33);
         }
     }
 

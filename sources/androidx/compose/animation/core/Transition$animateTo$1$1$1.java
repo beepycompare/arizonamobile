@@ -68,9 +68,7 @@ public final class Transition$animateTo$1$1$1 extends SuspendLambda implements F
             if (MonotonicFrameClockKt.withFrameNanos(new Function1() { // from class: androidx.compose.animation.core.Transition$animateTo$1$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = Transition$animateTo$1$1$1.invokeSuspend$lambda$0(Transition.this, durationScale, ((Long) obj2).longValue());
-                    return invokeSuspend$lambda$0;
+                    return Transition$animateTo$1$1$1.invokeSuspend$lambda$0(Transition.this, durationScale, ((Long) obj2).longValue());
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -79,7 +77,7 @@ public final class Transition$animateTo$1$1$1 extends SuspendLambda implements F
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Transition transition, float f, long j) {
         if (!transition.isSeeking()) {
             transition.onFrame$animation_core(j, f);

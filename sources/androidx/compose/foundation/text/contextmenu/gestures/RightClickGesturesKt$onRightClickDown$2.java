@@ -82,7 +82,7 @@ public final class RightClickGesturesKt$onRightClickDown$2 extends RestrictedSus
         }
         PointerInputChange pointerInputChange2 = (PointerInputChange) obj;
         pointerInputChange2.consume();
-        this.$onDown.invoke(Offset.m5168boximpl(pointerInputChange2.m6744getPositionF1C5BW0()));
+        this.$onDown.invoke(Offset.m4516boximpl(pointerInputChange2.m6085getPositionF1C5BW0()));
         this.L$0 = null;
         this.label = 2;
         obj = TapGestureDetectorKt.waitForUpOrCancellation$default(awaitPointerEventScope, null, this, 1, null);

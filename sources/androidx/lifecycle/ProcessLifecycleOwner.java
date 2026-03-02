@@ -56,7 +56,7 @@ public final class ProcessLifecycleOwner implements LifecycleOwner {
     private ProcessLifecycleOwner() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void delayedPauseRunnable$lambda$0(ProcessLifecycleOwner processLifecycleOwner) {
         processLifecycleOwner.dispatchPauseIfNeeded$lifecycle_process();
         processLifecycleOwner.dispatchStopIfNeeded$lifecycle_process();

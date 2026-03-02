@@ -29,12 +29,14 @@ public final class AtomicFile {
 
     public OutputStream startWrite() throws IOException {
         if (this.baseName.exists()) {
-            if (!this.backupName.exists()) {
-                if (!this.baseName.renameTo(this.backupName)) {
+            boolean exists = this.backupName.exists();
+            File file = this.baseName;
+            if (!exists) {
+                if (!file.renameTo(this.backupName)) {
                     Log.w(TAG, "Couldn't rename file " + this.baseName + " to backup file " + this.backupName);
                 }
             } else {
-                this.baseName.delete();
+                file.delete();
             }
         }
         try {

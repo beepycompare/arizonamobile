@@ -51,7 +51,7 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         FlingBehavior flingBehavior;
-        float m648getMagnitudeTH1AsA0;
+        float m567getMagnitudeTH1AsA0;
         long j;
         Ref.LongRef longRef;
         long doFlingAnimation_QWom1Mo$toDecomposedVelocity;
@@ -69,13 +69,13 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
                     float doFlingAnimation_QWom1Mo$toMagnitudeFloat;
                     Function0 function0;
                     doFlingAnimation_QWom1Mo$toDecomposedOffset = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toDecomposedOffset(f, j2);
-                    if (!Offset.m5176equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m5195getZeroF1C5BW0())) {
+                    if (!Offset.m4524equalsimpl0(doFlingAnimation_QWom1Mo$toDecomposedOffset, Offset.Companion.m4543getZeroF1C5BW0())) {
                         function0 = ScrollingLogic2D.this.isScrollableNodeAttached;
                         if (!((Boolean) function0.invoke()).booleanValue()) {
                             throw new FlingCancellationException();
                         }
                     }
-                    doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo612scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m6623getSideEffectWNlRxjI()));
+                    doFlingAnimation_QWom1Mo$toMagnitudeFloat = ScrollingLogic2D.doFlingAnimation_QWom1Mo$toMagnitudeFloat(nestedScrollScope.mo531scrollByWithOverscrollOzD1aCk(doFlingAnimation_QWom1Mo$toDecomposedOffset, NestedScrollSource.Companion.m5964getSideEffectWNlRxjI()));
                     return doFlingAnimation_QWom1Mo$toMagnitudeFloat;
                 }
             };
@@ -83,11 +83,11 @@ public final class ScrollingLogic2D$doFlingAnimation$2 extends SuspendLambda imp
             long j3 = this.f17$$v$c$androidxcomposeuiunitVelocity$available$0;
             Ref.LongRef longRef2 = this.$result;
             flingBehavior = scrollingLogic2D2.flingBehavior;
-            m648getMagnitudeTH1AsA0 = Scrollable2DKt.m648getMagnitudeTH1AsA0(j3);
+            m567getMagnitudeTH1AsA0 = Scrollable2DKt.m567getMagnitudeTH1AsA0(j3);
             this.L$0 = longRef2;
             this.J$0 = j3;
             this.label = 1;
-            obj = flingBehavior.performFling(scrollScope, m648getMagnitudeTH1AsA0, this);
+            obj = flingBehavior.performFling(scrollScope, m567getMagnitudeTH1AsA0, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }

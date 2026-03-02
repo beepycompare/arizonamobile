@@ -34,15 +34,15 @@ public final class Z9 {
         return z9;
     }
 
-    public final synchronized C0697x9 b(String str) {
+    public final synchronized C0696x9 b(String str) {
         Object obj;
         HashMap hashMap = this.b;
         obj = hashMap.get(str);
         if (obj == null) {
-            obj = new C0697x9(this.f882a, str);
+            obj = new C0696x9(this.f882a, str);
             hashMap.put(str, obj);
         }
-        return (C0697x9) obj;
+        return (C0696x9) obj;
     }
 
     public final synchronized void a(String str) {

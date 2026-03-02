@@ -199,11 +199,11 @@ public final class TrieNode<E> {
     }
 
     private final TrieNode<E> mutableCollisionAddAll(TrieNode<E> trieNode, DeltaCounter deltaCounter, MutabilityOwnership mutabilityOwnership) {
+        Object[] objArr = this.buffer;
         if (this == trieNode) {
-            deltaCounter.plusAssign(this.buffer.length);
+            deltaCounter.plusAssign(objArr.length);
             return this;
         }
-        Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length + trieNode.buffer.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
         Object[] objArr2 = trieNode.buffer;
@@ -211,11 +211,11 @@ public final class TrieNode<E> {
         int i = 0;
         int i2 = 0;
         while (i < objArr2.length) {
-            CommonFunctionsKt.m11753assert(i2 <= i);
+            CommonFunctionsKt.m10682assert(i2 <= i);
             if (!collisionContainsElement((E) objArr2[i])) {
                 copyOf[length + i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m11753assert(length + i2 <= copyOf.length);
+                CommonFunctionsKt.m10682assert(length + i2 <= copyOf.length);
             }
             i++;
         }
@@ -239,7 +239,11 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(this.buffer.length);
             return this;
         }
-        Object[] objArr = mutabilityOwnership == this.ownedBy ? this.buffer : new Object[Math.min(this.buffer.length, trieNode.buffer.length)];
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership != mutabilityOwnership2) {
+            objArr = new Object[Math.min(objArr.length, trieNode.buffer.length)];
+        }
         Object[] objArr2 = this.buffer;
         int i = 0;
         int i2 = 0;
@@ -247,11 +251,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m11753assert(i2 <= i);
+            CommonFunctionsKt.m10682assert(i2 <= i);
             if (trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m11753assert(i2 <= objArr.length);
+                CommonFunctionsKt.m10682assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -281,7 +285,11 @@ public final class TrieNode<E> {
             deltaCounter.plusAssign(this.buffer.length);
             return EMPTY;
         }
-        Object[] objArr = mutabilityOwnership == this.ownedBy ? this.buffer : new Object[this.buffer.length];
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership != mutabilityOwnership2) {
+            objArr = new Object[objArr.length];
+        }
         Object[] objArr2 = this.buffer;
         int i = 0;
         int i2 = 0;
@@ -289,11 +297,11 @@ public final class TrieNode<E> {
             if (i >= objArr2.length) {
                 break;
             }
-            CommonFunctionsKt.m11753assert(i2 <= i);
+            CommonFunctionsKt.m10682assert(i2 <= i);
             if (!trieNode.collisionContainsElement((E) objArr2[i])) {
                 objArr[i2] = objArr2[i];
                 i2++;
-                CommonFunctionsKt.m11753assert(i2 <= objArr.length);
+                CommonFunctionsKt.m10682assert(i2 <= objArr.length);
             }
             i++;
         }
@@ -316,15 +324,16 @@ public final class TrieNode<E> {
     }
 
     private final int calculateSize() {
-        Object[] objArr;
-        if (this.bitmap == 0) {
-            return this.buffer.length;
+        int i = this.bitmap;
+        Object[] objArr = this.buffer;
+        if (i == 0) {
+            return objArr.length;
         }
-        int i = 0;
-        for (Object obj : this.buffer) {
-            i += obj instanceof TrieNode ? ((TrieNode) obj).calculateSize() : 1;
+        int i2 = 0;
+        for (Object obj : objArr) {
+            i2 += obj instanceof TrieNode ? ((TrieNode) obj).calculateSize() : 1;
         }
-        return i;
+        return i2;
     }
 
     private final boolean elementsIdentityEquals(TrieNode<E> trieNode) {
@@ -385,47 +394,51 @@ public final class TrieNode<E> {
                 Object[] objArr2 = trieNode.buffer;
                 if (hasNoCellAt(lowestOneBit)) {
                     makeNode = (TrieNode<E>) otherNode.buffer[indexOfCellAt$kotlinx_collections_immutable2];
-                } else if (otherNode.hasNoCellAt(lowestOneBit)) {
-                    makeNode = (E) this.buffer[indexOfCellAt$kotlinx_collections_immutable];
                 } else {
-                    E e = (E) this.buffer[indexOfCellAt$kotlinx_collections_immutable];
-                    E e2 = (E) otherNode.buffer[indexOfCellAt$kotlinx_collections_immutable2];
-                    boolean z = e instanceof TrieNode;
-                    boolean z2 = e2 instanceof TrieNode;
-                    if (z && z2) {
-                        Intrinsics.checkNotNull(e, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        makeNode = (E) ((TrieNode) e).mutableAddAll((TrieNode) e2, i + 5, intersectionSizeRef, mutator);
-                    } else if (z) {
-                        Intrinsics.checkNotNull(e, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        TrieNode trieNode2 = (TrieNode) e;
-                        int size = mutator.size();
-                        E e3 = (E) trieNode2.mutableAdd(e2 != null ? e2.hashCode() : 0, e2, i + 5, mutator);
-                        if (mutator.size() == size) {
-                            intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
-                        }
-                        Unit unit = Unit.INSTANCE;
-                        makeNode = e3;
-                    } else if (z2) {
-                        Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
-                        TrieNode trieNode3 = (TrieNode) e2;
-                        int size2 = mutator.size();
-                        E e4 = (E) trieNode3.mutableAdd(e != null ? e.hashCode() : 0, e, i + 5, mutator);
-                        if (mutator.size() == size2) {
-                            intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
-                        }
-                        Unit unit2 = Unit.INSTANCE;
-                        makeNode = e4;
-                    } else if (Intrinsics.areEqual(e, e2)) {
-                        intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
-                        Unit unit3 = Unit.INSTANCE;
-                        makeNode = e;
+                    boolean hasNoCellAt = otherNode.hasNoCellAt(lowestOneBit);
+                    Object[] objArr3 = this.buffer;
+                    if (hasNoCellAt) {
+                        makeNode = (E) objArr3[indexOfCellAt$kotlinx_collections_immutable];
                     } else {
-                        objArr = objArr2;
-                        makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, mutator.getOwnership$kotlinx_collections_immutable());
-                        objArr[i5] = makeNode;
-                        i5++;
-                        i4 ^= lowestOneBit;
+                        E e = (E) objArr3[indexOfCellAt$kotlinx_collections_immutable];
+                        E e2 = (E) otherNode.buffer[indexOfCellAt$kotlinx_collections_immutable2];
+                        boolean z = e instanceof TrieNode;
+                        boolean z2 = e2 instanceof TrieNode;
+                        if (z && z2) {
+                            Intrinsics.checkNotNull(e, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            makeNode = (E) ((TrieNode) e).mutableAddAll((TrieNode) e2, i + 5, intersectionSizeRef, mutator);
+                        } else if (z) {
+                            Intrinsics.checkNotNull(e, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            TrieNode trieNode2 = (TrieNode) e;
+                            int size = mutator.size();
+                            E e3 = (E) trieNode2.mutableAdd(e2 != null ? e2.hashCode() : 0, e2, i + 5, mutator);
+                            if (mutator.size() == size) {
+                                intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
+                            }
+                            Unit unit = Unit.INSTANCE;
+                            makeNode = e3;
+                        } else if (z2) {
+                            Intrinsics.checkNotNull(e2, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNode>");
+                            TrieNode trieNode3 = (TrieNode) e2;
+                            int size2 = mutator.size();
+                            E e4 = (E) trieNode3.mutableAdd(e != null ? e.hashCode() : 0, e, i + 5, mutator);
+                            if (mutator.size() == size2) {
+                                intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
+                            }
+                            Unit unit2 = Unit.INSTANCE;
+                            makeNode = e4;
+                        } else if (Intrinsics.areEqual(e, e2)) {
+                            intersectionSizeRef.setCount(intersectionSizeRef.getCount() + 1);
+                            Unit unit3 = Unit.INSTANCE;
+                            makeNode = e;
+                        } else {
+                            objArr = objArr2;
+                            makeNode = makeNode(e != null ? e.hashCode() : 0, e, e2 != null ? e2.hashCode() : 0, e2, i + 5, mutator.getOwnership$kotlinx_collections_immutable());
+                            objArr[i5] = makeNode;
+                            i5++;
+                            i4 ^= lowestOneBit;
+                        }
                     }
                 }
                 objArr = objArr2;
@@ -510,11 +523,11 @@ public final class TrieNode<E> {
                 int i6 = 0;
                 int i7 = 0;
                 while (i6 < objArr2.length) {
-                    CommonFunctionsKt.m11753assert(i7 <= i6);
+                    CommonFunctionsKt.m10682assert(i7 <= i6);
                     if (objArr2[i6] != Companion.getEMPTY$kotlinx_collections_immutable()) {
                         objArr[i7] = objArr2[i6];
                         i7++;
-                        CommonFunctionsKt.m11753assert(i7 <= bitCount);
+                        CommonFunctionsKt.m10682assert(i7 <= bitCount);
                     }
                     i6++;
                 }
@@ -611,11 +624,11 @@ public final class TrieNode<E> {
                     int i5 = 0;
                     int i6 = 0;
                     while (i5 < objArr4.length) {
-                        CommonFunctionsKt.m11753assert(i6 <= i5);
+                        CommonFunctionsKt.m10682assert(i6 <= i5);
                         if (objArr4[i5] != Companion.getEMPTY$kotlinx_collections_immutable()) {
                             objArr3[i6] = objArr4[i5];
                             i6++;
-                            CommonFunctionsKt.m11753assert(i6 <= bitCount);
+                            CommonFunctionsKt.m10682assert(i6 <= bitCount);
                         }
                         i5++;
                     }

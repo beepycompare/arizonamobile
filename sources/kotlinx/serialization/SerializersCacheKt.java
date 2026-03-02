@@ -16,59 +16,35 @@ import kotlinx.serialization.internal.PlatformKt;
 import kotlinx.serialization.internal.SerializerCache;
 import kotlinx.serialization.modules.SerializersModuleBuildersKt;
 /* compiled from: SerializersCache.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a(\u0010\u000e\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u000f2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0000\u001aA\u0010\u0014\u001a\u0012\u0012\u000e\u0012\f\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u000f0\u00152\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u00112\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u00172\u0006\u0010\u0012\u001a\u00020\u0013H\u0000¢\u0006\u0002\u0010\u0019\u001a\u001b\u0010\u001a\u001a\f\u0012\u0006\b\u0001\u0012\u00020\u0002\u0018\u00010\u001b*\u0006\u0012\u0002\b\u00030\u0011H\u0080\b\"$\u0010\u0000\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00020\u00018\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006\"\u001e\u0010\u0007\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00018\u0002X\u0083\u0004¢\u0006\b\n\u0000\u0012\u0004\b\b\u0010\u0004\"\u001e\u0010\t\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00020\n8\u0002X\u0083\u0004¢\u0006\b\n\u0000\u0012\u0004\b\u000b\u0010\u0004\"\u001e\u0010\f\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\n8\u0002X\u0083\u0004¢\u0006\b\n\u0000\u0012\u0004\b\r\u0010\u0004¨\u0006\u001c"}, d2 = {"SERIALIZERS_CACHE", "Lkotlinx/serialization/internal/SerializerCache;", "", "getSERIALIZERS_CACHE$annotations", "()V", "getSERIALIZERS_CACHE", "()Lkotlinx/serialization/internal/SerializerCache;", "SERIALIZERS_CACHE_NULLABLE", "getSERIALIZERS_CACHE_NULLABLE$annotations", "PARAMETRIZED_SERIALIZERS_CACHE", "Lkotlinx/serialization/internal/ParametrizedSerializerCache;", "getPARAMETRIZED_SERIALIZERS_CACHE$annotations", "PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE", "getPARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$annotations", "findCachedSerializer", "Lkotlinx/serialization/KSerializer;", "clazz", "Lkotlin/reflect/KClass;", "isNullable", "", "findParametrizedCachedSerializer", "Lkotlin/Result;", "types", "", "Lkotlin/reflect/KType;", "(Lkotlin/reflect/KClass;Ljava/util/List;Z)Ljava/lang/Object;", "polymorphicIfInterface", "Lkotlinx/serialization/PolymorphicSerializer;", "kotlinx-serialization-core"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a*\u0010\t\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0080\u0080\u0004\u001aC\u0010\u000f\u001a\u0012\u0012\u000e\u0012\f\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\n0\u00102\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00020\f2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00122\u0006\u0010\r\u001a\u00020\u000eH\u0080\u0080\u0004¢\u0006\u0002\u0010\u0014\u001a\u001c\u0010\u0015\u001a\f\u0012\u0006\b\u0001\u0012\u00020\u0002\u0018\u00010\u0016*\u0006\u0012\u0002\b\u00030\fH\u0080\u0088\u0004\"\u001f\u0010\u0000\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00020\u00018\u0000X\u0081\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0019\u0010\u0005\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00018\u0002X\u0083\u0084\b¢\u0006\u0002\n\u0000\"\u0019\u0010\u0006\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00020\u00078\u0002X\u0083\u0084\b¢\u0006\u0002\n\u0000\"\u0019\u0010\b\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00078\u0002X\u0083\u0084\b¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"SERIALIZERS_CACHE", "Lkotlinx/serialization/internal/SerializerCache;", "", "getSERIALIZERS_CACHE", "()Lkotlinx/serialization/internal/SerializerCache;", "SERIALIZERS_CACHE_NULLABLE", "PARAMETRIZED_SERIALIZERS_CACHE", "Lkotlinx/serialization/internal/ParametrizedSerializerCache;", "PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE", "findCachedSerializer", "Lkotlinx/serialization/KSerializer;", "clazz", "Lkotlin/reflect/KClass;", "isNullable", "", "findParametrizedCachedSerializer", "Lkotlin/Result;", "types", "", "Lkotlin/reflect/KType;", "(Lkotlin/reflect/KClass;Ljava/util/List;Z)Ljava/lang/Object;", "polymorphicIfInterface", "Lkotlinx/serialization/PolymorphicSerializer;", "kotlinx-serialization-core"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SerializersCacheKt {
     private static final SerializerCache<? extends Object> SERIALIZERS_CACHE = CachingKt.createCache(new Function1() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            KSerializer SERIALIZERS_CACHE$lambda$0;
-            SERIALIZERS_CACHE$lambda$0 = SerializersCacheKt.SERIALIZERS_CACHE$lambda$0((KClass) obj);
-            return SERIALIZERS_CACHE$lambda$0;
+            return SerializersCacheKt.SERIALIZERS_CACHE$lambda$0((KClass) obj);
         }
     });
     private static final SerializerCache<Object> SERIALIZERS_CACHE_NULLABLE = CachingKt.createCache(new Function1() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            KSerializer SERIALIZERS_CACHE_NULLABLE$lambda$1;
-            SERIALIZERS_CACHE_NULLABLE$lambda$1 = SerializersCacheKt.SERIALIZERS_CACHE_NULLABLE$lambda$1((KClass) obj);
-            return SERIALIZERS_CACHE_NULLABLE$lambda$1;
+            return SerializersCacheKt.SERIALIZERS_CACHE_NULLABLE$lambda$0((KClass) obj);
         }
     });
     private static final ParametrizedSerializerCache<? extends Object> PARAMETRIZED_SERIALIZERS_CACHE = CachingKt.createParametrizedCache(new Function2() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            KSerializer PARAMETRIZED_SERIALIZERS_CACHE$lambda$3;
-            PARAMETRIZED_SERIALIZERS_CACHE$lambda$3 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE$lambda$3((KClass) obj, (List) obj2);
-            return PARAMETRIZED_SERIALIZERS_CACHE$lambda$3;
+            return SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE$lambda$0((KClass) obj, (List) obj2);
         }
     });
     private static final ParametrizedSerializerCache<Object> PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE = CachingKt.createParametrizedCache(new Function2() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            KSerializer PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5;
-            PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5((KClass) obj, (List) obj2);
-            return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5;
+            return SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0((KClass) obj, (List) obj2);
         }
     });
 
-    private static /* synthetic */ void getPARAMETRIZED_SERIALIZERS_CACHE$annotations() {
-    }
-
-    private static /* synthetic */ void getPARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$annotations() {
-    }
-
-    public static /* synthetic */ void getSERIALIZERS_CACHE$annotations() {
-    }
-
-    private static /* synthetic */ void getSERIALIZERS_CACHE_NULLABLE$annotations() {
-    }
-
-    public static final SerializerCache<? extends Object> getSERIALIZERS_CACHE() {
-        return SERIALIZERS_CACHE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final KSerializer SERIALIZERS_CACHE$lambda$0(KClass it) {
         Intrinsics.checkNotNullParameter(it, "it");
         KSerializer serializerOrNull = SerializersKt.serializerOrNull(it);
@@ -78,8 +54,12 @@ public final class SerializersCacheKt {
         return serializerOrNull;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final KSerializer SERIALIZERS_CACHE_NULLABLE$lambda$1(KClass it) {
+    public static final SerializerCache<? extends Object> getSERIALIZERS_CACHE() {
+        return SERIALIZERS_CACHE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final KSerializer SERIALIZERS_CACHE_NULLABLE$lambda$0(KClass it) {
         KSerializer nullable;
         Intrinsics.checkNotNullParameter(it, "it");
         PolymorphicSerializer serializerOrNull = SerializersKt.serializerOrNull(it);
@@ -92,8 +72,8 @@ public final class SerializersCacheKt {
         return nullable;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final KSerializer PARAMETRIZED_SERIALIZERS_CACHE$lambda$3(KClass clazz, final List types) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final KSerializer PARAMETRIZED_SERIALIZERS_CACHE$lambda$0(KClass clazz, final List types) {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         Intrinsics.checkNotNullParameter(types, "types");
         List<KSerializer<Object>> serializersForParameters = SerializersKt.serializersForParameters(SerializersModuleBuildersKt.EmptySerializersModule(), types, true);
@@ -101,20 +81,20 @@ public final class SerializersCacheKt {
         return SerializersKt.parametrizedSerializerOrNull(clazz, serializersForParameters, new Function0() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                KClassifier PARAMETRIZED_SERIALIZERS_CACHE$lambda$3$lambda$2;
-                PARAMETRIZED_SERIALIZERS_CACHE$lambda$3$lambda$2 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE$lambda$3$lambda$2(types);
-                return PARAMETRIZED_SERIALIZERS_CACHE$lambda$3$lambda$2;
+                KClassifier PARAMETRIZED_SERIALIZERS_CACHE$lambda$0$0;
+                PARAMETRIZED_SERIALIZERS_CACHE$lambda$0$0 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE$lambda$0$0(types);
+                return PARAMETRIZED_SERIALIZERS_CACHE$lambda$0$0;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final KClassifier PARAMETRIZED_SERIALIZERS_CACHE$lambda$3$lambda$2(List list) {
+    public static final KClassifier PARAMETRIZED_SERIALIZERS_CACHE$lambda$0$0(List list) {
         return ((KType) list.get(0)).getClassifier();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final KSerializer PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5(KClass clazz, final List types) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final KSerializer PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0(KClass clazz, final List types) {
         KSerializer nullable;
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         Intrinsics.checkNotNullParameter(types, "types");
@@ -123,9 +103,9 @@ public final class SerializersCacheKt {
         KSerializer<? extends Object> parametrizedSerializerOrNull = SerializersKt.parametrizedSerializerOrNull(clazz, serializersForParameters, new Function0() { // from class: kotlinx.serialization.SerializersCacheKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                KClassifier PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5$lambda$4;
-                PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5$lambda$4 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5$lambda$4(types);
-                return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5$lambda$4;
+                KClassifier PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0$0;
+                PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0$0 = SerializersCacheKt.PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0$0(types);
+                return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0$0;
             }
         });
         if (parametrizedSerializerOrNull == null || (nullable = BuiltinSerializersKt.getNullable(parametrizedSerializerOrNull)) == null) {
@@ -135,7 +115,7 @@ public final class SerializersCacheKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final KClassifier PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$5$lambda$4(List list) {
+    public static final KClassifier PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE$lambda$0$0(List list) {
         return ((KType) list.get(0)).getClassifier();
     }
 
@@ -155,9 +135,9 @@ public final class SerializersCacheKt {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         Intrinsics.checkNotNullParameter(types, "types");
         if (!z) {
-            return PARAMETRIZED_SERIALIZERS_CACHE.mo11960getgIAlus(clazz, types);
+            return PARAMETRIZED_SERIALIZERS_CACHE.mo10838getgIAlus(clazz, types);
         }
-        return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE.mo11960getgIAlus(clazz, types);
+        return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE.mo10838getgIAlus(clazz, types);
     }
 
     public static final PolymorphicSerializer<? extends Object> polymorphicIfInterface(KClass<?> kClass) {

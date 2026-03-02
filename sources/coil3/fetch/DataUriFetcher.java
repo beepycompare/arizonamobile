@@ -32,14 +32,16 @@ public final class DataUriFetcher implements Fetcher {
     @Override // coil3.fetch.Fetcher
     public Object fetch(Continuation<? super FetchResult> continuation) {
         int indexOf$default = StringsKt.indexOf$default((CharSequence) this.uri.toString(), BASE64_TAG, 0, false, 6, (Object) null);
+        Uri uri = this.uri;
         if (indexOf$default == -1) {
-            throw new IllegalStateException(("invalid data uri: " + this.uri).toString());
+            throw new IllegalStateException(("invalid data uri: " + uri).toString());
         }
-        int indexOf$default2 = StringsKt.indexOf$default((CharSequence) this.uri.toString(), (char) AbstractJsonLexerKt.COLON, 0, false, 6, (Object) null);
+        int indexOf$default2 = StringsKt.indexOf$default((CharSequence) uri.toString(), (char) AbstractJsonLexerKt.COLON, 0, false, 6, (Object) null);
+        Uri uri2 = this.uri;
         if (indexOf$default2 == -1) {
-            throw new IllegalStateException(("invalid data uri: " + this.uri).toString());
+            throw new IllegalStateException(("invalid data uri: " + uri2).toString());
         }
-        String substring = this.uri.toString().substring(indexOf$default2 + 1, indexOf$default);
+        String substring = uri2.toString().substring(indexOf$default2 + 1, indexOf$default);
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         byte[] decode$default = Base64.decode$default(Base64.Default, this.uri.toString(), indexOf$default + 8, 0, 4, (Object) null);
         Buffer buffer = new Buffer();

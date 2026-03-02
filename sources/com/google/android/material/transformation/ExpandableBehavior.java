@@ -76,11 +76,8 @@ public abstract class ExpandableBehavior extends CoordinatorLayout.Behavior<View
     }
 
     private boolean didStateChange(boolean z) {
-        if (!z) {
-            return this.currentState == 1;
-        }
         int i = this.currentState;
-        return i == 0 || i == 2;
+        return z ? i == 0 || i == 2 : i == 1;
     }
 
     public static <T extends ExpandableBehavior> T from(View view, Class<T> cls) {

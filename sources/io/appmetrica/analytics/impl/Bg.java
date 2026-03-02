@@ -11,13 +11,13 @@ public final class Bg implements Ql, Ga {
     public final Am d;
     public final Pa e;
 
-    public Bg(Context context, Q4 q4, C0493p4 c0493p4, Y4 y4, R4 r4, Hl hl) {
+    public Bg(Context context, Q4 q4, C0492p4 c0492p4, Y4 y4, R4 r4, Hl hl) {
         this.f521a = context;
         this.b = q4;
         this.c = r4;
-        Am a2 = hl.a(context, q4, c0493p4.f1167a);
+        Am a2 = hl.a(context, q4, c0492p4.f1167a);
         this.d = a2;
-        this.e = y4.a(context, q4, c0493p4.b, a2);
+        this.e = y4.a(context, q4, c0492p4.b, a2);
         hl.a(q4, this);
     }
 
@@ -29,38 +29,38 @@ public final class Bg implements Ql, Ga {
         return this.f521a;
     }
 
-    public final void a(InterfaceC0239f4 interfaceC0239f4) {
-        this.c.f760a.add(interfaceC0239f4);
+    public final void a(InterfaceC0238f4 interfaceC0238f4) {
+        this.c.f760a.add(interfaceC0238f4);
     }
 
-    public final void b(InterfaceC0239f4 interfaceC0239f4) {
-        this.c.f760a.remove(interfaceC0239f4);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ql
-    public final void a(C0257fm c0257fm) {
-        ((X4) this.e).a(c0257fm);
+    public final void b(InterfaceC0238f4 interfaceC0238f4) {
+        this.c.f760a.remove(interfaceC0238f4);
     }
 
     @Override // io.appmetrica.analytics.impl.Ql
-    public final void a(Jl jl, C0257fm c0257fm) {
+    public final void a(C0256fm c0256fm) {
+        ((X4) this.e).a(c0256fm);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ql
+    public final void a(Jl jl, C0256fm c0256fm) {
         ((X4) this.e).getClass();
     }
 
     @Override // io.appmetrica.analytics.impl.Ga
-    public final void a(C0493p4 c0493p4) {
-        this.d.a(c0493p4.f1167a);
-        this.e.a(c0493p4.b);
+    public final void a(C0492p4 c0492p4) {
+        this.d.a(c0492p4.f1167a);
+        this.e.a(c0492p4.b);
     }
 
-    public final void a(P5 p5, C0493p4 c0493p4) {
-        if (!AbstractC0672w9.c.contains(EnumC0143bb.a(p5.d))) {
-            this.e.a(c0493p4.b);
+    public final void a(P5 p5, C0492p4 c0492p4) {
+        if (!AbstractC0671w9.c.contains(EnumC0142bb.a(p5.d))) {
+            this.e.a(c0492p4.b);
         }
         ((X4) this.e).a(p5);
     }
 
-    public Bg(Context context, Q4 q4, C0493p4 c0493p4, Y4 y4) {
-        this(context, q4, c0493p4, y4, new R4(), Hl.a());
+    public Bg(Context context, Q4 q4, C0492p4 c0492p4, Y4 y4) {
+        this(context, q4, c0492p4, y4, new R4(), Hl.a());
     }
 }

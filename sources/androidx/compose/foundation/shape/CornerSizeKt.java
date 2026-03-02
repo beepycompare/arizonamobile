@@ -11,7 +11,7 @@ public final class CornerSizeKt {
     }
 
     /* renamed from: CornerSize-0680j_4  reason: not valid java name */
-    public static final CornerSize m1275CornerSize0680j_4(float f) {
+    public static final CornerSize m1118CornerSize0680j_4(float f) {
         return new DpCornerSize(f, null);
     }
 

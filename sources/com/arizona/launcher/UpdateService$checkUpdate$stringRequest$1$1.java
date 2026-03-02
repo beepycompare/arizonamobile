@@ -22,8 +22,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {372, 373}, m = "invokeSuspend", n = {"gameDataInfo"}, s = {"L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {378, 379}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {379, 397}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -89,8 +89,8 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

@@ -4,9 +4,9 @@ public final class D8 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Fc f546a = new Fc();
-    public final C0559rl b;
+    public final C0558rl b;
 
-    public D8(C0559rl c0559rl) {
-        this.b = c0559rl;
+    public D8(C0558rl c0558rl) {
+        this.b = c0558rl;
     }
 }

@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class TeeAudioProcessor extends BaseAudioProcessor {
     private final AudioBufferSink audioBufferSink;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface AudioBufferSink {
         void flush(int i, int i2, int i3);
 
@@ -61,7 +61,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class WavFileAudioBufferSink implements AudioBufferSink {
         private static final int FILE_SIZE_MINUS_44_OFFSET = 40;
         private static final int FILE_SIZE_MINUS_8_OFFSET = 4;

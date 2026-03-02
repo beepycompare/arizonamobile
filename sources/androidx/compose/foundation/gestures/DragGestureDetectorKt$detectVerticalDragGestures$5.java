@@ -96,19 +96,17 @@ public final class DragGestureDetectorKt$detectVerticalDragGestures$5 extends Re
             ResultKt.throwOnFailure(obj);
             pointerInputChange = (PointerInputChange) obj;
             if (pointerInputChange != null) {
-                this.$onDragStart.invoke(Offset.m5168boximpl(pointerInputChange.m6744getPositionF1C5BW0()));
+                this.$onDragStart.invoke(Offset.m4516boximpl(pointerInputChange.m6085getPositionF1C5BW0()));
                 this.$onVerticalDrag.invoke(pointerInputChange, Boxing.boxFloat(floatRef.element));
-                long m6742getIdJ3iCeTQ = pointerInputChange.m6742getIdJ3iCeTQ();
+                long m6083getIdJ3iCeTQ = pointerInputChange.m6083getIdJ3iCeTQ();
                 final Function2<PointerInputChange, Float, Unit> function2 = this.$onVerticalDrag;
                 this.L$0 = null;
                 this.L$1 = null;
                 this.label = 3;
-                obj = DragGestureDetectorKt.m551verticalDragjO51t88(awaitPointerEventScope2, m6742getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectVerticalDragGestures$5$$ExternalSyntheticLambda1
+                obj = DragGestureDetectorKt.m477verticalDragjO51t88(awaitPointerEventScope2, m6083getIdJ3iCeTQ, new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectVerticalDragGestures$5$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$1;
-                        invokeSuspend$lambda$1 = DragGestureDetectorKt$detectVerticalDragGestures$5.invokeSuspend$lambda$1(Function2.this, (PointerInputChange) obj2);
-                        return invokeSuspend$lambda$1;
+                        return DragGestureDetectorKt$detectVerticalDragGestures$5.invokeSuspend$lambda$1(Function2.this, (PointerInputChange) obj2);
                     }
                 }, this);
             }
@@ -122,12 +120,10 @@ public final class DragGestureDetectorKt$detectVerticalDragGestures$5 extends Re
         this.L$0 = awaitPointerEventScope;
         this.L$1 = floatRef;
         this.label = 2;
-        obj = DragGestureDetectorKt.m543awaitVerticalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m6742getIdJ3iCeTQ(), pointerInputChange2.m6747getTypeT8wyACA(), new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectVerticalDragGestures$5$$ExternalSyntheticLambda0
+        obj = DragGestureDetectorKt.m469awaitVerticalPointerSlopOrCancellationgDDlDlE(awaitPointerEventScope, pointerInputChange2.m6083getIdJ3iCeTQ(), pointerInputChange2.m6088getTypeT8wyACA(), new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureDetectorKt$detectVerticalDragGestures$5$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj2, Object obj3) {
-                Unit invokeSuspend$lambda$0;
-                invokeSuspend$lambda$0 = DragGestureDetectorKt$detectVerticalDragGestures$5.invokeSuspend$lambda$0(Ref.FloatRef.this, (PointerInputChange) obj2, ((Float) obj3).floatValue());
-                return invokeSuspend$lambda$0;
+                return DragGestureDetectorKt$detectVerticalDragGestures$5.invokeSuspend$lambda$0(Ref.FloatRef.this, (PointerInputChange) obj2, ((Float) obj3).floatValue());
             }
         }, this);
         if (obj != coroutine_suspended) {
@@ -140,14 +136,14 @@ public final class DragGestureDetectorKt$detectVerticalDragGestures$5 extends Re
         return coroutine_suspended;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, PointerInputChange pointerInputChange, float f) {
         pointerInputChange.consume();
         floatRef.element = f;
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(Function2 function2, PointerInputChange pointerInputChange) {
         function2.invoke(pointerInputChange, Float.valueOf(Float.intBitsToFloat((int) (PointerEventKt.positionChange(pointerInputChange) & 4294967295L))));
         pointerInputChange.consume();

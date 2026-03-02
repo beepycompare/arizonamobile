@@ -11,9 +11,7 @@ public final class StackAnimationProviderKt {
     private static final ProvidableCompositionLocal<StackAnimationProvider> LocalStackAnimationProvider = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.StackAnimationProviderKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            StackAnimationProvider LocalStackAnimationProvider$lambda$0;
-            LocalStackAnimationProvider$lambda$0 = StackAnimationProviderKt.LocalStackAnimationProvider$lambda$0();
-            return LocalStackAnimationProvider$lambda$0;
+            return StackAnimationProviderKt.LocalStackAnimationProvider$lambda$0();
         }
     }, 1, null);
 
@@ -21,7 +19,7 @@ public final class StackAnimationProviderKt {
         return LocalStackAnimationProvider;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final StackAnimationProvider LocalStackAnimationProvider$lambda$0() {
         return new StackAnimationProvider() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.StackAnimationProviderKt$LocalStackAnimationProvider$1$1
             @Override // com.arkivanov.decompose.extensions.compose.stack.animation.StackAnimationProvider

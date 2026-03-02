@@ -24,15 +24,13 @@ public final class AppBarDslKt {
             rememberedValue = new Function0() { // from class: androidx.compose.material3.AppBarDslKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    AppBarOverflowStateImpl rememberAppBarOverflowState$lambda$1$lambda$0;
-                    rememberAppBarOverflowState$lambda$1$lambda$0 = AppBarDslKt.rememberAppBarOverflowState$lambda$1$lambda$0();
-                    return rememberAppBarOverflowState$lambda$1$lambda$0;
+                    return AppBarDslKt.rememberAppBarOverflowState$lambda$1$lambda$0();
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        AppBarOverflowStateImpl appBarOverflowStateImpl = (AppBarOverflowStateImpl) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+        AppBarOverflowStateImpl appBarOverflowStateImpl = (AppBarOverflowStateImpl) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -40,7 +38,7 @@ public final class AppBarDslKt {
         return appBarOverflowStateImpl;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AppBarOverflowStateImpl rememberAppBarOverflowState$lambda$1$lambda$0() {
         return new AppBarOverflowStateImpl();
     }

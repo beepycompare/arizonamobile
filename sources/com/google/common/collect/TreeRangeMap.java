@@ -381,10 +381,12 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
 
         @Override // com.google.common.collect.RangeMap
         public RangeMap<K, V> subRangeMap(Range<K> range) {
-            if (!range.isConnected(this.subRange)) {
-                return TreeRangeMap.this.emptySubRangeMap();
+            boolean isConnected = range.isConnected(this.subRange);
+            TreeRangeMap treeRangeMap = TreeRangeMap.this;
+            if (!isConnected) {
+                return treeRangeMap.emptySubRangeMap();
             }
-            return TreeRangeMap.this.subRangeMap(range.intersection(this.subRange));
+            return treeRangeMap.subRangeMap(range.intersection(this.subRange));
         }
 
         @Override // com.google.common.collect.RangeMap
@@ -463,7 +465,9 @@ public final class TreeRangeMap<K extends Comparable, V> implements RangeMap<K, 
                     if (key instanceof Range) {
                         Range range = (Range) key;
                         if (SubRangeMap.this.subRange.encloses(range) && !range.isEmpty()) {
-                            if (range.lowerBound.compareTo((Cut) SubRangeMap.this.subRange.lowerBound) == 0) {
+                            int compareTo = range.lowerBound.compareTo((Cut) SubRangeMap.this.subRange.lowerBound);
+                            SubRangeMap subRangeMap = SubRangeMap.this;
+                            if (compareTo == 0) {
                                 Map.Entry floorEntry = TreeRangeMap.this.entriesByLowerBound.floorEntry(range.lowerBound);
                                 rangeMapEntry = floorEntry != null ? (RangeMapEntry) floorEntry.getValue() : null;
                             } else {

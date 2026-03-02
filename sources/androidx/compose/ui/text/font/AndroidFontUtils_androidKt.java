@@ -22,7 +22,7 @@ public final class AndroidFontUtils_androidKt {
     }
 
     /* renamed from: getAndroidTypefaceStyle-FO1MlWM  reason: not valid java name */
-    public static final int m7766getAndroidTypefaceStyleFO1MlWM(FontWeight fontWeight, int i) {
-        return getAndroidTypefaceStyle(fontWeight.compareTo(getAndroidBold(FontWeight.Companion)) >= 0, FontStyle.m7815equalsimpl0(i, FontStyle.Companion.m7821getItalic_LCdwA()));
+    public static final int m7067getAndroidTypefaceStyleFO1MlWM(FontWeight fontWeight, int i) {
+        return getAndroidTypefaceStyle(fontWeight.compareTo(getAndroidBold(FontWeight.Companion)) >= 0, FontStyle.m7115equalsimpl0(i, FontStyle.Companion.m7121getItalic_LCdwA()));
     }
 }

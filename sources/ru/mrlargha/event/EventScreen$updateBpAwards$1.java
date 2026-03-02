@@ -15,8 +15,8 @@ import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.event.data.AwardItemData;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EventScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateBpAwards$1", f = "EventScreen.kt", i = {1}, l = {392, 401}, m = "invokeSuspend", n = {"pairList"}, s = {"L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateBpAwards$1", f = "EventScreen.kt", i = {1}, l = {392, 401}, m = "invokeSuspend", n = {"pairList"}, nl = {393, 404}, s = {"L$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class EventScreen$updateBpAwards$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<Integer> $awardsStatusList;
@@ -118,8 +118,8 @@ public final class EventScreen$updateBpAwards$1 extends SuspendLambda implements
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: EventScreen.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateBpAwards$1$2", f = "EventScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.event.EventScreen$updateBpAwards$1$2", f = "EventScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.event.EventScreen$updateBpAwards$1$2  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

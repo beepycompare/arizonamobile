@@ -117,9 +117,7 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
                 Function0 function0 = new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$0(TextFieldDecoratorModifierNode.this);
-                        return invokeSuspend$lambda$0;
+                        return TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$0(TextFieldDecoratorModifierNode.this);
                     }
                 };
                 MutableSharedFlow<Unit> stylusHandwritingTrigger = this.this$0.getStylusHandwritingTrigger();
@@ -129,9 +127,7 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
                 if (AndroidTextInputSession_androidKt.platformSpecificTextInputSession(platformTextInputSessionScope, textFieldState, textLayoutState, imeOptions$foundation, receiveContentConfiguration, c00161, function0, stylusHandwritingTrigger, viewConfiguration, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$startInputSession$1$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$1;
-                        invokeSuspend$lambda$1 = TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$1(TextFieldDecoratorModifierNode.this, ((Boolean) obj2).booleanValue());
-                        return invokeSuspend$lambda$1;
+                        return TextFieldDecoratorModifierNode$startInputSession$1.AnonymousClass1.invokeSuspend$lambda$1(TextFieldDecoratorModifierNode.this, ((Boolean) obj2).booleanValue());
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -156,23 +152,23 @@ public final class TextFieldDecoratorModifierNode$startInputSession$1 extends Su
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(ImeAction imeAction) {
-                m1660invokeKlQnJC8(imeAction.m7876unboximpl());
+                m1434invokeKlQnJC8(imeAction.m7174unboximpl());
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke-KlQnJC8  reason: not valid java name */
-            public final void m1660invokeKlQnJC8(int i) {
-                ((TextFieldDecoratorModifierNode) this.receiver).m1655onImeActionPerformedKlQnJC8(i);
+            public final void m1434invokeKlQnJC8(int i) {
+                ((TextFieldDecoratorModifierNode) this.receiver).m1432onImeActionPerformedKlQnJC8(i);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
             textFieldDecoratorModifierNode.getTextFieldSelectionState().updateTextToolbarState(TextToolbarState.Selection);
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$1(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, boolean z) {
             textFieldDecoratorModifierNode.getTextFieldSelectionState().setInTouchMode(z);
             return Unit.INSTANCE;

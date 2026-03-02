@@ -28,17 +28,17 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = i;
-        this.last = UProgressionUtilKt.m11470getProgressionLastElementNkh28Cs(i, i2, i3);
+        this.last = UProgressionUtilKt.m10407getProgressionLastElementNkh28Cs(i, i2, i3);
         this.step = i3;
     }
 
     /* renamed from: getFirst-pVg5ArA  reason: not valid java name */
-    public final int m11488getFirstpVg5ArA() {
+    public final int m10425getFirstpVg5ArA() {
         return this.first;
     }
 
     /* renamed from: getLast-pVg5ArA  reason: not valid java name */
-    public final int m11489getLastpVg5ArA() {
+    public final int m10426getLastpVg5ArA() {
         return this.last;
     }
 
@@ -54,11 +54,13 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
     public boolean isEmpty() {
         int compare;
         int compare2;
-        if (this.step > 0) {
-            compare2 = Integer.compare(this.first ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
+        int i = this.step;
+        int i2 = this.first;
+        if (i > 0) {
+            compare2 = Integer.compare(i2 ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
             return compare2 > 0;
         }
-        compare = Integer.compare(this.first ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
+        compare = Integer.compare(i2 ^ Integer.MIN_VALUE, this.last ^ Integer.MIN_VALUE);
         return compare < 0;
     }
 
@@ -83,11 +85,13 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
     public String toString() {
         StringBuilder append;
         int i;
-        if (this.step > 0) {
-            append = new StringBuilder().append((Object) UInt.m10389toStringimpl(this.first)).append("..").append((Object) UInt.m10389toStringimpl(this.last)).append(" step ");
+        int i2 = this.step;
+        int i3 = this.first;
+        if (i2 > 0) {
+            append = new StringBuilder().append((Object) UInt.m9328toStringimpl(i3)).append("..").append((Object) UInt.m9328toStringimpl(this.last)).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append((Object) UInt.m10389toStringimpl(this.first)).append(" downTo ").append((Object) UInt.m10389toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m9328toStringimpl(i3)).append(" downTo ").append((Object) UInt.m9328toStringimpl(this.last)).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();
@@ -105,7 +109,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         }
 
         /* renamed from: fromClosedRange-Nkh28Cs  reason: not valid java name */
-        public final UIntProgression m11490fromClosedRangeNkh28Cs(int i, int i2, int i3) {
+        public final UIntProgression m10427fromClosedRangeNkh28Cs(int i, int i2, int i3) {
             return new UIntProgression(i, i2, i3, null);
         }
     }

@@ -37,14 +37,12 @@ public interface StackNavigation<C> extends StackNavigator<C>, NavigationSource<
             this(function1, (i & 2) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.stack.StackNavigation$Event$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = StackNavigation.Event._init_$lambda$0((List) obj, (List) obj2);
-                    return _init_$lambda$0;
+                    return StackNavigation.Event._init_$lambda$0((List) obj, (List) obj2);
                 }
             } : function2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit _init_$lambda$0(List list, List list2) {
             Intrinsics.checkNotNullParameter(list, "<unused var>");
             Intrinsics.checkNotNullParameter(list2, "<unused var>");

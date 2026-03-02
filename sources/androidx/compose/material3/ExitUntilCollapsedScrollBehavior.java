@@ -18,7 +18,7 @@ final class ExitUntilCollapsedScrollBehavior implements TopAppBarScrollBehavior 
     private final AnimationSpec<Float> snapAnimationSpec;
     private final TopAppBarState state;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0() {
         return true;
     }
@@ -50,9 +50,7 @@ final class ExitUntilCollapsedScrollBehavior implements TopAppBarScrollBehavior 
         this(topAppBarState, animationSpec, decayAnimationSpec, (i & 8) != 0 ? new Function0() { // from class: androidx.compose.material3.ExitUntilCollapsedScrollBehavior$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = ExitUntilCollapsedScrollBehavior._init_$lambda$0();
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(ExitUntilCollapsedScrollBehavior._init_$lambda$0());
             }
         } : function0);
     }

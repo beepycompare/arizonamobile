@@ -22,23 +22,26 @@ public final class zao implements Runnable {
     public final void run() {
         if (this.zaa.zaa) {
             ConnectionResult zab = this.zab.zab();
-            if (zab.hasResolution()) {
-                zap zapVar = this.zaa;
+            boolean hasResolution = zab.hasResolution();
+            zap zapVar = this.zaa;
+            if (hasResolution) {
                 zapVar.mLifecycleFragment.startActivityForResult(GoogleApiActivity.zaa(zapVar.getActivity(), (PendingIntent) Preconditions.checkNotNull(zab.getResolution()), this.zab.zaa(), false), 1);
                 return;
             }
-            zap zapVar2 = this.zaa;
-            if (zapVar2.zac.getErrorResolutionIntent(zapVar2.getActivity(), zab.getErrorCode(), null) != null) {
-                zap zapVar3 = this.zaa;
-                zapVar3.zac.zag(zapVar3.getActivity(), zapVar3.mLifecycleFragment, zab.getErrorCode(), 2, this.zaa);
-            } else if (zab.getErrorCode() == 18) {
-                zap zapVar4 = this.zaa;
-                Dialog zab2 = zapVar4.zac.zab(zapVar4.getActivity(), zapVar4);
-                zap zapVar5 = this.zaa;
-                zapVar5.zac.zac(zapVar5.getActivity().getApplicationContext(), new zan(this, zab2));
-            } else {
-                this.zaa.zaa(zab, this.zab.zaa());
+            if (zapVar.zac.getErrorResolutionIntent(zapVar.getActivity(), zab.getErrorCode(), null) != null) {
+                zap zapVar2 = this.zaa;
+                zapVar2.zac.zag(zapVar2.getActivity(), zapVar2.mLifecycleFragment, zab.getErrorCode(), 2, this.zaa);
+                return;
             }
+            int errorCode = zab.getErrorCode();
+            zap zapVar3 = this.zaa;
+            if (errorCode == 18) {
+                Dialog zab2 = zapVar3.zac.zab(zapVar3.getActivity(), zapVar3);
+                zap zapVar4 = this.zaa;
+                zapVar4.zac.zac(zapVar4.getActivity().getApplicationContext(), new zan(this, zab2));
+                return;
+            }
+            zapVar3.zaa(zab, this.zab.zaa());
         }
     }
 }

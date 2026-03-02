@@ -38,10 +38,10 @@ public final class PullToRefreshModifierNode$update$1 extends SuspendLambda impl
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x003d, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -55,12 +55,14 @@ public final class PullToRefreshModifierNode$update$1 extends SuspendLambda impl
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!this.this$0.isRefreshing()) {
+            boolean isRefreshing = this.this$0.isRefreshing();
+            PullToRefreshModifierNode pullToRefreshModifierNode = this.this$0;
+            if (!isRefreshing) {
                 this.label = 1;
-                animateToHidden = this.this$0.animateToHidden(this);
+                animateToHidden = pullToRefreshModifierNode.animateToHidden(this);
             } else {
                 this.label = 2;
-                animateToThreshold = this.this$0.animateToThreshold(this);
+                animateToThreshold = pullToRefreshModifierNode.animateToThreshold(this);
             }
         } else if (i != 1 && i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

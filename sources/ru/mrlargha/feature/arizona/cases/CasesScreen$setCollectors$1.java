@@ -33,8 +33,8 @@ import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesModel;
 import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.providerKey, 200, 213}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.providerKey, 200, 213}, m = "invokeSuspend", n = {}, nl = {200, ComposerKt.providerValuesKey, 259}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -118,8 +118,8 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CasesScreen.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u0002\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u00012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00030\u00022\b\u0010\u0006\u001a\u0004\u0018\u00010\u0004H\n"}, d2 = {"<anonymous>", "Lkotlin/Pair;", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "cases", "info"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$1", f = "CasesScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u0016\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u0002\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u00012\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00030\u00022\b\u0010\u0006\u001a\u0004\u0018\u00010\u0004H\n"}, d2 = {"<anonymous>", "Lkotlin/Pair;", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "cases", "info"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$1", f = "CasesScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function3<List<? extends CasesModel>, CasesInfoModel, Continuation<? super Pair<? extends List<? extends CasesModel>, ? extends CasesInfoModel>>, Object> {
@@ -159,7 +159,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CasesScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* renamed from: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass2<T> implements FlowCollector {
@@ -213,9 +213,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
                             CollectionsKt.removeAll(mutableList, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj) {
-                                    boolean emit$lambda$2;
-                                    emit$lambda$2 = CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$2(CasesInfoModel.this, (CasesModel) obj);
-                                    return Boolean.valueOf(emit$lambda$2);
+                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$2(CasesInfoModel.this, (CasesModel) obj));
                                 }
                             });
                             CasesScreen casesScreen2 = this.this$0;
@@ -229,9 +227,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
                             CollectionsKt.removeAll(mutableList2, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj) {
-                                    boolean emit$lambda$4;
-                                    emit$lambda$4 = CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$4((CasesPrizeModel) obj);
-                                    return Boolean.valueOf(emit$lambda$4);
+                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$4((CasesPrizeModel) obj));
                                 }
                             });
                             CasesScreen casesScreen3 = this.this$0;
@@ -245,9 +241,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
                             CollectionsKt.removeAll(mutableList3, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj) {
-                                    boolean emit$lambda$6;
-                                    emit$lambda$6 = CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$6((CasesPrizeModel) obj);
-                                    return Boolean.valueOf(emit$lambda$6);
+                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$6((CasesPrizeModel) obj));
                                 }
                             });
                             CasesScreen casesScreen4 = this.this$0;
@@ -264,19 +258,19 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean emit$lambda$2(CasesInfoModel casesInfoModel, CasesModel it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return it.getId() == casesInfoModel.getCaseId();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean emit$lambda$4(CasesPrizeModel it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return it.getGarante() == 0;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean emit$lambda$6(CasesPrizeModel it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return it.getGarante() != 0;

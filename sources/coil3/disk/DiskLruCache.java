@@ -108,10 +108,12 @@ public final class DiskLruCache implements AutoCloseable {
             }
             delete(this.journalFileTmp);
             if (exists(this.journalFileBackup)) {
-                if (exists(this.journalFile)) {
-                    delete(this.journalFileBackup);
+                boolean exists = exists(this.journalFile);
+                DiskLruCache$fileSystem$1 diskLruCache$fileSystem$1 = this.fileSystem;
+                if (exists) {
+                    diskLruCache$fileSystem$1.delete(this.journalFileBackup);
                 } else {
-                    atomicMove(this.journalFileBackup, this.journalFile);
+                    diskLruCache$fileSystem$1.atomicMove(this.journalFileBackup, this.journalFile);
                 }
             }
             if (exists(this.journalFile)) {
@@ -193,14 +195,12 @@ public final class DiskLruCache implements AutoCloseable {
         return Okio.buffer(new FaultHidingSink(appendingSink(this.journalFile), new Function1() { // from class: coil3.disk.DiskLruCache$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit newJournalWriter$lambda$4;
-                newJournalWriter$lambda$4 = DiskLruCache.newJournalWriter$lambda$4(DiskLruCache.this, (IOException) obj);
-                return newJournalWriter$lambda$4;
+                return DiskLruCache.newJournalWriter$lambda$4(DiskLruCache.this, (IOException) obj);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit newJournalWriter$lambda$4(DiskLruCache diskLruCache, IOException iOException) {
         diskLruCache.hasJournalErrors = true;
         return Unit.INSTANCE;
@@ -311,12 +311,14 @@ public final class DiskLruCache implements AutoCloseable {
             }
             th = null;
             if (th == null) {
-                if (exists(this.journalFile)) {
-                    atomicMove(this.journalFile, this.journalFileBackup);
+                boolean exists = exists(this.journalFile);
+                DiskLruCache$fileSystem$1 diskLruCache$fileSystem$1 = this.fileSystem;
+                if (exists) {
+                    diskLruCache$fileSystem$1.atomicMove(this.journalFile, this.journalFileBackup);
                     atomicMove(this.journalFileTmp, this.journalFile);
                     delete(this.journalFileBackup);
                 } else {
-                    atomicMove(this.journalFileTmp, this.journalFile);
+                    diskLruCache$fileSystem$1.atomicMove(this.journalFileTmp, this.journalFile);
                 }
                 this.journalWriter = newJournalWriter();
                 this.operationsSinceRewrite = 0;
@@ -418,10 +420,12 @@ public final class DiskLruCache implements AutoCloseable {
                 for (int i4 = 0; i4 < i3; i4++) {
                     Path path = entry.getDirtyFiles().get(i4);
                     Path path2 = entry.getCleanFiles().get(i4);
-                    if (exists(path)) {
-                        atomicMove(path, path2);
+                    boolean exists = exists(path);
+                    DiskLruCache$fileSystem$1 diskLruCache$fileSystem$1 = this.fileSystem;
+                    if (exists) {
+                        diskLruCache$fileSystem$1.atomicMove(path, path2);
                     } else {
-                        FileSystemsKt.createFile$default(this.fileSystem, entry.getCleanFiles().get(i4), false, 2, null);
+                        FileSystemsKt.createFile$default(diskLruCache$fileSystem$1, entry.getCleanFiles().get(i4), false, 2, null);
                     }
                     long j = entry.getLengths()[i4];
                     Long size = metadata(path2).getSize();

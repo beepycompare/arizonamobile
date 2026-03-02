@@ -83,14 +83,12 @@ public final class AwaitFirstLayoutModifier extends ModifierNodeElement<Node> {
             this.handle = OnLayoutRectChangedModifierKt.registerOnLayoutRectChanged(this, 0L, 0L, new Function1() { // from class: androidx.compose.foundation.lazy.layout.AwaitFirstLayoutModifier$Node$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit requestOnAfterLayoutCallback$lambda$0;
-                    requestOnAfterLayoutCallback$lambda$0 = AwaitFirstLayoutModifier.Node.requestOnAfterLayoutCallback$lambda$0(AwaitFirstLayoutModifier.Node.this, awaitFirstLayoutModifier, (RelativeLayoutBounds) obj);
-                    return requestOnAfterLayoutCallback$lambda$0;
+                    return AwaitFirstLayoutModifier.Node.requestOnAfterLayoutCallback$lambda$0(AwaitFirstLayoutModifier.Node.this, awaitFirstLayoutModifier, (RelativeLayoutBounds) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit requestOnAfterLayoutCallback$lambda$0(Node node, AwaitFirstLayoutModifier awaitFirstLayoutModifier, RelativeLayoutBounds relativeLayoutBounds) {
             DelegatableNode.RegistrationHandle registrationHandle = node.handle;
             if (registrationHandle != null) {

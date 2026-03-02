@@ -50,6 +50,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -200,9 +201,11 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                 }
                 WarMedia.this.isUserPresent = false;
             } else if (!"android.intent.action.USER_PRESENT".equals(action) && !"android.intent.action.SCREEN_ON".equals(action)) {
-                if (intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE")) {
-                    WarMedia.this.NetworkChange();
-                } else if (WarMedia.this.DoLog) {
+                boolean equals = intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE");
+                WarMedia warMedia = WarMedia.this;
+                if (equals) {
+                    warMedia.NetworkChange();
+                } else if (warMedia.DoLog) {
                     System.out.println("Received " + action.toString());
                 }
             } else {
@@ -426,13 +429,15 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 try {
-                    if (WarMedia.this.mStatePaused) {
-                        WarMedia.this.mRemoteService.requestContinueDownload();
-                    } else {
-                        WarMedia.this.mRemoteService.requestPauseDownload();
-                    }
+                    boolean z = WarMedia.this.mStatePaused;
                     WarMedia warMedia = WarMedia.this;
-                    warMedia.setButtonPausedState(!warMedia.mStatePaused);
+                    if (z) {
+                        warMedia.mRemoteService.requestContinueDownload();
+                    } else {
+                        warMedia.mRemoteService.requestPauseDownload();
+                    }
+                    WarMedia warMedia2 = WarMedia.this;
+                    warMedia2.setButtonPausedState(!warMedia2.mStatePaused);
                 } catch (Exception e) {
                     System.out.println("mPauseButton error " + e.getMessage());
                 }
@@ -546,14 +551,16 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         runOnUiThread(new Runnable() { // from class: com.wardrumstudios.utils.WarMedia.14
             @Override // java.lang.Runnable
             public void run() {
-                if (WarMedia.this.customMovieSurface == null) {
-                    if (WarMedia.this.noVidSurface) {
+                SurfaceView surfaceView = WarMedia.this.customMovieSurface;
+                WarMedia warMedia = WarMedia.this;
+                if (surfaceView == null) {
+                    if (warMedia.noVidSurface) {
                         return;
                     }
                     WarMedia.this.vidView.setVisibility(8);
                     return;
                 }
-                WarMedia.this.customMovieSurface.setVisibility(8);
+                warMedia.customMovieSurface.setVisibility(8);
                 WarMedia.this.movieView.setVisibility(8);
                 WarMedia.this.customMovieSurface = null;
             }
@@ -1179,7 +1186,6 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
     /* JADX WARN: Type inference failed for: r4v10 */
     /* JADX WARN: Type inference failed for: r4v12 */
     /* JADX WARN: Type inference failed for: r4v13 */
-    /* JADX WARN: Type inference failed for: r4v14 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4 */
     /* JADX WARN: Type inference failed for: r4v5, types: [com.wardrumstudios.utils.WarMedia] */
@@ -1229,10 +1235,11 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                 boolean z2 = this.bMoviePlayerPaused;
                 if (z2 && this.moviePlayer == null) {
                     int i = this.currentMovieLength;
+                    String str = this.currentMovieFilename;
                     if (i > 0) {
-                        PlayMovieInFile(this.currentMovieFilename, 1.0f, this.currentMovieOffset, i);
+                        PlayMovieInFile(str, 1.0f, this.currentMovieOffset, i);
                     } else {
-                        PlayMovie(this.currentMovieFilename, 1.0f);
+                        PlayMovie(str, 1.0f);
                     }
                     this.bMoviePlayerPaused = false;
                 } else if (z2 && this.moviePlayer != null) {
@@ -1254,14 +1261,14 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                             try {
                                 System.out.println("moviePlayer paused false");
                                 int i3 = this.currentMovieLength;
+                                String str2 = this.currentMovieFilename;
                                 if (i3 > 0) {
                                     WarMedia warMedia2 = this;
-                                    warMedia2.PlayMovieInFile(this.currentMovieFilename, 1.0f, this.currentMovieOffset, i3, this.movieWindowHolder);
+                                    warMedia2.PlayMovieInFile(str2, 1.0f, this.currentMovieOffset, i3, this.movieWindowHolder);
                                     warMedia = warMedia2;
                                 } else {
-                                    WarMedia warMedia3 = this;
-                                    PlayMovie(warMedia3.currentMovieFilename, 1.0f);
-                                    warMedia = warMedia3;
+                                    warMedia = this;
+                                    PlayMovie(str2, 1.0f);
                                 }
                             } catch (Exception e3) {
                                 e = e3;
@@ -1272,11 +1279,11 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                                 warMedia.bMoviePlayerPaused = false;
                             }
                         } else {
-                            WarMedia warMedia4 = this;
-                            warMedia4.moviePlayer.release();
-                            warMedia4.moviePlayer = null;
+                            WarMedia warMedia3 = this;
+                            warMedia3.moviePlayer.release();
+                            warMedia3.moviePlayer = null;
                             ClearVidView();
-                            warMedia = warMedia4;
+                            warMedia = warMedia3;
                         }
                     } catch (Exception e4) {
                         e = e4;
@@ -1344,10 +1351,12 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             public void run() {
                 try {
                     WarMedia.this.moviePlayer = new MediaPlayer();
-                    if (assetFileDescriptor != null) {
-                        WarMedia.this.moviePlayer.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
+                    AssetFileDescriptor assetFileDescriptor2 = assetFileDescriptor;
+                    WarMedia warMedia = WarMedia.this;
+                    if (assetFileDescriptor2 != null) {
+                        warMedia.moviePlayer.setDataSource(assetFileDescriptor.getFileDescriptor(), assetFileDescriptor.getStartOffset(), assetFileDescriptor.getLength());
                     } else {
-                        WarMedia.this.moviePlayer.setDataSource(str3);
+                        warMedia.moviePlayer.setDataSource(str3);
                     }
                     int i = 0;
                     while (!WarMedia.this.IsMovieViewActive()) {
@@ -1529,7 +1538,9 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                             WarMedia.this.mSleep(1000L);
                         }
                         if (WarMedia.this.movieViewIsActive) {
-                            if (i6 > 0) {
+                            int i10 = i6;
+                            AnonymousClass16 anonymousClass16 = AnonymousClass16.this;
+                            if (i10 > 0) {
                                 WarMedia.this.PlayMovieInFile(str, f, i5, i6, WarMedia.this.movieWindowHolder);
                             } else {
                                 WarMedia.this.PlayMovie(str, f, WarMedia.this.movieWindowHolder);
@@ -1555,10 +1566,11 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
     }
 
     public void ScreenSetWakeLock(boolean z) {
+        PowerManager.WakeLock wakeLock = this.myWakeLock;
         if (z) {
-            this.myWakeLock.acquire();
+            wakeLock.acquire();
         } else {
-            this.myWakeLock.release();
+            wakeLock.release();
         }
     }
 
@@ -1682,9 +1694,11 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             @Override // java.lang.Runnable
             public void run() {
                 SurfaceView surfaceView;
-                if (WarMedia.this.customMovieSurface != null) {
-                    surfaceView = WarMedia.this.customMovieSurface;
-                } else if (WarMedia.this.noVidSurface) {
+                SurfaceView surfaceView2 = WarMedia.this.customMovieSurface;
+                WarMedia warMedia = WarMedia.this;
+                if (surfaceView2 != null) {
+                    surfaceView = warMedia.customMovieSurface;
+                } else if (warMedia.noVidSurface) {
                     return;
                 } else {
                     surfaceView = WarMedia.this.vidView;
@@ -2448,12 +2462,12 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
                     if (!Helpers.doesFileExist(WarMedia.this, expansionAPKFileName, xAPKFile.mFileSize, false)) {
                         return false;
                     }
-                    if (xAPKFile.mIsMain) {
-                        WarMedia warMedia = WarMedia.this;
+                    boolean z = xAPKFile.mIsMain;
+                    WarMedia warMedia = WarMedia.this;
+                    if (z) {
                         warMedia.expansionFileName = Helpers.generateSaveFileName(warMedia, expansionAPKFileName);
                     } else {
-                        WarMedia warMedia2 = WarMedia.this;
-                        warMedia2.patchFileName = Helpers.generateSaveFileName(warMedia2, expansionAPKFileName);
+                        warMedia.patchFileName = Helpers.generateSaveFileName(warMedia, expansionAPKFileName);
                     }
                 }
                 return true;
@@ -2462,29 +2476,24 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // android.os.AsyncTask
             public void onPostExecute(Boolean bool) {
-                WarMedia warMedia;
-                View view;
                 System.out.println("onPostExecute result " + bool);
-                if (bool.booleanValue()) {
-                    WarMedia.this.mDashboard.setVisibility(8);
+                boolean booleanValue = bool.booleanValue();
+                WarMedia warMedia = WarMedia.this;
+                if (booleanValue) {
+                    warMedia.mDashboard.setVisibility(8);
                     WarMedia.this.mCellMessage.setVisibility(8);
                     WarMedia.this.downloadView.setVisibility(8);
-                    if (WarMedia.this.view.getParent() != null) {
-                        warMedia = WarMedia.this;
-                        view = (View) warMedia.view.getParent();
-                    } else {
-                        warMedia = WarMedia.this;
-                        view = warMedia.view;
-                    }
-                    warMedia.setContentView(view);
+                    ViewParent parent = WarMedia.this.view.getParent();
+                    WarMedia warMedia2 = WarMedia.this;
+                    warMedia2.setContentView(parent != null ? (View) warMedia2.view.getParent() : warMedia2.view);
                     WarMedia.this.AfterDownloadFunction();
                 } else {
-                    WarMedia.this.mDashboard.setVisibility(0);
+                    warMedia.mDashboard.setVisibility(0);
                     WarMedia.this.mCellMessage.setVisibility(8);
                     WarMedia.this.mStatusText.setText(Helpers.GetResourceIdentifier(WarMedia.this.getApplicationContext(), "text_validation_failed", TypedValues.Custom.S_STRING));
                     WarMedia.this.mPauseButton.setOnClickListener(new View.OnClickListener() { // from class: com.wardrumstudios.utils.WarMedia.19.2
                         @Override // android.view.View.OnClickListener
-                        public void onClick(View view2) {
+                        public void onClick(View view) {
                             WarMedia.this.finish();
                         }
                     });

@@ -1,5 +1,6 @@
 package androidx.media3.exoplayer.mediacodec;
 
+import android.content.Context;
 import android.graphics.Point;
 import android.media.MediaCodecInfo;
 import android.os.Build;
@@ -14,10 +15,9 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
-import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MediaCodecInfo {
     public static final int MAX_SUPPORTED_INSTANCES_UNKNOWN = -1;
     public static final String TAG = "MediaCodecInfo";
@@ -76,8 +76,8 @@ public final class MediaCodecInfo {
         return codecCapabilities.getMaxSupportedInstances();
     }
 
-    public boolean isFormatSupported(Format format) throws MediaCodecUtil.DecoderQueryException {
-        if (isSampleMimeTypeSupported(format) && isCodecProfileAndLevelSupported(format, true) && isCompressedAudioBitDepthSupported(format)) {
+    public boolean isFormatSupported(Context context, Format format) {
+        if (isSampleMimeTypeSupported(format) && isCodecProfileAndLevelSupported(context, format, true) && isCompressedAudioBitDepthSupported(format)) {
             if (!this.isVideo) {
                 return (format.sampleRate == -1 || isAudioSampleRateSupportedV21(format.sampleRate)) && (format.channelCount == -1 || isAudioChannelCountSupportedV21(format.channelCount));
             } else if (format.width <= 0 || format.height <= 0) {
@@ -89,15 +89,15 @@ public final class MediaCodecInfo {
         return false;
     }
 
-    public boolean isFormatFunctionallySupported(Format format) {
-        return isSampleMimeTypeSupported(format) && isCodecProfileAndLevelSupported(format, false) && isCompressedAudioBitDepthSupported(format);
+    public boolean isFormatFunctionallySupported(Context context, Format format) {
+        return isSampleMimeTypeSupported(format) && isCodecProfileAndLevelSupported(context, format, false) && isCompressedAudioBitDepthSupported(format);
     }
 
     private boolean isSampleMimeTypeSupported(Format format) {
         return this.mimeType.equals(format.sampleMimeType) || this.mimeType.equals(MediaCodecUtil.getAlternativeCodecMimeType(format));
     }
 
-    private boolean isCodecProfileAndLevelSupported(Format format, boolean z) {
+    private boolean isCodecProfileAndLevelSupported(Context context, Format format, boolean z) {
         Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
         if (format.sampleMimeType != null && format.sampleMimeType.equals(MimeTypes.VIDEO_MV_HEVC)) {
             String normalizeMimeType = MimeTypes.normalizeMimeType(this.codecMimeType);
@@ -152,7 +152,7 @@ public final class MediaCodecInfo {
         if (this.isVideo || this.mimeType.equals(MimeTypes.AUDIO_AC4) || intValue == 42) {
             MediaCodecInfo.CodecProfileLevel[] profileLevels = getProfileLevels();
             if (this.mimeType.equals(MimeTypes.AUDIO_AC4) && profileLevels.length == 0) {
-                profileLevels = estimateLegacyAc4ProfileLevels(this.capabilities);
+                profileLevels = estimateLegacyAc4ProfileLevels(context, this.capabilities);
             }
             for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : profileLevels) {
                 if (codecProfileLevel.profile == intValue && ((codecProfileLevel.level >= intValue2 || !z) && !needsProfileExcludedWorkaround(this.mimeType, intValue))) {
@@ -434,10 +434,10 @@ public final class MediaCodecInfo {
         return new Point(Util.ceilDivide(i, widthAlignment) * widthAlignment, Util.ceilDivide(i2, heightAlignment) * heightAlignment);
     }
 
-    private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyAc4ProfileLevels(MediaCodecInfo.CodecCapabilities codecCapabilities) {
+    private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyAc4ProfileLevels(Context context, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         MediaCodecInfo.AudioCapabilities audioCapabilities;
         int i = ((codecCapabilities == null || (audioCapabilities = codecCapabilities.getAudioCapabilities()) == null) ? 2 : audioCapabilities.getMaxInputChannelCount()) > 18 ? 16 : 8;
-        return new MediaCodecInfo.CodecProfileLevel[]{MediaCodecUtil.createCodecProfileLevel(257, i), MediaCodecUtil.createCodecProfileLevel(InputDeviceCompat.SOURCE_DPAD, i), MediaCodecUtil.createCodecProfileLevel(514, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_DRM_KEYS_REMOVED, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_PLAYER_RELEASED, i)};
+        return Util.isAutomotive(context) ? new MediaCodecInfo.CodecProfileLevel[]{MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_DRM_KEYS_REMOVED, i)} : new MediaCodecInfo.CodecProfileLevel[]{MediaCodecUtil.createCodecProfileLevel(257, i), MediaCodecUtil.createCodecProfileLevel(InputDeviceCompat.SOURCE_DPAD, i), MediaCodecUtil.createCodecProfileLevel(514, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_DRM_KEYS_REMOVED, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_PLAYER_RELEASED, i)};
     }
 
     private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyVp9ProfileLevels(MediaCodecInfo.CodecCapabilities codecCapabilities) {

@@ -58,19 +58,15 @@ final class MouseWheelScrollingLogic$busyReceive$2$job$1 extends SuspendLambda i
             if (MonotonicFrameClockKt.withFrameNanos(new Function1() { // from class: androidx.compose.foundation.gestures.MouseWheelScrollingLogic$busyReceive$2$job$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = MouseWheelScrollingLogic$busyReceive$2$job$1.invokeSuspend$lambda$0(((Long) obj2).longValue());
-                    return invokeSuspend$lambda$0;
+                    Unit unit;
+                    ((Long) obj2).longValue();
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         }
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$0(long j) {
         return Unit.INSTANCE;
     }
 }

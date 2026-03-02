@@ -91,9 +91,7 @@ public final class ReflectionUtils {
             if (!validateReflection$window_release(implementation.getName() + '#' + method.getName() + " is not valid", new Function0() { // from class: androidx.window.reflection.ReflectionUtils$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean validateImplementation$lambda$1$lambda$0;
-                    validateImplementation$lambda$1$lambda$0 = ReflectionUtils.validateImplementation$lambda$1$lambda$0(implementation, method);
-                    return Boolean.valueOf(validateImplementation$lambda$1$lambda$0);
+                    return Boolean.valueOf(ReflectionUtils.validateImplementation$lambda$1$lambda$0(implementation, method));
                 }
             })) {
                 return false;
@@ -102,7 +100,7 @@ public final class ReflectionUtils {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean validateImplementation$lambda$1$lambda$0(Class cls, Method method) {
         String name = method.getName();
         Class<?>[] parameterTypes = method.getParameterTypes();

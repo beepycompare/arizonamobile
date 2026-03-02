@@ -62,11 +62,13 @@ public class zzmb<MessageType extends zzmf<MessageType, BuilderType>, BuilderTyp
     @Override // com.google.android.gms.internal.measurement.zznl
     /* renamed from: zzbb */
     public MessageType zzbf() {
-        if (this.zza.zzcf()) {
-            this.zza.zzcj();
+        boolean zzcf = this.zza.zzcf();
+        MessageType messagetype = (MessageType) this.zza;
+        if (zzcf) {
+            messagetype.zzcj();
             return (MessageType) this.zza;
         }
-        return (MessageType) this.zza;
+        return messagetype;
     }
 
     public final MessageType zzbc() {

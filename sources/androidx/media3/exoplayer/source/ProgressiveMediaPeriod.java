@@ -149,7 +149,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.onContinueLoadingRequestedRunnable = new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9014x97cae34d();
+                ProgressiveMediaPeriod.this.m8292x97cae34d();
             }
         };
         this.handler = Util.createHandlerForCurrentLooper();
@@ -162,7 +162,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-source-ProgressiveMediaPeriod  reason: not valid java name */
-    public /* synthetic */ void m9014x97cae34d() {
+    public /* synthetic */ void m8292x97cae34d() {
         if (this.released) {
             return;
         }
@@ -194,7 +194,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.callback = callback;
         if (this.singleTrackFormat != null) {
             track(this.singleTrackId, 3).format(this.singleTrackFormat);
-            m9016x33ac0ff2(new IndexSeekMap(new long[]{0}, new long[]{0}, C.TIME_UNSET));
+            m8294x33ac0ff2(new IndexSeekMap(new long[]{0}, new long[]{0}, C.TIME_UNSET));
             endTracks();
             this.pendingResetPositionUs = j;
             return;
@@ -599,7 +599,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9016x33ac0ff2(seekMap);
+                ProgressiveMediaPeriod.this.m8294x33ac0ff2(seekMap);
             }
         });
     }
@@ -618,14 +618,14 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9015xa2bd730d();
+                ProgressiveMediaPeriod.this.m8293xa2bd730d();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onLengthKnown$2$androidx-media3-exoplayer-source-ProgressiveMediaPeriod  reason: not valid java name */
-    public /* synthetic */ void m9015xa2bd730d() {
+    public /* synthetic */ void m8293xa2bd730d() {
         this.isLengthKnown = true;
     }
 
@@ -658,7 +658,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setSeekMap */
-    public void m9016x33ac0ff2(SeekMap seekMap) {
+    public void m8294x33ac0ff2(SeekMap seekMap) {
         this.seekMap = this.icyHeaders == null ? seekMap : new SeekMap.Unseekable(C.TIME_UNSET);
         this.durationUs = seekMap.getDurationUs();
         boolean z = !this.isLengthKnown && seekMap.getDurationUs() == C.TIME_UNSET;

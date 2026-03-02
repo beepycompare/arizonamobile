@@ -54,9 +54,10 @@ public final class zacc extends zap {
             return;
         }
         int isGooglePlayServicesAvailable = this.zac.isGooglePlayServicesAvailable(lifecycleActivity);
+        TaskCompletionSource taskCompletionSource = this.zad;
         if (isGooglePlayServicesAvailable == 0) {
-            this.zad.trySetResult(null);
-        } else if (this.zad.getTask().isComplete()) {
+            taskCompletionSource.trySetResult(null);
+        } else if (taskCompletionSource.getTask().isComplete()) {
         } else {
             zah(new ConnectionResult(isGooglePlayServicesAvailable, null), 0);
         }

@@ -309,10 +309,12 @@ public final class ImmutableRangeSet<C extends Comparable> extends AbstractRange
             return this.ranges;
         }
         final int binarySearch = range.hasLowerBound() ? SortedLists.binarySearch(this.ranges, new ImmutableRangeMap$$ExternalSyntheticLambda0(), range.lowerBound, SortedLists.KeyPresentBehavior.FIRST_AFTER, SortedLists.KeyAbsentBehavior.NEXT_HIGHER) : 0;
-        if (range.hasUpperBound()) {
-            size = SortedLists.binarySearch(this.ranges, new ImmutableRangeMap$$ExternalSyntheticLambda1(), range.upperBound, SortedLists.KeyPresentBehavior.FIRST_PRESENT, SortedLists.KeyAbsentBehavior.NEXT_HIGHER);
+        boolean hasUpperBound = range.hasUpperBound();
+        ImmutableList<Range<C>> immutableList = this.ranges;
+        if (hasUpperBound) {
+            size = SortedLists.binarySearch(immutableList, new ImmutableRangeMap$$ExternalSyntheticLambda1(), range.upperBound, SortedLists.KeyPresentBehavior.FIRST_PRESENT, SortedLists.KeyAbsentBehavior.NEXT_HIGHER);
         } else {
-            size = this.ranges.size();
+            size = immutableList.size();
         }
         final int i = size - binarySearch;
         if (i == 0) {
@@ -526,10 +528,12 @@ public final class ImmutableRangeSet<C extends Comparable> extends AbstractRange
                 long j = 0;
                 while (it.hasNext()) {
                     Range range = (Range) it.next();
-                    if (range.contains(comparable)) {
-                        return Ints.saturatedCast(j + ContiguousSet.create(range, this.domain).indexOf(comparable));
+                    boolean contains = range.contains(comparable);
+                    DiscreteDomain<C> discreteDomain = this.domain;
+                    if (contains) {
+                        return Ints.saturatedCast(j + ContiguousSet.create(range, discreteDomain).indexOf(comparable));
                     }
-                    j += ContiguousSet.create(range, this.domain).size();
+                    j += ContiguousSet.create(range, discreteDomain).size();
                 }
                 throw new AssertionError("impossible");
             }

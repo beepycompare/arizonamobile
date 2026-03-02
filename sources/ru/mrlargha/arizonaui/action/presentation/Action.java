@@ -19,7 +19,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 /* compiled from: Action.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u001eB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u0006J\u0010\u0010\u0017\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\u0006\u0010\u001a\u001a\u00020\u0012J\u0018\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u001d\u001a\u00020\u0006H\u0016R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizonaui/action/presentation/Action;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "action", "Landroid/widget/RelativeLayout;", "getAction", "()Landroid/widget/RelativeLayout;", "actionBinding", "Lru/mrlargha/arizonaui/databinding/ActionBinding;", "getActionBinding", "()Lru/mrlargha/arizonaui/databinding/ActionBinding;", "setAction", "", "text", "", "setProgress", "time", "onPause", "owner", "Landroidx/lifecycle/LifecycleOwner;", "hideView", "onBackendMessage", "data", "subId", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u001eB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0016\u001a\u00020\u0006J\u0010\u0010\u0017\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\u0006\u0010\u001a\u001a\u00020\u0012J\u0018\u0010\u001b\u001a\u00020\u00122\u0006\u0010\u001c\u001a\u00020\u00142\u0006\u0010\u001d\u001a\u00020\u0006H\u0016R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizonaui/action/presentation/Action;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Landroidx/lifecycle/DefaultLifecycleObserver;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "action", "Landroid/widget/RelativeLayout;", "getAction", "()Landroid/widget/RelativeLayout;", "actionBinding", "Lru/mrlargha/arizonaui/databinding/ActionBinding;", "getActionBinding", "()Lru/mrlargha/arizonaui/databinding/ActionBinding;", "setAction", "", "text", "", "setProgress", "time", "onPause", "owner", "Landroidx/lifecycle/LifecycleOwner;", "hideView", "onBackendMessage", "data", "subId", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Action extends SAMPUIElement implements DefaultLifecycleObserver {
     private final RelativeLayout action;
@@ -94,27 +94,21 @@ public final class Action extends SAMPUIElement implements DefaultLifecycleObser
         getTargetActivity().runOnUiThread(new Runnable() { // from class: ru.mrlargha.arizonaui.action.presentation.Action$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Action.setProgress$lambda$0(j, j2, this, intRef);
+                new CountDownTimer(j, j2) { // from class: ru.mrlargha.arizonaui.action.presentation.Action$setProgress$1$1
+                    @Override // android.os.CountDownTimer
+                    public void onTick(long j3) {
+                        r5.getActionBinding().actionPgb.setProgress(r6.element);
+                        r5.getActionBinding().actionPercent.setText(r6.element + "%");
+                        r6.element++;
+                    }
+
+                    @Override // android.os.CountDownTimer
+                    public void onFinish() {
+                        r5.hideView();
+                    }
+                }.start();
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r0v0, types: [ru.mrlargha.arizonaui.action.presentation.Action$setProgress$1$1] */
-    public static final void setProgress$lambda$0(final long j, final long j2, final Action action, final Ref.IntRef intRef) {
-        new CountDownTimer(j, j2) { // from class: ru.mrlargha.arizonaui.action.presentation.Action$setProgress$1$1
-            @Override // android.os.CountDownTimer
-            public void onTick(long j3) {
-                action.getActionBinding().actionPgb.setProgress(intRef.element);
-                action.getActionBinding().actionPercent.setText(intRef.element + "%");
-                intRef.element++;
-            }
-
-            @Override // android.os.CountDownTimer
-            public void onFinish() {
-                action.hideView();
-            }
-        }.start();
     }
 
     @Override // androidx.lifecycle.DefaultLifecycleObserver
@@ -140,7 +134,7 @@ public final class Action extends SAMPUIElement implements DefaultLifecycleObser
     }
 
     /* compiled from: Action.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/action/presentation/Action$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/action/presentation/Action$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_ACTION);

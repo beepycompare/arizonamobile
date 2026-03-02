@@ -56,15 +56,19 @@ public class ExecutorDelivery implements ResponseDelivery {
                 this.mRequest.finish("canceled-at-delivery");
                 return;
             }
-            if (this.mResponse.isSuccess()) {
-                this.mRequest.deliverResponse(this.mResponse.result);
+            boolean isSuccess = this.mResponse.isSuccess();
+            Request request = this.mRequest;
+            if (isSuccess) {
+                request.deliverResponse(this.mResponse.result);
             } else {
-                this.mRequest.deliverError(this.mResponse.error);
+                request.deliverError(this.mResponse.error);
             }
-            if (this.mResponse.intermediate) {
-                this.mRequest.addMarker("intermediate-response");
+            boolean z = this.mResponse.intermediate;
+            Request request2 = this.mRequest;
+            if (z) {
+                request2.addMarker("intermediate-response");
             } else {
-                this.mRequest.finish("done");
+                request2.finish("done");
             }
             Runnable runnable = this.mRunnable;
             if (runnable != null) {

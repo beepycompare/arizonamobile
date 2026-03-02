@@ -12,13 +12,11 @@ public final class SelectionRegistrarKt {
     private static final ProvidableCompositionLocal<SelectionRegistrar> LocalSelectionRegistrar = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SelectionRegistrar LocalSelectionRegistrar$lambda$0;
-            LocalSelectionRegistrar$lambda$0 = SelectionRegistrarKt.LocalSelectionRegistrar$lambda$0();
-            return LocalSelectionRegistrar$lambda$0;
+            return SelectionRegistrarKt.LocalSelectionRegistrar$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SelectionRegistrar LocalSelectionRegistrar$lambda$0() {
         return null;
     }

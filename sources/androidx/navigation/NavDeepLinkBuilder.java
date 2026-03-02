@@ -60,16 +60,12 @@ public final class NavDeepLinkBuilder {
         Activity activity = (Activity) SequencesKt.firstOrNull(SequencesKt.mapNotNull(SequencesKt.generateSequence(context, new Function1() { // from class: androidx.navigation.NavDeepLinkBuilder$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Context activity$lambda$0;
-                activity$lambda$0 = NavDeepLinkBuilder.activity$lambda$0((Context) obj);
-                return activity$lambda$0;
+                return NavDeepLinkBuilder.activity$lambda$0((Context) obj);
             }
         }), new Function1() { // from class: androidx.navigation.NavDeepLinkBuilder$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Activity activity$lambda$1;
-                activity$lambda$1 = NavDeepLinkBuilder.activity$lambda$1((Context) obj);
-                return activity$lambda$1;
+                return NavDeepLinkBuilder.activity$lambda$1((Context) obj);
             }
         }));
         this.activity = activity;
@@ -299,16 +295,16 @@ public final class NavDeepLinkBuilder {
 
     public final PendingIntent createPendingIntent() {
         Bundle bundle = this.globalArgs;
-        int m9212contentDeepHashCodeimpl = bundle != null ? SavedStateReader.m9212contentDeepHashCodeimpl(SavedStateReader.m9209constructorimpl(bundle)) : 0;
+        int m8417contentDeepHashCodeimpl = bundle != null ? SavedStateReader.m8417contentDeepHashCodeimpl(SavedStateReader.m8414constructorimpl(bundle)) : 0;
         for (DeepLinkDestination deepLinkDestination : this.destinations) {
-            m9212contentDeepHashCodeimpl = (m9212contentDeepHashCodeimpl * 31) + deepLinkDestination.getDestinationId();
+            m8417contentDeepHashCodeimpl = (m8417contentDeepHashCodeimpl * 31) + deepLinkDestination.getDestinationId();
             Bundle arguments = deepLinkDestination.getArguments();
-            Integer valueOf = arguments != null ? Integer.valueOf(SavedStateReader.m9212contentDeepHashCodeimpl(SavedStateReader.m9209constructorimpl(arguments))) : null;
+            Integer valueOf = arguments != null ? Integer.valueOf(SavedStateReader.m8417contentDeepHashCodeimpl(SavedStateReader.m8414constructorimpl(arguments))) : null;
             if (valueOf != null) {
-                m9212contentDeepHashCodeimpl = (m9212contentDeepHashCodeimpl * 31) + valueOf.intValue();
+                m8417contentDeepHashCodeimpl = (m8417contentDeepHashCodeimpl * 31) + valueOf.intValue();
             }
         }
-        PendingIntent pendingIntent = createTaskStackBuilder().getPendingIntent(m9212contentDeepHashCodeimpl, 201326592);
+        PendingIntent pendingIntent = createTaskStackBuilder().getPendingIntent(m8417contentDeepHashCodeimpl, 201326592);
         Intrinsics.checkNotNull(pendingIntent);
         return pendingIntent;
     }

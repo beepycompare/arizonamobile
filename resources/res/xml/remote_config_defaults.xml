@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <defaults>
     <entry>
-        <key>launcher_background
+        <key>reserve_resource
         </key>
-        <value>/assets/images/mobile_launcher/background.webp
+        <value>https://resources.azgames-cdn.ru/
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_server_api
+        </key>
+        <value>https://server-api.azgames-cdn.ru/
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_sound
+        </key>
+        <value>https://azgamesound-cdn.ru/
         </value>
     </entry>
     <entry>
@@ -31,6 +43,12 @@
         </value>
     </entry>
     <entry>
+        <key>launcher_background
+        </key>
+        <value>/assets/images/mobile_launcher/background.webp
+        </value>
+    </entry>
+    <entry>
         <key>reserve_channel_rodina
         </key>
         <value>https://rod-mob.react-group.tech
@@ -55,12 +73,6 @@
         </value>
     </entry>
     <entry>
-        <key>reserve_resource
-        </key>
-        <value>https://reserve-cdn.azresources.cloud/
-        </value>
-    </entry>
-    <entry>
         <key>main_channel_rodina
         </key>
         <value>https://mob.azinternal.com
@@ -79,12 +91,6 @@
         </value>
     </entry>
     <entry>
-        <key>reserve_server_api
-        </key>
-        <value>https://reserve-server-api.arizona.games/
-        </value>
-    </entry>
-    <entry>
         <key>reserve_hud_ping
         </key>
         <value>https://arz-reserve.samp-dl.com/
@@ -94,12 +100,6 @@
         <key>main_resource
         </key>
         <value>https://cdn.azresources.cloud/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_sound
-        </key>
-        <value>https://reserve-cdn.azsounds.net/
         </value>
     </entry>
     <entry>

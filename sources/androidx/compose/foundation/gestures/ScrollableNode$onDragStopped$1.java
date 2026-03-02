@@ -48,7 +48,7 @@ final class ScrollableNode$onDragStopped$1 extends SuspendLambda implements Func
             float f = this.$event.isIndirectPointerEvent() ? -1.0f : 1.0f;
             scrollingLogic = this.this$0.scrollingLogic;
             this.label = 1;
-            if (scrollingLogic.m669onScrollStoppedBMRW4eQ(Velocity.m8502timesadjELrA(this.$event.m525getVelocity9UxMQ8M(), f), false, this) == coroutine_suspended) {
+            if (scrollingLogic.m586onScrollStoppedBMRW4eQ(Velocity.m7799timesadjELrA(this.$event.m456getVelocity9UxMQ8M(), f), false, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

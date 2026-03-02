@@ -107,13 +107,13 @@ public final class Dispatchers {
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$mainDispatcher$2.AnonymousClass1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0):ru.rustore.sdk.reactive.core.Disposable");
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final void executeDelayed$lambda$0(Function0 tmp0) {
                 Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
                 tmp0.invoke();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final void execute$lambda$1(Function0 tmp0) {
                 Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
                 tmp0.invoke();
@@ -238,7 +238,7 @@ public final class Dispatchers {
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.AnonymousClass1.executeDelayed(long, java.util.concurrent.TimeUnit, kotlin.jvm.functions.Function0):ru.rustore.sdk.reactive.core.Disposable");
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final void executeDelayed$lambda$1(final Function0 block) {
                 ThreadPoolExecutor threadPool;
                 Intrinsics.checkNotNullParameter(block, "$block");
@@ -292,13 +292,13 @@ public final class Dispatchers {
                 throw new UnsupportedOperationException("Method not decompiled: ru.rustore.sdk.reactive.core.Dispatchers$ioDispatcher$2.AnonymousClass1.executeDelayed$lambda$1(kotlin.jvm.functions.Function0):void");
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final void executeDelayed$lambda$1$lambda$0(Function0 tmp0) {
                 Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
                 tmp0.invoke();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final void execute$lambda$2(Function0 tmp0) {
                 Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
                 tmp0.invoke();

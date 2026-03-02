@@ -107,16 +107,14 @@ public abstract class Navigator<D extends NavDestination> {
         for (NavBackStackEntry navBackStackEntry : SequencesKt.filterNotNull(SequencesKt.map(CollectionsKt.asSequence(entries), new Function1() { // from class: androidx.navigation.Navigator$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                NavBackStackEntry navigate$lambda$1;
-                navigate$lambda$1 = Navigator.navigate$lambda$1(Navigator.this, navOptions, extras, (NavBackStackEntry) obj);
-                return navigate$lambda$1;
+                return Navigator.navigate$lambda$1(Navigator.this, navOptions, extras, (NavBackStackEntry) obj);
             }
         }))) {
             getState().push(navBackStackEntry);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final NavBackStackEntry navigate$lambda$1(Navigator navigator, NavOptions navOptions, Extras extras, NavBackStackEntry backStackEntry) {
         NavDestination navigate;
@@ -144,15 +142,13 @@ public abstract class Navigator<D extends NavDestination> {
         navigate(destination, null, NavOptionsBuilderKt.navOptions(new Function1() { // from class: androidx.navigation.Navigator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onLaunchSingleTop$lambda$3;
-                onLaunchSingleTop$lambda$3 = Navigator.onLaunchSingleTop$lambda$3((NavOptionsBuilder) obj);
-                return onLaunchSingleTop$lambda$3;
+                return Navigator.onLaunchSingleTop$lambda$3((NavOptionsBuilder) obj);
             }
         }), null);
         getState().onLaunchSingleTop(backStackEntry);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onLaunchSingleTop$lambda$3(NavOptionsBuilder navOptions) {
         Intrinsics.checkNotNullParameter(navOptions, "$this$navOptions");
         navOptions.setLaunchSingleTop(true);

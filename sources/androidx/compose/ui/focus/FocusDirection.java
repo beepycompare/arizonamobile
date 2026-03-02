@@ -10,50 +10,50 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FocusDirection {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Next = m5052constructorimpl(1);
-    private static final int Previous = m5052constructorimpl(2);
-    private static final int Left = m5052constructorimpl(3);
-    private static final int Right = m5052constructorimpl(4);
-    private static final int Up = m5052constructorimpl(5);
-    private static final int Down = m5052constructorimpl(6);
-    private static final int Enter = m5052constructorimpl(7);
-    private static final int Exit = m5052constructorimpl(8);
+    private static final int Next = m4400constructorimpl(1);
+    private static final int Previous = m4400constructorimpl(2);
+    private static final int Left = m4400constructorimpl(3);
+    private static final int Right = m4400constructorimpl(4);
+    private static final int Up = m4400constructorimpl(5);
+    private static final int Down = m4400constructorimpl(6);
+    private static final int Enter = m4400constructorimpl(7);
+    private static final int Exit = m4400constructorimpl(8);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FocusDirection m5051boximpl(int i) {
+    public static final /* synthetic */ FocusDirection m4399boximpl(int i) {
         return new FocusDirection(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m5052constructorimpl(int i) {
+    public static int m4400constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5053equalsimpl(int i, Object obj) {
-        return (obj instanceof FocusDirection) && i == ((FocusDirection) obj).m5057unboximpl();
+    public static boolean m4401equalsimpl(int i, Object obj) {
+        return (obj instanceof FocusDirection) && i == ((FocusDirection) obj).m4405unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m5054equalsimpl0(int i, int i2) {
+    public static final boolean m4402equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5055hashCodeimpl(int i) {
+    public static int m4403hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m5053equalsimpl(this.value, obj);
+        return m4401equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5055hashCodeimpl(this.value);
+        return m4403hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m5057unboximpl() {
+    public final /* synthetic */ int m4405unboximpl() {
         return this.value;
     }
 
@@ -62,12 +62,12 @@ public final class FocusDirection {
     }
 
     public String toString() {
-        return m5056toStringimpl(this.value);
+        return m4404toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5056toStringimpl(int i) {
-        return m5054equalsimpl0(i, Next) ? "Next" : m5054equalsimpl0(i, Previous) ? "Previous" : m5054equalsimpl0(i, Left) ? "Left" : m5054equalsimpl0(i, Right) ? "Right" : m5054equalsimpl0(i, Up) ? "Up" : m5054equalsimpl0(i, Down) ? "Down" : m5054equalsimpl0(i, Enter) ? "Enter" : m5054equalsimpl0(i, Exit) ? "Exit" : "Invalid FocusDirection";
+    public static String m4404toStringimpl(int i) {
+        return m4402equalsimpl0(i, Next) ? "Next" : m4402equalsimpl0(i, Previous) ? "Previous" : m4402equalsimpl0(i, Left) ? "Left" : m4402equalsimpl0(i, Right) ? "Right" : m4402equalsimpl0(i, Up) ? "Up" : m4402equalsimpl0(i, Down) ? "Down" : m4402equalsimpl0(i, Enter) ? "Enter" : m4402equalsimpl0(i, Exit) ? "Exit" : "Invalid FocusDirection";
     }
 
     /* compiled from: FocusDirection.kt */
@@ -82,42 +82,42 @@ public final class FocusDirection {
         }
 
         /* renamed from: getNext-dhqQ-8s  reason: not valid java name */
-        public final int m5062getNextdhqQ8s() {
+        public final int m4410getNextdhqQ8s() {
             return FocusDirection.Next;
         }
 
         /* renamed from: getPrevious-dhqQ-8s  reason: not valid java name */
-        public final int m5063getPreviousdhqQ8s() {
+        public final int m4411getPreviousdhqQ8s() {
             return FocusDirection.Previous;
         }
 
         /* renamed from: getLeft-dhqQ-8s  reason: not valid java name */
-        public final int m5061getLeftdhqQ8s() {
+        public final int m4409getLeftdhqQ8s() {
             return FocusDirection.Left;
         }
 
         /* renamed from: getRight-dhqQ-8s  reason: not valid java name */
-        public final int m5064getRightdhqQ8s() {
+        public final int m4412getRightdhqQ8s() {
             return FocusDirection.Right;
         }
 
         /* renamed from: getUp-dhqQ-8s  reason: not valid java name */
-        public final int m5065getUpdhqQ8s() {
+        public final int m4413getUpdhqQ8s() {
             return FocusDirection.Up;
         }
 
         /* renamed from: getDown-dhqQ-8s  reason: not valid java name */
-        public final int m5058getDowndhqQ8s() {
+        public final int m4406getDowndhqQ8s() {
             return FocusDirection.Down;
         }
 
         /* renamed from: getEnter-dhqQ-8s  reason: not valid java name */
-        public final int m5059getEnterdhqQ8s() {
+        public final int m4407getEnterdhqQ8s() {
             return FocusDirection.Enter;
         }
 
         /* renamed from: getExit-dhqQ-8s  reason: not valid java name */
-        public final int m5060getExitdhqQ8s() {
+        public final int m4408getExitdhqQ8s() {
             return FocusDirection.Exit;
         }
     }

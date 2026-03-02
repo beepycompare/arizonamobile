@@ -24,7 +24,8 @@ public final class FlowableFromFuture<T> extends Flowable<T> {
         subscriber.onSubscribe(deferredScalarSubscription);
         try {
             TimeUnit timeUnit = this.unit;
-            T t = timeUnit != null ? this.future.get(this.timeout, timeUnit) : this.future.get();
+            Future<? extends T> future = this.future;
+            T t = timeUnit != null ? future.get(this.timeout, timeUnit) : future.get();
             if (t == null) {
                 subscriber.onError(new NullPointerException("The future returned null"));
             } else {

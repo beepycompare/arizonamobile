@@ -22,13 +22,13 @@ public final class Shapes_androidKt {
         return roundedPolygon.transformed(new PointTransformer() { // from class: androidx.graphics.shapes.Shapes_androidKt$transformed$1
             @Override // androidx.graphics.shapes.PointTransformer
             /* renamed from: transform-XgqJiTY */
-            public final long mo8830transformXgqJiTY(float f, float f2) {
+            public final long mo8115transformXgqJiTY(float f, float f2) {
                 float[] fArr2 = fArr;
                 fArr2[0] = f;
                 fArr2[1] = f2;
                 matrix.mapPoints(fArr2);
                 float[] fArr3 = fArr;
-                return FloatFloatPair.m25constructorimpl(fArr3[0], fArr3[1]);
+                return FloatFloatPair.m12constructorimpl(fArr3[0], fArr3[1]);
             }
         });
     }

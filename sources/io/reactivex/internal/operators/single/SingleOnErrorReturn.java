@@ -35,16 +35,18 @@ public final class SingleOnErrorReturn<T> extends Single<T> {
         @Override // io.reactivex.SingleObserver
         public void onError(Throwable th) {
             T apply;
-            if (SingleOnErrorReturn.this.valueSupplier != null) {
+            Function<? super Throwable, ? extends T> function = SingleOnErrorReturn.this.valueSupplier;
+            SingleOnErrorReturn singleOnErrorReturn = SingleOnErrorReturn.this;
+            if (function != null) {
                 try {
-                    apply = SingleOnErrorReturn.this.valueSupplier.apply(th);
+                    apply = singleOnErrorReturn.valueSupplier.apply(th);
                 } catch (Throwable th2) {
                     Exceptions.throwIfFatal(th2);
                     this.observer.onError(new CompositeException(th, th2));
                     return;
                 }
             } else {
-                apply = SingleOnErrorReturn.this.value;
+                apply = singleOnErrorReturn.value;
             }
             if (apply == null) {
                 NullPointerException nullPointerException = new NullPointerException("Value supplied was null");

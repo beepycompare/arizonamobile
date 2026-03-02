@@ -635,30 +635,33 @@ public final class CodedOutputStream {
         int remaining = byteBuffer.remaining();
         int i = this.limit;
         int i2 = this.position;
-        if (i - i2 >= remaining) {
-            byteBuffer.get(this.buffer, i2, remaining);
+        int i3 = i - i2;
+        byte[] bArr = this.buffer;
+        if (i3 >= remaining) {
+            byteBuffer.get(bArr, i2, remaining);
             this.position += remaining;
             this.totalBytesWritten += remaining;
             return;
         }
-        int i3 = i - i2;
-        byteBuffer.get(this.buffer, i2, i3);
-        int i4 = remaining - i3;
+        int i4 = i - i2;
+        byteBuffer.get(bArr, i2, i4);
+        int i5 = remaining - i4;
         this.position = this.limit;
-        this.totalBytesWritten += i3;
+        this.totalBytesWritten += i4;
         refreshBuffer();
         while (true) {
-            int i5 = this.limit;
-            if (i4 > i5) {
-                byteBuffer.get(this.buffer, 0, i5);
+            int i6 = this.limit;
+            byte[] bArr2 = this.buffer;
+            if (i5 > i6) {
+                byteBuffer.get(bArr2, 0, i6);
                 this.output.write(this.buffer, 0, this.limit);
-                int i6 = this.limit;
-                i4 -= i6;
-                this.totalBytesWritten += i6;
+                int i7 = this.limit;
+                i5 -= i7;
+                this.totalBytesWritten += i7;
             } else {
-                byteBuffer.get(this.buffer, 0, i4);
-                this.position = i4;
-                this.totalBytesWritten += i4;
+                byteBuffer.get(bArr2, 0, i5);
+                this.position = i5;
+                this.totalBytesWritten += i5;
                 return;
             }
         }
@@ -667,51 +670,55 @@ public final class CodedOutputStream {
     public void writeRawBytes(byte[] bArr, int i, int i2) throws IOException {
         int i3 = this.limit;
         int i4 = this.position;
-        if (i3 - i4 >= i2) {
-            System.arraycopy(bArr, i, this.buffer, i4, i2);
+        int i5 = i3 - i4;
+        byte[] bArr2 = this.buffer;
+        if (i5 >= i2) {
+            System.arraycopy(bArr, i, bArr2, i4, i2);
             this.position += i2;
             this.totalBytesWritten += i2;
             return;
         }
-        int i5 = i3 - i4;
-        System.arraycopy(bArr, i, this.buffer, i4, i5);
-        int i6 = i + i5;
-        int i7 = i2 - i5;
+        int i6 = i3 - i4;
+        System.arraycopy(bArr, i, bArr2, i4, i6);
+        int i7 = i + i6;
+        int i8 = i2 - i6;
         this.position = this.limit;
-        this.totalBytesWritten += i5;
+        this.totalBytesWritten += i6;
         refreshBuffer();
-        if (i7 <= this.limit) {
-            System.arraycopy(bArr, i6, this.buffer, 0, i7);
-            this.position = i7;
+        if (i8 <= this.limit) {
+            System.arraycopy(bArr, i7, this.buffer, 0, i8);
+            this.position = i8;
         } else {
-            this.output.write(bArr, i6, i7);
+            this.output.write(bArr, i7, i8);
         }
-        this.totalBytesWritten += i7;
+        this.totalBytesWritten += i8;
     }
 
     public void writeRawBytes(ByteString byteString, int i, int i2) throws IOException {
         int i3 = this.limit;
         int i4 = this.position;
-        if (i3 - i4 >= i2) {
-            byteString.copyTo(this.buffer, i, i4, i2);
+        int i5 = i3 - i4;
+        byte[] bArr = this.buffer;
+        if (i5 >= i2) {
+            byteString.copyTo(bArr, i, i4, i2);
             this.position += i2;
             this.totalBytesWritten += i2;
             return;
         }
-        int i5 = i3 - i4;
-        byteString.copyTo(this.buffer, i, i4, i5);
-        int i6 = i + i5;
-        int i7 = i2 - i5;
+        int i6 = i3 - i4;
+        byteString.copyTo(bArr, i, i4, i6);
+        int i7 = i + i6;
+        int i8 = i2 - i6;
         this.position = this.limit;
-        this.totalBytesWritten += i5;
+        this.totalBytesWritten += i6;
         refreshBuffer();
-        if (i7 <= this.limit) {
-            byteString.copyTo(this.buffer, i6, 0, i7);
-            this.position = i7;
+        if (i8 <= this.limit) {
+            byteString.copyTo(this.buffer, i7, 0, i8);
+            this.position = i8;
         } else {
-            byteString.writeTo(this.output, i6, i7);
+            byteString.writeTo(this.output, i7, i8);
         }
-        this.totalBytesWritten += i7;
+        this.totalBytesWritten += i8;
     }
 
     public void writeTag(int i, int i2) throws IOException {

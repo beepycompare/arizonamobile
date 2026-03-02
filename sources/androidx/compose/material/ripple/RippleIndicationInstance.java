@@ -27,14 +27,12 @@ public abstract class RippleIndicationInstance implements IndicationInstance {
         this.stateLayer = new StateLayer(z, new Function0() { // from class: androidx.compose.material.ripple.RippleIndicationInstance$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                RippleAlpha stateLayer$lambda$0;
-                stateLayer$lambda$0 = RippleIndicationInstance.stateLayer$lambda$0(State.this);
-                return stateLayer$lambda$0;
+                return RippleIndicationInstance.stateLayer$lambda$0(State.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final RippleAlpha stateLayer$lambda$0(State state) {
         return (RippleAlpha) state.getValue();
     }
@@ -44,14 +42,14 @@ public abstract class RippleIndicationInstance implements IndicationInstance {
     }
 
     /* renamed from: drawStateLayer-H2RKhps  reason: not valid java name */
-    public final void m1949drawStateLayerH2RKhps(DrawScope drawScope, float f, long j) {
+    public final void m1686drawStateLayerH2RKhps(DrawScope drawScope, float f, long j) {
         float f2;
         StateLayer stateLayer = this.stateLayer;
         if (Float.isNaN(f)) {
-            f2 = RippleAnimationKt.m1943getRippleEndRadiuscSwnlzA(drawScope, this.bounded, drawScope.mo6005getSizeNHjbRc());
+            f2 = RippleAnimationKt.m1682getRippleEndRadiuscSwnlzA(drawScope, this.bounded, drawScope.mo5346getSizeNHjbRc());
         } else {
-            f2 = drawScope.mo464toPx0680j_4(f);
+            f2 = drawScope.mo405toPx0680j_4(f);
         }
-        stateLayer.m1957drawStateLayermxwnekA(drawScope, f2, j);
+        stateLayer.m1694drawStateLayermxwnekA(drawScope, f2, j);
     }
 }

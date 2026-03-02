@@ -416,14 +416,14 @@ public final class VideoFrameReleaseHelper {
             this.handler.postDelayed(new Runnable() { // from class: androidx.media3.exoplayer.video.VideoFrameReleaseHelper$VSyncSamplerV33$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoFrameReleaseHelper.VSyncSamplerV33.this.m9061x28d2bfdf();
+                    VideoFrameReleaseHelper.VSyncSamplerV33.this.m8339x28d2bfdf();
                 }
             }, 500L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onVsync$0$androidx-media3-exoplayer-video-VideoFrameReleaseHelper$VSyncSamplerV33  reason: not valid java name */
-        public /* synthetic */ void m9061x28d2bfdf() {
+        public /* synthetic */ void m8339x28d2bfdf() {
             this.choreographer.postVsyncCallback(this);
         }
 

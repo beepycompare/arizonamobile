@@ -153,31 +153,37 @@ public class StoriesProgressView extends LinearLayout {
 
             @Override // com.arizona.common.ui.PausableProgressBar.Callback
             public void onFinishProgress() {
-                if (StoriesProgressView.this.isReverseStart) {
-                    if (StoriesProgressView.this.storiesListener != null) {
+                boolean z = StoriesProgressView.this.isReverseStart;
+                StoriesProgressView storiesProgressView = StoriesProgressView.this;
+                if (z) {
+                    if (storiesProgressView.storiesListener != null) {
                         StoriesProgressView.this.storiesListener.onPrev();
                     }
-                    if (StoriesProgressView.this.current - 1 >= 0) {
-                        ((PausableProgressBar) StoriesProgressView.this.progressBars.get(StoriesProgressView.this.current - 1)).setMinWithoutCallback();
+                    int i2 = StoriesProgressView.this.current - 1;
+                    StoriesProgressView storiesProgressView2 = StoriesProgressView.this;
+                    if (i2 >= 0) {
+                        ((PausableProgressBar) storiesProgressView2.progressBars.get(StoriesProgressView.this.current - 1)).setMinWithoutCallback();
                         List list = StoriesProgressView.this.progressBars;
-                        StoriesProgressView storiesProgressView = StoriesProgressView.this;
-                        int i2 = storiesProgressView.current - 1;
-                        storiesProgressView.current = i2;
-                        ((PausableProgressBar) list.get(i2)).startProgress();
+                        StoriesProgressView storiesProgressView3 = StoriesProgressView.this;
+                        int i3 = storiesProgressView3.current - 1;
+                        storiesProgressView3.current = i3;
+                        ((PausableProgressBar) list.get(i3)).startProgress();
                     } else {
-                        ((PausableProgressBar) StoriesProgressView.this.progressBars.get(StoriesProgressView.this.current)).startProgress();
+                        ((PausableProgressBar) storiesProgressView2.progressBars.get(StoriesProgressView.this.current)).startProgress();
                     }
                     StoriesProgressView.this.isReverseStart = false;
                     return;
                 }
-                int i3 = StoriesProgressView.this.current + 1;
-                if (i3 <= StoriesProgressView.this.progressBars.size() - 1) {
-                    if (StoriesProgressView.this.storiesListener != null) {
+                int i4 = storiesProgressView.current + 1;
+                int size = StoriesProgressView.this.progressBars.size() - 1;
+                StoriesProgressView storiesProgressView4 = StoriesProgressView.this;
+                if (i4 <= size) {
+                    if (storiesProgressView4.storiesListener != null) {
                         StoriesProgressView.this.storiesListener.onNext();
                     }
-                    ((PausableProgressBar) StoriesProgressView.this.progressBars.get(i3)).startProgress();
+                    ((PausableProgressBar) StoriesProgressView.this.progressBars.get(i4)).startProgress();
                 } else {
-                    StoriesProgressView.this.isComplete = true;
+                    storiesProgressView4.isComplete = true;
                     if (StoriesProgressView.this.storiesListener != null) {
                         StoriesProgressView.this.storiesListener.onComplete();
                     }
@@ -192,10 +198,17 @@ public class StoriesProgressView extends LinearLayout {
     }
 
     public void startStories(int i) {
-        for (int i2 = 0; i2 < i; i2++) {
-            this.progressBars.get(i2).setMaxWithoutCallback();
+        int i2 = 0;
+        while (true) {
+            List<PausableProgressBar> list = this.progressBars;
+            if (i2 < i) {
+                list.get(i2).setMaxWithoutCallback();
+                i2++;
+            } else {
+                list.get(i).startProgress();
+                return;
+            }
         }
-        this.progressBars.get(i).startProgress();
     }
 
     public void destroy() {

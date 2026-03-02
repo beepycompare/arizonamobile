@@ -89,7 +89,7 @@ import ru.mrlargha.feature.battlepassWinter2025.roulette.data.OldPrise;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.data.PossiblePrise;
 import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: Winter2025BattlePass.kt */
-@Metadata(d1 = {"\u0000\u0086\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0004\u0097\u0001\u0098\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010?\u001a\u00020@2\u0006\u0010A\u001a\u00020\u001cH\u0016J\u0018\u0010B\u001a\u00020@2\u0006\u0010C\u001a\u00020\t2\u0006\u0010D\u001a\u00020\u0005H\u0016J\u001c\u0010E\u001a\u00020@2\u0012\u0010F\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\"0\"H\u0002J\b\u0010G\u001a\u00020@H\u0002J\b\u0010H\u001a\u00020\u0005H\u0002J\b\u0010I\u001a\u00020@H\u0002J\b\u0010J\u001a\u00020@H\u0002J\b\u0010K\u001a\u00020@H\u0002J\b\u0010L\u001a\u00020@H\u0002J\u0010\u0010M\u001a\u00020@2\u0006\u0010N\u001a\u00020OH\u0002J\b\u0010P\u001a\u00020@H\u0002J\u0010\u0010Q\u001a\u00020@2\u0006\u0010R\u001a\u00020SH\u0002J\u0010\u0010T\u001a\u00020@2\u0006\u0010R\u001a\u00020SH\u0002J\u0010\u0010U\u001a\u00020@2\u0006\u0010V\u001a\u00020\u0018H\u0003J\b\u0010W\u001a\u00020@H\u0002J\u0010\u0010X\u001a\u00020@2\u0006\u0010Y\u001a\u00020\u0005H\u0002J\u0018\u0010Z\u001a\u00020@2\u0006\u0010R\u001a\u00020&2\u0006\u0010[\u001a\u00020SH\u0002J\u0018\u0010\\\u001a\u00020@2\u0006\u0010R\u001a\u00020&2\u0006\u0010]\u001a\u00020\u0005H\u0002J\u0010\u0010^\u001a\u00020@2\u0006\u0010_\u001a\u00020`H\u0003J\u0016\u0010a\u001a\u00020@2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020c0\"H\u0002J*\u0010d\u001a\u00020@2\b\u0010e\u001a\u0004\u0018\u00010f2\u0006\u0010g\u001a\u00020f2\u0006\u0010h\u001a\u00020f2\u0006\u0010i\u001a\u00020jH\u0003J\u0016\u0010k\u001a\u00020@2\f\u0010l\u001a\b\u0012\u0004\u0012\u00020j0\"H\u0003J\b\u0010m\u001a\u00020@H\u0002J\u0016\u0010n\u001a\u00020@2\f\u0010o\u001a\b\u0012\u0004\u0012\u00020&0\"H\u0002J\u0016\u0010p\u001a\u00020@2\f\u0010C\u001a\b\u0012\u0004\u0012\u0002060\"H\u0002J\"\u0010q\u001a\u00020@2\u0018\u0010r\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020#0s0\"H\u0002J\b\u0010t\u001a\u00020@H\u0002J\u0018\u0010u\u001a\u00020@2\u0006\u0010v\u001a\u00020\u001c2\u0006\u0010]\u001a\u00020\u0005H\u0002J\u0016\u0010w\u001a\u00020@2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020x0\"H\u0002J\u0018\u0010y\u001a\u00020@2\u0006\u0010v\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020xH\u0002J\b\u0010z\u001a\u00020@H\u0002J\u0016\u0010{\u001a\u00020@2\f\u0010|\u001a\b\u0012\u0004\u0012\u00020\u00050\"H\u0002J\u0010\u0010}\u001a\u00020@2\u0006\u0010~\u001a\u000200H\u0002J#\u0010\u007f\u001a\u00020\t2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0081\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u001b\u0010\u0083\u0001\u001a\u00020@2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u001b\u0010\u0084\u0001\u001a\u00020@2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u0018\u0010\u0085\u0001\u001a\u00020@2\r\u0010C\u001a\t\u0012\u0005\u0012\u00030\u0086\u00010\"H\u0002J\t\u0010\u0087\u0001\u001a\u00020@H\u0002J\t\u0010\u0088\u0001\u001a\u00020@H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020@2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002J\t\u0010\u008c\u0001\u001a\u00020@H\u0002J\u0013\u0010\u008d\u0001\u001a\u00020@2\b\u0010\u008e\u0001\u001a\u00030\u008f\u0001H\u0002J\u0013\u0010\u0090\u0001\u001a\u00020@2\b\u0010\u0091\u0001\u001a\u00030\u008f\u0001H\u0002J\u0013\u0010\u0092\u0001\u001a\u00020\t2\b\u0010\u0093\u0001\u001a\u00030\u008f\u0001H\u0002J\u0015\u0010\u0094\u0001\u001a\u00030\u0095\u00012\t\u0010\u0096\u0001\u001a\u0004\u0018\u00010\tH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020&0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u0002000/X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00105\u001a\b\u0012\u0004\u0012\u0002060\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u0002060\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00109\u001a\u00020:¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R\u000e\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0099\u0001"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tag", "", "azCoinsLink", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "battlePassBinding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "colorMaxProgress", "colorText", "commonTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "rewardsTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "levelItemsAdapter", "Lru/mrlargha/feature/battlepassWinter2025/LevelItemsAdapter;", "battlePassInfo", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "frontendLevelSetsMinimumSize", "frontendPremiumMinimumSize", "isLockLevelPage", "", "isLockPremiumPage", "startBattleCoinNumbCurse", "selectedBattleCoinMultiplier", "Lru/mrlargha/feature/battlepassWinter2025/data/BattleCoinsMultiplier;", "_bpUsualData", "", "Lru/mrlargha/feature/battlepassWinter2025/data/AwardItemData;", "_bpPremData", "_taskUsualData", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "_taskPremData", "blockTimerJob", "Lkotlinx/coroutines/Job;", "priseAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseAdapter;", "oldPriseAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter;", "possiblePrisesList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/PossiblePrise;", "multiplierBuyRoulette", "isPremRoulette", "rouletteCount", "isRouletteOpen", "_usualTasks", "Lru/mrlargha/feature/battlepassWinter2025/data/ActualTask;", "_premTasks", "project", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/battlepassWinter2025/WinterBattlePassApi;", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "updateBpAwards", "awardsStatusList", "setupConvertBattleCoinsPage", "getChosenMultiplier", "updateUiBySelectedMultiplier", "setupBuyPremiumPage", "setupMainPageInfo", "setupNavigation", "clickButtonMenuNavigation", "navItem", "Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "setupCommonTasksInfo", "filterListForSelectedTask", "task", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "setupThemeForSelectedTask", "updateMainPageInfo", "info", "updateLevelInfoOnPages", "updatePremiumButtonsVisibility", "premium", "setupTaskDataIntoUi", "categoryType", "showTaskInfo", "position", "updateCoins", "coinsData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassUpdateCoinsData;", "updateBattlePassPremium", "premiumList", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassPremiumData;", "setupLevelSetText", "lvlText", "Landroid/widget/TextView;", "priceText", "discountText", "levelData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassLevelSetData;", "updateLevelSetsInfo", "levelSets", "setupLevelBuyPage", "updateCommonTaskItems", "commonTasks", "updateTasks", "updateLevelItems", "pairList", "Lkotlin/Pair;", "updateLogo", "onClaimItem", "isPremium", "setupRoulette", "Lru/mrlargha/feature/battlepassWinter2025/data/RouletteData;", "initRouletteView", "startRoulette", "rouletteSpinPrises", "list", "rouletteAddPossiblePrise", "prise", "calcRoulettePrice", FirebaseAnalytics.Param.PRICE, "multiplier", FirebaseAnalytics.Param.CURRENCY, "rouletteBuySelectSetup", "rouletteBuyButtonSetup", "updateOldPrises", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "onQuality", "setWelcomeScreen", "openModalWindow", CommonUrlParts.MODEL, "Lru/mrlargha/feature/battlepassWinter2025/data/BpModalWindowModel;", "setupListeners", "checkAvailableBp", "targetUnixTime", "", "startLeftTimer", "remainingMillis", "setLeftTime", "leftTime", "updateBlockTime", "", "time", "Spawner", "NavItems", "battle-pass_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0004\u0097\u0001\u0098\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010?\u001a\u00020@2\u0006\u0010A\u001a\u00020\u001cH\u0016J\u0018\u0010B\u001a\u00020@2\u0006\u0010C\u001a\u00020\t2\u0006\u0010D\u001a\u00020\u0005H\u0016J\u001c\u0010E\u001a\u00020@2\u0012\u0010F\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\"0\"H\u0002J\b\u0010G\u001a\u00020@H\u0002J\b\u0010H\u001a\u00020\u0005H\u0002J\b\u0010I\u001a\u00020@H\u0002J\b\u0010J\u001a\u00020@H\u0002J\b\u0010K\u001a\u00020@H\u0002J\b\u0010L\u001a\u00020@H\u0002J\u0010\u0010M\u001a\u00020@2\u0006\u0010N\u001a\u00020OH\u0002J\b\u0010P\u001a\u00020@H\u0002J\u0010\u0010Q\u001a\u00020@2\u0006\u0010R\u001a\u00020SH\u0002J\u0010\u0010T\u001a\u00020@2\u0006\u0010R\u001a\u00020SH\u0002J\u0010\u0010U\u001a\u00020@2\u0006\u0010V\u001a\u00020\u0018H\u0003J\b\u0010W\u001a\u00020@H\u0002J\u0010\u0010X\u001a\u00020@2\u0006\u0010Y\u001a\u00020\u0005H\u0002J\u0018\u0010Z\u001a\u00020@2\u0006\u0010R\u001a\u00020&2\u0006\u0010[\u001a\u00020SH\u0002J\u0018\u0010\\\u001a\u00020@2\u0006\u0010R\u001a\u00020&2\u0006\u0010]\u001a\u00020\u0005H\u0002J\u0010\u0010^\u001a\u00020@2\u0006\u0010_\u001a\u00020`H\u0003J\u0016\u0010a\u001a\u00020@2\f\u0010b\u001a\b\u0012\u0004\u0012\u00020c0\"H\u0002J*\u0010d\u001a\u00020@2\b\u0010e\u001a\u0004\u0018\u00010f2\u0006\u0010g\u001a\u00020f2\u0006\u0010h\u001a\u00020f2\u0006\u0010i\u001a\u00020jH\u0003J\u0016\u0010k\u001a\u00020@2\f\u0010l\u001a\b\u0012\u0004\u0012\u00020j0\"H\u0003J\b\u0010m\u001a\u00020@H\u0002J\u0016\u0010n\u001a\u00020@2\f\u0010o\u001a\b\u0012\u0004\u0012\u00020&0\"H\u0002J\u0016\u0010p\u001a\u00020@2\f\u0010C\u001a\b\u0012\u0004\u0012\u0002060\"H\u0002J\"\u0010q\u001a\u00020@2\u0018\u0010r\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020#\u0012\u0004\u0012\u00020#0s0\"H\u0002J\b\u0010t\u001a\u00020@H\u0002J\u0018\u0010u\u001a\u00020@2\u0006\u0010v\u001a\u00020\u001c2\u0006\u0010]\u001a\u00020\u0005H\u0002J\u0016\u0010w\u001a\u00020@2\f\u0010C\u001a\b\u0012\u0004\u0012\u00020x0\"H\u0002J\u0018\u0010y\u001a\u00020@2\u0006\u0010v\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020xH\u0002J\b\u0010z\u001a\u00020@H\u0002J\u0016\u0010{\u001a\u00020@2\f\u0010|\u001a\b\u0012\u0004\u0012\u00020\u00050\"H\u0002J\u0010\u0010}\u001a\u00020@2\u0006\u0010~\u001a\u000200H\u0002J#\u0010\u007f\u001a\u00020\t2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0081\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u001b\u0010\u0083\u0001\u001a\u00020@2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u001b\u0010\u0084\u0001\u001a\u00020@2\u0007\u0010\u0080\u0001\u001a\u00020\u00052\u0007\u0010\u0082\u0001\u001a\u00020\tH\u0002J\u0018\u0010\u0085\u0001\u001a\u00020@2\r\u0010C\u001a\t\u0012\u0005\u0012\u00030\u0086\u00010\"H\u0002J\t\u0010\u0087\u0001\u001a\u00020@H\u0002J\t\u0010\u0088\u0001\u001a\u00020@H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020@2\b\u0010\u008a\u0001\u001a\u00030\u008b\u0001H\u0002J\t\u0010\u008c\u0001\u001a\u00020@H\u0002J\u0013\u0010\u008d\u0001\u001a\u00020@2\b\u0010\u008e\u0001\u001a\u00030\u008f\u0001H\u0002J\u0013\u0010\u0090\u0001\u001a\u00020@2\b\u0010\u0091\u0001\u001a\u00030\u008f\u0001H\u0002J\u0013\u0010\u0092\u0001\u001a\u00020\t2\b\u0010\u0093\u0001\u001a\u00030\u008f\u0001H\u0002J\u0015\u0010\u0094\u0001\u001a\u00030\u0095\u00012\t\u0010\u0096\u0001\u001a\u0004\u0018\u00010\tH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020#0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020&0\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u0002000/X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00105\u001a\b\u0012\u0004\u0012\u0002060\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u0002060\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00109\u001a\u00020:¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R\u000e\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0099\u0001"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tag", "", "azCoinsLink", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "battlePassBinding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "colorMaxProgress", "colorText", "commonTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "rewardsTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "levelItemsAdapter", "Lru/mrlargha/feature/battlepassWinter2025/LevelItemsAdapter;", "battlePassInfo", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "frontendLevelSetsMinimumSize", "frontendPremiumMinimumSize", "isLockLevelPage", "", "isLockPremiumPage", "startBattleCoinNumbCurse", "selectedBattleCoinMultiplier", "Lru/mrlargha/feature/battlepassWinter2025/data/BattleCoinsMultiplier;", "_bpUsualData", "", "Lru/mrlargha/feature/battlepassWinter2025/data/AwardItemData;", "_bpPremData", "_taskUsualData", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "_taskPremData", "blockTimerJob", "Lkotlinx/coroutines/Job;", "priseAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseAdapter;", "oldPriseAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter;", "possiblePrisesList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/PossiblePrise;", "multiplierBuyRoulette", "isPremRoulette", "rouletteCount", "isRouletteOpen", "_usualTasks", "Lru/mrlargha/feature/battlepassWinter2025/data/ActualTask;", "_premTasks", "project", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/battlepassWinter2025/WinterBattlePassApi;", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "updateBpAwards", "awardsStatusList", "setupConvertBattleCoinsPage", "getChosenMultiplier", "updateUiBySelectedMultiplier", "setupBuyPremiumPage", "setupMainPageInfo", "setupNavigation", "clickButtonMenuNavigation", "navItem", "Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "setupCommonTasksInfo", "filterListForSelectedTask", "task", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "setupThemeForSelectedTask", "updateMainPageInfo", "info", "updateLevelInfoOnPages", "updatePremiumButtonsVisibility", "premium", "setupTaskDataIntoUi", "categoryType", "showTaskInfo", "position", "updateCoins", "coinsData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassUpdateCoinsData;", "updateBattlePassPremium", "premiumList", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassPremiumData;", "setupLevelSetText", "lvlText", "Landroid/widget/TextView;", "priceText", "discountText", "levelData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassLevelSetData;", "updateLevelSetsInfo", "levelSets", "setupLevelBuyPage", "updateCommonTaskItems", "commonTasks", "updateTasks", "updateLevelItems", "pairList", "Lkotlin/Pair;", "updateLogo", "onClaimItem", "isPremium", "setupRoulette", "Lru/mrlargha/feature/battlepassWinter2025/data/RouletteData;", "initRouletteView", "startRoulette", "rouletteSpinPrises", "list", "rouletteAddPossiblePrise", "prise", "calcRoulettePrice", FirebaseAnalytics.Param.PRICE, "multiplier", FirebaseAnalytics.Param.CURRENCY, "rouletteBuySelectSetup", "rouletteBuyButtonSetup", "updateOldPrises", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "onQuality", "setWelcomeScreen", "openModalWindow", CommonUrlParts.MODEL, "Lru/mrlargha/feature/battlepassWinter2025/data/BpModalWindowModel;", "setupListeners", "checkAvailableBp", "targetUnixTime", "", "startLeftTimer", "remainingMillis", "setLeftTime", "leftTime", "updateBlockTime", "", "time", "Spawner", "NavItems", "battle-pass"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private List<AwardItemData> _bpPremData;
@@ -127,7 +127,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final String tag;
 
     /* compiled from: Winter2025BattlePass.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -255,11 +255,11 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(View view) {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void rouletteSpinPrises$lambda$1(View view) {
     }
 
@@ -298,39 +298,29 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.commonTasksAdapter = new CommonTasksAdapter(UtilsKt.isArizonaType(), ContextCompat.getColor(activity, R.color.battlepass13), new Function2() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit commonTasksAdapter$lambda$0;
-                commonTasksAdapter$lambda$0 = Winter2025BattlePassScreen.commonTasksAdapter$lambda$0(Winter2025BattlePassScreen.this, (CommonTaskInfo) obj, ((Integer) obj2).intValue());
-                return commonTasksAdapter$lambda$0;
+                return Winter2025BattlePassScreen.commonTasksAdapter$lambda$0(Winter2025BattlePassScreen.this, (CommonTaskInfo) obj, ((Integer) obj2).intValue());
             }
         });
         this.rewardsTasksAdapter = new RewardsTasksAdapter();
         this.levelItemsAdapter = new LevelItemsAdapter(color, color2, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit levelItemsAdapter$lambda$0;
-                levelItemsAdapter$lambda$0 = Winter2025BattlePassScreen.levelItemsAdapter$lambda$0(Winter2025BattlePassScreen.this);
-                return levelItemsAdapter$lambda$0;
+                return Winter2025BattlePassScreen.levelItemsAdapter$lambda$0(Winter2025BattlePassScreen.this);
             }
         }, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit levelItemsAdapter$lambda$1;
-                levelItemsAdapter$lambda$1 = Winter2025BattlePassScreen.levelItemsAdapter$lambda$1(Winter2025BattlePassScreen.this);
-                return levelItemsAdapter$lambda$1;
+                return Winter2025BattlePassScreen.levelItemsAdapter$lambda$1(Winter2025BattlePassScreen.this);
             }
         }, new Function2() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit levelItemsAdapter$lambda$2;
-                levelItemsAdapter$lambda$2 = Winter2025BattlePassScreen.levelItemsAdapter$lambda$2(Winter2025BattlePassScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
-                return levelItemsAdapter$lambda$2;
+                return Winter2025BattlePassScreen.levelItemsAdapter$lambda$2(Winter2025BattlePassScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
             }
         }, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit levelItemsAdapter$lambda$3;
-                levelItemsAdapter$lambda$3 = Winter2025BattlePassScreen.levelItemsAdapter$lambda$3(Winter2025BattlePassScreen.this);
-                return levelItemsAdapter$lambda$3;
+                return Winter2025BattlePassScreen.levelItemsAdapter$lambda$3(Winter2025BattlePassScreen.this);
             }
         });
         this.frontendLevelSetsMinimumSize = 4;
@@ -344,9 +334,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.priseAdapter = new PriseAdapter(new Function4() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                Unit priseAdapter$lambda$0;
-                priseAdapter$lambda$0 = Winter2025BattlePassScreen.priseAdapter$lambda$0(Winter2025BattlePassScreen.this, targetActivity, ((Float) obj).floatValue(), ((Float) obj2).floatValue(), (String) obj3, ((Integer) obj4).intValue());
-                return priseAdapter$lambda$0;
+                return Winter2025BattlePassScreen.priseAdapter$lambda$0(Winter2025BattlePassScreen.this, targetActivity, ((Float) obj).floatValue(), ((Float) obj2).floatValue(), (String) obj3, ((Integer) obj4).intValue());
             }
         });
         this.oldPriseAdapter = new OldPriseAdapter();
@@ -379,38 +367,38 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         setupListeners();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit commonTasksAdapter$lambda$0(Winter2025BattlePassScreen winter2025BattlePassScreen, CommonTaskInfo task, int i) {
         Intrinsics.checkNotNullParameter(task, "task");
         winter2025BattlePassScreen.showTaskInfo(task, i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit levelItemsAdapter$lambda$0(Winter2025BattlePassScreen winter2025BattlePassScreen) {
         winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.LEVEL_SETS);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit levelItemsAdapter$lambda$1(Winter2025BattlePassScreen winter2025BattlePassScreen) {
         winter2025BattlePassScreen.onQuality();
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit levelItemsAdapter$lambda$2(Winter2025BattlePassScreen winter2025BattlePassScreen, boolean z, int i) {
         winter2025BattlePassScreen.onClaimItem(z, i);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit levelItemsAdapter$lambda$3(Winter2025BattlePassScreen winter2025BattlePassScreen) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 21, null, 4, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit priseAdapter$lambda$0(final Winter2025BattlePassScreen winter2025BattlePassScreen, Activity activity, float f, float f2, String name, int i) {
         Intrinsics.checkNotNullParameter(name, "name");
         Log.d("name", TypedValues.CycleType.S_WAVE_OFFSET + f + " " + f2);
@@ -841,7 +829,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         StringKt.openLink(winter2025BattlePassScreen.azCoinsLink, winter2025BattlePassScreen.getTargetActivity());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupNavigation$lambda$2(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.battlePassBinding.overlay.setVisibility(8);
         winter2025BattlePassScreen.battlePassBinding.cardInfo.setVisibility(8);
@@ -1490,8 +1478,9 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final void updateLogo() {
         int premium;
         int i;
-        if (UtilsKt.isArizonaType()) {
-            MainBattlePassInfo mainBattlePassInfo = this.battlePassInfo;
+        boolean isArizonaType = UtilsKt.isArizonaType();
+        MainBattlePassInfo mainBattlePassInfo = this.battlePassInfo;
+        if (isArizonaType) {
             premium = mainBattlePassInfo != null ? mainBattlePassInfo.getPremium() : -1;
             if (premium == 0) {
                 i = R.drawable.battlepass_logo;
@@ -1503,8 +1492,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 i = R.drawable.battlepass_logo;
             }
         } else {
-            MainBattlePassInfo mainBattlePassInfo2 = this.battlePassInfo;
-            premium = mainBattlePassInfo2 != null ? mainBattlePassInfo2.getPremium() : -1;
+            premium = mainBattlePassInfo != null ? mainBattlePassInfo.getPremium() : -1;
             if (premium == 0) {
                 i = R.drawable.battlepass_logo;
             } else if (premium == 1) {
@@ -1706,14 +1694,12 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.battlePassBinding.battlepassRouletteView.rouletteView.start(arrayList, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit rouletteSpinPrises$lambda$2;
-                rouletteSpinPrises$lambda$2 = Winter2025BattlePassScreen.rouletteSpinPrises$lambda$2(Winter2025BattlePassScreen.this);
-                return rouletteSpinPrises$lambda$2;
+                return Winter2025BattlePassScreen.rouletteSpinPrises$lambda$2(Winter2025BattlePassScreen.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rouletteSpinPrises$lambda$2(Winter2025BattlePassScreen winter2025BattlePassScreen) {
         SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 18, null, 4, null);
         winter2025BattlePassScreen.battlePassBinding.clickBlocker.setVisibility(8);
@@ -2018,7 +2004,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     /* compiled from: Winter2025BattlePass.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "battle-pass_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "battle-pass"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf((Object[]) new UIElementID[]{UIElementID.MAIN_BATTLE_PASS, UIElementID.BATTLE_PASS});
@@ -2038,7 +2024,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Winter2025BattlePass.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "", "<init>", "(Ljava/lang/String;I)V", "MAIN_PAGE", "TASKS_PAGE", "ROULETTE_PAGE", "DONATE_PAGE", "LEVEL_SETS", "BUY_PREMIUM", "CONVERT_BATTLE_COINS", "battle-pass_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "", "<init>", "(Ljava/lang/String;I)V", "MAIN_PAGE", "TASKS_PAGE", "ROULETTE_PAGE", "DONATE_PAGE", "LEVEL_SETS", "BUY_PREMIUM", "CONVERT_BATTLE_COINS", "battle-pass"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class NavItems {
         private static final /* synthetic */ EnumEntries $ENTRIES;

@@ -18,7 +18,7 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
 
     @Deprecated(message = "Can throw an exception when it's impossible to represent the value with ULong type, for example, when the range includes MAX_VALUE. It's recommended to use 'endInclusive' property that doesn't throw.")
     /* renamed from: getEndExclusive-s-VKNKU$annotations  reason: not valid java name */
-    public static /* synthetic */ void m11501getEndExclusivesVKNKU$annotations() {
+    public static /* synthetic */ void m10438getEndExclusivesVKNKU$annotations() {
     }
 
     private ULongRange(long j, long j2) {
@@ -27,49 +27,49 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
 
     @Override // kotlin.ranges.ClosedRange
     public /* bridge */ /* synthetic */ boolean contains(ULong uLong) {
-        return m11502containsVKZWuLQ(uLong.m10474unboximpl());
+        return m10439containsVKZWuLQ(uLong.m9413unboximpl());
     }
 
     @Override // kotlin.ranges.OpenEndRange
     public /* bridge */ /* synthetic */ ULong getEndExclusive() {
-        return ULong.m10416boximpl(m11503getEndExclusivesVKNKU());
+        return ULong.m9355boximpl(m10440getEndExclusivesVKNKU());
     }
 
     @Override // kotlin.ranges.ClosedRange
     public /* bridge */ /* synthetic */ ULong getEndInclusive() {
-        return ULong.m10416boximpl(m11504getEndInclusivesVKNKU());
+        return ULong.m9355boximpl(m10441getEndInclusivesVKNKU());
     }
 
     @Override // kotlin.ranges.ClosedRange
     public /* bridge */ /* synthetic */ ULong getStart() {
-        return ULong.m10416boximpl(m11505getStartsVKNKU());
+        return ULong.m9355boximpl(m10442getStartsVKNKU());
     }
 
     /* renamed from: getStart-s-VKNKU  reason: not valid java name */
-    public long m11505getStartsVKNKU() {
-        return m11497getFirstsVKNKU();
+    public long m10442getStartsVKNKU() {
+        return m10434getFirstsVKNKU();
     }
 
     /* renamed from: getEndInclusive-s-VKNKU  reason: not valid java name */
-    public long m11504getEndInclusivesVKNKU() {
-        return m11498getLastsVKNKU();
+    public long m10441getEndInclusivesVKNKU() {
+        return m10435getLastsVKNKU();
     }
 
     /* renamed from: getEndExclusive-s-VKNKU  reason: not valid java name */
-    public long m11503getEndExclusivesVKNKU() {
-        if (m11498getLastsVKNKU() == -1) {
+    public long m10440getEndExclusivesVKNKU() {
+        if (m10435getLastsVKNKU() == -1) {
             throw new IllegalStateException("Cannot return the exclusive upper bound of a range that includes MAX_VALUE.".toString());
         }
-        return ULong.m10422constructorimpl(m11498getLastsVKNKU() + ULong.m10422constructorimpl(1 & 4294967295L));
+        return ULong.m9361constructorimpl(m10435getLastsVKNKU() + ULong.m9361constructorimpl(1 & 4294967295L));
     }
 
     /* renamed from: contains-VKZWuLQ  reason: not valid java name */
-    public boolean m11502containsVKZWuLQ(long j) {
+    public boolean m10439containsVKZWuLQ(long j) {
         int compare;
         int compare2;
-        compare = Long.compare(m11497getFirstsVKNKU() ^ Long.MIN_VALUE, j ^ Long.MIN_VALUE);
+        compare = Long.compare(m10434getFirstsVKNKU() ^ Long.MIN_VALUE, j ^ Long.MIN_VALUE);
         if (compare <= 0) {
-            compare2 = Long.compare(j ^ Long.MIN_VALUE, m11498getLastsVKNKU() ^ Long.MIN_VALUE);
+            compare2 = Long.compare(j ^ Long.MIN_VALUE, m10435getLastsVKNKU() ^ Long.MIN_VALUE);
             return compare2 <= 0;
         }
         return false;
@@ -78,7 +78,7 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
     @Override // kotlin.ranges.ULongProgression, kotlin.ranges.ClosedRange
     public boolean isEmpty() {
         int compare;
-        compare = Long.compare(m11497getFirstsVKNKU() ^ Long.MIN_VALUE, m11498getLastsVKNKU() ^ Long.MIN_VALUE);
+        compare = Long.compare(m10434getFirstsVKNKU() ^ Long.MIN_VALUE, m10435getLastsVKNKU() ^ Long.MIN_VALUE);
         return compare > 0;
     }
 
@@ -89,7 +89,7 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
                 return true;
             }
             ULongRange uLongRange = (ULongRange) obj;
-            return m11497getFirstsVKNKU() == uLongRange.m11497getFirstsVKNKU() && m11498getLastsVKNKU() == uLongRange.m11498getLastsVKNKU();
+            return m10434getFirstsVKNKU() == uLongRange.m10434getFirstsVKNKU() && m10435getLastsVKNKU() == uLongRange.m10435getLastsVKNKU();
         }
         return false;
     }
@@ -99,12 +99,12 @@ public final class ULongRange extends ULongProgression implements ClosedRange<UL
         if (isEmpty()) {
             return -1;
         }
-        return (((int) ULong.m10422constructorimpl(m11497getFirstsVKNKU() ^ ULong.m10422constructorimpl(m11497getFirstsVKNKU() >>> 32))) * 31) + ((int) ULong.m10422constructorimpl(m11498getLastsVKNKU() ^ ULong.m10422constructorimpl(m11498getLastsVKNKU() >>> 32)));
+        return (((int) ULong.m9361constructorimpl(m10434getFirstsVKNKU() ^ ULong.m9361constructorimpl(m10434getFirstsVKNKU() >>> 32))) * 31) + ((int) ULong.m9361constructorimpl(m10435getLastsVKNKU() ^ ULong.m9361constructorimpl(m10435getLastsVKNKU() >>> 32)));
     }
 
     @Override // kotlin.ranges.ULongProgression
     public String toString() {
-        return ((Object) ULong.m10468toStringimpl(m11497getFirstsVKNKU())) + ".." + ((Object) ULong.m10468toStringimpl(m11498getLastsVKNKU()));
+        return ((Object) ULong.m9407toStringimpl(m10434getFirstsVKNKU())) + ".." + ((Object) ULong.m9407toStringimpl(m10435getLastsVKNKU()));
     }
 
     /* compiled from: ULongRange.kt */

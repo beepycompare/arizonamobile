@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import kotlin.Deprecated;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ReplaceWith;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -31,7 +32,7 @@ import kotlinx.coroutines.ExecutorsKt;
 import kotlinx.coroutines.GlobalScope;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 /* compiled from: PagedList.kt */
-@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0018\b'\u0018\u0000 d*\b\b\u0000\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u0006abcdefB?\b\u0000\u0012\u0010\u0010\u0004\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u00000\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00028\u00000\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0002\u0010\u000eJ\u000e\u0010?\u001a\u00020(2\u0006\u0010@\u001a\u00020\u0012J \u0010?\u001a\u00020(2\u000e\u0010A\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010B2\u0006\u0010@\u001a\u00020\u0012H\u0007J \u0010C\u001a\u00020(2\u0018\u0010D\u001a\u0014\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(0%J\b\u0010E\u001a\u00020(H&J\"\u0010F\u001a\u00020(2\u0018\u0010@\u001a\u0014\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(0%H'J\u001d\u0010G\u001a\u00020(2\u0006\u0010H\u001a\u00020&2\u0006\u0010I\u001a\u00020'H\u0000¢\u0006\u0002\bJJ\u0018\u0010K\u001a\u0004\u0018\u00018\u00002\u0006\u0010L\u001a\u00020*H\u0096\u0002¢\u0006\u0002\u0010MJ\u000e\u0010N\u001a\b\u0012\u0004\u0012\u00028\u00000OH\u0007J\b\u0010P\u001a\u00020*H\u0007J\u000e\u0010Q\u001a\u00020(2\u0006\u0010L\u001a\u00020*J\u0010\u0010R\u001a\u00020(2\u0006\u0010L\u001a\u00020*H'J\u0018\u0010S\u001a\u00020(2\u0006\u0010T\u001a\u00020*2\u0006\u0010U\u001a\u00020*H\u0007J\u001d\u0010V\u001a\u00020(2\u0006\u0010T\u001a\u00020*2\u0006\u0010U\u001a\u00020*H\u0000¢\u0006\u0002\bWJ\u0018\u0010X\u001a\u00020(2\u0006\u0010T\u001a\u00020*2\u0006\u0010U\u001a\u00020*H\u0007J\u000e\u0010Y\u001a\u00020(2\u0006\u0010@\u001a\u00020\u0012J \u0010Z\u001a\u00020(2\u0018\u0010D\u001a\u0014\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(0%J\b\u0010[\u001a\u00020(H\u0016J\u0018\u0010\\\u001a\u00020(2\u0006\u0010]\u001a\u00020&2\u0006\u0010^\u001a\u00020'H\u0017J\u0012\u0010_\u001a\u00020(2\b\u00103\u001a\u0004\u0018\u000104H\u0007J\f\u0010`\u001a\b\u0012\u0004\u0012\u00028\u00000BR\u001a\u0010\u000f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0014\u0010\u0006\u001a\u00020\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R$\u0010\u0017\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u00000\u00188FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0019\u0010\u001a\u001a\u0004\b\u001b\u0010\u001cR\u0012\u0010\u001d\u001a\u00020\u001eX¦\u0004¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001fR\u0014\u0010 \u001a\u00020\u001e8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b \u0010\u001fR\u0014\u0010!\u001a\u0004\u0018\u00010\u0002X¦\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R,\u0010$\u001a \u0012\u001c\u0012\u001a\u0012\u0016\u0012\u0014\u0012\u0004\u0012\u00020&\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020(0%0\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010)\u001a\u00020*8F¢\u0006\u0006\u001a\u0004\b+\u0010,R\u0014\u0010\b\u001a\u00020\tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010.R \u0010\u0004\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u00000\u00058\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u00100R\u0011\u00101\u001a\u00020*8F¢\u0006\u0006\u001a\u0004\b2\u0010,R\u001c\u00103\u001a\u0004\u0018\u000104X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b5\u00106\"\u0004\b7\u00108R\u0014\u00109\u001a\u00020*X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010,R\u0014\u0010;\u001a\u00020*8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b<\u0010,R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00028\u00000\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b=\u0010>¨\u0006g"}, d2 = {"Landroidx/paging/PagedList;", ExifInterface.GPS_DIRECTION_TRUE, "", "Ljava/util/AbstractList;", "pagingSource", "Landroidx/paging/PagingSource;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "notifyDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "storage", "Landroidx/paging/PagedStorage;", "config", "Landroidx/paging/PagedList$Config;", "(Landroidx/paging/PagingSource;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/CoroutineDispatcher;Landroidx/paging/PagedStorage;Landroidx/paging/PagedList$Config;)V", "callbacks", "", "Ljava/lang/ref/WeakReference;", "Landroidx/paging/PagedList$Callback;", "getConfig", "()Landroidx/paging/PagedList$Config;", "getCoroutineScope$paging_common_release", "()Lkotlinx/coroutines/CoroutineScope;", "dataSource", "Landroidx/paging/DataSource;", "getDataSource$annotations", "()V", "getDataSource", "()Landroidx/paging/DataSource;", "isDetached", "", "()Z", "isImmutable", "lastKey", "getLastKey", "()Ljava/lang/Object;", "loadStateListeners", "Lkotlin/Function2;", "Landroidx/paging/LoadType;", "Landroidx/paging/LoadState;", "", "loadedCount", "", "getLoadedCount", "()I", "getNotifyDispatcher$paging_common_release", "()Lkotlinx/coroutines/CoroutineDispatcher;", "getPagingSource", "()Landroidx/paging/PagingSource;", "positionOffset", "getPositionOffset", "refreshRetryCallback", "Ljava/lang/Runnable;", "getRefreshRetryCallback$paging_common_release", "()Ljava/lang/Runnable;", "setRefreshRetryCallback$paging_common_release", "(Ljava/lang/Runnable;)V", "requiredRemainder", "getRequiredRemainder$paging_common_release", "size", "getSize", "getStorage$paging_common_release", "()Landroidx/paging/PagedStorage;", "addWeakCallback", "callback", "previousSnapshot", "", "addWeakLoadStateListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "detach", "dispatchCurrentLoadState", "dispatchStateChangeAsync", "type", RemoteConfigConstants.ResponseFieldKey.STATE, "dispatchStateChangeAsync$paging_common_release", "get", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "getPlaceholderPaddedList", "Landroidx/paging/PlaceholderPaddedList;", "lastLoad", "loadAround", "loadAroundInternal", "notifyChanged", "position", "count", "notifyInserted", "notifyInserted$paging_common_release", "notifyRemoved", "removeWeakCallback", "removeWeakLoadStateListener", "retry", "setInitialLoadState", "loadType", "loadState", "setRetryCallback", "snapshot", "BoundaryCallback", "Builder", "Callback", "Companion", "Config", "LoadStateManager", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0018\n\u0002\u0010 \n\u0002\b\u0013\b'\u0018\u0000 b*\b\b\u0000\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u0006bcdefgBA\b\u0000\u0012\u0010\u0010\u0004\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u00000\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00028\u00000\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u000e\u0010\u001a\u001a\b\u0012\u0004\u0012\u00028\u00000\u001bH\u0007J\b\u0010\"\u001a\u00020#H\u0007J\"\u0010>\u001a\u00020/2\u0018\u0010?\u001a\u0014\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/0,H'J\u0010\u0010@\u001a\u00020/2\u0006\u0010A\u001a\u00020#H'J\b\u0010B\u001a\u00020/H&J\u0018\u0010H\u001a\u00020/2\u0006\u0010I\u001a\u00020-2\u0006\u0010J\u001a\u00020.H\u0017J\b\u0010K\u001a\u00020/H\u0016J\u0012\u0010L\u001a\u00020/2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0007J\u001d\u0010M\u001a\u00020/2\u0006\u0010N\u001a\u00020-2\u0006\u0010O\u001a\u00020.H\u0000¢\u0006\u0002\bPJ\u0018\u0010Q\u001a\u0004\u0018\u00018\u00002\u0006\u0010A\u001a\u00020#H\u0096\u0002¢\u0006\u0002\u0010RJ\u000e\u0010S\u001a\u00020/2\u0006\u0010A\u001a\u00020#J\f\u0010T\u001a\b\u0012\u0004\u0012\u00028\u00000UJ \u0010V\u001a\u00020/2\u0018\u0010W\u001a\u0014\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/0,J \u0010X\u001a\u00020/2\u0018\u0010W\u001a\u0014\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/0,J \u0010Y\u001a\u00020/2\u000e\u0010Z\u001a\n\u0012\u0004\u0012\u00028\u0000\u0018\u00010U2\u0006\u0010?\u001a\u00020*H\u0007J\u000e\u0010Y\u001a\u00020/2\u0006\u0010?\u001a\u00020*J\u000e\u0010[\u001a\u00020/2\u0006\u0010?\u001a\u00020*J\u001d\u0010\\\u001a\u00020/2\u0006\u0010]\u001a\u00020#2\u0006\u0010^\u001a\u00020#H\u0000¢\u0006\u0002\b_J\u0018\u0010`\u001a\u00020/2\u0006\u0010]\u001a\u00020#2\u0006\u0010^\u001a\u00020#H\u0007J\u0018\u0010a\u001a\u00020/2\u0006\u0010]\u001a\u00020#2\u0006\u0010^\u001a\u00020#H\u0007R \u0010\u0004\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u00000\u00058\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0014\u0010\u0006\u001a\u00020\u0007X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\b\u001a\u00020\tX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00028\u00000\u000bX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u001c\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u001f\"\u0004\b \u0010!R\u0014\u0010$\u001a\u00020#X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u001a\u0010'\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020*0)0(X\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010+\u001a \u0012\u001c\u0012\u001a\u0012\u0016\u0012\u0014\u0012\u0004\u0012\u00020-\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/0,0)0(X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\u00020#8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b1\u0010&R$\u00102\u001a\f\u0012\u0002\b\u0003\u0012\u0004\u0012\u00028\u0000038FX\u0087\u0004¢\u0006\f\u0012\u0004\b4\u00105\u001a\u0004\b6\u00107R\u0014\u00108\u001a\u0004\u0018\u00010\u0002X¦\u0004¢\u0006\u0006\u001a\u0004\b9\u0010:R\u0012\u0010;\u001a\u00020<X¦\u0004¢\u0006\u0006\u001a\u0004\b;\u0010=R\u0011\u0010C\u001a\u00020#8F¢\u0006\u0006\u001a\u0004\bD\u0010&R\u0014\u0010E\u001a\u00020<8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\bE\u0010=R\u0011\u0010F\u001a\u00020#8F¢\u0006\u0006\u001a\u0004\bG\u0010&¨\u0006h"}, d2 = {"Landroidx/paging/PagedList;", ExifInterface.GPS_DIRECTION_TRUE, "", "Ljava/util/AbstractList;", "pagingSource", "Landroidx/paging/PagingSource;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "notifyDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "storage", "Landroidx/paging/PagedStorage;", "config", "Landroidx/paging/PagedList$Config;", "<init>", "(Landroidx/paging/PagingSource;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/CoroutineDispatcher;Landroidx/paging/PagedStorage;Landroidx/paging/PagedList$Config;)V", "getPagingSource", "()Landroidx/paging/PagingSource;", "getCoroutineScope$paging_common", "()Lkotlinx/coroutines/CoroutineScope;", "getNotifyDispatcher$paging_common", "()Lkotlinx/coroutines/CoroutineDispatcher;", "getStorage$paging_common", "()Landroidx/paging/PagedStorage;", "getConfig", "()Landroidx/paging/PagedList$Config;", "getPlaceholderPaddedList", "Landroidx/paging/PlaceholderPaddedList;", "refreshRetryCallback", "Ljava/lang/Runnable;", "getRefreshRetryCallback$paging_common", "()Ljava/lang/Runnable;", "setRefreshRetryCallback$paging_common", "(Ljava/lang/Runnable;)V", "lastLoad", "", "requiredRemainder", "getRequiredRemainder$paging_common", "()I", "callbacks", "", "Ljava/lang/ref/WeakReference;", "Landroidx/paging/PagedList$Callback;", "loadStateListeners", "Lkotlin/Function2;", "Landroidx/paging/LoadType;", "Landroidx/paging/LoadState;", "", "size", "getSize", "dataSource", "Landroidx/paging/DataSource;", "getDataSource$annotations", "()V", "getDataSource", "()Landroidx/paging/DataSource;", "lastKey", "getLastKey", "()Ljava/lang/Object;", "isDetached", "", "()Z", "dispatchCurrentLoadState", "callback", "loadAroundInternal", FirebaseAnalytics.Param.INDEX, "detach", "loadedCount", "getLoadedCount", "isImmutable", "positionOffset", "getPositionOffset", "setInitialLoadState", "loadType", "loadState", "retry", "setRetryCallback", "dispatchStateChangeAsync", "type", RemoteConfigConstants.ResponseFieldKey.STATE, "dispatchStateChangeAsync$paging_common", "get", "(I)Ljava/lang/Object;", "loadAround", "snapshot", "", "addWeakLoadStateListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "removeWeakLoadStateListener", "addWeakCallback", "previousSnapshot", "removeWeakCallback", "notifyInserted", "position", "count", "notifyInserted$paging_common", "notifyChanged", "notifyRemoved", "Companion", "Builder", "Callback", "Config", "BoundaryCallback", "LoadStateManager", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
 @Deprecated(message = "PagedList is deprecated and has been replaced by PagingData")
 /* loaded from: classes3.dex */
 public abstract class PagedList<T> extends AbstractList<T> {
@@ -47,7 +48,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
     private final PagedStorage<T> storage;
 
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\b'\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\u00020\u0002B\u0005¢\u0006\u0002\u0010\u0003J\u0015\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u0007J\u0015\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\u0007J\b\u0010\n\u001a\u00020\u0005H\u0016¨\u0006\u000b"}, d2 = {"Landroidx/paging/PagedList$BoundaryCallback;", ExifInterface.GPS_DIRECTION_TRUE, "", "()V", "onItemAtEndLoaded", "", "itemAtEnd", "(Ljava/lang/Object;)V", "onItemAtFrontLoaded", "itemAtFront", "onZeroItemsLoaded", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0006\b'\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\u00020\u0002B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\b\u0010\u0005\u001a\u00020\u0006H\u0016J\u0015\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\tJ\u0015\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00028\u0001H\u0016¢\u0006\u0002\u0010\t¨\u0006\f"}, d2 = {"Landroidx/paging/PagedList$BoundaryCallback;", ExifInterface.GPS_DIRECTION_TRUE, "", "<init>", "()V", "onZeroItemsLoaded", "", "onItemAtFrontLoaded", "itemAtFront", "(Ljava/lang/Object;)V", "onItemAtEndLoaded", "itemAtEnd", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static abstract class BoundaryCallback<T> {
         public void onItemAtEndLoaded(T itemAtEnd) {
@@ -63,7 +64,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
     }
 
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\b&\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0018\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H&J\u0018\u0010\b\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H&J\u0018\u0010\t\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H&¨\u0006\n"}, d2 = {"Landroidx/paging/PagedList$Callback;", "", "()V", "onChanged", "", "position", "", "count", "onInserted", "onRemoved", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\b&\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H&J\u0018\u0010\t\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H&J\u0018\u0010\n\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H&¨\u0006\u000b"}, d2 = {"Landroidx/paging/PagedList$Callback;", "", "<init>", "()V", "onChanged", "", "position", "", "count", "onInserted", "onRemoved", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static abstract class Callback {
         public abstract void onChanged(int i, int i2);
@@ -100,6 +101,22 @@ public abstract class PagedList<T> extends AbstractList<T> {
         Intrinsics.checkNotNullParameter(loadState, "loadState");
     }
 
+    public PagedList(PagingSource<?, T> pagingSource, CoroutineScope coroutineScope, CoroutineDispatcher notifyDispatcher, PagedStorage<T> storage, Config config) {
+        Intrinsics.checkNotNullParameter(pagingSource, "pagingSource");
+        Intrinsics.checkNotNullParameter(coroutineScope, "coroutineScope");
+        Intrinsics.checkNotNullParameter(notifyDispatcher, "notifyDispatcher");
+        Intrinsics.checkNotNullParameter(storage, "storage");
+        Intrinsics.checkNotNullParameter(config, "config");
+        this.pagingSource = pagingSource;
+        this.coroutineScope = coroutineScope;
+        this.notifyDispatcher = notifyDispatcher;
+        this.storage = storage;
+        this.config = config;
+        this.requiredRemainder = (config.prefetchDistance * 2) + config.pageSize;
+        this.callbacks = new ArrayList();
+        this.loadStateListeners = new ArrayList();
+    }
+
     @Override // java.util.AbstractList, java.util.List
     public final /* bridge */ T remove(int i) {
         return (T) removeAt(i);
@@ -118,15 +135,15 @@ public abstract class PagedList<T> extends AbstractList<T> {
         return this.pagingSource;
     }
 
-    public final CoroutineScope getCoroutineScope$paging_common_release() {
+    public final CoroutineScope getCoroutineScope$paging_common() {
         return this.coroutineScope;
     }
 
-    public final CoroutineDispatcher getNotifyDispatcher$paging_common_release() {
+    public final CoroutineDispatcher getNotifyDispatcher$paging_common() {
         return this.notifyDispatcher;
     }
 
-    public final PagedStorage<T> getStorage$paging_common_release() {
+    public final PagedStorage<T> getStorage$paging_common() {
         return this.storage;
     }
 
@@ -135,7 +152,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
     }
 
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u008b\u0001\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00050\u0004\"\b\b\u0001\u0010\u0006*\u00020\u0001\"\b\b\u0002\u0010\u0005*\u00020\u00012\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u0002H\u00050\b2\u0014\u0010\t\u001a\u0010\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u0002H\u0005\u0018\u00010\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u000e2\u000e\u0010\u0010\u001a\n\u0012\u0004\u0012\u0002H\u0005\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u00132\b\u0010\u0014\u001a\u0004\u0018\u0001H\u0006H\u0007¢\u0006\u0002\u0010\u0015J%\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0000¢\u0006\u0002\b\u001d¨\u0006\u001e"}, d2 = {"Landroidx/paging/PagedList$Companion;", "", "()V", "create", "Landroidx/paging/PagedList;", ExifInterface.GPS_DIRECTION_TRUE, "K", "pagingSource", "Landroidx/paging/PagingSource;", "initialPage", "Landroidx/paging/PagingSource$LoadResult$Page;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "notifyDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "fetchDispatcher", "boundaryCallback", "Landroidx/paging/PagedList$BoundaryCallback;", "config", "Landroidx/paging/PagedList$Config;", "key", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/CoroutineDispatcher;Lkotlinx/coroutines/CoroutineDispatcher;Landroidx/paging/PagedList$BoundaryCallback;Landroidx/paging/PagedList$Config;Ljava/lang/Object;)Landroidx/paging/PagedList;", "dispatchNaiveUpdatesSinceSnapshot", "", "currentSize", "", "snapshotSize", "callback", "Landroidx/paging/PagedList$Callback;", "dispatchNaiveUpdatesSinceSnapshot$paging_common_release", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u008b\u0001\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0005\"\b\b\u0001\u0010\u0007*\u00020\u0001\"\b\b\u0002\u0010\u0006*\u00020\u00012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u0002H\u00060\t2\u0014\u0010\n\u001a\u0010\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u0002H\u0006\u0018\u00010\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u000e\u0010\u0011\u001a\n\u0012\u0004\u0012\u0002H\u0006\u0018\u00010\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u0001H\u0007H\u0007¢\u0006\u0002\u0010\u0016J%\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001dH\u0000¢\u0006\u0002\b\u001e¨\u0006\u001f"}, d2 = {"Landroidx/paging/PagedList$Companion;", "", "<init>", "()V", "create", "Landroidx/paging/PagedList;", ExifInterface.GPS_DIRECTION_TRUE, "K", "pagingSource", "Landroidx/paging/PagingSource;", "initialPage", "Landroidx/paging/PagingSource$LoadResult$Page;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "notifyDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "fetchDispatcher", "boundaryCallback", "Landroidx/paging/PagedList$BoundaryCallback;", "config", "Landroidx/paging/PagedList$Config;", "key", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/CoroutineDispatcher;Lkotlinx/coroutines/CoroutineDispatcher;Landroidx/paging/PagedList$BoundaryCallback;Landroidx/paging/PagedList$Config;Ljava/lang/Object;)Landroidx/paging/PagedList;", "dispatchNaiveUpdatesSinceSnapshot", "", "currentSize", "", "snapshotSize", "callback", "Landroidx/paging/PagedList$Callback;", "dispatchNaiveUpdatesSinceSnapshot$paging_common", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -164,7 +181,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
             return new ContiguousPagedList(pagingSource, coroutineScope, notifyDispatcher, fetchDispatcher, boundaryCallback, config, page, k2);
         }
 
-        public final void dispatchNaiveUpdatesSinceSnapshot$paging_common_release(int i, int i2, Callback callback) {
+        public final void dispatchNaiveUpdatesSinceSnapshot$paging_common(int i, int i2, Callback callback) {
             Intrinsics.checkNotNullParameter(callback, "callback");
             if (i2 < i) {
                 if (i2 > 0) {
@@ -187,24 +204,8 @@ public abstract class PagedList<T> extends AbstractList<T> {
         }
     }
 
-    public PagedList(PagingSource<?, T> pagingSource, CoroutineScope coroutineScope, CoroutineDispatcher notifyDispatcher, PagedStorage<T> storage, Config config) {
-        Intrinsics.checkNotNullParameter(pagingSource, "pagingSource");
-        Intrinsics.checkNotNullParameter(coroutineScope, "coroutineScope");
-        Intrinsics.checkNotNullParameter(notifyDispatcher, "notifyDispatcher");
-        Intrinsics.checkNotNullParameter(storage, "storage");
-        Intrinsics.checkNotNullParameter(config, "config");
-        this.pagingSource = pagingSource;
-        this.coroutineScope = coroutineScope;
-        this.notifyDispatcher = notifyDispatcher;
-        this.storage = storage;
-        this.config = config;
-        this.requiredRemainder = (config.prefetchDistance * 2) + config.pageSize;
-        this.callbacks = new ArrayList();
-        this.loadStateListeners = new ArrayList();
-    }
-
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0007\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u0002*\b\b\u0002\u0010\u0003*\u00020\u00022\u00020\u0002B#\b\u0016\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\bB#\b\u0016\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bB7\b\u0016\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\r\u0012\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u000f\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0002\u0010\u0010B7\b\u0016\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\r\u0012\u0012\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u000f\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u0011J\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00028\u00020\u001eJ\"\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u000e\u0010\u0012\u001a\n\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u0013J\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u0015J\u001a\u0010!\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u0018\u001a\u00020\u0019J\u001c\u0010\"\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010#\u001a\u00020$H\u0007J!\u0010%\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\b\u0010\u001a\u001a\u0004\u0018\u00018\u0001¢\u0006\u0002\u0010&J\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u0019J\u001c\u0010(\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010)\u001a\u00020$H\u0007R\u0016\u0010\u0012\u001a\n\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u0016\u0010\u0017R\u001c\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u001a\u001a\u0004\u0018\u00018\u0001X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001bR\u001c\u0010\u000e\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Landroidx/paging/PagedList$Builder;", "Key", "", "Value", "dataSource", "Landroidx/paging/DataSource;", "config", "Landroidx/paging/PagedList$Config;", "(Landroidx/paging/DataSource;Landroidx/paging/PagedList$Config;)V", "pageSize", "", "(Landroidx/paging/DataSource;I)V", "pagingSource", "Landroidx/paging/PagingSource;", "initialPage", "Landroidx/paging/PagingSource$LoadResult$Page;", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;Landroidx/paging/PagedList$Config;)V", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;I)V", "boundaryCallback", "Landroidx/paging/PagedList$BoundaryCallback;", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "getCoroutineScope$annotations", "()V", "fetchDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "initialKey", "Ljava/lang/Object;", "notifyDispatcher", "build", "Landroidx/paging/PagedList;", "setBoundaryCallback", "setCoroutineScope", "setFetchDispatcher", "setFetchExecutor", "fetchExecutor", "Ljava/util/concurrent/Executor;", "setInitialKey", "(Ljava/lang/Object;)Landroidx/paging/PagedList$Builder;", "setNotifyDispatcher", "setNotifyExecutor", "notifyExecutor", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u0002*\b\b\u0002\u0010\u0003*\u00020\u00022\u00020\u0002B%\b\u0016\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tB%\b\u0016\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0005\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\b\u0010\fB9\b\u0016\u0012\u0012\u0010\r\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u000e\u0012\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0010\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\u0011B9\b\u0016\u0012\u0012\u0010\r\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u000e\u0012\u0012\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u0010\u0012\u0006\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\b\u0010\u0012J\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u0014J\u001c\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010 \u001a\u00020!H\u0007J\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u0017\u001a\u00020\u0018J\u001c\u0010#\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010$\u001a\u00020!H\u0007J\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u0006\u0010\u0019\u001a\u00020\u0018J\"\u0010&\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\u000e\u0010\u001a\u001a\n\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u001bJ!\u0010'\u001a\u000e\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u00020\u00002\b\u0010\u001c\u001a\u0004\u0018\u00018\u0001¢\u0006\u0002\u0010(J\f\u0010)\u001a\b\u0012\u0004\u0012\u00028\u00020*R\u001c\u0010\r\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000f\u001a\u0010\u0012\u0004\u0012\u00028\u0001\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\b\n\u0000\u0012\u0004\b\u0015\u0010\u0016R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n\u0012\u0004\u0012\u00028\u0002\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u001c\u001a\u0004\u0018\u00018\u0001X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u001d¨\u0006+"}, d2 = {"Landroidx/paging/PagedList$Builder;", "Key", "", "Value", "dataSource", "Landroidx/paging/DataSource;", "config", "Landroidx/paging/PagedList$Config;", "<init>", "(Landroidx/paging/DataSource;Landroidx/paging/PagedList$Config;)V", "pageSize", "", "(Landroidx/paging/DataSource;I)V", "pagingSource", "Landroidx/paging/PagingSource;", "initialPage", "Landroidx/paging/PagingSource$LoadResult$Page;", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;Landroidx/paging/PagedList$Config;)V", "(Landroidx/paging/PagingSource;Landroidx/paging/PagingSource$LoadResult$Page;I)V", "coroutineScope", "Lkotlinx/coroutines/CoroutineScope;", "getCoroutineScope$annotations", "()V", "notifyDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "fetchDispatcher", "boundaryCallback", "Landroidx/paging/PagedList$BoundaryCallback;", "initialKey", "Ljava/lang/Object;", "setCoroutineScope", "setNotifyExecutor", "notifyExecutor", "Ljava/util/concurrent/Executor;", "setNotifyDispatcher", "setFetchExecutor", "fetchExecutor", "setFetchDispatcher", "setBoundaryCallback", "setInitialKey", "(Ljava/lang/Object;)Landroidx/paging/PagedList$Builder;", "build", "Landroidx/paging/PagedList;", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     @Deprecated(message = "PagedList is deprecated and has been replaced by PagingData, which no longer supports constructing snapshots of loaded data manually.", replaceWith = @ReplaceWith(expression = "Pager.flow", imports = {"androidx.paging.Pager"}))
     /* loaded from: classes3.dex */
     public static final class Builder<Key, Value> {
@@ -327,7 +328,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
     }
 
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\u0018\u0000 \u000b2\u00020\u0001:\u0002\n\u000bB/\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003¢\u0006\u0002\u0010\tR\u0010\u0010\u0005\u001a\u00020\u00068\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0002\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Landroidx/paging/PagedList$Config;", "", "pageSize", "", "prefetchDistance", "enablePlaceholders", "", "initialLoadSizeHint", "maxSize", "(IIZII)V", "Builder", "Companion", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0007\u0018\u0000 \f2\u00020\u0001:\u0002\u000b\fB1\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003¢\u0006\u0004\b\t\u0010\nR\u0010\u0010\u0002\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0004\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0005\u001a\u00020\u00068\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u00020\u00038\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Landroidx/paging/PagedList$Config;", "", "pageSize", "", "prefetchDistance", "enablePlaceholders", "", "initialLoadSizeHint", "maxSize", "<init>", "(IIZII)V", "Builder", "Companion", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Config {
         public static final Companion Companion = new Companion(null);
@@ -347,7 +348,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
         }
 
         /* compiled from: PagedList.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0005¢\u0006\u0002\u0010\u0002J\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\u00002\u0006\u0010\u0003\u001a\u00020\u0004J\u0010\u0010\r\u001a\u00020\u00002\b\b\u0001\u0010\u0005\u001a\u00020\u0006J\u0010\u0010\u000e\u001a\u00020\u00002\b\b\u0001\u0010\u0007\u001a\u00020\u0006J\u0010\u0010\u000f\u001a\u00020\u00002\b\b\u0001\u0010\b\u001a\u00020\u0006J\u0010\u0010\u0010\u001a\u00020\u00002\b\b\u0001\u0010\t\u001a\u00020\u0006R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Landroidx/paging/PagedList$Config$Builder;", "", "()V", "enablePlaceholders", "", "initialLoadSizeHint", "", "maxSize", "pageSize", "prefetchDistance", "build", "Landroidx/paging/PagedList$Config;", "setEnablePlaceholders", "setInitialLoadSizeHint", "setMaxSize", "setPageSize", "setPrefetchDistance", "Companion", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000b\u001a\u00020\u00002\b\b\u0001\u0010\u0004\u001a\u00020\u0005J\u0010\u0010\f\u001a\u00020\u00002\b\b\u0001\u0010\u0006\u001a\u00020\u0005J\u000e\u0010\r\u001a\u00020\u00002\u0006\u0010\b\u001a\u00020\tJ\u0010\u0010\u000e\u001a\u00020\u00002\b\b\u0001\u0010\u0007\u001a\u00020\u0005J\u0010\u0010\u000f\u001a\u00020\u00002\b\b\u0001\u0010\n\u001a\u00020\u0005J\u0006\u0010\u0010\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Landroidx/paging/PagedList$Config$Builder;", "", "<init>", "()V", "pageSize", "", "prefetchDistance", "initialLoadSizeHint", "enablePlaceholders", "", "maxSize", "setPageSize", "setPrefetchDistance", "setEnablePlaceholders", "setInitialLoadSizeHint", "setMaxSize", "build", "Landroidx/paging/PagedList$Config;", "Companion", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes3.dex */
         public static final class Builder {
             public static final Companion Companion = new Companion(null);
@@ -404,7 +405,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
             }
 
             /* compiled from: PagedList.kt */
-            @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u000e\u0010\u0003\u001a\u00020\u0004X\u0080T¢\u0006\u0002\n\u0000¨\u0006\u0005"}, d2 = {"Landroidx/paging/PagedList$Config$Builder$Companion;", "", "()V", "DEFAULT_INITIAL_PAGE_MULTIPLIER", "", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+            @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0080T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Landroidx/paging/PagedList$Config$Builder$Companion;", "", "<init>", "()V", "DEFAULT_INITIAL_PAGE_MULTIPLIER", "", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
             /* loaded from: classes3.dex */
             public static final class Companion {
                 public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -417,7 +418,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
         }
 
         /* compiled from: PagedList.kt */
-        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002R\u0014\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\b\n\u0000\u0012\u0004\b\u0005\u0010\u0002¨\u0006\u0006"}, d2 = {"Landroidx/paging/PagedList$Config$Companion;", "", "()V", "MAX_SIZE_UNBOUNDED", "", "getMAX_SIZE_UNBOUNDED$annotations", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\b\n\u0000\u0012\u0004\b\u0006\u0010\u0003¨\u0006\u0007"}, d2 = {"Landroidx/paging/PagedList$Config$Companion;", "", "<init>", "()V", "MAX_SIZE_UNBOUNDED", "", "getMAX_SIZE_UNBOUNDED$annotations", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes3.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -433,17 +434,17 @@ public abstract class PagedList<T> extends AbstractList<T> {
     }
 
     /* compiled from: PagedList.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\b'\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J \u0010\u000f\u001a\u00020\u00102\u0018\u0010\u0011\u001a\u0014\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00100\u0012J\u0018\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00132\u0006\u0010\u0016\u001a\u00020\u0004H'J\u0016\u0010\u0017\u001a\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u00132\u0006\u0010\u0016\u001a\u00020\u0004R\u001a\u0010\u0003\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u0006\"\u0004\b\u000b\u0010\bR\u001a\u0010\f\u001a\u00020\u0004X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u0006\"\u0004\b\u000e\u0010\b¨\u0006\u0018"}, d2 = {"Landroidx/paging/PagedList$LoadStateManager;", "", "()V", "endState", "Landroidx/paging/LoadState;", "getEndState", "()Landroidx/paging/LoadState;", "setEndState", "(Landroidx/paging/LoadState;)V", "refreshState", "getRefreshState", "setRefreshState", "startState", "getStartState", "setStartState", "dispatchCurrentLoadState", "", "callback", "Lkotlin/Function2;", "Landroidx/paging/LoadType;", "onStateChanged", "type", RemoteConfigConstants.ResponseFieldKey.STATE, "setState", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b'\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005J\u0018\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005H'J \u0010\u0016\u001a\u00020\u00112\u0018\u0010\u0017\u001a\u0014\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00110\u0018R\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\t¨\u0006\u0019"}, d2 = {"Landroidx/paging/PagedList$LoadStateManager;", "", "<init>", "()V", "refreshState", "Landroidx/paging/LoadState;", "getRefreshState", "()Landroidx/paging/LoadState;", "setRefreshState", "(Landroidx/paging/LoadState;)V", "startState", "getStartState", "setStartState", "endState", "getEndState", "setEndState", "setState", "", "type", "Landroidx/paging/LoadType;", RemoteConfigConstants.ResponseFieldKey.STATE, "onStateChanged", "dispatchCurrentLoadState", "callback", "Lkotlin/Function2;", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static abstract class LoadStateManager {
-        private LoadState refreshState = LoadState.NotLoading.Companion.getIncomplete$paging_common_release();
-        private LoadState startState = LoadState.NotLoading.Companion.getIncomplete$paging_common_release();
-        private LoadState endState = LoadState.NotLoading.Companion.getIncomplete$paging_common_release();
+        private LoadState refreshState = LoadState.NotLoading.Companion.getIncomplete$paging_common();
+        private LoadState startState = LoadState.NotLoading.Companion.getIncomplete$paging_common();
+        private LoadState endState = LoadState.NotLoading.Companion.getIncomplete$paging_common();
 
         /* compiled from: PagedList.kt */
-        @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes3.dex */
-        public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ class WhenMappings {
             public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
             static {
@@ -499,12 +500,13 @@ public abstract class PagedList<T> extends AbstractList<T> {
             int i = WhenMappings.$EnumSwitchMapping$0[type.ordinal()];
             if (i != 1) {
                 if (i != 2) {
-                    if (i == 3) {
-                        if (Intrinsics.areEqual(this.endState, state)) {
-                            return;
-                        }
-                        this.endState = state;
+                    if (i != 3) {
+                        throw new NoWhenBranchMatchedException();
                     }
+                    if (Intrinsics.areEqual(this.endState, state)) {
+                        return;
+                    }
+                    this.endState = state;
                 } else if (Intrinsics.areEqual(this.startState, state)) {
                     return;
                 } else {
@@ -530,11 +532,11 @@ public abstract class PagedList<T> extends AbstractList<T> {
         return this.storage;
     }
 
-    public final Runnable getRefreshRetryCallback$paging_common_release() {
+    public final Runnable getRefreshRetryCallback$paging_common() {
         return this.refreshRetryCallback;
     }
 
-    public final void setRefreshRetryCallback$paging_common_release(Runnable runnable) {
+    public final void setRefreshRetryCallback$paging_common(Runnable runnable) {
         this.refreshRetryCallback = runnable;
     }
 
@@ -542,7 +544,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
         return this.storage.getLastLoadAroundIndex();
     }
 
-    public final int getRequiredRemainder$paging_common_release() {
+    public final int getRequiredRemainder$paging_common() {
         return this.requiredRemainder;
     }
 
@@ -553,9 +555,9 @@ public abstract class PagedList<T> extends AbstractList<T> {
     public final DataSource<?, T> getDataSource() {
         PagingSource<?, T> pagingSource = getPagingSource();
         if (pagingSource instanceof LegacyPagingSource) {
-            DataSource<?, T> dataSource$paging_common_release = ((LegacyPagingSource) pagingSource).getDataSource$paging_common_release();
-            Intrinsics.checkNotNull(dataSource$paging_common_release, "null cannot be cast to non-null type androidx.paging.DataSource<*, T of androidx.paging.PagedList>");
-            return dataSource$paging_common_release;
+            DataSource<?, T> dataSource$paging_common = ((LegacyPagingSource) pagingSource).getDataSource$paging_common();
+            Intrinsics.checkNotNull(dataSource$paging_common, "null cannot be cast to non-null type androidx.paging.DataSource<*, T of androidx.paging.PagedList>");
+            return dataSource$paging_common;
         }
         throw new IllegalStateException("Attempt to access dataSource on a PagedList that was instantiated with a " + pagingSource.getClass().getSimpleName() + " instead of a DataSource");
     }
@@ -576,7 +578,7 @@ public abstract class PagedList<T> extends AbstractList<T> {
         this.refreshRetryCallback = runnable;
     }
 
-    public final void dispatchStateChangeAsync$paging_common_release(LoadType type, LoadState state) {
+    public final void dispatchStateChangeAsync$paging_common(LoadType type, LoadState state) {
         Intrinsics.checkNotNullParameter(type, "type");
         Intrinsics.checkNotNullParameter(state, "state");
         BuildersKt__Builders_commonKt.launch$default(this.coroutineScope, this.notifyDispatcher, null, new PagedList$dispatchStateChangeAsync$1(this, type, state, null), 2, null);
@@ -599,43 +601,36 @@ public abstract class PagedList<T> extends AbstractList<T> {
         return isImmutable() ? this : new SnapshotPagedList(this);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean addWeakLoadStateListener$lambda$0(WeakReference it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return it.get() == null;
+    }
+
     public final void addWeakLoadStateListener(Function2<? super LoadType, ? super LoadState, Unit> listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
-        CollectionsKt.removeAll((List) this.loadStateListeners, (Function1) new Function1<WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>>, Boolean>() { // from class: androidx.paging.PagedList$addWeakLoadStateListener$1
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final Boolean invoke2(WeakReference<Function2<LoadType, LoadState, Unit>> it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Boolean.valueOf(it.get() == null);
-            }
-
+        CollectionsKt.removeAll((List) this.loadStateListeners, new Function1() { // from class: androidx.paging.PagedList$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>> weakReference) {
-                return invoke2((WeakReference<Function2<LoadType, LoadState, Unit>>) weakReference);
+            public final Object invoke(Object obj) {
+                return Boolean.valueOf(PagedList.addWeakLoadStateListener$lambda$0((WeakReference) obj));
             }
         });
         this.loadStateListeners.add(new WeakReference<>(listener));
         dispatchCurrentLoadState(listener);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean removeWeakLoadStateListener$lambda$0(Function2 function2, WeakReference it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return it.get() == null || it.get() == function2;
+    }
+
     public final void removeWeakLoadStateListener(final Function2<? super LoadType, ? super LoadState, Unit> listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
-        CollectionsKt.removeAll((List) this.loadStateListeners, (Function1) new Function1<WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>>, Boolean>() { // from class: androidx.paging.PagedList$removeWeakLoadStateListener$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            /* JADX WARN: Multi-variable type inference failed */
-            {
-                super(1);
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final Boolean invoke2(WeakReference<Function2<LoadType, LoadState, Unit>> it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Boolean.valueOf(it.get() == null || it.get() == listener);
-            }
-
+        CollectionsKt.removeAll((List) this.loadStateListeners, new Function1() { // from class: androidx.paging.PagedList$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Boolean invoke(WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>> weakReference) {
-                return invoke2((WeakReference<Function2<LoadType, LoadState, Unit>>) weakReference);
+            public final Object invoke(Object obj) {
+                return Boolean.valueOf(PagedList.removeWeakLoadStateListener$lambda$0(Function2.this, (WeakReference) obj));
             }
         });
     }
@@ -644,40 +639,45 @@ public abstract class PagedList<T> extends AbstractList<T> {
     public final void addWeakCallback(List<? extends T> list, Callback callback) {
         Intrinsics.checkNotNullParameter(callback, "callback");
         if (list != null && list != this) {
-            Companion.dispatchNaiveUpdatesSinceSnapshot$paging_common_release(size(), list.size(), callback);
+            Companion.dispatchNaiveUpdatesSinceSnapshot$paging_common(size(), list.size(), callback);
         }
         addWeakCallback(callback);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean addWeakCallback$lambda$0(WeakReference it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return it.get() == null;
+    }
+
     public final void addWeakCallback(Callback callback) {
         Intrinsics.checkNotNullParameter(callback, "callback");
-        CollectionsKt.removeAll((List) this.callbacks, (Function1) new Function1<WeakReference<Callback>, Boolean>() { // from class: androidx.paging.PagedList$addWeakCallback$1
+        CollectionsKt.removeAll((List) this.callbacks, new Function1() { // from class: androidx.paging.PagedList$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(WeakReference<PagedList.Callback> it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Boolean.valueOf(it.get() == null);
+            public final Object invoke(Object obj) {
+                return Boolean.valueOf(PagedList.addWeakCallback$lambda$0((WeakReference) obj));
             }
         });
         this.callbacks.add(new WeakReference<>(callback));
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean removeWeakCallback$lambda$0(Callback callback, WeakReference it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        return it.get() == null || it.get() == callback;
+    }
+
     public final void removeWeakCallback(final Callback callback) {
         Intrinsics.checkNotNullParameter(callback, "callback");
-        CollectionsKt.removeAll((List) this.callbacks, (Function1) new Function1<WeakReference<Callback>, Boolean>() { // from class: androidx.paging.PagedList$removeWeakCallback$1
-            /* JADX INFO: Access modifiers changed from: package-private */
-            {
-                super(1);
-            }
-
+        CollectionsKt.removeAll((List) this.callbacks, new Function1() { // from class: androidx.paging.PagedList$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
-            public final Boolean invoke(WeakReference<PagedList.Callback> it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return Boolean.valueOf(it.get() == null || it.get() == PagedList.Callback.this);
+            public final Object invoke(Object obj) {
+                return Boolean.valueOf(PagedList.removeWeakCallback$lambda$0(PagedList.Callback.this, (WeakReference) obj));
             }
         });
     }
 
-    public final void notifyInserted$paging_common_release(int i, int i2) {
+    public final void notifyInserted$paging_common(int i, int i2) {
         if (i2 == 0) {
             return;
         }

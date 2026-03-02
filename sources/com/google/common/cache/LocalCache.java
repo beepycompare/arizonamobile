@@ -1736,7 +1736,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
             loadFuture.addListener(new Runnable() { // from class: com.google.common.cache.LocalCache$Segment$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LocalCache.Segment.this.m9922lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(key, hash, loadingValueReference, loadFuture);
+                    LocalCache.Segment.this.m8952lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(key, hash, loadingValueReference, loadFuture);
                 }
             }, MoreExecutors.directExecutor());
             return loadFuture;
@@ -1745,7 +1745,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: lambda$loadAsync$0$com-google-common-cache-LocalCache$Segment  reason: not valid java name */
-        public /* synthetic */ void m9922lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(Object obj, int i, LoadingValueReference loadingValueReference, ListenableFuture listenableFuture) {
+        public /* synthetic */ void m8952lambda$loadAsync$0$comgooglecommoncacheLocalCache$Segment(Object obj, int i, LoadingValueReference loadingValueReference, ListenableFuture listenableFuture) {
             try {
                 getAndRecordStats(obj, i, loadingValueReference, listenableFuture);
             } catch (Throwable th) {
@@ -2885,7 +2885,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                 return Futures.transform(reload, new Function() { // from class: com.google.common.cache.LocalCache$LoadingValueReference$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return LocalCache.LoadingValueReference.this.m9921x59597480(obj);
+                        return LocalCache.LoadingValueReference.this.m8951x59597480(obj);
                     }
                 }, MoreExecutors.directExecutor());
             } catch (Throwable th) {
@@ -2900,7 +2900,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Multi-variable type inference failed */
         /* renamed from: lambda$loadFuture$0$com-google-common-cache-LocalCache$LoadingValueReference  reason: not valid java name */
-        public /* synthetic */ Object m9921x59597480(Object obj) {
+        public /* synthetic */ Object m8951x59597480(Object obj) {
             set(obj);
             return obj;
         }
@@ -3267,11 +3267,12 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
     public V getIfPresent(Object key) {
         int hash = hash(Preconditions.checkNotNull(key));
         V v = segmentFor(hash).get(key, hash);
+        AbstractCache.StatsCounter statsCounter = this.globalStatsCounter;
         if (v == null) {
-            this.globalStatsCounter.recordMisses(1);
+            statsCounter.recordMisses(1);
             return v;
         }
-        this.globalStatsCounter.recordHits(1);
+        statsCounter.recordHits(1);
         return v;
     }
 
@@ -3349,7 +3350,7 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00bb  */
     @CheckForNull
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3380,14 +3381,15 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                                     put(key, value);
                                 }
                             }
+                            AbstractCache.StatsCounter statsCounter = this.globalStatsCounter;
                             if (z2) {
-                                this.globalStatsCounter.recordLoadException(createStarted.elapsed(TimeUnit.NANOSECONDS));
+                                statsCounter.recordLoadException(createStarted.elapsed(TimeUnit.NANOSECONDS));
                                 throw new CacheLoader.InvalidCacheLoadException(loader + " returned null keys or values from loadAll");
                             }
-                            this.globalStatsCounter.recordLoadSuccess(createStarted.elapsed(TimeUnit.NANOSECONDS));
+                            statsCounter.recordLoadSuccess(createStarted.elapsed(TimeUnit.NANOSECONDS));
                             return map;
-                        } catch (RuntimeException e) {
-                            throw new UncheckedExecutionException(e);
+                        } catch (Exception e) {
+                            throw new ExecutionException(e);
                         }
                     } catch (InterruptedException e2) {
                         Thread.currentThread().interrupt();
@@ -3405,8 +3407,8 @@ public class LocalCache<K, V> extends AbstractMap<K, V> implements ConcurrentMap
                     }
                     throw th;
                 }
-            } catch (Exception e5) {
-                throw new ExecutionException(e5);
+            } catch (RuntimeException e5) {
+                throw new UncheckedExecutionException(e5);
             }
         } catch (Throwable th2) {
             th = th2;

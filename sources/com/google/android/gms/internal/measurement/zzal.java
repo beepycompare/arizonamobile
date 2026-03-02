@@ -83,10 +83,11 @@ public class zzal implements zzao, zzak {
 
     @Override // com.google.android.gms.internal.measurement.zzak
     public final void zzm(String str, zzao zzaoVar) {
+        Map map = this.zza;
         if (zzaoVar == null) {
-            this.zza.remove(str);
+            map.remove(str);
         } else {
-            this.zza.put(str, zzaoVar);
+            map.put(str, zzaoVar);
         }
     }
 
@@ -94,10 +95,12 @@ public class zzal implements zzao, zzak {
     public final zzao zzt() {
         zzal zzalVar = new zzal();
         for (Map.Entry entry : this.zza.entrySet()) {
-            if (entry.getValue() instanceof zzak) {
-                zzalVar.zza.put((String) entry.getKey(), (zzao) entry.getValue());
+            boolean z = entry.getValue() instanceof zzak;
+            Map map = zzalVar.zza;
+            if (z) {
+                map.put((String) entry.getKey(), (zzao) entry.getValue());
             } else {
-                zzalVar.zza.put((String) entry.getKey(), ((zzao) entry.getValue()).zzt());
+                map.put((String) entry.getKey(), ((zzao) entry.getValue()).zzt());
             }
         }
         return zzalVar;

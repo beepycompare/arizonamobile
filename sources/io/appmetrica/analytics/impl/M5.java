@@ -32,9 +32,9 @@ public abstract class M5 extends BaseRequestConfig.ComponentLoader {
             n5.f705a = "0";
             n5.b = "0";
         }
-        C0257fm c0257fm = l5.f671a;
-        n5.c = c0257fm;
-        n5.setRetryPolicyConfig(c0257fm.t);
+        C0256fm c0256fm = l5.f671a;
+        n5.c = c0256fm;
+        n5.setRetryPolicyConfig(c0256fm.t);
         return n5;
     }
 

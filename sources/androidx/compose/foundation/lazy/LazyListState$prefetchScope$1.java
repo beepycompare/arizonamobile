@@ -33,14 +33,12 @@ public final class LazyListState$prefetchScope$1 implements LazyListPrefetchScop
             final LazyListMeasureResult lazyListMeasureResult = (LazyListMeasureResult) mutableState.getValue();
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
             LazyLayoutPrefetchState prefetchState$foundation = this.this$0.getPrefetchState$foundation();
-            long m1050getChildConstraintsmsEJaDk = lazyListMeasureResult.m1050getChildConstraintsmsEJaDk();
+            long m927getChildConstraintsmsEJaDk = lazyListMeasureResult.m927getChildConstraintsmsEJaDk();
             z = this.this$0.executeRequestsInHighPriorityMode;
-            return prefetchState$foundation.m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, m1050getChildConstraintsmsEJaDk, z, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchScope$1$$ExternalSyntheticLambda0
+            return prefetchState$foundation.m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, m927getChildConstraintsmsEJaDk, z, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$prefetchScope$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit schedulePrefetch$lambda$1;
-                    schedulePrefetch$lambda$1 = LazyListState$prefetchScope$1.schedulePrefetch$lambda$1(Function1.this, i, lazyListMeasureResult, (LazyLayoutPrefetchState.PrefetchResultScope) obj);
-                    return schedulePrefetch$lambda$1;
+                    return LazyListState$prefetchScope$1.schedulePrefetch$lambda$1(Function1.this, i, lazyListMeasureResult, (LazyLayoutPrefetchState.PrefetchResultScope) obj);
                 }
             });
         } catch (Throwable th) {
@@ -49,19 +47,19 @@ public final class LazyListState$prefetchScope$1 implements LazyListPrefetchScop
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit schedulePrefetch$lambda$1(Function1 function1, int i, LazyListMeasureResult lazyListMeasureResult, LazyLayoutPrefetchState.PrefetchResultScope prefetchResultScope) {
-        long mo1141getSizeYEO4UFw;
+        long mo1003getSizeYEO4UFw;
         if (function1 != null) {
             int placeablesCount = prefetchResultScope.getPlaceablesCount();
             int i2 = 0;
             for (int i3 = 0; i3 < placeablesCount; i3++) {
                 if (lazyListMeasureResult.getOrientation() == Orientation.Vertical) {
-                    mo1141getSizeYEO4UFw = prefetchResultScope.mo1141getSizeYEO4UFw(i3) & 4294967295L;
+                    mo1003getSizeYEO4UFw = prefetchResultScope.mo1003getSizeYEO4UFw(i3) & 4294967295L;
                 } else {
-                    mo1141getSizeYEO4UFw = prefetchResultScope.mo1141getSizeYEO4UFw(i3) >> 32;
+                    mo1003getSizeYEO4UFw = prefetchResultScope.mo1003getSizeYEO4UFw(i3) >> 32;
                 }
-                i2 += (int) mo1141getSizeYEO4UFw;
+                i2 += (int) mo1003getSizeYEO4UFw;
             }
             function1.invoke(new LazyListPrefetchResultScopeImpl(i, i2));
         }

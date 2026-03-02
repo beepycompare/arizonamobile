@@ -34,11 +34,13 @@ public class SingleThreadCachedScheduler implements ThreadScheduler {
                         if (SingleThreadCachedScheduler.this.isTeardown) {
                             return;
                         }
-                        if (SingleThreadCachedScheduler.this.queue.isEmpty()) {
-                            SingleThreadCachedScheduler.this.isThreadProcessing = false;
+                        boolean isEmpty = SingleThreadCachedScheduler.this.queue.isEmpty();
+                        SingleThreadCachedScheduler singleThreadCachedScheduler = SingleThreadCachedScheduler.this;
+                        if (isEmpty) {
+                            singleThreadCachedScheduler.isThreadProcessing = false;
                             return;
                         } else {
-                            runnable2 = (Runnable) SingleThreadCachedScheduler.this.queue.get(0);
+                            runnable2 = (Runnable) singleThreadCachedScheduler.queue.get(0);
                             SingleThreadCachedScheduler.this.queue.remove(0);
                         }
                     }

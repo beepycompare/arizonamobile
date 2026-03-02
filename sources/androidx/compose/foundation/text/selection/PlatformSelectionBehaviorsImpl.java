@@ -68,8 +68,8 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
 
     @Override // androidx.compose.foundation.text.selection.PlatformSelectionBehaviors
     /* renamed from: suggestSelectionForLongPressOrDoubleClick-pYaCw-w */
-    public Object mo1836suggestSelectionForLongPressOrDoubleClickpYaCww(CharSequence charSequence, long j, Continuation<? super TextRange> continuation) {
-        if (charSequence.length() == 0 || TextRange.m7695getCollapsedimpl(j)) {
+    public Object mo1592suggestSelectionForLongPressOrDoubleClickpYaCww(CharSequence charSequence, long j, Continuation<? super TextRange> continuation) {
+        if (charSequence.length() == 0 || TextRange.m6997getCollapsedimpl(j)) {
             return null;
         }
         return requireTextClassificationSession(new PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleClick$2(charSequence, j, this, null), continuation);
@@ -77,8 +77,8 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onShowContextMenuOrSelectionToolbar-Sb-Bc2M  reason: not valid java name */
-    public final Object m1840onShowContextMenuOrSelectionToolbarSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation) {
-        if (charSequence.length() == 0 || TextRange.m7695getCollapsedimpl(j)) {
+    public final Object m1596onShowContextMenuOrSelectionToolbarSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation) {
+        if (charSequence.length() == 0 || TextRange.m6997getCollapsedimpl(j)) {
             return Unit.INSTANCE;
         }
         return requireTextClassificationSession(new PlatformSelectionBehaviorsImpl$onShowContextMenuOrSelectionToolbar$2(this, charSequence, j, null), continuation);
@@ -86,16 +86,16 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
 
     @Override // androidx.compose.foundation.text.selection.PlatformSelectionBehaviors
     /* renamed from: onShowContextMenu-_2OEclM */
-    public Object mo1834onShowContextMenu_2OEclM(CharSequence charSequence, long j, Offset offset, Continuation<? super Unit> continuation) {
-        Object m1840onShowContextMenuOrSelectionToolbarSbBc2M = m1840onShowContextMenuOrSelectionToolbarSbBc2M(charSequence, j, continuation);
-        return m1840onShowContextMenuOrSelectionToolbarSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m1840onShowContextMenuOrSelectionToolbarSbBc2M : Unit.INSTANCE;
+    public Object mo1590onShowContextMenu_2OEclM(CharSequence charSequence, long j, Offset offset, Continuation<? super Unit> continuation) {
+        Object m1596onShowContextMenuOrSelectionToolbarSbBc2M = m1596onShowContextMenuOrSelectionToolbarSbBc2M(charSequence, j, continuation);
+        return m1596onShowContextMenuOrSelectionToolbarSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m1596onShowContextMenuOrSelectionToolbarSbBc2M : Unit.INSTANCE;
     }
 
     @Override // androidx.compose.foundation.text.selection.PlatformSelectionBehaviors
     /* renamed from: onShowSelectionToolbar-Sb-Bc2M */
-    public Object mo1835onShowSelectionToolbarSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation) {
-        Object m1840onShowContextMenuOrSelectionToolbarSbBc2M = m1840onShowContextMenuOrSelectionToolbarSbBc2M(charSequence, j, continuation);
-        return m1840onShowContextMenuOrSelectionToolbarSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m1840onShowContextMenuOrSelectionToolbarSbBc2M : Unit.INSTANCE;
+    public Object mo1591onShowSelectionToolbarSbBc2M(CharSequence charSequence, long j, Continuation<? super Unit> continuation) {
+        Object m1596onShowContextMenuOrSelectionToolbarSbBc2M = m1596onShowContextMenuOrSelectionToolbarSbBc2M(charSequence, j, continuation);
+        return m1596onShowContextMenuOrSelectionToolbarSbBc2M == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? m1596onShowContextMenuOrSelectionToolbarSbBc2M : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -107,7 +107,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m1839classifyTextM8tDOmk(CharSequence charSequence, long j, TextClassifier textClassifier, Continuation<? super Unit> continuation) {
+    public final Object m1595classifyTextM8tDOmk(CharSequence charSequence, long j, TextClassifier textClassifier, Continuation<? super Unit> continuation) {
         PlatformSelectionBehaviorsImpl$classifyText$1 platformSelectionBehaviorsImpl$classifyText$1;
         Object coroutine_suspended;
         int i;
@@ -121,7 +121,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
         Mutex mutex3;
         long j3;
         CharSequence charSequence3;
-        boolean m1847canReuseh5sm0ck;
+        boolean m1601canReuseh5sm0ck;
         try {
             if (continuation instanceof PlatformSelectionBehaviorsImpl$classifyText$1) {
                 platformSelectionBehaviorsImpl$classifyText$1 = (PlatformSelectionBehaviorsImpl$classifyText$1) continuation;
@@ -170,14 +170,14 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
                     }
                     textClassificationResult = getTextClassificationResult();
                     if (textClassificationResult != null) {
-                        m1847canReuseh5sm0ck = PlatformSelectionBehaviors_androidKt.m1847canReuseh5sm0ck(textClassificationResult, charSequence2, j2);
-                        if (m1847canReuseh5sm0ck) {
+                        m1601canReuseh5sm0ck = PlatformSelectionBehaviors_androidKt.m1601canReuseh5sm0ck(textClassificationResult, charSequence2, j2);
+                        if (m1601canReuseh5sm0ck) {
                             return Unit.INSTANCE;
                         }
                     }
                     Unit unit2 = Unit.INSTANCE;
                     mutex.unlock(null);
-                    classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7699getMinimpl(j2), TextRange.m7698getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
+                    classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7001getMinimpl(j2), TextRange.m7000getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
                     mutex2 = this.mutex;
                     platformSelectionBehaviorsImpl$classifyText$1.L$0 = charSequence2;
                     platformSelectionBehaviorsImpl$classifyText$1.L$1 = classifyText;
@@ -201,7 +201,7 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
             }
             Unit unit22 = Unit.INSTANCE;
             mutex.unlock(null);
-            classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7699getMinimpl(j2), TextRange.m7698getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
+            classifyText = textClassifier2.classifyText(new TextClassification.Request.Builder(charSequence2, TextRange.m7001getMinimpl(j2), TextRange.m7000getMaximpl(j2)).setDefaultLocales(getAndroidLocalList()).build());
             mutex2 = this.mutex;
             platformSelectionBehaviorsImpl$classifyText$1.L$0 = charSequence2;
             platformSelectionBehaviorsImpl$classifyText$1.L$1 = classifyText;
@@ -222,37 +222,37 @@ public final class PlatformSelectionBehaviorsImpl implements PlatformSelectionBe
     }
 
     /* renamed from: addSmartSelectionTextContextMenuItems-YmzfRxQ$foundation  reason: not valid java name */
-    public final void m1841addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation(TextContextMenuBuilderScope textContextMenuBuilderScope, CharSequence charSequence, long j, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
-        TextClassification m1842tryGetTextClassificationFDrldGo = m1842tryGetTextClassificationFDrldGo(charSequence, j);
-        if (m1842tryGetTextClassificationFDrldGo == null) {
+    public final void m1597addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation(TextContextMenuBuilderScope textContextMenuBuilderScope, CharSequence charSequence, long j, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
+        TextClassification m1598tryGetTextClassificationFDrldGo = m1598tryGetTextClassificationFDrldGo(charSequence, j);
+        if (m1598tryGetTextClassificationFDrldGo == null) {
             function1.invoke(textContextMenuBuilderScope);
             return;
         }
-        if (!m1842tryGetTextClassificationFDrldGo.getActions().isEmpty()) {
-            TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1842tryGetTextClassificationFDrldGo, 0);
-        } else if (TextClassifierHelperMethods.INSTANCE.hasLegacyAssistItem$foundation(m1842tryGetTextClassificationFDrldGo)) {
-            TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1842tryGetTextClassificationFDrldGo, -1);
+        if (!m1598tryGetTextClassificationFDrldGo.getActions().isEmpty()) {
+            TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1598tryGetTextClassificationFDrldGo, 0);
+        } else if (TextClassifierHelperMethods.INSTANCE.hasLegacyAssistItem$foundation(m1598tryGetTextClassificationFDrldGo)) {
+            TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1598tryGetTextClassificationFDrldGo, -1);
         }
         function1.invoke(textContextMenuBuilderScope);
-        List<RemoteAction> actions = m1842tryGetTextClassificationFDrldGo.getActions();
+        List<RemoteAction> actions = m1598tryGetTextClassificationFDrldGo.getActions();
         int size = actions.size();
         for (int i = 0; i < size; i++) {
             actions.get(i);
             if (i > 0) {
-                TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1842tryGetTextClassificationFDrldGo, i);
+                TextContextMenuBuilderScope_androidKt.textClassificationItem(textContextMenuBuilderScope, this.AssistantItemKey, m1598tryGetTextClassificationFDrldGo, i);
             }
         }
     }
 
     /* renamed from: tryGetTextClassification-FDrldGo  reason: not valid java name */
-    public final TextClassification m1842tryGetTextClassificationFDrldGo(CharSequence charSequence, long j) {
+    public final TextClassification m1598tryGetTextClassificationFDrldGo(CharSequence charSequence, long j) {
         TextClassification textClassification;
-        boolean m1847canReuseh5sm0ck;
+        boolean m1601canReuseh5sm0ck;
         if (Mutex.DefaultImpls.tryLock$default(this.mutex, null, 1, null)) {
             TextClassificationResult textClassificationResult = getTextClassificationResult();
             if (textClassificationResult != null) {
-                m1847canReuseh5sm0ck = PlatformSelectionBehaviors_androidKt.m1847canReuseh5sm0ck(textClassificationResult, charSequence, j);
-                if (m1847canReuseh5sm0ck) {
+                m1601canReuseh5sm0ck = PlatformSelectionBehaviors_androidKt.m1601canReuseh5sm0ck(textClassificationResult, charSequence, j);
+                if (m1601canReuseh5sm0ck) {
                     textClassification = textClassificationResult.getTextClassification();
                     Mutex.DefaultImpls.unlock$default(this.mutex, null, 1, null);
                     return textClassification;

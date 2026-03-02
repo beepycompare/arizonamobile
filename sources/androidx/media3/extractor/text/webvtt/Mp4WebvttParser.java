@@ -32,10 +32,12 @@ public final class Mp4WebvttParser implements SubtitleParser {
         while (this.parsableByteArray.bytesLeft() > 0) {
             Preconditions.checkArgument(this.parsableByteArray.bytesLeft() >= 8, "Incomplete Mp4Webvtt Top Level box header found.");
             int readInt = this.parsableByteArray.readInt();
-            if (this.parsableByteArray.readInt() == TYPE_vttc) {
-                arrayList.add(parseVttCueBox(this.parsableByteArray, readInt - 8));
+            int readInt2 = this.parsableByteArray.readInt();
+            ParsableByteArray parsableByteArray = this.parsableByteArray;
+            if (readInt2 == TYPE_vttc) {
+                arrayList.add(parseVttCueBox(parsableByteArray, readInt - 8));
             } else {
-                this.parsableByteArray.skipBytes(readInt - 8);
+                parsableByteArray.skipBytes(readInt - 8);
             }
         }
         consumer.accept(new CuesWithTiming(arrayList, C.TIME_UNSET, C.TIME_UNSET));

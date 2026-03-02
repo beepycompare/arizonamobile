@@ -85,14 +85,12 @@ public final class CrashlyticsWorkers {
             checkThread(new CrashlyticsWorkers$Companion$checkNotMainThread$1(this), new Function0() { // from class: com.google.firebase.crashlytics.internal.concurrency.CrashlyticsWorkers$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String checkNotMainThread$lambda$0;
-                    checkNotMainThread$lambda$0 = CrashlyticsWorkers.Companion.checkNotMainThread$lambda$0();
-                    return checkNotMainThread$lambda$0;
+                    return CrashlyticsWorkers.Companion.checkNotMainThread$lambda$0();
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final String checkNotMainThread$lambda$0() {
             return "Must not be called on a main thread, was called on " + CrashlyticsWorkers.Companion.getThreadName() + '.';
         }
@@ -102,14 +100,12 @@ public final class CrashlyticsWorkers {
             checkThread(new CrashlyticsWorkers$Companion$checkBlockingThread$1(this), new Function0() { // from class: com.google.firebase.crashlytics.internal.concurrency.CrashlyticsWorkers$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String checkBlockingThread$lambda$1;
-                    checkBlockingThread$lambda$1 = CrashlyticsWorkers.Companion.checkBlockingThread$lambda$1();
-                    return checkBlockingThread$lambda$1;
+                    return CrashlyticsWorkers.Companion.checkBlockingThread$lambda$1();
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final String checkBlockingThread$lambda$1() {
             return "Must be called on a blocking thread, was called on " + CrashlyticsWorkers.Companion.getThreadName() + '.';
         }
@@ -119,14 +115,12 @@ public final class CrashlyticsWorkers {
             checkThread(new CrashlyticsWorkers$Companion$checkBackgroundThread$1(this), new Function0() { // from class: com.google.firebase.crashlytics.internal.concurrency.CrashlyticsWorkers$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String checkBackgroundThread$lambda$2;
-                    checkBackgroundThread$lambda$2 = CrashlyticsWorkers.Companion.checkBackgroundThread$lambda$2();
-                    return checkBackgroundThread$lambda$2;
+                    return CrashlyticsWorkers.Companion.checkBackgroundThread$lambda$2();
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final String checkBackgroundThread$lambda$2() {
             return "Must be called on a background thread, was called on " + CrashlyticsWorkers.Companion.getThreadName() + '.';
         }

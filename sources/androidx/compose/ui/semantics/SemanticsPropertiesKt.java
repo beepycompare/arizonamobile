@@ -135,12 +135,12 @@ public final class SemanticsPropertiesKt {
     }
 
     public static final int getLiveRegion(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return SemanticsProperties.INSTANCE.getLiveRegion().getValue(semanticsPropertyReceiver, $$delegatedProperties[3]).m7432unboximpl();
+        return SemanticsProperties.INSTANCE.getLiveRegion().getValue(semanticsPropertyReceiver, $$delegatedProperties[3]).m6764unboximpl();
     }
 
     /* renamed from: setLiveRegion-hR3wRGc */
-    public static final void m7460setLiveRegionhR3wRGc(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
-        SemanticsProperties.INSTANCE.getLiveRegion().setValue(semanticsPropertyReceiver, $$delegatedProperties[3], LiveRegionMode.m7426boximpl(i));
+    public static final void m6792setLiveRegionhR3wRGc(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
+        SemanticsProperties.INSTANCE.getLiveRegion().setValue(semanticsPropertyReceiver, $$delegatedProperties[3], LiveRegionMode.m6758boximpl(i));
     }
 
     public static final boolean getFocused(SemanticsPropertyReceiver semanticsPropertyReceiver) {
@@ -241,12 +241,12 @@ public final class SemanticsPropertiesKt {
     }
 
     public static final int getRole(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return SemanticsProperties.INSTANCE.getRole().getValue(semanticsPropertyReceiver, $$delegatedProperties[14]).m7441unboximpl();
+        return SemanticsProperties.INSTANCE.getRole().getValue(semanticsPropertyReceiver, $$delegatedProperties[14]).m6773unboximpl();
     }
 
     /* renamed from: setRole-kuIjeqM */
-    public static final void m7461setRolekuIjeqM(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
-        SemanticsProperties.INSTANCE.getRole().setValue(semanticsPropertyReceiver, $$delegatedProperties[14], Role.m7435boximpl(i));
+    public static final void m6793setRolekuIjeqM(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
+        SemanticsProperties.INSTANCE.getRole().setValue(semanticsPropertyReceiver, $$delegatedProperties[14], Role.m6767boximpl(i));
     }
 
     public static final String getTestTag(SemanticsPropertyReceiver semanticsPropertyReceiver) {
@@ -298,23 +298,23 @@ public final class SemanticsPropertiesKt {
     }
 
     public static final long getTextSelectionRange(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return SemanticsProperties.INSTANCE.getTextSelectionRange().getValue(semanticsPropertyReceiver, $$delegatedProperties[20]).m7705unboximpl();
+        return SemanticsProperties.INSTANCE.getTextSelectionRange().getValue(semanticsPropertyReceiver, $$delegatedProperties[20]).m7007unboximpl();
     }
 
     /* renamed from: setTextSelectionRange-FDrldGo */
-    public static final void m7462setTextSelectionRangeFDrldGo(SemanticsPropertyReceiver semanticsPropertyReceiver, long j) {
-        SemanticsProperties.INSTANCE.getTextSelectionRange().setValue(semanticsPropertyReceiver, $$delegatedProperties[20], TextRange.m7689boximpl(j));
+    public static final void m6794setTextSelectionRangeFDrldGo(SemanticsPropertyReceiver semanticsPropertyReceiver, long j) {
+        SemanticsProperties.INSTANCE.getTextSelectionRange().setValue(semanticsPropertyReceiver, $$delegatedProperties[20], TextRange.m6991boximpl(j));
     }
 
     @Deprecated(message = "Pass the ImeAction to onImeAction instead.")
     public static final int getImeAction(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return SemanticsProperties.INSTANCE.getImeAction().getValue(semanticsPropertyReceiver, $$delegatedProperties[21]).m7876unboximpl();
+        return SemanticsProperties.INSTANCE.getImeAction().getValue(semanticsPropertyReceiver, $$delegatedProperties[21]).m7174unboximpl();
     }
 
     @Deprecated(message = "Pass the ImeAction to onImeAction instead.")
     /* renamed from: setImeAction-4L7nppU */
-    public static final void m7459setImeAction4L7nppU(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
-        SemanticsProperties.INSTANCE.getImeAction().setValue(semanticsPropertyReceiver, $$delegatedProperties[21], ImeAction.m7870boximpl(i));
+    public static final void m6791setImeAction4L7nppU(SemanticsPropertyReceiver semanticsPropertyReceiver, int i) {
+        SemanticsProperties.INSTANCE.getImeAction().setValue(semanticsPropertyReceiver, $$delegatedProperties[21], ImeAction.m7168boximpl(i));
     }
 
     public static final boolean getSelected(SemanticsPropertyReceiver semanticsPropertyReceiver) {
@@ -546,16 +546,16 @@ public final class SemanticsPropertiesKt {
     }
 
     /* renamed from: onImeAction-9UiTYpY$default */
-    public static /* synthetic */ void m7458onImeAction9UiTYpY$default(SemanticsPropertyReceiver semanticsPropertyReceiver, int i, String str, Function0 function0, int i2, Object obj) {
+    public static /* synthetic */ void m6790onImeAction9UiTYpY$default(SemanticsPropertyReceiver semanticsPropertyReceiver, int i, String str, Function0 function0, int i2, Object obj) {
         if ((i2 & 2) != 0) {
             str = null;
         }
-        m7457onImeAction9UiTYpY(semanticsPropertyReceiver, i, str, function0);
+        m6789onImeAction9UiTYpY(semanticsPropertyReceiver, i, str, function0);
     }
 
     /* renamed from: onImeAction-9UiTYpY */
-    public static final void m7457onImeAction9UiTYpY(SemanticsPropertyReceiver semanticsPropertyReceiver, int i, String str, Function0<Boolean> function0) {
-        semanticsPropertyReceiver.set(SemanticsProperties.INSTANCE.getImeAction(), ImeAction.m7870boximpl(i));
+    public static final void m6789onImeAction9UiTYpY(SemanticsPropertyReceiver semanticsPropertyReceiver, int i, String str, Function0<Boolean> function0) {
+        semanticsPropertyReceiver.set(SemanticsProperties.INSTANCE.getImeAction(), ImeAction.m7168boximpl(i));
         semanticsPropertyReceiver.set(SemanticsActions.INSTANCE.getOnImeAction(), new AccessibilityAction(str, function0));
     }
 

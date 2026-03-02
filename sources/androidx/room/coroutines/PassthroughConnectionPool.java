@@ -33,20 +33,15 @@ public final class PassthroughConnectionPool implements ConnectionPool {
         this.connection = LazyKt.lazy(new Function0() { // from class: androidx.room.coroutines.PassthroughConnectionPool$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SQLiteConnection connection$lambda$0;
-                connection$lambda$0 = PassthroughConnectionPool.connection$lambda$0(PassthroughConnectionPool.this);
-                return connection$lambda$0;
+                SQLiteConnection open;
+                open = r0.driver.open(PassthroughConnectionPool.this.fileName);
+                return open;
             }
         });
     }
 
     public /* synthetic */ PassthroughConnectionPool(SQLiteDriver sQLiteDriver, String str, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(sQLiteDriver, str, (i & 4) != 0 ? null : function2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SQLiteConnection connection$lambda$0(PassthroughConnectionPool passthroughConnectionPool) {
-        return passthroughConnectionPool.driver.open(passthroughConnectionPool.fileName);
     }
 
     @Override // androidx.room.coroutines.ConnectionPool

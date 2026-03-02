@@ -1,5 +1,7 @@
 package com.google.android.gms.tasks;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zza implements OnSuccessListener {
     final /* synthetic */ OnTokenCanceledListener zza;
@@ -7,6 +9,7 @@ final class zza implements OnSuccessListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zza(zzb zzbVar, OnTokenCanceledListener onTokenCanceledListener) {
         this.zza = onTokenCanceledListener;
+        Objects.requireNonNull(zzbVar);
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener

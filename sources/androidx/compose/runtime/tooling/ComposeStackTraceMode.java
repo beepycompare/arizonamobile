@@ -11,54 +11,54 @@ public final class ComposeStackTraceMode {
     private static boolean isMinified;
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m4888constructorimpl(0);
-    private static final int GroupKeys = m4888constructorimpl(1);
-    private static final int SourceInformation = m4888constructorimpl(2);
+    private static final int None = m4236constructorimpl(0);
+    private static final int GroupKeys = m4236constructorimpl(1);
+    private static final int SourceInformation = m4236constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ComposeStackTraceMode m4887boximpl(int i) {
+    public static final /* synthetic */ ComposeStackTraceMode m4235boximpl(int i) {
         return new ComposeStackTraceMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m4888constructorimpl(int i) {
+    private static int m4236constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4889equalsimpl(int i, Object obj) {
-        return (obj instanceof ComposeStackTraceMode) && i == ((ComposeStackTraceMode) obj).m4893unboximpl();
+    public static boolean m4237equalsimpl(int i, Object obj) {
+        return (obj instanceof ComposeStackTraceMode) && i == ((ComposeStackTraceMode) obj).m4241unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4890equalsimpl0(int i, int i2) {
+    public static final boolean m4238equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4891hashCodeimpl(int i) {
+    public static int m4239hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4892toStringimpl(int i) {
+    public static String m4240toStringimpl(int i) {
         return "ComposeStackTraceMode(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4889equalsimpl(this.value, obj);
+        return m4237equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4891hashCodeimpl(this.value);
+        return m4239hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m4892toStringimpl(this.value);
+        return m4240toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4893unboximpl() {
+    public final /* synthetic */ int m4241unboximpl() {
         return this.value;
     }
 
@@ -74,23 +74,23 @@ public final class ComposeStackTraceMode {
         }
 
         /* renamed from: getNone-MD5MrJc  reason: not valid java name */
-        public final int m4896getNoneMD5MrJc() {
+        public final int m4244getNoneMD5MrJc() {
             return ComposeStackTraceMode.None;
         }
 
         /* renamed from: getGroupKeys-MD5MrJc  reason: not valid java name */
-        public final int m4895getGroupKeysMD5MrJc() {
+        public final int m4243getGroupKeysMD5MrJc() {
             return ComposeStackTraceMode.GroupKeys;
         }
 
         /* renamed from: getSourceInformation-MD5MrJc  reason: not valid java name */
-        public final int m4897getSourceInformationMD5MrJc() {
+        public final int m4245getSourceInformationMD5MrJc() {
             return ComposeStackTraceMode.SourceInformation;
         }
 
         /* renamed from: getAuto-MD5MrJc  reason: not valid java name */
-        public final int m4894getAutoMD5MrJc() {
-            return ComposeStackTraceMode.isMinified ? m4895getGroupKeysMD5MrJc() : m4896getNoneMD5MrJc();
+        public final int m4242getAutoMD5MrJc() {
+            return ComposeStackTraceMode.isMinified ? m4243getGroupKeysMD5MrJc() : m4244getNoneMD5MrJc();
         }
     }
 

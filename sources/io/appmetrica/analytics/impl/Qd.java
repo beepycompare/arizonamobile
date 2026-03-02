@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Qd implements InterfaceC0625uc {
+public final class Qd implements InterfaceC0624uc {
 
     /* renamed from: a  reason: collision with root package name */
     public final F8 f750a = new F8() { // from class: io.appmetrica.analytics.impl.Qd$$ExternalSyntheticLambda0
@@ -14,7 +14,7 @@ public final class Qd implements InterfaceC0625uc {
         return true;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0625uc
+    @Override // io.appmetrica.analytics.impl.InterfaceC0624uc
     public final F8 a() {
         return this.f750a;
     }

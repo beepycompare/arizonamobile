@@ -49,9 +49,7 @@ public class NavHostFragment extends Fragment implements NavHost {
     private final Lazy navHostController$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.fragment.NavHostFragment$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            NavHostController navHostController_delegate$lambda$6;
-            navHostController_delegate$lambda$6 = NavHostFragment.navHostController_delegate$lambda$6(NavHostFragment.this);
-            return navHostController_delegate$lambda$6;
+            return NavHostFragment.navHostController_delegate$lambda$6(NavHostFragment.this);
         }
     });
     private View viewParent;
@@ -75,7 +73,7 @@ public class NavHostFragment extends Fragment implements NavHost {
         return (NavHostController) this.navHostController$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavHostController navHostController_delegate$lambda$6(final NavHostFragment navHostFragment) {
         Context context = navHostFragment.getContext();
         if (context == null) {
@@ -94,9 +92,7 @@ public class NavHostFragment extends Fragment implements NavHost {
         navHostFragment.getSavedStateRegistry().registerSavedStateProvider(KEY_NAV_CONTROLLER_STATE, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.navigation.fragment.NavHostFragment$$ExternalSyntheticLambda1
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle navHostController_delegate$lambda$6$lambda$5$lambda$2;
-                navHostController_delegate$lambda$6$lambda$5$lambda$2 = NavHostFragment.navHostController_delegate$lambda$6$lambda$5$lambda$2(NavHostController.this);
-                return navHostController_delegate$lambda$6$lambda$5$lambda$2;
+                return NavHostFragment.navHostController_delegate$lambda$6$lambda$5$lambda$2(NavHostController.this);
             }
         });
         Bundle consumeRestoredStateForKey2 = navHostFragment.getSavedStateRegistry().consumeRestoredStateForKey(KEY_GRAPH_ID);
@@ -106,9 +102,7 @@ public class NavHostFragment extends Fragment implements NavHost {
         navHostFragment.getSavedStateRegistry().registerSavedStateProvider(KEY_GRAPH_ID, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.navigation.fragment.NavHostFragment$$ExternalSyntheticLambda2
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle navHostController_delegate$lambda$6$lambda$5$lambda$4;
-                navHostController_delegate$lambda$6$lambda$5$lambda$4 = NavHostFragment.navHostController_delegate$lambda$6$lambda$5$lambda$4(NavHostFragment.this);
-                return navHostController_delegate$lambda$6$lambda$5$lambda$4;
+                return NavHostFragment.navHostController_delegate$lambda$6$lambda$5$lambda$4(NavHostFragment.this);
             }
         });
         int i = navHostFragment.graphId;
@@ -125,7 +119,7 @@ public class NavHostFragment extends Fragment implements NavHost {
         return navHostController;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle navHostController_delegate$lambda$6$lambda$5$lambda$2(NavHostController navHostController) {
         Bundle saveState = navHostController.saveState();
         if (saveState == null) {
@@ -136,7 +130,7 @@ public class NavHostFragment extends Fragment implements NavHost {
         return saveState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle navHostController_delegate$lambda$6$lambda$5$lambda$4(NavHostFragment navHostFragment) {
         int i = navHostFragment.graphId;
         if (i != 0) {

@@ -175,7 +175,7 @@ public class RxRoom {
             return create;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Type inference failed for: r0v1, types: [androidx.room.RxRoom$Companion$createFlowable$1$observer$1] */
         public static final void createFlowable$lambda$1(final RoomDatabase roomDatabase, final String[] strArr, final FlowableEmitter emitter) {
             Intrinsics.checkNotNullParameter(emitter, "emitter");
@@ -194,7 +194,7 @@ public class RxRoom {
                 emitter.setDisposable(Disposables.fromAction(new Action() { // from class: androidx.room.RxRoom$Companion$$ExternalSyntheticLambda5
                     @Override // io.reactivex.functions.Action
                     public final void run() {
-                        RxRoom.Companion.createFlowable$lambda$1$lambda$0(RoomDatabase.this, r0);
+                        RoomDatabase.this.getInvalidationTracker().removeObserver(r0);
                     }
                 }));
             }
@@ -202,11 +202,6 @@ public class RxRoom {
                 return;
             }
             emitter.onNext(RxRoom.NOTHING);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void createFlowable$lambda$1$lambda$0(RoomDatabase roomDatabase, RxRoom$Companion$createFlowable$1$observer$1 rxRoom$Companion$createFlowable$1$observer$1) {
-            roomDatabase.getInvalidationTracker().removeObserver(rxRoom$Companion$createFlowable$1$observer$1);
         }
 
         @Deprecated(message = "No longer used by generated code.")
@@ -231,16 +226,14 @@ public class RxRoom {
             Flowable<T> flowable = (Flowable<T>) createFlowable(database, (String[]) Arrays.copyOf(tableNames, tableNames.length)).subscribeOn(from).unsubscribeOn(from).observeOn(from).flatMapMaybe(new Function() { // from class: androidx.room.RxRoom$Companion$$ExternalSyntheticLambda4
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
-                    MaybeSource createFlowable$lambda$2;
-                    createFlowable$lambda$2 = RxRoom.Companion.createFlowable$lambda$2(Maybe.this, obj);
-                    return createFlowable$lambda$2;
+                    return RxRoom.Companion.createFlowable$lambda$2(Maybe.this, obj);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(flowable, "flatMapMaybe(...)");
             return flowable;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final MaybeSource createFlowable$lambda$2(Maybe maybe, Object it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return maybe;
@@ -260,7 +253,7 @@ public class RxRoom {
             return create;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Type inference failed for: r0v1, types: [androidx.room.RxRoom$Companion$createObservable$1$observer$1] */
         public static final void createObservable$lambda$4(final RoomDatabase roomDatabase, final String[] strArr, final ObservableEmitter emitter) {
             Intrinsics.checkNotNullParameter(emitter, "emitter");
@@ -275,15 +268,10 @@ public class RxRoom {
             emitter.setDisposable(Disposables.fromAction(new Action() { // from class: androidx.room.RxRoom$Companion$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Action
                 public final void run() {
-                    RxRoom.Companion.createObservable$lambda$4$lambda$3(RoomDatabase.this, r0);
+                    RoomDatabase.this.getInvalidationTracker().removeObserver(r0);
                 }
             }));
             emitter.onNext(RxRoom.NOTHING);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void createObservable$lambda$4$lambda$3(RoomDatabase roomDatabase, RxRoom$Companion$createObservable$1$observer$1 rxRoom$Companion$createObservable$1$observer$1) {
-            roomDatabase.getInvalidationTracker().removeObserver(rxRoom$Companion$createObservable$1$observer$1);
         }
 
         @Deprecated(message = "No longer used by generated code.")
@@ -308,16 +296,14 @@ public class RxRoom {
             Observable<T> observable = (Observable<T>) createObservable(database, (String[]) Arrays.copyOf(tableNames, tableNames.length)).subscribeOn(from).unsubscribeOn(from).observeOn(from).flatMapMaybe(new Function() { // from class: androidx.room.RxRoom$Companion$$ExternalSyntheticLambda3
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
-                    MaybeSource createObservable$lambda$5;
-                    createObservable$lambda$5 = RxRoom.Companion.createObservable$lambda$5(Maybe.this, obj);
-                    return createObservable$lambda$5;
+                    return RxRoom.Companion.createObservable$lambda$5(Maybe.this, obj);
                 }
             });
             Intrinsics.checkNotNullExpressionValue(observable, "flatMapMaybe(...)");
             return observable;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final MaybeSource createObservable$lambda$5(Maybe maybe, Object it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return maybe;
@@ -336,7 +322,7 @@ public class RxRoom {
             return create;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void createSingle$lambda$6(Callable callable, SingleEmitter emitter) {
             Intrinsics.checkNotNullParameter(emitter, "emitter");
             try {

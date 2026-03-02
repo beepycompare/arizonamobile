@@ -15,7 +15,7 @@ import kotlin.Metadata;
 public final class VerticalDragHandleDefaults {
     public static final int $stable = 0;
     public static final VerticalDragHandleDefaults INSTANCE = new VerticalDragHandleDefaults();
-    private static final DragHandleSizes sizes = new DragHandleSizes(DpKt.m8280DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3962getWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3958getHeightD9Ej5fM()), DpKt.m8280DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3961getPressedWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3960getPressedHeightD9Ej5fM()), DpKt.m8280DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3956getDraggedWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3955getDraggedHeightD9Ej5fM()), null);
+    private static final DragHandleSizes sizes = new DragHandleSizes(DpKt.m7577DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3346getWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3342getHeightD9Ej5fM()), DpKt.m7577DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3345getPressedWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3344getPressedHeightD9Ej5fM()), DpKt.m7577DpSizeYgX7TsA(DragHandleTokens.INSTANCE.m3340getDraggedWidthD9Ej5fM(), DragHandleTokens.INSTANCE.m3339getDraggedHeightD9Ej5fM()), null);
 
     private VerticalDragHandleDefaults() {
     }
@@ -34,27 +34,27 @@ public final class VerticalDragHandleDefaults {
     }
 
     /* renamed from: colors-RGew2ao  reason: not valid java name */
-    public final DragHandleColors m3508colorsRGew2ao(long j, long j2, long j3, Composer composer, int i, int i2) {
+    public final DragHandleColors m2939colorsRGew2ao(long j, long j2, long j3, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -2062501640, "C(colors)N(color:c#ui.graphics.Color,pressedColor:c#ui.graphics.Color,draggedColor:c#ui.graphics.Color)234@10175L11:DragHandle.kt#uh7d8r");
-        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
-        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
-        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
+        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
+        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2062501640, i, -1, "androidx.compose.material3.VerticalDragHandleDefaults.colors (DragHandle.kt:234)");
         }
         DragHandleColors colors = getColors(MaterialTheme.INSTANCE.getColorScheme(composer, 6));
-        if (m5460getUnspecified0d7_KjU == 16) {
-            m5460getUnspecified0d7_KjU = colors.m2404getColor0d7_KjU();
+        if (m4808getUnspecified0d7_KjU == 16) {
+            m4808getUnspecified0d7_KjU = colors.m2041getColor0d7_KjU();
         }
-        long j4 = m5460getUnspecified0d7_KjU;
-        if (m5460getUnspecified0d7_KjU2 == 16) {
-            m5460getUnspecified0d7_KjU2 = colors.m2406getPressedColor0d7_KjU();
+        long j4 = m4808getUnspecified0d7_KjU;
+        if (m4808getUnspecified0d7_KjU2 == 16) {
+            m4808getUnspecified0d7_KjU2 = colors.m2043getPressedColor0d7_KjU();
         }
-        long j5 = m5460getUnspecified0d7_KjU2;
-        if (m5460getUnspecified0d7_KjU3 == 16) {
-            m5460getUnspecified0d7_KjU3 = colors.m2405getDraggedColor0d7_KjU();
+        long j5 = m4808getUnspecified0d7_KjU2;
+        if (m4808getUnspecified0d7_KjU3 == 16) {
+            m4808getUnspecified0d7_KjU3 = colors.m2042getDraggedColor0d7_KjU();
         }
-        DragHandleColors dragHandleColors = new DragHandleColors(j4, j5, m5460getUnspecified0d7_KjU3, null);
+        DragHandleColors dragHandleColors = new DragHandleColors(j4, j5, m4808getUnspecified0d7_KjU3, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -112,33 +112,33 @@ public final class VerticalDragHandleDefaults {
     }
 
     /* renamed from: sizes-L9TjZb0$default  reason: not valid java name */
-    public static /* synthetic */ DragHandleSizes m3507sizesL9TjZb0$default(VerticalDragHandleDefaults verticalDragHandleDefaults, long j, long j2, long j3, int i, Object obj) {
+    public static /* synthetic */ DragHandleSizes m2938sizesL9TjZb0$default(VerticalDragHandleDefaults verticalDragHandleDefaults, long j, long j2, long j3, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+            j = DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
         }
         long j4 = j;
         if ((i & 2) != 0) {
-            j2 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+            j2 = DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
         }
         long j5 = j2;
         if ((i & 4) != 0) {
-            j3 = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+            j3 = DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
         }
-        return verticalDragHandleDefaults.m3509sizesL9TjZb0(j4, j5, j3);
+        return verticalDragHandleDefaults.m2940sizesL9TjZb0(j4, j5, j3);
     }
 
     /* renamed from: sizes-L9TjZb0  reason: not valid java name */
-    public final DragHandleSizes m3509sizesL9TjZb0(long j, long j2, long j3) {
+    public final DragHandleSizes m2940sizesL9TjZb0(long j, long j2, long j3) {
         DragHandleSizes dragHandleSizes = sizes;
         if (j == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            j = dragHandleSizes.m2412getSizeMYxV2XQ();
+            j = dragHandleSizes.m2046getSizeMYxV2XQ();
         }
         if (j2 == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            j2 = dragHandleSizes.m2411getPressedSizeMYxV2XQ();
+            j2 = dragHandleSizes.m2045getPressedSizeMYxV2XQ();
         }
         long j4 = j2;
         if (j3 == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            j3 = dragHandleSizes.m2410getDraggedSizeMYxV2XQ();
+            j3 = dragHandleSizes.m2044getDraggedSizeMYxV2XQ();
         }
         return new DragHandleSizes(j, j4, j3, null);
     }

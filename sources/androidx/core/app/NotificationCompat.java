@@ -587,13 +587,12 @@ public class NotificationCompat {
         }
 
         private void setFlag(int i, boolean z) {
+            Notification notification = this.mNotification;
             if (z) {
-                Notification notification = this.mNotification;
                 notification.flags = i | notification.flags;
                 return;
             }
-            Notification notification2 = this.mNotification;
-            notification2.flags = (~i) & notification2.flags;
+            notification.flags = (~i) & notification.flags;
         }
 
         public Builder setPriority(int i) {
@@ -1685,10 +1684,12 @@ public class NotificationCompat {
         public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
             Notification.MessagingStyle createMessagingStyle;
             setGroupConversation(isGroupConversation());
-            if (Build.VERSION.SDK_INT >= 28) {
-                createMessagingStyle = Api28Impl.createMessagingStyle(this.mUser.toAndroidPerson());
+            int i = Build.VERSION.SDK_INT;
+            Person person = this.mUser;
+            if (i >= 28) {
+                createMessagingStyle = Api28Impl.createMessagingStyle(person.toAndroidPerson());
             } else {
-                createMessagingStyle = Api24Impl.createMessagingStyle(this.mUser.getName());
+                createMessagingStyle = Api24Impl.createMessagingStyle(person.getName());
             }
             for (Message message : this.mMessages) {
                 Api24Impl.addMessage(createMessagingStyle, message.toAndroidMessage());
@@ -1709,16 +1710,21 @@ public class NotificationCompat {
 
         private Message findLatestIncomingMessage() {
             List<Message> list;
-            for (int size = this.mMessages.size() - 1; size >= 0; size--) {
-                Message message = this.mMessages.get(size);
-                if (message.getPerson() != null && !TextUtils.isEmpty(message.getPerson().getName())) {
-                    return message;
+            int size = this.mMessages.size();
+            while (true) {
+                size--;
+                List<Message> list2 = this.mMessages;
+                if (size >= 0) {
+                    Message message = list2.get(size);
+                    if (message.getPerson() != null && !TextUtils.isEmpty(message.getPerson().getName())) {
+                        return message;
+                    }
+                } else if (list2.isEmpty()) {
+                    return null;
+                } else {
+                    return this.mMessages.get(list.size() - 1);
                 }
             }
-            if (this.mMessages.isEmpty()) {
-                return null;
-            }
-            return this.mMessages.get(list.size() - 1);
         }
 
         private boolean hasMessagesWithoutSender() {
@@ -1891,10 +1897,12 @@ public class NotificationCompat {
                 Person person = this.mPerson;
                 if (person != null) {
                     bundle.putCharSequence(KEY_SENDER, person.getName());
-                    if (Build.VERSION.SDK_INT >= 28) {
-                        bundle.putParcelable(KEY_NOTIFICATION_PERSON, Api28Impl.castToParcelable(this.mPerson.toAndroidPerson()));
+                    int i = Build.VERSION.SDK_INT;
+                    Person person2 = this.mPerson;
+                    if (i >= 28) {
+                        bundle.putParcelable(KEY_NOTIFICATION_PERSON, Api28Impl.castToParcelable(person2.toAndroidPerson()));
                     } else {
-                        bundle.putBundle(KEY_PERSON, this.mPerson.toBundle());
+                        bundle.putBundle(KEY_PERSON, person2.toBundle());
                     }
                 }
                 String str = this.mDataMimeType;
@@ -2163,10 +2171,12 @@ public class NotificationCompat {
             bundle.putInt(NotificationCompat.EXTRA_CALL_TYPE, this.mCallType);
             bundle.putBoolean(NotificationCompat.EXTRA_CALL_IS_VIDEO, this.mIsVideo);
             if (this.mPerson != null) {
-                if (Build.VERSION.SDK_INT >= 28) {
-                    bundle.putParcelable(NotificationCompat.EXTRA_CALL_PERSON, Api28Impl.castToParcelable(this.mPerson.toAndroidPerson()));
+                int i = Build.VERSION.SDK_INT;
+                Person person = this.mPerson;
+                if (i >= 28) {
+                    bundle.putParcelable(NotificationCompat.EXTRA_CALL_PERSON, Api28Impl.castToParcelable(person.toAndroidPerson()));
                 } else {
-                    bundle.putParcelable(NotificationCompat.EXTRA_CALL_PERSON_COMPAT, this.mPerson.toBundle());
+                    bundle.putParcelable(NotificationCompat.EXTRA_CALL_PERSON_COMPAT, person.toBundle());
                 }
             }
             if (this.mVerificationIcon != null) {
@@ -2242,10 +2252,12 @@ public class NotificationCompat {
                 if (this.mPerson.getIcon() != null) {
                     Api23Impl.setLargeIcon(builder, this.mPerson.getIcon().toIcon(this.mBuilder.mContext));
                 }
-                if (Build.VERSION.SDK_INT >= 28) {
-                    Api28Impl.addPerson(builder, this.mPerson.toAndroidPerson());
+                int i2 = Build.VERSION.SDK_INT;
+                Person person2 = this.mPerson;
+                if (i2 >= 28) {
+                    Api28Impl.addPerson(builder, person2.toAndroidPerson());
                 } else {
-                    Api21Impl.addPerson(builder, this.mPerson.getUri());
+                    Api21Impl.addPerson(builder, person2.getUri());
                 }
             }
             Api21Impl.setCategory(builder, NotificationCompat.CATEGORY_CALL);
@@ -3485,7 +3497,7 @@ public class NotificationCompat {
             }
 
             /* renamed from: clone */
-            public WearableExtender m8745clone() {
+            public WearableExtender m8042clone() {
                 WearableExtender wearableExtender = new WearableExtender();
                 wearableExtender.mFlags = this.mFlags;
                 wearableExtender.mInProgressLabel = this.mInProgressLabel;
@@ -3504,11 +3516,12 @@ public class NotificationCompat {
             }
 
             private void setFlag(int i, boolean z) {
+                int i2 = this.mFlags;
                 if (z) {
-                    this.mFlags = i | this.mFlags;
-                    return;
+                    this.mFlags = i | i2;
+                } else {
+                    this.mFlags = (~i) & i2;
                 }
-                this.mFlags = (~i) & this.mFlags;
             }
 
             @Deprecated
@@ -3764,7 +3777,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m8746clone() {
+        public WearableExtender m8043clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;
@@ -4012,11 +4025,12 @@ public class NotificationCompat {
         }
 
         private void setFlag(int i, boolean z) {
+            int i2 = this.mFlags;
             if (z) {
-                this.mFlags = i | this.mFlags;
-                return;
+                this.mFlags = i | i2;
+            } else {
+                this.mFlags = (~i) & i2;
             }
-            this.mFlags = (~i) & this.mFlags;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -4664,11 +4678,12 @@ public class NotificationCompat {
             }
 
             private Builder setFlag(int i, boolean z) {
+                int i2 = this.mFlags;
                 if (z) {
-                    this.mFlags = i | this.mFlags;
+                    this.mFlags = i | i2;
                     return this;
                 }
-                this.mFlags = (~i) & this.mFlags;
+                this.mFlags = (~i) & i2;
                 return this;
             }
         }

@@ -11,14 +11,14 @@ import kotlinx.serialization.DeserializationStrategy;
 import kotlinx.serialization.json.DecodeSequenceMode;
 import kotlinx.serialization.json.Json;
 /* compiled from: JsonIterator.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\u001a:\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00020\nH\u0000\u001a\u0014\u0010\u000b\u001a\u00020\u0004*\u00020\f2\u0006\u0010\r\u001a\u00020\u0004H\u0002\u001a\f\u0010\u000e\u001a\u00020\u000f*\u00020\fH\u0002¨\u0006\u0010"}, d2 = {"JsonIterator", "", ExifInterface.GPS_DIRECTION_TRUE, UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/json/DecodeSequenceMode;", "json", "Lkotlinx/serialization/json/Json;", "lexer", "Lkotlinx/serialization/json/internal/ReaderJsonLexer;", "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "determineFormat", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "suggested", "tryConsumeStartArray", "", "kotlinx-serialization-json"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010(\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\u001a<\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\b2\f\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00020\nH\u0080\u0080\u0004\u001a\u0016\u0010\u000b\u001a\u00020\u0004*\u00020\f2\u0006\u0010\r\u001a\u00020\u0004H\u0082\u0080\u0004\u001a\u000e\u0010\u000e\u001a\u00020\u000f*\u00020\fH\u0082\u0080\u0004¨\u0006\u0010"}, d2 = {"JsonIterator", "", ExifInterface.GPS_DIRECTION_TRUE, UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/json/DecodeSequenceMode;", "json", "Lkotlinx/serialization/json/Json;", "lexer", "Lkotlinx/serialization/json/internal/ReaderJsonLexer;", "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "determineFormat", "Lkotlinx/serialization/json/internal/AbstractJsonLexer;", "suggested", "tryConsumeStartArray", "", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class JsonIteratorKt {
 
     /* compiled from: JsonIterator.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -68,7 +68,9 @@ public final class JsonIteratorKt {
             } else if (tryConsumeStartArray(abstractJsonLexer)) {
                 return DecodeSequenceMode.ARRAY_WRAPPED;
             } else {
-                AbstractJsonLexer.fail$kotlinx_serialization_json$default(abstractJsonLexer, (byte) 8, false, 2, null);
+                String str = AbstractJsonLexerKt.tokenDescription((byte) 8);
+                int i2 = abstractJsonLexer.currentPosition - 1;
+                AbstractJsonLexer.fail$default(abstractJsonLexer, "Expected " + str + ", but had '" + ((abstractJsonLexer.currentPosition == abstractJsonLexer.getSource().length() || i2 < 0) ? "EOF" : String.valueOf(abstractJsonLexer.getSource().charAt(i2))) + "' instead", i2, null, 4, null);
                 throw new KotlinNothingValueException();
             }
         }

@@ -9,13 +9,13 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface PlatformVelocityTracker {
     /* renamed from: addPointerInputChange-Uv8p0NA */
-    void mo6838addPointerInputChangeUv8p0NA(PointerInputChange pointerInputChange, long j);
+    void mo6179addPointerInputChangeUv8p0NA(PointerInputChange pointerInputChange, long j);
 
     /* renamed from: addPosition-Uv8p0NA */
-    void mo6839addPositionUv8p0NA(long j, long j2);
+    void mo6180addPositionUv8p0NA(long j, long j2);
 
     /* renamed from: calculateVelocity-AH228Gc */
-    long mo6840calculateVelocityAH228Gc(long j);
+    long mo6181calculateVelocityAH228Gc(long j);
 
     void resetTracking();
 }

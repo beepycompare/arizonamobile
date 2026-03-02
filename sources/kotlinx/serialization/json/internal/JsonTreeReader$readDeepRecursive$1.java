@@ -9,13 +9,14 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function3;
 import kotlinx.serialization.json.JsonElement;
 import kotlinx.serialization.json.JsonPrimitive;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonTreeReader.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00022\u0006\u0010\u0004\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlinx/serialization/json/JsonElement;", "Lkotlin/DeepRecursiveScope;", "", "it"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", f = "JsonTreeReader.kt", i = {}, l = {115}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00022\u0006\u0010\u0004\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lkotlinx/serialization/json/JsonElement;", "Lkotlin/DeepRecursiveScope;", "", "it"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", f = "JsonTreeReader.kt", i = {0}, l = {113}, m = "invokeSuspend", n = {"$this$DeepRecursiveFunction"}, nl = {114}, s = {"L$0"}, v = 2)
 /* loaded from: classes5.dex */
 public final class JsonTreeReader$readDeepRecursive$1 extends RestrictedSuspendLambda implements Function3<DeepRecursiveScope<Unit, JsonElement>, Unit, Continuation<? super JsonElement>, Object> {
     private /* synthetic */ Object L$0;
@@ -43,11 +44,11 @@ public final class JsonTreeReader$readDeepRecursive$1 extends RestrictedSuspendL
         JsonElement readArray;
         JsonPrimitive readValue;
         JsonPrimitive readValue2;
+        DeepRecursiveScope deepRecursiveScope = (DeepRecursiveScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            DeepRecursiveScope deepRecursiveScope = (DeepRecursiveScope) this.L$0;
             abstractJsonLexer = this.this$0.lexer;
             byte peekNextToken = abstractJsonLexer.peekNextToken();
             if (peekNextToken == 1) {
@@ -56,20 +57,22 @@ public final class JsonTreeReader$readDeepRecursive$1 extends RestrictedSuspendL
             } else if (peekNextToken == 0) {
                 readValue = this.this$0.readValue(false);
                 return readValue;
-            } else if (peekNextToken != 6) {
-                if (peekNextToken == 8) {
-                    readArray = this.this$0.readArray();
-                    return readArray;
-                }
-                abstractJsonLexer2 = this.this$0.lexer;
-                AbstractJsonLexer.fail$default(abstractJsonLexer2, "Can't begin reading element, unexpected token", 0, null, 6, null);
-                throw new KotlinNothingValueException();
-            } else {
+            } else if (peekNextToken == 6) {
+                this.L$0 = SpillingKt.nullOutSpilledVariable(deepRecursiveScope);
                 this.label = 1;
                 obj = this.this$0.readObject(deepRecursiveScope, this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+            } else {
+                JsonTreeReader jsonTreeReader = this.this$0;
+                if (peekNextToken == 8) {
+                    readArray = jsonTreeReader.readArray();
+                    return readArray;
+                }
+                abstractJsonLexer2 = jsonTreeReader.lexer;
+                AbstractJsonLexer.fail$default(abstractJsonLexer2, "Can't begin reading element, unexpected token", 0, null, 6, null);
+                throw new KotlinNothingValueException();
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

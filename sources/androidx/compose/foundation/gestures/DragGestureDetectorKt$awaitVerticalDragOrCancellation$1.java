@@ -24,6 +24,6 @@ public final class DragGestureDetectorKt$awaitVerticalDragOrCancellation$1 exten
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m542awaitVerticalDragOrCancellationrnUCldI(null, 0L, this);
+        return DragGestureDetectorKt.m468awaitVerticalDragOrCancellationrnUCldI(null, 0L, this);
     }
 }

@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import androidx.media3.exoplayer.mediacodec.SynchronousMediaCodecAdapter;
 import com.google.common.base.Supplier;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.Factory {
     private static final int MODE_DEFAULT = 0;
     private static final int MODE_DISABLED = 2;

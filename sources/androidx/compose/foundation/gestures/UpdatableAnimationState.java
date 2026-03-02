@@ -86,9 +86,7 @@ public final class UpdatableAnimationState {
                             Function1 function13 = new Function1() { // from class: androidx.compose.foundation.gestures.UpdatableAnimationState$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animateToZero$lambda$1;
-                                    animateToZero$lambda$1 = UpdatableAnimationState.animateToZero$lambda$1(UpdatableAnimationState.this, f, function12, ((Long) obj2).longValue());
-                                    return animateToZero$lambda$1;
+                                    return UpdatableAnimationState.animateToZero$lambda$1(UpdatableAnimationState.this, f, function12, ((Long) obj2).longValue());
                                 }
                             };
                             updatableAnimationState$animateToZero$1.L$0 = function12;
@@ -105,9 +103,7 @@ public final class UpdatableAnimationState {
                             Function1 function14 = new Function1() { // from class: androidx.compose.foundation.gestures.UpdatableAnimationState$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animateToZero$lambda$2;
-                                    animateToZero$lambda$2 = UpdatableAnimationState.animateToZero$lambda$2(UpdatableAnimationState.this, function12, ((Long) obj2).longValue());
-                                    return animateToZero$lambda$2;
+                                    return UpdatableAnimationState.animateToZero$lambda$2(UpdatableAnimationState.this, function12, ((Long) obj2).longValue());
                                 }
                             };
                             updatableAnimationState$animateToZero$1.L$0 = function03;
@@ -155,7 +151,7 @@ public final class UpdatableAnimationState {
         i = updatableAnimationState$animateToZero$1.label;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit animateToZero$lambda$1(UpdatableAnimationState updatableAnimationState, float f, Function1 function1, long j) {
         long roundToLong;
         if (updatableAnimationState.lastFrameTime == Long.MIN_VALUE) {
@@ -179,7 +175,7 @@ public final class UpdatableAnimationState {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit animateToZero$lambda$2(UpdatableAnimationState updatableAnimationState, Function1 function1, long j) {
         float f = updatableAnimationState.value;
         updatableAnimationState.value = 0.0f;

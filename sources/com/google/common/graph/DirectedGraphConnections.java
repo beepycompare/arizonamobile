@@ -215,8 +215,10 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
         return new AbstractSet<N>() { // from class: com.google.common.graph.DirectedGraphConnections.2
             @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<N> iterator() {
-                if (DirectedGraphConnections.this.orderedNodeConnections == null) {
-                    final Iterator it = DirectedGraphConnections.this.adjacentNodeValues.entrySet().iterator();
+                List list = DirectedGraphConnections.this.orderedNodeConnections;
+                DirectedGraphConnections directedGraphConnections = DirectedGraphConnections.this;
+                if (list == null) {
+                    final Iterator it = directedGraphConnections.adjacentNodeValues.entrySet().iterator();
                     return new AbstractIterator<N>(this) { // from class: com.google.common.graph.DirectedGraphConnections.2.1
                         final /* synthetic */ AnonymousClass2 this$1;
 
@@ -237,7 +239,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                         }
                     };
                 }
-                final Iterator it2 = DirectedGraphConnections.this.orderedNodeConnections.iterator();
+                final Iterator it2 = directedGraphConnections.orderedNodeConnections.iterator();
                 return new AbstractIterator<N>(this) { // from class: com.google.common.graph.DirectedGraphConnections.2.2
                     final /* synthetic */ AnonymousClass2 this$1;
 
@@ -276,8 +278,10 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
         return new AbstractSet<N>() { // from class: com.google.common.graph.DirectedGraphConnections.3
             @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<N> iterator() {
-                if (DirectedGraphConnections.this.orderedNodeConnections == null) {
-                    final Iterator it = DirectedGraphConnections.this.adjacentNodeValues.entrySet().iterator();
+                List list = DirectedGraphConnections.this.orderedNodeConnections;
+                DirectedGraphConnections directedGraphConnections = DirectedGraphConnections.this;
+                if (list == null) {
+                    final Iterator it = directedGraphConnections.adjacentNodeValues.entrySet().iterator();
                     return new AbstractIterator<N>(this) { // from class: com.google.common.graph.DirectedGraphConnections.3.1
                         final /* synthetic */ AnonymousClass3 this$1;
 
@@ -298,7 +302,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                         }
                     };
                 }
-                final Iterator it2 = DirectedGraphConnections.this.orderedNodeConnections.iterator();
+                final Iterator it2 = directedGraphConnections.orderedNodeConnections.iterator();
                 return new AbstractIterator<N>(this) { // from class: com.google.common.graph.DirectedGraphConnections.3.2
                     final /* synthetic */ AnonymousClass3 this$1;
 
@@ -437,11 +441,15 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
         V v = (V) this.adjacentNodeValues.get(node);
         if (v == null || v == (obj = PRED)) {
             v = null;
-        } else if (v instanceof PredAndSucc) {
-            this.adjacentNodeValues.put(node, obj);
-            v = (V) ((PredAndSucc) v).successorValue;
         } else {
-            this.adjacentNodeValues.remove(node);
+            boolean z = v instanceof PredAndSucc;
+            Map<N, Object> map = this.adjacentNodeValues;
+            if (z) {
+                map.put(node, obj);
+                v = (V) ((PredAndSucc) v).successorValue;
+            } else {
+                map.remove(node);
+            }
         }
         if (v != null) {
             int i = this.successorCount - 1;

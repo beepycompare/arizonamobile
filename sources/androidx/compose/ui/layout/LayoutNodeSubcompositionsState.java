@@ -552,7 +552,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         return new LayoutNode.NoIntrinsicsMeasurePolicy(str) { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1
             @Override // androidx.compose.ui.layout.MeasurePolicy
             /* renamed from: measure-3p2s80s */
-            public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+            public MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                 LayoutNodeSubcompositionsState.ApproachMeasureScopeImpl approachMeasureScopeImpl;
                 final int i;
                 LayoutNodeSubcompositionsState.this.scope.setLayoutDirection(measureScope.getLayoutDirection());
@@ -560,7 +560,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 LayoutNodeSubcompositionsState.this.scope.setFontScale(measureScope.getFontScale());
                 if (measureScope.isLookingAhead() || LayoutNodeSubcompositionsState.this.root.getLookaheadRoot$ui() == null) {
                     LayoutNodeSubcompositionsState.this.currentIndex = 0;
-                    final MeasureResult invoke = function2.invoke(LayoutNodeSubcompositionsState.this.scope, Constraints.m8198boximpl(j));
+                    final MeasureResult invoke = function2.invoke(LayoutNodeSubcompositionsState.this.scope, Constraints.m7495boximpl(j));
                     final int i2 = LayoutNodeSubcompositionsState.this.currentIndex;
                     final LayoutNodeSubcompositionsState layoutNodeSubcompositionsState = LayoutNodeSubcompositionsState.this;
                     return new MeasureResult() { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure-3p2s80s$$inlined$createMeasureResult$2
@@ -598,7 +598,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 LayoutNodeSubcompositionsState.this.currentApproachIndex = 0;
                 Function2<SubcomposeMeasureScope, Constraints, MeasureResult> function22 = function2;
                 approachMeasureScopeImpl = LayoutNodeSubcompositionsState.this.approachMeasureScope;
-                final MeasureResult invoke2 = function22.invoke(approachMeasureScopeImpl, Constraints.m8198boximpl(j));
+                final MeasureResult invoke2 = function22.invoke(approachMeasureScopeImpl, Constraints.m7495boximpl(j));
                 i = LayoutNodeSubcompositionsState.this.currentApproachIndex;
                 final LayoutNodeSubcompositionsState layoutNodeSubcompositionsState2 = LayoutNodeSubcompositionsState.this;
                 return new MeasureResult() { // from class: androidx.compose.ui.layout.LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure-3p2s80s$$inlined$createMeasureResult$1
@@ -722,11 +722,12 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             LayoutNode layoutNode = mutableScatterMap.get(obj);
             if (layoutNode == null) {
                 layoutNode = takeNodeFromReusables(obj);
+                LayoutNode layoutNode2 = this.root;
                 if (layoutNode != null) {
-                    move(this.root.getFoldedChildren$ui().indexOf(layoutNode), this.root.getFoldedChildren$ui().size(), 1);
+                    move(layoutNode2.getFoldedChildren$ui().indexOf(layoutNode), this.root.getFoldedChildren$ui().size(), 1);
                     this.precomposedCount++;
                 } else {
-                    layoutNode = createNodeAt(this.root.getFoldedChildren$ui().size());
+                    layoutNode = createNodeAt(layoutNode2.getFoldedChildren$ui().size());
                     this.precomposedCount++;
                 }
                 mutableScatterMap.set(obj, layoutNode);
@@ -837,7 +838,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             /* renamed from: premeasure-0kLqBqw  reason: not valid java name */
-            public void mo6903premeasure0kLqBqw(int i, long j) {
+            public void mo6244premeasure0kLqBqw(int i, long j) {
                 MutableScatterMap mutableScatterMap;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
@@ -853,7 +854,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                 }
                 LayoutNode layoutNode2 = LayoutNodeSubcompositionsState.this.root;
                 layoutNode2.ignoreRemeasureRequests = true;
-                LayoutNodeKt.requireOwner(layoutNode).mo7262measureAndLayout0kLqBqw(layoutNode.getChildren$ui().get(i), j);
+                LayoutNodeKt.requireOwner(layoutNode).mo6602measureAndLayout0kLqBqw(layoutNode.getChildren$ui().get(i), j);
                 Unit unit = Unit.INSTANCE;
                 layoutNode2.ignoreRemeasureRequests = false;
                 this.hasPremeasured.add(i);
@@ -874,7 +875,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
             @Override // androidx.compose.ui.layout.SubcomposeLayoutState.PrecomposedSlotHandle
             /* renamed from: getSize-YEO4UFw  reason: not valid java name */
-            public long mo6902getSizeYEO4UFw(int i) {
+            public long mo6243getSizeYEO4UFw(int i) {
                 MutableScatterMap mutableScatterMap;
                 mutableScatterMap = LayoutNodeSubcompositionsState.this.precomposeMap;
                 LayoutNode layoutNode = (LayoutNode) mutableScatterMap.get(obj);
@@ -884,10 +885,10 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                         InlineClassHelperKt.throwIndexOutOfBoundsException("Index (" + i + ") is out of bound of [0, " + size + ')');
                     }
                     if (this.hasPremeasured.contains(i)) {
-                        return IntSize.m8424constructorimpl((layoutNode.getChildren$ui().get(i).getWidth() << 32) | (layoutNode.getChildren$ui().get(i).getHeight() & 4294967295L));
+                        return IntSize.m7721constructorimpl((layoutNode.getChildren$ui().get(i).getWidth() << 32) | (layoutNode.getChildren$ui().get(i).getHeight() & 4294967295L));
                     }
                 }
-                return IntSize.Companion.m8434getZeroYbymL2g();
+                return IntSize.Companion.m7731getZeroYbymL2g();
             }
         };
     }
@@ -1016,12 +1017,14 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
                     i++;
                 }
             }
-            if (this.root.getLookaheadRoot$ui() != null) {
-                if (this.root.getLookaheadMeasurePending$ui()) {
+            LayoutNode lookaheadRoot$ui = this.root.getLookaheadRoot$ui();
+            LayoutNode layoutNode = this.root;
+            if (lookaheadRoot$ui != null) {
+                if (layoutNode.getLookaheadMeasurePending$ui()) {
                     return;
                 }
                 LayoutNode.requestLookaheadRemeasure$ui$default(this.root, false, false, false, 7, null);
-            } else if (!this.root.getMeasurePending$ui()) {
+            } else if (!layoutNode.getMeasurePending$ui()) {
                 LayoutNode.requestRemeasure$ui$default(this.root, false, false, false, 7, null);
             }
         }
@@ -1192,7 +1195,7 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         }
 
         /* renamed from: record-Fsph7yY  reason: not valid java name */
-        public final void m6901recordFsph7yY(int i) {
+        public final void m6242recordFsph7yY(int i) {
             MutableIntList mutableIntList = this.operations;
             if (mutableIntList == null) {
                 return;
@@ -1332,50 +1335,50 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx--R2X_6o */
-        public int mo457roundToPxR2X_6o(long j) {
-            return this.$$delegate_0.mo457roundToPxR2X_6o(j);
+        public int mo398roundToPxR2X_6o(long j) {
+            return this.$$delegate_0.mo398roundToPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: roundToPx-0680j_4 */
-        public int mo458roundToPx0680j_4(float f) {
-            return this.$$delegate_0.mo458roundToPx0680j_4(f);
+        public int mo399roundToPx0680j_4(float f) {
+            return this.$$delegate_0.mo399roundToPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toDp-GaN1DYA */
-        public float mo459toDpGaN1DYA(long j) {
-            return this.$$delegate_0.mo459toDpGaN1DYA(j);
+        public float mo400toDpGaN1DYA(long j) {
+            return this.$$delegate_0.mo400toDpGaN1DYA(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo460toDpu2uoSUM(float f) {
-            return this.$$delegate_0.mo460toDpu2uoSUM(f);
+        public float mo401toDpu2uoSUM(float f) {
+            return this.$$delegate_0.mo401toDpu2uoSUM(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDp-u2uoSUM */
-        public float mo461toDpu2uoSUM(int i) {
-            return this.$$delegate_0.mo461toDpu2uoSUM(i);
+        public float mo402toDpu2uoSUM(int i) {
+            return this.$$delegate_0.mo402toDpu2uoSUM(i);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toDpSize-k-rfVVM */
-        public long mo462toDpSizekrfVVM(long j) {
-            return this.$$delegate_0.mo462toDpSizekrfVVM(j);
+        public long mo403toDpSizekrfVVM(long j) {
+            return this.$$delegate_0.mo403toDpSizekrfVVM(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx--R2X_6o */
-        public float mo463toPxR2X_6o(long j) {
-            return this.$$delegate_0.mo463toPxR2X_6o(j);
+        public float mo404toPxR2X_6o(long j) {
+            return this.$$delegate_0.mo404toPxR2X_6o(j);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toPx-0680j_4 */
-        public float mo464toPx0680j_4(float f) {
-            return this.$$delegate_0.mo464toPx0680j_4(f);
+        public float mo405toPx0680j_4(float f) {
+            return this.$$delegate_0.mo405toPx0680j_4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
@@ -1385,26 +1388,26 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSize-XkaWNTQ */
-        public long mo465toSizeXkaWNTQ(long j) {
-            return this.$$delegate_0.mo465toSizeXkaWNTQ(j);
+        public long mo406toSizeXkaWNTQ(long j) {
+            return this.$$delegate_0.mo406toSizeXkaWNTQ(j);
         }
 
         @Override // androidx.compose.ui.unit.FontScaling
         /* renamed from: toSp-0xMU5do */
-        public long mo466toSp0xMU5do(float f) {
-            return this.$$delegate_0.mo466toSp0xMU5do(f);
+        public long mo407toSp0xMU5do(float f) {
+            return this.$$delegate_0.mo407toSp0xMU5do(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo467toSpkPz2Gy4(float f) {
-            return this.$$delegate_0.mo467toSpkPz2Gy4(f);
+        public long mo408toSpkPz2Gy4(float f) {
+            return this.$$delegate_0.mo408toSpkPz2Gy4(f);
         }
 
         @Override // androidx.compose.ui.unit.Density
         /* renamed from: toSp-kPz2Gy4 */
-        public long mo468toSpkPz2Gy4(int i) {
-            return this.$$delegate_0.mo468toSpkPz2Gy4(i);
+        public long mo409toSpkPz2Gy4(int i) {
+            return this.$$delegate_0.mo409toSpkPz2Gy4(i);
         }
 
         public ApproachMeasureScopeImpl() {
@@ -1429,10 +1432,11 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
         LayoutNode layoutNode = this.slotIdToNode.get(obj);
         int size = this.slotIdsOfCompositionsNeededInApproach.getSize();
         int i = this.currentApproachIndex;
+        MutableVector<Object> mutableVector = this.slotIdsOfCompositionsNeededInApproach;
         if (size == i) {
-            this.slotIdsOfCompositionsNeededInApproach.add(obj);
+            mutableVector.add(obj);
         } else {
-            this.slotIdsOfCompositionsNeededInApproach.set(i, obj);
+            mutableVector.set(i, obj);
         }
         this.currentApproachIndex++;
         boolean contains = this.precomposeMap.contains(obj);
@@ -1453,6 +1457,9 @@ public final class LayoutNodeSubcompositionsState implements ComposeNodeLifecycl
             NodeState nodeState = layoutNode2 != null ? this.nodeToNodeState.get(layoutNode2) : null;
             if (nodeState != null && nodeState.getForceRecompose()) {
                 subcompose(layoutNode2, obj, false, function2);
+            }
+            if ((nodeState != null ? nodeState.getPausedComposition() : null) != null) {
+                applyPausedPrecomposition(nodeState, true);
             }
         }
         LayoutNode layoutNode3 = this.precomposeMap.get(obj);

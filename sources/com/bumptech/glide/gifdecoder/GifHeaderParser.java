@@ -158,10 +158,11 @@ public class GifHeaderParser {
         boolean z = (read & 128) != 0;
         int pow = (int) Math.pow(2.0d, (read & 7) + 1);
         this.header.currentFrame.interlace = (read & 64) != 0;
+        GifHeader gifHeader = this.header;
         if (z) {
-            this.header.currentFrame.lct = readColorTable(pow);
+            gifHeader.currentFrame.lct = readColorTable(pow);
         } else {
-            this.header.currentFrame.lct = null;
+            gifHeader.currentFrame.lct = null;
         }
         this.header.currentFrame.bufferFrameStart = this.rawData.position();
         skipImageData();

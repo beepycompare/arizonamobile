@@ -16,5 +16,5 @@ public interface LazyLayoutMeasureScope extends MeasureScope {
 
     @Deprecated(message = "Please use compose and call Measurable.measure", replaceWith = @ReplaceWith(expression = "compose(index).map { it.measure(constraints) }", imports = {}))
     /* renamed from: measure-0kLqBqw  reason: not valid java name */
-    List<Placeable> mo1132measure0kLqBqw(int i, long j);
+    List<Placeable> mo994measure0kLqBqw(int i, long j);
 }

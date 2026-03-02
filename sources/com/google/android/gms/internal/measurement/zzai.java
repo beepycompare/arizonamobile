@@ -84,10 +84,11 @@ public abstract class zzai implements zzao, zzak {
 
     @Override // com.google.android.gms.internal.measurement.zzak
     public final void zzm(String str, zzao zzaoVar) {
+        Map map = this.zze;
         if (zzaoVar == null) {
-            this.zze.remove(str);
+            map.remove(str);
         } else {
-            this.zze.put(str, zzaoVar);
+            map.put(str, zzaoVar);
         }
     }
 

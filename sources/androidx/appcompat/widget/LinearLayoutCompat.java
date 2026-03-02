@@ -406,18 +406,20 @@ public class LinearLayoutCompat extends ViewGroup {
     public boolean hasDividerBeforeChildAt(int i) {
         if (i == 0) {
             return (this.mShowDividers & 1) != 0;
-        } else if (i == getChildCount()) {
-            return (this.mShowDividers & 4) != 0;
-        } else {
-            if ((this.mShowDividers & 2) != 0) {
-                for (int i2 = i - 1; i2 >= 0; i2--) {
-                    if (getChildAt(i2).getVisibility() != 8) {
-                        return true;
-                    }
+        }
+        int childCount = getChildCount();
+        int i2 = this.mShowDividers;
+        if (i == childCount) {
+            return (i2 & 4) != 0;
+        }
+        if ((i2 & 2) != 0) {
+            for (int i3 = i - 1; i3 >= 0; i3--) {
+                if (getChildAt(i3).getVisibility() != 8) {
+                    return true;
                 }
             }
-            return false;
         }
+        return false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:145:0x0306, code lost:
@@ -756,8 +758,8 @@ public class LinearLayoutCompat extends ViewGroup {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0461  */
-    /* JADX WARN: Removed duplicated region for block: B:204:0x0464  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0453  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0456  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -771,21 +773,19 @@ public class LinearLayoutCompat extends ViewGroup {
         int i8;
         int i9;
         int i10;
-        int i11;
         boolean z;
         int baseline;
-        int i12;
+        int i11;
         float f2;
-        int i13;
         char c;
-        int i14;
+        int i12;
         boolean z2;
+        int i13;
+        int i14;
         int i15;
+        int[] iArr;
         int i16;
         int i17;
-        int[] iArr;
-        int i18;
-        int i19;
         boolean z3;
         int[] iArr2;
         View view;
@@ -812,223 +812,214 @@ public class LinearLayoutCompat extends ViewGroup {
         iArr4[0] = -1;
         boolean z6 = this.mBaselineAligned;
         boolean z7 = this.mUseLargestChild;
-        int i20 = 1073741824;
+        int i18 = 1073741824;
         boolean z8 = mode == 1073741824;
         boolean z9 = z7;
+        int i19 = 0;
+        int i20 = 0;
         int i21 = 0;
-        int i22 = 0;
-        int i23 = 0;
         boolean z10 = false;
-        int i24 = 0;
+        int i22 = 0;
         boolean z11 = false;
         boolean z12 = true;
         float f3 = 0.0f;
-        int i25 = 0;
-        int i26 = 0;
+        int i23 = 0;
+        int i24 = 0;
         while (true) {
-            i3 = i22;
-            if (i21 >= virtualChildCount) {
+            i3 = i20;
+            if (i19 >= virtualChildCount) {
                 break;
             }
             boolean z13 = z6;
-            View virtualChildAt = getVirtualChildAt(i21);
+            View virtualChildAt = getVirtualChildAt(i19);
             if (virtualChildAt == null) {
-                this.mTotalLength += measureNullChild(i21);
+                this.mTotalLength += measureNullChild(i19);
             } else if (virtualChildAt.getVisibility() == 8) {
-                i21 += getChildrenSkipCount(virtualChildAt, i21);
+                i19 += getChildrenSkipCount(virtualChildAt, i19);
             } else {
-                if (hasDividerBeforeChildAt(i21)) {
+                if (hasDividerBeforeChildAt(i19)) {
                     this.mTotalLength += this.mDividerWidth;
                 }
                 LayoutParams layoutParams = (LayoutParams) virtualChildAt.getLayoutParams();
                 float f4 = f3 + layoutParams.weight;
-                if (mode == i20 && layoutParams.width == 0 && layoutParams.weight > 0.0f) {
+                if (mode == i18 && layoutParams.width == 0 && layoutParams.weight > 0.0f) {
+                    int i25 = this.mTotalLength;
                     if (z8) {
-                        this.mTotalLength += layoutParams.leftMargin + layoutParams.rightMargin;
+                        this.mTotalLength = i25 + layoutParams.leftMargin + layoutParams.rightMargin;
                     } else {
-                        int i27 = this.mTotalLength;
-                        this.mTotalLength = Math.max(i27, layoutParams.leftMargin + i27 + layoutParams.rightMargin);
+                        this.mTotalLength = Math.max(i25, layoutParams.leftMargin + i25 + layoutParams.rightMargin);
                     }
                     if (z13) {
                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
                         virtualChildAt.measure(makeMeasureSpec, makeMeasureSpec);
-                        i16 = virtualChildCount;
-                        i17 = mode;
+                        i14 = virtualChildCount;
+                        i15 = mode;
                         iArr = iArr3;
                         iArr2 = iArr4;
                     } else {
-                        i16 = virtualChildCount;
-                        i17 = mode;
+                        i14 = virtualChildCount;
+                        i15 = mode;
                         iArr = iArr3;
                         iArr2 = iArr4;
                         z10 = true;
                     }
-                    i18 = i3;
-                    i19 = 1073741824;
+                    i16 = i3;
+                    i17 = 1073741824;
                     z3 = z9;
                     view = virtualChildAt;
                 } else {
                     if (layoutParams.width != 0 || layoutParams.weight <= 0.0f) {
                         c = 65534;
-                        i14 = Integer.MIN_VALUE;
+                        i12 = Integer.MIN_VALUE;
                     } else {
                         c = 65534;
                         layoutParams.width = -2;
-                        i14 = 0;
+                        i12 = 0;
                     }
                     if (f4 == 0.0f) {
                         z2 = z9;
-                        i15 = this.mTotalLength;
+                        i13 = this.mTotalLength;
                     } else {
                         z2 = z9;
-                        i15 = 0;
+                        i13 = 0;
                     }
-                    i16 = virtualChildCount;
-                    i17 = mode;
+                    i14 = virtualChildCount;
+                    i15 = mode;
                     iArr = iArr3;
-                    i18 = i3;
-                    i19 = 1073741824;
+                    i16 = i3;
+                    i17 = 1073741824;
                     z3 = z2;
                     iArr2 = iArr4;
-                    int i28 = i14;
-                    measureChildBeforeLayout(virtualChildAt, i21, i, i15, i2, 0);
+                    int i26 = i12;
+                    measureChildBeforeLayout(virtualChildAt, i19, i, i13, i2, 0);
                     view = virtualChildAt;
-                    if (i28 != Integer.MIN_VALUE) {
-                        layoutParams.width = i28;
+                    if (i26 != Integer.MIN_VALUE) {
+                        layoutParams.width = i26;
                     }
                     int measuredWidth = view.getMeasuredWidth();
+                    int i27 = this.mTotalLength;
                     if (z8) {
-                        this.mTotalLength += layoutParams.leftMargin + measuredWidth + layoutParams.rightMargin + getNextLocationOffset(view);
+                        this.mTotalLength = i27 + layoutParams.leftMargin + measuredWidth + layoutParams.rightMargin + getNextLocationOffset(view);
                     } else {
-                        int i29 = this.mTotalLength;
-                        this.mTotalLength = Math.max(i29, i29 + measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin + getNextLocationOffset(view));
+                        this.mTotalLength = Math.max(i27, i27 + measuredWidth + layoutParams.leftMargin + layoutParams.rightMargin + getNextLocationOffset(view));
                     }
                     if (z3) {
-                        i23 = Math.max(measuredWidth, i23);
+                        i21 = Math.max(measuredWidth, i21);
                     }
                 }
-                if (mode2 == i19 || layoutParams.height != -1) {
+                if (mode2 == i17 || layoutParams.height != -1) {
                     z4 = false;
                 } else {
                     z4 = true;
                     z11 = true;
                 }
-                int i30 = layoutParams.topMargin + layoutParams.bottomMargin;
-                int measuredHeight = view.getMeasuredHeight() + i30;
-                i24 = View.combineMeasuredStates(i24, view.getMeasuredState());
+                int i28 = layoutParams.topMargin + layoutParams.bottomMargin;
+                int measuredHeight = view.getMeasuredHeight() + i28;
+                i22 = View.combineMeasuredStates(i22, view.getMeasuredState());
                 if (!z13 || (baseline2 = view.getBaseline()) == -1) {
                     z5 = z4;
                 } else {
-                    int i31 = ((((layoutParams.gravity < 0 ? this.mGravity : layoutParams.gravity) & 112) >> 4) & (-2)) >> 1;
+                    int i29 = ((((layoutParams.gravity < 0 ? this.mGravity : layoutParams.gravity) & 112) >> 4) & (-2)) >> 1;
                     z5 = z4;
-                    iArr[i31] = Math.max(iArr[i31], baseline2);
-                    iArr2[i31] = Math.max(iArr2[i31], measuredHeight - baseline2);
+                    iArr[i29] = Math.max(iArr[i29], baseline2);
+                    iArr2[i29] = Math.max(iArr2[i29], measuredHeight - baseline2);
                 }
-                int max = Math.max(i18, measuredHeight);
+                int max = Math.max(i16, measuredHeight);
                 z12 = z12 && layoutParams.height == -1;
                 if (layoutParams.weight > 0.0f) {
                     if (!z5) {
-                        i30 = measuredHeight;
+                        i28 = measuredHeight;
                     }
-                    i26 = Math.max(i26, i30);
+                    i24 = Math.max(i24, i28);
                 } else {
                     if (!z5) {
-                        i30 = measuredHeight;
+                        i28 = measuredHeight;
                     }
-                    i25 = Math.max(i25, i30);
+                    i23 = Math.max(i23, i28);
                 }
-                i21 += getChildrenSkipCount(view, i21);
-                i22 = max;
+                i19 += getChildrenSkipCount(view, i19);
+                i20 = max;
                 f3 = f4;
-                i21++;
+                i19++;
                 z9 = z3;
                 iArr4 = iArr2;
                 z6 = z13;
-                mode = i17;
+                mode = i15;
                 iArr3 = iArr;
-                virtualChildCount = i16;
-                i20 = 1073741824;
+                virtualChildCount = i14;
+                i18 = 1073741824;
             }
-            i16 = virtualChildCount;
-            i17 = mode;
+            i14 = virtualChildCount;
+            i15 = mode;
             iArr = iArr3;
             iArr2 = iArr4;
-            i22 = i3;
+            i20 = i3;
             z3 = z9;
-            i21++;
+            i19++;
             z9 = z3;
             iArr4 = iArr2;
             z6 = z13;
-            mode = i17;
+            mode = i15;
             iArr3 = iArr;
-            virtualChildCount = i16;
-            i20 = 1073741824;
+            virtualChildCount = i14;
+            i18 = 1073741824;
         }
         boolean z14 = z6;
-        int i32 = virtualChildCount;
-        int i33 = mode;
+        int i30 = virtualChildCount;
+        int i31 = mode;
         int[] iArr5 = iArr3;
         int[] iArr6 = iArr4;
-        int i34 = i24;
+        int i32 = i22;
         boolean z15 = z9;
         if (this.mTotalLength > 0) {
-            i4 = i32;
+            i4 = i30;
             if (hasDividerBeforeChildAt(i4)) {
                 this.mTotalLength += this.mDividerWidth;
             }
         } else {
-            i4 = i32;
+            i4 = i30;
         }
-        int i35 = iArr5[1];
-        int max2 = (i35 == -1 && iArr5[0] == -1 && iArr5[2] == -1 && iArr5[3] == -1) ? i3 : Math.max(i3, Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i35, iArr5[2]))) + Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))));
+        int i33 = iArr5[1];
+        int max2 = (i33 == -1 && iArr5[0] == -1 && iArr5[2] == -1 && iArr5[3] == -1) ? i3 : Math.max(i3, Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i33, iArr5[2]))) + Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))));
         if (z15) {
-            i5 = i33;
+            i5 = i31;
             if (i5 == Integer.MIN_VALUE || i5 == 0) {
                 this.mTotalLength = 0;
-                int i36 = 0;
-                while (i36 < i4) {
-                    View virtualChildAt2 = getVirtualChildAt(i36);
+                int i34 = 0;
+                while (i34 < i4) {
+                    View virtualChildAt2 = getVirtualChildAt(i34);
                     if (virtualChildAt2 == null) {
-                        this.mTotalLength += measureNullChild(i36);
+                        this.mTotalLength += measureNullChild(i34);
                     } else if (virtualChildAt2.getVisibility() == 8) {
-                        i36 += getChildrenSkipCount(virtualChildAt2, i36);
+                        i34 += getChildrenSkipCount(virtualChildAt2, i34);
                     } else {
                         LayoutParams layoutParams2 = (LayoutParams) virtualChildAt2.getLayoutParams();
+                        int i35 = this.mTotalLength;
                         if (z8) {
                             f2 = f3;
-                            this.mTotalLength += layoutParams2.leftMargin + i23 + layoutParams2.rightMargin + getNextLocationOffset(virtualChildAt2);
-                            i13 = max2;
-                            i36++;
-                            f3 = f2;
-                            max2 = i13;
+                            this.mTotalLength = i35 + layoutParams2.leftMargin + i21 + layoutParams2.rightMargin + getNextLocationOffset(virtualChildAt2);
                         } else {
                             f2 = f3;
-                            int i37 = this.mTotalLength;
-                            i13 = max2;
-                            this.mTotalLength = Math.max(i37, i37 + i23 + layoutParams2.leftMargin + layoutParams2.rightMargin + getNextLocationOffset(virtualChildAt2));
-                            i36++;
-                            f3 = f2;
-                            max2 = i13;
+                            this.mTotalLength = Math.max(i35, i35 + i21 + layoutParams2.leftMargin + layoutParams2.rightMargin + getNextLocationOffset(virtualChildAt2));
                         }
+                        i34++;
+                        f3 = f2;
                     }
                     f2 = f3;
-                    i13 = max2;
-                    i36++;
+                    i34++;
                     f3 = f2;
-                    max2 = i13;
                 }
             }
             f = f3;
         } else {
             f = f3;
-            i5 = i33;
+            i5 = i31;
         }
-        int i38 = max2;
         int paddingLeft = this.mTotalLength + getPaddingLeft() + getPaddingRight();
         this.mTotalLength = paddingLeft;
         int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingLeft, getSuggestedMinimumWidth()), i, 0);
-        int i39 = (16777215 & resolveSizeAndState) - this.mTotalLength;
-        if (z10 || (i39 != 0 && f > 0.0f)) {
+        int i36 = (16777215 & resolveSizeAndState) - this.mTotalLength;
+        if (z10 || (i36 != 0 && f > 0.0f)) {
             float f5 = this.mWeightSum;
             if (f5 > 0.0f) {
                 f = f5;
@@ -1042,109 +1033,109 @@ public class LinearLayoutCompat extends ViewGroup {
             iArr6[1] = -1;
             iArr6[0] = -1;
             this.mTotalLength = 0;
-            int i40 = i34;
-            int i41 = -1;
-            int i42 = 0;
-            while (i42 < i4) {
-                View virtualChildAt3 = getVirtualChildAt(i42);
+            max2 = -1;
+            int i37 = 0;
+            while (i37 < i4) {
+                View virtualChildAt3 = getVirtualChildAt(i37);
                 if (virtualChildAt3 == null || virtualChildAt3.getVisibility() == 8) {
-                    i10 = resolveSizeAndState;
+                    i9 = resolveSizeAndState;
                 } else {
                     LayoutParams layoutParams3 = (LayoutParams) virtualChildAt3.getLayoutParams();
                     float f6 = layoutParams3.weight;
                     if (f6 > 0.0f) {
-                        int i43 = (int) ((i39 * f6) / f);
+                        int i38 = (int) ((i36 * f6) / f);
                         f -= f6;
-                        i39 -= i43;
-                        i10 = resolveSizeAndState;
+                        i36 -= i38;
+                        i9 = resolveSizeAndState;
                         int childMeasureSpec = getChildMeasureSpec(i2, getPaddingTop() + getPaddingBottom() + layoutParams3.topMargin + layoutParams3.bottomMargin, layoutParams3.height);
                         if (layoutParams3.width == 0) {
-                            i12 = 1073741824;
+                            i11 = 1073741824;
                             if (i5 == 1073741824) {
-                                if (i43 <= 0) {
-                                    i43 = 0;
+                                if (i38 <= 0) {
+                                    i38 = 0;
                                 }
-                                virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(i43, 1073741824), childMeasureSpec);
-                                i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & (-16777216));
+                                virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(i38, 1073741824), childMeasureSpec);
+                                i32 = View.combineMeasuredStates(i32, virtualChildAt3.getMeasuredState() & (-16777216));
                             }
                         } else {
-                            i12 = 1073741824;
+                            i11 = 1073741824;
                         }
-                        int measuredWidth2 = virtualChildAt3.getMeasuredWidth() + i43;
+                        int measuredWidth2 = virtualChildAt3.getMeasuredWidth() + i38;
                         if (measuredWidth2 < 0) {
                             measuredWidth2 = 0;
                         }
-                        virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth2, i12), childMeasureSpec);
-                        i40 = View.combineMeasuredStates(i40, virtualChildAt3.getMeasuredState() & (-16777216));
+                        virtualChildAt3.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth2, i11), childMeasureSpec);
+                        i32 = View.combineMeasuredStates(i32, virtualChildAt3.getMeasuredState() & (-16777216));
                     } else {
-                        i10 = resolveSizeAndState;
+                        i9 = resolveSizeAndState;
                     }
+                    int i39 = this.mTotalLength;
                     if (z8) {
-                        this.mTotalLength += virtualChildAt3.getMeasuredWidth() + layoutParams3.leftMargin + layoutParams3.rightMargin + getNextLocationOffset(virtualChildAt3);
+                        this.mTotalLength = i39 + virtualChildAt3.getMeasuredWidth() + layoutParams3.leftMargin + layoutParams3.rightMargin + getNextLocationOffset(virtualChildAt3);
                     } else {
-                        int i44 = this.mTotalLength;
-                        this.mTotalLength = Math.max(i44, virtualChildAt3.getMeasuredWidth() + i44 + layoutParams3.leftMargin + layoutParams3.rightMargin + getNextLocationOffset(virtualChildAt3));
+                        this.mTotalLength = Math.max(i39, virtualChildAt3.getMeasuredWidth() + i39 + layoutParams3.leftMargin + layoutParams3.rightMargin + getNextLocationOffset(virtualChildAt3));
                     }
                     boolean z16 = mode2 != 1073741824 && layoutParams3.height == -1;
-                    int i45 = layoutParams3.topMargin + layoutParams3.bottomMargin;
-                    int measuredHeight2 = virtualChildAt3.getMeasuredHeight() + i45;
-                    i41 = Math.max(i41, measuredHeight2);
+                    int i40 = layoutParams3.topMargin + layoutParams3.bottomMargin;
+                    int measuredHeight2 = virtualChildAt3.getMeasuredHeight() + i40;
+                    max2 = Math.max(max2, measuredHeight2);
                     if (!z16) {
-                        i45 = measuredHeight2;
+                        i40 = measuredHeight2;
                     }
-                    int max3 = Math.max(i25, i45);
+                    int max3 = Math.max(i23, i40);
                     if (z12) {
-                        i11 = -1;
+                        i10 = -1;
                         if (layoutParams3.height == -1) {
                             z = true;
-                            if (z14 && (baseline = virtualChildAt3.getBaseline()) != i11) {
-                                int i46 = ((((layoutParams3.gravity >= 0 ? this.mGravity : layoutParams3.gravity) & 112) >> 4) & (-2)) >> 1;
-                                iArr5[i46] = Math.max(iArr5[i46], baseline);
-                                iArr6[i46] = Math.max(iArr6[i46], measuredHeight2 - baseline);
+                            if (z14 && (baseline = virtualChildAt3.getBaseline()) != i10) {
+                                int i41 = ((((layoutParams3.gravity >= 0 ? this.mGravity : layoutParams3.gravity) & 112) >> 4) & (-2)) >> 1;
+                                iArr5[i41] = Math.max(iArr5[i41], baseline);
+                                iArr6[i41] = Math.max(iArr6[i41], measuredHeight2 - baseline);
                             }
-                            i25 = max3;
+                            i23 = max3;
                             z12 = z;
                         }
                     } else {
-                        i11 = -1;
+                        i10 = -1;
                     }
                     z = false;
                     if (z14) {
-                        int i462 = ((((layoutParams3.gravity >= 0 ? this.mGravity : layoutParams3.gravity) & 112) >> 4) & (-2)) >> 1;
-                        iArr5[i462] = Math.max(iArr5[i462], baseline);
-                        iArr6[i462] = Math.max(iArr6[i462], measuredHeight2 - baseline);
+                        int i412 = ((((layoutParams3.gravity >= 0 ? this.mGravity : layoutParams3.gravity) & 112) >> 4) & (-2)) >> 1;
+                        iArr5[i412] = Math.max(iArr5[i412], baseline);
+                        iArr6[i412] = Math.max(iArr6[i412], measuredHeight2 - baseline);
                     }
-                    i25 = max3;
+                    i23 = max3;
                     z12 = z;
                 }
-                i42++;
-                resolveSizeAndState = i10;
+                i37++;
+                resolveSizeAndState = i9;
             }
             i6 = resolveSizeAndState;
             i7 = -16777216;
             this.mTotalLength += getPaddingLeft() + getPaddingRight();
-            int i47 = iArr5[1];
-            i38 = (i47 == -1 && iArr5[0] == -1 && iArr5[2] == -1 && iArr5[3] == -1) ? i41 : Math.max(i41, Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i47, iArr5[2]))) + Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))));
-            i8 = i40;
-            i9 = i25;
+            int i42 = iArr5[1];
+            if (i42 != -1 || iArr5[0] != -1 || iArr5[2] != -1 || iArr5[3] != -1) {
+                max2 = Math.max(max2, Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i42, iArr5[2]))) + Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))));
+            }
+            i8 = i23;
         } else {
-            i9 = Math.max(i25, i26);
+            i8 = Math.max(i23, i24);
             if (z15 && i5 != 1073741824) {
-                for (int i48 = 0; i48 < i4; i48++) {
-                    View virtualChildAt4 = getVirtualChildAt(i48);
+                for (int i43 = 0; i43 < i4; i43++) {
+                    View virtualChildAt4 = getVirtualChildAt(i43);
                     if (virtualChildAt4 != null && virtualChildAt4.getVisibility() != 8 && ((LayoutParams) virtualChildAt4.getLayoutParams()).weight > 0.0f) {
-                        virtualChildAt4.measure(View.MeasureSpec.makeMeasureSpec(i23, 1073741824), View.MeasureSpec.makeMeasureSpec(virtualChildAt4.getMeasuredHeight(), 1073741824));
+                        virtualChildAt4.measure(View.MeasureSpec.makeMeasureSpec(i21, 1073741824), View.MeasureSpec.makeMeasureSpec(virtualChildAt4.getMeasuredHeight(), 1073741824));
                     }
                 }
             }
             i6 = resolveSizeAndState;
-            i8 = i34;
             i7 = -16777216;
         }
-        if (z12 || mode2 == 1073741824) {
-            i9 = i38;
+        int i44 = i32;
+        if (!z12 && mode2 != 1073741824) {
+            max2 = i8;
         }
-        setMeasuredDimension(i6 | (i8 & i7), View.resolveSizeAndState(Math.max(i9 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i8 << 16));
+        setMeasuredDimension(i6 | (i44 & i7), View.resolveSizeAndState(Math.max(max2 + getPaddingTop() + getPaddingBottom(), getSuggestedMinimumHeight()), i2, i44 << 16));
         if (z11) {
             forceUniformHeight(i4, i);
         }

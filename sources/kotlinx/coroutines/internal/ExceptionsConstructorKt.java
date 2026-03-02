@@ -38,19 +38,19 @@ public final class ExceptionsConstructorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m10243constructorimpl = Result.m10243constructorimpl(((CopyableThrowable) e).createCopy());
+                m9182constructorimpl = Result.m9182constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m10249isFailureimpl(m10243constructorimpl)) {
-                m10243constructorimpl = null;
+            if (Result.m9188isFailureimpl(m9182constructorimpl)) {
+                m9182constructorimpl = null;
             }
-            return (E) m10243constructorimpl;
+            return (E) m9182constructorimpl;
         }
         return (E) ctorCache.get(e.getClass()).invoke(e);
     }
@@ -82,9 +82,7 @@ public final class ExceptionsConstructorKt {
                     pair = TuplesKt.to(safeCtor(new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Throwable createConstructor$lambda$7$lambda$6;
-                            createConstructor$lambda$7$lambda$6 = ExceptionsConstructorKt.createConstructor$lambda$7$lambda$6(constructor, (Throwable) obj2);
-                            return createConstructor$lambda$7$lambda$6;
+                            return ExceptionsConstructorKt.createConstructor$lambda$7$lambda$6(constructor, (Throwable) obj2);
                         }
                     }), 0);
                 } else if (length2 == 1) {
@@ -93,18 +91,14 @@ public final class ExceptionsConstructorKt {
                         pair = TuplesKt.to(safeCtor(new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Throwable createConstructor$lambda$7$lambda$3;
-                                createConstructor$lambda$7$lambda$3 = ExceptionsConstructorKt.createConstructor$lambda$7$lambda$3(constructor, (Throwable) obj2);
-                                return createConstructor$lambda$7$lambda$3;
+                                return ExceptionsConstructorKt.createConstructor$lambda$7$lambda$3(constructor, (Throwable) obj2);
                             }
                         }), 2);
                     } else if (Intrinsics.areEqual(cls2, Throwable.class)) {
                         pair = TuplesKt.to(safeCtor(new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$$ExternalSyntheticLambda3
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Throwable createConstructor$lambda$7$lambda$4;
-                                createConstructor$lambda$7$lambda$4 = ExceptionsConstructorKt.createConstructor$lambda$7$lambda$4(constructor, (Throwable) obj2);
-                                return createConstructor$lambda$7$lambda$4;
+                                return ExceptionsConstructorKt.createConstructor$lambda$7$lambda$4(constructor, (Throwable) obj2);
                             }
                         }), 1);
                     } else {
@@ -115,9 +109,7 @@ public final class ExceptionsConstructorKt {
                         pair = TuplesKt.to(safeCtor(new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Throwable createConstructor$lambda$7$lambda$1;
-                                createConstructor$lambda$7$lambda$1 = ExceptionsConstructorKt.createConstructor$lambda$7$lambda$1(constructor, (Throwable) obj2);
-                                return createConstructor$lambda$7$lambda$1;
+                                return ExceptionsConstructorKt.createConstructor$lambda$7$lambda$1(constructor, (Throwable) obj2);
                             }
                         }), 3);
                     } else {
@@ -184,44 +176,42 @@ public final class ExceptionsConstructorKt {
         return new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Throwable safeCtor$lambda$9;
-                safeCtor$lambda$9 = ExceptionsConstructorKt.safeCtor$lambda$9(Function1.this, (Throwable) obj);
-                return safeCtor$lambda$9;
+                return ExceptionsConstructorKt.safeCtor$lambda$9(Function1.this, (Throwable) obj);
             }
         };
     }
 
     public static final Throwable safeCtor$lambda$9(Function1 function1, Throwable th) {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             Throwable th2 = (Throwable) function1.invoke(th);
             if (!Intrinsics.areEqual(th.getMessage(), th2.getMessage()) && !Intrinsics.areEqual(th2.getMessage(), th.toString())) {
                 th2 = null;
             }
-            m10243constructorimpl = Result.m10243constructorimpl(th2);
+            m9182constructorimpl = Result.m9182constructorimpl(th2);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th3));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th3));
         }
-        return Result.m10249isFailureimpl(m10243constructorimpl) ? null : m10243constructorimpl;
+        return Result.m9188isFailureimpl(m9182constructorimpl) ? null : m9182constructorimpl;
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m10243constructorimpl;
+        Integer m9182constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m9182constructorimpl = Result.m9182constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m10249isFailureimpl(m10243constructorimpl)) {
-            m10243constructorimpl = valueOf;
+        if (Result.m9188isFailureimpl(m9182constructorimpl)) {
+            m9182constructorimpl = valueOf;
         }
-        return ((Number) m10243constructorimpl).intValue();
+        return ((Number) m9182constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

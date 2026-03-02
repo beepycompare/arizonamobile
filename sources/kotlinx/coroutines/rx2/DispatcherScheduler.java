@@ -63,27 +63,20 @@ public final class DispatcherScheduler extends Scheduler {
         scheduleTask = RxSchedulerKt.scheduleTask(this.scope, runnable, timeUnit.toMillis(j), new Function1() { // from class: kotlinx.coroutines.rx2.DispatcherScheduler$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Runnable scheduleDirect$lambda$1;
-                scheduleDirect$lambda$1 = DispatcherScheduler.scheduleDirect$lambda$1(DispatcherScheduler.this, (Function1) obj);
-                return scheduleDirect$lambda$1;
+                return DispatcherScheduler.scheduleDirect$lambda$1(DispatcherScheduler.this, (Function1) obj);
             }
         });
         return scheduleTask;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Runnable scheduleDirect$lambda$1(final DispatcherScheduler dispatcherScheduler, final Function1 function1) {
         return new Runnable() { // from class: kotlinx.coroutines.rx2.DispatcherScheduler$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DispatcherScheduler.scheduleDirect$lambda$1$lambda$0(DispatcherScheduler.this, function1);
+                BuildersKt__Builders_commonKt.launch$default(DispatcherScheduler.this.scope, null, null, new DispatcherScheduler$scheduleDirect$1$1$1(function1, null), 3, null);
             }
         };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void scheduleDirect$lambda$1$lambda$0(DispatcherScheduler dispatcherScheduler, Function1 function1) {
-        BuildersKt__Builders_commonKt.launch$default(dispatcherScheduler.scope, null, null, new DispatcherScheduler$scheduleDirect$1$1$1(function1, null), 3, null);
     }
 
     @Override // io.reactivex.Scheduler
@@ -215,27 +208,20 @@ public final class DispatcherScheduler extends Scheduler {
             scheduleTask = RxSchedulerKt.scheduleTask(this.workerScope, runnable, timeUnit.toMillis(j), new Function1() { // from class: kotlinx.coroutines.rx2.DispatcherScheduler$DispatcherWorker$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Runnable schedule$lambda$1;
-                    schedule$lambda$1 = DispatcherScheduler.DispatcherWorker.schedule$lambda$1(DispatcherScheduler.DispatcherWorker.this, (Function1) obj);
-                    return schedule$lambda$1;
+                    return DispatcherScheduler.DispatcherWorker.schedule$lambda$1(DispatcherScheduler.DispatcherWorker.this, (Function1) obj);
                 }
             });
             return scheduleTask;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Runnable schedule$lambda$1(final DispatcherWorker dispatcherWorker, final Function1 function1) {
             return new Runnable() { // from class: kotlinx.coroutines.rx2.DispatcherScheduler$DispatcherWorker$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DispatcherScheduler.DispatcherWorker.schedule$lambda$1$lambda$0(DispatcherScheduler.DispatcherWorker.this, function1);
+                    DispatcherScheduler.DispatcherWorker.this.blockChannel.mo8396trySendJP2dKIU(function1);
                 }
             };
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void schedule$lambda$1$lambda$0(DispatcherWorker dispatcherWorker, Function1 function1) {
-            dispatcherWorker.blockChannel.mo9174trySendJP2dKIU(function1);
         }
 
         @Override // io.reactivex.disposables.Disposable

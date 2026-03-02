@@ -16,15 +16,13 @@ public final class ComputedProvidableCompositionLocal<T> extends ProvidableCompo
         super(new Function0() { // from class: androidx.compose.runtime.ComputedProvidableCompositionLocal$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object _init_$lambda$0;
-                _init_$lambda$0 = ComputedProvidableCompositionLocal._init_$lambda$0();
-                return _init_$lambda$0;
+                return ComputedProvidableCompositionLocal._init_$lambda$0();
             }
         });
         this.defaultValueHolder = new ComputedValueHolder<>(function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object _init_$lambda$0() {
         ComposerKt.composeRuntimeError("Unexpected call to default provider");
         throw new KotlinNothingValueException();

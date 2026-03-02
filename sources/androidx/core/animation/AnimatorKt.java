@@ -85,9 +85,10 @@ public final class AnimatorKt {
             function1 = new Function1() { // from class: androidx.core.animation.AnimatorKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit addPauseListener$lambda$0;
-                    addPauseListener$lambda$0 = AnimatorKt.addPauseListener$lambda$0((Animator) obj2);
-                    return addPauseListener$lambda$0;
+                    Unit unit;
+                    Animator animator2 = (Animator) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
@@ -95,23 +96,14 @@ public final class AnimatorKt {
             function12 = new Function1() { // from class: androidx.core.animation.AnimatorKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit addPauseListener$lambda$1;
-                    addPauseListener$lambda$1 = AnimatorKt.addPauseListener$lambda$1((Animator) obj2);
-                    return addPauseListener$lambda$1;
+                    Unit unit;
+                    Animator animator2 = (Animator) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
         return addPauseListener(animator, function1, function12);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit addPauseListener$lambda$0(Animator animator) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit addPauseListener$lambda$1(Animator animator) {
-        return Unit.INSTANCE;
     }
 
     public static final Animator.AnimatorPauseListener addPauseListener(Animator animator, final Function1<? super Animator, Unit> function1, final Function1<? super Animator, Unit> function12) {

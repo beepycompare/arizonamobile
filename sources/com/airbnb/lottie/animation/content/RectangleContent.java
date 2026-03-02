@@ -81,10 +81,12 @@ public class RectangleContent implements BaseKeyframeAnimation.AnimationListener
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path getPath() {
         BaseKeyframeAnimation<Float, Float> baseKeyframeAnimation;
-        if (this.isPathValid) {
-            return this.path;
+        boolean z = this.isPathValid;
+        Path path = this.path;
+        if (z) {
+            return path;
         }
-        this.path.reset();
+        path.reset();
         if (this.hidden) {
             this.isPathValid = true;
             return this.path;

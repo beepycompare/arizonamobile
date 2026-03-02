@@ -26,17 +26,23 @@ final class zzhn implements com.google.android.gms.internal.measurement.zzr {
                 zzj = this.zza.zzu.zzaV().zzi();
             } else if (z) {
                 zzj = this.zza.zzu.zzaV().zzf();
-            } else if (!z2) {
-                zzj = this.zza.zzu.zzaV().zzh();
             } else {
-                zzj = this.zza.zzu.zzaV().zze();
+                zzht zzhtVar = this.zza;
+                if (!z2) {
+                    zzj = zzhtVar.zzu.zzaV().zzh();
+                } else {
+                    zzj = zzhtVar.zzu.zzaV().zze();
+                }
             }
         } else if (z) {
             zzj = this.zza.zzu.zzaV().zzc();
-        } else if (!z2) {
-            zzj = this.zza.zzu.zzaV().zzd();
         } else {
-            zzj = this.zza.zzu.zzaV().zzb();
+            zzht zzhtVar2 = this.zza;
+            if (!z2) {
+                zzj = zzhtVar2.zzu.zzaV().zzd();
+            } else {
+                zzj = zzhtVar2.zzu.zzaV().zzb();
+            }
         }
         int size = list.size();
         if (size == 1) {

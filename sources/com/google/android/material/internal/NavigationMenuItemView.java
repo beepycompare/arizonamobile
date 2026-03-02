@@ -111,8 +111,10 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
     }
 
     private void adjustAppearance() {
-        if (shouldExpandActionArea()) {
-            this.textView.setVisibility(8);
+        boolean shouldExpandActionArea = shouldExpandActionArea();
+        CheckedTextView checkedTextView = this.textView;
+        if (shouldExpandActionArea) {
+            checkedTextView.setVisibility(8);
             FrameLayout frameLayout = this.actionArea;
             if (frameLayout != null) {
                 LinearLayoutCompat.LayoutParams layoutParams = (LinearLayoutCompat.LayoutParams) frameLayout.getLayoutParams();
@@ -122,7 +124,7 @@ public class NavigationMenuItemView extends ForegroundLinearLayout implements Me
             }
             return;
         }
-        this.textView.setVisibility(0);
+        checkedTextView.setVisibility(0);
         FrameLayout frameLayout2 = this.actionArea;
         if (frameLayout2 != null) {
             LinearLayoutCompat.LayoutParams layoutParams2 = (LinearLayoutCompat.LayoutParams) frameLayout2.getLayoutParams();

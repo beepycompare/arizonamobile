@@ -225,12 +225,13 @@ public final class ListBuilder<E> extends AbstractMutableList<E> implements List
         Intrinsics.checkNotNullParameter(array, "array");
         int length = array.length;
         int i = this.length;
+        E[] eArr = this.backing;
         if (length < i) {
-            T[] tArr = (T[]) Arrays.copyOfRange(this.backing, 0, i, array.getClass());
+            T[] tArr = (T[]) Arrays.copyOfRange(eArr, 0, i, array.getClass());
             Intrinsics.checkNotNullExpressionValue(tArr, "copyOfRange(...)");
             return tArr;
         }
-        ArraysKt.copyInto(this.backing, array, 0, 0, i);
+        ArraysKt.copyInto(eArr, array, 0, 0, i);
         return (T[]) CollectionsKt.terminateCollectionToArray(this.length, array);
     }
 
@@ -340,22 +341,26 @@ public final class ListBuilder<E> extends AbstractMutableList<E> implements List
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int retainOrRemoveAllInternal(int i, int i2, Collection<? extends E> collection, boolean z) {
+        E[] eArr;
         int i3 = 0;
         int i4 = 0;
-        while (i3 < i2) {
+        while (true) {
+            eArr = this.backing;
+            if (i3 >= i2) {
+                break;
+            }
             int i5 = i + i3;
-            if (collection.contains(this.backing[i5]) == z) {
-                E[] eArr = this.backing;
+            if (collection.contains(eArr[i5]) == z) {
+                E[] eArr2 = this.backing;
                 i3++;
-                eArr[i4 + i] = eArr[i5];
+                eArr2[i4 + i] = eArr2[i5];
                 i4++;
             } else {
                 i3++;
             }
         }
         int i6 = i2 - i4;
-        E[] eArr2 = this.backing;
-        ArraysKt.copyInto(eArr2, eArr2, i + i4, i2 + i, this.length);
+        ArraysKt.copyInto(eArr, eArr, i + i4, i2 + i, this.length);
         E[] eArr3 = this.backing;
         int i7 = this.length;
         ListBuilderKt.resetRange(eArr3, i7 - i6, i7);
@@ -666,16 +671,15 @@ public final class ListBuilder<E> extends AbstractMutableList<E> implements List
             checkForComodification();
             int length = array.length;
             int i = this.length;
+            E[] eArr = this.backing;
             if (length < i) {
-                E[] eArr = this.backing;
                 int i2 = this.offset;
                 T[] tArr = (T[]) Arrays.copyOfRange(eArr, i2, i + i2, array.getClass());
                 Intrinsics.checkNotNullExpressionValue(tArr, "copyOfRange(...)");
                 return tArr;
             }
-            E[] eArr2 = this.backing;
             int i3 = this.offset;
-            ArraysKt.copyInto(eArr2, array, 0, i3, i + i3);
+            ArraysKt.copyInto(eArr, array, 0, i3, i + i3);
             return (T[]) CollectionsKt.terminateCollectionToArray(this.length, array);
         }
 

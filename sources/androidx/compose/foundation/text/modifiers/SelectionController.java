@@ -43,9 +43,9 @@ public final class SelectionController implements RememberObserver {
         this.modifier = PointerIconKt.pointerHoverIcon$default(SelectionController_androidKt.makeSelectionModifier(selectionRegistrar, j, new Function0() { // from class: androidx.compose.foundation.text.modifiers.SelectionController$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                LayoutCoordinates modifier$lambda$0;
-                modifier$lambda$0 = SelectionController.modifier$lambda$0(SelectionController.this);
-                return modifier$lambda$0;
+                LayoutCoordinates layoutCoordinates;
+                layoutCoordinates = SelectionController.this.params.getLayoutCoordinates();
+                return layoutCoordinates;
             }
         }), PointerIcon.Companion.getText(), false, 2, null);
     }
@@ -58,38 +58,23 @@ public final class SelectionController implements RememberObserver {
         return this.modifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final LayoutCoordinates modifier$lambda$0(SelectionController selectionController) {
-        return selectionController.params.getLayoutCoordinates();
-    }
-
     @Override // androidx.compose.runtime.RememberObserver
     public void onRemembered() {
         this.selectable = this.selectionRegistrar.subscribe(new MultiWidgetSelectionDelegate(this.selectableId, new Function0() { // from class: androidx.compose.foundation.text.modifiers.SelectionController$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                LayoutCoordinates onRemembered$lambda$0;
-                onRemembered$lambda$0 = SelectionController.onRemembered$lambda$0(SelectionController.this);
-                return onRemembered$lambda$0;
+                LayoutCoordinates layoutCoordinates;
+                layoutCoordinates = SelectionController.this.params.getLayoutCoordinates();
+                return layoutCoordinates;
             }
         }, new Function0() { // from class: androidx.compose.foundation.text.modifiers.SelectionController$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                TextLayoutResult onRemembered$lambda$1;
-                onRemembered$lambda$1 = SelectionController.onRemembered$lambda$1(SelectionController.this);
-                return onRemembered$lambda$1;
+                TextLayoutResult textLayoutResult;
+                textLayoutResult = SelectionController.this.params.getTextLayoutResult();
+                return textLayoutResult;
             }
         }));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final LayoutCoordinates onRemembered$lambda$0(SelectionController selectionController) {
-        return selectionController.params.getLayoutCoordinates();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final TextLayoutResult onRemembered$lambda$1(SelectionController selectionController) {
-        return selectionController.params.getTextLayoutResult();
     }
 
     @Override // androidx.compose.runtime.RememberObserver
@@ -150,21 +135,21 @@ public final class SelectionController implements RememberObserver {
             return;
         }
         if (!this.params.getShouldClip()) {
-            DrawScope.m5995drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
+            DrawScope.m5336drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
             return;
         }
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L));
-        int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
+        int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5929clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m5413getIntersectrtfAjoo);
-            DrawScope.m5995drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
+            drawContext.getTransform().mo5270clipRectN_I0leg(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2, m4761getIntersectrtfAjoo);
+            DrawScope.m5336drawPathLG529CI$default(drawScope, pathForRange, this.backgroundSelectionColor, 0.0f, null, null, 0, 60, null);
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
         }
     }
 }

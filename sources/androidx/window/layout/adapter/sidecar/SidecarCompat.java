@@ -133,7 +133,7 @@ public final class SidecarCompat implements ExtensionInterfaceCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void registerConfigurationChangeListener$lambda$0(SidecarCompat sidecarCompat, Activity activity, Configuration configuration) {
         DistinctElementCallback distinctElementCallback = sidecarCompat.extensionCallback;
         if (distinctElementCallback != null) {

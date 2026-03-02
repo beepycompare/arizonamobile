@@ -11,15 +11,15 @@ public final class AppBarTokens {
     private static final float LeadingSpace;
     private static final float TrailingSpace;
     public static final AppBarTokens INSTANCE = new AppBarTokens();
-    private static final float AvatarSize = Dp.m8258constructorimpl((float) 32.0d);
+    private static final float AvatarSize = Dp.m7555constructorimpl((float) 32.0d);
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
-    private static final float IconButtonSpace = Dp.m8258constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconButtonSpace = Dp.m7555constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens LeadingIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens OnScrollContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3977getLevel2D9Ej5fM();
+    private static final float OnScrollContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
     private static final ColorSchemeKeyTokens SubtitleColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TitleColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens TrailingIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -28,7 +28,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getAvatarSize-D9Ej5fM  reason: not valid java name */
-    public final float m3735getAvatarSizeD9Ej5fM() {
+    public final float m3119getAvatarSizeD9Ej5fM() {
         return AvatarSize;
     }
 
@@ -37,7 +37,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3736getContainerElevationD9Ej5fM() {
+    public final float m3120getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -46,12 +46,12 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getIconButtonSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3737getIconButtonSpaceD9Ej5fM() {
+    public final float m3121getIconButtonSpaceD9Ej5fM() {
         return IconButtonSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m3738getIconSizeD9Ej5fM() {
+    public final float m3122getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
@@ -60,7 +60,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3739getLeadingSpaceD9Ej5fM() {
+    public final float m3123getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
@@ -69,7 +69,7 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getOnScrollContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3740getOnScrollContainerElevationD9Ej5fM() {
+    public final float m3124getOnScrollContainerElevationD9Ej5fM() {
         return OnScrollContainerElevation;
     }
 
@@ -86,13 +86,13 @@ public final class AppBarTokens {
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m3741getTrailingSpaceD9Ej5fM() {
+    public final float m3125getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 
     static {
         float f = (float) 4.0d;
-        LeadingSpace = Dp.m8258constructorimpl(f);
-        TrailingSpace = Dp.m8258constructorimpl(f);
+        LeadingSpace = Dp.m7555constructorimpl(f);
+        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

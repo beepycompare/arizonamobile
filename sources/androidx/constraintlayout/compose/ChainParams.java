@@ -37,42 +37,42 @@ public final class ChainParams implements HelperParams {
     }
 
     /* renamed from: getStartMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8529getStartMarginD9Ej5fM() {
+    public final float m7826getStartMarginD9Ej5fM() {
         return this.startMargin;
     }
 
     /* renamed from: getTopMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8531getTopMarginD9Ej5fM() {
+    public final float m7828getTopMarginD9Ej5fM() {
         return this.topMargin;
     }
 
     /* renamed from: getEndMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8527getEndMarginD9Ej5fM() {
+    public final float m7824getEndMarginD9Ej5fM() {
         return this.endMargin;
     }
 
     /* renamed from: getBottomMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8525getBottomMarginD9Ej5fM() {
+    public final float m7822getBottomMarginD9Ej5fM() {
         return this.bottomMargin;
     }
 
     /* renamed from: getStartGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8528getStartGoneMarginD9Ej5fM() {
+    public final float m7825getStartGoneMarginD9Ej5fM() {
         return this.startGoneMargin;
     }
 
     /* renamed from: getTopGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8530getTopGoneMarginD9Ej5fM() {
+    public final float m7827getTopGoneMarginD9Ej5fM() {
         return this.topGoneMargin;
     }
 
     /* renamed from: getEndGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8526getEndGoneMarginD9Ej5fM() {
+    public final float m7823getEndGoneMarginD9Ej5fM() {
         return this.endGoneMargin;
     }
 
     /* renamed from: getBottomGoneMargin-D9Ej5fM  reason: not valid java name */
-    public final float m8524getBottomGoneMarginD9Ej5fM() {
+    public final float m7821getBottomGoneMarginD9Ej5fM() {
         return this.bottomGoneMargin;
     }
 
@@ -98,6 +98,6 @@ public final class ChainParams implements HelperParams {
 
     static {
         float f = 0;
-        Default = new ChainParams(Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f), Float.NaN, null);
+        Default = new ChainParams(Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f), Float.NaN, null);
     }
 }

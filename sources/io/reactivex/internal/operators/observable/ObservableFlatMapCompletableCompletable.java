@@ -106,10 +106,11 @@ public final class ObservableFlatMapCompletableCompletable<T> extends Completabl
         public void onComplete() {
             if (decrementAndGet() == 0) {
                 Throwable terminate = this.errors.terminate();
+                CompletableObserver completableObserver = this.downstream;
                 if (terminate != null) {
-                    this.downstream.onError(terminate);
+                    completableObserver.onError(terminate);
                 } else {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 }
             }
         }

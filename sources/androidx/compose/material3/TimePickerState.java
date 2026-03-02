@@ -10,7 +10,7 @@ public interface TimePickerState {
     int getMinute();
 
     /* renamed from: getSelection-yecRtBI */
-    int mo1969getSelectionyecRtBI();
+    int mo1702getSelectionyecRtBI();
 
     boolean is24hour();
 
@@ -21,5 +21,5 @@ public interface TimePickerState {
     void setMinute(int i);
 
     /* renamed from: setSelection-6_8s6DQ */
-    void mo1971setSelection6_8s6DQ(int i);
+    void mo1704setSelection6_8s6DQ(int i);
 }

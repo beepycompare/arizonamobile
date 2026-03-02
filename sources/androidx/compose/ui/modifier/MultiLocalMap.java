@@ -24,7 +24,7 @@ public final class MultiLocalMap extends ModifierLocalMap {
 
     @Override // androidx.compose.ui.modifier.ModifierLocalMap
     /* renamed from: set$ui */
-    public <T> void mo7028set$ui(ModifierLocal<T> modifierLocal, T t) {
+    public <T> void mo6369set$ui(ModifierLocal<T> modifierLocal, T t) {
         this.map.put(modifierLocal, t);
     }
 

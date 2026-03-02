@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.employmentNote.presentation.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.android.material.imageview.ShapeableImageView;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -20,8 +21,8 @@ import ru.mrlargha.commonui.elements.employmentNote.domain.RewardType;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TaskRewardAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskRewardViewHolder$bind$1$1", f = "TaskRewardAdapter.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskRewardViewHolder$bind$1$1", f = "TaskRewardAdapter.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class TaskRewardViewHolder$bind$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ RewardType $item;
@@ -66,12 +67,13 @@ public final class TaskRewardViewHolder$bind$1$1 extends SuspendLambda implement
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        ItemTaskRewardBinding itemTaskRewardBinding2 = this.$this_with;
         if (bitmap != null) {
-            ShapeableImageView ivReward = this.$this_with.ivReward;
+            ShapeableImageView ivReward = itemTaskRewardBinding2.ivReward;
             Intrinsics.checkNotNullExpressionValue(ivReward, "ivReward");
             UtilsKt.setImage(ivReward, bitmap);
         } else {
-            ShapeableImageView ivReward2 = this.$this_with.ivReward;
+            ShapeableImageView ivReward2 = itemTaskRewardBinding2.ivReward;
             Intrinsics.checkNotNullExpressionValue(ivReward2, "ivReward");
             itemTaskRewardBinding = this.this$0.binding;
             Context context = itemTaskRewardBinding.getRoot().getContext();

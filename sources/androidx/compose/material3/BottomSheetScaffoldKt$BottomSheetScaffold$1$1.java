@@ -58,11 +58,6 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float invoke$lambda$1$lambda$0(BottomSheetScaffoldState bottomSheetScaffoldState) {
-        return bottomSheetScaffoldState.getBottomSheetState().requireOffset();
-    }
-
     public final void invoke(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C142@7637L52,146@7946L710,143@7722L49,144@7803L50,140@7554L1117:BottomSheetScaffold.kt#uh7d8r");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -92,7 +87,7 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-519581786, i2, -1, "androidx.compose.material3.BottomSheetScaffold.<anonymous>.<anonymous>.<anonymous> (BottomSheetScaffold.kt:142)");
                 }
-                function3.invoke(PaddingKt.m925PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, f, 7, null), composer2, 0);
+                function3.invoke(PaddingKt.m815PaddingValuesa9UjIt4$default(0.0f, 0.0f, 0.0f, f, 7, null), composer2, 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -122,7 +117,7 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-815624571, i2, -1, "androidx.compose.material3.BottomSheetScaffold.<anonymous>.<anonymous>.<anonymous> (BottomSheetScaffold.kt:147)");
                     }
-                    BottomSheetScaffoldKt.m2047StandardBottomSheetw7I5h1o(BottomSheetScaffoldState.this.getBottomSheetState(), f2, f3, z, shape, j, j2, f4, f5, function22, function32, composer2, 0, 0);
+                    BottomSheetScaffoldKt.m1753StandardBottomSheetw7I5h1o(BottomSheetScaffoldState.this.getBottomSheetState(), f2, f3, z, shape, j, j2, f4, f5, function22, function32, composer2, 0, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                         return;
@@ -164,9 +159,9 @@ public final class BottomSheetScaffoldKt$BottomSheetScaffold$1$1 implements Func
             rememberedValue = new Function0() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$BottomSheetScaffold$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = BottomSheetScaffoldKt$BottomSheetScaffold$1$1.invoke$lambda$1$lambda$0(BottomSheetScaffoldState.this);
-                    return Float.valueOf(invoke$lambda$1$lambda$0);
+                    float requireOffset;
+                    requireOffset = BottomSheetScaffoldState.this.getBottomSheetState().requireOffset();
+                    return Float.valueOf(requireOffset);
                 }
             };
             composer.updateRememberedValue(rememberedValue);

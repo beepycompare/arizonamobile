@@ -72,13 +72,12 @@ public class MultiSelectListPreferenceDialogFragmentCompat extends PreferenceDia
         builder.setMultiChoiceItems(this.mEntries, zArr, new DialogInterface.OnMultiChoiceClickListener() { // from class: androidx.preference.MultiSelectListPreferenceDialogFragmentCompat.1
             @Override // android.content.DialogInterface.OnMultiChoiceClickListener
             public void onClick(DialogInterface dialogInterface, int i2, boolean z) {
+                MultiSelectListPreferenceDialogFragmentCompat multiSelectListPreferenceDialogFragmentCompat = MultiSelectListPreferenceDialogFragmentCompat.this;
                 if (z) {
-                    MultiSelectListPreferenceDialogFragmentCompat multiSelectListPreferenceDialogFragmentCompat = MultiSelectListPreferenceDialogFragmentCompat.this;
                     multiSelectListPreferenceDialogFragmentCompat.mPreferenceChanged = MultiSelectListPreferenceDialogFragmentCompat.this.mNewValues.add(MultiSelectListPreferenceDialogFragmentCompat.this.mEntryValues[i2].toString()) | multiSelectListPreferenceDialogFragmentCompat.mPreferenceChanged;
                     return;
                 }
-                MultiSelectListPreferenceDialogFragmentCompat multiSelectListPreferenceDialogFragmentCompat2 = MultiSelectListPreferenceDialogFragmentCompat.this;
-                multiSelectListPreferenceDialogFragmentCompat2.mPreferenceChanged = MultiSelectListPreferenceDialogFragmentCompat.this.mNewValues.remove(MultiSelectListPreferenceDialogFragmentCompat.this.mEntryValues[i2].toString()) | multiSelectListPreferenceDialogFragmentCompat2.mPreferenceChanged;
+                multiSelectListPreferenceDialogFragmentCompat.mPreferenceChanged = MultiSelectListPreferenceDialogFragmentCompat.this.mNewValues.remove(MultiSelectListPreferenceDialogFragmentCompat.this.mEntryValues[i2].toString()) | multiSelectListPreferenceDialogFragmentCompat.mPreferenceChanged;
             }
         });
     }

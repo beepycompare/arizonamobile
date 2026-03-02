@@ -2,12 +2,12 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class Un extends AbstractC0474oa {
-    public Un(C0556ri c0556ri) {
-        super(c0556ri);
+public final class Un extends AbstractC0473oa {
+    public Un(C0555ri c0555ri) {
+        super(c0555ri);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0474oa
+    @Override // io.appmetrica.analytics.impl.AbstractC0473oa
     public final void a(List<Rg> list) {
         list.add(this.f1151a.f1209a);
         list.add(this.f1151a.b);

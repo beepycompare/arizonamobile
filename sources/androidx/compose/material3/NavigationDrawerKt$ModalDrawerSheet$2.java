@@ -72,22 +72,17 @@ public final class NavigationDrawerKt$ModalDrawerSheet$2 implements Function3<Dr
             rememberedValue = new FloatProducer() { // from class: androidx.compose.material3.NavigationDrawerKt$ModalDrawerSheet$2$$ExternalSyntheticLambda0
                 @Override // androidx.compose.material3.internal.FloatProducer
                 public final float invoke() {
-                    float invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = NavigationDrawerKt$ModalDrawerSheet$2.invoke$lambda$1$lambda$0(DrawerState.this);
-                    return invoke$lambda$1$lambda$0;
+                    float offset;
+                    offset = DrawerState.this.getAnchoredDraggableState$material3().getOffset();
+                    return offset;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        NavigationDrawerKt.m2717DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, (FloatProducer) rememberedValue, this.$content, composer, i2 & 14, 0);
+        NavigationDrawerKt.m2285DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, (FloatProducer) rememberedValue, this.$content, composer, i2 & 14, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float invoke$lambda$1$lambda$0(DrawerState drawerState) {
-        return drawerState.getAnchoredDraggableState$material3().getOffset();
     }
 }

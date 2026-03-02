@@ -5,6 +5,7 @@ import androidx.paging.PagingDataEvent;
 import androidx.recyclerview.widget.ListUpdateCallback;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -13,7 +14,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlinx.coroutines.BuildersKt;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: AsyncPagingDataDiffer.kt */
-@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"androidx/paging/AsyncPagingDataDiffer$presenter$1", "Landroidx/paging/PagingDataPresenter;", "presentPagingDataEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/paging/PagingDataEvent;", "(Landroidx/paging/PagingDataEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-runtime_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0000\b\n\u0018\u00002\b\u0012\u0004\u0012\u00028\u00000\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"androidx/paging/AsyncPagingDataDiffer$presenter$1", "Landroidx/paging/PagingDataPresenter;", "presentPagingDataEvent", "", NotificationCompat.CATEGORY_EVENT, "Landroidx/paging/PagingDataEvent;", "(Landroidx/paging/PagingDataEvent;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresenter<T> {
     final /* synthetic */ AsyncPagingDataDiffer<T> this$0;
@@ -26,7 +27,7 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0043  */
     @Override // androidx.paging.PagingDataPresenter
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -51,7 +52,6 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
         AtomicReference atomicReference;
         AsyncPagingDataDiffer<T> asyncPagingDataDiffer;
         CoroutineContext coroutineContext;
-        AsyncPagingDataDiffer$presenter$1<T> asyncPagingDataDiffer$presenter$1;
         PagingDataEvent.Refresh refresh;
         ListUpdateCallback listUpdateCallback15;
         ListUpdateCallback listUpdateCallback16;
@@ -81,16 +81,14 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
                             atomicReference.set(refresh2.getPreviousList());
                             try {
                                 coroutineContext = ((AsyncPagingDataDiffer) asyncPagingDataDiffer2).workerDispatcher;
-                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$0 = this;
-                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$1 = pagingDataEvent;
-                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$2 = asyncPagingDataDiffer2;
-                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$3 = refresh2;
+                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$0 = pagingDataEvent;
+                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$1 = asyncPagingDataDiffer2;
+                                asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$2 = refresh2;
                                 asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.label = 1;
                                 Object withContext = BuildersKt.withContext(coroutineContext, new AsyncPagingDataDiffer$presenter$1$presentPagingDataEvent$2$diffResult$1(refresh2, asyncPagingDataDiffer2, null), asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1);
                                 if (withContext == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
-                                asyncPagingDataDiffer$presenter$1 = this;
                                 asyncPagingDataDiffer = asyncPagingDataDiffer2;
                                 obj = withContext;
                                 refresh = refresh2;
@@ -170,7 +168,9 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
                             listUpdateCallback5 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer5).updateCallback;
                             listUpdateCallback5.onChanged(max, newPlaceholdersBefore3, null);
                         }
-                    } else if (pagingDataEvent instanceof PagingDataEvent.DropAppend) {
+                    } else if (!(pagingDataEvent instanceof PagingDataEvent.DropAppend)) {
+                        throw new NoWhenBranchMatchedException();
+                    } else {
                         AsyncPagingDataDiffer<T> asyncPagingDataDiffer6 = this.this$0;
                         PagingDataEvent.DropAppend dropAppend = (PagingDataEvent.DropAppend) pagingDataEvent;
                         int newPlaceholdersAfter2 = (dropAppend.getNewPlaceholdersAfter() - dropAppend.getDropCount()) - dropAppend.getOldPlaceholdersAfter();
@@ -192,10 +192,9 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    refresh = (PagingDataEvent.Refresh) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$3;
-                    asyncPagingDataDiffer = (AsyncPagingDataDiffer) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$2;
-                    PagingDataEvent pagingDataEvent2 = (PagingDataEvent) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$1;
-                    asyncPagingDataDiffer$presenter$1 = (AsyncPagingDataDiffer$presenter$1) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$0;
+                    refresh = (PagingDataEvent.Refresh) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$2;
+                    asyncPagingDataDiffer = (AsyncPagingDataDiffer) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$1;
+                    PagingDataEvent pagingDataEvent2 = (PagingDataEvent) asyncPagingDataDiffer$presenter$1$presentPagingDataEvent$1.L$0;
                     try {
                         ResultKt.throwOnFailure(obj);
                     } catch (Throwable th2) {
@@ -216,7 +215,7 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
                 i2 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer).lastAccessedIndex;
                 int transformAnchorIndex = PlaceholderPaddedListDiffHelperKt.transformAnchorIndex(previousList2, placeholderPaddedDiffResult, newList, i2);
                 ((AsyncPagingDataDiffer) asyncPagingDataDiffer).lastAccessedIndex = transformAnchorIndex;
-                asyncPagingDataDiffer$presenter$1.get(transformAnchorIndex);
+                get(transformAnchorIndex);
                 return Unit.INSTANCE;
             }
         }
@@ -237,7 +236,7 @@ public final class AsyncPagingDataDiffer$presenter$1<T> extends PagingDataPresen
         i2 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer).lastAccessedIndex;
         int transformAnchorIndex2 = PlaceholderPaddedListDiffHelperKt.transformAnchorIndex(previousList22, placeholderPaddedDiffResult2, newList2, i2);
         ((AsyncPagingDataDiffer) asyncPagingDataDiffer).lastAccessedIndex = transformAnchorIndex2;
-        asyncPagingDataDiffer$presenter$1.get(transformAnchorIndex2);
+        get(transformAnchorIndex2);
         return Unit.INSTANCE;
     }
 }

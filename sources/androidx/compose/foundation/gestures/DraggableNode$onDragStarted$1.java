@@ -51,9 +51,9 @@ final class DraggableNode$onDragStarted$1 extends SuspendLambda implements Funct
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function3 = this.this$0.onDragStarted;
-            Offset m5168boximpl = Offset.m5168boximpl(this.f10$$v$c$androidxcomposeuigeometryOffset$startedPosition$0);
+            Offset m4516boximpl = Offset.m4516boximpl(this.f10$$v$c$androidxcomposeuigeometryOffset$startedPosition$0);
             this.label = 1;
-            if (function3.invoke((CoroutineScope) this.L$0, m5168boximpl, this) == coroutine_suspended) {
+            if (function3.invoke((CoroutineScope) this.L$0, m4516boximpl, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

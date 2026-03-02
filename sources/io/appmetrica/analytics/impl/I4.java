@@ -31,20 +31,20 @@ public final class I4 extends DatabaseScript {
     public final String u = "open_id";
     public final String v = "extras";
     public final String w = "reports";
-    public final C0242f7 x = new C0242f7(null, 1, null);
+    public final C0241f7 x = new C0241f7(null, 1, null);
 
-    public static boolean a(C0216e7 c0216e7) {
+    public static boolean a(C0215e7 c0215e7) {
         Long l;
-        EnumC0143bb enumC0143bb;
+        EnumC0142bb enumC0142bb;
         Long l2;
         Long l3;
-        Long l4 = c0216e7.f973a;
-        if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0216e7.b == null || (l = c0216e7.c) == null || l.longValue() < 0 || (enumC0143bb = c0216e7.d) == null || enumC0143bb == EnumC0143bb.EVENT_TYPE_UNDEFINED || (l2 = c0216e7.e) == null || l2.longValue() < 0 || (l3 = c0216e7.f) == null || l3.longValue() < 0) {
+        Long l4 = c0215e7.f973a;
+        if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0215e7.b == null || (l = c0215e7.c) == null || l.longValue() < 0 || (enumC0142bb = c0215e7.d) == null || enumC0142bb == EnumC0142bb.EVENT_TYPE_UNDEFINED || (l2 = c0215e7.e) == null || l2.longValue() < 0 || (l3 = c0215e7.f) == null || l3.longValue() < 0) {
             return false;
         }
-        Long l5 = c0216e7.g.d;
+        Long l5 = c0215e7.g.d;
         if (l5 == null || l5.longValue() >= 0) {
-            Integer num = c0216e7.g.i;
+            Integer num = c0215e7.g.i;
             return num == null || num.intValue() >= 0;
         }
         return false;
@@ -62,7 +62,7 @@ public final class I4 extends DatabaseScript {
                 cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f622a));
                 while (cursor.moveToNext()) {
                     try {
-                        C0216e7 a2 = a(cursor);
+                        C0215e7 a2 = a(cursor);
                         if (a2 != null && a(a2)) {
                             try {
                                 sQLiteDatabase2.insertOrThrow("events", null, this.x.fromModel(a2));
@@ -114,15 +114,15 @@ public final class I4 extends DatabaseScript {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final C0216e7 a(Cursor cursor) {
+    public final C0215e7 a(Cursor cursor) {
         Vk vk;
         Integer valueOf;
         I8 i8;
         I8 i82;
         Integer valueOf2;
         Integer valueOf3;
-        EnumC0423m9 enumC0423m9;
-        EnumC0423m9 enumC0423m92;
+        EnumC0422m9 enumC0422m9;
+        EnumC0422m9 enumC0422m92;
         int i;
         try {
             Long valueOf4 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.i)));
@@ -136,7 +136,7 @@ public final class I4 extends DatabaseScript {
                 if (valueOf5 != null && valueOf5.intValue() == 1) {
                     vk = vk2;
                     Long valueOf6 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.b)));
-                    EnumC0143bb a2 = EnumC0143bb.a(cursor.getInt(cursor.getColumnIndexOrThrow(this.g)));
+                    EnumC0142bb a2 = EnumC0142bb.a(cursor.getInt(cursor.getColumnIndexOrThrow(this.g)));
                     Long valueOf7 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.c)));
                     Long valueOf8 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.h)));
                     Integer valueOf9 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.o)));
@@ -156,150 +156,150 @@ public final class I4 extends DatabaseScript {
                         i82 = i8;
                         String string5 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                         valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-                        EnumC0194da enumC0194da = EnumC0194da.FIRST_OCCURRENCE;
+                        EnumC0193da enumC0193da = EnumC0193da.FIRST_OCCURRENCE;
                         if (valueOf2 != null && valueOf2.intValue() == 1) {
-                            EnumC0194da enumC0194da2 = enumC0194da;
+                            EnumC0193da enumC0193da2 = enumC0193da;
                             valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                            enumC0423m9 = EnumC0423m9.NATIVE;
+                            enumC0422m9 = EnumC0422m9.NATIVE;
                             if (valueOf3 != null && valueOf3.intValue() == 0) {
-                                enumC0423m92 = enumC0423m9;
+                                enumC0422m92 = enumC0422m9;
                             }
-                            enumC0423m9 = EnumC0423m9.JS;
+                            enumC0422m9 = EnumC0422m9.JS;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m92 = null;
+                            enumC0422m92 = null;
                         }
-                        enumC0194da = EnumC0194da.NON_FIRST_OCCURENCE;
+                        enumC0193da = EnumC0193da.NON_FIRST_OCCURENCE;
                         if (valueOf2 != null && valueOf2.intValue() == 2) {
-                            EnumC0194da enumC0194da22 = enumC0194da;
+                            EnumC0193da enumC0193da22 = enumC0193da;
                             valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                            enumC0423m9 = EnumC0423m9.NATIVE;
+                            enumC0422m9 = EnumC0422m9.NATIVE;
                             if (valueOf3 != null) {
-                                enumC0423m92 = enumC0423m9;
+                                enumC0422m92 = enumC0422m9;
                             }
-                            enumC0423m9 = EnumC0423m9.JS;
+                            enumC0422m9 = EnumC0422m9.JS;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m92 = null;
+                            enumC0422m92 = null;
                         }
-                        enumC0194da = EnumC0194da.UNKNOWN;
-                        EnumC0194da enumC0194da222 = enumC0194da;
+                        enumC0193da = EnumC0193da.UNKNOWN;
+                        EnumC0193da enumC0193da222 = enumC0193da;
                         valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                        enumC0423m9 = EnumC0423m9.NATIVE;
+                        enumC0422m9 = EnumC0422m9.NATIVE;
                         if (valueOf3 != null) {
                         }
-                        enumC0423m9 = EnumC0423m9.JS;
+                        enumC0422m9 = EnumC0422m9.JS;
                         if (valueOf3 != null) {
                         }
-                        enumC0423m92 = null;
+                        enumC0422m92 = null;
                     }
                     i8 = I8.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
                     if (valueOf != null && valueOf.intValue() == 1) {
                         i82 = i8;
                         String string52 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                         valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-                        EnumC0194da enumC0194da3 = EnumC0194da.FIRST_OCCURRENCE;
+                        EnumC0193da enumC0193da3 = EnumC0193da.FIRST_OCCURRENCE;
                         if (valueOf2 != null) {
-                            EnumC0194da enumC0194da2222 = enumC0194da3;
+                            EnumC0193da enumC0193da2222 = enumC0193da3;
                             valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                            enumC0423m9 = EnumC0423m9.NATIVE;
+                            enumC0422m9 = EnumC0422m9.NATIVE;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m9 = EnumC0423m9.JS;
+                            enumC0422m9 = EnumC0422m9.JS;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m92 = null;
+                            enumC0422m92 = null;
                         }
-                        enumC0194da3 = EnumC0194da.NON_FIRST_OCCURENCE;
+                        enumC0193da3 = EnumC0193da.NON_FIRST_OCCURENCE;
                         if (valueOf2 != null) {
-                            EnumC0194da enumC0194da22222 = enumC0194da3;
+                            EnumC0193da enumC0193da22222 = enumC0193da3;
                             valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                            enumC0423m9 = EnumC0423m9.NATIVE;
+                            enumC0422m9 = EnumC0422m9.NATIVE;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m9 = EnumC0423m9.JS;
+                            enumC0422m9 = EnumC0422m9.JS;
                             if (valueOf3 != null) {
                             }
-                            enumC0423m92 = null;
+                            enumC0422m92 = null;
                         }
-                        enumC0194da3 = EnumC0194da.UNKNOWN;
-                        EnumC0194da enumC0194da222222 = enumC0194da3;
+                        enumC0193da3 = EnumC0193da.UNKNOWN;
+                        EnumC0193da enumC0193da222222 = enumC0193da3;
                         valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                        enumC0423m9 = EnumC0423m9.NATIVE;
+                        enumC0422m9 = EnumC0422m9.NATIVE;
                         if (valueOf3 != null) {
                         }
-                        enumC0423m9 = EnumC0423m9.JS;
+                        enumC0422m9 = EnumC0422m9.JS;
                         if (valueOf3 != null) {
                         }
-                        enumC0423m92 = null;
+                        enumC0422m92 = null;
                     }
                     i82 = null;
                     String string522 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-                    EnumC0194da enumC0194da32 = EnumC0194da.FIRST_OCCURRENCE;
+                    EnumC0193da enumC0193da32 = EnumC0193da.FIRST_OCCURRENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da32 = EnumC0194da.NON_FIRST_OCCURENCE;
+                    enumC0193da32 = EnumC0193da.NON_FIRST_OCCURENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da32 = EnumC0194da.UNKNOWN;
-                    EnumC0194da enumC0194da2222222 = enumC0194da32;
+                    enumC0193da32 = EnumC0193da.UNKNOWN;
+                    EnumC0193da enumC0193da2222222 = enumC0193da32;
                     valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                    enumC0423m9 = EnumC0423m9.NATIVE;
+                    enumC0422m9 = EnumC0422m9.NATIVE;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m9 = EnumC0423m9.JS;
+                    enumC0422m9 = EnumC0422m9.JS;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m92 = null;
+                    enumC0422m92 = null;
                 }
                 if (valueOf != null) {
                     i82 = i8;
                     String string5222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-                    EnumC0194da enumC0194da322 = EnumC0194da.FIRST_OCCURRENCE;
+                    EnumC0193da enumC0193da322 = EnumC0193da.FIRST_OCCURRENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da322 = EnumC0194da.NON_FIRST_OCCURENCE;
+                    enumC0193da322 = EnumC0193da.NON_FIRST_OCCURENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da322 = EnumC0194da.UNKNOWN;
-                    EnumC0194da enumC0194da22222222 = enumC0194da322;
+                    enumC0193da322 = EnumC0193da.UNKNOWN;
+                    EnumC0193da enumC0193da22222222 = enumC0193da322;
                     valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                    enumC0423m9 = EnumC0423m9.NATIVE;
+                    enumC0422m9 = EnumC0422m9.NATIVE;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m9 = EnumC0423m9.JS;
+                    enumC0422m9 = EnumC0422m9.JS;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m92 = null;
+                    enumC0422m92 = null;
                 }
                 if (valueOf != null) {
                     i82 = i8;
                     String string52222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-                    EnumC0194da enumC0194da3222 = EnumC0194da.FIRST_OCCURRENCE;
+                    EnumC0193da enumC0193da3222 = EnumC0193da.FIRST_OCCURRENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da3222 = EnumC0194da.NON_FIRST_OCCURENCE;
+                    enumC0193da3222 = EnumC0193da.NON_FIRST_OCCURENCE;
                     if (valueOf2 != null) {
                     }
-                    enumC0194da3222 = EnumC0194da.UNKNOWN;
-                    EnumC0194da enumC0194da222222222 = enumC0194da3222;
+                    enumC0193da3222 = EnumC0193da.UNKNOWN;
+                    EnumC0193da enumC0193da222222222 = enumC0193da3222;
                     valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-                    enumC0423m9 = EnumC0423m9.NATIVE;
+                    enumC0422m9 = EnumC0422m9.NATIVE;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m9 = EnumC0423m9.JS;
+                    enumC0422m9 = EnumC0422m9.JS;
                     if (valueOf3 != null) {
                     }
-                    enumC0423m92 = null;
+                    enumC0422m92 = null;
                 }
             } catch (Throwable unused) {
             }
             vk = null;
             Long valueOf62 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.b)));
-            EnumC0143bb a22 = EnumC0143bb.a(cursor.getInt(cursor.getColumnIndexOrThrow(this.g)));
+            EnumC0142bb a22 = EnumC0142bb.a(cursor.getInt(cursor.getColumnIndexOrThrow(this.g)));
             Long valueOf72 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.c)));
             Long valueOf82 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.h)));
             Integer valueOf92 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.o)));
@@ -319,22 +319,22 @@ public final class I4 extends DatabaseScript {
             i82 = null;
             String string522222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
             valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
-            EnumC0194da enumC0194da32222 = EnumC0194da.FIRST_OCCURRENCE;
+            EnumC0193da enumC0193da32222 = EnumC0193da.FIRST_OCCURRENCE;
             if (valueOf2 != null) {
             }
-            enumC0194da32222 = EnumC0194da.NON_FIRST_OCCURENCE;
+            enumC0193da32222 = EnumC0193da.NON_FIRST_OCCURENCE;
             if (valueOf2 != null) {
             }
-            enumC0194da32222 = EnumC0194da.UNKNOWN;
-            EnumC0194da enumC0194da2222222222 = enumC0194da32222;
+            enumC0193da32222 = EnumC0193da.UNKNOWN;
+            EnumC0193da enumC0193da2222222222 = enumC0193da32222;
             valueOf3 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.s)));
-            enumC0423m9 = EnumC0423m9.NATIVE;
+            enumC0422m9 = EnumC0422m9.NATIVE;
             if (valueOf3 != null) {
             }
-            enumC0423m9 = EnumC0423m9.JS;
+            enumC0422m9 = EnumC0422m9.JS;
             if (valueOf3 != null) {
             }
-            enumC0423m92 = null;
+            enumC0422m92 = null;
             z = false;
             Boolean valueOf13 = Boolean.valueOf(z);
             try {
@@ -344,10 +344,10 @@ public final class I4 extends DatabaseScript {
             }
             Integer valueOf14 = Integer.valueOf(i);
             int columnIndex = cursor.getColumnIndex(this.v);
-            return new C0216e7(valueOf4, vk, valueOf62, a22, valueOf72, valueOf82, new C0191d7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, i82, string522222, enumC0194da2222222222, enumC0423m92, valueOf13, valueOf14, columnIndex >= 0 ? null : cursor.getBlob(columnIndex)));
+            return new C0215e7(valueOf4, vk, valueOf62, a22, valueOf72, valueOf82, new C0190d7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, i82, string522222, enumC0193da2222222222, enumC0422m92, valueOf13, valueOf14, columnIndex >= 0 ? null : cursor.getBlob(columnIndex)));
             Integer valueOf142 = Integer.valueOf(i);
             int columnIndex2 = cursor.getColumnIndex(this.v);
-            return new C0216e7(valueOf4, vk, valueOf62, a22, valueOf72, valueOf82, new C0191d7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, i82, string522222, enumC0194da2222222222, enumC0423m92, valueOf13, valueOf142, columnIndex2 >= 0 ? null : cursor.getBlob(columnIndex2)));
+            return new C0215e7(valueOf4, vk, valueOf62, a22, valueOf72, valueOf82, new C0190d7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, i82, string522222, enumC0193da2222222222, enumC0422m92, valueOf13, valueOf142, columnIndex2 >= 0 ? null : cursor.getBlob(columnIndex2)));
         } catch (Throwable unused3) {
             return null;
         }

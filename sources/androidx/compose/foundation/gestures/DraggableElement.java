@@ -31,13 +31,11 @@ public final class DraggableElement extends ModifierNodeElement<DraggableNode> {
     private static final Function1<PointerType, Boolean> CanDrag = new Function1() { // from class: androidx.compose.foundation.gestures.DraggableElement$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            boolean CanDrag$lambda$0;
-            CanDrag$lambda$0 = DraggableElement.CanDrag$lambda$0((PointerType) obj);
-            return Boolean.valueOf(CanDrag$lambda$0);
+            return Boolean.valueOf(DraggableElement.CanDrag$lambda$0((PointerType) obj));
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean CanDrag$lambda$0(PointerType pointerType) {
         return true;
     }

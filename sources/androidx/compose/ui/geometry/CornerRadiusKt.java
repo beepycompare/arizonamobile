@@ -8,18 +8,18 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class CornerRadiusKt {
     public static final long CornerRadius(float f, float f2) {
-        return CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     public static /* synthetic */ long CornerRadius$default(float f, float f2, int i, Object obj) {
         if ((i & 2) != 0) {
             f2 = f;
         }
-        return CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: lerp-3Ry4LBc  reason: not valid java name */
-    public static final long m5152lerp3Ry4LBc(long j, long j2, float f) {
-        return CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
+    public static final long m4500lerp3Ry4LBc(long j, long j2, float f) {
+        return CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j2 >> 32)), f)) << 32) | (Float.floatToRawIntBits(MathHelpersKt.lerp(Float.intBitsToFloat((int) (j & 4294967295L)), Float.intBitsToFloat((int) (j2 & 4294967295L)), f)) & 4294967295L));
     }
 }

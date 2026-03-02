@@ -60,11 +60,12 @@ public final class BidiFormatter {
         }
 
         public Builder stereoReset(boolean z) {
+            int i = this.mFlags;
             if (z) {
-                this.mFlags |= 2;
+                this.mFlags = i | 2;
                 return this;
             }
-            this.mFlags &= -3;
+            this.mFlags = i & (-3);
             return this;
         }
 

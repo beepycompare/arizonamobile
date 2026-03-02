@@ -26,13 +26,13 @@ public final class RectManagerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isSet--gyyYBs  reason: not valid java name */
-    public static final boolean m7469isSetgyyYBs(long j) {
-        return !IntOffset.m8385equalsimpl0(j, IntOffset.Companion.m8396getMaxnOccac());
+    public static final boolean m6801isSetgyyYBs(long j) {
+        return !IntOffset.m7682equalsimpl0(j, IntOffset.Companion.m7693getMaxnOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: analyzeComponents-58bKbWc  reason: not valid java name */
-    public static final int m7468analyzeComponents58bKbWc(float[] fArr) {
+    public static final int m6800analyzeComponents58bKbWc(float[] fArr) {
         int i = 0;
         if (fArr.length < 16) {
             return 0;

@@ -22,9 +22,9 @@ public final class CarouselDefaults {
     public static final int $stable = 0;
     public static final float MediumLargeItemDiffThreshold = 0.85f;
     public static final CarouselDefaults INSTANCE = new CarouselDefaults();
-    private static final float MinSmallItemSize = Dp.m8258constructorimpl(40);
-    private static final float MaxSmallItemSize = Dp.m8258constructorimpl(56);
-    private static final float AnchorSize = Dp.m8258constructorimpl(10);
+    private static final float MinSmallItemSize = Dp.m7555constructorimpl(40);
+    private static final float MaxSmallItemSize = Dp.m7555constructorimpl(56);
+    private static final float AnchorSize = Dp.m7555constructorimpl(10);
 
     private CarouselDefaults() {
     }
@@ -92,17 +92,17 @@ public final class CarouselDefaults {
     }
 
     /* renamed from: getMinSmallItemSize-D9Ej5fM  reason: not valid java name */
-    public final float m3548getMinSmallItemSizeD9Ej5fM() {
+    public final float m2969getMinSmallItemSizeD9Ej5fM() {
         return MinSmallItemSize;
     }
 
     /* renamed from: getMaxSmallItemSize-D9Ej5fM  reason: not valid java name */
-    public final float m3547getMaxSmallItemSizeD9Ej5fM() {
+    public final float m2968getMaxSmallItemSizeD9Ej5fM() {
         return MaxSmallItemSize;
     }
 
     /* renamed from: getAnchorSize-D9Ej5fM$material3  reason: not valid java name */
-    public final float m3546getAnchorSizeD9Ej5fM$material3() {
+    public final float m2967getAnchorSizeD9Ej5fM$material3() {
         return AnchorSize;
     }
 }

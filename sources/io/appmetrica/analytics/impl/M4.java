@@ -16,6 +16,6 @@ public final class M4 extends Lambda implements Function0 {
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return Integer.valueOf(((C0381kh) this.f685a.a()).i);
+        return Integer.valueOf(((C0380kh) this.f685a.a()).i);
     }
 }

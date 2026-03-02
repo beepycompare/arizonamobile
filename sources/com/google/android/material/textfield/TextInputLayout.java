@@ -399,7 +399,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             this.editText.post(new Runnable() { // from class: com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TextInputLayout.this.m9915xa47602b9();
+                    TextInputLayout.this.m8945xa47602b9();
                 }
             });
         }
@@ -407,7 +407,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onGlobalLayout$1$com-google-android-material-textfield-TextInputLayout  reason: not valid java name */
-    public /* synthetic */ void m9915xa47602b9() {
+    public /* synthetic */ void m8945xa47602b9() {
         this.editText.requestLayout();
     }
 
@@ -745,31 +745,39 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     }
 
     public float getBoxCornerRadiusTopStart() {
-        if (ViewUtils.isLayoutRtl(this)) {
-            return this.shapeAppearanceModel.getTopRightCornerSize().getCornerSize(this.tmpRectF);
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        ShapeAppearanceModel shapeAppearanceModel = this.shapeAppearanceModel;
+        if (isLayoutRtl) {
+            return shapeAppearanceModel.getTopRightCornerSize().getCornerSize(this.tmpRectF);
         }
-        return this.shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.tmpRectF);
+        return shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.tmpRectF);
     }
 
     public float getBoxCornerRadiusTopEnd() {
-        if (ViewUtils.isLayoutRtl(this)) {
-            return this.shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.tmpRectF);
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        ShapeAppearanceModel shapeAppearanceModel = this.shapeAppearanceModel;
+        if (isLayoutRtl) {
+            return shapeAppearanceModel.getTopLeftCornerSize().getCornerSize(this.tmpRectF);
         }
-        return this.shapeAppearanceModel.getTopRightCornerSize().getCornerSize(this.tmpRectF);
+        return shapeAppearanceModel.getTopRightCornerSize().getCornerSize(this.tmpRectF);
     }
 
     public float getBoxCornerRadiusBottomEnd() {
-        if (ViewUtils.isLayoutRtl(this)) {
-            return this.shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(this.tmpRectF);
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        ShapeAppearanceModel shapeAppearanceModel = this.shapeAppearanceModel;
+        if (isLayoutRtl) {
+            return shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(this.tmpRectF);
         }
-        return this.shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(this.tmpRectF);
+        return shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(this.tmpRectF);
     }
 
     public float getBoxCornerRadiusBottomStart() {
-        if (ViewUtils.isLayoutRtl(this)) {
-            return this.shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(this.tmpRectF);
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        ShapeAppearanceModel shapeAppearanceModel = this.shapeAppearanceModel;
+        if (isLayoutRtl) {
+            return shapeAppearanceModel.getBottomRightCornerSize().getCornerSize(this.tmpRectF);
         }
-        return this.shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(this.tmpRectF);
+        return shapeAppearanceModel.getBottomLeftCornerSize().getCornerSize(this.tmpRectF);
     }
 
     public void setTypeface(Typeface typeface) {
@@ -955,7 +963,6 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     private void updateLabelState(boolean z, boolean z2) {
         ColorStateList colorStateList;
         TextView textView;
-        int i;
         boolean isEnabled = isEnabled();
         EditText editText = this.editText;
         boolean z3 = true;
@@ -970,10 +977,9 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         }
         if (!isEnabled) {
             ColorStateList colorStateList3 = this.defaultHintTextColor;
+            int i = this.disabledColor;
             if (colorStateList3 != null) {
-                i = colorStateList3.getColorForState(new int[]{-16842910}, this.disabledColor);
-            } else {
-                i = this.disabledColor;
+                i = colorStateList3.getColorForState(new int[]{-16842910}, i);
             }
             this.collapsingTextHelper.setCollapsedAndExpandedTextColor(ColorStateList.valueOf(i));
         } else if (shouldShowError()) {
@@ -1247,10 +1253,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             }
             setErrorEnabled(true);
         }
-        if (!TextUtils.isEmpty(charSequence)) {
-            this.indicatorViewController.showError(charSequence);
+        boolean isEmpty = TextUtils.isEmpty(charSequence);
+        IndicatorViewController indicatorViewController = this.indicatorViewController;
+        if (!isEmpty) {
+            indicatorViewController.showError(charSequence);
         } else {
-            this.indicatorViewController.hideError();
+            indicatorViewController.hideError();
         }
     }
 
@@ -1663,10 +1671,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                 if (i != 2) {
                     return 0;
                 }
-                if (isHintTextSingleLine()) {
-                    return (int) (this.collapsingTextHelper.getCollapsedTextHeight() / 2.0f);
+                boolean isHintTextSingleLine = isHintTextSingleLine();
+                CollapsingTextHelper collapsingTextHelper = this.collapsingTextHelper;
+                if (isHintTextSingleLine) {
+                    return (int) (collapsingTextHelper.getCollapsedTextHeight() / 2.0f);
                 }
-                return Math.max(0, (int) (this.collapsingTextHelper.getCollapsedTextHeight() - (this.collapsingTextHelper.getCollapsedSingleLineHeight() / 2.0f)));
+                return Math.max(0, (int) (collapsingTextHelper.getCollapsedTextHeight() - (this.collapsingTextHelper.getCollapsedSingleLineHeight() / 2.0f)));
             }
             return (int) this.collapsingTextHelper.getCollapsedTextHeight();
         }
@@ -1729,10 +1739,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             throw new IllegalStateException();
         }
         Rect rect2 = this.tmpBoundsRect;
-        if (isHintTextSingleLine()) {
-            expandedTextFullSingleLineHeight = this.collapsingTextHelper.getExpandedTextSingleLineHeight();
+        boolean isHintTextSingleLine = isHintTextSingleLine();
+        CollapsingTextHelper collapsingTextHelper = this.collapsingTextHelper;
+        if (isHintTextSingleLine) {
+            expandedTextFullSingleLineHeight = collapsingTextHelper.getExpandedTextSingleLineHeight();
         } else {
-            expandedTextFullSingleLineHeight = this.collapsingTextHelper.getExpandedTextFullSingleLineHeight() * this.collapsingTextHelper.getExpandedLineCount();
+            expandedTextFullSingleLineHeight = collapsingTextHelper.getExpandedTextFullSingleLineHeight() * this.collapsingTextHelper.getExpandedLineCount();
         }
         rect2.left = rect.left + this.editText.getCompoundPaddingLeft();
         rect2.top = calculateExpandedLabelTop(rect, expandedTextFullSingleLineHeight);
@@ -2004,7 +2016,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                 f = StaticLayoutBuilderCompat.obtain(this.placeholderText, textPaint, i).setIsRtl(getLayoutDirection() == 1).setIncludePad(true).setLineSpacing(this.placeholderTextView.getLineSpacingExtra(), this.placeholderTextView.getLineSpacingMultiplier()).setStaticLayoutBuilderConfigurer(new StaticLayoutBuilderConfigurer() { // from class: com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticLambda2
                     @Override // com.google.android.material.internal.StaticLayoutBuilderConfigurer
                     public final void configure(StaticLayout.Builder builder) {
-                        TextInputLayout.this.m9916xd6b8ec95(builder);
+                        TextInputLayout.this.m8946xd6b8ec95(builder);
                     }
                 }).build().getHeight() + (this.boxBackgroundMode == 1 ? this.collapsingTextHelper.getCollapsedTextHeight() + this.boxCollapsedPaddingTopPx + this.extraSpaceBetweenPlaceholderAndHint : 0.0f);
             } catch (StaticLayoutBuilderCompat.StaticLayoutBuilderCompatException e) {
@@ -2019,7 +2031,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateEditTextHeight$2$com-google-android-material-textfield-TextInputLayout  reason: not valid java name */
-    public /* synthetic */ void m9916xd6b8ec95(StaticLayout.Builder builder) {
+    public /* synthetic */ void m8946xd6b8ec95(StaticLayout.Builder builder) {
         builder.setBreakStrategy(this.placeholderTextView.getBreakStrategy());
     }
 

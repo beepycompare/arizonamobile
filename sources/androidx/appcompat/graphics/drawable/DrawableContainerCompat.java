@@ -462,10 +462,12 @@ public class DrawableContainerCompat extends Drawable implements Drawable.Callba
             if (this.mDrawableContainerState.mEnterFadeDuration <= 0 && this.mHasAlpha) {
                 drawable.setAlpha(this.mAlpha);
             }
-            if (this.mDrawableContainerState.mHasColorFilter) {
-                drawable.setColorFilter(this.mDrawableContainerState.mColorFilter);
+            boolean z = this.mDrawableContainerState.mHasColorFilter;
+            DrawableContainerState drawableContainerState = this.mDrawableContainerState;
+            if (z) {
+                drawable.setColorFilter(drawableContainerState.mColorFilter);
             } else {
-                if (this.mDrawableContainerState.mHasTintList) {
+                if (drawableContainerState.mHasTintList) {
                     DrawableCompat.setTintList(drawable, this.mDrawableContainerState.mTintList);
                 }
                 if (this.mDrawableContainerState.mHasTintMode) {

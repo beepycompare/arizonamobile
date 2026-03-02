@@ -95,9 +95,7 @@ public final class NavDestinationImpl {
             List<String> missingRequiredArguments = NavArgumentKt.missingRequiredArguments(this.arguments, new Function1() { // from class: androidx.navigation.internal.NavDestinationImpl$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean _set_route_$lambda$1;
-                    _set_route_$lambda$1 = NavDestinationImpl._set_route_$lambda$1(NavDeepLink.this, (String) obj);
-                    return Boolean.valueOf(_set_route_$lambda$1);
+                    return Boolean.valueOf(NavDestinationImpl._set_route_$lambda$1(NavDeepLink.this, (String) obj));
                 }
             });
             if (!missingRequiredArguments.isEmpty()) {
@@ -106,9 +104,9 @@ public final class NavDestinationImpl {
             this.routeDeepLink = LazyKt.lazy(new Function0() { // from class: androidx.navigation.internal.NavDestinationImpl$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    NavDeepLink _set_route_$lambda$3;
-                    _set_route_$lambda$3 = NavDestinationImpl._set_route_$lambda$3(createRoute);
-                    return _set_route_$lambda$3;
+                    NavDeepLink build2;
+                    build2 = new NavDeepLink.Builder().setUriPattern(createRoute).build();
+                    return build2;
                 }
             });
             setId$navigation_common_release(createRoute.hashCode());
@@ -116,18 +114,13 @@ public final class NavDestinationImpl {
         this.route = str;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _set_route_$lambda$1(NavDeepLink navDeepLink, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return !navDeepLink.getArgumentsNames$navigation_common_release().contains(key);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final NavDeepLink _set_route_$lambda$3(String str) {
-        return new NavDeepLink.Builder().setUriPattern(str).build();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean addDeepLink$lambda$4(NavDeepLink navDeepLink, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return !navDeepLink.getArgumentsNames$navigation_common_release().contains(key);
@@ -138,9 +131,7 @@ public final class NavDestinationImpl {
         List<String> missingRequiredArguments = NavArgumentKt.missingRequiredArguments(this.arguments, new Function1() { // from class: androidx.navigation.internal.NavDestinationImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean addDeepLink$lambda$4;
-                addDeepLink$lambda$4 = NavDestinationImpl.addDeepLink$lambda$4(NavDeepLink.this, (String) obj);
-                return Boolean.valueOf(addDeepLink$lambda$4);
+                return Boolean.valueOf(NavDestinationImpl.addDeepLink$lambda$4(NavDeepLink.this, (String) obj));
             }
         });
         if (!missingRequiredArguments.isEmpty()) {
@@ -196,9 +187,7 @@ public final class NavDestinationImpl {
         return NavArgumentKt.missingRequiredArguments(map, new Function1() { // from class: androidx.navigation.internal.NavDestinationImpl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean hasRequiredArguments$lambda$7;
-                hasRequiredArguments$lambda$7 = NavDestinationImpl.hasRequiredArguments$lambda$7(matchingPathAndQueryArgs$navigation_common_release, (String) obj);
-                return Boolean.valueOf(hasRequiredArguments$lambda$7);
+                return Boolean.valueOf(NavDestinationImpl.hasRequiredArguments$lambda$7(matchingPathAndQueryArgs$navigation_common_release, (String) obj));
             }
         }).isEmpty();
     }
@@ -242,12 +231,12 @@ public final class NavDestinationImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         for (Map.Entry<String, NavArgument> entry2 : this.arguments.entrySet()) {
             entry2.getValue().putDefaultValue(entry2.getKey(), bundleOf);
         }
         if (bundle != null) {
-            SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundleOf), bundle);
+            SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundleOf), bundle);
             for (Map.Entry<String, NavArgument> entry3 : this.arguments.entrySet()) {
                 String key = entry3.getKey();
                 NavArgument value = entry3.getValue();
@@ -259,9 +248,9 @@ public final class NavDestinationImpl {
         return bundleOf;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean hasRequiredArguments$lambda$7(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return !SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(bundle), key);
+        return !SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(bundle), key);
     }
 }

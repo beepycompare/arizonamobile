@@ -75,22 +75,25 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        float m3129getWidthD9Ej5fM;
+    public MeasureResult mo69measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        float m2608getWidthD9Ej5fM;
         if (this.tabPositionsState.getValue().isEmpty()) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$0;
-                    measure_3p2s80s$lambda$0 = TabIndicatorOffsetNode.measure_3p2s80s$lambda$0((Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$0;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, 4, null);
         }
-        if (this.followContentSize) {
-            m3129getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3126getContentWidthD9Ej5fM();
+        boolean z = this.followContentSize;
+        State<? extends List<TabPosition>> state = this.tabPositionsState;
+        if (z) {
+            m2608getWidthD9Ej5fM = state.getValue().get(this.selectedTabIndex).m2605getContentWidthD9Ej5fM();
         } else {
-            m3129getWidthD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3129getWidthD9Ej5fM();
+            m2608getWidthD9Ej5fM = state.getValue().get(this.selectedTabIndex).m2608getWidthD9Ej5fM();
         }
         if (this.initialWidth != null) {
             Animatable<Dp, AnimationVector1D> animatable = this.widthAnimatable;
@@ -101,13 +104,13 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.widthAnimatable = animatable2;
                 animatable = animatable2;
             }
-            if (!Dp.m8263equalsimpl0(m3129getWidthD9Ej5fM, animatable.getTargetValue().m8272unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m3129getWidthD9Ej5fM, this, null), 3, null);
+            if (!Dp.m7560equalsimpl0(m2608getWidthD9Ej5fM, animatable.getTargetValue().m7569unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$2(animatable, m2608getWidthD9Ej5fM, this, null), 3, null);
             }
         } else {
-            this.initialWidth = Dp.m8256boximpl(m3129getWidthD9Ej5fM);
+            this.initialWidth = Dp.m7553boximpl(m2608getWidthD9Ej5fM);
         }
-        float m3127getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m3127getLeftD9Ej5fM();
+        float m2606getLeftD9Ej5fM = this.tabPositionsState.getValue().get(this.selectedTabIndex).m2606getLeftD9Ej5fM();
         if (this.initialOffset != null) {
             Animatable<Dp, AnimationVector1D> animatable3 = this.offsetAnimatable;
             if (animatable3 == null) {
@@ -117,48 +120,40 @@ public final class TabIndicatorOffsetNode extends Modifier.Node implements Layou
                 this.offsetAnimatable = animatable4;
                 animatable3 = animatable4;
             }
-            if (!Dp.m8263equalsimpl0(m3127getLeftD9Ej5fM, animatable3.getTargetValue().m8272unboximpl())) {
-                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m3127getLeftD9Ej5fM, this, null), 3, null);
+            if (!Dp.m7560equalsimpl0(m2606getLeftD9Ej5fM, animatable3.getTargetValue().m7569unboximpl())) {
+                BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new TabIndicatorOffsetNode$measure$3(animatable3, m2606getLeftD9Ej5fM, this, null), 3, null);
             }
         } else {
-            this.initialOffset = Dp.m8256boximpl(m3127getLeftD9Ej5fM);
+            this.initialOffset = Dp.m7553boximpl(m2606getLeftD9Ej5fM);
         }
-        if (measureScope.getLayoutDirection() == LayoutDirection.Ltr) {
-            Animatable<Dp, AnimationVector1D> animatable5 = this.offsetAnimatable;
+        LayoutDirection layoutDirection = measureScope.getLayoutDirection();
+        LayoutDirection layoutDirection2 = LayoutDirection.Ltr;
+        Animatable<Dp, AnimationVector1D> animatable5 = this.offsetAnimatable;
+        if (layoutDirection != layoutDirection2) {
             if (animatable5 != null) {
-                m3127getLeftD9Ej5fM = animatable5.getValue().m8272unboximpl();
+                m2606getLeftD9Ej5fM = animatable5.getValue().m7569unboximpl();
             }
-        } else {
-            Animatable<Dp, AnimationVector1D> animatable6 = this.offsetAnimatable;
-            if (animatable6 != null) {
-                m3127getLeftD9Ej5fM = animatable6.getValue().m8272unboximpl();
-            }
-            m3127getLeftD9Ej5fM = Dp.m8258constructorimpl(-m3127getLeftD9Ej5fM);
+            m2606getLeftD9Ej5fM = Dp.m7555constructorimpl(-m2606getLeftD9Ej5fM);
+        } else if (animatable5 != null) {
+            m2606getLeftD9Ej5fM = animatable5.getValue().m7569unboximpl();
         }
-        Animatable<Dp, AnimationVector1D> animatable7 = this.widthAnimatable;
-        if (animatable7 != null) {
-            m3129getWidthD9Ej5fM = animatable7.getValue().m8272unboximpl();
+        Animatable<Dp, AnimationVector1D> animatable6 = this.widthAnimatable;
+        if (animatable6 != null) {
+            m2608getWidthD9Ej5fM = animatable6.getValue().m7569unboximpl();
         }
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, measureScope.mo458roundToPx0680j_4(m3129getWidthD9Ej5fM), measureScope.mo458roundToPx0680j_4(m3129getWidthD9Ej5fM), 0, 0, 12, null));
-        final float f = m3127getLeftD9Ej5fM;
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$$ExternalSyntheticLambda1
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, measureScope.mo399roundToPx0680j_4(m2608getWidthD9Ej5fM), measureScope.mo399roundToPx0680j_4(m2608getWidthD9Ej5fM), 0, 0, 12, null));
+        final float f = m2606getLeftD9Ej5fM;
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.TabIndicatorOffsetNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$3;
-                measure_3p2s80s$lambda$3 = TabIndicatorOffsetNode.measure_3p2s80s$lambda$3(Placeable.this, measureScope, f, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$3;
+                return TabIndicatorOffsetNode.measure_3p2s80s$lambda$3(Placeable.this, measureScope, f, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$3(Placeable placeable, MeasureScope measureScope, float f, Placeable.PlacementScope placementScope) {
-        Placeable.PlacementScope.place$default(placementScope, placeable, measureScope.mo458roundToPx0680j_4(f), 0, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, placeable, measureScope.mo399roundToPx0680j_4(f), 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 }

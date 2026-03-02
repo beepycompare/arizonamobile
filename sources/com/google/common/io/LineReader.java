@@ -48,11 +48,12 @@ public final class LineReader {
             } else {
                 read = this.readable.read(this.cbuf);
             }
+            LineBuffer lineBuffer = this.lineBuf;
             if (read == -1) {
-                this.lineBuf.finish();
+                lineBuffer.finish();
                 break;
             }
-            this.lineBuf.add(this.buf, 0, read);
+            lineBuffer.add(this.buf, 0, read);
         }
         return this.lines.poll();
     }

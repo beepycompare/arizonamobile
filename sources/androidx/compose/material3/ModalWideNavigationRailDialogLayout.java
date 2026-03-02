@@ -42,7 +42,7 @@ public final class ModalWideNavigationRailDialogLayout extends AbstractComposeVi
     private final boolean shouldDismissOnBackPress;
     private final Window window;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Content$lambda$0(ModalWideNavigationRailDialogLayout modalWideNavigationRailDialogLayout, int i, Composer composer, int i2) {
         modalWideNavigationRailDialogLayout.Content(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -118,9 +118,7 @@ public final class ModalWideNavigationRailDialogLayout extends AbstractComposeVi
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ModalWideNavigationRailDialogLayout$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Content$lambda$0;
-                    Content$lambda$0 = ModalWideNavigationRailDialogLayout.Content$lambda$0(ModalWideNavigationRailDialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Content$lambda$0;
+                    return ModalWideNavigationRailDialogLayout.Content$lambda$0(ModalWideNavigationRailDialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -145,10 +143,12 @@ public final class ModalWideNavigationRailDialogLayout extends AbstractComposeVi
             return;
         }
         if (this.backCallback == null) {
-            if (Build.VERSION.SDK_INT >= 34) {
-                createBackCallback = Api34Impl.createBackCallback(this.onDismissRequest, this.onPredictiveBack, this.onPredictiveBackCancelled, this.predictiveBackState, this.layoutDirection);
+            int i = Build.VERSION.SDK_INT;
+            Function0<Unit> function0 = this.onDismissRequest;
+            if (i >= 34) {
+                createBackCallback = Api34Impl.createBackCallback(function0, this.onPredictiveBack, this.onPredictiveBackCancelled, this.predictiveBackState, this.layoutDirection);
             } else {
-                createBackCallback = Api33Impl.createBackCallback(this.onDismissRequest);
+                createBackCallback = Api33Impl.createBackCallback(function0);
             }
             this.backCallback = createBackCallback;
         }

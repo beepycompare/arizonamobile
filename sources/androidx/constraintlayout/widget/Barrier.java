@@ -46,20 +46,17 @@ public class Barrier extends ConstraintHelper {
 
     private void updateType(ConstraintWidget constraintWidget, int i, boolean z) {
         this.mResolvedType = i;
+        int i2 = this.mIndicatedType;
         if (z) {
-            int i2 = this.mIndicatedType;
             if (i2 == 5) {
                 this.mResolvedType = 1;
             } else if (i2 == 6) {
                 this.mResolvedType = 0;
             }
-        } else {
-            int i3 = this.mIndicatedType;
-            if (i3 == 5) {
-                this.mResolvedType = 0;
-            } else if (i3 == 6) {
-                this.mResolvedType = 1;
-            }
+        } else if (i2 == 5) {
+            this.mResolvedType = 0;
+        } else if (i2 == 6) {
+            this.mResolvedType = 1;
         }
         if (constraintWidget instanceof androidx.constraintlayout.core.widgets.Barrier) {
             ((androidx.constraintlayout.core.widgets.Barrier) constraintWidget).setBarrierType(this.mResolvedType);

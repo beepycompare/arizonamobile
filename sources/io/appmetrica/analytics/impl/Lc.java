@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.permission.SinglePermissionStr
 import io.appmetrica.analytics.coreutils.internal.services.telephony.CellularNetworkTypeExtractor;
 import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Lc implements InterfaceC0561rn {
+public final class Lc implements InterfaceC0560rn {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f676a;
@@ -21,7 +21,7 @@ public final class Lc implements InterfaceC0561rn {
         PermissionResolutionStrategy alwaysAllowPermissionStrategy;
         this.f676a = context;
         if (AndroidUtils.isApiAchieved(29)) {
-            alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0449na.k().j(), "android.permission.READ_PHONE_STATE");
+            alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0448na.k().j(), "android.permission.READ_PHONE_STATE");
         } else {
             alwaysAllowPermissionStrategy = new AlwaysAllowPermissionStrategy();
         }
@@ -31,7 +31,7 @@ public final class Lc implements InterfaceC0561rn {
         this.d = new CachedDataProvider.CachedData(millis, millis * 2, "mobile-connection");
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0561rn
+    @Override // io.appmetrica.analytics.impl.InterfaceC0560rn
     /* renamed from: b */
     public final synchronized Kc a() {
         Kc kc;

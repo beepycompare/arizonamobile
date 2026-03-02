@@ -13,7 +13,7 @@ import androidx.media3.exoplayer.image.ImageDecoder;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ImageRenderer extends BaseRenderer {
     private static final long IMAGE_PRESENTATION_WINDOW_THRESHOLD_US = 30000;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -297,15 +297,17 @@ public class ImageRenderer extends BaseRenderer {
                     return false;
                 }
             }
-            if (this.decoderReinitializationState == 2) {
-                Preconditions.checkNotNull(this.inputBuffer);
+            int i = this.decoderReinitializationState;
+            DecoderInputBuffer decoderInputBuffer = this.inputBuffer;
+            if (i == 2) {
+                Preconditions.checkNotNull(decoderInputBuffer);
                 this.inputBuffer.setFlags(4);
                 ((ImageDecoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer(this.inputBuffer);
                 this.inputBuffer = null;
                 this.decoderReinitializationState = 3;
                 return false;
             }
-            int readSource = readSource(formatHolder, this.inputBuffer, 0);
+            int readSource = readSource(formatHolder, decoderInputBuffer, 0);
             if (readSource == -5) {
                 this.inputFormat = (Format) Preconditions.checkNotNull(formatHolder.format);
                 this.codecNeedsInitialization = true;
@@ -428,7 +430,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class TileInfo {
         private final long presentationTimeUs;
         private Bitmap tileBitmap;
@@ -461,7 +463,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class OutputStreamInfo {
         public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET);
         public final long previousStreamLastBufferTimeUs;

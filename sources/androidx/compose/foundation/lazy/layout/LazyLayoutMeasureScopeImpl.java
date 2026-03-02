@@ -63,26 +63,26 @@ public final class LazyLayoutMeasureScopeImpl implements LazyLayoutMeasureScope,
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx--R2X_6o */
-    public int mo457roundToPxR2X_6o(long j) {
-        return this.subcomposeMeasureScope.mo457roundToPxR2X_6o(j);
+    public int mo398roundToPxR2X_6o(long j) {
+        return this.subcomposeMeasureScope.mo398roundToPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: roundToPx-0680j_4 */
-    public int mo458roundToPx0680j_4(float f) {
-        return this.subcomposeMeasureScope.mo458roundToPx0680j_4(f);
+    public int mo399roundToPx0680j_4(float f) {
+        return this.subcomposeMeasureScope.mo399roundToPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx--R2X_6o */
-    public float mo463toPxR2X_6o(long j) {
-        return this.subcomposeMeasureScope.mo463toPxR2X_6o(j);
+    public float mo404toPxR2X_6o(long j) {
+        return this.subcomposeMeasureScope.mo404toPxR2X_6o(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toPx-0680j_4 */
-    public float mo464toPx0680j_4(float f) {
-        return this.subcomposeMeasureScope.mo464toPx0680j_4(f);
+    public float mo405toPx0680j_4(float f) {
+        return this.subcomposeMeasureScope.mo405toPx0680j_4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
@@ -111,7 +111,7 @@ public final class LazyLayoutMeasureScopeImpl implements LazyLayoutMeasureScope,
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasureScope
     @Deprecated(message = "Please use compose and measure")
     /* renamed from: measure-0kLqBqw */
-    public List<Placeable> mo1132measure0kLqBqw(int i, long j) {
+    public List<Placeable> mo994measure0kLqBqw(int i, long j) {
         List<Placeable> list = this.placeablesCache.get(i);
         if (list != null) {
             return list;
@@ -121,7 +121,7 @@ public final class LazyLayoutMeasureScopeImpl implements LazyLayoutMeasureScope,
         int size = subcompose.size();
         ArrayList arrayList = new ArrayList(size);
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(subcompose.get(i2).mo6875measureBRTryo0(j));
+            arrayList.add(subcompose.get(i2).mo6216measureBRTryo0(j));
         }
         ArrayList arrayList2 = arrayList;
         this.placeablesCache.set(i, arrayList2);
@@ -130,49 +130,49 @@ public final class LazyLayoutMeasureScopeImpl implements LazyLayoutMeasureScope,
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toDp-GaN1DYA */
-    public float mo459toDpGaN1DYA(long j) {
-        return this.subcomposeMeasureScope.mo459toDpGaN1DYA(j);
+    public float mo400toDpGaN1DYA(long j) {
+        return this.subcomposeMeasureScope.mo400toDpGaN1DYA(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo461toDpu2uoSUM(int i) {
-        return this.subcomposeMeasureScope.mo461toDpu2uoSUM(i);
+    public float mo402toDpu2uoSUM(int i) {
+        return this.subcomposeMeasureScope.mo402toDpu2uoSUM(i);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDp-u2uoSUM */
-    public float mo460toDpu2uoSUM(float f) {
-        return this.subcomposeMeasureScope.mo460toDpu2uoSUM(f);
+    public float mo401toDpu2uoSUM(float f) {
+        return this.subcomposeMeasureScope.mo401toDpu2uoSUM(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo467toSpkPz2Gy4(float f) {
-        return this.subcomposeMeasureScope.mo467toSpkPz2Gy4(f);
+    public long mo408toSpkPz2Gy4(float f) {
+        return this.subcomposeMeasureScope.mo408toSpkPz2Gy4(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSp-kPz2Gy4 */
-    public long mo468toSpkPz2Gy4(int i) {
-        return this.subcomposeMeasureScope.mo468toSpkPz2Gy4(i);
+    public long mo409toSpkPz2Gy4(int i) {
+        return this.subcomposeMeasureScope.mo409toSpkPz2Gy4(i);
     }
 
     @Override // androidx.compose.ui.unit.FontScaling
     /* renamed from: toSp-0xMU5do */
-    public long mo466toSp0xMU5do(float f) {
-        return this.subcomposeMeasureScope.mo466toSp0xMU5do(f);
+    public long mo407toSp0xMU5do(float f) {
+        return this.subcomposeMeasureScope.mo407toSp0xMU5do(f);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toSize-XkaWNTQ */
-    public long mo465toSizeXkaWNTQ(long j) {
-        return this.subcomposeMeasureScope.mo465toSizeXkaWNTQ(j);
+    public long mo406toSizeXkaWNTQ(long j) {
+        return this.subcomposeMeasureScope.mo406toSizeXkaWNTQ(j);
     }
 
     @Override // androidx.compose.ui.unit.Density
     /* renamed from: toDpSize-k-rfVVM */
-    public long mo462toDpSizekrfVVM(long j) {
-        return this.subcomposeMeasureScope.mo462toDpSizekrfVVM(j);
+    public long mo403toDpSizekrfVVM(long j) {
+        return this.subcomposeMeasureScope.mo403toDpSizekrfVVM(j);
     }
 }

@@ -10,6 +10,7 @@ import dagger.hilt.EntryPoints;
 import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
 import dagger.hilt.android.internal.managers.ViewComponentManager;
 import dagger.hilt.internal.GeneratedComponentManager;
+import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.Preconditions;
 /* loaded from: classes4.dex */
 public class FragmentComponentManager implements GeneratedComponentManager<Object> {
@@ -43,7 +44,7 @@ public class FragmentComponentManager implements GeneratedComponentManager<Objec
 
     private Object createComponent() {
         Preconditions.checkNotNull(this.fragment.getHost(), "Hilt Fragments must be attached before creating the component.");
-        Preconditions.checkState(this.fragment.getHost() instanceof GeneratedComponentManager, "Hilt Fragments must be attached to an @AndroidEntryPoint Activity. Found: %s", this.fragment.getHost().getClass());
+        Preconditions.checkState(this.fragment.getHost() instanceof GeneratedComponentManagerHolder, "Hilt Fragments must be attached to an @AndroidEntryPoint Activity. Found: %s", this.fragment.getHost().getClass());
         validate(this.fragment);
         return ((FragmentComponentBuilderEntryPoint) EntryPoints.get(this.fragment.getHost(), FragmentComponentBuilderEntryPoint.class)).fragmentComponentBuilder().fragment(this.fragment).build();
     }

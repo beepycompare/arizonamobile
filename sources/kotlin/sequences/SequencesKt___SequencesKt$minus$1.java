@@ -28,14 +28,12 @@ public final class SequencesKt___SequencesKt$minus$1<T> implements Sequence<T> {
         return SequencesKt.filter(sequence, new Function1() { // from class: kotlin.sequences.SequencesKt___SequencesKt$minus$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean iterator$lambda$0;
-                iterator$lambda$0 = SequencesKt___SequencesKt$minus$1.iterator$lambda$0(Ref.BooleanRef.this, t, obj);
-                return Boolean.valueOf(iterator$lambda$0);
+                return Boolean.valueOf(SequencesKt___SequencesKt$minus$1.iterator$lambda$0(Ref.BooleanRef.this, t, obj));
             }
         }).iterator();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean iterator$lambda$0(Ref.BooleanRef booleanRef, Object obj, Object obj2) {
         if (booleanRef.element || !Intrinsics.areEqual(obj2, obj)) {
             return true;

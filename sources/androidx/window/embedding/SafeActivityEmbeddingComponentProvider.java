@@ -143,14 +143,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowExtensions#getActivityEmbeddingComponent is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda57
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isActivityEmbeddingComponentValid$lambda$0;
-                isActivityEmbeddingComponentValid$lambda$0 = SafeActivityEmbeddingComponentProvider.isActivityEmbeddingComponentValid$lambda$0(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isActivityEmbeddingComponentValid$lambda$0);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isActivityEmbeddingComponentValid$lambda$0(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isActivityEmbeddingComponentValid$lambda$0(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.safeWindowExtensionsProvider.getWindowExtensionsClass$window_release().getMethod("getActivityEmbeddingComponent", new Class[0]);
         Class<?> activityEmbeddingComponentClass = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass();
@@ -163,14 +161,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#setEmbeddingRules is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda52
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetEmbeddingRulesValid$lambda$1;
-                isMethodSetEmbeddingRulesValid$lambda$1 = SafeActivityEmbeddingComponentProvider.isMethodSetEmbeddingRulesValid$lambda$1(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSetEmbeddingRulesValid$lambda$1);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetEmbeddingRulesValid$lambda$1(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetEmbeddingRulesValid$lambda$1(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("setEmbeddingRules", Set.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -182,14 +178,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#isActivityEmbedded is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda38
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodIsActivityEmbeddedValid$lambda$2;
-                isMethodIsActivityEmbeddedValid$lambda$2 = SafeActivityEmbeddingComponentProvider.isMethodIsActivityEmbeddedValid$lambda$2(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodIsActivityEmbeddedValid$lambda$2);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodIsActivityEmbeddedValid$lambda$2(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodIsActivityEmbeddedValid$lambda$2(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("isActivityEmbedded", Activity.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -201,14 +195,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#setSplitInfoCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda40
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3;
-                isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3 = SafeActivityEmbeddingComponentProvider.isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetSplitInfoCallbackJavaConsumerValid$lambda$3(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Class<?> consumerClassOrNull$window_release = safeActivityEmbeddingComponentProvider.consumerAdapter.consumerClassOrNull$window_release();
         if (consumerClassOrNull$window_release == null) {
@@ -224,14 +216,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitRule#getSplitRatio is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda37
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetSplitRatioValid$lambda$4;
-                isMethodGetSplitRatioValid$lambda$4 = SafeActivityEmbeddingComponentProvider.isMethodGetSplitRatioValid$lambda$4();
-                return Boolean.valueOf(isMethodGetSplitRatioValid$lambda$4);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetSplitRatioValid$lambda$4());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetSplitRatioValid$lambda$4() {
         Method method = androidx.window.extensions.embedding.SplitRule.class.getMethod("getSplitRatio", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -243,14 +233,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitRule#getLayoutDirection is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda50
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetLayoutDirectionValid$lambda$5;
-                isMethodGetLayoutDirectionValid$lambda$5 = SafeActivityEmbeddingComponentProvider.isMethodGetLayoutDirectionValid$lambda$5();
-                return Boolean.valueOf(isMethodGetLayoutDirectionValid$lambda$5);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetLayoutDirectionValid$lambda$5());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetLayoutDirectionValid$lambda$5() {
         Method method = androidx.window.extensions.embedding.SplitRule.class.getMethod("getLayoutDirection", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -262,14 +250,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityRule is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityRuleValid$lambda$6;
-                isClassActivityRuleValid$lambda$6 = SafeActivityEmbeddingComponentProvider.isClassActivityRuleValid$lambda$6();
-                return Boolean.valueOf(isClassActivityRuleValid$lambda$6);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityRuleValid$lambda$6());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityRuleValid$lambda$6() {
         Method method = androidx.window.extensions.embedding.ActivityRule.class.getMethod("shouldAlwaysExpand", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -281,14 +267,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityRuleBuilderLevel1Valid$lambda$7;
-                isClassActivityRuleBuilderLevel1Valid$lambda$7 = SafeActivityEmbeddingComponentProvider.isClassActivityRuleBuilderLevel1Valid$lambda$7();
-                return Boolean.valueOf(isClassActivityRuleBuilderLevel1Valid$lambda$7);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityRuleBuilderLevel1Valid$lambda$7());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityRuleBuilderLevel1Valid$lambda$7() {
         Method method = ActivityRule.Builder.class.getMethod("setShouldAlwaysExpand", Boolean.TYPE);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -300,14 +284,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitInfo is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitInfoValid$lambda$8;
-                isClassSplitInfoValid$lambda$8 = SafeActivityEmbeddingComponentProvider.isClassSplitInfoValid$lambda$8();
-                return Boolean.valueOf(isClassSplitInfoValid$lambda$8);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitInfoValid$lambda$8());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitInfoValid$lambda$8() {
         Method method = androidx.window.extensions.embedding.SplitInfo.class.getMethod("getPrimaryActivityStack", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitInfo.class.getMethod("getSecondaryActivityStack", new Class[0]);
@@ -332,14 +314,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPairRule is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda59
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPairRuleValid$lambda$9;
-                isClassSplitPairRuleValid$lambda$9 = SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleValid$lambda$9();
-                return Boolean.valueOf(isClassSplitPairRuleValid$lambda$9);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleValid$lambda$9());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPairRuleValid$lambda$9() {
         Method method = androidx.window.extensions.embedding.SplitPairRule.class.getMethod("getFinishPrimaryWithSecondary", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitPairRule.class.getMethod("getFinishSecondaryWithPrimary", new Class[0]);
@@ -364,14 +344,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPairRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPairRuleBuilderLevel1Valid$lambda$10;
-                isClassSplitPairRuleBuilderLevel1Valid$lambda$10 = SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleBuilderLevel1Valid$lambda$10();
-                return Boolean.valueOf(isClassSplitPairRuleBuilderLevel1Valid$lambda$10);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleBuilderLevel1Valid$lambda$10());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPairRuleBuilderLevel1Valid$lambda$10() {
         Method method = SplitPairRule.Builder.class.getMethod("setSplitRatio", Float.TYPE);
         Method method2 = SplitPairRule.Builder.class.getMethod("setLayoutDirection", Integer.TYPE);
@@ -391,14 +369,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPlaceholderRule is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda44
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPlaceholderRuleValid$lambda$11;
-                isClassSplitPlaceholderRuleValid$lambda$11 = SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleValid$lambda$11();
-                return Boolean.valueOf(isClassSplitPlaceholderRuleValid$lambda$11);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleValid$lambda$11());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPlaceholderRuleValid$lambda$11() {
         Method method = androidx.window.extensions.embedding.SplitPlaceholderRule.class.getMethod("getPlaceholderIntent", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitPlaceholderRule.class.getMethod("isSticky", new Class[0]);
@@ -423,14 +399,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPlaceholderRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12;
-                isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12 = SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12();
-                return Boolean.valueOf(isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPlaceholderRuleBuilderLevel1Valid$lambda$12() {
         Method method = SplitPlaceholderRule.Builder.class.getMethod("setSplitRatio", Float.TYPE);
         Method method2 = SplitPlaceholderRule.Builder.class.getMethod("setLayoutDirection", Integer.TYPE);
@@ -460,14 +434,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#setSplitInfoCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13;
-                isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13 = SafeActivityEmbeddingComponentProvider.isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetSplitInfoCallbackWindowConsumerValid$lambda$13(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("setSplitInfoCallback", Consumer.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -479,14 +451,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#clearSplitInfoCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodClearSplitInfoCallbackValid$lambda$14;
-                isMethodClearSplitInfoCallbackValid$lambda$14 = SafeActivityEmbeddingComponentProvider.isMethodClearSplitInfoCallbackValid$lambda$14(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodClearSplitInfoCallbackValid$lambda$14);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodClearSplitInfoCallbackValid$lambda$14(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodClearSplitInfoCallbackValid$lambda$14(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("clearSplitInfoCallback", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -498,14 +468,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#setSplitAttributesCalculator is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda54
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSplitAttributesCalculatorValid$lambda$15;
-                isMethodSplitAttributesCalculatorValid$lambda$15 = SafeActivityEmbeddingComponentProvider.isMethodSplitAttributesCalculatorValid$lambda$15(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSplitAttributesCalculatorValid$lambda$15);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSplitAttributesCalculatorValid$lambda$15(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSplitAttributesCalculatorValid$lambda$15(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("setSplitAttributesCalculator", Function.class);
         Method method2 = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("clearSplitAttributesCalculator", new Class[0]);
@@ -525,14 +493,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitInfo#getSplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda60
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetSplitAttributesValid$lambda$16;
-                isMethodGetSplitAttributesValid$lambda$16 = SafeActivityEmbeddingComponentProvider.isMethodGetSplitAttributesValid$lambda$16();
-                return Boolean.valueOf(isMethodGetSplitAttributesValid$lambda$16);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetSplitAttributesValid$lambda$16());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetSplitAttributesValid$lambda$16() {
         Method method = androidx.window.extensions.embedding.SplitInfo.class.getMethod("getSplitAttributes", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -544,14 +510,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitPlaceholderRule#getFinishPrimaryWithPlaceholder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17;
-                isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17 = SafeActivityEmbeddingComponentProvider.isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17();
-                return Boolean.valueOf(isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetFinishPrimaryWithPlaceholderValid$lambda$17() {
         Method method = androidx.window.extensions.embedding.SplitPlaceholderRule.class.getMethod("getFinishPrimaryWithPlaceholder", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -563,14 +527,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitRule#getDefaultSplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda39
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetDefaultSplitAttributesValid$lambda$18;
-                isMethodGetDefaultSplitAttributesValid$lambda$18 = SafeActivityEmbeddingComponentProvider.isMethodGetDefaultSplitAttributesValid$lambda$18();
-                return Boolean.valueOf(isMethodGetDefaultSplitAttributesValid$lambda$18);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetDefaultSplitAttributesValid$lambda$18());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetDefaultSplitAttributesValid$lambda$18() {
         Method method = androidx.window.extensions.embedding.SplitRule.class.getMethod("getDefaultSplitAttributes", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -582,14 +544,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda33
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityRuleBuilderLevel2Valid$lambda$19;
-                isClassActivityRuleBuilderLevel2Valid$lambda$19 = SafeActivityEmbeddingComponentProvider.isClassActivityRuleBuilderLevel2Valid$lambda$19();
-                return Boolean.valueOf(isClassActivityRuleBuilderLevel2Valid$lambda$19);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityRuleBuilderLevel2Valid$lambda$19());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityRuleBuilderLevel2Valid$lambda$19() {
         Constructor<?> declaredConstructor = ActivityRule.Builder.class.getDeclaredConstructor(Predicate.class, Predicate.class);
         Method method = ActivityRule.Builder.class.getMethod("setTag", String.class);
@@ -609,14 +569,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class EmbeddingRule is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassEmbeddingRuleValid$lambda$20;
-                isClassEmbeddingRuleValid$lambda$20 = SafeActivityEmbeddingComponentProvider.isClassEmbeddingRuleValid$lambda$20();
-                return Boolean.valueOf(isClassEmbeddingRuleValid$lambda$20);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassEmbeddingRuleValid$lambda$20());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassEmbeddingRuleValid$lambda$20() {
         Method method = EmbeddingRule.class.getMethod("getTag", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -628,14 +586,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda35
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitAttributesValid$lambda$21;
-                isClassSplitAttributesValid$lambda$21 = SafeActivityEmbeddingComponentProvider.isClassSplitAttributesValid$lambda$21();
-                return Boolean.valueOf(isClassSplitAttributesValid$lambda$21);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitAttributesValid$lambda$21());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitAttributesValid$lambda$21() {
         Method method = androidx.window.extensions.embedding.SplitAttributes.class.getMethod("getLayoutDirection", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitAttributes.class.getMethod("getSplitType", new Class[0]);
@@ -665,14 +621,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitAttributesCalculatorParams is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitAttributesCalculatorParamsValid$lambda$22;
-                isClassSplitAttributesCalculatorParamsValid$lambda$22 = SafeActivityEmbeddingComponentProvider.isClassSplitAttributesCalculatorParamsValid$lambda$22();
-                return Boolean.valueOf(isClassSplitAttributesCalculatorParamsValid$lambda$22);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitAttributesCalculatorParamsValid$lambda$22());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitAttributesCalculatorParamsValid$lambda$22() {
         Method method = androidx.window.extensions.embedding.SplitAttributesCalculatorParams.class.getMethod("getParentWindowMetrics", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitAttributesCalculatorParams.class.getMethod("getParentConfiguration", new Class[0]);
@@ -712,14 +666,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitAttributes.SplitType is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda36
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitTypeValid$lambda$23;
-                isClassSplitTypeValid$lambda$23 = SafeActivityEmbeddingComponentProvider.isClassSplitTypeValid$lambda$23();
-                return Boolean.valueOf(isClassSplitTypeValid$lambda$23);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitTypeValid$lambda$23());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitTypeValid$lambda$23() {
         Constructor<?> declaredConstructor = SplitAttributes.SplitType.RatioSplitType.class.getDeclaredConstructor(Float.TYPE);
         Method method = SplitAttributes.SplitType.RatioSplitType.class.getMethod("getRatio", new Class[0]);
@@ -759,14 +711,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPairRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPairRuleBuilderLevel2Valid$lambda$24;
-                isClassSplitPairRuleBuilderLevel2Valid$lambda$24 = SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleBuilderLevel2Valid$lambda$24();
-                return Boolean.valueOf(isClassSplitPairRuleBuilderLevel2Valid$lambda$24);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPairRuleBuilderLevel2Valid$lambda$24());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPairRuleBuilderLevel2Valid$lambda$24() {
         Constructor<?> declaredConstructor = SplitPairRule.Builder.class.getDeclaredConstructor(Predicate.class, Predicate.class, Predicate.class);
         Method method = SplitPairRule.Builder.class.getMethod("setDefaultSplitAttributes", androidx.window.extensions.embedding.SplitAttributes.class);
@@ -791,14 +741,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class SplitPlaceholderRule.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda46
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25;
-                isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25 = SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25();
-                return Boolean.valueOf(isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitPlaceholderRuleBuilderLevel2Valid$lambda$25() {
         Constructor<?> declaredConstructor = SplitPlaceholderRule.Builder.class.getDeclaredConstructor(Intent.class, Predicate.class, Predicate.class, Predicate.class);
         Method method = SplitPlaceholderRule.Builder.class.getMethod("setDefaultSplitAttributes", androidx.window.extensions.embedding.SplitAttributes.class);
@@ -828,14 +776,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("#invalidateTopVisibleSplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26;
-                isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26 = SafeActivityEmbeddingComponentProvider.isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodInvalidateTopVisibleSplitAttributesValid$lambda$26(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("invalidateTopVisibleSplitAttributes", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -847,14 +793,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("#updateSplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodUpdateSplitAttributesValid$lambda$27;
-                isMethodUpdateSplitAttributesValid$lambda$27 = SafeActivityEmbeddingComponentProvider.isMethodUpdateSplitAttributesValid$lambda$27(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodUpdateSplitAttributesValid$lambda$27);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodUpdateSplitAttributesValid$lambda$27(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodUpdateSplitAttributesValid$lambda$27(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("updateSplitAttributes", IBinder.class, androidx.window.extensions.embedding.SplitAttributes.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -866,14 +810,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitInfo#getToken is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSplitInfoGetTokenValid$lambda$28;
-                isMethodSplitInfoGetTokenValid$lambda$28 = SafeActivityEmbeddingComponentProvider.isMethodSplitInfoGetTokenValid$lambda$28();
-                return Boolean.valueOf(isMethodSplitInfoGetTokenValid$lambda$28);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSplitInfoGetTokenValid$lambda$28());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSplitInfoGetTokenValid$lambda$28() {
         Method method = androidx.window.extensions.embedding.SplitInfo.class.getMethod("getToken", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -885,14 +827,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityStack#getActivityToken is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda42
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isActivityStackGetActivityStackTokenValid$lambda$29;
-                isActivityStackGetActivityStackTokenValid$lambda$29 = SafeActivityEmbeddingComponentProvider.isActivityStackGetActivityStackTokenValid$lambda$29();
-                return Boolean.valueOf(isActivityStackGetActivityStackTokenValid$lambda$29);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isActivityStackGetActivityStackTokenValid$lambda$29());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isActivityStackGetActivityStackTokenValid$lambda$29() {
         Method method = androidx.window.extensions.embedding.ActivityStack.class.getMethod("getActivityStackToken", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -904,14 +844,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("registerActivityStackCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda55
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodRegisterActivityStackCallbackValid$lambda$30;
-                isMethodRegisterActivityStackCallbackValid$lambda$30 = SafeActivityEmbeddingComponentProvider.isMethodRegisterActivityStackCallbackValid$lambda$30(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodRegisterActivityStackCallbackValid$lambda$30);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodRegisterActivityStackCallbackValid$lambda$30(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodRegisterActivityStackCallbackValid$lambda$30(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("registerActivityStackCallback", Executor.class, Consumer.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -923,14 +861,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("unregisterActivityStackCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda61
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodUnregisterActivityStackCallbackValid$lambda$31;
-                isMethodUnregisterActivityStackCallbackValid$lambda$31 = SafeActivityEmbeddingComponentProvider.isMethodUnregisterActivityStackCallbackValid$lambda$31(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodUnregisterActivityStackCallbackValid$lambda$31);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodUnregisterActivityStackCallbackValid$lambda$31(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodUnregisterActivityStackCallbackValid$lambda$31(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("unregisterActivityStackCallback", Consumer.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -942,14 +878,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("#pin(unPin)TopActivityStack is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodPinUnpinTopActivityStackValid$lambda$32;
-                isMethodPinUnpinTopActivityStackValid$lambda$32 = SafeActivityEmbeddingComponentProvider.isMethodPinUnpinTopActivityStackValid$lambda$32(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodPinUnpinTopActivityStackValid$lambda$32);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodPinUnpinTopActivityStackValid$lambda$32(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodPinUnpinTopActivityStackValid$lambda$32(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = androidx.window.extensions.embedding.SplitPinRule.class.getMethod("isSticky", new Class[0]);
         Method method2 = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("pinTopActivityStack", Integer.TYPE, androidx.window.extensions.embedding.SplitPinRule.class);
@@ -974,14 +908,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("updateSplitAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda56
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodUpdateSplitAttributesWithTokenValid$lambda$33;
-                isMethodUpdateSplitAttributesWithTokenValid$lambda$33 = SafeActivityEmbeddingComponentProvider.isMethodUpdateSplitAttributesWithTokenValid$lambda$33(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodUpdateSplitAttributesWithTokenValid$lambda$33);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodUpdateSplitAttributesWithTokenValid$lambda$33(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodUpdateSplitAttributesWithTokenValid$lambda$33(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("updateSplitAttributes", SplitInfo.Token.class, androidx.window.extensions.embedding.SplitAttributes.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -993,14 +925,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitInfo#getSplitInfoToken is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetSplitInfoTokenValid$lambda$34;
-                isMethodGetSplitInfoTokenValid$lambda$34 = SafeActivityEmbeddingComponentProvider.isMethodGetSplitInfoTokenValid$lambda$34();
-                return Boolean.valueOf(isMethodGetSplitInfoTokenValid$lambda$34);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetSplitInfoTokenValid$lambda$34());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetSplitInfoTokenValid$lambda$34() {
         Method method = androidx.window.extensions.embedding.SplitInfo.class.getMethod("getSplitInfoToken", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1012,14 +942,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class AnimationBackground is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda32
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassAnimationBackgroundValid$lambda$35;
-                isClassAnimationBackgroundValid$lambda$35 = SafeActivityEmbeddingComponentProvider.isClassAnimationBackgroundValid$lambda$35();
-                return Boolean.valueOf(isClassAnimationBackgroundValid$lambda$35);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassAnimationBackgroundValid$lambda$35());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassAnimationBackgroundValid$lambda$35() {
         Method method = AnimationBackground.class.getMethod("createColorBackground", Integer.TYPE);
         Field declaredField = AnimationBackground.class.getDeclaredField("ANIMATION_BACKGROUND_DEFAULT");
@@ -1054,14 +982,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityStack.Token is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda62
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityStackTokenValid$lambda$36;
-                isClassActivityStackTokenValid$lambda$36 = SafeActivityEmbeddingComponentProvider.isClassActivityStackTokenValid$lambda$36();
-                return Boolean.valueOf(isClassActivityStackTokenValid$lambda$36);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityStackTokenValid$lambda$36());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityStackTokenValid$lambda$36() {
         Method method = ActivityStack.Token.class.getMethod("toBundle", new Class[0]);
         Method method2 = ActivityStack.Token.class.getMethod("readFromBundle", Bundle.class);
@@ -1091,14 +1017,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class WindowAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassWindowAttributesValid$lambda$37;
-                isClassWindowAttributesValid$lambda$37 = SafeActivityEmbeddingComponentProvider.isClassWindowAttributesValid$lambda$37();
-                return Boolean.valueOf(isClassWindowAttributesValid$lambda$37);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassWindowAttributesValid$lambda$37());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassWindowAttributesValid$lambda$37() {
         Method method = WindowAttributes.class.getMethod("getDimAreaBehavior", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.SplitAttributes.class.getMethod("getWindowAttributes", new Class[0]);
@@ -1123,14 +1047,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitInfo.Token is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassSplitInfoTokenValid$lambda$38;
-                isClassSplitInfoTokenValid$lambda$38 = SafeActivityEmbeddingComponentProvider.isClassSplitInfoTokenValid$lambda$38();
-                return Boolean.valueOf(isClassSplitInfoTokenValid$lambda$38);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassSplitInfoTokenValid$lambda$38());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassSplitInfoTokenValid$lambda$38() {
         Method method = SplitInfo.Token.class.getMethod("createFromBinder", IBinder.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1142,14 +1064,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#getEmbeddedActivityWindowInfo is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetEmbeddedActivityWindowInfoValid$lambda$39;
-                isMethodGetEmbeddedActivityWindowInfoValid$lambda$39 = SafeActivityEmbeddingComponentProvider.isMethodGetEmbeddedActivityWindowInfoValid$lambda$39(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodGetEmbeddedActivityWindowInfoValid$lambda$39);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetEmbeddedActivityWindowInfoValid$lambda$39(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetEmbeddedActivityWindowInfoValid$lambda$39(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("getEmbeddedActivityWindowInfo", Activity.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1161,14 +1081,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#setEmbeddedActivityWindowInfoCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40;
-                isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40 = SafeActivityEmbeddingComponentProvider.isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetEmbeddedActivityWindowInfoCallbackValid$lambda$40(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("setEmbeddedActivityWindowInfoCallback", Executor.class, Consumer.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1180,14 +1098,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#clearEmbeddedActivityWindowInfoCallback is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41;
-                isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41 = SafeActivityEmbeddingComponentProvider.isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodClearEmbeddedActivityWindowInfoCallbackValid$lambda$41(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("clearEmbeddedActivityWindowInfoCallback", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1199,14 +1115,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitAttributes#getDividerAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda48
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetDividerAttributesValid$lambda$42;
-                isMethodGetDividerAttributesValid$lambda$42 = SafeActivityEmbeddingComponentProvider.isMethodGetDividerAttributesValid$lambda$42();
-                return Boolean.valueOf(isMethodGetDividerAttributesValid$lambda$42);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetDividerAttributesValid$lambda$42());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetDividerAttributesValid$lambda$42() {
         Method method = androidx.window.extensions.embedding.SplitAttributes.class.getMethod("getDividerAttributes", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1218,14 +1132,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitAttributes#setDividerAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda29
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetDividerAttributesValid$lambda$43;
-                isMethodSetDividerAttributesValid$lambda$43 = SafeActivityEmbeddingComponentProvider.isMethodSetDividerAttributesValid$lambda$43();
-                return Boolean.valueOf(isMethodSetDividerAttributesValid$lambda$43);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetDividerAttributesValid$lambda$43());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetDividerAttributesValid$lambda$43() {
         Method method = SplitAttributes.Builder.class.getMethod("setDividerAttributes", androidx.window.extensions.embedding.DividerAttributes.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1237,14 +1149,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class EmbeddedActivityWindowInfo is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda45
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassEmbeddedActivityWindowInfoValid$lambda$44;
-                isClassEmbeddedActivityWindowInfoValid$lambda$44 = SafeActivityEmbeddingComponentProvider.isClassEmbeddedActivityWindowInfoValid$lambda$44();
-                return Boolean.valueOf(isClassEmbeddedActivityWindowInfoValid$lambda$44);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassEmbeddedActivityWindowInfoValid$lambda$44());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassEmbeddedActivityWindowInfoValid$lambda$44() {
         Method method = androidx.window.extensions.embedding.EmbeddedActivityWindowInfo.class.getMethod("getActivity", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.EmbeddedActivityWindowInfo.class.getMethod("isEmbedded", new Class[0]);
@@ -1274,14 +1184,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class DividerAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda51
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassDividerAttributesValid$lambda$45;
-                isClassDividerAttributesValid$lambda$45 = SafeActivityEmbeddingComponentProvider.isClassDividerAttributesValid$lambda$45();
-                return Boolean.valueOf(isClassDividerAttributesValid$lambda$45);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassDividerAttributesValid$lambda$45());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassDividerAttributesValid$lambda$45() {
         Method method = androidx.window.extensions.embedding.DividerAttributes.class.getMethod("getDividerType", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.DividerAttributes.class.getMethod("getWidthDp", new Class[0]);
@@ -1316,14 +1224,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class DividerAttributes.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassDividerAttributesBuilderValid$lambda$46;
-                isClassDividerAttributesBuilderValid$lambda$46 = SafeActivityEmbeddingComponentProvider.isClassDividerAttributesBuilderValid$lambda$46();
-                return Boolean.valueOf(isClassDividerAttributesBuilderValid$lambda$46);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassDividerAttributesBuilderValid$lambda$46());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassDividerAttributesBuilderValid$lambda$46() {
         Constructor<?> declaredConstructor = DividerAttributes.Builder.class.getDeclaredConstructor(Integer.TYPE);
         Constructor<?> declaredConstructor2 = DividerAttributes.Builder.class.getDeclaredConstructor(androidx.window.extensions.embedding.DividerAttributes.class);
@@ -1363,14 +1269,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitAttributes#getAnimationParams is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetAnimationParamsValid$lambda$47;
-                isMethodGetAnimationParamsValid$lambda$47 = SafeActivityEmbeddingComponentProvider.isMethodGetAnimationParamsValid$lambda$47();
-                return Boolean.valueOf(isMethodGetAnimationParamsValid$lambda$47);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetAnimationParamsValid$lambda$47());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetAnimationParamsValid$lambda$47() {
         Method method = androidx.window.extensions.embedding.SplitAttributes.class.getMethod("getAnimationParams", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1382,14 +1286,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SplitAttributes#setAnimationParams is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda58
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetAnimationParamsValid$lambda$48;
-                isMethodSetAnimationParamsValid$lambda$48 = SafeActivityEmbeddingComponentProvider.isMethodSetAnimationParamsValid$lambda$48();
-                return Boolean.valueOf(isMethodSetAnimationParamsValid$lambda$48);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetAnimationParamsValid$lambda$48());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetAnimationParamsValid$lambda$48() {
         Method method = SplitAttributes.Builder.class.getMethod("setAnimationParams", AnimationParams.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1401,14 +1303,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("DividerAttributes#isDraggingToFullscreenAllowed is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda43
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodIsDraggingToFullscreenAllowedValid$lambda$49;
-                isMethodIsDraggingToFullscreenAllowedValid$lambda$49 = SafeActivityEmbeddingComponentProvider.isMethodIsDraggingToFullscreenAllowedValid$lambda$49();
-                return Boolean.valueOf(isMethodIsDraggingToFullscreenAllowedValid$lambda$49);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodIsDraggingToFullscreenAllowedValid$lambda$49());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodIsDraggingToFullscreenAllowedValid$lambda$49() {
         Method method = androidx.window.extensions.embedding.DividerAttributes.class.getMethod("isDraggingToFullscreenAllowed", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1420,14 +1320,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("DividerAttributes.Builder#setDraggingToFullscreenAllowed is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetDraggingToFullscreenAllowedValid$lambda$50;
-                isMethodSetDraggingToFullscreenAllowedValid$lambda$50 = SafeActivityEmbeddingComponentProvider.isMethodSetDraggingToFullscreenAllowedValid$lambda$50();
-                return Boolean.valueOf(isMethodSetDraggingToFullscreenAllowedValid$lambda$50);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetDraggingToFullscreenAllowedValid$lambda$50());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetDraggingToFullscreenAllowedValid$lambda$50() {
         Method method = DividerAttributes.Builder.class.getMethod("setDraggingToFullscreenAllowed", Boolean.TYPE);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1439,14 +1337,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class AnimationParams is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda34
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassAnimationParamsValid$lambda$51;
-                isClassAnimationParamsValid$lambda$51 = SafeActivityEmbeddingComponentProvider.isClassAnimationParamsValid$lambda$51();
-                return Boolean.valueOf(isClassAnimationParamsValid$lambda$51);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassAnimationParamsValid$lambda$51());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassAnimationParamsValid$lambda$51() {
         Field declaredField = AnimationParams.class.getDeclaredField("DEFAULT_ANIMATION_RESOURCES_ID");
         Method method = AnimationParams.class.getMethod("getAnimationBackground", new Class[0]);
@@ -1481,14 +1377,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class AnimationParams.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassAnimationParamsBuilderValid$lambda$52;
-                isClassAnimationParamsBuilderValid$lambda$52 = SafeActivityEmbeddingComponentProvider.isClassAnimationParamsBuilderValid$lambda$52();
-                return Boolean.valueOf(isClassAnimationParamsBuilderValid$lambda$52);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassAnimationParamsBuilderValid$lambda$52());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassAnimationParamsBuilderValid$lambda$52() {
         Method method = AnimationParams.Builder.class.getMethod("setAnimationBackground", AnimationBackground.class);
         Method method2 = AnimationParams.Builder.class.getMethod("setOpenAnimationResId", Integer.TYPE);
@@ -1518,14 +1412,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityStack#getTag is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda28
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isActivityStackGetTagValid$lambda$53;
-                isActivityStackGetTagValid$lambda$53 = SafeActivityEmbeddingComponentProvider.isActivityStackGetTagValid$lambda$53();
-                return Boolean.valueOf(isActivityStackGetTagValid$lambda$53);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isActivityStackGetTagValid$lambda$53());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isActivityStackGetTagValid$lambda$53() {
         Method method = androidx.window.extensions.embedding.ActivityStack.class.getMethod("getTag", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1537,14 +1429,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("getActivityStackToken is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda53
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetActivityStackTokenValid$lambda$54;
-                isMethodGetActivityStackTokenValid$lambda$54 = SafeActivityEmbeddingComponentProvider.isMethodGetActivityStackTokenValid$lambda$54(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodGetActivityStackTokenValid$lambda$54);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetActivityStackTokenValid$lambda$54(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetActivityStackTokenValid$lambda$54(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("getActivityStackToken", String.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1556,14 +1446,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ParentContainerInfo is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda47
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassParentContainerInfoValid$lambda$55;
-                isClassParentContainerInfoValid$lambda$55 = SafeActivityEmbeddingComponentProvider.isClassParentContainerInfoValid$lambda$55();
-                return Boolean.valueOf(isClassParentContainerInfoValid$lambda$55);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassParentContainerInfoValid$lambda$55());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassParentContainerInfoValid$lambda$55() {
         Method method = androidx.window.extensions.embedding.ParentContainerInfo.class.getMethod("getWindowMetrics", new Class[0]);
         Method method2 = androidx.window.extensions.embedding.ParentContainerInfo.class.getMethod("getConfiguration", new Class[0]);
@@ -1588,14 +1476,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("ActivityEmbeddingComponent#getParentContainerInfo is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda49
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodGetParentContainerInfoValid$lambda$56;
-                isMethodGetParentContainerInfoValid$lambda$56 = SafeActivityEmbeddingComponentProvider.isMethodGetParentContainerInfoValid$lambda$56(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodGetParentContainerInfoValid$lambda$56);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodGetParentContainerInfoValid$lambda$56(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodGetParentContainerInfoValid$lambda$56(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("getParentContainerInfo", ActivityStack.Token.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1607,14 +1493,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("setActivityStackAttributesCalculator is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodSetActivityStackAttributesCalculatorValid$lambda$57;
-                isMethodSetActivityStackAttributesCalculatorValid$lambda$57 = SafeActivityEmbeddingComponentProvider.isMethodSetActivityStackAttributesCalculatorValid$lambda$57(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodSetActivityStackAttributesCalculatorValid$lambda$57);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodSetActivityStackAttributesCalculatorValid$lambda$57(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodSetActivityStackAttributesCalculatorValid$lambda$57(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("setActivityStackAttributesCalculator", Function.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1626,14 +1510,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("clearActivityStackAttributesCalculator is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodClearActivityStackAttributesCalculatorValid$lambda$58;
-                isMethodClearActivityStackAttributesCalculatorValid$lambda$58 = SafeActivityEmbeddingComponentProvider.isMethodClearActivityStackAttributesCalculatorValid$lambda$58(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodClearActivityStackAttributesCalculatorValid$lambda$58);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodClearActivityStackAttributesCalculatorValid$lambda$58(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodClearActivityStackAttributesCalculatorValid$lambda$58(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("clearActivityStackAttributesCalculator", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1645,14 +1527,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("updateActivityStackAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodUpdateActivityStackAttributesValid$lambda$59;
-                isMethodUpdateActivityStackAttributesValid$lambda$59 = SafeActivityEmbeddingComponentProvider.isMethodUpdateActivityStackAttributesValid$lambda$59(SafeActivityEmbeddingComponentProvider.this);
-                return Boolean.valueOf(isMethodUpdateActivityStackAttributesValid$lambda$59);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isMethodUpdateActivityStackAttributesValid$lambda$59(SafeActivityEmbeddingComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodUpdateActivityStackAttributesValid$lambda$59(SafeActivityEmbeddingComponentProvider safeActivityEmbeddingComponentProvider) {
         Method method = safeActivityEmbeddingComponentProvider.getActivityEmbeddingComponentClass().getMethod("updateActivityStackAttributes", ActivityStack.Token.class, ActivityStackAttributes.class);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -1664,14 +1544,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityStackAttributes is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityStackAttributesValid$lambda$60;
-                isClassActivityStackAttributesValid$lambda$60 = SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesValid$lambda$60();
-                return Boolean.valueOf(isClassActivityStackAttributesValid$lambda$60);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesValid$lambda$60());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityStackAttributesValid$lambda$60() {
         Method method = ActivityStackAttributes.class.getMethod("getRelativeBounds", new Class[0]);
         Method method2 = ActivityStackAttributes.class.getMethod("getWindowAttributes", new Class[0]);
@@ -1691,14 +1569,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityStackAttributes.Builder is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda31
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityStackAttributesBuilderValid$lambda$61;
-                isClassActivityStackAttributesBuilderValid$lambda$61 = SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesBuilderValid$lambda$61();
-                return Boolean.valueOf(isClassActivityStackAttributesBuilderValid$lambda$61);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesBuilderValid$lambda$61());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityStackAttributesBuilderValid$lambda$61() {
         Constructor<?> declaredConstructor = ActivityStackAttributes.Builder.class.getDeclaredConstructor(new Class[0]);
         Method method = ActivityStackAttributes.Builder.class.getMethod("setRelativeBounds", Rect.class);
@@ -1723,14 +1599,12 @@ public final class SafeActivityEmbeddingComponentProvider {
         return ReflectionUtils.validateReflection$window_release("Class ActivityStackAttributesCalculatorParams is not valid", new Function0() { // from class: androidx.window.embedding.SafeActivityEmbeddingComponentProvider$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isClassActivityStackAttributesCalculatorParamsValid$lambda$62;
-                isClassActivityStackAttributesCalculatorParamsValid$lambda$62 = SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesCalculatorParamsValid$lambda$62();
-                return Boolean.valueOf(isClassActivityStackAttributesCalculatorParamsValid$lambda$62);
+                return Boolean.valueOf(SafeActivityEmbeddingComponentProvider.isClassActivityStackAttributesCalculatorParamsValid$lambda$62());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isClassActivityStackAttributesCalculatorParamsValid$lambda$62() {
         Method method = ActivityStackAttributesCalculatorParams.class.getMethod("getParentContainerInfo", new Class[0]);
         Method method2 = ActivityStackAttributesCalculatorParams.class.getMethod("getActivityStackTag", new Class[0]);

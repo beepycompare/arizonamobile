@@ -12,6 +12,7 @@ public final class Ye {
     }
 
     public final String a(String str) {
-        return str != null ? this.f867a + str : this.f867a;
+        String str2 = this.f867a;
+        return str != null ? str2 + str : str2;
     }
 }

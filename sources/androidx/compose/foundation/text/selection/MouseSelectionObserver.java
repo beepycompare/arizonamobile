@@ -6,16 +6,16 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface MouseSelectionObserver {
     /* renamed from: onDrag-3MmeM6k */
-    boolean mo1749onDrag3MmeM6k(long j, SelectionAdjustment selectionAdjustment);
+    boolean mo1513onDrag3MmeM6k(long j, SelectionAdjustment selectionAdjustment);
 
     void onDragDone();
 
     /* renamed from: onExtend-k-4lQ0M */
-    boolean mo1750onExtendk4lQ0M(long j);
+    boolean mo1514onExtendk4lQ0M(long j);
 
     /* renamed from: onExtendDrag-k-4lQ0M */
-    boolean mo1751onExtendDragk4lQ0M(long j);
+    boolean mo1515onExtendDragk4lQ0M(long j);
 
     /* renamed from: onStart-9KIMszo */
-    boolean mo1752onStart9KIMszo(long j, SelectionAdjustment selectionAdjustment, int i);
+    boolean mo1516onStart9KIMszo(long j, SelectionAdjustment selectionAdjustment, int i);
 }

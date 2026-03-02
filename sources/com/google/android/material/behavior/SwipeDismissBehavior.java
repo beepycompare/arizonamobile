@@ -123,24 +123,26 @@ public class SwipeDismissBehavior<V extends View> extends CoordinatorLayout.Beha
             int width3;
             boolean z = view.getLayoutDirection() == 1;
             if (SwipeDismissBehavior.this.swipeDirection == 0) {
+                width = this.originalCapturedViewLeft;
                 if (z) {
-                    width = this.originalCapturedViewLeft - view.getWidth();
+                    width -= view.getWidth();
                     width2 = this.originalCapturedViewLeft;
                 } else {
-                    width = this.originalCapturedViewLeft;
                     width3 = view.getWidth();
                     width2 = width3 + width;
                 }
-            } else if (SwipeDismissBehavior.this.swipeDirection != 1) {
-                width = this.originalCapturedViewLeft - view.getWidth();
-                width2 = view.getWidth() + this.originalCapturedViewLeft;
-            } else if (z) {
+            } else if (SwipeDismissBehavior.this.swipeDirection == 1) {
                 width = this.originalCapturedViewLeft;
-                width3 = view.getWidth();
-                width2 = width3 + width;
+                if (z) {
+                    width3 = view.getWidth();
+                    width2 = width3 + width;
+                } else {
+                    width -= view.getWidth();
+                    width2 = this.originalCapturedViewLeft;
+                }
             } else {
                 width = this.originalCapturedViewLeft - view.getWidth();
-                width2 = this.originalCapturedViewLeft;
+                width2 = view.getWidth() + this.originalCapturedViewLeft;
             }
             return SwipeDismissBehavior.clamp(width, i, width2);
         }

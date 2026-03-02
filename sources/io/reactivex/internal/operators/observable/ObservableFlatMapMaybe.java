@@ -117,11 +117,12 @@ public final class ObservableFlatMapMaybe<T, R> extends AbstractObservableWithUp
                     SpscLinkedArrayQueue<R> spscLinkedArrayQueue = this.queue.get();
                     if (z && (spscLinkedArrayQueue == null || spscLinkedArrayQueue.isEmpty())) {
                         Throwable terminate = this.errors.terminate();
+                        Observer<? super R> observer = this.downstream;
                         if (terminate != null) {
-                            this.downstream.onError(terminate);
+                            observer.onError(terminate);
                             return;
                         } else {
-                            this.downstream.onComplete();
+                            observer.onComplete();
                             return;
                         }
                     }
@@ -176,11 +177,12 @@ public final class ObservableFlatMapMaybe<T, R> extends AbstractObservableWithUp
                     SpscLinkedArrayQueue<R> spscLinkedArrayQueue = this.queue.get();
                     if (z && (spscLinkedArrayQueue == null || spscLinkedArrayQueue.isEmpty())) {
                         Throwable terminate = this.errors.terminate();
+                        Observer<? super R> observer = this.downstream;
                         if (terminate != null) {
-                            this.downstream.onError(terminate);
+                            observer.onError(terminate);
                             return;
                         } else {
-                            this.downstream.onComplete();
+                            observer.onComplete();
                             return;
                         }
                     } else if (decrementAndGet() == 0) {

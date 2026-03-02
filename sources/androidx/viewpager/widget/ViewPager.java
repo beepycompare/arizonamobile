@@ -590,7 +590,9 @@ public class ViewPager extends ViewGroup {
         }
         Scroller scroller = this.mScroller;
         if (scroller != null && !scroller.isFinished()) {
-            scrollX = this.mIsScrollStarted ? this.mScroller.getCurrX() : this.mScroller.getStartX();
+            boolean z = this.mIsScrollStarted;
+            Scroller scroller2 = this.mScroller;
+            scrollX = z ? scroller2.getCurrX() : scroller2.getStartX();
             this.mScroller.abortAnimation();
             setScrollingCacheEnabled(false);
         } else {
@@ -1523,10 +1525,11 @@ public class ViewPager extends ViewGroup {
             }
         }
         if (z2) {
+            Runnable runnable = this.mEndScrollRunnable;
             if (z) {
-                ViewCompat.postOnAnimation(this, this.mEndScrollRunnable);
+                ViewCompat.postOnAnimation(this, runnable);
             } else {
-                this.mEndScrollRunnable.run();
+                runnable.run();
             }
         }
     }
@@ -1666,7 +1669,9 @@ public class ViewPager extends ViewGroup {
                             this.mIsBeingDragged = true;
                             requestParentDisallowInterceptTouchEvent(true);
                             float f = this.mInitialMotionX;
-                            this.mLastMotionX = x2 - f > 0.0f ? f + this.mTouchSlop : f - this.mTouchSlop;
+                            int i = ((x2 - f) > 0.0f ? 1 : ((x2 - f) == 0.0f ? 0 : -1));
+                            int i2 = this.mTouchSlop;
+                            this.mLastMotionX = i > 0 ? f + i2 : f - i2;
                             this.mLastMotionY = y2;
                             setScrollState(1);
                             setScrollingCacheEnabled(true);

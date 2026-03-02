@@ -7,7 +7,7 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.exoplayer.R;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DownloadNotificationHelper {
     private static final int NULL_STRING_ID = 0;
     private final NotificationCompat.Builder notificationBuilder;
@@ -133,7 +133,7 @@ public final class DownloadNotificationHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Api31 {
         private Api31() {
         }

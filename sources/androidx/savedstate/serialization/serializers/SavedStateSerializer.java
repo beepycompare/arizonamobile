@@ -36,9 +36,9 @@ public final class SavedStateSerializer implements KSerializer<Bundle> {
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
         if (Intrinsics.areEqual(savedStateEncoder.getKey$savedstate(), "")) {
-            SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(savedStateEncoder.getSavedState$savedstate()), value);
+            SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(savedStateEncoder.getSavedState$savedstate()), value);
         } else {
-            SavedStateWriter.m9322putSavedStateimpl(SavedStateWriter.m9295constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
+            SavedStateWriter.m8527putSavedStateimpl(SavedStateWriter.m8500constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
         }
     }
 
@@ -52,6 +52,6 @@ public final class SavedStateSerializer implements KSerializer<Bundle> {
         if (Intrinsics.areEqual(savedStateDecoder.getKey$savedstate(), "")) {
             return savedStateDecoder.getSavedState$savedstate();
         }
-        return SavedStateReader.m9266getSavedStateimpl(SavedStateReader.m9209constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate());
+        return SavedStateReader.m8471getSavedStateimpl(SavedStateReader.m8414constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate());
     }
 }

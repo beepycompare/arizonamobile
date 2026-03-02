@@ -31,7 +31,7 @@ public final class LegacyCursorAnchorInfoController {
     private TextLayoutResult textLayoutResult;
     private final Object lock = new Object();
     private final CursorAnchorInfo.Builder builder = new CursorAnchorInfo.Builder();
-    private final float[] matrix = Matrix.m5670constructorimpl$default(null, 1, null);
+    private final float[] matrix = Matrix.m5016constructorimpl$default(null, 1, null);
     private final android.graphics.Matrix androidMatrix = new android.graphics.Matrix();
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -86,15 +86,15 @@ public final class LegacyCursorAnchorInfoController {
         if (!this.inputMethodManager.isActive() || this.textFieldValue == null || this.offsetMapping == null || this.textLayoutResult == null || this.innerTextFieldBounds == null || this.decorationBoxBounds == null) {
             return;
         }
-        Matrix.m5679resetimpl(this.matrix);
-        this.localToScreen.invoke(Matrix.m5668boximpl(this.matrix));
+        Matrix.m5025resetimpl(this.matrix);
+        this.localToScreen.invoke(Matrix.m5014boximpl(this.matrix));
         float[] fArr = this.matrix;
         Rect rect = this.decorationBoxBounds;
         Intrinsics.checkNotNull(rect);
         Rect rect2 = this.decorationBoxBounds;
         Intrinsics.checkNotNull(rect2);
-        Matrix.m5691translateimpl(fArr, -rect.getLeft(), -rect2.getTop(), 0.0f);
-        AndroidMatrixConversions_androidKt.m5291setFromEL8BTi8(this.androidMatrix, this.matrix);
+        Matrix.m5037translateimpl(fArr, -rect.getLeft(), -rect2.getTop(), 0.0f);
+        AndroidMatrixConversions_androidKt.m4639setFromEL8BTi8(this.androidMatrix, this.matrix);
         InputMethodManager inputMethodManager = this.inputMethodManager;
         CursorAnchorInfo.Builder builder = this.builder;
         TextFieldValue textFieldValue = this.textFieldValue;

@@ -25,12 +25,12 @@ import kotlinx.serialization.builtins.BuiltinSerializersKt;
 public final class DefaultComponentContextBuilderKt {
     private static final String KEY_STATE_MARKER = "DefaultComponentContext_state_marker";
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean defaultComponentContext$lambda$0() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean defaultComponentContext$lambda$1() {
         return true;
     }
@@ -61,9 +61,7 @@ public final class DefaultComponentContextBuilderKt {
             function0 = new Function0() { // from class: com.arkivanov.decompose.DefaultComponentContextBuilderKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean defaultComponentContext$lambda$0;
-                    defaultComponentContext$lambda$0 = DefaultComponentContextBuilderKt.defaultComponentContext$lambda$0();
-                    return Boolean.valueOf(defaultComponentContext$lambda$0);
+                    return Boolean.valueOf(DefaultComponentContextBuilderKt.defaultComponentContext$lambda$0());
                 }
             };
         }
@@ -84,9 +82,7 @@ public final class DefaultComponentContextBuilderKt {
             function0 = new Function0() { // from class: com.arkivanov.decompose.DefaultComponentContextBuilderKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean defaultComponentContext$lambda$1;
-                    defaultComponentContext$lambda$1 = DefaultComponentContextBuilderKt.defaultComponentContext$lambda$1();
-                    return Boolean.valueOf(defaultComponentContext$lambda$1);
+                    return Boolean.valueOf(DefaultComponentContextBuilderKt.defaultComponentContext$lambda$1());
                 }
             };
         }
@@ -105,15 +101,13 @@ public final class DefaultComponentContextBuilderKt {
         stateKeeper.register(KEY_STATE_MARKER, BuiltinSerializersKt.serializer(StringCompanionObject.INSTANCE), new Function0() { // from class: com.arkivanov.decompose.DefaultComponentContextBuilderKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String defaultComponentContext$lambda$3;
-                defaultComponentContext$lambda$3 = DefaultComponentContextBuilderKt.defaultComponentContext$lambda$3();
-                return defaultComponentContext$lambda$3;
+                return DefaultComponentContextBuilderKt.defaultComponentContext$lambda$3();
             }
         });
         return new DefaultComponentContext(AndroidExtKt.asEssentyLifecycle(t.getLifecycle()), stateKeeper, com.arkivanov.essenty.instancekeeper.AndroidExtKt.instanceKeeper(t, str == null), backHandler);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String defaultComponentContext$lambda$3() {
         return "marker";
     }

@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InputField.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$InputFieldKt {
     public static final ComposableSingletons$InputFieldKt INSTANCE = new ComposableSingletons$InputFieldKt();
@@ -18,18 +18,16 @@ public final class ComposableSingletons$InputFieldKt {
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f133lambda$1682333503 = ComposableLambdaKt.composableLambdaInstance(-1682333503, false, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.connection.ComposableSingletons$InputFieldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__1682333503$lambda$0;
-            lambda__1682333503$lambda$0 = ComposableSingletons$InputFieldKt.lambda__1682333503$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__1682333503$lambda$0;
+            return ComposableSingletons$InputFieldKt.lambda__1682333503$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
-    /* renamed from: getLambda$-1682333503$dialogs_release  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m10085getLambda$1682333503$dialogs_release() {
+    /* renamed from: getLambda$-1682333503$dialogs  reason: not valid java name */
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9090getLambda$1682333503$dialogs() {
         return f133lambda$1682333503;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1682333503$lambda$0(Function2 innerTextField, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(innerTextField, "innerTextField");
         ComposerKt.sourceInformation(composer, "CN(innerTextField)56@2159L16:InputField.kt#yp5s1q");

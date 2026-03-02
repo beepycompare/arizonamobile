@@ -153,29 +153,30 @@ public class BitmapHunter implements Runnable {
                             }
                             Bitmap hunt = hunt();
                             this.result = hunt;
+                            Dispatcher dispatcher = this.dispatcher;
                             if (hunt == null) {
-                                this.dispatcher.dispatchFailed(this);
+                                dispatcher.dispatchFailed(this);
                             } else {
-                                this.dispatcher.dispatchComplete(this);
+                                dispatcher.dispatchComplete(this);
                             }
-                        } catch (IOException e) {
-                            this.exception = e;
-                            this.dispatcher.dispatchRetry(this);
+                        } catch (NetworkRequestHandler.ResponseException e) {
+                            if (!NetworkPolicy.isOfflineOnly(e.networkPolicy) || e.code != 504) {
+                                this.exception = e;
+                            }
+                            this.dispatcher.dispatchFailed(this);
                         }
-                    } catch (OutOfMemoryError e2) {
-                        StringWriter stringWriter = new StringWriter();
-                        this.stats.createSnapshot().dump(new PrintWriter(stringWriter));
-                        this.exception = new RuntimeException(stringWriter.toString(), e2);
-                        this.dispatcher.dispatchFailed(this);
+                    } catch (IOException e2) {
+                        this.exception = e2;
+                        this.dispatcher.dispatchRetry(this);
                     }
-                } catch (Exception e3) {
-                    this.exception = e3;
+                } catch (OutOfMemoryError e3) {
+                    StringWriter stringWriter = new StringWriter();
+                    this.stats.createSnapshot().dump(new PrintWriter(stringWriter));
+                    this.exception = new RuntimeException(stringWriter.toString(), e3);
                     this.dispatcher.dispatchFailed(this);
                 }
-            } catch (NetworkRequestHandler.ResponseException e4) {
-                if (!NetworkPolicy.isOfflineOnly(e4.networkPolicy) || e4.code != 504) {
-                    this.exception = e4;
-                }
+            } catch (Exception e4) {
+                this.exception = e4;
                 this.dispatcher.dispatchFailed(this);
             }
         } finally {

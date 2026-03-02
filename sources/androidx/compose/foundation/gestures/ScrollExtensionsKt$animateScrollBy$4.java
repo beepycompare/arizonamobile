@@ -58,17 +58,15 @@ public final class ScrollExtensionsKt$animateScrollBy$4 extends SuspendLambda im
             ResultKt.throwOnFailure(obj);
             final Scroll2DScope scroll2DScope = (Scroll2DScope) this.L$0;
             TwoWayConverter<Offset, AnimationVector2D> vectorConverter = VectorConvertersKt.getVectorConverter(Offset.Companion);
-            Offset m5168boximpl = Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0());
-            Offset m5168boximpl2 = Offset.m5168boximpl(this.f11$$v$c$androidxcomposeuigeometryOffset$value$0);
+            Offset m4516boximpl = Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0());
+            Offset m4516boximpl2 = Offset.m4516boximpl(this.f11$$v$c$androidxcomposeuigeometryOffset$value$0);
             AnimationSpec<Offset> animationSpec = this.$animationSpec;
             final Ref.LongRef longRef = this.$previousValue;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(vectorConverter, m5168boximpl, m5168boximpl2, null, animationSpec, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollExtensionsKt$animateScrollBy$4$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(vectorConverter, m4516boximpl, m4516boximpl2, null, animationSpec, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollExtensionsKt$animateScrollBy$4$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = ScrollExtensionsKt$animateScrollBy$4.invokeSuspend$lambda$0(Ref.LongRef.this, scroll2DScope, (Offset) obj2, (Offset) obj3);
-                    return invokeSuspend$lambda$0;
+                    return ScrollExtensionsKt$animateScrollBy$4.invokeSuspend$lambda$0(Ref.LongRef.this, scroll2DScope, (Offset) obj2, (Offset) obj3);
                 }
             }, this, 8, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -81,9 +79,9 @@ public final class ScrollExtensionsKt$animateScrollBy$4 extends SuspendLambda im
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, Scroll2DScope scroll2DScope, Offset offset, Offset offset2) {
-        longRef.element = Offset.m5184plusMKHz9U(longRef.element, scroll2DScope.mo515scrollByMKHz9U(Offset.m5183minusMKHz9U(offset.m5189unboximpl(), longRef.element)));
+        longRef.element = Offset.m4532plusMKHz9U(longRef.element, scroll2DScope.mo446scrollByMKHz9U(Offset.m4531minusMKHz9U(offset.m4537unboximpl(), longRef.element)));
         return Unit.INSTANCE;
     }
 }

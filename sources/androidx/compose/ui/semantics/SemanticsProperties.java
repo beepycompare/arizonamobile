@@ -113,13 +113,13 @@ public final class SemanticsProperties {
     }, null, 8, null);
     private static final SemanticsPropertyKey<Role> Role = new SemanticsPropertyKey<>("Role", true, new Function2<Role, Role, Role>() { // from class: androidx.compose.ui.semantics.SemanticsProperties$Role$1
         /* renamed from: invoke-qtA-w6s  reason: not valid java name */
-        public final Role m7456invokeqtAw6s(Role role, int i) {
+        public final Role m6788invokeqtAw6s(Role role, int i) {
             return role;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public /* bridge */ /* synthetic */ Role invoke(Role role, Role role2) {
-            return m7456invokeqtAw6s(role, role2.m7441unboximpl());
+            return m6788invokeqtAw6s(role, role2.m6773unboximpl());
         }
     }, null, 8, null);
     private static final SemanticsPropertyKey<String> TestTag = new SemanticsPropertyKey<>("TestTag", false, new Function2<String, String, String>() { // from class: androidx.compose.ui.semantics.SemanticsProperties$TestTag$1

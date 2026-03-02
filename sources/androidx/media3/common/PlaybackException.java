@@ -311,8 +311,8 @@ public class PlaybackException extends Exception {
     }
 
     private static Bundle getExtrasFromBundle(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle(FIELD_BUNDLE_EXTRAS);
-        return bundle2 != null ? bundle2 : Bundle.EMPTY;
+        Bundle convertToNullIfInvalid = Util.convertToNullIfInvalid(bundle.getBundle(FIELD_BUNDLE_EXTRAS));
+        return convertToNullIfInvalid != null ? convertToNullIfInvalid : Bundle.EMPTY;
     }
 
     private static Throwable getCauseFromBundle(Bundle bundle) {

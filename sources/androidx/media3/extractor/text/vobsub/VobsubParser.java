@@ -18,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.zip.Inflater;
+import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
 public final class VobsubParser implements SubtitleParser {
     public static final int CUE_REPLACEMENT_BEHAVIOR = 2;
@@ -59,7 +60,7 @@ public final class VobsubParser implements SubtitleParser {
         if (bytesLeft < 2 || this.scratch.readUnsignedShort() != bytesLeft) {
             return null;
         }
-        this.cueBuilder.parseSpu(this.scratch);
+        this.cueBuilder.parseSpuControlSequenceTable(this.scratch);
         return this.cueBuilder.build(this.scratch);
     }
 
@@ -99,7 +100,9 @@ public final class VobsubParser implements SubtitleParser {
                     }
                 } else if (str2.startsWith("size: ")) {
                     String[] split3 = Util.split(str2.substring("size: ".length()).trim(), "x");
-                    if (split3.length == 2) {
+                    if (split3.length != 2) {
+                        Log.w(VobsubParser.TAG, "Ignoring malformed IDX size line: '" + str2 + "'");
+                    } else {
                         try {
                             this.planeWidth = Integer.parseInt(split3[0]);
                             this.planeHeight = Integer.parseInt(split3[1]);
@@ -115,67 +118,86 @@ public final class VobsubParser implements SubtitleParser {
         private static int parseColor(String str) {
             try {
                 return Integer.parseInt(str, 16);
-            } catch (RuntimeException unused) {
+            } catch (RuntimeException e) {
+                Log.w(VobsubParser.TAG, "Parsing color failed", e);
                 return 0;
             }
         }
 
-        public void parseSpu(ParsableByteArray parsableByteArray) {
-            int[] iArr = this.palette;
-            if (iArr == null || !this.hasPlane) {
-                return;
+        /* JADX INFO: Access modifiers changed from: private */
+        public void parseSpuControlSequenceTable(ParsableByteArray parsableByteArray) {
+            if (this.palette == null) {
+                Log.w(VobsubParser.TAG, "Skipping SPU (no palette)");
+            } else if (!this.hasPlane) {
+                Log.w(VobsubParser.TAG, "Skipping SPU (no plane)");
+            } else {
+                int position = parsableByteArray.getPosition() - 2;
+                parsableByteArray.setPosition(parsableByteArray.readUnsignedShort() + position);
+                do {
+                } while (parseControlSequence(parsableByteArray, position));
             }
-            parsableByteArray.skipBytes(parsableByteArray.readUnsignedShort() - 2);
-            parseControl(iArr, parsableByteArray, parsableByteArray.readUnsignedShort());
         }
 
-        private void parseControl(int[] iArr, ParsableByteArray parsableByteArray, int i) {
-            while (parsableByteArray.getPosition() < i && parsableByteArray.bytesLeft() > 0) {
-                switch (parsableByteArray.readUnsignedByte()) {
+        @RequiresNonNull({"this.palette"})
+        private boolean parseControlSequence(ParsableByteArray parsableByteArray, int i) {
+            boolean z = false;
+            if (parsableByteArray.bytesLeft() < 4) {
+                return false;
+            }
+            int position = parsableByteArray.getPosition();
+            parsableByteArray.skipBytes(2);
+            int readUnsignedShort = i + parsableByteArray.readUnsignedShort();
+            boolean z2 = true;
+            if (readUnsignedShort != position && readUnsignedShort < parsableByteArray.limit()) {
+                z = true;
+            }
+            int limit = z ? readUnsignedShort : parsableByteArray.limit();
+            while (parsableByteArray.getPosition() < limit && z2) {
+                z2 = parseCommand(parsableByteArray);
+            }
+            if (z) {
+                parsableByteArray.setPosition(readUnsignedShort);
+            }
+            return z;
+        }
+
+        @RequiresNonNull({"this.palette"})
+        private boolean parseCommand(ParsableByteArray parsableByteArray) {
+            int readUnsignedByte = parsableByteArray.readUnsignedByte();
+            if (readUnsignedByte != 255) {
+                switch (readUnsignedByte) {
                     case 0:
                     case 1:
                     case 2:
-                        break;
+                        return true;
                     case 3:
-                        if (parseControlColors(iArr, parsableByteArray)) {
-                            break;
-                        } else {
-                            return;
-                        }
+                        return parseControlColors(parsableByteArray);
                     case 4:
-                        if (parseControlAlpha(parsableByteArray)) {
-                            break;
-                        } else {
-                            return;
-                        }
+                        return parseControlAlpha(parsableByteArray);
                     case 5:
-                        if (parseControlArea(parsableByteArray)) {
-                            break;
-                        } else {
-                            return;
-                        }
+                        return parseControlArea(parsableByteArray);
                     case 6:
-                        if (parseControlOffsets(parsableByteArray)) {
-                            break;
-                        } else {
-                            return;
-                        }
+                        return parseControlOffsets(parsableByteArray);
                     default:
-                        return;
+                        Log.w(VobsubParser.TAG, "Unrecognized command: " + readUnsignedByte);
+                        return false;
                 }
             }
+            return false;
         }
 
-        private boolean parseControlColors(int[] iArr, ParsableByteArray parsableByteArray) {
+        @RequiresNonNull({"this.palette"})
+        private boolean parseControlColors(ParsableByteArray parsableByteArray) {
             if (parsableByteArray.bytesLeft() < 2) {
+                Log.w(VobsubParser.TAG, "Incomplete color command");
                 return false;
             }
             int readUnsignedByte = parsableByteArray.readUnsignedByte();
             int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
-            this.colors[3] = getColor(iArr, readUnsignedByte >> 4);
-            this.colors[2] = getColor(iArr, readUnsignedByte & 15);
-            this.colors[1] = getColor(iArr, readUnsignedByte2 >> 4);
-            this.colors[0] = getColor(iArr, readUnsignedByte2 & 15);
+            this.colors[3] = getColor(this.palette, readUnsignedByte >> 4);
+            this.colors[2] = getColor(this.palette, readUnsignedByte & 15);
+            this.colors[1] = getColor(this.palette, readUnsignedByte2 >> 4);
+            this.colors[0] = getColor(this.palette, readUnsignedByte2 & 15);
             this.hasColors = true;
             return true;
         }
@@ -185,24 +207,30 @@ public final class VobsubParser implements SubtitleParser {
         }
 
         private boolean parseControlAlpha(ParsableByteArray parsableByteArray) {
-            if (parsableByteArray.bytesLeft() < 2 || !this.hasColors) {
+            if (parsableByteArray.bytesLeft() < 2) {
+                Log.w(VobsubParser.TAG, "Incomplete alpha command");
                 return false;
+            } else if (!this.hasColors) {
+                Log.w(VobsubParser.TAG, "Ignoring alpha command before color command");
+                return false;
+            } else {
+                int readUnsignedByte = parsableByteArray.readUnsignedByte();
+                int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
+                int[] iArr = this.colors;
+                iArr[3] = setAlpha(iArr[3], readUnsignedByte >> 4);
+                int[] iArr2 = this.colors;
+                iArr2[2] = setAlpha(iArr2[2], readUnsignedByte & 15);
+                int[] iArr3 = this.colors;
+                iArr3[1] = setAlpha(iArr3[1], readUnsignedByte2 >> 4);
+                int[] iArr4 = this.colors;
+                iArr4[0] = setAlpha(iArr4[0], readUnsignedByte2 & 15);
+                return true;
             }
-            int readUnsignedByte = parsableByteArray.readUnsignedByte();
-            int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
-            int[] iArr = this.colors;
-            iArr[3] = setAlpha(iArr[3], readUnsignedByte >> 4);
-            int[] iArr2 = this.colors;
-            iArr2[2] = setAlpha(iArr2[2], readUnsignedByte & 15);
-            int[] iArr3 = this.colors;
-            iArr3[1] = setAlpha(iArr3[1], readUnsignedByte2 >> 4);
-            int[] iArr4 = this.colors;
-            iArr4[0] = setAlpha(iArr4[0], readUnsignedByte2 & 15);
-            return true;
         }
 
         private boolean parseControlArea(ParsableByteArray parsableByteArray) {
             if (parsableByteArray.bytesLeft() < 6) {
+                Log.w(VobsubParser.TAG, "Incomplete area command");
                 return false;
             }
             int readUnsignedByte = parsableByteArray.readUnsignedByte();
@@ -217,6 +245,7 @@ public final class VobsubParser implements SubtitleParser {
 
         private boolean parseControlOffsets(ParsableByteArray parsableByteArray) {
             if (parsableByteArray.bytesLeft() < 4) {
+                Log.w(VobsubParser.TAG, "Incomplete offsets command");
                 return false;
             }
             this.dataOffset0 = parsableByteArray.readUnsignedShort();

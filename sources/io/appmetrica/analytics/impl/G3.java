@@ -39,7 +39,7 @@ public final class G3 {
         }
         JSONObject jSONObject = new JSONObject(str);
         PreloadInfo.Builder newBuilder = PreloadInfo.newBuilder(jSONObject.has("trackid") ? jSONObject.optString("trackid") : null);
-        HashMap c = AbstractC0272gb.c(jSONObject.optString("params"));
+        HashMap c = AbstractC0271gb.c(jSONObject.optString("params"));
         if (c != null && c.size() > 0) {
             for (Map.Entry entry : c.entrySet()) {
                 newBuilder.setAdditionalParams((String) entry.getKey(), (String) entry.getValue());
@@ -83,7 +83,7 @@ public final class G3 {
             if (jSONObject.has("max_reports_in_db_count")) {
                 newConfigBuilder.withMaxReportsInDatabaseCount(jSONObject.optInt("max_reports_in_db_count"));
             }
-            if (jSONObject.has("error_environment") && (c2 = AbstractC0272gb.c(jSONObject.optString("error_environment"))) != null) {
+            if (jSONObject.has("error_environment") && (c2 = AbstractC0271gb.c(jSONObject.optString("error_environment"))) != null) {
                 for (Map.Entry entry : c2.entrySet()) {
                     newConfigBuilder.withErrorEnvironmentValue((String) entry.getKey(), (String) entry.getValue());
                 }
@@ -122,7 +122,7 @@ public final class G3 {
             if (jSONObject.has("max_reports_count")) {
                 newConfigBuilder.withMaxReportsCount(jSONObject.optInt("max_reports_count"));
             }
-            if (jSONObject.has("app_environment") && (c = AbstractC0272gb.c(jSONObject.optString("app_environment"))) != null) {
+            if (jSONObject.has("app_environment") && (c = AbstractC0271gb.c(jSONObject.optString("app_environment"))) != null) {
                 for (Map.Entry entry2 : c.entrySet()) {
                     newConfigBuilder.withAppEnvironmentValue((String) entry2.getKey(), (String) entry2.getValue());
                 }
@@ -134,7 +134,7 @@ public final class G3 {
                 newConfigBuilder.withAnrMonitoringTimeout(jSONObject.optInt("anr_monitoring_timeout"));
             }
             if (jSONObject.has("customHosts")) {
-                newConfigBuilder.withCustomHosts(AbstractC0272gb.a(jSONObject.optJSONArray("customHosts")));
+                newConfigBuilder.withCustomHosts(AbstractC0271gb.a(jSONObject.optJSONArray("customHosts")));
             }
             if (jSONObject.has("additional_config")) {
                 try {

@@ -620,13 +620,13 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to operator function", replaceWith = @ReplaceWith(expression = "this[index]", imports = {}))
     /* renamed from: -deprecated_getByte  reason: not valid java name */
-    public final byte m12172deprecated_getByte(long j) {
+    public final byte m11038deprecated_getByte(long j) {
         return getByte(j);
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}))
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final long m12173deprecated_size() {
+    public final long m11039deprecated_size() {
         return this.size;
     }
 
@@ -2110,6 +2110,6 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             i5++;
             segment2 = segment2.next;
         }
-        return new C0787SegmentedByteString(bArr, iArr);
+        return new C0786SegmentedByteString(bArr, iArr);
     }
 }

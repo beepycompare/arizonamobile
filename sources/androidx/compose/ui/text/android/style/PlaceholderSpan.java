@@ -61,7 +61,7 @@ public final class PlaceholderSpan extends ReplacementSpan {
     }
 
     public PlaceholderSpan(float f, int i, float f2, int i2, Density density, int i3) {
-        this(f, i, f2, i2, i == 0 ? density.mo463toPxR2X_6o(TextUnitKt.getSp(f)) : 0.0f, i2 == 0 ? density.mo463toPxR2X_6o(TextUnitKt.getSp(f2)) : 0.0f, i3);
+        this(f, i, f2, i2, i == 0 ? density.mo404toPxR2X_6o(TextUnitKt.getSp(f)) : 0.0f, i2 == 0 ? density.mo404toPxR2X_6o(TextUnitKt.getSp(f2)) : 0.0f, i3);
     }
 
     /* compiled from: PlaceholderSpan.android.kt */

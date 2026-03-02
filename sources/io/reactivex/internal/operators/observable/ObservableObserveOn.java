@@ -188,10 +188,11 @@ public final class ObservableObserveOn<T> extends AbstractObservableWithUpstream
                 if (z) {
                     this.disposed = true;
                     Throwable th2 = this.error;
+                    Observer<? super T> observer = this.downstream;
                     if (th2 != null) {
-                        this.downstream.onError(th2);
+                        observer.onError(th2);
                     } else {
-                        this.downstream.onComplete();
+                        observer.onComplete();
                     }
                     this.worker.dispose();
                     return;

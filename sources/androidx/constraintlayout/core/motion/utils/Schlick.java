@@ -18,20 +18,16 @@ public class Schlick extends Easing {
 
     private double func(double d) {
         double d2 = this.mT;
-        if (d < d2) {
-            return (d2 * d) / (d + (this.mS * (d2 - d)));
-        }
-        return ((1.0d - d2) * (d - 1.0d)) / ((1.0d - d) - (this.mS * (d2 - d)));
+        int i = (d > d2 ? 1 : (d == d2 ? 0 : -1));
+        double d3 = this.mS;
+        return i < 0 ? (d2 * d) / (d + (d3 * (d2 - d))) : ((1.0d - d2) * (d - 1.0d)) / ((1.0d - d) - (d3 * (d2 - d)));
     }
 
     private double dfunc(double d) {
         double d2 = this.mT;
-        if (d < d2) {
-            double d3 = this.mS;
-            return ((d3 * d2) * d2) / ((((d2 - d) * d3) + d) * ((d3 * (d2 - d)) + d));
-        }
-        double d4 = this.mS;
-        return (((d2 - 1.0d) * d4) * (d2 - 1.0d)) / (((((-d4) * (d2 - d)) - d) + 1.0d) * ((((-d4) * (d2 - d)) - d) + 1.0d));
+        int i = (d > d2 ? 1 : (d == d2 ? 0 : -1));
+        double d3 = this.mS;
+        return i < 0 ? ((d3 * d2) * d2) / ((((d2 - d) * d3) + d) * ((d3 * (d2 - d)) + d)) : (((d2 - 1.0d) * d3) * (d2 - 1.0d)) / (((((-d3) * (d2 - d)) - d) + 1.0d) * ((((-d3) * (d2 - d)) - d) + 1.0d));
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.Easing

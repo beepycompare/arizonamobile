@@ -104,7 +104,12 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
             if (MediaStoreUtil.isAndroidPickerUri(this.uri)) {
                 return this.uriDelegate.buildLoadData(this.uri, this.width, this.height, this.options);
             }
-            return this.uriDelegate.buildLoadData(isAccessMediaLocationGranted() ? MediaStore.setRequireOriginal(this.uri) : this.uri, this.width, this.height, this.options);
+            boolean isAccessMediaLocationGranted = isAccessMediaLocationGranted();
+            Uri uri = this.uri;
+            if (isAccessMediaLocationGranted) {
+                uri = MediaStore.setRequireOriginal(uri);
+            }
+            return this.uriDelegate.buildLoadData(uri, this.width, this.height, this.options);
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher

@@ -27,14 +27,16 @@ class ActionBarBackgroundDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        if (this.mContainer.mIsSplit) {
-            if (this.mContainer.mSplitBackground != null) {
+        boolean z = this.mContainer.mIsSplit;
+        ActionBarContainer actionBarContainer = this.mContainer;
+        if (z) {
+            if (actionBarContainer.mSplitBackground != null) {
                 this.mContainer.mSplitBackground.draw(canvas);
                 return;
             }
             return;
         }
-        if (this.mContainer.mBackground != null) {
+        if (actionBarContainer.mBackground != null) {
             this.mContainer.mBackground.draw(canvas);
         }
         if (this.mContainer.mStackedBackground == null || !this.mContainer.mIsStacked) {
@@ -45,11 +47,13 @@ class ActionBarBackgroundDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        if (this.mContainer.mIsSplit) {
-            if (this.mContainer.mSplitBackground != null) {
+        boolean z = this.mContainer.mIsSplit;
+        ActionBarContainer actionBarContainer = this.mContainer;
+        if (z) {
+            if (actionBarContainer.mSplitBackground != null) {
                 Api21Impl.getOutline(this.mContainer.mBackground, outline);
             }
-        } else if (this.mContainer.mBackground != null) {
+        } else if (actionBarContainer.mBackground != null) {
             Api21Impl.getOutline(this.mContainer.mBackground, outline);
         }
     }

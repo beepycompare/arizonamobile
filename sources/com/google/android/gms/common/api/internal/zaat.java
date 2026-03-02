@@ -35,11 +35,12 @@ final class zaat implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient
         lock.lock();
         try {
             zaI = this.zaa.zaI(connectionResult);
+            zaaw zaawVar = this.zaa;
             if (zaI) {
-                this.zaa.zaA();
+                zaawVar.zaA();
                 this.zaa.zaF();
             } else {
-                this.zaa.zaD(connectionResult);
+                zaawVar.zaD(connectionResult);
             }
         } finally {
             lock2 = this.zaa.zab;

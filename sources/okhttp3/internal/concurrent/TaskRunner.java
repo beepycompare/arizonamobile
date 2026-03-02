@@ -143,10 +143,12 @@ public final class TaskRunner implements Lockable {
         TaskRunner taskRunner = this;
         if (!_UtilJvmKt.assertionsEnabled || Thread.holdsLock(taskRunner)) {
             if (taskQueue.getActiveTask$okhttp() == null) {
-                if (!taskQueue.getFutureTasks$okhttp().isEmpty()) {
-                    _UtilCommonKt.addIfAbsent(this.readyQueues, taskQueue);
+                boolean isEmpty = taskQueue.getFutureTasks$okhttp().isEmpty();
+                List<TaskQueue> list = this.readyQueues;
+                if (!isEmpty) {
+                    _UtilCommonKt.addIfAbsent(list, taskQueue);
                 } else {
-                    this.readyQueues.remove(taskQueue);
+                    list.remove(taskQueue);
                 }
             }
             if (this.coordinatorWaiting) {

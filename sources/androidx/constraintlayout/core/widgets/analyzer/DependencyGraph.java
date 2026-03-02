@@ -238,8 +238,9 @@ public class DependencyGraph {
                 this.mWidgetcontainer.mVerticalRun.mDimension.resolve(this.mWidgetcontainer.getHeight());
             }
         }
+        ConstraintWidgetContainer constraintWidgetContainer3 = this.mWidgetcontainer;
         if (i == 0) {
-            if (this.mWidgetcontainer.mListDimensionBehaviors[0] == ConstraintWidget.DimensionBehaviour.FIXED || this.mWidgetcontainer.mListDimensionBehaviors[0] == ConstraintWidget.DimensionBehaviour.MATCH_PARENT) {
+            if (constraintWidgetContainer3.mListDimensionBehaviors[0] == ConstraintWidget.DimensionBehaviour.FIXED || this.mWidgetcontainer.mListDimensionBehaviors[0] == ConstraintWidget.DimensionBehaviour.MATCH_PARENT) {
                 int width = this.mWidgetcontainer.getWidth() + x;
                 this.mWidgetcontainer.mHorizontalRun.end.resolve(width);
                 this.mWidgetcontainer.mHorizontalRun.mDimension.resolve(width - x);
@@ -247,7 +248,7 @@ public class DependencyGraph {
             }
             z2 = false;
         } else {
-            if (this.mWidgetcontainer.mListDimensionBehaviors[1] == ConstraintWidget.DimensionBehaviour.FIXED || this.mWidgetcontainer.mListDimensionBehaviors[1] == ConstraintWidget.DimensionBehaviour.MATCH_PARENT) {
+            if (constraintWidgetContainer3.mListDimensionBehaviors[1] == ConstraintWidget.DimensionBehaviour.FIXED || this.mWidgetcontainer.mListDimensionBehaviors[1] == ConstraintWidget.DimensionBehaviour.MATCH_PARENT) {
                 int height = this.mWidgetcontainer.getHeight() + y;
                 this.mWidgetcontainer.mVerticalRun.end.resolve(height);
                 this.mWidgetcontainer.mVerticalRun.mDimension.resolve(height - y);

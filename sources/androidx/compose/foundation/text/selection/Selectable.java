@@ -17,7 +17,7 @@ public interface Selectable {
     float getCenterYForOffset(int i);
 
     /* renamed from: getHandlePosition-dBAh8RU */
-    long mo1828getHandlePositiondBAh8RU(Selection selection, boolean z);
+    long mo1584getHandlePositiondBAh8RU(Selection selection, boolean z);
 
     int getLastVisibleOffset();
 
@@ -30,7 +30,7 @@ public interface Selectable {
     float getLineRight(int i);
 
     /* renamed from: getRangeOfLineContaining--jx7JFs */
-    long mo1829getRangeOfLineContainingjx7JFs(int i);
+    long mo1585getRangeOfLineContainingjx7JFs(int i);
 
     Selection getSelectAllSelection();
 

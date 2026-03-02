@@ -64,10 +64,11 @@ public class NavigationBarPresenter implements MenuPresenter {
         if (this.updateSuspended) {
             return;
         }
+        NavigationBarMenuView navigationBarMenuView = this.menuView;
         if (z) {
-            this.menuView.buildMenuView();
+            navigationBarMenuView.buildMenuView();
         } else {
-            this.menuView.updateMenuView();
+            navigationBarMenuView.updateMenuView();
         }
     }
 

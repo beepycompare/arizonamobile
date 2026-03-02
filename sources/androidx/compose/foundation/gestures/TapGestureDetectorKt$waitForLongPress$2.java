@@ -68,7 +68,7 @@ public final class TapGestureDetectorKt$waitForLongPress$2 extends RestrictedSus
         if (r7.isConsumed() != false) goto L39;
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0093, code lost:
-        if (androidx.compose.ui.input.pointer.PointerEventKt.m6689isOutOfBoundsjwHxaWs(r7, r1.mo6640getSizeYbymL2g(), r1.mo6639getExtendedTouchPaddingNHjbRc()) == false) goto L36;
+        if (androidx.compose.ui.input.pointer.PointerEventKt.m6030isOutOfBoundsjwHxaWs(r7, r1.mo5981getSizeYbymL2g(), r1.mo5980getExtendedTouchPaddingNHjbRc()) == false) goto L36;
      */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x0096, code lost:
         r6 = r6 + 1;

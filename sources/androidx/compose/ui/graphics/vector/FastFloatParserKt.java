@@ -11,7 +11,7 @@ import kotlin.ULongArray;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FastFloatParser.kt */
 @Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0014\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\u0010\f\n\u0002\b\n\u001a \u0010\u0013\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00012\u0006\u0010\u0017\u001a\u00020\u0001H\u0000\u001a\u0019\u0010\"\u001a\u00020\f2\u0006\u0010\u000b\u001a\u00020\u00012\u0006\u0010#\u001a\u00020\u0010H\u0082\b\u001a\u0019\u0010$\u001a\u00020\f2\u0006\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020\fH\u0082\b\u001a\u0019\u0010'\u001a\u00020\u00012\u0006\u0010(\u001a\u00020\u00152\u0006\u0010)\u001a\u00020\u0001H\u0082\b\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u001a\u0010\u0005\u001a\u00020\u0006X\u0080\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\u0007\u0010\b\u001a\u0004\b\t\u0010\n\"\u0019\u0010\u000b\u001a\u00020\u0001*\u00020\f8À\u0002X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000e\"\u0019\u0010\u000f\u001a\u00020\u0010*\u00020\f8À\u0002X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012\"\u001c\u0010\u0018\u001a\u00020\u0019X\u0080\u0004¢\u0006\u0010\n\u0002\u0010\u001d\u0012\u0004\b\u001a\u0010\b\u001a\u0004\b\u001b\u0010\u001c\"\u0019\u0010\u001e\u001a\u00020\u001f*\u00020 8À\u0002X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010!¨\u0006*"}, d2 = {"FloatMinExponent", "", "FloatMaxExponent", "FloatSmallestExponent", "FloatMaxExponentNumber", "PowersOfTen", "", "getPowersOfTen$annotations", "()V", "getPowersOfTen", "()[F", FirebaseAnalytics.Param.INDEX, "", "getIndex", "(J)I", "floatValue", "", "getFloatValue", "(J)F", "nextFloat", CmcdData.STREAMING_FORMAT_SS, "", TtmlNode.START, TtmlNode.END, "Mantissa64", "Lkotlin/ULongArray;", "getMantissa64$annotations", "getMantissa64", "()[J", "[J", "isDigit", "", "", "(C)Z", "pack", "value", "fullMultiplicationHighBits", "x", "y", "parseFourDigits", "str", TypedValues.CycleType.S_WAVE_OFFSET, "ui-graphics"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class FastFloatParserKt {
     private static final int FloatMaxExponent = 10;
     private static final int FloatMaxExponentNumber = 1024;
@@ -259,7 +259,7 @@ public final class FastFloatParserKt {
                         }
                         char c8 = charAt7;
                         i10 = i13;
-                        compare4 = Long.compare(ULong.m10422constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                        compare4 = Long.compare(ULong.m9361constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                         if (compare4 >= 0) {
                             break;
                         }
@@ -268,14 +268,14 @@ public final class FastFloatParserKt {
                         charAt7 = i3 < length ? str.charAt(i3) : (char) 0;
                         i13 = i10;
                     }
-                    compare2 = Long.compare(ULong.m10422constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                    compare2 = Long.compare(ULong.m9361constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                     if (compare2 >= 0) {
                         i6 = (i10 - i3) + i8;
                     } else {
                         char charAt8 = str.charAt(i5);
                         int i23 = i5;
                         while (i23 != i4) {
-                            compare3 = Long.compare(ULong.m10422constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
+                            compare3 = Long.compare(ULong.m9361constructorimpl(j6) ^ Long.MIN_VALUE, 1000000000000000000L ^ Long.MIN_VALUE);
                             if (compare3 >= 0) {
                                 break;
                             }
@@ -288,7 +288,7 @@ public final class FastFloatParserKt {
                     j2 = j6;
                     c5 = c3;
                     if (-10 <= i6 && i6 < 11 && c5 == 0) {
-                        compare = Long.compare(ULong.m10422constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10422constructorimpl(16777216L) ^ Long.MIN_VALUE);
+                        compare = Long.compare(ULong.m9361constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m9361constructorimpl(16777216L) ^ Long.MIN_VALUE);
                         if (compare <= 0) {
                             float f2 = (float) j2;
                             if (i6 < 0) {
@@ -308,13 +308,13 @@ public final class FastFloatParserKt {
                         Intrinsics.checkNotNullExpressionValue(str.substring(i, i7), "substring(...)");
                         return (i7 << c2) | (Float.floatToRawIntBits(Float.parseFloat(substring)) & j);
                     } else {
-                        long m10482getsVKNKU = ULongArray.m10482getsVKNKU(Mantissa64, i6 + 325);
+                        long m9421getsVKNKU = ULongArray.m9421getsVKNKU(Mantissa64, i6 + 325);
                         int numberOfLeadingZeros = Long.numberOfLeadingZeros(j2);
                         long j7 = j2 << numberOfLeadingZeros;
                         long j8 = j7 & j;
                         long j9 = j7 >>> c2;
-                        long j10 = m10482getsVKNKU & j;
-                        long j11 = m10482getsVKNKU >>> c2;
+                        long j10 = m9421getsVKNKU & j;
+                        long j11 = m9421getsVKNKU >>> c2;
                         long j12 = j9 * j11;
                         long j13 = j11 * j8;
                         long j14 = j12 + ((((j9 * j10) + ((j8 * j10) >>> c2)) + (j13 & j)) >>> c2) + (j13 >>> c2);
@@ -344,7 +344,7 @@ public final class FastFloatParserKt {
             j2 = j4;
             c5 = 0;
             if (-10 <= i6) {
-                compare = Long.compare(ULong.m10422constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m10422constructorimpl(16777216L) ^ Long.MIN_VALUE);
+                compare = Long.compare(ULong.m9361constructorimpl(j2) ^ Long.MIN_VALUE, ULong.m9361constructorimpl(16777216L) ^ Long.MIN_VALUE);
                 if (compare <= 0) {
                 }
             }

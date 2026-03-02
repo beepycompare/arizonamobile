@@ -73,8 +73,8 @@ public final class ScrollCapture implements ComposeScrollCaptureCallback.ScrollC
         }
         ComposeScrollCaptureCallback composeScrollCaptureCallback = new ComposeScrollCaptureCallback(scrollCaptureCandidate.getNode(), scrollCaptureCandidate.getViewportBoundsInWindow(), CoroutineScopeKt.CoroutineScope(coroutineContext), this, view);
         Rect boundsInRoot = LayoutCoordinatesKt.boundsInRoot(scrollCaptureCandidate.getCoordinates());
-        long m8415getTopLeftnOccac = scrollCaptureCandidate.getViewportBoundsInWindow().m8415getTopLeftnOccac();
-        ScrollCaptureTarget scrollCaptureTarget = new ScrollCaptureTarget(view, RectHelper_androidKt.toAndroidRect(IntRectKt.roundToIntRect(boundsInRoot)), new Point(IntOffset.m8386getXimpl(m8415getTopLeftnOccac), IntOffset.m8387getYimpl(m8415getTopLeftnOccac)), composeScrollCaptureCallback);
+        long m7712getTopLeftnOccac = scrollCaptureCandidate.getViewportBoundsInWindow().m7712getTopLeftnOccac();
+        ScrollCaptureTarget scrollCaptureTarget = new ScrollCaptureTarget(view, RectHelper_androidKt.toAndroidRect(IntRectKt.roundToIntRect(boundsInRoot)), new Point(IntOffset.m7683getXimpl(m7712getTopLeftnOccac), IntOffset.m7684getYimpl(m7712getTopLeftnOccac)), composeScrollCaptureCallback);
         scrollCaptureTarget.setScrollBounds(RectHelper_androidKt.toAndroidRect(scrollCaptureCandidate.getViewportBoundsInWindow()));
         consumer.accept(scrollCaptureTarget);
     }

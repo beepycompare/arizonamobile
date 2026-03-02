@@ -232,9 +232,10 @@ public class Dimension {
         if (str != null) {
             constraintWidget.setDimensionRatio(str);
         }
+        boolean z = this.mIsSuggested;
         int i2 = 2;
         if (i == 0) {
-            if (this.mIsSuggested) {
+            if (z) {
                 constraintWidget.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT);
                 Object obj = this.mInitialValue;
                 if (obj == WRAP_DIMENSION) {
@@ -262,7 +263,7 @@ public class Dimension {
                 constraintWidget.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.FIXED);
                 constraintWidget.setWidth(this.mValue);
             }
-        } else if (this.mIsSuggested) {
+        } else if (z) {
             constraintWidget.setVerticalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT);
             Object obj3 = this.mInitialValue;
             if (obj3 == WRAP_DIMENSION) {

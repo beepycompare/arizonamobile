@@ -72,9 +72,7 @@ public final class WideNavigationRailKt$ModalWideNavigationRailContent$5 impleme
             rememberedValue = new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$ModalWideNavigationRailContent$5$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = WideNavigationRailKt$ModalWideNavigationRailContent$5.invoke$lambda$1$lambda$0(Animatable.this, railPredictiveBackState, z, (GraphicsLayerScope) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return WideNavigationRailKt$ModalWideNavigationRailContent$5.invoke$lambda$1$lambda$0(Animatable.this, railPredictiveBackState, z, (GraphicsLayerScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -86,7 +84,7 @@ public final class WideNavigationRailKt$ModalWideNavigationRailContent$5 impleme
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(Animatable animatable, RailPredictiveBackState railPredictiveBackState, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float calculatePredictiveBackScaleX;
         float calculatePredictiveBackScaleY;
@@ -95,7 +93,7 @@ public final class WideNavigationRailKt$ModalWideNavigationRailContent$5 impleme
             calculatePredictiveBackScaleX = WideNavigationRailKt.calculatePredictiveBackScaleX(graphicsLayerScope, floatValue, railPredictiveBackState.getSwipeEdgeMatchesRail());
             calculatePredictiveBackScaleY = WideNavigationRailKt.calculatePredictiveBackScaleY(graphicsLayerScope, floatValue);
             graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX == 0.0f ? 1.0f : calculatePredictiveBackScaleY / calculatePredictiveBackScaleX);
-            graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
+            graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
             return Unit.INSTANCE;
         }
         return Unit.INSTANCE;

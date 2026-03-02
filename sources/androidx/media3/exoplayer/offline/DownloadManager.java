@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DownloadManager {
     public static final int DEFAULT_MAX_PARALLEL_DOWNLOADS = 3;
     public static final int DEFAULT_MIN_RETRY_COUNT = 5;
@@ -62,7 +62,7 @@ public final class DownloadManager {
     private RequirementsWatcher requirementsWatcher;
     private boolean waitingForRequirements;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface Listener {
         default void onDownloadChanged(DownloadManager downloadManager, Download download, Exception exc) {
         }
@@ -357,13 +357,15 @@ public final class DownloadManager {
         this.downloads = Collections.unmodifiableList(downloadUpdate.downloads);
         Download download = downloadUpdate.download;
         boolean updateWaitingForRequirements = updateWaitingForRequirements();
-        if (downloadUpdate.isRemove) {
-            Iterator<Listener> it = this.listeners.iterator();
+        boolean z = downloadUpdate.isRemove;
+        CopyOnWriteArraySet<Listener> copyOnWriteArraySet = this.listeners;
+        if (z) {
+            Iterator<Listener> it = copyOnWriteArraySet.iterator();
             while (it.hasNext()) {
                 it.next().onDownloadRemoved(this, download);
             }
         } else {
-            Iterator<Listener> it2 = this.listeners.iterator();
+            Iterator<Listener> it2 = copyOnWriteArraySet.iterator();
             while (it2.hasNext()) {
                 it2.next().onDownloadChanged(this, download, downloadUpdate.finalException);
             }
@@ -394,7 +396,7 @@ public final class DownloadManager {
         return new Download(download.request.copyWithMergedRequest(downloadRequest), i3, j2, j, -1L, i, 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class InternalHandler extends Handler {
         private static final int UPDATE_PROGRESS_INTERVAL_MS = 5000;
         private int activeDownloadTaskCount;
@@ -585,11 +587,12 @@ public final class DownloadManager {
         }
 
         private void removeAllDownloads() {
-            ArrayList arrayList = new ArrayList();
+            ArrayList<Download> arrayList;
+            ArrayList arrayList2 = new ArrayList();
             try {
                 DownloadCursor downloads = this.downloadIndex.getDownloads(3, 4);
                 while (downloads.moveToNext()) {
-                    arrayList.add(downloads.getDownload());
+                    arrayList2.add(downloads.getDownload());
                 }
                 if (downloads != null) {
                     downloads.close();
@@ -598,21 +601,28 @@ public final class DownloadManager {
                 Log.e(DownloadManager.TAG, "Failed to load downloads.");
             }
             for (int i = 0; i < this.downloads.size(); i++) {
-                ArrayList<Download> arrayList2 = this.downloads;
-                arrayList2.set(i, copyDownloadWithState(arrayList2.get(i), 5, 0));
+                ArrayList<Download> arrayList3 = this.downloads;
+                arrayList3.set(i, copyDownloadWithState(arrayList3.get(i), 5, 0));
             }
-            for (int i2 = 0; i2 < arrayList.size(); i2++) {
-                this.downloads.add(copyDownloadWithState((Download) arrayList.get(i2), 5, 0));
+            int i2 = 0;
+            while (true) {
+                int size = arrayList2.size();
+                arrayList = this.downloads;
+                if (i2 >= size) {
+                    break;
+                }
+                arrayList.add(copyDownloadWithState((Download) arrayList2.get(i2), 5, 0));
+                i2++;
             }
-            Collections.sort(this.downloads, new DownloadManager$InternalHandler$$ExternalSyntheticLambda0());
+            Collections.sort(arrayList, new DownloadManager$InternalHandler$$ExternalSyntheticLambda0());
             try {
                 this.downloadIndex.setStatesToRemoving();
             } catch (IOException e) {
                 Log.e(DownloadManager.TAG, "Failed to update index.", e);
             }
-            ArrayList arrayList3 = new ArrayList(this.downloads);
+            ArrayList arrayList4 = new ArrayList(this.downloads);
             for (int i3 = 0; i3 < this.downloads.size(); i3++) {
-                this.mainHandler.obtainMessage(3, new DownloadUpdate(this.downloads.get(i3), false, arrayList3, null)).sendToTarget();
+                this.mainHandler.obtainMessage(3, new DownloadUpdate(this.downloads.get(i3), false, arrayList4, null)).sendToTarget();
             }
             syncTasks();
         }
@@ -857,7 +867,7 @@ public final class DownloadManager {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class Task extends Thread implements Downloader.ProgressListener {
         private long contentLength;
         private final DownloadProgress downloadProgress;
@@ -948,7 +958,7 @@ public final class DownloadManager {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class DownloadUpdate {
         public final Download download;
         public final List<Download> downloads;

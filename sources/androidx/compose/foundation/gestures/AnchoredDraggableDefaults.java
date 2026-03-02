@@ -21,15 +21,13 @@ public final class AnchoredDraggableDefaults {
     private static final Function1<Float, Float> PositionalThreshold = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableDefaults$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            float PositionalThreshold$lambda$0;
-            PositionalThreshold$lambda$0 = AnchoredDraggableDefaults.PositionalThreshold$lambda$0(((Float) obj).floatValue());
-            return Float.valueOf(PositionalThreshold$lambda$0);
+            return Float.valueOf(AnchoredDraggableDefaults.PositionalThreshold$lambda$0(((Float) obj).floatValue()));
         }
     };
     private static final DecayAnimationSpec<Float> DecayAnimationSpec = DecayAnimationSpecKt.exponentialDecay$default(0.0f, 0.0f, 3, null);
     public static final int $stable = 8;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float PositionalThreshold$lambda$0(float f) {
         return f / 2.0f;
     }

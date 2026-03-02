@@ -181,7 +181,7 @@ public final class UtilsKt {
         return sizeResolver;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AsyncImagePainter.State transformOf$lambda$4(Painter painter, Painter painter2, Painter painter3, AsyncImagePainter.State state) {
         if (state instanceof AsyncImagePainter.State.Loading) {
             return painter != null ? ((AsyncImagePainter.State.Loading) state).copy(painter) : (AsyncImagePainter.State.Loading) state;
@@ -205,9 +205,7 @@ public final class UtilsKt {
             return new Function1() { // from class: coil3.compose.internal.UtilsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AsyncImagePainter.State transformOf$lambda$4;
-                    transformOf$lambda$4 = UtilsKt.transformOf$lambda$4(Painter.this, painter3, painter2, (AsyncImagePainter.State) obj);
-                    return transformOf$lambda$4;
+                    return UtilsKt.transformOf$lambda$4(Painter.this, painter3, painter2, (AsyncImagePainter.State) obj);
                 }
             };
         }
@@ -221,14 +219,12 @@ public final class UtilsKt {
         return new Function1() { // from class: coil3.compose.internal.UtilsKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onStateOf$lambda$5;
-                onStateOf$lambda$5 = UtilsKt.onStateOf$lambda$5(Function1.this, function12, function13, (AsyncImagePainter.State) obj);
-                return onStateOf$lambda$5;
+                return UtilsKt.onStateOf$lambda$5(Function1.this, function12, function13, (AsyncImagePainter.State) obj);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onStateOf$lambda$5(Function1 function1, Function1 function12, Function1 function13, AsyncImagePainter.State state) {
         if (state instanceof AsyncImagePainter.State.Loading) {
             if (function1 != null) {
@@ -266,37 +262,37 @@ public final class UtilsKt {
     }
 
     /* renamed from: toSize-BRTryo0  reason: not valid java name */
-    public static final Size m9430toSizeBRTryo0(long j) {
-        return new Size(toDimension(Constraints.m8211getMaxWidthimpl(j)), toDimension(Constraints.m8210getMaxHeightimpl(j)));
+    public static final Size m8576toSizeBRTryo0(long j) {
+        return new Size(toDimension(Constraints.m7508getMaxWidthimpl(j)), toDimension(Constraints.m7507getMaxHeightimpl(j)));
     }
 
     /* renamed from: toSizeOrNull-uvyYCjk  reason: not valid java name */
-    public static final Size m9431toSizeOrNulluvyYCjk(long j) {
+    public static final Size m8577toSizeOrNulluvyYCjk(long j) {
         if (j == InlineClassHelperKt.UnspecifiedPackedFloats) {
             return Size.ORIGINAL;
         }
-        if (m9428isPositiveuvyYCjk(j)) {
+        if (m8574isPositiveuvyYCjk(j)) {
             return new Size(toDimension(Float.intBitsToFloat((int) (j >> 32))), toDimension(Float.intBitsToFloat((int) (j & 4294967295L))));
         }
         return null;
     }
 
     private static final Dimension toDimension(int i) {
-        return i != Integer.MAX_VALUE ? Dimension.Pixels.m9475boximpl(DimensionKt.Dimension(i)) : Dimension.Undefined.INSTANCE;
+        return i != Integer.MAX_VALUE ? Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(i)) : Dimension.Undefined.INSTANCE;
     }
 
     private static final Dimension toDimension(float f) {
-        return Math.abs(f) <= Float.MAX_VALUE ? Dimension.Pixels.m9475boximpl(DimensionKt.Dimension(MathKt.roundToInt(f))) : Dimension.Undefined.INSTANCE;
+        return Math.abs(f) <= Float.MAX_VALUE ? Dimension.Pixels.m8613boximpl(DimensionKt.Dimension(MathKt.roundToInt(f))) : Dimension.Undefined.INSTANCE;
     }
 
     /* renamed from: constrainWidth-K40F9xA  reason: not valid java name */
-    public static final float m9427constrainWidthK40F9xA(long j, float f) {
-        return RangesKt.coerceIn(f, Constraints.m8213getMinWidthimpl(j), Constraints.m8211getMaxWidthimpl(j));
+    public static final float m8573constrainWidthK40F9xA(long j, float f) {
+        return RangesKt.coerceIn(f, Constraints.m7510getMinWidthimpl(j), Constraints.m7508getMaxWidthimpl(j));
     }
 
     /* renamed from: constrainHeight-K40F9xA  reason: not valid java name */
-    public static final float m9426constrainHeightK40F9xA(long j, float f) {
-        return RangesKt.coerceIn(f, Constraints.m8212getMinHeightimpl(j), Constraints.m8210getMaxHeightimpl(j));
+    public static final float m8572constrainHeightK40F9xA(long j, float f) {
+        return RangesKt.coerceIn(f, Constraints.m7509getMinHeightimpl(j), Constraints.m7507getMaxHeightimpl(j));
     }
 
     public static final float takeOrElse(float f, Function0<Float> function0) {
@@ -375,13 +371,13 @@ public final class UtilsKt {
     }
 
     /* renamed from: toIntSize-uvyYCjk  reason: not valid java name */
-    public static final long m9429toIntSizeuvyYCjk(long j) {
+    public static final long m8575toIntSizeuvyYCjk(long j) {
         int roundToInt = MathKt.roundToInt(Float.intBitsToFloat((int) (j >> 32)));
-        return IntSize.m8424constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32));
+        return IntSize.m7721constructorimpl((MathKt.roundToInt(Float.intBitsToFloat((int) (j & 4294967295L))) & 4294967295L) | (roundToInt << 32));
     }
 
     /* renamed from: isPositive-uvyYCjk  reason: not valid java name */
-    public static final boolean m9428isPositiveuvyYCjk(long j) {
+    public static final boolean m8574isPositiveuvyYCjk(long j) {
         return ((double) Float.intBitsToFloat((int) (j >> 32))) >= 0.5d && ((double) Float.intBitsToFloat((int) (j & 4294967295L))) >= 0.5d;
     }
 }

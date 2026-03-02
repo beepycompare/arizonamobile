@@ -44,21 +44,17 @@ public final class ChildStackFactoryKt {
         return childStack(ctx, source, initialStack, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                SerializableContainer childStack$lambda$0;
-                childStack$lambda$0 = ChildStackFactoryKt.childStack$lambda$0(KSerializer.this, (List) obj);
-                return childStack$lambda$0;
+                return ChildStackFactoryKt.childStack$lambda$0(KSerializer.this, (List) obj);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List childStack$lambda$1;
-                childStack$lambda$1 = ChildStackFactoryKt.childStack$lambda$1(KSerializer.this, (SerializableContainer) obj);
-                return childStack$lambda$1;
+                return ChildStackFactoryKt.childStack$lambda$1(KSerializer.this, (SerializableContainer) obj);
             }
         }, key, z, childFactory);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerializableContainer childStack$lambda$0(KSerializer kSerializer, List stack) {
         Intrinsics.checkNotNullParameter(stack, "stack");
         if (kSerializer != null) {
@@ -67,7 +63,7 @@ public final class ChildStackFactoryKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List childStack$lambda$1(KSerializer kSerializer, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         if (kSerializer != null) {
@@ -115,6 +111,7 @@ public final class ChildStackFactoryKt {
     }
 
     public static final <Ctx extends GenericComponentContext<? extends Ctx>, C, T> Value<ChildStack<C, T>> childStack(Ctx ctx, NavigationSource<StackNavigation.Event<C>> source, final Function0<? extends List<? extends C>> initialStack, final Function1<? super List<? extends C>, SerializableContainer> saveStack, final Function1<? super SerializableContainer, ? extends List<? extends C>> restoreStack, String key, final boolean z, Function2<? super C, ? super Ctx, ? extends T> childFactory) {
+        Value<ChildStack<C, T>> children;
         Intrinsics.checkNotNullParameter(ctx, "<this>");
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(initialStack, "initialStack");
@@ -122,70 +119,74 @@ public final class ChildStackFactoryKt {
         Intrinsics.checkNotNullParameter(restoreStack, "restoreStack");
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(childFactory, "childFactory");
-        return ChildrenFactoryKt.children$default(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda2
+        children = ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                StackNavState childStack$lambda$3;
-                childStack$lambda$3 = ChildStackFactoryKt.childStack$lambda$3(Function0.this);
-                return childStack$lambda$3;
+                return ChildStackFactoryKt.childStack$lambda$3(Function0.this);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                SerializableContainer childStack$lambda$4;
-                childStack$lambda$4 = ChildStackFactoryKt.childStack$lambda$4(Function1.this, (StackNavState) obj);
-                return childStack$lambda$4;
+                return ChildStackFactoryKt.childStack$lambda$4(Function1.this, (StackNavState) obj);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                StackNavState childStack$lambda$5;
-                childStack$lambda$5 = ChildStackFactoryKt.childStack$lambda$5(Function1.this, (SerializableContainer) obj);
-                return childStack$lambda$5;
+                return ChildStackFactoryKt.childStack$lambda$5(Function1.this, (SerializableContainer) obj);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                StackNavState childStack$lambda$6;
-                childStack$lambda$6 = ChildStackFactoryKt.childStack$lambda$6((StackNavState) obj, (StackNavigation.Event) obj2);
-                return childStack$lambda$6;
+                return ChildStackFactoryKt.childStack$lambda$6((StackNavState) obj, (StackNavigation.Event) obj2);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                ChildStack childStack$lambda$7;
-                childStack$lambda$7 = ChildStackFactoryKt.childStack$lambda$7((StackNavState) obj, (List) obj2);
-                return childStack$lambda$7;
+                return ChildStackFactoryKt.childStack$lambda$7((StackNavState) obj, (List) obj2);
             }
-        }, null, new Function3() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda7
+        }, (r26 & 128) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                return ChildrenFactoryKt.children$lambda$4((NavState) obj, (NavState) obj2);
+            }
+        } : null, (r26 & 256) != 0 ? new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit childStack$lambda$8;
-                childStack$lambda$8 = ChildStackFactoryKt.childStack$lambda$8((StackNavigation.Event) obj, (StackNavState) obj2, (StackNavState) obj3);
-                return childStack$lambda$8;
+                return ChildrenFactoryKt.children$lambda$5(obj, (NavState) obj2, (NavState) obj3);
             }
-        }, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda8
+        } : new Function3() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda7
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                return ChildStackFactoryKt.childStack$lambda$8((StackNavigation.Event) obj, (StackNavState) obj2, (StackNavState) obj3);
+            }
+        }, (r26 & 512) != 0 ? new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$children$8
+            /* JADX WARN: Incorrect types in method signature: (TN;)Ljava/lang/Void; */
+            @Override // kotlin.jvm.functions.Function1
+            public final Void invoke(NavState it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return null;
+            }
+        } : new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Function0 childStack$lambda$10;
-                childStack$lambda$10 = ChildStackFactoryKt.childStack$lambda$10(z, (StackNavState) obj);
-                return childStack$lambda$10;
+                return ChildStackFactoryKt.childStack$lambda$10(z, (StackNavState) obj);
             }
-        }, childFactory, 128, null);
+        }, childFactory);
+        return children;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final StackNavState childStack$lambda$3(Function0 function0) {
         return new StackNavState((List) function0.invoke());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerializableContainer childStack$lambda$4(Function1 function1, StackNavState it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return (SerializableContainer) function1.invoke(it.getConfigurations());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final StackNavState childStack$lambda$5(Function1 function1, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         List list = (List) function1.invoke(container);
@@ -195,21 +196,21 @@ public final class ChildStackFactoryKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final StackNavState childStack$lambda$6(StackNavState state, StackNavigation.Event event) {
         Intrinsics.checkNotNullParameter(state, "state");
         Intrinsics.checkNotNullParameter(event, "event");
         return new StackNavState((List) event.getTransformer().invoke(state.getConfigurations()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ChildStack childStack$lambda$7(StackNavState stackNavState, List children) {
         Intrinsics.checkNotNullParameter(stackNavState, "<unused var>");
         Intrinsics.checkNotNullParameter(children, "children");
         return new ChildStack((Child.Created) CollectionsKt.last((List<? extends Object>) children), CollectionsKt.dropLast(children, 1));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childStack$lambda$8(StackNavigation.Event event, StackNavState newState, StackNavState oldState) {
         Intrinsics.checkNotNullParameter(event, "event");
         Intrinsics.checkNotNullParameter(newState, "newState");
@@ -218,7 +219,7 @@ public final class ChildStackFactoryKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Function0 childStack$lambda$10(boolean z, final StackNavState state) {
         Intrinsics.checkNotNullParameter(state, "state");
         if (!z || state.getConfigurations().size() <= 1) {
@@ -227,14 +228,12 @@ public final class ChildStackFactoryKt {
         return new Function0() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                StackNavState childStack$lambda$10$lambda$9;
-                childStack$lambda$10$lambda$9 = ChildStackFactoryKt.childStack$lambda$10$lambda$9(StackNavState.this);
-                return childStack$lambda$10$lambda$9;
+                return ChildStackFactoryKt.childStack$lambda$10$lambda$9(StackNavState.this);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final StackNavState childStack$lambda$10$lambda$9(StackNavState stackNavState) {
         return new StackNavState(CollectionsKt.dropLast(stackNavState.getConfigurations(), 1));
     }

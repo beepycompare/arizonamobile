@@ -56,9 +56,7 @@ public final class PanelsWebNavigation<MC, MT, DC, DT, EC, ET> implements WebNav
         this.history = MapKt.map(panels, new Function1() { // from class: com.arkivanov.decompose.router.panels.PanelsWebNavigation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List history$lambda$0;
-                history$lambda$0 = PanelsWebNavigation.history$lambda$0(PanelsWebNavigation.this, (ChildPanels) obj);
-                return history$lambda$0;
+                return PanelsWebNavigation.history$lambda$0(PanelsWebNavigation.this, (ChildPanels) obj);
             }
         });
     }
@@ -73,7 +71,7 @@ public final class PanelsWebNavigation<MC, MT, DC, DT, EC, ET> implements WebNav
         return this.history;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List history$lambda$0(PanelsWebNavigation panelsWebNavigation, ChildPanels panels) {
         Intrinsics.checkNotNullParameter(panels, "panels");
         String invoke = panelsWebNavigation.pathMapper.invoke(panels);

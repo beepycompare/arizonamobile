@@ -21,7 +21,7 @@ public abstract class LazyGridMeasuredItemProvider extends LazyLayoutMeasuredIte
     private final LazyLayoutMeasureScope measureScope;
 
     /* renamed from: createItem-O3s9Psw */
-    public abstract LazyGridMeasuredItem mo1086createItemO3s9Psw(int i, Object obj, Object obj2, int i2, int i3, List<? extends Placeable> list, long j, int i4, int i5);
+    public abstract LazyGridMeasuredItem mo955createItemO3s9Psw(int i, Object obj, Object obj2, int i2, int i3, List<? extends Placeable> list, long j, int i4, int i5);
 
     public LazyGridMeasuredItemProvider(LazyGridItemProvider lazyGridItemProvider, LazyLayoutMeasureScope lazyLayoutMeasureScope, int i) {
         this.itemProvider = lazyGridItemProvider;
@@ -32,25 +32,25 @@ public abstract class LazyGridMeasuredItemProvider extends LazyLayoutMeasuredIte
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItemProvider
     /* renamed from: getAndMeasure--hBUhpc */
-    public LazyGridMeasuredItem mo1056getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
-        return m1093getAndMeasurem8Kt_7k(i, j, i2, i3, this.defaultMainAxisSpacing);
+    public LazyGridMeasuredItem mo933getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
+        return m961getAndMeasurem8Kt_7k(i, j, i2, i3, this.defaultMainAxisSpacing);
     }
 
     /* renamed from: getAndMeasure-m8Kt_7k  reason: not valid java name */
-    public final LazyGridMeasuredItem m1093getAndMeasurem8Kt_7k(int i, long j, int i2, int i3, int i4) {
-        int m8212getMinHeightimpl;
+    public final LazyGridMeasuredItem m961getAndMeasurem8Kt_7k(int i, long j, int i2, int i3, int i4) {
+        int m7509getMinHeightimpl;
         Object key = this.itemProvider.getKey(i);
         Object contentType = this.itemProvider.getContentType(i);
-        List<Placeable> list = m1133getPlaceables3p2s80s(this.measureScope, i, j);
-        if (Constraints.m8209getHasFixedWidthimpl(j)) {
-            m8212getMinHeightimpl = Constraints.m8213getMinWidthimpl(j);
+        List<Placeable> list = m995getPlaceables3p2s80s(this.measureScope, i, j);
+        if (Constraints.m7506getHasFixedWidthimpl(j)) {
+            m7509getMinHeightimpl = Constraints.m7510getMinWidthimpl(j);
         } else {
-            if (!Constraints.m8208getHasFixedHeightimpl(j)) {
+            if (!Constraints.m7505getHasFixedHeightimpl(j)) {
                 InlineClassHelperKt.throwIllegalArgumentException("does not have fixed height");
             }
-            m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
+            m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
         }
-        return mo1086createItemO3s9Psw(i, key, contentType, m8212getMinHeightimpl, i4, list, j, i2, i3);
+        return mo955createItemO3s9Psw(i, key, contentType, m7509getMinHeightimpl, i4, list, j, i2, i3);
     }
 
     public final LazyLayoutKeyIndexMap getKeyIndexMap() {

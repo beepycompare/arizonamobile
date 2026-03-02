@@ -11,7 +11,7 @@ public final class g0 implements T {
     public final U b;
     public final Handler c;
     public volatile boolean d;
-    public volatile C0775n e;
+    public volatile C0774n e;
     public final d0 f = new d0(this);
 
     public g0(ClientContext clientContext, U u) {
@@ -21,8 +21,8 @@ public final class g0 implements T {
     }
 
     @Override // io.appmetrica.analytics.screenshot.impl.T
-    public final void a(C0774m c0774m) {
-        this.e = c0774m != null ? c0774m.b : null;
+    public final void a(C0773m c0773m) {
+        this.e = c0773m != null ? c0773m.b : null;
     }
 
     public final String b() {

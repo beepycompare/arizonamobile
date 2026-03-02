@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: VectorPainter.kt */
 @Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001B\u0013\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\f\u0010@\u001a\u000204*\u00020AH\u0014J\u0010\u0010B\u001a\u00020\u000f2\u0006\u0010C\u001a\u00020<H\u0014J\u0012\u0010D\u001a\u00020\u000f2\b\u0010E\u001a\u0004\u0018\u00010\u0017H\u0014R+\u0010\b\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u00078@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\r\u0010\u000e\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR+\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u000f8@@@X\u0080\u008e\u0002¢\u0006\u0012\n\u0004\b\u0015\u0010\u000e\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R(\u0010\u0018\u001a\u0004\u0018\u00010\u00172\b\u0010\u0016\u001a\u0004\u0018\u00010\u00178@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001cR$\u0010\u001d\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u00078@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\u001e\u0010\n\"\u0004\b\u001f\u0010\fR$\u0010!\u001a\u00020 2\u0006\u0010\u0016\u001a\u00020 8@@@X\u0080\u000e¢\u0006\f\u001a\u0004\b\"\u0010#\"\u0004\b$\u0010%R\u0014\u0010&\u001a\u00020'X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0014\u0010*\u001a\u00020+8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b,\u0010-R\u001c\u0010.\u001a\u0004\u0018\u00010/X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u00101\"\u0004\b2\u00103R+\u00105\u001a\u0002042\u0006\u0010\u0006\u001a\u0002048B@BX\u0082\u008e\u0002¢\u0006\u0012\n\u0004\b:\u0010\u000e\u001a\u0004\b6\u00107\"\u0004\b8\u00109R\u000e\u0010;\u001a\u00020<X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010=\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010>\u001a\u00020\u00078VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b?\u0010\n¨\u0006F"}, d2 = {"Landroidx/compose/ui/graphics/vector/VectorPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "root", "Landroidx/compose/ui/graphics/vector/GroupComponent;", "<init>", "(Landroidx/compose/ui/graphics/vector/GroupComponent;)V", "<set-?>", "Landroidx/compose/ui/geometry/Size;", "size", "getSize-NH-jbRc$ui", "()J", "setSize-uvyYCjk$ui", "(J)V", "size$delegate", "Landroidx/compose/runtime/MutableState;", "", "autoMirror", "getAutoMirror$ui", "()Z", "setAutoMirror$ui", "(Z)V", "autoMirror$delegate", "value", "Landroidx/compose/ui/graphics/ColorFilter;", "intrinsicColorFilter", "getIntrinsicColorFilter$ui", "()Landroidx/compose/ui/graphics/ColorFilter;", "setIntrinsicColorFilter$ui", "(Landroidx/compose/ui/graphics/ColorFilter;)V", "viewportSize", "getViewportSize-NH-jbRc$ui", "setViewportSize-uvyYCjk$ui", "", "name", "getName$ui", "()Ljava/lang/String;", "setName$ui", "(Ljava/lang/String;)V", "vector", "Landroidx/compose/ui/graphics/vector/VectorComponent;", "getVector$ui", "()Landroidx/compose/ui/graphics/vector/VectorComponent;", "bitmapConfig", "Landroidx/compose/ui/graphics/ImageBitmapConfig;", "getBitmapConfig-_sVssgQ$ui", "()I", "composition", "Landroidx/compose/runtime/Composition;", "getComposition$ui", "()Landroidx/compose/runtime/Composition;", "setComposition$ui", "(Landroidx/compose/runtime/Composition;)V", "", "drawInvalidation", "getDrawInvalidation", "()Lkotlin/Unit;", "setDrawInvalidation", "(Lkotlin/Unit;)V", "drawInvalidation$delegate", "currentAlpha", "", "currentColorFilter", "intrinsicSize", "getIntrinsicSize-NH-jbRc", "onDraw", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "applyAlpha", "alpha", "applyColorFilter", "colorFilter", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class VectorPainter extends Painter {
     public static final int $stable = 8;
     private final MutableState autoMirror$delegate;
@@ -34,7 +34,7 @@ public final class VectorPainter extends Painter {
     public VectorPainter(GroupComponent groupComponent) {
         MutableState mutableStateOf$default;
         MutableState mutableStateOf$default2;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5236boximpl(Size.Companion.m5257getZeroNHjbRc()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m4584boximpl(Size.Companion.m4605getZeroNHjbRc()), null, 2, null);
         this.size$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.autoMirror$delegate = mutableStateOf$default2;
@@ -66,13 +66,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getSize-NH-jbRc$ui  reason: not valid java name */
-    public final long m6182getSizeNHjbRc$ui() {
-        return ((Size) this.size$delegate.getValue()).m5253unboximpl();
+    public final long m5523getSizeNHjbRc$ui() {
+        return ((Size) this.size$delegate.getValue()).m4601unboximpl();
     }
 
     /* renamed from: setSize-uvyYCjk$ui  reason: not valid java name */
-    public final void m6184setSizeuvyYCjk$ui(long j) {
-        this.size$delegate.setValue(Size.m5236boximpl(j));
+    public final void m5525setSizeuvyYCjk$ui(long j) {
+        this.size$delegate.setValue(Size.m4584boximpl(j));
     }
 
     public final boolean getAutoMirror$ui() {
@@ -92,13 +92,13 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getViewportSize-NH-jbRc$ui  reason: not valid java name */
-    public final long m6183getViewportSizeNHjbRc$ui() {
-        return this.vector.m6173getViewportSizeNHjbRc$ui();
+    public final long m5524getViewportSizeNHjbRc$ui() {
+        return this.vector.m5514getViewportSizeNHjbRc$ui();
     }
 
     /* renamed from: setViewportSize-uvyYCjk$ui  reason: not valid java name */
-    public final void m6185setViewportSizeuvyYCjk$ui(long j) {
-        this.vector.m6174setViewportSizeuvyYCjk$ui(j);
+    public final void m5526setViewportSizeuvyYCjk$ui(long j) {
+        this.vector.m5515setViewportSizeuvyYCjk$ui(j);
     }
 
     public final String getName$ui() {
@@ -114,8 +114,8 @@ public final class VectorPainter extends Painter {
     }
 
     /* renamed from: getBitmapConfig-_sVssgQ$ui  reason: not valid java name */
-    public final int m6181getBitmapConfig_sVssgQ$ui() {
-        return this.vector.m6172getCacheBitmapConfig_sVssgQ$ui();
+    public final int m5522getBitmapConfig_sVssgQ$ui() {
+        return this.vector.m5513getCacheBitmapConfig_sVssgQ$ui();
     }
 
     public final Composition getComposition$ui() {
@@ -138,8 +138,8 @@ public final class VectorPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo6125getIntrinsicSizeNHjbRc() {
-        return m6182getSizeNHjbRc$ui();
+    public long mo5466getIntrinsicSizeNHjbRc() {
+        return m5523getSizeNHjbRc$ui();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -153,16 +153,16 @@ public final class VectorPainter extends Painter {
         if (!getAutoMirror$ui() || drawScope.getLayoutDirection() != LayoutDirection.Rtl) {
             vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
         } else {
-            long mo6004getCenterF1C5BW0 = drawScope.mo6004getCenterF1C5BW0();
+            long mo5345getCenterF1C5BW0 = drawScope.mo5345getCenterF1C5BW0();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+            long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5933scale0AR0LA0(-1.0f, 1.0f, mo6004getCenterF1C5BW0);
+                drawContext.getTransform().mo5274scale0AR0LA0(-1.0f, 1.0f, mo5345getCenterF1C5BW0);
                 vectorComponent.draw(drawScope, this.currentAlpha, colorFilter);
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             }
         }
         getDrawInvalidation();

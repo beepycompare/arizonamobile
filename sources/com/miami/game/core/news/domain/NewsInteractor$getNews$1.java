@@ -1,13 +1,14 @@
 package com.miami.game.core.news.domain;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NewsInteractor.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor", f = "NewsInteractor.kt", i = {}, l = {58}, m = "getNews", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.news.domain.NewsInteractor", f = "NewsInteractor.kt", i = {}, l = {58}, m = "getNews", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class NewsInteractor$getNews$1 extends ContinuationImpl {
     int label;

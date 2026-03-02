@@ -90,10 +90,11 @@ public final class FlowableSingleSingle<T> extends Single<T> implements FuseToFl
             if (t == null) {
                 t = this.defaultValue;
             }
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                singleObserver.onSuccess(t);
             } else {
-                this.downstream.onError(new NoSuchElementException());
+                singleObserver.onError(new NoSuchElementException());
             }
         }
 

@@ -26,16 +26,12 @@ public final class ComposeNavigationEventHandler<T extends NavigationEventInfo> 
         this(navigationEventInfo, (i & 2) != 0 ? new Function1() { // from class: androidx.navigationevent.compose.ComposeNavigationEventHandler$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = ComposeNavigationEventHandler._init_$lambda$0((NavigationEventTransitionState) obj);
-                return _init_$lambda$0;
+                Unit unit;
+                NavigationEventTransitionState navigationEventTransitionState = (NavigationEventTransitionState) obj;
+                unit = Unit.INSTANCE;
+                return unit;
             }
         } : function1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit _init_$lambda$0(NavigationEventTransitionState navigationEventTransitionState) {
-        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

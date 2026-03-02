@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes5.dex */
 public final class Zm implements to {
     @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0381kh c0381kh) {
+    public final byte[] a(N8 n8, C0380kh c0380kh) {
         if (!TextUtils.isEmpty(n8.b)) {
             return StringUtils.getUTF8Bytes(n8.b);
         }

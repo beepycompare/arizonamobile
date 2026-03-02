@@ -233,17 +233,19 @@ public final class Exchange {
             trackFailure(iOException);
         }
         if (z3) {
+            EventListener eventListener = this.eventListener;
             if (iOException != null) {
-                this.eventListener.requestFailed(this.call, iOException);
+                eventListener.requestFailed(this.call, iOException);
             } else {
-                this.eventListener.requestBodyEnd(this.call, j);
+                eventListener.requestBodyEnd(this.call, j);
             }
         }
         if (z2) {
+            EventListener eventListener2 = this.eventListener;
             if (iOException != null) {
-                this.eventListener.responseFailed(this.call, iOException);
+                eventListener2.responseFailed(this.call, iOException);
             } else {
-                this.eventListener.responseBodyEnd(this.call, j);
+                eventListener2.responseBodyEnd(this.call, j);
             }
         }
         return this.call.messageDone$okhttp(this, z3 && !z, z2 && !z, z2 && z, z3 && z, iOException);

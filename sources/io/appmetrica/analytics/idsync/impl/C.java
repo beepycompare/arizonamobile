@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class C implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */

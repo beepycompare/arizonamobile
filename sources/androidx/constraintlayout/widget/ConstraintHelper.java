@@ -141,6 +141,7 @@ public abstract class ConstraintHelper extends View {
 
     public int removeView(View view) {
         int i;
+        int[] iArr;
         int id = view.getId();
         int i2 = -1;
         if (id == -1) {
@@ -155,15 +156,16 @@ public abstract class ConstraintHelper extends View {
                 int i4 = i3;
                 while (true) {
                     i = this.mCount;
-                    if (i4 >= i - 1) {
+                    int i5 = i - 1;
+                    iArr = this.mIds;
+                    if (i4 >= i5) {
                         break;
                     }
-                    int[] iArr = this.mIds;
-                    int i5 = i4 + 1;
-                    iArr[i4] = iArr[i5];
-                    i4 = i5;
+                    int i6 = i4 + 1;
+                    iArr[i4] = iArr[i6];
+                    i4 = i6;
                 }
-                this.mIds[i - 1] = 0;
+                iArr[i - 1] = 0;
                 this.mCount = i - 1;
                 i2 = i3;
             } else {

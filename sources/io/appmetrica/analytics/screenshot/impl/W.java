@@ -3,21 +3,21 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class W {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0766e f1457a;
+    public final C0765e f1457a;
     public final a0 b;
-    public final C0777p c;
+    public final C0776p c;
 
-    public W(C0766e c0766e, a0 a0Var, C0777p c0777p) {
-        this.f1457a = c0766e;
+    public W(C0765e c0765e, a0 a0Var, C0776p c0776p) {
+        this.f1457a = c0765e;
         this.b = a0Var;
-        this.c = c0777p;
+        this.c = c0776p;
     }
 
-    public final C0766e a() {
+    public final C0765e a() {
         return this.f1457a;
     }
 
-    public final C0777p b() {
+    public final C0776p b() {
         return this.c;
     }
 
@@ -30,6 +30,6 @@ public final class W {
     }
 
     public W() {
-        this(new C0766e(), new a0(), new C0777p());
+        this(new C0765e(), new a0(), new C0776p());
     }
 }

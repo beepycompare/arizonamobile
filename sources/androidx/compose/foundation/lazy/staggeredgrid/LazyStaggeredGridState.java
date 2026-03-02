@@ -58,16 +58,15 @@ public final class LazyStaggeredGridState implements ScrollableState {
     private static final Saver<LazyStaggeredGridState, Object> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = LazyStaggeredGridState.Saver$lambda$0((SaverScope) obj, (LazyStaggeredGridState) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf((Object[]) new int[][]{r2.scrollPosition.getIndices(), ((LazyStaggeredGridState) obj2).scrollPosition.getScrollOffsets()});
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LazyStaggeredGridState Saver$lambda$1;
-            Saver$lambda$1 = LazyStaggeredGridState.Saver$lambda$1((List) obj);
-            return Saver$lambda$1;
+            return LazyStaggeredGridState.Saver$lambda$1((List) obj);
         }
     });
     private final LazyLayoutScrollDeltaBetweenPasses _lazyLayoutScrollDeltaBetweenPasses;
@@ -139,9 +138,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         this.scrollableState = ScrollableStateKt.ScrollableState(new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                float scrollableState$lambda$0;
-                scrollableState$lambda$0 = LazyStaggeredGridState.scrollableState$lambda$0(LazyStaggeredGridState.this, ((Float) obj).floatValue());
-                return Float.valueOf(scrollableState$lambda$0);
+                return Float.valueOf(LazyStaggeredGridState.scrollableState$lambda$0(LazyStaggeredGridState.this, ((Float) obj).floatValue()));
             }
         });
         this.prefetchBaseIndex = -1;
@@ -150,8 +147,8 @@ public final class LazyStaggeredGridState implements ScrollableState {
         this.pinnedItems = new LazyLayoutPinnedItemList();
         this.itemAnimator = new LazyLayoutItemAnimator<>();
         lazyStaggeredGridScrollPosition.getNearestRangeState();
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1008constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1008constructorimpl$default(null, 1, null);
         this._lazyLayoutScrollDeltaBetweenPasses = new LazyLayoutScrollDeltaBetweenPasses();
     }
 
@@ -261,7 +258,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         return this.prefetchState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float scrollableState$lambda$0(LazyStaggeredGridState lazyStaggeredGridState, float f) {
         return -lazyStaggeredGridState.onScroll(-f);
     }
@@ -306,7 +303,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
-    public final MutableState<Unit> m1197getPlacementScopeInvalidatorzYiylxw$foundation() {
+    public final MutableState<Unit> m1051getPlacementScopeInvalidatorzYiylxw$foundation() {
         return this.placementScopeInvalidator;
     }
 
@@ -400,7 +397,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
                 }
                 if (copyWithScrollDeltaWithoutRemeasure != null) {
                     applyMeasureResult$foundation(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-                    ObservableScopeInvalidator.m1153invalidateScopeimpl(this.placementScopeInvalidator);
+                    ObservableScopeInvalidator.m1012invalidateScopeimpl(this.placementScopeInvalidator);
                     notifyPrefetch(f3 - this.scrollToBeConsumed, copyWithScrollDeltaWithoutRemeasure);
                 } else {
                     Remeasurement remeasurement = this.remeasurement;
@@ -446,7 +443,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
-    public final MutableState<Unit> m1196getMeasurementScopeInvalidatorzYiylxw$foundation() {
+    public final MutableState<Unit> m1050getMeasurementScopeInvalidatorzYiylxw$foundation() {
         return this.measurementScopeInvalidator;
     }
 
@@ -465,7 +462,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
     }
 
     public final void snapToItemInternal$foundation(int i, int i2, boolean z) {
-        int m8386getXimpl;
+        int m7683getXimpl;
         boolean z2 = (this.scrollPosition.getIndex() == i && this.scrollPosition.getScrollOffset() == i2) ? false : true;
         if (z2) {
             this.itemAnimator.reset();
@@ -474,11 +471,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
         LazyStaggeredGridItemInfo findVisibleItem = LazyStaggeredGridMeasureResultKt.findVisibleItem(value, i);
         if (findVisibleItem != null && z2) {
             if (value.getOrientation() == Orientation.Vertical) {
-                m8386getXimpl = IntOffset.m8387getYimpl(findVisibleItem.mo1174getOffsetnOccac());
+                m7683getXimpl = IntOffset.m7684getYimpl(findVisibleItem.mo1030getOffsetnOccac());
             } else {
-                m8386getXimpl = IntOffset.m8386getXimpl(findVisibleItem.mo1174getOffsetnOccac());
+                m7683getXimpl = IntOffset.m7683getXimpl(findVisibleItem.mo1030getOffsetnOccac());
             }
-            int i3 = m8386getXimpl + i2;
+            int i3 = m7683getXimpl + i2;
             int length = value.getFirstVisibleItemScrollOffsets().length;
             int[] iArr = new int[length];
             for (int i4 = 0; i4 < length; i4++) {
@@ -496,7 +493,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m1153invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1012invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
     public final int[] updateScrollPositionIfTheFirstItemWasMoved$foundation(LazyLayoutItemProvider lazyLayoutItemProvider, int[] iArr) {
@@ -519,7 +516,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         int index;
         int findPreviousItemIndex;
         int i;
-        long m8222fixedHeightOenEA2s;
+        long m7519fixedHeightOenEA2s;
         if (!this.prefetchingEnabled || lazyStaggeredGridMeasureResult.getVisibleItemsInfo().isEmpty()) {
             return;
         }
@@ -538,10 +535,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
         int length = slots.getSizes().length;
         int i2 = 0;
         while (i2 < length) {
+            LazyStaggeredGridLaneInfo lazyStaggeredGridLaneInfo = this.laneInfo;
             if (z) {
-                findPreviousItemIndex = this.laneInfo.findNextItemIndex(index, i2);
+                findPreviousItemIndex = lazyStaggeredGridLaneInfo.findNextItemIndex(index, i2);
             } else {
-                findPreviousItemIndex = this.laneInfo.findPreviousItemIndex(index, i2);
+                findPreviousItemIndex = lazyStaggeredGridLaneInfo.findPreviousItemIndex(index, i2);
             }
             int i3 = findPreviousItemIndex;
             if (i3 < 0 || i3 >= lazyStaggeredGridMeasureResult.getTotalItemsCount() || linkedHashSet.contains(Integer.valueOf(i3))) {
@@ -560,11 +558,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
                     i = (slots.getPositions()[i7] + slots.getSizes()[i7]) - i6;
                 }
                 if (lazyStaggeredGridMeasureResult.getOrientation() == Orientation.Vertical) {
-                    m8222fixedHeightOenEA2s = Constraints.Companion.m8223fixedWidthOenEA2s(i);
+                    m7519fixedHeightOenEA2s = Constraints.Companion.m7520fixedWidthOenEA2s(i);
                 } else {
-                    m8222fixedHeightOenEA2s = Constraints.Companion.m8222fixedHeightOenEA2s(i);
+                    m7519fixedHeightOenEA2s = Constraints.Companion.m7519fixedHeightOenEA2s(i);
                 }
-                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m1136schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m8222fixedHeightOenEA2s, null, 4, null));
+                this.currentItemPrefetchHandles.put(Integer.valueOf(i3), LazyLayoutPrefetchState.m998schedulePrecompositionAndPremeasureVKLhPVY$default(this.prefetchState, i3, m7519fixedHeightOenEA2s, null, 4, null));
             }
             i2++;
             index = i3;
@@ -617,10 +615,11 @@ public final class LazyStaggeredGridState implements ScrollableState {
         }
         this.scrollToBeConsumed -= lazyStaggeredGridMeasureResult.getConsumedScroll();
         this.layoutInfoState.setValue(lazyStaggeredGridMeasureResult);
+        LazyStaggeredGridScrollPosition lazyStaggeredGridScrollPosition = this.scrollPosition;
         if (z2) {
-            this.scrollPosition.updateScrollOffset(lazyStaggeredGridMeasureResult.getFirstVisibleItemScrollOffsets());
+            lazyStaggeredGridScrollPosition.updateScrollOffset(lazyStaggeredGridMeasureResult.getFirstVisibleItemScrollOffsets());
         } else {
-            this.scrollPosition.updateFromMeasureResult(lazyStaggeredGridMeasureResult);
+            lazyStaggeredGridScrollPosition.updateFromMeasureResult(lazyStaggeredGridMeasureResult);
             cancelPrefetchIfVisibleItemsChanged(lazyStaggeredGridMeasureResult);
         }
         setCanScrollBackward(lazyStaggeredGridMeasureResult.getCanScrollBackward());
@@ -689,12 +688,7 @@ public final class LazyStaggeredGridState implements ScrollableState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, LazyStaggeredGridState lazyStaggeredGridState) {
-        return CollectionsKt.listOf((Object[]) new int[][]{lazyStaggeredGridState.scrollPosition.getIndices(), lazyStaggeredGridState.scrollPosition.getScrollOffsets()});
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final LazyStaggeredGridState Saver$lambda$1(List list) {
         return new LazyStaggeredGridState((int[]) list.get(0), (int[]) list.get(1), null);
     }

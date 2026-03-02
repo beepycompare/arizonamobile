@@ -4,16 +4,17 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zza implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
         PendingIntent pendingIntent = null;
+        String str = null;
+        Integer num = null;
         int i = 0;
         int i2 = 0;
-        String str = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
             int fieldId = SafeParcelReader.getFieldId(readHeader);
@@ -25,12 +26,14 @@ public final class zza implements Parcelable.Creator {
                 pendingIntent = (PendingIntent) SafeParcelReader.createParcelable(parcel, readHeader, PendingIntent.CREATOR);
             } else if (fieldId == 4) {
                 str = SafeParcelReader.createString(parcel, readHeader);
+            } else if (fieldId == 5) {
+                num = SafeParcelReader.readIntegerObject(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new ConnectionResult(i, i2, pendingIntent, str);
+        return new ConnectionResult(i, i2, pendingIntent, str, num);
     }
 
     @Override // android.os.Parcelable.Creator

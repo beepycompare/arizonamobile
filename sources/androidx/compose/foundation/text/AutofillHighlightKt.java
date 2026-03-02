@@ -17,19 +17,17 @@ public final class AutofillHighlightKt {
     private static final ProvidableCompositionLocal<Brush> LocalAutofillHighlightBrush = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.text.AutofillHighlightKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Brush LocalAutofillHighlightBrush$lambda$0;
-            LocalAutofillHighlightBrush$lambda$0 = AutofillHighlightKt.LocalAutofillHighlightBrush$lambda$0();
-            return LocalAutofillHighlightBrush$lambda$0;
+            return AutofillHighlightKt.LocalAutofillHighlightBrush$lambda$0();
         }
     }, 1, null);
     private static final ProvidableCompositionLocal<Color> LocalAutofillHighlightColor = CompositionLocalKt.compositionLocalOf$default(null, new Function0<Color>() { // from class: androidx.compose.foundation.text.AutofillHighlightKt$LocalAutofillHighlightColor$1
         @Override // kotlin.jvm.functions.Function0
         public /* bridge */ /* synthetic */ Color invoke() {
-            return Color.m5414boximpl(m1293invoke0d7_KjU());
+            return Color.m4762boximpl(m1133invoke0d7_KjU());
         }
 
         /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-        public final long m1293invoke0d7_KjU() {
+        public final long m1133invoke0d7_KjU() {
             return AutofillHighlight_androidKt.autofillHighlightColor();
         }
     }, 1, null);
@@ -42,7 +40,7 @@ public final class AutofillHighlightKt {
         return LocalAutofillHighlightBrush;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Brush LocalAutofillHighlightBrush$lambda$0() {
         return new SolidColor(AutofillHighlight_androidKt.autofillHighlightColor(), null);
     }
@@ -52,7 +50,7 @@ public final class AutofillHighlightKt {
     }
 
     /* renamed from: resolveAutofillHighlight-WkMS-hQ  reason: not valid java name */
-    public static final Brush m1292resolveAutofillHighlightWkMShQ(Brush brush, long j, long j2) {
-        return !Color.m5425equalsimpl0(j, j2) ? new SolidColor(j, null) : brush;
+    public static final Brush m1132resolveAutofillHighlightWkMShQ(Brush brush, long j, long j2) {
+        return !Color.m4773equalsimpl0(j, j2) ? new SolidColor(j, null) : brush;
     }
 }

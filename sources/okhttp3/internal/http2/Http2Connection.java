@@ -117,9 +117,7 @@ public final class Http2Connection implements Closeable, Lockable {
             newQueue.schedule(connectionName$okhttp + " ping", nanos, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    long _init_$lambda$0;
-                    _init_$lambda$0 = Http2Connection._init_$lambda$0(Http2Connection.this, nanos);
-                    return Long.valueOf(_init_$lambda$0);
+                    return Long.valueOf(Http2Connection._init_$lambda$0(Http2Connection.this, nanos));
                 }
             });
         }
@@ -394,9 +392,7 @@ public final class Http2Connection implements Closeable, Lockable {
         TaskQueue.execute$default(this.writerQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] writeSynReset", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit writeSynResetLater$lambda$0;
-                writeSynResetLater$lambda$0 = Http2Connection.writeSynResetLater$lambda$0(Http2Connection.this, i, errorCode);
-                return writeSynResetLater$lambda$0;
+                return Http2Connection.writeSynResetLater$lambda$0(Http2Connection.this, i, errorCode);
             }
         }, 6, null);
     }
@@ -419,9 +415,7 @@ public final class Http2Connection implements Closeable, Lockable {
         TaskQueue.execute$default(this.writerQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] windowUpdate", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit writeWindowUpdateLater$lambda$0;
-                writeWindowUpdateLater$lambda$0 = Http2Connection.writeWindowUpdateLater$lambda$0(Http2Connection.this, i, j);
-                return writeWindowUpdateLater$lambda$0;
+                return Http2Connection.writeWindowUpdateLater$lambda$0(Http2Connection.this, i, j);
             }
         }, 6, null);
     }
@@ -601,9 +595,7 @@ public final class Http2Connection implements Closeable, Lockable {
             TaskQueue.execute$default(this.writerQueue, this.connectionName + " ping", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit sendDegradedPingLater$lambda$1;
-                    sendDegradedPingLater$lambda$1 = Http2Connection.sendDegradedPingLater$lambda$1(Http2Connection.this);
-                    return sendDegradedPingLater$lambda$1;
+                    return Http2Connection.sendDegradedPingLater$lambda$1(Http2Connection.this);
                 }
             }, 6, null);
         }
@@ -818,11 +810,13 @@ public final class Http2Connection implements Closeable, Lockable {
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void data(boolean z, int i, BufferedSource source, int i2) throws IOException {
             Intrinsics.checkNotNullParameter(source, "source");
-            if (this.this$0.pushedStream$okhttp(i)) {
-                this.this$0.pushDataLater$okhttp(i, source, i2, z);
+            boolean pushedStream$okhttp = this.this$0.pushedStream$okhttp(i);
+            Http2Connection http2Connection = this.this$0;
+            if (pushedStream$okhttp) {
+                http2Connection.pushDataLater$okhttp(i, source, i2, z);
                 return;
             }
-            Http2Stream stream = this.this$0.getStream(i);
+            Http2Stream stream = http2Connection.getStream(i);
             if (stream == null) {
                 this.this$0.writeSynResetLater$okhttp(i, ErrorCode.PROTOCOL_ERROR);
                 long j = i2;
@@ -839,11 +833,12 @@ public final class Http2Connection implements Closeable, Lockable {
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void headers(boolean z, int i, int i2, List<Header> headerBlock) {
             Intrinsics.checkNotNullParameter(headerBlock, "headerBlock");
-            if (this.this$0.pushedStream$okhttp(i)) {
-                this.this$0.pushHeadersLater$okhttp(i, headerBlock, z);
+            boolean pushedStream$okhttp = this.this$0.pushedStream$okhttp(i);
+            final Http2Connection http2Connection = this.this$0;
+            if (pushedStream$okhttp) {
+                http2Connection.pushHeadersLater$okhttp(i, headerBlock, z);
                 return;
             }
-            final Http2Connection http2Connection = this.this$0;
             synchronized (http2Connection) {
                 Http2Stream stream = http2Connection.getStream(i);
                 if (stream != null) {
@@ -888,11 +883,13 @@ public final class Http2Connection implements Closeable, Lockable {
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void rstStream(int i, ErrorCode errorCode) {
             Intrinsics.checkNotNullParameter(errorCode, "errorCode");
-            if (this.this$0.pushedStream$okhttp(i)) {
-                this.this$0.pushResetLater$okhttp(i, errorCode);
+            boolean pushedStream$okhttp = this.this$0.pushedStream$okhttp(i);
+            Http2Connection http2Connection = this.this$0;
+            if (pushedStream$okhttp) {
+                http2Connection.pushResetLater$okhttp(i, errorCode);
                 return;
             }
-            Http2Stream removeStream$okhttp = this.this$0.removeStream$okhttp(i);
+            Http2Stream removeStream$okhttp = http2Connection.removeStream$okhttp(i);
             if (removeStream$okhttp != null) {
                 removeStream$okhttp.receiveRstStream(errorCode);
             }
@@ -904,9 +901,7 @@ public final class Http2Connection implements Closeable, Lockable {
             TaskQueue.execute$default(this.this$0.writerQueue, this.this$0.getConnectionName$okhttp() + " applyAndAckSettings", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$ReaderRunnable$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit unit;
-                    unit = Http2Connection.ReaderRunnable.settings$lambda$0(Http2Connection.ReaderRunnable.this, z, settings);
-                    return unit;
+                    return Http2Connection.ReaderRunnable.settings$lambda$0(Http2Connection.ReaderRunnable.this, z, settings);
                 }
             }, 6, null);
         }
@@ -992,32 +987,30 @@ public final class Http2Connection implements Closeable, Lockable {
 
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void ping(boolean z, final int i, final int i2) {
+            Http2Connection http2Connection = this.this$0;
             if (!z) {
-                final Http2Connection http2Connection = this.this$0;
-                TaskQueue.execute$default(this.this$0.writerQueue, this.this$0.getConnectionName$okhttp() + " ping", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$ReaderRunnable$$ExternalSyntheticLambda0
+                final Http2Connection http2Connection2 = this.this$0;
+                TaskQueue.execute$default(http2Connection.writerQueue, this.this$0.getConnectionName$okhttp() + " ping", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$ReaderRunnable$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ping$lambda$1;
-                        ping$lambda$1 = Http2Connection.ReaderRunnable.ping$lambda$1(Http2Connection.this, i, i2);
-                        return ping$lambda$1;
+                        return Http2Connection.ReaderRunnable.ping$lambda$1(Http2Connection.this, i, i2);
                     }
                 }, 6, null);
                 return;
             }
-            Http2Connection http2Connection2 = this.this$0;
-            synchronized (http2Connection2) {
+            synchronized (http2Connection) {
                 if (i == 1) {
-                    long j = http2Connection2.intervalPongsReceived;
-                    http2Connection2.intervalPongsReceived = 1 + j;
+                    long j = http2Connection.intervalPongsReceived;
+                    http2Connection.intervalPongsReceived = 1 + j;
                     Long.valueOf(j);
                 } else if (i == 2) {
-                    long j2 = http2Connection2.degradedPongsReceived;
-                    http2Connection2.degradedPongsReceived = 1 + j2;
+                    long j2 = http2Connection.degradedPongsReceived;
+                    http2Connection.degradedPongsReceived = 1 + j2;
                     Long.valueOf(j2);
                 } else {
                     if (i == 3) {
-                        http2Connection2.awaitPongsReceived++;
-                        Http2Connection http2Connection3 = http2Connection2;
+                        http2Connection.awaitPongsReceived++;
+                        Http2Connection http2Connection3 = http2Connection;
                         Intrinsics.checkNotNull(http2Connection3, "null cannot be cast to non-null type java.lang.Object");
                         http2Connection3.notifyAll();
                     }
@@ -1055,8 +1048,8 @@ public final class Http2Connection implements Closeable, Lockable {
 
         @Override // okhttp3.internal.http2.Http2Reader.Handler
         public void windowUpdate(int i, long j) {
+            Http2Connection http2Connection = this.this$0;
             if (i == 0) {
-                Http2Connection http2Connection = this.this$0;
                 synchronized (http2Connection) {
                     http2Connection.writeBytesMaximum = http2Connection.getWriteBytesMaximum() + j;
                     Http2Connection http2Connection2 = http2Connection;
@@ -1066,7 +1059,7 @@ public final class Http2Connection implements Closeable, Lockable {
                 }
                 return;
             }
-            Http2Stream stream = this.this$0.getStream(i);
+            Http2Stream stream = http2Connection.getStream(i);
             if (stream != null) {
                 synchronized (stream) {
                     stream.addBytesToWriteWindow(j);
@@ -1093,9 +1086,7 @@ public final class Http2Connection implements Closeable, Lockable {
             TaskQueue.execute$default(this.pushQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] onRequest", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit pushRequestLater$lambda$1;
-                    pushRequestLater$lambda$1 = Http2Connection.pushRequestLater$lambda$1(Http2Connection.this, i, requestHeaders);
-                    return pushRequestLater$lambda$1;
+                    return Http2Connection.pushRequestLater$lambda$1(Http2Connection.this, i, requestHeaders);
                 }
             }, 6, null);
         }
@@ -1120,9 +1111,7 @@ public final class Http2Connection implements Closeable, Lockable {
         TaskQueue.execute$default(this.pushQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] onHeaders", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit pushHeadersLater$lambda$0;
-                pushHeadersLater$lambda$0 = Http2Connection.pushHeadersLater$lambda$0(Http2Connection.this, i, requestHeaders, z);
-                return pushHeadersLater$lambda$0;
+                return Http2Connection.pushHeadersLater$lambda$0(Http2Connection.this, i, requestHeaders, z);
             }
         }, 6, null);
     }
@@ -1153,9 +1142,7 @@ public final class Http2Connection implements Closeable, Lockable {
         TaskQueue.execute$default(this.pushQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] onData", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit pushDataLater$lambda$0;
-                pushDataLater$lambda$0 = Http2Connection.pushDataLater$lambda$0(Http2Connection.this, i, buffer, i2, z);
-                return pushDataLater$lambda$0;
+                return Http2Connection.pushDataLater$lambda$0(Http2Connection.this, i, buffer, i2, z);
             }
         }, 6, null);
     }
@@ -1182,9 +1169,7 @@ public final class Http2Connection implements Closeable, Lockable {
         TaskQueue.execute$default(this.pushQueue, this.connectionName + AbstractJsonLexerKt.BEGIN_LIST + i + "] onReset", 0L, false, new Function0() { // from class: okhttp3.internal.http2.Http2Connection$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit pushResetLater$lambda$0;
-                pushResetLater$lambda$0 = Http2Connection.pushResetLater$lambda$0(Http2Connection.this, i, errorCode);
-                return pushResetLater$lambda$0;
+                return Http2Connection.pushResetLater$lambda$0(Http2Connection.this, i, errorCode);
             }
         }, 6, null);
     }

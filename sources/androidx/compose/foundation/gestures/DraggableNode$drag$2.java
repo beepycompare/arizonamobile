@@ -54,9 +54,7 @@ final class DraggableNode$drag$2 extends SuspendLambda implements Function2<Drag
             Function1<? super DragEvent.DragDelta, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.DraggableNode$drag$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = DraggableNode$drag$2.invokeSuspend$lambda$0(DragScope.this, draggableNode, (DragEvent.DragDelta) obj2);
-                    return invokeSuspend$lambda$0;
+                    return DraggableNode$drag$2.invokeSuspend$lambda$0(DragScope.this, draggableNode, (DragEvent.DragDelta) obj2);
                 }
             };
             this.label = 1;
@@ -71,13 +69,13 @@ final class DraggableNode$drag$2 extends SuspendLambda implements Function2<Drag
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(DragScope dragScope, DraggableNode draggableNode, DragEvent.DragDelta dragDelta) {
-        long m573reverseIfNeededMKHz9U;
+        long m493reverseIfNeededMKHz9U;
         Orientation orientation;
-        m573reverseIfNeededMKHz9U = draggableNode.m573reverseIfNeededMKHz9U(dragDelta.m523getDeltaF1C5BW0());
+        m493reverseIfNeededMKHz9U = draggableNode.m493reverseIfNeededMKHz9U(dragDelta.m454getDeltaF1C5BW0());
         orientation = draggableNode.orientation;
-        dragScope.dragBy(DraggableKt.m566toFloat3MmeM6k(m573reverseIfNeededMKHz9U, orientation));
+        dragScope.dragBy(DraggableKt.m486toFloat3MmeM6k(m493reverseIfNeededMKHz9U, orientation));
         return Unit.INSTANCE;
     }
 }

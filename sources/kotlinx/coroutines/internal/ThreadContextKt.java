@@ -13,29 +13,23 @@ public final class ThreadContextKt {
     private static final Function2<Object, CoroutineContext.Element, Object> countAll = new Function2() { // from class: kotlinx.coroutines.internal.ThreadContextKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object countAll$lambda$0;
-            countAll$lambda$0 = ThreadContextKt.countAll$lambda$0(obj, (CoroutineContext.Element) obj2);
-            return countAll$lambda$0;
+            return ThreadContextKt.countAll$lambda$0(obj, (CoroutineContext.Element) obj2);
         }
     };
     private static final Function2<ThreadContextElement<?>, CoroutineContext.Element, ThreadContextElement<?>> findOne = new Function2() { // from class: kotlinx.coroutines.internal.ThreadContextKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            ThreadContextElement findOne$lambda$1;
-            findOne$lambda$1 = ThreadContextKt.findOne$lambda$1((ThreadContextElement) obj, (CoroutineContext.Element) obj2);
-            return findOne$lambda$1;
+            return ThreadContextKt.findOne$lambda$1((ThreadContextElement) obj, (CoroutineContext.Element) obj2);
         }
     };
     private static final Function2<ThreadState, CoroutineContext.Element, ThreadState> updateState = new Function2() { // from class: kotlinx.coroutines.internal.ThreadContextKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            ThreadState updateState$lambda$2;
-            updateState$lambda$2 = ThreadContextKt.updateState$lambda$2((ThreadState) obj, (CoroutineContext.Element) obj2);
-            return updateState$lambda$2;
+            return ThreadContextKt.updateState$lambda$2((ThreadState) obj, (CoroutineContext.Element) obj2);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object countAll$lambda$0(Object obj, CoroutineContext.Element element) {
         if (element instanceof ThreadContextElement) {
             Integer num = obj instanceof Integer ? (Integer) obj : null;
@@ -45,7 +39,7 @@ public final class ThreadContextKt {
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ThreadContextElement<?> findOne$lambda$1(ThreadContextElement<?> threadContextElement, CoroutineContext.Element element) {
         if (threadContextElement != null) {
             return threadContextElement;
@@ -56,7 +50,7 @@ public final class ThreadContextKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ThreadState updateState$lambda$2(ThreadState threadState, CoroutineContext.Element element) {
         if (element instanceof ThreadContextElement) {
             ThreadContextElement<?> threadContextElement = (ThreadContextElement) element;

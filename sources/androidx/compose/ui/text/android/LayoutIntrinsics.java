@@ -38,12 +38,13 @@ public final class LayoutIntrinsics {
         CharSequence charSequence = this._charSequenceForIntrinsicWidth;
         if (charSequence == null) {
             z = LayoutIntrinsics_androidKt.stripNonMetricAffectingCharSpans;
+            CharSequence charSequence2 = this.charSequence;
             if (z) {
-                stripNonMetricAffectingCharacterStyleSpans = LayoutIntrinsics_androidKt.stripNonMetricAffectingCharacterStyleSpans(this.charSequence);
+                stripNonMetricAffectingCharacterStyleSpans = LayoutIntrinsics_androidKt.stripNonMetricAffectingCharacterStyleSpans(charSequence2);
                 this._charSequenceForIntrinsicWidth = stripNonMetricAffectingCharacterStyleSpans;
                 return stripNonMetricAffectingCharacterStyleSpans;
             }
-            return this.charSequence;
+            return charSequence2;
         }
         Intrinsics.checkNotNull(charSequence);
         return charSequence;
@@ -74,9 +75,7 @@ public final class LayoutIntrinsics {
         PriorityQueue priorityQueue = new PriorityQueue(10, new Comparator() { // from class: androidx.compose.ui.text.android.LayoutIntrinsics$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int computeMinIntrinsicWidth$lambda$0;
-                computeMinIntrinsicWidth$lambda$0 = LayoutIntrinsics.computeMinIntrinsicWidth$lambda$0((Pair) obj, (Pair) obj2);
-                return computeMinIntrinsicWidth$lambda$0;
+                return LayoutIntrinsics.computeMinIntrinsicWidth$lambda$0((Pair) obj, (Pair) obj2);
             }
         });
         int next = lineInstance.next();
@@ -113,7 +112,7 @@ public final class LayoutIntrinsics {
         throw new NoSuchElementException();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int computeMinIntrinsicWidth$lambda$0(Pair pair, Pair pair2) {
         return (((Number) pair.getSecond()).intValue() - ((Number) pair.getFirst()).intValue()) - (((Number) pair2.getSecond()).intValue() - ((Number) pair2.getFirst()).intValue());
     }

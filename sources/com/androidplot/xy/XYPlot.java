@@ -516,12 +516,14 @@ public class XYPlot extends Plot<XYSeries, XYSeriesFormatter, XYSeriesRenderer, 
             double doubleValue = this.userRangeOrigin.doubleValue();
             double distance = distance(this.bounds.getMaxY().doubleValue(), doubleValue);
             double distance2 = distance(this.bounds.getMinY().doubleValue(), doubleValue);
-            if (distance > distance2) {
-                this.bounds.setMinY(Double.valueOf(doubleValue - distance));
+            int i = (distance > distance2 ? 1 : (distance == distance2 ? 0 : -1));
+            RectRegion rectRegion = this.bounds;
+            if (i > 0) {
+                rectRegion.setMinY(Double.valueOf(doubleValue - distance));
                 this.bounds.setMaxY(Double.valueOf(doubleValue + distance));
                 return;
             }
-            this.bounds.setMinY(Double.valueOf(doubleValue - distance2));
+            rectRegion.setMinY(Double.valueOf(doubleValue - distance2));
             this.bounds.setMaxY(Double.valueOf(doubleValue + distance2));
             return;
         }

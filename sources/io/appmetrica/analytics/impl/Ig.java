@@ -16,7 +16,7 @@ public final class Ig implements Kl {
     public final void a() {
         NetworkTask c = this.f629a.c();
         if (c != null) {
-            C0449na.I.getClass();
+            C0448na.I.getClass();
             NetworkServiceLocator.getInstance().getNetworkCore().startTask(c);
         }
     }

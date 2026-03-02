@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class J1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0499pa f636a = new C0499pa();
+    public final C0498pa f636a = new C0498pa();
     public final LinkedHashMap b = new LinkedHashMap();
     public final LinkedHashMap c = new LinkedHashMap();
 
@@ -51,12 +51,12 @@ public final class J1 {
         if (intent != null) {
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                C0499pa c0499pa = this.f636a;
+                C0498pa c0498pa = this.f636a;
                 Integer valueOf = Integer.valueOf(a(intent));
-                Collection collection = (Collection) c0499pa.f1172a.get(action);
+                Collection collection = (Collection) c0498pa.f1172a.get(action);
                 if (collection != null && collection.remove(valueOf)) {
-                    if (collection.isEmpty() && c0499pa.b) {
-                        c0499pa.f1172a.remove(action);
+                    if (collection.isEmpty() && c0498pa.b) {
+                        c0498pa.f1172a.remove(action);
                     }
                     new ArrayList(collection);
                 }

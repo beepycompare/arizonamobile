@@ -23,8 +23,8 @@ import ru.mrlargha.commonui.elements.hud.presentation.api.obj.HudApiRequest;
 import ru.mrlargha.commonui.elements.hud.presentation.api.obj.Query;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Hud.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1", f = "Hud.kt", i = {4, 4}, l = {301, 302, 303, 304, 310}, m = "invokeSuspend", n = {"resp", SearchIntents.EXTRA_QUERY}, s = {"L$0", "L$1"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1", f = "Hud.kt", i = {4, 4}, l = {299, 300, 301, 302, 308}, m = "invokeSuspend", n = {"resp", SearchIntents.EXTRA_QUERY}, nl = {300, 301, 302, 303, 320}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class Hud$installHud$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $serverId;
@@ -153,8 +153,8 @@ public final class Hud$installHud$1 extends SuspendLambda implements Function2<C
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: Hud.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1$1", f = "Hud.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1$1", f = "Hud.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.hud.presentation.Hud$installHud$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -195,17 +195,19 @@ public final class Hud$installHud$1 extends SuspendLambda implements Function2<C
             }
             hudPageBinding = this.this$0.binding;
             TextView textView = hudPageBinding.hudServerShieldName;
-            if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
-                String name = this.$query.getName();
+            boolean isArizonaType = ru.mrlargha.commonui.utils.UtilsKt.isArizonaType();
+            Query query = this.$query;
+            if (isArizonaType) {
+                String name = query.getName();
                 if (name != null) {
-                    r2 = name.toUpperCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(r2, "toUpperCase(...)");
+                    r3 = name.toUpperCase(Locale.ROOT);
+                    Intrinsics.checkNotNullExpressionValue(r3, "toUpperCase(...)");
                 }
-                str = r2 != null ? r2 : "";
+                str = r3 != null ? r3 : "";
             } else {
-                String name2 = this.$query.getName();
-                r2 = name2 != null ? StringsKt.substringBefore$default(name2, " ", (String) null, 2, (Object) null) : null;
-                str = r2 != null ? r2 : "";
+                String name2 = query.getName();
+                r3 = name2 != null ? StringsKt.substringBefore$default(name2, " ", (String) null, 2, (Object) null) : null;
+                str = r3 != null ? r3 : "";
             }
             textView.setText(str);
             hudPageBinding2 = this.this$0.binding;

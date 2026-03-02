@@ -117,11 +117,12 @@ public final class ObservableFlatMapSingle<T, R> extends AbstractObservableWithU
                     SpscLinkedArrayQueue<R> spscLinkedArrayQueue = this.queue.get();
                     if (z && (spscLinkedArrayQueue == null || spscLinkedArrayQueue.isEmpty())) {
                         Throwable terminate = this.errors.terminate();
+                        Observer<? super R> observer = this.downstream;
                         if (terminate != null) {
-                            this.downstream.onError(terminate);
+                            observer.onError(terminate);
                             return;
                         } else {
-                            this.downstream.onComplete();
+                            observer.onComplete();
                             return;
                         }
                     }

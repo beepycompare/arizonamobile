@@ -25,49 +25,49 @@ public final class CallFactoryNetworkClient implements NetworkClient {
     private final Call.Factory callFactory;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ CallFactoryNetworkClient m9457boximpl(Call.Factory factory) {
+    public static final /* synthetic */ CallFactoryNetworkClient m8597boximpl(Call.Factory factory) {
         return new CallFactoryNetworkClient(factory);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Call.Factory m9458constructorimpl(Call.Factory factory) {
+    public static Call.Factory m8598constructorimpl(Call.Factory factory) {
         return factory;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m9459equalsimpl(Call.Factory factory, Object obj) {
-        return (obj instanceof CallFactoryNetworkClient) && Intrinsics.areEqual(factory, ((CallFactoryNetworkClient) obj).m9464unboximpl());
+    public static boolean m8599equalsimpl(Call.Factory factory, Object obj) {
+        return (obj instanceof CallFactoryNetworkClient) && Intrinsics.areEqual(factory, ((CallFactoryNetworkClient) obj).m8604unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m9460equalsimpl0(Call.Factory factory, Call.Factory factory2) {
+    public static final boolean m8600equalsimpl0(Call.Factory factory, Call.Factory factory2) {
         return Intrinsics.areEqual(factory, factory2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m9462hashCodeimpl(Call.Factory factory) {
+    public static int m8602hashCodeimpl(Call.Factory factory) {
         return factory.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m9463toStringimpl(Call.Factory factory) {
+    public static String m8603toStringimpl(Call.Factory factory) {
         return "CallFactoryNetworkClient(callFactory=" + factory + ')';
     }
 
     public boolean equals(Object obj) {
-        return m9459equalsimpl(this.callFactory, obj);
+        return m8599equalsimpl(this.callFactory, obj);
     }
 
     public int hashCode() {
-        return m9462hashCodeimpl(this.callFactory);
+        return m8602hashCodeimpl(this.callFactory);
     }
 
     public String toString() {
-        return m9463toStringimpl(this.callFactory);
+        return m8603toStringimpl(this.callFactory);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Call.Factory m9464unboximpl() {
+    public final /* synthetic */ Call.Factory m8604unboximpl() {
         return this.callFactory;
     }
 
@@ -83,7 +83,7 @@ public final class CallFactoryNetworkClient implements NetworkClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static <T> Object m9461executeRequestimpl(Call.Factory factory, NetworkRequest networkRequest, Function2<? super NetworkResponse, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
+    public static <T> Object m8601executeRequestimpl(Call.Factory factory, NetworkRequest networkRequest, Function2<? super NetworkResponse, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
         CallFactoryNetworkClient$executeRequest$1 callFactoryNetworkClient$executeRequest$1;
         Object obj;
         Object coroutine_suspended;
@@ -221,6 +221,6 @@ public final class CallFactoryNetworkClient implements NetworkClient {
 
     @Override // coil3.network.NetworkClient
     public <T> Object executeRequest(NetworkRequest networkRequest, Function2<? super NetworkResponse, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        return m9461executeRequestimpl(this.callFactory, networkRequest, function2, continuation);
+        return m8601executeRequestimpl(this.callFactory, networkRequest, function2, continuation);
     }
 }

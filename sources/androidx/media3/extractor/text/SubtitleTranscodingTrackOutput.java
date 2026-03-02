@@ -52,10 +52,12 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
             this.currentFormat = format;
             this.currentSubtitleParser = this.subtitleParserFactory.supportsFormat(format) ? this.subtitleParserFactory.create(format) : null;
         }
-        if (this.currentSubtitleParser == null) {
-            this.delegate.format(format);
+        SubtitleParser subtitleParser = this.currentSubtitleParser;
+        TrackOutput trackOutput = this.delegate;
+        if (subtitleParser == null) {
+            trackOutput.format(format);
         } else {
-            this.delegate.format(format.buildUpon().setSampleMimeType(MimeTypes.APPLICATION_MEDIA3_CUES).setCodecs(format.sampleMimeType).setSubsampleOffsetUs(Long.MAX_VALUE).setCueReplacementBehavior(this.subtitleParserFactory.getCueReplacementBehavior(format)).build());
+            trackOutput.format(format.buildUpon().setSampleMimeType(MimeTypes.APPLICATION_MEDIA3_CUES).setCodecs(format.sampleMimeType).setSubsampleOffsetUs(Long.MAX_VALUE).setCueReplacementBehavior(this.subtitleParserFactory.getCueReplacementBehavior(format)).build());
         }
     }
 
@@ -99,7 +101,7 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
             this.currentSubtitleParser.parse(this.sampleData, i4, i2, SubtitleParser.OutputOptions.allCues(), new Consumer() { // from class: androidx.media3.extractor.text.SubtitleTranscodingTrackOutput$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    SubtitleTranscodingTrackOutput.this.m9081xa18018cd(j, i, (CuesWithTiming) obj);
+                    SubtitleTranscodingTrackOutput.this.m8359xa18018cd(j, i, (CuesWithTiming) obj);
                 }
             });
         } catch (RuntimeException e) {
@@ -119,14 +121,16 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: outputSample */
-    public void m9081xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
+    public void m8359xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
         Preconditions.checkNotNull(this.currentFormat);
         byte[] encode = this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs);
         this.parsableScratch.reset(encode);
         this.delegate.sampleData(this.parsableScratch, encode.length);
-        if (cuesWithTiming.startTimeUs == C.TIME_UNSET) {
-            Preconditions.checkState(this.currentFormat.subsampleOffsetUs == Long.MAX_VALUE);
-        } else if (this.currentFormat.subsampleOffsetUs == Long.MAX_VALUE) {
+        int i2 = (cuesWithTiming.startTimeUs > C.TIME_UNSET ? 1 : (cuesWithTiming.startTimeUs == C.TIME_UNSET ? 0 : -1));
+        Format format = this.currentFormat;
+        if (i2 == 0) {
+            Preconditions.checkState(format.subsampleOffsetUs == Long.MAX_VALUE);
+        } else if (format.subsampleOffsetUs == Long.MAX_VALUE) {
             j += cuesWithTiming.startTimeUs;
         } else {
             j = cuesWithTiming.startTimeUs + this.currentFormat.subsampleOffsetUs;

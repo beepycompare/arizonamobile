@@ -99,7 +99,7 @@ public final class RoundedPolygonKt {
 
     public static final RoundedPolygon RoundedPolygon(RoundedPolygon source) {
         Intrinsics.checkNotNullParameter(source, "source");
-        return new RoundedPolygon(source.getFeatures(), source.m8840getCenter1ufDz9w$graphics_shapes(), null);
+        return new RoundedPolygon(source.getFeatures(), source.m8125getCenter1ufDz9w$graphics_shapes(), null);
     }
 
     public static /* synthetic */ RoundedPolygon RoundedPolygon$default(float[] fArr, CornerRounding cornerRounding, List list, float f, float f2, int i, Object obj) {
@@ -145,7 +145,7 @@ public final class RoundedPolygonKt {
             int i5 = i3 + 1;
             int i6 = (i5 % length) * 2;
             int i7 = i3 * 2;
-            arrayList2.add(new RoundedCorner(FloatFloatPair.m25constructorimpl(vertices[i4], vertices[i4 + 1]), FloatFloatPair.m25constructorimpl(vertices[i7], vertices[i7 + 1]), FloatFloatPair.m25constructorimpl(vertices[i6], vertices[i6 + 1]), cornerRounding2, null));
+            arrayList2.add(new RoundedCorner(FloatFloatPair.m12constructorimpl(vertices[i4], vertices[i4 + 1]), FloatFloatPair.m12constructorimpl(vertices[i7], vertices[i7 + 1]), FloatFloatPair.m12constructorimpl(vertices[i6], vertices[i6 + 1]), cornerRounding2, null));
             i3 = i5;
         }
         IntRange until = RangesKt.until(0, length);
@@ -181,18 +181,18 @@ public final class RoundedPolygonKt {
         while (i2 < length) {
             int i13 = i2 + 1;
             int i14 = i2 * 2;
-            long m25constructorimpl = FloatFloatPair.m25constructorimpl(vertices[i14], vertices[i14 + 1]);
+            long m12constructorimpl = FloatFloatPair.m12constructorimpl(vertices[i14], vertices[i14 + 1]);
             int i15 = (((i2 + length) - 1) % length) * 2;
-            long m25constructorimpl2 = FloatFloatPair.m25constructorimpl(vertices[i15], vertices[i15 + 1]);
+            long m12constructorimpl2 = FloatFloatPair.m12constructorimpl(vertices[i15], vertices[i15 + 1]);
             int i16 = (i13 % length) * 2;
-            arrayList5.add(new Feature.Corner((List) arrayList.get(i2), Utils.m8856convexb22R3LQ(m25constructorimpl2, m25constructorimpl, FloatFloatPair.m25constructorimpl(vertices[i16], vertices[i16 + 1]))));
+            arrayList5.add(new Feature.Corner((List) arrayList.get(i2), Utils.m8139convexb22R3LQ(m12constructorimpl2, m12constructorimpl, FloatFloatPair.m12constructorimpl(vertices[i16], vertices[i16 + 1]))));
             arrayList5.add(new Feature.Edge(CollectionsKt.listOf(Cubic.Companion.straightLine(((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i2))).getAnchor1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i2))).getAnchor1Y(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0X(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0Y()))));
             i2 = i13;
         }
         if (f == Float.MIN_VALUE || f2 == Float.MIN_VALUE) {
             calculateCenter = calculateCenter(vertices);
         } else {
-            calculateCenter = FloatFloatPair.m25constructorimpl(f, f2);
+            calculateCenter = FloatFloatPair.m12constructorimpl(f, f2);
         }
         return RoundedPolygon(arrayList5, Float.intBitsToFloat((int) (calculateCenter >> 32)), Float.intBitsToFloat((int) (calculateCenter & 4294967295L)));
     }
@@ -226,7 +226,7 @@ public final class RoundedPolygonKt {
         if (Float.isNaN(f2)) {
             f2 = Float.intBitsToFloat((int) (calculateCenter(floatArray) & 4294967295L));
         }
-        return new RoundedPolygon(features, FloatFloatPair.m25constructorimpl(f, f2), null);
+        return new RoundedPolygon(features, FloatFloatPair.m12constructorimpl(f, f2), null);
     }
 
     public static final long calculateCenter(float[] vertices) {
@@ -240,7 +240,7 @@ public final class RoundedPolygonKt {
             i += 2;
             f2 += vertices[i2];
         }
-        return FloatFloatPair.m25constructorimpl(f / (vertices.length / 2), f2 / (vertices.length / 2));
+        return FloatFloatPair.m12constructorimpl(f / (vertices.length / 2), f2 / (vertices.length / 2));
     }
 
     private static final float[] verticesFromNumVerts(int i, float f, float f2, float f3) {
@@ -249,11 +249,11 @@ public final class RoundedPolygonKt {
         int i3 = 0;
         while (i2 < i) {
             float f4 = f;
-            long m8825plusybeJwSQ = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m25constructorimpl(f2, f3));
+            long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2 * i2, 0L, 4, null), FloatFloatPair.m12constructorimpl(f2, f3));
             int i4 = i3 + 1;
-            fArr[i3] = PointKt.m8821getXDnnuFBc(m8825plusybeJwSQ);
+            fArr[i3] = PointKt.m8106getXDnnuFBc(m8110plusybeJwSQ);
             i3 += 2;
-            fArr[i4] = PointKt.m8822getYDnnuFBc(m8825plusybeJwSQ);
+            fArr[i4] = PointKt.m8107getYDnnuFBc(m8110plusybeJwSQ);
             i2++;
             f = f4;
         }

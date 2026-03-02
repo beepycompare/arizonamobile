@@ -48,14 +48,12 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter extends LegacyPl
         startInput(new Function1() { // from class: androidx.compose.foundation.text.input.internal.AndroidLegacyPlatformTextInputServiceAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit startInput$lambda$0;
-                startInput$lambda$0 = AndroidLegacyPlatformTextInputServiceAdapter.startInput$lambda$0(TextFieldValue.this, this, imeOptions, function1, function12, (LegacyTextInputMethodRequest) obj);
-                return startInput$lambda$0;
+                return AndroidLegacyPlatformTextInputServiceAdapter.startInput$lambda$0(TextFieldValue.this, this, imeOptions, function1, function12, (LegacyTextInputMethodRequest) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit startInput$lambda$0(TextFieldValue textFieldValue, AndroidLegacyPlatformTextInputServiceAdapter androidLegacyPlatformTextInputServiceAdapter, ImeOptions imeOptions, Function1 function1, Function1 function12, LegacyTextInputMethodRequest legacyTextInputMethodRequest) {
         legacyTextInputMethodRequest.startInput(textFieldValue, androidLegacyPlatformTextInputServiceAdapter.getTextInputModifierNode(), imeOptions, function1, function12);
         return Unit.INSTANCE;
@@ -84,7 +82,7 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter extends LegacyPl
             if (layoutCoordinates == null) {
                 return;
             }
-            layoutCoordinates.mo6891transformToScreen58bKbWc(fArr);
+            layoutCoordinates.mo6232transformToScreen58bKbWc(fArr);
         }
     }
 

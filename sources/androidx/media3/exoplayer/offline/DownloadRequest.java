@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DownloadRequest implements Parcelable {
     public static final Parcelable.Creator<DownloadRequest> CREATOR = new Parcelable.Creator<DownloadRequest>() { // from class: androidx.media3.exoplayer.offline.DownloadRequest.1
         /* JADX WARN: Can't rename method to resolve collision */
@@ -42,7 +42,7 @@ public final class DownloadRequest implements Parcelable {
     public final TimeRange timeRange;
     public final Uri uri;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class UnsupportedRequestException extends IOException {
     }
 
@@ -51,7 +51,7 @@ public final class DownloadRequest implements Parcelable {
         return 0;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class Builder {
         private String customCacheKey;
         private byte[] data;
@@ -226,7 +226,7 @@ public final class DownloadRequest implements Parcelable {
         parcel.writeParcelable(this.timeRange, 0);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class ByteRange implements Parcelable {
         public static final Parcelable.Creator<ByteRange> CREATOR = new Parcelable.Creator<ByteRange>() { // from class: androidx.media3.exoplayer.offline.DownloadRequest.ByteRange.1
             /* JADX WARN: Can't rename method to resolve collision */
@@ -283,7 +283,7 @@ public final class DownloadRequest implements Parcelable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class TimeRange implements Parcelable {
         public static final Parcelable.Creator<TimeRange> CREATOR = new Parcelable.Creator<TimeRange>() { // from class: androidx.media3.exoplayer.offline.DownloadRequest.TimeRange.1
             /* JADX WARN: Can't rename method to resolve collision */

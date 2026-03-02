@@ -684,10 +684,12 @@ public final class NotificationManagerCompat {
 
         @Override // androidx.core.app.NotificationManagerCompat.Task
         public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
-            if (this.all) {
-                iNotificationSideChannel.cancelAll(this.packageName);
+            boolean z = this.all;
+            String str = this.packageName;
+            if (z) {
+                iNotificationSideChannel.cancelAll(str);
             } else {
-                iNotificationSideChannel.cancel(this.packageName, this.id, this.tag);
+                iNotificationSideChannel.cancel(str, this.id, this.tag);
             }
         }
 

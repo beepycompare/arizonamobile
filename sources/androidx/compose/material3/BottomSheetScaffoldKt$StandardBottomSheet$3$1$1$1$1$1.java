@@ -36,12 +36,12 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$1$1$1 extends
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0031, code lost:
-        if (r4.$state.hide(r4) == r0) goto L15;
+        if (r1.hide(r4) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x003f, code lost:
-        if (r4.$state.partialExpand(r4) == r0) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x003d, code lost:
+        if (r1.partialExpand(r4) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0041, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -53,7 +53,9 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$1$1$1 extends
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (this.$state.getSkipHiddenState$material3()) {
+            boolean skipHiddenState$material3 = this.$state.getSkipHiddenState$material3();
+            SheetState sheetState = this.$state;
+            if (skipHiddenState$material3) {
                 this.label = 2;
             } else {
                 this.label = 1;

@@ -44,16 +44,12 @@ public final class JavaDataStorage {
         this.dataStore$delegate = PreferenceDataStoreDelegateKt.preferencesDataStore$default(name, new ReplaceFileCorruptionHandler(new Function1() { // from class: com.google.firebase.datastorage.JavaDataStorage$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Preferences dataStore_delegate$lambda$0;
-                dataStore_delegate$lambda$0 = JavaDataStorage.dataStore_delegate$lambda$0(JavaDataStorage.this, (CorruptionException) obj);
-                return dataStore_delegate$lambda$0;
+                return JavaDataStorage.dataStore_delegate$lambda$0(JavaDataStorage.this, (CorruptionException) obj);
             }
         }), new Function1() { // from class: com.google.firebase.datastorage.JavaDataStorage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List dataStore_delegate$lambda$1;
-                dataStore_delegate$lambda$1 = JavaDataStorage.dataStore_delegate$lambda$1(JavaDataStorage.this, (Context) obj);
-                return dataStore_delegate$lambda$1;
+                return JavaDataStorage.dataStore_delegate$lambda$1(JavaDataStorage.this, (Context) obj);
             }
         }, null, 8, null);
         this.dataStore = getDataStore(context);
@@ -71,13 +67,13 @@ public final class JavaDataStorage {
         return (DataStore) this.dataStore$delegate.getValue(context, $$delegatedProperties[0]);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List dataStore_delegate$lambda$1(JavaDataStorage javaDataStorage, Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return CollectionsKt.listOf(SharedPreferencesMigrationKt.SharedPreferencesMigration$default(it, javaDataStorage.name, null, 4, null));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Preferences dataStore_delegate$lambda$0(JavaDataStorage javaDataStorage, CorruptionException ex) {
         Intrinsics.checkNotNullParameter(ex, "ex");
         Log.w(Reflection.getOrCreateKotlinClass(JavaDataStorage.class).getSimpleName(), "CorruptionException in " + javaDataStorage.name + " DataStore running in process " + Process.myPid(), ex);

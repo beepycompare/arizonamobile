@@ -2,7 +2,7 @@ package io.appmetrica.analytics.adrevenue.ironsource.v7.internal;
 
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueCollector;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class a implements AdRevenueCollector {
 
     /* renamed from: a  reason: collision with root package name */

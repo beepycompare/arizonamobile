@@ -22,13 +22,11 @@ public final class LocalOnBackPressedDispatcherOwner {
     private static final ProvidableCompositionLocal<OnBackPressedDispatcherOwner> LocalOnBackPressedDispatcherOwner = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.activity.compose.LocalOnBackPressedDispatcherOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            OnBackPressedDispatcherOwner LocalOnBackPressedDispatcherOwner$lambda$0;
-            LocalOnBackPressedDispatcherOwner$lambda$0 = LocalOnBackPressedDispatcherOwner.LocalOnBackPressedDispatcherOwner$lambda$0();
-            return LocalOnBackPressedDispatcherOwner$lambda$0;
+            return LocalOnBackPressedDispatcherOwner.LocalOnBackPressedDispatcherOwner$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final OnBackPressedDispatcherOwner LocalOnBackPressedDispatcherOwner$lambda$0() {
         return null;
     }
@@ -37,9 +35,9 @@ public final class LocalOnBackPressedDispatcherOwner {
     }
 
     public final OnBackPressedDispatcherOwner getCurrent(Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, -2068013981, "C(<get-current>)58@2544L7:BackHandler.kt#q1dkbc");
+        ComposerKt.sourceInformationMarkerStart(composer, -2068013981, "C(<get-current>)59@2607L7:BackHandler.kt#q1dkbc");
         if (ComposerKt.isTraceInProgress()) {
-            ComposerKt.traceEventStart(-2068013981, i, -1, "androidx.activity.compose.LocalOnBackPressedDispatcherOwner.<get-current> (BackHandler.kt:58)");
+            ComposerKt.traceEventStart(-2068013981, i, -1, "androidx.activity.compose.LocalOnBackPressedDispatcherOwner.<get-current> (BackHandler.kt:59)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(LocalOnBackPressedDispatcherOwner);
@@ -47,7 +45,7 @@ public final class LocalOnBackPressedDispatcherOwner {
         OnBackPressedDispatcherOwner onBackPressedDispatcherOwner = (OnBackPressedDispatcherOwner) consume;
         if (onBackPressedDispatcherOwner == null) {
             composer.startReplaceGroup(1208426157);
-            ComposerKt.sourceInformation(composer, "59@2581L7");
+            ComposerKt.sourceInformation(composer, "60@2644L7");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalView());
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -59,7 +57,7 @@ public final class LocalOnBackPressedDispatcherOwner {
         }
         if (onBackPressedDispatcherOwner == null) {
             composer.startReplaceGroup(1208428160);
-            ComposerKt.sourceInformation(composer, "60@2704L7");
+            ComposerKt.sourceInformation(composer, "61@2767L7");
             ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume3 = composer.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(composer);

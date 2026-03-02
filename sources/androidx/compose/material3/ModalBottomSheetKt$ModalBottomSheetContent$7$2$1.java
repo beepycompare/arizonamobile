@@ -97,15 +97,13 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
             rememberedValue = new Function0() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$1$lambda$0(SheetState.this, function0, coroutineScope);
-                    return invoke$lambda$1$lambda$0;
+                    return ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$1$lambda$0(SheetState.this, function0, coroutineScope);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m340clickableXHw0xAI$default = ClickableKt.m340clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
+        Modifier m297clickableXHw0xAI$default = ClickableKt.m297clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
         ComposerKt.sourceInformationMarkerStart(composer, -1664209222, "CC(remember):ModalBottomSheet.kt#9igjgp");
         boolean changed2 = composer.changed(this.$sheetGesturesEnabled) | composer.changed(this.$sheetState) | composer.changed(this.$dismissActionLabel) | composer.changed(this.$animateToDismiss) | composer.changed(this.$expandActionLabel) | composer.changedInstance(this.$scope) | composer.changed(this.$collapseActionLabel);
         final boolean z = this.$sheetGesturesEnabled;
@@ -120,16 +118,14 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
             Function1 function1 = new Function1() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$7$lambda$6;
-                    invoke$lambda$7$lambda$6 = ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6(z, sheetState2, str, str2, str3, function02, coroutineScope2, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$7$lambda$6;
+                    return ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6(z, sheetState2, str, str2, str3, function02, coroutineScope2, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(function1);
             rememberedValue2 = function1;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics = SemanticsModifierKt.semantics(m340clickableXHw0xAI$default, true, (Function1) rememberedValue2);
+        Modifier semantics = SemanticsModifierKt.semantics(m297clickableXHw0xAI$default, true, (Function1) rememberedValue2);
         Function2<Composer, Integer, Unit> function2 = this.$dragHandle;
         ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -148,15 +144,15 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, -446284723, "C428@21296L12:ModalBottomSheet.kt#uh7d8r");
@@ -172,7 +168,7 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(SheetState sheetState, Function0 function0, CoroutineScope coroutineScope) {
         int i = WhenMappings.$EnumSwitchMapping$0[sheetState.getCurrentValue().ordinal()];
         if (i == 1) {
@@ -186,33 +182,27 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$7$lambda$6(boolean z, final SheetState sheetState, String str, String str2, String str3, final Function0 function0, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         if (z) {
             SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str, new Function0() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean invoke$lambda$7$lambda$6$lambda$5$lambda$2;
-                    invoke$lambda$7$lambda$6$lambda$5$lambda$2 = ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$2(Function0.this);
-                    return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$2);
+                    return Boolean.valueOf(ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$2(Function0.this));
                 }
             });
             if (sheetState.getCurrentValue() == SheetValue.PartiallyExpanded) {
                 SemanticsPropertiesKt.expand(semanticsPropertyReceiver, str2, new Function0() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean invoke$lambda$7$lambda$6$lambda$5$lambda$3;
-                        invoke$lambda$7$lambda$6$lambda$5$lambda$3 = ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$3(SheetState.this, coroutineScope, sheetState);
-                        return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$3);
+                        return Boolean.valueOf(ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$3(SheetState.this, coroutineScope, sheetState));
                     }
                 });
             } else if (sheetState.getHasPartiallyExpandedState()) {
                 SemanticsPropertiesKt.collapse(semanticsPropertyReceiver, str3, new Function0() { // from class: androidx.compose.material3.ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean invoke$lambda$7$lambda$6$lambda$5$lambda$4;
-                        invoke$lambda$7$lambda$6$lambda$5$lambda$4 = ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$4(SheetState.this, coroutineScope);
-                        return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$4);
+                        return Boolean.valueOf(ModalBottomSheetKt$ModalBottomSheetContent$7$2$1.invoke$lambda$7$lambda$6$lambda$5$lambda$4(SheetState.this, coroutineScope));
                     }
                 });
             }
@@ -220,13 +210,13 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$2(Function0 function0) {
         function0.invoke();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$3(SheetState sheetState, CoroutineScope coroutineScope, SheetState sheetState2) {
         if (sheetState.getAnchoredDraggableState$material3().getConfirmValueChange$material3().invoke(SheetValue.Expanded).booleanValue()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$2$1$1$2$1(sheetState2, null), 3, null);
@@ -235,7 +225,7 @@ final class ModalBottomSheetKt$ModalBottomSheetContent$7$2$1 implements Function
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$4(SheetState sheetState, CoroutineScope coroutineScope) {
         if (sheetState.getAnchoredDraggableState$material3().getConfirmValueChange$material3().invoke(SheetValue.PartiallyExpanded).booleanValue()) {
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new ModalBottomSheetKt$ModalBottomSheetContent$7$2$1$2$1$1$3$1(sheetState, null), 3, null);

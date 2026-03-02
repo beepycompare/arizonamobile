@@ -178,7 +178,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: connectTcp */
-    public RoutePlanner.ConnectResult mo12164connectTcp() {
+    public RoutePlanner.ConnectResult mo11032connectTcp() {
         Socket socket;
         Socket socket2;
         if (this.rawSocket != null) {
@@ -223,7 +223,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public RoutePlanner.ConnectResult mo12165connectTlsEtc() {
+    public RoutePlanner.ConnectResult mo11033connectTlsEtc() {
         IOException iOException;
         ConnectPlan connectPlan;
         Socket socket = this.rawSocket;
@@ -442,18 +442,14 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
             final Handshake handshake2 = new Handshake(handshake.tlsVersion(), handshake.cipherSuite(), handshake.localCertificates(), new Function0() { // from class: okhttp3.internal.connection.ConnectPlan$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List connectTls$lambda$0;
-                    connectTls$lambda$0 = ConnectPlan.connectTls$lambda$0(CertificatePinner.this, handshake, address);
-                    return connectTls$lambda$0;
+                    return ConnectPlan.connectTls$lambda$0(CertificatePinner.this, handshake, address);
                 }
             });
             this.handshake = handshake2;
             certificatePinner.check$okhttp(address.url().host(), new Function0() { // from class: okhttp3.internal.connection.ConnectPlan$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List connectTls$lambda$1;
-                    connectTls$lambda$1 = ConnectPlan.connectTls$lambda$1(Handshake.this);
-                    return connectTls$lambda$1;
+                    return ConnectPlan.connectTls$lambda$1(Handshake.this);
                 }
             });
             String selectedProtocol = connectionSpec.supportsTlsExtensions() ? Platform.Companion.get().getSelectedProtocol(sSLSocket) : null;
@@ -468,14 +464,14 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List connectTls$lambda$0(CertificatePinner certificatePinner, Handshake handshake, Address address) {
         CertificateChainCleaner certificateChainCleaner$okhttp = certificatePinner.getCertificateChainCleaner$okhttp();
         Intrinsics.checkNotNull(certificateChainCleaner$okhttp);
         return certificateChainCleaner$okhttp.clean(handshake.peerCertificates(), address.url().host());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List connectTls$lambda$1(Handshake handshake) {
         List<Certificate> peerCertificates = handshake.peerCertificates();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(peerCertificates, 10));
@@ -567,7 +563,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: handleSuccess */
-    public RealConnection mo12161handleSuccess() {
+    public RealConnection mo11029handleSuccess() {
         this.call.getClient().getRouteDatabase$okhttp().connected(getRoute());
         RealConnection realConnection = this.connection;
         Intrinsics.checkNotNull(realConnection);
@@ -589,7 +585,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan, okhttp3.internal.http.ExchangeCodec.Carrier
     /* renamed from: cancel */
-    public void mo12160cancel() {
+    public void mo11028cancel() {
         this.canceled = true;
         Socket socket = this.rawSocket;
         if (socket != null) {
@@ -599,7 +595,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: retry */
-    public RoutePlanner.Plan mo12162retry() {
+    public RoutePlanner.Plan mo11030retry() {
         return new ConnectPlan(this.taskRunner, this.connectionPool, this.readTimeoutMillis, this.writeTimeoutMillis, this.socketConnectTimeoutMillis, this.socketReadTimeoutMillis, this.pingIntervalMillis, this.retryOnConnectionFailure, this.call, this.routePlanner, getRoute(), this.routes, this.attempt, this.tunnelRequest, this.connectionSpecIndex, this.isTlsFallback);
     }
 

@@ -26,7 +26,7 @@ public final class RoomTrackingLiveData$observer$1 extends InvalidationTracker.O
         archTaskExecutor.executeOnMainThread(new Runnable() { // from class: androidx.room.RoomTrackingLiveData$observer$1$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RoomTrackingLiveData.access$invalidated(RoomTrackingLiveData.this);
+                RoomTrackingLiveData.this.invalidated();
             }
         });
     }

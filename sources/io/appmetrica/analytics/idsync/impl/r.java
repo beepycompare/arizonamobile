@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class r implements s {
 
     /* renamed from: a  reason: collision with root package name */

@@ -24,7 +24,7 @@ public final class FontFamilyResolver_androidKt {
     }
 
     /* renamed from: resolveAsTypeface-Wqqsr6A$default  reason: not valid java name */
-    public static /* synthetic */ State m7790resolveAsTypefaceWqqsr6A$default(FontFamily.Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ State m7090resolveAsTypefaceWqqsr6A$default(FontFamily.Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             fontFamily = null;
         }
@@ -32,18 +32,18 @@ public final class FontFamilyResolver_androidKt {
             fontWeight = FontWeight.Companion.getNormal();
         }
         if ((i3 & 4) != 0) {
-            i = FontStyle.Companion.m7822getNormal_LCdwA();
+            i = FontStyle.Companion.m7122getNormal_LCdwA();
         }
         if ((i3 & 8) != 0) {
-            i2 = FontSynthesis.Companion.m7832getAllGVVA2EU();
+            i2 = FontSynthesis.Companion.m7132getAllGVVA2EU();
         }
-        return m7789resolveAsTypefaceWqqsr6A(resolver, fontFamily, fontWeight, i, i2);
+        return m7089resolveAsTypefaceWqqsr6A(resolver, fontFamily, fontWeight, i, i2);
     }
 
     /* renamed from: resolveAsTypeface-Wqqsr6A  reason: not valid java name */
-    public static final State<android.graphics.Typeface> m7789resolveAsTypefaceWqqsr6A(FontFamily.Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
-        State mo7787resolveDPcqOEQ = resolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
-        Intrinsics.checkNotNull(mo7787resolveDPcqOEQ, "null cannot be cast to non-null type androidx.compose.runtime.State<android.graphics.Typeface>");
-        return mo7787resolveDPcqOEQ;
+    public static final State<android.graphics.Typeface> m7089resolveAsTypefaceWqqsr6A(FontFamily.Resolver resolver, FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
+        State mo7088resolveDPcqOEQ = resolver.mo7088resolveDPcqOEQ(fontFamily, fontWeight, i, i2);
+        Intrinsics.checkNotNull(mo7088resolveDPcqOEQ, "null cannot be cast to non-null type androidx.compose.runtime.State<android.graphics.Typeface>");
+        return mo7088resolveDPcqOEQ;
     }
 }

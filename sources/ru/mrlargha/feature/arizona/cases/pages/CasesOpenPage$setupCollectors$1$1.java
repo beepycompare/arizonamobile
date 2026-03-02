@@ -17,8 +17,8 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesOpenPageBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesOpenPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$1", f = "CasesOpenPage.kt", i = {}, l = {97}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$1", f = "CasesOpenPage.kt", i = {}, l = {97}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesOpenPage$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ArizonaCasesOpenPageBinding $this_with;
@@ -58,15 +58,16 @@ public final class CasesOpenPage$setupCollectors$1$1 extends SuspendLambda imple
                 }
 
                 public final Object emit(boolean z, Continuation<? super Unit> continuation) {
+                    ArizonaCasesOpenPageBinding arizonaCasesOpenPageBinding2 = ArizonaCasesOpenPageBinding.this;
                     if (z) {
-                        LinearLayout openContainer = ArizonaCasesOpenPageBinding.this.openContainer;
+                        LinearLayout openContainer = arizonaCasesOpenPageBinding2.openContainer;
                         Intrinsics.checkNotNullExpressionValue(openContainer, "openContainer");
                         openContainer.setVisibility(8);
                         LinearLayout getContainer = ArizonaCasesOpenPageBinding.this.getContainer;
                         Intrinsics.checkNotNullExpressionValue(getContainer, "getContainer");
                         getContainer.setVisibility(0);
                     } else {
-                        LinearLayout openContainer2 = ArizonaCasesOpenPageBinding.this.openContainer;
+                        LinearLayout openContainer2 = arizonaCasesOpenPageBinding2.openContainer;
                         Intrinsics.checkNotNullExpressionValue(openContainer2, "openContainer");
                         openContainer2.setVisibility(0);
                         LinearLayout getContainer2 = ArizonaCasesOpenPageBinding.this.getContainer;

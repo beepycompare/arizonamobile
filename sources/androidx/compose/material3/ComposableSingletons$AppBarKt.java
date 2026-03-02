@@ -685,102 +685,102 @@ public final class ComposableSingletons$AppBarKt {
     });
 
     /* renamed from: getLambda$-1113422563$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2230getLambda$1113422563$material3() {
+    public final Function2<Composer, Integer, Unit> m1916getLambda$1113422563$material3() {
         return f61lambda$1113422563;
     }
 
     /* renamed from: getLambda$-1168245838$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2231getLambda$1168245838$material3() {
+    public final Function2<Composer, Integer, Unit> m1917getLambda$1168245838$material3() {
         return f62lambda$1168245838;
     }
 
     /* renamed from: getLambda$-1230986050$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2232getLambda$1230986050$material3() {
+    public final Function2<Composer, Integer, Unit> m1918getLambda$1230986050$material3() {
         return f63lambda$1230986050;
     }
 
     /* renamed from: getLambda$-1270442071$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2233getLambda$1270442071$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1919getLambda$1270442071$material3() {
         return f64lambda$1270442071;
     }
 
     /* renamed from: getLambda$-1276513184$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2234getLambda$1276513184$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1920getLambda$1276513184$material3() {
         return f65lambda$1276513184;
     }
 
     /* renamed from: getLambda$-1401945836$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2235getLambda$1401945836$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1921getLambda$1401945836$material3() {
         return f66lambda$1401945836;
     }
 
     /* renamed from: getLambda$-1707954976$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2236getLambda$1707954976$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1922getLambda$1707954976$material3() {
         return f67lambda$1707954976;
     }
 
     /* renamed from: getLambda$-1846660506$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2237getLambda$1846660506$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1923getLambda$1846660506$material3() {
         return f68lambda$1846660506;
     }
 
     /* renamed from: getLambda$-185842620$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2238getLambda$185842620$material3() {
+    public final Function2<Composer, Integer, Unit> m1924getLambda$185842620$material3() {
         return f69lambda$185842620;
     }
 
     /* renamed from: getLambda$-1926007989$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2239getLambda$1926007989$material3() {
+    public final Function2<Composer, Integer, Unit> m1925getLambda$1926007989$material3() {
         return f70lambda$1926007989;
     }
 
     /* renamed from: getLambda$-2101264077$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2240getLambda$2101264077$material3() {
+    public final Function2<Composer, Integer, Unit> m1926getLambda$2101264077$material3() {
         return f71lambda$2101264077;
     }
 
     /* renamed from: getLambda$-229000834$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2241getLambda$229000834$material3() {
+    public final Function2<Composer, Integer, Unit> m1927getLambda$229000834$material3() {
         return f72lambda$229000834;
     }
 
     /* renamed from: getLambda$-470693625$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2242getLambda$470693625$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1928getLambda$470693625$material3() {
         return f73lambda$470693625;
     }
 
     /* renamed from: getLambda$-541682128$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2243getLambda$541682128$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1929getLambda$541682128$material3() {
         return f74lambda$541682128;
     }
 
     /* renamed from: getLambda$-643931612$material3  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m2244getLambda$643931612$material3() {
+    public final Function3<RowScope, Composer, Integer, Unit> m1930getLambda$643931612$material3() {
         return f75lambda$643931612;
     }
 
     /* renamed from: getLambda$-661145402$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2245getLambda$661145402$material3() {
+    public final Function2<Composer, Integer, Unit> m1931getLambda$661145402$material3() {
         return f76lambda$661145402;
     }
 
     /* renamed from: getLambda$-699106370$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2246getLambda$699106370$material3() {
+    public final Function2<Composer, Integer, Unit> m1932getLambda$699106370$material3() {
         return f77lambda$699106370;
     }
 
     /* renamed from: getLambda$-780193532$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2247getLambda$780193532$material3() {
+    public final Function2<Composer, Integer, Unit> m1933getLambda$780193532$material3() {
         return f78lambda$780193532;
     }
 
     /* renamed from: getLambda$-790317886$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2248getLambda$790317886$material3() {
+    public final Function2<Composer, Integer, Unit> m1934getLambda$790317886$material3() {
         return f79lambda$790317886;
     }
 
     /* renamed from: getLambda$-944449303$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2249getLambda$944449303$material3() {
+    public final Function2<Composer, Integer, Unit> m1935getLambda$944449303$material3() {
         return f80lambda$944449303;
     }
 

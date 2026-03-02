@@ -9,5 +9,5 @@ public interface OperationArgContainer {
     int getInt(int i);
 
     /* renamed from: getObject-31yXWZQ  reason: not valid java name */
-    <T> T mo4733getObject31yXWZQ(int i);
+    <T> T mo4100getObject31yXWZQ(int i);
 }

@@ -20,10 +20,13 @@ final class zze extends ResultReceiver {
     public final void onReceiveResult(int i, Bundle bundle) {
         if (i == 1) {
             this.zza.trySetResult(-1);
-        } else if (i == 2) {
-            this.zza.trySetResult(0);
+            return;
+        }
+        TaskCompletionSource taskCompletionSource = this.zza;
+        if (i != 2) {
+            taskCompletionSource.trySetResult(1);
         } else {
-            this.zza.trySetResult(1);
+            taskCompletionSource.trySetResult(0);
         }
     }
 }

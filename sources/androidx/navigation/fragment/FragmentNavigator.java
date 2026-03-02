@@ -25,7 +25,6 @@ import androidx.navigation.NavOptions;
 import androidx.navigation.Navigator;
 import androidx.navigation.NavigatorProvider;
 import androidx.navigation.NavigatorState;
-import androidx.navigation.fragment.FragmentNavigator;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.lang.ref.WeakReference;
@@ -86,9 +85,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         this.fragmentViewObserver = new Function1() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                LifecycleEventObserver fragmentViewObserver$lambda$3;
-                fragmentViewObserver$lambda$3 = FragmentNavigator.fragmentViewObserver$lambda$3(FragmentNavigator.this, (NavBackStackEntry) obj);
-                return fragmentViewObserver$lambda$3;
+                return FragmentNavigator.fragmentViewObserver$lambda$3(FragmentNavigator.this, (NavBackStackEntry) obj);
             }
         };
     }
@@ -106,7 +103,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         return getState().getBackStack();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void fragmentObserver$lambda$1(FragmentNavigator fragmentNavigator, LifecycleOwner source, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -128,7 +125,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final LifecycleEventObserver fragmentViewObserver$lambda$3(final FragmentNavigator fragmentNavigator, final NavBackStackEntry entry) {
         Intrinsics.checkNotNullParameter(entry, "entry");
         return new LifecycleEventObserver() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda2
@@ -139,7 +136,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void fragmentViewObserver$lambda$3$lambda$2(FragmentNavigator fragmentNavigator, NavBackStackEntry navBackStackEntry, LifecycleOwner owner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(owner, "owner");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -268,7 +265,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onAttach$lambda$5(NavigatorState navigatorState, FragmentNavigator fragmentNavigator, FragmentManager fragmentManager, Fragment fragment) {
         NavBackStackEntry navBackStackEntry;
         Intrinsics.checkNotNullParameter(fragmentManager, "<unused var>");
@@ -299,15 +296,13 @@ public class FragmentNavigator extends Navigator<Destination> {
         fragment.getViewLifecycleOwnerLiveData().observe(fragment, new FragmentNavigator$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit attachObservers$lambda$7;
-                attachObservers$lambda$7 = FragmentNavigator.attachObservers$lambda$7(FragmentNavigator.this, fragment, navBackStackEntry, (LifecycleOwner) obj);
-                return attachObservers$lambda$7;
+                return FragmentNavigator.attachObservers$lambda$7(FragmentNavigator.this, fragment, navBackStackEntry, (LifecycleOwner) obj);
             }
         }));
         fragment.getLifecycle().addObserver(this.fragmentObserver);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit attachObservers$lambda$7(FragmentNavigator fragmentNavigator, Fragment fragment, NavBackStackEntry navBackStackEntry, LifecycleOwner lifecycleOwner) {
         List<Pair<String, Boolean>> list = fragmentNavigator.pendingOps;
         boolean z = false;
@@ -341,28 +336,24 @@ public class FragmentNavigator extends Navigator<Destination> {
         initializerViewModelFactoryBuilder.addInitializer(Reflection.getOrCreateKotlinClass(ClearEntryStateViewModel.class), new Function1() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                FragmentNavigator.ClearEntryStateViewModel attachClearViewModel$lambda$9$lambda$8;
-                attachClearViewModel$lambda$9$lambda$8 = FragmentNavigator.attachClearViewModel$lambda$9$lambda$8((CreationExtras) obj);
-                return attachClearViewModel$lambda$9$lambda$8;
+                return FragmentNavigator.attachClearViewModel$lambda$9$lambda$8((CreationExtras) obj);
             }
         });
         ((ClearEntryStateViewModel) new ViewModelProvider(viewModelStore, initializerViewModelFactoryBuilder.build(), CreationExtras.Empty.INSTANCE).get(ClearEntryStateViewModel.class)).setCompleteTransition(new WeakReference<>(new Function0() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit attachClearViewModel$lambda$12;
-                attachClearViewModel$lambda$12 = FragmentNavigator.attachClearViewModel$lambda$12(NavBackStackEntry.this, state, this, fragment);
-                return attachClearViewModel$lambda$12;
+                return FragmentNavigator.attachClearViewModel$lambda$12(NavBackStackEntry.this, state, this, fragment);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ClearEntryStateViewModel attachClearViewModel$lambda$9$lambda$8(CreationExtras initializer) {
         Intrinsics.checkNotNullParameter(initializer, "$this$initializer");
         return new ClearEntryStateViewModel();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit attachClearViewModel$lambda$12(NavBackStackEntry navBackStackEntry, NavigatorState navigatorState, FragmentNavigator fragmentNavigator, Fragment fragment) {
         for (NavBackStackEntry navBackStackEntry2 : navigatorState.getTransitionsInProgress().getValue()) {
             if (fragmentNavigator.isLoggingEnabled(2)) {
@@ -395,9 +386,7 @@ public class FragmentNavigator extends Navigator<Destination> {
             if (SequencesKt.contains(SequencesKt.map(CollectionsKt.asSequence(this.pendingOps), new Function1() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    String popBackStack$lambda$14$lambda$13;
-                    popBackStack$lambda$14$lambda$13 = FragmentNavigator.popBackStack$lambda$14$lambda$13((Pair) obj2);
-                    return popBackStack$lambda$14$lambda$13;
+                    return FragmentNavigator.popBackStack$lambda$14$lambda$13((Pair) obj2);
                 }
             }), navBackStackEntry3.getId()) || !Intrinsics.areEqual(navBackStackEntry3.getId(), navBackStackEntry.getId())) {
                 arrayList.add(obj);
@@ -424,7 +413,7 @@ public class FragmentNavigator extends Navigator<Destination> {
         getState().popWithTransition(popUpTo, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String popBackStack$lambda$14$lambda$13(Pair it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return (String) it.getFirst();
@@ -747,16 +736,14 @@ public class FragmentNavigator extends Navigator<Destination> {
             CollectionsKt.removeAll((List) this.pendingOps, new Function1() { // from class: androidx.navigation.fragment.FragmentNavigator$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean addPendingOps$lambda$16;
-                    addPendingOps$lambda$16 = FragmentNavigator.addPendingOps$lambda$16(str, (Pair) obj);
-                    return Boolean.valueOf(addPendingOps$lambda$16);
+                    return Boolean.valueOf(FragmentNavigator.addPendingOps$lambda$16(str, (Pair) obj));
                 }
             });
         }
         this.pendingOps.add(TuplesKt.to(str, Boolean.valueOf(z)));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean addPendingOps$lambda$16(String str, Pair it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Intrinsics.areEqual(it.getFirst(), str);

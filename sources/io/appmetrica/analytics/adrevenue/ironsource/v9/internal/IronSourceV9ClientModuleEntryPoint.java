@@ -7,7 +7,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueCollector;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class IronSourceV9ClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */

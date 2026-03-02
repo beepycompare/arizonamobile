@@ -67,9 +67,7 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
             if (SuspendAnimationKt.animateTo$default(AnimationState$default, animationData3, delegatingAnimationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateBy$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TransformableStateKt$animateBy$3.invokeSuspend$lambda$0(Ref.ObjectRef.this, transformScope, (AnimationScope) obj2);
-                    return invokeSuspend$lambda$0;
+                    return TransformableStateKt$animateBy$3.invokeSuspend$lambda$0(Ref.ObjectRef.this, transformScope, (AnimationScope) obj2);
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -82,10 +80,10 @@ public final class TransformableStateKt$animateBy$3 extends SuspendLambda implem
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r7v1, types: [T, java.lang.Object] */
     public static final Unit invokeSuspend$lambda$0(Ref.ObjectRef objectRef, TransformScope transformScope, AnimationScope animationScope) {
-        transformScope.mo516transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m5183minusMKHz9U(((AnimationData) animationScope.getValue()).m497getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m497getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
+        transformScope.mo447transformByd4ec7I(((AnimationData) objectRef.element).getZoom() == 0.0f ? 1.0f : ((AnimationData) animationScope.getValue()).getZoom() / ((AnimationData) objectRef.element).getZoom(), Offset.m4531minusMKHz9U(((AnimationData) animationScope.getValue()).m430getOffsetF1C5BW0(), ((AnimationData) objectRef.element).m430getOffsetF1C5BW0()), ((AnimationData) animationScope.getValue()).getDegrees() - ((AnimationData) objectRef.element).getDegrees());
         objectRef.element = animationScope.getValue();
         return Unit.INSTANCE;
     }

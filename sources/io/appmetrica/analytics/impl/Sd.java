@@ -9,12 +9,12 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
 public final class Sd implements ServiceNetworkContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0240f5 f781a;
-    public final String b = new C0182co().a();
-    public final C0584sl c = new C0584sl();
+    public final C0239f5 f781a;
+    public final String b = new C0181co().a();
+    public final C0583sl c = new C0583sl();
 
     public Sd(Context context) {
-        this.f781a = new C0240f5(new C0494p5(context), new C0507pi(C0449na.k().h()));
+        this.f781a = new C0239f5(new C0493p5(context), new C0506pi(C0448na.k().h()));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
@@ -29,7 +29,7 @@ public final class Sd implements ServiceNetworkContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext
     public final SslSocketFactoryProvider getSslSocketFactoryProvider() {
-        return C0449na.I.z();
+        return C0448na.I.z();
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceNetworkContext

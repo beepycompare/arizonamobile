@@ -23,14 +23,14 @@ public final class DefaultImeEditCommandScope implements ImeEditCommandScope {
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapFromTransformed-GEjPoXI */
-    public long mo1568mapFromTransformedGEjPoXI(long j) {
-        return this.transformedTextFieldState.m1690mapFromTransformedGEjPoXI(j);
+    public long mo1365mapFromTransformedGEjPoXI(long j) {
+        return this.transformedTextFieldState.m1462mapFromTransformedGEjPoXI(j);
     }
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope
     /* renamed from: mapToTransformed-GEjPoXI */
-    public long mo1569mapToTransformedGEjPoXI(long j) {
-        return this.transformedTextFieldState.m1692mapToTransformedGEjPoXI(j);
+    public long mo1366mapToTransformedGEjPoXI(long j) {
+        return this.transformedTextFieldState.m1464mapToTransformedGEjPoXI(j);
     }
 
     @Override // androidx.compose.foundation.text.input.internal.ImeEditCommandScope

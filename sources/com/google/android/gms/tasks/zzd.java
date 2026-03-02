@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zzd implements zzq {
     private final Executor zza;
@@ -15,12 +15,22 @@ final class zzd implements zzq {
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzc() {
-        throw new UnsupportedOperationException();
+    public final void zza(Task task) {
+        this.zza.execute(new zzc(this, task));
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzd(Task task) {
-        this.zza.execute(new zzc(this, task));
+    public final void zzb() {
+        throw new UnsupportedOperationException();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Continuation zzc() {
+        return this.zzb;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzw zzd() {
+        return this.zzc;
     }
 }

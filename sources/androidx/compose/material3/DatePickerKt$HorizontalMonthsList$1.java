@@ -66,12 +66,12 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
         this.$colors = datePickerColors;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float invoke$lambda$3$lambda$2$lambda$0() {
         return 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float invoke$lambda$3$lambda$2$lambda$1() {
         return 0.0f;
     }
@@ -98,9 +98,7 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2((SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$3$lambda$2;
+                    return DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2((SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -125,9 +123,7 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$5$lambda$4;
-                    invoke$lambda$5$lambda$4 = DatePickerKt$HorizontalMonthsList$1.invoke$lambda$5$lambda$4(IntRange.this, calendarModel, calendarMonth, function1, calendarDate, l, datePickerFormatter, selectableDates, datePickerColors, (LazyListScope) obj);
-                    return invoke$lambda$5$lambda$4;
+                    return DatePickerKt$HorizontalMonthsList$1.invoke$lambda$5$lambda$4(IntRange.this, calendarModel, calendarMonth, function1, calendarDate, l, datePickerFormatter, selectableDates, datePickerColors, (LazyListScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -139,27 +135,23 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$3$lambda$2(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setHorizontalScrollAxisRange(semanticsPropertyReceiver, new ScrollAxisRange(new Function0() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float invoke$lambda$3$lambda$2$lambda$0;
-                invoke$lambda$3$lambda$2$lambda$0 = DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2$lambda$0();
-                return Float.valueOf(invoke$lambda$3$lambda$2$lambda$0);
+                return Float.valueOf(DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2$lambda$0());
             }
         }, new Function0() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float invoke$lambda$3$lambda$2$lambda$1;
-                invoke$lambda$3$lambda$2$lambda$1 = DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2$lambda$1();
-                return Float.valueOf(invoke$lambda$3$lambda$2$lambda$1);
+                return Float.valueOf(DatePickerKt$HorizontalMonthsList$1.invoke$lambda$3$lambda$2$lambda$1());
             }
         }, false, 4, null));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$5$lambda$4(IntRange intRange, final CalendarModel calendarModel, final CalendarMonth calendarMonth, final Function1 function1, final CalendarDate calendarDate, final Long l, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, LazyListScope lazyListScope) {
         LazyListScope.items$default(lazyListScope, DatePickerKt.numberOfMonthsInRange(intRange), null, null, ComposableLambdaKt.composableLambdaInstance(72599078, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.DatePickerKt$HorizontalMonthsList$1$2$1$1
             @Override // kotlin.jvm.functions.Function4
@@ -212,15 +204,15 @@ public final class DatePickerKt$HorizontalMonthsList$1 implements Function2<Comp
                 } else {
                     composer.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -438536543, "C1735@80385L566:DatePicker.kt#uh7d8r");

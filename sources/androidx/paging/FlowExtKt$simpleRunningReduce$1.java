@@ -16,8 +16,8 @@ import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1", f = "FlowExt.kt", i = {}, l = {68}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1", f = "FlowExt.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda implements Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function3<T, T, Continuation<? super T>, Object> $operation;
@@ -76,7 +76,7 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FlowExt.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0004\u0010\u0005"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"}, k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.paging.FlowExtKt$simpleRunningReduce$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
@@ -91,12 +91,12 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
             this.$$this$flow = flowCollector;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x007d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:25:0x0073, code lost:
             if (r8.emit(r9, r0) == r1) goto L20;
          */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-        /* JADX WARN: Removed duplicated region for block: B:16:0x0041  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x003d  */
         /* JADX WARN: Type inference failed for: r9v7 */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
@@ -108,7 +108,6 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
             Ref.ObjectRef<Object> objectRef;
             Object obj;
             Ref.ObjectRef<Object> objectRef2;
-            AnonymousClass1<T> anonymousClass1;
             if (continuation instanceof FlowExtKt$simpleRunningReduce$1$1$emit$1) {
                 flowExtKt$simpleRunningReduce$1$1$emit$1 = (FlowExtKt$simpleRunningReduce$1$1$emit$1) continuation;
                 if ((flowExtKt$simpleRunningReduce$1$1$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -121,28 +120,23 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
                         objectRef = this.$accumulator;
                         Object obj3 = objectRef.element;
                         obj = FlowExtKt.NULL;
-                        if (obj3 == obj) {
-                            anonymousClass1 = this;
-                            objectRef.element = t;
-                            FlowCollector<T> flowCollector = anonymousClass1.$$this$flow;
-                            T t2 = anonymousClass1.$accumulator.element;
-                            flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = null;
-                            flowExtKt$simpleRunningReduce$1$1$emit$1.L$1 = null;
-                            flowExtKt$simpleRunningReduce$1$1$emit$1.label = 2;
-                        } else {
+                        if (obj3 != obj) {
                             Function3<T, T, Continuation<? super T>, Object> function3 = this.$operation;
-                            T t3 = this.$accumulator.element;
-                            flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = this;
-                            flowExtKt$simpleRunningReduce$1$1$emit$1.L$1 = objectRef;
+                            T t2 = this.$accumulator.element;
+                            flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = objectRef;
                             flowExtKt$simpleRunningReduce$1$1$emit$1.label = 1;
-                            Object invoke = function3.invoke(t3, t, flowExtKt$simpleRunningReduce$1$1$emit$1);
+                            Object invoke = function3.invoke(t2, t, flowExtKt$simpleRunningReduce$1$1$emit$1);
                             if (invoke != coroutine_suspended) {
                                 obj2 = invoke;
                                 objectRef2 = objectRef;
-                                anonymousClass1 = this;
                             }
                             return coroutine_suspended;
                         }
+                        objectRef.element = t;
+                        FlowCollector<T> flowCollector = this.$$this$flow;
+                        T t3 = this.$accumulator.element;
+                        flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = null;
+                        flowExtKt$simpleRunningReduce$1$1$emit$1.label = 2;
                     } else if (i != 1) {
                         if (i == 2) {
                             ResultKt.throwOnFailure(obj2);
@@ -150,18 +144,16 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        objectRef2 = (Ref.ObjectRef) flowExtKt$simpleRunningReduce$1$1$emit$1.L$1;
-                        anonymousClass1 = (AnonymousClass1) flowExtKt$simpleRunningReduce$1$1$emit$1.L$0;
+                        objectRef2 = (Ref.ObjectRef) flowExtKt$simpleRunningReduce$1$1$emit$1.L$0;
                         ResultKt.throwOnFailure(obj2);
                     }
                     T t4 = obj2;
                     objectRef = objectRef2;
                     t = t4;
                     objectRef.element = t;
-                    FlowCollector<T> flowCollector2 = anonymousClass1.$$this$flow;
-                    T t22 = anonymousClass1.$accumulator.element;
+                    FlowCollector<T> flowCollector2 = this.$$this$flow;
+                    T t32 = this.$accumulator.element;
                     flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = null;
-                    flowExtKt$simpleRunningReduce$1$1$emit$1.L$1 = null;
                     flowExtKt$simpleRunningReduce$1$1$emit$1.label = 2;
                 }
             }
@@ -175,10 +167,9 @@ public final class FlowExtKt$simpleRunningReduce$1<T> extends SuspendLambda impl
             objectRef = objectRef2;
             t = t42;
             objectRef.element = t;
-            FlowCollector<T> flowCollector22 = anonymousClass1.$$this$flow;
-            T t222 = anonymousClass1.$accumulator.element;
+            FlowCollector<T> flowCollector22 = this.$$this$flow;
+            T t322 = this.$accumulator.element;
             flowExtKt$simpleRunningReduce$1$1$emit$1.L$0 = null;
-            flowExtKt$simpleRunningReduce$1$1$emit$1.L$1 = null;
             flowExtKt$simpleRunningReduce$1$1$emit$1.label = 2;
         }
     }

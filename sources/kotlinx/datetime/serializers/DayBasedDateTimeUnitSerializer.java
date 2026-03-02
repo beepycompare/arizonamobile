@@ -29,9 +29,14 @@ public final class DayBasedDateTimeUnitSerializer implements KSerializer<DateTim
     private static final Lazy descriptor$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: kotlinx.datetime.serializers.DayBasedDateTimeUnitSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SerialDescriptor descriptor_delegate$lambda$1;
-            descriptor_delegate$lambda$1 = DayBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1();
-            return descriptor_delegate$lambda$1;
+            SerialDescriptor buildClassSerialDescriptor;
+            buildClassSerialDescriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.DayBased", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.DayBasedDateTimeUnitSerializer$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return DayBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1$lambda$0((ClassSerialDescriptorBuilder) obj);
+                }
+            });
+            return buildClassSerialDescriptor;
         }
     });
 
@@ -41,18 +46,6 @@ public final class DayBasedDateTimeUnitSerializer implements KSerializer<DateTim
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
     public SerialDescriptor getDescriptor() {
         return (SerialDescriptor) descriptor$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor_delegate$lambda$1() {
-        return SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.DayBased", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.DayBasedDateTimeUnitSerializer$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit descriptor_delegate$lambda$1$lambda$0;
-                descriptor_delegate$lambda$1$lambda$0 = DayBasedDateTimeUnitSerializer.descriptor_delegate$lambda$1$lambda$0((ClassSerialDescriptorBuilder) obj);
-                return descriptor_delegate$lambda$1$lambda$0;
-            }
-        });
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
@@ -100,7 +93,7 @@ public final class DayBasedDateTimeUnitSerializer implements KSerializer<DateTim
         return new DateTimeUnit.DayBased(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor_delegate$lambda$1$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("days", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

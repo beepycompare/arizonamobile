@@ -46,17 +46,19 @@ public class SolidLayer extends BaseLayer {
         }
         BaseKeyframeAnimation<Integer, Integer> baseKeyframeAnimation = this.colorAnimation;
         Integer value = baseKeyframeAnimation == null ? null : baseKeyframeAnimation.getValue();
+        Paint paint = this.paint;
         if (value != null) {
-            this.paint.setColor(value.intValue());
+            paint.setColor(value.intValue());
         } else {
-            this.paint.setColor(this.layerModel.getSolidColor());
+            paint.setColor(this.layerModel.getSolidColor());
         }
         int intValue = (int) ((i / 255.0f) * (((alpha / 255.0f) * (this.transform.getOpacity() == null ? 100 : this.transform.getOpacity().getValue().intValue())) / 100.0f) * 255.0f);
         this.paint.setAlpha(intValue);
+        Paint paint2 = this.paint;
         if (dropShadow != null) {
-            dropShadow.applyTo(this.paint);
+            dropShadow.applyTo(paint2);
         } else {
-            this.paint.clearShadowLayer();
+            paint2.clearShadowLayer();
         }
         BaseKeyframeAnimation<ColorFilter, ColorFilter> baseKeyframeAnimation2 = this.colorFilterAnimation;
         if (baseKeyframeAnimation2 != null) {

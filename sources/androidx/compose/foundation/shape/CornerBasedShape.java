@@ -22,7 +22,7 @@ public abstract class CornerBasedShape implements Shape, Interpolatable {
     public abstract CornerBasedShape copy(CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4);
 
     /* renamed from: createOutline-LjSzlW0 */
-    public abstract Outline mo1266createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
+    public abstract Outline mo1109createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection);
 
     public Object lerp(Object obj, float f) {
         return null;
@@ -53,28 +53,28 @@ public abstract class CornerBasedShape implements Shape, Interpolatable {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public final Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
-        float mo1274toPxTmRCtEA = this.topStart.mo1274toPxTmRCtEA(j, density);
-        float mo1274toPxTmRCtEA2 = this.topEnd.mo1274toPxTmRCtEA(j, density);
-        float mo1274toPxTmRCtEA3 = this.bottomEnd.mo1274toPxTmRCtEA(j, density);
-        float mo1274toPxTmRCtEA4 = this.bottomStart.mo1274toPxTmRCtEA(j, density);
-        float m5247getMinDimensionimpl = Size.m5247getMinDimensionimpl(j);
-        float f = mo1274toPxTmRCtEA + mo1274toPxTmRCtEA4;
-        if (f > m5247getMinDimensionimpl) {
-            float f2 = m5247getMinDimensionimpl / f;
-            mo1274toPxTmRCtEA *= f2;
-            mo1274toPxTmRCtEA4 *= f2;
+    public final Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+        float mo1117toPxTmRCtEA = this.topStart.mo1117toPxTmRCtEA(j, density);
+        float mo1117toPxTmRCtEA2 = this.topEnd.mo1117toPxTmRCtEA(j, density);
+        float mo1117toPxTmRCtEA3 = this.bottomEnd.mo1117toPxTmRCtEA(j, density);
+        float mo1117toPxTmRCtEA4 = this.bottomStart.mo1117toPxTmRCtEA(j, density);
+        float m4595getMinDimensionimpl = Size.m4595getMinDimensionimpl(j);
+        float f = mo1117toPxTmRCtEA + mo1117toPxTmRCtEA4;
+        if (f > m4595getMinDimensionimpl) {
+            float f2 = m4595getMinDimensionimpl / f;
+            mo1117toPxTmRCtEA *= f2;
+            mo1117toPxTmRCtEA4 *= f2;
         }
-        float f3 = mo1274toPxTmRCtEA2 + mo1274toPxTmRCtEA3;
-        if (f3 > m5247getMinDimensionimpl) {
-            float f4 = m5247getMinDimensionimpl / f3;
-            mo1274toPxTmRCtEA2 *= f4;
-            mo1274toPxTmRCtEA3 *= f4;
+        float f3 = mo1117toPxTmRCtEA2 + mo1117toPxTmRCtEA3;
+        if (f3 > m4595getMinDimensionimpl) {
+            float f4 = m4595getMinDimensionimpl / f3;
+            mo1117toPxTmRCtEA2 *= f4;
+            mo1117toPxTmRCtEA3 *= f4;
         }
-        if (!(mo1274toPxTmRCtEA >= 0.0f && mo1274toPxTmRCtEA2 >= 0.0f && mo1274toPxTmRCtEA3 >= 0.0f && mo1274toPxTmRCtEA4 >= 0.0f)) {
-            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1274toPxTmRCtEA + ", topEnd = " + mo1274toPxTmRCtEA2 + ", bottomEnd = " + mo1274toPxTmRCtEA3 + ", bottomStart = " + mo1274toPxTmRCtEA4 + ")!");
+        if (!(mo1117toPxTmRCtEA >= 0.0f && mo1117toPxTmRCtEA2 >= 0.0f && mo1117toPxTmRCtEA3 >= 0.0f && mo1117toPxTmRCtEA4 >= 0.0f)) {
+            InlineClassHelperKt.throwIllegalArgumentException("Corner size in Px can't be negative(topStart = " + mo1117toPxTmRCtEA + ", topEnd = " + mo1117toPxTmRCtEA2 + ", bottomEnd = " + mo1117toPxTmRCtEA3 + ", bottomStart = " + mo1117toPxTmRCtEA4 + ")!");
         }
-        return mo1266createOutlineLjSzlW0(j, mo1274toPxTmRCtEA, mo1274toPxTmRCtEA2, mo1274toPxTmRCtEA3, mo1274toPxTmRCtEA4, layoutDirection);
+        return mo1109createOutlineLjSzlW0(j, mo1117toPxTmRCtEA, mo1117toPxTmRCtEA2, mo1117toPxTmRCtEA3, mo1117toPxTmRCtEA4, layoutDirection);
     }
 
     public static /* synthetic */ CornerBasedShape copy$default(CornerBasedShape cornerBasedShape, CornerSize cornerSize, CornerSize cornerSize2, CornerSize cornerSize3, CornerSize cornerSize4, int i, Object obj) {

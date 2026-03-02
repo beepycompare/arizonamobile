@@ -10,7 +10,6 @@ import androidx.window.WindowSdkExtensions;
 import androidx.window.core.BuildConfig;
 import androidx.window.core.ConsumerAdapter;
 import androidx.window.core.VerificationMode;
-import androidx.window.embedding.EmbeddingCompat;
 import androidx.window.embedding.EmbeddingInterfaceCompat;
 import androidx.window.embedding.SplitAttributes;
 import androidx.window.embedding.SplitController;
@@ -96,9 +95,7 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
             this.consumerAdapter.addConsumer(this.embeddingExtension, Reflection.getOrCreateKotlinClass(List.class), "setSplitInfoCallback", new Function1() { // from class: androidx.window.embedding.EmbeddingCompat$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit embeddingCallback$lambda$0;
-                    embeddingCallback$lambda$0 = EmbeddingCompat.setEmbeddingCallback$lambda$0(EmbeddingInterfaceCompat.EmbeddingCallbackInterface.this, this, (List) obj);
-                    return embeddingCallback$lambda$0;
+                    return EmbeddingCompat.setEmbeddingCallback$lambda$0(EmbeddingInterfaceCompat.EmbeddingCallbackInterface.this, this, (List) obj);
                 }
             });
         } else if (2 <= extensionVersion && extensionVersion < 5) {
@@ -110,7 +107,7 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit setEmbeddingCallback$lambda$0(EmbeddingInterfaceCompat.EmbeddingCallbackInterface embeddingCallbackInterface, EmbeddingCompat embeddingCompat, List values) {
         Intrinsics.checkNotNullParameter(values, "values");
         ArrayList arrayList = new ArrayList();
@@ -132,7 +129,7 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void registerSplitInfoCallback$lambda$1(EmbeddingInterfaceCompat.EmbeddingCallbackInterface embeddingCallbackInterface, EmbeddingCompat embeddingCompat, List splitInfoList) {
         Intrinsics.checkNotNullParameter(splitInfoList, "splitInfoList");
         embeddingCallbackInterface.onSplitInfoChanged(embeddingCompat.adapter.translate(splitInfoList));
@@ -207,14 +204,12 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
         }
         this.embeddingExtension.setSplitAttributesCalculator(new Function() { // from class: androidx.window.embedding.EmbeddingCompat$$ExternalSyntheticLambda2
             public final Object apply(Object obj) {
-                androidx.window.extensions.embedding.SplitAttributes defaultSplitAttributeCalculatorIfNeeded$lambda$3;
-                defaultSplitAttributeCalculatorIfNeeded$lambda$3 = EmbeddingCompat.setDefaultSplitAttributeCalculatorIfNeeded$lambda$3(EmbeddingCompat.this, (androidx.window.extensions.embedding.SplitAttributesCalculatorParams) obj);
-                return defaultSplitAttributeCalculatorIfNeeded$lambda$3;
+                return EmbeddingCompat.setDefaultSplitAttributeCalculatorIfNeeded$lambda$3(EmbeddingCompat.this, (androidx.window.extensions.embedding.SplitAttributesCalculatorParams) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final androidx.window.extensions.embedding.SplitAttributes setDefaultSplitAttributeCalculatorIfNeeded$lambda$3(EmbeddingCompat embeddingCompat, androidx.window.extensions.embedding.SplitAttributesCalculatorParams splitAttributesCalculatorParams) {
         if (splitAttributesCalculatorParams.areDefaultConstraintsSatisfied()) {
             EmbeddingAdapter embeddingAdapter = embeddingCompat.adapter;
@@ -240,10 +235,12 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
         Intrinsics.checkNotNullParameter(splitInfo, "splitInfo");
         Intrinsics.checkNotNullParameter(splitAttributes, "splitAttributes");
         this.windowSdkExtensions.requireExtensionVersion$window_release(3);
-        if (this.windowSdkExtensions.getExtensionVersion() >= 5) {
-            this.embeddingExtension.updateSplitAttributes(splitInfo.getToken$window_release(), this.adapter.translateSplitAttributes(splitAttributes));
+        int extensionVersion = this.windowSdkExtensions.getExtensionVersion();
+        ActivityEmbeddingComponent activityEmbeddingComponent = this.embeddingExtension;
+        if (extensionVersion >= 5) {
+            activityEmbeddingComponent.updateSplitAttributes(splitInfo.getToken$window_release(), this.adapter.translateSplitAttributes(splitAttributes));
         } else {
-            this.embeddingExtension.updateSplitAttributes(splitInfo.getBinder$window_release(), this.adapter.translateSplitAttributes(splitAttributes));
+            activityEmbeddingComponent.updateSplitAttributes(splitInfo.getBinder$window_release(), this.adapter.translateSplitAttributes(splitAttributes));
         }
     }
 
@@ -388,18 +385,13 @@ public final class EmbeddingCompat implements EmbeddingInterfaceCompat {
             Object newProxyInstance = Proxy.newProxyInstance(EmbeddingCompat.class.getClassLoader(), new Class[]{ActivityEmbeddingComponent.class}, new InvocationHandler() { // from class: androidx.window.embedding.EmbeddingCompat$Companion$$ExternalSyntheticLambda0
                 @Override // java.lang.reflect.InvocationHandler
                 public final Object invoke(Object obj, Method method, Object[] objArr) {
-                    Unit emptyActivityEmbeddingProxy$lambda$2;
-                    emptyActivityEmbeddingProxy$lambda$2 = EmbeddingCompat.Companion.emptyActivityEmbeddingProxy$lambda$2(obj, method, objArr);
-                    return emptyActivityEmbeddingProxy$lambda$2;
+                    Unit unit;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             });
             Intrinsics.checkNotNull(newProxyInstance, "null cannot be cast to non-null type androidx.window.extensions.embedding.ActivityEmbeddingComponent");
             return (ActivityEmbeddingComponent) newProxyInstance;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit emptyActivityEmbeddingProxy$lambda$2(Object obj, Method method, Object[] objArr) {
-            return Unit.INSTANCE;
         }
     }
 }

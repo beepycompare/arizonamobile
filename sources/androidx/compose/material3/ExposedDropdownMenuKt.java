@@ -73,9 +73,9 @@ import kotlin.math.MathKt;
 @Metadata(d1 = {"\u0000\u008a\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aQ\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u001c\u0010\b\u001a\u0018\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\n¢\u0006\u0002\b\u000bH\u0007¢\u0006\u0002\u0010\f\u001a\u001b\u0010\r\u001a\u00020\u0003*\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u000eH\u0002¢\u0006\u0004\b\u0010\u0010\u0011\u001aa\u0010\u001b\u001a\u00020\u0007*\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u001c2\u0006\u0010\u001d\u001a\u00020\u000e2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00030\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020!2\b\u0010$\u001a\u0004\u0018\u00010%H\u0002¢\u0006\u0004\b&\u0010'\u001a\"\u0010.\u001a\u00020/2\u0006\u00100\u001a\u0002012\b\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020/H\u0002\u001a\u000e\u00105\u001a\u000203*\u0004\u0018\u000106H\u0002\"\u0018\u0010(\u001a\u00020\u0003*\u00020)8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b*\u0010+\"\u0018\u0010,\u001a\u00020\u0003*\u00020)8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b-\u0010+\"\u0010\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0004\n\u0002\u00109*8\b\u0007\u0010\u0012\"\u00020\u000e2\u00020\u000eB*\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0015\u0012\u001c\b\u0016\u0012\u0018\b\u000bB\u0014\b\u0017\u0012\b\b\u0018\u0012\u0004\b\b(\u0019\u0012\u0006\b\u001a\u0012\u0002\b\f¨\u0006:²\u0006\f\u0010;\u001a\u0004\u0018\u000106X\u008a\u008e\u0002²\u0006\n\u0010<\u001a\u00020/X\u008a\u008e\u0002²\u0006\n\u0010=\u001a\u00020/X\u008a\u008e\u0002"}, d2 = {"ExposedDropdownMenuBox", "", "expanded", "", "onExpandedChange", "Lkotlin/Function1;", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/material3/ExposedDropdownMenuBoxScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "hasGreaterOrEqualPriorityThan", "Landroidx/compose/material3/ExposedDropdownMenuAnchorType;", "that", "hasGreaterOrEqualPriorityThan-vVDBVkM", "(Ljava/lang/String;Ljava/lang/String;)Z", "MenuAnchorType", "Lkotlin/Deprecated;", "message", "Renamed to ExposedDropdownMenuAnchorType", "replaceWith", "Lkotlin/ReplaceWith;", "expression", "ExposedDropdownMenuAnchorType", "imports", "expandable", "Lkotlin/Function0;", "anchorType", "alwaysFocusable", "Landroidx/compose/runtime/MutableState;", "expandedDescription", "", "collapsedDescription", "toggleDescription", "keyboardController", "Landroidx/compose/ui/platform/SoftwareKeyboardController;", "expandable-3-2CpT8", "(Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function0;Ljava/lang/String;Landroidx/compose/runtime/MutableState;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/compose/ui/platform/SoftwareKeyboardController;)Landroidx/compose/ui/Modifier;", "isClick", "Landroidx/compose/ui/input/key/KeyEvent;", "isClick-ZmokQxo", "(Landroid/view/KeyEvent;)Z", "isEnterMinusSpacebar", "isEnterMinusSpacebar-ZmokQxo", "calculateMaxHeight", "", "windowBounds", "Landroidx/compose/ui/unit/IntRect;", "anchorBounds", "Landroidx/compose/ui/geometry/Rect;", "verticalMargin", "getAnchorBounds", "Landroidx/compose/ui/layout/LayoutCoordinates;", "ExposedDropdownMenuItemHorizontalPadding", "Landroidx/compose/ui/unit/Dp;", "F", "material3", "anchorCoordinates", "anchorWidth", "menuMaxHeight"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ExposedDropdownMenuKt {
-    private static final float ExposedDropdownMenuItemHorizontalPadding = Dp.m8258constructorimpl(16);
+    private static final float ExposedDropdownMenuItemHorizontalPadding = Dp.m7555constructorimpl(16);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenuBox$lambda$23(boolean z, Function1 function1, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
         ExposedDropdownMenuBox(z, function1, modifier, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -157,7 +157,7 @@ public final class ExposedDropdownMenuKt {
                 Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Density density = (Density) consume;
-                int mo458roundToPx0680j_4 = density.mo458roundToPx0680j_4(MenuKt.getMenuVerticalMargin());
+                int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(MenuKt.getMenuVerticalMargin());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1669211801, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -195,16 +195,16 @@ public final class ExposedDropdownMenuKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 SoftwareKeyboardController softwareKeyboardController = (SoftwareKeyboardController) consume2;
                 Strings.Companion companion2 = Strings.Companion;
-                String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_dropdown_menu_expanded), startRestartGroup, 0);
+                String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_dropdown_menu_expanded), startRestartGroup, 0);
                 Strings.Companion companion3 = Strings.Companion;
-                String m3697getString2EP1pXo2 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_dropdown_menu_collapsed), startRestartGroup, 0);
+                String m3088getString2EP1pXo2 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_dropdown_menu_collapsed), startRestartGroup, 0);
                 Strings.Companion companion4 = Strings.Companion;
-                String m3697getString2EP1pXo3 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_dropdown_menu_toggle), startRestartGroup, 0);
+                String m3088getString2EP1pXo3 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_dropdown_menu_toggle), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1669228253, "CC(remember):ExposedDropdownMenu.kt#9igjgp");
                 Object rememberedValue5 = startRestartGroup.rememberedValue();
                 if (rememberedValue5 == Composer.Companion.getEmpty()) {
                     i4 = i3;
-                    mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ExposedDropdownMenuAnchorType.m2424boximpl(ExposedDropdownMenuAnchorType.Companion.m2432getPrimaryNotEditableoYjWRB4()), null, 2, null);
+                    mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ExposedDropdownMenuAnchorType.m2054boximpl(ExposedDropdownMenuAnchorType.Companion.m2062getPrimaryNotEditableoYjWRB4()), null, 2, null);
                     startRestartGroup.updateRememberedValue(mutableStateOf$default);
                     rememberedValue5 = mutableStateOf$default;
                 } else {
@@ -216,11 +216,11 @@ public final class ExposedDropdownMenuKt {
                 Object rememberedValue6 = startRestartGroup.rememberedValue();
                 if (rememberedValue6 == Composer.Companion.getEmpty()) {
                     z2 = false;
-                    str = m3697getString2EP1pXo;
+                    str = m3088getString2EP1pXo;
                     rememberedValue6 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
                     startRestartGroup.updateRememberedValue(rememberedValue6);
                 } else {
-                    str = m3697getString2EP1pXo;
+                    str = m3088getString2EP1pXo;
                     z2 = false;
                 }
                 MutableState mutableState4 = (MutableState) rememberedValue6;
@@ -239,8 +239,8 @@ public final class ExposedDropdownMenuKt {
                     windowBoundsCalculator = platformWindowBoundsCalculator;
                     i6 = i11;
                     i7 = i4;
-                    i8 = mo458roundToPx0680j_4;
-                    ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 exposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 = new ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1(focusRequester2, z, mutableState4, str3, m3697getString2EP1pXo2, m3697getString2EP1pXo3, softwareKeyboardController, mutableState3, function1, mutableIntState, mutableIntState4);
+                    i8 = mo399roundToPx0680j_4;
+                    ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 exposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 = new ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1(focusRequester2, z, mutableState4, str3, m3088getString2EP1pXo2, m3088getString2EP1pXo3, softwareKeyboardController, mutableState3, function1, mutableIntState, mutableIntState4);
                     focusRequester = focusRequester2;
                     z3 = z;
                     startRestartGroup.updateRememberedValue(exposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1);
@@ -252,7 +252,7 @@ public final class ExposedDropdownMenuKt {
                     i6 = i11;
                     focusRequester = focusRequester2;
                     i7 = i4;
-                    i8 = mo458roundToPx0680j_4;
+                    i8 = mo399roundToPx0680j_4;
                     mutableIntState = mutableIntState3;
                     i5 = i10;
                     windowBoundsCalculator = platformWindowBoundsCalculator;
@@ -269,9 +269,7 @@ public final class ExposedDropdownMenuKt {
                     rememberedValue8 = new Function1() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ExposedDropdownMenuBox$lambda$15$lambda$14;
-                            ExposedDropdownMenuBox$lambda$15$lambda$14 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$15$lambda$14(WindowBoundsCalculator.this, i12, mutableState2, mutableIntState5, mutableIntState4, (LayoutCoordinates) obj2);
-                            return ExposedDropdownMenuBox$lambda$15$lambda$14;
+                            return ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$15$lambda$14(WindowBoundsCalculator.this, i12, mutableState2, mutableIntState5, mutableIntState4, (LayoutCoordinates) obj2);
                         }
                     };
                     mutableState = mutableState2;
@@ -300,15 +298,15 @@ public final class ExposedDropdownMenuKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2140542826, "C228@10736L9:ExposedDropdownMenu.kt#uh7d8r");
@@ -330,9 +328,7 @@ public final class ExposedDropdownMenuKt {
                         rememberedValue9 = new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                Unit ExposedDropdownMenuBox$lambda$18$lambda$17;
-                                ExposedDropdownMenuBox$lambda$18$lambda$17 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$18$lambda$17(WindowBoundsCalculator.this, i8, mutableState, mutableIntState2);
-                                return ExposedDropdownMenuBox$lambda$18$lambda$17;
+                                return ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$18$lambda$17(WindowBoundsCalculator.this, i8, mutableState, mutableIntState2);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue9);
@@ -352,9 +348,7 @@ public final class ExposedDropdownMenuKt {
                     rememberedValue10 = new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ExposedDropdownMenuBox$lambda$20$lambda$19;
-                            ExposedDropdownMenuBox$lambda$20$lambda$19 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$20$lambda$19(z3, focusRequester);
-                            return ExposedDropdownMenuBox$lambda$20$lambda$19;
+                            return ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$20$lambda$19(z3, focusRequester);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue10);
@@ -368,9 +362,7 @@ public final class ExposedDropdownMenuKt {
                     rememberedValue11 = new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ExposedDropdownMenuBox$lambda$22$lambda$21;
-                            ExposedDropdownMenuBox$lambda$22$lambda$21 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$22$lambda$21(Function1.this);
-                            return ExposedDropdownMenuBox$lambda$22$lambda$21;
+                            return ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$22$lambda$21(Function1.this);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue11);
@@ -387,9 +379,7 @@ public final class ExposedDropdownMenuKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit ExposedDropdownMenuBox$lambda$23;
-                        ExposedDropdownMenuBox$lambda$23 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$23(z3, function1, modifier2, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return ExposedDropdownMenuBox$lambda$23;
+                        return ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$23(z3, function1, modifier2, function32, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -420,29 +410,29 @@ public final class ExposedDropdownMenuKt {
         return mutableIntState.getIntValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenuBox$lambda$15$lambda$14(WindowBoundsCalculator windowBoundsCalculator, int i, MutableState mutableState, MutableIntState mutableIntState, MutableIntState mutableIntState2, LayoutCoordinates layoutCoordinates) {
         mutableState.setValue(layoutCoordinates);
-        mutableIntState.setIntValue((int) (layoutCoordinates.mo6883getSizeYbymL2g() >> 32));
+        mutableIntState.setIntValue((int) (layoutCoordinates.mo6224getSizeYbymL2g() >> 32));
         mutableIntState2.setIntValue(calculateMaxHeight(windowBoundsCalculator.getVisibleWindowBounds(), getAnchorBounds(ExposedDropdownMenuBox$lambda$2(mutableState)), i));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenuBox$lambda$18$lambda$17(WindowBoundsCalculator windowBoundsCalculator, int i, MutableState mutableState, MutableIntState mutableIntState) {
         mutableIntState.setIntValue(calculateMaxHeight(windowBoundsCalculator.getVisibleWindowBounds(), getAnchorBounds(ExposedDropdownMenuBox$lambda$2(mutableState)), i));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenuBox$lambda$20$lambda$19(boolean z, FocusRequester focusRequester) {
         if (z) {
-            FocusRequester.m5084requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+            FocusRequester.m4432requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
         }
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ExposedDropdownMenuBox$lambda$22$lambda$21(Function1 function1) {
         function1.invoke(false);
         return Unit.INSTANCE;
@@ -450,19 +440,19 @@ public final class ExposedDropdownMenuKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: hasGreaterOrEqualPriorityThan-vVDBVkM  reason: not valid java name */
-    public static final boolean m2455hasGreaterOrEqualPriorityThanvVDBVkM(String str, String str2) {
-        if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2432getPrimaryNotEditableoYjWRB4()) || ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4())) {
+    public static final boolean m2080hasGreaterOrEqualPriorityThanvVDBVkM(String str, String str2) {
+        if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2062getPrimaryNotEditableoYjWRB4()) || ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2061getPrimaryEditableoYjWRB4())) {
             return true;
         }
-        if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4())) {
-            return ExposedDropdownMenuAnchorType.m2427equalsimpl0(str2, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4());
+        if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2063getSecondaryEditableoYjWRB4())) {
+            return ExposedDropdownMenuAnchorType.m2057equalsimpl0(str2, ExposedDropdownMenuAnchorType.Companion.m2063getSecondaryEditableoYjWRB4());
         }
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: expandable-3-2CpT8  reason: not valid java name */
-    public static final Modifier m2454expandable32CpT8(Modifier modifier, final boolean z, final Function0<Unit> function0, final String str, final MutableState<Boolean> mutableState, final String str2, final String str3, final String str4, final SoftwareKeyboardController softwareKeyboardController) {
+    public static final Modifier m2079expandable32CpT8(Modifier modifier, final boolean z, final Function0<Unit> function0, final String str, final MutableState<Boolean> mutableState, final String str2, final String str3, final String str4, final SoftwareKeyboardController softwareKeyboardController) {
         return SemanticsModifierKt.semantics$default(KeyInputModifierKt.onPreviewKeyEvent(SuspendingPointerInputFilterKt.pointerInput(modifier, function0, new PointerInputEventHandler() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$expandable$1
 
             /* compiled from: ExposedDropdownMenu.kt */
@@ -530,7 +520,7 @@ public final class ExposedDropdownMenuKt {
                         ResultKt.throwOnFailure(obj);
                     }
                     PointerInputChange pointerInputChange = (PointerInputChange) obj;
-                    if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(this.$anchorType, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4())) {
+                    if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(this.$anchorType, ExposedDropdownMenuAnchorType.Companion.m2063getSecondaryEditableoYjWRB4())) {
                         pointerInputChange.consume();
                     }
                     this.L$0 = null;
@@ -547,18 +537,18 @@ public final class ExposedDropdownMenuKt {
         }), new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$expandable$2
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                return m2458invokeZmokQxo(keyEvent.m6576unboximpl());
+                return m2083invokeZmokQxo(keyEvent.m5917unboximpl());
             }
 
             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-            public final Boolean m2458invokeZmokQxo(android.view.KeyEvent keyEvent) {
-                boolean m2456isClickZmokQxo;
-                boolean m2457isEnterMinusSpacebarZmokQxo;
-                m2456isClickZmokQxo = ExposedDropdownMenuKt.m2456isClickZmokQxo(keyEvent);
-                if (m2456isClickZmokQxo) {
-                    if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4())) {
-                        m2457isEnterMinusSpacebarZmokQxo = ExposedDropdownMenuKt.m2457isEnterMinusSpacebarZmokQxo(keyEvent);
-                        if (m2457isEnterMinusSpacebarZmokQxo) {
+            public final Boolean m2083invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                boolean m2081isClickZmokQxo;
+                boolean m2082isEnterMinusSpacebarZmokQxo;
+                m2081isClickZmokQxo = ExposedDropdownMenuKt.m2081isClickZmokQxo(keyEvent);
+                if (m2081isClickZmokQxo) {
+                    if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2061getPrimaryEditableoYjWRB4())) {
+                        m2082isEnterMinusSpacebarZmokQxo = ExposedDropdownMenuKt.m2082isEnterMinusSpacebarZmokQxo(keyEvent);
+                        if (m2082isEnterMinusSpacebarZmokQxo) {
                             function0.invoke();
                             return true;
                         }
@@ -566,7 +556,7 @@ public final class ExposedDropdownMenuKt {
                         function0.invoke();
                     }
                 }
-                if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4()) && z && (Key.m6279equalsimpl0(KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent), Key.Companion.m6515getTabEK5gGoQ()) || Key.m6279equalsimpl0(KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent), Key.Companion.m6352getDirectionDownEK5gGoQ()) || Key.m6279equalsimpl0(KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent), Key.Companion.m6357getDirectionUpEK5gGoQ()))) {
+                if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2061getPrimaryEditableoYjWRB4()) && z && (Key.m5620equalsimpl0(KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent), Key.Companion.m5856getTabEK5gGoQ()) || Key.m5620equalsimpl0(KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent), Key.Companion.m5693getDirectionDownEK5gGoQ()) || Key.m5620equalsimpl0(KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent), Key.Companion.m5698getDirectionUpEK5gGoQ()))) {
                     mutableState.setValue(true);
                     return true;
                 }
@@ -576,40 +566,36 @@ public final class ExposedDropdownMenuKt {
         }), false, new Function1() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit expandable_3_2CpT8$lambda$25;
-                expandable_3_2CpT8$lambda$25 = ExposedDropdownMenuKt.expandable_3_2CpT8$lambda$25(str, z, str2, str3, str4, function0, softwareKeyboardController, (SemanticsPropertyReceiver) obj);
-                return expandable_3_2CpT8$lambda$25;
+                return ExposedDropdownMenuKt.expandable_3_2CpT8$lambda$25(str, z, str2, str3, str4, function0, softwareKeyboardController, (SemanticsPropertyReceiver) obj);
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit expandable_3_2CpT8$lambda$25(final String str, boolean z, String str2, String str3, String str4, final Function0 function0, final SoftwareKeyboardController softwareKeyboardController, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        if (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4())) {
-            SemanticsPropertiesKt.m7461setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7442getButtono7Vup1c());
+        if (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2063getSecondaryEditableoYjWRB4())) {
+            SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6774getButtono7Vup1c());
             if (!z) {
                 str2 = str3;
             }
             SemanticsPropertiesKt.setStateDescription(semanticsPropertyReceiver, str2);
             SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str4);
         } else {
-            SemanticsPropertiesKt.m7461setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7445getDropdownListo7Vup1c());
+            SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6777getDropdownListo7Vup1c());
         }
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean expandable_3_2CpT8$lambda$25$lambda$24;
-                expandable_3_2CpT8$lambda$25$lambda$24 = ExposedDropdownMenuKt.expandable_3_2CpT8$lambda$25$lambda$24(Function0.this, str, softwareKeyboardController);
-                return Boolean.valueOf(expandable_3_2CpT8$lambda$25$lambda$24);
+                return Boolean.valueOf(ExposedDropdownMenuKt.expandable_3_2CpT8$lambda$25$lambda$24(Function0.this, str, softwareKeyboardController));
             }
         }, 1, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean expandable_3_2CpT8$lambda$25$lambda$24(Function0 function0, String str, SoftwareKeyboardController softwareKeyboardController) {
         function0.invoke();
-        if (!ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4()) || softwareKeyboardController == null) {
+        if (!ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2061getPrimaryEditableoYjWRB4()) || softwareKeyboardController == null) {
             return true;
         }
         softwareKeyboardController.show();
@@ -618,18 +604,18 @@ public final class ExposedDropdownMenuKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isClick-ZmokQxo  reason: not valid java name */
-    public static final boolean m2456isClickZmokQxo(android.view.KeyEvent keyEvent) {
-        if (KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6585getKeyUpCS__XNY())) {
-            return m2457isEnterMinusSpacebarZmokQxo(keyEvent) || Key.m6279equalsimpl0(KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent), Key.Companion.m6503getSpacebarEK5gGoQ());
+    public static final boolean m2081isClickZmokQxo(android.view.KeyEvent keyEvent) {
+        if (KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5926getKeyUpCS__XNY())) {
+            return m2082isEnterMinusSpacebarZmokQxo(keyEvent) || Key.m5620equalsimpl0(KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent), Key.Companion.m5844getSpacebarEK5gGoQ());
         }
         return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isEnterMinusSpacebar-ZmokQxo  reason: not valid java name */
-    public static final boolean m2457isEnterMinusSpacebarZmokQxo(android.view.KeyEvent keyEvent) {
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-        return Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6351getDirectionCenterEK5gGoQ()) || Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6365getEnterEK5gGoQ()) || Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6457getNumPadEnterEK5gGoQ());
+    public static final boolean m2082isEnterMinusSpacebarZmokQxo(android.view.KeyEvent keyEvent) {
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+        return Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5692getDirectionCenterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5706getEnterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5798getNumPadEnterEK5gGoQ());
     }
 
     private static final int calculateMaxHeight(IntRect intRect, Rect rect, int i) {
@@ -642,6 +628,6 @@ public final class ExposedDropdownMenuKt {
     }
 
     private static final Rect getAnchorBounds(LayoutCoordinates layoutCoordinates) {
-        return (layoutCoordinates == null || !layoutCoordinates.isAttached()) ? Rect.Companion.getZero() : RectKt.m5219Recttz77jQw(LayoutCoordinatesKt.positionInWindow(layoutCoordinates), IntSizeKt.m8441toSizeozmzZPI(layoutCoordinates.mo6883getSizeYbymL2g()));
+        return (layoutCoordinates == null || !layoutCoordinates.isAttached()) ? Rect.Companion.getZero() : RectKt.m4567Recttz77jQw(LayoutCoordinatesKt.positionInWindow(layoutCoordinates), IntSizeKt.m7738toSizeozmzZPI(layoutCoordinates.mo6224getSizeYbymL2g()));
     }
 }

@@ -46,7 +46,7 @@ public final class SimpleInnerShadowNode extends Modifier.Node implements DrawMo
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        Painter.m6130drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo6005getSizeNHjbRc(), 0.0f, null, 6, null);
+        Painter.m5471drawx_KDEd0$default(obtainPainter(), contentDrawScope, contentDrawScope.mo5346getSizeNHjbRc(), 0.0f, null, 6, null);
         contentDrawScope.drawContent();
     }
 

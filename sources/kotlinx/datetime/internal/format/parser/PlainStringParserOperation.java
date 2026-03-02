@@ -31,40 +31,36 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11907consumeFANa98k(Output output, final CharSequence input, final int i) {
+    public Object mo10796consumeFANa98k(Output output, final CharSequence input, final int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.string.length() + i > input.length()) {
-            return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String consume_FANa98k$lambda$3;
-                    consume_FANa98k$lambda$3 = PlainStringParserOperation.consume_FANa98k$lambda$3(PlainStringParserOperation.this);
-                    return consume_FANa98k$lambda$3;
+                    return PlainStringParserOperation.consume_FANa98k$lambda$3(PlainStringParserOperation.this);
                 }
             });
         }
         int length = this.string.length();
         for (final int i2 = 0; i2 < length; i2++) {
             if (input.charAt(i + i2) != this.string.charAt(i2)) {
-                return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
+                return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        String consume_FANa98k$lambda$4;
-                        consume_FANa98k$lambda$4 = PlainStringParserOperation.consume_FANa98k$lambda$4(PlainStringParserOperation.this, input, i, i2);
-                        return consume_FANa98k$lambda$4;
+                        return PlainStringParserOperation.consume_FANa98k$lambda$4(PlainStringParserOperation.this, input, i, i2);
                     }
                 });
             }
         }
-        return ParseResult.Companion.m11918OkQi1bsqg(i + this.string.length());
+        return ParseResult.Companion.m10807OkQi1bsqg(i + this.string.length());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$3(PlainStringParserOperation plainStringParserOperation) {
         return "Unexpected end of input: yet to parse '" + plainStringParserOperation.string + '\'';
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$4(PlainStringParserOperation plainStringParserOperation, CharSequence charSequence, int i, int i2) {
         return "Expected " + plainStringParserOperation.string + " but got " + charSequence.subSequence(i, i2 + i + 1).toString();
     }

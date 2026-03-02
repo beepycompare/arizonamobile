@@ -9,25 +9,28 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: CoroutineFeatureExtensions.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.settings.ui.SettingsComponent$initVmState$$inlined$launchSafe$default$1", f = "SettingsComponent.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.feature.settings.ui.SettingsComponent$initVmState$$inlined$launchSafe$default$1", f = "SettingsComponent.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class SettingsComponent$initVmState$$inlined$launchSafe$default$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
     Object L$1;
     int label;
     final /* synthetic */ SettingsComponent receiver$inlined;
+    final /* synthetic */ SettingsComponent this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public SettingsComponent$initVmState$$inlined$launchSafe$default$1(Continuation continuation, SettingsComponent settingsComponent) {
+    public SettingsComponent$initVmState$$inlined$launchSafe$default$1(Continuation continuation, SettingsComponent settingsComponent, SettingsComponent settingsComponent2) {
         super(2, continuation);
-        this.receiver$inlined = settingsComponent;
+        this.this$0 = settingsComponent;
+        this.receiver$inlined = settingsComponent2;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        SettingsComponent$initVmState$$inlined$launchSafe$default$1 settingsComponent$initVmState$$inlined$launchSafe$default$1 = new SettingsComponent$initVmState$$inlined$launchSafe$default$1(continuation, this.receiver$inlined);
+        SettingsComponent$initVmState$$inlined$launchSafe$default$1 settingsComponent$initVmState$$inlined$launchSafe$default$1 = new SettingsComponent$initVmState$$inlined$launchSafe$default$1(continuation, this.this$0, this.receiver$inlined);
         settingsComponent$initVmState$$inlined$launchSafe$default$1.L$0 = obj;
         return settingsComponent$initVmState$$inlined$launchSafe$default$1;
     }
@@ -45,6 +48,7 @@ public final class SettingsComponent$initVmState$$inlined$launchSafe$default$1 e
             ResultKt.throwOnFailure(obj);
             try {
                 SettingsComponent$initVmState$$inlined$launchSafe$default$1 settingsComponent$initVmState$$inlined$launchSafe$default$1 = this;
+                FlowKt.launchIn(FlowKt.onEach(LauncherBackgroundWriter.INSTANCE.getState(), new SettingsComponent$initVmState$2$1(this.this$0, null)), this.this$0.getScope());
             } catch (Exception e) {
                 this.receiver$inlined.handleError(e);
             }

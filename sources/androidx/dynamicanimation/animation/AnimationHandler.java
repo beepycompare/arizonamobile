@@ -19,7 +19,7 @@ public class AnimationHandler {
     private final Runnable mRunnable = new Runnable() { // from class: androidx.dynamicanimation.animation.AnimationHandler$$ExternalSyntheticLambda0
         @Override // java.lang.Runnable
         public final void run() {
-            AnimationHandler.this.m8788x83fff5a8();
+            AnimationHandler.this.m8078x83fff5a8();
         }
     };
     long mCurrentFrameTime = 0;
@@ -56,7 +56,7 @@ public class AnimationHandler {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-dynamicanimation-animation-AnimationHandler  reason: not valid java name */
-    public /* synthetic */ void m8788x83fff5a8() {
+    public /* synthetic */ void m8078x83fff5a8() {
         this.mCallbackDispatcher.dispatchAnimationFrame();
     }
 
@@ -132,13 +132,19 @@ public class AnimationHandler {
     }
 
     private void cleanUpList() {
+        ArrayList<AnimationFrameCallback> arrayList;
         if (this.mListDirty) {
-            for (int size = this.mAnimationCallbacks.size() - 1; size >= 0; size--) {
-                if (this.mAnimationCallbacks.get(size) == null) {
+            int size = this.mAnimationCallbacks.size();
+            while (true) {
+                size--;
+                arrayList = this.mAnimationCallbacks;
+                if (size < 0) {
+                    break;
+                } else if (arrayList.get(size) == null) {
                     this.mAnimationCallbacks.remove(size);
                 }
             }
-            if (this.mAnimationCallbacks.size() == 0 && Build.VERSION.SDK_INT >= 33) {
+            if (arrayList.size() == 0 && Build.VERSION.SDK_INT >= 33) {
                 this.mDurationScaleChangeListener.unregister();
             }
             this.mListDirty = false;
@@ -190,7 +196,7 @@ public class AnimationHandler {
             if (this.mListener == null) {
                 ValueAnimator.DurationScaleChangeListener durationScaleChangeListener = new ValueAnimator.DurationScaleChangeListener() { // from class: androidx.dynamicanimation.animation.AnimationHandler$DurationScaleChangeListener33$$ExternalSyntheticLambda0
                     public final void onChanged(float f) {
-                        AnimationHandler.DurationScaleChangeListener33.this.m8789xb804c881(f);
+                        AnimationHandler.DurationScaleChangeListener33.this.m8079xb804c881(f);
                     }
                 };
                 this.mListener = durationScaleChangeListener;
@@ -201,7 +207,7 @@ public class AnimationHandler {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$register$0$androidx-dynamicanimation-animation-AnimationHandler$DurationScaleChangeListener33  reason: not valid java name */
-        public /* synthetic */ void m8789xb804c881(float f) {
+        public /* synthetic */ void m8079xb804c881(float f) {
             AnimationHandler.this.mDurationScale = f;
         }
 

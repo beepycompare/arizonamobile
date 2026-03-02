@@ -1436,10 +1436,12 @@ public class PlayerControlView extends FrameLayout {
         if (player != null && player.isCommandAvailable(30) && this.player.isCommandAvailable(29)) {
             Tracks currentTracks = this.player.getCurrentTracks();
             this.audioTrackSelectionAdapter.init(gatherSupportedTrackInfosOfType(currentTracks, 1));
-            if (this.controlViewLayoutManager.getShowButton(this.subtitleButton)) {
-                this.textTrackSelectionAdapter.init(gatherSupportedTrackInfosOfType(currentTracks, 3));
+            boolean showButton = this.controlViewLayoutManager.getShowButton(this.subtitleButton);
+            TextTrackSelectionAdapter textTrackSelectionAdapter = this.textTrackSelectionAdapter;
+            if (showButton) {
+                textTrackSelectionAdapter.init(gatherSupportedTrackInfosOfType(currentTracks, 3));
             } else {
-                this.textTrackSelectionAdapter.init(ImmutableList.of());
+                textTrackSelectionAdapter.init(ImmutableList.of());
             }
         }
     }
@@ -1945,29 +1947,32 @@ public class PlayerControlView extends FrameLayout {
             PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
             if (PlayerControlView.this.player != null && PlayerControlView.this.timeBarScrubbingEnabled) {
                 PlayerControlView playerControlView = PlayerControlView.this;
-                if (playerControlView.isExoPlayer(playerControlView.player)) {
-                    try {
-                        ((Method) Preconditions.checkNotNull(PlayerControlView.this.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
-                    } catch (IllegalAccessException | InvocationTargetException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else {
-                    PlayerControlView playerControlView2 = PlayerControlView.this;
-                    if (playerControlView2.isCompositionPlayer(playerControlView2.player)) {
+                boolean isExoPlayer = playerControlView.isExoPlayer(playerControlView.player);
+                PlayerControlView playerControlView2 = PlayerControlView.this;
+                if (!isExoPlayer) {
+                    boolean isCompositionPlayer = playerControlView2.isCompositionPlayer(playerControlView2.player);
+                    PlayerControlView playerControlView3 = PlayerControlView.this;
+                    if (isCompositionPlayer) {
                         try {
-                            ((Method) Preconditions.checkNotNull(PlayerControlView.this.compositionPlayerSetScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
-                        } catch (IllegalAccessException | InvocationTargetException e2) {
-                            throw new RuntimeException(e2);
+                            ((Method) Preconditions.checkNotNull(playerControlView3.compositionPlayerSetScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
+                        } catch (IllegalAccessException | InvocationTargetException e) {
+                            throw new RuntimeException(e);
                         }
                     } else {
-                        Log.w(PlayerControlView.TAG, "Time bar scrubbing is enabled, but player is not an ExoPlayer or CompositionPlayer instance, so ignoring (because we can't enable scrubbing mode). player.class=" + ((Player) Preconditions.checkNotNull(PlayerControlView.this.player)).getClass());
+                        Log.w(PlayerControlView.TAG, "Time bar scrubbing is enabled, but player is not an ExoPlayer or CompositionPlayer instance, so ignoring (because we can't enable scrubbing mode). player.class=" + ((Player) Preconditions.checkNotNull(playerControlView3.player)).getClass());
+                    }
+                } else {
+                    try {
+                        ((Method) Preconditions.checkNotNull(playerControlView2.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, true);
+                    } catch (IllegalAccessException | InvocationTargetException e2) {
+                        throw new RuntimeException(e2);
                     }
                 }
             }
-            PlayerControlView playerControlView3 = PlayerControlView.this;
-            if (playerControlView3.isScrubbingModeEnabled(playerControlView3.player)) {
-                PlayerControlView playerControlView4 = PlayerControlView.this;
-                playerControlView4.seekToTimeBarPosition(playerControlView4.player, j);
+            PlayerControlView playerControlView4 = PlayerControlView.this;
+            if (playerControlView4.isScrubbingModeEnabled(playerControlView4.player)) {
+                PlayerControlView playerControlView5 = PlayerControlView.this;
+                playerControlView5.seekToTimeBarPosition(playerControlView5.player, j);
             }
         }
 
@@ -1992,20 +1997,21 @@ public class PlayerControlView extends FrameLayout {
                     playerControlView.seekToTimeBarPosition(playerControlView.player, j);
                 }
                 PlayerControlView playerControlView2 = PlayerControlView.this;
-                if (playerControlView2.isExoPlayer(playerControlView2.player)) {
-                    try {
-                        ((Method) Preconditions.checkNotNull(PlayerControlView.this.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, false);
-                    } catch (IllegalAccessException | InvocationTargetException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else {
-                    PlayerControlView playerControlView3 = PlayerControlView.this;
+                boolean isExoPlayer = playerControlView2.isExoPlayer(playerControlView2.player);
+                PlayerControlView playerControlView3 = PlayerControlView.this;
+                if (!isExoPlayer) {
                     if (playerControlView3.isCompositionPlayer(playerControlView3.player)) {
                         try {
                             ((Method) Preconditions.checkNotNull(PlayerControlView.this.compositionPlayerSetScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, false);
-                        } catch (IllegalAccessException | InvocationTargetException e2) {
-                            throw new RuntimeException(e2);
+                        } catch (IllegalAccessException | InvocationTargetException e) {
+                            throw new RuntimeException(e);
                         }
+                    }
+                } else {
+                    try {
+                        ((Method) Preconditions.checkNotNull(playerControlView3.setScrubbingModeEnabledMethod)).invoke(PlayerControlView.this.player, false);
+                    } catch (IllegalAccessException | InvocationTargetException e2) {
+                        throw new RuntimeException(e2);
                     }
                 }
             }
@@ -2030,26 +2036,38 @@ public class PlayerControlView extends FrameLayout {
                 if (PlayerControlView.this.previousButton != view) {
                     if (PlayerControlView.this.fastForwardButton != view) {
                         if (PlayerControlView.this.rewindButton != view) {
-                            if (PlayerControlView.this.playPauseButton == view) {
-                                Util.handlePlayPauseButtonAction(player, PlayerControlView.this.showPlayButtonIfSuppressed);
-                            } else if (PlayerControlView.this.repeatToggleButton != view) {
+                            ImageView imageView = PlayerControlView.this.playPauseButton;
+                            PlayerControlView playerControlView = PlayerControlView.this;
+                            if (imageView == view) {
+                                Util.handlePlayPauseButtonAction(player, playerControlView.showPlayButtonIfSuppressed);
+                            } else if (playerControlView.repeatToggleButton != view) {
                                 if (PlayerControlView.this.shuffleButton != view) {
-                                    if (PlayerControlView.this.settingsButton == view) {
-                                        PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
-                                        PlayerControlView playerControlView = PlayerControlView.this;
-                                        playerControlView.displaySettingsWindow(playerControlView.settingsAdapter, PlayerControlView.this.settingsButton);
-                                    } else if (PlayerControlView.this.playbackSpeedButton == view) {
-                                        PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
-                                        PlayerControlView playerControlView2 = PlayerControlView.this;
-                                        playerControlView2.displaySettingsWindow(playerControlView2.playbackSpeedAdapter, PlayerControlView.this.playbackSpeedButton);
-                                    } else if (PlayerControlView.this.audioTrackButton == view) {
-                                        PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
+                                    View view2 = PlayerControlView.this.settingsButton;
+                                    PlayerControlView playerControlView2 = PlayerControlView.this;
+                                    if (view2 == view) {
+                                        playerControlView2.controlViewLayoutManager.removeHideCallbacks();
                                         PlayerControlView playerControlView3 = PlayerControlView.this;
-                                        playerControlView3.displaySettingsWindow(playerControlView3.audioTrackSelectionAdapter, PlayerControlView.this.audioTrackButton);
-                                    } else if (PlayerControlView.this.subtitleButton == view) {
+                                        playerControlView3.displaySettingsWindow(playerControlView3.settingsAdapter, PlayerControlView.this.settingsButton);
+                                        return;
+                                    }
+                                    View view3 = playerControlView2.playbackSpeedButton;
+                                    PlayerControlView playerControlView4 = PlayerControlView.this;
+                                    if (view3 == view) {
+                                        playerControlView4.controlViewLayoutManager.removeHideCallbacks();
+                                        PlayerControlView playerControlView5 = PlayerControlView.this;
+                                        playerControlView5.displaySettingsWindow(playerControlView5.playbackSpeedAdapter, PlayerControlView.this.playbackSpeedButton);
+                                        return;
+                                    }
+                                    View view4 = playerControlView4.audioTrackButton;
+                                    PlayerControlView playerControlView6 = PlayerControlView.this;
+                                    if (view4 == view) {
+                                        playerControlView6.controlViewLayoutManager.removeHideCallbacks();
+                                        PlayerControlView playerControlView7 = PlayerControlView.this;
+                                        playerControlView7.displaySettingsWindow(playerControlView7.audioTrackSelectionAdapter, PlayerControlView.this.audioTrackButton);
+                                    } else if (playerControlView6.subtitleButton == view) {
                                         PlayerControlView.this.controlViewLayoutManager.removeHideCallbacks();
-                                        PlayerControlView playerControlView4 = PlayerControlView.this;
-                                        playerControlView4.displaySettingsWindow(playerControlView4.textTrackSelectionAdapter, PlayerControlView.this.subtitleButton);
+                                        PlayerControlView playerControlView8 = PlayerControlView.this;
+                                        playerControlView8.displaySettingsWindow(playerControlView8.textTrackSelectionAdapter, PlayerControlView.this.subtitleButton);
                                     }
                                 } else if (player.isCommandAvailable(14)) {
                                     player.setShuffleModeEnabled(!player.getShuffleModeEnabled());
@@ -2162,14 +2180,14 @@ public class PlayerControlView extends FrameLayout {
             view.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$SettingViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    PlayerControlView.SettingViewHolder.this.m9089x7eeeb754(view2);
+                    PlayerControlView.SettingViewHolder.this.m8367x7eeeb754(view2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlView$SettingViewHolder  reason: not valid java name */
-        public /* synthetic */ void m9089x7eeeb754(View view) {
+        public /* synthetic */ void m8367x7eeeb754(View view) {
             PlayerControlView.this.onSettingViewClicked(getBindingAdapterPosition());
         }
     }
@@ -2231,14 +2249,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$PlaybackSpeedAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.PlaybackSpeedAdapter.this.m9088x9de2ddb7(i, view);
+                    PlayerControlView.PlaybackSpeedAdapter.this.m8366x9de2ddb7(i, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$PlaybackSpeedAdapter  reason: not valid java name */
-        public /* synthetic */ void m9088x9de2ddb7(int i, View view) {
+        public /* synthetic */ void m8366x9de2ddb7(int i, View view) {
             if (i != this.selectedIndex) {
                 PlayerControlView.this.setPlaybackSpeed(this.playbackSpeeds[i]);
             }
@@ -2298,7 +2316,9 @@ public class PlayerControlView extends FrameLayout {
                 ImageView imageView = PlayerControlView.this.subtitleButton;
                 PlayerControlView playerControlView = PlayerControlView.this;
                 imageView.setImageDrawable(z ? playerControlView.subtitleOnButtonDrawable : playerControlView.subtitleOffButtonDrawable);
-                PlayerControlView.this.subtitleButton.setContentDescription(z ? PlayerControlView.this.subtitleOnContentDescription : PlayerControlView.this.subtitleOffContentDescription);
+                ImageView imageView2 = PlayerControlView.this.subtitleButton;
+                PlayerControlView playerControlView2 = PlayerControlView.this;
+                imageView2.setContentDescription(z ? playerControlView2.subtitleOnContentDescription : playerControlView2.subtitleOffContentDescription);
             }
             this.tracks = list;
         }
@@ -2323,14 +2343,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TextTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TextTrackSelectionAdapter.this.m9090x7bd5d809(view);
+                    PlayerControlView.TextTrackSelectionAdapter.this.m8368x7bd5d809(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$TextTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m9090x7bd5d809(View view) {
+        public /* synthetic */ void m8368x7bd5d809(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2362,14 +2382,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$AudioTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.AudioTrackSelectionAdapter.this.m9087xa84b12b0(view);
+                    PlayerControlView.AudioTrackSelectionAdapter.this.m8365xa84b12b0(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$AudioTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m9087xa84b12b0(View view) {
+        public /* synthetic */ void m8365xa84b12b0(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2454,14 +2474,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TrackSelectionAdapter.this.m9091x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
+                    PlayerControlView.TrackSelectionAdapter.this.m8369x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$TrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m9091x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
+        public /* synthetic */ void m8369x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
             if (player.isCommandAvailable(29)) {
                 player.setTrackSelectionParameters(player.getTrackSelectionParameters().buildUpon().setOverrideForType(new TrackSelectionOverride(trackGroup, ImmutableList.of(Integer.valueOf(trackInformation.trackIndex)))).setTrackTypeDisabled(trackInformation.trackGroup.getType(), false).build());
                 onTrackSelection(trackInformation.trackName);

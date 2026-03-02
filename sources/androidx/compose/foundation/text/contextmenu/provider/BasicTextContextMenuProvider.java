@@ -28,13 +28,13 @@ public final class BasicTextContextMenuProvider implements TextContextMenuProvid
     private final MutatorMutex mutatorMutex = new MutatorMutex();
     private final MutableState session$delegate;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ContextMenu$lambda$0(BasicTextContextMenuProvider basicTextContextMenuProvider, Function0 function0, int i, Composer composer, int i2) {
         basicTextContextMenuProvider.ContextMenu(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ContextMenu$lambda$1(BasicTextContextMenuProvider basicTextContextMenuProvider, Function0 function0, int i, Composer composer, int i2) {
         basicTextContextMenuProvider.ContextMenu(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -99,9 +99,7 @@ public final class BasicTextContextMenuProvider implements TextContextMenuProvid
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.provider.BasicTextContextMenuProvider$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ContextMenu$lambda$0;
-                            ContextMenu$lambda$0 = BasicTextContextMenuProvider.ContextMenu$lambda$0(BasicTextContextMenuProvider.this, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                            return ContextMenu$lambda$0;
+                            return BasicTextContextMenuProvider.ContextMenu$lambda$0(BasicTextContextMenuProvider.this, function0, i, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -114,9 +112,7 @@ public final class BasicTextContextMenuProvider implements TextContextMenuProvid
             endRestartGroup2.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.provider.BasicTextContextMenuProvider$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ContextMenu$lambda$1;
-                    ContextMenu$lambda$1 = BasicTextContextMenuProvider.ContextMenu$lambda$1(BasicTextContextMenuProvider.this, function02, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ContextMenu$lambda$1;
+                    return BasicTextContextMenuProvider.ContextMenu$lambda$1(BasicTextContextMenuProvider.this, function02, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -147,7 +143,7 @@ public final class BasicTextContextMenuProvider implements TextContextMenuProvid
 
         @Override // androidx.compose.foundation.text.contextmenu.data.TextContextMenuSession
         public void close() {
-            this.channel.mo9174trySendJP2dKIU(Unit.INSTANCE);
+            this.channel.mo8396trySendJP2dKIU(Unit.INSTANCE);
         }
 
         public final Object awaitClose(Continuation<? super Unit> continuation) {

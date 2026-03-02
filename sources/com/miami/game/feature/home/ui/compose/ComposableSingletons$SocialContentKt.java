@@ -9,24 +9,20 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialContent.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$SocialContentKt {
     public static final ComposableSingletons$SocialContentKt INSTANCE = new ComposableSingletons$SocialContentKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$1688114711 = ComposableLambdaKt.composableLambdaInstance(1688114711, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_1688114711$lambda$0;
-            lambda_1688114711$lambda$0 = ComposableSingletons$SocialContentKt.lambda_1688114711$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_1688114711$lambda$0;
+            return ComposableSingletons$SocialContentKt.lambda_1688114711$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$2011919310 = ComposableLambdaKt.composableLambdaInstance(2011919310, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_2011919310$lambda$0;
-            lambda_2011919310$lambda$0 = ComposableSingletons$SocialContentKt.lambda_2011919310$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_2011919310$lambda$0;
+            return ComposableSingletons$SocialContentKt.lambda_2011919310$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
@@ -34,26 +30,24 @@ public final class ComposableSingletons$SocialContentKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f142lambda$2110633905 = ComposableLambdaKt.composableLambdaInstance(-2110633905, false, new Function3() { // from class: com.miami.game.feature.home.ui.compose.ComposableSingletons$SocialContentKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__2110633905$lambda$0;
-            lambda__2110633905$lambda$0 = ComposableSingletons$SocialContentKt.lambda__2110633905$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__2110633905$lambda$0;
+            return ComposableSingletons$SocialContentKt.lambda__2110633905$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
-    /* renamed from: getLambda$-2110633905$home_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m10137getLambda$2110633905$home_release() {
+    /* renamed from: getLambda$-2110633905$home  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9115getLambda$2110633905$home() {
         return f142lambda$2110633905;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1688114711$home_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$1688114711$home() {
         return lambda$1688114711;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$2011919310$home_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$2011919310$home() {
         return lambda$2011919310;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_1688114711$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C26@936L14:SocialContent.kt#dswm0d");
@@ -71,7 +65,7 @@ public final class ComposableSingletons$SocialContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_2011919310$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C31@1071L15:SocialContent.kt#dswm0d");
@@ -89,7 +83,7 @@ public final class ComposableSingletons$SocialContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__2110633905$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C36@1207L9:SocialContent.kt#dswm0d");

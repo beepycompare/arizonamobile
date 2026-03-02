@@ -18,7 +18,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import org.checkerframework.dataflow.qual.SideEffectFree;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MetadataRenderer extends BaseRenderer implements Handler.Callback {
     private static final int MSG_INVOKE_RENDERER = 1;
     private static final String TAG = "MetadataRenderer";

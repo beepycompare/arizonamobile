@@ -22,7 +22,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.menu.model.PersonStatisticData;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: Menu.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001)B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u001dH\u0003J\u0010\u0010\u001f\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!H\u0003J\u0018\u0010\"\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020#2\u0006\u0010$\u001a\u00020\u0005H\u0016J\u0018\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "menuLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "donateButton", "Landroid/widget/RelativeLayout;", "helpButton", "personStatisticButton", "skillsButton", "awardsButton", "animationsButton", "navigatorButton", "employmentHistoryButton", "questsButton", "questsText", "Landroid/widget/TextView;", "settingsButton", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setupButtonsNavigation", "", "showPersonStatisticLoader", "setPersonStatisticInfo", "data", "Lru/mrlargha/commonui/elements/menu/model/PersonStatisticData;", "onBackendMessage", "", "subId", "clickMenuButton", "buttonId", "buttonView", "Landroid/view/View;", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u0001)B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u001dH\u0003J\u0010\u0010\u001f\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!H\u0003J\u0018\u0010\"\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020#2\u0006\u0010$\u001a\u00020\u0005H\u0016J\u0018\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020(H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "menuLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "donateButton", "Landroid/widget/RelativeLayout;", "helpButton", "personStatisticButton", "skillsButton", "awardsButton", "animationsButton", "navigatorButton", "employmentHistoryButton", "questsButton", "questsText", "Landroid/widget/TextView;", "settingsButton", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setupButtonsNavigation", "", "showPersonStatisticLoader", "setPersonStatisticInfo", "data", "Lru/mrlargha/commonui/elements/menu/model/PersonStatisticData;", "onBackendMessage", "", "subId", "clickMenuButton", "buttonId", "buttonView", "Landroid/view/View;", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Menu extends SAMPUIElement {
     private final RelativeLayout animationsButton;
@@ -89,24 +89,21 @@ public final class Menu extends SAMPUIElement {
         ((AppCompatImageView) constraintLayout.findViewById(R.id.closeImage)).setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Menu._init_$lambda$0(Menu.this, i, view);
+                Menu.this.getNotifier().clickedWrapper(i, 13, -1);
             }
         });
         showPersonStatisticLoader();
         setupButtonsNavigation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$0(Menu menu, int i, View view) {
-        menu.getNotifier().clickedWrapper(i, 13, -1);
-    }
-
     private final void setupButtonsNavigation() {
-        if (!this.isArizonaType) {
-            this.questsButton.setBackgroundResource(R.drawable.bg_menu_element_quests);
+        boolean z = this.isArizonaType;
+        RelativeLayout relativeLayout = this.questsButton;
+        if (!z) {
+            relativeLayout.setBackgroundResource(R.drawable.bg_menu_element_quests);
             this.questsText.setText("Квесты");
         } else {
-            this.questsButton.setBackgroundResource(R.drawable.bg_menu_element_gifts);
+            relativeLayout.setBackgroundResource(R.drawable.bg_menu_element_gifts);
             this.questsText.setText("Розыгрыш");
         }
         this.donateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda2
@@ -171,61 +168,61 @@ public final class Menu extends SAMPUIElement {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$0(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(8, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$1(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(9, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$2(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(7, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$3(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(4, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$4(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(2, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$5(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(3, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$6(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(0, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$7(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(1, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$8(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(6, view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setupButtonsNavigation$lambda$9(Menu menu, View view) {
         Intrinsics.checkNotNull(view);
         menu.clickMenuButton(10, view);
@@ -261,7 +258,7 @@ public final class Menu extends SAMPUIElement {
     }
 
     /* compiled from: Menu.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/menu/Menu$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.MAIN_MENU);

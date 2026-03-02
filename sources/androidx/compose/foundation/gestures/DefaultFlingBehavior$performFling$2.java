@@ -74,9 +74,7 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
                     if (SuspendAnimationKt.animateDecay$default(AnimationState$default, decayAnimationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.DefaultFlingBehavior$performFling$2$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit invokeSuspend$lambda$0;
-                            invokeSuspend$lambda$0 = DefaultFlingBehavior$performFling$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, floatRef, defaultFlingBehavior, (AnimationScope) obj2);
-                            return invokeSuspend$lambda$0;
+                            return DefaultFlingBehavior$performFling$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, floatRef, defaultFlingBehavior, (AnimationScope) obj2);
                         }
                     }, this, 2, null) == coroutine_suspended) {
                         return coroutine_suspended;
@@ -108,7 +106,7 @@ final class DefaultFlingBehavior$performFling$2 extends SuspendLambda implements
         return Boxing.boxFloat(f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollScope scrollScope, Ref.FloatRef floatRef2, DefaultFlingBehavior defaultFlingBehavior, AnimationScope animationScope) {
         float floatValue = ((Number) animationScope.getValue()).floatValue() - floatRef.element;
         float scrollBy = scrollScope.scrollBy(floatValue);

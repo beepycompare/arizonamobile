@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,23 +11,27 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: CombinedLoadStates.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\t\u0018\u00010\u0001¢\u0006\u0002\b\u0002*\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0086@¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"awaitNotLoading", "Landroidx/paging/CombinedLoadStates;", "Lkotlin/jvm/JvmSuppressWildcards;", "Lkotlinx/coroutines/flow/Flow;", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-common_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\t\u0018\u00010\u0001¢\u0006\u0002\b\u0002*\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0086@¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"awaitNotLoading", "Landroidx/paging/CombinedLoadStates;", "Lkotlin/jvm/JvmSuppressWildcards;", "Lkotlinx/coroutines/flow/Flow;", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-common"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class CombinedLoadStatesKt {
     public static final Object awaitNotLoading(Flow<CombinedLoadStates> flow, Continuation<CombinedLoadStates> continuation) {
         final Flow debounce = FlowKt.debounce(flow, 1L);
         return FlowKt.firstOrNull(new Flow<CombinedLoadStates>() { // from class: androidx.paging.CombinedLoadStatesKt$awaitNotLoading$$inlined$filter$1
+            @Override // kotlinx.coroutines.flow.Flow
+            public Object collect(FlowCollector<? super CombinedLoadStates> flowCollector, Continuation continuation2) {
+                Object collect = Flow.this.collect(new AnonymousClass2(flowCollector), continuation2);
+                return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
+            }
 
             /* compiled from: Emitters.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$filter$$inlined$unsafeTransform$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
             /* renamed from: androidx.paging.CombinedLoadStatesKt$awaitNotLoading$$inlined$filter$1$2  reason: invalid class name */
             /* loaded from: classes3.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                /* compiled from: Emitters.kt */
-                @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.CombinedLoadStatesKt$awaitNotLoading$$inlined$filter$1$2", f = "CombinedLoadStates.kt", i = {}, l = {223}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.paging.CombinedLoadStatesKt$awaitNotLoading$$inlined$filter$1$2", f = "CombinedLoadStates.kt", i = {}, l = {50}, m = "emit", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.CombinedLoadStatesKt$awaitNotLoading$$inlined$filter$1$2$1  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
@@ -95,12 +98,6 @@ public final class CombinedLoadStatesKt {
                     }
                     return Unit.INSTANCE;
                 }
-            }
-
-            @Override // kotlinx.coroutines.flow.Flow
-            public Object collect(FlowCollector<? super CombinedLoadStates> flowCollector, Continuation continuation2) {
-                Object collect = Flow.this.collect(new AnonymousClass2(flowCollector), continuation2);
-                return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
             }
         }, continuation);
     }

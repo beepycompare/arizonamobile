@@ -21,10 +21,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogCloseButton.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a%\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"DialogCloseButton", "", "modifier", "Landroidx/compose/ui/Modifier;", "onClick", "Lkotlin/Function0;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "design-system_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a%\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"DialogCloseButton", "", "modifier", "Landroidx/compose/ui/Modifier;", "onClick", "Lkotlin/Function0;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DialogCloseButtonKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DialogCloseButton$lambda$0(Modifier modifier, Function0 function0, int i, int i2, Composer composer, int i3) {
         DialogCloseButton(modifier, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -59,7 +59,7 @@ public final class DialogCloseButtonKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(427613104, i3, -1, "com.miami.game.core.design.system.component.button.DialogCloseButton (DialogCloseButton.kt:19)");
             }
-            ScalingButtonKt.ScalingButton(onClick, BorderKt.m316borderziNgDLE(BackgroundKt.background$default(companion, Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(ColorKt.getDarkBlue(), 0.15f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), new DialogCloseButtonShape(), 0.0f, 4, null), Dp.m8258constructorimpl(2), Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), new DialogCloseButtonShape()), ComposableSingletons$DialogCloseButtonKt.INSTANCE.m10058getLambda$1894286437$design_system_release(), startRestartGroup, ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            ScalingButtonKt.ScalingButton(onClick, BorderKt.m277borderziNgDLE(BackgroundKt.background$default(companion, Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(ColorKt.getDarkBlue(), 0.15f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), new DialogCloseButtonShape(), 0.0f, 4, null), Dp.m7555constructorimpl(2), Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.0f, 0.0f, 0.0f, 0.0f, 14, null))}), 0L, 0L, 0, 14, (Object) null), new DialogCloseButtonShape()), ComposableSingletons$DialogCloseButtonKt.INSTANCE.m9078getLambda$1894286437$design_system(), startRestartGroup, ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -69,9 +69,7 @@ public final class DialogCloseButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.button.DialogCloseButtonKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit DialogCloseButton$lambda$0;
-                    DialogCloseButton$lambda$0 = DialogCloseButtonKt.DialogCloseButton$lambda$0(Modifier.this, onClick, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return DialogCloseButton$lambda$0;
+                    return DialogCloseButtonKt.DialogCloseButton$lambda$0(Modifier.this, onClick, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }

@@ -138,12 +138,14 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // androidx.recyclerview.widget.LinearLayoutManager
             public void calculateExtraLayoutSpace(RecyclerView.State state, int[] iArr) {
-                if (i2 == 0) {
-                    iArr[0] = MaterialCalendar.this.recyclerView.getWidth();
+                int i3 = i2;
+                MaterialCalendar materialCalendar = MaterialCalendar.this;
+                if (i3 == 0) {
+                    iArr[0] = materialCalendar.recyclerView.getWidth();
                     iArr[1] = MaterialCalendar.this.recyclerView.getWidth();
                     return;
                 }
-                iArr[0] = MaterialCalendar.this.recyclerView.getHeight();
+                iArr[0] = materialCalendar.recyclerView.getHeight();
                 iArr[1] = MaterialCalendar.this.recyclerView.getHeight();
             }
         });
@@ -335,10 +337,12 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
             public void onInitializeAccessibilityNodeInfo(View view2, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat) {
                 String string;
                 super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
-                if (MaterialCalendar.this.dayFrame.getVisibility() == 0) {
-                    string = MaterialCalendar.this.getString(R.string.mtrl_picker_toggle_to_year_selection);
+                int visibility = MaterialCalendar.this.dayFrame.getVisibility();
+                MaterialCalendar materialCalendar = MaterialCalendar.this;
+                if (visibility == 0) {
+                    string = materialCalendar.getString(R.string.mtrl_picker_toggle_to_year_selection);
                 } else {
-                    string = MaterialCalendar.this.getString(R.string.mtrl_picker_toggle_to_day_selection);
+                    string = materialCalendar.getString(R.string.mtrl_picker_toggle_to_day_selection);
                 }
                 accessibilityNodeInfoCompat.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16, string));
             }
@@ -357,10 +361,11 @@ public final class MaterialCalendar<S> extends PickerFragment<S> {
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 int findLastVisibleItemPosition;
+                MaterialCalendar materialCalendar = MaterialCalendar.this;
                 if (i < 0) {
-                    findLastVisibleItemPosition = MaterialCalendar.this.getLayoutManager().findFirstVisibleItemPosition();
+                    findLastVisibleItemPosition = materialCalendar.getLayoutManager().findFirstVisibleItemPosition();
                 } else {
-                    findLastVisibleItemPosition = MaterialCalendar.this.getLayoutManager().findLastVisibleItemPosition();
+                    findLastVisibleItemPosition = materialCalendar.getLayoutManager().findLastVisibleItemPosition();
                 }
                 Month pageMonth = monthsPagerAdapter.getPageMonth(findLastVisibleItemPosition);
                 MaterialCalendar.this.current = pageMonth;

@@ -63,11 +63,11 @@ public final class IntArrayNavType extends CollectionNavType<int[]> {
     public void put(Bundle bundle, String key, int[] iArr) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundle);
+        Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundle);
         if (iArr != null) {
-            SavedStateWriter.m9313putIntArrayimpl(m9295constructorimpl, key, iArr);
+            SavedStateWriter.m8518putIntArrayimpl(m8500constructorimpl, key, iArr);
         } else {
-            SavedStateWriter.m9318putNullimpl(m9295constructorimpl, key);
+            SavedStateWriter.m8523putNullimpl(m8500constructorimpl, key);
         }
     }
 
@@ -75,10 +75,10 @@ public final class IntArrayNavType extends CollectionNavType<int[]> {
     public int[] get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
-        if (!SavedStateReader.m9210containsimpl(m9209constructorimpl, key) || SavedStateReader.m9288isNullimpl(m9209constructorimpl, key)) {
+        Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
+        if (!SavedStateReader.m8415containsimpl(m8414constructorimpl, key) || SavedStateReader.m8493isNullimpl(m8414constructorimpl, key)) {
             return null;
         }
-        return SavedStateReader.m9241getIntArrayimpl(m9209constructorimpl, key);
+        return SavedStateReader.m8446getIntArrayimpl(m8414constructorimpl, key);
     }
 }

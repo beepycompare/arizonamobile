@@ -24,9 +24,9 @@ import kotlin.jvm.functions.Function2;
 @Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u0014\b\u0002\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u00020\u00010\u000f2\u0012\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00010\u000fH\u0007¢\u0006\u0004\b\u0012\u0010\u0013¨\u0006\u0014"}, d2 = {"ClickableText", "", "text", "Landroidx/compose/ui/text/AnnotatedString;", "modifier", "Landroidx/compose/ui/Modifier;", "style", "Landroidx/compose/ui/text/TextStyle;", "softWrap", "", "overflow", "Landroidx/compose/ui/text/style/TextOverflow;", "maxLines", "", "onTextLayout", "Lkotlin/Function1;", "Landroidx/compose/ui/text/TextLayoutResult;", "onClick", "ClickableText-4YKlhWE", "(Landroidx/compose/ui/text/AnnotatedString;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/text/TextStyle;ZIILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ClickableTextKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClickableText_4YKlhWE$lambda$4(AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1 function1, Function1 function12, int i3, int i4, Composer composer, int i5) {
-        m1328ClickableText4YKlhWE(annotatedString, modifier, textStyle, z, i, i2, function1, function12, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+        m1162ClickableText4YKlhWE(annotatedString, modifier, textStyle, z, i, i2, function1, function12, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
         return Unit.INSTANCE;
     }
 
@@ -57,7 +57,7 @@ public final class ClickableTextKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1328ClickableText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1<? super TextLayoutResult, Unit> function1, final Function1<? super Integer, Unit> function12, Composer composer, final int i3, final int i4) {
+    public static final void m1162ClickableText4YKlhWE(final AnnotatedString annotatedString, Modifier modifier, TextStyle textStyle, boolean z, int i, int i2, Function1<? super TextLayoutResult, Unit> function1, final Function1<? super Integer, Unit> function12, Composer composer, final int i3, final int i4) {
         int i5;
         Modifier.Companion companion;
         int i6;
@@ -135,7 +135,7 @@ public final class ClickableTextKt {
                             TextStyle textStyle3 = i6 != 0 ? TextStyle.Companion.getDefault() : obj;
                             boolean z3 = i7 != 0 ? true : z;
                             if (i8 != 0) {
-                                i9 = TextOverflow.Companion.m8193getClipgIe3tQ8();
+                                i9 = TextOverflow.Companion.m7490getClipgIe3tQ8();
                             }
                             if (i10 != 0) {
                                 i14 = Integer.MAX_VALUE;
@@ -200,7 +200,7 @@ public final class ClickableTextKt {
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             composer2 = startRestartGroup;
-                            BasicTextKt.m1318BasicTextCL7eQgs(annotatedString, then, textStyle3, (Function1) rememberedValue4, i9, z3, i14, 0, null, null, null, composer2, (58254 & i5) | (458752 & (i5 << 6)) | ((i5 << 3) & 3670016), 0, 1920);
+                            BasicTextKt.m1153BasicTextCL7eQgs(annotatedString, then, textStyle3, (Function1) rememberedValue4, i9, z3, i14, 0, null, null, null, composer2, (58254 & i5) | (458752 & (i5 << 6)) | ((i5 << 3) & 3670016), 0, 1920);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -216,9 +216,7 @@ public final class ClickableTextKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.ClickableTextKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit ClickableText_4YKlhWE$lambda$4;
-                                    ClickableText_4YKlhWE$lambda$4 = ClickableTextKt.ClickableText_4YKlhWE$lambda$4(AnnotatedString.this, modifier2, textStyle2, z2, i16, i12, function13, function12, i3, i4, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return ClickableText_4YKlhWE$lambda$4;
+                                    return ClickableTextKt.ClickableText_4YKlhWE$lambda$4(AnnotatedString.this, modifier2, textStyle2, z2, i16, i12, function13, function12, i3, i4, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;

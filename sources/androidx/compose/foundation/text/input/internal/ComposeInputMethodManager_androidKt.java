@@ -11,9 +11,7 @@ public final class ComposeInputMethodManager_androidKt {
     private static Function1<? super View, ? extends ComposeInputMethodManager> ComposeInputMethodManagerFactory = new Function1() { // from class: androidx.compose.foundation.text.input.internal.ComposeInputMethodManager_androidKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            ComposeInputMethodManager ComposeInputMethodManagerFactory$lambda$0;
-            ComposeInputMethodManagerFactory$lambda$0 = ComposeInputMethodManager_androidKt.ComposeInputMethodManagerFactory$lambda$0((View) obj);
-            return ComposeInputMethodManagerFactory$lambda$0;
+            return ComposeInputMethodManager_androidKt.ComposeInputMethodManagerFactory$lambda$0((View) obj);
         }
     };
 
@@ -21,7 +19,7 @@ public final class ComposeInputMethodManager_androidKt {
         return ComposeInputMethodManagerFactory.invoke(view);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ComposeInputMethodManager ComposeInputMethodManagerFactory$lambda$0(View view) {
         return Build.VERSION.SDK_INT >= 34 ? new ComposeInputMethodManagerImplApi34(view) : new ComposeInputMethodManagerImplApi24(view);
     }

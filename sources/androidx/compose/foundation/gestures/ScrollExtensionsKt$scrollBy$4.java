@@ -46,7 +46,7 @@ final class ScrollExtensionsKt$scrollBy$4 extends SuspendLambda implements Funct
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            this.$consumed.element = ((Scroll2DScope) this.L$0).mo515scrollByMKHz9U(this.f12$$v$c$androidxcomposeuigeometryOffset$value$0);
+            this.$consumed.element = ((Scroll2DScope) this.L$0).mo446scrollByMKHz9U(this.f12$$v$c$androidxcomposeuigeometryOffset$value$0);
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

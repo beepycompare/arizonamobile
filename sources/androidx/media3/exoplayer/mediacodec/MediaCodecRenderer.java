@@ -1,5 +1,6 @@
 package androidx.media3.exoplayer.mediacodec;
 
+import android.content.Context;
 import android.media.MediaCodec;
 import android.media.MediaCrypto;
 import android.media.MediaCryptoException;
@@ -45,7 +46,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public abstract class MediaCodecRenderer extends BaseRenderer {
     private static final byte[] ADAPTATION_WORKAROUND_BUFFER = {0, 0, 1, 103, 66, -64, Ascii.VT, -38, 37, -112, 0, 0, 1, 104, -50, Ascii.SI, 19, 32, 0, 0, 1, 101, -120, -124, Ascii.CR, -50, 113, Ascii.CAN, -96, 0, 47, -65, Ascii.FS, 49, -61, 39, 93, 120};
     private static final int ADAPTATION_WORKAROUND_MODE_ALWAYS = 2;
@@ -98,6 +99,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     private int codecReconfigurationState;
     private boolean codecReconfigured;
     private boolean codecRegisteredOnBufferAvailableListener;
+    private final Context context;
     private float currentPlaybackSpeed;
     protected DecoderCounters decoderCounters;
     private final boolean enableDecoderFallback;
@@ -227,7 +229,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         return 8;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class DecoderInitializationException extends Exception {
         private static final int CUSTOM_ERROR_CODE_BASE = -50000;
         private static final int DECODER_QUERY_ERROR = -49998;
@@ -265,8 +267,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         }
     }
 
-    public MediaCodecRenderer(int i, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, boolean z, float f) {
+    public MediaCodecRenderer(Context context, int i, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, boolean z, float f) {
         super(i);
+        this.context = context.getApplicationContext();
         this.codecAdapterFactory = factory;
         this.mediaCodecSelector = (MediaCodecSelector) Preconditions.checkNotNull(mediaCodecSelector);
         this.enableDecoderFallback = z;
@@ -903,7 +906,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             this.codecRegisteredOnBufferAvailableListener = createAdapter.registerOnBufferAvailableListener(new MediaCodecRendererCodecAdapterListener());
             TraceUtil.endSection();
             long elapsedRealtime2 = getClock().elapsedRealtime();
-            if (!mediaCodecInfo.isFormatSupported(format)) {
+            if (!mediaCodecInfo.isFormatSupported(this.context, format)) {
                 Log.w(TAG, Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(format), str));
             }
             this.codecOperatingRate = codecOperatingRateV23;
@@ -1007,7 +1010,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 mediaCodecAdapter.useInputBuffer(new Runnable() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecRenderer$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaCodecRenderer.this.m8992xf3821a9d(formatHolder);
+                        MediaCodecRenderer.this.m8269xf3821a9d(formatHolder);
                     }
                 });
                 int i3 = this.readDataResultHolder.get();
@@ -1100,21 +1103,21 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$feedInputBuffer$0$androidx-media3-exoplayer-mediacodec-MediaCodecRenderer  reason: not valid java name */
-    public /* synthetic */ void m8992xf3821a9d(FormatHolder formatHolder) {
+    public /* synthetic */ void m8269xf3821a9d(FormatHolder formatHolder) {
         this.readDataResultHolder.set(readSource(formatHolder, this.buffer, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00a5, code lost:
         if (drainAndUpdateCodecDrmSession() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00d9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00d7, code lost:
         if (drainAndUpdateCodecDrmSession() == false) goto L35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x00f2, code lost:
         r9 = 2;
      */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00fc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1634,7 +1637,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class OutputStreamInfo {
         public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET, C.TIME_UNSET);
         public final TimedValueQueue<Format> formatQueue = new TimedValueQueue<>();
@@ -1651,7 +1654,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Api31 {
         private Api31() {
         }
@@ -1666,7 +1669,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public final class MediaCodecRendererCodecAdapterListener implements MediaCodecAdapter.OnBufferAvailableListener {
         private MediaCodecRendererCodecAdapterListener() {
         }

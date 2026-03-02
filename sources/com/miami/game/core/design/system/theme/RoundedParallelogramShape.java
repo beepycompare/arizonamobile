@@ -13,7 +13,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Shape.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J'\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012R\u0010\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lcom/miami/game/core/design/system/theme/RoundedParallelogramShape;", "Landroidx/compose/ui/graphics/Shape;", "cornerRadius", "Landroidx/compose/ui/unit/Dp;", "skewX", "", "<init>", "(FFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "design-system_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J'\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016¢\u0006\u0004\b\u0011\u0010\u0012R\u0010\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lcom/miami/game/core/design/system/theme/RoundedParallelogramShape;", "Landroidx/compose/ui/graphics/Shape;", "cornerRadius", "Landroidx/compose/ui/unit/Dp;", "skewX", "", "<init>", "(FFLkotlin/jvm/internal/DefaultConstructorMarker;)V", "F", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "design-system"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class RoundedParallelogramShape implements Shape {
     public static final int $stable = 0;
@@ -31,42 +31,42 @@ public final class RoundedParallelogramShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         int i;
         int i2;
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
-        float mo464toPx0680j_4 = density.mo464toPx0680j_4(this.cornerRadius);
+        float mo405toPx0680j_4 = density.mo405toPx0680j_4(this.cornerRadius);
         float intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L)) * this.skewX;
         Path Path = AndroidPath_androidKt.Path();
         Path.reset();
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
-        long m5171constructorimpl2 = Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32));
-        long m5171constructorimpl3 = Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2) - intBitsToFloat) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L));
-        long m5171constructorimpl4 = Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
-        int i3 = (int) (m5171constructorimpl >> 32);
-        int i4 = (int) (m5171constructorimpl & 4294967295L);
-        Path.moveTo(Float.intBitsToFloat(i3) + mo464toPx0680j_4, Float.intBitsToFloat(i4));
-        int i5 = (int) (m5171constructorimpl2 >> 32);
-        int i6 = (int) (m5171constructorimpl2 & 4294967295L);
-        Path.lineTo(Float.intBitsToFloat(i5) - mo464toPx0680j_4, Float.intBitsToFloat(i6));
-        float f = 2 * mo464toPx0680j_4;
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+        long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) & 4294967295L) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j >> 32))) << 32));
+        long m4519constructorimpl3 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i2) - intBitsToFloat) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L));
+        long m4519constructorimpl4 = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat(i)) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+        int i3 = (int) (m4519constructorimpl >> 32);
+        int i4 = (int) (m4519constructorimpl & 4294967295L);
+        Path.moveTo(Float.intBitsToFloat(i3) + mo405toPx0680j_4, Float.intBitsToFloat(i4));
+        int i5 = (int) (m4519constructorimpl2 >> 32);
+        int i6 = (int) (m4519constructorimpl2 & 4294967295L);
+        Path.lineTo(Float.intBitsToFloat(i5) - mo405toPx0680j_4, Float.intBitsToFloat(i6));
+        float f = 2 * mo405toPx0680j_4;
         Path.arcTo(new Rect(Float.intBitsToFloat(i5) - f, Float.intBitsToFloat(i6), Float.intBitsToFloat(i5), Float.intBitsToFloat(i6) + f), -90.0f, 90.0f, false);
-        int i7 = (int) (m5171constructorimpl3 >> 32);
-        int i8 = (int) (m5171constructorimpl3 & 4294967295L);
-        Path.lineTo(Float.intBitsToFloat(i7), Float.intBitsToFloat(i8) - mo464toPx0680j_4);
+        int i7 = (int) (m4519constructorimpl3 >> 32);
+        int i8 = (int) (m4519constructorimpl3 & 4294967295L);
+        Path.lineTo(Float.intBitsToFloat(i7), Float.intBitsToFloat(i8) - mo405toPx0680j_4);
         Path.arcTo(new Rect(Float.intBitsToFloat(i7) - f, Float.intBitsToFloat(i8) - f, Float.intBitsToFloat(i7), Float.intBitsToFloat(i8)), 0.0f, 90.0f, false);
-        int i9 = (int) (m5171constructorimpl4 >> 32);
-        int i10 = (int) (m5171constructorimpl4 & 4294967295L);
-        Path.lineTo(Float.intBitsToFloat(i9) + mo464toPx0680j_4, Float.intBitsToFloat(i10));
+        int i9 = (int) (m4519constructorimpl4 >> 32);
+        int i10 = (int) (m4519constructorimpl4 & 4294967295L);
+        Path.lineTo(Float.intBitsToFloat(i9) + mo405toPx0680j_4, Float.intBitsToFloat(i10));
         Path.arcTo(new Rect(Float.intBitsToFloat(i9), Float.intBitsToFloat(i10) - f, Float.intBitsToFloat(i9) + f, Float.intBitsToFloat(i10)), 90.0f, 90.0f, false);
-        Path.lineTo(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4) + mo464toPx0680j_4);
+        Path.lineTo(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4) + mo405toPx0680j_4);
         Path.arcTo(new Rect(Float.intBitsToFloat(i3), Float.intBitsToFloat(i4), Float.intBitsToFloat(i3) + f, Float.intBitsToFloat(i4) + f), 180.0f, 90.0f, false);
         Path.close();
         return new Outline.Generic(Path);
     }
 
     public /* synthetic */ RoundedParallelogramShape(float f, float f2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m8258constructorimpl(8) : f, (i & 2) != 0 ? 0.05f : f2, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(8) : f, (i & 2) != 0 ? 0.05f : f2, null);
     }
 }

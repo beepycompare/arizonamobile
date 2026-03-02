@@ -29,7 +29,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
     public static final int $stable = 8;
     private boolean enabled;
     private LayerWithRenderer layerWithRenderer;
-    private long positionInOverlay = Offset.Companion.m5195getZeroF1C5BW0();
+    private long positionInOverlay = Offset.Companion.m4543getZeroF1C5BW0();
     private Function0<Boolean> renderInOverlay;
     private SharedTransitionScopeImpl sharedScope;
     private final MutableFloatState zIndexInOverlay$delegate;
@@ -82,8 +82,8 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setPositionInOverlay-k-4lQ0M  reason: not valid java name */
-    public final void m128setPositionInOverlayk4lQ0M(long j) {
-        if (Offset.m5176equalsimpl0(j, this.positionInOverlay)) {
+    public final void m115setPositionInOverlayk4lQ0M(long j) {
+        if (Offset.m4524equalsimpl0(j, this.positionInOverlay)) {
             return;
         }
         Function0<Unit> invalidateOverlay = this.sharedScope.getInvalidateOverlay();
@@ -137,9 +137,9 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$measure$1$1
+    public MeasureResult mo69measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$measure$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -160,10 +160,10 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
                     } else if (placementScope.getCoordinates() != null) {
                         RenderInTransitionOverlayNode renderInTransitionOverlayNode = this;
                         renderInTransitionOverlayNode.setEnabled(true);
-                        renderInTransitionOverlayNode.m128setPositionInOverlayk4lQ0M(renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo6884localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode), Offset.Companion.m5195getZeroF1C5BW0()));
+                        renderInTransitionOverlayNode.m115setPositionInOverlayk4lQ0M(renderInTransitionOverlayNode.getSharedScope().getRoot$animation().mo6225localPositionOfR5De75A(DelegatableNodeKt.requireLayoutCoordinates(renderInTransitionOverlayNode), Offset.Companion.m4543getZeroF1C5BW0()));
                     }
                 }
-                Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, 0, 0, 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, 0, 0, 0.0f, 4, null);
             }
         }, 4, null);
     }
@@ -175,7 +175,7 @@ public final class RenderInTransitionOverlayNode extends Modifier.Node implement
             throw new IllegalArgumentException("Error: layer never initialized".toString());
         }
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m6003recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
+        DrawScope.m5344recordJVtK1S4$default(contentDrawScope2, layer, 0L, new Function1<DrawScope, Unit>() { // from class: androidx.compose.animation.RenderInTransitionOverlayNode$draw$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

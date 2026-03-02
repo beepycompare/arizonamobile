@@ -5,8 +5,8 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import ru.rustore.sdk.metrics.internal.C0826m;
-import ru.rustore.sdk.metrics.internal.C0827n;
+import ru.rustore.sdk.metrics.internal.C0825m;
+import ru.rustore.sdk.metrics.internal.C0826n;
 import ru.rustore.sdk.metrics.internal.X;
 import ru.rustore.sdk.reactive.single.Single;
 import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
@@ -14,7 +14,7 @@ import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 /* loaded from: classes6.dex */
 public final class MetricsClient {
     public static final Companion Companion = new Companion(null);
-    private final C0827n metricsClientController;
+    private final C0826n metricsClientController;
 
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006¨\u0006\u0007"}, d2 = {"Lru/rustore/sdk/metrics/MetricsClient$Companion;", "", "()V", "getInstance", "Lru/rustore/sdk/metrics/MetricsClient;", "context", "Landroid/content/Context;", "sdk-public-metrics_release"}, k = 1, mv = {1, 7, 0}, xi = 48)
     /* loaded from: classes6.dex */
@@ -32,16 +32,16 @@ public final class MetricsClient {
         }
     }
 
-    public MetricsClient(C0827n metricsClientController) {
+    public MetricsClient(C0826n metricsClientController) {
         Intrinsics.checkNotNullParameter(metricsClientController, "metricsClientController");
         this.metricsClientController = metricsClientController;
     }
 
     public final Single<Unit> send(MetricsEvent metricsEvent) {
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
-        C0827n c0827n = this.metricsClientController;
-        c0827n.getClass();
+        C0826n c0826n = this.metricsClientController;
+        c0826n.getClass();
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
-        return SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0826m(c0827n, metricsEvent)), c0827n.d);
+        return SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0825m(c0826n, metricsEvent)), c0826n.d);
     }
 }

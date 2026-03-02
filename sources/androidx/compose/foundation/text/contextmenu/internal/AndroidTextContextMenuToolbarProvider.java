@@ -36,7 +36,7 @@ import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.channels.Channel;
 import kotlinx.coroutines.channels.ChannelKt;
 /* compiled from: AndroidTextContextMenuToolbarProvider.android.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0001\u0018\u00002\u00020\u0001:\u0002./B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0014\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0004\b\n\u0010\u000bJ\u0016\u0010\u0019\u001a\u00020\u00122\u0006\u0010\u001a\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u001cJ\u0006\u0010\u001d\u001a\u00020\u0012J\u0006\u0010\u001e\u001a\u00020\u0012J\u0018\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020!2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010\"\u001a\u00020#2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010$\u001a\u00020%2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010&\u001a\u00020%2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002JK\u0010'\u001a\u0002H(\"\b\b\u0000\u0010(*\u00020\u0011\"\b\b\u0001\u0010)*\u00020\u00112\u0006\u0010*\u001a\u0002H)2\u0012\u0010+\u001a\u000e\u0012\u0004\u0012\u0002H)\u0012\u0004\u0012\u00020\u00120\u00052\f\u0010,\u001a\b\u0012\u0004\u0012\u0002H(0\bH\u0002¢\u0006\u0002\u0010-R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00120\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00120\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Landroidx/compose/foundation/text/contextmenu/internal/AndroidTextContextMenuToolbarProvider;", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "view", "Landroid/view/View;", "callbackInjector", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/contextmenu/internal/TextActionModeCallback;", "coordinatesProvider", "Lkotlin/Function0;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "<init>", "(Landroid/view/View;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "mutatorMutex", "Landroidx/compose/foundation/MutatorMutex;", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "onDataChange", "", "", "onPositionChange", "actionMode", "Landroid/view/ActionMode;", "startActionModeRunnable", "Ljava/lang/Runnable;", "finishActionModeRunnable", "showTextContextMenu", "dataProvider", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuDataProvider;", "(Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuDataProvider;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", TtmlNode.START, "dispose", "createActionModeCallback", "session", "Landroidx/compose/foundation/text/contextmenu/internal/AndroidTextContextMenuToolbarProvider$TextContextMenuSessionImpl;", "observeAndGetData", "Landroidx/compose/foundation/text/contextmenu/data/TextContextMenuData;", "observeAndGetBounds", "Landroidx/compose/ui/geometry/Rect;", "calculateBoundsInRoot", "observeReadsAndGet", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.LATITUDE_SOUTH, "scope", "onValueChanged", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "TextActionModeCallbackImpl", "TextContextMenuSessionImpl", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\b\u0001\u0018\u00002\u00020\u0001:\u0002-.B3\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0014\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\b¢\u0006\u0004\b\n\u0010\u000bJ\u0016\u0010\u0019\u001a\u00020\u00122\u0006\u0010\u001a\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u001cJ\u0006\u0010\u001d\u001a\u00020\u0012J\u0006\u0010\u001e\u001a\u00020\u0012J\u0018\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020!2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010\"\u001a\u00020#2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010$\u001a\u00020%2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002JK\u0010&\u001a\u0002H'\"\b\b\u0000\u0010'*\u00020\u0011\"\b\b\u0001\u0010(*\u00020\u00112\u0006\u0010)\u001a\u0002H(2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u0002H(\u0012\u0004\u0012\u00020\u00120\u00052\f\u0010+\u001a\b\u0012\u0004\u0012\u0002H'0\bH\u0002¢\u0006\u0002\u0010,R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001c\u0010\u0004\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0010\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00120\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\u00120\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0018\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Landroidx/compose/foundation/text/contextmenu/internal/AndroidTextContextMenuToolbarProvider;", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuProvider;", "view", "Landroid/view/View;", "callbackInjector", "Lkotlin/Function1;", "Landroidx/compose/foundation/text/contextmenu/internal/TextActionModeCallback;", "coordinatesProvider", "Lkotlin/Function0;", "Landroidx/compose/ui/layout/LayoutCoordinates;", "<init>", "(Landroid/view/View;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "mutatorMutex", "Landroidx/compose/foundation/MutatorMutex;", "snapshotStateObserver", "Landroidx/compose/runtime/snapshots/SnapshotStateObserver;", "onDataChange", "", "", "onPositionChange", "actionMode", "Landroid/view/ActionMode;", "startActionModeRunnable", "Ljava/lang/Runnable;", "finishActionModeRunnable", "showTextContextMenu", "dataProvider", "Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuDataProvider;", "(Landroidx/compose/foundation/text/contextmenu/provider/TextContextMenuDataProvider;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", TtmlNode.START, "dispose", "createActionModeCallback", "session", "Landroidx/compose/foundation/text/contextmenu/internal/AndroidTextContextMenuToolbarProvider$TextContextMenuSessionImpl;", "observeAndGetData", "Landroidx/compose/foundation/text/contextmenu/data/TextContextMenuData;", "observeAndGetBounds", "Landroidx/compose/ui/geometry/Rect;", "observeReadsAndGet", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.LATITUDE_SOUTH, "scope", "onValueChanged", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "TextActionModeCallbackImpl", "TextContextMenuSessionImpl", "foundation"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidTextContextMenuToolbarProvider implements TextContextMenuProvider {
     public static final int $stable = 8;
@@ -50,25 +50,19 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
     private final SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit snapshotStateObserver$lambda$0;
-            snapshotStateObserver$lambda$0 = AndroidTextContextMenuToolbarProvider.snapshotStateObserver$lambda$0(AndroidTextContextMenuToolbarProvider.this, (Function0) obj);
-            return snapshotStateObserver$lambda$0;
+            return AndroidTextContextMenuToolbarProvider.snapshotStateObserver$lambda$0(AndroidTextContextMenuToolbarProvider.this, (Function0) obj);
         }
     });
     private final Function1<Object, Unit> onDataChange = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit onDataChange$lambda$0;
-            onDataChange$lambda$0 = AndroidTextContextMenuToolbarProvider.onDataChange$lambda$0(AndroidTextContextMenuToolbarProvider.this, obj);
-            return onDataChange$lambda$0;
+            return AndroidTextContextMenuToolbarProvider.onDataChange$lambda$0(AndroidTextContextMenuToolbarProvider.this, obj);
         }
     };
     private final Function1<Object, Unit> onPositionChange = new Function1() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit onPositionChange$lambda$0;
-            onPositionChange$lambda$0 = AndroidTextContextMenuToolbarProvider.onPositionChange$lambda$0(AndroidTextContextMenuToolbarProvider.this, obj);
-            return onPositionChange$lambda$0;
+            return AndroidTextContextMenuToolbarProvider.onPositionChange$lambda$0(AndroidTextContextMenuToolbarProvider.this, obj);
         }
     };
 
@@ -79,7 +73,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         this.coordinatesProvider = function0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit snapshotStateObserver$lambda$0(AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, final Function0 function0) {
         Handler handler = androidTextContextMenuToolbarProvider.view.getHandler();
         if ((handler != null ? handler.getLooper() : null) == Looper.myLooper()) {
@@ -98,7 +92,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onDataChange$lambda$0(AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, Object obj) {
         ActionMode actionMode = androidTextContextMenuToolbarProvider.actionMode;
         if (actionMode != null) {
@@ -107,7 +101,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onPositionChange$lambda$0(AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, Object obj) {
         ActionMode actionMode = androidTextContextMenuToolbarProvider.actionMode;
         if (actionMode != null) {
@@ -175,17 +169,22 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         return (Rect) observeReadsAndGet("positioner", this.onPositionChange, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Rect calculateBoundsInRoot;
-                calculateBoundsInRoot = AndroidTextContextMenuToolbarProvider.this.calculateBoundsInRoot(textContextMenuDataProvider);
-                return calculateBoundsInRoot;
+                return AndroidTextContextMenuToolbarProvider.observeAndGetBounds$lambda$0(AndroidTextContextMenuToolbarProvider.this, textContextMenuDataProvider);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Rect calculateBoundsInRoot(TextContextMenuDataProvider textContextMenuDataProvider) {
-        LayoutCoordinates invoke = this.coordinatesProvider.invoke();
-        return textContextMenuDataProvider.contentBounds(invoke).m5216translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(invoke));
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Rect observeAndGetBounds$lambda$0(AndroidTextContextMenuToolbarProvider androidTextContextMenuToolbarProvider, TextContextMenuDataProvider textContextMenuDataProvider) {
+        LayoutCoordinates invoke = androidTextContextMenuToolbarProvider.coordinatesProvider.invoke();
+        if (!invoke.isAttached()) {
+            invoke = null;
+        }
+        LayoutCoordinates layoutCoordinates = invoke;
+        if (layoutCoordinates == null) {
+            return Rect.Companion.getZero();
+        }
+        return textContextMenuDataProvider.contentBounds(layoutCoordinates).m4564translatek4lQ0M(LayoutCoordinatesKt.positionInRoot(layoutCoordinates));
     }
 
     private final <T, S> T observeReadsAndGet(S s, Function1<? super S, Unit> function1, final Function0<? extends T> function0) {
@@ -193,9 +192,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         this.snapshotStateObserver.observeReads(s, function1, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.AndroidTextContextMenuToolbarProvider$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit observeReadsAndGet$lambda$0;
-                observeReadsAndGet$lambda$0 = AndroidTextContextMenuToolbarProvider.observeReadsAndGet$lambda$0(Ref.ObjectRef.this, function0);
-                return observeReadsAndGet$lambda$0;
+                return AndroidTextContextMenuToolbarProvider.observeReadsAndGet$lambda$0(Ref.ObjectRef.this, function0);
             }
         });
         if (objectRef.element == null) {
@@ -205,7 +202,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
         return objectRef.element;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r1v1, types: [T, java.lang.Object] */
     public static final Unit observeReadsAndGet$lambda$0(Ref.ObjectRef objectRef, Function0 function0) {
         objectRef.element = function0.invoke();
@@ -310,7 +307,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
 
         @Override // androidx.compose.foundation.text.contextmenu.data.TextContextMenuSession
         public void close() {
-            this.channel.mo9174trySendJP2dKIU(Unit.INSTANCE);
+            this.channel.mo8396trySendJP2dKIU(Unit.INSTANCE);
         }
 
         public final Object awaitClose(Continuation<? super Unit> continuation) {

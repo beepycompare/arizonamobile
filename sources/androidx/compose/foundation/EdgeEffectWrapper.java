@@ -19,7 +19,7 @@ final class EdgeEffectWrapper {
     private EdgeEffect leftEffectNegation;
     private EdgeEffect rightEffect;
     private EdgeEffect rightEffectNegation;
-    private long size = IntSize.Companion.m8434getZeroYbymL2g();
+    private long size = IntSize.Companion.m7731getZeroYbymL2g();
     private EdgeEffect topEffect;
     private EdgeEffect topEffectNegation;
 
@@ -227,20 +227,20 @@ final class EdgeEffectWrapper {
     private final EdgeEffect createEdgeEffect(Orientation orientation) {
         EdgeEffect create = EdgeEffectCompat.INSTANCE.create(this.context);
         create.setColor(this.glowColor);
-        if (!IntSize.m8427equalsimpl0(this.size, IntSize.Companion.m8434getZeroYbymL2g())) {
-            if (orientation == Orientation.Vertical) {
-                long j = this.size;
+        if (!IntSize.m7724equalsimpl0(this.size, IntSize.Companion.m7731getZeroYbymL2g())) {
+            Orientation orientation2 = Orientation.Vertical;
+            long j = this.size;
+            if (orientation == orientation2) {
                 create.setSize((int) (j >> 32), (int) (j & 4294967295L));
                 return create;
             }
-            long j2 = this.size;
-            create.setSize((int) (4294967295L & j2), (int) (j2 >> 32));
+            create.setSize((int) (4294967295L & j), (int) (j >> 32));
         }
         return create;
     }
 
     /* renamed from: updateSize-ozmzZPI  reason: not valid java name */
-    public final void m363updateSizeozmzZPI(long j) {
+    public final void m318updateSizeozmzZPI(long j) {
         this.size = j;
         EdgeEffect edgeEffect = this.topEffect;
         if (edgeEffect != null) {

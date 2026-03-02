@@ -47,7 +47,8 @@ public final class MaskingMediaSource extends WrappingMediaSource {
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource, androidx.media3.exoplayer.source.MediaSource
     public void updateMediaItem(MediaItem mediaItem) {
         if (this.hasRealTimeline) {
-            this.timeline = this.timeline.cloneWithUpdatedTimeline(new TimelineWithUpdatedMediaItem(this.timeline.timeline, mediaItem));
+            MaskingTimeline maskingTimeline = this.timeline;
+            this.timeline = maskingTimeline.cloneWithUpdatedTimeline(TimelineWithUpdatedMediaItem.create(maskingTimeline.timeline, mediaItem));
         } else {
             this.timeline = MaskingTimeline.createWithPlaceholderTimeline(mediaItem);
         }

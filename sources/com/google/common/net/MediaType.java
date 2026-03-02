@@ -405,7 +405,9 @@ public final class MediaType {
             Preconditions.checkState(hasMore());
             int i = this.position;
             this.position = matcher.negate().indexIn(this.input, i);
-            return hasMore() ? this.input.substring(i, this.position) : this.input.substring(i);
+            boolean hasMore = hasMore();
+            String str = this.input;
+            return hasMore ? str.substring(i, this.position) : str.substring(i);
         }
 
         String consumeToken(CharMatcher matcher) {

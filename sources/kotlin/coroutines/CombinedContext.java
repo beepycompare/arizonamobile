@@ -59,10 +59,12 @@ public final class CombinedContext implements CoroutineContext, Serializable {
     @Override // kotlin.coroutines.CoroutineContext
     public CoroutineContext minusKey(CoroutineContext.Key<?> key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        if (this.element.get(key) != null) {
-            return this.left;
+        CoroutineContext.Element element = this.element.get(key);
+        CoroutineContext coroutineContext = this.left;
+        if (element != null) {
+            return coroutineContext;
         }
-        CoroutineContext minusKey = this.left.minusKey(key);
+        CoroutineContext minusKey = coroutineContext.minusKey(key);
         return minusKey == this.left ? this : minusKey == EmptyCoroutineContext.INSTANCE ? this.element : new CombinedContext(minusKey, this.element);
     }
 
@@ -115,14 +117,12 @@ public final class CombinedContext implements CoroutineContext, Serializable {
         return "[" + ((String) fold("", new Function2() { // from class: kotlin.coroutines.CombinedContext$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                String string$lambda$0;
-                string$lambda$0 = CombinedContext.toString$lambda$0((String) obj, (CoroutineContext.Element) obj2);
-                return string$lambda$0;
+                return CombinedContext.toString$lambda$0((String) obj, (CoroutineContext.Element) obj2);
             }
         })) + AbstractJsonLexerKt.END_LIST;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String toString$lambda$0(String acc, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(acc, "acc");
         Intrinsics.checkNotNullParameter(element, "element");
@@ -136,9 +136,7 @@ public final class CombinedContext implements CoroutineContext, Serializable {
         fold(Unit.INSTANCE, new Function2() { // from class: kotlin.coroutines.CombinedContext$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit writeReplace$lambda$0;
-                writeReplace$lambda$0 = CombinedContext.writeReplace$lambda$0(coroutineContextArr, intRef, (Unit) obj, (CoroutineContext.Element) obj2);
-                return writeReplace$lambda$0;
+                return CombinedContext.writeReplace$lambda$0(coroutineContextArr, intRef, (Unit) obj, (CoroutineContext.Element) obj2);
             }
         });
         if (intRef.element != size) {
@@ -147,7 +145,7 @@ public final class CombinedContext implements CoroutineContext, Serializable {
         return new Serialized(coroutineContextArr);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit writeReplace$lambda$0(CoroutineContext[] coroutineContextArr, Ref.IntRef intRef, Unit unit, CoroutineContext.Element element) {
         Intrinsics.checkNotNullParameter(unit, "<unused var>");
         Intrinsics.checkNotNullParameter(element, "element");

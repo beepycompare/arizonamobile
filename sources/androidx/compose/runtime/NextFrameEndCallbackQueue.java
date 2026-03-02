@@ -16,23 +16,21 @@ import kotlin.jvm.functions.Function1;
 public final class NextFrameEndCallbackQueue {
     public static final int $stable = 8;
     private final Function0<Unit> onNewAwaiters;
-    private final AtomicInt isFrameOngoing = AtomicBoolean.m4812constructorimpl(false);
+    private final AtomicInt isFrameOngoing = AtomicBoolean.m4177constructorimpl(false);
     private final AwaiterQueue<NextFrameEndAwaiter> frameEndQueue = new AwaiterQueue<>();
 
     public NextFrameEndCallbackQueue(final Function0<Unit> function0) {
         this.onNewAwaiters = new Function0() { // from class: androidx.compose.runtime.NextFrameEndCallbackQueue$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onNewAwaiters$lambda$0;
-                onNewAwaiters$lambda$0 = NextFrameEndCallbackQueue.onNewAwaiters$lambda$0(NextFrameEndCallbackQueue.this, function0);
-                return onNewAwaiters$lambda$0;
+                return NextFrameEndCallbackQueue.onNewAwaiters$lambda$0(NextFrameEndCallbackQueue.this, function0);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onNewAwaiters$lambda$0(NextFrameEndCallbackQueue nextFrameEndCallbackQueue, Function0 function0) {
-        if (!AtomicBoolean.m4816getimpl(nextFrameEndCallbackQueue.isFrameOngoing)) {
+        if (!AtomicBoolean.m4181getimpl(nextFrameEndCallbackQueue.isFrameOngoing)) {
             function0.invoke();
         }
         return Unit.INSTANCE;
@@ -47,22 +45,20 @@ public final class NextFrameEndCallbackQueue {
     }
 
     public final void markFrameStarted() {
-        AtomicBoolean.m4819setimpl(this.isFrameOngoing, true);
+        AtomicBoolean.m4184setimpl(this.isFrameOngoing, true);
     }
 
     public final void markFrameComplete() {
-        AtomicBoolean.m4819setimpl(this.isFrameOngoing, false);
+        AtomicBoolean.m4184setimpl(this.isFrameOngoing, false);
         this.frameEndQueue.flushAndDispatchAwaiters(new Function1() { // from class: androidx.compose.runtime.NextFrameEndCallbackQueue$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit markFrameComplete$lambda$0;
-                markFrameComplete$lambda$0 = NextFrameEndCallbackQueue.markFrameComplete$lambda$0((NextFrameEndCallbackQueue.NextFrameEndAwaiter) obj);
-                return markFrameComplete$lambda$0;
+                return NextFrameEndCallbackQueue.markFrameComplete$lambda$0((NextFrameEndCallbackQueue.NextFrameEndAwaiter) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit markFrameComplete$lambda$0(NextFrameEndAwaiter nextFrameEndAwaiter) {
         nextFrameEndAwaiter.resume();
         return Unit.INSTANCE;

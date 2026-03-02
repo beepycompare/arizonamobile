@@ -201,40 +201,48 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleSetDeviceVolume(int i, int i2) {
-        if (this.player.isCommandAvailable(33)) {
-            this.player.setDeviceVolume(i, i2);
+        boolean isCommandAvailable = this.player.isCommandAvailable(33);
+        Player player = this.player;
+        if (isCommandAvailable) {
+            player.setDeviceVolume(i, i2);
         } else {
-            this.player.setDeviceVolume(i);
+            player.setDeviceVolume(i);
         }
         return Futures.immediateVoidFuture();
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleIncreaseDeviceVolume(int i) {
-        if (this.player.isCommandAvailable(34)) {
-            this.player.increaseDeviceVolume(i);
+        boolean isCommandAvailable = this.player.isCommandAvailable(34);
+        Player player = this.player;
+        if (isCommandAvailable) {
+            player.increaseDeviceVolume(i);
         } else {
-            this.player.increaseDeviceVolume();
+            player.increaseDeviceVolume();
         }
         return Futures.immediateVoidFuture();
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleDecreaseDeviceVolume(int i) {
-        if (this.player.isCommandAvailable(34)) {
-            this.player.decreaseDeviceVolume(i);
+        boolean isCommandAvailable = this.player.isCommandAvailable(34);
+        Player player = this.player;
+        if (isCommandAvailable) {
+            player.decreaseDeviceVolume(i);
         } else {
-            this.player.decreaseDeviceVolume();
+            player.decreaseDeviceVolume();
         }
         return Futures.immediateVoidFuture();
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleSetDeviceMuted(boolean z, int i) {
-        if (this.player.isCommandAvailable(34)) {
-            this.player.setDeviceMuted(z, i);
+        boolean isCommandAvailable = this.player.isCommandAvailable(34);
+        Player player = this.player;
+        if (isCommandAvailable) {
+            player.setDeviceMuted(z, i);
         } else {
-            this.player.setDeviceMuted(z);
+            player.setDeviceMuted(z);
         }
         return Futures.immediateVoidFuture();
     }
@@ -286,35 +294,43 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
             z = false;
         }
         if (i == -1) {
+            Player player = this.player;
             if (z) {
-                this.player.setMediaItem(list.get(0));
+                player.setMediaItem(list.get(0));
             } else {
-                this.player.setMediaItems(list);
+                player.setMediaItems(list);
             }
-        } else if (z) {
-            this.player.setMediaItem(list.get(0), j);
         } else {
-            this.player.setMediaItems(list, i, j);
+            Player player2 = this.player;
+            if (z) {
+                player2.setMediaItem(list.get(0), j);
+            } else {
+                player2.setMediaItems(list, i, j);
+            }
         }
         return Futures.immediateVoidFuture();
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleAddMediaItems(int i, List<MediaItem> list) {
-        if (list.size() == 1) {
-            this.player.addMediaItem(i, list.get(0));
+        int size = list.size();
+        Player player = this.player;
+        if (size == 1) {
+            player.addMediaItem(i, list.get(0));
         } else {
-            this.player.addMediaItems(i, list);
+            player.addMediaItems(i, list);
         }
         return Futures.immediateVoidFuture();
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleMoveMediaItems(int i, int i2, int i3) {
-        if (i2 == i + 1) {
-            this.player.moveMediaItem(i, i3);
+        int i4 = i + 1;
+        Player player = this.player;
+        if (i2 == i4) {
+            player.moveMediaItem(i, i3);
         } else {
-            this.player.moveMediaItems(i, i2, i3);
+            player.moveMediaItems(i, i2, i3);
         }
         return Futures.immediateVoidFuture();
     }
@@ -331,10 +347,12 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
 
     @Override // androidx.media3.common.SimpleBasePlayer
     protected ListenableFuture<?> handleRemoveMediaItems(int i, int i2) {
-        if (i2 == i + 1) {
-            this.player.removeMediaItem(i);
+        int i3 = i + 1;
+        Player player = this.player;
+        if (i2 == i3) {
+            player.removeMediaItem(i);
         } else {
-            this.player.removeMediaItems(i, i2);
+            player.removeMediaItems(i, i2);
         }
         return Futures.immediateVoidFuture();
     }

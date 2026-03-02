@@ -1,5 +1,7 @@
 package com.google.android.gms.tasks;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+
+import java.util.Objects;
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zzm implements Runnable {
     final /* synthetic */ Task zza;
@@ -7,22 +9,17 @@ final class zzm implements Runnable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzm(zzn zznVar, Task task) {
-        this.zzb = zznVar;
         this.zza = task;
+        Objects.requireNonNull(zznVar);
+        this.zzb = zznVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Object obj;
-        OnSuccessListener onSuccessListener;
-        OnSuccessListener onSuccessListener2;
-        obj = this.zzb.zzb;
-        synchronized (obj) {
-            zzn zznVar = this.zzb;
-            onSuccessListener = zznVar.zzc;
-            if (onSuccessListener != null) {
-                onSuccessListener2 = zznVar.zzc;
-                onSuccessListener2.onSuccess(this.zza.getResult());
+        zzn zznVar = this.zzb;
+        synchronized (zznVar.zzc()) {
+            if (zznVar.zzd() != null) {
+                zznVar.zzd().onSuccess(this.zza.getResult());
             }
         }
     }

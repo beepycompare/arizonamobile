@@ -148,17 +148,16 @@ public class PreferenceManager {
     }
 
     public SharedPreferences getSharedPreferences() {
-        Context createDeviceProtectedStorageContext;
         if (getPreferenceDataStore() != null) {
             return null;
         }
         if (this.mSharedPreferences == null) {
-            if (this.mStorage == 1) {
-                createDeviceProtectedStorageContext = ContextCompat.createDeviceProtectedStorageContext(this.mContext);
-            } else {
-                createDeviceProtectedStorageContext = this.mContext;
+            int i = this.mStorage;
+            Context context = this.mContext;
+            if (i == 1) {
+                context = ContextCompat.createDeviceProtectedStorageContext(context);
             }
-            this.mSharedPreferences = createDeviceProtectedStorageContext.getSharedPreferences(this.mSharedPreferencesName, this.mSharedPreferencesMode);
+            this.mSharedPreferences = context.getSharedPreferences(this.mSharedPreferencesName, this.mSharedPreferencesMode);
         }
         return this.mSharedPreferences;
     }

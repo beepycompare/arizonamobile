@@ -83,7 +83,7 @@ public final class TextFieldState {
         MutableState mutableStateOf$default2;
         this.textUndoManager = textUndoManager;
         String str2 = str;
-        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m7707coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
+        this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(str2, TextRangeKt.m7009coerceIn8ffj60Q(j, 0, str.length()), null, null, null, null, 60, null), null, null, null, 14, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.isEditing$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new TextFieldCharSequence(str2, j, null, null, null, null, 60, null), null, 2, null);
@@ -138,13 +138,13 @@ public final class TextFieldState {
     }
 
     /* renamed from: getSelection-d9O1mEE */
-    public final long m1539getSelectiond9O1mEE() {
-        return getValue$foundation().m1537getSelectiond9O1mEE();
+    public final long m1338getSelectiond9O1mEE() {
+        return getValue$foundation().m1336getSelectiond9O1mEE();
     }
 
     /* renamed from: getComposition-MzsxiRA */
-    public final TextRange m1538getCompositionMzsxiRA() {
-        return getValue$foundation().m1536getCompositionMzsxiRA();
+    public final TextRange m1337getCompositionMzsxiRA() {
+        return getValue$foundation().m1335getCompositionMzsxiRA();
     }
 
     public final void edit(Function1<? super TextFieldBuffer, Unit> function1) {
@@ -163,7 +163,7 @@ public final class TextFieldState {
         Function1<Object, Unit> readObserver = currentThreadSnapshot != null ? currentThreadSnapshot.getReadObserver() : null;
         Snapshot makeCurrentNonObservable = companion.makeCurrentNonObservable(currentThreadSnapshot);
         try {
-            return "TextFieldState(selection=" + ((Object) TextRange.m7704toStringimpl(m1539getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
+            return "TextFieldState(selection=" + ((Object) TextRange.m7006toStringimpl(m1338getSelectiond9O1mEE())) + ", text=\"" + ((Object) getText()) + "\")";
         } finally {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
         }
@@ -192,14 +192,14 @@ public final class TextFieldState {
     public final void commitEdit(TextFieldBuffer textFieldBuffer) {
         TextFieldBuffer textFieldBuffer2;
         boolean z = textFieldBuffer.getChanges().getChangeCount() > 0;
-        boolean m7694equalsimpl0 = TextRange.m7694equalsimpl0(textFieldBuffer.m1529getSelectiond9O1mEE(), this.mainBuffer.m1529getSelectiond9O1mEE());
-        boolean z2 = !m7694equalsimpl0;
-        if (!z && m7694equalsimpl0) {
+        boolean m6996equalsimpl0 = TextRange.m6996equalsimpl0(textFieldBuffer.m1328getSelectiond9O1mEE(), this.mainBuffer.m1328getSelectiond9O1mEE());
+        boolean z2 = !m6996equalsimpl0;
+        if (!z && m6996equalsimpl0) {
             textFieldBuffer.setCanCallAddStyle$foundation(true);
         }
         if (z) {
             textFieldBuffer2 = textFieldBuffer;
-            recordEditForUndo(getValue$foundation(), TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(textFieldBuffer2, 0L, null, null, null, 15, null), textFieldBuffer2.getChanges(), TextFieldEditUndoBehavior.NeverMerge);
+            recordEditForUndo(getValue$foundation(), TextFieldBuffer.m1325toTextFieldCharSequencewFTz33Y$foundation$default(textFieldBuffer2, 0L, null, null, null, 15, null), textFieldBuffer2.getChanges(), TextFieldEditUndoBehavior.NeverMerge);
         } else {
             textFieldBuffer2 = textFieldBuffer;
         }
@@ -231,7 +231,7 @@ public final class TextFieldState {
     public final void editWithNoSideEffects$foundation(Function1<? super TextFieldBuffer, Unit> function1) {
         getMainBuffer$foundation().getChangeTracker$foundation().clearChanges();
         function1.invoke(getMainBuffer$foundation());
-        updateValueAndNotifyListeners(getValue$foundation(), TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(getMainBuffer$foundation(), 0L, null, null, null, 15, null), true);
+        updateValueAndNotifyListeners(getValue$foundation(), TextFieldBuffer.m1325toTextFieldCharSequencewFTz33Y$foundation$default(getMainBuffer$foundation(), 0L, null, null, null, 15, null), true);
     }
 
     static /* synthetic */ void commitEditAsUser$default(TextFieldState textFieldState, InputTransformation inputTransformation, boolean z, TextFieldEditUndoBehavior textFieldEditUndoBehavior, int i, Object obj) {
@@ -245,28 +245,28 @@ public final class TextFieldState {
     }
 
     public final void commitEditAsUser(InputTransformation inputTransformation, boolean z, TextFieldEditUndoBehavior textFieldEditUndoBehavior) {
-        List m1541finalizeComposingAnnotationsitr0ztk;
-        List m1541finalizeComposingAnnotationsitr0ztk2;
+        List m1340finalizeComposingAnnotationsitr0ztk;
+        List m1340finalizeComposingAnnotationsitr0ztk2;
         TextFieldCharSequence value$foundation = getValue$foundation();
-        if (this.mainBuffer.getChangeTracker$foundation().getChangeCount() == 0 && TextRange.m7694equalsimpl0(value$foundation.m1537getSelectiond9O1mEE(), this.mainBuffer.m1529getSelectiond9O1mEE())) {
-            if (Intrinsics.areEqual(value$foundation.m1536getCompositionMzsxiRA(), this.mainBuffer.m1527getCompositionMzsxiRA$foundation()) && Intrinsics.areEqual(value$foundation.getHighlight(), this.mainBuffer.getHighlight$foundation()) && Intrinsics.areEqual(value$foundation.getComposingAnnotations(), this.mainBuffer.getComposingAnnotations$foundation())) {
+        if (this.mainBuffer.getChangeTracker$foundation().getChangeCount() == 0 && TextRange.m6996equalsimpl0(value$foundation.m1336getSelectiond9O1mEE(), this.mainBuffer.m1328getSelectiond9O1mEE())) {
+            if (Intrinsics.areEqual(value$foundation.m1335getCompositionMzsxiRA(), this.mainBuffer.m1326getCompositionMzsxiRA$foundation()) && Intrinsics.areEqual(value$foundation.getHighlight(), this.mainBuffer.getHighlight$foundation()) && Intrinsics.areEqual(value$foundation.getComposingAnnotations(), this.mainBuffer.getComposingAnnotations$foundation())) {
                 return;
             }
             TextFieldCharSequence value$foundation2 = getValue$foundation();
-            long m1529getSelectiond9O1mEE = this.mainBuffer.m1529getSelectiond9O1mEE();
-            TextRange m1527getCompositionMzsxiRA$foundation = this.mainBuffer.m1527getCompositionMzsxiRA$foundation();
+            long m1328getSelectiond9O1mEE = this.mainBuffer.m1328getSelectiond9O1mEE();
+            TextRange m1326getCompositionMzsxiRA$foundation = this.mainBuffer.m1326getCompositionMzsxiRA$foundation();
             Pair<TextHighlightType, TextRange> highlight$foundation = this.mainBuffer.getHighlight$foundation();
-            m1541finalizeComposingAnnotationsitr0ztk2 = TextFieldStateKt.m1541finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1527getCompositionMzsxiRA$foundation(), this.mainBuffer.getComposingAnnotations$foundation());
-            updateValueAndNotifyListeners(value$foundation2, new TextFieldCharSequence(this.mainBuffer.toString(), m1529getSelectiond9O1mEE, m1527getCompositionMzsxiRA$foundation, highlight$foundation, m1541finalizeComposingAnnotationsitr0ztk2, null, 32, null), z);
+            m1340finalizeComposingAnnotationsitr0ztk2 = TextFieldStateKt.m1340finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1326getCompositionMzsxiRA$foundation(), this.mainBuffer.getComposingAnnotations$foundation());
+            updateValueAndNotifyListeners(value$foundation2, new TextFieldCharSequence(this.mainBuffer.toString(), m1328getSelectiond9O1mEE, m1326getCompositionMzsxiRA$foundation, highlight$foundation, m1340finalizeComposingAnnotationsitr0ztk2, null, 32, null), z);
             return;
         }
         boolean z2 = false;
         boolean z3 = this.mainBuffer.getChangeTracker$foundation().getChangeCount() != 0;
-        long m1529getSelectiond9O1mEE2 = this.mainBuffer.m1529getSelectiond9O1mEE();
-        TextRange m1527getCompositionMzsxiRA$foundation2 = this.mainBuffer.m1527getCompositionMzsxiRA$foundation();
+        long m1328getSelectiond9O1mEE2 = this.mainBuffer.m1328getSelectiond9O1mEE();
+        TextRange m1326getCompositionMzsxiRA$foundation2 = this.mainBuffer.m1326getCompositionMzsxiRA$foundation();
         Pair<TextHighlightType, TextRange> highlight$foundation2 = this.mainBuffer.getHighlight$foundation();
-        m1541finalizeComposingAnnotationsitr0ztk = TextFieldStateKt.m1541finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1527getCompositionMzsxiRA$foundation(), this.mainBuffer.getComposingAnnotations$foundation());
-        TextFieldCharSequence textFieldCharSequence = new TextFieldCharSequence(this.mainBuffer.toString(), m1529getSelectiond9O1mEE2, m1527getCompositionMzsxiRA$foundation2, highlight$foundation2, m1541finalizeComposingAnnotationsitr0ztk, null, 32, null);
+        m1340finalizeComposingAnnotationsitr0ztk = TextFieldStateKt.m1340finalizeComposingAnnotationsitr0ztk(this.mainBuffer.m1326getCompositionMzsxiRA$foundation(), this.mainBuffer.getComposingAnnotations$foundation());
+        TextFieldCharSequence textFieldCharSequence = new TextFieldCharSequence(this.mainBuffer.toString(), m1328getSelectiond9O1mEE2, m1326getCompositionMzsxiRA$foundation2, highlight$foundation2, m1340finalizeComposingAnnotationsitr0ztk, null, 32, null);
         if (inputTransformation == null) {
             if (z3 && z) {
                 z2 = true;
@@ -279,12 +279,12 @@ public final class TextFieldState {
         inputTransformation.transformInput(textFieldBuffer);
         boolean contentEquals = StringsKt.contentEquals(textFieldBuffer.asCharSequence(), textFieldCharSequence);
         boolean z4 = !contentEquals;
-        boolean m7694equalsimpl0 = TextRange.m7694equalsimpl0(textFieldBuffer.m1529getSelectiond9O1mEE(), textFieldCharSequence.m1537getSelectiond9O1mEE());
-        boolean z5 = !m7694equalsimpl0;
-        if (!contentEquals || !m7694equalsimpl0) {
+        boolean m6996equalsimpl0 = TextRange.m6996equalsimpl0(textFieldBuffer.m1328getSelectiond9O1mEE(), textFieldCharSequence.m1336getSelectiond9O1mEE());
+        boolean z5 = !m6996equalsimpl0;
+        if (!contentEquals || !m6996equalsimpl0) {
             syncMainBufferToTemporaryBuffer$foundation(textFieldBuffer, z4, z5);
         } else {
-            updateValueAndNotifyListeners(value$foundation, TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(textFieldBuffer, 0L, textFieldCharSequence.m1536getCompositionMzsxiRA(), null, null, 13, null), z);
+            updateValueAndNotifyListeners(value$foundation, TextFieldBuffer.m1325toTextFieldCharSequencewFTz33Y$foundation$default(textFieldBuffer, 0L, textFieldCharSequence.m1335getCompositionMzsxiRA(), null, null, 13, null), z);
         }
         recordEditForUndo(value$foundation, getValue$foundation(), textFieldBuffer.getChanges(), textFieldEditUndoBehavior);
     }
@@ -296,7 +296,7 @@ public final class TextFieldState {
         NotifyImeListener[] notifyImeListenerArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
-            notifyImeListenerArr[i].onChange(textFieldCharSequence, textFieldCharSequence2, (!z || textFieldCharSequence.contentEquals(textFieldCharSequence2) || textFieldCharSequence.m1536getCompositionMzsxiRA() == null) ? false : true);
+            notifyImeListenerArr[i].onChange(textFieldCharSequence, textFieldCharSequence2, (!z || textFieldCharSequence.contentEquals(textFieldCharSequence2) || textFieldCharSequence.m1335getCompositionMzsxiRA() == null) ? false : true);
         }
     }
 
@@ -322,16 +322,16 @@ public final class TextFieldState {
     }
 
     public final void syncMainBufferToTemporaryBuffer$foundation(TextFieldBuffer textFieldBuffer, boolean z, boolean z2) {
-        TextFieldCharSequence m1526toTextFieldCharSequencewFTz33Y$foundation$default = TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(this.mainBuffer, 0L, null, null, null, 15, null);
+        TextFieldCharSequence m1325toTextFieldCharSequencewFTz33Y$foundation$default = TextFieldBuffer.m1325toTextFieldCharSequencewFTz33Y$foundation$default(this.mainBuffer, 0L, null, null, null, 15, null);
         if (z) {
-            this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(textFieldBuffer.toString(), textFieldBuffer.m1529getSelectiond9O1mEE(), null, null, null, null, 60, null), null, null, null, 14, null);
+            this.mainBuffer = new TextFieldBuffer(new TextFieldCharSequence(textFieldBuffer.toString(), textFieldBuffer.m1328getSelectiond9O1mEE(), null, null, null, null, 60, null), null, null, null, 14, null);
         } else if (z2) {
-            this.mainBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()), TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE())));
+            this.mainBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()), TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE())));
         }
-        if (z || z2 || !Intrinsics.areEqual(m1526toTextFieldCharSequencewFTz33Y$foundation$default.m1536getCompositionMzsxiRA(), textFieldBuffer.m1527getCompositionMzsxiRA$foundation())) {
+        if (z || z2 || !Intrinsics.areEqual(m1325toTextFieldCharSequencewFTz33Y$foundation$default.m1335getCompositionMzsxiRA(), textFieldBuffer.m1326getCompositionMzsxiRA$foundation())) {
             this.mainBuffer.commitComposition$foundation();
         }
-        updateValueAndNotifyListeners(m1526toTextFieldCharSequencewFTz33Y$foundation$default, TextFieldBuffer.m1526toTextFieldCharSequencewFTz33Y$foundation$default(this.mainBuffer, 0L, null, null, null, 15, null), true);
+        updateValueAndNotifyListeners(m1325toTextFieldCharSequencewFTz33Y$foundation$default, TextFieldBuffer.m1325toTextFieldCharSequencewFTz33Y$foundation$default(this.mainBuffer, 0L, null, null, null, 15, null), true);
     }
 
     /* compiled from: TextFieldState.kt */
@@ -346,7 +346,7 @@ public final class TextFieldState {
 
         @Override // androidx.compose.runtime.saveable.Saver
         public Object save(SaverScope saverScope, TextFieldState textFieldState) {
-            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m7701getStartimpl(textFieldState.m1539getSelectiond9O1mEE())), Integer.valueOf(TextRange.m7696getEndimpl(textFieldState.m1539getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation()));
+            return CollectionsKt.listOf(textFieldState.getText().toString(), Integer.valueOf(TextRange.m7003getStartimpl(textFieldState.m1338getSelectiond9O1mEE())), Integer.valueOf(TextRange.m6998getEndimpl(textFieldState.m1338getSelectiond9O1mEE())), TextUndoManager.Companion.Saver.INSTANCE.save(saverScope, textFieldState.getTextUndoManager$foundation()));
         }
 
         @Override // androidx.compose.runtime.saveable.Saver

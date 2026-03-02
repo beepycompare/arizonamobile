@@ -222,11 +222,11 @@ public class MediaSessionCompat {
     }
 
     public void setCallback(Callback callback, Handler handler) {
+        MediaSessionImpl mediaSessionImpl = this.mImpl;
         if (callback == null) {
-            this.mImpl.setCallback(null, null);
+            mediaSessionImpl.setCallback(null, null);
             return;
         }
-        MediaSessionImpl mediaSessionImpl = this.mImpl;
         if (handler == null) {
             handler = new Handler();
         }
@@ -590,20 +590,25 @@ public class MediaSessionCompat {
                         Callback.this.onAddQueueItem((MediaDescriptionCompat) bundle.getParcelable(MediaControllerCompat.COMMAND_ARGUMENT_MEDIA_DESCRIPTION), bundle.getInt(MediaControllerCompat.COMMAND_ARGUMENT_INDEX));
                     } else if (str.equals(MediaControllerCompat.COMMAND_REMOVE_QUEUE_ITEM)) {
                         Callback.this.onRemoveQueueItem((MediaDescriptionCompat) bundle.getParcelable(MediaControllerCompat.COMMAND_ARGUMENT_MEDIA_DESCRIPTION));
-                    } else if (str.equals(MediaControllerCompat.COMMAND_REMOVE_QUEUE_ITEM_AT)) {
-                        MediaSessionImplApi21 mediaSessionImplApi212 = (MediaSessionImplApi21) Callback.this.mSessionImpl.get();
-                        if (mediaSessionImplApi212 == null || mediaSessionImplApi212.mQueue == null) {
+                    } else {
+                        boolean equals = str.equals(MediaControllerCompat.COMMAND_REMOVE_QUEUE_ITEM_AT);
+                        Callback callback = Callback.this;
+                        if (equals) {
+                            MediaSessionImplApi21 mediaSessionImplApi212 = (MediaSessionImplApi21) callback.mSessionImpl.get();
+                            if (mediaSessionImplApi212 == null || mediaSessionImplApi212.mQueue == null) {
+                                return;
+                            }
+                            int i = bundle.getInt(MediaControllerCompat.COMMAND_ARGUMENT_INDEX, -1);
+                            if (i >= 0 && i < mediaSessionImplApi212.mQueue.size()) {
+                                queueItem = mediaSessionImplApi212.mQueue.get(i);
+                            }
+                            if (queueItem != null) {
+                                Callback.this.onRemoveQueueItem(queueItem.getDescription());
+                                return;
+                            }
                             return;
                         }
-                        int i = bundle.getInt(MediaControllerCompat.COMMAND_ARGUMENT_INDEX, -1);
-                        if (i >= 0 && i < mediaSessionImplApi212.mQueue.size()) {
-                            queueItem = mediaSessionImplApi212.mQueue.get(i);
-                        }
-                        if (queueItem != null) {
-                            Callback.this.onRemoveQueueItem(queueItem.getDescription());
-                        }
-                    } else {
-                        Callback.this.onCommand(str, bundle, resultReceiver);
+                        callback.onCommand(str, bundle, resultReceiver);
                     }
                 } catch (BadParcelableException unused) {
                     Log.e(MediaSessionCompat.TAG, "Could not unparcel the extra data.");
@@ -1419,28 +1424,29 @@ public class MediaSessionCompat {
         }
 
         boolean update() {
-            if (this.mIsActive) {
-                boolean z = this.mIsMbrRegistered;
-                if (!z && (this.mFlags & 1) != 0) {
+            boolean z = this.mIsActive;
+            boolean z2 = this.mIsMbrRegistered;
+            if (z) {
+                if (!z2 && (this.mFlags & 1) != 0) {
                     registerMediaButtonEventReceiver(this.mMediaButtonReceiverIntent, this.mMediaButtonReceiverComponentName);
                     this.mIsMbrRegistered = true;
-                } else if (z && (this.mFlags & 1) == 0) {
+                } else if (z2 && (this.mFlags & 1) == 0) {
                     unregisterMediaButtonEventReceiver(this.mMediaButtonReceiverIntent, this.mMediaButtonReceiverComponentName);
                     this.mIsMbrRegistered = false;
                 }
-                boolean z2 = this.mIsRccRegistered;
-                if (!z2 && (this.mFlags & 2) != 0) {
+                boolean z3 = this.mIsRccRegistered;
+                if (!z3 && (this.mFlags & 2) != 0) {
                     this.mAudioManager.registerRemoteControlClient(this.mRcc);
                     this.mIsRccRegistered = true;
                     return true;
-                } else if (z2 && (this.mFlags & 2) == 0) {
+                } else if (z3 && (this.mFlags & 2) == 0) {
                     this.mRcc.setPlaybackState(0);
                     this.mAudioManager.unregisterRemoteControlClient(this.mRcc);
                     this.mIsRccRegistered = false;
                     return false;
                 }
             } else {
-                if (this.mIsMbrRegistered) {
+                if (z2) {
                     unregisterMediaButtonEventReceiver(this.mMediaButtonReceiverIntent, this.mMediaButtonReceiverComponentName);
                     this.mIsMbrRegistered = false;
                 }
@@ -1485,115 +1491,369 @@ public class MediaSessionCompat {
             this.mAudioManager.setStreamVolume(this.mLocalStream, i, i2);
         }
 
-        void sendVolumeInfoChanged(ParcelableVolumeInfo parcelableVolumeInfo) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onVolumeInfoChanged(parcelableVolumeInfo);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        void sendVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onVolumeInfoChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendVolumeInfoChanged(android.support.v4.media.session.ParcelableVolumeInfo):void");
         }
 
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
         private void sendSessionDestroyed() {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onSessionDestroyed();
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
-            this.mControllerCallbacks.kill();
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onSessionDestroyed()     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                r0.kill()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendSessionDestroyed():void");
         }
 
-        private void sendEvent(String str, Bundle bundle) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onEvent(str, bundle);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendEvent(java.lang.String r3, android.os.Bundle r4) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onEvent(r3, r4)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendEvent(java.lang.String, android.os.Bundle):void");
         }
 
-        private void sendState(PlaybackStateCompat playbackStateCompat) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onPlaybackStateChanged(playbackStateCompat);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendState(android.support.v4.media.session.PlaybackStateCompat r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onPlaybackStateChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendState(android.support.v4.media.session.PlaybackStateCompat):void");
         }
 
-        private void sendMetadata(MediaMetadataCompat mediaMetadataCompat) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onMetadataChanged(mediaMetadataCompat);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendMetadata(android.support.v4.media.MediaMetadataCompat r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onMetadataChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendMetadata(android.support.v4.media.MediaMetadataCompat):void");
         }
 
-        private void sendQueue(List<QueueItem> list) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onQueueChanged(list);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendQueue(java.util.List<android.support.v4.media.session.MediaSessionCompat.QueueItem> r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onQueueChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendQueue(java.util.List):void");
         }
 
-        private void sendQueueTitle(CharSequence charSequence) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onQueueTitleChanged(charSequence);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendQueueTitle(java.lang.CharSequence r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onQueueTitleChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendQueueTitle(java.lang.CharSequence):void");
         }
 
-        private void sendCaptioningEnabled(boolean z) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onCaptioningEnabledChanged(z);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendCaptioningEnabled(boolean r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onCaptioningEnabledChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendCaptioningEnabled(boolean):void");
         }
 
-        private void sendRepeatMode(int i) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onRepeatModeChanged(i);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendRepeatMode(int r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onRepeatModeChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendRepeatMode(int):void");
         }
 
-        private void sendShuffleMode(int i) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onShuffleModeChanged(i);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendShuffleMode(int r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onShuffleModeChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendShuffleMode(int):void");
         }
 
-        private void sendExtras(Bundle bundle) {
-            for (int beginBroadcast = this.mControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mControllerCallbacks.getBroadcastItem(beginBroadcast).onExtrasChanged(bundle);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mControllerCallbacks.finishBroadcast();
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
+        private void sendExtras(android.os.Bundle r3) {
+            /*
+                r2 = this;
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            L8:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mControllerCallbacks
+                if (r0 < 0) goto L18
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onExtrasChanged(r3)     // Catch: android.os.RemoteException -> L15
+            L15:
+                int r0 = r0 + (-1)
+                goto L8
+            L18:
+                r1.finishBroadcast()
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplBase.sendExtras(android.os.Bundle):void");
         }
 
         /* loaded from: classes.dex */
@@ -2377,17 +2637,47 @@ public class MediaSessionCompat {
             return this.mToken;
         }
 
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
-        public void setPlaybackState(PlaybackStateCompat playbackStateCompat) {
-            this.mPlaybackState = playbackStateCompat;
-            for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast).onPlaybackStateChanged(playbackStateCompat);
-                } catch (RemoteException unused) {
-                }
-            }
-            this.mExtraControllerCallbacks.finishBroadcast();
-            MediaSessionCompatApi21.setPlaybackState(this.mSessionObj, playbackStateCompat == null ? null : playbackStateCompat.getPlaybackState());
+        public void setPlaybackState(android.support.v4.media.session.PlaybackStateCompat r3) {
+            /*
+                r2 = this;
+                r2.mPlaybackState = r3
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mExtraControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            La:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mExtraControllerCallbacks
+                if (r0 < 0) goto L1a
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onPlaybackStateChanged(r3)     // Catch: android.os.RemoteException -> L17
+            L17:
+                int r0 = r0 + (-1)
+                goto La
+            L1a:
+                r1.finishBroadcast()
+                java.lang.Object r0 = r2.mSessionObj
+                if (r3 != 0) goto L23
+                r3 = 0
+                goto L27
+            L23:
+                java.lang.Object r3 = r3.getPlaybackState()
+            L27:
+                android.support.v4.media.session.MediaSessionCompatApi21.setPlaybackState(r0, r3)
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi21.setPlaybackState(android.support.v4.media.session.PlaybackStateCompat):void");
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
@@ -2436,46 +2726,118 @@ public class MediaSessionCompat {
             MediaSessionCompatApi22.setRatingType(this.mSessionObj, i);
         }
 
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
-        public void setCaptioningEnabled(boolean z) {
-            if (this.mCaptioningEnabled != z) {
-                this.mCaptioningEnabled = z;
-                for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                    try {
-                        this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast).onCaptioningEnabledChanged(z);
-                    } catch (RemoteException unused) {
-                    }
-                }
-                this.mExtraControllerCallbacks.finishBroadcast();
-            }
+        public void setCaptioningEnabled(boolean r3) {
+            /*
+                r2 = this;
+                boolean r0 = r2.mCaptioningEnabled
+                if (r0 == r3) goto L21
+                r2.mCaptioningEnabled = r3
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mExtraControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            Le:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mExtraControllerCallbacks
+                if (r0 < 0) goto L1e
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onCaptioningEnabledChanged(r3)     // Catch: android.os.RemoteException -> L1b
+            L1b:
+                int r0 = r0 + (-1)
+                goto Le
+            L1e:
+                r1.finishBroadcast()
+            L21:
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi21.setCaptioningEnabled(boolean):void");
         }
 
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
-        public void setRepeatMode(int i) {
-            if (this.mRepeatMode != i) {
-                this.mRepeatMode = i;
-                for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                    try {
-                        this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast).onRepeatModeChanged(i);
-                    } catch (RemoteException unused) {
-                    }
-                }
-                this.mExtraControllerCallbacks.finishBroadcast();
-            }
+        public void setRepeatMode(int r3) {
+            /*
+                r2 = this;
+                int r0 = r2.mRepeatMode
+                if (r0 == r3) goto L21
+                r2.mRepeatMode = r3
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mExtraControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            Le:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mExtraControllerCallbacks
+                if (r0 < 0) goto L1e
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onRepeatModeChanged(r3)     // Catch: android.os.RemoteException -> L1b
+            L1b:
+                int r0 = r0 + (-1)
+                goto Le
+            L1e:
+                r1.finishBroadcast()
+            L21:
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi21.setRepeatMode(int):void");
         }
 
+        /*  JADX ERROR: NullPointerException in pass: BlockProcessor
+            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.BlockNode.getPredecessors()" because "to" is null
+            	at jadx.core.dex.visitors.blocks.BlockSplitter.connect(BlockSplitter.java:150)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectSplittersAndHandlers(BlockExceptionHandler.java:457)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.wrapBlocksWithTryCatch(BlockExceptionHandler.java:358)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.connectExcHandlers(BlockExceptionHandler.java:84)
+            	at jadx.core.dex.visitors.blocks.BlockExceptionHandler.process(BlockExceptionHandler.java:59)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.independentBlockTreeMod(BlockProcessor.java:318)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:46)
+            	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:39)
+            */
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl
-        public void setShuffleMode(int i) {
-            if (this.mShuffleMode != i) {
-                this.mShuffleMode = i;
-                for (int beginBroadcast = this.mExtraControllerCallbacks.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                    try {
-                        this.mExtraControllerCallbacks.getBroadcastItem(beginBroadcast).onShuffleModeChanged(i);
-                    } catch (RemoteException unused) {
-                    }
-                }
-                this.mExtraControllerCallbacks.finishBroadcast();
-            }
+        public void setShuffleMode(int r3) {
+            /*
+                r2 = this;
+                int r0 = r2.mShuffleMode
+                if (r0 == r3) goto L21
+                r2.mShuffleMode = r3
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r0 = r2.mExtraControllerCallbacks
+                int r0 = r0.beginBroadcast()
+                int r0 = r0 + (-1)
+            Le:
+                android.os.RemoteCallbackList<android.support.v4.media.session.IMediaControllerCallback> r1 = r2.mExtraControllerCallbacks
+                if (r0 < 0) goto L1e
+                android.os.IInterface r1 = r1.getBroadcastItem(r0)
+                android.support.v4.media.session.IMediaControllerCallback r1 = (android.support.v4.media.session.IMediaControllerCallback) r1
+                r1.onShuffleModeChanged(r3)     // Catch: android.os.RemoteException -> L1b
+            L1b:
+                int r0 = r0 + (-1)
+                goto Le
+            L1e:
+                r1.finishBroadcast()
+            L21:
+                return
+            */
+            throw new UnsupportedOperationException("Method not decompiled: android.support.v4.media.session.MediaSessionCompat.MediaSessionImplApi21.setShuffleMode(int):void");
         }
 
         @Override // android.support.v4.media.session.MediaSessionCompat.MediaSessionImpl

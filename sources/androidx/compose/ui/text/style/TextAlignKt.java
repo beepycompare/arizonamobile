@@ -7,12 +7,12 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes2.dex */
 public final class TextAlignKt {
     /* renamed from: isSpecified-aXe7zB0  reason: not valid java name */
-    public static final boolean m8144isSpecifiedaXe7zB0(int i) {
+    public static final boolean m7441isSpecifiedaXe7zB0(int i) {
         return i != 0;
     }
 
     /* renamed from: takeOrElse-BvjSTJw  reason: not valid java name */
-    public static final int m8145takeOrElseBvjSTJw(int i, Function0<TextAlign> function0) {
-        return i != 0 ? i : function0.invoke().m8135unboximpl();
+    public static final int m7442takeOrElseBvjSTJw(int i, Function0<TextAlign> function0) {
+        return i != 0 ? i : function0.invoke().m7432unboximpl();
     }
 }

@@ -66,7 +66,7 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
         return Double.valueOf(getDoubleValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit component2$lambda$0(SnapshotMutableDoubleStateImpl snapshotMutableDoubleStateImpl, double d) {
         snapshotMutableDoubleStateImpl.setDoubleValue(d);
         return Unit.INSTANCE;
@@ -77,9 +77,7 @@ public class SnapshotMutableDoubleStateImpl extends StateObjectImpl implements M
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableDoubleStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$0;
-                component2$lambda$0 = SnapshotMutableDoubleStateImpl.component2$lambda$0(SnapshotMutableDoubleStateImpl.this, ((Double) obj).doubleValue());
-                return component2$lambda$0;
+                return SnapshotMutableDoubleStateImpl.component2$lambda$0(SnapshotMutableDoubleStateImpl.this, ((Double) obj).doubleValue());
             }
         };
     }

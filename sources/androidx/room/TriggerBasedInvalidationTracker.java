@@ -54,7 +54,7 @@ public final class TriggerBasedInvalidationTracker {
     public static final Companion Companion = new Companion(null);
     private static final String[] TRIGGERS = {"INSERT", "UPDATE", "DELETE"};
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean onAllowRefresh$lambda$0() {
         return true;
     }
@@ -76,9 +76,7 @@ public final class TriggerBasedInvalidationTracker {
         this.onAllowRefresh = new Function0() { // from class: androidx.room.TriggerBasedInvalidationTracker$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean onAllowRefresh$lambda$0;
-                onAllowRefresh$lambda$0 = TriggerBasedInvalidationTracker.onAllowRefresh$lambda$0();
-                return Boolean.valueOf(onAllowRefresh$lambda$0);
+                return Boolean.valueOf(TriggerBasedInvalidationTracker.onAllowRefresh$lambda$0());
             }
         };
         this.tableIdLookup = new LinkedHashMap();
@@ -684,9 +682,7 @@ public final class TriggerBasedInvalidationTracker {
                     Function1 function1 = new Function1() { // from class: androidx.room.TriggerBasedInvalidationTracker$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Set checkInvalidatedTables$lambda$14;
-                            checkInvalidatedTables$lambda$14 = TriggerBasedInvalidationTracker.checkInvalidatedTables$lambda$14((SQLiteStatement) obj2);
-                            return checkInvalidatedTables$lambda$14;
+                            return TriggerBasedInvalidationTracker.checkInvalidatedTables$lambda$14((SQLiteStatement) obj2);
                         }
                     };
                     triggerBasedInvalidationTracker$checkInvalidatedTables$1.L$0 = pooledConnection;
@@ -726,7 +722,7 @@ public final class TriggerBasedInvalidationTracker {
         return set;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Set checkInvalidatedTables$lambda$14(SQLiteStatement statement) {
         Intrinsics.checkNotNullParameter(statement, "statement");
         Set createSetBuilder = SetsKt.createSetBuilder();

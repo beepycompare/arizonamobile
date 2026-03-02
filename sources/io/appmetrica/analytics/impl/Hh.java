@@ -5,17 +5,17 @@ public final class Hh implements Runnable {
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ String f614a;
     public final /* synthetic */ Throwable b;
-    public final /* synthetic */ C0279gi c;
+    public final /* synthetic */ C0278gi c;
 
-    public Hh(C0279gi c0279gi, String str, Throwable th) {
-        this.c = c0279gi;
+    public Hh(C0278gi c0278gi, String str, Throwable th) {
+        this.c = c0278gi;
         this.f614a = str;
         this.b = th;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0279gi c0279gi = this.c;
-        C0279gi.a(c0279gi.f1015a, c0279gi.d, c0279gi.e).reportError(this.f614a, this.b);
+        C0278gi c0278gi = this.c;
+        C0278gi.a(c0278gi.f1015a, c0278gi.d, c0278gi.e).reportError(this.f614a, this.b);
     }
 }

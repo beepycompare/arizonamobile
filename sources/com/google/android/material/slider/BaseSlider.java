@@ -229,7 +229,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-slider-BaseSlider  reason: not valid java name */
-    public /* synthetic */ void m9900lambda$new$0$comgoogleandroidmaterialsliderBaseSlider() {
+    public /* synthetic */ void m8930lambda$new$0$comgoogleandroidmaterialsliderBaseSlider() {
         setActiveThumbIndex(-1);
         invalidate();
     }
@@ -289,7 +289,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         this.resetActiveThumbIndex = new Runnable() { // from class: com.google.android.material.slider.BaseSlider$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BaseSlider.this.m9900lambda$new$0$comgoogleandroidmaterialsliderBaseSlider();
+                BaseSlider.this.m8930lambda$new$0$comgoogleandroidmaterialsliderBaseSlider();
             }
         };
         Context context2 = getContext();
@@ -1553,22 +1553,21 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         return (isRtl() || isVertical()) ? 1.0f - f3 : f3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00d1  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x00d7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void drawActiveTracks(Canvas canvas, int i, int i2) {
         int i3;
-        float f;
-        float f2;
+        int i4;
         BaseSlider<S, L, T> baseSlider = this;
         float[] activeRange = baseSlider.getActiveRange();
-        int i4 = baseSlider.trackSidePadding;
-        float f3 = i;
-        float f4 = i4 + (activeRange[1] * f3);
-        float f5 = i4 + (activeRange[0] * f3);
-        if (f5 >= f4) {
+        int i5 = baseSlider.trackSidePadding;
+        float f = i;
+        float f2 = i5 + (activeRange[1] * f);
+        float f3 = i5 + (activeRange[0] * f);
+        if (f3 >= f2) {
             baseSlider.activeTrackRect.setEmpty();
             return;
         }
@@ -1577,62 +1576,65 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
             fullCornerDirection = (baseSlider.isRtl() || baseSlider.isVertical()) ? FullCornerDirection.RIGHT : FullCornerDirection.LEFT;
         }
         FullCornerDirection fullCornerDirection2 = fullCornerDirection;
-        int i5 = 0;
-        while (i5 < baseSlider.values.size()) {
+        int i6 = 0;
+        while (i6 < baseSlider.values.size()) {
             if (baseSlider.values.size() > 1) {
-                if (i5 > 0) {
-                    f5 = baseSlider.valueToX(baseSlider.values.get(i5 - 1).floatValue());
+                if (i6 > 0) {
+                    f3 = baseSlider.valueToX(baseSlider.values.get(i6 - 1).floatValue());
                 }
-                f4 = baseSlider.valueToX(baseSlider.values.get(i5).floatValue());
+                f2 = baseSlider.valueToX(baseSlider.values.get(i6).floatValue());
                 if (baseSlider.isRtl() || baseSlider.isVertical()) {
-                    f4 = f5;
-                    f5 = f4;
+                    f2 = f3;
+                    f3 = f2;
                 }
             }
             int trackCornerSize = baseSlider.getTrackCornerSize();
             int ordinal = fullCornerDirection2.ordinal();
-            if (ordinal != 1) {
+            if (ordinal == 1) {
+                f3 -= trackCornerSize;
+                i3 = baseSlider.thumbTrackGapSize;
+            } else {
                 if (ordinal == 2) {
-                    f5 += baseSlider.thumbTrackGapSize;
-                    f4 += trackCornerSize;
+                    f3 += baseSlider.thumbTrackGapSize;
+                    f2 += trackCornerSize;
                 } else if (ordinal == 3) {
                     if (!baseSlider.isCentered()) {
                         i3 = baseSlider.thumbTrackGapSize;
-                        f5 += i3;
+                        f3 += i3;
                     } else if (activeRange[1] == 0.5f) {
-                        f5 += baseSlider.thumbTrackGapSize;
+                        f3 += baseSlider.thumbTrackGapSize;
                     } else if (activeRange[0] == 0.5f) {
                         i3 = baseSlider.thumbTrackGapSize;
                     }
                 }
-                f = f5;
-                f2 = f4;
-                if (f < f2) {
-                    baseSlider.activeTrackRect.setEmpty();
+                float f4 = f3;
+                float f5 = f2;
+                i4 = (f4 > f5 ? 1 : (f4 == f5 ? 0 : -1));
+                RectF rectF = baseSlider.activeTrackRect;
+                if (i4 < 0) {
+                    rectF.setEmpty();
                 } else {
-                    RectF rectF = baseSlider.activeTrackRect;
                     float f6 = i2;
-                    int i6 = baseSlider.trackThickness;
-                    rectF.set(f, f6 - (i6 / 2.0f), f2, f6 + (i6 / 2.0f));
+                    int i7 = baseSlider.trackThickness;
+                    rectF.set(f4, f6 - (i7 / 2.0f), f5, f6 + (i7 / 2.0f));
                     baseSlider.updateTrack(canvas, baseSlider.activeTrackPaint, baseSlider.activeTrackRect, trackCornerSize, fullCornerDirection2);
                 }
-                i5++;
+                i6++;
                 baseSlider = this;
-                f5 = f;
-                f4 = f2;
-            } else {
-                f5 -= trackCornerSize;
-                i3 = baseSlider.thumbTrackGapSize;
+                f3 = f4;
+                f2 = f5;
             }
-            f4 -= i3;
-            f = f5;
-            f2 = f4;
-            if (f < f2) {
+            f2 -= i3;
+            float f42 = f3;
+            float f52 = f2;
+            i4 = (f42 > f52 ? 1 : (f42 == f52 ? 0 : -1));
+            RectF rectF2 = baseSlider.activeTrackRect;
+            if (i4 < 0) {
             }
-            i5++;
+            i6++;
             baseSlider = this;
-            f5 = f;
-            f4 = f2;
+            f3 = f42;
+            f2 = f52;
         }
     }
 
@@ -1755,10 +1757,13 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
             int ordinal2 = fullCornerDirection.ordinal();
             if (ordinal2 == 1) {
                 this.cornerRect.set(rectF.left, rectF.top, rectF.left + (2.0f * max), rectF.bottom);
-            } else if (ordinal2 == 2) {
-                this.cornerRect.set(rectF.right - (2.0f * max), rectF.top, rectF.right, rectF.bottom);
             } else {
-                this.cornerRect.set(rectF.centerX() - max, rectF.top, rectF.centerX() + max, rectF.bottom);
+                RectF rectF3 = this.cornerRect;
+                if (ordinal2 == 2) {
+                    rectF3.set(rectF.right - (2.0f * max), rectF.top, rectF.right, rectF.bottom);
+                } else {
+                    rectF3.set(rectF.centerX() - max, rectF.top, rectF.centerX() + max, rectF.bottom);
+                }
             }
             if (isVertical()) {
                 this.rotationMatrix.mapRect(this.cornerRect);
@@ -1807,10 +1812,12 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
 
     private void drawTicks(int i, int i2, Canvas canvas, Paint paint) {
         while (i < i2) {
-            float f = isVertical() ? this.ticksCoordinates[i + 1] : this.ticksCoordinates[i];
+            boolean isVertical = isVertical();
+            float[] fArr = this.ticksCoordinates;
+            float f = isVertical ? fArr[i + 1] : fArr[i];
             if (!isOverlappingThumb(f) && (!isCentered() || !isOverlappingCenterGap(f))) {
-                float[] fArr = this.ticksCoordinates;
-                canvas.drawPoint(fArr[i], fArr[i + 1], paint);
+                float[] fArr2 = this.ticksCoordinates;
+                canvas.drawPoint(fArr2[i], fArr2[i + 1], paint);
             }
             i += 2;
         }
@@ -1858,10 +1865,12 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
                 return;
             }
         }
-        if (isVertical()) {
-            canvas.drawPoint(f2, f, this.stopIndicatorPaint);
+        boolean isVertical = isVertical();
+        Paint paint = this.stopIndicatorPaint;
+        if (isVertical) {
+            canvas.drawPoint(f2, f, paint);
         } else {
-            canvas.drawPoint(f, f2, this.stopIndicatorPaint);
+            canvas.drawPoint(f, f2, paint);
         }
     }
 
@@ -2161,7 +2170,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.slider.BaseSlider$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                BaseSlider.this.m9899x2eeddb89(valueAnimator);
+                BaseSlider.this.m8929x2eeddb89(valueAnimator);
             }
         });
         return ofFloat;
@@ -2169,7 +2178,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createLabelAnimator$1$com-google-android-material-slider-BaseSlider  reason: not valid java name */
-    public /* synthetic */ void m9899x2eeddb89(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8929x2eeddb89(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         for (TooltipDrawable tooltipDrawable : this.labels) {
             tooltipDrawable.setRevealFraction(floatValue);
@@ -2320,8 +2329,10 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         int calculateTrackCenter;
         int intrinsicHeight;
         int i;
-        if (isVertical()) {
-            normalizeValue = (this.trackSidePadding + ((int) (normalizeValue(f) * this.trackWidth))) - (tooltipDrawable.getIntrinsicHeight() / 2);
+        boolean isVertical = isVertical();
+        int i2 = this.trackSidePadding;
+        if (isVertical) {
+            normalizeValue = (i2 + ((int) (normalizeValue(f) * this.trackWidth))) - (tooltipDrawable.getIntrinsicHeight() / 2);
             intrinsicWidth = tooltipDrawable.getIntrinsicHeight() + normalizeValue;
             if (isRtl()) {
                 calculateTrackCenter = calculateTrackCenter() - (this.labelPadding + (this.thumbHeight / 2));
@@ -2333,7 +2344,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
                 this.labelRect.set(normalizeValue, i, intrinsicWidth, calculateTrackCenter);
             }
         } else {
-            normalizeValue = (this.trackSidePadding + ((int) (normalizeValue(f) * this.trackWidth))) - (tooltipDrawable.getIntrinsicWidth() / 2);
+            normalizeValue = (i2 + ((int) (normalizeValue(f) * this.trackWidth))) - (tooltipDrawable.getIntrinsicWidth() / 2);
             intrinsicWidth = tooltipDrawable.getIntrinsicWidth() + normalizeValue;
             calculateTrackCenter = calculateTrackCenter() - (this.labelPadding + (this.thumbHeight / 2));
             intrinsicHeight = tooltipDrawable.getIntrinsicHeight();

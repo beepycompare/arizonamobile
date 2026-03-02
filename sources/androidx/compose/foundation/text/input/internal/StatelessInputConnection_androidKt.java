@@ -63,21 +63,21 @@ public final class StatelessInputConnection_androidKt {
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = textFieldCharSequence.length();
         extractedText.partialStartOffset = -1;
-        extractedText.selectionStart = TextRange.m7699getMinimpl(textFieldCharSequence.m1537getSelectiond9O1mEE());
-        extractedText.selectionEnd = TextRange.m7698getMaximpl(textFieldCharSequence.m1537getSelectiond9O1mEE());
+        extractedText.selectionStart = TextRange.m7001getMinimpl(textFieldCharSequence.m1336getSelectiond9O1mEE());
+        extractedText.selectionEnd = TextRange.m7000getMaximpl(textFieldCharSequence.m1336getSelectiond9O1mEE());
         extractedText.flags = !StringsKt.contains$default((CharSequence) textFieldCharSequence2, '\n', false, 2, (Object) null) ? 1 : 0;
         return extractedText;
     }
 
     public static final TransferableContent toTransferableContent(InputContentInfoCompat inputContentInfoCompat, Bundle bundle) {
         ClipEntry clipEntry = AndroidClipboardManager_androidKt.toClipEntry(new ClipData(inputContentInfoCompat.getDescription(), new ClipData.Item(inputContentInfoCompat.getContentUri())));
-        int m419getKeyboardkB6V9T0 = TransferableContent.Source.Companion.m419getKeyboardkB6V9T0();
+        int m365getKeyboardkB6V9T0 = TransferableContent.Source.Companion.m365getKeyboardkB6V9T0();
         ClipMetadata clipMetadata = AndroidClipboardManager_androidKt.toClipMetadata(inputContentInfoCompat.getDescription());
         Uri linkUri = inputContentInfoCompat.getLinkUri();
         if (bundle == null) {
             bundle = Bundle.EMPTY;
         }
-        return new TransferableContent(clipEntry, clipMetadata, m419getKeyboardkB6V9T0, new PlatformTransferableContent(linkUri, bundle), null);
+        return new TransferableContent(clipEntry, clipMetadata, m365getKeyboardkB6V9T0, new PlatformTransferableContent(linkUri, bundle), null);
     }
 
     public static final List<AnnotatedString.Range<AnnotatedString.Annotation>> toAnnotationList(Spanned spanned) {
@@ -124,9 +124,9 @@ public final class StatelessInputConnection_androidKt {
                 if (style != 3) {
                     return null;
                 }
-                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m7812boximpl(FontStyle.Companion.m7821getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
+                return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), FontStyle.m7112boximpl(FontStyle.Companion.m7121getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65523, (DefaultConstructorMarker) null);
             }
-            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m7812boximpl(FontStyle.Companion.m7821getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
+            return new SpanStyle(0L, 0L, (FontWeight) null, FontStyle.m7112boximpl(FontStyle.Companion.m7121getItalic_LCdwA()), (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65527, (DefaultConstructorMarker) null);
         }
         return new SpanStyle(0L, 0L, FontWeight.Companion.getBold(), (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65531, (DefaultConstructorMarker) null);
     }

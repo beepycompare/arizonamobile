@@ -64,9 +64,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         this.recalculateTotalDurationNanos = new Function0() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit recalculateTotalDurationNanos$lambda$0;
-                recalculateTotalDurationNanos$lambda$0 = SeekableTransitionState.recalculateTotalDurationNanos$lambda$0(SeekableTransitionState.this);
-                return recalculateTotalDurationNanos$lambda$0;
+                return SeekableTransitionState.recalculateTotalDurationNanos$lambda$0(SeekableTransitionState.this);
             }
         };
         this.fraction$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -77,17 +75,13 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         this.firstFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit firstFrameLambda$lambda$0;
-                firstFrameLambda$lambda$0 = SeekableTransitionState.firstFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
-                return firstFrameLambda$lambda$0;
+                return SeekableTransitionState.firstFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
             }
         };
         this.animateOneFrameLambda = new Function1() { // from class: androidx.compose.animation.core.SeekableTransitionState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit animateOneFrameLambda$lambda$0;
-                animateOneFrameLambda$lambda$0 = SeekableTransitionState.animateOneFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
-                return animateOneFrameLambda$lambda$0;
+                return SeekableTransitionState.animateOneFrameLambda$lambda$0(SeekableTransitionState.this, ((Long) obj).longValue());
             }
         };
     }
@@ -128,7 +122,7 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         this.totalDurationNanos = j;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit recalculateTotalDurationNanos$lambda$0(SeekableTransitionState seekableTransitionState) {
         Transition<S> transition = seekableTransitionState.transition;
         seekableTransitionState.totalDurationNanos = transition != null ? transition.getTotalDurationNanos() : 0L;
@@ -156,13 +150,13 @@ public final class SeekableTransitionState<S> extends TransitionState<S> {
         return this.compositionContinuationMutex;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit firstFrameLambda$lambda$0(SeekableTransitionState seekableTransitionState, long j) {
         seekableTransitionState.lastFrameTimeNanos = j;
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit animateOneFrameLambda$lambda$0(SeekableTransitionState seekableTransitionState, long j) {
         seekableTransitionState.lastFrameTimeNanos = j;
         long roundToLong = MathKt.roundToLong((j - seekableTransitionState.lastFrameTimeNanos) / seekableTransitionState.durationScale);

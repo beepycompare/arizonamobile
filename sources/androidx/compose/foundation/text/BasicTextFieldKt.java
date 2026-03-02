@@ -115,49 +115,49 @@ public final class BasicTextFieldKt {
     private static final TextFieldDecorator DefaultTextFieldDecorator = BasicTextFieldKt$DefaultTextFieldDecorator$1.INSTANCE;
     private static final long MinTouchTargetSizeForHandles;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$0(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, OutputTransformation outputTransformation, TextFieldDecorator textFieldDecorator, ScrollState scrollState, int i, int i2, int i3, Composer composer, int i4) {
         BasicTextField(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, textFieldLineLimits, function2, mutableInteractionSource, brush, outputTransformation, textFieldDecorator, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$15(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, TextFieldLineLimits textFieldLineLimits, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, CodepointTransformation codepointTransformation, OutputTransformation outputTransformation, TextFieldDecorator textFieldDecorator, ScrollState scrollState, boolean z3, int i, int i2, int i3, Composer composer, int i4) {
         BasicTextField(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, textFieldLineLimits, function2, mutableInteractionSource, brush, codepointTransformation, outputTransformation, textFieldDecorator, scrollState, z3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$25(String str, Function1 function1, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, boolean z3, int i, int i2, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, Function3 function3, int i3, int i4, int i5, Composer composer, int i6) {
         BasicTextField(str, function1, modifier, z, z2, textStyle, keyboardOptions, keyboardActions, z3, i, i2, visualTransformation, function12, mutableInteractionSource, brush, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$28(TextFieldValue textFieldValue, Function1 function1, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, boolean z3, int i, int i2, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, Function3 function3, int i3, int i4, int i5, Composer composer, int i6) {
         BasicTextField(textFieldValue, function1, modifier, z, z2, textStyle, keyboardOptions, keyboardActions, z3, i, i2, visualTransformation, function12, mutableInteractionSource, brush, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), RecomposeScopeImplKt.updateChangedFlags(i4), i5);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$31(String str, Function1 function1, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, boolean z3, int i, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, Function3 function3, int i2, int i3, int i4, Composer composer, int i5) {
         BasicTextField(str, function1, modifier, z, z2, textStyle, keyboardOptions, keyboardActions, z3, i, visualTransformation, function12, mutableInteractionSource, brush, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$34(TextFieldValue textFieldValue, Function1 function1, Modifier modifier, boolean z, boolean z2, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, boolean z3, int i, VisualTransformation visualTransformation, Function1 function12, MutableInteractionSource mutableInteractionSource, Brush brush, Function3 function3, int i2, int i3, int i4, Composer composer, int i5) {
         BasicTextField(textFieldValue, function1, modifier, z, z2, textStyle, keyboardOptions, keyboardActions, z3, i, visualTransformation, function12, mutableInteractionSource, brush, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TextFieldCursorHandle$lambda$4(TextFieldSelectionState textFieldSelectionState, int i, Composer composer, int i2) {
         TextFieldCursorHandle(textFieldSelectionState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TextFieldSelectionHandles$lambda$8(TextFieldSelectionState textFieldSelectionState, int i, Composer composer, int i2) {
         TextFieldSelectionHandles(textFieldSelectionState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -476,9 +476,7 @@ public final class BasicTextFieldKt {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda0
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj5, Object obj6) {
-                                            Unit BasicTextField$lambda$0;
-                                            BasicTextField$lambda$0 = BasicTextFieldKt.BasicTextField$lambda$0(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, textFieldLineLimits2, function22, mutableInteractionSource2, brush2, outputTransformation2, textFieldDecorator2, scrollState2, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
-                                            return BasicTextField$lambda$0;
+                                            return BasicTextFieldKt.BasicTextField$lambda$0(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, textFieldLineLimits2, function22, mutableInteractionSource2, brush2, outputTransformation2, textFieldDecorator2, scrollState2, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
                                         }
                                     });
                                     return;
@@ -1227,9 +1225,7 @@ public final class BasicTextFieldKt {
                                     new Function1() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda7
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj5) {
-                                            Unit BasicTextField$lambda$8;
-                                            BasicTextField$lambda$8 = BasicTextFieldKt.BasicTextField$lambda$8(TextFieldSelectionState.this, (AnnotatedString) obj5);
-                                            return BasicTextField$lambda$8;
+                                            return BasicTextFieldKt.BasicTextField$lambda$8(TextFieldSelectionState.this, (AnnotatedString) obj5);
                                         }
                                     };
                                     new Function0() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda8
@@ -1294,7 +1290,7 @@ public final class BasicTextFieldKt {
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     EffectsKt.DisposableEffect(textFieldSelectionState, (Function1) rememberedValue10, startRestartGroup, 0);
                                     OverscrollEffect rememberTextFieldOverscrollEffect = TextFieldScroll_androidKt.rememberTextFieldOverscrollEffect(startRestartGroup, 0);
-                                    final boolean z20 = (z14 || KeyboardType.m7926equalsimpl0(keyboardOptions4.m1390getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7945getPasswordPjHm6EE()) || KeyboardType.m7926equalsimpl0(keyboardOptions4.m1390getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7944getNumberPasswordPjHm6EE())) ? false : true;
+                                    final boolean z20 = (z14 || KeyboardType.m7224equalsimpl0(keyboardOptions4.m1217getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7243getPasswordPjHm6EE()) || KeyboardType.m7224equalsimpl0(keyboardOptions4.m1217getKeyboardTypePjHm6EE(), KeyboardType.Companion.m7242getNumberPasswordPjHm6EE())) ? false : true;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -204068976, "CC(remember):BasicTextField.kt#9igjgp");
                                     boolean changed5 = startRestartGroup.changed(z20) | startRestartGroup.changedInstance(mutableSharedFlow);
                                     Object rememberedValue11 = startRestartGroup.rememberedValue();
@@ -1331,12 +1327,12 @@ public final class BasicTextFieldKt {
                                     } else {
                                         startRestartGroup.useNode();
                                     }
-                                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                    Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                                    Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                                    Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1520421984, "C463@24701L3042,463@24651L3092:BasicTextField.kt#423gt5");
@@ -1398,9 +1394,7 @@ public final class BasicTextFieldKt {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda15
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj5, Object obj6) {
-                                            Unit BasicTextField$lambda$15;
-                                            BasicTextField$lambda$15 = BasicTextFieldKt.BasicTextField$lambda$15(TextFieldState.this, modifier2, z7, z8, inputTransformation3, textStyle2, keyboardOptions2, keyboardActionHandler2, textFieldLineLimits2, function22, mutableInteractionSource2, brush2, codepointTransformation2, outputTransformation2, textFieldDecorator2, scrollState2, z6, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
-                                            return BasicTextField$lambda$15;
+                                            return BasicTextFieldKt.BasicTextField$lambda$15(TextFieldState.this, modifier2, z7, z8, inputTransformation3, textStyle2, keyboardOptions2, keyboardActionHandler2, textFieldLineLimits2, function22, mutableInteractionSource2, brush2, codepointTransformation2, outputTransformation2, textFieldDecorator2, scrollState2, z6, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
                                         }
                                     });
                                     return;
@@ -1678,7 +1672,7 @@ public final class BasicTextFieldKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicTextField$lambda$8(TextFieldSelectionState textFieldSelectionState, AnnotatedString annotatedString) {
         textFieldSelectionState.onPasteEvent$foundation(annotatedString);
         return Unit.INSTANCE;
@@ -1742,7 +1736,7 @@ public final class BasicTextFieldKt {
                 i2 = 1;
                 i3 = 1;
             }
-            Modifier then = ClipKt.clipToBounds(TextFieldSizeKt.textFieldMinSize(HeightInLinesModifierKt.heightInLines(SizeKt.m964heightInVpY3zN4$default(Modifier.Companion, textLayoutState.m1675getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle, i3, i2), textStyle)).then(new TextFieldCoreModifier(z, z2, textLayoutState, transformedTextFieldState, textFieldSelectionState, brush, z3 && !z4, scrollState, orientation, toolbarRequesterImpl, platformSelectionBehaviors));
+            Modifier then = ClipKt.clipToBounds(TextFieldSizeKt.textFieldMinSize(HeightInLinesModifierKt.heightInLines(SizeKt.m852heightInVpY3zN4$default(Modifier.Companion, textLayoutState.m1448getMinHeightForSingleLineFieldD9Ej5fM(), 0.0f, 2, null), textStyle, i3, i2), textStyle)).then(new TextFieldCoreModifier(z, z2, textLayoutState, transformedTextFieldState, textFieldSelectionState, brush, z3 && !z4, scrollState, orientation, toolbarRequesterImpl, platformSelectionBehaviors));
             ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), true);
             ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -1760,12 +1754,12 @@ public final class BasicTextFieldKt {
             } else {
                 composer.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -811364182, "C503@26688L530:BasicTextField.kt#423gt5");
@@ -1845,8 +1839,8 @@ public final class BasicTextFieldKt {
                     rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldCursorHandle$1$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0  reason: not valid java name */
-                        public final long mo1308provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getCursorHandleState$foundation(true).m1720getPositionF1C5BW0();
+                        public final long mo1144provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getCursorHandleState$foundation(true).m1492getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1868,7 +1862,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidCursorHandle_androidKt.m1289CursorHandleUSBMPiE(offsetProvider, SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), MinTouchTargetSizeForHandles, startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+                AndroidCursorHandle_androidKt.m1130CursorHandleUSBMPiE(offsetProvider, SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), MinTouchTargetSizeForHandles, startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             }
             startRestartGroup.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
@@ -1880,9 +1874,7 @@ public final class BasicTextFieldKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda17
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TextFieldCursorHandle$lambda$4;
-                    TextFieldCursorHandle$lambda$4 = BasicTextFieldKt.TextFieldCursorHandle$lambda$4(TextFieldSelectionState.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TextFieldCursorHandle$lambda$4;
+                    return BasicTextFieldKt.TextFieldCursorHandle$lambda$4(TextFieldSelectionState.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1929,8 +1921,8 @@ public final class BasicTextFieldKt {
                     rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldSelectionHandles$1$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0 */
-                        public final long mo1308provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getSelectionHandleState$foundation(true, true).m1720getPositionF1C5BW0();
+                        public final long mo1144provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getSelectionHandleState$foundation(true, true).m1492getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1954,7 +1946,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidSelectionHandles_androidKt.m1823SelectionHandlewLIcFTc(offsetProvider, true, direction, handlesCrossed, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$1(state).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), startRestartGroup, 24624, 0);
+                AndroidSelectionHandles_androidKt.m1579SelectionHandlewLIcFTc(offsetProvider, true, direction, handlesCrossed, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$1(state).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion, textFieldSelectionState, (PointerInputEventHandler) rememberedValue3), startRestartGroup, 24624, 0);
             } else {
                 startRestartGroup.startReplaceGroup(-383839042);
             }
@@ -1985,8 +1977,8 @@ public final class BasicTextFieldKt {
                     rememberedValue5 = new OffsetProvider() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$TextFieldSelectionHandles$3$1
                         @Override // androidx.compose.foundation.text.selection.OffsetProvider
                         /* renamed from: provide-F1C5BW0 */
-                        public final long mo1308provideF1C5BW0() {
-                            return TextFieldSelectionState.this.getSelectionHandleState$foundation(false, true).m1720getPositionF1C5BW0();
+                        public final long mo1144provideF1C5BW0() {
+                            return TextFieldSelectionState.this.getSelectionHandleState$foundation(false, true).m1492getPositionF1C5BW0();
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -2010,7 +2002,7 @@ public final class BasicTextFieldKt {
                     startRestartGroup.updateRememberedValue(rememberedValue6);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                AndroidSelectionHandles_androidKt.m1823SelectionHandlewLIcFTc(offsetProvider2, false, direction2, handlesCrossed2, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$5(state2).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion2, textFieldSelectionState, (PointerInputEventHandler) rememberedValue6), startRestartGroup, 24624, 0);
+                AndroidSelectionHandles_androidKt.m1579SelectionHandlewLIcFTc(offsetProvider2, false, direction2, handlesCrossed2, MinTouchTargetSizeForHandles, TextFieldSelectionHandles$lambda$5(state2).getLineHeight(), SuspendingPointerInputFilterKt.pointerInput(companion2, textFieldSelectionState, (PointerInputEventHandler) rememberedValue6), startRestartGroup, 24624, 0);
             } else {
                 startRestartGroup.startReplaceGroup(-383839042);
             }
@@ -2024,9 +2016,7 @@ public final class BasicTextFieldKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda24
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TextFieldSelectionHandles$lambda$8;
-                    TextFieldSelectionHandles$lambda$8 = BasicTextFieldKt.TextFieldSelectionHandles$lambda$8(TextFieldSelectionState.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TextFieldSelectionHandles$lambda$8;
+                    return BasicTextFieldKt.TextFieldSelectionHandles$lambda$8(TextFieldSelectionState.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -2034,7 +2024,7 @@ public final class BasicTextFieldKt {
 
     static {
         float f = 40;
-        MinTouchTargetSizeForHandles = DpKt.m8280DpSizeYgX7TsA(Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(f));
+        MinTouchTargetSizeForHandles = DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(f));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2345,7 +2335,7 @@ public final class BasicTextFieldKt {
                                     if (i22 != 0) {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         i29 = i6;
@@ -2396,10 +2386,10 @@ public final class BasicTextFieldKt {
                                 }
                                 final MutableState mutableState = (MutableState) rememberedValue2;
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                final TextFieldValue m7951copy3r_uNRQ$default = TextFieldValue.m7951copy3r_uNRQ$default(BasicTextField$lambda$18(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
+                                final TextFieldValue m7249copy3r_uNRQ$default = TextFieldValue.m7249copy3r_uNRQ$default(BasicTextField$lambda$18(mutableState), str, 0L, (TextRange) null, 6, (Object) null);
                                 KeyboardActions keyboardActions5 = keyboardActions3;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2015286354, "CC(remember):BasicTextField.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(m7951copy3r_uNRQ$default);
+                                boolean changed = startRestartGroup.changed(m7249copy3r_uNRQ$default);
                                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                                 if (changed) {
                                     modifier4 = modifier3;
@@ -2449,7 +2439,7 @@ public final class BasicTextFieldKt {
                                 int i41 = i38 << 9;
                                 Modifier modifier5 = modifier4;
                                 composer2 = startRestartGroup;
-                                CoreTextFieldKt.CoreTextField(m7951copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation, keyboardActions5, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
+                                CoreTextFieldKt.CoreTextField(m7249copy3r_uNRQ$default, (Function1) rememberedValue5, modifier5, textStyle3, visualTransformation3, function15, mutableInteractionSource4, brush3, z14, i40, i39, imeOptions$foundation, keyboardActions5, z10, z11, function33, null, composer2, (i6 & 896) | ((i6 >> 6) & 7168) | (57344 & i41) | (458752 & i41) | (3670016 & i41) | (i41 & 29360128), ((i6 >> 15) & 896) | (i6 & 7168) | (i6 & 57344) | (i38 & 458752), 65536);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2489,9 +2479,7 @@ public final class BasicTextFieldKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda6
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj4, Object obj5) {
-                                        Unit BasicTextField$lambda$25;
-                                        BasicTextField$lambda$25 = BasicTextFieldKt.BasicTextField$lambda$25(str, function1, modifier2, z7, z8, textStyle2, keyboardOptions2, obj3, z6, i26, i27, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
-                                        return BasicTextField$lambda$25;
+                                        return BasicTextFieldKt.BasicTextField$lambda$25(str, function1, modifier2, z7, z8, textStyle2, keyboardOptions2, obj3, z6, i26, i27, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
                                     }
                                 });
                                 return;
@@ -2651,7 +2639,7 @@ public final class BasicTextFieldKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit BasicTextField$lambda$20$0(TextFieldValue textFieldValue, MutableState mutableState) {
-        if (!TextRange.m7694equalsimpl0(textFieldValue.m7955getSelectiond9O1mEE(), BasicTextField$lambda$18(mutableState).m7955getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m7954getCompositionMzsxiRA(), BasicTextField$lambda$18(mutableState).m7954getCompositionMzsxiRA())) {
+        if (!TextRange.m6996equalsimpl0(textFieldValue.m7253getSelectiond9O1mEE(), BasicTextField$lambda$18(mutableState).m7253getSelectiond9O1mEE()) || !Intrinsics.areEqual(textFieldValue.m7252getCompositionMzsxiRA(), BasicTextField$lambda$18(mutableState).m7252getCompositionMzsxiRA())) {
             mutableState.setValue(textFieldValue);
         }
         return Unit.INSTANCE;
@@ -2977,7 +2965,7 @@ public final class BasicTextFieldKt {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
                                         i29 = i6;
-                                        solidColor = new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null);
+                                        solidColor = new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null);
                                     } else {
                                         mutableInteractionSource3 = mutableInteractionSource5;
                                         z9 = z13;
@@ -3095,9 +3083,7 @@ public final class BasicTextFieldKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda19
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj4, Object obj5) {
-                                        Unit BasicTextField$lambda$28;
-                                        BasicTextField$lambda$28 = BasicTextFieldKt.BasicTextField$lambda$28(TextFieldValue.this, function1, modifier2, z6, z7, textStyle2, keyboardOptions2, keyboardActions2, z8, i26, i27, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
-                                        return BasicTextField$lambda$28;
+                                        return BasicTextFieldKt.BasicTextField$lambda$28(TextFieldValue.this, function1, modifier2, z6, z7, textStyle2, keyboardOptions2, keyboardActions2, z8, i26, i27, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i3, i4, i5, (Composer) obj4, ((Integer) obj5).intValue());
                                     }
                                 });
                                 return;
@@ -3527,7 +3513,7 @@ public final class BasicTextFieldKt {
                             }
                             if (i26 != 0) {
                                 composer2 = startRestartGroup;
-                                solidColor = new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null);
+                                solidColor = new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null);
                                 i27 = i23;
                             } else {
                                 composer2 = startRestartGroup;
@@ -3563,9 +3549,7 @@ public final class BasicTextFieldKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda21
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj6, Object obj7) {
-                                    Unit BasicTextField$lambda$31;
-                                    BasicTextField$lambda$31 = BasicTextFieldKt.BasicTextField$lambda$31(str, function1, modifier2, z4, z5, textStyle2, keyboardOptions2, keyboardActions2, z6, i25, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
-                                    return BasicTextField$lambda$31;
+                                    return BasicTextFieldKt.BasicTextField$lambda$31(str, function1, modifier2, z4, z5, textStyle2, keyboardOptions2, keyboardActions2, z6, i25, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
                                 }
                             });
                             return;
@@ -3988,20 +3972,20 @@ public final class BasicTextFieldKt {
                             }
                             if (i26 != 0) {
                                 composer2 = startRestartGroup;
-                                solidColor = new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null);
+                                solidColor = new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null);
                                 i27 = i23;
                             } else {
                                 composer2 = startRestartGroup;
                                 solidColor = brush;
                                 i27 = i23;
                             }
-                            Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1333getLambda$665310900$foundation = i27 != 0 ? ComposableSingletons$BasicTextFieldKt.INSTANCE.m1333getLambda$665310900$foundation() : function3;
+                            Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1166getLambda$665310900$foundation = i27 != 0 ? ComposableSingletons$BasicTextFieldKt.INSTANCE.m1166getLambda$665310900$foundation() : function3;
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1742344466, i5, i24, "androidx.compose.foundation.text.BasicTextField (BasicTextField.kt:990)");
                             }
                             int i34 = i24 << 3;
                             boolean z10 = z8;
-                            BasicTextField(obj, function1, companion, z7, z10, textStyle3, keyboardOptions3, keyboardActions3, z9, i33, 1, none, function14, mutableInteractionSource3, solidColor, m1333getLambda$665310900$foundation, composer2, i5 & 2147483646, (i34 & 112) | 6 | (i34 & 896) | (i34 & 7168) | (57344 & i34) | (i34 & 458752), 0);
+                            BasicTextField(obj, function1, companion, z7, z10, textStyle3, keyboardOptions3, keyboardActions3, z9, i33, 1, none, function14, mutableInteractionSource3, solidColor, m1166getLambda$665310900$foundation, composer2, i5 & 2147483646, (i34 & 112) | 6 | (i34 & 896) | (i34 & 7168) | (57344 & i34) | (i34 & 458752), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -4017,16 +4001,14 @@ public final class BasicTextFieldKt {
                             function13 = function14;
                             mutableInteractionSource2 = mutableInteractionSource3;
                             brush2 = solidColor;
-                            function32 = m1333getLambda$665310900$foundation;
+                            function32 = m1166getLambda$665310900$foundation;
                         }
                         endRestartGroup = composer2.endRestartGroup();
                         if (endRestartGroup != null) {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj6, Object obj7) {
-                                    Unit BasicTextField$lambda$34;
-                                    BasicTextField$lambda$34 = BasicTextFieldKt.BasicTextField$lambda$34(TextFieldValue.this, function1, modifier2, z4, z5, textStyle2, keyboardOptions2, keyboardActions2, z6, i25, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
-                                    return BasicTextField$lambda$34;
+                                    return BasicTextFieldKt.BasicTextField$lambda$34(TextFieldValue.this, function1, modifier2, z4, z5, textStyle2, keyboardOptions2, keyboardActions2, z6, i25, visualTransformation2, function13, mutableInteractionSource2, brush2, function32, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
                                 }
                             });
                             return;

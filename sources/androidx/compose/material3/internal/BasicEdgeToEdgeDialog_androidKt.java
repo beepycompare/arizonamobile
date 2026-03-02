@@ -65,7 +65,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicEdgeToEdgeDialog$lambda$12(Function0 function0, Modifier modifier, DialogProperties dialogProperties, boolean z, boolean z2, Function3 function3, int i, int i2, Composer composer, int i3) {
         BasicEdgeToEdgeDialog(function0, modifier, dialogProperties, z, z2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -174,7 +174,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                             Object consume = startRestartGroup.consume(ContentColorKt.getLocalContentColor());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             i3 &= -7169;
-                            z3 = ColorKt.m5476luminance8_81llA(((Color) consume).m5434unboximpl()) < 0.5f;
+                            z3 = ColorKt.m4824luminance8_81llA(((Color) consume).m4782unboximpl()) < 0.5f;
                         }
                         if ((i2 & 16) != 0) {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
@@ -182,7 +182,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             i3 &= -57345;
                             modifier3 = companion;
-                            z4 = ColorKt.m5476luminance8_81llA(((Color) consume2).m5434unboximpl()) < 0.5f;
+                            z4 = ColorKt.m4824luminance8_81llA(((Color) consume2).m4782unboximpl()) < 0.5f;
                         } else {
                             modifier3 = companion;
                         }
@@ -225,9 +225,9 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                         rememberedValue = new Function0() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialog_androidKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                UUID BasicEdgeToEdgeDialog$lambda$1$lambda$0;
-                                BasicEdgeToEdgeDialog$lambda$1$lambda$0 = BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$1$lambda$0();
-                                return BasicEdgeToEdgeDialog$lambda$1$lambda$0;
+                                UUID randomUUID;
+                                randomUUID = UUID.randomUUID();
+                                return randomUUID;
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -264,9 +264,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                         rememberedValue3 = new Function1() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialog_androidKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj3) {
-                                DisposableEffectResult BasicEdgeToEdgeDialog$lambda$9$lambda$8;
-                                BasicEdgeToEdgeDialog$lambda$9$lambda$8 = BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$9$lambda$8(DialogWrapper.this, (DisposableEffectScope) obj3);
-                                return BasicEdgeToEdgeDialog$lambda$9$lambda$8;
+                                return BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$9$lambda$8(DialogWrapper.this, (DisposableEffectScope) obj3);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -284,9 +282,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                         Function0 function02 = new Function0() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialog_androidKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                Unit BasicEdgeToEdgeDialog$lambda$11$lambda$10;
-                                BasicEdgeToEdgeDialog$lambda$11$lambda$10 = BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$11$lambda$10(DialogWrapper.this, function0, dialogProperties7, layoutDirection, z6, z7);
-                                return BasicEdgeToEdgeDialog$lambda$11$lambda$10;
+                                return BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$11$lambda$10(DialogWrapper.this, function0, dialogProperties7, layoutDirection, z6, z7);
                             }
                         };
                         dialogProperties4 = dialogProperties7;
@@ -312,9 +308,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialog_androidKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit BasicEdgeToEdgeDialog$lambda$12;
-                            BasicEdgeToEdgeDialog$lambda$12 = BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$12(Function0.this, modifier2, dialogProperties2, z8, z9, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return BasicEdgeToEdgeDialog$lambda$12;
+                            return BasicEdgeToEdgeDialog_androidKt.BasicEdgeToEdgeDialog$lambda$12(Function0.this, modifier2, dialogProperties2, z8, z9, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -356,12 +350,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final UUID BasicEdgeToEdgeDialog$lambda$1$lambda$0() {
-        return UUID.randomUUID();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult BasicEdgeToEdgeDialog$lambda$9$lambda$8(final DialogWrapper dialogWrapper, DisposableEffectScope disposableEffectScope) {
         dialogWrapper.show();
         return new DisposableEffectResult() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialog_androidKt$BasicEdgeToEdgeDialog$lambda$9$lambda$8$$inlined$onDispose$1
@@ -373,7 +362,7 @@ public final class BasicEdgeToEdgeDialog_androidKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicEdgeToEdgeDialog$lambda$11$lambda$10(DialogWrapper dialogWrapper, Function0 function0, DialogProperties dialogProperties, LayoutDirection layoutDirection, boolean z, boolean z2) {
         dialogWrapper.updateParameters(function0, dialogProperties, layoutDirection, z, z2);
         return Unit.INSTANCE;

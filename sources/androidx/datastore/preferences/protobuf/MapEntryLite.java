@@ -145,9 +145,12 @@ public class MapEntryLite<K, V> {
             int readTag = input.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == WireFormat.makeTag(1, this.metadata.keyType.getWireType())) {
-                obj = parseField(input, extensionRegistry, this.metadata.keyType, obj);
-            } else if (readTag == WireFormat.makeTag(2, this.metadata.valueType.getWireType())) {
+            }
+            int makeTag = WireFormat.makeTag(1, this.metadata.keyType.getWireType());
+            Metadata<K, V> metadata = this.metadata;
+            if (readTag == makeTag) {
+                obj = parseField(input, extensionRegistry, metadata.keyType, obj);
+            } else if (readTag == WireFormat.makeTag(2, metadata.valueType.getWireType())) {
                 obj2 = parseField(input, extensionRegistry, this.metadata.valueType, obj2);
             } else if (!input.skipField(readTag)) {
                 break;

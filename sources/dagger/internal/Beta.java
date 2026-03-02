@@ -5,6 +5,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 @Documented
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public @interface Beta {
 }

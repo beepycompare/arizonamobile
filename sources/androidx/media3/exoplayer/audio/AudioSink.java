@@ -13,7 +13,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface AudioSink {
     public static final long CURRENT_POSITION_NOT_SET = Long.MIN_VALUE;
     public static final int OFFLOAD_MODE_DISABLED = 0;
@@ -23,7 +23,7 @@ public interface AudioSink {
     public static final int SINK_FORMAT_SUPPORTED_WITH_TRANSCODING = 1;
     public static final int SINK_FORMAT_UNSUPPORTED = 0;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         default void onAudioCapabilitiesChanged() {
         }
@@ -62,14 +62,14 @@ public interface AudioSink {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface OffloadMode {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface SinkFormatSupport {
     }
 
@@ -149,7 +149,7 @@ public interface AudioSink {
 
     boolean supportsFormat(Format format);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class AudioTrackConfig {
         public final int bufferSize;
         public final int channelConfig;
@@ -168,7 +168,7 @@ public interface AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class ConfigurationException extends Exception {
         public final Format format;
 
@@ -183,7 +183,7 @@ public interface AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class InitializationException extends Exception {
         public final int audioTrackState;
         public final Format format;
@@ -201,7 +201,7 @@ public interface AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class WriteException extends Exception {
         public final int errorCode;
         public final Format format;
@@ -215,7 +215,7 @@ public interface AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class UnexpectedDiscontinuityException extends Exception {
         public final long actualPresentationTimeUs;
         public final long expectedPresentationTimeUs;

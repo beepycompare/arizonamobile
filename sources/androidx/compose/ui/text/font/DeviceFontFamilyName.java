@@ -12,44 +12,44 @@ public final class DeviceFontFamilyName {
     private final String name;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DeviceFontFamilyName m7777boximpl(String str) {
+    public static final /* synthetic */ DeviceFontFamilyName m7078boximpl(String str) {
         return new DeviceFontFamilyName(str);
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7779equalsimpl(String str, Object obj) {
-        return (obj instanceof DeviceFontFamilyName) && Intrinsics.areEqual(str, ((DeviceFontFamilyName) obj).m7783unboximpl());
+    public static boolean m7080equalsimpl(String str, Object obj) {
+        return (obj instanceof DeviceFontFamilyName) && Intrinsics.areEqual(str, ((DeviceFontFamilyName) obj).m7084unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7780equalsimpl0(String str, String str2) {
+    public static final boolean m7081equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7781hashCodeimpl(String str) {
+    public static int m7082hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7782toStringimpl(String str) {
+    public static String m7083toStringimpl(String str) {
         return "DeviceFontFamilyName(name=" + str + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7779equalsimpl(this.name, obj);
+        return m7080equalsimpl(this.name, obj);
     }
 
     public int hashCode() {
-        return m7781hashCodeimpl(this.name);
+        return m7082hashCodeimpl(this.name);
     }
 
     public String toString() {
-        return m7782toStringimpl(this.name);
+        return m7083toStringimpl(this.name);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m7783unboximpl() {
+    public final /* synthetic */ String m7084unboximpl() {
         return this.name;
     }
 
@@ -62,7 +62,7 @@ public final class DeviceFontFamilyName {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m7778constructorimpl(String str) {
+    public static String m7079constructorimpl(String str) {
         if (!(str.length() > 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("name may not be empty");
         }

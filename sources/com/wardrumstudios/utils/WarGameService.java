@@ -71,11 +71,12 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
             Bitmap bitmap;
             int statusCode = openSnapshotResult.getStatus().getStatusCode();
             if (statusCode != 0) {
+                WarGameService warGameService = WarGameService.this;
                 if (statusCode != 4004) {
-                    WarGameService.this.debugLog("Failed to save snapshot, status:" + openSnapshotResult.getStatus());
+                    warGameService.debugLog("Failed to save snapshot, status:" + openSnapshotResult.getStatus());
                     return;
                 }
-                WarGameService.this.debugLog("Conflict while saving, resolving...");
+                warGameService.debugLog("Conflict while saving, resolving...");
                 openSnapshotResult.getSnapshot();
                 Games.Snapshots.resolveConflict(WarGameService.this.getApiClient(), openSnapshotResult.getConflictId(), openSnapshotResult.getConflictingSnapshot()).setResultCallback(new OpenSnapshotResultHandler(this.name, this.description, this.data, this.screenshot, this.playedMS));
             } else if (openSnapshotResult.getSnapshot().writeBytes(this.data)) {
@@ -142,6 +143,7 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
                             @Override // com.google.android.gms.common.api.ResultCallback
                             public void onResult(Snapshots.DeleteSnapshotResult deleteSnapshotResult) {
                                 int statusCode2 = deleteSnapshotResult.getStatus().getStatusCode();
+                                AnonymousClass7 anonymousClass7 = AnonymousClass7.this;
                                 if (statusCode2 == 0) {
                                     WarGameService.this.debugLog("Successfully deleted snapshot.");
                                 } else {
@@ -149,10 +151,13 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
                                 }
                             }
                         });
-                    } else if (statusCode != 4000) {
-                        WarGameService.this.debugLog("Failed to delete snapshot, status:" + openSnapshotResult.getStatus());
+                        return;
+                    }
+                    WarGameService warGameService = WarGameService.this;
+                    if (statusCode != 4000) {
+                        warGameService.debugLog("Failed to delete snapshot, status:" + openSnapshotResult.getStatus());
                     } else {
-                        WarGameService.this.debugLog("Tried to delete a non-existent snapshot.");
+                        warGameService.debugLog("Tried to delete a non-existent snapshot.");
                     }
                 }
             });
@@ -199,11 +204,13 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
         Games.Snapshots.load(getApiClient(), false).setResultCallback(new ResultCallback<Snapshots.LoadSnapshotsResult>() { // from class: com.wardrumstudios.utils.WarGameService.5
             @Override // com.google.android.gms.common.api.ResultCallback
             public void onResult(Snapshots.LoadSnapshotsResult loadSnapshotsResult) {
-                if (loadSnapshotsResult.getStatus().getStatusCode() != 0) {
-                    WarGameService.this.debugLog("Failed to load snapshots, status:" + loadSnapshotsResult.getStatus());
+                int statusCode = loadSnapshotsResult.getStatus().getStatusCode();
+                WarGameService warGameService = WarGameService.this;
+                if (statusCode != 0) {
+                    warGameService.debugLog("Failed to load snapshots, status:" + loadSnapshotsResult.getStatus());
                     return;
                 }
-                WarGameService.this.notifySnapshotCountLoaded(loadSnapshotsResult.getSnapshots().getCount());
+                warGameService.notifySnapshotCountLoaded(loadSnapshotsResult.getSnapshots().getCount());
                 loadSnapshotsResult.getSnapshots().close();
             }
         });
@@ -451,28 +458,31 @@ public class WarGameService implements GameHelper.GameHelperListener, ResultCall
                     int statusCode = openSnapshotResult.getStatus().getStatusCode();
                     if (statusCode == 0) {
                         WarGameService.this.notifySnapshotSelected(openSnapshotResult.getSnapshot().readFully());
-                    } else if (statusCode != 4004) {
-                        WarGameService.this.notifySnapshotSelected(null);
-                        WarGameService.this.debugLog("Failed to open snapshot, status:" + openSnapshotResult.getStatus());
-                    } else {
-                        WarGameService.this.debugLog("Conflict while opening the selected snapshot, resolving...");
-                        Snapshot snapshot = openSnapshotResult.getSnapshot();
-                        Snapshot conflictingSnapshot = openSnapshotResult.getConflictingSnapshot();
-                        WarGameService.this.debugLog("conflict = " + conflictingSnapshot);
-                        WarGameService.this.debugLog("latest = " + snapshot);
-                        WarGameService.this.debugLog("conflictId = " + openSnapshotResult.getConflictId());
-                        Games.Snapshots.resolveConflict(WarGameService.this.getApiClient(), openSnapshotResult.getConflictId(), conflictingSnapshot).setResultCallback(new ResultCallback<Snapshots.OpenSnapshotResult>() { // from class: com.wardrumstudios.utils.WarGameService.2.1
-                            @Override // com.google.android.gms.common.api.ResultCallback
-                            public void onResult(Snapshots.OpenSnapshotResult openSnapshotResult2) {
-                                if (openSnapshotResult2.getStatus().getStatusCode() != 0) {
-                                    WarGameService.this.notifySnapshotSelected(null);
-                                    WarGameService.this.debugLog("Failed to save snapshot, status:" + openSnapshotResult2.getStatus());
-                                    return;
-                                }
-                                WarGameService.this.notifySnapshotSelected(openSnapshotResult2.getSnapshot().readFully());
-                            }
-                        });
+                        return;
                     }
+                    WarGameService warGameService = WarGameService.this;
+                    if (statusCode != 4004) {
+                        warGameService.notifySnapshotSelected(null);
+                        WarGameService.this.debugLog("Failed to open snapshot, status:" + openSnapshotResult.getStatus());
+                        return;
+                    }
+                    warGameService.debugLog("Conflict while opening the selected snapshot, resolving...");
+                    Snapshot snapshot = openSnapshotResult.getSnapshot();
+                    Snapshot conflictingSnapshot = openSnapshotResult.getConflictingSnapshot();
+                    WarGameService.this.debugLog("conflict = " + conflictingSnapshot);
+                    WarGameService.this.debugLog("latest = " + snapshot);
+                    WarGameService.this.debugLog("conflictId = " + openSnapshotResult.getConflictId());
+                    Games.Snapshots.resolveConflict(WarGameService.this.getApiClient(), openSnapshotResult.getConflictId(), conflictingSnapshot).setResultCallback(new ResultCallback<Snapshots.OpenSnapshotResult>() { // from class: com.wardrumstudios.utils.WarGameService.2.1
+                        @Override // com.google.android.gms.common.api.ResultCallback
+                        public void onResult(Snapshots.OpenSnapshotResult openSnapshotResult2) {
+                            if (openSnapshotResult2.getStatus().getStatusCode() != 0) {
+                                WarGameService.this.notifySnapshotSelected(null);
+                                WarGameService.this.debugLog("Failed to save snapshot, status:" + openSnapshotResult2.getStatus());
+                                return;
+                            }
+                            WarGameService.this.notifySnapshotSelected(openSnapshotResult2.getSnapshot().readFully());
+                        }
+                    });
                 }
             });
         }

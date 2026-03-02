@@ -68,7 +68,7 @@ import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.ContactApi
 import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.SettingsApiResponse;
 import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.SettingsRequest;
 /* compiled from: Messenger.kt */
-@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 V2\u00020\u00012\u00020\u0002:\u0003VWXB\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0004H\u0002J\b\u0010-\u001a\u00020.H\u0002J\u0012\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u00010\fH\u0002J\b\u00101\u001a\u00020.H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\b\u00104\u001a\u00020.H\u0002J\b\u00105\u001a\u00020.H\u0002J\b\u00106\u001a\u00020.H\u0002J\u0018\u00107\u001a\u00020.2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020.H\u0002J!\u0010<\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010=\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u00020.2\u0006\u0010A\u001a\u00020BH\u0002J\b\u0010C\u001a\u00020.H\u0002J\b\u0010D\u001a\u00020.H\u0002J\b\u0010E\u001a\u00020.H\u0002J\b\u0010F\u001a\u00020.H\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010\u001b\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020.H\u0016J\b\u0010I\u001a\u00020.H\u0016J\u0006\u0010J\u001a\u00020.J\u000e\u0010K\u001a\u00020.2\u0006\u0010L\u001a\u00020MJ\u0010\u0010N\u001a\u00020.2\u0006\u0010L\u001a\u00020MH\u0002J\u000e\u0010O\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010P\u001a\u00020.J\u0006\u0010Q\u001a\u00020.J\u0016\u0010R\u001a\u00020.2\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\fJ\u000e\u0010U\u001a\u00020.2\u0006\u0010=\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001d\u001a\n \u0015*\u0004\u0018\u00010\u001e0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", "id", "loadNextPage", "", "requestContacts", SettingsConstants.NICKNAME, "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/feature/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/feature/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "InputCustomKeyboardListener", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 V2\u00020\u00012\u00020\u0002:\u0003VWXB\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0004H\u0002J\b\u0010-\u001a\u00020.H\u0002J\u0012\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u00010\fH\u0002J\b\u00101\u001a\u00020.H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\b\u00104\u001a\u00020.H\u0002J\b\u00105\u001a\u00020.H\u0002J\b\u00106\u001a\u00020.H\u0002J\u0018\u00107\u001a\u00020.2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020.H\u0002J!\u0010<\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010=\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u00020.2\u0006\u0010A\u001a\u00020BH\u0002J\b\u0010C\u001a\u00020.H\u0002J\b\u0010D\u001a\u00020.H\u0002J\b\u0010E\u001a\u00020.H\u0002J\b\u0010F\u001a\u00020.H\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010\u001b\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020.H\u0016J\b\u0010I\u001a\u00020.H\u0016J\u0006\u0010J\u001a\u00020.J\u000e\u0010K\u001a\u00020.2\u0006\u0010L\u001a\u00020MJ\u0010\u0010N\u001a\u00020.2\u0006\u0010L\u001a\u00020MH\u0002J\u000e\u0010O\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010P\u001a\u00020.J\u0006\u0010Q\u001a\u00020.J\u0016\u0010R\u001a\u00020.2\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\fJ\u000e\u0010U\u001a\u00020.2\u0006\u0010=\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001d\u001a\n \u0015*\u0004\u0018\u00010\u001e0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", "id", "loadNextPage", "", "requestContacts", SettingsConstants.NICKNAME, "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/feature/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/feature/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "InputCustomKeyboardListener", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Messenger implements MobileController, CompoundButton.OnCheckedChangeListener {
     public static final Companion Companion = new Companion(null);
@@ -99,7 +99,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     private String searchNickname = "";
 
     /* compiled from: Messenger.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -170,24 +170,18 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         this.contactsAdapter = new MobilePhoneMessengerContactsAdapter(new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contactsAdapter$lambda$0;
-                contactsAdapter$lambda$0 = Messenger.contactsAdapter$lambda$0(Messenger.this, (ContactInfo) obj);
-                return contactsAdapter$lambda$0;
+                return Messenger.contactsAdapter$lambda$0(Messenger.this, (ContactInfo) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contactsAdapter$lambda$1;
-                contactsAdapter$lambda$1 = Messenger.contactsAdapter$lambda$1(Messenger.this, (ContactInfo) obj);
-                return contactsAdapter$lambda$1;
+                return Messenger.contactsAdapter$lambda$1(Messenger.this, (ContactInfo) obj);
             }
         });
         this.colorsAdapter = new MobilePhoneMessengerColorsAdapter(new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit colorsAdapter$lambda$0;
-                colorsAdapter$lambda$0 = Messenger.colorsAdapter$lambda$0(Messenger.this, (ColorItem) obj);
-                return colorsAdapter$lambda$0;
+                return Messenger.colorsAdapter$lambda$0(Messenger.this, (ColorItem) obj);
             }
         });
         this.currentPage = Page.LOADING;
@@ -204,7 +198,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Companion;", "", "<init>", "()V", "MESSENGER_PREFS", "", "TOKEN_PREFS", "MIN_SYMBOLS_SEARCH", "", "TAG", "JWT_EXPIRED", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Companion;", "", "<init>", "()V", "MESSENGER_PREFS", "", "TOKEN_PREFS", "MIN_SYMBOLS_SEARCH", "", "TAG", "JWT_EXPIRED", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -215,21 +209,21 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit contactsAdapter$lambda$1(Messenger messenger, ContactInfo it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messenger.contactAddOrRemove(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit contactsAdapter$lambda$0(Messenger messenger, ContactInfo it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messenger.onOpenNewChat(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit colorsAdapter$lambda$0(Messenger messenger, ColorItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         messenger.pageBinding.settingsLayout.avatar.updateBackgroundColor(it.getColor().getBackground());
@@ -246,7 +240,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", SettingsInteractor.SettingsKey, "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "", "page", "", "title", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getPage", "()I", "getTitle", "()Ljava/lang/String;", "EMPTY_MESSAGES", "EMPTY_CONTACTS", "MESSAGES", "NEW_CORRESPONDENCE", "CONTACTS_SEARCH", "MY_CONTACTS", "LOADING", SettingsInteractor.SettingsKey, "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Page {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -527,12 +521,13 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                 Intrinsics.checkNotNullParameter(response, "response");
                 int code = response.code();
                 if (code != 200) {
+                    Messenger messenger = Messenger.this;
                     if (code != 401) {
-                        activity2 = Messenger.this.context;
+                        activity2 = messenger.context;
                         Toast.makeText(activity2, "Ошибка получения сообщений: " + response.message(), 0).show();
                         return;
                     }
-                    Messenger.this.isRefreshToken = true;
+                    messenger.isRefreshToken = true;
                     Messenger.this.requestToken();
                     return;
                 }
@@ -545,9 +540,9 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                     }
                     ArrayList arrayList2 = arrayList;
                     Integer num4 = num;
-                    Messenger messenger = Messenger.this;
+                    Messenger messenger2 = Messenger.this;
                     if (num4 != null) {
-                        mobilePhoneMessengerContactsAdapter3 = messenger.contactsAdapter;
+                        mobilePhoneMessengerContactsAdapter3 = messenger2.contactsAdapter;
                         Iterator<ContactInfo> it = mobilePhoneMessengerContactsAdapter3.getContacts().iterator();
                         int i = 0;
                         while (true) {
@@ -562,7 +557,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                             i++;
                         }
                         if (i != -1) {
-                            mobilePhoneMessengerContactsAdapter5 = messenger.contactsAdapter;
+                            mobilePhoneMessengerContactsAdapter5 = messenger2.contactsAdapter;
                             mobilePhoneMessengerContactsAdapter5.updateData(i, (ContactInfo) arrayList2.get(i));
                             return;
                         }
@@ -580,24 +575,24 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                             i2++;
                         }
                         if (i2 != -1) {
-                            mobilePhoneMessengerContactsAdapter4 = messenger.contactsAdapter;
+                            mobilePhoneMessengerContactsAdapter4 = messenger2.contactsAdapter;
                             mobilePhoneMessengerContactsAdapter4.updateNewData((ContactInfo) arrayList2.get(i2));
                             return;
                         }
-                        activity = messenger.context;
+                        activity = messenger2.context;
                         Toast.makeText(activity, "Произошла ошибка добавления нового диалога", 0).show();
                         return;
                     }
-                    mobilePhoneMessengerContactsAdapter = messenger.contactsAdapter;
+                    mobilePhoneMessengerContactsAdapter = messenger2.contactsAdapter;
                     mobilePhoneMessengerContactsAdapter.clearData();
                     if (arrayList2.isEmpty()) {
-                        messenger.updatePage(Messenger.Page.EMPTY_MESSAGES);
+                        messenger2.updatePage(Messenger.Page.EMPTY_MESSAGES);
                         return;
                     }
-                    mobilePhoneMessengerContactsAdapter2 = messenger.contactsAdapter;
+                    mobilePhoneMessengerContactsAdapter2 = messenger2.contactsAdapter;
                     mobilePhoneMessengerContactsAdapter2.addData(arrayList2);
-                    messenger.updatePage(Messenger.Page.MESSAGES);
-                    num2 = messenger.notificationMessageId;
+                    messenger2.updatePage(Messenger.Page.MESSAGES);
+                    num2 = messenger2.notificationMessageId;
                     if (num2 != null) {
                         Iterator it3 = arrayList2.iterator();
                         while (true) {
@@ -607,16 +602,16 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                             }
                             obj = it3.next();
                             int id3 = ((ContactInfo) obj).getId();
-                            num3 = messenger.notificationMessageId;
+                            num3 = messenger2.notificationMessageId;
                             if (num3 != null && id3 == num3.intValue()) {
                                 break;
                             }
                         }
                         ContactInfo contactInfo = (ContactInfo) obj;
                         if (contactInfo != null) {
-                            messenger.onOpenNewChat(contactInfo);
+                            messenger2.onOpenNewChat(contactInfo);
                         }
-                        messenger.notificationMessageId = null;
+                        messenger2.notificationMessageId = null;
                     }
                 }
             }
@@ -994,7 +989,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     }
 
     /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0012\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u000bH\u0016J\b\u0010\u0013\u001a\u00020\u0005H\u0016¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$InputCustomKeyboardListener;", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;)V", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0012\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u000bH\u0016J\b\u0010\u0013\u001a\u00020\u0005H\u0016¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$InputCustomKeyboardListener;", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;)V", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class InputCustomKeyboardListener implements CustomKeyboard.InputListener {
         @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
@@ -1039,10 +1034,12 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
             } else if (str == null) {
                 return;
             }
-            if (str.length() >= 3) {
-                Messenger.this.requestContacts(str);
+            int length = str.length();
+            Messenger messenger = Messenger.this;
+            if (length >= 3) {
+                messenger.requestContacts(str);
             } else {
-                Messenger.this.showEmptySearchedContacts();
+                messenger.showEmptySearchedContacts();
             }
         }
     }

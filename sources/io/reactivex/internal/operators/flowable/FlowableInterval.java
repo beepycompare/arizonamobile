@@ -67,15 +67,16 @@ public final class FlowableInterval extends Flowable<Long> {
         @Override // java.lang.Runnable
         public void run() {
             if (this.resource.get() != DisposableHelper.DISPOSED) {
-                if (get() != 0) {
-                    Subscriber<? super Long> subscriber = this.downstream;
+                int i = (get() > 0L ? 1 : (get() == 0L ? 0 : -1));
+                Subscriber<? super Long> subscriber = this.downstream;
+                if (i != 0) {
                     long j = this.count;
                     this.count = j + 1;
                     subscriber.onNext(Long.valueOf(j));
                     BackpressureHelper.produced(this, 1L);
                     return;
                 }
-                this.downstream.onError(new MissingBackpressureException("Can't deliver value " + this.count + " due to lack of requests"));
+                subscriber.onError(new MissingBackpressureException("Can't deliver value " + this.count + " due to lack of requests"));
                 DisposableHelper.dispose(this.resource);
             }
         }

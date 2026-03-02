@@ -60,19 +60,17 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
             final Ref.LongRef longRef = this.$overSlop;
             this.L$0 = awaitPointerEventScope2;
             this.label = 1;
-            Object m541awaitTouchSlopOrCancellationjO51t88 = DragGestureDetectorKt.m541awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, j, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1$$ExternalSyntheticLambda0
+            Object m467awaitTouchSlopOrCancellationjO51t88 = DragGestureDetectorKt.m467awaitTouchSlopOrCancellationjO51t88(awaitPointerEventScope2, j, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1.invokeSuspend$lambda$0(Ref.LongRef.this, (PointerInputChange) obj2, (Offset) obj3);
-                    return invokeSuspend$lambda$0;
+                    return SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1.invokeSuspend$lambda$0(Ref.LongRef.this, (PointerInputChange) obj2, (Offset) obj3);
                 }
             }, this);
-            if (m541awaitTouchSlopOrCancellationjO51t88 == coroutine_suspended) {
+            if (m467awaitTouchSlopOrCancellationjO51t88 == coroutine_suspended) {
                 return coroutine_suspended;
             }
             awaitPointerEventScope = awaitPointerEventScope2;
-            obj = m541awaitTouchSlopOrCancellationjO51t88;
+            obj = m467awaitTouchSlopOrCancellationjO51t88;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
@@ -90,10 +88,10 @@ final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 e
         return DownResolution.Cancel;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, PointerInputChange pointerInputChange, Offset offset) {
         pointerInputChange.consume();
-        longRef.element = offset.m5189unboximpl();
+        longRef.element = offset.m4537unboximpl();
         return Unit.INSTANCE;
     }
 }

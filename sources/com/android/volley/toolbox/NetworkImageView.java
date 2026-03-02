@@ -95,8 +95,9 @@ public class NetworkImageView extends ImageView {
         if (width == 0 && height == 0 && !z4) {
             return;
         }
-        if (TextUtils.isEmpty(this.mUrl)) {
-            ImageLoader.ImageContainer imageContainer = this.mImageContainer;
+        boolean isEmpty = TextUtils.isEmpty(this.mUrl);
+        ImageLoader.ImageContainer imageContainer = this.mImageContainer;
+        if (isEmpty) {
             if (imageContainer != null) {
                 imageContainer.cancelRequest();
                 this.mImageContainer = null;
@@ -104,8 +105,7 @@ public class NetworkImageView extends ImageView {
             setDefaultImageOrNull();
             return;
         }
-        ImageLoader.ImageContainer imageContainer2 = this.mImageContainer;
-        if (imageContainer2 != null && imageContainer2.getRequestUrl() != null) {
+        if (imageContainer != null && imageContainer.getRequestUrl() != null) {
             if (this.mImageContainer.getRequestUrl().equals(this.mUrl)) {
                 return;
             }
@@ -130,21 +130,20 @@ public class NetworkImageView extends ImageView {
 
         @Override // com.android.volley.Response.ErrorListener
         public void onErrorResponse(VolleyError volleyError) {
-            if (NetworkImageView.this.mErrorImageId == 0) {
-                if (NetworkImageView.this.mErrorImageDrawable == null) {
-                    if (NetworkImageView.this.mErrorImageBitmap != null) {
-                        NetworkImageView networkImageView = NetworkImageView.this;
-                        networkImageView.setImageBitmap(networkImageView.mErrorImageBitmap);
-                        return;
-                    }
-                    return;
-                }
-                NetworkImageView networkImageView2 = NetworkImageView.this;
-                networkImageView2.setImageDrawable(networkImageView2.mErrorImageDrawable);
+            int i = NetworkImageView.this.mErrorImageId;
+            NetworkImageView networkImageView = NetworkImageView.this;
+            if (i != 0) {
+                networkImageView.setImageResource(networkImageView.mErrorImageId);
                 return;
             }
-            NetworkImageView networkImageView3 = NetworkImageView.this;
-            networkImageView3.setImageResource(networkImageView3.mErrorImageId);
+            Drawable drawable = networkImageView.mErrorImageDrawable;
+            NetworkImageView networkImageView2 = NetworkImageView.this;
+            if (drawable != null) {
+                networkImageView2.setImageDrawable(networkImageView2.mErrorImageDrawable);
+            } else if (networkImageView2.mErrorImageBitmap != null) {
+                NetworkImageView networkImageView3 = NetworkImageView.this;
+                networkImageView3.setImageBitmap(networkImageView3.mErrorImageBitmap);
+            }
         }
 
         @Override // com.android.volley.toolbox.ImageLoader.ImageListener
@@ -156,25 +155,31 @@ public class NetworkImageView extends ImageView {
                         AnonymousClass1.this.onResponse(imageContainer, false);
                     }
                 });
-            } else if (imageContainer.getBitmap() == null) {
-                if (NetworkImageView.this.mDefaultImageId == 0) {
-                    if (NetworkImageView.this.mDefaultImageDrawable == null) {
-                        if (NetworkImageView.this.mDefaultImageBitmap != null) {
-                            NetworkImageView networkImageView = NetworkImageView.this;
-                            networkImageView.setImageBitmap(networkImageView.mDefaultImageBitmap);
-                            return;
-                        }
-                        return;
-                    }
-                    NetworkImageView networkImageView2 = NetworkImageView.this;
-                    networkImageView2.setImageDrawable(networkImageView2.mDefaultImageDrawable);
+                return;
+            }
+            Bitmap bitmap = imageContainer.getBitmap();
+            NetworkImageView networkImageView = NetworkImageView.this;
+            if (bitmap == null) {
+                int i = networkImageView.mDefaultImageId;
+                NetworkImageView networkImageView2 = NetworkImageView.this;
+                if (i != 0) {
+                    networkImageView2.setImageResource(networkImageView2.mDefaultImageId);
                     return;
                 }
+                Drawable drawable = networkImageView2.mDefaultImageDrawable;
                 NetworkImageView networkImageView3 = NetworkImageView.this;
-                networkImageView3.setImageResource(networkImageView3.mDefaultImageId);
-            } else {
-                NetworkImageView.this.setImageBitmap(imageContainer.getBitmap());
+                if (drawable != null) {
+                    networkImageView3.setImageDrawable(networkImageView3.mDefaultImageDrawable);
+                    return;
+                } else if (networkImageView3.mDefaultImageBitmap != null) {
+                    NetworkImageView networkImageView4 = NetworkImageView.this;
+                    networkImageView4.setImageBitmap(networkImageView4.mDefaultImageBitmap);
+                    return;
+                } else {
+                    return;
+                }
             }
+            networkImageView.setImageBitmap(imageContainer.getBitmap());
         }
     }
 

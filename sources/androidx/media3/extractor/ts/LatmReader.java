@@ -240,10 +240,12 @@ public final class LatmReader implements ElementaryStreamReader {
     @RequiresNonNull({"output"})
     private void parsePayloadMux(ParsableBitArray parsableBitArray, int i) {
         int position = parsableBitArray.getPosition();
-        if ((position & 7) == 0) {
-            this.sampleDataBuffer.setPosition(position >> 3);
+        int i2 = position & 7;
+        ParsableByteArray parsableByteArray = this.sampleDataBuffer;
+        if (i2 == 0) {
+            parsableByteArray.setPosition(position >> 3);
         } else {
-            parsableBitArray.readBits(this.sampleDataBuffer.getData(), 0, i * 8);
+            parsableBitArray.readBits(parsableByteArray.getData(), 0, i * 8);
             this.sampleDataBuffer.setPosition(0);
         }
         this.output.sampleData(this.sampleDataBuffer, i);

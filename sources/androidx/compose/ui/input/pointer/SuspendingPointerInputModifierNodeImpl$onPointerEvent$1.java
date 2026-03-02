@@ -38,10 +38,10 @@ final class SuspendingPointerInputModifierNodeImpl$onPointerEvent$1 extends Susp
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0037, code lost:
         if (r5.invoke(r1, r4) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x004a, code lost:
-        if (r4.this$0.getPointerInputEventHandler().invoke(r4.this$0, r4) == r0) goto L15;
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0048, code lost:
+        if (r1.getPointerInputEventHandler().invoke(r4.this$0, r4) == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x004c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x004a, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -56,10 +56,11 @@ final class SuspendingPointerInputModifierNodeImpl$onPointerEvent$1 extends Susp
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function2 = this.this$0._deprecatedPointerInputHandler;
+            SuspendingPointerInputModifierNodeImpl suspendingPointerInputModifierNodeImpl = this.this$0;
             if (function2 != null) {
-                function22 = this.this$0._deprecatedPointerInputHandler;
+                function22 = suspendingPointerInputModifierNodeImpl._deprecatedPointerInputHandler;
                 Intrinsics.checkNotNull(function22);
-                SuspendingPointerInputModifierNodeImpl suspendingPointerInputModifierNodeImpl = this.this$0;
+                SuspendingPointerInputModifierNodeImpl suspendingPointerInputModifierNodeImpl2 = this.this$0;
                 this.label = 1;
             } else {
                 this.label = 2;

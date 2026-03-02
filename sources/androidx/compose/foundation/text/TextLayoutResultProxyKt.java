@@ -9,7 +9,7 @@ import kotlin.Metadata;
 public final class TextLayoutResultProxyKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: coerceIn-3MmeM6k  reason: not valid java name */
-    public static final long m1475coerceIn3MmeM6k(long j, Rect rect) {
+    public static final long m1296coerceIn3MmeM6k(long j, Rect rect) {
         float right;
         float bottom;
         int i = (int) (j >> 32);
@@ -24,6 +24,6 @@ public final class TextLayoutResultProxyKt {
         } else {
             bottom = Float.intBitsToFloat(i2) > rect.getBottom() ? rect.getBottom() : Float.intBitsToFloat(i2);
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
     }
 }

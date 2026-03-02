@@ -97,7 +97,7 @@ public final class MulticastFileObserver extends FileObserver {
             };
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void observe$lambda$1(String str, Function1 function1) {
             synchronized (MulticastFileObserver.LOCK) {
                 MulticastFileObserver multicastFileObserver = MulticastFileObserver.Companion.getFileObservers$datastore_core().get(str);

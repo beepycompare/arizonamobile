@@ -56,9 +56,7 @@ final class PlusStackAnimator implements StackAnimator {
             rememberedValue2 = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.PlusStackAnimator$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = PlusStackAnimator.invoke$lambda$3$lambda$2(zArr, onFinished);
-                    return invoke$lambda$3$lambda$2;
+                    return PlusStackAnimator.invoke$lambda$3$lambda$2(zArr, onFinished);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -71,7 +69,7 @@ final class PlusStackAnimator implements StackAnimator {
         composer.endReplaceGroup();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$3$lambda$2(boolean[] zArr, Function0 function0) {
         int i = 0;
         zArr[0] = true;

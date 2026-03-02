@@ -13,9 +13,7 @@ public final class OverscrollConfiguration_androidKt {
     private static final ProvidableCompositionLocal<OverscrollConfiguration> LocalOverscrollConfiguration = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.OverscrollConfiguration_androidKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            OverscrollConfiguration LocalOverscrollConfiguration$lambda$0;
-            LocalOverscrollConfiguration$lambda$0 = OverscrollConfiguration_androidKt.LocalOverscrollConfiguration$lambda$0();
-            return LocalOverscrollConfiguration$lambda$0;
+            return OverscrollConfiguration_androidKt.LocalOverscrollConfiguration$lambda$0();
         }
     }, 1, null);
 
@@ -27,7 +25,7 @@ public final class OverscrollConfiguration_androidKt {
         return LocalOverscrollConfiguration;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final OverscrollConfiguration LocalOverscrollConfiguration$lambda$0() {
         return new OverscrollConfiguration(0L, null, 3, null);
     }

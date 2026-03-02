@@ -1,5 +1,6 @@
 package androidx.paging;
 
+import androidx.media3.container.MdtaMetadataEntry;
 import androidx.media3.extractor.ts.TsExtractor;
 import androidx.paging.PageFetcher;
 import androidx.paging.PagingSource;
@@ -28,8 +29,8 @@ import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [Value] */
 /* compiled from: PageFetcher.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00040\u00060\u0005H\u008a@"}, d2 = {"<anonymous>", "", "Key", "", "Value", "Landroidx/paging/SimpleProducerScope;", "Landroidx/paging/PagingData;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcher$flow$1", f = "PageFetcher.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DTS_HD}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004H\n"}, d2 = {"<anonymous>", "", "Value", "", "Landroidx/paging/SimpleProducerScope;", "Landroidx/paging/PagingData;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcher$flow$1", f = "PageFetcher.kt", i = {}, l = {143}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Function2<SimpleProducerScope<PagingData<Value>>, Continuation<? super Unit>, Object> {
     final /* synthetic */ RemoteMediator<Key, Value> $remoteMediator;
@@ -86,8 +87,8 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcher.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003*\b\u0012\u0004\u0012\u00020\u00060\u0005H\u008a@"}, d2 = {"<anonymous>", "", "Key", "", "Value", "Lkotlinx/coroutines/flow/FlowCollector;", ""}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$1", f = "PageFetcher.kt", i = {}, l = {63, 63}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/flow/FlowCollector;", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$1", f = "PageFetcher.kt", i = {}, l = {59, 59}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcher$flow$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<FlowCollector<? super Boolean>, Continuation<? super Unit>, Object> {
@@ -167,8 +168,8 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX INFO: Add missing generic type declarations: [Key] */
     /* compiled from: PageFetcher.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0004\"\b\b\u0001\u0010\u0003*\u00020\u00042\u0014\u0010\u0005\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\u008a@"}, d2 = {"<anonymous>", "Landroidx/paging/PageFetcher$GenerationInfo;", "Key", "Value", "", "previousGeneration", "triggerRemoteRefresh", ""}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$2", f = "PageFetcher.kt", i = {0, 1, 1}, l = {73, 77}, m = "invokeSuspend", n = {"previousGeneration", "previousGeneration", "pagingSource"}, s = {"L$0", "L$0", "L$1"})
+    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\u0010\u0000\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0004\"\b\b\u0001\u0010\u0003*\u00020\u00042\u0014\u0010\u0005\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\n"}, d2 = {"<anonymous>", "Landroidx/paging/PageFetcher$GenerationInfo;", "Key", "Value", "", "previousGeneration", "triggerRemoteRefresh", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$2", f = "PageFetcher.kt", i = {0, 1, 1}, l = {TsExtractor.TS_SYNC_BYTE, MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, m = "invokeSuspend", n = {"previousGeneration", "previousGeneration", "pagingSource"}, s = {"L$0", "L$0", "L$1"}, v = 1)
     /* renamed from: androidx.paging.PageFetcher$flow$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2<Key> extends SuspendLambda implements Function3<PageFetcher.GenerationInfo<Key, Value>, Boolean, Continuation<? super PageFetcher.GenerationInfo<Key, Value>>, Object> {
@@ -241,10 +242,10 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
                     remoteMediatorAccessor.allowRefresh();
                 }
                 PageFetcher<Key, Value> pageFetcher = this.this$0;
-                PagingSource<Key, Value> pagingSource$paging_common_release = (generationInfo2 == null || (snapshot = generationInfo2.getSnapshot()) == null) ? null : snapshot.getPagingSource$paging_common_release();
+                PagingSource<Key, Value> pagingSource$paging_common = (generationInfo2 == null || (snapshot = generationInfo2.getSnapshot()) == null) ? null : snapshot.getPagingSource$paging_common();
                 this.L$0 = generationInfo2;
                 this.label = 1;
-                generateNewPagingSource = pageFetcher.generateNewPagingSource(pagingSource$paging_common_release, this);
+                generateNewPagingSource = pageFetcher.generateNewPagingSource(pagingSource$paging_common, this);
                 if (generateNewPagingSource != coroutine_suspended) {
                     generationInfo = generationInfo2;
                     obj = generateNewPagingSource;
@@ -354,10 +355,10 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: PageFetcher.kt */
-        @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* renamed from: androidx.paging.PageFetcher$flow$1$2$1  reason: invalid class name */
         /* loaded from: classes3.dex */
-        public /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function0<Unit> {
+        public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function0<Unit> {
             AnonymousClass1(Object obj) {
                 super(0, obj, PageFetcher.class, "refresh", "refresh()V", 0);
             }
@@ -377,10 +378,10 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcher.kt */
-    @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.paging.PageFetcher$flow$1$4  reason: invalid class name */
     /* loaded from: classes3.dex */
-    public /* synthetic */ class AnonymousClass4 implements FlowCollector, FunctionAdapter {
+    public static final /* synthetic */ class AnonymousClass4 implements FlowCollector, FunctionAdapter {
         final /* synthetic */ SimpleProducerScope<PagingData<Value>> $tmp0;
 
         AnonymousClass4(SimpleProducerScope<PagingData<Value>> simpleProducerScope) {

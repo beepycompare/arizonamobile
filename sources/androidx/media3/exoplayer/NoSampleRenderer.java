@@ -8,7 +8,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.SampleStream;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public abstract class NoSampleRenderer implements Renderer, RendererCapabilities {
     private RendererConfiguration configuration;
     private int index;

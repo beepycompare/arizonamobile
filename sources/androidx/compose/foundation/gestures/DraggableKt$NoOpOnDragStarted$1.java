@@ -24,11 +24,11 @@ final class DraggableKt$NoOpOnDragStarted$1 extends SuspendLambda implements Fun
 
     @Override // kotlin.jvm.functions.Function3
     public /* bridge */ /* synthetic */ Object invoke(CoroutineScope coroutineScope, Offset offset, Continuation<? super Unit> continuation) {
-        return m569invoked4ec7I(coroutineScope, offset.m5189unboximpl(), continuation);
+        return m489invoked4ec7I(coroutineScope, offset.m4537unboximpl(), continuation);
     }
 
     /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-    public final Object m569invoked4ec7I(CoroutineScope coroutineScope, long j, Continuation<? super Unit> continuation) {
+    public final Object m489invoked4ec7I(CoroutineScope coroutineScope, long j, Continuation<? super Unit> continuation) {
         return new DraggableKt$NoOpOnDragStarted$1(continuation).invokeSuspend(Unit.INSTANCE);
     }
 

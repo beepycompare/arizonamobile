@@ -28,23 +28,30 @@ public final class DefaultIntrinsicMeasurable implements Measurable {
 
     @Override // androidx.compose.ui.layout.Measurable
     /* renamed from: measure-BRTryo0  reason: not valid java name */
-    public Placeable mo6875measureBRTryo0(long j) {
+    public Placeable mo6216measureBRTryo0(long j) {
         int minIntrinsicHeight;
         int minIntrinsicWidth;
-        if (this.widthHeight == IntrinsicWidthHeight.Width) {
-            if (this.minMax == IntrinsicMinMax.Max) {
-                minIntrinsicWidth = this.measurable.maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j));
+        IntrinsicWidthHeight intrinsicWidthHeight = this.widthHeight;
+        IntrinsicWidthHeight intrinsicWidthHeight2 = IntrinsicWidthHeight.Width;
+        IntrinsicMinMax intrinsicMinMax = this.minMax;
+        if (intrinsicWidthHeight == intrinsicWidthHeight2) {
+            IntrinsicMinMax intrinsicMinMax2 = IntrinsicMinMax.Max;
+            IntrinsicMeasurable intrinsicMeasurable = this.measurable;
+            if (intrinsicMinMax == intrinsicMinMax2) {
+                minIntrinsicWidth = intrinsicMeasurable.maxIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j));
             } else {
-                minIntrinsicWidth = this.measurable.minIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j));
+                minIntrinsicWidth = intrinsicMeasurable.minIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j));
             }
-            return new FixedSizeIntrinsicsPlaceable(minIntrinsicWidth, Constraints.m8206getHasBoundedHeightimpl(j) ? Constraints.m8210getMaxHeightimpl(j) : 32767);
+            return new FixedSizeIntrinsicsPlaceable(minIntrinsicWidth, Constraints.m7503getHasBoundedHeightimpl(j) ? Constraints.m7507getMaxHeightimpl(j) : 32767);
         }
-        if (this.minMax == IntrinsicMinMax.Max) {
-            minIntrinsicHeight = this.measurable.maxIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j));
+        IntrinsicMinMax intrinsicMinMax3 = IntrinsicMinMax.Max;
+        IntrinsicMeasurable intrinsicMeasurable2 = this.measurable;
+        if (intrinsicMinMax == intrinsicMinMax3) {
+            minIntrinsicHeight = intrinsicMeasurable2.maxIntrinsicHeight(Constraints.m7508getMaxWidthimpl(j));
         } else {
-            minIntrinsicHeight = this.measurable.minIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j));
+            minIntrinsicHeight = intrinsicMeasurable2.minIntrinsicHeight(Constraints.m7508getMaxWidthimpl(j));
         }
-        return new FixedSizeIntrinsicsPlaceable(Constraints.m8207getHasBoundedWidthimpl(j) ? Constraints.m8211getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
+        return new FixedSizeIntrinsicsPlaceable(Constraints.m7504getHasBoundedWidthimpl(j) ? Constraints.m7508getMaxWidthimpl(j) : 32767, minIntrinsicHeight);
     }
 
     @Override // androidx.compose.ui.layout.IntrinsicMeasurable

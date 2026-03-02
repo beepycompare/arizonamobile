@@ -79,14 +79,12 @@ public abstract class AbstractPersistentList<E> extends AbstractList<E> implemen
         return elements.isEmpty() ? UtilsKt.persistentVectorOf() : removeAll((Function1) new Function1() { // from class: kotlinx.collections.immutable.implementations.immutableList.AbstractPersistentList$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean retainAll$lambda$3;
-                retainAll$lambda$3 = AbstractPersistentList.retainAll$lambda$3(elements, obj);
-                return Boolean.valueOf(retainAll$lambda$3);
+                return Boolean.valueOf(AbstractPersistentList.retainAll$lambda$3(elements, obj));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainAll$lambda$3(Collection collection, Object obj) {
         return !collection.contains(obj);
     }

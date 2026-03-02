@@ -32,9 +32,10 @@ public final class zzmo implements Runnable {
             zznlVar.zzu.zzaV().zzb().zza("Failed to send default event parameters to service");
             return;
         }
-        if (!zznlVar.zzu.zzc().zzp(null, zzfy.zzbb)) {
+        boolean zzp = zznlVar.zzu.zzc().zzp(null, zzfy.zzbb);
+        zzr zzrVar = this.zza;
+        if (!zzp) {
             try {
-                zzr zzrVar = this.zza;
                 Preconditions.checkNotNull(zzrVar);
                 zzZ.zzu(this.zzd, zzrVar);
                 zznlVar.zzV();
@@ -44,8 +45,7 @@ public final class zzmo implements Runnable {
                 return;
             }
         }
-        zzr zzrVar2 = this.zza;
-        Preconditions.checkNotNull(zzrVar2);
-        this.zze.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar2);
+        Preconditions.checkNotNull(zzrVar);
+        this.zze.zzm(zzZ, this.zzb ? null : this.zzc, zzrVar);
     }
 }

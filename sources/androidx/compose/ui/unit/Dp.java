@@ -10,57 +10,57 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes2.dex */
 public final class Dp implements Comparable<Dp> {
     public static final Companion Companion = new Companion(null);
-    private static final float Hairline = m8258constructorimpl(0.0f);
-    private static final float Infinity = m8258constructorimpl(Float.POSITIVE_INFINITY);
-    private static final float Unspecified = m8258constructorimpl(Float.NaN);
+    private static final float Hairline = m7555constructorimpl(0.0f);
+    private static final float Infinity = m7555constructorimpl(Float.POSITIVE_INFINITY);
+    private static final float Unspecified = m7555constructorimpl(Float.NaN);
     private final float value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Dp m8256boximpl(float f) {
+    public static final /* synthetic */ Dp m7553boximpl(float f) {
         return new Dp(f);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static float m8258constructorimpl(float f) {
+    public static float m7555constructorimpl(float f) {
         return f;
     }
 
     /* renamed from: div-0680j_4  reason: not valid java name */
-    public static final float m8259div0680j_4(float f, float f2) {
+    public static final float m7556div0680j_4(float f, float f2) {
         return f / f2;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8262equalsimpl(float f, Object obj) {
-        return (obj instanceof Dp) && Float.compare(f, ((Dp) obj).m8272unboximpl()) == 0;
+    public static boolean m7559equalsimpl(float f, Object obj) {
+        return (obj instanceof Dp) && Float.compare(f, ((Dp) obj).m7569unboximpl()) == 0;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8263equalsimpl0(float f, float f2) {
+    public static final boolean m7560equalsimpl0(float f, float f2) {
         return Float.compare(f, f2) == 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8264hashCodeimpl(float f) {
+    public static int m7561hashCodeimpl(float f) {
         return Float.hashCode(f);
     }
 
     public boolean equals(Object obj) {
-        return m8262equalsimpl(this.value, obj);
+        return m7559equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m8264hashCodeimpl(this.value);
+        return m7561hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ float m8272unboximpl() {
+    public final /* synthetic */ float m7569unboximpl() {
         return this.value;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(Dp dp) {
-        return m8271compareTo0680j_4(dp.m8272unboximpl());
+        return m7568compareTo0680j_4(dp.m7569unboximpl());
     }
 
     private /* synthetic */ Dp(float f) {
@@ -72,47 +72,47 @@ public final class Dp implements Comparable<Dp> {
     }
 
     /* renamed from: plus-5rwHm24  reason: not valid java name */
-    public static final float m8266plus5rwHm24(float f, float f2) {
-        return m8258constructorimpl(f + f2);
+    public static final float m7563plus5rwHm24(float f, float f2) {
+        return m7555constructorimpl(f + f2);
     }
 
     /* renamed from: minus-5rwHm24  reason: not valid java name */
-    public static final float m8265minus5rwHm24(float f, float f2) {
-        return m8258constructorimpl(f - f2);
+    public static final float m7562minus5rwHm24(float f, float f2) {
+        return m7555constructorimpl(f - f2);
     }
 
     /* renamed from: unaryMinus-D9Ej5fM  reason: not valid java name */
-    public static final float m8270unaryMinusD9Ej5fM(float f) {
-        return m8258constructorimpl(-f);
+    public static final float m7567unaryMinusD9Ej5fM(float f) {
+        return m7555constructorimpl(-f);
     }
 
     /* renamed from: div-u2uoSUM  reason: not valid java name */
-    public static final float m8260divu2uoSUM(float f, float f2) {
-        return m8258constructorimpl(f / f2);
+    public static final float m7557divu2uoSUM(float f, float f2) {
+        return m7555constructorimpl(f / f2);
     }
 
     /* renamed from: div-u2uoSUM  reason: not valid java name */
-    public static final float m8261divu2uoSUM(float f, int i) {
-        return m8258constructorimpl(f / i);
+    public static final float m7558divu2uoSUM(float f, int i) {
+        return m7555constructorimpl(f / i);
     }
 
     /* renamed from: times-u2uoSUM  reason: not valid java name */
-    public static final float m8267timesu2uoSUM(float f, float f2) {
-        return m8258constructorimpl(f * f2);
+    public static final float m7564timesu2uoSUM(float f, float f2) {
+        return m7555constructorimpl(f * f2);
     }
 
     /* renamed from: times-u2uoSUM  reason: not valid java name */
-    public static final float m8268timesu2uoSUM(float f, int i) {
-        return m8258constructorimpl(f * i);
+    public static final float m7565timesu2uoSUM(float f, int i) {
+        return m7555constructorimpl(f * i);
     }
 
     /* renamed from: compareTo-0680j_4  reason: not valid java name */
-    public int m8271compareTo0680j_4(float f) {
-        return m8257compareTo0680j_4(this.value, f);
+    public int m7568compareTo0680j_4(float f) {
+        return m7554compareTo0680j_4(this.value, f);
     }
 
     /* renamed from: compareTo-0680j_4  reason: not valid java name */
-    public static int m8257compareTo0680j_4(float f, float f2) {
+    public static int m7554compareTo0680j_4(float f, float f2) {
         if (ComposeUiUnitFlags.isDpCompareToChanged) {
             if (Float.isNaN(f) || Float.isNaN(f2)) {
                 return 0;
@@ -123,7 +123,7 @@ public final class Dp implements Comparable<Dp> {
     }
 
     public String toString() {
-        return m8269toStringimpl(this.value);
+        return m7566toStringimpl(this.value);
     }
 
     /* compiled from: Dp.kt */
@@ -135,38 +135,38 @@ public final class Dp implements Comparable<Dp> {
         }
 
         /* renamed from: getHairline-D9Ej5fM$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8273getHairlineD9Ej5fM$annotations() {
+        public static /* synthetic */ void m7570getHairlineD9Ej5fM$annotations() {
         }
 
         /* renamed from: getInfinity-D9Ej5fM$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8274getInfinityD9Ej5fM$annotations() {
+        public static /* synthetic */ void m7571getInfinityD9Ej5fM$annotations() {
         }
 
         /* renamed from: getUnspecified-D9Ej5fM$annotations  reason: not valid java name */
-        public static /* synthetic */ void m8275getUnspecifiedD9Ej5fM$annotations() {
+        public static /* synthetic */ void m7572getUnspecifiedD9Ej5fM$annotations() {
         }
 
         private Companion() {
         }
 
         /* renamed from: getHairline-D9Ej5fM  reason: not valid java name */
-        public final float m8276getHairlineD9Ej5fM() {
+        public final float m7573getHairlineD9Ej5fM() {
             return Dp.Hairline;
         }
 
         /* renamed from: getInfinity-D9Ej5fM  reason: not valid java name */
-        public final float m8277getInfinityD9Ej5fM() {
+        public final float m7574getInfinityD9Ej5fM() {
             return Dp.Infinity;
         }
 
         /* renamed from: getUnspecified-D9Ej5fM  reason: not valid java name */
-        public final float m8278getUnspecifiedD9Ej5fM() {
+        public final float m7575getUnspecifiedD9Ej5fM() {
             return Dp.Unspecified;
         }
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8269toStringimpl(float f) {
+    public static String m7566toStringimpl(float f) {
         return Float.isNaN(f) ? "Dp.Unspecified" : f + ".dp";
     }
 }

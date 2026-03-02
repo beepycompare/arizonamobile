@@ -203,10 +203,12 @@ public abstract class RoundedBitmapDrawable extends Drawable {
             return;
         }
         this.mIsCircular = false;
-        if (isGreaterThanZero(f)) {
-            this.mPaint.setShader(this.mBitmapShader);
+        boolean isGreaterThanZero = isGreaterThanZero(f);
+        Paint paint = this.mPaint;
+        if (isGreaterThanZero) {
+            paint.setShader(this.mBitmapShader);
         } else {
-            this.mPaint.setShader(null);
+            paint.setShader(null);
         }
         this.mCornerRadius = f;
         invalidateSelf();

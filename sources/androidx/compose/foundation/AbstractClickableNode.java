@@ -100,14 +100,14 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
     }
 
     /* renamed from: onClickKeyDownEvent-ZmokQxo  reason: not valid java name */
-    protected abstract boolean mo263onClickKeyDownEventZmokQxo(KeyEvent keyEvent);
+    protected abstract boolean mo230onClickKeyDownEventZmokQxo(KeyEvent keyEvent);
 
     /* renamed from: onClickKeyUpEvent-ZmokQxo  reason: not valid java name */
-    protected abstract boolean mo264onClickKeyUpEventZmokQxo(KeyEvent keyEvent);
+    protected abstract boolean mo231onClickKeyUpEventZmokQxo(KeyEvent keyEvent);
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo  reason: not valid java name */
-    public final boolean mo267onPreKeyEventZmokQxo(KeyEvent keyEvent) {
+    public final boolean mo234onPreKeyEventZmokQxo(KeyEvent keyEvent) {
         return false;
     }
 
@@ -119,9 +119,9 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         this.role = role;
         this.enabled = z2;
         this.onClick = function0;
-        this.focusableNode = new FocusableNode(this.interactionSource, Focusability.Companion.m5115getSystemDefinedLCbbffg(), new AbstractClickableNode$focusableNode$1(this), null);
+        this.focusableNode = new FocusableNode(this.interactionSource, Focusability.Companion.m4463getSystemDefinedLCbbffg(), new AbstractClickableNode$focusableNode$1(this), null);
         this.currentKeyPressInteractions = LongObjectMapKt.mutableLongObjectMapOf();
-        this.centerOffset = Offset.Companion.m5195getZeroF1C5BW0();
+        this.centerOffset = Offset.Companion.m4543getZeroF1C5BW0();
         this.userProvidedInteractionSource = this.interactionSource;
         this.lazilyCreateIndication = shouldLazilyCreateIndication();
         this.traverseKey = TraverseKey;
@@ -147,14 +147,14 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x007e, code lost:
-        if (r2.indicationNode == null) goto L31;
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x007c, code lost:
+        if (r2.indicationNode == null) goto L32;
      */
     /* renamed from: updateCommon-O2vRcR0  reason: not valid java name */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m268updateCommonO2vRcR0(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
+    public final void m235updateCommonO2vRcR0(MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str, Role role, Function0<Unit> function0) {
         boolean z3;
         boolean z4 = true;
         if (Intrinsics.areEqual(this.userProvidedInteractionSource, mutableInteractionSource)) {
@@ -177,10 +177,11 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
             z3 = true;
         }
         if (this.enabled != z2) {
+            FocusableNode focusableNode = this.focusableNode;
             if (z2) {
-                delegate(this.focusableNode);
+                delegate(focusableNode);
             } else {
-                undelegate(this.focusableNode);
+                undelegate(focusableNode);
                 disposeInteractions();
             }
             SemanticsModifierNodeKt.invalidateSemantics(this);
@@ -247,15 +248,13 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
             ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.AbstractClickableNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onObservedReadsChanged$lambda$0;
-                    onObservedReadsChanged$lambda$0 = AbstractClickableNode.onObservedReadsChanged$lambda$0(AbstractClickableNode.this);
-                    return onObservedReadsChanged$lambda$0;
+                    return AbstractClickableNode.onObservedReadsChanged$lambda$0(AbstractClickableNode.this);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onObservedReadsChanged$lambda$0(AbstractClickableNode abstractClickableNode) {
         Indication indication = (Indication) CompositionLocalConsumerModifierNodeKt.currentValueOf(abstractClickableNode, IndicationKt.getLocalIndication());
         if (!(indication instanceof IndicationNodeFactory)) {
@@ -408,16 +407,16 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY  reason: not valid java name */
-    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         SuspendingPointerInputModifierNode createPointerInputNodeIfNeeded;
-        long m8435getCenterozmzZPI = IntSizeKt.m8435getCenterozmzZPI(j);
-        this.centerOffset = Offset.m5171constructorimpl((Float.floatToRawIntBits(IntOffset.m8386getXimpl(m8435getCenterozmzZPI)) << 32) | (Float.floatToRawIntBits(IntOffset.m8387getYimpl(m8435getCenterozmzZPI)) & 4294967295L));
+        long m7732getCenterozmzZPI = IntSizeKt.m7732getCenterozmzZPI(j);
+        this.centerOffset = Offset.m4519constructorimpl((Float.floatToRawIntBits(IntOffset.m7683getXimpl(m7732getCenterozmzZPI)) << 32) | (Float.floatToRawIntBits(IntOffset.m7684getYimpl(m7732getCenterozmzZPI)) & 4294967295L));
         initializeIndicationAndInteractionSourceIfNeeded();
         if (this.enabled && pointerEventPass == PointerEventPass.Main) {
-            int m6686getType7fucELk = pointerEvent.m6686getType7fucELk();
-            if (PointerEventType.m6693equalsimpl0(m6686getType7fucELk, PointerEventType.Companion.m6697getEnter7fucELk())) {
+            int m6027getType7fucELk = pointerEvent.m6027getType7fucELk();
+            if (PointerEventType.m6034equalsimpl0(m6027getType7fucELk, PointerEventType.Companion.m6038getEnter7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onPointerEvent$1(this, null), 3, null);
-            } else if (PointerEventType.m6693equalsimpl0(m6686getType7fucELk, PointerEventType.Companion.m6698getExit7fucELk())) {
+            } else if (PointerEventType.m6034equalsimpl0(m6027getType7fucELk, PointerEventType.Companion.m6039getExit7fucELk())) {
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onPointerEvent$2(this, null), 3, null);
             }
         }
@@ -426,7 +425,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         }
         SuspendingPointerInputModifierNode suspendingPointerInputModifierNode = this.pointerInputNode;
         if (suspendingPointerInputModifierNode != null) {
-            suspendingPointerInputModifierNode.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+            suspendingPointerInputModifierNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
         }
     }
 
@@ -446,30 +445,30 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo  reason: not valid java name */
-    public final boolean mo265onKeyEventZmokQxo(KeyEvent keyEvent) {
+    public final boolean mo232onKeyEventZmokQxo(KeyEvent keyEvent) {
         boolean z;
         initializeIndicationAndInteractionSourceIfNeeded();
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-        if (this.enabled && ClickableKt.m336access$isPressZmokQxo(keyEvent)) {
-            if (this.currentKeyPressInteractions.containsKey(m6587getKeyZmokQxo)) {
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+        if (this.enabled && ClickableKt.m293access$isPressZmokQxo(keyEvent)) {
+            if (this.currentKeyPressInteractions.containsKey(m5928getKeyZmokQxo)) {
                 z = false;
             } else {
                 PressInteraction.Press press = new PressInteraction.Press(this.centerOffset, null);
-                this.currentKeyPressInteractions.set(m6587getKeyZmokQxo, press);
+                this.currentKeyPressInteractions.set(m5928getKeyZmokQxo, press);
                 if (this.interactionSource != null) {
                     BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onKeyEvent$1(this, press, null), 3, null);
                 }
                 z = true;
             }
-            return mo263onClickKeyDownEventZmokQxo(keyEvent) || z;
+            return mo230onClickKeyDownEventZmokQxo(keyEvent) || z;
         }
-        if (this.enabled && ClickableKt.m335access$isClickZmokQxo(keyEvent)) {
-            PressInteraction.Press remove = this.currentKeyPressInteractions.remove(m6587getKeyZmokQxo);
+        if (this.enabled && ClickableKt.m292access$isClickZmokQxo(keyEvent)) {
+            PressInteraction.Press remove = this.currentKeyPressInteractions.remove(m5928getKeyZmokQxo);
             if (remove != null) {
                 if (this.interactionSource != null) {
                     BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new AbstractClickableNode$onKeyEvent$2(this, remove, null), 3, null);
                 }
-                mo264onClickKeyUpEventZmokQxo(keyEvent);
+                mo231onClickKeyUpEventZmokQxo(keyEvent);
             }
             if (remove != null) {
                 return true;
@@ -483,14 +482,12 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         Role role = this.role;
         if (role != null) {
             Intrinsics.checkNotNull(role);
-            SemanticsPropertiesKt.m7461setRolekuIjeqM(semanticsPropertyReceiver, role.m7441unboximpl());
+            SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, role.m6773unboximpl());
         }
         SemanticsPropertiesKt.onClick(semanticsPropertyReceiver, this.onClickLabel, new Function0() { // from class: androidx.compose.foundation.AbstractClickableNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$0;
-                applySemantics$lambda$0 = AbstractClickableNode.applySemantics$lambda$0(AbstractClickableNode.this);
-                return Boolean.valueOf(applySemantics$lambda$0);
+                return Boolean.valueOf(AbstractClickableNode.applySemantics$lambda$0(AbstractClickableNode.this));
             }
         });
         if (this.enabled) {
@@ -501,7 +498,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
         applyAdditionalSemantics(semanticsPropertyReceiver);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$0(AbstractClickableNode abstractClickableNode) {
         abstractClickableNode.onClick.invoke();
         return true;
@@ -519,7 +516,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: handlePressInteractionStart-3MmeM6k  reason: not valid java name */
-    public final void m262handlePressInteractionStart3MmeM6k(long j, boolean z) {
+    public final void m229handlePressInteractionStart3MmeM6k(long j, boolean z) {
         Job launch$default;
         MutableInteractionSource mutableInteractionSource = this.interactionSource;
         if (mutableInteractionSource != null) {
@@ -540,7 +537,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: handlePressInteractionRelease-3MmeM6k  reason: not valid java name */
-    public final void m261handlePressInteractionRelease3MmeM6k(long j, boolean z) {
+    public final void m228handlePressInteractionRelease3MmeM6k(long j, boolean z) {
         MutableInteractionSource mutableInteractionSource = this.interactionSource;
         if (mutableInteractionSource != null) {
             Job job = this.delayJob;
@@ -602,7 +599,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: handlePressInteraction-d-4ec7I  reason: not valid java name */
-    public final Object m260handlePressInteractiond4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+    public final Object m227handlePressInteractiond4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
         Object coroutineScope;
         MutableInteractionSource mutableInteractionSource = this.interactionSource;
         return (mutableInteractionSource == null || (coroutineScope = CoroutineScopeKt.coroutineScope(new AbstractClickableNode$handlePressInteraction$2$1(pressGestureScope, j, mutableInteractionSource, this, null), continuation)) != IntrinsicsKt.getCOROUTINE_SUSPENDED()) ? Unit.INSTANCE : coroutineScope;
@@ -670,7 +667,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
                         if (ClickableKt.access$changedToDownIgnoreConsumed(changes.get(i2))) {
                             IndirectPointerInputChange indirectPointerInputChange2 = indirectPointerEvent.getChanges().get(0);
                             this.downEvent = indirectPointerInputChange2;
-                            this.node.m262handlePressInteractionStart3MmeM6k(indirectPointerInputChange2.m6272getPositionF1C5BW0(), true);
+                            this.node.m229handlePressInteractionStart3MmeM6k(indirectPointerInputChange2.m5613getPositionF1C5BW0(), true);
                             indirectPointerInputChange2.consume();
                             return;
                         }
@@ -681,7 +678,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
                 int size2 = changes2.size();
                 for (int i3 = 0; i3 < size2; i3++) {
                     if (ClickableKt.access$isMovingIgnoreConsumed(changes2.get(i3))) {
-                        if (Math.abs(Offset.m5177getDistanceimpl(Offset.m5183minusMKHz9U(indirectPointerEvent.getChanges().get(0).m6272getPositionF1C5BW0(), indirectPointerInputChange.m6272getPositionF1C5BW0()))) > ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.node, CompositionLocalsKt.getLocalViewConfiguration())).getTouchSlop()) {
+                        if (Math.abs(Offset.m4525getDistanceimpl(Offset.m4531minusMKHz9U(indirectPointerEvent.getChanges().get(0).m5613getPositionF1C5BW0(), indirectPointerInputChange.m5613getPositionF1C5BW0()))) > ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this.node, CompositionLocalsKt.getLocalViewConfiguration())).getTouchSlop()) {
                             resetDetector();
                             return;
                         }
@@ -705,7 +702,7 @@ public abstract class AbstractClickableNode extends DelegatingNode implements Po
                     }
                 }
                 indirectPointerEvent.getChanges().get(0).consume();
-                this.node.m261handlePressInteractionRelease3MmeM6k(indirectPointerInputChange.m6272getPositionF1C5BW0(), true);
+                this.node.m228handlePressInteractionRelease3MmeM6k(indirectPointerInputChange.m5613getPositionF1C5BW0(), true);
                 function0.invoke();
                 this.downEvent = null;
             } else if (pointerEventPass == PointerEventPass.Final && this.downEvent != null) {

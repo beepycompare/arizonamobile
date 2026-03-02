@@ -21,11 +21,13 @@ final class PreFillQueue {
     public PreFillType remove() {
         PreFillType preFillType = this.keyList.get(this.keyIndex);
         Integer num = this.bitmapsPerType.get(preFillType);
-        if (num.intValue() == 1) {
-            this.bitmapsPerType.remove(preFillType);
+        int intValue = num.intValue();
+        Map<PreFillType, Integer> map = this.bitmapsPerType;
+        if (intValue == 1) {
+            map.remove(preFillType);
             this.keyList.remove(this.keyIndex);
         } else {
-            this.bitmapsPerType.put(preFillType, Integer.valueOf(num.intValue() - 1));
+            map.put(preFillType, Integer.valueOf(num.intValue() - 1));
         }
         this.bitmapsRemaining--;
         this.keyIndex = this.keyList.isEmpty() ? 0 : (this.keyIndex + 1) % this.keyList.size();

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 import androidx.compose.ui.spatial.RectListKt;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,8 +22,8 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SubInventoryViewHolder.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {RectListKt.BitOffsetForGesturable}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {RectListKt.BitOffsetForGesturable}, m = "invokeSuspend", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
@@ -67,12 +68,13 @@ public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda impleme
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        ItemSubInventoryBinding itemSubInventoryBinding2 = this.$this_with;
         if (bitmap != null) {
-            ImageView ivItemImage = this.$this_with.ivItemImage;
+            ImageView ivItemImage = itemSubInventoryBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             UtilsKt.setImage(ivItemImage, bitmap);
         } else {
-            ImageView ivItemImage2 = this.$this_with.ivItemImage;
+            ImageView ivItemImage2 = itemSubInventoryBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
             itemSubInventoryBinding = this.this$0.binding;
             Context context = itemSubInventoryBinding.getRoot().getContext();

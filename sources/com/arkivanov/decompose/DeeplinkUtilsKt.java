@@ -38,9 +38,7 @@ public final class DeeplinkUtilsKt {
             a3.getSavedStateRegistry().registerSavedStateProvider(KEY_SAVED_DEEP_LINK_STATE, new SavedStateRegistry.SavedStateProvider() { // from class: com.arkivanov.decompose.DeeplinkUtilsKt$$ExternalSyntheticLambda0
                 @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
                 public final Bundle saveState() {
-                    Bundle handleDeepLink$lambda$1;
-                    handleDeepLink$lambda$1 = DeeplinkUtilsKt.handleDeepLink$lambda$1(z, data);
-                    return handleDeepLink$lambda$1;
+                    return DeeplinkUtilsKt.handleDeepLink$lambda$1(z, data);
                 }
             });
             return block.invoke(data);
@@ -48,7 +46,7 @@ public final class DeeplinkUtilsKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle handleDeepLink$lambda$1(boolean z, Uri uri) {
         boolean z2 = true;
         Pair[] pairArr = new Pair[1];

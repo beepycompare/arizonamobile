@@ -67,7 +67,7 @@ public final class LazyGridSpanLayoutProvider {
         }
         ArrayList arrayList = new ArrayList(i);
         for (int i2 = 0; i2 < i; i2++) {
-            arrayList.add(GridItemSpan.m1063boximpl(LazyGridSpanKt.GridItemSpan(1)));
+            arrayList.add(GridItemSpan.m938boximpl(LazyGridSpanKt.GridItemSpan(1)));
         }
         ArrayList arrayList2 = arrayList;
         this.previousDefaultSpans = arrayList2;
@@ -191,7 +191,7 @@ public final class LazyGridSpanLayoutProvider {
                         break;
                     }
                     i10++;
-                    arrayList.add(GridItemSpan.m1063boximpl(LazyGridSpanKt.GridItemSpan(firstItemKnownSpan)));
+                    arrayList.add(GridItemSpan.m938boximpl(LazyGridSpanKt.GridItemSpan(firstItemKnownSpan)));
                     firstItemKnownSpan = i4;
                 }
                 return new LineConfiguration(firstItemIndex, arrayList);
@@ -237,6 +237,7 @@ public final class LazyGridSpanLayoutProvider {
     }
 
     public final int getLineIndexOfItem(final int i) {
+        int i2;
         if (getTotalSize() <= 0) {
             return 0;
         }
@@ -249,9 +250,7 @@ public final class LazyGridSpanLayoutProvider {
         int binarySearch$default = CollectionsKt.binarySearch$default(this.buckets, 0, 0, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridSpanLayoutProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                int lineIndexOfItem$lambda$1;
-                lineIndexOfItem$lambda$1 = LazyGridSpanLayoutProvider.getLineIndexOfItem$lambda$1(i, (LazyGridSpanLayoutProvider.Bucket) obj);
-                return Integer.valueOf(lineIndexOfItem$lambda$1);
+                return Integer.valueOf(LazyGridSpanLayoutProvider.getLineIndexOfItem$lambda$1(i, (LazyGridSpanLayoutProvider.Bucket) obj));
             }
         }, 3, (Object) null);
         if (binarySearch$default < 0) {
@@ -262,30 +261,34 @@ public final class LazyGridSpanLayoutProvider {
         if (!(firstItemIndex <= i)) {
             InlineClassHelperKt.throwIllegalArgumentException("currentItemIndex > itemIndex");
         }
-        int i2 = 0;
-        while (firstItemIndex < i) {
-            int i3 = firstItemIndex + 1;
-            int spanOf = spanOf(firstItemIndex, this.slotsPerLine - i2);
-            i2 += spanOf;
-            int i4 = this.slotsPerLine;
-            if (i2 >= i4) {
-                if (i2 == i4) {
+        int i3 = 0;
+        while (true) {
+            i2 = this.slotsPerLine;
+            if (firstItemIndex >= i) {
+                break;
+            }
+            int i4 = firstItemIndex + 1;
+            int spanOf = spanOf(firstItemIndex, i2 - i3);
+            i3 += spanOf;
+            int i5 = this.slotsPerLine;
+            if (i3 >= i5) {
+                if (i3 == i5) {
                     bucketSize++;
-                    i2 = 0;
+                    i3 = 0;
                 } else {
                     bucketSize++;
-                    i2 = spanOf;
+                    i3 = spanOf;
                 }
             }
             if (bucketSize % getBucketSize() == 0 && bucketSize / getBucketSize() >= this.buckets.size()) {
-                this.buckets.add(new Bucket(i3 - (i2 > 0 ? 1 : 0), 0, 2, null));
+                this.buckets.add(new Bucket(i4 - (i3 > 0 ? 1 : 0), 0, 2, null));
             }
-            firstItemIndex = i3;
+            firstItemIndex = i4;
         }
-        return i2 + spanOf(i, this.slotsPerLine - i2) > this.slotsPerLine ? bucketSize + 1 : bucketSize;
+        return i3 + spanOf(i, i2 - i3) > this.slotsPerLine ? bucketSize + 1 : bucketSize;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int getLineIndexOfItem$lambda$1(int i, Bucket bucket) {
         return bucket.getFirstItemIndex() - i;
     }
@@ -295,7 +298,7 @@ public final class LazyGridSpanLayoutProvider {
         lazyGridItemSpanScopeImpl.setMaxCurrentLineSpan(i2);
         lazyGridItemSpanScopeImpl.setMaxLineSpan(this.slotsPerLine);
         IntervalList.Interval<LazyGridInterval> interval = this.gridContent.getIntervals().get(i);
-        return GridItemSpan.m1067getCurrentLineSpanimpl(interval.getValue().getSpan().invoke(lazyGridItemSpanScopeImpl, Integer.valueOf(i - interval.getStartIndex())).m1070unboximpl());
+        return GridItemSpan.m942getCurrentLineSpanimpl(interval.getValue().getSpan().invoke(lazyGridItemSpanScopeImpl, Integer.valueOf(i - interval.getStartIndex())).m945unboximpl());
     }
 
     private final void invalidateCache() {

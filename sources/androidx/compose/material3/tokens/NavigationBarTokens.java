@@ -10,18 +10,18 @@ public final class NavigationBarTokens {
     public static final int $stable = 0;
     public static final NavigationBarTokens INSTANCE = new NavigationBarTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainer;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3977getLevel2D9Ej5fM();
-    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 64.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 64.0d);
     private static final ColorSchemeKeyTokens ItemActiveIconColor = ColorSchemeKeyTokens.OnSecondaryContainer;
     private static final ColorSchemeKeyTokens ItemActiveIndicatorColor = ColorSchemeKeyTokens.SecondaryContainer;
-    private static final float ItemActiveIndicatorIconLabelSpace = Dp.m8258constructorimpl((float) 4.0d);
+    private static final float ItemActiveIndicatorIconLabelSpace = Dp.m7555constructorimpl((float) 4.0d);
     private static final ShapeKeyTokens ItemActiveIndicatorShape = ShapeKeyTokens.CornerFull;
     private static final ColorSchemeKeyTokens ItemActiveLabelTextColor = ColorSchemeKeyTokens.Secondary;
-    private static final float ItemBetweenSpace = Dp.m8258constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+    private static final float ItemBetweenSpace = Dp.m7555constructorimpl((float) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
     private static final ColorSchemeKeyTokens ItemInactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens ItemInactiveLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ShapeKeyTokens NavShape = ShapeKeyTokens.CornerNone;
-    private static final float TallContainerHeight = Dp.m8258constructorimpl((float) 80.0d);
+    private static final float TallContainerHeight = Dp.m7555constructorimpl((float) 80.0d);
     private static final TypographyKeyTokens LabelTextFont = TypographyKeyTokens.LabelMedium;
 
     private NavigationBarTokens() {
@@ -32,12 +32,12 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4153getContainerElevationD9Ej5fM() {
+    public final float m3537getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4154getContainerHeightD9Ej5fM() {
+    public final float m3538getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -50,7 +50,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getItemActiveIndicatorIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4155getItemActiveIndicatorIconLabelSpaceD9Ej5fM() {
+    public final float m3539getItemActiveIndicatorIconLabelSpaceD9Ej5fM() {
         return ItemActiveIndicatorIconLabelSpace;
     }
 
@@ -63,7 +63,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getItemBetweenSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4156getItemBetweenSpaceD9Ej5fM() {
+    public final float m3540getItemBetweenSpaceD9Ej5fM() {
         return ItemBetweenSpace;
     }
 
@@ -80,7 +80,7 @@ public final class NavigationBarTokens {
     }
 
     /* renamed from: getTallContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4157getTallContainerHeightD9Ej5fM() {
+    public final float m3541getTallContainerHeightD9Ej5fM() {
         return TallContainerHeight;
     }
 

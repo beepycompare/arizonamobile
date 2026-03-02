@@ -22,10 +22,10 @@ public final class ScrollableKt$semanticsScrollBy$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m654semanticsScrollByd4ec7I;
+        Object m571semanticsScrollByd4ec7I;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m654semanticsScrollByd4ec7I = ScrollableKt.m654semanticsScrollByd4ec7I(null, 0L, this);
-        return m654semanticsScrollByd4ec7I;
+        m571semanticsScrollByd4ec7I = ScrollableKt.m571semanticsScrollByd4ec7I(null, 0L, this);
+        return m571semanticsScrollByd4ec7I;
     }
 }

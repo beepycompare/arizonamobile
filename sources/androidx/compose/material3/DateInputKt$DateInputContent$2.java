@@ -49,21 +49,19 @@ final class DateInputKt$DateInputContent$2 implements Function2<Composer, Intege
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DateInputKt$DateInputContent$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateInputKt$DateInputContent$2.invoke$lambda$1$lambda$0(str2, str3, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DateInputKt$DateInputContent$2.invoke$lambda$1$lambda$0(str2, str3, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3255TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
+        TextKt.m2712TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(String str, String str2, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str + ", " + str2);
         return Unit.INSTANCE;

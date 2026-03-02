@@ -13,8 +13,8 @@ public final class uo implements to {
     }
 
     @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0381kh c0381kh) {
-        if (!((X4) c0381kh.l).B() && !TextUtils.isEmpty(n8.b)) {
+    public final byte[] a(N8 n8, C0380kh c0380kh) {
+        if (!((X4) c0380kh.l).B() && !TextUtils.isEmpty(n8.b)) {
             try {
                 JSONObject jSONObject = new JSONObject(n8.b);
                 jSONObject.remove("preloadInfo");
@@ -22,7 +22,7 @@ public final class uo implements to {
             } catch (Throwable unused) {
             }
         }
-        return this.f1263a.a(n8, c0381kh);
+        return this.f1263a.a(n8, c0380kh);
     }
 
     public uo(C8 c8) {

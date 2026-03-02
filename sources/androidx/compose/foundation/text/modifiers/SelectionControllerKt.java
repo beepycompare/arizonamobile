@@ -25,13 +25,13 @@ public final class SelectionControllerKt {
     /* JADX WARN: Type inference failed for: r1v0, types: [androidx.compose.foundation.text.modifiers.SelectionControllerKt$makeDefaultSelectionModifier$mouseSelectionObserver$1, java.lang.Object] */
     public static final Modifier makeDefaultSelectionModifier(final SelectionRegistrar selectionRegistrar, final long j, final Function0<? extends LayoutCoordinates> function0) {
         final ?? r0 = new TextDragObserver() { // from class: androidx.compose.foundation.text.modifiers.SelectionControllerKt$makeDefaultSelectionModifier$longPressDragObserver$1
-            private long lastPosition = Offset.Companion.m5195getZeroF1C5BW0();
-            private long dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+            private long lastPosition = Offset.Companion.m4543getZeroF1C5BW0();
+            private long dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
             private SelectionAdjustment selectionAdjustmentMode = SelectionAdjustment.Companion.getNone();
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDown-k-4lQ0M */
-            public void mo1427onDownk4lQ0M(long j2) {
+            public void mo1253onDownk4lQ0M(long j2) {
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
@@ -64,7 +64,7 @@ public final class SelectionControllerKt {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onStart-3MmeM6k */
-            public void mo1429onStart3MmeM6k(long j2, SelectionAdjustment selectionAdjustment) {
+            public void mo1255onStart3MmeM6k(long j2, SelectionAdjustment selectionAdjustment) {
                 this.selectionAdjustmentMode = selectionAdjustment;
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
@@ -72,28 +72,28 @@ public final class SelectionControllerKt {
                     if (!invoke.isAttached()) {
                         return;
                     }
-                    selectionRegistrar2.mo1902notifySelectionUpdateStartubNVwUQ(invoke, j2, this.selectionAdjustmentMode, true);
+                    selectionRegistrar2.mo1644notifySelectionUpdateStartubNVwUQ(invoke, j2, this.selectionAdjustmentMode, true);
                     this.lastPosition = j2;
                 }
                 if (SelectionRegistrarKt.hasSelection(selectionRegistrar, j)) {
-                    this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+                    this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
                 }
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDrag-k-4lQ0M */
-            public void mo1428onDragk4lQ0M(long j2) {
+            public void mo1254onDragk4lQ0M(long j2) {
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
                     SelectionRegistrar selectionRegistrar2 = selectionRegistrar;
                     long j3 = j;
                     if (invoke.isAttached() && SelectionRegistrarKt.hasSelection(selectionRegistrar2, j3)) {
-                        long m5184plusMKHz9U = Offset.m5184plusMKHz9U(this.dragTotalDistance, j2);
-                        this.dragTotalDistance = m5184plusMKHz9U;
-                        long m5184plusMKHz9U2 = Offset.m5184plusMKHz9U(this.lastPosition, m5184plusMKHz9U);
-                        if (selectionRegistrar2.mo1901notifySelectionUpdatenjBpvok(invoke, m5184plusMKHz9U2, this.lastPosition, false, this.selectionAdjustmentMode, true)) {
-                            this.lastPosition = m5184plusMKHz9U2;
-                            this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+                        long m4532plusMKHz9U = Offset.m4532plusMKHz9U(this.dragTotalDistance, j2);
+                        this.dragTotalDistance = m4532plusMKHz9U;
+                        long m4532plusMKHz9U2 = Offset.m4532plusMKHz9U(this.lastPosition, m4532plusMKHz9U);
+                        if (selectionRegistrar2.mo1643notifySelectionUpdatenjBpvok(invoke, m4532plusMKHz9U2, this.lastPosition, false, this.selectionAdjustmentMode, true)) {
+                            this.lastPosition = m4532plusMKHz9U2;
+                            this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
                         }
                     }
                 }
@@ -114,7 +114,7 @@ public final class SelectionControllerKt {
             }
         };
         final ?? r1 = new MouseSelectionObserver() { // from class: androidx.compose.foundation.text.modifiers.SelectionControllerKt$makeDefaultSelectionModifier$mouseSelectionObserver$1
-            private long lastPosition = Offset.Companion.m5195getZeroF1C5BW0();
+            private long lastPosition = Offset.Companion.m4543getZeroF1C5BW0();
 
             public final long getLastPosition() {
                 return this.lastPosition;
@@ -126,13 +126,13 @@ public final class SelectionControllerKt {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onExtend-k-4lQ0M */
-            public boolean mo1750onExtendk4lQ0M(long j2) {
+            public boolean mo1514onExtendk4lQ0M(long j2) {
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
                     SelectionRegistrar selectionRegistrar2 = selectionRegistrar;
                     long j3 = j;
                     if (invoke.isAttached()) {
-                        if (selectionRegistrar2.mo1901notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, SelectionAdjustment.Companion.getNone(), false)) {
+                        if (selectionRegistrar2.mo1643notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, SelectionAdjustment.Companion.getNone(), false)) {
                             this.lastPosition = j2;
                         }
                         return SelectionRegistrarKt.hasSelection(selectionRegistrar2, j3);
@@ -144,13 +144,13 @@ public final class SelectionControllerKt {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onExtendDrag-k-4lQ0M */
-            public boolean mo1751onExtendDragk4lQ0M(long j2) {
+            public boolean mo1515onExtendDragk4lQ0M(long j2) {
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
                     SelectionRegistrar selectionRegistrar2 = selectionRegistrar;
                     long j3 = j;
                     if (invoke.isAttached() && SelectionRegistrarKt.hasSelection(selectionRegistrar2, j3)) {
-                        if (selectionRegistrar2.mo1901notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, SelectionAdjustment.Companion.getNone(), false)) {
+                        if (selectionRegistrar2.mo1643notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, SelectionAdjustment.Companion.getNone(), false)) {
                             this.lastPosition = j2;
                             return true;
                         }
@@ -163,13 +163,13 @@ public final class SelectionControllerKt {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onStart-9KIMszo */
-            public boolean mo1752onStart9KIMszo(long j2, SelectionAdjustment selectionAdjustment, int i) {
+            public boolean mo1516onStart9KIMszo(long j2, SelectionAdjustment selectionAdjustment, int i) {
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
                     SelectionRegistrar selectionRegistrar2 = selectionRegistrar;
                     long j3 = j;
                     if (invoke.isAttached()) {
-                        selectionRegistrar2.mo1902notifySelectionUpdateStartubNVwUQ(invoke, j2, selectionAdjustment, false);
+                        selectionRegistrar2.mo1644notifySelectionUpdateStartubNVwUQ(invoke, j2, selectionAdjustment, false);
                         this.lastPosition = j2;
                         return SelectionRegistrarKt.hasSelection(selectionRegistrar2, j3);
                     }
@@ -180,13 +180,13 @@ public final class SelectionControllerKt {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onDrag-3MmeM6k */
-            public boolean mo1749onDrag3MmeM6k(long j2, SelectionAdjustment selectionAdjustment) {
+            public boolean mo1513onDrag3MmeM6k(long j2, SelectionAdjustment selectionAdjustment) {
                 LayoutCoordinates invoke = function0.invoke();
                 if (invoke != null) {
                     SelectionRegistrar selectionRegistrar2 = selectionRegistrar;
                     long j3 = j;
                     if (invoke.isAttached() && SelectionRegistrarKt.hasSelection(selectionRegistrar2, j3)) {
-                        if (selectionRegistrar2.mo1901notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, selectionAdjustment, false)) {
+                        if (selectionRegistrar2.mo1643notifySelectionUpdatenjBpvok(invoke, j2, this.lastPosition, false, selectionAdjustment, false)) {
                             this.lastPosition = j2;
                             return true;
                         }

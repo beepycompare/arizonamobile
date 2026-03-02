@@ -97,10 +97,11 @@ public final class ObservableElementAtSingle<T> extends Single<T> implements Fus
             }
             this.done = true;
             T t = this.defaultValue;
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                singleObserver.onSuccess(t);
             } else {
-                this.downstream.onError(new NoSuchElementException());
+                singleObserver.onError(new NoSuchElementException());
             }
         }
     }

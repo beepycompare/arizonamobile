@@ -873,12 +873,12 @@ public class Session implements Serializable {
         validatePermissions(openRequest, sessionAuthorizationType);
         validateLoginBehavior(openRequest);
         synchronized (this.lock) {
-            if (this.pendingAuthorizationRequest != null) {
-                SessionState sessionState2 = this.state;
+            AuthorizationRequest authorizationRequest = this.pendingAuthorizationRequest;
+            SessionState sessionState2 = this.state;
+            if (authorizationRequest != null) {
                 postStateChange(sessionState2, sessionState2, new UnsupportedOperationException("Session: an attempt was made to open a session that has a pending request."));
                 return;
             }
-            SessionState sessionState3 = this.state;
             int i = $SWITCH_TABLE$com$facebook$SessionState()[this.state.ordinal()];
             if (i == 1) {
                 sessionState = SessionState.OPENING;
@@ -899,7 +899,7 @@ public class Session implements Serializable {
             if (openRequest != null) {
                 addCallback(openRequest.getCallback());
             }
-            postStateChange(sessionState3, sessionState, null);
+            postStateChange(sessionState2, sessionState, null);
             if (sessionState == SessionState.OPENING) {
                 authorize(openRequest);
             }

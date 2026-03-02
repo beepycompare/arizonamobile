@@ -782,8 +782,10 @@ public class MenuBuilder implements SupportMenu {
     }
 
     public ArrayList<MenuItemImpl> getVisibleItems() {
-        if (this.mIsVisibleItemsStale) {
-            this.mVisibleItems.clear();
+        boolean z = this.mIsVisibleItemsStale;
+        ArrayList<MenuItemImpl> arrayList = this.mVisibleItems;
+        if (z) {
+            arrayList.clear();
             int size = this.mItems.size();
             for (int i = 0; i < size; i++) {
                 MenuItemImpl menuItemImpl = this.mItems.get(i);
@@ -795,7 +797,7 @@ public class MenuBuilder implements SupportMenu {
             this.mIsActionItemsStale = true;
             return this.mVisibleItems;
         }
-        return this.mVisibleItems;
+        return arrayList;
     }
 
     public void flagActionItems() {
@@ -812,8 +814,9 @@ public class MenuBuilder implements SupportMenu {
                     z |= menuPresenter.flagActionItems();
                 }
             }
+            ArrayList<MenuItemImpl> arrayList = this.mActionItems;
             if (z) {
-                this.mActionItems.clear();
+                arrayList.clear();
                 this.mNonActionItems.clear();
                 int size = visibleItems.size();
                 for (int i = 0; i < size; i++) {
@@ -825,7 +828,7 @@ public class MenuBuilder implements SupportMenu {
                     }
                 }
             } else {
-                this.mActionItems.clear();
+                arrayList.clear();
                 this.mNonActionItems.clear();
                 this.mNonActionItems.addAll(getVisibleItems());
             }

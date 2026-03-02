@@ -55,13 +55,13 @@ public final class AndroidCursorHandle_androidKt {
     private static final float CursorHandleWidth;
     private static final float Sqrt2 = 1.4142135f;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CursorHandle_USBMPiE$lambda$2(OffsetProvider offsetProvider, Modifier modifier, long j, int i, int i2, Composer composer, int i3) {
-        m1289CursorHandleUSBMPiE(offsetProvider, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m1130CursorHandleUSBMPiE(offsetProvider, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DefaultCursorHandle$lambda$0(Modifier modifier, int i, int i2, Composer composer, int i3) {
         DefaultCursorHandle(modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -82,7 +82,7 @@ public final class AndroidCursorHandle_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1289CursorHandleUSBMPiE(final OffsetProvider offsetProvider, final Modifier modifier, final long j, Composer composer, final int i, final int i2) {
+    public static final void m1130CursorHandleUSBMPiE(final OffsetProvider offsetProvider, final Modifier modifier, final long j, Composer composer, final int i, final int i2) {
         int i3;
         Composer startRestartGroup = composer.startRestartGroup(1776202187);
         ComposerKt.sourceInformation(startRestartGroup, "C(CursorHandle)N(offsetProvider,modifier,minTouchTargetSize:c#ui.unit.DpSize)53@2201L305,62@2602L492,62@2511L583:AndroidCursorHandle.android.kt#423gt5");
@@ -101,7 +101,7 @@ public final class AndroidCursorHandle_androidKt {
             startRestartGroup.startDefaults();
             if ((i & 1) == 0 || startRestartGroup.getDefaultsInvalid()) {
                 if ((i2 & 4) != 0) {
-                    j = DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+                    j = DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
                     i3 &= -897;
                 }
                 startRestartGroup.endDefaults();
@@ -128,9 +128,7 @@ public final class AndroidCursorHandle_androidKt {
                 AndroidSelectionHandles_androidKt.HandlePopup(offsetProvider, Alignment.Companion.getTopCenter(), ComposableLambdaKt.rememberComposableLambda(-1653527038, true, new Function2() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
-                        Unit CursorHandle_USBMPiE$lambda$1;
-                        CursorHandle_USBMPiE$lambda$1 = AndroidCursorHandle_androidKt.CursorHandle_USBMPiE$lambda$1(j, semantics$default, (Composer) obj, ((Integer) obj2).intValue());
-                        return CursorHandle_USBMPiE$lambda$1;
+                        return AndroidCursorHandle_androidKt.CursorHandle_USBMPiE$lambda$1(j, semantics$default, (Composer) obj, ((Integer) obj2).intValue());
                     }
                 }, startRestartGroup, 54), startRestartGroup, i4 | 432);
                 if (ComposerKt.isTraceInProgress()) {
@@ -148,9 +146,7 @@ public final class AndroidCursorHandle_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CursorHandle_USBMPiE$lambda$2;
-                    CursorHandle_USBMPiE$lambda$2 = AndroidCursorHandle_androidKt.CursorHandle_USBMPiE$lambda$2(OffsetProvider.this, modifier, j2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return CursorHandle_USBMPiE$lambda$2;
+                    return AndroidCursorHandle_androidKt.CursorHandle_USBMPiE$lambda$2(OffsetProvider.this, modifier, j2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -158,11 +154,11 @@ public final class AndroidCursorHandle_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit CursorHandle_USBMPiE$lambda$0$0(OffsetProvider offsetProvider, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(Handle.Cursor, offsetProvider.mo1308provideF1C5BW0(), SelectionHandleAnchor.Middle, true, null));
+        semanticsPropertyReceiver.set(SelectionHandlesKt.getSelectionHandleInfoKey(), new SelectionHandleInfo(Handle.Cursor, offsetProvider.mo1144provideF1C5BW0(), SelectionHandleAnchor.Middle, true, null));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CursorHandle_USBMPiE$lambda$1(long j, Modifier modifier, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:AndroidCursorHandle.android.kt#423gt5");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -172,14 +168,14 @@ public final class AndroidCursorHandle_androidKt {
             if (j != InlineClassHelperKt.UnspecifiedPackedFloats) {
                 composer.startReplaceGroup(-1244013944);
                 ComposerKt.sourceInformation(composer, "64@2662L352");
-                Modifier m972requiredSizeInqDBjuR0$default = SizeKt.m972requiredSizeInqDBjuR0$default(modifier, DpSize.m8356getWidthD9Ej5fM(j), DpSize.m8354getHeightD9Ej5fM(j), 0.0f, 0.0f, 12, null);
+                Modifier m860requiredSizeInqDBjuR0$default = SizeKt.m860requiredSizeInqDBjuR0$default(modifier, DpSize.m7653getWidthD9Ej5fM(j), DpSize.m7651getHeightD9Ej5fM(j), 0.0f, 0.0f, 12, null);
                 Alignment topCenter = Alignment.Companion.getTopCenter();
                 ComposerKt.sourceInformationMarkerStart(composer, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(topCenter, false);
                 ComposerKt.sourceInformationMarkerStart(composer, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                 int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(composer, 0));
                 CompositionLocalMap currentCompositionLocalMap = composer.getCurrentCompositionLocalMap();
-                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m972requiredSizeInqDBjuR0$default);
+                Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer, m860requiredSizeInqDBjuR0$default);
                 Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(composer, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
                 if (!(composer.getApplier() instanceof Applier)) {
@@ -191,12 +187,12 @@ public final class AndroidCursorHandle_androidKt {
                 } else {
                     composer.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 922244333, "C72@2979L21:AndroidCursorHandle.android.kt#423gt5");
@@ -244,7 +240,7 @@ public final class AndroidCursorHandle_androidKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(694251107, i3, -1, "androidx.compose.foundation.text.DefaultCursorHandle (AndroidCursorHandle.android.kt:82)");
             }
-            SpacerKt.Spacer(drawCursorHandle(SizeKt.m978sizeVpY3zN4(modifier, CursorHandleWidth, CursorHandleHeight)), startRestartGroup, 0);
+            SpacerKt.Spacer(drawCursorHandle(SizeKt.m866sizeVpY3zN4(modifier, CursorHandleWidth, CursorHandleHeight)), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -254,9 +250,7 @@ public final class AndroidCursorHandle_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DefaultCursorHandle$lambda$0;
-                    DefaultCursorHandle$lambda$0 = AndroidCursorHandle_androidKt.DefaultCursorHandle$lambda$0(Modifier.this, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return DefaultCursorHandle$lambda$0;
+                    return AndroidCursorHandle_androidKt.DefaultCursorHandle$lambda$0(Modifier.this, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -266,14 +260,12 @@ public final class AndroidCursorHandle_androidKt {
         return ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier drawCursorHandle$lambda$0;
-                drawCursorHandle$lambda$0 = AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0((Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return drawCursorHandle$lambda$0;
+                return AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0((Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier drawCursorHandle$lambda$0(Modifier modifier, Composer composer, int i) {
         composer.startReplaceGroup(-2126899193);
         ComposerKt.sourceInformation(composer, "C87@3385L7,89@3451L602:AndroidCursorHandle.android.kt#423gt5");
@@ -283,17 +275,17 @@ public final class AndroidCursorHandle_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(TextSelectionColorsKt.getLocalTextSelectionColors());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        final long m1937getHandleColor0d7_KjU = ((TextSelectionColors) consume).m1937getHandleColor0d7_KjU();
+        final long m1676getHandleColor0d7_KjU = ((TextSelectionColors) consume).m1676getHandleColor0d7_KjU();
         Modifier.Companion companion = Modifier.Companion;
         ComposerKt.sourceInformationMarkerStart(composer, 454312705, "CC(remember):AndroidCursorHandle.android.kt#9igjgp");
-        boolean changed = composer.changed(m1937getHandleColor0d7_KjU);
+        boolean changed = composer.changed(m1676getHandleColor0d7_KjU);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new Function1() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     DrawResult drawCursorHandle$lambda$0$0$0;
-                    drawCursorHandle$lambda$0$0$0 = AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0$0$0(m1937getHandleColor0d7_KjU, (CacheDrawScope) obj);
+                    drawCursorHandle$lambda$0$0$0 = AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0$0$0(m1676getHandleColor0d7_KjU, (CacheDrawScope) obj);
                     return drawCursorHandle$lambda$0$0$0;
                 }
             };
@@ -310,14 +302,14 @@ public final class AndroidCursorHandle_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult drawCursorHandle$lambda$0$0$0(long j, CacheDrawScope cacheDrawScope) {
-        final float intBitsToFloat = Float.intBitsToFloat((int) (cacheDrawScope.m4959getSizeNHjbRc() >> 32)) / 2.0f;
+        final float intBitsToFloat = Float.intBitsToFloat((int) (cacheDrawScope.m4307getSizeNHjbRc() >> 32)) / 2.0f;
         final ImageBitmap createHandleImage = AndroidSelectionHandles_androidKt.createHandleImage(cacheDrawScope, intBitsToFloat);
-        final ColorFilter m5465tintxETnrds$default = ColorFilter.Companion.m5465tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+        final ColorFilter m4813tintxETnrds$default = ColorFilter.Companion.m4813tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
         return cacheDrawScope.onDrawWithContent(new Function1() { // from class: androidx.compose.foundation.text.AndroidCursorHandle_androidKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit drawCursorHandle$lambda$0$0$0$0;
-                drawCursorHandle$lambda$0$0$0$0 = AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0$0$0$0(intBitsToFloat, createHandleImage, m5465tintxETnrds$default, (ContentDrawScope) obj);
+                drawCursorHandle$lambda$0$0$0$0 = AndroidCursorHandle_androidKt.drawCursorHandle$lambda$0$0$0$0(intBitsToFloat, createHandleImage, m4813tintxETnrds$default, (ContentDrawScope) obj);
                 return drawCursorHandle$lambda$0$0$0$0;
             }
         });
@@ -328,26 +320,26 @@ public final class AndroidCursorHandle_androidKt {
         contentDrawScope.drawContent();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
         DrawContext drawContext = contentDrawScope2.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
             DrawTransform transform = drawContext.getTransform();
             DrawTransform.translate$default(transform, f, 0.0f, 2, null);
-            transform.mo5932rotateUv8p0NA(45.0f, Offset.Companion.m5195getZeroF1C5BW0());
-            DrawScope.m5989drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
+            transform.mo5273rotateUv8p0NA(45.0f, Offset.Companion.m4543getZeroF1C5BW0());
+            DrawScope.m5330drawImagegbVJVH8$default(contentDrawScope2, imageBitmap, 0L, 0.0f, null, colorFilter, 0, 46, null);
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             throw th;
         }
     }
 
     static {
-        float m8258constructorimpl = Dp.m8258constructorimpl(25);
-        CursorHandleHeight = m8258constructorimpl;
-        CursorHandleWidth = Dp.m8258constructorimpl(Dp.m8258constructorimpl(m8258constructorimpl * 2.0f) / 2.4142137f);
+        float m7555constructorimpl = Dp.m7555constructorimpl(25);
+        CursorHandleHeight = m7555constructorimpl;
+        CursorHandleWidth = Dp.m7555constructorimpl(Dp.m7555constructorimpl(m7555constructorimpl * 2.0f) / 2.4142137f);
     }
 }

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class SetFactory<T> implements Factory<Set<T>> {
     private static final Factory<Set<Object>> EMPTY_FACTORY = InstanceFactory.create(Collections.emptySet());
     private final List<Provider<Collection<T>>> collectionProviders;
@@ -20,7 +20,7 @@ public final class SetFactory<T> implements Factory<Set<T>> {
         return new Builder<>(individualProviderSize, collectionProviderSize);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder<T> {
         static final /* synthetic */ boolean $assertionsDisabled = false;
         private final List<Provider<Collection<T>>> collectionProviders;

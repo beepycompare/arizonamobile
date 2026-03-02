@@ -63,9 +63,7 @@ public class MutexImpl extends SemaphoreAndMutexImpl implements Mutex {
         this.onSelectCancellationUnlockConstructor = new Function3() { // from class: kotlinx.coroutines.sync.MutexImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Function3 onSelectCancellationUnlockConstructor$lambda$1;
-                onSelectCancellationUnlockConstructor$lambda$1 = MutexImpl.onSelectCancellationUnlockConstructor$lambda$1(MutexImpl.this, (SelectInstance) obj, obj2, obj3);
-                return onSelectCancellationUnlockConstructor$lambda$1;
+                return MutexImpl.onSelectCancellationUnlockConstructor$lambda$1(MutexImpl.this, (SelectInstance) obj, obj2, obj3);
             }
         };
     }
@@ -74,19 +72,17 @@ public class MutexImpl extends SemaphoreAndMutexImpl implements Mutex {
         return owner$volatile$FU;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Function3 onSelectCancellationUnlockConstructor$lambda$1(final MutexImpl mutexImpl, SelectInstance selectInstance, final Object obj, Object obj2) {
         return new Function3() { // from class: kotlinx.coroutines.sync.MutexImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj3, Object obj4, Object obj5) {
-                Unit onSelectCancellationUnlockConstructor$lambda$1$lambda$0;
-                onSelectCancellationUnlockConstructor$lambda$1$lambda$0 = MutexImpl.onSelectCancellationUnlockConstructor$lambda$1$lambda$0(MutexImpl.this, obj, (Throwable) obj3, obj4, (CoroutineContext) obj5);
-                return onSelectCancellationUnlockConstructor$lambda$1$lambda$0;
+                return MutexImpl.onSelectCancellationUnlockConstructor$lambda$1$lambda$0(MutexImpl.this, obj, (Throwable) obj3, obj4, (CoroutineContext) obj5);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onSelectCancellationUnlockConstructor$lambda$1$lambda$0(MutexImpl mutexImpl, Object obj, Throwable th, Object obj2, CoroutineContext coroutineContext) {
         mutexImpl.unlock(obj);
         return Unit.INSTANCE;
@@ -333,9 +329,7 @@ public class MutexImpl extends SemaphoreAndMutexImpl implements Mutex {
             Object tryResume = cancellableContinuationImpl.tryResume(r, obj, new Function3() { // from class: kotlinx.coroutines.sync.MutexImpl$CancellableContinuationWithOwner$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj3, Object obj4, Object obj5) {
-                    Unit tryResume$lambda$3;
-                    tryResume$lambda$3 = MutexImpl.CancellableContinuationWithOwner.tryResume$lambda$3(MutexImpl.this, this, (Throwable) obj3, (Unit) obj4, (CoroutineContext) obj5);
-                    return tryResume$lambda$3;
+                    return MutexImpl.CancellableContinuationWithOwner.tryResume$lambda$3(MutexImpl.this, this, (Throwable) obj3, (Unit) obj4, (CoroutineContext) obj5);
                 }
             });
             if (tryResume != null) {
@@ -352,7 +346,7 @@ public class MutexImpl extends SemaphoreAndMutexImpl implements Mutex {
             return tryResume;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit tryResume$lambda$3(MutexImpl mutexImpl, CancellableContinuationWithOwner cancellableContinuationWithOwner, Throwable th, Unit unit, CoroutineContext coroutineContext) {
             Symbol symbol;
             if (DebugKt.getASSERTIONS_ENABLED()) {
@@ -383,14 +377,12 @@ public class MutexImpl extends SemaphoreAndMutexImpl implements Mutex {
             cancellableContinuationImpl.resume((CancellableContinuationImpl<Unit>) r, new Function1() { // from class: kotlinx.coroutines.sync.MutexImpl$CancellableContinuationWithOwner$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit resume$lambda$6;
-                    resume$lambda$6 = MutexImpl.CancellableContinuationWithOwner.resume$lambda$6(MutexImpl.this, this, (Throwable) obj2);
-                    return resume$lambda$6;
+                    return MutexImpl.CancellableContinuationWithOwner.resume$lambda$6(MutexImpl.this, this, (Throwable) obj2);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit resume$lambda$6(MutexImpl mutexImpl, CancellableContinuationWithOwner cancellableContinuationWithOwner, Throwable th) {
             mutexImpl.unlock(cancellableContinuationWithOwner.owner);
             return Unit.INSTANCE;

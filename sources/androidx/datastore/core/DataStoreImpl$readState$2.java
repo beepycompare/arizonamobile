@@ -43,13 +43,13 @@ public final class DataStoreImpl$readState$2<T> extends SuspendLambda implements
         return ((DataStoreImpl$readState$2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0045, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0055, code lost:
         if (r5 == r0) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0057, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -63,11 +63,13 @@ public final class DataStoreImpl$readState$2<T> extends SuspendLambda implements
         try {
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                if (((DataStoreImpl) this.this$0).inMemoryCache.getCurrentState() instanceof Final) {
-                    return ((DataStoreImpl) this.this$0).inMemoryCache.getCurrentState();
+                boolean z = ((DataStoreImpl) this.this$0).inMemoryCache.getCurrentState() instanceof Final;
+                DataStoreImpl<T> dataStoreImpl = this.this$0;
+                if (z) {
+                    return ((DataStoreImpl) dataStoreImpl).inMemoryCache.getCurrentState();
                 }
                 this.label = 1;
-                readAndInitOrPropagateAndThrowFailure = this.this$0.readAndInitOrPropagateAndThrowFailure(this);
+                readAndInitOrPropagateAndThrowFailure = dataStoreImpl.readAndInitOrPropagateAndThrowFailure(this);
             } else if (i != 1) {
                 if (i == 2) {
                     ResultKt.throwOnFailure(obj);

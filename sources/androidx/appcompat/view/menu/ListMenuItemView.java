@@ -115,12 +115,13 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView,
 
     @Override // androidx.appcompat.view.menu.MenuView.ItemView
     public void setTitle(CharSequence charSequence) {
+        TextView textView = this.mTitleView;
         if (charSequence != null) {
-            this.mTitleView.setText(charSequence);
+            textView.setText(charSequence);
             if (this.mTitleView.getVisibility() != 0) {
                 this.mTitleView.setVisibility(0);
             }
-        } else if (this.mTitleView.getVisibility() != 8) {
+        } else if (textView.getVisibility() != 8) {
             this.mTitleView.setVisibility(8);
         }
     }

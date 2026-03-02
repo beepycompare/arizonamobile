@@ -30,10 +30,12 @@ public final class MaybeFromFuture<T> extends Maybe<T> {
         }
         try {
             long j = this.timeout;
-            if (j <= 0) {
-                obj = (T) this.future.get();
+            int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            Future<? extends T> future = this.future;
+            if (i <= 0) {
+                obj = (T) future.get();
             } else {
-                obj = (T) this.future.get(j, this.unit);
+                obj = (T) future.get(j, this.unit);
             }
             if (empty.isDisposed()) {
                 return;

@@ -10,7 +10,7 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AsynchronousMediaCodecCallback extends MediaCodec.Callback {
     private final HandlerThread callbackThread;
     private MediaFormat currentFormat;

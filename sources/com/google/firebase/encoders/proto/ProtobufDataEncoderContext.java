@@ -342,18 +342,30 @@ public final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     }
 
     private void writeVarInt32(int i) throws IOException {
-        while ((i & (-128)) != 0) {
-            this.output.write((i & 127) | 128);
-            i >>>= 7;
+        while (true) {
+            int i2 = ((i & (-128)) > 0L ? 1 : ((i & (-128)) == 0L ? 0 : -1));
+            OutputStream outputStream = this.output;
+            if (i2 != 0) {
+                outputStream.write((i & 127) | 128);
+                i >>>= 7;
+            } else {
+                outputStream.write(i & 127);
+                return;
+            }
         }
-        this.output.write(i & 127);
     }
 
     private void writeVarInt64(long j) throws IOException {
-        while (((-128) & j) != 0) {
-            this.output.write((((int) j) & 127) | 128);
-            j >>>= 7;
+        while (true) {
+            int i = (((-128) & j) > 0L ? 1 : (((-128) & j) == 0L ? 0 : -1));
+            OutputStream outputStream = this.output;
+            if (i != 0) {
+                outputStream.write((((int) j) & 127) | 128);
+                j >>>= 7;
+            } else {
+                outputStream.write(((int) j) & 127);
+                return;
+            }
         }
-        this.output.write(((int) j) & 127);
     }
 }

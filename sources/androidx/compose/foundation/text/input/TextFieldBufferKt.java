@@ -22,27 +22,27 @@ public final class TextFieldBufferKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final long m1535adjustTextRangevJH6DeI(long j, int i, int i2, int i3) {
+    public static final long m1334adjustTextRangevJH6DeI(long j, int i, int i2, int i3) {
         int i4;
-        int m7699getMinimpl = TextRange.m7699getMinimpl(j);
-        int m7698getMaximpl = TextRange.m7698getMaximpl(j);
-        if (m7698getMaximpl < i) {
+        int m7001getMinimpl = TextRange.m7001getMinimpl(j);
+        int m7000getMaximpl = TextRange.m7000getMaximpl(j);
+        if (m7000getMaximpl < i) {
             return j;
         }
-        if (m7699getMinimpl > i || i2 > m7698getMaximpl) {
-            if (m7699getMinimpl > i && m7698getMaximpl < i2) {
+        if (m7001getMinimpl > i || i2 > m7000getMaximpl) {
+            if (m7001getMinimpl > i && m7000getMaximpl < i2) {
                 i += i3;
-                m7699getMinimpl = i;
-            } else if (m7699getMinimpl >= i2) {
+                m7001getMinimpl = i;
+            } else if (m7001getMinimpl >= i2) {
                 i4 = i3 - (i2 - i);
-                m7699getMinimpl += i4;
-                i = m7698getMaximpl + i4;
-            } else if (i < m7699getMinimpl) {
-                m7699getMinimpl = i + i3;
+                m7001getMinimpl += i4;
+                i = m7000getMaximpl + i4;
+            } else if (i < m7001getMinimpl) {
+                m7001getMinimpl = i + i3;
                 i4 = i3 - (i2 - i);
-                i = m7698getMaximpl + i4;
+                i = m7000getMaximpl + i4;
             }
-            return TextRangeKt.TextRange(m7699getMinimpl, i);
+            return TextRangeKt.TextRange(m7001getMinimpl, i);
         }
         i4 = i3 - (i2 - i);
     }
@@ -60,18 +60,18 @@ public final class TextFieldBufferKt {
     }
 
     public static final void selectAll(TextFieldBuffer textFieldBuffer) {
-        textFieldBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
+        textFieldBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
     }
 
     public static final void forEachChange(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int i = 0; i < changeList.getChangeCount(); i++) {
-            function2.invoke(TextRange.m7689boximpl(changeList.mo1534getRangejx7JFs(i)), TextRange.m7689boximpl(changeList.mo1533getOriginalRangejx7JFs(i)));
+            function2.invoke(TextRange.m6991boximpl(changeList.mo1333getRangejx7JFs(i)), TextRange.m6991boximpl(changeList.mo1332getOriginalRangejx7JFs(i)));
         }
     }
 
     public static final void forEachChangeReversed(TextFieldBuffer.ChangeList changeList, Function2<? super TextRange, ? super TextRange, Unit> function2) {
         for (int changeCount = changeList.getChangeCount() - 1; changeCount >= 0; changeCount--) {
-            function2.invoke(TextRange.m7689boximpl(changeList.mo1534getRangejx7JFs(changeCount)), TextRange.m7689boximpl(changeList.mo1533getOriginalRangejx7JFs(changeCount)));
+            function2.invoke(TextRange.m6991boximpl(changeList.mo1333getRangejx7JFs(changeCount)), TextRange.m6991boximpl(changeList.mo1332getOriginalRangejx7JFs(changeCount)));
         }
     }
 
@@ -122,6 +122,6 @@ public final class TextFieldBufferKt {
     }
 
     public static final void setSelectionCoerced(TextFieldBuffer textFieldBuffer, int i, int i2) {
-        textFieldBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i, 0, textFieldBuffer.getLength()), RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength())));
+        textFieldBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i, 0, textFieldBuffer.getLength()), RangesKt.coerceIn(i2, 0, textFieldBuffer.getLength())));
     }
 }

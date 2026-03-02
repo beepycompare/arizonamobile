@@ -11,32 +11,32 @@ public final class KeyMapping_androidKt {
     private static final KeyMapping platformDefaultKeyMapping = new KeyMapping() { // from class: androidx.compose.foundation.text.KeyMapping_androidKt$platformDefaultKeyMapping$1
         @Override // androidx.compose.foundation.text.KeyMapping
         /* renamed from: map-ZmokQxo */
-        public KeyCommand mo1373mapZmokQxo(KeyEvent keyEvent) {
+        public KeyCommand mo1200mapZmokQxo(KeyEvent keyEvent) {
             KeyCommand keyCommand = null;
-            if (KeyEvent_androidKt.m6593isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m6590isAltPressedZmokQxo(keyEvent)) {
-                long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-                if (Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6355getDirectionLeftEK5gGoQ())) {
+            if (KeyEvent_androidKt.m5934isShiftPressedZmokQxo(keyEvent) && KeyEvent_androidKt.m5931isAltPressedZmokQxo(keyEvent)) {
+                long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+                if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5696getDirectionLeftEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_LINE_LEFT;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6356getDirectionRightEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5697getDirectionRightEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_LINE_RIGHT;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6357getDirectionUpEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5698getDirectionUpEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_HOME;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6352getDirectionDownEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5693getDirectionDownEK5gGoQ())) {
                     keyCommand = KeyCommand.SELECT_END;
                 }
-            } else if (KeyEvent_androidKt.m6590isAltPressedZmokQxo(keyEvent)) {
-                long m6587getKeyZmokQxo2 = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-                if (Key.m6279equalsimpl0(m6587getKeyZmokQxo2, Key.Companion.m6355getDirectionLeftEK5gGoQ())) {
+            } else if (KeyEvent_androidKt.m5931isAltPressedZmokQxo(keyEvent)) {
+                long m5928getKeyZmokQxo2 = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+                if (Key.m5620equalsimpl0(m5928getKeyZmokQxo2, Key.Companion.m5696getDirectionLeftEK5gGoQ())) {
                     keyCommand = KeyCommand.LINE_LEFT;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo2, Key.Companion.m6356getDirectionRightEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo2, Key.Companion.m5697getDirectionRightEK5gGoQ())) {
                     keyCommand = KeyCommand.LINE_RIGHT;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo2, Key.Companion.m6357getDirectionUpEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo2, Key.Companion.m5698getDirectionUpEK5gGoQ())) {
                     keyCommand = KeyCommand.HOME;
-                } else if (Key.m6279equalsimpl0(m6587getKeyZmokQxo2, Key.Companion.m6352getDirectionDownEK5gGoQ())) {
+                } else if (Key.m5620equalsimpl0(m5928getKeyZmokQxo2, Key.Companion.m5693getDirectionDownEK5gGoQ())) {
                     keyCommand = KeyCommand.END;
                 }
             }
-            return keyCommand == null ? KeyMappingKt.getDefaultKeyMapping().mo1373mapZmokQxo(keyEvent) : keyCommand;
+            return keyCommand == null ? KeyMappingKt.getDefaultKeyMapping().mo1200mapZmokQxo(keyEvent) : keyCommand;
         }
     };
 

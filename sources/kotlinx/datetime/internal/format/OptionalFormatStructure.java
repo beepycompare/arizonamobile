@@ -86,9 +86,7 @@ public final class OptionalFormatStructure<T> implements NonConcatenatedFormatSt
             listOf = CollectionsKt.listOf(new UnconditionalModification(new Function1() { // from class: kotlinx.datetime.internal.format.OptionalFormatStructure$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit parser$lambda$2;
-                    parser$lambda$2 = OptionalFormatStructure.parser$lambda$2(OptionalFormatStructure.this, obj);
-                    return parser$lambda$2;
+                    return OptionalFormatStructure.parser$lambda$2(OptionalFormatStructure.this, obj);
                 }
             }));
         }
@@ -97,7 +95,7 @@ public final class OptionalFormatStructure<T> implements NonConcatenatedFormatSt
         return new ParserStructure<>(emptyList, CollectionsKt.listOf((Object[]) parserStructureArr));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit parser$lambda$2(OptionalFormatStructure optionalFormatStructure, Object obj) {
         for (PropertyWithDefault<T, ? extends Object> propertyWithDefault : optionalFormatStructure.fields) {
             ((PropertyWithDefault) propertyWithDefault).accessor.trySetWithoutReassigning(obj, ((PropertyWithDefault) propertyWithDefault).defaultValue);

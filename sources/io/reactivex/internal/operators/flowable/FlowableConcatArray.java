@@ -110,11 +110,13 @@ public final class FlowableConcatArray<T> extends Flowable<T> {
                 }
                 List<Throwable> list2 = this.errors;
                 if (list2 != null) {
-                    if (list2.size() == 1) {
-                        this.downstream.onError(list2.get(0));
+                    int size = list2.size();
+                    Subscriber<? super T> subscriber = this.downstream;
+                    if (size == 1) {
+                        subscriber.onError(list2.get(0));
                         return;
                     } else {
-                        this.downstream.onError(new CompositeException(list2));
+                        subscriber.onError(new CompositeException(list2));
                         return;
                     }
                 }

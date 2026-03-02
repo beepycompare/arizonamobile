@@ -278,9 +278,9 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         r1 = kotlin.Unit.INSTANCE;
      */
     /* JADX WARN: Code restructure failed: missing block: B:168:0x03c0, code lost:
-        r2 = r15.m1125getConstraintsDWUhwKw();
+        r2 = r15.m989getConstraintsDWUhwKw();
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
-        r1 = r48.mo1056getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m8217unboximpl());
+        r1 = r48.mo933getAndMeasurehBUhpc(r1, r15.getLane(), r15.getSpan(), r2.m7514unboximpl());
         r1.setNonScrollableItem(true);
         r7 = r15.getAnimations();
         r1 = r7.length;
@@ -360,7 +360,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         if (r5 != 8) goto L212;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x004b, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m8380constructorimpl((r43 & 4294967295L) | (0 << 32));
+        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl((r43 & 4294967295L) | (0 << 32));
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x045a, code lost:
         r31 = r1;
@@ -392,7 +392,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         r3 = 0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005b, code lost:
-        r4 = androidx.compose.ui.unit.IntOffset.m8380constructorimpl((r43 << 32) | (0 & 4294967295L));
+        r4 = androidx.compose.ui.unit.IntOffset.m7677constructorimpl((r43 << 32) | (0 & 4294967295L));
      */
     /* JADX WARN: Code restructure failed: missing block: B:200:0x0493, code lost:
         if (r3 >= r2) goto L231;
@@ -623,16 +623,16 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         java.lang.Boolean.valueOf(r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:64:0x015e, code lost:
-        r25 = r14.mo1054getOffsetBjo55l4(0);
+        r25 = r14.mo931getOffsetBjo55l4(0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x0167, code lost:
         if (r14.isVertical() == false) goto L72;
      */
     /* JADX WARN: Code restructure failed: missing block: B:66:0x0169, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m8387getYimpl(r25);
+        r1 = androidx.compose.ui.unit.IntOffset.m7684getYimpl(r25);
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x016e, code lost:
-        r1 = androidx.compose.ui.unit.IntOffset.m8386getXimpl(r25);
+        r1 = androidx.compose.ui.unit.IntOffset.m7683getXimpl(r25);
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0172, code lost:
         initializeAnimation(r14, r1, r12);
@@ -689,10 +689,10 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         if (r13 == null) goto L85;
      */
     /* JADX WARN: Code restructure failed: missing block: B:84:0x01c6, code lost:
-        if (androidx.compose.ui.unit.IntOffset.m8385equalsimpl0(r13.m1117getRawOffsetnOccac(), androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation.Companion.m1121getNotInitializednOccac()) != false) goto L84;
+        if (androidx.compose.ui.unit.IntOffset.m7682equalsimpl0(r13.m982getRawOffsetnOccac(), androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation.Companion.m986getNotInitializednOccac()) != false) goto L84;
      */
     /* JADX WARN: Code restructure failed: missing block: B:85:0x01c8, code lost:
-        r13.m1120setRawOffsetgyyYBs(androidx.compose.ui.unit.IntOffset.m8390plusqkQi6aY(r13.m1117getRawOffsetnOccac(), r4));
+        r13.m985setRawOffsetgyyYBs(androidx.compose.ui.unit.IntOffset.m7687plusqkQi6aY(r13.m982getRawOffsetnOccac(), r4));
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x01d3, code lost:
         r12 = r12 + 1;
@@ -829,13 +829,13 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     private final void initializeAnimation(T t, int i, LazyLayoutItemAnimator<T>.ItemInfo itemInfo) {
-        long m8382copyiSbpLlY$default;
+        long m7679copyiSbpLlY$default;
         int i2 = 0;
-        long mo1054getOffsetBjo55l4 = t.mo1054getOffsetBjo55l4(0);
+        long mo931getOffsetBjo55l4 = t.mo931getOffsetBjo55l4(0);
         if (t.isVertical()) {
-            m8382copyiSbpLlY$default = IntOffset.m8382copyiSbpLlY$default(mo1054getOffsetBjo55l4, 0, i, 1, null);
+            m7679copyiSbpLlY$default = IntOffset.m7679copyiSbpLlY$default(mo931getOffsetBjo55l4, 0, i, 1, null);
         } else {
-            m8382copyiSbpLlY$default = IntOffset.m8382copyiSbpLlY$default(mo1054getOffsetBjo55l4, i, 0, 2, null);
+            m7679copyiSbpLlY$default = IntOffset.m7679copyiSbpLlY$default(mo931getOffsetBjo55l4, i, 0, 2, null);
         }
         LazyLayoutItemAnimation[] animations = itemInfo.getAnimations();
         int length = animations.length;
@@ -844,7 +844,7 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = animations[i2];
             int i4 = i3 + 1;
             if (lazyLayoutItemAnimation != null) {
-                lazyLayoutItemAnimation.m1120setRawOffsetgyyYBs(IntOffset.m8390plusqkQi6aY(m8382copyiSbpLlY$default, IntOffset.m8389minusqkQi6aY(t.mo1054getOffsetBjo55l4(i3), mo1054getOffsetBjo55l4)));
+                lazyLayoutItemAnimation.m985setRawOffsetgyyYBs(IntOffset.m7687plusqkQi6aY(m7679copyiSbpLlY$default, IntOffset.m7686minusqkQi6aY(t.mo931getOffsetBjo55l4(i3), mo931getOffsetBjo55l4)));
             }
             i2++;
             i3 = i4;
@@ -869,12 +869,12 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = animations[i];
             int i3 = i2 + 1;
             if (lazyLayoutItemAnimation != null) {
-                long mo1054getOffsetBjo55l4 = t.mo1054getOffsetBjo55l4(i2);
-                long m1117getRawOffsetnOccac = lazyLayoutItemAnimation.m1117getRawOffsetnOccac();
-                if (!IntOffset.m8385equalsimpl0(m1117getRawOffsetnOccac, LazyLayoutItemAnimation.Companion.m1121getNotInitializednOccac()) && !IntOffset.m8385equalsimpl0(m1117getRawOffsetnOccac, mo1054getOffsetBjo55l4)) {
-                    lazyLayoutItemAnimation.m1113animatePlacementDeltaar5cAso(IntOffset.m8389minusqkQi6aY(mo1054getOffsetBjo55l4, m1117getRawOffsetnOccac), z);
+                long mo931getOffsetBjo55l4 = t.mo931getOffsetBjo55l4(i2);
+                long m982getRawOffsetnOccac = lazyLayoutItemAnimation.m982getRawOffsetnOccac();
+                if (!IntOffset.m7682equalsimpl0(m982getRawOffsetnOccac, LazyLayoutItemAnimation.Companion.m986getNotInitializednOccac()) && !IntOffset.m7682equalsimpl0(m982getRawOffsetnOccac, mo931getOffsetBjo55l4)) {
+                    lazyLayoutItemAnimation.m978animatePlacementDeltaar5cAso(IntOffset.m7686minusqkQi6aY(mo931getOffsetBjo55l4, m982getRawOffsetnOccac), z);
                 }
-                lazyLayoutItemAnimation.m1120setRawOffsetgyyYBs(mo1054getOffsetBjo55l4);
+                lazyLayoutItemAnimation.m985setRawOffsetgyyYBs(mo931getOffsetBjo55l4);
             }
             i++;
             i2 = i3;
@@ -904,19 +904,19 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     /* renamed from: getMinSizeToFitDisappearingItems-YbymL2g  reason: not valid java name */
-    public final long m1123getMinSizeToFitDisappearingItemsYbymL2g() {
-        long m8434getZeroYbymL2g = IntSize.Companion.m8434getZeroYbymL2g();
+    public final long m987getMinSizeToFitDisappearingItemsYbymL2g() {
+        long m7731getZeroYbymL2g = IntSize.Companion.m7731getZeroYbymL2g();
         List<LazyLayoutItemAnimation> list = this.disappearingItems;
         int size = list.size();
         for (int i = 0; i < size; i++) {
             LazyLayoutItemAnimation lazyLayoutItemAnimation = list.get(i);
             GraphicsLayer layer = lazyLayoutItemAnimation.getLayer();
             if (layer != null) {
-                int max = Math.max((int) (m8434getZeroYbymL2g >> 32), IntOffset.m8386getXimpl(lazyLayoutItemAnimation.m1117getRawOffsetnOccac()) + ((int) (layer.m6096getSizeYbymL2g() >> 32)));
-                m8434getZeroYbymL2g = IntSize.m8424constructorimpl((Math.max((int) (m8434getZeroYbymL2g & 4294967295L), IntOffset.m8387getYimpl(lazyLayoutItemAnimation.m1117getRawOffsetnOccac()) + ((int) (layer.m6096getSizeYbymL2g() & 4294967295L))) & 4294967295L) | (max << 32));
+                int max = Math.max((int) (m7731getZeroYbymL2g >> 32), IntOffset.m7683getXimpl(lazyLayoutItemAnimation.m982getRawOffsetnOccac()) + ((int) (layer.m5437getSizeYbymL2g() >> 32)));
+                m7731getZeroYbymL2g = IntSize.m7721constructorimpl((Math.max((int) (m7731getZeroYbymL2g & 4294967295L), IntOffset.m7684getYimpl(lazyLayoutItemAnimation.m982getRawOffsetnOccac()) + ((int) (layer.m5437getSizeYbymL2g() & 4294967295L))) & 4294967295L) | (max << 32));
             }
         }
-        return m8434getZeroYbymL2g;
+        return m7731getZeroYbymL2g;
     }
 
     public final Modifier getModifier() {
@@ -934,14 +934,14 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
     }
 
     private final int getMainAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo1054getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo1054getOffsetBjo55l4(0);
-        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8387getYimpl(mo1054getOffsetBjo55l4) : IntOffset.m8386getXimpl(mo1054getOffsetBjo55l4);
+        long mo931getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo931getOffsetBjo55l4(0);
+        return lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7684getYimpl(mo931getOffsetBjo55l4) : IntOffset.m7683getXimpl(mo931getOffsetBjo55l4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int getCrossAxisOffset(LazyLayoutMeasuredItem lazyLayoutMeasuredItem) {
-        long mo1054getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo1054getOffsetBjo55l4(0);
-        return !lazyLayoutMeasuredItem.isVertical() ? IntOffset.m8387getYimpl(mo1054getOffsetBjo55l4) : IntOffset.m8386getXimpl(mo1054getOffsetBjo55l4);
+        long mo931getOffsetBjo55l4 = lazyLayoutMeasuredItem.mo931getOffsetBjo55l4(0);
+        return !lazyLayoutMeasuredItem.isVertical() ? IntOffset.m7684getYimpl(mo931getOffsetBjo55l4) : IntOffset.m7683getXimpl(mo931getOffsetBjo55l4);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -965,12 +965,12 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         }
 
         /* renamed from: getConstraints-DWUhwKw  reason: not valid java name */
-        public final Constraints m1125getConstraintsDWUhwKw() {
+        public final Constraints m989getConstraintsDWUhwKw() {
             return this.constraints;
         }
 
         /* renamed from: setConstraints-_Sx5XlM  reason: not valid java name */
-        public final void m1126setConstraints_Sx5XlM(Constraints constraints) {
+        public final void m990setConstraints_Sx5XlM(Constraints constraints) {
             this.constraints = constraints;
         }
 
@@ -1024,23 +1024,30 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
         }
 
         public final void updateAnimation(T t, CoroutineScope coroutineScope, GraphicsContext graphicsContext, int i, int i2, int i3) {
+            LazyLayoutItemAnimation[] lazyLayoutItemAnimationArr;
             if (!isRunningPlacement()) {
                 this.layoutMinOffset = i;
                 this.layoutMaxOffset = i2;
             }
+            int placeablesCount = t.getPlaceablesCount();
             int length = this.animations.length;
-            for (int placeablesCount = t.getPlaceablesCount(); placeablesCount < length; placeablesCount++) {
-                LazyLayoutItemAnimation lazyLayoutItemAnimation = this.animations[placeablesCount];
+            while (true) {
+                lazyLayoutItemAnimationArr = this.animations;
+                if (placeablesCount >= length) {
+                    break;
+                }
+                LazyLayoutItemAnimation lazyLayoutItemAnimation = lazyLayoutItemAnimationArr[placeablesCount];
                 if (lazyLayoutItemAnimation != null) {
                     lazyLayoutItemAnimation.release();
                 }
+                placeablesCount++;
             }
-            if (this.animations.length != t.getPlaceablesCount()) {
+            if (lazyLayoutItemAnimationArr.length != t.getPlaceablesCount()) {
                 Object[] copyOf = Arrays.copyOf(this.animations, t.getPlaceablesCount());
                 Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
                 this.animations = (LazyLayoutItemAnimation[]) copyOf;
             }
-            this.constraints = Constraints.m8198boximpl(t.mo1053getConstraintsmsEJaDk());
+            this.constraints = Constraints.m7495boximpl(t.mo930getConstraintsmsEJaDk());
             this.crossAxisOffset = i3;
             this.lane = t.getLane();
             this.span = t.getSpan();
@@ -1048,14 +1055,15 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
             final LazyLayoutItemAnimator<T> lazyLayoutItemAnimator = LazyLayoutItemAnimator.this;
             for (int i4 = 0; i4 < placeablesCount2; i4++) {
                 LazyLayoutAnimationSpecsNode access$getSpecs = LazyLayoutItemAnimatorKt.access$getSpecs(t.getParentData(i4));
+                LazyLayoutItemAnimation[] lazyLayoutItemAnimationArr2 = this.animations;
                 if (access$getSpecs == null) {
-                    LazyLayoutItemAnimation lazyLayoutItemAnimation2 = this.animations[i4];
+                    LazyLayoutItemAnimation lazyLayoutItemAnimation2 = lazyLayoutItemAnimationArr2[i4];
                     if (lazyLayoutItemAnimation2 != null) {
                         lazyLayoutItemAnimation2.release();
                     }
                     this.animations[i4] = null;
                 } else {
-                    LazyLayoutItemAnimation lazyLayoutItemAnimation3 = this.animations[i4];
+                    LazyLayoutItemAnimation lazyLayoutItemAnimation3 = lazyLayoutItemAnimationArr2[i4];
                     if (lazyLayoutItemAnimation3 == null) {
                         lazyLayoutItemAnimation3 = new LazyLayoutItemAnimation(coroutineScope, graphicsContext, new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimator$ItemInfo$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
@@ -1195,13 +1203,13 @@ public final class LazyLayoutItemAnimator<T extends LazyLayoutMeasuredItem> {
                 GraphicsLayer layer = lazyLayoutItemAnimation.getLayer();
                 if (layer != null) {
                     ContentDrawScope contentDrawScope2 = contentDrawScope;
-                    float m8386getXimpl = IntOffset.m8386getXimpl(lazyLayoutItemAnimation.m1114getFinalOffsetnOccac()) - IntOffset.m8386getXimpl(layer.m6098getTopLeftnOccac());
-                    float m8387getYimpl = IntOffset.m8387getYimpl(lazyLayoutItemAnimation.m1114getFinalOffsetnOccac()) - IntOffset.m8387getYimpl(layer.m6098getTopLeftnOccac());
-                    contentDrawScope2.getDrawContext().getTransform().translate(m8386getXimpl, m8387getYimpl);
+                    float m7683getXimpl = IntOffset.m7683getXimpl(lazyLayoutItemAnimation.m979getFinalOffsetnOccac()) - IntOffset.m7683getXimpl(layer.m5439getTopLeftnOccac());
+                    float m7684getYimpl = IntOffset.m7684getYimpl(lazyLayoutItemAnimation.m979getFinalOffsetnOccac()) - IntOffset.m7684getYimpl(layer.m5439getTopLeftnOccac());
+                    contentDrawScope2.getDrawContext().getTransform().translate(m7683getXimpl, m7684getYimpl);
                     try {
                         GraphicsLayerKt.drawLayer(contentDrawScope2, layer);
                     } finally {
-                        contentDrawScope2.getDrawContext().getTransform().translate(-m8386getXimpl, -m8387getYimpl);
+                        contentDrawScope2.getDrawContext().getTransform().translate(-m7683getXimpl, -m7684getYimpl);
                     }
                 }
             }

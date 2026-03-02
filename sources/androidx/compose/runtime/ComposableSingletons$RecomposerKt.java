@@ -14,18 +14,16 @@ public final class ComposableSingletons$RecomposerKt {
     private static Function2<Composer, Integer, Unit> f98lambda$1091980426 = ComposableLambdaKt.composableLambdaInstance(-1091980426, false, new Function2() { // from class: androidx.compose.runtime.ComposableSingletons$RecomposerKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda__1091980426$lambda$0;
-            lambda__1091980426$lambda$0 = ComposableSingletons$RecomposerKt.lambda__1091980426$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda__1091980426$lambda$0;
+            return ComposableSingletons$RecomposerKt.lambda__1091980426$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
 
     /* renamed from: getLambda$-1091980426$runtime  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m4591getLambda$1091980426$runtime() {
+    public final Function2<Composer, Integer, Unit> m3975getLambda$1091980426$runtime() {
         return f98lambda$1091980426;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1091980426$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:Recomposer.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {

@@ -602,10 +602,12 @@ public class WarGamepad extends WarBilling implements ControllerListener {
             }
             this.GamePads[GetDeviceIndex].GamepadType = -1;
             this.GamePads[GetDeviceIndex].mightBeNyko = false;
-            if (this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("NYKO")) {
-                this.GamePads[GetDeviceIndex].GamepadType = 6;
+            boolean contains = this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("NYKO");
+            GamePad[] gamePadArr = this.GamePads;
+            if (contains) {
+                gamePadArr[GetDeviceIndex].GamepadType = 6;
             } else {
-                this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("Broadcom Bluetooth HID");
+                gamePadArr[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("Broadcom Bluetooth HID");
                 InputDevice.MotionRange motionRange = this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getMotionRange(22);
                 InputDevice.MotionRange motionRange2 = this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getMotionRange(23);
                 if (motionRange != null && motionRange2 != null) {
@@ -637,13 +639,15 @@ public class WarGamepad extends WarBilling implements ControllerListener {
                 }
                 if (this.GamePads[GetDeviceIndex].mLastGamepadInputDevice != null) {
                     Log.e(TAG, "mLastGamepadInputDevice.getName() " + this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName());
-                    if (this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("PLAYSTATION")) {
-                        this.GamePads[GetDeviceIndex].is360 = false;
+                    boolean contains2 = this.GamePads[GetDeviceIndex].mLastGamepadInputDevice.getName().contains("PLAYSTATION");
+                    GamePad[] gamePadArr2 = this.GamePads;
+                    if (contains2) {
+                        gamePadArr2[GetDeviceIndex].is360 = false;
                         if (!this.GamePads[GetDeviceIndex].reportPS3as360) {
                             this.GamePads[GetDeviceIndex].GamepadType = 8;
                         }
                     } else {
-                        this.GamePads[GetDeviceIndex].is360 = true;
+                        gamePadArr2[GetDeviceIndex].is360 = true;
                     }
                 }
                 this.GamePads[GetDeviceIndex].GamepadButtonMask = 0;

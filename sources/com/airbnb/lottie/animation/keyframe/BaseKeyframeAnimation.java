@@ -310,13 +310,19 @@ public abstract class BaseKeyframeAnimation<K, A> {
             if (f >= keyframe.getStartProgress()) {
                 return keyframe;
             }
-            for (int size = this.keyframes.size() - 2; size >= 1; size--) {
-                Keyframe<T> keyframe2 = this.keyframes.get(size);
-                if (this.currentKeyframe != keyframe2 && keyframe2.containsProgress(f)) {
-                    return keyframe2;
+            int size = this.keyframes.size() - 2;
+            while (true) {
+                List<? extends Keyframe<T>> list2 = this.keyframes;
+                if (size >= 1) {
+                    Keyframe<T> keyframe2 = list2.get(size);
+                    if (this.currentKeyframe != keyframe2 && keyframe2.containsProgress(f)) {
+                        return keyframe2;
+                    }
+                    size--;
+                } else {
+                    return list2.get(0);
                 }
             }
-            return this.keyframes.get(0);
         }
 
         @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.KeyframesWrapper

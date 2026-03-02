@@ -28,12 +28,12 @@ import kotlinx.serialization.builtins.BuiltinSerializersKt;
 public final class RetainedComponentKt {
     private static final String KEY_STATE_MARKER = "RetainedComponent_state_marker";
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$0() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$1() {
         return true;
     }
@@ -52,9 +52,7 @@ public final class RetainedComponentKt {
             function0 = new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean retainedComponent$lambda$0;
-                    retainedComponent$lambda$0 = RetainedComponentKt.retainedComponent$lambda$0();
-                    return Boolean.valueOf(retainedComponent$lambda$0);
+                    return Boolean.valueOf(RetainedComponentKt.retainedComponent$lambda$0());
                 }
             };
         }
@@ -84,9 +82,7 @@ public final class RetainedComponentKt {
             function0 = new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean retainedComponent$lambda$1;
-                    retainedComponent$lambda$1 = RetainedComponentKt.retainedComponent$lambda$1();
-                    return Boolean.valueOf(retainedComponent$lambda$1);
+                    return Boolean.valueOf(RetainedComponentKt.retainedComponent$lambda$1());
                 }
             };
         }
@@ -102,14 +98,12 @@ public final class RetainedComponentKt {
         return (T) retainedComponent(fragment, key, z ? fragment.requireActivity().getOnBackPressedDispatcher() : null, z2, isStateSavingAllowed, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean retainedComponent$lambda$2;
-                retainedComponent$lambda$2 = RetainedComponentKt.retainedComponent$lambda$2(Fragment.this);
-                return Boolean.valueOf(retainedComponent$lambda$2);
+                return Boolean.valueOf(RetainedComponentKt.retainedComponent$lambda$2(Fragment.this));
             }
         }, factory);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$2(Fragment fragment) {
         FragmentActivity activity = fragment.getActivity();
         if (activity != null) {
@@ -136,9 +130,7 @@ public final class RetainedComponentKt {
         stateKeeper.register(KEY_STATE_MARKER, BuiltinSerializersKt.serializer(BooleanCompanionObject.INSTANCE), new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Boolean retainedComponent$lambda$4;
-                retainedComponent$lambda$4 = RetainedComponentKt.retainedComponent$lambda$4();
-                return retainedComponent$lambda$4;
+                return RetainedComponentKt.retainedComponent$lambda$4();
             }
         });
         if (z2 && (retainedComponentHolder = (RetainedComponentHolder) instanceKeeper$default.remove(key)) != null) {
@@ -154,52 +146,40 @@ public final class RetainedComponentKt {
         LifecycleExtKt.subscribe(essentyLifecycle, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$7;
-                retainedComponent$lambda$7 = RetainedComponentKt.retainedComponent$lambda$7(RetainedComponentHolder.this);
-                return retainedComponent$lambda$7;
+                return RetainedComponentKt.retainedComponent$lambda$7(RetainedComponentHolder.this);
             }
         }, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$8;
-                retainedComponent$lambda$8 = RetainedComponentKt.retainedComponent$lambda$8(RetainedComponentHolder.this);
-                return retainedComponent$lambda$8;
+                return RetainedComponentKt.retainedComponent$lambda$8(RetainedComponentHolder.this);
             }
         }, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$9;
-                retainedComponent$lambda$9 = RetainedComponentKt.retainedComponent$lambda$9(RetainedComponentHolder.this);
-                return retainedComponent$lambda$9;
+                return RetainedComponentKt.retainedComponent$lambda$9(RetainedComponentHolder.this);
             }
         }, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$10;
-                retainedComponent$lambda$10 = RetainedComponentKt.retainedComponent$lambda$10(Function0.this, retainedComponentHolder3);
-                return retainedComponent$lambda$10;
+                return RetainedComponentKt.retainedComponent$lambda$10(Function0.this, retainedComponentHolder3);
             }
         }, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$11;
-                retainedComponent$lambda$11 = RetainedComponentKt.retainedComponent$lambda$11(Function0.this, retainedComponentHolder3);
-                return retainedComponent$lambda$11;
+                return RetainedComponentKt.retainedComponent$lambda$11(Function0.this, retainedComponentHolder3);
             }
         }, new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retainedComponent$lambda$12;
-                retainedComponent$lambda$12 = RetainedComponentKt.retainedComponent$lambda$12(Function0.this, retainedComponentHolder3);
-                return retainedComponent$lambda$12;
+                return RetainedComponentKt.retainedComponent$lambda$12(Function0.this, retainedComponentHolder3);
             }
         });
         stateKeeper.register(key, SerializableContainer.Companion.serializer(), new Function0() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerializableContainer retainedComponent$lambda$13;
-                retainedComponent$lambda$13 = RetainedComponentKt.retainedComponent$lambda$13(RetainedComponentHolder.this);
-                return retainedComponent$lambda$13;
+                SerializableContainer save;
+                save = RetainedComponentHolder.this.getStateKeeper().save();
+                return save;
             }
         });
         if (onBackPressedDispatcher != null) {
@@ -207,9 +187,7 @@ public final class RetainedComponentKt {
             retainedComponentHolder3.setOnBackEnabledChangedListener(new Function1() { // from class: com.arkivanov.decompose.RetainedComponentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit retainedComponent$lambda$14;
-                    retainedComponent$lambda$14 = RetainedComponentKt.retainedComponent$lambda$14(DelegateOnBackPressedCallback.this, ((Boolean) obj).booleanValue());
-                    return retainedComponent$lambda$14;
+                    return RetainedComponentKt.retainedComponent$lambda$14(DelegateOnBackPressedCallback.this, ((Boolean) obj).booleanValue());
                 }
             });
             onBackPressedDispatcher.addCallback(o, delegateOnBackPressedCallback);
@@ -217,30 +195,30 @@ public final class RetainedComponentKt {
         return (T) retainedComponentHolder3.getComponent();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Boolean retainedComponent$lambda$4() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$7(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.create(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$8(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.start(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$9(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.resume(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$10(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.pause(retainedComponentHolder.getLifecycle());
@@ -248,7 +226,7 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$11(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.stop(retainedComponentHolder.getLifecycle());
@@ -256,7 +234,7 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$12(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.destroy(retainedComponentHolder.getLifecycle());
@@ -264,12 +242,7 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SerializableContainer retainedComponent$lambda$13(RetainedComponentHolder retainedComponentHolder) {
-        return retainedComponentHolder.getStateKeeper().save();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$14(DelegateOnBackPressedCallback delegateOnBackPressedCallback, boolean z) {
         delegateOnBackPressedCallback.setEnabled(z);
         return Unit.INSTANCE;

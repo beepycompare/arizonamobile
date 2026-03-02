@@ -80,7 +80,7 @@ import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: CraftScreen.kt */
-@Metadata(d1 = {"\u0000Ä\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0011\u0018\u0000 m2\u00020\u00012\u00020\u0002:\u0002mnB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0018\u0010F\u001a\u00020D2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020\u0006H\u0016J\b\u0010J\u001a\u00020DH\u0002J\u0010\u0010K\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0010\u0010L\u001a\u00020D2\u0006\u0010M\u001a\u00020.H\u0002J\u0010\u0010N\u001a\u00020D2\u0006\u0010M\u001a\u00020.H\u0002J\b\u0010O\u001a\u00020DH\u0002J\b\u0010P\u001a\u00020DH\u0002J\b\u0010Q\u001a\u00020DH\u0002J\u0010\u00104\u001a\u00020D2\u0006\u0010R\u001a\u000205H\u0002J\u0010\u00107\u001a\u00020D2\u0006\u0010R\u001a\u000205H\u0002J\b\u0010S\u001a\u00020DH\u0002J\u0010\u0010T\u001a\u00020D2\u0006\u0010U\u001a\u00020\u0010H\u0002J\u0010\u0010V\u001a\u00020D2\u0006\u0010W\u001a\u000202H\u0002J\u0010\u0010X\u001a\u00020D2\u0006\u0010U\u001a\u00020\u0010H\u0002J\u0010\u0010Y\u001a\u00020D2\u0006\u0010U\u001a\u00020#H\u0002J\u0018\u0010Z\u001a\b\u0012\u0004\u0012\u00020[01*\b\u0012\u0004\u0012\u00020B01H\u0002J\u0010\u0010\\\u001a\u00020D2\u0006\u0010]\u001a\u00020^H\u0002J\u0010\u0010_\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0018\u0010`\u001a\u00020\u00062\u0006\u0010a\u001a\u00020\u00062\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010c\u001a\u00020D2\u0006\u0010d\u001a\u00020\u0006H\u0002J\b\u0010e\u001a\u00020DH\u0002J\u0010\u0010f\u001a\u00020D2\u0006\u0010U\u001a\u00020#H\u0002J\u0010\u0010g\u001a\u00020\u00062\u0006\u0010h\u001a\u00020\u0006H\u0002J\u0018\u0010i\u001a\u00020D2\u0006\u0010I\u001a\u00020\u00062\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010j\u001a\u00020D2\u0006\u0010k\u001a\u00020.H\u0016J\b\u0010l\u001a\u00020DH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00060\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00104\u001a\n 6*\u0004\u0018\u00010505X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00107\u001a\n 6*\u0004\u0018\u00010505X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u000601X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010:\u001a\n 6*\u0004\u0018\u00010;0;X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n\u0012\u0004\u0012\u00020?\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010A\u001a\n\u0012\u0004\u0012\u00020B\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006o"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "craftScreen", "Landroid/widget/FrameLayout;", "binding", "Lru/mrlargha/commonui/databinding/CraftScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "craftResponse", "Lru/mrlargha/commonui/elements/craft/domain/CraftResponse;", "categoryMenu", "", "colorsList", "Lru/mrlargha/commonui/elements/craft/domain/ItemColor;", "craftItemsAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftItemsAdapter;", "craftMenuAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftMenuAdapter;", "needResourcesAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/NeedResourcesAdapter;", "craftItemsSelectedPosition", "craftMenuSelectedId", "colorsTypeAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/ColorsTypeAdapter;", "selectedColor", "selectedColorPosition", "currentNumber", "currentCraftedItem", "Lru/mrlargha/commonui/elements/craft/domain/CraftItemInfo;", "currentItem", "currentItemIndex", "incrementHandler", "Landroid/os/Handler;", "newHandler", "progress", "progressIncrement", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "isEnabledCraft", "", "isCancelClicked", "pagingCraftList", "", "Lru/mrlargha/commonui/elements/craft/domain/CraftItem;", "showingList", "fadeUpAnimation", "Landroid/view/animation/Animation;", "kotlin.jvm.PlatformType", "fadeDownAnimation", "currentPage", "tuningItems", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "isDisableAll", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isCraftProcess", "needList", "Lru/mrlargha/commonui/elements/craft/domain/NeedItems;", "setEnableEtResourcesCount", "", "isEnable", "onBackendMessage", "data", "", "subId", "getInventoryList", "isEnabledCraftItem", "editNumber", "isPlus", "incrementFaster", "resetCraftNumber", "updateItemCounts", "resetCraftAttempts", "animation", "defaultScreen", "fillColorsList", "response", "editCraftItemUi", "craftItem", "initMenuCategories", "initItemUi", "toUi", "Lru/mrlargha/commonui/elements/craft/domain/NeedItemsUi;", "startProgressBarAnimation", "time", "", "isEnableButtons", "getItemFromInventory", "item", "successAmount", "initCraftItems", "clickedPos", "clearColor", "refreshData", "getTuningItem", "itemId", "sendRequest", "setVisible", "visible", "closeScreen", "Companion", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ä\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0011\u0018\u0000 m2\u00020\u00012\u00020\u0002:\u0002mnB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0018\u0010F\u001a\u00020D2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020\u0006H\u0016J\b\u0010J\u001a\u00020DH\u0002J\u0010\u0010K\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0010\u0010L\u001a\u00020D2\u0006\u0010M\u001a\u00020.H\u0002J\u0010\u0010N\u001a\u00020D2\u0006\u0010M\u001a\u00020.H\u0002J\b\u0010O\u001a\u00020DH\u0002J\b\u0010P\u001a\u00020DH\u0002J\b\u0010Q\u001a\u00020DH\u0002J\u0010\u00104\u001a\u00020D2\u0006\u0010R\u001a\u000205H\u0002J\u0010\u00107\u001a\u00020D2\u0006\u0010R\u001a\u000205H\u0002J\b\u0010S\u001a\u00020DH\u0002J\u0010\u0010T\u001a\u00020D2\u0006\u0010U\u001a\u00020\u0010H\u0002J\u0010\u0010V\u001a\u00020D2\u0006\u0010W\u001a\u000202H\u0002J\u0010\u0010X\u001a\u00020D2\u0006\u0010U\u001a\u00020\u0010H\u0002J\u0010\u0010Y\u001a\u00020D2\u0006\u0010U\u001a\u00020#H\u0002J\u0018\u0010Z\u001a\b\u0012\u0004\u0012\u00020[01*\b\u0012\u0004\u0012\u00020B01H\u0002J\u0010\u0010\\\u001a\u00020D2\u0006\u0010]\u001a\u00020^H\u0002J\u0010\u0010_\u001a\u00020D2\u0006\u0010E\u001a\u00020.H\u0002J\u0018\u0010`\u001a\u00020\u00062\u0006\u0010a\u001a\u00020\u00062\u0006\u0010b\u001a\u00020\u0006H\u0002J\u0010\u0010c\u001a\u00020D2\u0006\u0010d\u001a\u00020\u0006H\u0002J\b\u0010e\u001a\u00020DH\u0002J\u0010\u0010f\u001a\u00020D2\u0006\u0010U\u001a\u00020#H\u0002J\u0010\u0010g\u001a\u00020\u00062\u0006\u0010h\u001a\u00020\u0006H\u0002J\u0018\u0010i\u001a\u00020D2\u0006\u0010I\u001a\u00020\u00062\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010j\u001a\u00020D2\u0006\u0010k\u001a\u00020.H\u0016J\b\u0010l\u001a\u00020DH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00060\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020201X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00104\u001a\n 6*\u0004\u0018\u00010505X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00107\u001a\n 6*\u0004\u0018\u00010505X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u000601X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010:\u001a\n 6*\u0004\u0018\u00010;0;X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n\u0012\u0004\u0012\u00020?\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020.X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010A\u001a\n\u0012\u0004\u0012\u00020B\u0018\u000101X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006o"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "craftScreen", "Landroid/widget/FrameLayout;", "binding", "Lru/mrlargha/commonui/databinding/CraftScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "craftResponse", "Lru/mrlargha/commonui/elements/craft/domain/CraftResponse;", "categoryMenu", "", "colorsList", "Lru/mrlargha/commonui/elements/craft/domain/ItemColor;", "craftItemsAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftItemsAdapter;", "craftMenuAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftMenuAdapter;", "needResourcesAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/NeedResourcesAdapter;", "craftItemsSelectedPosition", "craftMenuSelectedId", "colorsTypeAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/ColorsTypeAdapter;", "selectedColor", "selectedColorPosition", "currentNumber", "currentCraftedItem", "Lru/mrlargha/commonui/elements/craft/domain/CraftItemInfo;", "currentItem", "currentItemIndex", "incrementHandler", "Landroid/os/Handler;", "newHandler", "progress", "progressIncrement", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "isEnabledCraft", "", "isCancelClicked", "pagingCraftList", "", "Lru/mrlargha/commonui/elements/craft/domain/CraftItem;", "showingList", "fadeUpAnimation", "Landroid/view/animation/Animation;", "kotlin.jvm.PlatformType", "fadeDownAnimation", "currentPage", "tuningItems", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "isDisableAll", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isCraftProcess", "needList", "Lru/mrlargha/commonui/elements/craft/domain/NeedItems;", "setEnableEtResourcesCount", "", "isEnable", "onBackendMessage", "data", "", "subId", "getInventoryList", "isEnabledCraftItem", "editNumber", "isPlus", "incrementFaster", "resetCraftNumber", "updateItemCounts", "resetCraftAttempts", "animation", "defaultScreen", "fillColorsList", "response", "editCraftItemUi", "craftItem", "initMenuCategories", "initItemUi", "toUi", "Lru/mrlargha/commonui/elements/craft/domain/NeedItemsUi;", "startProgressBarAnimation", "time", "", "isEnableButtons", "getItemFromInventory", "item", "successAmount", "initCraftItems", "clickedPos", "clearColor", "refreshData", "getTuningItem", "itemId", "sendRequest", "setVisible", "visible", "closeScreen", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CraftScreen extends SAMPUIElement implements InterfaceController {
     private static final String CRAFT_SCREEN_TAG = "CRAFT_SCREEN_TAG";
@@ -125,7 +125,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     private List<CraftItem> showingList;
     private List<Integer> tuningItems;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$3(View view) {
     }
 
@@ -148,17 +148,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.needResourcesAdapter = new NeedResourcesAdapter(activity, new Function1() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit needResourcesAdapter$lambda$0;
-                needResourcesAdapter$lambda$0 = CraftScreen.needResourcesAdapter$lambda$0(CraftScreen.this, ((Integer) obj).intValue());
-                return needResourcesAdapter$lambda$0;
+                return CraftScreen.needResourcesAdapter$lambda$0(CraftScreen.this, ((Integer) obj).intValue());
             }
         });
         this.colorsTypeAdapter = new ColorsTypeAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit colorsTypeAdapter$lambda$0;
-                colorsTypeAdapter$lambda$0 = CraftScreen.colorsTypeAdapter$lambda$0(CraftScreen.this, targetActivity, (ItemColor) obj, ((Integer) obj2).intValue());
-                return colorsTypeAdapter$lambda$0;
+                return CraftScreen.colorsTypeAdapter$lambda$0(CraftScreen.this, targetActivity, (ItemColor) obj, ((Integer) obj2).intValue());
             }
         });
         this.selectedColorPosition = -1;
@@ -233,17 +229,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.ivPlus.setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean _init_$lambda$7;
-                _init_$lambda$7 = CraftScreen._init_$lambda$7(CraftScreen.this, view);
-                return _init_$lambda$7;
+                return CraftScreen._init_$lambda$7(CraftScreen.this, view);
             }
         });
         bind.ivPlus.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean _init_$lambda$8;
-                _init_$lambda$8 = CraftScreen._init_$lambda$8(CraftScreen.this, view, motionEvent);
-                return _init_$lambda$8;
+                return CraftScreen._init_$lambda$8(CraftScreen.this, view, motionEvent);
             }
         });
         bind.ivMinus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda15
@@ -255,17 +247,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.ivMinus.setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda16
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
-                boolean _init_$lambda$10;
-                _init_$lambda$10 = CraftScreen._init_$lambda$10(CraftScreen.this, view);
-                return _init_$lambda$10;
+                return CraftScreen._init_$lambda$10(CraftScreen.this, view);
             }
         });
         bind.ivMinus.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean _init_$lambda$11;
-                _init_$lambda$11 = CraftScreen._init_$lambda$11(CraftScreen.this, view, motionEvent);
-                return _init_$lambda$11;
+                return CraftScreen._init_$lambda$11(CraftScreen.this, view, motionEvent);
             }
         });
         bind.successChanceField.nameTextView.setText(targetActivity.getString(R.string.success_chance));
@@ -303,16 +291,14 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.ivItemIcon.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CraftScreen._init_$lambda$12(CraftScreen.this, view);
+                r0.sendRequest(4, StringKt.toStringJson(new SendDataInfo(CraftScreen.this.currentItem)));
             }
         });
         if (!z) {
             bind.etResourcesCount.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda19
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                    boolean _init_$lambda$13;
-                    _init_$lambda$13 = CraftScreen._init_$lambda$13(CraftScreen.this, textView, i2, keyEvent);
-                    return _init_$lambda$13;
+                    return CraftScreen._init_$lambda$13(CraftScreen.this, textView, i2, keyEvent);
                 }
             });
         } else {
@@ -320,13 +306,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit needResourcesAdapter$lambda$0(CraftScreen craftScreen, int i) {
         craftScreen.sendRequest(4, StringKt.toStringJson(new SendDataInfo(i)));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit colorsTypeAdapter$lambda$0(CraftScreen craftScreen, Activity activity, ItemColor item, int i) {
         Intrinsics.checkNotNullParameter(item, "item");
         Group groupCharacter = craftScreen.binding.groupCharacter;
@@ -345,7 +331,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(CraftScreen craftScreen, Activity activity, View view) {
         craftScreen.isCancelClicked = true;
         Group groupCharacter = craftScreen.binding.groupCharacter;
@@ -364,7 +350,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         craftScreen.isEnabledCraftItem(craftScreen.isEnabledCraft);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(CraftScreen craftScreen, View view) {
         Log.d(CRAFT_SCREEN_TAG, "click on enableCreate item  ");
         craftScreen.isCraftProcess = true;
@@ -377,7 +363,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         craftScreen.sendRequest(2, StringKt.toStringJson(new SendCreateItem(craftScreen.craftMenuSelectedId, craftScreen.craftItemsSelectedPosition, craftScreen.selectedColorPosition, craftScreen.currentNumber)));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(CraftScreen craftScreen, View view) {
         ConstraintLayout parentLayout = craftScreen.binding.successLayout.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
@@ -388,7 +374,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$4(CraftScreen craftScreen, View view) {
         craftScreen.isCancelClicked = true;
         craftScreen.progress = 0;
@@ -401,7 +387,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         craftScreen.sendRequest(3, StringKt.toStringJson("0"));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$5(CraftScreen craftScreen, Activity activity, View view) {
         Group groupCharacter = craftScreen.binding.groupCharacter;
         Intrinsics.checkNotNullExpressionValue(groupCharacter, "groupCharacter");
@@ -420,13 +406,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         craftScreen.colorsTypeAdapter.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$7(CraftScreen craftScreen, View view) {
         craftScreen.incrementFaster(true);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$8(CraftScreen craftScreen, View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             craftScreen.newHandler.removeCallbacksAndMessages(null);
@@ -435,14 +421,14 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$9(CraftScreen craftScreen, View view) {
         if (craftScreen.currentNumber > 1) {
             craftScreen.editNumber(false);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$10(CraftScreen craftScreen, View view) {
         if (craftScreen.currentNumber > 1) {
             craftScreen.incrementFaster(false);
@@ -450,7 +436,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$11(CraftScreen craftScreen, View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             craftScreen.newHandler.removeCallbacksAndMessages(null);
@@ -459,12 +445,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$12(CraftScreen craftScreen, View view) {
-        craftScreen.sendRequest(4, StringKt.toStringJson(new SendDataInfo(craftScreen.currentItem)));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$13(CraftScreen craftScreen, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 6) {
             Integer intOrNull = StringsKt.toIntOrNull(textView.getText().toString());
@@ -688,7 +669,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$3(CraftScreen craftScreen) {
         Animation fadeDownAnimation = craftScreen.fadeDownAnimation;
         Intrinsics.checkNotNullExpressionValue(fadeDownAnimation, "fadeDownAnimation");
@@ -696,7 +677,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         craftScreen.binding.ivBgFlashLight.startAnimation(craftScreen.fadeDownAnimation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$7(CraftScreen craftScreen) {
         Animation fadeDownAnimation = craftScreen.fadeDownAnimation;
         Intrinsics.checkNotNullExpressionValue(fadeDownAnimation, "fadeDownAnimation");
@@ -712,8 +693,9 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         if (this.isCraftProcess) {
             return;
         }
+        CraftScreenBinding craftScreenBinding = this.binding;
         if (z) {
-            Button btnDisableCreateItem = this.binding.btnDisableCreateItem;
+            Button btnDisableCreateItem = craftScreenBinding.btnDisableCreateItem;
             Intrinsics.checkNotNullExpressionValue(btnDisableCreateItem, "btnDisableCreateItem");
             btnDisableCreateItem.setVisibility(8);
             TextView btnEnableCreateItem = this.binding.btnEnableCreateItem;
@@ -722,7 +704,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
             this.isEnabledCraft = true;
             return;
         }
-        TextView btnEnableCreateItem2 = this.binding.btnEnableCreateItem;
+        TextView btnEnableCreateItem2 = craftScreenBinding.btnEnableCreateItem;
         Intrinsics.checkNotNullExpressionValue(btnEnableCreateItem2, "btnEnableCreateItem");
         btnEnableCreateItem2.setVisibility(8);
         Button btnDisableCreateItem2 = this.binding.btnDisableCreateItem;
@@ -735,22 +717,24 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     public final void editNumber(boolean z) {
         int i;
         Log.d("craft", "editNumber: " + this.currentNumber);
-        if (z) {
-            this.currentNumber++;
-        } else {
-            this.currentNumber--;
-        }
         int i2 = this.currentNumber;
+        if (z) {
+            this.currentNumber = i2 + 1;
+        } else {
+            this.currentNumber = i2 - 1;
+        }
+        int i3 = this.currentNumber;
         if (this.isArizonaType) {
             CraftItemInfo craftItemInfo = this.currentCraftedItem;
             i = craftItemInfo != null ? craftItemInfo.getMaxCount() : 10;
         } else {
             i = 1000;
         }
-        if (i2 >= i) {
-            this.binding.ivPlus.setEnabled(false);
+        CraftScreenBinding craftScreenBinding = this.binding;
+        if (i3 >= i) {
+            craftScreenBinding.ivPlus.setEnabled(false);
         } else {
-            this.binding.ivPlus.setEnabled(true);
+            craftScreenBinding.ivPlus.setEnabled(true);
         }
         updateItemCounts();
     }
@@ -873,9 +857,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.craftMenuAdapter = new CraftMenuAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initMenuCategories$lambda$0;
-                initMenuCategories$lambda$0 = CraftScreen.initMenuCategories$lambda$0(CraftScreen.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return initMenuCategories$lambda$0;
+                return CraftScreen.initMenuCategories$lambda$0(CraftScreen.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
             }
         });
         RecyclerView recyclerView = this.binding.rvMenu;
@@ -914,7 +896,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initMenuCategories$lambda$0(CraftScreen craftScreen, int i, int i2) {
         if (craftScreen.isDisableAll) {
             return Unit.INSTANCE;
@@ -953,7 +935,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void initMenuCategories$lambda$2(CraftScreen craftScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = craftScreen.binding.rvMenu.findViewHolderForAdapterPosition(0);
@@ -973,10 +955,12 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.binding.tvCost.setText(DonateUtilsKt.formatWithSpaces(craftItemInfo.getCost()) + "$");
         this.binding.tvTotalCost.setText(DonateUtilsKt.formatWithSpaces(craftItemInfo.getTotalCost() > -1 ? craftItemInfo.getTotalCost() : craftItemInfo.getCost() * this.currentNumber) + "$");
         this.binding.experienceField.valueTextView.setText("+" + craftItemInfo.getExp() + " ");
-        if (this.isArizonaType) {
-            this.binding.costField.ivValueIcon.setImageResource(R.drawable.ic_dollar_16);
+        boolean z2 = this.isArizonaType;
+        CraftScreenBinding craftScreenBinding = this.binding;
+        if (z2) {
+            craftScreenBinding.costField.ivValueIcon.setImageResource(R.drawable.ic_dollar_16);
         } else {
-            this.binding.costField.ivValueIcon.setImageResource(R.drawable.ic_rubble);
+            craftScreenBinding.costField.ivValueIcon.setImageResource(R.drawable.ic_rubble);
         }
         this.needList = craftItemInfo.getNeeds();
         List<NeedItemsUi> ui = toUi(craftItemInfo.getNeeds());
@@ -1090,9 +1074,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.craftItemsAdapter = new CraftItemsAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initCraftItems$lambda$0;
-                initCraftItems$lambda$0 = CraftScreen.initCraftItems$lambda$0(CraftScreen.this, (CraftItem) obj, ((Integer) obj2).intValue());
-                return initCraftItems$lambda$0;
+                return CraftScreen.initCraftItems$lambda$0(CraftScreen.this, (CraftItem) obj, ((Integer) obj2).intValue());
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.rvCraft;
@@ -1149,7 +1131,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initCraftItems$lambda$0(CraftScreen craftScreen, CraftItem item, int i) {
         CraftItemsAdapter craftItemsAdapter;
         Object obj;
@@ -1210,7 +1192,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void initCraftItems$lambda$2(CraftScreen craftScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = craftScreen.binding.rvCraft.findViewHolderForAdapterPosition(0);
@@ -1263,7 +1245,8 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         return this.tuningItems.get(i).intValue() != 0 ? this.tuningItems.get(i).intValue() : i;
     }
 
-    private final void sendRequest(int i, String str) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void sendRequest(int i, String str) {
         Log.d("TAG_SEND", "data: " + str + " ====== subId: " + i);
         IBackendNotifier iBackendNotifier = this.frontendNotifier;
         int id = UIElementID.CRAFT.getId();
@@ -1303,7 +1286,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* compiled from: CraftScreen.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen$Companion;", "", "<init>", "()V", CraftScreen.CRAFT_SCREEN_TAG, "", "MAX_CRAFT_COUNT_RODINA", "", "MAX_CRAFT_COUNT_ARIZONA", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen$Companion;", "", "<init>", "()V", CraftScreen.CRAFT_SCREEN_TAG, "", "MAX_CRAFT_COUNT_RODINA", "", "MAX_CRAFT_COUNT_ARIZONA", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1315,7 +1298,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* compiled from: CraftScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.CRAFT);

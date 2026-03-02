@@ -143,7 +143,7 @@ public class SnapshotMutableStateImpl<T> extends StateObjectImpl implements Snap
         return getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit component2$lambda$0(SnapshotMutableStateImpl snapshotMutableStateImpl, Object obj) {
         snapshotMutableStateImpl.setValue(obj);
         return Unit.INSTANCE;
@@ -154,9 +154,7 @@ public class SnapshotMutableStateImpl<T> extends StateObjectImpl implements Snap
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$0;
-                component2$lambda$0 = SnapshotMutableStateImpl.component2$lambda$0(SnapshotMutableStateImpl.this, obj);
-                return component2$lambda$0;
+                return SnapshotMutableStateImpl.component2$lambda$0(SnapshotMutableStateImpl.this, obj);
             }
         };
     }

@@ -68,7 +68,7 @@ public final class DispatchedTaskKt {
             Result.Companion companion2 = Result.Companion;
             successfulResult$kotlinx_coroutines_core = dispatchedTask.getSuccessfulResult$kotlinx_coroutines_core(takeState$kotlinx_coroutines_core);
         }
-        Object m10243constructorimpl = Result.m10243constructorimpl(successfulResult$kotlinx_coroutines_core);
+        Object m9182constructorimpl = Result.m9182constructorimpl(successfulResult$kotlinx_coroutines_core);
         if (z) {
             Intrinsics.checkNotNull(continuation, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T of kotlinx.coroutines.DispatchedTaskKt.resume>");
             DispatchedContinuation dispatchedContinuation = (DispatchedContinuation) continuation;
@@ -78,7 +78,7 @@ public final class DispatchedTaskKt {
             Object updateThreadContext = ThreadContextKt.updateThreadContext(context, obj);
             UndispatchedCoroutine<?> updateUndispatchedCompletion = updateThreadContext != ThreadContextKt.NO_THREAD_ELEMENTS ? CoroutineContextKt.updateUndispatchedCompletion(continuation2, context, updateThreadContext) : null;
             try {
-                dispatchedContinuation.continuation.resumeWith(m10243constructorimpl);
+                dispatchedContinuation.continuation.resumeWith(m9182constructorimpl);
                 Unit unit = Unit.INSTANCE;
                 if (updateUndispatchedCompletion == null || updateUndispatchedCompletion.clearThreadContext()) {
                     ThreadContextKt.restoreThreadContext(context, updateThreadContext);
@@ -92,7 +92,7 @@ public final class DispatchedTaskKt {
                 throw th;
             }
         }
-        continuation.resumeWith(m10243constructorimpl);
+        continuation.resumeWith(m9182constructorimpl);
     }
 
     private static final void resumeUnconfined(DispatchedTask<?> dispatchedTask) {
@@ -133,6 +133,6 @@ public final class DispatchedTaskKt {
         if (DebugKt.getRECOVER_STACK_TRACES() && (continuation instanceof CoroutineStackFrame)) {
             th = StackTraceRecoveryKt.recoverFromStackFrame(th, (CoroutineStackFrame) continuation);
         }
-        continuation.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(th)));
+        continuation.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
     }
 }

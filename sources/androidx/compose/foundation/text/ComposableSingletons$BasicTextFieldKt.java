@@ -15,25 +15,19 @@ public final class ComposableSingletons$BasicTextFieldKt {
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$759698998 = ComposableLambdaKt.composableLambdaInstance(759698998, false, new Function3() { // from class: androidx.compose.foundation.text.ComposableSingletons$BasicTextFieldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_759698998$lambda$0;
-            lambda_759698998$lambda$0 = ComposableSingletons$BasicTextFieldKt.lambda_759698998$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_759698998$lambda$0;
+            return ComposableSingletons$BasicTextFieldKt.lambda_759698998$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$486633673 = ComposableLambdaKt.composableLambdaInstance(486633673, false, new Function3() { // from class: androidx.compose.foundation.text.ComposableSingletons$BasicTextFieldKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_486633673$lambda$0;
-            lambda_486633673$lambda$0 = ComposableSingletons$BasicTextFieldKt.lambda_486633673$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_486633673$lambda$0;
+            return ComposableSingletons$BasicTextFieldKt.lambda_486633673$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$444370233 = ComposableLambdaKt.composableLambdaInstance(444370233, false, new Function3() { // from class: androidx.compose.foundation.text.ComposableSingletons$BasicTextFieldKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_444370233$lambda$0;
-            lambda_444370233$lambda$0 = ComposableSingletons$BasicTextFieldKt.lambda_444370233$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_444370233$lambda$0;
+            return ComposableSingletons$BasicTextFieldKt.lambda_444370233$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
@@ -41,14 +35,12 @@ public final class ComposableSingletons$BasicTextFieldKt {
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> f54lambda$665310900 = ComposableLambdaKt.composableLambdaInstance(-665310900, false, new Function3() { // from class: androidx.compose.foundation.text.ComposableSingletons$BasicTextFieldKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__665310900$lambda$0;
-            lambda__665310900$lambda$0 = ComposableSingletons$BasicTextFieldKt.lambda__665310900$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__665310900$lambda$0;
+            return ComposableSingletons$BasicTextFieldKt.lambda__665310900$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
     /* renamed from: getLambda$-665310900$foundation  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1333getLambda$665310900$foundation() {
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m1166getLambda$665310900$foundation() {
         return f54lambda$665310900;
     }
 
@@ -64,7 +56,7 @@ public final class ComposableSingletons$BasicTextFieldKt {
         return lambda$759698998;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_759698998$lambda$0(Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(innerTextField)748@38867L16:BasicTextField.kt#423gt5");
         if ((i & 6) == 0) {
@@ -84,7 +76,7 @@ public final class ComposableSingletons$BasicTextFieldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_486633673$lambda$0(Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(innerTextField)905@47848L16:BasicTextField.kt#423gt5");
         if ((i & 6) == 0) {
@@ -104,7 +96,7 @@ public final class ComposableSingletons$BasicTextFieldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_444370233$lambda$0(Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(innerTextField)949@49520L16:BasicTextField.kt#423gt5");
         if ((i & 6) == 0) {
@@ -124,7 +116,7 @@ public final class ComposableSingletons$BasicTextFieldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__665310900$lambda$0(Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(innerTextField)989@51047L16:BasicTextField.kt#423gt5");
         if ((i & 6) == 0) {

@@ -128,12 +128,14 @@ public final class TrieNode<K, V> {
 
     private final TrieNode<K, V> mutableInsertEntryAt(int i, K k, V v, MutabilityOwnership mutabilityOwnership) {
         int entryKeyIndex$kotlinx_collections_immutable = entryKeyIndex$kotlinx_collections_immutable(i);
-        if (this.ownedBy == mutabilityOwnership) {
-            this.buffer = TrieNodeKt.access$insertEntryAtIndex(this.buffer, entryKeyIndex$kotlinx_collections_immutable, k, v);
+        MutabilityOwnership mutabilityOwnership2 = this.ownedBy;
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership2 == mutabilityOwnership) {
+            this.buffer = TrieNodeKt.access$insertEntryAtIndex(objArr, entryKeyIndex$kotlinx_collections_immutable, k, v);
             this.dataMap = i | this.dataMap;
             return this;
         }
-        return new TrieNode<>(i | this.dataMap, this.nodeMap, TrieNodeKt.access$insertEntryAtIndex(this.buffer, entryKeyIndex$kotlinx_collections_immutable, k, v), mutabilityOwnership);
+        return new TrieNode<>(i | this.dataMap, this.nodeMap, TrieNodeKt.access$insertEntryAtIndex(objArr, entryKeyIndex$kotlinx_collections_immutable, k, v), mutabilityOwnership);
     }
 
     private final TrieNode<K, V> updateValueAtIndex(int i, V v) {
@@ -250,12 +252,15 @@ public final class TrieNode<K, V> {
         if (this.buffer.length == 2) {
             return null;
         }
-        if (this.ownedBy == persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable()) {
-            this.buffer = TrieNodeKt.access$removeEntryAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership = this.ownedBy;
+        MutabilityOwnership ownership$kotlinx_collections_immutable = persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable();
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership == ownership$kotlinx_collections_immutable) {
+            this.buffer = TrieNodeKt.access$removeEntryAtIndex(objArr, i);
             this.dataMap ^= i2;
             return this;
         }
-        return new TrieNode<>(i2 ^ this.dataMap, this.nodeMap, TrieNodeKt.access$removeEntryAtIndex(this.buffer, i), persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
+        return new TrieNode<>(i2 ^ this.dataMap, this.nodeMap, TrieNodeKt.access$removeEntryAtIndex(objArr, i), persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
     }
 
     private final TrieNode<K, V> collisionRemoveEntryAtIndex(int i) {
@@ -272,11 +277,14 @@ public final class TrieNode<K, V> {
         if (this.buffer.length == 2) {
             return null;
         }
-        if (this.ownedBy == persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable()) {
-            this.buffer = TrieNodeKt.access$removeEntryAtIndex(this.buffer, i);
+        MutabilityOwnership mutabilityOwnership = this.ownedBy;
+        MutabilityOwnership ownership$kotlinx_collections_immutable = persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable();
+        Object[] objArr = this.buffer;
+        if (mutabilityOwnership == ownership$kotlinx_collections_immutable) {
+            this.buffer = TrieNodeKt.access$removeEntryAtIndex(objArr, i);
             return this;
         }
-        return new TrieNode<>(0, 0, TrieNodeKt.access$removeEntryAtIndex(this.buffer, i), persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
+        return new TrieNode<>(0, 0, TrieNodeKt.access$removeEntryAtIndex(objArr, i), persistentHashMapBuilder.getOwnership$kotlinx_collections_immutable());
     }
 
     private final int collisionKeyIndex(Object obj) {
@@ -364,10 +372,10 @@ public final class TrieNode<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     private final TrieNode<K, V> mutableCollisionPutAll(TrieNode<K, V> trieNode, DeltaCounter deltaCounter, MutabilityOwnership mutabilityOwnership) {
-        CommonFunctionsKt.m11753assert(this.nodeMap == 0);
-        CommonFunctionsKt.m11753assert(this.dataMap == 0);
-        CommonFunctionsKt.m11753assert(trieNode.nodeMap == 0);
-        CommonFunctionsKt.m11753assert(trieNode.dataMap == 0);
+        CommonFunctionsKt.m10682assert(this.nodeMap == 0);
+        CommonFunctionsKt.m10682assert(this.dataMap == 0);
+        CommonFunctionsKt.m10682assert(trieNode.nodeMap == 0);
+        CommonFunctionsKt.m10682assert(trieNode.dataMap == 0);
         Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length + trieNode.buffer.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");

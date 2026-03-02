@@ -12,6 +12,6 @@ public final /* synthetic */ class AudioFocusManager$$ExternalSyntheticLambda0 i
 
     @Override // android.media.AudioManager.OnAudioFocusChangeListener
     public final void onAudioFocusChange(int i) {
-        AudioFocusManager.m8889$r8$lambda$KCg37zmwP_RajgD4dsHtFvSy9M(this.f$0, i);
+        AudioFocusManager.m8162$r8$lambda$KCg37zmwP_RajgD4dsHtFvSy9M(this.f$0, i);
     }
 }

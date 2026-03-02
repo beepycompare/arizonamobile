@@ -43,9 +43,7 @@ public final class EmptyStackAnimator implements StackAnimator {
             rememberedValue = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.EmptyStackAnimator$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult invoke$lambda$2$lambda$1;
-                    invoke$lambda$2$lambda$1 = EmptyStackAnimator.invoke$lambda$2$lambda$1(Function0.this, (DisposableEffectScope) obj);
-                    return invoke$lambda$2$lambda$1;
+                    return EmptyStackAnimator.invoke$lambda$2$lambda$1(Function0.this, (DisposableEffectScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -58,7 +56,7 @@ public final class EmptyStackAnimator implements StackAnimator {
         composer.endReplaceGroup();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult invoke$lambda$2$lambda$1(Function0 function0, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         function0.invoke();

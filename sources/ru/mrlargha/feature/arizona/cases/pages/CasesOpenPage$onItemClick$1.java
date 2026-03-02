@@ -16,8 +16,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesOpenPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$onItemClick$1", f = "CasesOpenPage.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DTS_UHD}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$onItemClick$1", f = "CasesOpenPage.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DTS_UHD}, m = "invokeSuspend", n = {}, nl = {142}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesOpenPage$onItemClick$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $cost;
@@ -44,8 +44,8 @@ public final class CasesOpenPage$onItemClick$1 extends SuspendLambda implements 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CasesOpenPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$onItemClick$1$1", f = "CasesOpenPage.kt", i = {}, l = {140}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$onItemClick$1$1", f = "CasesOpenPage.kt", i = {}, l = {140}, m = "invokeSuspend", n = {}, nl = {141}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$onItemClick$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

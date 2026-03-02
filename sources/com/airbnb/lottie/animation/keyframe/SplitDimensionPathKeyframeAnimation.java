@@ -78,16 +78,16 @@ public class SplitDimensionPathKeyframeAnimation extends BaseKeyframeAnimation<P
             Float f5 = currentKeyframe.endFrame;
             f3 = this.yValueCallback.getValueInternal(currentKeyframe.startFrame, f5 == null ? currentKeyframe.startFrame : f5.floatValue(), currentKeyframe.startValue, currentKeyframe.endValue, this.yAnimation.getInterpolatedCurrentKeyframeProgress(), this.yAnimation.getLinearCurrentKeyframeProgress(), this.yAnimation.getProgress());
         }
+        PointF pointF = this.pointWithCallbackValues;
         if (f2 == null) {
-            this.pointWithCallbackValues.set(this.point.x, 0.0f);
+            pointF.set(this.point.x, 0.0f);
         } else {
-            this.pointWithCallbackValues.set(f2.floatValue(), 0.0f);
+            pointF.set(f2.floatValue(), 0.0f);
         }
+        PointF pointF2 = this.pointWithCallbackValues;
         if (f3 == null) {
-            PointF pointF = this.pointWithCallbackValues;
-            pointF.set(pointF.x, this.point.y);
+            pointF2.set(pointF2.x, this.point.y);
         } else {
-            PointF pointF2 = this.pointWithCallbackValues;
             pointF2.set(pointF2.x, f3.floatValue());
         }
         return this.pointWithCallbackValues;

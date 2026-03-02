@@ -23,7 +23,7 @@ public final class H extends Lambda implements Function0<String> {
         List<J> list = this.f1579a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (J j : list) {
-            arrayList.add(new C0833u(j.f1583a));
+            arrayList.add(new C0832u(j.f1583a));
         }
         return "Getting first " + this.b + " from storage: " + arrayList;
     }

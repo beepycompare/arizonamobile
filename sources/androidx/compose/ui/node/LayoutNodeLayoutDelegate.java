@@ -39,15 +39,15 @@ public final class LayoutNodeLayoutDelegate {
     }
 
     /* renamed from: getLastConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m7119getLastConstraintsDWUhwKw() {
-        return this.measurePassDelegate.m7148getLastConstraintsDWUhwKw();
+    public final Constraints m6459getLastConstraintsDWUhwKw() {
+        return this.measurePassDelegate.m6488getLastConstraintsDWUhwKw();
     }
 
     /* renamed from: getLastLookaheadConstraints-DWUhwKw  reason: not valid java name */
-    public final Constraints m7120getLastLookaheadConstraintsDWUhwKw() {
+    public final Constraints m6460getLastLookaheadConstraintsDWUhwKw() {
         LookaheadPassDelegate lookaheadPassDelegate = this.lookaheadPassDelegate;
         if (lookaheadPassDelegate != null) {
-            return lookaheadPassDelegate.m7138getLastConstraintsDWUhwKw();
+            return lookaheadPassDelegate.m6478getLastConstraintsDWUhwKw();
         }
         return null;
     }
@@ -289,10 +289,10 @@ public final class LayoutNodeLayoutDelegate {
     }
 
     /* renamed from: performLookaheadMeasure-BRTryo0$ui  reason: not valid java name */
-    public final void m7121performLookaheadMeasureBRTryo0$ui(long j) {
+    public final void m6461performLookaheadMeasureBRTryo0$ui(long j) {
         LookaheadPassDelegate lookaheadPassDelegate = this.lookaheadPassDelegate;
         if (lookaheadPassDelegate != null) {
-            lookaheadPassDelegate.m7139performMeasureBRTryo0$ui(j);
+            lookaheadPassDelegate.m6479performMeasureBRTryo0$ui(j);
         }
     }
 
@@ -311,15 +311,17 @@ public final class LayoutNodeLayoutDelegate {
         if (lookaheadPassDelegate == null || !lookaheadPassDelegate.updateParentData()) {
             return;
         }
-        if (LayoutNodeLayoutDelegateKt.isOutMostLookaheadRoot(this.layoutNode)) {
-            LayoutNode parent$ui2 = this.layoutNode.getParent$ui();
+        boolean isOutMostLookaheadRoot = LayoutNodeLayoutDelegateKt.isOutMostLookaheadRoot(this.layoutNode);
+        LayoutNode layoutNode = this.layoutNode;
+        if (isOutMostLookaheadRoot) {
+            LayoutNode parent$ui2 = layoutNode.getParent$ui();
             if (parent$ui2 != null) {
                 LayoutNode.requestRemeasure$ui$default(parent$ui2, false, false, false, 7, null);
                 return;
             }
             return;
         }
-        LayoutNode parent$ui3 = this.layoutNode.getParent$ui();
+        LayoutNode parent$ui3 = layoutNode.getParent$ui();
         if (parent$ui3 != null) {
             LayoutNode.requestLookaheadRemeasure$ui$default(parent$ui3, false, false, false, 7, null);
         }

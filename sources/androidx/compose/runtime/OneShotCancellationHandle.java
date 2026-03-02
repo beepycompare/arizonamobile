@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 public final class OneShotCancellationHandle implements CancellationHandle {
     public static final int $stable = 8;
     private final Function0<Unit> action;
-    private final AtomicInt didFireCancellation = AtomicBoolean.m4812constructorimpl(false);
+    private final AtomicInt didFireCancellation = AtomicBoolean.m4177constructorimpl(false);
 
     public OneShotCancellationHandle(Function0<Unit> function0) {
         this.action = function0;
@@ -20,7 +20,7 @@ public final class OneShotCancellationHandle implements CancellationHandle {
 
     @Override // androidx.compose.runtime.CancellationHandle
     public void cancel() {
-        if (AtomicBoolean.m4817getAndSetimpl(this.didFireCancellation, true)) {
+        if (AtomicBoolean.m4182getAndSetimpl(this.didFireCancellation, true)) {
             return;
         }
         this.action.invoke();

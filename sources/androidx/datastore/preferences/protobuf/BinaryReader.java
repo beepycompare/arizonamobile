@@ -268,10 +268,12 @@ abstract class BinaryReader implements Reader {
                 return ByteString.EMPTY;
             }
             requireBytes(readVarint32);
-            if (this.bufferIsImmutable) {
-                copyFrom = ByteString.wrap(this.buffer, this.pos, readVarint32);
+            boolean z = this.bufferIsImmutable;
+            byte[] bArr = this.buffer;
+            if (z) {
+                copyFrom = ByteString.wrap(bArr, this.pos, readVarint32);
             } else {
-                copyFrom = ByteString.copyFrom(this.buffer, this.pos, readVarint32);
+                copyFrom = ByteString.copyFrom(bArr, this.pos, readVarint32);
             }
             this.pos += readVarint32;
             return copyFrom;

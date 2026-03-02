@@ -69,10 +69,12 @@ public class EllipseContent implements PathContent, BaseKeyframeAnimation.Animat
 
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path getPath() {
-        if (this.isPathValid) {
-            return this.path;
+        boolean z = this.isPathValid;
+        Path path = this.path;
+        if (z) {
+            return path;
         }
-        this.path.reset();
+        path.reset();
         if (this.circleShape.isHidden()) {
             this.isPathValid = true;
             return this.path;
@@ -83,9 +85,11 @@ public class EllipseContent implements PathContent, BaseKeyframeAnimation.Animat
         float f3 = f * ELLIPSE_CONTROL_POINT_PERCENTAGE;
         float f4 = ELLIPSE_CONTROL_POINT_PERCENTAGE * f2;
         this.path.reset();
-        if (this.circleShape.isReversed()) {
+        boolean isReversed = this.circleShape.isReversed();
+        Path path2 = this.path;
+        if (isReversed) {
             float f5 = -f2;
-            this.path.moveTo(0.0f, f5);
+            path2.moveTo(0.0f, f5);
             float f6 = 0.0f - f3;
             float f7 = -f;
             float f8 = 0.0f - f4;
@@ -97,7 +101,7 @@ public class EllipseContent implements PathContent, BaseKeyframeAnimation.Animat
             this.path.cubicTo(f, f8, f10, f5, 0.0f, f5);
         } else {
             float f11 = -f2;
-            this.path.moveTo(0.0f, f11);
+            path2.moveTo(0.0f, f11);
             float f12 = f3 + 0.0f;
             float f13 = 0.0f - f4;
             this.path.cubicTo(f12, f11, f, f13, f, 0.0f);

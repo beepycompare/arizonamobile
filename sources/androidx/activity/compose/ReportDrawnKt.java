@@ -24,31 +24,31 @@ public final class ReportDrawnKt {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ReportDrawn$lambda$1(int i, Composer composer, int i2) {
         ReportDrawn(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ReportDrawnAfter$lambda$0(Function1 function1, int i, Composer composer, int i2) {
         ReportDrawnAfter(function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ReportDrawnAfter$lambda$2(Function1 function1, int i, Composer composer, int i2) {
         ReportDrawnAfter(function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ReportDrawnWhen$lambda$0(Function0 function0, int i, Composer composer, int i2) {
         ReportDrawnWhen(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ReportDrawnWhen$lambda$2(Function0 function0, int i, Composer composer, int i2) {
         ReportDrawnWhen(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -82,9 +82,7 @@ public final class ReportDrawnKt {
                     function2 = new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ReportDrawnWhen$lambda$0;
-                            ReportDrawnWhen$lambda$0 = ReportDrawnKt.ReportDrawnWhen$lambda$0(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                            return ReportDrawnWhen$lambda$0;
+                            return ReportDrawnKt.ReportDrawnWhen$lambda$0(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     };
                     scopeUpdateScope.updateScope(function2);
@@ -116,9 +114,7 @@ public final class ReportDrawnKt {
             function2 = new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ReportDrawnWhen$lambda$2;
-                    ReportDrawnWhen$lambda$2 = ReportDrawnKt.ReportDrawnWhen$lambda$2(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ReportDrawnWhen$lambda$2;
+                    return ReportDrawnKt.ReportDrawnWhen$lambda$2(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             scopeUpdateScope.updateScope(function2);
@@ -176,9 +172,7 @@ public final class ReportDrawnKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ReportDrawn$lambda$1;
-                    ReportDrawn$lambda$1 = ReportDrawnKt.ReportDrawn$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ReportDrawn$lambda$1;
+                    return ReportDrawnKt.ReportDrawn$lambda$1(i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -212,9 +206,7 @@ public final class ReportDrawnKt {
                     function2 = new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ReportDrawnAfter$lambda$0;
-                            ReportDrawnAfter$lambda$0 = ReportDrawnKt.ReportDrawnAfter$lambda$0(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                            return ReportDrawnAfter$lambda$0;
+                            return ReportDrawnKt.ReportDrawnAfter$lambda$0(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     };
                     scopeUpdateScope.updateScope(function2);
@@ -239,9 +231,7 @@ public final class ReportDrawnKt {
             function2 = new Function2() { // from class: androidx.activity.compose.ReportDrawnKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ReportDrawnAfter$lambda$2;
-                    ReportDrawnAfter$lambda$2 = ReportDrawnKt.ReportDrawnAfter$lambda$2(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ReportDrawnAfter$lambda$2;
+                    return ReportDrawnKt.ReportDrawnAfter$lambda$2(Function1.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             scopeUpdateScope.updateScope(function2);

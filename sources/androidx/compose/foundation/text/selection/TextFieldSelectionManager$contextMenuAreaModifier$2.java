@@ -40,7 +40,7 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         if (r7.this$0.updateClipboardEntry$foundation(r7) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0057, code lost:
-        if (r8.mo1835onShowSelectionToolbarSbBc2M(r4, r5, r7) == r0) goto L18;
+        if (r8.mo1591onShowSelectionToolbarSbBc2M(r4, r5, r7) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0059, code lost:
         return r0;
@@ -70,7 +70,7 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$2 extends S
         if (contextTextAndSelection != null) {
             TextFieldSelectionManager textFieldSelectionManager = this.this$0;
             String str = (String) contextTextAndSelection.component1();
-            long m7705unboximpl = ((TextRange) contextTextAndSelection.component2()).m7705unboximpl();
+            long m7007unboximpl = ((TextRange) contextTextAndSelection.component2()).m7007unboximpl();
             PlatformSelectionBehaviors platformSelectionBehaviors$foundation = textFieldSelectionManager.getPlatformSelectionBehaviors$foundation();
             if (platformSelectionBehaviors$foundation != null) {
                 this.label = 2;

@@ -22,7 +22,7 @@ import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.UUID;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MediaExtractorCompat {
     public static final int SEEK_TO_CLOSEST_SYNC = 2;
     public static final int SEEK_TO_NEXT_SYNC = 1;
@@ -30,7 +30,7 @@ public final class MediaExtractorCompat {
     private final MediaExtractorCompatInternal delegate;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface SeekMode {
     }
 

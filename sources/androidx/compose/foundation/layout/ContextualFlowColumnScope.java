@@ -16,10 +16,10 @@ public interface ContextualFlowColumnScope extends ColumnScope {
     int getLineIndex();
 
     /* renamed from: getMaxHeightInLine-D9Ej5fM  reason: not valid java name */
-    float mo821getMaxHeightInLineD9Ej5fM();
+    float mo724getMaxHeightInLineD9Ej5fM();
 
     /* renamed from: getMaxWidth-D9Ej5fM  reason: not valid java name */
-    float mo822getMaxWidthD9Ej5fM();
+    float mo725getMaxWidthD9Ej5fM();
 
     static /* synthetic */ Modifier fillMaxColumnWidth$default(ContextualFlowColumnScope contextualFlowColumnScope, Modifier modifier, float f, int i, Object obj) {
         if (obj == null) {

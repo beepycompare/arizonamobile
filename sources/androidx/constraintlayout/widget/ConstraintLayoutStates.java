@@ -33,7 +33,8 @@ public class ConstraintLayoutStates {
         if (i2 != i) {
             return true;
         }
-        State valueAt = i == -1 ? this.mStateList.valueAt(0) : this.mStateList.get(i2);
+        SparseArray<State> sparseArray = this.mStateList;
+        State valueAt = i == -1 ? sparseArray.valueAt(0) : sparseArray.get(i2);
         return (this.mCurrentConstraintNumber == -1 || !valueAt.mVariants.get(this.mCurrentConstraintNumber).match(f, f2)) && this.mCurrentConstraintNumber != valueAt.findMatch(f, f2);
     }
 
@@ -46,10 +47,11 @@ public class ConstraintLayoutStates {
         int i3;
         int i4 = this.mCurrentStateId;
         if (i4 == i) {
+            SparseArray<State> sparseArray = this.mStateList;
             if (i == -1) {
-                state = this.mStateList.valueAt(0);
+                state = sparseArray.valueAt(0);
             } else {
-                state = this.mStateList.get(i4);
+                state = sparseArray.get(i4);
             }
             if ((this.mCurrentConstraintNumber == -1 || !state.mVariants.get(this.mCurrentConstraintNumber).match(f, f2)) && this.mCurrentConstraintNumber != (findMatch = state.findMatch(f, f2))) {
                 if (findMatch == -1) {

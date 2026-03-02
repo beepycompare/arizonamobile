@@ -379,10 +379,12 @@ public class LoginButton extends Button {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void handleError(Exception exc) {
         if (this.properties.onErrorListener != null) {
-            if (exc instanceof FacebookException) {
-                this.properties.onErrorListener.onError((FacebookException) exc);
+            boolean z = exc instanceof FacebookException;
+            LoginButtonProperties loginButtonProperties = this.properties;
+            if (z) {
+                loginButtonProperties.onErrorListener.onError((FacebookException) exc);
             } else {
-                this.properties.onErrorListener.onError(new FacebookException(exc));
+                loginButtonProperties.onErrorListener.onError(new FacebookException(exc));
             }
         }
     }

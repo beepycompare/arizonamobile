@@ -17,11 +17,11 @@ public final class TextContextMenuItems {
     private final int drawableId;
     private final Object key;
     private final int stringId;
-    public static final TextContextMenuItems Cut = new TextContextMenuItems("Cut", 0, TextContextMenuKeys.INSTANCE.getCutKey(), ContextMenuStrings.Companion.m1355getCut9Hzcbyc(), ContextMenuIcons.Companion.m1342getActionModeCutDrawable3I4p1mQ());
-    public static final TextContextMenuItems Copy = new TextContextMenuItems("Copy", 1, TextContextMenuKeys.INSTANCE.getCopyKey(), ContextMenuStrings.Companion.m1354getCopy9Hzcbyc(), ContextMenuIcons.Companion.m1341getActionModeCopyDrawable3I4p1mQ());
-    public static final TextContextMenuItems Paste = new TextContextMenuItems("Paste", 2, TextContextMenuKeys.INSTANCE.getPasteKey(), ContextMenuStrings.Companion.m1356getPaste9Hzcbyc(), ContextMenuIcons.Companion.m1343getActionModePasteDrawable3I4p1mQ());
-    public static final TextContextMenuItems SelectAll = new TextContextMenuItems("SelectAll", 3, TextContextMenuKeys.INSTANCE.getSelectAllKey(), ContextMenuStrings.Companion.m1357getSelectAll9Hzcbyc(), ContextMenuIcons.Companion.m1344getActionModeSelectAllDrawable3I4p1mQ());
-    public static final TextContextMenuItems Autofill = new TextContextMenuItems("Autofill", 4, TextContextMenuKeys.INSTANCE.getAutofillKey(), ContextMenuStrings.Companion.m1353getAutofill9Hzcbyc(), ContextMenuIcons.Companion.m1345getID_NULL3I4p1mQ());
+    public static final TextContextMenuItems Cut = new TextContextMenuItems("Cut", 0, TextContextMenuKeys.INSTANCE.getCutKey(), ContextMenuStrings.Companion.m1188getCut9Hzcbyc(), ContextMenuIcons.Companion.m1175getActionModeCutDrawable3I4p1mQ());
+    public static final TextContextMenuItems Copy = new TextContextMenuItems("Copy", 1, TextContextMenuKeys.INSTANCE.getCopyKey(), ContextMenuStrings.Companion.m1187getCopy9Hzcbyc(), ContextMenuIcons.Companion.m1174getActionModeCopyDrawable3I4p1mQ());
+    public static final TextContextMenuItems Paste = new TextContextMenuItems("Paste", 2, TextContextMenuKeys.INSTANCE.getPasteKey(), ContextMenuStrings.Companion.m1189getPaste9Hzcbyc(), ContextMenuIcons.Companion.m1176getActionModePasteDrawable3I4p1mQ());
+    public static final TextContextMenuItems SelectAll = new TextContextMenuItems("SelectAll", 3, TextContextMenuKeys.INSTANCE.getSelectAllKey(), ContextMenuStrings.Companion.m1190getSelectAll9Hzcbyc(), ContextMenuIcons.Companion.m1177getActionModeSelectAllDrawable3I4p1mQ());
+    public static final TextContextMenuItems Autofill = new TextContextMenuItems("Autofill", 4, TextContextMenuKeys.INSTANCE.getAutofillKey(), ContextMenuStrings.Companion.m1186getAutofill9Hzcbyc(), ContextMenuIcons.Companion.m1178getID_NULL3I4p1mQ());
 
     private static final /* synthetic */ TextContextMenuItems[] $values() {
         return new TextContextMenuItems[]{Cut, Copy, Paste, SelectAll, Autofill};
@@ -50,12 +50,12 @@ public final class TextContextMenuItems {
     }
 
     /* renamed from: getStringId-9Hzcbyc  reason: not valid java name */
-    public final int m1420getStringId9Hzcbyc() {
+    public final int m1246getStringId9Hzcbyc() {
         return this.stringId;
     }
 
     /* renamed from: getDrawableId-3I4p1mQ  reason: not valid java name */
-    public final int m1419getDrawableId3I4p1mQ() {
+    public final int m1245getDrawableId3I4p1mQ() {
         return this.drawableId;
     }
 
@@ -70,11 +70,11 @@ public final class TextContextMenuItems {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(479426150, i, -1, "androidx.compose.foundation.text.TextContextMenuItems.resolvedString (CommonContextMenuArea.kt:178)");
         }
-        String m1358getStringtk4Tqcs = ContextMenuStrings_androidKt.m1358getStringtk4Tqcs(this.stringId, composer, 0);
+        String m1191getStringtk4Tqcs = ContextMenuStrings_androidKt.m1191getStringtk4Tqcs(this.stringId, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1358getStringtk4Tqcs;
+        return m1191getStringtk4Tqcs;
     }
 }

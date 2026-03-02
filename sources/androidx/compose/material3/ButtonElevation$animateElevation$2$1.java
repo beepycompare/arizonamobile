@@ -53,12 +53,12 @@ public final class ButtonElevation$animateElevation$2$1 extends SuspendLambda im
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
-        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m8256boximpl(r6.$target), r6) == r0) goto L17;
+        if (r1.snapTo(androidx.compose.ui.unit.Dp.m7553boximpl(r6.$target), r6) == r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00ab, code lost:
-        if (androidx.compose.material3.internal.ElevationKt.m3612animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00a9, code lost:
+        if (androidx.compose.material3.internal.ElevationKt.m3003animateElevationrAjV9yQ(r6.$animatable, r6.$target, r3, r6.$interaction, r6) == r0) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00ab, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -73,20 +73,22 @@ public final class ButtonElevation$animateElevation$2$1 extends SuspendLambda im
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!Dp.m8263equalsimpl0(this.$animatable.getTargetValue().m8272unboximpl(), this.$target)) {
-                if (this.$enabled) {
-                    float m8272unboximpl = this.$animatable.getTargetValue().m8272unboximpl();
+            if (!Dp.m7560equalsimpl0(this.$animatable.getTargetValue().m7569unboximpl(), this.$target)) {
+                boolean z = this.$enabled;
+                Animatable<Dp, AnimationVector1D> animatable = this.$animatable;
+                if (z) {
+                    float m7569unboximpl = animatable.getTargetValue().m7569unboximpl();
                     f = this.this$0.pressedElevation;
                     FocusInteraction.Focus focus = null;
-                    if (Dp.m8263equalsimpl0(m8272unboximpl, f)) {
-                        focus = new PressInteraction.Press(Offset.Companion.m5195getZeroF1C5BW0(), null);
+                    if (Dp.m7560equalsimpl0(m7569unboximpl, f)) {
+                        focus = new PressInteraction.Press(Offset.Companion.m4543getZeroF1C5BW0(), null);
                     } else {
                         f2 = this.this$0.hoveredElevation;
-                        if (Dp.m8263equalsimpl0(m8272unboximpl, f2)) {
+                        if (Dp.m7560equalsimpl0(m7569unboximpl, f2)) {
                             focus = new HoverInteraction.Enter();
                         } else {
                             f3 = this.this$0.focusedElevation;
-                            if (Dp.m8263equalsimpl0(m8272unboximpl, f3)) {
+                            if (Dp.m7560equalsimpl0(m7569unboximpl, f3)) {
                                 focus = new FocusInteraction.Focus();
                             }
                         }

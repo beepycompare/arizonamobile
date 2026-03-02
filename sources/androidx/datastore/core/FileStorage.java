@@ -35,14 +35,12 @@ public final class FileStorage<T> implements Storage<T> {
         this(serializer, (i & 2) != 0 ? new Function1() { // from class: androidx.datastore.core.FileStorage$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                InterProcessCoordinator _init_$lambda$0;
-                _init_$lambda$0 = FileStorage._init_$lambda$0((File) obj);
-                return _init_$lambda$0;
+                return FileStorage._init_$lambda$0((File) obj);
             }
         } : function1, function0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InterProcessCoordinator _init_$lambda$0(File it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return InterProcessCoordinator_jvmKt.createSingleProcessCoordinator(it);
@@ -64,14 +62,12 @@ public final class FileStorage<T> implements Storage<T> {
         return new FileStorageConnection(canonicalFile, this.serializer, this.coordinatorProducer.invoke(canonicalFile), new Function0() { // from class: androidx.datastore.core.FileStorage$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit createConnection$lambda$1;
-                createConnection$lambda$1 = FileStorage.createConnection$lambda$1(canonicalFile);
-                return createConnection$lambda$1;
+                return FileStorage.createConnection$lambda$1(canonicalFile);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit createConnection$lambda$1(File file) {
         synchronized (activeFilesLock) {
             activeFiles.remove(file.getAbsolutePath());

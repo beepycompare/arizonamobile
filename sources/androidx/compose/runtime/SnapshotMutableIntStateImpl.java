@@ -68,7 +68,7 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
         return Integer.valueOf(getIntValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit component2$lambda$0(SnapshotMutableIntStateImpl snapshotMutableIntStateImpl, int i) {
         snapshotMutableIntStateImpl.setIntValue(i);
         return Unit.INSTANCE;
@@ -79,9 +79,7 @@ public class SnapshotMutableIntStateImpl extends StateObjectImpl implements Muta
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableIntStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$0;
-                component2$lambda$0 = SnapshotMutableIntStateImpl.component2$lambda$0(SnapshotMutableIntStateImpl.this, ((Integer) obj).intValue());
-                return component2$lambda$0;
+                return SnapshotMutableIntStateImpl.component2$lambda$0(SnapshotMutableIntStateImpl.this, ((Integer) obj).intValue());
             }
         };
     }

@@ -70,25 +70,29 @@ public final class TrampolineScheduler extends Scheduler {
             }
             TimedRunnable timedRunnable = new TimedRunnable(runnable, Long.valueOf(j), this.counter.incrementAndGet());
             this.queue.add(timedRunnable);
-            if (this.wip.getAndIncrement() == 0) {
-                int i = 1;
-                while (!this.disposed) {
-                    TimedRunnable poll = this.queue.poll();
-                    if (poll != null) {
-                        if (!poll.disposed) {
-                            poll.run.run();
-                        }
-                    } else {
-                        i = this.wip.addAndGet(-i);
-                        if (i == 0) {
-                            return EmptyDisposable.INSTANCE;
-                        }
+            if (this.wip.getAndIncrement() != 0) {
+                return Disposables.fromRunnable(new AppendToQueueTask(timedRunnable));
+            }
+            int i = 1;
+            while (true) {
+                boolean z = this.disposed;
+                PriorityBlockingQueue<TimedRunnable> priorityBlockingQueue = this.queue;
+                if (z) {
+                    priorityBlockingQueue.clear();
+                    return EmptyDisposable.INSTANCE;
+                }
+                TimedRunnable poll = priorityBlockingQueue.poll();
+                if (poll != null) {
+                    if (!poll.disposed) {
+                        poll.run.run();
+                    }
+                } else {
+                    i = this.wip.addAndGet(-i);
+                    if (i == 0) {
+                        return EmptyDisposable.INSTANCE;
                     }
                 }
-                this.queue.clear();
-                return EmptyDisposable.INSTANCE;
             }
-            return Disposables.fromRunnable(new AppendToQueueTask(timedRunnable));
         }
 
         @Override // io.reactivex.disposables.Disposable

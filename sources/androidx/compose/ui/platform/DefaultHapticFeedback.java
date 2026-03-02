@@ -18,34 +18,34 @@ public final class DefaultHapticFeedback implements HapticFeedback {
 
     @Override // androidx.compose.ui.hapticfeedback.HapticFeedback
     /* renamed from: performHapticFeedback-CdsT49E */
-    public void mo6200performHapticFeedbackCdsT49E(int i) {
+    public void mo5541performHapticFeedbackCdsT49E(int i) {
         int i2;
-        if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6208getConfirm5zf0vsI())) {
+        if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5549getConfirm5zf0vsI())) {
             i2 = 16;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6209getContextClick5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5550getContextClick5zf0vsI())) {
             i2 = 6;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6210getGestureEnd5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5551getGestureEnd5zf0vsI())) {
             i2 = 13;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6211getGestureThresholdActivate5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5552getGestureThresholdActivate5zf0vsI())) {
             i2 = 23;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6212getKeyboardTap5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5553getKeyboardTap5zf0vsI())) {
             i2 = 3;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6213getLongPress5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5554getLongPress5zf0vsI())) {
             i2 = 0;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6214getReject5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5555getReject5zf0vsI())) {
             i2 = 17;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6215getSegmentFrequentTick5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5556getSegmentFrequentTick5zf0vsI())) {
             i2 = 27;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6216getSegmentTick5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5557getSegmentTick5zf0vsI())) {
             i2 = 26;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6217getTextHandleMove5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5558getTextHandleMove5zf0vsI())) {
             i2 = 9;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6218getToggleOff5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5559getToggleOff5zf0vsI())) {
             i2 = 22;
-        } else if (HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6219getToggleOn5zf0vsI())) {
+        } else if (HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5560getToggleOn5zf0vsI())) {
             i2 = 21;
         } else {
-            i2 = HapticFeedbackType.m6204equalsimpl0(i, HapticFeedbackType.Companion.m6220getVirtualKey5zf0vsI()) ? 1 : -1;
+            i2 = HapticFeedbackType.m5545equalsimpl0(i, HapticFeedbackType.Companion.m5561getVirtualKey5zf0vsI()) ? 1 : -1;
         }
         ViewCompat.performHapticFeedback(this.view, i2);
     }

@@ -45,11 +45,11 @@ final class ClickableNode$createPointerInputNodeIfNeeded$1 implements PointerInp
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m358invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m315invoked4ec7I(pressGestureScope, offset.m4537unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m358invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m315invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
             anonymousClass1.L$0 = pressGestureScope;
             anonymousClass1.J$0 = j;
@@ -66,7 +66,7 @@ final class ClickableNode$createPointerInputNodeIfNeeded$1 implements PointerInp
                 long j = this.J$0;
                 if (this.this$0.getEnabled()) {
                     this.label = 1;
-                    if (this.this$0.m260handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
+                    if (this.this$0.m227handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -85,15 +85,13 @@ final class ClickableNode$createPointerInputNodeIfNeeded$1 implements PointerInp
         Object detectTapAndPress = TapGestureDetectorKt.detectTapAndPress(pointerInputScope, new AnonymousClass1(this.this$0, null), new Function1() { // from class: androidx.compose.foundation.ClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = ClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$0(ClickableNode.this, (Offset) obj);
-                return invoke$lambda$0;
+                return ClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$0(ClickableNode.this, (Offset) obj);
             }
         }, continuation);
         return detectTapAndPress == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapAndPress : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(ClickableNode clickableNode, Offset offset) {
         if (clickableNode.getEnabled()) {
             clickableNode.getOnClick().invoke();

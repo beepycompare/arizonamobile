@@ -96,11 +96,11 @@ public final class MultiParagraphKt {
     }
 
     /* renamed from: findParagraphsByRange-Sb-Bc2M  reason: not valid java name */
-    public static final void m7542findParagraphsByRangeSbBc2M(List<ParagraphInfo> list, long j, Function1<? super ParagraphInfo, Unit> function1) {
+    public static final void m6870findParagraphsByRangeSbBc2M(List<ParagraphInfo> list, long j, Function1<? super ParagraphInfo, Unit> function1) {
         int size = list.size();
-        for (int findParagraphByIndex = findParagraphByIndex(list, TextRange.m7699getMinimpl(j)); findParagraphByIndex < size; findParagraphByIndex++) {
+        for (int findParagraphByIndex = findParagraphByIndex(list, TextRange.m7001getMinimpl(j)); findParagraphByIndex < size; findParagraphByIndex++) {
             ParagraphInfo paragraphInfo = list.get(findParagraphByIndex);
-            if (paragraphInfo.getStartIndex() >= TextRange.m7698getMaximpl(j)) {
+            if (paragraphInfo.getStartIndex() >= TextRange.m7000getMaximpl(j)) {
                 return;
             }
             if (paragraphInfo.getStartIndex() != paragraphInfo.getEndIndex()) {

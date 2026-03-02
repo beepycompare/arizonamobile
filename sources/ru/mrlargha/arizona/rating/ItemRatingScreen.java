@@ -41,7 +41,7 @@ import ru.mrlargha.feature.arizona.item.rating.databinding.RatingFullscreenItemB
 import ru.mrlargha.feature.arizona.item.rating.databinding.RatingScreenBinding;
 import ru.mrlargha.feature.arizona.item.rating.databinding.RatingTopbarBinding;
 /* compiled from: ItemRatingScreen.kt */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002FGB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u001fH\u0016J\u0018\u00101\u001a\u00020/2\u0006\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u00020\u0005H\u0016J\b\u00104\u001a\u00020/H\u0002J\u0010\u00105\u001a\u00020/2\u0006\u00106\u001a\u00020\u001dH\u0002J\b\u00107\u001a\u00020/H\u0002J\b\u00108\u001a\u00020/H\u0002J\u0016\u00109\u001a\u00020/2\f\u00102\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016H\u0002J\b\u0010:\u001a\u00020/H\u0002J\b\u0010;\u001a\u00020/H\u0002J\u0010\u0010<\u001a\u00020/2\u0006\u0010=\u001a\u00020\u0005H\u0002J\u0010\u0010>\u001a\u00020/2\u0006\u0010=\u001a\u00020\u0005H\u0002J\u0010\u0010?\u001a\u00020/2\u0006\u0010@\u001a\u00020\u001bH\u0002J\u0010\u0010A\u001a\u00020/2\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0010\u0010C\u001a\u00020/2\u0006\u0010D\u001a\u00020EH\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010 \u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\"R\u0011\u0010%\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\"R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "scene", "Lru/mrlargha/commonui/elements/items3d/ItemScene;", "getScene", "()Lru/mrlargha/commonui/elements/items3d/ItemScene;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizona/rating/RatingApi;", "qualityTypeList", "", "Lru/mrlargha/arizona/rating/QualityType;", "bonusType", "Lru/mrlargha/arizona/rating/BonusType;", "apiData", "Lru/mrlargha/arizona/rating/RatingItem;", "topbarState", "", "sortOrder", "", "colorCard", "getColorCard", "()I", "gradientColor1", "getGradientColor1", "gradientColor2", "getGradientColor2", "binding", "Lru/mrlargha/feature/arizona/item/rating/databinding/RatingScreenBinding;", "itemsAdapter", "Lru/mrlargha/arizona/rating/ItemsAdapter;", "zoomMultipler", "", "isCars", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "setupNavigation", FirebaseAnalytics.Event.SEARCH, "text", "setupAdapters", "clearAdapters", "addData", "loadCars", "loadAccs", "topbarNavigation", "id", "setTopbarState", "setFullscreenItem", "item", "loadNextPage", "page", "navigateTo", "nav", "Lru/mrlargha/arizona/rating/ItemRatingScreen$Navigation;", "Navigation", "Spawner", "item-rating_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002FGB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u001fH\u0016J\u0018\u00101\u001a\u00020/2\u0006\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u00020\u0005H\u0016J\b\u00104\u001a\u00020/H\u0002J\u0010\u00105\u001a\u00020/2\u0006\u00106\u001a\u00020\u001dH\u0002J\b\u00107\u001a\u00020/H\u0002J\b\u00108\u001a\u00020/H\u0002J\u0016\u00109\u001a\u00020/2\f\u00102\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016H\u0002J\b\u0010:\u001a\u00020/H\u0002J\b\u0010;\u001a\u00020/H\u0002J\u0010\u0010<\u001a\u00020/2\u0006\u0010=\u001a\u00020\u0005H\u0002J\u0010\u0010>\u001a\u00020/2\u0006\u0010=\u001a\u00020\u0005H\u0002J\u0010\u0010?\u001a\u00020/2\u0006\u0010@\u001a\u00020\u001bH\u0002J\u0010\u0010A\u001a\u00020/2\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0010\u0010C\u001a\u00020/2\u0006\u0010D\u001a\u00020EH\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010 \u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\"R\u0011\u0010%\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\"R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "scene", "Lru/mrlargha/commonui/elements/items3d/ItemScene;", "getScene", "()Lru/mrlargha/commonui/elements/items3d/ItemScene;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizona/rating/RatingApi;", "qualityTypeList", "", "Lru/mrlargha/arizona/rating/QualityType;", "bonusType", "Lru/mrlargha/arizona/rating/BonusType;", "apiData", "Lru/mrlargha/arizona/rating/RatingItem;", "topbarState", "", "sortOrder", "", "colorCard", "getColorCard", "()I", "gradientColor1", "getGradientColor1", "gradientColor2", "getGradientColor2", "binding", "Lru/mrlargha/feature/arizona/item/rating/databinding/RatingScreenBinding;", "itemsAdapter", "Lru/mrlargha/arizona/rating/ItemsAdapter;", "zoomMultipler", "", "isCars", "setVisibility", "", "visible", "onBackendMessage", "data", "subId", "setupNavigation", FirebaseAnalytics.Event.SEARCH, "text", "setupAdapters", "clearAdapters", "addData", "loadCars", "loadAccs", "topbarNavigation", "id", "setTopbarState", "setFullscreenItem", "item", "loadNextPage", "page", "navigateTo", "nav", "Lru/mrlargha/arizona/rating/ItemRatingScreen$Navigation;", "Navigation", "Spawner", "item-rating"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ItemRatingScreen extends SAMPUIElement {
     private final RatingApi api;
@@ -62,7 +62,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
     private float zoomMultipler;
 
     /* compiled from: ItemRatingScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -109,16 +109,12 @@ public final class ItemRatingScreen extends SAMPUIElement {
         this.itemsAdapter = new ItemsAdapter(new Function1() { // from class: ru.mrlargha.arizona.rating.ItemRatingScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit itemsAdapter$lambda$0;
-                itemsAdapter$lambda$0 = ItemRatingScreen.itemsAdapter$lambda$0(ItemRatingScreen.this, (RatingItem) obj);
-                return itemsAdapter$lambda$0;
+                return ItemRatingScreen.itemsAdapter$lambda$0(ItemRatingScreen.this, (RatingItem) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.arizona.rating.ItemRatingScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit itemsAdapter$lambda$1;
-                itemsAdapter$lambda$1 = ItemRatingScreen.itemsAdapter$lambda$1(ItemRatingScreen.this, ((Integer) obj).intValue());
-                return itemsAdapter$lambda$1;
+                return ItemRatingScreen.itemsAdapter$lambda$1(ItemRatingScreen.this, ((Integer) obj).intValue());
             }
         });
         this.zoomMultipler = 1.0f;
@@ -149,14 +145,14 @@ public final class ItemRatingScreen extends SAMPUIElement {
         return this.gradientColor2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit itemsAdapter$lambda$0(ItemRatingScreen itemRatingScreen, RatingItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         itemRatingScreen.setFullscreenItem(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit itemsAdapter$lambda$1(ItemRatingScreen itemRatingScreen, int i) {
         itemRatingScreen.loadNextPage(i);
         return Unit.INSTANCE;
@@ -370,10 +366,12 @@ public final class ItemRatingScreen extends SAMPUIElement {
         int intValue = intOrNull != null ? intOrNull.intValue() : 0;
         this.binding.searchNotFound.setVisibility(8);
         this.binding.loaderBar.setVisibility(0);
-        if (this.itemsAdapter.isCars()) {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new ItemRatingScreen$search$1(this, intValue, str, null), 3, null);
+        boolean isCars = this.itemsAdapter.isCars();
+        ArizonaRetrofit arizonaRetrofit = this.client;
+        if (isCars) {
+            BuildersKt__Builders_commonKt.launch$default(arizonaRetrofit.getScope(), null, null, new ItemRatingScreen$search$1(this, intValue, str, null), 3, null);
         } else {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new ItemRatingScreen$search$2(this, intValue, str, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(arizonaRetrofit.getScope(), null, null, new ItemRatingScreen$search$2(this, intValue, str, null), 3, null);
         }
     }
 
@@ -589,7 +587,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
         this.binding.fullscreen.textBonus.setText(UtilsKt.buildSpannableList(CollectionsKt.toList(arrayList), -16777216, true, Integer.valueOf(Color.parseColor((qualityType3 == null || (colors = qualityType3.getColors()) == null || (r3 = (String) CollectionsKt.getOrNull(colors, 0)) == null) ? "#9A9A9A" : "#9A9A9A")), true));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setFullscreenItem$lambda$1(ItemRatingScreen itemRatingScreen, View view) {
         itemRatingScreen.scene.closeScene();
         itemRatingScreen.navigateTo(Navigation.List);
@@ -600,10 +598,12 @@ public final class ItemRatingScreen extends SAMPUIElement {
         this.binding.searchNotFound.setVisibility(8);
         Integer intOrNull = StringsKt.toIntOrNull(this.topbarState);
         int intValue = intOrNull != null ? intOrNull.intValue() : 0;
-        if (this.itemsAdapter.isCars()) {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new ItemRatingScreen$loadNextPage$1(this, i, intValue, null), 3, null);
+        boolean isCars = this.itemsAdapter.isCars();
+        ArizonaRetrofit arizonaRetrofit = this.client;
+        if (isCars) {
+            BuildersKt__Builders_commonKt.launch$default(arizonaRetrofit.getScope(), null, null, new ItemRatingScreen$loadNextPage$1(this, i, intValue, null), 3, null);
         } else {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), null, null, new ItemRatingScreen$loadNextPage$2(this, i, intValue, null), 3, null);
+            BuildersKt__Builders_commonKt.launch$default(arizonaRetrofit.getScope(), null, null, new ItemRatingScreen$loadNextPage$2(this, i, intValue, null), 3, null);
         }
     }
 
@@ -623,27 +623,24 @@ public final class ItemRatingScreen extends SAMPUIElement {
             this.binding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizona.rating.ItemRatingScreen$$ExternalSyntheticLambda8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ItemRatingScreen.navigateTo$lambda$0(ItemRatingScreen.this, view);
+                    r0.getNotifier().setUIElementVisible(ItemRatingScreen.this.getBackendID(), false);
                 }
             });
             this.binding.list.getRoot().setVisibility(0);
-            if (this.itemsAdapter.isCars()) {
-                this.binding.title.setText("Рейтинг автомобилей");
+            boolean isCars = this.itemsAdapter.isCars();
+            RatingScreenBinding ratingScreenBinding = this.binding;
+            if (isCars) {
+                ratingScreenBinding.title.setText("Рейтинг автомобилей");
             } else {
-                this.binding.title.setText("Рейтинг аксессуаров");
+                ratingScreenBinding.title.setText("Рейтинг аксессуаров");
             }
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void navigateTo$lambda$0(ItemRatingScreen itemRatingScreen, View view) {
-        itemRatingScreen.getNotifier().setUIElementVisible(itemRatingScreen.getBackendID(), false);
     }
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: ItemRatingScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "FullScreen", "List", "item-rating_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "FullScreen", "List", "item-rating"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Navigation {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -678,7 +675,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
     }
 
     /* compiled from: ItemRatingScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "item-rating_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizona/rating/ItemRatingScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "item-rating"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_RATING);

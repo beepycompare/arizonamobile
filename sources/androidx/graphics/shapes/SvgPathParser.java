@@ -67,9 +67,7 @@ public final class SvgPathParser {
             Function2 function2 = new Function2() { // from class: androidx.graphics.shapes.SvgPathParser$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    boolean parseFeatures$lambda$0;
-                    parseFeatures$lambda$0 = SvgPathParser.Companion.parseFeatures$lambda$0((Cubic) obj, (Cubic) obj2);
-                    return Boolean.valueOf(parseFeatures$lambda$0);
+                    return Boolean.valueOf(SvgPathParser.Companion.parseFeatures$lambda$0((Cubic) obj, (Cubic) obj2));
                 }
             };
             int size = parseCubics$graphics_shapes.size();
@@ -89,7 +87,7 @@ public final class SvgPathParser {
             return PolygonValidator.Companion.fix(RoundedPolygonKt.RoundedPolygon$default(FeatureDetectorKt.detectFeatures(CollectionsKt.take(parseCubics$graphics_shapes, size)), 0.0f, 0.0f, 6, null)).getFeatures();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean parseFeatures$lambda$0(Cubic first, Cubic second) {
             Intrinsics.checkNotNullParameter(first, "first");
             Intrinsics.checkNotNullParameter(second, "second");
@@ -105,7 +103,7 @@ public final class SvgPathParser {
                     arrayList.add(obj);
                 }
             }
-            long m25constructorimpl = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
+            long m12constructorimpl = FloatFloatPair.m12constructorimpl(0.0f, 0.0f);
             List createListBuilder = CollectionsKt.createListBuilder();
             for (String str : arrayList) {
                 Regex regex2 = new Regex("(?=[a-zA-Z])");
@@ -116,15 +114,15 @@ public final class SvgPathParser {
                     }
                 }
                 ArrayList arrayList3 = arrayList2;
-                Command m8855parseHiPawso = Command.Factory.m8855parseHiPawso((String) CollectionsKt.first((List<? extends Object>) arrayList3), m25constructorimpl);
-                long m8825plusybeJwSQ = PointKt.m8825plusybeJwSQ(m8855parseHiPawso.m8853getStart1ufDz9w(), FloatFloatPair.m25constructorimpl(m8855parseHiPawso.get(0), m8855parseHiPawso.get(1)));
-                SvgPathParser svgPathParser = new SvgPathParser(m8825plusybeJwSQ, null);
-                svgPathParser.parseCommand(m8855parseHiPawso.m8849asLineDnnuFBc(m8825plusybeJwSQ));
+                Command m8138parseHiPawso = Command.Factory.m8138parseHiPawso((String) CollectionsKt.first((List<? extends Object>) arrayList3), m12constructorimpl);
+                long m8110plusybeJwSQ = PointKt.m8110plusybeJwSQ(m8138parseHiPawso.m8136getStart1ufDz9w(), FloatFloatPair.m12constructorimpl(m8138parseHiPawso.get(0), m8138parseHiPawso.get(1)));
+                SvgPathParser svgPathParser = new SvgPathParser(m8110plusybeJwSQ, null);
+                svgPathParser.parseCommand(m8138parseHiPawso.m8132asLineDnnuFBc(m8110plusybeJwSQ));
                 for (String str2 : CollectionsKt.drop(arrayList3, 1)) {
-                    svgPathParser.parseCommand(Command.Factory.m8855parseHiPawso(str2, svgPathParser.m8845getPosition1ufDz9w()));
+                    svgPathParser.parseCommand(Command.Factory.m8138parseHiPawso(str2, svgPathParser.m8128getPosition1ufDz9w()));
                 }
                 createListBuilder.addAll(svgPathParser.cubics);
-                m25constructorimpl = m8825plusybeJwSQ;
+                m12constructorimpl = m8110plusybeJwSQ;
             }
             return CollectionsKt.build(createListBuilder);
         }
@@ -132,20 +130,20 @@ public final class SvgPathParser {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getPosition-1ufDz9w  reason: not valid java name */
-    public final long m8845getPosition1ufDz9w() {
+    public final long m8128getPosition1ufDz9w() {
         Cubic cubic = (Cubic) CollectionsKt.lastOrNull((List<? extends Object>) this.cubics);
-        return cubic != null ? FloatFloatPair.m25constructorimpl(cubic.getAnchor1X(), cubic.getAnchor1Y()) : this.start;
+        return cubic != null ? FloatFloatPair.m12constructorimpl(cubic.getAnchor1X(), cubic.getAnchor1Y()) : this.start;
     }
 
     /* renamed from: getReflectedPreviousControlPoint-1ufDz9w  reason: not valid java name */
-    private final long m8846getReflectedPreviousControlPoint1ufDz9w() {
-        return PointKt.m8825plusybeJwSQ(m8845getPosition1ufDz9w(), PointKt.m8824minusybeJwSQ(m8845getPosition1ufDz9w(), FloatFloatPair.m25constructorimpl(((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1Y())));
+    private final long m8129getReflectedPreviousControlPoint1ufDz9w() {
+        return PointKt.m8110plusybeJwSQ(m8128getPosition1ufDz9w(), PointKt.m8109minusybeJwSQ(m8128getPosition1ufDz9w(), FloatFloatPair.m12constructorimpl(((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1Y())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void parseCommand(Command command) {
         if (command.isCloseCommand()) {
-            this.cubics.add(m8847lineToCubicybeJwSQ(m8845getPosition1ufDz9w(), this.start));
+            this.cubics.add(m8130lineToCubicybeJwSQ(m8128getPosition1ufDz9w(), this.start));
             return;
         }
         int lastIndex = ArraysKt.getLastIndex(command.getParameters());
@@ -159,7 +157,7 @@ public final class SvgPathParser {
             return;
         }
         while (true) {
-            parseAtomicCommand(command.m8850chunkHiPawso(i, m8845getPosition1ufDz9w()));
+            parseAtomicCommand(command.m8133chunkHiPawso(i, m8128getPosition1ufDz9w()));
             if (i == progressionLastElement) {
                 return;
             }
@@ -182,68 +180,58 @@ public final class SvgPathParser {
         Function1 function1 = new Function1() { // from class: androidx.graphics.shapes.SvgPathParser$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean parseLine$lambda$2;
-                parseLine$lambda$2 = SvgPathParser.parseLine$lambda$2(SvgPathParser.this, (FloatFloatPair) obj);
-                return Boolean.valueOf(parseLine$lambda$2);
+                boolean add;
+                add = r0.cubics.add(r0.m8130lineToCubicybeJwSQ(SvgPathParser.this.m8128getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl()));
+                return Boolean.valueOf(add);
             }
         };
         char letter = command.getLetter();
         if (letter == 'h') {
-            function1.invoke(FloatFloatPair.m22boximpl(FloatFloatPair.m25constructorimpl(command.x(0), PointKt.m8822getYDnnuFBc(command.m8853getStart1ufDz9w()))));
+            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(command.x(0), PointKt.m8107getYDnnuFBc(command.m8136getStart1ufDz9w()))));
         } else if (letter == 'l') {
-            function1.invoke(FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)));
+            function1.invoke(FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)));
         } else if (letter != 'v') {
         } else {
-            function1.invoke(FloatFloatPair.m22boximpl(FloatFloatPair.m25constructorimpl(PointKt.m8821getXDnnuFBc(command.m8853getStart1ufDz9w()), command.y(0))));
+            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(PointKt.m8106getXDnnuFBc(command.m8136getStart1ufDz9w()), command.y(0))));
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean parseLine$lambda$2(SvgPathParser svgPathParser, FloatFloatPair floatFloatPair) {
-        return svgPathParser.cubics.add(svgPathParser.m8847lineToCubicybeJwSQ(svgPathParser.m8845getPosition1ufDz9w(), floatFloatPair.m33unboximpl()));
     }
 
     private final void parseCurve(Command command) {
         Function3 function3 = new Function3() { // from class: androidx.graphics.shapes.SvgPathParser$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                boolean parseCurve$lambda$3;
-                parseCurve$lambda$3 = SvgPathParser.parseCurve$lambda$3(SvgPathParser.this, (FloatFloatPair) obj, (FloatFloatPair) obj2, (FloatFloatPair) obj3);
-                return Boolean.valueOf(parseCurve$lambda$3);
+                boolean add;
+                add = r0.cubics.add(r0.m8127curveToCubicArktYTI(SvgPathParser.this.m8128getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl(), ((FloatFloatPair) obj2).m20unboximpl(), ((FloatFloatPair) obj3).m20unboximpl()));
+                return Boolean.valueOf(add);
             }
         };
         char letter = command.getLetter();
         if (letter == 'c') {
-            function3.invoke(FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(2, 3)), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(4, 5)));
+            function3.invoke(FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(2, 3)), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(4, 5)));
         } else if (letter == 'q') {
-            function3.invoke(FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(2, 3)));
+            function3.invoke(FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(2, 3)));
         } else if (letter == 's') {
-            function3.invoke(FloatFloatPair.m22boximpl(this.previousCommand.isBezierCommand() ? m8846getReflectedPreviousControlPoint1ufDz9w() : m8845getPosition1ufDz9w()), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(2, 3)));
+            function3.invoke(FloatFloatPair.m9boximpl(this.previousCommand.isBezierCommand() ? m8129getReflectedPreviousControlPoint1ufDz9w() : m8128getPosition1ufDz9w()), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(2, 3)));
         } else if (letter != 't') {
         } else {
-            long m8846getReflectedPreviousControlPoint1ufDz9w = this.previousCommand.isQuadraticCurveCommand() ? m8846getReflectedPreviousControlPoint1ufDz9w() : m8845getPosition1ufDz9w();
-            function3.invoke(FloatFloatPair.m22boximpl(m8846getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m22boximpl(m8846getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m22boximpl(command.m8854xyXgqJiTY(0, 1)));
+            long m8129getReflectedPreviousControlPoint1ufDz9w = this.previousCommand.isQuadraticCurveCommand() ? m8129getReflectedPreviousControlPoint1ufDz9w() : m8128getPosition1ufDz9w();
+            function3.invoke(FloatFloatPair.m9boximpl(m8129getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(m8129getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(command.m8137xyXgqJiTY(0, 1)));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean parseCurve$lambda$3(SvgPathParser svgPathParser, FloatFloatPair floatFloatPair, FloatFloatPair floatFloatPair2, FloatFloatPair floatFloatPair3) {
-        return svgPathParser.cubics.add(svgPathParser.m8844curveToCubicArktYTI(svgPathParser.m8845getPosition1ufDz9w(), floatFloatPair.m33unboximpl(), floatFloatPair2.m33unboximpl(), floatFloatPair3.m33unboximpl()));
-    }
-
     private final void parseArc(Command command) {
-        long m8854xyXgqJiTY = command.m8854xyXgqJiTY(5, 6);
-        this.cubics.addAll(ArcConverter.Companion.arcToCubics(PointKt.m8821getXDnnuFBc(m8845getPosition1ufDz9w()), PointKt.m8822getYDnnuFBc(m8845getPosition1ufDz9w()), PointKt.m8821getXDnnuFBc(m8854xyXgqJiTY), PointKt.m8822getYDnnuFBc(m8854xyXgqJiTY), command.get(0), command.get(1), command.get(2), !(command.get(3) == 0.0f), !(command.get(4) == 0.0f)));
+        long m8137xyXgqJiTY = command.m8137xyXgqJiTY(5, 6);
+        this.cubics.addAll(ArcConverter.Companion.arcToCubics(PointKt.m8106getXDnnuFBc(m8128getPosition1ufDz9w()), PointKt.m8107getYDnnuFBc(m8128getPosition1ufDz9w()), PointKt.m8106getXDnnuFBc(m8137xyXgqJiTY), PointKt.m8107getYDnnuFBc(m8137xyXgqJiTY), command.get(0), command.get(1), command.get(2), !(command.get(3) == 0.0f), !(command.get(4) == 0.0f)));
     }
 
     /* renamed from: curveToCubic-ArktYTI  reason: not valid java name */
-    private final Cubic m8844curveToCubicArktYTI(long j, long j2, long j3, long j4) {
-        return new Cubic(new float[]{PointKt.m8821getXDnnuFBc(j), PointKt.m8822getYDnnuFBc(j), PointKt.m8821getXDnnuFBc(j2), PointKt.m8822getYDnnuFBc(j2), PointKt.m8821getXDnnuFBc(j3), PointKt.m8822getYDnnuFBc(j3), PointKt.m8821getXDnnuFBc(j4), PointKt.m8822getYDnnuFBc(j4)});
+    private final Cubic m8127curveToCubicArktYTI(long j, long j2, long j3, long j4) {
+        return new Cubic(new float[]{PointKt.m8106getXDnnuFBc(j), PointKt.m8107getYDnnuFBc(j), PointKt.m8106getXDnnuFBc(j2), PointKt.m8107getYDnnuFBc(j2), PointKt.m8106getXDnnuFBc(j3), PointKt.m8107getYDnnuFBc(j3), PointKt.m8106getXDnnuFBc(j4), PointKt.m8107getYDnnuFBc(j4)});
     }
 
     /* renamed from: lineToCubic-ybeJwSQ  reason: not valid java name */
-    private final Cubic m8847lineToCubicybeJwSQ(long j, long j2) {
-        return Cubic.Companion.straightLine(PointKt.m8821getXDnnuFBc(j), PointKt.m8822getYDnnuFBc(j), PointKt.m8821getXDnnuFBc(j2), PointKt.m8822getYDnnuFBc(j2));
+    private final Cubic m8130lineToCubicybeJwSQ(long j, long j2) {
+        return Cubic.Companion.straightLine(PointKt.m8106getXDnnuFBc(j), PointKt.m8107getYDnnuFBc(j), PointKt.m8106getXDnnuFBc(j2), PointKt.m8107getYDnnuFBc(j2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -270,7 +258,7 @@ public final class SvgPathParser {
         }
 
         /* renamed from: copy-teZZwEo$default  reason: not valid java name */
-        public static /* synthetic */ Command m8848copyteZZwEo$default(Command command, char c, boolean z, float[] fArr, int i, long j, int i2, Object obj) {
+        public static /* synthetic */ Command m8131copyteZZwEo$default(Command command, char c, boolean z, float[] fArr, int i, long j, int i2, Object obj) {
             if ((i2 & 1) != 0) {
                 c = command.letter;
             }
@@ -287,7 +275,7 @@ public final class SvgPathParser {
                 j = command.start;
             }
             long j2 = j;
-            return command.m8852copyteZZwEo(c, z, fArr, i, j2);
+            return command.m8135copyteZZwEo(c, z, fArr, i, j2);
         }
 
         public final char component1() {
@@ -307,18 +295,18 @@ public final class SvgPathParser {
         }
 
         /* renamed from: component5-1ufDz9w  reason: not valid java name */
-        public final long m8851component51ufDz9w() {
+        public final long m8134component51ufDz9w() {
             return this.start;
         }
 
         /* renamed from: copy-teZZwEo  reason: not valid java name */
-        public final Command m8852copyteZZwEo(char c, boolean z, float[] parameters, int i, long j) {
+        public final Command m8135copyteZZwEo(char c, boolean z, float[] parameters, int i, long j) {
             Intrinsics.checkNotNullParameter(parameters, "parameters");
             return new Command(c, z, parameters, i, j, null);
         }
 
         public String toString() {
-            return "Command(letter=" + this.letter + ", isRelative=" + this.isRelative + ", parameters=" + Arrays.toString(this.parameters) + ", paramsCount=" + this.paramsCount + ", start=" + ((Object) FloatFloatPair.m32toStringimpl(this.start)) + ')';
+            return "Command(letter=" + this.letter + ", isRelative=" + this.isRelative + ", parameters=" + Arrays.toString(this.parameters) + ", paramsCount=" + this.paramsCount + ", start=" + ((Object) FloatFloatPair.m19toStringimpl(this.start)) + ')';
         }
 
         private Command(char c, boolean z, float[] parameters, int i, long j) {
@@ -353,11 +341,11 @@ public final class SvgPathParser {
         }
 
         public /* synthetic */ Command(char c, boolean z, float[] fArr, int i, long j, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-            this(c, z, fArr, i, (i2 & 16) != 0 ? FloatFloatPair.m25constructorimpl(0.0f, 0.0f) : j, null);
+            this(c, z, fArr, i, (i2 & 16) != 0 ? FloatFloatPair.m12constructorimpl(0.0f, 0.0f) : j, null);
         }
 
         /* renamed from: getStart-1ufDz9w  reason: not valid java name */
-        public final long m8853getStart1ufDz9w() {
+        public final long m8136getStart1ufDz9w() {
             return this.start;
         }
 
@@ -373,7 +361,7 @@ public final class SvgPathParser {
             }
 
             /* renamed from: parse-HiPawso  reason: not valid java name */
-            public final Command m8855parseHiPawso(String input, long j) {
+            public final Command m8138parseHiPawso(String input, long j) {
                 Intrinsics.checkNotNullParameter(input, "input");
                 char first = StringsKt.first(input);
                 boolean isLowerCase = Character.isLowerCase(first);
@@ -394,7 +382,7 @@ public final class SvgPathParser {
                 Integer num = (Integer) Command.commandToParamsCount.get(Character.valueOf(Character.toLowerCase(first)));
                 int intValue = num != null ? num.intValue() : 0;
                 if (!isLowerCase) {
-                    j = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
+                    j = FloatFloatPair.m12constructorimpl(0.0f, 0.0f);
                 }
                 return new Command(lowerCase, isLowerCase, floatArray, intValue, j, null);
             }
@@ -430,27 +418,27 @@ public final class SvgPathParser {
 
         public final float x(int i) {
             float f = get(i);
-            return this.isRelative ? PointKt.m8821getXDnnuFBc(this.start) + f : f;
+            return this.isRelative ? PointKt.m8106getXDnnuFBc(this.start) + f : f;
         }
 
         public final float y(int i) {
             float f = get(i);
-            return this.isRelative ? PointKt.m8822getYDnnuFBc(this.start) + f : f;
+            return this.isRelative ? PointKt.m8107getYDnnuFBc(this.start) + f : f;
         }
 
         /* renamed from: xy-XgqJiTY  reason: not valid java name */
-        public final long m8854xyXgqJiTY(int i, int i2) {
-            long m25constructorimpl = FloatFloatPair.m25constructorimpl(get(i), get(i2));
-            return this.isRelative ? PointKt.m8825plusybeJwSQ(this.start, m25constructorimpl) : m25constructorimpl;
+        public final long m8137xyXgqJiTY(int i, int i2) {
+            long m12constructorimpl = FloatFloatPair.m12constructorimpl(get(i), get(i2));
+            return this.isRelative ? PointKt.m8110plusybeJwSQ(this.start, m12constructorimpl) : m12constructorimpl;
         }
 
         /* renamed from: chunk-HiPawso  reason: not valid java name */
-        public final Command m8850chunkHiPawso(int i, long j) {
+        public final Command m8133chunkHiPawso(int i, long j) {
             return new Command(this.letter, this.isRelative, ArraysKt.sliceArray(this.parameters, RangesKt.until(i, this.paramsCount + i)), this.paramsCount, j, null);
         }
 
         /* renamed from: asLine-DnnuFBc  reason: not valid java name */
-        public final Command m8849asLineDnnuFBc(long j) {
+        public final Command m8132asLineDnnuFBc(long j) {
             return new Command('l', this.isRelative, CollectionsKt.toFloatArray(ArraysKt.drop(this.parameters, this.paramsCount)), 2, j, null);
         }
 

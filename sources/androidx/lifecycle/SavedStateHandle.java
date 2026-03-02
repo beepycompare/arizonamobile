@@ -89,10 +89,12 @@ public final class SavedStateHandle {
 
     public final <T> StateFlow<T> getStateFlow(String key, T t) {
         Intrinsics.checkNotNullParameter(key, "key");
-        if (this.impl.getMutableFlows().containsKey(key)) {
-            return FlowKt.asStateFlow(this.impl.getMutableStateFlow(key, t));
+        boolean containsKey = this.impl.getMutableFlows().containsKey(key);
+        SavedStateHandleImpl savedStateHandleImpl = this.impl;
+        if (containsKey) {
+            return FlowKt.asStateFlow(savedStateHandleImpl.getMutableStateFlow(key, t));
         }
-        return this.impl.getStateFlow(key, t);
+        return savedStateHandleImpl.getStateFlow(key, t);
     }
 
     public final <T> MutableStateFlow<T> getMutableStateFlow(String key, T t) {
@@ -208,7 +210,7 @@ public final class SavedStateHandle {
             ClassLoader classLoader = SavedStateHandle.class.getClassLoader();
             Intrinsics.checkNotNull(classLoader);
             bundle.setClassLoader(classLoader);
-            return new SavedStateHandle(SavedStateReader.m9290toMapimpl(SavedStateReader.m9209constructorimpl(bundle)));
+            return new SavedStateHandle(SavedStateReader.m8495toMapimpl(SavedStateReader.m8414constructorimpl(bundle)));
         }
 
         public final boolean validateValue(Object obj) {

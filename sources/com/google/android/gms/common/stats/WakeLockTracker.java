@@ -3,7 +3,7 @@ package com.google.android.gms.common.stats;
 import android.content.Context;
 import android.content.Intent;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public class WakeLockTracker {

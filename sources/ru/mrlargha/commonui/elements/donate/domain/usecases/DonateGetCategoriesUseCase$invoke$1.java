@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateGetCategoriesUseCase.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetCategoriesUseCase", f = "DonateGetCategoriesUseCase.kt", i = {}, l = {10}, m = "invoke", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetCategoriesUseCase", f = "DonateGetCategoriesUseCase.kt", i = {}, l = {10}, m = "invoke", n = {}, nl = {11}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateGetCategoriesUseCase$invoke$1 extends ContinuationImpl {
     int label;

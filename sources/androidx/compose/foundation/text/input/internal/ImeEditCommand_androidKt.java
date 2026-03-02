@@ -21,23 +21,21 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit commitText$lambda$0;
-                commitText$lambda$0 = ImeEditCommand_androidKt.commitText$lambda$0(str, i, (TextFieldBuffer) obj);
-                return commitText$lambda$0;
+                return ImeEditCommand_androidKt.commitText$lambda$0(str, i, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit commitText$lambda$0(String str, int i, TextFieldBuffer textFieldBuffer) {
-        TextRange m1527getCompositionMzsxiRA$foundation = textFieldBuffer.m1527getCompositionMzsxiRA$foundation();
-        if (m1527getCompositionMzsxiRA$foundation != null) {
-            imeReplace(textFieldBuffer, TextRange.m7701getStartimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()), TextRange.m7696getEndimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()), str);
+        TextRange m1326getCompositionMzsxiRA$foundation = textFieldBuffer.m1326getCompositionMzsxiRA$foundation();
+        if (m1326getCompositionMzsxiRA$foundation != null) {
+            imeReplace(textFieldBuffer, TextRange.m7003getStartimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()), TextRange.m6998getEndimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()), str);
         } else {
-            imeReplace(textFieldBuffer, TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()), TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()), str);
+            imeReplace(textFieldBuffer, TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()), TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()), str);
         }
-        int m7701getStartimpl = TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE());
-        textFieldBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7701getStartimpl + i) - 1 : (m7701getStartimpl + i) - str.length(), 0, textFieldBuffer.getLength())));
+        int m7003getStartimpl = TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE());
+        textFieldBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7003getStartimpl + i) - 1 : (m7003getStartimpl + i) - str.length(), 0, textFieldBuffer.getLength())));
         return Unit.INSTANCE;
     }
 
@@ -45,14 +43,12 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit composingRegion$lambda$0;
-                composingRegion$lambda$0 = ImeEditCommand_androidKt.setComposingRegion$lambda$0(i, i2, (TextFieldBuffer) obj);
-                return composingRegion$lambda$0;
+                return ImeEditCommand_androidKt.setComposingRegion$lambda$0(i, i2, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit setComposingRegion$lambda$0(int i, int i2, TextFieldBuffer textFieldBuffer) {
         if (textFieldBuffer.hasComposition$foundation()) {
             textFieldBuffer.commitComposition$foundation();
@@ -80,32 +76,30 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit composingText$lambda$0;
-                composingText$lambda$0 = ImeEditCommand_androidKt.setComposingText$lambda$0(str, list, i, (TextFieldBuffer) obj);
-                return composingText$lambda$0;
+                return ImeEditCommand_androidKt.setComposingText$lambda$0(str, list, i, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit setComposingText$lambda$0(String str, List list, int i, TextFieldBuffer textFieldBuffer) {
-        TextRange m1527getCompositionMzsxiRA$foundation = textFieldBuffer.m1527getCompositionMzsxiRA$foundation();
-        if (m1527getCompositionMzsxiRA$foundation != null) {
+        TextRange m1326getCompositionMzsxiRA$foundation = textFieldBuffer.m1326getCompositionMzsxiRA$foundation();
+        if (m1326getCompositionMzsxiRA$foundation != null) {
             String str2 = str;
-            imeReplace(textFieldBuffer, TextRange.m7701getStartimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()), TextRange.m7696getEndimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()), str2);
+            imeReplace(textFieldBuffer, TextRange.m7003getStartimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()), TextRange.m6998getEndimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()), str2);
             if (str2.length() > 0) {
-                textFieldBuffer.setComposition$foundation(TextRange.m7701getStartimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()), TextRange.m7701getStartimpl(m1527getCompositionMzsxiRA$foundation.m7705unboximpl()) + str.length(), list);
+                textFieldBuffer.setComposition$foundation(TextRange.m7003getStartimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()), TextRange.m7003getStartimpl(m1326getCompositionMzsxiRA$foundation.m7007unboximpl()) + str.length(), list);
             }
         } else {
-            int m7701getStartimpl = TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE());
+            int m7003getStartimpl = TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE());
             String str3 = str;
-            imeReplace(textFieldBuffer, m7701getStartimpl, TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()), str3);
+            imeReplace(textFieldBuffer, m7003getStartimpl, TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()), str3);
             if (str3.length() > 0) {
-                textFieldBuffer.setComposition$foundation(m7701getStartimpl, str.length() + m7701getStartimpl, list);
+                textFieldBuffer.setComposition$foundation(m7003getStartimpl, str.length() + m7003getStartimpl, list);
             }
         }
-        int m7701getStartimpl2 = TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE());
-        textFieldBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7701getStartimpl2 + i) - 1 : (m7701getStartimpl2 + i) - str.length(), 0, textFieldBuffer.getLength())));
+        int m7003getStartimpl2 = TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE());
+        textFieldBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(RangesKt.coerceIn(i > 0 ? (m7003getStartimpl2 + i) - 1 : (m7003getStartimpl2 + i) - str.length(), 0, textFieldBuffer.getLength())));
         return Unit.INSTANCE;
     }
 
@@ -113,33 +107,31 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteSurroundingText$lambda$0;
-                deleteSurroundingText$lambda$0 = ImeEditCommand_androidKt.deleteSurroundingText$lambda$0(i, i2, imeEditCommandScope, (TextFieldBuffer) obj);
-                return deleteSurroundingText$lambda$0;
+                return ImeEditCommand_androidKt.deleteSurroundingText$lambda$0(i, i2, imeEditCommandScope, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit deleteSurroundingText$lambda$0(int i, int i2, ImeEditCommandScope imeEditCommandScope, TextFieldBuffer textFieldBuffer) {
         if (!(i >= 0 && i2 >= 0)) {
             InlineClassHelperKt.throwIllegalArgumentException("Expected lengthBeforeCursor and lengthAfterCursor to be non-negative, were " + i + " and " + i2 + " respectively.");
         }
-        long mo1569mapToTransformedGEjPoXI = imeEditCommandScope.mo1569mapToTransformedGEjPoXI(textFieldBuffer.m1529getSelectiond9O1mEE());
-        int m7696getEndimpl = TextRange.m7696getEndimpl(mo1569mapToTransformedGEjPoXI);
-        int i3 = m7696getEndimpl + i2;
-        if (((i2 ^ i3) & (m7696getEndimpl ^ i3)) < 0) {
+        long mo1366mapToTransformedGEjPoXI = imeEditCommandScope.mo1366mapToTransformedGEjPoXI(textFieldBuffer.m1328getSelectiond9O1mEE());
+        int m6998getEndimpl = TextRange.m6998getEndimpl(mo1366mapToTransformedGEjPoXI);
+        int i3 = m6998getEndimpl + i2;
+        if (((i2 ^ i3) & (m6998getEndimpl ^ i3)) < 0) {
             i3 = textFieldBuffer.getLength();
         }
-        long mo1568mapFromTransformedGEjPoXI = imeEditCommandScope.mo1568mapFromTransformedGEjPoXI(TextRangeKt.TextRange(TextRange.m7696getEndimpl(mo1569mapToTransformedGEjPoXI), Math.min(i3, textFieldBuffer.getLength())));
-        imeDelete(textFieldBuffer, TextRange.m7699getMinimpl(mo1568mapFromTransformedGEjPoXI), TextRange.m7698getMaximpl(mo1568mapFromTransformedGEjPoXI));
-        int m7701getStartimpl = TextRange.m7701getStartimpl(mo1569mapToTransformedGEjPoXI);
-        int i4 = m7701getStartimpl - i;
-        if (((i ^ m7701getStartimpl) & (m7701getStartimpl ^ i4)) < 0) {
+        long mo1365mapFromTransformedGEjPoXI = imeEditCommandScope.mo1365mapFromTransformedGEjPoXI(TextRangeKt.TextRange(TextRange.m6998getEndimpl(mo1366mapToTransformedGEjPoXI), Math.min(i3, textFieldBuffer.getLength())));
+        imeDelete(textFieldBuffer, TextRange.m7001getMinimpl(mo1365mapFromTransformedGEjPoXI), TextRange.m7000getMaximpl(mo1365mapFromTransformedGEjPoXI));
+        int m7003getStartimpl = TextRange.m7003getStartimpl(mo1366mapToTransformedGEjPoXI);
+        int i4 = m7003getStartimpl - i;
+        if (((i ^ m7003getStartimpl) & (m7003getStartimpl ^ i4)) < 0) {
             i4 = 0;
         }
-        long mo1568mapFromTransformedGEjPoXI2 = imeEditCommandScope.mo1568mapFromTransformedGEjPoXI(TextRangeKt.TextRange(Math.max(0, i4), TextRange.m7701getStartimpl(mo1569mapToTransformedGEjPoXI)));
-        imeDelete(textFieldBuffer, TextRange.m7699getMinimpl(mo1568mapFromTransformedGEjPoXI2), TextRange.m7698getMaximpl(mo1568mapFromTransformedGEjPoXI2));
+        long mo1365mapFromTransformedGEjPoXI2 = imeEditCommandScope.mo1365mapFromTransformedGEjPoXI(TextRangeKt.TextRange(Math.max(0, i4), TextRange.m7003getStartimpl(mo1366mapToTransformedGEjPoXI)));
+        imeDelete(textFieldBuffer, TextRange.m7001getMinimpl(mo1365mapFromTransformedGEjPoXI2), TextRange.m7000getMaximpl(mo1365mapFromTransformedGEjPoXI2));
         return Unit.INSTANCE;
     }
 
@@ -147,14 +139,12 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteSurroundingTextInCodePoints$lambda$0;
-                deleteSurroundingTextInCodePoints$lambda$0 = ImeEditCommand_androidKt.deleteSurroundingTextInCodePoints$lambda$0(i, i2, (TextFieldBuffer) obj);
-                return deleteSurroundingTextInCodePoints$lambda$0;
+                return ImeEditCommand_androidKt.deleteSurroundingTextInCodePoints$lambda$0(i, i2, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit deleteSurroundingTextInCodePoints$lambda$0(int i, int i2, TextFieldBuffer textFieldBuffer) {
         int i3 = 0;
         if (!(i >= 0 && i2 >= 0)) {
@@ -165,11 +155,11 @@ public final class ImeEditCommand_androidKt {
         while (true) {
             if (i4 < i) {
                 int i6 = i5 + 1;
-                if (TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) > i6) {
-                    i5 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) - i6) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) - i6)) ? i5 + 2 : i6;
+                if (TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) > i6) {
+                    i5 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) - i6) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) - i6)) ? i5 + 2 : i6;
                     i4++;
                 } else {
-                    i5 = TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE());
+                    i5 = TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE());
                     break;
                 }
             } else {
@@ -182,16 +172,16 @@ public final class ImeEditCommand_androidKt {
                 break;
             }
             int i8 = i7 + 1;
-            if (TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) + i8 < textFieldBuffer.getLength()) {
-                i7 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) + i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) + i8)) ? i7 + 2 : i8;
+            if (TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) + i8 < textFieldBuffer.getLength()) {
+                i7 = isSurrogatePair(textFieldBuffer.asCharSequence().charAt((TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) + i8) - 1), textFieldBuffer.asCharSequence().charAt(TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) + i8)) ? i7 + 2 : i8;
                 i3++;
             } else {
-                i7 = textFieldBuffer.getLength() - TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE());
+                i7 = textFieldBuffer.getLength() - TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE());
                 break;
             }
         }
-        imeDelete(textFieldBuffer, TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()), TextRange.m7696getEndimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) + i7);
-        imeDelete(textFieldBuffer, TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()) - i5, TextRange.m7701getStartimpl(textFieldBuffer.m1529getSelectiond9O1mEE()));
+        imeDelete(textFieldBuffer, TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()), TextRange.m6998getEndimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) + i7);
+        imeDelete(textFieldBuffer, TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()) - i5, TextRange.m7003getStartimpl(textFieldBuffer.m1328getSelectiond9O1mEE()));
         return Unit.INSTANCE;
     }
 
@@ -199,14 +189,12 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit finishComposingText$lambda$0;
-                finishComposingText$lambda$0 = ImeEditCommand_androidKt.finishComposingText$lambda$0((TextFieldBuffer) obj);
-                return finishComposingText$lambda$0;
+                return ImeEditCommand_androidKt.finishComposingText$lambda$0((TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit finishComposingText$lambda$0(TextFieldBuffer textFieldBuffer) {
         textFieldBuffer.commitComposition$foundation();
         return Unit.INSTANCE;
@@ -216,33 +204,31 @@ public final class ImeEditCommand_androidKt {
         imeEditCommandScope.edit(new Function1() { // from class: androidx.compose.foundation.text.input.internal.ImeEditCommand_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit selection$lambda$0;
-                selection$lambda$0 = ImeEditCommand_androidKt.setSelection$lambda$0(ImeEditCommandScope.this, i, i2, (TextFieldBuffer) obj);
-                return selection$lambda$0;
+                return ImeEditCommand_androidKt.setSelection$lambda$0(ImeEditCommandScope.this, i, i2, (TextFieldBuffer) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit setSelection$lambda$0(ImeEditCommandScope imeEditCommandScope, int i, int i2, TextFieldBuffer textFieldBuffer) {
-        long mo1569mapToTransformedGEjPoXI = imeEditCommandScope.mo1569mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
-        int m7699getMinimpl = TextRange.m7699getMinimpl(mo1569mapToTransformedGEjPoXI);
-        int m7698getMaximpl = TextRange.m7698getMaximpl(mo1569mapToTransformedGEjPoXI);
-        if (i < m7699getMinimpl) {
-            i = m7699getMinimpl;
+        long mo1366mapToTransformedGEjPoXI = imeEditCommandScope.mo1366mapToTransformedGEjPoXI(TextRangeKt.TextRange(0, textFieldBuffer.getLength()));
+        int m7001getMinimpl = TextRange.m7001getMinimpl(mo1366mapToTransformedGEjPoXI);
+        int m7000getMaximpl = TextRange.m7000getMaximpl(mo1366mapToTransformedGEjPoXI);
+        if (i < m7001getMinimpl) {
+            i = m7001getMinimpl;
         }
-        if (i <= m7698getMaximpl) {
-            m7698getMaximpl = i;
+        if (i <= m7000getMaximpl) {
+            m7000getMaximpl = i;
         }
-        int m7699getMinimpl2 = TextRange.m7699getMinimpl(mo1569mapToTransformedGEjPoXI);
-        int m7698getMaximpl2 = TextRange.m7698getMaximpl(mo1569mapToTransformedGEjPoXI);
-        if (i2 < m7699getMinimpl2) {
-            i2 = m7699getMinimpl2;
+        int m7001getMinimpl2 = TextRange.m7001getMinimpl(mo1366mapToTransformedGEjPoXI);
+        int m7000getMaximpl2 = TextRange.m7000getMaximpl(mo1366mapToTransformedGEjPoXI);
+        if (i2 < m7001getMinimpl2) {
+            i2 = m7001getMinimpl2;
         }
-        if (i2 <= m7698getMaximpl2) {
-            m7698getMaximpl2 = i2;
+        if (i2 <= m7000getMaximpl2) {
+            m7000getMaximpl2 = i2;
         }
-        textFieldBuffer.m1531setSelection5zctL8(imeEditCommandScope.mo1568mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m7698getMaximpl, m7698getMaximpl2)));
+        textFieldBuffer.m1330setSelection5zctL8(imeEditCommandScope.mo1365mapFromTransformedGEjPoXI(TextRangeKt.TextRange(m7000getMaximpl, m7000getMaximpl2)));
         return Unit.INSTANCE;
     }
 
@@ -275,21 +261,21 @@ public final class ImeEditCommand_androidKt {
             max--;
         }
         textFieldBuffer.replace(i4, max, charSequence.subSequence(i3, length));
-        textFieldBuffer.m1531setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
+        textFieldBuffer.m1330setSelection5zctL8(TextRangeKt.TextRange(min + charSequence.length()));
     }
 
     public static final void imeDelete(TextFieldBuffer textFieldBuffer, int i, int i2) {
-        TextRange m1527getCompositionMzsxiRA$foundation = textFieldBuffer.m1527getCompositionMzsxiRA$foundation();
+        TextRange m1326getCompositionMzsxiRA$foundation = textFieldBuffer.m1326getCompositionMzsxiRA$foundation();
         int min = Math.min(i, i2);
         int max = Math.max(i, i2);
         TextFieldBufferKt.delete(textFieldBuffer, min, max);
-        if (m1527getCompositionMzsxiRA$foundation != null) {
-            m1527getCompositionMzsxiRA$foundation.m7705unboximpl();
-            long m1535adjustTextRangevJH6DeI = TextFieldBufferKt.m1535adjustTextRangevJH6DeI(m1527getCompositionMzsxiRA$foundation.m7705unboximpl(), min, max, 0);
-            if (TextRange.m7695getCollapsedimpl(m1535adjustTextRangevJH6DeI)) {
+        if (m1326getCompositionMzsxiRA$foundation != null) {
+            m1326getCompositionMzsxiRA$foundation.m7007unboximpl();
+            long m1334adjustTextRangevJH6DeI = TextFieldBufferKt.m1334adjustTextRangevJH6DeI(m1326getCompositionMzsxiRA$foundation.m7007unboximpl(), min, max, 0);
+            if (TextRange.m6997getCollapsedimpl(m1334adjustTextRangevJH6DeI)) {
                 textFieldBuffer.commitComposition$foundation();
             } else {
-                TextFieldBuffer.setComposition$foundation$default(textFieldBuffer, TextRange.m7699getMinimpl(m1535adjustTextRangevJH6DeI), TextRange.m7698getMaximpl(m1535adjustTextRangevJH6DeI), null, 4, null);
+                TextFieldBuffer.setComposition$foundation$default(textFieldBuffer, TextRange.m7001getMinimpl(m1334adjustTextRangevJH6DeI), TextRange.m7000getMaximpl(m1334adjustTextRangevJH6DeI), null, 4, null);
             }
         }
     }

@@ -105,6 +105,7 @@ public final class AudioProcessingPipeline {
             audioProcessor.flush(AudioProcessor.StreamMetadata.DEFAULT);
             audioProcessor.reset();
         }
+        this.activeAudioProcessors.clear();
         this.outputBuffers = new ByteBuffer[0];
         this.outputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;

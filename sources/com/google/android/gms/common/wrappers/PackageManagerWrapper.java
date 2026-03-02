@@ -10,7 +10,7 @@ import android.os.Binder;
 import android.os.Process;
 import androidx.core.util.Pair;
 import com.google.android.gms.common.util.PlatformVersion;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class PackageManagerWrapper {
     protected final Context zza;

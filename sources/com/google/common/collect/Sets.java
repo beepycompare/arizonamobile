@@ -952,10 +952,12 @@ public final class Sets {
             @Override // com.google.common.collect.AbstractIterator
             @CheckForNull
             public Set<E> computeNext() {
-                if (this.bits.isEmpty()) {
-                    this.bits.set(0, AnonymousClass5.this.val$size);
+                boolean isEmpty = this.bits.isEmpty();
+                BitSet bitSet = this.bits;
+                if (isEmpty) {
+                    bitSet.set(0, AnonymousClass5.this.val$size);
                 } else {
-                    int nextSetBit = this.bits.nextSetBit(0);
+                    int nextSetBit = bitSet.nextSetBit(0);
                     int nextClearBit = this.bits.nextClearBit(nextSetBit);
                     if (nextClearBit == AnonymousClass5.this.val$index.size()) {
                         return endOfData();
@@ -965,7 +967,7 @@ public final class Sets {
                     this.bits.clear(i, nextClearBit);
                     this.bits.set(nextClearBit);
                 }
-                final BitSet bitSet = (BitSet) this.bits.clone();
+                final BitSet bitSet2 = (BitSet) this.bits.clone();
                 return new AbstractSet<E>(this) { // from class: com.google.common.collect.Sets.5.1.1
                     final /* synthetic */ AnonymousClass1 this$1;
 
@@ -976,7 +978,7 @@ public final class Sets {
                     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
                     public boolean contains(@CheckForNull Object o) {
                         Integer num = (Integer) AnonymousClass5.this.val$index.get(o);
-                        return num != null && bitSet.get(num.intValue());
+                        return num != null && bitSet2.get(num.intValue());
                     }
 
                     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
@@ -987,7 +989,7 @@ public final class Sets {
                             @Override // com.google.common.collect.AbstractIterator
                             @CheckForNull
                             protected E computeNext() {
-                                int nextSetBit2 = bitSet.nextSetBit(this.i + 1);
+                                int nextSetBit2 = bitSet2.nextSetBit(this.i + 1);
                                 this.i = nextSetBit2;
                                 if (nextSetBit2 == -1) {
                                     return endOfData();

@@ -58,10 +58,12 @@ final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
 
             @Override // retrofit2.Callback
             public void onResponse(Call<R> call, Response<R> response) {
-                if (response.isSuccessful()) {
-                    this.future.complete(response.body());
+                boolean isSuccessful = response.isSuccessful();
+                CompletableFuture<R> completableFuture = this.future;
+                if (isSuccessful) {
+                    completableFuture.complete(response.body());
                 } else {
-                    this.future.completeExceptionally(new HttpException(response));
+                    completableFuture.completeExceptionally(new HttpException(response));
                 }
             }
 

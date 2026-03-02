@@ -28,14 +28,12 @@ public final class ProgressSemanticsKt {
         return SemanticsModifierKt.semantics(modifier, true, new Function1() { // from class: androidx.compose.foundation.ProgressSemanticsKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit progressSemantics$lambda$0;
-                progressSemantics$lambda$0 = ProgressSemanticsKt.progressSemantics$lambda$0(f, closedFloatingPointRange, i, (SemanticsPropertyReceiver) obj);
-                return progressSemantics$lambda$0;
+                return ProgressSemanticsKt.progressSemantics$lambda$0(f, closedFloatingPointRange, i, (SemanticsPropertyReceiver) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit progressSemantics$lambda$0(float f, ClosedFloatingPointRange closedFloatingPointRange, int i, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setProgressBarRangeInfo(semanticsPropertyReceiver, new ProgressBarRangeInfo(((Number) RangesKt.coerceIn(Float.valueOf(f), (ClosedFloatingPointRange<Float>) closedFloatingPointRange)).floatValue(), closedFloatingPointRange, i));
         return Unit.INSTANCE;
@@ -45,14 +43,12 @@ public final class ProgressSemanticsKt {
         return SemanticsModifierKt.semantics(modifier, true, new Function1() { // from class: androidx.compose.foundation.ProgressSemanticsKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit progressSemantics$lambda$1;
-                progressSemantics$lambda$1 = ProgressSemanticsKt.progressSemantics$lambda$1((SemanticsPropertyReceiver) obj);
-                return progressSemantics$lambda$1;
+                return ProgressSemanticsKt.progressSemantics$lambda$1((SemanticsPropertyReceiver) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit progressSemantics$lambda$1(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setProgressBarRangeInfo(semanticsPropertyReceiver, ProgressBarRangeInfo.Companion.getIndeterminate());
         return Unit.INSTANCE;

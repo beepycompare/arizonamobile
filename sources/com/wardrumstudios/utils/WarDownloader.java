@@ -137,55 +137,55 @@ public class WarDownloader {
             StringBuilder append;
             String str;
             String str2 = this.val$mess;
-            if (str2 != "Done Downloading") {
-                if (str2 == "Done Downloading Language") {
-                    if (WarDownloader.this.DownloadProgress != null) {
-                        WarDownloader.this.DownloadProgress.dismiss();
-                    }
-                    WarDownloader.this.DownloadProgress = null;
-                    return;
-                }
+            if (str2 == "Done Downloading") {
                 if (WarDownloader.this.DownloadProgress != null) {
-                    WarDownloader.this.DownloadProgress.setMessage(this.val$mess);
+                    WarDownloader.this.DownloadProgress.dismiss();
                 }
-                if (WarDownloader.this.mBuilder != null) {
-                    WarDownloader.this.mBuilder.setContentText(WarDownloader.this.notifyMessage);
-                    WarDownloader.this.mNotifyManager.notify(0, WarDownloader.this.mBuilder.build());
-                    return;
+                WarDownloader.this.DownloadProgress = null;
+                long currentTimeMillis = System.currentTimeMillis() - WarDownloader.this.StartTime;
+                if (currentTimeMillis > 300000) {
+                    append = new StringBuilder("").append(currentTimeMillis / 60000).append(" ");
+                    str = WarDownloader.this.MINUTES_TEXT;
+                } else {
+                    append = new StringBuilder("").append(currentTimeMillis / 1000).append(" ");
+                    str = WarDownloader.this.SECONDS_TEXT;
                 }
+                String sb = append.append(str).toString();
+                WarDownloader.this.mBuilder.setContentText(WarDownloader.this.DOWNLOAD_COMPLETE + " (" + sb + ")");
+                new AlertDialog.Builder(WarDownloader.this.myWarMedia).setMessage(WarDownloader.this.DOWNLOAD_COMPLETE + " (" + sb + ")").setPositiveButton(WarDownloader.this.NEXT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.14.2
+                    @Override // android.content.DialogInterface.OnClickListener
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        WarDownloader.this.myWarMedia.runOnUiThread(new Runnable() { // from class: com.wardrumstudios.utils.WarDownloader.14.2.1
+                            @Override // java.lang.Runnable
+                            public void run() {
+                                WarDownloader.this.ClearSplash();
+                                WarDownloader.this.myWarMedia.DoResumeEvent();
+                            }
+                        });
+                    }
+                }).setNegativeButton(WarDownloader.this.EXIT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.14.1
+                    @Override // android.content.DialogInterface.OnClickListener
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        WarDownloader.this.myWarMedia.finish();
+                    }
+                }).setCancelable(false).show();
                 return;
             }
-            if (WarDownloader.this.DownloadProgress != null) {
-                WarDownloader.this.DownloadProgress.dismiss();
-            }
-            WarDownloader.this.DownloadProgress = null;
-            long currentTimeMillis = System.currentTimeMillis() - WarDownloader.this.StartTime;
-            if (currentTimeMillis > 300000) {
-                append = new StringBuilder("").append(currentTimeMillis / 60000).append(" ");
-                str = WarDownloader.this.MINUTES_TEXT;
-            } else {
-                append = new StringBuilder("").append(currentTimeMillis / 1000).append(" ");
-                str = WarDownloader.this.SECONDS_TEXT;
-            }
-            String sb = append.append(str).toString();
-            WarDownloader.this.mBuilder.setContentText(WarDownloader.this.DOWNLOAD_COMPLETE + " (" + sb + ")");
-            new AlertDialog.Builder(WarDownloader.this.myWarMedia).setMessage(WarDownloader.this.DOWNLOAD_COMPLETE + " (" + sb + ")").setPositiveButton(WarDownloader.this.NEXT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.14.2
-                @Override // android.content.DialogInterface.OnClickListener
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    WarDownloader.this.myWarMedia.runOnUiThread(new Runnable() { // from class: com.wardrumstudios.utils.WarDownloader.14.2.1
-                        @Override // java.lang.Runnable
-                        public void run() {
-                            WarDownloader.this.ClearSplash();
-                            WarDownloader.this.myWarMedia.DoResumeEvent();
-                        }
-                    });
+            WarDownloader warDownloader = WarDownloader.this;
+            if (str2 == "Done Downloading Language") {
+                if (warDownloader.DownloadProgress != null) {
+                    WarDownloader.this.DownloadProgress.dismiss();
                 }
-            }).setNegativeButton(WarDownloader.this.EXIT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.14.1
-                @Override // android.content.DialogInterface.OnClickListener
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    WarDownloader.this.myWarMedia.finish();
-                }
-            }).setCancelable(false).show();
+                WarDownloader.this.DownloadProgress = null;
+                return;
+            }
+            if (warDownloader.DownloadProgress != null) {
+                WarDownloader.this.DownloadProgress.setMessage(this.val$mess);
+            }
+            if (WarDownloader.this.mBuilder != null) {
+                WarDownloader.this.mBuilder.setContentText(WarDownloader.this.notifyMessage);
+                WarDownloader.this.mNotifyManager.notify(0, WarDownloader.this.mBuilder.build());
+            }
         }
     }
 
@@ -745,10 +745,26 @@ public class WarDownloader {
             this.myWarMedia.runOnUiThread(new Runnable() { // from class: com.wardrumstudios.utils.WarDownloader.10
                 @Override // java.lang.Runnable
                 public void run() {
+                    String str;
                     System.out.println("Data download failed");
-                    new AlertDialog.Builder(WarDownloader.this.myWarMedia).setMessage(WarDownloader.this.IOWriteError ? WarDownloader.this.CANNOT_WRITE_DATA : WarDownloader.this.DownloadFailedMessage == 1 ? WarDownloader.this.DATA_INACCESSIBLE : WarDownloader.this.DownloadFailedMessage == 2 ? WarDownloader.this.CANNOT_DOWNLOAD_LL_DATA : WarDownloader.this.FATAL_AUDIO_EXTRACTION).setPositiveButton(WarDownloader.this.EXIT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.10.1
+                    boolean z = WarDownloader.this.IOWriteError;
+                    WarDownloader warDownloader = WarDownloader.this;
+                    if (z) {
+                        str = warDownloader.CANNOT_WRITE_DATA;
+                    } else {
+                        int i = warDownloader.DownloadFailedMessage;
+                        WarDownloader warDownloader2 = WarDownloader.this;
+                        if (i == 1) {
+                            str = warDownloader2.DATA_INACCESSIBLE;
+                        } else {
+                            int i2 = warDownloader2.DownloadFailedMessage;
+                            WarDownloader warDownloader3 = WarDownloader.this;
+                            str = i2 == 2 ? warDownloader3.CANNOT_DOWNLOAD_LL_DATA : warDownloader3.FATAL_AUDIO_EXTRACTION;
+                        }
+                    }
+                    new AlertDialog.Builder(WarDownloader.this.myWarMedia).setMessage(str).setPositiveButton(WarDownloader.this.EXIT_BUTTON, new DialogInterface.OnClickListener() { // from class: com.wardrumstudios.utils.WarDownloader.10.1
                         @Override // android.content.DialogInterface.OnClickListener
-                        public void onClick(DialogInterface dialogInterface, int i) {
+                        public void onClick(DialogInterface dialogInterface, int i3) {
                             WarDownloader.this.myWarMedia.finish();
                         }
                     }).setCancelable(false).show();
@@ -764,14 +780,24 @@ public class WarDownloader {
             @Override // java.lang.Runnable
             public void run() {
                 WarDownloader.this.DisplaySplash();
-                if (!WarDownloader.this.checkData) {
-                    WarDownloader.this.myWarMedia.DoResumeEvent();
-                } else if (!WarDownloader.this.myWarMedia.isNetworkAvailable()) {
-                    WarDownloader.this.ShowDownloadNetworkError();
-                } else if (WarDownloader.this.myWarMedia.isWiFiAvailable()) {
-                    WarDownloader.this.DownloadDataMessage();
+                boolean z = WarDownloader.this.checkData;
+                WarDownloader warDownloader = WarDownloader.this;
+                if (!z) {
+                    warDownloader.myWarMedia.DoResumeEvent();
+                    return;
+                }
+                boolean isNetworkAvailable = warDownloader.myWarMedia.isNetworkAvailable();
+                WarDownloader warDownloader2 = WarDownloader.this;
+                if (!isNetworkAvailable) {
+                    warDownloader2.ShowDownloadNetworkError();
+                    return;
+                }
+                boolean isWiFiAvailable = warDownloader2.myWarMedia.isWiFiAvailable();
+                WarDownloader warDownloader3 = WarDownloader.this;
+                if (isWiFiAvailable) {
+                    warDownloader3.DownloadDataMessage();
                 } else {
-                    WarDownloader.this.WiFiMessage();
+                    warDownloader3.WiFiMessage();
                 }
             }
         });
@@ -886,10 +912,16 @@ public class WarDownloader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void ShowEULA() {
-        while (!this.myWarMedia.HasGLExtensions) {
-            this.myWarMedia.mSleep(100L);
+        WarMedia warMedia;
+        while (true) {
+            boolean z = this.myWarMedia.HasGLExtensions;
+            warMedia = this.myWarMedia;
+            if (z) {
+                break;
+            }
+            warMedia.mSleep(100L);
         }
-        String GetConfigSetting = this.myWarMedia.GetConfigSetting("DownloadCheckVersion");
+        String GetConfigSetting = warMedia.GetConfigSetting("DownloadCheckVersion");
         this.myWarMedia.GetConfigSetting("VerifyCheckVersion");
         boolean equalsIgnoreCase = GetConfigSetting.equalsIgnoreCase("Downloadv9");
         if (equalsIgnoreCase) {
@@ -900,9 +932,10 @@ public class WarDownloader {
                 equalsIgnoreCase = false;
             }
         }
+        WarMedia warMedia2 = this.myWarMedia;
         if (equalsIgnoreCase) {
-            this.myWarMedia.DoResumeEvent();
-        } else if (this.myWarMedia.GetConfigSetting("VerifyCheckVersion").equalsIgnoreCase("Yes")) {
+            warMedia2.DoResumeEvent();
+        } else if (warMedia2.GetConfigSetting("VerifyCheckVersion").equalsIgnoreCase("Yes")) {
             this.myWarMedia.runOnUiThread(new Runnable() { // from class: com.wardrumstudios.utils.WarDownloader.1
                 @Override // java.lang.Runnable
                 public void run() {
@@ -1006,9 +1039,11 @@ public class WarDownloader {
     public int downloadFile(String str, int i, boolean z) {
         HttpURLConnection httpURLConnection;
         int i2;
-        if (this.UseFTP) {
+        boolean z2 = this.UseFTP;
+        boolean z3 = this.UseWardrumData;
+        if (z2) {
             try {
-                String sb = (!this.UseWardrumData ? new StringBuilder().append(this.downloadLocation) : new StringBuilder("/")).append(str).toString();
+                String sb = (!z3 ? new StringBuilder().append(this.downloadLocation) : new StringBuilder("/")).append(str).toString();
                 String str2 = this.myWarMedia.baseDirectory + "/" + str;
                 System.currentTimeMillis();
                 int CheckAndCreate = CheckAndCreate(str2, i);
@@ -1054,7 +1089,7 @@ public class WarDownloader {
             }
         }
         try {
-            String sb2 = (!this.UseWardrumData ? new StringBuilder().append(this.downloadLocation).append(str) : new StringBuilder("http://wardrumstudios.com/MobileDownloads/gta3/").append(str).append(";type=i")).toString();
+            String sb2 = (!z3 ? new StringBuilder().append(this.downloadLocation).append(str) : new StringBuilder("http://wardrumstudios.com/MobileDownloads/gta3/").append(str).append(";type=i")).toString();
             String str3 = this.myWarMedia.baseDirectory + "/" + str;
             if (this.mv == null) {
                 this.mv = new MediaVault(GetVal(this.try1));

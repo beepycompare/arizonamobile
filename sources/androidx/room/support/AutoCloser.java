@@ -56,16 +56,11 @@ public final class AutoCloser {
         this(j, timeUnit, (i & 4) != 0 ? new Watch() { // from class: androidx.room.support.AutoCloser$$ExternalSyntheticLambda0
             @Override // androidx.room.support.AutoCloser.Watch
             public final long getMillis() {
-                long _init_$lambda$0;
-                _init_$lambda$0 = AutoCloser._init_$lambda$0();
-                return _init_$lambda$0;
+                long uptimeMillis;
+                uptimeMillis = SystemClock.uptimeMillis();
+                return uptimeMillis;
             }
         } : watch);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final long _init_$lambda$0() {
-        return SystemClock.uptimeMillis();
     }
 
     public final SupportSQLiteDatabase getDelegateDatabase$room_runtime() {

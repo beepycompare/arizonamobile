@@ -18,8 +18,8 @@ final class DefaultDraggable2DState implements Draggable2DState {
     private final Drag2DScope drag2DScope = new Drag2DScope() { // from class: androidx.compose.foundation.gestures.DefaultDraggable2DState$drag2DScope$1
         @Override // androidx.compose.foundation.gestures.Drag2DScope
         /* renamed from: dragBy-k-4lQ0M  reason: not valid java name */
-        public void mo512dragByk4lQ0M(long j) {
-            DefaultDraggable2DState.this.getOnDelta().invoke(Offset.m5168boximpl(j));
+        public void mo443dragByk4lQ0M(long j) {
+            DefaultDraggable2DState.this.getOnDelta().invoke(Offset.m4516boximpl(j));
         }
     };
     private final MutatorMutex drag2DMutex = new MutatorMutex();
@@ -41,7 +41,7 @@ final class DefaultDraggable2DState implements Draggable2DState {
 
     @Override // androidx.compose.foundation.gestures.Draggable2DState
     /* renamed from: dispatchRawDelta-k-4lQ0M  reason: not valid java name */
-    public void mo511dispatchRawDeltak4lQ0M(long j) {
-        this.onDelta.invoke(Offset.m5168boximpl(j));
+    public void mo442dispatchRawDeltak4lQ0M(long j) {
+        this.onDelta.invoke(Offset.m4516boximpl(j));
     }
 }

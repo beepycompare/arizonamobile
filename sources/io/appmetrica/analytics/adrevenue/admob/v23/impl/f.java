@@ -5,7 +5,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class f extends e {
     public f(b bVar, ClientContext clientContext) {
         super(bVar, clientContext);

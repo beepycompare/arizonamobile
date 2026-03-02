@@ -15,33 +15,34 @@ public final class OffsetSmoother {
     private int eventRotatingIndex;
 
     /* renamed from: smoothEventPosition-MK-Hz9U  reason: not valid java name */
-    public final long m613smoothEventPositionMKHz9U(long j) {
-        if (this.eventRotatingArray.size() == 3) {
-            List<Offset> list = this.eventRotatingArray;
+    public final long m532smoothEventPositionMKHz9U(long j) {
+        int size = this.eventRotatingArray.size();
+        List<Offset> list = this.eventRotatingArray;
+        if (size == 3) {
             int i = this.eventRotatingIndex;
             this.eventRotatingIndex = i + 1;
-            list.set(i, Offset.m5168boximpl(j));
+            list.set(i, Offset.m4516boximpl(j));
         } else {
-            this.eventRotatingArray.add(Offset.m5168boximpl(j));
+            list.add(Offset.m4516boximpl(j));
         }
         if (this.eventRotatingIndex == 3) {
             this.eventRotatingIndex = 0;
         }
         List<Offset> list2 = this.eventRotatingArray;
         ArrayList arrayList = new ArrayList(list2.size());
-        int size = list2.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(Float.valueOf(Float.intBitsToFloat((int) (list2.get(i2).m5189unboximpl() >> 32))));
+        int size2 = list2.size();
+        for (int i2 = 0; i2 < size2; i2++) {
+            arrayList.add(Float.valueOf(Float.intBitsToFloat((int) (list2.get(i2).m4537unboximpl() >> 32))));
         }
         float averageOfFloat = (float) CollectionsKt.averageOfFloat(arrayList);
         List<Offset> list3 = this.eventRotatingArray;
         ArrayList arrayList2 = new ArrayList(list3.size());
-        int size2 = list3.size();
-        for (int i3 = 0; i3 < size2; i3++) {
-            arrayList2.add(Float.valueOf(Float.intBitsToFloat((int) (4294967295L & list3.get(i3).m5189unboximpl()))));
+        int size3 = list3.size();
+        for (int i3 = 0; i3 < size3; i3++) {
+            arrayList2.add(Float.valueOf(Float.intBitsToFloat((int) (4294967295L & list3.get(i3).m4537unboximpl()))));
         }
         float averageOfFloat2 = (float) CollectionsKt.averageOfFloat(arrayList2);
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(averageOfFloat2) & 4294967295L) | (Float.floatToRawIntBits(averageOfFloat) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(averageOfFloat2) & 4294967295L) | (Float.floatToRawIntBits(averageOfFloat) << 32));
     }
 
     public final void reset() {

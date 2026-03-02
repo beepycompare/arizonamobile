@@ -18,6 +18,7 @@ import androidx.media3.exoplayer.offline.Downloader;
 import androidx.media3.exoplayer.offline.FilterableManifest;
 import androidx.media3.exoplayer.upstream.ParsingLoadable;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class SegmentDownloader<M extends FilterableManifest<M>> implements Downloader {
     private static final int BUFFER_SIZE_BYTES = 131072;
     public static final long DEFAULT_MAX_MERGED_SEGMENT_START_TIME_DIFF_MS = 20000;
@@ -47,7 +48,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
 
     protected abstract List<Segment> getSegments(DataSource dataSource, M m, boolean z) throws IOException, InterruptedException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     protected static abstract class BaseFactory<M extends FilterableManifest<M>> implements SegmentDownloaderFactory {
         protected final CacheDataSource.Factory cacheDataSourceFactory;
         protected ParsingLoadable.Parser<M> manifestParser;
@@ -87,7 +88,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class Segment implements Comparable<Segment> {
         public final DataSpec dataSpec;
         public final long startTimeUs;
@@ -126,6 +127,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.media3.exoplayer.offline.Downloader
     public final void download(Downloader.ProgressListener progressListener) throws IOException, InterruptedException {
+        ArrayList<RunnableFutureTask<?, ?>> arrayList;
         int i;
         int size;
         CacheDataSource createDataSourceForDownloading;
@@ -181,13 +183,13 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                 if (priorityTaskManager2 != null) {
                     priorityTaskManager2.proceed(-4000);
                 }
-                if (!arrayDeque2.isEmpty()) {
+                if (arrayDeque2.isEmpty()) {
+                    createDataSourceForDownloading = this.cacheDataSourceFactory.createDataSourceForDownloading();
+                    bArr = new byte[131072];
+                } else {
                     SegmentDownloadRunnable segmentDownloadRunnable = (SegmentDownloadRunnable) arrayDeque2.removeFirst();
                     createDataSourceForDownloading = segmentDownloadRunnable.dataSource;
                     bArr = segmentDownloadRunnable.temporaryBuffer;
-                } else {
-                    createDataSourceForDownloading = this.cacheDataSourceFactory.createDataSourceForDownloading();
-                    bArr = new byte[131072];
                 }
                 SegmentDownloadRunnable segmentDownloadRunnable2 = new SegmentDownloadRunnable((Segment) arrayDeque.removeFirst(), createDataSourceForDownloading, progressNotifier, bArr);
                 addActiveRunnable(segmentDownloadRunnable2);
@@ -221,12 +223,19 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                 }
             }
         } finally {
-            for (int i3 = 0; i3 < this.activeRunnables.size(); i3++) {
-                this.activeRunnables.get(i3).cancel(true);
+            int i3 = 0;
+            while (true) {
+                int size5 = this.activeRunnables.size();
+                arrayList = this.activeRunnables;
+                if (i3 >= size5) {
+                    break;
+                }
+                arrayList.get(i3).cancel(true);
+                i3++;
             }
-            for (int size5 = this.activeRunnables.size() - 1; size5 >= 0; size5--) {
-                this.activeRunnables.get(size5).blockUntilFinished();
-                removeActiveRunnable(size5);
+            for (int size6 = arrayList.size() - 1; size6 >= 0; size6--) {
+                this.activeRunnables.get(size6).blockUntilFinished();
+                removeActiveRunnable(size6);
             }
             PriorityTaskManager priorityTaskManager3 = this.priorityTaskManager;
             if (priorityTaskManager3 != null) {
@@ -251,8 +260,17 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         try {
             try {
                 List<Segment> segments = getSegments(createDataSourceForRemovingDownload, getManifest(createDataSourceForRemovingDownload, this.manifestDataSpec, true), true);
-                for (int i = 0; i < segments.size(); i++) {
-                    this.cache.removeResource(this.cacheKeyFactory.buildCacheKey(segments.get(i).dataSpec));
+                int i = 0;
+                while (true) {
+                    int size = segments.size();
+                    Cache cache = this.cache;
+                    if (i < size) {
+                        cache.removeResource(this.cacheKeyFactory.buildCacheKey(segments.get(i).dataSpec));
+                        i++;
+                    } else {
+                        cache.removeResource(this.cacheKeyFactory.buildCacheKey(this.manifestDataSpec));
+                        return;
+                    }
                 }
             } catch (InterruptedException unused) {
                 Thread.currentThread().interrupt();
@@ -264,49 +282,29 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     protected final M getManifest(final DataSource dataSource, final DataSpec dataSpec, boolean z) throws InterruptedException, IOException {
-        return (M) execute(new RunnableFutureTask<M, IOException>() { // from class: androidx.media3.exoplayer.offline.SegmentDownloader.1
+        return (M) execute(new Supplier() { // from class: androidx.media3.exoplayer.offline.SegmentDownloader$$ExternalSyntheticLambda0
+            @Override // com.google.common.base.Supplier
+            public final Object get() {
+                return SegmentDownloader.this.m8278xeae2e604(dataSource, dataSpec);
+            }
+        }, z);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$getManifest$0$androidx-media3-exoplayer-offline-SegmentDownloader  reason: not valid java name */
+    public /* synthetic */ RunnableFutureTask m8278xeae2e604(final DataSource dataSource, final DataSpec dataSpec) {
+        return new RunnableFutureTask<M, IOException>() { // from class: androidx.media3.exoplayer.offline.SegmentDownloader.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // androidx.media3.common.util.RunnableFutureTask
             public M doWork() throws IOException {
                 return (M) ParsingLoadable.load(dataSource, SegmentDownloader.this.manifestParser, dataSpec, 4);
             }
-        }, z);
+        };
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(5:27|28|29|(2:34|(2:36|37)(3:38|39|40))(2:31|32)|33) */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0040, code lost:
-        r4 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0042, code lost:
-        r4 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0043, code lost:
-        r0 = (java.lang.Throwable) com.google.common.base.Preconditions.checkNotNull(r4.getCause());
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x004f, code lost:
-        if ((r0 instanceof androidx.media3.common.PriorityTaskManager.PriorityTooLowException) == false) goto L34;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0054, code lost:
-        if ((r0 instanceof java.io.IOException) == false) goto L36;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0056, code lost:
-        androidx.media3.common.util.Util.sneakyThrow(r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0062, code lost:
-        throw ((java.io.IOException) r0);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0063, code lost:
-        r3.blockUntilFinished();
-        removeActiveRunnable((androidx.media3.common.util.RunnableFutureTask<?, ?>) r3);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0069, code lost:
-        throw r4;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    protected final <T> T execute(RunnableFutureTask<T, ?> runnableFutureTask, boolean z) throws InterruptedException, IOException {
+    protected final <T> T execute(Supplier<RunnableFutureTask<T, ?>> supplier, boolean z) throws InterruptedException, IOException {
         if (z) {
+            RunnableFutureTask<T, ?> runnableFutureTask = supplier.get();
             runnableFutureTask.run();
             try {
                 return runnableFutureTask.get();
@@ -323,9 +321,23 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
             if (priorityTaskManager != null) {
                 priorityTaskManager.proceed(-4000);
             }
-            addActiveRunnable(runnableFutureTask);
-            this.executor.execute(runnableFutureTask);
-            return runnableFutureTask.get();
+            RunnableFutureTask<T, ?> runnableFutureTask2 = supplier.get();
+            addActiveRunnable(runnableFutureTask2);
+            this.executor.execute(runnableFutureTask2);
+            try {
+                return runnableFutureTask2.get();
+            } catch (ExecutionException e2) {
+                Throwable th2 = (Throwable) Preconditions.checkNotNull(e2.getCause());
+                if (!(th2 instanceof PriorityTaskManager.PriorityTooLowException)) {
+                    if (th2 instanceof IOException) {
+                        throw ((IOException) th2);
+                    }
+                    Util.sneakyThrow(e2);
+                }
+            } finally {
+                runnableFutureTask2.blockUntilFinished();
+                removeActiveRunnable((RunnableFutureTask<?, ?>) runnableFutureTask2);
+            }
         }
         throw new InterruptedException();
     }
@@ -378,7 +390,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         return dataSpec.uri.equals(dataSpec2.uri) && dataSpec.length != -1 && dataSpec.position + dataSpec.length == dataSpec2.position && Objects.equals(dataSpec.key, dataSpec2.key) && dataSpec.flags == dataSpec2.flags && dataSpec.httpMethod == dataSpec2.httpMethod && dataSpec.httpRequestHeaders.equals(dataSpec2.httpRequestHeaders);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     private static final class SegmentDownloadRunnable extends RunnableFutureTask<Void, IOException> {
         private final CacheWriter cacheWriter;
         public final CacheDataSource dataSource;
@@ -413,7 +425,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class ProgressNotifier implements CacheWriter.ProgressListener {
         private long bytesDownloaded;
         private final long contentLength;

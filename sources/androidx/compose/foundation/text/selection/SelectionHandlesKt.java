@@ -42,14 +42,14 @@ public final class SelectionHandlesKt {
     }
 
     /* renamed from: getAdjustedCoordinates-k-4lQ0M  reason: not valid java name */
-    public static final long m1858getAdjustedCoordinatesk4lQ0M(long j) {
+    public static final long m1608getAdjustedCoordinatesk4lQ0M(long j) {
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - 1.0f) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) - 1.0f) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
     }
 
     static {
         float f = 25;
-        HandleWidth = Dp.m8258constructorimpl(f);
-        HandleHeight = Dp.m8258constructorimpl(f);
+        HandleWidth = Dp.m7555constructorimpl(f);
+        HandleHeight = Dp.m7555constructorimpl(f);
     }
 }

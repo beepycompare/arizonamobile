@@ -234,13 +234,15 @@ public final class MulticastProcessor<T> extends FlowableProcessor<T> {
                 return;
             }
             if (length == 1) {
-                if (this.refcount) {
-                    if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.subscribers, multicastSubscriptionArr, TERMINATED)) {
+                boolean z = this.refcount;
+                AtomicReference<MulticastSubscription<T>[]> atomicReference = this.subscribers;
+                if (z) {
+                    if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, multicastSubscriptionArr, TERMINATED)) {
                         SubscriptionHelper.cancel(this.upstream);
                         this.once.set(true);
                         return;
                     }
-                } else if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(this.subscribers, multicastSubscriptionArr, EMPTY)) {
+                } else if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference, multicastSubscriptionArr, EMPTY)) {
                     return;
                 }
             } else {

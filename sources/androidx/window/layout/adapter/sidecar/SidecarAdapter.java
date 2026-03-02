@@ -125,30 +125,22 @@ public final class SidecarAdapter {
         SidecarDisplayFeature sidecarDisplayFeature = (SidecarDisplayFeature) SpecificationComputer.Companion.startSpecification$default(companion, feature, TAG2, this.verificationMode, null, 4, null).require("Type must be either TYPE_FOLD or TYPE_HINGE", new Function1() { // from class: androidx.window.layout.adapter.sidecar.SidecarAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean translate$lambda$1;
-                translate$lambda$1 = SidecarAdapter.translate$lambda$1((SidecarDisplayFeature) obj);
-                return Boolean.valueOf(translate$lambda$1);
+                return Boolean.valueOf(SidecarAdapter.translate$lambda$1((SidecarDisplayFeature) obj));
             }
         }).require("Feature bounds must not be 0", new Function1() { // from class: androidx.window.layout.adapter.sidecar.SidecarAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean translate$lambda$2;
-                translate$lambda$2 = SidecarAdapter.translate$lambda$2((SidecarDisplayFeature) obj);
-                return Boolean.valueOf(translate$lambda$2);
+                return Boolean.valueOf(SidecarAdapter.translate$lambda$2((SidecarDisplayFeature) obj));
             }
         }).require("TYPE_FOLD must have 0 area", new Function1() { // from class: androidx.window.layout.adapter.sidecar.SidecarAdapter$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean translate$lambda$3;
-                translate$lambda$3 = SidecarAdapter.translate$lambda$3((SidecarDisplayFeature) obj);
-                return Boolean.valueOf(translate$lambda$3);
+                return Boolean.valueOf(SidecarAdapter.translate$lambda$3((SidecarDisplayFeature) obj));
             }
         }).require("Feature be pinned to either left or top", new Function1() { // from class: androidx.window.layout.adapter.sidecar.SidecarAdapter$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean translate$lambda$4;
-                translate$lambda$4 = SidecarAdapter.translate$lambda$4((SidecarDisplayFeature) obj);
-                return Boolean.valueOf(translate$lambda$4);
+                return Boolean.valueOf(SidecarAdapter.translate$lambda$4((SidecarDisplayFeature) obj));
             }
         }).compute();
         if (sidecarDisplayFeature == null) {
@@ -180,25 +172,25 @@ public final class SidecarAdapter {
         return new HardwareFoldingFeature(new Bounds(rect), fold, state);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean translate$lambda$1(SidecarDisplayFeature require) {
         Intrinsics.checkNotNullParameter(require, "$this$require");
         return require.getType() == 1 || require.getType() == 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean translate$lambda$2(SidecarDisplayFeature require) {
         Intrinsics.checkNotNullParameter(require, "$this$require");
         return (require.getRect().width() == 0 && require.getRect().height() == 0) ? false : true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean translate$lambda$3(SidecarDisplayFeature require) {
         Intrinsics.checkNotNullParameter(require, "$this$require");
         return require.getType() != 1 || require.getRect().width() == 0 || require.getRect().height() == 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean translate$lambda$4(SidecarDisplayFeature require) {
         Intrinsics.checkNotNullParameter(require, "$this$require");
         return require.getRect().left == 0 || require.getRect().top == 0;

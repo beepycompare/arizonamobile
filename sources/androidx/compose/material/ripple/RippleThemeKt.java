@@ -14,9 +14,9 @@ public final class RippleThemeKt {
     private static final ProvidableCompositionLocal<RippleTheme> LocalRippleTheme = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material.ripple.RippleThemeKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            RippleTheme LocalRippleTheme$lambda$0;
-            LocalRippleTheme$lambda$0 = RippleThemeKt.LocalRippleTheme$lambda$0();
-            return LocalRippleTheme$lambda$0;
+            RippleTheme rippleTheme;
+            rippleTheme = DebugRippleTheme.INSTANCE;
+            return rippleTheme;
         }
     });
     private static final RippleAlpha LightThemeHighContrastRippleAlpha = new RippleAlpha(0.16f, 0.24f, 0.08f, 0.24f);
@@ -41,9 +41,5 @@ public final class RippleThemeKt {
 
     public static final ProvidableCompositionLocal<RippleTheme> getLocalRippleTheme() {
         return LocalRippleTheme;
-    }
-
-    public static final RippleTheme LocalRippleTheme$lambda$0() {
-        return DebugRippleTheme.INSTANCE;
     }
 }

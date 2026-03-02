@@ -24,16 +24,15 @@ public final class CarouselPagerState extends PagerState {
     private static final Saver<CarouselPagerState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.carousel.CarouselPagerState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = CarouselPagerState.Saver$lambda$0((SaverScope) obj, (CarouselPagerState) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf(Integer.valueOf(r2.getCurrentPage()), Float.valueOf(RangesKt.coerceIn(r2.getCurrentPageOffsetFraction(), -0.5f, 0.5f)), ((CarouselPagerState) obj2).pageCountState.getValue());
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.material3.carousel.CarouselPagerState$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            CarouselPagerState Saver$lambda$2;
-            Saver$lambda$2 = CarouselPagerState.Saver$lambda$2((List) obj);
-            return Saver$lambda$2;
+            return CarouselPagerState.Saver$lambda$2((List) obj);
         }
     });
     private MutableState<Function0<Integer>> pageCountState;
@@ -74,12 +73,7 @@ public final class CarouselPagerState extends PagerState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, CarouselPagerState carouselPagerState) {
-        return CollectionsKt.listOf(Integer.valueOf(carouselPagerState.getCurrentPage()), Float.valueOf(RangesKt.coerceIn(carouselPagerState.getCurrentPageOffsetFraction(), -0.5f, 0.5f)), carouselPagerState.pageCountState.getValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CarouselPagerState Saver$lambda$2(final List list) {
         Object obj = list.get(0);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
@@ -89,14 +83,12 @@ public final class CarouselPagerState extends PagerState {
         return new CarouselPagerState(intValue, ((Float) obj2).floatValue(), new Function0() { // from class: androidx.compose.material3.carousel.CarouselPagerState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int Saver$lambda$2$lambda$1;
-                Saver$lambda$2$lambda$1 = CarouselPagerState.Saver$lambda$2$lambda$1(list);
-                return Integer.valueOf(Saver$lambda$2$lambda$1);
+                return Integer.valueOf(CarouselPagerState.Saver$lambda$2$lambda$1(list));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int Saver$lambda$2$lambda$1(List list) {
         Object obj = list.get(2);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");

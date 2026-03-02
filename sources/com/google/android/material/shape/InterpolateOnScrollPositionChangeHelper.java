@@ -58,10 +58,11 @@ public class InterpolateOnScrollPositionChangeHelper {
             return;
         }
         int i = top + height;
+        MaterialShapeDrawable materialShapeDrawable = this.materialShapeDrawable;
         if (i > height2) {
-            this.materialShapeDrawable.setInterpolation(Math.max(0.0f, Math.min(1.0f, 1.0f - ((i - height2) / height))));
+            materialShapeDrawable.setInterpolation(Math.max(0.0f, Math.min(1.0f, 1.0f - ((i - height2) / height))));
             this.shapedView.invalidate();
-        } else if (this.materialShapeDrawable.getInterpolation() != 1.0f) {
+        } else if (materialShapeDrawable.getInterpolation() != 1.0f) {
             this.materialShapeDrawable.setInterpolation(1.0f);
             this.shapedView.invalidate();
         }

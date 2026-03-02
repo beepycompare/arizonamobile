@@ -136,12 +136,14 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
     }
 
     public void show() {
-        if (this.showDelay > 0) {
-            removeCallbacks(this.delayedShow);
+        int i = this.showDelay;
+        Runnable runnable = this.delayedShow;
+        if (i > 0) {
+            removeCallbacks(runnable);
             postDelayed(this.delayedShow, this.showDelay);
             return;
         }
-        this.delayedShow.run();
+        runnable.run();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -160,10 +162,12 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         removeCallbacks(this.delayedHide);
         long uptimeMillis = SystemClock.uptimeMillis() - this.lastShowStartTime;
         int i = this.minHideDelay;
-        if (uptimeMillis >= i) {
-            this.delayedHide.run();
+        int i2 = (uptimeMillis > i ? 1 : (uptimeMillis == i ? 0 : -1));
+        Runnable runnable = this.delayedHide;
+        if (i2 >= 0) {
+            runnable.run();
         } else {
-            postDelayed(this.delayedHide, i - uptimeMillis);
+            postDelayed(runnable, i - uptimeMillis);
         }
     }
 

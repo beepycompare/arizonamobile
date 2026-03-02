@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 /* compiled from: LayerSnapshot.android.kt */
 @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"Landroidx/compose/ui/graphics/layer/LayerSnapshotV21;", "Landroidx/compose/ui/graphics/layer/LayerSnapshotImpl;", "<init>", "()V", "toBitmap", "Landroid/graphics/Bitmap;", "graphicsLayer", "Landroidx/compose/ui/graphics/layer/GraphicsLayer;", "(Landroidx/compose/ui/graphics/layer/GraphicsLayer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class LayerSnapshotV21 implements LayerSnapshotImpl {
     public static final int $stable = 0;
     public static final LayerSnapshotV21 INSTANCE = new LayerSnapshotV21();
@@ -17,8 +17,8 @@ public final class LayerSnapshotV21 implements LayerSnapshotImpl {
 
     @Override // androidx.compose.ui.graphics.layer.LayerSnapshotImpl
     public Object toBitmap(GraphicsLayer graphicsLayer, Continuation<? super Bitmap> continuation) {
-        long m6096getSizeYbymL2g = graphicsLayer.m6096getSizeYbymL2g();
-        Bitmap createBitmap = Bitmap.createBitmap((int) (m6096getSizeYbymL2g >> 32), (int) (m6096getSizeYbymL2g & 4294967295L), Bitmap.Config.ARGB_8888);
+        long m5437getSizeYbymL2g = graphicsLayer.m5437getSizeYbymL2g();
+        Bitmap createBitmap = Bitmap.createBitmap((int) (m5437getSizeYbymL2g >> 32), (int) (m5437getSizeYbymL2g & 4294967295L), Bitmap.Config.ARGB_8888);
         graphicsLayer.draw$ui_graphics(AndroidCanvas_androidKt.Canvas(new Canvas(createBitmap)), null);
         return createBitmap;
     }

@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import java.util.ArrayList;
 import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class O2 implements InterfaceC0409lk {
+public final class O2 implements InterfaceC0408lk {
 
     /* renamed from: a  reason: collision with root package name */
     public final ArrayList f719a;
@@ -41,7 +41,7 @@ public final class O2 implements InterfaceC0409lk {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0409lk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0408lk
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
@@ -51,7 +51,7 @@ public final class O2 implements InterfaceC0409lk {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0409lk
+    @Override // io.appmetrica.analytics.impl.InterfaceC0408lk
     public final synchronized void onDestroy() {
         this.b = null;
         b();
@@ -66,7 +66,7 @@ public final class O2 implements InterfaceC0409lk {
         this.b = null;
         this.c = context;
         this.e = iHandlerExecutor;
-        this.d = F5.a(new C0590t2(new N2(this), iHandlerExecutor));
+        this.d = F5.a(new C0589t2(new N2(this), iHandlerExecutor));
     }
 
     public final Intent a() {

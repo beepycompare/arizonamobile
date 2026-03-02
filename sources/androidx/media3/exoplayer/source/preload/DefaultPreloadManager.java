@@ -319,10 +319,11 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
     @Override // androidx.media3.exoplayer.source.preload.BasePreloadManager
     public BasePreloadManager<Integer, PreloadStatus>.MediaSourceHolder createMediaSourceHolder(MediaItem mediaItem, MediaSource mediaSource, Integer num) {
         PreloadMediaSource createMediaSource;
+        PreloadMediaSource.Factory factory = this.preloadMediaSourceFactory;
         if (mediaSource != null) {
-            createMediaSource = this.preloadMediaSourceFactory.createMediaSource(mediaSource);
+            createMediaSource = factory.createMediaSource(mediaSource);
         } else {
-            createMediaSource = this.preloadMediaSourceFactory.createMediaSource(mediaItem);
+            createMediaSource = factory.createMediaSource(mediaItem);
         }
         return new PreloadMediaSourceHolder(mediaItem, createMediaSource, num);
     }
@@ -392,14 +393,14 @@ public final class DefaultPreloadManager extends BasePreloadManager<Integer, Pre
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.DefaultPreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultPreloadManager.this.m9030xa55db43d();
+                DefaultPreloadManager.this.m8308xa55db43d();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadUtils$2$androidx-media3-exoplayer-source-preload-DefaultPreloadManager  reason: not valid java name */
-    public /* synthetic */ void m9030xa55db43d() {
+    public /* synthetic */ void m8308xa55db43d() {
         this.rendererCapabilitiesList.release();
         this.trackSelector.release();
         this.preloadLooperProvider.releaseLooper();

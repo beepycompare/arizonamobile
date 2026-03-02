@@ -34,15 +34,13 @@ public final class WideNavigationRailStateKt {
             rememberedValue = new Function0() { // from class: androidx.compose.material3.WideNavigationRailStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    WideNavigationRailState rememberWideNavigationRailState$lambda$1$lambda$0;
-                    rememberWideNavigationRailState$lambda$1$lambda$0 = WideNavigationRailStateKt.rememberWideNavigationRailState$lambda$1$lambda$0(WideNavigationRailValue.this, value);
-                    return rememberWideNavigationRailState$lambda$1$lambda$0;
+                    return WideNavigationRailStateKt.rememberWideNavigationRailState$lambda$1$lambda$0(WideNavigationRailValue.this, value);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        WideNavigationRailState wideNavigationRailState = (WideNavigationRailState) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        WideNavigationRailState wideNavigationRailState = (WideNavigationRailState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -50,7 +48,7 @@ public final class WideNavigationRailStateKt {
         return wideNavigationRailState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final WideNavigationRailState rememberWideNavigationRailState$lambda$1$lambda$0(WideNavigationRailValue wideNavigationRailValue, FiniteAnimationSpec finiteAnimationSpec) {
         return new WideNavigationRailStateImpl(wideNavigationRailValue, finiteAnimationSpec);
     }

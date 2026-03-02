@@ -20,7 +20,7 @@ public final class Scrollable2DKt {
     private static final Scroll2DScope NoOpScrollScope = new Scroll2DScope() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$NoOpScrollScope$1
         @Override // androidx.compose.foundation.gestures.Scroll2DScope
         /* renamed from: scrollBy-MK-Hz9U */
-        public long mo515scrollByMKHz9U(long j) {
+        public long mo446scrollByMKHz9U(long j) {
             return j;
         }
     };
@@ -43,7 +43,7 @@ public final class Scrollable2DKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m649semanticsScrollByd4ec7I(ScrollingLogic2D scrollingLogic2D, long j, Continuation<? super Offset> continuation) {
+    public static final Object m568semanticsScrollByd4ec7I(ScrollingLogic2D scrollingLogic2D, long j, Continuation<? super Offset> continuation) {
         Scrollable2DKt$semanticsScrollBy$1 scrollable2DKt$semanticsScrollBy$1;
         int i;
         Ref.LongRef longRef;
@@ -57,7 +57,7 @@ public final class Scrollable2DKt {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
                     Ref.LongRef longRef2 = new Ref.LongRef();
-                    longRef2.element = Offset.Companion.m5195getZeroF1C5BW0();
+                    longRef2.element = Offset.Companion.m4543getZeroF1C5BW0();
                     scrollable2DKt$semanticsScrollBy$1.L$0 = longRef2;
                     scrollable2DKt$semanticsScrollBy$1.label = 1;
                     if (scrollingLogic2D.scroll(MutatePriority.Default, new Scrollable2DKt$semanticsScrollBy$2(j, longRef2, null), scrollable2DKt$semanticsScrollBy$1) == coroutine_suspended) {
@@ -70,7 +70,7 @@ public final class Scrollable2DKt {
                     longRef = (Ref.LongRef) scrollable2DKt$semanticsScrollBy$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Offset.m5168boximpl(longRef.element);
+                return Offset.m4516boximpl(longRef.element);
             }
         }
         scrollable2DKt$semanticsScrollBy$1 = new Scrollable2DKt$semanticsScrollBy$1(continuation);
@@ -79,19 +79,19 @@ public final class Scrollable2DKt {
         i = scrollable2DKt$semanticsScrollBy$1.label;
         if (i != 0) {
         }
-        return Offset.m5168boximpl(longRef.element);
+        return Offset.m4516boximpl(longRef.element);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getMagnitude-TH1AsA0  reason: not valid java name */
-    public static final float m648getMagnitudeTH1AsA0(long j) {
+    public static final float m567getMagnitudeTH1AsA0(long j) {
         double d = 2;
-        return (float) Math.sqrt(((float) Math.pow(Velocity.m8496getXimpl(j), d)) + ((float) Math.pow(Velocity.m8497getYimpl(j), d)));
+        return (float) Math.sqrt(((float) Math.pow(Velocity.m7793getXimpl(j), d)) + ((float) Math.pow(Velocity.m7794getYimpl(j), d)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getAngle-TH1AsA0  reason: not valid java name */
-    public static final float m647getAngleTH1AsA0(long j) {
-        return (float) Math.atan2(Velocity.m8497getYimpl(j), Velocity.m8496getXimpl(j));
+    public static final float m566getAngleTH1AsA0(long j) {
+        return (float) Math.atan2(Velocity.m7794getYimpl(j), Velocity.m7793getXimpl(j));
     }
 }

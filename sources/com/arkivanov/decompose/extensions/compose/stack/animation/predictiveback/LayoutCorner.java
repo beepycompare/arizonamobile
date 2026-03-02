@@ -16,18 +16,18 @@ public final class LayoutCorner {
     }
 
     /* renamed from: copy-D5KLDUw$default  reason: not valid java name */
-    public static /* synthetic */ LayoutCorner m9723copyD5KLDUw$default(LayoutCorner layoutCorner, float f, boolean z, int i, Object obj) {
+    public static /* synthetic */ LayoutCorner m8803copyD5KLDUw$default(LayoutCorner layoutCorner, float f, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             f = layoutCorner.radius;
         }
         if ((i & 2) != 0) {
             z = layoutCorner.isFixed;
         }
-        return layoutCorner.m9725copyD5KLDUw(f, z);
+        return layoutCorner.m8805copyD5KLDUw(f, z);
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    public final float m9724component1D9Ej5fM() {
+    public final float m8804component1D9Ej5fM() {
         return this.radius;
     }
 
@@ -36,7 +36,7 @@ public final class LayoutCorner {
     }
 
     /* renamed from: copy-D5KLDUw  reason: not valid java name */
-    public final LayoutCorner m9725copyD5KLDUw(float f, boolean z) {
+    public final LayoutCorner m8805copyD5KLDUw(float f, boolean z) {
         return new LayoutCorner(f, z, null);
     }
 
@@ -46,17 +46,17 @@ public final class LayoutCorner {
         }
         if (obj instanceof LayoutCorner) {
             LayoutCorner layoutCorner = (LayoutCorner) obj;
-            return Dp.m8263equalsimpl0(this.radius, layoutCorner.radius) && this.isFixed == layoutCorner.isFixed;
+            return Dp.m7560equalsimpl0(this.radius, layoutCorner.radius) && this.isFixed == layoutCorner.isFixed;
         }
         return false;
     }
 
     public int hashCode() {
-        return (Dp.m8264hashCodeimpl(this.radius) * 31) + Boolean.hashCode(this.isFixed);
+        return (Dp.m7561hashCodeimpl(this.radius) * 31) + Boolean.hashCode(this.isFixed);
     }
 
     public String toString() {
-        return "LayoutCorner(radius=" + ((Object) Dp.m8269toStringimpl(this.radius)) + ", isFixed=" + this.isFixed + ')';
+        return "LayoutCorner(radius=" + ((Object) Dp.m7566toStringimpl(this.radius)) + ", isFixed=" + this.isFixed + ')';
     }
 
     private LayoutCorner(float f, boolean z) {
@@ -65,7 +65,7 @@ public final class LayoutCorner {
     }
 
     /* renamed from: getRadius-D9Ej5fM  reason: not valid java name */
-    public final float m9726getRadiusD9Ej5fM() {
+    public final float m8806getRadiusD9Ej5fM() {
         return this.radius;
     }
 
@@ -74,6 +74,6 @@ public final class LayoutCorner {
     }
 
     public /* synthetic */ LayoutCorner(float f, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m8258constructorimpl(16) : f, (i & 2) != 0 ? false : z, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(16) : f, (i & 2) != 0 ? false : z, null);
     }
 }

@@ -96,7 +96,7 @@ public class ClockHandView extends View {
         this.rotationAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.timepicker.ClockHandView$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ClockHandView.this.m9917xce3565b6(valueAnimator);
+                ClockHandView.this.m8947xce3565b6(valueAnimator);
             }
         });
         this.rotationAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.timepicker.ClockHandView.1
@@ -109,7 +109,7 @@ public class ClockHandView extends View {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initRotationAnimator$0$com-google-android-material-timepicker-ClockHandView  reason: not valid java name */
-    public /* synthetic */ void m9917xce3565b6(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8947xce3565b6(ValueAnimator valueAnimator) {
         setHandRotationInternal(((Float) valueAnimator.getAnimatedValue()).floatValue(), true);
     }
 
@@ -309,6 +309,7 @@ public class ClockHandView extends View {
     }
 
     private int getLeveledCircleRadius(int i) {
-        return i == 2 ? Math.round(this.circleRadius * 0.66f) : this.circleRadius;
+        int i2 = this.circleRadius;
+        return i == 2 ? Math.round(i2 * 0.66f) : i2;
     }
 }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.networkapi.NetworkClientSettings;
 import io.appmetrica.analytics.networkapi.Request;
 import io.appmetrica.analytics.networkapi.Response;
 import kotlin.text.Charsets;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */

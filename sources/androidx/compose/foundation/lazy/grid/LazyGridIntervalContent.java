@@ -29,9 +29,11 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
     private static final Function2<LazyGridItemSpanScope, Integer, GridItemSpan> DefaultSpan = new Function2() { // from class: androidx.compose.foundation.lazy.grid.LazyGridIntervalContent$$ExternalSyntheticLambda6
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            GridItemSpan DefaultSpan$lambda$0;
-            DefaultSpan$lambda$0 = LazyGridIntervalContent.DefaultSpan$lambda$0((LazyGridItemSpanScope) obj, ((Integer) obj2).intValue());
-            return DefaultSpan$lambda$0;
+            GridItemSpan m938boximpl;
+            LazyGridItemSpanScope lazyGridItemSpanScope = (LazyGridItemSpanScope) obj;
+            ((Integer) obj2).intValue();
+            m938boximpl = GridItemSpan.m938boximpl(LazyGridSpanKt.GridItemSpan(1));
+            return m938boximpl;
         }
     };
     private final LazyGridSpanLayoutProvider spanLayoutProvider = new LazyGridSpanLayoutProvider(this);
@@ -42,7 +44,7 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object item$lambda$2(Object obj, int i) {
         return obj;
     }
@@ -93,16 +95,12 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
         } : DefaultSpan, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridIntervalContent$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj3) {
-                Object item$lambda$2;
-                item$lambda$2 = LazyGridIntervalContent.item$lambda$2(obj2, ((Integer) obj3).intValue());
-                return item$lambda$2;
+                return LazyGridIntervalContent.item$lambda$2(obj2, ((Integer) obj3).intValue());
             }
         }, ComposableLambdaKt.composableLambdaInstance(-291643851, true, new Function4() { // from class: androidx.compose.foundation.lazy.grid.LazyGridIntervalContent$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj3, Object obj4, Object obj5, Object obj6) {
-                Unit item$lambda$3;
-                item$lambda$3 = LazyGridIntervalContent.item$lambda$3(Function3.this, (LazyGridItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
-                return item$lambda$3;
+                return LazyGridIntervalContent.item$lambda$3(Function3.this, (LazyGridItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
             }
         })));
         if (function1 != null) {
@@ -115,7 +113,7 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
         return (GridItemSpan) function1.invoke(lazyGridItemSpanScope);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit item$lambda$3(Function3 function3, LazyGridItemScope lazyGridItemScope, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "CN(it)55@1985L9:LazyGridIntervalContent.kt#7791vq");
         if ((i2 & 6) == 0) {
@@ -156,26 +154,19 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
         item(obj, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridIntervalContent$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj3) {
-                GridItemSpan stickyHeader$lambda$1;
-                stickyHeader$lambda$1 = LazyGridIntervalContent.stickyHeader$lambda$1((LazyGridItemSpanScope) obj3);
-                return stickyHeader$lambda$1;
+                GridItemSpan m938boximpl;
+                m938boximpl = GridItemSpan.m938boximpl(LazyGridSpanKt.GridItemSpan(((LazyGridItemSpanScope) obj3).getMaxLineSpan()));
+                return m938boximpl;
             }
         }, obj2, ComposableLambdaKt.composableLambdaInstance(46791243, true, new Function3() { // from class: androidx.compose.foundation.lazy.grid.LazyGridIntervalContent$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj3, Object obj4, Object obj5) {
-                Unit stickyHeader$lambda$2;
-                stickyHeader$lambda$2 = LazyGridIntervalContent.stickyHeader$lambda$2(Function4.this, size, (LazyGridItemScope) obj3, (Composer) obj4, ((Integer) obj5).intValue());
-                return stickyHeader$lambda$2;
+                return LazyGridIntervalContent.stickyHeader$lambda$2(Function4.this, size, (LazyGridItemScope) obj3, (Composer) obj4, ((Integer) obj5).intValue());
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final GridItemSpan stickyHeader$lambda$1(LazyGridItemSpanScope lazyGridItemSpanScope) {
-        return GridItemSpan.m1063boximpl(LazyGridSpanKt.GridItemSpan(lazyGridItemSpanScope.getMaxLineSpan()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit stickyHeader$lambda$2(Function4 function4, int i, LazyGridItemScope lazyGridItemScope, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "C88@3043L25:LazyGridIntervalContent.kt#7791vq");
         if ((i2 & 6) == 0) {
@@ -209,10 +200,5 @@ public final class LazyGridIntervalContent extends LazyLayoutIntervalContent<Laz
         public final Function2<LazyGridItemSpanScope, Integer, GridItemSpan> getDefaultSpan() {
             return LazyGridIntervalContent.DefaultSpan;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final GridItemSpan DefaultSpan$lambda$0(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
-        return GridItemSpan.m1063boximpl(LazyGridSpanKt.GridItemSpan(1));
     }
 }

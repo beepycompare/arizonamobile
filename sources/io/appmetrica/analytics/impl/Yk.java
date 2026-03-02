@@ -11,10 +11,10 @@ import kotlin.text.Charsets;
 public final class Yk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0366k2 f872a;
+    public final InterfaceC0365k2 f872a;
 
-    public Yk(InterfaceC0366k2 interfaceC0366k2) {
-        this.f872a = interfaceC0366k2;
+    public Yk(InterfaceC0365k2 interfaceC0365k2) {
+        this.f872a = interfaceC0365k2;
     }
 
     public final ArrayList a(Iterable iterable) {

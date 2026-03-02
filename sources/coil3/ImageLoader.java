@@ -65,27 +65,27 @@ public interface ImageLoader {
         private Lazy<? extends CoroutineContext> mainCoroutineContextLazy;
         private Lazy<? extends MemoryCache> memoryCacheLazy;
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Image error$lambda$17(Image image, ImageRequest imageRequest) {
             return image;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final EventListener eventListener$lambda$6(EventListener eventListener, ImageRequest imageRequest) {
             return eventListener;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Image fallback$lambda$19(Image image, ImageRequest imageRequest) {
             return image;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final CoroutineContext mainCoroutineContext$lambda$10(CoroutineContext coroutineContext) {
             return coroutineContext;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Image placeholder$lambda$15(Image image, ImageRequest imageRequest) {
             return image;
         }
@@ -158,9 +158,7 @@ public interface ImageLoader {
             return eventListenerFactory(new EventListener.Factory() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda6
                 @Override // coil3.EventListener.Factory
                 public final EventListener create(ImageRequest imageRequest) {
-                    EventListener eventListener$lambda$6;
-                    eventListener$lambda$6 = ImageLoader.Builder.eventListener$lambda$6(EventListener.this, imageRequest);
-                    return eventListener$lambda$6;
+                    return ImageLoader.Builder.eventListener$lambda$6(EventListener.this, imageRequest);
                 }
             });
         }
@@ -184,9 +182,7 @@ public interface ImageLoader {
             return mainCoroutineContext(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    CoroutineContext mainCoroutineContext$lambda$10;
-                    mainCoroutineContext$lambda$10 = ImageLoader.Builder.mainCoroutineContext$lambda$10(CoroutineContext.this);
-                    return mainCoroutineContext$lambda$10;
+                    return ImageLoader.Builder.mainCoroutineContext$lambda$10(CoroutineContext.this);
                 }
             });
         }
@@ -215,9 +211,7 @@ public interface ImageLoader {
             return placeholder(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image placeholder$lambda$15;
-                    placeholder$lambda$15 = ImageLoader.Builder.placeholder$lambda$15(Image.this, (ImageRequest) obj);
-                    return placeholder$lambda$15;
+                    return ImageLoader.Builder.placeholder$lambda$15(Image.this, (ImageRequest) obj);
                 }
             });
         }
@@ -231,9 +225,7 @@ public interface ImageLoader {
             return error(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image error$lambda$17;
-                    error$lambda$17 = ImageLoader.Builder.error$lambda$17(Image.this, (ImageRequest) obj);
-                    return error$lambda$17;
+                    return ImageLoader.Builder.error$lambda$17(Image.this, (ImageRequest) obj);
                 }
             });
         }
@@ -247,9 +239,7 @@ public interface ImageLoader {
             return fallback(new Function1() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image fallback$lambda$19;
-                    fallback$lambda$19 = ImageLoader.Builder.fallback$lambda$19(Image.this, (ImageRequest) obj);
-                    return fallback$lambda$19;
+                    return ImageLoader.Builder.fallback$lambda$19(Image.this, (ImageRequest) obj);
                 }
             });
         }
@@ -287,9 +277,9 @@ public interface ImageLoader {
                 lazy = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        MainCoroutineDispatcher build$lambda$25;
-                        build$lambda$25 = ImageLoader.Builder.build$lambda$25();
-                        return build$lambda$25;
+                        MainCoroutineDispatcher immediate;
+                        immediate = Dispatchers.getMain().getImmediate();
+                        return immediate;
                     }
                 });
             }
@@ -298,9 +288,9 @@ public interface ImageLoader {
                 lazy2 = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        MemoryCache build$lambda$26;
-                        build$lambda$26 = ImageLoader.Builder.build$lambda$26(ImageLoader.Builder.this);
-                        return build$lambda$26;
+                        MemoryCache build;
+                        build = MemoryCache.Builder.maxSizePercent$default(new MemoryCache.Builder(), ImageLoader.Builder.this.application, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 2, null).build();
+                        return build;
                     }
                 });
             }
@@ -309,9 +299,9 @@ public interface ImageLoader {
                 lazy3 = LazyKt.lazy(new Function0() { // from class: coil3.ImageLoader$Builder$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        DiskCache build$lambda$27;
-                        build$lambda$27 = ImageLoader.Builder.build$lambda$27();
-                        return build$lambda$27;
+                        DiskCache singletonDiskCache;
+                        singletonDiskCache = UtilsKt.singletonDiskCache();
+                        return singletonDiskCache;
                     }
                 });
             }
@@ -324,21 +314,6 @@ public interface ImageLoader {
                 componentRegistry = new ComponentRegistry();
             }
             return new RealImageLoader(new RealImageLoader.Options(context, copy$default, lazy, lazy2, lazy3, factory, componentRegistry, this.logger));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final MainCoroutineDispatcher build$lambda$25() {
-            return Dispatchers.getMain().getImmediate();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final MemoryCache build$lambda$26(Builder builder) {
-            return MemoryCache.Builder.maxSizePercent$default(new MemoryCache.Builder(), builder.application, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 2, null).build();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final DiskCache build$lambda$27() {
-            return UtilsKt.singletonDiskCache();
         }
     }
 }

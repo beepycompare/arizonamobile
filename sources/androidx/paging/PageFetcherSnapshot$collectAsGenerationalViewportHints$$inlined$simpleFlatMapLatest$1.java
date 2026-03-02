@@ -18,8 +18,8 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 import kotlinx.coroutines.sync.Mutex;
 /* compiled from: FlowExt.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u00042\u0006\u0010\u0005\u001a\u0002H\u0002H\u008a@¨\u0006\u0006"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "Lkotlinx/coroutines/flow/FlowCollector;", "it", "androidx/paging/FlowExtKt$simpleFlatMapLatest$1"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$$inlined$simpleFlatMapLatest$1", f = "PageFetcherSnapshot.kt", i = {0, 0, 0}, l = {232, 98}, m = "invokeSuspend", n = {"this_$iv", "$this$withLock_u24default$iv$iv", "generationId"}, s = {"L$1", "L$2", "I$0"})
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00042\u0006\u0010\u0005\u001a\u0002H\u0003H\n¨\u0006\u0006"}, d2 = {"<anonymous>", "", "R", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/flow/FlowCollector;", "it", "androidx/paging/FlowExtKt$simpleFlatMapLatest$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$$inlined$simpleFlatMapLatest$1", f = "PageFetcherSnapshot.kt", i = {0, 0, 0}, l = {216, 86}, m = "invokeSuspend", n = {"this_$iv", "$this$withLock_u24default$iv$iv", "generationId"}, s = {"L$1", "L$2", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageFetcherSnapshot$collectAsGenerationalViewportHints$$inlined$simpleFlatMapLatest$1 extends SuspendLambda implements Function3<FlowCollector<? super GenerationalViewportHint>, Integer, Continuation<? super Unit>, Object> {
     final /* synthetic */ LoadType $loadType$inlined;
@@ -93,30 +93,34 @@ public final class PageFetcherSnapshot$collectAsGenerationalViewportHints$$inlin
                 ResultKt.throwOnFailure(obj);
             }
             PageFetcherSnapshotState pageFetcherSnapshotState = holder.state;
-            if (Intrinsics.areEqual(pageFetcherSnapshotState.getSourceLoadStates$paging_common_release().get(this.$loadType$inlined), LoadState.NotLoading.Companion.getComplete$paging_common_release())) {
+            if (Intrinsics.areEqual(pageFetcherSnapshotState.getSourceLoadStates$paging_common().get(this.$loadType$inlined), LoadState.NotLoading.Companion.getComplete$paging_common())) {
                 flow = FlowKt.flowOf((Object[]) new GenerationalViewportHint[0]);
             } else {
-                if (!(pageFetcherSnapshotState.getSourceLoadStates$paging_common_release().get(this.$loadType$inlined) instanceof LoadState.Error)) {
-                    pageFetcherSnapshotState.getSourceLoadStates$paging_common_release().set(this.$loadType$inlined, LoadState.NotLoading.Companion.getIncomplete$paging_common_release());
+                if (!(pageFetcherSnapshotState.getSourceLoadStates$paging_common().get(this.$loadType$inlined) instanceof LoadState.Error)) {
+                    pageFetcherSnapshotState.getSourceLoadStates$paging_common().set(this.$loadType$inlined, LoadState.NotLoading.Companion.getIncomplete$paging_common());
                 }
                 Unit unit = Unit.INSTANCE;
                 mutex.unlock(null);
                 hintHandler = this.this$0.hintHandler;
                 final Flow drop = FlowKt.drop(hintHandler.hintFor(this.$loadType$inlined), intValue == 0 ? 0 : 1);
-                flow = new Flow<GenerationalViewportHint>() { // from class: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$5$$inlined$map$1
+                flow = new Flow<GenerationalViewportHint>() { // from class: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$0$$inlined$map$1
+                    @Override // kotlinx.coroutines.flow.Flow
+                    public Object collect(FlowCollector<? super GenerationalViewportHint> flowCollector2, Continuation continuation) {
+                        Object collect = Flow.this.collect(new AnonymousClass2(flowCollector2, intValue), continuation);
+                        return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
+                    }
 
                     /* compiled from: Emitters.kt */
-                    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\b"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
-                    /* renamed from: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$5$$inlined$map$1$2  reason: invalid class name */
+                    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                    /* renamed from: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$0$$inlined$map$1$2  reason: invalid class name */
                     /* loaded from: classes3.dex */
                     public static final class AnonymousClass2<T> implements FlowCollector {
                         final /* synthetic */ int $generationId$inlined;
                         final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                        /* compiled from: Emitters.kt */
-                        @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-                        @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$5$$inlined$map$1$2", f = "PageFetcherSnapshot.kt", i = {}, l = {223}, m = "emit", n = {}, s = {})
-                        /* renamed from: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$5$$inlined$map$1$2$1  reason: invalid class name */
+                        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                        @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$0$$inlined$map$1$2", f = "PageFetcherSnapshot.kt", i = {}, l = {50}, m = "emit", n = {}, s = {}, v = 1)
+                        /* renamed from: androidx.paging.PageFetcherSnapshot$collectAsGenerationalViewportHints$lambda$0$$inlined$map$1$2$1  reason: invalid class name */
                         /* loaded from: classes3.dex */
                         public static final class AnonymousClass1 extends ContinuationImpl {
                             Object L$0;
@@ -180,12 +184,6 @@ public final class PageFetcherSnapshot$collectAsGenerationalViewportHints$$inlin
                             }
                             return Unit.INSTANCE;
                         }
-                    }
-
-                    @Override // kotlinx.coroutines.flow.Flow
-                    public Object collect(FlowCollector<? super GenerationalViewportHint> flowCollector2, Continuation continuation) {
-                        Object collect = Flow.this.collect(new AnonymousClass2(flowCollector2, intValue), continuation);
-                        return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
                     }
                 };
             }

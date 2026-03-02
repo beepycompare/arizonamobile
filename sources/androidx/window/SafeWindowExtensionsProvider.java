@@ -40,14 +40,12 @@ public final class SafeWindowExtensionsProvider {
         return isWindowExtensionsPresent() && ReflectionUtils.validateReflection$window_release("WindowExtensionsProvider#getWindowExtensions is not valid", new Function0() { // from class: androidx.window.SafeWindowExtensionsProvider$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isWindowExtensionsValid$lambda$0;
-                isWindowExtensionsValid$lambda$0 = SafeWindowExtensionsProvider.isWindowExtensionsValid$lambda$0(SafeWindowExtensionsProvider.this);
-                return Boolean.valueOf(isWindowExtensionsValid$lambda$0);
+                return Boolean.valueOf(SafeWindowExtensionsProvider.isWindowExtensionsValid$lambda$0(SafeWindowExtensionsProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isWindowExtensionsValid$lambda$0(SafeWindowExtensionsProvider safeWindowExtensionsProvider) {
         Method declaredMethod = safeWindowExtensionsProvider.getWindowExtensionsProviderClass().getDeclaredMethod("getWindowExtensions", new Class[0]);
         Class<?> windowExtensionsClass$window_release = safeWindowExtensionsProvider.getWindowExtensionsClass$window_release();
@@ -60,14 +58,12 @@ public final class SafeWindowExtensionsProvider {
         return ReflectionUtils.INSTANCE.checkIsPresent$window_release(new Function0() { // from class: androidx.window.SafeWindowExtensionsProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Class isWindowExtensionsPresent$lambda$1;
-                isWindowExtensionsPresent$lambda$1 = SafeWindowExtensionsProvider.isWindowExtensionsPresent$lambda$1(SafeWindowExtensionsProvider.this);
-                return isWindowExtensionsPresent$lambda$1;
+                return SafeWindowExtensionsProvider.isWindowExtensionsPresent$lambda$1(SafeWindowExtensionsProvider.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Class isWindowExtensionsPresent$lambda$1(SafeWindowExtensionsProvider safeWindowExtensionsProvider) {
         Class<?> loadClass = safeWindowExtensionsProvider.loader.loadClass(WindowExtensionsConstants.WINDOW_EXTENSIONS_PROVIDER_CLASS);
         Intrinsics.checkNotNullExpressionValue(loadClass, "loadClass(...)");

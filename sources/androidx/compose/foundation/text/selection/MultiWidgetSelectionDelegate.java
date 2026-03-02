@@ -44,8 +44,8 @@ public final class MultiWidgetSelectionDelegate implements Selectable {
         synchronized (this.lock) {
             if (this._previousTextLayoutResult != textLayoutResult) {
                 if (textLayoutResult.getDidOverflowHeight() && !textLayoutResult.getMultiParagraph().getDidExceedMaxLines()) {
-                    int coerceAtMost = RangesKt.coerceAtMost(textLayoutResult.getLineForVerticalPosition((int) (textLayoutResult.m7672getSizeYbymL2g() & 4294967295L)), textLayoutResult.getLineCount() - 1);
-                    while (coerceAtMost >= 0 && textLayoutResult.getLineTop(coerceAtMost) >= ((int) (textLayoutResult.m7672getSizeYbymL2g() & 4294967295L))) {
+                    int coerceAtMost = RangesKt.coerceAtMost(textLayoutResult.getLineForVerticalPosition((int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L)), textLayoutResult.getLineCount() - 1);
+                    while (coerceAtMost >= 0 && textLayoutResult.getLineTop(coerceAtMost) >= ((int) (textLayoutResult.m6974getSizeYbymL2g() & 4294967295L))) {
                         coerceAtMost--;
                     }
                     lineCount = RangesKt.coerceAtLeast(coerceAtMost, 0);
@@ -64,19 +64,19 @@ public final class MultiWidgetSelectionDelegate implements Selectable {
     @Override // androidx.compose.foundation.text.selection.Selectable
     public void appendSelectableInfoToBuilder(SelectionLayoutBuilder selectionLayoutBuilder) {
         TextLayoutResult invoke;
-        long m5183minusMKHz9U;
+        long m4531minusMKHz9U;
         LayoutCoordinates layoutCoordinates = getLayoutCoordinates();
         if (layoutCoordinates == null || (invoke = this.layoutResultCallback.invoke()) == null) {
             return;
         }
-        long mo6884localPositionOfR5De75A = selectionLayoutBuilder.getContainerCoordinates().mo6884localPositionOfR5De75A(layoutCoordinates, Offset.Companion.m5195getZeroF1C5BW0());
-        long m5183minusMKHz9U2 = Offset.m5183minusMKHz9U(selectionLayoutBuilder.m1859getCurrentPositionF1C5BW0(), mo6884localPositionOfR5De75A);
-        if ((selectionLayoutBuilder.m1860getPreviousHandlePositionF1C5BW0() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m5183minusMKHz9U = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        long mo6225localPositionOfR5De75A = selectionLayoutBuilder.getContainerCoordinates().mo6225localPositionOfR5De75A(layoutCoordinates, Offset.Companion.m4543getZeroF1C5BW0());
+        long m4531minusMKHz9U2 = Offset.m4531minusMKHz9U(selectionLayoutBuilder.m1609getCurrentPositionF1C5BW0(), mo6225localPositionOfR5De75A);
+        if ((selectionLayoutBuilder.m1610getPreviousHandlePositionF1C5BW0() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+            m4531minusMKHz9U = Offset.Companion.m4542getUnspecifiedF1C5BW0();
         } else {
-            m5183minusMKHz9U = Offset.m5183minusMKHz9U(selectionLayoutBuilder.m1860getPreviousHandlePositionF1C5BW0(), mo6884localPositionOfR5De75A);
+            m4531minusMKHz9U = Offset.m4531minusMKHz9U(selectionLayoutBuilder.m1610getPreviousHandlePositionF1C5BW0(), mo6225localPositionOfR5De75A);
         }
-        MultiWidgetSelectionDelegateKt.m1830appendSelectableInfoParwq6A(selectionLayoutBuilder, invoke, m5183minusMKHz9U2, m5183minusMKHz9U, getSelectableId());
+        MultiWidgetSelectionDelegateKt.m1586appendSelectableInfoParwq6A(selectionLayoutBuilder, invoke, m4531minusMKHz9U2, m4531minusMKHz9U, getSelectableId());
     }
 
     @Override // androidx.compose.foundation.text.selection.Selectable
@@ -91,15 +91,15 @@ public final class MultiWidgetSelectionDelegate implements Selectable {
 
     @Override // androidx.compose.foundation.text.selection.Selectable
     /* renamed from: getHandlePosition-dBAh8RU  reason: not valid java name */
-    public long mo1828getHandlePositiondBAh8RU(Selection selection, boolean z) {
+    public long mo1584getHandlePositiondBAh8RU(Selection selection, boolean z) {
         TextLayoutResult invoke;
         if ((z && selection.getStart().getSelectableId() != getSelectableId()) || (!z && selection.getEnd().getSelectableId() != getSelectableId())) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         if (getLayoutCoordinates() != null && (invoke = this.layoutResultCallback.invoke()) != null) {
             return TextSelectionDelegateKt.getSelectionHandleCoordinates(invoke, RangesKt.coerceIn((z ? selection.getStart() : selection.getEnd()).getOffset(), 0, getLastVisibleOffset(invoke)), z, selection.getHandlesCrossed());
         }
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     @Override // androidx.compose.foundation.text.selection.Selectable
@@ -168,14 +168,14 @@ public final class MultiWidgetSelectionDelegate implements Selectable {
 
     @Override // androidx.compose.foundation.text.selection.Selectable
     /* renamed from: getRangeOfLineContaining--jx7JFs  reason: not valid java name */
-    public long mo1829getRangeOfLineContainingjx7JFs(int i) {
+    public long mo1585getRangeOfLineContainingjx7JFs(int i) {
         TextLayoutResult invoke = this.layoutResultCallback.invoke();
         if (invoke == null) {
-            return TextRange.Companion.m7706getZerod9O1mEE();
+            return TextRange.Companion.m7008getZerod9O1mEE();
         }
         int lastVisibleOffset = getLastVisibleOffset(invoke);
         if (lastVisibleOffset < 1) {
-            return TextRange.Companion.m7706getZerod9O1mEE();
+            return TextRange.Companion.m7008getZerod9O1mEE();
         }
         int lineForOffset = invoke.getLineForOffset(RangesKt.coerceIn(i, 0, lastVisibleOffset - 1));
         return TextRangeKt.TextRange(invoke.getLineStart(lineForOffset), invoke.getLineEnd(lineForOffset, true));

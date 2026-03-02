@@ -33,19 +33,19 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t2\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\r2\u000e\b\u0002\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u0011\u0010\u000f\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0010H\u0001¢\u0006\u0002\u0010\u0011\u001aF\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\b\b\u0002\u0010\n\u001a\u00020\u000b2\u0017\u0010\u0006\u001a\u0013\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\tH\u0001¢\u0006\u0002\u0010\u0013¨\u0006\u0014"}, d2 = {"ContextMenuArea", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/foundation/contextmenu/ContextMenuState;", "onDismiss", "Lkotlin/Function0;", "contextMenuBuilderBlock", "Lkotlin/Function1;", "Landroidx/compose/foundation/contextmenu/ContextMenuScope;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "enabled", "", "onOpenGesture", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "ContextMenu", "(Landroidx/compose/foundation/contextmenu/ContextMenuState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ContextMenuAreaKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ContextMenu$lambda$0(ContextMenuState contextMenuState, Function0 function0, Modifier modifier, Function1 function1, int i, int i2, Composer composer, int i3) {
         ContextMenu(contextMenuState, function0, modifier, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ContextMenu$lambda$2(ContextMenuState contextMenuState, Function0 function0, Modifier modifier, Function1 function1, int i, int i2, Composer composer, int i3) {
         ContextMenu(contextMenuState, function0, modifier, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ContextMenuArea$lambda$3(ContextMenuState contextMenuState, Function0 function0, Function1 function1, Modifier modifier, boolean z, Function0 function02, Function2 function2, int i, int i2, Composer composer, int i3) {
         ContextMenuArea(contextMenuState, function0, function1, modifier, z, function02, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -188,12 +188,12 @@ public final class ContextMenuAreaKt {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1319665848, "C57@2211L9,58@2229L147:ContextMenuArea.kt#3xeu6s");
@@ -217,9 +217,7 @@ public final class ContextMenuAreaKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuAreaKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit ContextMenuArea$lambda$3;
-                                ContextMenuArea$lambda$3 = ContextMenuAreaKt.ContextMenuArea$lambda$3(ContextMenuState.this, function0, function1, modifier3, z4, function03, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return ContextMenuArea$lambda$3;
+                                return ContextMenuAreaKt.ContextMenuArea$lambda$3(ContextMenuState.this, function0, function1, modifier3, z4, function03, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -272,7 +270,7 @@ public final class ContextMenuAreaKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ContextMenuArea$lambda$1$0(Function0 function0, ContextMenuState contextMenuState, Offset offset) {
         function0.invoke();
-        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m5189unboximpl(), null));
+        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m4537unboximpl(), null));
         return Unit.INSTANCE;
     }
 
@@ -320,7 +318,7 @@ public final class ContextMenuAreaKt {
                 boolean changed = startRestartGroup.changed(open);
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
-                    ContextMenuPopupPositionProvider contextMenuPopupPositionProvider = new ContextMenuPopupPositionProvider(IntOffsetKt.m8403roundk4lQ0M(open.m444getOffsetF1C5BW0()), (Function2) null, 2, (DefaultConstructorMarker) null);
+                    ContextMenuPopupPositionProvider contextMenuPopupPositionProvider = new ContextMenuPopupPositionProvider(IntOffsetKt.m7700roundk4lQ0M(open.m389getOffsetF1C5BW0()), (Function2) null, 2, (DefaultConstructorMarker) null);
                     startRestartGroup.updateRememberedValue(contextMenuPopupPositionProvider);
                     rememberedValue = contextMenuPopupPositionProvider;
                 }
@@ -339,9 +337,7 @@ public final class ContextMenuAreaKt {
                     function2 = new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuAreaKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit ContextMenu$lambda$0;
-                            ContextMenu$lambda$0 = ContextMenuAreaKt.ContextMenu$lambda$0(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                            return ContextMenu$lambda$0;
+                            return ContextMenuAreaKt.ContextMenu$lambda$0(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     };
                     endRestartGroup.updateScope(function2);
@@ -354,9 +350,7 @@ public final class ContextMenuAreaKt {
             function2 = new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuAreaKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ContextMenu$lambda$2;
-                    ContextMenu$lambda$2 = ContextMenuAreaKt.ContextMenu$lambda$2(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ContextMenu$lambda$2;
+                    return ContextMenuAreaKt.ContextMenu$lambda$2(ContextMenuState.this, function0, modifier2, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             endRestartGroup.updateScope(function2);

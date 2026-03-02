@@ -22,14 +22,14 @@ public final class xo {
         Boolean bool = Boolean.FALSE;
         jSONObject3.put("first_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "first_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "first_event_done", bool)));
         jSONObject3.put("init_event_done", JsonUtils.optBooleanOrNullable(jSONObject2, "init_event_done", JsonUtils.optBooleanOrNullable(jSONObject, "init_event_done", bool)));
-        jSONObject3.put("report_request_id", AbstractC0272gb.a(jSONObject2, "report_request_id", AbstractC0272gb.a(jSONObject, "report_request_id", -1)));
+        jSONObject3.put("report_request_id", AbstractC0271gb.a(jSONObject2, "report_request_id", AbstractC0271gb.a(jSONObject, "report_request_id", -1)));
         jSONObject3.put("global_number", JsonUtils.optLongOrDefault(jSONObject2, "global_number", JsonUtils.optLongOrDefault(jSONObject, "global_number", 0L)));
         jSONObject3.put("session_id", JsonUtils.optLongOrDefault(jSONObject2, "session_id", JsonUtils.optLongOrDefault(jSONObject, "session_id", -1L)));
         jSONObject3.put("referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject2, "referrer_handled", JsonUtils.optBooleanOrNullable(jSONObject, "referrer_handled", bool)));
         jSONObject3.put("numbers_of_type", JsonUtils.optJsonObjectOrNullable(jSONObject2, "numbers_of_type", JsonUtils.optJsonObjectOrNull(jSONObject, "numbers_of_type")));
-        jSONObject3.put("open_id", AbstractC0272gb.a(jSONObject2, "open_id", AbstractC0272gb.a(jSONObject, "open_id", 1)));
-        jSONObject3.put("attribution_id", AbstractC0272gb.a(jSONObject2, "attribution_id", AbstractC0272gb.a(jSONObject, "attribution_id", 1)));
-        jSONObject3.put("last_migration_api_level", AbstractC0272gb.a(jSONObject2, "last_migration_api_level", AbstractC0272gb.a(jSONObject, "last_migration_api_level", 0)));
+        jSONObject3.put("open_id", AbstractC0271gb.a(jSONObject2, "open_id", AbstractC0271gb.a(jSONObject, "open_id", 1)));
+        jSONObject3.put("attribution_id", AbstractC0271gb.a(jSONObject2, "attribution_id", AbstractC0271gb.a(jSONObject, "attribution_id", 1)));
+        jSONObject3.put("last_migration_api_level", AbstractC0271gb.a(jSONObject2, "last_migration_api_level", AbstractC0271gb.a(jSONObject, "last_migration_api_level", 0)));
         jSONObject3.put("external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject2, "external_attribution_window_start", JsonUtils.optLongOrDefault(jSONObject, "external_attribution_window_start", -1L)));
         return jSONObject3;
     }

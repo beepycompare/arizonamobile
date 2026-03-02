@@ -7,12 +7,12 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes2.dex */
 public final class TextDirectionKt {
     /* renamed from: isSpecified-Hejc4pk  reason: not valid java name */
-    public static final boolean m8160isSpecifiedHejc4pk(int i) {
+    public static final boolean m7457isSpecifiedHejc4pk(int i) {
         return i != 0;
     }
 
     /* renamed from: takeOrElse-HklW4sA  reason: not valid java name */
-    public static final int m8161takeOrElseHklW4sA(int i, Function0<TextDirection> function0) {
-        return i != 0 ? i : function0.invoke().m8152unboximpl();
+    public static final int m7458takeOrElseHklW4sA(int i, Function0<TextDirection> function0) {
+        return i != 0 ? i : function0.invoke().m7449unboximpl();
     }
 }

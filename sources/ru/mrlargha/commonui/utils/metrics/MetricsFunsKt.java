@@ -54,7 +54,7 @@ import ru.mrlargha.commonui.utils.PurchaseData;
 import ru.mrlargha.commonui.utils.TrackUsAPI;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: metricsFuns.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u001e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u000e\u0010\u0010\u001a\u00020\n2\u0006\u0010\u0011\u001a\u00020\u000e\u001a\u0018\u0010\u0012\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0015\u0010\u0013\u001a\u00020\u0014*\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u0001H\u0082\u0004\u001a\u0016\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e\u001a\u0016\u0010\u0017\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u0019\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001c\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001d\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001e\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001f\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010 \u001a\u00020\u0001\u001a\u000e\u0010!\u001a\u00020\u000e2\u0006\u0010\"\u001a\u00020\u000e\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"DEFAULT_ANALYTICS", "", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "ADVGAME", "ADMITAD", "ADVGAME_NEW", "sendDataAnalytics", "", "context", "Landroid/content/Context;", NotificationCompat.CATEGORY_EVENT, "", "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "", "flag", "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "client", "Lokhttp3/OkHttpClient;", "sendAdmitadAnalytics", "sendAdvgameAnalytics", "sendAdvertiseAnalytics", "sendAdjustAnalytics", "eventId", "toNormalReferrer", "raw", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u001e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u000e\u0010\u0010\u001a\u00020\n2\u0006\u0010\u0011\u001a\u00020\u000e\u001a\u0018\u0010\u0012\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0015\u0010\u0013\u001a\u00020\u0014*\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u0001H\u0082\u0004\u001a\u0016\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e\u001a\u0016\u0010\u0017\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u0019\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001c\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001d\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001e\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001f\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010 \u001a\u00020\u0001\u001a\u000e\u0010!\u001a\u00020\u000e2\u0006\u0010\"\u001a\u00020\u000e\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"DEFAULT_ANALYTICS", "", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "ADVGAME", "ADMITAD", "ADVGAME_NEW", "sendDataAnalytics", "", "context", "Landroid/content/Context;", NotificationCompat.CATEGORY_EVENT, "", "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "", "flag", "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "client", "Lokhttp3/OkHttpClient;", "sendAdmitadAnalytics", "sendAdvgameAnalytics", "sendAdvertiseAnalytics", "sendAdjustAnalytics", "eventId", "toNormalReferrer", "raw", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MetricsFunsKt {
     public static final int ADMITAD = 64;
@@ -291,6 +291,7 @@ public final class MetricsFunsKt {
     public static final void sendAdmitadAnalytics(Context context, String action) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
+        String str = UtilsKt.isArizonaType() ? "70CBB4fc01F466d0FCacdFcDEf8B8158" : "8E2e5c2c32A1BcCF695582A73c8a1f44";
         ArrayList arrayList = new ArrayList();
         Iterator it = StringsKt.split$default((CharSequence) action, new String[]{"&"}, false, 0, 6, (Object) null).iterator();
         while (true) {
@@ -298,12 +299,12 @@ public final class MetricsFunsKt {
             if (!it.hasNext()) {
                 break;
             }
-            String str = (String) it.next();
-            int indexOf$default = StringsKt.indexOf$default((CharSequence) str, "=", 0, false, 6, (Object) null);
+            String str2 = (String) it.next();
+            int indexOf$default = StringsKt.indexOf$default((CharSequence) str2, "=", 0, false, 6, (Object) null);
             if (indexOf$default != -1) {
-                String substring = str.substring(0, indexOf$default);
+                String substring = str2.substring(0, indexOf$default);
                 Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
-                String substring2 = str.substring(indexOf$default + 1);
+                String substring2 = str2.substring(indexOf$default + 1);
                 Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
                 pair = TuplesKt.to(substring, substring2);
             }
@@ -312,29 +313,29 @@ public final class MetricsFunsKt {
             }
         }
         Map map = MapsKt.toMap(arrayList);
-        String str2 = (String) map.get("ac");
-        String str3 = (String) map.get("oid");
-        String str4 = (String) map.get("uid");
+        String str3 = (String) map.get("ac");
+        String str4 = (String) map.get("oid");
+        String str5 = (String) map.get("uid");
         String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        String str5 = string != null ? string : "";
+        String str6 = string != null ? string : "";
         ArrayList arrayList2 = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) str5, new String[]{"&"}, false, 0, 6, (Object) null)) {
+        for (Object obj : StringsKt.split$default((CharSequence) str6, new String[]{"&"}, false, 0, 6, (Object) null)) {
             if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
                 arrayList2.add(obj);
             }
         }
         ArrayList<String> arrayList3 = arrayList2;
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList3, 10)), 16));
-        for (String str6 : arrayList3) {
-            List split$default = StringsKt.split$default((CharSequence) str6, new String[]{"="}, false, 0, 6, (Object) null);
+        for (String str7 : arrayList3) {
+            List split$default = StringsKt.split$default((CharSequence) str7, new String[]{"="}, false, 0, 6, (Object) null);
             Pair pair2 = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
             linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
         }
-        String str7 = (String) linkedHashMap.get("utm_campaign");
-        if (str7 == null) {
-            str7 = "cbb5e52c77";
+        String str8 = (String) linkedHashMap.get("utm_campaign");
+        if (str8 == null) {
+            str8 = "cbb5e52c77";
         }
-        HttpUrl build = new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", str7).addQueryParameter("pb", "1").addQueryParameter("pk", "8E2e5c2c32A1BcCF695582A73c8a1f44").addQueryParameter("ac", str2).addQueryParameter("uid", str4).addQueryParameter("oid", str3).addQueryParameter("tc", "1").addQueryParameter("adm_device", "mobile").addQueryParameter("adm_ostype", ConstantDeviceInfo.APP_PLATFORM).addQueryParameter("adm_method", "adv").build();
+        HttpUrl build = new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", str8).addQueryParameter("pb", "1").addQueryParameter("pk", str).addQueryParameter("ac", str3).addQueryParameter("uid", str5).addQueryParameter("oid", str4).addQueryParameter("tc", "1").addQueryParameter("adm_device", "mobile").addQueryParameter("adm_ostype", ConstantDeviceInfo.APP_PLATFORM).addQueryParameter("adm_method", "adv").build();
         Log.d("admitad", "url: " + build);
         client.newCall(new Request.Builder().url(build).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.metrics.MetricsFunsKt$sendAdmitadAnalytics$1
             @Override // okhttp3.Callback

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ModuleEvent {
 
     /* renamed from: a  reason: collision with root package name */
@@ -18,7 +18,7 @@ public final class ModuleEvent {
     private final List g;
     private final List h;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
@@ -87,7 +87,7 @@ public final class ModuleEvent {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public enum Category {
         GENERAL,
         SYSTEM

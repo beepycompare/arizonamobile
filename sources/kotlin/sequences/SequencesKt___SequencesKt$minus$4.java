@@ -22,10 +22,12 @@ public final class SequencesKt___SequencesKt$minus$4<T> implements Sequence<T> {
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
         final List list = SequencesKt.toList(this.$elements);
-        if (list.isEmpty()) {
-            return this.$this_minus.iterator();
+        boolean isEmpty = list.isEmpty();
+        Sequence<T> sequence = this.$this_minus;
+        if (isEmpty) {
+            return sequence.iterator();
         }
-        return SequencesKt.filterNot(this.$this_minus, new Function1() { // from class: kotlin.sequences.SequencesKt___SequencesKt$minus$4$$ExternalSyntheticLambda0
+        return SequencesKt.filterNot(sequence, new Function1() { // from class: kotlin.sequences.SequencesKt___SequencesKt$minus$4$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 boolean contains;

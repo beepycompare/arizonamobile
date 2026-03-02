@@ -120,7 +120,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                 this.components.put(component, new Lazy(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
                     @Override // com.google.firebase.inject.Provider
                     public final Object get() {
-                        return ComponentRuntime.this.m9952xc080f8d8(component);
+                        return ComponentRuntime.this.m8982xc080f8d8(component);
                     }
                 }));
             }
@@ -136,7 +136,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$discoverComponents$0$com-google-firebase-components-ComponentRuntime  reason: not valid java name */
-    public /* synthetic */ Object m9952xc080f8d8(Component component) {
+    public /* synthetic */ Object m8982xc080f8d8(Component component) {
         return component.getFactory().create(new RestrictedComponentContainer(component, this));
     }
 
@@ -174,10 +174,12 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             if (component.isValue()) {
                 final Provider<?> provider = this.components.get(component);
                 for (Qualified<? super Object> qualified : component.getProvidedInterfaces()) {
-                    if (!this.lazyInstanceMap.containsKey(qualified)) {
-                        this.lazyInstanceMap.put(qualified, provider);
+                    boolean containsKey = this.lazyInstanceMap.containsKey(qualified);
+                    Map<Qualified<?>, Provider<?>> map = this.lazyInstanceMap;
+                    if (!containsKey) {
+                        map.put(qualified, provider);
                     } else {
-                        final OptionalProvider optionalProvider = (OptionalProvider) this.lazyInstanceMap.get(qualified);
+                        final OptionalProvider optionalProvider = (OptionalProvider) map.get(qualified);
                         arrayList.add(new Runnable() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda3
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -207,10 +209,12 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
             }
         }
         for (Map.Entry entry2 : hashMap.entrySet()) {
-            if (!this.lazySetMap.containsKey(entry2.getKey())) {
-                this.lazySetMap.put((Qualified) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
+            boolean containsKey = this.lazySetMap.containsKey(entry2.getKey());
+            Map<Qualified<?>, LazySet<?>> map = this.lazySetMap;
+            if (!containsKey) {
+                map.put((Qualified) entry2.getKey(), LazySet.fromCollection((Collection) entry2.getValue()));
             } else {
-                final LazySet<?> lazySet = this.lazySetMap.get(entry2.getKey());
+                final LazySet<?> lazySet = map.get(entry2.getKey());
                 for (final Provider provider : (Set) entry2.getValue()) {
                     arrayList.add(new Runnable() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda4
                         @Override // java.lang.Runnable

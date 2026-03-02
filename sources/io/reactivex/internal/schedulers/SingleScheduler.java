@@ -83,11 +83,13 @@ public final class SingleScheduler extends Scheduler {
     public Disposable scheduleDirect(Runnable runnable, long j, TimeUnit timeUnit) {
         Future<?> schedule;
         ScheduledDirectTask scheduledDirectTask = new ScheduledDirectTask(RxJavaPlugins.onSchedule(runnable));
+        int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+        AtomicReference<ScheduledExecutorService> atomicReference = this.executor;
         try {
-            if (j <= 0) {
-                schedule = this.executor.get().submit(scheduledDirectTask);
+            if (i <= 0) {
+                schedule = atomicReference.get().submit(scheduledDirectTask);
             } else {
-                schedule = this.executor.get().schedule(scheduledDirectTask, j, timeUnit);
+                schedule = atomicReference.get().schedule(scheduledDirectTask, j, timeUnit);
             }
             scheduledDirectTask.setFuture(schedule);
             return scheduledDirectTask;
@@ -145,11 +147,13 @@ public final class SingleScheduler extends Scheduler {
             }
             ScheduledRunnable scheduledRunnable = new ScheduledRunnable(RxJavaPlugins.onSchedule(runnable), this.tasks);
             this.tasks.add(scheduledRunnable);
+            int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            ScheduledExecutorService scheduledExecutorService = this.executor;
             try {
-                if (j <= 0) {
-                    schedule = this.executor.submit((Callable) scheduledRunnable);
+                if (i <= 0) {
+                    schedule = scheduledExecutorService.submit((Callable) scheduledRunnable);
                 } else {
-                    schedule = this.executor.schedule((Callable) scheduledRunnable, j, timeUnit);
+                    schedule = scheduledExecutorService.schedule((Callable) scheduledRunnable, j, timeUnit);
                 }
                 scheduledRunnable.setFuture(schedule);
                 return scheduledRunnable;

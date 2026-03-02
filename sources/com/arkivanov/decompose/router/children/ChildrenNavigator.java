@@ -87,9 +87,7 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         InstanceKeeper.Instance invoke = retainedInstanceSupplier.invoke(new Function0() { // from class: com.arkivanov.decompose.router.children.ChildrenNavigator$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                InstanceKeeper.Instance retainedInstance$lambda$3;
-                retainedInstance$lambda$3 = ChildrenNavigator.retainedInstance$lambda$3();
-                return retainedInstance$lambda$3;
+                return ChildrenNavigator.retainedInstance$lambda$3();
             }
         });
         Intrinsics.checkNotNull(invoke, "null cannot be cast to non-null type com.arkivanov.decompose.router.children.ChildrenNavigator.RetainedInstance<C of com.arkivanov.decompose.router.children.ChildrenNavigator, T of com.arkivanov.decompose.router.children.ChildrenNavigator>");
@@ -97,7 +95,7 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         this.retainedInstance = retainedInstance;
         if (list == null) {
             retainedInstance.onDestroy();
-            m9738switch(navState.getChildren());
+            m8810switch(navState.getChildren());
         } else {
             restore(navState, list);
         }
@@ -188,9 +186,7 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         Map keyed = UtilsKt.keyed(this.items, new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenNavigator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object childrenExperimental$lambda$1;
-                childrenExperimental$lambda$1 = ChildrenNavigator.getChildrenExperimental$lambda$1((ChildItem) obj);
-                return childrenExperimental$lambda$1;
+                return ChildrenNavigator.getChildrenExperimental$lambda$1((ChildItem) obj);
             }
         });
         ArrayList arrayList = new ArrayList(keyed.size());
@@ -208,13 +204,13 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object getChildrenExperimental$lambda$1(ChildItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getConfiguration();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InstanceKeeper.Instance retainedInstance$lambda$3() {
         return new RetainedInstance();
     }
@@ -440,12 +436,12 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
 
     public final void navigate(N navState) {
         Intrinsics.checkNotNullParameter(navState, "navState");
-        m9738switch(navState.getChildren());
+        m8810switch(navState.getChildren());
         this.navState = navState;
     }
 
     /* renamed from: switch  reason: not valid java name */
-    private final void m9738switch(List<? extends ChildNavState<? extends C>> list) {
+    private final void m8810switch(List<? extends ChildNavState<? extends C>> list) {
         if (DecomposeExperimentFlags.INSTANCE.getDuplicateConfigurationsEnabled()) {
             switchExperimental(list);
         } else {

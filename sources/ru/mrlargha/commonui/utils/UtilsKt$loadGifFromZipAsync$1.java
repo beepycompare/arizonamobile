@@ -1,13 +1,14 @@
 package ru.mrlargha.commonui.utils;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt", f = "Utils.kt", i = {0, 0, 0}, l = {599}, m = "loadGifFromZipAsync", n = {"imageView", "folderName", "item"}, s = {"L$0", "L$1", "L$2"}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt", f = "Utils.kt", i = {0, 0, 0}, l = {TypedValues.MotionType.TYPE_ANIMATE_CIRCLEANGLE_TO}, m = "loadGifFromZipAsync", n = {"imageView", "folderName", "item"}, nl = {TypedValues.MotionType.TYPE_POLAR_RELATIVETO}, s = {"L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes6.dex */
 public final class UtilsKt$loadGifFromZipAsync$1 extends ContinuationImpl {
     Object L$0;

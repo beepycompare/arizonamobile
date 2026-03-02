@@ -44,48 +44,48 @@ public final class TextFieldMagnifierKt {
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-hUlJWOE  reason: not valid java name */
-    public static final long m1721calculateSelectionMagnifierCenterAndroidhUlJWOE(TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, TextLayoutState textLayoutState, long j) {
-        int m7701getStartimpl;
-        long m1741getHandleDragPositionF1C5BW0 = textFieldSelectionState.m1741getHandleDragPositionF1C5BW0();
-        if ((9223372034707292159L & m1741getHandleDragPositionF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats || transformedTextFieldState.getVisualText().length() == 0) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+    public static final long m1493calculateSelectionMagnifierCenterAndroidhUlJWOE(TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, TextLayoutState textLayoutState, long j) {
+        int m7003getStartimpl;
+        long m1508getHandleDragPositionF1C5BW0 = textFieldSelectionState.m1508getHandleDragPositionF1C5BW0();
+        if ((9223372034707292159L & m1508getHandleDragPositionF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats || transformedTextFieldState.getVisualText().length() == 0) {
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
-        long m1537getSelectiond9O1mEE = transformedTextFieldState.getVisualText().m1537getSelectiond9O1mEE();
+        long m1336getSelectiond9O1mEE = transformedTextFieldState.getVisualText().m1336getSelectiond9O1mEE();
         Handle draggingHandle = textFieldSelectionState.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
         if (i == -1) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         if (i == 1 || i == 2) {
-            m7701getStartimpl = TextRange.m7701getStartimpl(m1537getSelectiond9O1mEE);
+            m7003getStartimpl = TextRange.m7003getStartimpl(m1336getSelectiond9O1mEE);
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            m7701getStartimpl = TextRange.m7696getEndimpl(m1537getSelectiond9O1mEE);
+            m7003getStartimpl = TextRange.m6998getEndimpl(m1336getSelectiond9O1mEE);
         }
         TextLayoutResult layoutResult = textLayoutState.getLayoutResult();
         if (layoutResult == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
-        float intBitsToFloat = Float.intBitsToFloat((int) (m1741getHandleDragPositionF1C5BW0 >> 32));
-        int lineForOffset = layoutResult.getLineForOffset(m7701getStartimpl);
+        float intBitsToFloat = Float.intBitsToFloat((int) (m1508getHandleDragPositionF1C5BW0 >> 32));
+        int lineForOffset = layoutResult.getLineForOffset(m7003getStartimpl);
         float lineLeft = layoutResult.getLineLeft(lineForOffset);
         float lineRight = layoutResult.getLineRight(lineForOffset);
         float coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
-        if (!IntSize.m8427equalsimpl0(j, IntSize.Companion.m8434getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        if (!IntSize.m7724equalsimpl0(j, IntSize.Companion.m7731getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         float lineTop = layoutResult.getLineTop(lineForOffset);
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(((layoutResult.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L) | (Float.floatToRawIntBits(coerceIn) << 32));
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             if (!textLayoutNodeCoordinates.isAttached()) {
                 textLayoutNodeCoordinates = null;
             }
             if (textLayoutNodeCoordinates != null) {
-                m5171constructorimpl = TextLayoutStateKt.m1680coerceIn3MmeM6k(m5171constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
+                m4519constructorimpl = TextLayoutStateKt.m1453coerceIn3MmeM6k(m4519constructorimpl, SelectionManagerKt.visibleBounds(textLayoutNodeCoordinates));
             }
         }
-        return TextLayoutStateKt.m1682fromTextLayoutToCoreUv8p0NA(textLayoutState, m5171constructorimpl);
+        return TextLayoutStateKt.m1455fromTextLayoutToCoreUv8p0NA(textLayoutState, m4519constructorimpl);
     }
 }

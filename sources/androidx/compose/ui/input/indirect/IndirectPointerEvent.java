@@ -9,8 +9,8 @@ public interface IndirectPointerEvent {
     List<IndirectPointerInputChange> getChanges();
 
     /* renamed from: getPrimaryDirectionalMotionAxis-nZO2Niw */
-    int mo6246getPrimaryDirectionalMotionAxisnZO2Niw();
+    int mo5587getPrimaryDirectionalMotionAxisnZO2Niw();
 
     /* renamed from: getType-4ZHQPSE */
-    int mo6247getType4ZHQPSE();
+    int mo5588getType4ZHQPSE();
 }

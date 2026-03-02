@@ -236,28 +236,30 @@ public class SortedList<T> {
                 this.mSize += i6;
                 this.mCallback.onInserted(i7 - i6, i6);
                 break;
-            } else if (i2 == i) {
-                int i8 = i5 - i4;
-                System.arraycopy(this.mOldData, i4, this.mData, this.mNewDataStart, i8);
-                this.mNewDataStart += i8;
-                break;
             } else {
-                T t = this.mOldData[i4];
+                T[] tArr2 = this.mOldData;
+                if (i2 == i) {
+                    int i8 = i5 - i4;
+                    System.arraycopy(tArr2, i4, this.mData, this.mNewDataStart, i8);
+                    this.mNewDataStart += i8;
+                    break;
+                }
+                T t = tArr2[i4];
                 T t2 = tArr[i2];
                 int compare = this.mCallback.compare(t, t2);
                 if (compare > 0) {
-                    T[] tArr2 = this.mData;
+                    T[] tArr3 = this.mData;
                     int i9 = this.mNewDataStart;
                     this.mNewDataStart = i9 + 1;
-                    tArr2[i9] = t2;
+                    tArr3[i9] = t2;
                     this.mSize++;
                     i2++;
                     this.mCallback.onInserted(i9, 1);
                 } else if (compare == 0 && this.mCallback.areItemsTheSame(t, t2)) {
-                    T[] tArr3 = this.mData;
+                    T[] tArr4 = this.mData;
                     int i10 = this.mNewDataStart;
                     this.mNewDataStart = i10 + 1;
-                    tArr3[i10] = t2;
+                    tArr4[i10] = t2;
                     i2++;
                     this.mOldDataStart++;
                     if (!this.mCallback.areContentsTheSame(t, t2)) {
@@ -265,10 +267,10 @@ public class SortedList<T> {
                         callback.onChanged(this.mNewDataStart - 1, 1, callback.getChangePayload(t, t2));
                     }
                 } else {
-                    T[] tArr4 = this.mData;
+                    T[] tArr5 = this.mData;
                     int i11 = this.mNewDataStart;
                     this.mNewDataStart = i11 + 1;
-                    tArr4[i11] = t;
+                    tArr5[i11] = t;
                     this.mOldDataStart++;
                 }
             }
@@ -317,11 +319,13 @@ public class SortedList<T> {
         } else if (findIndexOf < this.mSize) {
             T t2 = this.mData[findIndexOf];
             if (this.mCallback.areItemsTheSame(t2, t)) {
-                if (this.mCallback.areContentsTheSame(t2, t)) {
-                    this.mData[findIndexOf] = t;
+                boolean areContentsTheSame = this.mCallback.areContentsTheSame(t2, t);
+                T[] tArr = this.mData;
+                if (areContentsTheSame) {
+                    tArr[findIndexOf] = t;
                     return findIndexOf;
                 }
-                this.mData[findIndexOf] = t;
+                tArr[findIndexOf] = t;
                 Callback callback = this.mCallback;
                 callback.onChanged(findIndexOf, 1, callback.getChangePayload(t2, t));
                 return findIndexOf;
@@ -413,8 +417,10 @@ public class SortedList<T> {
     }
 
     public int indexOf(T t) {
-        if (this.mOldData != null) {
-            int findIndexOf = findIndexOf(t, this.mData, 0, this.mNewDataStart, 4);
+        T[] tArr = this.mOldData;
+        T[] tArr2 = this.mData;
+        if (tArr != null) {
+            int findIndexOf = findIndexOf(t, tArr2, 0, this.mNewDataStart, 4);
             if (findIndexOf != -1) {
                 return findIndexOf;
             }
@@ -424,7 +430,7 @@ public class SortedList<T> {
             }
             return -1;
         }
-        return findIndexOf(t, this.mData, 0, this.mSize, 4);
+        return findIndexOf(t, tArr2, 0, this.mSize, 4);
     }
 
     private int findIndexOf(T t, T[] tArr, int i, int i2, int i3) {

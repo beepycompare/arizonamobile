@@ -52,58 +52,54 @@ public final class ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 extend
 
     @Override // androidx.compose.material3.ExposedDropdownMenuBoxScope
     /* renamed from: menuAnchor-2Hz36ac */
-    public Modifier mo2440menuAnchor2Hz36ac(Modifier modifier, final String str, boolean z) {
-        Modifier.Companion m2454expandable32CpT8;
+    public Modifier mo2068menuAnchor2Hz36ac(Modifier modifier, final String str, boolean z) {
+        Modifier.Companion m2079expandable32CpT8;
         Modifier focusRequester = FocusRequesterModifierKt.focusRequester(modifier, this.$focusRequester);
         final MutableState<ExposedDropdownMenuAnchorType> mutableState = this.$anchorTypeState;
         Modifier then = focusRequester.then(new ExposedDropdownMenuAnchorElement(new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit menuAnchor_2Hz36ac$lambda$0;
-                menuAnchor_2Hz36ac$lambda$0 = ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.menuAnchor_2Hz36ac$lambda$0(str, mutableState);
-                return menuAnchor_2Hz36ac$lambda$0;
+                return ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.menuAnchor_2Hz36ac$lambda$0(str, mutableState);
             }
         }));
         if (!z) {
-            m2454expandable32CpT8 = Modifier.Companion;
+            m2079expandable32CpT8 = Modifier.Companion;
         } else {
             Modifier.Companion companion = Modifier.Companion;
             final boolean z2 = this.$expanded;
             final MutableState<ExposedDropdownMenuAnchorType> mutableState2 = this.$anchorTypeState;
             final Function1<Boolean, Unit> function1 = this.$onExpandedChange;
-            m2454expandable32CpT8 = ExposedDropdownMenuKt.m2454expandable32CpT8(companion, z2, new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda3
+            m2079expandable32CpT8 = ExposedDropdownMenuKt.m2079expandable32CpT8(companion, z2, new Function0() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit menuAnchor_2Hz36ac$lambda$1;
-                    menuAnchor_2Hz36ac$lambda$1 = ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.menuAnchor_2Hz36ac$lambda$1(MutableState.this, str, function1, z2);
-                    return menuAnchor_2Hz36ac$lambda$1;
+                    return ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.menuAnchor_2Hz36ac$lambda$1(MutableState.this, str, function1, z2);
                 }
             }, str, this.$alwaysFocusable, this.$expandedDescription, this.$collapsedDescription, this.$toggleDescription, this.$keyboardController);
         }
-        return then.then(m2454expandable32CpT8);
+        return then.then(m2079expandable32CpT8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit menuAnchor_2Hz36ac$lambda$0(String str, MutableState mutableState) {
-        boolean m2455hasGreaterOrEqualPriorityThanvVDBVkM;
-        m2455hasGreaterOrEqualPriorityThanvVDBVkM = ExposedDropdownMenuKt.m2455hasGreaterOrEqualPriorityThanvVDBVkM(str, ((ExposedDropdownMenuAnchorType) mutableState.getValue()).m2430unboximpl());
-        if (m2455hasGreaterOrEqualPriorityThanvVDBVkM) {
-            mutableState.setValue(ExposedDropdownMenuAnchorType.m2424boximpl(str));
+        boolean m2080hasGreaterOrEqualPriorityThanvVDBVkM;
+        m2080hasGreaterOrEqualPriorityThanvVDBVkM = ExposedDropdownMenuKt.m2080hasGreaterOrEqualPriorityThanvVDBVkM(str, ((ExposedDropdownMenuAnchorType) mutableState.getValue()).m2060unboximpl());
+        if (m2080hasGreaterOrEqualPriorityThanvVDBVkM) {
+            mutableState.setValue(ExposedDropdownMenuAnchorType.m2054boximpl(str));
         }
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit menuAnchor_2Hz36ac$lambda$1(MutableState mutableState, String str, Function1 function1, boolean z) {
-        mutableState.setValue(ExposedDropdownMenuAnchorType.m2424boximpl(str));
+        mutableState.setValue(ExposedDropdownMenuAnchorType.m2054boximpl(str));
         function1.invoke(Boolean.valueOf(!z));
         return Unit.INSTANCE;
     }
 
     @Override // androidx.compose.material3.ExposedDropdownMenuBoxScope
     /* renamed from: getAnchorType-oYjWRB4$material3 */
-    public String mo2439getAnchorTypeoYjWRB4$material3() {
-        return this.$anchorTypeState.getValue().m2430unboximpl();
+    public String mo2067getAnchorTypeoYjWRB4$material3() {
+        return this.$anchorTypeState.getValue().m2060unboximpl();
     }
 
     @Override // androidx.compose.material3.ExposedDropdownMenuBoxScope
@@ -118,39 +114,35 @@ public final class ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1 extend
         return LayoutModifierKt.layout(modifier, new Function3() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                MeasureResult exposedDropdownSize$lambda$3;
-                exposedDropdownSize$lambda$3 = ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.exposedDropdownSize$lambda$3(z, mutableIntState, mutableIntState2, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
-                return exposedDropdownSize$lambda$3;
+                return ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.exposedDropdownSize$lambda$3(z, mutableIntState, mutableIntState2, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult exposedDropdownSize$lambda$3(boolean z, MutableIntState mutableIntState, MutableIntState mutableIntState2, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
         int ExposedDropdownMenuBox$lambda$5;
         int ExposedDropdownMenuBox$lambda$8;
-        long m8217unboximpl = constraints.m8217unboximpl();
+        long m7514unboximpl = constraints.m7514unboximpl();
         ExposedDropdownMenuBox$lambda$5 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$5(mutableIntState);
-        int m8228constrainWidthK40F9xA = ConstraintsKt.m8228constrainWidthK40F9xA(m8217unboximpl, ExposedDropdownMenuBox$lambda$5);
-        long m8217unboximpl2 = constraints.m8217unboximpl();
+        int m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(m7514unboximpl, ExposedDropdownMenuBox$lambda$5);
+        long m7514unboximpl2 = constraints.m7514unboximpl();
         ExposedDropdownMenuBox$lambda$8 = ExposedDropdownMenuKt.ExposedDropdownMenuBox$lambda$8(mutableIntState2);
-        int m8227constrainHeightK40F9xA = ConstraintsKt.m8227constrainHeightK40F9xA(m8217unboximpl2, ExposedDropdownMenuBox$lambda$8);
-        int m8213getMinWidthimpl = z ? m8228constrainWidthK40F9xA : Constraints.m8213getMinWidthimpl(constraints.m8217unboximpl());
+        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(m7514unboximpl2, ExposedDropdownMenuBox$lambda$8);
+        int m7510getMinWidthimpl = z ? m7525constrainWidthK40F9xA : Constraints.m7510getMinWidthimpl(constraints.m7514unboximpl());
         if (!z) {
-            m8228constrainWidthK40F9xA = Constraints.m8211getMaxWidthimpl(constraints.m8217unboximpl());
+            m7525constrainWidthK40F9xA = Constraints.m7508getMaxWidthimpl(constraints.m7514unboximpl());
         }
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(constraints.m8217unboximpl(), m8213getMinWidthimpl, m8228constrainWidthK40F9xA, 0, m8227constrainHeightK40F9xA, 4, null));
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda1
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(constraints.m7514unboximpl(), m7510getMinWidthimpl, m7525constrainWidthK40F9xA, 0, m7524constrainHeightK40F9xA, 4, null));
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit exposedDropdownSize$lambda$3$lambda$2;
-                exposedDropdownSize$lambda$3$lambda$2 = ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.exposedDropdownSize$lambda$3$lambda$2(Placeable.this, (Placeable.PlacementScope) obj);
-                return exposedDropdownSize$lambda$3$lambda$2;
+                return ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1.exposedDropdownSize$lambda$3$lambda$2(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit exposedDropdownSize$lambda$3$lambda$2(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;

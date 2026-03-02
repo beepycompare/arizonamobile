@@ -44,10 +44,10 @@ final class zac implements Runnable {
             for (int i = 0; i < size; i++) {
                 zag zagVar = (zag) arrayList.get(i);
                 Bitmap bitmap = this.zac;
+                ImageManager imageManager = this.zaa;
                 if (bitmap != null) {
-                    zagVar.zac(this.zaa.zad, bitmap, false);
+                    zagVar.zac(imageManager.zad, bitmap, false);
                 } else {
-                    ImageManager imageManager = this.zaa;
                     Uri uri = this.zab;
                     map2 = imageManager.zaj;
                     map2.put(uri, Long.valueOf(SystemClock.elapsedRealtime()));

@@ -400,11 +400,18 @@ public final class TsExtractor implements Extractor {
         this.tsPayloadReaders.clear();
         SparseArray<TsPayloadReader> createInitialPayloadReaders = this.payloadReaderFactory.createInitialPayloadReaders();
         int size = createInitialPayloadReaders.size();
-        for (int i = 0; i < size; i++) {
-            this.tsPayloadReaders.put(createInitialPayloadReaders.keyAt(i), createInitialPayloadReaders.valueAt(i));
+        int i = 0;
+        while (true) {
+            SparseArray<TsPayloadReader> sparseArray = this.tsPayloadReaders;
+            if (i < size) {
+                sparseArray.put(createInitialPayloadReaders.keyAt(i), createInitialPayloadReaders.valueAt(i));
+                i++;
+            } else {
+                sparseArray.put(0, new SectionReader(new PatReader()));
+                this.id3Reader = null;
+                return;
+            }
         }
-        this.tsPayloadReaders.put(0, new SectionReader(new PatReader()));
-        this.id3Reader = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -428,10 +435,11 @@ public final class TsExtractor implements Extractor {
                     parsableByteArray.readBytes(this.patScratch, 4);
                     int readBits = this.patScratch.readBits(16);
                     this.patScratch.skipBits(3);
+                    ParsableBitArray parsableBitArray = this.patScratch;
                     if (readBits == 0) {
-                        this.patScratch.skipBits(13);
+                        parsableBitArray.skipBits(13);
                     } else {
-                        int readBits2 = this.patScratch.readBits(13);
+                        int readBits2 = parsableBitArray.readBits(13);
                         if (TsExtractor.this.tsPayloadReaders.get(readBits2) == null) {
                             TsExtractor.this.tsPayloadReaders.put(readBits2, new SectionReader(new PmtReader(readBits2)));
                             TsExtractor.access$108(TsExtractor.this);
@@ -547,8 +555,10 @@ public final class TsExtractor implements Extractor {
                     TsExtractor.this.tsPayloadReaders.put(valueAt, valueAt2);
                 }
             }
-            if (TsExtractor.this.mode == 2) {
-                if (TsExtractor.this.tracksEnded) {
+            int i6 = TsExtractor.this.mode;
+            TsExtractor tsExtractor2 = TsExtractor.this;
+            if (i6 == 2) {
+                if (tsExtractor2.tracksEnded) {
                     return;
                 }
                 TsExtractor.this.output.endTracks();
@@ -556,9 +566,9 @@ public final class TsExtractor implements Extractor {
                 TsExtractor.this.tracksEnded = true;
                 return;
             }
-            TsExtractor.this.tsPayloadReaders.remove(this.pid);
-            TsExtractor tsExtractor2 = TsExtractor.this;
-            tsExtractor2.remainingPmts = tsExtractor2.mode == 1 ? 0 : TsExtractor.this.remainingPmts - 1;
+            tsExtractor2.tsPayloadReaders.remove(this.pid);
+            TsExtractor tsExtractor3 = TsExtractor.this;
+            tsExtractor3.remainingPmts = tsExtractor3.mode == 1 ? 0 : TsExtractor.this.remainingPmts - 1;
             if (TsExtractor.this.remainingPmts == 0) {
                 TsExtractor.this.output.endTracks();
                 TsExtractor.this.tracksEnded = true;

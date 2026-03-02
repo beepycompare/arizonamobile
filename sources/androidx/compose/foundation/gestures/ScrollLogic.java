@@ -8,10 +8,10 @@ import kotlin.coroutines.Continuation;
 /* loaded from: classes.dex */
 public interface ScrollLogic {
     /* renamed from: doFlingAnimation-QWom1Mo  reason: not valid java name */
-    Object mo642doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation);
+    Object mo561doFlingAnimationQWom1Mo(long j, Continuation<? super Velocity> continuation);
 
     boolean isFlinging();
 
     /* renamed from: performRawScroll-MK-Hz9U  reason: not valid java name */
-    long mo643performRawScrollMKHz9U(long j);
+    long mo562performRawScrollMKHz9U(long j);
 }

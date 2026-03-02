@@ -3,13 +3,13 @@ package androidx.media3.exoplayer;
 import androidx.media3.common.C;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class LoadingInfo {
     public final long lastRebufferRealtimeMs;
     public final long playbackPositionUs;
     public final float playbackSpeed;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private long lastRebufferRealtimeMs;
         private long playbackPositionUs;

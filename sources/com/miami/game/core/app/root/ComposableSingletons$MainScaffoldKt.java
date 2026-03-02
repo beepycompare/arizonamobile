@@ -7,16 +7,14 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: MainScaffold.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$MainScaffoldKt {
     public static final ComposableSingletons$MainScaffoldKt INSTANCE = new ComposableSingletons$MainScaffoldKt();
     private static Function2<Composer, Integer, Unit> lambda$1170228028 = ComposableLambdaKt.composableLambdaInstance(1170228028, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda_1170228028$lambda$0;
-            lambda_1170228028$lambda$0 = ComposableSingletons$MainScaffoldKt.lambda_1170228028$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda_1170228028$lambda$0;
+            return ComposableSingletons$MainScaffoldKt.lambda_1170228028$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
 
@@ -24,9 +22,7 @@ public final class ComposableSingletons$MainScaffoldKt {
     private static Function2<Composer, Integer, Unit> f129lambda$863503316 = ComposableLambdaKt.composableLambdaInstance(-863503316, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda__863503316$lambda$0;
-            lambda__863503316$lambda$0 = ComposableSingletons$MainScaffoldKt.lambda__863503316$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda__863503316$lambda$0;
+            return ComposableSingletons$MainScaffoldKt.lambda__863503316$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
 
@@ -34,27 +30,25 @@ public final class ComposableSingletons$MainScaffoldKt {
     private static Function2<Composer, Integer, Unit> f128lambda$1632204659 = ComposableLambdaKt.composableLambdaInstance(-1632204659, false, new Function2() { // from class: com.miami.game.core.app.root.ComposableSingletons$MainScaffoldKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda__1632204659$lambda$0;
-            lambda__1632204659$lambda$0 = ComposableSingletons$MainScaffoldKt.lambda__1632204659$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda__1632204659$lambda$0;
+            return ComposableSingletons$MainScaffoldKt.lambda__1632204659$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
 
-    /* renamed from: getLambda$-1632204659$app_root_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m10049getLambda$1632204659$app_root_release() {
+    /* renamed from: getLambda$-1632204659$app_root  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m9070getLambda$1632204659$app_root() {
         return f128lambda$1632204659;
     }
 
-    /* renamed from: getLambda$-863503316$app_root_release  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m10050getLambda$863503316$app_root_release() {
+    /* renamed from: getLambda$-863503316$app_root  reason: not valid java name */
+    public final Function2<Composer, Integer, Unit> m9071getLambda$863503316$app_root() {
         return f129lambda$863503316;
     }
 
-    public final Function2<Composer, Integer, Unit> getLambda$1170228028$app_root_release() {
+    public final Function2<Composer, Integer, Unit> getLambda$1170228028$app_root() {
         return lambda$1170228028;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_1170228028$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MainScaffold.kt#v5ppa4");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -70,7 +64,7 @@ public final class ComposableSingletons$MainScaffoldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__863503316$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MainScaffold.kt#v5ppa4");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -86,7 +80,7 @@ public final class ComposableSingletons$MainScaffoldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1632204659$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MainScaffold.kt#v5ppa4");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {

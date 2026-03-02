@@ -137,10 +137,11 @@ public final class FlowableFlatMapCompletable<T> extends AbstractFlowableWithUps
         public void onComplete() {
             if (decrementAndGet() == 0) {
                 Throwable terminate = this.errors.terminate();
+                Subscriber<? super T> subscriber = this.downstream;
                 if (terminate != null) {
-                    this.downstream.onError(terminate);
+                    subscriber.onError(terminate);
                 } else {
-                    this.downstream.onComplete();
+                    subscriber.onComplete();
                 }
             } else if (this.maxConcurrency != Integer.MAX_VALUE) {
                 this.upstream.request(1L);

@@ -65,7 +65,7 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         }
         final int first = i + this.$yearRange.getFirst();
         String localString$default = CalendarLocale_jvmKt.toLocalString$default(first, 0, 0, false, this.$calendarModel.getLocale(), 7, null);
-        Modifier m970requiredSizeVpY3zN4 = SizeKt.m970requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3942getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3941getSelectionYearContainerHeightD9Ej5fM());
+        Modifier m858requiredSizeVpY3zN4 = SizeKt.m858requiredSizeVpY3zN4(Modifier.Companion, DatePickerModalTokens.INSTANCE.m3326getSelectionYearContainerWidthD9Ej5fM(), DatePickerModalTokens.INSTANCE.m3325getSelectionYearContainerHeightD9Ej5fM());
         boolean z = first == this.$displayedYear;
         boolean z2 = first == this.$currentYear;
         ComposerKt.sourceInformationMarkerStart(composer, -236876686, "CC(remember):DatePicker.kt#9igjgp");
@@ -76,9 +76,7 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
             rememberedValue = new Function0() { // from class: androidx.compose.material3.DatePickerKt$YearPicker$1$1$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DatePickerKt$YearPicker$1$1$1$1.invoke$lambda$1$lambda$0(Function1.this, first);
-                    return invoke$lambda$1$lambda$0;
+                    return DatePickerKt$YearPicker$1$1$1$1.invoke$lambda$1$lambda$0(Function1.this, first);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -86,15 +84,15 @@ public final class DatePickerKt$YearPicker$1$1$1$1 implements Function4<LazyGrid
         ComposerKt.sourceInformationMarkerEnd(composer);
         boolean isSelectableYear = this.$selectableDates.isSelectableYear(first);
         Strings.Companion companion = Strings.Companion;
-        String format = String.format(Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{localString$default}, 1));
+        String format = String.format(Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_picker_navigate_to_year_description), composer, 0), Arrays.copyOf(new Object[]{localString$default}, 1));
         Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        DatePickerKt.Year(localString$default, m970requiredSizeVpY3zN4, z, z2, (Function0) rememberedValue, isSelectableYear, format, this.$colors, composer, 48);
+        DatePickerKt.Year(localString$default, m858requiredSizeVpY3zN4, z, z2, (Function0) rememberedValue, isSelectableYear, format, this.$colors, composer, 48);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(Function1 function1, int i) {
         function1.invoke(Integer.valueOf(i));
         return Unit.INSTANCE;

@@ -34,10 +34,12 @@ public final class zzaf implements zzao {
 
     @Override // com.google.android.gms.internal.measurement.zzao
     public final zzao zzcA(String str, zzg zzgVar, List list) {
-        if ("toString".equals(str)) {
-            return new zzas(Boolean.toString(this.zza));
+        boolean equals = "toString".equals(str);
+        boolean z = this.zza;
+        if (!equals) {
+            throw new IllegalArgumentException(String.format("%s.%s is not a function.", Boolean.toString(z), str));
         }
-        throw new IllegalArgumentException(String.format("%s.%s is not a function.", Boolean.toString(this.zza), str));
+        return new zzas(Boolean.toString(z));
     }
 
     @Override // com.google.android.gms.internal.measurement.zzao

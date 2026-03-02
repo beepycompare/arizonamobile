@@ -31,16 +31,15 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
     private static final Saver<SaveableStateHolderImpl, ?> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.runtime.saveable.SaveableStateHolderImpl$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Map Saver$lambda$0;
-            Saver$lambda$0 = SaveableStateHolderImpl.Saver$lambda$0((SaverScope) obj, (SaveableStateHolderImpl) obj2);
-            return Saver$lambda$0;
+            Map saveAll;
+            SaverScope saverScope = (SaverScope) obj;
+            saveAll = ((SaveableStateHolderImpl) obj2).saveAll();
+            return saveAll;
         }
     }, new Function1() { // from class: androidx.compose.runtime.saveable.SaveableStateHolderImpl$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            SaveableStateHolderImpl Saver$lambda$1;
-            Saver$lambda$1 = SaveableStateHolderImpl.Saver$lambda$1((Map) obj);
-            return Saver$lambda$1;
+            return SaveableStateHolderImpl.Saver$lambda$1((Map) obj);
         }
     });
     private final Function1<Object, Boolean> canBeSaved;
@@ -52,7 +51,7 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
         this(null, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SaveableStateProvider$lambda$1(SaveableStateHolderImpl saveableStateHolderImpl, Object obj, Function2 function2, int i, Composer composer, int i2) {
         saveableStateHolderImpl.SaveableStateProvider(obj, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -64,9 +63,7 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
         this.canBeSaved = new Function1() { // from class: androidx.compose.runtime.saveable.SaveableStateHolderImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean canBeSaved$lambda$0;
-                canBeSaved$lambda$0 = SaveableStateHolderImpl.canBeSaved$lambda$0(SaveableStateHolderImpl.this, obj);
-                return Boolean.valueOf(canBeSaved$lambda$0);
+                return Boolean.valueOf(SaveableStateHolderImpl.canBeSaved$lambda$0(SaveableStateHolderImpl.this, obj));
             }
         };
     }
@@ -83,7 +80,7 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
         this.parentSaveableStateRegistry = saveableStateRegistry;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean canBeSaved$lambda$0(SaveableStateHolderImpl saveableStateHolderImpl, Object obj) {
         SaveableStateRegistry saveableStateRegistry = saveableStateHolderImpl.parentSaveableStateRegistry;
         if (saveableStateRegistry != null) {
@@ -158,9 +155,7 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.saveable.SaveableStateHolderImpl$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit SaveableStateProvider$lambda$1;
-                    SaveableStateProvider$lambda$1 = SaveableStateHolderImpl.SaveableStateProvider$lambda$1(SaveableStateHolderImpl.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SaveableStateProvider$lambda$1;
+                    return SaveableStateHolderImpl.SaveableStateProvider$lambda$1(SaveableStateHolderImpl.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -190,7 +185,8 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
         };
     }
 
-    private final Map<Object, Map<String, List<Object>>> saveAll() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Map<Object, Map<String, List<Object>>> saveAll() {
         Map<Object, Map<String, List<Object>>> map = this.savedStates;
         MutableScatterMap<Object, SaveableStateRegistry> mutableScatterMap = this.registries;
         Object[] objArr = mutableScatterMap.keys;
@@ -259,12 +255,7 @@ public final class SaveableStateHolderImpl implements SaveableStateHolder {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Map Saver$lambda$0(SaverScope saverScope, SaveableStateHolderImpl saveableStateHolderImpl) {
-        return saveableStateHolderImpl.saveAll();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SaveableStateHolderImpl Saver$lambda$1(Map map) {
         return new SaveableStateHolderImpl(map);
     }

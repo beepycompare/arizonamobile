@@ -59,9 +59,9 @@ public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda i
             restartable = AnchoredDraggableKt.restartable(new Function0() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$anchoredDrag$4$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Pair invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = AnchoredDraggableState$anchoredDrag$4.invokeSuspend$lambda$0(AnchoredDraggableState.this);
-                    return invokeSuspend$lambda$0;
+                    Pair pair;
+                    pair = TuplesKt.to(r0.getAnchors(), AnchoredDraggableState.this.getTargetValue());
+                    return pair;
                 }
             }, new AnonymousClass2(this.$block, this.this$0, null), this);
             if (restartable == coroutine_suspended) {
@@ -142,10 +142,5 @@ public final class AnchoredDraggableState$anchoredDrag$4 extends SuspendLambda i
             }
             return Unit.INSTANCE;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Pair invokeSuspend$lambda$0(AnchoredDraggableState anchoredDraggableState) {
-        return TuplesKt.to(anchoredDraggableState.getAnchors(), anchoredDraggableState.getTargetValue());
     }
 }

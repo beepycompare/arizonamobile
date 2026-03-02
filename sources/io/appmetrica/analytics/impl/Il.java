@@ -1,13 +1,13 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Il extends AbstractC0469o5 {
-    public Il(C0128am c0128am, C0257fm c0257fm, Zl zl) {
-        super(c0128am, c0257fm, zl);
+public final class Il extends AbstractC0468o5 {
+    public Il(C0127am c0127am, C0256fm c0256fm, Zl zl) {
+        super(c0127am, c0256fm, zl);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0469o5
+    @Override // io.appmetrica.analytics.impl.AbstractC0468o5
     public final synchronized void a(Zl zl) {
-        a(new L5(c(), C0449na.I.v(), C0449na.I.s(), ((Zl) b()).mergeFrom(zl)));
+        a(new L5(c(), C0448na.I.v(), C0448na.I.s(), ((Zl) b()).mergeFrom(zl)));
         e();
     }
 }

@@ -58,9 +58,7 @@ public final class CarouselState$animateScrollToItem$2$1 extends SuspendLambda i
             animateScrollToPage = CarouselStateKt.animateScrollToPage(LazyLayoutScrollScope, carouselPagerState, this.$targetPage, 0.0f, this.$animationSpec, new Function2() { // from class: androidx.compose.material3.carousel.CarouselState$animateScrollToItem$2$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = CarouselState$animateScrollToItem$2$1.invokeSuspend$lambda$0(CarouselPagerState.this, (ScrollScope) obj2, ((Integer) obj3).intValue());
-                    return invokeSuspend$lambda$0;
+                    return CarouselState$animateScrollToItem$2$1.invokeSuspend$lambda$0(CarouselPagerState.this, (ScrollScope) obj2, ((Integer) obj3).intValue());
                 }
             }, this);
             if (animateScrollToPage == coroutine_suspended) {
@@ -74,7 +72,7 @@ public final class CarouselState$animateScrollToItem$2$1 extends SuspendLambda i
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(CarouselPagerState carouselPagerState, ScrollScope scrollScope, int i) {
         carouselPagerState.updateTargetPage(scrollScope, i);
         return Unit.INSTANCE;

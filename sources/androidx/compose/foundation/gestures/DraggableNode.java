@@ -49,7 +49,7 @@ public final class DraggableNode extends DragGestureNode {
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
-    public void mo485onDragStartedk4lQ0M(long j) {
+    public void mo423onDragStartedk4lQ0M(long j) {
         Function3 function3;
         if (isAttached()) {
             Function3<? super CoroutineScope, ? super Offset, ? super Continuation<? super Unit>, ? extends Object> function32 = this.onDragStarted;
@@ -105,13 +105,13 @@ public final class DraggableNode extends DragGestureNode {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-AH228Gc  reason: not valid java name */
-    public final long m572reverseIfNeededAH228Gc(long j) {
-        return Velocity.m8502timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
+    public final long m492reverseIfNeededAH228Gc(long j) {
+        return Velocity.m7799timesadjELrA(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: reverseIfNeeded-MK-Hz9U  reason: not valid java name */
-    public final long m573reverseIfNeededMKHz9U(long j) {
-        return Offset.m5186timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
+    public final long m493reverseIfNeededMKHz9U(long j) {
+        return Offset.m4534timestuRUvjQ(j, this.reverseDirection ? -1.0f : 1.0f);
     }
 }

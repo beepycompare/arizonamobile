@@ -59,7 +59,7 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: TuningAutoScreen.kt */
-@Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0002\b\u000b\u0018\u00002\u00020\u00012\u00020\u0002:\u0001NB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\b\u00108\u001a\u00020\u0010H\u0002J\u0010\u00109\u001a\u00020\u00102\u0006\u0010:\u001a\u00020\u001bH\u0002J\u0016\u0010;\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0016\u0010=\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0010\u0010>\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0010\u0010?\u001a\u00020\u00102\u0006\u0010:\u001a\u000202H\u0002J\u0016\u0010@\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020\u001b0)H\u0002J\b\u0010A\u001a\u00020\u0010H\u0002J\u0018\u0010B\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0016J\b\u0010F\u001a\u00020\u0010H\u0002J\u0010\u0010G\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010H\u001a\u00020\u0010H\u0002J\u0016\u0010I\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020*0)H\u0002J\u0016\u0010J\u001a\b\u0012\u0004\u0012\u00020,0)2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0018\u0010L\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0002J\b\u0010M\u001a\u00020\u0010H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u0002000\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u0002020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006O"}, d2 = {"Lru/mrlargha/commonui/elements/tuningAuto/presentation/TuningAutoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TuningAutoScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "setVisible", "", "visible", "", "categoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoriesMenuAdapter;", "subCategoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/SubCategoriesMenuAdapter;", "itemComponentsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoryComponentsAdapter;", "categoryComponentsList", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryComponents;", "autoCharsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/AutoCharsAdapter;", "tintSelectColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TintedColorAdapter;", "selectFirstColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TuningSelectColorAdapter;", "selectSecondColorAdapter", "userCartAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/UserCartAdapter;", "currentPageId", "firstSelectedColorIndex", "secondSelectedColorIndex", "wheelSettings", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/WheelSettings;", "listAllColors", "Lru/mrlargha/commonui/elements/tuningAuto/domain/SelectedColors;", "cartItems", "selectedCategoryComponent", "listTintedWindows", "Lru/mrlargha/commonui/elements/tuningAuto/domain/TintedWindows;", "categoriesList", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryInfo;", "selectedTintColor", "handler", "Landroid/os/Handler;", "selectedSubCategory", "unselectTintColorList", "initAdapters", "setTintedWindowInfo", "item", "initMenuCategories", "list", "initSubMenuCategories", "additionalInfoUiVisibility", "showProperUi", "refreshComponentsList", "initAutoColorAdapter", "onBackendMessage", "data", "", "subId", "resetAllValues", "cartUiVisibility", "showCartListUi", "updateWheelSettings", "updateSelectColorIndex", "itemIndex", "sendData", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¢\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0002\b\u000b\u0018\u00002\u00020\u00012\u00020\u0002:\u0001NB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\b\u00108\u001a\u00020\u0010H\u0002J\u0010\u00109\u001a\u00020\u00102\u0006\u0010:\u001a\u00020\u001bH\u0002J\u0016\u0010;\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0016\u0010=\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u0002020)H\u0002J\u0010\u0010>\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0010\u0010?\u001a\u00020\u00102\u0006\u0010:\u001a\u000202H\u0002J\u0016\u0010@\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020\u001b0)H\u0002J\b\u0010A\u001a\u00020\u0010H\u0002J\u0018\u0010B\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0016J\b\u0010F\u001a\u00020\u0010H\u0002J\u0010\u0010G\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010H\u001a\u00020\u0010H\u0002J\u0016\u0010I\u001a\u00020\u00102\f\u0010<\u001a\b\u0012\u0004\u0012\u00020*0)H\u0002J\u0016\u0010J\u001a\b\u0012\u0004\u0012\u00020,0)2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0018\u0010L\u001a\u00020\u00102\u0006\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0002J\b\u0010M\u001a\u00020\u0010H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020!X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u0002000\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u0002020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00106\u001a\u0004\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020,0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006O"}, d2 = {"Lru/mrlargha/commonui/elements/tuningAuto/presentation/TuningAutoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TuningAutoScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "setVisible", "", "visible", "", "categoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoriesMenuAdapter;", "subCategoriesMenuAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/SubCategoriesMenuAdapter;", "itemComponentsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/CategoryComponentsAdapter;", "categoryComponentsList", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryComponents;", "autoCharsAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/AutoCharsAdapter;", "tintSelectColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TintedColorAdapter;", "selectFirstColorAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/TuningSelectColorAdapter;", "selectSecondColorAdapter", "userCartAdapter", "Lru/mrlargha/commonui/elements/tuningAuto/presentation/adapter/UserCartAdapter;", "currentPageId", "firstSelectedColorIndex", "secondSelectedColorIndex", "wheelSettings", "", "Lru/mrlargha/commonui/elements/tuningAuto/domain/WheelSettings;", "listAllColors", "Lru/mrlargha/commonui/elements/tuningAuto/domain/SelectedColors;", "cartItems", "selectedCategoryComponent", "listTintedWindows", "Lru/mrlargha/commonui/elements/tuningAuto/domain/TintedWindows;", "categoriesList", "Lru/mrlargha/commonui/elements/tuningAuto/domain/CategoryInfo;", "selectedTintColor", "handler", "Landroid/os/Handler;", "selectedSubCategory", "unselectTintColorList", "initAdapters", "setTintedWindowInfo", "item", "initMenuCategories", "list", "initSubMenuCategories", "additionalInfoUiVisibility", "showProperUi", "refreshComponentsList", "initAutoColorAdapter", "onBackendMessage", "data", "", "subId", "resetAllValues", "cartUiVisibility", "showCartListUi", "updateWheelSettings", "updateSelectColorIndex", "itemIndex", "sendData", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TuningAutoScreen extends SAMPUIElement implements InterfaceController {
     private final AutoCharsAdapter autoCharsAdapter;
@@ -88,7 +88,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     private final UserCartAdapter userCartAdapter;
     private List<WheelSettings> wheelSettings;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$10(View view) {
     }
 
@@ -109,9 +109,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.userCartAdapter = new UserCartAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit userCartAdapter$lambda$0;
-                userCartAdapter$lambda$0 = TuningAutoScreen.userCartAdapter$lambda$0(TuningAutoScreen.this, (CategoryComponents) obj);
-                return userCartAdapter$lambda$0;
+                return TuningAutoScreen.userCartAdapter$lambda$0(TuningAutoScreen.this, (CategoryComponents) obj);
             }
         });
         this.currentPageId = -1;
@@ -128,13 +126,13 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         bind.tvClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningAutoScreen._init_$lambda$0(TuningAutoScreen.this, view);
+                TuningAutoScreen.this.sendData(StringKt.toStringJson(""), 11);
             }
         });
         bind.btnExit.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningAutoScreen._init_$lambda$1(TuningAutoScreen.this, view);
+                TuningAutoScreen.this.sendData(StringKt.toStringJson(""), 11);
             }
         });
         initAdapters();
@@ -160,13 +158,13 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         bind.tintSettingsLayout.btnMinus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningAutoScreen._init_$lambda$5(TuningAutoScreen.this, view);
+                TuningAutoScreen.this.binding.tintSettingsLayout.seekBar.incrementProgressBy(-5);
             }
         });
         bind.tintSettingsLayout.btnPlus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningAutoScreen._init_$lambda$6(TuningAutoScreen.this, view);
+                TuningAutoScreen.this.binding.tintSettingsLayout.seekBar.incrementProgressBy(5);
             }
         });
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
@@ -209,7 +207,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         bind.userCartLayout.btnBuyItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TuningAutoScreen._init_$lambda$9(TuningAutoScreen.this, view);
+                TuningAutoScreen.this.sendData(StringKt.toStringJson(""), 9);
             }
         });
         bind.bgUserCart.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda25
@@ -231,7 +229,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.binding.parentLayout.setVisibility(z ? 0 : 8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit userCartAdapter$lambda$0(TuningAutoScreen tuningAutoScreen, CategoryComponents item) {
         Intrinsics.checkNotNullParameter(item, "item");
         Integer id = item.getId();
@@ -239,24 +237,14 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$0(TuningAutoScreen tuningAutoScreen, View view) {
-        tuningAutoScreen.sendData(StringKt.toStringJson(""), 11);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(TuningAutoScreen tuningAutoScreen, View view) {
-        tuningAutoScreen.sendData(StringKt.toStringJson(""), 11);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(TuningAutoScreen tuningAutoScreen, View view) {
         Integer id;
         CategoryComponents categoryComponents = tuningAutoScreen.selectedCategoryComponent;
         tuningAutoScreen.sendData(StringKt.toStringJson(new UpdateComponent((categoryComponents == null || (id = categoryComponents.getId()) == null) ? 0 : id.intValue())), 2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$3(Activity activity, TuningAutoScreen tuningAutoScreen, View view) {
         view.setBackgroundTintList(ColorStateList.valueOf(activity.getColor(R.color.grey_type2)));
         tuningAutoScreen.binding.selectColorLayout.btnSecondColor.setBackgroundTintList(ColorStateList.valueOf(activity.getColor(R.color.grey_type5)));
@@ -283,7 +271,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         tuningSelectColorAdapter2.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$4(Activity activity, TuningAutoScreen tuningAutoScreen, View view) {
         view.setBackgroundTintList(ColorStateList.valueOf(activity.getColor(R.color.grey_type2)));
         tuningAutoScreen.binding.selectColorLayout.btnFirstColor.setBackgroundTintList(ColorStateList.valueOf(activity.getColor(R.color.grey_type5)));
@@ -310,27 +298,12 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         tuningSelectColorAdapter2.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(TuningAutoScreen tuningAutoScreen, View view) {
-        tuningAutoScreen.binding.tintSettingsLayout.seekBar.incrementProgressBy(-5);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(TuningAutoScreen tuningAutoScreen, View view) {
-        tuningAutoScreen.binding.tintSettingsLayout.seekBar.incrementProgressBy(5);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$8(TuningAutoScreen tuningAutoScreen, View view) {
         tuningAutoScreen.sendData(StringKt.toStringJson(""), 12);
         tuningAutoScreen.cartUiVisibility(false);
         tuningAutoScreen.binding.tvCartTotal.setText("0");
         tuningAutoScreen.binding.tvCartCount.setText("0");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(TuningAutoScreen tuningAutoScreen, View view) {
-        tuningAutoScreen.sendData(StringKt.toStringJson(""), 9);
     }
 
     private final void initAdapters() {
@@ -339,9 +312,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.categoriesMenuAdapter = new CategoriesMenuAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$0;
-                initAdapters$lambda$0 = TuningAutoScreen.initAdapters$lambda$0(TuningAutoScreen.this, (CategoryInfo) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$0;
+                return TuningAutoScreen.initAdapters$lambda$0(TuningAutoScreen.this, (CategoryInfo) obj, ((Integer) obj2).intValue());
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.rvMenu;
@@ -355,9 +326,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.subCategoriesMenuAdapter = new SubCategoriesMenuAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$1;
-                initAdapters$lambda$1 = TuningAutoScreen.initAdapters$lambda$1(TuningAutoScreen.this, (CategoryInfo) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$1;
+                return TuningAutoScreen.initAdapters$lambda$1(TuningAutoScreen.this, (CategoryInfo) obj, ((Integer) obj2).intValue());
             }
         }, getTargetActivity());
         RecyclerView recyclerView2 = this.binding.rvSubMenu;
@@ -370,16 +339,12 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.itemComponentsAdapter = new CategoryComponentsAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$2;
-                initAdapters$lambda$2 = TuningAutoScreen.initAdapters$lambda$2(TuningAutoScreen.this, (CategoryComponents) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$2;
+                return TuningAutoScreen.initAdapters$lambda$2(TuningAutoScreen.this, (CategoryComponents) obj, ((Integer) obj2).intValue());
             }
         }, getTargetActivity(), new Function1() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initAdapters$lambda$3;
-                initAdapters$lambda$3 = TuningAutoScreen.initAdapters$lambda$3(TuningAutoScreen.this, (CategoryComponents) obj);
-                return initAdapters$lambda$3;
+                return TuningAutoScreen.initAdapters$lambda$3(TuningAutoScreen.this, (CategoryComponents) obj);
             }
         });
         RecyclerView recyclerView3 = this.binding.rvCategoryComponents;
@@ -392,9 +357,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.tintSelectColorAdapter = new TintedColorAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$4;
-                initAdapters$lambda$4 = TuningAutoScreen.initAdapters$lambda$4(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$4;
+                return TuningAutoScreen.initAdapters$lambda$4(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
             }
         });
         RecyclerView recyclerView4 = this.binding.tintSettingsLayout.rvColors;
@@ -407,7 +370,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         recyclerView4.setAdapter(tintedColorAdapter);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$0(TuningAutoScreen tuningAutoScreen, CategoryInfo item, int i) {
         Integer id;
         Intrinsics.checkNotNullParameter(item, "item");
@@ -464,7 +427,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$1(TuningAutoScreen tuningAutoScreen, CategoryInfo item, int i) {
         Intrinsics.checkNotNullParameter(item, "item");
         SubCategoriesMenuAdapter subCategoriesMenuAdapter = tuningAutoScreen.subCategoriesMenuAdapter;
@@ -515,7 +478,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$2(TuningAutoScreen tuningAutoScreen, CategoryComponents item, int i) {
         Intrinsics.checkNotNullParameter(item, "item");
         CategoryComponentsAdapter categoryComponentsAdapter = tuningAutoScreen.itemComponentsAdapter;
@@ -557,7 +520,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$3(TuningAutoScreen tuningAutoScreen, CategoryComponents it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getInCart()) {
@@ -570,7 +533,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$4(TuningAutoScreen tuningAutoScreen, SelectedColors item, int i) {
         Integer id;
         Intrinsics.checkNotNullParameter(item, "item");
@@ -694,7 +657,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void initMenuCategories$lambda$1(TuningAutoScreen tuningAutoScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = tuningAutoScreen.binding.rvMenu.findViewHolderForAdapterPosition(0);
@@ -882,9 +845,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.selectFirstColorAdapter = new TuningSelectColorAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAutoColorAdapter$lambda$0;
-                initAutoColorAdapter$lambda$0 = TuningAutoScreen.initAutoColorAdapter$lambda$0(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
-                return initAutoColorAdapter$lambda$0;
+                return TuningAutoScreen.initAutoColorAdapter$lambda$0(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
             }
         });
         RecyclerView recyclerView = this.binding.selectColorLayout.rvFirstColors;
@@ -898,9 +859,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.selectSecondColorAdapter = new TuningSelectColorAdapter(new Function2() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAutoColorAdapter$lambda$1;
-                initAutoColorAdapter$lambda$1 = TuningAutoScreen.initAutoColorAdapter$lambda$1(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
-                return initAutoColorAdapter$lambda$1;
+                return TuningAutoScreen.initAutoColorAdapter$lambda$1(TuningAutoScreen.this, (SelectedColors) obj, ((Integer) obj2).intValue());
             }
         });
         RecyclerView recyclerView2 = this.binding.selectColorLayout.rvSecondColors;
@@ -913,7 +872,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         recyclerView2.setAdapter(tuningSelectColorAdapter2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAutoColorAdapter$lambda$0(TuningAutoScreen tuningAutoScreen, SelectedColors selectedColors, int i) {
         Intrinsics.checkNotNullParameter(selectedColors, "<unused var>");
         TuningSelectColorAdapter tuningSelectColorAdapter = tuningAutoScreen.selectFirstColorAdapter;
@@ -962,7 +921,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAutoColorAdapter$lambda$1(TuningAutoScreen tuningAutoScreen, SelectedColors selectedColors, int i) {
         Intrinsics.checkNotNullParameter(selectedColors, "<unused var>");
         TuningSelectColorAdapter tuningSelectColorAdapter = tuningAutoScreen.selectSecondColorAdapter;
@@ -1202,7 +1161,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$0(TuningAutoScreen tuningAutoScreen, List list) {
         ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
@@ -1432,7 +1391,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     }
 
     /* compiled from: TuningAutoScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/tuningAuto/presentation/TuningAutoScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/tuningAuto/presentation/TuningAutoScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.TUNING_SCREEN);

@@ -10,7 +10,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextLayoutStateKt {
     /* renamed from: fromTextLayoutToCore-Uv8p0NA  reason: not valid java name */
-    public static final long m1682fromTextLayoutToCoreUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1455fromTextLayoutToCoreUv8p0NA(TextLayoutState textLayoutState, long j) {
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             Offset offset = null;
@@ -24,11 +24,11 @@ public final class TextLayoutStateKt {
                         coreNodeCoordinates = null;
                     }
                     if (coreNodeCoordinates != null) {
-                        offset = Offset.m5168boximpl(coreNodeCoordinates.mo6884localPositionOfR5De75A(textLayoutNodeCoordinates, j));
+                        offset = Offset.m4516boximpl(coreNodeCoordinates.mo6225localPositionOfR5De75A(textLayoutNodeCoordinates, j));
                     }
                 }
                 if (offset != null) {
-                    return offset.m5189unboximpl();
+                    return offset.m4537unboximpl();
                 }
             }
         }
@@ -36,27 +36,27 @@ public final class TextLayoutStateKt {
     }
 
     /* renamed from: fromDecorationToTextLayout-Uv8p0NA  reason: not valid java name */
-    public static final long m1681fromDecorationToTextLayoutUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1454fromDecorationToTextLayoutUv8p0NA(TextLayoutState textLayoutState, long j) {
         Offset offset;
         LayoutCoordinates textLayoutNodeCoordinates = textLayoutState.getTextLayoutNodeCoordinates();
         if (textLayoutNodeCoordinates != null) {
             LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
             if (decoratorNodeCoordinates != null) {
-                offset = Offset.m5168boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo6884localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
+                offset = Offset.m4516boximpl((textLayoutNodeCoordinates.isAttached() && decoratorNodeCoordinates.isAttached()) ? textLayoutNodeCoordinates.mo6225localPositionOfR5De75A(decoratorNodeCoordinates, j) : j);
             } else {
                 offset = null;
             }
             if (offset != null) {
-                return offset.m5189unboximpl();
+                return offset.m4537unboximpl();
             }
         }
         return j;
     }
 
     /* renamed from: fromWindowToDecoration-Uv8p0NA  reason: not valid java name */
-    public static final long m1683fromWindowToDecorationUv8p0NA(TextLayoutState textLayoutState, long j) {
+    public static final long m1456fromWindowToDecorationUv8p0NA(TextLayoutState textLayoutState, long j) {
         LayoutCoordinates decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates();
-        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo6892windowToLocalMKHz9U(j);
+        return (decoratorNodeCoordinates == null || !decoratorNodeCoordinates.isAttached()) ? j : decoratorNodeCoordinates.mo6233windowToLocalMKHz9U(j);
     }
 
     public static final Rect fromTextLayoutToDecoration(TextLayoutState textLayoutState, Rect rect) {
@@ -69,7 +69,7 @@ public final class TextLayoutStateKt {
             if (textLayoutNodeCoordinates != null && (decoratorNodeCoordinates = textLayoutState.getDecoratorNodeCoordinates()) != null) {
                 LayoutCoordinates layoutCoordinates = decoratorNodeCoordinates.isAttached() ? decoratorNodeCoordinates : null;
                 if (layoutCoordinates != null) {
-                    return rect.m5216translatek4lQ0M(layoutCoordinates.localBoundingBoxOf(textLayoutNodeCoordinates, false).m5214getTopLeftF1C5BW0());
+                    return rect.m4564translatek4lQ0M(layoutCoordinates.localBoundingBoxOf(textLayoutNodeCoordinates, false).m4562getTopLeftF1C5BW0());
                 }
             }
         }
@@ -77,7 +77,7 @@ public final class TextLayoutStateKt {
     }
 
     /* renamed from: coerceIn-3MmeM6k  reason: not valid java name */
-    public static final long m1680coerceIn3MmeM6k(long j, Rect rect) {
+    public static final long m1453coerceIn3MmeM6k(long j, Rect rect) {
         float right;
         float bottom;
         int i = (int) (j >> 32);
@@ -92,6 +92,6 @@ public final class TextLayoutStateKt {
         } else {
             bottom = Float.intBitsToFloat(i2) > rect.getBottom() ? rect.getBottom() : Float.intBitsToFloat(i2);
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(right) << 32) | (Float.floatToRawIntBits(bottom) & 4294967295L));
     }
 }

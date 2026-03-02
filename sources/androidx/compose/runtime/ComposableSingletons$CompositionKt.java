@@ -12,17 +12,13 @@ public final class ComposableSingletons$CompositionKt {
     private static Function2<Composer, Integer, Unit> lambda$954879418 = ComposableLambdaKt.composableLambdaInstance(954879418, false, new Function2() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda_954879418$lambda$0;
-            lambda_954879418$lambda$0 = ComposableSingletons$CompositionKt.lambda_954879418$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda_954879418$lambda$0;
+            return ComposableSingletons$CompositionKt.lambda_954879418$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
     private static Function2<Composer, Integer, Unit> lambda$1918065384 = ComposableLambdaKt.composableLambdaInstance(1918065384, false, new Function2() { // from class: androidx.compose.runtime.ComposableSingletons$CompositionKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit lambda_1918065384$lambda$0;
-            lambda_1918065384$lambda$0 = ComposableSingletons$CompositionKt.lambda_1918065384$lambda$0((Composer) obj, ((Integer) obj2).intValue());
-            return lambda_1918065384$lambda$0;
+            return ComposableSingletons$CompositionKt.lambda_1918065384$lambda$0((Composer) obj, ((Integer) obj2).intValue());
         }
     });
 
@@ -34,7 +30,7 @@ public final class ComposableSingletons$CompositionKt {
         return lambda$954879418;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_954879418$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:Composition.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -50,7 +46,7 @@ public final class ComposableSingletons$CompositionKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_1918065384$lambda$0(Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:Composition.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {

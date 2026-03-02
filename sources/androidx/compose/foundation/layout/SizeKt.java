@@ -25,7 +25,7 @@ public final class SizeKt {
     private static final WrapContentElement WrapContentSizeTopStart = WrapContentElement.Companion.size(Alignment.Companion.getTopStart(), false);
 
     /* renamed from: width-3ABfNKs */
-    public static final Modifier m981width3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m869width3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(f, 0.0f, f, 0.0f, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$width-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -41,13 +41,13 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("width");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
 
     /* renamed from: height-3ABfNKs */
-    public static final Modifier m962height3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m850height3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(0.0f, f, 0.0f, f, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$height-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -63,29 +63,29 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("height");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: size-6HolHcs */
-    public static final Modifier m977size6HolHcs(Modifier modifier, long j) {
-        return m978sizeVpY3zN4(modifier, DpSize.m8356getWidthD9Ej5fM(j), DpSize.m8354getHeightD9Ej5fM(j));
+    public static final Modifier m865size6HolHcs(Modifier modifier, long j) {
+        return m866sizeVpY3zN4(modifier, DpSize.m7653getWidthD9Ej5fM(j), DpSize.m7651getHeightD9Ej5fM(j));
     }
 
     /* renamed from: widthIn-VpY3zN4$default */
-    public static /* synthetic */ Modifier m983widthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m871widthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m982widthInVpY3zN4(modifier, f, f2);
+        return m870widthInVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: widthIn-VpY3zN4 */
-    public static final Modifier m982widthInVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m870widthInVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(f, 0.0f, f2, 0.0f, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$widthIn-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -101,25 +101,25 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("widthIn");
-                inspectorInfo.getProperties().set("min", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
 
     /* renamed from: heightIn-VpY3zN4$default */
-    public static /* synthetic */ Modifier m964heightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m852heightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m963heightInVpY3zN4(modifier, f, f2);
+        return m851heightInVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: heightIn-VpY3zN4 */
-    public static final Modifier m963heightInVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m851heightInVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(0.0f, f, 0.0f, f2, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$heightIn-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -135,31 +135,31 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("heightIn");
-                inspectorInfo.getProperties().set("min", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: sizeIn-qDBjuR0$default */
-    public static /* synthetic */ Modifier m980sizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ Modifier m868sizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            f3 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 8) != 0) {
-            f4 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f4 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m979sizeInqDBjuR0(modifier, f, f2, f3, f4);
+        return m867sizeInqDBjuR0(modifier, f, f2, f3, f4);
     }
 
     /* renamed from: sizeIn-qDBjuR0 */
-    public static final Modifier m979sizeInqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
+    public static final Modifier m867sizeInqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
         return modifier.then(new SizeElement(f, f2, f3, f4, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$sizeIn-qDBjuR0$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -175,16 +175,16 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("sizeIn");
-                inspectorInfo.getProperties().set("minWidth", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("minHeight", Dp.m8256boximpl(f2));
-                inspectorInfo.getProperties().set("maxWidth", Dp.m8256boximpl(f3));
-                inspectorInfo.getProperties().set("maxHeight", Dp.m8256boximpl(f4));
+                inspectorInfo.getProperties().set("minWidth", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("minHeight", Dp.m7553boximpl(f2));
+                inspectorInfo.getProperties().set("maxWidth", Dp.m7553boximpl(f3));
+                inspectorInfo.getProperties().set("maxHeight", Dp.m7553boximpl(f4));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
 
     /* renamed from: requiredWidth-3ABfNKs */
-    public static final Modifier m973requiredWidth3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m861requiredWidth3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(f, 0.0f, f, 0.0f, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredWidth-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -200,13 +200,13 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredWidth");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
 
     /* renamed from: requiredHeight-3ABfNKs */
-    public static final Modifier m965requiredHeight3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m853requiredHeight3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(0.0f, f, 0.0f, f, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredHeight-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -222,29 +222,29 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredHeight");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: requiredSize-6HolHcs */
-    public static final Modifier m969requiredSize6HolHcs(Modifier modifier, long j) {
-        return m970requiredSizeVpY3zN4(modifier, DpSize.m8356getWidthD9Ej5fM(j), DpSize.m8354getHeightD9Ej5fM(j));
+    public static final Modifier m857requiredSize6HolHcs(Modifier modifier, long j) {
+        return m858requiredSizeVpY3zN4(modifier, DpSize.m7653getWidthD9Ej5fM(j), DpSize.m7651getHeightD9Ej5fM(j));
     }
 
     /* renamed from: requiredWidthIn-VpY3zN4$default */
-    public static /* synthetic */ Modifier m975requiredWidthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m863requiredWidthInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m974requiredWidthInVpY3zN4(modifier, f, f2);
+        return m862requiredWidthInVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: requiredWidthIn-VpY3zN4 */
-    public static final Modifier m974requiredWidthInVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m862requiredWidthInVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(f, 0.0f, f2, 0.0f, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredWidthIn-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -260,25 +260,25 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredWidthIn");
-                inspectorInfo.getProperties().set("min", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 10, null));
     }
 
     /* renamed from: requiredHeightIn-VpY3zN4$default */
-    public static /* synthetic */ Modifier m967requiredHeightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m855requiredHeightInVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m966requiredHeightInVpY3zN4(modifier, f, f2);
+        return m854requiredHeightInVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: requiredHeightIn-VpY3zN4 */
-    public static final Modifier m966requiredHeightInVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m854requiredHeightInVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(0.0f, f, 0.0f, f2, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredHeightIn-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -294,31 +294,31 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredHeightIn");
-                inspectorInfo.getProperties().set("min", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("max", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("min", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("max", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), 5, null));
     }
 
     /* renamed from: requiredSizeIn-qDBjuR0$default */
-    public static /* synthetic */ Modifier m972requiredSizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
+    public static /* synthetic */ Modifier m860requiredSizeInqDBjuR0$default(Modifier modifier, float f, float f2, float f3, float f4, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 4) != 0) {
-            f3 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f3 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 8) != 0) {
-            f4 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f4 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m971requiredSizeInqDBjuR0(modifier, f, f2, f3, f4);
+        return m859requiredSizeInqDBjuR0(modifier, f, f2, f3, f4);
     }
 
     /* renamed from: requiredSizeIn-qDBjuR0 */
-    public static final Modifier m971requiredSizeInqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
+    public static final Modifier m859requiredSizeInqDBjuR0(Modifier modifier, final float f, final float f2, final float f3, final float f4) {
         return modifier.then(new SizeElement(f, f2, f3, f4, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredSizeIn-qDBjuR0$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -334,10 +334,10 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSizeIn");
-                inspectorInfo.getProperties().set("minWidth", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("minHeight", Dp.m8256boximpl(f2));
-                inspectorInfo.getProperties().set("maxWidth", Dp.m8256boximpl(f3));
-                inspectorInfo.getProperties().set("maxHeight", Dp.m8256boximpl(f4));
+                inspectorInfo.getProperties().set("minWidth", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("minHeight", Dp.m7553boximpl(f2));
+                inspectorInfo.getProperties().set("maxWidth", Dp.m7553boximpl(f3));
+                inspectorInfo.getProperties().set("maxHeight", Dp.m7553boximpl(f4));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
@@ -442,23 +442,23 @@ public final class SizeKt {
     }
 
     /* renamed from: defaultMinSize-VpY3zN4$default */
-    public static /* synthetic */ Modifier m961defaultMinSizeVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
+    public static /* synthetic */ Modifier m849defaultMinSizeVpY3zN4$default(Modifier modifier, float f, float f2, int i, Object obj) {
         if ((i & 1) != 0) {
-            f = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
         if ((i & 2) != 0) {
-            f2 = Dp.Companion.m8278getUnspecifiedD9Ej5fM();
+            f2 = Dp.Companion.m7575getUnspecifiedD9Ej5fM();
         }
-        return m960defaultMinSizeVpY3zN4(modifier, f, f2);
+        return m848defaultMinSizeVpY3zN4(modifier, f, f2);
     }
 
     /* renamed from: defaultMinSize-VpY3zN4 */
-    public static final Modifier m960defaultMinSizeVpY3zN4(Modifier modifier, float f, float f2) {
+    public static final Modifier m848defaultMinSizeVpY3zN4(Modifier modifier, float f, float f2) {
         return modifier.then(new UnspecifiedConstraintsElement(f, f2, null));
     }
 
     /* renamed from: size-3ABfNKs */
-    public static final Modifier m976size3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m864size3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(f, f, f, f, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$size-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -474,13 +474,13 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("size");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
 
     /* renamed from: size-VpY3zN4 */
-    public static final Modifier m978sizeVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m866sizeVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(f, f2, f, f2, true, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$size-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -496,14 +496,14 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("size");
-                inspectorInfo.getProperties().set("width", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("height", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("width", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("height", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
 
     /* renamed from: requiredSize-3ABfNKs */
-    public static final Modifier m968requiredSize3ABfNKs(Modifier modifier, final float f) {
+    public static final Modifier m856requiredSize3ABfNKs(Modifier modifier, final float f) {
         return modifier.then(new SizeElement(f, f, f, f, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredSize-3ABfNKs$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -519,13 +519,13 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSize");
-                inspectorInfo.setValue(Dp.m8256boximpl(f));
+                inspectorInfo.setValue(Dp.m7553boximpl(f));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }
 
     /* renamed from: requiredSize-VpY3zN4 */
-    public static final Modifier m970requiredSizeVpY3zN4(Modifier modifier, final float f, final float f2) {
+    public static final Modifier m858requiredSizeVpY3zN4(Modifier modifier, final float f, final float f2) {
         return modifier.then(new SizeElement(f, f2, f, f2, false, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.layout.SizeKt$requiredSize-VpY3zN4$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -541,8 +541,8 @@ public final class SizeKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(InspectorInfo inspectorInfo) {
                 inspectorInfo.setName("requiredSize");
-                inspectorInfo.getProperties().set("width", Dp.m8256boximpl(f));
-                inspectorInfo.getProperties().set("height", Dp.m8256boximpl(f2));
+                inspectorInfo.getProperties().set("width", Dp.m7553boximpl(f));
+                inspectorInfo.getProperties().set("height", Dp.m7553boximpl(f2));
             }
         } : InspectableValueKt.getNoInspectorInfo(), null));
     }

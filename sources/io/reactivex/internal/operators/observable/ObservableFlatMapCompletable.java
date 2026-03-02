@@ -116,10 +116,11 @@ public final class ObservableFlatMapCompletable<T> extends AbstractObservableWit
         public void onComplete() {
             if (decrementAndGet() == 0) {
                 Throwable terminate = this.errors.terminate();
+                Observer<? super T> observer = this.downstream;
                 if (terminate != null) {
-                    this.downstream.onError(terminate);
+                    observer.onError(terminate);
                 } else {
-                    this.downstream.onComplete();
+                    observer.onComplete();
                 }
             }
         }

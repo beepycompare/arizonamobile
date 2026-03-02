@@ -19,7 +19,7 @@ public final class AwaiterQueue<A extends Awaiter> {
     public static final int $stable = 8;
     private Throwable failureCause;
     private final Object lock = new Object();
-    private final AtomicInt pendingAwaitersCountUnlocked = AtomicAwaitersCount.m4795constructorimpl();
+    private final AtomicInt pendingAwaitersCountUnlocked = AtomicAwaitersCount.m4160constructorimpl();
     private MutableObjectList<A> awaiters = new MutableObjectList<>(0, 1, null);
     private MutableObjectList<A> spareList = new MutableObjectList<>(0, 1, null);
 
@@ -70,15 +70,13 @@ public final class AwaiterQueue<A extends Awaiter> {
             return new OneShotCancellationHandle(new Function0() { // from class: androidx.compose.runtime.internal.AwaiterQueue$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit addAwaiter$lambda$1;
-                    addAwaiter$lambda$1 = AwaiterQueue.addAwaiter$lambda$1(AwaiterQueue.Awaiter.this, this, intRef);
-                    return addAwaiter$lambda$1;
+                    return AwaiterQueue.addAwaiter$lambda$1(AwaiterQueue.Awaiter.this, this, intRef);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit addAwaiter$lambda$1(Awaiter awaiter, AwaiterQueue awaiterQueue, Ref.IntRef intRef) {
         int i;
         awaiter.cancel();
@@ -100,7 +98,7 @@ public final class AwaiterQueue<A extends Awaiter> {
             AtomicInt atomicInt = this.pendingAwaitersCountUnlocked;
             do {
                 i = atomicInt.get();
-            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4806packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4171packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
             int size = mutableObjectList.getSize();
             for (i2 = 0; i2 < size; i2++) {
                 function1.invoke(mutableObjectList.get(i2));
@@ -127,7 +125,7 @@ public final class AwaiterQueue<A extends Awaiter> {
             AtomicInt atomicInt = this.pendingAwaitersCountUnlocked;
             do {
                 i = atomicInt.get();
-            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4806packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+            } while (!atomicInt.compareAndSet(i, AtomicAwaitersCount.m4171packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
             Unit unit = Unit.INSTANCE;
         }
     }

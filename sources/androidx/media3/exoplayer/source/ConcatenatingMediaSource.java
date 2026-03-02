@@ -87,10 +87,11 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     @Override // androidx.media3.exoplayer.source.MediaSource
     public synchronized Timeline getInitialTimeline() {
         ShuffleOrder shuffleOrder;
-        if (this.shuffleOrder.getLength() != this.mediaSourcesPublic.size()) {
-            shuffleOrder = this.shuffleOrder.cloneAndClear().cloneAndInsert(0, this.mediaSourcesPublic.size());
-        } else {
-            shuffleOrder = this.shuffleOrder;
+        int length = this.shuffleOrder.getLength();
+        int size = this.mediaSourcesPublic.size();
+        shuffleOrder = this.shuffleOrder;
+        if (length != size) {
+            shuffleOrder = shuffleOrder.cloneAndClear().cloneAndInsert(0, this.mediaSourcesPublic.size());
         }
         return new ConcatenatedTimeline(this.mediaSourcesPublic, shuffleOrder, this.isAtomic);
     }

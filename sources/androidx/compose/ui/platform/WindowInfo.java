@@ -10,18 +10,18 @@ public interface WindowInfo {
     boolean isWindowFocused();
 
     /* renamed from: getKeyboardModifiers-k7X9c1A */
-    default int mo7388getKeyboardModifiersk7X9c1A() {
-        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().getValue().m6811unboximpl();
+    default int mo6722getKeyboardModifiersk7X9c1A() {
+        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().getValue().m6152unboximpl();
     }
 
     /* renamed from: getContainerDpSize-MYxV2XQ */
-    default long mo7386getContainerDpSizeMYxV2XQ() {
-        return DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+    default long mo6720getContainerDpSizeMYxV2XQ() {
+        return DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
     }
 
     /* renamed from: getContainerSize-YbymL2g */
-    default long mo7387getContainerSizeYbymL2g() {
+    default long mo6721getContainerSizeYbymL2g() {
         long j = Integer.MIN_VALUE;
-        return IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
+        return IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

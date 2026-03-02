@@ -46,16 +46,15 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
     private static final Saver<SelectionRegistrarImpl, Long> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Long Saver$lambda$0;
-            Saver$lambda$0 = SelectionRegistrarImpl.Saver$lambda$0((SaverScope) obj, (SelectionRegistrarImpl) obj2);
-            return Saver$lambda$0;
+            Long valueOf;
+            SaverScope saverScope = (SaverScope) obj;
+            valueOf = Long.valueOf(((SelectionRegistrarImpl) obj2).incrementId.get());
+            return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            SelectionRegistrarImpl Saver$lambda$1;
-            Saver$lambda$1 = SelectionRegistrarImpl.Saver$lambda$1(((Long) obj).longValue());
-            return Saver$lambda$1;
+            return SelectionRegistrarImpl.Saver$lambda$1(((Long) obj).longValue());
         }
     });
 
@@ -84,12 +83,7 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Long Saver$lambda$0(SaverScope saverScope, SelectionRegistrarImpl selectionRegistrarImpl) {
-        return Long.valueOf(selectionRegistrarImpl.incrementId.get());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SelectionRegistrarImpl Saver$lambda$1(long j) {
         return new SelectionRegistrarImpl(j);
     }
@@ -220,17 +214,15 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
             final Function2 function2 = new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    int sort$lambda$0;
-                    sort$lambda$0 = SelectionRegistrarImpl.sort$lambda$0(LayoutCoordinates.this, (Selectable) obj, (Selectable) obj2);
-                    return Integer.valueOf(sort$lambda$0);
+                    return Integer.valueOf(SelectionRegistrarImpl.sort$lambda$0(LayoutCoordinates.this, (Selectable) obj, (Selectable) obj2));
                 }
             };
             CollectionsKt.sortWith(list, new Comparator() { // from class: androidx.compose.foundation.text.selection.SelectionRegistrarImpl$$ExternalSyntheticLambda3
                 @Override // java.util.Comparator
                 public final int compare(Object obj, Object obj2) {
-                    int sort$lambda$1;
-                    sort$lambda$1 = SelectionRegistrarImpl.sort$lambda$1(Function2.this, obj, obj2);
-                    return sort$lambda$1;
+                    int intValue;
+                    intValue = ((Number) Function2.this.invoke(obj, obj2)).intValue();
+                    return intValue;
                 }
             });
             this.sorted = true;
@@ -238,33 +230,39 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
         return getSelectables$foundation();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int sort$lambda$1(Function2 function2, Object obj, Object obj2) {
-        return ((Number) function2.invoke(obj, obj2)).intValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int sort$lambda$0(LayoutCoordinates layoutCoordinates, Selectable selectable, Selectable selectable2) {
-        long m5195getZeroF1C5BW0;
-        long m5195getZeroF1C5BW02;
+        long m4543getZeroF1C5BW0;
+        long m4543getZeroF1C5BW02;
+        long m4543getZeroF1C5BW03;
+        long m4543getZeroF1C5BW04;
         LayoutCoordinates layoutCoordinates2 = selectable.getLayoutCoordinates();
         LayoutCoordinates layoutCoordinates3 = selectable2.getLayoutCoordinates();
         if (layoutCoordinates2 != null) {
-            m5195getZeroF1C5BW0 = layoutCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m5195getZeroF1C5BW0());
+            m4543getZeroF1C5BW0 = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates2, Offset.Companion.m4543getZeroF1C5BW0());
+            float intBitsToFloat = Float.intBitsToFloat((int) (m4543getZeroF1C5BW0 >> 32)) + ((int) (layoutCoordinates2.mo6224getSizeYbymL2g() >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (m4543getZeroF1C5BW0 & 4294967295L)) + ((int) (layoutCoordinates2.mo6224getSizeYbymL2g() & 4294967295L));
+            m4543getZeroF1C5BW02 = Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
         } else {
-            m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
+            m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
+            m4543getZeroF1C5BW02 = Offset.Companion.m4543getZeroF1C5BW0();
         }
+        long j = m4543getZeroF1C5BW0;
+        long j2 = m4543getZeroF1C5BW02;
         if (layoutCoordinates3 != null) {
-            m5195getZeroF1C5BW02 = layoutCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m5195getZeroF1C5BW0());
+            m4543getZeroF1C5BW03 = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates3, Offset.Companion.m4543getZeroF1C5BW0());
+            float intBitsToFloat3 = Float.intBitsToFloat((int) (m4543getZeroF1C5BW03 >> 32)) + ((int) (layoutCoordinates3.mo6224getSizeYbymL2g() >> 32));
+            float intBitsToFloat4 = Float.intBitsToFloat((int) (m4543getZeroF1C5BW03 & 4294967295L)) + ((int) (layoutCoordinates3.mo6224getSizeYbymL2g() & 4294967295L));
+            m4543getZeroF1C5BW04 = Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat4) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32));
         } else {
-            m5195getZeroF1C5BW02 = Offset.Companion.m5195getZeroF1C5BW0();
+            m4543getZeroF1C5BW03 = Offset.Companion.m4543getZeroF1C5BW0();
+            m4543getZeroF1C5BW04 = Offset.Companion.m4543getZeroF1C5BW0();
         }
-        int i = (int) (m5195getZeroF1C5BW0 & 4294967295L);
-        int i2 = (int) (4294967295L & m5195getZeroF1C5BW02);
-        if (Float.intBitsToFloat(i) == Float.intBitsToFloat(i2)) {
-            return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (m5195getZeroF1C5BW0 >> 32))), Float.valueOf(Float.intBitsToFloat((int) (m5195getZeroF1C5BW02 >> 32))));
+        long j3 = m4543getZeroF1C5BW03;
+        if (SelectionRegistrarImplKt.m1645inARowzwwh4xc(j, j2, j3, m4543getZeroF1C5BW04)) {
+            return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (j >> 32))), Float.valueOf(Float.intBitsToFloat((int) (j3 >> 32))));
         }
-        return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat(i)), Float.valueOf(Float.intBitsToFloat(i2)));
+        return ComparisonsKt.compareValues(Float.valueOf(Float.intBitsToFloat((int) (j & 4294967295L))), Float.valueOf(Float.intBitsToFloat((int) (j3 & 4294967295L))));
     }
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
@@ -278,10 +276,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdateStart-ubNVwUQ */
-    public void mo1902notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
+    public void mo1644notifySelectionUpdateStartubNVwUQ(LayoutCoordinates layoutCoordinates, long j, SelectionAdjustment selectionAdjustment, boolean z) {
         Function4<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super SelectionAdjustment, Unit> function4 = this.onSelectionUpdateStartCallback;
         if (function4 != null) {
-            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m5168boximpl(j), selectionAdjustment);
+            function4.invoke(Boolean.valueOf(z), layoutCoordinates, Offset.m4516boximpl(j), selectionAdjustment);
         }
     }
 
@@ -295,10 +293,10 @@ public final class SelectionRegistrarImpl implements SelectionRegistrar {
 
     @Override // androidx.compose.foundation.text.selection.SelectionRegistrar
     /* renamed from: notifySelectionUpdate-njBpvok */
-    public boolean mo1901notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
+    public boolean mo1643notifySelectionUpdatenjBpvok(LayoutCoordinates layoutCoordinates, long j, long j2, boolean z, SelectionAdjustment selectionAdjustment, boolean z2) {
         Function6<? super Boolean, ? super LayoutCoordinates, ? super Offset, ? super Offset, ? super Boolean, ? super SelectionAdjustment, Boolean> function6 = this.onSelectionUpdateCallback;
         if (function6 != null) {
-            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m5168boximpl(j), Offset.m5168boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
+            return function6.invoke(Boolean.valueOf(z2), layoutCoordinates, Offset.m4516boximpl(j), Offset.m4516boximpl(j2), Boolean.valueOf(z), selectionAdjustment).booleanValue();
         }
         return true;
     }

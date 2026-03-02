@@ -54,10 +54,12 @@ public final class MaybeFilter<T> extends AbstractMaybeWithUpstream<T, T> {
         @Override // io.reactivex.MaybeObserver
         public void onSuccess(T t) {
             try {
-                if (this.predicate.test(t)) {
-                    this.downstream.onSuccess(t);
+                boolean test = this.predicate.test(t);
+                MaybeObserver<? super T> maybeObserver = this.downstream;
+                if (test) {
+                    maybeObserver.onSuccess(t);
                 } else {
-                    this.downstream.onComplete();
+                    maybeObserver.onComplete();
                 }
             } catch (Throwable th) {
                 Exceptions.throwIfFatal(th);

@@ -86,9 +86,7 @@ public final class CarouselItemScopeImpl implements CarouselItemScope {
             rememberedValue = new GenericShape(new Function3() { // from class: androidx.compose.material3.carousel.CarouselItemScopeImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit rememberMaskShape$lambda$1$lambda$0;
-                    rememberMaskShape$lambda$1$lambda$0 = CarouselItemScopeImpl.rememberMaskShape$lambda$1$lambda$0(CarouselItemScopeImpl.this, shape, density, (Path) obj, (Size) obj2, (LayoutDirection) obj3);
-                    return rememberMaskShape$lambda$1$lambda$0;
+                    return CarouselItemScopeImpl.rememberMaskShape$lambda$1$lambda$0(CarouselItemScopeImpl.this, shape, density, (Path) obj, (Size) obj2, (LayoutDirection) obj3);
                 }
             });
             composer.updateRememberedValue(rememberedValue);
@@ -102,11 +100,11 @@ public final class CarouselItemScopeImpl implements CarouselItemScope {
         return genericShape;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rememberMaskShape$lambda$1$lambda$0(CarouselItemScopeImpl carouselItemScopeImpl, Shape shape, Density density, Path path, Size size, LayoutDirection layoutDirection) {
-        Rect intersect = carouselItemScopeImpl.getCarouselItemDrawInfo().getMaskRect().intersect(SizeKt.m5269toRectuvyYCjk(size.m5253unboximpl()));
-        OutlineKt.addOutline(path, shape.mo365createOutlinePq9zytI(intersect.m5212getSizeNHjbRc(), layoutDirection, density));
-        path.mo5316translatek4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(intersect.getLeft()) << 32) | (Float.floatToRawIntBits(intersect.getTop()) & 4294967295L)));
+        Rect intersect = carouselItemScopeImpl.getCarouselItemDrawInfo().getMaskRect().intersect(SizeKt.m4617toRectuvyYCjk(size.m4601unboximpl()));
+        OutlineKt.addOutline(path, shape.mo320createOutlinePq9zytI(intersect.m4560getSizeNHjbRc(), layoutDirection, density));
+        path.mo4664translatek4lQ0M(Offset.m4519constructorimpl((Float.floatToRawIntBits(intersect.getLeft()) << 32) | (Float.floatToRawIntBits(intersect.getTop()) & 4294967295L)));
         return Unit.INSTANCE;
     }
 }

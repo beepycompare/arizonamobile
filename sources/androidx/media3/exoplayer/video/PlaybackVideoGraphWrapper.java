@@ -459,13 +459,19 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void flush(boolean z) {
+        TimedValueQueue<StreamChangeInfo> timedValueQueue;
         if (isInitialized()) {
             this.pendingFlushCount++;
             this.defaultVideoSink.flush(z);
-            while (this.pendingStreamChanges.size() > 1) {
-                this.pendingStreamChanges.pollFirst();
+            while (true) {
+                int size = this.pendingStreamChanges.size();
+                timedValueQueue = this.pendingStreamChanges;
+                if (size <= 1) {
+                    break;
+                }
+                timedValueQueue.pollFirst();
             }
-            if (this.pendingStreamChanges.size() == 1) {
+            if (timedValueQueue.size() == 1) {
                 StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Preconditions.checkNotNull(this.pendingStreamChanges.pollFirst());
                 this.outputStreamStartPositionUs = streamChangeInfo.startPositionUs;
                 this.outputStreamFirstFrameReleaseInstruction = streamChangeInfo.firstFrameReleaseInstruction;
@@ -479,7 +485,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             ((HandlerWrapper) Preconditions.checkNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m9059x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m8337x92e2e5d9();
                 }
             });
         }
@@ -487,7 +493,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m9059x92e2e5d9() {
+    public /* synthetic */ void m8337x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
@@ -662,19 +668,25 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             }
             TimedValueQueue timedValueQueue = new TimedValueQueue();
             boolean z = true;
-            while (PlaybackVideoGraphWrapper.this.pendingStreamChanges.size() > 0) {
-                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Preconditions.checkNotNull((StreamChangeInfo) PlaybackVideoGraphWrapper.this.pendingStreamChanges.pollFirst());
-                if (z) {
-                    if (streamChangeInfo.firstFrameReleaseInstruction != 0 && streamChangeInfo.firstFrameReleaseInstruction != 1) {
-                        PlaybackVideoGraphWrapper.this.allowReleaseFirstFrameBeforeStarted();
-                    } else {
-                        streamChangeInfo = new StreamChangeInfo(streamChangeInfo.startPositionUs, 0, streamChangeInfo.fromTimestampUs);
+            while (true) {
+                int size = PlaybackVideoGraphWrapper.this.pendingStreamChanges.size();
+                PlaybackVideoGraphWrapper playbackVideoGraphWrapper = PlaybackVideoGraphWrapper.this;
+                if (size > 0) {
+                    StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Preconditions.checkNotNull((StreamChangeInfo) playbackVideoGraphWrapper.pendingStreamChanges.pollFirst());
+                    if (z) {
+                        if (streamChangeInfo.firstFrameReleaseInstruction != 0 && streamChangeInfo.firstFrameReleaseInstruction != 1) {
+                            PlaybackVideoGraphWrapper.this.allowReleaseFirstFrameBeforeStarted();
+                        } else {
+                            streamChangeInfo = new StreamChangeInfo(streamChangeInfo.startPositionUs, 0, streamChangeInfo.fromTimestampUs);
+                        }
+                        z = false;
                     }
-                    z = false;
+                    timedValueQueue.add(streamChangeInfo.fromTimestampUs, streamChangeInfo);
+                } else {
+                    playbackVideoGraphWrapper.pendingStreamChanges = timedValueQueue;
+                    return;
                 }
-                timedValueQueue.add(streamChangeInfo.fromTimestampUs, streamChangeInfo);
             }
-            PlaybackVideoGraphWrapper.this.pendingStreamChanges = timedValueQueue;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -840,14 +852,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m9060x167f068a(listener, videoFrameProcessingException);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m8338x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m9060x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+        public /* synthetic */ void m8338x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
             listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Preconditions.checkNotNull(this.inputFormat)));
         }
 

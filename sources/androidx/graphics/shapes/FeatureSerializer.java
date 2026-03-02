@@ -1,7 +1,6 @@
 package androidx.graphics.shapes;
 
 import androidx.graphics.shapes.Feature;
-import androidx.graphics.shapes.FeatureSerializer;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
 import kotlin.Metadata;
@@ -103,9 +102,9 @@ public final class FeatureSerializer {
                 sb.append(ArraysKt.joinToString$default(cubic.getPoints$graphics_shapes(), (CharSequence) StringUtils.COMMA, (CharSequence) null, (CharSequence) null, 6, (CharSequence) "", new Function1() { // from class: androidx.graphics.shapes.FeatureSerializer$Companion$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        CharSequence serializeCubics$lambda$7$lambda$6;
-                        serializeCubics$lambda$7$lambda$6 = FeatureSerializer.Companion.serializeCubics$lambda$7$lambda$6(((Float) obj).floatValue());
-                        return serializeCubics$lambda$7$lambda$6;
+                        CharSequence removeTrailingZeroes;
+                        removeTrailingZeroes = FeatureSerializer.Companion.removeTrailingZeroes(String.valueOf(((Float) obj).floatValue()));
+                        return removeTrailingZeroes;
                     }
                 }, 6, (Object) null));
             }
@@ -114,11 +113,6 @@ public final class FeatureSerializer {
             String sb2 = sb.toString();
             Intrinsics.checkNotNullExpressionValue(sb2, "toString(...)");
             return sb2;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final CharSequence serializeCubics$lambda$7$lambda$6(float f) {
-            return FeatureSerializer.Companion.removeTrailingZeroes(String.valueOf(f));
         }
 
         private final Feature parseFeature(String str, int i, int i2) {
@@ -188,7 +182,8 @@ public final class FeatureSerializer {
             return CollectionsKt.build(createListBuilder);
         }
 
-        private final String removeTrailingZeroes(String str) {
+        /* JADX INFO: Access modifiers changed from: private */
+        public final String removeTrailingZeroes(String str) {
             String str2;
             String str3;
             String str4 = str;

@@ -93,11 +93,12 @@ public final class FlowableUsing<T, D> extends Flowable<T> {
                 }
                 th = null;
                 this.upstream.cancel();
+                Subscriber<? super T> subscriber = this.downstream;
                 if (th != null) {
-                    this.downstream.onError(new CompositeException(th, th));
+                    subscriber.onError(new CompositeException(th, th));
                     return;
                 } else {
-                    this.downstream.onError(th);
+                    subscriber.onError(th);
                     return;
                 }
             }

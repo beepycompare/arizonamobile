@@ -11,7 +11,6 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlinx.serialization.DeserializationStrategy;
 import kotlinx.serialization.PolymorphicSerializerKt;
-import kotlinx.serialization.SealedClassSerializer;
 import kotlinx.serialization.SerializationException;
 import kotlinx.serialization.SerializationStrategy;
 import kotlinx.serialization.descriptors.PolymorphicKind;
@@ -20,7 +19,6 @@ import kotlinx.serialization.descriptors.SerialDescriptor;
 import kotlinx.serialization.descriptors.SerialKind;
 import kotlinx.serialization.descriptors.StructureKind;
 import kotlinx.serialization.internal.AbstractPolymorphicSerializer;
-import kotlinx.serialization.internal.JsonInternalDependenciesKt;
 import kotlinx.serialization.json.ClassDiscriminatorMode;
 import kotlinx.serialization.json.Json;
 import kotlinx.serialization.json.JsonClassDiscriminator;
@@ -31,14 +29,14 @@ import kotlinx.serialization.json.JsonEncoder;
 import kotlinx.serialization.json.JsonObject;
 import kotlinx.serialization.json.JsonPrimitive;
 /* compiled from: Polymorphic.kt */
-@Metadata(d1 = {"\u0000V\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\u001ai\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u000226\u0010\u0007\u001a2\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\bH\u0080\bø\u0001\u0000¢\u0006\u0002\u0010\u000e\u001a(\u0010\u000f\u001a\u00020\u00012\n\u0010\u0004\u001a\u0006\u0012\u0002\b\u00030\u00052\n\u0010\u0010\u001a\u0006\u0012\u0002\b\u00030\u00052\u0006\u0010\u0011\u001a\u00020\tH\u0002\u001a\u0010\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u0014H\u0000\u001a7\u0010\u0015\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\u00020\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00182\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\t0\u001aH\u0080\bø\u0001\u0000¢\u0006\u0002\u0010\u001b\u001a\u0014\u0010\u0011\u001a\u00020\t*\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0000\u001a\u001a\u0010\u001f\u001a\u00020 2\b\u0010\r\u001a\u0004\u0018\u00010\t2\u0006\u0010!\u001a\u00020\"H\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006#"}, d2 = {"encodePolymorphically", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/serialization/json/JsonEncoder;", "serializer", "Lkotlinx/serialization/SerializationStrategy;", "value", "ifPolymorphic", "Lkotlin/Function2;", "", "Lkotlin/ParameterName;", "name", "discriminatorName", "serialName", "(Lkotlinx/serialization/json/JsonEncoder;Lkotlinx/serialization/SerializationStrategy;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "validateIfSealed", "actualSerializer", "classDiscriminator", "checkKind", "kind", "Lkotlinx/serialization/descriptors/SerialKind;", "decodeSerializableValuePolymorphic", "Lkotlinx/serialization/json/JsonDecoder;", "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "path", "Lkotlin/Function0;", "(Lkotlinx/serialization/json/JsonDecoder;Lkotlinx/serialization/DeserializationStrategy;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "json", "Lkotlinx/serialization/json/Json;", "throwJsonElementPolymorphicException", "", "element", "Lkotlinx/serialization/json/JsonElement;", "kotlinx-serialization-json"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0001\n\u0000\n\u0002\u0018\u0002\n\u0000\u001aj\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00052\u0006\u0010\u0006\u001a\u0002H\u000226\u0010\u0007\u001a2\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f\u0012\u0013\u0012\u00110\t¢\u0006\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\bH\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\u0010\u000e\u001a.\u0010\u000f\u001a\u00020\u0001*\u00020\u00102\n\u0010\u0004\u001a\u0006\u0012\u0002\b\u00030\u00052\n\u0010\u0011\u001a\u0006\u0012\u0002\b\u00030\u00052\u0006\u0010\u0012\u001a\u00020\tH\u0082\u0080\u0004\u001a\u0012\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u0014\u001a\u00020\u0015H\u0080\u0080\u0004\u001a8\u0010\u0016\u001a\u0002H\u0002\"\u0004\b\u0000\u0010\u0002*\u00020\u00172\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00192\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\t0\u001bH\u0080\u0088\u0004ø\u0001\u0000¢\u0006\u0002\u0010\u001c\u001a\u0016\u0010\u0012\u001a\u00020\t*\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u0010H\u0080\u0080\u0004\u001a\u001c\u0010\u001f\u001a\u00020 2\b\u0010\r\u001a\u0004\u0018\u00010\t2\u0006\u0010!\u001a\u00020\"H\u0080\u0080\u0004\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006#"}, d2 = {"encodePolymorphically", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/serialization/json/JsonEncoder;", "serializer", "Lkotlinx/serialization/SerializationStrategy;", "value", "ifPolymorphic", "Lkotlin/Function2;", "", "Lkotlin/ParameterName;", "name", "discriminatorName", "serialName", "(Lkotlinx/serialization/json/JsonEncoder;Lkotlinx/serialization/SerializationStrategy;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V", "checkEncodingConflicts", "Lkotlinx/serialization/json/Json;", "actualSerializer", "classDiscriminator", "checkKind", "kind", "Lkotlinx/serialization/descriptors/SerialKind;", "decodeSerializableValuePolymorphic", "Lkotlinx/serialization/json/JsonDecoder;", "deserializer", "Lkotlinx/serialization/DeserializationStrategy;", "path", "Lkotlin/Function0;", "(Lkotlinx/serialization/json/JsonDecoder;Lkotlinx/serialization/DeserializationStrategy;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "json", "throwJsonElementPolymorphicException", "", "element", "Lkotlinx/serialization/json/JsonElement;", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class PolymorphicKt {
 
     /* compiled from: Polymorphic.kt */
-    @Metadata(k = 3, mv = {2, 0, 0}, xi = 176)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 176)
     /* loaded from: classes5.dex */
-    public /* synthetic */ class WhenMappings {
+    public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
         static {
@@ -63,7 +61,7 @@ public final class PolymorphicKt {
         if (kotlin.jvm.internal.Intrinsics.areEqual(r1, kotlinx.serialization.descriptors.StructureKind.OBJECT.INSTANCE) == false) goto L10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0035, code lost:
-        if (r3.getJson().getConfiguration().getClassDiscriminatorMode() != kotlinx.serialization.json.ClassDiscriminatorMode.NONE) goto L24;
+        if (r3.getJson().getConfiguration().getClassDiscriminatorMode() != kotlinx.serialization.json.ClassDiscriminatorMode.NONE) goto L22;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /*
@@ -71,6 +69,7 @@ public final class PolymorphicKt {
     */
     public static final <T> void encodePolymorphically(JsonEncoder jsonEncoder, SerializationStrategy<? super T> serializer, T t, Function2<? super String, ? super String, Unit> ifPolymorphic) {
         String classDiscriminator;
+        SerializationStrategy<? super T> serializationStrategy;
         Intrinsics.checkNotNullParameter(jsonEncoder, "<this>");
         Intrinsics.checkNotNullParameter(serializer, "serializer");
         Intrinsics.checkNotNullParameter(ifPolymorphic, "ifPolymorphic");
@@ -97,24 +96,25 @@ public final class PolymorphicKt {
             if (t == 0) {
                 throw new IllegalArgumentException(("Value for serializer " + abstractPolymorphicSerializer.getDescriptor() + " should always be non-null. Please report issue to the kotlinx.serialization tracker.").toString());
             }
-            SerializationStrategy<? super T> findPolymorphicSerializer = PolymorphicSerializerKt.findPolymorphicSerializer(abstractPolymorphicSerializer, jsonEncoder, t);
-            if (classDiscriminator != null) {
-                validateIfSealed(serializer, findPolymorphicSerializer, classDiscriminator);
-            }
-            checkKind(findPolymorphicSerializer.getDescriptor().getKind());
-            Intrinsics.checkNotNull(findPolymorphicSerializer, "null cannot be cast to non-null type kotlinx.serialization.SerializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.encodePolymorphically>");
-            serializer = findPolymorphicSerializer;
+            serializationStrategy = PolymorphicSerializerKt.findPolymorphicSerializer(abstractPolymorphicSerializer, jsonEncoder, t);
+            Intrinsics.checkNotNull(serializationStrategy, "null cannot be cast to non-null type kotlinx.serialization.SerializationStrategy<T of kotlinx.serialization.json.internal.PolymorphicKt.encodePolymorphically>");
+        } else {
+            serializationStrategy = serializer;
         }
         if (classDiscriminator != null) {
-            ifPolymorphic.invoke(classDiscriminator, serializer.getDescriptor().getSerialName());
+            checkEncodingConflicts(jsonEncoder.getJson(), serializer, serializationStrategy, classDiscriminator);
+            checkKind(serializationStrategy.getDescriptor().getKind());
+            ifPolymorphic.invoke(classDiscriminator, serializationStrategy.getDescriptor().getSerialName());
         }
-        serializer.serialize(jsonEncoder, t);
+        serializationStrategy.serialize(jsonEncoder, t);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void validateIfSealed(SerializationStrategy<?> serializationStrategy, SerializationStrategy<?> serializationStrategy2, String str) {
-        if ((serializationStrategy instanceof SealedClassSerializer) && JsonInternalDependenciesKt.jsonCachedSerialNames(serializationStrategy2.getDescriptor()).contains(str)) {
-            throw new IllegalStateException(("Sealed class '" + serializationStrategy2.getDescriptor().getSerialName() + "' cannot be serialized as base class '" + ((SealedClassSerializer) serializationStrategy).getDescriptor().getSerialName() + "' because it has property name that conflicts with JSON class discriminator '" + str + "'. You can either change class discriminator in JsonConfiguration, rename property with @SerialName annotation or fall back to array polymorphism").toString());
+    public static final void checkEncodingConflicts(Json json, SerializationStrategy<?> serializationStrategy, SerializationStrategy<?> serializationStrategy2, String str) {
+        if (JsonNamesMapKt.getJsonEncodedNames(serializationStrategy2.getDescriptor(), json).contains(str)) {
+            String serialName = serializationStrategy.getDescriptor().getSerialName();
+            String serialName2 = serializationStrategy2.getDescriptor().getSerialName();
+            throw new JsonEncodingException("Class '" + serialName2 + "' cannot be serialized " + ((json.getConfiguration().getClassDiscriminatorMode() == ClassDiscriminatorMode.ALL_JSON_OBJECTS && Intrinsics.areEqual(serialName, serialName2)) ? "in ALL_JSON_OBJECTS class discriminator mode" : "as base class '" + serialName + '\'') + " because it has property name that conflicts with JSON class discriminator '" + str + "'. You can either change class discriminator in JsonConfiguration, or rename property with @SerialName annotation.");
         }
     }
 

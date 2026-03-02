@@ -102,7 +102,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void cancel() {
-        getCarrier().mo12160cancel();
+        getCarrier().mo11028cancel();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
@@ -424,8 +424,10 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
             if (this.this$0.state == 6) {
                 return;
             }
-            if (this.this$0.state == 5) {
-                this.this$0.detachTimeout(this.timeout);
+            int i = this.this$0.state;
+            Http1ExchangeCodec http1ExchangeCodec = this.this$0;
+            if (i == 5) {
+                http1ExchangeCodec.detachTimeout(this.timeout);
                 this.this$0.trailers = trailers;
                 this.this$0.state = 6;
                 if (trailers.size() <= 0 || (okHttpClient = this.this$0.client) == null || (cookieJar = okHttpClient.cookieJar()) == null) {
@@ -434,7 +436,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 HttpHeaders.receiveHeaders(cookieJar, this.url, trailers);
                 return;
             }
-            throw new IllegalStateException("state: " + this.this$0.state);
+            throw new IllegalStateException("state: " + http1ExchangeCodec.state);
         }
     }
 

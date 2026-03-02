@@ -19,16 +19,14 @@ public final class SafeCollector_commonKt {
         if (((Number) coroutineContext.fold(0, new Function2() { // from class: kotlinx.coroutines.flow.internal.SafeCollector_commonKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                int checkContext$lambda$0;
-                checkContext$lambda$0 = SafeCollector_commonKt.checkContext$lambda$0(SafeCollector.this, ((Integer) obj).intValue(), (CoroutineContext.Element) obj2);
-                return Integer.valueOf(checkContext$lambda$0);
+                return Integer.valueOf(SafeCollector_commonKt.checkContext$lambda$0(SafeCollector.this, ((Integer) obj).intValue(), (CoroutineContext.Element) obj2));
             }
         })).intValue() != safeCollector.collectContextSize) {
             throw new IllegalStateException(("Flow invariant is violated:\n\t\tFlow was collected in " + safeCollector.collectContext + ",\n\t\tbut emission happened in " + coroutineContext + ".\n\t\tPlease refer to 'flow' documentation or use 'flowOn' instead").toString());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int checkContext$lambda$0(SafeCollector safeCollector, int i, CoroutineContext.Element element) {
         CoroutineContext.Key<?> key = element.getKey();
         CoroutineContext.Element element2 = safeCollector.collectContext.get(key);

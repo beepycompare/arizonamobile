@@ -56,9 +56,7 @@ public final class ZipFilesKt {
             function1 = new Function1() { // from class: okio.internal.ZipFilesKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    boolean openZip$lambda$0;
-                    openZip$lambda$0 = ZipFilesKt.openZip$lambda$0((ZipEntry) obj2);
-                    return Boolean.valueOf(openZip$lambda$0);
+                    return Boolean.valueOf(ZipFilesKt.openZip$lambda$0((ZipEntry) obj2));
                 }
             };
         }
@@ -261,9 +259,7 @@ public final class ZipFilesKt {
         readExtra(bufferedSource, readShortLe6, new Function2() { // from class: okio.internal.ZipFilesKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit readCentralDirectoryZipEntry$lambda$1;
-                readCentralDirectoryZipEntry$lambda$1 = ZipFilesKt.readCentralDirectoryZipEntry$lambda$1(Ref.BooleanRef.this, j3, longRef2, bufferedSource, longRef, longRef3, objectRef, objectRef2, objectRef3, ((Integer) obj).intValue(), ((Long) obj2).longValue());
-                return readCentralDirectoryZipEntry$lambda$1;
+                return ZipFilesKt.readCentralDirectoryZipEntry$lambda$1(Ref.BooleanRef.this, j3, longRef2, bufferedSource, longRef, longRef3, objectRef, objectRef2, objectRef3, ((Integer) obj).intValue(), ((Long) obj2).longValue());
             }
         });
         if (j3 > 0 && !booleanRef.element) {
@@ -408,9 +404,7 @@ public final class ZipFilesKt {
         readExtra(bufferedSource, readShortLe3, new Function2() { // from class: okio.internal.ZipFilesKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit readOrSkipLocalHeader$lambda$0;
-                readOrSkipLocalHeader$lambda$0 = ZipFilesKt.readOrSkipLocalHeader$lambda$0(BufferedSource.this, objectRef, objectRef2, objectRef3, ((Integer) obj).intValue(), ((Long) obj2).longValue());
-                return readOrSkipLocalHeader$lambda$0;
+                return ZipFilesKt.readOrSkipLocalHeader$lambda$0(BufferedSource.this, objectRef, objectRef2, objectRef3, ((Integer) obj).intValue(), ((Long) obj2).longValue());
             }
         });
         return zipEntry.copy$okio((Integer) objectRef.element, (Integer) objectRef2.element, (Integer) objectRef3.element);

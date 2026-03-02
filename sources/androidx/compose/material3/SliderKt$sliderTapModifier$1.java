@@ -44,11 +44,11 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m3051invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m2539invoked4ec7I(pressGestureScope, offset.m4537unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m3051invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m2539invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$state, continuation);
             anonymousClass1.J$0 = j;
             return anonymousClass1.invokeSuspend(Unit.INSTANCE);
@@ -59,7 +59,7 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
                 ResultKt.throwOnFailure(obj);
-                this.$state.m3063onPressk4lQ0M$material3(this.J$0);
+                this.$state.m2551onPressk4lQ0M$material3(this.J$0);
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -73,15 +73,13 @@ public final class SliderKt$sliderTapModifier$1 implements PointerInputEventHand
         Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, anonymousClass1, new Function1() { // from class: androidx.compose.material3.SliderKt$sliderTapModifier$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = SliderKt$sliderTapModifier$1.invoke$lambda$0(SliderState.this, (Offset) obj);
-                return invoke$lambda$0;
+                return SliderKt$sliderTapModifier$1.invoke$lambda$0(SliderState.this, (Offset) obj);
             }
         }, continuation, 3, null);
         return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(SliderState sliderState, Offset offset) {
         sliderState.dispatchRawDelta(0.0f);
         sliderState.getGestureEndAction$material3().invoke();

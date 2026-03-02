@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class LineHeightStyle {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final LineHeightStyle Default = new LineHeightStyle(Alignment.Companion.m8104getProportionalPIaL0Z0(), Trim.Companion.m8125getBothEVpEnUU(), Mode.Companion.m8113getFixedlzQqcRY(), null);
+    private static final LineHeightStyle Default = new LineHeightStyle(Alignment.Companion.m7401getProportionalPIaL0Z0(), Trim.Companion.m7422getBothEVpEnUU(), Mode.Companion.m7410getFixedlzQqcRY(), null);
     private final float alignment;
     private final int mode;
     private final int trim;
@@ -31,22 +31,22 @@ public final class LineHeightStyle {
     }
 
     /* renamed from: getAlignment-PIaL0Z0  reason: not valid java name */
-    public final float m8092getAlignmentPIaL0Z0() {
+    public final float m7389getAlignmentPIaL0Z0() {
         return this.alignment;
     }
 
     /* renamed from: getMode-lzQqcRY  reason: not valid java name */
-    public final int m8093getModelzQqcRY() {
+    public final int m7390getModelzQqcRY() {
         return this.mode;
     }
 
     /* renamed from: getTrim-EVpEnUU  reason: not valid java name */
-    public final int m8094getTrimEVpEnUU() {
+    public final int m7391getTrimEVpEnUU() {
         return this.trim;
     }
 
     private LineHeightStyle(float f, int i) {
-        this(f, i, Mode.Companion.m8113getFixedlzQqcRY(), null);
+        this(f, i, Mode.Companion.m7410getFixedlzQqcRY(), null);
     }
 
     /* compiled from: LineHeightStyle.kt */
@@ -66,7 +66,7 @@ public final class LineHeightStyle {
     }
 
     /* renamed from: copy-38bxuX8$default  reason: not valid java name */
-    public static /* synthetic */ LineHeightStyle m8090copy38bxuX8$default(LineHeightStyle lineHeightStyle, float f, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ LineHeightStyle m7387copy38bxuX8$default(LineHeightStyle lineHeightStyle, float f, int i, int i2, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             f = lineHeightStyle.alignment;
         }
@@ -76,11 +76,11 @@ public final class LineHeightStyle {
         if ((i3 & 4) != 0) {
             i2 = lineHeightStyle.mode;
         }
-        return lineHeightStyle.m8091copy38bxuX8(f, i, i2);
+        return lineHeightStyle.m7388copy38bxuX8(f, i, i2);
     }
 
     /* renamed from: copy-38bxuX8  reason: not valid java name */
-    public final LineHeightStyle m8091copy38bxuX8(float f, int i, int i2) {
+    public final LineHeightStyle m7388copy38bxuX8(float f, int i, int i2) {
         return new LineHeightStyle(f, i, i2, null);
     }
 
@@ -90,17 +90,17 @@ public final class LineHeightStyle {
         }
         if (obj instanceof LineHeightStyle) {
             LineHeightStyle lineHeightStyle = (LineHeightStyle) obj;
-            return Alignment.m8098equalsimpl0(this.alignment, lineHeightStyle.alignment) && Trim.m8119equalsimpl0(this.trim, lineHeightStyle.trim) && Mode.m8109equalsimpl0(this.mode, lineHeightStyle.mode);
+            return Alignment.m7395equalsimpl0(this.alignment, lineHeightStyle.alignment) && Trim.m7416equalsimpl0(this.trim, lineHeightStyle.trim) && Mode.m7406equalsimpl0(this.mode, lineHeightStyle.mode);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Alignment.m8099hashCodeimpl(this.alignment) * 31) + Trim.m8120hashCodeimpl(this.trim)) * 31) + Mode.m8110hashCodeimpl(this.mode);
+        return (((Alignment.m7396hashCodeimpl(this.alignment) * 31) + Trim.m7417hashCodeimpl(this.trim)) * 31) + Mode.m7407hashCodeimpl(this.mode);
     }
 
     public String toString() {
-        return "LineHeightStyle(alignment=" + ((Object) Alignment.m8100toStringimpl(this.alignment)) + ", trim=" + ((Object) Trim.m8123toStringimpl(this.trim)) + ",mode=" + ((Object) Mode.m8111toStringimpl(this.mode)) + ')';
+        return "LineHeightStyle(alignment=" + ((Object) Alignment.m7397toStringimpl(this.alignment)) + ", trim=" + ((Object) Trim.m7420toStringimpl(this.trim)) + ",mode=" + ((Object) Mode.m7408toStringimpl(this.mode)) + ')';
     }
 
     /* compiled from: LineHeightStyle.kt */
@@ -112,56 +112,56 @@ public final class LineHeightStyle {
         private static final int FlagTrimTop = 1;
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int FirstLineTop = m8117constructorimpl(1);
-        private static final int LastLineBottom = m8117constructorimpl(16);
-        private static final int Both = m8117constructorimpl(17);
-        private static final int None = m8117constructorimpl(0);
+        private static final int FirstLineTop = m7414constructorimpl(1);
+        private static final int LastLineBottom = m7414constructorimpl(16);
+        private static final int Both = m7414constructorimpl(17);
+        private static final int None = m7414constructorimpl(0);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Trim m8116boximpl(int i) {
+        public static final /* synthetic */ Trim m7413boximpl(int i) {
             return new Trim(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m8117constructorimpl(int i) {
+        public static int m7414constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m8118equalsimpl(int i, Object obj) {
-            return (obj instanceof Trim) && i == ((Trim) obj).m8124unboximpl();
+        public static boolean m7415equalsimpl(int i, Object obj) {
+            return (obj instanceof Trim) && i == ((Trim) obj).m7421unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m8119equalsimpl0(int i, int i2) {
+        public static final boolean m7416equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m8120hashCodeimpl(int i) {
+        public static int m7417hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         /* renamed from: isTrimFirstLineTop-impl$ui_text  reason: not valid java name */
-        public static final boolean m8121isTrimFirstLineTopimpl$ui_text(int i) {
+        public static final boolean m7418isTrimFirstLineTopimpl$ui_text(int i) {
             return (i & 1) > 0;
         }
 
         /* renamed from: isTrimLastLineBottom-impl$ui_text  reason: not valid java name */
-        public static final boolean m8122isTrimLastLineBottomimpl$ui_text(int i) {
+        public static final boolean m7419isTrimLastLineBottomimpl$ui_text(int i) {
             return (i & 16) > 0;
         }
 
         public boolean equals(Object obj) {
-            return m8118equalsimpl(this.value, obj);
+            return m7415equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m8120hashCodeimpl(this.value);
+            return m7417hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m8124unboximpl() {
+        public final /* synthetic */ int m7421unboximpl() {
             return this.value;
         }
 
@@ -170,11 +170,11 @@ public final class LineHeightStyle {
         }
 
         public String toString() {
-            return m8123toStringimpl(this.value);
+            return m7420toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m8123toStringimpl(int i) {
+        public static String m7420toStringimpl(int i) {
             return i == FirstLineTop ? "LineHeightStyle.Trim.FirstLineTop" : i == LastLineBottom ? "LineHeightStyle.Trim.LastLineBottom" : i == Both ? "LineHeightStyle.Trim.Both" : i == None ? "LineHeightStyle.Trim.None" : "Invalid";
         }
 
@@ -190,22 +190,22 @@ public final class LineHeightStyle {
             }
 
             /* renamed from: getFirstLineTop-EVpEnUU  reason: not valid java name */
-            public final int m8126getFirstLineTopEVpEnUU() {
+            public final int m7423getFirstLineTopEVpEnUU() {
                 return Trim.FirstLineTop;
             }
 
             /* renamed from: getLastLineBottom-EVpEnUU  reason: not valid java name */
-            public final int m8127getLastLineBottomEVpEnUU() {
+            public final int m7424getLastLineBottomEVpEnUU() {
                 return Trim.LastLineBottom;
             }
 
             /* renamed from: getBoth-EVpEnUU  reason: not valid java name */
-            public final int m8125getBothEVpEnUU() {
+            public final int m7422getBothEVpEnUU() {
                 return Trim.Both;
             }
 
             /* renamed from: getNone-EVpEnUU  reason: not valid java name */
-            public final int m8128getNoneEVpEnUU() {
+            public final int m7425getNoneEVpEnUU() {
                 return Trim.None;
             }
         }
@@ -218,41 +218,41 @@ public final class LineHeightStyle {
     public static final class Alignment {
         private final float topRatio;
         public static final Companion Companion = new Companion(null);
-        private static final float Top = m8096constructorimpl(0.0f);
-        private static final float Center = m8096constructorimpl(0.5f);
-        private static final float Proportional = m8096constructorimpl(-1.0f);
-        private static final float Bottom = m8096constructorimpl(1.0f);
+        private static final float Top = m7393constructorimpl(0.0f);
+        private static final float Center = m7393constructorimpl(0.5f);
+        private static final float Proportional = m7393constructorimpl(-1.0f);
+        private static final float Bottom = m7393constructorimpl(1.0f);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Alignment m8095boximpl(float f) {
+        public static final /* synthetic */ Alignment m7392boximpl(float f) {
             return new Alignment(f);
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m8097equalsimpl(float f, Object obj) {
-            return (obj instanceof Alignment) && Float.compare(f, ((Alignment) obj).m8101unboximpl()) == 0;
+        public static boolean m7394equalsimpl(float f, Object obj) {
+            return (obj instanceof Alignment) && Float.compare(f, ((Alignment) obj).m7398unboximpl()) == 0;
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m8098equalsimpl0(float f, float f2) {
+        public static final boolean m7395equalsimpl0(float f, float f2) {
             return Float.compare(f, f2) == 0;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m8099hashCodeimpl(float f) {
+        public static int m7396hashCodeimpl(float f) {
             return Float.hashCode(f);
         }
 
         public boolean equals(Object obj) {
-            return m8097equalsimpl(this.topRatio, obj);
+            return m7394equalsimpl(this.topRatio, obj);
         }
 
         public int hashCode() {
-            return m8099hashCodeimpl(this.topRatio);
+            return m7396hashCodeimpl(this.topRatio);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ float m8101unboximpl() {
+        public final /* synthetic */ float m7398unboximpl() {
             return this.topRatio;
         }
 
@@ -261,7 +261,7 @@ public final class LineHeightStyle {
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static float m8096constructorimpl(float f) {
+        public static float m7393constructorimpl(float f) {
             if (!((0.0f <= f && f <= 1.0f) || f == -1.0f)) {
                 InlineClassHelperKt.throwIllegalStateException("topRatio should be in [0..1] range or -1");
             }
@@ -269,11 +269,11 @@ public final class LineHeightStyle {
         }
 
         public String toString() {
-            return m8100toStringimpl(this.topRatio);
+            return m7397toStringimpl(this.topRatio);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m8100toStringimpl(float f) {
+        public static String m7397toStringimpl(float f) {
             return f == Top ? "LineHeightStyle.Alignment.Top" : f == Center ? "LineHeightStyle.Alignment.Center" : f == Proportional ? "LineHeightStyle.Alignment.Proportional" : f == Bottom ? "LineHeightStyle.Alignment.Bottom" : "LineHeightStyle.Alignment(topPercentage = " + f + ')';
         }
 
@@ -289,22 +289,22 @@ public final class LineHeightStyle {
             }
 
             /* renamed from: getTop-PIaL0Z0  reason: not valid java name */
-            public final float m8105getTopPIaL0Z0() {
+            public final float m7402getTopPIaL0Z0() {
                 return Alignment.Top;
             }
 
             /* renamed from: getCenter-PIaL0Z0  reason: not valid java name */
-            public final float m8103getCenterPIaL0Z0() {
+            public final float m7400getCenterPIaL0Z0() {
                 return Alignment.Center;
             }
 
             /* renamed from: getProportional-PIaL0Z0  reason: not valid java name */
-            public final float m8104getProportionalPIaL0Z0() {
+            public final float m7401getProportionalPIaL0Z0() {
                 return Alignment.Proportional;
             }
 
             /* renamed from: getBottom-PIaL0Z0  reason: not valid java name */
-            public final float m8102getBottomPIaL0Z0() {
+            public final float m7399getBottomPIaL0Z0() {
                 return Alignment.Bottom;
             }
         }
@@ -316,46 +316,46 @@ public final class LineHeightStyle {
     /* loaded from: classes2.dex */
     public static final class Mode {
         public static final Companion Companion = new Companion(null);
-        private static final int Fixed = m8107constructorimpl(0);
-        private static final int Minimum = m8107constructorimpl(1);
-        private static final int Tight = m8107constructorimpl(2);
+        private static final int Fixed = m7404constructorimpl(0);
+        private static final int Minimum = m7404constructorimpl(1);
+        private static final int Tight = m7404constructorimpl(2);
         private final int value;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ Mode m8106boximpl(int i) {
+        public static final /* synthetic */ Mode m7403boximpl(int i) {
             return new Mode(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m8107constructorimpl(int i) {
+        public static int m7404constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m8108equalsimpl(int i, Object obj) {
-            return (obj instanceof Mode) && i == ((Mode) obj).m8112unboximpl();
+        public static boolean m7405equalsimpl(int i, Object obj) {
+            return (obj instanceof Mode) && i == ((Mode) obj).m7409unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m8109equalsimpl0(int i, int i2) {
+        public static final boolean m7406equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m8110hashCodeimpl(int i) {
+        public static int m7407hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m8108equalsimpl(this.value, obj);
+            return m7405equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m8110hashCodeimpl(this.value);
+            return m7407hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m8112unboximpl() {
+        public final /* synthetic */ int m7409unboximpl() {
             return this.value;
         }
 
@@ -364,12 +364,12 @@ public final class LineHeightStyle {
         }
 
         public String toString() {
-            return m8111toStringimpl(this.value);
+            return m7408toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m8111toStringimpl(int i) {
-            return m8109equalsimpl0(i, Fixed) ? "LineHeightStyle.Mode.Fixed" : m8109equalsimpl0(i, Minimum) ? "LineHeightStyle.Mode.Minimum" : m8109equalsimpl0(i, Tight) ? "LineHeightStyle.Mode.Tight" : "Invalid";
+        public static String m7408toStringimpl(int i) {
+            return m7406equalsimpl0(i, Fixed) ? "LineHeightStyle.Mode.Fixed" : m7406equalsimpl0(i, Minimum) ? "LineHeightStyle.Mode.Minimum" : m7406equalsimpl0(i, Tight) ? "LineHeightStyle.Mode.Tight" : "Invalid";
         }
 
         /* compiled from: LineHeightStyle.kt */
@@ -384,17 +384,17 @@ public final class LineHeightStyle {
             }
 
             /* renamed from: getFixed-lzQqcRY  reason: not valid java name */
-            public final int m8113getFixedlzQqcRY() {
+            public final int m7410getFixedlzQqcRY() {
                 return Mode.Fixed;
             }
 
             /* renamed from: getMinimum-lzQqcRY  reason: not valid java name */
-            public final int m8114getMinimumlzQqcRY() {
+            public final int m7411getMinimumlzQqcRY() {
                 return Mode.Minimum;
             }
 
             /* renamed from: getTight-lzQqcRY  reason: not valid java name */
-            public final int m8115getTightlzQqcRY() {
+            public final int m7412getTightlzQqcRY() {
                 return Mode.Tight;
             }
         }

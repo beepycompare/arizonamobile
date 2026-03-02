@@ -184,13 +184,14 @@ class VersionedParcelStream extends VersionedParcel {
 
     @Override // androidx.versionedparcelable.VersionedParcel
     public void writeByteArray(byte[] bArr) {
+        DataOutputStream dataOutputStream = this.mCurrentOutput;
         try {
             if (bArr != null) {
-                this.mCurrentOutput.writeInt(bArr.length);
+                dataOutputStream.writeInt(bArr.length);
                 this.mCurrentOutput.write(bArr);
                 return;
             }
-            this.mCurrentOutput.writeInt(-1);
+            dataOutputStream.writeInt(-1);
         } catch (IOException e) {
             throw new VersionedParcel.ParcelException(e);
         }
@@ -198,13 +199,14 @@ class VersionedParcelStream extends VersionedParcel {
 
     @Override // androidx.versionedparcelable.VersionedParcel
     public void writeByteArray(byte[] bArr, int i, int i2) {
+        DataOutputStream dataOutputStream = this.mCurrentOutput;
         try {
             if (bArr != null) {
-                this.mCurrentOutput.writeInt(i2);
+                dataOutputStream.writeInt(i2);
                 this.mCurrentOutput.write(bArr, i, i2);
                 return;
             }
-            this.mCurrentOutput.writeInt(-1);
+            dataOutputStream.writeInt(-1);
         } catch (IOException e) {
             throw new VersionedParcel.ParcelException(e);
         }

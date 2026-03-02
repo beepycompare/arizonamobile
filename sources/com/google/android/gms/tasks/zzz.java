@@ -1,27 +1,22 @@
 package com.google.android.gms.tasks;
 
-import java.util.concurrent.Callable;
+import java.util.ArrayList;
+import java.util.Collection;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
-public final class zzz implements Runnable {
-    final /* synthetic */ zzw zza;
-    final /* synthetic */ Callable zzb;
+public final class zzz implements Continuation {
+    final /* synthetic */ Collection zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public zzz(zzw zzwVar, Callable callable) {
-        this.zza = zzwVar;
-        this.zzb = callable;
+    public zzz(Collection collection) {
+        this.zza = collection;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        try {
-            this.zza.zzb(this.zzb.call());
-        } catch (Exception e) {
-            this.zza.zza(e);
-        } catch (Throwable th) {
-            this.zza.zza(new RuntimeException(th));
-        }
+    @Override // com.google.android.gms.tasks.Continuation
+    public final /* bridge */ /* synthetic */ Object then(Task task) throws Exception {
+        ArrayList arrayList = new ArrayList();
+        arrayList.addAll(this.zza);
+        return Tasks.forResult(arrayList);
     }
 }

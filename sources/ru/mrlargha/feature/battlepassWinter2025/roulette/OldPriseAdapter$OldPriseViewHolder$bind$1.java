@@ -21,8 +21,8 @@ import ru.mrlargha.feature.battlepassWinter2025.roulette.OldPriseAdapter;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.data.OldPrise;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: OldPriseAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.roulette.OldPriseAdapter$OldPriseViewHolder$bind$1", f = "OldPriseAdapter.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.roulette.OldPriseAdapter$OldPriseViewHolder$bind$1", f = "OldPriseAdapter.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, nl = {70}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class OldPriseAdapter$OldPriseViewHolder$bind$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ OldPrise $prise;
@@ -67,13 +67,14 @@ public final class OldPriseAdapter$OldPriseViewHolder$bind$1 extends SuspendLamb
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        OldPriseAdapter.OldPriseViewHolder oldPriseViewHolder = this.this$0;
         if (bitmap != null) {
-            winterBattlepassRouletteOldPriseItemBinding3 = this.this$0.binding;
+            winterBattlepassRouletteOldPriseItemBinding3 = oldPriseViewHolder.binding;
             ImageView imagePrise = winterBattlepassRouletteOldPriseItemBinding3.imagePrise;
             Intrinsics.checkNotNullExpressionValue(imagePrise, "imagePrise");
             UtilsKt.setImage(imagePrise, bitmap);
         } else {
-            winterBattlepassRouletteOldPriseItemBinding = this.this$0.binding;
+            winterBattlepassRouletteOldPriseItemBinding = oldPriseViewHolder.binding;
             ImageView imagePrise2 = winterBattlepassRouletteOldPriseItemBinding.imagePrise;
             Intrinsics.checkNotNullExpressionValue(imagePrise2, "imagePrise");
             winterBattlepassRouletteOldPriseItemBinding2 = this.this$0.binding;

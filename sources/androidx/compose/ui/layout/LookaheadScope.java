@@ -12,22 +12,22 @@ public interface LookaheadScope {
     LayoutCoordinates toLookaheadCoordinates(LayoutCoordinates layoutCoordinates);
 
     /* renamed from: localLookaheadPositionOf-au-aQtc$default */
-    static /* synthetic */ long m6905localLookaheadPositionOfauaQtc$default(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
+    static /* synthetic */ long m6246localLookaheadPositionOfauaQtc$default(LookaheadScope lookaheadScope, LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                j = Offset.Companion.m5195getZeroF1C5BW0();
+                j = Offset.Companion.m4543getZeroF1C5BW0();
             }
             long j2 = j;
             if ((i & 4) != 0) {
                 z = true;
             }
-            return lookaheadScope.mo141localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j2, z);
+            return lookaheadScope.mo128localLookaheadPositionOfauaQtc(layoutCoordinates, layoutCoordinates2, j2, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: localLookaheadPositionOf-au-aQtc");
     }
 
     /* renamed from: localLookaheadPositionOf-au-aQtc */
-    default long mo141localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-        return LookaheadScopeKt.m6906localLookaheadPositionOfFgt4K4Q(this, layoutCoordinates, layoutCoordinates2, j, z);
+    default long mo128localLookaheadPositionOfauaQtc(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+        return LookaheadScopeKt.m6247localLookaheadPositionOfFgt4K4Q(this, layoutCoordinates, layoutCoordinates2, j, z);
     }
 }

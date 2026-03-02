@@ -150,10 +150,12 @@ public final class CodedOutputStreamWriter implements Writer {
 
     @Override // androidx.datastore.preferences.protobuf.Writer
     public final void writeMessageSetItem(int fieldNumber, Object value) throws IOException {
-        if (value instanceof ByteString) {
-            this.output.writeRawMessageSetExtension(fieldNumber, (ByteString) value);
+        boolean z = value instanceof ByteString;
+        CodedOutputStream codedOutputStream = this.output;
+        if (z) {
+            codedOutputStream.writeRawMessageSetExtension(fieldNumber, (ByteString) value);
         } else {
-            this.output.writeMessageSetExtension(fieldNumber, (MessageLite) value);
+            codedOutputStream.writeMessageSetExtension(fieldNumber, (MessageLite) value);
         }
     }
 
@@ -634,10 +636,12 @@ public final class CodedOutputStreamWriter implements Writer {
     }
 
     private void writeLazyString(int fieldNumber, Object value) throws IOException {
-        if (value instanceof String) {
-            this.output.writeString(fieldNumber, (String) value);
+        boolean z = value instanceof String;
+        CodedOutputStream codedOutputStream = this.output;
+        if (z) {
+            codedOutputStream.writeString(fieldNumber, (String) value);
         } else {
-            this.output.writeBytes(fieldNumber, (ByteString) value);
+            codedOutputStream.writeBytes(fieldNumber, (ByteString) value);
         }
     }
 

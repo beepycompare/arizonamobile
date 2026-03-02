@@ -680,13 +680,15 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     }
 
     private void updateVisibility(boolean z) {
-        if (checkShowingFlags(this.mHiddenByApp, this.mHiddenBySystem, this.mShowingForMode)) {
-            if (this.mNowShowing) {
+        boolean checkShowingFlags = checkShowingFlags(this.mHiddenByApp, this.mHiddenBySystem, this.mShowingForMode);
+        boolean z2 = this.mNowShowing;
+        if (checkShowingFlags) {
+            if (z2) {
                 return;
             }
             this.mNowShowing = true;
             doShow(z);
-        } else if (this.mNowShowing) {
+        } else if (z2) {
             this.mNowShowing = false;
             doHide(z);
         }
@@ -785,26 +787,28 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         } else {
             hideForActionMode();
         }
-        if (!shouldAnimateContextView()) {
+        if (shouldAnimateContextView()) {
+            DecorToolbar decorToolbar = this.mDecorToolbar;
             if (z) {
-                this.mDecorToolbar.setVisibility(4);
-                this.mContextView.setVisibility(0);
-                return;
+                viewPropertyAnimatorCompat2 = decorToolbar.setupAnimatorToVisibility(4, FADE_OUT_DURATION_MS);
+                viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(0, 200L);
+            } else {
+                viewPropertyAnimatorCompat = decorToolbar.setupAnimatorToVisibility(0, 200L);
+                viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(8, FADE_OUT_DURATION_MS);
             }
-            this.mDecorToolbar.setVisibility(0);
-            this.mContextView.setVisibility(8);
+            ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet = new ViewPropertyAnimatorCompatSet();
+            viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat2, viewPropertyAnimatorCompat);
+            viewPropertyAnimatorCompatSet.start();
             return;
         }
+        DecorToolbar decorToolbar2 = this.mDecorToolbar;
         if (z) {
-            viewPropertyAnimatorCompat2 = this.mDecorToolbar.setupAnimatorToVisibility(4, FADE_OUT_DURATION_MS);
-            viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(0, 200L);
-        } else {
-            viewPropertyAnimatorCompat = this.mDecorToolbar.setupAnimatorToVisibility(0, 200L);
-            viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(8, FADE_OUT_DURATION_MS);
+            decorToolbar2.setVisibility(4);
+            this.mContextView.setVisibility(0);
+            return;
         }
-        ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet = new ViewPropertyAnimatorCompatSet();
-        viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat2, viewPropertyAnimatorCompat);
-        viewPropertyAnimatorCompatSet.start();
+        decorToolbar2.setVisibility(0);
+        this.mContextView.setVisibility(8);
     }
 
     private boolean shouldAnimateContextView() {

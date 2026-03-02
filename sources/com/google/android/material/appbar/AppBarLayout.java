@@ -212,14 +212,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m9811x91f594d8(colorStateList, materialShapeDrawable, colorOrNull, valueAnimator);
+                AppBarLayout.this.m8841x91f594d8(colorStateList, materialShapeDrawable, colorOrNull, valueAnimator);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithColor$0$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m9811x91f594d8(ColorStateList colorStateList, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8841x91f594d8(ColorStateList colorStateList, MaterialShapeDrawable materialShapeDrawable, Integer num, ValueAnimator valueAnimator) {
         Integer num2;
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         int layer = MaterialColors.layer(this.backgroundOriginalColor, colorStateList.getDefaultColor(), floatValue);
@@ -248,14 +248,14 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
         this.liftOnScrollColorUpdateListener = new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                AppBarLayout.this.m9812x84b6053(materialShapeDrawable, valueAnimator);
+                AppBarLayout.this.m8842x84b6053(materialShapeDrawable, valueAnimator);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeLiftOnScrollWithElevation$1$com-google-android-material-appbar-AppBarLayout  reason: not valid java name */
-    public /* synthetic */ void m9812x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8842x84b6053(MaterialShapeDrawable materialShapeDrawable, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         materialShapeDrawable.setElevation(floatValue);
         Drawable drawable = this.statusBarForeground;
@@ -1357,27 +1357,26 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
 
         private void animateOffsetWithDuration(final CoordinatorLayout coordinatorLayout, final T t, int i, int i2) {
             int topBottomOffsetForScrollingSibling = getTopBottomOffsetForScrollingSibling();
+            ValueAnimator valueAnimator = this.offsetAnimator;
             if (topBottomOffsetForScrollingSibling == i) {
-                ValueAnimator valueAnimator = this.offsetAnimator;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
                     return;
                 }
                 this.offsetAnimator.cancel();
                 return;
             }
-            ValueAnimator valueAnimator2 = this.offsetAnimator;
-            if (valueAnimator2 == null) {
-                ValueAnimator valueAnimator3 = new ValueAnimator();
-                this.offsetAnimator = valueAnimator3;
-                valueAnimator3.setInterpolator(AnimationUtils.DECELERATE_INTERPOLATOR);
+            if (valueAnimator == null) {
+                ValueAnimator valueAnimator2 = new ValueAnimator();
+                this.offsetAnimator = valueAnimator2;
+                valueAnimator2.setInterpolator(AnimationUtils.DECELERATE_INTERPOLATOR);
                 this.offsetAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.appbar.AppBarLayout.BaseBehavior.1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public void onAnimationUpdate(ValueAnimator valueAnimator4) {
-                        BaseBehavior.this.setHeaderTopBottomOffset(coordinatorLayout, t, ((Integer) valueAnimator4.getAnimatedValue()).intValue());
+                    public void onAnimationUpdate(ValueAnimator valueAnimator3) {
+                        BaseBehavior.this.setHeaderTopBottomOffset(coordinatorLayout, t, ((Integer) valueAnimator3.getAnimatedValue()).intValue());
                     }
                 });
             } else {
-                valueAnimator2.cancel();
+                valueAnimator.cancel();
             }
             this.offsetAnimator.setDuration(Math.min(i2, 600));
             this.offsetAnimator.setIntValues(topBottomOffsetForScrollingSibling, i);
@@ -1534,14 +1533,16 @@ public class AppBarLayout extends LinearLayout implements CoordinatorLayout.Atta
                     } else if (i == 8192) {
                         if (BaseBehavior.this.getTopBottomOffsetForScrollingSibling() != 0) {
                             View childWithScrollingBehavior = BaseBehavior.this.getChildWithScrollingBehavior(coordinatorLayout);
-                            if (childWithScrollingBehavior.canScrollVertically(-1)) {
-                                int i2 = -t.getDownNestedPreScrollRange();
+                            boolean canScrollVertically = childWithScrollingBehavior.canScrollVertically(-1);
+                            AppBarLayout appBarLayout = t;
+                            if (canScrollVertically) {
+                                int i2 = -appBarLayout.getDownNestedPreScrollRange();
                                 if (i2 != 0) {
                                     BaseBehavior.this.onNestedPreScroll(coordinatorLayout, (CoordinatorLayout) t, childWithScrollingBehavior, 0, i2, new int[]{0, 0}, 1);
                                     return true;
                                 }
                             } else {
-                                t.setExpanded(true);
+                                appBarLayout.setExpanded(true);
                                 return true;
                             }
                         }

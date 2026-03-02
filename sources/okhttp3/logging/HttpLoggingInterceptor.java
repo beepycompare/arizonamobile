@@ -167,7 +167,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to var", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.LEVEL, imports = {}))
     /* renamed from: -deprecated_level  reason: not valid java name */
-    public final Level m12171deprecated_level() {
+    public final Level m11037deprecated_level() {
         return this.level;
     }
 
@@ -254,11 +254,14 @@ public final class HttpLoggingInterceptor implements Interceptor {
                             str = str4;
                             if (!IsProbablyUtf8Kt.isProbablyUtf8(buffer, 16L)) {
                                 this.logger.log("--> END " + request.method() + " (binary " + body.contentLength() + "-byte body omitted)");
-                            } else if (l2 != null) {
-                                this.logger.log("--> END " + request.method() + " (" + buffer.size() + "-byte, " + l2.longValue() + "-gzipped-byte body)");
                             } else {
-                                this.logger.log(buffer.readString(charsetOrUtf8));
-                                this.logger.log("--> END " + request.method() + " (" + body.contentLength() + str3);
+                                Logger logger = this.logger;
+                                if (l2 != null) {
+                                    logger.log("--> END " + request.method() + " (" + buffer.size() + "-byte, " + l2.longValue() + "-gzipped-byte body)");
+                                } else {
+                                    logger.log(buffer.readString(charsetOrUtf8));
+                                    this.logger.log("--> END " + request.method() + " (" + body.contentLength() + str3);
+                                }
                             }
                         }
                         str = str4;
@@ -290,7 +293,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
             Intrinsics.checkNotNull(body2);
             long contentLength = body2.contentLength();
             String str6 = contentLength != -1 ? contentLength + "-byte" : "unknown-length";
-            Logger logger = this.logger;
+            Logger logger2 = this.logger;
             StringBuilder sb = new StringBuilder();
             sb.append("<-- " + proceed.code());
             if (proceed.message().length() > 0) {
@@ -304,7 +307,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
                 sb.append(", " + str6 + " body");
             }
             sb.append(")");
-            logger.log(sb.toString());
+            logger2.log(sb.toString());
             if (z) {
                 Headers headers2 = proceed.headers();
                 int size2 = headers2.size();
@@ -352,25 +355,25 @@ public final class HttpLoggingInterceptor implements Interceptor {
                         this.logger.log("");
                         this.logger.log(buffer3.clone().readString(charsetOrUtf82));
                     }
-                    Logger logger2 = this.logger;
+                    Logger logger3 = this.logger;
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("<-- END HTTP (" + millis2 + "ms, " + buffer3.size() + "-byte");
                     if (l != null) {
                         sb2.append(", " + l.longValue() + "-gzipped-byte");
                     }
                     sb2.append(" body)");
-                    logger2.log(sb2.toString());
+                    logger3.log(sb2.toString());
                     return proceed;
                 }
             }
             return proceed;
         } catch (Exception e) {
             long millis3 = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanoTime);
-            Logger logger3 = this.logger;
+            Logger logger4 = this.logger;
             StringBuilder sb3 = new StringBuilder();
             sb3.append("<-- HTTP FAILED: " + e + '.');
             sb3.append(str + redactUrl$logging_interceptor(request.url()) + " (" + millis3 + "ms)");
-            logger3.log(sb3.toString());
+            logger4.log(sb3.toString());
             throw e;
         }
     }

@@ -121,7 +121,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
             int size3 = changes2.size();
             for (int i5 = 0; i5 < size3; i5++) {
                 PointerInputChange pointerInputChange2 = changes2.get(i5);
-                if (pointerInputChange2.isConsumed() || PointerEventKt.m6689isOutOfBoundsjwHxaWs(pointerInputChange2, awaitPointerEventScope.mo6640getSizeYbymL2g(), awaitPointerEventScope.mo6639getExtendedTouchPaddingNHjbRc())) {
+                if (pointerInputChange2.isConsumed() || PointerEventKt.m6030isOutOfBoundsjwHxaWs(pointerInputChange2, awaitPointerEventScope.mo5981getSizeYbymL2g(), awaitPointerEventScope.mo5980getExtendedTouchPaddingNHjbRc())) {
                     break;
                 }
             }
@@ -145,7 +145,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     }
                     i2++;
                 }
-                if (!DragGestureDetectorKt.m549isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m6742getIdJ3iCeTQ())) {
+                if (!DragGestureDetectorKt.m475isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m6083getIdJ3iCeTQ())) {
                 }
                 awaitPointerEventScope = awaitPointerEventScope2;
                 obj3 = null;
@@ -175,7 +175,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     i2++;
                 }
             }
-            if (!DragGestureDetectorKt.m549isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m6742getIdJ3iCeTQ())) {
+            if (!DragGestureDetectorKt.m475isPointerUpDmW0f2w(pointerEvent, this.$currentDown.element.m6083getIdJ3iCeTQ())) {
                 List<PointerInputChange> changes4 = pointerEvent.getChanges();
                 int size4 = changes4.size();
                 int i6 = 0;
@@ -221,7 +221,7 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$2 extends 
                     }
                     t = changes5.get(i7);
                     Ref.ObjectRef<PointerInputChange> objectRef3 = objectRef2;
-                    if (PointerId.m6726equalsimpl0(((PointerInputChange) t).m6742getIdJ3iCeTQ(), objectRef2.element.m6742getIdJ3iCeTQ())) {
+                    if (PointerId.m6067equalsimpl0(((PointerInputChange) t).m6083getIdJ3iCeTQ(), objectRef2.element.m6083getIdJ3iCeTQ())) {
                         break;
                     }
                     i7++;

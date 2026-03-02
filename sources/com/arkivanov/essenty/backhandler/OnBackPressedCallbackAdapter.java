@@ -22,14 +22,12 @@ public final class OnBackPressedCallbackAdapter extends OnBackPressedCallback {
         dispatcher.addEnabledChangedListener(new Function1() { // from class: com.arkivanov.essenty.backhandler.OnBackPressedCallbackAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = OnBackPressedCallbackAdapter._init_$lambda$0(OnBackPressedCallbackAdapter.this, ((Boolean) obj).booleanValue());
-                return _init_$lambda$0;
+                return OnBackPressedCallbackAdapter._init_$lambda$0(OnBackPressedCallbackAdapter.this, ((Boolean) obj).booleanValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(OnBackPressedCallbackAdapter onBackPressedCallbackAdapter, boolean z) {
         onBackPressedCallbackAdapter.setEnabled(z);
         return Unit.INSTANCE;

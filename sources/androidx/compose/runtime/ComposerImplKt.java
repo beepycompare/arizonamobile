@@ -23,9 +23,9 @@ public final class ComposerImplKt {
     private static final Comparator<Invalidation> InvalidationLocationAscending = new Comparator() { // from class: androidx.compose.runtime.ComposerImplKt$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int InvalidationLocationAscending$lambda$0;
-            InvalidationLocationAscending$lambda$0 = ComposerImplKt.InvalidationLocationAscending$lambda$0((Invalidation) obj, (Invalidation) obj2);
-            return InvalidationLocationAscending$lambda$0;
+            int compare;
+            compare = Intrinsics.compare(((Invalidation) obj).getLocation(), ((Invalidation) obj2).getLocation());
+            return compare;
         }
     };
     public static final int nodeKey = 125;
@@ -95,9 +95,7 @@ public final class ComposerImplKt {
         slotWriter.forAllDataInRememberOrder(slotWriter.getCurrentGroup(), new Function2() { // from class: androidx.compose.runtime.ComposerImplKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit deactivateCurrentGroup$lambda$0;
-                deactivateCurrentGroup$lambda$0 = ComposerImplKt.deactivateCurrentGroup$lambda$0(RememberManager.this, slotWriter, ((Integer) obj).intValue(), obj2);
-                return deactivateCurrentGroup$lambda$0;
+                return ComposerImplKt.deactivateCurrentGroup$lambda$0(RememberManager.this, slotWriter, ((Integer) obj).intValue(), obj2);
             }
         });
     }
@@ -126,7 +124,7 @@ public final class ComposerImplKt {
     }
 
     public static final <K, V> MutableScatterMap<Object, Object> multiMap(int i) {
-        return MultiValueMap.m4755constructorimpl(new MutableScatterMap(i));
+        return MultiValueMap.m4120constructorimpl(new MutableScatterMap(i));
     }
 
     public static final Object getKey(Object obj, Object obj2, Object obj3) {
@@ -295,9 +293,5 @@ public final class ComposerImplKt {
 
     public static final Object getJoinedKey(KeyInfo keyInfo) {
         return keyInfo.getObjectKey() != null ? new JoinedKey(Integer.valueOf(keyInfo.getKey()), keyInfo.getObjectKey()) : Integer.valueOf(keyInfo.getKey());
-    }
-
-    public static final int InvalidationLocationAscending$lambda$0(Invalidation invalidation, Invalidation invalidation2) {
-        return Intrinsics.compare(invalidation.getLocation(), invalidation2.getLocation());
     }
 }

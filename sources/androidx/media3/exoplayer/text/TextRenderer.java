@@ -431,11 +431,11 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         if (nextEventTimeIndex == 0 || this.subtitle.getEventTimeCount() == 0) {
             return this.subtitle.timeUs;
         }
+        SubtitleOutputBuffer subtitleOutputBuffer = this.subtitle;
         if (nextEventTimeIndex == -1) {
-            SubtitleOutputBuffer subtitleOutputBuffer = this.subtitle;
             return subtitleOutputBuffer.getEventTime(subtitleOutputBuffer.getEventTimeCount() - 1);
         }
-        return this.subtitle.getEventTime(nextEventTimeIndex - 1);
+        return subtitleOutputBuffer.getEventTime(nextEventTimeIndex - 1);
     }
 
     @SideEffectFree

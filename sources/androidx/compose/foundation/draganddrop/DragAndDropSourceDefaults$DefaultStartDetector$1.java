@@ -47,9 +47,7 @@ final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLamb
             if (TapGestureDetectorKt.detectTapGestures$default(dragAndDropStartDetectorScope, null, new Function1() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceDefaults$DefaultStartDetector$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = DragAndDropSourceDefaults$DefaultStartDetector$1.invokeSuspend$lambda$0(DragAndDropStartDetectorScope.this, (Offset) obj2);
-                    return invokeSuspend$lambda$0;
+                    return DragAndDropSourceDefaults$DefaultStartDetector$1.invokeSuspend$lambda$0(DragAndDropStartDetectorScope.this, (Offset) obj2);
                 }
             }, null, null, this, 13, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -62,9 +60,9 @@ final class DragAndDropSourceDefaults$DefaultStartDetector$1 extends SuspendLamb
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(DragAndDropStartDetectorScope dragAndDropStartDetectorScope, Offset offset) {
-        dragAndDropStartDetectorScope.mo456requestDragAndDropTransferk4lQ0M(offset.m5189unboximpl());
+        dragAndDropStartDetectorScope.mo397requestDragAndDropTransferk4lQ0M(offset.m4537unboximpl());
         return Unit.INSTANCE;
     }
 }

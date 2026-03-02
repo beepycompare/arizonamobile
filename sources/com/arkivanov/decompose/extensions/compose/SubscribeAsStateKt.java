@@ -45,9 +45,7 @@ public final class SubscribeAsStateKt {
             rememberedValue2 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.SubscribeAsStateKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DisposableEffectResult subscribeAsState$lambda$4$lambda$3;
-                    subscribeAsState$lambda$4$lambda$3 = SubscribeAsStateKt.subscribeAsState$lambda$4$lambda$3(Value.this, mutableState, (DisposableEffectScope) obj);
-                    return subscribeAsState$lambda$4$lambda$3;
+                    return SubscribeAsStateKt.subscribeAsState$lambda$4$lambda$3(Value.this, mutableState, (DisposableEffectScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -61,15 +59,13 @@ public final class SubscribeAsStateKt {
         return mutableState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult subscribeAsState$lambda$4$lambda$3(Value value, final MutableState mutableState, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         final Cancellation subscribe = value.subscribe(new Function1() { // from class: com.arkivanov.decompose.extensions.compose.SubscribeAsStateKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subscribeAsState$lambda$4$lambda$3$lambda$1;
-                subscribeAsState$lambda$4$lambda$3$lambda$1 = SubscribeAsStateKt.subscribeAsState$lambda$4$lambda$3$lambda$1(MutableState.this, obj);
-                return subscribeAsState$lambda$4$lambda$3$lambda$1;
+                return SubscribeAsStateKt.subscribeAsState$lambda$4$lambda$3$lambda$1(MutableState.this, obj);
             }
         });
         return new DisposableEffectResult() { // from class: com.arkivanov.decompose.extensions.compose.SubscribeAsStateKt$subscribeAsState$lambda$4$lambda$3$$inlined$onDispose$1
@@ -80,7 +76,7 @@ public final class SubscribeAsStateKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribeAsState$lambda$4$lambda$3$lambda$1(MutableState mutableState, Object it) {
         Intrinsics.checkNotNullParameter(it, "it");
         mutableState.setValue(it);

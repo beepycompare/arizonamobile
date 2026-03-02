@@ -182,7 +182,7 @@ public abstract class SpecialEffectsController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void enqueue$lambda$4$lambda$2(SpecialEffectsController this$0, FragmentStateManagerOperation operation) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(operation, "$operation");
@@ -194,7 +194,7 @@ public abstract class SpecialEffectsController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void enqueue$lambda$4$lambda$3(SpecialEffectsController this$0, FragmentStateManagerOperation operation) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(operation, "$operation");
@@ -540,7 +540,7 @@ public abstract class SpecialEffectsController {
             return this.isComplete;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void _init_$lambda$0(Operation this$0) {
             Intrinsics.checkNotNullParameter(this$0, "this$0");
             this$0.cancel();

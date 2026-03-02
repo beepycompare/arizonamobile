@@ -75,26 +75,20 @@ public final class AnchoredDraggableState<T> {
         this.targetValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object targetValue_delegate$lambda$3;
-                targetValue_delegate$lambda$3 = AnchoredDraggableState.targetValue_delegate$lambda$3(AnchoredDraggableState.this);
-                return targetValue_delegate$lambda$3;
+                return AnchoredDraggableState.targetValue_delegate$lambda$3(AnchoredDraggableState.this);
             }
         });
         this.closestValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object closestValue_delegate$lambda$5;
-                closestValue_delegate$lambda$5 = AnchoredDraggableState.closestValue_delegate$lambda$5(AnchoredDraggableState.this);
-                return closestValue_delegate$lambda$5;
+                return AnchoredDraggableState.closestValue_delegate$lambda$5(AnchoredDraggableState.this);
             }
         });
         this.offset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(Float.NaN);
         this.progress$delegate = SnapshotStateKt.derivedStateOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float progress_delegate$lambda$7;
-                progress_delegate$lambda$7 = AnchoredDraggableState.progress_delegate$lambda$7(AnchoredDraggableState.this);
-                return Float.valueOf(progress_delegate$lambda$7);
+                return Float.valueOf(AnchoredDraggableState.progress_delegate$lambda$7(AnchoredDraggableState.this));
             }
         });
         this.lastVelocity$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -135,9 +129,7 @@ public final class AnchoredDraggableState<T> {
         this(obj, function1, function0, function02, (i & 16) != 0 ? new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = AnchoredDraggableState._init_$lambda$0(obj2);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(AnchoredDraggableState._init_$lambda$0(obj2));
             }
         } : function12);
     }
@@ -150,9 +142,7 @@ public final class AnchoredDraggableState<T> {
         this(obj, draggableAnchors, function1, function0, function02, (i & 32) != 0 ? new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                boolean _init_$lambda$1;
-                _init_$lambda$1 = AnchoredDraggableState._init_$lambda$1(obj2);
-                return Boolean.valueOf(_init_$lambda$1);
+                return Boolean.valueOf(AnchoredDraggableState._init_$lambda$1(obj2));
             }
         } : function12);
     }
@@ -502,9 +492,7 @@ public final class AnchoredDraggableState<T> {
         return this.dragMutex.tryMutate(new Function0() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit trySnapTo$lambda$9;
-                trySnapTo$lambda$9 = AnchoredDraggableState.trySnapTo$lambda$9(AnchoredDraggableState.this, t);
-                return trySnapTo$lambda$9;
+                return AnchoredDraggableState.trySnapTo$lambda$9(AnchoredDraggableState.this, t);
             }
         });
     }
@@ -536,22 +524,17 @@ public final class AnchoredDraggableState<T> {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Object Saver$lambda$0;
-                    Saver$lambda$0 = AnchoredDraggableState.Companion.Saver$lambda$0((SaverScope) obj, (AnchoredDraggableState) obj2);
-                    return Saver$lambda$0;
+                    Object currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((AnchoredDraggableState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.internal.AnchoredDraggableState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AnchoredDraggableState Saver$lambda$1;
-                    Saver$lambda$1 = AnchoredDraggableState.Companion.Saver$lambda$1(Function1.this, function02, function0, function1, obj);
-                    return Saver$lambda$1;
+                    return AnchoredDraggableState.Companion.Saver$lambda$1(Function1.this, function02, function0, function1, obj);
                 }
             });
-        }
-
-        public static final Object Saver$lambda$0(SaverScope saverScope, AnchoredDraggableState anchoredDraggableState) {
-            return anchoredDraggableState.getCurrentValue();
         }
 
         public static final AnchoredDraggableState Saver$lambda$1(Function1 function1, Function0 function0, Function0 function02, Function1 function12, Object obj) {

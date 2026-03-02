@@ -267,7 +267,7 @@ public final class MotionSceneScope {
     }
 
     /* renamed from: customColor-mxwnekA  reason: not valid java name */
-    public final void m8701customColormxwnekA(ConstrainScope constrainScope, String str, long j) {
+    public final void m7998customColormxwnekA(ConstrainScope constrainScope, String str, long j) {
         if (!constrainScope.getContainerObject$constraintlayout_compose_release().has(SchedulerSupport.CUSTOM)) {
             constrainScope.getContainerObject$constraintlayout_compose_release().put(SchedulerSupport.CUSTOM, new CLObject(new char[0]));
         }
@@ -275,7 +275,7 @@ public final class MotionSceneScope {
         if (objectOrNull == null) {
             return;
         }
-        objectOrNull.putString(str, m8700toJsonHexString8_81llA(j));
+        objectOrNull.putString(str, m7997toJsonHexString8_81llA(j));
     }
 
     public final void customInt(ConstrainScope constrainScope, String str, int i) {
@@ -283,13 +283,13 @@ public final class MotionSceneScope {
     }
 
     /* renamed from: customDistance-wH6b6FI  reason: not valid java name */
-    public final void m8703customDistancewH6b6FI(ConstrainScope constrainScope, String str, float f) {
+    public final void m8000customDistancewH6b6FI(ConstrainScope constrainScope, String str, float f) {
         customFloat(constrainScope, str, f);
     }
 
     /* renamed from: customFontSize-kncR6DU  reason: not valid java name */
-    public final void m8705customFontSizekncR6DU(ConstrainScope constrainScope, String str, long j) {
-        customFloat(constrainScope, str, TextUnit.m8452getValueimpl(j));
+    public final void m8002customFontSizekncR6DU(ConstrainScope constrainScope, String str, long j) {
+        customFloat(constrainScope, str, TextUnit.m7749getValueimpl(j));
     }
 
     public final float getStaggeredWeight(ConstrainScope constrainScope) {
@@ -319,8 +319,8 @@ public final class MotionSceneScope {
     }
 
     /* renamed from: customColor-mxwnekA  reason: not valid java name */
-    public final void m8702customColormxwnekA(KeyAttributeScope keyAttributeScope, String str, long j) {
-        keyAttributeScope.getCustomPropertiesValue$constraintlayout_compose_release().put(str, m8700toJsonHexString8_81llA(j));
+    public final void m7999customColormxwnekA(KeyAttributeScope keyAttributeScope, String str, long j) {
+        keyAttributeScope.getCustomPropertiesValue$constraintlayout_compose_release().put(str, m7997toJsonHexString8_81llA(j));
     }
 
     public final void customInt(KeyAttributeScope keyAttributeScope, String str, int i) {
@@ -328,19 +328,19 @@ public final class MotionSceneScope {
     }
 
     /* renamed from: customDistance-wH6b6FI  reason: not valid java name */
-    public final void m8704customDistancewH6b6FI(KeyAttributeScope keyAttributeScope, String str, float f) {
+    public final void m8001customDistancewH6b6FI(KeyAttributeScope keyAttributeScope, String str, float f) {
         keyAttributeScope.getCustomPropertiesValue$constraintlayout_compose_release().put(str, Float.valueOf(f));
     }
 
     /* renamed from: customFontSize-kncR6DU  reason: not valid java name */
-    public final void m8706customFontSizekncR6DU(KeyAttributeScope keyAttributeScope, String str, long j) {
-        keyAttributeScope.getCustomPropertiesValue$constraintlayout_compose_release().put(str, Float.valueOf(TextUnit.m8452getValueimpl(j)));
+    public final void m8003customFontSizekncR6DU(KeyAttributeScope keyAttributeScope, String str, long j) {
+        keyAttributeScope.getCustomPropertiesValue$constraintlayout_compose_release().put(str, Float.valueOf(TextUnit.m7749getValueimpl(j)));
     }
 
     /* renamed from: toJsonHexString-8_81llA  reason: not valid java name */
-    private final String m8700toJsonHexString8_81llA(long j) {
+    private final String m7997toJsonHexString8_81llA(long j) {
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format("#%08X", Arrays.copyOf(new Object[]{Integer.valueOf(ColorKt.m5478toArgb8_81llA(j))}, 1));
+        String format = String.format("#%08X", Arrays.copyOf(new Object[]{Integer.valueOf(ColorKt.m4826toArgb8_81llA(j))}, 1));
         Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
         return format;
     }

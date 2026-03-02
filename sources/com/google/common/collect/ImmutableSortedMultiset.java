@@ -456,10 +456,11 @@ public abstract class ImmutableSortedMultiset<E> extends ImmutableMultiset<E> im
         public ImmutableSortedMultiset<E> build() {
             dedupAndCoalesceAndDeleteEmpty();
             int i = this.length;
+            Comparator<? super E> comparator = this.comparator;
             if (i == 0) {
-                return ImmutableSortedMultiset.emptyMultiset(this.comparator);
+                return ImmutableSortedMultiset.emptyMultiset(comparator);
             }
-            RegularImmutableSortedSet regularImmutableSortedSet = (RegularImmutableSortedSet) ImmutableSortedSet.construct(this.comparator, i, this.elements);
+            RegularImmutableSortedSet regularImmutableSortedSet = (RegularImmutableSortedSet) ImmutableSortedSet.construct(comparator, i, this.elements);
             long[] jArr = new long[this.length + 1];
             int i2 = 0;
             while (i2 < this.length) {

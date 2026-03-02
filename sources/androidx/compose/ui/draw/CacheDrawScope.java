@@ -57,8 +57,8 @@ public final class CacheDrawScope implements Density {
     }
 
     /* renamed from: getSize-NH-jbRc  reason: not valid java name */
-    public final long m4959getSizeNHjbRc() {
-        return this.cacheParams.mo4957getSizeNHjbRc();
+    public final long m4307getSizeNHjbRc() {
+        return this.cacheParams.mo4305getSizeNHjbRc();
     }
 
     public final LayoutDirection getLayoutDirection() {
@@ -78,7 +78,7 @@ public final class CacheDrawScope implements Density {
     }
 
     /* renamed from: record-TdoYBX4$default  reason: not valid java name */
-    public static /* synthetic */ void m4958recordTdoYBX4$default(CacheDrawScope cacheDrawScope, GraphicsLayer graphicsLayer, Density density, LayoutDirection layoutDirection, long j, Function1 function1, int i, Object obj) {
+    public static /* synthetic */ void m4306recordTdoYBX4$default(CacheDrawScope cacheDrawScope, GraphicsLayer graphicsLayer, Density density, LayoutDirection layoutDirection, long j, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
             density = cacheDrawScope;
         }
@@ -88,18 +88,18 @@ public final class CacheDrawScope implements Density {
         }
         LayoutDirection layoutDirection2 = layoutDirection;
         if ((i & 4) != 0) {
-            j = IntSizeKt.m8440toIntSizeuvyYCjk(cacheDrawScope.m4959getSizeNHjbRc());
+            j = IntSizeKt.m7737toIntSizeuvyYCjk(cacheDrawScope.m4307getSizeNHjbRc());
         }
-        cacheDrawScope.m4960recordTdoYBX4(graphicsLayer, density2, layoutDirection2, j, function1);
+        cacheDrawScope.m4308recordTdoYBX4(graphicsLayer, density2, layoutDirection2, j, function1);
     }
 
     /* renamed from: record-TdoYBX4  reason: not valid java name */
-    public final void m4960recordTdoYBX4(GraphicsLayer graphicsLayer, final Density density, final LayoutDirection layoutDirection, long j, final Function1<? super ContentDrawScope, Unit> function1) {
+    public final void m4308recordTdoYBX4(GraphicsLayer graphicsLayer, final Density density, final LayoutDirection layoutDirection, long j, final Function1<? super ContentDrawScope, Unit> function1) {
         final ContentDrawScope contentDrawScope = this.contentDrawScope;
         Intrinsics.checkNotNull(contentDrawScope);
         final Density density2 = contentDrawScope.getDrawContext().getDensity();
         final LayoutDirection layoutDirection2 = contentDrawScope.getDrawContext().getLayoutDirection();
-        contentDrawScope.mo6006recordJVtK1S4(graphicsLayer, j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.draw.CacheDrawScope$record$1$1
+        contentDrawScope.mo5347recordJVtK1S4(graphicsLayer, j, new Function1<DrawScope, Unit>() { // from class: androidx.compose.ui.draw.CacheDrawScope$record$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */

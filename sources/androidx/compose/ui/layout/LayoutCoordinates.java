@@ -22,23 +22,23 @@ public interface LayoutCoordinates {
     Set<AlignmentLine> getProvidedAlignmentLines();
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    long mo6883getSizeYbymL2g();
+    long mo6224getSizeYbymL2g();
 
     boolean isAttached();
 
     Rect localBoundingBoxOf(LayoutCoordinates layoutCoordinates, boolean z);
 
     /* renamed from: localPositionOf-R5De75A  reason: not valid java name */
-    long mo6884localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j);
+    long mo6225localPositionOfR5De75A(LayoutCoordinates layoutCoordinates, long j);
 
     /* renamed from: localToRoot-MK-Hz9U  reason: not valid java name */
-    long mo6886localToRootMKHz9U(long j);
+    long mo6227localToRootMKHz9U(long j);
 
     /* renamed from: localToWindow-MK-Hz9U  reason: not valid java name */
-    long mo6888localToWindowMKHz9U(long j);
+    long mo6229localToWindowMKHz9U(long j);
 
     /* renamed from: windowToLocal-MK-Hz9U  reason: not valid java name */
-    long mo6892windowToLocalMKHz9U(long j);
+    long mo6233windowToLocalMKHz9U(long j);
 
     /* compiled from: LayoutCoordinates.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
@@ -54,61 +54,61 @@ public interface LayoutCoordinates {
 
         @Deprecated
         /* renamed from: screenToLocal-MK-Hz9U  reason: not valid java name */
-        public static long m6896screenToLocalMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
-            return LayoutCoordinates.super.mo6889screenToLocalMKHz9U(j);
+        public static long m6237screenToLocalMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
+            return LayoutCoordinates.super.mo6230screenToLocalMKHz9U(j);
         }
 
         @Deprecated
         /* renamed from: localToScreen-MK-Hz9U  reason: not valid java name */
-        public static long m6895localToScreenMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
-            return LayoutCoordinates.super.mo6887localToScreenMKHz9U(j);
+        public static long m6236localToScreenMKHz9U(LayoutCoordinates layoutCoordinates, long j) {
+            return LayoutCoordinates.super.mo6228localToScreenMKHz9U(j);
         }
 
         @Deprecated
         /* renamed from: localPositionOf-S_NoaFU  reason: not valid java name */
-        public static long m6893localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
-            return LayoutCoordinates.super.mo6885localPositionOfS_NoaFU(layoutCoordinates2, j, z);
+        public static long m6234localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z) {
+            return LayoutCoordinates.super.mo6226localPositionOfS_NoaFU(layoutCoordinates2, j, z);
         }
 
         @Deprecated
         /* renamed from: transformFrom-EL8BTi8  reason: not valid java name */
-        public static void m6897transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, float[] fArr) {
-            LayoutCoordinates.super.mo6890transformFromEL8BTi8(layoutCoordinates2, fArr);
+        public static void m6238transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, float[] fArr) {
+            LayoutCoordinates.super.mo6231transformFromEL8BTi8(layoutCoordinates2, fArr);
         }
 
         @Deprecated
         /* renamed from: transformToScreen-58bKbWc  reason: not valid java name */
-        public static void m6898transformToScreen58bKbWc(LayoutCoordinates layoutCoordinates, float[] fArr) {
-            LayoutCoordinates.super.mo6891transformToScreen58bKbWc(fArr);
+        public static void m6239transformToScreen58bKbWc(LayoutCoordinates layoutCoordinates, float[] fArr) {
+            LayoutCoordinates.super.mo6232transformToScreen58bKbWc(fArr);
         }
     }
 
     /* renamed from: screenToLocal-MK-Hz9U  reason: not valid java name */
-    default long mo6889screenToLocalMKHz9U(long j) {
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+    default long mo6230screenToLocalMKHz9U(long j) {
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: localToScreen-MK-Hz9U  reason: not valid java name */
-    default long mo6887localToScreenMKHz9U(long j) {
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+    default long mo6228localToScreenMKHz9U(long j) {
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: localPositionOf-S_NoaFU$default  reason: not valid java name */
-    static /* synthetic */ long m6882localPositionOfS_NoaFU$default(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
+    static /* synthetic */ long m6223localPositionOfS_NoaFU$default(LayoutCoordinates layoutCoordinates, LayoutCoordinates layoutCoordinates2, long j, boolean z, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
-                j = Offset.Companion.m5195getZeroF1C5BW0();
+                j = Offset.Companion.m4543getZeroF1C5BW0();
             }
             if ((i & 4) != 0) {
                 z = true;
             }
-            return layoutCoordinates.mo6885localPositionOfS_NoaFU(layoutCoordinates2, j, z);
+            return layoutCoordinates.mo6226localPositionOfS_NoaFU(layoutCoordinates2, j, z);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: localPositionOf-S_NoaFU");
     }
 
     /* renamed from: localPositionOf-S_NoaFU  reason: not valid java name */
-    default long mo6885localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
+    default long mo6226localPositionOfS_NoaFU(LayoutCoordinates layoutCoordinates, long j, boolean z) {
         throw new UnsupportedOperationException("localPositionOf is not implemented on this LayoutCoordinates");
     }
 
@@ -123,12 +123,12 @@ public interface LayoutCoordinates {
     }
 
     /* renamed from: transformFrom-EL8BTi8  reason: not valid java name */
-    default void mo6890transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
+    default void mo6231transformFromEL8BTi8(LayoutCoordinates layoutCoordinates, float[] fArr) {
         InlineClassHelperKt.throwUnsupportedOperationException("transformFrom is not implemented on this LayoutCoordinates");
     }
 
     /* renamed from: transformToScreen-58bKbWc  reason: not valid java name */
-    default void mo6891transformToScreen58bKbWc(float[] fArr) {
+    default void mo6232transformToScreen58bKbWc(float[] fArr) {
         throw new UnsupportedOperationException("transformToScreen is not implemented on this LayoutCoordinates");
     }
 }

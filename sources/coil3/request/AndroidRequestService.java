@@ -65,7 +65,7 @@ public final class AndroidRequestService implements RequestService {
         if (lifecycle2 != null) {
             return new LifecycleRequestDelegate(lifecycle2, job);
         }
-        return BaseRequestDelegate.m9465boximpl(BaseRequestDelegate.m9466constructorimpl(job));
+        return BaseRequestDelegate.m8605boximpl(BaseRequestDelegate.m8606constructorimpl(job));
     }
 
     private final Lifecycle findLifecycle(ImageRequest imageRequest) {

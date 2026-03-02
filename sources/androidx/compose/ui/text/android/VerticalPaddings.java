@@ -10,59 +10,59 @@ public final class VerticalPaddings {
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ VerticalPaddings m7749boximpl(long j) {
+    public static final /* synthetic */ VerticalPaddings m7050boximpl(long j) {
         return new VerticalPaddings(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m7750constructorimpl(long j) {
+    public static long m7051constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7751equalsimpl(long j, Object obj) {
-        return (obj instanceof VerticalPaddings) && j == ((VerticalPaddings) obj).m7757unboximpl();
+    public static boolean m7052equalsimpl(long j, Object obj) {
+        return (obj instanceof VerticalPaddings) && j == ((VerticalPaddings) obj).m7058unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7752equalsimpl0(long j, long j2) {
+    public static final boolean m7053equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: getBottomPadding-impl  reason: not valid java name */
-    public static final int m7753getBottomPaddingimpl(long j) {
+    public static final int m7054getBottomPaddingimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: getTopPadding-impl  reason: not valid java name */
-    public static final int m7754getTopPaddingimpl(long j) {
+    public static final int m7055getTopPaddingimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7755hashCodeimpl(long j) {
+    public static int m7056hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7756toStringimpl(long j) {
+    public static String m7057toStringimpl(long j) {
         return "VerticalPaddings(packedValue=" + j + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7751equalsimpl(this.packedValue, obj);
+        return m7052equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m7755hashCodeimpl(this.packedValue);
+        return m7056hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m7756toStringimpl(this.packedValue);
+        return m7057toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m7757unboximpl() {
+    public final /* synthetic */ long m7058unboximpl() {
         return this.packedValue;
     }
 

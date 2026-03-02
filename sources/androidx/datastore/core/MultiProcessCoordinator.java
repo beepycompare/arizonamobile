@@ -57,17 +57,22 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         this.lockFile$delegate = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                File lockFile_delegate$lambda$0;
-                lockFile_delegate$lambda$0 = MultiProcessCoordinator.lockFile_delegate$lambda$0(MultiProcessCoordinator.this);
-                return lockFile_delegate$lambda$0;
+                return MultiProcessCoordinator.lockFile_delegate$lambda$0(MultiProcessCoordinator.this);
             }
         });
         this.lazySharedCounter = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SharedCounter lazySharedCounter$lambda$0;
-                lazySharedCounter$lambda$0 = MultiProcessCoordinator.lazySharedCounter$lambda$0(MultiProcessCoordinator.this);
-                return lazySharedCounter$lambda$0;
+                SharedCounter create$datastore_core;
+                create$datastore_core = SharedCounter.Factory.create$datastore_core(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda2
+                    @Override // kotlin.jvm.functions.Function0
+                    public final Object invoke() {
+                        File lazySharedCounter$lambda$0$0;
+                        lazySharedCounter$lambda$0$0 = MultiProcessCoordinator.lazySharedCounter$lambda$0$0(MultiProcessCoordinator.this);
+                        return lazySharedCounter$lambda$0$0;
+                    }
+                });
+                return create$datastore_core;
             }
         });
     }
@@ -466,23 +471,11 @@ public final class MultiProcessCoordinator implements InterProcessCoordinator {
         return (File) this.lockFile$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final File lockFile_delegate$lambda$0(MultiProcessCoordinator multiProcessCoordinator) {
         File fileWithSuffix = multiProcessCoordinator.fileWithSuffix(multiProcessCoordinator.LOCK_SUFFIX);
         multiProcessCoordinator.createIfNotExists(fileWithSuffix);
         return fileWithSuffix;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SharedCounter lazySharedCounter$lambda$0(final MultiProcessCoordinator multiProcessCoordinator) {
-        return SharedCounter.Factory.create$datastore_core(new Function0() { // from class: androidx.datastore.core.MultiProcessCoordinator$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                File lazySharedCounter$lambda$0$0;
-                lazySharedCounter$lambda$0$0 = MultiProcessCoordinator.lazySharedCounter$lambda$0$0(MultiProcessCoordinator.this);
-                return lazySharedCounter$lambda$0$0;
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -55,10 +55,17 @@ public class BreakpointStoreOnCache implements DownloadStore {
         this.keyToIdMap = new KeyToIdMap();
         int size = sparseArray.size();
         this.sortedOccupiedIds = new ArrayList(size);
-        for (int i = 0; i < size; i++) {
-            this.sortedOccupiedIds.add(Integer.valueOf(sparseArray.valueAt(i).id));
+        int i = 0;
+        while (true) {
+            List<Integer> list2 = this.sortedOccupiedIds;
+            if (i < size) {
+                list2.add(Integer.valueOf(sparseArray.valueAt(i).id));
+                i++;
+            } else {
+                Collections.sort(list2);
+                return;
+            }
         }
-        Collections.sort(this.sortedOccupiedIds);
     }
 
     @Override // com.liulishuo.okdownload.core.breakpoint.BreakpointStore

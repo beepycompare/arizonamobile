@@ -76,19 +76,17 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsProviderModifierNode$$ExternalSyntheticLambda0
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsProviderModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = LazyLayoutBeyondBoundsProviderModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return LazyLayoutBeyondBoundsProviderModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
@@ -108,32 +106,34 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
 
     @Override // androidx.compose.ui.layout.BeyondBoundsLayout
     /* renamed from: layout-o7g1Pn8  reason: not valid java name */
-    public <T> T mo1108layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
+    public <T> T mo973layouto7g1Pn8(final int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
         int firstPlacedIndex;
         if (this.state.getItemCount() <= 0 || !this.state.getHasVisibleItems() || !isAttached()) {
             return function1.invoke(emptyBeyondBoundsScope);
         }
-        if (m1106isForward4vf7U8o(i)) {
-            firstPlacedIndex = this.state.getLastPlacedIndex();
+        boolean m971isForward4vf7U8o = m971isForward4vf7U8o(i);
+        LazyLayoutBeyondBoundsState lazyLayoutBeyondBoundsState = this.state;
+        if (m971isForward4vf7U8o) {
+            firstPlacedIndex = lazyLayoutBeyondBoundsState.getLastPlacedIndex();
         } else {
-            firstPlacedIndex = this.state.getFirstPlacedIndex();
+            firstPlacedIndex = lazyLayoutBeyondBoundsState.getFirstPlacedIndex();
         }
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
         objectRef.element = (T) this.beyondBoundsInfo.addInterval(firstPlacedIndex, firstPlacedIndex);
         int coerceAtMost = RangesKt.coerceAtMost(this.state.itemsPerViewport() * 2, this.state.getItemCount());
         T t = null;
         int i2 = 0;
-        while (t == null && m1105hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
+        while (t == null && m970hasMoreContentFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i) && i2 < coerceAtMost) {
             this.beyondBoundsInfo.removeInterval((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element);
-            objectRef.element = (T) m1104addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
+            objectRef.element = (T) m969addNextIntervalFR3nfPY((LazyLayoutBeyondBoundsInfo.Interval) objectRef.element, i);
             i2++;
             LayoutModifierNodeKt.remeasureSync(this);
             t = function1.invoke(new BeyondBoundsLayout.BeyondBoundsScope() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsProviderModifierNode$layout$2
                 @Override // androidx.compose.ui.layout.BeyondBoundsLayout.BeyondBoundsScope
                 public boolean getHasMoreContent() {
-                    boolean m1105hasMoreContentFR3nfPY;
-                    m1105hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsProviderModifierNode.this.m1105hasMoreContentFR3nfPY(objectRef.element, i);
-                    return m1105hasMoreContentFR3nfPY;
+                    boolean m970hasMoreContentFR3nfPY;
+                    m970hasMoreContentFR3nfPY = LazyLayoutBeyondBoundsProviderModifierNode.this.m970hasMoreContentFR3nfPY(objectRef.element, i);
+                    return m970hasMoreContentFR3nfPY;
                 }
             });
         }
@@ -143,19 +143,19 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
     }
 
     /* renamed from: isForward-4vf7U8o  reason: not valid java name */
-    private final boolean m1106isForward4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6864getBeforehoxUOeE())) {
+    private final boolean m971isForward4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6205getBeforehoxUOeE())) {
             return false;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6863getAfterhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6204getAfterhoxUOeE())) {
             return true;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6862getAbovehoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6203getAbovehoxUOeE())) {
             return this.reverseLayout;
         }
-        if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6865getBelowhoxUOeE())) {
+        if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6206getBelowhoxUOeE())) {
             return !this.reverseLayout;
-        } else if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6866getLefthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6207getLefthoxUOeE())) {
             int i2 = WhenMappings.$EnumSwitchMapping$0[DelegatableNodeKt.requireLayoutDirection(this).ordinal()];
             if (i2 != 1) {
                 if (i2 == 2) {
@@ -164,7 +164,7 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
                 throw new NoWhenBranchMatchedException();
             }
             return this.reverseLayout;
-        } else if (!BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6867getRighthoxUOeE())) {
+        } else if (!BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6208getRighthoxUOeE())) {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();
             throw new KotlinNothingValueException();
         } else {
@@ -180,10 +180,10 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
     }
 
     /* renamed from: addNextInterval-FR3nfPY  reason: not valid java name */
-    private final LazyLayoutBeyondBoundsInfo.Interval m1104addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+    private final LazyLayoutBeyondBoundsInfo.Interval m969addNextIntervalFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
         int start = interval.getStart();
         int end = interval.getEnd();
-        if (m1106isForward4vf7U8o(i)) {
+        if (m971isForward4vf7U8o(i)) {
             end++;
         } else {
             start--;
@@ -193,20 +193,20 @@ public final class LazyLayoutBeyondBoundsProviderModifierNode extends Modifier.N
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: hasMoreContent-FR3nfPY  reason: not valid java name */
-    public final boolean m1105hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
-        if (m1107isOppositeToOrientation4vf7U8o(i)) {
+    public final boolean m970hasMoreContentFR3nfPY(LazyLayoutBeyondBoundsInfo.Interval interval, int i) {
+        if (m972isOppositeToOrientation4vf7U8o(i)) {
             return false;
         }
-        return m1106isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
+        return m971isForward4vf7U8o(i) ? interval.getEnd() < this.state.getItemCount() - 1 : interval.getStart() > 0;
     }
 
     /* renamed from: isOppositeToOrientation-4vf7U8o  reason: not valid java name */
-    private final boolean m1107isOppositeToOrientation4vf7U8o(int i) {
-        if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6862getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6865getBelowhoxUOeE())) {
+    private final boolean m972isOppositeToOrientation4vf7U8o(int i) {
+        if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6203getAbovehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6206getBelowhoxUOeE())) {
             return this.orientation == Orientation.Horizontal;
-        } else if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6866getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6867getRighthoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6207getLefthoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6208getRighthoxUOeE())) {
             return this.orientation == Orientation.Vertical;
-        } else if (BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6864getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6858equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6863getAfterhoxUOeE())) {
+        } else if (BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6205getBeforehoxUOeE()) || BeyondBoundsLayout.LayoutDirection.m6199equalsimpl0(i, BeyondBoundsLayout.LayoutDirection.Companion.m6204getAfterhoxUOeE())) {
             return false;
         } else {
             LazyLayoutBeyondBoundsModifierLocalKt.access$unsupportedDirection();

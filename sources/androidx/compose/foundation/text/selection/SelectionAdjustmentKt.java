@@ -22,18 +22,18 @@ public final class SelectionAdjustmentKt {
         final Lazy lazy = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustmentKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int updateSelectionBoundary$lambda$0;
-                updateSelectionBoundary$lambda$0 = SelectionAdjustmentKt.updateSelectionBoundary$lambda$0(SelectableInfo.this, rawStartHandleOffset);
-                return Integer.valueOf(updateSelectionBoundary$lambda$0);
+                int lineForOffset;
+                lineForOffset = SelectableInfo.this.getTextLayoutResult().getLineForOffset(rawStartHandleOffset);
+                return Integer.valueOf(lineForOffset);
             }
         });
         final int rawEndHandleOffset = selectionLayout.isStartHandle() ? selectableInfo.getRawEndHandleOffset() : selectableInfo.getRawStartHandleOffset();
         Lazy lazy2 = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustmentKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Selection.AnchorInfo updateSelectionBoundary$lambda$2;
-                updateSelectionBoundary$lambda$2 = SelectionAdjustmentKt.updateSelectionBoundary$lambda$2(SelectableInfo.this, rawStartHandleOffset, rawEndHandleOffset, selectionLayout, lazy);
-                return updateSelectionBoundary$lambda$2;
+                Selection.AnchorInfo snapToWordBoundary;
+                snapToWordBoundary = SelectionAdjustmentKt.snapToWordBoundary(SelectableInfo.this, SelectionAdjustmentKt.updateSelectionBoundary$lambda$1(lazy), rawStartHandleOffset, rawEndHandleOffset, selectionLayout.isStartHandle(), r9.getCrossStatus() == CrossStatus.CROSSED);
+                return snapToWordBoundary;
             }
         });
         if (selectableInfo.getSelectableId() != anchorInfo.getSelectableId()) {
@@ -47,19 +47,14 @@ public final class SelectionAdjustmentKt {
             return updateSelectionBoundary$lambda$3(lazy2);
         }
         int offset = anchorInfo.getOffset();
-        long m7673getWordBoundaryjx7JFs = selectableInfo.getTextLayoutResult().m7673getWordBoundaryjx7JFs(offset);
+        long m6975getWordBoundaryjx7JFs = selectableInfo.getTextLayoutResult().m6975getWordBoundaryjx7JFs(offset);
         if (!isExpanding(selectableInfo, rawStartHandleOffset, selectionLayout.isStartHandle())) {
             return selectableInfo.anchorForOffset(rawStartHandleOffset);
         }
-        if (offset == TextRange.m7701getStartimpl(m7673getWordBoundaryjx7JFs) || offset == TextRange.m7696getEndimpl(m7673getWordBoundaryjx7JFs)) {
+        if (offset == TextRange.m7003getStartimpl(m6975getWordBoundaryjx7JFs) || offset == TextRange.m6998getEndimpl(m6975getWordBoundaryjx7JFs)) {
             return updateSelectionBoundary$lambda$3(lazy2);
         }
         return selectableInfo.anchorForOffset(rawStartHandleOffset);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int updateSelectionBoundary$lambda$0(SelectableInfo selectableInfo, int i) {
-        return selectableInfo.getTextLayoutResult().getLineForOffset(i);
     }
 
     private static final int updateSelectionBoundary$lambda$1(Lazy<Integer> lazy) {
@@ -68,11 +63,6 @@ public final class SelectionAdjustmentKt {
 
     private static final Selection.AnchorInfo updateSelectionBoundary$lambda$3(Lazy<Selection.AnchorInfo> lazy) {
         return lazy.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Selection.AnchorInfo updateSelectionBoundary$lambda$2(SelectableInfo selectableInfo, int i, int i2, SelectionLayout selectionLayout, Lazy lazy) {
-        return snapToWordBoundary(selectableInfo, updateSelectionBoundary$lambda$1(lazy), i, i2, selectionLayout.isStartHandle(), selectionLayout.getCrossStatus() == CrossStatus.CROSSED);
     }
 
     private static final boolean isExpanding(SelectableInfo selectableInfo, int i, boolean z) {
@@ -85,19 +75,20 @@ public final class SelectionAdjustmentKt {
         return z ^ (selectableInfo.getRawCrossStatus() == CrossStatus.CROSSED) ? i < selectableInfo.getRawPreviousHandleOffset() : i > selectableInfo.getRawPreviousHandleOffset();
     }
 
-    private static final Selection.AnchorInfo snapToWordBoundary(SelectableInfo selectableInfo, int i, int i2, int i3, boolean z, boolean z2) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Selection.AnchorInfo snapToWordBoundary(SelectableInfo selectableInfo, int i, int i2, int i3, boolean z, boolean z2) {
         int lineStart;
         int lineEnd$default;
-        long m7673getWordBoundaryjx7JFs = selectableInfo.getTextLayoutResult().m7673getWordBoundaryjx7JFs(i2);
-        if (selectableInfo.getTextLayoutResult().getLineForOffset(TextRange.m7701getStartimpl(m7673getWordBoundaryjx7JFs)) == i) {
-            lineStart = TextRange.m7701getStartimpl(m7673getWordBoundaryjx7JFs);
+        long m6975getWordBoundaryjx7JFs = selectableInfo.getTextLayoutResult().m6975getWordBoundaryjx7JFs(i2);
+        if (selectableInfo.getTextLayoutResult().getLineForOffset(TextRange.m7003getStartimpl(m6975getWordBoundaryjx7JFs)) == i) {
+            lineStart = TextRange.m7003getStartimpl(m6975getWordBoundaryjx7JFs);
         } else if (i >= selectableInfo.getTextLayoutResult().getLineCount()) {
             lineStart = selectableInfo.getTextLayoutResult().getLineStart(selectableInfo.getTextLayoutResult().getLineCount() - 1);
         } else {
             lineStart = selectableInfo.getTextLayoutResult().getLineStart(i);
         }
-        if (selectableInfo.getTextLayoutResult().getLineForOffset(TextRange.m7696getEndimpl(m7673getWordBoundaryjx7JFs)) == i) {
-            lineEnd$default = TextRange.m7696getEndimpl(m7673getWordBoundaryjx7JFs);
+        if (selectableInfo.getTextLayoutResult().getLineForOffset(TextRange.m6998getEndimpl(m6975getWordBoundaryjx7JFs)) == i) {
+            lineEnd$default = TextRange.m6998getEndimpl(m6975getWordBoundaryjx7JFs);
         } else if (i >= selectableInfo.getTextLayoutResult().getLineCount()) {
             lineEnd$default = TextLayoutResult.getLineEnd$default(selectableInfo.getTextLayoutResult(), selectableInfo.getTextLayoutResult().getLineCount() - 1, false, 2, null);
         } else {
@@ -126,8 +117,8 @@ public final class SelectionAdjustmentKt {
         if (i != selectableInfo.getSlot()) {
             return selectableInfo.anchorForOffset(rawStartHandleOffset);
         }
-        long mo1827getBoundaryfzxv0v0 = boundaryFunction.mo1827getBoundaryfzxv0v0(selectableInfo, rawStartHandleOffset);
-        return selectableInfo.anchorForOffset(z ^ z2 ? TextRange.m7701getStartimpl(mo1827getBoundaryfzxv0v0) : TextRange.m7696getEndimpl(mo1827getBoundaryfzxv0v0));
+        long mo1583getBoundaryfzxv0v0 = boundaryFunction.mo1583getBoundaryfzxv0v0(selectableInfo, rawStartHandleOffset);
+        return selectableInfo.anchorForOffset(z ^ z2 ? TextRange.m7003getStartimpl(mo1583getBoundaryfzxv0v0) : TextRange.m6998getEndimpl(mo1583getBoundaryfzxv0v0));
     }
 
     public static final Selection ensureAtLeastOneChar(Selection selection, SelectionLayout selectionLayout) {

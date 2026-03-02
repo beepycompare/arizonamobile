@@ -1,5 +1,5 @@
 package com.google.android.gms.tasks;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public class TaskCompletionSource<TResult> {
     private final zzw zza = new zzw();
@@ -16,11 +16,11 @@ public class TaskCompletionSource<TResult> {
     }
 
     public void setException(Exception exc) {
-        this.zza.zza(exc);
+        this.zza.zzc(exc);
     }
 
     public void setResult(TResult tresult) {
-        this.zza.zzb(tresult);
+        this.zza.zza(tresult);
     }
 
     public boolean trySetException(Exception exc) {
@@ -28,6 +28,11 @@ public class TaskCompletionSource<TResult> {
     }
 
     public boolean trySetResult(TResult tresult) {
-        return this.zza.zze(tresult);
+        return this.zza.zzb(tresult);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ zzw zza() {
+        return this.zza;
     }
 }

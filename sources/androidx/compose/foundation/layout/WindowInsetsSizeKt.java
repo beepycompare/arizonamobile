@@ -17,17 +17,13 @@ public final class WindowInsetsSizeKt {
     private static final Function3<WindowInsets, LayoutDirection, Density, Integer> startCalc = new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            int startCalc$lambda$0;
-            startCalc$lambda$0 = WindowInsetsSizeKt.startCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
-            return Integer.valueOf(startCalc$lambda$0);
+            return Integer.valueOf(WindowInsetsSizeKt.startCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3));
         }
     };
     private static final Function3<WindowInsets, LayoutDirection, Density, Integer> endCalc = new Function3() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            int endCalc$lambda$0;
-            endCalc$lambda$0 = WindowInsetsSizeKt.endCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3);
-            return Integer.valueOf(endCalc$lambda$0);
+            return Integer.valueOf(WindowInsetsSizeKt.endCalc$lambda$0((WindowInsets) obj, (LayoutDirection) obj2, (Density) obj3));
         }
     };
     private static final Function2<WindowInsets, Density, Integer> topCalc = new Function2() { // from class: androidx.compose.foundation.layout.WindowInsetsSizeKt$$ExternalSyntheticLambda2
@@ -67,7 +63,7 @@ public final class WindowInsetsSizeKt {
         } : InspectableValueKt.getNoInspectorInfo(), startCalc));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int startCalc$lambda$0(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
         if (layoutDirection == LayoutDirection.Ltr) {
             return windowInsets.getLeft(density, layoutDirection);
@@ -95,7 +91,7 @@ public final class WindowInsetsSizeKt {
         } : InspectableValueKt.getNoInspectorInfo(), endCalc));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int endCalc$lambda$0(WindowInsets windowInsets, LayoutDirection layoutDirection, Density density) {
         if (layoutDirection == LayoutDirection.Rtl) {
             return windowInsets.getLeft(density, layoutDirection);

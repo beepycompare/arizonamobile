@@ -41,9 +41,7 @@ public final class SuspendAnimationKt {
         Object animate$default = animate$default(AnimationStateKt.AnimationState$default(f, f2, 0L, 0L, false, 28, null), AnimationKt.DecayAnimation(floatDecayAnimationSpec, f, f2), 0L, new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit animateDecay$lambda$0;
-                animateDecay$lambda$0 = SuspendAnimationKt.animateDecay$lambda$0(Function2.this, (AnimationScope) obj);
-                return animateDecay$lambda$0;
+                return SuspendAnimationKt.animateDecay$lambda$0(Function2.this, (AnimationScope) obj);
             }
         }, continuation, 2, null);
         return animate$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animate$default : Unit.INSTANCE;
@@ -73,9 +71,7 @@ public final class SuspendAnimationKt {
         Object animate$default = animate$default(new AnimationState(twoWayConverter, t, animationVector, 0L, 0L, false, 56, null), new TargetBasedAnimation(animationSpec, twoWayConverter, t, t2, animationVector), 0L, new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit animate$lambda$1;
-                animate$lambda$1 = SuspendAnimationKt.animate$lambda$1(Function2.this, twoWayConverter, (AnimationScope) obj);
-                return animate$lambda$1;
+                return SuspendAnimationKt.animate$lambda$1(Function2.this, twoWayConverter, (AnimationScope) obj);
             }
         }, continuation, 2, null);
         return animate$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animate$default : Unit.INSTANCE;
@@ -99,17 +95,14 @@ public final class SuspendAnimationKt {
             function1 = new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj3) {
-                    Unit animateTo$lambda$0;
-                    animateTo$lambda$0 = SuspendAnimationKt.animateTo$lambda$0((AnimationScope) obj3);
-                    return animateTo$lambda$0;
+                    Unit unit;
+                    AnimationScope animationScope = (AnimationScope) obj3;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
         return animateTo(animationState, obj, animationSpec2, z2, function1, continuation);
-    }
-
-    public static final Unit animateTo$lambda$0(AnimationScope animationScope) {
-        return Unit.INSTANCE;
     }
 
     public static final <T, V extends AnimationVector> Object animateTo(AnimationState<T, V> animationState, T t, AnimationSpec<T> animationSpec, boolean z, Function1<? super AnimationScope<T, V>, Unit> function1, Continuation<? super Unit> continuation) {
@@ -125,17 +118,14 @@ public final class SuspendAnimationKt {
             function1 = new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit animateDecay$lambda$1;
-                    animateDecay$lambda$1 = SuspendAnimationKt.animateDecay$lambda$1((AnimationScope) obj2);
-                    return animateDecay$lambda$1;
+                    Unit unit;
+                    AnimationScope animationScope = (AnimationScope) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
         return animateDecay(animationState, decayAnimationSpec, z, function1, continuation);
-    }
-
-    public static final Unit animateDecay$lambda$1(AnimationScope animationScope) {
-        return Unit.INSTANCE;
     }
 
     public static final <T, V extends AnimationVector> Object animateDecay(AnimationState<T, V> animationState, DecayAnimationSpec<T> decayAnimationSpec, boolean z, Function1<? super AnimationScope<T, V>, Unit> function1, Continuation<? super Unit> continuation) {
@@ -194,9 +184,7 @@ public final class SuspendAnimationKt {
                             Function1 function14 = new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animate$lambda$3;
-                                    animate$lambda$3 = SuspendAnimationKt.animate$lambda$3(Ref.ObjectRef.this, valueFromNanos, animation2, velocityVectorFromNanos, animationState2, durationScale, function1, ((Long) obj2).longValue());
-                                    return animate$lambda$3;
+                                    return SuspendAnimationKt.animate$lambda$3(Ref.ObjectRef.this, valueFromNanos, animation2, velocityVectorFromNanos, animationState2, durationScale, function1, ((Long) obj2).longValue());
                                 }
                             };
                             objectRef2 = objectRef;
@@ -241,9 +229,7 @@ public final class SuspendAnimationKt {
                             ?? r12 = (T) new AnimationScope(valueFromNanos, animation2.getTypeConverter(), velocityVectorFromNanos, j, animation2.getTargetValue(), j, true, new Function0() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    Unit animate$lambda$4;
-                                    animate$lambda$4 = SuspendAnimationKt.animate$lambda$4(AnimationState.this);
-                                    return animate$lambda$4;
+                                    return SuspendAnimationKt.animate$lambda$4(AnimationState.this);
                                 }
                             });
                             doAnimationFrameWithScale(r12, j, getDurationScale(suspendAnimationKt$animate$42.getContext()), animation2, animationState, function1);
@@ -300,9 +286,7 @@ public final class SuspendAnimationKt {
                             function13 = new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj2) {
-                                    Unit animate$lambda$6;
-                                    animate$lambda$6 = SuspendAnimationKt.animate$lambda$6(Ref.ObjectRef.this, durationScale2, animation3, animationState4, function15, ((Long) obj2).longValue());
-                                    return animate$lambda$6;
+                                    return SuspendAnimationKt.animate$lambda$6(Ref.ObjectRef.this, durationScale2, animation3, animationState4, function15, ((Long) obj2).longValue());
                                 }
                             };
                             objectRef = objectRef3;
@@ -358,17 +342,14 @@ public final class SuspendAnimationKt {
             function1 = new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit animate$lambda$2;
-                    animate$lambda$2 = SuspendAnimationKt.animate$lambda$2((AnimationScope) obj2);
-                    return animate$lambda$2;
+                    Unit unit;
+                    AnimationScope animationScope = (AnimationScope) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
         return animate(animationState, animation, j2, function1, continuation);
-    }
-
-    public static final Unit animate$lambda$2(AnimationScope animationScope) {
-        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [T, androidx.compose.animation.core.AnimationScope] */
@@ -410,15 +391,11 @@ public final class SuspendAnimationKt {
         return MonotonicFrameClockKt.withFrameNanos(new Function1() { // from class: androidx.compose.animation.core.SuspendAnimationKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object callWithFrameNanos$lambda$0;
-                callWithFrameNanos$lambda$0 = SuspendAnimationKt.callWithFrameNanos$lambda$0(Function1.this, ((Long) obj).longValue());
-                return callWithFrameNanos$lambda$0;
+                Object invoke;
+                invoke = Function1.this.invoke(Long.valueOf(((Long) obj).longValue()));
+                return invoke;
             }
         }, continuation);
-    }
-
-    public static final Object callWithFrameNanos$lambda$0(Function1 function1, long j) {
-        return function1.invoke(Long.valueOf(j));
     }
 
     public static final float getDurationScale(CoroutineContext coroutineContext) {

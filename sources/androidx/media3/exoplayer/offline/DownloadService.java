@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class DownloadService extends Service {
     public static final String ACTION_ADD_DOWNLOAD = "androidx.media3.exoplayer.downloadService.action.ADD_DOWNLOAD";
     public static final String ACTION_INIT = "androidx.media3.exoplayer.downloadService.action.INIT";
@@ -370,10 +370,12 @@ public abstract class DownloadService extends Service {
     /* JADX INFO: Access modifiers changed from: private */
     public void notifyDownloadChanged(Download download) {
         if (this.foregroundNotificationUpdater != null) {
-            if (needsStartedService(download.state)) {
-                this.foregroundNotificationUpdater.startPeriodicUpdates();
+            boolean needsStartedService = needsStartedService(download.state);
+            ForegroundNotificationUpdater foregroundNotificationUpdater = this.foregroundNotificationUpdater;
+            if (needsStartedService) {
+                foregroundNotificationUpdater.startPeriodicUpdates();
             } else {
-                this.foregroundNotificationUpdater.invalidate();
+                foregroundNotificationUpdater.invalidate();
             }
         }
     }
@@ -425,7 +427,7 @@ public abstract class DownloadService extends Service {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public final class ForegroundNotificationUpdater {
         private final Handler handler = new Handler(Looper.getMainLooper());
         private boolean notificationDisplayed;
@@ -465,11 +467,13 @@ public abstract class DownloadService extends Service {
         public void update() {
             DownloadManager downloadManager = ((DownloadManagerHelper) Preconditions.checkNotNull(DownloadService.this.downloadManagerHelper)).downloadManager;
             Notification foregroundNotification = DownloadService.this.getForegroundNotification(downloadManager.getCurrentDownloads(), downloadManager.getNotMetRequirements());
-            if (!this.notificationDisplayed) {
-                Util.setForegroundServiceNotification(DownloadService.this, this.notificationId, foregroundNotification, 1, "dataSync");
+            boolean z = this.notificationDisplayed;
+            DownloadService downloadService = DownloadService.this;
+            if (!z) {
+                Util.setForegroundServiceNotification(downloadService, this.notificationId, foregroundNotification, 1, "dataSync");
                 this.notificationDisplayed = true;
             } else {
-                ((NotificationManager) DownloadService.this.getSystemService("notification")).notify(this.notificationId, foregroundNotification);
+                ((NotificationManager) downloadService.getSystemService("notification")).notify(this.notificationId, foregroundNotification);
             }
             if (this.periodicUpdatesStarted) {
                 this.handler.removeCallbacksAndMessages(null);
@@ -484,7 +488,7 @@ public abstract class DownloadService extends Service {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class DownloadManagerHelper implements DownloadManager.Listener {
         private final Context context;
         private final DownloadManager downloadManager;
@@ -511,7 +515,7 @@ public abstract class DownloadService extends Service {
                 Util.createHandlerForCurrentOrMainLooper().postAtFrontOfQueue(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadService$DownloadManagerHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DownloadService.DownloadManagerHelper.this.m9000xee6ee963(downloadService);
+                        DownloadService.DownloadManagerHelper.this.m8277xee6ee963(downloadService);
                     }
                 });
             }
@@ -519,7 +523,7 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper  reason: not valid java name */
-        public /* synthetic */ void m9000xee6ee963(DownloadService downloadService) {
+        public /* synthetic */ void m8277xee6ee963(DownloadService downloadService) {
             downloadService.notifyDownloads(this.downloadManager.getCurrentDownloads());
         }
 
@@ -628,9 +632,11 @@ public abstract class DownloadService extends Service {
         }
 
         private void restartService() {
-            if (this.foregroundAllowed) {
+            boolean z = this.foregroundAllowed;
+            Context context = this.context;
+            if (z) {
                 try {
-                    Util.startForegroundService(this.context, DownloadService.getIntent(this.context, this.serviceClass, DownloadService.ACTION_RESTART));
+                    Util.startForegroundService(this.context, DownloadService.getIntent(context, this.serviceClass, DownloadService.ACTION_RESTART));
                     return;
                 } catch (IllegalStateException unused) {
                     Log.w(DownloadService.TAG, "Failed to restart (foreground launch restriction)");
@@ -638,7 +644,7 @@ public abstract class DownloadService extends Service {
                 }
             }
             try {
-                this.context.startService(DownloadService.getIntent(this.context, this.serviceClass, DownloadService.ACTION_INIT));
+                this.context.startService(DownloadService.getIntent(context, this.serviceClass, DownloadService.ACTION_INIT));
             } catch (IllegalStateException unused2) {
                 Log.w(DownloadService.TAG, "Failed to restart (process is idle)");
             }

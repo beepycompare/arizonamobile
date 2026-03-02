@@ -222,13 +222,14 @@ public abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<
             if (this.layout == null || HeaderBehavior.this.scroller == null) {
                 return;
             }
-            if (HeaderBehavior.this.scroller.computeScrollOffset()) {
-                HeaderBehavior headerBehavior = HeaderBehavior.this;
+            boolean computeScrollOffset = HeaderBehavior.this.scroller.computeScrollOffset();
+            HeaderBehavior headerBehavior = HeaderBehavior.this;
+            if (computeScrollOffset) {
                 headerBehavior.setHeaderTopBottomOffset(this.parent, this.layout, headerBehavior.scroller.getCurrY());
                 this.layout.postOnAnimation(this);
                 return;
             }
-            HeaderBehavior.this.onFlingFinished(this.parent, this.layout);
+            headerBehavior.onFlingFinished(this.parent, this.layout);
         }
     }
 }

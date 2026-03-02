@@ -20,14 +20,12 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(transformer, new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit navigate$lambda$0;
-                navigate$lambda$0 = PagesNavigatorExtKt.navigate$lambda$0((Pages) obj, (Pages) obj2);
-                return navigate$lambda$0;
+                return PagesNavigatorExtKt.navigate$lambda$0((Pages) obj, (Pages) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit navigate$lambda$0(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -42,16 +40,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit selectNext$lambda$1;
-                    selectNext$lambda$1 = PagesNavigatorExtKt.selectNext$lambda$1((Pages) obj2, (Pages) obj3);
-                    return selectNext$lambda$1;
+                    return PagesNavigatorExtKt.selectNext$lambda$1((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         selectNext(pagesNavigator, z, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit selectNext$lambda$1(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -64,9 +60,7 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages selectNext$lambda$3;
-                selectNext$lambda$3 = PagesNavigatorExtKt.selectNext$lambda$3(z, (Pages) obj);
-                return selectNext$lambda$3;
+                return PagesNavigatorExtKt.selectNext$lambda$3(z, (Pages) obj);
             }
         }, onComplete);
     }
@@ -79,16 +73,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit selectPrev$lambda$4;
-                    selectPrev$lambda$4 = PagesNavigatorExtKt.selectPrev$lambda$4((Pages) obj2, (Pages) obj3);
-                    return selectPrev$lambda$4;
+                    return PagesNavigatorExtKt.selectPrev$lambda$4((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         selectPrev(pagesNavigator, z, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit selectPrev$lambda$4(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -101,9 +93,7 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages selectPrev$lambda$6;
-                selectPrev$lambda$6 = PagesNavigatorExtKt.selectPrev$lambda$6(z, (Pages) obj);
-                return selectPrev$lambda$6;
+                return PagesNavigatorExtKt.selectPrev$lambda$6(z, (Pages) obj);
             }
         }, onComplete);
     }
@@ -113,16 +103,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit selectFirst$lambda$7;
-                    selectFirst$lambda$7 = PagesNavigatorExtKt.selectFirst$lambda$7((Pages) obj2, (Pages) obj3);
-                    return selectFirst$lambda$7;
+                    return PagesNavigatorExtKt.selectFirst$lambda$7((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         selectFirst(pagesNavigator, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit selectFirst$lambda$7(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -135,9 +123,7 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages selectFirst$lambda$9;
-                selectFirst$lambda$9 = PagesNavigatorExtKt.selectFirst$lambda$9((Pages) obj);
-                return selectFirst$lambda$9;
+                return PagesNavigatorExtKt.selectFirst$lambda$9((Pages) obj);
             }
         }, onComplete);
     }
@@ -147,16 +133,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit selectLast$lambda$10;
-                    selectLast$lambda$10 = PagesNavigatorExtKt.selectLast$lambda$10((Pages) obj2, (Pages) obj3);
-                    return selectLast$lambda$10;
+                    return PagesNavigatorExtKt.selectLast$lambda$10((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         selectLast(pagesNavigator, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit selectLast$lambda$10(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -169,9 +153,7 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages selectLast$lambda$12;
-                selectLast$lambda$12 = PagesNavigatorExtKt.selectLast$lambda$12((Pages) obj);
-                return selectLast$lambda$12;
+                return PagesNavigatorExtKt.selectLast$lambda$12((Pages) obj);
             }
         }, onComplete);
     }
@@ -181,16 +163,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit select$lambda$13;
-                    select$lambda$13 = PagesNavigatorExtKt.select$lambda$13((Pages) obj2, (Pages) obj3);
-                    return select$lambda$13;
+                    return PagesNavigatorExtKt.select$lambda$13((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         select(pagesNavigator, i, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit select$lambda$13(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -203,14 +183,12 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages select$lambda$14;
-                select$lambda$14 = PagesNavigatorExtKt.select$lambda$14(i, (Pages) obj);
-                return select$lambda$14;
+                return PagesNavigatorExtKt.select$lambda$14(i, (Pages) obj);
             }
         }, onComplete);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages select$lambda$14(int i, Pages it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Pages.copy$default(it, null, i, 1, null);
@@ -221,16 +199,14 @@ public final class PagesNavigatorExtKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit clear$lambda$15;
-                    clear$lambda$15 = PagesNavigatorExtKt.clear$lambda$15((Pages) obj2, (Pages) obj3);
-                    return clear$lambda$15;
+                    return PagesNavigatorExtKt.clear$lambda$15((Pages) obj2, (Pages) obj3);
                 }
             };
         }
         clear(pagesNavigator, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit clear$lambda$15(Pages pages, Pages pages2) {
         Intrinsics.checkNotNullParameter(pages, "<unused var>");
         Intrinsics.checkNotNullParameter(pages2, "<unused var>");
@@ -243,14 +219,12 @@ public final class PagesNavigatorExtKt {
         pagesNavigator.navigate(new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesNavigatorExtKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages clear$lambda$16;
-                clear$lambda$16 = PagesNavigatorExtKt.clear$lambda$16((Pages) obj);
-                return clear$lambda$16;
+                return PagesNavigatorExtKt.clear$lambda$16((Pages) obj);
             }
         }, onComplete);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages clear$lambda$16(Pages it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return new Pages();
@@ -326,7 +300,7 @@ public final class PagesNavigatorExtKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages selectNext$lambda$3(boolean z, Pages pages) {
         Intrinsics.checkNotNullParameter(pages, "pages");
         if (pages.getItems().isEmpty()) {
@@ -343,7 +317,7 @@ public final class PagesNavigatorExtKt {
         return Pages.copy$default(pages, null, RangesKt.coerceIn(selectedIndex, (ClosedRange<Integer>) CollectionsKt.getIndices(pages.getItems())), 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages selectPrev$lambda$6(boolean z, Pages pages) {
         Intrinsics.checkNotNullParameter(pages, "pages");
         if (pages.getItems().isEmpty()) {
@@ -360,7 +334,7 @@ public final class PagesNavigatorExtKt {
         return Pages.copy$default(pages, null, RangesKt.coerceIn(selectedIndex, (ClosedRange<Integer>) CollectionsKt.getIndices(pages.getItems())), 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages selectFirst$lambda$9(Pages pages) {
         Intrinsics.checkNotNullParameter(pages, "pages");
         if (pages.getItems().isEmpty()) {
@@ -370,7 +344,7 @@ public final class PagesNavigatorExtKt {
         return Pages.copy$default(pages, null, RangesKt.coerceIn(0, (ClosedRange<Integer>) CollectionsKt.getIndices(pages.getItems())), 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages selectLast$lambda$12(Pages pages) {
         Intrinsics.checkNotNullParameter(pages, "pages");
         if (pages.getItems().isEmpty()) {

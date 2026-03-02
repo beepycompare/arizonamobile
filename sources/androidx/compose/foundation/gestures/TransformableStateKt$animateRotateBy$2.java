@@ -63,9 +63,7 @@ final class TransformableStateKt$animateRotateBy$2 extends SuspendLambda impleme
             if (SuspendAnimationKt.animateTo$default(AnimationState$default, boxFloat, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animateRotateBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TransformableStateKt$animateRotateBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, transformScope, (AnimationScope) obj2);
-                    return invokeSuspend$lambda$0;
+                    return TransformableStateKt$animateRotateBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, transformScope, (AnimationScope) obj2);
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -78,9 +76,9 @@ final class TransformableStateKt$animateRotateBy$2 extends SuspendLambda impleme
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, TransformScope transformScope, AnimationScope animationScope) {
-        TransformScope.m695transformByd4ec7I$default(transformScope, 0.0f, 0L, ((Number) animationScope.getValue()).floatValue() - floatRef.element, 3, null);
+        TransformScope.m610transformByd4ec7I$default(transformScope, 0.0f, 0L, ((Number) animationScope.getValue()).floatValue() - floatRef.element, 3, null);
         floatRef.element = ((Number) animationScope.getValue()).floatValue();
         return Unit.INSTANCE;
     }

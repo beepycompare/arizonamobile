@@ -42,33 +42,26 @@ public final class ProcessDataManagerImpl implements ProcessDataManager {
         this.myProcessName$delegate = LazyKt.lazy(new Function0() { // from class: com.google.firebase.sessions.ProcessDataManagerImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String myProcessName_delegate$lambda$0;
-                myProcessName_delegate$lambda$0 = ProcessDataManagerImpl.myProcessName_delegate$lambda$0(ProcessDataManagerImpl.this);
-                return myProcessName_delegate$lambda$0;
+                String processName;
+                processName = ProcessDataManagerImpl.this.getMyProcessDetails().getProcessName();
+                return processName;
             }
         });
         this.myPid = Process.myPid();
         this.myUuid$delegate = LazyKt.lazy(new Function0() { // from class: com.google.firebase.sessions.ProcessDataManagerImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String myUuid_delegate$lambda$1;
-                myUuid_delegate$lambda$1 = ProcessDataManagerImpl.myUuid_delegate$lambda$1(UuidGenerator.this);
-                return myUuid_delegate$lambda$1;
+                return ProcessDataManagerImpl.myUuid_delegate$lambda$1(UuidGenerator.this);
             }
         });
         this.myProcessDetails$delegate = LazyKt.lazy(new Function0() { // from class: com.google.firebase.sessions.ProcessDataManagerImpl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ProcessDetails myProcessDetails_delegate$lambda$2;
-                myProcessDetails_delegate$lambda$2 = ProcessDataManagerImpl.myProcessDetails_delegate$lambda$2(ProcessDataManagerImpl.this);
-                return myProcessDetails_delegate$lambda$2;
+                ProcessDetails myProcessDetails;
+                myProcessDetails = ProcessDetailsProvider.INSTANCE.getMyProcessDetails(ProcessDataManagerImpl.this.appContext);
+                return myProcessDetails;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final String myProcessName_delegate$lambda$0(ProcessDataManagerImpl processDataManagerImpl) {
-        return processDataManagerImpl.getMyProcessDetails().getProcessName();
     }
 
     @Override // com.google.firebase.sessions.ProcessDataManager
@@ -81,7 +74,7 @@ public final class ProcessDataManagerImpl implements ProcessDataManager {
         return this.myPid;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String myUuid_delegate$lambda$1(UuidGenerator uuidGenerator) {
         String uuid = uuidGenerator.next().toString();
         Intrinsics.checkNotNullExpressionValue(uuid, "toString(...)");
@@ -95,11 +88,6 @@ public final class ProcessDataManagerImpl implements ProcessDataManager {
 
     private final ProcessDetails getMyProcessDetails() {
         return (ProcessDetails) this.myProcessDetails$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ProcessDetails myProcessDetails_delegate$lambda$2(ProcessDataManagerImpl processDataManagerImpl) {
-        return ProcessDetailsProvider.INSTANCE.getMyProcessDetails(processDataManagerImpl.appContext);
     }
 
     @Override // com.google.firebase.sessions.ProcessDataManager

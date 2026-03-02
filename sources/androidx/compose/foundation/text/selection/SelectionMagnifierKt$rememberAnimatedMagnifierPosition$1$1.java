@@ -61,9 +61,7 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Offset invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.invokeSuspend$lambda$0(State.this);
-                    return invokeSuspend$lambda$0;
+                    return SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.invokeSuspend$lambda$0(State.this);
                 }
             });
             final Animatable<Offset, AnimationVector2D> animatable = this.$animatable;
@@ -71,16 +69,16 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
             if (snapshotFlow.collect(new FlowCollector() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1.2
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
-                    return m1864emit3MmeM6k(((Offset) obj2).m5189unboximpl(), continuation);
+                    return m1612emit3MmeM6k(((Offset) obj2).m4537unboximpl(), continuation);
                 }
 
                 /* renamed from: emit-3MmeM6k  reason: not valid java name */
-                public final Object m1864emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
-                    if ((animatable.getValue().m5189unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m5189unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
+                public final Object m1612emit3MmeM6k(long j, Continuation<? super Unit> continuation) {
+                    if ((animatable.getValue().m4537unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (j & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && Float.intBitsToFloat((int) (animatable.getValue().m4537unboximpl() & 4294967295L)) != Float.intBitsToFloat((int) (j & 4294967295L))) {
                         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new AnonymousClass1(animatable, j, null), 3, null);
                         return Unit.INSTANCE;
                     }
-                    Object snapTo = animatable.snapTo(Offset.m5168boximpl(j), continuation);
+                    Object snapTo = animatable.snapTo(Offset.m4516boximpl(j), continuation);
                     return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
                 }
 
@@ -121,7 +119,7 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
                         if (i == 0) {
                             ResultKt.throwOnFailure(obj);
                             this.label = 1;
-                            if (Animatable.animateTo$default(this.$animatable, Offset.m5168boximpl(this.f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
+                            if (Animatable.animateTo$default(this.$animatable, Offset.m4516boximpl(this.f60$$v$c$androidxcomposeuigeometryOffset$targetValue$0), SelectionMagnifierKt.getMagnifierSpringSpec(), null, null, this, 12, null) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {
@@ -143,10 +141,10 @@ public final class SelectionMagnifierKt$rememberAnimatedMagnifierPosition$1$1 ex
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Offset invokeSuspend$lambda$0(State state) {
         long rememberAnimatedMagnifierPosition$lambda$1;
         rememberAnimatedMagnifierPosition$lambda$1 = SelectionMagnifierKt.rememberAnimatedMagnifierPosition$lambda$1(state);
-        return Offset.m5168boximpl(rememberAnimatedMagnifierPosition$lambda$1);
+        return Offset.m4516boximpl(rememberAnimatedMagnifierPosition$lambda$1);
     }
 }

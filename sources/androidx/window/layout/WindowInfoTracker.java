@@ -75,9 +75,7 @@ public interface WindowInfoTracker {
         private static final Lazy<WindowBackend> extensionBackend$delegate = LazyKt.lazy(new Function0() { // from class: androidx.window.layout.WindowInfoTracker$Companion$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                WindowBackend extensionBackend_delegate$lambda$2;
-                extensionBackend_delegate$lambda$2 = WindowInfoTracker.Companion.extensionBackend_delegate$lambda$2();
-                return extensionBackend_delegate$lambda$2;
+                return WindowInfoTracker.Companion.extensionBackend_delegate$lambda$2();
             }
         });
         private static WindowInfoTrackerDecorator decorator = EmptyDecorator.INSTANCE;
@@ -92,7 +90,7 @@ public interface WindowInfoTracker {
             return extensionBackend$delegate.getValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final WindowBackend extensionBackend_delegate$lambda$2() {
             WindowLayoutComponent windowLayoutComponent;
             try {

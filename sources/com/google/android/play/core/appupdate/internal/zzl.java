@@ -29,10 +29,12 @@ public abstract class zzl {
         zzk zzkVar;
         if (!this.zzb.isEmpty() && this.zze == null) {
             this.zze = new zzk(this, null);
-            if (Build.VERSION.SDK_INT >= 33) {
-                this.zzd.registerReceiver(this.zze, this.zzc, 2);
+            int i = Build.VERSION.SDK_INT;
+            Context context = this.zzd;
+            if (i >= 33) {
+                context.registerReceiver(this.zze, this.zzc, 2);
             } else {
-                this.zzd.registerReceiver(this.zze, this.zzc);
+                context.registerReceiver(this.zze, this.zzc);
             }
         }
         if (!this.zzb.isEmpty() || (zzkVar = this.zze) == null) {

@@ -30,7 +30,7 @@ import kotlin.jvm.functions.Function3;
 public final class AnnotatedStringResolveInlineContentKt {
     private static final Pair<List<AnnotatedString.Range<Placeholder>>, List<AnnotatedString.Range<Function3<String, Composer, Integer, Unit>>>> EmptyInlineContent = new Pair<>(CollectionsKt.emptyList(), CollectionsKt.emptyList());
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit InlineChildren$lambda$1(AnnotatedString annotatedString, List list, int i, Composer composer, int i2) {
         InlineChildren(annotatedString, list, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -107,12 +107,12 @@ public final class AnnotatedStringResolveInlineContentKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 374106383, "C69@2668L42:AnnotatedStringResolveInlineContent.kt#423gt5");
                 component1.invoke(annotatedString.subSequence(component2, component3).getText(), startRestartGroup, Integer.valueOf(i5));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -133,9 +133,7 @@ public final class AnnotatedStringResolveInlineContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.AnnotatedStringResolveInlineContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit InlineChildren$lambda$1;
-                    InlineChildren$lambda$1 = AnnotatedStringResolveInlineContentKt.InlineChildren$lambda$1(AnnotatedString.this, list, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return InlineChildren$lambda$1;
+                    return AnnotatedStringResolveInlineContentKt.InlineChildren$lambda$1(AnnotatedString.this, list, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

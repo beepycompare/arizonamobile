@@ -143,9 +143,7 @@ public final class InstantKt {
             InstantParseResult.Failure parseIso$expect = parseIso$expect(charSequence, "'-'", i6, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean parseIso$lambda$0;
-                    parseIso$lambda$0 = InstantKt.parseIso$lambda$0(((Character) obj).charValue());
-                    return Boolean.valueOf(parseIso$lambda$0);
+                    return Boolean.valueOf(InstantKt.parseIso$lambda$0(((Character) obj).charValue()));
                 }
             });
             if (parseIso$expect != null) {
@@ -154,9 +152,7 @@ public final class InstantKt {
             InstantParseResult.Failure parseIso$expect2 = parseIso$expect(charSequence, "'-'", i6 + 3, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean parseIso$lambda$2;
-                    parseIso$lambda$2 = InstantKt.parseIso$lambda$2(((Character) obj).charValue());
-                    return Boolean.valueOf(parseIso$lambda$2);
+                    return Boolean.valueOf(InstantKt.parseIso$lambda$2(((Character) obj).charValue()));
                 }
             });
             if (parseIso$expect2 != null) {
@@ -165,9 +161,7 @@ public final class InstantKt {
             InstantParseResult.Failure parseIso$expect3 = parseIso$expect(charSequence, "'T' or 't'", i6 + 6, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean parseIso$lambda$4;
-                    parseIso$lambda$4 = InstantKt.parseIso$lambda$4(((Character) obj).charValue());
-                    return Boolean.valueOf(parseIso$lambda$4);
+                    return Boolean.valueOf(InstantKt.parseIso$lambda$4(((Character) obj).charValue()));
                 }
             });
             if (parseIso$expect3 != null) {
@@ -176,9 +170,7 @@ public final class InstantKt {
             InstantParseResult.Failure parseIso$expect4 = parseIso$expect(charSequence, "':'", i6 + 9, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean parseIso$lambda$6;
-                    parseIso$lambda$6 = InstantKt.parseIso$lambda$6(((Character) obj).charValue());
-                    return Boolean.valueOf(parseIso$lambda$6);
+                    return Boolean.valueOf(InstantKt.parseIso$lambda$6(((Character) obj).charValue()));
                 }
             });
             if (parseIso$expect4 != null) {
@@ -187,9 +179,7 @@ public final class InstantKt {
             InstantParseResult.Failure parseIso$expect5 = parseIso$expect(charSequence, "':'", i6 + 12, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean parseIso$lambda$8;
-                    parseIso$lambda$8 = InstantKt.parseIso$lambda$8(((Character) obj).charValue());
-                    return Boolean.valueOf(parseIso$lambda$8);
+                    return Boolean.valueOf(InstantKt.parseIso$lambda$8(((Character) obj).charValue()));
                 }
             });
             if (parseIso$expect5 != null) {
@@ -199,9 +189,7 @@ public final class InstantKt {
                 InstantParseResult.Failure parseIso$expect6 = parseIso$expect(charSequence, "an ASCII digit", i10 + i6, new Function1() { // from class: kotlin.time.InstantKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean parseIso$lambda$10;
-                        parseIso$lambda$10 = InstantKt.parseIso$lambda$10(((Character) obj).charValue());
-                        return Boolean.valueOf(parseIso$lambda$10);
+                        return Boolean.valueOf(InstantKt.parseIso$lambda$10(((Character) obj).charValue()));
                     }
                 });
                 if (parseIso$expect6 != null) {

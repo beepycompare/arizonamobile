@@ -26,7 +26,7 @@ public final class ContextMenuScope {
     private final SnapshotStateList<Function3<ContextMenuColors, Composer, Integer, Unit>> composables = SnapshotStateKt.mutableStateListOf();
     private final Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> itemUi;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Content$lambda$1(ContextMenuScope contextMenuScope, ContextMenuColors contextMenuColors, int i, Composer composer, int i2) {
         contextMenuScope.Content$foundation(contextMenuColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -64,9 +64,7 @@ public final class ContextMenuScope {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Content$lambda$1;
-                    Content$lambda$1 = ContextMenuScope.Content$lambda$1(ContextMenuScope.this, contextMenuColors, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Content$lambda$1;
+                    return ContextMenuScope.Content$lambda$1(ContextMenuScope.this, contextMenuColors, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -97,14 +95,12 @@ public final class ContextMenuScope {
         this.composables.add(ComposableLambdaKt.composableLambdaInstance(-1789283891, true, new Function3() { // from class: androidx.compose.foundation.contextmenu.ContextMenuScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit item$lambda$0;
-                item$lambda$0 = ContextMenuScope.item$lambda$0(Function2.this, this, modifier, z, function3, function0, (ContextMenuColors) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return item$lambda$0;
+                return ContextMenuScope.item$lambda$0(Function2.this, this, modifier, z, function3, function0, (ContextMenuColors) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit item$lambda$0(Function2 function2, ContextMenuScope contextMenuScope, Modifier modifier, boolean z, Function3 function3, Function0 function0, ContextMenuColors contextMenuColors, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(colors)297@11061L7,299@11169L70:ContextMenuUi.kt#3xeu6s");
@@ -132,6 +128,6 @@ public final class ContextMenuScope {
     }
 
     public final void separator() {
-        this.composables.add(ComposableSingletons$ContextMenuUiKt.INSTANCE.m420getLambda$1455401925$foundation());
+        this.composables.add(ComposableSingletons$ContextMenuUiKt.INSTANCE.m366getLambda$1455401925$foundation());
     }
 }

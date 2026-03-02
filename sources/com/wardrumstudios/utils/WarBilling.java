@@ -29,45 +29,56 @@ public class WarBilling extends WarBase {
         @Override // com.google.android.billing.IabHelper.QueryInventoryFinishedListener
         public void onQueryInventoryFinished(IabResult iabResult, Inventory inventory) {
             WarBilling.this.OutputLog("Query inventory finished.");
-            if (iabResult.isFailure()) {
-                WarBilling.this.complain("Failed to query inventory: " + iabResult);
-                if (!iabResult.toString().contains("prices")) {
-                    WarBilling.this.changeConnection(false);
+            boolean isFailure = iabResult.isFailure();
+            WarBilling warBilling = WarBilling.this;
+            if (!isFailure) {
+                warBilling.OutputLog("Query successful. Inventory: " + inventory);
+                boolean z = false;
+                for (int i = 0; i < WarBilling.this.skus.size(); i++) {
+                    boolean hasPurchase = inventory.hasPurchase(((SkuEntry) WarBilling.this.skus.get(i)).id);
+                    SkuDetails skuDetails = inventory.getSkuDetails(((SkuEntry) WarBilling.this.skus.get(i)).id);
+                    WarBilling warBilling2 = WarBilling.this;
+                    if (skuDetails != null) {
+                        warBilling2.OutputLog("SKU '" + ((SkuEntry) WarBilling.this.skus.get(i)).id + "' : '" + skuDetails.getType() + "' '" + skuDetails.getPrice() + "' '" + skuDetails.getTitle() + "' " + hasPurchase);
+                        ((SkuEntry) WarBilling.this.skus.get(i)).priceFormat = skuDetails.getPrice();
+                        ((SkuEntry) WarBilling.this.skus.get(i)).cachedDetails = skuDetails;
+                        z = true;
+                    } else {
+                        warBilling2.OutputLog("SKU '" + ((SkuEntry) WarBilling.this.skus.get(i)).id + "' : no details : " + hasPurchase);
+                        ((SkuEntry) WarBilling.this.skus.get(i)).priceFormat = "";
+                    }
+                    if (hasPurchase) {
+                        ((SkuEntry) WarBilling.this.skus.get(i)).purchased = true;
+                        WarBilling warBilling3 = WarBilling.this;
+                        warBilling3.notifyChange(((SkuEntry) warBilling3.skus.get(i)).id, 4);
+                    }
+                }
+                WarBilling warBilling4 = WarBilling.this;
+                if (z) {
+                    warBilling4.changeConnection(true);
+                    return;
+                } else {
+                    warBilling4.changeConnection(false);
                     return;
                 }
-                ArrayList arrayList = new ArrayList();
-                for (int i = 0; i < WarBilling.this.skus.size(); i++) {
-                    WarBilling.this.OutputLog("Checking sku without price " + ((SkuEntry) WarBilling.this.skus.get(i)).id);
-                    arrayList.add(((SkuEntry) WarBilling.this.skus.get(i)).id);
-                }
-                WarBilling.this.mHelper.queryInventoryAsync(false, arrayList, this);
+            }
+            warBilling.complain("Failed to query inventory: " + iabResult);
+            if (!iabResult.toString().contains("prices")) {
+                WarBilling.this.changeConnection(false);
                 return;
             }
-            WarBilling.this.OutputLog("Query successful. Inventory: " + inventory);
-            boolean z = false;
-            for (int i2 = 0; i2 < WarBilling.this.skus.size(); i2++) {
-                boolean hasPurchase = inventory.hasPurchase(((SkuEntry) WarBilling.this.skus.get(i2)).id);
-                SkuDetails skuDetails = inventory.getSkuDetails(((SkuEntry) WarBilling.this.skus.get(i2)).id);
-                if (skuDetails != null) {
-                    WarBilling.this.OutputLog("SKU '" + ((SkuEntry) WarBilling.this.skus.get(i2)).id + "' : '" + skuDetails.getType() + "' '" + skuDetails.getPrice() + "' '" + skuDetails.getTitle() + "' " + hasPurchase);
-                    ((SkuEntry) WarBilling.this.skus.get(i2)).priceFormat = skuDetails.getPrice();
-                    ((SkuEntry) WarBilling.this.skus.get(i2)).cachedDetails = skuDetails;
-                    z = true;
-                } else {
-                    WarBilling.this.OutputLog("SKU '" + ((SkuEntry) WarBilling.this.skus.get(i2)).id + "' : no details : " + hasPurchase);
-                    ((SkuEntry) WarBilling.this.skus.get(i2)).priceFormat = "";
+            ArrayList arrayList = new ArrayList();
+            int i2 = 0;
+            while (true) {
+                int size = WarBilling.this.skus.size();
+                WarBilling warBilling5 = WarBilling.this;
+                if (i2 >= size) {
+                    warBilling5.mHelper.queryInventoryAsync(false, arrayList, this);
+                    return;
                 }
-                if (hasPurchase) {
-                    ((SkuEntry) WarBilling.this.skus.get(i2)).purchased = true;
-                    WarBilling warBilling = WarBilling.this;
-                    warBilling.notifyChange(((SkuEntry) warBilling.skus.get(i2)).id, 4);
-                }
-            }
-            WarBilling warBilling2 = WarBilling.this;
-            if (z) {
-                warBilling2.changeConnection(true);
-            } else {
-                warBilling2.changeConnection(false);
+                warBilling5.OutputLog("Checking sku without price " + ((SkuEntry) WarBilling.this.skus.get(i2)).id);
+                arrayList.add(((SkuEntry) WarBilling.this.skus.get(i2)).id);
+                i2++;
             }
         }
     };
@@ -229,15 +240,23 @@ public class WarBilling extends WarBase {
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
-                for (int i = 0; i < WarBilling.this.skus.size(); i++) {
-                    WarBilling.this.OutputLog("Checking sku " + ((SkuEntry) WarBilling.this.skus.get(i)).id);
+                int i = 0;
+                while (true) {
+                    int size = WarBilling.this.skus.size();
+                    WarBilling warBilling = WarBilling.this;
+                    if (i >= size) {
+                        warBilling.OutputLog("Setup successful. Querying inventory.");
+                        try {
+                            WarBilling.this.mHelper.queryInventoryAsync(true, arrayList, WarBilling.this.mGotInventoryListener);
+                            return;
+                        } catch (IllegalStateException e) {
+                            WarBilling.this.OutputLog("inventory error " + e.getMessage());
+                            return;
+                        }
+                    }
+                    warBilling.OutputLog("Checking sku " + ((SkuEntry) WarBilling.this.skus.get(i)).id);
                     arrayList.add(((SkuEntry) WarBilling.this.skus.get(i)).id);
-                }
-                WarBilling.this.OutputLog("Setup successful. Querying inventory.");
-                try {
-                    WarBilling.this.mHelper.queryInventoryAsync(true, arrayList, WarBilling.this.mGotInventoryListener);
-                } catch (IllegalStateException e) {
-                    WarBilling.this.OutputLog("inventory error " + e.getMessage());
+                    i++;
                 }
             }
         });

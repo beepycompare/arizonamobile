@@ -24,10 +24,10 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NewsContent.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"NewsContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickNews", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\u001a)\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"NewsContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickNews", "Lkotlin/Function1;", "", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NewsContentKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NewsContent$lambda$1(HomeUiState homeUiState, Function1 function1, int i, Composer composer, int i2) {
         NewsContent(homeUiState, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -54,9 +54,9 @@ public final class NewsContentKt {
                 ComposerKt.traceEventStart(1833928254, i2, -1, "com.miami.game.feature.home.ui.compose.NewsContent (NewsContent.kt:20)");
             }
             LazyListState rememberLazyListState = LazyListStateKt.rememberLazyListState(0, 0, startRestartGroup, 0, 3);
-            Arrangement.HorizontalOrVertical m783spacedBy0680j_4 = Arrangement.INSTANCE.m783spacedBy0680j_4(Dp.m8258constructorimpl(8));
-            Modifier m885offsetVpY3zN4$default = OffsetKt.m885offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m8258constructorimpl(-Dp.m8258constructorimpl(4)), 1, null);
-            Arrangement.HorizontalOrVertical horizontalOrVertical = m783spacedBy0680j_4;
+            Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = Arrangement.INSTANCE.m688spacedBy0680j_4(Dp.m7555constructorimpl(8));
+            Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(4)), 1, null);
+            Arrangement.HorizontalOrVertical horizontalOrVertical = m688spacedBy0680j_4;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1468470253, "CC(remember):NewsContent.kt#9igjgp");
             boolean z = ((i2 & 14) == 4) | ((i2 & 112) == 32);
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -72,7 +72,7 @@ public final class NewsContentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            LazyDslKt.LazyColumn(m885offsetVpY3zN4$default, rememberLazyListState, null, false, horizontalOrVertical, null, null, false, null, (Function1) rememberedValue, startRestartGroup, 24582, 492);
+            LazyDslKt.LazyColumn(m778offsetVpY3zN4$default, rememberLazyListState, null, false, horizontalOrVertical, null, null, false, null, (Function1) rememberedValue, startRestartGroup, 24582, 492);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -82,9 +82,7 @@ public final class NewsContentKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.home.ui.compose.NewsContentKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NewsContent$lambda$1;
-                    NewsContent$lambda$1 = NewsContentKt.NewsContent$lambda$1(HomeUiState.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NewsContent$lambda$1;
+                    return NewsContentKt.NewsContent$lambda$1(HomeUiState.this, onClickNews, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

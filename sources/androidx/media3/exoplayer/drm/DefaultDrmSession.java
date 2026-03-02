@@ -34,7 +34,7 @@ import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class DefaultDrmSession implements DrmSession {
     private static final int MAX_LICENSE_DURATION_TO_RENEW_SECONDS = 60;
     private static final int MSG_KEYS = 2;
@@ -68,7 +68,7 @@ public class DefaultDrmSession implements DrmSession {
     private int state;
     private final UUID uuid;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface ProvisioningManager {
         void onProvisionCompleted();
 
@@ -77,14 +77,14 @@ public class DefaultDrmSession implements DrmSession {
         void provisionRequired(DefaultDrmSession defaultDrmSession);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface ReferenceCountListener {
         void onReferenceCountDecremented(DefaultDrmSession defaultDrmSession, int i);
 
         void onReferenceCountIncremented(DefaultDrmSession defaultDrmSession, int i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class UnexpectedDrmSessionException extends IOException {
         public UnexpectedDrmSessionException(Throwable th) {
             super(th);
@@ -422,8 +422,10 @@ public class DefaultDrmSession implements DrmSession {
             }
             try {
                 byte[] bArr = ((MediaDrmCallback.Response) obj2).data;
-                if (this.mode == 3) {
-                    this.mediaDrm.provideKeyResponse((byte[]) Util.castNonNull(this.offlineLicenseKeySetId), bArr);
+                int i = this.mode;
+                ExoMediaDrm exoMediaDrm = this.mediaDrm;
+                if (i == 3) {
+                    exoMediaDrm.provideKeyResponse((byte[]) Util.castNonNull(this.offlineLicenseKeySetId), bArr);
                     dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSession$$ExternalSyntheticLambda1
                         @Override // androidx.media3.common.util.Consumer
                         public final void accept(Object obj3) {
@@ -432,9 +434,9 @@ public class DefaultDrmSession implements DrmSession {
                     });
                     return;
                 }
-                byte[] provideKeyResponse = this.mediaDrm.provideKeyResponse(this.sessionId, bArr);
-                int i = this.mode;
-                if ((i == 2 || (i == 0 && this.offlineLicenseKeySetId != null)) && provideKeyResponse != null && provideKeyResponse.length != 0) {
+                byte[] provideKeyResponse = exoMediaDrm.provideKeyResponse(this.sessionId, bArr);
+                int i2 = this.mode;
+                if ((i2 == 2 || (i2 == 0 && this.offlineLicenseKeySetId != null)) && provideKeyResponse != null && provideKeyResponse.length != 0) {
                     this.offlineLicenseKeySetId = provideKeyResponse;
                 }
                 this.state = 4;
@@ -506,7 +508,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public class ResponseHandler extends Handler {
         public ResponseHandler(Looper looper) {
             super(looper);
@@ -528,7 +530,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public class RequestHandler extends Handler {
         private boolean isReleased;
 
@@ -621,7 +623,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class RequestTask {
         public final boolean allowRetry;
         public int errorCount;

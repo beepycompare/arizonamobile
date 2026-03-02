@@ -21,7 +21,7 @@ final class PinnedScrollBehavior implements TopAppBarScrollBehavior {
     private final AnimationSpec<Float> snapAnimationSpec;
     private final TopAppBarState state;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0() {
         return true;
     }
@@ -33,22 +33,22 @@ final class PinnedScrollBehavior implements TopAppBarScrollBehavior {
         this.nestedScrollConnection = new NestedScrollConnection() { // from class: androidx.compose.material3.PinnedScrollBehavior$nestedScrollConnection$1
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPostScroll-DzOQY0M */
-            public long mo656onPostScrollDzOQY0M(long j, long j2, int i) {
+            public long mo573onPostScrollDzOQY0M(long j, long j2, int i) {
                 if (PinnedScrollBehavior.this.getCanScroll().invoke().booleanValue()) {
                     TopAppBarState state = PinnedScrollBehavior.this.getState();
                     state.setContentOffset(state.getContentOffset() + Float.intBitsToFloat((int) (j & 4294967295L)));
-                    return Offset.Companion.m5195getZeroF1C5BW0();
+                    return Offset.Companion.m4543getZeroF1C5BW0();
                 }
-                return Offset.Companion.m5195getZeroF1C5BW0();
+                return Offset.Companion.m4543getZeroF1C5BW0();
             }
 
             @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
             /* renamed from: onPostFling-RZ2iAVY */
-            public Object mo655onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
-                if (Velocity.m8497getYimpl(j2) > 0.0f) {
+            public Object mo572onPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+                if (Velocity.m7794getYimpl(j2) > 0.0f) {
                     PinnedScrollBehavior.this.getState().setContentOffset(0.0f);
                 }
-                return super.mo655onPostFlingRZ2iAVY(j, j2, continuation);
+                return super.mo572onPostFlingRZ2iAVY(j, j2, continuation);
             }
         };
     }
@@ -62,9 +62,7 @@ final class PinnedScrollBehavior implements TopAppBarScrollBehavior {
         this(topAppBarState, (i & 2) != 0 ? new Function0() { // from class: androidx.compose.material3.PinnedScrollBehavior$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = PinnedScrollBehavior._init_$lambda$0();
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(PinnedScrollBehavior._init_$lambda$0());
             }
         } : function0);
     }

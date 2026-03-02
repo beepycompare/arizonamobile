@@ -18,23 +18,19 @@ final class EmptyMeasurePolicy implements MeasurePolicy {
     private static final Function1<Placeable.PlacementScope, Unit> placementBlock = new Function1() { // from class: androidx.compose.foundation.text.EmptyMeasurePolicy$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit placementBlock$lambda$0;
-            placementBlock$lambda$0 = EmptyMeasurePolicy.placementBlock$lambda$0((Placeable.PlacementScope) obj);
-            return placementBlock$lambda$0;
+            Unit unit;
+            Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+            unit = Unit.INSTANCE;
+            return unit;
         }
     };
 
     private EmptyMeasurePolicy() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit placementBlock$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        return MeasureScope.layout$default(measureScope, Constraints.m8211getMaxWidthimpl(j), Constraints.m8210getMaxHeightimpl(j), null, placementBlock, 4, null);
+    public MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        return MeasureScope.layout$default(measureScope, Constraints.m7508getMaxWidthimpl(j), Constraints.m7507getMaxHeightimpl(j), null, placementBlock, 4, null);
     }
 }

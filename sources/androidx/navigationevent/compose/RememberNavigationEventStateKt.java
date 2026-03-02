@@ -40,9 +40,7 @@ public final class RememberNavigationEventStateKt {
             rememberedValue2 = new Function0() { // from class: androidx.navigationevent.compose.RememberNavigationEventStateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit rememberNavigationEventState$lambda$2$lambda$1;
-                    rememberNavigationEventState$lambda$2$lambda$1 = RememberNavigationEventStateKt.rememberNavigationEventState$lambda$2$lambda$1(NavigationEventState.this, t, list, list2);
-                    return rememberNavigationEventState$lambda$2$lambda$1;
+                    return RememberNavigationEventStateKt.rememberNavigationEventState$lambda$2$lambda$1(NavigationEventState.this, t, list, list2);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -56,7 +54,7 @@ public final class RememberNavigationEventStateKt {
         return navigationEventState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rememberNavigationEventState$lambda$2$lambda$1(NavigationEventState navigationEventState, NavigationEventInfo navigationEventInfo, List list, List list2) {
         navigationEventState.setCurrentInfo$navigationevent_compose(navigationEventInfo);
         navigationEventState.setBackInfo$navigationevent_compose(list);

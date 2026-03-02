@@ -41,11 +41,11 @@ public final class AspectRatioKt {
     }
 
     /* renamed from: isSatisfiedBy-NN6Ew-U  reason: not valid java name */
-    public static final boolean m800isSatisfiedByNN6EwU(long j, int i, int i2) {
-        int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
-        if (i > Constraints.m8211getMaxWidthimpl(j) || m8213getMinWidthimpl > i) {
+    public static final boolean m705isSatisfiedByNN6EwU(long j, int i, int i2) {
+        int m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
+        if (i > Constraints.m7508getMaxWidthimpl(j) || m7510getMinWidthimpl > i) {
             return false;
         }
-        return i2 <= Constraints.m8210getMaxHeightimpl(j) && Constraints.m8212getMinHeightimpl(j) <= i2;
+        return i2 <= Constraints.m7507getMaxHeightimpl(j) && Constraints.m7509getMinHeightimpl(j) <= i2;
     }
 }

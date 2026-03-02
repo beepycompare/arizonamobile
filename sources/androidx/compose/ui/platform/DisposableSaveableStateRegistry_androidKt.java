@@ -63,9 +63,9 @@ public final class DisposableSaveableStateRegistry_androidKt {
             savedStateRegistry.registerSavedStateProvider(str2, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.compose.ui.platform.DisposableSaveableStateRegistry_androidKt$$ExternalSyntheticLambda0
                 @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
                 public final Bundle saveState() {
-                    Bundle DisposableSaveableStateRegistry$lambda$0;
-                    DisposableSaveableStateRegistry$lambda$0 = DisposableSaveableStateRegistry_androidKt.DisposableSaveableStateRegistry$lambda$0(SaveableStateRegistry.this);
-                    return DisposableSaveableStateRegistry$lambda$0;
+                    Bundle bundle;
+                    bundle = DisposableSaveableStateRegistry_androidKt.toBundle(SaveableStateRegistry.this.performSave());
+                    return bundle;
                 }
             });
             z = true;
@@ -92,11 +92,6 @@ public final class DisposableSaveableStateRegistry_androidKt {
                 }
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle DisposableSaveableStateRegistry$lambda$0(SaveableStateRegistry saveableStateRegistry) {
-        return toBundle(saveableStateRegistry.performSave());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -133,7 +128,8 @@ public final class DisposableSaveableStateRegistry_androidKt {
         return linkedHashMap;
     }
 
-    private static final Bundle toBundle(Map<String, ? extends List<? extends Object>> map) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Bundle toBundle(Map<String, ? extends List<? extends Object>> map) {
         Bundle bundle = new Bundle();
         for (Map.Entry<String, ? extends List<? extends Object>> entry : map.entrySet()) {
             String key = entry.getKey();

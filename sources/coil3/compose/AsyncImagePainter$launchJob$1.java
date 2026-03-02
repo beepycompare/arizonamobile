@@ -61,22 +61,23 @@ public final class AsyncImagePainter$launchJob$1 extends SuspendLambda implement
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             AsyncImagePreviewHandler previewHandler$coil_compose_core_release = this.this$0.getPreviewHandler$coil_compose_core_release();
+            AsyncImagePainter asyncImagePainter2 = this.this$0;
             if (previewHandler$coil_compose_core_release != null) {
-                updateRequest2 = this.this$0.updateRequest(this.$input.getRequest(), true);
+                updateRequest2 = asyncImagePainter2.updateRequest(this.$input.getRequest(), true);
                 this.L$0 = SpillingKt.nullOutSpilledVariable(previewHandler$coil_compose_core_release);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(updateRequest2);
                 this.label = 1;
                 obj = previewHandler$coil_compose_core_release.handle(this.$input.getImageLoader(), updateRequest2, this);
             } else {
-                updateRequest = this.this$0.updateRequest(this.$input.getRequest(), false);
-                AsyncImagePainter asyncImagePainter2 = this.this$0;
+                updateRequest = asyncImagePainter2.updateRequest(this.$input.getRequest(), false);
+                AsyncImagePainter asyncImagePainter3 = this.this$0;
                 this.L$0 = SpillingKt.nullOutSpilledVariable(previewHandler$coil_compose_core_release);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(updateRequest);
-                this.L$2 = asyncImagePainter2;
+                this.L$2 = asyncImagePainter3;
                 this.label = 2;
                 obj = this.$input.getImageLoader().execute(updateRequest, this);
                 if (obj != coroutine_suspended) {
-                    asyncImagePainter = asyncImagePainter2;
+                    asyncImagePainter = asyncImagePainter3;
                     state = asyncImagePainter.toState((ImageResult) obj);
                 }
             }

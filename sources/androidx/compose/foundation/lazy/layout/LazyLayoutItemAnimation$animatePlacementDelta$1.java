@@ -45,8 +45,8 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
         return ((LazyLayoutItemAnimation$animatePlacementDelta$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00ad, code lost:
-        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m8377boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1$$ExternalSyntheticLambda0(r14, r3), r13, 4, null) != r0) goto L7;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00a9, code lost:
+        if (androidx.compose.animation.core.Animatable.animateTo$default(r5, androidx.compose.ui.unit.IntOffset.m7674boximpl(r3), r1, null, new androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animatePlacementDelta$1$$ExternalSyntheticLambda0(r14, r3), r13, 4, null) != r0) goto L7;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -55,7 +55,6 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
     public final Object invokeSuspend(Object obj) {
         Animatable animatable;
         SpringSpec springSpec;
-        FiniteAnimationSpec<IntOffset> finiteAnimationSpec;
         Animatable animatable2;
         Animatable animatable3;
         SpringSpec springSpec2;
@@ -67,29 +66,27 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.placementDeltaAnimation;
-            if (animatable.isRunning()) {
-                FiniteAnimationSpec<IntOffset> finiteAnimationSpec2 = this.$spec;
-                if (!(finiteAnimationSpec2 instanceof SpringSpec)) {
+            boolean isRunning = animatable.isRunning();
+            springSpec = this.$spec;
+            if (isRunning) {
+                if (!(springSpec instanceof SpringSpec)) {
                     springSpec2 = LazyLayoutItemAnimationKt.InterruptionSpec;
                 } else {
-                    springSpec2 = (SpringSpec) finiteAnimationSpec2;
+                    springSpec2 = (SpringSpec) springSpec;
                 }
                 springSpec = springSpec2;
-            } else {
-                springSpec = this.$spec;
             }
-            finiteAnimationSpec = springSpec;
             animatable2 = this.this$0.placementDeltaAnimation;
             if (!animatable2.isRunning()) {
                 animatable3 = this.this$0.placementDeltaAnimation;
-                this.L$0 = finiteAnimationSpec;
+                this.L$0 = springSpec;
                 this.label = 1;
-                if (animatable3.snapTo(IntOffset.m8377boximpl(this.$totalDelta), this) == coroutine_suspended) {
+                if (animatable3.snapTo(IntOffset.m7674boximpl(this.$totalDelta), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }
             animatable4 = this.this$0.placementDeltaAnimation;
-            final long m8389minusqkQi6aY = IntOffset.m8389minusqkQi6aY(((IntOffset) animatable4.getValue()).m8395unboximpl(), this.$totalDelta);
+            final long m7686minusqkQi6aY = IntOffset.m7686minusqkQi6aY(((IntOffset) animatable4.getValue()).m7692unboximpl(), this.$totalDelta);
             animatable5 = this.this$0.placementDeltaAnimation;
             final LazyLayoutItemAnimation lazyLayoutItemAnimation = this.this$0;
             this.L$0 = null;
@@ -103,23 +100,23 @@ public final class LazyLayoutItemAnimation$animatePlacementDelta$1 extends Suspe
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            finiteAnimationSpec = (FiniteAnimationSpec) this.L$0;
+            springSpec = (FiniteAnimationSpec) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
         function0 = this.this$0.onLayerPropertyChanged;
         function0.invoke();
         animatable4 = this.this$0.placementDeltaAnimation;
-        final long m8389minusqkQi6aY2 = IntOffset.m8389minusqkQi6aY(((IntOffset) animatable4.getValue()).m8395unboximpl(), this.$totalDelta);
+        final long m7686minusqkQi6aY2 = IntOffset.m7686minusqkQi6aY(((IntOffset) animatable4.getValue()).m7692unboximpl(), this.$totalDelta);
         animatable5 = this.this$0.placementDeltaAnimation;
         final LazyLayoutItemAnimation lazyLayoutItemAnimation2 = this.this$0;
         this.L$0 = null;
         this.label = 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(LazyLayoutItemAnimation lazyLayoutItemAnimation, long j, Animatable animatable) {
         Function0 function0;
-        lazyLayoutItemAnimation.m1112setPlacementDeltagyyYBs(IntOffset.m8389minusqkQi6aY(((IntOffset) animatable.getValue()).m8395unboximpl(), j));
+        lazyLayoutItemAnimation.m977setPlacementDeltagyyYBs(IntOffset.m7686minusqkQi6aY(((IntOffset) animatable.getValue()).m7692unboximpl(), j));
         function0 = lazyLayoutItemAnimation.onLayerPropertyChanged;
         function0.invoke();
         return Unit.INSTANCE;

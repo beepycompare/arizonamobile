@@ -73,7 +73,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
                     Intrinsics.checkNotNullParameter(v, "v");
                     ProducerScope<Rect> producerScope2 = producerScope;
                     trackPipAnimationHintView$positionInWindow2 = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view2);
-                    producerScope2.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
+                    producerScope2.mo8396trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
                     view2.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                     view2.addOnLayoutChangeListener(onLayoutChangeListener);
                 }
@@ -87,7 +87,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
             };
             if (this.$view.isAttachedToWindow()) {
                 trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(this.$view);
-                producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+                producerScope.mo8396trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
                 this.$view.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                 this.$view.addOnLayoutChangeListener(onLayoutChangeListener);
             }
@@ -97,9 +97,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.activity.PipHintTrackerKt$trackPipAnimationHintView$flow$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$2;
-                    invokeSuspend$lambda$2 = PipHintTrackerKt$trackPipAnimationHintView$flow$1.invokeSuspend$lambda$2(view3, onScrollChangedListener, onLayoutChangeListener, r3);
-                    return invokeSuspend$lambda$2;
+                    return PipHintTrackerKt$trackPipAnimationHintView$flow$1.invokeSuspend$lambda$2(view3, onScrollChangedListener, onLayoutChangeListener, r3);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -112,7 +110,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         Rect trackPipAnimationHintView$positionInWindow;
         if (i == i5 && i3 == i7 && i2 == i6 && i4 == i8) {
@@ -120,17 +118,17 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
         }
         Intrinsics.checkNotNull(view);
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo8396trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$1(ProducerScope producerScope, View view) {
         Rect trackPipAnimationHintView$positionInWindow;
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo8396trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$2(View view, ViewTreeObserver.OnScrollChangedListener onScrollChangedListener, View.OnLayoutChangeListener onLayoutChangeListener, PipHintTrackerKt$trackPipAnimationHintView$flow$1$attachStateChangeListener$1 pipHintTrackerKt$trackPipAnimationHintView$flow$1$attachStateChangeListener$1) {
         view.getViewTreeObserver().removeOnScrollChangedListener(onScrollChangedListener);
         view.removeOnLayoutChangeListener(onLayoutChangeListener);

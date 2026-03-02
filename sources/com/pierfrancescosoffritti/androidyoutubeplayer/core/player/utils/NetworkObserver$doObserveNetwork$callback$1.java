@@ -32,7 +32,7 @@ public final class NetworkObserver$doObserveNetwork$callback$1 extends Connectiv
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onAvailable$lambda$1(NetworkObserver networkObserver) {
         for (NetworkObserver.Listener listener : networkObserver.getListeners()) {
             listener.onNetworkAvailable();
@@ -52,7 +52,7 @@ public final class NetworkObserver$doObserveNetwork$callback$1 extends Connectiv
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onLost$lambda$3(NetworkObserver networkObserver) {
         for (NetworkObserver.Listener listener : networkObserver.getListeners()) {
             listener.onNetworkUnavailable();

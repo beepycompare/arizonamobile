@@ -44,7 +44,7 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m7672getSizeYbymL2g() {
+    public final long m6974getSizeYbymL2g() {
         return this.size;
     }
 
@@ -136,8 +136,8 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public final int m7671getOffsetForPositionk4lQ0M(long j) {
-        return this.multiParagraph.m7535getOffsetForPositionk4lQ0M(j);
+    public final int m6973getOffsetForPositionk4lQ0M(long j) {
+        return this.multiParagraph.m6864getOffsetForPositionk4lQ0M(j);
     }
 
     public final Rect getBoundingBox(int i) {
@@ -145,8 +145,8 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public final long m7673getWordBoundaryjx7JFs(int i) {
-        return this.multiParagraph.m7537getWordBoundaryjx7JFs(i);
+    public final long m6975getWordBoundaryjx7JFs(int i) {
+        return this.multiParagraph.m6866getWordBoundaryjx7JFs(i);
     }
 
     public final Rect getCursorRect(int i) {
@@ -158,18 +158,18 @@ public final class TextLayoutResult {
     }
 
     /* renamed from: copy-O0kMr_c$default  reason: not valid java name */
-    public static /* synthetic */ TextLayoutResult m7669copyO0kMr_c$default(TextLayoutResult textLayoutResult, TextLayoutInput textLayoutInput, long j, int i, Object obj) {
+    public static /* synthetic */ TextLayoutResult m6971copyO0kMr_c$default(TextLayoutResult textLayoutResult, TextLayoutInput textLayoutInput, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             textLayoutInput = textLayoutResult.layoutInput;
         }
         if ((i & 2) != 0) {
             j = textLayoutResult.size;
         }
-        return textLayoutResult.m7670copyO0kMr_c(textLayoutInput, j);
+        return textLayoutResult.m6972copyO0kMr_c(textLayoutInput, j);
     }
 
     /* renamed from: copy-O0kMr_c  reason: not valid java name */
-    public final TextLayoutResult m7670copyO0kMr_c(TextLayoutInput textLayoutInput, long j) {
+    public final TextLayoutResult m6972copyO0kMr_c(TextLayoutInput textLayoutInput, long j) {
         return new TextLayoutResult(textLayoutInput, this.multiParagraph, j, null);
     }
 
@@ -179,16 +179,16 @@ public final class TextLayoutResult {
         }
         if (obj instanceof TextLayoutResult) {
             TextLayoutResult textLayoutResult = (TextLayoutResult) obj;
-            return Intrinsics.areEqual(this.layoutInput, textLayoutResult.layoutInput) && Intrinsics.areEqual(this.multiParagraph, textLayoutResult.multiParagraph) && IntSize.m8427equalsimpl0(this.size, textLayoutResult.size) && this.firstBaseline == textLayoutResult.firstBaseline && this.lastBaseline == textLayoutResult.lastBaseline && Intrinsics.areEqual(this.placeholderRects, textLayoutResult.placeholderRects);
+            return Intrinsics.areEqual(this.layoutInput, textLayoutResult.layoutInput) && Intrinsics.areEqual(this.multiParagraph, textLayoutResult.multiParagraph) && IntSize.m7724equalsimpl0(this.size, textLayoutResult.size) && this.firstBaseline == textLayoutResult.firstBaseline && this.lastBaseline == textLayoutResult.lastBaseline && Intrinsics.areEqual(this.placeholderRects, textLayoutResult.placeholderRects);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((this.layoutInput.hashCode() * 31) + this.multiParagraph.hashCode()) * 31) + IntSize.m8430hashCodeimpl(this.size)) * 31) + Float.hashCode(this.firstBaseline)) * 31) + Float.hashCode(this.lastBaseline)) * 31) + this.placeholderRects.hashCode();
+        return (((((((((this.layoutInput.hashCode() * 31) + this.multiParagraph.hashCode()) * 31) + IntSize.m7727hashCodeimpl(this.size)) * 31) + Float.hashCode(this.firstBaseline)) * 31) + Float.hashCode(this.lastBaseline)) * 31) + this.placeholderRects.hashCode();
     }
 
     public String toString() {
-        return "TextLayoutResult(layoutInput=" + this.layoutInput + ", multiParagraph=" + this.multiParagraph + ", size=" + ((Object) IntSize.m8432toStringimpl(this.size)) + ", firstBaseline=" + this.firstBaseline + ", lastBaseline=" + this.lastBaseline + ", placeholderRects=" + this.placeholderRects + ')';
+        return "TextLayoutResult(layoutInput=" + this.layoutInput + ", multiParagraph=" + this.multiParagraph + ", size=" + ((Object) IntSize.m7729toStringimpl(this.size)) + ", firstBaseline=" + this.firstBaseline + ", lastBaseline=" + this.lastBaseline + ", placeholderRects=" + this.placeholderRects + ')';
     }
 }

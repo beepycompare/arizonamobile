@@ -20,8 +20,8 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ShopViewHolder.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.shop.viewholder.ShopViewHolder$bind$1$2", f = "ShopViewHolder.kt", i = {}, l = {38}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.shop.viewholder.ShopViewHolder$bind$1$2", f = "ShopViewHolder.kt", i = {}, l = {38}, m = "invokeSuspend", n = {}, nl = {41}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ShopViewHolder$bind$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
@@ -66,12 +66,13 @@ public final class ShopViewHolder$bind$1$2 extends SuspendLambda implements Func
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        ItemShopBinding itemShopBinding2 = this.$this_with;
         if (bitmap != null) {
-            ImageView ivItemImage = this.$this_with.ivItemImage;
+            ImageView ivItemImage = itemShopBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             UtilsKt.setImage(ivItemImage, bitmap);
         } else {
-            ImageView ivItemImage2 = this.$this_with.ivItemImage;
+            ImageView ivItemImage2 = itemShopBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
             itemShopBinding = this.this$0.binding;
             Context context = itemShopBinding.getRoot().getContext();

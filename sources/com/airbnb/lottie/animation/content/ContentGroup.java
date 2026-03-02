@@ -175,11 +175,12 @@ public class ContentGroup implements DrawingContent, PathContent, BaseKeyframeAn
             this.offScreenRectF.set(0.0f, 0.0f, 0.0f, 0.0f);
             getBounds(this.offScreenRectF, matrix, true);
             this.offscreenOp.alpha = i;
+            OffscreenLayer.ComposeOp composeOp = this.offscreenOp;
             if (dropShadow != null) {
-                dropShadow.applyTo(this.offscreenOp);
+                dropShadow.applyTo(composeOp);
                 dropShadow = null;
             } else {
-                this.offscreenOp.shadow = null;
+                composeOp.shadow = null;
             }
             canvas = this.offscreenLayer.start(canvas, this.offScreenRectF, this.offscreenOp);
         } else if (dropShadow != null) {

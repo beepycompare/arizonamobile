@@ -29,7 +29,7 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     private MeasureResult _measureResult;
     private final NodeCoordinator coordinator;
     private Map<AlignmentLine, Integer> oldAlignmentLines;
-    private long position = IntOffset.Companion.m8397getZeronOccac();
+    private long position = IntOffset.Companion.m7694getZeronOccac();
     private final LookaheadLayoutCoordinates lookaheadLayoutCoordinates = new LookaheadLayoutCoordinates(this);
     private final MutableObjectIntMap<AlignmentLine> cachedAlignmentLinesMap = ObjectIntMapKt.mutableObjectIntMapOf();
 
@@ -43,8 +43,8 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: access$setMeasurementConstraints-BRTryo0 */
-    public static final /* synthetic */ void m7129access$setMeasurementConstraintsBRTryo0(LookaheadDelegate lookaheadDelegate, long j) {
-        lookaheadDelegate.m6940setMeasurementConstraintsBRTryo0(j);
+    public static final /* synthetic */ void m6469access$setMeasurementConstraintsBRTryo0(LookaheadDelegate lookaheadDelegate, long j) {
+        lookaheadDelegate.m6281setMeasurementConstraintsBRTryo0(j);
     }
 
     public static final /* synthetic */ void access$set_measureResult(LookaheadDelegate lookaheadDelegate, MeasureResult measureResult) {
@@ -68,12 +68,12 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
 
     @Override // androidx.compose.ui.node.LookaheadCapablePlaceable
     /* renamed from: getPosition-nOcc-ac */
-    public long mo7124getPositionnOccac() {
+    public long mo6464getPositionnOccac() {
         return this.position;
     }
 
     /* renamed from: setPosition--gyyYBs */
-    public void m7136setPositiongyyYBs(long j) {
+    public void m6476setPositiongyyYBs(long j) {
         this.position = j;
     }
 
@@ -119,14 +119,14 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: getSize-YbymL2g$ui */
-    public final long m7132getSizeYbymL2g$ui() {
+    public final long m6472getSizeYbymL2g$ui() {
         int width = getWidth();
-        return IntSize.m8424constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
     }
 
     /* renamed from: getConstraints-msEJaDk$ui */
-    public final long m7131getConstraintsmsEJaDk$ui() {
-        return m6937getMeasurementConstraintsmsEJaDk();
+    public final long m6471getConstraintsmsEJaDk$ui() {
+        return m6278getMeasurementConstraintsmsEJaDk();
     }
 
     public final LookaheadLayoutCoordinates getLookaheadLayoutCoordinates() {
@@ -143,9 +143,9 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     public final void set_measureResult(MeasureResult measureResult) {
         Map<AlignmentLine, Integer> map;
         if (measureResult != null) {
-            m6939setMeasuredSizeozmzZPI(IntSize.m8424constructorimpl((measureResult.getHeight() & 4294967295L) | (measureResult.getWidth() << 32)));
+            m6280setMeasuredSizeozmzZPI(IntSize.m7721constructorimpl((measureResult.getHeight() & 4294967295L) | (measureResult.getWidth() << 32)));
         } else {
-            m6939setMeasuredSizeozmzZPI(IntSize.Companion.m8434getZeroYbymL2g());
+            m6280setMeasuredSizeozmzZPI(IntSize.Companion.m7731getZeroYbymL2g());
         }
         if (!Intrinsics.areEqual(this._measureResult, measureResult) && measureResult != null && ((((map = this.oldAlignmentLines) != null && !map.isEmpty()) || !measureResult.getAlignmentLines().isEmpty()) && !Intrinsics.areEqual(measureResult.getAlignmentLines(), this.oldAlignmentLines))) {
             getAlignmentLinesOwner().getAlignmentLines().onAlignmentsChanged();
@@ -170,13 +170,13 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
 
     @Override // androidx.compose.ui.node.LookaheadCapablePlaceable
     public void replace$ui() {
-        mo6876placeAtf8xVGno(mo7124getPositionnOccac(), 0.0f, (Function1<? super GraphicsLayerScope, Unit>) null);
+        mo6217placeAtf8xVGno(mo6464getPositionnOccac(), 0.0f, (Function1<? super GraphicsLayerScope, Unit>) null);
     }
 
     @Override // androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public final void mo6876placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-        m7130placeSelfgyyYBs(j);
+    public final void mo6217placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        m6470placeSelfgyyYBs(j);
         if (isShallowPlacing$ui()) {
             return;
         }
@@ -184,9 +184,9 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: placeSelf--gyyYBs */
-    private final void m7130placeSelfgyyYBs(long j) {
-        if (!IntOffset.m8385equalsimpl0(mo7124getPositionnOccac(), j)) {
-            m7136setPositiongyyYBs(j);
+    private final void m6470placeSelfgyyYBs(long j) {
+        if (!IntOffset.m7682equalsimpl0(mo6464getPositionnOccac(), j)) {
+            m6476setPositiongyyYBs(j);
             LookaheadPassDelegate lookaheadPassDelegate$ui = getLayoutNode().getLayoutDelegate$ui().getLookaheadPassDelegate$ui();
             if (lookaheadPassDelegate$ui != null) {
                 lookaheadPassDelegate$ui.notifyChildrenUsingLookaheadCoordinatesWhilePlacing();
@@ -200,8 +200,8 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: placeSelfApparentToRealOffset--gyyYBs$ui */
-    public final void m7134placeSelfApparentToRealOffsetgyyYBs$ui(long j) {
-        m7130placeSelfgyyYBs(IntOffset.m8390plusqkQi6aY(j, m6935getApparentToRealOffsetnOccac()));
+    public final void m6474placeSelfApparentToRealOffsetgyyYBs$ui(long j) {
+        m6470placeSelfgyyYBs(IntOffset.m7687plusqkQi6aY(j, m6276getApparentToRealOffsetnOccac()));
     }
 
     protected void placeChildren() {
@@ -209,8 +209,8 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: performingMeasure-K40F9xA */
-    public final Placeable m7133performingMeasureK40F9xA(long j, Function0<? extends MeasureResult> function0) {
-        m6940setMeasurementConstraintsBRTryo0(j);
+    public final Placeable m6473performingMeasureK40F9xA(long j, Function0<? extends MeasureResult> function0) {
+        m6281setMeasurementConstraintsBRTryo0(j);
         set_measureResult(function0.invoke());
         return this;
     }
@@ -253,18 +253,18 @@ public abstract class LookaheadDelegate extends LookaheadCapablePlaceable implem
     }
 
     /* renamed from: positionIn-iSbpLlY$ui */
-    public final long m7135positionIniSbpLlY$ui(LookaheadDelegate lookaheadDelegate, boolean z) {
-        long m8397getZeronOccac = IntOffset.Companion.m8397getZeronOccac();
+    public final long m6475positionIniSbpLlY$ui(LookaheadDelegate lookaheadDelegate, boolean z) {
+        long m7694getZeronOccac = IntOffset.Companion.m7694getZeronOccac();
         LookaheadDelegate lookaheadDelegate2 = this;
         while (!Intrinsics.areEqual(lookaheadDelegate2, lookaheadDelegate)) {
             if (!lookaheadDelegate2.isPlacedUnderMotionFrameOfReference() || !z) {
-                m8397getZeronOccac = IntOffset.m8390plusqkQi6aY(m8397getZeronOccac, lookaheadDelegate2.mo7124getPositionnOccac());
+                m7694getZeronOccac = IntOffset.m7687plusqkQi6aY(m7694getZeronOccac, lookaheadDelegate2.mo6464getPositionnOccac());
             }
             NodeCoordinator wrappedBy$ui = lookaheadDelegate2.coordinator.getWrappedBy$ui();
             Intrinsics.checkNotNull(wrappedBy$ui);
             lookaheadDelegate2 = wrappedBy$ui.getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate2);
         }
-        return m8397getZeronOccac;
+        return m7694getZeronOccac;
     }
 }

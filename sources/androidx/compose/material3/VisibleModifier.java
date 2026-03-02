@@ -27,34 +27,28 @@ final class VisibleModifier extends InspectorValueInfo implements LayoutModifier
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo1371measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+    public MeasureResult mo1198measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
         if (!this.visible) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.material3.VisibleModifier$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$0;
-                    measure_3p2s80s$lambda$0 = VisibleModifier.measure_3p2s80s$lambda$0((Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$0;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, 4, null);
         }
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.VisibleModifier$$ExternalSyntheticLambda1
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.VisibleModifier$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = VisibleModifier.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return VisibleModifier.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;

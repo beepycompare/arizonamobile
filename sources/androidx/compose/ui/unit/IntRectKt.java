@@ -10,18 +10,18 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class IntRectKt {
     /* renamed from: IntRect-VbeCjmY  reason: not valid java name */
-    public static final IntRect m8419IntRectVbeCjmY(long j, long j2) {
-        return new IntRect(IntOffset.m8386getXimpl(j), IntOffset.m8387getYimpl(j), IntOffset.m8386getXimpl(j) + ((int) (j2 >> 32)), IntOffset.m8387getYimpl(j) + ((int) (j2 & 4294967295L)));
+    public static final IntRect m7716IntRectVbeCjmY(long j, long j2) {
+        return new IntRect(IntOffset.m7683getXimpl(j), IntOffset.m7684getYimpl(j), IntOffset.m7683getXimpl(j) + ((int) (j2 >> 32)), IntOffset.m7684getYimpl(j) + ((int) (j2 & 4294967295L)));
     }
 
     /* renamed from: IntRect-E1MhUcY  reason: not valid java name */
-    public static final IntRect m8418IntRectE1MhUcY(long j, long j2) {
-        return new IntRect(IntOffset.m8386getXimpl(j), IntOffset.m8387getYimpl(j), IntOffset.m8386getXimpl(j2), IntOffset.m8387getYimpl(j2));
+    public static final IntRect m7715IntRectE1MhUcY(long j, long j2) {
+        return new IntRect(IntOffset.m7683getXimpl(j), IntOffset.m7684getYimpl(j), IntOffset.m7683getXimpl(j2), IntOffset.m7684getYimpl(j2));
     }
 
     /* renamed from: IntRect-ar5cAso  reason: not valid java name */
-    public static final IntRect m8420IntRectar5cAso(long j, int i) {
-        return new IntRect(IntOffset.m8386getXimpl(j) - i, IntOffset.m8387getYimpl(j) - i, IntOffset.m8386getXimpl(j) + i, IntOffset.m8387getYimpl(j) + i);
+    public static final IntRect m7717IntRectar5cAso(long j, int i) {
+        return new IntRect(IntOffset.m7683getXimpl(j) - i, IntOffset.m7684getYimpl(j) - i, IntOffset.m7683getXimpl(j) + i, IntOffset.m7684getYimpl(j) + i);
     }
 
     public static final IntRect lerp(IntRect intRect, IntRect intRect2, float f) {

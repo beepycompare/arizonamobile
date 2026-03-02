@@ -10,49 +10,49 @@ public final class PointerButtons {
     private final int packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PointerButtons m6676boximpl(int i) {
+    public static final /* synthetic */ PointerButtons m6017boximpl(int i) {
         return new PointerButtons(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6677constructorimpl(int i) {
+    public static int m6018constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6678equalsimpl(int i, Object obj) {
-        return (obj instanceof PointerButtons) && i == ((PointerButtons) obj).m6682unboximpl();
+    public static boolean m6019equalsimpl(int i, Object obj) {
+        return (obj instanceof PointerButtons) && i == ((PointerButtons) obj).m6023unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6679equalsimpl0(int i, int i2) {
+    public static final boolean m6020equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6680hashCodeimpl(int i) {
+    public static int m6021hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6681toStringimpl(int i) {
+    public static String m6022toStringimpl(int i) {
         return "PointerButtons(packedValue=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6678equalsimpl(this.packedValue, obj);
+        return m6019equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m6680hashCodeimpl(this.packedValue);
+        return m6021hashCodeimpl(this.packedValue);
     }
 
     public String toString() {
-        return m6681toStringimpl(this.packedValue);
+        return m6022toStringimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6682unboximpl() {
+    public final /* synthetic */ int m6023unboximpl() {
         return this.packedValue;
     }
 

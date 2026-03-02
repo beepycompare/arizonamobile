@@ -80,14 +80,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowExtensions#getWindowLayoutComponent is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isWindowLayoutProviderValid$lambda$0;
-                isWindowLayoutProviderValid$lambda$0 = SafeWindowLayoutComponentProvider.isWindowLayoutProviderValid$lambda$0(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isWindowLayoutProviderValid$lambda$0);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isWindowLayoutProviderValid$lambda$0(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isWindowLayoutProviderValid$lambda$0(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Method method = safeWindowLayoutComponentProvider.safeWindowExtensionsProvider.getWindowExtensionsClass$window_release().getMethod("getWindowLayoutComponent", new Class[0]);
         Class<?> windowLayoutComponentClass = safeWindowLayoutComponentProvider.getWindowLayoutComponentClass();
@@ -100,14 +98,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("FoldingFeature class is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isFoldingFeatureValid$lambda$1;
-                isFoldingFeatureValid$lambda$1 = SafeWindowLayoutComponentProvider.isFoldingFeatureValid$lambda$1(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isFoldingFeatureValid$lambda$1);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isFoldingFeatureValid$lambda$1(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isFoldingFeatureValid$lambda$1(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Class<?> foldingFeatureClass = safeWindowLayoutComponentProvider.getFoldingFeatureClass();
         Method method = foldingFeatureClass.getMethod("getBounds", new Class[0]);
@@ -133,14 +129,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowLayoutComponent#addWindowLayoutInfoListener(" + Activity.class.getName() + ", java.util.function.Consumer) is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2;
-                isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2 = SafeWindowLayoutComponentProvider.isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodWindowLayoutInfoListenerJavaConsumerValid$lambda$2(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Class<?> consumerClassOrNull$window_release = safeWindowLayoutComponentProvider.consumerAdapter.consumerClassOrNull$window_release();
         if (consumerClassOrNull$window_release == null) {
@@ -165,14 +159,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowLayoutComponent#addWindowLayoutInfoListener(" + Context.class.getName() + ", androidx.window.extensions.core.util.function.Consumer) is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3;
-                isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3 = SafeWindowLayoutComponentProvider.isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isMethodWindowLayoutInfoListenerWindowConsumerValid$lambda$3(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Class<?> windowLayoutComponentClass = safeWindowLayoutComponentProvider.getWindowLayoutComponentClass();
         Method method = windowLayoutComponentClass.getMethod("addWindowLayoutInfoListener", Context.class, Consumer.class);
@@ -193,14 +185,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("DisplayFoldFeature is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isDisplayFoldFeatureValid$lambda$4;
-                isDisplayFoldFeatureValid$lambda$4 = SafeWindowLayoutComponentProvider.isDisplayFoldFeatureValid$lambda$4(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isDisplayFoldFeatureValid$lambda$4);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isDisplayFoldFeatureValid$lambda$4(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isDisplayFoldFeatureValid$lambda$4(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Class<?> displayFoldFeatureClass = safeWindowLayoutComponentProvider.getDisplayFoldFeatureClass();
         Method method = displayFoldFeatureClass.getMethod("getType", new Class[0]);
@@ -226,14 +216,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("SupportedWindowFeatures is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isSupportedWindowFeaturesValid$lambda$5;
-                isSupportedWindowFeaturesValid$lambda$5 = SafeWindowLayoutComponentProvider.isSupportedWindowFeaturesValid$lambda$5(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isSupportedWindowFeaturesValid$lambda$5);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isSupportedWindowFeaturesValid$lambda$5(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isSupportedWindowFeaturesValid$lambda$5(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Method method = safeWindowLayoutComponentProvider.getSupportedWindowFeaturesClass().getMethod("getDisplayFoldFeatures", new Class[0]);
         Type genericReturnType = method.getGenericReturnType();
@@ -250,14 +238,12 @@ public final class SafeWindowLayoutComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowLayoutComponent#getSupportedWindowFeatures is not valid", new Function0() { // from class: androidx.window.layout.SafeWindowLayoutComponentProvider$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isGetSupportedWindowFeaturesValid$lambda$6;
-                isGetSupportedWindowFeaturesValid$lambda$6 = SafeWindowLayoutComponentProvider.isGetSupportedWindowFeaturesValid$lambda$6(SafeWindowLayoutComponentProvider.this);
-                return Boolean.valueOf(isGetSupportedWindowFeaturesValid$lambda$6);
+                return Boolean.valueOf(SafeWindowLayoutComponentProvider.isGetSupportedWindowFeaturesValid$lambda$6(SafeWindowLayoutComponentProvider.this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isGetSupportedWindowFeaturesValid$lambda$6(SafeWindowLayoutComponentProvider safeWindowLayoutComponentProvider) {
         Method method = safeWindowLayoutComponentProvider.getWindowLayoutComponentClass().getMethod("getSupportedWindowFeatures", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;

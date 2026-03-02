@@ -50,7 +50,7 @@ public final class LazyStaggeredGridMeasurePolicyKt {
     }
 
     /* renamed from: rememberStaggeredGridMeasurePolicy-qKj4JfE  reason: not valid java name */
-    public static final LazyLayoutMeasurePolicy m1191rememberStaggeredGridMeasurePolicyqKj4JfE(final LazyStaggeredGridState lazyStaggeredGridState, final Function0<? extends LazyStaggeredGridItemProvider> function0, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final float f, float f2, final CoroutineScope coroutineScope, final LazyGridStaggeredGridSlotsProvider lazyGridStaggeredGridSlotsProvider, final GraphicsContext graphicsContext, Composer composer, int i) {
+    public static final LazyLayoutMeasurePolicy m1045rememberStaggeredGridMeasurePolicyqKj4JfE(final LazyStaggeredGridState lazyStaggeredGridState, final Function0<? extends LazyStaggeredGridItemProvider> function0, final PaddingValues paddingValues, final boolean z, final Orientation orientation, final float f, float f2, final CoroutineScope coroutineScope, final LazyGridStaggeredGridSlotsProvider lazyGridStaggeredGridSlotsProvider, final GraphicsContext graphicsContext, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 234882793, "C(rememberStaggeredGridMeasurePolicy)N(state,itemProviderLambda,contentPadding,reverseLayout,orientation,mainAxisSpacing:c#ui.unit.Dp,crossAxisSpacing:c#ui.unit.Dp,coroutineScope,slots,graphicsContext)50@2088L3728:LazyStaggeredGridMeasurePolicy.kt#fzvcnm");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(234882793, i, -1, "androidx.compose.foundation.lazy.staggeredgrid.rememberStaggeredGridMeasurePolicy (LazyStaggeredGridMeasurePolicy.kt:50)");
@@ -62,37 +62,37 @@ public final class LazyStaggeredGridMeasurePolicyKt {
             rememberedValue = new LazyLayoutMeasurePolicy() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridMeasurePolicyKt$rememberStaggeredGridMeasurePolicy$1$1
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy
                 /* renamed from: measure-0kLqBqw */
-                public final MeasureResult mo1043measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j) {
+                public final MeasureResult mo920measure0kLqBqw(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j) {
                     float beforePadding;
                     float afterPadding;
                     float startPadding;
-                    long m8380constructorimpl;
-                    ObservableScopeInvalidator.m1146attachToScopeimpl(LazyStaggeredGridState.this.m1196getMeasurementScopeInvalidatorzYiylxw$foundation());
+                    long m7677constructorimpl;
+                    ObservableScopeInvalidator.m1005attachToScopeimpl(LazyStaggeredGridState.this.m1050getMeasurementScopeInvalidatorzYiylxw$foundation());
                     boolean z2 = LazyStaggeredGridState.this.getHasLookaheadOccurred$foundation() || lazyLayoutMeasureScope.isLookingAhead();
-                    CheckScrollableContainerConstraintsKt.m333checkScrollableContainerConstraintsK40F9xA(j, orientation);
-                    LazyStaggeredGridSlots mo1166invoke0kLqBqw = lazyGridStaggeredGridSlotsProvider.mo1166invoke0kLqBqw(lazyLayoutMeasureScope, j);
+                    CheckScrollableContainerConstraintsKt.m291checkScrollableContainerConstraintsK40F9xA(j, orientation);
+                    LazyStaggeredGridSlots mo1025invoke0kLqBqw = lazyGridStaggeredGridSlotsProvider.mo1025invoke0kLqBqw(lazyLayoutMeasureScope, j);
                     boolean z3 = orientation == Orientation.Vertical;
                     LazyStaggeredGridItemProvider invoke = function0.invoke();
                     beforePadding = LazyStaggeredGridMeasurePolicyKt.beforePadding(paddingValues, orientation, z, lazyLayoutMeasureScope.getLayoutDirection());
-                    int i2 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(beforePadding);
+                    int i2 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(beforePadding);
                     afterPadding = LazyStaggeredGridMeasurePolicyKt.afterPadding(paddingValues, orientation, z, lazyLayoutMeasureScope.getLayoutDirection());
-                    int i3 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(afterPadding);
+                    int i3 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(afterPadding);
                     startPadding = LazyStaggeredGridMeasurePolicyKt.startPadding(paddingValues, orientation, lazyLayoutMeasureScope.getLayoutDirection());
-                    int i4 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(startPadding);
-                    int m8210getMaxHeightimpl = ((z3 ? Constraints.m8210getMaxHeightimpl(j) : Constraints.m8211getMaxWidthimpl(j)) - i2) - i3;
+                    int i4 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(startPadding);
+                    int m7507getMaxHeightimpl = ((z3 ? Constraints.m7507getMaxHeightimpl(j) : Constraints.m7508getMaxWidthimpl(j)) - i2) - i3;
                     if (z3) {
-                        m8380constructorimpl = IntOffset.m8380constructorimpl((i2 & 4294967295L) | (i4 << 32));
+                        m7677constructorimpl = IntOffset.m7677constructorimpl((i2 & 4294967295L) | (i4 << 32));
                     } else {
-                        m8380constructorimpl = IntOffset.m8380constructorimpl((i2 << 32) | (i4 & 4294967295L));
+                        m7677constructorimpl = IntOffset.m7677constructorimpl((i2 << 32) | (i4 & 4294967295L));
                     }
-                    long j2 = m8380constructorimpl;
+                    long j2 = m7677constructorimpl;
                     PaddingValues paddingValues2 = paddingValues;
-                    int i5 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(Dp.m8258constructorimpl(PaddingKt.calculateStartPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection()) + PaddingKt.calculateEndPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection())));
+                    int i5 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(PaddingKt.calculateStartPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection()) + PaddingKt.calculateEndPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection())));
                     PaddingValues paddingValues3 = paddingValues;
-                    int i6 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(Dp.m8258constructorimpl(paddingValues3.mo875calculateTopPaddingD9Ej5fM() + paddingValues3.mo872calculateBottomPaddingD9Ej5fM()));
-                    LazyStaggeredGridMeasureResult m1190measureStaggeredGridC6celF4 = LazyStaggeredGridMeasureKt.m1190measureStaggeredGridC6celF4(lazyLayoutMeasureScope, LazyStaggeredGridState.this, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, LazyStaggeredGridState.this.getPinnedItems$foundation(), LazyStaggeredGridState.this.getBeyondBoundsInfo$foundation()), invoke, mo1166invoke0kLqBqw, Constraints.m8201copyZbe2FdA$default(j, ConstraintsKt.m8228constrainWidthK40F9xA(j, i5), 0, ConstraintsKt.m8227constrainHeightK40F9xA(j, i6), 0, 10, null), z3, z, j2, m8210getMaxHeightimpl, lazyLayoutMeasureScope.mo458roundToPx0680j_4(f), i2, i3, coroutineScope, z2, lazyLayoutMeasureScope.isLookingAhead(), LazyStaggeredGridState.this.getApproachLayoutInfo$foundation(), graphicsContext);
-                    LazyStaggeredGridState.applyMeasureResult$foundation$default(LazyStaggeredGridState.this, m1190measureStaggeredGridC6celF4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
-                    return m1190measureStaggeredGridC6celF4;
+                    int i6 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(Dp.m7555constructorimpl(paddingValues3.mo770calculateTopPaddingD9Ej5fM() + paddingValues3.mo767calculateBottomPaddingD9Ej5fM()));
+                    LazyStaggeredGridMeasureResult m1044measureStaggeredGridC6celF4 = LazyStaggeredGridMeasureKt.m1044measureStaggeredGridC6celF4(lazyLayoutMeasureScope, LazyStaggeredGridState.this, LazyLayoutBeyondBoundsStateKt.calculateLazyLayoutPinnedIndices(invoke, LazyStaggeredGridState.this.getPinnedItems$foundation(), LazyStaggeredGridState.this.getBeyondBoundsInfo$foundation()), invoke, mo1025invoke0kLqBqw, Constraints.m7498copyZbe2FdA$default(j, ConstraintsKt.m7525constrainWidthK40F9xA(j, i5), 0, ConstraintsKt.m7524constrainHeightK40F9xA(j, i6), 0, 10, null), z3, z, j2, m7507getMaxHeightimpl, lazyLayoutMeasureScope.mo399roundToPx0680j_4(f), i2, i3, coroutineScope, z2, lazyLayoutMeasureScope.isLookingAhead(), LazyStaggeredGridState.this.getApproachLayoutInfo$foundation(), graphicsContext);
+                    LazyStaggeredGridState.applyMeasureResult$foundation$default(LazyStaggeredGridState.this, m1044measureStaggeredGridC6celF4, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
+                    return m1044measureStaggeredGridC6celF4;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -113,7 +113,7 @@ public final class LazyStaggeredGridMeasurePolicyKt {
             if (i != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return paddingValues.mo875calculateTopPaddingD9Ej5fM();
+            return paddingValues.mo770calculateTopPaddingD9Ej5fM();
         }
         return PaddingKt.calculateStartPadding(paddingValues, layoutDirection);
     }
@@ -122,7 +122,7 @@ public final class LazyStaggeredGridMeasurePolicyKt {
     public static final float beforePadding(PaddingValues paddingValues, Orientation orientation, boolean z, LayoutDirection layoutDirection) {
         int i = WhenMappings.$EnumSwitchMapping$0[orientation.ordinal()];
         if (i == 1) {
-            return z ? paddingValues.mo872calculateBottomPaddingD9Ej5fM() : paddingValues.mo875calculateTopPaddingD9Ej5fM();
+            return z ? paddingValues.mo767calculateBottomPaddingD9Ej5fM() : paddingValues.mo770calculateTopPaddingD9Ej5fM();
         } else if (i == 2) {
             if (z) {
                 return PaddingKt.calculateEndPadding(paddingValues, layoutDirection);
@@ -137,7 +137,7 @@ public final class LazyStaggeredGridMeasurePolicyKt {
     public static final float afterPadding(PaddingValues paddingValues, Orientation orientation, boolean z, LayoutDirection layoutDirection) {
         int i = WhenMappings.$EnumSwitchMapping$0[orientation.ordinal()];
         if (i == 1) {
-            return z ? paddingValues.mo875calculateTopPaddingD9Ej5fM() : paddingValues.mo872calculateBottomPaddingD9Ej5fM();
+            return z ? paddingValues.mo770calculateTopPaddingD9Ej5fM() : paddingValues.mo767calculateBottomPaddingD9Ej5fM();
         } else if (i == 2) {
             if (z) {
                 return PaddingKt.calculateStartPadding(paddingValues, layoutDirection);

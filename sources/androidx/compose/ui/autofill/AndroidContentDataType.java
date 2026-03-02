@@ -11,49 +11,49 @@ public final class AndroidContentDataType implements ContentDataType {
     private final int androidAutofillType;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AndroidContentDataType m4921boximpl(int i) {
+    public static final /* synthetic */ AndroidContentDataType m4269boximpl(int i) {
         return new AndroidContentDataType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m4922constructorimpl(int i) {
+    public static int m4270constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4923equalsimpl(int i, Object obj) {
-        return (obj instanceof AndroidContentDataType) && i == ((AndroidContentDataType) obj).m4927unboximpl();
+    public static boolean m4271equalsimpl(int i, Object obj) {
+        return (obj instanceof AndroidContentDataType) && i == ((AndroidContentDataType) obj).m4275unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4924equalsimpl0(int i, int i2) {
+    public static final boolean m4272equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4925hashCodeimpl(int i) {
+    public static int m4273hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4926toStringimpl(int i) {
+    public static String m4274toStringimpl(int i) {
         return "AndroidContentDataType(androidAutofillType=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4923equalsimpl(this.androidAutofillType, obj);
+        return m4271equalsimpl(this.androidAutofillType, obj);
     }
 
     public int hashCode() {
-        return m4925hashCodeimpl(this.androidAutofillType);
+        return m4273hashCodeimpl(this.androidAutofillType);
     }
 
     public String toString() {
-        return m4926toStringimpl(this.androidAutofillType);
+        return m4274toStringimpl(this.androidAutofillType);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4927unboximpl() {
+    public final /* synthetic */ int m4275unboximpl() {
         return this.androidAutofillType;
     }
 

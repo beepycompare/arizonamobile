@@ -13,25 +13,25 @@ public final class Hf {
     public final String b;
     public final List c;
     public final Map d;
-    public final C0753zf e;
-    public final C0753zf f;
+    public final C0752zf e;
+    public final C0752zf f;
     public final List g;
 
     public Hf(ECommerceProduct eCommerceProduct) {
-        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new C0753zf(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new C0753zf(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
+        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new C0752zf(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new C0752zf(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
     }
 
     public final String toString() {
         return "ProductWrapper{sku='" + this.f613a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Hf(String str, String str2, List list, Map map, C0753zf c0753zf, C0753zf c0753zf2, List list2) {
+    public Hf(String str, String str2, List list, Map map, C0752zf c0752zf, C0752zf c0752zf2, List list2) {
         this.f613a = str;
         this.b = str2;
         this.c = list;
         this.d = map;
-        this.e = c0753zf;
-        this.f = c0753zf2;
+        this.e = c0752zf;
+        this.f = c0752zf2;
         this.g = list2;
     }
 }

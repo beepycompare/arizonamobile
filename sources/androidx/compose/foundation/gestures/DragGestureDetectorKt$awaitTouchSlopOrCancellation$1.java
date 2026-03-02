@@ -28,6 +28,6 @@ public final class DragGestureDetectorKt$awaitTouchSlopOrCancellation$1 extends 
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m541awaitTouchSlopOrCancellationjO51t88(null, 0L, null, this);
+        return DragGestureDetectorKt.m467awaitTouchSlopOrCancellationjO51t88(null, 0L, null, this);
     }
 }

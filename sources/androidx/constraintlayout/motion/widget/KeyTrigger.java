@@ -207,10 +207,10 @@ public class KeyTrigger extends Key {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00b5  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00ce  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00c3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -227,8 +227,10 @@ public class KeyTrigger extends Key {
             }
             setUpRect(this.mCollisionRect, this.mTriggerCollisionView, this.mPostLayout);
             setUpRect(this.mTargetRect, view, this.mPostLayout);
-            if (this.mCollisionRect.intersect(this.mTargetRect)) {
-                if (this.mFireCrossReset) {
+            boolean intersect = this.mCollisionRect.intersect(this.mTargetRect);
+            boolean z7 = this.mFireCrossReset;
+            if (intersect) {
+                if (z7) {
                     this.mFireCrossReset = false;
                     z = true;
                 } else {
@@ -244,7 +246,7 @@ public class KeyTrigger extends Key {
                 z5 = z6;
                 z3 = false;
             } else {
-                if (this.mFireCrossReset) {
+                if (z7) {
                     z = false;
                 } else {
                     this.mFireCrossReset = true;
@@ -260,53 +262,56 @@ public class KeyTrigger extends Key {
                 z5 = false;
             }
         } else {
-            if (this.mFireCrossReset) {
-                float f2 = this.mFireThreshold;
+            boolean z8 = this.mFireCrossReset;
+            float f2 = this.mFireThreshold;
+            if (z8) {
                 if ((f - f2) * (this.mFireLastPos - f2) < 0.0f) {
                     this.mFireCrossReset = false;
                     z = true;
-                    if (!this.mFireNegativeReset) {
-                        float f3 = this.mFireThreshold;
+                    z2 = this.mFireNegativeReset;
+                    float f3 = this.mFireThreshold;
+                    if (!z2) {
                         float f4 = f - f3;
                         if ((this.mFireLastPos - f3) * f4 < 0.0f && f4 < 0.0f) {
                             this.mFireNegativeReset = false;
-                            z2 = true;
-                            if (this.mFirePositiveReset) {
-                                float f5 = this.mFireThreshold;
+                            z3 = true;
+                            z4 = this.mFirePositiveReset;
+                            float f5 = this.mFireThreshold;
+                            if (z4) {
                                 float f6 = f - f5;
-                                if ((this.mFireLastPos - f5) * f6 >= 0.0f || f6 <= 0.0f) {
-                                    z4 = false;
-                                } else {
+                                if ((this.mFireLastPos - f5) * f6 < 0.0f && f6 > 0.0f) {
                                     this.mFirePositiveReset = false;
-                                    z4 = true;
+                                    z5 = true;
                                 }
-                                boolean z7 = z2;
-                                z5 = z4;
-                                z3 = z7;
-                            } else {
-                                if (Math.abs(f - this.mFireThreshold) > this.mTriggerSlack) {
-                                    this.mFirePositiveReset = true;
-                                }
-                                z3 = z2;
-                                z5 = false;
+                            } else if (Math.abs(f - f5) > this.mTriggerSlack) {
+                                this.mFirePositiveReset = true;
                             }
+                            z5 = false;
                         }
-                    } else if (Math.abs(f - this.mFireThreshold) > this.mTriggerSlack) {
+                    } else if (Math.abs(f - f3) > this.mTriggerSlack) {
                         this.mFireNegativeReset = true;
                     }
-                    z2 = false;
-                    if (this.mFirePositiveReset) {
+                    z3 = false;
+                    z4 = this.mFirePositiveReset;
+                    float f52 = this.mFireThreshold;
+                    if (z4) {
                     }
+                    z5 = false;
                 }
-            } else if (Math.abs(f - this.mFireThreshold) > this.mTriggerSlack) {
+            } else if (Math.abs(f - f2) > this.mTriggerSlack) {
                 this.mFireCrossReset = true;
             }
             z = false;
-            if (!this.mFireNegativeReset) {
+            z2 = this.mFireNegativeReset;
+            float f32 = this.mFireThreshold;
+            if (!z2) {
             }
-            z2 = false;
-            if (this.mFirePositiveReset) {
+            z3 = false;
+            z4 = this.mFirePositiveReset;
+            float f522 = this.mFireThreshold;
+            if (z4) {
             }
+            z5 = false;
         }
         this.mFireLastPos = f;
         if (z3 || z || z5) {
@@ -419,7 +424,7 @@ public class KeyTrigger extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo8741clone() {
+    public Key mo8038clone() {
         return new KeyTrigger().copy(this);
     }
 

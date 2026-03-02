@@ -16,49 +16,49 @@ public final class ObservableScopeInvalidator {
     private final MutableState<Unit> state;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ObservableScopeInvalidator m1147boximpl(MutableState mutableState) {
+    public static final /* synthetic */ ObservableScopeInvalidator m1006boximpl(MutableState mutableState) {
         return new ObservableScopeInvalidator(mutableState);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static MutableState<Unit> m1148constructorimpl(MutableState<Unit> mutableState) {
+    public static MutableState<Unit> m1007constructorimpl(MutableState<Unit> mutableState) {
         return mutableState;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1150equalsimpl(MutableState<Unit> mutableState, Object obj) {
-        return (obj instanceof ObservableScopeInvalidator) && Intrinsics.areEqual(mutableState, ((ObservableScopeInvalidator) obj).m1155unboximpl());
+    public static boolean m1009equalsimpl(MutableState<Unit> mutableState, Object obj) {
+        return (obj instanceof ObservableScopeInvalidator) && Intrinsics.areEqual(mutableState, ((ObservableScopeInvalidator) obj).m1014unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1151equalsimpl0(MutableState<Unit> mutableState, MutableState<Unit> mutableState2) {
+    public static final boolean m1010equalsimpl0(MutableState<Unit> mutableState, MutableState<Unit> mutableState2) {
         return Intrinsics.areEqual(mutableState, mutableState2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1152hashCodeimpl(MutableState<Unit> mutableState) {
+    public static int m1011hashCodeimpl(MutableState<Unit> mutableState) {
         return mutableState.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1154toStringimpl(MutableState<Unit> mutableState) {
+    public static String m1013toStringimpl(MutableState<Unit> mutableState) {
         return "ObservableScopeInvalidator(state=" + mutableState + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1150equalsimpl(this.state, obj);
+        return m1009equalsimpl(this.state, obj);
     }
 
     public int hashCode() {
-        return m1152hashCodeimpl(this.state);
+        return m1011hashCodeimpl(this.state);
     }
 
     public String toString() {
-        return m1154toStringimpl(this.state);
+        return m1013toStringimpl(this.state);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ MutableState m1155unboximpl() {
+    public final /* synthetic */ MutableState m1014unboximpl() {
         return this.state;
     }
 
@@ -67,20 +67,20 @@ public final class ObservableScopeInvalidator {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ MutableState m1149constructorimpl$default(MutableState mutableState, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableState m1008constructorimpl$default(MutableState mutableState, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableState = SnapshotStateKt.mutableStateOf(Unit.INSTANCE, SnapshotStateKt.neverEqualPolicy());
         }
-        return m1148constructorimpl(mutableState);
+        return m1007constructorimpl(mutableState);
     }
 
     /* renamed from: attachToScope-impl  reason: not valid java name */
-    public static final void m1146attachToScopeimpl(MutableState<Unit> mutableState) {
+    public static final void m1005attachToScopeimpl(MutableState<Unit> mutableState) {
         mutableState.getValue();
     }
 
     /* renamed from: invalidateScope-impl  reason: not valid java name */
-    public static final void m1153invalidateScopeimpl(MutableState<Unit> mutableState) {
+    public static final void m1012invalidateScopeimpl(MutableState<Unit> mutableState) {
         mutableState.setValue(Unit.INSTANCE);
     }
 }

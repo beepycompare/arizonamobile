@@ -12,13 +12,11 @@ public final class EasingKt {
     private static final Easing LinearEasing = new Easing() { // from class: androidx.compose.animation.core.EasingKt$$ExternalSyntheticLambda0
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float LinearEasing$lambda$0;
-            LinearEasing$lambda$0 = EasingKt.LinearEasing$lambda$0(f);
-            return LinearEasing$lambda$0;
+            return EasingKt.LinearEasing$lambda$0(f);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float LinearEasing$lambda$0(float f) {
         return f;
     }

@@ -1,12 +1,11 @@
 package androidx.paging;
 
-import androidx.exifinterface.media.ExifInterface;
 import androidx.paging.LoadState;
 import androidx.paging.PageEvent;
+import androidx.paging.internal.CopyOnWriteArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -24,10 +23,11 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.MutableStateFlow;
+import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagingDataPresenter.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, ""}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2", f = "PagingDataPresenter.kt", i = {}, l = {121}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2", f = "PagingDataPresenter.kt", i = {}, l = {119}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ PagingData<T> $pagingData;
@@ -58,12 +58,12 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            this.this$0.setUiReceiver(this.$pagingData.getUiReceiver$paging_common_release());
-            Flow flow$paging_common_release = this.$pagingData.getFlow$paging_common_release();
+            this.this$0.setUiReceiver(this.$pagingData.getUiReceiver$paging_common());
+            Flow flow$paging_common = this.$pagingData.getFlow$paging_common();
             final PagingDataPresenter<T> pagingDataPresenter = this.this$0;
             final PagingData<T> pagingData = this.$pagingData;
             this.label = 1;
-            if (flow$paging_common_release.collect(new FlowCollector() { // from class: androidx.paging.PagingDataPresenter$collectFrom$2.1
+            if (flow$paging_common.collect(new FlowCollector() { // from class: androidx.paging.PagingDataPresenter$collectFrom$2.1
                 @Override // kotlinx.coroutines.flow.FlowCollector
                 public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
                     return emit((PageEvent) ((PageEvent) obj2), (Continuation<? super Unit>) continuation);
@@ -71,8 +71,8 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: PagingDataPresenter.kt */
-                @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2$1$2", f = "PagingDataPresenter.kt", i = {}, l = {141, 158, 170, 173, 225, 228}, m = "invokeSuspend", n = {}, s = {})
+                @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.paging.PagingDataPresenter$collectFrom$2$1$2", f = "PagingDataPresenter.kt", i = {}, l = {137, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 165, 168, 223, 226}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.PagingDataPresenter$collectFrom$2$1$2  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -99,26 +99,26 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                         return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
                     }
 
-                    /* JADX WARN: Code restructure failed: missing block: B:21:0x0081, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:21:0x008f, code lost:
                         if (r14 == r0) goto L24;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:28:0x00ce, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:28:0x00dc, code lost:
                         if (r14 == r0) goto L24;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:35:0x00f4, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:35:0x0102, code lost:
                         if (kotlinx.coroutines.YieldKt.yield(r13) == r0) goto L24;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:38:0x010e, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:38:0x011c, code lost:
                         if (r14.presentPagingDataEvent(r1.processEvent(r13.$event), r13) != r0) goto L26;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:87:0x023f, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:88:0x024b, code lost:
                         if (kotlinx.coroutines.YieldKt.yield(r13) == r0) goto L24;
                      */
-                    /* JADX WARN: Code restructure failed: missing block: B:90:0x0258, code lost:
+                    /* JADX WARN: Code restructure failed: missing block: B:91:0x0264, code lost:
                         if (r14.presentPagingDataEvent(r1.processEvent(r13.$event), r13) != r0) goto L7;
                      */
-                    /* JADX WARN: Removed duplicated region for block: B:105:0x02b7 A[LOOP:0: B:103:0x02b1->B:105:0x02b7, LOOP_END] */
-                    /* JADX WARN: Removed duplicated region for block: B:98:0x029d  */
+                    /* JADX WARN: Removed duplicated region for block: B:106:0x02c3 A[LOOP:0: B:104:0x02bd->B:106:0x02c3, LOOP_END] */
+                    /* JADX WARN: Removed duplicated region for block: B:99:0x02a9  */
                     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
@@ -154,13 +154,15 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                 if (pageEvent2 instanceof PageEvent.StaticList) {
                                     PagingDataPresenter<T> pagingDataPresenter = this.this$0;
                                     List listOf = CollectionsKt.listOf(new TransformablePage(0, ((PageEvent.StaticList) this.$event).getData()));
+                                    int placeholdersBefore = ((PageEvent.StaticList) this.$event).getPlaceholdersBefore();
+                                    int placeholdersAfter = ((PageEvent.StaticList) this.$event).getPlaceholdersAfter();
                                     boolean z3 = (((PageEvent.StaticList) this.$event).getSourceLoadStates() == null && ((PageEvent.StaticList) this.$event).getMediatorLoadStates() == null) ? false : true;
                                     this.label = 1;
-                                    presentNewList2 = pagingDataPresenter.presentNewList(listOf, 0, 0, z3, ((PageEvent.StaticList) this.$event).getSourceLoadStates(), ((PageEvent.StaticList) this.$event).getMediatorLoadStates(), this.$pagingData.getHintReceiver$paging_common_release(), this);
+                                    presentNewList2 = pagingDataPresenter.presentNewList(listOf, placeholdersBefore, placeholdersAfter, z3, ((PageEvent.StaticList) this.$event).getSourceLoadStates(), ((PageEvent.StaticList) this.$event).getMediatorLoadStates(), this.$pagingData.getHintReceiver$paging_common(), this);
                                     break;
                                 } else if ((pageEvent2 instanceof PageEvent.Insert) && ((PageEvent.Insert) pageEvent2).getLoadType() == LoadType.REFRESH) {
                                     this.label = 2;
-                                    presentNewList = this.this$0.presentNewList(((PageEvent.Insert) this.$event).getPages(), ((PageEvent.Insert) this.$event).getPlaceholdersBefore(), ((PageEvent.Insert) this.$event).getPlaceholdersAfter(), true, ((PageEvent.Insert) this.$event).getSourceLoadStates(), ((PageEvent.Insert) this.$event).getMediatorLoadStates(), this.$pagingData.getHintReceiver$paging_common_release(), this);
+                                    presentNewList = this.this$0.presentNewList(((PageEvent.Insert) this.$event).getPages(), ((PageEvent.Insert) this.$event).getPlaceholdersBefore(), ((PageEvent.Insert) this.$event).getPlaceholdersAfter(), true, ((PageEvent.Insert) this.$event).getSourceLoadStates(), ((PageEvent.Insert) this.$event).getMediatorLoadStates(), this.$pagingData.getHintReceiver$paging_common(), this);
                                     break;
                                 } else {
                                     PageEvent<T> pageEvent3 = this.$event;
@@ -240,10 +242,11 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                         }
                                     }
                                 }
+                                PagingDataPresenter<T> pagingDataPresenter4 = this.this$0;
                                 if (!z4) {
-                                    ((PagingDataPresenter) this.this$0).lastAccessedIndexUnfulfilled = false;
+                                    ((PagingDataPresenter) pagingDataPresenter4).lastAccessedIndexUnfulfilled = false;
                                 } else {
-                                    z = ((PagingDataPresenter) this.this$0).lastAccessedIndexUnfulfilled;
+                                    z = ((PagingDataPresenter) pagingDataPresenter4).lastAccessedIndexUnfulfilled;
                                     if (z || z2) {
                                         if (!z2) {
                                             i2 = ((PagingDataPresenter) this.this$0).lastAccessedIndex;
@@ -251,9 +254,9 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                                             if (i2 >= pageStore3.getPlaceholdersBefore()) {
                                                 i3 = ((PagingDataPresenter) this.this$0).lastAccessedIndex;
                                                 pageStore4 = ((PagingDataPresenter) this.this$0).pageStore;
-                                                int placeholdersBefore = pageStore4.getPlaceholdersBefore();
+                                                int placeholdersBefore2 = pageStore4.getPlaceholdersBefore();
                                                 pageStore5 = ((PagingDataPresenter) this.this$0).pageStore;
-                                                if (i3 <= placeholdersBefore + pageStore5.getDataCount()) {
+                                                if (i3 <= placeholdersBefore2 + pageStore5.getDataCount()) {
                                                     ((PagingDataPresenter) this.this$0).lastAccessedIndexUnfulfilled = false;
                                                 }
                                             }
@@ -282,7 +285,7 @@ public final class PagingDataPresenter$collectFrom$2 extends SuspendLambda imple
                             case 6:
                                 ResultKt.throwOnFailure(obj);
                                 mutableCombinedLoadStateCollection4 = ((PagingDataPresenter) this.this$0).combinedLoadStatesCollection;
-                                mutableCombinedLoadStateCollection4.set(((PageEvent.Drop) this.$event).getLoadType(), false, LoadState.NotLoading.Companion.getIncomplete$paging_common_release());
+                                mutableCombinedLoadStateCollection4.set(((PageEvent.Drop) this.$event).getLoadType(), false, LoadState.NotLoading.Companion.getIncomplete$paging_common());
                                 ((PagingDataPresenter) this.this$0).lastAccessedIndexUnfulfilled = false;
                                 pageEvent = this.$event;
                                 if (!(pageEvent instanceof PageEvent.Insert)) {

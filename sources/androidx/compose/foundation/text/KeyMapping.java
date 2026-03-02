@@ -8,5 +8,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface KeyMapping {
     /* renamed from: map-ZmokQxo  reason: not valid java name */
-    KeyCommand mo1373mapZmokQxo(KeyEvent keyEvent);
+    KeyCommand mo1200mapZmokQxo(KeyEvent keyEvent);
 }

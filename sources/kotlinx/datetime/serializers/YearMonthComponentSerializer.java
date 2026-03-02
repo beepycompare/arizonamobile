@@ -27,9 +27,7 @@ public final class YearMonthComponentSerializer implements KSerializer<YearMonth
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.YearMonth/components", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.YearMonthComponentSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$0;
-            descriptor$lambda$0 = YearMonthComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$0;
+            return YearMonthComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -84,7 +82,7 @@ public final class YearMonthComponentSerializer implements KSerializer<YearMonth
         beginStructure.endStructure(descriptor2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("year", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

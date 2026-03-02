@@ -79,24 +79,26 @@ final class DefaultCallAdapterFactory extends CallAdapter.Factory {
                 executor.execute(new Runnable() { // from class: retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DefaultCallAdapterFactory.ExecutorCallbackCall.AnonymousClass1.this.m12199xddacc936(callback, response);
+                        DefaultCallAdapterFactory.ExecutorCallbackCall.AnonymousClass1.this.m11063xddacc936(callback, response);
                     }
                 });
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: lambda$onResponse$0$retrofit2-DefaultCallAdapterFactory$ExecutorCallbackCall$1  reason: not valid java name */
-            public /* synthetic */ void m12199xddacc936(Callback callback, Response response) {
-                if (ExecutorCallbackCall.this.delegate.isCanceled()) {
-                    callback.onFailure(ExecutorCallbackCall.this, new IOException("Canceled"));
+            public /* synthetic */ void m11063xddacc936(Callback callback, Response response) {
+                boolean isCanceled = ExecutorCallbackCall.this.delegate.isCanceled();
+                ExecutorCallbackCall executorCallbackCall = ExecutorCallbackCall.this;
+                if (isCanceled) {
+                    callback.onFailure(executorCallbackCall, new IOException("Canceled"));
                 } else {
-                    callback.onResponse(ExecutorCallbackCall.this, response);
+                    callback.onResponse(executorCallbackCall, response);
                 }
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: lambda$onFailure$1$retrofit2-DefaultCallAdapterFactory$ExecutorCallbackCall$1  reason: not valid java name */
-            public /* synthetic */ void m12198x714e864(Callback callback, Throwable th) {
+            public /* synthetic */ void m11062x714e864(Callback callback, Throwable th) {
                 callback.onFailure(ExecutorCallbackCall.this, th);
             }
 
@@ -107,7 +109,7 @@ final class DefaultCallAdapterFactory extends CallAdapter.Factory {
                 executor.execute(new Runnable() { // from class: retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DefaultCallAdapterFactory.ExecutorCallbackCall.AnonymousClass1.this.m12198x714e864(callback, th);
+                        DefaultCallAdapterFactory.ExecutorCallbackCall.AnonymousClass1.this.m11062x714e864(callback, th);
                     }
                 });
             }
@@ -135,7 +137,7 @@ final class DefaultCallAdapterFactory extends CallAdapter.Factory {
 
         @Override // retrofit2.Call
         public Call<T> clone() {
-            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.mo10073clone());
+            return new ExecutorCallbackCall(this.callbackExecutor, this.delegate.mo9085clone());
         }
 
         @Override // retrofit2.Call

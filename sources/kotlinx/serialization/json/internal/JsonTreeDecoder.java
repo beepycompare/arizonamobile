@@ -25,7 +25,7 @@ import kotlinx.serialization.json.JsonPrimitive;
 import kotlinx.serialization.json.JsonSchemaCacheKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TreeJsonDecoder.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\b\u0012\u0018\u00002\u00020\u0001B/\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ \u0010\u0012\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\u0007H\u0002J\u0010\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\tH\u0016J\u0018\u0010\u0017\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u000fH\u0002J\b\u0010\u0018\u001a\u00020\u0011H\u0016J\u0018\u0010\u0019\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u000fH\u0014J\u0010\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0015\u001a\u00020\u0007H\u0014J\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0013\u001a\u00020\tH\u0016J\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0013\u001a\u00020\tH\u0016R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lkotlinx/serialization/json/internal/JsonTreeDecoder;", "Lkotlinx/serialization/json/internal/AbstractJsonTreeDecoder;", "json", "Lkotlinx/serialization/json/Json;", "value", "Lkotlinx/serialization/json/JsonObject;", "polymorphicDiscriminator", "", "polyDescriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;Lkotlinx/serialization/descriptors/SerialDescriptor;)V", "getValue", "()Lkotlinx/serialization/json/JsonObject;", "position", "", "forceNull", "", "coerceInputValue", "descriptor", FirebaseAnalytics.Param.INDEX, "tag", "decodeElementIndex", "absenceIsNull", "decodeNotNullMark", "elementName", "currentElement", "Lkotlinx/serialization/json/JsonElement;", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "kotlinx-serialization-json"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\b\u0012\u0018\u00002\u00020\u0001B1\bF\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\u0004\b\n\u0010\u000bJ\u0012\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004J\u001a\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u000fH\u0082\u0080\u0004J\n\u0010\u0016\u001a\u00020\u0011H\u0096\u0080\u0004J\u001a\u0010\u0017\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u000fH\u0094\u0080\u0004J\u0012\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0007H\u0094\u0080\u0004J\u0014\u0010\u001b\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u001a\u001a\u00020\u0007H\u0086\u0080\u0004J\u0012\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004J\u0012\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u0013\u001a\u00020\tH\u0096\u0080\u0004R\u0015\u0010\u0004\u001a\u00020\u0005X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u0084\b¢\u0006\u0002\n\u0000R\u000f\u0010\u000e\u001a\u00020\u000fX\u0082\u008e\b¢\u0006\u0002\n\u0000R\u000f\u0010\u0010\u001a\u00020\u0011X\u0082\u008e\b¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lkotlinx/serialization/json/internal/JsonTreeDecoder;", "Lkotlinx/serialization/json/internal/AbstractJsonTreeDecoder;", "json", "Lkotlinx/serialization/json/Json;", "value", "Lkotlinx/serialization/json/JsonObject;", "polymorphicDiscriminator", "", "polyDescriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "<init>", "(Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonObject;Ljava/lang/String;Lkotlinx/serialization/descriptors/SerialDescriptor;)V", "getValue", "()Lkotlinx/serialization/json/JsonObject;", "position", "", "forceNull", "", "decodeElementIndex", "descriptor", "setForceNull", FirebaseAnalytics.Param.INDEX, "decodeNotNullMark", "elementName", "currentElement", "Lkotlinx/serialization/json/JsonElement;", "tag", "currentElementOrNull", "beginStructure", "Lkotlinx/serialization/encoding/CompositeDecoder;", "endStructure", "", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
     private boolean forceNull;
@@ -51,25 +51,6 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
         this.polyDescriptor = serialDescriptor;
     }
 
-    private final boolean coerceInputValue(SerialDescriptor serialDescriptor, int i, String str) {
-        Json json = getJson();
-        boolean isElementOptional = serialDescriptor.isElementOptional(i);
-        SerialDescriptor elementDescriptor = serialDescriptor.getElementDescriptor(i);
-        if (isElementOptional && !elementDescriptor.isNullable() && (currentElement(str) instanceof JsonNull)) {
-            return true;
-        }
-        if (!Intrinsics.areEqual(elementDescriptor.getKind(), SerialKind.ENUM.INSTANCE) || (elementDescriptor.isNullable() && (currentElement(str) instanceof JsonNull))) {
-            return false;
-        }
-        JsonElement currentElement = currentElement(str);
-        JsonPrimitive jsonPrimitive = currentElement instanceof JsonPrimitive ? (JsonPrimitive) currentElement : null;
-        String contentOrNull = jsonPrimitive != null ? JsonElementKt.getContentOrNull(jsonPrimitive) : null;
-        if (contentOrNull == null) {
-            return false;
-        }
-        return JsonNamesMapKt.getJsonNameIndex(elementDescriptor, json, contentOrNull) == -3 && (isElementOptional || (!json.getConfiguration().getExplicitNulls() && elementDescriptor.isNullable()));
-    }
-
     @Override // kotlinx.serialization.encoding.CompositeDecoder
     public int decodeElementIndex(SerialDescriptor descriptor) {
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
@@ -77,18 +58,39 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
             int i = this.position;
             this.position = i + 1;
             String tag = getTag(descriptor, i);
+            boolean z = true;
             int i2 = this.position - 1;
             this.forceNull = false;
-            if (getValue().containsKey((Object) tag) || absenceIsNull(descriptor, i2)) {
-                if (!this.configuration.getCoerceInputValues() || !coerceInputValue(descriptor, i2, tag)) {
-                    return i2;
+            if (getValue().containsKey((Object) tag) || setForceNull(descriptor, i2)) {
+                if (this.configuration.getCoerceInputValues()) {
+                    Json json = getJson();
+                    boolean isElementOptional = descriptor.isElementOptional(i2);
+                    SerialDescriptor elementDescriptor = descriptor.getElementDescriptor(i2);
+                    if (!isElementOptional || elementDescriptor.isNullable() || !(currentElementOrNull(tag) instanceof JsonNull)) {
+                        if (!Intrinsics.areEqual(elementDescriptor.getKind(), SerialKind.ENUM.INSTANCE) || (elementDescriptor.isNullable() && (currentElementOrNull(tag) instanceof JsonNull))) {
+                            return i2;
+                        }
+                        JsonElement currentElementOrNull = currentElementOrNull(tag);
+                        JsonPrimitive jsonPrimitive = currentElementOrNull instanceof JsonPrimitive ? (JsonPrimitive) currentElementOrNull : null;
+                        String contentOrNull = jsonPrimitive != null ? JsonElementKt.getContentOrNull(jsonPrimitive) : null;
+                        if (contentOrNull == null) {
+                            return i2;
+                        }
+                        int jsonNameIndex = JsonNamesMapKt.getJsonNameIndex(elementDescriptor, json, contentOrNull);
+                        if (json.getConfiguration().getExplicitNulls() || !elementDescriptor.isNullable()) {
+                            z = false;
+                        }
+                        if (jsonNameIndex == -3 && ((isElementOptional || z) && !setForceNull(descriptor, i2))) {
+                        }
+                    }
                 }
+                return i2;
             }
         }
         return -1;
     }
 
-    private final boolean absenceIsNull(SerialDescriptor serialDescriptor, int i) {
+    private final boolean setForceNull(SerialDescriptor serialDescriptor, int i) {
         boolean z = (getJson().getConfiguration().getExplicitNulls() || serialDescriptor.isElementOptional(i) || !serialDescriptor.getElementDescriptor(i).isNullable()) ? false : true;
         this.forceNull = z;
         return z;
@@ -138,6 +140,11 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
         return (JsonElement) MapsKt.getValue(getValue(), tag);
     }
 
+    public final JsonElement currentElementOrNull(String tag) {
+        Intrinsics.checkNotNullParameter(tag, "tag");
+        return (JsonElement) getValue().get((Object) tag);
+    }
+
     @Override // kotlinx.serialization.json.internal.AbstractJsonTreeDecoder, kotlinx.serialization.internal.TaggedDecoder, kotlinx.serialization.encoding.Decoder
     public CompositeDecoder beginStructure(SerialDescriptor descriptor) {
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
@@ -158,7 +165,7 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
     public void endStructure(SerialDescriptor descriptor) {
         Set<String> plus;
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
-        if (this.configuration.getIgnoreUnknownKeys() || (descriptor.getKind() instanceof PolymorphicKind)) {
+        if (JsonNamesMapKt.ignoreUnknownKeys(descriptor, getJson()) || (descriptor.getKind() instanceof PolymorphicKind)) {
             return;
         }
         JsonNamingStrategy namingStrategy = JsonNamesMapKt.namingStrategy(descriptor, getJson());
@@ -177,7 +184,7 @@ public class JsonTreeDecoder extends AbstractJsonTreeDecoder {
         }
         for (String str : getValue().keySet()) {
             if (!plus.contains(str) && !Intrinsics.areEqual(str, getPolymorphicDiscriminator())) {
-                throw JsonExceptionsKt.UnknownKeyException(str, getValue().toString());
+                throw JsonExceptionsKt.JsonDecodingException(-1, "Encountered an unknown key '" + str + "' at element: " + renderTagStack() + "\nUse 'ignoreUnknownKeys = true' in 'Json {}' builder or '@JsonIgnoreUnknownKeys' annotation to ignore unknown keys.\nJSON input: " + ((Object) JsonExceptionsKt.minify$default(getValue().toString(), 0, 1, null)));
             }
         }
     }

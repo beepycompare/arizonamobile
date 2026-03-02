@@ -315,24 +315,27 @@ final class FieldInfo implements Comparable<FieldInfo> {
             }
             java.lang.reflect.Field field = this.presenceField;
             if (field != null) {
-                if (this.required) {
-                    return FieldInfo.forLegacyRequiredField(this.field, this.fieldNumber, this.type, field, this.presenceMask, this.enforceUtf8, this.enumVerifier);
+                boolean z = this.required;
+                java.lang.reflect.Field field2 = this.field;
+                if (z) {
+                    return FieldInfo.forLegacyRequiredField(field2, this.fieldNumber, this.type, field, this.presenceMask, this.enforceUtf8, this.enumVerifier);
                 }
-                return FieldInfo.forExplicitPresenceField(this.field, this.fieldNumber, this.type, field, this.presenceMask, this.enforceUtf8, this.enumVerifier);
+                return FieldInfo.forExplicitPresenceField(field2, this.fieldNumber, this.type, field, this.presenceMask, this.enforceUtf8, this.enumVerifier);
             }
             Internal.EnumVerifier enumVerifier = this.enumVerifier;
-            if (enumVerifier != null) {
-                java.lang.reflect.Field field2 = this.cachedSizeField;
-                if (field2 == null) {
-                    return FieldInfo.forFieldWithEnumVerifier(this.field, this.fieldNumber, this.type, enumVerifier);
-                }
-                return FieldInfo.forPackedFieldWithEnumVerifier(this.field, this.fieldNumber, this.type, enumVerifier, field2);
-            }
             java.lang.reflect.Field field3 = this.cachedSizeField;
-            if (field3 == null) {
-                return FieldInfo.forField(this.field, this.fieldNumber, this.type, this.enforceUtf8);
+            if (enumVerifier != null) {
+                java.lang.reflect.Field field4 = this.field;
+                if (field3 == null) {
+                    return FieldInfo.forFieldWithEnumVerifier(field4, this.fieldNumber, this.type, enumVerifier);
+                }
+                return FieldInfo.forPackedFieldWithEnumVerifier(field4, this.fieldNumber, this.type, enumVerifier, field3);
             }
-            return FieldInfo.forPackedField(this.field, this.fieldNumber, this.type, field3);
+            java.lang.reflect.Field field5 = this.field;
+            if (field3 == null) {
+                return FieldInfo.forField(field5, this.fieldNumber, this.type, this.enforceUtf8);
+            }
+            return FieldInfo.forPackedField(field5, this.fieldNumber, this.type, field3);
         }
     }
 }

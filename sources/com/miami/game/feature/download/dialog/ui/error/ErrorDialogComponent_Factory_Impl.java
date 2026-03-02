@@ -6,9 +6,9 @@ import dagger.internal.InstanceFactory;
 import javax.inject.Provider;
 /* loaded from: classes4.dex */
 public final class ErrorDialogComponent_Factory_Impl implements ErrorDialogComponent.Factory {
-    private final C0090ErrorDialogComponent_Factory delegateFactory;
+    private final C0089ErrorDialogComponent_Factory delegateFactory;
 
-    ErrorDialogComponent_Factory_Impl(C0090ErrorDialogComponent_Factory delegateFactory) {
+    ErrorDialogComponent_Factory_Impl(C0089ErrorDialogComponent_Factory delegateFactory) {
         this.delegateFactory = delegateFactory;
     }
 
@@ -17,11 +17,11 @@ public final class ErrorDialogComponent_Factory_Impl implements ErrorDialogCompo
         return this.delegateFactory.get(errorMessage, componentContext);
     }
 
-    public static Provider<ErrorDialogComponent.Factory> create(C0090ErrorDialogComponent_Factory delegateFactory) {
+    public static Provider<ErrorDialogComponent.Factory> create(C0089ErrorDialogComponent_Factory delegateFactory) {
         return InstanceFactory.create(new ErrorDialogComponent_Factory_Impl(delegateFactory));
     }
 
-    public static dagger.internal.Provider<ErrorDialogComponent.Factory> createFactoryProvider(C0090ErrorDialogComponent_Factory delegateFactory) {
+    public static dagger.internal.Provider<ErrorDialogComponent.Factory> createFactoryProvider(C0089ErrorDialogComponent_Factory delegateFactory) {
         return InstanceFactory.create(new ErrorDialogComponent_Factory_Impl(delegateFactory));
     }
 }

@@ -254,7 +254,7 @@ public final class CoroutinesRoom {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Object createFlow$lambda$1(Callable callable, SQLiteConnection it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return callable.call();
@@ -269,9 +269,7 @@ public final class CoroutinesRoom {
             return FlowUtil.createFlow(db, z, tableNames, new Function1() { // from class: androidx.room.CoroutinesRoom$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Object createFlow$lambda$1;
-                    createFlow$lambda$1 = CoroutinesRoom.Companion.createFlow$lambda$1(callable, (SQLiteConnection) obj);
-                    return createFlow$lambda$1;
+                    return CoroutinesRoom.Companion.createFlow$lambda$1(callable, (SQLiteConnection) obj);
                 }
             });
         }

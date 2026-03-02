@@ -27,10 +27,12 @@ public final class FlowableSamplePublisher<T> extends Flowable<T> {
     @Override // io.reactivex.Flowable
     protected void subscribeActual(Subscriber<? super T> subscriber) {
         SerializedSubscriber serializedSubscriber = new SerializedSubscriber(subscriber);
-        if (this.emitLast) {
-            this.source.subscribe(new SampleMainEmitLast(serializedSubscriber, this.other));
+        boolean z = this.emitLast;
+        Publisher<T> publisher = this.source;
+        if (z) {
+            publisher.subscribe(new SampleMainEmitLast(serializedSubscriber, this.other));
         } else {
-            this.source.subscribe(new SampleMainNoLast(serializedSubscriber, this.other));
+            publisher.subscribe(new SampleMainNoLast(serializedSubscriber, this.other));
         }
     }
 

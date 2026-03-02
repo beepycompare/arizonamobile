@@ -25,7 +25,7 @@ import dalvik.system.DelegateLastClassLoader;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class DynamiteModule {
     public static final int LOCAL = -1;
@@ -52,13 +52,13 @@ public final class DynamiteModule {
     public static final VersionPolicy zza = new zzm();
     public static final VersionPolicy zzb = new zzc();
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class DynamiteLoaderClassLoader {
         public static ClassLoader sClassLoader;
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class LoadingException extends Exception {
         /* synthetic */ LoadingException(String str, Throwable th, byte[] bArr) {
@@ -70,11 +70,11 @@ public final class DynamiteModule {
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface VersionPolicy {
 
-        /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+        /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
         /* loaded from: classes4.dex */
         public interface IVersions {
             int zza(Context context, String str, boolean z) throws LoadingException;
@@ -82,7 +82,7 @@ public final class DynamiteModule {
             int zzb(Context context, String str);
         }
 
-        /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+        /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
         /* loaded from: classes4.dex */
         public static class SelectionResult {
             public int localVersion = 0;

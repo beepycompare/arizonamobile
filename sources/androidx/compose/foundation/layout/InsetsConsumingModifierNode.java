@@ -34,16 +34,14 @@ public abstract class InsetsConsumingModifierNode extends Modifier.Node implemen
         TraversableNodeKt.traverseAncestors(this, getTraverseKey(), new Function1() { // from class: androidx.compose.foundation.layout.InsetsConsumingModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean onAttach$lambda$0;
-                onAttach$lambda$0 = InsetsConsumingModifierNode.onAttach$lambda$0(InsetsConsumingModifierNode.this, (TraversableNode) obj);
-                return Boolean.valueOf(onAttach$lambda$0);
+                return Boolean.valueOf(InsetsConsumingModifierNode.onAttach$lambda$0(InsetsConsumingModifierNode.this, (TraversableNode) obj));
             }
         });
         insetsInvalidated();
         super.onAttach();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean onAttach$lambda$0(InsetsConsumingModifierNode insetsConsumingModifierNode, TraversableNode traversableNode) {
         Intrinsics.checkNotNull(traversableNode, "null cannot be cast to non-null type androidx.compose.foundation.layout.InsetsConsumingModifierNode");
         insetsConsumingModifierNode.ancestorConsumedInsets = ((InsetsConsumingModifierNode) traversableNode).consumedInsets;
@@ -80,14 +78,12 @@ public abstract class InsetsConsumingModifierNode extends Modifier.Node implemen
         TraversableNodeKt.traverseDescendants(this, getTraverseKey(), new Function1() { // from class: androidx.compose.foundation.layout.InsetsConsumingModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                TraversableNode.Companion.TraverseDescendantsAction invalidateChildConsumedInsets$lambda$0;
-                invalidateChildConsumedInsets$lambda$0 = InsetsConsumingModifierNode.invalidateChildConsumedInsets$lambda$0(InsetsConsumingModifierNode.this, (TraversableNode) obj);
-                return invalidateChildConsumedInsets$lambda$0;
+                return InsetsConsumingModifierNode.invalidateChildConsumedInsets$lambda$0(InsetsConsumingModifierNode.this, (TraversableNode) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TraversableNode.Companion.TraverseDescendantsAction invalidateChildConsumedInsets$lambda$0(InsetsConsumingModifierNode insetsConsumingModifierNode, TraversableNode traversableNode) {
         Intrinsics.checkNotNull(traversableNode, "null cannot be cast to non-null type androidx.compose.foundation.layout.InsetsConsumingModifierNode");
         ((InsetsConsumingModifierNode) traversableNode).setAncestorConsumedInsets(insetsConsumingModifierNode.consumedInsets);

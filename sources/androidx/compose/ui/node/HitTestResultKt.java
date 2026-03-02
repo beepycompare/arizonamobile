@@ -18,6 +18,6 @@ public final class HitTestResultKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long DistanceAndFlags(float f, boolean z, boolean z2) {
-        return DistanceAndFlags.m7065constructorimpl((((z ? 1L : 0L) | (z2 ? 2L : 0L)) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return DistanceAndFlags.m6406constructorimpl((((z ? 1L : 0L) | (z2 ? 2L : 0L)) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 }

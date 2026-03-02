@@ -11,6 +11,7 @@ import dagger.hilt.internal.GeneratedComponentManager;
 public class ActivityComponentManager implements GeneratedComponentManager<Object> {
     protected final Activity activity;
     private final GeneratedComponentManager<ActivityRetainedComponent> activityRetainedComponentManager;
+    private SavedStateHandleHolder activitySavedStateHandleHolder;
     private volatile Object component;
     private final Object componentLock = new Object();
 
@@ -36,8 +37,19 @@ public class ActivityComponentManager implements GeneratedComponentManager<Objec
         return this.component;
     }
 
-    public final SavedStateHandleHolder getSavedStateHandleHolder() {
-        return ((ActivityRetainedComponentManager) this.activityRetainedComponentManager).getSavedStateHandleHolder();
+    public final void initSavedStateHandleHolders() {
+        SavedStateHandleHolder savedStateHandleHolder = ((ActivityRetainedComponentManager) this.activityRetainedComponentManager).getSavedStateHandleHolder();
+        this.activitySavedStateHandleHolder = savedStateHandleHolder;
+        if (savedStateHandleHolder.isInvalid()) {
+            this.activitySavedStateHandleHolder.setExtras(((ComponentActivity) this.activity).getDefaultViewModelCreationExtras());
+        }
+    }
+
+    public final void clearSavedStateHandleHolders() {
+        SavedStateHandleHolder savedStateHandleHolder = this.activitySavedStateHandleHolder;
+        if (savedStateHandleHolder != null) {
+            savedStateHandleHolder.clear();
+        }
     }
 
     protected Object createComponent() {

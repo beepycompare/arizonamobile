@@ -89,7 +89,7 @@ public final class CollectionInfo_androidKt {
 
     private static final boolean calculateIfHorizontallyStacked(List<SemanticsNode> list) {
         List list2;
-        long m5189unboximpl;
+        long m4537unboximpl;
         if (list.size() < 2) {
             return true;
         }
@@ -105,13 +105,13 @@ public final class CollectionInfo_androidKt {
                 SemanticsNode semanticsNode2 = list.get(i);
                 SemanticsNode semanticsNode3 = semanticsNode2;
                 SemanticsNode semanticsNode4 = semanticsNode;
-                arrayList.add(Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5209getCenterF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5209getCenterF1C5BW0() >> 32)))) << 32) | (Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m5209getCenterF1C5BW0() & 4294967295L)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m5209getCenterF1C5BW0() & 4294967295L)))) & 4294967295L))));
+                arrayList.add(Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m4557getCenterF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m4557getCenterF1C5BW0() >> 32)))) << 32) | (Float.floatToRawIntBits(Math.abs(Float.intBitsToFloat((int) (semanticsNode4.getBoundsInRoot().m4557getCenterF1C5BW0() & 4294967295L)) - Float.intBitsToFloat((int) (semanticsNode3.getBoundsInRoot().m4557getCenterF1C5BW0() & 4294967295L)))) & 4294967295L))));
                 semanticsNode = semanticsNode2;
             }
             list2 = arrayList;
         }
         if (list2.size() == 1) {
-            m5189unboximpl = ((Offset) CollectionsKt.first((List<? extends Object>) list2)).m5189unboximpl();
+            m4537unboximpl = ((Offset) CollectionsKt.first((List<? extends Object>) list2)).m4537unboximpl();
         } else {
             if (list2.isEmpty()) {
                 ListUtilsKt.throwUnsupportedOperationException("Empty collection can't be reduced.");
@@ -121,16 +121,16 @@ public final class CollectionInfo_androidKt {
             if (1 <= lastIndex2) {
                 int i2 = 1;
                 while (true) {
-                    first = Offset.m5168boximpl(Offset.m5184plusMKHz9U(((Offset) first).m5189unboximpl(), ((Offset) list2.get(i2)).m5189unboximpl()));
+                    first = Offset.m4516boximpl(Offset.m4532plusMKHz9U(((Offset) first).m4537unboximpl(), ((Offset) list2.get(i2)).m4537unboximpl()));
                     if (i2 == lastIndex2) {
                         break;
                     }
                     i2++;
                 }
             }
-            m5189unboximpl = ((Offset) first).m5189unboximpl();
+            m4537unboximpl = ((Offset) first).m4537unboximpl();
         }
-        return Float.intBitsToFloat((int) (4294967295L & m5189unboximpl)) < Float.intBitsToFloat((int) (m5189unboximpl >> 32));
+        return Float.intBitsToFloat((int) (4294967295L & m4537unboximpl)) < Float.intBitsToFloat((int) (m4537unboximpl >> 32));
     }
 
     private static final boolean isLazyCollection(CollectionInfo collectionInfo) {

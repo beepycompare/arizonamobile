@@ -25,7 +25,7 @@ final class Api33Impl {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void createBackCallback$lambda$0(Function0 function0) {
         if (function0 != null) {
             function0.invoke();

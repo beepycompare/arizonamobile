@@ -40,26 +40,26 @@ final class SingleMap<T, R> extends Single<R> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m10243constructorimpl;
+                Object m9182constructorimpl;
                 Function1 function1;
                 SingleMap<T, R> singleMap = this;
                 try {
                     Result.Companion companion = Result.Companion;
                     SingleMap$subscribe$wrappedObserver$1<T> singleMap$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleMap) singleMap).mapper;
-                    m10243constructorimpl = Result.m10243constructorimpl(function1.invoke(t));
+                    m9182constructorimpl = Result.m9182constructorimpl(function1.invoke(t));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                    m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<R> singleObserver = downstream;
-                if (Result.m10250isSuccessimpl(m10243constructorimpl)) {
-                    singleObserver.onSuccess(m10243constructorimpl);
+                if (Result.m9189isSuccessimpl(m9182constructorimpl)) {
+                    singleObserver.onSuccess(m9182constructorimpl);
                 }
                 SingleObserver<R> singleObserver2 = downstream;
-                Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
-                if (m10246exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m10246exceptionOrNullimpl);
+                Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
+                if (m9185exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m9185exceptionOrNullimpl);
                 }
             }
         });

@@ -60,14 +60,14 @@ public final class Task<T> {
         }
         Result<? extends T> result = this.taskResult;
         if (result != null) {
-            T t = (T) result.m10252unboximpl();
+            T t = (T) result.m9191unboximpl();
             ResultKt.throwOnFailure(t);
             return t;
         }
         throw new IllegalArgumentException("Required value was null.".toString());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void await$lambda$0(CountDownLatch countDownLatch, Throwable th) {
         Intrinsics.checkNotNullParameter(countDownLatch, "$countDownLatch");
         countDownLatch.countDown();
@@ -117,7 +117,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m10242boximpl(Result.m10243constructorimpl(t));
+            this.taskResult = Result.m9181boximpl(Result.m9182constructorimpl(t));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$1$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -173,7 +173,7 @@ public final class Task<T> {
                 return;
             }
             Result.Companion companion = Result.Companion;
-            this.taskResult = Result.m10242boximpl(Result.m10243constructorimpl(ResultKt.createFailure(th)));
+            this.taskResult = Result.m9181boximpl(Result.m9182constructorimpl(ResultKt.createFailure(th)));
             TaskKt.forEachWithDeletion(this.listenerHandlers, new Function1<ListenerHandler<T>, Unit>(this) { // from class: ru.rustore.sdk.core.tasks.Task$setTaskResult$2$1
                 final /* synthetic */ Task<T> this$0;
 
@@ -279,7 +279,7 @@ public final class Task<T> {
             if (result == null) {
                 this.completionHandlers.add(new CompletionHandler(onCompletionListener, executor));
             } else {
-                final Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(result.m10252unboximpl());
+                final Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(result.m9191unboximpl());
                 runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addCompletionListener$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -295,7 +295,7 @@ public final class Task<T> {
 
                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
                     public final void invoke2() {
-                        OnCompletionListener.this.onComplete(m10246exceptionOrNullimpl);
+                        OnCompletionListener.this.onComplete(m9185exceptionOrNullimpl);
                     }
                 });
             }
@@ -323,12 +323,12 @@ public final class Task<T> {
             if (result == null) {
                 this.listenerHandlers.add(new ListenerHandler<>(onSuccessListener, onFailureListener, executor));
             } else {
-                final Object m10252unboximpl = result.m10252unboximpl();
-                if (Result.m10249isFailureimpl(m10252unboximpl)) {
-                    m10252unboximpl = null;
+                final Object m9191unboximpl = result.m9191unboximpl();
+                if (Result.m9188isFailureimpl(m9191unboximpl)) {
+                    m9191unboximpl = null;
                 }
-                final Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(result.m10252unboximpl());
-                if (m10252unboximpl != null && onSuccessListener != null) {
+                final Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(result.m9191unboximpl());
+                if (m9191unboximpl != null && onSuccessListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -344,11 +344,11 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            onSuccessListener.onSuccess(m10252unboximpl);
+                            onSuccessListener.onSuccess(m9191unboximpl);
                         }
                     });
                 }
-                if (m10246exceptionOrNullimpl != null && onFailureListener != null) {
+                if (m9185exceptionOrNullimpl != null && onFailureListener != null) {
                     runWithFallbackToMain(executor, new Function0<Unit>() { // from class: ru.rustore.sdk.core.tasks.Task$addListener$1$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -364,7 +364,7 @@ public final class Task<T> {
 
                         /* renamed from: invoke  reason: avoid collision after fix types in other method */
                         public final void invoke2() {
-                            OnFailureListener.this.onFailure(m10246exceptionOrNullimpl);
+                            OnFailureListener.this.onFailure(m9185exceptionOrNullimpl);
                         }
                     });
                 }
@@ -392,13 +392,13 @@ public final class Task<T> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void runWithFallbackToMain$lambda$5(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void runWithFallbackToMain$lambda$6(Function0 tmp0) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke();

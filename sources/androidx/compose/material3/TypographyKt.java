@@ -16,9 +16,7 @@ public final class TypographyKt {
     private static final ProvidableCompositionLocal<Typography> LocalTypography = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.TypographyKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Typography LocalTypography$lambda$0;
-            LocalTypography$lambda$0 = TypographyKt.LocalTypography$lambda$0();
-            return LocalTypography$lambda$0;
+            return TypographyKt.LocalTypography$lambda$0();
         }
     });
 
@@ -234,7 +232,7 @@ public final class TypographyKt {
         return fromToken;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Typography LocalTypography$lambda$0() {
         return new Typography(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 32767, null);
     }

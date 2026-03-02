@@ -335,7 +335,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // androidx.datastore.preferences.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo8786clone() {
+        public BuilderType mo8076clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.instance = buildPartial();
             return buildertype;
@@ -343,11 +343,13 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
         public MessageType buildPartial() {
-            if (!this.instance.isMutable()) {
+            boolean isMutable = this.instance.isMutable();
+            MessageType messagetype = this.instance;
+            if (isMutable) {
+                messagetype.makeImmutable();
                 return this.instance;
             }
-            this.instance.makeImmutable();
-            return this.instance;
+            return messagetype;
         }
 
         @Override // androidx.datastore.preferences.protobuf.MessageLite.Builder
@@ -437,7 +439,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         protected final void mergeExtensionFields(final MessageType other) {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m8787clone();
+                this.extensions = this.extensions.m8077clone();
             }
             this.extensions.mergeFrom(other.extensions);
         }
@@ -510,10 +512,12 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
                     } else {
                         build = FieldSet.readPrimitiveField(input, extension.descriptor.getLiteType(), false);
                     }
-                    if (extension.descriptor.isRepeated()) {
-                        this.extensions.addRepeatedField(extension.descriptor, extension.singularToFieldSetType(build));
+                    boolean isRepeated = extension.descriptor.isRepeated();
+                    FieldSet<ExtensionDescriptor> fieldSet = this.extensions;
+                    if (isRepeated) {
+                        fieldSet.addRepeatedField(extension.descriptor, extension.singularToFieldSetType(build));
                     } else {
-                        this.extensions.setField(extension.descriptor, extension.singularToFieldSetType(build));
+                        fieldSet.setField(extension.descriptor, extension.singularToFieldSetType(build));
                     }
                 }
                 return true;
@@ -587,7 +591,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m8787clone();
+                this.extensions = this.extensions.m8077clone();
             }
             return this.extensions;
         }
@@ -727,16 +731,16 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         protected void copyOnWriteInternal() {
             super.copyOnWriteInternal();
             if (((ExtendableMessage) this.instance).extensions != FieldSet.emptySet()) {
-                ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m8787clone();
+                ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m8077clone();
             }
         }
 
         private FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             FieldSet<ExtensionDescriptor> fieldSet = ((ExtendableMessage) this.instance).extensions;
             if (fieldSet.isImmutable()) {
-                FieldSet<ExtensionDescriptor> m8787clone = fieldSet.m8787clone();
-                ((ExtendableMessage) this.instance).extensions = m8787clone;
-                return m8787clone;
+                FieldSet<ExtensionDescriptor> m8077clone = fieldSet.m8077clone();
+                ((ExtendableMessage) this.instance).extensions = m8077clone;
+                return m8077clone;
             }
             return fieldSet;
         }

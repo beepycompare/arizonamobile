@@ -17,9 +17,9 @@ public final class AnimateBoundsModifierKt {
     private static final BoundsTransform DefaultBoundsTransform = new BoundsTransform() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$$ExternalSyntheticLambda0
         @Override // androidx.compose.animation.BoundsTransform
         public final FiniteAnimationSpec createAnimationSpec(Rect rect, Rect rect2) {
-            FiniteAnimationSpec DefaultBoundsTransform$lambda$0;
-            DefaultBoundsTransform$lambda$0 = AnimateBoundsModifierKt.DefaultBoundsTransform$lambda$0(rect, rect2);
-            return DefaultBoundsTransform$lambda$0;
+            FiniteAnimationSpec spring;
+            spring = AnimationSpecKt.spring(1.0f, 400.0f, VisibilityThresholdsKt.getVisibilityThreshold(Rect.Companion));
+            return spring;
         }
     };
 
@@ -39,29 +39,24 @@ public final class AnimateBoundsModifierKt {
     public static final Modifier animateBounds(Modifier modifier, LookaheadScope lookaheadScope, Modifier modifier2, BoundsTransform boundsTransform, boolean z) {
         return modifier.then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$1
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
-            public final long m50invoke2pbfIzA(long j, long j2) {
+            public final long m37invoke2pbfIzA(long j, long j2) {
                 return j2;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m8198boximpl(m50invoke2pbfIzA(intSize.m8433unboximpl(), constraints.m8217unboximpl()));
+                return Constraints.m7495boximpl(m37invoke2pbfIzA(intSize.m7730unboximpl(), constraints.m7514unboximpl()));
             }
         }, z)).then(modifier2).then(new BoundsAnimationElement(lookaheadScope, boundsTransform, new Function2<IntSize, Constraints, Constraints>() { // from class: androidx.compose.animation.AnimateBoundsModifierKt$animateBounds$2
             @Override // kotlin.jvm.functions.Function2
             public /* bridge */ /* synthetic */ Constraints invoke(IntSize intSize, Constraints constraints) {
-                return Constraints.m8198boximpl(m51invoke2pbfIzA(intSize.m8433unboximpl(), constraints.m8217unboximpl()));
+                return Constraints.m7495boximpl(m38invoke2pbfIzA(intSize.m7730unboximpl(), constraints.m7514unboximpl()));
             }
 
             /* renamed from: invoke-2pbfIzA  reason: not valid java name */
-            public final long m51invoke2pbfIzA(long j, long j2) {
-                return Constraints.Companion.m8221fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
+            public final long m38invoke2pbfIzA(long j, long j2) {
+                return Constraints.Companion.m7518fixedJhjzzOo((int) (j >> 32), (int) (j & 4294967295L));
             }
         }, z));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final FiniteAnimationSpec DefaultBoundsTransform$lambda$0(Rect rect, Rect rect2) {
-        return AnimationSpecKt.spring(1.0f, 400.0f, VisibilityThresholdsKt.getVisibilityThreshold(Rect.Companion));
     }
 }

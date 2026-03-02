@@ -786,8 +786,8 @@ public final class SlotWriter {
         }
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m4633isNotEmptyimpl(mutableIntList) && PrioritySet.m4634peekimpl(mutableIntList) >= i) {
-                PrioritySet.m4635takeMaximpl(mutableIntList);
+            while (PrioritySet.m4008isNotEmptyimpl(mutableIntList) && PrioritySet.m4009peekimpl(mutableIntList) >= i) {
+                PrioritySet.m4010takeMaximpl(mutableIntList);
             }
         }
         boolean removeGroups = removeGroups(i, this.currentGroup - i);
@@ -852,6 +852,7 @@ public final class SlotWriter {
     }
 
     public final void moveGroup(int i) {
+        int[] iArr;
         int groupSize;
         int groupSize2;
         boolean z = true;
@@ -867,25 +868,31 @@ public final class SlotWriter {
         int i2 = this.currentGroup;
         int i3 = this.parent;
         int i4 = this.currentGroupEnd;
-        int i5 = i2;
-        for (int i6 = i; i6 > 0; i6--) {
-            groupSize2 = SlotTableKt.groupSize(this.groups, groupIndexToAddress(i5));
-            i5 += groupSize2;
-            if (!(i5 <= i4)) {
+        int i5 = i;
+        int i6 = i2;
+        while (true) {
+            iArr = this.groups;
+            if (i5 <= 0) {
+                break;
+            }
+            groupSize2 = SlotTableKt.groupSize(iArr, groupIndexToAddress(i6));
+            i6 += groupSize2;
+            if (!(i6 <= i4)) {
                 ComposerKt.composeImmediateRuntimeError("Parameter offset is out of bounds");
             }
+            i5--;
         }
-        groupSize = SlotTableKt.groupSize(this.groups, groupIndexToAddress(i5));
+        groupSize = SlotTableKt.groupSize(iArr, groupIndexToAddress(i6));
         int dataIndex = dataIndex(this.groups, groupIndexToAddress(this.currentGroup));
-        int dataIndex2 = dataIndex(this.groups, groupIndexToAddress(i5));
-        int i7 = i5 + groupSize;
+        int dataIndex2 = dataIndex(this.groups, groupIndexToAddress(i6));
+        int i7 = i6 + groupSize;
         int dataIndex3 = dataIndex(this.groups, groupIndexToAddress(i7));
         int i8 = dataIndex3 - dataIndex2;
         insertSlots(i8, Math.max(this.currentGroup - 1, 0));
         insertGroups(groupSize);
-        int[] iArr = this.groups;
+        int[] iArr2 = this.groups;
         int groupIndexToAddress = groupIndexToAddress(i7) * 5;
-        ArraysKt.copyInto(iArr, iArr, groupIndexToAddress(i2) * 5, groupIndexToAddress, (groupSize * 5) + groupIndexToAddress);
+        ArraysKt.copyInto(iArr2, iArr2, groupIndexToAddress(i2) * 5, groupIndexToAddress, (groupSize * 5) + groupIndexToAddress);
         if (i8 > 0) {
             Object[] objArr = this.slots;
             int dataIndexToDataAddress = dataIndexToDataAddress(dataIndex2 + i8);
@@ -904,7 +911,7 @@ public final class SlotWriter {
             int groupIndexToAddress2 = groupIndexToAddress(i15);
             int i16 = i15;
             int i17 = i10;
-            updateDataIndex(iArr, groupIndexToAddress2, dataIndexToDataAnchor(dataIndex(iArr, groupIndexToAddress2) - i10, i13 < groupIndexToAddress2 ? 0 : i11, i12, length));
+            updateDataIndex(iArr2, groupIndexToAddress2, dataIndexToDataAnchor(dataIndex(iArr2, groupIndexToAddress2) - i10, i13 < groupIndexToAddress2 ? 0 : i11, i12, length));
             i15 = i16 + 1;
             z = z2;
             i10 = i17;
@@ -1273,8 +1280,8 @@ public final class SlotWriter {
     private final void recalculateMarks() {
         MutableIntList mutableIntList = this.pendingRecalculateMarks;
         if (mutableIntList != null) {
-            while (PrioritySet.m4633isNotEmptyimpl(mutableIntList)) {
-                m4649updateContainsMarkNowXpTMRCE(PrioritySet.m4635takeMaximpl(mutableIntList), mutableIntList);
+            while (PrioritySet.m4008isNotEmptyimpl(mutableIntList)) {
+                m4022updateContainsMarkNowXpTMRCE(PrioritySet.m4010takeMaximpl(mutableIntList), mutableIntList);
             }
         }
     }
@@ -1283,15 +1290,15 @@ public final class SlotWriter {
         if (i >= 0) {
             MutableIntList mutableIntList = this.pendingRecalculateMarks;
             if (mutableIntList == null) {
-                mutableIntList = PrioritySet.m4628constructorimpl$default(null, 1, null);
+                mutableIntList = PrioritySet.m4003constructorimpl$default(null, 1, null);
                 this.pendingRecalculateMarks = mutableIntList;
             }
-            PrioritySet.m4625addimpl(mutableIntList, i);
+            PrioritySet.m4000addimpl(mutableIntList, i);
         }
     }
 
     /* renamed from: updateContainsMarkNow-XpTMRCE */
-    private final void m4649updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
+    private final void m4022updateContainsMarkNowXpTMRCE(int i, MutableIntList mutableIntList) {
         int groupIndexToAddress = groupIndexToAddress(i);
         boolean childContainsAnyMarks = childContainsAnyMarks(i);
         int[] iArr = this.groups;
@@ -1299,7 +1306,7 @@ public final class SlotWriter {
             SlotTableKt.updateContainsMark(iArr, groupIndexToAddress, childContainsAnyMarks);
             int parent = parent(i);
             if (parent >= 0) {
-                PrioritySet.m4625addimpl(mutableIntList, parent);
+                PrioritySet.m4000addimpl(mutableIntList, parent);
             }
         }
     }
@@ -1593,13 +1600,14 @@ public final class SlotWriter {
         int location$runtime2;
         int i3;
         int capacity = getCapacity() - this.groupGapLen;
+        ArrayList<Anchor> arrayList = this.anchors;
         if (i < i2) {
-            for (locationOf2 = SlotTableKt.locationOf(this.anchors, i, capacity); locationOf2 < this.anchors.size() && (location$runtime2 = (anchor2 = this.anchors.get(locationOf2)).getLocation$runtime()) < 0 && (i3 = location$runtime2 + capacity) < i2; locationOf2++) {
+            for (locationOf2 = SlotTableKt.locationOf(arrayList, i, capacity); locationOf2 < this.anchors.size() && (location$runtime2 = (anchor2 = this.anchors.get(locationOf2)).getLocation$runtime()) < 0 && (i3 = location$runtime2 + capacity) < i2; locationOf2++) {
                 anchor2.setLocation$runtime(i3);
             }
             return;
         }
-        for (locationOf = SlotTableKt.locationOf(this.anchors, i2, capacity); locationOf < this.anchors.size() && (location$runtime = (anchor = this.anchors.get(locationOf)).getLocation$runtime()) >= 0; locationOf++) {
+        for (locationOf = SlotTableKt.locationOf(arrayList, i2, capacity); locationOf < this.anchors.size() && (location$runtime = (anchor = this.anchors.get(locationOf)).getLocation$runtime()) >= 0; locationOf++) {
             anchor.setLocation$runtime(-(capacity - location$runtime));
         }
     }

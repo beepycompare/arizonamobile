@@ -4,18 +4,18 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 /* loaded from: classes5.dex */
 public final class P8 implements ProtobufConverter {
-    public static C0622u9 a(O8 o8) {
-        C0622u9 c0622u9 = new C0622u9();
-        c0622u9.d = new int[o8.b.size()];
+    public static C0621u9 a(O8 o8) {
+        C0621u9 c0621u9 = new C0621u9();
+        c0621u9.d = new int[o8.b.size()];
         int i = 0;
         for (Integer num : o8.b) {
-            c0622u9.d[i] = num.intValue();
+            c0621u9.d[i] = num.intValue();
             i++;
         }
-        c0622u9.c = o8.d;
-        c0622u9.b = o8.c;
-        c0622u9.f1253a = o8.f721a;
-        return c0622u9;
+        c0621u9.c = o8.d;
+        c0621u9.b = o8.c;
+        c0621u9.f1253a = o8.f721a;
+        return c0621u9;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -25,7 +25,7 @@ public final class P8 implements ProtobufConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0622u9 c0622u9 = (C0622u9) obj;
-        return new O8(c0622u9.f1253a, c0622u9.b, c0622u9.c, CollectionUtils.hashSetFromIntArray(c0622u9.d));
+        C0621u9 c0621u9 = (C0621u9) obj;
+        return new O8(c0621u9.f1253a, c0621u9.b, c0621u9.c, CollectionUtils.hashSetFromIntArray(c0621u9.d));
     }
 }

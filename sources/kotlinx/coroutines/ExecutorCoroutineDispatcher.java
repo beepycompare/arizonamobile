@@ -31,14 +31,12 @@ public abstract class ExecutorCoroutineDispatcher extends CoroutineDispatcher im
             super(CoroutineDispatcher.Key, new Function1() { // from class: kotlinx.coroutines.ExecutorCoroutineDispatcher$Key$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    ExecutorCoroutineDispatcher _init_$lambda$0;
-                    _init_$lambda$0 = ExecutorCoroutineDispatcher.Key._init_$lambda$0((CoroutineContext.Element) obj);
-                    return _init_$lambda$0;
+                    return ExecutorCoroutineDispatcher.Key._init_$lambda$0((CoroutineContext.Element) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final ExecutorCoroutineDispatcher _init_$lambda$0(CoroutineContext.Element element) {
             if (element instanceof ExecutorCoroutineDispatcher) {
                 return (ExecutorCoroutineDispatcher) element;

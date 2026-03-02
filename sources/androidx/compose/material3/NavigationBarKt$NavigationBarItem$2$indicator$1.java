@@ -51,21 +51,19 @@ final class NavigationBarKt$NavigationBarItem$2$indicator$1 implements Function2
             rememberedValue = new Function1() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItem$2$indicator$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = NavigationBarKt$NavigationBarItem$2$indicator$1.invoke$lambda$1$lambda$0(State.this, (GraphicsLayerScope) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return NavigationBarKt$NavigationBarItem$2$indicator$1.invoke$lambda$1$lambda$0(State.this, (GraphicsLayerScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        BoxKt.Box(BackgroundKt.m298backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(layoutId, (Function1) rememberedValue), this.$colors.m2678getIndicatorColor0d7_KjU$material3(), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer, 6)), composer, 0);
+        BoxKt.Box(BackgroundKt.m263backgroundbw27NRU(GraphicsLayerModifierKt.graphicsLayer(layoutId, (Function1) rememberedValue), this.$colors.m2264getIndicatorColor0d7_KjU$material3(), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer, 6)), composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(State state, GraphicsLayerScope graphicsLayerScope) {
         graphicsLayerScope.setAlpha(((Number) state.getValue()).floatValue());
         return Unit.INSTANCE;

@@ -12,19 +12,14 @@ public final class SharedTransitionDefaults {
     private static final BoundsTransform BoundsTransform = new BoundsTransform() { // from class: androidx.compose.animation.SharedTransitionDefaults$$ExternalSyntheticLambda0
         @Override // androidx.compose.animation.BoundsTransform
         public final FiniteAnimationSpec createAnimationSpec(Rect rect, Rect rect2) {
-            FiniteAnimationSpec BoundsTransform$lambda$0;
-            BoundsTransform$lambda$0 = SharedTransitionDefaults.BoundsTransform$lambda$0(rect, rect2);
-            return BoundsTransform$lambda$0;
+            FiniteAnimationSpec access$getDefaultSpring$p;
+            access$getDefaultSpring$p = SharedTransitionScopeKt.access$getDefaultSpring$p();
+            return access$getDefaultSpring$p;
         }
     };
     public static final int $stable = 8;
 
     private SharedTransitionDefaults() {
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final FiniteAnimationSpec BoundsTransform$lambda$0(Rect rect, Rect rect2) {
-        return SharedTransitionScopeKt.access$getDefaultSpring$p();
     }
 
     public final BoundsTransform getBoundsTransform() {

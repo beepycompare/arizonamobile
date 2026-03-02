@@ -59,15 +59,13 @@ public class CheckableGroup<T extends MaterialCheckable<T>> {
             }
 
             public void onCheckedChanged(T t2, boolean z) {
+                CheckableGroup checkableGroup = CheckableGroup.this;
                 if (z) {
-                    if (!CheckableGroup.this.checkInternal(t2)) {
+                    if (!checkableGroup.checkInternal(t2)) {
                         return;
                     }
-                } else {
-                    CheckableGroup checkableGroup = CheckableGroup.this;
-                    if (!checkableGroup.uncheckInternal(t2, checkableGroup.selectionRequired)) {
-                        return;
-                    }
+                } else if (!checkableGroup.uncheckInternal(t2, checkableGroup.selectionRequired)) {
+                    return;
                 }
                 CheckableGroup.this.onCheckedStateChanged();
             }

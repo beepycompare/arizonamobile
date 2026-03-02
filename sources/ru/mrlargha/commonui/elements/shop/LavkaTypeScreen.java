@@ -47,7 +47,7 @@ import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: LavkaTypeScreen.kt */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001:B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0017H\u0016J\u0018\u0010-\u001a\u00020\u00192\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0006H\u0016J\u0010\u00101\u001a\u00020\u00192\u0006\u00102\u001a\u00020\u0017H\u0002J\u0016\u00103\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\u0006\u00104\u001a\u000205H\u0002J\u0010\u00106\u001a\u00020\u00192\u0006\u00104\u001a\u000205H\u0002J\b\u00107\u001a\u00020\u0019H\u0002J\u0018\u00108\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00062\u0006\u0010.\u001a\u00020/H\u0002J\b\u00109\u001a\u00020\u0019H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010'\u001a\u00020(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "lavkaTypeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/LavkaTypeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "inventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "lavkaAdapter", "Lru/mrlargha/commonui/elements/shop/adapter/LavkaTypeAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setVisible", "", "visible", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemsList", "buyItemsList", "sellItemsList", "pawnShopList", "lavkaItems", "handler", "Landroid/os/Handler;", "getHandler", "()Landroid/os/Handler;", "screenType", "currentPage", "onBackendMessage", "data", "", "subId", "editUiVisibility", "isBuy", "arzInitObservers", "inventoryResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "rodInitObservers", "addLockedItems", "sendData", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0001:B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u0017H\u0016J\u0018\u0010-\u001a\u00020\u00192\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0006H\u0016J\u0010\u00101\u001a\u00020\u00192\u0006\u00102\u001a\u00020\u0017H\u0002J\u0016\u00103\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e2\u0006\u00104\u001a\u000205H\u0002J\u0010\u00106\u001a\u00020\u00192\u0006\u00104\u001a\u000205H\u0002J\b\u00107\u001a\u00020\u0019H\u0002J\u0018\u00108\u001a\u00020\u00192\u0006\u00100\u001a\u00020\u00062\u0006\u0010.\u001a\u00020/H\u0002J\b\u00109\u001a\u00020\u0019H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001e8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b \u0010!R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010'\u001a\u00020(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "lavkaTypeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/LavkaTypeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "inventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "lavkaAdapter", "Lru/mrlargha/commonui/elements/shop/adapter/LavkaTypeAdapter;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "setVisible", "", "visible", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemsList", "buyItemsList", "sellItemsList", "pawnShopList", "lavkaItems", "handler", "Landroid/os/Handler;", "getHandler", "()Landroid/os/Handler;", "screenType", "currentPage", "onBackendMessage", "data", "", "subId", "editUiVisibility", "isBuy", "arzInitObservers", "inventoryResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "rodInitObservers", "addLockedItems", "sendData", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceController {
     private final LavkaTypeScreenBinding binding;
@@ -82,9 +82,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit inventoryAdapter$lambda$0;
-                inventoryAdapter$lambda$0 = LavkaTypeScreen.inventoryAdapter$lambda$0((DraggedItem) obj);
-                return inventoryAdapter$lambda$0;
+                return LavkaTypeScreen.inventoryAdapter$lambda$0((DraggedItem) obj);
             }
         };
         RecyclerView rvInventory = bind.rvInventory;
@@ -93,32 +91,24 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         MainInventoryAdapter mainInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function1, rvInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit inventoryAdapter$lambda$1;
-                inventoryAdapter$lambda$1 = LavkaTypeScreen.inventoryAdapter$lambda$1((InventoryItem) obj);
-                return inventoryAdapter$lambda$1;
+                return LavkaTypeScreen.inventoryAdapter$lambda$1((InventoryItem) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit inventoryAdapter$lambda$2;
-                inventoryAdapter$lambda$2 = LavkaTypeScreen.inventoryAdapter$lambda$2(LavkaTypeScreen.this, (InventoryItem) obj);
-                return inventoryAdapter$lambda$2;
+                return LavkaTypeScreen.inventoryAdapter$lambda$2(LavkaTypeScreen.this, (InventoryItem) obj);
             }
         }));
         this.inventoryAdapter = mainInventoryAdapter;
         LavkaTypeAdapter lavkaTypeAdapter = new LavkaTypeAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit lavkaAdapter$lambda$0;
-                lavkaAdapter$lambda$0 = LavkaTypeScreen.lavkaAdapter$lambda$0(LavkaTypeScreen.this, (InventoryItem) obj);
-                return lavkaAdapter$lambda$0;
+                return LavkaTypeScreen.lavkaAdapter$lambda$0(LavkaTypeScreen.this, (InventoryItem) obj);
             }
         }, new Function0() { // from class: ru.mrlargha.commonui.elements.shop.LavkaTypeScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit lavkaAdapter$lambda$1;
-                lavkaAdapter$lambda$1 = LavkaTypeScreen.lavkaAdapter$lambda$1(targetActivity, i, this);
-                return lavkaAdapter$lambda$1;
+                return LavkaTypeScreen.lavkaAdapter$lambda$1(targetActivity, i, this);
             }
         }, activity);
         this.lavkaAdapter = lavkaTypeAdapter;
@@ -158,19 +148,19 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         this.currentPage = 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryAdapter$lambda$2(LavkaTypeScreen lavkaTypeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Integer available = it.getAvailable();
@@ -185,7 +175,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lavkaAdapter$lambda$0(LavkaTypeScreen lavkaTypeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         int slot = it.getSlot();
@@ -197,7 +187,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lavkaAdapter$lambda$1(Activity activity, int i, LavkaTypeScreen lavkaTypeScreen) {
         Toast.makeText(activity.getApplicationContext(), "Ошибка в интерфейсе : " + i, 1).show();
         lavkaTypeScreen.getNotifier().setUIElementVisible(i, false);
@@ -219,7 +209,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         return this.handler;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(0)));
         lavkaTypeScreen.currentPage = 0;
@@ -230,7 +220,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(LavkaTypeScreen lavkaTypeScreen, View view) {
         lavkaTypeScreen.sendData(3, StringKt.toStringJson(new BlockType(1)));
         lavkaTypeScreen.currentPage = 1;
@@ -497,14 +487,15 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
                     }
                     InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem7);
                     if (this.inventoryItemsList.size() >= i7 && i7 != -1) {
-                        if (inventoryItem7.getItem() != null) {
-                            List<InventoryItem> list = this.inventoryItemsList;
+                        Integer item3 = inventoryItem7.getItem();
+                        List<InventoryItem> list = this.inventoryItemsList;
+                        if (item3 != null) {
                             if (updateInventoryItem == null) {
                                 updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                             }
                             list.set(i7, updateInventoryItem);
                         } else {
-                            this.inventoryItemsList.set(i7, inventoryItem7);
+                            list.set(i7, inventoryItem7);
                         }
                     }
                 }
@@ -519,13 +510,14 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     private final void editUiVisibility(boolean z) {
+        LavkaTypeScreenBinding lavkaTypeScreenBinding = this.binding;
         if (z) {
-            this.binding.btnBuy.setBackgroundResource(R.drawable.ic_btn_buy_green);
+            lavkaTypeScreenBinding.btnBuy.setBackgroundResource(R.drawable.ic_btn_buy_green);
             this.binding.btnSell.setBackgroundResource(R.drawable.ic_btn_sell_grey);
             this.binding.ivBackgroundStatus.setImageResource(R.drawable.bg_tradeshop_test_green);
             return;
         }
-        this.binding.btnBuy.setBackgroundResource(R.drawable.ic_btn_buy_grey);
+        lavkaTypeScreenBinding.btnBuy.setBackgroundResource(R.drawable.ic_btn_buy_grey);
         this.binding.btnSell.setBackgroundResource(R.drawable.ic_btn_sell_red);
         this.binding.ivBackgroundStatus.setImageResource(R.drawable.bg_tradeshop_test_red);
     }
@@ -594,7 +586,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
     }
 
     /* compiled from: LavkaTypeScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/shop/LavkaTypeScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_GLOVO);

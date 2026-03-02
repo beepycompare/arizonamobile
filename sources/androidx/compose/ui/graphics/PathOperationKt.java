@@ -6,7 +6,7 @@ import kotlin.Metadata;
 import kotlin.ReplaceWith;
 /* compiled from: PathOperation.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0011\"\u001e\u0010\u0000\u001a\u00020\u0001*\u00020\u00028FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006\"\u001e\u0010\u0007\u001a\u00020\u0001*\u00020\u00028FX\u0087\u0004¢\u0006\f\u0012\u0004\b\b\u0010\u0004\u001a\u0004\b\t\u0010\u0006\"\u001e\u0010\n\u001a\u00020\u0001*\u00020\u00028FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u000b\u0010\u0004\u001a\u0004\b\f\u0010\u0006\"\u001e\u0010\r\u001a\u00020\u0001*\u00020\u00028FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u000e\u0010\u0004\u001a\u0004\b\u000f\u0010\u0006\"\u001e\u0010\u0010\u001a\u00020\u0001*\u00020\u00028FX\u0087\u0004¢\u0006\f\u0012\u0004\b\u0011\u0010\u0004\u001a\u0004\b\u0012\u0010\u0006¨\u0006\u0013"}, d2 = {"difference", "Landroidx/compose/ui/graphics/PathOperation;", "Landroidx/compose/ui/graphics/PathOperation$Companion;", "getDifference$annotations", "(Landroidx/compose/ui/graphics/PathOperation$Companion;)V", "getDifference", "(Landroidx/compose/ui/graphics/PathOperation$Companion;)I", "intersect", "getIntersect$annotations", "getIntersect", "union", "getUnion$annotations", "getUnion", "reverseDifference", "getReverseDifference$annotations", "getReverseDifference", "xor", "getXor$annotations", "getXor", "ui-graphics"}, k = 2, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class PathOperationKt {
     @Deprecated(message = "Use PathOperation.Difference instead", replaceWith = @ReplaceWith(expression = "PathOperation.Difference", imports = {"androidx.compose.ui.graphics.PathOperation.Difference"}))
     public static /* synthetic */ void getDifference$annotations(PathOperation.Companion companion) {
@@ -29,22 +29,22 @@ public final class PathOperationKt {
     }
 
     public static final int getDifference(PathOperation.Companion companion) {
-        return companion.m5732getDifferenceb3I0S0c();
+        return companion.m5078getDifferenceb3I0S0c();
     }
 
     public static final int getIntersect(PathOperation.Companion companion) {
-        return companion.m5733getIntersectb3I0S0c();
+        return companion.m5079getIntersectb3I0S0c();
     }
 
     public static final int getUnion(PathOperation.Companion companion) {
-        return companion.m5735getUnionb3I0S0c();
+        return companion.m5081getUnionb3I0S0c();
     }
 
     public static final int getReverseDifference(PathOperation.Companion companion) {
-        return companion.m5734getReverseDifferenceb3I0S0c();
+        return companion.m5080getReverseDifferenceb3I0S0c();
     }
 
     public static final int getXor(PathOperation.Companion companion) {
-        return companion.m5736getXorb3I0S0c();
+        return companion.m5082getXorb3I0S0c();
     }
 }

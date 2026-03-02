@@ -20,7 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import ru.mrlargha.commonui.utils.DateConverter;
 /* compiled from: NotificationHistoryDAO_Impl.kt */
-@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0004\b\u0007\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\b0\u0010H\u0096@¢\u0006\u0002\u0010\u0011J\u000e\u0010\u0012\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010\u0011R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/data/database/NotificationHistoryDAO_Impl;", "Lcom/arizona/launcher/data/database/NotificationHistoryDAO;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfNotificationHistoryData", "Landroidx/room/EntityInsertAdapter;", "Lcom/arizona/launcher/model/servers/NotificationHistoryData;", "__dateConverter", "Lru/mrlargha/commonui/utils/DateConverter;", "addNotification", "", "notification", "(Lcom/arizona/launcher/model/servers/NotificationHistoryData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotification", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dropTable", "Companion", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0004\b\u0007\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\b0\u0010H\u0096@¢\u0006\u0002\u0010\u0011J\u000e\u0010\u0012\u001a\u00020\fH\u0096@¢\u0006\u0002\u0010\u0011R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/data/database/NotificationHistoryDAO_Impl;", "Lcom/arizona/launcher/data/database/NotificationHistoryDAO;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfNotificationHistoryData", "Landroidx/room/EntityInsertAdapter;", "Lcom/arizona/launcher/model/servers/NotificationHistoryData;", "__dateConverter", "Lru/mrlargha/commonui/utils/DateConverter;", "addNotification", "", "notification", "(Lcom/arizona/launcher/model/servers/NotificationHistoryData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotification", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "dropTable", "Companion", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO {
     private final DateConverter __dateConverter;
@@ -44,17 +44,17 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
             public void bind(SQLiteStatement statement, NotificationHistoryData entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9197bindLong(1, entity.getId());
+                statement.mo8407bindLong(1, entity.getId());
                 Long dateToTimestamp = NotificationHistoryDAO_Impl.this.__dateConverter.dateToTimestamp(entity.getDate());
                 if (dateToTimestamp == null) {
-                    statement.mo9198bindNull(2);
+                    statement.mo8408bindNull(2);
                 } else {
-                    statement.mo9197bindLong(2, dateToTimestamp.longValue());
+                    statement.mo8407bindLong(2, dateToTimestamp.longValue());
                 }
-                statement.mo9199bindText(3, entity.getTitle());
-                statement.mo9199bindText(4, entity.getText());
-                statement.mo9199bindText(5, entity.getImageUrl());
-                statement.mo9197bindLong(6, entity.isViewed() ? 1L : 0L);
+                statement.mo8409bindText(3, entity.getTitle());
+                statement.mo8409bindText(4, entity.getText());
+                statement.mo8409bindText(5, entity.getImageUrl());
+                statement.mo8407bindLong(6, entity.isViewed() ? 1L : 0L);
             }
         };
     }
@@ -64,15 +64,13 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.NotificationHistoryDAO_Impl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit addNotification$lambda$0;
-                addNotification$lambda$0 = NotificationHistoryDAO_Impl.addNotification$lambda$0(NotificationHistoryDAO_Impl.this, notificationHistoryData, (SQLiteConnection) obj);
-                return addNotification$lambda$0;
+                return NotificationHistoryDAO_Impl.addNotification$lambda$0(NotificationHistoryDAO_Impl.this, notificationHistoryData, (SQLiteConnection) obj);
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit addNotification$lambda$0(NotificationHistoryDAO_Impl notificationHistoryDAO_Impl, NotificationHistoryData notificationHistoryData, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         notificationHistoryDAO_Impl.__insertAdapterOfNotificationHistoryData.insert(_connection, (SQLiteConnection) notificationHistoryData);
@@ -84,14 +82,12 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: com.arizona.launcher.data.database.NotificationHistoryDAO_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List allNotification$lambda$0;
-                allNotification$lambda$0 = NotificationHistoryDAO_Impl.getAllNotification$lambda$0(r1, this, (SQLiteConnection) obj);
-                return allNotification$lambda$0;
+                return NotificationHistoryDAO_Impl.getAllNotification$lambda$0(r1, this, (SQLiteConnection) obj);
             }
         }, continuation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List getAllNotification$lambda$0(String str, NotificationHistoryDAO_Impl notificationHistoryDAO_Impl, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
@@ -121,15 +117,13 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: com.arizona.launcher.data.database.NotificationHistoryDAO_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dropTable$lambda$0;
-                dropTable$lambda$0 = NotificationHistoryDAO_Impl.dropTable$lambda$0(r1, (SQLiteConnection) obj);
-                return dropTable$lambda$0;
+                return NotificationHistoryDAO_Impl.dropTable$lambda$0(r1, (SQLiteConnection) obj);
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dropTable$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
@@ -144,7 +138,7 @@ public final class NotificationHistoryDAO_Impl implements NotificationHistoryDAO
     }
 
     /* compiled from: NotificationHistoryDAO_Impl.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/data/database/NotificationHistoryDAO_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/data/database/NotificationHistoryDAO_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

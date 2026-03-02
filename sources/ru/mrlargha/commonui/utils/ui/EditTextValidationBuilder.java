@@ -7,7 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: EditTextValidationBuilder.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0013\u001a\u00020\u00002\b\b\u0002\u0010\u0014\u001a\u00020\u0007J\u000e\u0010\u0015\u001a\u00020\u00002\u0006\u0010\u0016\u001a\u00020\tJ\u000e\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\tJ\u0006\u0010\u0019\u001a\u00020\u000fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\n\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001e\u0010\r\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\fR\u001e\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\b\u001a\u00020\u000f@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder;", "", "editText", "Landroid/widget/EditText;", "<init>", "(Landroid/widget/EditText;)V", "isCheckEmptyField", "", "value", "", "maxInputCount", "getMaxInputCount", "()J", "minInputCount", "getMinInputCount", "Lru/mrlargha/commonui/utils/ui/EditeTextValidationErrorType;", "currentValidationErrorType", "getCurrentValidationErrorType", "()Lru/mrlargha/commonui/utils/ui/EditeTextValidationErrorType;", "checkEmptyList", "isCheck", "setMaxInputCount", "maxValue", "setMinInputCount", "minValue", "checkValidationField", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0013\u001a\u00020\u00002\b\b\u0002\u0010\u0014\u001a\u00020\u0007J\u000e\u0010\u0015\u001a\u00020\u00002\u0006\u0010\u0016\u001a\u00020\tJ\u000e\u0010\u0017\u001a\u00020\u00002\u0006\u0010\u0018\u001a\u00020\tJ\u0006\u0010\u0019\u001a\u00020\u000fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u001e\u0010\n\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u001e\u0010\r\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\fR\u001e\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\b\u001a\u00020\u000f@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder;", "", "editText", "Landroid/widget/EditText;", "<init>", "(Landroid/widget/EditText;)V", "isCheckEmptyField", "", "value", "", "maxInputCount", "getMaxInputCount", "()J", "minInputCount", "getMinInputCount", "Lru/mrlargha/commonui/utils/ui/EditeTextValidationErrorType;", "currentValidationErrorType", "getCurrentValidationErrorType", "()Lru/mrlargha/commonui/utils/ui/EditeTextValidationErrorType;", "checkEmptyList", "isCheck", "setMaxInputCount", "maxValue", "setMinInputCount", "minValue", "checkValidationField", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class EditTextValidationBuilder {
     public static final Companion Companion = new Companion(null);
@@ -70,8 +70,10 @@ public final class EditTextValidationBuilder {
                 return editeTextValidationErrorType;
             }
         }
-        if ((inputType & 15) == 2) {
-            Long longOrNull = StringsKt.toLongOrNull(this.editText.getText().toString());
+        int i = inputType & 15;
+        EditText editText = this.editText;
+        if (i == 2) {
+            Long longOrNull = StringsKt.toLongOrNull(editText.getText().toString());
             if (longOrNull == null) {
                 return EditeTextValidationErrorType.EMPTY;
             }
@@ -90,7 +92,7 @@ public final class EditTextValidationBuilder {
                 return editeTextValidationErrorType4;
             }
         }
-        String obj = this.editText.getText().toString();
+        String obj = editText.getText().toString();
         if (obj.length() > this.maxInputCount) {
             EditeTextValidationErrorType editeTextValidationErrorType5 = EditeTextValidationErrorType.MAX_VALUE;
             this.currentValidationErrorType = editeTextValidationErrorType5;
@@ -107,7 +109,7 @@ public final class EditTextValidationBuilder {
     }
 
     /* compiled from: EditTextValidationBuilder.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder$Companion;", "", "<init>", "()V", "MIN_INPUT_VALUE", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/utils/ui/EditTextValidationBuilder$Companion;", "", "<init>", "()V", "MIN_INPUT_VALUE", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -100,7 +100,7 @@ public final class FocusInvalidationManager {
             }
             FocusStateImpl focusState = activeFocusTargetNode.getFocusState();
             FocusTargetNode focusTargetNode = activeFocusTargetNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024) | NodeKind.m7195constructorimpl(4096);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(1024) | NodeKind.m6535constructorimpl(4096);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -108,10 +108,10 @@ public final class FocusInvalidationManager {
             LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(focusTargetNode);
             int i4 = 0;
             while (requireLayoutNode != null) {
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (node != null) {
-                        if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
-                            if ((NodeKind.m7195constructorimpl(1024) & node.getKindSet$ui()) != 0) {
+                        if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
+                            if ((NodeKind.m6535constructorimpl(1024) & node.getKindSet$ui()) != 0) {
                                 i4++;
                             }
                             if ((node instanceof FocusEventModifierNode) && this.focusEventNodes.contains(node)) {

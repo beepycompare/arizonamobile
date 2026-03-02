@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.offline;
 
 import androidx.media3.common.MediaItem;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 interface SegmentDownloaderFactory {
     SegmentDownloader<?> create(MediaItem mediaItem);
 

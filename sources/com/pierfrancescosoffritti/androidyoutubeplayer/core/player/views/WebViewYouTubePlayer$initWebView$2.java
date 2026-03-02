@@ -29,14 +29,12 @@ public final class WebViewYouTubePlayer$initWebView$2 extends WebChromeClient {
         fullscreenListener.onEnterFullscreen(view, new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.WebViewYouTubePlayer$initWebView$2$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onShowCustomView$lambda$0;
-                onShowCustomView$lambda$0 = WebViewYouTubePlayer$initWebView$2.onShowCustomView$lambda$0(callback);
-                return onShowCustomView$lambda$0;
+                return WebViewYouTubePlayer$initWebView$2.onShowCustomView$lambda$0(callback);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onShowCustomView$lambda$0(WebChromeClient.CustomViewCallback customViewCallback) {
         customViewCallback.onCustomViewHidden();
         return Unit.INSTANCE;

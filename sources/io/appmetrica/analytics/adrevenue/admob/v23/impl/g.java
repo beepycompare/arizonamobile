@@ -5,7 +5,7 @@ import com.google.android.gms.ads.nativead.NativeAd;
 import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class g extends e {
     public g(b bVar, ClientContext clientContext) {
         super(bVar, clientContext);

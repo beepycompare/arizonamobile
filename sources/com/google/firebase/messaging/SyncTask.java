@@ -44,10 +44,12 @@ public class SyncTask implements Runnable {
                         return;
                     }
                 } else if (!ServiceStarter.getInstance().hasAccessNetworkStatePermission(getContext()) || isDeviceConnected()) {
-                    if (maybeRefreshToken()) {
-                        this.firebaseMessaging.setSyncScheduledOrRunning(false);
+                    boolean maybeRefreshToken = maybeRefreshToken();
+                    FirebaseMessaging firebaseMessaging = this.firebaseMessaging;
+                    if (maybeRefreshToken) {
+                        firebaseMessaging.setSyncScheduledOrRunning(false);
                     } else {
-                        this.firebaseMessaging.syncWithDelaySecondsInternal(this.nextDelaySeconds);
+                        firebaseMessaging.syncWithDelaySecondsInternal(this.nextDelaySeconds);
                     }
                     if (!ServiceStarter.getInstance().hasWakeLockPermission(getContext())) {
                         return;

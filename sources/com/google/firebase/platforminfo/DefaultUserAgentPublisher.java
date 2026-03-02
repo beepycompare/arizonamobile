@@ -18,10 +18,9 @@ public class DefaultUserAgentPublisher implements UserAgentPublisher {
 
     @Override // com.google.firebase.platforminfo.UserAgentPublisher
     public String getUserAgent() {
-        if (this.gamesSDKRegistrar.getRegisteredVersions().isEmpty()) {
-            return this.javaSDKVersionUserAgent;
-        }
-        return this.javaSDKVersionUserAgent + ' ' + toUserAgent(this.gamesSDKRegistrar.getRegisteredVersions());
+        boolean isEmpty = this.gamesSDKRegistrar.getRegisteredVersions().isEmpty();
+        String str = this.javaSDKVersionUserAgent;
+        return isEmpty ? str : str + ' ' + toUserAgent(this.gamesSDKRegistrar.getRegisteredVersions());
     }
 
     private static String toUserAgent(Set<LibraryVersion> set) {

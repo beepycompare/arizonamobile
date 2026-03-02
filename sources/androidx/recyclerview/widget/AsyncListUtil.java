@@ -63,11 +63,13 @@ public class AsyncListUtil<T> {
 
             @Override // androidx.recyclerview.widget.ThreadUtil.MainThreadCallback
             public void addTile(int i2, TileList.Tile<T> tile) {
-                if (!isRequestedGeneration(i2)) {
-                    AsyncListUtil.this.mBackgroundProxy.recycleTile(tile);
+                boolean isRequestedGeneration = isRequestedGeneration(i2);
+                AsyncListUtil asyncListUtil = AsyncListUtil.this;
+                if (!isRequestedGeneration) {
+                    asyncListUtil.mBackgroundProxy.recycleTile(tile);
                     return;
                 }
-                TileList.Tile<T> addOrReplace = AsyncListUtil.this.mTileList.addOrReplace(tile);
+                TileList.Tile<T> addOrReplace = asyncListUtil.mTileList.addOrReplace(tile);
                 if (addOrReplace != null) {
                     Log.e(AsyncListUtil.TAG, "duplicate tile @" + addOrReplace.mStartPosition);
                     AsyncListUtil.this.mBackgroundProxy.recycleTile(addOrReplace);
@@ -98,10 +100,18 @@ public class AsyncListUtil<T> {
             }
 
             private void recycleAllTiles() {
-                for (int i2 = 0; i2 < AsyncListUtil.this.mTileList.size(); i2++) {
-                    AsyncListUtil.this.mBackgroundProxy.recycleTile(AsyncListUtil.this.mTileList.getAtIndex(i2));
+                int i2 = 0;
+                while (true) {
+                    int size = AsyncListUtil.this.mTileList.size();
+                    AsyncListUtil asyncListUtil = AsyncListUtil.this;
+                    if (i2 < size) {
+                        asyncListUtil.mBackgroundProxy.recycleTile(AsyncListUtil.this.mTileList.getAtIndex(i2));
+                        i2++;
+                    } else {
+                        asyncListUtil.mTileList.clear();
+                        return;
+                    }
                 }
-                AsyncListUtil.this.mTileList.clear();
             }
 
             private boolean isRequestedGeneration(int i2) {

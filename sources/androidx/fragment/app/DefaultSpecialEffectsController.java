@@ -152,7 +152,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void executeOperations$lambda$2(List awaitingContainerChanges, SpecialEffectsController.Operation operation, DefaultSpecialEffectsController this$0) {
         Intrinsics.checkNotNullParameter(awaitingContainerChanges, "$awaitingContainerChanges");
         Intrinsics.checkNotNullParameter(operation, "$operation");
@@ -284,7 +284,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startAnimations$lambda$3(Animator animator, SpecialEffectsController.Operation operation) {
         Intrinsics.checkNotNullParameter(operation, "$operation");
         animator.end();
@@ -293,7 +293,7 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startAnimations$lambda$4(View view, DefaultSpecialEffectsController this$0, AnimationInfo animationInfo, SpecialEffectsController.Operation operation) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(animationInfo, "$animationInfo");
@@ -765,26 +765,26 @@ public final class DefaultSpecialEffectsController extends SpecialEffectsControl
         return linkedHashMap6;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startTransitions$lambda$9(SpecialEffectsController.Operation operation, SpecialEffectsController.Operation operation2, boolean z, ArrayMap lastInViews) {
         Intrinsics.checkNotNullParameter(lastInViews, "$lastInViews");
         FragmentTransition.callSharedElementStartEnd(operation.getFragment(), operation2.getFragment(), z, lastInViews, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startTransitions$lambda$10(FragmentTransitionImpl impl, View view, Rect lastInEpicenterRect) {
         Intrinsics.checkNotNullParameter(impl, "$impl");
         Intrinsics.checkNotNullParameter(lastInEpicenterRect, "$lastInEpicenterRect");
         impl.getBoundsOnScreen(view, lastInEpicenterRect);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startTransitions$lambda$11(ArrayList transitioningViews) {
         Intrinsics.checkNotNullParameter(transitioningViews, "$transitioningViews");
         FragmentTransition.setViewVisibility(transitioningViews, 4);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void startTransitions$lambda$14$lambda$13(TransitionInfo transitionInfo, SpecialEffectsController.Operation operation) {
         Intrinsics.checkNotNullParameter(transitionInfo, "$transitionInfo");
         Intrinsics.checkNotNullParameter(operation, "$operation");

@@ -17,20 +17,20 @@ public final class DpCornerSize implements CornerSize, InspectableValue {
     }
 
     /* renamed from: component1-D9Ej5fM  reason: not valid java name */
-    private final float m1279component1D9Ej5fM() {
+    private final float m1122component1D9Ej5fM() {
         return this.size;
     }
 
     /* renamed from: copy-0680j_4$default  reason: not valid java name */
-    public static /* synthetic */ DpCornerSize m1280copy0680j_4$default(DpCornerSize dpCornerSize, float f, int i, Object obj) {
+    public static /* synthetic */ DpCornerSize m1123copy0680j_4$default(DpCornerSize dpCornerSize, float f, int i, Object obj) {
         if ((i & 1) != 0) {
             f = dpCornerSize.size;
         }
-        return dpCornerSize.m1281copy0680j_4(f);
+        return dpCornerSize.m1124copy0680j_4(f);
     }
 
     /* renamed from: copy-0680j_4  reason: not valid java name */
-    public final DpCornerSize m1281copy0680j_4(float f) {
+    public final DpCornerSize m1124copy0680j_4(float f) {
         return new DpCornerSize(f, null);
     }
 
@@ -38,11 +38,11 @@ public final class DpCornerSize implements CornerSize, InspectableValue {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof DpCornerSize) && Dp.m8263equalsimpl0(this.size, ((DpCornerSize) obj).size);
+        return (obj instanceof DpCornerSize) && Dp.m7560equalsimpl0(this.size, ((DpCornerSize) obj).size);
     }
 
     public int hashCode() {
-        return Dp.m8264hashCodeimpl(this.size);
+        return Dp.m7561hashCodeimpl(this.size);
     }
 
     private DpCornerSize(float f) {
@@ -51,13 +51,13 @@ public final class DpCornerSize implements CornerSize, InspectableValue {
 
     @Override // androidx.compose.ui.platform.InspectableValue
     public /* bridge */ /* synthetic */ Object getValueOverride() {
-        return Dp.m8256boximpl(m1282getValueOverrideD9Ej5fM());
+        return Dp.m7553boximpl(m1125getValueOverrideD9Ej5fM());
     }
 
     @Override // androidx.compose.foundation.shape.CornerSize
     /* renamed from: toPx-TmRCtEA */
-    public float mo1274toPxTmRCtEA(long j, Density density) {
-        return density.mo464toPx0680j_4(this.size);
+    public float mo1117toPxTmRCtEA(long j, Density density) {
+        return density.mo405toPx0680j_4(this.size);
     }
 
     public String toString() {
@@ -65,7 +65,7 @@ public final class DpCornerSize implements CornerSize, InspectableValue {
     }
 
     /* renamed from: getValueOverride-D9Ej5fM  reason: not valid java name */
-    public float m1282getValueOverrideD9Ej5fM() {
+    public float m1125getValueOverrideD9Ej5fM() {
         return this.size;
     }
 }

@@ -74,11 +74,13 @@ public class FadeThroughDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
-        if (this.progress <= 0.5f) {
-            this.fadeOutDrawable.setAlpha(i);
+        int i2 = (this.progress > 0.5f ? 1 : (this.progress == 0.5f ? 0 : -1));
+        Drawable drawable = this.fadeOutDrawable;
+        if (i2 <= 0) {
+            drawable.setAlpha(i);
             this.fadeInDrawable.setAlpha(0);
         } else {
-            this.fadeOutDrawable.setAlpha(0);
+            drawable.setAlpha(0);
             this.fadeInDrawable.setAlpha(i);
         }
         invalidateSelf();

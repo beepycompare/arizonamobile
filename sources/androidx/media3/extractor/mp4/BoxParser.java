@@ -969,71 +969,113 @@ public final class BoxParser {
 
     private static void parseVideoSampleEntry(ParsableByteArray parsableByteArray, int i, int i2, int i3, int i4, String str, int i5, DrmInitData drmInitData, StsdData stsdData, int i6) throws ParserException {
         String str2;
+        DrmInitData drmInitData2;
         int i7;
-        String str3;
+        ImmutableList<byte[]> immutableList;
         int i8;
         int i9;
-        DrmInitData drmInitData2;
         int i10;
         int i11;
+        byte[] bArr;
+        String str3;
         int i12;
+        DolbyVisionConfig dolbyVisionConfig;
+        String str4;
+        String str5;
         int i13;
-        NalUnitUtil.H265VpsData h265VpsData;
+        String str6;
         int i14;
         int i15;
+        DrmInitData drmInitData3;
+        ImmutableList<byte[]> immutableList2;
+        String str7;
         int i16;
         int i17;
         int i18;
-        int i19 = i2;
-        int i20 = i3;
-        DrmInitData drmInitData3 = drmInitData;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27 = i2;
+        int i28 = i3;
+        DrmInitData drmInitData4 = drmInitData;
         StsdData stsdData2 = stsdData;
-        parsableByteArray.setPosition(i19 + 16);
+        parsableByteArray.setPosition(i27 + 16);
         parsableByteArray.skipBytes(16);
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         int readUnsignedShort2 = parsableByteArray.readUnsignedShort();
         parsableByteArray.skipBytes(50);
         int position = parsableByteArray.getPosition();
-        int i21 = i;
-        if (i21 == 1701733238) {
-            Pair<Integer, TrackEncryptionBox> parseSampleEntryEncryptionData = parseSampleEntryEncryptionData(parsableByteArray, i19, i20);
+        int i29 = i;
+        if (i29 == 1701733238) {
+            Pair<Integer, TrackEncryptionBox> parseSampleEntryEncryptionData = parseSampleEntryEncryptionData(parsableByteArray, i27, i28);
             if (parseSampleEntryEncryptionData != null) {
-                i21 = ((Integer) parseSampleEntryEncryptionData.first).intValue();
-                drmInitData3 = drmInitData3 == null ? null : drmInitData3.copyWithSchemeType(((TrackEncryptionBox) parseSampleEntryEncryptionData.second).schemeType);
+                i29 = ((Integer) parseSampleEntryEncryptionData.first).intValue();
+                drmInitData4 = drmInitData4 == null ? null : drmInitData4.copyWithSchemeType(((TrackEncryptionBox) parseSampleEntryEncryptionData.second).schemeType);
                 stsdData2.trackEncryptionBoxes[i6] = (TrackEncryptionBox) parseSampleEntryEncryptionData.second;
             }
             parsableByteArray.setPosition(position);
         }
-        String str4 = MimeTypes.VIDEO_H263;
-        if (i21 != 1831958048) {
-            str2 = i21 == 1211250227 ? MimeTypes.VIDEO_H263 : null;
+        String str8 = MimeTypes.VIDEO_H263;
+        if (i29 != 1831958048) {
+            str2 = i29 == 1211250227 ? MimeTypes.VIDEO_H263 : null;
         } else {
             str2 = MimeTypes.VIDEO_MPEG;
         }
         float f = 1.0f;
-        int i22 = 8;
-        int i23 = 8;
+        int i30 = 8;
+        int i31 = 8;
         ByteBuffer byteBuffer = null;
-        ImmutableList<byte[]> immutableList = null;
-        String str5 = null;
-        byte[] bArr = null;
-        int i24 = -1;
-        int i25 = -1;
-        int i26 = -1;
-        int i27 = -1;
-        int i28 = -1;
-        int i29 = -1;
-        int i30 = -1;
-        int i31 = -1;
+        DolbyVisionConfig dolbyVisionConfig2 = null;
+        ImmutableList<byte[]> immutableList3 = null;
+        String str9 = null;
+        byte[] bArr2 = null;
+        int i32 = -1;
+        int i33 = -1;
+        int i34 = -1;
+        int i35 = -1;
+        int i36 = -1;
+        int i37 = -1;
+        int i38 = -1;
+        int i39 = -1;
         BtrtData btrtData = null;
         EsdsData esdsData = null;
-        NalUnitUtil.H265VpsData h265VpsData2 = null;
+        NalUnitUtil.H265VpsData h265VpsData = null;
         boolean z = false;
-        while (position - i19 < i20) {
+        while (true) {
+            if (position - i27 >= i28) {
+                drmInitData2 = drmInitData4;
+                i7 = i30;
+                immutableList = immutableList3;
+                i8 = i32;
+                i9 = i37;
+                i10 = i38;
+                i11 = i39;
+                bArr = null;
+                str3 = str2;
+                i12 = i31;
+                dolbyVisionConfig = dolbyVisionConfig2;
+                break;
+            }
             parsableByteArray.setPosition(position);
             int position2 = parsableByteArray.getPosition();
             int readInt = parsableByteArray.readInt();
-            if (readInt == 0 && parsableByteArray.getPosition() - i2 == i20) {
+            if (readInt == 0 && parsableByteArray.getPosition() - i2 == i28) {
+                drmInitData2 = drmInitData4;
+                i7 = i30;
+                dolbyVisionConfig = dolbyVisionConfig2;
+                immutableList = immutableList3;
+                i8 = i32;
+                i9 = i37;
+                i10 = i38;
+                i11 = i39;
+                bArr = null;
+                str3 = str2;
+                i12 = i31;
                 break;
             }
             ExtractorUtil.checkContainerInput(readInt > 0, "childAtomSize must be positive");
@@ -1047,29 +1089,28 @@ public final class BoxParser {
                 if (!z) {
                     f = parse.pixelWidthHeightRatio;
                 }
-                String str6 = parse.codecs;
-                int i32 = parse.maxNumReorderFrames;
-                int i33 = parse.colorSpace;
-                int i34 = parse.colorRange;
-                immutableList = list;
-                int i35 = parse.colorTransfer;
-                int i36 = parse.bitdepthLuma;
-                NalUnitUtil.H265VpsData h265VpsData3 = h265VpsData2;
-                drmInitData2 = drmInitData3;
-                h265VpsData = h265VpsData3;
-                i12 = parse.bitdepthChroma;
-                i7 = position;
-                i10 = i21;
-                str3 = str4;
-                i8 = i33;
-                i9 = i34;
-                i31 = i35;
-                i22 = i36;
-                str5 = str6;
-                str2 = MimeTypes.VIDEO_H264;
-                i25 = i32;
+                String str10 = parse.codecs;
+                int i40 = parse.maxNumReorderFrames;
+                int i41 = parse.colorSpace;
+                int i42 = parse.colorRange;
+                immutableList3 = list;
+                int i43 = parse.colorTransfer;
+                int i44 = parse.bitdepthLuma;
+                int i45 = parse.bitdepthChroma;
+                drmInitData3 = drmInitData4;
+                i13 = position;
+                i16 = i29;
+                str6 = str8;
+                i14 = i41;
+                i15 = i42;
+                i39 = i43;
+                str7 = MimeTypes.VIDEO_H264;
+                i31 = i45;
+                i30 = i44;
+                str9 = str10;
+                i33 = i40;
             } else {
-                i7 = position;
+                i13 = position;
                 if (readInt2 == 1752589123) {
                     ExtractorUtil.checkContainerInput(str2 == null, null);
                     parsableByteArray.setPosition(position2 + 8);
@@ -1079,392 +1120,400 @@ public final class BoxParser {
                     if (!z) {
                         f = parse2.pixelWidthHeightRatio;
                     }
-                    int i37 = parse2.maxNumReorderPics;
-                    int i38 = parse2.maxSubLayers;
-                    String str7 = parse2.codecs;
-                    immutableList = list2;
+                    int i46 = parse2.maxNumReorderPics;
+                    int i47 = parse2.maxSubLayers;
+                    String str11 = parse2.codecs;
+                    immutableList3 = list2;
                     if (parse2.stereoMode != -1) {
-                        i24 = parse2.stereoMode;
+                        i32 = parse2.stereoMode;
                     }
-                    int i39 = parse2.decodedWidth;
-                    int i40 = parse2.decodedHeight;
-                    int i41 = parse2.colorSpace;
-                    int i42 = parse2.colorRange;
-                    int i43 = parse2.colorTransfer;
-                    i28 = i40;
-                    i22 = parse2.bitdepthLuma;
-                    i12 = parse2.bitdepthChroma;
-                    drmInitData2 = drmInitData3;
-                    i10 = i21;
-                    str3 = str4;
-                    i8 = i41;
-                    i9 = i42;
-                    i31 = i43;
+                    int i48 = parse2.decodedWidth;
+                    int i49 = parse2.decodedHeight;
+                    int i50 = parse2.colorSpace;
+                    int i51 = parse2.colorRange;
+                    int i52 = parse2.colorTransfer;
+                    int i53 = parse2.bitdepthLuma;
+                    int i54 = parse2.bitdepthChroma;
+                    i36 = i49;
+                    i30 = i53;
                     h265VpsData = parse2.vpsData;
-                    i25 = i37;
-                    i26 = i38;
-                    i27 = i39;
-                    str2 = MimeTypes.VIDEO_H265;
-                    str5 = str7;
+                    drmInitData3 = drmInitData4;
+                    str7 = MimeTypes.VIDEO_H265;
+                    i16 = i29;
+                    str6 = str8;
+                    i14 = i50;
+                    i15 = i51;
+                    i39 = i52;
+                    i33 = i46;
+                    i34 = i47;
+                    i35 = i48;
+                    str9 = str11;
+                    i31 = i54;
                 } else {
-                    str3 = str4;
+                    str6 = str8;
                     if (readInt2 == 1818785347) {
                         ExtractorUtil.checkContainerInput(MimeTypes.VIDEO_H265.equals(str2), "lhvC must follow hvcC atom");
-                        NalUnitUtil.H265VpsData h265VpsData4 = h265VpsData2;
-                        ExtractorUtil.checkContainerInput(h265VpsData4 != null && h265VpsData4.layerInfos.size() >= 2, "must have at least two layers");
+                        NalUnitUtil.H265VpsData h265VpsData2 = h265VpsData;
+                        ExtractorUtil.checkContainerInput(h265VpsData2 != null && h265VpsData2.layerInfos.size() >= 2, "must have at least two layers");
                         parsableByteArray.setPosition(position2 + 8);
-                        HevcConfig parseLayered = HevcConfig.parseLayered(parsableByteArray, (NalUnitUtil.H265VpsData) Preconditions.checkNotNull(h265VpsData4));
+                        HevcConfig parseLayered = HevcConfig.parseLayered(parsableByteArray, (NalUnitUtil.H265VpsData) Preconditions.checkNotNull(h265VpsData2));
                         ExtractorUtil.checkContainerInput(stsdData2.nalUnitLengthFieldLength == parseLayered.nalUnitLengthFieldLength, "nalUnitLengthFieldLength must be same for both hvcC and lhvC atoms");
                         if (parseLayered.colorSpace != -1) {
-                            i15 = i29;
-                            ExtractorUtil.checkContainerInput(i15 == parseLayered.colorSpace, "colorSpace must be the same for both views");
+                            i23 = i37;
+                            ExtractorUtil.checkContainerInput(i23 == parseLayered.colorSpace, "colorSpace must be the same for both views");
                         } else {
-                            i15 = i29;
+                            i23 = i37;
                         }
                         if (parseLayered.colorRange != -1) {
-                            i16 = i30;
-                            ExtractorUtil.checkContainerInput(i16 == parseLayered.colorRange, "colorRange must be the same for both views");
+                            i24 = i38;
+                            ExtractorUtil.checkContainerInput(i24 == parseLayered.colorRange, "colorRange must be the same for both views");
                         } else {
-                            i16 = i30;
+                            i24 = i38;
                         }
                         if (parseLayered.colorTransfer != -1) {
-                            int i44 = i31;
-                            i17 = i44;
-                            ExtractorUtil.checkContainerInput(i44 == parseLayered.colorTransfer, "colorTransfer must be the same for both views");
+                            int i55 = i39;
+                            i25 = i55;
+                            ExtractorUtil.checkContainerInput(i55 == parseLayered.colorTransfer, "colorTransfer must be the same for both views");
                         } else {
-                            i17 = i31;
+                            i25 = i39;
                         }
-                        ExtractorUtil.checkContainerInput(i22 == parseLayered.bitdepthLuma, "bitdepthLuma must be the same for both views");
-                        ExtractorUtil.checkContainerInput(i23 == parseLayered.bitdepthChroma, "bitdepthChroma must be the same for both views");
-                        ImmutableList<byte[]> immutableList2 = immutableList;
-                        if (immutableList2 != null) {
-                            immutableList2 = ImmutableList.builder().addAll((Iterable) immutableList2).addAll((Iterable) parseLayered.initializationData).build();
-                            i18 = i15;
+                        ExtractorUtil.checkContainerInput(i30 == parseLayered.bitdepthLuma, "bitdepthLuma must be the same for both views");
+                        ExtractorUtil.checkContainerInput(i31 == parseLayered.bitdepthChroma, "bitdepthChroma must be the same for both views");
+                        ImmutableList<byte[]> immutableList4 = immutableList3;
+                        if (immutableList4 != null) {
+                            immutableList4 = ImmutableList.builder().addAll((Iterable) immutableList4).addAll((Iterable) parseLayered.initializationData).build();
+                            i26 = i23;
                         } else {
-                            i18 = i15;
+                            i26 = i23;
                             ExtractorUtil.checkContainerInput(false, "initializationData must be already set from hvcC atom");
                         }
-                        String str8 = parseLayered.codecs;
-                        str2 = MimeTypes.VIDEO_MV_HEVC;
-                        drmInitData2 = drmInitData3;
-                        i10 = i21;
-                        i9 = i16;
-                        i12 = i23;
-                        i8 = i18;
-                        i31 = i17;
-                        str5 = str8;
-                        h265VpsData = h265VpsData4;
-                        immutableList = immutableList2;
+                        String str12 = parseLayered.codecs;
+                        h265VpsData = h265VpsData2;
+                        drmInitData3 = drmInitData4;
+                        str7 = MimeTypes.VIDEO_MV_HEVC;
+                        i16 = i29;
+                        i15 = i24;
+                        i14 = i26;
+                        i39 = i25;
+                        str9 = str12;
+                        immutableList3 = immutableList4;
                     } else {
-                        ImmutableList<byte[]> immutableList3 = immutableList;
-                        i8 = i29;
-                        i9 = i30;
-                        int i45 = i31;
-                        NalUnitUtil.H265VpsData h265VpsData5 = h265VpsData2;
+                        ImmutableList<byte[]> immutableList5 = immutableList3;
+                        i14 = i37;
+                        i15 = i38;
+                        int i56 = i39;
+                        NalUnitUtil.H265VpsData h265VpsData3 = h265VpsData;
                         if (readInt2 == 1986361461) {
                             VexuData parseVideoExtendedUsageBox = parseVideoExtendedUsageBox(parsableByteArray, position2, readInt);
                             if (parseVideoExtendedUsageBox != null && parseVideoExtendedUsageBox.eyesData != null) {
-                                if (h265VpsData5 == null || h265VpsData5.layerInfos.size() < 2) {
-                                    i14 = i24;
-                                    if (i14 == -1) {
-                                        i24 = parseVideoExtendedUsageBox.eyesData.striData.eyeViewsReversed ? 5 : 4;
-                                        drmInitData2 = drmInitData3;
-                                        immutableList = immutableList3;
-                                        i10 = i21;
-                                        i12 = i23;
-                                        i31 = i45;
-                                        h265VpsData = h265VpsData5;
+                                if (h265VpsData3 == null || h265VpsData3.layerInfos.size() < 2) {
+                                    i22 = i32;
+                                    if (i22 == -1) {
+                                        i32 = parseVideoExtendedUsageBox.eyesData.striData.eyeViewsReversed ? 5 : 4;
+                                        h265VpsData = h265VpsData3;
+                                        drmInitData3 = drmInitData4;
+                                        immutableList3 = immutableList5;
+                                        str7 = str2;
+                                        i16 = i29;
+                                        i39 = i56;
                                     }
-                                    i24 = i14;
-                                    drmInitData2 = drmInitData3;
-                                    immutableList = immutableList3;
-                                    i10 = i21;
-                                    i12 = i23;
-                                    i31 = i45;
-                                    h265VpsData = h265VpsData5;
+                                    i32 = i22;
+                                    h265VpsData = h265VpsData3;
+                                    drmInitData3 = drmInitData4;
+                                    immutableList3 = immutableList5;
+                                    str7 = str2;
+                                    i16 = i29;
+                                    i39 = i56;
                                 } else {
                                     ExtractorUtil.checkContainerInput(parseVideoExtendedUsageBox.hasBothEyeViews(), "both eye views must be marked as available");
                                     ExtractorUtil.checkContainerInput(!parseVideoExtendedUsageBox.eyesData.striData.eyeViewsReversed, "for MV-HEVC, eye_views_reversed must be set to false");
                                 }
                             }
-                            i14 = i24;
-                            i24 = i14;
-                            drmInitData2 = drmInitData3;
-                            immutableList = immutableList3;
-                            i10 = i21;
-                            i12 = i23;
-                            i31 = i45;
-                            h265VpsData = h265VpsData5;
+                            i22 = i32;
+                            i32 = i22;
+                            h265VpsData = h265VpsData3;
+                            drmInitData3 = drmInitData4;
+                            immutableList3 = immutableList5;
+                            str7 = str2;
+                            i16 = i29;
+                            i39 = i56;
                         } else {
-                            int i46 = i24;
+                            int i57 = i32;
                             if (readInt2 == 1685480259 || readInt2 == 1685485123 || readInt2 == 1685485379) {
-                                drmInitData2 = drmInitData3;
-                                i10 = i21;
-                                i11 = i46;
-                                i12 = i23;
-                                float f2 = f;
-                                int i47 = i22;
-                                i13 = i45;
-                                int i48 = readInt - 8;
-                                byte[] bArr2 = new byte[i48];
-                                parsableByteArray.readBytes(bArr2, 0, i48);
-                                if (immutableList3 != null) {
-                                    immutableList = ImmutableList.builder().addAll((Iterable) immutableList3).add((ImmutableList.Builder) bArr2).build();
-                                } else {
-                                    ExtractorUtil.checkContainerInput(false, "initializationData must already be set from hvcC or avcC atom");
-                                    immutableList = immutableList3;
-                                }
-                                parsableByteArray.setPosition(position2 + 8);
-                                DolbyVisionConfig parse3 = DolbyVisionConfig.parse(parsableByteArray);
-                                if (parse3 != null) {
-                                    String str9 = parse3.codecs;
-                                    str2 = MimeTypes.VIDEO_DOLBY_VISION;
-                                    str5 = str9;
-                                }
-                                i8 = i8;
-                                i22 = i47;
-                                f = f2;
-                            } else if (readInt2 == 1987076931) {
-                                ExtractorUtil.checkContainerInput(str2 == null, null);
-                                String str10 = i21 == 1987063864 ? MimeTypes.VIDEO_VP8 : MimeTypes.VIDEO_VP9;
-                                parsableByteArray.setPosition(position2 + 12);
-                                byte readUnsignedByte = (byte) parsableByteArray.readUnsignedByte();
-                                byte readUnsignedByte2 = (byte) parsableByteArray.readUnsignedByte();
-                                int readUnsignedByte3 = parsableByteArray.readUnsignedByte();
-                                i22 = readUnsignedByte3 >> 4;
-                                i10 = i21;
-                                byte b = (byte) ((readUnsignedByte3 >> 1) & 7);
-                                if (str10.equals(MimeTypes.VIDEO_VP9)) {
-                                    immutableList3 = CodecSpecificDataUtil.buildVp9CodecPrivateInitializationData(readUnsignedByte, readUnsignedByte2, (byte) i22, b);
-                                }
-                                boolean z2 = (readUnsignedByte3 & 1) != 0;
-                                int readUnsignedByte4 = parsableByteArray.readUnsignedByte();
-                                int readUnsignedByte5 = parsableByteArray.readUnsignedByte();
-                                int isoColorPrimariesToColorSpace = ColorInfo.isoColorPrimariesToColorSpace(readUnsignedByte4);
-                                int i49 = z2 ? 1 : 2;
-                                i31 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedByte5);
-                                str2 = str10;
-                                drmInitData2 = drmInitData3;
-                                i9 = i49;
-                                h265VpsData = h265VpsData5;
-                                i8 = isoColorPrimariesToColorSpace;
-                                immutableList = immutableList3;
-                                i24 = i46;
-                                i12 = i22;
+                                drmInitData3 = drmInitData4;
+                                immutableList2 = immutableList5;
+                                str7 = str2;
+                                i16 = i29;
+                                i17 = i31;
+                                i18 = i30;
+                                i19 = i14;
+                                i20 = i56;
+                                dolbyVisionConfig2 = DolbyVisionConfig.parse(parsableByteArray);
                             } else {
-                                i10 = i21;
-                                if (readInt2 == 1635135811) {
-                                    int i50 = readInt - 8;
-                                    byte[] bArr3 = new byte[i50];
-                                    parsableByteArray.readBytes(bArr3, 0, i50);
-                                    immutableList = ImmutableList.of(bArr3);
-                                    parsableByteArray.setPosition(position2 + 8);
-                                    ColorInfo parseAv1c = parseAv1c(parsableByteArray);
-                                    int i51 = parseAv1c.lumaBitdepth;
-                                    int i52 = parseAv1c.chromaBitdepth;
-                                    int i53 = parseAv1c.colorSpace;
-                                    int i54 = parseAv1c.colorRange;
-                                    i31 = parseAv1c.colorTransfer;
-                                    i22 = i51;
-                                    drmInitData2 = drmInitData3;
-                                    i12 = i52;
-                                    i8 = i53;
-                                    i9 = i54;
-                                    str2 = MimeTypes.VIDEO_AV1;
-                                    h265VpsData = h265VpsData5;
-                                } else if (readInt2 == 1668050025) {
-                                    if (byteBuffer == null) {
-                                        byteBuffer = allocateHdrStaticInfo();
+                                if (readInt2 == 1987076931) {
+                                    ExtractorUtil.checkContainerInput(str2 == null, null);
+                                    String str13 = i29 == 1987063864 ? MimeTypes.VIDEO_VP8 : MimeTypes.VIDEO_VP9;
+                                    parsableByteArray.setPosition(position2 + 12);
+                                    byte readUnsignedByte = (byte) parsableByteArray.readUnsignedByte();
+                                    byte readUnsignedByte2 = (byte) parsableByteArray.readUnsignedByte();
+                                    int readUnsignedByte3 = parsableByteArray.readUnsignedByte();
+                                    i30 = readUnsignedByte3 >> 4;
+                                    i16 = i29;
+                                    byte b = (byte) ((readUnsignedByte3 >> 1) & 7);
+                                    if (str13.equals(MimeTypes.VIDEO_VP9)) {
+                                        immutableList5 = CodecSpecificDataUtil.buildVp9CodecPrivateInitializationData(readUnsignedByte, readUnsignedByte2, (byte) i30, b);
                                     }
-                                    ByteBuffer byteBuffer2 = byteBuffer;
-                                    byteBuffer2.position(21);
-                                    byteBuffer2.putShort(parsableByteArray.readShort());
-                                    byteBuffer2.putShort(parsableByteArray.readShort());
-                                    byteBuffer = byteBuffer2;
-                                    drmInitData2 = drmInitData3;
-                                    immutableList = immutableList3;
-                                    i12 = i23;
-                                    h265VpsData = h265VpsData5;
-                                    i31 = i45;
-                                } else if (readInt2 == 1835295606) {
-                                    if (byteBuffer == null) {
-                                        byteBuffer = allocateHdrStaticInfo();
-                                    }
-                                    ByteBuffer byteBuffer3 = byteBuffer;
-                                    short readShort = parsableByteArray.readShort();
-                                    short readShort2 = parsableByteArray.readShort();
-                                    short readShort3 = parsableByteArray.readShort();
-                                    short readShort4 = parsableByteArray.readShort();
-                                    i12 = i23;
-                                    short readShort5 = parsableByteArray.readShort();
-                                    int i55 = i22;
-                                    short readShort6 = parsableByteArray.readShort();
-                                    drmInitData2 = drmInitData3;
-                                    short readShort7 = parsableByteArray.readShort();
-                                    short readShort8 = parsableByteArray.readShort();
-                                    long readUnsignedInt = parsableByteArray.readUnsignedInt();
-                                    long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
-                                    byteBuffer3.position(1);
-                                    byteBuffer3.putShort(readShort5);
-                                    byteBuffer3.putShort(readShort6);
-                                    byteBuffer3.putShort(readShort);
-                                    byteBuffer3.putShort(readShort2);
-                                    byteBuffer3.putShort(readShort3);
-                                    byteBuffer3.putShort(readShort4);
-                                    byteBuffer3.putShort(readShort7);
-                                    byteBuffer3.putShort(readShort8);
-                                    byteBuffer3.putShort((short) (readUnsignedInt / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
-                                    byteBuffer3.putShort((short) (readUnsignedInt2 / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
-                                    byteBuffer = byteBuffer3;
-                                    immutableList = immutableList3;
-                                    h265VpsData = h265VpsData5;
-                                    i22 = i55;
-                                    i31 = i45;
-                                    i24 = i46;
-                                    f = f;
+                                    boolean z2 = (readUnsignedByte3 & 1) != 0;
+                                    int readUnsignedByte4 = parsableByteArray.readUnsignedByte();
+                                    int readUnsignedByte5 = parsableByteArray.readUnsignedByte();
+                                    int isoColorPrimariesToColorSpace = ColorInfo.isoColorPrimariesToColorSpace(readUnsignedByte4);
+                                    int i58 = z2 ? 1 : 2;
+                                    i39 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedByte5);
+                                    drmInitData3 = drmInitData4;
+                                    i31 = i30;
+                                    i15 = i58;
+                                    h265VpsData = h265VpsData3;
+                                    i14 = isoColorPrimariesToColorSpace;
+                                    str7 = str13;
+                                    immutableList3 = immutableList5;
                                 } else {
-                                    drmInitData2 = drmInitData3;
-                                    i11 = i46;
-                                    i12 = i23;
-                                    float f3 = f;
-                                    int i56 = i22;
-                                    if (readInt2 == 1681012275) {
-                                        ExtractorUtil.checkContainerInput(str2 == null, null);
-                                        immutableList = immutableList3;
-                                        h265VpsData = h265VpsData5;
-                                        i22 = i56;
-                                        str2 = str3;
+                                    i16 = i29;
+                                    if (readInt2 == 1635135811) {
+                                        int i59 = readInt - 8;
+                                        byte[] bArr3 = new byte[i59];
+                                        parsableByteArray.readBytes(bArr3, 0, i59);
+                                        immutableList3 = ImmutableList.of(bArr3);
+                                        parsableByteArray.setPosition(position2 + 8);
+                                        ColorInfo parseAv1c = parseAv1c(parsableByteArray);
+                                        int i60 = parseAv1c.lumaBitdepth;
+                                        int i61 = parseAv1c.chromaBitdepth;
+                                        int i62 = parseAv1c.colorSpace;
+                                        int i63 = parseAv1c.colorRange;
+                                        i39 = parseAv1c.colorTransfer;
+                                        i30 = i60;
+                                        drmInitData3 = drmInitData4;
+                                        i31 = i61;
+                                        i14 = i62;
+                                        i15 = i63;
+                                        str7 = MimeTypes.VIDEO_AV1;
+                                        h265VpsData = h265VpsData3;
+                                    } else if (readInt2 == 1668050025) {
+                                        if (byteBuffer == null) {
+                                            byteBuffer = allocateHdrStaticInfo();
+                                        }
+                                        ByteBuffer byteBuffer2 = byteBuffer;
+                                        byteBuffer2.position(21);
+                                        byteBuffer2.putShort(parsableByteArray.readShort());
+                                        byteBuffer2.putShort(parsableByteArray.readShort());
+                                        byteBuffer = byteBuffer2;
+                                        drmInitData3 = drmInitData4;
+                                        immutableList3 = immutableList5;
+                                        str7 = str2;
+                                        h265VpsData = h265VpsData3;
+                                        i39 = i56;
                                     } else {
-                                        if (readInt2 == 1702061171) {
-                                            ExtractorUtil.checkContainerInput(str2 == null, null);
-                                            esdsData = parseEsdsFromParent(parsableByteArray, position2);
-                                            String str11 = esdsData.mimeType;
-                                            byte[] bArr4 = esdsData.initializationData;
-                                            immutableList = bArr4 != null ? ImmutableList.of(bArr4) : immutableList3;
-                                            str2 = str11;
+                                        if (readInt2 == 1835295606) {
+                                            if (byteBuffer == null) {
+                                                byteBuffer = allocateHdrStaticInfo();
+                                            }
+                                            ByteBuffer byteBuffer3 = byteBuffer;
+                                            short readShort = parsableByteArray.readShort();
+                                            short readShort2 = parsableByteArray.readShort();
+                                            short readShort3 = parsableByteArray.readShort();
+                                            str7 = str2;
+                                            short readShort4 = parsableByteArray.readShort();
+                                            short readShort5 = parsableByteArray.readShort();
+                                            int i64 = i31;
+                                            short readShort6 = parsableByteArray.readShort();
+                                            int i65 = i30;
+                                            short readShort7 = parsableByteArray.readShort();
+                                            drmInitData3 = drmInitData4;
+                                            short readShort8 = parsableByteArray.readShort();
+                                            long readUnsignedInt = parsableByteArray.readUnsignedInt();
+                                            long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
+                                            byteBuffer3.position(1);
+                                            byteBuffer3.putShort(readShort5);
+                                            byteBuffer3.putShort(readShort6);
+                                            byteBuffer3.putShort(readShort);
+                                            byteBuffer3.putShort(readShort2);
+                                            byteBuffer3.putShort(readShort3);
+                                            byteBuffer3.putShort(readShort4);
+                                            byteBuffer3.putShort(readShort7);
+                                            byteBuffer3.putShort(readShort8);
+                                            byteBuffer3.putShort((short) (readUnsignedInt / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
+                                            byteBuffer3.putShort((short) (readUnsignedInt2 / Renderer.DEFAULT_DURATION_TO_PROGRESS_US));
+                                            byteBuffer = byteBuffer3;
+                                            i31 = i64;
+                                            i30 = i65;
+                                            i39 = i56;
+                                            immutableList3 = immutableList5;
                                         } else {
-                                            if (readInt2 == 1651798644) {
-                                                btrtData = parseBtrtFromParent(parsableByteArray, position2);
-                                            } else if (readInt2 == 1885434736) {
-                                                f = parsePaspFromParent(parsableByteArray, position2);
-                                                immutableList = immutableList3;
-                                                h265VpsData = h265VpsData5;
-                                                i22 = i56;
-                                                i31 = i45;
-                                                i24 = i11;
-                                                z = true;
-                                            } else if (readInt2 == 1937126244) {
-                                                bArr = parseProjFromParent(parsableByteArray, position2, readInt);
-                                            } else if (readInt2 == 1936995172) {
-                                                int readUnsignedByte6 = parsableByteArray.readUnsignedByte();
-                                                parsableByteArray.skipBytes(3);
-                                                if (readUnsignedByte6 == 0) {
-                                                    int readUnsignedByte7 = parsableByteArray.readUnsignedByte();
-                                                    if (readUnsignedByte7 == 0) {
-                                                        i11 = 0;
-                                                    } else if (readUnsignedByte7 == 1) {
-                                                        i11 = 1;
-                                                    } else if (readUnsignedByte7 == 2) {
-                                                        i11 = 2;
-                                                    } else if (readUnsignedByte7 == 3) {
-                                                        i11 = 3;
-                                                    }
-                                                }
-                                            } else if (readInt2 == 1634760259) {
-                                                int i57 = readInt - 12;
-                                                byte[] bArr5 = new byte[i57];
-                                                parsableByteArray.setPosition(position2 + 12);
-                                                parsableByteArray.readBytes(bArr5, 0, i57);
-                                                str5 = CodecSpecificDataUtil.buildApvCodecString(bArr5);
-                                                immutableList = ImmutableList.of(bArr5);
-                                                ColorInfo parseApvc = parseApvc(new ParsableByteArray(bArr5));
-                                                int i58 = parseApvc.lumaBitdepth;
-                                                int i59 = parseApvc.chromaBitdepth;
-                                                int i60 = parseApvc.colorSpace;
-                                                int i61 = parseApvc.colorRange;
-                                                i31 = parseApvc.colorTransfer;
-                                                i22 = i58;
-                                                i12 = i59;
-                                                i8 = i60;
-                                                i9 = i61;
-                                                str2 = MimeTypes.VIDEO_APV;
-                                                h265VpsData = h265VpsData5;
-                                                i24 = i11;
-                                                f = f3;
+                                            drmInitData3 = drmInitData4;
+                                            immutableList2 = immutableList5;
+                                            str7 = str2;
+                                            i17 = i31;
+                                            i18 = i30;
+                                            if (readInt2 == 1681012275) {
+                                                ExtractorUtil.checkContainerInput(str7 == null, null);
+                                                i31 = i17;
+                                                i30 = i18;
+                                                str7 = str6;
+                                            } else if (readInt2 == 1702061171) {
+                                                ExtractorUtil.checkContainerInput(str7 == null, null);
+                                                esdsData = parseEsdsFromParent(parsableByteArray, position2);
+                                                String str14 = esdsData.mimeType;
+                                                byte[] bArr4 = esdsData.initializationData;
+                                                immutableList3 = bArr4 != null ? ImmutableList.of(bArr4) : immutableList2;
+                                                str7 = str14;
+                                                i31 = i17;
+                                                i30 = i18;
+                                                i39 = i56;
                                             } else {
-                                                if (readInt2 == 1668246642) {
-                                                    i13 = i45;
-                                                    if (i8 == -1 && i13 == -1) {
-                                                        int readInt3 = parsableByteArray.readInt();
-                                                        if (readInt3 == TYPE_nclx || readInt3 == TYPE_nclc) {
-                                                            int readUnsignedShort3 = parsableByteArray.readUnsignedShort();
-                                                            int readUnsignedShort4 = parsableByteArray.readUnsignedShort();
-                                                            parsableByteArray.skipBytes(2);
-                                                            boolean z3 = readInt == 19 && (parsableByteArray.readUnsignedByte() & 128) != 0;
-                                                            i8 = ColorInfo.isoColorPrimariesToColorSpace(readUnsignedShort3);
-                                                            immutableList = immutableList3;
-                                                            i9 = z3 ? 1 : 2;
-                                                            h265VpsData = h265VpsData5;
-                                                            i22 = i56;
-                                                            i24 = i11;
-                                                            f = f3;
-                                                            i31 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedShort4);
+                                                if (readInt2 == 1651798644) {
+                                                    btrtData = parseBtrtFromParent(parsableByteArray, position2);
+                                                } else {
+                                                    if (readInt2 == 1885434736) {
+                                                        f = parsePaspFromParent(parsableByteArray, position2);
+                                                        i31 = i17;
+                                                        i30 = i18;
+                                                        i39 = i56;
+                                                        immutableList3 = immutableList2;
+                                                        z = true;
+                                                    } else if (readInt2 == 1937126244) {
+                                                        bArr2 = parseProjFromParent(parsableByteArray, position2, readInt);
+                                                    } else if (readInt2 == 1936995172) {
+                                                        int readUnsignedByte6 = parsableByteArray.readUnsignedByte();
+                                                        parsableByteArray.skipBytes(3);
+                                                        if (readUnsignedByte6 == 0) {
+                                                            int readUnsignedByte7 = parsableByteArray.readUnsignedByte();
+                                                            if (readUnsignedByte7 != 0) {
+                                                                i21 = 1;
+                                                                if (readUnsignedByte7 != 1) {
+                                                                    if (readUnsignedByte7 == 2) {
+                                                                        i21 = 2;
+                                                                    } else if (readUnsignedByte7 == 3) {
+                                                                        i21 = 3;
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                i21 = 0;
+                                                            }
+                                                            i31 = i17;
+                                                            i30 = i18;
+                                                            i39 = i56;
+                                                            immutableList3 = immutableList2;
+                                                            h265VpsData = h265VpsData3;
+                                                            i32 = i21;
+                                                        }
+                                                        i21 = i57;
+                                                        i31 = i17;
+                                                        i30 = i18;
+                                                        i39 = i56;
+                                                        immutableList3 = immutableList2;
+                                                        h265VpsData = h265VpsData3;
+                                                        i32 = i21;
+                                                    } else {
+                                                        if (readInt2 == 1634760259) {
+                                                            int i66 = readInt - 12;
+                                                            byte[] bArr5 = new byte[i66];
+                                                            parsableByteArray.setPosition(position2 + 12);
+                                                            parsableByteArray.readBytes(bArr5, 0, i66);
+                                                            str9 = CodecSpecificDataUtil.buildApvCodecString(bArr5);
+                                                            immutableList3 = ImmutableList.of(bArr5);
+                                                            ColorInfo parseApvc = parseApvc(new ParsableByteArray(bArr5));
+                                                            int i67 = parseApvc.lumaBitdepth;
+                                                            int i68 = parseApvc.chromaBitdepth;
+                                                            int i69 = parseApvc.colorSpace;
+                                                            int i70 = parseApvc.colorRange;
+                                                            i39 = parseApvc.colorTransfer;
+                                                            i30 = i67;
+                                                            i31 = i68;
+                                                            i14 = i69;
+                                                            i15 = i70;
+                                                            str7 = MimeTypes.VIDEO_APV;
+                                                            h265VpsData = h265VpsData3;
                                                         } else {
-                                                            Log.w(TAG, "Unsupported color type: " + Mp4Box.getBoxTypeString(readInt3));
+                                                            i19 = i14;
+                                                            if (readInt2 == 1668246642) {
+                                                                i20 = i56;
+                                                                if (i19 == -1 && i20 == -1) {
+                                                                    int readInt3 = parsableByteArray.readInt();
+                                                                    if (readInt3 == TYPE_nclx || readInt3 == TYPE_nclc) {
+                                                                        int readUnsignedShort3 = parsableByteArray.readUnsignedShort();
+                                                                        int readUnsignedShort4 = parsableByteArray.readUnsignedShort();
+                                                                        parsableByteArray.skipBytes(2);
+                                                                        boolean z3 = readInt == 19 && (parsableByteArray.readUnsignedByte() & 128) != 0;
+                                                                        i14 = ColorInfo.isoColorPrimariesToColorSpace(readUnsignedShort3);
+                                                                        i15 = z3 ? 1 : 2;
+                                                                        i31 = i17;
+                                                                        i30 = i18;
+                                                                        immutableList3 = immutableList2;
+                                                                        i39 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedShort4);
+                                                                    } else {
+                                                                        Log.w(TAG, "Unsupported color type: " + Mp4Box.getBoxTypeString(readInt3));
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                i20 = i56;
+                                                            }
                                                         }
                                                     }
-                                                } else {
-                                                    i13 = i45;
+                                                    h265VpsData = h265VpsData3;
                                                 }
-                                                immutableList = immutableList3;
-                                                i8 = i8;
-                                                i22 = i56;
-                                                f = f3;
+                                                i31 = i17;
+                                                i30 = i18;
                                             }
-                                            immutableList = immutableList3;
+                                            i39 = i56;
+                                            immutableList3 = immutableList2;
                                         }
-                                        h265VpsData = h265VpsData5;
-                                        i22 = i56;
+                                        h265VpsData = h265VpsData3;
                                     }
-                                    i31 = i45;
-                                    i24 = i11;
-                                    f = f3;
                                 }
-                                i24 = i46;
+                                i32 = i57;
                             }
-                            i31 = i13;
-                            h265VpsData = h265VpsData5;
-                            i24 = i11;
+                            i14 = i19;
+                            i31 = i17;
+                            i30 = i18;
+                            immutableList3 = immutableList2;
+                            i39 = i20;
+                            h265VpsData = h265VpsData3;
+                            i32 = i57;
                         }
                     }
                 }
+                position = i13 + readInt;
+                i27 = i2;
+                i28 = i3;
+                stsdData2 = stsdData;
+                str2 = str7;
+                i29 = i16;
+                str8 = str6;
+                i37 = i14;
+                i38 = i15;
+                drmInitData4 = drmInitData3;
             }
-            position = i7 + readInt;
-            DrmInitData drmInitData4 = drmInitData2;
-            h265VpsData2 = h265VpsData;
-            drmInitData3 = drmInitData4;
-            i19 = i2;
-            i20 = i3;
+            position = i13 + readInt;
+            i27 = i2;
+            i28 = i3;
             stsdData2 = stsdData;
-            i23 = i12;
-            i21 = i10;
-            str4 = str3;
-            i29 = i8;
-            i30 = i9;
+            str2 = str7;
+            i29 = i16;
+            str8 = str6;
+            i37 = i14;
+            i38 = i15;
+            drmInitData4 = drmInitData3;
         }
-        DrmInitData drmInitData5 = drmInitData3;
-        float f4 = f;
-        ImmutableList<byte[]> immutableList4 = immutableList;
-        int i62 = i24;
-        int i63 = i29;
-        int i64 = i30;
-        int i65 = i31;
-        int i66 = i23;
-        int i67 = i22;
-        if (str2 == null) {
+        if (dolbyVisionConfig != null) {
+            str4 = dolbyVisionConfig.codecs;
+            str5 = MimeTypes.VIDEO_DOLBY_VISION;
+        } else {
+            str4 = str9;
+            str5 = str3;
+        }
+        if (str5 == null) {
             return;
         }
-        Format.Builder colorInfo = new Format.Builder().setId(i4).setSampleMimeType(str2).setCodecs(str5).setWidth(readUnsignedShort).setHeight(readUnsignedShort2).setDecodedWidth(i27).setDecodedHeight(i28).setPixelWidthHeightRatio(f4).setRotationDegrees(i5).setProjectionData(bArr).setStereoMode(i62).setInitializationData(immutableList4).setMaxNumReorderSamples(i25).setMaxSubLayers(i26).setDrmInitData(drmInitData5).setLanguage(str).setColorInfo(new ColorInfo.Builder().setColorSpace(i63).setColorRange(i64).setColorTransfer(i65).setHdrStaticInfo(byteBuffer != null ? byteBuffer.array() : null).setLumaBitdepth(i67).setChromaBitdepth(i66).build());
+        Format.Builder colorInfo = new Format.Builder().setId(i4).setSampleMimeType(str5).setCodecs(str4).setWidth(readUnsignedShort).setHeight(readUnsignedShort2).setDecodedWidth(i35).setDecodedHeight(i36).setPixelWidthHeightRatio(f).setRotationDegrees(i5).setProjectionData(bArr2).setStereoMode(i8).setInitializationData(immutableList).setMaxNumReorderSamples(i33).setMaxSubLayers(i34).setDrmInitData(drmInitData2).setLanguage(str).setColorInfo(new ColorInfo.Builder().setColorSpace(i9).setColorRange(i10).setColorTransfer(i11).setHdrStaticInfo(byteBuffer != null ? byteBuffer.array() : bArr).setLumaBitdepth(i7).setChromaBitdepth(i12).build());
         if (btrtData != null) {
             colorInfo.setAverageBitrate(Ints.saturatedCast(btrtData.avgBitrate)).setPeakBitrate(Ints.saturatedCast(btrtData.maxBitrate));
         } else if (esdsData != null) {
@@ -2244,10 +2293,12 @@ public final class BoxParser {
             if (i == this.length) {
                 return false;
             }
-            if (this.chunkOffsetsAreLongs) {
-                readUnsignedInt = this.chunkOffsets.readUnsignedLongToLong();
+            boolean z = this.chunkOffsetsAreLongs;
+            ParsableByteArray parsableByteArray = this.chunkOffsets;
+            if (z) {
+                readUnsignedInt = parsableByteArray.readUnsignedLongToLong();
             } else {
-                readUnsignedInt = this.chunkOffsets.readUnsignedInt();
+                readUnsignedInt = parsableByteArray.readUnsignedInt();
             }
             this.offset = readUnsignedInt;
             if (this.index == this.nextSamplesPerChunkChangeIndex) {
@@ -2390,7 +2441,7 @@ public final class BoxParser {
             int readUnsignedIntToInt = parsableByteArray.readUnsignedIntToInt();
             if (MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
                 int pcmFrameSize = Util.getPcmFrameSize(format.pcmEncoding, format.channelCount);
-                if (readUnsignedIntToInt == 0 || readUnsignedIntToInt % pcmFrameSize != 0) {
+                if (readUnsignedIntToInt % pcmFrameSize != 0) {
                     Log.w(BoxParser.TAG, "Audio sample size mismatch. stsd sample size: " + pcmFrameSize + ", stsz sample size: " + readUnsignedIntToInt);
                     readUnsignedIntToInt = pcmFrameSize;
                 }

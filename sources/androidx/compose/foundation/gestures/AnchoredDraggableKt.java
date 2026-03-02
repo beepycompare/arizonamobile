@@ -46,20 +46,16 @@ public final class AnchoredDraggableKt {
     private static final Function1<PointerType, Boolean> AlwaysDrag = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            boolean AlwaysDrag$lambda$0;
-            AlwaysDrag$lambda$0 = AnchoredDraggableKt.AlwaysDrag$lambda$0((PointerType) obj);
-            return Boolean.valueOf(AlwaysDrag$lambda$0);
+            return Boolean.valueOf(AnchoredDraggableKt.AlwaysDrag$lambda$0((PointerType) obj));
         }
     };
     private static final Function1<Integer, Float> GetOrNan = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            float GetOrNan$lambda$0;
-            GetOrNan$lambda$0 = AnchoredDraggableKt.GetOrNan$lambda$0(((Integer) obj).intValue());
-            return Float.valueOf(GetOrNan$lambda$0);
+            return Float.valueOf(AnchoredDraggableKt.GetOrNan$lambda$0(((Integer) obj).intValue()));
         }
     };
-    private static final float AnchoredDraggableMinFlingVelocity = Dp.m8258constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float AnchoredDraggableMinFlingVelocity = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
     private static final DecayAnimationSpec<Float> NoOpDecayAnimationSpec = DecayAnimationSpecKt.generateDecayAnimationSpec(new FloatDecayAnimationSpec() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$NoOpDecayAnimationSpec$1
         private final float absVelocityThreshold;
 
@@ -89,22 +85,22 @@ public final class AnchoredDraggableKt {
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean AlwaysDrag$lambda$0(PointerType pointerType) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean AnchoredDraggableState$lambda$0(Object obj) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean AnchoredDraggableState$lambda$2(Object obj) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float GetOrNan$lambda$0(int i) {
         return Float.NaN;
     }
@@ -245,9 +241,7 @@ public final class AnchoredDraggableKt {
             function12 = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj3) {
-                    boolean AnchoredDraggableState$lambda$0;
-                    AnchoredDraggableState$lambda$0 = AnchoredDraggableKt.AnchoredDraggableState$lambda$0(obj3);
-                    return Boolean.valueOf(AnchoredDraggableState$lambda$0);
+                    return Boolean.valueOf(AnchoredDraggableKt.AnchoredDraggableState$lambda$0(obj3));
                 }
             };
         }
@@ -269,9 +263,7 @@ public final class AnchoredDraggableKt {
             function12 = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj3) {
-                    boolean AnchoredDraggableState$lambda$2;
-                    AnchoredDraggableState$lambda$2 = AnchoredDraggableKt.AnchoredDraggableState$lambda$2(obj3);
-                    return Boolean.valueOf(AnchoredDraggableState$lambda$2);
+                    return Boolean.valueOf(AnchoredDraggableKt.AnchoredDraggableState$lambda$2(obj3));
                 }
             };
         }
@@ -507,9 +499,9 @@ public final class AnchoredDraggableKt {
         return SnapFlingBehaviorKt.snapFlingBehavior(AnchoredDraggableLayoutInfoProvider(anchoredDraggableState, function1, new Function0() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float anchoredDraggableFlingBehavior$lambda$0;
-                anchoredDraggableFlingBehavior$lambda$0 = AnchoredDraggableKt.anchoredDraggableFlingBehavior$lambda$0(Density.this);
-                return Float.valueOf(anchoredDraggableFlingBehavior$lambda$0);
+                float mo405toPx0680j_4;
+                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey));
+                return Float.valueOf(mo405toPx0680j_4);
             }
         }), NoOpDecayAnimationSpec, animationSpec);
     }
@@ -532,10 +524,5 @@ public final class AnchoredDraggableKt {
                 return anchoredDraggableState.getAnchors().positionOf(computeTarget) - requireOffset;
             }
         };
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float anchoredDraggableFlingBehavior$lambda$0(Density density) {
-        return density.mo464toPx0680j_4(Dp.m8258constructorimpl((float) ComposerImplKt.nodeKey));
     }
 }

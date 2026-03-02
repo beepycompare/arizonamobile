@@ -35,21 +35,24 @@ public final class CompletableToSingle<T> extends Single<T> {
         @Override // io.reactivex.CompletableObserver, io.reactivex.MaybeObserver
         public void onComplete() {
             T call;
-            if (CompletableToSingle.this.completionValueSupplier != null) {
+            Callable<? extends T> callable = CompletableToSingle.this.completionValueSupplier;
+            CompletableToSingle completableToSingle = CompletableToSingle.this;
+            if (callable != null) {
                 try {
-                    call = CompletableToSingle.this.completionValueSupplier.call();
+                    call = completableToSingle.completionValueSupplier.call();
                 } catch (Throwable th) {
                     Exceptions.throwIfFatal(th);
                     this.observer.onError(th);
                     return;
                 }
             } else {
-                call = CompletableToSingle.this.completionValue;
+                call = completableToSingle.completionValue;
             }
+            SingleObserver<? super T> singleObserver = this.observer;
             if (call == null) {
-                this.observer.onError(new NullPointerException("The value supplied is null"));
+                singleObserver.onError(new NullPointerException("The value supplied is null"));
             } else {
-                this.observer.onSuccess(call);
+                singleObserver.onSuccess(call);
             }
         }
 

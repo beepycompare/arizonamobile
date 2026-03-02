@@ -90,6 +90,7 @@ public class DownloadNotification implements IDownloaderClient {
 
     @Override // com.google.android.vending.expansion.downloader.IDownloaderClient
     public void onDownloadStateChanged(int i) {
+        Context context;
         int downloaderStringResourceIDFromState;
         IDownloaderClient iDownloaderClient = this.mClientProxy;
         if (iDownloaderClient != null) {
@@ -123,6 +124,7 @@ public class DownloadNotification implements IDownloaderClient {
                         downloaderStringResourceIDFromState = Helpers.getDownloaderStringResourceIDFromState(this.mContext, i);
                         i2 = 17301633;
                     } else if (i != 5) {
+                        context = this.mContext;
                         switch (i) {
                             case 15:
                             case 16:
@@ -131,7 +133,7 @@ public class DownloadNotification implements IDownloaderClient {
                             case 19:
                                 break;
                             default:
-                                downloaderStringResourceIDFromState = Helpers.getDownloaderStringResourceIDFromState(this.mContext, i);
+                                downloaderStringResourceIDFromState = Helpers.getDownloaderStringResourceIDFromState(context, i);
                                 break;
                         }
                         this.mCurrentText = this.mContext.getString(downloaderStringResourceIDFromState);
@@ -170,7 +172,8 @@ public class DownloadNotification implements IDownloaderClient {
                 this.mCurrentNotificationBuilder.setAutoCancel(true ^ z);
                 this.mNotificationManager.notify(NOTIFICATION_ID, this.mCurrentNotificationBuilder.build());
             }
-            downloaderStringResourceIDFromState = Helpers.getDownloaderStringResourceIDFromState(this.mContext, i);
+            context = this.mContext;
+            downloaderStringResourceIDFromState = Helpers.getDownloaderStringResourceIDFromState(context, i);
             this.mCurrentText = this.mContext.getString(downloaderStringResourceIDFromState);
             this.mCurrentTitle = this.mLabel.toString();
             this.mCurrentNotificationBuilder.setTicker(((Object) this.mLabel) + ": " + this.mCurrentText);

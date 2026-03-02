@@ -35,13 +35,13 @@ public final class AndroidIndirectPointerEvent implements PlatformIndirectPointe
 
     @Override // androidx.compose.ui.input.indirect.IndirectPointerEvent
     /* renamed from: getType-4ZHQPSE  reason: not valid java name */
-    public int mo6247getType4ZHQPSE() {
+    public int mo5588getType4ZHQPSE() {
         return this.type;
     }
 
     @Override // androidx.compose.ui.input.indirect.IndirectPointerEvent
     /* renamed from: getPrimaryDirectionalMotionAxis-nZO2Niw  reason: not valid java name */
-    public int mo6246getPrimaryDirectionalMotionAxisnZO2Niw() {
+    public int mo5587getPrimaryDirectionalMotionAxisnZO2Niw() {
         return this.primaryDirectionalMotionAxis;
     }
 

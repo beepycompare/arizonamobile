@@ -12,8 +12,8 @@ public final class Xg extends Rg {
 
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
-        EnumC0194da enumC0194da;
-        EnumC0194da enumC0194da2;
+        EnumC0193da enumC0193da;
+        EnumC0193da enumC0193da2;
         if (!TextUtils.isEmpty(p5.getName())) {
             M8 m8 = this.b;
             String name = p5.getName();
@@ -22,13 +22,13 @@ public final class Xg extends Rg {
             }
             int hashCode = name.hashCode();
             if (m8.c.b.contains(Integer.valueOf(hashCode))) {
-                enumC0194da2 = EnumC0194da.NON_FIRST_OCCURENCE;
+                enumC0193da2 = EnumC0193da.NON_FIRST_OCCURENCE;
             } else {
                 O8 o8 = m8.c;
                 if (o8.f721a) {
-                    enumC0194da = EnumC0194da.FIRST_OCCURRENCE;
+                    enumC0193da = EnumC0193da.FIRST_OCCURRENCE;
                 } else {
-                    enumC0194da = EnumC0194da.UNKNOWN;
+                    enumC0193da = EnumC0193da.UNKNOWN;
                 }
                 if (o8.d < 1000) {
                     o8.b.add(Integer.valueOf(hashCode));
@@ -42,9 +42,9 @@ public final class Xg extends Rg {
                 Q8 q8 = r8.b;
                 r8.f763a.getClass();
                 iBinaryDataHelper.insert("event_hashes", q8.toByteArray((Q8) P8.a(o82)));
-                enumC0194da2 = enumC0194da;
+                enumC0193da2 = enumC0193da;
             }
-            p5.k = enumC0194da2;
+            p5.k = enumC0193da2;
         }
         return false;
     }

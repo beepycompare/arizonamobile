@@ -94,7 +94,7 @@ public abstract class ComputableLiveData<T> {
         return this.computing;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void refreshRunnable$lambda$0(ComputableLiveData computableLiveData) {
         do {
             boolean z = false;
@@ -122,7 +122,7 @@ public abstract class ComputableLiveData<T> {
         } while (computableLiveData.invalid.get());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invalidationRunnable$lambda$0(ComputableLiveData computableLiveData) {
         boolean hasActiveObservers = computableLiveData.getLiveData().hasActiveObservers();
         if (computableLiveData.invalid.compareAndSet(false, true) && hasActiveObservers) {

@@ -50,10 +50,12 @@ public final class InnerQueuedSubscriber<T> extends AtomicReference<Subscription
 
     @Override // org.reactivestreams.Subscriber
     public void onNext(T t) {
-        if (this.fusionMode == 0) {
-            this.parent.innerNext(this, t);
+        int i = this.fusionMode;
+        InnerQueuedSubscriberSupport<T> innerQueuedSubscriberSupport = this.parent;
+        if (i == 0) {
+            innerQueuedSubscriberSupport.innerNext(this, t);
         } else {
-            this.parent.drain();
+            innerQueuedSubscriberSupport.drain();
         }
     }
 

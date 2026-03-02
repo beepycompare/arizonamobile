@@ -139,7 +139,7 @@ public final class SpringDotsIndicator extends BaseDotsIndicator {
         this.strokeDotsLinearLayout.addView(buildDot);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void addDot$lambda$0(SpringDotsIndicator this$0, int i, View view) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (this$0.getDotsClickable()) {

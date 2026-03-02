@@ -80,14 +80,15 @@ public class TimeModel implements Parcelable {
     }
 
     public int getHourForDisplay() {
-        if (this.format == 1) {
-            return this.hour % 24;
+        int i = this.format;
+        int i2 = this.hour;
+        if (i == 1) {
+            return i2 % 24;
         }
-        int i = this.hour;
-        if (i % 12 == 0) {
+        if (i2 % 12 == 0) {
             return 12;
         }
-        return this.period == 1 ? i - 12 : i;
+        return this.period == 1 ? i2 - 12 : i2;
     }
 
     public int getHourContentDescriptionResId() {

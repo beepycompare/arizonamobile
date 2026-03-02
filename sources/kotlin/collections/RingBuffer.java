@@ -145,11 +145,12 @@ final class RingBuffer<T> extends AbstractList<T> implements RandomAccess {
         if (i > 0) {
             int i2 = this.startIndex;
             int i3 = (i2 + i) % this.capacity;
+            Object[] objArr = this.buffer;
             if (i2 > i3) {
-                ArraysKt.fill(this.buffer, (Object) null, i2, this.capacity);
+                ArraysKt.fill(objArr, (Object) null, i2, this.capacity);
                 ArraysKt.fill(this.buffer, (Object) null, 0, i3);
             } else {
-                ArraysKt.fill(this.buffer, (Object) null, i2, i3);
+                ArraysKt.fill(objArr, (Object) null, i2, i3);
             }
             this.startIndex = i3;
             this.size = size() - i;

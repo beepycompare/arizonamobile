@@ -36,14 +36,12 @@ public class LoremIpsum implements PreviewParameterProvider<String> {
         return SequencesKt.joinToString$default(SequencesKt.take(SequencesKt.generateSequence(new Function0() { // from class: androidx.compose.ui.tooling.preview.datasource.LoremIpsum$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String generateLoremIpsum$lambda$0;
-                generateLoremIpsum$lambda$0 = LoremIpsum.generateLoremIpsum$lambda$0(Ref.IntRef.this, size);
-                return generateLoremIpsum$lambda$0;
+                return LoremIpsum.generateLoremIpsum$lambda$0(Ref.IntRef.this, size);
             }
         }), i), " ", null, null, 0, null, null, 62, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String generateLoremIpsum$lambda$0(Ref.IntRef intRef, int i) {
         List list;
         list = LoremIpsumKt.LOREM_IPSUM_SOURCE;

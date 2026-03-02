@@ -9,45 +9,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class MarqueeAnimationMode {
     public static final Companion Companion = new Companion(null);
-    private static final int Immediately = m383constructorimpl(0);
-    private static final int WhileFocused = m383constructorimpl(1);
+    private static final int Immediately = m335constructorimpl(0);
+    private static final int WhileFocused = m335constructorimpl(1);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ MarqueeAnimationMode m382boximpl(int i) {
+    public static final /* synthetic */ MarqueeAnimationMode m334boximpl(int i) {
         return new MarqueeAnimationMode(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m383constructorimpl(int i) {
+    private static int m335constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m384equalsimpl(int i, Object obj) {
-        return (obj instanceof MarqueeAnimationMode) && i == ((MarqueeAnimationMode) obj).m388unboximpl();
+    public static boolean m336equalsimpl(int i, Object obj) {
+        return (obj instanceof MarqueeAnimationMode) && i == ((MarqueeAnimationMode) obj).m340unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m385equalsimpl0(int i, int i2) {
+    public static final boolean m337equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m386hashCodeimpl(int i) {
+    public static int m338hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m384equalsimpl(this.value, obj);
+        return m336equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m386hashCodeimpl(this.value);
+        return m338hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m388unboximpl() {
+    public final /* synthetic */ int m340unboximpl() {
         return this.value;
     }
 
@@ -56,15 +56,15 @@ public final class MarqueeAnimationMode {
     }
 
     public String toString() {
-        return m387toStringimpl(this.value);
+        return m339toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m387toStringimpl(int i) {
-        if (m385equalsimpl0(i, Immediately)) {
+    public static String m339toStringimpl(int i) {
+        if (m337equalsimpl0(i, Immediately)) {
             return "Immediately";
         }
-        if (m385equalsimpl0(i, WhileFocused)) {
+        if (m337equalsimpl0(i, WhileFocused)) {
             return "WhileFocused";
         }
         throw new IllegalStateException(("invalid value: " + i).toString());
@@ -82,12 +82,12 @@ public final class MarqueeAnimationMode {
         }
 
         /* renamed from: getImmediately-ZbEOnfQ  reason: not valid java name */
-        public final int m389getImmediatelyZbEOnfQ() {
+        public final int m341getImmediatelyZbEOnfQ() {
             return MarqueeAnimationMode.Immediately;
         }
 
         /* renamed from: getWhileFocused-ZbEOnfQ  reason: not valid java name */
-        public final int m390getWhileFocusedZbEOnfQ() {
+        public final int m342getWhileFocusedZbEOnfQ() {
             return MarqueeAnimationMode.WhileFocused;
         }
     }

@@ -11,13 +11,11 @@ public final class CompositionErrorContextKt {
     private static final CompositionLocal<CompositionErrorContext> LocalCompositionErrorContext = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.runtime.tooling.CompositionErrorContextKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            CompositionErrorContext LocalCompositionErrorContext$lambda$0;
-            LocalCompositionErrorContext$lambda$0 = CompositionErrorContextKt.LocalCompositionErrorContext$lambda$0();
-            return LocalCompositionErrorContext$lambda$0;
+            return CompositionErrorContextKt.LocalCompositionErrorContext$lambda$0();
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CompositionErrorContext LocalCompositionErrorContext$lambda$0() {
         return null;
     }

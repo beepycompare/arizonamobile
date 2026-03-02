@@ -49,7 +49,7 @@ public interface SharedTransitionScope extends LookaheadScope {
     /* loaded from: classes.dex */
     public interface SharedContentConfig {
         /* renamed from: alternativeTargetBoundsInTransitionScopeAfterRemoval-cSwnlzA  reason: not valid java name */
-        default Rect m137alternativeTargetBoundsInTransitionScopeAfterRemovalcSwnlzA(SharedContentState sharedContentState, Rect rect, long j) {
+        default Rect m124alternativeTargetBoundsInTransitionScopeAfterRemovalcSwnlzA(SharedContentState sharedContentState, Rect rect, long j) {
             return null;
         }
 
@@ -83,7 +83,7 @@ public interface SharedTransitionScope extends LookaheadScope {
         public static final Companion Companion = Companion.$$INSTANCE;
 
         /* renamed from: calculateSize-JyjRU_E  reason: not valid java name */
-        long mo136calculateSizeJyjRU_E(long j, long j2);
+        long mo123calculateSizeJyjRU_E(long j, long j2);
 
         /* compiled from: SharedTransitionScope.kt */
         @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007¨\u0006\n"}, d2 = {"Landroidx/compose/animation/SharedTransitionScope$PlaceholderSize$Companion;", "", "<init>", "()V", "AnimatedSize", "Landroidx/compose/animation/SharedTransitionScope$PlaceholderSize;", "getAnimatedSize", "()Landroidx/compose/animation/SharedTransitionScope$PlaceholderSize;", "ContentSize", "getContentSize", "animation"}, k = 1, mv = {2, 0, 0}, xi = 48)
@@ -93,14 +93,14 @@ public interface SharedTransitionScope extends LookaheadScope {
             private static final PlaceholderSize AnimatedSize = new PlaceholderSize() { // from class: androidx.compose.animation.SharedTransitionScope$PlaceholderSize$Companion$AnimatedSize$1
                 @Override // androidx.compose.animation.SharedTransitionScope.PlaceholderSize
                 /* renamed from: calculateSize-JyjRU_E */
-                public final long mo136calculateSizeJyjRU_E(long j, long j2) {
+                public final long mo123calculateSizeJyjRU_E(long j, long j2) {
                     return j2;
                 }
             };
             private static final PlaceholderSize ContentSize = new PlaceholderSize() { // from class: androidx.compose.animation.SharedTransitionScope$PlaceholderSize$Companion$ContentSize$1
                 @Override // androidx.compose.animation.SharedTransitionScope.PlaceholderSize
                 /* renamed from: calculateSize-JyjRU_E */
-                public final long mo136calculateSizeJyjRU_E(long j, long j2) {
+                public final long mo123calculateSizeJyjRU_E(long j, long j2) {
                     return j;
                 }
             };
@@ -202,11 +202,11 @@ public interface SharedTransitionScope extends LookaheadScope {
         return LookaheadScopeKt.approachLayout(modifier, new Function1<IntSize, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScope$skipToLookaheadPosition$2
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(IntSize intSize) {
-                return m139invokeozmzZPI(intSize.m8433unboximpl());
+                return m126invokeozmzZPI(intSize.m7730unboximpl());
             }
 
             /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-            public final Boolean m139invokeozmzZPI(long j) {
+            public final Boolean m126invokeozmzZPI(long j) {
                 return false;
             }
         }, new Function2<Placeable.PlacementScope, LayoutCoordinates, Boolean>() { // from class: androidx.compose.animation.SharedTransitionScope$skipToLookaheadPosition$3
@@ -229,15 +229,15 @@ public interface SharedTransitionScope extends LookaheadScope {
 
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ MeasureResult invoke(ApproachMeasureScope approachMeasureScope, Measurable measurable, Constraints constraints) {
-                return m140invoke3p2s80s(approachMeasureScope, measurable, constraints.m8217unboximpl());
+                return m127invoke3p2s80s(approachMeasureScope, measurable, constraints.m7514unboximpl());
             }
 
             /* renamed from: invoke-3p2s80s  reason: not valid java name */
-            public final MeasureResult m140invoke3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-                final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+            public final MeasureResult m127invoke3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+                final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
                 final Function0<Boolean> function02 = function0;
                 final SharedTransitionScope sharedTransitionScope = this;
-                return MeasureScope.layout$default(approachMeasureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScope$skipToLookaheadPosition$4$1$1
+                return MeasureScope.layout$default(approachMeasureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScope$skipToLookaheadPosition$4$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -256,13 +256,13 @@ public interface SharedTransitionScope extends LookaheadScope {
                             LayoutCoordinates coordinates = placementScope.getCoordinates();
                             if (coordinates != null) {
                                 SharedTransitionScope sharedTransitionScope2 = sharedTransitionScope;
-                                Placeable.PlacementScope.m6941place70tqf50$default(placementScope, mo6875measureBRTryo0, IntOffsetKt.m8403roundk4lQ0M(Offset.m5183minusMKHz9U(coordinates.mo6884localPositionOfR5De75A(sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), Offset.m5183minusMKHz9U(LookaheadScope.m6905localLookaheadPositionOfauaQtc$default(sharedTransitionScope2, sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), coordinates, 0L, false, 6, null), LayoutCoordinates.m6882localPositionOfS_NoaFU$default(sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), coordinates, 0L, false, 6, null))), LayoutCoordinates.m6882localPositionOfS_NoaFU$default(coordinates, sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), 0L, false, 6, null))), 0.0f, 2, null);
+                                Placeable.PlacementScope.m6282place70tqf50$default(placementScope, mo6216measureBRTryo0, IntOffsetKt.m7700roundk4lQ0M(Offset.m4531minusMKHz9U(coordinates.mo6225localPositionOfR5De75A(sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), Offset.m4531minusMKHz9U(LookaheadScope.m6246localLookaheadPositionOfauaQtc$default(sharedTransitionScope2, sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), coordinates, 0L, false, 6, null), LayoutCoordinates.m6223localPositionOfS_NoaFU$default(sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), coordinates, 0L, false, 6, null))), LayoutCoordinates.m6223localPositionOfS_NoaFU$default(coordinates, sharedTransitionScope2.getLookaheadScopeCoordinates(placementScope), 0L, false, 6, null))), 0.0f, 2, null);
                                 return;
                             }
-                            Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, 0, 0, 0.0f, 4, null);
+                            Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, 0, 0, 0.0f, 4, null);
                             return;
                         }
-                        Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, 0, 0, 0.0f, 4, null);
+                        Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, 0, 0, 0.0f, 4, null);
                     }
                 }, 4, null);
             }
@@ -425,10 +425,10 @@ public interface SharedTransitionScope extends LookaheadScope {
         }
 
         /* renamed from: prepareTransitionWithInitialVelocity-TH1AsA0  reason: not valid java name */
-        public final void m138prepareTransitionWithInitialVelocityTH1AsA0(long j) {
+        public final void m125prepareTransitionWithInitialVelocityTH1AsA0(long j) {
             SharedElementEntry nonNullInternalState = getNonNullInternalState();
             if (getConfig$animation().isEnabled(this)) {
-                nonNullInternalState.getSharedElement().m133updateExitVelocityTH1AsA0$animation(j);
+                nonNullInternalState.getSharedElement().m120updateExitVelocityTH1AsA0$animation(j);
             }
         }
 

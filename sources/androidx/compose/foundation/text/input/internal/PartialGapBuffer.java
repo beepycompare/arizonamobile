@@ -48,7 +48,11 @@ public final class PartialGapBuffer implements CharSequence {
 
     public int getLength() {
         GapBuffer gapBuffer = this.buffer;
-        return gapBuffer == null ? this.text.length() : (this.text.length() - (this.bufEnd - this.bufStart)) + gapBuffer.length();
+        CharSequence charSequence = this.text;
+        if (gapBuffer == null) {
+            return charSequence.length();
+        }
+        return (charSequence.length() - (this.bufEnd - this.bufStart)) + gapBuffer.length();
     }
 
     public static /* synthetic */ void replace$default(PartialGapBuffer partialGapBuffer, int i, int i2, CharSequence charSequence, int i3, int i4, int i5, Object obj) {
@@ -131,14 +135,15 @@ public final class PartialGapBuffer implements CharSequence {
     @Override // java.lang.CharSequence
     public String toString() {
         GapBuffer gapBuffer = this.buffer;
+        CharSequence charSequence = this.text;
         if (gapBuffer == null) {
-            return this.text.toString();
+            return charSequence.toString();
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(this.text, 0, this.bufStart);
+        sb.append(charSequence, 0, this.bufStart);
         gapBuffer.append(sb);
-        CharSequence charSequence = this.text;
-        sb.append(charSequence, this.bufEnd, charSequence.length());
+        CharSequence charSequence2 = this.text;
+        sb.append(charSequence2, this.bufEnd, charSequence2.length());
         return sb.toString();
     }
 

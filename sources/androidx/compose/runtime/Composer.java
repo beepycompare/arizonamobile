@@ -272,13 +272,13 @@ public interface Composer {
         }
 
         /* renamed from: setDiagnosticStackTraceMode-76WK1J0  reason: not valid java name */
-        public final void m4592setDiagnosticStackTraceMode76WK1J0(int i) {
-            ComposerKt.m4600setComposeStackTraceMode76WK1J0(i);
+        public final void m3976setDiagnosticStackTraceMode76WK1J0(int i) {
+            ComposerKt.m3983setComposeStackTraceMode76WK1J0(i);
         }
 
         @Deprecated(message = "Use setDiagnosticStackTraceMode instead")
         public final void setDiagnosticStackTraceEnabled(boolean z) {
-            ComposerKt.m4600setComposeStackTraceMode76WK1J0(z ? ComposeStackTraceMode.Companion.m4897getSourceInformationMD5MrJc() : ComposeStackTraceMode.Companion.m4896getNoneMD5MrJc());
+            ComposerKt.m3983setComposeStackTraceMode76WK1J0(z ? ComposeStackTraceMode.Companion.m4245getSourceInformationMD5MrJc() : ComposeStackTraceMode.Companion.m4244getNoneMD5MrJc());
         }
     }
 }

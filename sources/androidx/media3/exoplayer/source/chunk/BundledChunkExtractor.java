@@ -155,15 +155,16 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     public void init(ChunkExtractor.TrackOutputProvider trackOutputProvider, long j, long j2) {
         this.trackOutputProvider = trackOutputProvider;
         this.endTimeUs = j2;
-        if (!this.extractorInitialized) {
-            this.extractor.init(this);
+        boolean z = this.extractorInitialized;
+        Extractor extractor = this.extractor;
+        if (!z) {
+            extractor.init(this);
             if (j != C.TIME_UNSET) {
                 this.extractor.seek(0L, j);
             }
             this.extractorInitialized = true;
             return;
         }
-        Extractor extractor = this.extractor;
         if (j == C.TIME_UNSET) {
             j = 0;
         }

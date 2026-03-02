@@ -114,9 +114,7 @@ public final class StrategyKt {
         KeylineList keylineListOf = KeylineListKt.keylineListOf(f, f2, i, (keyline.getOffset() - (size2 / 2.0f)) + f3, new Function1() { // from class: androidx.compose.material3.carousel.StrategyKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit createShiftedKeylineListForContentPadding$lambda$2;
-                createShiftedKeylineListForContentPadding$lambda$2 = StrategyKt.createShiftedKeylineListForContentPadding$lambda$2(KeylineList.this, size2, (KeylineListScope) obj);
-                return createShiftedKeylineListForContentPadding$lambda$2;
+                return StrategyKt.createShiftedKeylineListForContentPadding$lambda$2(KeylineList.this, size2, (KeylineListScope) obj);
             }
         });
         ArrayList arrayList2 = new ArrayList(keylineListOf.size());
@@ -142,9 +140,7 @@ public final class StrategyKt {
         return KeylineListKt.keylineListOf(f, f2, keylineList.getPivotIndex() + i3, keylineList.getPivot().getOffset() + (((keylineList.get(i).getSize() - keylineList.get(i).getCutoff()) + f2) * i3), new Function1() { // from class: androidx.compose.material3.carousel.StrategyKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit moveKeylineAndCreateShiftedKeylineList$lambda$5;
-                moveKeylineAndCreateShiftedKeylineList$lambda$5 = StrategyKt.moveKeylineAndCreateShiftedKeylineList$lambda$5(KeylineList.this, i, i2, (KeylineListScope) obj);
-                return moveKeylineAndCreateShiftedKeylineList$lambda$5;
+                return StrategyKt.moveKeylineAndCreateShiftedKeylineList$lambda$5(KeylineList.this, i, i2, (KeylineListScope) obj);
             }
         });
     }

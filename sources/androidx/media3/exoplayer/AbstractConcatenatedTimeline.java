@@ -4,7 +4,7 @@ import android.util.Pair;
 import androidx.media3.common.Timeline;
 import androidx.media3.exoplayer.source.ShuffleOrder;
 import com.google.common.base.Preconditions;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public abstract class AbstractConcatenatedTimeline extends Timeline {
     private final int childCount;
     private final boolean isAtomic;

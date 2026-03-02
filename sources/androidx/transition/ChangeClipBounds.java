@@ -131,10 +131,11 @@ public class ChangeClipBounds extends Transition {
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator, boolean z) {
+            View view = this.mView;
             if (!z) {
-                this.mView.setClipBounds(this.mEnd);
+                view.setClipBounds(this.mEnd);
             } else {
-                this.mView.setClipBounds(this.mStart);
+                view.setClipBounds(this.mStart);
             }
         }
     }

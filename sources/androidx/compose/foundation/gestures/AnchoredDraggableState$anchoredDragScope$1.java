@@ -65,11 +65,13 @@ public final class AnchoredDraggableState$anchoredDragScope$1 implements Anchore
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r4v13, types: [T, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r4v15, types: [T, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r4v12, types: [T, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r4v14, types: [T, java.lang.Object] */
     public final void updateBounds(boolean z) {
-        if (this.this$0.getOffset() == this.this$0.getAnchors().positionOf(this.this$0.getCurrentValue())) {
-            Object closestAnchor = this.this$0.getAnchors().closestAnchor(this.this$0.getOffset() + (z ? 1.0f : -1.0f), z);
+        int i = (this.this$0.getOffset() > this.this$0.getAnchors().positionOf(this.this$0.getCurrentValue()) ? 1 : (this.this$0.getOffset() == this.this$0.getAnchors().positionOf(this.this$0.getCurrentValue()) ? 0 : -1));
+        AnchoredDraggableState<T> anchoredDraggableState = this.this$0;
+        if (i == 0) {
+            Object closestAnchor = this.this$0.getAnchors().closestAnchor(anchoredDraggableState.getOffset() + (z ? 1.0f : -1.0f), z);
             T t = closestAnchor;
             if (closestAnchor == null) {
                 t = this.this$0.getCurrentValue();
@@ -82,7 +84,7 @@ public final class AnchoredDraggableState$anchoredDragScope$1 implements Anchore
                 this.rightBound = this.this$0.getCurrentValue();
             }
         } else {
-            Object closestAnchor2 = this.this$0.getAnchors().closestAnchor(this.this$0.getOffset(), false);
+            Object closestAnchor2 = anchoredDraggableState.getAnchors().closestAnchor(this.this$0.getOffset(), false);
             T t2 = closestAnchor2;
             if (closestAnchor2 == null) {
                 t2 = this.this$0.getCurrentValue();

@@ -101,12 +101,12 @@ public final class ComposableSingletons$ListItemKt {
     });
 
     /* renamed from: getLambda$-489887388$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2251getLambda$489887388$material3() {
+    public final Function2<Composer, Integer, Unit> m1937getLambda$489887388$material3() {
         return f82lambda$489887388;
     }
 
     /* renamed from: getLambda$-546752734$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2252getLambda$546752734$material3() {
+    public final Function2<Composer, Integer, Unit> m1938getLambda$546752734$material3() {
         return f83lambda$546752734;
     }
 

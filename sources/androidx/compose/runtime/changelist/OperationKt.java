@@ -90,14 +90,12 @@ public final class OperationKt {
         return operationErrorContext == null ? th : ComposeStackTraceKt.attachComposeStackTrace(th, new Function0() { // from class: androidx.compose.runtime.changelist.OperationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ComposeStackTrace attachComposeStackTrace$lambda$0;
-                attachComposeStackTrace$lambda$0 = OperationKt.attachComposeStackTrace$lambda$0(Anchor.this, slotWriter, operationErrorContext);
-                return attachComposeStackTrace$lambda$0;
+                return OperationKt.attachComposeStackTrace$lambda$0(Anchor.this, slotWriter, operationErrorContext);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ComposeStackTrace attachComposeStackTrace$lambda$0(Anchor anchor, SlotWriter slotWriter, OperationErrorContext operationErrorContext) {
         if (anchor != null) {
             slotWriter.seek(anchor);

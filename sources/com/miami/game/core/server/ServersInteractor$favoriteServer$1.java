@@ -1,5 +1,6 @@
 package com.miami.game.core.server;
 
+import androidx.media3.extractor.ts.TsExtractor;
 import com.miami.game.core.server.data.FavoriteServerDatabase;
 import com.miami.game.core.server.model.ServerModel;
 import com.miami.game.core.server.model.ServersState;
@@ -15,8 +16,8 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$favoriteServer$1", f = "ServersInteractor.kt", i = {}, l = {167, 171}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$favoriteServer$1", f = "ServersInteractor.kt", i = {}, l = {168, TsExtractor.TS_STREAM_TYPE_AC4}, m = "invokeSuspend", n = {}, nl = {TsExtractor.TS_STREAM_TYPE_AC4, 176}, s = {}, v = 2)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$favoriteServer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ServerModel $serverModel;
@@ -44,10 +45,10 @@ public final class ServersInteractor$favoriteServer$1 extends SuspendLambda impl
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003f, code lost:
         if (r13.favoriteServerDAO().addFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r12.$serverModel), r12) == r0) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x005b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0059, code lost:
         if (r13.favoriteServerDAO().removeFromFavorite(com.miami.game.core.server.data.FavoriteServerEntityKt.toFavoriteEntity(r12.$serverModel), r12) == r0) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x005d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x005b, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -63,11 +64,13 @@ public final class ServersInteractor$favoriteServer$1 extends SuspendLambda impl
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!this.$serverModel.isFavorite()) {
-                favoriteServerDatabase2 = this.this$0.favoriteServerDatabase;
+            boolean isFavorite = this.$serverModel.isFavorite();
+            ServersInteractor serversInteractor = this.this$0;
+            if (!isFavorite) {
+                favoriteServerDatabase2 = serversInteractor.favoriteServerDatabase;
                 this.label = 1;
             } else {
-                favoriteServerDatabase = this.this$0.favoriteServerDatabase;
+                favoriteServerDatabase = serversInteractor.favoriteServerDatabase;
                 this.label = 2;
             }
         } else if (i != 1 && i != 2) {

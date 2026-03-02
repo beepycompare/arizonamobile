@@ -845,11 +845,13 @@ public final class CoroutineScheduler implements Executor, Closeable {
         }
 
         private final Task pollGlobalQueues() {
-            if (nextInt(2) == 0) {
-                Task removeFirstOrNull = CoroutineScheduler.this.globalCpuQueue.removeFirstOrNull();
+            int nextInt = nextInt(2);
+            CoroutineScheduler coroutineScheduler = CoroutineScheduler.this;
+            if (nextInt == 0) {
+                Task removeFirstOrNull = coroutineScheduler.globalCpuQueue.removeFirstOrNull();
                 return removeFirstOrNull != null ? removeFirstOrNull : CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
             }
-            Task removeFirstOrNull2 = CoroutineScheduler.this.globalBlockingQueue.removeFirstOrNull();
+            Task removeFirstOrNull2 = coroutineScheduler.globalBlockingQueue.removeFirstOrNull();
             return removeFirstOrNull2 != null ? removeFirstOrNull2 : CoroutineScheduler.this.globalCpuQueue.removeFirstOrNull();
         }
 

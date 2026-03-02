@@ -9,7 +9,7 @@ public final class V3 extends Jc {
     public final Ve f821a;
 
     public V3(Context context) {
-        this(new Ve(C0136b4.l().c(context).b(context)));
+        this(new Ve(C0135b4.l().c(context).b(context)));
     }
 
     @Override // io.appmetrica.analytics.impl.Jc

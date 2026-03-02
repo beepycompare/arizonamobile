@@ -21,10 +21,10 @@ public interface OverscrollEffect {
     }
 
     /* renamed from: applyToFling-BMRW4eQ */
-    Object mo274applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation);
+    Object mo241applyToFlingBMRW4eQ(long j, Function2<? super Velocity, ? super Continuation<? super Velocity>, ? extends Object> function2, Continuation<? super Unit> continuation);
 
     /* renamed from: applyToScroll-Rhakbz0 */
-    long mo275applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1);
+    long mo242applyToScrollRhakbz0(long j, int i, Function1<? super Offset, Offset> function1);
 
     boolean isInProgress();
 

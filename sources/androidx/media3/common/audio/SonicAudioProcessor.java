@@ -79,10 +79,13 @@ public final class SonicAudioProcessor implements AudioProcessor {
     public long getPlayoutDuration(long j) {
         if (this.outputBytes >= 1024) {
             long pendingInputBytes = this.inputBytes - ((Sonic) Preconditions.checkNotNull(this.sonic)).getPendingInputBytes();
-            if (this.outputAudioFormat.sampleRate == this.inputAudioFormat.sampleRate) {
-                return Util.scaleLargeTimestamp(j, this.outputBytes, pendingInputBytes);
+            int i = this.outputAudioFormat.sampleRate;
+            int i2 = this.inputAudioFormat.sampleRate;
+            long j2 = this.outputBytes;
+            if (i == i2) {
+                return Util.scaleLargeTimestamp(j, j2, pendingInputBytes);
             }
-            return Util.scaleLargeTimestamp(j, this.inputAudioFormat.sampleRate * this.outputBytes, pendingInputBytes * this.outputAudioFormat.sampleRate);
+            return Util.scaleLargeTimestamp(j, j2 * this.inputAudioFormat.sampleRate, pendingInputBytes * this.outputAudioFormat.sampleRate);
         }
         return (long) (j / this.speed);
     }

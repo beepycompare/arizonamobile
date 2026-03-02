@@ -74,15 +74,15 @@ public final class NestedScrollDispatcher {
     }
 
     /* renamed from: dispatchPreScroll-OzD1aCk  reason: not valid java name */
-    public final long m6608dispatchPreScrollOzD1aCk(long j, int i) {
+    public final long m5949dispatchPreScrollOzD1aCk(long j, int i) {
         NestedScrollConnection parent$ui = getParent$ui();
-        return parent$ui != null ? parent$ui.mo1009onPreScrollOzD1aCk(j, i) : Offset.Companion.m5195getZeroF1C5BW0();
+        return parent$ui != null ? parent$ui.mo896onPreScrollOzD1aCk(j, i) : Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* renamed from: dispatchPostScroll-DzOQY0M  reason: not valid java name */
-    public final long m6606dispatchPostScrollDzOQY0M(long j, long j2, int i) {
+    public final long m5947dispatchPostScrollDzOQY0M(long j, long j2, int i) {
         NestedScrollConnection parent$ui = getParent$ui();
-        return parent$ui != null ? parent$ui.mo656onPostScrollDzOQY0M(j, j2, i) : Offset.Companion.m5195getZeroF1C5BW0();
+        return parent$ui != null ? parent$ui.mo573onPostScrollDzOQY0M(j, j2, i) : Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -91,10 +91,10 @@ public final class NestedScrollDispatcher {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m6607dispatchPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public final Object m5948dispatchPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         NestedScrollDispatcher$dispatchPreFling$1 nestedScrollDispatcher$dispatchPreFling$1;
         int i;
-        long m8507getZero9UxMQ8M;
+        long m7804getZero9UxMQ8M;
         if (continuation instanceof NestedScrollDispatcher$dispatchPreFling$1) {
             nestedScrollDispatcher$dispatchPreFling$1 = (NestedScrollDispatcher$dispatchPreFling$1) continuation;
             if ((nestedScrollDispatcher$dispatchPreFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -106,11 +106,11 @@ public final class NestedScrollDispatcher {
                     ResultKt.throwOnFailure(obj);
                     NestedScrollConnection parent$ui = getParent$ui();
                     if (parent$ui == null) {
-                        m8507getZero9UxMQ8M = Velocity.Companion.m8507getZero9UxMQ8M();
-                        return Velocity.m8487boximpl(m8507getZero9UxMQ8M);
+                        m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
+                        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
                     }
                     nestedScrollDispatcher$dispatchPreFling$1.label = 1;
-                    obj = parent$ui.mo1008onPreFlingQWom1Mo(j, nestedScrollDispatcher$dispatchPreFling$1);
+                    obj = parent$ui.mo895onPreFlingQWom1Mo(j, nestedScrollDispatcher$dispatchPreFling$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -119,8 +119,8 @@ public final class NestedScrollDispatcher {
                 } else {
                     ResultKt.throwOnFailure(obj);
                 }
-                m8507getZero9UxMQ8M = ((Velocity) obj).m8505unboximpl();
-                return Velocity.m8487boximpl(m8507getZero9UxMQ8M);
+                m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
+                return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
             }
         }
         nestedScrollDispatcher$dispatchPreFling$1 = new NestedScrollDispatcher$dispatchPreFling$1(this, continuation);
@@ -129,8 +129,8 @@ public final class NestedScrollDispatcher {
         i = nestedScrollDispatcher$dispatchPreFling$1.label;
         if (i != 0) {
         }
-        m8507getZero9UxMQ8M = ((Velocity) obj2).m8505unboximpl();
-        return Velocity.m8487boximpl(m8507getZero9UxMQ8M);
+        m7804getZero9UxMQ8M = ((Velocity) obj2).m7802unboximpl();
+        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x004f, code lost:
@@ -148,10 +148,10 @@ public final class NestedScrollDispatcher {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object m6605dispatchPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
+    public final Object m5946dispatchPostFlingRZ2iAVY(long j, long j2, Continuation<? super Velocity> continuation) {
         NestedScrollDispatcher$dispatchPostFling$1 nestedScrollDispatcher$dispatchPostFling$1;
         int i;
-        long m8507getZero9UxMQ8M;
+        long m7804getZero9UxMQ8M;
         if (continuation instanceof NestedScrollDispatcher$dispatchPostFling$1) {
             nestedScrollDispatcher$dispatchPostFling$1 = (NestedScrollDispatcher$dispatchPostFling$1) continuation;
             if ((nestedScrollDispatcher$dispatchPostFling$1.label & Integer.MIN_VALUE) != 0) {
@@ -166,29 +166,29 @@ public final class NestedScrollDispatcher {
                         NestedScrollNode nestedScrollNode = this.lastKnownParentNode;
                         if (nestedScrollNode != null) {
                             nestedScrollDispatcher$dispatchPostFling$12.label = 1;
-                            obj = nestedScrollNode.mo655onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
+                            obj = nestedScrollNode.mo572onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
                         } else {
-                            m8507getZero9UxMQ8M = Velocity.Companion.m8507getZero9UxMQ8M();
+                            m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
                         }
                     } else {
                         NestedScrollConnection parent$ui = getParent$ui();
                         if (parent$ui != null) {
                             nestedScrollDispatcher$dispatchPostFling$12.label = 2;
-                            obj = parent$ui.mo655onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
+                            obj = parent$ui.mo572onPostFlingRZ2iAVY(j, j2, nestedScrollDispatcher$dispatchPostFling$12);
                         } else {
-                            m8507getZero9UxMQ8M = Velocity.Companion.m8507getZero9UxMQ8M();
+                            m7804getZero9UxMQ8M = Velocity.Companion.m7804getZero9UxMQ8M();
                         }
                     }
                 } else if (i == 1) {
                     ResultKt.throwOnFailure(obj);
-                    m8507getZero9UxMQ8M = ((Velocity) obj).m8505unboximpl();
+                    m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
                 } else if (i != 2) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     ResultKt.throwOnFailure(obj);
-                    m8507getZero9UxMQ8M = ((Velocity) obj).m8505unboximpl();
+                    m7804getZero9UxMQ8M = ((Velocity) obj).m7802unboximpl();
                 }
-                return Velocity.m8487boximpl(m8507getZero9UxMQ8M);
+                return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
             }
         }
         nestedScrollDispatcher$dispatchPostFling$1 = new NestedScrollDispatcher$dispatchPostFling$1(this, continuation);
@@ -198,6 +198,6 @@ public final class NestedScrollDispatcher {
         i = nestedScrollDispatcher$dispatchPostFling$122.label;
         if (i != 0) {
         }
-        return Velocity.m8487boximpl(m8507getZero9UxMQ8M);
+        return Velocity.m7784boximpl(m7804getZero9UxMQ8M);
     }
 }

@@ -47,7 +47,7 @@ public final class PlatformSelectionBehaviorsImpl$onShowContextMenuOrSelectionTo
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m1839classifyTextM8tDOmk;
+        Object m1595classifyTextM8tDOmk;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -56,8 +56,8 @@ public final class PlatformSelectionBehaviorsImpl$onShowContextMenuOrSelectionTo
             CharSequence charSequence = this.$text;
             long j = this.f58$$v$c$androidxcomposeuitextTextRange$selection$0;
             this.label = 1;
-            m1839classifyTextM8tDOmk = platformSelectionBehaviorsImpl.m1839classifyTextM8tDOmk(charSequence, j, (TextClassifier) this.L$0, this);
-            if (m1839classifyTextM8tDOmk == coroutine_suspended) {
+            m1595classifyTextM8tDOmk = platformSelectionBehaviorsImpl.m1595classifyTextM8tDOmk(charSequence, j, (TextClassifier) this.L$0, this);
+            if (m1595classifyTextM8tDOmk == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

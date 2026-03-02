@@ -43,15 +43,13 @@ public final class ImageRequestsKt {
         builder.memoryCacheKeyExtra("coil#transformations", CollectionsKt.joinToString$default(list, null, null, null, 0, null, new Function1() { // from class: coil3.request.ImageRequestsKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence transformations$lambda$1$lambda$0;
-                transformations$lambda$1$lambda$0 = ImageRequestsKt.transformations$lambda$1$lambda$0(Ref.IntRef.this, (Transformation) obj);
-                return transformations$lambda$1$lambda$0;
+                return ImageRequestsKt.transformations$lambda$1$lambda$0(Ref.IntRef.this, (Transformation) obj);
             }
         }, 31, null));
         return builder;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence transformations$lambda$1$lambda$0(Ref.IntRef intRef, Transformation transformation) {
         StringBuilder sb = new StringBuilder();
         int i = intRef.element;

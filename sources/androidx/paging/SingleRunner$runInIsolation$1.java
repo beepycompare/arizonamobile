@@ -6,11 +6,10 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SingleRunner.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.SingleRunner", f = "SingleRunner.kt", i = {0}, l = {49}, m = "runInIsolation", n = {"this"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.SingleRunner", f = "SingleRunner.kt", i = {}, l = {43}, m = "runInIsolation", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class SingleRunner$runInIsolation$1 extends ContinuationImpl {
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ SingleRunner this$0;

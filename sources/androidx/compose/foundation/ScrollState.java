@@ -35,16 +35,15 @@ public final class ScrollState implements ScrollableState {
     private static final Saver<ScrollState, ?> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Integer Saver$lambda$0;
-            Saver$lambda$0 = ScrollState.Saver$lambda$0((SaverScope) obj, (ScrollState) obj2);
-            return Saver$lambda$0;
+            Integer valueOf;
+            SaverScope saverScope = (SaverScope) obj;
+            valueOf = Integer.valueOf(((ScrollState) obj2).getValue());
+            return valueOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            ScrollState Saver$lambda$1;
-            Saver$lambda$1 = ScrollState.Saver$lambda$1(((Integer) obj).intValue());
-            return Saver$lambda$1;
+            return ScrollState.Saver$lambda$1(((Integer) obj).intValue());
         }
     });
     private float accumulator;
@@ -56,9 +55,7 @@ public final class ScrollState implements ScrollableState {
     private final ScrollableState scrollableState = ScrollableStateKt.ScrollableState(new Function1() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            float scrollableState$lambda$0;
-            scrollableState$lambda$0 = ScrollState.scrollableState$lambda$0(ScrollState.this, ((Float) obj).floatValue());
-            return Float.valueOf(scrollableState$lambda$0);
+            return Float.valueOf(ScrollState.scrollableState$lambda$0(ScrollState.this, ((Float) obj).floatValue()));
         }
     });
     private final ScrollState$_scrollIndicatorState$1 _scrollIndicatorState = new ScrollIndicatorState() { // from class: androidx.compose.foundation.ScrollState$_scrollIndicatorState$1
@@ -80,17 +77,13 @@ public final class ScrollState implements ScrollableState {
     private final State canScrollForward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            boolean canScrollForward_delegate$lambda$0;
-            canScrollForward_delegate$lambda$0 = ScrollState.canScrollForward_delegate$lambda$0(ScrollState.this);
-            return Boolean.valueOf(canScrollForward_delegate$lambda$0);
+            return Boolean.valueOf(ScrollState.canScrollForward_delegate$lambda$0(ScrollState.this));
         }
     });
     private final State canScrollBackward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.ScrollState$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            boolean canScrollBackward_delegate$lambda$0;
-            canScrollBackward_delegate$lambda$0 = ScrollState.canScrollBackward_delegate$lambda$0(ScrollState.this);
-            return Boolean.valueOf(canScrollBackward_delegate$lambda$0);
+            return Boolean.valueOf(ScrollState.canScrollBackward_delegate$lambda$0(ScrollState.this));
         }
     });
 
@@ -151,7 +144,7 @@ public final class ScrollState implements ScrollableState {
         return this.internalInteractionSource;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float scrollableState$lambda$0(ScrollState scrollState, float f) {
         float value = scrollState.getValue() + f + scrollState.accumulator;
         float coerceIn = RangesKt.coerceIn(value, 0.0f, scrollState.getMaxValue());
@@ -179,7 +172,7 @@ public final class ScrollState implements ScrollableState {
         return this.scrollableState.isScrollInProgress();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean canScrollForward_delegate$lambda$0(ScrollState scrollState) {
         return scrollState.getValue() < scrollState.getMaxValue();
     }
@@ -189,7 +182,7 @@ public final class ScrollState implements ScrollableState {
         return ((Boolean) this.canScrollForward$delegate.getValue()).booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean canScrollBackward_delegate$lambda$0(ScrollState scrollState) {
         return scrollState.getValue() > 0;
     }
@@ -247,12 +240,7 @@ public final class ScrollState implements ScrollableState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Integer Saver$lambda$0(SaverScope saverScope, ScrollState scrollState) {
-        return Integer.valueOf(scrollState.getValue());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ScrollState Saver$lambda$1(int i) {
         return new ScrollState(i);
     }

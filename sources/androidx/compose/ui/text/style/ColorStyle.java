@@ -17,20 +17,20 @@ public final class ColorStyle implements TextForegroundStyle {
     }
 
     /* renamed from: copy-8_81llA$default  reason: not valid java name */
-    public static /* synthetic */ ColorStyle m8017copy8_81llA$default(ColorStyle colorStyle, long j, int i, Object obj) {
+    public static /* synthetic */ ColorStyle m7314copy8_81llA$default(ColorStyle colorStyle, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             j = colorStyle.value;
         }
-        return colorStyle.m8019copy8_81llA(j);
+        return colorStyle.m7316copy8_81llA(j);
     }
 
     /* renamed from: component1-0d7_KjU  reason: not valid java name */
-    public final long m8018component10d7_KjU() {
+    public final long m7315component10d7_KjU() {
         return this.value;
     }
 
     /* renamed from: copy-8_81llA  reason: not valid java name */
-    public final ColorStyle m8019copy8_81llA(long j) {
+    public final ColorStyle m7316copy8_81llA(long j) {
         return new ColorStyle(j, null);
     }
 
@@ -38,7 +38,7 @@ public final class ColorStyle implements TextForegroundStyle {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ColorStyle) && Color.m5425equalsimpl0(this.value, ((ColorStyle) obj).value);
+        return (obj instanceof ColorStyle) && Color.m4773equalsimpl0(this.value, ((ColorStyle) obj).value);
     }
 
     @Override // androidx.compose.ui.text.style.TextForegroundStyle
@@ -47,11 +47,11 @@ public final class ColorStyle implements TextForegroundStyle {
     }
 
     public int hashCode() {
-        return Color.m5431hashCodeimpl(this.value);
+        return Color.m4779hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return "ColorStyle(value=" + ((Object) Color.m5432toStringimpl(this.value)) + ')';
+        return "ColorStyle(value=" + ((Object) Color.m4780toStringimpl(this.value)) + ')';
     }
 
     private ColorStyle(long j) {
@@ -63,18 +63,18 @@ public final class ColorStyle implements TextForegroundStyle {
     }
 
     /* renamed from: getValue-0d7_KjU  reason: not valid java name */
-    public final long m8020getValue0d7_KjU() {
+    public final long m7317getValue0d7_KjU() {
         return this.value;
     }
 
     @Override // androidx.compose.ui.text.style.TextForegroundStyle
     /* renamed from: getColor-0d7_KjU */
-    public long mo8016getColor0d7_KjU() {
+    public long mo7313getColor0d7_KjU() {
         return this.value;
     }
 
     @Override // androidx.compose.ui.text.style.TextForegroundStyle
     public float getAlpha() {
-        return Color.m5426getAlphaimpl(mo8016getColor0d7_KjU());
+        return Color.m4774getAlphaimpl(mo7313getColor0d7_KjU());
     }
 }

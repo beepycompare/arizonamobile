@@ -45,7 +45,9 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     }
 
     public boolean isEmpty() {
-        return this.step > 0 ? this.first > this.last : this.first < this.last;
+        int i = this.step;
+        int i2 = this.first;
+        return i > 0 ? i2 > this.last : i2 < this.last;
     }
 
     public boolean equals(Object obj) {
@@ -69,11 +71,13 @@ public class IntProgression implements Iterable<Integer>, KMappedMarker {
     public String toString() {
         StringBuilder append;
         int i;
-        if (this.step > 0) {
-            append = new StringBuilder().append(this.first).append("..").append(this.last).append(" step ");
+        int i2 = this.step;
+        int i3 = this.first;
+        if (i2 > 0) {
+            append = new StringBuilder().append(i3).append("..").append(this.last).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append(this.first).append(" downTo ").append(this.last).append(" step ");
+            append = new StringBuilder().append(i3).append(" downTo ").append(this.last).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();

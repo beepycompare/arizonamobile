@@ -106,27 +106,25 @@ public final class HorizontalScrollLayoutModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s  reason: not valid java name */
-    public MeasureResult mo1371measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo1198measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
         long j2;
-        if (measurable.maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j)) < Constraints.m8211getMaxWidthimpl(j)) {
+        if (measurable.maxIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j)) < Constraints.m7508getMaxWidthimpl(j)) {
             j2 = j;
         } else {
             j2 = j;
-            j = Constraints.m8201copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
+            j = Constraints.m7498copyZbe2FdA$default(j2, 0, Integer.MAX_VALUE, 0, 0, 13, null);
         }
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        final int min = Math.min(mo6875measureBRTryo0.getWidth(), Constraints.m8211getMaxWidthimpl(j2));
-        return MeasureScope.layout$default(measureScope, min, mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$$ExternalSyntheticLambda0
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        final int min = Math.min(mo6216measureBRTryo0.getWidth(), Constraints.m7508getMaxWidthimpl(j2));
+        return MeasureScope.layout$default(measureScope, min, mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.HorizontalScrollLayoutModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = HorizontalScrollLayoutModifier.measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier.this, measureScope, mo6875measureBRTryo0, min, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return HorizontalScrollLayoutModifier.measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier.this, measureScope, mo6216measureBRTryo0, min, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(HorizontalScrollLayoutModifier horizontalScrollLayoutModifier, MeasureScope measureScope, Placeable placeable, int i, Placeable.PlacementScope placementScope) {
         Rect cursorRectInScroller;
         Placeable.PlacementScope placementScope2 = placementScope;

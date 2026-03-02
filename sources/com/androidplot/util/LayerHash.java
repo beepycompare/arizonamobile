@@ -20,19 +20,23 @@ public class LayerHash<KeyType, ValueType> implements Layerable<KeyType> {
     }
 
     public synchronized void addToTop(KeyType keytype, ValueType valuetype) {
-        if (this.hash.containsKey(keytype)) {
-            this.hash.put(keytype, valuetype);
+        boolean containsKey = this.hash.containsKey(keytype);
+        HashMap<KeyType, ValueType> hashMap = this.hash;
+        if (containsKey) {
+            hashMap.put(keytype, valuetype);
         } else {
-            this.hash.put(keytype, valuetype);
+            hashMap.put(keytype, valuetype);
             this.zlist.addToTop(keytype);
         }
     }
 
     public synchronized void addToBottom(KeyType keytype, ValueType valuetype) {
-        if (this.hash.containsKey(keytype)) {
-            this.hash.put(keytype, valuetype);
+        boolean containsKey = this.hash.containsKey(keytype);
+        HashMap<KeyType, ValueType> hashMap = this.hash;
+        if (containsKey) {
+            hashMap.put(keytype, valuetype);
         } else {
-            this.hash.put(keytype, valuetype);
+            hashMap.put(keytype, valuetype);
             this.zlist.addToBottom(keytype);
         }
     }

@@ -105,14 +105,12 @@ public final class LazyLayoutItemContentFactory {
             return ComposableLambdaKt.composableLambdaInstance(818252804, true, new Function2() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemContentFactory$CachedItemContent$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit createContentLambda$lambda$0;
-                    createContentLambda$lambda$0 = LazyLayoutItemContentFactory.CachedItemContent.createContentLambda$lambda$0(LazyLayoutItemContentFactory.this, this, (Composer) obj, ((Integer) obj2).intValue());
-                    return createContentLambda$lambda$0;
+                    return LazyLayoutItemContentFactory.CachedItemContent.createContentLambda$lambda$0(LazyLayoutItemContentFactory.this, this, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit createContentLambda$lambda$0(LazyLayoutItemContentFactory lazyLayoutItemContentFactory, final CachedItemContent cachedItemContent, Composer composer, int i) {
             Composer composer2;
             ComposerKt.sourceInformation(composer, "C101@3940L244,101@3918L266:LazyLayoutItemContentFactory.kt#wow0x6");
@@ -132,7 +130,7 @@ public final class LazyLayoutItemContentFactory {
                     composer.startReplaceGroup(-1664741271);
                     ComposerKt.sourceInformation(composer, "94@3678L205");
                     composer2 = composer;
-                    LazyLayoutItemContentFactoryKt.m1129SkippableItemJVlU9Rs(invoke, StableValue.m1160constructorimpl(lazyLayoutItemContentFactory.saveableStateHolder), i3, StableValue.m1160constructorimpl(cachedItemContent.key), composer2, 0);
+                    LazyLayoutItemContentFactoryKt.m991SkippableItemJVlU9Rs(invoke, StableValue.m1019constructorimpl(lazyLayoutItemContentFactory.saveableStateHolder), i3, StableValue.m1019constructorimpl(cachedItemContent.key), composer2, 0);
                 } else {
                     composer2 = composer;
                     composer2.startReplaceGroup(-1668376610);

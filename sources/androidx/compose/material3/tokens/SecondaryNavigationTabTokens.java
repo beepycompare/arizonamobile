@@ -10,11 +10,11 @@ public final class SecondaryNavigationTabTokens {
     public static final SecondaryNavigationTabTokens INSTANCE = new SecondaryNavigationTabTokens();
     private static final ColorSchemeKeyTokens ActiveLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
-    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 48.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 48.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerNone;
     private static final ColorSchemeKeyTokens DividerColor = ColorSchemeKeyTokens.SurfaceVariant;
-    private static final float DividerHeight = Dp.m8258constructorimpl((float) 1.0d);
+    private static final float DividerHeight = Dp.m7555constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens FocusLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens InactiveLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -23,7 +23,7 @@ public final class SecondaryNavigationTabTokens {
     private static final ColorSchemeKeyTokens ActiveIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens FocusIconColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens HoverIconColor = ColorSchemeKeyTokens.OnSurface;
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
     private static final ColorSchemeKeyTokens InactiveIconColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens PressedIconColor = ColorSchemeKeyTokens.OnSurface;
 
@@ -39,12 +39,12 @@ public final class SecondaryNavigationTabTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4325getContainerElevationD9Ej5fM() {
+    public final float m3709getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4326getContainerHeightD9Ej5fM() {
+    public final float m3710getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -57,7 +57,7 @@ public final class SecondaryNavigationTabTokens {
     }
 
     /* renamed from: getDividerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4327getDividerHeightD9Ej5fM() {
+    public final float m3711getDividerHeightD9Ej5fM() {
         return DividerHeight;
     }
 
@@ -94,7 +94,7 @@ public final class SecondaryNavigationTabTokens {
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4328getIconSizeD9Ej5fM() {
+    public final float m3712getIconSizeD9Ej5fM() {
         return IconSize;
     }
 

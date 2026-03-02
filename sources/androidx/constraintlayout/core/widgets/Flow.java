@@ -211,7 +211,6 @@ public class Flow extends VirtualLayout {
 
     @Override // androidx.constraintlayout.core.widgets.VirtualLayout
     public void measure(int i, int i2, int i3, int i4) {
-        ConstraintWidget[] constraintWidgetArr;
         if (this.mWidgetsCount > 0 && !measureChildren()) {
             setMeasure(0, 0);
             needsCallbackFromSolver(false);
@@ -228,59 +227,56 @@ public class Flow extends VirtualLayout {
             i5 = (i4 - paddingTop) - paddingBottom;
         }
         int i7 = i5;
+        int i8 = this.mHorizontalStyle;
         if (i6 == 0) {
-            if (this.mHorizontalStyle == -1) {
+            if (i8 == -1) {
                 this.mHorizontalStyle = 0;
             }
             if (this.mVerticalStyle == -1) {
                 this.mVerticalStyle = 0;
             }
         } else {
-            if (this.mHorizontalStyle == -1) {
+            if (i8 == -1) {
                 this.mHorizontalStyle = 0;
             }
             if (this.mVerticalStyle == -1) {
                 this.mVerticalStyle = 0;
             }
         }
-        ConstraintWidget[] constraintWidgetArr2 = this.mWidgets;
-        int i8 = 0;
-        for (int i9 = 0; i9 < this.mWidgetsCount; i9++) {
-            if (this.mWidgets[i9].getVisibility() == 8) {
-                i8++;
+        ConstraintWidget[] constraintWidgetArr = this.mWidgets;
+        int i9 = 0;
+        for (int i10 = 0; i10 < this.mWidgetsCount; i10++) {
+            if (this.mWidgets[i10].getVisibility() == 8) {
+                i9++;
             }
         }
-        int i10 = this.mWidgetsCount;
-        if (i8 > 0) {
-            ConstraintWidget[] constraintWidgetArr3 = new ConstraintWidget[this.mWidgetsCount - i8];
-            i10 = 0;
-            int i11 = 0;
-            while (i11 < this.mWidgetsCount) {
-                ConstraintWidget constraintWidget = this.mWidgets[i11];
-                ConstraintWidget[] constraintWidgetArr4 = constraintWidgetArr3;
+        int i11 = this.mWidgetsCount;
+        if (i9 > 0) {
+            constraintWidgetArr = new ConstraintWidget[this.mWidgetsCount - i9];
+            i11 = 0;
+            int i12 = 0;
+            while (i12 < this.mWidgetsCount) {
+                ConstraintWidget constraintWidget = this.mWidgets[i12];
+                ConstraintWidget[] constraintWidgetArr2 = constraintWidgetArr;
                 if (constraintWidget.getVisibility() != 8) {
-                    constraintWidgetArr4[i10] = constraintWidget;
-                    i10++;
+                    constraintWidgetArr2[i11] = constraintWidget;
+                    i11++;
                 }
-                i11++;
-                constraintWidgetArr3 = constraintWidgetArr4;
+                i12++;
+                constraintWidgetArr = constraintWidgetArr2;
             }
-            constraintWidgetArr = constraintWidgetArr3;
-        } else {
-            constraintWidgetArr = constraintWidgetArr2;
         }
-        int i12 = i10;
         this.mDisplayedWidgets = constraintWidgetArr;
-        this.mDisplayedWidgetsCount = i12;
+        this.mDisplayedWidgetsCount = i11;
         int i13 = this.mWrapMode;
         if (i13 == 0) {
-            measureNoWrap(constraintWidgetArr, i12, this.mOrientation, i7, iArr);
+            measureNoWrap(constraintWidgetArr, i11, this.mOrientation, i7, iArr);
         } else if (i13 == 1) {
-            measureChainWrap(constraintWidgetArr, i12, this.mOrientation, i7, iArr);
+            measureChainWrap(constraintWidgetArr, i11, this.mOrientation, i7, iArr);
         } else if (i13 == 2) {
-            measureAligned(constraintWidgetArr, i12, this.mOrientation, i7, iArr);
+            measureAligned(constraintWidgetArr, i11, this.mOrientation, i7, iArr);
         } else if (i13 == 3) {
-            measureChainWrap_new(constraintWidgetArr, i12, this.mOrientation, i7, iArr);
+            measureChainWrap_new(constraintWidgetArr, i11, this.mOrientation, i7, iArr);
         }
         int i14 = iArr[0] + paddingLeft + paddingRight;
         int i15 = iArr[1] + paddingTop + paddingBottom;
@@ -371,22 +367,22 @@ public class Flow extends VirtualLayout {
         }
 
         public int getWidth() {
-            if (this.mOrientation == 0) {
-                return this.mWidth - Flow.this.mHorizontalGap;
-            }
-            return this.mWidth;
+            int i = this.mOrientation;
+            int i2 = this.mWidth;
+            return i == 0 ? i2 - Flow.this.mHorizontalGap : i2;
         }
 
         public int getHeight() {
-            if (this.mOrientation == 1) {
-                return this.mHeight - Flow.this.mVerticalGap;
-            }
-            return this.mHeight;
+            int i = this.mOrientation;
+            int i2 = this.mHeight;
+            return i == 1 ? i2 - Flow.this.mVerticalGap : i2;
         }
 
         public void add(ConstraintWidget constraintWidget) {
-            if (this.mOrientation == 0) {
-                int widgetWidth = Flow.this.getWidgetWidth(constraintWidget, this.mMax);
+            int i = this.mOrientation;
+            Flow flow = Flow.this;
+            if (i == 0) {
+                int widgetWidth = flow.getWidgetWidth(constraintWidget, this.mMax);
                 if (constraintWidget.getHorizontalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                     this.mNbMatchConstraintsWidgets++;
                     widgetWidth = 0;
@@ -399,7 +395,7 @@ public class Flow extends VirtualLayout {
                     this.mHeight = widgetHeight;
                 }
             } else {
-                int widgetWidth2 = Flow.this.getWidgetWidth(constraintWidget, this.mMax);
+                int widgetWidth2 = flow.getWidgetWidth(constraintWidget, this.mMax);
                 int widgetHeight2 = Flow.this.getWidgetHeight(constraintWidget, this.mMax);
                 if (constraintWidget.getVerticalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                     this.mNbMatchConstraintsWidgets++;
@@ -415,12 +411,22 @@ public class Flow extends VirtualLayout {
             this.mCount++;
         }
 
+        /* JADX WARN: Code restructure failed: missing block: B:85:0x0142, code lost:
+            if (r18 != false) goto L83;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:86:0x0144, code lost:
+            r11 = 1.0f - r11;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:91:0x015d, code lost:
+            if (r18 != false) goto L83;
+         */
+        /*
+            Code decompiled incorrectly, please refer to instructions dump.
+        */
         public void createConstraints(boolean z, int i, boolean z2) {
             ConstraintWidget constraintWidget;
             int i2;
             char c;
-            float f;
-            float f2;
             int i3 = this.mCount;
             for (int i4 = 0; i4 < i3 && this.mStartIndex + i4 < Flow.this.mDisplayedWidgetsCount; i4++) {
                 ConstraintWidget constraintWidget2 = Flow.this.mDisplayedWidgets[this.mStartIndex + i4];
@@ -447,111 +453,98 @@ public class Flow extends VirtualLayout {
                     i6 = i7;
                 }
             }
-            ConstraintWidget constraintWidget4 = null;
-            if (this.mOrientation == 0) {
-                ConstraintWidget constraintWidget5 = this.mBiggest;
-                constraintWidget5.setVerticalChainStyle(Flow.this.mVerticalStyle);
-                int i9 = this.mPaddingTop;
+            int i9 = this.mOrientation;
+            ConstraintWidget constraintWidget4 = this.mBiggest;
+            ConstraintWidget constraintWidget5 = null;
+            if (i9 == 0) {
+                constraintWidget4.setVerticalChainStyle(Flow.this.mVerticalStyle);
+                int i10 = this.mPaddingTop;
                 if (i > 0) {
-                    i9 += Flow.this.mVerticalGap;
+                    i10 += Flow.this.mVerticalGap;
                 }
-                constraintWidget5.mTop.connect(this.mTop, i9);
+                constraintWidget4.mTop.connect(this.mTop, i10);
                 if (z2) {
-                    constraintWidget5.mBottom.connect(this.mBottom, this.mPaddingBottom);
+                    constraintWidget4.mBottom.connect(this.mBottom, this.mPaddingBottom);
                 }
                 if (i > 0) {
-                    this.mTop.mOwner.mBottom.connect(constraintWidget5.mTop, 0);
+                    this.mTop.mOwner.mBottom.connect(constraintWidget4.mTop, 0);
                 }
                 char c2 = 3;
-                if (Flow.this.mVerticalAlign == 3 && !constraintWidget5.hasBaseline()) {
-                    for (int i10 = 0; i10 < i3; i10++) {
-                        int i11 = z ? (i3 - 1) - i10 : i10;
-                        if (this.mStartIndex + i11 >= Flow.this.mDisplayedWidgetsCount) {
+                if (Flow.this.mVerticalAlign == 3 && !constraintWidget4.hasBaseline()) {
+                    for (int i11 = 0; i11 < i3; i11++) {
+                        int i12 = z ? (i3 - 1) - i11 : i11;
+                        if (this.mStartIndex + i12 >= Flow.this.mDisplayedWidgetsCount) {
                             break;
                         }
-                        constraintWidget = Flow.this.mDisplayedWidgets[this.mStartIndex + i11];
+                        constraintWidget = Flow.this.mDisplayedWidgets[this.mStartIndex + i12];
                         if (constraintWidget.hasBaseline()) {
                             break;
                         }
                     }
                 }
-                constraintWidget = constraintWidget5;
-                int i12 = 0;
-                while (i12 < i3) {
-                    int i13 = z ? (i3 - 1) - i12 : i12;
-                    if (this.mStartIndex + i13 >= Flow.this.mDisplayedWidgetsCount) {
+                constraintWidget = constraintWidget4;
+                int i13 = 0;
+                while (i13 < i3) {
+                    int i14 = z ? (i3 - 1) - i13 : i13;
+                    if (this.mStartIndex + i14 >= Flow.this.mDisplayedWidgetsCount) {
                         return;
                     }
-                    ConstraintWidget constraintWidget6 = Flow.this.mDisplayedWidgets[this.mStartIndex + i13];
+                    ConstraintWidget constraintWidget6 = Flow.this.mDisplayedWidgets[this.mStartIndex + i14];
                     if (constraintWidget6 == null) {
-                        constraintWidget6 = constraintWidget4;
+                        constraintWidget6 = constraintWidget5;
                         c = c2;
                     } else {
-                        if (i12 == 0) {
+                        if (i13 == 0) {
                             i2 = 1;
                             constraintWidget6.connect(constraintWidget6.mLeft, this.mLeft, this.mPaddingLeft);
                         } else {
                             i2 = 1;
                         }
-                        if (i13 == 0) {
-                            int i14 = Flow.this.mHorizontalStyle;
-                            float f3 = Flow.this.mHorizontalBias;
+                        if (i14 == 0) {
+                            int i15 = Flow.this.mHorizontalStyle;
+                            float f = Flow.this.mHorizontalBias;
                             if (z) {
-                                f3 = 1.0f - f3;
+                                f = 1.0f - f;
                             }
                             if (this.mStartIndex != 0 || Flow.this.mFirstHorizontalStyle == -1) {
                                 if (z2 && Flow.this.mLastHorizontalStyle != -1) {
-                                    i14 = Flow.this.mLastHorizontalStyle;
-                                    if (z) {
-                                        f2 = Flow.this.mLastHorizontalBias;
-                                        f = 1.0f - f2;
-                                        f3 = f;
-                                    } else {
-                                        f = Flow.this.mLastHorizontalBias;
-                                        f3 = f;
-                                    }
+                                    i15 = Flow.this.mLastHorizontalStyle;
+                                    f = Flow.this.mLastHorizontalBias;
                                 }
+                                constraintWidget6.setHorizontalChainStyle(i15);
+                                constraintWidget6.setHorizontalBiasPercent(f);
                             } else {
-                                i14 = Flow.this.mFirstHorizontalStyle;
-                                if (z) {
-                                    f2 = Flow.this.mFirstHorizontalBias;
-                                    f = 1.0f - f2;
-                                    f3 = f;
-                                } else {
-                                    f = Flow.this.mFirstHorizontalBias;
-                                    f3 = f;
-                                }
+                                i15 = Flow.this.mFirstHorizontalStyle;
+                                f = Flow.this.mFirstHorizontalBias;
                             }
-                            constraintWidget6.setHorizontalChainStyle(i14);
-                            constraintWidget6.setHorizontalBiasPercent(f3);
                         }
-                        if (i12 == i3 - 1) {
+                        if (i13 == i3 - 1) {
                             constraintWidget6.connect(constraintWidget6.mRight, this.mRight, this.mPaddingRight);
                         }
-                        if (constraintWidget4 != null) {
-                            constraintWidget6.mLeft.connect(constraintWidget4.mRight, Flow.this.mHorizontalGap);
-                            if (i12 == i5) {
+                        if (constraintWidget5 != null) {
+                            constraintWidget6.mLeft.connect(constraintWidget5.mRight, Flow.this.mHorizontalGap);
+                            if (i13 == i5) {
                                 constraintWidget6.mLeft.setGoneMargin(this.mPaddingLeft);
                             }
-                            constraintWidget4.mRight.connect(constraintWidget6.mLeft, 0);
-                            if (i12 == i6 + 1) {
-                                constraintWidget4.mRight.setGoneMargin(this.mPaddingRight);
+                            constraintWidget5.mRight.connect(constraintWidget6.mLeft, 0);
+                            if (i13 == i6 + 1) {
+                                constraintWidget5.mRight.setGoneMargin(this.mPaddingRight);
                             }
                         }
-                        if (constraintWidget6 != constraintWidget5) {
+                        if (constraintWidget6 != constraintWidget4) {
                             c = 3;
                             if (Flow.this.mVerticalAlign != 3 || !constraintWidget.hasBaseline() || constraintWidget6 == constraintWidget || !constraintWidget6.hasBaseline()) {
-                                int i15 = Flow.this.mVerticalAlign;
-                                if (i15 == 0) {
-                                    constraintWidget6.mTop.connect(constraintWidget5.mTop, 0);
-                                } else if (i15 == i2) {
-                                    constraintWidget6.mBottom.connect(constraintWidget5.mBottom, 0);
+                                int i16 = Flow.this.mVerticalAlign;
+                                if (i16 == 0) {
+                                    constraintWidget6.mTop.connect(constraintWidget4.mTop, 0);
+                                } else if (i16 == i2) {
+                                    constraintWidget6.mBottom.connect(constraintWidget4.mBottom, 0);
                                 } else if (z3) {
                                     constraintWidget6.mTop.connect(this.mTop, this.mPaddingTop);
                                     constraintWidget6.mBottom.connect(this.mBottom, this.mPaddingBottom);
                                 } else {
-                                    constraintWidget6.mTop.connect(constraintWidget5.mTop, 0);
-                                    constraintWidget6.mBottom.connect(constraintWidget5.mBottom, 0);
+                                    constraintWidget6.mTop.connect(constraintWidget4.mTop, 0);
+                                    constraintWidget6.mBottom.connect(constraintWidget4.mBottom, 0);
                                 }
                             } else {
                                 constraintWidget6.mBaseline.connect(constraintWidget.mBaseline, 0);
@@ -560,97 +553,97 @@ public class Flow extends VirtualLayout {
                             c = 3;
                         }
                     }
-                    i12++;
+                    i13++;
                     c2 = c;
-                    constraintWidget4 = constraintWidget6;
+                    constraintWidget5 = constraintWidget6;
                 }
                 return;
             }
-            ConstraintWidget constraintWidget7 = this.mBiggest;
-            constraintWidget7.setHorizontalChainStyle(Flow.this.mHorizontalStyle);
-            int i16 = this.mPaddingLeft;
+            constraintWidget4.setHorizontalChainStyle(Flow.this.mHorizontalStyle);
+            int i17 = this.mPaddingLeft;
             if (i > 0) {
-                i16 += Flow.this.mHorizontalGap;
+                i17 += Flow.this.mHorizontalGap;
             }
             if (z) {
-                constraintWidget7.mRight.connect(this.mRight, i16);
+                constraintWidget4.mRight.connect(this.mRight, i17);
                 if (z2) {
-                    constraintWidget7.mLeft.connect(this.mLeft, this.mPaddingRight);
+                    constraintWidget4.mLeft.connect(this.mLeft, this.mPaddingRight);
                 }
                 if (i > 0) {
-                    this.mRight.mOwner.mLeft.connect(constraintWidget7.mRight, 0);
+                    this.mRight.mOwner.mLeft.connect(constraintWidget4.mRight, 0);
                 }
             } else {
-                constraintWidget7.mLeft.connect(this.mLeft, i16);
+                constraintWidget4.mLeft.connect(this.mLeft, i17);
                 if (z2) {
-                    constraintWidget7.mRight.connect(this.mRight, this.mPaddingRight);
+                    constraintWidget4.mRight.connect(this.mRight, this.mPaddingRight);
                 }
                 if (i > 0) {
-                    this.mLeft.mOwner.mRight.connect(constraintWidget7.mLeft, 0);
+                    this.mLeft.mOwner.mRight.connect(constraintWidget4.mLeft, 0);
                 }
             }
-            for (int i17 = 0; i17 < i3 && this.mStartIndex + i17 < Flow.this.mDisplayedWidgetsCount; i17++) {
-                ConstraintWidget constraintWidget8 = Flow.this.mDisplayedWidgets[this.mStartIndex + i17];
-                if (constraintWidget8 != null) {
-                    if (i17 == 0) {
-                        constraintWidget8.connect(constraintWidget8.mTop, this.mTop, this.mPaddingTop);
-                        int i18 = Flow.this.mVerticalStyle;
-                        float f4 = Flow.this.mVerticalBias;
+            for (int i18 = 0; i18 < i3 && this.mStartIndex + i18 < Flow.this.mDisplayedWidgetsCount; i18++) {
+                ConstraintWidget constraintWidget7 = Flow.this.mDisplayedWidgets[this.mStartIndex + i18];
+                if (constraintWidget7 != null) {
+                    if (i18 == 0) {
+                        constraintWidget7.connect(constraintWidget7.mTop, this.mTop, this.mPaddingTop);
+                        int i19 = Flow.this.mVerticalStyle;
+                        float f2 = Flow.this.mVerticalBias;
                         if (this.mStartIndex != 0 || Flow.this.mFirstVerticalStyle == -1) {
                             if (z2 && Flow.this.mLastVerticalStyle != -1) {
-                                i18 = Flow.this.mLastVerticalStyle;
-                                f4 = Flow.this.mLastVerticalBias;
+                                i19 = Flow.this.mLastVerticalStyle;
+                                f2 = Flow.this.mLastVerticalBias;
                             }
                         } else {
-                            i18 = Flow.this.mFirstVerticalStyle;
-                            f4 = Flow.this.mFirstVerticalBias;
+                            i19 = Flow.this.mFirstVerticalStyle;
+                            f2 = Flow.this.mFirstVerticalBias;
                         }
-                        constraintWidget8.setVerticalChainStyle(i18);
-                        constraintWidget8.setVerticalBiasPercent(f4);
+                        constraintWidget7.setVerticalChainStyle(i19);
+                        constraintWidget7.setVerticalBiasPercent(f2);
                     }
-                    if (i17 == i3 - 1) {
-                        constraintWidget8.connect(constraintWidget8.mBottom, this.mBottom, this.mPaddingBottom);
+                    if (i18 == i3 - 1) {
+                        constraintWidget7.connect(constraintWidget7.mBottom, this.mBottom, this.mPaddingBottom);
                     }
-                    if (constraintWidget4 != null) {
-                        constraintWidget8.mTop.connect(constraintWidget4.mBottom, Flow.this.mVerticalGap);
-                        if (i17 == i5) {
-                            constraintWidget8.mTop.setGoneMargin(this.mPaddingTop);
+                    if (constraintWidget5 != null) {
+                        constraintWidget7.mTop.connect(constraintWidget5.mBottom, Flow.this.mVerticalGap);
+                        if (i18 == i5) {
+                            constraintWidget7.mTop.setGoneMargin(this.mPaddingTop);
                         }
-                        constraintWidget4.mBottom.connect(constraintWidget8.mTop, 0);
-                        if (i17 == i6 + 1) {
-                            constraintWidget4.mBottom.setGoneMargin(this.mPaddingBottom);
+                        constraintWidget5.mBottom.connect(constraintWidget7.mTop, 0);
+                        if (i18 == i6 + 1) {
+                            constraintWidget5.mBottom.setGoneMargin(this.mPaddingBottom);
                         }
                     }
-                    if (constraintWidget8 != constraintWidget7) {
+                    if (constraintWidget7 != constraintWidget4) {
+                        Flow flow = Flow.this;
                         if (z) {
-                            int i19 = Flow.this.mHorizontalAlign;
-                            if (i19 == 0) {
-                                constraintWidget8.mRight.connect(constraintWidget7.mRight, 0);
-                            } else if (i19 == 1) {
-                                constraintWidget8.mLeft.connect(constraintWidget7.mLeft, 0);
-                            } else if (i19 == 2) {
-                                constraintWidget8.mLeft.connect(constraintWidget7.mLeft, 0);
-                                constraintWidget8.mRight.connect(constraintWidget7.mRight, 0);
+                            int i20 = flow.mHorizontalAlign;
+                            if (i20 == 0) {
+                                constraintWidget7.mRight.connect(constraintWidget4.mRight, 0);
+                            } else if (i20 == 1) {
+                                constraintWidget7.mLeft.connect(constraintWidget4.mLeft, 0);
+                            } else if (i20 == 2) {
+                                constraintWidget7.mLeft.connect(constraintWidget4.mLeft, 0);
+                                constraintWidget7.mRight.connect(constraintWidget4.mRight, 0);
                             }
                         } else {
-                            int i20 = Flow.this.mHorizontalAlign;
-                            if (i20 == 0) {
-                                constraintWidget8.mLeft.connect(constraintWidget7.mLeft, 0);
-                            } else if (i20 == 1) {
-                                constraintWidget8.mRight.connect(constraintWidget7.mRight, 0);
-                            } else if (i20 == 2) {
+                            int i21 = flow.mHorizontalAlign;
+                            if (i21 == 0) {
+                                constraintWidget7.mLeft.connect(constraintWidget4.mLeft, 0);
+                            } else if (i21 == 1) {
+                                constraintWidget7.mRight.connect(constraintWidget4.mRight, 0);
+                            } else if (i21 == 2) {
                                 if (z3) {
-                                    constraintWidget8.mLeft.connect(this.mLeft, this.mPaddingLeft);
-                                    constraintWidget8.mRight.connect(this.mRight, this.mPaddingRight);
+                                    constraintWidget7.mLeft.connect(this.mLeft, this.mPaddingLeft);
+                                    constraintWidget7.mRight.connect(this.mRight, this.mPaddingRight);
                                 } else {
-                                    constraintWidget8.mLeft.connect(constraintWidget7.mLeft, 0);
-                                    constraintWidget8.mRight.connect(constraintWidget7.mRight, 0);
+                                    constraintWidget7.mLeft.connect(constraintWidget4.mLeft, 0);
+                                    constraintWidget7.mRight.connect(constraintWidget4.mRight, 0);
                                 }
                             }
-                            constraintWidget4 = constraintWidget8;
+                            constraintWidget5 = constraintWidget7;
                         }
                     }
-                    constraintWidget4 = constraintWidget8;
+                    constraintWidget5 = constraintWidget7;
                 }
             }
         }
@@ -1080,146 +1073,144 @@ public class Flow extends VirtualLayout {
         iArr[1] = widgetsList.getHeight();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x005e  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:105:0x010d -> B:42:0x0059). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:106:0x010f -> B:42:0x0059). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:108:0x0115 -> B:42:0x0059). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:109:0x0117 -> B:42:0x0059). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x005c  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:103:0x010b -> B:40:0x0057). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:104:0x010d -> B:40:0x0057). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:106:0x0113 -> B:40:0x0057). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:107:0x0115 -> B:40:0x0057). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private void measureAligned(ConstraintWidget[] constraintWidgetArr, int i, int i2, int i3, int[] iArr) {
         int i4;
-        int i5;
         boolean z;
         ConstraintWidget constraintWidget;
+        int i5 = this.mMaxElementsWrap;
         if (i2 == 0) {
-            int i6 = this.mMaxElementsWrap;
-            if (i6 <= 0) {
-                i6 = 0;
-                int i7 = 0;
-                for (int i8 = 0; i8 < i; i8++) {
-                    if (i8 > 0) {
-                        i7 += this.mHorizontalGap;
+            if (i5 <= 0) {
+                i5 = 0;
+                int i6 = 0;
+                for (int i7 = 0; i7 < i; i7++) {
+                    if (i7 > 0) {
+                        i6 += this.mHorizontalGap;
                     }
-                    ConstraintWidget constraintWidget2 = constraintWidgetArr[i8];
+                    ConstraintWidget constraintWidget2 = constraintWidgetArr[i7];
                     if (constraintWidget2 != null) {
-                        i7 += getWidgetWidth(constraintWidget2, i3);
-                        if (i7 > i3) {
+                        i6 += getWidgetWidth(constraintWidget2, i3);
+                        if (i6 > i3) {
                             break;
                         }
-                        i6++;
+                        i5++;
                     }
                 }
             }
-            i5 = i6;
-            i4 = 0;
-        } else {
-            i4 = this.mMaxElementsWrap;
-            if (i4 <= 0) {
-                i4 = 0;
-                int i9 = 0;
-                for (int i10 = 0; i10 < i; i10++) {
-                    if (i10 > 0) {
-                        i9 += this.mVerticalGap;
-                    }
-                    ConstraintWidget constraintWidget3 = constraintWidgetArr[i10];
-                    if (constraintWidget3 != null) {
-                        i9 += getWidgetHeight(constraintWidget3, i3);
-                        if (i9 > i3) {
-                            break;
-                        }
-                        i4++;
-                    }
-                }
-            }
+            i4 = i5;
             i5 = 0;
+        } else {
+            if (i5 <= 0) {
+                i5 = 0;
+                int i8 = 0;
+                for (int i9 = 0; i9 < i; i9++) {
+                    if (i9 > 0) {
+                        i8 += this.mVerticalGap;
+                    }
+                    ConstraintWidget constraintWidget3 = constraintWidgetArr[i9];
+                    if (constraintWidget3 != null) {
+                        i8 += getWidgetHeight(constraintWidget3, i3);
+                        if (i8 > i3) {
+                            break;
+                        }
+                        i5++;
+                    }
+                }
+            }
+            i4 = 0;
         }
         if (this.mAlignedDimensions == null) {
             this.mAlignedDimensions = new int[2];
         }
-        if ((i4 != 0 || i2 != 1) && (i5 != 0 || i2 != 0)) {
+        if ((i5 != 0 || i2 != 1) && (i4 != 0 || i2 != 0)) {
             z = false;
             while (!z) {
                 if (i2 == 0) {
-                    i4 = (int) Math.ceil(i / i5);
-                } else {
                     i5 = (int) Math.ceil(i / i4);
+                } else {
+                    i4 = (int) Math.ceil(i / i5);
                 }
                 ConstraintWidget[] constraintWidgetArr2 = this.mAlignedBiggestElementsInCols;
-                if (constraintWidgetArr2 == null || constraintWidgetArr2.length < i5) {
-                    this.mAlignedBiggestElementsInCols = new ConstraintWidget[i5];
+                if (constraintWidgetArr2 == null || constraintWidgetArr2.length < i4) {
+                    this.mAlignedBiggestElementsInCols = new ConstraintWidget[i4];
                 } else {
                     Arrays.fill(constraintWidgetArr2, (Object) null);
                 }
                 ConstraintWidget[] constraintWidgetArr3 = this.mAlignedBiggestElementsInRows;
-                if (constraintWidgetArr3 == null || constraintWidgetArr3.length < i4) {
-                    this.mAlignedBiggestElementsInRows = new ConstraintWidget[i4];
+                if (constraintWidgetArr3 == null || constraintWidgetArr3.length < i5) {
+                    this.mAlignedBiggestElementsInRows = new ConstraintWidget[i5];
                 } else {
                     Arrays.fill(constraintWidgetArr3, (Object) null);
                 }
-                for (int i11 = 0; i11 < i5; i11++) {
-                    for (int i12 = 0; i12 < i4; i12++) {
-                        int i13 = (i12 * i5) + i11;
+                for (int i10 = 0; i10 < i4; i10++) {
+                    for (int i11 = 0; i11 < i5; i11++) {
+                        int i12 = (i11 * i4) + i10;
                         if (i2 == 1) {
-                            i13 = (i11 * i4) + i12;
+                            i12 = (i10 * i5) + i11;
                         }
-                        if (i13 < constraintWidgetArr.length && (constraintWidget = constraintWidgetArr[i13]) != null) {
+                        if (i12 < constraintWidgetArr.length && (constraintWidget = constraintWidgetArr[i12]) != null) {
                             int widgetWidth = getWidgetWidth(constraintWidget, i3);
-                            ConstraintWidget constraintWidget4 = this.mAlignedBiggestElementsInCols[i11];
+                            ConstraintWidget constraintWidget4 = this.mAlignedBiggestElementsInCols[i10];
                             if (constraintWidget4 == null || constraintWidget4.getWidth() < widgetWidth) {
-                                this.mAlignedBiggestElementsInCols[i11] = constraintWidget;
+                                this.mAlignedBiggestElementsInCols[i10] = constraintWidget;
                             }
                             int widgetHeight = getWidgetHeight(constraintWidget, i3);
-                            ConstraintWidget constraintWidget5 = this.mAlignedBiggestElementsInRows[i12];
+                            ConstraintWidget constraintWidget5 = this.mAlignedBiggestElementsInRows[i11];
                             if (constraintWidget5 == null || constraintWidget5.getHeight() < widgetHeight) {
-                                this.mAlignedBiggestElementsInRows[i12] = constraintWidget;
+                                this.mAlignedBiggestElementsInRows[i11] = constraintWidget;
                             }
                         }
                     }
                 }
-                int i14 = 0;
-                for (int i15 = 0; i15 < i5; i15++) {
-                    ConstraintWidget constraintWidget6 = this.mAlignedBiggestElementsInCols[i15];
+                int i13 = 0;
+                for (int i14 = 0; i14 < i4; i14++) {
+                    ConstraintWidget constraintWidget6 = this.mAlignedBiggestElementsInCols[i14];
                     if (constraintWidget6 != null) {
-                        if (i15 > 0) {
-                            i14 += this.mHorizontalGap;
+                        if (i14 > 0) {
+                            i13 += this.mHorizontalGap;
                         }
-                        i14 += getWidgetWidth(constraintWidget6, i3);
+                        i13 += getWidgetWidth(constraintWidget6, i3);
                     }
                 }
-                int i16 = 0;
-                for (int i17 = 0; i17 < i4; i17++) {
-                    ConstraintWidget constraintWidget7 = this.mAlignedBiggestElementsInRows[i17];
+                int i15 = 0;
+                for (int i16 = 0; i16 < i5; i16++) {
+                    ConstraintWidget constraintWidget7 = this.mAlignedBiggestElementsInRows[i16];
                     if (constraintWidget7 != null) {
-                        if (i17 > 0) {
-                            i16 += this.mVerticalGap;
+                        if (i16 > 0) {
+                            i15 += this.mVerticalGap;
                         }
-                        i16 += getWidgetHeight(constraintWidget7, i3);
+                        i15 += getWidgetHeight(constraintWidget7, i3);
                     }
                 }
-                iArr[0] = i14;
-                iArr[1] = i16;
+                iArr[0] = i13;
+                iArr[1] = i15;
                 if (i2 != 0) {
-                    if (i16 > i3 && i4 > 1) {
-                        i4--;
+                    if (i15 > i3 && i5 > 1) {
+                        i5--;
                     }
-                } else if (i14 > i3 && i5 > 1) {
-                    i5--;
+                } else if (i13 > i3 && i4 > 1) {
+                    i4--;
                 }
                 while (!z) {
                 }
             }
             int[] iArr2 = this.mAlignedDimensions;
-            iArr2[0] = i5;
-            iArr2[1] = i4;
+            iArr2[0] = i4;
+            iArr2[1] = i5;
         }
         z = true;
         while (!z) {
         }
         int[] iArr22 = this.mAlignedDimensions;
-        iArr22[0] = i5;
-        iArr22[1] = i4;
+        iArr22[0] = i4;
+        iArr22[1] = i5;
     }
 
     private void createAlignedConstraints(boolean z) {

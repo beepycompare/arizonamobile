@@ -65,7 +65,7 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
         return Long.valueOf(getLongValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit component2$lambda$0(SnapshotMutableLongStateImpl snapshotMutableLongStateImpl, long j) {
         snapshotMutableLongStateImpl.setLongValue(j);
         return Unit.INSTANCE;
@@ -76,9 +76,7 @@ public class SnapshotMutableLongStateImpl extends StateObjectImpl implements Mut
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableLongStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$0;
-                component2$lambda$0 = SnapshotMutableLongStateImpl.component2$lambda$0(SnapshotMutableLongStateImpl.this, ((Long) obj).longValue());
-                return component2$lambda$0;
+                return SnapshotMutableLongStateImpl.component2$lambda$0(SnapshotMutableLongStateImpl.this, ((Long) obj).longValue());
             }
         };
     }

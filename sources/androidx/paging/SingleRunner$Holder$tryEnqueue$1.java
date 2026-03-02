@@ -7,14 +7,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SingleRunner.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.SingleRunner$Holder", f = "SingleRunner.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {131, 102}, m = "tryEnqueue", n = {"this", "job", "$this$withLock_u24default$iv", "priority", "this", "job", "$this$withLock_u24default$iv", "priority"}, s = {"L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "L$2", "I$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.SingleRunner$Holder", f = "SingleRunner.kt", i = {0, 0, 0, 1, 1, 1}, l = {120, 91}, m = "tryEnqueue", n = {"job", "$this$withLock_u24default$iv", "priority", "job", "$this$withLock_u24default$iv", "priority"}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class SingleRunner$Holder$tryEnqueue$1 extends ContinuationImpl {
     int I$0;
     Object L$0;
     Object L$1;
-    Object L$2;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ SingleRunner.Holder this$0;

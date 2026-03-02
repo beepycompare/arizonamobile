@@ -12,6 +12,6 @@ final class KotlinVersionCurrentValue {
 
     @JvmStatic
     public static final KotlinVersion get() {
-        return new KotlinVersion(2, 3, 0);
+        return new KotlinVersion(2, 3, 10);
     }
 }

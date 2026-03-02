@@ -43,7 +43,7 @@ final class AndroidViewHolder$onNestedFling$1 extends SuspendLambda implements F
     /* JADX WARN: Code restructure failed: missing block: B:13:0x003c, code lost:
         if (r11 == r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x005b, code lost:
         if (r11 == r0) goto L18;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -57,24 +57,26 @@ final class AndroidViewHolder$onNestedFling$1 extends SuspendLambda implements F
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!this.$consumed) {
-                nestedScrollDispatcher2 = this.this$0.dispatcher;
+            boolean z = this.$consumed;
+            AndroidViewHolder androidViewHolder = this.this$0;
+            if (!z) {
+                nestedScrollDispatcher2 = androidViewHolder.dispatcher;
                 this.label = 1;
-                obj = nestedScrollDispatcher2.m6605dispatchPostFlingRZ2iAVY(Velocity.Companion.m8507getZero9UxMQ8M(), this.$viewVelocity, this);
+                obj = nestedScrollDispatcher2.m5946dispatchPostFlingRZ2iAVY(Velocity.Companion.m7804getZero9UxMQ8M(), this.$viewVelocity, this);
             } else {
-                nestedScrollDispatcher = this.this$0.dispatcher;
+                nestedScrollDispatcher = androidViewHolder.dispatcher;
                 this.label = 2;
-                obj = nestedScrollDispatcher.m6605dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m8507getZero9UxMQ8M(), this);
+                obj = nestedScrollDispatcher.m5946dispatchPostFlingRZ2iAVY(this.$viewVelocity, Velocity.Companion.m7804getZero9UxMQ8M(), this);
             }
             return coroutine_suspended;
         } else if (i == 1) {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m8505unboximpl();
+            ((Velocity) obj).m7802unboximpl();
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
-            ((Velocity) obj).m8505unboximpl();
+            ((Velocity) obj).m7802unboximpl();
         }
         return Unit.INSTANCE;
     }

@@ -58,25 +58,23 @@ public final class OffsetPxNode extends Modifier.Node implements LayoutModifierN
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetPxNode$$ExternalSyntheticLambda0
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetPxNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = OffsetPxNode.measure_3p2s80s$lambda$0(OffsetPxNode.this, mo6875measureBRTryo0, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return OffsetPxNode.measure_3p2s80s$lambda$0(OffsetPxNode.this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(OffsetPxNode offsetPxNode, Placeable placeable, Placeable.PlacementScope placementScope) {
-        long m8395unboximpl = offsetPxNode.offset.invoke(placementScope).m8395unboximpl();
+        long m7692unboximpl = offsetPxNode.offset.invoke(placementScope).m7692unboximpl();
         if (offsetPxNode.rtlAware) {
-            Placeable.PlacementScope.placeRelativeWithLayer$default(placementScope, placeable, IntOffset.m8386getXimpl(m8395unboximpl), IntOffset.m8387getYimpl(m8395unboximpl), 0.0f, (Function1) null, 12, (Object) null);
+            Placeable.PlacementScope.placeRelativeWithLayer$default(placementScope, placeable, IntOffset.m7683getXimpl(m7692unboximpl), IntOffset.m7684getYimpl(m7692unboximpl), 0.0f, (Function1) null, 12, (Object) null);
         } else {
-            Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m8386getXimpl(m8395unboximpl), IntOffset.m8387getYimpl(m8395unboximpl), 0.0f, (Function1) null, 12, (Object) null);
+            Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, IntOffset.m7683getXimpl(m7692unboximpl), IntOffset.m7684getYimpl(m7692unboximpl), 0.0f, (Function1) null, 12, (Object) null);
         }
         return Unit.INSTANCE;
     }

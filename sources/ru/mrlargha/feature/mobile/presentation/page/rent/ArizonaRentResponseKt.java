@@ -23,12 +23,12 @@ import ru.mrlargha.commonui.utils.ui.CustomEditText;
 import ru.mrlargha.commonui.utils.ui.EditeTextValidationErrorType;
 import ru.mrlargha.feature.mobile.R;
 /* compiled from: ArizonaRentResponse.kt */
-@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001aT\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\u0010\u000e\u001a]\u0010\u000f\u001a\u00020\u0001*\u00020\u00102\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0011\u001a\u00020\u00042\b\b\u0002\u0010\u0012\u001a\u00020\u00042\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162#\u0010\u0017\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u00010\t\u001a0\u0010\u001a\u001a\u00020\u0001*\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u0017\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0018\u0012\u0004\u0012\u00020\u00010\t\u001a\u0018\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u0014H\u0002¨\u0006\u001e"}, d2 = {"checkAvailableData", "", "Landroid/widget/EditText;", "maxInputInt", "", "minInputInt", "checkEmptyValue", "", "result", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/page/rent/EditTextCheckResult;", "Lkotlin/ParameterName;", "name", "checkResult", "(Landroid/widget/EditText;Ljava/lang/Integer;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;)V", "onChangeListeners", "Lru/mrlargha/commonui/utils/ui/CustomEditText;", "minValue", "maxValue", "etContainer", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "tvError", "Landroid/widget/TextView;", "afterTextChanged", "Landroid/text/Editable;", CmcdData.STREAMING_FORMAT_SS, "checkValidate", "isError", "showError", "customCardView", "mobile_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001aT\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u00042\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u00072!\u0010\b\u001a\u001d\u0012\u0013\u0012\u00110\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\u0010\u000e\u001a]\u0010\u000f\u001a\u00020\u0001*\u00020\u00102\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u0011\u001a\u00020\u00042\b\b\u0002\u0010\u0012\u001a\u00020\u00042\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162#\u0010\u0017\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u00010\u0018¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0019\u0012\u0004\u0012\u00020\u00010\t\u001a0\u0010\u001a\u001a\u00020\u0001*\u00020\u00102\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0014\u0010\u0017\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0018\u0012\u0004\u0012\u00020\u00010\t\u001a\u0018\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u001c\u001a\u00020\u00072\u0006\u0010\u001d\u001a\u00020\u0014H\u0002¨\u0006\u001e"}, d2 = {"checkAvailableData", "", "Landroid/widget/EditText;", "maxInputInt", "", "minInputInt", "checkEmptyValue", "", "result", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/page/rent/EditTextCheckResult;", "Lkotlin/ParameterName;", "name", "checkResult", "(Landroid/widget/EditText;Ljava/lang/Integer;Ljava/lang/Integer;ZLkotlin/jvm/functions/Function1;)V", "onChangeListeners", "Lru/mrlargha/commonui/utils/ui/CustomEditText;", "minValue", "maxValue", "etContainer", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "tvError", "Landroid/widget/TextView;", "afterTextChanged", "Landroid/text/Editable;", CmcdData.STREAMING_FORMAT_SS, "checkValidate", "isError", "showError", "customCardView", "mobile"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ArizonaRentResponseKt {
 
     /* compiled from: ArizonaRentResponse.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -137,9 +137,7 @@ public final class ArizonaRentResponseKt {
         customEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentResponseKt$$ExternalSyntheticLambda0
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-                boolean onChangeListeners$lambda$0;
-                onChangeListeners$lambda$0 = ArizonaRentResponseKt.onChangeListeners$lambda$0(CustomEditText.this, etContainer, tvError, booleanRef, afterTextChanged, textView, i3, keyEvent);
-                return onChangeListeners$lambda$0;
+                return ArizonaRentResponseKt.onChangeListeners$lambda$0(CustomEditText.this, etContainer, tvError, booleanRef, afterTextChanged, textView, i3, keyEvent);
             }
         });
         customEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentResponseKt$$ExternalSyntheticLambda1
@@ -150,7 +148,7 @@ public final class ArizonaRentResponseKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean onChangeListeners$lambda$0(CustomEditText customEditText, CustomCardView customCardView, TextView textView, Ref.BooleanRef booleanRef, final Function1 function1, TextView textView2, int i, KeyEvent keyEvent) {
         if (i == 6) {
             checkValidate(customEditText, customCardView, textView, new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentResponseKt$$ExternalSyntheticLambda2
@@ -177,7 +175,7 @@ public final class ArizonaRentResponseKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onChangeListeners$lambda$1(Ref.BooleanRef booleanRef, CustomEditText customEditText, View view, boolean z) {
         if (z || booleanRef.element) {
             return;

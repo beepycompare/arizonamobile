@@ -24,14 +24,14 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: classes.dex */
 public final class SelectableKt {
     /* renamed from: selectable-XHw0xAI$default */
-    public static /* synthetic */ Modifier m1246selectableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1091selectableXHw0xAI$default(Modifier modifier, boolean z, boolean z2, Role role, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
         if ((i & 4) != 0) {
             role = null;
         }
-        return m1245selectableXHw0xAI(modifier, z, z2, role, function0);
+        return m1090selectableXHw0xAI(modifier, z, z2, role, function0);
     }
 
     public static final Modifier selectable_XHw0xAI$lambda$1(boolean z, boolean z2, Role role, Function0 function0, Modifier modifier, Composer composer, int i) {
@@ -62,29 +62,29 @@ public final class SelectableKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         }
-        Modifier m1243selectableO2vRcR0 = m1243selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function0);
+        Modifier m1088selectableO2vRcR0 = m1088selectableO2vRcR0(Modifier.Companion, z, mutableInteractionSource, indication, z2, role, function0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m1243selectableO2vRcR0;
+        return m1088selectableO2vRcR0;
     }
 
     /* renamed from: selectable-oSLSa3U$default */
-    public static /* synthetic */ Modifier m1248selectableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1093selectableoSLSa3U$default(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
             z2 = true;
         }
-        return m1247selectableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
+        return m1092selectableoSLSa3U(modifier, z, z2, (i & 4) != 0 ? null : role, (i & 8) != 0 ? null : mutableInteractionSource, function0);
     }
 
     /* renamed from: selectable-oSLSa3U */
-    public static final Modifier m1247selectableoSLSa3U(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0<Unit> function0) {
+    public static final Modifier m1092selectableoSLSa3U(Modifier modifier, boolean z, boolean z2, Role role, MutableInteractionSource mutableInteractionSource, Function0<Unit> function0) {
         return modifier.then(new SelectableElement(z, mutableInteractionSource, null, true, z2, role, function0, null));
     }
 
     /* renamed from: selectable-O2vRcR0$default */
-    public static /* synthetic */ Modifier m1244selectableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m1089selectableO2vRcR0$default(Modifier modifier, boolean z, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z2, Role role, Function0 function0, int i, Object obj) {
         if ((i & 8) != 0) {
             z2 = true;
         }
@@ -92,12 +92,12 @@ public final class SelectableKt {
         if ((i & 16) != 0) {
             role = null;
         }
-        return m1243selectableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function0);
+        return m1088selectableO2vRcR0(modifier, z, mutableInteractionSource, indication, z3, role, function0);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: selectable-XHw0xAI */
-    public static final /* synthetic */ Modifier m1245selectableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function0 function0) {
+    public static final /* synthetic */ Modifier m1090selectableXHw0xAI(Modifier modifier, final boolean z, final boolean z2, final Role role, final Function0 function0) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.selection.SelectableKt$selectable-XHw0xAI$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -121,15 +121,13 @@ public final class SelectableKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.selection.SelectableKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier selectable_XHw0xAI$lambda$1;
-                selectable_XHw0xAI$lambda$1 = SelectableKt.selectable_XHw0xAI$lambda$1(z, z2, role, function0, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return selectable_XHw0xAI$lambda$1;
+                return SelectableKt.selectable_XHw0xAI$lambda$1(z, z2, role, function0, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
     /* renamed from: selectable-O2vRcR0 */
-    public static final Modifier m1243selectableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function0<Unit> function0) {
+    public static final Modifier m1088selectableO2vRcR0(Modifier modifier, final boolean z, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z2, final Role role, final Function0<Unit> function0) {
         SelectableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new SelectableElement(z, mutableInteractionSource, (IndicationNodeFactory) indication, false, z2, role, function0, null);

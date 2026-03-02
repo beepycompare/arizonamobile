@@ -62,10 +62,11 @@ final class HorizontalPositionCache {
                 if (this.cachedKey != i2) {
                     return this.cachedValue;
                 }
+                TextLayout textLayout = this.layout;
                 if (z3) {
-                    secondaryHorizontal = this.layout.getPrimaryHorizontal(i, z);
+                    secondaryHorizontal = textLayout.getPrimaryHorizontal(i, z);
                 } else {
-                    secondaryHorizontal = this.layout.getSecondaryHorizontal(i, z);
+                    secondaryHorizontal = textLayout.getSecondaryHorizontal(i, z);
                 }
                 if (z2) {
                     this.cachedKey = i2;

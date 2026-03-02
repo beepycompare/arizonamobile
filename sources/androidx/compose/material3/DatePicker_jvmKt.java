@@ -29,7 +29,7 @@ public final class DatePicker_jvmKt {
     }
 
     /* renamed from: rememberDatePickerState-EU0dCGE  reason: not valid java name */
-    public static final DatePickerState m2334rememberDatePickerStateEU0dCGE(LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
+    public static final DatePickerState m2002rememberDatePickerStateEU0dCGE(LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, -1802387829, "C(rememberDatePickerState)N(initialSelectedDate,initialDisplayedMonth,yearRange,initialDisplayMode:c#material3.DisplayMode,selectableDates)73@3393L283:DatePicker.jvm.kt#uh7d8r");
         if ((i3 & 2) != 0) {
             yearMonth = localDate != null ? YearMonth.from(localDate) : null;
@@ -39,7 +39,7 @@ public final class DatePicker_jvmKt {
         }
         IntRange intRange2 = intRange;
         if ((i3 & 8) != 0) {
-            i = DisplayMode.Companion.m2395getPickerjFl4v0();
+            i = DisplayMode.Companion.m2036getPickerjFl4v0();
         }
         int i4 = i;
         if ((i3 & 16) != 0) {
@@ -49,16 +49,16 @@ public final class DatePicker_jvmKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1802387829, i2, -1, "androidx.compose.material3.rememberDatePickerState (DatePicker.jvm.kt:70)");
         }
-        DatePickerState m2323rememberDatePickerStateEU0dCGE = DatePickerKt.m2323rememberDatePickerStateEU0dCGE(localDate != null ? getLocalDateMillisUtc(localDate) : null, yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange2, i4, selectableDates2, composer, i2 & 65408, 0);
+        DatePickerState m1994rememberDatePickerStateEU0dCGE = DatePickerKt.m1994rememberDatePickerStateEU0dCGE(localDate != null ? getLocalDateMillisUtc(localDate) : null, yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange2, i4, selectableDates2, composer, i2 & 65408, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2323rememberDatePickerStateEU0dCGE;
+        return m1994rememberDatePickerStateEU0dCGE;
     }
 
     /* renamed from: DatePickerState-sHin3Bw$default  reason: not valid java name */
-    public static /* synthetic */ DatePickerState m2331DatePickerStatesHin3Bw$default(Locale locale, LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
+    public static /* synthetic */ DatePickerState m1999DatePickerStatesHin3Bw$default(Locale locale, LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             yearMonth = localDate != null ? YearMonth.from(localDate) : null;
         }
@@ -68,22 +68,22 @@ public final class DatePicker_jvmKt {
         }
         IntRange intRange2 = intRange;
         if ((i2 & 16) != 0) {
-            i = DisplayMode.Companion.m2395getPickerjFl4v0();
+            i = DisplayMode.Companion.m2036getPickerjFl4v0();
         }
         int i3 = i;
         if ((i2 & 32) != 0) {
             selectableDates = DatePickerDefaults.INSTANCE.getAllDates();
         }
-        return m2330DatePickerStatesHin3Bw(locale, localDate, yearMonth2, intRange2, i3, selectableDates);
+        return m1998DatePickerStatesHin3Bw(locale, localDate, yearMonth2, intRange2, i3, selectableDates);
     }
 
     /* renamed from: DatePickerState-sHin3Bw  reason: not valid java name */
-    public static final DatePickerState m2330DatePickerStatesHin3Bw(Locale locale, LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates) {
-        return DatePickerKt.m2318DatePickerStatesHin3Bw(locale, getLocalDateMillisUtc(localDate), yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange, i, selectableDates);
+    public static final DatePickerState m1998DatePickerStatesHin3Bw(Locale locale, LocalDate localDate, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates) {
+        return DatePickerKt.m1989DatePickerStatesHin3Bw(locale, getLocalDateMillisUtc(localDate), yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange, i, selectableDates);
     }
 
     /* renamed from: rememberDateRangePickerState-IlFM19s  reason: not valid java name */
-    public static final DateRangePickerState m2335rememberDateRangePickerStateIlFM19s(LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
+    public static final DateRangePickerState m2003rememberDateRangePickerStateIlFM19s(LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, Composer composer, int i2, int i3) {
         ComposerKt.sourceInformationMarkerStart(composer, -1580705706, "C(rememberDateRangePickerState)N(initialSelectedStartDate,initialSelectedEndDate,initialDisplayedMonth,yearRange,initialDisplayMode:c#material3.DisplayMode,selectableDates)179@9398L367:DatePicker.jvm.kt#uh7d8r");
         if ((i3 & 4) != 0) {
             yearMonth = localDate != null ? YearMonth.from(localDate) : null;
@@ -92,21 +92,21 @@ public final class DatePicker_jvmKt {
             intRange = DatePickerDefaults.INSTANCE.getYearRange();
         }
         IntRange intRange2 = intRange;
-        int m2395getPickerjFl4v0 = (i3 & 16) != 0 ? DisplayMode.Companion.m2395getPickerjFl4v0() : i;
+        int m2036getPickerjFl4v0 = (i3 & 16) != 0 ? DisplayMode.Companion.m2036getPickerjFl4v0() : i;
         SelectableDates allDates = (i3 & 32) != 0 ? DatePickerDefaults.INSTANCE.getAllDates() : selectableDates;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1580705706, i2, -1, "androidx.compose.material3.rememberDateRangePickerState (DatePicker.jvm.kt:175)");
         }
-        DateRangePickerState m2354rememberDateRangePickerStateIlFM19s = DateRangePickerKt.m2354rememberDateRangePickerStateIlFM19s(localDate != null ? getLocalDateMillisUtc(localDate) : null, localDate2 != null ? getLocalDateMillisUtc(localDate2) : null, yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange2, m2395getPickerjFl4v0, allDates, composer, i2 & 523264, 0);
+        DateRangePickerState m2012rememberDateRangePickerStateIlFM19s = DateRangePickerKt.m2012rememberDateRangePickerStateIlFM19s(localDate != null ? getLocalDateMillisUtc(localDate) : null, localDate2 != null ? getLocalDateMillisUtc(localDate2) : null, yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange2, m2036getPickerjFl4v0, allDates, composer, i2 & 523264, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2354rememberDateRangePickerStateIlFM19s;
+        return m2012rememberDateRangePickerStateIlFM19s;
     }
 
     /* renamed from: DateRangePickerState-HVP43zI$default  reason: not valid java name */
-    public static /* synthetic */ DateRangePickerState m2333DateRangePickerStateHVP43zI$default(Locale locale, LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
+    public static /* synthetic */ DateRangePickerState m2001DateRangePickerStateHVP43zI$default(Locale locale, LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates, int i2, Object obj) {
         if ((i2 & 8) != 0) {
             yearMonth = localDate != null ? YearMonth.from(localDate) : null;
         }
@@ -116,18 +116,18 @@ public final class DatePicker_jvmKt {
         }
         IntRange intRange2 = intRange;
         if ((i2 & 32) != 0) {
-            i = DisplayMode.Companion.m2395getPickerjFl4v0();
+            i = DisplayMode.Companion.m2036getPickerjFl4v0();
         }
         int i3 = i;
         if ((i2 & 64) != 0) {
             selectableDates = DatePickerDefaults.INSTANCE.getAllDates();
         }
-        return m2332DateRangePickerStateHVP43zI(locale, localDate, localDate2, yearMonth2, intRange2, i3, selectableDates);
+        return m2000DateRangePickerStateHVP43zI(locale, localDate, localDate2, yearMonth2, intRange2, i3, selectableDates);
     }
 
     /* renamed from: DateRangePickerState-HVP43zI  reason: not valid java name */
-    public static final DateRangePickerState m2332DateRangePickerStateHVP43zI(Locale locale, LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates) {
-        return DateRangePickerKt.m2349DateRangePickerStateHVP43zI(locale, getLocalDateMillisUtc(localDate), getLocalDateMillisUtc(localDate2), yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange, i, selectableDates);
+    public static final DateRangePickerState m2000DateRangePickerStateHVP43zI(Locale locale, LocalDate localDate, LocalDate localDate2, YearMonth yearMonth, IntRange intRange, int i, SelectableDates selectableDates) {
+        return DateRangePickerKt.m2007DateRangePickerStateHVP43zI(locale, getLocalDateMillisUtc(localDate), getLocalDateMillisUtc(localDate2), yearMonth != null ? Long.valueOf(getYearMonthMillisUtc(yearMonth)) : null, intRange, i, selectableDates);
     }
 
     public static final void setSelectedDate(DatePickerState datePickerState, LocalDate localDate) {

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public class Fh extends H3 {
     protected D8 c;
-    protected C0628uf d;
+    protected C0627uf d;
     public boolean e;
     public String f;
 

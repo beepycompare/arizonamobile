@@ -68,12 +68,12 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Boolean invoke(Offset offset) {
-                    return m8661invokek4lQ0M(offset.m5189unboximpl());
+                    return m7958invokek4lQ0M(offset.m4537unboximpl());
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final Boolean m8661invokek4lQ0M(long j) {
-                    return Boolean.valueOf(TransitionHandler.this.m8727onAcceptFirstDownForOnSwipek4lQ0M(j));
+                public final Boolean m7958invokek4lQ0M(long j) {
+                    return Boolean.valueOf(TransitionHandler.this.m8024onAcceptFirstDownForOnSwipek4lQ0M(j));
                 }
             }, new Function1<Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.2
                 {
@@ -82,12 +82,12 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m8662invokek4lQ0M(offset.m5189unboximpl());
+                    m7959invokek4lQ0M(offset.m4537unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m8662invokek4lQ0M(long j) {
+                public final void m7959invokek4lQ0M(long j) {
                     VelocityTracker.this.resetTracking();
                 }
             }, new Function0<Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.3
@@ -104,7 +104,7 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    channel.mo9174trySendJP2dKIU(MotionDragState.Companion.m8671onDragEndTH1AsA0(velocityTracker.m6849calculateVelocity9UxMQ8M()));
+                    channel.mo8396trySendJP2dKIU(MotionDragState.Companion.m7968onDragEndTH1AsA0(velocityTracker.m6190calculateVelocity9UxMQ8M()));
                 }
             }, new Function0<Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.4
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -120,7 +120,7 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final void invoke2() {
-                    channel2.mo9174trySendJP2dKIU(MotionDragState.Companion.m8671onDragEndTH1AsA0(velocityTracker.m6849calculateVelocity9UxMQ8M()));
+                    channel2.mo8396trySendJP2dKIU(MotionDragState.Companion.m7968onDragEndTH1AsA0(velocityTracker.m6190calculateVelocity9UxMQ8M()));
                 }
             }, new Function2<PointerInputChange, Offset, Unit>() { // from class: androidx.constraintlayout.compose.MotionDragHandlerKt$motionPointerInput$2$2$1.5
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -130,14 +130,14 @@ public final class MotionDragHandlerKt$motionPointerInput$2$2$1 extends SuspendL
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(PointerInputChange pointerInputChange, Offset offset) {
-                    m8663invokeUv8p0NA(pointerInputChange, offset.m5189unboximpl());
+                    m7960invokeUv8p0NA(pointerInputChange, offset.m4537unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-Uv8p0NA  reason: not valid java name */
-                public final void m8663invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
+                public final void m7960invokeUv8p0NA(PointerInputChange pointerInputChange, long j) {
                     VelocityTrackerKt.addPointerInputChange(VelocityTracker.this, pointerInputChange);
-                    channel3.mo9174trySendJP2dKIU(MotionDragState.Companion.m8670onDragk4lQ0M(j));
+                    channel3.mo8396trySendJP2dKIU(MotionDragState.Companion.m7967onDragk4lQ0M(j));
                 }
             }, this);
             if (detectDragGesturesWhenNeeded == coroutine_suspended) {

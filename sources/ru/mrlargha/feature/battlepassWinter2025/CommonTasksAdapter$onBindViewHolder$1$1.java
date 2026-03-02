@@ -3,6 +3,7 @@ package ru.mrlargha.feature.battlepassWinter2025;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -21,8 +22,8 @@ import ru.mrlargha.feature.battlepassWinter2025.data.CommonTaskInfo;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassCommonTaskItemBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CommonTasksAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.CommonTasksAdapter$onBindViewHolder$1$1", f = "CommonTasksAdapter.kt", i = {0}, l = {68}, m = "invokeSuspend", n = {"imageId"}, s = {"L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.CommonTasksAdapter$onBindViewHolder$1$1", f = "CommonTasksAdapter.kt", i = {0}, l = {68}, m = "invokeSuspend", n = {"imageId"}, nl = {TsExtractor.TS_SYNC_BYTE}, s = {"L$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class CommonTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ RodinaBattlePassCommonTaskViewHolder $holder;
@@ -74,12 +75,13 @@ public final class CommonTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        WinterBattlepassCommonTaskItemBinding winterBattlepassCommonTaskItemBinding = this.$this_apply;
         if (bitmap != null) {
-            ImageView itemRewardIc = this.$this_apply.itemRewardIc;
+            ImageView itemRewardIc = winterBattlepassCommonTaskItemBinding.itemRewardIc;
             Intrinsics.checkNotNullExpressionValue(itemRewardIc, "itemRewardIc");
             UtilsKt.setImage(itemRewardIc, bitmap);
         } else {
-            ImageView itemRewardIc2 = this.$this_apply.itemRewardIc;
+            ImageView itemRewardIc2 = winterBattlepassCommonTaskItemBinding.itemRewardIc;
             Intrinsics.checkNotNullExpressionValue(itemRewardIc2, "itemRewardIc");
             Context context = this.$holder.getBinding().getRoot().getContext();
             Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");

@@ -370,11 +370,12 @@ public abstract class ImmutableMultiset<E> extends ImmutableMultisetGwtSerializa
             }
             this.buildInvoked = false;
             Preconditions.checkNotNull(element);
+            ObjectCountHashMap<E> objectCountHashMap = this.contents;
             if (count == 0) {
-                this.contents.remove(element);
+                objectCountHashMap.remove(element);
                 return this;
             }
-            this.contents.put(Preconditions.checkNotNull(element), count);
+            objectCountHashMap.put(Preconditions.checkNotNull(element), count);
             return this;
         }
 

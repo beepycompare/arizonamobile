@@ -31,22 +31,22 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$1 extends S
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         TextFieldSelectionManager$contextMenuAreaModifier$1 textFieldSelectionManager$contextMenuAreaModifier$1 = new TextFieldSelectionManager$contextMenuAreaModifier$1(this.this$0, continuation);
-        textFieldSelectionManager$contextMenuAreaModifier$1.J$0 = ((Offset) obj).m5189unboximpl();
+        textFieldSelectionManager$contextMenuAreaModifier$1.J$0 = ((Offset) obj).m4537unboximpl();
         return textFieldSelectionManager$contextMenuAreaModifier$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Unit> continuation) {
-        return m1927invoke3MmeM6k(offset.m5189unboximpl(), continuation);
+        return m1668invoke3MmeM6k(offset.m4537unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
-    public final Object m1927invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
-        return ((TextFieldSelectionManager$contextMenuAreaModifier$1) create(Offset.m5168boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m1668invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
+        return ((TextFieldSelectionManager$contextMenuAreaModifier$1) create(Offset.m4516boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0064, code lost:
-        if (r6.mo1834onShowContextMenu_2OEclM(r5, r8, r10, r12) == r0) goto L18;
+        if (r6.mo1590onShowContextMenu_2OEclM(r5, r8, r10, r12) == r0) goto L18;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -80,10 +80,10 @@ public final class TextFieldSelectionManager$contextMenuAreaModifier$1 extends S
         if (contextTextAndSelection != null) {
             TextFieldSelectionManager textFieldSelectionManager = this.this$0;
             String str = (String) contextTextAndSelection.component1();
-            long m7705unboximpl = ((TextRange) contextTextAndSelection.component2()).m7705unboximpl();
+            long m7007unboximpl = ((TextRange) contextTextAndSelection.component2()).m7007unboximpl();
             PlatformSelectionBehaviors platformSelectionBehaviors$foundation = textFieldSelectionManager.getPlatformSelectionBehaviors$foundation();
             if (platformSelectionBehaviors$foundation != null) {
-                Offset m5168boximpl = Offset.m5168boximpl(j);
+                Offset m4516boximpl = Offset.m4516boximpl(j);
                 this.label = 2;
             }
         }

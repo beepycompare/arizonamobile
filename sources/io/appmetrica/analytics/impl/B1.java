@@ -21,22 +21,22 @@ import java.util.Map;
 import java.util.Objects;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class B1 implements A1, InterfaceC0563s0 {
+public final class B1 implements A1, InterfaceC0562s0 {
 
     /* renamed from: a  reason: collision with root package name */
     public boolean f507a;
     public final Context b;
-    public final InterfaceC0739z1 c;
-    public final C0110a4 d;
+    public final InterfaceC0738z1 c;
+    public final C0109a4 d;
     public final J1 e;
     public Sg f;
-    public final C0219ea g;
-    public final C0263g2 h;
+    public final C0218ea g;
+    public final C0262g2 h;
     public final C1 i;
-    public final C0201dh j;
+    public final C0200dh j;
 
-    public B1(Context context, InterfaceC0739z1 interfaceC0739z1) {
-        this(context, interfaceC0739z1, new C0189d5(context));
+    public B1(Context context, InterfaceC0738z1 interfaceC0738z1) {
+        this(context, interfaceC0738z1, new C0188d5(context));
     }
 
     public final void a() {
@@ -85,56 +85,56 @@ public final class B1 implements A1, InterfaceC0563s0 {
     }
 
     public final void d(Intent intent) {
-        C0449na.I.v().a(AbstractC0272gb.e(intent.getStringExtra("screen_size")));
+        C0448na.I.v().a(AbstractC0271gb.e(intent.getStringExtra("screen_size")));
     }
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void onConfigurationChanged(Configuration configuration) {
-        C0449na.I.v().a(configuration);
+        C0448na.I.v().a(configuration);
     }
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void onCreate() {
         if (!this.f507a) {
             this.g.b(this.b);
-            C0449na c0449na = C0449na.I;
-            synchronized (c0449na) {
-                c0449na.B.initAsync();
-                c0449na.u.a(c0449na.f1133a);
-                c0449na.u.a(new C0362jo(c0449na.B));
-                NetworkServiceLocator.init(c0449na.f1133a, new C0240f5(new C0507pi(c0449na.h()), new C0494p5(c0449na.f1133a)));
-                c0449na.l().a(c0449na.q);
-                c0449na.E();
+            C0448na c0448na = C0448na.I;
+            synchronized (c0448na) {
+                c0448na.B.initAsync();
+                c0448na.u.a(c0448na.f1133a);
+                c0448na.u.a(new C0361jo(c0448na.B));
+                NetworkServiceLocator.init(c0448na.f1133a, new C0239f5(new C0506pi(c0448na.h()), new C0493p5(c0448na.f1133a)));
+                c0448na.l().a(c0448na.q);
+                c0448na.E();
             }
             Wj.f841a.e();
-            C0309hm c0309hm = C0449na.I.u;
-            c0309hm.b();
-            C0257fm b = c0309hm.b();
-            C0708xk p = C0449na.I.p();
-            p.a(new C0178ck(new C0119ad(this.e)), b);
-            c0309hm.a(p);
-            ((Al) C0449na.I.z()).getClass();
+            C0308hm c0308hm = C0448na.I.u;
+            c0308hm.b();
+            C0256fm b = c0308hm.b();
+            C0707xk p = C0448na.I.p();
+            p.a(new C0177ck(new C0118ad(this.e)), b);
+            c0308hm.a(p);
+            ((Al) C0448na.I.z()).getClass();
             a();
-            C0449na.I.m().init();
-            C0449na.I.c().init();
+            C0448na.I.m().init();
+            C0448na.I.c().init();
             C1 c1 = this.i;
             Context context = this.b;
-            C0110a4 c0110a4 = this.d;
+            C0109a4 c0109a4 = this.d;
             c1.getClass();
-            this.f = new Sg(context, c0110a4);
+            this.f = new Sg(context, c0109a4);
             Context context2 = this.b;
-            AbstractC0614u1.f1245a.b(context2);
+            AbstractC0613u1.f1245a.b(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
             Sg sg = this.f;
-            Od r = C0449na.k().r();
-            IHandlerExecutor d = C0449na.k().w().d();
-            C0267g6 c0267g6 = new C0267g6(context3, sg, EnumC0143bb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new X(), new BlockingExecutor(), "previous");
-            C0267g6 c0267g62 = new C0267g6(context3, sg, EnumC0143bb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new C0425mb(), d, "actual");
+            Od r = C0448na.k().r();
+            IHandlerExecutor d = C0448na.k().w().d();
+            C0266g6 c0266g6 = new C0266g6(context3, sg, EnumC0142bb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new X(), new BlockingExecutor(), "previous");
+            C0266g6 c0266g62 = new C0266g6(context3, sg, EnumC0142bb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new C0424mb(), d, "actual");
             File crashesDirectory = FileUtils.getCrashesDirectory(context3);
             if (crashesDirectory != null) {
-                FileObserverC0215e6 fileObserverC0215e6 = new FileObserverC0215e6(crashesDirectory, c0267g62, new C0116aa());
-                d.execute(new Uf(crashesDirectory, c0267g6));
+                FileObserverC0214e6 fileObserverC0214e6 = new FileObserverC0214e6(crashesDirectory, c0266g62, new C0115aa());
+                d.execute(new Uf(crashesDirectory, c0266g6));
                 if (crashesDirectory.exists()) {
                     if (!crashesDirectory.isDirectory() && crashesDirectory.delete()) {
                         crashesDirectory.mkdir();
@@ -142,8 +142,8 @@ public final class B1 implements A1, InterfaceC0563s0 {
                 } else {
                     crashesDirectory.mkdir();
                 }
-                fileObserverC0215e6.startWatching();
-                C0449na.I.E.storeReference(fileObserverC0215e6);
+                fileObserverC0214e6.startWatching();
+                C0448na.I.E.storeReference(fileObserverC0214e6);
             }
             r.getClass();
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
@@ -162,18 +162,18 @@ public final class B1 implements A1, InterfaceC0563s0 {
             new I5(CollectionsKt.listOf(new Yg())).run();
             this.f507a = true;
         } else {
-            C0449na.I.v().a(this.b.getResources().getConfiguration());
+            C0448na.I.v().a(this.b.getResources().getConfiguration());
         }
-        C0449na.I.l().a();
+        C0448na.I.l().a();
     }
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void onDestroy() {
-        Fb l = C0449na.I.l();
+        Fb l = C0448na.I.l();
         synchronized (l) {
             Iterator it = l.c.iterator();
             while (it.hasNext()) {
-                ((InterfaceC0409lk) it.next()).onDestroy();
+                ((InterfaceC0408lk) it.next()).onDestroy();
             }
         }
     }
@@ -197,15 +197,15 @@ public final class B1 implements A1, InterfaceC0563s0 {
     @Override // io.appmetrica.analytics.impl.A1
     public final void reportData(int i, Bundle bundle) {
         this.j.getClass();
-        List<InterfaceC0204dk> list = (List) C0449na.I.v.f981a.get(Integer.valueOf(i));
+        List<InterfaceC0203dk> list = (List) C0448na.I.v.f981a.get(Integer.valueOf(i));
         if (list == null) {
             list = CollectionsKt.emptyList();
         }
         if (list.isEmpty()) {
             return;
         }
-        for (InterfaceC0204dk interfaceC0204dk : list) {
-            interfaceC0204dk.reportData(i, bundle);
+        for (InterfaceC0203dk interfaceC0203dk : list) {
+            interfaceC0203dk.reportData(i, bundle);
         }
     }
 
@@ -225,8 +225,8 @@ public final class B1 implements A1, InterfaceC0563s0 {
         }
     }
 
-    public B1(Context context, InterfaceC0739z1 interfaceC0739z1, C0189d5 c0189d5) {
-        this(context, interfaceC0739z1, new C0110a4(context, c0189d5), new J1(), C0219ea.d, C0449na.k().e(), new C1());
+    public B1(Context context, InterfaceC0738z1 interfaceC0738z1, C0188d5 c0188d5) {
+        this(context, interfaceC0738z1, new C0109a4(context, c0188d5), new J1(), C0218ea.d, C0448na.k().e(), new C1());
     }
 
     @Override // io.appmetrica.analytics.impl.A1
@@ -249,16 +249,16 @@ public final class B1 implements A1, InterfaceC0563s0 {
         j1.getClass();
     }
 
-    public B1(Context context, InterfaceC0739z1 interfaceC0739z1, C0110a4 c0110a4, J1 j1, C0219ea c0219ea, C0263g2 c0263g2, C1 c1) {
+    public B1(Context context, InterfaceC0738z1 interfaceC0738z1, C0109a4 c0109a4, J1 j1, C0218ea c0218ea, C0262g2 c0262g2, C1 c1) {
         this.f507a = false;
         this.b = context;
-        this.c = interfaceC0739z1;
-        this.d = c0110a4;
+        this.c = interfaceC0738z1;
+        this.d = c0109a4;
         this.e = j1;
-        this.g = c0219ea;
-        this.h = c0263g2;
+        this.g = c0218ea;
+        this.h = c0262g2;
         this.i = c1;
-        this.j = new C0201dh();
+        this.j = new C0200dh();
     }
 
     public final void a(Bundle bundle) {
@@ -272,11 +272,11 @@ public final class B1 implements A1, InterfaceC0563s0 {
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void a(Intent intent, int i) {
-        ((C0613u0) this.c).f1244a.stopSelf(i);
+        ((C0612u0) this.c).f1244a.stopSelf(i);
     }
 
     @Override // io.appmetrica.analytics.impl.A1
     public final void a(Intent intent, int i, int i2) {
-        ((C0613u0) this.c).f1244a.stopSelf(i2);
+        ((C0612u0) this.c).f1244a.stopSelf(i2);
     }
 }

@@ -11,13 +11,13 @@ public final class FabSmallTokens {
     private static final float ContainerWidth;
     public static final FabSmallTokens INSTANCE = new FabSmallTokens();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerMedium;
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
 
     private FabSmallTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4035getContainerHeightD9Ej5fM() {
+    public final float m3419getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -26,18 +26,18 @@ public final class FabSmallTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4036getContainerWidthD9Ej5fM() {
+    public final float m3420getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4037getIconSizeD9Ej5fM() {
+    public final float m3421getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     static {
         float f = (float) 40.0d;
-        ContainerHeight = Dp.m8258constructorimpl(f);
-        ContainerWidth = Dp.m8258constructorimpl(f);
+        ContainerHeight = Dp.m7555constructorimpl(f);
+        ContainerWidth = Dp.m7555constructorimpl(f);
     }
 }

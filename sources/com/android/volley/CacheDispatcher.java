@@ -91,10 +91,12 @@ public class CacheDispatcher extends Thread {
                 request.addMarker("cache-hit-refresh-needed");
                 request.setCacheEntry(entry);
                 parseNetworkResponse.intermediate = true;
-                if (this.mWaitingRequestManager.maybeAddToWaitingRequests(request)) {
-                    this.mDelivery.postResponse(request, parseNetworkResponse);
+                boolean maybeAddToWaitingRequests = this.mWaitingRequestManager.maybeAddToWaitingRequests(request);
+                ResponseDelivery responseDelivery = this.mDelivery;
+                if (maybeAddToWaitingRequests) {
+                    responseDelivery.postResponse(request, parseNetworkResponse);
                 } else {
-                    this.mDelivery.postResponse(request, parseNetworkResponse, new Runnable() { // from class: com.android.volley.CacheDispatcher.1
+                    responseDelivery.postResponse(request, parseNetworkResponse, new Runnable() { // from class: com.android.volley.CacheDispatcher.1
                         @Override // java.lang.Runnable
                         public void run() {
                             try {

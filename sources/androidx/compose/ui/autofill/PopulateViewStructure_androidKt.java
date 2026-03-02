@@ -72,7 +72,7 @@ public final class PopulateViewStructure_androidKt {
         Integer valueOf;
         boolean z4;
         boolean z5;
-        String m7416toLegacyClassNameV4PA4sw;
+        String m6750toLegacyClassNameV4PA4sw;
         String[] contentHints;
         String[] contentHints2;
         MutableScatterMap<SemanticsPropertyKey<?>, Object> props$ui;
@@ -319,7 +319,7 @@ public final class PopulateViewStructure_androidKt {
                     autofillApi26Helper.setCheckable(viewStructure, true);
                     autofillApi26Helper.setChecked(viewStructure, toggleableState == ToggleableState.On);
                 } else if (bool != null) {
-                    if (!(role == null ? false : Role.m7438equalsimpl0(role.m7441unboximpl(), Role.Companion.m7449getTabo7Vup1c()))) {
+                    if (!(role == null ? false : Role.m6770equalsimpl0(role.m6773unboximpl(), Role.Companion.m6781getTabo7Vup1c()))) {
                         autofillApi26Helper.setCheckable(viewStructure, true);
                         autofillApi26Helper.setChecked(viewStructure, bool.booleanValue());
                     }
@@ -343,8 +343,8 @@ public final class PopulateViewStructure_androidKt {
                             autofillApi26Helper.setText(viewStructure, str4);
                             autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextClassName);
                         }
-                        if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m7416toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7416toLegacyClassNameV4PA4sw(role.m7441unboximpl())) != null) {
-                            autofillApi26Helper.setClassName(viewStructure, m7416toLegacyClassNameV4PA4sw);
+                        if (semanticsInfo.getChildrenInfo().isEmpty() && role != null && (m6750toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6750toLegacyClassNameV4PA4sw(role.m6773unboximpl())) != null) {
+                            autofillApi26Helper.setClassName(viewStructure, m6750toLegacyClassNameV4PA4sw);
                         }
                         if (z) {
                             autofillApi26Helper.setClassName(viewStructure, AndroidComposeViewAccessibilityDelegateCompat.TextFieldClassName);
@@ -368,7 +368,7 @@ public final class PopulateViewStructure_androidKt {
                 if (list != null) {
                 }
                 if (semanticsInfo.getChildrenInfo().isEmpty()) {
-                    autofillApi26Helper.setClassName(viewStructure, m7416toLegacyClassNameV4PA4sw);
+                    autofillApi26Helper.setClassName(viewStructure, m6750toLegacyClassNameV4PA4sw);
                 }
                 if (z) {
                 }

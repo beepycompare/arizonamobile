@@ -322,10 +322,12 @@ public class InstallReferrer implements InvocationHandler {
         try {
             Reflection.invokeInstanceMethod(this.referrerClient, "startConnection", new Class[]{cls}, obj);
         } catch (InvocationTargetException e) {
-            if (Util.hasRootCause(e)) {
-                this.referrerCallback.onFail(Util.formatString("InstallReferrer encountered an InvocationTargetException %s", Util.getRootCause(e)));
+            boolean hasRootCause = Util.hasRootCause(e);
+            InstallReferrerReadListener installReferrerReadListener = this.referrerCallback;
+            if (hasRootCause) {
+                installReferrerReadListener.onFail(Util.formatString("InstallReferrer encountered an InvocationTargetException %s", Util.getRootCause(e)));
             } else {
-                this.referrerCallback.onFail("InstallReferrer encountered an InvocationTargetException");
+                installReferrerReadListener.onFail("InstallReferrer encountered an InvocationTargetException");
             }
         } catch (Exception e2) {
             this.referrerCallback.onFail(Util.formatString("startConnection error (%s) thrown by (%s)", e2.getMessage(), e2.getClass().getCanonicalName()));

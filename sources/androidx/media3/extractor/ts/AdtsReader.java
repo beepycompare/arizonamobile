@@ -326,9 +326,11 @@ public final class AdtsReader implements ElementaryStreamReader {
     @RequiresNonNull({"output"})
     private void parseAdtsHeader() throws ParserException {
         this.adtsScratch.setPosition(0);
-        if (!this.hasOutputFormat) {
+        boolean z = this.hasOutputFormat;
+        ParsableBitArray parsableBitArray = this.adtsScratch;
+        if (!z) {
             int i = 2;
-            int readBits = this.adtsScratch.readBits(2) + 1;
+            int readBits = parsableBitArray.readBits(2) + 1;
             if (readBits != 2) {
                 Log.w(TAG, "Detected audio object type: " + readBits + ", but assuming AAC LC.");
             } else {
@@ -342,7 +344,7 @@ public final class AdtsReader implements ElementaryStreamReader {
             this.output.format(build);
             this.hasOutputFormat = true;
         } else {
-            this.adtsScratch.skipBits(10);
+            parsableBitArray.skipBits(10);
         }
         this.adtsScratch.skipBits(4);
         int readBits2 = this.adtsScratch.readBits(13);

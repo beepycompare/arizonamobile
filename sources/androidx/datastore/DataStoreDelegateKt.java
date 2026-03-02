@@ -29,9 +29,7 @@ public final class DataStoreDelegateKt {
             function1 = new Function1() { // from class: androidx.datastore.DataStoreDelegateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    List dataStore$lambda$0;
-                    dataStore$lambda$0 = DataStoreDelegateKt.dataStore$lambda$0((Context) obj2);
-                    return dataStore$lambda$0;
+                    return DataStoreDelegateKt.dataStore$lambda$0((Context) obj2);
                 }
             };
         }
@@ -41,7 +39,7 @@ public final class DataStoreDelegateKt {
         return dataStore(str, serializer, replaceFileCorruptionHandler, function1, coroutineScope);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List dataStore$lambda$0(Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return CollectionsKt.emptyList();
@@ -63,9 +61,7 @@ public final class DataStoreDelegateKt {
             function1 = new Function1() { // from class: androidx.datastore.DataStoreDelegateKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    List deviceProtectedDataStore$lambda$0;
-                    deviceProtectedDataStore$lambda$0 = DataStoreDelegateKt.deviceProtectedDataStore$lambda$0((Context) obj2);
-                    return deviceProtectedDataStore$lambda$0;
+                    return DataStoreDelegateKt.deviceProtectedDataStore$lambda$0((Context) obj2);
                 }
             };
         }
@@ -75,7 +71,7 @@ public final class DataStoreDelegateKt {
         return deviceProtectedDataStore(str, serializer, replaceFileCorruptionHandler, function1, coroutineScope);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List deviceProtectedDataStore$lambda$0(Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return CollectionsKt.emptyList();

@@ -253,12 +253,14 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             @Override // com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton.Size
             public int getHeight() {
                 ViewGroup.MarginLayoutParams marginLayoutParams;
-                if (ExtendedFloatingActionButton.this.originalHeight != -1) {
-                    if (ExtendedFloatingActionButton.this.originalHeight != 0 && ExtendedFloatingActionButton.this.originalHeight != -2) {
+                int i2 = ExtendedFloatingActionButton.this.originalHeight;
+                ExtendedFloatingActionButton extendedFloatingActionButton = ExtendedFloatingActionButton.this;
+                if (i2 != -1) {
+                    if (extendedFloatingActionButton.originalHeight != 0 && ExtendedFloatingActionButton.this.originalHeight != -2) {
                         return ExtendedFloatingActionButton.this.originalHeight;
                     }
                     return size.getHeight();
-                } else if (!(ExtendedFloatingActionButton.this.getParent() instanceof View)) {
+                } else if (!(extendedFloatingActionButton.getParent() instanceof View)) {
                     return size.getHeight();
                 } else {
                     View view = (View) ExtendedFloatingActionButton.this.getParent();
@@ -583,12 +585,16 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isOrWillBeShown() {
-        return getVisibility() != 0 ? this.animState == 2 : this.animState != 1;
+        int visibility = getVisibility();
+        int i = this.animState;
+        return visibility != 0 ? i == 2 : i != 1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isOrWillBeHidden() {
-        return getVisibility() == 0 ? this.animState == 1 : this.animState != 2;
+        int visibility = getVisibility();
+        int i = this.animState;
+        return visibility == 0 ? i == 1 : i != 2;
     }
 
     public void setAnimationEnabled(boolean z) {
@@ -795,10 +801,11 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             }
             layoutParams.width = this.size.getLayoutParams().width;
             layoutParams.height = this.size.getLayoutParams().height;
-            if (this.extending) {
-                ExtendedFloatingActionButton extendedFloatingActionButton = ExtendedFloatingActionButton.this;
+            boolean z = this.extending;
+            ExtendedFloatingActionButton extendedFloatingActionButton = ExtendedFloatingActionButton.this;
+            if (z) {
                 extendedFloatingActionButton.silentlyUpdateTextColor(extendedFloatingActionButton.originalTextCsl);
-            } else if (ExtendedFloatingActionButton.this.getText() != null && ExtendedFloatingActionButton.this.getText() != "") {
+            } else if (extendedFloatingActionButton.getText() != null && ExtendedFloatingActionButton.this.getText() != "") {
                 ExtendedFloatingActionButton.this.silentlyUpdateTextColor(ColorStateList.valueOf(0));
             }
             ExtendedFloatingActionButton.this.setPaddingRelative(this.size.getPaddingStart(), ExtendedFloatingActionButton.this.getPaddingTop(), this.size.getPaddingEnd(), ExtendedFloatingActionButton.this.getPaddingBottom());
@@ -810,10 +817,12 @@ public class ExtendedFloatingActionButton extends MaterialButton implements Coor
             if (onChangedCallback == null) {
                 return;
             }
-            if (this.extending) {
-                onChangedCallback.onExtended(ExtendedFloatingActionButton.this);
+            boolean z = this.extending;
+            ExtendedFloatingActionButton extendedFloatingActionButton = ExtendedFloatingActionButton.this;
+            if (z) {
+                onChangedCallback.onExtended(extendedFloatingActionButton);
             } else {
-                onChangedCallback.onShrunken(ExtendedFloatingActionButton.this);
+                onChangedCallback.onShrunken(extendedFloatingActionButton);
             }
         }
 

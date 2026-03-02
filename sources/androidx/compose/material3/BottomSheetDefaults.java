@@ -38,13 +38,13 @@ public final class BottomSheetDefaults {
     private static final float PositionalThreshold;
     private static final float SheetPeekHeight;
     public static final BottomSheetDefaults INSTANCE = new BottomSheetDefaults();
-    private static final float Elevation = SheetBottomTokens.INSTANCE.m4331getDockedModalContainerElevationD9Ej5fM();
-    private static final float SheetMaxWidth = Dp.m8258constructorimpl(640);
-    private static final float VelocityThreshold = Dp.m8258constructorimpl((float) ComposerImplKt.nodeKey);
+    private static final float Elevation = SheetBottomTokens.INSTANCE.m3715getDockedModalContainerElevationD9Ej5fM();
+    private static final float SheetMaxWidth = Dp.m7555constructorimpl(640);
+    private static final float VelocityThreshold = Dp.m7555constructorimpl((float) ComposerImplKt.nodeKey);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DragHandle_lgZ2HuY$lambda$2(BottomSheetDefaults bottomSheetDefaults, Modifier modifier, float f, float f2, Shape shape, long j, int i, int i2, Composer composer, int i3) {
-        bottomSheetDefaults.m2039DragHandlelgZ2HuY(modifier, f, f2, shape, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        bottomSheetDefaults.m1746DragHandlelgZ2HuY(modifier, f, f2, shape, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -92,12 +92,12 @@ public final class BottomSheetDefaults {
 
     static {
         float f = 56;
-        SheetPeekHeight = Dp.m8258constructorimpl(f);
-        PositionalThreshold = Dp.m8258constructorimpl(f);
+        SheetPeekHeight = Dp.m7555constructorimpl(f);
+        PositionalThreshold = Dp.m7555constructorimpl(f);
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m2040getElevationD9Ej5fM() {
+    public final float m1747getElevationD9Ej5fM() {
         return Elevation;
     }
 
@@ -106,21 +106,21 @@ public final class BottomSheetDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2040719176, i, -1, "androidx.compose.material3.BottomSheetDefaults.<get-ScrimColor> (SheetDefaults.kt:390)");
         }
-        long m5423copywmQWz5c$default = Color.m5423copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
+        long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(ColorSchemeKt.getValue(ScrimTokens.INSTANCE.getContainerColor(), composer, 6), 0.32f, 0.0f, 0.0f, 0.0f, 14, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m5423copywmQWz5c$default;
+        return m4771copywmQWz5c$default;
     }
 
     /* renamed from: getSheetPeekHeight-D9Ej5fM  reason: not valid java name */
-    public final float m2043getSheetPeekHeightD9Ej5fM() {
+    public final float m1750getSheetPeekHeightD9Ej5fM() {
         return SheetPeekHeight;
     }
 
     /* renamed from: getSheetMaxWidth-D9Ej5fM  reason: not valid java name */
-    public final float m2042getSheetMaxWidthD9Ej5fM() {
+    public final float m1749getSheetMaxWidthD9Ej5fM() {
         return SheetMaxWidth;
     }
 
@@ -129,21 +129,21 @@ public final class BottomSheetDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-511309409, i, -1, "androidx.compose.material3.BottomSheetDefaults.<get-windowInsets> (SheetDefaults.kt:401)");
         }
-        WindowInsets m1004onlybOOhFvg = WindowInsetsKt.m1004onlybOOhFvg(WindowInsets_androidKt.getSafeDrawing(WindowInsets.Companion, composer, 6), WindowInsetsSides.m1021plusgK_yJZ4(WindowInsetsSides.Companion.m1029getBottomJoeWqyM(), WindowInsetsSides.Companion.m1035getTopJoeWqyM()));
+        WindowInsets m891onlybOOhFvg = WindowInsetsKt.m891onlybOOhFvg(WindowInsets_androidKt.getSafeDrawing(WindowInsets.Companion, composer, 6), WindowInsetsSides.m903plusgK_yJZ4(WindowInsetsSides.Companion.m911getBottomJoeWqyM(), WindowInsetsSides.Companion.m917getTopJoeWqyM()));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m1004onlybOOhFvg;
+        return m891onlybOOhFvg;
     }
 
     /* renamed from: getPositionalThreshold-D9Ej5fM$material3  reason: not valid java name */
-    public final float m2041getPositionalThresholdD9Ej5fM$material3() {
+    public final float m1748getPositionalThresholdD9Ej5fM$material3() {
         return PositionalThreshold;
     }
 
     /* renamed from: getVelocityThreshold-D9Ej5fM$material3  reason: not valid java name */
-    public final float m2044getVelocityThresholdD9Ej5fM$material3() {
+    public final float m1751getVelocityThresholdD9Ej5fM$material3() {
         return VelocityThreshold;
     }
 
@@ -163,7 +163,7 @@ public final class BottomSheetDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m2039DragHandlelgZ2HuY(Modifier modifier, float f, float f2, Shape shape, long j, Composer composer, final int i, final int i2) {
+    public final void m1746DragHandlelgZ2HuY(Modifier modifier, float f, float f2, Shape shape, long j, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         final float f3;
@@ -247,10 +247,10 @@ public final class BottomSheetDefaults {
                     } else {
                         companion = i7 != 0 ? Modifier.Companion : obj;
                         if (i8 != 0) {
-                            f3 = SheetBottomTokens.INSTANCE.m4330getDockedDragHandleWidthD9Ej5fM();
+                            f3 = SheetBottomTokens.INSTANCE.m3714getDockedDragHandleWidthD9Ej5fM();
                         }
                         if (i4 != 0) {
-                            f4 = SheetBottomTokens.INSTANCE.m4329getDockedDragHandleHeightD9Ej5fM();
+                            f4 = SheetBottomTokens.INSTANCE.m3713getDockedDragHandleHeightD9Ej5fM();
                         }
                         if ((i2 & 8) != 0) {
                             i3 &= -7169;
@@ -267,18 +267,16 @@ public final class BottomSheetDefaults {
                         ComposerKt.traceEventStart(-1364277227, i3, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle (SheetDefaults.kt:415)");
                     }
                     Strings.Companion companion2 = Strings.Companion;
-                    final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
-                    Modifier m930paddingVpY3zN4$default = PaddingKt.m930paddingVpY3zN4$default(companion, 0.0f, SheetDefaultsKt.access$getDragHandleVerticalPadding$p(), 1, null);
+                    final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_bottom_sheet_drag_handle_description), startRestartGroup, 0);
+                    Modifier m820paddingVpY3zN4$default = PaddingKt.m820paddingVpY3zN4$default(companion, 0.0f, SheetDefaultsKt.access$getDragHandleVerticalPadding$p(), 1, null);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1105372569, "CC(remember):SheetDefaults.kt#9igjgp");
-                    boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
+                    boolean changed = startRestartGroup.changed(m3088getString2EP1pXo);
                     Object rememberedValue = startRestartGroup.rememberedValue();
                     if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                         rememberedValue = new Function1() { // from class: androidx.compose.material3.BottomSheetDefaults$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit DragHandle_lgZ2HuY$lambda$1$lambda$0;
-                                DragHandle_lgZ2HuY$lambda$1$lambda$0 = BottomSheetDefaults.DragHandle_lgZ2HuY$lambda$1$lambda$0(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj2);
-                                return DragHandle_lgZ2HuY$lambda$1$lambda$0;
+                                return BottomSheetDefaults.DragHandle_lgZ2HuY$lambda$1$lambda$0(m3088getString2EP1pXo, (SemanticsPropertyReceiver) obj2);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -286,7 +284,7 @@ public final class BottomSheetDefaults {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     int i9 = i3 >> 6;
                     composer2 = startRestartGroup;
-                    SurfaceKt.m3083SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m930paddingVpY3zN4$default, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
+                    SurfaceKt.m2569SurfaceT9BRK9s(SemanticsModifierKt.semantics$default(m820paddingVpY3zN4$default, false, (Function1) rememberedValue, 1, null), cornerBasedShape, j2, 0L, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1039573072, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.BottomSheetDefaults$DragHandle$2
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -302,7 +300,7 @@ public final class BottomSheetDefaults {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-1039573072, i10, -1, "androidx.compose.material3.BottomSheetDefaults.DragHandle.<anonymous> (SheetDefaults.kt:425)");
                             }
-                            BoxKt.Box(SizeKt.m978sizeVpY3zN4(Modifier.Companion, f3, f6), composer3, 0);
+                            BoxKt.Box(SizeKt.m866sizeVpY3zN4(Modifier.Companion, f3, f6), composer3, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -326,9 +324,7 @@ public final class BottomSheetDefaults {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.BottomSheetDefaults$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit DragHandle_lgZ2HuY$lambda$2;
-                            DragHandle_lgZ2HuY$lambda$2 = BottomSheetDefaults.DragHandle_lgZ2HuY$lambda$2(BottomSheetDefaults.this, companion, f7, f5, shape2, j3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                            return DragHandle_lgZ2HuY$lambda$2;
+                            return BottomSheetDefaults.DragHandle_lgZ2HuY$lambda$2(BottomSheetDefaults.this, companion, f7, f5, shape2, j3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -368,7 +364,7 @@ public final class BottomSheetDefaults {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DragHandle_lgZ2HuY$lambda$1$lambda$0(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;

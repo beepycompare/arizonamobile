@@ -13,14 +13,12 @@ public final class SingletonImageLoaderKt {
     private static final SingletonImageLoader.Factory DefaultSingletonImageLoaderFactory = new SingletonImageLoader.Factory() { // from class: coil3.SingletonImageLoaderKt$$ExternalSyntheticLambda0
         @Override // coil3.SingletonImageLoader.Factory
         public final ImageLoader newImageLoader(Context context) {
-            ImageLoader DefaultSingletonImageLoaderFactory$lambda$1;
-            DefaultSingletonImageLoaderFactory$lambda$1 = SingletonImageLoaderKt.DefaultSingletonImageLoaderFactory$lambda$1(context);
-            return DefaultSingletonImageLoaderFactory$lambda$1;
+            return SingletonImageLoaderKt.DefaultSingletonImageLoaderFactory$lambda$1(context);
         }
     };
     private static final Extras.Key<Unit> DefaultSingletonImageLoaderKey = new Extras.Key<>(Unit.INSTANCE);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ImageLoader DefaultSingletonImageLoaderFactory$lambda$1(Context context) {
         ImageLoader.Builder builder = new ImageLoader.Builder(context);
         builder.getExtras().set(DefaultSingletonImageLoaderKey, Unit.INSTANCE);

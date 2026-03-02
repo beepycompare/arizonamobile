@@ -143,117 +143,117 @@ public final class TimePickerKt {
     private static final float TimeInputBottomPadding;
     private static final float TimePickerMaxHeight;
     private static final float TimePickerMidHeight;
-    private static final float OuterCircleToSizeRatio = Dp.m8258constructorimpl(101) / TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM();
-    private static final float InnerCircleToSizeRatio = Dp.m8258constructorimpl(69) / TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM();
-    private static final float ClockDisplayBottomMargin = Dp.m8258constructorimpl(36);
-    private static final float SupportLabelTop = Dp.m8258constructorimpl(7);
-    private static final float MaxDistance = Dp.m8258constructorimpl(74);
-    private static final float MinimumInteractiveSize = Dp.m8258constructorimpl(48);
+    private static final float OuterCircleToSizeRatio = Dp.m7555constructorimpl(101) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
+    private static final float InnerCircleToSizeRatio = Dp.m7555constructorimpl(69) / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM();
+    private static final float ClockDisplayBottomMargin = Dp.m7555constructorimpl(36);
+    private static final float SupportLabelTop = Dp.m7555constructorimpl(7);
+    private static final float MaxDistance = Dp.m7555constructorimpl(74);
+    private static final float MinimumInteractiveSize = Dp.m7555constructorimpl(48);
     private static final IntList Minutes = IntListKt.intListOf(0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularLayout$lambda$96(Modifier modifier, float f, Function2 function2, int i, int i2, Composer composer, int i3) {
         CircularLayout(modifier, f, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockDisplayNumbers$lambda$35(TimePickerState timePickerState, TimePickerColors timePickerColors, int i, Composer composer, int i2) {
         ClockDisplayNumbers(timePickerState, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockFace$lambda$60(Modifier modifier, AnalogTimePickerState analogTimePickerState, TimePickerColors timePickerColors, boolean z, int i, Composer composer, int i2) {
         ClockFace(modifier, analogTimePickerState, timePickerColors, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockText$lambda$84(Modifier modifier, AnalogTimePickerState analogTimePickerState, int i, boolean z, int i2, Composer composer, int i3) {
         ClockText(modifier, analogTimePickerState, i, z, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DisplaySeparator$lambda$54(Modifier modifier, int i, Composer composer, int i2) {
         DisplaySeparator(modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalClockDisplay$lambda$31(TimePickerState timePickerState, TimePickerColors timePickerColors, int i, Composer composer, int i2) {
         HorizontalClockDisplay(timePickerState, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalPeriodToggle$lambda$37(Modifier modifier, TimePickerState timePickerState, TimePickerColors timePickerColors, int i, Composer composer, int i2) {
         HorizontalPeriodToggle(modifier, timePickerState, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalTimePicker$lambda$15(AnalogTimePickerState analogTimePickerState, Modifier modifier, TimePickerColors timePickerColors, boolean z, int i, int i2, Composer composer, int i3) {
         HorizontalTimePicker(analogTimePickerState, modifier, timePickerColors, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PeriodToggleImpl$lambda$47(Modifier modifier, TimePickerState timePickerState, TimePickerColors timePickerColors, MeasurePolicy measurePolicy, Shape shape, Shape shape2, int i, Composer composer, int i2) {
         PeriodToggleImpl(modifier, timePickerState, timePickerColors, measurePolicy, shape, shape2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimeInput$lambda$5(TimePickerState timePickerState, Modifier modifier, TimePickerColors timePickerColors, int i, int i2, Composer composer, int i3) {
         TimeInput(timePickerState, modifier, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimeInputImpl$lambda$28(Modifier modifier, TimePickerColors timePickerColors, TimePickerState timePickerState, int i, Composer composer, int i2) {
         TimeInputImpl(modifier, timePickerColors, timePickerState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimePickerTextField_1vLObsk$lambda$94(Modifier modifier, TextFieldValue textFieldValue, Function1 function1, TimePickerState timePickerState, int i, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, TimePickerColors timePickerColors, int i2, int i3, Composer composer, int i4) {
-        m3308TimePickerTextField1vLObsk(modifier, textFieldValue, function1, timePickerState, i, keyboardOptions, keyboardActions, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2753TimePickerTextField1vLObsk(modifier, textFieldValue, function1, timePickerState, i, keyboardOptions, keyboardActions, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimePicker_mT9BvqQ$lambda$4(TimePickerState timePickerState, Modifier modifier, TimePickerColors timePickerColors, int i, int i2, int i3, Composer composer, int i4) {
-        m3307TimePickermT9BvqQ(timePickerState, modifier, timePickerColors, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2752TimePickermT9BvqQ(timePickerState, modifier, timePickerColors, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimeSelector_SAnMeKU$lambda$59(Modifier modifier, int i, TimePickerState timePickerState, int i2, TimePickerColors timePickerColors, int i3, Composer composer, int i4) {
-        m3309TimeSelectorSAnMeKU(modifier, i, timePickerState, i2, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
+        m2754TimeSelectorSAnMeKU(modifier, i, timePickerState, i2, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ToggleItem$lambda$50(boolean z, Shape shape, Function0 function0, TimePickerColors timePickerColors, Function3 function3, int i, Composer composer, int i2) {
         ToggleItem(z, shape, function0, timePickerColors, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalClockDisplay$lambda$34(TimePickerState timePickerState, TimePickerColors timePickerColors, int i, Composer composer, int i2) {
         VerticalClockDisplay(timePickerState, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalPeriodToggle$lambda$39(Modifier modifier, TimePickerState timePickerState, TimePickerColors timePickerColors, int i, Composer composer, int i2) {
         VerticalPeriodToggle(modifier, timePickerState, timePickerColors, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalTimePicker$lambda$11(AnalogTimePickerState analogTimePickerState, Modifier modifier, TimePickerColors timePickerColors, boolean z, int i, int i2, Composer composer, int i3) {
         VerticalTimePicker(analogTimePickerState, modifier, timePickerColors, z, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -281,7 +281,7 @@ public final class TimePickerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3307TimePickermT9BvqQ(final TimePickerState timePickerState, Modifier modifier, TimePickerColors timePickerColors, int i, Composer composer, final int i2, final int i3) {
+    public static final void m2752TimePickermT9BvqQ(final TimePickerState timePickerState, Modifier modifier, TimePickerColors timePickerColors, int i, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         Object obj2;
@@ -295,7 +295,7 @@ public final class TimePickerKt {
         TimePickerColors timePickerColors3;
         int i7;
         TimePickerColors timePickerColors4;
-        int m3280layoutTypesDNSZnc;
+        int m2737layoutTypesDNSZnc;
         Object rememberedValue;
         boolean z;
         Object rememberedValue2;
@@ -376,7 +376,7 @@ public final class TimePickerKt {
                     if ((i3 & 8) != 0) {
                         i7 = i4 & (-7169);
                         timePickerColors4 = timePickerColors3;
-                        m3280layoutTypesDNSZnc = TimePickerDefaults.INSTANCE.m3280layoutTypesDNSZnc(startRestartGroup, 6);
+                        m2737layoutTypesDNSZnc = TimePickerDefaults.INSTANCE.m2737layoutTypesDNSZnc(startRestartGroup, 6);
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-619286452, i7, -1, "androidx.compose.material3.TimePicker (TimePicker.kt:224)");
@@ -411,7 +411,7 @@ public final class TimePickerKt {
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         EffectsKt.LaunchedEffect(valueOf, valueOf2, (Function2) rememberedValue3, startRestartGroup, 0);
-                        if (!TimePickerLayoutType.m3329equalsimpl0(m3280layoutTypesDNSZnc, TimePickerLayoutType.Companion.m3334getVerticalQJTpgSE())) {
+                        if (!TimePickerLayoutType.m2769equalsimpl0(m2737layoutTypesDNSZnc, TimePickerLayoutType.Companion.m2774getVerticalQJTpgSE())) {
                             startRestartGroup.startReplaceGroup(2017551219);
                             ComposerKt.sourceInformation(startRestartGroup, "239@12240L179");
                             timePickerColors5 = timePickerColors4;
@@ -433,13 +433,13 @@ public final class TimePickerKt {
                         }
                         modifier2 = modifier3;
                         timePickerColors2 = timePickerColors5;
-                        i6 = m3280layoutTypesDNSZnc;
+                        i6 = m2737layoutTypesDNSZnc;
                     } else {
                         i7 = i4;
                         timePickerColors4 = timePickerColors3;
                     }
                 }
-                m3280layoutTypesDNSZnc = i5;
+                m2737layoutTypesDNSZnc = i5;
                 startRestartGroup.endDefaults();
                 if (ComposerKt.isTraceInProgress()) {
                 }
@@ -472,13 +472,13 @@ public final class TimePickerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 EffectsKt.LaunchedEffect(valueOf3, valueOf22, (Function2) rememberedValue3, startRestartGroup, 0);
-                if (!TimePickerLayoutType.m3329equalsimpl0(m3280layoutTypesDNSZnc, TimePickerLayoutType.Companion.m3334getVerticalQJTpgSE())) {
+                if (!TimePickerLayoutType.m2769equalsimpl0(m2737layoutTypesDNSZnc, TimePickerLayoutType.Companion.m2774getVerticalQJTpgSE())) {
                 }
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 modifier2 = modifier3;
                 timePickerColors2 = timePickerColors5;
-                i6 = m3280layoutTypesDNSZnc;
+                i6 = m2737layoutTypesDNSZnc;
             } else {
                 composer2 = startRestartGroup;
                 composer2.skipToGroupEnd();
@@ -491,9 +491,7 @@ public final class TimePickerKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda8
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj3, Object obj4) {
-                        Unit TimePicker_mT9BvqQ$lambda$4;
-                        TimePicker_mT9BvqQ$lambda$4 = TimePickerKt.TimePicker_mT9BvqQ$lambda$4(TimePickerState.this, modifier2, timePickerColors2, i6, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                        return TimePicker_mT9BvqQ$lambda$4;
+                        return TimePickerKt.TimePicker_mT9BvqQ$lambda$4(TimePickerState.this, modifier2, timePickerColors2, i6, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                     }
                 });
                 return;
@@ -570,9 +568,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda18
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TimeInput$lambda$5;
-                    TimeInput$lambda$5 = TimePickerKt.TimeInput$lambda$5(TimePickerState.this, modifier2, timePickerColors2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return TimeInput$lambda$5;
+                    return TimePickerKt.TimeInput$lambda$5(TimePickerState.this, modifier2, timePickerColors2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -606,15 +602,13 @@ public final class TimePickerKt {
             rememberedValue = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda25
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    TimePickerStateImpl rememberTimePickerState$lambda$7$lambda$6;
-                    rememberTimePickerState$lambda$7$lambda$6 = TimePickerKt.rememberTimePickerState$lambda$7$lambda$6(i, i2, z);
-                    return rememberTimePickerState$lambda$7$lambda$6;
+                    return TimePickerKt.rememberTimePickerState$lambda$7$lambda$6(i, i2, z);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TimePickerStateImpl timePickerStateImpl = (TimePickerStateImpl) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        TimePickerStateImpl timePickerStateImpl = (TimePickerStateImpl) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -622,7 +616,7 @@ public final class TimePickerKt {
         return timePickerStateImpl;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TimePickerStateImpl rememberTimePickerState$lambda$7$lambda$6(int i, int i2, boolean z) {
         return new TimePickerStateImpl(i, i2, z);
     }
@@ -647,9 +641,9 @@ public final class TimePickerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: moveSelector-d3b8Pxo  reason: not valid java name */
-    public static final void m3315moveSelectord3b8Pxo(TimePickerState timePickerState, float f, float f2, float f3, long j) {
-        if (TimePickerSelectionMode.m3338equalsimpl0(timePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI()) && timePickerState.is24hour()) {
-            float dist = dist(f, f2, IntOffset.m8386getXimpl(j), IntOffset.m8387getYimpl(j));
+    public static final void m2760moveSelectord3b8Pxo(TimePickerState timePickerState, float f, float f2, float f3, long j) {
+        if (TimePickerSelectionMode.m2778equalsimpl0(timePickerState.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI()) && timePickerState.is24hour()) {
+            float dist = dist(f, f2, IntOffset.m7683getXimpl(j), IntOffset.m7684getYimpl(j));
             if (isPm(timePickerState)) {
                 timePickerState.setHour(timePickerState.getHour() - (dist < f3 ? 0 : 12));
             } else {
@@ -670,7 +664,7 @@ public final class TimePickerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m3317onTapuYHVD98(AnalogTimePickerState analogTimePickerState, float f, float f2, float f3, boolean z, long j, AnimationSpec<Float> animationSpec, Continuation<? super Unit> continuation) {
+    public static final Object m2762onTapuYHVD98(AnalogTimePickerState analogTimePickerState, float f, float f2, float f3, boolean z, long j, AnimationSpec<Float> animationSpec, Continuation<? super Unit> continuation) {
         TimePickerKt$onTap$1 timePickerKt$onTap$1;
         Object coroutine_suspended;
         int i;
@@ -688,15 +682,15 @@ public final class TimePickerKt {
                 i = timePickerKt$onTap$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    float atan = atan(f2 - IntOffset.m8387getYimpl(j), f - IntOffset.m8386getXimpl(j));
-                    if (TimePickerSelectionMode.m3338equalsimpl0(analogTimePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI())) {
+                    float atan = atan(f2 - IntOffset.m7684getYimpl(j), f - IntOffset.m7683getXimpl(j));
+                    if (TimePickerSelectionMode.m2778equalsimpl0(analogTimePickerState.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI())) {
                         f4 = RadiansPerMinute;
                         rint = ((float) Math.rint((atan / RadiansPerMinute) / 5.0f)) * 5.0f;
                     } else {
                         f4 = RadiansPerHour;
                         rint = (float) Math.rint(atan / RadiansPerHour);
                     }
-                    m3315moveSelectord3b8Pxo(analogTimePickerState, f, f2, f3, j);
+                    m2760moveSelectord3b8Pxo(analogTimePickerState, f, f2, f3, j);
                     timePickerKt$onTap$1.L$0 = analogTimePickerState;
                     z2 = z;
                     timePickerKt$onTap$1.Z$0 = z2;
@@ -710,7 +704,7 @@ public final class TimePickerKt {
                         z2 = z3;
                         analogTimePickerState = analogTimePickerState3;
                         if (z2) {
-                            analogTimePickerState.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI());
+                            analogTimePickerState.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
                         }
                         return Unit.INSTANCE;
                     }
@@ -722,7 +716,7 @@ public final class TimePickerKt {
                     z2 = z4;
                     analogTimePickerState = analogTimePickerState4;
                 }
-                if (TimePickerSelectionMode.m3338equalsimpl0(analogTimePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI()) && z2) {
+                if (TimePickerSelectionMode.m2778equalsimpl0(analogTimePickerState.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI()) && z2) {
                     timePickerKt$onTap$1.L$0 = analogTimePickerState;
                     timePickerKt$onTap$1.Z$0 = z2;
                     timePickerKt$onTap$1.label = 2;
@@ -747,7 +741,7 @@ public final class TimePickerKt {
         i = timePickerKt$onTap$1.label;
         if (i != 0) {
         }
-        if (TimePickerSelectionMode.m3338equalsimpl0(analogTimePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+        if (TimePickerSelectionMode.m2778equalsimpl0(analogTimePickerState.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
             timePickerKt$onTap$1.L$0 = analogTimePickerState;
             timePickerKt$onTap$1.Z$0 = z2;
             timePickerKt$onTap$1.label = 2;
@@ -761,16 +755,16 @@ public final class TimePickerKt {
     }
 
     public static final long getSelectorPos(AnalogTimePickerState analogTimePickerState) {
-        float m8258constructorimpl;
-        float m8258constructorimpl2 = Dp.m8258constructorimpl(Dp.m8258constructorimpl(TimePickerTokens.INSTANCE.m4430getClockDialSelectorHandleContainerSizeD9Ej5fM() / 2.0f) * (analogTimePickerState.m1968getCurrentDiameterD9Ej5fM() / TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM()));
-        if (analogTimePickerState.is24hour() && isPm(analogTimePickerState) && TimePickerSelectionMode.m3338equalsimpl0(analogTimePickerState.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
-            m8258constructorimpl = Dp.m8258constructorimpl(analogTimePickerState.m1968getCurrentDiameterD9Ej5fM() * InnerCircleToSizeRatio);
+        float m7555constructorimpl;
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(Dp.m7555constructorimpl(TimePickerTokens.INSTANCE.m3814getClockDialSelectorHandleContainerSizeD9Ej5fM() / 2.0f) * (analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM()));
+        if (analogTimePickerState.is24hour() && isPm(analogTimePickerState) && TimePickerSelectionMode.m2778equalsimpl0(analogTimePickerState.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
+            m7555constructorimpl = Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() * InnerCircleToSizeRatio);
         } else {
-            m8258constructorimpl = Dp.m8258constructorimpl(analogTimePickerState.m1968getCurrentDiameterD9Ej5fM() * OuterCircleToSizeRatio);
+            m7555constructorimpl = Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() * OuterCircleToSizeRatio);
         }
-        float m8258constructorimpl3 = Dp.m8258constructorimpl(((Dp) RangesKt.coerceAtLeast(Dp.m8256boximpl(Dp.m8258constructorimpl(m8258constructorimpl - m8258constructorimpl2)), Dp.m8256boximpl(Dp.m8258constructorimpl(0)))).m8272unboximpl() + m8258constructorimpl2);
+        float m7555constructorimpl3 = Dp.m7555constructorimpl(((Dp) RangesKt.coerceAtLeast(Dp.m7553boximpl(Dp.m7555constructorimpl(m7555constructorimpl - m7555constructorimpl2)), Dp.m7553boximpl(Dp.m7555constructorimpl(0)))).m7569unboximpl() + m7555constructorimpl2);
         float f = 2;
-        return DpOffset.m8314constructorimpl((Float.floatToRawIntBits(Dp.m8258constructorimpl(Dp.m8258constructorimpl(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * m8258constructorimpl3) + Dp.m8258constructorimpl(analogTimePickerState.m1968getCurrentDiameterD9Ej5fM() / f))) << 32) | (Float.floatToRawIntBits(Dp.m8258constructorimpl(Dp.m8258constructorimpl(m8258constructorimpl3 * ((float) Math.sin(analogTimePickerState.getCurrentAngle()))) + Dp.m8258constructorimpl(analogTimePickerState.m1968getCurrentDiameterD9Ej5fM() / f))) & 4294967295L));
+        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * m7555constructorimpl3) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / f))) << 32) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(Dp.m7555constructorimpl(m7555constructorimpl3 * ((float) Math.sin(analogTimePickerState.getCurrentAngle()))) + Dp.m7555constructorimpl(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM() / f))) & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x0049  */
@@ -867,9 +861,7 @@ public final class TimePickerKt {
                         rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda13
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj3) {
-                                Unit VerticalTimePicker$lambda$9$lambda$8;
-                                VerticalTimePicker$lambda$9$lambda$8 = TimePickerKt.VerticalTimePicker$lambda$9$lambda$8((SemanticsPropertyReceiver) obj3);
-                                return VerticalTimePicker$lambda$9$lambda$8;
+                                return TimePickerKt.VerticalTimePicker$lambda$9$lambda$8((SemanticsPropertyReceiver) obj3);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -894,22 +886,22 @@ public final class TimePickerKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1720573003, "C962@41347L52,963@41408L60,964@41477L191,970@41677L57:TimePicker.kt#uh7d8r");
                     VerticalClockDisplay(analogTimePickerState, timePickerColors3, startRestartGroup, (i4 & 14) | ((i4 >> 3) & 112));
-                    SpacerKt.Spacer(SizeKt.m962height3ABfNKs(Modifier.Companion, ClockDisplayBottomMargin), startRestartGroup, 6);
-                    ClockFace(SizeKt.m976size3ABfNKs(Modifier.Companion, TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM()), analogTimePickerState, timePickerColors3, z2, startRestartGroup, ((i4 << 3) & 112) | 6 | (i4 & 896) | (i4 & 7168));
-                    SpacerKt.Spacer(SizeKt.m962height3ABfNKs(Modifier.Companion, ClockFaceBottomMargin), startRestartGroup, 6);
+                    SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, ClockDisplayBottomMargin), startRestartGroup, 6);
+                    ClockFace(SizeKt.m864size3ABfNKs(Modifier.Companion, TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM()), analogTimePickerState, timePickerColors3, z2, startRestartGroup, ((i4 << 3) & 112) | 6 | (i4 & 896) | (i4 & 7168));
+                    SpacerKt.Spacer(SizeKt.m850height3ABfNKs(Modifier.Companion, ClockFaceBottomMargin), startRestartGroup, 6);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     startRestartGroup.endNode();
@@ -931,9 +923,7 @@ public final class TimePickerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda14
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit VerticalTimePicker$lambda$11;
-                            VerticalTimePicker$lambda$11 = TimePickerKt.VerticalTimePicker$lambda$11(AnalogTimePickerState.this, modifier2, timePickerColors2, z, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return VerticalTimePicker$lambda$11;
+                            return TimePickerKt.VerticalTimePicker$lambda$11(AnalogTimePickerState.this, modifier2, timePickerColors2, z, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -960,7 +950,7 @@ public final class TimePickerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit VerticalTimePicker$lambda$9$lambda$8(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setTraversalGroup(semanticsPropertyReceiver, true);
         return Unit.INSTANCE;
@@ -1060,9 +1050,7 @@ public final class TimePickerKt {
                         rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda29
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj3) {
-                                Unit HorizontalTimePicker$lambda$13$lambda$12;
-                                HorizontalTimePicker$lambda$13$lambda$12 = TimePickerKt.HorizontalTimePicker$lambda$13$lambda$12((SemanticsPropertyReceiver) obj3);
-                                return HorizontalTimePicker$lambda$13$lambda$12;
+                                return TimePickerKt.HorizontalTimePicker$lambda$13$lambda$12((SemanticsPropertyReceiver) obj3);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1087,20 +1075,20 @@ public final class TimePickerKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                     RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1443384930, "C985@42105L37,986@42151L59,987@42219L154:TimePicker.kt#uh7d8r");
                     HorizontalClockDisplay(analogTimePickerState, timePickerColors3, startRestartGroup, (i4 & 14) | ((i4 >> 3) & 112));
-                    SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, ClockDisplayBottomMargin), startRestartGroup, 6);
+                    SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, ClockDisplayBottomMargin), startRestartGroup, 6);
                     ClockFace(Modifier.Companion.then(new ClockFaceSizeModifier()), analogTimePickerState, timePickerColors3, z2, startRestartGroup, ((i4 << 3) & 112) | (i4 & 896) | (i4 & 7168));
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1123,9 +1111,7 @@ public final class TimePickerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda30
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit HorizontalTimePicker$lambda$15;
-                            HorizontalTimePicker$lambda$15 = TimePickerKt.HorizontalTimePicker$lambda$15(AnalogTimePickerState.this, modifier2, timePickerColors2, z, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return HorizontalTimePicker$lambda$15;
+                            return TimePickerKt.HorizontalTimePicker$lambda$15(AnalogTimePickerState.this, modifier2, timePickerColors2, z, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -1152,7 +1138,7 @@ public final class TimePickerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HorizontalTimePicker$lambda$13$lambda$12(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setTraversalGroup(semanticsPropertyReceiver, true);
         return Unit.INSTANCE;
@@ -1198,9 +1184,7 @@ public final class TimePickerKt {
                 rememberedValue = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda11
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        MutableState TimeInputImpl$lambda$17$lambda$16;
-                        TimeInputImpl$lambda$17$lambda$16 = TimePickerKt.TimeInputImpl$lambda$17$lambda$16(TimePickerState.this);
-                        return TimeInputImpl$lambda$17$lambda$16;
+                        return TimePickerKt.TimeInputImpl$lambda$17$lambda$16(TimePickerState.this);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1216,9 +1200,7 @@ public final class TimePickerKt {
                 rememberedValue2 = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda22
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        MutableState TimeInputImpl$lambda$21$lambda$20;
-                        TimeInputImpl$lambda$21$lambda$20 = TimePickerKt.TimeInputImpl$lambda$21$lambda$20(TimePickerState.this);
-                        return TimeInputImpl$lambda$21$lambda$20;
+                        return TimePickerKt.TimeInputImpl$lambda$21$lambda$20(TimePickerState.this);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1252,7 +1234,7 @@ public final class TimePickerKt {
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             EffectsKt.LaunchedEffect(valueOf, valueOf2, (Function2) rememberedValue4, startRestartGroup, 0);
-            Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(modifier, 0.0f, 0.0f, 0.0f, TimeInputBottomPadding, 7, null);
+            Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(modifier, 0.0f, 0.0f, 0.0f, TimeInputBottomPadding, 7, null);
             modifier2 = modifier;
             Alignment.Vertical top = Alignment.Companion.getTop();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
@@ -1260,7 +1242,7 @@ public final class TimePickerKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m932paddingqDBjuR0$default);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m822paddingqDBjuR0$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -1272,31 +1254,31 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1385914133, "C1022@43428L5,1031@43794L3669,1027@43572L3891:TimePicker.kt#uh7d8r");
             timePickerColors2 = timePickerColors;
             timePickerState2 = timePickerState;
-            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{TextKt.getLocalTextStyle().provides(TextStyle.m7714copyp1EtxEg$default(TypographyKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldLabelTextFont(), startRestartGroup, 6), timePickerColors.m3278timeSelectorContentColorvNxB06k$material3(true), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m8136getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744446, null)), CompositionLocalsKt.getLocalLayoutDirection().provides(LayoutDirection.Ltr)}, ComposableLambdaKt.rememberComposableLambda(1306700887, true, new TimePickerKt$TimeInputImpl$2$1(mutableState, timePickerState2, ref, timePickerColors2, mutableState2), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
+            CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[]{TextKt.getLocalTextStyle().provides(TextStyle.m7016copyp1EtxEg$default(TypographyKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldLabelTextFont(), startRestartGroup, 6), timePickerColors.m2735timeSelectorContentColorvNxB06k$material3(true), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7433getCentere0LSkKk(), 0, 0L, null, null, null, 0, 0, null, 16744446, null)), CompositionLocalsKt.getLocalLayoutDirection().provides(LayoutDirection.Ltr)}, ComposableLambdaKt.rememberComposableLambda(1306700887, true, new TimePickerKt$TimeInputImpl$2$1(mutableState, timePickerState2, ref, timePickerColors2, mutableState2), startRestartGroup, 54), startRestartGroup, ProvidedValue.$stable | 48);
             if (!timePickerState2.is24hour()) {
                 startRestartGroup.startReplaceGroup(-1381942321);
                 ComposerKt.sourceInformation(startRestartGroup, "1120@47508L324");
-                Modifier m932paddingqDBjuR0$default2 = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, PeriodToggleMargin, 0.0f, 0.0f, 0.0f, 14, null);
+                Modifier m822paddingqDBjuR0$default2 = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, PeriodToggleMargin, 0.0f, 0.0f, 0.0f, 14, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m932paddingqDBjuR0$default2);
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m822paddingqDBjuR0$default2);
                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -1308,19 +1290,19 @@ public final class TimePickerKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1377011131, "C1121@47576L242:TimePicker.kt#uh7d8r");
-                VerticalPeriodToggle(SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimeInputTokens.INSTANCE.m4423getPeriodSelectorContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m4422getPeriodSelectorContainerHeightD9Ej5fM()), timePickerState2, timePickerColors2, startRestartGroup, ((i3 >> 3) & 112) | 6 | ((i3 << 3) & 896));
+                VerticalPeriodToggle(SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimeInputTokens.INSTANCE.m3807getPeriodSelectorContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m3806getPeriodSelectorContainerHeightD9Ej5fM()), timePickerState2, timePickerColors2, startRestartGroup, ((i3 >> 3) & 112) | 6 | ((i3 << 3) & 896));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -1347,9 +1329,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda31
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TimeInputImpl$lambda$28;
-                    TimeInputImpl$lambda$28 = TimePickerKt.TimeInputImpl$lambda$28(Modifier.this, timePickerColors2, timePickerState2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TimeInputImpl$lambda$28;
+                    return TimePickerKt.TimeInputImpl$lambda$28(Modifier.this, timePickerColors2, timePickerState2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1365,7 +1345,7 @@ public final class TimePickerKt {
         return new TextFieldValue(CalendarLocale_jvmKt.toLocalString$default(timePickerState.getMinute(), 2, 0, false, null, 14, null), 0L, (TextRange) null, 6, (DefaultConstructorMarker) null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MutableState TimeInputImpl$lambda$17$lambda$16(TimePickerState timePickerState) {
         MutableState mutableStateOf$default;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimeInputImpl$hourTextValue(timePickerState), null, 2, null);
@@ -1377,7 +1357,7 @@ public final class TimePickerKt {
         return mutableState.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MutableState TimeInputImpl$lambda$21$lambda$20(TimePickerState timePickerState) {
         MutableState mutableStateOf$default;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimeInputImpl$minuteTextValue(timePickerState), null, 2, null);
@@ -1424,15 +1404,15 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 998514658, "C1135@48014L34:TimePicker.kt#uh7d8r");
@@ -1440,13 +1420,13 @@ public final class TimePickerKt {
             if (!timePickerState.is24hour()) {
                 startRestartGroup.startReplaceGroup(998576161);
                 ComposerKt.sourceInformation(startRestartGroup, "1137@48092L438");
-                Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, 0.0f, PeriodToggleMargin, 0.0f, 0.0f, 13, null);
+                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, 0.0f, PeriodToggleMargin, 0.0f, 0.0f, 13, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m932paddingqDBjuR0$default);
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m822paddingqDBjuR0$default);
                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -1458,20 +1438,20 @@ public final class TimePickerKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1710314390, "C1138@48169L347:TimePicker.kt#uh7d8r");
                 int i3 = i2 << 3;
-                HorizontalPeriodToggle(SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m4434getPeriodSelectorHorizontalContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m4433getPeriodSelectorHorizontalContainerHeightD9Ej5fM()), timePickerState, timePickerColors, startRestartGroup, (i3 & 896) | (i3 & 112) | 6);
+                HorizontalPeriodToggle(SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m3818getPeriodSelectorHorizontalContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m3817getPeriodSelectorHorizontalContainerHeightD9Ej5fM()), timePickerState, timePickerColors, startRestartGroup, (i3 & 896) | (i3 & 112) | 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -1498,9 +1478,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda19
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HorizontalClockDisplay$lambda$31;
-                    HorizontalClockDisplay$lambda$31 = TimePickerKt.HorizontalClockDisplay$lambda$31(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return HorizontalClockDisplay$lambda$31;
+                    return TimePickerKt.HorizontalClockDisplay$lambda$31(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1541,15 +1519,15 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1364225858, "C1155@48709L34:TimePicker.kt#uh7d8r");
@@ -1557,13 +1535,13 @@ public final class TimePickerKt {
             if (!timePickerState.is24hour()) {
                 startRestartGroup.startReplaceGroup(1364287361);
                 ComposerKt.sourceInformation(startRestartGroup, "1157@48787L434");
-                Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, PeriodToggleMargin, 0.0f, 0.0f, 0.0f, 14, null);
+                Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, PeriodToggleMargin, 0.0f, 0.0f, 0.0f, 14, null);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                 MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                 int currentCompositeKeyHash2 = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                 CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m932paddingqDBjuR0$default);
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m822paddingqDBjuR0$default);
                 Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                 if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -1575,20 +1553,20 @@ public final class TimePickerKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2145741896, "C1158@48866L341:TimePicker.kt#uh7d8r");
                 int i3 = i2 << 3;
-                VerticalPeriodToggle(SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m4437getPeriodSelectorVerticalContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m4436getPeriodSelectorVerticalContainerHeightD9Ej5fM()), timePickerState, timePickerColors, startRestartGroup, (i3 & 896) | (i3 & 112) | 6);
+                VerticalPeriodToggle(SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m3821getPeriodSelectorVerticalContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m3820getPeriodSelectorVerticalContainerHeightD9Ej5fM()), timePickerState, timePickerColors, startRestartGroup, (i3 & 896) | (i3 & 112) | 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -1615,9 +1593,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit VerticalClockDisplay$lambda$34;
-                    VerticalClockDisplay$lambda$34 = TimePickerKt.VerticalClockDisplay$lambda$34(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return VerticalClockDisplay$lambda$34;
+                    return TimePickerKt.VerticalClockDisplay$lambda$34(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1677,22 +1653,22 @@ public final class TimePickerKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer2);
-                    Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer2);
+                    Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                     RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, 2065726649, "C1180@49589L294,1187@49896L123,1190@50032L288:TimePicker.kt#uh7d8r");
-                    TimePickerKt.m3309TimeSelectorSAnMeKU(SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m4440getTimeSelectorContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m4439getTimeSelectorContainerHeightD9Ej5fM()), TimePickerKt.getHourForDisplay(timePickerState2), timePickerState2, TimePickerSelectionMode.Companion.m3342getHouryecRtBI(), timePickerColors2, composer2, 3078);
+                    TimePickerKt.m2754TimeSelectorSAnMeKU(SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m3824getTimeSelectorContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m3823getTimeSelectorContainerHeightD9Ej5fM()), TimePickerKt.getHourForDisplay(timePickerState2), timePickerState2, TimePickerSelectionMode.Companion.m2782getHouryecRtBI(), timePickerColors2, composer2, 3078);
                     f = TimePickerKt.DisplaySeparatorWidth;
-                    TimePickerKt.DisplaySeparator(SizeKt.m978sizeVpY3zN4(Modifier.Companion, f, TimePickerTokens.INSTANCE.m4436getPeriodSelectorVerticalContainerHeightD9Ej5fM()), composer2, 6);
-                    TimePickerKt.m3309TimeSelectorSAnMeKU(SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m4440getTimeSelectorContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m4439getTimeSelectorContainerHeightD9Ej5fM()), timePickerState2.getMinute(), timePickerState2, TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI(), timePickerColors2, composer2, 3078);
+                    TimePickerKt.DisplaySeparator(SizeKt.m866sizeVpY3zN4(Modifier.Companion, f, TimePickerTokens.INSTANCE.m3820getPeriodSelectorVerticalContainerHeightD9Ej5fM()), composer2, 6);
+                    TimePickerKt.m2754TimeSelectorSAnMeKU(SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimePickerTokens.INSTANCE.m3824getTimeSelectorContainerWidthD9Ej5fM(), TimePickerTokens.INSTANCE.m3823getTimeSelectorContainerHeightD9Ej5fM()), timePickerState2.getMinute(), timePickerState2, TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI(), timePickerColors2, composer2, 3078);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     composer2.endNode();
@@ -1713,9 +1689,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda32
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ClockDisplayNumbers$lambda$35;
-                    ClockDisplayNumbers$lambda$35 = TimePickerKt.ClockDisplayNumbers$lambda$35(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ClockDisplayNumbers$lambda$35;
+                    return TimePickerKt.ClockDisplayNumbers$lambda$35(TimePickerState.this, timePickerColors, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1771,9 +1745,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda36
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HorizontalPeriodToggle$lambda$37;
-                    HorizontalPeriodToggle$lambda$37 = TimePickerKt.HorizontalPeriodToggle$lambda$37(Modifier.this, timePickerState2, timePickerColors2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return HorizontalPeriodToggle$lambda$37;
+                    return TimePickerKt.HorizontalPeriodToggle$lambda$37(Modifier.this, timePickerState2, timePickerColors2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1829,9 +1801,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda27
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit VerticalPeriodToggle$lambda$39;
-                    VerticalPeriodToggle$lambda$39 = TimePickerKt.VerticalPeriodToggle$lambda$39(Modifier.this, timePickerState2, timePickerColors2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return VerticalPeriodToggle$lambda$39;
+                    return TimePickerKt.VerticalPeriodToggle$lambda$39(Modifier.this, timePickerState2, timePickerColors2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1874,28 +1844,26 @@ public final class TimePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1374241901, i2, -1, "androidx.compose.material3.PeriodToggleImpl (TimePicker.kt:1301)");
             }
-            BorderStroke m332BorderStrokecXLIe8U = BorderStrokeKt.m332BorderStrokecXLIe8U(TimePickerTokens.INSTANCE.m4435getPeriodSelectorOutlineWidthD9Ej5fM(), timePickerColors.m3265getPeriodSelectorBorderColor0d7_KjU());
+            BorderStroke m290BorderStrokecXLIe8U = BorderStrokeKt.m290BorderStrokecXLIe8U(TimePickerTokens.INSTANCE.m3819getPeriodSelectorOutlineWidthD9Ej5fM(), timePickerColors.m2722getPeriodSelectorBorderColor0d7_KjU());
             Shape value = ShapesKt.getValue(TimePickerTokens.INSTANCE.getPeriodSelectorContainerShape(), startRestartGroup, 6);
             Intrinsics.checkNotNull(value, "null cannot be cast to non-null type androidx.compose.foundation.shape.CornerBasedShape");
             CornerBasedShape cornerBasedShape = (CornerBasedShape) value;
             Strings.Companion companion = Strings.Companion;
-            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_time_picker_period_toggle_description), startRestartGroup, 0);
+            final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_time_picker_period_toggle_description), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2091524749, "CC(remember):TimePicker.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
+            boolean changed = startRestartGroup.changed(m3088getString2EP1pXo);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda20
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit PeriodToggleImpl$lambda$41$lambda$40;
-                        PeriodToggleImpl$lambda$41$lambda$40 = TimePickerKt.PeriodToggleImpl$lambda$41$lambda$40(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj);
-                        return PeriodToggleImpl$lambda$41$lambda$40;
+                        return TimePickerKt.PeriodToggleImpl$lambda$41$lambda$40(m3088getString2EP1pXo, (SemanticsPropertyReceiver) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier border = BorderKt.border(SelectableGroupKt.selectableGroup(SemanticsModifierKt.semantics$default(modifier, false, (Function1) rememberedValue, 1, null)), m332BorderStrokecXLIe8U, cornerBasedShape);
+            Modifier border = BorderKt.border(SelectableGroupKt.selectableGroup(SemanticsModifierKt.semantics$default(modifier, false, (Function1) rememberedValue, 1, null)), m290BorderStrokecXLIe8U, cornerBasedShape);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -1911,15 +1879,15 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1677874453, "C1321@54231L120,1318@54118L367,1330@54498L219,1339@54840L121,1336@54730L358:TimePicker.kt#uh7d8r");
             boolean z2 = !isPm(timePickerState);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -222966916, "CC(remember):TimePicker.kt#9igjgp");
@@ -1930,9 +1898,7 @@ public final class TimePickerKt {
                 rememberedValue2 = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda21
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit PeriodToggleImpl$lambda$46$lambda$43$lambda$42;
-                        PeriodToggleImpl$lambda$46$lambda$43$lambda$42 = TimePickerKt.PeriodToggleImpl$lambda$46$lambda$43$lambda$42(TimePickerState.this);
-                        return PeriodToggleImpl$lambda$46$lambda$43$lambda$42;
+                        return TimePickerKt.PeriodToggleImpl$lambda$46$lambda$43$lambda$42(TimePickerState.this);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1940,7 +1906,7 @@ public final class TimePickerKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             int i4 = (i2 << 3) & 7168;
             ToggleItem(z2, shape, (Function0) rememberedValue2, timePickerColors, ComposableSingletons$TimePickerKt.INSTANCE.getLambda$1425358052$material3(), startRestartGroup, ((i2 >> 9) & 112) | 24576 | i4);
-            SpacerKt.Spacer(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.fillMaxSize$default(ZIndexModifierKt.zIndex(LayoutIdKt.layoutId(Modifier.Companion, "Spacer"), 2.0f), 0.0f, 1, null), timePickerColors.m3265getPeriodSelectorBorderColor0d7_KjU(), null, 2, null), startRestartGroup, 0);
+            SpacerKt.Spacer(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(ZIndexModifierKt.zIndex(LayoutIdKt.layoutId(Modifier.Companion, "Spacer"), 2.0f), 0.0f, 1, null), timePickerColors.m2722getPeriodSelectorBorderColor0d7_KjU(), null, 2, null), startRestartGroup, 0);
             boolean isPm = isPm(timePickerState);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -222947427, "CC(remember):TimePicker.kt#9igjgp");
             if (i3 != 32 && ((i2 & 64) == 0 || !startRestartGroup.changedInstance(timePickerState))) {
@@ -1951,15 +1917,13 @@ public final class TimePickerKt {
                 rememberedValue3 = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda23
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit PeriodToggleImpl$lambda$46$lambda$45$lambda$44;
-                        PeriodToggleImpl$lambda$46$lambda$45$lambda$44 = TimePickerKt.PeriodToggleImpl$lambda$46$lambda$45$lambda$44(TimePickerState.this);
-                        return PeriodToggleImpl$lambda$46$lambda$45$lambda$44;
+                        return TimePickerKt.PeriodToggleImpl$lambda$46$lambda$45$lambda$44(TimePickerState.this);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ToggleItem(isPm, shape3, rememberedValue3, timePickerColors, ComposableSingletons$TimePickerKt.INSTANCE.m2266getLambda$1179219109$material3(), startRestartGroup, ((i2 >> 12) & 112) | 24576 | i4);
+            ToggleItem(isPm, shape3, rememberedValue3, timePickerColors, ComposableSingletons$TimePickerKt.INSTANCE.m1952getLambda$1179219109$material3(), startRestartGroup, ((i2 >> 12) & 112) | 24576 | i4);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1973,22 +1937,20 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda24
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PeriodToggleImpl$lambda$47;
-                    PeriodToggleImpl$lambda$47 = TimePickerKt.PeriodToggleImpl$lambda$47(Modifier.this, timePickerState, timePickerColors, measurePolicy, shape, shape2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return PeriodToggleImpl$lambda$47;
+                    return TimePickerKt.PeriodToggleImpl$lambda$47(Modifier.this, timePickerState, timePickerColors, measurePolicy, shape, shape2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PeriodToggleImpl$lambda$41$lambda$40(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setTraversalGroup(semanticsPropertyReceiver, true);
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PeriodToggleImpl$lambda$46$lambda$43$lambda$42(TimePickerState timePickerState) {
         if (isPm(timePickerState)) {
             timePickerState.setHour(timePickerState.getHour() - 12);
@@ -1996,7 +1958,7 @@ public final class TimePickerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PeriodToggleImpl$lambda$46$lambda$45$lambda$44(TimePickerState timePickerState) {
         if (!isPm(timePickerState)) {
             timePickerState.setHour(timePickerState.getHour() + 12);
@@ -2033,8 +1995,8 @@ public final class TimePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1523811083, i2, -1, "androidx.compose.material3.ToggleItem (TimePicker.kt:1359)");
             }
-            long m3276periodSelectorContentColorvNxB06k$material3 = timePickerColors.m3276periodSelectorContentColorvNxB06k$material3(z);
-            long m3275periodSelectorContainerColorvNxB06k$material3 = timePickerColors.m3275periodSelectorContainerColorvNxB06k$material3(z);
+            long m2733periodSelectorContentColorvNxB06k$material3 = timePickerColors.m2733periodSelectorContentColorvNxB06k$material3(z);
+            long m2732periodSelectorContainerColorvNxB06k$material3 = timePickerColors.m2732periodSelectorContainerColorvNxB06k$material3(z);
             Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(ZIndexModifierKt.zIndex(Modifier.Companion, z ? 0.0f : 1.0f), 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -201383391, "CC(remember):TimePicker.kt#9igjgp");
             boolean z2 = (i2 & 14) == 4;
@@ -2043,15 +2005,13 @@ public final class TimePickerKt {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda16
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit ToggleItem$lambda$49$lambda$48;
-                        ToggleItem$lambda$49$lambda$48 = TimePickerKt.ToggleItem$lambda$49$lambda$48(z, (SemanticsPropertyReceiver) obj);
-                        return ToggleItem$lambda$49$lambda$48;
+                        return TimePickerKt.ToggleItem$lambda$49$lambda$48(z, (SemanticsPropertyReceiver) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ButtonKt.TextButton(function0, SemanticsModifierKt.semantics$default(fillMaxSize$default, false, (Function1) rememberedValue, 1, null), false, shape, ButtonDefaults.INSTANCE.m2071textButtonColorsro_MJ88(m3275periodSelectorContainerColorvNxB06k$material3, m3276periodSelectorContentColorvNxB06k$material3, 0L, 0L, startRestartGroup, 24576, 12), null, null, PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0)), null, function3, startRestartGroup, ((i2 >> 6) & 14) | 12582912 | ((i2 << 6) & 7168) | ((i2 << 15) & 1879048192), 356);
+            ButtonKt.TextButton(function0, SemanticsModifierKt.semantics$default(fillMaxSize$default, false, (Function1) rememberedValue, 1, null), false, shape, ButtonDefaults.INSTANCE.m1774textButtonColorsro_MJ88(m2732periodSelectorContainerColorvNxB06k$material3, m2733periodSelectorContentColorvNxB06k$material3, 0L, 0L, startRestartGroup, 24576, 12), null, null, PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0)), null, function3, startRestartGroup, ((i2 >> 6) & 14) | 12582912 | ((i2 << 6) & 7168) | ((i2 << 15) & 1879048192), 356);
             composer2 = startRestartGroup;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -2062,15 +2022,13 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda17
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ToggleItem$lambda$50;
-                    ToggleItem$lambda$50 = TimePickerKt.ToggleItem$lambda$50(z, shape, function0, timePickerColors, function3, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ToggleItem$lambda$50;
+                    return TimePickerKt.ToggleItem$lambda$50(z, shape, function0, timePickerColors, function3, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ToggleItem$lambda$49$lambda$48(boolean z, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setSelected(semanticsPropertyReceiver, z);
         return Unit.INSTANCE;
@@ -2097,16 +2055,17 @@ public final class TimePickerKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(TextKt.getLocalTextStyle());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            TextStyle m7714copyp1EtxEg$default = TextStyle.m7714copyp1EtxEg$default((TextStyle) consume, 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m8136getCentere0LSkKk(), 0, 0L, null, null, new LineHeightStyle(LineHeightStyle.Alignment.Companion.m8103getCenterPIaL0Z0(), LineHeightStyle.Trim.Companion.m8125getBothEVpEnUU(), (DefaultConstructorMarker) null), 0, 0, null, 15695871, null);
+            TextStyle m7016copyp1EtxEg$default = TextStyle.m7016copyp1EtxEg$default((TextStyle) consume, 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, TextAlign.Companion.m7433getCentere0LSkKk(), 0, 0L, null, null, new LineHeightStyle(LineHeightStyle.Alignment.Companion.m7400getCenterPIaL0Z0(), LineHeightStyle.Trim.Companion.m7422getBothEVpEnUU(), (DefaultConstructorMarker) null), 0, 0, null, 15695871, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 113388544, "CC(remember):TimePicker.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda9
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit DisplaySeparator$lambda$52$lambda$51;
-                        DisplaySeparator$lambda$52$lambda$51 = TimePickerKt.DisplaySeparator$lambda$52$lambda$51((SemanticsPropertyReceiver) obj);
-                        return DisplaySeparator$lambda$52$lambda$51;
+                        Unit unit;
+                        SemanticsPropertyReceiver semanticsPropertyReceiver = (SemanticsPropertyReceiver) obj;
+                        unit = Unit.INSTANCE;
+                        return unit;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2131,20 +2090,20 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2101554693, "C1391@56386L5,1391@56337L70:TimePicker.kt#uh7d8r");
             composer2 = startRestartGroup;
-            TextKt.m3255TextNvy7gAk(StringUtils.PROCESS_POSTFIX_DELIMITER, null, ColorSchemeKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSeparatorColor(), startRestartGroup, 6), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, m7714copyp1EtxEg$default, composer2, 6, 0, 131066);
+            TextKt.m2712TextNvy7gAk(StringUtils.PROCESS_POSTFIX_DELIMITER, null, ColorSchemeKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSeparatorColor(), startRestartGroup, 6), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, m7016copyp1EtxEg$default, composer2, 6, 0, 131066);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -2160,27 +2119,20 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DisplaySeparator$lambda$54;
-                    DisplaySeparator$lambda$54 = TimePickerKt.DisplaySeparator$lambda$54(Modifier.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DisplaySeparator$lambda$54;
+                    return TimePickerKt.DisplaySeparator$lambda$54(Modifier.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit DisplaySeparator$lambda$52$lambda$51(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v14 */
     /* renamed from: TimeSelector-SAnMeKU  reason: not valid java name */
-    public static final void m3309TimeSelectorSAnMeKU(final Modifier modifier, final int i, final TimePickerState timePickerState, final int i2, final TimePickerColors timePickerColors, Composer composer, final int i3) {
+    public static final void m2754TimeSelectorSAnMeKU(final Modifier modifier, final int i, final TimePickerState timePickerState, final int i2, final TimePickerColors timePickerColors, Composer composer, final int i3) {
         int i4;
         Composer composer2;
-        int m3618constructorimpl;
+        int m3009constructorimpl;
         Composer startRestartGroup = composer.startRestartGroup(-1148055889);
         ComposerKt.sourceInformation(startRestartGroup, "C(TimeSelector)N(modifier,value,state,selection:c#material3.TimePickerSelectionMode,colors)1406@56730L214,1418@57168L124,1428@57503L5,1422@57312L117,1430@57548L498,1416@57084L962:TimePicker.kt#uh7d8r");
         if ((i3 & 6) == 0) {
@@ -2207,27 +2159,25 @@ public final class TimePickerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1148055889, i4, -1, "androidx.compose.material3.TimeSelector (TimePicker.kt:1403)");
             }
-            boolean m3338equalsimpl0 = TimePickerSelectionMode.m3338equalsimpl0(timePickerState.mo1969getSelectionyecRtBI(), i2);
-            if (TimePickerSelectionMode.m3338equalsimpl0(i2, TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+            boolean m2778equalsimpl0 = TimePickerSelectionMode.m2778equalsimpl0(timePickerState.mo1702getSelectionyecRtBI(), i2);
+            if (TimePickerSelectionMode.m2778equalsimpl0(i2, TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
                 Strings.Companion companion = Strings.Companion;
-                m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_hour_selection);
+                m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_hour_selection);
             } else {
                 Strings.Companion companion2 = Strings.Companion;
-                m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_minute_selection);
+                m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_minute_selection);
             }
-            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(m3618constructorimpl, startRestartGroup, 0);
-            long m3277timeSelectorContainerColorvNxB06k$material3 = timePickerColors.m3277timeSelectorContainerColorvNxB06k$material3(m3338equalsimpl0);
-            long m3278timeSelectorContentColorvNxB06k$material3 = timePickerColors.m3278timeSelectorContentColorvNxB06k$material3(m3338equalsimpl0);
+            final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(m3009constructorimpl, startRestartGroup, 0);
+            long m2734timeSelectorContainerColorvNxB06k$material3 = timePickerColors.m2734timeSelectorContainerColorvNxB06k$material3(m2778equalsimpl0);
+            long m2735timeSelectorContentColorvNxB06k$material3 = timePickerColors.m2735timeSelectorContentColorvNxB06k$material3(m2778equalsimpl0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 524909899, "CC(remember):TimePicker.kt#9igjgp");
-            boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
+            boolean changed = startRestartGroup.changed(m3088getString2EP1pXo);
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda37
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit TimeSelector_SAnMeKU$lambda$56$lambda$55;
-                        TimeSelector_SAnMeKU$lambda$56$lambda$55 = TimePickerKt.TimeSelector_SAnMeKU$lambda$56$lambda$55(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj);
-                        return TimeSelector_SAnMeKU$lambda$56$lambda$55;
+                        return TimePickerKt.TimeSelector_SAnMeKU$lambda$56$lambda$55(m3088getString2EP1pXo, (SemanticsPropertyReceiver) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2242,16 +2192,14 @@ public final class TimePickerKt {
                 rememberedValue2 = new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit TimeSelector_SAnMeKU$lambda$58$lambda$57;
-                        TimeSelector_SAnMeKU$lambda$58$lambda$57 = TimePickerKt.TimeSelector_SAnMeKU$lambda$58$lambda$57(i2, timePickerState);
-                        return TimeSelector_SAnMeKU$lambda$58$lambda$57;
+                        return TimePickerKt.TimeSelector_SAnMeKU$lambda$58$lambda$57(i2, timePickerState);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            SurfaceKt.m3084Surfaced85dljk(m3338equalsimpl0, (Function0<Unit>) rememberedValue2, semantics, false, value, m3277timeSelectorContainerColorvNxB06k$material3, 0L, 0.0f, 0.0f, (BorderStroke) null, (MutableInteractionSource) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-1477282471, true, new TimePickerKt$TimeSelector$3(i2, timePickerState, i, m3278timeSelectorContentColorvNxB06k$material3), startRestartGroup, 54), composer2, 0, 48, 1992);
+            SurfaceKt.m2570Surfaced85dljk(m2778equalsimpl0, (Function0<Unit>) rememberedValue2, semantics, false, value, m2734timeSelectorContainerColorvNxB06k$material3, 0L, 0.0f, 0.0f, (BorderStroke) null, (MutableInteractionSource) null, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-1477282471, true, new TimePickerKt$TimeSelector$3(i2, timePickerState, i, m2735timeSelectorContentColorvNxB06k$material3), startRestartGroup, 54), composer2, 0, 48, 1992);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -2261,25 +2209,23 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TimeSelector_SAnMeKU$lambda$59;
-                    TimeSelector_SAnMeKU$lambda$59 = TimePickerKt.TimeSelector_SAnMeKU$lambda$59(Modifier.this, i, timePickerState, i2, timePickerColors, i3, (Composer) obj, ((Integer) obj2).intValue());
-                    return TimeSelector_SAnMeKU$lambda$59;
+                    return TimePickerKt.TimeSelector_SAnMeKU$lambda$59(Modifier.this, i, timePickerState, i2, timePickerColors, i3, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimeSelector_SAnMeKU$lambda$56$lambda$55(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m7461setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7447getRadioButtono7Vup1c());
+        SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6779getRadioButtono7Vup1c());
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimeSelector_SAnMeKU$lambda$58$lambda$57(int i, TimePickerState timePickerState) {
-        if (!TimePickerSelectionMode.m3338equalsimpl0(i, timePickerState.mo1969getSelectionyecRtBI())) {
-            timePickerState.mo1971setSelection6_8s6DQ(i);
+        if (!TimePickerSelectionMode.m2778equalsimpl0(i, timePickerState.mo1702getSelectionyecRtBI())) {
+            timePickerState.mo1704setSelection6_8s6DQ(i);
         }
         return Unit.INSTANCE;
     }
@@ -2310,7 +2256,7 @@ public final class TimePickerKt {
                 ComposerKt.traceEventStart(-478841003, i2, -1, "androidx.compose.material3.ClockFace (TimePicker.kt:1591)");
             }
             analogTimePickerState2 = analogTimePickerState;
-            CrossfadeKt.Crossfade(analogTimePickerState2.getClockFaceValues(), drawSelector(BackgroundKt.m298backgroundbw27NRU(modifier, timePickerColors.m3261getClockDialColor0d7_KjU(), RoundedCornerShapeKt.getCircleShape()).then(new ClockDialModifier(analogTimePickerState, z, analogTimePickerState.mo1969getSelectionyecRtBI(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, startRestartGroup, 6), null)), analogTimePickerState2, timePickerColors), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), (String) null, ComposableLambdaKt.rememberComposableLambda(747010833, true, new TimePickerKt$ClockFace$1(timePickerColors, analogTimePickerState2, z), startRestartGroup, 54), startRestartGroup, 24576, 8);
+            CrossfadeKt.Crossfade(analogTimePickerState2.getClockFaceValues(), drawSelector(BackgroundKt.m263backgroundbw27NRU(modifier, timePickerColors.m2718getClockDialColor0d7_KjU(), RoundedCornerShapeKt.getCircleShape()).then(new ClockDialModifier(analogTimePickerState, z, analogTimePickerState.mo1702getSelectionyecRtBI(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, startRestartGroup, 6), null)), analogTimePickerState2, timePickerColors), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultEffects, startRestartGroup, 6), (String) null, ComposableLambdaKt.rememberComposableLambda(747010833, true, new TimePickerKt$ClockFace$1(timePickerColors, analogTimePickerState2, z), startRestartGroup, 54), startRestartGroup, 24576, 8);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -2320,9 +2266,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ClockFace$lambda$60;
-                    ClockFace$lambda$60 = TimePickerKt.ClockFace$lambda$60(Modifier.this, analogTimePickerState2, timePickerColors, z, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ClockFace$lambda$60;
+                    return TimePickerKt.ClockFace$lambda$60(Modifier.this, analogTimePickerState2, timePickerColors, z, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -2332,27 +2276,25 @@ public final class TimePickerKt {
         return DrawModifierKt.drawWithContent(modifier, new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit drawSelector$lambda$61;
-                drawSelector$lambda$61 = TimePickerKt.drawSelector$lambda$61(AnalogTimePickerState.this, timePickerColors, (ContentDrawScope) obj);
-                return drawSelector$lambda$61;
+                return TimePickerKt.drawSelector$lambda$61(AnalogTimePickerState.this, timePickerColors, (ContentDrawScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit drawSelector$lambda$61(AnalogTimePickerState analogTimePickerState, TimePickerColors timePickerColors, ContentDrawScope contentDrawScope) {
-        float f = contentDrawScope.mo464toPx0680j_4(DpOffset.m8319getXD9Ej5fM(getSelectorPos(analogTimePickerState)));
-        float f2 = contentDrawScope.mo464toPx0680j_4(DpOffset.m8321getYD9Ej5fM(getSelectorPos(analogTimePickerState)));
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
-        float f3 = ((contentDrawScope.mo464toPx0680j_4(TimePickerTokens.INSTANCE.m4430getClockDialSelectorHandleContainerSizeD9Ej5fM()) / 2.0f) * contentDrawScope.mo458roundToPx0680j_4(analogTimePickerState.m1968getCurrentDiameterD9Ej5fM())) / contentDrawScope.mo458roundToPx0680j_4(TimePickerTokens.INSTANCE.m4428getClockDialContainerSizeD9Ej5fM());
-        long m3270getSelectorColor0d7_KjU = timePickerColors.m3270getSelectorColor0d7_KjU();
+        float f = contentDrawScope.mo405toPx0680j_4(DpOffset.m7616getXD9Ej5fM(getSelectorPos(analogTimePickerState)));
+        float f2 = contentDrawScope.mo405toPx0680j_4(DpOffset.m7618getYD9Ej5fM(getSelectorPos(analogTimePickerState)));
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        float f3 = ((contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3814getClockDialSelectorHandleContainerSizeD9Ej5fM()) / 2.0f) * contentDrawScope.mo399roundToPx0680j_4(analogTimePickerState.m1701getCurrentDiameterD9Ej5fM())) / contentDrawScope.mo399roundToPx0680j_4(TimePickerTokens.INSTANCE.m3812getClockDialContainerSizeD9Ej5fM());
+        long m2727getSelectorColor0d7_KjU = timePickerColors.m2727getSelectorColor0d7_KjU();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m5986drawCircleVaOC9Bg$default(contentDrawScope2, Color.Companion.m5450getBlack0d7_KjU(), f3, m5171constructorimpl, 0.0f, null, null, BlendMode.Companion.m5337getClear0nO6VwU(), 56, null);
+        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, Color.Companion.m4798getBlack0d7_KjU(), f3, m4519constructorimpl, 0.0f, null, null, BlendMode.Companion.m4685getClear0nO6VwU(), 56, null);
         contentDrawScope.drawContent();
-        DrawScope.m5986drawCircleVaOC9Bg$default(contentDrawScope2, m3270getSelectorColor0d7_KjU, f3, m5171constructorimpl, 0.0f, null, null, BlendMode.Companion.m5365getXor0nO6VwU(), 56, null);
-        DrawScope.m5991drawLineNGM6Ib0$default(contentDrawScope2, m3270getSelectorColor0d7_KjU, androidx.compose.ui.geometry.SizeKt.m5258getCenteruvyYCjk(contentDrawScope.mo6005getSizeNHjbRc()), Offset.m5183minusMKHz9U(m5171constructorimpl, Offset.m5171constructorimpl((Float.floatToRawIntBits(((float) Math.sin(analogTimePickerState.getCurrentAngle())) * f3) & 4294967295L) | (Float.floatToRawIntBits(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * f3) << 32))), contentDrawScope.mo464toPx0680j_4(TimePickerTokens.INSTANCE.m4431getClockDialSelectorTrackContainerWidthD9Ej5fM()), 0, null, 0.0f, null, BlendMode.Companion.m5364getSrcOver0nO6VwU(), 240, null);
-        DrawScope.m5986drawCircleVaOC9Bg$default(contentDrawScope2, m3270getSelectorColor0d7_KjU, contentDrawScope.mo464toPx0680j_4(TimePickerTokens.INSTANCE.m4429getClockDialSelectorCenterContainerSizeD9Ej5fM()) / 2, androidx.compose.ui.geometry.SizeKt.m5258getCenteruvyYCjk(contentDrawScope.mo6005getSizeNHjbRc()), 0.0f, null, null, 0, 120, null);
-        DrawScope.m5986drawCircleVaOC9Bg$default(contentDrawScope2, timePickerColors.m3259clockDialContentColorvNxB06k$material3(true), f3, m5171constructorimpl, 0.0f, null, null, BlendMode.Companion.m5347getDstOver0nO6VwU(), 56, null);
+        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, f3, m4519constructorimpl, 0.0f, null, null, BlendMode.Companion.m4713getXor0nO6VwU(), 56, null);
+        DrawScope.m5332drawLineNGM6Ib0$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, androidx.compose.ui.geometry.SizeKt.m4606getCenteruvyYCjk(contentDrawScope.mo5346getSizeNHjbRc()), Offset.m4531minusMKHz9U(m4519constructorimpl, Offset.m4519constructorimpl((Float.floatToRawIntBits(((float) Math.sin(analogTimePickerState.getCurrentAngle())) * f3) & 4294967295L) | (Float.floatToRawIntBits(((float) Math.cos(analogTimePickerState.getCurrentAngle())) * f3) << 32))), contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3815getClockDialSelectorTrackContainerWidthD9Ej5fM()), 0, null, 0.0f, null, BlendMode.Companion.m4712getSrcOver0nO6VwU(), 240, null);
+        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, m2727getSelectorColor0d7_KjU, contentDrawScope.mo405toPx0680j_4(TimePickerTokens.INSTANCE.m3813getClockDialSelectorCenterContainerSizeD9Ej5fM()) / 2, androidx.compose.ui.geometry.SizeKt.m4606getCenteruvyYCjk(contentDrawScope.mo5346getSizeNHjbRc()), 0.0f, null, null, 0, 120, null);
+        DrawScope.m5327drawCircleVaOC9Bg$default(contentDrawScope2, timePickerColors.m2716clockDialContentColorvNxB06k$material3(true), f3, m4519constructorimpl, 0.0f, null, null, BlendMode.Companion.m4695getDstOver0nO6VwU(), 56, null);
         return Unit.INSTANCE;
     }
 
@@ -2389,11 +2331,11 @@ public final class TimePickerKt {
             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final Density density = (Density) consume;
-            final float mo464toPx0680j_4 = density.mo464toPx0680j_4(MaxDistance);
+            final float mo405toPx0680j_4 = density.mo405toPx0680j_4(MaxDistance);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1151501687, "CC(remember):TimePicker.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
             if (rememberedValue == Composer.Companion.getEmpty()) {
-                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0()), null, 2, null);
+                rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0()), null, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             final MutableState mutableState = (MutableState) rememberedValue;
@@ -2401,7 +2343,7 @@ public final class TimePickerKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1151499604, "CC(remember):TimePicker.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac()), null, 2, null);
+                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntOffset.m7674boximpl(IntOffset.Companion.m7694getZeronOccac()), null, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             final MutableState mutableState2 = (MutableState) rememberedValue2;
@@ -2424,7 +2366,7 @@ public final class TimePickerKt {
             final CoroutineScope coroutineScope = (CoroutineScope) rememberedValue4;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final String m3316numberContentDescriptiondSwYdS4 = m3316numberContentDescriptiondSwYdS4(analogTimePickerState.mo1969getSelectionyecRtBI(), analogTimePickerState.is24hour(), i, startRestartGroup, i4 & 896);
+            final String m2761numberContentDescriptiondSwYdS4 = m2761numberContentDescriptiondSwYdS4(analogTimePickerState.mo1702getSelectionyecRtBI(), analogTimePickerState.is24hour(), i, startRestartGroup, i4 & 896);
             String localString$default = CalendarLocale_jvmKt.toLocalString$default(i, 0, 0, false, null, 15, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1151486675, "CC(remember):TimePicker.kt#9igjgp");
             boolean changed = startRestartGroup.changed(analogTimePickerState);
@@ -2433,9 +2375,7 @@ public final class TimePickerKt {
                 rememberedValue5 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean ClockText$lambda$74$lambda$73;
-                        ClockText$lambda$74$lambda$73 = TimePickerKt.ClockText$lambda$74$lambda$73(AnalogTimePickerState.this, density, mutableState3);
-                        return Boolean.valueOf(ClockText$lambda$74$lambda$73);
+                        return Boolean.valueOf(TimePickerKt.ClockText$lambda$74$lambda$73(AnalogTimePickerState.this, density, mutableState3));
                     }
                 });
                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -2449,25 +2389,21 @@ public final class TimePickerKt {
                 rememberedValue6 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit ClockText$lambda$77$lambda$76;
-                        ClockText$lambda$77$lambda$76 = TimePickerKt.ClockText$lambda$77$lambda$76(MutableState.this, mutableState3, mutableState, (LayoutCoordinates) obj);
-                        return ClockText$lambda$77$lambda$76;
+                        return TimePickerKt.ClockText$lambda$77$lambda$76(MutableState.this, mutableState3, mutableState, (LayoutCoordinates) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue6);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier focusable$default = FocusableKt.focusable$default(SizeKt.m976size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(OnGloballyPositionedModifierKt.onGloballyPositioned(modifier, (Function1) rememberedValue6)), MinimumInteractiveSize), false, null, 3, null);
+            Modifier focusable$default = FocusableKt.focusable$default(SizeKt.m864size3ABfNKs(InteractiveComponentSizeKt.minimumInteractiveComponentSize(OnGloballyPositionedModifierKt.onGloballyPositioned(modifier, (Function1) rememberedValue6)), MinimumInteractiveSize), false, null, 3, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1151458555, "CC(remember):TimePicker.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(coroutineScope) | startRestartGroup.changedInstance(analogTimePickerState) | startRestartGroup.changed(mo464toPx0680j_4) | ((i4 & 7168) == 2048) | startRestartGroup.changed(state);
+            boolean changedInstance = startRestartGroup.changedInstance(coroutineScope) | startRestartGroup.changedInstance(analogTimePickerState) | startRestartGroup.changed(mo405toPx0680j_4) | ((i4 & 7168) == 2048) | startRestartGroup.changed(state);
             Object rememberedValue7 = startRestartGroup.rememberedValue();
             if (changedInstance || rememberedValue7 == Composer.Companion.getEmpty()) {
                 Function1 function1 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit ClockText$lambda$80$lambda$79;
-                        ClockText$lambda$80$lambda$79 = TimePickerKt.ClockText$lambda$80$lambda$79(CoroutineScope.this, analogTimePickerState, mo464toPx0680j_4, z, mutableState, mutableState2, state, (SemanticsPropertyReceiver) obj);
-                        return ClockText$lambda$80$lambda$79;
+                        return TimePickerKt.ClockText$lambda$80$lambda$79(CoroutineScope.this, analogTimePickerState, mo405toPx0680j_4, z, mutableState, mutableState2, state, (SemanticsPropertyReceiver) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(function1);
@@ -2492,36 +2428,34 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -866292798, "C1784@69840L48,1782@69765L186:TimePicker.kt#uh7d8r");
             Modifier.Companion companion = Modifier.Companion;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2106152649, "CC(remember):TimePicker.kt#9igjgp");
-            boolean changed2 = startRestartGroup.changed(m3316numberContentDescriptiondSwYdS4);
+            boolean changed2 = startRestartGroup.changed(m2761numberContentDescriptiondSwYdS4);
             Object rememberedValue8 = startRestartGroup.rememberedValue();
             if (changed2 || rememberedValue8 == Composer.Companion.getEmpty()) {
                 rememberedValue8 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit ClockText$lambda$83$lambda$82$lambda$81;
-                        ClockText$lambda$83$lambda$82$lambda$81 = TimePickerKt.ClockText$lambda$83$lambda$82$lambda$81(m3316numberContentDescriptiondSwYdS4, (SemanticsPropertyReceiver) obj);
-                        return ClockText$lambda$83$lambda$82$lambda$81;
+                        return TimePickerKt.ClockText$lambda$83$lambda$82$lambda$81(m2761numberContentDescriptiondSwYdS4, (SemanticsPropertyReceiver) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue8);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             composer2 = startRestartGroup;
-            TextKt.m3255TextNvy7gAk(localString$default, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue8), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, value, composer2, 0, 0, 131068);
+            TextKt.m2712TextNvy7gAk(localString$default, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue8), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, value, composer2, 0, 0, 131068);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -2537,9 +2471,7 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ClockText$lambda$84;
-                    ClockText$lambda$84 = TimePickerKt.ClockText$lambda$84(Modifier.this, analogTimePickerState, i, z, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ClockText$lambda$84;
+                    return TimePickerKt.ClockText$lambda$84(Modifier.this, analogTimePickerState, i, z, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -2547,64 +2479,62 @@ public final class TimePickerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long ClockText$lambda$64(MutableState<Offset> mutableState) {
-        return mutableState.getValue().m5189unboximpl();
+        return mutableState.getValue().m4537unboximpl();
     }
 
     private static final void ClockText$lambda$65(MutableState<Offset> mutableState, long j) {
-        mutableState.setValue(Offset.m5168boximpl(j));
+        mutableState.setValue(Offset.m4516boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long ClockText$lambda$67(MutableState<IntOffset> mutableState) {
-        return mutableState.getValue().m8395unboximpl();
+        return mutableState.getValue().m7692unboximpl();
     }
 
     private static final void ClockText$lambda$68(MutableState<IntOffset> mutableState, long j) {
-        mutableState.setValue(IntOffset.m8377boximpl(j));
+        mutableState.setValue(IntOffset.m7674boximpl(j));
     }
 
     private static final Rect ClockText$lambda$70(MutableState<Rect> mutableState) {
         return mutableState.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean ClockText$lambda$74$lambda$73(AnalogTimePickerState analogTimePickerState, Density density, MutableState mutableState) {
         long selectorPos = getSelectorPos(analogTimePickerState);
-        float mo464toPx0680j_4 = density.mo464toPx0680j_4(DpOffset.m8319getXD9Ej5fM(selectorPos));
-        float mo464toPx0680j_42 = density.mo464toPx0680j_4(DpOffset.m8321getYD9Ej5fM(selectorPos));
-        return ClockText$lambda$70(mutableState).m5205containsk4lQ0M(Offset.m5171constructorimpl((Float.floatToRawIntBits(mo464toPx0680j_42) & 4294967295L) | (Float.floatToRawIntBits(mo464toPx0680j_4) << 32)));
+        float mo405toPx0680j_4 = density.mo405toPx0680j_4(DpOffset.m7616getXD9Ej5fM(selectorPos));
+        float mo405toPx0680j_42 = density.mo405toPx0680j_4(DpOffset.m7618getYD9Ej5fM(selectorPos));
+        return ClockText$lambda$70(mutableState).m4553containsk4lQ0M(Offset.m4519constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_42) & 4294967295L) | (Float.floatToRawIntBits(mo405toPx0680j_4) << 32)));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockText$lambda$77$lambda$76(MutableState mutableState, MutableState mutableState2, MutableState mutableState3, LayoutCoordinates layoutCoordinates) {
         LayoutCoordinates parentCoordinates = layoutCoordinates.getParentCoordinates();
-        ClockText$lambda$68(mutableState, parentCoordinates != null ? IntSizeKt.m8435getCenterozmzZPI(parentCoordinates.mo6883getSizeYbymL2g()) : IntOffset.Companion.m8397getZeronOccac());
+        ClockText$lambda$68(mutableState, parentCoordinates != null ? IntSizeKt.m7732getCenterozmzZPI(parentCoordinates.mo6224getSizeYbymL2g()) : IntOffset.Companion.m7694getZeronOccac());
         mutableState2.setValue(LayoutCoordinatesKt.boundsInParent(layoutCoordinates));
-        ClockText$lambda$65(mutableState3, ClockText$lambda$70(mutableState2).m5209getCenterF1C5BW0());
+        ClockText$lambda$65(mutableState3, ClockText$lambda$70(mutableState2).m4557getCenterF1C5BW0());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockText$lambda$80$lambda$79(final CoroutineScope coroutineScope, final AnalogTimePickerState analogTimePickerState, final float f, final boolean z, final MutableState mutableState, final MutableState mutableState2, State state, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda28
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean ClockText$lambda$80$lambda$79$lambda$78;
-                ClockText$lambda$80$lambda$79$lambda$78 = TimePickerKt.ClockText$lambda$80$lambda$79$lambda$78(CoroutineScope.this, analogTimePickerState, f, z, mutableState, mutableState2);
-                return Boolean.valueOf(ClockText$lambda$80$lambda$79$lambda$78);
+                return Boolean.valueOf(TimePickerKt.ClockText$lambda$80$lambda$79$lambda$78(CoroutineScope.this, analogTimePickerState, f, z, mutableState, mutableState2));
             }
         }, 1, null);
         SemanticsPropertiesKt.setSelected(semanticsPropertyReceiver, ClockText$lambda$75(state));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean ClockText$lambda$80$lambda$79$lambda$78(CoroutineScope coroutineScope, AnalogTimePickerState analogTimePickerState, float f, boolean z, MutableState mutableState, MutableState mutableState2) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new TimePickerKt$ClockText$2$1$1$1(analogTimePickerState, f, z, mutableState, mutableState2, null), 3, null);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ClockText$lambda$83$lambda$82$lambda$81(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
@@ -2612,7 +2542,7 @@ public final class TimePickerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: timeInputOnChange-_K77t-0  reason: not valid java name */
-    public static final void m3318timeInputOnChange_K77t0(int i, TimePickerState timePickerState, TextFieldValue textFieldValue, TextFieldValue textFieldValue2, int i2, Ref<Boolean> ref, Function1<? super TextFieldValue, Unit> function1) {
+    public static final void m2763timeInputOnChange_K77t0(int i, TimePickerState timePickerState, TextFieldValue textFieldValue, TextFieldValue textFieldValue2, int i2, Ref<Boolean> ref, Function1<? super TextFieldValue, Unit> function1) {
         int parseInt;
         int i3 = 0;
         ref.setValue(false);
@@ -2622,7 +2552,7 @@ public final class TimePickerKt {
         }
         int i4 = 12;
         if (textFieldValue.getText().length() == 0) {
-            if (TimePickerSelectionMode.m3338equalsimpl0(i, TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+            if (TimePickerSelectionMode.m2778equalsimpl0(i, TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
                 if (isPm(timePickerState) && !timePickerState.is24hour()) {
                     i3 = 12;
                 }
@@ -2630,17 +2560,17 @@ public final class TimePickerKt {
             } else {
                 timePickerState.setMinute(0);
             }
-            function1.invoke(TextFieldValue.m7951copy3r_uNRQ$default(textFieldValue, "", 0L, (TextRange) null, 6, (Object) null));
+            function1.invoke(TextFieldValue.m7249copy3r_uNRQ$default(textFieldValue, "", 0L, (TextRange) null, 6, (Object) null));
             return;
         }
         try {
-            if (textFieldValue.getText().length() == 3 && TextRange.m7701getStartimpl(textFieldValue.m7955getSelectiond9O1mEE()) == 1) {
+            if (textFieldValue.getText().length() == 3 && TextRange.m7003getStartimpl(textFieldValue.m7253getSelectiond9O1mEE()) == 1) {
                 parseInt = CharsKt.digitToInt(textFieldValue.getText().charAt(0));
             } else {
                 parseInt = Integer.parseInt(textFieldValue.getText());
             }
             if (parseInt <= i2) {
-                if (TimePickerSelectionMode.m3338equalsimpl0(i, TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+                if (TimePickerSelectionMode.m2778equalsimpl0(i, TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
                     if (parseInt != 12 || !isPm(timePickerState)) {
                         if (parseInt != 12 || isPm(timePickerState) || timePickerState.is24hour()) {
                             if (!isPm(timePickerState) || timePickerState.is24hour()) {
@@ -2653,12 +2583,12 @@ public final class TimePickerKt {
                     }
                     timePickerState.setHour(i4);
                     if (parseInt > 1 && !timePickerState.is24hour()) {
-                        timePickerState.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI());
+                        timePickerState.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
                     }
                 } else {
                     timePickerState.setMinute(parseInt);
                 }
-                function1.invoke(textFieldValue.getText().length() <= 2 ? textFieldValue : TextFieldValue.m7951copy3r_uNRQ$default(textFieldValue, String.valueOf(textFieldValue.getText().charAt(0)), 0L, (TextRange) null, 6, (Object) null));
+                function1.invoke(textFieldValue.getText().length() <= 2 ? textFieldValue : TextFieldValue.m7249copy3r_uNRQ$default(textFieldValue, String.valueOf(textFieldValue.getText().charAt(0)), 0L, (TextRange) null, 6, (Object) null));
             }
         } catch (NumberFormatException | IllegalArgumentException unused) {
         }
@@ -2691,7 +2621,7 @@ public final class TimePickerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3308TimePickerTextField1vLObsk(final Modifier modifier, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, TimePickerState timePickerState, final int i, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, final TimePickerColors timePickerColors, Composer composer, final int i2, final int i3) {
+    public static final void m2753TimePickerTextField1vLObsk(final Modifier modifier, final TextFieldValue textFieldValue, final Function1<? super TextFieldValue, Unit> function1, TimePickerState timePickerState, final int i, KeyboardOptions keyboardOptions, KeyboardActions keyboardActions, final TimePickerColors timePickerColors, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         Object obj;
@@ -2705,8 +2635,8 @@ public final class TimePickerKt {
         Composer composer2;
         final MutableInteractionSource mutableInteractionSource;
         FocusRequester focusRequester;
-        int m3618constructorimpl;
-        int m3618constructorimpl2;
+        int m3009constructorimpl;
+        int m3009constructorimpl2;
         boolean z;
         boolean z2;
         TimePickerKt$TimePickerTextField$2$1 rememberedValue;
@@ -2787,8 +2717,8 @@ public final class TimePickerKt {
                     }
                     FocusRequester focusRequester2 = (FocusRequester) rememberedValue3;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final TextFieldColors m2794colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2794colors0hiis_0(timePickerColors.m3278timeSelectorContentColorvNxB06k$material3(true), 0L, 0L, 0L, timePickerColors.m3277timeSelectorContainerColorvNxB06k$material3(true), timePickerColors.m3277timeSelectorContainerColorvNxB06k$material3(true), 0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 0, 0, 0, 0, 3072, 2147483598, 4095);
-                    boolean m3338equalsimpl0 = TimePickerSelectionMode.m3338equalsimpl0(i, timePickerState2.mo1969getSelectionyecRtBI());
+                    final TextFieldColors m2348colors0hiis_0 = OutlinedTextFieldDefaults.INSTANCE.m2348colors0hiis_0(timePickerColors.m2735timeSelectorContentColorvNxB06k$material3(true), 0L, 0L, 0L, timePickerColors.m2734timeSelectorContainerColorvNxB06k$material3(true), timePickerColors.m2734timeSelectorContainerColorvNxB06k$material3(true), 0L, 0L, 0L, 0L, null, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 0, 0, 0, 0, 3072, 2147483598, 4095);
+                    boolean m2778equalsimpl0 = TimePickerSelectionMode.m2778equalsimpl0(i, timePickerState2.mo1702getSelectionyecRtBI());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
                     MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), startRestartGroup, 0);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -2806,23 +2736,23 @@ public final class TimePickerKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                     ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023499365, "C1893@73347L240,1901@73597L2050,1948@75744L2,1950@75783L244,1957@76094L5,1958@76165L5,1947@75657L524:TimePicker.kt#uh7d8r");
-                    if (!m3338equalsimpl0) {
+                    if (!m2778equalsimpl0) {
                         startRestartGroup.startReplaceGroup(2023424468);
                         ComposerKt.sourceInformation(startRestartGroup, "1878@72840L450");
-                        Modifier m978sizeVpY3zN4 = SizeKt.m978sizeVpY3zN4(Modifier.Companion, TimeInputTokens.INSTANCE.m4426getTimeFieldContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m4425getTimeFieldContainerHeightD9Ej5fM());
-                        if (TimePickerSelectionMode.m3338equalsimpl0(i, TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+                        Modifier m866sizeVpY3zN4 = SizeKt.m866sizeVpY3zN4(Modifier.Companion, TimeInputTokens.INSTANCE.m3810getTimeFieldContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m3809getTimeFieldContainerHeightD9Ej5fM());
+                        if (TimePickerSelectionMode.m2778equalsimpl0(i, TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
                             minute = getHourForDisplay(timePickerState2);
                         } else {
                             minute = timePickerState2.getMinute();
@@ -2835,7 +2765,7 @@ public final class TimePickerKt {
                         composer2 = startRestartGroup;
                         mutableInteractionSource = mutableInteractionSource2;
                         focusRequester = focusRequester2;
-                        m3309TimeSelectorSAnMeKU(m978sizeVpY3zN4, i12, timePickerState2, i, timePickerColors, composer2, i10);
+                        m2754TimeSelectorSAnMeKU(m866sizeVpY3zN4, i12, timePickerState2, i, timePickerColors, composer2, i10);
                         i8 = i;
                         composer2.endReplaceGroup();
                     } else {
@@ -2847,15 +2777,15 @@ public final class TimePickerKt {
                         composer2.startReplaceGroup(2023879982);
                         composer2.endReplaceGroup();
                     }
-                    if (TimePickerSelectionMode.m3338equalsimpl0(i8, TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI())) {
+                    if (TimePickerSelectionMode.m2778equalsimpl0(i8, TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI())) {
                         Strings.Companion companion = Strings.Companion;
-                        m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_minute_text_field);
+                        m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_minute_text_field);
                     } else {
                         Strings.Companion companion2 = Strings.Companion;
-                        m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_hour_text_field);
+                        m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_hour_text_field);
                     }
-                    final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(m3618constructorimpl, composer2, 0);
-                    Modifier visible = visible(Modifier.Companion, m3338equalsimpl0);
+                    final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(m3009constructorimpl, composer2, 0);
+                    Modifier visible = visible(Modifier.Companion, m2778equalsimpl0);
                     ComposerKt.sourceInformationMarkerStart(composer2, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
                     MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
                     ComposerKt.sourceInformationMarkerStart(composer2, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -2873,35 +2803,33 @@ public final class TimePickerKt {
                     } else {
                         composer2.useNode();
                     }
-                    Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer2);
-                    Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer2);
+                    Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                        m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                        m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                    if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                        m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                        m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer2, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, 1787852671, "C1908@73940L48,1912@74190L7,1919@74491L11,1920@74559L11,1924@74721L916,1902@73643L1994:TimePicker.kt#uh7d8r");
-                    Modifier m978sizeVpY3zN42 = SizeKt.m978sizeVpY3zN4(FocusRequesterModifierKt.focusRequester(Modifier.Companion, focusRequester), TimeInputTokens.INSTANCE.m4426getTimeFieldContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m4425getTimeFieldContainerHeightD9Ej5fM());
+                    Modifier m866sizeVpY3zN42 = SizeKt.m866sizeVpY3zN4(FocusRequesterModifierKt.focusRequester(Modifier.Companion, focusRequester), TimeInputTokens.INSTANCE.m3810getTimeFieldContainerWidthD9Ej5fM(), TimeInputTokens.INSTANCE.m3809getTimeFieldContainerHeightD9Ej5fM());
                     ComposerKt.sourceInformationMarkerStart(composer2, 1443153546, "CC(remember):TimePicker.kt#9igjgp");
-                    boolean changed = composer2.changed(m3697getString2EP1pXo);
+                    boolean changed = composer2.changed(m3088getString2EP1pXo);
                     Object rememberedValue4 = composer2.rememberedValue();
                     if (changed || rememberedValue4 == Composer.Companion.getEmpty()) {
                         rememberedValue4 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda33
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj3) {
-                                Unit TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87;
-                                TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87 = TimePickerKt.TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj3);
-                                return TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87;
+                                return TimePickerKt.TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87(m3088getString2EP1pXo, (SemanticsPropertyReceiver) obj3);
                             }
                         };
                         composer2.updateRememberedValue(rememberedValue4);
                     }
                     ComposerKt.sourceInformationMarkerEnd(composer2);
-                    Modifier semantics$default = SemanticsModifierKt.semantics$default(m978sizeVpY3zN42, false, (Function1) rememberedValue4, 1, null);
+                    Modifier semantics$default = SemanticsModifierKt.semantics$default(m866sizeVpY3zN42, false, (Function1) rememberedValue4, 1, null);
                     ComposerKt.sourceInformationMarkerStart(composer2, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = composer2.consume(TextKt.getLocalTextStyle());
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -2912,7 +2840,7 @@ public final class TimePickerKt {
                     Composer composer3 = composer2;
                     KeyboardOptions keyboardOptions4 = keyboardOptions3;
                     KeyboardActions keyboardActions4 = keyboardActions3;
-                    BasicTextFieldKt.BasicTextField(textFieldValue, function1, semantics$default, true, false, (TextStyle) consume, keyboardOptions4, keyboardActions4, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource, Brush.Companion.m5380verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(0.0f), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(0.1f), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(0.1f), Color.m5414boximpl(MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m2189getPrimary0d7_KjU())), TuplesKt.to(Float.valueOf(0.9f), Color.m5414boximpl(MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m2189getPrimary0d7_KjU())), TuplesKt.to(Float.valueOf(0.9f), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(1007938103, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2
+                    BasicTextFieldKt.BasicTextField(textFieldValue, function1, semantics$default, true, false, (TextStyle) consume, keyboardOptions4, keyboardActions4, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, mutableInteractionSource, Brush.Companion.m4728verticalGradient8A3gB4$default(Brush.Companion, new Pair[]{TuplesKt.to(Float.valueOf(0.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(0.1f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(0.1f), Color.m4762boximpl(MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m1877getPrimary0d7_KjU())), TuplesKt.to(Float.valueOf(0.9f), Color.m4762boximpl(MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m1877getPrimary0d7_KjU())), TuplesKt.to(Float.valueOf(0.9f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())), TuplesKt.to(Float.valueOf(1.0f), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()))}, 0.0f, 0.0f, 0, 14, (Object) null), (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(1007938103, true, new Function3<Function2<? super Composer, ? super Integer, ? extends Unit>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2
                         @Override // kotlin.jvm.functions.Function3
                         public /* bridge */ /* synthetic */ Unit invoke(Function2<? super Composer, ? super Integer, ? extends Unit> function2, Composer composer4, Integer num) {
                             invoke((Function2<? super Composer, ? super Integer, Unit>) function2, composer4, num.intValue());
@@ -2937,11 +2865,11 @@ public final class TimePickerKt {
                             OutlinedTextFieldDefaults outlinedTextFieldDefaults = OutlinedTextFieldDefaults.INSTANCE;
                             String text = TextFieldValue.this.getText();
                             VisualTransformation none = VisualTransformation.Companion.getNone();
-                            PaddingValues m921PaddingValues0680j_4 = PaddingKt.m921PaddingValues0680j_4(Dp.m8258constructorimpl(0));
-                            TextFieldColors textFieldColors = m2794colors0hiis_0;
+                            PaddingValues m811PaddingValues0680j_4 = PaddingKt.m811PaddingValues0680j_4(Dp.m7555constructorimpl(0));
+                            TextFieldColors textFieldColors = m2348colors0hiis_0;
                             final MutableInteractionSource mutableInteractionSource3 = mutableInteractionSource;
-                            final TextFieldColors textFieldColors2 = m2794colors0hiis_0;
-                            outlinedTextFieldDefaults.DecorationBox(text, function2, true, true, none, mutableInteractionSource, false, null, null, null, null, null, null, null, textFieldColors, m921PaddingValues0680j_4, ComposableLambdaKt.rememberComposableLambda(769667466, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2.1
+                            final TextFieldColors textFieldColors2 = m2348colors0hiis_0;
+                            outlinedTextFieldDefaults.DecorationBox(text, function2, true, true, none, mutableInteractionSource, false, null, null, null, null, null, null, null, textFieldColors, m811PaddingValues0680j_4, ComposableLambdaKt.rememberComposableLambda(769667466, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TimePickerKt$TimePickerTextField$1$1$2.1
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer5, Integer num) {
                                     invoke(composer5, num.intValue());
@@ -2957,7 +2885,7 @@ public final class TimePickerKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(769667466, i18, -1, "androidx.compose.material3.TimePickerTextField.<anonymous>.<anonymous>.<anonymous>.<anonymous> (TimePicker.kt:1935)");
                                     }
-                                    OutlinedTextFieldDefaults.INSTANCE.m2792Container4EFweAY(true, false, MutableInteractionSource.this, null, textFieldColors2, ShapesKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldContainerShape(), composer5, 6), 0.0f, 0.0f, composer5, 100663734, 200);
+                                    OutlinedTextFieldDefaults.INSTANCE.m2346Container4EFweAY(true, false, MutableInteractionSource.this, null, textFieldColors2, ShapesKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldContainerShape(), composer5, 6), 0.0f, 0.0f, composer5, 100663734, 200);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -2974,30 +2902,31 @@ public final class TimePickerKt {
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
                     ComposerKt.sourceInformationMarkerEnd(composer3);
-                    Modifier m885offsetVpY3zN4$default = OffsetKt.m885offsetVpY3zN4$default(Modifier.Companion, 0.0f, SupportLabelTop, 1, null);
+                    Modifier m778offsetVpY3zN4$default = OffsetKt.m778offsetVpY3zN4$default(Modifier.Companion, 0.0f, SupportLabelTop, 1, null);
                     ComposerKt.sourceInformationMarkerStart(composer3, 1173743318, "CC(remember):TimePicker.kt#9igjgp");
                     Object rememberedValue5 = composer3.rememberedValue();
                     if (rememberedValue5 == Composer.Companion.getEmpty()) {
                         rememberedValue5 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda34
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj3) {
-                                Unit TimePickerTextField_1vLObsk$lambda$92$lambda$91$lambda$90;
-                                TimePickerTextField_1vLObsk$lambda$92$lambda$91$lambda$90 = TimePickerKt.TimePickerTextField_1vLObsk$lambda$92$lambda$91$lambda$90((SemanticsPropertyReceiver) obj3);
-                                return TimePickerTextField_1vLObsk$lambda$92$lambda$91$lambda$90;
+                                Unit unit;
+                                SemanticsPropertyReceiver semanticsPropertyReceiver = (SemanticsPropertyReceiver) obj3;
+                                unit = Unit.INSTANCE;
+                                return unit;
                             }
                         };
                         composer3.updateRememberedValue(rememberedValue5);
                     }
                     ComposerKt.sourceInformationMarkerEnd(composer3);
-                    Modifier clearAndSetSemantics = SemanticsModifierKt.clearAndSetSemantics(m885offsetVpY3zN4$default, (Function1) rememberedValue5);
-                    if (TimePickerSelectionMode.m3338equalsimpl0(i, TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
+                    Modifier clearAndSetSemantics = SemanticsModifierKt.clearAndSetSemantics(m778offsetVpY3zN4$default, (Function1) rememberedValue5);
+                    if (TimePickerSelectionMode.m2778equalsimpl0(i, TimePickerSelectionMode.Companion.m2782getHouryecRtBI())) {
                         Strings.Companion companion3 = Strings.Companion;
-                        m3618constructorimpl2 = Strings.m3618constructorimpl(R.string.m3c_time_picker_hour);
+                        m3009constructorimpl2 = Strings.m3009constructorimpl(R.string.m3c_time_picker_hour);
                     } else {
                         Strings.Companion companion4 = Strings.Companion;
-                        m3618constructorimpl2 = Strings.m3618constructorimpl(R.string.m3c_time_picker_minute);
+                        m3009constructorimpl2 = Strings.m3009constructorimpl(R.string.m3c_time_picker_minute);
                     }
-                    TextKt.m3255TextNvy7gAk(Strings_androidKt.m3697getString2EP1pXo(m3618constructorimpl2, composer3, 0), clearAndSetSemantics, ColorSchemeKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSupportingTextColor(), composer3, 6), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, TypographyKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSupportingTextFont(), composer3, 6), composer3, 0, 0, 131064);
+                    TextKt.m2712TextNvy7gAk(Strings_androidKt.m3088getString2EP1pXo(m3009constructorimpl2, composer3, 0), clearAndSetSemantics, ColorSchemeKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSupportingTextColor(), composer3, 6), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, TypographyKt.getValue(TimeInputTokens.INSTANCE.getTimeFieldSupportingTextFont(), composer3, 6), composer3, 0, 0, 131064);
                     startRestartGroup = composer3;
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -3005,7 +2934,7 @@ public final class TimePickerKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    TimePickerSelectionMode m3335boximpl = TimePickerSelectionMode.m3335boximpl(timePickerState.mo1969getSelectionyecRtBI());
+                    TimePickerSelectionMode m2775boximpl = TimePickerSelectionMode.m2775boximpl(timePickerState.mo1702getSelectionyecRtBI());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1330100699, "CC(remember):TimePicker.kt#9igjgp");
                     if ((i15 & 7168) != 2048) {
                         if ((i15 & 4096) != 0) {
@@ -3021,7 +2950,7 @@ public final class TimePickerKt {
                             startRestartGroup.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        EffectsKt.LaunchedEffect(m3335boximpl, (Function2) rememberedValue, startRestartGroup, 0);
+                        EffectsKt.LaunchedEffect(m2775boximpl, (Function2) rememberedValue, startRestartGroup, 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -3038,7 +2967,7 @@ public final class TimePickerKt {
                     rememberedValue = new TimePickerKt$TimePickerTextField$2$1(timePickerState2, i, focusRequester3, null);
                     startRestartGroup.updateRememberedValue(rememberedValue);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    EffectsKt.LaunchedEffect(m3335boximpl, (Function2) rememberedValue, startRestartGroup, 0);
+                    EffectsKt.LaunchedEffect(m2775boximpl, (Function2) rememberedValue, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     keyboardActions2 = keyboardActions4;
@@ -3050,9 +2979,7 @@ public final class TimePickerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda35
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit TimePickerTextField_1vLObsk$lambda$94;
-                            TimePickerTextField_1vLObsk$lambda$94 = TimePickerKt.TimePickerTextField_1vLObsk$lambda$94(Modifier.this, textFieldValue, function1, timePickerState3, i, keyboardOptions2, keyboardActions2, timePickerColors, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                            return TimePickerTextField_1vLObsk$lambda$94;
+                            return TimePickerKt.TimePickerTextField_1vLObsk$lambda$94(Modifier.this, textFieldValue, function1, timePickerState3, i, keyboardOptions2, keyboardActions2, timePickerColors, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -3091,14 +3018,9 @@ public final class TimePickerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TimePickerTextField_1vLObsk$lambda$92$lambda$89$lambda$88$lambda$87(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit TimePickerTextField_1vLObsk$lambda$92$lambda$91$lambda$90(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         return Unit.INSTANCE;
     }
 
@@ -3160,15 +3082,15 @@ public final class TimePickerKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i6 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -3183,37 +3105,35 @@ public final class TimePickerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TimePickerKt$$ExternalSyntheticLambda26
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CircularLayout$lambda$96;
-                    CircularLayout$lambda$96 = TimePickerKt.CircularLayout$lambda$96(Modifier.this, f, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return CircularLayout$lambda$96;
+                    return TimePickerKt.CircularLayout$lambda$96(Modifier.this, f, function2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
     /* renamed from: numberContentDescription-dSwYdS4  reason: not valid java name */
-    public static final String m3316numberContentDescriptiondSwYdS4(int i, boolean z, int i2, Composer composer, int i3) {
-        int m3618constructorimpl;
+    public static final String m2761numberContentDescriptiondSwYdS4(int i, boolean z, int i2, Composer composer, int i3) {
+        int m3009constructorimpl;
         ComposerKt.sourceInformationMarkerStart(composer, 194237364, "C(numberContentDescription)N(selection:c#material3.TimePickerSelectionMode,is24Hour,number)2029@78784L21:TimePicker.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(194237364, i3, -1, "androidx.compose.material3.numberContentDescription (TimePicker.kt:2019)");
         }
-        if (TimePickerSelectionMode.m3338equalsimpl0(i, TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI())) {
+        if (TimePickerSelectionMode.m2778equalsimpl0(i, TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI())) {
             Strings.Companion companion = Strings.Companion;
-            m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_minute_suffix);
+            m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_minute_suffix);
         } else if (z) {
             Strings.Companion companion2 = Strings.Companion;
-            m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_hour_24h_suffix);
+            m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_hour_24h_suffix);
         } else {
             Strings.Companion companion3 = Strings.Companion;
-            m3618constructorimpl = Strings.m3618constructorimpl(R.string.m3c_time_picker_hour_suffix);
+            m3009constructorimpl = Strings.m3009constructorimpl(R.string.m3c_time_picker_hour_suffix);
         }
-        String m3698getStringqBjtwXw = Strings_androidKt.m3698getStringqBjtwXw(m3618constructorimpl, new Object[]{Integer.valueOf(i2)}, composer, 0);
+        String m3089getStringqBjtwXw = Strings_androidKt.m3089getStringqBjtwXw(m3009constructorimpl, new Object[]{Integer.valueOf(i2)}, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m3698getStringqBjtwXw;
+        return m3089getStringqBjtwXw;
     }
 
     private static final float dist(float f, float f2, int i, int i2) {
@@ -3274,9 +3194,9 @@ public final class TimePickerKt {
 
     static {
         float f = 24;
-        ClockFaceBottomMargin = Dp.m8258constructorimpl(f);
-        DisplaySeparatorWidth = Dp.m8258constructorimpl(f);
-        TimeInputBottomPadding = Dp.m8258constructorimpl(f);
+        ClockFaceBottomMargin = Dp.m7555constructorimpl(f);
+        DisplaySeparatorWidth = Dp.m7555constructorimpl(f);
+        TimeInputBottomPadding = Dp.m7555constructorimpl(f);
         IntList intListOf = IntListKt.intListOf(12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
         Hours = intListOf;
         MutableIntList mutableIntList = new MutableIntList(intListOf._size);
@@ -3286,10 +3206,10 @@ public final class TimePickerKt {
             mutableIntList.add((iArr[i2] % 12) + 12);
         }
         ExtraHours = mutableIntList;
-        PeriodToggleMargin = Dp.m8258constructorimpl(12);
-        TimePickerMaxHeight = Dp.m8258constructorimpl((float) RendererCapabilities.DECODER_SUPPORT_MASK);
-        TimePickerMidHeight = Dp.m8258constructorimpl(330);
-        ClockDialMidContainerSize = Dp.m8258constructorimpl(238);
-        ClockDialMinContainerSize = Dp.m8258constructorimpl(200);
+        PeriodToggleMargin = Dp.m7555constructorimpl(12);
+        TimePickerMaxHeight = Dp.m7555constructorimpl((float) RendererCapabilities.DECODER_SUPPORT_MASK);
+        TimePickerMidHeight = Dp.m7555constructorimpl(330);
+        ClockDialMidContainerSize = Dp.m7555constructorimpl(238);
+        ClockDialMinContainerSize = Dp.m7555constructorimpl(200);
     }
 }

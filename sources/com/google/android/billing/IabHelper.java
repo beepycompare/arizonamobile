@@ -653,11 +653,12 @@ public class IabHelper {
                     }
                     IabHelper.this.logDebug("In-app billing version 3 supported for " + packageName);
                     int isBillingSupported2 = IabHelper.this.mService.isBillingSupported(3, packageName, IabHelper.ITEM_TYPE_SUBS);
+                    IabHelper iabHelper = IabHelper.this;
                     if (isBillingSupported2 == 0) {
-                        IabHelper.this.logDebug("Subscriptions AVAILABLE.");
+                        iabHelper.logDebug("Subscriptions AVAILABLE.");
                         IabHelper.this.mSubscriptionsSupported = true;
                     } else {
-                        IabHelper.this.logDebug("Subscriptions NOT AVAILABLE. Response: " + isBillingSupported2);
+                        iabHelper.logDebug("Subscriptions NOT AVAILABLE. Response: " + isBillingSupported2);
                     }
                     IabHelper.this.mSetupDone = true;
                     OnIabSetupFinishedListener onIabSetupFinishedListener3 = onIabSetupFinishedListener;

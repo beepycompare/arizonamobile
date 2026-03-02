@@ -31,7 +31,7 @@ public final class InternalPointerEvent {
     }
 
     /* renamed from: activeHoverEvent-0FcD4WY  reason: not valid java name */
-    public final boolean m6659activeHoverEvent0FcD4WY(long j) {
+    public final boolean m6000activeHoverEvent0FcD4WY(long j) {
         PointerInputEventData pointerInputEventData;
         List<PointerInputEventData> pointers = this.pointerInputEvent.getPointers();
         int size = pointers.size();
@@ -42,7 +42,7 @@ public final class InternalPointerEvent {
                 break;
             }
             pointerInputEventData = pointers.get(i);
-            if (PointerId.m6726equalsimpl0(pointerInputEventData.m6758getIdJ3iCeTQ(), j)) {
+            if (PointerId.m6067equalsimpl0(pointerInputEventData.m6099getIdJ3iCeTQ(), j)) {
                 break;
             }
             i++;

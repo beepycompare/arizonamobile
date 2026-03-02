@@ -409,7 +409,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         resumeImpl$kotlinx_coroutines_core$default(this, CompletionStateKt.toState(obj, this), this.resumeMode, null, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit resume$lambda$13$lambda$12(Function1 function1, Throwable th, Object obj, CoroutineContext coroutineContext) {
         function1.invoke(th);
         return Unit.INSTANCE;
@@ -420,9 +420,7 @@ public class CancellableContinuationImpl<T> extends DispatchedTask<T> implements
         resumeImpl$kotlinx_coroutines_core(t, this.resumeMode, function1 != null ? new Function3() { // from class: kotlinx.coroutines.CancellableContinuationImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit resume$lambda$13$lambda$12;
-                resume$lambda$13$lambda$12 = CancellableContinuationImpl.resume$lambda$13$lambda$12(Function1.this, (Throwable) obj, obj2, (CoroutineContext) obj3);
-                return resume$lambda$13$lambda$12;
+                return CancellableContinuationImpl.resume$lambda$13$lambda$12(Function1.this, (Throwable) obj, obj2, (CoroutineContext) obj3);
             }
         } : null);
     }

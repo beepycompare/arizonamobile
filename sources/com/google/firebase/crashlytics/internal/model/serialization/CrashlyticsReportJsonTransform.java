@@ -12,7 +12,7 @@ import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
-import io.appmetrica.analytics.impl.C0740z2;
+import io.appmetrica.analytics.impl.C0739z2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
 import java.io.StringReader;
@@ -814,7 +814,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case -1332194002:
-                    if (nextName.equals(C0740z2.g)) {
+                    if (nextName.equals(C0739z2.g)) {
                         c = 1;
                         break;
                     }

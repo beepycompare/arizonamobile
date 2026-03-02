@@ -601,12 +601,15 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     }
 
     private int primarySampleIndexToMediaChunkIndex(int i, int i2) {
+        ArrayList<BaseMediaChunk> arrayList;
         do {
             i2++;
-            if (i2 >= this.mediaChunks.size()) {
-                return this.mediaChunks.size() - 1;
+            int size = this.mediaChunks.size();
+            arrayList = this.mediaChunks;
+            if (i2 >= size) {
+                return arrayList.size() - 1;
             }
-        } while (this.mediaChunks.get(i2).getFirstSampleIndex(0) <= i);
+        } while (arrayList.get(i2).getFirstSampleIndex(0) <= i);
         return i2 - 1;
     }
 

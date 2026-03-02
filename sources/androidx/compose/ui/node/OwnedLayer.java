@@ -19,28 +19,28 @@ public interface OwnedLayer {
     float getFrameRate();
 
     /* renamed from: getUnderlyingMatrix-sQKQjiQ  reason: not valid java name */
-    float[] mo7252getUnderlyingMatrixsQKQjiQ();
+    float[] mo6592getUnderlyingMatrixsQKQjiQ();
 
     void invalidate();
 
     /* renamed from: inverseTransform-58bKbWc  reason: not valid java name */
-    void mo7253inverseTransform58bKbWc(float[] fArr);
+    void mo6593inverseTransform58bKbWc(float[] fArr);
 
     boolean isFrameRateFromParent();
 
     /* renamed from: isInLayer-k-4lQ0M  reason: not valid java name */
-    boolean mo7254isInLayerk4lQ0M(long j);
+    boolean mo6594isInLayerk4lQ0M(long j);
 
     void mapBounds(MutableRect mutableRect, boolean z);
 
     /* renamed from: mapOffset-8S9VItk  reason: not valid java name */
-    long mo7255mapOffset8S9VItk(long j, boolean z);
+    long mo6595mapOffset8S9VItk(long j, boolean z);
 
     /* renamed from: move--gyyYBs  reason: not valid java name */
-    void mo7256movegyyYBs(long j);
+    void mo6596movegyyYBs(long j);
 
     /* renamed from: resize-ozmzZPI  reason: not valid java name */
-    void mo7257resizeozmzZPI(long j);
+    void mo6597resizeozmzZPI(long j);
 
     void reuseLayer(Function2<? super Canvas, ? super GraphicsLayer, Unit> function2, Function0<Unit> function0);
 
@@ -49,7 +49,7 @@ public interface OwnedLayer {
     void setFrameRateFromParent(boolean z);
 
     /* renamed from: transform-58bKbWc  reason: not valid java name */
-    void mo7258transform58bKbWc(float[] fArr);
+    void mo6598transform58bKbWc(float[] fArr);
 
     void updateDisplayList();
 

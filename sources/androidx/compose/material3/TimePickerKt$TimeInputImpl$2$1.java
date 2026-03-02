@@ -102,15 +102,15 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -407735110, "C101@5232L9:Row.kt#2w3rfo");
         RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 587485559, "C1035@43926L529,1049@44532L508,1070@45481L52,1033@43830L1785,1074@45632L123,1079@45875L422,1091@46376L486,1112@47305L52,1077@45772L1667:TimePicker.kt#uh7d8r");
@@ -122,20 +122,20 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue = (Function1) new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$1$1$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                    return m3324invokeZmokQxo(keyEvent.m6576unboximpl());
+                    return m2764invokeZmokQxo(keyEvent.m5917unboximpl());
                 }
 
                 /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-                public final Boolean m3324invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                public final Boolean m2764invokeZmokQxo(android.view.KeyEvent keyEvent) {
                     TextFieldValue TimeInputImpl$lambda$182;
                     TextFieldValue TimeInputImpl$lambda$183;
-                    int m6589getUtf16CodePointZmokQxo = KeyEvent_androidKt.m6589getUtf16CodePointZmokQxo(keyEvent);
-                    if (48 <= m6589getUtf16CodePointZmokQxo && m6589getUtf16CodePointZmokQxo < 58) {
+                    int m5930getUtf16CodePointZmokQxo = KeyEvent_androidKt.m5930getUtf16CodePointZmokQxo(keyEvent);
+                    if (48 <= m5930getUtf16CodePointZmokQxo && m5930getUtf16CodePointZmokQxo < 58) {
                         TimeInputImpl$lambda$182 = TimePickerKt.TimeInputImpl$lambda$18(mutableState);
-                        if (TextRange.m7701getStartimpl(TimeInputImpl$lambda$182.m7955getSelectiond9O1mEE()) == 2) {
+                        if (TextRange.m7003getStartimpl(TimeInputImpl$lambda$182.m7253getSelectiond9O1mEE()) == 2) {
                             TimeInputImpl$lambda$183 = TimePickerKt.TimeInputImpl$lambda$18(mutableState);
                             if (TimeInputImpl$lambda$183.getText().length() == 2) {
-                                TimePickerState.this.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI());
+                                TimePickerState.this.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
                             }
                         }
                     }
@@ -154,17 +154,15 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$12$lambda$3$lambda$2;
-                    invoke$lambda$12$lambda$3$lambda$2 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$3$lambda$2(TimePickerState.this, ref, mutableState, (TextFieldValue) obj);
-                    return invoke$lambda$12$lambda$3$lambda$2;
+                    return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$3$lambda$2(TimePickerState.this, ref, mutableState, (TextFieldValue) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         Function1 function1 = (Function1) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        int m3342getHouryecRtBI = TimePickerSelectionMode.Companion.m3342getHouryecRtBI();
-        KeyboardOptions keyboardOptions = new KeyboardOptions(0, (Boolean) null, KeyboardType.Companion.m7943getNumberPjHm6EE(), ImeAction.Companion.m7889getNexteUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 115, (DefaultConstructorMarker) null);
+        int m2782getHouryecRtBI = TimePickerSelectionMode.Companion.m2782getHouryecRtBI();
+        KeyboardOptions keyboardOptions = new KeyboardOptions(0, (Boolean) null, KeyboardType.Companion.m7241getNumberPjHm6EE(), ImeAction.Companion.m7187getNexteUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 115, (DefaultConstructorMarker) null);
         ComposerKt.sourceInformationMarkerStart(composer, 1127379079, "CC(remember):TimePicker.kt#9igjgp");
         boolean changedInstance2 = composer.changedInstance(timePickerState);
         Object rememberedValue3 = composer.rememberedValue();
@@ -172,17 +170,15 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue3 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$12$lambda$5$lambda$4;
-                    invoke$lambda$12$lambda$5$lambda$4 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$5$lambda$4(TimePickerState.this, (KeyboardActionScope) obj);
-                    return invoke$lambda$12$lambda$5$lambda$4;
+                    return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$5$lambda$4(TimePickerState.this, (KeyboardActionScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TimePickerKt.m3308TimePickerTextField1vLObsk(onKeyEvent, TimeInputImpl$lambda$18, function1, timePickerState, m3342getHouryecRtBI, keyboardOptions, new KeyboardActions(null, null, rememberedValue3, null, null, null, 59, null), timePickerColors, composer, 24576, 0);
+        TimePickerKt.m2753TimePickerTextField1vLObsk(onKeyEvent, TimeInputImpl$lambda$18, function1, timePickerState, m2782getHouryecRtBI, keyboardOptions, new KeyboardActions(null, null, rememberedValue3, null, null, null, 59, null), timePickerColors, composer, 24576, 0);
         f = TimePickerKt.DisplaySeparatorWidth;
-        TimePickerKt.DisplaySeparator(SizeKt.m978sizeVpY3zN4(Modifier.Companion, f, TimeInputTokens.INSTANCE.m4422getPeriodSelectorContainerHeightD9Ej5fM()), composer, 6);
+        TimePickerKt.DisplaySeparator(SizeKt.m866sizeVpY3zN4(Modifier.Companion, f, TimeInputTokens.INSTANCE.m3806getPeriodSelectorContainerHeightD9Ej5fM()), composer, 6);
         Modifier.Companion companion2 = Modifier.Companion;
         ComposerKt.sourceInformationMarkerStart(composer, 1127392057, "CC(remember):TimePicker.kt#9igjgp");
         boolean changed2 = composer.changed(mutableState2) | composer.changedInstance(timePickerState);
@@ -191,7 +187,7 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue4 = (Function1) new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$1$4$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                    return m3325invokeZmokQxo(keyEvent.m6576unboximpl());
+                    return m2765invokeZmokQxo(keyEvent.m5917unboximpl());
                 }
 
                 /* JADX WARN: Removed duplicated region for block: B:9:0x001b  */
@@ -199,15 +195,15 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
-                public final Boolean m3325invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                public final Boolean m2765invokeZmokQxo(android.view.KeyEvent keyEvent) {
                     boolean z;
                     TextFieldValue TimeInputImpl$lambda$222;
-                    if (KeyEvent_androidKt.m6589getUtf16CodePointZmokQxo(keyEvent) == 0) {
+                    if (KeyEvent_androidKt.m5930getUtf16CodePointZmokQxo(keyEvent) == 0) {
                         TimeInputImpl$lambda$222 = TimePickerKt.TimeInputImpl$lambda$22(mutableState2);
-                        if (TextRange.m7701getStartimpl(TimeInputImpl$lambda$222.m7955getSelectiond9O1mEE()) == 0) {
+                        if (TextRange.m7003getStartimpl(TimeInputImpl$lambda$222.m7253getSelectiond9O1mEE()) == 0) {
                             z = true;
                             if (z) {
-                                TimePickerState.this.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3342getHouryecRtBI());
+                                TimePickerState.this.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2782getHouryecRtBI());
                             }
                             return Boolean.valueOf(z);
                         }
@@ -230,17 +226,15 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue5 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$12$lambda$9$lambda$8;
-                    invoke$lambda$12$lambda$9$lambda$8 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$9$lambda$8(TimePickerState.this, ref, mutableState2, (TextFieldValue) obj);
-                    return invoke$lambda$12$lambda$9$lambda$8;
+                    return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$9$lambda$8(TimePickerState.this, ref, mutableState2, (TextFieldValue) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue5);
         }
         Function1 function12 = rememberedValue5;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        int m3343getMinuteyecRtBI = TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI();
-        KeyboardOptions keyboardOptions2 = new KeyboardOptions(0, (Boolean) null, KeyboardType.Companion.m7943getNumberPjHm6EE(), ImeAction.Companion.m7887getDoneeUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 115, (DefaultConstructorMarker) null);
+        int m2783getMinuteyecRtBI = TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI();
+        KeyboardOptions keyboardOptions2 = new KeyboardOptions(0, (Boolean) null, KeyboardType.Companion.m7241getNumberPjHm6EE(), ImeAction.Companion.m7185getDoneeUduSuo(), (PlatformImeOptions) null, (Boolean) null, (LocaleList) null, 115, (DefaultConstructorMarker) null);
         ComposerKt.sourceInformationMarkerStart(composer, 1127437447, "CC(remember):TimePicker.kt#9igjgp");
         boolean changedInstance4 = composer.changedInstance(timePickerState);
         Object rememberedValue6 = composer.rememberedValue();
@@ -248,15 +242,13 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
             rememberedValue6 = new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$12$lambda$11$lambda$10;
-                    invoke$lambda$12$lambda$11$lambda$10 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$11$lambda$10(TimePickerState.this, (KeyboardActionScope) obj);
-                    return invoke$lambda$12$lambda$11$lambda$10;
+                    return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$11$lambda$10(TimePickerState.this, (KeyboardActionScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue6);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TimePickerKt.m3308TimePickerTextField1vLObsk(onPreviewKeyEvent, TimeInputImpl$lambda$22, function12, timePickerState, m3343getMinuteyecRtBI, keyboardOptions2, new KeyboardActions(null, null, rememberedValue6, null, null, null, 59, null), timePickerColors, composer, 24576, 0);
+        TimePickerKt.m2753TimePickerTextField1vLObsk(onPreviewKeyEvent, TimeInputImpl$lambda$22, function12, timePickerState, m2783getMinuteyecRtBI, keyboardOptions2, new KeyboardActions(null, null, rememberedValue6, null, null, null, 59, null), timePickerColors, composer, 24576, 0);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         composer.endNode();
@@ -268,59 +260,55 @@ public final class TimePickerKt$TimeInputImpl$2$1 implements Function2<Composer,
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$3$lambda$2(TimePickerState timePickerState, Ref ref, final MutableState mutableState, TextFieldValue textFieldValue) {
         TextFieldValue TimeInputImpl$lambda$18;
-        int m3342getHouryecRtBI = TimePickerSelectionMode.Companion.m3342getHouryecRtBI();
+        int m2782getHouryecRtBI = TimePickerSelectionMode.Companion.m2782getHouryecRtBI();
         TimeInputImpl$lambda$18 = TimePickerKt.TimeInputImpl$lambda$18(mutableState);
-        TimePickerKt.m3318timeInputOnChange_K77t0(m3342getHouryecRtBI, timePickerState, textFieldValue, TimeInputImpl$lambda$18, timePickerState.is24hour() ? 23 : 12, ref, new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda0
+        TimePickerKt.m2763timeInputOnChange_K77t0(m2782getHouryecRtBI, timePickerState, textFieldValue, TimeInputImpl$lambda$18, timePickerState.is24hour() ? 23 : 12, ref, new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$12$lambda$3$lambda$2$lambda$1;
-                invoke$lambda$12$lambda$3$lambda$2$lambda$1 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$3$lambda$2$lambda$1(MutableState.this, (TextFieldValue) obj);
-                return invoke$lambda$12$lambda$3$lambda$2$lambda$1;
+                return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$3$lambda$2$lambda$1(MutableState.this, (TextFieldValue) obj);
             }
         });
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$3$lambda$2$lambda$1(MutableState mutableState, TextFieldValue textFieldValue) {
         mutableState.setValue(textFieldValue);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$5$lambda$4(TimePickerState timePickerState, KeyboardActionScope keyboardActionScope) {
-        timePickerState.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI());
+        timePickerState.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$9$lambda$8(TimePickerState timePickerState, Ref ref, final MutableState mutableState, TextFieldValue textFieldValue) {
         TextFieldValue TimeInputImpl$lambda$22;
-        int m3343getMinuteyecRtBI = TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI();
+        int m2783getMinuteyecRtBI = TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI();
         TimeInputImpl$lambda$22 = TimePickerKt.TimeInputImpl$lambda$22(mutableState);
-        TimePickerKt.m3318timeInputOnChange_K77t0(m3343getMinuteyecRtBI, timePickerState, textFieldValue, TimeInputImpl$lambda$22, 59, ref, new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda1
+        TimePickerKt.m2763timeInputOnChange_K77t0(m2783getMinuteyecRtBI, timePickerState, textFieldValue, TimeInputImpl$lambda$22, 59, ref, new Function1() { // from class: androidx.compose.material3.TimePickerKt$TimeInputImpl$2$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$12$lambda$9$lambda$8$lambda$7;
-                invoke$lambda$12$lambda$9$lambda$8$lambda$7 = TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$9$lambda$8$lambda$7(MutableState.this, (TextFieldValue) obj);
-                return invoke$lambda$12$lambda$9$lambda$8$lambda$7;
+                return TimePickerKt$TimeInputImpl$2$1.invoke$lambda$12$lambda$9$lambda$8$lambda$7(MutableState.this, (TextFieldValue) obj);
             }
         });
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$9$lambda$8$lambda$7(MutableState mutableState, TextFieldValue textFieldValue) {
         mutableState.setValue(textFieldValue);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$12$lambda$11$lambda$10(TimePickerState timePickerState, KeyboardActionScope keyboardActionScope) {
-        timePickerState.mo1971setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m3343getMinuteyecRtBI());
+        timePickerState.mo1704setSelection6_8s6DQ(TimePickerSelectionMode.Companion.m2783getMinuteyecRtBI());
         return Unit.INSTANCE;
     }
 }

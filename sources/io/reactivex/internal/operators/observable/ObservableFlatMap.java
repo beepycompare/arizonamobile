@@ -501,10 +501,12 @@ public final class ObservableFlatMap<T, U> extends AbstractObservableWithUpstrea
 
         @Override // io.reactivex.Observer
         public void onNext(U u) {
-            if (this.fusionMode == 0) {
-                this.parent.tryEmit(u, this);
+            int i = this.fusionMode;
+            MergeObserver<T, U> mergeObserver = this.parent;
+            if (i == 0) {
+                mergeObserver.tryEmit(u, this);
             } else {
-                this.parent.drain();
+                mergeObserver.drain();
             }
         }
 

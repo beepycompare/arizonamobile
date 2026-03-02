@@ -6,7 +6,7 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
 public final class F4 extends Fh {
     public F4(Bf bf) {
-        super(bf, new CounterConfiguration(), new D8(new C0559rl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
+        super(bf, new CounterConfiguration(), new D8(new C0558rl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
         b().setReporterType(CounterConfigurationReporterType.COMMUTATION);
     }
 

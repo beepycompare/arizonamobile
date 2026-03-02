@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.ContextWrapper;
 import androidx.fragment.app.FragmentActivity;
 import com.google.android.gms.common.internal.Preconditions;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class LifecycleActivity {
     private final Object zza;

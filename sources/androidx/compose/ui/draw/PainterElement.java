@@ -139,7 +139,7 @@ final class PainterElement extends ModifierNodeElement<PainterNode> {
     public void update(PainterNode painterNode) {
         boolean sizeToIntrinsics = painterNode.getSizeToIntrinsics();
         boolean z = this.sizeToIntrinsics;
-        boolean z2 = sizeToIntrinsics != z || (z && !Size.m5244equalsimpl0(painterNode.getPainter().mo6125getIntrinsicSizeNHjbRc(), this.painter.mo6125getIntrinsicSizeNHjbRc()));
+        boolean z2 = sizeToIntrinsics != z || (z && !Size.m4592equalsimpl0(painterNode.getPainter().mo5466getIntrinsicSizeNHjbRc(), this.painter.mo5466getIntrinsicSizeNHjbRc()));
         painterNode.setPainter(this.painter);
         painterNode.setSizeToIntrinsics(this.sizeToIntrinsics);
         painterNode.setAlignment(this.alignment);

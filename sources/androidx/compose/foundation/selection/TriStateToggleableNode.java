@@ -34,12 +34,12 @@ final class TriStateToggleableNode extends ClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m1265updateO2vRcR0(ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, Role role, Function0<Unit> function0) {
+    public final void m1108updateO2vRcR0(ToggleableState toggleableState, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, Role role, Function0<Unit> function0) {
         if (this.state != toggleableState) {
             this.state = toggleableState;
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
-        super.m357updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, (String) null, role, function0);
+        super.m314updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, (String) null, role, function0);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode
@@ -53,14 +53,12 @@ final class TriStateToggleableNode extends ClickableNode {
         SemanticsPropertiesKt.onFillData$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.selection.TriStateToggleableNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applyAdditionalSemantics$lambda$1;
-                applyAdditionalSemantics$lambda$1 = TriStateToggleableNode.applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver.this, (FillableData) obj);
-                return Boolean.valueOf(applyAdditionalSemantics$lambda$1);
+                return Boolean.valueOf(TriStateToggleableNode.applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver.this, (FillableData) obj));
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver semanticsPropertyReceiver, FillableData fillableData) {
         Boolean booleanValue = fillableData.getBooleanValue();
         if (booleanValue != null) {

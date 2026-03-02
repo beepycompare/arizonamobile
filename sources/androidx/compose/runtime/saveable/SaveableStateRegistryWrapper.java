@@ -58,9 +58,7 @@ public final class SaveableStateRegistryWrapper implements SaveableStateRegistry
         registerProvider("androidx.savedstate.SavedStateRegistry", new Function0() { // from class: androidx.compose.runtime.saveable.SaveableStateRegistryWrapper$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object _init_$lambda$0;
-                _init_$lambda$0 = SaveableStateRegistryWrapper._init_$lambda$0(SaveableStateRegistryWrapper.this);
-                return _init_$lambda$0;
+                return SaveableStateRegistryWrapper._init_$lambda$0(SaveableStateRegistryWrapper.this);
             }
         });
     }
@@ -100,7 +98,7 @@ public final class SaveableStateRegistryWrapper implements SaveableStateRegistry
         return getController().getSavedStateRegistry();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object _init_$lambda$0(SaveableStateRegistryWrapper saveableStateRegistryWrapper) {
         Pair[] pairArr;
         SavedStateRegistryController savedStateRegistryController = saveableStateRegistryWrapper._controller;
@@ -116,9 +114,9 @@ public final class SaveableStateRegistryWrapper implements SaveableStateRegistry
                 pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
             }
             Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-            SavedStateWriter.m9295constructorimpl(bundleOf);
+            SavedStateWriter.m8500constructorimpl(bundleOf);
             savedStateRegistryController.performSave(bundleOf);
-            if (SavedStateReader.m9287isEmptyimpl(SavedStateReader.m9209constructorimpl(bundleOf))) {
+            if (SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(bundleOf))) {
                 return null;
             }
             return bundleOf;

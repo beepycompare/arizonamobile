@@ -4,7 +4,7 @@ import android.os.IBinder;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import java.lang.reflect.Field;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ObjectWrapper<T> extends IObjectWrapper.Stub {
     private final Object zza;

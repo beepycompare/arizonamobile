@@ -153,10 +153,11 @@ public class MotionScene {
 
     public void addTransition(Transition transition) {
         int index = getIndex(transition);
+        ArrayList<Transition> arrayList = this.mTransitionList;
         if (index == -1) {
-            this.mTransitionList.add(transition);
+            arrayList.add(transition);
         } else {
-            this.mTransitionList.set(index, transition);
+            arrayList.set(index, transition);
         }
     }
 

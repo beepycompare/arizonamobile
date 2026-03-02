@@ -17,7 +17,7 @@ public final class HandlePositionProvider implements PopupPositionProvider {
     public static final int $stable = 0;
     private final Alignment handleReferencePoint;
     private final OffsetProvider positionProvider;
-    private long prevPosition = Offset.Companion.m5195getZeroF1C5BW0();
+    private long prevPosition = Offset.Companion.m4543getZeroF1C5BW0();
 
     public HandlePositionProvider(Alignment alignment, OffsetProvider offsetProvider) {
         this.handleReferencePoint = alignment;
@@ -26,12 +26,12 @@ public final class HandlePositionProvider implements PopupPositionProvider {
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
-        long mo1308provideF1C5BW0 = this.positionProvider.mo1308provideF1C5BW0();
-        if ((9223372034707292159L & mo1308provideF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            mo1308provideF1C5BW0 = this.prevPosition;
+    public long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+        long mo1144provideF1C5BW0 = this.positionProvider.mo1144provideF1C5BW0();
+        if ((9223372034707292159L & mo1144provideF1C5BW0) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+            mo1144provideF1C5BW0 = this.prevPosition;
         }
-        this.prevPosition = mo1308provideF1C5BW0;
-        return IntOffset.m8390plusqkQi6aY(IntOffset.m8390plusqkQi6aY(intRect.m8415getTopLeftnOccac(), IntOffsetKt.m8403roundk4lQ0M(mo1308provideF1C5BW0)), this.handleReferencePoint.mo4898alignKFBX0sM(j2, IntSize.Companion.m8434getZeroYbymL2g(), layoutDirection));
+        this.prevPosition = mo1144provideF1C5BW0;
+        return IntOffset.m7687plusqkQi6aY(IntOffset.m7687plusqkQi6aY(intRect.m7712getTopLeftnOccac(), IntOffsetKt.m7700roundk4lQ0M(mo1144provideF1C5BW0)), this.handleReferencePoint.mo4246alignKFBX0sM(j2, IntSize.Companion.m7731getZeroYbymL2g(), layoutDirection));
     }
 }

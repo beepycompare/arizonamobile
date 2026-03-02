@@ -97,7 +97,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* renamed from: removeFirst */
-    public /* bridge */ /* synthetic */ Object m7088removeFirst() {
+    public /* bridge */ /* synthetic */ Object m6429removeFirst() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -106,7 +106,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     /* renamed from: removeLast */
-    public /* bridge */ /* synthetic */ Object m7089removeLast() {
+    public /* bridge */ /* synthetic */ Object m6430removeLast() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -199,8 +199,8 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
     }
 
     public final boolean hasHit() {
-        long m7087findBestHitDistancefn2tFes = m7087findBestHitDistancefn2tFes();
-        return DistanceAndFlags.m7068getDistanceimpl(m7087findBestHitDistancefn2tFes) < 0.0f && DistanceAndFlags.m7071isInLayerimpl(m7087findBestHitDistancefn2tFes) && !DistanceAndFlags.m7070isInExpandedBoundsimpl(m7087findBestHitDistancefn2tFes);
+        long m6428findBestHitDistancefn2tFes = m6428findBestHitDistancefn2tFes();
+        return DistanceAndFlags.m6409getDistanceimpl(m6428findBestHitDistancefn2tFes) < 0.0f && DistanceAndFlags.m6412isInLayerimpl(m6428findBestHitDistancefn2tFes) && !DistanceAndFlags.m6411isInExpandedBoundsimpl(m6428findBestHitDistancefn2tFes);
     }
 
     public final void acceptHits() {
@@ -211,21 +211,21 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         if (this.hitDepth == CollectionsKt.getLastIndex(this)) {
             return true;
         }
-        return DistanceAndFlags.m7064compareTo9YPOF3E(m7087findBestHitDistancefn2tFes(), HitTestResultKt.DistanceAndFlags$default(f, z, false, 4, null)) > 0;
+        return DistanceAndFlags.m6405compareTo9YPOF3E(m6428findBestHitDistancefn2tFes(), HitTestResultKt.DistanceAndFlags$default(f, z, false, 4, null)) > 0;
     }
 
     /* renamed from: findBestHitDistance-fn2tFes */
-    private final long m7087findBestHitDistancefn2tFes() {
+    private final long m6428findBestHitDistancefn2tFes() {
         long DistanceAndFlags$default = HitTestResultKt.DistanceAndFlags$default(Float.POSITIVE_INFINITY, false, false, 4, null);
         int i = this.hitDepth + 1;
         int lastIndex = CollectionsKt.getLastIndex(this);
         if (i <= lastIndex) {
             while (true) {
-                long m7065constructorimpl = DistanceAndFlags.m7065constructorimpl(this.distanceFromEdgeAndFlags.get(i));
-                if (DistanceAndFlags.m7064compareTo9YPOF3E(m7065constructorimpl, DistanceAndFlags$default) < 0) {
-                    DistanceAndFlags$default = m7065constructorimpl;
+                long m6406constructorimpl = DistanceAndFlags.m6406constructorimpl(this.distanceFromEdgeAndFlags.get(i));
+                if (DistanceAndFlags.m6405compareTo9YPOF3E(m6406constructorimpl, DistanceAndFlags$default) < 0) {
+                    DistanceAndFlags$default = m6406constructorimpl;
                 }
-                if ((DistanceAndFlags.m7068getDistanceimpl(DistanceAndFlags$default) < 0.0f && DistanceAndFlags.m7071isInLayerimpl(DistanceAndFlags$default)) || i == lastIndex) {
+                if ((DistanceAndFlags.m6409getDistanceimpl(DistanceAndFlags$default) < 0.0f && DistanceAndFlags.m6412isInLayerimpl(DistanceAndFlags$default)) || i == lastIndex) {
                     break;
                 }
                 i++;
@@ -264,9 +264,9 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             this.hitDepth = i;
             return;
         }
-        long m7087findBestHitDistancefn2tFes = m7087findBestHitDistancefn2tFes();
+        long m6428findBestHitDistancefn2tFes = m6428findBestHitDistancefn2tFes();
         int i2 = this.hitDepth;
-        if (DistanceAndFlags.m7070isInExpandedBoundsimpl(m7087findBestHitDistancefn2tFes)) {
+        if (DistanceAndFlags.m6411isInExpandedBoundsimpl(m6428findBestHitDistancefn2tFes)) {
             this.hitDepth = CollectionsKt.getLastIndex(hitTestResult);
             int i3 = this.hitDepth;
             removeNodesInRange(this.hitDepth + 1, size());
@@ -277,11 +277,11 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             mutableLongList2.add(DistanceAndFlags2);
             function0.invoke();
             this.hitDepth = i3;
-            if (DistanceAndFlags.m7068getDistanceimpl(m7087findBestHitDistancefn2tFes()) < 0.0f) {
+            if (DistanceAndFlags.m6409getDistanceimpl(m6428findBestHitDistancefn2tFes()) < 0.0f) {
                 removeNodesInRange(i2 + 1, this.hitDepth + 1);
             }
             this.hitDepth = i2;
-        } else if (DistanceAndFlags.m7068getDistanceimpl(m7087findBestHitDistancefn2tFes) > 0.0f) {
+        } else if (DistanceAndFlags.m6409getDistanceimpl(m6428findBestHitDistancefn2tFes) > 0.0f) {
             int i4 = this.hitDepth;
             removeNodesInRange(this.hitDepth + 1, size());
             this.hitDepth++;
@@ -296,11 +296,10 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
 
     public final void speculativeHit(Modifier.Node node, float f, boolean z, Function0<Unit> function0) {
         long DistanceAndFlags;
-        int i;
         long DistanceAndFlags2;
         HitTestResult hitTestResult = this;
         if (this.hitDepth == CollectionsKt.getLastIndex(hitTestResult)) {
-            int i2 = this.hitDepth;
+            int i = this.hitDepth;
             removeNodesInRange(this.hitDepth + 1, size());
             this.hitDepth++;
             this.values.add(node);
@@ -308,17 +307,17 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
             DistanceAndFlags2 = HitTestResultKt.DistanceAndFlags(f, z, false);
             mutableLongList.add(DistanceAndFlags2);
             function0.invoke();
-            this.hitDepth = i2;
-            if (this.hitDepth + 1 == CollectionsKt.getLastIndex(hitTestResult) || DistanceAndFlags.m7070isInExpandedBoundsimpl(m7087findBestHitDistancefn2tFes())) {
+            this.hitDepth = i;
+            if (this.hitDepth + 1 == CollectionsKt.getLastIndex(hitTestResult) || DistanceAndFlags.m6411isInExpandedBoundsimpl(m6428findBestHitDistancefn2tFes())) {
                 removeNodeAtDepth(this.hitDepth + 1);
                 return;
             }
             return;
         }
-        long m7087findBestHitDistancefn2tFes = m7087findBestHitDistancefn2tFes();
-        int i3 = this.hitDepth;
+        long m6428findBestHitDistancefn2tFes = m6428findBestHitDistancefn2tFes();
+        int i2 = this.hitDepth;
         this.hitDepth = CollectionsKt.getLastIndex(hitTestResult);
-        int i4 = this.hitDepth;
+        int i3 = this.hitDepth;
         removeNodesInRange(this.hitDepth + 1, size());
         this.hitDepth++;
         this.values.add(node);
@@ -326,20 +325,17 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         DistanceAndFlags = HitTestResultKt.DistanceAndFlags(f, z, false);
         mutableLongList2.add(DistanceAndFlags);
         function0.invoke();
-        this.hitDepth = i4;
-        long m7087findBestHitDistancefn2tFes2 = m7087findBestHitDistancefn2tFes();
-        if (this.hitDepth + 1 < CollectionsKt.getLastIndex(hitTestResult) && DistanceAndFlags.m7064compareTo9YPOF3E(m7087findBestHitDistancefn2tFes, m7087findBestHitDistancefn2tFes2) > 0) {
-            int i5 = i3 + 1;
-            if (DistanceAndFlags.m7070isInExpandedBoundsimpl(m7087findBestHitDistancefn2tFes2)) {
-                i = this.hitDepth + 2;
-            } else {
-                i = this.hitDepth + 1;
-            }
-            removeNodesInRange(i5, i);
+        this.hitDepth = i3;
+        long m6428findBestHitDistancefn2tFes2 = m6428findBestHitDistancefn2tFes();
+        if (this.hitDepth + 1 < CollectionsKt.getLastIndex(hitTestResult) && DistanceAndFlags.m6405compareTo9YPOF3E(m6428findBestHitDistancefn2tFes, m6428findBestHitDistancefn2tFes2) > 0) {
+            int i4 = i2 + 1;
+            boolean m6411isInExpandedBoundsimpl = DistanceAndFlags.m6411isInExpandedBoundsimpl(m6428findBestHitDistancefn2tFes2);
+            int i5 = this.hitDepth;
+            removeNodesInRange(i4, m6411isInExpandedBoundsimpl ? i5 + 2 : i5 + 1);
         } else {
             removeNodesInRange(this.hitDepth + 1, size());
         }
-        this.hitDepth = i3;
+        this.hitDepth = i2;
     }
 
     private final void removeNodeAtDepth(int i) {
@@ -622,7 +618,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         /* renamed from: removeFirst */
-        public /* bridge */ /* synthetic */ Object m7090removeFirst() {
+        public /* bridge */ /* synthetic */ Object m6431removeFirst() {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 
@@ -631,7 +627,7 @@ public final class HitTestResult implements List<Modifier.Node>, KMappedMarker {
         }
 
         /* renamed from: removeLast */
-        public /* bridge */ /* synthetic */ Object m7091removeLast() {
+        public /* bridge */ /* synthetic */ Object m6432removeLast() {
             throw new UnsupportedOperationException("Operation is not supported for read-only collection");
         }
 

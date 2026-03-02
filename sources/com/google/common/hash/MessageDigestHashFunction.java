@@ -137,10 +137,13 @@ final class MessageDigestHashFunction extends AbstractHashFunction implements Se
         public HashCode hash() {
             checkNotDone();
             this.done = true;
-            if (this.bytes == this.digest.getDigestLength()) {
-                return HashCode.fromBytesNoCopy(this.digest.digest());
+            int i = this.bytes;
+            int digestLength = this.digest.getDigestLength();
+            MessageDigest messageDigest = this.digest;
+            if (i == digestLength) {
+                return HashCode.fromBytesNoCopy(messageDigest.digest());
             }
-            return HashCode.fromBytesNoCopy(Arrays.copyOf(this.digest.digest(), this.bytes));
+            return HashCode.fromBytesNoCopy(Arrays.copyOf(messageDigest.digest(), this.bytes));
         }
     }
 }

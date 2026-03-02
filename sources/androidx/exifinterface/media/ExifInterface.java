@@ -1424,15 +1424,17 @@ public class ExifInterface {
                 return null;
             }
             return String.format("%02d:%02d:%02d", Integer.valueOf((int) (((float) rationalArr[0].numerator) / ((float) rationalArr[0].denominator))), Integer.valueOf((int) (((float) rationalArr[1].numerator) / ((float) rationalArr[1].denominator))), Integer.valueOf((int) (((float) rationalArr[2].numerator) / ((float) rationalArr[2].denominator))));
-        } else if (RATIONAL_TAGS_HANDLED_AS_DECIMALS_FOR_COMPATIBILITY.contains(str)) {
+        }
+        boolean contains = RATIONAL_TAGS_HANDLED_AS_DECIMALS_FOR_COMPATIBILITY.contains(str);
+        ByteOrder byteOrder = this.mExifByteOrder;
+        if (contains) {
             try {
-                return Double.toString(exifAttribute.getDoubleValue(this.mExifByteOrder));
+                return Double.toString(exifAttribute.getDoubleValue(byteOrder));
             } catch (NumberFormatException unused) {
                 return null;
             }
-        } else {
-            return exifAttribute.getStringValue(this.mExifByteOrder);
         }
+        return exifAttribute.getStringValue(byteOrder);
     }
 
     public int getAttributeInt(String str, int i) {
@@ -4220,70 +4222,76 @@ public class ExifInterface {
         ExifAttribute exifAttribute3 = this.mAttributes[i].get(TAG_RW2_SENSOR_LEFT_BORDER);
         ExifAttribute exifAttribute4 = this.mAttributes[i].get(TAG_RW2_SENSOR_BOTTOM_BORDER);
         ExifAttribute exifAttribute5 = this.mAttributes[i].get(TAG_RW2_SENSOR_RIGHT_BORDER);
-        if (exifAttribute != null) {
-            if (exifAttribute.format == 5) {
-                Rational[] rationalArr = (Rational[]) exifAttribute.getValue(this.mExifByteOrder);
-                if (rationalArr == null || rationalArr.length != 2) {
-                    Log.w(TAG, "Invalid crop size values. cropSize=" + Arrays.toString(rationalArr));
+        if (exifAttribute == null) {
+            if (exifAttribute2 != null && exifAttribute3 != null && exifAttribute4 != null && exifAttribute5 != null) {
+                int intValue = exifAttribute2.getIntValue(this.mExifByteOrder);
+                int intValue2 = exifAttribute4.getIntValue(this.mExifByteOrder);
+                int intValue3 = exifAttribute5.getIntValue(this.mExifByteOrder);
+                int intValue4 = exifAttribute3.getIntValue(this.mExifByteOrder);
+                if (intValue2 <= intValue || intValue3 <= intValue4) {
                     return;
-                } else {
-                    createUShort = ExifAttribute.createURational(rationalArr[0], this.mExifByteOrder);
-                    createUShort2 = ExifAttribute.createURational(rationalArr[1], this.mExifByteOrder);
                 }
-            } else {
-                int[] iArr = (int[]) exifAttribute.getValue(this.mExifByteOrder);
-                if (iArr == null || iArr.length != 2) {
-                    Log.w(TAG, "Invalid crop size values. cropSize=" + Arrays.toString(iArr));
-                    return;
-                } else {
-                    createUShort = ExifAttribute.createUShort(iArr[0], this.mExifByteOrder);
-                    createUShort2 = ExifAttribute.createUShort(iArr[1], this.mExifByteOrder);
-                }
-            }
-            this.mAttributes[i].put(TAG_IMAGE_WIDTH, createUShort);
-            this.mAttributes[i].put(TAG_IMAGE_LENGTH, createUShort2);
-        } else if (exifAttribute2 != null && exifAttribute3 != null && exifAttribute4 != null && exifAttribute5 != null) {
-            int intValue = exifAttribute2.getIntValue(this.mExifByteOrder);
-            int intValue2 = exifAttribute4.getIntValue(this.mExifByteOrder);
-            int intValue3 = exifAttribute5.getIntValue(this.mExifByteOrder);
-            int intValue4 = exifAttribute3.getIntValue(this.mExifByteOrder);
-            if (intValue2 <= intValue || intValue3 <= intValue4) {
+                ExifAttribute createUShort3 = ExifAttribute.createUShort(intValue2 - intValue, this.mExifByteOrder);
+                ExifAttribute createUShort4 = ExifAttribute.createUShort(intValue3 - intValue4, this.mExifByteOrder);
+                this.mAttributes[i].put(TAG_IMAGE_LENGTH, createUShort3);
+                this.mAttributes[i].put(TAG_IMAGE_WIDTH, createUShort4);
                 return;
             }
-            ExifAttribute createUShort3 = ExifAttribute.createUShort(intValue2 - intValue, this.mExifByteOrder);
-            ExifAttribute createUShort4 = ExifAttribute.createUShort(intValue3 - intValue4, this.mExifByteOrder);
-            this.mAttributes[i].put(TAG_IMAGE_LENGTH, createUShort3);
-            this.mAttributes[i].put(TAG_IMAGE_WIDTH, createUShort4);
-        } else {
             retrieveJpegImageSize(seekableByteOrderedDataInputStream, i);
+            return;
         }
+        int i2 = exifAttribute.format;
+        ByteOrder byteOrder = this.mExifByteOrder;
+        if (i2 == 5) {
+            Rational[] rationalArr = (Rational[]) exifAttribute.getValue(byteOrder);
+            if (rationalArr == null || rationalArr.length != 2) {
+                Log.w(TAG, "Invalid crop size values. cropSize=" + Arrays.toString(rationalArr));
+                return;
+            } else {
+                createUShort = ExifAttribute.createURational(rationalArr[0], this.mExifByteOrder);
+                createUShort2 = ExifAttribute.createURational(rationalArr[1], this.mExifByteOrder);
+            }
+        } else {
+            int[] iArr = (int[]) exifAttribute.getValue(byteOrder);
+            if (iArr == null || iArr.length != 2) {
+                Log.w(TAG, "Invalid crop size values. cropSize=" + Arrays.toString(iArr));
+                return;
+            } else {
+                createUShort = ExifAttribute.createUShort(iArr[0], this.mExifByteOrder);
+                createUShort2 = ExifAttribute.createUShort(iArr[1], this.mExifByteOrder);
+            }
+        }
+        this.mAttributes[i].put(TAG_IMAGE_WIDTH, createUShort);
+        this.mAttributes[i].put(TAG_IMAGE_LENGTH, createUShort2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:126:0x035b  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0197  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x021f  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0255  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x026e  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0271  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x028b  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x035b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0110  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0191  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01f9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0235  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x024f  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0268  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x026b  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0285  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private int writeExifSegment(ByteOrderedDataOutputStream byteOrderedDataOutputStream) throws IOException {
+        HashMap<String, ExifAttribute>[] hashMapArr;
         char c;
         char c2;
         int i;
         int i2;
         int i3;
         int i4;
-        long j;
+        int i5;
+        int i6;
         ExifTag[][] exifTagArr = EXIF_TAGS;
         int[] iArr = new int[exifTagArr.length];
         int[] iArr2 = new int[exifTagArr.length];
@@ -4299,16 +4307,22 @@ public class ExifInterface {
                 removeAttribute(TAG_JPEG_INTERCHANGE_FORMAT_LENGTH);
             }
         }
-        for (int i5 = 0; i5 < EXIF_TAGS.length; i5++) {
-            Iterator<Map.Entry<String, ExifAttribute>> it = this.mAttributes[i5].entrySet().iterator();
+        int i7 = 0;
+        while (true) {
+            int length = EXIF_TAGS.length;
+            hashMapArr = this.mAttributes;
+            if (i7 >= length) {
+                break;
+            }
+            Iterator<Map.Entry<String, ExifAttribute>> it = hashMapArr[i7].entrySet().iterator();
             while (it.hasNext()) {
                 if (it.next().getValue() == null) {
                     it.remove();
                 }
             }
+            i7++;
         }
-        long j2 = 0;
-        if (!this.mAttributes[1].isEmpty()) {
+        if (!hashMapArr[1].isEmpty()) {
             this.mAttributes[0].put(EXIF_POINTER_TAGS[1].name, ExifAttribute.createULong(0L, this.mExifByteOrder));
         }
         if (!this.mAttributes[2].isEmpty()) {
@@ -4321,45 +4335,49 @@ public class ExifInterface {
             this.mAttributes[1].put(EXIF_POINTER_TAGS[3].name, ExifAttribute.createULong(0L, this.mExifByteOrder));
         }
         if (this.mHasThumbnail) {
-            if (this.mHasThumbnailStrips) {
-                this.mAttributes[4].put(TAG_STRIP_OFFSETS, ExifAttribute.createUShort(0, this.mExifByteOrder));
+            boolean z = this.mHasThumbnailStrips;
+            HashMap<String, ExifAttribute>[] hashMapArr2 = this.mAttributes;
+            if (z) {
+                hashMapArr2[4].put(TAG_STRIP_OFFSETS, ExifAttribute.createUShort(0, this.mExifByteOrder));
                 this.mAttributes[4].put(TAG_STRIP_BYTE_COUNTS, ExifAttribute.createUShort(this.mThumbnailLength, this.mExifByteOrder));
             } else {
-                this.mAttributes[4].put(TAG_JPEG_INTERCHANGE_FORMAT, ExifAttribute.createULong(0L, this.mExifByteOrder));
+                hashMapArr2[4].put(TAG_JPEG_INTERCHANGE_FORMAT, ExifAttribute.createULong(0L, this.mExifByteOrder));
                 c2 = 3;
                 this.mAttributes[4].put(TAG_JPEG_INTERCHANGE_FORMAT_LENGTH, ExifAttribute.createULong(this.mThumbnailLength, this.mExifByteOrder));
                 for (i = 0; i < EXIF_TAGS.length; i++) {
-                    int i6 = 0;
+                    int i8 = 0;
                     for (Map.Entry<String, ExifAttribute> entry : this.mAttributes[i].entrySet()) {
                         int size = entry.getValue().size();
                         if (size > 4) {
-                            i6 += size;
+                            i8 += size;
                         }
                     }
-                    iArr2[i] = iArr2[i] + i6;
+                    iArr2[i] = iArr2[i] + i8;
                 }
-                int i7 = 8;
+                int i9 = 8;
                 for (i2 = 0; i2 < EXIF_TAGS.length; i2++) {
                     if (!this.mAttributes[i2].isEmpty()) {
-                        iArr[i2] = i7;
-                        i7 += (this.mAttributes[i2].size() * 12) + 6 + iArr2[i2];
+                        iArr[i2] = i9;
+                        i9 += (this.mAttributes[i2].size() * 12) + 6 + iArr2[i2];
                     }
                 }
                 if (this.mHasThumbnail) {
-                    if (this.mHasThumbnailStrips) {
-                        this.mAttributes[4].put(TAG_STRIP_OFFSETS, ExifAttribute.createUShort(i7, this.mExifByteOrder));
+                    boolean z2 = this.mHasThumbnailStrips;
+                    HashMap<String, ExifAttribute>[] hashMapArr3 = this.mAttributes;
+                    if (z2) {
+                        hashMapArr3[4].put(TAG_STRIP_OFFSETS, ExifAttribute.createUShort(i9, this.mExifByteOrder));
                     } else {
-                        this.mAttributes[4].put(TAG_JPEG_INTERCHANGE_FORMAT, ExifAttribute.createULong(i7, this.mExifByteOrder));
+                        hashMapArr3[4].put(TAG_JPEG_INTERCHANGE_FORMAT, ExifAttribute.createULong(i9, this.mExifByteOrder));
                     }
-                    this.mThumbnailOffset = i7;
-                    i7 += this.mThumbnailLength;
+                    this.mThumbnailOffset = i9;
+                    i9 += this.mThumbnailLength;
                 }
                 if (this.mMimeType == 4) {
-                    i7 += 8;
+                    i9 += 8;
                 }
                 if (DEBUG) {
-                    for (int i8 = 0; i8 < EXIF_TAGS.length; i8++) {
-                        Log.d(TAG, String.format("index: %d, offsets: %d, tag count: %d, data sizes: %d, total size: %d", Integer.valueOf(i8), Integer.valueOf(iArr[i8]), Integer.valueOf(this.mAttributes[i8].size()), Integer.valueOf(iArr2[i8]), Integer.valueOf(i7)));
+                    for (int i10 = 0; i10 < EXIF_TAGS.length; i10++) {
+                        Log.d(TAG, String.format("index: %d, offsets: %d, tag count: %d, data sizes: %d, total size: %d", Integer.valueOf(i10), Integer.valueOf(iArr[i10]), Integer.valueOf(this.mAttributes[i10].size()), Integer.valueOf(iArr2[i10]), Integer.valueOf(i9)));
                     }
                 }
                 if (!this.mAttributes[1].isEmpty()) {
@@ -4374,16 +4392,16 @@ public class ExifInterface {
                 i3 = this.mMimeType;
                 if (i3 == 4) {
                     if (i3 == 13) {
-                        byteOrderedDataOutputStream.writeInt(i7);
+                        byteOrderedDataOutputStream.writeInt(i9);
                         byteOrderedDataOutputStream.writeInt(PNG_CHUNK_TYPE_EXIF);
                     } else if (i3 == 14) {
                         byteOrderedDataOutputStream.write(WEBP_CHUNK_TYPE_EXIF);
-                        byteOrderedDataOutputStream.writeInt(i7);
+                        byteOrderedDataOutputStream.writeInt(i9);
                     }
-                } else if (i7 > 65535) {
-                    throw new IllegalStateException("Size of exif data (" + i7 + " bytes) exceeds the max size of a JPEG APP1 segment (65536 bytes)");
+                } else if (i9 > 65535) {
+                    throw new IllegalStateException("Size of exif data (" + i9 + " bytes) exceeds the max size of a JPEG APP1 segment (65536 bytes)");
                 } else {
-                    byteOrderedDataOutputStream.writeUnsignedShort(i7);
+                    byteOrderedDataOutputStream.writeUnsignedShort(i9);
                     byteOrderedDataOutputStream.write(IDENTIFIER_EXIF_APP1);
                 }
                 int size2 = byteOrderedDataOutputStream.mOutputStream.size();
@@ -4394,21 +4412,23 @@ public class ExifInterface {
                 i4 = 0;
                 while (i4 < EXIF_TAGS.length) {
                     if (this.mAttributes[i4].isEmpty()) {
-                        j = j2;
+                        i5 = i4;
                     } else {
                         byteOrderedDataOutputStream.writeUnsignedShort(this.mAttributes[i4].size());
                         int size3 = iArr[i4] + 2 + (this.mAttributes[i4].size() * 12) + 4;
                         for (Map.Entry<String, ExifAttribute> entry2 : this.mAttributes[i4].entrySet()) {
-                            int i9 = sExifTagMapsForWriting[i4].get(entry2.getKey()).number;
+                            int i11 = sExifTagMapsForWriting[i4].get(entry2.getKey()).number;
                             ExifAttribute value = entry2.getValue();
                             int size4 = value.size();
-                            byteOrderedDataOutputStream.writeUnsignedShort(i9);
+                            byteOrderedDataOutputStream.writeUnsignedShort(i11);
                             byteOrderedDataOutputStream.writeUnsignedShort(value.format);
                             byteOrderedDataOutputStream.writeInt(value.numberOfComponents);
                             if (size4 > 4) {
+                                i6 = i4;
                                 byteOrderedDataOutputStream.writeUnsignedInt(size3);
                                 size3 += size4;
                             } else {
+                                i6 = i4;
                                 byteOrderedDataOutputStream.write(value.bytes);
                                 if (size4 < 4) {
                                     while (size4 < 4) {
@@ -4417,28 +4437,27 @@ public class ExifInterface {
                                     }
                                 }
                             }
+                            i4 = i6;
                         }
-                        if (i4 == 0 && !this.mAttributes[4].isEmpty()) {
+                        i5 = i4;
+                        if (i5 == 0 && !this.mAttributes[4].isEmpty()) {
                             byteOrderedDataOutputStream.writeUnsignedInt(iArr[4]);
-                            j = 0;
                         } else {
-                            j = 0;
                             byteOrderedDataOutputStream.writeUnsignedInt(0L);
                         }
-                        for (Map.Entry<String, ExifAttribute> entry3 : this.mAttributes[i4].entrySet()) {
+                        for (Map.Entry<String, ExifAttribute> entry3 : this.mAttributes[i5].entrySet()) {
                             ExifAttribute value2 = entry3.getValue();
                             if (value2.bytes.length > 4) {
                                 byteOrderedDataOutputStream.write(value2.bytes, 0, value2.bytes.length);
                             }
                         }
                     }
-                    i4++;
-                    j2 = j;
+                    i4 = i5 + 1;
                 }
                 if (this.mHasThumbnail) {
                     byteOrderedDataOutputStream.write(getThumbnailBytes());
                 }
-                if (this.mMimeType == 14 && i7 % 2 == 1) {
+                if (this.mMimeType == 14 && i9 % 2 == 1) {
                     byteOrderedDataOutputStream.writeByte(0);
                 }
                 byteOrderedDataOutputStream.setByteOrder(ByteOrder.BIG_ENDIAN);
@@ -4448,7 +4467,7 @@ public class ExifInterface {
         c2 = 3;
         while (i < EXIF_TAGS.length) {
         }
-        int i72 = 8;
+        int i92 = 8;
         while (i2 < EXIF_TAGS.length) {
         }
         if (this.mHasThumbnail) {

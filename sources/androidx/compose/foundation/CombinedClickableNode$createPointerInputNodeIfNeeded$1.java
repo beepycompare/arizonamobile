@@ -50,9 +50,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                 function1 = new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit invoke$lambda$0;
-                        invoke$lambda$0 = CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$0(CombinedClickableNode.this, (Offset) obj);
-                        return invoke$lambda$0;
+                        return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$0(CombinedClickableNode.this, (Offset) obj);
                     }
                 };
                 if (this.this$0.getEnabled()) {
@@ -62,9 +60,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                         function12 = new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                Unit invoke$lambda$1;
-                                invoke$lambda$1 = CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$1(CombinedClickableNode.this, (Offset) obj);
-                                return invoke$lambda$1;
+                                return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$1(CombinedClickableNode.this, (Offset) obj);
                             }
                         };
                         AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, null);
@@ -72,9 +68,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                         Object detectTapGestures = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass3, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj) {
-                                Unit invoke$lambda$2;
-                                invoke$lambda$2 = CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
-                                return invoke$lambda$2;
+                                return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
                             }
                         }, continuation);
                         return detectTapGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures : Unit.INSTANCE;
@@ -86,9 +80,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                 Object detectTapGestures2 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass32, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit invoke$lambda$2;
-                        invoke$lambda$2 = CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
-                        return invoke$lambda$2;
+                        return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
                     }
                 }, continuation);
                 if (detectTapGestures2 == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -104,16 +96,14 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
         Object detectTapGestures22 = TapGestureDetectorKt.detectTapGestures(pointerInputScope, function1, function12, anonymousClass322, new Function1() { // from class: androidx.compose.foundation.CombinedClickableNode$createPointerInputNodeIfNeeded$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$2;
-                invoke$lambda$2 = CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
-                return invoke$lambda$2;
+                return CombinedClickableNode$createPointerInputNodeIfNeeded$1.invoke$lambda$2(CombinedClickableNode.this, (Offset) obj);
             }
         }, continuation);
         if (detectTapGestures22 == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(CombinedClickableNode combinedClickableNode, Offset offset) {
         Function0 function0;
         function0 = combinedClickableNode.onDoubleClick;
@@ -123,7 +113,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1(CombinedClickableNode combinedClickableNode, Offset offset) {
         Function0 function0;
         function0 = combinedClickableNode.onLongClick;
@@ -131,7 +121,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
             function0.invoke();
         }
         if (combinedClickableNode.getHapticFeedbackEnabled()) {
-            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo6200performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6213getLongPress5zf0vsI());
+            ((HapticFeedback) CompositionLocalConsumerModifierNodeKt.currentValueOf(combinedClickableNode, CompositionLocalsKt.getLocalHapticFeedback())).mo5541performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5554getLongPress5zf0vsI());
         }
         return Unit.INSTANCE;
     }
@@ -155,11 +145,11 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m362invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m317invoked4ec7I(pressGestureScope, offset.m4537unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m362invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m317invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, continuation);
             anonymousClass3.L$0 = pressGestureScope;
             anonymousClass3.J$0 = j;
@@ -176,7 +166,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
                 long j = this.J$0;
                 if (this.this$0.getEnabled()) {
                     this.label = 1;
-                    if (this.this$0.m260handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
+                    if (this.this$0.m227handlePressInteractiond4ec7I(pressGestureScope, j, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -189,7 +179,7 @@ final class CombinedClickableNode$createPointerInputNodeIfNeeded$1 implements Po
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$2(CombinedClickableNode combinedClickableNode, Offset offset) {
         if (combinedClickableNode.getEnabled()) {
             combinedClickableNode.getOnClick().invoke();

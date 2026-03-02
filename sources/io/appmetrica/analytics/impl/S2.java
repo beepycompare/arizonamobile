@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 public final class S2 implements IBinaryDataHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0719y6 f775a;
+    public final InterfaceC0718y6 f775a;
     public final String b;
 
-    public S2(InterfaceC0719y6 interfaceC0719y6, String str) {
-        this.f775a = interfaceC0719y6;
+    public S2(InterfaceC0718y6 interfaceC0718y6, String str) {
+        this.f775a = interfaceC0718y6;
         this.b = str;
     }
 

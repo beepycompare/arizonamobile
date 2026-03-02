@@ -19,8 +19,12 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Set;
+import kotlin.Lazy;
+import kotlin.LazyKt;
+import kotlin.LazyThreadSafetyMode;
 import kotlin.Metadata;
 import kotlin.collections.SetsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
@@ -28,7 +32,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 /* compiled from: CustomKeyboard.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\r\u0018\u00002\u00020\u0001:\u0002:;B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u0010)\u001a\u00020*J\b\u0010+\u001a\u00020*H\u0002J\u0006\u0010,\u001a\u00020\u001eJ\u000e\u0010-\u001a\u00020*2\u0006\u0010.\u001a\u00020/J\u000e\u00100\u001a\u00020*2\u0006\u0010!\u001a\u00020\"J\u0006\u00101\u001a\u00020*J&\u00102\u001a\u00020*2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u001e2\u0006\u00105\u001a\u00020\u001e2\u0006\u00106\u001a\u00020\u0005J\u0010\u00107\u001a\u00020*2\u0006\u0010.\u001a\u00020/H\u0002J\b\u00108\u001a\u00020*H\u0002J\b\u00109\u001a\u00020*H\u0002R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "activity", "inputLayout", "Landroidx/appcompat/widget/AppCompatImageView;", "inputArea", "Landroid/widget/EditText;", "chatType", "Landroid/widget/TextView;", "currentHistory", "keySlash", "keyNext", "keyOld", "keyBinder", "rpButton", "Landroid/widget/Button;", "nonrpButton", "orgButton", "familyButton", "workButton", "vipButton", "selectButton", "sendButton", "isChat", "", "isBinderShowing", "lastHeightKeyboard", "inputListener", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "filters", "", "Landroid/text/InputFilter$LengthFilter;", "[Landroid/text/InputFilter$LengthFilter;", "mKeyboardView", "Landroidx/constraintlayout/widget/ConstraintLayout;", "showKeyboard", "", "hideKeyboard", "getUniqueState", "setString", "str", "", "setInputLayoutForEditText", "removeListener", "setInputLayout", "thisChatType", "type", "thisIsChat", "height", "OnInputEnd", "updateTextByCurrentHistoryLevel", "updateHistoryNavigationButtonsEnabledState", "InputListener", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\r\u0018\u00002\u00020\u0001:\u0002HIB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u00107\u001a\u000208J\b\u00109\u001a\u000208H\u0002J\u0006\u0010:\u001a\u00020\u001eJ\u000e\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020=J\u000e\u0010>\u001a\u0002082\u0006\u0010!\u001a\u00020\"J\u0006\u0010?\u001a\u000208J&\u0010@\u001a\u0002082\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u001e2\u0006\u0010C\u001a\u00020\u001e2\u0006\u0010D\u001a\u00020\u0005J\u0010\u0010E\u001a\u0002082\u0006\u0010<\u001a\u00020=H\u0002J\b\u0010F\u001a\u000208H\u0002J\b\u0010G\u001a\u000208H\u0002R\u000e\u0010\b\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010'\u001a\u00020(8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b+\u0010,\u001a\u0004\b)\u0010*R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00101\u001a\b\u0012\u0004\u0012\u00020302X\u0082\u0004¢\u0006\u0004\n\u0002\u00104R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006J"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "activity", "inputLayout", "Landroidx/appcompat/widget/AppCompatImageView;", "inputArea", "Landroid/widget/EditText;", "chatType", "Landroid/widget/TextView;", "currentHistory", "keySlash", "keyNext", "keyOld", "keyBinder", "rpButton", "Landroid/widget/Button;", "nonrpButton", "orgButton", "familyButton", "workButton", "vipButton", "selectButton", "sendButton", "isChat", "", "isBinderShowing", "lastHeightKeyboard", "inputListener", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "viewRect", "Landroid/graphics/Rect;", "mainHandler", "Landroid/os/Handler;", "imm", "Landroid/view/inputmethod/InputMethodManager;", "getImm", "()Landroid/view/inputmethod/InputMethodManager;", "imm$delegate", "Lkotlin/Lazy;", "showKeyboardRunnable", "Ljava/lang/Runnable;", "globalLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "filters", "", "Landroid/text/InputFilter$LengthFilter;", "[Landroid/text/InputFilter$LengthFilter;", "mKeyboardView", "Landroidx/constraintlayout/widget/ConstraintLayout;", "showKeyboard", "", "hideKeyboard", "getUniqueState", "setString", "str", "", "setInputLayoutForEditText", "removeListener", "setInputLayout", "thisChatType", "type", "thisIsChat", "height", "OnInputEnd", "updateTextByCurrentHistoryLevel", "updateHistoryNavigationButtonsEnabledState", "InputListener", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CustomKeyboard extends SAMPUIElement {
     private final Activity activity;
@@ -36,6 +40,8 @@ public final class CustomKeyboard extends SAMPUIElement {
     private int currentHistory;
     private final Button familyButton;
     private final InputFilter.LengthFilter[] filters;
+    private final ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener;
+    private final Lazy imm$delegate;
     private final EditText inputArea;
     private final AppCompatImageView inputLayout;
     private InputListener inputListener;
@@ -47,16 +53,19 @@ public final class CustomKeyboard extends SAMPUIElement {
     private final AppCompatImageView keySlash;
     private int lastHeightKeyboard;
     private final ConstraintLayout mKeyboardView;
+    private final Handler mainHandler;
     private final Button nonrpButton;
     private final Button orgButton;
     private final Button rpButton;
     private final AppCompatImageView selectButton;
     private final AppCompatImageView sendButton;
+    private final Runnable showKeyboardRunnable;
+    private final Rect viewRect;
     private final Button vipButton;
     private final Button workButton;
 
     /* compiled from: CustomKeyboard.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\bf\u0018\u00002\u00020\u0001J\u0012\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H&J\b\u0010\u0006\u001a\u00020\u0007H&J\b\u0010\b\u001a\u00020\tH&J\u0012\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\tH&J\u0010\u0010\f\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\tH&J\u0012\u0010\r\u001a\u00020\u00032\b\u0010\u000e\u001a\u0004\u0018\u00010\u0005H&J\u0010\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\tH&J\b\u0010\u0011\u001a\u00020\u0003H&¨\u0006\u0012À\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\bf\u0018\u00002\u00020\u0001J\u0012\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005H&J\b\u0010\u0006\u001a\u00020\u0007H&J\b\u0010\b\u001a\u00020\tH&J\u0012\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\tH&J\u0010\u0010\f\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\tH&J\u0012\u0010\r\u001a\u00020\u00032\b\u0010\u000e\u001a\u0004\u0018\u00010\u0005H&J\u0010\u0010\u000f\u001a\u00020\u00032\u0006\u0010\u0010\u001a\u00020\tH&J\b\u0010\u0011\u001a\u00020\u0003H&¨\u0006\u0012À\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public interface InputListener {
         void closeKeyboard();
@@ -82,6 +91,27 @@ public final class CustomKeyboard extends SAMPUIElement {
         ConstraintLayout constraintLayout;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         this.currentHistory = -1;
+        this.viewRect = new Rect();
+        this.mainHandler = new Handler(Looper.getMainLooper());
+        this.imm$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return CustomKeyboard.imm_delegate$lambda$0(targetActivity);
+            }
+        });
+        this.showKeyboardRunnable = new Runnable() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda17
+            @Override // java.lang.Runnable
+            public final void run() {
+                CustomKeyboard.this.mKeyboardView.setVisibility(0);
+            }
+        };
+        ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda1
+            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+            public final void onGlobalLayout() {
+                CustomKeyboard.globalLayoutListener$lambda$0(CustomKeyboard.this);
+            }
+        };
+        this.globalLayoutListener = onGlobalLayoutListener;
         this.filters = new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(200)};
         View inflate = targetActivity.getLayoutInflater().inflate(R.layout.chat, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
@@ -148,10 +178,10 @@ public final class CustomKeyboard extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(findViewById15, "findViewById(...)");
         AppCompatImageView appCompatImageView6 = (AppCompatImageView) findViewById15;
         this.sendButton = appCompatImageView6;
-        appCompatImageView3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda0
+        appCompatImageView3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$0(CustomKeyboard.this, view);
+                r0.inputArea.getText().insert(CustomKeyboard.this.inputArea.getSelectionStart(), "/");
             }
         });
         appCompatImageView2.setEnabled(false);
@@ -161,100 +191,119 @@ public final class CustomKeyboard extends SAMPUIElement {
         } else {
             constraintLayout = constraintLayout2;
         }
-        constraintLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda14
-            @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-            public final void onGlobalLayout() {
-                CustomKeyboard._init_$lambda$1(CustomKeyboard.this, targetActivity);
+        constraintLayout.getViewTreeObserver().addOnGlobalLayoutListener(onGlobalLayoutListener);
+        appCompatImageView2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda3
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                CustomKeyboard._init_$lambda$1(CustomKeyboard.this, view);
             }
         });
-        appCompatImageView2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda15
+        appCompatImageView6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$2(CustomKeyboard.this, view);
             }
         });
-        appCompatImageView6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda16
+        editText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$3(CustomKeyboard.this, view);
             }
         });
-        editText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda1
+        appCompatImageView5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$4(CustomKeyboard.this, view);
             }
         });
-        appCompatImageView5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda2
+        button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$5(CustomKeyboard.this, view);
             }
         });
-        button.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda3
+        button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$6(CustomKeyboard.this, view);
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda4
+        button3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$7(CustomKeyboard.this, view);
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda5
+        button4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$8(CustomKeyboard.this, view);
             }
         });
-        button4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda6
+        button5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$9(CustomKeyboard.this, view);
             }
         });
-        button5.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda8
+        button6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$10(CustomKeyboard.this, view);
             }
         });
-        button6.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda9
+        appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$11(CustomKeyboard.this, view);
             }
         });
-        appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda10
+        appCompatImageView4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CustomKeyboard._init_$lambda$12(CustomKeyboard.this, view);
             }
         });
-        appCompatImageView4.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda11
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                CustomKeyboard._init_$lambda$13(CustomKeyboard.this, view);
-            }
-        });
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda12
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda15
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$14;
-                _init_$lambda$14 = CustomKeyboard._init_$lambda$14(CustomKeyboard.this, textView, i2, keyEvent);
-                return _init_$lambda$14;
+                return CustomKeyboard._init_$lambda$13(CustomKeyboard.this, textView, i2, keyEvent);
             }
         });
-        editText.setOnKeyListener(new View.OnKeyListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda13
+        editText.setOnKeyListener(new View.OnKeyListener() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda16
             @Override // android.view.View.OnKeyListener
             public final boolean onKey(View view, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$15;
-                _init_$lambda$15 = CustomKeyboard._init_$lambda$15(CustomKeyboard.this, view, i2, keyEvent);
-                return _init_$lambda$15;
+                return CustomKeyboard._init_$lambda$14(CustomKeyboard.this, view, i2, keyEvent);
             }
         });
+    }
+
+    private final InputMethodManager getImm() {
+        return (InputMethodManager) this.imm$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final InputMethodManager imm_delegate$lambda$0(Activity activity) {
+        Object systemService = activity.getSystemService("input_method");
+        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
+        return (InputMethodManager) systemService;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void globalLayoutListener$lambda$0(CustomKeyboard customKeyboard) {
+        int height;
+        customKeyboard.mKeyboardView.getWindowVisibleDisplayFrame(customKeyboard.viewRect);
+        int height2 = customKeyboard.mKeyboardView.getRootView().getHeight();
+        if (height2 <= 0) {
+            return;
+        }
+        int i = height2 - customKeyboard.viewRect.bottom;
+        if (customKeyboard.getImm().isAcceptingText() && i > 300 && customKeyboard.lastHeightKeyboard != (height = (height2 - i) - customKeyboard.inputArea.getHeight())) {
+            customKeyboard.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, height);
+            customKeyboard.lastHeightKeyboard = height;
+        }
+        customKeyboard.mainHandler.removeCallbacks(customKeyboard.showKeyboardRunnable);
+        customKeyboard.mainHandler.postDelayed(customKeyboard.showKeyboardRunnable, 100L);
     }
 
     public final void showKeyboard() {
@@ -392,41 +441,15 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputListener) activity2).closeKeyboard();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$0(CustomKeyboard customKeyboard, View view) {
-        customKeyboard.inputArea.getText().insert(customKeyboard.inputArea.getSelectionStart(), "/");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$1(final CustomKeyboard customKeyboard, Activity activity) {
-        int height;
-        Rect rect = new Rect();
-        customKeyboard.mKeyboardView.getWindowVisibleDisplayFrame(rect);
-        int height2 = customKeyboard.mKeyboardView.getRootView().getRootView().getHeight();
-        int i = height2 - rect.bottom;
-        Object systemService = activity.getSystemService("input_method");
-        Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
-        if (((InputMethodManager) systemService).isAcceptingText() && i > 300 && customKeyboard.lastHeightKeyboard != (height = (height2 - i) - customKeyboard.inputArea.getHeight())) {
-            customKeyboard.setPosition(SAMPUIElement.PositionType.CENTER_TOP, 0, height);
-            customKeyboard.lastHeightKeyboard = height;
-        }
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.CustomKeyboard$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                CustomKeyboard.this.mKeyboardView.setVisibility(0);
-            }
-        }, 100L);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$1(CustomKeyboard customKeyboard, View view) {
         customKeyboard.currentHistory--;
         customKeyboard.updateHistoryNavigationButtonsEnabledState();
         customKeyboard.updateTextByCurrentHistoryLevel();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$3(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$2(CustomKeyboard customKeyboard, View view) {
         Editable text = customKeyboard.inputArea.getText();
         if (text != null) {
             String obj = text.toString();
@@ -435,8 +458,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$4(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$3(CustomKeyboard customKeyboard, View view) {
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
         customKeyboard.orgButton.setVisibility(8);
@@ -449,8 +472,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$5(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$4(CustomKeyboard customKeyboard, View view) {
         if (customKeyboard.rpButton.getVisibility() == 8 && customKeyboard.nonrpButton.getVisibility() == 8 && customKeyboard.orgButton.getVisibility() == 8 && customKeyboard.familyButton.getVisibility() == 8 && customKeyboard.workButton.getVisibility() == 8 && customKeyboard.vipButton.getVisibility() == 8) {
             customKeyboard.rpButton.setVisibility(0);
             customKeyboard.nonrpButton.setVisibility(0);
@@ -475,8 +498,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$6(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$5(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("РП");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -495,8 +518,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$7(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$6(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("НРП");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -515,8 +538,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$8(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$7(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("ОРГ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -535,8 +558,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$9(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$8(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("СЕМ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -555,8 +578,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$10(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$9(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("РАБ");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -575,8 +598,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$11(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$10(CustomKeyboard customKeyboard, View view) {
         customKeyboard.chatType.setText("VIP");
         customKeyboard.rpButton.setVisibility(8);
         customKeyboard.nonrpButton.setVisibility(8);
@@ -595,15 +618,15 @@ public final class CustomKeyboard extends SAMPUIElement {
         ((InputMethodManager) systemService).showSoftInput(customKeyboard.inputArea, 1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$12(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$11(CustomKeyboard customKeyboard, View view) {
         customKeyboard.currentHistory++;
         customKeyboard.updateHistoryNavigationButtonsEnabledState();
         customKeyboard.updateTextByCurrentHistoryLevel();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$13(CustomKeyboard customKeyboard, View view) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void _init_$lambda$12(CustomKeyboard customKeyboard, View view) {
         if (!customKeyboard.isBinderShowing) {
             customKeyboard.hideKeyboard();
             customKeyboard.getNotifier().setUIElementVisible(UIElementID.COMMAND_BINDER.getId(), true);
@@ -623,8 +646,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         customKeyboard.isBinderShowing = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$14(CustomKeyboard customKeyboard, TextView textView, int i, KeyEvent keyEvent) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean _init_$lambda$13(CustomKeyboard customKeyboard, TextView textView, int i, KeyEvent keyEvent) {
         Editable text;
         if ((i == 0 || i == 5 || i == 6) && (text = customKeyboard.inputArea.getText()) != null) {
             String obj = text.toString();
@@ -635,8 +658,8 @@ public final class CustomKeyboard extends SAMPUIElement {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean _init_$lambda$15(CustomKeyboard customKeyboard, View view, int i, KeyEvent keyEvent) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean _init_$lambda$14(CustomKeyboard customKeyboard, View view, int i, KeyEvent keyEvent) {
         Editable text;
         if (i == 66 && keyEvent.isCtrlPressed() && (text = customKeyboard.inputArea.getText()) != null) {
             String obj = text.toString();
@@ -676,7 +699,7 @@ public final class CustomKeyboard extends SAMPUIElement {
     }
 
     /* compiled from: CustomKeyboard.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/CustomKeyboard$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.INPUT_LAYOUT);

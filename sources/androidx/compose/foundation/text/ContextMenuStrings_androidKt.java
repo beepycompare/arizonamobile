@@ -11,7 +11,7 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class ContextMenuStrings_androidKt {
     /* renamed from: getString-tk4Tqcs  reason: not valid java name */
-    public static final String m1358getStringtk4Tqcs(int i, Composer composer, int i2) {
+    public static final String m1191getStringtk4Tqcs(int i, Composer composer, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -2083411200, "C(getString)N(string:c#foundation.text.ContextMenuStrings)56@1981L7:ContextMenuStrings.android.kt#423gt5");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-2083411200, i2, -1, "androidx.compose.foundation.text.getString (ContextMenuStrings.android.kt:55)");

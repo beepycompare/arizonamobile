@@ -42,13 +42,14 @@ public class ImageAssetManager {
     }
 
     public Bitmap updateBitmap(String str, Bitmap bitmap) {
+        Map<String, LottieImageAsset> map = this.imageAssets;
         if (bitmap == null) {
-            LottieImageAsset lottieImageAsset = this.imageAssets.get(str);
+            LottieImageAsset lottieImageAsset = map.get(str);
             Bitmap bitmap2 = lottieImageAsset.getBitmap();
             lottieImageAsset.setBitmap(null);
             return bitmap2;
         }
-        Bitmap bitmap3 = this.imageAssets.get(str).getBitmap();
+        Bitmap bitmap3 = map.get(str).getBitmap();
         putBitmap(str, bitmap);
         return bitmap3;
     }
@@ -123,10 +124,11 @@ public class ImageAssetManager {
     }
 
     public boolean hasSameContext(Context context) {
+        Context context2 = this.context;
         if (context == null) {
-            return this.context == null;
+            return context2 == null;
         }
-        if (this.context instanceof Application) {
+        if (context2 instanceof Application) {
             context = context.getApplicationContext();
         }
         return context == this.context;

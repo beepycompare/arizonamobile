@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.exifinterface.media.ExifInterface;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import kotlin.Metadata;
@@ -13,12 +12,11 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PagedList.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u00020\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PagedList$dispatchStateChangeAsync$1", f = "PagedList.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.PagedList$dispatchStateChangeAsync$1", f = "PagedList.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class PagedList$dispatchStateChangeAsync$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ LoadState $state;
@@ -53,16 +51,10 @@ public final class PagedList$dispatchStateChangeAsync$1 extends SuspendLambda im
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
             list = ((PagedList) this.this$0).loadStateListeners;
-            CollectionsKt.removeAll(list, (Function1) new Function1<WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>>, Boolean>() { // from class: androidx.paging.PagedList$dispatchStateChangeAsync$1.1
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final Boolean invoke2(WeakReference<Function2<LoadType, LoadState, Unit>> it) {
-                    Intrinsics.checkNotNullParameter(it, "it");
-                    return Boolean.valueOf(it.get() == null);
-                }
-
+            CollectionsKt.removeAll(list, new Function1() { // from class: androidx.paging.PagedList$dispatchStateChangeAsync$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Boolean invoke(WeakReference<Function2<? super LoadType, ? super LoadState, ? extends Unit>> weakReference) {
-                    return invoke2((WeakReference<Function2<LoadType, LoadState, Unit>>) weakReference);
+                public final Object invoke(Object obj2) {
+                    return Boolean.valueOf(PagedList$dispatchStateChangeAsync$1.invokeSuspend$lambda$0((WeakReference) obj2));
                 }
             });
             list2 = ((PagedList) this.this$0).loadStateListeners;
@@ -77,5 +69,10 @@ public final class PagedList$dispatchStateChangeAsync$1 extends SuspendLambda im
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean invokeSuspend$lambda$0(WeakReference weakReference) {
+        return weakReference.get() == null;
     }
 }

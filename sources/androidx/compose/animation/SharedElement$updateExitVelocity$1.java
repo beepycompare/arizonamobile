@@ -51,10 +51,10 @@ public final class SharedElement$updateExitVelocity$1 extends SuspendLambda impl
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.momentumAnimation;
-            Offset m5168boximpl = Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0());
+            Offset m4516boximpl = Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0());
             springSpec = SharedElementKt.DefaultMomentumSpring;
             this.label = 1;
-            if (Animatable.animateTo$default(animatable, m5168boximpl, springSpec, Offset.m5168boximpl(SharedElementKt.m135toOffsetTH1AsA0(this.f0$$v$c$androidxcomposeuiunitVelocity$velocity$0)), null, this, 8, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(animatable, m4516boximpl, springSpec, Offset.m4516boximpl(SharedElementKt.m122toOffsetTH1AsA0(this.f0$$v$c$androidxcomposeuiunitVelocity$velocity$0)), null, this, 8, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

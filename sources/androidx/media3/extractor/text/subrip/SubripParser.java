@@ -51,6 +51,7 @@ public final class SubripParser implements SubtitleParser {
     public void parse(byte[] bArr, int i, int i2, SubtitleParser.OutputOptions outputOptions, Consumer<CuesWithTiming> consumer) {
         long j;
         String readLine;
+        StringBuilder sb;
         String str;
         this.parsableByteArray.reset(bArr, i + i2);
         this.parsableByteArray.setPosition(i);
@@ -85,14 +86,19 @@ public final class SubripParser implements SubtitleParser {
                     this.textBuilder.setLength(0);
                     this.tags.clear();
                     String readLine3 = this.parsableByteArray.readLine(detectUtfCharset);
-                    while (!TextUtils.isEmpty(readLine3)) {
-                        if (this.textBuilder.length() > 0) {
+                    while (true) {
+                        boolean isEmpty = TextUtils.isEmpty(readLine3);
+                        sb = this.textBuilder;
+                        if (isEmpty) {
+                            break;
+                        }
+                        if (sb.length() > 0) {
                             this.textBuilder.append("<br>");
                         }
                         this.textBuilder.append(processLine(readLine3, this.tags));
                         readLine3 = this.parsableByteArray.readLine(detectUtfCharset);
                     }
-                    Spanned fromHtml = Html.fromHtml(this.textBuilder.toString());
+                    Spanned fromHtml = Html.fromHtml(sb.toString());
                     while (true) {
                         if (i3 >= this.tags.size()) {
                             str = null;

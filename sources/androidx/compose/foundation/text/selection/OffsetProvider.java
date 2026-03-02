@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface OffsetProvider {
     /* renamed from: provide-F1C5BW0 */
-    long mo1308provideF1C5BW0();
+    long mo1144provideF1C5BW0();
 }

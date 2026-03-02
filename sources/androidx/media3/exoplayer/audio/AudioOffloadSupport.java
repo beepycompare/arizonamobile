@@ -1,12 +1,12 @@
 package androidx.media3.exoplayer.audio;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AudioOffloadSupport {
     public static final AudioOffloadSupport DEFAULT_UNSUPPORTED = new Builder().build();
     public final boolean isFormatSupported;
     public final boolean isGaplessSupported;
     public final boolean isSpeedChangeSupported;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private boolean isFormatSupported;
         private boolean isGaplessSupported;

@@ -382,10 +382,11 @@ public class ChangeBounds extends Transition {
                 rect = this.mEndClip;
             }
             this.mView.setClipBounds(rect);
+            View view = this.mView;
             if (z) {
-                ViewUtils.setLeftTopRightBottom(this.mView, this.mStartLeft, this.mStartTop, this.mStartRight, this.mStartBottom);
+                ViewUtils.setLeftTopRightBottom(view, this.mStartLeft, this.mStartTop, this.mStartRight, this.mStartBottom);
             } else {
-                ViewUtils.setLeftTopRightBottom(this.mView, this.mEndLeft, this.mEndTop, this.mEndRight, this.mEndBottom);
+                ViewUtils.setLeftTopRightBottom(view, this.mEndLeft, this.mEndTop, this.mEndRight, this.mEndBottom);
             }
         }
 

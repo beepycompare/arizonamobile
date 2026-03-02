@@ -29,27 +29,27 @@ public final class RadioButtonDefaults {
     }
 
     /* renamed from: colors-ro_MJ88  reason: not valid java name */
-    public final RadioButtonColors m2855colorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
+    public final RadioButtonColors m2392colorsro_MJ88(long j, long j2, long j3, long j4, Composer composer, int i, int i2) {
         ComposerKt.sourceInformationMarkerStart(composer, -351083046, "C(colors)N(selectedColor:c#ui.graphics.Color,unselectedColor:c#ui.graphics.Color,disabledSelectedColor:c#ui.graphics.Color,disabledUnselectedColor:c#ui.graphics.Color)155@6681L11:RadioButton.kt#uh7d8r");
-        long m5460getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j;
-        long m5460getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j2;
-        long m5460getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j3;
-        long m5460getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m5460getUnspecified0d7_KjU() : j4;
+        long m4808getUnspecified0d7_KjU = (i2 & 1) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j;
+        long m4808getUnspecified0d7_KjU2 = (i2 & 2) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j2;
+        long m4808getUnspecified0d7_KjU3 = (i2 & 4) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j3;
+        long m4808getUnspecified0d7_KjU4 = (i2 & 8) != 0 ? Color.Companion.m4808getUnspecified0d7_KjU() : j4;
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-351083046, i, -1, "androidx.compose.material3.RadioButtonDefaults.colors (RadioButton.kt:155)");
         }
-        RadioButtonColors m2850copyjRlVdoo = getDefaultRadioButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2850copyjRlVdoo(m5460getUnspecified0d7_KjU, m5460getUnspecified0d7_KjU2, m5460getUnspecified0d7_KjU3, m5460getUnspecified0d7_KjU4);
+        RadioButtonColors m2387copyjRlVdoo = getDefaultRadioButtonColors$material3(MaterialTheme.INSTANCE.getColorScheme(composer, 6)).m2387copyjRlVdoo(m4808getUnspecified0d7_KjU, m4808getUnspecified0d7_KjU2, m4808getUnspecified0d7_KjU3, m4808getUnspecified0d7_KjU4);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2850copyjRlVdoo;
+        return m2387copyjRlVdoo;
     }
 
     public final RadioButtonColors getDefaultRadioButtonColors$material3(ColorScheme colorScheme) {
         RadioButtonColors defaultRadioButtonColorsCached$material3 = colorScheme.getDefaultRadioButtonColorsCached$material3();
         if (defaultRadioButtonColorsCached$material3 == null) {
-            RadioButtonColors radioButtonColors = new RadioButtonColors(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getUnselectedIconColor()), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledSelectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m5423copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledUnselectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
+            RadioButtonColors radioButtonColors = new RadioButtonColors(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getSelectedIconColor()), ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getUnselectedIconColor()), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledSelectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), Color.m4771copywmQWz5c$default(ColorSchemeKt.fromToken(colorScheme, RadioButtonTokens.INSTANCE.getDisabledUnselectedIconColor()), 0.38f, 0.0f, 0.0f, 0.0f, 14, null), null);
             colorScheme.setDefaultRadioButtonColorsCached$material3(radioButtonColors);
             return radioButtonColors;
         }

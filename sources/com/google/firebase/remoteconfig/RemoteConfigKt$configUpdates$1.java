@@ -53,9 +53,7 @@ final class RemoteConfigKt$configUpdates$1 extends SuspendLambda implements Func
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: com.google.firebase.remoteconfig.RemoteConfigKt$configUpdates$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = RemoteConfigKt$configUpdates$1.invokeSuspend$lambda$0(ConfigUpdateListenerRegistration.this);
-                    return invokeSuspend$lambda$0;
+                    return RemoteConfigKt$configUpdates$1.invokeSuspend$lambda$0(ConfigUpdateListenerRegistration.this);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -68,7 +66,7 @@ final class RemoteConfigKt$configUpdates$1 extends SuspendLambda implements Func
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(ConfigUpdateListenerRegistration configUpdateListenerRegistration) {
         configUpdateListenerRegistration.remove();
         return Unit.INSTANCE;

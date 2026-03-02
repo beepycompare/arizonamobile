@@ -8,7 +8,7 @@ import androidx.media3.extractor.metadata.emsg.EventMessageDecoder;
 import androidx.media3.extractor.metadata.icy.IcyDecoder;
 import androidx.media3.extractor.metadata.id3.Id3Decoder;
 import androidx.media3.extractor.metadata.scte35.SpliceInfoDecoder;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface MetadataDecoderFactory {
     public static final MetadataDecoderFactory DEFAULT = new MetadataDecoderFactory() { // from class: androidx.media3.exoplayer.metadata.MetadataDecoderFactory.1
         @Override // androidx.media3.exoplayer.metadata.MetadataDecoderFactory

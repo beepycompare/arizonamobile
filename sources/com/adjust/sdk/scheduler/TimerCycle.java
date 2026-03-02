@@ -37,11 +37,13 @@ public class TimerCycle {
     }
 
     public void start() {
-        if (!this.isPaused) {
-            this.logger.verbose("%s is already started", this.name);
+        boolean z = this.isPaused;
+        ILogger iLogger = this.logger;
+        if (!z) {
+            iLogger.verbose("%s is already started", this.name);
             return;
         }
-        this.logger.verbose("%s starting", this.name);
+        iLogger.verbose("%s starting", this.name);
         this.waitingTask = this.scheduler.scheduleFutureWithFixedDelay(new Runnable() { // from class: com.adjust.sdk.scheduler.TimerCycle.1
             @Override // java.lang.Runnable
             public final void run() {

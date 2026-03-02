@@ -47,8 +47,8 @@ public final class PercentCornerSize implements CornerSize, InspectableValue {
 
     @Override // androidx.compose.foundation.shape.CornerSize
     /* renamed from: toPx-TmRCtEA */
-    public float mo1274toPxTmRCtEA(long j, Density density) {
-        return Size.m5247getMinDimensionimpl(j) * (this.percent / 100.0f);
+    public float mo1117toPxTmRCtEA(long j, Density density) {
+        return Size.m4595getMinDimensionimpl(j) * (this.percent / 100.0f);
     }
 
     public String toString() {

@@ -21,11 +21,12 @@ final class zziu implements Runnable {
         zzjd zzjdVar = this.zzc;
         zzjdVar.zzL().zzZ();
         zzpl zzplVar = this.zza;
-        if (zzplVar.zza() == null) {
-            zzr zzrVar = this.zzb;
-            zzjdVar.zzL().zzad(zzplVar.zzb, zzrVar);
+        Object zza = zzplVar.zza();
+        zzr zzrVar = this.zzb;
+        if (zza != null) {
+            zzjdVar.zzL().zzac(zzplVar, zzrVar);
             return;
         }
-        zzjdVar.zzL().zzac(zzplVar, this.zzb);
+        zzjdVar.zzL().zzad(zzplVar.zzb, zzrVar);
     }
 }

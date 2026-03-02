@@ -11,26 +11,22 @@ public final class TextContextMenuProviderKt {
     private static final ProvidableCompositionLocal<TextContextMenuProvider> LocalTextContextMenuDropdownProvider = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.provider.TextContextMenuProviderKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            TextContextMenuProvider LocalTextContextMenuDropdownProvider$lambda$0;
-            LocalTextContextMenuDropdownProvider$lambda$0 = TextContextMenuProviderKt.LocalTextContextMenuDropdownProvider$lambda$0();
-            return LocalTextContextMenuDropdownProvider$lambda$0;
+            return TextContextMenuProviderKt.LocalTextContextMenuDropdownProvider$lambda$0();
         }
     }, 1, null);
     private static final ProvidableCompositionLocal<TextContextMenuProvider> LocalTextContextMenuToolbarProvider = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.provider.TextContextMenuProviderKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            TextContextMenuProvider LocalTextContextMenuToolbarProvider$lambda$0;
-            LocalTextContextMenuToolbarProvider$lambda$0 = TextContextMenuProviderKt.LocalTextContextMenuToolbarProvider$lambda$0();
-            return LocalTextContextMenuToolbarProvider$lambda$0;
+            return TextContextMenuProviderKt.LocalTextContextMenuToolbarProvider$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextContextMenuProvider LocalTextContextMenuDropdownProvider$lambda$0() {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextContextMenuProvider LocalTextContextMenuToolbarProvider$lambda$0() {
         return null;
     }

@@ -13,7 +13,7 @@ public final class LayoutModifierNodeKt {
     }
 
     public static final void invalidateLayer(LayoutModifierNode layoutModifierNode) {
-        DelegatableNodeKt.m7046requireCoordinator64DMado(layoutModifierNode, NodeKind.m7195constructorimpl(2)).invalidateLayer();
+        DelegatableNodeKt.m6387requireCoordinator64DMado(layoutModifierNode, NodeKind.m6535constructorimpl(2)).invalidateLayer();
     }
 
     public static final void invalidatePlacement(LayoutModifierNode layoutModifierNode) {
@@ -30,7 +30,7 @@ public final class LayoutModifierNodeKt {
 
     public static final void updateLayerBlock(LayoutModifierNode layoutModifierNode, Function1<? super GraphicsLayerScope, Unit> function1) {
         NodeCoordinator wrapped$ui;
-        if (layoutModifierNode.getNode().isAttached() && (wrapped$ui = DelegatableNodeKt.m7046requireCoordinator64DMado(layoutModifierNode, NodeKind.m7195constructorimpl(2)).getWrapped$ui()) != null) {
+        if (layoutModifierNode.getNode().isAttached() && (wrapped$ui = DelegatableNodeKt.m6387requireCoordinator64DMado(layoutModifierNode, NodeKind.m6535constructorimpl(2)).getWrapped$ui()) != null) {
             wrapped$ui.updateLayerBlock(function1, true);
         }
     }

@@ -230,14 +230,9 @@ public final class SidecarWindowBackend implements WindowBackend {
             this.executor.execute(new Runnable() { // from class: androidx.window.layout.adapter.sidecar.SidecarWindowBackend$WindowLayoutChangeCallbackWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SidecarWindowBackend.WindowLayoutChangeCallbackWrapper.accept$lambda$0(SidecarWindowBackend.WindowLayoutChangeCallbackWrapper.this, newLayoutInfo);
+                    SidecarWindowBackend.WindowLayoutChangeCallbackWrapper.this.callback.accept(newLayoutInfo);
                 }
             });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void accept$lambda$0(WindowLayoutChangeCallbackWrapper windowLayoutChangeCallbackWrapper, WindowLayoutInfo windowLayoutInfo) {
-            windowLayoutChangeCallbackWrapper.callback.accept(windowLayoutInfo);
         }
     }
 

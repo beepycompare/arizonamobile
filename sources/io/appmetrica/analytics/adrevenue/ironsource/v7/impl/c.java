@@ -10,7 +10,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType
 import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
 import java.math.BigDecimal;
 import java.util.Currency;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class c implements ImpressionDataListener {
 
     /* renamed from: a  reason: collision with root package name */

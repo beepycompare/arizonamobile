@@ -340,6 +340,12 @@ public class JsonReader implements Closeable {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x006a, code lost:
+        return 0;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private int peekKeyword() throws IOException {
         String str;
         String str2;
@@ -362,21 +368,25 @@ public class JsonReader implements Closeable {
         }
         boolean z = this.strictness != Strictness.STRICT;
         int length = str.length();
-        for (int i2 = 0; i2 < length; i2++) {
-            if (this.pos + i2 >= this.limit && !fillBuffer(i2 + 1)) {
+        int i2 = 0;
+        while (true) {
+            int i3 = this.pos;
+            if (i2 < length) {
+                if (i3 + i2 >= this.limit && !fillBuffer(i2 + 1)) {
+                    return 0;
+                }
+                char c2 = this.buffer[this.pos + i2];
+                if (c2 == str.charAt(i2) || (z && c2 == str2.charAt(i2))) {
+                    i2++;
+                }
+            } else if ((i3 + length < this.limit || fillBuffer(length + 1)) && isLiteral(this.buffer[this.pos + length])) {
                 return 0;
-            }
-            char c2 = this.buffer[this.pos + i2];
-            if (c2 != str.charAt(i2) && (!z || c2 != str2.charAt(i2))) {
-                return 0;
+            } else {
+                this.pos += length;
+                this.peeked = i;
+                return i;
             }
         }
-        if ((this.pos + length < this.limit || fillBuffer(length + 1)) && isLiteral(this.buffer[this.pos + length])) {
-            return 0;
-        }
-        this.pos += length;
-        this.peeked = i;
-        return i;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:51:0x0091, code lost:
@@ -778,8 +788,8 @@ public class JsonReader implements Closeable {
     /* JADX WARN: Code restructure failed: missing block: B:34:0x004a, code lost:
         checkLenient();
      */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0088  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -790,8 +800,11 @@ public class JsonReader implements Closeable {
             int i2 = 0;
             while (true) {
                 int i3 = this.pos;
-                if (i3 + i2 < this.limit) {
-                    char c = this.buffer[i3 + i2];
+                int i4 = i3 + i2;
+                int i5 = this.limit;
+                char[] cArr = this.buffer;
+                if (i4 < i5) {
+                    char c = cArr[i3 + i2];
                     if (c != '\t' && c != '\n' && c != '\f' && c != '\r' && c != ' ') {
                         if (c != '#') {
                             if (c != ',') {
@@ -813,7 +826,7 @@ public class JsonReader implements Closeable {
                             }
                         }
                     }
-                } else if (i2 < this.buffer.length) {
+                } else if (i2 < cArr.length) {
                     if (fillBuffer(i2 + 1)) {
                     }
                 } else {
@@ -825,10 +838,12 @@ public class JsonReader implements Closeable {
                 }
             }
             i = i2;
-            String str = sb != null ? new String(this.buffer, this.pos, i) : sb.append(this.buffer, this.pos, i).toString();
+            char[] cArr2 = this.buffer;
+            String str = sb != null ? new String(cArr2, this.pos, i) : sb.append(cArr2, this.pos, i).toString();
             this.pos += i;
             return str;
         } while (fillBuffer(1));
+        char[] cArr22 = this.buffer;
         if (sb != null) {
         }
         this.pos += i;

@@ -293,10 +293,12 @@ public final class SntpClient {
         @Override // androidx.media3.exoplayer.upstream.Loader.Callback
         public void onLoadCompleted(Loader.Loadable loadable, long j, long j2) {
             if (this.callback != null) {
-                if (!SntpClient.isInitialized()) {
-                    this.callback.onInitializationFailed(new IOException(new ConcurrentModificationException()));
+                boolean isInitialized = SntpClient.isInitialized();
+                InitializationCallback initializationCallback = this.callback;
+                if (!isInitialized) {
+                    initializationCallback.onInitializationFailed(new IOException(new ConcurrentModificationException()));
                 } else {
-                    this.callback.onInitialized();
+                    initializationCallback.onInitialized();
                 }
             }
         }

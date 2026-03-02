@@ -20,11 +20,12 @@ public final class RxMaybeCoroutine<T> extends AbstractCoroutine<T> {
 
     @Override // kotlinx.coroutines.AbstractCoroutine
     protected void onCompleted(T t) {
+        MaybeEmitter<T> maybeEmitter = this.subscriber;
         try {
             if (t == null) {
-                this.subscriber.onComplete();
+                maybeEmitter.onComplete();
             } else {
-                this.subscriber.onSuccess(t);
+                maybeEmitter.onSuccess(t);
             }
         } catch (Throwable th) {
             RxCancellableKt.handleUndeliverableException(th, getContext());

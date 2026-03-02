@@ -18,10 +18,10 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextSettings.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class TextSettingsKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TextSettings$lambda$0(String str, Modifier modifier, int i, int i2, Composer composer, int i3) {
         TextSettings(str, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -65,7 +65,7 @@ public final class TextSettingsKt {
                 }
                 Modifier modifier2 = companion;
                 composer2 = startRestartGroup;
-                TextKt.m3255TextNvy7gAk(text, OffsetKt.m885offsetVpY3zN4$default(companion, 0.0f, Dp.m8258constructorimpl(-Dp.m8258constructorimpl(1)), 1, null), Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(20), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m8129boximpl(TextAlign.Companion.m8136getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
+                TextKt.m2712TextNvy7gAk(text, OffsetKt.m778offsetVpY3zN4$default(companion, 0.0f, Dp.m7555constructorimpl(-Dp.m7555constructorimpl(1)), 1, null), Color.Companion.m4809getWhite0d7_KjU(), null, TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(20), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m7426boximpl(TextAlign.Companion.m7433getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -76,9 +76,7 @@ public final class TextSettingsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.TextSettingsKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit TextSettings$lambda$0;
-                        TextSettings$lambda$0 = TextSettingsKt.TextSettings$lambda$0(text, obj, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return TextSettings$lambda$0;
+                        return TextSettingsKt.TextSettings$lambda$0(text, obj, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;

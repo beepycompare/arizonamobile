@@ -19,13 +19,13 @@ public final class ColorVectorConverterKt {
             return VectorConvertersKt.TwoWayConverter(new Function1<Color, AnimationVector4D>() { // from class: androidx.compose.animation.ColorVectorConverterKt$ColorToVector$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ AnimationVector4D invoke(Color color) {
-                    return m95invoke8_81llA(color.m5434unboximpl());
+                    return m82invoke8_81llA(color.m4782unboximpl());
                 }
 
                 /* renamed from: invoke-8_81llA  reason: not valid java name */
-                public final AnimationVector4D m95invoke8_81llA(long j) {
-                    long m5421convertvNxB06k = Color.m5421convertvNxB06k(j, ColorSpaces.INSTANCE.getOklab());
-                    return new AnimationVector4D(Color.m5426getAlphaimpl(m5421convertvNxB06k), Color.m5430getRedimpl(m5421convertvNxB06k), Color.m5429getGreenimpl(m5421convertvNxB06k), Color.m5427getBlueimpl(m5421convertvNxB06k));
+                public final AnimationVector4D m82invoke8_81llA(long j) {
+                    long m4769convertvNxB06k = Color.m4769convertvNxB06k(j, ColorSpaces.INSTANCE.getOklab());
+                    return new AnimationVector4D(Color.m4774getAlphaimpl(m4769convertvNxB06k), Color.m4778getRedimpl(m4769convertvNxB06k), Color.m4777getGreenimpl(m4769convertvNxB06k), Color.m4775getBlueimpl(m4769convertvNxB06k));
                 }
             }, new Function1<AnimationVector4D, Color>() { // from class: androidx.compose.animation.ColorVectorConverterKt$ColorToVector$1.2
                 {
@@ -34,11 +34,11 @@ public final class ColorVectorConverterKt {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Color invoke(AnimationVector4D animationVector4D) {
-                    return Color.m5414boximpl(m96invokevNxB06k(animationVector4D));
+                    return Color.m4762boximpl(m83invokevNxB06k(animationVector4D));
                 }
 
                 /* renamed from: invoke-vNxB06k  reason: not valid java name */
-                public final long m96invokevNxB06k(AnimationVector4D animationVector4D) {
+                public final long m83invokevNxB06k(AnimationVector4D animationVector4D) {
                     float v2 = animationVector4D.getV2();
                     if (v2 < 0.0f) {
                         v2 = 0.0f;
@@ -58,7 +58,7 @@ public final class ColorVectorConverterKt {
                     float f2 = f <= 0.5f ? f : 0.5f;
                     float v1 = animationVector4D.getV1();
                     float f3 = v1 >= 0.0f ? v1 : 0.0f;
-                    return Color.m5421convertvNxB06k(ColorKt.Color(v2, v3, f2, f3 <= 1.0f ? f3 : 1.0f, ColorSpaces.INSTANCE.getOklab()), ColorSpace.this);
+                    return Color.m4769convertvNxB06k(ColorKt.Color(v2, v3, f2, f3 <= 1.0f ? f3 : 1.0f, ColorSpaces.INSTANCE.getOklab()), ColorSpace.this);
                 }
             });
         }

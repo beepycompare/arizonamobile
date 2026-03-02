@@ -21,16 +21,14 @@ public final class ContextMenuGesturesKt {
         return contextMenuGestures(modifier, new Function1() { // from class: androidx.compose.foundation.contextmenu.ContextMenuGesturesKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contextMenuGestures$lambda$0;
-                contextMenuGestures$lambda$0 = ContextMenuGesturesKt.contextMenuGestures$lambda$0(ContextMenuState.this, (Offset) obj);
-                return contextMenuGestures$lambda$0;
+                return ContextMenuGesturesKt.contextMenuGestures$lambda$0(ContextMenuState.this, (Offset) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit contextMenuGestures$lambda$0(ContextMenuState contextMenuState, Offset offset) {
-        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m5189unboximpl(), null));
+        contextMenuState.setStatus(new ContextMenuState.Status.Open(offset.m4537unboximpl(), null));
         return Unit.INSTANCE;
     }
 

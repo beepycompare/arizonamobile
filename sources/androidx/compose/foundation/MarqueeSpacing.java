@@ -1,6 +1,5 @@
 package androidx.compose.foundation;
 
-import androidx.compose.foundation.MarqueeSpacing;
 import androidx.compose.ui.unit.Density;
 import kotlin.Metadata;
 import kotlin.math.MathKt;
@@ -25,16 +24,11 @@ public interface MarqueeSpacing {
             return new MarqueeSpacing() { // from class: androidx.compose.foundation.MarqueeSpacing$Companion$$ExternalSyntheticLambda0
                 @Override // androidx.compose.foundation.MarqueeSpacing
                 public final int calculateSpacing(Density density, int i, int i2) {
-                    int fractionOfContainer$lambda$0;
-                    fractionOfContainer$lambda$0 = MarqueeSpacing.Companion.fractionOfContainer$lambda$0(f, density, i, i2);
-                    return fractionOfContainer$lambda$0;
+                    int roundToInt;
+                    roundToInt = MathKt.roundToInt(f * i2);
+                    return roundToInt;
                 }
             };
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final int fractionOfContainer$lambda$0(float f, Density density, int i, int i2) {
-            return MathKt.roundToInt(f * i2);
         }
     }
 }

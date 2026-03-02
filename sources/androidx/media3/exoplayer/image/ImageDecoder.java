@@ -4,10 +4,10 @@ import androidx.media3.common.Format;
 import androidx.media3.decoder.Decoder;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.image.BitmapFactoryImageDecoder;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface ImageDecoder extends Decoder<DecoderInputBuffer, ImageOutputBuffer, ImageDecoderException> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Factory {
         @Deprecated
         public static final Factory DEFAULT = new BitmapFactoryImageDecoder.Factory();

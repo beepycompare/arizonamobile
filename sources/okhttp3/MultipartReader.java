@@ -63,6 +63,7 @@ public final class MultipartReader implements Closeable {
     }
 
     public final Part nextPart() throws IOException {
+        BufferedSource bufferedSource;
         if (this.closed) {
             throw new IllegalStateException("closed".toString());
         }
@@ -74,12 +75,14 @@ public final class MultipartReader implements Closeable {
         } else {
             while (true) {
                 long currentPartBytesRemaining = currentPartBytesRemaining(PlaybackStateCompat.ACTION_PLAY_FROM_URI);
-                if (currentPartBytesRemaining == 0) {
+                int i = (currentPartBytesRemaining > 0L ? 1 : (currentPartBytesRemaining == 0L ? 0 : -1));
+                bufferedSource = this.source;
+                if (i == 0) {
                     break;
                 }
-                this.source.skip(currentPartBytesRemaining);
+                bufferedSource.skip(currentPartBytesRemaining);
             }
-            this.source.skip(this.crlfDashDashBoundary.size());
+            bufferedSource.skip(this.crlfDashDashBoundary.size());
         }
         boolean z = false;
         while (true) {

@@ -79,7 +79,7 @@ public final class TextLayoutInput {
     }
 
     /* renamed from: getOverflow-gIe3tQ8  reason: not valid java name */
-    public final int m7668getOverflowgIe3tQ8() {
+    public final int m6970getOverflowgIe3tQ8() {
         return this.overflow;
     }
 
@@ -96,7 +96,7 @@ public final class TextLayoutInput {
     }
 
     /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-    public final long m7667getConstraintsmsEJaDk() {
+    public final long m6969getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -114,7 +114,7 @@ public final class TextLayoutInput {
     }
 
     /* renamed from: copy-hu-1Yfo$default  reason: not valid java name */
-    public static /* synthetic */ TextLayoutInput m7665copyhu1Yfo$default(TextLayoutInput textLayoutInput, AnnotatedString annotatedString, TextStyle textStyle, List list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, Font.ResourceLoader resourceLoader, long j, int i3, Object obj) {
+    public static /* synthetic */ TextLayoutInput m6967copyhu1Yfo$default(TextLayoutInput textLayoutInput, AnnotatedString annotatedString, TextStyle textStyle, List list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, Font.ResourceLoader resourceLoader, long j, int i3, Object obj) {
         if ((i3 & 1) != 0) {
             annotatedString = textLayoutInput.text;
         }
@@ -153,12 +153,12 @@ public final class TextLayoutInput {
         Density density2 = density;
         boolean z2 = z;
         List list3 = list2;
-        return textLayoutInput.m7666copyhu1Yfo(annotatedString, textStyle, list3, i, z2, i4, density2, layoutDirection2, resourceLoader2, j2);
+        return textLayoutInput.m6968copyhu1Yfo(annotatedString, textStyle, list3, i, z2, i4, density2, layoutDirection2, resourceLoader2, j2);
     }
 
     @Deprecated(message = "Font.ResourceLoader is deprecated", replaceWith = @ReplaceWith(expression = "TextLayoutInput(text, style, placeholders, maxLines, softWrap, overFlow, density, layoutDirection, fontFamilyResolver, constraints)", imports = {}))
     /* renamed from: copy-hu-1Yfo  reason: not valid java name */
-    public final TextLayoutInput m7666copyhu1Yfo(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, Font.ResourceLoader resourceLoader, long j) {
+    public final TextLayoutInput m6968copyhu1Yfo(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, Font.ResourceLoader resourceLoader, long j) {
         return new TextLayoutInput(annotatedString, textStyle, list, i, z, i2, density, layoutDirection, resourceLoader, this.fontFamilyResolver, j);
     }
 
@@ -168,16 +168,16 @@ public final class TextLayoutInput {
         }
         if (obj instanceof TextLayoutInput) {
             TextLayoutInput textLayoutInput = (TextLayoutInput) obj;
-            return Intrinsics.areEqual(this.text, textLayoutInput.text) && Intrinsics.areEqual(this.style, textLayoutInput.style) && Intrinsics.areEqual(this.placeholders, textLayoutInput.placeholders) && this.maxLines == textLayoutInput.maxLines && this.softWrap == textLayoutInput.softWrap && TextOverflow.m8184equalsimpl0(this.overflow, textLayoutInput.overflow) && Intrinsics.areEqual(this.density, textLayoutInput.density) && this.layoutDirection == textLayoutInput.layoutDirection && Intrinsics.areEqual(this.fontFamilyResolver, textLayoutInput.fontFamilyResolver) && Constraints.m8204equalsimpl0(this.constraints, textLayoutInput.constraints);
+            return Intrinsics.areEqual(this.text, textLayoutInput.text) && Intrinsics.areEqual(this.style, textLayoutInput.style) && Intrinsics.areEqual(this.placeholders, textLayoutInput.placeholders) && this.maxLines == textLayoutInput.maxLines && this.softWrap == textLayoutInput.softWrap && TextOverflow.m7481equalsimpl0(this.overflow, textLayoutInput.overflow) && Intrinsics.areEqual(this.density, textLayoutInput.density) && this.layoutDirection == textLayoutInput.layoutDirection && Intrinsics.areEqual(this.fontFamilyResolver, textLayoutInput.fontFamilyResolver) && Constraints.m7501equalsimpl0(this.constraints, textLayoutInput.constraints);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((this.text.hashCode() * 31) + this.style.hashCode()) * 31) + this.placeholders.hashCode()) * 31) + this.maxLines) * 31) + Boolean.hashCode(this.softWrap)) * 31) + TextOverflow.m8185hashCodeimpl(this.overflow)) * 31) + this.density.hashCode()) * 31) + this.layoutDirection.hashCode()) * 31) + this.fontFamilyResolver.hashCode()) * 31) + Constraints.m8214hashCodeimpl(this.constraints);
+        return (((((((((((((((((this.text.hashCode() * 31) + this.style.hashCode()) * 31) + this.placeholders.hashCode()) * 31) + this.maxLines) * 31) + Boolean.hashCode(this.softWrap)) * 31) + TextOverflow.m7482hashCodeimpl(this.overflow)) * 31) + this.density.hashCode()) * 31) + this.layoutDirection.hashCode()) * 31) + this.fontFamilyResolver.hashCode()) * 31) + Constraints.m7511hashCodeimpl(this.constraints);
     }
 
     public String toString() {
-        return "TextLayoutInput(text=" + ((Object) this.text) + ", style=" + this.style + ", placeholders=" + this.placeholders + ", maxLines=" + this.maxLines + ", softWrap=" + this.softWrap + ", overflow=" + ((Object) TextOverflow.m8186toStringimpl(this.overflow)) + ", density=" + this.density + ", layoutDirection=" + this.layoutDirection + ", fontFamilyResolver=" + this.fontFamilyResolver + ", constraints=" + ((Object) Constraints.m8216toStringimpl(this.constraints)) + ')';
+        return "TextLayoutInput(text=" + ((Object) this.text) + ", style=" + this.style + ", placeholders=" + this.placeholders + ", maxLines=" + this.maxLines + ", softWrap=" + this.softWrap + ", overflow=" + ((Object) TextOverflow.m7483toStringimpl(this.overflow)) + ", density=" + this.density + ", layoutDirection=" + this.layoutDirection + ", fontFamilyResolver=" + this.fontFamilyResolver + ", constraints=" + ((Object) Constraints.m7513toStringimpl(this.constraints)) + ')';
     }
 }

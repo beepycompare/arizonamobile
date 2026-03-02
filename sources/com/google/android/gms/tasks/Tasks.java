@@ -6,13 +6,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class Tasks {
     private Tasks() {
@@ -25,9 +26,9 @@ public final class Tasks {
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
-        zzad zzadVar = new zzad(null);
-        zzb(task, zzadVar);
-        zzadVar.zza();
+        zzaa zzaaVar = new zzaa(null);
+        zzb(task, zzaaVar);
+        zzaaVar.zza();
         return (TResult) zza(task);
     }
 
@@ -38,19 +39,19 @@ public final class Tasks {
 
     public static <TResult> Task<TResult> forCanceled() {
         zzw zzwVar = new zzw();
-        zzwVar.zzc();
+        zzwVar.zze();
         return zzwVar;
     }
 
     public static <TResult> Task<TResult> forException(Exception exc) {
         zzw zzwVar = new zzw();
-        zzwVar.zza(exc);
+        zzwVar.zzc(exc);
         return zzwVar;
     }
 
     public static <TResult> Task<TResult> forResult(TResult tresult) {
         zzw zzwVar = new zzw();
-        zzwVar.zzb(tresult);
+        zzwVar.zza(tresult);
         return zzwVar;
     }
 
@@ -64,9 +65,9 @@ public final class Tasks {
             }
         }
         zzw zzwVar = new zzw();
-        zzaf zzafVar = new zzaf(collection.size(), zzwVar);
+        zzae zzaeVar = new zzae(collection.size(), zzwVar);
         for (Task<?> task2 : collection) {
-            zzb(task2, zzafVar);
+            zzb(task2, zzaeVar);
         }
         return zzwVar;
     }
@@ -86,15 +87,15 @@ public final class Tasks {
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
         final com.google.android.gms.internal.tasks.zza zzaVar = new com.google.android.gms.internal.tasks.zza(Looper.getMainLooper());
-        zzaVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzx
+        zzaVar.postDelayed(new Runnable() { // from class: com.google.android.gms.tasks.zzad
             @Override // java.lang.Runnable
-            public final void run() {
+            public final /* synthetic */ void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
         }, timeUnit.toMillis(j));
-        task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzy
+        task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzac
             @Override // com.google.android.gms.tasks.OnCompleteListener
-            public final void onComplete(Task task2) {
+            public final /* synthetic */ void onComplete(Task task2) {
                 com.google.android.gms.internal.tasks.zza.this.removeCallbacksAndMessages(null);
                 TaskCompletionSource taskCompletionSource2 = taskCompletionSource;
                 if (task2.isSuccessful()) {
@@ -102,9 +103,7 @@ public final class Tasks {
                 } else if (task2.isCanceled()) {
                     zzbVar.zza();
                 } else {
-                    Exception exception = task2.getException();
-                    exception.getClass();
-                    taskCompletionSource2.trySetException(exception);
+                    taskCompletionSource2.trySetException((Exception) Objects.requireNonNull(task2.getException()));
                 }
             }
         });
@@ -121,10 +120,11 @@ public final class Tasks {
         throw new ExecutionException(task.getException());
     }
 
-    private static void zzb(Task task, zzae zzaeVar) {
-        task.addOnSuccessListener(TaskExecutors.zza, zzaeVar);
-        task.addOnFailureListener(TaskExecutors.zza, zzaeVar);
-        task.addOnCanceledListener(TaskExecutors.zza, zzaeVar);
+    private static void zzb(Task task, zzab zzabVar) {
+        Executor executor = TaskExecutors.zza;
+        task.addOnSuccessListener(executor, zzabVar);
+        task.addOnFailureListener(executor, zzabVar);
+        task.addOnCanceledListener(executor, zzabVar);
     }
 
     @Deprecated
@@ -132,7 +132,7 @@ public final class Tasks {
         Preconditions.checkNotNull(executor, "Executor must not be null");
         Preconditions.checkNotNull(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
-        executor.execute(new zzz(zzwVar, callable));
+        executor.execute(new zzx(zzwVar, callable));
         return zzwVar;
     }
 
@@ -140,14 +140,14 @@ public final class Tasks {
         if (collection == null || collection.isEmpty()) {
             return forResult(Collections.emptyList());
         }
-        return whenAll(collection).continueWithTask(executor, new zzab(collection));
+        return whenAll(collection).continueWithTask(executor, new zzz(collection));
     }
 
     public static <TResult> Task<List<TResult>> whenAllSuccess(Executor executor, Collection<? extends Task> collection) {
         if (collection == null || collection.isEmpty()) {
             return forResult(Collections.emptyList());
         }
-        return (Task<List<TResult>>) whenAll(collection).continueWith(executor, new zzaa(collection));
+        return (Task<List<TResult>>) whenAll(collection).continueWith(executor, new zzy(collection));
     }
 
     public static Task<List<Task<?>>> whenAllComplete(Executor executor, Task<?>... taskArr) {
@@ -186,18 +186,15 @@ public final class Tasks {
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
-        zzad zzadVar = new zzad(null);
-        zzb(task, zzadVar);
-        if (!zzadVar.zzb(j, timeUnit)) {
+        zzaa zzaaVar = new zzaa(null);
+        zzb(task, zzaaVar);
+        if (!zzaaVar.zzb(j, timeUnit)) {
             throw new TimeoutException("Timed out waiting for Task");
         }
         return (TResult) zza(task);
     }
 
     public static Task<Void> whenAll(Task<?>... taskArr) {
-        if (taskArr == null || taskArr.length == 0) {
-            return forResult(null);
-        }
-        return whenAll(Arrays.asList(taskArr));
+        return (taskArr == null || taskArr.length == 0) ? forResult(null) : whenAll(Arrays.asList(taskArr));
     }
 }

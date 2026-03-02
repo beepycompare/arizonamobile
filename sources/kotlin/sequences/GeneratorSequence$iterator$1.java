@@ -46,11 +46,13 @@ public final class GeneratorSequence$iterator$1<T> implements Iterator<T>, KMapp
         Function1 function1;
         T t;
         Function0 function0;
-        if (this.nextState == -2) {
-            function0 = ((GeneratorSequence) this.this$0).getInitialValue;
+        int i = this.nextState;
+        GeneratorSequence<T> generatorSequence = this.this$0;
+        if (i == -2) {
+            function0 = ((GeneratorSequence) generatorSequence).getInitialValue;
             t = (T) function0.invoke();
         } else {
-            function1 = ((GeneratorSequence) this.this$0).getNextValue;
+            function1 = ((GeneratorSequence) generatorSequence).getNextValue;
             T t2 = this.nextItem;
             Intrinsics.checkNotNull(t2);
             t = (T) function1.invoke(t2);

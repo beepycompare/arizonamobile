@@ -21,11 +21,6 @@ public final class DateRangeInputKt$DateRangeInputContent$2$3 implements Functio
         this.$pattern = str;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invoke$lambda$1$lambda$0(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return Unit.INSTANCE;
-    }
-
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Unit invoke(Composer composer, Integer num) {
         invoke(composer, num.intValue());
@@ -49,15 +44,16 @@ public final class DateRangeInputKt$DateRangeInputContent$2$3 implements Functio
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DateRangeInputKt$DateRangeInputContent$2$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateRangeInputKt$DateRangeInputContent$2$3.invoke$lambda$1$lambda$0((SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$1$lambda$0;
+                    Unit unit;
+                    SemanticsPropertyReceiver semanticsPropertyReceiver = (SemanticsPropertyReceiver) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3255TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
+        TextKt.m2712TextNvy7gAk(str, SemanticsModifierKt.clearAndSetSemantics(companion, (Function1) rememberedValue), 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262140);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }

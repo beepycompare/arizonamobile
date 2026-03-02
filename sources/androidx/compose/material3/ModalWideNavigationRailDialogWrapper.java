@@ -74,8 +74,8 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         this.onDismissRequest = function0;
         this.properties = modalWideNavigationRailProperties;
         this.composeView = view;
-        float m8258constructorimpl = Dp.m8258constructorimpl(8);
-        this.maxSupportedElevation = m8258constructorimpl;
+        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        this.maxSupportedElevation = m7555constructorimpl;
         Window window = getWindow();
         if (window == null) {
             throw new IllegalStateException("Dialog has no window".toString());
@@ -86,7 +86,7 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         ModalWideNavigationRailDialogLayout modalWideNavigationRailDialogLayout = new ModalWideNavigationRailDialogLayout(getContext(), window, this.properties.getShouldDismissOnBackPress(), this.onDismissRequest, function1, function02, railPredictiveBackState, layoutDirection);
         modalWideNavigationRailDialogLayout.setTag(androidx.compose.ui.R.id.compose_view_saveable_id_tag, "Dialog:" + uuid);
         modalWideNavigationRailDialogLayout.setClipChildren(false);
-        modalWideNavigationRailDialogLayout.setElevation(density.mo464toPx0680j_4(m8258constructorimpl));
+        modalWideNavigationRailDialogLayout.setElevation(density.mo405toPx0680j_4(m7555constructorimpl));
         modalWideNavigationRailDialogLayout.setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.material3.ModalWideNavigationRailDialogWrapper$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {
@@ -106,9 +106,7 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         OnBackPressedDispatcherKt.addCallback$default(getOnBackPressedDispatcher(), this, false, new Function1() { // from class: androidx.compose.material3.ModalWideNavigationRailDialogWrapper$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$3;
-                _init_$lambda$3 = ModalWideNavigationRailDialogWrapper._init_$lambda$3(ModalWideNavigationRailDialogWrapper.this, (OnBackPressedCallback) obj);
-                return _init_$lambda$3;
+                return ModalWideNavigationRailDialogWrapper._init_$lambda$3(ModalWideNavigationRailDialogWrapper.this, (OnBackPressedCallback) obj);
             }
         }, 2, null);
     }
@@ -118,7 +116,7 @@ public final class ModalWideNavigationRailDialogWrapper extends ComponentDialog 
         return this.dialogLayout;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$3(ModalWideNavigationRailDialogWrapper modalWideNavigationRailDialogWrapper, OnBackPressedCallback onBackPressedCallback) {
         if (modalWideNavigationRailDialogWrapper.properties.getShouldDismissOnBackPress()) {
             modalWideNavigationRailDialogWrapper.onDismissRequest.invoke();

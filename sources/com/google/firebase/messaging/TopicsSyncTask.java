@@ -52,16 +52,7 @@ public class TopicsSyncTask implements Runnable {
                                 Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
                             }
                         }
-                    } else if (!hasAccessNetworkStatePermission(this.context) || isDeviceConnected()) {
-                        if (this.topicsSubscriber.syncTopics()) {
-                            this.topicsSubscriber.setSyncScheduledOrRunning(false);
-                        } else {
-                            this.topicsSubscriber.syncWithDelaySecondsInternal(this.nextDelaySeconds);
-                        }
-                        if (hasWakeLockPermission(this.context)) {
-                            this.syncWakeLock.release();
-                        }
-                    } else {
+                    } else if (hasAccessNetworkStatePermission(this.context) && !isDeviceConnected()) {
                         new ConnectivityChangeReceiver(this).registerReceiver();
                         if (hasWakeLockPermission(this.context)) {
                             try {
@@ -69,6 +60,17 @@ public class TopicsSyncTask implements Runnable {
                             } catch (RuntimeException unused2) {
                                 Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
                             }
+                        }
+                    } else {
+                        boolean syncTopics = this.topicsSubscriber.syncTopics();
+                        TopicsSubscriber topicsSubscriber = this.topicsSubscriber;
+                        if (syncTopics) {
+                            topicsSubscriber.setSyncScheduledOrRunning(false);
+                        } else {
+                            topicsSubscriber.syncWithDelaySecondsInternal(this.nextDelaySeconds);
+                        }
+                        if (hasWakeLockPermission(this.context)) {
+                            this.syncWakeLock.release();
                         }
                     }
                 } catch (IOException e) {
@@ -78,18 +80,18 @@ public class TopicsSyncTask implements Runnable {
                         this.syncWakeLock.release();
                     }
                 }
-            } catch (RuntimeException unused3) {
-                Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
-            }
-        } catch (Throwable th) {
-            if (hasWakeLockPermission(this.context)) {
-                try {
-                    this.syncWakeLock.release();
-                } catch (RuntimeException unused4) {
-                    Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
+            } catch (Throwable th) {
+                if (hasWakeLockPermission(this.context)) {
+                    try {
+                        this.syncWakeLock.release();
+                    } catch (RuntimeException unused3) {
+                        Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
+                    }
                 }
+                throw th;
             }
-            throw th;
+        } catch (RuntimeException unused4) {
+            Log.i(Constants.TAG, "TopicsSyncTask's wakelock was already released due to timeout.");
         }
     }
 

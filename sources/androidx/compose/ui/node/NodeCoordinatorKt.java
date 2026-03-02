@@ -15,8 +15,8 @@ public final class NodeCoordinatorKt {
     }
 
     /* renamed from: access$nextUntil-hw7D004  reason: not valid java name */
-    public static final /* synthetic */ Modifier.Node m7192access$nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
-        return m7193nextUntilhw7D004(delegatableNode, i, i2);
+    public static final /* synthetic */ Modifier.Node m6532access$nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
+        return m6533nextUntilhw7D004(delegatableNode, i, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -67,7 +67,7 @@ public final class NodeCoordinatorKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: nextUntil-hw7D004  reason: not valid java name */
-    public static final Modifier.Node m7193nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
+    public static final Modifier.Node m6533nextUntilhw7D004(DelegatableNode delegatableNode, int i, int i2) {
         Modifier.Node child$ui = delegatableNode.getNode().getChild$ui();
         if (child$ui == null || (child$ui.getAggregateChildKindSet$ui() & i) == 0) {
             return null;

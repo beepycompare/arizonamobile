@@ -1,5 +1,5 @@
 package androidx.media3.exoplayer.scheduler;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Scheduler {
     boolean cancel();
 

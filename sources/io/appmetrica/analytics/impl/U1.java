@@ -7,10 +7,10 @@ import java.util.ArrayList;
 public final class U1 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0640v2 f806a;
+    public final C0639v2 f806a;
 
     public U1() {
-        this(new C0640v2());
+        this(new C0639v2());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -28,9 +28,9 @@ public final class U1 implements ProtobufConverter {
             w1Arr[i2] = w1;
             i2++;
         }
-        C0690x2 c0690x2 = t1.b;
-        if (c0690x2 != null) {
-            x1.b = this.f806a.fromModel(c0690x2);
+        C0689x2 c0689x2 = t1.b;
+        if (c0689x2 != null) {
+            x1.b = this.f806a.fromModel(c0689x2);
         }
         x1.c = new String[t1.c.size()];
         for (String str : t1.c) {
@@ -40,8 +40,8 @@ public final class U1 implements ProtobufConverter {
         return x1;
     }
 
-    public U1(C0640v2 c0640v2) {
-        this.f806a = c0640v2;
+    public U1(C0639v2 c0639v2) {
+        this.f806a = c0639v2;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -60,7 +60,7 @@ public final class U1 implements ProtobufConverter {
             i2++;
         }
         V1 v1 = x1.b;
-        C0690x2 model = v1 != null ? this.f806a.toModel(v1) : null;
+        C0689x2 model = v1 != null ? this.f806a.toModel(v1) : null;
         ArrayList arrayList2 = new ArrayList();
         while (true) {
             String[] strArr = x1.c;

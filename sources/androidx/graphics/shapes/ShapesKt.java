@@ -396,7 +396,7 @@ public final class ShapesKt {
     private static final float[] pillStarVerticesFromNumVerts(int i, float f, float f2, float f3, float f4, float f5, float f6, float f7) {
         float f8;
         float f9;
-        long m25constructorimpl;
+        long m12constructorimpl;
         float min = Math.min(f, f2);
         float coerceAtLeast = RangesKt.coerceAtLeast(f2 - f, 0.0f);
         float coerceAtLeast2 = RangesKt.coerceAtLeast(f - f2, 0.0f);
@@ -418,12 +418,12 @@ public final class ShapesKt {
         float f22 = f13 / i2;
         float f23 = f5 * f13;
         float[] fArr2 = new float[i * 4];
-        long m25constructorimpl2 = FloatFloatPair.m25constructorimpl(f12, f11);
+        long m12constructorimpl2 = FloatFloatPair.m12constructorimpl(f12, f11);
         float f24 = -f12;
-        long m25constructorimpl3 = FloatFloatPair.m25constructorimpl(f24, f11);
+        long m12constructorimpl3 = FloatFloatPair.m12constructorimpl(f24, f11);
         float f25 = -f11;
-        long m25constructorimpl4 = FloatFloatPair.m25constructorimpl(f24, f25);
-        long m25constructorimpl5 = FloatFloatPair.m25constructorimpl(f12, f25);
+        long m12constructorimpl4 = FloatFloatPair.m12constructorimpl(f24, f25);
+        long m12constructorimpl5 = FloatFloatPair.m12constructorimpl(f12, f25);
         float f26 = f11;
         int i3 = 0;
         float f27 = 0.0f;
@@ -449,53 +449,53 @@ public final class ShapesKt {
                         case 0:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = FloatFloatPair.m25constructorimpl(f31, f30 * f8);
+                            m12constructorimpl = FloatFloatPair.m12constructorimpl(f31, f30 * f8);
                             break;
                         case 1:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (f30 * Utils.getFloatPi()) / f10, 0L, 4, null), m25constructorimpl2);
+                            m12constructorimpl = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f31, (f30 * Utils.getFloatPi()) / f10, 0L, 4, null), m12constructorimpl2);
                             break;
                         case 2:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = FloatFloatPair.m25constructorimpl(f9 - (f30 * coerceAtLeast2), f31);
+                            m12constructorimpl = FloatFloatPair.m12constructorimpl(f9 - (f30 * coerceAtLeast2), f31);
                             break;
                         case 3:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() / f10) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl3);
+                            m12constructorimpl = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() / f10) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m12constructorimpl3);
                             break;
                         case 4:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = FloatFloatPair.m25constructorimpl(-f31, f8 - (f30 * coerceAtLeast));
+                            m12constructorimpl = FloatFloatPair.m12constructorimpl(-f31, f8 - (f30 * coerceAtLeast));
                             break;
                         case 5:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, Utils.getFloatPi() + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl4);
+                            m12constructorimpl = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f31, Utils.getFloatPi() + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m12constructorimpl4);
                             break;
                         case 6:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = FloatFloatPair.m25constructorimpl(f24 + (f30 * coerceAtLeast2), -f31);
+                            m12constructorimpl = FloatFloatPair.m12constructorimpl(f24 + (f30 * coerceAtLeast2), -f31);
                             break;
                         case 7:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() * 1.5f) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl5);
+                            m12constructorimpl = PointKt.m8110plusybeJwSQ(Utils.m8141radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() * 1.5f) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m12constructorimpl5);
                             break;
                         default:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = FloatFloatPair.m25constructorimpl(f31, f25 + (f30 * f8));
+                            m12constructorimpl = FloatFloatPair.m12constructorimpl(f31, f25 + (f30 * f8));
                             break;
                     }
                     int i7 = i5 + 1;
-                    fArr2[i5] = PointKt.m8821getXDnnuFBc(m25constructorimpl) + f6;
+                    fArr2[i5] = PointKt.m8106getXDnnuFBc(m12constructorimpl) + f6;
                     i5 += 2;
-                    fArr2[i7] = PointKt.m8822getYDnnuFBc(m25constructorimpl) + f7;
+                    fArr2[i7] = PointKt.m8107getYDnnuFBc(m12constructorimpl) + f7;
                     f23 += f22;
                     z = !z;
                     i3++;
@@ -512,14 +512,14 @@ public final class ShapesKt {
         int i2 = 0;
         for (int i3 = 0; i3 < i; i3++) {
             float f5 = i;
-            long m8858radialToCartesianL6JJ3z0$default = Utils.m8858radialToCartesianL6JJ3z0$default(f, (Utils.getFloatPi() / f5) * 2 * i3, 0L, 4, null);
-            fArr[i2] = PointKt.m8821getXDnnuFBc(m8858radialToCartesianL6JJ3z0$default) + f3;
-            fArr[i2 + 1] = PointKt.m8822getYDnnuFBc(m8858radialToCartesianL6JJ3z0$default) + f4;
-            long m8858radialToCartesianL6JJ3z0$default2 = Utils.m8858radialToCartesianL6JJ3z0$default(f2, (Utils.getFloatPi() / f5) * ((i3 * 2) + 1), 0L, 4, null);
+            long m8141radialToCartesianL6JJ3z0$default = Utils.m8141radialToCartesianL6JJ3z0$default(f, (Utils.getFloatPi() / f5) * 2 * i3, 0L, 4, null);
+            fArr[i2] = PointKt.m8106getXDnnuFBc(m8141radialToCartesianL6JJ3z0$default) + f3;
+            fArr[i2 + 1] = PointKt.m8107getYDnnuFBc(m8141radialToCartesianL6JJ3z0$default) + f4;
+            long m8141radialToCartesianL6JJ3z0$default2 = Utils.m8141radialToCartesianL6JJ3z0$default(f2, (Utils.getFloatPi() / f5) * ((i3 * 2) + 1), 0L, 4, null);
             int i4 = i2 + 3;
-            fArr[i2 + 2] = PointKt.m8821getXDnnuFBc(m8858radialToCartesianL6JJ3z0$default2) + f3;
+            fArr[i2 + 2] = PointKt.m8106getXDnnuFBc(m8141radialToCartesianL6JJ3z0$default2) + f3;
             i2 += 4;
-            fArr[i4] = PointKt.m8822getYDnnuFBc(m8858radialToCartesianL6JJ3z0$default2) + f4;
+            fArr[i4] = PointKt.m8107getYDnnuFBc(m8141radialToCartesianL6JJ3z0$default2) + f4;
         }
         return fArr;
     }

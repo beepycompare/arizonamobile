@@ -136,7 +136,8 @@ public class RadialViewGroup extends ConstraintLayout {
     }
 
     int getLeveledRadius(int i) {
-        return i == 2 ? Math.round(this.radius * LEVEL_RADIUS_RATIO) : this.radius;
+        int i2 = this.radius;
+        return i == 2 ? Math.round(i2 * LEVEL_RADIUS_RATIO) : i2;
     }
 
     private static boolean shouldSkipView(View view) {

@@ -36,16 +36,12 @@ public final class UnicodeKt {
                 DateTimeFormatBuilderKt.alternativeParsing(dateTimeFormatBuilder, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.UnicodeKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit byUnicodePattern$rec$lambda$1;
-                        byUnicodePattern$rec$lambda$1 = UnicodeKt.byUnicodePattern$rec$lambda$1((DateTimeFormatBuilder) obj);
-                        return byUnicodePattern$rec$lambda$1;
+                        return UnicodeKt.byUnicodePattern$rec$lambda$1((DateTimeFormatBuilder) obj);
                     }
                 }}, new Function1() { // from class: kotlinx.datetime.format.UnicodeKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit byUnicodePattern$rec$lambda$2;
-                        byUnicodePattern$rec$lambda$2 = UnicodeKt.byUnicodePattern$rec$lambda$2(UnicodeFormat.this, (DateTimeFormatBuilder) obj);
-                        return byUnicodePattern$rec$lambda$2;
+                        return UnicodeKt.byUnicodePattern$rec$lambda$2(UnicodeFormat.this, (DateTimeFormatBuilder) obj);
                     }
                 });
             } else if (!(unicodeFormat instanceof UnicodeFormat.Directive)) {
@@ -56,27 +52,27 @@ public final class UnicodeKt {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithTime)) {
                         throw new IllegalArgumentException(("A time-based directive " + unicodeFormat + " was used in a format builder that doesn't support time components").toString());
                     }
-                    ((UnicodeFormat.Directive.TimeBased) unicodeFormat).mo11892addToFormat((DateTimeFormatBuilder.WithTime) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.TimeBased) unicodeFormat).mo10792addToFormat((DateTimeFormatBuilder.WithTime) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.YearMonthBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithYearMonth)) {
                         throw new IllegalArgumentException(("A year-month-based directive " + unicodeFormat + " was used in a format builder that doesn't support year-month components").toString());
                     }
-                    ((UnicodeFormat.Directive.YearMonthBased) unicodeFormat).mo11893addToFormat((DateTimeFormatBuilder.WithYearMonth) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.YearMonthBased) unicodeFormat).mo10793addToFormat((DateTimeFormatBuilder.WithYearMonth) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.DateBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithDate)) {
                         throw new IllegalArgumentException(("A date-based directive " + unicodeFormat + " was used in a format builder that doesn't support date components").toString());
                     }
-                    ((UnicodeFormat.Directive.DateBased) unicodeFormat).mo11890addToFormat((DateTimeFormatBuilder.WithDate) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.DateBased) unicodeFormat).mo10790addToFormat((DateTimeFormatBuilder.WithDate) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.ZoneBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithDateTimeComponents)) {
                         throw new IllegalArgumentException(("A time-zone-based directive " + unicodeFormat + " was used in a format builder that doesn't support time-zone components").toString());
                     }
-                    ((UnicodeFormat.Directive.ZoneBased) unicodeFormat).mo11894addToFormat((DateTimeFormatBuilder.WithDateTimeComponents) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.ZoneBased) unicodeFormat).mo10794addToFormat((DateTimeFormatBuilder.WithDateTimeComponents) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.OffsetBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithUtcOffset)) {
                         throw new IllegalArgumentException(("A UTC-offset-based directive " + unicodeFormat + " was used in a format builder that doesn't support UTC offset components").toString());
                     }
-                    ((UnicodeFormat.Directive.OffsetBased) unicodeFormat).mo11891addToFormat((DateTimeFormatBuilder.WithUtcOffset) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.OffsetBased) unicodeFormat).mo10791addToFormat((DateTimeFormatBuilder.WithUtcOffset) dateTimeFormatBuilder);
                 } else if (!(directive instanceof UnknownUnicodeDirective)) {
                     throw new NoWhenBranchMatchedException();
                 } else {
@@ -90,13 +86,13 @@ public final class UnicodeKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit byUnicodePattern$rec$lambda$1(DateTimeFormatBuilder alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit byUnicodePattern$rec$lambda$2(UnicodeFormat unicodeFormat, DateTimeFormatBuilder alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
         byUnicodePattern$rec(alternativeParsing, ((UnicodeFormat.OptionalGroup) unicodeFormat).getFormat());

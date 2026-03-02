@@ -16,9 +16,7 @@ final class AnimationDataConverter implements TwoWayConverter<AnimationData, Ani
         return new Function1() { // from class: androidx.compose.foundation.gestures.AnimationDataConverter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                AnimationData _get_convertFromVector_$lambda$0;
-                _get_convertFromVector_$lambda$0 = AnimationDataConverter._get_convertFromVector_$lambda$0((AnimationVector4D) obj);
-                return _get_convertFromVector_$lambda$0;
+                return AnimationDataConverter._get_convertFromVector_$lambda$0((AnimationVector4D) obj);
             }
         };
     }
@@ -28,9 +26,7 @@ final class AnimationDataConverter implements TwoWayConverter<AnimationData, Ani
         return new Function1() { // from class: androidx.compose.foundation.gestures.AnimationDataConverter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                AnimationVector4D _get_convertToVector_$lambda$0;
-                _get_convertToVector_$lambda$0 = AnimationDataConverter._get_convertToVector_$lambda$0((AnimationData) obj);
-                return _get_convertToVector_$lambda$0;
+                return AnimationDataConverter._get_convertToVector_$lambda$0((AnimationData) obj);
             }
         };
     }
@@ -38,16 +34,16 @@ final class AnimationDataConverter implements TwoWayConverter<AnimationData, Ani
     private AnimationDataConverter() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnimationVector4D _get_convertToVector_$lambda$0(AnimationData animationData) {
-        return new AnimationVector4D(animationData.getZoom(), Float.intBitsToFloat((int) (animationData.m497getOffsetF1C5BW0() >> 32)), Float.intBitsToFloat((int) (animationData.m497getOffsetF1C5BW0() & 4294967295L)), animationData.getDegrees());
+        return new AnimationVector4D(animationData.getZoom(), Float.intBitsToFloat((int) (animationData.m430getOffsetF1C5BW0() >> 32)), Float.intBitsToFloat((int) (animationData.m430getOffsetF1C5BW0() & 4294967295L)), animationData.getDegrees());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnimationData _get_convertFromVector_$lambda$0(AnimationVector4D animationVector4D) {
         float v1 = animationVector4D.getV1();
         float v2 = animationVector4D.getV2();
         float v3 = animationVector4D.getV3();
-        return new AnimationData(v1, Offset.m5171constructorimpl((Float.floatToRawIntBits(v3) & 4294967295L) | (Float.floatToRawIntBits(v2) << 32)), animationVector4D.getV4(), null);
+        return new AnimationData(v1, Offset.m4519constructorimpl((Float.floatToRawIntBits(v3) & 4294967295L) | (Float.floatToRawIntBits(v2) << 32)), animationVector4D.getV4(), null);
     }
 }

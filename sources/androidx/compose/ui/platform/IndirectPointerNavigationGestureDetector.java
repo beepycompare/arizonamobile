@@ -18,7 +18,7 @@ public final class IndirectPointerNavigationGestureDetector {
     private final GestureDetector gestureDetector;
     private boolean ignoreCurrentGestureStream;
     private final Function1<FocusDirection, Unit> onMoveFocus;
-    private int primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6257getNonenZO2Niw();
+    private int primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
 
     /* JADX WARN: Multi-variable type inference failed */
     public IndirectPointerNavigationGestureDetector(Context context, Function1<? super FocusDirection, Unit> function1) {
@@ -56,16 +56,16 @@ public final class IndirectPointerNavigationGestureDetector {
                 if (z) {
                     return true;
                 }
-                if (IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(IndirectPointerNavigationGestureDetector.this.m7378getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw())) {
+                if (IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(IndirectPointerNavigationGestureDetector.this.m6712getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw())) {
                     if (Math.abs(f) > Math.abs(f2)) {
-                        int m5062getNextdhqQ8s = f > 0.0f ? FocusDirection.Companion.m5062getNextdhqQ8s() : FocusDirection.Companion.m5063getPreviousdhqQ8s();
+                        int m4410getNextdhqQ8s = f > 0.0f ? FocusDirection.Companion.m4410getNextdhqQ8s() : FocusDirection.Companion.m4411getPreviousdhqQ8s();
                         function13 = IndirectPointerNavigationGestureDetector.this.onMoveFocus;
-                        function13.invoke(FocusDirection.m5051boximpl(m5062getNextdhqQ8s));
+                        function13.invoke(FocusDirection.m4399boximpl(m4410getNextdhqQ8s));
                     }
-                } else if (IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(IndirectPointerNavigationGestureDetector.this.m7378getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw()) && Math.abs(f2) > Math.abs(f)) {
-                    int m5062getNextdhqQ8s2 = f2 > 0.0f ? FocusDirection.Companion.m5062getNextdhqQ8s() : FocusDirection.Companion.m5063getPreviousdhqQ8s();
+                } else if (IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(IndirectPointerNavigationGestureDetector.this.m6712getPrimaryDirectionalMotionAxisnZO2Niw(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw()) && Math.abs(f2) > Math.abs(f)) {
+                    int m4410getNextdhqQ8s2 = f2 > 0.0f ? FocusDirection.Companion.m4410getNextdhqQ8s() : FocusDirection.Companion.m4411getPreviousdhqQ8s();
                     function12 = IndirectPointerNavigationGestureDetector.this.onMoveFocus;
-                    function12.invoke(FocusDirection.m5051boximpl(m5062getNextdhqQ8s2));
+                    function12.invoke(FocusDirection.m4399boximpl(m4410getNextdhqQ8s2));
                 }
                 return true;
             }
@@ -73,12 +73,12 @@ public final class IndirectPointerNavigationGestureDetector {
     }
 
     /* renamed from: getPrimaryDirectionalMotionAxis-nZO2Niw  reason: not valid java name */
-    public final int m7378getPrimaryDirectionalMotionAxisnZO2Niw() {
+    public final int m6712getPrimaryDirectionalMotionAxisnZO2Niw() {
         return this.primaryDirectionalMotionAxis;
     }
 
     /* renamed from: setPrimaryDirectionalMotionAxis-WQKaTuc  reason: not valid java name */
-    public final void m7379setPrimaryDirectionalMotionAxisWQKaTuc(int i) {
+    public final void m6713setPrimaryDirectionalMotionAxisWQKaTuc(int i) {
         this.primaryDirectionalMotionAxis = i;
     }
 
@@ -86,7 +86,7 @@ public final class IndirectPointerNavigationGestureDetector {
         MotionEvent nativeEvent = AndroidIndirectPointerEvent_androidKt.getNativeEvent(indirectPointerEvent);
         int action = nativeEvent.getAction();
         if (action == 0) {
-            this.primaryDirectionalMotionAxis = indirectPointerEvent.mo6246getPrimaryDirectionalMotionAxisnZO2Niw();
+            this.primaryDirectionalMotionAxis = indirectPointerEvent.mo5587getPrimaryDirectionalMotionAxisnZO2Niw();
             this.ignoreCurrentGestureStream = false;
         } else if ((action == 1 || action == 2) && z) {
             cancelCurrentEventStream();
@@ -95,7 +95,7 @@ public final class IndirectPointerNavigationGestureDetector {
     }
 
     public final void cancelCurrentEventStream() {
-        this.primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6257getNonenZO2Niw();
+        this.primaryDirectionalMotionAxis = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
         this.ignoreCurrentGestureStream = true;
     }
 }

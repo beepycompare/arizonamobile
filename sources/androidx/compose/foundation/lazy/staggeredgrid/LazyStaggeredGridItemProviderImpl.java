@@ -24,7 +24,7 @@ public final class LazyStaggeredGridItemProviderImpl implements LazyStaggeredGri
     private final LazyLayoutKeyIndexMap keyIndexMap;
     private final LazyStaggeredGridState state;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$1(LazyStaggeredGridItemProviderImpl lazyStaggeredGridItemProviderImpl, int i, Object obj, int i2, Composer composer, int i3) {
         lazyStaggeredGridItemProviderImpl.Item(i, obj, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
@@ -93,9 +93,7 @@ public final class LazyStaggeredGridItemProviderImpl implements LazyStaggeredGri
             LazyLayoutPinnableItemKt.LazyLayoutPinnableItem(obj2, i4, this.state.getPinnedItems$foundation(), ComposableLambdaKt.rememberComposableLambda(608834466, true, new Function2() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridItemProviderImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$0;
-                    Item$lambda$0 = LazyStaggeredGridItemProviderImpl.Item$lambda$0(LazyStaggeredGridItemProviderImpl.this, i, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$0;
+                    return LazyStaggeredGridItemProviderImpl.Item$lambda$0(LazyStaggeredGridItemProviderImpl.this, i, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, ((i3 >> 3) & 14) | 3072 | ((i3 << 3) & 112));
             if (ComposerKt.isTraceInProgress()) {
@@ -107,15 +105,13 @@ public final class LazyStaggeredGridItemProviderImpl implements LazyStaggeredGri
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridItemProviderImpl$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit Item$lambda$1;
-                    Item$lambda$1 = LazyStaggeredGridItemProviderImpl.Item$lambda$1(LazyStaggeredGridItemProviderImpl.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return Item$lambda$1;
+                    return LazyStaggeredGridItemProviderImpl.Item$lambda$1(LazyStaggeredGridItemProviderImpl.this, i4, obj2, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Item$lambda$0(LazyStaggeredGridItemProviderImpl lazyStaggeredGridItemProviderImpl, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "C*78@3139L48:LazyStaggeredGridItemProvider.kt#fzvcnm");
         if (!composer.shouldExecute((i2 & 3) != 2, i2 & 1)) {

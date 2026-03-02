@@ -36,7 +36,7 @@ public final class BringIntoViewModifierNodeKt {
         Object bringIntoView;
         NodeChain nodes$ui;
         if (delegatableNode.getNode().isAttached()) {
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(524288);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(524288);
             if (!delegatableNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -47,9 +47,9 @@ public final class BringIntoViewModifierNodeKt {
                 if (requireLayoutNode == null) {
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (parent$ui != null) {
-                        if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                             Modifier.Node node = parent$ui;
                             MutableVector mutableVector = null;
                             while (node != null) {
@@ -57,10 +57,10 @@ public final class BringIntoViewModifierNodeKt {
                                     bringIntoViewModifierNode = node;
                                     break loop0;
                                 }
-                                if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node = delegate$ui;
@@ -112,7 +112,7 @@ public final class BringIntoViewModifierNodeKt {
                             layoutCoordinates = null;
                         }
                         if (layoutCoordinates != null) {
-                            return SizeKt.m5269toRectuvyYCjk(IntSizeKt.m8441toSizeozmzZPI(layoutCoordinates.mo6883getSizeYbymL2g()));
+                            return SizeKt.m4617toRectuvyYCjk(IntSizeKt.m7738toSizeozmzZPI(layoutCoordinates.mo6224getSizeYbymL2g()));
                         }
                         return null;
                     }

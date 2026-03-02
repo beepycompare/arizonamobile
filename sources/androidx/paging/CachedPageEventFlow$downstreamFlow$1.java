@@ -19,8 +19,8 @@ import kotlinx.coroutines.flow.SharedFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: CachedPageEventFlow.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/flow/FlowCollector;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.CachedPageEventFlow$downstreamFlow$1", f = "CachedPageEventFlow.kt", i = {}, l = {102}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00050\u0004H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlinx/coroutines/flow/FlowCollector;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.CachedPageEventFlow$downstreamFlow$1", f = "CachedPageEventFlow.kt", i = {}, l = {101}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda implements Function2<FlowCollector<? super PageEvent<T>>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -74,8 +74,8 @@ public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CachedPageEventFlow.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0014\u0010\u0004\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0018\u00010\u0005H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "it", "Lkotlin/collections/IndexedValue;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.CachedPageEventFlow$downstreamFlow$1$1", f = "CachedPageEventFlow.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0014\u0010\u0004\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0018\u00010\u0005H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "it", "Lkotlin/collections/IndexedValue;", "Landroidx/paging/PageEvent;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.CachedPageEventFlow$downstreamFlow$1$1", f = "CachedPageEventFlow.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.CachedPageEventFlow$downstreamFlow$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<IndexedValue<? extends PageEvent<T>>, Continuation<? super Boolean>, Object> {
@@ -115,7 +115,7 @@ public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CachedPageEventFlow.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u00032\u0014\u0010\u0004\u001a\u0010\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0006\u0018\u00010\u0005H\u008a@¢\u0006\u0004\b\u0007\u0010\b"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "", "indexedValue", "Lkotlin/collections/IndexedValue;", "Landroidx/paging/PageEvent;", "emit", "(Lkotlin/collections/IndexedValue;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;"}, k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.paging.CachedPageEventFlow$downstreamFlow$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2<T> implements FlowCollector {
@@ -134,14 +134,13 @@ public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0036  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object emit(IndexedValue<? extends PageEvent<T>> indexedValue, Continuation<? super Unit> continuation) {
             CachedPageEventFlow$downstreamFlow$1$2$emit$1 cachedPageEventFlow$downstreamFlow$1$2$emit$1;
             int i;
-            AnonymousClass2<T> anonymousClass2;
             if (continuation instanceof CachedPageEventFlow$downstreamFlow$1$2$emit$1) {
                 cachedPageEventFlow$downstreamFlow$1$2$emit$1 = (CachedPageEventFlow$downstreamFlow$1$2$emit$1) continuation;
                 if ((cachedPageEventFlow$downstreamFlow$1$2$emit$1.label & Integer.MIN_VALUE) != 0) {
@@ -155,23 +154,20 @@ public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda
                         if (indexedValue.getIndex() > this.$maxEventIndex.element) {
                             FlowCollector<PageEvent<T>> flowCollector = this.$$this$flow;
                             PageEvent<T> value = indexedValue.getValue();
-                            cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$0 = this;
-                            cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$1 = indexedValue;
+                            cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$0 = indexedValue;
                             cachedPageEventFlow$downstreamFlow$1$2$emit$1.label = 1;
                             if (flowCollector.emit(value, cachedPageEventFlow$downstreamFlow$1$2$emit$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            anonymousClass2 = this;
                         }
                         return Unit.INSTANCE;
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        indexedValue = (IndexedValue) cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$1;
-                        anonymousClass2 = (AnonymousClass2) cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$0;
+                        indexedValue = (IndexedValue) cachedPageEventFlow$downstreamFlow$1$2$emit$1.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
-                    anonymousClass2.$maxEventIndex.element = indexedValue.getIndex();
+                    this.$maxEventIndex.element = indexedValue.getIndex();
                     return Unit.INSTANCE;
                 }
             }
@@ -181,7 +177,7 @@ public final class CachedPageEventFlow$downstreamFlow$1<T> extends SuspendLambda
             i = cachedPageEventFlow$downstreamFlow$1$2$emit$1.label;
             if (i != 0) {
             }
-            anonymousClass2.$maxEventIndex.element = indexedValue.getIndex();
+            this.$maxEventIndex.element = indexedValue.getIndex();
             return Unit.INSTANCE;
         }
     }

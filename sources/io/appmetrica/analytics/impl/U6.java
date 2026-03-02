@@ -12,7 +12,7 @@ public final class U6 extends DatabaseScript {
         sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS preferences (key TEXT PRIMARY KEY,value TEXT,type INTEGER)");
         sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS binary_data (data_key TEXT PRIMARY KEY,value BLOB)");
         sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS temp_cache (id INTEGER PRIMARY KEY,scope TEXT,data BLOB,timestamp INTEGER)");
-        for (ModuleServicesDatabase moduleServicesDatabase : C0449na.I.p().b()) {
+        for (ModuleServicesDatabase moduleServicesDatabase : C0448na.I.p().b()) {
             for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
                 sQLiteDatabase.execSQL(tableDescription.getCreateTableScript());
             }

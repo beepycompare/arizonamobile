@@ -69,13 +69,13 @@ public final class SnackbarHostKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit FadeInFadeOutWithScale$lambda$7(SnackbarData snackbarData, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
         FadeInFadeOutWithScale(snackbarData, modifier, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SnackbarHost$lambda$1(SnackbarHostState snackbarHostState, Modifier modifier, Function3 function3, int i, int i2, Composer composer, int i3) {
         SnackbarHost(snackbarHostState, modifier, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -116,7 +116,7 @@ public final class SnackbarHostKt {
             }
             Modifier modifier3 = modifier;
             if (i5 != 0) {
-                function3 = ComposableSingletons$SnackbarHostKt.INSTANCE.m2259getLambda$1548712596$material3();
+                function3 = ComposableSingletons$SnackbarHostKt.INSTANCE.m1945getLambda$1548712596$material3();
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1077081618, i3, -1, "androidx.compose.material3.SnackbarHost (SnackbarHost.kt:220)");
@@ -148,9 +148,7 @@ public final class SnackbarHostKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SnackbarHostKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SnackbarHost$lambda$1;
-                    SnackbarHost$lambda$1 = SnackbarHostKt.SnackbarHost$lambda$1(SnackbarHostState.this, modifier2, function32, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return SnackbarHost$lambda$1;
+                    return SnackbarHostKt.SnackbarHost$lambda$1(SnackbarHostState.this, modifier2, function32, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -217,7 +215,7 @@ public final class SnackbarHostKt {
                     ComposerKt.traceEventStart(-977568115, i3, -1, "androidx.compose.material3.FadeInFadeOutWithScale (SnackbarHost.kt:326)");
                 }
                 Strings.Companion companion2 = Strings.Companion;
-                String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_snackbar_pane_title), startRestartGroup, 0);
+                String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_snackbar_pane_title), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1154887069, "CC(remember):SnackbarHost.kt#9igjgp");
                 Object rememberedValue = startRestartGroup.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -247,9 +245,9 @@ public final class SnackbarHostKt {
                     int i6 = 0;
                     while (i6 < size2) {
                         SnackbarData snackbarData2 = (SnackbarData) fastFilterNotNull.get(i6);
-                        items2.add(new FadeInFadeOutAnimationItem(snackbarData2, ComposableLambdaKt.rememberComposableLambda(-1952400805, true, new SnackbarHostKt$FadeInFadeOutWithScale$1$1(snackbarData2, snackbarData, fadeInFadeOutState, m3697getString2EP1pXo), startRestartGroup, 54)));
+                        items2.add(new FadeInFadeOutAnimationItem(snackbarData2, ComposableLambdaKt.rememberComposableLambda(-1952400805, true, new SnackbarHostKt$FadeInFadeOutWithScale$1$1(snackbarData2, snackbarData, fadeInFadeOutState, m3088getString2EP1pXo), startRestartGroup, 54)));
                         i6++;
-                        m3697getString2EP1pXo = m3697getString2EP1pXo;
+                        m3088getString2EP1pXo = m3088getString2EP1pXo;
                     }
                     startRestartGroup.endReplaceGroup();
                 } else {
@@ -273,15 +271,15 @@ public final class SnackbarHostKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1595840844, "C381@15059L21:SnackbarHost.kt#uh7d8r");
@@ -340,9 +338,7 @@ public final class SnackbarHostKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.SnackbarHostKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit FadeInFadeOutWithScale$lambda$7;
-                        FadeInFadeOutWithScale$lambda$7 = SnackbarHostKt.FadeInFadeOutWithScale$lambda$7(SnackbarData.this, modifier2, function3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return FadeInFadeOutWithScale$lambda$7;
+                        return SnackbarHostKt.FadeInFadeOutWithScale$lambda$7(SnackbarData.this, modifier2, function3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;

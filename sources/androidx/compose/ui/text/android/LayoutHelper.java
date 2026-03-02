@@ -188,13 +188,14 @@ public final class LayoutHelper {
             if (i7 == 0 && isRtlParagraph) {
                 return this.layout.getLineLeft(lineForOffset);
             }
-            if (i7 != ArraysKt.getLastIndex(bidiRunArr) || isRtlParagraph) {
-                if (isRtlParagraph) {
-                    return this.layout.getPrimaryHorizontal(bidiRunArr[i7 - 1].getStart());
-                }
-                return this.layout.getPrimaryHorizontal(bidiRunArr[i7 + 1].getStart());
+            if (i7 == ArraysKt.getLastIndex(bidiRunArr) && !isRtlParagraph) {
+                return this.layout.getLineRight(lineForOffset);
             }
-            return this.layout.getLineRight(lineForOffset);
+            Layout layout2 = this.layout;
+            if (isRtlParagraph) {
+                return layout2.getPrimaryHorizontal(bidiRunArr[i7 - 1].getStart());
+            }
+            return layout2.getPrimaryHorizontal(bidiRunArr[i7 + 1].getStart());
         }
         if (i2 > lineEndToVisibleEnd) {
             i2 = lineEndToVisibleEnd(i2, lineStart);
@@ -217,13 +218,14 @@ public final class LayoutHelper {
         if (i7 == 0 && isRtlParagraph) {
             return this.layout.getLineLeft(lineForOffset);
         }
-        if (i7 != ArraysKt.getLastIndex(bidiRunArr) || isRtlParagraph) {
-            if (isRtlParagraph) {
-                return this.layout.getPrimaryHorizontal(bidiRunArr[i7 - 1].getEnd());
-            }
-            return this.layout.getPrimaryHorizontal(bidiRunArr[i7 + 1].getEnd());
+        if (i7 == ArraysKt.getLastIndex(bidiRunArr) && !isRtlParagraph) {
+            return this.layout.getLineRight(lineForOffset);
         }
-        return this.layout.getLineRight(lineForOffset);
+        Layout layout3 = this.layout;
+        if (isRtlParagraph) {
+            return layout3.getPrimaryHorizontal(bidiRunArr[i7 - 1].getEnd());
+        }
+        return layout3.getPrimaryHorizontal(bidiRunArr[i7 + 1].getEnd());
     }
 
     public final int getLineVisibleEnd(int i) {
@@ -232,10 +234,11 @@ public final class LayoutHelper {
 
     private final float getDownstreamHorizontal(int i, boolean z) {
         int coerceAtMost = RangesKt.coerceAtMost(i, this.layout.getLineEnd(this.layout.getLineForOffset(i)));
+        Layout layout = this.layout;
         if (z) {
-            return this.layout.getPrimaryHorizontal(coerceAtMost);
+            return layout.getPrimaryHorizontal(coerceAtMost);
         }
-        return this.layout.getSecondaryHorizontal(coerceAtMost);
+        return layout.getSecondaryHorizontal(coerceAtMost);
     }
 
     /* compiled from: LayoutHelper.android.kt */

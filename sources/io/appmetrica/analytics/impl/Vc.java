@@ -7,12 +7,12 @@ public final class Vc implements ModuleEventServiceHandlerReporter {
 
     /* renamed from: a  reason: collision with root package name */
     public final boolean f826a;
-    public final C0373k9 b;
+    public final C0372k9 b;
     public final P5 c;
 
-    public Vc(boolean z, C0373k9 c0373k9, P5 p5) {
+    public Vc(boolean z, C0372k9 c0372k9, P5 p5) {
         this.f826a = z;
-        this.b = c0373k9;
+        this.b = c0372k9;
         this.c = p5;
     }
 
@@ -36,7 +36,7 @@ public final class Vc implements ModuleEventServiceHandlerReporter {
             d.setValueBytes(valueBytes);
         }
         d.g = counterReportApi.getBytesTruncated();
-        C0373k9 c0373k9 = this.b;
-        c0373k9.a(d, Rk.a(c0373k9.c.b(d), d.i));
+        C0372k9 c0372k9 = this.b;
+        c0372k9.a(d, Rk.a(c0372k9.c.b(d), d.i));
     }
 }

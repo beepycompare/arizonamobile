@@ -71,12 +71,12 @@ public final class SelectionLayoutBuilder {
     }
 
     /* renamed from: getCurrentPosition-F1C5BW0  reason: not valid java name */
-    public final long m1859getCurrentPositionF1C5BW0() {
+    public final long m1609getCurrentPositionF1C5BW0() {
         return this.currentPosition;
     }
 
     /* renamed from: getPreviousHandlePosition-F1C5BW0  reason: not valid java name */
-    public final long m1860getPreviousHandlePositionF1C5BW0() {
+    public final long m1610getPreviousHandlePositionF1C5BW0() {
         return this.previousHandlePosition;
     }
 

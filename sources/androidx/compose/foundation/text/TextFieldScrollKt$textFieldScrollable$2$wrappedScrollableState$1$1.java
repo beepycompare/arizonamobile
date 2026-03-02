@@ -55,17 +55,13 @@ public final class TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableStat
         this.canScrollForward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean canScrollForward_delegate$lambda$0;
-                canScrollForward_delegate$lambda$0 = TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1.canScrollForward_delegate$lambda$0(TextFieldScrollerPosition.this);
-                return Boolean.valueOf(canScrollForward_delegate$lambda$0);
+                return Boolean.valueOf(TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1.canScrollForward_delegate$lambda$0(TextFieldScrollerPosition.this));
             }
         });
         this.canScrollBackward$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean canScrollBackward_delegate$lambda$1;
-                canScrollBackward_delegate$lambda$1 = TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1.canScrollBackward_delegate$lambda$1(TextFieldScrollerPosition.this);
-                return Boolean.valueOf(canScrollBackward_delegate$lambda$1);
+                return Boolean.valueOf(TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableState$1$1.canScrollBackward_delegate$lambda$1(TextFieldScrollerPosition.this));
             }
         });
     }
@@ -75,7 +71,7 @@ public final class TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableStat
         return ((Boolean) this.canScrollForward$delegate.getValue()).booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean canScrollForward_delegate$lambda$0(TextFieldScrollerPosition textFieldScrollerPosition) {
         return textFieldScrollerPosition.getOffset() < textFieldScrollerPosition.getMaximum();
     }
@@ -85,7 +81,7 @@ public final class TextFieldScrollKt$textFieldScrollable$2$wrappedScrollableStat
         return ((Boolean) this.canScrollBackward$delegate.getValue()).booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean canScrollBackward_delegate$lambda$1(TextFieldScrollerPosition textFieldScrollerPosition) {
         return textFieldScrollerPosition.getOffset() > 0.0f;
     }

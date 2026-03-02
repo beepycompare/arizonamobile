@@ -23,9 +23,11 @@ public final class d extends Lambda implements Function0 {
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
         PackageManager packageManager = this.f386a.getPackageManager();
-        if (AndroidUtils.isApiAchieved(30)) {
-            return SafePackageManagerHelperForR.extractPackageInstaller(packageManager, this.b);
+        boolean isApiAchieved = AndroidUtils.isApiAchieved(30);
+        String str = this.b;
+        if (isApiAchieved) {
+            return SafePackageManagerHelperForR.extractPackageInstaller(packageManager, str);
         }
-        return packageManager.getInstallerPackageName(this.b);
+        return packageManager.getInstallerPackageName(str);
     }
 }

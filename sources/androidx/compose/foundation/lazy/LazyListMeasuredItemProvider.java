@@ -26,40 +26,40 @@ public abstract class LazyListMeasuredItemProvider extends LazyLayoutMeasuredIte
     }
 
     /* renamed from: createItem-X9ElhV4 */
-    public abstract LazyListMeasuredItem mo1044createItemX9ElhV4(int i, Object obj, Object obj2, List<? extends Placeable> list, long j);
+    public abstract LazyListMeasuredItem mo921createItemX9ElhV4(int i, Object obj, Object obj2, List<? extends Placeable> list, long j);
 
     private LazyListMeasuredItemProvider(long j, boolean z, LazyListItemProvider lazyListItemProvider, LazyLayoutMeasureScope lazyLayoutMeasureScope) {
         this.itemProvider = lazyListItemProvider;
         this.measureScope = lazyLayoutMeasureScope;
-        this.childConstraints = ConstraintsKt.Constraints$default(0, z ? Constraints.m8211getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, z ? Integer.MAX_VALUE : Constraints.m8210getMaxHeightimpl(j), 5, null);
+        this.childConstraints = ConstraintsKt.Constraints$default(0, z ? Constraints.m7508getMaxWidthimpl(j) : Integer.MAX_VALUE, 0, z ? Integer.MAX_VALUE : Constraints.m7507getMaxHeightimpl(j), 5, null);
     }
 
     /* renamed from: getChildConstraints-msEJaDk  reason: not valid java name */
-    public final long m1058getChildConstraintsmsEJaDk() {
+    public final long m935getChildConstraintsmsEJaDk() {
         return this.childConstraints;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasuredItemProvider
     /* renamed from: getAndMeasure--hBUhpc  reason: not valid java name */
-    public LazyListMeasuredItem mo1056getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
-        return m1057getAndMeasure0kLqBqw(i, j);
+    public LazyListMeasuredItem mo933getAndMeasurehBUhpc(int i, int i2, int i3, long j) {
+        return m934getAndMeasure0kLqBqw(i, j);
     }
 
     /* renamed from: getAndMeasure-0kLqBqw$default  reason: not valid java name */
-    public static /* synthetic */ LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider lazyListMeasuredItemProvider, int i, long j, int i2, Object obj) {
+    public static /* synthetic */ LazyListMeasuredItem m932getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider lazyListMeasuredItemProvider, int i, long j, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 2) != 0) {
                 j = lazyListMeasuredItemProvider.childConstraints;
             }
-            return lazyListMeasuredItemProvider.m1057getAndMeasure0kLqBqw(i, j);
+            return lazyListMeasuredItemProvider.m934getAndMeasure0kLqBqw(i, j);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: getAndMeasure-0kLqBqw");
     }
 
     /* renamed from: getAndMeasure-0kLqBqw  reason: not valid java name */
-    public final LazyListMeasuredItem m1057getAndMeasure0kLqBqw(int i, long j) {
-        return mo1044createItemX9ElhV4(i, this.itemProvider.getKey(i), this.itemProvider.getContentType(i), m1133getPlaceables3p2s80s(this.measureScope, i, j), j);
+    public final LazyListMeasuredItem m934getAndMeasure0kLqBqw(int i, long j) {
+        return mo921createItemX9ElhV4(i, this.itemProvider.getKey(i), this.itemProvider.getContentType(i), m995getPlaceables3p2s80s(this.measureScope, i, j), j);
     }
 
     public final void keepAround(int i) {

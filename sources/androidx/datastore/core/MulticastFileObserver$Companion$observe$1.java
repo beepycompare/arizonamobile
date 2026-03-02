@@ -65,9 +65,7 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
             Function1 function1 = new Function1() { // from class: androidx.datastore.core.MulticastFileObserver$Companion$observe$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = MulticastFileObserver$Companion$observe$1.invokeSuspend$lambda$0(file, producerScope2, (String) obj2);
-                    return invokeSuspend$lambda$0;
+                    return MulticastFileObserver$Companion$observe$1.invokeSuspend$lambda$0(file, producerScope2, (String) obj2);
                 }
             };
             MulticastFileObserver.Companion companion = MulticastFileObserver.Companion;
@@ -97,7 +95,7 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
         this.label = 2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(File file, ProducerScope producerScope, String str) {
         if (Intrinsics.areEqual(str, file.getName())) {
             ChannelsKt.trySendBlocking(producerScope, Unit.INSTANCE);
@@ -105,7 +103,7 @@ public final class MulticastFileObserver$Companion$observe$1 extends SuspendLamb
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(DisposableHandle disposableHandle) {
         disposableHandle.dispose();
         return Unit.INSTANCE;

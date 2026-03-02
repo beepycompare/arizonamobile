@@ -24,9 +24,7 @@ public final class PlatformFontVariationSettings_androidKt {
             return ListUtilsKt.fastJoinToString$default(settings.getSettings(), null, null, null, 0, null, new Function1() { // from class: androidx.compose.ui.text.font.PlatformFontVariationSettings_androidKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    CharSequence androidString$lambda$0;
-                    androidString$lambda$0 = PlatformFontVariationSettings_androidKt.toAndroidString$lambda$0(Density.this, (FontVariation.Setting) obj);
-                    return androidString$lambda$0;
+                    return PlatformFontVariationSettings_androidKt.toAndroidString$lambda$0(Density.this, (FontVariation.Setting) obj);
                 }
             }, 31, null);
         }
@@ -61,7 +59,7 @@ public final class PlatformFontVariationSettings_androidKt {
         return str + "'wght' " + coerceInWeight;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence toAndroidString$lambda$0(Density density, FontVariation.Setting setting) {
         return "'" + setting.getAxisName() + "' " + setting.toVariationValue(density);
     }

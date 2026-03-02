@@ -19,7 +19,7 @@ import com.google.android.gms.internal.common.zzal;
 import java.util.Arrays;
 import java.util.Set;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class GoogleSignatureVerifier {
     @Nullable
@@ -116,7 +116,7 @@ public class GoogleSignatureVerifier {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00c2  */
     /* JADX WARN: Type inference failed for: r8v4, types: [android.os.StrictMode$ThreadPolicy] */
     /* JADX WARN: Type inference failed for: r8v6, types: [int] */
     /*

@@ -46,7 +46,7 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
         Long selectedStartDateMillis = this.$state.getSelectedStartDateMillis();
         Long selectedEndDateMillis = this.$state.getSelectedEndDateMillis();
         long displayedMonthMillis = this.$state.getDisplayedMonthMillis();
-        int mo2359getDisplayModejFl4v0 = this.$state.mo2359getDisplayModejFl4v0();
+        int mo2014getDisplayModejFl4v0 = this.$state.mo2014getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, 1044600229, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DateRangePickerState dateRangePickerState = this.$state;
@@ -55,9 +55,7 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
             rememberedValue = new Function2() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$6$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateRangePickerKt$DateRangePicker$6.invoke$lambda$1$lambda$0(DateRangePickerState.this, (Long) obj, (Long) obj2);
-                    return invoke$lambda$1$lambda$0;
+                    return DateRangePickerKt$DateRangePicker$6.invoke$lambda$1$lambda$0(DateRangePickerState.this, (Long) obj, (Long) obj2);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -72,21 +70,19 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$DateRangePicker$6$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = DateRangePickerKt$DateRangePicker$6.invoke$lambda$3$lambda$2(DateRangePickerState.this, ((Long) obj).longValue());
-                    return invoke$lambda$3$lambda$2;
+                    return DateRangePickerKt$DateRangePicker$6.invoke$lambda$3$lambda$2(DateRangePickerState.this, ((Long) obj).longValue());
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DateRangePickerKt.m2351SwitchableDateEntryContenteVtQiho(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2359getDisplayModejFl4v0, function2, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
+        DateRangePickerKt.m2009SwitchableDateEntryContenteVtQiho(selectedStartDateMillis, selectedEndDateMillis, displayedMonthMillis, mo2014getDisplayModejFl4v0, function2, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(DateRangePickerState dateRangePickerState, Long l, Long l2) {
         try {
             dateRangePickerState.setSelection(l, l2);
@@ -95,7 +91,7 @@ public final class DateRangePickerKt$DateRangePicker$6 implements Function2<Comp
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$3$lambda$2(DateRangePickerState dateRangePickerState, long j) {
         dateRangePickerState.setDisplayedMonthMillis(j);
         return Unit.INSTANCE;

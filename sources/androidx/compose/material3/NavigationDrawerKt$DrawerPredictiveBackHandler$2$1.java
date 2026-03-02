@@ -167,9 +167,7 @@ public final class NavigationDrawerKt$DrawerPredictiveBackHandler$2$1 extends Su
                 if (SuspendAnimationKt.animate$default(scaleXDistance, 0.0f, 0.0f, null, new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$DrawerPredictiveBackHandler$2$1$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = NavigationDrawerKt$DrawerPredictiveBackHandler$2$1.AnonymousClass2.invokeSuspend$lambda$0(DrawerPredictiveBackState.this, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
-                        return invokeSuspend$lambda$0;
+                        return NavigationDrawerKt$DrawerPredictiveBackHandler$2$1.AnonymousClass2.invokeSuspend$lambda$0(DrawerPredictiveBackState.this, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
                     }
                 }, this, 12, null) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -183,7 +181,7 @@ public final class NavigationDrawerKt$DrawerPredictiveBackHandler$2$1 extends Su
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(DrawerPredictiveBackState drawerPredictiveBackState, float f, float f2) {
             drawerPredictiveBackState.setScaleXDistance(f);
             return Unit.INSTANCE;

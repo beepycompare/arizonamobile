@@ -20,12 +20,19 @@ public final class DoubleMapper {
         this.sourceValues = new MutableFloatList(mappings.length);
         this.targetValues = new MutableFloatList(mappings.length);
         int length = mappings.length;
-        for (int i = 0; i < length; i++) {
-            this.sourceValues.add(mappings[i].getFirst().floatValue());
-            this.targetValues.add(mappings[i].getSecond().floatValue());
+        int i = 0;
+        while (true) {
+            MutableFloatList mutableFloatList = this.sourceValues;
+            if (i < length) {
+                mutableFloatList.add(mappings[i].getFirst().floatValue());
+                this.targetValues.add(mappings[i].getSecond().floatValue());
+                i++;
+            } else {
+                FloatMappingKt.validateProgress(mutableFloatList);
+                FloatMappingKt.validateProgress(this.targetValues);
+                return;
+            }
         }
-        FloatMappingKt.validateProgress(this.sourceValues);
-        FloatMappingKt.validateProgress(this.targetValues);
     }
 
     public final float map(float f) {

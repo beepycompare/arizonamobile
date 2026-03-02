@@ -12,49 +12,49 @@ public final class ContextMenuIcons {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ContextMenuIcons m1334boximpl(int i) {
+    public static final /* synthetic */ ContextMenuIcons m1167boximpl(int i) {
         return new ContextMenuIcons(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1335constructorimpl(int i) {
+    public static int m1168constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1336equalsimpl(int i, Object obj) {
-        return (obj instanceof ContextMenuIcons) && i == ((ContextMenuIcons) obj).m1340unboximpl();
+    public static boolean m1169equalsimpl(int i, Object obj) {
+        return (obj instanceof ContextMenuIcons) && i == ((ContextMenuIcons) obj).m1173unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1337equalsimpl0(int i, int i2) {
+    public static final boolean m1170equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1338hashCodeimpl(int i) {
+    public static int m1171hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1339toStringimpl(int i) {
+    public static String m1172toStringimpl(int i) {
         return "ContextMenuIcons(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1336equalsimpl(this.value, obj);
+        return m1169equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1338hashCodeimpl(this.value);
+        return m1171hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1339toStringimpl(this.value);
+        return m1172toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1340unboximpl() {
+    public final /* synthetic */ int m1173unboximpl() {
         return this.value;
     }
 
@@ -70,28 +70,28 @@ public final class ContextMenuIcons {
         }
 
         /* renamed from: getActionModeCutDrawable-3I4p1mQ  reason: not valid java name */
-        public final int m1342getActionModeCutDrawable3I4p1mQ() {
-            return ContextMenuIcons.m1335constructorimpl(16843537);
+        public final int m1175getActionModeCutDrawable3I4p1mQ() {
+            return ContextMenuIcons.m1168constructorimpl(16843537);
         }
 
         /* renamed from: getActionModeCopyDrawable-3I4p1mQ  reason: not valid java name */
-        public final int m1341getActionModeCopyDrawable3I4p1mQ() {
-            return ContextMenuIcons.m1335constructorimpl(16843538);
+        public final int m1174getActionModeCopyDrawable3I4p1mQ() {
+            return ContextMenuIcons.m1168constructorimpl(16843538);
         }
 
         /* renamed from: getActionModePasteDrawable-3I4p1mQ  reason: not valid java name */
-        public final int m1343getActionModePasteDrawable3I4p1mQ() {
-            return ContextMenuIcons.m1335constructorimpl(16843539);
+        public final int m1176getActionModePasteDrawable3I4p1mQ() {
+            return ContextMenuIcons.m1168constructorimpl(16843539);
         }
 
         /* renamed from: getActionModeSelectAllDrawable-3I4p1mQ  reason: not valid java name */
-        public final int m1344getActionModeSelectAllDrawable3I4p1mQ() {
-            return ContextMenuIcons.m1335constructorimpl(16843646);
+        public final int m1177getActionModeSelectAllDrawable3I4p1mQ() {
+            return ContextMenuIcons.m1168constructorimpl(16843646);
         }
 
         /* renamed from: getID_NULL-3I4p1mQ  reason: not valid java name */
-        public final int m1345getID_NULL3I4p1mQ() {
-            return ContextMenuIcons.m1335constructorimpl(0);
+        public final int m1178getID_NULL3I4p1mQ() {
+            return ContextMenuIcons.m1168constructorimpl(0);
         }
     }
 

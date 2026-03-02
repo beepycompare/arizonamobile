@@ -328,23 +328,26 @@ public final class JsonUtf8Reader extends JsonReader {
         }
         int length = str.length();
         int i2 = 1;
-        while (i2 < length) {
-            int i3 = i2 + 1;
-            if (!this.source.request(i3)) {
+        while (true) {
+            BufferedSource bufferedSource = this.source;
+            if (i2 < length) {
+                int i3 = i2 + 1;
+                if (!bufferedSource.request(i3)) {
+                    return 0;
+                }
+                byte b2 = this.buffer.getByte(i2);
+                if (b2 != str.charAt(i2) && b2 != str2.charAt(i2)) {
+                    return 0;
+                }
+                i2 = i3;
+            } else if (bufferedSource.request(length + 1) && isLiteral(this.buffer.getByte(length))) {
                 return 0;
+            } else {
+                this.buffer.skip(length);
+                this.peeked = i;
+                return i;
             }
-            byte b2 = this.buffer.getByte(i2);
-            if (b2 != str.charAt(i2) && b2 != str2.charAt(i2)) {
-                return 0;
-            }
-            i2 = i3;
         }
-        if (this.source.request(length + 1) && isLiteral(this.buffer.getByte(length))) {
-            return 0;
-        }
-        this.buffer.skip(length);
-        this.peeked = i;
-        return i;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:44:0x0088, code lost:
@@ -687,28 +690,32 @@ public final class JsonUtf8Reader extends JsonReader {
             if (indexOfElement == -1) {
                 throw syntaxError("Unterminated string");
             }
-            if (this.buffer.getByte(indexOfElement) != 92) {
+            if (this.buffer.getByte(indexOfElement) == 92) {
                 if (sb == null) {
-                    String readUtf8 = this.buffer.readUtf8(indexOfElement);
-                    this.buffer.readByte();
-                    return readUtf8;
+                    sb = new StringBuilder();
                 }
                 sb.append(this.buffer.readUtf8(indexOfElement));
                 this.buffer.readByte();
+                sb.append(readEscapeCharacter());
+            } else {
+                Buffer buffer = this.buffer;
+                if (sb == null) {
+                    String readUtf8 = buffer.readUtf8(indexOfElement);
+                    this.buffer.readByte();
+                    return readUtf8;
+                }
+                sb.append(buffer.readUtf8(indexOfElement));
+                this.buffer.readByte();
                 return sb.toString();
             }
-            if (sb == null) {
-                sb = new StringBuilder();
-            }
-            sb.append(this.buffer.readUtf8(indexOfElement));
-            this.buffer.readByte();
-            sb.append(readEscapeCharacter());
         }
     }
 
     private String nextUnquotedValue() throws IOException {
         long indexOfElement = this.source.indexOfElement(UNQUOTED_STRING_TERMINALS);
-        return indexOfElement != -1 ? this.buffer.readUtf8(indexOfElement) : this.buffer.readUtf8();
+        int i = (indexOfElement > (-1L) ? 1 : (indexOfElement == (-1L) ? 0 : -1));
+        Buffer buffer = this.buffer;
+        return i != 0 ? buffer.readUtf8(indexOfElement) : buffer.readUtf8();
     }
 
     private void skipQuotedValue(ByteString byteString) throws IOException {
@@ -717,11 +724,13 @@ public final class JsonUtf8Reader extends JsonReader {
             if (indexOfElement == -1) {
                 throw syntaxError("Unterminated string");
             }
-            if (this.buffer.getByte(indexOfElement) == 92) {
-                this.buffer.skip(indexOfElement + 1);
+            byte b = this.buffer.getByte(indexOfElement);
+            Buffer buffer = this.buffer;
+            if (b == 92) {
+                buffer.skip(indexOfElement + 1);
                 readEscapeCharacter();
             } else {
-                this.buffer.skip(indexOfElement + 1);
+                buffer.skip(indexOfElement + 1);
                 return;
             }
         }
@@ -963,23 +972,30 @@ public final class JsonUtf8Reader extends JsonReader {
                                 if (!this.source.request(4L)) {
                                     throw new EOFException("Unterminated escape sequence at path " + getPath());
                                 }
+                                int i2 = 0;
                                 char c = 0;
-                                for (int i2 = 0; i2 < 4; i2++) {
-                                    byte b = this.buffer.getByte(i2);
-                                    char c2 = (char) (c << 4);
-                                    if (b >= 48 && b <= 57) {
-                                        i = b - 48;
-                                    } else if (b >= 97 && b <= 102) {
-                                        i = b - 87;
-                                    } else if (b < 65 || b > 70) {
-                                        throw syntaxError("\\u" + this.buffer.readUtf8(4L));
+                                while (true) {
+                                    Buffer buffer = this.buffer;
+                                    if (i2 < 4) {
+                                        byte b = buffer.getByte(i2);
+                                        char c2 = (char) (c << 4);
+                                        if (b >= 48 && b <= 57) {
+                                            i = b - 48;
+                                        } else if (b >= 97 && b <= 102) {
+                                            i = b - 87;
+                                        } else if (b < 65 || b > 70) {
+                                            break;
+                                        } else {
+                                            i = b - 55;
+                                        }
+                                        c = (char) (c2 + i);
+                                        i2++;
                                     } else {
-                                        i = b - 55;
+                                        buffer.skip(4L);
+                                        return c;
                                     }
-                                    c = (char) (c2 + i);
                                 }
-                                this.buffer.skip(4L);
-                                return c;
+                                throw syntaxError("\\u" + this.buffer.readUtf8(4L));
                             } else if (this.lenient) {
                                 return (char) readByte;
                             } else {

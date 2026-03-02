@@ -32,7 +32,7 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public abstract class BaseGmsClient<T extends IInterface> {
     public static final int CONNECT_STATE_CONNECTED = 4;
@@ -73,7 +73,7 @@ public abstract class BaseGmsClient<T extends IInterface> {
     private static final Feature[] zze = new Feature[0];
     public static final String[] GOOGLE_PLUS_REQUIRED_FEATURES = {"service_esmobile", "service_googleme"};
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface BaseConnectionCallbacks {
         public static final int CAUSE_DEAD_OBJECT_EXCEPTION = 3;
@@ -84,19 +84,19 @@ public abstract class BaseGmsClient<T extends IInterface> {
         void onConnectionSuspended(int i);
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface BaseOnConnectionFailedListener {
         void onConnectionFailed(ConnectionResult connectionResult);
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface ConnectionProgressReportCallbacks {
         void onReportServiceBinding(ConnectionResult connectionResult);
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     protected class LegacyClientCallbackAdapter implements ConnectionProgressReportCallbacks {
         final /* synthetic */ BaseGmsClient zza;
@@ -108,19 +108,17 @@ public abstract class BaseGmsClient<T extends IInterface> {
 
         @Override // com.google.android.gms.common.internal.BaseGmsClient.ConnectionProgressReportCallbacks
         public final void onReportServiceBinding(ConnectionResult connectionResult) {
-            if (connectionResult.isSuccess()) {
-                BaseGmsClient baseGmsClient = this.zza;
+            boolean isSuccess = connectionResult.isSuccess();
+            BaseGmsClient baseGmsClient = this.zza;
+            if (isSuccess) {
                 baseGmsClient.getRemoteService(null, baseGmsClient.getScopes());
-                return;
-            }
-            BaseGmsClient baseGmsClient2 = this.zza;
-            if (baseGmsClient2.zzl() != null) {
-                baseGmsClient2.zzl().onConnectionFailed(connectionResult);
+            } else if (baseGmsClient.zzl() != null) {
+                baseGmsClient.zzl().onConnectionFailed(connectionResult);
             }
         }
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface SignOutCallbacks {
         void onSignOutComplete();

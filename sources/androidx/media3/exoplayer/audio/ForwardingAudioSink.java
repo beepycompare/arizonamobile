@@ -9,7 +9,7 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.audio.AudioSink;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ForwardingAudioSink implements AudioSink {
     private final AudioSink sink;
 

@@ -40,13 +40,16 @@ public final class LazyLayoutSemanticStateKt {
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
             public int getViewport() {
-                long mo1225getViewportSizeYbymL2g;
-                if (PagerState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                    mo1225getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo1225getViewportSizeYbymL2g() & 4294967295L;
+                long mo1076getViewportSizeYbymL2g;
+                Orientation orientation = PagerState.this.getLayoutInfo().getOrientation();
+                Orientation orientation2 = Orientation.Vertical;
+                PagerState pagerState2 = PagerState.this;
+                if (orientation == orientation2) {
+                    mo1076getViewportSizeYbymL2g = pagerState2.getLayoutInfo().mo1076getViewportSizeYbymL2g() & 4294967295L;
                 } else {
-                    mo1225getViewportSizeYbymL2g = PagerState.this.getLayoutInfo().mo1225getViewportSizeYbymL2g() >> 32;
+                    mo1076getViewportSizeYbymL2g = pagerState2.getLayoutInfo().mo1076getViewportSizeYbymL2g() >> 32;
                 }
-                return (int) mo1225getViewportSizeYbymL2g;
+                return (int) mo1076getViewportSizeYbymL2g;
             }
 
             @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

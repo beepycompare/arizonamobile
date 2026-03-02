@@ -12,49 +12,49 @@ public final class AtomicBoolean {
     private final AtomicInt wrapped;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AtomicBoolean m4810boximpl(AtomicInt atomicInt) {
+    public static final /* synthetic */ AtomicBoolean m4175boximpl(AtomicInt atomicInt) {
         return new AtomicBoolean(atomicInt);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static AtomicInt m4811constructorimpl(AtomicInt atomicInt) {
+    public static AtomicInt m4176constructorimpl(AtomicInt atomicInt) {
         return atomicInt;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4814equalsimpl(AtomicInt atomicInt, Object obj) {
-        return (obj instanceof AtomicBoolean) && Intrinsics.areEqual(atomicInt, ((AtomicBoolean) obj).m4821unboximpl());
+    public static boolean m4179equalsimpl(AtomicInt atomicInt, Object obj) {
+        return (obj instanceof AtomicBoolean) && Intrinsics.areEqual(atomicInt, ((AtomicBoolean) obj).m4186unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4815equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
+    public static final boolean m4180equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
         return Intrinsics.areEqual(atomicInt, atomicInt2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4818hashCodeimpl(AtomicInt atomicInt) {
+    public static int m4183hashCodeimpl(AtomicInt atomicInt) {
         return atomicInt.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4820toStringimpl(AtomicInt atomicInt) {
+    public static String m4185toStringimpl(AtomicInt atomicInt) {
         return "AtomicBoolean(wrapped=" + atomicInt + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4814equalsimpl(this.wrapped, obj);
+        return m4179equalsimpl(this.wrapped, obj);
     }
 
     public int hashCode() {
-        return m4818hashCodeimpl(this.wrapped);
+        return m4183hashCodeimpl(this.wrapped);
     }
 
     public String toString() {
-        return m4820toStringimpl(this.wrapped);
+        return m4185toStringimpl(this.wrapped);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ AtomicInt m4821unboximpl() {
+    public final /* synthetic */ AtomicInt m4186unboximpl() {
         return this.wrapped;
     }
 
@@ -63,30 +63,30 @@ public final class AtomicBoolean {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ AtomicInt m4813constructorimpl$default(AtomicInt atomicInt, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ AtomicInt m4178constructorimpl$default(AtomicInt atomicInt, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             atomicInt = new AtomicInt(0);
         }
-        return m4811constructorimpl(atomicInt);
+        return m4176constructorimpl(atomicInt);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static AtomicInt m4812constructorimpl(boolean z) {
-        return m4811constructorimpl(new AtomicInt(z ? 1 : 0));
+    public static AtomicInt m4177constructorimpl(boolean z) {
+        return m4176constructorimpl(new AtomicInt(z ? 1 : 0));
     }
 
     /* renamed from: get-impl  reason: not valid java name */
-    public static final boolean m4816getimpl(AtomicInt atomicInt) {
+    public static final boolean m4181getimpl(AtomicInt atomicInt) {
         return atomicInt.get() != 0;
     }
 
     /* renamed from: set-impl  reason: not valid java name */
-    public static final void m4819setimpl(AtomicInt atomicInt, boolean z) {
+    public static final void m4184setimpl(AtomicInt atomicInt, boolean z) {
         atomicInt.set(z ? 1 : 0);
     }
 
     /* renamed from: getAndSet-impl  reason: not valid java name */
-    public static final boolean m4817getAndSetimpl(AtomicInt atomicInt, boolean z) {
+    public static final boolean m4182getAndSetimpl(AtomicInt atomicInt, boolean z) {
         return atomicInt.compareAndSet(1, z ? 1 : 0);
     }
 }

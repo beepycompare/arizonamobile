@@ -7,25 +7,25 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextFieldCharSequenceKt {
     public static final CharSequence getTextBeforeSelection(TextFieldCharSequence textFieldCharSequence, int i) {
-        int m7699getMinimpl = TextRange.m7699getMinimpl(textFieldCharSequence.m1537getSelectiond9O1mEE());
-        int i2 = m7699getMinimpl - i;
-        if (((i ^ m7699getMinimpl) & (m7699getMinimpl ^ i2)) < 0) {
+        int m7001getMinimpl = TextRange.m7001getMinimpl(textFieldCharSequence.m1336getSelectiond9O1mEE());
+        int i2 = m7001getMinimpl - i;
+        if (((i ^ m7001getMinimpl) & (m7001getMinimpl ^ i2)) < 0) {
             i2 = 0;
         }
-        return textFieldCharSequence.subSequence(Math.max(0, i2), TextRange.m7699getMinimpl(textFieldCharSequence.m1537getSelectiond9O1mEE()));
+        return textFieldCharSequence.subSequence(Math.max(0, i2), TextRange.m7001getMinimpl(textFieldCharSequence.m1336getSelectiond9O1mEE()));
     }
 
     public static final CharSequence getTextAfterSelection(TextFieldCharSequence textFieldCharSequence, int i) {
-        int m7698getMaximpl = TextRange.m7698getMaximpl(textFieldCharSequence.m1537getSelectiond9O1mEE());
-        int m7698getMaximpl2 = TextRange.m7698getMaximpl(textFieldCharSequence.m1537getSelectiond9O1mEE());
-        int i2 = m7698getMaximpl2 + i;
-        if (((i ^ i2) & (m7698getMaximpl2 ^ i2)) < 0) {
+        int m7000getMaximpl = TextRange.m7000getMaximpl(textFieldCharSequence.m1336getSelectiond9O1mEE());
+        int m7000getMaximpl2 = TextRange.m7000getMaximpl(textFieldCharSequence.m1336getSelectiond9O1mEE());
+        int i2 = m7000getMaximpl2 + i;
+        if (((i ^ i2) & (m7000getMaximpl2 ^ i2)) < 0) {
             i2 = textFieldCharSequence.length();
         }
-        return textFieldCharSequence.subSequence(m7698getMaximpl, Math.min(i2, textFieldCharSequence.length()));
+        return textFieldCharSequence.subSequence(m7000getMaximpl, Math.min(i2, textFieldCharSequence.length()));
     }
 
     public static final CharSequence getSelectedText(TextFieldCharSequence textFieldCharSequence) {
-        return textFieldCharSequence.subSequence(TextRange.m7699getMinimpl(textFieldCharSequence.m1537getSelectiond9O1mEE()), TextRange.m7698getMaximpl(textFieldCharSequence.m1537getSelectiond9O1mEE()));
+        return textFieldCharSequence.subSequence(TextRange.m7001getMinimpl(textFieldCharSequence.m1336getSelectiond9O1mEE()), TextRange.m7000getMaximpl(textFieldCharSequence.m1336getSelectiond9O1mEE()));
     }
 }

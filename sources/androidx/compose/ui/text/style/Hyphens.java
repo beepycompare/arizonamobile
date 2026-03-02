@@ -11,45 +11,45 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Hyphens {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m8022constructorimpl(1);
-    private static final int Auto = m8022constructorimpl(2);
-    private static final int Unspecified = m8022constructorimpl(0);
+    private static final int None = m7319constructorimpl(1);
+    private static final int Auto = m7319constructorimpl(2);
+    private static final int Unspecified = m7319constructorimpl(0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Hyphens m8021boximpl(int i) {
+    public static final /* synthetic */ Hyphens m7318boximpl(int i) {
         return new Hyphens(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m8022constructorimpl(int i) {
+    public static int m7319constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8023equalsimpl(int i, Object obj) {
-        return (obj instanceof Hyphens) && i == ((Hyphens) obj).m8027unboximpl();
+    public static boolean m7320equalsimpl(int i, Object obj) {
+        return (obj instanceof Hyphens) && i == ((Hyphens) obj).m7324unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8024equalsimpl0(int i, int i2) {
+    public static final boolean m7321equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8025hashCodeimpl(int i) {
+    public static int m7322hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m8023equalsimpl(this.value, obj);
+        return m7320equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m8025hashCodeimpl(this.value);
+        return m7322hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m8027unboximpl() {
+    public final /* synthetic */ int m7324unboximpl() {
         return this.value;
     }
 
@@ -65,22 +65,22 @@ public final class Hyphens {
         }
 
         /* renamed from: getNone-vmbZdU8  reason: not valid java name */
-        public final int m8029getNonevmbZdU8() {
+        public final int m7326getNonevmbZdU8() {
             return Hyphens.None;
         }
 
         /* renamed from: getAuto-vmbZdU8  reason: not valid java name */
-        public final int m8028getAutovmbZdU8() {
+        public final int m7325getAutovmbZdU8() {
             return Hyphens.Auto;
         }
 
         /* renamed from: getUnspecified-vmbZdU8  reason: not valid java name */
-        public final int m8030getUnspecifiedvmbZdU8() {
+        public final int m7327getUnspecifiedvmbZdU8() {
             return Hyphens.Unspecified;
         }
 
         /* renamed from: valueOf-kPa1_AA  reason: not valid java name */
-        public final int m8031valueOfkPa1_AA(int i) {
+        public final int m7328valueOfkPa1_AA(int i) {
             boolean z = false;
             if (i >= 0 && i < 3) {
                 z = true;
@@ -88,7 +88,7 @@ public final class Hyphens {
             if (!z) {
                 InlineClassHelperKt.throwIllegalArgumentException("The given value=" + i + " is not recognized by Hyphens.");
             }
-            return Hyphens.m8022constructorimpl(i);
+            return Hyphens.m7319constructorimpl(i);
         }
     }
 
@@ -101,11 +101,11 @@ public final class Hyphens {
     }
 
     public String toString() {
-        return m8026toStringimpl(this.value);
+        return m7323toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8026toStringimpl(int i) {
-        return m8024equalsimpl0(i, None) ? "Hyphens.None" : m8024equalsimpl0(i, Auto) ? "Hyphens.Auto" : m8024equalsimpl0(i, Unspecified) ? "Hyphens.Unspecified" : "Invalid";
+    public static String m7323toStringimpl(int i) {
+        return m7321equalsimpl0(i, None) ? "Hyphens.None" : m7321equalsimpl0(i, Auto) ? "Hyphens.Auto" : m7321equalsimpl0(i, Unspecified) ? "Hyphens.Unspecified" : "Invalid";
     }
 }

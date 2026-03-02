@@ -57,10 +57,11 @@ public final class SingleObserveOn<T> extends Single<T> {
         @Override // java.lang.Runnable
         public void run() {
             Throwable th = this.error;
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (th != null) {
-                this.downstream.onError(th);
+                singleObserver.onError(th);
             } else {
-                this.downstream.onSuccess((T) this.value);
+                singleObserver.onSuccess((T) this.value);
             }
         }
 

@@ -6,8 +6,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateRepositoryImpl.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.data.repositories.DonateRepositoryImpl", f = "DonateRepositoryImpl.kt", i = {}, l = {44}, m = "getBoost", n = {}, s = {}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.data.repositories.DonateRepositoryImpl", f = "DonateRepositoryImpl.kt", i = {}, l = {44}, m = "getBoost", n = {}, nl = {45}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateRepositoryImpl$getBoost$1 extends ContinuationImpl {
     int label;

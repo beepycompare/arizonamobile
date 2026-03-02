@@ -141,11 +141,13 @@ public final class VersionRequirement {
         public final String asString() {
             StringBuilder append;
             int i;
-            if (this.patch == 0) {
-                append = new StringBuilder().append(this.major).append('.');
+            int i2 = this.patch;
+            int i3 = this.major;
+            if (i2 == 0) {
+                append = new StringBuilder().append(i3).append('.');
                 i = this.minor;
             } else {
-                append = new StringBuilder().append(this.major).append('.').append(this.minor).append('.');
+                append = new StringBuilder().append(i3).append('.').append(this.minor).append('.');
                 i = this.patch;
             }
             return append.append(i).toString();

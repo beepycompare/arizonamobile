@@ -10,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextFieldHandleState {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final TextFieldHandleState Hidden = new TextFieldHandleState(false, Offset.Companion.m5194getUnspecifiedF1C5BW0(), 0.0f, ResolvedTextDirection.Ltr, false, null);
+    private static final TextFieldHandleState Hidden = new TextFieldHandleState(false, Offset.Companion.m4542getUnspecifiedF1C5BW0(), 0.0f, ResolvedTextDirection.Ltr, false, null);
     private final ResolvedTextDirection direction;
     private final boolean handlesCrossed;
     private final float lineHeight;
@@ -22,7 +22,7 @@ public final class TextFieldHandleState {
     }
 
     /* renamed from: copy-YqVAtuI$default  reason: not valid java name */
-    public static /* synthetic */ TextFieldHandleState m1717copyYqVAtuI$default(TextFieldHandleState textFieldHandleState, boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2, int i, Object obj) {
+    public static /* synthetic */ TextFieldHandleState m1489copyYqVAtuI$default(TextFieldHandleState textFieldHandleState, boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2, int i, Object obj) {
         if ((i & 1) != 0) {
             z = textFieldHandleState.visible;
         }
@@ -40,7 +40,7 @@ public final class TextFieldHandleState {
         }
         boolean z3 = z2;
         float f2 = f;
-        return textFieldHandleState.m1719copyYqVAtuI(z, j, f2, resolvedTextDirection, z3);
+        return textFieldHandleState.m1491copyYqVAtuI(z, j, f2, resolvedTextDirection, z3);
     }
 
     public final boolean component1() {
@@ -48,7 +48,7 @@ public final class TextFieldHandleState {
     }
 
     /* renamed from: component2-F1C5BW0  reason: not valid java name */
-    public final long m1718component2F1C5BW0() {
+    public final long m1490component2F1C5BW0() {
         return this.position;
     }
 
@@ -65,7 +65,7 @@ public final class TextFieldHandleState {
     }
 
     /* renamed from: copy-YqVAtuI  reason: not valid java name */
-    public final TextFieldHandleState m1719copyYqVAtuI(boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2) {
+    public final TextFieldHandleState m1491copyYqVAtuI(boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2) {
         return new TextFieldHandleState(z, j, f, resolvedTextDirection, z2, null);
     }
 
@@ -75,17 +75,17 @@ public final class TextFieldHandleState {
         }
         if (obj instanceof TextFieldHandleState) {
             TextFieldHandleState textFieldHandleState = (TextFieldHandleState) obj;
-            return this.visible == textFieldHandleState.visible && Offset.m5176equalsimpl0(this.position, textFieldHandleState.position) && Float.compare(this.lineHeight, textFieldHandleState.lineHeight) == 0 && this.direction == textFieldHandleState.direction && this.handlesCrossed == textFieldHandleState.handlesCrossed;
+            return this.visible == textFieldHandleState.visible && Offset.m4524equalsimpl0(this.position, textFieldHandleState.position) && Float.compare(this.lineHeight, textFieldHandleState.lineHeight) == 0 && this.direction == textFieldHandleState.direction && this.handlesCrossed == textFieldHandleState.handlesCrossed;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((Boolean.hashCode(this.visible) * 31) + Offset.m5181hashCodeimpl(this.position)) * 31) + Float.hashCode(this.lineHeight)) * 31) + this.direction.hashCode()) * 31) + Boolean.hashCode(this.handlesCrossed);
+        return (((((((Boolean.hashCode(this.visible) * 31) + Offset.m4529hashCodeimpl(this.position)) * 31) + Float.hashCode(this.lineHeight)) * 31) + this.direction.hashCode()) * 31) + Boolean.hashCode(this.handlesCrossed);
     }
 
     public String toString() {
-        return "TextFieldHandleState(visible=" + this.visible + ", position=" + ((Object) Offset.m5187toStringimpl(this.position)) + ", lineHeight=" + this.lineHeight + ", direction=" + this.direction + ", handlesCrossed=" + this.handlesCrossed + ')';
+        return "TextFieldHandleState(visible=" + this.visible + ", position=" + ((Object) Offset.m4535toStringimpl(this.position)) + ", lineHeight=" + this.lineHeight + ", direction=" + this.direction + ", handlesCrossed=" + this.handlesCrossed + ')';
     }
 
     private TextFieldHandleState(boolean z, long j, float f, ResolvedTextDirection resolvedTextDirection, boolean z2) {
@@ -101,7 +101,7 @@ public final class TextFieldHandleState {
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m1720getPositionF1C5BW0() {
+    public final long m1492getPositionF1C5BW0() {
         return this.position;
     }
 

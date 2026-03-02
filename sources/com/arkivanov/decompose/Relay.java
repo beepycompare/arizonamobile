@@ -78,7 +78,7 @@ public final class Relay<T> {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void subscribe$lambda$7(Relay relay, Function1 function1) {
         synchronized (relay.lock) {
             relay.observers = SetsKt.minus(relay.observers, function1);

@@ -8,8 +8,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Separators.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.SeparatorState", f = "Separators.kt", i = {0, 0, 0, 0, 0}, l = {564}, m = "onStaticList", n = {"this", NotificationCompat.CATEGORY_EVENT, "data", "item", CmcdData.OBJECT_TYPE_INIT_SEGMENT}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.SeparatorState", f = "Separators.kt", i = {0, 0, 0, 0}, l = {575}, m = "onStaticList", n = {NotificationCompat.CATEGORY_EVENT, "data", "item", CmcdData.OBJECT_TYPE_INIT_SEGMENT}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class SeparatorState$onStaticList$1 extends ContinuationImpl {
     int I$0;
@@ -17,7 +17,6 @@ public final class SeparatorState$onStaticList$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;
     Object L$2;
-    Object L$3;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ SeparatorState<R, T> this$0;

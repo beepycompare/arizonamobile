@@ -78,11 +78,12 @@ public class CircleIndicator2 extends BaseCircleIndicator {
                 if (itemCount == CircleIndicator2.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator2.this.mLastPosition < itemCount) {
-                    CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                int i = CircleIndicator2.this.mLastPosition;
+                CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                if (i < itemCount) {
                     circleIndicator2.mLastPosition = circleIndicator2.getSnapPosition(circleIndicator2.mRecyclerView.getLayoutManager());
                 } else {
-                    CircleIndicator2.this.mLastPosition = -1;
+                    circleIndicator2.mLastPosition = -1;
                 }
                 CircleIndicator2.this.createIndicators();
             }
@@ -144,11 +145,12 @@ public class CircleIndicator2 extends BaseCircleIndicator {
                 if (itemCount == CircleIndicator2.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator2.this.mLastPosition < itemCount) {
-                    CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                int i = CircleIndicator2.this.mLastPosition;
+                CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                if (i < itemCount) {
                     circleIndicator2.mLastPosition = circleIndicator2.getSnapPosition(circleIndicator2.mRecyclerView.getLayoutManager());
                 } else {
-                    CircleIndicator2.this.mLastPosition = -1;
+                    circleIndicator2.mLastPosition = -1;
                 }
                 CircleIndicator2.this.createIndicators();
             }
@@ -210,11 +212,12 @@ public class CircleIndicator2 extends BaseCircleIndicator {
                 if (itemCount == CircleIndicator2.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator2.this.mLastPosition < itemCount) {
-                    CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                int i2 = CircleIndicator2.this.mLastPosition;
+                CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                if (i2 < itemCount) {
                     circleIndicator2.mLastPosition = circleIndicator2.getSnapPosition(circleIndicator2.mRecyclerView.getLayoutManager());
                 } else {
-                    CircleIndicator2.this.mLastPosition = -1;
+                    circleIndicator2.mLastPosition = -1;
                 }
                 CircleIndicator2.this.createIndicators();
             }
@@ -276,11 +279,12 @@ public class CircleIndicator2 extends BaseCircleIndicator {
                 if (itemCount == CircleIndicator2.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator2.this.mLastPosition < itemCount) {
-                    CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                int i22 = CircleIndicator2.this.mLastPosition;
+                CircleIndicator2 circleIndicator2 = CircleIndicator2.this;
+                if (i22 < itemCount) {
                     circleIndicator2.mLastPosition = circleIndicator2.getSnapPosition(circleIndicator2.mRecyclerView.getLayoutManager());
                 } else {
-                    CircleIndicator2.this.mLastPosition = -1;
+                    circleIndicator2.mLastPosition = -1;
                 }
                 CircleIndicator2.this.createIndicators();
             }

@@ -14,11 +14,11 @@ public final class Yg implements Runnable {
     public final void run() {
         TimePassedChecker timePassedChecker = new TimePassedChecker();
         SystemTimeProvider systemTimeProvider = new SystemTimeProvider();
-        Ze y = C0449na.I.y();
+        Ze y = C0448na.I.y();
         if (timePassedChecker.didTimePassMillis(y.f(), TimeUnit.DAYS.toMillis(1L), "[ReportKotlinVersionTask]")) {
             KotlinVersion kotlinVersion = KotlinVersion.CURRENT;
             Map mapOf = MapsKt.mapOf(TuplesKt.to("major", Integer.valueOf(kotlinVersion.getMajor())), TuplesKt.to("minor", Integer.valueOf(kotlinVersion.getMinor())), TuplesKt.to("patch", Integer.valueOf(kotlinVersion.getPatch())), TuplesKt.to(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, new StringBuilder().append(kotlinVersion.getMajor()).append('.').append(kotlinVersion.getMinor()).append('.').append(kotlinVersion.getPatch()).toString()));
-            Qj qj = AbstractC0483oj.f1158a;
+            Qj qj = AbstractC0482oj.f1158a;
             qj.getClass();
             qj.a(new Pj("kotlin_version", mapOf));
             y.c(systemTimeProvider.currentTimeMillis()).b();

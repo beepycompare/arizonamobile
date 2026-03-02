@@ -44,12 +44,12 @@ public final class NavigationRailOverrideScope {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2787getContainerColor0d7_KjU() {
+    public final long m2343getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2788getContentColor0d7_KjU() {
+    public final long m2344getContentColor0d7_KjU() {
         return this.contentColor;
     }
 

@@ -9,12 +9,12 @@ public final class DayOfWeekKt {
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "This overload is only kept for binary compatibility")
     public static final /* synthetic */ java.time.DayOfWeek DayOfWeek(int i) {
         java.time.DayOfWeek javaDayOfWeek;
-        javaDayOfWeek = ConvertersKt.toJavaDayOfWeek(m11868DayOfWeek(i));
+        javaDayOfWeek = ConvertersKt.toJavaDayOfWeek(m10778DayOfWeek(i));
         return javaDayOfWeek;
     }
 
     /* renamed from: DayOfWeek  reason: collision with other method in class */
-    public static final DayOfWeek m11868DayOfWeek(int i) {
+    public static final DayOfWeek m10778DayOfWeek(int i) {
         return DayOfWeekKt__DayOfWeekKt.DayOfWeek(i);
     }
 

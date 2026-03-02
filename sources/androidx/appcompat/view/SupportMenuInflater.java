@@ -246,10 +246,13 @@ public class SupportMenuInflater extends MenuInflater {
         @Override // android.view.MenuItem.OnMenuItemClickListener
         public boolean onMenuItemClick(MenuItem menuItem) {
             try {
-                if (this.mMethod.getReturnType() == Boolean.TYPE) {
-                    return ((Boolean) this.mMethod.invoke(this.mRealOwner, menuItem)).booleanValue();
+                Class<?> returnType = this.mMethod.getReturnType();
+                Class<?> cls = Boolean.TYPE;
+                Method method = this.mMethod;
+                if (returnType == cls) {
+                    return ((Boolean) method.invoke(this.mRealOwner, menuItem)).booleanValue();
                 }
-                this.mMethod.invoke(this.mRealOwner, menuItem);
+                method.invoke(this.mRealOwner, menuItem);
                 return true;
             } catch (Exception e) {
                 throw new RuntimeException(e);

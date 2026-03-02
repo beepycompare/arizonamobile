@@ -264,10 +264,12 @@ public final class AmrExtractor implements Extractor {
     }
 
     private int getFrameSizeInBytes(int i) throws ParserException {
-        if (isValidFrameType(i)) {
-            return this.isWideBand ? frameSizeBytesByTypeWb[i] : frameSizeBytesByTypeNb[i];
+        boolean isValidFrameType = isValidFrameType(i);
+        boolean z = this.isWideBand;
+        if (isValidFrameType) {
+            return z ? frameSizeBytesByTypeWb[i] : frameSizeBytesByTypeNb[i];
         }
-        throw ParserException.createForMalformedContainer("Illegal AMR " + (this.isWideBand ? "WB" : "NB") + " frame type " + i, null);
+        throw ParserException.createForMalformedContainer("Illegal AMR " + (z ? "WB" : "NB") + " frame type " + i, null);
     }
 
     private boolean isValidFrameType(int i) {

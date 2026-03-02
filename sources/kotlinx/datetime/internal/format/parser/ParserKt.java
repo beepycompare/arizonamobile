@@ -119,16 +119,14 @@ public final class ParserKt {
         String sb = ((StringBuilder) CollectionsKt.joinTo$default(list, new StringBuilder(list.size() * 33), ", ", "Errors: ", null, 0, null, new Function1() { // from class: kotlinx.datetime.internal.format.parser.ParserKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence formatError$lambda$8;
-                formatError$lambda$8 = ParserKt.formatError$lambda$8((ParseError) obj);
-                return formatError$lambda$8;
+                return ParserKt.formatError$lambda$8((ParseError) obj);
             }
         }, 56, null)).toString();
         Intrinsics.checkNotNullExpressionValue(sb, "toString(...)");
         return sb;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence formatError$lambda$8(ParseError it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return "position " + it.getPosition() + ": '" + it.getMessage().invoke() + '\'';

@@ -36,13 +36,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u001e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0000\n\u0002\u0010\"\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a%\u0010\u0005\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00070\u00062\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\tH\u0001¢\u0006\u0002\u0010\n\u001a!\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00070\f2\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\tH\u0001¢\u0006\u0002\u0010\r¨\u0006\u000e²\u0006\u0010\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00070\u0010X\u008a\u0084\u0002²\u0006\u0010\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00070\u0012X\u008a\u0084\u0002"}, d2 = {"DialogHost", "", "dialogNavigator", "Landroidx/navigation/compose/DialogNavigator;", "(Landroidx/navigation/compose/DialogNavigator;Landroidx/compose/runtime/Composer;I)V", "PopulateVisibleList", "", "Landroidx/navigation/NavBackStackEntry;", "backStack", "", "(Ljava/util/List;Ljava/util/Collection;Landroidx/compose/runtime/Composer;I)V", "rememberVisibleList", "Landroidx/compose/runtime/snapshots/SnapshotStateList;", "(Ljava/util/Collection;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/snapshots/SnapshotStateList;", "navigation-compose_release", "dialogBackStack", "", "transitionInProgress", ""}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class DialogHostKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DialogHost$lambda$7(DialogNavigator dialogNavigator, int i, Composer composer, int i2) {
         DialogHost(dialogNavigator, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PopulateVisibleList$lambda$13(List list, Collection collection, int i, Composer composer, int i2) {
         PopulateVisibleList(list, collection, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -85,9 +85,7 @@ public final class DialogHostKt {
                     rememberedValue2 = new Function0() { // from class: androidx.navigation.compose.DialogHostKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit DialogHost$lambda$5$lambda$4$lambda$3;
-                            DialogHost$lambda$5$lambda$4$lambda$3 = DialogHostKt.DialogHost$lambda$5$lambda$4$lambda$3(DialogNavigator.this, navBackStackEntry);
-                            return DialogHost$lambda$5$lambda$4$lambda$3;
+                            return DialogHostKt.DialogHost$lambda$5$lambda$4$lambda$3(DialogNavigator.this, navBackStackEntry);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -119,15 +117,13 @@ public final class DialogHostKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.DialogHostKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DialogHost$lambda$7;
-                    DialogHost$lambda$7 = DialogHostKt.DialogHost$lambda$7(DialogNavigator.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DialogHost$lambda$7;
+                    return DialogHostKt.DialogHost$lambda$7(DialogNavigator.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DialogHost$lambda$5$lambda$4$lambda$3(DialogNavigator dialogNavigator, NavBackStackEntry navBackStackEntry) {
         dialogNavigator.dismiss$navigation_compose_release(navBackStackEntry);
         return Unit.INSTANCE;
@@ -157,9 +153,7 @@ public final class DialogHostKt {
                     rememberedValue = new Function1() { // from class: androidx.navigation.compose.DialogHostKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            DisposableEffectResult PopulateVisibleList$lambda$12$lambda$11$lambda$10;
-                            PopulateVisibleList$lambda$12$lambda$11$lambda$10 = DialogHostKt.PopulateVisibleList$lambda$12$lambda$11$lambda$10(NavBackStackEntry.this, booleanValue, list, (DisposableEffectScope) obj);
-                            return PopulateVisibleList$lambda$12$lambda$11$lambda$10;
+                            return DialogHostKt.PopulateVisibleList$lambda$12$lambda$11$lambda$10(NavBackStackEntry.this, booleanValue, list, (DisposableEffectScope) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -178,15 +172,13 @@ public final class DialogHostKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.DialogHostKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PopulateVisibleList$lambda$13;
-                    PopulateVisibleList$lambda$13 = DialogHostKt.PopulateVisibleList$lambda$13(list, collection, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return PopulateVisibleList$lambda$13;
+                    return DialogHostKt.PopulateVisibleList$lambda$13(list, collection, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult PopulateVisibleList$lambda$12$lambda$11$lambda$10(final NavBackStackEntry navBackStackEntry, final boolean z, final List list, DisposableEffectScope disposableEffectScope) {
         final LifecycleEventObserver lifecycleEventObserver = new LifecycleEventObserver() { // from class: androidx.navigation.compose.DialogHostKt$$ExternalSyntheticLambda2
             @Override // androidx.lifecycle.LifecycleEventObserver
@@ -203,7 +195,7 @@ public final class DialogHostKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void PopulateVisibleList$lambda$12$lambda$11$lambda$10$lambda$8(boolean z, List list, NavBackStackEntry navBackStackEntry, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         if (z && !list.contains(navBackStackEntry)) {
             list.add(navBackStackEntry);

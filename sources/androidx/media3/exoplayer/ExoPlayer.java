@@ -39,7 +39,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface ExoPlayer extends Player {
     public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
     public static final long DEFAULT_RELEASE_TIMEOUT_MS = 500;
@@ -48,7 +48,7 @@ public interface ExoPlayer extends Player {
     public static final int DEFAULT_STUCK_PLAYING_NOT_ENDING_TIMEOUT_MS = 60000;
     public static final int DEFAULT_STUCK_SUPPRESSED_DETECTION_TIMEOUT_MS = 600000;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface AudioOffloadListener {
         default void onOffloadedPlayback(boolean z) {
         }
@@ -227,7 +227,7 @@ public interface ExoPlayer extends Player {
 
     void setWakeMode(int i);
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class PreloadConfiguration {
         public static final PreloadConfiguration DEFAULT = new PreloadConfiguration(C.TIME_UNSET);
         public final long targetPreloadDurationUs;
@@ -237,12 +237,13 @@ public interface ExoPlayer extends Player {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         public static boolean experimentalEnableStuckPlayingDetection = true;
         Function<Clock, AnalyticsCollector> analyticsCollectorFunction;
         AudioAttributes audioAttributes;
         AudioOutputProvider audioOutputProvider;
+        boolean avoidLoadingWhileEnded;
         Supplier<BandwidthMeter> bandwidthMeterSupplier;
         boolean buildCalled;
         Clock clock;
@@ -540,6 +541,7 @@ public interface ExoPlayer extends Player {
             this.playerName = "";
             this.priority = -1000;
             this.suitableOutputChecker = new DefaultSuitableOutputChecker();
+            this.avoidLoadingWhileEnded = true;
         }
 
         public Builder experimentalSetForegroundModeTimeoutMs(long j) {
@@ -551,6 +553,12 @@ public interface ExoPlayer extends Player {
         public Builder experimentalSetDynamicSchedulingEnabled(boolean z) {
             Preconditions.checkState(!this.buildCalled);
             this.dynamicSchedulingEnabled = z;
+            return this;
+        }
+
+        public Builder experimentalAvoidLoadingWhileEnded(boolean z) {
+            Preconditions.checkState(!this.buildCalled);
+            this.avoidLoadingWhileEnded = z;
             return this;
         }
 

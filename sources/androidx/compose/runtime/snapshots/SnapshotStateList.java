@@ -150,16 +150,11 @@ public final class SnapshotStateList<T> implements Parcelable, StateObject, List
         return SnapshotStateListKt.mutateBoolean(this, new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotStateList$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean addAll$lambda$0;
-                addAll$lambda$0 = SnapshotStateList.addAll$lambda$0(i, collection, (List) obj);
-                return Boolean.valueOf(addAll$lambda$0);
+                boolean addAll;
+                addAll = ((List) obj).addAll(i, collection);
+                return Boolean.valueOf(addAll);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean addAll$lambda$0(int i, Collection collection, List list) {
-        return list.addAll(i, collection);
     }
 
     public T removeAt(int i) {
@@ -200,16 +195,11 @@ public final class SnapshotStateList<T> implements Parcelable, StateObject, List
         return SnapshotStateListKt.mutateBoolean(this, new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotStateList$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean retainAll$lambda$0;
-                retainAll$lambda$0 = SnapshotStateList.retainAll$lambda$0(collection, (List) obj);
-                return Boolean.valueOf(retainAll$lambda$0);
+                boolean retainAll;
+                retainAll = ((List) obj).retainAll(collection);
+                return Boolean.valueOf(retainAll);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean retainAll$lambda$0(Collection collection, List list) {
-        return list.retainAll(collection);
     }
 
     @Override // java.util.List

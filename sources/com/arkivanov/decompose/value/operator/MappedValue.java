@@ -48,7 +48,7 @@ public final class MappedValue<T, R> extends Value<R> {
         return r;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribe$lambda$1(Function1 function1, MappedValue mappedValue, Object it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(mappedValue.mapCached(it));
@@ -61,9 +61,7 @@ public final class MappedValue<T, R> extends Value<R> {
         return this.upstream.subscribe(new Function1() { // from class: com.arkivanov.decompose.value.operator.MappedValue$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subscribe$lambda$1;
-                subscribe$lambda$1 = MappedValue.subscribe$lambda$1(Function1.this, this, obj);
-                return subscribe$lambda$1;
+                return MappedValue.subscribe$lambda$1(Function1.this, this, obj);
             }
         });
     }

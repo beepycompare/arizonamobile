@@ -23,4 +23,9 @@ public class ForwardingSeekMap implements SeekMap {
     public SeekMap.SeekPoints getSeekPoints(long j) {
         return this.seekMap.getSeekPoints(j);
     }
+
+    @Override // androidx.media3.extractor.SeekMap
+    public boolean isEstimated() {
+        return this.seekMap.isEstimated();
+    }
 }

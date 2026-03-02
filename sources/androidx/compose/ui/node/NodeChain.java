@@ -389,7 +389,7 @@ public final class NodeChain {
                 nodeCoordinator.setWrappedBy$ui(parent$ui2 != null ? parent$ui2.getInnerCoordinator$ui() : null);
                 this.outerCoordinator = nodeCoordinator;
                 return;
-            } else if ((NodeKind.m7195constructorimpl(2) & parent$ui.getKindSet$ui()) != 0) {
+            } else if ((NodeKind.m6535constructorimpl(2) & parent$ui.getKindSet$ui()) != 0) {
                 return;
             } else {
                 parent$ui.updateCoordinator$ui(nodeCoordinator);
@@ -470,8 +470,10 @@ public final class NodeChain {
             if (logger != null) {
                 logger.nodeInserted(i2, i2, this.after.content[i2], node, this.node);
             }
-            if (this.shouldAttachOnInsert) {
-                Modifier.Node child$ui = this.node.getChild$ui();
+            boolean z = this.shouldAttachOnInsert;
+            Modifier.Node node2 = this.node;
+            if (z) {
+                Modifier.Node child$ui = node2.getChild$ui();
                 Intrinsics.checkNotNull(child$ui);
                 NodeCoordinator coordinator$ui = child$ui.getCoordinator$ui();
                 Intrinsics.checkNotNull(coordinator$ui);
@@ -492,7 +494,7 @@ public final class NodeChain {
                 NodeKindKt.autoInvalidateInsertedNode(this.node);
                 return;
             }
-            this.node.setInsertedNodeAwaitingAttachForInvalidation$ui(true);
+            node2.setInsertedNodeAwaitingAttachForInvalidation$ui(true);
         }
 
         @Override // androidx.compose.ui.node.DiffCallback
@@ -503,7 +505,7 @@ public final class NodeChain {
             if (logger != null) {
                 logger.nodeRemoved(i2, this.before.content[this.offset + i2], child$ui);
             }
-            if ((NodeKind.m7195constructorimpl(2) & child$ui.getKindSet$ui()) != 0) {
+            if ((NodeKind.m6535constructorimpl(2) & child$ui.getKindSet$ui()) != 0) {
                 NodeCoordinator coordinator$ui = child$ui.getCoordinator$ui();
                 Intrinsics.checkNotNull(coordinator$ui);
                 NodeCoordinator wrappedBy$ui = coordinator$ui.getWrappedBy$ui();
@@ -525,8 +527,10 @@ public final class NodeChain {
             this.node = child$ui;
             Modifier.Element element = this.before.content[this.offset + i];
             Modifier.Element element2 = this.after.content[this.offset + i2];
-            if (!Intrinsics.areEqual(element, element2)) {
-                NodeChain.this.updateNode(element, element2, this.node);
+            boolean areEqual = Intrinsics.areEqual(element, element2);
+            NodeChain nodeChain = NodeChain.this;
+            if (!areEqual) {
+                nodeChain.updateNode(element, element2, this.node);
                 Logger logger = NodeChain.this.logger;
                 if (logger != null) {
                     int i3 = this.offset;
@@ -535,7 +539,7 @@ public final class NodeChain {
                 }
                 return;
             }
-            Logger logger2 = NodeChain.this.logger;
+            Logger logger2 = nodeChain.logger;
             if (logger2 != null) {
                 int i4 = this.offset;
                 logger2.nodeReused(i4 + i, i4 + i2, element, element2, this.node);
@@ -662,7 +666,7 @@ public final class NodeChain {
     }
 
     /* renamed from: has-H91voCI$ui */
-    public final boolean m7156hasH91voCI$ui(int i) {
+    public final boolean m6496hasH91voCI$ui(int i) {
         return (i & getAggregateChildKindSet()) != 0;
     }
 
@@ -742,7 +746,7 @@ public final class NodeChain {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: firstFromHead-aLcG6gQ$ui */
-    public final /* synthetic */ <T> T m7155firstFromHeadaLcG6gQ$ui(int i, Function1<? super T, Boolean> function1) {
+    public final /* synthetic */ <T> T m6495firstFromHeadaLcG6gQ$ui(int i, Function1<? super T, Boolean> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui = getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
                 if ((head$ui.getKindSet$ui() & i) != 0) {
@@ -796,7 +800,7 @@ public final class NodeChain {
     }
 
     /* renamed from: headToTail-aLcG6gQ$ui */
-    public final /* synthetic */ <T> void m7158headToTailaLcG6gQ$ui(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6498headToTailaLcG6gQ$ui(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui = getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
                 if ((head$ui.getKindSet$ui() & i) != 0) {
@@ -843,7 +847,7 @@ public final class NodeChain {
     }
 
     /* renamed from: tailToHead-aLcG6gQ$ui */
-    public final /* synthetic */ <T> void m7160tailToHeadaLcG6gQ$ui(int i, Function1<? super T, Unit> function1) {
+    public final /* synthetic */ <T> void m6500tailToHeadaLcG6gQ$ui(int i, Function1<? super T, Unit> function1) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui = getTail$ui(); tail$ui != null; tail$ui = tail$ui.getParent$ui()) {
                 if ((tail$ui.getKindSet$ui() & i) != 0) {
@@ -891,7 +895,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v23 */
     /* JADX WARN: Type inference failed for: r2v25 */
     /* renamed from: tail-H91voCI$ui */
-    public final /* synthetic */ <T> T m7159tailH91voCI$ui(int i) {
+    public final /* synthetic */ <T> T m6499tailH91voCI$ui(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node tail$ui = getTail$ui(); tail$ui != null; tail$ui = tail$ui.getParent$ui()) {
                 if ((tail$ui.getKindSet$ui() & i) != 0) {
@@ -944,7 +948,7 @@ public final class NodeChain {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: head-H91voCI$ui */
-    public final /* synthetic */ <T> T m7157headH91voCI$ui(int i) {
+    public final /* synthetic */ <T> T m6497headH91voCI$ui(int i) {
         if ((getAggregateChildKindSet() & i) != 0) {
             for (Modifier.Node head$ui = getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
                 if ((head$ui.getKindSet$ui() & i) != 0) {

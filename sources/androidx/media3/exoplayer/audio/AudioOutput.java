@@ -4,10 +4,10 @@ import android.media.AudioDeviceInfo;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface AudioOutput {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         void onOffloadDataRequest();
 
@@ -67,7 +67,7 @@ public interface AudioOutput {
 
     boolean write(ByteBuffer byteBuffer, int i, long j) throws WriteException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class WriteException extends Exception {
         public final int errorCode;
         public final boolean isRecoverable;

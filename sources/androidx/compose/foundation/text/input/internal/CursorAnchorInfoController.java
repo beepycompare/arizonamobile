@@ -32,7 +32,7 @@ public final class CursorAnchorInfoController {
     private final TransformedTextFieldState textFieldState;
     private final TextLayoutState textLayoutState;
     private final CursorAnchorInfo.Builder builder = new CursorAnchorInfo.Builder();
-    private final float[] matrix = Matrix.m5670constructorimpl$default(null, 1, null);
+    private final float[] matrix = Matrix.m5016constructorimpl$default(null, 1, null);
     private final android.graphics.Matrix androidMatrix = new android.graphics.Matrix();
 
     public CursorAnchorInfoController(TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, ComposeInputMethodManager composeInputMethodManager, CoroutineScope coroutineScope) {
@@ -106,8 +106,9 @@ public final class CursorAnchorInfoController {
 
     private final void startOrStopMonitoring() {
         Job launch$default;
-        if (this.monitorEnabled) {
-            Job job = this.monitorJob;
+        boolean z = this.monitorEnabled;
+        Job job = this.monitorJob;
+        if (z) {
             if (job == null || !job.isActive()) {
                 launch$default = BuildersKt__Builders_commonKt.launch$default(this.monitorScope, null, CoroutineStart.UNDISPATCHED, new CursorAnchorInfoController$startOrStopMonitoring$1(this, null), 1, null);
                 this.monitorJob = launch$default;
@@ -115,9 +116,8 @@ public final class CursorAnchorInfoController {
             }
             return;
         }
-        Job job2 = this.monitorJob;
-        if (job2 != null) {
-            Job.DefaultImpls.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+        if (job != null) {
+            Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         this.monitorJob = null;
     }
@@ -144,10 +144,10 @@ public final class CursorAnchorInfoController {
                         return null;
                     }
                     TextFieldCharSequence visualText = this.textFieldState.getVisualText();
-                    Matrix.m5679resetimpl(this.matrix);
-                    textLayoutNodeCoordinates.mo6891transformToScreen58bKbWc(this.matrix);
-                    AndroidMatrixConversions_androidKt.m5291setFromEL8BTi8(this.androidMatrix, this.matrix);
-                    return CursorAnchorInfoBuilder_androidKt.m1583buildvxqZcH0(this.builder, visualText, visualText.m1537getSelectiond9O1mEE(), visualText.m1536getCompositionMzsxiRA(), layoutResult, this.androidMatrix, SelectionManagerKt.visibleBounds(coreNodeCoordinates).m5216translatek4lQ0M(textLayoutNodeCoordinates.mo6884localPositionOfR5De75A(coreNodeCoordinates, Offset.Companion.m5195getZeroF1C5BW0())), SelectionManagerKt.visibleBounds(decoratorNodeCoordinates).m5216translatek4lQ0M(textLayoutNodeCoordinates.mo6884localPositionOfR5De75A(decoratorNodeCoordinates, Offset.Companion.m5195getZeroF1C5BW0())), this.includeInsertionMarker, this.includeCharacterBounds, this.includeEditorBounds, this.includeLineBounds);
+                    Matrix.m5025resetimpl(this.matrix);
+                    textLayoutNodeCoordinates.mo6232transformToScreen58bKbWc(this.matrix);
+                    AndroidMatrixConversions_androidKt.m4639setFromEL8BTi8(this.androidMatrix, this.matrix);
+                    return CursorAnchorInfoBuilder_androidKt.m1375buildvxqZcH0(this.builder, visualText, visualText.m1336getSelectiond9O1mEE(), visualText.m1335getCompositionMzsxiRA(), layoutResult, this.androidMatrix, SelectionManagerKt.visibleBounds(coreNodeCoordinates).m4564translatek4lQ0M(textLayoutNodeCoordinates.mo6225localPositionOfR5De75A(coreNodeCoordinates, Offset.Companion.m4543getZeroF1C5BW0())), SelectionManagerKt.visibleBounds(decoratorNodeCoordinates).m4564translatek4lQ0M(textLayoutNodeCoordinates.mo6225localPositionOfR5De75A(decoratorNodeCoordinates, Offset.Companion.m4543getZeroF1C5BW0())), this.includeInsertionMarker, this.includeCharacterBounds, this.includeEditorBounds, this.includeLineBounds);
                 }
             }
         }

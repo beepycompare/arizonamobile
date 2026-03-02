@@ -126,10 +126,12 @@ public final class PersistentOrderedMap<K, V> extends AbstractMap<K, V> implemen
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.collections.AbstractMap, java.util.Map, androidx.compose.runtime.external.kotlinx.collections.immutable.PersistentMap
     public PersistentOrderedMap<K, V> put(K k, V v) {
-        if (isEmpty()) {
-            return new PersistentOrderedMap<>(k, k, this.hashMap.put((PersistentHashMap<K, LinkedValue<V>>) k, (K) new LinkedValue<>(v)));
+        boolean isEmpty = isEmpty();
+        PersistentHashMap<K, LinkedValue<V>> persistentHashMap = this.hashMap;
+        if (isEmpty) {
+            return new PersistentOrderedMap<>(k, k, persistentHashMap.put((PersistentHashMap<K, LinkedValue<V>>) k, (K) new LinkedValue<>(v)));
         }
-        LinkedValue<V> linkedValue = this.hashMap.get(k);
+        LinkedValue<V> linkedValue = persistentHashMap.get(k);
         if (linkedValue != null) {
             if (linkedValue.getValue() == v) {
                 return this;

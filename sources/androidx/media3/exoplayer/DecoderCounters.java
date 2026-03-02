@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer;
 
 import androidx.media3.common.util.Util;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DecoderCounters {
     public int decoderInitCount;
     public int decoderReleaseCount;

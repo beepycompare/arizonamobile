@@ -167,7 +167,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         actionView.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Snackbar.this.m9901lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
+                Snackbar.this.m8931lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
             }
         });
         return this;
@@ -175,7 +175,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAction$0$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
-    public /* synthetic */ void m9901lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
+    public /* synthetic */ void m8931lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
         onClickListener.onClick(view);
         dispatchDismiss(1);
     }
@@ -186,9 +186,11 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         if (duration == -2) {
             return -2;
         }
-        if (Build.VERSION.SDK_INT >= 29) {
-            return this.accessibilityManager.getRecommendedTimeoutMillis(duration, (this.hasAction ? 4 : 0) | 3);
-        } else if (this.hasAction && this.accessibilityManager.isTouchExplorationEnabled()) {
+        int i = Build.VERSION.SDK_INT;
+        boolean z = this.hasAction;
+        if (i >= 29) {
+            return this.accessibilityManager.getRecommendedTimeoutMillis(duration, (z ? 4 : 0) | 3);
+        } else if (z && this.accessibilityManager.isTouchExplorationEnabled()) {
             return -2;
         } else {
             return duration;

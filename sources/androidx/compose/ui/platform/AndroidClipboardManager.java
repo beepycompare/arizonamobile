@@ -64,11 +64,13 @@ public final class AndroidClipboardManager implements ClipboardManager {
     @Override // androidx.compose.ui.platform.ClipboardManager
     public void setClip(ClipEntry clipEntry) {
         if (clipEntry == null) {
-            if (Build.VERSION.SDK_INT >= 28) {
-                Api28ClipboardManagerClipClear.clearPrimaryClip(this.clipboardManager);
+            int i = Build.VERSION.SDK_INT;
+            android.content.ClipboardManager clipboardManager = this.clipboardManager;
+            if (i >= 28) {
+                Api28ClipboardManagerClipClear.clearPrimaryClip(clipboardManager);
                 return;
             } else {
-                this.clipboardManager.setPrimaryClip(ClipData.newPlainText("", ""));
+                clipboardManager.setPrimaryClip(ClipData.newPlainText("", ""));
                 return;
             }
         }

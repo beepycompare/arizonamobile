@@ -48,7 +48,7 @@ public final class ChainedPlatformTextInputInterceptor$textInputSession$2 extend
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1 chainedPlatformTextInputInterceptor$textInputSession$2$scope$1 = new ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1((PlatformTextInputSessionScope) this.L$0, SessionMutex.m4912constructorimpl(), this.this$0);
+            ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1 chainedPlatformTextInputInterceptor$textInputSession$2$scope$1 = new ChainedPlatformTextInputInterceptor$textInputSession$2$scope$1((PlatformTextInputSessionScope) this.L$0, SessionMutex.m4260constructorimpl(), this.this$0);
             Function2<PlatformTextInputSessionScope, Continuation<?>, Object> function2 = this.$session;
             this.label = 1;
             if (function2.invoke(chainedPlatformTextInputInterceptor$textInputSession$2$scope$1, this) == coroutine_suspended) {

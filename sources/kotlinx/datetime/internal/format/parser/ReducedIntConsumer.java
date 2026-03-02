@@ -47,17 +47,16 @@ public final class ReducedIntConsumer<Receiver> extends NumberConsumer<Receiver>
     @Override // kotlinx.datetime.internal.format.parser.NumberConsumer
     public NumberConsumptionError consume(Receiver receiver, CharSequence input, int i, int i2) {
         int parseAsciiInt;
-        int i3;
         NumberConsumptionError withoutReassigning;
         Intrinsics.checkNotNullParameter(input, "input");
         parseAsciiInt = NumberConsumerKt.parseAsciiInt(input, i, i2);
         AssignableField<Receiver, Integer> assignableField = this.setter;
-        if (parseAsciiInt >= this.baseMod) {
-            i3 = this.baseFloor;
-        } else {
-            i3 = this.baseFloor + this.modulo;
+        int i3 = this.baseMod;
+        int i4 = this.baseFloor;
+        if (parseAsciiInt < i3) {
+            i4 += this.modulo;
         }
-        withoutReassigning = NumberConsumerKt.setWithoutReassigning(assignableField, receiver, Integer.valueOf(i3 + parseAsciiInt));
+        withoutReassigning = NumberConsumerKt.setWithoutReassigning(assignableField, receiver, Integer.valueOf(i4 + parseAsciiInt));
         return withoutReassigning;
     }
 }

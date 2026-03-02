@@ -8,38 +8,38 @@ import java.util.Map;
 public final class Yi implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0577se f870a;
-    public final C0392l3 b;
-    public final C0573sa c;
-    public final C0573sa d;
+    public final C0576se f870a;
+    public final C0391l3 b;
+    public final C0572sa c;
+    public final C0572sa d;
 
     public Yi() {
-        this(new C0577se(), new C0392l3(), new C0573sa(100), new C0573sa(1000));
+        this(new C0576se(), new C0391l3(), new C0572sa(100), new C0572sa(1000));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final Di fromModel(C0177cj c0177cj) {
+    public final Di fromModel(C0176cj c0176cj) {
         Di di;
-        C0522q8 c0522q8 = new C0522q8();
-        Mn a2 = this.c.a(c0177cj.f941a);
-        c0522q8.f1186a = StringUtils.getUTF8Bytes((String) a2.f699a);
-        List<String> list = c0177cj.b;
+        C0521q8 c0521q8 = new C0521q8();
+        Mn a2 = this.c.a(c0176cj.f941a);
+        c0521q8.f1186a = StringUtils.getUTF8Bytes((String) a2.f699a);
+        List<String> list = c0176cj.b;
         Di di2 = null;
         if (list != null) {
             di = this.b.fromModel(list);
-            c0522q8.b = (C0243f8) di.f552a;
+            c0521q8.b = (C0242f8) di.f552a;
         } else {
             di = null;
         }
-        Mn a3 = this.d.a(c0177cj.c);
-        c0522q8.c = StringUtils.getUTF8Bytes((String) a3.f699a);
-        Map<String, String> map = c0177cj.d;
+        Mn a3 = this.d.a(c0176cj.c);
+        c0521q8.c = StringUtils.getUTF8Bytes((String) a3.f699a);
+        Map<String, String> map = c0176cj.d;
         if (map != null) {
             di2 = this.f870a.fromModel(map);
-            c0522q8.d = (C0397l8) di2.f552a;
+            c0521q8.d = (C0396l8) di2.f552a;
         }
-        return new Di(c0522q8, new C0109a3(C0109a3.b(a2, di, a3, di2)));
+        return new Di(c0521q8, new C0108a3(C0108a3.b(a2, di, a3, di2)));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -48,14 +48,14 @@ public final class Yi implements Converter {
         throw new UnsupportedOperationException();
     }
 
-    public Yi(C0577se c0577se, C0392l3 c0392l3, C0573sa c0573sa, C0573sa c0573sa2) {
-        this.f870a = c0577se;
-        this.b = c0392l3;
-        this.c = c0573sa;
-        this.d = c0573sa2;
+    public Yi(C0576se c0576se, C0391l3 c0391l3, C0572sa c0572sa, C0572sa c0572sa2) {
+        this.f870a = c0576se;
+        this.b = c0391l3;
+        this.c = c0572sa;
+        this.d = c0572sa2;
     }
 
-    public final C0177cj a(Di di) {
+    public final C0176cj a(Di di) {
         throw new UnsupportedOperationException();
     }
 }

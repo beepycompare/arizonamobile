@@ -9,7 +9,7 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
 import kotlin.time.DurationKt;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class k extends MessageNano {
     public static volatile k[] j;
 

@@ -1,7 +1,7 @@
 package com.google.firebase.sessions;
 
 import android.util.Log;
-import androidx.media3.extractor.ts.TsExtractor;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -12,11 +12,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SharedSessionRepository.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "com.google.firebase.sessions.SharedSessionRepositoryImpl$appForeground$1", f = "SharedSessionRepository.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_E_AC3, 186}, m = "invokeSuspend", n = {}, s = {})
+@DebugMetadata(c = "com.google.firebase.sessions.SharedSessionRepositoryImpl$appForeground$1", f = "SharedSessionRepository.kt", i = {}, l = {142, DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {}, s = {})
 /* loaded from: classes4.dex */
-final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+public final class SharedSessionRepositoryImpl$appForeground$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ SessionData $sessionData;
     int label;
     final /* synthetic */ SharedSessionRepositoryImpl this$0;

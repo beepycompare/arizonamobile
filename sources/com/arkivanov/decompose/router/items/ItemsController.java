@@ -9,7 +9,6 @@ import com.arkivanov.decompose.router.children.ChildController;
 import com.arkivanov.decompose.router.children.NavStateSaver;
 import com.arkivanov.decompose.router.children.NavigationSource;
 import com.arkivanov.decompose.router.items.Items;
-import com.arkivanov.decompose.router.items.ItemsController;
 import com.arkivanov.decompose.router.items.ItemsNavigation;
 import com.arkivanov.decompose.value.MutableValue;
 import com.arkivanov.decompose.value.MutableValueBuilderKt;
@@ -107,9 +106,7 @@ public final class ItemsController<C, T> implements ItemsNavigator<C> {
             stateKeeper.register(key, SavedState.Companion.serializer(), new Function0() { // from class: com.arkivanov.decompose.router.items.ItemsController$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    ItemsController.SavedState init$lambda$2;
-                    init$lambda$2 = ItemsController.init$lambda$2(NavStateSaver.this, this);
-                    return init$lambda$2;
+                    return ItemsController.init$lambda$2(NavStateSaver.this, this);
                 }
             });
         }
@@ -117,9 +114,7 @@ public final class ItemsController<C, T> implements ItemsNavigator<C> {
         Cancellation subscribe = source.subscribe(new Function1() { // from class: com.arkivanov.decompose.router.items.ItemsController$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit init$lambda$3;
-                init$lambda$3 = ItemsController.init$lambda$3(ItemsController.this, (ItemsNavigation.Event) obj);
-                return init$lambda$3;
+                return ItemsController.init$lambda$3(ItemsController.this, (ItemsNavigation.Event) obj);
             }
         });
         Relay<NavEvent<C>> relay = this.nav;
@@ -131,7 +126,7 @@ public final class ItemsController<C, T> implements ItemsNavigator<C> {
         return subscribe;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedState init$lambda$2(NavStateSaver navStateSaver, ItemsController itemsController) {
         SerializableContainer saveState = navStateSaver.saveState(itemsController.navState.getValue());
         if (saveState != null) {
@@ -140,7 +135,7 @@ public final class ItemsController<C, T> implements ItemsNavigator<C> {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit init$lambda$3(ItemsController itemsController, ItemsNavigation.Event it) {
         Intrinsics.checkNotNullParameter(it, "it");
         itemsController.nav.accept(new NavEvent.Event(it));
@@ -189,15 +184,13 @@ public final class ItemsController<C, T> implements ItemsNavigator<C> {
         this.controller.init(savedChildState == null, new Function0() { // from class: com.arkivanov.decompose.router.items.ItemsController$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onInit$lambda$8;
-                onInit$lambda$8 = ItemsController.onInit$lambda$8(Items.this, savedChildState, this, hashMap);
-                return onInit$lambda$8;
+                return ItemsController.onInit$lambda$8(Items.this, savedChildState, this, hashMap);
             }
         });
         setState(initialState, hashMap);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onInit$lambda$8(Items items, Map map, ItemsController itemsController, HashMap hashMap) {
         int i = 0;
         for (T t : items.getItems()) {

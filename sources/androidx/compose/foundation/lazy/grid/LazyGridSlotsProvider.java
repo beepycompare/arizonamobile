@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface LazyGridSlotsProvider {
     /* renamed from: invoke-0kLqBqw */
-    LazyGridSlots mo1071invoke0kLqBqw(Density density, long j);
+    LazyGridSlots mo946invoke0kLqBqw(Density density, long j);
 }

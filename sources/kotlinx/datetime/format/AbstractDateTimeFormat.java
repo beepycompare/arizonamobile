@@ -68,7 +68,7 @@ public abstract class AbstractDateTimeFormat<T, U extends Copyable<U>> implement
         }
         try {
             try {
-                return (T) valueFromIntermediate(Parser.m11925matchimpl$default(Parser.m11920constructorimpl(getActualFormat().parser()), charSequence, getEmptyIntermediate(), 0, 4, null));
+                return (T) valueFromIntermediate(Parser.m10814matchimpl$default(Parser.m10809constructorimpl(getActualFormat().parser()), charSequence, getEmptyIntermediate(), 0, 4, null));
             } catch (IllegalArgumentException e2) {
                 String message = e2.getMessage();
                 if (message == null) {
@@ -88,9 +88,9 @@ public abstract class AbstractDateTimeFormat<T, U extends Copyable<U>> implement
     @Override // kotlinx.datetime.format.DateTimeFormat
     public T parseOrNull(CharSequence input) {
         Intrinsics.checkNotNullParameter(input, "input");
-        Copyable m11927matchOrNullimpl$default = Parser.m11927matchOrNullimpl$default(Parser.m11920constructorimpl(getActualFormat().parser()), input, getEmptyIntermediate(), 0, 4, null);
-        if (m11927matchOrNullimpl$default != null) {
-            return (T) valueFromIntermediateOrNull(m11927matchOrNullimpl$default);
+        Copyable m10816matchOrNullimpl$default = Parser.m10816matchOrNullimpl$default(Parser.m10809constructorimpl(getActualFormat().parser()), input, getEmptyIntermediate(), 0, 4, null);
+        if (m10816matchOrNullimpl$default != null) {
+            return (T) valueFromIntermediateOrNull(m10816matchOrNullimpl$default);
         }
         return null;
     }

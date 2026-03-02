@@ -195,7 +195,8 @@ public abstract class DrawableWithAnimatedVisibilityChange extends Drawable impl
                 return false;
             } else {
                 boolean z4 = !z || super.setVisible(z, false);
-                if (!(z ? this.baseSpec.isShowAnimationEnabled() : this.baseSpec.isHideAnimationEnabled())) {
+                BaseProgressIndicatorSpec baseProgressIndicatorSpec = this.baseSpec;
+                if (!(z ? baseProgressIndicatorSpec.isShowAnimationEnabled() : baseProgressIndicatorSpec.isHideAnimationEnabled())) {
                     endAnimatorsWithoutCallbacks(valueAnimator);
                     return z4;
                 } else if (z2 || !valueAnimator.isPaused()) {
@@ -323,10 +324,12 @@ public abstract class DrawableWithAnimatedVisibilityChange extends Drawable impl
         if (this.baseSpec.hasWavyEffect(isDeterminateDrawable()) && this.baseSpec.waveSpeed != 0) {
             float systemAnimatorDurationScale = this.animatorDurationScaleProvider.getSystemAnimatorDurationScale(this.context.getContentResolver());
             if (systemAnimatorDurationScale > 0.0f) {
-                if (isDeterminateDrawable()) {
-                    i = this.baseSpec.wavelengthDeterminate;
+                boolean isDeterminateDrawable = isDeterminateDrawable();
+                BaseProgressIndicatorSpec baseProgressIndicatorSpec = this.baseSpec;
+                if (isDeterminateDrawable) {
+                    i = baseProgressIndicatorSpec.wavelengthDeterminate;
                 } else {
-                    i = this.baseSpec.wavelengthIndeterminate;
+                    i = baseProgressIndicatorSpec.wavelengthIndeterminate;
                 }
                 int i2 = (int) (((i * 1000.0f) / this.baseSpec.waveSpeed) * systemAnimatorDurationScale);
                 float uptimeMillis = ((float) (SystemClock.uptimeMillis() % i2)) / i2;

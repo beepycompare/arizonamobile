@@ -102,9 +102,7 @@ public abstract class BaseRoomConnectionManager {
             return (SQLiteConnection) exclusiveLock.withLock(new Function0() { // from class: androidx.room.BaseRoomConnectionManager$DriverWrapper$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    SQLiteConnection openLocked$lambda$1;
-                    openLocked$lambda$1 = BaseRoomConnectionManager.DriverWrapper.openLocked$lambda$1(BaseRoomConnectionManager.this, this, str);
-                    return openLocked$lambda$1;
+                    return BaseRoomConnectionManager.DriverWrapper.openLocked$lambda$1(BaseRoomConnectionManager.this, this, str);
                 }
             }, new Function1() { // from class: androidx.room.BaseRoomConnectionManager$DriverWrapper$openLocked$2
                 @Override // kotlin.jvm.functions.Function1
@@ -115,7 +113,7 @@ public abstract class BaseRoomConnectionManager {
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SQLiteConnection openLocked$lambda$1(BaseRoomConnectionManager baseRoomConnectionManager, DriverWrapper driverWrapper, String str) {
             if (baseRoomConnectionManager.isInitializing) {
                 throw new IllegalStateException("Recursive database initialization detected. Did you try to use the database instance during initialization? Maybe in one of the callbacks?".toString());
@@ -137,7 +135,7 @@ public abstract class BaseRoomConnectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void configureDatabase(SQLiteConnection sQLiteConnection) {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         configureBusyTimeout(sQLiteConnection);
         configureJournalMode(sQLiteConnection);
         configureSynchronousFlag(sQLiteConnection);
@@ -158,19 +156,19 @@ public abstract class BaseRoomConnectionManager {
                         onMigrate(sQLiteConnection, i, getOpenDelegate().getVersion());
                     }
                     SQLite.execSQL(sQLiteConnection, "PRAGMA user_version = " + getOpenDelegate().getVersion());
-                    m10243constructorimpl = Result.m10243constructorimpl(Unit.INSTANCE);
+                    m9182constructorimpl = Result.m9182constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                    m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m10250isSuccessimpl(m10243constructorimpl)) {
-                    Unit unit = (Unit) m10243constructorimpl;
+                if (Result.m9189isSuccessimpl(m9182constructorimpl)) {
+                    Unit unit = (Unit) m9182constructorimpl;
                     SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
                 }
-                Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
-                if (m10246exceptionOrNullimpl != null) {
+                Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
+                if (m9185exceptionOrNullimpl != null) {
                     SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-                    throw m10246exceptionOrNullimpl;
+                    throw m9185exceptionOrNullimpl;
                 }
             }
             onOpen(sQLiteConnection);
@@ -325,7 +323,7 @@ public abstract class BaseRoomConnectionManager {
     }
 
     private final void checkIdentity(SQLiteConnection sQLiteConnection) {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         RoomOpenDelegate.ValidationResult onValidateSchema;
         if (hasRoomMasterTable(sQLiteConnection)) {
             SQLiteStatement prepare = sQLiteConnection.prepare(RoomMasterTable.READ_QUERY);
@@ -353,24 +351,24 @@ public abstract class BaseRoomConnectionManager {
             onValidateSchema = getOpenDelegate().onValidateSchema(sQLiteConnection);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th3));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th3));
         }
         if (!onValidateSchema.isValid) {
             throw new IllegalStateException(("Pre-packaged database has an invalid schema: " + onValidateSchema.expectedFoundMsg).toString());
         }
         getOpenDelegate().onPostMigrate(sQLiteConnection);
         updateIdentity(sQLiteConnection);
-        m10243constructorimpl = Result.m10243constructorimpl(Unit.INSTANCE);
-        if (Result.m10250isSuccessimpl(m10243constructorimpl)) {
-            Unit unit = (Unit) m10243constructorimpl;
+        m9182constructorimpl = Result.m9182constructorimpl(Unit.INSTANCE);
+        if (Result.m9189isSuccessimpl(m9182constructorimpl)) {
+            Unit unit = (Unit) m9182constructorimpl;
             SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
         }
-        Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
-        if (m10246exceptionOrNullimpl != null) {
+        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
+        if (m9185exceptionOrNullimpl != null) {
             SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-            throw m10246exceptionOrNullimpl;
+            throw m9185exceptionOrNullimpl;
         } else {
-            Result.m10242boximpl(m10243constructorimpl);
+            Result.m9181boximpl(m9182constructorimpl);
         }
     }
 

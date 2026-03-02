@@ -77,7 +77,7 @@ public final class LegacyTextFieldState {
         this.keyboardController = softwareKeyboardController;
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.hasFocus$delegate = mutableStateOf$default;
-        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m8256boximpl(Dp.m8258constructorimpl(0)), null, 2, null);
+        mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Dp.m7553boximpl(Dp.m7555constructorimpl(0)), null, 2, null);
         this.minHeightForSingleLineField$delegate = mutableStateOf$default2;
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.layoutResultState = mutableStateOf$default3;
@@ -102,40 +102,37 @@ public final class LegacyTextFieldState {
         this.onValueChangeOriginal = new Function1() { // from class: androidx.compose.foundation.text.LegacyTextFieldState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onValueChangeOriginal$lambda$0;
-                onValueChangeOriginal$lambda$0 = LegacyTextFieldState.onValueChangeOriginal$lambda$0((TextFieldValue) obj);
-                return onValueChangeOriginal$lambda$0;
+                Unit unit;
+                TextFieldValue textFieldValue = (TextFieldValue) obj;
+                unit = Unit.INSTANCE;
+                return unit;
             }
         };
         this.onValueChange = new Function1() { // from class: androidx.compose.foundation.text.LegacyTextFieldState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onValueChange$lambda$0;
-                onValueChange$lambda$0 = LegacyTextFieldState.onValueChange$lambda$0(LegacyTextFieldState.this, (TextFieldValue) obj);
-                return onValueChange$lambda$0;
+                return LegacyTextFieldState.onValueChange$lambda$0(LegacyTextFieldState.this, (TextFieldValue) obj);
             }
         };
         this.onImeActionPerformed = new Function1() { // from class: androidx.compose.foundation.text.LegacyTextFieldState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onImeActionPerformed$lambda$0;
-                onImeActionPerformed$lambda$0 = LegacyTextFieldState.onImeActionPerformed$lambda$0(LegacyTextFieldState.this, (ImeAction) obj);
-                return onImeActionPerformed$lambda$0;
+                return LegacyTextFieldState.onImeActionPerformed$lambda$0(LegacyTextFieldState.this, (ImeAction) obj);
             }
         };
         this.onImeActionPerformedWithResult = new Function1() { // from class: androidx.compose.foundation.text.LegacyTextFieldState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean onImeActionPerformedWithResult$lambda$0;
-                onImeActionPerformedWithResult$lambda$0 = LegacyTextFieldState.onImeActionPerformedWithResult$lambda$0(LegacyTextFieldState.this, (ImeAction) obj);
-                return Boolean.valueOf(onImeActionPerformedWithResult$lambda$0);
+                boolean m1203runActionKlQnJC8;
+                m1203runActionKlQnJC8 = LegacyTextFieldState.this.keyboardActionRunner.m1203runActionKlQnJC8(((ImeAction) obj).m7174unboximpl());
+                return Boolean.valueOf(m1203runActionKlQnJC8);
             }
         };
         this.highlightPaint = AndroidPaint_androidKt.Paint();
-        this.selectionBackgroundColor = Color.Companion.m5460getUnspecified0d7_KjU();
-        mutableStateOf$default12 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7689boximpl(TextRange.Companion.m7706getZerod9O1mEE()), null, 2, null);
+        this.selectionBackgroundColor = Color.Companion.m4808getUnspecified0d7_KjU();
+        mutableStateOf$default12 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m6991boximpl(TextRange.Companion.m7008getZerod9O1mEE()), null, 2, null);
         this.selectionPreviewHighlightRange$delegate = mutableStateOf$default12;
-        mutableStateOf$default13 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m7689boximpl(TextRange.Companion.m7706getZerod9O1mEE()), null, 2, null);
+        mutableStateOf$default13 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TextRange.m6991boximpl(TextRange.Companion.m7008getZerod9O1mEE()), null, 2, null);
         this.deletionPreviewHighlightRange$delegate = mutableStateOf$default13;
     }
 
@@ -176,13 +173,13 @@ public final class LegacyTextFieldState {
     }
 
     /* renamed from: getMinHeightForSingleLineField-D9Ej5fM  reason: not valid java name */
-    public final float m1392getMinHeightForSingleLineFieldD9Ej5fM() {
-        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m8272unboximpl();
+    public final float m1219getMinHeightForSingleLineFieldD9Ej5fM() {
+        return ((Dp) this.minHeightForSingleLineField$delegate.getValue()).m7569unboximpl();
     }
 
     /* renamed from: setMinHeightForSingleLineField-0680j_4  reason: not valid java name */
-    public final void m1396setMinHeightForSingleLineField0680j_4(float f) {
-        this.minHeightForSingleLineField$delegate.setValue(Dp.m8256boximpl(f));
+    public final void m1223setMinHeightForSingleLineField0680j_4(float f) {
+        this.minHeightForSingleLineField$delegate.setValue(Dp.m7553boximpl(f));
     }
 
     public final LayoutCoordinates getLayoutCoordinates() {
@@ -282,16 +279,11 @@ public final class LegacyTextFieldState {
         this.justAutofilled$delegate.setValue(Boolean.valueOf(z));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onValueChangeOriginal$lambda$0(TextFieldValue textFieldValue) {
-        return Unit.INSTANCE;
-    }
-
     public final Function1<TextFieldValue, Unit> getOnValueChange() {
         return this.onValueChange;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onValueChange$lambda$0(LegacyTextFieldState legacyTextFieldState, TextFieldValue textFieldValue) {
         String text = textFieldValue.getText();
         AnnotatedString annotatedString = legacyTextFieldState.untransformedText;
@@ -303,8 +295,8 @@ public final class LegacyTextFieldState {
                 legacyTextFieldState.setAutofillHighlightOn(false);
             }
         }
-        legacyTextFieldState.m1398setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
-        legacyTextFieldState.m1395setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
+        legacyTextFieldState.m1225setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
+        legacyTextFieldState.m1222setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
         legacyTextFieldState.onValueChangeOriginal.invoke(textFieldValue);
         legacyTextFieldState.recomposeScope.invalidate();
         return Unit.INSTANCE;
@@ -314,9 +306,9 @@ public final class LegacyTextFieldState {
         return this.onImeActionPerformed;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onImeActionPerformed$lambda$0(LegacyTextFieldState legacyTextFieldState, ImeAction imeAction) {
-        legacyTextFieldState.keyboardActionRunner.m1376runActionKlQnJC8(imeAction.m7876unboximpl());
+        legacyTextFieldState.keyboardActionRunner.m1203runActionKlQnJC8(imeAction.m7174unboximpl());
         return Unit.INSTANCE;
     }
 
@@ -324,61 +316,56 @@ public final class LegacyTextFieldState {
         return this.onImeActionPerformedWithResult;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onImeActionPerformedWithResult$lambda$0(LegacyTextFieldState legacyTextFieldState, ImeAction imeAction) {
-        return legacyTextFieldState.keyboardActionRunner.m1376runActionKlQnJC8(imeAction.m7876unboximpl());
-    }
-
     public final Paint getHighlightPaint() {
         return this.highlightPaint;
     }
 
     /* renamed from: getSelectionBackgroundColor-0d7_KjU  reason: not valid java name */
-    public final long m1393getSelectionBackgroundColor0d7_KjU() {
+    public final long m1220getSelectionBackgroundColor0d7_KjU() {
         return this.selectionBackgroundColor;
     }
 
     /* renamed from: setSelectionBackgroundColor-8_81llA  reason: not valid java name */
-    public final void m1397setSelectionBackgroundColor8_81llA(long j) {
+    public final void m1224setSelectionBackgroundColor8_81llA(long j) {
         this.selectionBackgroundColor = j;
     }
 
     /* renamed from: getSelectionPreviewHighlightRange-d9O1mEE  reason: not valid java name */
-    public final long m1394getSelectionPreviewHighlightRanged9O1mEE() {
-        return ((TextRange) this.selectionPreviewHighlightRange$delegate.getValue()).m7705unboximpl();
+    public final long m1221getSelectionPreviewHighlightRanged9O1mEE() {
+        return ((TextRange) this.selectionPreviewHighlightRange$delegate.getValue()).m7007unboximpl();
     }
 
     /* renamed from: setSelectionPreviewHighlightRange-5zc-tL8  reason: not valid java name */
-    public final void m1398setSelectionPreviewHighlightRange5zctL8(long j) {
-        this.selectionPreviewHighlightRange$delegate.setValue(TextRange.m7689boximpl(j));
+    public final void m1225setSelectionPreviewHighlightRange5zctL8(long j) {
+        this.selectionPreviewHighlightRange$delegate.setValue(TextRange.m6991boximpl(j));
     }
 
     /* renamed from: getDeletionPreviewHighlightRange-d9O1mEE  reason: not valid java name */
-    public final long m1391getDeletionPreviewHighlightRanged9O1mEE() {
-        return ((TextRange) this.deletionPreviewHighlightRange$delegate.getValue()).m7705unboximpl();
+    public final long m1218getDeletionPreviewHighlightRanged9O1mEE() {
+        return ((TextRange) this.deletionPreviewHighlightRange$delegate.getValue()).m7007unboximpl();
     }
 
     /* renamed from: setDeletionPreviewHighlightRange-5zc-tL8  reason: not valid java name */
-    public final void m1395setDeletionPreviewHighlightRange5zctL8(long j) {
-        this.deletionPreviewHighlightRange$delegate.setValue(TextRange.m7689boximpl(j));
+    public final void m1222setDeletionPreviewHighlightRange5zctL8(long j) {
+        this.deletionPreviewHighlightRange$delegate.setValue(TextRange.m6991boximpl(j));
     }
 
     public final boolean hasHighlight() {
-        return (TextRange.m7695getCollapsedimpl(m1394getSelectionPreviewHighlightRanged9O1mEE()) && TextRange.m7695getCollapsedimpl(m1391getDeletionPreviewHighlightRanged9O1mEE())) ? false : true;
+        return (TextRange.m6997getCollapsedimpl(m1221getSelectionPreviewHighlightRanged9O1mEE()) && TextRange.m6997getCollapsedimpl(m1218getDeletionPreviewHighlightRanged9O1mEE())) ? false : true;
     }
 
     /* renamed from: update-fnh65Uc  reason: not valid java name */
-    public final void m1399updatefnh65Uc(AnnotatedString annotatedString, AnnotatedString annotatedString2, TextStyle textStyle, boolean z, Density density, FontFamily.Resolver resolver, Function1<? super TextFieldValue, Unit> function1, KeyboardActions keyboardActions, FocusManager focusManager, long j) {
+    public final void m1226updatefnh65Uc(AnnotatedString annotatedString, AnnotatedString annotatedString2, TextStyle textStyle, boolean z, Density density, FontFamily.Resolver resolver, Function1<? super TextFieldValue, Unit> function1, KeyboardActions keyboardActions, FocusManager focusManager, long j) {
         this.onValueChangeOriginal = function1;
         this.selectionBackgroundColor = j;
         KeyboardActionRunner keyboardActionRunner = this.keyboardActionRunner;
         keyboardActionRunner.setKeyboardActions(keyboardActions);
         keyboardActionRunner.setFocusManager(focusManager);
         this.untransformedText = annotatedString;
-        TextDelegate m1426updateTextDelegaterm0N8CA$default = TextDelegateKt.m1426updateTextDelegaterm0N8CA$default(this.textDelegate, annotatedString2, textStyle, density, resolver, z, 0, 0, 0, CollectionsKt.emptyList(), 448, null);
-        if (this.textDelegate != m1426updateTextDelegaterm0N8CA$default) {
+        TextDelegate m1252updateTextDelegaterm0N8CA$default = TextDelegateKt.m1252updateTextDelegaterm0N8CA$default(this.textDelegate, annotatedString2, textStyle, density, resolver, z, 0, 0, 0, CollectionsKt.emptyList(), 448, null);
+        if (this.textDelegate != m1252updateTextDelegaterm0N8CA$default) {
             this.isLayoutResultStale = true;
         }
-        this.textDelegate = m1426updateTextDelegaterm0N8CA$default;
+        this.textDelegate = m1252updateTextDelegaterm0N8CA$default;
     }
 }

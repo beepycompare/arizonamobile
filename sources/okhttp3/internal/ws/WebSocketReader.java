@@ -214,10 +214,11 @@ public final class WebSocketReader implements Closeable {
             }
             messageInflater.inflate(this.messageFrameBuffer);
         }
+        FrameCallback frameCallback = this.frameCallback;
         if (i == 1) {
-            this.frameCallback.onReadMessage(this.messageFrameBuffer.readUtf8());
+            frameCallback.onReadMessage(this.messageFrameBuffer.readUtf8());
         } else {
-            this.frameCallback.onReadMessage(this.messageFrameBuffer.readByteString());
+            frameCallback.onReadMessage(this.messageFrameBuffer.readByteString());
         }
     }
 

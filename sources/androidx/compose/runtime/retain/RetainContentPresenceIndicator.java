@@ -46,14 +46,12 @@ public final class RetainContentPresenceIndicator implements RememberObserver {
         setEnterCompositionCancellationHandle(getComposer().scheduleFrameEndCallback(new Function0() { // from class: androidx.compose.runtime.retain.RetainContentPresenceIndicator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onRemembered$lambda$0;
-                onRemembered$lambda$0 = RetainContentPresenceIndicator.onRemembered$lambda$0(RetainContentPresenceIndicator.this);
-                return onRemembered$lambda$0;
+                return RetainContentPresenceIndicator.onRemembered$lambda$0(RetainContentPresenceIndicator.this);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onRemembered$lambda$0(RetainContentPresenceIndicator retainContentPresenceIndicator) {
         retainContentPresenceIndicator.didEnterComposition = true;
         retainContentPresenceIndicator.store.onContentEnteredComposition();

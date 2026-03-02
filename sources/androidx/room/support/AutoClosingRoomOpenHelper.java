@@ -95,7 +95,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
     public static final class AutoClosingSupportSQLiteDatabase implements SupportSQLiteDatabase {
         private final AutoCloser autoCloser;
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Object pokeOpen$lambda$0(SupportSQLiteDatabase it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return null;
@@ -110,9 +110,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Object pokeOpen$lambda$0;
-                    pokeOpen$lambda$0 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.pokeOpen$lambda$0((SupportSQLiteDatabase) obj);
-                    return pokeOpen$lambda$0;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.pokeOpen$lambda$0((SupportSQLiteDatabase) obj);
                 }
             });
         }
@@ -234,14 +232,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit _set_version_$lambda$1;
-                    _set_version_$lambda$1 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase._set_version_$lambda$1(i, (SupportSQLiteDatabase) obj);
-                    return _set_version_$lambda$1;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase._set_version_$lambda$1(i, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit _set_version_$lambda$1(int i, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.setVersion(i);
@@ -263,14 +259,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    long maximumSize$lambda$2;
-                    maximumSize$lambda$2 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setMaximumSize$lambda$2(j, (SupportSQLiteDatabase) obj);
-                    return Long.valueOf(maximumSize$lambda$2);
+                    return Long.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setMaximumSize$lambda$2(j, (SupportSQLiteDatabase) obj));
                 }
             })).longValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final long setMaximumSize$lambda$2(long j, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             return db.setMaximumSize(j);
@@ -296,14 +290,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Object _set_pageSize_$lambda$3;
-                    _set_pageSize_$lambda$3 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase._set_pageSize_$lambda$3(j, (SupportSQLiteDatabase) obj);
-                    return _set_pageSize_$lambda$3;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase._set_pageSize_$lambda$3(j, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Object _set_pageSize_$lambda$3(long j, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.setPageSize(j);
@@ -362,14 +354,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    long insert$lambda$4;
-                    insert$lambda$4 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.insert$lambda$4(table, i, values, (SupportSQLiteDatabase) obj);
-                    return Long.valueOf(insert$lambda$4);
+                    return Long.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.insert$lambda$4(table, i, values, (SupportSQLiteDatabase) obj));
                 }
             })).longValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final long insert$lambda$4(String str, int i, ContentValues contentValues, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             return db.insert(str, i, contentValues);
@@ -381,14 +371,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    int delete$lambda$5;
-                    delete$lambda$5 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.delete$lambda$5(table, str, objArr, (SupportSQLiteDatabase) obj);
-                    return Integer.valueOf(delete$lambda$5);
+                    return Integer.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.delete$lambda$5(table, str, objArr, (SupportSQLiteDatabase) obj));
                 }
             })).intValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final int delete$lambda$5(String str, String str2, Object[] objArr, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             return db.delete(str, str2, objArr);
@@ -401,20 +389,18 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    int update$lambda$6;
-                    update$lambda$6 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.update$lambda$6(table, i, values, str, objArr, (SupportSQLiteDatabase) obj);
-                    return Integer.valueOf(update$lambda$6);
+                    return Integer.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.update$lambda$6(table, i, values, str, objArr, (SupportSQLiteDatabase) obj));
                 }
             })).intValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final int update$lambda$6(String str, int i, ContentValues contentValues, String str2, Object[] objArr, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             return db.update(str, i, contentValues, str2, objArr);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit execSQL$lambda$7(String str, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.execSQL(str);
@@ -427,9 +413,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit execSQL$lambda$7;
-                    execSQL$lambda$7 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.execSQL$lambda$7(sql, (SupportSQLiteDatabase) obj);
-                    return execSQL$lambda$7;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.execSQL$lambda$7(sql, (SupportSQLiteDatabase) obj);
                 }
             });
         }
@@ -441,14 +425,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit execSQL$lambda$8;
-                    execSQL$lambda$8 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.execSQL$lambda$8(sql, bindArgs, (SupportSQLiteDatabase) obj);
-                    return execSQL$lambda$8;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.execSQL$lambda$8(sql, bindArgs, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit execSQL$lambda$8(String str, Object[] objArr, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.execSQL(str, objArr);
@@ -475,14 +457,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Boolean) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda11
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean needUpgrade$lambda$9;
-                    needUpgrade$lambda$9 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.needUpgrade$lambda$9(i, (SupportSQLiteDatabase) obj);
-                    return Boolean.valueOf(needUpgrade$lambda$9);
+                    return Boolean.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.needUpgrade$lambda$9(i, (SupportSQLiteDatabase) obj));
                 }
             })).booleanValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean needUpgrade$lambda$9(int i, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             return db.needUpgrade(i);
@@ -504,14 +484,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit locale$lambda$10;
-                    locale$lambda$10 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setLocale$lambda$10(locale, (SupportSQLiteDatabase) obj);
-                    return locale$lambda$10;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setLocale$lambda$10(locale, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit setLocale$lambda$10(Locale locale, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.setLocale(locale);
@@ -523,14 +501,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit maxSqlCacheSize$lambda$11;
-                    maxSqlCacheSize$lambda$11 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setMaxSqlCacheSize$lambda$11(i, (SupportSQLiteDatabase) obj);
-                    return maxSqlCacheSize$lambda$11;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setMaxSqlCacheSize$lambda$11(i, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit setMaxSqlCacheSize$lambda$11(int i, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.setMaxSqlCacheSize(i);
@@ -542,14 +518,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteDatabase$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit foreignKeyConstraintsEnabled$lambda$12;
-                    foreignKeyConstraintsEnabled$lambda$12 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setForeignKeyConstraintsEnabled$lambda$12(z, (SupportSQLiteDatabase) obj);
-                    return foreignKeyConstraintsEnabled$lambda$12;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteDatabase.setForeignKeyConstraintsEnabled$lambda$12(z, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit setForeignKeyConstraintsEnabled$lambda$12(boolean z, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             db.setForeignKeyConstraintsEnabled(z);
@@ -861,7 +835,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             clearBindings();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit execute$lambda$0(SupportSQLiteStatement statement) {
             Intrinsics.checkNotNullParameter(statement, "statement");
             statement.execute();
@@ -873,14 +847,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             executeWithRefCount(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit execute$lambda$0;
-                    execute$lambda$0 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.execute$lambda$0((SupportSQLiteStatement) obj);
-                    return execute$lambda$0;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.execute$lambda$0((SupportSQLiteStatement) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final int executeUpdateDelete$lambda$1(SupportSQLiteStatement obj) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             return obj.executeUpdateDelete();
@@ -891,14 +863,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) executeWithRefCount(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    int executeUpdateDelete$lambda$1;
-                    executeUpdateDelete$lambda$1 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeUpdateDelete$lambda$1((SupportSQLiteStatement) obj);
-                    return Integer.valueOf(executeUpdateDelete$lambda$1);
+                    return Integer.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeUpdateDelete$lambda$1((SupportSQLiteStatement) obj));
                 }
             })).intValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final long executeInsert$lambda$2(SupportSQLiteStatement obj) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             return obj.executeInsert();
@@ -909,14 +879,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) executeWithRefCount(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    long executeInsert$lambda$2;
-                    executeInsert$lambda$2 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeInsert$lambda$2((SupportSQLiteStatement) obj);
-                    return Long.valueOf(executeInsert$lambda$2);
+                    return Long.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeInsert$lambda$2((SupportSQLiteStatement) obj));
                 }
             })).longValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final long simpleQueryForLong$lambda$3(SupportSQLiteStatement obj) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             return obj.simpleQueryForLong();
@@ -927,14 +895,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return ((Number) executeWithRefCount(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    long simpleQueryForLong$lambda$3;
-                    simpleQueryForLong$lambda$3 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.simpleQueryForLong$lambda$3((SupportSQLiteStatement) obj);
-                    return Long.valueOf(simpleQueryForLong$lambda$3);
+                    return Long.valueOf(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.simpleQueryForLong$lambda$3((SupportSQLiteStatement) obj));
                 }
             })).longValue();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final String simpleQueryForString$lambda$4(SupportSQLiteStatement obj) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             return obj.simpleQueryForString();
@@ -945,9 +911,7 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return (String) executeWithRefCount(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    String simpleQueryForString$lambda$4;
-                    simpleQueryForString$lambda$4 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.simpleQueryForString$lambda$4((SupportSQLiteStatement) obj);
-                    return simpleQueryForString$lambda$4;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.simpleQueryForString$lambda$4((SupportSQLiteStatement) obj);
                 }
             });
         }
@@ -956,14 +920,12 @@ public final class AutoClosingRoomOpenHelper implements SupportSQLiteOpenHelper,
             return (T) this.autoCloser.executeRefCountingFunction(new Function1() { // from class: androidx.room.support.AutoClosingRoomOpenHelper$AutoClosingSupportSQLiteStatement$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Object executeWithRefCount$lambda$5;
-                    executeWithRefCount$lambda$5 = AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeWithRefCount$lambda$5(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.this, function1, (SupportSQLiteDatabase) obj);
-                    return executeWithRefCount$lambda$5;
+                    return AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.executeWithRefCount$lambda$5(AutoClosingRoomOpenHelper.AutoClosingSupportSQLiteStatement.this, function1, (SupportSQLiteDatabase) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Object executeWithRefCount$lambda$5(AutoClosingSupportSQLiteStatement autoClosingSupportSQLiteStatement, Function1 function1, SupportSQLiteDatabase db) {
             Intrinsics.checkNotNullParameter(db, "db");
             SupportSQLiteStatement compileStatement = db.compileStatement(autoClosingSupportSQLiteStatement.sql);

@@ -27,15 +27,10 @@ public final class AndroidLayoutApi34 {
         }
         return textLayout.getLayout().getRangeForRect(rectF, segmentFinder, new Layout.TextInclusionStrategy() { // from class: androidx.compose.ui.text.android.AndroidLayoutApi34$$ExternalSyntheticLambda0
             public final boolean isSegmentInside(RectF rectF2, RectF rectF3) {
-                boolean rangeForRect$lambda$0;
-                rangeForRect$lambda$0 = AndroidLayoutApi34.getRangeForRect$lambda$0(Function2.this, rectF2, rectF3);
-                return rangeForRect$lambda$0;
+                boolean booleanValue;
+                booleanValue = ((Boolean) Function2.this.invoke(rectF2, rectF3)).booleanValue();
+                return booleanValue;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean getRangeForRect$lambda$0(Function2 function2, RectF rectF, RectF rectF2) {
-        return ((Boolean) function2.invoke(rectF, rectF2)).booleanValue();
     }
 }

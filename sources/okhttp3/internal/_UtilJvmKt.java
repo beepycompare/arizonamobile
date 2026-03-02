@@ -56,7 +56,7 @@ public final class _UtilJvmKt {
     public static final boolean assertionsEnabled;
     public static final String okHttpName;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final EventListener asFactory$lambda$0(EventListener eventListener, Call it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return eventListener;
@@ -77,14 +77,12 @@ public final class _UtilJvmKt {
         return new ThreadFactory() { // from class: okhttp3.internal._UtilJvmKt$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                Thread threadFactory$lambda$0;
-                threadFactory$lambda$0 = _UtilJvmKt.threadFactory$lambda$0(name, z, runnable);
-                return threadFactory$lambda$0;
+                return _UtilJvmKt.threadFactory$lambda$0(name, z, runnable);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Thread threadFactory$lambda$0(String str, boolean z, Runnable runnable) {
         Thread thread = new Thread(runnable, str);
         thread.setDaemon(z);
@@ -163,19 +161,19 @@ public final class _UtilJvmKt {
     }
 
     /* renamed from: checkDuration-HG0u8IE  reason: not valid java name */
-    public static final int m12159checkDurationHG0u8IE(String name, long j) {
+    public static final int m11027checkDurationHG0u8IE(String name, long j) {
         Intrinsics.checkNotNullParameter(name, "name");
-        if (Duration.m11631isNegativeimpl(j)) {
+        if (Duration.m10564isNegativeimpl(j)) {
             throw new IllegalStateException((name + " < 0").toString());
         }
-        long m11616getInWholeMillisecondsimpl = Duration.m11616getInWholeMillisecondsimpl(j);
-        if (m11616getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
+        long m10549getInWholeMillisecondsimpl = Duration.m10549getInWholeMillisecondsimpl(j);
+        if (m10549getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
             throw new IllegalArgumentException((name + " too large").toString());
         }
-        if (m11616getInWholeMillisecondsimpl == 0 && Duration.m11632isPositiveimpl(j)) {
+        if (m10549getInWholeMillisecondsimpl == 0 && Duration.m10565isPositiveimpl(j)) {
             throw new IllegalArgumentException((name + " too small").toString());
         }
-        return (int) m11616getInWholeMillisecondsimpl;
+        return (int) m10549getInWholeMillisecondsimpl;
     }
 
     public static final Headers toHeaders(List<Header> list) {
@@ -210,9 +208,7 @@ public final class _UtilJvmKt {
         return new EventListener.Factory() { // from class: okhttp3.internal._UtilJvmKt$$ExternalSyntheticLambda0
             @Override // okhttp3.EventListener.Factory
             public final EventListener create(Call call) {
-                EventListener asFactory$lambda$0;
-                asFactory$lambda$0 = _UtilJvmKt.asFactory$lambda$0(EventListener.this, call);
-                return asFactory$lambda$0;
+                return _UtilJvmKt.asFactory$lambda$0(EventListener.this, call);
             }
         };
     }

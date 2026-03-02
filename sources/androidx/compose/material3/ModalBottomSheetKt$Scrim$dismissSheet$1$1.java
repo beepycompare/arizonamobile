@@ -21,7 +21,7 @@ final class ModalBottomSheetKt$Scrim$dismissSheet$1$1 implements PointerInputEve
         this.$onDismissRequest = function0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(Function0 function0, Offset offset) {
         function0.invoke();
         return Unit.INSTANCE;
@@ -33,9 +33,7 @@ final class ModalBottomSheetKt$Scrim$dismissSheet$1$1 implements PointerInputEve
         Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, null, new Function1() { // from class: androidx.compose.material3.ModalBottomSheetKt$Scrim$dismissSheet$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = ModalBottomSheetKt$Scrim$dismissSheet$1$1.invoke$lambda$0(Function0.this, (Offset) obj);
-                return invoke$lambda$0;
+                return ModalBottomSheetKt$Scrim$dismissSheet$1$1.invoke$lambda$0(Function0.this, (Offset) obj);
             }
         }, continuation, 7, null);
         return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;

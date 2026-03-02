@@ -10,7 +10,7 @@ import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ForwardingMediaCodecAdapter implements MediaCodecAdapter {
     private final MediaCodecAdapter delegate;
 

@@ -499,8 +499,10 @@ public class GraphObjectAdapter<T extends GraphObject> extends BaseAdapter imple
         if (this.sectionKeys.size() == 0) {
             return null;
         }
-        if (this.displaySections) {
-            for (String str2 : this.sectionKeys) {
+        boolean z = this.displaySections;
+        List<String> list = this.sectionKeys;
+        if (z) {
+            for (String str2 : list) {
                 int i2 = i - 1;
                 if (i != 0) {
                     ArrayList<T> arrayList = this.graphObjectsBySection.get(str2);
@@ -516,7 +518,7 @@ public class GraphObjectAdapter<T extends GraphObject> extends BaseAdapter imple
             t = null;
             str = t2;
         } else {
-            String str3 = this.sectionKeys.get(0);
+            String str3 = list.get(0);
             ArrayList<T> arrayList2 = this.graphObjectsBySection.get(str3);
             if (i < 0 || i >= arrayList2.size()) {
                 if ($assertionsDisabled || (this.dataNeededListener != null && this.cursor.areMoreObjectsAvailable())) {

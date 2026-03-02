@@ -20,6 +20,7 @@ import android.hardware.display.DisplayManager;
 import android.media.AudioFormat;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Parcel;
@@ -65,6 +66,7 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
+import com.google.errorprone.annotations.CheckReturnValue;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -125,7 +127,7 @@ public final class Util {
     public static final String DEVICE_DEBUG_INFO = Build.DEVICE + ", " + Build.MODEL + ", " + Build.MANUFACTURER + ", " + Build.VERSION.SDK_INT;
     public static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
     public static final long[] EMPTY_LONG_ARRAY = new long[0];
-    private static final Pattern XS_DATE_TIME_PATTERN = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt ](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)))?");
+    private static final Pattern XS_DATE_TIME_PATTERN = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt ](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)?))?");
     private static final Pattern XS_DURATION_PATTERN = Pattern.compile("^(-)?P(([0-9]*)Y)?(([0-9]*)M)?(([0-9]*)D)?(T(([0-9]*)H)?(([0-9]*)M)?(([0-9.]*)S)?)?$");
     private static final Pattern ESCAPED_CHARACTER_PATTERN = Pattern.compile("%([A-Fa-f0-9]{2})");
     private static final Pattern ISM_PATH_PATTERN = Pattern.compile("(?:.*\\.)?isml?(?:/(manifest(.*))?)?", 2);
@@ -1084,7 +1086,12 @@ public final class Util {
         }
         int i = 0;
         if (matcher.group(9) != null && !matcher.group(9).equalsIgnoreCase("Z")) {
-            i = (Integer.parseInt(matcher.group(12)) * 60) + Integer.parseInt(matcher.group(13));
+            int parseInt = Integer.parseInt(matcher.group(12)) * 60;
+            String group = matcher.group(13);
+            if (group != null) {
+                parseInt += Integer.parseInt(group);
+            }
+            i = parseInt;
             if (Constants.FILENAME_SEQUENCE_SEPARATOR.equals(matcher.group(11))) {
                 i *= -1;
             }
@@ -1278,7 +1285,7 @@ public final class Util {
         } catch (PackageManager.NameNotFoundException unused) {
             str2 = "?";
         }
-        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.9.0";
+        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.9.2";
     }
 
     public static int getCodecCountOfType(String str, int i) {
@@ -2176,7 +2183,7 @@ public final class Util {
                 }
                 return "NO_UNSUPPORTED_DRM";
             }
-            return "NO_UNSUPPORTED_TYPE";
+            return "NO_UNSUPPORTED_SUBTYPE";
         }
         return "NO";
     }
@@ -2276,6 +2283,21 @@ public final class Util {
             return handlePlayButtonAction(player);
         }
         return handlePauseButtonAction(player);
+    }
+
+    @CheckReturnValue
+    public static Bundle convertToNullIfInvalid(Bundle bundle) {
+        if (bundle == null) {
+            return null;
+        }
+        bundle.setClassLoader((ClassLoader) Preconditions.checkNotNull(Util.class.getClassLoader()));
+        try {
+            bundle.isEmpty();
+            return bundle;
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Ignoring invalid bundle", e);
+            return null;
+        }
     }
 
     private static String getSystemProperty(String str) {

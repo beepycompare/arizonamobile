@@ -228,10 +228,12 @@ public class MaterialDatePicker<S> extends DialogFragment {
         this.headerTitleTextView = (TextView) inflate.findViewById(R.id.mtrl_picker_title_text);
         initHeaderToggle(context);
         this.confirmButton = (Button) inflate.findViewById(R.id.confirm_button);
-        if (getDateSelector().isSelectionComplete()) {
-            this.confirmButton.setEnabled(true);
+        boolean isSelectionComplete = getDateSelector().isSelectionComplete();
+        Button button = this.confirmButton;
+        if (isSelectionComplete) {
+            button.setEnabled(true);
         } else {
-            this.confirmButton.setEnabled(false);
+            button.setEnabled(false);
         }
         this.confirmButton.setTag(CONFIRM_BUTTON_TAG);
         CharSequence charSequence = this.positiveButtonText;
@@ -255,24 +257,24 @@ public class MaterialDatePicker<S> extends DialogFragment {
                 MaterialDatePicker.this.onPositiveButtonClick(view);
             }
         });
-        Button button = (Button) inflate.findViewById(R.id.cancel_button);
-        button.setTag(CANCEL_BUTTON_TAG);
+        Button button2 = (Button) inflate.findViewById(R.id.cancel_button);
+        button2.setTag(CANCEL_BUTTON_TAG);
         CharSequence charSequence3 = this.negativeButtonText;
         if (charSequence3 != null) {
-            button.setText(charSequence3);
+            button2.setText(charSequence3);
         } else {
             int i2 = this.negativeButtonTextResId;
             if (i2 != 0) {
-                button.setText(i2);
+                button2.setText(i2);
             }
         }
         CharSequence charSequence4 = this.negativeButtonContentDescription;
         if (charSequence4 != null) {
-            button.setContentDescription(charSequence4);
+            button2.setContentDescription(charSequence4);
         } else if (this.negativeButtonContentDescriptionResId != 0) {
-            button.setContentDescription(getContext().getResources().getText(this.negativeButtonContentDescriptionResId));
+            button2.setContentDescription(getContext().getResources().getText(this.negativeButtonContentDescriptionResId));
         }
-        button.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda2
+        button2.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 MaterialDatePicker.this.onNegativeButtonClick(view);
@@ -428,14 +430,14 @@ public class MaterialDatePicker<S> extends DialogFragment {
         this.headerToggleButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.datepicker.MaterialDatePicker$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaterialDatePicker.this.m9871x8a93f18a(view);
+                MaterialDatePicker.this.m8901x8a93f18a(view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initHeaderToggle$0$com-google-android-material-datepicker-MaterialDatePicker  reason: not valid java name */
-    public /* synthetic */ void m9871x8a93f18a(View view) {
+    public /* synthetic */ void m8901x8a93f18a(View view) {
         this.confirmButton.setEnabled(getDateSelector().isSelectionComplete());
         this.headerToggleButton.toggle();
         this.inputMode = this.inputMode == 1 ? 0 : 1;

@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class UIntArrayKt {
     /* renamed from: uintArrayOf--ajY-9A  reason: not valid java name */
-    private static final int[] m10414uintArrayOfajY9A(int... iArr) {
+    private static final int[] m9353uintArrayOfajY9A(int... iArr) {
         Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-elements$0");
         return iArr;
     }
@@ -16,8 +16,8 @@ public final class UIntArrayKt {
         Intrinsics.checkNotNullParameter(init, "init");
         int[] iArr = new int[i];
         for (int i2 = 0; i2 < i; i2++) {
-            iArr[i2] = init.invoke(Integer.valueOf(i2)).m10395unboximpl();
+            iArr[i2] = init.invoke(Integer.valueOf(i2)).m9334unboximpl();
         }
-        return UIntArray.m10398constructorimpl(iArr);
+        return UIntArray.m9337constructorimpl(iArr);
     }
 }

@@ -27,7 +27,7 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
     private Continuation<? super Unit> completion_;
     private CoroutineContext lastEmissionContext;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int collectContextSize$lambda$0(int i, CoroutineContext.Element element) {
         return i + 1;
     }
@@ -45,9 +45,7 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
         this.collectContextSize = ((Number) coroutineContext.fold(0, new Function2() { // from class: kotlinx.coroutines.flow.internal.SafeCollector$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                int collectContextSize$lambda$0;
-                collectContextSize$lambda$0 = SafeCollector.collectContextSize$lambda$0(((Integer) obj).intValue(), (CoroutineContext.Element) obj2);
-                return Integer.valueOf(collectContextSize$lambda$0);
+                return Integer.valueOf(SafeCollector.collectContextSize$lambda$0(((Integer) obj).intValue(), (CoroutineContext.Element) obj2));
             }
         })).intValue();
     }
@@ -69,9 +67,9 @@ public final class SafeCollector<T> extends ContinuationImpl implements FlowColl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     protected Object invokeSuspend(Object obj) {
-        Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(obj);
-        if (m10246exceptionOrNullimpl != null) {
-            this.lastEmissionContext = new DownstreamExceptionContext(m10246exceptionOrNullimpl, getContext());
+        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(obj);
+        if (m9185exceptionOrNullimpl != null) {
+            this.lastEmissionContext = new DownstreamExceptionContext(m9185exceptionOrNullimpl, getContext());
         }
         Continuation<? super Unit> continuation = this.completion_;
         if (continuation != null) {

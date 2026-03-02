@@ -43,7 +43,7 @@ public final class PolygonValidator {
             for (int lastIndex = CollectionsKt.getLastIndex(roundedPolygon.getFeatures()); lastIndex > 0; lastIndex--) {
                 createListBuilder.add(roundedPolygon.getFeatures().get(lastIndex).reversed());
             }
-            return new RoundedPolygon(CollectionsKt.build(createListBuilder), roundedPolygon.m8840getCenter1ufDz9w$graphics_shapes(), null);
+            return new RoundedPolygon(CollectionsKt.build(createListBuilder), roundedPolygon.m8125getCenter1ufDz9w$graphics_shapes(), null);
         }
     }
 }

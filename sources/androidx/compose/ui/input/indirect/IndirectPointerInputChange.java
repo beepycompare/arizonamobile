@@ -35,7 +35,7 @@ public final class IndirectPointerInputChange {
     }
 
     /* renamed from: getId-J3iCeTQ  reason: not valid java name */
-    public final long m6271getIdJ3iCeTQ() {
+    public final long m5612getIdJ3iCeTQ() {
         return this.id;
     }
 
@@ -44,7 +44,7 @@ public final class IndirectPointerInputChange {
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m6272getPositionF1C5BW0() {
+    public final long m5613getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -61,7 +61,7 @@ public final class IndirectPointerInputChange {
     }
 
     /* renamed from: getPreviousPosition-F1C5BW0  reason: not valid java name */
-    public final long m6273getPreviousPositionF1C5BW0() {
+    public final long m5614getPreviousPositionF1C5BW0() {
         return this.previousPosition;
     }
 
@@ -78,6 +78,6 @@ public final class IndirectPointerInputChange {
     }
 
     public String toString() {
-        return "IndirectPointerInputChange(id=" + ((Object) PointerId.m6728toStringimpl(this.id)) + ", uptimeMillis=" + this.uptimeMillis + ", position=" + ((Object) Offset.m5187toStringimpl(this.position)) + ", pressed=" + this.pressed + ", pressure=" + this.pressure + ", previousUptimeMillis=" + this.previousUptimeMillis + ", previousPosition=" + ((Object) Offset.m5187toStringimpl(this.previousPosition)) + ", previousPressed=" + this.previousPressed + ", isConsumed=" + this.isConsumed + ')';
+        return "IndirectPointerInputChange(id=" + ((Object) PointerId.m6069toStringimpl(this.id)) + ", uptimeMillis=" + this.uptimeMillis + ", position=" + ((Object) Offset.m4535toStringimpl(this.position)) + ", pressed=" + this.pressed + ", pressure=" + this.pressure + ", previousUptimeMillis=" + this.previousUptimeMillis + ", previousPosition=" + ((Object) Offset.m4535toStringimpl(this.previousPosition)) + ", previousPressed=" + this.previousPressed + ", isConsumed=" + this.isConsumed + ')';
     }
 }

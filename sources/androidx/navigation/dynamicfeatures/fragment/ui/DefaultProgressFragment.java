@@ -97,14 +97,12 @@ public final class DefaultProgressFragment extends AbstractProgressFragment {
         displayAction(R.string.retry, new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.DefaultProgressFragment$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onCancelled$lambda$3;
-                onCancelled$lambda$3 = DefaultProgressFragment.onCancelled$lambda$3(DefaultProgressFragment.this);
-                return onCancelled$lambda$3;
+                return DefaultProgressFragment.onCancelled$lambda$3(DefaultProgressFragment.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCancelled$lambda$3(DefaultProgressFragment defaultProgressFragment) {
         defaultProgressFragment.navigate$navigation_dynamic_features_fragment_release();
         return Unit.INSTANCE;
@@ -117,14 +115,12 @@ public final class DefaultProgressFragment extends AbstractProgressFragment {
         displayAction(R.string.ok, new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.DefaultProgressFragment$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onFailed$lambda$4;
-                onFailed$lambda$4 = DefaultProgressFragment.onFailed$lambda$4(DefaultProgressFragment.this);
-                return onFailed$lambda$4;
+                return DefaultProgressFragment.onFailed$lambda$4(DefaultProgressFragment.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onFailed$lambda$4(DefaultProgressFragment defaultProgressFragment) {
         FragmentKt.findNavController(defaultProgressFragment).popBackStack();
         return Unit.INSTANCE;

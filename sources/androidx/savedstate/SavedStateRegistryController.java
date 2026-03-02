@@ -65,14 +65,12 @@ public final class SavedStateRegistryController {
             return new SavedStateRegistryController(new SavedStateRegistryImpl(owner, new Function0() { // from class: androidx.savedstate.SavedStateRegistryController$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit create$lambda$0;
-                    create$lambda$0 = SavedStateRegistryController.Companion.create$lambda$0(SavedStateRegistryOwner.this);
-                    return create$lambda$0;
+                    return SavedStateRegistryController.Companion.create$lambda$0(SavedStateRegistryOwner.this);
                 }
             }), null);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit create$lambda$0(SavedStateRegistryOwner savedStateRegistryOwner) {
             savedStateRegistryOwner.getLifecycle().addObserver(new Recreator(savedStateRegistryOwner));
             return Unit.INSTANCE;

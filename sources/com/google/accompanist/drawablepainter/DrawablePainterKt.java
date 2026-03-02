@@ -24,9 +24,7 @@ public final class DrawablePainterKt {
     private static final Lazy MAIN_HANDLER$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: com.google.accompanist.drawablepainter.DrawablePainterKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Handler MAIN_HANDLER_delegate$lambda$0;
-            MAIN_HANDLER_delegate$lambda$0 = DrawablePainterKt.MAIN_HANDLER_delegate$lambda$0();
-            return MAIN_HANDLER_delegate$lambda$0;
+            return DrawablePainterKt.MAIN_HANDLER_delegate$lambda$0();
         }
     });
 
@@ -79,6 +77,6 @@ public final class DrawablePainterKt {
         if (drawable.getIntrinsicWidth() >= 0 && drawable.getIntrinsicHeight() >= 0) {
             return SizeKt.Size(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         }
-        return Size.Companion.m5256getUnspecifiedNHjbRc();
+        return Size.Companion.m4604getUnspecifiedNHjbRc();
     }
 }

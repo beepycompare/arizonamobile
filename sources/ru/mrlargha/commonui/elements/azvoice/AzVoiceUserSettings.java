@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.azvoice.adapter.SliderVoiceAdapter;
 /* compiled from: AzVoiceUserSettings.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0001\u001dB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u0010\u001a\u00020\u00112\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013J\u000e\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u0014J\u0006\u0010\u0017\u001a\u00020\u0011J\u000e\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u0005J\u0018\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/azvoice/AzVoiceUserSettings;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "formLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recycler", "Landroidx/recyclerview/widget/RecyclerView;", "closeButton", "Landroidx/appcompat/widget/AppCompatImageView;", "sliderAdapter", "Lru/mrlargha/commonui/elements/azvoice/adapter/SliderVoiceAdapter;", "setSliders", "", "newSliders", "", "Lru/mrlargha/commonui/elements/azvoice/SoundSliderData;", "addSlider", "newSlider", "clearSliders", "removeSliderByPlayerId", "id", "valueChanged", "sliderId", "newValue", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0001\u001dB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u0010\u001a\u00020\u00112\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013J\u000e\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u0014J\u0006\u0010\u0017\u001a\u00020\u0011J\u000e\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u0005J\u0018\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/azvoice/AzVoiceUserSettings;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "formLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recycler", "Landroidx/recyclerview/widget/RecyclerView;", "closeButton", "Landroidx/appcompat/widget/AppCompatImageView;", "sliderAdapter", "Lru/mrlargha/commonui/elements/azvoice/adapter/SliderVoiceAdapter;", "setSliders", "", "newSliders", "", "Lru/mrlargha/commonui/elements/azvoice/SoundSliderData;", "addSlider", "newSlider", "clearSliders", "removeSliderByPlayerId", "id", "valueChanged", "sliderId", "newValue", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class AzVoiceUserSettings extends SAMPUIElement {
     private final AppCompatImageView closeButton;
@@ -51,9 +51,7 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
         SliderVoiceAdapter sliderVoiceAdapter = new SliderVoiceAdapter(new Function3() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit sliderAdapter$lambda$0;
-                sliderAdapter$lambda$0 = AzVoiceUserSettings.sliderAdapter$lambda$0(AzVoiceUserSettings.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
-                return sliderAdapter$lambda$0;
+                return AzVoiceUserSettings.sliderAdapter$lambda$0(AzVoiceUserSettings.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Integer) obj3).intValue());
             }
         });
         this.sliderAdapter = sliderVoiceAdapter;
@@ -69,13 +67,13 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
         setVisibility(false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit sliderAdapter$lambda$0(AzVoiceUserSettings azVoiceUserSettings, int i, int i2, int i3) {
         azVoiceUserSettings.valueChanged(i, i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(AzVoiceUserSettings azVoiceUserSettings, int i, View view) {
         azVoiceUserSettings.getNotifier().clickedWrapper(i, 1, -1);
         azVoiceUserSettings.setVisibility(false);
@@ -109,31 +107,24 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
         final Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean removeSliderByPlayerId$lambda$0;
-                removeSliderByPlayerId$lambda$0 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$0(i, (SoundSliderData) obj);
-                return Boolean.valueOf(removeSliderByPlayerId$lambda$0);
+                return Boolean.valueOf(AzVoiceUserSettings.removeSliderByPlayerId$lambda$0(i, (SoundSliderData) obj));
             }
         };
         Boolean.valueOf(currentList.removeIf(new Predicate() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda1
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean removeSliderByPlayerId$lambda$1;
-                removeSliderByPlayerId$lambda$1 = AzVoiceUserSettings.removeSliderByPlayerId$lambda$1(Function1.this, obj);
-                return removeSliderByPlayerId$lambda$1;
+                boolean booleanValue;
+                booleanValue = ((Boolean) Function1.this.invoke(obj)).booleanValue();
+                return booleanValue;
             }
         }));
         this.sliderAdapter.submitList(currentList);
         this.sliderAdapter.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean removeSliderByPlayerId$lambda$0(int i, SoundSliderData soundSliderData) {
         return soundSliderData.getSliderUId() == i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeSliderByPlayerId$lambda$1(Function1 function1, Object obj) {
-        return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 
     private final void valueChanged(int i, int i2) {
@@ -141,7 +132,7 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
     }
 
     /* compiled from: AzVoiceUserSettings.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/azvoice/AzVoiceUserSettings$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/azvoice/AzVoiceUserSettings$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.VOICE_PLAYERS_SETTINGS);

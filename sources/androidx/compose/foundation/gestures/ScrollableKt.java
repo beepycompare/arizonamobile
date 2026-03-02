@@ -27,9 +27,7 @@ public final class ScrollableKt {
     private static final Function1<PointerType, Boolean> CanDragCalculation = new Function1() { // from class: androidx.compose.foundation.gestures.ScrollableKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            boolean CanDragCalculation$lambda$0;
-            CanDragCalculation$lambda$0 = ScrollableKt.CanDragCalculation$lambda$0((PointerType) obj);
-            return Boolean.valueOf(CanDragCalculation$lambda$0);
+            return Boolean.valueOf(ScrollableKt.CanDragCalculation$lambda$0((PointerType) obj));
         }
     };
     private static final ScrollScope NoOpScrollScope = new ScrollScope() { // from class: androidx.compose.foundation.gestures.ScrollableKt$NoOpScrollScope$1
@@ -124,9 +122,9 @@ public final class ScrollableKt {
         return modifier.then(new ScrollableElement(scrollableState, orientation, overscrollEffect, z, z2, flingBehavior, mutableInteractionSource, bringIntoViewSpec));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean CanDragCalculation$lambda$0(PointerType pointerType) {
-        return !(pointerType == null ? false : PointerType.m6815equalsimpl0(pointerType.m6818unboximpl(), PointerType.Companion.m6820getMouseT8wyACA()));
+        return !(pointerType == null ? false : PointerType.m6156equalsimpl0(pointerType.m6159unboximpl(), PointerType.Companion.m6161getMouseT8wyACA()));
     }
 
     public static final Function1<PointerType, Boolean> getCanDragCalculation() {
@@ -153,7 +151,7 @@ public final class ScrollableKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m654semanticsScrollByd4ec7I(ScrollingLogic scrollingLogic, long j, Continuation<? super Offset> continuation) {
+    public static final Object m571semanticsScrollByd4ec7I(ScrollingLogic scrollingLogic, long j, Continuation<? super Offset> continuation) {
         ScrollableKt$semanticsScrollBy$1 scrollableKt$semanticsScrollBy$1;
         int i;
         Ref.FloatRef floatRef;
@@ -182,7 +180,7 @@ public final class ScrollableKt {
                     floatRef = (Ref.FloatRef) scrollableKt$semanticsScrollBy$1.L$1;
                     scrollingLogic2 = (ScrollingLogic) scrollableKt$semanticsScrollBy$1.L$0;
                 }
-                return Offset.m5168boximpl(scrollingLogic2.m673toOffsettuRUvjQ(floatRef.element));
+                return Offset.m4516boximpl(scrollingLogic2.m590toOffsettuRUvjQ(floatRef.element));
             }
         }
         scrollableKt$semanticsScrollBy$1 = new ScrollableKt$semanticsScrollBy$1(continuation);
@@ -191,6 +189,6 @@ public final class ScrollableKt {
         i = scrollableKt$semanticsScrollBy$1.label;
         if (i != 0) {
         }
-        return Offset.m5168boximpl(scrollingLogic2.m673toOffsettuRUvjQ(floatRef.element));
+        return Offset.m4516boximpl(scrollingLogic2.m590toOffsettuRUvjQ(floatRef.element));
     }
 }

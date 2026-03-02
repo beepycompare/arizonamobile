@@ -36,11 +36,13 @@ public class NewThreadWorker extends Scheduler.Worker implements Disposable {
     public Disposable scheduleDirect(Runnable runnable, long j, TimeUnit timeUnit) {
         Future<?> schedule;
         ScheduledDirectTask scheduledDirectTask = new ScheduledDirectTask(RxJavaPlugins.onSchedule(runnable));
+        int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+        ScheduledExecutorService scheduledExecutorService = this.executor;
         try {
-            if (j <= 0) {
-                schedule = this.executor.submit(scheduledDirectTask);
+            if (i <= 0) {
+                schedule = scheduledExecutorService.submit(scheduledDirectTask);
             } else {
-                schedule = this.executor.schedule(scheduledDirectTask, j, timeUnit);
+                schedule = scheduledExecutorService.schedule(scheduledDirectTask, j, timeUnit);
             }
             scheduledDirectTask.setFuture(schedule);
             return scheduledDirectTask;
@@ -55,11 +57,13 @@ public class NewThreadWorker extends Scheduler.Worker implements Disposable {
         Runnable onSchedule = RxJavaPlugins.onSchedule(runnable);
         if (j2 <= 0) {
             InstantPeriodicTask instantPeriodicTask = new InstantPeriodicTask(onSchedule, this.executor);
+            int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            ScheduledExecutorService scheduledExecutorService = this.executor;
             try {
-                if (j <= 0) {
-                    schedule = this.executor.submit(instantPeriodicTask);
+                if (i <= 0) {
+                    schedule = scheduledExecutorService.submit(instantPeriodicTask);
                 } else {
-                    schedule = this.executor.schedule(instantPeriodicTask, j, timeUnit);
+                    schedule = scheduledExecutorService.schedule(instantPeriodicTask, j, timeUnit);
                 }
                 instantPeriodicTask.setFirst(schedule);
                 return instantPeriodicTask;
@@ -82,11 +86,13 @@ public class NewThreadWorker extends Scheduler.Worker implements Disposable {
         Future<?> schedule;
         ScheduledRunnable scheduledRunnable = new ScheduledRunnable(RxJavaPlugins.onSchedule(runnable), disposableContainer);
         if (disposableContainer == null || disposableContainer.add(scheduledRunnable)) {
+            int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+            ScheduledExecutorService scheduledExecutorService = this.executor;
             try {
-                if (j <= 0) {
-                    schedule = this.executor.submit((Callable) scheduledRunnable);
+                if (i <= 0) {
+                    schedule = scheduledExecutorService.submit((Callable) scheduledRunnable);
                 } else {
-                    schedule = this.executor.schedule((Callable) scheduledRunnable, j, timeUnit);
+                    schedule = scheduledExecutorService.schedule((Callable) scheduledRunnable, j, timeUnit);
                 }
                 scheduledRunnable.setFuture(schedule);
                 return scheduledRunnable;

@@ -125,13 +125,14 @@ public class QueueFile implements Closeable {
         int wrapPosition = wrapPosition(i);
         int i4 = wrapPosition + i3;
         int i5 = this.fileLength;
+        RandomAccessFile randomAccessFile = this.raf;
         if (i4 <= i5) {
-            this.raf.seek(wrapPosition);
+            randomAccessFile.seek(wrapPosition);
             this.raf.write(bArr, i2, i3);
             return;
         }
         int i6 = i5 - wrapPosition;
-        this.raf.seek(wrapPosition);
+        randomAccessFile.seek(wrapPosition);
         this.raf.write(bArr, i2, i6);
         this.raf.seek(16L);
         this.raf.write(bArr, i2 + i6, i3 - i6);
@@ -142,13 +143,14 @@ public class QueueFile implements Closeable {
         int wrapPosition = wrapPosition(i);
         int i4 = wrapPosition + i3;
         int i5 = this.fileLength;
+        RandomAccessFile randomAccessFile = this.raf;
         if (i4 <= i5) {
-            this.raf.seek(wrapPosition);
+            randomAccessFile.seek(wrapPosition);
             this.raf.readFully(bArr, i2, i3);
             return;
         }
         int i6 = i5 - wrapPosition;
-        this.raf.seek(wrapPosition);
+        randomAccessFile.seek(wrapPosition);
         this.raf.readFully(bArr, i2, i6);
         this.raf.seek(16L);
         this.raf.readFully(bArr, i2 + i6, i3 - i6);
@@ -181,10 +183,13 @@ public class QueueFile implements Closeable {
         if (this.elementCount == 0) {
             return 16;
         }
-        if (this.last.position >= this.first.position) {
-            return (this.last.position - this.first.position) + 4 + this.last.length + 16;
+        int i = this.last.position;
+        int i2 = this.first.position;
+        Element element = this.last;
+        if (i >= i2) {
+            return (element.position - this.first.position) + 4 + this.last.length + 16;
         }
-        return (((this.last.position + 4) + this.last.length) + this.fileLength) - this.first.position;
+        return (((element.position + 4) + this.last.length) + this.fileLength) - this.first.position;
     }
 
     private int remainingBytes() {

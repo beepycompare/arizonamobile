@@ -26,9 +26,7 @@ public final class RoomRawQuery {
         this.bindingFunction = new Function1() { // from class: androidx.room.RoomRawQuery$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit bindingFunction$lambda$1;
-                bindingFunction$lambda$1 = RoomRawQuery.bindingFunction$lambda$1(Function1.this, (SQLiteStatement) obj);
-                return bindingFunction$lambda$1;
+                return RoomRawQuery.bindingFunction$lambda$1(Function1.this, (SQLiteStatement) obj);
             }
         };
     }
@@ -41,20 +39,18 @@ public final class RoomRawQuery {
         this(str, (i & 2) != 0 ? new Function1() { // from class: androidx.room.RoomRawQuery$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = RoomRawQuery._init_$lambda$0((SQLiteStatement) obj);
-                return _init_$lambda$0;
+                return RoomRawQuery._init_$lambda$0((SQLiteStatement) obj);
             }
         } : function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(SQLiteStatement it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit bindingFunction$lambda$1(Function1 function1, SQLiteStatement it) {
         Intrinsics.checkNotNullParameter(it, "it");
         function1.invoke(new BindOnlySQLiteStatement(it));

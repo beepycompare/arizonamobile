@@ -24,7 +24,7 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
     private boolean shouldCreateCompositionOnAttachedToWindow;
     private final Window window;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Content$lambda$0(DialogLayout dialogLayout, int i, Composer composer, int i2) {
         dialogLayout.Content(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -89,9 +89,7 @@ public final class DialogLayout extends AbstractComposeView implements DialogWin
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.DialogLayout$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Content$lambda$0;
-                    Content$lambda$0 = DialogLayout.Content$lambda$0(DialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Content$lambda$0;
+                    return DialogLayout.Content$lambda$0(DialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

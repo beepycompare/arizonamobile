@@ -156,9 +156,7 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
                     animateMouseWheelScroll = this.this$0.animateMouseWheelScroll(nestedScrollScope, this.$animationState.element, f, coerceAtMost, new Function1() { // from class: androidx.compose.foundation.gestures.MouseWheelScrollingLogic$dispatchMouseWheelScroll$3$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj3) {
-                            boolean invokeSuspend$lambda$0;
-                            invokeSuspend$lambda$0 = MouseWheelScrollingLogic$dispatchMouseWheelScroll$3.invokeSuspend$lambda$0(MouseWheelScrollingLogic.this, objectRef2, floatRef, scrollingLogic, booleanRef2, ((Float) obj3).floatValue());
-                            return Boolean.valueOf(invokeSuspend$lambda$0);
+                            return Boolean.valueOf(MouseWheelScrollingLogic$dispatchMouseWheelScroll$3.invokeSuspend$lambda$0(MouseWheelScrollingLogic.this, objectRef2, floatRef, scrollingLogic, booleanRef2, ((Float) obj3).floatValue()));
                         }
                     }, this);
                     if (animateMouseWheelScroll != coroutine_suspended) {
@@ -184,12 +182,12 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r2v4, types: [T, androidx.compose.foundation.gestures.MouseWheelScrollingLogic$MouseWheelScrollDelta] */
     public static final boolean invokeSuspend$lambda$0(MouseWheelScrollingLogic mouseWheelScrollingLogic, Ref.ObjectRef objectRef, Ref.FloatRef floatRef, ScrollingLogic scrollingLogic, Ref.BooleanRef booleanRef, float f) {
         Channel channel;
         MouseWheelScrollingLogic.MouseWheelScrollDelta sumOrNull;
-        float m672toFloatk4lQ0M;
+        float m589toFloatk4lQ0M;
         boolean isLowScrollingDelta;
         channel = mouseWheelScrollingLogic.channel;
         sumOrNull = mouseWheelScrollingLogic.sumOrNull(channel);
@@ -197,11 +195,11 @@ public final class MouseWheelScrollingLogic$dispatchMouseWheelScroll$3 extends S
             mouseWheelScrollingLogic.trackVelocity(sumOrNull);
             objectRef.element = ((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).plus(sumOrNull);
             if (ComposeFoundationFlags.isMouseWheel1DAxisLockingEnabled) {
-                m672toFloatk4lQ0M = scrollingLogic.m674toSingleAxisDeltaFromAnglek4lQ0M(scrollingLogic.m670reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m608getValueF1C5BW0()));
+                m589toFloatk4lQ0M = scrollingLogic.m591toSingleAxisDeltaFromAnglek4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m527getValueF1C5BW0()));
             } else {
-                m672toFloatk4lQ0M = scrollingLogic.m672toFloatk4lQ0M(scrollingLogic.m670reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m608getValueF1C5BW0()));
+                m589toFloatk4lQ0M = scrollingLogic.m589toFloatk4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(((MouseWheelScrollingLogic.MouseWheelScrollDelta) objectRef.element).m527getValueF1C5BW0()));
             }
-            floatRef.element = m672toFloatk4lQ0M;
+            floatRef.element = m589toFloatk4lQ0M;
             isLowScrollingDelta = MouseWheelScrollableKt.isLowScrollingDelta(floatRef.element - f);
             booleanRef.element = !isLowScrollingDelta;
         }

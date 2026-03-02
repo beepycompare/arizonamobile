@@ -26,10 +26,10 @@ public final class WindowInsetsNestedScrollConnection$fling$1 extends Continuati
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m1006flinghuYlsQE;
+        Object m893flinghuYlsQE;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m1006flinghuYlsQE = this.this$0.m1006flinghuYlsQE(0L, 0.0f, false, this);
-        return m1006flinghuYlsQE;
+        m893flinghuYlsQE = this.this$0.m893flinghuYlsQE(0L, 0.0f, false, this);
+        return m893flinghuYlsQE;
     }
 }

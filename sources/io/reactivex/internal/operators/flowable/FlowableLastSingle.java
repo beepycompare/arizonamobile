@@ -77,10 +77,11 @@ public final class FlowableLastSingle<T> extends Single<T> {
                 return;
             }
             T t2 = this.defaultItem;
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t2 != null) {
-                this.downstream.onSuccess(t2);
+                singleObserver.onSuccess(t2);
             } else {
-                this.downstream.onError(new NoSuchElementException());
+                singleObserver.onError(new NoSuchElementException());
             }
         }
     }

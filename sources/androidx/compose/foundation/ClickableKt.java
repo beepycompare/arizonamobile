@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Ref;
 /* loaded from: classes.dex */
 public final class ClickableKt {
     /* renamed from: clickable-XHw0xAI$default */
-    public static /* synthetic */ Modifier m340clickableXHw0xAI$default(Modifier modifier, boolean z, String str, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m297clickableXHw0xAI$default(Modifier modifier, boolean z, String str, Role role, Function0 function0, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
@@ -42,7 +42,7 @@ public final class ClickableKt {
         if ((i & 4) != 0) {
             role = null;
         }
-        return m339clickableXHw0xAI(modifier, z, str, role, function0);
+        return m296clickableXHw0xAI(modifier, z, str, role, function0);
     }
 
     public static final Modifier clickable_XHw0xAI$lambda$1(boolean z, String str, Role role, Function0 function0, Modifier modifier, Composer composer, int i) {
@@ -73,16 +73,16 @@ public final class ClickableKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         }
-        Modifier m337clickableO2vRcR0 = m337clickableO2vRcR0(Modifier.Companion, mutableInteractionSource, indication, z, str, role, function0);
+        Modifier m294clickableO2vRcR0 = m294clickableO2vRcR0(Modifier.Companion, mutableInteractionSource, indication, z, str, role, function0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m337clickableO2vRcR0;
+        return m294clickableO2vRcR0;
     }
 
     /* renamed from: clickable-oSLSa3U$default */
-    public static /* synthetic */ Modifier m342clickableoSLSa3U$default(Modifier modifier, boolean z, String str, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m299clickableoSLSa3U$default(Modifier modifier, boolean z, String str, Role role, MutableInteractionSource mutableInteractionSource, Function0 function0, int i, Object obj) {
         MutableInteractionSource mutableInteractionSource2;
         Function0 function02;
         String str2;
@@ -110,24 +110,24 @@ public final class ClickableKt {
             role2 = role;
             modifier2 = modifier;
         }
-        return m341clickableoSLSa3U(modifier2, z, str2, role2, mutableInteractionSource2, function02);
+        return m298clickableoSLSa3U(modifier2, z, str2, role2, mutableInteractionSource2, function02);
     }
 
     /* renamed from: clickable-oSLSa3U */
-    public static final Modifier m341clickableoSLSa3U(Modifier modifier, boolean z, String str, Role role, MutableInteractionSource mutableInteractionSource, Function0<Unit> function0) {
+    public static final Modifier m298clickableoSLSa3U(Modifier modifier, boolean z, String str, Role role, MutableInteractionSource mutableInteractionSource, Function0<Unit> function0) {
         return modifier.then(new ClickableElement(mutableInteractionSource, null, true, z, str, role, function0, null));
     }
 
     /* renamed from: clickable-O2vRcR0$default */
-    public static /* synthetic */ Modifier m338clickableO2vRcR0$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Modifier m295clickableO2vRcR0$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, Function0 function0, int i, Object obj) {
         if ((i & 4) != 0) {
             z = true;
         }
-        return m337clickableO2vRcR0(modifier, mutableInteractionSource, indication, z, (i & 8) != 0 ? null : str, (i & 16) != 0 ? null : role, function0);
+        return m294clickableO2vRcR0(modifier, mutableInteractionSource, indication, z, (i & 8) != 0 ? null : str, (i & 16) != 0 ? null : role, function0);
     }
 
     /* renamed from: combinedClickable-f5TDLPQ$default */
-    public static /* synthetic */ Modifier m350combinedClickablef5TDLPQ$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, Function0 function03, int i, Object obj) {
+    public static /* synthetic */ Modifier m307combinedClickablef5TDLPQ$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, Function0 function03, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
@@ -149,7 +149,7 @@ public final class ClickableKt {
         if ((i & 64) != 0) {
             z2 = true;
         }
-        return m349combinedClickablef5TDLPQ(modifier, z, str, role, str2, function0, function02, z2, function03);
+        return m306combinedClickablef5TDLPQ(modifier, z, str, role, str2, function0, function02, z2, function03);
     }
 
     public static final Modifier combinedClickable_f5TDLPQ$lambda$1(boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, Function0 function03, Modifier modifier, Composer composer, int i) {
@@ -180,16 +180,16 @@ public final class ClickableKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         }
-        Modifier m345combinedClickableauXiCPI = m345combinedClickableauXiCPI(Modifier.Companion, mutableInteractionSource, indication, z, str, role, str2, function0, function02, z2, function03);
+        Modifier m302combinedClickableauXiCPI = m302combinedClickableauXiCPI(Modifier.Companion, mutableInteractionSource, indication, z, str, role, str2, function0, function02, z2, function03);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m345combinedClickableauXiCPI;
+        return m302combinedClickableauXiCPI;
     }
 
     /* renamed from: combinedClickable-hoGz1lA$default */
-    public static /* synthetic */ Modifier m352combinedClickablehoGz1lA$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, MutableInteractionSource mutableInteractionSource, Function0 function03, int i, Object obj) {
+    public static /* synthetic */ Modifier m309combinedClickablehoGz1lA$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, MutableInteractionSource mutableInteractionSource, Function0 function03, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
         }
@@ -214,16 +214,16 @@ public final class ClickableKt {
         if ((i & 128) != 0) {
             mutableInteractionSource = null;
         }
-        return m351combinedClickablehoGz1lA(modifier, z, str, role, str2, function0, function02, z2, mutableInteractionSource, function03);
+        return m308combinedClickablehoGz1lA(modifier, z, str, role, str2, function0, function02, z2, mutableInteractionSource, function03);
     }
 
     /* renamed from: combinedClickable-hoGz1lA */
-    public static final Modifier m351combinedClickablehoGz1lA(Modifier modifier, boolean z, String str, Role role, String str2, Function0<Unit> function0, Function0<Unit> function02, boolean z2, MutableInteractionSource mutableInteractionSource, Function0<Unit> function03) {
+    public static final Modifier m308combinedClickablehoGz1lA(Modifier modifier, boolean z, String str, Role role, String str2, Function0<Unit> function0, Function0<Unit> function02, boolean z2, MutableInteractionSource mutableInteractionSource, Function0<Unit> function03) {
         return modifier.then(new CombinedClickableElement(mutableInteractionSource, null, true, z, str, role, function03, str2, function0, function02, z2, null));
     }
 
     /* renamed from: combinedClickable-cJG_KMw$default */
-    public static /* synthetic */ Modifier m348combinedClickablecJG_KMw$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, Function0 function03, int i, Object obj) {
+    public static /* synthetic */ Modifier m305combinedClickablecJG_KMw$default(Modifier modifier, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, Function0 function03, int i, Object obj) {
         Function0 function04;
         Function0 function05;
         String str3;
@@ -263,7 +263,7 @@ public final class ClickableKt {
             role2 = role;
             modifier2 = modifier;
         }
-        return m347combinedClickablecJG_KMw(modifier2, z, str4, role2, str3, function06, function04, function05);
+        return m304combinedClickablecJG_KMw(modifier2, z, str4, role2, str3, function06, function04, function05);
     }
 
     public static final Modifier combinedClickable_cJG_KMw$lambda$1(boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, Function0 function03, Modifier modifier, Composer composer, int i) {
@@ -294,16 +294,16 @@ public final class ClickableKt {
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endReplaceGroup();
         }
-        Modifier m345combinedClickableauXiCPI = m345combinedClickableauXiCPI(Modifier.Companion, mutableInteractionSource, indication, z, str, role, str2, function0, function02, true, function03);
+        Modifier m302combinedClickableauXiCPI = m302combinedClickableauXiCPI(Modifier.Companion, mutableInteractionSource, indication, z, str, role, str2, function0, function02, true, function03);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m345combinedClickableauXiCPI;
+        return m302combinedClickableauXiCPI;
     }
 
     /* renamed from: combinedClickable-auXiCPI$default */
-    public static /* synthetic */ Modifier m346combinedClickableauXiCPI$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, Function0 function03, int i, Object obj) {
+    public static /* synthetic */ Modifier m303combinedClickableauXiCPI$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, boolean z2, Function0 function03, int i, Object obj) {
         if ((i & 4) != 0) {
             z = true;
         }
@@ -325,11 +325,11 @@ public final class ClickableKt {
         if ((i & 256) != 0) {
             z2 = true;
         }
-        return m345combinedClickableauXiCPI(modifier, mutableInteractionSource, indication, z, str, role, str2, function0, function02, z2, function03);
+        return m302combinedClickableauXiCPI(modifier, mutableInteractionSource, indication, z, str, role, str2, function0, function02, z2, function03);
     }
 
     /* renamed from: combinedClickable-XVZzFYc$default */
-    public static /* synthetic */ Modifier m344combinedClickableXVZzFYc$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, Function0 function03, int i, Object obj) {
+    public static /* synthetic */ Modifier m301combinedClickableXVZzFYc$default(Modifier modifier, MutableInteractionSource mutableInteractionSource, Indication indication, boolean z, String str, Role role, String str2, Function0 function0, Function0 function02, Function0 function03, int i, Object obj) {
         Function0 function04;
         Modifier modifier2;
         MutableInteractionSource mutableInteractionSource2;
@@ -356,7 +356,7 @@ public final class ClickableKt {
             indication2 = indication;
             function05 = function03;
         }
-        return m343combinedClickableXVZzFYc(modifier2, mutableInteractionSource2, indication2, z2, str3, role2, str4, function06, function04, function05);
+        return m300combinedClickableXVZzFYc(modifier2, mutableInteractionSource2, indication2, z2, str3, role2, str4, function06, function04, function05);
     }
 
     public static final Modifier clickableWithIndicationIfNeeded(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final Function2<? super MutableInteractionSource, ? super IndicationNodeFactory, ? extends Modifier> function2) {
@@ -401,19 +401,19 @@ public final class ClickableKt {
     }
 
     /* renamed from: isPress-ZmokQxo */
-    public static final boolean m355isPressZmokQxo(KeyEvent keyEvent) {
-        return KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6584getKeyDownCS__XNY()) && m354isEnterZmokQxo(keyEvent);
+    public static final boolean m312isPressZmokQxo(KeyEvent keyEvent) {
+        return KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5925getKeyDownCS__XNY()) && m311isEnterZmokQxo(keyEvent);
     }
 
     /* renamed from: isClick-ZmokQxo */
-    public static final boolean m353isClickZmokQxo(KeyEvent keyEvent) {
-        return KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6585getKeyUpCS__XNY()) && m354isEnterZmokQxo(keyEvent);
+    public static final boolean m310isClickZmokQxo(KeyEvent keyEvent) {
+        return KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5926getKeyUpCS__XNY()) && m311isEnterZmokQxo(keyEvent);
     }
 
     /* renamed from: isEnter-ZmokQxo */
-    private static final boolean m354isEnterZmokQxo(KeyEvent keyEvent) {
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-        return Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6351getDirectionCenterEK5gGoQ()) || Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6365getEnterEK5gGoQ()) || Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6457getNumPadEnterEK5gGoQ()) || Key.m6279equalsimpl0(m6587getKeyZmokQxo, Key.Companion.m6503getSpacebarEK5gGoQ());
+    private static final boolean m311isEnterZmokQxo(KeyEvent keyEvent) {
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+        return Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5692getDirectionCenterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5706getEnterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5798getNumPadEnterEK5gGoQ()) || Key.m5620equalsimpl0(m5928getKeyZmokQxo, Key.Companion.m5844getSpacebarEK5gGoQ());
     }
 
     public static final boolean hasScrollableContainer(TraversableNode traversableNode) {
@@ -421,9 +421,7 @@ public final class ClickableKt {
         TraversableNodeKt.traverseAncestors(traversableNode, ScrollableContainerNode.TraverseKey, new Function1() { // from class: androidx.compose.foundation.ClickableKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean hasScrollableContainer$lambda$0;
-                hasScrollableContainer$lambda$0 = ClickableKt.hasScrollableContainer$lambda$0(Ref.BooleanRef.this, (TraversableNode) obj);
-                return Boolean.valueOf(hasScrollableContainer$lambda$0);
+                return Boolean.valueOf(ClickableKt.hasScrollableContainer$lambda$0(Ref.BooleanRef.this, (TraversableNode) obj));
             }
         });
         return booleanRef.element;
@@ -462,7 +460,7 @@ public final class ClickableKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: clickable-XHw0xAI */
-    public static final /* synthetic */ Modifier m339clickableXHw0xAI(Modifier modifier, final boolean z, final String str, final Role role, final Function0 function0) {
+    public static final /* synthetic */ Modifier m296clickableXHw0xAI(Modifier modifier, final boolean z, final String str, final Role role, final Function0 function0) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.ClickableKt$clickable-XHw0xAI$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -486,15 +484,13 @@ public final class ClickableKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.ClickableKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier clickable_XHw0xAI$lambda$1;
-                clickable_XHw0xAI$lambda$1 = ClickableKt.clickable_XHw0xAI$lambda$1(z, str, role, function0, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return clickable_XHw0xAI$lambda$1;
+                return ClickableKt.clickable_XHw0xAI$lambda$1(z, str, role, function0, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
     /* renamed from: clickable-O2vRcR0 */
-    public static final Modifier m337clickableO2vRcR0(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final Function0<Unit> function0) {
+    public static final Modifier m294clickableO2vRcR0(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final Function0<Unit> function0) {
         ClickableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new ClickableElement(mutableInteractionSource, (IndicationNodeFactory) indication, false, z, str, role, function0, null);
@@ -537,7 +533,7 @@ public final class ClickableKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replaced with new overload that only supports IndicationNodeFactory instances inside LocalIndication, and does not use composed")
     /* renamed from: combinedClickable-f5TDLPQ */
-    public static final /* synthetic */ Modifier m349combinedClickablef5TDLPQ(Modifier modifier, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final boolean z2, final Function0 function03) {
+    public static final /* synthetic */ Modifier m306combinedClickablef5TDLPQ(Modifier modifier, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final boolean z2, final Function0 function03) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.ClickableKt$combinedClickable-f5TDLPQ$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -565,16 +561,14 @@ public final class ClickableKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.ClickableKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier combinedClickable_f5TDLPQ$lambda$1;
-                combinedClickable_f5TDLPQ$lambda$1 = ClickableKt.combinedClickable_f5TDLPQ$lambda$1(z, str, role, str2, function0, function02, z2, function03, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return combinedClickable_f5TDLPQ$lambda$1;
+                return ClickableKt.combinedClickable_f5TDLPQ$lambda$1(z, str, role, str2, function0, function02, z2, function03, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: combinedClickable-cJG_KMw */
-    public static final /* synthetic */ Modifier m347combinedClickablecJG_KMw(Modifier modifier, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final Function0 function03) {
+    public static final /* synthetic */ Modifier m304combinedClickablecJG_KMw(Modifier modifier, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final Function0 function03) {
         return ComposedModifierKt.composed(modifier, InspectableValueKt.isDebugInspectorInfoEnabled() ? new Function1<InspectorInfo, Unit>() { // from class: androidx.compose.foundation.ClickableKt$combinedClickable-cJG_KMw$$inlined$debugInspectorInfo$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -601,15 +595,13 @@ public final class ClickableKt {
         } : InspectableValueKt.getNoInspectorInfo(), new Function3() { // from class: androidx.compose.foundation.ClickableKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier combinedClickable_cJG_KMw$lambda$1;
-                combinedClickable_cJG_KMw$lambda$1 = ClickableKt.combinedClickable_cJG_KMw$lambda$1(z, str, role, str2, function0, function02, function03, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return combinedClickable_cJG_KMw$lambda$1;
+                return ClickableKt.combinedClickable_cJG_KMw$lambda$1(z, str, role, str2, function0, function02, function03, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
     /* renamed from: combinedClickable-auXiCPI */
-    public static final Modifier m345combinedClickableauXiCPI(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final String str2, final Function0<Unit> function0, final Function0<Unit> function02, final boolean z2, final Function0<Unit> function03) {
+    public static final Modifier m302combinedClickableauXiCPI(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final String str2, final Function0<Unit> function0, final Function0<Unit> function02, final boolean z2, final Function0<Unit> function03) {
         CombinedClickableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new CombinedClickableElement(mutableInteractionSource, (IndicationNodeFactory) indication, false, z, str, role, function03, str2, function0, function02, z2, null);
@@ -652,7 +644,7 @@ public final class ClickableKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: combinedClickable-XVZzFYc */
-    public static final /* synthetic */ Modifier m343combinedClickableXVZzFYc(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final Function0 function03) {
+    public static final /* synthetic */ Modifier m300combinedClickableXVZzFYc(Modifier modifier, MutableInteractionSource mutableInteractionSource, final Indication indication, final boolean z, final String str, final Role role, final String str2, final Function0 function0, final Function0 function02, final Function0 function03) {
         CombinedClickableElement composed$default;
         if (indication instanceof IndicationNodeFactory) {
             composed$default = new CombinedClickableElement(mutableInteractionSource, (IndicationNodeFactory) indication, false, z, str, role, function03, str2, function0, function02, true, null);

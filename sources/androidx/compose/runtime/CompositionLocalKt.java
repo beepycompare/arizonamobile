@@ -65,9 +65,7 @@ public final class CompositionLocalKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.CompositionLocalKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CompositionLocalProvider$lambda$0;
-                    CompositionLocalProvider$lambda$0 = CompositionLocalKt.CompositionLocalProvider$lambda$0(providedValueArr, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CompositionLocalProvider$lambda$0;
+                    return CompositionLocalKt.CompositionLocalProvider$lambda$0(providedValueArr, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -90,9 +88,7 @@ public final class CompositionLocalKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.CompositionLocalKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CompositionLocalProvider$lambda$1;
-                    CompositionLocalProvider$lambda$1 = CompositionLocalKt.CompositionLocalProvider$lambda$1(ProvidedValue.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CompositionLocalProvider$lambda$1;
+                    return CompositionLocalKt.CompositionLocalProvider$lambda$1(ProvidedValue.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -127,9 +123,7 @@ public final class CompositionLocalKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.CompositionLocalKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CompositionLocalProvider$lambda$3;
-                    CompositionLocalProvider$lambda$3 = CompositionLocalKt.CompositionLocalProvider$lambda$3(CompositionLocalContext.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CompositionLocalProvider$lambda$3;
+                    return CompositionLocalKt.CompositionLocalProvider$lambda$3(CompositionLocalContext.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

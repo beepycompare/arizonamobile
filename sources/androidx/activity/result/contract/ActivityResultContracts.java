@@ -257,7 +257,9 @@ public final class ActivityResultContracts {
         @Override // androidx.activity.result.contract.ActivityResultContract
         public Intent createIntent(Context context, Void r2) {
             Intrinsics.checkNotNullParameter(context, "context");
-            return new Intent("android.media.action.IMAGE_CAPTURE");
+            Intent addFlags = new Intent("android.media.action.IMAGE_CAPTURE").addFlags(1).addFlags(2);
+            Intrinsics.checkNotNullExpressionValue(addFlags, "addFlags(...)");
+            return addFlags;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -288,9 +290,9 @@ public final class ActivityResultContracts {
         public Intent createIntent(Context context, Uri input) {
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(input, "input");
-            Intent putExtra = new Intent("android.media.action.IMAGE_CAPTURE").putExtra("output", input);
-            Intrinsics.checkNotNullExpressionValue(putExtra, "putExtra(...)");
-            return putExtra;
+            Intent addFlags = new Intent("android.media.action.IMAGE_CAPTURE").putExtra("output", input).addFlags(1).addFlags(2);
+            Intrinsics.checkNotNullExpressionValue(addFlags, "addFlags(...)");
+            return addFlags;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -316,9 +318,9 @@ public final class ActivityResultContracts {
         public Intent createIntent(Context context, Uri input) {
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(input, "input");
-            Intent putExtra = new Intent("android.media.action.VIDEO_CAPTURE").putExtra("output", input);
-            Intrinsics.checkNotNullExpressionValue(putExtra, "putExtra(...)");
-            return putExtra;
+            Intent addFlags = new Intent("android.media.action.VIDEO_CAPTURE").putExtra("output", input).addFlags(1).addFlags(2);
+            Intrinsics.checkNotNullExpressionValue(addFlags, "addFlags(...)");
+            return addFlags;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -349,9 +351,9 @@ public final class ActivityResultContracts {
         public Intent createIntent(Context context, Uri input) {
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(input, "input");
-            Intent putExtra = new Intent("android.media.action.VIDEO_CAPTURE").putExtra("output", input);
-            Intrinsics.checkNotNullExpressionValue(putExtra, "putExtra(...)");
-            return putExtra;
+            Intent addFlags = new Intent("android.media.action.VIDEO_CAPTURE").putExtra("output", input).addFlags(1).addFlags(2);
+            Intrinsics.checkNotNullExpressionValue(addFlags, "addFlags(...)");
+            return addFlags;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */

@@ -53,7 +53,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo10758dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         if (this.handler.post(runnable)) {
             return;
         }
@@ -62,20 +62,18 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo11838scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo10759scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         final Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                HandlerContext.scheduleResumeAfterDelay$lambda$1(CancellableContinuation.this, this);
+                CancellableContinuation.this.resumeUndispatched(this, Unit.INSTANCE);
             }
         };
         if (this.handler.postDelayed(runnable, RangesKt.coerceAtMost(j, 4611686018427387903L))) {
             cancellableContinuation.invokeOnCancellation(new Function1() { // from class: kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit scheduleResumeAfterDelay$lambda$2;
-                    scheduleResumeAfterDelay$lambda$2 = HandlerContext.scheduleResumeAfterDelay$lambda$2(HandlerContext.this, runnable, (Throwable) obj);
-                    return scheduleResumeAfterDelay$lambda$2;
+                    return HandlerContext.scheduleResumeAfterDelay$lambda$2(HandlerContext.this, runnable, (Throwable) obj);
                 }
             });
         } else {
@@ -83,12 +81,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void scheduleResumeAfterDelay$lambda$1(CancellableContinuation cancellableContinuation, HandlerContext handlerContext) {
-        cancellableContinuation.resumeUndispatched(handlerContext, Unit.INSTANCE);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit scheduleResumeAfterDelay$lambda$2(HandlerContext handlerContext, Runnable runnable, Throwable th) {
         handlerContext.handler.removeCallbacks(runnable);
         return Unit.INSTANCE;
@@ -100,7 +93,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
             return new DisposableHandle() { // from class: kotlinx.coroutines.android.HandlerContext$$ExternalSyntheticLambda0
                 @Override // kotlinx.coroutines.DisposableHandle
                 public final void dispose() {
-                    HandlerContext.invokeOnTimeout$lambda$3(HandlerContext.this, runnable);
+                    HandlerContext.this.handler.removeCallbacks(runnable);
                 }
             };
         }
@@ -108,14 +101,9 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         return NonDisposableHandle.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void invokeOnTimeout$lambda$3(HandlerContext handlerContext, Runnable runnable) {
-        handlerContext.handler.removeCallbacks(runnable);
-    }
-
     private final void cancelOnRejection(CoroutineContext coroutineContext, Runnable runnable) {
         JobKt.cancel(coroutineContext, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
-        Dispatchers.getIO().mo11837dispatch(coroutineContext, runnable);
+        Dispatchers.getIO().mo10758dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.MainCoroutineDispatcher, kotlinx.coroutines.CoroutineDispatcher

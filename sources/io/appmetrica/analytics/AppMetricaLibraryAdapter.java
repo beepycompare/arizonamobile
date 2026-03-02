@@ -3,13 +3,13 @@ package io.appmetrica.analytics;
 import android.content.Context;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 import io.appmetrica.analytics.impl.Bb;
-import io.appmetrica.analytics.impl.C0106a0;
-import io.appmetrica.analytics.impl.C0132b0;
-import io.appmetrica.analytics.impl.C0136b4;
+import io.appmetrica.analytics.impl.C0105a0;
+import io.appmetrica.analytics.impl.C0131b0;
+import io.appmetrica.analytics.impl.C0135b4;
 import io.appmetrica.analytics.impl.Cb;
 import io.appmetrica.analytics.impl.F0;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AppMetricaLibraryAdapter {
 
     /* renamed from: a  reason: collision with root package name */
@@ -21,8 +21,8 @@ public class AppMetricaLibraryAdapter {
             Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
             cb.getClass();
-            C0136b4.l().g.a(applicationContext);
-            C0136b4.l().b().a(applicationContext, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
+            C0135b4.l().g.a(applicationContext);
+            C0135b4.l().b().a(applicationContext, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
             return;
         }
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Activation failed due to context is null", new Object[0]);
@@ -51,9 +51,9 @@ public class AppMetricaLibraryAdapter {
         Bb bb = f0.f575a;
         if (bb.g.a(str).f1194a && bb.f516a.a(context).f1194a) {
             f0.b.getClass();
-            C0136b4.l().g.a(context);
-            C0132b0 b = C0136b4.l().b();
-            b.c.a().executeDelayed(new C0106a0(b, context), b.d);
+            C0135b4.l().g.a(context);
+            C0131b0 b = C0135b4.l().b();
+            b.c.a().executeDelayed(new C0105a0(b, context), b.d);
             ModulesFacade.subscribeForAutoCollectedData(context, str);
         }
     }
@@ -65,8 +65,8 @@ public class AppMetricaLibraryAdapter {
             Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
             cb.getClass();
-            C0136b4.l().g.a(applicationContext);
-            C0136b4.l().b().a(applicationContext, appMetricaLibraryAdapterConfig);
+            C0135b4.l().g.a(applicationContext);
+            C0135b4.l().b().a(applicationContext, appMetricaLibraryAdapterConfig);
             return;
         }
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Activation failed due to context is null or invalid config", new Object[0]);

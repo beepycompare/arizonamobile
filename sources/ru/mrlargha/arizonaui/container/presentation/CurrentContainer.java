@@ -28,7 +28,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: CurrentContainer.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0007\u0018\u0000 \u001d2\u00020\u0001:\u0002\u001d\u001eB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0012\u001a\u00020\u0013H\u0002J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\b\u0010\u0015\u001a\u00020\u0013H\u0002J\u000e\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u000e\u0010\u001c\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentContainer", "Landroidx/constraintlayout/widget/ConstraintLayout;", "timer", "Landroid/os/CountDownTimer;", "auctionCurrentContainerBinding", "Lru/mrlargha/arizonaui/databinding/AuctionCurrentContainerBinding;", "currentContainerAdapter", "Lru/mrlargha/arizonaui/container/presentation/CurrentContainerAdapter;", "createCurrentContainerItems", "", "showSetBetMenu", "hiddenSetBetMenu", "addContainer", "message", "", "onBackendMessage", "data", "subId", "addRewards", "Companion", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0007\u0018\u0000 \u001d2\u00020\u0001:\u0002\u001d\u001eB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0012\u001a\u00020\u0013H\u0002J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\b\u0010\u0015\u001a\u00020\u0013H\u0002J\u000e\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u000e\u0010\u001c\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "activity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "currentContainer", "Landroidx/constraintlayout/widget/ConstraintLayout;", "timer", "Landroid/os/CountDownTimer;", "auctionCurrentContainerBinding", "Lru/mrlargha/arizonaui/databinding/AuctionCurrentContainerBinding;", "currentContainerAdapter", "Lru/mrlargha/arizonaui/container/presentation/CurrentContainerAdapter;", "createCurrentContainerItems", "", "showSetBetMenu", "hiddenSetBetMenu", "addContainer", "message", "", "onBackendMessage", "data", "subId", "addRewards", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class CurrentContainer extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -90,7 +90,7 @@ public final class CurrentContainer extends SAMPUIElement {
         this.auctionCurrentContainerBinding.ccRcView.setAdapter(this.currentContainerAdapter);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void createCurrentContainerItems$lambda$0(CurrentContainer currentContainer, View view) {
         currentContainer.sendServerEvent.clickedWrapper(currentContainer.getBackendID(), 0, 1);
         CountDownTimer countDownTimer = currentContainer.timer;
@@ -105,7 +105,7 @@ public final class CurrentContainer extends SAMPUIElement {
         currentContainer.getNotifier().requestRemoveUIElement(currentContainer);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void createCurrentContainerItems$lambda$1(CurrentContainer currentContainer, View view) {
         CharSequence text = currentContainer.auctionCurrentContainerBinding.ccItemTimeLeftTimer.getText();
         Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
@@ -116,7 +116,7 @@ public final class CurrentContainer extends SAMPUIElement {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Can't wrap try/catch for region: R(15:1|(2:3|(13:5|6|(1:8)(1:38)|(1:10)|11|12|(1:14)(1:35)|(7:18|(2:(1:21)|22)|23|24|(3:26|(1:28)|(1:30))|31|32)|34|24|(0)|31|32))|39|6|(0)(0)|(0)|11|12|(0)(0)|(7:18|(0)|23|24|(0)|31|32)|34|24|(0)|31|32) */
     /* JADX WARN: Code restructure failed: missing block: B:29:0x0110, code lost:
         r0 = move-exception;
@@ -241,13 +241,15 @@ public final class CurrentContainer extends SAMPUIElement {
     public final void addContainer(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
         Container container = (Container) MapperKt.toModel(message, Container.class);
-        if (container.getTypePrice() == 0) {
-            this.auctionCurrentContainerBinding.ccItemPriceIcone.setText("$");
+        int typePrice = container.getTypePrice();
+        AuctionCurrentContainerBinding auctionCurrentContainerBinding = this.auctionCurrentContainerBinding;
+        if (typePrice == 0) {
+            auctionCurrentContainerBinding.ccItemPriceIcone.setText("$");
             this.auctionCurrentContainerBinding.ccItemLastBetPrice.setText(container.getCurrentBet() + " $");
             this.auctionCurrentContainerBinding.ccInputBetPrice.setText(container.getCurrentBet() + " $");
             this.auctionCurrentContainerBinding.ccInputForm.setHint("10 000 $");
         } else {
-            this.auctionCurrentContainerBinding.ccItemLastBetPrice.setText(container.getCurrentBet() + " AZ");
+            auctionCurrentContainerBinding.ccItemLastBetPrice.setText(container.getCurrentBet() + " AZ");
             this.auctionCurrentContainerBinding.ccInputBetPrice.setText(container.getCurrentBet() + " AZ");
             this.auctionCurrentContainerBinding.ccItemPriceIcone.setText("AZ");
             this.auctionCurrentContainerBinding.ccInputForm.setHint("2 000 AZ");
@@ -256,22 +258,24 @@ public final class CurrentContainer extends SAMPUIElement {
         this.auctionCurrentContainerBinding.ccItemPrice.setText(String.valueOf(container.getStartPrice()));
         this.auctionCurrentContainerBinding.ccItemLastBetName.setText(container.getCurrentBetUser());
         this.auctionCurrentContainerBinding.ccInputBetName.setText(container.getCurrentBetUser());
-        if (container.getTime() > 0) {
-            this.auctionCurrentContainerBinding.ccItemTimeLeftTittle.setText("Времени осталось");
-            final long time = container.getTime() * 1000;
+        int time = container.getTime();
+        AuctionCurrentContainerBinding auctionCurrentContainerBinding2 = this.auctionCurrentContainerBinding;
+        if (time > 0) {
+            auctionCurrentContainerBinding2.ccItemTimeLeftTittle.setText("Времени осталось");
+            final long time2 = container.getTime() * 1000;
             getTargetActivity().runOnUiThread(new Runnable() { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CurrentContainer.addContainer$lambda$0(CurrentContainer.this, time);
+                    CurrentContainer.addContainer$lambda$0(CurrentContainer.this, time2);
                 }
             });
             return;
         }
-        this.auctionCurrentContainerBinding.ccItemTimeLeftTittle.setText("Аукцион не проводится");
+        auctionCurrentContainerBinding2.ccItemTimeLeftTittle.setText("Аукцион не проводится");
         this.auctionCurrentContainerBinding.ccItemTimeLeftTimer.setText("Начало: " + container.getHourStartTime() + ":00");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void addContainer$lambda$0(final CurrentContainer currentContainer, final long j) {
         CountDownTimer countDownTimer = new CountDownTimer(j) { // from class: ru.mrlargha.arizonaui.container.presentation.CurrentContainer$addContainer$1$1
             @Override // android.os.CountDownTimer
@@ -308,7 +312,7 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     /* compiled from: CurrentContainer.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Companion;", "", "<init>", "()V", "TAG", "", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Companion;", "", "<init>", "()V", "TAG", "", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -326,7 +330,7 @@ public final class CurrentContainer extends SAMPUIElement {
     }
 
     /* compiled from: CurrentContainer.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizonaui/container/presentation/CurrentContainer$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "ArizonaUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_CURRENT_CONTAINER);

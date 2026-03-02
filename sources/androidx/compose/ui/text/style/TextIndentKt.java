@@ -8,6 +8,6 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class TextIndentKt {
     public static final TextIndent lerp(TextIndent textIndent, TextIndent textIndent2, float f) {
-        return new TextIndent(SpanStyleKt.m7647lerpTextUnitInheritableC3pnCVY(textIndent.m8166getFirstLineXSAIIZE(), textIndent2.m8166getFirstLineXSAIIZE(), f), SpanStyleKt.m7647lerpTextUnitInheritableC3pnCVY(textIndent.m8167getRestLineXSAIIZE(), textIndent2.m8167getRestLineXSAIIZE(), f), null);
+        return new TextIndent(SpanStyleKt.m6950lerpTextUnitInheritableC3pnCVY(textIndent.m7463getFirstLineXSAIIZE(), textIndent2.m7463getFirstLineXSAIIZE(), f), SpanStyleKt.m6950lerpTextUnitInheritableC3pnCVY(textIndent.m7464getRestLineXSAIIZE(), textIndent2.m7464getRestLineXSAIIZE(), f), null);
     }
 }

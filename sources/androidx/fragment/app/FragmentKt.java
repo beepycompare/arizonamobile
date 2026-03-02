@@ -35,7 +35,7 @@ public final class FragmentKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void setFragmentResultListener$lambda$0(Function2 tmp0, String p0, Bundle p1) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         Intrinsics.checkNotNullParameter(p0, "p0");

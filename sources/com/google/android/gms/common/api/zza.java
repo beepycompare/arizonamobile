@@ -2,7 +2,7 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zza implements Parcelable.Creator {
     private static final zza zzb = new zza(new zzb());

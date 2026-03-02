@@ -44,7 +44,7 @@ public final class FullyDrawnReporter {
         return z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void reportRunnable$lambda$0(FullyDrawnReporter fullyDrawnReporter) {
         synchronized (fullyDrawnReporter.lock) {
             fullyDrawnReporter.reportPosted = false;

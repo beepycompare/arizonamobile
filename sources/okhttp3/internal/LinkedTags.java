@@ -29,12 +29,11 @@ final class LinkedTags<K> extends Tags {
 
     @Override // okhttp3.internal.Tags
     public <T> Tags plus(KClass<T> key, T t) {
-        LinkedTags<K> linkedTags;
         Intrinsics.checkNotNullParameter(key, "key");
-        if (Intrinsics.areEqual(key, this.key)) {
-            linkedTags = this.next;
-        } else {
-            Tags plus = this.next.plus(key, null);
+        boolean areEqual = Intrinsics.areEqual(key, this.key);
+        LinkedTags<K> linkedTags = this.next;
+        if (!areEqual) {
+            Tags plus = linkedTags.plus(key, null);
             linkedTags = plus == this.next ? this : new LinkedTags<>(this.key, this.value, plus);
         }
         return t != null ? new LinkedTags(key, t, linkedTags) : linkedTags;
@@ -46,7 +45,7 @@ final class LinkedTags<K> extends Tags {
         return Intrinsics.areEqual(key, this.key) ? (T) JvmClassMappingKt.getJavaClass((KClass) key).cast(this.value) : (T) this.next.get(key);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final LinkedTags toString$lambda$0(LinkedTags it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Tags tags = it.next;
@@ -60,21 +59,17 @@ final class LinkedTags<K> extends Tags {
         return CollectionsKt.joinToString$default(CollectionsKt.reversed(SequencesKt.toList(SequencesKt.generateSequence(this, new Function1() { // from class: okhttp3.internal.LinkedTags$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                LinkedTags string$lambda$0;
-                string$lambda$0 = LinkedTags.toString$lambda$0((LinkedTags) obj);
-                return string$lambda$0;
+                return LinkedTags.toString$lambda$0((LinkedTags) obj);
             }
         }))), null, "{", "}", 0, null, new Function1() { // from class: okhttp3.internal.LinkedTags$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence string$lambda$1;
-                string$lambda$1 = LinkedTags.toString$lambda$1((LinkedTags) obj);
-                return string$lambda$1;
+                return LinkedTags.toString$lambda$1((LinkedTags) obj);
             }
         }, 25, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence toString$lambda$1(LinkedTags it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return new StringBuilder().append(it.key).append('=').append(it.value).toString();

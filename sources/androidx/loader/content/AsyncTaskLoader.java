@@ -114,27 +114,31 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
             if (!this.mStarted) {
                 this.mContentChanged = true;
             }
-            if (this.mCancellingTask != null) {
-                if (this.mTask.waiting) {
+            AsyncTaskLoader<D>.LoadTask loadTask = this.mCancellingTask;
+            AsyncTaskLoader<D>.LoadTask loadTask2 = this.mTask;
+            if (loadTask != null) {
+                if (loadTask2.waiting) {
                     this.mTask.waiting = false;
                     this.mHandler.removeCallbacks(this.mTask);
                 }
                 this.mTask = null;
                 return false;
-            } else if (this.mTask.waiting) {
-                this.mTask.waiting = false;
+            }
+            boolean z = loadTask2.waiting;
+            AsyncTaskLoader<D>.LoadTask loadTask3 = this.mTask;
+            if (z) {
+                loadTask3.waiting = false;
                 this.mHandler.removeCallbacks(this.mTask);
                 this.mTask = null;
                 return false;
-            } else {
-                boolean cancel = this.mTask.cancel(false);
-                if (cancel) {
-                    this.mCancellingTask = this.mTask;
-                    cancelLoadInBackground();
-                }
-                this.mTask = null;
-                return cancel;
             }
+            boolean cancel = loadTask3.cancel(false);
+            if (cancel) {
+                this.mCancellingTask = this.mTask;
+                cancelLoadInBackground();
+            }
+            this.mTask = null;
+            return cancel;
         }
         return false;
     }

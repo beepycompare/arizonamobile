@@ -17,12 +17,12 @@ public final class Jd implements NativeCrashHandler {
 
     /* renamed from: a  reason: collision with root package name */
     public final Function1 f642a;
-    public final IHandlerExecutor b = C0449na.k().w().d();
+    public final IHandlerExecutor b = C0448na.k().w().d();
     public final Md c;
 
-    public Jd(Context context, Sg sg, Function1<? super String, Unit> function1, Rd rd, EnumC0143bb enumC0143bb, String str) {
+    public Jd(Context context, Sg sg, Function1<? super String, Unit> function1, Rd rd, EnumC0142bb enumC0142bb, String str) {
         this.f642a = function1;
-        this.c = new Md(context, sg, rd, enumC0143bb);
+        this.c = new Md(context, sg, rd, enumC0142bb);
     }
 
     public static final void a(Jd jd, NativeCrash nativeCrash, File file) {
@@ -58,9 +58,9 @@ public final class Jd implements NativeCrashHandler {
             md.getClass();
             Fd fd = new Fd(new Hd(g0.f588a, g0.b), md.f);
             Cd cd = new Cd(md.b, g0.f, new Ld(g0, md.d));
-            C0116aa c0116aa = md.e;
+            C0115aa c0115aa = md.e;
             String str = g0.d;
-            c0116aa.getClass();
+            c0115aa.getClass();
             File file = new File(str);
             Context context = md.f693a;
             if (Z9.c == null) {

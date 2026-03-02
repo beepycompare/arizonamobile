@@ -13,26 +13,26 @@ public final class S1 implements ActivityLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
     public final ArrayList f774a = new ArrayList();
-    public volatile C0720y7 b = null;
+    public volatile C0719y7 b = null;
 
-    public final void a(C0720y7 c0720y7) {
+    public final void a(C0719y7 c0719y7) {
         ArrayList a2;
         synchronized (this) {
-            this.b = c0720y7;
+            this.b = c0719y7;
             a2 = a();
         }
         Iterator it = a2.iterator();
         while (it.hasNext()) {
-            ((InterfaceC0120ae) it.next()).consume(c0720y7);
+            ((InterfaceC0119ae) it.next()).consume(c0719y7);
         }
     }
 
     public final void b() {
-        C0136b4.l().e.registerListener(this, ActivityEvent.CREATED);
+        C0135b4.l().e.registerListener(this, ActivityEvent.CREATED);
     }
 
     public final void c() {
-        C0136b4.l().e.unregisterListener(this, ActivityEvent.CREATED);
+        C0135b4.l().e.unregisterListener(this, ActivityEvent.CREATED);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
@@ -44,11 +44,11 @@ public final class S1 implements ActivityLifecycleListener {
         }
         R1 r1 = new R1(dataString);
         synchronized (this) {
-            C0720y7 c0720y7 = this.b;
-            if (c0720y7 == null) {
+            C0719y7 c0719y7 = this.b;
+            if (c0719y7 == null) {
                 this.f774a.add(r1);
             } else {
-                ((C0747z9) C0136b4.l().c.a()).b.post(new P1(r1, c0720y7));
+                ((C0746z9) C0135b4.l().c.a()).b.post(new P1(r1, c0719y7));
             }
         }
     }

@@ -18,13 +18,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class BeyondBoundsLayoutKt {
     /* renamed from: searchBeyondBounds--OM-vw8  reason: not valid java name */
-    public static final <T> T m5049searchBeyondBoundsOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
+    public static final <T> T m4397searchBeyondBoundsOMvw8(FocusTargetNode focusTargetNode, int i, Function1<? super BeyondBoundsLayout.BeyondBoundsScope, ? extends T> function1) {
         FocusTargetNode focusTargetNode2;
         BeyondBoundsLayout beyondBoundsLayoutParent;
-        int m6864getBeforehoxUOeE;
+        int m6205getBeforehoxUOeE;
         NodeChain nodes$ui;
         FocusTargetNode focusTargetNode3 = focusTargetNode;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
         if (!focusTargetNode3.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
@@ -35,19 +35,19 @@ public final class BeyondBoundsLayoutKt {
                 focusTargetNode2 = null;
                 break;
             }
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         focusTargetNode2 = parent$ui;
                         MutableVector mutableVector = null;
                         while (focusTargetNode2 != null) {
                             if (focusTargetNode2 instanceof FocusTargetNode) {
                                 break loop0;
                             }
-                            if ((focusTargetNode2.getKindSet$ui() & m7195constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
+                            if ((focusTargetNode2.getKindSet$ui() & m6535constructorimpl) != 0 && (focusTargetNode2 instanceof DelegatingNode)) {
                                 int i2 = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) focusTargetNode2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i2++;
                                         if (i2 == 1) {
                                             focusTargetNode2 = delegate$ui;
@@ -82,22 +82,22 @@ public final class BeyondBoundsLayoutKt {
         }
         FocusTargetNode focusTargetNode4 = focusTargetNode2;
         if ((focusTargetNode4 == null || !Intrinsics.areEqual(focusTargetNode4.getBeyondBoundsLayoutParent(), focusTargetNode.getBeyondBoundsLayoutParent())) && (beyondBoundsLayoutParent = focusTargetNode.getBeyondBoundsLayoutParent()) != null) {
-            if (FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5065getUpdhqQ8s())) {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6862getAbovehoxUOeE();
-            } else if (FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5058getDowndhqQ8s())) {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6865getBelowhoxUOeE();
-            } else if (FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5061getLeftdhqQ8s())) {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6866getLefthoxUOeE();
-            } else if (FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5064getRightdhqQ8s())) {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6867getRighthoxUOeE();
-            } else if (FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5062getNextdhqQ8s())) {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6863getAfterhoxUOeE();
-            } else if (!FocusDirection.m5054equalsimpl0(i, FocusDirection.Companion.m5063getPreviousdhqQ8s())) {
+            if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4413getUpdhqQ8s())) {
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6203getAbovehoxUOeE();
+            } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4406getDowndhqQ8s())) {
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6206getBelowhoxUOeE();
+            } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4409getLeftdhqQ8s())) {
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6207getLefthoxUOeE();
+            } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4412getRightdhqQ8s())) {
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6208getRighthoxUOeE();
+            } else if (FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4410getNextdhqQ8s())) {
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6204getAfterhoxUOeE();
+            } else if (!FocusDirection.m4402equalsimpl0(i, FocusDirection.Companion.m4411getPreviousdhqQ8s())) {
                 throw new IllegalStateException("Unsupported direction for beyond bounds layout".toString());
             } else {
-                m6864getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6864getBeforehoxUOeE();
+                m6205getBeforehoxUOeE = BeyondBoundsLayout.LayoutDirection.Companion.m6205getBeforehoxUOeE();
             }
-            return (T) beyondBoundsLayoutParent.mo1108layouto7g1Pn8(m6864getBeforehoxUOeE, function1);
+            return (T) beyondBoundsLayoutParent.mo973layouto7g1Pn8(m6205getBeforehoxUOeE, function1);
         }
         return null;
     }

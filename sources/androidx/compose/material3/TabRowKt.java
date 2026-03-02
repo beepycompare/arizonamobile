@@ -50,75 +50,75 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000T\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\u001a}\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b\u0011\u0010\u0012\u001a}\u0010\u0013\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b\u0014\u0010\u0012\u001a\u009b\u0001\u0010\u0015\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\b\b\u0002\u0010\u001a\u001a\u00020\u00192\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b\u001b\u0010\u001c\u001a\u009b\u0001\u0010\u001d\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\b\b\u0002\u0010\u001a\u001a\u00020\u00192\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b\u001e\u0010\u001c\u001ak\u0010\u001f\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u001c\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0003¢\u0006\u0004\b \u0010!\u001a\u008b\u0001\u0010\"\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u00192\u0006\u0010\u0016\u001a\u00020\u00172\u001c\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0003¢\u0006\u0004\b#\u0010$\u001a{\u0010%\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072,\u0010\t\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020'0&¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0003¢\u0006\u0004\b+\u0010!\u001a\u009d\u0001\u0010,\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032,\u0010\t\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020'0&¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0006\u0010\u0016\u001a\u00020\u0017H\u0003¢\u0006\u0004\b-\u0010.\u001a\u0091\u0001\u0010\u0015\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b/\u00100\u001a\u0091\u0001\u0010\u001d\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192\u001e\b\u0002\u0010\t\u001a\u0018\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f¢\u0006\u0002\b\r2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b1\u00100\u001a\u008d\u0001\u00102\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072.\b\u0002\u0010\t\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020'0&¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b3\u0010\u0012\u001a\u0097\u0001\u00104\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\u0018\u001a\u00020\u00192.\b\u0002\u0010\t\u001a(\u0012\u0019\u0012\u0017\u0012\u0004\u0012\u00020'0&¢\u0006\f\b(\u0012\b\b)\u0012\u0004\b\b(*\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\f2\u0013\b\u0002\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\f2\u0011\u0010\u0010\u001a\r\u0012\u0004\u0012\u00020\u00010\u000f¢\u0006\u0002\b\fH\u0007¢\u0006\u0004\b5\u00106¨\u00067"}, d2 = {"PrimaryTabRow", "", "selectedTabIndex", "", "modifier", "Landroidx/compose/ui/Modifier;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "contentColor", "indicator", "Lkotlin/Function1;", "Landroidx/compose/material3/TabIndicatorScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "divider", "Lkotlin/Function0;", "tabs", "PrimaryTabRow-pAZo6Ak", "(ILandroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "SecondaryTabRow", "SecondaryTabRow-pAZo6Ak", "PrimaryScrollableTabRow", "scrollState", "Landroidx/compose/foundation/ScrollState;", "edgePadding", "Landroidx/compose/ui/unit/Dp;", "minTabWidth", "PrimaryScrollableTabRow-cx2KkNY", "(ILandroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;JJFLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;FLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "SecondaryScrollableTabRow", "SecondaryScrollableTabRow-cx2KkNY", "TabRowImpl", "TabRowImpl-DTcfvLk", "(Landroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "ScrollableTabRowImpl", "ScrollableTabRowImpl-xam5sdo", "(ILandroidx/compose/ui/Modifier;JJFFLandroidx/compose/foundation/ScrollState;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "TabRowWithSubcomposeImpl", "", "Landroidx/compose/material3/TabPosition;", "Lkotlin/ParameterName;", "name", "tabPositions", "TabRowWithSubcomposeImpl-DTcfvLk", "ScrollableTabRowWithSubcomposeImpl", "ScrollableTabRowWithSubcomposeImpl-qhFBPw4", "(ILkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;JJFLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/foundation/ScrollState;Landroidx/compose/runtime/Composer;II)V", "PrimaryScrollableTabRow-qhFBPw4", "(ILandroidx/compose/ui/Modifier;Landroidx/compose/foundation/ScrollState;JJFLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "SecondaryScrollableTabRow-qhFBPw4", "TabRow", "TabRow-pAZo6Ak", "ScrollableTabRow", "ScrollableTabRow-sKfQg0A", "(ILandroidx/compose/ui/Modifier;JJFLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class TabRowKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PrimaryScrollableTabRow_cx2KkNY$lambda$2(int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, float f2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3142PrimaryScrollableTabRowcx2KkNY(i, modifier, scrollState, j, j2, f, function3, function2, f2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2614PrimaryScrollableTabRowcx2KkNY(i, modifier, scrollState, j, j2, f, function3, function2, f2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PrimaryScrollableTabRow_qhFBPw4$lambda$8(int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3143PrimaryScrollableTabRowqhFBPw4(i, modifier, scrollState, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2615PrimaryScrollableTabRowqhFBPw4(i, modifier, scrollState, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PrimaryTabRow_pAZo6Ak$lambda$0(int i, Modifier modifier, long j, long j2, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3144PrimaryTabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2616PrimaryTabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ScrollableTabRowImpl_xam5sdo$lambda$5(int i, Modifier modifier, long j, long j2, float f, float f2, ScrollState scrollState, Function3 function3, Function2 function2, Function2 function22, int i2, Composer composer, int i3) {
-        m3146ScrollableTabRowImplxam5sdo(i, modifier, j, j2, f, f2, scrollState, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m2618ScrollableTabRowImplxam5sdo(i, modifier, j, j2, f, f2, scrollState, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7(int i, Function3 function3, Modifier modifier, long j, long j2, float f, Function2 function2, Function2 function22, ScrollState scrollState, int i2, int i3, Composer composer, int i4) {
-        m3147ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function3, modifier, j, j2, f, function2, function22, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2619ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function3, modifier, j, j2, f, function2, function22, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ScrollableTabRow_sKfQg0A$lambda$11(int i, Modifier modifier, long j, long j2, float f, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3145ScrollableTabRowsKfQg0A(i, modifier, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2617ScrollableTabRowsKfQg0A(i, modifier, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SecondaryScrollableTabRow_cx2KkNY$lambda$3(int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, float f2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3148SecondaryScrollableTabRowcx2KkNY(i, modifier, scrollState, j, j2, f, function3, function2, f2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2620SecondaryScrollableTabRowcx2KkNY(i, modifier, scrollState, j, j2, f, function3, function2, f2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SecondaryScrollableTabRow_qhFBPw4$lambda$9(int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3149SecondaryScrollableTabRowqhFBPw4(i, modifier, scrollState, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2621SecondaryScrollableTabRowqhFBPw4(i, modifier, scrollState, j, j2, f, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SecondaryTabRow_pAZo6Ak$lambda$1(int i, Modifier modifier, long j, long j2, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3150SecondaryTabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2622SecondaryTabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TabRowImpl_DTcfvLk$lambda$4(Modifier modifier, long j, long j2, Function3 function3, Function2 function2, Function2 function22, int i, Composer composer, int i2) {
-        m3152TabRowImplDTcfvLk(modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2624TabRowImplDTcfvLk(modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TabRowWithSubcomposeImpl_DTcfvLk$lambda$6(Modifier modifier, long j, long j2, Function3 function3, Function2 function2, Function2 function22, int i, Composer composer, int i2) {
-        m3153TabRowWithSubcomposeImplDTcfvLk(modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2625TabRowWithSubcomposeImplDTcfvLk(modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TabRow_pAZo6Ak$lambda$10(int i, Modifier modifier, long j, long j2, Function3 function3, Function2 function2, Function2 function22, int i2, int i3, Composer composer, int i4) {
-        m3151TabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2623TabRowpAZo6Ak(i, modifier, j, j2, function3, function2, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -142,7 +142,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3144PrimaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2616PrimaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         long j3;
         long j4;
@@ -277,7 +277,7 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(1338273762, i12, -1, "androidx.compose.material3.PrimaryTabRow.<anonymous> (TabRow.kt:155)");
                                         }
-                                        TabRowDefaults.INSTANCE.m3132PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m8278getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer3, 196656, 28);
+                                        TabRowDefaults.INSTANCE.m2610PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7575getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer3, 196656, 28);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -288,7 +288,7 @@ public final class TabRowKt {
                                     j9 = j7;
                                     j8 = j3;
                                     function33 = rememberComposableLambda;
-                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m2261getLambda$1429684928$material3();
+                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m1947getLambda$1429684928$material3();
                                     i7 = -1012974221;
                                 } else {
                                     modifier3 = companion;
@@ -304,7 +304,7 @@ public final class TabRowKt {
                                 ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.PrimaryTabRow (TabRow.kt:162)");
                             }
                             composer2 = startRestartGroup;
-                            m3152TabRowImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
+                            m2624TabRowImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -327,9 +327,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda9
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit PrimaryTabRow_pAZo6Ak$lambda$0;
-                                    PrimaryTabRow_pAZo6Ak$lambda$0 = TabRowKt.PrimaryTabRow_pAZo6Ak$lambda$0(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return PrimaryTabRow_pAZo6Ak$lambda$0;
+                                    return TabRowKt.PrimaryTabRow_pAZo6Ak$lambda$0(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -405,7 +403,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3150SecondaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2622SecondaryTabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         long j3;
         long j4;
@@ -537,7 +535,7 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(959948692, i11, -1, "androidx.compose.material3.SecondaryTabRow.<anonymous> (TabRow.kt:207)");
                                         }
-                                        TabRowDefaults.INSTANCE.m3133SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer3, 3072, 6);
+                                        TabRowDefaults.INSTANCE.m2611SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer3, 3072, 6);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -548,7 +546,7 @@ public final class TabRowKt {
                                     j9 = j7;
                                     j8 = j3;
                                     function33 = rememberComposableLambda;
-                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m2264getLambda$463596174$material3();
+                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m1950getLambda$463596174$material3();
                                     i7 = 563434725;
                                 } else {
                                     modifier3 = companion;
@@ -564,7 +562,7 @@ public final class TabRowKt {
                                 ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.SecondaryTabRow (TabRow.kt:213)");
                             }
                             composer2 = startRestartGroup;
-                            m3152TabRowImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
+                            m2624TabRowImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -587,9 +585,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda11
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit SecondaryTabRow_pAZo6Ak$lambda$1;
-                                    SecondaryTabRow_pAZo6Ak$lambda$1 = TabRowKt.SecondaryTabRow_pAZo6Ak$lambda$1(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return SecondaryTabRow_pAZo6Ak$lambda$1;
+                                    return TabRowKt.SecondaryTabRow_pAZo6Ak$lambda$1(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -671,7 +667,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3142PrimaryScrollableTabRowcx2KkNY(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, float f2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2614PrimaryScrollableTabRowcx2KkNY(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, float f2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         long j3;
@@ -838,7 +834,7 @@ public final class TabRowKt {
                                     } else {
                                         j8 = j4;
                                     }
-                                    float m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM = i5 != 0 ? TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f3;
+                                    float m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM = i5 != 0 ? TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f3;
                                     composableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(835301263, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$PrimaryScrollableTabRow$1
                                         @Override // kotlin.jvm.functions.Function3
                                         public /* bridge */ /* synthetic */ Unit invoke(TabIndicatorScope tabIndicatorScope, Composer composer2, Integer num) {
@@ -861,20 +857,20 @@ public final class TabRowKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(835301263, i17, -1, "androidx.compose.material3.PrimaryScrollableTabRow.<anonymous> (TabRow.kt:261)");
                                             }
-                                            TabRowDefaults.INSTANCE.m3132PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m8278getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
+                                            TabRowDefaults.INSTANCE.m2610PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7575getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
                                         }
                                     }, startRestartGroup, 54) : function3;
-                                    function23 = i8 != 0 ? ComposableSingletons$TabRowKt.INSTANCE.m2265getLambda$773954579$material3() : function2;
+                                    function23 = i8 != 0 ? ComposableSingletons$TabRowKt.INSTANCE.m1951getLambda$773954579$material3() : function2;
                                     if (i10 != 0) {
                                         i11 = i4;
                                         long j12 = j8;
                                         scrollState4 = scrollState3;
                                         j9 = j7;
-                                        f6 = TabRowDefaults.INSTANCE.m3135getScrollableTabRowMinTabWidthD9Ej5fM();
-                                        f7 = m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM;
+                                        f6 = TabRowDefaults.INSTANCE.m2613getScrollableTabRowMinTabWidthD9Ej5fM();
+                                        f7 = m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM;
                                         j10 = j12;
                                     } else {
                                         i11 = i4;
@@ -882,7 +878,7 @@ public final class TabRowKt {
                                         f6 = f2;
                                         scrollState4 = scrollState3;
                                         j9 = j7;
-                                        f7 = m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM;
+                                        f7 = m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM;
                                         j10 = j13;
                                     }
                                 }
@@ -898,7 +894,7 @@ public final class TabRowKt {
                                 int i18 = i11 << 3;
                                 int i19 = i17 | (29360128 & i18) | (i18 & 234881024) | (1879048192 & i11);
                                 Modifier modifier4 = modifier3;
-                                m3146ScrollableTabRowImplxam5sdo(i, modifier4, j9, j10, f7, f6, scrollState4, composableLambda, function23, function22, startRestartGroup, i19);
+                                m2618ScrollableTabRowImplxam5sdo(i, modifier4, j9, j10, f7, f6, scrollState4, composableLambda, function23, function22, startRestartGroup, i19);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -925,9 +921,7 @@ public final class TabRowKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda3
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj2, Object obj3) {
-                                        Unit PrimaryScrollableTabRow_cx2KkNY$lambda$2;
-                                        PrimaryScrollableTabRow_cx2KkNY$lambda$2 = TabRowKt.PrimaryScrollableTabRow_cx2KkNY$lambda$2(i, modifier2, scrollState2, j5, j6, f4, composableLambda, function23, f5, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                        return PrimaryScrollableTabRow_cx2KkNY$lambda$2;
+                                        return TabRowKt.PrimaryScrollableTabRow_cx2KkNY$lambda$2(i, modifier2, scrollState2, j5, j6, f4, composableLambda, function23, f5, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                                     }
                                 });
                                 return;
@@ -1038,7 +1032,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3148SecondaryScrollableTabRowcx2KkNY(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, float f2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2620SecondaryScrollableTabRowcx2KkNY(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, float f2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         long j3;
@@ -1205,7 +1199,7 @@ public final class TabRowKt {
                                     } else {
                                         j8 = j4;
                                     }
-                                    float m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM = i5 != 0 ? TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f3;
+                                    float m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM = i5 != 0 ? TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f3;
                                     composableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(610355265, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$SecondaryScrollableTabRow$1
                                         @Override // kotlin.jvm.functions.Function3
                                         public /* bridge */ /* synthetic */ Unit invoke(TabIndicatorScope tabIndicatorScope, Composer composer2, Integer num) {
@@ -1225,7 +1219,7 @@ public final class TabRowKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(610355265, i16, -1, "androidx.compose.material3.SecondaryScrollableTabRow.<anonymous> (TabRow.kt:332)");
                                             }
-                                            TabRowDefaults.INSTANCE.m3133SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
+                                            TabRowDefaults.INSTANCE.m2611SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
@@ -1237,8 +1231,8 @@ public final class TabRowKt {
                                         long j12 = j8;
                                         scrollState4 = scrollState3;
                                         j9 = j7;
-                                        f6 = TabRowDefaults.INSTANCE.m3135getScrollableTabRowMinTabWidthD9Ej5fM();
-                                        f7 = m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM;
+                                        f6 = TabRowDefaults.INSTANCE.m2613getScrollableTabRowMinTabWidthD9Ej5fM();
+                                        f7 = m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM;
                                         j10 = j12;
                                     } else {
                                         i11 = i4;
@@ -1246,7 +1240,7 @@ public final class TabRowKt {
                                         f6 = f2;
                                         scrollState4 = scrollState3;
                                         j9 = j7;
-                                        f7 = m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM;
+                                        f7 = m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM;
                                         j10 = j13;
                                     }
                                 }
@@ -1262,7 +1256,7 @@ public final class TabRowKt {
                                 int i18 = i11 << 3;
                                 int i19 = i17 | (29360128 & i18) | (i18 & 234881024) | (1879048192 & i11);
                                 Modifier modifier4 = modifier3;
-                                m3146ScrollableTabRowImplxam5sdo(i, modifier4, j9, j10, f7, f6, scrollState4, composableLambda, function23, function22, startRestartGroup, i19);
+                                m2618ScrollableTabRowImplxam5sdo(i, modifier4, j9, j10, f7, f6, scrollState4, composableLambda, function23, function22, startRestartGroup, i19);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1289,9 +1283,7 @@ public final class TabRowKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda4
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj2, Object obj3) {
-                                        Unit SecondaryScrollableTabRow_cx2KkNY$lambda$3;
-                                        SecondaryScrollableTabRow_cx2KkNY$lambda$3 = TabRowKt.SecondaryScrollableTabRow_cx2KkNY$lambda$3(i, modifier2, scrollState2, j5, j6, f4, composableLambda, function23, f5, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                        return SecondaryScrollableTabRow_cx2KkNY$lambda$3;
+                                        return TabRowKt.SecondaryScrollableTabRow_cx2KkNY$lambda$3(i, modifier2, scrollState2, j5, j6, f4, composableLambda, function23, f5, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                                     }
                                 });
                                 return;
@@ -1377,7 +1369,7 @@ public final class TabRowKt {
     }
 
     /* renamed from: TabRowImpl-DTcfvLk  reason: not valid java name */
-    private static final void m3152TabRowImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
+    private static final void m2624TabRowImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
         Modifier modifier2;
         int i2;
         Composer composer2;
@@ -1414,7 +1406,7 @@ public final class TabRowKt {
             }
             int i3 = i2 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m3083SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(830280655, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1
+            SurfaceKt.m2569SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(830280655, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$TabRowImpl$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -1496,15 +1488,15 @@ public final class TabRowKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
-                    Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
+                    Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(composer3, 0);
                     composer3.endNode();
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1525,16 +1517,14 @@ public final class TabRowKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TabRowImpl_DTcfvLk$lambda$4;
-                    TabRowImpl_DTcfvLk$lambda$4 = TabRowKt.TabRowImpl_DTcfvLk$lambda$4(Modifier.this, j, j2, function3, function2, function22, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TabRowImpl_DTcfvLk$lambda$4;
+                    return TabRowKt.TabRowImpl_DTcfvLk$lambda$4(Modifier.this, j, j2, function3, function2, function22, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
     /* renamed from: ScrollableTabRowImpl-xam5sdo  reason: not valid java name */
-    private static final void m3146ScrollableTabRowImplxam5sdo(final int i, final Modifier modifier, final long j, final long j2, final float f, final float f2, final ScrollState scrollState, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2) {
+    private static final void m2618ScrollableTabRowImplxam5sdo(final int i, final Modifier modifier, final long j, final long j2, final float f, final float f2, final ScrollState scrollState, final Function3<? super TabIndicatorScope, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2) {
         int i3;
         Object obj;
         Object obj2;
@@ -1589,7 +1579,7 @@ public final class TabRowKt {
             final ScrollState scrollState2 = obj;
             final Function2<? super Composer, ? super Integer, Unit> function23 = obj2;
             composer2 = startRestartGroup;
-            SurfaceKt.m3083SurfaceT9BRK9s(modifier, null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1878374785, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1
+            SurfaceKt.m2569SurfaceT9BRK9s(modifier, null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(1878374785, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRowImpl$1
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                     invoke(composer3, num.intValue());
@@ -1660,15 +1650,15 @@ public final class TabRowKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
-                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
+                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer3, 738154596, "C569@26204L9,571@26274L21,578@26594L3314,570@26226L3682:TabRow.kt#uh7d8r");
@@ -1731,15 +1721,15 @@ public final class TabRowKt {
                     } else {
                         composer3.useNode();
                     }
-                    Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer3);
-                    Updater.m4681setimpl(m4673constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer3);
+                    Updater.m4049setimpl(m4041constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                        m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                        m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                    if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                        m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                        m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(composer3, 0);
                     composer3.endNode();
                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -1765,16 +1755,14 @@ public final class TabRowKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit ScrollableTabRowImpl_xam5sdo$lambda$5;
-                    ScrollableTabRowImpl_xam5sdo$lambda$5 = TabRowKt.ScrollableTabRowImpl_xam5sdo$lambda$5(i, modifier, j, j2, f, f2, scrollState, function3, function2, function22, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return ScrollableTabRowImpl_xam5sdo$lambda$5;
+                    return TabRowKt.ScrollableTabRowImpl_xam5sdo$lambda$5(i, modifier, j, j2, f, f2, scrollState, function3, function2, function22, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
     }
 
     /* renamed from: TabRowWithSubcomposeImpl-DTcfvLk  reason: not valid java name */
-    private static final void m3153TabRowWithSubcomposeImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
+    private static final void m2625TabRowWithSubcomposeImplDTcfvLk(Modifier modifier, final long j, final long j2, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i) {
         Modifier modifier2;
         int i2;
         Composer composer2;
@@ -1811,7 +1799,7 @@ public final class TabRowKt {
             }
             int i3 = i2 << 3;
             composer2 = startRestartGroup;
-            SurfaceKt.m3083SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1815327065, true, new TabRowKt$TabRowWithSubcomposeImpl$1(function22, function2, function3), startRestartGroup, 54), composer2, (i3 & 896) | 12582912 | (i3 & 7168), 114);
+            SurfaceKt.m2569SurfaceT9BRK9s(SelectableGroupKt.selectableGroup(modifier2), null, j, j2, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1815327065, true, new TabRowKt$TabRowWithSubcomposeImpl$1(function22, function2, function3), startRestartGroup, 54), composer2, (i3 & 896) | 12582912 | (i3 & 7168), 114);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1822,9 +1810,7 @@ public final class TabRowKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TabRowWithSubcomposeImpl_DTcfvLk$lambda$6;
-                    TabRowWithSubcomposeImpl_DTcfvLk$lambda$6 = TabRowKt.TabRowWithSubcomposeImpl_DTcfvLk$lambda$6(Modifier.this, j, j2, function3, function2, function22, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TabRowWithSubcomposeImpl_DTcfvLk$lambda$6;
+                    return TabRowKt.TabRowWithSubcomposeImpl_DTcfvLk$lambda$6(Modifier.this, j, j2, function3, function2, function22, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1856,7 +1842,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final void m3147ScrollableTabRowWithSubcomposeImplqhFBPw4(final int i, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, long j, long j2, float f, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final ScrollState scrollState, Composer composer, final int i2, final int i3) {
+    private static final void m2619ScrollableTabRowWithSubcomposeImplqhFBPw4(final int i, final Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Modifier modifier, long j, long j2, float f, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final ScrollState scrollState, Composer composer, final int i2, final int i3) {
         int i4;
         int i5;
         Modifier.Companion companion;
@@ -1960,7 +1946,7 @@ public final class TabRowKt {
                                         i4 &= -57345;
                                     }
                                     if (i6 != 0) {
-                                        f2 = TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                        f2 = TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                     }
                                     if (i7 != 0) {
                                         lambda$2075817209$material3 = ComposableSingletons$TabRowKt.INSTANCE.getLambda$2075817209$material3();
@@ -1975,7 +1961,7 @@ public final class TabRowKt {
                                         Function2<? super Composer, ? super Integer, Unit> function24 = lambda$2075817209$material3;
                                         int i10 = i4 >> 3;
                                         composer2 = startRestartGroup;
-                                        SurfaceKt.m3083SurfaceT9BRK9s(modifier3, null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(2077251399, true, new TabRowKt$ScrollableTabRowWithSubcomposeImpl$1(scrollState, f4, function22, function24, function3, i), startRestartGroup, 54), composer2, ((i4 >> 6) & 14) | 12582912 | (i10 & 896) | (i10 & 7168), 114);
+                                        SurfaceKt.m2569SurfaceT9BRK9s(modifier3, null, j8, j7, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(2077251399, true, new TabRowKt$ScrollableTabRowWithSubcomposeImpl$1(scrollState, f4, function22, function24, function3, i), startRestartGroup, 54), composer2, ((i4 >> 6) & 14) | 12582912 | (i10 & 896) | (i10 & 7168), 114);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -2005,7 +1991,7 @@ public final class TabRowKt {
                                 Function2<? super Composer, ? super Integer, Unit> function242 = lambda$2075817209$material3;
                                 int i102 = i4 >> 3;
                                 composer2 = startRestartGroup;
-                                SurfaceKt.m3083SurfaceT9BRK9s(modifier32, null, j82, j72, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(2077251399, true, new TabRowKt$ScrollableTabRowWithSubcomposeImpl$1(scrollState, f42, function22, function242, function3, i), startRestartGroup, 54), composer2, ((i4 >> 6) & 14) | 12582912 | (i102 & 896) | (i102 & 7168), 114);
+                                SurfaceKt.m2569SurfaceT9BRK9s(modifier32, null, j82, j72, 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(2077251399, true, new TabRowKt$ScrollableTabRowWithSubcomposeImpl$1(scrollState, f42, function22, function242, function3, i), startRestartGroup, 54), composer2, ((i4 >> 6) & 14) | 12582912 | (i102 & 896) | (i102 & 7168), 114);
                                 if (ComposerKt.isTraceInProgress()) {
                                 }
                                 f3 = f42;
@@ -2027,9 +2013,7 @@ public final class TabRowKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda5
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj, Object obj2) {
-                                        Unit ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7;
-                                        ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7 = TabRowKt.ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7(i, function3, modifier2, j5, j6, f3, function23, function22, scrollState, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
-                                        return ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7;
+                                        return TabRowKt.ScrollableTabRowWithSubcomposeImpl_qhFBPw4$lambda$7(i, function3, modifier2, j5, j6, f3, function23, function22, scrollState, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
                                     }
                                 });
                                 return;
@@ -2137,7 +2121,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m3143PrimaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, final Function2 function22, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2615PrimaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, final Function2 function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         Object obj;
@@ -2288,7 +2272,7 @@ public final class TabRowKt {
                                     j4 = TabRowDefaults.INSTANCE.getPrimaryContentColor(startRestartGroup, 6);
                                 }
                                 if (i5 != 0) {
-                                    f2 = TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                    f2 = TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                 }
                                 ComposableLambda rememberComposableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(-1872002465, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$PrimaryScrollableTabRow$3
                                     @Override // kotlin.jvm.functions.Function3
@@ -2312,7 +2296,7 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-1872002465, i15, -1, "androidx.compose.material3.PrimaryScrollableTabRow.<anonymous> (TabRow.kt:1197)");
                                         }
-                                        TabRowDefaults.INSTANCE.m3132PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m8278getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
+                                        TabRowDefaults.INSTANCE.m2610PrimaryIndicator10LGxhE(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, true), Dp.Companion.m7575getUnspecifiedD9Ej5fM(), 0.0f, 0L, null, composer2, 196656, 28);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -2324,7 +2308,7 @@ public final class TabRowKt {
                                     modifier3 = companion;
                                     f4 = f2;
                                     long j10 = j4;
-                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m2262getLambda$306947391$material3();
+                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m1948getLambda$306947391$material3();
                                     i9 = i4;
                                     scrollState3 = obj;
                                     j7 = j9;
@@ -2345,7 +2329,7 @@ public final class TabRowKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(1501129198, i9, -1, "androidx.compose.material3.PrimaryScrollableTabRow (TabRow.kt:1205)");
                             }
-                            m3142PrimaryScrollableTabRowcx2KkNY(i, modifier3, scrollState3, j7, j8, f4, function33, function24, TabRowDefaults.INSTANCE.m3135getScrollableTabRowMinTabWidthD9Ej5fM(), function22, startRestartGroup, (i9 & 14) | 100663296 | (i9 & 112) | (i9 & 896) | (i9 & 7168) | (57344 & i9) | (458752 & i9) | (3670016 & i9) | (29360128 & i9) | ((i9 << 3) & 1879048192), 0);
+                            m2614PrimaryScrollableTabRowcx2KkNY(i, modifier3, scrollState3, j7, j8, f4, function33, function24, TabRowDefaults.INSTANCE.m2613getScrollableTabRowMinTabWidthD9Ej5fM(), function22, startRestartGroup, (i9 & 14) | 100663296 | (i9 & 112) | (i9 & 896) | (i9 & 7168) | (57344 & i9) | (458752 & i9) | (3670016 & i9) | (29360128 & i9) | ((i9 << 3) & 1879048192), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2371,9 +2355,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda7
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit PrimaryScrollableTabRow_qhFBPw4$lambda$8;
-                                    PrimaryScrollableTabRow_qhFBPw4$lambda$8 = TabRowKt.PrimaryScrollableTabRow_qhFBPw4$lambda$8(i, modifier2, scrollState2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return PrimaryScrollableTabRow_qhFBPw4$lambda$8;
+                                    return TabRowKt.PrimaryScrollableTabRow_qhFBPw4$lambda$8(i, modifier2, scrollState2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;
@@ -2463,7 +2445,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m3149SecondaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, final Function2 function22, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2621SecondaryScrollableTabRowqhFBPw4(final int i, Modifier modifier, ScrollState scrollState, long j, long j2, float f, Function3 function3, Function2 function2, final Function2 function22, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         Object obj;
@@ -2614,7 +2596,7 @@ public final class TabRowKt {
                                     j4 = TabRowDefaults.INSTANCE.getSecondaryContentColor(startRestartGroup, 6);
                                 }
                                 if (i5 != 0) {
-                                    f2 = TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM();
+                                    f2 = TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM();
                                 }
                                 ComposableLambda rememberComposableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(407893741, true, new Function3<TabIndicatorScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$SecondaryScrollableTabRow$3
                                     @Override // kotlin.jvm.functions.Function3
@@ -2635,7 +2617,7 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(407893741, i14, -1, "androidx.compose.material3.SecondaryScrollableTabRow.<anonymous> (TabRow.kt:1229)");
                                         }
-                                        TabRowDefaults.INSTANCE.m3133SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
+                                        TabRowDefaults.INSTANCE.m2611SecondaryIndicator9IZ8Weo(tabIndicatorScope.tabIndicatorOffset(Modifier.Companion, i, false), 0.0f, 0L, composer2, 3072, 6);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -2668,7 +2650,7 @@ public final class TabRowKt {
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventStart(-712886596, i9, -1, "androidx.compose.material3.SecondaryScrollableTabRow (TabRow.kt:1236)");
                             }
-                            m3148SecondaryScrollableTabRowcx2KkNY(i, modifier3, scrollState3, j7, j8, f4, function33, function24, TabRowDefaults.INSTANCE.m3135getScrollableTabRowMinTabWidthD9Ej5fM(), function22, startRestartGroup, (i9 & 14) | 100663296 | (i9 & 112) | (i9 & 896) | (i9 & 7168) | (57344 & i9) | (458752 & i9) | (3670016 & i9) | (29360128 & i9) | ((i9 << 3) & 1879048192), 0);
+                            m2620SecondaryScrollableTabRowcx2KkNY(i, modifier3, scrollState3, j7, j8, f4, function33, function24, TabRowDefaults.INSTANCE.m2613getScrollableTabRowMinTabWidthD9Ej5fM(), function22, startRestartGroup, (i9 & 14) | 100663296 | (i9 & 112) | (i9 & 896) | (i9 & 7168) | (57344 & i9) | (458752 & i9) | (3670016 & i9) | (29360128 & i9) | ((i9 << 3) & 1879048192), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2694,9 +2676,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit SecondaryScrollableTabRow_qhFBPw4$lambda$9;
-                                    SecondaryScrollableTabRow_qhFBPw4$lambda$9 = TabRowKt.SecondaryScrollableTabRow_qhFBPw4$lambda$9(i, modifier2, scrollState2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return SecondaryScrollableTabRow_qhFBPw4$lambda$9;
+                                    return TabRowKt.SecondaryScrollableTabRow_qhFBPw4$lambda$9(i, modifier2, scrollState2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;
@@ -2782,7 +2762,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3151TabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2623TabRowpAZo6Ak(final int i, Modifier modifier, long j, long j2, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         long j3;
         long j4;
@@ -2910,7 +2890,7 @@ public final class TabRowKt {
                                         if (i < list.size()) {
                                             composer3.startReplaceGroup(436390614);
                                             ComposerKt.sourceInformation(composer3, "1341@57683L117");
-                                            TabRowDefaults.INSTANCE.m3133SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer3, 3072, 6);
+                                            TabRowDefaults.INSTANCE.m2611SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer3, 3072, 6);
                                             composer3.endReplaceGroup();
                                         } else {
                                             composer3.startReplaceGroup(436548218);
@@ -2926,7 +2906,7 @@ public final class TabRowKt {
                                     j9 = j7;
                                     j8 = j3;
                                     function33 = rememberComposableLambda;
-                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m2260getLambda$1132537920$material3();
+                                    function24 = ComposableSingletons$TabRowKt.INSTANCE.m1946getLambda$1132537920$material3();
                                     i7 = 1445190381;
                                 } else {
                                     modifier3 = companion;
@@ -2942,7 +2922,7 @@ public final class TabRowKt {
                                 ComposerKt.traceEventStart(i7, i4, -1, "androidx.compose.material3.TabRow (TabRow.kt:1348)");
                             }
                             composer2 = startRestartGroup;
-                            m3153TabRowWithSubcomposeImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
+                            m2625TabRowWithSubcomposeImplDTcfvLk(modifier3, j8, j9, function33, function24, function22, composer2, (i4 >> 3) & 524286);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2965,9 +2945,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda10
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit TabRow_pAZo6Ak$lambda$10;
-                                    TabRow_pAZo6Ak$lambda$10 = TabRowKt.TabRow_pAZo6Ak$lambda$10(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return TabRow_pAZo6Ak$lambda$10;
+                                    return TabRowKt.TabRow_pAZo6Ak$lambda$10(i, modifier2, j5, j6, function32, function23, function22, i2, i3, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -3048,7 +3026,7 @@ public final class TabRowKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m3145ScrollableTabRowsKfQg0A(final int i, Modifier modifier, long j, long j2, float f, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
+    public static final void m2617ScrollableTabRowsKfQg0A(final int i, Modifier modifier, long j, long j2, float f, Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function3, Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i2, final int i3) {
         int i4;
         long j3;
         long j4;
@@ -3067,7 +3045,7 @@ public final class TabRowKt {
         long j7;
         int i8;
         Function3<? super List<TabPosition>, ? super Composer, ? super Integer, Unit> function33;
-        Function2<Composer, Integer, Unit> m2263getLambda$358046007$material3;
+        Function2<Composer, Integer, Unit> m1949getLambda$358046007$material3;
         int i9;
         int i10;
         Composer startRestartGroup = composer.startRestartGroup(847049916);
@@ -3165,7 +3143,7 @@ public final class TabRowKt {
                                 } else {
                                     j7 = j4;
                                 }
-                                f3 = i5 != 0 ? TabRowDefaults.INSTANCE.m3134getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f2;
+                                f3 = i5 != 0 ? TabRowDefaults.INSTANCE.m2612getScrollableTabRowEdgeStartPaddingD9Ej5fM() : f2;
                                 ComposableLambda rememberComposableLambda = i6 != 0 ? ComposableLambdaKt.rememberComposableLambda(-720441215, true, new Function3<List<? extends TabPosition>, Composer, Integer, Unit>() { // from class: androidx.compose.material3.TabRowKt$ScrollableTabRow$1
                                     @Override // kotlin.jvm.functions.Function3
                                     public /* bridge */ /* synthetic */ Unit invoke(List<? extends TabPosition> list, Composer composer2, Integer num) {
@@ -3178,7 +3156,7 @@ public final class TabRowKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-720441215, i12, -1, "androidx.compose.material3.ScrollableTabRow.<anonymous> (TabRow.kt:1407)");
                                         }
-                                        TabRowDefaults.INSTANCE.m3133SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer2, 3072, 6);
+                                        TabRowDefaults.INSTANCE.m2611SecondaryIndicator9IZ8Weo(TabRowDefaults.INSTANCE.tabIndicatorOffset(Modifier.Companion, list.get(i)), 0.0f, 0L, composer2, 3072, 6);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -3188,7 +3166,7 @@ public final class TabRowKt {
                                     int i12 = i4;
                                     modifier2 = companion;
                                     function33 = rememberComposableLambda;
-                                    m2263getLambda$358046007$material3 = ComposableSingletons$TabRowKt.INSTANCE.m2263getLambda$358046007$material3();
+                                    m1949getLambda$358046007$material3 = ComposableSingletons$TabRowKt.INSTANCE.m1949getLambda$358046007$material3();
                                     i8 = i12;
                                     long j8 = j3;
                                     j6 = j7;
@@ -3198,11 +3176,11 @@ public final class TabRowKt {
                                         ComposerKt.traceEventStart(847049916, i8, -1, "androidx.compose.material3.ScrollableTabRow (TabRow.kt:1413)");
                                     }
                                     int i13 = i8 << 3;
-                                    m3147ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function33, modifier2, j5, j6, f3, m2263getLambda$358046007$material3, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i13 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i13 & 7168) | (57344 & i13) | (458752 & i13) | (3670016 & i8) | (i8 & 29360128), 0);
+                                    m2619ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function33, modifier2, j5, j6, f3, m1949getLambda$358046007$material3, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i13 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i13 & 7168) | (57344 & i13) | (458752 & i13) | (3670016 & i8) | (i8 & 29360128), 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
-                                    function23 = m2263getLambda$358046007$material3;
+                                    function23 = m1949getLambda$358046007$material3;
                                     function32 = function33;
                                 } else {
                                     long j9 = j3;
@@ -3213,15 +3191,15 @@ public final class TabRowKt {
                                     function33 = rememberComposableLambda;
                                 }
                             }
-                            m2263getLambda$358046007$material3 = function2;
+                            m1949getLambda$358046007$material3 = function2;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             int i132 = i8 << 3;
-                            m3147ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function33, modifier2, j5, j6, f3, m2263getLambda$358046007$material3, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i132 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i132 & 7168) | (57344 & i132) | (458752 & i132) | (3670016 & i8) | (i8 & 29360128), 0);
+                            m2619ScrollableTabRowWithSubcomposeImplqhFBPw4(i, function33, modifier2, j5, j6, f3, m1949getLambda$358046007$material3, function22, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), startRestartGroup, (i132 & 896) | (i8 & 14) | ((i8 >> 12) & 112) | (i132 & 7168) | (57344 & i132) | (458752 & i132) | (3670016 & i8) | (i8 & 29360128), 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
-                            function23 = m2263getLambda$358046007$material3;
+                            function23 = m1949getLambda$358046007$material3;
                             function32 = function33;
                         } else {
                             startRestartGroup.skipToGroupEnd();
@@ -3237,9 +3215,7 @@ public final class TabRowKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.TabRowKt$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit ScrollableTabRow_sKfQg0A$lambda$11;
-                                    ScrollableTabRow_sKfQg0A$lambda$11 = TabRowKt.ScrollableTabRow_sKfQg0A$lambda$11(i, modifier2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return ScrollableTabRow_sKfQg0A$lambda$11;
+                                    return TabRowKt.ScrollableTabRow_sKfQg0A$lambda$11(i, modifier2, j5, j6, f3, function32, function23, function22, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;

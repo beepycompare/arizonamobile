@@ -68,9 +68,9 @@ final class SharedTransitionScopeRootModifierNode extends Modifier.Node implemen
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScopeRootModifierNode$measure$1
+    public MeasureResult mo69measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.SharedTransitionScopeRootModifierNode$measure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -87,13 +87,15 @@ final class SharedTransitionScopeRootModifierNode extends Modifier.Node implemen
             public final void invoke2(Placeable.PlacementScope placementScope) {
                 LayoutCoordinates coordinates = placementScope.getCoordinates();
                 if (coordinates != null) {
-                    if (!MeasureScope.this.isLookingAhead()) {
-                        this.getSharedScope().setRoot$animation(coordinates);
+                    boolean isLookingAhead = MeasureScope.this.isLookingAhead();
+                    SharedTransitionScopeRootModifierNode sharedTransitionScopeRootModifierNode = this;
+                    if (!isLookingAhead) {
+                        sharedTransitionScopeRootModifierNode.getSharedScope().setRoot$animation(coordinates);
                     } else {
-                        this.getSharedScope().setLookaheadRoot$animation(coordinates);
+                        sharedTransitionScopeRootModifierNode.getSharedScope().setLookaheadRoot$animation(coordinates);
                     }
                 }
-                Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, 0, 0, 0.0f, 4, null);
+                Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, 0, 0, 0.0f, 4, null);
             }
         }, 4, null);
     }

@@ -93,7 +93,7 @@ public final class ModifierLocalManager {
     /* JADX WARN: Multi-variable type inference failed */
     private final void invalidateConsumersOfNodeForKey(Modifier.Node node, ModifierLocal<?> modifierLocal, Set<BackwardsCompatNode> set) {
         Modifier.Node node2 = node;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(32);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(32);
         if (!node2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -106,9 +106,9 @@ public final class ModifierLocalManager {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node3 = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node3.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((node3.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 for (Modifier.Node node4 = node3; node4 != null && node4.isAttached(); node4 = node4.getChild$ui()) {
-                    if ((node4.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((node4.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node5 = node4;
                         MutableVector mutableVector2 = null;
                         while (node5 != null) {
@@ -123,10 +123,10 @@ public final class ModifierLocalManager {
                                 if (modifierLocalModifierNode.getProvidedValues().contains$ui(modifierLocal)) {
                                     break;
                                 }
-                            } else if ((node5.getKindSet$ui() & m7195constructorimpl) != 0 && (node5 instanceof DelegatingNode)) {
+                            } else if ((node5.getKindSet$ui() & m6535constructorimpl) != 0 && (node5 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node5).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node5 = delegate$ui;

@@ -24,9 +24,9 @@ public final class DateTimeFormatKt {
     private static final Lazy allFormatConstants$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.DateTimeFormatKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            List allFormatConstants_delegate$lambda$0;
-            allFormatConstants_delegate$lambda$0 = DateTimeFormatKt.allFormatConstants_delegate$lambda$0();
-            return allFormatConstants_delegate$lambda$0;
+            List listOf;
+            listOf = CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to("dateTimeComponents(DateTimeComponents.Formats.RFC_1123)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(DateTimeComponents.Formats.INSTANCE.getRFC_1123())), TuplesKt.to("dateTimeComponents(DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(DateTimeComponents.Formats.INSTANCE.getISO_DATE_TIME_OFFSET())), TuplesKt.to("date(LocalDateTime.Formats.ISO)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(LocalDateTime.Formats.INSTANCE.getISO())), TuplesKt.to("date(LocalDate.Formats.ISO)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(LocalDate.Formats.INSTANCE.getISO())), TuplesKt.to("date(LocalDate.Formats.ISO_BASIC)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(LocalDate.Formats.INSTANCE.getISO_BASIC())), TuplesKt.to("time(LocalTime.Formats.ISO)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(LocalTime.Formats.INSTANCE.getISO())), TuplesKt.to("offset(UtcOffset.Formats.ISO)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getISO())), TuplesKt.to("offset(UtcOffset.Formats.ISO_BASIC)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getISO_BASIC())), TuplesKt.to("offset(UtcOffset.Formats.FOUR_DIGITS)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getFOUR_DIGITS())), TuplesKt.to("yearMonth(YearMonth.Formats.ISO)", DateTimeFormatKt.allFormatConstants_delegate$lambda$0$unwrap(YearMonth.Formats.INSTANCE.getISO()))});
+            return listOf;
         }
     });
 
@@ -93,10 +93,5 @@ public final class DateTimeFormatKt {
     private static final CachedFormatStructure<?> allFormatConstants_delegate$lambda$0$unwrap(DateTimeFormat<?> dateTimeFormat) {
         Intrinsics.checkNotNull(dateTimeFormat, "null cannot be cast to non-null type kotlinx.datetime.format.AbstractDateTimeFormat<*, *>");
         return ((AbstractDateTimeFormat) dateTimeFormat).getActualFormat();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List allFormatConstants_delegate$lambda$0() {
-        return CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to("dateTimeComponents(DateTimeComponents.Formats.RFC_1123)", allFormatConstants_delegate$lambda$0$unwrap(DateTimeComponents.Formats.INSTANCE.getRFC_1123())), TuplesKt.to("dateTimeComponents(DateTimeComponents.Formats.ISO_DATE_TIME_OFFSET)", allFormatConstants_delegate$lambda$0$unwrap(DateTimeComponents.Formats.INSTANCE.getISO_DATE_TIME_OFFSET())), TuplesKt.to("date(LocalDateTime.Formats.ISO)", allFormatConstants_delegate$lambda$0$unwrap(LocalDateTime.Formats.INSTANCE.getISO())), TuplesKt.to("date(LocalDate.Formats.ISO)", allFormatConstants_delegate$lambda$0$unwrap(LocalDate.Formats.INSTANCE.getISO())), TuplesKt.to("date(LocalDate.Formats.ISO_BASIC)", allFormatConstants_delegate$lambda$0$unwrap(LocalDate.Formats.INSTANCE.getISO_BASIC())), TuplesKt.to("time(LocalTime.Formats.ISO)", allFormatConstants_delegate$lambda$0$unwrap(LocalTime.Formats.INSTANCE.getISO())), TuplesKt.to("offset(UtcOffset.Formats.ISO)", allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getISO())), TuplesKt.to("offset(UtcOffset.Formats.ISO_BASIC)", allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getISO_BASIC())), TuplesKt.to("offset(UtcOffset.Formats.FOUR_DIGITS)", allFormatConstants_delegate$lambda$0$unwrap(UtcOffset.Formats.INSTANCE.getFOUR_DIGITS())), TuplesKt.to("yearMonth(YearMonth.Formats.ISO)", allFormatConstants_delegate$lambda$0$unwrap(YearMonth.Formats.INSTANCE.getISO()))});
     }
 }

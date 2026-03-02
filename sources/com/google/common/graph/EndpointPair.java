@@ -56,10 +56,12 @@ public abstract class EndpointPair<N> implements Iterable<N> {
     }
 
     public final N adjacentNode(N node) {
-        if (node.equals(this.nodeU)) {
-            return this.nodeV;
+        boolean equals = node.equals(this.nodeU);
+        N n = this.nodeV;
+        if (equals) {
+            return n;
         }
-        if (node.equals(this.nodeV)) {
+        if (node.equals(n)) {
             return this.nodeU;
         }
         throw new IllegalArgumentException("EndpointPair " + this + " does not contain node " + node);

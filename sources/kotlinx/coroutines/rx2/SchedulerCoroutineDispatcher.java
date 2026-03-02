@@ -35,24 +35,19 @@ public final class SchedulerCoroutineDispatcher extends CoroutineDispatcher impl
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo10758dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         this.scheduler.scheduleDirect(runnable);
     }
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo11838scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo10759scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         RxAwaitKt.disposeOnCancellation(cancellableContinuation, this.scheduler.scheduleDirect(new Runnable() { // from class: kotlinx.coroutines.rx2.SchedulerCoroutineDispatcher$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SchedulerCoroutineDispatcher.scheduleResumeAfterDelay$lambda$1(CancellableContinuation.this, this);
+                CancellableContinuation.this.resumeUndispatched(this, Unit.INSTANCE);
             }
         }, j, TimeUnit.MILLISECONDS));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void scheduleResumeAfterDelay$lambda$1(CancellableContinuation cancellableContinuation, SchedulerCoroutineDispatcher schedulerCoroutineDispatcher) {
-        cancellableContinuation.resumeUndispatched(schedulerCoroutineDispatcher, Unit.INSTANCE);
     }
 
     @Override // kotlinx.coroutines.Delay

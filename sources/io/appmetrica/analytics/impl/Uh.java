@@ -7,20 +7,20 @@ public final class Uh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ ReporterConfig f814a;
-    public final /* synthetic */ C0279gi b;
+    public final /* synthetic */ C0278gi b;
 
-    public Uh(C0279gi c0279gi, ReporterConfig reporterConfig) {
-        this.b = c0279gi;
+    public Uh(C0278gi c0278gi, ReporterConfig reporterConfig) {
+        this.b = c0278gi;
         this.f814a = reporterConfig;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0279gi c0279gi = this.b;
+        C0278gi c0278gi = this.b;
         ReporterConfig reporterConfig = this.f814a;
-        C0738z0 c0738z0 = c0279gi.f1015a;
-        Context context = c0279gi.d;
-        c0738z0.getClass();
-        C0713y0.a(context).f().a(reporterConfig);
+        C0737z0 c0737z0 = c0278gi.f1015a;
+        Context context = c0278gi.d;
+        c0737z0.getClass();
+        C0712y0.a(context).f().a(reporterConfig);
     }
 }

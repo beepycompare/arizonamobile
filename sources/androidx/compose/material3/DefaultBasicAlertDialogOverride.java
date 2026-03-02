@@ -17,7 +17,7 @@ public final class DefaultBasicAlertDialogOverride implements BasicAlertDialogOv
     public static final int $stable = 0;
     public static final DefaultBasicAlertDialogOverride INSTANCE = new DefaultBasicAlertDialogOverride();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicAlertDialog$lambda$0(DefaultBasicAlertDialogOverride defaultBasicAlertDialogOverride, BasicAlertDialogOverrideScope basicAlertDialogOverrideScope, int i, Composer composer, int i2) {
         defaultBasicAlertDialogOverride.BasicAlertDialog(basicAlertDialogOverrideScope, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -52,9 +52,7 @@ public final class DefaultBasicAlertDialogOverride implements BasicAlertDialogOv
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DefaultBasicAlertDialogOverride$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit BasicAlertDialog$lambda$0;
-                    BasicAlertDialog$lambda$0 = DefaultBasicAlertDialogOverride.BasicAlertDialog$lambda$0(DefaultBasicAlertDialogOverride.this, basicAlertDialogOverrideScope, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return BasicAlertDialog$lambda$0;
+                    return DefaultBasicAlertDialogOverride.BasicAlertDialog$lambda$0(DefaultBasicAlertDialogOverride.this, basicAlertDialogOverrideScope, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

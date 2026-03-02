@@ -11,13 +11,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface AudioOutputProvider {
     public static final int FORMAT_SUPPORTED_DIRECTLY = 2;
     public static final int FORMAT_SUPPORTED_WITH_TRANSCODING = 1;
     public static final int FORMAT_UNSUPPORTED = 0;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         void onFormatSupportChanged();
     }
@@ -25,7 +25,7 @@ public interface AudioOutputProvider {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface SupportLevel {
     }
 
@@ -44,7 +44,7 @@ public interface AudioOutputProvider {
     default void setClock(Clock clock) {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class FormatConfig {
         public final AudioAttributes audioAttributes;
         public final int audioSessionId;
@@ -74,7 +74,7 @@ public interface AudioOutputProvider {
             return new Builder();
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes2.dex */
         public static final class Builder {
             private AudioAttributes audioAttributes;
             private int audioSessionId;
@@ -159,7 +159,7 @@ public interface AudioOutputProvider {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class OutputConfig {
         public final AudioAttributes audioAttributes;
         public final int audioSessionId;
@@ -208,7 +208,7 @@ public interface AudioOutputProvider {
             return Objects.hash(Integer.valueOf(this.encoding), Integer.valueOf(this.sampleRate), Integer.valueOf(this.channelMask), Boolean.valueOf(this.isTunneling), Boolean.valueOf(this.isOffload), Integer.valueOf(this.bufferSize), this.audioAttributes, Integer.valueOf(this.audioSessionId), Integer.valueOf(this.virtualDeviceId), Boolean.valueOf(this.useOffloadGapless), Boolean.valueOf(this.usePlaybackParameters));
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes2.dex */
         public static final class Builder {
             private AudioAttributes audioAttributes;
             private int audioSessionId;
@@ -303,7 +303,7 @@ public interface AudioOutputProvider {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class FormatSupport {
         public static final FormatSupport UNSUPPORTED = new Builder().build();
         public final boolean isFormatSupportedForOffload;
@@ -311,7 +311,7 @@ public interface AudioOutputProvider {
         public final boolean isSpeedChangeSupportedForOffload;
         public final int supportLevel;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes2.dex */
         public static final class Builder {
             private boolean isFormatSupportedForOffload;
             private boolean isGaplessSupportedForOffload;
@@ -369,14 +369,14 @@ public interface AudioOutputProvider {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class ConfigurationException extends Exception {
         public ConfigurationException(String str) {
             super((String) Preconditions.checkNotNull(str));
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class InitializationException extends Exception {
         public InitializationException() {
         }

@@ -46,11 +46,11 @@ final class SelectionManager$contextMenuAreaModifier$2 extends SuspendLambda imp
             if (contextTextAndSelection$foundation != null) {
                 SelectionManager selectionManager = this.this$0;
                 AnnotatedString component1 = contextTextAndSelection$foundation.component1();
-                long m7705unboximpl = contextTextAndSelection$foundation.component2().m7705unboximpl();
+                long m7007unboximpl = contextTextAndSelection$foundation.component2().m7007unboximpl();
                 PlatformSelectionBehaviors platformSelectionBehaviors$foundation = selectionManager.getPlatformSelectionBehaviors$foundation();
                 if (platformSelectionBehaviors$foundation != null) {
                     this.label = 1;
-                    if (platformSelectionBehaviors$foundation.mo1835onShowSelectionToolbarSbBc2M(component1, m7705unboximpl, this) == coroutine_suspended) {
+                    if (platformSelectionBehaviors$foundation.mo1591onShowSelectionToolbarSbBc2M(component1, m7007unboximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }

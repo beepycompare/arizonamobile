@@ -638,12 +638,13 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             }
             updateLastKnownIndex();
             int i = this.lastKnownIndex;
+            CompactHashMap compactHashMap = CompactHashMap.this;
             if (i != -1) {
-                V v = (V) CompactHashMap.this.value(i);
+                V v = (V) compactHashMap.value(i);
                 CompactHashMap.this.setValue(this.lastKnownIndex, value);
                 return v;
             }
-            CompactHashMap.this.put(this.key, value);
+            compactHashMap.put(this.key, value);
             return (V) NullnessCasts.unsafeNull();
         }
     }

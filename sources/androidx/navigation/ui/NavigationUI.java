@@ -240,9 +240,7 @@ public final class NavigationUI {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() { // from class: androidx.navigation.ui.NavigationUI$$ExternalSyntheticLambda5
             @Override // com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
             public final boolean onNavigationItemSelected(MenuItem menuItem) {
-                boolean z;
-                z = NavigationUI.setupWithNavController$lambda$3(NavController.this, navigationView, menuItem);
-                return z;
+                return NavigationUI.setupWithNavController$lambda$3(NavController.this, navigationView, menuItem);
             }
         });
         final WeakReference weakReference = new WeakReference(navigationView);
@@ -267,7 +265,7 @@ public final class NavigationUI {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setupWithNavController$lambda$3(NavController navController, NavigationView navigationView, MenuItem item) {
         Intrinsics.checkNotNullParameter(item, "item");
         boolean onNavDestinationSelected = onNavDestinationSelected(item, navController);
@@ -295,9 +293,7 @@ public final class NavigationUI {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() { // from class: androidx.navigation.ui.NavigationUI$$ExternalSyntheticLambda2
             @Override // com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
             public final boolean onNavigationItemSelected(MenuItem menuItem) {
-                boolean z2;
-                z2 = NavigationUI.setupWithNavController$lambda$5(NavController.this, z, navigationView, menuItem);
-                return z2;
+                return NavigationUI.setupWithNavController$lambda$5(NavController.this, z, navigationView, menuItem);
             }
         });
         final WeakReference weakReference = new WeakReference(navigationView);
@@ -322,7 +318,7 @@ public final class NavigationUI {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setupWithNavController$lambda$5(NavController navController, boolean z, NavigationView navigationView, MenuItem item) {
         Intrinsics.checkNotNullParameter(item, "item");
         boolean onNavDestinationSelected = onNavDestinationSelected(item, navController, z);
@@ -365,9 +361,7 @@ public final class NavigationUI {
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() { // from class: androidx.navigation.ui.NavigationUI$$ExternalSyntheticLambda4
             @Override // com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
             public final boolean onNavigationItemSelected(MenuItem menuItem) {
-                boolean z;
-                z = NavigationUI.setupWithNavController$lambda$6(NavController.this, menuItem);
-                return z;
+                return NavigationUI.setupWithNavController$lambda$6(NavController.this, menuItem);
             }
         });
         final WeakReference weakReference = new WeakReference(navigationBarView);
@@ -394,7 +388,7 @@ public final class NavigationUI {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setupWithNavController$lambda$6(NavController navController, MenuItem item) {
         Intrinsics.checkNotNullParameter(item, "item");
         return onNavDestinationSelected(item, navController);
@@ -410,9 +404,7 @@ public final class NavigationUI {
         navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() { // from class: androidx.navigation.ui.NavigationUI$$ExternalSyntheticLambda0
             @Override // com.google.android.material.navigation.NavigationBarView.OnItemSelectedListener
             public final boolean onNavigationItemSelected(MenuItem menuItem) {
-                boolean z2;
-                z2 = NavigationUI.setupWithNavController$lambda$8(NavController.this, z, menuItem);
-                return z2;
+                return NavigationUI.setupWithNavController$lambda$8(NavController.this, z, menuItem);
             }
         });
         final WeakReference weakReference = new WeakReference(navigationBarView);
@@ -439,7 +431,7 @@ public final class NavigationUI {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setupWithNavController$lambda$8(NavController navController, boolean z, MenuItem item) {
         Intrinsics.checkNotNullParameter(item, "item");
         return onNavDestinationSelected(item, navController, z);

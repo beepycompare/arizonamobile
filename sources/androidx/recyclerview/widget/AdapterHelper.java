@@ -73,24 +73,31 @@ public final class AdapterHelper implements OpReorderer.Callback {
     public void preProcess() {
         this.mOpReorderer.reorderOps(this.mPendingUpdates);
         int size = this.mPendingUpdates.size();
-        for (int i = 0; i < size; i++) {
-            UpdateOp updateOp = this.mPendingUpdates.get(i);
-            int i2 = updateOp.cmd;
-            if (i2 == 1) {
-                applyAdd(updateOp);
-            } else if (i2 == 2) {
-                applyRemove(updateOp);
-            } else if (i2 == 4) {
-                applyUpdate(updateOp);
-            } else if (i2 == 8) {
-                applyMove(updateOp);
-            }
-            Runnable runnable = this.mOnItemProcessedCallback;
-            if (runnable != null) {
-                runnable.run();
+        int i = 0;
+        while (true) {
+            ArrayList<UpdateOp> arrayList = this.mPendingUpdates;
+            if (i < size) {
+                UpdateOp updateOp = arrayList.get(i);
+                int i2 = updateOp.cmd;
+                if (i2 == 1) {
+                    applyAdd(updateOp);
+                } else if (i2 == 2) {
+                    applyRemove(updateOp);
+                } else if (i2 == 4) {
+                    applyUpdate(updateOp);
+                } else if (i2 == 8) {
+                    applyMove(updateOp);
+                }
+                Runnable runnable = this.mOnItemProcessedCallback;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                i++;
+            } else {
+                arrayList.clear();
+                return;
             }
         }
-        this.mPendingUpdates.clear();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -243,10 +250,16 @@ public final class AdapterHelper implements OpReorderer.Callback {
     }
 
     private int updatePositionWithPostponed(int i, int i2) {
+        ArrayList<UpdateOp> arrayList;
         int i3;
         int i4;
-        for (int size = this.mPostponedList.size() - 1; size >= 0; size--) {
-            UpdateOp updateOp = this.mPostponedList.get(size);
+        int size = this.mPostponedList.size() - 1;
+        while (true) {
+            arrayList = this.mPostponedList;
+            if (size < 0) {
+                break;
+            }
+            UpdateOp updateOp = arrayList.get(size);
             if (updateOp.cmd == 8) {
                 if (updateOp.positionStart < updateOp.itemCount) {
                     i3 = updateOp.positionStart;
@@ -291,8 +304,9 @@ public final class AdapterHelper implements OpReorderer.Callback {
             } else if (i2 == 2) {
                 updateOp.positionStart--;
             }
+            size--;
         }
-        for (int size2 = this.mPostponedList.size() - 1; size2 >= 0; size2--) {
+        for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
             UpdateOp updateOp2 = this.mPostponedList.get(size2);
             if (updateOp2.cmd == 8) {
                 if (updateOp2.itemCount == updateOp2.positionStart || updateOp2.itemCount < 0) {
@@ -442,29 +456,36 @@ public final class AdapterHelper implements OpReorderer.Callback {
     public void consumeUpdatesInOnePass() {
         consumePostponedUpdates();
         int size = this.mPendingUpdates.size();
-        for (int i = 0; i < size; i++) {
-            UpdateOp updateOp = this.mPendingUpdates.get(i);
-            int i2 = updateOp.cmd;
-            if (i2 == 1) {
-                this.mCallback.onDispatchSecondPass(updateOp);
-                this.mCallback.offsetPositionsForAdd(updateOp.positionStart, updateOp.itemCount);
-            } else if (i2 == 2) {
-                this.mCallback.onDispatchSecondPass(updateOp);
-                this.mCallback.offsetPositionsForRemovingInvisible(updateOp.positionStart, updateOp.itemCount);
-            } else if (i2 == 4) {
-                this.mCallback.onDispatchSecondPass(updateOp);
-                this.mCallback.markViewHoldersUpdated(updateOp.positionStart, updateOp.itemCount, updateOp.payload);
-            } else if (i2 == 8) {
-                this.mCallback.onDispatchSecondPass(updateOp);
-                this.mCallback.offsetPositionsForMove(updateOp.positionStart, updateOp.itemCount);
-            }
-            Runnable runnable = this.mOnItemProcessedCallback;
-            if (runnable != null) {
-                runnable.run();
+        int i = 0;
+        while (true) {
+            ArrayList<UpdateOp> arrayList = this.mPendingUpdates;
+            if (i < size) {
+                UpdateOp updateOp = arrayList.get(i);
+                int i2 = updateOp.cmd;
+                if (i2 == 1) {
+                    this.mCallback.onDispatchSecondPass(updateOp);
+                    this.mCallback.offsetPositionsForAdd(updateOp.positionStart, updateOp.itemCount);
+                } else if (i2 == 2) {
+                    this.mCallback.onDispatchSecondPass(updateOp);
+                    this.mCallback.offsetPositionsForRemovingInvisible(updateOp.positionStart, updateOp.itemCount);
+                } else if (i2 == 4) {
+                    this.mCallback.onDispatchSecondPass(updateOp);
+                    this.mCallback.markViewHoldersUpdated(updateOp.positionStart, updateOp.itemCount, updateOp.payload);
+                } else if (i2 == 8) {
+                    this.mCallback.onDispatchSecondPass(updateOp);
+                    this.mCallback.offsetPositionsForMove(updateOp.positionStart, updateOp.itemCount);
+                }
+                Runnable runnable = this.mOnItemProcessedCallback;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                i++;
+            } else {
+                recycleUpdateOpsAndClearList(arrayList);
+                this.mExistingUpdateTypes = 0;
+                return;
             }
         }
-        recycleUpdateOpsAndClearList(this.mPendingUpdates);
-        this.mExistingUpdateTypes = 0;
     }
 
     public int applyPendingUpdatesToPosition(int i) {

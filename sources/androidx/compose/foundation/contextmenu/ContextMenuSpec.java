@@ -30,16 +30,16 @@ public final class ContextMenuSpec {
     private static final float DividerVerticalPadding;
     private static final float VerticalPadding;
     public static final ContextMenuSpec INSTANCE = new ContextMenuSpec();
-    private static final float ContainerWidthMin = Dp.m8258constructorimpl(112);
-    private static final float ContainerWidthMax = Dp.m8258constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
-    private static final float ListItemHeight = Dp.m8258constructorimpl(48);
-    private static final float MenuContainerElevation = Dp.m8258constructorimpl(3);
-    private static final float CornerRadius = Dp.m8258constructorimpl(4);
+    private static final float ContainerWidthMin = Dp.m7555constructorimpl(112);
+    private static final float ContainerWidthMax = Dp.m7555constructorimpl((float) RouletteView.DEFAULT_ROULETTE_WIDTH);
+    private static final float ListItemHeight = Dp.m7555constructorimpl(48);
+    private static final float MenuContainerElevation = Dp.m7555constructorimpl(3);
+    private static final float CornerRadius = Dp.m7555constructorimpl(4);
     private static final Alignment.Vertical LabelVerticalTextAlignment = Alignment.Companion.getCenterVertically();
-    private static final int LabelHorizontalTextAlignment = TextAlign.Companion.m8141getStarte0LSkKk();
-    private static final float HorizontalPadding = Dp.m8258constructorimpl(12);
-    private static final float IconSize = Dp.m8258constructorimpl(24);
-    private static final float DividerHeight = Dp.m8258constructorimpl(1);
+    private static final int LabelHorizontalTextAlignment = TextAlign.Companion.m7438getStarte0LSkKk();
+    private static final float HorizontalPadding = Dp.m7555constructorimpl(12);
+    private static final float IconSize = Dp.m7555constructorimpl(24);
+    private static final float DividerHeight = Dp.m7555constructorimpl(1);
     private static final long FontSize = TextUnitKt.getSp(14);
     private static final FontWeight FontWeight = FontWeight.Companion.getMedium();
     private static final long LineHeight = TextUnitKt.getSp(20);
@@ -49,27 +49,27 @@ public final class ContextMenuSpec {
     }
 
     /* renamed from: getContainerWidthMin-D9Ej5fM  reason: not valid java name */
-    public final float m430getContainerWidthMinD9Ej5fM() {
+    public final float m375getContainerWidthMinD9Ej5fM() {
         return ContainerWidthMin;
     }
 
     /* renamed from: getContainerWidthMax-D9Ej5fM  reason: not valid java name */
-    public final float m429getContainerWidthMaxD9Ej5fM() {
+    public final float m374getContainerWidthMaxD9Ej5fM() {
         return ContainerWidthMax;
     }
 
     /* renamed from: getListItemHeight-D9Ej5fM  reason: not valid java name */
-    public final float m440getListItemHeightD9Ej5fM() {
+    public final float m385getListItemHeightD9Ej5fM() {
         return ListItemHeight;
     }
 
     /* renamed from: getMenuContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m441getMenuContainerElevationD9Ej5fM() {
+    public final float m386getMenuContainerElevationD9Ej5fM() {
         return MenuContainerElevation;
     }
 
     /* renamed from: getCornerRadius-D9Ej5fM  reason: not valid java name */
-    public final float m431getCornerRadiusD9Ej5fM() {
+    public final float m376getCornerRadiusD9Ej5fM() {
         return CornerRadius;
     }
 
@@ -78,37 +78,37 @@ public final class ContextMenuSpec {
     }
 
     /* renamed from: getLabelHorizontalTextAlignment-e0LSkKk  reason: not valid java name */
-    public final int m437getLabelHorizontalTextAlignmente0LSkKk() {
+    public final int m382getLabelHorizontalTextAlignmente0LSkKk() {
         return LabelHorizontalTextAlignment;
     }
 
     /* renamed from: getHorizontalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m435getHorizontalPaddingD9Ej5fM() {
+    public final float m380getHorizontalPaddingD9Ej5fM() {
         return HorizontalPadding;
     }
 
     /* renamed from: getVerticalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m442getVerticalPaddingD9Ej5fM() {
+    public final float m387getVerticalPaddingD9Ej5fM() {
         return VerticalPadding;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m436getIconSizeD9Ej5fM() {
+    public final float m381getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getDividerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m432getDividerHeightD9Ej5fM() {
+    public final float m377getDividerHeightD9Ej5fM() {
         return DividerHeight;
     }
 
     /* renamed from: getDividerVerticalPadding-D9Ej5fM  reason: not valid java name */
-    public final float m433getDividerVerticalPaddingD9Ej5fM() {
+    public final float m378getDividerVerticalPaddingD9Ej5fM() {
         return DividerVerticalPadding;
     }
 
     /* renamed from: getFontSize-XSAIIZE  reason: not valid java name */
-    public final long m434getFontSizeXSAIIZE() {
+    public final long m379getFontSizeXSAIIZE() {
         return FontSize;
     }
 
@@ -117,24 +117,24 @@ public final class ContextMenuSpec {
     }
 
     /* renamed from: getLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m439getLineHeightXSAIIZE() {
+    public final long m384getLineHeightXSAIIZE() {
         return LineHeight;
     }
 
     /* renamed from: getLetterSpacing-XSAIIZE  reason: not valid java name */
-    public final long m438getLetterSpacingXSAIIZE() {
+    public final long m383getLetterSpacingXSAIIZE() {
         return LetterSpacing;
     }
 
     /* renamed from: textStyle-8_81llA  reason: not valid java name */
-    public final TextStyle m443textStyle8_81llA(long j) {
+    public final TextStyle m388textStyle8_81llA(long j) {
         int i = LabelHorizontalTextAlignment;
         return new TextStyle(j, FontSize, FontWeight, (FontStyle) null, (FontSynthesis) null, (FontFamily) null, (String) null, LetterSpacing, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (DrawStyle) null, i, 0, LineHeight, (TextIndent) null, (PlatformTextStyle) null, (LineHeightStyle) null, 0, 0, (TextMotion) null, 16613240, (DefaultConstructorMarker) null);
     }
 
     static {
         float f = 8;
-        VerticalPadding = Dp.m8258constructorimpl(f);
-        DividerVerticalPadding = Dp.m8258constructorimpl(f);
+        VerticalPadding = Dp.m7555constructorimpl(f);
+        DividerVerticalPadding = Dp.m7555constructorimpl(f);
     }
 }

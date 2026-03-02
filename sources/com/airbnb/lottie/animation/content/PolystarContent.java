@@ -108,10 +108,12 @@ public class PolystarContent implements PathContent, BaseKeyframeAnimation.Anima
 
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path getPath() {
-        if (this.isPathValid) {
-            return this.path;
+        boolean z = this.isPathValid;
+        Path path = this.path;
+        if (z) {
+            return path;
         }
-        this.path.reset();
+        path.reset();
         if (this.hidden) {
             this.isPathValid = true;
             return this.path;

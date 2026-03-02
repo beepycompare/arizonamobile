@@ -312,40 +312,40 @@ public final class Key {
     private static final long ProfileSwitch = Key_androidKt.Key(288);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Key m6276boximpl(long j) {
+    public static final /* synthetic */ Key m5617boximpl(long j) {
         return new Key(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m6277constructorimpl(long j) {
+    public static long m5618constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6278equalsimpl(long j, Object obj) {
-        return (obj instanceof Key) && j == ((Key) obj).m6282unboximpl();
+    public static boolean m5619equalsimpl(long j, Object obj) {
+        return (obj instanceof Key) && j == ((Key) obj).m5623unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6279equalsimpl0(long j, long j2) {
+    public static final boolean m5620equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6280hashCodeimpl(long j) {
+    public static int m5621hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m6278equalsimpl(this.keyCode, obj);
+        return m5619equalsimpl(this.keyCode, obj);
     }
 
     public int hashCode() {
-        return m6280hashCodeimpl(this.keyCode);
+        return m5621hashCodeimpl(this.keyCode);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m6282unboximpl() {
+    public final /* synthetic */ long m5623unboximpl() {
         return this.keyCode;
     }
 
@@ -361,1437 +361,1437 @@ public final class Key {
         }
 
         /* renamed from: getUnknown-EK5gGoQ  reason: not valid java name */
-        public final long m6553getUnknownEK5gGoQ() {
+        public final long m5894getUnknownEK5gGoQ() {
             return Key.Unknown;
         }
 
         /* renamed from: getSoftLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6500getSoftLeftEK5gGoQ() {
+        public final long m5841getSoftLeftEK5gGoQ() {
             return Key.SoftLeft;
         }
 
         /* renamed from: getSoftRight-EK5gGoQ  reason: not valid java name */
-        public final long m6501getSoftRightEK5gGoQ() {
+        public final long m5842getSoftRightEK5gGoQ() {
             return Key.SoftRight;
         }
 
         /* renamed from: getHome-EK5gGoQ  reason: not valid java name */
-        public final long m6394getHomeEK5gGoQ() {
+        public final long m5735getHomeEK5gGoQ() {
             return Key.Home;
         }
 
         /* renamed from: getBack-EK5gGoQ  reason: not valid java name */
-        public final long m6294getBackEK5gGoQ() {
+        public final long m5635getBackEK5gGoQ() {
             return Key.Back;
         }
 
         /* renamed from: getHelp-EK5gGoQ  reason: not valid java name */
-        public final long m6392getHelpEK5gGoQ() {
+        public final long m5733getHelpEK5gGoQ() {
             return Key.Help;
         }
 
         /* renamed from: getNavigatePrevious-EK5gGoQ  reason: not valid java name */
-        public final long m6439getNavigatePreviousEK5gGoQ() {
+        public final long m5780getNavigatePreviousEK5gGoQ() {
             return Key.NavigatePrevious;
         }
 
         /* renamed from: getNavigateNext-EK5gGoQ  reason: not valid java name */
-        public final long m6437getNavigateNextEK5gGoQ() {
+        public final long m5778getNavigateNextEK5gGoQ() {
             return Key.NavigateNext;
         }
 
         /* renamed from: getNavigateIn-EK5gGoQ  reason: not valid java name */
-        public final long m6436getNavigateInEK5gGoQ() {
+        public final long m5777getNavigateInEK5gGoQ() {
             return Key.NavigateIn;
         }
 
         /* renamed from: getNavigateOut-EK5gGoQ  reason: not valid java name */
-        public final long m6438getNavigateOutEK5gGoQ() {
+        public final long m5779getNavigateOutEK5gGoQ() {
             return Key.NavigateOut;
         }
 
         /* renamed from: getSystemNavigationUp-EK5gGoQ  reason: not valid java name */
-        public final long m6513getSystemNavigationUpEK5gGoQ() {
+        public final long m5854getSystemNavigationUpEK5gGoQ() {
             return Key.SystemNavigationUp;
         }
 
         /* renamed from: getSystemNavigationDown-EK5gGoQ  reason: not valid java name */
-        public final long m6510getSystemNavigationDownEK5gGoQ() {
+        public final long m5851getSystemNavigationDownEK5gGoQ() {
             return Key.SystemNavigationDown;
         }
 
         /* renamed from: getSystemNavigationLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6511getSystemNavigationLeftEK5gGoQ() {
+        public final long m5852getSystemNavigationLeftEK5gGoQ() {
             return Key.SystemNavigationLeft;
         }
 
         /* renamed from: getSystemNavigationRight-EK5gGoQ  reason: not valid java name */
-        public final long m6512getSystemNavigationRightEK5gGoQ() {
+        public final long m5853getSystemNavigationRightEK5gGoQ() {
             return Key.SystemNavigationRight;
         }
 
         /* renamed from: getCall-EK5gGoQ  reason: not valid java name */
-        public final long m6336getCallEK5gGoQ() {
+        public final long m5677getCallEK5gGoQ() {
             return Key.Call;
         }
 
         /* renamed from: getEndCall-EK5gGoQ  reason: not valid java name */
-        public final long m6364getEndCallEK5gGoQ() {
+        public final long m5705getEndCallEK5gGoQ() {
             return Key.EndCall;
         }
 
         /* renamed from: getDirectionUp-EK5gGoQ  reason: not valid java name */
-        public final long m6357getDirectionUpEK5gGoQ() {
+        public final long m5698getDirectionUpEK5gGoQ() {
             return Key.DirectionUp;
         }
 
         /* renamed from: getDirectionDown-EK5gGoQ  reason: not valid java name */
-        public final long m6352getDirectionDownEK5gGoQ() {
+        public final long m5693getDirectionDownEK5gGoQ() {
             return Key.DirectionDown;
         }
 
         /* renamed from: getDirectionLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6355getDirectionLeftEK5gGoQ() {
+        public final long m5696getDirectionLeftEK5gGoQ() {
             return Key.DirectionLeft;
         }
 
         /* renamed from: getDirectionRight-EK5gGoQ  reason: not valid java name */
-        public final long m6356getDirectionRightEK5gGoQ() {
+        public final long m5697getDirectionRightEK5gGoQ() {
             return Key.DirectionRight;
         }
 
         /* renamed from: getDirectionCenter-EK5gGoQ  reason: not valid java name */
-        public final long m6351getDirectionCenterEK5gGoQ() {
+        public final long m5692getDirectionCenterEK5gGoQ() {
             return Key.DirectionCenter;
         }
 
         /* renamed from: getDirectionUpLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6358getDirectionUpLeftEK5gGoQ() {
+        public final long m5699getDirectionUpLeftEK5gGoQ() {
             return Key.DirectionUpLeft;
         }
 
         /* renamed from: getDirectionDownLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6353getDirectionDownLeftEK5gGoQ() {
+        public final long m5694getDirectionDownLeftEK5gGoQ() {
             return Key.DirectionDownLeft;
         }
 
         /* renamed from: getDirectionUpRight-EK5gGoQ  reason: not valid java name */
-        public final long m6359getDirectionUpRightEK5gGoQ() {
+        public final long m5700getDirectionUpRightEK5gGoQ() {
             return Key.DirectionUpRight;
         }
 
         /* renamed from: getDirectionDownRight-EK5gGoQ  reason: not valid java name */
-        public final long m6354getDirectionDownRightEK5gGoQ() {
+        public final long m5695getDirectionDownRightEK5gGoQ() {
             return Key.DirectionDownRight;
         }
 
         /* renamed from: getVolumeUp-EK5gGoQ  reason: not valid java name */
-        public final long m6558getVolumeUpEK5gGoQ() {
+        public final long m5899getVolumeUpEK5gGoQ() {
             return Key.VolumeUp;
         }
 
         /* renamed from: getVolumeDown-EK5gGoQ  reason: not valid java name */
-        public final long m6556getVolumeDownEK5gGoQ() {
+        public final long m5897getVolumeDownEK5gGoQ() {
             return Key.VolumeDown;
         }
 
         /* renamed from: getPower-EK5gGoQ  reason: not valid java name */
-        public final long m6475getPowerEK5gGoQ() {
+        public final long m5816getPowerEK5gGoQ() {
             return Key.Power;
         }
 
         /* renamed from: getCamera-EK5gGoQ  reason: not valid java name */
-        public final long m6337getCameraEK5gGoQ() {
+        public final long m5678getCameraEK5gGoQ() {
             return Key.Camera;
         }
 
         /* renamed from: getClear-EK5gGoQ  reason: not valid java name */
-        public final long m6342getClearEK5gGoQ() {
+        public final long m5683getClearEK5gGoQ() {
             return Key.Clear;
         }
 
         /* renamed from: getZero-EK5gGoQ  reason: not valid java name */
-        public final long m6567getZeroEK5gGoQ() {
+        public final long m5908getZeroEK5gGoQ() {
             return Key.Zero;
         }
 
         /* renamed from: getOne-EK5gGoQ  reason: not valid java name */
-        public final long m6465getOneEK5gGoQ() {
+        public final long m5806getOneEK5gGoQ() {
             return Key.One;
         }
 
         /* renamed from: getTwo-EK5gGoQ  reason: not valid java name */
-        public final long m6551getTwoEK5gGoQ() {
+        public final long m5892getTwoEK5gGoQ() {
             return Key.Two;
         }
 
         /* renamed from: getThree-EK5gGoQ  reason: not valid java name */
-        public final long m6516getThreeEK5gGoQ() {
+        public final long m5857getThreeEK5gGoQ() {
             return Key.Three;
         }
 
         /* renamed from: getFour-EK5gGoQ  reason: not valid java name */
-        public final long m6385getFourEK5gGoQ() {
+        public final long m5726getFourEK5gGoQ() {
             return Key.Four;
         }
 
         /* renamed from: getFive-EK5gGoQ  reason: not valid java name */
-        public final long m6382getFiveEK5gGoQ() {
+        public final long m5723getFiveEK5gGoQ() {
             return Key.Five;
         }
 
         /* renamed from: getSix-EK5gGoQ  reason: not valid java name */
-        public final long m6497getSixEK5gGoQ() {
+        public final long m5838getSixEK5gGoQ() {
             return Key.Six;
         }
 
         /* renamed from: getSeven-EK5gGoQ  reason: not valid java name */
-        public final long m6494getSevenEK5gGoQ() {
+        public final long m5835getSevenEK5gGoQ() {
             return Key.Seven;
         }
 
         /* renamed from: getEight-EK5gGoQ  reason: not valid java name */
-        public final long m6362getEightEK5gGoQ() {
+        public final long m5703getEightEK5gGoQ() {
             return Key.Eight;
         }
 
         /* renamed from: getNine-EK5gGoQ  reason: not valid java name */
-        public final long m6440getNineEK5gGoQ() {
+        public final long m5781getNineEK5gGoQ() {
             return Key.Nine;
         }
 
         /* renamed from: getPlus-EK5gGoQ  reason: not valid java name */
-        public final long m6473getPlusEK5gGoQ() {
+        public final long m5814getPlusEK5gGoQ() {
             return Key.Plus;
         }
 
         /* renamed from: getMinus-EK5gGoQ  reason: not valid java name */
-        public final long m6429getMinusEK5gGoQ() {
+        public final long m5770getMinusEK5gGoQ() {
             return Key.Minus;
         }
 
         /* renamed from: getMultiply-EK5gGoQ  reason: not valid java name */
-        public final long m6433getMultiplyEK5gGoQ() {
+        public final long m5774getMultiplyEK5gGoQ() {
             return Key.Multiply;
         }
 
         /* renamed from: getEquals-EK5gGoQ  reason: not valid java name */
-        public final long m6367getEqualsEK5gGoQ() {
+        public final long m5708getEqualsEK5gGoQ() {
             return Key.Equals;
         }
 
         /* renamed from: getPound-EK5gGoQ  reason: not valid java name */
-        public final long m6474getPoundEK5gGoQ() {
+        public final long m5815getPoundEK5gGoQ() {
             return Key.Pound;
         }
 
         /* renamed from: getA-EK5gGoQ  reason: not valid java name */
-        public final long m6283getAEK5gGoQ() {
+        public final long m5624getAEK5gGoQ() {
             return Key.A;
         }
 
         /* renamed from: getB-EK5gGoQ  reason: not valid java name */
-        public final long m6293getBEK5gGoQ() {
+        public final long m5634getBEK5gGoQ() {
             return Key.B;
         }
 
         /* renamed from: getC-EK5gGoQ  reason: not valid java name */
-        public final long m6333getCEK5gGoQ() {
+        public final long m5674getCEK5gGoQ() {
             return Key.C;
         }
 
         /* renamed from: getD-EK5gGoQ  reason: not valid java name */
-        public final long m6349getDEK5gGoQ() {
+        public final long m5690getDEK5gGoQ() {
             return Key.D;
         }
 
         /* renamed from: getE-EK5gGoQ  reason: not valid java name */
-        public final long m6361getEEK5gGoQ() {
+        public final long m5702getEEK5gGoQ() {
             return Key.E;
         }
 
         /* renamed from: getF-EK5gGoQ  reason: not valid java name */
-        public final long m6369getFEK5gGoQ() {
+        public final long m5710getFEK5gGoQ() {
             return Key.F;
         }
 
         /* renamed from: getG-EK5gGoQ  reason: not valid java name */
-        public final long m6387getGEK5gGoQ() {
+        public final long m5728getGEK5gGoQ() {
             return Key.G;
         }
 
         /* renamed from: getH-EK5gGoQ  reason: not valid java name */
-        public final long m6390getHEK5gGoQ() {
+        public final long m5731getHEK5gGoQ() {
             return Key.H;
         }
 
         /* renamed from: getI-EK5gGoQ  reason: not valid java name */
-        public final long m6395getIEK5gGoQ() {
+        public final long m5736getIEK5gGoQ() {
             return Key.I;
         }
 
         /* renamed from: getJ-EK5gGoQ  reason: not valid java name */
-        public final long m6398getJEK5gGoQ() {
+        public final long m5739getJEK5gGoQ() {
             return Key.J;
         }
 
         /* renamed from: getK-EK5gGoQ  reason: not valid java name */
-        public final long m6399getKEK5gGoQ() {
+        public final long m5740getKEK5gGoQ() {
             return Key.K;
         }
 
         /* renamed from: getL-EK5gGoQ  reason: not valid java name */
-        public final long m6402getLEK5gGoQ() {
+        public final long m5743getLEK5gGoQ() {
             return Key.L;
         }
 
         /* renamed from: getM-EK5gGoQ  reason: not valid java name */
-        public final long m6406getMEK5gGoQ() {
+        public final long m5747getMEK5gGoQ() {
             return Key.M;
         }
 
         /* renamed from: getN-EK5gGoQ  reason: not valid java name */
-        public final long m6435getNEK5gGoQ() {
+        public final long m5776getNEK5gGoQ() {
             return Key.N;
         }
 
         /* renamed from: getO-EK5gGoQ  reason: not valid java name */
-        public final long m6464getOEK5gGoQ() {
+        public final long m5805getOEK5gGoQ() {
             return Key.O;
         }
 
         /* renamed from: getP-EK5gGoQ  reason: not valid java name */
-        public final long m6466getPEK5gGoQ() {
+        public final long m5807getPEK5gGoQ() {
             return Key.P;
         }
 
         /* renamed from: getQ-EK5gGoQ  reason: not valid java name */
-        public final long m6482getQEK5gGoQ() {
+        public final long m5823getQEK5gGoQ() {
             return Key.Q;
         }
 
         /* renamed from: getR-EK5gGoQ  reason: not valid java name */
-        public final long m6483getREK5gGoQ() {
+        public final long m5824getREK5gGoQ() {
             return Key.R;
         }
 
         /* renamed from: getS-EK5gGoQ  reason: not valid java name */
-        public final long m6487getSEK5gGoQ() {
+        public final long m5828getSEK5gGoQ() {
             return Key.S;
         }
 
         /* renamed from: getT-EK5gGoQ  reason: not valid java name */
-        public final long m6514getTEK5gGoQ() {
+        public final long m5855getTEK5gGoQ() {
             return Key.T;
         }
 
         /* renamed from: getU-EK5gGoQ  reason: not valid java name */
-        public final long m6552getUEK5gGoQ() {
+        public final long m5893getUEK5gGoQ() {
             return Key.U;
         }
 
         /* renamed from: getV-EK5gGoQ  reason: not valid java name */
-        public final long m6554getVEK5gGoQ() {
+        public final long m5895getVEK5gGoQ() {
             return Key.V;
         }
 
         /* renamed from: getW-EK5gGoQ  reason: not valid java name */
-        public final long m6559getWEK5gGoQ() {
+        public final long m5900getWEK5gGoQ() {
             return Key.W;
         }
 
         /* renamed from: getX-EK5gGoQ  reason: not valid java name */
-        public final long m6562getXEK5gGoQ() {
+        public final long m5903getXEK5gGoQ() {
             return Key.X;
         }
 
         /* renamed from: getY-EK5gGoQ  reason: not valid java name */
-        public final long m6563getYEK5gGoQ() {
+        public final long m5904getYEK5gGoQ() {
             return Key.Y;
         }
 
         /* renamed from: getZ-EK5gGoQ  reason: not valid java name */
-        public final long m6565getZEK5gGoQ() {
+        public final long m5906getZEK5gGoQ() {
             return Key.Z;
         }
 
         /* renamed from: getComma-EK5gGoQ  reason: not valid java name */
-        public final long m6343getCommaEK5gGoQ() {
+        public final long m5684getCommaEK5gGoQ() {
             return Key.Comma;
         }
 
         /* renamed from: getPeriod-EK5gGoQ  reason: not valid java name */
-        public final long m6471getPeriodEK5gGoQ() {
+        public final long m5812getPeriodEK5gGoQ() {
             return Key.Period;
         }
 
         /* renamed from: getAltLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6285getAltLeftEK5gGoQ() {
+        public final long m5626getAltLeftEK5gGoQ() {
             return Key.AltLeft;
         }
 
         /* renamed from: getAltRight-EK5gGoQ  reason: not valid java name */
-        public final long m6286getAltRightEK5gGoQ() {
+        public final long m5627getAltRightEK5gGoQ() {
             return Key.AltRight;
         }
 
         /* renamed from: getShiftLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6495getShiftLeftEK5gGoQ() {
+        public final long m5836getShiftLeftEK5gGoQ() {
             return Key.ShiftLeft;
         }
 
         /* renamed from: getShiftRight-EK5gGoQ  reason: not valid java name */
-        public final long m6496getShiftRightEK5gGoQ() {
+        public final long m5837getShiftRightEK5gGoQ() {
             return Key.ShiftRight;
         }
 
         /* renamed from: getTab-EK5gGoQ  reason: not valid java name */
-        public final long m6515getTabEK5gGoQ() {
+        public final long m5856getTabEK5gGoQ() {
             return Key.Tab;
         }
 
         /* renamed from: getSpacebar-EK5gGoQ  reason: not valid java name */
-        public final long m6503getSpacebarEK5gGoQ() {
+        public final long m5844getSpacebarEK5gGoQ() {
             return Key.Spacebar;
         }
 
         /* renamed from: getSymbol-EK5gGoQ  reason: not valid java name */
-        public final long m6509getSymbolEK5gGoQ() {
+        public final long m5850getSymbolEK5gGoQ() {
             return Key.Symbol;
         }
 
         /* renamed from: getBrowser-EK5gGoQ  reason: not valid java name */
-        public final long m6301getBrowserEK5gGoQ() {
+        public final long m5642getBrowserEK5gGoQ() {
             return Key.Browser;
         }
 
         /* renamed from: getEnvelope-EK5gGoQ  reason: not valid java name */
-        public final long m6366getEnvelopeEK5gGoQ() {
+        public final long m5707getEnvelopeEK5gGoQ() {
             return Key.Envelope;
         }
 
         /* renamed from: getEnter-EK5gGoQ  reason: not valid java name */
-        public final long m6365getEnterEK5gGoQ() {
+        public final long m5706getEnterEK5gGoQ() {
             return Key.Enter;
         }
 
         /* renamed from: getBackspace-EK5gGoQ  reason: not valid java name */
-        public final long m6296getBackspaceEK5gGoQ() {
+        public final long m5637getBackspaceEK5gGoQ() {
             return Key.Backspace;
         }
 
         /* renamed from: getDelete-EK5gGoQ  reason: not valid java name */
-        public final long m6350getDeleteEK5gGoQ() {
+        public final long m5691getDeleteEK5gGoQ() {
             return Key.Delete;
         }
 
         /* renamed from: getEscape-EK5gGoQ  reason: not valid java name */
-        public final long m6368getEscapeEK5gGoQ() {
+        public final long m5709getEscapeEK5gGoQ() {
             return Key.Escape;
         }
 
         /* renamed from: getCtrlLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6346getCtrlLeftEK5gGoQ() {
+        public final long m5687getCtrlLeftEK5gGoQ() {
             return Key.CtrlLeft;
         }
 
         /* renamed from: getCtrlRight-EK5gGoQ  reason: not valid java name */
-        public final long m6347getCtrlRightEK5gGoQ() {
+        public final long m5688getCtrlRightEK5gGoQ() {
             return Key.CtrlRight;
         }
 
         /* renamed from: getCapsLock-EK5gGoQ  reason: not valid java name */
-        public final long m6338getCapsLockEK5gGoQ() {
+        public final long m5679getCapsLockEK5gGoQ() {
             return Key.CapsLock;
         }
 
         /* renamed from: getScrollLock-EK5gGoQ  reason: not valid java name */
-        public final long m6488getScrollLockEK5gGoQ() {
+        public final long m5829getScrollLockEK5gGoQ() {
             return Key.ScrollLock;
         }
 
         /* renamed from: getMetaLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6426getMetaLeftEK5gGoQ() {
+        public final long m5767getMetaLeftEK5gGoQ() {
             return Key.MetaLeft;
         }
 
         /* renamed from: getMetaRight-EK5gGoQ  reason: not valid java name */
-        public final long m6427getMetaRightEK5gGoQ() {
+        public final long m5768getMetaRightEK5gGoQ() {
             return Key.MetaRight;
         }
 
         /* renamed from: getFunction-EK5gGoQ  reason: not valid java name */
-        public final long m6386getFunctionEK5gGoQ() {
+        public final long m5727getFunctionEK5gGoQ() {
             return Key.Function;
         }
 
         /* renamed from: getPrintScreen-EK5gGoQ  reason: not valid java name */
-        public final long m6476getPrintScreenEK5gGoQ() {
+        public final long m5817getPrintScreenEK5gGoQ() {
             return Key.PrintScreen;
         }
 
         /* renamed from: getBreak-EK5gGoQ  reason: not valid java name */
-        public final long m6298getBreakEK5gGoQ() {
+        public final long m5639getBreakEK5gGoQ() {
             return Key.Break;
         }
 
         /* renamed from: getMoveHome-EK5gGoQ  reason: not valid java name */
-        public final long m6431getMoveHomeEK5gGoQ() {
+        public final long m5772getMoveHomeEK5gGoQ() {
             return Key.MoveHome;
         }
 
         /* renamed from: getMoveEnd-EK5gGoQ  reason: not valid java name */
-        public final long m6430getMoveEndEK5gGoQ() {
+        public final long m5771getMoveEndEK5gGoQ() {
             return Key.MoveEnd;
         }
 
         /* renamed from: getInsert-EK5gGoQ  reason: not valid java name */
-        public final long m6397getInsertEK5gGoQ() {
+        public final long m5738getInsertEK5gGoQ() {
             return Key.Insert;
         }
 
         /* renamed from: getCut-EK5gGoQ  reason: not valid java name */
-        public final long m6348getCutEK5gGoQ() {
+        public final long m5689getCutEK5gGoQ() {
             return Key.Cut;
         }
 
         /* renamed from: getCopy-EK5gGoQ  reason: not valid java name */
-        public final long m6345getCopyEK5gGoQ() {
+        public final long m5686getCopyEK5gGoQ() {
             return Key.Copy;
         }
 
         /* renamed from: getPaste-EK5gGoQ  reason: not valid java name */
-        public final long m6470getPasteEK5gGoQ() {
+        public final long m5811getPasteEK5gGoQ() {
             return Key.Paste;
         }
 
         /* renamed from: getGrave-EK5gGoQ  reason: not valid java name */
-        public final long m6388getGraveEK5gGoQ() {
+        public final long m5729getGraveEK5gGoQ() {
             return Key.Grave;
         }
 
         /* renamed from: getLeftBracket-EK5gGoQ  reason: not valid java name */
-        public final long m6405getLeftBracketEK5gGoQ() {
+        public final long m5746getLeftBracketEK5gGoQ() {
             return Key.LeftBracket;
         }
 
         /* renamed from: getRightBracket-EK5gGoQ  reason: not valid java name */
-        public final long m6485getRightBracketEK5gGoQ() {
+        public final long m5826getRightBracketEK5gGoQ() {
             return Key.RightBracket;
         }
 
         /* renamed from: getSlash-EK5gGoQ  reason: not valid java name */
-        public final long m6498getSlashEK5gGoQ() {
+        public final long m5839getSlashEK5gGoQ() {
             return Key.Slash;
         }
 
         /* renamed from: getBackslash-EK5gGoQ  reason: not valid java name */
-        public final long m6295getBackslashEK5gGoQ() {
+        public final long m5636getBackslashEK5gGoQ() {
             return Key.Backslash;
         }
 
         /* renamed from: getSemicolon-EK5gGoQ  reason: not valid java name */
-        public final long m6490getSemicolonEK5gGoQ() {
+        public final long m5831getSemicolonEK5gGoQ() {
             return Key.Semicolon;
         }
 
         /* renamed from: getApostrophe-EK5gGoQ  reason: not valid java name */
-        public final long m6287getApostropheEK5gGoQ() {
+        public final long m5628getApostropheEK5gGoQ() {
             return Key.Apostrophe;
         }
 
         /* renamed from: getAt-EK5gGoQ  reason: not valid java name */
-        public final long m6290getAtEK5gGoQ() {
+        public final long m5631getAtEK5gGoQ() {
             return Key.At;
         }
 
         /* renamed from: getNumber-EK5gGoQ  reason: not valid java name */
-        public final long m6463getNumberEK5gGoQ() {
+        public final long m5804getNumberEK5gGoQ() {
             return Key.Number;
         }
 
         /* renamed from: getHeadsetHook-EK5gGoQ  reason: not valid java name */
-        public final long m6391getHeadsetHookEK5gGoQ() {
+        public final long m5732getHeadsetHookEK5gGoQ() {
             return Key.HeadsetHook;
         }
 
         /* renamed from: getFocus-EK5gGoQ  reason: not valid java name */
-        public final long m6383getFocusEK5gGoQ() {
+        public final long m5724getFocusEK5gGoQ() {
             return Key.Focus;
         }
 
         /* renamed from: getMenu-EK5gGoQ  reason: not valid java name */
-        public final long m6425getMenuEK5gGoQ() {
+        public final long m5766getMenuEK5gGoQ() {
             return Key.Menu;
         }
 
         /* renamed from: getNotification-EK5gGoQ  reason: not valid java name */
-        public final long m6441getNotificationEK5gGoQ() {
+        public final long m5782getNotificationEK5gGoQ() {
             return Key.Notification;
         }
 
         /* renamed from: getSearch-EK5gGoQ  reason: not valid java name */
-        public final long m6489getSearchEK5gGoQ() {
+        public final long m5830getSearchEK5gGoQ() {
             return Key.Search;
         }
 
         /* renamed from: getPageUp-EK5gGoQ  reason: not valid java name */
-        public final long m6468getPageUpEK5gGoQ() {
+        public final long m5809getPageUpEK5gGoQ() {
             return Key.PageUp;
         }
 
         /* renamed from: getPageDown-EK5gGoQ  reason: not valid java name */
-        public final long m6467getPageDownEK5gGoQ() {
+        public final long m5808getPageDownEK5gGoQ() {
             return Key.PageDown;
         }
 
         /* renamed from: getPictureSymbols-EK5gGoQ  reason: not valid java name */
-        public final long m6472getPictureSymbolsEK5gGoQ() {
+        public final long m5813getPictureSymbolsEK5gGoQ() {
             return Key.PictureSymbols;
         }
 
         /* renamed from: getSwitchCharset-EK5gGoQ  reason: not valid java name */
-        public final long m6508getSwitchCharsetEK5gGoQ() {
+        public final long m5849getSwitchCharsetEK5gGoQ() {
             return Key.SwitchCharset;
         }
 
         /* renamed from: getButtonA-EK5gGoQ  reason: not valid java name */
-        public final long m6318getButtonAEK5gGoQ() {
+        public final long m5659getButtonAEK5gGoQ() {
             return Key.ButtonA;
         }
 
         /* renamed from: getButtonB-EK5gGoQ  reason: not valid java name */
-        public final long m6319getButtonBEK5gGoQ() {
+        public final long m5660getButtonBEK5gGoQ() {
             return Key.ButtonB;
         }
 
         /* renamed from: getButtonC-EK5gGoQ  reason: not valid java name */
-        public final long m6320getButtonCEK5gGoQ() {
+        public final long m5661getButtonCEK5gGoQ() {
             return Key.ButtonC;
         }
 
         /* renamed from: getButtonX-EK5gGoQ  reason: not valid java name */
-        public final long m6330getButtonXEK5gGoQ() {
+        public final long m5671getButtonXEK5gGoQ() {
             return Key.ButtonX;
         }
 
         /* renamed from: getButtonY-EK5gGoQ  reason: not valid java name */
-        public final long m6331getButtonYEK5gGoQ() {
+        public final long m5672getButtonYEK5gGoQ() {
             return Key.ButtonY;
         }
 
         /* renamed from: getButtonZ-EK5gGoQ  reason: not valid java name */
-        public final long m6332getButtonZEK5gGoQ() {
+        public final long m5673getButtonZEK5gGoQ() {
             return Key.ButtonZ;
         }
 
         /* renamed from: getButtonL1-EK5gGoQ  reason: not valid java name */
-        public final long m6321getButtonL1EK5gGoQ() {
+        public final long m5662getButtonL1EK5gGoQ() {
             return Key.ButtonL1;
         }
 
         /* renamed from: getButtonR1-EK5gGoQ  reason: not valid java name */
-        public final long m6324getButtonR1EK5gGoQ() {
+        public final long m5665getButtonR1EK5gGoQ() {
             return Key.ButtonR1;
         }
 
         /* renamed from: getButtonL2-EK5gGoQ  reason: not valid java name */
-        public final long m6322getButtonL2EK5gGoQ() {
+        public final long m5663getButtonL2EK5gGoQ() {
             return Key.ButtonL2;
         }
 
         /* renamed from: getButtonR2-EK5gGoQ  reason: not valid java name */
-        public final long m6325getButtonR2EK5gGoQ() {
+        public final long m5666getButtonR2EK5gGoQ() {
             return Key.ButtonR2;
         }
 
         /* renamed from: getButtonThumbLeft-EK5gGoQ  reason: not valid java name */
-        public final long m6328getButtonThumbLeftEK5gGoQ() {
+        public final long m5669getButtonThumbLeftEK5gGoQ() {
             return Key.ButtonThumbLeft;
         }
 
         /* renamed from: getButtonThumbRight-EK5gGoQ  reason: not valid java name */
-        public final long m6329getButtonThumbRightEK5gGoQ() {
+        public final long m5670getButtonThumbRightEK5gGoQ() {
             return Key.ButtonThumbRight;
         }
 
         /* renamed from: getButtonStart-EK5gGoQ  reason: not valid java name */
-        public final long m6327getButtonStartEK5gGoQ() {
+        public final long m5668getButtonStartEK5gGoQ() {
             return Key.ButtonStart;
         }
 
         /* renamed from: getButtonSelect-EK5gGoQ  reason: not valid java name */
-        public final long m6326getButtonSelectEK5gGoQ() {
+        public final long m5667getButtonSelectEK5gGoQ() {
             return Key.ButtonSelect;
         }
 
         /* renamed from: getButtonMode-EK5gGoQ  reason: not valid java name */
-        public final long m6323getButtonModeEK5gGoQ() {
+        public final long m5664getButtonModeEK5gGoQ() {
             return Key.ButtonMode;
         }
 
         /* renamed from: getButton1-EK5gGoQ  reason: not valid java name */
-        public final long m6302getButton1EK5gGoQ() {
+        public final long m5643getButton1EK5gGoQ() {
             return Key.Button1;
         }
 
         /* renamed from: getButton2-EK5gGoQ  reason: not valid java name */
-        public final long m6310getButton2EK5gGoQ() {
+        public final long m5651getButton2EK5gGoQ() {
             return Key.Button2;
         }
 
         /* renamed from: getButton3-EK5gGoQ  reason: not valid java name */
-        public final long m6311getButton3EK5gGoQ() {
+        public final long m5652getButton3EK5gGoQ() {
             return Key.Button3;
         }
 
         /* renamed from: getButton4-EK5gGoQ  reason: not valid java name */
-        public final long m6312getButton4EK5gGoQ() {
+        public final long m5653getButton4EK5gGoQ() {
             return Key.Button4;
         }
 
         /* renamed from: getButton5-EK5gGoQ  reason: not valid java name */
-        public final long m6313getButton5EK5gGoQ() {
+        public final long m5654getButton5EK5gGoQ() {
             return Key.Button5;
         }
 
         /* renamed from: getButton6-EK5gGoQ  reason: not valid java name */
-        public final long m6314getButton6EK5gGoQ() {
+        public final long m5655getButton6EK5gGoQ() {
             return Key.Button6;
         }
 
         /* renamed from: getButton7-EK5gGoQ  reason: not valid java name */
-        public final long m6315getButton7EK5gGoQ() {
+        public final long m5656getButton7EK5gGoQ() {
             return Key.Button7;
         }
 
         /* renamed from: getButton8-EK5gGoQ  reason: not valid java name */
-        public final long m6316getButton8EK5gGoQ() {
+        public final long m5657getButton8EK5gGoQ() {
             return Key.Button8;
         }
 
         /* renamed from: getButton9-EK5gGoQ  reason: not valid java name */
-        public final long m6317getButton9EK5gGoQ() {
+        public final long m5658getButton9EK5gGoQ() {
             return Key.Button9;
         }
 
         /* renamed from: getButton10-EK5gGoQ  reason: not valid java name */
-        public final long m6303getButton10EK5gGoQ() {
+        public final long m5644getButton10EK5gGoQ() {
             return Key.Button10;
         }
 
         /* renamed from: getButton11-EK5gGoQ  reason: not valid java name */
-        public final long m6304getButton11EK5gGoQ() {
+        public final long m5645getButton11EK5gGoQ() {
             return Key.Button11;
         }
 
         /* renamed from: getButton12-EK5gGoQ  reason: not valid java name */
-        public final long m6305getButton12EK5gGoQ() {
+        public final long m5646getButton12EK5gGoQ() {
             return Key.Button12;
         }
 
         /* renamed from: getButton13-EK5gGoQ  reason: not valid java name */
-        public final long m6306getButton13EK5gGoQ() {
+        public final long m5647getButton13EK5gGoQ() {
             return Key.Button13;
         }
 
         /* renamed from: getButton14-EK5gGoQ  reason: not valid java name */
-        public final long m6307getButton14EK5gGoQ() {
+        public final long m5648getButton14EK5gGoQ() {
             return Key.Button14;
         }
 
         /* renamed from: getButton15-EK5gGoQ  reason: not valid java name */
-        public final long m6308getButton15EK5gGoQ() {
+        public final long m5649getButton15EK5gGoQ() {
             return Key.Button15;
         }
 
         /* renamed from: getButton16-EK5gGoQ  reason: not valid java name */
-        public final long m6309getButton16EK5gGoQ() {
+        public final long m5650getButton16EK5gGoQ() {
             return Key.Button16;
         }
 
         /* renamed from: getForward-EK5gGoQ  reason: not valid java name */
-        public final long m6384getForwardEK5gGoQ() {
+        public final long m5725getForwardEK5gGoQ() {
             return Key.Forward;
         }
 
         /* renamed from: getF1-EK5gGoQ  reason: not valid java name */
-        public final long m6370getF1EK5gGoQ() {
+        public final long m5711getF1EK5gGoQ() {
             return Key.F1;
         }
 
         /* renamed from: getF2-EK5gGoQ  reason: not valid java name */
-        public final long m6374getF2EK5gGoQ() {
+        public final long m5715getF2EK5gGoQ() {
             return Key.F2;
         }
 
         /* renamed from: getF3-EK5gGoQ  reason: not valid java name */
-        public final long m6375getF3EK5gGoQ() {
+        public final long m5716getF3EK5gGoQ() {
             return Key.F3;
         }
 
         /* renamed from: getF4-EK5gGoQ  reason: not valid java name */
-        public final long m6376getF4EK5gGoQ() {
+        public final long m5717getF4EK5gGoQ() {
             return Key.F4;
         }
 
         /* renamed from: getF5-EK5gGoQ  reason: not valid java name */
-        public final long m6377getF5EK5gGoQ() {
+        public final long m5718getF5EK5gGoQ() {
             return Key.F5;
         }
 
         /* renamed from: getF6-EK5gGoQ  reason: not valid java name */
-        public final long m6378getF6EK5gGoQ() {
+        public final long m5719getF6EK5gGoQ() {
             return Key.F6;
         }
 
         /* renamed from: getF7-EK5gGoQ  reason: not valid java name */
-        public final long m6379getF7EK5gGoQ() {
+        public final long m5720getF7EK5gGoQ() {
             return Key.F7;
         }
 
         /* renamed from: getF8-EK5gGoQ  reason: not valid java name */
-        public final long m6380getF8EK5gGoQ() {
+        public final long m5721getF8EK5gGoQ() {
             return Key.F8;
         }
 
         /* renamed from: getF9-EK5gGoQ  reason: not valid java name */
-        public final long m6381getF9EK5gGoQ() {
+        public final long m5722getF9EK5gGoQ() {
             return Key.F9;
         }
 
         /* renamed from: getF10-EK5gGoQ  reason: not valid java name */
-        public final long m6371getF10EK5gGoQ() {
+        public final long m5712getF10EK5gGoQ() {
             return Key.F10;
         }
 
         /* renamed from: getF11-EK5gGoQ  reason: not valid java name */
-        public final long m6372getF11EK5gGoQ() {
+        public final long m5713getF11EK5gGoQ() {
             return Key.F11;
         }
 
         /* renamed from: getF12-EK5gGoQ  reason: not valid java name */
-        public final long m6373getF12EK5gGoQ() {
+        public final long m5714getF12EK5gGoQ() {
             return Key.F12;
         }
 
         /* renamed from: getNumLock-EK5gGoQ  reason: not valid java name */
-        public final long m6442getNumLockEK5gGoQ() {
+        public final long m5783getNumLockEK5gGoQ() {
             return Key.NumLock;
         }
 
         /* renamed from: getNumPad0-EK5gGoQ  reason: not valid java name */
-        public final long m6443getNumPad0EK5gGoQ() {
+        public final long m5784getNumPad0EK5gGoQ() {
             return Key.NumPad0;
         }
 
         /* renamed from: getNumPad1-EK5gGoQ  reason: not valid java name */
-        public final long m6444getNumPad1EK5gGoQ() {
+        public final long m5785getNumPad1EK5gGoQ() {
             return Key.NumPad1;
         }
 
         /* renamed from: getNumPad2-EK5gGoQ  reason: not valid java name */
-        public final long m6445getNumPad2EK5gGoQ() {
+        public final long m5786getNumPad2EK5gGoQ() {
             return Key.NumPad2;
         }
 
         /* renamed from: getNumPad3-EK5gGoQ  reason: not valid java name */
-        public final long m6446getNumPad3EK5gGoQ() {
+        public final long m5787getNumPad3EK5gGoQ() {
             return Key.NumPad3;
         }
 
         /* renamed from: getNumPad4-EK5gGoQ  reason: not valid java name */
-        public final long m6447getNumPad4EK5gGoQ() {
+        public final long m5788getNumPad4EK5gGoQ() {
             return Key.NumPad4;
         }
 
         /* renamed from: getNumPad5-EK5gGoQ  reason: not valid java name */
-        public final long m6448getNumPad5EK5gGoQ() {
+        public final long m5789getNumPad5EK5gGoQ() {
             return Key.NumPad5;
         }
 
         /* renamed from: getNumPad6-EK5gGoQ  reason: not valid java name */
-        public final long m6449getNumPad6EK5gGoQ() {
+        public final long m5790getNumPad6EK5gGoQ() {
             return Key.NumPad6;
         }
 
         /* renamed from: getNumPad7-EK5gGoQ  reason: not valid java name */
-        public final long m6450getNumPad7EK5gGoQ() {
+        public final long m5791getNumPad7EK5gGoQ() {
             return Key.NumPad7;
         }
 
         /* renamed from: getNumPad8-EK5gGoQ  reason: not valid java name */
-        public final long m6451getNumPad8EK5gGoQ() {
+        public final long m5792getNumPad8EK5gGoQ() {
             return Key.NumPad8;
         }
 
         /* renamed from: getNumPad9-EK5gGoQ  reason: not valid java name */
-        public final long m6452getNumPad9EK5gGoQ() {
+        public final long m5793getNumPad9EK5gGoQ() {
             return Key.NumPad9;
         }
 
         /* renamed from: getNumPadDivide-EK5gGoQ  reason: not valid java name */
-        public final long m6455getNumPadDivideEK5gGoQ() {
+        public final long m5796getNumPadDivideEK5gGoQ() {
             return Key.NumPadDivide;
         }
 
         /* renamed from: getNumPadMultiply-EK5gGoQ  reason: not valid java name */
-        public final long m6460getNumPadMultiplyEK5gGoQ() {
+        public final long m5801getNumPadMultiplyEK5gGoQ() {
             return Key.NumPadMultiply;
         }
 
         /* renamed from: getNumPadSubtract-EK5gGoQ  reason: not valid java name */
-        public final long m6462getNumPadSubtractEK5gGoQ() {
+        public final long m5803getNumPadSubtractEK5gGoQ() {
             return Key.NumPadSubtract;
         }
 
         /* renamed from: getNumPadAdd-EK5gGoQ  reason: not valid java name */
-        public final long m6453getNumPadAddEK5gGoQ() {
+        public final long m5794getNumPadAddEK5gGoQ() {
             return Key.NumPadAdd;
         }
 
         /* renamed from: getNumPadDot-EK5gGoQ  reason: not valid java name */
-        public final long m6456getNumPadDotEK5gGoQ() {
+        public final long m5797getNumPadDotEK5gGoQ() {
             return Key.NumPadDot;
         }
 
         /* renamed from: getNumPadComma-EK5gGoQ  reason: not valid java name */
-        public final long m6454getNumPadCommaEK5gGoQ() {
+        public final long m5795getNumPadCommaEK5gGoQ() {
             return Key.NumPadComma;
         }
 
         /* renamed from: getNumPadEnter-EK5gGoQ  reason: not valid java name */
-        public final long m6457getNumPadEnterEK5gGoQ() {
+        public final long m5798getNumPadEnterEK5gGoQ() {
             return Key.NumPadEnter;
         }
 
         /* renamed from: getNumPadEquals-EK5gGoQ  reason: not valid java name */
-        public final long m6458getNumPadEqualsEK5gGoQ() {
+        public final long m5799getNumPadEqualsEK5gGoQ() {
             return Key.NumPadEquals;
         }
 
         /* renamed from: getNumPadLeftParenthesis-EK5gGoQ  reason: not valid java name */
-        public final long m6459getNumPadLeftParenthesisEK5gGoQ() {
+        public final long m5800getNumPadLeftParenthesisEK5gGoQ() {
             return Key.NumPadLeftParenthesis;
         }
 
         /* renamed from: getNumPadRightParenthesis-EK5gGoQ  reason: not valid java name */
-        public final long m6461getNumPadRightParenthesisEK5gGoQ() {
+        public final long m5802getNumPadRightParenthesisEK5gGoQ() {
             return Key.NumPadRightParenthesis;
         }
 
         /* renamed from: getMediaPlay-EK5gGoQ  reason: not valid java name */
-        public final long m6414getMediaPlayEK5gGoQ() {
+        public final long m5755getMediaPlayEK5gGoQ() {
             return Key.MediaPlay;
         }
 
         /* renamed from: getMediaPause-EK5gGoQ  reason: not valid java name */
-        public final long m6413getMediaPauseEK5gGoQ() {
+        public final long m5754getMediaPauseEK5gGoQ() {
             return Key.MediaPause;
         }
 
         /* renamed from: getMediaPlayPause-EK5gGoQ  reason: not valid java name */
-        public final long m6415getMediaPlayPauseEK5gGoQ() {
+        public final long m5756getMediaPlayPauseEK5gGoQ() {
             return Key.MediaPlayPause;
         }
 
         /* renamed from: getMediaStop-EK5gGoQ  reason: not valid java name */
-        public final long m6423getMediaStopEK5gGoQ() {
+        public final long m5764getMediaStopEK5gGoQ() {
             return Key.MediaStop;
         }
 
         /* renamed from: getMediaRecord-EK5gGoQ  reason: not valid java name */
-        public final long m6417getMediaRecordEK5gGoQ() {
+        public final long m5758getMediaRecordEK5gGoQ() {
             return Key.MediaRecord;
         }
 
         /* renamed from: getMediaNext-EK5gGoQ  reason: not valid java name */
-        public final long m6412getMediaNextEK5gGoQ() {
+        public final long m5753getMediaNextEK5gGoQ() {
             return Key.MediaNext;
         }
 
         /* renamed from: getMediaPrevious-EK5gGoQ  reason: not valid java name */
-        public final long m6416getMediaPreviousEK5gGoQ() {
+        public final long m5757getMediaPreviousEK5gGoQ() {
             return Key.MediaPrevious;
         }
 
         /* renamed from: getMediaRewind-EK5gGoQ  reason: not valid java name */
-        public final long m6418getMediaRewindEK5gGoQ() {
+        public final long m5759getMediaRewindEK5gGoQ() {
             return Key.MediaRewind;
         }
 
         /* renamed from: getMediaFastForward-EK5gGoQ  reason: not valid java name */
-        public final long m6411getMediaFastForwardEK5gGoQ() {
+        public final long m5752getMediaFastForwardEK5gGoQ() {
             return Key.MediaFastForward;
         }
 
         /* renamed from: getMediaClose-EK5gGoQ  reason: not valid java name */
-        public final long m6409getMediaCloseEK5gGoQ() {
+        public final long m5750getMediaCloseEK5gGoQ() {
             return Key.MediaClose;
         }
 
         /* renamed from: getMediaAudioTrack-EK5gGoQ  reason: not valid java name */
-        public final long m6408getMediaAudioTrackEK5gGoQ() {
+        public final long m5749getMediaAudioTrackEK5gGoQ() {
             return Key.MediaAudioTrack;
         }
 
         /* renamed from: getMediaEject-EK5gGoQ  reason: not valid java name */
-        public final long m6410getMediaEjectEK5gGoQ() {
+        public final long m5751getMediaEjectEK5gGoQ() {
             return Key.MediaEject;
         }
 
         /* renamed from: getMediaTopMenu-EK5gGoQ  reason: not valid java name */
-        public final long m6424getMediaTopMenuEK5gGoQ() {
+        public final long m5765getMediaTopMenuEK5gGoQ() {
             return Key.MediaTopMenu;
         }
 
         /* renamed from: getMediaSkipForward-EK5gGoQ  reason: not valid java name */
-        public final long m6420getMediaSkipForwardEK5gGoQ() {
+        public final long m5761getMediaSkipForwardEK5gGoQ() {
             return Key.MediaSkipForward;
         }
 
         /* renamed from: getMediaSkipBackward-EK5gGoQ  reason: not valid java name */
-        public final long m6419getMediaSkipBackwardEK5gGoQ() {
+        public final long m5760getMediaSkipBackwardEK5gGoQ() {
             return Key.MediaSkipBackward;
         }
 
         /* renamed from: getMediaStepForward-EK5gGoQ  reason: not valid java name */
-        public final long m6422getMediaStepForwardEK5gGoQ() {
+        public final long m5763getMediaStepForwardEK5gGoQ() {
             return Key.MediaStepForward;
         }
 
         /* renamed from: getMediaStepBackward-EK5gGoQ  reason: not valid java name */
-        public final long m6421getMediaStepBackwardEK5gGoQ() {
+        public final long m5762getMediaStepBackwardEK5gGoQ() {
             return Key.MediaStepBackward;
         }
 
         /* renamed from: getMicrophoneMute-EK5gGoQ  reason: not valid java name */
-        public final long m6428getMicrophoneMuteEK5gGoQ() {
+        public final long m5769getMicrophoneMuteEK5gGoQ() {
             return Key.MicrophoneMute;
         }
 
         /* renamed from: getVolumeMute-EK5gGoQ  reason: not valid java name */
-        public final long m6557getVolumeMuteEK5gGoQ() {
+        public final long m5898getVolumeMuteEK5gGoQ() {
             return Key.VolumeMute;
         }
 
         /* renamed from: getInfo-EK5gGoQ  reason: not valid java name */
-        public final long m6396getInfoEK5gGoQ() {
+        public final long m5737getInfoEK5gGoQ() {
             return Key.Info;
         }
 
         /* renamed from: getChannelUp-EK5gGoQ  reason: not valid java name */
-        public final long m6341getChannelUpEK5gGoQ() {
+        public final long m5682getChannelUpEK5gGoQ() {
             return Key.ChannelUp;
         }
 
         /* renamed from: getChannelDown-EK5gGoQ  reason: not valid java name */
-        public final long m6340getChannelDownEK5gGoQ() {
+        public final long m5681getChannelDownEK5gGoQ() {
             return Key.ChannelDown;
         }
 
         /* renamed from: getZoomIn-EK5gGoQ  reason: not valid java name */
-        public final long m6568getZoomInEK5gGoQ() {
+        public final long m5909getZoomInEK5gGoQ() {
             return Key.ZoomIn;
         }
 
         /* renamed from: getZoomOut-EK5gGoQ  reason: not valid java name */
-        public final long m6569getZoomOutEK5gGoQ() {
+        public final long m5910getZoomOutEK5gGoQ() {
             return Key.ZoomOut;
         }
 
         /* renamed from: getTv-EK5gGoQ  reason: not valid java name */
-        public final long m6520getTvEK5gGoQ() {
+        public final long m5861getTvEK5gGoQ() {
             return Key.Tv;
         }
 
         /* renamed from: getWindow-EK5gGoQ  reason: not valid java name */
-        public final long m6561getWindowEK5gGoQ() {
+        public final long m5902getWindowEK5gGoQ() {
             return Key.Window;
         }
 
         /* renamed from: getGuide-EK5gGoQ  reason: not valid java name */
-        public final long m6389getGuideEK5gGoQ() {
+        public final long m5730getGuideEK5gGoQ() {
             return Key.Guide;
         }
 
         /* renamed from: getDvr-EK5gGoQ  reason: not valid java name */
-        public final long m6360getDvrEK5gGoQ() {
+        public final long m5701getDvrEK5gGoQ() {
             return Key.Dvr;
         }
 
         /* renamed from: getBookmark-EK5gGoQ  reason: not valid java name */
-        public final long m6297getBookmarkEK5gGoQ() {
+        public final long m5638getBookmarkEK5gGoQ() {
             return Key.Bookmark;
         }
 
         /* renamed from: getCaptions-EK5gGoQ  reason: not valid java name */
-        public final long m6339getCaptionsEK5gGoQ() {
+        public final long m5680getCaptionsEK5gGoQ() {
             return Key.Captions;
         }
 
         /* renamed from: getSettings-EK5gGoQ  reason: not valid java name */
-        public final long m6493getSettingsEK5gGoQ() {
+        public final long m5834getSettingsEK5gGoQ() {
             return Key.Settings;
         }
 
         /* renamed from: getTvPower-EK5gGoQ  reason: not valid java name */
-        public final long m6540getTvPowerEK5gGoQ() {
+        public final long m5881getTvPowerEK5gGoQ() {
             return Key.TvPower;
         }
 
         /* renamed from: getTvInput-EK5gGoQ  reason: not valid java name */
-        public final long m6527getTvInputEK5gGoQ() {
+        public final long m5868getTvInputEK5gGoQ() {
             return Key.TvInput;
         }
 
         /* renamed from: getSetTopBoxPower-EK5gGoQ  reason: not valid java name */
-        public final long m6492getSetTopBoxPowerEK5gGoQ() {
+        public final long m5833getSetTopBoxPowerEK5gGoQ() {
             return Key.SetTopBoxPower;
         }
 
         /* renamed from: getSetTopBoxInput-EK5gGoQ  reason: not valid java name */
-        public final long m6491getSetTopBoxInputEK5gGoQ() {
+        public final long m5832getSetTopBoxInputEK5gGoQ() {
             return Key.SetTopBoxInput;
         }
 
         /* renamed from: getAvReceiverPower-EK5gGoQ  reason: not valid java name */
-        public final long m6292getAvReceiverPowerEK5gGoQ() {
+        public final long m5633getAvReceiverPowerEK5gGoQ() {
             return Key.AvReceiverPower;
         }
 
         /* renamed from: getAvReceiverInput-EK5gGoQ  reason: not valid java name */
-        public final long m6291getAvReceiverInputEK5gGoQ() {
+        public final long m5632getAvReceiverInputEK5gGoQ() {
             return Key.AvReceiverInput;
         }
 
         /* renamed from: getProgramRed-EK5gGoQ  reason: not valid java name */
-        public final long m6480getProgramRedEK5gGoQ() {
+        public final long m5821getProgramRedEK5gGoQ() {
             return Key.ProgramRed;
         }
 
         /* renamed from: getProgramGreen-EK5gGoQ  reason: not valid java name */
-        public final long m6479getProgramGreenEK5gGoQ() {
+        public final long m5820getProgramGreenEK5gGoQ() {
             return Key.ProgramGreen;
         }
 
         /* renamed from: getProgramYellow-EK5gGoQ  reason: not valid java name */
-        public final long m6481getProgramYellowEK5gGoQ() {
+        public final long m5822getProgramYellowEK5gGoQ() {
             return Key.ProgramYellow;
         }
 
         /* renamed from: getProgramBlue-EK5gGoQ  reason: not valid java name */
-        public final long m6478getProgramBlueEK5gGoQ() {
+        public final long m5819getProgramBlueEK5gGoQ() {
             return Key.ProgramBlue;
         }
 
         /* renamed from: getAppSwitch-EK5gGoQ  reason: not valid java name */
-        public final long m6288getAppSwitchEK5gGoQ() {
+        public final long m5629getAppSwitchEK5gGoQ() {
             return Key.AppSwitch;
         }
 
         /* renamed from: getLanguageSwitch-EK5gGoQ  reason: not valid java name */
-        public final long m6403getLanguageSwitchEK5gGoQ() {
+        public final long m5744getLanguageSwitchEK5gGoQ() {
             return Key.LanguageSwitch;
         }
 
         /* renamed from: getMannerMode-EK5gGoQ  reason: not valid java name */
-        public final long m6407getMannerModeEK5gGoQ() {
+        public final long m5748getMannerModeEK5gGoQ() {
             return Key.MannerMode;
         }
 
         /* renamed from: getToggle2D3D-EK5gGoQ  reason: not valid java name */
-        public final long m6519getToggle2D3DEK5gGoQ() {
+        public final long m5860getToggle2D3DEK5gGoQ() {
             return Key.Toggle2D3D;
         }
 
         /* renamed from: getContacts-EK5gGoQ  reason: not valid java name */
-        public final long m6344getContactsEK5gGoQ() {
+        public final long m5685getContactsEK5gGoQ() {
             return Key.Contacts;
         }
 
         /* renamed from: getCalendar-EK5gGoQ  reason: not valid java name */
-        public final long m6335getCalendarEK5gGoQ() {
+        public final long m5676getCalendarEK5gGoQ() {
             return Key.Calendar;
         }
 
         /* renamed from: getMusic-EK5gGoQ  reason: not valid java name */
-        public final long m6434getMusicEK5gGoQ() {
+        public final long m5775getMusicEK5gGoQ() {
             return Key.Music;
         }
 
         /* renamed from: getCalculator-EK5gGoQ  reason: not valid java name */
-        public final long m6334getCalculatorEK5gGoQ() {
+        public final long m5675getCalculatorEK5gGoQ() {
             return Key.Calculator;
         }
 
         /* renamed from: getZenkakuHankaru-EK5gGoQ  reason: not valid java name */
-        public final long m6566getZenkakuHankaruEK5gGoQ() {
+        public final long m5907getZenkakuHankaruEK5gGoQ() {
             return Key.ZenkakuHankaru;
         }
 
         /* renamed from: getEisu-EK5gGoQ  reason: not valid java name */
-        public final long m6363getEisuEK5gGoQ() {
+        public final long m5704getEisuEK5gGoQ() {
             return Key.Eisu;
         }
 
         /* renamed from: getMuhenkan-EK5gGoQ  reason: not valid java name */
-        public final long m6432getMuhenkanEK5gGoQ() {
+        public final long m5773getMuhenkanEK5gGoQ() {
             return Key.Muhenkan;
         }
 
         /* renamed from: getHenkan-EK5gGoQ  reason: not valid java name */
-        public final long m6393getHenkanEK5gGoQ() {
+        public final long m5734getHenkanEK5gGoQ() {
             return Key.Henkan;
         }
 
         /* renamed from: getKatakanaHiragana-EK5gGoQ  reason: not valid java name */
-        public final long m6401getKatakanaHiraganaEK5gGoQ() {
+        public final long m5742getKatakanaHiraganaEK5gGoQ() {
             return Key.KatakanaHiragana;
         }
 
         /* renamed from: getYen-EK5gGoQ  reason: not valid java name */
-        public final long m6564getYenEK5gGoQ() {
+        public final long m5905getYenEK5gGoQ() {
             return Key.Yen;
         }
 
         /* renamed from: getRo-EK5gGoQ  reason: not valid java name */
-        public final long m6486getRoEK5gGoQ() {
+        public final long m5827getRoEK5gGoQ() {
             return Key.Ro;
         }
 
         /* renamed from: getKana-EK5gGoQ  reason: not valid java name */
-        public final long m6400getKanaEK5gGoQ() {
+        public final long m5741getKanaEK5gGoQ() {
             return Key.Kana;
         }
 
         /* renamed from: getAssist-EK5gGoQ  reason: not valid java name */
-        public final long m6289getAssistEK5gGoQ() {
+        public final long m5630getAssistEK5gGoQ() {
             return Key.Assist;
         }
 
         /* renamed from: getBrightnessDown-EK5gGoQ  reason: not valid java name */
-        public final long m6299getBrightnessDownEK5gGoQ() {
+        public final long m5640getBrightnessDownEK5gGoQ() {
             return Key.BrightnessDown;
         }
 
         /* renamed from: getBrightnessUp-EK5gGoQ  reason: not valid java name */
-        public final long m6300getBrightnessUpEK5gGoQ() {
+        public final long m5641getBrightnessUpEK5gGoQ() {
             return Key.BrightnessUp;
         }
 
         /* renamed from: getSleep-EK5gGoQ  reason: not valid java name */
-        public final long m6499getSleepEK5gGoQ() {
+        public final long m5840getSleepEK5gGoQ() {
             return Key.Sleep;
         }
 
         /* renamed from: getWakeUp-EK5gGoQ  reason: not valid java name */
-        public final long m6560getWakeUpEK5gGoQ() {
+        public final long m5901getWakeUpEK5gGoQ() {
             return Key.WakeUp;
         }
 
         /* renamed from: getSoftSleep-EK5gGoQ  reason: not valid java name */
-        public final long m6502getSoftSleepEK5gGoQ() {
+        public final long m5843getSoftSleepEK5gGoQ() {
             return Key.SoftSleep;
         }
 
         /* renamed from: getPairing-EK5gGoQ  reason: not valid java name */
-        public final long m6469getPairingEK5gGoQ() {
+        public final long m5810getPairingEK5gGoQ() {
             return Key.Pairing;
         }
 
         /* renamed from: getLastChannel-EK5gGoQ  reason: not valid java name */
-        public final long m6404getLastChannelEK5gGoQ() {
+        public final long m5745getLastChannelEK5gGoQ() {
             return Key.LastChannel;
         }
 
         /* renamed from: getTvDataService-EK5gGoQ  reason: not valid java name */
-        public final long m6526getTvDataServiceEK5gGoQ() {
+        public final long m5867getTvDataServiceEK5gGoQ() {
             return Key.TvDataService;
         }
 
         /* renamed from: getVoiceAssist-EK5gGoQ  reason: not valid java name */
-        public final long m6555getVoiceAssistEK5gGoQ() {
+        public final long m5896getVoiceAssistEK5gGoQ() {
             return Key.VoiceAssist;
         }
 
         /* renamed from: getTvRadioService-EK5gGoQ  reason: not valid java name */
-        public final long m6541getTvRadioServiceEK5gGoQ() {
+        public final long m5882getTvRadioServiceEK5gGoQ() {
             return Key.TvRadioService;
         }
 
         /* renamed from: getTvTeletext-EK5gGoQ  reason: not valid java name */
-        public final long m6546getTvTeletextEK5gGoQ() {
+        public final long m5887getTvTeletextEK5gGoQ() {
             return Key.TvTeletext;
         }
 
         /* renamed from: getTvNumberEntry-EK5gGoQ  reason: not valid java name */
-        public final long m6539getTvNumberEntryEK5gGoQ() {
+        public final long m5880getTvNumberEntryEK5gGoQ() {
             return Key.TvNumberEntry;
         }
 
         /* renamed from: getTvTerrestrialAnalog-EK5gGoQ  reason: not valid java name */
-        public final long m6547getTvTerrestrialAnalogEK5gGoQ() {
+        public final long m5888getTvTerrestrialAnalogEK5gGoQ() {
             return Key.TvTerrestrialAnalog;
         }
 
         /* renamed from: getTvTerrestrialDigital-EK5gGoQ  reason: not valid java name */
-        public final long m6548getTvTerrestrialDigitalEK5gGoQ() {
+        public final long m5889getTvTerrestrialDigitalEK5gGoQ() {
             return Key.TvTerrestrialDigital;
         }
 
         /* renamed from: getTvSatellite-EK5gGoQ  reason: not valid java name */
-        public final long m6542getTvSatelliteEK5gGoQ() {
+        public final long m5883getTvSatelliteEK5gGoQ() {
             return Key.TvSatellite;
         }
 
         /* renamed from: getTvSatelliteBs-EK5gGoQ  reason: not valid java name */
-        public final long m6543getTvSatelliteBsEK5gGoQ() {
+        public final long m5884getTvSatelliteBsEK5gGoQ() {
             return Key.TvSatelliteBs;
         }
 
         /* renamed from: getTvSatelliteCs-EK5gGoQ  reason: not valid java name */
-        public final long m6544getTvSatelliteCsEK5gGoQ() {
+        public final long m5885getTvSatelliteCsEK5gGoQ() {
             return Key.TvSatelliteCs;
         }
 
         /* renamed from: getTvSatelliteService-EK5gGoQ  reason: not valid java name */
-        public final long m6545getTvSatelliteServiceEK5gGoQ() {
+        public final long m5886getTvSatelliteServiceEK5gGoQ() {
             return Key.TvSatelliteService;
         }
 
         /* renamed from: getTvNetwork-EK5gGoQ  reason: not valid java name */
-        public final long m6538getTvNetworkEK5gGoQ() {
+        public final long m5879getTvNetworkEK5gGoQ() {
             return Key.TvNetwork;
         }
 
         /* renamed from: getTvAntennaCable-EK5gGoQ  reason: not valid java name */
-        public final long m6521getTvAntennaCableEK5gGoQ() {
+        public final long m5862getTvAntennaCableEK5gGoQ() {
             return Key.TvAntennaCable;
         }
 
         /* renamed from: getTvInputHdmi1-EK5gGoQ  reason: not valid java name */
-        public final long m6532getTvInputHdmi1EK5gGoQ() {
+        public final long m5873getTvInputHdmi1EK5gGoQ() {
             return Key.TvInputHdmi1;
         }
 
         /* renamed from: getTvInputHdmi2-EK5gGoQ  reason: not valid java name */
-        public final long m6533getTvInputHdmi2EK5gGoQ() {
+        public final long m5874getTvInputHdmi2EK5gGoQ() {
             return Key.TvInputHdmi2;
         }
 
         /* renamed from: getTvInputHdmi3-EK5gGoQ  reason: not valid java name */
-        public final long m6534getTvInputHdmi3EK5gGoQ() {
+        public final long m5875getTvInputHdmi3EK5gGoQ() {
             return Key.TvInputHdmi3;
         }
 
         /* renamed from: getTvInputHdmi4-EK5gGoQ  reason: not valid java name */
-        public final long m6535getTvInputHdmi4EK5gGoQ() {
+        public final long m5876getTvInputHdmi4EK5gGoQ() {
             return Key.TvInputHdmi4;
         }
 
         /* renamed from: getTvInputComposite1-EK5gGoQ  reason: not valid java name */
-        public final long m6530getTvInputComposite1EK5gGoQ() {
+        public final long m5871getTvInputComposite1EK5gGoQ() {
             return Key.TvInputComposite1;
         }
 
         /* renamed from: getTvInputComposite2-EK5gGoQ  reason: not valid java name */
-        public final long m6531getTvInputComposite2EK5gGoQ() {
+        public final long m5872getTvInputComposite2EK5gGoQ() {
             return Key.TvInputComposite2;
         }
 
         /* renamed from: getTvInputComponent1-EK5gGoQ  reason: not valid java name */
-        public final long m6528getTvInputComponent1EK5gGoQ() {
+        public final long m5869getTvInputComponent1EK5gGoQ() {
             return Key.TvInputComponent1;
         }
 
         /* renamed from: getTvInputComponent2-EK5gGoQ  reason: not valid java name */
-        public final long m6529getTvInputComponent2EK5gGoQ() {
+        public final long m5870getTvInputComponent2EK5gGoQ() {
             return Key.TvInputComponent2;
         }
 
         /* renamed from: getTvInputVga1-EK5gGoQ  reason: not valid java name */
-        public final long m6536getTvInputVga1EK5gGoQ() {
+        public final long m5877getTvInputVga1EK5gGoQ() {
             return Key.TvInputVga1;
         }
 
         /* renamed from: getTvAudioDescription-EK5gGoQ  reason: not valid java name */
-        public final long m6522getTvAudioDescriptionEK5gGoQ() {
+        public final long m5863getTvAudioDescriptionEK5gGoQ() {
             return Key.TvAudioDescription;
         }
 
         /* renamed from: getTvAudioDescriptionMixingVolumeUp-EK5gGoQ  reason: not valid java name */
-        public final long m6524getTvAudioDescriptionMixingVolumeUpEK5gGoQ() {
+        public final long m5865getTvAudioDescriptionMixingVolumeUpEK5gGoQ() {
             return Key.TvAudioDescriptionMixingVolumeUp;
         }
 
         /* renamed from: getTvAudioDescriptionMixingVolumeDown-EK5gGoQ  reason: not valid java name */
-        public final long m6523getTvAudioDescriptionMixingVolumeDownEK5gGoQ() {
+        public final long m5864getTvAudioDescriptionMixingVolumeDownEK5gGoQ() {
             return Key.TvAudioDescriptionMixingVolumeDown;
         }
 
         /* renamed from: getTvZoomMode-EK5gGoQ  reason: not valid java name */
-        public final long m6550getTvZoomModeEK5gGoQ() {
+        public final long m5891getTvZoomModeEK5gGoQ() {
             return Key.TvZoomMode;
         }
 
         /* renamed from: getTvContentsMenu-EK5gGoQ  reason: not valid java name */
-        public final long m6525getTvContentsMenuEK5gGoQ() {
+        public final long m5866getTvContentsMenuEK5gGoQ() {
             return Key.TvContentsMenu;
         }
 
         /* renamed from: getTvMediaContextMenu-EK5gGoQ  reason: not valid java name */
-        public final long m6537getTvMediaContextMenuEK5gGoQ() {
+        public final long m5878getTvMediaContextMenuEK5gGoQ() {
             return Key.TvMediaContextMenu;
         }
 
         /* renamed from: getTvTimerProgramming-EK5gGoQ  reason: not valid java name */
-        public final long m6549getTvTimerProgrammingEK5gGoQ() {
+        public final long m5890getTvTimerProgrammingEK5gGoQ() {
             return Key.TvTimerProgramming;
         }
 
         /* renamed from: getStemPrimary-EK5gGoQ  reason: not valid java name */
-        public final long m6507getStemPrimaryEK5gGoQ() {
+        public final long m5848getStemPrimaryEK5gGoQ() {
             return Key.StemPrimary;
         }
 
         /* renamed from: getStem1-EK5gGoQ  reason: not valid java name */
-        public final long m6504getStem1EK5gGoQ() {
+        public final long m5845getStem1EK5gGoQ() {
             return Key.Stem1;
         }
 
         /* renamed from: getStem2-EK5gGoQ  reason: not valid java name */
-        public final long m6505getStem2EK5gGoQ() {
+        public final long m5846getStem2EK5gGoQ() {
             return Key.Stem2;
         }
 
         /* renamed from: getStem3-EK5gGoQ  reason: not valid java name */
-        public final long m6506getStem3EK5gGoQ() {
+        public final long m5847getStem3EK5gGoQ() {
             return Key.Stem3;
         }
 
         /* renamed from: getAllApps-EK5gGoQ  reason: not valid java name */
-        public final long m6284getAllAppsEK5gGoQ() {
+        public final long m5625getAllAppsEK5gGoQ() {
             return Key.AllApps;
         }
 
         /* renamed from: getRefresh-EK5gGoQ  reason: not valid java name */
-        public final long m6484getRefreshEK5gGoQ() {
+        public final long m5825getRefreshEK5gGoQ() {
             return Key.Refresh;
         }
 
         /* renamed from: getThumbsUp-EK5gGoQ  reason: not valid java name */
-        public final long m6518getThumbsUpEK5gGoQ() {
+        public final long m5859getThumbsUpEK5gGoQ() {
             return Key.ThumbsUp;
         }
 
         /* renamed from: getThumbsDown-EK5gGoQ  reason: not valid java name */
-        public final long m6517getThumbsDownEK5gGoQ() {
+        public final long m5858getThumbsDownEK5gGoQ() {
             return Key.ThumbsDown;
         }
 
         /* renamed from: getProfileSwitch-EK5gGoQ  reason: not valid java name */
-        public final long m6477getProfileSwitchEK5gGoQ() {
+        public final long m5818getProfileSwitchEK5gGoQ() {
             return Key.ProfileSwitch;
         }
     }
@@ -1805,11 +1805,11 @@ public final class Key {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6281toStringimpl(long j) {
+    public static String m5622toStringimpl(long j) {
         return "Key code: " + j;
     }
 
     public String toString() {
-        return m6281toStringimpl(this.keyCode);
+        return m5622toStringimpl(this.keyCode);
     }
 }

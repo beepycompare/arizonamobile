@@ -144,7 +144,7 @@ public final class AndroidUiDispatcher extends CoroutineDispatcher {
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo10758dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         synchronized (this.lock) {
             this.toRunTrampolined.addLast(runnable);
             if (!this.scheduledTrampolineDispatch) {

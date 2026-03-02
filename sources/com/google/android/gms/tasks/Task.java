@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import android.app.Activity;
 import java.util.concurrent.Executor;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public abstract class Task<TResult> {
     public Task<TResult> addOnCanceledListener(Activity activity, OnCanceledListener onCanceledListener) {

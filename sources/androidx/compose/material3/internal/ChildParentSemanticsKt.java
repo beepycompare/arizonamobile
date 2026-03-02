@@ -14,18 +14,14 @@ public final class ChildParentSemanticsKt {
             function1 = new Function1() { // from class: androidx.compose.material3.internal.ChildParentSemanticsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit childSemantics$lambda$0;
-                    childSemantics$lambda$0 = ChildParentSemanticsKt.childSemantics$lambda$0((SemanticsPropertyReceiver) obj2);
-                    return childSemantics$lambda$0;
+                    Unit unit;
+                    SemanticsPropertyReceiver semanticsPropertyReceiver = (SemanticsPropertyReceiver) obj2;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             };
         }
         return childSemantics(modifier, function1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit childSemantics$lambda$0(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        return Unit.INSTANCE;
     }
 
     public static final Modifier childSemantics(Modifier modifier, Function1<? super SemanticsPropertyReceiver, Unit> function1) {

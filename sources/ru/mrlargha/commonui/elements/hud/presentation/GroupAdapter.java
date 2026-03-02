@@ -22,7 +22,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.HudGroupItemBinding;
 import ru.mrlargha.commonui.elements.hud.presentation.models.GroupItem;
 /* compiled from: GroupAdapter.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\u00062\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u000e\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u001a\u001a\u00020\u0011J\u0014\u0010\u001b\u001a\u00020\u00062\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u000e\u0010\u001d\u001a\u00020\u00062\u0006\u0010\u001e\u001a\u00020\u0005J\u0006\u0010\u001f\u001a\u00020\u0006R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006 "}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/hud/presentation/GroupViewHolder;", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "deleteItem", "id", "updateList", "list", "addItem", "item", "clearList", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\b\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001b\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\u00062\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u000e\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u001a\u001a\u00020\u0011J\u0014\u0010\u001b\u001a\u00020\u00062\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00050\u0018J\u000e\u0010\u001d\u001a\u00020\u00062\u0006\u0010\u001e\u001a\u00020\u0005J\u0006\u0010\u001f\u001a\u00020\u0006R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u00050\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006 "}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/hud/presentation/GroupViewHolder;", "onClick", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addAllItems", "items", "", "deleteItem", "id", "updateList", "list", "addItem", "item", "clearList", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
     private final List<GroupItem> itemsList;
@@ -117,15 +117,10 @@ public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
         BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new GroupAdapter$addAllItems$1(this, items, null), 3, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean deleteItem$lambda$0(int i, GroupItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getId() == i;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean deleteItem$lambda$1(Function1 function1, Object obj) {
-        return ((Boolean) function1.invoke(obj)).booleanValue();
     }
 
     public final void deleteItem(final int i) {
@@ -133,17 +128,15 @@ public final class GroupAdapter extends RecyclerView.Adapter<GroupViewHolder> {
         final Function1 function1 = new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.GroupAdapter$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean deleteItem$lambda$0;
-                deleteItem$lambda$0 = GroupAdapter.deleteItem$lambda$0(i, (GroupItem) obj);
-                return Boolean.valueOf(deleteItem$lambda$0);
+                return Boolean.valueOf(GroupAdapter.deleteItem$lambda$0(i, (GroupItem) obj));
             }
         };
         list.removeIf(new Predicate() { // from class: ru.mrlargha.commonui.elements.hud.presentation.GroupAdapter$$ExternalSyntheticLambda2
             @Override // java.util.function.Predicate
             public final boolean test(Object obj) {
-                boolean deleteItem$lambda$1;
-                deleteItem$lambda$1 = GroupAdapter.deleteItem$lambda$1(Function1.this, obj);
-                return deleteItem$lambda$1;
+                boolean booleanValue;
+                booleanValue = ((Boolean) Function1.this.invoke(obj)).booleanValue();
+                return booleanValue;
             }
         });
         notifyDataSetChanged();

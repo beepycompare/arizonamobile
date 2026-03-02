@@ -26,17 +26,15 @@ public final class PlatformSelectionBehaviors_androidKt {
     private static final ProvidableCompositionLocal<CoroutineContext> LocalTextClassifierCoroutineContext = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.foundation.text.selection.PlatformSelectionBehaviors_androidKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            CoroutineContext LocalTextClassifierCoroutineContext$lambda$0;
-            LocalTextClassifierCoroutineContext$lambda$0 = PlatformSelectionBehaviors_androidKt.LocalTextClassifierCoroutineContext$lambda$0();
-            return LocalTextClassifierCoroutineContext$lambda$0;
+            CoroutineContext io2;
+            io2 = Dispatchers.getIO();
+            return io2;
         }
     });
     private static Function4<? super CoroutineContext, ? super Context, ? super SelectedTextType, ? super LocaleList, ? extends PlatformSelectionBehaviors> PlatformSelectionBehaviorsFactory = new Function4() { // from class: androidx.compose.foundation.text.selection.PlatformSelectionBehaviors_androidKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function4
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-            PlatformSelectionBehaviorsImpl PlatformSelectionBehaviorsFactory$lambda$0;
-            PlatformSelectionBehaviorsFactory$lambda$0 = PlatformSelectionBehaviors_androidKt.PlatformSelectionBehaviorsFactory$lambda$0((CoroutineContext) obj, (Context) obj2, (SelectedTextType) obj3, (LocaleList) obj4);
-            return PlatformSelectionBehaviorsFactory$lambda$0;
+            return PlatformSelectionBehaviors_androidKt.PlatformSelectionBehaviorsFactory$lambda$0((CoroutineContext) obj, (Context) obj2, (SelectedTextType) obj3, (LocaleList) obj4);
         }
     };
     private static final long TEXT_CLASSIFICATION_TIMEOUT_MILLIS = 200;
@@ -49,11 +47,6 @@ public final class PlatformSelectionBehaviors_androidKt {
         return LocalTextClassifierCoroutineContext;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CoroutineContext LocalTextClassifierCoroutineContext$lambda$0() {
-        return Dispatchers.getIO();
-    }
-
     public static final Function4<CoroutineContext, Context, SelectedTextType, LocaleList, PlatformSelectionBehaviors> getPlatformSelectionBehaviorsFactory() {
         return PlatformSelectionBehaviorsFactory;
     }
@@ -62,7 +55,7 @@ public final class PlatformSelectionBehaviors_androidKt {
         PlatformSelectionBehaviorsFactory = function4;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PlatformSelectionBehaviorsImpl PlatformSelectionBehaviorsFactory$lambda$0(CoroutineContext coroutineContext, Context context, SelectedTextType selectedTextType, LocaleList localeList) {
         return new PlatformSelectionBehaviorsImpl(coroutineContext, context, selectedTextType, localeList);
     }
@@ -106,21 +99,21 @@ public final class PlatformSelectionBehaviors_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: canReuse-h5sm0ck  reason: not valid java name */
-    public static final boolean m1847canReuseh5sm0ck(TextClassificationResult textClassificationResult, CharSequence charSequence, long j) {
-        return TextRange.m7694equalsimpl0(j, textClassificationResult.m1906getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
+    public static final boolean m1601canReuseh5sm0ck(TextClassificationResult textClassificationResult, CharSequence charSequence, long j) {
+        return TextRange.m6996equalsimpl0(j, textClassificationResult.m1649getSelectiond9O1mEE()) && Intrinsics.areEqual(charSequence, textClassificationResult.getText());
     }
 
     /* renamed from: addPlatformTextContextMenuItems-71BSaZU  reason: not valid java name */
-    public static final void m1846addPlatformTextContextMenuItems71BSaZU(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, boolean z, CharSequence charSequence, TextRange textRange, PlatformSelectionBehaviors platformSelectionBehaviors, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
+    public static final void m1600addPlatformTextContextMenuItems71BSaZU(TextContextMenuBuilderScope textContextMenuBuilderScope, Context context, boolean z, CharSequence charSequence, TextRange textRange, PlatformSelectionBehaviors platformSelectionBehaviors, Function1<? super TextContextMenuBuilderScope, Unit> function1) {
         if (Build.VERSION.SDK_INT < 28 || charSequence == null || textRange == null || platformSelectionBehaviors == null || !(platformSelectionBehaviors instanceof PlatformSelectionBehaviorsImpl)) {
             function1.invoke(textContextMenuBuilderScope);
             if (charSequence == null || textRange == null) {
                 return;
             }
-            ProcessText_androidKt.m1483addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7705unboximpl());
+            ProcessText_androidKt.m1299addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7007unboximpl());
             return;
         }
-        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1841addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation(textContextMenuBuilderScope, charSequence, textRange.m7705unboximpl(), function1);
-        ProcessText_androidKt.m1483addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7705unboximpl());
+        ((PlatformSelectionBehaviorsImpl) platformSelectionBehaviors).m1597addSmartSelectionTextContextMenuItemsYmzfRxQ$foundation(textContextMenuBuilderScope, charSequence, textRange.m7007unboximpl(), function1);
+        ProcessText_androidKt.m1299addProcessedTextContextMenuItemsUAq72N0(textContextMenuBuilderScope, context, z, charSequence, textRange.m7007unboximpl());
     }
 }

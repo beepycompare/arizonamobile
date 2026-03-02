@@ -3,8 +3,8 @@ package io.appmetrica.analytics;
 import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0287h0;
-import io.appmetrica.analytics.impl.C0444n5;
+import io.appmetrica.analytics.impl.C0286h0;
+import io.appmetrica.analytics.impl.C0443n5;
 import io.appmetrica.analytics.impl.C7;
 import io.appmetrica.analytics.impl.En;
 import io.appmetrica.analytics.impl.G3;
@@ -19,7 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AppMetricaConfig {
     public final Map<String, Object> additionalConfig;
     public final Boolean advIdentifiersTracking;
@@ -50,15 +50,15 @@ public class AppMetricaConfig {
     public final Boolean sessionsAutoTrackingEnabled;
     public final String userProfileID;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
-        private static final En D = new En(new C0287h0());
+        private static final En D = new En(new C0286h0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0444n5 f275a;
+        private final C0443n5 f275a;
         private final String b;
         private String c;
         private Integer d;
@@ -239,7 +239,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f275a = new C0444n5(str);
+            this.f275a = new C0443n5(str);
             this.b = str;
         }
     }
@@ -260,11 +260,11 @@ public class AppMetricaConfig {
         return new Builder(str, 0);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x008c  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008e A[Catch: all -> 0x011f, TryCatch #1 {all -> 0x011f, blocks: (B:3:0x0005, B:14:0x0059, B:18:0x0093, B:22:0x00ea, B:24:0x00ff, B:28:0x010d, B:27:0x0108, B:29:0x0110, B:21:0x00e5, B:17:0x008e), top: B:35:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00e5 A[Catch: all -> 0x011f, TryCatch #1 {all -> 0x011f, blocks: (B:3:0x0005, B:14:0x0059, B:18:0x0093, B:22:0x00ea, B:24:0x00ff, B:28:0x010d, B:27:0x0108, B:29:0x0110, B:21:0x00e5, B:17:0x008e), top: B:35:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00ff A[Catch: all -> 0x011f, TryCatch #1 {all -> 0x011f, blocks: (B:3:0x0005, B:14:0x0059, B:18:0x0093, B:22:0x00ea, B:24:0x00ff, B:28:0x010d, B:27:0x0108, B:29:0x0110, B:21:0x00e5, B:17:0x008e), top: B:35:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008f A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x00e8 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0102 A[Catch: all -> 0x0122, TryCatch #0 {all -> 0x0122, blocks: (B:3:0x0005, B:14:0x005a, B:18:0x0094, B:22:0x00ed, B:24:0x0102, B:28:0x0110, B:27:0x010b, B:29:0x0113, B:21:0x00e8, B:17:0x008f), top: B:33:0x0005 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

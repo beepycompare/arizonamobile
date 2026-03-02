@@ -17,7 +17,7 @@ public final class D7 implements Hc {
     public boolean h;
     public String i;
     public boolean k;
-    public C0681wi l;
+    public C0680wi l;
     public Boolean d = Boolean.FALSE;
     public final LinkedHashMap f = new LinkedHashMap();
     public final LinkedHashMap g = new LinkedHashMap();
@@ -27,9 +27,9 @@ public final class D7 implements Hc {
     public final void a(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.b = valueOf;
-        C0681wi c0681wi = this.l;
-        if (c0681wi != null) {
-            c0681wi.a(valueOf, this.e, this.c, this.d);
+        C0680wi c0680wi = this.l;
+        if (c0680wi != null) {
+            c0680wi.a(valueOf, this.e, this.c, this.d);
         }
     }
 
@@ -39,8 +39,8 @@ public final class D7 implements Hc {
         this.f.clear();
     }
 
-    public final C0389l0 j() {
-        return new C0389l0(this.j, this.h);
+    public final C0388l0 j() {
+        return new C0388l0(this.j, this.h);
     }
 
     public final Location k() {
@@ -72,9 +72,9 @@ public final class D7 implements Hc {
     public final void setDataSendingEnabled(boolean z) {
         Boolean valueOf = Boolean.valueOf(z);
         this.e = valueOf;
-        C0681wi c0681wi = this.l;
-        if (c0681wi != null) {
-            c0681wi.a(this.b, valueOf, this.c, this.d);
+        C0680wi c0680wi = this.l;
+        if (c0680wi != null) {
+            c0680wi.a(this.b, valueOf, this.c, this.d);
         }
     }
 
@@ -91,9 +91,9 @@ public final class D7 implements Hc {
             this.c = Boolean.valueOf(z);
             Boolean valueOf = Boolean.valueOf(z2);
             this.d = valueOf;
-            C0681wi c0681wi = this.l;
-            if (c0681wi != null) {
-                c0681wi.a(this.b, this.e, this.c, valueOf);
+            C0680wi c0680wi = this.l;
+            if (c0680wi != null) {
+                c0680wi.a(this.b, this.e, this.c, valueOf);
             }
         }
     }
@@ -246,11 +246,11 @@ public final class D7 implements Hc {
         this.j.add(str);
     }
 
-    public final void a(C0681wi c0681wi) {
+    public final void a(C0680wi c0680wi) {
         Boolean bool = this.b;
         if (bool != null || this.e != null || this.c != null) {
-            c0681wi.a(bool, this.e, this.c, this.d);
+            c0680wi.a(bool, this.e, this.c, this.d);
         }
-        this.l = c0681wi;
+        this.l = c0680wi;
     }
 }

@@ -8,8 +8,8 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface SoftKeyboardInterceptionModifierNode extends DelegatableNode {
     /* renamed from: onInterceptKeyBeforeSoftKeyboard-ZmokQxo */
-    boolean mo6274onInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent);
+    boolean mo5615onInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent);
 
     /* renamed from: onPreInterceptKeyBeforeSoftKeyboard-ZmokQxo */
-    boolean mo6275onPreInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent);
+    boolean mo5616onPreInterceptKeyBeforeSoftKeyboardZmokQxo(android.view.KeyEvent keyEvent);
 }

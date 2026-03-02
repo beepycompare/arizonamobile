@@ -21,11 +21,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class TextLayoutHelperKt {
     /* renamed from: canReuse-7_7YC6M  reason: not valid java name */
-    public static final boolean m1466canReuse7_7YC6M(TextLayoutResult textLayoutResult, AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
+    public static final boolean m1287canReuse7_7YC6M(TextLayoutResult textLayoutResult, AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, boolean z, int i2, Density density, LayoutDirection layoutDirection, FontFamily.Resolver resolver, long j) {
         TextLayoutInput layoutInput = textLayoutResult.getLayoutInput();
-        if (!textLayoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts() && Intrinsics.areEqual(layoutInput.getText(), annotatedString) && layoutInput.getStyle().hasSameLayoutAffectingAttributes(textStyle) && Intrinsics.areEqual(layoutInput.getPlaceholders(), list) && layoutInput.getMaxLines() == i && layoutInput.getSoftWrap() == z && TextOverflow.m8184equalsimpl0(layoutInput.m7668getOverflowgIe3tQ8(), i2) && Intrinsics.areEqual(layoutInput.getDensity(), density) && layoutInput.getLayoutDirection() == layoutDirection && Intrinsics.areEqual(layoutInput.getFontFamilyResolver(), resolver) && Constraints.m8213getMinWidthimpl(j) == Constraints.m8213getMinWidthimpl(layoutInput.m7667getConstraintsmsEJaDk())) {
-            if (z || TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) {
-                return Constraints.m8211getMaxWidthimpl(j) == Constraints.m8211getMaxWidthimpl(layoutInput.m7667getConstraintsmsEJaDk()) && Constraints.m8210getMaxHeightimpl(j) == Constraints.m8210getMaxHeightimpl(layoutInput.m7667getConstraintsmsEJaDk());
+        if (!textLayoutResult.getMultiParagraph().getIntrinsics().getHasStaleResolvedFonts() && Intrinsics.areEqual(layoutInput.getText(), annotatedString) && layoutInput.getStyle().hasSameLayoutAffectingAttributes(textStyle) && Intrinsics.areEqual(layoutInput.getPlaceholders(), list) && layoutInput.getMaxLines() == i && layoutInput.getSoftWrap() == z && TextOverflow.m7481equalsimpl0(layoutInput.m6970getOverflowgIe3tQ8(), i2) && Intrinsics.areEqual(layoutInput.getDensity(), density) && layoutInput.getLayoutDirection() == layoutDirection && Intrinsics.areEqual(layoutInput.getFontFamilyResolver(), resolver) && Constraints.m7510getMinWidthimpl(j) == Constraints.m7510getMinWidthimpl(layoutInput.m6969getConstraintsmsEJaDk())) {
+            if (z || TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7491getEllipsisgIe3tQ8())) {
+                return Constraints.m7508getMaxWidthimpl(j) == Constraints.m7508getMaxWidthimpl(layoutInput.m6969getConstraintsmsEJaDk()) && Constraints.m7507getMaxHeightimpl(j) == Constraints.m7507getMaxHeightimpl(layoutInput.m6969getConstraintsmsEJaDk());
             }
             return true;
         }
@@ -33,16 +33,16 @@ public final class TextLayoutHelperKt {
     }
 
     /* renamed from: isPositionInsideSelection-uaM50fQ  reason: not valid java name */
-    public static final boolean m1467isPositionInsideSelectionuaM50fQ(TextLayoutResult textLayoutResult, long j, TextRange textRange) {
-        if (textRange == null || TextRange.m7695getCollapsedimpl(textRange.m7705unboximpl())) {
+    public static final boolean m1288isPositionInsideSelectionuaM50fQ(TextLayoutResult textLayoutResult, long j, TextRange textRange) {
+        if (textRange == null || TextRange.m6997getCollapsedimpl(textRange.m7007unboximpl())) {
             return false;
         }
-        int m7671getOffsetForPositionk4lQ0M = textLayoutResult.m7671getOffsetForPositionk4lQ0M(j);
-        return isPositionInsideSelection_uaM50fQ$isOffsetSelectedAndContainsPosition(textRange, textLayoutResult, j, m7671getOffsetForPositionk4lQ0M) || isPositionInsideSelection_uaM50fQ$isOffsetSelectedAndContainsPosition(textRange, textLayoutResult, j, m7671getOffsetForPositionk4lQ0M - 1);
+        int m6973getOffsetForPositionk4lQ0M = textLayoutResult.m6973getOffsetForPositionk4lQ0M(j);
+        return isPositionInsideSelection_uaM50fQ$isOffsetSelectedAndContainsPosition(textRange, textLayoutResult, j, m6973getOffsetForPositionk4lQ0M) || isPositionInsideSelection_uaM50fQ$isOffsetSelectedAndContainsPosition(textRange, textLayoutResult, j, m6973getOffsetForPositionk4lQ0M - 1);
     }
 
     private static final boolean isPositionInsideSelection_uaM50fQ$isOffsetSelectedAndContainsPosition(TextRange textRange, TextLayoutResult textLayoutResult, long j, int i) {
-        return TextRange.m7692containsimpl(textRange.m7705unboximpl(), i) && textLayoutResult.getBoundingBox(i).m5205containsk4lQ0M(j);
+        return TextRange.m6994containsimpl(textRange.m7007unboximpl(), i) && textLayoutResult.getBoundingBox(i).m4553containsk4lQ0M(j);
     }
 
     public static final float getLineHeight(TextLayoutResult textLayoutResult, int i) {

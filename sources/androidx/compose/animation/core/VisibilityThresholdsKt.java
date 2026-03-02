@@ -40,7 +40,7 @@ public final class VisibilityThresholdsKt {
     public static final long getVisibilityThreshold(DpOffset.Companion companion) {
         float visibilityThreshold = getVisibilityThreshold(Dp.Companion);
         float visibilityThreshold2 = getVisibilityThreshold(Dp.Companion);
-        return DpOffset.m8314constructorimpl((Float.floatToRawIntBits(visibilityThreshold) << 32) | (Float.floatToRawIntBits(visibilityThreshold2) & 4294967295L));
+        return DpOffset.m7611constructorimpl((Float.floatToRawIntBits(visibilityThreshold) << 32) | (Float.floatToRawIntBits(visibilityThreshold2) & 4294967295L));
     }
 
     public static final Rect getVisibilityThreshold(Rect.Companion companion) {
@@ -53,23 +53,23 @@ public final class VisibilityThresholdsKt {
 
     public static final long getVisibilityThreshold(IntOffset.Companion companion) {
         long j = 1;
-        return IntOffset.m8380constructorimpl((j & 4294967295L) | (j << 32));
+        return IntOffset.m7677constructorimpl((j & 4294967295L) | (j << 32));
     }
 
     public static final long getVisibilityThreshold(Offset.Companion companion) {
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
     }
 
     public static final float getVisibilityThreshold(Dp.Companion companion) {
-        return Dp.m8258constructorimpl(0.4f);
+        return Dp.m7555constructorimpl(0.4f);
     }
 
     public static final long getVisibilityThreshold(Size.Companion companion) {
-        return Size.m5239constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
+        return Size.m4587constructorimpl((Float.floatToRawIntBits(1.0f) << 32) | (Float.floatToRawIntBits(1.0f) & 4294967295L));
     }
 
     public static final long getVisibilityThreshold(IntSize.Companion companion) {
         long j = 1;
-        return IntSize.m8424constructorimpl((j & 4294967295L) | (j << 32));
+        return IntSize.m7721constructorimpl((j & 4294967295L) | (j << 32));
     }
 }

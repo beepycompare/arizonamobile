@@ -653,8 +653,10 @@ public class DrawerLayout extends ViewGroup implements Openable {
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
                 if (z) {
                     int absoluteGravity = GravityCompat.getAbsoluteGravity(layoutParams.gravity, layoutDirection);
-                    if (ViewCompat.getFitsSystemWindows(childAt)) {
-                        WindowInsets windowInsets = (WindowInsets) this.mLastInsets;
+                    boolean fitsSystemWindows = ViewCompat.getFitsSystemWindows(childAt);
+                    Object obj = this.mLastInsets;
+                    if (fitsSystemWindows) {
+                        WindowInsets windowInsets = (WindowInsets) obj;
                         if (absoluteGravity == 3) {
                             windowInsets = windowInsets.replaceSystemWindowInsets(windowInsets.getSystemWindowInsetLeft(), windowInsets.getSystemWindowInsetTop(), 0, windowInsets.getSystemWindowInsetBottom());
                         } else if (absoluteGravity == 5) {
@@ -662,7 +664,7 @@ public class DrawerLayout extends ViewGroup implements Openable {
                         }
                         childAt.dispatchApplyWindowInsets(windowInsets);
                     } else {
-                        WindowInsets windowInsets2 = (WindowInsets) this.mLastInsets;
+                        WindowInsets windowInsets2 = (WindowInsets) obj;
                         if (absoluteGravity == 3) {
                             windowInsets2 = windowInsets2.replaceSystemWindowInsets(windowInsets2.getSystemWindowInsetLeft(), windowInsets2.getSystemWindowInsetTop(), 0, windowInsets2.getSystemWindowInsetBottom());
                         } else if (absoluteGravity == 5) {
@@ -1535,11 +1537,12 @@ public class DrawerLayout extends ViewGroup implements Openable {
             int width;
             int edgeSize = this.mDragger.getEdgeSize();
             boolean z = this.mAbsGravity == 3;
+            DrawerLayout drawerLayout = DrawerLayout.this;
             if (z) {
-                findDrawerWithGravity = DrawerLayout.this.findDrawerWithGravity(3);
+                findDrawerWithGravity = drawerLayout.findDrawerWithGravity(3);
                 width = (findDrawerWithGravity != null ? -findDrawerWithGravity.getWidth() : 0) + edgeSize;
             } else {
-                findDrawerWithGravity = DrawerLayout.this.findDrawerWithGravity(5);
+                findDrawerWithGravity = drawerLayout.findDrawerWithGravity(5);
                 width = DrawerLayout.this.getWidth() - edgeSize;
             }
             if (findDrawerWithGravity != null) {
@@ -1557,10 +1560,12 @@ public class DrawerLayout extends ViewGroup implements Openable {
         @Override // androidx.customview.widget.ViewDragHelper.Callback
         public void onEdgeDragStarted(int i, int i2) {
             View findDrawerWithGravity;
-            if ((i & 1) == 1) {
-                findDrawerWithGravity = DrawerLayout.this.findDrawerWithGravity(3);
+            int i3 = i & 1;
+            DrawerLayout drawerLayout = DrawerLayout.this;
+            if (i3 == 1) {
+                findDrawerWithGravity = drawerLayout.findDrawerWithGravity(3);
             } else {
-                findDrawerWithGravity = DrawerLayout.this.findDrawerWithGravity(5);
+                findDrawerWithGravity = drawerLayout.findDrawerWithGravity(5);
             }
             if (findDrawerWithGravity == null || DrawerLayout.this.getDrawerLockMode(findDrawerWithGravity) != 0) {
                 return;

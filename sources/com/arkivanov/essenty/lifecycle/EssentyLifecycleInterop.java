@@ -38,16 +38,14 @@ public final class EssentyLifecycleInterop implements Lifecycle {
         AndroidLifecycleObserver androidLifecycleObserver = new AndroidLifecycleObserver(callbacks, new Function0() { // from class: com.arkivanov.essenty.lifecycle.EssentyLifecycleInterop$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit subscribe$lambda$1;
-                subscribe$lambda$1 = EssentyLifecycleInterop.subscribe$lambda$1(EssentyLifecycleInterop.this, callbacks);
-                return subscribe$lambda$1;
+                return EssentyLifecycleInterop.subscribe$lambda$1(EssentyLifecycleInterop.this, callbacks);
             }
         });
         this.observerMap.put(callbacks, androidLifecycleObserver);
         this.delegate.addObserver(androidLifecycleObserver);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribe$lambda$1(EssentyLifecycleInterop essentyLifecycleInterop, Lifecycle.Callbacks callbacks) {
         essentyLifecycleInterop.observerMap.remove(callbacks);
         return Unit.INSTANCE;

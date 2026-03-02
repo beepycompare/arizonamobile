@@ -119,11 +119,12 @@ public final class RemoteInput {
         }
 
         public Builder setAllowDataType(String str, boolean z) {
+            Set<String> set = this.mAllowedDataTypes;
             if (z) {
-                this.mAllowedDataTypes.add(str);
+                set.add(str);
                 return this;
             }
-            this.mAllowedDataTypes.remove(str);
+            set.remove(str);
             return this;
         }
 

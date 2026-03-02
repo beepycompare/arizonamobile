@@ -33,6 +33,6 @@ public final class TextContextMenuToolbarHandlerModifierKt {
         if (!layoutCoordinates.isAttached() || !layoutCoordinates2.isAttached()) {
             return Rect.Companion.getZero();
         }
-        return RectKt.m5219Recttz77jQw(layoutCoordinates2.mo6884localPositionOfR5De75A(LayoutCoordinatesKt.findRootCoordinates(layoutCoordinates), rect.m5214getTopLeftF1C5BW0()), rect.m5212getSizeNHjbRc());
+        return RectKt.m4567Recttz77jQw(layoutCoordinates2.mo6225localPositionOfR5De75A(LayoutCoordinatesKt.findRootCoordinates(layoutCoordinates), rect.m4562getTopLeftF1C5BW0()), rect.m4560getSizeNHjbRc());
     }
 }

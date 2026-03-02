@@ -28,10 +28,10 @@ public final class Ti implements Ui {
 
     @Override // kotlin.jvm.functions.Function0
     /* renamed from: b */
-    public final C0541r3 invoke() {
+    public final C0540r3 invoke() {
         Cursor cursor;
         if (!PackageManagerUtils.hasContentProvider(this.f801a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
-            AbstractC0254fj.a("Satellite content provider with clids was not found.", new Object[0]);
+            AbstractC0253fj.a("Satellite content provider with clids was not found.", new Object[0]);
             return null;
         }
         try {
@@ -59,15 +59,15 @@ public final class Ti implements Ui {
                     if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
                         linkedHashMap.put(string, string2);
                     } else {
-                        AbstractC0254fj.a("Invalid clid {%s : %s}", string, string2);
+                        AbstractC0253fj.a("Invalid clid {%s : %s}", string, string2);
                     }
                 } catch (Throwable unused) {
                 }
             }
-            AbstractC0254fj.a("Clids from satellite: %s", linkedHashMap);
-            return new C0541r3(linkedHashMap, S7.d);
+            AbstractC0253fj.a("Clids from satellite: %s", linkedHashMap);
+            return new C0540r3(linkedHashMap, S7.d);
         }
-        AbstractC0254fj.a("No Satellite content provider found", new Object[0]);
+        AbstractC0253fj.a("No Satellite content provider found", new Object[0]);
         return null;
     }
 }

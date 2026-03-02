@@ -23,9 +23,7 @@ public final class ReportDrawnComposition implements Function0<Unit> {
         SnapshotStateObserver snapshotStateObserver = new SnapshotStateObserver(new Function1() { // from class: androidx.activity.compose.ReportDrawnComposition$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit snapshotStateObserver$lambda$0;
-                snapshotStateObserver$lambda$0 = ReportDrawnComposition.snapshotStateObserver$lambda$0((Function0) obj);
-                return snapshotStateObserver$lambda$0;
+                return ReportDrawnComposition.snapshotStateObserver$lambda$0((Function0) obj);
             }
         });
         snapshotStateObserver.start();
@@ -45,7 +43,7 @@ public final class ReportDrawnComposition implements Function0<Unit> {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit snapshotStateObserver$lambda$0(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
@@ -71,9 +69,7 @@ public final class ReportDrawnComposition implements Function0<Unit> {
         this.snapshotStateObserver.observeReads(function0, this.checkReporter, new Function0() { // from class: androidx.activity.compose.ReportDrawnComposition$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit observeReporter$lambda$0;
-                observeReporter$lambda$0 = ReportDrawnComposition.observeReporter$lambda$0(Ref.BooleanRef.this, function0);
-                return observeReporter$lambda$0;
+                return ReportDrawnComposition.observeReporter$lambda$0(Ref.BooleanRef.this, function0);
             }
         });
         if (booleanRef.element) {
@@ -81,7 +77,7 @@ public final class ReportDrawnComposition implements Function0<Unit> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit observeReporter$lambda$0(Ref.BooleanRef booleanRef, Function0 function0) {
         booleanRef.element = ((Boolean) function0.invoke()).booleanValue();
         return Unit.INSTANCE;

@@ -41,7 +41,7 @@ import ru.mrlargha.feature.arizona.promo.databinding.PromoMainBinding;
 import ru.mrlargha.feature.arizona.promo.databinding.ReferalsBinding;
 import ru.mrlargha.feature.arizona.promo.databinding.TopbarBinding;
 /* compiled from: PromoScreen.kt */
-@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0002>?B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\u0018\u0010!\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0006H\u0016J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0016\u0010-\u001a\u00020\u001e2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020)0.H\u0002J\u0010\u0010/\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\u0017\u00104\u001a\u00020\u001e2\b\u0010\"\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u00105J\u0010\u00106\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u00107\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\b\u00108\u001a\u00020\u001eH\u0002J\b\u00109\u001a\u00020\u001eH\u0002J\u0010\u0010:\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002J\u0010\u0010=\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/arizona/promo/databinding/PromoMainBinding;", "promoAdapter", "Lru/mrlargha/arizona/promo/PromoAdapter;", "promoManagementAdapter", "Lru/mrlargha/arizona/promo/ManagementItemsAdapter;", "refProgressAdapter", "Lru/mrlargha/arizona/promo/ProgressItemsAdapter;", "activateProgressAdapter", "doneColor", "getDoneColor", "()I", "undoneColor", "getUndoneColor", "activateId", "locker", "Lru/mrlargha/arizona/promo/PromoLevelLocker;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setupProject", "setupNavigation", "onSelectPromoItem", "item", "Lru/mrlargha/arizona/promo/PromoItem;", "onGetActivateItem", "Lru/mrlargha/arizona/promo/PromoReward;", "onRefItem", "setActivationPage", "", "setManagementPage", "Lru/mrlargha/arizona/promo/PromoManagement;", "setRefPage", "Lru/mrlargha/arizona/promo/ReferralResponse;", "setLevelLocker", "openPromo", "(Ljava/lang/Integer;)V", "setPromo", "checkLocker", "setupAdapters", "clearAdapters", "topbarNavigation", "nav", "Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "navigateTo", "Navigation", "Spawner", "promo_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0084\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0002>?B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\u0018\u0010!\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0006H\u0016J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020+H\u0002J\u0016\u0010-\u001a\u00020\u001e2\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020)0.H\u0002J\u0010\u0010/\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001e2\u0006\u0010\"\u001a\u000202H\u0002J\u0010\u00103\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\u0017\u00104\u001a\u00020\u001e2\b\u0010\"\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u00105J\u0010\u00106\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u00107\u001a\u00020\u001e2\u0006\u0010\"\u001a\u00020\u001cH\u0002J\b\u00108\u001a\u00020\u001eH\u0002J\b\u00109\u001a\u00020\u001eH\u0002J\u0010\u0010:\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002J\u0010\u0010=\u001a\u00020\u001e2\u0006\u0010;\u001a\u00020<H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0015\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0018\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/arizona/promo/databinding/PromoMainBinding;", "promoAdapter", "Lru/mrlargha/arizona/promo/PromoAdapter;", "promoManagementAdapter", "Lru/mrlargha/arizona/promo/ManagementItemsAdapter;", "refProgressAdapter", "Lru/mrlargha/arizona/promo/ProgressItemsAdapter;", "activateProgressAdapter", "doneColor", "getDoneColor", "()I", "undoneColor", "getUndoneColor", "activateId", "locker", "Lru/mrlargha/arizona/promo/PromoLevelLocker;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setupProject", "setupNavigation", "onSelectPromoItem", "item", "Lru/mrlargha/arizona/promo/PromoItem;", "onGetActivateItem", "Lru/mrlargha/arizona/promo/PromoReward;", "onRefItem", "setActivationPage", "", "setManagementPage", "Lru/mrlargha/arizona/promo/PromoManagement;", "setRefPage", "Lru/mrlargha/arizona/promo/ReferralResponse;", "setLevelLocker", "openPromo", "(Ljava/lang/Integer;)V", "setPromo", "checkLocker", "setupAdapters", "clearAdapters", "topbarNavigation", "nav", "Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "navigateTo", "Navigation", "Spawner", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ArizonaPromoScreen extends SAMPUIElement implements InterfaceController {
     private int activateId;
@@ -56,7 +56,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     private final int undoneColor;
 
     /* compiled from: PromoScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -98,26 +98,20 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
         this.promoAdapter = new PromoAdapter(new Function1() { // from class: ru.mrlargha.arizona.promo.ArizonaPromoScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit promoAdapter$lambda$0;
-                promoAdapter$lambda$0 = ArizonaPromoScreen.promoAdapter$lambda$0(ArizonaPromoScreen.this, (PromoItem) obj);
-                return promoAdapter$lambda$0;
+                return ArizonaPromoScreen.promoAdapter$lambda$0(ArizonaPromoScreen.this, (PromoItem) obj);
             }
         });
         this.promoManagementAdapter = new ManagementItemsAdapter();
         this.refProgressAdapter = new ProgressItemsAdapter(new Function1() { // from class: ru.mrlargha.arizona.promo.ArizonaPromoScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit refProgressAdapter$lambda$0;
-                refProgressAdapter$lambda$0 = ArizonaPromoScreen.refProgressAdapter$lambda$0(ArizonaPromoScreen.this, (PromoReward) obj);
-                return refProgressAdapter$lambda$0;
+                return ArizonaPromoScreen.refProgressAdapter$lambda$0(ArizonaPromoScreen.this, (PromoReward) obj);
             }
         });
         this.activateProgressAdapter = new ProgressItemsAdapter(new Function1() { // from class: ru.mrlargha.arizona.promo.ArizonaPromoScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit activateProgressAdapter$lambda$0;
-                activateProgressAdapter$lambda$0 = ArizonaPromoScreen.activateProgressAdapter$lambda$0(ArizonaPromoScreen.this, (PromoReward) obj);
-                return activateProgressAdapter$lambda$0;
+                return ArizonaPromoScreen.activateProgressAdapter$lambda$0(ArizonaPromoScreen.this, (PromoReward) obj);
             }
         });
         this.doneColor = Color.parseColor("#FFBF00");
@@ -131,21 +125,21 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
         navigateTo(Navigation.Activate);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit promoAdapter$lambda$0(ArizonaPromoScreen arizonaPromoScreen, PromoItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         SAMPUIElement.notifyClick$default(arizonaPromoScreen, it.getId(), 17, null, 4, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit refProgressAdapter$lambda$0(ArizonaPromoScreen arizonaPromoScreen, PromoReward it) {
         Intrinsics.checkNotNullParameter(it, "it");
         arizonaPromoScreen.onRefItem(it);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit activateProgressAdapter$lambda$0(ArizonaPromoScreen arizonaPromoScreen, PromoReward it) {
         Intrinsics.checkNotNullParameter(it, "it");
         arizonaPromoScreen.onGetActivateItem(it);
@@ -204,14 +198,16 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     }
 
     private final void setupProject() {
-        if (UtilsKt.isArizonaType()) {
-            this.binding.activate.projectBonusText.setText("VIP статус");
+        boolean isArizonaType = UtilsKt.isArizonaType();
+        PromoMainBinding promoMainBinding = this.binding;
+        if (isArizonaType) {
+            promoMainBinding.activate.projectBonusText.setText("VIP статус");
             this.binding.levelLocker.bgImage.setImageResource(R.drawable.promo_level_locker_image);
             this.binding.activate.imagePoster.setImageResource(R.drawable.poster_img);
             this.binding.referals.header.projectImg.setImageResource(R.drawable.referrals_return_image);
             return;
         }
-        this.binding.activate.projectBonusText.setText("ADD VIP на 30 дней");
+        promoMainBinding.activate.projectBonusText.setText("ADD VIP на 30 дней");
         this.binding.levelLocker.bgImage.setImageResource(R.drawable.promo_level_locker_image_rodina);
         this.binding.activate.imagePoster.setImageResource(R.drawable.poster_img_rodina);
         this.binding.referals.header.projectImg.setImageResource(R.drawable.referrals_return_image_rodina);
@@ -631,7 +627,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: PromoScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Activate", "Referals", "Management", "promo_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Activate", "Referals", "Management", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Navigation {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -667,7 +663,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
     }
 
     /* compiled from: PromoScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "promo_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/arizona/promo/ArizonaPromoScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", NotificationCompat.CATEGORY_PROMO}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf((Object[]) new UIElementID[]{UIElementID.RODINA_PROMO, UIElementID.ARIZONA_PROMO});

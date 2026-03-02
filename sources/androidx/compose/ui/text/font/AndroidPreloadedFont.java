@@ -29,12 +29,12 @@ public abstract class AndroidPreloadedFont extends AndroidFont {
 
     @Override // androidx.compose.ui.text.font.Font
     /* renamed from: getStyle-_-LCdwA  reason: not valid java name */
-    public final int mo7767getStyle_LCdwA() {
+    public final int mo7068getStyle_LCdwA() {
         return this.style;
     }
 
     private AndroidPreloadedFont(FontWeight fontWeight, int i, FontVariation.Settings settings) {
-        super(FontLoadingStrategy.Companion.m7807getBlockingPKNRLFQ(), AndroidPreloadedFontTypefaceLoader.INSTANCE, settings, null);
+        super(FontLoadingStrategy.Companion.m7107getBlockingPKNRLFQ(), AndroidPreloadedFontTypefaceLoader.INSTANCE, settings, null);
         this.weight = fontWeight;
         this.style = i;
     }

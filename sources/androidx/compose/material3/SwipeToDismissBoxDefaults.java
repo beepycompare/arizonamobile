@@ -35,9 +35,11 @@ public final class SwipeToDismissBoxDefaults {
             rememberedValue = new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxDefaults$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    float _get_positionalThreshold_$lambda$2$lambda$1$lambda$0;
-                    _get_positionalThreshold_$lambda$2$lambda$1$lambda$0 = SwipeToDismissBoxDefaults._get_positionalThreshold_$lambda$2$lambda$1$lambda$0(Density.this, ((Float) obj).floatValue());
-                    return Float.valueOf(_get_positionalThreshold_$lambda$2$lambda$1$lambda$0);
+                    float mo405toPx0680j_4;
+                    Density density2 = Density.this;
+                    ((Float) obj).floatValue();
+                    mo405toPx0680j_4 = density2.mo405toPx0680j_4(Dp.m7555constructorimpl(56));
+                    return Float.valueOf(mo405toPx0680j_4);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -50,10 +52,5 @@ public final class SwipeToDismissBoxDefaults {
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         return function1;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float _get_positionalThreshold_$lambda$2$lambda$1$lambda$0(Density density, float f) {
-        return density.mo464toPx0680j_4(Dp.m8258constructorimpl(56));
     }
 }

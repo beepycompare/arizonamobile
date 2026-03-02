@@ -31,7 +31,7 @@ public final class SwipeToDismissBoxState {
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(SwipeToDismissBoxValue swipeToDismissBoxValue) {
         return true;
     }
@@ -48,9 +48,7 @@ public final class SwipeToDismissBoxState {
         this(swipeToDismissBoxValue, density, (i & 4) != 0 ? new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = SwipeToDismissBoxState._init_$lambda$0((SwipeToDismissBoxValue) obj);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(SwipeToDismissBoxState._init_$lambda$0((SwipeToDismissBoxValue) obj));
             }
         } : function1, function12);
     }
@@ -60,18 +58,16 @@ public final class SwipeToDismissBoxState {
         this.anchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(swipeToDismissBoxValue, function12, new Function0() { // from class: androidx.compose.material3.SwipeToDismissBoxState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float _init_$lambda$2;
-                _init_$lambda$2 = SwipeToDismissBoxState._init_$lambda$2(Density.this);
-                return Float.valueOf(_init_$lambda$2);
+                return Float.valueOf(SwipeToDismissBoxState._init_$lambda$2(Density.this));
             }
         }, AnchoredDraggableDefaults.INSTANCE.getSnapAnimationSpec(), AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float _init_$lambda$2(Density density) {
         float f;
         f = SwipeToDismissBoxKt.DismissVelocityThreshold;
-        return density.mo464toPx0680j_4(f);
+        return density.mo405toPx0680j_4(f);
     }
 
     public final AnchoredDraggableState<SwipeToDismissBoxValue> getAnchoredDraggableState$material3() {
@@ -154,26 +150,20 @@ public final class SwipeToDismissBoxState {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxState$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    SwipeToDismissBoxValue Saver$lambda$0;
-                    Saver$lambda$0 = SwipeToDismissBoxState.Companion.Saver$lambda$0((SaverScope) obj, (SwipeToDismissBoxState) obj2);
-                    return Saver$lambda$0;
+                    SwipeToDismissBoxValue currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((SwipeToDismissBoxState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SwipeToDismissBoxState Saver$lambda$1;
-                    Saver$lambda$1 = SwipeToDismissBoxState.Companion.Saver$lambda$1(Density.this, function1, function12, (SwipeToDismissBoxValue) obj);
-                    return Saver$lambda$1;
+                    return SwipeToDismissBoxState.Companion.Saver$lambda$1(Density.this, function1, function12, (SwipeToDismissBoxValue) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final SwipeToDismissBoxValue Saver$lambda$0(SaverScope saverScope, SwipeToDismissBoxState swipeToDismissBoxState) {
-            return swipeToDismissBoxState.getCurrentValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SwipeToDismissBoxState Saver$lambda$1(Density density, Function1 function1, Function1 function12, SwipeToDismissBoxValue swipeToDismissBoxValue) {
             return new SwipeToDismissBoxState(swipeToDismissBoxValue, density, function1, function12);
         }
@@ -182,26 +172,20 @@ public final class SwipeToDismissBoxState {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.SwipeToDismissBoxState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    SwipeToDismissBoxValue Saver$lambda$2;
-                    Saver$lambda$2 = SwipeToDismissBoxState.Companion.Saver$lambda$2((SaverScope) obj, (SwipeToDismissBoxState) obj2);
-                    return Saver$lambda$2;
+                    SwipeToDismissBoxValue currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((SwipeToDismissBoxState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.SwipeToDismissBoxState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SwipeToDismissBoxState Saver$lambda$3;
-                    Saver$lambda$3 = SwipeToDismissBoxState.Companion.Saver$lambda$3(Function1.this, (SwipeToDismissBoxValue) obj);
-                    return Saver$lambda$3;
+                    return SwipeToDismissBoxState.Companion.Saver$lambda$3(Function1.this, (SwipeToDismissBoxValue) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final SwipeToDismissBoxValue Saver$lambda$2(SaverScope saverScope, SwipeToDismissBoxState swipeToDismissBoxState) {
-            return swipeToDismissBoxState.getCurrentValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SwipeToDismissBoxState Saver$lambda$3(Function1 function1, SwipeToDismissBoxValue swipeToDismissBoxValue) {
             return new SwipeToDismissBoxState(swipeToDismissBoxValue, function1);
         }

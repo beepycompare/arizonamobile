@@ -108,9 +108,7 @@ public class NavGraphBuilder extends NavDestinationBuilder<NavGraph> {
             navGraph.setStartDestination(SerializersKt.serializer(kClass), new Function1() { // from class: androidx.navigation.NavGraphBuilder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    String build$lambda$1$lambda$0;
-                    build$lambda$1$lambda$0 = NavGraphBuilder.build$lambda$1$lambda$0((NavDestination) obj);
-                    return build$lambda$1$lambda$0;
+                    return NavGraphBuilder.build$lambda$1$lambda$0((NavDestination) obj);
                 }
             });
             return navGraph;
@@ -125,7 +123,7 @@ public class NavGraphBuilder extends NavDestinationBuilder<NavGraph> {
         return navGraph;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String build$lambda$1$lambda$0(NavDestination it) {
         Intrinsics.checkNotNullParameter(it, "it");
         String route = it.getRoute();

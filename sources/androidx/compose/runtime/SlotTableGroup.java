@@ -51,14 +51,16 @@ public final class SlotTableGroup implements CompositionGroup, Iterable<Composit
     @Override // androidx.compose.runtime.tooling.CompositionGroup
     public Object getKey() {
         int objectKeyIndex;
-        if ((this.table.getGroups()[(this.group * 5) + 1] & C.BUFFER_FLAG_LAST_SAMPLE) != 0) {
-            Object[] slots = this.table.getSlots();
+        int i = this.table.getGroups()[(this.group * 5) + 1] & C.BUFFER_FLAG_LAST_SAMPLE;
+        SlotTable slotTable = this.table;
+        if (i != 0) {
+            Object[] slots = slotTable.getSlots();
             objectKeyIndex = SlotTableKt.objectKeyIndex(this.table.getGroups(), this.group);
             Object obj = slots[objectKeyIndex];
             Intrinsics.checkNotNull(obj);
             return obj;
         }
-        return Integer.valueOf(this.table.getGroups()[this.group * 5]);
+        return Integer.valueOf(slotTable.getGroups()[this.group * 5]);
     }
 
     @Override // androidx.compose.runtime.tooling.CompositionGroup
@@ -128,10 +130,12 @@ public final class SlotTableGroup implements CompositionGroup, Iterable<Composit
     public int getSlotsSize() {
         int slotsSize;
         int groupSize = this.group + getGroupSize();
-        if (groupSize >= this.table.getGroupsSize()) {
-            slotsSize = this.table.getSlotsSize();
+        int groupsSize = this.table.getGroupsSize();
+        SlotTable slotTable = this.table;
+        if (groupSize >= groupsSize) {
+            slotsSize = slotTable.getSlotsSize();
         } else {
-            slotsSize = this.table.getGroups()[(groupSize * 5) + 4];
+            slotsSize = slotTable.getGroups()[(groupSize * 5) + 4];
         }
         return slotsSize - this.table.getGroups()[(this.group * 5) + 4];
     }

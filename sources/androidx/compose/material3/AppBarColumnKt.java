@@ -105,9 +105,7 @@ public final class AppBarColumnKt {
                         rememberedValue = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.AppBarColumnKt$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                AppBarColumnScopeImpl AppBarColumn$lambda$1$lambda$0;
-                                AppBarColumn$lambda$1$lambda$0 = AppBarColumnKt.AppBarColumn$lambda$1$lambda$0(State.this);
-                                return AppBarColumn$lambda$1$lambda$0;
+                                return AppBarColumnKt.AppBarColumn$lambda$1$lambda$0(State.this);
                             }
                         });
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -187,15 +185,15 @@ public final class AppBarColumnKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                     }
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     combineAsVirtualLayouts.invoke(startRestartGroup, 0);
                     startRestartGroup.endNode();
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -212,9 +210,7 @@ public final class AppBarColumnKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AppBarColumnKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit AppBarColumn$lambda$5;
-                            AppBarColumn$lambda$5 = AppBarColumnKt.AppBarColumn$lambda$5(Function3.this, modifier2, i8, function1, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return AppBarColumn$lambda$5;
+                            return AppBarColumnKt.AppBarColumn$lambda$5(Function3.this, modifier2, i8, function1, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;

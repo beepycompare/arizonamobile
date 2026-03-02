@@ -45,7 +45,7 @@ public final class RxConvertKt {
         return Observable.create(new ObservableOnSubscribe() { // from class: kotlinx.coroutines.rx2.RxConvertKt$$ExternalSyntheticLambda0
             @Override // io.reactivex.ObservableOnSubscribe
             public final void subscribe(ObservableEmitter observableEmitter) {
-                RxConvertKt.asObservable$lambda$0(CoroutineContext.this, flow, observableEmitter);
+                observableEmitter.setCancellable(new RxCancellable(BuildersKt.launch(GlobalScope.INSTANCE, Dispatchers.getUnconfined().plus(CoroutineContext.this), CoroutineStart.ATOMIC, new RxConvertKt$asObservable$1$job$1(flow, observableEmitter, null))));
             }
         });
     }
@@ -55,11 +55,6 @@ public final class RxConvertKt {
             coroutineContext = EmptyCoroutineContext.INSTANCE;
         }
         return asObservable(flow, coroutineContext);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void asObservable$lambda$0(CoroutineContext coroutineContext, Flow flow, ObservableEmitter observableEmitter) {
-        observableEmitter.setCancellable(new RxCancellable(BuildersKt.launch(GlobalScope.INSTANCE, Dispatchers.getUnconfined().plus(coroutineContext), CoroutineStart.ATOMIC, new RxConvertKt$asObservable$1$job$1(flow, observableEmitter, null))));
     }
 
     public static /* synthetic */ Flowable asFlowable$default(Flow flow, CoroutineContext coroutineContext, int i, Object obj) {
@@ -81,7 +76,7 @@ public final class RxConvertKt {
     }
 
     /* renamed from: from$default  reason: collision with other method in class */
-    public static /* synthetic */ Observable m11858from$default(Flow flow, CoroutineContext coroutineContext, int i, Object obj) {
+    public static /* synthetic */ Observable m10773from$default(Flow flow, CoroutineContext coroutineContext, int i, Object obj) {
         if ((i & 1) != 0) {
             coroutineContext = EmptyCoroutineContext.INSTANCE;
         }

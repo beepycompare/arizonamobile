@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AudioCapabilities {
     static final int DEFAULT_MAX_CHANNEL_COUNT = 10;
     static final int DEFAULT_SAMPLE_RATE_HZ = 48000;
@@ -267,7 +267,7 @@ public final class AudioCapabilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class AudioProfile {
         public static final AudioProfile DEFAULT_AUDIO_PROFILE;
         private final ImmutableSet<Integer> channelMasks;
@@ -354,7 +354,7 @@ public final class AudioCapabilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Api29 {
         private Api29() {
         }
@@ -384,7 +384,7 @@ public final class AudioCapabilities {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Api33 {
         private Api33() {
         }

@@ -310,10 +310,11 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
             if (crossOver == vacated) {
                 return null;
             }
+            MinMaxPriorityQueue minMaxPriorityQueue = MinMaxPriorityQueue.this;
             if (crossOver < removeIndex) {
-                elementData = MinMaxPriorityQueue.this.elementData(removeIndex);
+                elementData = minMaxPriorityQueue.elementData(removeIndex);
             } else {
-                elementData = MinMaxPriorityQueue.this.elementData(getParentIndex(removeIndex));
+                elementData = minMaxPriorityQueue.elementData(getParentIndex(removeIndex));
             }
             if (this.otherHeap.bubbleUpAlternatingLevels(crossOver, toTrickle) < removeIndex) {
                 return new MoveDesc<>(toTrickle, elementData);
@@ -388,12 +389,14 @@ public final class MinMaxPriorityQueue<E> extends AbstractQueue<E> {
                     elementData = elementData2;
                 }
             }
-            if (((Ordering<E>) this.ordering).compare(elementData, x) < 0) {
-                MinMaxPriorityQueue.this.queue[index] = elementData;
+            int compare = ((Ordering<E>) this.ordering).compare(elementData, x);
+            MinMaxPriorityQueue minMaxPriorityQueue = MinMaxPriorityQueue.this;
+            if (compare < 0) {
+                minMaxPriorityQueue.queue[index] = elementData;
                 MinMaxPriorityQueue.this.queue[parentIndex] = x;
                 return parentIndex;
             }
-            MinMaxPriorityQueue.this.queue[index] = x;
+            minMaxPriorityQueue.queue[index] = x;
             return index;
         }
 

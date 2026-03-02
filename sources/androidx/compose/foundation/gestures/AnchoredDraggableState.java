@@ -88,9 +88,7 @@ public final class AnchoredDraggableState<T> {
         this.confirmValueChange = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean confirmValueChange$lambda$0;
-                confirmValueChange$lambda$0 = AnchoredDraggableState.confirmValueChange$lambda$0(obj);
-                return Boolean.valueOf(confirmValueChange$lambda$0);
+                return Boolean.valueOf(AnchoredDraggableState.confirmValueChange$lambda$0(obj));
             }
         };
         this.dragMutex = new MutatorMutex();
@@ -101,18 +99,14 @@ public final class AnchoredDraggableState<T> {
         this.targetValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Object targetValue_delegate$lambda$0;
-                targetValue_delegate$lambda$0 = AnchoredDraggableState.targetValue_delegate$lambda$0(AnchoredDraggableState.this);
-                return targetValue_delegate$lambda$0;
+                return AnchoredDraggableState.targetValue_delegate$lambda$0(AnchoredDraggableState.this);
             }
         });
         this.offset$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(Float.NaN);
         this.progress$delegate = SnapshotStateKt.derivedStateOf(SnapshotStateKt.structuralEqualityPolicy(), new Function0() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float progress_delegate$lambda$0;
-                progress_delegate$lambda$0 = AnchoredDraggableState.progress_delegate$lambda$0(AnchoredDraggableState.this);
-                return Float.valueOf(progress_delegate$lambda$0);
+                return Float.valueOf(AnchoredDraggableState.progress_delegate$lambda$0(AnchoredDraggableState.this));
             }
         });
         this.lastVelocity$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -140,9 +134,7 @@ public final class AnchoredDraggableState<T> {
         this(obj, draggableAnchors, (i & 4) != 0 ? new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = AnchoredDraggableState._init_$lambda$0(obj2);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(AnchoredDraggableState._init_$lambda$0(obj2));
             }
         } : function1);
     }
@@ -505,22 +497,17 @@ public final class AnchoredDraggableState<T> {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Object Saver$lambda$0;
-                    Saver$lambda$0 = AnchoredDraggableState.Companion.Saver$lambda$0((SaverScope) obj, (AnchoredDraggableState) obj2);
-                    return Saver$lambda$0;
+                    Object currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((AnchoredDraggableState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AnchoredDraggableState Saver$lambda$1;
-                    Saver$lambda$1 = AnchoredDraggableState.Companion.Saver$lambda$1(obj);
-                    return Saver$lambda$1;
+                    return AnchoredDraggableState.Companion.Saver$lambda$1(obj);
                 }
             });
-        }
-
-        public static final Object Saver$lambda$0(SaverScope saverScope, AnchoredDraggableState anchoredDraggableState) {
-            return anchoredDraggableState.getCurrentValue();
         }
 
         public static final AnchoredDraggableState Saver$lambda$1(Object obj) {
@@ -533,9 +520,7 @@ public final class AnchoredDraggableState<T> {
                 function1 = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        boolean Saver$lambda$2;
-                        Saver$lambda$2 = AnchoredDraggableState.Companion.Saver$lambda$2(obj2);
-                        return Boolean.valueOf(Saver$lambda$2);
+                        return Boolean.valueOf(AnchoredDraggableState.Companion.Saver$lambda$2(obj2));
                     }
                 };
             }
@@ -547,22 +532,17 @@ public final class AnchoredDraggableState<T> {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Object Saver$lambda$3;
-                    Saver$lambda$3 = AnchoredDraggableState.Companion.Saver$lambda$3((SaverScope) obj, (AnchoredDraggableState) obj2);
-                    return Saver$lambda$3;
+                    Object currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((AnchoredDraggableState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AnchoredDraggableState Saver$lambda$4;
-                    Saver$lambda$4 = AnchoredDraggableState.Companion.Saver$lambda$4(Function1.this, obj);
-                    return Saver$lambda$4;
+                    return AnchoredDraggableState.Companion.Saver$lambda$4(Function1.this, obj);
                 }
             });
-        }
-
-        public static final Object Saver$lambda$3(SaverScope saverScope, AnchoredDraggableState anchoredDraggableState) {
-            return anchoredDraggableState.getCurrentValue();
         }
 
         public static final AnchoredDraggableState Saver$lambda$4(Function1 function1, Object obj) {
@@ -575,9 +555,7 @@ public final class AnchoredDraggableState<T> {
                 function13 = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        boolean Saver$lambda$5;
-                        Saver$lambda$5 = AnchoredDraggableState.Companion.Saver$lambda$5(obj2);
-                        return Boolean.valueOf(Saver$lambda$5);
+                        return Boolean.valueOf(AnchoredDraggableState.Companion.Saver$lambda$5(obj2));
                     }
                 };
             }
@@ -589,26 +567,19 @@ public final class AnchoredDraggableState<T> {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Object Saver$lambda$6;
-                    Saver$lambda$6 = AnchoredDraggableState.Companion.Saver$lambda$6((SaverScope) obj, (AnchoredDraggableState) obj2);
-                    return Saver$lambda$6;
+                    Object currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((AnchoredDraggableState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    AnchoredDraggableState Saver$lambda$7;
-                    Saver$lambda$7 = AnchoredDraggableState.Companion.Saver$lambda$7(Function1.this, function0, animationSpec, decayAnimationSpec, function12, obj);
-                    return Saver$lambda$7;
+                    AnchoredDraggableState AnchoredDraggableState;
+                    AnchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(obj, Function1.this, function0, animationSpec, decayAnimationSpec, function12);
+                    return AnchoredDraggableState;
                 }
             });
-        }
-
-        public static final Object Saver$lambda$6(SaverScope saverScope, AnchoredDraggableState anchoredDraggableState) {
-            return anchoredDraggableState.getCurrentValue();
-        }
-
-        public static final AnchoredDraggableState Saver$lambda$7(Function1 function1, Function0 function0, AnimationSpec animationSpec, DecayAnimationSpec decayAnimationSpec, Function1 function12, Object obj) {
-            return AnchoredDraggableKt.AnchoredDraggableState(obj, function1, function0, animationSpec, decayAnimationSpec, function12);
         }
     }
 }

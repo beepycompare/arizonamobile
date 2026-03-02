@@ -10,16 +10,16 @@ public final class ExtendedFabSmallTokens {
     private static final float LeadingSpace;
     private static final float TrailingSpace;
     public static final ExtendedFabSmallTokens INSTANCE = new ExtendedFabSmallTokens();
-    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 56.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 56.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerLarge;
-    private static final float IconLabelSpace = Dp.m8258constructorimpl((float) 8.0d);
-    private static final float IconSize = Dp.m8258constructorimpl((float) 24.0d);
+    private static final float IconLabelSpace = Dp.m7555constructorimpl((float) 8.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 24.0d);
 
     private ExtendedFabSmallTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4001getContainerHeightD9Ej5fM() {
+    public final float m3385getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -28,28 +28,28 @@ public final class ExtendedFabSmallTokens {
     }
 
     /* renamed from: getIconLabelSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4002getIconLabelSpaceD9Ej5fM() {
+    public final float m3386getIconLabelSpaceD9Ej5fM() {
         return IconLabelSpace;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4003getIconSizeD9Ej5fM() {
+    public final float m3387getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     /* renamed from: getLeadingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4004getLeadingSpaceD9Ej5fM() {
+    public final float m3388getLeadingSpaceD9Ej5fM() {
         return LeadingSpace;
     }
 
     /* renamed from: getTrailingSpace-D9Ej5fM  reason: not valid java name */
-    public final float m4005getTrailingSpaceD9Ej5fM() {
+    public final float m3389getTrailingSpaceD9Ej5fM() {
         return TrailingSpace;
     }
 
     static {
         float f = (float) 16.0d;
-        LeadingSpace = Dp.m8258constructorimpl(f);
-        TrailingSpace = Dp.m8258constructorimpl(f);
+        LeadingSpace = Dp.m7555constructorimpl(f);
+        TrailingSpace = Dp.m7555constructorimpl(f);
     }
 }

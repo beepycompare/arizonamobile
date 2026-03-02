@@ -61,7 +61,7 @@ public final class BringIntoViewResponderNode extends Modifier.Node implements B
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Rect bringIntoView$lambda$1(BringIntoViewResponderNode bringIntoViewResponderNode, LayoutCoordinates layoutCoordinates, Function0 function0) {
         Rect bringIntoView$localRect = bringIntoView$localRect(bringIntoViewResponderNode, layoutCoordinates, function0);
         if (bringIntoView$localRect != null) {
@@ -75,9 +75,7 @@ public final class BringIntoViewResponderNode extends Modifier.Node implements B
         Object coroutineScope = CoroutineScopeKt.coroutineScope(new BringIntoViewResponderNode$bringIntoView$2(this, layoutCoordinates, function0, new Function0() { // from class: androidx.compose.foundation.relocation.BringIntoViewResponderNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Rect bringIntoView$lambda$1;
-                bringIntoView$lambda$1 = BringIntoViewResponderNode.bringIntoView$lambda$1(BringIntoViewResponderNode.this, layoutCoordinates, function0);
-                return bringIntoView$lambda$1;
+                return BringIntoViewResponderNode.bringIntoView$lambda$1(BringIntoViewResponderNode.this, layoutCoordinates, function0);
             }
         }, null), continuation);
         return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;

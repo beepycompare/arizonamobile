@@ -75,34 +75,34 @@ public final class ThumbNode extends Modifier.Node implements LayoutModifierNode
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         float thumbDiameter;
         float f;
         float f2;
         float f3;
-        boolean z = (measurable.maxIntrinsicHeight(Constraints.m8211getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m8210getMaxHeightimpl(j)) == 0) ? false : true;
+        boolean z = (measurable.maxIntrinsicHeight(Constraints.m7508getMaxWidthimpl(j)) == 0 || measurable.maxIntrinsicWidth(Constraints.m7507getMaxHeightimpl(j)) == 0) ? false : true;
         if (this.isPressed) {
-            thumbDiameter = SwitchTokens.INSTANCE.m4410getPressedHandleWidthD9Ej5fM();
+            thumbDiameter = SwitchTokens.INSTANCE.m3794getPressedHandleWidthD9Ej5fM();
         } else if (z || this.checked) {
             thumbDiameter = SwitchKt.getThumbDiameter();
         } else {
             thumbDiameter = SwitchKt.getUncheckedThumbDiameter();
         }
-        float f4 = measureScope.mo464toPx0680j_4(thumbDiameter);
+        float f4 = measureScope.mo405toPx0680j_4(thumbDiameter);
         Animatable<Float, AnimationVector1D> animatable = this.sizeAnim;
         int floatValue = (int) (animatable != null ? animatable.getValue().floatValue() : f4);
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(floatValue, floatValue));
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(floatValue, floatValue));
         f = SwitchKt.SwitchHeight;
-        final float f5 = measureScope.mo464toPx0680j_4(Dp.m8258constructorimpl(Dp.m8258constructorimpl(f - measureScope.mo460toDpu2uoSUM(f4)) / 2.0f));
+        final float f5 = measureScope.mo405toPx0680j_4(Dp.m7555constructorimpl(Dp.m7555constructorimpl(f - measureScope.mo401toDpu2uoSUM(f4)) / 2.0f));
         f2 = SwitchKt.SwitchWidth;
-        float m8258constructorimpl = Dp.m8258constructorimpl(f2 - SwitchKt.getThumbDiameter());
+        float m7555constructorimpl = Dp.m7555constructorimpl(f2 - SwitchKt.getThumbDiameter());
         f3 = SwitchKt.ThumbPadding;
-        float f6 = measureScope.mo464toPx0680j_4(Dp.m8258constructorimpl(m8258constructorimpl - f3));
+        float f6 = measureScope.mo405toPx0680j_4(Dp.m7555constructorimpl(m7555constructorimpl - f3));
         boolean z2 = this.isPressed;
         if (z2 && this.checked) {
-            f5 = f6 - measureScope.mo464toPx0680j_4(SwitchTokens.INSTANCE.m4416getTrackOutlineWidthD9Ej5fM());
+            f5 = f6 - measureScope.mo405toPx0680j_4(SwitchTokens.INSTANCE.m3800getTrackOutlineWidthD9Ej5fM());
         } else if (z2 && !this.checked) {
-            f5 = measureScope.mo464toPx0680j_4(SwitchTokens.INSTANCE.m4416getTrackOutlineWidthD9Ej5fM());
+            f5 = measureScope.mo405toPx0680j_4(SwitchTokens.INSTANCE.m3800getTrackOutlineWidthD9Ej5fM());
         } else if (this.checked) {
             f5 = f6;
         }
@@ -121,14 +121,12 @@ public final class ThumbNode extends Modifier.Node implements LayoutModifierNode
         return MeasureScope.layout$default(measureScope, floatValue, floatValue, null, new Function1() { // from class: androidx.compose.material3.ThumbNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = ThumbNode.measure_3p2s80s$lambda$0(Placeable.this, this, f5, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return ThumbNode.measure_3p2s80s$lambda$0(Placeable.this, this, f5, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, ThumbNode thumbNode, float f, Placeable.PlacementScope placementScope) {
         Animatable<Float, AnimationVector1D> animatable = thumbNode.offsetAnim;
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, animatable != null ? (int) animatable.getValue().floatValue() : (int) f, 0, 0.0f, 4, null);

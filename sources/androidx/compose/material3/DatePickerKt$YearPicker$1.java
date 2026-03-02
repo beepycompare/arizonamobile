@@ -64,12 +64,12 @@ public final class DatePickerKt$YearPicker$1 implements Function2<Composer, Inte
         final int year2 = this.$calendarModel.getMonth(this.$displayedMonthMillis).getYear();
         LazyGridState rememberLazyGridState = LazyGridStateKt.rememberLazyGridState(Math.max(0, (year2 - this.$yearRange.getFirst()) - 3), 0, composer, 0, 2);
         GridCells.Fixed fixed = new GridCells.Fixed(3);
-        Modifier m299backgroundbw27NRU$default = BackgroundKt.m299backgroundbw27NRU$default(this.$modifier, this.$colors.m2275getContainerColor0d7_KjU(), null, 2, null);
+        Modifier m264backgroundbw27NRU$default = BackgroundKt.m264backgroundbw27NRU$default(this.$modifier, this.$colors.m1958getContainerColor0d7_KjU(), null, 2, null);
         Arrangement.HorizontalOrVertical spaceEvenly = Arrangement.INSTANCE.getSpaceEvenly();
         Arrangement arrangement = Arrangement.INSTANCE;
         f = DatePickerKt.YearsVerticalPadding;
         GridCells.Fixed fixed2 = fixed;
-        Arrangement.HorizontalOrVertical m783spacedBy0680j_4 = arrangement.m783spacedBy0680j_4(f);
+        Arrangement.HorizontalOrVertical m688spacedBy0680j_4 = arrangement.m688spacedBy0680j_4(f);
         Arrangement.HorizontalOrVertical horizontalOrVertical = spaceEvenly;
         ComposerKt.sourceInformationMarkerStart(composer, 1305620792, "CC(remember):DatePicker.kt#9igjgp");
         boolean changedInstance = composer.changedInstance(this.$yearRange) | composer.changedInstance(this.$calendarModel) | composer.changed(year2) | composer.changed(year) | composer.changed(this.$onYearSelected) | composer.changed(this.$selectableDates) | composer.changed(this.$colors);
@@ -83,21 +83,19 @@ public final class DatePickerKt$YearPicker$1 implements Function2<Composer, Inte
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$YearPicker$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DatePickerKt$YearPicker$1.invoke$lambda$1$lambda$0(IntRange.this, calendarModel2, year2, year, function1, selectableDates, datePickerColors, (LazyGridScope) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DatePickerKt$YearPicker$1.invoke$lambda$1$lambda$0(IntRange.this, calendarModel2, year2, year, function1, selectableDates, datePickerColors, (LazyGridScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridDslKt.LazyVerticalGrid(fixed2, m299backgroundbw27NRU$default, rememberLazyGridState, null, false, m783spacedBy0680j_4, horizontalOrVertical, null, false, null, (Function1) rememberedValue, composer, 1769472, 0, 920);
+        LazyGridDslKt.LazyVerticalGrid(fixed2, m264backgroundbw27NRU$default, rememberLazyGridState, null, false, m688spacedBy0680j_4, horizontalOrVertical, null, false, null, (Function1) rememberedValue, composer, 1769472, 0, 920);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(IntRange intRange, CalendarModel calendarModel, int i, int i2, Function1 function1, SelectableDates selectableDates, DatePickerColors datePickerColors, LazyGridScope lazyGridScope) {
         LazyGridScope.items$default(lazyGridScope, CollectionsKt.count(intRange), null, null, null, ComposableLambdaKt.composableLambdaInstance(674613074, true, new DatePickerKt$YearPicker$1$1$1$1(intRange, calendarModel, i, i2, function1, selectableDates, datePickerColors)), 14, null);
         return Unit.INSTANCE;

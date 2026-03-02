@@ -14,8 +14,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: CoroutineFeatureExtensions.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$initVmState$$inlined$launchSafe$default$1", f = "HomeComponent.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {32, 33}, m = "invokeSuspend", n = {"$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1", "$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1"}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 1)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$initVmState$$inlined$launchSafe$default$1", f = "HomeComponent.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {32, 33}, m = "invokeSuspend", n = {"$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1", "$this$launch", "$completion", "$this$initVmState_u24lambda_u240", "$this$update$iv", "prevValue$iv", "it", "$i$a$-launchSafe$default-HomeComponent$initVmState$2", "$i$f$update", "$i$a$-update-HomeComponent$initVmState$2$1"}, nl = {31, 31}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 2)
 /* loaded from: classes4.dex */
 public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
@@ -66,7 +66,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
     /* JADX WARN: Removed duplicated region for block: B:29:0x014a  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x014e  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0187  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x018d  */
     /* JADX WARN: Type inference failed for: r19v0 */
     /* JADX WARN: Type inference failed for: r19v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r19v2 */
@@ -189,7 +189,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
                 i2 = i20;
                 HomeUiState homeUiState6 = homeUiState4;
                 isFirstDownload = obj;
-                if (!mutableStateFlow4.compareAndSet(obj2, HomeUiState.copy$default(homeUiState6, i22, i5 == 0 ? 1 : i9, null, null, null, null, null, null, null, null, null, i19 == 0 ? 1 : i9, z2, i17 == 0 ? 1 : i9, ((Boolean) isFirstDownload).booleanValue(), 0, false, false, false, 0, 0, 2076671, null))) {
+                if (!mutableStateFlow4.compareAndSet(obj2, HomeUiState.copy$default(homeUiState6, i22, i5 == 0 ? 1 : i9, null, null, null, null, null, null, null, null, null, i19 == 0 ? 1 : i9, z2, i17 == 0 ? 1 : i9, ((Boolean) isFirstDownload).booleanValue(), 0, false, false, false, 0, 0, 0, null, null, 16756735, null))) {
                     homeComponent$initVmState$$inlined$launchSafe$default$1 = continuation;
                     coroutineScope = coroutineScope8;
                     i = i3;
@@ -259,7 +259,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
                         i17 = 0;
                         mutableStateFlow4 = mutableStateFlow2;
                         coroutineScope8 = coroutineScope62;
-                        if (!mutableStateFlow4.compareAndSet(obj2, HomeUiState.copy$default(homeUiState6, i22, i5 == 0 ? 1 : i9, null, null, null, null, null, null, null, null, null, i19 == 0 ? 1 : i9, z2, i17 == 0 ? 1 : i9, ((Boolean) isFirstDownload).booleanValue(), 0, false, false, false, 0, 0, 2076671, null))) {
+                        if (!mutableStateFlow4.compareAndSet(obj2, HomeUiState.copy$default(homeUiState6, i22, i5 == 0 ? 1 : i9, null, null, null, null, null, null, null, null, null, i19 == 0 ? 1 : i9, z2, i17 == 0 ? 1 : i9, ((Boolean) isFirstDownload).booleanValue(), 0, false, false, false, 0, 0, 0, null, null, 16756735, null))) {
                         }
                     }
                     return coroutine_suspended;

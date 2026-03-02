@@ -65,9 +65,11 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
             toolbar.setNavigationOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.app.ActionBarDrawerToggle.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
-                    if (ActionBarDrawerToggle.this.mDrawerIndicatorEnabled) {
-                        ActionBarDrawerToggle.this.toggle();
-                    } else if (ActionBarDrawerToggle.this.mToolbarNavigationClickListener != null) {
+                    boolean z = ActionBarDrawerToggle.this.mDrawerIndicatorEnabled;
+                    ActionBarDrawerToggle actionBarDrawerToggle = ActionBarDrawerToggle.this;
+                    if (z) {
+                        actionBarDrawerToggle.toggle();
+                    } else if (actionBarDrawerToggle.mToolbarNavigationClickListener != null) {
                         ActionBarDrawerToggle.this.mToolbarNavigationClickListener.onClick(view);
                     }
                 }
@@ -309,10 +311,11 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
 
         @Override // androidx.appcompat.app.ActionBarDrawerToggle.Delegate
         public void setActionBarDescription(int i) {
+            Toolbar toolbar = this.mToolbar;
             if (i == 0) {
-                this.mToolbar.setNavigationContentDescription(this.mDefaultContentDescription);
+                toolbar.setNavigationContentDescription(this.mDefaultContentDescription);
             } else {
-                this.mToolbar.setNavigationContentDescription(i);
+                toolbar.setNavigationContentDescription(i);
             }
         }
 

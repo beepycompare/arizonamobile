@@ -10,54 +10,54 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FinalSnappingItem {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int ClosestItem = m707constructorimpl(0);
-    private static final int NextItem = m707constructorimpl(1);
-    private static final int PreviousItem = m707constructorimpl(2);
+    private static final int ClosestItem = m619constructorimpl(0);
+    private static final int NextItem = m619constructorimpl(1);
+    private static final int PreviousItem = m619constructorimpl(2);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FinalSnappingItem m706boximpl(int i) {
+    public static final /* synthetic */ FinalSnappingItem m618boximpl(int i) {
         return new FinalSnappingItem(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m707constructorimpl(int i) {
+    public static int m619constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m708equalsimpl(int i, Object obj) {
-        return (obj instanceof FinalSnappingItem) && i == ((FinalSnappingItem) obj).m712unboximpl();
+    public static boolean m620equalsimpl(int i, Object obj) {
+        return (obj instanceof FinalSnappingItem) && i == ((FinalSnappingItem) obj).m624unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m709equalsimpl0(int i, int i2) {
+    public static final boolean m621equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m710hashCodeimpl(int i) {
+    public static int m622hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m711toStringimpl(int i) {
+    public static String m623toStringimpl(int i) {
         return "FinalSnappingItem(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m708equalsimpl(this.value, obj);
+        return m620equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m710hashCodeimpl(this.value);
+        return m622hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m711toStringimpl(this.value);
+        return m623toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m712unboximpl() {
+    public final /* synthetic */ int m624unboximpl() {
         return this.value;
     }
 
@@ -73,17 +73,17 @@ public final class FinalSnappingItem {
         }
 
         /* renamed from: getClosestItem-bbeMdSM  reason: not valid java name */
-        public final int m713getClosestItembbeMdSM() {
+        public final int m625getClosestItembbeMdSM() {
             return FinalSnappingItem.ClosestItem;
         }
 
         /* renamed from: getNextItem-bbeMdSM  reason: not valid java name */
-        public final int m714getNextItembbeMdSM() {
+        public final int m626getNextItembbeMdSM() {
             return FinalSnappingItem.NextItem;
         }
 
         /* renamed from: getPreviousItem-bbeMdSM  reason: not valid java name */
-        public final int m715getPreviousItembbeMdSM() {
+        public final int m627getPreviousItembbeMdSM() {
             return FinalSnappingItem.PreviousItem;
         }
     }

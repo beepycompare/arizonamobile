@@ -105,10 +105,12 @@ public final class CompletableMerge extends Completable {
         @Override // org.reactivestreams.Subscriber
         public void onComplete() {
             if (decrementAndGet() == 0) {
-                if (this.error.get() != null) {
-                    this.downstream.onError(this.error.terminate());
+                Throwable th = this.error.get();
+                CompletableObserver completableObserver = this.downstream;
+                if (th != null) {
+                    completableObserver.onError(this.error.terminate());
                 } else {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 }
             }
         }
@@ -141,10 +143,11 @@ public final class CompletableMerge extends Completable {
             this.set.delete(mergeInnerObserver);
             if (decrementAndGet() == 0) {
                 Throwable th = this.error.get();
+                CompletableObserver completableObserver = this.downstream;
                 if (th != null) {
-                    this.downstream.onError(th);
+                    completableObserver.onError(th);
                 } else {
-                    this.downstream.onComplete();
+                    completableObserver.onComplete();
                 }
             } else if (this.maxConcurrency != Integer.MAX_VALUE) {
                 this.upstream.request(1L);

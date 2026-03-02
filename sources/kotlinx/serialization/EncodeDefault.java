@@ -12,12 +12,11 @@ import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 /* compiled from: Annotations.kt */
 @Target({})
-@kotlin.annotation.Target(allowedTargets = {AnnotationTarget.PROPERTY})
-@Retention(RetentionPolicy.RUNTIME)
 @MustBeDocumented
-@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0087\u0002\u0018\u00002\u00020\u0001:\u0001\u0005B\n\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003R\u000f\u0010\u0002\u001a\u00020\u0003¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/EncodeDefault;", "", UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/EncodeDefault$Mode;", "()Lkotlinx/serialization/EncodeDefault$Mode;", "Mode", "kotlinx-serialization-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
-@ExperimentalSerializationApi
+@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0087\u0002\u0018\u00002\u00020\u0001:\u0001\u0006B\u0014\bF\u0012\u0010\b\u0002\u0010\u0002\u001a\u00020\u0003B\u0006\b\n0\u00038\u0004R\u0013\u0010\u0002\u001a\u00020\u0003X\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0005¨\u0006\u0007"}, d2 = {"Lkotlinx/serialization/EncodeDefault;", "", UpdateActivity.UPDATE_MODE, "Lkotlinx/serialization/EncodeDefault$Mode;", "ALWAYS", "()Lkotlinx/serialization/EncodeDefault$Mode;", "Mode", "kotlinx-serialization-core"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@kotlin.annotation.Target(allowedTargets = {AnnotationTarget.PROPERTY})
 @Documented
+@Retention(RetentionPolicy.RUNTIME)
 /* loaded from: classes5.dex */
 public @interface EncodeDefault {
     Mode mode() default Mode.ALWAYS;
@@ -25,8 +24,7 @@ public @interface EncodeDefault {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: Annotations.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0087\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/EncodeDefault$Mode;", "", "<init>", "(Ljava/lang/String;I)V", "ALWAYS", "NEVER", "kotlinx-serialization-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    @ExperimentalSerializationApi
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\bB¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Lkotlinx/serialization/EncodeDefault$Mode;", "", "<init>", "(Ljava/lang/String;I)V", "ALWAYS", "NEVER", "kotlinx-serialization-core"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Mode {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -42,6 +40,14 @@ public @interface EncodeDefault {
             return $ENTRIES;
         }
 
+        public static Mode valueOf(String str) {
+            return (Mode) Enum.valueOf(Mode.class, str);
+        }
+
+        public static Mode[] values() {
+            return (Mode[]) $VALUES.clone();
+        }
+
         private Mode(String str, int i) {
         }
 
@@ -49,14 +55,6 @@ public @interface EncodeDefault {
             Mode[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
-        }
-
-        public static Mode valueOf(String str) {
-            return (Mode) Enum.valueOf(Mode.class, str);
-        }
-
-        public static Mode[] values() {
-            return (Mode[]) $VALUES.clone();
         }
     }
 }

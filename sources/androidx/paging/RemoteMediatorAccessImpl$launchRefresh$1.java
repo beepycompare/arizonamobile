@@ -3,6 +3,8 @@ package androidx.paging;
 import androidx.paging.AccessorState;
 import androidx.paging.LoadState;
 import androidx.paging.RemoteMediator;
+import androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1;
+import com.google.android.vending.licensing.Policy;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
@@ -13,13 +15,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RemoteMediatorAccessor.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003*\u00020\u0005H\u008a@"}, d2 = {"<anonymous>", "", "Key", "", "Value", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1", f = "RemoteMediatorAccessor.kt", i = {0}, l = {314}, m = "invokeSuspend", n = {"launchAppendPrepend"}, s = {"L$0"})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1", f = "RemoteMediatorAccessor.kt", i = {0}, l = {288}, m = "invokeSuspend", n = {"launchAppendPrepend"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -73,8 +74,8 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RemoteMediatorAccessor.kt */
-    @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", "Key", "", "Value"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1", f = "RemoteMediatorAccessor.kt", i = {}, l = {321}, m = "invokeSuspend", n = {}, s = {})
+    @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1", f = "RemoteMediatorAccessor.kt", i = {}, l = {Policy.RETRY}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
@@ -115,15 +116,12 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 accessorStateHolder = ((RemoteMediatorAccessImpl) this.this$0).accessorState;
-                PagingState pagingState = (PagingState) accessorStateHolder.use(new Function1<AccessorState<Key, Value>, PagingState<Key, Value>>() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$pendingPagingState$1
+                PagingState pagingState = (PagingState) accessorStateHolder.use(new Function1() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Object invoke(Object obj2) {
-                        return invoke((AccessorState) ((AccessorState) obj2));
-                    }
-
-                    public final PagingState<Key, Value> invoke(AccessorState<Key, Value> it) {
-                        Intrinsics.checkNotNullParameter(it, "it");
-                        return it.getPendingRefresh();
+                    public final Object invoke(Object obj2) {
+                        PagingState pendingRefresh;
+                        pendingRefresh = ((AccessorState) obj2).getPendingRefresh();
+                        return pendingRefresh;
                     }
                 });
                 if (pagingState != null) {
@@ -151,52 +149,22 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
             final RemoteMediator.MediatorResult mediatorResult = (RemoteMediator.MediatorResult) obj;
             if (mediatorResult instanceof RemoteMediator.MediatorResult.Success) {
                 accessorStateHolder3 = remoteMediatorAccessImpl.accessorState;
-                booleanValue = ((Boolean) accessorStateHolder3.use(new Function1<AccessorState<Key, Value>, Boolean>() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$1$1
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(1);
-                    }
-
+                booleanValue = ((Boolean) accessorStateHolder3.use(new Function1() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Boolean invoke(Object obj2) {
-                        return invoke((AccessorState) ((AccessorState) obj2));
-                    }
-
-                    public final Boolean invoke(AccessorState<Key, Value> it) {
-                        Intrinsics.checkNotNullParameter(it, "it");
-                        it.clearPendingRequest(LoadType.REFRESH);
-                        if (((RemoteMediator.MediatorResult.Success) RemoteMediator.MediatorResult.this).endOfPaginationReached()) {
-                            it.setBlockState(LoadType.REFRESH, AccessorState.BlockState.COMPLETED);
-                            it.setBlockState(LoadType.PREPEND, AccessorState.BlockState.COMPLETED);
-                            it.setBlockState(LoadType.APPEND, AccessorState.BlockState.COMPLETED);
-                            it.clearPendingRequests();
-                        } else {
-                            it.setBlockState(LoadType.PREPEND, AccessorState.BlockState.UNBLOCKED);
-                            it.setBlockState(LoadType.APPEND, AccessorState.BlockState.UNBLOCKED);
-                        }
-                        it.setError(LoadType.PREPEND, null);
-                        it.setError(LoadType.APPEND, null);
-                        return Boolean.valueOf(it.getPendingBoundary() != null);
+                    public final Object invoke(Object obj2) {
+                        boolean invokeSuspend$lambda$1$0;
+                        invokeSuspend$lambda$1$0 = RemoteMediatorAccessImpl$launchRefresh$1.AnonymousClass1.invokeSuspend$lambda$1$0(RemoteMediator.MediatorResult.this, (AccessorState) obj2);
+                        return Boolean.valueOf(invokeSuspend$lambda$1$0);
                     }
                 })).booleanValue();
             } else if (mediatorResult instanceof RemoteMediator.MediatorResult.Error) {
                 accessorStateHolder2 = remoteMediatorAccessImpl.accessorState;
-                booleanValue = ((Boolean) accessorStateHolder2.use(new Function1<AccessorState<Key, Value>, Boolean>() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$1$2
-                    /* JADX INFO: Access modifiers changed from: package-private */
-                    {
-                        super(1);
-                    }
-
+                booleanValue = ((Boolean) accessorStateHolder2.use(new Function1() { // from class: androidx.paging.RemoteMediatorAccessImpl$launchRefresh$1$1$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
-                    public /* bridge */ /* synthetic */ Boolean invoke(Object obj2) {
-                        return invoke((AccessorState) ((AccessorState) obj2));
-                    }
-
-                    public final Boolean invoke(AccessorState<Key, Value> it) {
-                        Intrinsics.checkNotNullParameter(it, "it");
-                        it.clearPendingRequest(LoadType.REFRESH);
-                        it.setError(LoadType.REFRESH, new LoadState.Error(((RemoteMediator.MediatorResult.Error) RemoteMediator.MediatorResult.this).getThrowable()));
-                        return Boolean.valueOf(it.getPendingBoundary() != null);
+                    public final Object invoke(Object obj2) {
+                        boolean invokeSuspend$lambda$1$1;
+                        invokeSuspend$lambda$1$1 = RemoteMediatorAccessImpl$launchRefresh$1.AnonymousClass1.invokeSuspend$lambda$1$1(RemoteMediator.MediatorResult.this, (AccessorState) obj2);
+                        return Boolean.valueOf(invokeSuspend$lambda$1$1);
                     }
                 })).booleanValue();
             } else {
@@ -204,6 +172,30 @@ public final class RemoteMediatorAccessImpl$launchRefresh$1 extends SuspendLambd
             }
             booleanRef.element = booleanValue;
             return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final boolean invokeSuspend$lambda$1$0(RemoteMediator.MediatorResult mediatorResult, AccessorState accessorState) {
+            accessorState.clearPendingRequest(LoadType.REFRESH);
+            if (((RemoteMediator.MediatorResult.Success) mediatorResult).endOfPaginationReached()) {
+                accessorState.setBlockState(LoadType.REFRESH, AccessorState.BlockState.COMPLETED);
+                accessorState.setBlockState(LoadType.PREPEND, AccessorState.BlockState.COMPLETED);
+                accessorState.setBlockState(LoadType.APPEND, AccessorState.BlockState.COMPLETED);
+                accessorState.clearPendingRequests();
+            } else {
+                accessorState.setBlockState(LoadType.PREPEND, AccessorState.BlockState.UNBLOCKED);
+                accessorState.setBlockState(LoadType.APPEND, AccessorState.BlockState.UNBLOCKED);
+            }
+            accessorState.setError(LoadType.PREPEND, null);
+            accessorState.setError(LoadType.APPEND, null);
+            return accessorState.getPendingBoundary() != null;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final boolean invokeSuspend$lambda$1$1(RemoteMediator.MediatorResult mediatorResult, AccessorState accessorState) {
+            accessorState.clearPendingRequest(LoadType.REFRESH);
+            accessorState.setError(LoadType.REFRESH, new LoadState.Error(((RemoteMediator.MediatorResult.Error) mediatorResult).getThrowable()));
+            return accessorState.getPendingBoundary() != null;
         }
     }
 }

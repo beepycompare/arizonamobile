@@ -13,7 +13,7 @@ public final class Dn {
     public final Cf c;
 
     public Dn() {
-        this(new An(), new C0399la(), C0136b4.l().n());
+        this(new An(), new C0398la(), C0135b4.l().n());
     }
 
     public final ArrayList a(Thread thread, Thread thread2) {
@@ -34,15 +34,15 @@ public final class Dn {
         for (Map.Entry entry : treeMap.entrySet()) {
             Thread thread3 = (Thread) entry.getKey();
             if (thread3 != thread && thread3 != thread2) {
-                arrayList.add((C0686wn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
+                arrayList.add((C0685wn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
             }
         }
         return arrayList;
     }
 
-    public Dn(Cn cn, C0399la c0399la, C0544r6 c0544r6) {
+    public Dn(Cn cn, C0398la c0398la, C0543r6 c0543r6) {
         this.f556a = cn;
-        this.b = c0399la;
-        this.c = c0544r6;
+        this.b = c0398la;
+        this.c = c0543r6;
     }
 }

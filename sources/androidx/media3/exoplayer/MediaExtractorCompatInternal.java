@@ -64,7 +64,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class MediaExtractorCompatInternal {
     private static final long DEFAULT_LAST_SAMPLE_DURATION_US = 10000;
     private static final String TAG = "MediaExtractorCompatInt";
@@ -192,10 +192,18 @@ public class MediaExtractorCompatInternal {
     }
 
     public void release() {
-        for (int i = 0; i < this.sampleQueues.size(); i++) {
-            this.sampleQueues.valueAt(i).release();
+        SparseArray<MediaExtractorSampleQueue> sparseArray;
+        int i = 0;
+        while (true) {
+            int size = this.sampleQueues.size();
+            sparseArray = this.sampleQueues;
+            if (i >= size) {
+                break;
+            }
+            sparseArray.valueAt(i).release();
+            i++;
         }
-        this.sampleQueues.clear();
+        sparseArray.clear();
         Extractor extractor = this.currentExtractor;
         if (extractor != null) {
             extractor.release();
@@ -573,7 +581,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public final class ExtractorOutputImpl implements ExtractorOutput {
         private ExtractorOutputImpl() {
         }
@@ -605,7 +613,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaExtractorTrack {
         public final String compatibilityTrackMimeType;
         public final boolean isCompatibilityTrack;
@@ -658,7 +666,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public final class MediaExtractorSampleQueue extends SampleQueue {
         private int compatibilityTrackIndex;
         private int mainTrackIndex;
@@ -720,7 +728,7 @@ public class MediaExtractorCompatInternal {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class SampleMetadataQueue {
         private final ArrayDeque<SampleMetadata> sampleMetadataPool = new ArrayDeque<>();
         private final ArrayDeque<SampleMetadata> sampleMetadataQueue = new ArrayDeque<>();
@@ -763,7 +771,7 @@ public class MediaExtractorCompatInternal {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes.dex */
+        /* loaded from: classes2.dex */
         public static final class SampleMetadata {
             public int flags;
             public long timeUs;

@@ -48,7 +48,7 @@ public class ActivityWindowInfoCallbackController {
         this.callbacks = map;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(ActivityWindowInfoCallbackController activityWindowInfoCallbackController, androidx.window.extensions.embedding.EmbeddedActivityWindowInfo info) {
         Intrinsics.checkNotNullParameter(info, "info");
         ReentrantLock reentrantLock = activityWindowInfoCallbackController.globalLock;

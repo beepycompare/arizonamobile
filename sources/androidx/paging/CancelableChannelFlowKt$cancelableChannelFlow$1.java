@@ -14,8 +14,8 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.channels.SendChannel;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: CancelableChannelFlow.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\u008a@"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.CancelableChannelFlowKt$cancelableChannelFlow$1", f = "CancelableChannelFlow.kt", i = {}, l = {33}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/paging/SimpleProducerScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.CancelableChannelFlowKt$cancelableChannelFlow$1", f = "CancelableChannelFlow.kt", i = {}, l = {31}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 final class CancelableChannelFlowKt$cancelableChannelFlow$1<T> extends SuspendLambda implements Function2<SimpleProducerScope<T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<SimpleProducerScope<T>, Continuation<? super Unit>, Object> $block;
@@ -55,21 +55,10 @@ final class CancelableChannelFlowKt$cancelableChannelFlow$1<T> extends SuspendLa
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final SimpleProducerScope<T> simpleProducerScope = (SimpleProducerScope) this.L$0;
-            this.$controller.invokeOnCompletion(new Function1<Throwable, Unit>() { // from class: androidx.paging.CancelableChannelFlowKt$cancelableChannelFlow$1.1
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
+            this.$controller.invokeOnCompletion(new Function1() { // from class: androidx.paging.CancelableChannelFlowKt$cancelableChannelFlow$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
-                    invoke2(th);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(Throwable th) {
-                    SendChannel.DefaultImpls.close$default(simpleProducerScope, null, 1, null);
+                public final Object invoke(Object obj2) {
+                    return CancelableChannelFlowKt$cancelableChannelFlow$1.invokeSuspend$lambda$0(SimpleProducerScope.this, (Throwable) obj2);
                 }
             });
             Function2<SimpleProducerScope<T>, Continuation<? super Unit>, Object> function2 = this.$block;
@@ -82,6 +71,12 @@ final class CancelableChannelFlowKt$cancelableChannelFlow$1<T> extends SuspendLa
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit invokeSuspend$lambda$0(SimpleProducerScope simpleProducerScope, Throwable th) {
+        SendChannel.DefaultImpls.close$default(simpleProducerScope, null, 1, null);
         return Unit.INSTANCE;
     }
 }

@@ -1779,7 +1779,7 @@ public class ConstraintSet {
         }
 
         /* renamed from: clone */
-        public Constraint m8744clone() {
+        public Constraint m8041clone() {
             Constraint constraint = new Constraint();
             constraint.layout.copyFrom(this.layout);
             constraint.motion.copyFrom(this.motion);
@@ -1955,7 +1955,7 @@ public class ConstraintSet {
         for (Integer num : constraintSet.mConstraints.keySet()) {
             Constraint constraint = constraintSet.mConstraints.get(num);
             if (constraint != null) {
-                this.mConstraints.put(num, constraint.m8744clone());
+                this.mConstraints.put(num, constraint.m8041clone());
             }
         }
     }
@@ -4546,10 +4546,13 @@ public class ConstraintSet {
             if (i != i2) {
                 if (i == -2) {
                     this.mWriter.write(SPACE + str + "=\"wrap_content\"");
-                } else if (i == -1) {
-                    this.mWriter.write(SPACE + str + "=\"match_parent\"");
+                    return;
+                }
+                Writer writer = this.mWriter;
+                if (i == -1) {
+                    writer.write(SPACE + str + "=\"match_parent\"");
                 } else {
-                    this.mWriter.write(SPACE + str + "=\"" + i + "dp\"");
+                    writer.write(SPACE + str + "=\"" + i + "dp\"");
                 }
             }
         }
@@ -4647,11 +4650,17 @@ public class ConstraintSet {
             this.mWriter.write(SPACE + str);
             this.mWriter.write(StringUtils.PROCESS_POSTFIX_DELIMITER);
             int i = 0;
-            while (i < iArr.length) {
-                this.mWriter.write((i == 0 ? "[" : ", ") + getName(iArr[i]));
-                i++;
+            while (true) {
+                int length = iArr.length;
+                Writer writer = this.mWriter;
+                if (i >= length) {
+                    writer.write("],\n");
+                    return;
+                } else {
+                    writer.write((i == 0 ? "[" : ", ") + getName(iArr[i]));
+                    i++;
+                }
             }
-            this.mWriter.write("],\n");
         }
 
         void writeVariable(String str, String str2) throws IOException {
@@ -4745,10 +4754,13 @@ public class ConstraintSet {
             if (i != 0) {
                 if (i == -2) {
                     this.mWriter.write(SPACE + str + ": 'wrap'\n");
-                } else if (i == -1) {
-                    this.mWriter.write(SPACE + str + ": 'parent'\n");
+                    return;
+                }
+                Writer writer = this.mWriter;
+                if (i == -1) {
+                    writer.write(SPACE + str + ": 'parent'\n");
                 } else {
-                    this.mWriter.write(SPACE + str + ": " + i + ",\n");
+                    writer.write(SPACE + str + ": " + i + ",\n");
                 }
             } else if (i4 == -1 && i3 == -1) {
                 if (i2 == 1) {
@@ -4874,11 +4886,17 @@ public class ConstraintSet {
             this.mWriter.write(SPACE + str);
             this.mWriter.write(": ");
             int i = 0;
-            while (i < iArr.length) {
-                this.mWriter.write((i == 0 ? "[" : ", ") + getName(iArr[i]));
-                i++;
+            while (true) {
+                int length = iArr.length;
+                Writer writer = this.mWriter;
+                if (i >= length) {
+                    writer.write("],\n");
+                    return;
+                } else {
+                    writer.write((i == 0 ? "[" : ", ") + getName(iArr[i]));
+                    i++;
+                }
             }
-            this.mWriter.write("],\n");
         }
 
         void writeVariable(String str, String str2) throws IOException {

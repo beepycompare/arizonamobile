@@ -7,14 +7,14 @@ public final class C4 extends Ff {
     /* renamed from: a  reason: collision with root package name */
     public final B4 f529a;
 
-    public C4(C0692x4 c0692x4) {
-        this.f529a = new B4(c0692x4);
+    public C4(C0691x4 c0691x4) {
+        this.f529a = new B4(c0691x4);
     }
 
     @Override // io.appmetrica.analytics.impl.Ff
     public final W8 a(int i) {
         ArrayList arrayList = new ArrayList();
-        int ordinal = EnumC0143bb.a(i).ordinal();
+        int ordinal = EnumC0142bb.a(i).ordinal();
         if (ordinal == 12) {
             arrayList.add(this.f529a.f510a);
         } else if (ordinal == 14) {

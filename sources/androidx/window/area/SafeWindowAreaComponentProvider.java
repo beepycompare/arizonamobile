@@ -41,14 +41,12 @@ public final class SafeWindowAreaComponentProvider {
         return ReflectionUtils.validateReflection$window_release("WindowExtensions#getWindowAreaComponent is not valid", new Function0() { // from class: androidx.window.area.SafeWindowAreaComponentProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean isWindowAreaProviderValid$lambda$0;
-                isWindowAreaProviderValid$lambda$0 = SafeWindowAreaComponentProvider.isWindowAreaProviderValid$lambda$0(obj, this);
-                return Boolean.valueOf(isWindowAreaProviderValid$lambda$0);
+                return Boolean.valueOf(SafeWindowAreaComponentProvider.isWindowAreaProviderValid$lambda$0(obj, this));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean isWindowAreaProviderValid$lambda$0(Object obj, SafeWindowAreaComponentProvider safeWindowAreaComponentProvider) {
         Method method = obj.getClass().getMethod("getWindowAreaComponent", new Class[0]);
         ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;

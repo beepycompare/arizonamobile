@@ -58,9 +58,10 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
 
     /* loaded from: classes4.dex */
     static final class Builder extends InstallationTokenResult.Builder {
+        private byte set$0;
         private String token;
-        private Long tokenCreationTimestamp;
-        private Long tokenExpirationTimestamp;
+        private long tokenCreationTimestamp;
+        private long tokenExpirationTimestamp;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public Builder() {
@@ -68,8 +69,9 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
 
         private Builder(InstallationTokenResult installationTokenResult) {
             this.token = installationTokenResult.getToken();
-            this.tokenExpirationTimestamp = Long.valueOf(installationTokenResult.getTokenExpirationTimestamp());
-            this.tokenCreationTimestamp = Long.valueOf(installationTokenResult.getTokenCreationTimestamp());
+            this.tokenExpirationTimestamp = installationTokenResult.getTokenExpirationTimestamp();
+            this.tokenCreationTimestamp = installationTokenResult.getTokenCreationTimestamp();
+            this.set$0 = (byte) 3;
         }
 
         @Override // com.google.firebase.installations.InstallationTokenResult.Builder
@@ -83,34 +85,34 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
 
         @Override // com.google.firebase.installations.InstallationTokenResult.Builder
         public InstallationTokenResult.Builder setTokenExpirationTimestamp(long j) {
-            this.tokenExpirationTimestamp = Long.valueOf(j);
+            this.tokenExpirationTimestamp = j;
+            this.set$0 = (byte) (this.set$0 | 1);
             return this;
         }
 
         @Override // com.google.firebase.installations.InstallationTokenResult.Builder
         public InstallationTokenResult.Builder setTokenCreationTimestamp(long j) {
-            this.tokenCreationTimestamp = Long.valueOf(j);
+            this.tokenCreationTimestamp = j;
+            this.set$0 = (byte) (this.set$0 | 2);
             return this;
         }
 
         @Override // com.google.firebase.installations.InstallationTokenResult.Builder
         public InstallationTokenResult build() {
-            String str;
-            if (this.token != null) {
-                str = "";
-            } else {
-                str = " token";
+            if (this.set$0 != 3 || this.token == null) {
+                StringBuilder sb = new StringBuilder();
+                if (this.token == null) {
+                    sb.append(" token");
+                }
+                if ((this.set$0 & 1) == 0) {
+                    sb.append(" tokenExpirationTimestamp");
+                }
+                if ((this.set$0 & 2) == 0) {
+                    sb.append(" tokenCreationTimestamp");
+                }
+                throw new IllegalStateException("Missing required properties:" + ((Object) sb));
             }
-            if (this.tokenExpirationTimestamp == null) {
-                str = str + " tokenExpirationTimestamp";
-            }
-            if (this.tokenCreationTimestamp == null) {
-                str = str + " tokenCreationTimestamp";
-            }
-            if (!str.isEmpty()) {
-                throw new IllegalStateException("Missing required properties:" + str);
-            }
-            return new AutoValue_InstallationTokenResult(this.token, this.tokenExpirationTimestamp.longValue(), this.tokenCreationTimestamp.longValue());
+            return new AutoValue_InstallationTokenResult(this.token, this.tokenExpirationTimestamp, this.tokenCreationTimestamp);
         }
     }
 }

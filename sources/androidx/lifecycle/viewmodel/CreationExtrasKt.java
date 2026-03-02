@@ -27,16 +27,14 @@ public final class CreationExtrasKt {
             function1 = new Function1() { // from class: androidx.lifecycle.viewmodel.CreationExtrasKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit CreationExtras$lambda$0;
-                    CreationExtras$lambda$0 = CreationExtrasKt.CreationExtras$lambda$0((MutableCreationExtras) obj2);
-                    return CreationExtras$lambda$0;
+                    return CreationExtrasKt.CreationExtras$lambda$0((MutableCreationExtras) obj2);
                 }
             };
         }
         return CreationExtras(creationExtras, function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CreationExtras$lambda$0(MutableCreationExtras mutableCreationExtras) {
         Intrinsics.checkNotNullParameter(mutableCreationExtras, "<this>");
         return Unit.INSTANCE;

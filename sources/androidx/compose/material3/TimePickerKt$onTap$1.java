@@ -22,10 +22,10 @@ public final class TimePickerKt$onTap$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m3317onTapuYHVD98;
+        Object m2762onTapuYHVD98;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        m3317onTapuYHVD98 = TimePickerKt.m3317onTapuYHVD98(null, 0.0f, 0.0f, 0.0f, false, 0L, null, this);
-        return m3317onTapuYHVD98;
+        m2762onTapuYHVD98 = TimePickerKt.m2762onTapuYHVD98(null, 0.0f, 0.0f, 0.0f, false, 0L, null, this);
+        return m2762onTapuYHVD98;
     }
 }

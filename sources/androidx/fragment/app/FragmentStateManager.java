@@ -102,13 +102,15 @@ public class FragmentStateManager {
             }
         }
         if (this.mFragment.mFromLayout) {
-            if (this.mFragment.mInLayout) {
-                i = Math.max(this.mFragmentManagerState, 2);
+            boolean z = this.mFragment.mInLayout;
+            int i3 = this.mFragmentManagerState;
+            if (z) {
+                i = Math.max(i3, 2);
                 if (this.mFragment.mView != null && this.mFragment.mView.getParent() == null) {
                     i = Math.min(i, 2);
                 }
             } else {
-                i = this.mFragmentManagerState < 4 ? Math.min(i, this.mFragment.mState) : Math.min(i, 1);
+                i = i3 < 4 ? Math.min(i, this.mFragment.mState) : Math.min(i, 1);
             }
         }
         if (!this.mFragment.mAdded) {
@@ -178,8 +180,10 @@ public class FragmentStateManager {
             while (true) {
                 int computeExpectedState = computeExpectedState();
                 if (computeExpectedState != this.mFragment.mState) {
-                    if (computeExpectedState > this.mFragment.mState) {
-                        switch (this.mFragment.mState + 1) {
+                    int i = this.mFragment.mState;
+                    Fragment fragment = this.mFragment;
+                    if (computeExpectedState > i) {
+                        switch (fragment.mState + 1) {
                             case 0:
                                 attach();
                                 continue;
@@ -212,7 +216,7 @@ public class FragmentStateManager {
                                 continue;
                         }
                     } else {
-                        switch (this.mFragment.mState - 1) {
+                        switch (fragment.mState - 1) {
                             case -1:
                                 detach();
                                 continue;
@@ -283,8 +287,8 @@ public class FragmentStateManager {
                             this.mFragment.mFragmentManager.invalidateMenuForFragment(this.mFragment);
                         }
                         this.mFragment.mHiddenChanged = false;
-                        Fragment fragment = this.mFragment;
-                        fragment.onHiddenChanged(fragment.mHidden);
+                        Fragment fragment2 = this.mFragment;
+                        fragment2.onHiddenChanged(fragment2.mHidden);
                         this.mFragment.mChildFragmentManager.dispatchOnHiddenChanged();
                     }
                     return;
@@ -336,12 +340,13 @@ public class FragmentStateManager {
         if (fragmentState != null) {
             this.mFragment.mTargetWho = fragmentState.mTargetWho;
             this.mFragment.mTargetRequestCode = fragmentState.mTargetRequestCode;
-            if (this.mFragment.mSavedUserVisibleHint != null) {
-                Fragment fragment3 = this.mFragment;
+            Boolean bool = this.mFragment.mSavedUserVisibleHint;
+            Fragment fragment3 = this.mFragment;
+            if (bool != null) {
                 fragment3.mUserVisibleHint = fragment3.mSavedUserVisibleHint.booleanValue();
                 this.mFragment.mSavedUserVisibleHint = null;
             } else {
-                this.mFragment.mUserVisibleHint = fragmentState.mUserVisibleHint;
+                fragment3.mUserVisibleHint = fragmentState.mUserVisibleHint;
             }
         }
         if (this.mFragment.mUserVisibleHint) {
@@ -357,10 +362,10 @@ public class FragmentStateManager {
         FragmentStateManager fragmentStateManager = null;
         if (this.mFragment.mTarget != null) {
             FragmentStateManager fragmentStateManager2 = this.mFragmentStore.getFragmentStateManager(this.mFragment.mTarget.mWho);
-            if (fragmentStateManager2 == null) {
-                throw new IllegalStateException("Fragment " + this.mFragment + " declared target fragment " + this.mFragment.mTarget + " that does not belong to this FragmentManager!");
-            }
             Fragment fragment = this.mFragment;
+            if (fragmentStateManager2 == null) {
+                throw new IllegalStateException("Fragment " + fragment + " declared target fragment " + this.mFragment.mTarget + " that does not belong to this FragmentManager!");
+            }
             fragment.mTargetWho = fragment.mTarget.mWho;
             this.mFragment.mTarget = null;
             fragmentStateManager = fragmentStateManager2;
@@ -405,13 +410,17 @@ public class FragmentStateManager {
         ViewGroup viewGroup = null;
         Bundle bundle = this.mFragment.mSavedFragmentState != null ? this.mFragment.mSavedFragmentState.getBundle(SAVED_INSTANCE_STATE_KEY) : null;
         LayoutInflater performGetLayoutInflater = this.mFragment.performGetLayoutInflater(bundle);
-        if (this.mFragment.mContainer != null) {
-            viewGroup = this.mFragment.mContainer;
-        } else if (this.mFragment.mContainerId != 0) {
-            if (this.mFragment.mContainerId == -1) {
-                throw new IllegalArgumentException("Cannot create fragment " + this.mFragment + " for a container view with no id");
+        ViewGroup viewGroup2 = this.mFragment.mContainer;
+        Fragment fragment = this.mFragment;
+        if (viewGroup2 != null) {
+            viewGroup = fragment.mContainer;
+        } else if (fragment.mContainerId != 0) {
+            int i = this.mFragment.mContainerId;
+            Fragment fragment2 = this.mFragment;
+            if (i == -1) {
+                throw new IllegalArgumentException("Cannot create fragment " + fragment2 + " for a container view with no id");
             }
-            viewGroup = (ViewGroup) this.mFragment.mFragmentManager.getContainer().onFindViewById(this.mFragment.mContainerId);
+            viewGroup = (ViewGroup) fragment2.mFragmentManager.getContainer().onFindViewById(this.mFragment.mContainerId);
             if (viewGroup == null) {
                 if (!this.mFragment.mRestored) {
                     try {
@@ -439,10 +448,12 @@ public class FragmentStateManager {
             if (this.mFragment.mHidden) {
                 this.mFragment.mView.setVisibility(8);
             }
-            if (ViewCompat.isAttachedToWindow(this.mFragment.mView)) {
-                ViewCompat.requestApplyInsets(this.mFragment.mView);
+            boolean isAttachedToWindow = ViewCompat.isAttachedToWindow(this.mFragment.mView);
+            Fragment fragment3 = this.mFragment;
+            if (isAttachedToWindow) {
+                ViewCompat.requestApplyInsets(fragment3.mView);
             } else {
-                final View view = this.mFragment.mView;
+                final View view = fragment3.mView;
                 view.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: androidx.fragment.app.FragmentStateManager.1
                     @Override // android.view.View.OnAttachStateChangeListener
                     public void onViewDetachedFromWindow(View view2) {
@@ -457,8 +468,8 @@ public class FragmentStateManager {
             }
             this.mFragment.performViewCreated();
             FragmentLifecycleCallbacksDispatcher fragmentLifecycleCallbacksDispatcher = this.mDispatcher;
-            Fragment fragment = this.mFragment;
-            fragmentLifecycleCallbacksDispatcher.dispatchOnFragmentViewCreated(fragment, fragment.mView, bundle, false);
+            Fragment fragment4 = this.mFragment;
+            fragmentLifecycleCallbacksDispatcher.dispatchOnFragmentViewCreated(fragment4, fragment4.mView, bundle, false);
             int visibility = this.mFragment.mView.getVisibility();
             this.mFragment.setPostOnViewCreatedAlpha(this.mFragment.mView.getAlpha());
             if (this.mFragment.mContainer != null && visibility == 0) {
@@ -559,9 +570,9 @@ public class FragmentStateManager {
             if (!bundle3.isEmpty()) {
                 bundle.putBundle(REGISTRY_STATE_KEY, bundle3);
             }
-            Bundle m8799lambda$attachController$4$androidxfragmentappFragmentManager = this.mFragment.mChildFragmentManager.m8799lambda$attachController$4$androidxfragmentappFragmentManager();
-            if (!m8799lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
-                bundle.putBundle(CHILD_FRAGMENT_MANAGER_KEY, m8799lambda$attachController$4$androidxfragmentappFragmentManager);
+            Bundle m8086lambda$attachController$4$androidxfragmentappFragmentManager = this.mFragment.mChildFragmentManager.m8086lambda$attachController$4$androidxfragmentappFragmentManager();
+            if (!m8086lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
+                bundle.putBundle(CHILD_FRAGMENT_MANAGER_KEY, m8086lambda$attachController$4$androidxfragmentappFragmentManager);
             }
             if (this.mFragment.mView != null) {
                 saveViewState();

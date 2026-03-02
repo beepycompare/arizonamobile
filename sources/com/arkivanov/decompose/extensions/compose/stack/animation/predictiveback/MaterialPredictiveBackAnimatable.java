@@ -97,18 +97,18 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         this.finishProgress$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float finishProgress_delegate$lambda$0;
-                finishProgress_delegate$lambda$0 = MaterialPredictiveBackAnimatable.finishProgress_delegate$lambda$0(MaterialPredictiveBackAnimatable.this);
-                return Float.valueOf(finishProgress_delegate$lambda$0);
+                float floatValue;
+                floatValue = MaterialPredictiveBackAnimatable.this.finishProgressAnimatable.getValue().floatValue();
+                return Float.valueOf(floatValue);
             }
         });
         this.progressAnimatable = AnimatableKt.Animatable$default(initialEvent.getProgress(), 0.0f, 2, null);
         this.progress$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float progress_delegate$lambda$1;
-                progress_delegate$lambda$1 = MaterialPredictiveBackAnimatable.progress_delegate$lambda$1(MaterialPredictiveBackAnimatable.this);
-                return Float.valueOf(progress_delegate$lambda$1);
+                float floatValue;
+                floatValue = MaterialPredictiveBackAnimatable.this.progressAnimatable.getValue().floatValue();
+                return Float.valueOf(floatValue);
             }
         });
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(initialEvent.getSwipeEdge(), null, 2, null);
@@ -120,11 +120,6 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         this(backEvent, (i & 2) != 0 ? null : function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float finishProgress_delegate$lambda$0(MaterialPredictiveBackAnimatable materialPredictiveBackAnimatable) {
-        return materialPredictiveBackAnimatable.finishProgressAnimatable.getValue().floatValue();
-    }
-
     private final float getFinishProgress() {
         return ((Number) this.finishProgress$delegate.getValue()).floatValue();
     }
@@ -132,11 +127,6 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
     /* JADX INFO: Access modifiers changed from: private */
     public final float getProgress() {
         return ((Number) this.progress$delegate.getValue()).floatValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float progress_delegate$lambda$1(MaterialPredictiveBackAnimatable materialPredictiveBackAnimatable) {
-        return materialPredictiveBackAnimatable.progressAnimatable.getValue().floatValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -229,24 +219,22 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         return DrawModifierKt.drawWithContent(Modifier.Companion, new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_enterModifier_$lambda$2;
-                _get_enterModifier_$lambda$2 = MaterialPredictiveBackAnimatable._get_enterModifier_$lambda$2(MaterialPredictiveBackAnimatable.this, (ContentDrawScope) obj);
-                return _get_enterModifier_$lambda$2;
+                return MaterialPredictiveBackAnimatable._get_enterModifier_$lambda$2(MaterialPredictiveBackAnimatable.this, (ContentDrawScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_enterModifier_$lambda$2(MaterialPredictiveBackAnimatable materialPredictiveBackAnimatable, ContentDrawScope drawWithContent) {
         Intrinsics.checkNotNullParameter(drawWithContent, "$this$drawWithContent");
         drawWithContent.drawContent();
-        DrawScope.m5999drawRectnJ9OG0$default(drawWithContent, Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5340drawRectnJ9OG0$default(drawWithContent, Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), materialPredictiveBackAnimatable.getFinishProgress() * 0.25f, 0.0f, 0.0f, 0.0f, 14, null), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Modifier exitModifier(Modifier modifier, Shape shape, Composer composer, int i) {
-        Modifier m5588graphicsLayerAp8cVGQ;
+        Modifier m4934graphicsLayerAp8cVGQ;
         composer.startReplaceGroup(1519216613);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1519216613, i, -1, "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable.exitModifier (MaterialPredictiveBackAnimatable.kt:80)");
@@ -254,7 +242,7 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         composer.startReplaceGroup(75011103);
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m5236boximpl(Size.Companion.m5257getZeroNHjbRc()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(Size.m4584boximpl(Size.Companion.m4605getZeroNHjbRc()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
@@ -270,34 +258,32 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
             rememberedValue2 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit exitModifier$lambda$7$lambda$6;
-                    exitModifier$lambda$7$lambda$6 = MaterialPredictiveBackAnimatable.exitModifier$lambda$7$lambda$6(MutableState.this, (LayoutCoordinates) obj);
-                    return exitModifier$lambda$7$lambda$6;
+                    return MaterialPredictiveBackAnimatable.exitModifier$lambda$7$lambda$6(MutableState.this, (LayoutCoordinates) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         composer.endReplaceGroup();
-        m5588graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5588graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : progress, (r41 & 2) != 0 ? 1.0f : progress, (r41 & 4) == 0 ? getFinishProgress() : 1.0f, (r41 & 8) != 0 ? 0.0f : exitOffsetX(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) >> 32)), progress), (r41 & 16) != 0 ? 0.0f : exitOffsetY(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) & 4294967295L))), (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5839getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5515getAutoNrFUSI() : CompositingStrategy.Companion.m5517getOffscreenNrFUSI());
+        m4934graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m4934graphicsLayerAp8cVGQ(OnPlacedModifierKt.onPlaced(modifier, (Function1) rememberedValue2), (r41 & 1) != 0 ? 1.0f : progress, (r41 & 2) != 0 ? 1.0f : progress, (r41 & 4) == 0 ? getFinishProgress() : 1.0f, (r41 & 8) != 0 ? 0.0f : exitOffsetX(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) >> 32)), progress), (r41 & 16) != 0 ? 0.0f : exitOffsetY(density, Float.intBitsToFloat((int) (exitModifier$lambda$4(mutableState) & 4294967295L))), (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5185getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : shape, (r41 & 4096) != 0 ? false : true, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m4861getAutoNrFUSI() : CompositingStrategy.Companion.m4863getOffscreenNrFUSI());
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m5588graphicsLayerAp8cVGQ;
+        return m4934graphicsLayerAp8cVGQ;
     }
 
     private static final long exitModifier$lambda$4(MutableState<Size> mutableState) {
-        return mutableState.getValue().m5253unboximpl();
+        return mutableState.getValue().m4601unboximpl();
     }
 
     private static final void exitModifier$lambda$5(MutableState<Size> mutableState, long j) {
-        mutableState.setValue(Size.m5236boximpl(j));
+        mutableState.setValue(Size.m4584boximpl(j));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit exitModifier$lambda$7$lambda$6(MutableState mutableState, LayoutCoordinates it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        exitModifier$lambda$5(mutableState, IntSizeKt.m8441toSizeozmzZPI(it.mo6883getSizeYbymL2g()));
+        exitModifier$lambda$5(mutableState, IntSizeKt.m7738toSizeozmzZPI(it.mo6224getSizeYbymL2g()));
         return Unit.INSTANCE;
     }
 
@@ -314,9 +300,9 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return ((f3 - f) / 2.0f) + (density.mo464toPx0680j_4(Dp.m8258constructorimpl(8)) * getProgress());
+            return ((f3 - f) / 2.0f) + (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8)) * getProgress());
         }
-        return ((f - f3) / 2.0f) - (density.mo464toPx0680j_4(Dp.m8258constructorimpl(8)) * getProgress());
+        return ((f - f3) / 2.0f) - (density.mo405toPx0680j_4(Dp.m7555constructorimpl(8)) * getProgress());
     }
 
     @Override // com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimatable
@@ -343,6 +329,6 @@ public final class MaterialPredictiveBackAnimatable implements PredictiveBackAni
         if (f == 0.0f) {
             return 0.0f;
         }
-        return ((f / 20.0f) - density.mo464toPx0680j_4(Dp.m8258constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
+        return ((f / 20.0f) - density.mo405toPx0680j_4(Dp.m7555constructorimpl(8))) * ((getTouchY() - this.initialEvent.getTouchY()) / f) * RangesKt.coerceAtMost(getProgress() * 3.0f, 1.0f);
     }
 }

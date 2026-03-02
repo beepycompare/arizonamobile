@@ -29,83 +29,98 @@ public final class VectorizedFloatAnimationSpec<V extends AnimationVector> imple
 
     @Override // androidx.compose.animation.core.VectorizedAnimationSpec
     public V getValueFromNanos(long j, V v, V v2, V v3) {
+        V v4;
         if (this.valueVector == null) {
             this.valueVector = (V) AnimationVectorsKt.newInstance(v);
         }
-        V v4 = this.valueVector;
-        if (v4 == null) {
+        V v5 = this.valueVector;
+        if (v5 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("valueVector");
-            v4 = null;
+            v5 = null;
         }
-        int size$animation_core = v4.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v5 = this.valueVector;
-            if (v5 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("valueVector");
-                v5 = null;
+        int size$animation_core = v5.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v4 = this.valueVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v5.set$animation_core(i, this.anims.get(i).getValueFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            if (v4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("valueVector");
+                v4 = null;
+            }
+            v4.set$animation_core(i, this.anims.get(i).getValueFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            i++;
         }
-        V v6 = this.valueVector;
-        if (v6 == null) {
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("valueVector");
             return null;
         }
-        return v6;
+        return v4;
     }
 
     @Override // androidx.compose.animation.core.VectorizedAnimationSpec
     public V getVelocityFromNanos(long j, V v, V v2, V v3) {
+        V v4;
         if (this.velocityVector == null) {
             this.velocityVector = (V) AnimationVectorsKt.newInstance(v3);
         }
-        V v4 = this.velocityVector;
-        if (v4 == null) {
+        V v5 = this.velocityVector;
+        if (v5 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
-            v4 = null;
+            v5 = null;
         }
-        int size$animation_core = v4.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v5 = this.velocityVector;
-            if (v5 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
-                v5 = null;
+        int size$animation_core = v5.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v4 = this.velocityVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v5.set$animation_core(i, this.anims.get(i).getVelocityFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            if (v4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
+                v4 = null;
+            }
+            v4.set$animation_core(i, this.anims.get(i).getVelocityFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            i++;
         }
-        V v6 = this.velocityVector;
-        if (v6 == null) {
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
             return null;
         }
-        return v6;
+        return v4;
     }
 
     @Override // androidx.compose.animation.core.VectorizedAnimationSpec
     public V getEndVelocity(V v, V v2, V v3) {
+        V v4;
         if (this.endVelocityVector == null) {
             this.endVelocityVector = (V) AnimationVectorsKt.newInstance(v3);
         }
-        V v4 = this.endVelocityVector;
-        if (v4 == null) {
+        V v5 = this.endVelocityVector;
+        if (v5 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("endVelocityVector");
-            v4 = null;
+            v5 = null;
         }
-        int size$animation_core = v4.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v5 = this.endVelocityVector;
-            if (v5 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("endVelocityVector");
-                v5 = null;
+        int size$animation_core = v5.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v4 = this.endVelocityVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v5.set$animation_core(i, this.anims.get(i).getEndVelocity(v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            if (v4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("endVelocityVector");
+                v4 = null;
+            }
+            v4.set$animation_core(i, this.anims.get(i).getEndVelocity(v.get$animation_core(i), v2.get$animation_core(i), v3.get$animation_core(i)));
+            i++;
         }
-        V v6 = this.endVelocityVector;
-        if (v6 == null) {
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("endVelocityVector");
             return null;
         }
-        return v6;
+        return v4;
     }
 
     @Override // androidx.compose.animation.core.VectorizedAnimationSpec

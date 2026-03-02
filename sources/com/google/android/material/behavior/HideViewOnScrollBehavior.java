@@ -135,7 +135,7 @@ public class HideViewOnScrollBehavior<V extends View> extends CoordinatorLayout.
         AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = new AccessibilityManager.TouchExplorationStateChangeListener() { // from class: com.google.android.material.behavior.HideViewOnScrollBehavior$$ExternalSyntheticLambda0
             @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
             public final void onTouchExplorationStateChanged(boolean z) {
-                HideViewOnScrollBehavior.this.m9814xa484d69d(v, z);
+                HideViewOnScrollBehavior.this.m8844xa484d69d(v, z);
             }
         };
         this.touchExplorationListener = touchExplorationStateChangeListener;
@@ -159,7 +159,7 @@ public class HideViewOnScrollBehavior<V extends View> extends CoordinatorLayout.
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$disableIfTouchExplorationEnabled$0$com-google-android-material-behavior-HideViewOnScrollBehavior  reason: not valid java name */
-    public /* synthetic */ void m9814xa484d69d(View view, boolean z) {
+    public /* synthetic */ void m8844xa484d69d(View view, boolean z) {
         if (this.disableOnTouchExploration && z && isScrolledOut()) {
             slideIn(view);
         }

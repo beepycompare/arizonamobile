@@ -195,10 +195,13 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
             AnalyticsListener.EventTime eventTime = events.getEventTime(i2);
             if (i2 == 0) {
                 this.sessionManager.updateSessionsWithTimelineChange(eventTime);
-            } else if (i2 == 11) {
-                this.sessionManager.updateSessionsWithDiscontinuity(eventTime, this.discontinuityReason);
             } else {
-                this.sessionManager.updateSessions(eventTime);
+                PlaybackSessionManager playbackSessionManager = this.sessionManager;
+                if (i2 == 11) {
+                    playbackSessionManager.updateSessionsWithDiscontinuity(eventTime, this.discontinuityReason);
+                } else {
+                    playbackSessionManager.updateSessions(eventTime);
+                }
             }
         }
     }
@@ -569,9 +572,11 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
                         }
                     }
                 }
-                if (j2 != C.TIME_UNSET) {
-                    this.mediaTimeHistory.add(new long[]{j, j2});
-                } else if (this.mediaTimeHistory.isEmpty()) {
+                int i = (j2 > C.TIME_UNSET ? 1 : (j2 == C.TIME_UNSET ? 0 : -1));
+                List<long[]> list2 = this.mediaTimeHistory;
+                if (i != 0) {
+                    list2.add(new long[]{j, j2});
+                } else if (list2.isEmpty()) {
                 } else {
                     this.mediaTimeHistory.add(guessMediaTimeBasedOnElapsedRealtime(j));
                 }

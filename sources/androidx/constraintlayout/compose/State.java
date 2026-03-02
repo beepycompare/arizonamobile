@@ -30,9 +30,7 @@ public final class State extends androidx.constraintlayout.core.state.State {
         setDpToPixel(new CorePixelDp() { // from class: androidx.constraintlayout.compose.State$$ExternalSyntheticLambda0
             @Override // androidx.constraintlayout.core.state.CorePixelDp
             public final float toPixels(float f) {
-                float _init_$lambda$0;
-                _init_$lambda$0 = State._init_$lambda$0(State.this, f);
-                return _init_$lambda$0;
+                return State._init_$lambda$0(State.this, f);
             }
         });
     }
@@ -42,12 +40,12 @@ public final class State extends androidx.constraintlayout.core.state.State {
     }
 
     /* renamed from: getRootIncomingConstraints-msEJaDk  reason: not valid java name */
-    public final long m8725getRootIncomingConstraintsmsEJaDk() {
+    public final long m8022getRootIncomingConstraintsmsEJaDk() {
         return this.rootIncomingConstraints;
     }
 
     /* renamed from: setRootIncomingConstraints-BRTryo0  reason: not valid java name */
-    public final void m8726setRootIncomingConstraintsBRTryo0(long j) {
+    public final void m8023setRootIncomingConstraintsBRTryo0(long j) {
         this.rootIncomingConstraints = j;
     }
 
@@ -59,7 +57,7 @@ public final class State extends androidx.constraintlayout.core.state.State {
         this.layoutDirection = layoutDirection;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float _init_$lambda$0(State state, float f) {
         return state.density.getDensity() * f;
     }
@@ -67,7 +65,7 @@ public final class State extends androidx.constraintlayout.core.state.State {
     @Override // androidx.constraintlayout.core.state.State
     public int convertDimension(Object obj) {
         if (obj instanceof Dp) {
-            return this.density.mo458roundToPx0680j_4(((Dp) obj).m8272unboximpl());
+            return this.density.mo399roundToPx0680j_4(((Dp) obj).m7569unboximpl());
         }
         return super.convertDimension(obj);
     }

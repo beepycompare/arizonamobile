@@ -315,20 +315,27 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
             try {
                 this.dataSource.open(this.dataSpec);
                 int i = 0;
-                while (i != -1) {
-                    int bytesRead = (int) this.dataSource.getBytesRead();
-                    byte[] bArr = this.sampleData;
-                    if (bArr == null) {
-                        this.sampleData = new byte[1024];
-                    } else if (bytesRead == bArr.length) {
-                        this.sampleData = Arrays.copyOf(bArr, bArr.length * 2);
-                    }
+                while (true) {
                     StatsDataSource statsDataSource = this.dataSource;
-                    byte[] bArr2 = this.sampleData;
-                    i = statsDataSource.read(bArr2, bytesRead, bArr2.length - bytesRead);
+                    if (i != -1) {
+                        int bytesRead = (int) statsDataSource.getBytesRead();
+                        byte[] bArr = this.sampleData;
+                        if (bArr == null) {
+                            this.sampleData = new byte[1024];
+                        } else if (bytesRead == bArr.length) {
+                            this.sampleData = Arrays.copyOf(bArr, bArr.length * 2);
+                        }
+                        StatsDataSource statsDataSource2 = this.dataSource;
+                        byte[] bArr2 = this.sampleData;
+                        i = statsDataSource2.read(bArr2, bytesRead, bArr2.length - bytesRead);
+                    } else {
+                        DataSourceUtil.closeQuietly(statsDataSource);
+                        return;
+                    }
                 }
-            } finally {
+            } catch (Throwable th) {
                 DataSourceUtil.closeQuietly(this.dataSource);
+                throw th;
             }
         }
     }

@@ -48,33 +48,34 @@ public final class zab implements Runnable {
         zag zagVar2 = this.zab;
         zad zadVar = zagVar2.zaa;
         Uri uri = zadVar.zaa;
+        ImageManager imageManager2 = this.zaa;
         if (uri != null) {
-            map2 = this.zaa.zaj;
+            map2 = imageManager2.zaj;
             Long l = (Long) map2.get(uri);
             if (l != null) {
                 if (SystemClock.elapsedRealtime() - l.longValue() < DurationKt.MILLIS_IN_HOUR) {
                     zag zagVar3 = this.zab;
-                    ImageManager imageManager2 = this.zaa;
-                    Context context = imageManager2.zad;
-                    zamVar2 = imageManager2.zag;
+                    ImageManager imageManager3 = this.zaa;
+                    Context context = imageManager3.zad;
+                    zamVar2 = imageManager3.zag;
                     zagVar3.zab(context, zamVar2, true);
                     return;
                 }
-                ImageManager imageManager3 = this.zaa;
+                ImageManager imageManager4 = this.zaa;
                 Uri uri2 = zadVar.zaa;
-                map6 = imageManager3.zaj;
+                map6 = imageManager4.zaj;
                 map6.remove(uri2);
             }
             this.zab.zaa(null, false, true, false);
-            ImageManager imageManager4 = this.zaa;
+            ImageManager imageManager5 = this.zaa;
             Uri uri3 = zadVar.zaa;
-            map3 = imageManager4.zai;
+            map3 = imageManager5.zai;
             ImageManager.ImageReceiver imageReceiver2 = (ImageManager.ImageReceiver) map3.get(uri3);
             if (imageReceiver2 == null) {
                 ImageManager.ImageReceiver imageReceiver3 = new ImageManager.ImageReceiver(zadVar.zaa);
-                ImageManager imageManager5 = this.zaa;
+                ImageManager imageManager6 = this.zaa;
                 Uri uri4 = zadVar.zaa;
-                map5 = imageManager5.zai;
+                map5 = imageManager6.zai;
                 map5.put(uri4, imageReceiver3);
                 imageReceiver2 = imageReceiver3;
             }
@@ -95,9 +96,8 @@ public final class zab implements Runnable {
             }
             return;
         }
-        ImageManager imageManager6 = this.zaa;
-        Context context2 = imageManager6.zad;
-        zamVar = imageManager6.zag;
+        Context context2 = imageManager2.zad;
+        zamVar = imageManager2.zag;
         zagVar2.zab(context2, zamVar, true);
     }
 }

@@ -29,7 +29,7 @@ public final class AccessibilityServiceStateProvider_androidKt {
     private static final String SwitchAccessActivityName = "SwitchAccess";
     private static final String VoiceAccessActivityName = "VoiceAccess";
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ObserveState$lambda$13(LifecycleOwner lifecycleOwner, Function1 function1, Function0 function0, int i, int i2, Composer composer, int i3) {
         ObserveState(lifecycleOwner, function1, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -82,9 +82,7 @@ public final class AccessibilityServiceStateProvider_androidKt {
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit rememberAccessibilityServiceState$lambda$2$lambda$1;
-                    rememberAccessibilityServiceState$lambda$2$lambda$1 = AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState$lambda$2$lambda$1(Listener.this, accessibilityManager, (Lifecycle.Event) obj);
-                    return rememberAccessibilityServiceState$lambda$2$lambda$1;
+                    return AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState$lambda$2$lambda$1(Listener.this, accessibilityManager, (Lifecycle.Event) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
@@ -98,9 +96,7 @@ public final class AccessibilityServiceStateProvider_androidKt {
             rememberedValue3 = new Function0() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit rememberAccessibilityServiceState$lambda$4$lambda$3;
-                    rememberAccessibilityServiceState$lambda$4$lambda$3 = AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState$lambda$4$lambda$3(Listener.this, accessibilityManager);
-                    return rememberAccessibilityServiceState$lambda$4$lambda$3;
+                    return AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState$lambda$4$lambda$3(Listener.this, accessibilityManager);
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
@@ -114,7 +110,7 @@ public final class AccessibilityServiceStateProvider_androidKt {
         return listener;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rememberAccessibilityServiceState$lambda$2$lambda$1(Listener listener, AccessibilityManager accessibilityManager, Lifecycle.Event event) {
         if (event == Lifecycle.Event.ON_RESUME) {
             listener.register(accessibilityManager);
@@ -122,14 +118,9 @@ public final class AccessibilityServiceStateProvider_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rememberAccessibilityServiceState$lambda$4$lambda$3(Listener listener, AccessibilityManager accessibilityManager) {
         listener.unregister(accessibilityManager);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ObserveState$lambda$6$lambda$5(Lifecycle.Event event) {
         return Unit.INSTANCE;
     }
 
@@ -166,9 +157,10 @@ public final class AccessibilityServiceStateProvider_androidKt {
                     rememberedValue = new Function1() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit ObserveState$lambda$6$lambda$5;
-                            ObserveState$lambda$6$lambda$5 = AccessibilityServiceStateProvider_androidKt.ObserveState$lambda$6$lambda$5((Lifecycle.Event) obj);
-                            return ObserveState$lambda$6$lambda$5;
+                            Unit unit;
+                            Lifecycle.Event event = (Lifecycle.Event) obj;
+                            unit = Unit.INSTANCE;
+                            return unit;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -203,9 +195,7 @@ public final class AccessibilityServiceStateProvider_androidKt {
                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult ObserveState$lambda$12$lambda$11;
-                        ObserveState$lambda$12$lambda$11 = AccessibilityServiceStateProvider_androidKt.ObserveState$lambda$12$lambda$11(LifecycleOwner.this, function1, function0, (DisposableEffectScope) obj);
-                        return ObserveState$lambda$12$lambda$11;
+                        return AccessibilityServiceStateProvider_androidKt.ObserveState$lambda$12$lambda$11(LifecycleOwner.this, function1, function0, (DisposableEffectScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -223,15 +213,13 @@ public final class AccessibilityServiceStateProvider_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ObserveState$lambda$13;
-                    ObserveState$lambda$13 = AccessibilityServiceStateProvider_androidKt.ObserveState$lambda$13(LifecycleOwner.this, function12, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ObserveState$lambda$13;
+                    return AccessibilityServiceStateProvider_androidKt.ObserveState$lambda$13(LifecycleOwner.this, function12, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult ObserveState$lambda$12$lambda$11(final LifecycleOwner lifecycleOwner, final Function1 function1, final Function0 function0, DisposableEffectScope disposableEffectScope) {
         final LifecycleEventObserver lifecycleEventObserver = new LifecycleEventObserver() { // from class: androidx.compose.material3.internal.AccessibilityServiceStateProvider_androidKt$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver

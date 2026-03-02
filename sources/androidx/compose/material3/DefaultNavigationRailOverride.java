@@ -15,7 +15,7 @@ public final class DefaultNavigationRailOverride implements NavigationRailOverri
     public static final int $stable = 0;
     public static final DefaultNavigationRailOverride INSTANCE = new DefaultNavigationRailOverride();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavigationRail$lambda$0(DefaultNavigationRailOverride defaultNavigationRailOverride, NavigationRailOverrideScope navigationRailOverrideScope, int i, Composer composer, int i2) {
         defaultNavigationRailOverride.NavigationRail(navigationRailOverrideScope, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -40,7 +40,7 @@ public final class DefaultNavigationRailOverride implements NavigationRailOverri
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-433653496, i2, -1, "androidx.compose.material3.DefaultNavigationRailOverride.NavigationRail (NavigationRail.kt:147)");
             }
-            SurfaceKt.m3083SurfaceT9BRK9s(navigationRailOverrideScope.getModifier(), null, navigationRailOverrideScope.m2787getContainerColor0d7_KjU(), navigationRailOverrideScope.m2788getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1027527987, true, new DefaultNavigationRailOverride$NavigationRail$1(navigationRailOverrideScope), startRestartGroup, 54), startRestartGroup, 12582912, 114);
+            SurfaceKt.m2569SurfaceT9BRK9s(navigationRailOverrideScope.getModifier(), null, navigationRailOverrideScope.m2343getContainerColor0d7_KjU(), navigationRailOverrideScope.m2344getContentColor0d7_KjU(), 0.0f, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-1027527987, true, new DefaultNavigationRailOverride$NavigationRail$1(navigationRailOverrideScope), startRestartGroup, 54), startRestartGroup, 12582912, 114);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -50,9 +50,7 @@ public final class DefaultNavigationRailOverride implements NavigationRailOverri
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DefaultNavigationRailOverride$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NavigationRail$lambda$0;
-                    NavigationRail$lambda$0 = DefaultNavigationRailOverride.NavigationRail$lambda$0(DefaultNavigationRailOverride.this, navigationRailOverrideScope, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NavigationRail$lambda$0;
+                    return DefaultNavigationRailOverride.NavigationRail$lambda$0(DefaultNavigationRailOverride.this, navigationRailOverrideScope, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

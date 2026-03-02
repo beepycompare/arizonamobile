@@ -148,49 +148,49 @@ public final class AndroidParagraph implements Paragraph {
         this.maxLines = i;
         this.overflow = i2;
         this.constraints = j;
-        if ((Constraints.m8212getMinHeightimpl(j) == 0 && Constraints.m8213getMinWidthimpl(j) == 0) == false) {
+        if ((Constraints.m7509getMinHeightimpl(j) == 0 && Constraints.m7510getMinWidthimpl(j) == 0) == false) {
             InlineClassHelperKt.throwIllegalArgumentException("Setting Constraints.minWidth and Constraints.minHeight is not supported, these should be the default zero values instead.");
         }
         if ((i >= 1) == false) {
             InlineClassHelperKt.throwIllegalArgumentException("maxLines should be greater than 0");
         }
         TextStyle style = androidParagraphIntrinsics.getStyle();
-        if (AndroidParagraph_androidKt.access$shouldAttachIndentationFixSpan(style, TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8()))) {
+        if (AndroidParagraph_androidKt.access$shouldAttachIndentationFixSpan(style, TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7491getEllipsisgIe3tQ8()))) {
             charSequence$ui_text = AndroidParagraph_androidKt.access$attachIndentationFixSpan(androidParagraphIntrinsics.getCharSequence$ui_text());
         } else {
             charSequence$ui_text = androidParagraphIntrinsics.getCharSequence$ui_text();
         }
         this.charSequence = charSequence$ui_text;
-        int m7494access$toLayoutAlignaXe7zB0 = AndroidParagraph_androidKt.m7494access$toLayoutAlignaXe7zB0(style.m7742getTextAligne0LSkKk());
-        boolean m8132equalsimpl0 = TextAlign.m8132equalsimpl0(style.m7742getTextAligne0LSkKk(), TextAlign.Companion.m8138getJustifye0LSkKk());
-        int m7496access$toLayoutHyphenationFrequency3fSNIE = AndroidParagraph_androidKt.m7496access$toLayoutHyphenationFrequency3fSNIE(style.getParagraphStyle$ui_text().m7575getHyphensvmbZdU8());
-        int m7495access$toLayoutBreakStrategyxImikfE = AndroidParagraph_androidKt.m7495access$toLayoutBreakStrategyxImikfE(LineBreak.m8041getStrategyfcGXIks(style.m7739getLineBreakrAG3T2k()));
-        int m7497access$toLayoutLineBreakStylehpcqdu8 = AndroidParagraph_androidKt.m7497access$toLayoutLineBreakStylehpcqdu8(LineBreak.m8042getStrictnessusljTpc(style.m7739getLineBreakrAG3T2k()));
-        int m7498access$toLayoutLineBreakWordStylewPN0Rpw = AndroidParagraph_androidKt.m7498access$toLayoutLineBreakWordStylewPN0Rpw(LineBreak.m8043getWordBreakjp8hJ3c(style.m7739getLineBreakrAG3T2k()));
-        if (TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) {
+        int m6826access$toLayoutAlignaXe7zB0 = AndroidParagraph_androidKt.m6826access$toLayoutAlignaXe7zB0(style.m7044getTextAligne0LSkKk());
+        boolean m7429equalsimpl0 = TextAlign.m7429equalsimpl0(style.m7044getTextAligne0LSkKk(), TextAlign.Companion.m7435getJustifye0LSkKk());
+        int m6828access$toLayoutHyphenationFrequency3fSNIE = AndroidParagraph_androidKt.m6828access$toLayoutHyphenationFrequency3fSNIE(style.getParagraphStyle$ui_text().m6903getHyphensvmbZdU8());
+        int m6827access$toLayoutBreakStrategyxImikfE = AndroidParagraph_androidKt.m6827access$toLayoutBreakStrategyxImikfE(LineBreak.m7338getStrategyfcGXIks(style.m7041getLineBreakrAG3T2k()));
+        int m6829access$toLayoutLineBreakStylehpcqdu8 = AndroidParagraph_androidKt.m6829access$toLayoutLineBreakStylehpcqdu8(LineBreak.m7339getStrictnessusljTpc(style.m7041getLineBreakrAG3T2k()));
+        int m6830access$toLayoutLineBreakWordStylewPN0Rpw = AndroidParagraph_androidKt.m6830access$toLayoutLineBreakWordStylewPN0Rpw(LineBreak.m7340getWordBreakjp8hJ3c(style.m7041getLineBreakrAG3T2k()));
+        if (TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7491getEllipsisgIe3tQ8())) {
             truncateAt = TextUtils.TruncateAt.END;
-        } else if (TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8195getMiddleEllipsisgIe3tQ8())) {
+        } else if (TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7492getMiddleEllipsisgIe3tQ8())) {
             truncateAt = TextUtils.TruncateAt.MIDDLE;
-        } else if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8196getStartEllipsisgIe3tQ8())) {
+        } else if (!TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7493getStartEllipsisgIe3tQ8())) {
             textStyle = style;
-            i3 = m8132equalsimpl0 ? 1 : 0;
-            i4 = m7495access$toLayoutBreakStrategyxImikfE;
-            i5 = m7498access$toLayoutLineBreakWordStylewPN0Rpw;
+            i3 = m7429equalsimpl0 ? 1 : 0;
+            i4 = m6827access$toLayoutBreakStrategyxImikfE;
+            i5 = m6830access$toLayoutLineBreakWordStylewPN0Rpw;
             truncateAt = null;
             TextUtils.TruncateAt truncateAt2 = truncateAt;
             CharSequence charSequence2 = charSequence$ui_text;
-            constructTextLayout$default = constructTextLayout$default(this, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, i, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
-            if (Build.VERSION.SDK_INT < 35 || getTextPaint$ui_text().getLetterSpacing() == 0.0f || (!(TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8196getStartEllipsisgIe3tQ8()) || TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8195getMiddleEllipsisgIe3tQ8())) || constructTextLayout$default.getLineEllipsisCount(0) <= 0)) {
+            constructTextLayout$default = constructTextLayout$default(this, m6826access$toLayoutAlignaXe7zB0, i3, truncateAt2, i, m6828access$toLayoutHyphenationFrequency3fSNIE, i4, m6829access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+            if (Build.VERSION.SDK_INT < 35 || getTextPaint$ui_text().getLetterSpacing() == 0.0f || (!(TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7493getStartEllipsisgIe3tQ8()) || TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7492getMiddleEllipsisgIe3tQ8())) || constructTextLayout$default.getLineEllipsisCount(0) <= 0)) {
                 i6 = i;
                 r15 = 1;
             } else {
                 int lineEllipsisOffset = constructTextLayout$default.getLineEllipsisOffset(0);
                 r15 = 1;
                 i6 = i;
-                constructTextLayout$default = constructTextLayout(m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, i6, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, TextUtils.concat(charSequence2.subSequence(0, lineEllipsisOffset), "…", charSequence2.subSequence(constructTextLayout$default.getLineEllipsisCount(0) + lineEllipsisOffset, charSequence2.length())));
+                constructTextLayout$default = constructTextLayout(m6826access$toLayoutAlignaXe7zB0, i3, truncateAt2, i6, m6828access$toLayoutHyphenationFrequency3fSNIE, i4, m6829access$toLayoutLineBreakStylehpcqdu8, i5, TextUtils.concat(charSequence2.subSequence(0, lineEllipsisOffset), "…", charSequence2.subSequence(constructTextLayout$default.getLineEllipsisCount(0) + lineEllipsisOffset, charSequence2.length())));
             }
-            if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8()) && constructTextLayout$default.getHeight() > Constraints.m8210getMaxHeightimpl(j) && i6 > r15) {
-                int access$numberOfLinesThatFitMaxHeight = AndroidParagraph_androidKt.access$numberOfLinesThatFitMaxHeight(constructTextLayout$default, Constraints.m8210getMaxHeightimpl(j));
+            if (!TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7491getEllipsisgIe3tQ8()) && constructTextLayout$default.getHeight() > Constraints.m7507getMaxHeightimpl(j) && i6 > r15) {
+                int access$numberOfLinesThatFitMaxHeight = AndroidParagraph_androidKt.access$numberOfLinesThatFitMaxHeight(constructTextLayout$default, Constraints.m7507getMaxHeightimpl(j));
                 if (access$numberOfLinesThatFitMaxHeight < 0 || access$numberOfLinesThatFitMaxHeight == i6) {
                     androidParagraph = this;
                     i7 = 2;
@@ -198,7 +198,7 @@ public final class AndroidParagraph implements Paragraph {
                     int coerceAtLeast = RangesKt.coerceAtLeast(access$numberOfLinesThatFitMaxHeight, (int) r15);
                     i7 = 2;
                     androidParagraph = this;
-                    constructTextLayout$default = constructTextLayout$default(androidParagraph, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt2, coerceAtLeast, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+                    constructTextLayout$default = constructTextLayout$default(androidParagraph, m6826access$toLayoutAlignaXe7zB0, i3, truncateAt2, coerceAtLeast, m6828access$toLayoutHyphenationFrequency3fSNIE, i4, m6829access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
                 }
                 androidParagraph.layout = constructTextLayout$default;
             } else {
@@ -206,11 +206,11 @@ public final class AndroidParagraph implements Paragraph {
                 i7 = 2;
                 androidParagraph.layout = constructTextLayout$default;
             }
-            androidParagraph.getTextPaint$ui_text().m7973setBrush12SF9DM(textStyle.getBrush(), Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
+            androidParagraph.getTextPaint$ui_text().m7270setBrush12SF9DM(textStyle.getBrush(), Size.m4587constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
             shaderBrushSpans = androidParagraph.getShaderBrushSpans(androidParagraph.layout);
             if (shaderBrushSpans != null) {
                 for (ShaderBrushSpan shaderBrushSpan : shaderBrushSpans) {
-                    shaderBrushSpan.m7997setSizeuvyYCjk(Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)));
+                    shaderBrushSpan.m7294setSizeuvyYCjk(Size.m4587constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)));
                 }
             }
             charSequence = androidParagraph.charSequence;
@@ -286,22 +286,22 @@ public final class AndroidParagraph implements Paragraph {
             truncateAt = TextUtils.TruncateAt.START;
         }
         textStyle = style;
-        i3 = m8132equalsimpl0 ? 1 : 0;
-        i4 = m7495access$toLayoutBreakStrategyxImikfE;
-        i5 = m7498access$toLayoutLineBreakWordStylewPN0Rpw;
+        i3 = m7429equalsimpl0 ? 1 : 0;
+        i4 = m6827access$toLayoutBreakStrategyxImikfE;
+        i5 = m6830access$toLayoutLineBreakWordStylewPN0Rpw;
         TextUtils.TruncateAt truncateAt22 = truncateAt;
         CharSequence charSequence22 = charSequence$ui_text;
-        constructTextLayout$default = constructTextLayout$default(this, m7494access$toLayoutAlignaXe7zB0, i3, truncateAt22, i, m7496access$toLayoutHyphenationFrequency3fSNIE, i4, m7497access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
+        constructTextLayout$default = constructTextLayout$default(this, m6826access$toLayoutAlignaXe7zB0, i3, truncateAt22, i, m6828access$toLayoutHyphenationFrequency3fSNIE, i4, m6829access$toLayoutLineBreakStylehpcqdu8, i5, null, 256, null);
         if (Build.VERSION.SDK_INT < 35) {
         }
         i6 = i;
         r15 = 1;
-        if (!TextOverflow.m8184equalsimpl0(i2, TextOverflow.Companion.m8194getEllipsisgIe3tQ8())) {
+        if (!TextOverflow.m7481equalsimpl0(i2, TextOverflow.Companion.m7491getEllipsisgIe3tQ8())) {
         }
         androidParagraph = this;
         i7 = 2;
         androidParagraph.layout = constructTextLayout$default;
-        androidParagraph.getTextPaint$ui_text().m7973setBrush12SF9DM(textStyle.getBrush(), Size.m5239constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
+        androidParagraph.getTextPaint$ui_text().m7270setBrush12SF9DM(textStyle.getBrush(), Size.m4587constructorimpl((Float.floatToRawIntBits(androidParagraph.getHeight()) & 4294967295L) | (Float.floatToRawIntBits(androidParagraph.getWidth()) << 32)), textStyle.getAlpha());
         shaderBrushSpans = androidParagraph.getShaderBrushSpans(androidParagraph.layout);
         if (shaderBrushSpans != null) {
         }
@@ -320,12 +320,12 @@ public final class AndroidParagraph implements Paragraph {
     }
 
     /* renamed from: getOverflow-gIe3tQ8  reason: not valid java name */
-    public final int m7488getOverflowgIe3tQ8() {
+    public final int m6820getOverflowgIe3tQ8() {
         return this.overflow;
     }
 
     /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-    public final long m7486getConstraintsmsEJaDk() {
+    public final long m6818getConstraintsmsEJaDk() {
         return this.constraints;
     }
 
@@ -339,7 +339,7 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     public float getWidth() {
-        return Constraints.m8211getMaxWidthimpl(this.constraints);
+        return Constraints.m7508getMaxWidthimpl(this.constraints);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -397,30 +397,25 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getOffsetForPosition-k-4lQ0M  reason: not valid java name */
-    public int mo7487getOffsetForPositionk4lQ0M(long j) {
+    public int mo6819getOffsetForPositionk4lQ0M(long j) {
         return this.layout.getOffsetForHorizontal(this.layout.getLineForVertical((int) Float.intBitsToFloat((int) (4294967295L & j))), Float.intBitsToFloat((int) (j >> 32)));
     }
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getRangeForRect-8-6BmAI  reason: not valid java name */
-    public long mo7489getRangeForRect86BmAI(Rect rect, int i, final TextInclusionStrategy textInclusionStrategy) {
-        int[] rangeForRect = this.layout.getRangeForRect(RectHelper_androidKt.toAndroidRectF(rect), AndroidParagraph_androidKt.m7499access$toLayoutTextGranularityduNsdkg(i), new Function2() { // from class: androidx.compose.ui.text.AndroidParagraph$$ExternalSyntheticLambda0
+    public long mo6821getRangeForRect86BmAI(Rect rect, int i, final TextInclusionStrategy textInclusionStrategy) {
+        int[] rangeForRect = this.layout.getRangeForRect(RectHelper_androidKt.toAndroidRectF(rect), AndroidParagraph_androidKt.m6831access$toLayoutTextGranularityduNsdkg(i), new Function2() { // from class: androidx.compose.ui.text.AndroidParagraph$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean rangeForRect_8_6BmAI$lambda$0;
-                rangeForRect_8_6BmAI$lambda$0 = AndroidParagraph.getRangeForRect_8_6BmAI$lambda$0(TextInclusionStrategy.this, (RectF) obj, (RectF) obj2);
-                return Boolean.valueOf(rangeForRect_8_6BmAI$lambda$0);
+                boolean isIncluded;
+                isIncluded = TextInclusionStrategy.this.isIncluded(RectHelper_androidKt.toComposeRect((RectF) obj), RectHelper_androidKt.toComposeRect((RectF) obj2));
+                return Boolean.valueOf(isIncluded);
             }
         });
         if (rangeForRect == null) {
-            return TextRange.Companion.m7706getZerod9O1mEE();
+            return TextRange.Companion.m7008getZerod9O1mEE();
         }
         return TextRangeKt.TextRange(rangeForRect[0], rangeForRect[1]);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean getRangeForRect_8_6BmAI$lambda$0(TextInclusionStrategy textInclusionStrategy, RectF rectF, RectF rectF2) {
-        return textInclusionStrategy.isIncluded(RectHelper_androidKt.toComposeRect(rectF), RectHelper_androidKt.toComposeRect(rectF2));
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -438,8 +433,8 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: fillBoundingBoxes-8ffj60Q  reason: not valid java name */
-    public void mo7485fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i) {
-        this.layout.fillBoundingBoxes(TextRange.m7699getMinimpl(j), TextRange.m7698getMaximpl(j), fArr, i);
+    public void mo6817fillBoundingBoxes8ffj60Q(long j, float[] fArr, int i) {
+        this.layout.fillBoundingBoxes(TextRange.m7001getMinimpl(j), TextRange.m7000getMaximpl(j), fArr, i);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -464,7 +459,7 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: getWordBoundary--jx7JFs  reason: not valid java name */
-    public long mo7490getWordBoundaryjx7JFs(int i) {
+    public long mo6822getWordBoundaryjx7JFs(int i) {
         WordIterator wordIterator = this.layout.getWordIterator();
         return TextRangeKt.TextRange(WordBoundary_androidKt.getWordStart(wordIterator, i), WordBoundary_androidKt.getWordEnd(wordIterator, i));
     }
@@ -519,10 +514,11 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     public int getLineEnd(int i, boolean z) {
+        TextLayout textLayout = this.layout;
         if (z) {
-            return this.layout.getLineVisibleEnd(i);
+            return textLayout.getLineVisibleEnd(i);
         }
-        return this.layout.getLineEnd(i);
+        return textLayout.getLineEnd(i);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -545,10 +541,11 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     public float getHorizontalPosition(int i, boolean z) {
+        TextLayout textLayout = this.layout;
         if (z) {
-            return TextLayout.getPrimaryHorizontal$default(this.layout, i, false, 2, null);
+            return TextLayout.getPrimaryHorizontal$default(textLayout, i, false, 2, null);
         }
-        return TextLayout.getSecondaryHorizontal$default(this.layout, i, false, 2, null);
+        return TextLayout.getSecondaryHorizontal$default(textLayout, i, false, 2, null);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
@@ -581,9 +578,9 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-RPmYEkk  reason: not valid java name */
-    public void mo7492paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
+    public void mo6824paintRPmYEkk(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration) {
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
-        textPaint$ui_text.m7975setColor8_81llA(j);
+        textPaint$ui_text.m7272setColor8_81llA(j);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         paint(canvas);
@@ -591,32 +588,32 @@ public final class AndroidParagraph implements Paragraph {
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-LG529CI  reason: not valid java name */
-    public void mo7491paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        int m7970getBlendMode0nO6VwU = getTextPaint$ui_text().m7970getBlendMode0nO6VwU();
+    public void mo6823paintLG529CI(Canvas canvas, long j, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        int m7267getBlendMode0nO6VwU = getTextPaint$ui_text().m7267getBlendMode0nO6VwU();
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
-        textPaint$ui_text.m7975setColor8_81llA(j);
+        textPaint$ui_text.m7272setColor8_81llA(j);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         textPaint$ui_text.setDrawStyle(drawStyle);
-        textPaint$ui_text.m7972setBlendModes9anfk8(i);
+        textPaint$ui_text.m7269setBlendModes9anfk8(i);
         paint(canvas);
-        getTextPaint$ui_text().m7972setBlendModes9anfk8(m7970getBlendMode0nO6VwU);
+        getTextPaint$ui_text().m7269setBlendModes9anfk8(m7267getBlendMode0nO6VwU);
     }
 
     @Override // androidx.compose.ui.text.Paragraph
     /* renamed from: paint-hn5TExg  reason: not valid java name */
-    public void mo7493painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
-        int m7970getBlendMode0nO6VwU = getTextPaint$ui_text().m7970getBlendMode0nO6VwU();
+    public void mo6825painthn5TExg(Canvas canvas, Brush brush, float f, Shadow shadow, TextDecoration textDecoration, DrawStyle drawStyle, int i) {
+        int m7267getBlendMode0nO6VwU = getTextPaint$ui_text().m7267getBlendMode0nO6VwU();
         AndroidTextPaint textPaint$ui_text = getTextPaint$ui_text();
         float width = getWidth();
         float height = getHeight();
-        textPaint$ui_text.m7973setBrush12SF9DM(brush, Size.m5239constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), f);
+        textPaint$ui_text.m7270setBrush12SF9DM(brush, Size.m4587constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), f);
         textPaint$ui_text.setShadow(shadow);
         textPaint$ui_text.setTextDecoration(textDecoration);
         textPaint$ui_text.setDrawStyle(drawStyle);
-        textPaint$ui_text.m7972setBlendModes9anfk8(i);
+        textPaint$ui_text.m7269setBlendModes9anfk8(i);
         paint(canvas);
-        getTextPaint$ui_text().m7972setBlendModes9anfk8(m7970getBlendMode0nO6VwU);
+        getTextPaint$ui_text().m7269setBlendModes9anfk8(m7267getBlendMode0nO6VwU);
     }
 
     private final void paint(Canvas canvas) {

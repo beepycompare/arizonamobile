@@ -28,9 +28,7 @@ public final class PreferenceDataStoreDelegateKt {
             function1 = new Function1() { // from class: androidx.datastore.preferences.PreferenceDataStoreDelegateKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    List preferencesDataStore$lambda$0;
-                    preferencesDataStore$lambda$0 = PreferenceDataStoreDelegateKt.preferencesDataStore$lambda$0((Context) obj2);
-                    return preferencesDataStore$lambda$0;
+                    return PreferenceDataStoreDelegateKt.preferencesDataStore$lambda$0((Context) obj2);
                 }
             };
         }

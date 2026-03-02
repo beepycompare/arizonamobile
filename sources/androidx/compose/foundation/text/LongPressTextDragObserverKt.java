@@ -34,54 +34,46 @@ public final class LongPressTextDragObserverKt {
         Object detectDragGestures = DragGestureDetectorKt.detectDragGestures(pointerInputScope, new Function1() { // from class: androidx.compose.foundation.text.LongPressTextDragObserverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit detectDragGesturesWithObserver$lambda$0;
-                detectDragGesturesWithObserver$lambda$0 = LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$0(TextDragObserver.this, (Offset) obj);
-                return detectDragGesturesWithObserver$lambda$0;
+                return LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$0(TextDragObserver.this, (Offset) obj);
             }
         }, new Function0() { // from class: androidx.compose.foundation.text.LongPressTextDragObserverKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit detectDragGesturesWithObserver$lambda$1;
-                detectDragGesturesWithObserver$lambda$1 = LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$1(TextDragObserver.this);
-                return detectDragGesturesWithObserver$lambda$1;
+                return LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$1(TextDragObserver.this);
             }
         }, new Function0() { // from class: androidx.compose.foundation.text.LongPressTextDragObserverKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit detectDragGesturesWithObserver$lambda$2;
-                detectDragGesturesWithObserver$lambda$2 = LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$2(TextDragObserver.this);
-                return detectDragGesturesWithObserver$lambda$2;
+                return LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$2(TextDragObserver.this);
             }
         }, new Function2() { // from class: androidx.compose.foundation.text.LongPressTextDragObserverKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit detectDragGesturesWithObserver$lambda$3;
-                detectDragGesturesWithObserver$lambda$3 = LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$3(TextDragObserver.this, (PointerInputChange) obj, (Offset) obj2);
-                return detectDragGesturesWithObserver$lambda$3;
+                return LongPressTextDragObserverKt.detectDragGesturesWithObserver$lambda$3(TextDragObserver.this, (PointerInputChange) obj, (Offset) obj2);
             }
         }, continuation);
         return detectDragGestures == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectDragGestures : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit detectDragGesturesWithObserver$lambda$1(TextDragObserver textDragObserver) {
         textDragObserver.onStop();
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit detectDragGesturesWithObserver$lambda$3(TextDragObserver textDragObserver, PointerInputChange pointerInputChange, Offset offset) {
-        textDragObserver.mo1428onDragk4lQ0M(offset.m5189unboximpl());
+        textDragObserver.mo1254onDragk4lQ0M(offset.m4537unboximpl());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit detectDragGesturesWithObserver$lambda$0(TextDragObserver textDragObserver, Offset offset) {
-        textDragObserver.mo1429onStart3MmeM6k(offset.m5189unboximpl(), SelectionAdjustment.Companion.getNone());
+        textDragObserver.mo1255onStart3MmeM6k(offset.m4537unboximpl(), SelectionAdjustment.Companion.getNone());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit detectDragGesturesWithObserver$lambda$2(TextDragObserver textDragObserver) {
         textDragObserver.onCancel();
         return Unit.INSTANCE;

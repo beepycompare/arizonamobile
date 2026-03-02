@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: PageEvent.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u001c\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b0\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0002:\u0004\u000f\u0010\u0011\u0012B\u0007\b\u0004¢\u0006\u0002\u0010\u0003J8\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\"\u0010\u0005\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0096@¢\u0006\u0002\u0010\tJH\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0000\"\b\b\u0001\u0010\u000b*\u00020\u00022(\u0010\f\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\r0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0096@¢\u0006\u0002\u0010\tJB\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u000b0\u0000\"\b\b\u0001\u0010\u000b*\u00020\u00022\"\u0010\f\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u000b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0006H\u0096@¢\u0006\u0002\u0010\t\u0082\u0001\u0004\u0013\u0014\u0015\u0016¨\u0006\u0017"}, d2 = {"Landroidx/paging/PageEvent;", ExifInterface.GPS_DIRECTION_TRUE, "", "()V", "filter", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "R", "transform", "", "map", "Drop", "Insert", "LoadStateUpdate", "StaticList", "Landroidx/paging/PageEvent$Drop;", "Landroidx/paging/PageEvent$Insert;", "Landroidx/paging/PageEvent$LoadStateUpdate;", "Landroidx/paging/PageEvent$StaticList;", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u001c\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b0\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0002:\u0004\u0010\u0011\u0012\u0013B\t\b\u0004¢\u0006\u0004\b\u0003\u0010\u0004JB\u0010\u0005\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0000\"\b\b\u0001\u0010\u0006*\u00020\u00022\"\u0010\u0007\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\t\u0012\u0006\u0012\u0004\u0018\u00010\u00020\bH\u0096@¢\u0006\u0002\u0010\nJH\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0000\"\b\b\u0001\u0010\u0006*\u00020\u00022(\u0010\u0007\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\f0\t\u0012\u0006\u0012\u0004\u0018\u00010\u00020\bH\u0096@¢\u0006\u0002\u0010\nJ8\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00000\u00002\"\u0010\u000e\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0000\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000f0\t\u0012\u0006\u0012\u0004\u0018\u00010\u00020\bH\u0096@¢\u0006\u0002\u0010\n\u0082\u0001\u0004\u0014\u0015\u0016\u0017¨\u0006\u0018"}, d2 = {"Landroidx/paging/PageEvent;", ExifInterface.GPS_DIRECTION_TRUE, "", "<init>", "()V", "map", "R", "transform", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "", "filter", "predicate", "", "StaticList", "Insert", "Drop", "LoadStateUpdate", "Landroidx/paging/PageEvent$Drop;", "Landroidx/paging/PageEvent$Insert;", "Landroidx/paging/PageEvent$LoadStateUpdate;", "Landroidx/paging/PageEvent$StaticList;", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public abstract class PageEvent<T> {
     public /* synthetic */ PageEvent(DefaultConstructorMarker defaultConstructorMarker) {
@@ -39,14 +39,7 @@ public abstract class PageEvent<T> {
         jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.paging.PageEvent.flatMap$suspendImpl(androidx.paging.PageEvent<T>, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object>, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>>):java.lang.Object
         	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
         	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-        	... 1 more
+        Caused by: java.lang.NullPointerException
         */
     public <R> java.lang.Object flatMap(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -61,14 +54,7 @@ public abstract class PageEvent<T> {
         jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.paging.PageEvent.map$suspendImpl(androidx.paging.PageEvent<T>, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object>, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>>):java.lang.Object
         	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
         	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-        Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-        	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
-        	... 1 more
+        Caused by: java.lang.NullPointerException
         */
     public <R> java.lang.Object map(kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -83,25 +69,35 @@ public abstract class PageEvent<T> {
     }
 
     /* compiled from: PageEvent.kt */
-    @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u001c\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B+\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0007¢\u0006\u0002\u0010\tJ\u000f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005HÆ\u0003J\u000b\u0010\u0010\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u000b\u0010\u0011\u001a\u0004\u0018\u00010\u0007HÆ\u0003J7\u0010\u0012\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0007HÆ\u0001J\u0013\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0002HÖ\u0003J8\u0010\u0016\u001a\b\u0012\u0004\u0012\u00028\u00010\u00032\"\u0010\u0017\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0018H\u0096@¢\u0006\u0002\u0010\u001aJH\u0010\u001b\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0003\"\b\b\u0002\u0010\u001c*\u00020\u00022(\u0010\u001d\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0\u001e0\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0018H\u0096@¢\u0006\u0002\u0010\u001aJ\t\u0010\u001f\u001a\u00020 HÖ\u0001JB\u0010!\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0003\"\b\b\u0002\u0010\u001c*\u00020\u00022\"\u0010\u001d\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0\u0019\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0018H\u0096@¢\u0006\u0002\u0010\u001aJ\b\u0010\"\u001a\u00020#H\u0016R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\b\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\r¨\u0006$"}, d2 = {"Landroidx/paging/PageEvent$StaticList;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "data", "", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "(Ljava/util/List;Landroidx/paging/LoadStates;Landroidx/paging/LoadStates;)V", "getData", "()Ljava/util/List;", "getMediatorLoadStates", "()Landroidx/paging/LoadStates;", "getSourceLoadStates", "component1", "component2", "component3", "copy", "equals", "", "other", "filter", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "R", "transform", "", "hashCode", "", "map", "toString", "", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u001c\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003BA\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0007\u0012\b\b\u0002\u0010\t\u001a\u00020\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\n¢\u0006\u0004\b\f\u0010\rJB\u0010\u0016\u001a\b\u0012\u0004\u0012\u0002H\u00170\u0003\"\b\b\u0002\u0010\u0017*\u00020\u00022\"\u0010\u0018\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00170\u001a\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0019H\u0096@¢\u0006\u0002\u0010\u001bJH\u0010\u001c\u001a\b\u0012\u0004\u0012\u0002H\u00170\u0003\"\b\b\u0002\u0010\u0017*\u00020\u00022(\u0010\u0018\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00170\u001d0\u001a\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0019H\u0096@¢\u0006\u0002\u0010\u001bJ8\u0010\u001e\u001a\b\u0012\u0004\u0012\u00028\u00010\u00032\"\u0010\u001f\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020 0\u001a\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0019H\u0096@¢\u0006\u0002\u0010\u001bJ\b\u0010!\u001a\u00020\"H\u0016J\u000f\u0010#\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005HÆ\u0003J\u000b\u0010$\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u000b\u0010%\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\t\u0010&\u001a\u00020\nHÆ\u0003J\t\u0010'\u001a\u00020\nHÆ\u0003JK\u0010(\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\nHÆ\u0001J\u0013\u0010)\u001a\u00020 2\b\u0010*\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010+\u001a\u00020\nHÖ\u0001R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00028\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\b\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0011R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u000b\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0014¨\u0006,"}, d2 = {"Landroidx/paging/PageEvent$StaticList;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "data", "", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "placeholdersBefore", "", "placeholdersAfter", "<init>", "(Ljava/util/List;Landroidx/paging/LoadStates;Landroidx/paging/LoadStates;II)V", "getData", "()Ljava/util/List;", "getSourceLoadStates", "()Landroidx/paging/LoadStates;", "getMediatorLoadStates", "getPlaceholdersBefore", "()I", "getPlaceholdersAfter", "map", "R", "transform", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "", "filter", "predicate", "", "toString", "", "component1", "component2", "component3", "component4", "component5", "copy", "equals", "other", "hashCode", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class StaticList<T> extends PageEvent<T> {
         private final List<T> data;
         private final LoadStates mediatorLoadStates;
+        private final int placeholdersAfter;
+        private final int placeholdersBefore;
         private final LoadStates sourceLoadStates;
 
-        /* JADX WARN: Multi-variable type inference failed */
-        public static /* synthetic */ StaticList copy$default(StaticList staticList, List list, LoadStates loadStates, LoadStates loadStates2, int i, Object obj) {
-            if ((i & 1) != 0) {
-                list = staticList.data;
+        public static /* synthetic */ StaticList copy$default(StaticList staticList, List list, LoadStates loadStates, LoadStates loadStates2, int i, int i2, int i3, Object obj) {
+            List<T> list2 = list;
+            if ((i3 & 1) != 0) {
+                list2 = staticList.data;
             }
-            if ((i & 2) != 0) {
+            if ((i3 & 2) != 0) {
                 loadStates = staticList.sourceLoadStates;
             }
-            if ((i & 4) != 0) {
+            if ((i3 & 4) != 0) {
                 loadStates2 = staticList.mediatorLoadStates;
             }
-            return staticList.copy(list, loadStates, loadStates2);
+            if ((i3 & 8) != 0) {
+                i = staticList.placeholdersBefore;
+            }
+            if ((i3 & 16) != 0) {
+                i2 = staticList.placeholdersAfter;
+            }
+            int i4 = i2;
+            LoadStates loadStates3 = loadStates2;
+            return staticList.copy(list2, loadStates, loadStates3, i, i4);
         }
 
         public final List<T> component1() {
@@ -116,9 +112,17 @@ public abstract class PageEvent<T> {
             return this.mediatorLoadStates;
         }
 
-        public final StaticList<T> copy(List<? extends T> data, LoadStates loadStates, LoadStates loadStates2) {
+        public final int component4() {
+            return this.placeholdersBefore;
+        }
+
+        public final int component5() {
+            return this.placeholdersAfter;
+        }
+
+        public final StaticList<T> copy(List<? extends T> data, LoadStates loadStates, LoadStates loadStates2, int i, int i2) {
             Intrinsics.checkNotNullParameter(data, "data");
-            return new StaticList<>(data, loadStates, loadStates2);
+            return new StaticList<>(data, loadStates, loadStates2, i, i2);
         }
 
         public boolean equals(Object obj) {
@@ -127,7 +131,7 @@ public abstract class PageEvent<T> {
             }
             if (obj instanceof StaticList) {
                 StaticList staticList = (StaticList) obj;
-                return Intrinsics.areEqual(this.data, staticList.data) && Intrinsics.areEqual(this.sourceLoadStates, staticList.sourceLoadStates) && Intrinsics.areEqual(this.mediatorLoadStates, staticList.mediatorLoadStates);
+                return Intrinsics.areEqual(this.data, staticList.data) && Intrinsics.areEqual(this.sourceLoadStates, staticList.sourceLoadStates) && Intrinsics.areEqual(this.mediatorLoadStates, staticList.mediatorLoadStates) && this.placeholdersBefore == staticList.placeholdersBefore && this.placeholdersAfter == staticList.placeholdersAfter;
             }
             return false;
         }
@@ -137,11 +141,23 @@ public abstract class PageEvent<T> {
             LoadStates loadStates = this.sourceLoadStates;
             int hashCode2 = (hashCode + (loadStates == null ? 0 : loadStates.hashCode())) * 31;
             LoadStates loadStates2 = this.mediatorLoadStates;
-            return hashCode2 + (loadStates2 != null ? loadStates2.hashCode() : 0);
+            return ((((hashCode2 + (loadStates2 != null ? loadStates2.hashCode() : 0)) * 31) + Integer.hashCode(this.placeholdersBefore)) * 31) + Integer.hashCode(this.placeholdersAfter);
         }
 
-        public /* synthetic */ StaticList(List list, LoadStates loadStates, LoadStates loadStates2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(list, (i & 2) != 0 ? null : loadStates, (i & 4) != 0 ? null : loadStates2);
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        /* JADX WARN: Multi-variable type inference failed */
+        public StaticList(List<? extends T> data, LoadStates loadStates, LoadStates loadStates2, int i, int i2) {
+            super(null);
+            Intrinsics.checkNotNullParameter(data, "data");
+            this.data = data;
+            this.sourceLoadStates = loadStates;
+            this.mediatorLoadStates = loadStates2;
+            this.placeholdersBefore = i;
+            this.placeholdersAfter = i2;
+        }
+
+        public /* synthetic */ StaticList(List list, LoadStates loadStates, LoadStates loadStates2, int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+            this(list, (i3 & 2) != 0 ? null : loadStates, (i3 & 4) != 0 ? null : loadStates2, (i3 & 8) != 0 ? 0 : i, (i3 & 16) != 0 ? 0 : i2);
         }
 
         public final List<T> getData() {
@@ -156,26 +172,24 @@ public abstract class PageEvent<T> {
             return this.mediatorLoadStates;
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        /* JADX WARN: Multi-variable type inference failed */
-        public StaticList(List<? extends T> data, LoadStates loadStates, LoadStates loadStates2) {
-            super(null);
-            Intrinsics.checkNotNullParameter(data, "data");
-            this.data = data;
-            this.sourceLoadStates = loadStates;
-            this.mediatorLoadStates = loadStates2;
+        public final int getPlaceholdersBefore() {
+            return this.placeholdersBefore;
+        }
+
+        public final int getPlaceholdersAfter() {
+            return this.placeholdersAfter;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0046  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x0069  */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x0089  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0042  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0064  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
+        /* JADX WARN: Type inference failed for: r14v7, types: [java.util.Collection] */
         /* JADX WARN: Type inference failed for: r4v5 */
         /* JADX WARN: Type inference failed for: r4v6 */
         /* JADX WARN: Type inference failed for: r4v8, types: [java.util.Collection] */
-        /* JADX WARN: Type inference failed for: r8v8, types: [java.util.Collection] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x0080 -> B:21:0x0083). Please submit an issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x0079 -> B:21:0x007c). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -186,7 +200,6 @@ public abstract class PageEvent<T> {
             Function2<? super T, ? super Continuation<? super R>, ? extends Object> function22;
             ArrayList arrayList;
             Iterator<T> it;
-            StaticList<T> staticList;
             if (continuation instanceof PageEvent$StaticList$map$1) {
                 pageEvent$StaticList$map$1 = (PageEvent$StaticList$map$1) continuation;
                 if ((pageEvent$StaticList$map$1.label & Integer.MIN_VALUE) != 0) {
@@ -201,27 +214,24 @@ public abstract class PageEvent<T> {
                         function22 = function2;
                         arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                         it = it2;
-                        staticList = this;
                         if (it.hasNext()) {
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        it = (Iterator) pageEvent$StaticList$map$1.L$3;
-                        ?? r4 = (Collection) pageEvent$StaticList$map$1.L$2;
-                        Function2<? super T, ? super Continuation<? super R>, ? extends Object> function23 = (Function2) pageEvent$StaticList$map$1.L$1;
-                        staticList = (StaticList) pageEvent$StaticList$map$1.L$0;
+                        it = (Iterator) pageEvent$StaticList$map$1.L$2;
+                        ?? r4 = (Collection) pageEvent$StaticList$map$1.L$1;
+                        Function2<? super T, ? super Continuation<? super R>, ? extends Object> function23 = (Function2) pageEvent$StaticList$map$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        ArrayList arrayList2 = (Collection) pageEvent$StaticList$map$1.L$4;
+                        ArrayList arrayList2 = (Collection) pageEvent$StaticList$map$1.L$3;
                         arrayList2.add(obj);
                         arrayList = r4;
                         function22 = function23;
                         if (it.hasNext()) {
-                            pageEvent$StaticList$map$1.L$0 = staticList;
-                            pageEvent$StaticList$map$1.L$1 = function22;
-                            pageEvent$StaticList$map$1.L$2 = arrayList;
-                            pageEvent$StaticList$map$1.L$3 = it;
-                            pageEvent$StaticList$map$1.L$4 = arrayList;
+                            pageEvent$StaticList$map$1.L$0 = function22;
+                            pageEvent$StaticList$map$1.L$1 = arrayList;
+                            pageEvent$StaticList$map$1.L$2 = it;
+                            pageEvent$StaticList$map$1.L$3 = arrayList;
                             pageEvent$StaticList$map$1.label = 1;
                             Object invoke = function22.invoke((T) it.next(), pageEvent$StaticList$map$1);
                             if (invoke == coroutine_suspended) {
@@ -235,7 +245,7 @@ public abstract class PageEvent<T> {
                             arrayList = r4;
                             function22 = function23;
                             if (it.hasNext()) {
-                                return new StaticList(arrayList, staticList.sourceLoadStates, staticList.mediatorLoadStates);
+                                return new StaticList(arrayList, this.sourceLoadStates, this.mediatorLoadStates, this.placeholdersBefore, this.placeholdersAfter);
                             }
                         }
                     }
@@ -250,10 +260,10 @@ public abstract class PageEvent<T> {
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0042  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x005e  */
-        /* JADX WARN: Removed duplicated region for block: B:22:0x007d  */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x0073 -> B:21:0x0076). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x003e  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0059  */
+        /* JADX WARN: Removed duplicated region for block: B:22:0x0076  */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x006c -> B:21:0x006f). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -264,7 +274,6 @@ public abstract class PageEvent<T> {
             ArrayList arrayList;
             Function2<? super T, ? super Continuation<? super Iterable<? extends R>>, ? extends Object> function22;
             Iterator<T> it;
-            StaticList<T> staticList;
             if (continuation instanceof PageEvent$StaticList$flatMap$1) {
                 pageEvent$StaticList$flatMap$1 = (PageEvent$StaticList$flatMap$1) continuation;
                 if ((pageEvent$StaticList$flatMap$1.label & Integer.MIN_VALUE) != 0) {
@@ -277,24 +286,21 @@ public abstract class PageEvent<T> {
                         arrayList = new ArrayList();
                         function22 = function2;
                         it = this.data.iterator();
-                        staticList = this;
                         if (it.hasNext()) {
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        it = (Iterator) pageEvent$StaticList$flatMap$1.L$3;
-                        arrayList = (Collection) pageEvent$StaticList$flatMap$1.L$2;
-                        Function2<? super T, ? super Continuation<? super Iterable<? extends R>>, ? extends Object> function23 = (Function2) pageEvent$StaticList$flatMap$1.L$1;
-                        staticList = (StaticList) pageEvent$StaticList$flatMap$1.L$0;
+                        it = (Iterator) pageEvent$StaticList$flatMap$1.L$2;
+                        arrayList = (Collection) pageEvent$StaticList$flatMap$1.L$1;
+                        Function2<? super T, ? super Continuation<? super Iterable<? extends R>>, ? extends Object> function23 = (Function2) pageEvent$StaticList$flatMap$1.L$0;
                         ResultKt.throwOnFailure(obj);
                         CollectionsKt.addAll(arrayList, (Iterable) obj);
                         function22 = function23;
                         if (it.hasNext()) {
-                            pageEvent$StaticList$flatMap$1.L$0 = staticList;
-                            pageEvent$StaticList$flatMap$1.L$1 = function22;
-                            pageEvent$StaticList$flatMap$1.L$2 = arrayList;
-                            pageEvent$StaticList$flatMap$1.L$3 = it;
+                            pageEvent$StaticList$flatMap$1.L$0 = function22;
+                            pageEvent$StaticList$flatMap$1.L$1 = arrayList;
+                            pageEvent$StaticList$flatMap$1.L$2 = it;
                             pageEvent$StaticList$flatMap$1.label = 1;
                             Object invoke = function22.invoke((T) it.next(), pageEvent$StaticList$flatMap$1);
                             if (invoke == coroutine_suspended) {
@@ -305,7 +311,7 @@ public abstract class PageEvent<T> {
                             CollectionsKt.addAll(arrayList, (Iterable) obj);
                             function22 = function23;
                             if (it.hasNext()) {
-                                return new StaticList((List) arrayList, staticList.sourceLoadStates, staticList.mediatorLoadStates);
+                                return new StaticList((List) arrayList, this.sourceLoadStates, this.mediatorLoadStates, this.placeholdersBefore, this.placeholdersAfter);
                             }
                         }
                     }
@@ -321,12 +327,12 @@ public abstract class PageEvent<T> {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0044  */
-        /* JADX WARN: Removed duplicated region for block: B:17:0x005f  */
-        /* JADX WARN: Removed duplicated region for block: B:23:0x0082  */
-        /* JADX WARN: Removed duplicated region for block: B:25:0x0087  */
-        /* JADX WARN: Type inference failed for: r4v5, types: [java.util.Collection] */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x0076 -> B:21:0x007a). Please submit an issue!!! */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x005a  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x007b  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x0080  */
+        /* JADX WARN: Type inference failed for: r4v4, types: [java.util.Collection] */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:20:0x006f -> B:21:0x0073). Please submit an issue!!! */
         @Override // androidx.paging.PageEvent
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -334,7 +340,6 @@ public abstract class PageEvent<T> {
         public Object filter(Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function2, Continuation<? super PageEvent<T>> continuation) {
             PageEvent$StaticList$filter$1 pageEvent$StaticList$filter$1;
             int i;
-            StaticList<T> staticList;
             ArrayList arrayList;
             Iterator<T> it;
             if (continuation instanceof PageEvent$StaticList$filter$1) {
@@ -346,7 +351,6 @@ public abstract class PageEvent<T> {
                     i = pageEvent$StaticList$filter$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        staticList = this;
                         arrayList = new ArrayList();
                         it = this.data.iterator();
                         if (it.hasNext()) {
@@ -354,12 +358,11 @@ public abstract class PageEvent<T> {
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        Object obj2 = pageEvent$StaticList$filter$1.L$4;
-                        it = (Iterator) pageEvent$StaticList$filter$1.L$3;
-                        Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function22 = (Function2) pageEvent$StaticList$filter$1.L$1;
-                        staticList = (StaticList) pageEvent$StaticList$filter$1.L$0;
+                        Object obj2 = pageEvent$StaticList$filter$1.L$3;
+                        it = (Iterator) pageEvent$StaticList$filter$1.L$2;
+                        Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function22 = (Function2) pageEvent$StaticList$filter$1.L$0;
                         ResultKt.throwOnFailure(obj);
-                        ArrayList arrayList2 = (Collection) pageEvent$StaticList$filter$1.L$2;
+                        ArrayList arrayList2 = (Collection) pageEvent$StaticList$filter$1.L$1;
                         if (((Boolean) obj).booleanValue()) {
                             arrayList2.add(obj2);
                         }
@@ -367,11 +370,10 @@ public abstract class PageEvent<T> {
                         arrayList = arrayList2;
                         if (it.hasNext()) {
                             Object next = it.next();
-                            pageEvent$StaticList$filter$1.L$0 = staticList;
-                            pageEvent$StaticList$filter$1.L$1 = function2;
-                            pageEvent$StaticList$filter$1.L$2 = arrayList;
-                            pageEvent$StaticList$filter$1.L$3 = it;
-                            pageEvent$StaticList$filter$1.L$4 = next;
+                            pageEvent$StaticList$filter$1.L$0 = function2;
+                            pageEvent$StaticList$filter$1.L$1 = arrayList;
+                            pageEvent$StaticList$filter$1.L$2 = it;
+                            pageEvent$StaticList$filter$1.L$3 = next;
                             pageEvent$StaticList$filter$1.label = 1;
                             Object invoke = function2.invoke(next, pageEvent$StaticList$filter$1);
                             if (invoke == coroutine_suspended) {
@@ -386,7 +388,7 @@ public abstract class PageEvent<T> {
                             function2 = function22;
                             arrayList = arrayList2;
                             if (it.hasNext()) {
-                                return new StaticList(arrayList, staticList.sourceLoadStates, staticList.mediatorLoadStates);
+                                return new StaticList(arrayList, this.sourceLoadStates, this.mediatorLoadStates, this.placeholdersBefore, this.placeholdersAfter);
                             }
                         }
                     }
@@ -402,7 +404,7 @@ public abstract class PageEvent<T> {
 
         public String toString() {
             LoadStates loadStates = this.mediatorLoadStates;
-            String str = "PageEvent.StaticList with " + this.data.size() + " items (\n                    |   first item: " + CollectionsKt.firstOrNull((List<? extends Object>) this.data) + "\n                    |   last item: " + CollectionsKt.lastOrNull((List<? extends Object>) this.data) + "\n                    |   sourceLoadStates: " + this.sourceLoadStates + "\n                    ";
+            String str = "PageEvent.StaticList with " + this.data.size() + " items (\n                    |   first item: " + CollectionsKt.firstOrNull((List<? extends Object>) this.data) + "\n                    |   last item: " + CollectionsKt.lastOrNull((List<? extends Object>) this.data) + "\n                    |   sourceLoadStates: " + this.sourceLoadStates + ",\n                    |   placeholdersBefore: " + this.placeholdersBefore + ",\n                    |   placeholdersAfter: " + this.placeholdersAfter + ",\n                    ";
             if (loadStates != null) {
                 str = str + "|   mediatorLoadStates: " + loadStates + '\n';
             }
@@ -411,7 +413,7 @@ public abstract class PageEvent<T> {
     }
 
     /* compiled from: PageEvent.kt */
-    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u001c\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0086\b\u0018\u0000 5*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u00015BG\b\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\u0006\u0010\f\u001a\u00020\r\u0012\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\r¢\u0006\u0002\u0010\u000fJ\t\u0010\u001a\u001a\u00020\u0005HÆ\u0003J\u0015\u0010\u001b\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007HÆ\u0003J\t\u0010\u001c\u001a\u00020\nHÆ\u0003J\t\u0010\u001d\u001a\u00020\nHÆ\u0003J\t\u0010\u001e\u001a\u00020\rHÆ\u0003J\u000b\u0010\u001f\u001a\u0004\u0018\u00010\rHÆ\u0003JY\u0010 \u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0014\b\u0002\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\rHÆ\u0001J\u0013\u0010!\u001a\u00020\"2\b\u0010#\u001a\u0004\u0018\u00010\u0002HÖ\u0003J8\u0010$\u001a\b\u0012\u0004\u0012\u00028\u00010\u00032\"\u0010%\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020\"0'\u0012\u0006\u0012\u0004\u0018\u00010\u00020&H\u0096@¢\u0006\u0002\u0010(JH\u0010)\u001a\b\u0012\u0004\u0012\u0002H*0\u0003\"\b\b\u0002\u0010**\u00020\u00022(\u0010+\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H*0,0'\u0012\u0006\u0012\u0004\u0018\u00010\u00020&H\u0096@¢\u0006\u0002\u0010(J\t\u0010-\u001a\u00020\nHÖ\u0001JB\u0010.\u001a\b\u0012\u0004\u0012\u0002H*0\u0003\"\b\b\u0002\u0010**\u00020\u00022\"\u0010+\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H*0'\u0012\u0006\u0012\u0004\u0018\u00010\u00020&H\u0096@¢\u0006\u0002\u0010(J9\u0010/\u001a\b\u0012\u0004\u0012\u0002H*0\u0000\"\b\b\u0002\u0010**\u00020\u00022\u001e\u0010+\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b\u0012\n\u0012\b\u0012\u0004\u0012\u0002H*0\b00H\u0082\bJ\b\u00101\u001a\u000202H\u0016JM\u00103\u001a\b\u0012\u0004\u0012\u0002H*0\u0000\"\b\b\u0002\u0010**\u00020\u00022*\u0010+\u001a&\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H*0\b0\u000700H\u0080\bø\u0001\u0000¢\u0006\u0002\b4R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u000e\u001a\u0004\u0018\u00010\r¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u001d\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0011\u0010\u000b\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0017R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0013\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u00066"}, d2 = {"Landroidx/paging/PageEvent$Insert;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "loadType", "Landroidx/paging/LoadType;", "pages", "", "Landroidx/paging/TransformablePage;", "placeholdersBefore", "", "placeholdersAfter", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "(Landroidx/paging/LoadType;Ljava/util/List;IILandroidx/paging/LoadStates;Landroidx/paging/LoadStates;)V", "getLoadType", "()Landroidx/paging/LoadType;", "getMediatorLoadStates", "()Landroidx/paging/LoadStates;", "getPages", "()Ljava/util/List;", "getPlaceholdersAfter", "()I", "getPlaceholdersBefore", "getSourceLoadStates", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "equals", "", "other", "filter", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "R", "transform", "", "hashCode", "map", "mapPages", "Lkotlin/Function1;", "toString", "", "transformPages", "transformPages$paging_common_release", "Companion", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u001c\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\f\b\u0086\b\u0018\u0000 6*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003:\u00016BI\b\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\u0006\u0010\f\u001a\u00020\r\u0012\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\r¢\u0006\u0004\b\u000f\u0010\u0010J9\u0010\u001b\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0000\"\b\b\u0002\u0010\u001c*\u00020\u00022\u001e\u0010\u001d\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0\b0\u001eH\u0082\bJM\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0000\"\b\b\u0002\u0010\u001c*\u00020\u00022*\u0010\u001d\u001a&\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0\b0\u00070\u001eH\u0080\bø\u0001\u0000¢\u0006\u0002\b JB\u0010!\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0003\"\b\b\u0002\u0010\u001c*\u00020\u00022\"\u0010\u001d\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0#\u0012\u0006\u0012\u0004\u0018\u00010\u00020\"H\u0096@¢\u0006\u0002\u0010$JH\u0010%\u001a\b\u0012\u0004\u0012\u0002H\u001c0\u0003\"\b\b\u0002\u0010\u001c*\u00020\u00022(\u0010\u001d\u001a$\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u001c0&0#\u0012\u0006\u0012\u0004\u0018\u00010\u00020\"H\u0096@¢\u0006\u0002\u0010$J8\u0010'\u001a\b\u0012\u0004\u0012\u00028\u00010\u00032\"\u0010(\u001a\u001e\b\u0001\u0012\u0004\u0012\u00028\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0#\u0012\u0006\u0012\u0004\u0018\u00010\u00020\"H\u0096@¢\u0006\u0002\u0010$J\b\u0010*\u001a\u00020+H\u0016J\t\u0010,\u001a\u00020\u0005HÆ\u0003J\u0015\u0010-\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007HÆ\u0003J\t\u0010.\u001a\u00020\nHÆ\u0003J\t\u0010/\u001a\u00020\nHÆ\u0003J\t\u00100\u001a\u00020\rHÆ\u0003J\u000b\u00101\u001a\u0004\u0018\u00010\rHÆ\u0003JY\u00102\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u0014\b\u0002\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u00072\b\b\u0002\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\n2\b\b\u0002\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\rHÆ\u0001J\u0013\u00103\u001a\u00020)2\b\u00104\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u00105\u001a\u00020\nHÖ\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001d\u0010\u0006\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00010\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\u000b\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0016R\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0013\u0010\u000e\u001a\u0004\u0018\u00010\r¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0019\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u00067"}, d2 = {"Landroidx/paging/PageEvent$Insert;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "loadType", "Landroidx/paging/LoadType;", "pages", "", "Landroidx/paging/TransformablePage;", "placeholdersBefore", "", "placeholdersAfter", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "<init>", "(Landroidx/paging/LoadType;Ljava/util/List;IILandroidx/paging/LoadStates;Landroidx/paging/LoadStates;)V", "getLoadType", "()Landroidx/paging/LoadType;", "getPages", "()Ljava/util/List;", "getPlaceholdersBefore", "()I", "getPlaceholdersAfter", "getSourceLoadStates", "()Landroidx/paging/LoadStates;", "getMediatorLoadStates", "mapPages", "R", "transform", "Lkotlin/Function1;", "transformPages", "transformPages$paging_common", "map", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "flatMap", "", "filter", "predicate", "", "toString", "", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "equals", "other", "hashCode", "Companion", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Insert<T> extends PageEvent<T> {
         public static final Companion Companion;
@@ -500,6 +502,25 @@ public abstract class PageEvent<T> {
             return hashCode + (loadStates == null ? 0 : loadStates.hashCode());
         }
 
+        private Insert(LoadType loadType, List<TransformablePage<T>> list, int i, int i2, LoadStates loadStates, LoadStates loadStates2) {
+            super(null);
+            this.loadType = loadType;
+            this.pages = list;
+            this.placeholdersBefore = i;
+            this.placeholdersAfter = i2;
+            this.sourceLoadStates = loadStates;
+            this.mediatorLoadStates = loadStates2;
+            if (loadType != LoadType.APPEND && i < 0) {
+                throw new IllegalArgumentException(("Prepend insert defining placeholdersBefore must be > 0, but was " + i).toString());
+            }
+            if (loadType != LoadType.PREPEND && i2 < 0) {
+                throw new IllegalArgumentException(("Append insert defining placeholdersAfter must be > 0, but was " + i2).toString());
+            }
+            if (loadType == LoadType.REFRESH && list.isEmpty()) {
+                throw new IllegalArgumentException("Cannot create a REFRESH Insert event with no TransformablePages as this could permanently stall pagination. Note that this check does not prevent empty LoadResults and is instead usually an indication of an internal error in Paging itself.".toString());
+            }
+        }
+
         /* synthetic */ Insert(LoadType loadType, List list, int i, int i2, LoadStates loadStates, LoadStates loadStates2, int i3, DefaultConstructorMarker defaultConstructorMarker) {
             this(loadType, list, i, i2, loadStates, (i3 & 32) != 0 ? null : loadStates2);
         }
@@ -528,26 +549,7 @@ public abstract class PageEvent<T> {
             return this.mediatorLoadStates;
         }
 
-        private Insert(LoadType loadType, List<TransformablePage<T>> list, int i, int i2, LoadStates loadStates, LoadStates loadStates2) {
-            super(null);
-            this.loadType = loadType;
-            this.pages = list;
-            this.placeholdersBefore = i;
-            this.placeholdersAfter = i2;
-            this.sourceLoadStates = loadStates;
-            this.mediatorLoadStates = loadStates2;
-            if (loadType != LoadType.APPEND && i < 0) {
-                throw new IllegalArgumentException(("Prepend insert defining placeholdersBefore must be > 0, but was " + i).toString());
-            }
-            if (loadType != LoadType.PREPEND && i2 < 0) {
-                throw new IllegalArgumentException(("Append insert defining placeholdersAfter must be > 0, but was " + i2).toString());
-            }
-            if (loadType == LoadType.REFRESH && list.isEmpty()) {
-                throw new IllegalArgumentException("Cannot create a REFRESH Insert event with no TransformablePages as this could permanently stall pagination. Note that this check does not prevent empty LoadResults and is instead usually an indication of an internal error in Paging itself.".toString());
-            }
-        }
-
-        public final <R> Insert<R> transformPages$paging_common_release(Function1<? super List<TransformablePage<T>>, ? extends List<TransformablePage<R>>> transform) {
+        public final <R> Insert<R> transformPages$paging_common(Function1<? super List<TransformablePage<T>>, ? extends List<TransformablePage<R>>> transform) {
             Intrinsics.checkNotNullParameter(transform, "transform");
             return new Insert<>(getLoadType(), transform.invoke(getPages()), getPlaceholdersBefore(), getPlaceholdersAfter(), getSourceLoadStates(), getMediatorLoadStates(), null);
         }
@@ -1027,7 +1029,7 @@ public abstract class PageEvent<T> {
         }
 
         /* compiled from: PageEvent.kt */
-        @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002JF\u0010\u0007\u001a\b\u0012\u0004\u0012\u0002H\b0\u0004\"\b\b\u0002\u0010\b*\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\b0\u000b0\n2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u000fJF\u0010\u0011\u001a\b\u0012\u0004\u0012\u0002H\b0\u0004\"\b\b\u0002\u0010\b*\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\b0\u000b0\n2\u0006\u0010\u0012\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u000fJN\u0010\u0013\u001a\b\u0012\u0004\u0012\u0002H\b0\u0004\"\b\b\u0002\u0010\b*\u00020\u00012\u0012\u0010\t\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\b0\u000b0\n2\u0006\u0010\u0012\u001a\u00020\r2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u000fR\u0017\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00010\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006¨\u0006\u0014"}, d2 = {"Landroidx/paging/PageEvent$Insert$Companion;", "", "()V", "EMPTY_REFRESH_LOCAL", "Landroidx/paging/PageEvent$Insert;", "getEMPTY_REFRESH_LOCAL", "()Landroidx/paging/PageEvent$Insert;", "Append", ExifInterface.GPS_DIRECTION_TRUE, "pages", "", "Landroidx/paging/TransformablePage;", "placeholdersAfter", "", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "Prepend", "placeholdersBefore", HttpHeaders.REFRESH, "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JN\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0005\"\b\b\u0002\u0010\u0006*\u00020\u00012\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\t0\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u000eJF\u0010\u0010\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0005\"\b\b\u0002\u0010\u0006*\u00020\u00012\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\t0\b2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u000eJF\u0010\u0011\u001a\b\u0012\u0004\u0012\u0002H\u00060\u0005\"\b\b\u0002\u0010\u0006*\u00020\u00012\u0012\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00060\t0\b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u000eR\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u0006\u0015"}, d2 = {"Landroidx/paging/PageEvent$Insert$Companion;", "", "<init>", "()V", HttpHeaders.REFRESH, "Landroidx/paging/PageEvent$Insert;", ExifInterface.GPS_DIRECTION_TRUE, "pages", "", "Landroidx/paging/TransformablePage;", "placeholdersBefore", "", "placeholdersAfter", "sourceLoadStates", "Landroidx/paging/LoadStates;", "mediatorLoadStates", "Prepend", "Append", "EMPTY_REFRESH_LOCAL", "getEMPTY_REFRESH_LOCAL", "()Landroidx/paging/PageEvent$Insert;", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes3.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1084,7 +1086,7 @@ public abstract class PageEvent<T> {
         static {
             Companion companion = new Companion(null);
             Companion = companion;
-            EMPTY_REFRESH_LOCAL = Companion.Refresh$default(companion, CollectionsKt.listOf(TransformablePage.Companion.getEMPTY_INITIAL_PAGE()), 0, 0, new LoadStates(LoadState.NotLoading.Companion.getIncomplete$paging_common_release(), LoadState.NotLoading.Companion.getComplete$paging_common_release(), LoadState.NotLoading.Companion.getComplete$paging_common_release()), null, 16, null);
+            EMPTY_REFRESH_LOCAL = Companion.Refresh$default(companion, CollectionsKt.listOf(TransformablePage.Companion.getEMPTY_INITIAL_PAGE()), 0, 0, new LoadStates(LoadState.NotLoading.Companion.getIncomplete$paging_common(), LoadState.NotLoading.Companion.getComplete$paging_common(), LoadState.NotLoading.Companion.getComplete$paging_common()), null, 16, null);
         }
 
         public String toString() {
@@ -1123,7 +1125,7 @@ public abstract class PageEvent<T> {
     }
 
     /* compiled from: PageEvent.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B%\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007¢\u0006\u0002\u0010\nJ\t\u0010\u0013\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0007HÆ\u0003J\t\u0010\u0015\u001a\u00020\u0007HÆ\u0003J\t\u0010\u0016\u001a\u00020\u0007HÆ\u0003J7\u0010\u0017\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\u0007HÆ\u0001J\u0013\u0010\u0018\u001a\u00020\u00192\b\u0010\u001a\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010\u001b\u001a\u00020\u0007HÖ\u0001J\b\u0010\u001c\u001a\u00020\u001dH\u0016R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0011\u0010\u0010\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000eR\u0011\u0010\t\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000e¨\u0006\u001e"}, d2 = {"Landroidx/paging/PageEvent$Drop;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "loadType", "Landroidx/paging/LoadType;", "minPageOffset", "", "maxPageOffset", "placeholdersRemaining", "(Landroidx/paging/LoadType;III)V", "getLoadType", "()Landroidx/paging/LoadType;", "getMaxPageOffset", "()I", "getMinPageOffset", "pageCount", "getPageCount", "getPlaceholdersRemaining", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "toString", "", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B'\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0014\u001a\u00020\u0015H\u0016J\t\u0010\u0016\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0017\u001a\u00020\u0007HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0007HÆ\u0003J\t\u0010\u0019\u001a\u00020\u0007HÆ\u0003J7\u0010\u001a\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\u0007HÆ\u0001J\u0013\u0010\u001b\u001a\u00020\u001c2\b\u0010\u001d\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010\u001e\u001a\u00020\u0007HÖ\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000fR\u0011\u0010\t\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0011\u0010\u0012\u001a\u00020\u00078F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000f¨\u0006\u001f"}, d2 = {"Landroidx/paging/PageEvent$Drop;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "loadType", "Landroidx/paging/LoadType;", "minPageOffset", "", "maxPageOffset", "placeholdersRemaining", "<init>", "(Landroidx/paging/LoadType;III)V", "getLoadType", "()Landroidx/paging/LoadType;", "getMinPageOffset", "()I", "getMaxPageOffset", "getPlaceholdersRemaining", "pageCount", "getPageCount", "toString", "", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Drop<T> extends PageEvent<T> {
         private final LoadType loadType;
@@ -1132,9 +1134,9 @@ public abstract class PageEvent<T> {
         private final int placeholdersRemaining;
 
         /* compiled from: PageEvent.kt */
-        @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
         /* loaded from: classes3.dex */
-        public /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ class WhenMappings {
             public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
             static {
@@ -1203,22 +1205,6 @@ public abstract class PageEvent<T> {
             return (((((this.loadType.hashCode() * 31) + Integer.hashCode(this.minPageOffset)) * 31) + Integer.hashCode(this.maxPageOffset)) * 31) + Integer.hashCode(this.placeholdersRemaining);
         }
 
-        public final LoadType getLoadType() {
-            return this.loadType;
-        }
-
-        public final int getMinPageOffset() {
-            return this.minPageOffset;
-        }
-
-        public final int getMaxPageOffset() {
-            return this.maxPageOffset;
-        }
-
-        public final int getPlaceholdersRemaining() {
-            return this.placeholdersRemaining;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Drop(LoadType loadType, int i, int i2, int i3) {
             super(null);
@@ -1236,6 +1222,22 @@ public abstract class PageEvent<T> {
             if (i3 < 0) {
                 throw new IllegalArgumentException(("Invalid placeholdersRemaining " + i3).toString());
             }
+        }
+
+        public final LoadType getLoadType() {
+            return this.loadType;
+        }
+
+        public final int getMinPageOffset() {
+            return this.minPageOffset;
+        }
+
+        public final int getMaxPageOffset() {
+            return this.maxPageOffset;
+        }
+
+        public final int getPlaceholdersRemaining() {
+            return this.placeholdersRemaining;
         }
 
         public final int getPageCount() {
@@ -1257,7 +1259,7 @@ public abstract class PageEvent<T> {
     }
 
     /* compiled from: PageEvent.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u0019\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0002\u0010\u0007J\t\u0010\u000b\u001a\u00020\u0005HÆ\u0003J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0005HÆ\u0003J%\u0010\r\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0013\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010\u0011\u001a\u00020\u0012HÖ\u0001J\b\u0010\u0013\u001a\u00020\u0014H\u0016R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\t¨\u0006\u0015"}, d2 = {"Landroidx/paging/PageEvent$LoadStateUpdate;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "source", "Landroidx/paging/LoadStates;", "mediator", "(Landroidx/paging/LoadStates;Landroidx/paging/LoadStates;)V", "getMediator", "()Landroidx/paging/LoadStates;", "getSource", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "paging-common_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\b\u0086\b\u0018\u0000*\b\b\u0001\u0010\u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u001b\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010\f\u001a\u00020\rH\u0016J\t\u0010\u000e\u001a\u00020\u0005HÆ\u0003J\u000b\u0010\u000f\u001a\u0004\u0018\u00010\u0005HÆ\u0003J%\u0010\u0010\u001a\b\u0012\u0004\u0012\u00028\u00010\u00002\b\b\u0002\u0010\u0004\u001a\u00020\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0013\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u0002HÖ\u0003J\t\u0010\u0014\u001a\u00020\u0015HÖ\u0001R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\n¨\u0006\u0016"}, d2 = {"Landroidx/paging/PageEvent$LoadStateUpdate;", ExifInterface.GPS_DIRECTION_TRUE, "", "Landroidx/paging/PageEvent;", "source", "Landroidx/paging/LoadStates;", "mediator", "<init>", "(Landroidx/paging/LoadStates;Landroidx/paging/LoadStates;)V", "getSource", "()Landroidx/paging/LoadStates;", "getMediator", "toString", "", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "paging-common"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class LoadStateUpdate<T> extends PageEvent<T> {
         private final LoadStates mediator;
@@ -1303,24 +1305,24 @@ public abstract class PageEvent<T> {
             return hashCode + (loadStates == null ? 0 : loadStates.hashCode());
         }
 
-        public /* synthetic */ LoadStateUpdate(LoadStates loadStates, LoadStates loadStates2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(loadStates, (i & 2) != 0 ? null : loadStates2);
-        }
-
-        public final LoadStates getSource() {
-            return this.source;
-        }
-
-        public final LoadStates getMediator() {
-            return this.mediator;
-        }
-
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public LoadStateUpdate(LoadStates source, LoadStates loadStates) {
             super(null);
             Intrinsics.checkNotNullParameter(source, "source");
             this.source = source;
             this.mediator = loadStates;
+        }
+
+        public /* synthetic */ LoadStateUpdate(LoadStates loadStates, LoadStates loadStates2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(loadStates, (i & 2) != 0 ? null : loadStates2);
+        }
+
+        public final LoadStates getMediator() {
+            return this.mediator;
+        }
+
+        public final LoadStates getSource() {
+            return this.source;
         }
 
         public String toString() {
@@ -1334,13 +1336,7 @@ public abstract class PageEvent<T> {
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
+        java.lang.NullPointerException
         */
     static /* synthetic */ <T, R> java.lang.Object map$suspendImpl(androidx.paging.PageEvent<T> r0, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super R>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*
@@ -1352,13 +1348,7 @@ public abstract class PageEvent<T> {
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
+        java.lang.NullPointerException
         */
     static /* synthetic */ <T, R> java.lang.Object flatMap$suspendImpl(androidx.paging.PageEvent<T> r0, kotlin.jvm.functions.Function2<? super T, ? super kotlin.coroutines.Continuation<? super java.lang.Iterable<? extends R>>, ? extends java.lang.Object> r1, kotlin.coroutines.Continuation<? super androidx.paging.PageEvent<R>> r2) {
         /*

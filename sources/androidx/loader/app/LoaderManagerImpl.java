@@ -291,10 +291,17 @@ public class LoaderManagerImpl extends LoaderManager {
         public void onCleared() {
             super.onCleared();
             int size = this.mLoaders.size();
-            for (int i = 0; i < size; i++) {
-                this.mLoaders.valueAt(i).destroy(true);
+            int i = 0;
+            while (true) {
+                SparseArrayCompat<LoaderInfo> sparseArrayCompat = this.mLoaders;
+                if (i < size) {
+                    sparseArrayCompat.valueAt(i).destroy(true);
+                    i++;
+                } else {
+                    sparseArrayCompat.clear();
+                    return;
+                }
             }
-            this.mLoaders.clear();
         }
 
         public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {

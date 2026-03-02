@@ -38,10 +38,12 @@ public final class CompletableOnErrorComplete extends Completable {
         @Override // io.reactivex.CompletableObserver
         public void onError(Throwable th) {
             try {
-                if (CompletableOnErrorComplete.this.predicate.test(th)) {
-                    this.downstream.onComplete();
+                boolean test = CompletableOnErrorComplete.this.predicate.test(th);
+                CompletableObserver completableObserver = this.downstream;
+                if (test) {
+                    completableObserver.onComplete();
                 } else {
-                    this.downstream.onError(th);
+                    completableObserver.onError(th);
                 }
             } catch (Throwable th2) {
                 Exceptions.throwIfFatal(th2);

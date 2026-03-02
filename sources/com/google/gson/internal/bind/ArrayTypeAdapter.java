@@ -47,14 +47,16 @@ public final class ArrayTypeAdapter<E> extends TypeAdapter<Object> {
         }
         jsonReader.endArray();
         int size = arrayList.size();
-        if (this.componentType.isPrimitive()) {
-            Object newInstance = Array.newInstance((Class<?>) this.componentType, size);
+        boolean isPrimitive = this.componentType.isPrimitive();
+        Class<E> cls = this.componentType;
+        if (isPrimitive) {
+            Object newInstance = Array.newInstance((Class<?>) cls, size);
             for (int i = 0; i < size; i++) {
                 Array.set(newInstance, i, arrayList.get(i));
             }
             return newInstance;
         }
-        return arrayList.toArray((Object[]) Array.newInstance((Class<?>) this.componentType, size));
+        return arrayList.toArray((Object[]) Array.newInstance((Class<?>) cls, size));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

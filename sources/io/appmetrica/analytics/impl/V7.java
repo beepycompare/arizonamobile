@@ -7,8 +7,8 @@ public final class V7 implements G8 {
     }
 
     @Override // io.appmetrica.analytics.impl.G8
-    public final C0746z8 a(P5 p5) {
-        return new C0746z8(p5, I8.NONE);
+    public final C0745z8 a(P5 p5) {
+        return new C0745z8(p5, I8.NONE);
     }
 
     public final I8 a() {

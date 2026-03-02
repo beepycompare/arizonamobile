@@ -38,57 +38,57 @@ public final class SliderColors {
     }
 
     /* renamed from: getThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m3001getThumbColor0d7_KjU() {
+    public final long m2507getThumbColor0d7_KjU() {
         return this.thumbColor;
     }
 
     /* renamed from: getActiveTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2993getActiveTrackColor0d7_KjU() {
+    public final long m2499getActiveTrackColor0d7_KjU() {
         return this.activeTrackColor;
     }
 
     /* renamed from: getActiveTickColor-0d7_KjU  reason: not valid java name */
-    public final long m2992getActiveTickColor0d7_KjU() {
+    public final long m2498getActiveTickColor0d7_KjU() {
         return this.activeTickColor;
     }
 
     /* renamed from: getInactiveTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m3000getInactiveTrackColor0d7_KjU() {
+    public final long m2506getInactiveTrackColor0d7_KjU() {
         return this.inactiveTrackColor;
     }
 
     /* renamed from: getInactiveTickColor-0d7_KjU  reason: not valid java name */
-    public final long m2999getInactiveTickColor0d7_KjU() {
+    public final long m2505getInactiveTickColor0d7_KjU() {
         return this.inactiveTickColor;
     }
 
     /* renamed from: getDisabledThumbColor-0d7_KjU  reason: not valid java name */
-    public final long m2998getDisabledThumbColor0d7_KjU() {
+    public final long m2504getDisabledThumbColor0d7_KjU() {
         return this.disabledThumbColor;
     }
 
     /* renamed from: getDisabledActiveTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2995getDisabledActiveTrackColor0d7_KjU() {
+    public final long m2501getDisabledActiveTrackColor0d7_KjU() {
         return this.disabledActiveTrackColor;
     }
 
     /* renamed from: getDisabledActiveTickColor-0d7_KjU  reason: not valid java name */
-    public final long m2994getDisabledActiveTickColor0d7_KjU() {
+    public final long m2500getDisabledActiveTickColor0d7_KjU() {
         return this.disabledActiveTickColor;
     }
 
     /* renamed from: getDisabledInactiveTrackColor-0d7_KjU  reason: not valid java name */
-    public final long m2997getDisabledInactiveTrackColor0d7_KjU() {
+    public final long m2503getDisabledInactiveTrackColor0d7_KjU() {
         return this.disabledInactiveTrackColor;
     }
 
     /* renamed from: getDisabledInactiveTickColor-0d7_KjU  reason: not valid java name */
-    public final long m2996getDisabledInactiveTickColor0d7_KjU() {
+    public final long m2502getDisabledInactiveTickColor0d7_KjU() {
         return this.disabledInactiveTickColor;
     }
 
     /* renamed from: copy--K518z4$default  reason: not valid java name */
-    public static /* synthetic */ SliderColors m2990copyK518z4$default(SliderColors sliderColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, int i, Object obj) {
+    public static /* synthetic */ SliderColors m2496copyK518z4$default(SliderColors sliderColors, long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, int i, Object obj) {
         long j11;
         long j12;
         long j13 = (i & 1) != 0 ? sliderColors.thumbColor : j;
@@ -108,26 +108,26 @@ public final class SliderColors {
             j11 = j10;
             j12 = j22;
         }
-        return sliderColors.m2991copyK518z4(j20, j14, j15, j16, j17, j18, j19, j21, j12, j11);
+        return sliderColors.m2497copyK518z4(j20, j14, j15, j16, j17, j18, j19, j21, j12, j11);
     }
 
     /* renamed from: copy--K518z4  reason: not valid java name */
-    public final SliderColors m2991copyK518z4(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10) {
+    public final SliderColors m2497copyK518z4(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10) {
         return new SliderColors(j != 16 ? j : this.thumbColor, j2 != 16 ? j2 : this.activeTrackColor, j3 != 16 ? j3 : this.activeTickColor, j4 != 16 ? j4 : this.inactiveTrackColor, j5 != 16 ? j5 : this.inactiveTickColor, j6 != 16 ? j6 : this.disabledThumbColor, j7 != 16 ? j7 : this.disabledActiveTrackColor, j8 != 16 ? j8 : this.disabledActiveTickColor, j9 != 16 ? j9 : this.disabledInactiveTrackColor, j10 != 16 ? j10 : this.disabledInactiveTickColor, null);
     }
 
     /* renamed from: thumbColor-vNxB06k$material3  reason: not valid java name */
-    public final long m3002thumbColorvNxB06k$material3(boolean z) {
+    public final long m2508thumbColorvNxB06k$material3(boolean z) {
         return z ? this.thumbColor : this.disabledThumbColor;
     }
 
     /* renamed from: trackColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m3004trackColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m2510trackColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.activeTrackColor : this.inactiveTrackColor : z2 ? this.disabledActiveTrackColor : this.disabledInactiveTrackColor;
     }
 
     /* renamed from: tickColor-WaAFU9c$material3  reason: not valid java name */
-    public final long m3003tickColorWaAFU9c$material3(boolean z, boolean z2) {
+    public final long m2509tickColorWaAFU9c$material3(boolean z, boolean z2) {
         return z ? z2 ? this.activeTickColor : this.inactiveTickColor : z2 ? this.disabledActiveTickColor : this.disabledInactiveTickColor;
     }
 
@@ -139,10 +139,10 @@ public final class SliderColors {
             return false;
         }
         SliderColors sliderColors = (SliderColors) obj;
-        return Color.m5425equalsimpl0(this.thumbColor, sliderColors.thumbColor) && Color.m5425equalsimpl0(this.activeTrackColor, sliderColors.activeTrackColor) && Color.m5425equalsimpl0(this.activeTickColor, sliderColors.activeTickColor) && Color.m5425equalsimpl0(this.inactiveTrackColor, sliderColors.inactiveTrackColor) && Color.m5425equalsimpl0(this.inactiveTickColor, sliderColors.inactiveTickColor) && Color.m5425equalsimpl0(this.disabledThumbColor, sliderColors.disabledThumbColor) && Color.m5425equalsimpl0(this.disabledActiveTrackColor, sliderColors.disabledActiveTrackColor) && Color.m5425equalsimpl0(this.disabledActiveTickColor, sliderColors.disabledActiveTickColor) && Color.m5425equalsimpl0(this.disabledInactiveTrackColor, sliderColors.disabledInactiveTrackColor) && Color.m5425equalsimpl0(this.disabledInactiveTickColor, sliderColors.disabledInactiveTickColor);
+        return Color.m4773equalsimpl0(this.thumbColor, sliderColors.thumbColor) && Color.m4773equalsimpl0(this.activeTrackColor, sliderColors.activeTrackColor) && Color.m4773equalsimpl0(this.activeTickColor, sliderColors.activeTickColor) && Color.m4773equalsimpl0(this.inactiveTrackColor, sliderColors.inactiveTrackColor) && Color.m4773equalsimpl0(this.inactiveTickColor, sliderColors.inactiveTickColor) && Color.m4773equalsimpl0(this.disabledThumbColor, sliderColors.disabledThumbColor) && Color.m4773equalsimpl0(this.disabledActiveTrackColor, sliderColors.disabledActiveTrackColor) && Color.m4773equalsimpl0(this.disabledActiveTickColor, sliderColors.disabledActiveTickColor) && Color.m4773equalsimpl0(this.disabledInactiveTrackColor, sliderColors.disabledInactiveTrackColor) && Color.m4773equalsimpl0(this.disabledInactiveTickColor, sliderColors.disabledInactiveTickColor);
     }
 
     public int hashCode() {
-        return (((((((((((((((((Color.m5431hashCodeimpl(this.thumbColor) * 31) + Color.m5431hashCodeimpl(this.activeTrackColor)) * 31) + Color.m5431hashCodeimpl(this.activeTickColor)) * 31) + Color.m5431hashCodeimpl(this.inactiveTrackColor)) * 31) + Color.m5431hashCodeimpl(this.inactiveTickColor)) * 31) + Color.m5431hashCodeimpl(this.disabledThumbColor)) * 31) + Color.m5431hashCodeimpl(this.disabledActiveTrackColor)) * 31) + Color.m5431hashCodeimpl(this.disabledActiveTickColor)) * 31) + Color.m5431hashCodeimpl(this.disabledInactiveTrackColor)) * 31) + Color.m5431hashCodeimpl(this.disabledInactiveTickColor);
+        return (((((((((((((((((Color.m4779hashCodeimpl(this.thumbColor) * 31) + Color.m4779hashCodeimpl(this.activeTrackColor)) * 31) + Color.m4779hashCodeimpl(this.activeTickColor)) * 31) + Color.m4779hashCodeimpl(this.inactiveTrackColor)) * 31) + Color.m4779hashCodeimpl(this.inactiveTickColor)) * 31) + Color.m4779hashCodeimpl(this.disabledThumbColor)) * 31) + Color.m4779hashCodeimpl(this.disabledActiveTrackColor)) * 31) + Color.m4779hashCodeimpl(this.disabledActiveTickColor)) * 31) + Color.m4779hashCodeimpl(this.disabledInactiveTrackColor)) * 31) + Color.m4779hashCodeimpl(this.disabledInactiveTickColor);
     }
 }

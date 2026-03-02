@@ -14,8 +14,8 @@ public interface PlatformFocusOwner {
     Rect getEmbeddedViewFocusRect();
 
     /* renamed from: moveFocusInChildren-3ESFkO8  reason: not valid java name */
-    boolean mo5120moveFocusInChildren3ESFkO8(int i);
+    boolean mo4468moveFocusInChildren3ESFkO8(int i);
 
     /* renamed from: requestOwnerFocus-7o62pno  reason: not valid java name */
-    boolean mo5121requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect);
+    boolean mo4469requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect);
 }

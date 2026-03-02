@@ -18,9 +18,9 @@ public final class J4 extends DatabaseScript {
     public final String f = "server_time_offset";
     public final String g = "type";
     public final String h = "obtained_before_first_sync";
-    public final C0595t7 i = new C0595t7(null, 1, null);
+    public final C0594t7 i = new C0594t7(null, 1, null);
 
-    public final C0570s7 a(Cursor cursor) {
+    public final C0569s7 a(Cursor cursor) {
         try {
             Long valueOf = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.c)));
             int i = cursor.getInt(cursor.getColumnIndexOrThrow(this.g));
@@ -38,7 +38,7 @@ public final class J4 extends DatabaseScript {
             if (cursor.getInt(cursor.getColumnIndexOrThrow(this.h)) != 1) {
                 z = false;
             }
-            return new C0570s7(valueOf, vk, string, new C0545r7(valueOf2, valueOf3, Boolean.valueOf(z)));
+            return new C0569s7(valueOf, vk, string, new C0544r7(valueOf2, valueOf3, Boolean.valueOf(z)));
         } catch (Throwable unused) {
             return null;
         }
@@ -67,7 +67,7 @@ public final class J4 extends DatabaseScript {
             cursor = sQLiteDatabase2.query(this.f638a, null, null, null, null, null, null, String.valueOf(this.b));
             while (cursor.moveToNext()) {
                 try {
-                    C0570s7 a2 = a(cursor);
+                    C0569s7 a2 = a(cursor);
                     if (a2 != null && (l = a2.f1218a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f1203a) != null && l2.longValue() > 0) {
                         arrayList.add(this.i.fromModel(a2));
                     }

@@ -100,7 +100,7 @@ public abstract class ActivityResultRegistry {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void register$lambda$1(ActivityResultRegistry activityResultRegistry, String str, ActivityResultCallback activityResultCallback, ActivityResultContract activityResultContract, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -292,9 +292,9 @@ public abstract class ActivityResultRegistry {
         for (Number number : SequencesKt.generateSequence(new Function0() { // from class: androidx.activity.result.ActivityResultRegistry$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Integer generateRandomNumber$lambda$0;
-                generateRandomNumber$lambda$0 = ActivityResultRegistry.generateRandomNumber$lambda$0();
-                return generateRandomNumber$lambda$0;
+                Integer valueOf;
+                valueOf = Integer.valueOf(Random.Default.nextInt(2147418112) + 65536);
+                return valueOf;
             }
         })) {
             if (!this.rcToKey.containsKey(Integer.valueOf(number.intValue()))) {
@@ -302,11 +302,6 @@ public abstract class ActivityResultRegistry {
             }
         }
         throw new NoSuchElementException("Sequence contains no element matching the predicate.");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Integer generateRandomNumber$lambda$0() {
-        return Integer.valueOf(Random.Default.nextInt(2147418112) + 65536);
     }
 
     private final void bindRcKey(int i, String str) {

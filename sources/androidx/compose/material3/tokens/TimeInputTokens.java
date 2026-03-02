@@ -11,16 +11,16 @@ public final class TimeInputTokens {
     private static final float TimeFieldContainerHeight;
     public static final TimeInputTokens INSTANCE = new TimeInputTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.SurfaceContainerHigh;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3978getLevel3D9Ej5fM();
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ColorSchemeKeyTokens FocusIndicatorColor = ColorSchemeKeyTokens.Secondary;
     private static final ColorSchemeKeyTokens HeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeadlineFont = TypographyKeyTokens.LabelMedium;
     private static final ShapeKeyTokens PeriodSelectorContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float PeriodSelectorContainerWidth = Dp.m8258constructorimpl((float) 52.0d);
+    private static final float PeriodSelectorContainerWidth = Dp.m7555constructorimpl((float) 52.0d);
     private static final TypographyKeyTokens PeriodSelectorLabelTextFont = TypographyKeyTokens.TitleMedium;
     private static final ColorSchemeKeyTokens PeriodSelectorOutlineColor = ColorSchemeKeyTokens.Outline;
-    private static final float PeriodSelectorOutlineWidth = Dp.m8258constructorimpl((float) 1.0d);
+    private static final float PeriodSelectorOutlineWidth = Dp.m7555constructorimpl((float) 1.0d);
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedContainerColor = ColorSchemeKeyTokens.TertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedFocusLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
     private static final ColorSchemeKeyTokens PeriodSelectorSelectedHoverLabelTextColor = ColorSchemeKeyTokens.OnTertiaryContainer;
@@ -32,11 +32,11 @@ public final class TimeInputTokens {
     private static final ColorSchemeKeyTokens PeriodSelectorUnselectedPressedLabelTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final ColorSchemeKeyTokens TimeFieldContainerColor = ColorSchemeKeyTokens.SurfaceContainerHighest;
     private static final ShapeKeyTokens TimeFieldContainerShape = ShapeKeyTokens.CornerSmall;
-    private static final float TimeFieldContainerWidth = Dp.m8258constructorimpl((float) 96.0d);
+    private static final float TimeFieldContainerWidth = Dp.m7555constructorimpl((float) 96.0d);
     private static final ColorSchemeKeyTokens TimeFieldFocusContainerColor = ColorSchemeKeyTokens.PrimaryContainer;
     private static final ColorSchemeKeyTokens TimeFieldFocusLabelTextColor = ColorSchemeKeyTokens.OnPrimaryContainer;
     private static final ColorSchemeKeyTokens TimeFieldFocusOutlineColor = ColorSchemeKeyTokens.Primary;
-    private static final float TimeFieldFocusOutlineWidth = Dp.m8258constructorimpl((float) 2.0d);
+    private static final float TimeFieldFocusOutlineWidth = Dp.m7555constructorimpl((float) 2.0d);
     private static final ColorSchemeKeyTokens TimeFieldHoverLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final ColorSchemeKeyTokens TimeFieldLabelTextColor = ColorSchemeKeyTokens.OnSurface;
     private static final TypographyKeyTokens TimeFieldLabelTextFont = TypographyKeyTokens.DisplayMedium;
@@ -50,8 +50,8 @@ public final class TimeInputTokens {
 
     static {
         float f = (float) 72.0d;
-        PeriodSelectorContainerHeight = Dp.m8258constructorimpl(f);
-        TimeFieldContainerHeight = Dp.m8258constructorimpl(f);
+        PeriodSelectorContainerHeight = Dp.m7555constructorimpl(f);
+        TimeFieldContainerHeight = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -59,7 +59,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m4421getContainerElevationD9Ej5fM() {
+    public final float m3805getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
@@ -80,7 +80,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getPeriodSelectorContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4422getPeriodSelectorContainerHeightD9Ej5fM() {
+    public final float m3806getPeriodSelectorContainerHeightD9Ej5fM() {
         return PeriodSelectorContainerHeight;
     }
 
@@ -89,7 +89,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getPeriodSelectorContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4423getPeriodSelectorContainerWidthD9Ej5fM() {
+    public final float m3807getPeriodSelectorContainerWidthD9Ej5fM() {
         return PeriodSelectorContainerWidth;
     }
 
@@ -102,7 +102,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getPeriodSelectorOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4424getPeriodSelectorOutlineWidthD9Ej5fM() {
+    public final float m3808getPeriodSelectorOutlineWidthD9Ej5fM() {
         return PeriodSelectorOutlineWidth;
     }
 
@@ -147,7 +147,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getTimeFieldContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4425getTimeFieldContainerHeightD9Ej5fM() {
+    public final float m3809getTimeFieldContainerHeightD9Ej5fM() {
         return TimeFieldContainerHeight;
     }
 
@@ -156,7 +156,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getTimeFieldContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4426getTimeFieldContainerWidthD9Ej5fM() {
+    public final float m3810getTimeFieldContainerWidthD9Ej5fM() {
         return TimeFieldContainerWidth;
     }
 
@@ -173,7 +173,7 @@ public final class TimeInputTokens {
     }
 
     /* renamed from: getTimeFieldFocusOutlineWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4427getTimeFieldFocusOutlineWidthD9Ej5fM() {
+    public final float m3811getTimeFieldFocusOutlineWidthD9Ej5fM() {
         return TimeFieldFocusOutlineWidth;
     }
 

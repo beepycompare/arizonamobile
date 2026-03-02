@@ -63,10 +63,12 @@ final class AppUpdateManagerKtxKt$requestUpdateFlow$1 extends SuspendLambda impl
                 @Override // com.google.android.play.core.listener.StateUpdatedListener
                 public final void onStateUpdate(InstallState installState) {
                     Intrinsics.checkNotNullParameter(installState, "installState");
-                    if (installState.installStatus() == 11) {
-                        AppUpdateManagerKtxKt.tryOffer(producerScope, new AppUpdateResult.Downloaded(appUpdateManager));
+                    int installStatus = installState.installStatus();
+                    ProducerScope<AppUpdateResult> producerScope2 = producerScope;
+                    if (installStatus == 11) {
+                        AppUpdateManagerKtxKt.tryOffer(producerScope2, new AppUpdateResult.Downloaded(appUpdateManager));
                     } else {
-                        AppUpdateManagerKtxKt.tryOffer(producerScope, new AppUpdateResult.InProgress(installState));
+                        AppUpdateManagerKtxKt.tryOffer(producerScope2, new AppUpdateResult.InProgress(installState));
                     }
                 }
             }, new Function1<AppUpdatePassthroughListener, Unit>() { // from class: com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$globalUpdateListener$2

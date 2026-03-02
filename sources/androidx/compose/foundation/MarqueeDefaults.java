@@ -12,7 +12,7 @@ public final class MarqueeDefaults {
     private static final int Iterations = 3;
     private static final int RepeatDelayMillis = WindowSizeClass.WIDTH_DP_LARGE_LOWER_BOUND;
     private static final MarqueeSpacing Spacing = MarqueeSpacing.Companion.fractionOfContainer(0.33333334f);
-    private static final float Velocity = Dp.m8258constructorimpl(30);
+    private static final float Velocity = Dp.m7555constructorimpl(30);
 
     public static /* synthetic */ void getIterations$annotations() {
     }
@@ -36,7 +36,7 @@ public final class MarqueeDefaults {
     }
 
     /* renamed from: getVelocity-D9Ej5fM  reason: not valid java name */
-    public final float m391getVelocityD9Ej5fM() {
+    public final float m343getVelocityD9Ej5fM() {
         return Velocity;
     }
 }

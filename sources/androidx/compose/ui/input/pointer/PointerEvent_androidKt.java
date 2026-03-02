@@ -6,12 +6,12 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class PointerEvent_androidKt {
     /* renamed from: getAreAnyPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6704getAreAnyPressedaHzCxE(int i) {
+    public static final boolean m6045getAreAnyPressedaHzCxE(int i) {
         return i != 0;
     }
 
     /* renamed from: indexOfFirstPressed-aHzCx-E  reason: not valid java name */
-    public static final int m6705indexOfFirstPressedaHzCxE(int i) {
+    public static final int m6046indexOfFirstPressedaHzCxE(int i) {
         if (i == 0) {
             return -1;
         }
@@ -23,7 +23,7 @@ public final class PointerEvent_androidKt {
     }
 
     /* renamed from: indexOfLastPressed-aHzCx-E  reason: not valid java name */
-    public static final int m6706indexOfLastPressedaHzCxE(int i) {
+    public static final int m6047indexOfLastPressedaHzCxE(int i) {
         int i2 = -1;
         for (int i3 = (i & (-97)) | ((i & 96) >>> 5); i3 != 0; i3 >>>= 1) {
             i2++;
@@ -32,92 +32,92 @@ public final class PointerEvent_androidKt {
     }
 
     /* renamed from: isAltGraphPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6707isAltGraphPressed5xRPYO0(int i) {
+    public static final boolean m6048isAltGraphPressed5xRPYO0(int i) {
         return false;
     }
 
     /* renamed from: isAltPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6708isAltPressed5xRPYO0(int i) {
+    public static final boolean m6049isAltPressed5xRPYO0(int i) {
         return (i & 2) != 0;
     }
 
     /* renamed from: isBackPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6709isBackPressedaHzCxE(int i) {
+    public static final boolean m6050isBackPressedaHzCxE(int i) {
         return (i & 8) != 0;
     }
 
     /* renamed from: isCapsLockOn-5xRPYO0  reason: not valid java name */
-    public static final boolean m6710isCapsLockOn5xRPYO0(int i) {
+    public static final boolean m6051isCapsLockOn5xRPYO0(int i) {
         return (i & 1048576) != 0;
     }
 
     /* renamed from: isCtrlPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6711isCtrlPressed5xRPYO0(int i) {
+    public static final boolean m6052isCtrlPressed5xRPYO0(int i) {
         return (i & 4096) != 0;
     }
 
     /* renamed from: isForwardPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6712isForwardPressedaHzCxE(int i) {
+    public static final boolean m6053isForwardPressedaHzCxE(int i) {
         return (i & 16) != 0;
     }
 
     /* renamed from: isFunctionPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6713isFunctionPressed5xRPYO0(int i) {
+    public static final boolean m6054isFunctionPressed5xRPYO0(int i) {
         return (i & 8) != 0;
     }
 
     /* renamed from: isMetaPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6714isMetaPressed5xRPYO0(int i) {
+    public static final boolean m6055isMetaPressed5xRPYO0(int i) {
         return (i & 65536) != 0;
     }
 
     /* renamed from: isNumLockOn-5xRPYO0  reason: not valid java name */
-    public static final boolean m6715isNumLockOn5xRPYO0(int i) {
+    public static final boolean m6056isNumLockOn5xRPYO0(int i) {
         return (i & 2097152) != 0;
     }
 
     /* renamed from: isPrimaryPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6717isPrimaryPressedaHzCxE(int i) {
+    public static final boolean m6058isPrimaryPressedaHzCxE(int i) {
         return (i & 33) != 0;
     }
 
     /* renamed from: isScrollLockOn-5xRPYO0  reason: not valid java name */
-    public static final boolean m6718isScrollLockOn5xRPYO0(int i) {
+    public static final boolean m6059isScrollLockOn5xRPYO0(int i) {
         return (i & 4194304) != 0;
     }
 
     /* renamed from: isSecondaryPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6719isSecondaryPressedaHzCxE(int i) {
+    public static final boolean m6060isSecondaryPressedaHzCxE(int i) {
         return (i & 66) != 0;
     }
 
     /* renamed from: isShiftPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6720isShiftPressed5xRPYO0(int i) {
+    public static final boolean m6061isShiftPressed5xRPYO0(int i) {
         return (i & 1) != 0;
     }
 
     /* renamed from: isSymPressed-5xRPYO0  reason: not valid java name */
-    public static final boolean m6721isSymPressed5xRPYO0(int i) {
+    public static final boolean m6062isSymPressed5xRPYO0(int i) {
         return (i & 4) != 0;
     }
 
     /* renamed from: isTertiaryPressed-aHzCx-E  reason: not valid java name */
-    public static final boolean m6722isTertiaryPressedaHzCxE(int i) {
+    public static final boolean m6063isTertiaryPressedaHzCxE(int i) {
         return (i & 4) != 0;
     }
 
     public static final int EmptyPointerKeyboardModifiers() {
-        return PointerKeyboardModifiers.m6806constructorimpl(0);
+        return PointerKeyboardModifiers.m6147constructorimpl(0);
     }
 
     /* renamed from: isPressed-bNIWhpI  reason: not valid java name */
-    public static final boolean m6716isPressedbNIWhpI(int i, int i2) {
+    public static final boolean m6057isPressedbNIWhpI(int i, int i2) {
         if (i2 != 0) {
             if (i2 != 1) {
                 return (i2 == 2 || i2 == 3 || i2 == 4) ? (i & (1 << i2)) != 0 : (i & (1 << (i2 + 2))) != 0;
             }
-            return m6719isSecondaryPressedaHzCxE(i);
+            return m6060isSecondaryPressedaHzCxE(i);
         }
-        return m6717isPrimaryPressedaHzCxE(i);
+        return m6058isPrimaryPressedaHzCxE(i);
     }
 }

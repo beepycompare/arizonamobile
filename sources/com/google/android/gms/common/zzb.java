@@ -3,14 +3,15 @@ package com.google.android.gms.common;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zzb implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final /* bridge */ /* synthetic */ Object createFromParcel(Parcel parcel) {
         int validateObjectHeader = SafeParcelReader.validateObjectHeader(parcel);
-        long j = -1;
         int i = 0;
+        boolean z = false;
+        long j = -1;
         String str = null;
         while (parcel.dataPosition() < validateObjectHeader) {
             int readHeader = SafeParcelReader.readHeader(parcel);
@@ -21,12 +22,14 @@ public final class zzb implements Parcelable.Creator {
                 i = SafeParcelReader.readInt(parcel, readHeader);
             } else if (fieldId == 3) {
                 j = SafeParcelReader.readLong(parcel, readHeader);
+            } else if (fieldId == 4) {
+                z = SafeParcelReader.readBoolean(parcel, readHeader);
             } else {
                 SafeParcelReader.skipUnknownField(parcel, readHeader);
             }
         }
         SafeParcelReader.ensureAtEnd(parcel, validateObjectHeader);
-        return new Feature(str, i, j);
+        return new Feature(str, i, j, z);
     }
 
     @Override // android.os.Parcelable.Creator

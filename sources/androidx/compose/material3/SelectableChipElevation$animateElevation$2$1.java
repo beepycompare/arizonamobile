@@ -49,10 +49,10 @@ public final class SelectableChipElevation$animateElevation$2$1 extends SuspendL
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0047, code lost:
-        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m8256boximpl(r6.$target), r6) == r0) goto L18;
+        if (r6.$animatable.snapTo(androidx.compose.ui.unit.Dp.m7553boximpl(r6.$target), r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x005f, code lost:
-        if (androidx.compose.material3.internal.ElevationKt.m3612animateElevationrAjV9yQ(r6.$animatable, r6.$target, r7, r6.$interaction, r6) == r0) goto L18;
+        if (androidx.compose.material3.internal.ElevationKt.m3003animateElevationrAjV9yQ(r6.$animatable, r6.$target, r7, r6.$interaction, r6) == r0) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0061, code lost:
         return r0;
@@ -67,7 +67,7 @@ public final class SelectableChipElevation$animateElevation$2$1 extends SuspendL
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (!Dp.m8263equalsimpl0(this.$animatable.getTargetValue().m8272unboximpl(), this.$target)) {
+            if (!Dp.m7560equalsimpl0(this.$animatable.getTargetValue().m7569unboximpl(), this.$target)) {
                 if (this.$enabled) {
                     animateElevation$lambda$2 = SelectableChipElevation.animateElevation$lambda$2(this.$lastInteraction$delegate);
                     this.label = 2;

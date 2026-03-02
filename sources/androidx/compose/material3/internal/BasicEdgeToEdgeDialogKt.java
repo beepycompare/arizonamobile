@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0001¢\u0006\u0002\u0010\u0002\u001a-\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00012\b\b\u0002\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00040\tH\u0001¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\u0010\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00040\tX\u008a\u0084\u0002"}, d2 = {"rememberPredictiveBackState", "Landroidx/compose/material3/internal/PredictiveBackState;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/internal/PredictiveBackState;", "PredictiveBackStateHandler", "", RemoteConfigConstants.ResponseFieldKey.STATE, "enabled", "", "onBack", "Lkotlin/Function0;", "(Landroidx/compose/material3/internal/PredictiveBackState;ZLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "material3", "currentOnBack"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BasicEdgeToEdgeDialogKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit PredictiveBackStateHandler$lambda$3(PredictiveBackState predictiveBackState, boolean z, Function0 function0, int i, int i2, Composer composer, int i3) {
         PredictiveBackStateHandler(predictiveBackState, z, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -104,9 +104,7 @@ public final class BasicEdgeToEdgeDialogKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.internal.BasicEdgeToEdgeDialogKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit PredictiveBackStateHandler$lambda$3;
-                    PredictiveBackStateHandler$lambda$3 = BasicEdgeToEdgeDialogKt.PredictiveBackStateHandler$lambda$3(PredictiveBackState.this, z4, function0, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return PredictiveBackStateHandler$lambda$3;
+                    return BasicEdgeToEdgeDialogKt.PredictiveBackStateHandler$lambda$3(PredictiveBackState.this, z4, function0, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

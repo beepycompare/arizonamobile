@@ -68,7 +68,7 @@ import ru.mrlargha.feature.workshop.presentation.adapters.SelectColorAdapter;
 import ru.mrlargha.feature.workshop.presentation.adapters.WorkshopAdapter;
 import ru.mrlargha.feature.workshop.presentation.adapters.WorkshopMenuAdapter;
 /* compiled from: WorkshopScreen.kt */
-@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001jB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u00107\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002082\u0006\u0010:\u001a\u00020\u001eH\u0002J\u0010\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0002J\u0010\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020\u001eH\u0002J\u0010\u0010?\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\u0010\u0010A\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010B\u001a\u000208H\u0002J\u0010\u0010C\u001a\u0002082\u0006\u0010D\u001a\u00020EH\u0002J\b\u0010F\u001a\u000208H\u0002J\u0010\u0010G\u001a\u0002082\u0006\u0010H\u001a\u00020\u001eH\u0002J\u0010\u0010I\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\u0010\u0010K\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\b\u0010L\u001a\u000208H\u0002J\u0010\u0010M\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010O\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0012\u0010Q\u001a\u0002082\b\u0010N\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010R\u001a\u0002082\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020X2\u0006\u0010Y\u001a\u00020VH\u0002J\b\u0010Z\u001a\u000208H\u0002J\u0018\u0010[\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0016J\u0010\u0010^\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010_\u001a\u000208H\u0002J\u0018\u0010`\u001a\u0002082\u0006\u0010a\u001a\u00020b2\u0006\u0010c\u001a\u00020\u001eH\u0002J\u0018\u0010d\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0002J\u0010\u0010e\u001a\u0002082\u0006\u0010f\u001a\u00020gH\u0002J\u0010\u0010h\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0016J\b\u0010i\u001a\u000208H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020#¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010+\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010-\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010.\u001a\n 0*\u0004\u0018\u00010/0/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006k"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "workshopScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/WorkshopScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemList", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "workShopMenuAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopMenuAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "isFix", "", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentMainItem", "currentRightItem", "currentLeftItem", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentScreenType", "isDisableAll", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "initViewSize", "", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "initMenu", "initializeInfoBlock", "workshopMenus", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "sendItemData", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "clickedItem", "item", "updateMainField", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "", "view", "addLockedItems", "onBackendMessage", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "setVisible", "closeScreen", "Spawner", "workshop_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001jB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u00107\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002082\u0006\u0010:\u001a\u00020\u001eH\u0002J\u0010\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0002J\u0010\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020\u001eH\u0002J\u0010\u0010?\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\u0010\u0010A\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010B\u001a\u000208H\u0002J\u0010\u0010C\u001a\u0002082\u0006\u0010D\u001a\u00020EH\u0002J\b\u0010F\u001a\u000208H\u0002J\u0010\u0010G\u001a\u0002082\u0006\u0010H\u001a\u00020\u001eH\u0002J\u0010\u0010I\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\u0010\u0010K\u001a\u0002082\u0006\u0010J\u001a\u00020\u001eH\u0002J\b\u0010L\u001a\u000208H\u0002J\u0010\u0010M\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010O\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010N\u001a\u00020\u0013H\u0002J\u0012\u0010Q\u001a\u0002082\b\u0010N\u001a\u0004\u0018\u00010\u0013H\u0002J(\u0010R\u001a\u0002082\u0006\u0010S\u001a\u00020T2\u0006\u0010U\u001a\u00020V2\u0006\u0010W\u001a\u00020X2\u0006\u0010Y\u001a\u00020VH\u0002J\b\u0010Z\u001a\u000208H\u0002J\u0018\u0010[\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0016J\u0010\u0010^\u001a\u0002082\u0006\u0010@\u001a\u00020\u001eH\u0002J\b\u0010_\u001a\u000208H\u0002J\u0018\u0010`\u001a\u0002082\u0006\u0010a\u001a\u00020b2\u0006\u0010c\u001a\u00020\u001eH\u0002J\u0018\u0010d\u001a\u0002082\u0006\u0010\\\u001a\u00020X2\u0006\u0010]\u001a\u00020\u0006H\u0002J\u0010\u0010e\u001a\u0002082\u0006\u0010f\u001a\u00020gH\u0002J\u0010\u0010h\u001a\u0002082\u0006\u0010<\u001a\u00020\u001eH\u0016J\b\u0010i\u001a\u000208H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u00128BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010%\u001a\u00020#¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010+\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010-\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010.\u001a\n 0*\u0004\u0018\u00010/0/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000205X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006k"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "workshopScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/workshop/databinding/WorkshopScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "inventoryItemList", "inventoryAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "workShopMenuAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopMenuAdapter;", "colorsAdapter", "Lru/mrlargha/feature/workshop/presentation/adapters/SelectColorAdapter;", "isFix", "", "selectedColor", "progress", "progressIncrement", "progressHandler", "Landroid/os/Handler;", "incrementHandler", "handler", "getHandler", "()Landroid/os/Handler;", "leftItemIndex", "centerItemIndex", "rightItemIndex", "currentMainItem", "currentRightItem", "currentLeftItem", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "currentScreenType", "isDisableAll", "runnable", "Ljava/lang/Runnable;", "btnIsClicked", "initViewSize", "", "clearItemsMainFieldClicked", "sendRequest", "setCountsVisibility", "visible", "leftItemUi", "isLocked", "btnSharpenEnableStatus", "isEnabled", "btnPaintEnableStatus", "initMenu", "initializeInfoBlock", "workshopMenus", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "sendItemData", "changeInventoryType", "isFixingScreen", "visibilityLeftRightViews", "isVisible", "paintingScreen", "initColors", "clickedItem", "item", "updateMainField", "updateRightField", "updateLeftField", "clearViewFromItem", "imageView", "Landroid/widget/ImageView;", "textView", "Landroid/widget/TextView;", "message", "", "view", "addLockedItems", "onBackendMessage", "data", "subId", "enableStatusButtons", "refreshData", "startProgressBarAnimation", "time", "", "stop", "sendData", "initItemInfo", "response", "Lru/mrlargha/feature/workshop/domain/WorkshopResponse;", "setVisible", "closeScreen", "Spawner", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class WorkshopScreen extends SAMPUIElement implements InterfaceController {
     private final WorkshopScreenBinding binding;
@@ -118,9 +118,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.inventoryAdapter = new WorkshopAdapter(new Function1() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit inventoryAdapter$lambda$0;
-                inventoryAdapter$lambda$0 = WorkshopScreen.inventoryAdapter$lambda$0(WorkshopScreen.this, (InventoryItem) obj);
-                return inventoryAdapter$lambda$0;
+                return WorkshopScreen.inventoryAdapter$lambda$0(WorkshopScreen.this, (InventoryItem) obj);
             }
         }, activity);
         this.selectedColor = -1;
@@ -144,7 +142,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         bind.buttonsContainer.btnSharpenItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$0(WorkshopScreen.this, view);
+                WorkshopScreen.this.sendData(StringKt.toStringJson(0), 2);
             }
         });
         bind.buttonsContainer.paintButtons.btnPaintItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda6
@@ -156,7 +154,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         bind.infoContainers.info.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                WorkshopScreen._init_$lambda$2(WorkshopScreen.this, view);
+                WorkshopScreen.this.sendData(StringKt.toStringJson(0), 8);
             }
         });
         bind.mainItemField.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda8
@@ -216,7 +214,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         return (List) runBlocking$default;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0026, code lost:
         if (r0 != 4) goto L15;
      */
@@ -255,12 +253,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         return this.handler;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$0(WorkshopScreen workshopScreen, View view) {
-        workshopScreen.sendData(StringKt.toStringJson(0), 2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.isArizonaType) {
             if (workshopScreen.currentScreenType == 1) {
@@ -277,12 +270,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void _init_$lambda$2(WorkshopScreen workshopScreen, View view) {
-        workshopScreen.sendData(StringKt.toStringJson(0), 8);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$3(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.centerItemIndex == -1) {
             return;
@@ -298,7 +286,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         workshopScreen.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setTextColor(-1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$4(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.rightItemIndex == -1) {
             return;
@@ -319,7 +307,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         workshopScreen.binding.buttonsContainer.paintButtons.costFieldPainting.valueTextView.setTextColor(-1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$5(WorkshopScreen workshopScreen, View view) {
         if (workshopScreen.leftItemIndex == -1) {
             return;
@@ -332,7 +320,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         workshopScreen.currentLeftItem = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$7(WorkshopScreen workshopScreen) {
         View view;
         RecyclerView.ViewHolder findViewHolderForAdapterPosition = workshopScreen.binding.rvMenu.findViewHolderForAdapterPosition(0);
@@ -428,8 +416,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     private final void leftItemUi(boolean z) {
+        WorkshopScreenBinding workshopScreenBinding = this.binding;
         if (z) {
-            this.binding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_locked_item);
+            workshopScreenBinding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_locked_item);
             this.binding.tvLeftItemDescription.setText("недоступно ");
             this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type3));
             TextView tvTitleText = this.binding.leftItemField.tvTitleText;
@@ -441,37 +430,41 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             this.binding.leftItemField.item.setClickable(false);
             return;
         }
-        this.binding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_empty_item);
-        if (this.currentScreenType == 0) {
-            this.binding.tvLeftItemDescription.setText("супер-заточка ");
+        workshopScreenBinding.leftItemField.ivItemImage.setImageResource(ru.mrlargha.commonui.R.drawable.ic_empty_item);
+        int i = this.currentScreenType;
+        WorkshopScreenBinding workshopScreenBinding2 = this.binding;
+        if (i == 0) {
+            workshopScreenBinding2.tvLeftItemDescription.setText("супер-заточка ");
         } else {
-            this.binding.tvLeftItemDescription.setText("краска ");
+            workshopScreenBinding2.tvLeftItemDescription.setText("краска ");
         }
         this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.grey_type2));
         this.binding.leftItemField.item.setClickable(true);
     }
 
     private final void btnSharpenEnableStatus(boolean z) {
+        WorkshopScreenBinding workshopScreenBinding = this.binding;
         if (z) {
-            this.binding.buttonsContainer.btnSharpenItem.setEnabled(true);
+            workshopScreenBinding.buttonsContainer.btnSharpenItem.setEnabled(true);
             this.binding.buttonsContainer.btnSharpenItem.setBackgroundResource(ru.mrlargha.commonui.R.drawable.bg_create_item_craft);
             this.binding.buttonsContainer.btnSharpenItem.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.black));
             return;
         }
-        this.binding.buttonsContainer.btnSharpenItem.setEnabled(false);
+        workshopScreenBinding.buttonsContainer.btnSharpenItem.setEnabled(false);
         this.binding.buttonsContainer.btnSharpenItem.setBackgroundResource(ru.mrlargha.commonui.R.drawable.bg_success_chance_test);
         this.binding.buttonsContainer.btnSharpenItem.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.white));
         this.btnIsClicked = false;
     }
 
     private final void btnPaintEnableStatus(boolean z) {
+        WorkshopScreenBinding workshopScreenBinding = this.binding;
         if (z) {
-            this.binding.buttonsContainer.paintButtons.btnPaintItem.setEnabled(true);
+            workshopScreenBinding.buttonsContainer.paintButtons.btnPaintItem.setEnabled(true);
             this.binding.buttonsContainer.paintButtons.btnPaintItem.setBackgroundResource(ru.mrlargha.commonui.R.drawable.bg_create_item_craft);
             this.binding.buttonsContainer.paintButtons.btnPaintItem.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.black));
             return;
         }
-        this.binding.buttonsContainer.paintButtons.btnPaintItem.setEnabled(false);
+        workshopScreenBinding.buttonsContainer.paintButtons.btnPaintItem.setEnabled(false);
         this.binding.buttonsContainer.paintButtons.btnPaintItem.setBackgroundResource(ru.mrlargha.commonui.R.drawable.bg_success_chance_test);
         this.binding.buttonsContainer.paintButtons.btnPaintItem.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.white));
     }
@@ -480,9 +473,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.workShopMenuAdapter = new WorkshopMenuAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initMenu$lambda$0;
-                initMenu$lambda$0 = WorkshopScreen.initMenu$lambda$0(WorkshopScreen.this, (WorkshopMenus) obj, ((Integer) obj2).intValue());
-                return initMenu$lambda$0;
+                return WorkshopScreen.initMenu$lambda$0(WorkshopScreen.this, (WorkshopMenus) obj, ((Integer) obj2).intValue());
             }
         });
         RecyclerView recyclerView = this.binding.rvMenu;
@@ -494,8 +485,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         }
         recyclerView.setAdapter(workshopMenuAdapter);
         this.binding.rvMenu.setHasFixedSize(true);
-        if (this.isArizonaType) {
-            WorkshopMenuAdapter workshopMenuAdapter3 = this.workShopMenuAdapter;
+        boolean z = this.isArizonaType;
+        WorkshopMenuAdapter workshopMenuAdapter3 = this.workShopMenuAdapter;
+        if (z) {
             if (workshopMenuAdapter3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("workShopMenuAdapter");
             } else {
@@ -504,16 +496,15 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             workshopMenuAdapter2.submitList(WorkshopMenus.Companion.valuesArizona());
             return;
         }
-        WorkshopMenuAdapter workshopMenuAdapter4 = this.workShopMenuAdapter;
-        if (workshopMenuAdapter4 == null) {
+        if (workshopMenuAdapter3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("workShopMenuAdapter");
         } else {
-            workshopMenuAdapter2 = workshopMenuAdapter4;
+            workshopMenuAdapter2 = workshopMenuAdapter3;
         }
         workshopMenuAdapter2.submitList(WorkshopMenus.Companion.valuesRodina());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initMenu$lambda$0(WorkshopScreen workshopScreen, WorkshopMenus model, int i) {
         Intrinsics.checkNotNullParameter(model, "model");
         workshopScreen.isFix = model.getId() == 1;
@@ -652,9 +643,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.colorsAdapter = new SelectColorAdapter(new Function2() { // from class: ru.mrlargha.feature.workshop.presentation.WorkshopScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initColors$lambda$0;
-                initColors$lambda$0 = WorkshopScreen.initColors$lambda$0(WorkshopScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
-                return initColors$lambda$0;
+                return WorkshopScreen.initColors$lambda$0(WorkshopScreen.this, ((Integer) obj).intValue(), (ItemColor) obj2);
             }
         }, getTargetActivity());
         RecyclerView recyclerView = this.binding.infoContainers.rvColors;
@@ -681,7 +670,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         selectColorAdapter2.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initColors$lambda$0(WorkshopScreen workshopScreen, int i, ItemColor itemColor) {
         Intrinsics.checkNotNullParameter(itemColor, "<unused var>");
         if (workshopScreen.isDisableAll) {
@@ -924,10 +913,12 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             ItemsInfo itemsInfo = (ItemsInfo) CollectionsKt.getOrNull(itemsName, item2 != null ? item2.intValue() : -1);
             textView.setText(((itemsInfo == null || (r4 = itemsInfo.getName()) == null) ? "" : "") + " ");
         }
-        if (this.currentScreenType == 0) {
-            this.binding.mainItemField.tvTitleText.setText("+" + intValue);
+        int i2 = this.currentScreenType;
+        WorkshopScreenBinding workshopScreenBinding = this.binding;
+        if (i2 == 0) {
+            workshopScreenBinding.mainItemField.tvTitleText.setText("+" + intValue);
         } else {
-            this.binding.mainItemField.tvTitleText.setText(inventoryItem.getText());
+            workshopScreenBinding.mainItemField.tvTitleText.setText(inventoryItem.getText());
         }
         Integer item3 = inventoryItem.getItem();
         Bitmap iconFromArchive$default = UtilsKt.getIconFromArchive$default("items", item3 != null ? item3.intValue() : 0, (String) null, 4, (Object) null);
@@ -1181,11 +1172,12 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                 InventoryItem inventoryItem2 = this.currentLeftItem;
                 textView.setText(String.valueOf(inventoryItem2 != null ? inventoryItem2.getText() : null));
                 this.binding.leftItemField.tvNeedRes.setText("/" + craftItemInfo.getAmount());
+                WorkshopScreenBinding workshopScreenBinding = this.binding;
                 if (intValue2 > intValue) {
-                    this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.red));
+                    workshopScreenBinding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.red));
                     return;
                 } else {
-                    this.binding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.white));
+                    workshopScreenBinding.leftItemField.tvTitleText.setTextColor(getTargetActivity().getResources().getColor(ru.mrlargha.commonui.R.color.white));
                     return;
                 }
             }
@@ -1211,15 +1203,15 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             initItemInfo((WorkshopResponse) fromJson4);
         } else if (i == 4) {
             WorkshopResourceAmount workshopResourceAmount = (WorkshopResourceAmount) MapperKt.toModel(data, WorkshopResourceAmount.class);
-            WorkshopScreenBinding workshopScreenBinding = this.binding;
-            TextView tvNeedRes2 = workshopScreenBinding.leftItemField.tvNeedRes;
+            WorkshopScreenBinding workshopScreenBinding2 = this.binding;
+            TextView tvNeedRes2 = workshopScreenBinding2.leftItemField.tvNeedRes;
             Intrinsics.checkNotNullExpressionValue(tvNeedRes2, "tvNeedRes");
             tvNeedRes2.setVisibility((workshopResourceAmount.getLeftResourceAmount() > 0 ? 1 : null) != null ? 0 : 8);
-            workshopScreenBinding.leftItemField.tvNeedRes.setText("/" + workshopResourceAmount.getLeftResourceAmount());
-            TextView tvNeedRes3 = workshopScreenBinding.rightItemField.tvNeedRes;
+            workshopScreenBinding2.leftItemField.tvNeedRes.setText("/" + workshopResourceAmount.getLeftResourceAmount());
+            TextView tvNeedRes3 = workshopScreenBinding2.rightItemField.tvNeedRes;
             Intrinsics.checkNotNullExpressionValue(tvNeedRes3, "tvNeedRes");
             tvNeedRes3.setVisibility(workshopResourceAmount.getRightResourceAmount() > 0 ? 0 : 8);
-            workshopScreenBinding.rightItemField.tvNeedRes.setText("/" + workshopResourceAmount.getRightResourceAmount());
+            workshopScreenBinding2.rightItemField.tvNeedRes.setText("/" + workshopResourceAmount.getRightResourceAmount());
         } else if (i == UIElementID.INVENTORY.getId()) {
             Object fromJson5 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) InventoryResponse.class);
             Intrinsics.checkNotNullExpressionValue(fromJson5, "fromJson(...)");
@@ -1288,14 +1280,15 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     }
                     InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem5);
                     if (i4 >= 0) {
-                        if (inventoryItem5.getItem() != null) {
-                            List<InventoryItem> list = this.inventoryItemList;
+                        Integer item3 = inventoryItem5.getItem();
+                        List<InventoryItem> list = this.inventoryItemList;
+                        if (item3 != null) {
                             if (updateInventoryItem == null) {
                                 updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                             }
                             list.set(i4, updateInventoryItem);
                         } else {
-                            this.inventoryItemList.set(i4, inventoryItem5);
+                            list.set(i4, inventoryItem5);
                         }
                     }
                     if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem5.getItemStrength()) != null && itemStrength.intValue() == 100) {
@@ -1308,7 +1301,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$0(WorkshopScreen workshopScreen) {
         ImageView ivBgSharpResult = workshopScreen.binding.ivBgSharpResult;
         Intrinsics.checkNotNullExpressionValue(ivBgSharpResult, "ivBgSharpResult");
@@ -1423,7 +1416,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.progressHandler.postDelayed(runnable, 0L);
     }
 
-    private final void sendData(String str, int i) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void sendData(String str, int i) {
         Log.d("TAG_WORKSHOP", "sended: data: " + str + " ===  subId : " + i);
         IBackendNotifier iBackendNotifier = this.frontendNotifier;
         int id = UIElementID.WORKSHOP.getId();
@@ -1438,7 +1432,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* compiled from: WorkshopScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "workshop_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "workshop"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.WORKSHOP);

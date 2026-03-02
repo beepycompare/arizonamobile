@@ -152,11 +152,8 @@ public final class zzmb extends zzg {
     public final zzlu zzh(boolean z) {
         zzb();
         zzg();
-        if (z) {
-            zzlu zzluVar = this.zza;
-            return zzluVar != null ? zzluVar : this.zzh;
-        }
-        return this.zza;
+        zzlu zzluVar = this.zza;
+        return (z && zzluVar == null) ? this.zzh : zzluVar;
     }
 
     final String zzi(String str, String str2) {

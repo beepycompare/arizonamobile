@@ -46,7 +46,7 @@ import ru.mrlargha.commonui.elements.quest.presentation.adapter.QuestTaskAdapter
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: NewQuestScreen.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\u0018\u00002\u00020\u00012\u00020\u0002:\u0001)B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016J\b\u0010\u001d\u001a\u00020\u001aH\u0002J\u0018\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0006H\u0016J\b\u0010\"\u001a\u00020\u001aH\u0002J\u0010\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0010\u0010%\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0018\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020 H\u0002J\b\u0010(\u001a\u00020\u001aH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessage", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\u0018\u00002\u00020\u00012\u00020\u0002:\u0001)B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cH\u0016J\b\u0010\u001d\u001a\u00020\u001aH\u0002J\u0018\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0006H\u0016J\b\u0010\"\u001a\u00020\u001aH\u0002J\u0010\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0010\u0010%\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001cH\u0002J\u0018\u0010&\u001a\u00020\u001a2\u0006\u0010'\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020 H\u0002J\b\u0010(\u001a\u00020\u001aH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessage", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class NewQuestScreen extends SAMPUIElement implements InterfaceController {
     private int backgroundId;
@@ -59,7 +59,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     private List<QuestTask> questTaskList;
 
     /* compiled from: NewQuestScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -110,9 +110,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.questStageAdapter = new QuestStageAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit questStageAdapter$lambda$0;
-                questStageAdapter$lambda$0 = NewQuestScreen.questStageAdapter$lambda$0(NewQuestScreen.this, (QuestStage) obj);
-                return questStageAdapter$lambda$0;
+                return NewQuestScreen.questStageAdapter$lambda$0(NewQuestScreen.this, (QuestStage) obj);
             }
         });
         this.questTaskList = new ArrayList();
@@ -138,7 +136,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit questStageAdapter$lambda$0(NewQuestScreen newQuestScreen, QuestStage item) {
         Intrinsics.checkNotNullParameter(item, "item");
         ArrayList arrayList = new ArrayList();
@@ -170,7 +168,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.binding.parentLayout.setVisibility(z ? 0 : 8);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(NewQuestScreen newQuestScreen, View view) {
         newQuestScreen.questTaskList.clear();
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
@@ -188,16 +186,12 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         this.questTaskAdapter = new QuestTaskAdapter(getTargetActivity(), new Function2() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit initAdapters$lambda$0;
-                initAdapters$lambda$0 = NewQuestScreen.initAdapters$lambda$0(NewQuestScreen.this, (QuestTask) obj, ((Integer) obj2).intValue());
-                return initAdapters$lambda$0;
+                return NewQuestScreen.initAdapters$lambda$0(NewQuestScreen.this, (QuestTask) obj, ((Integer) obj2).intValue());
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initAdapters$lambda$1;
-                initAdapters$lambda$1 = NewQuestScreen.initAdapters$lambda$1(NewQuestScreen.this, (QuestTask) obj);
-                return initAdapters$lambda$1;
+                return NewQuestScreen.initAdapters$lambda$1(NewQuestScreen.this, (QuestTask) obj);
             }
         });
         RecyclerView recyclerView = this.binding.rvQuestTasks;
@@ -209,7 +203,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         recyclerView.setAdapter(questTaskAdapter);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0043  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x0059  */
@@ -297,7 +291,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initAdapters$lambda$1(NewQuestScreen newQuestScreen, QuestTask item) {
         Intrinsics.checkNotNullParameter(item, "item");
         if (item.getProgress() == item.getMaxProgress() && item.getRewardReceived() == 0) {
@@ -327,7 +321,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$0(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
@@ -345,7 +339,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         questTaskAdapter2.notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackendMessage$lambda$2(NewQuestScreen newQuestScreen) {
         QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
         QuestTaskAdapter questTaskAdapter2 = null;
@@ -506,7 +500,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* compiled from: NewQuestScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.RODINA_NEW_QUEST);

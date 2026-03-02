@@ -60,79 +60,79 @@ public final class LifecycleEffectKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleEventEffect$lambda$2(Lifecycle.Event event, LifecycleOwner lifecycleOwner, Function0 function0, int i, int i2, Composer composer, int i3) {
         LifecycleEventEffect(event, lifecycleOwner, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffect$lambda$1(Object obj, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleResumeEffect(obj, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffect$lambda$3(Object obj, Object obj2, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleResumeEffect(obj, obj2, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffect$lambda$5(Object obj, Object obj2, Object obj3, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleResumeEffect(obj, obj2, obj3, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffect$lambda$7(Object[] objArr, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleResumeEffect(objArr, lifecycleOwner, (Function1<? super LifecycleResumePauseEffectScope, ? extends LifecyclePauseOrDisposeEffectResult>) function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffect$lambda$8(LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleResumeEffect(lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleResumeEffectImpl$lambda$1(LifecycleOwner lifecycleOwner, LifecycleResumePauseEffectScope lifecycleResumePauseEffectScope, Function1 function1, int i, Composer composer, int i2) {
         LifecycleResumeEffectImpl(lifecycleOwner, lifecycleResumePauseEffectScope, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffect$lambda$1(Object obj, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleStartEffect(obj, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffect$lambda$3(Object obj, Object obj2, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleStartEffect(obj, obj2, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffect$lambda$5(Object obj, Object obj2, Object obj3, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleStartEffect(obj, obj2, obj3, lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffect$lambda$7(Object[] objArr, LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleStartEffect(objArr, lifecycleOwner, (Function1<? super LifecycleStartStopEffectScope, ? extends LifecycleStopOrDisposeEffectResult>) function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffect$lambda$8(LifecycleOwner lifecycleOwner, Function1 function1, int i, int i2, Composer composer, int i3) {
         LifecycleStartEffect(lifecycleOwner, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LifecycleStartEffectImpl$lambda$1(LifecycleOwner lifecycleOwner, LifecycleStartStopEffectScope lifecycleStartStopEffectScope, Function1 function1, int i, Composer composer, int i2) {
         LifecycleStartEffectImpl(lifecycleOwner, lifecycleStartStopEffectScope, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -209,9 +209,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LifecycleEventEffect$lambda$2;
-                    LifecycleEventEffect$lambda$2 = LifecycleEffectKt.LifecycleEventEffect$lambda$2(Lifecycle.Event.this, lifecycleOwner2, function0, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return LifecycleEventEffect$lambda$2;
+                    return LifecycleEffectKt.LifecycleEventEffect$lambda$2(Lifecycle.Event.this, lifecycleOwner2, function0, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -301,9 +299,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit LifecycleStartEffect$lambda$1;
-                    LifecycleStartEffect$lambda$1 = LifecycleEffectKt.LifecycleStartEffect$lambda$1(obj, lifecycleOwner2, function1, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return LifecycleStartEffect$lambda$1;
+                    return LifecycleEffectKt.LifecycleStartEffect$lambda$1(obj, lifecycleOwner2, function1, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -372,9 +368,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit LifecycleStartEffect$lambda$3;
-                    LifecycleStartEffect$lambda$3 = LifecycleEffectKt.LifecycleStartEffect$lambda$3(obj, obj2, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return LifecycleStartEffect$lambda$3;
+                    return LifecycleEffectKt.LifecycleStartEffect$lambda$3(obj, obj2, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
@@ -446,9 +440,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda16
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj4, Object obj5) {
-                    Unit LifecycleStartEffect$lambda$5;
-                    LifecycleStartEffect$lambda$5 = LifecycleEffectKt.LifecycleStartEffect$lambda$5(obj, obj2, obj3, lifecycleOwner2, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                    return LifecycleStartEffect$lambda$5;
+                    return LifecycleEffectKt.LifecycleStartEffect$lambda$5(obj, obj2, obj3, lifecycleOwner2, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                 }
             });
         }
@@ -523,9 +515,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda17
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit LifecycleStartEffect$lambda$7;
-                    LifecycleStartEffect$lambda$7 = LifecycleEffectKt.LifecycleStartEffect$lambda$7(objArr, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return LifecycleStartEffect$lambda$7;
+                    return LifecycleEffectKt.LifecycleStartEffect$lambda$7(objArr, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
@@ -566,9 +556,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LifecycleStartEffect$lambda$8;
-                    LifecycleStartEffect$lambda$8 = LifecycleEffectKt.LifecycleStartEffect$lambda$8(LifecycleOwner.this, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return LifecycleStartEffect$lambda$8;
+                    return LifecycleEffectKt.LifecycleStartEffect$lambda$8(LifecycleOwner.this, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -620,9 +608,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LifecycleStartEffectImpl$lambda$1;
-                    LifecycleStartEffectImpl$lambda$1 = LifecycleEffectKt.LifecycleStartEffectImpl$lambda$1(LifecycleOwner.this, lifecycleStartStopEffectScope, function1, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LifecycleStartEffectImpl$lambda$1;
+                    return LifecycleEffectKt.LifecycleStartEffectImpl$lambda$1(LifecycleOwner.this, lifecycleStartStopEffectScope, function1, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -726,9 +712,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit LifecycleResumeEffect$lambda$1;
-                    LifecycleResumeEffect$lambda$1 = LifecycleEffectKt.LifecycleResumeEffect$lambda$1(obj, lifecycleOwner2, function1, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return LifecycleResumeEffect$lambda$1;
+                    return LifecycleEffectKt.LifecycleResumeEffect$lambda$1(obj, lifecycleOwner2, function1, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -797,9 +781,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit LifecycleResumeEffect$lambda$3;
-                    LifecycleResumeEffect$lambda$3 = LifecycleEffectKt.LifecycleResumeEffect$lambda$3(obj, obj2, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return LifecycleResumeEffect$lambda$3;
+                    return LifecycleEffectKt.LifecycleResumeEffect$lambda$3(obj, obj2, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
@@ -871,9 +853,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda11
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj4, Object obj5) {
-                    Unit LifecycleResumeEffect$lambda$5;
-                    LifecycleResumeEffect$lambda$5 = LifecycleEffectKt.LifecycleResumeEffect$lambda$5(obj, obj2, obj3, lifecycleOwner2, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                    return LifecycleResumeEffect$lambda$5;
+                    return LifecycleEffectKt.LifecycleResumeEffect$lambda$5(obj, obj2, obj3, lifecycleOwner2, function1, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                 }
             });
         }
@@ -948,9 +928,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit LifecycleResumeEffect$lambda$7;
-                    LifecycleResumeEffect$lambda$7 = LifecycleEffectKt.LifecycleResumeEffect$lambda$7(objArr, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                    return LifecycleResumeEffect$lambda$7;
+                    return LifecycleEffectKt.LifecycleResumeEffect$lambda$7(objArr, lifecycleOwner2, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                 }
             });
         }
@@ -991,9 +969,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LifecycleResumeEffect$lambda$8;
-                    LifecycleResumeEffect$lambda$8 = LifecycleEffectKt.LifecycleResumeEffect$lambda$8(LifecycleOwner.this, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return LifecycleResumeEffect$lambda$8;
+                    return LifecycleEffectKt.LifecycleResumeEffect$lambda$8(LifecycleOwner.this, function1, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1045,9 +1021,7 @@ public final class LifecycleEffectKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.lifecycle.compose.LifecycleEffectKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LifecycleResumeEffectImpl$lambda$1;
-                    LifecycleResumeEffectImpl$lambda$1 = LifecycleEffectKt.LifecycleResumeEffectImpl$lambda$1(LifecycleOwner.this, lifecycleResumePauseEffectScope, function1, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LifecycleResumeEffectImpl$lambda$1;
+                    return LifecycleEffectKt.LifecycleResumeEffectImpl$lambda$1(LifecycleOwner.this, lifecycleResumePauseEffectScope, function1, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

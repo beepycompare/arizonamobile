@@ -17,15 +17,13 @@ public final class TransactorKt {
         Object usePrepared = pooledConnection.usePrepared(str, new Function1() { // from class: androidx.room.TransactorKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean execSQL$lambda$0;
-                execSQL$lambda$0 = TransactorKt.execSQL$lambda$0((SQLiteStatement) obj);
-                return Boolean.valueOf(execSQL$lambda$0);
+                return Boolean.valueOf(TransactorKt.execSQL$lambda$0((SQLiteStatement) obj));
             }
         }, continuation);
         return usePrepared == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? usePrepared : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean execSQL$lambda$0(SQLiteStatement it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.step();

@@ -7,17 +7,17 @@ public final class Xh implements Runnable {
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ AdRevenue f855a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ C0279gi c;
+    public final /* synthetic */ C0278gi c;
 
-    public Xh(C0279gi c0279gi, AdRevenue adRevenue, boolean z) {
-        this.c = c0279gi;
+    public Xh(C0278gi c0278gi, AdRevenue adRevenue, boolean z) {
+        this.c = c0278gi;
         this.f855a = adRevenue;
         this.b = z;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0279gi c0279gi = this.c;
-        C0279gi.a(c0279gi.f1015a, c0279gi.d, c0279gi.e).reportAdRevenue(this.f855a, this.b);
+        C0278gi c0278gi = this.c;
+        C0278gi.a(c0278gi.f1015a, c0278gi.d, c0278gi.e).reportAdRevenue(this.f855a, this.b);
     }
 }

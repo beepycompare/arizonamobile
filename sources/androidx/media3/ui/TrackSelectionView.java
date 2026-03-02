@@ -155,12 +155,14 @@ public class TrackSelectionView extends LinearLayout {
         for (int childCount = getChildCount() - 1; childCount >= 3; childCount--) {
             removeViewAt(childCount);
         }
-        if (this.trackGroups.isEmpty()) {
-            this.disableView.setEnabled(false);
+        boolean isEmpty = this.trackGroups.isEmpty();
+        CheckedTextView checkedTextView = this.disableView;
+        if (isEmpty) {
+            checkedTextView.setEnabled(false);
             this.defaultView.setEnabled(false);
             return;
         }
-        this.disableView.setEnabled(true);
+        checkedTextView.setEnabled(true);
         this.defaultView.setEnabled(true);
         this.trackViews = new CheckedTextView[this.trackGroups.size()];
         boolean shouldEnableMultiGroupSelection = shouldEnableMultiGroupSelection();
@@ -181,19 +183,19 @@ public class TrackSelectionView extends LinearLayout {
                 if (i4 == 0) {
                     addView(this.inflater.inflate(R.layout.exo_list_divider, (ViewGroup) this, false));
                 }
-                CheckedTextView checkedTextView = (CheckedTextView) this.inflater.inflate((shouldEnableAdaptiveSelection || shouldEnableMultiGroupSelection) ? 17367056 : 17367055, (ViewGroup) this, false);
-                checkedTextView.setBackgroundResource(this.selectableItemBackgroundResourceId);
-                checkedTextView.setText(this.trackNameProvider.getTrackName(trackInfoArr[i4].getFormat()));
-                checkedTextView.setTag(trackInfoArr[i4]);
+                CheckedTextView checkedTextView2 = (CheckedTextView) this.inflater.inflate((shouldEnableAdaptiveSelection || shouldEnableMultiGroupSelection) ? 17367056 : 17367055, (ViewGroup) this, false);
+                checkedTextView2.setBackgroundResource(this.selectableItemBackgroundResourceId);
+                checkedTextView2.setText(this.trackNameProvider.getTrackName(trackInfoArr[i4].getFormat()));
+                checkedTextView2.setTag(trackInfoArr[i4]);
                 if (group.isTrackSupported(i4)) {
-                    checkedTextView.setFocusable(true);
-                    checkedTextView.setOnClickListener(this.componentListener);
+                    checkedTextView2.setFocusable(true);
+                    checkedTextView2.setOnClickListener(this.componentListener);
                 } else {
-                    checkedTextView.setFocusable(false);
-                    checkedTextView.setEnabled(false);
+                    checkedTextView2.setFocusable(false);
+                    checkedTextView2.setEnabled(false);
                 }
-                this.trackViews[i][i4] = checkedTextView;
-                addView(checkedTextView);
+                this.trackViews[i][i4] = checkedTextView2;
+                addView(checkedTextView2);
             }
         }
         updateViewStates();
@@ -265,10 +267,12 @@ public class TrackSelectionView extends LinearLayout {
         z = (shouldEnableAdaptiveSelection || shouldEnableMultiGroupSelection()) ? true : true;
         if (isChecked && z) {
             arrayList.remove(Integer.valueOf(i));
-            if (arrayList.isEmpty()) {
-                this.overrides.remove(mediaTrackGroup);
+            boolean isEmpty = arrayList.isEmpty();
+            Map<TrackGroup, TrackSelectionOverride> map = this.overrides;
+            if (isEmpty) {
+                map.remove(mediaTrackGroup);
             } else {
-                this.overrides.put(mediaTrackGroup, new TrackSelectionOverride(mediaTrackGroup, arrayList));
+                map.put(mediaTrackGroup, new TrackSelectionOverride(mediaTrackGroup, arrayList));
             }
         } else if (isChecked) {
         } else {

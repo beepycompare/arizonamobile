@@ -72,32 +72,28 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         this.storageConnectionDelegate = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.DataStoreImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                StorageConnection storageConnectionDelegate$lambda$0;
-                storageConnectionDelegate$lambda$0 = DataStoreImpl.storageConnectionDelegate$lambda$0(DataStoreImpl.this);
-                return storageConnectionDelegate$lambda$0;
+                StorageConnection createConnection;
+                createConnection = DataStoreImpl.this.storage.createConnection();
+                return createConnection;
             }
         });
         this.coordinator$delegate = LazyKt.lazy(new Function0() { // from class: androidx.datastore.core.DataStoreImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                InterProcessCoordinator coordinator_delegate$lambda$0;
-                coordinator_delegate$lambda$0 = DataStoreImpl.coordinator_delegate$lambda$0(DataStoreImpl.this);
-                return coordinator_delegate$lambda$0;
+                InterProcessCoordinator coordinator;
+                coordinator = DataStoreImpl.this.getStorageConnection$datastore_core().getCoordinator();
+                return coordinator;
             }
         });
         this.writeActor = new SimpleActor<>(scope, new Function1() { // from class: androidx.datastore.core.DataStoreImpl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit writeActor$lambda$0;
-                writeActor$lambda$0 = DataStoreImpl.writeActor$lambda$0(DataStoreImpl.this, (Throwable) obj);
-                return writeActor$lambda$0;
+                return DataStoreImpl.writeActor$lambda$0(DataStoreImpl.this, (Throwable) obj);
             }
         }, new Function2() { // from class: androidx.datastore.core.DataStoreImpl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit writeActor$lambda$1;
-                writeActor$lambda$1 = DataStoreImpl.writeActor$lambda$1((Message.Update) obj, (Throwable) obj2);
-                return writeActor$lambda$1;
+                return DataStoreImpl.writeActor$lambda$1((Message.Update) obj, (Throwable) obj2);
             }
         }, new DataStoreImpl$writeActor$3(this, null));
     }
@@ -314,18 +310,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         return BuildersKt.withContext(new UpdatingDataContextElement(updatingDataContextElement, this), new DataStoreImpl$updateData$2(this, function2, null), continuation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final StorageConnection storageConnectionDelegate$lambda$0(DataStoreImpl dataStoreImpl) {
-        return dataStoreImpl.storage.createConnection();
-    }
-
     public final StorageConnection<T> getStorageConnection$datastore_core() {
         return this.storageConnectionDelegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final InterProcessCoordinator coordinator_delegate$lambda$0(DataStoreImpl dataStoreImpl) {
-        return dataStoreImpl.getStorageConnection$datastore_core().getCoordinator();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -333,7 +319,7 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         return (InterProcessCoordinator) this.coordinator$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit writeActor$lambda$0(DataStoreImpl dataStoreImpl, Throwable th) {
         if (th != null) {
             dataStoreImpl.inMemoryCache.tryUpdate(new Final(th));
@@ -344,7 +330,7 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit writeActor$lambda$1(Message.Update msg, Throwable th) {
         Intrinsics.checkNotNullParameter(msg, "msg");
         CompletableDeferred<T> ack = msg.getAck();
@@ -371,7 +357,7 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         int i;
         Throwable th;
         CompletableDeferred<T> completableDeferred;
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         if (continuation instanceof DataStoreImpl$handleUpdate$1) {
             dataStoreImpl$handleUpdate$1 = (DataStoreImpl$handleUpdate$1) continuation;
             if ((dataStoreImpl$handleUpdate$1.label & Integer.MIN_VALUE) != 0) {
@@ -397,8 +383,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                         th = th2;
                         completableDeferred = ack;
                         Result.Companion companion2 = Result.Companion;
-                        m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
-                        CompletableDeferredKt.completeWith(completableDeferred, m10243constructorimpl);
+                        m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+                        CompletableDeferredKt.completeWith(completableDeferred, m9182constructorimpl);
                         return Unit.INSTANCE;
                     }
                 } else if (i != 1) {
@@ -410,13 +396,13 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                     } catch (Throwable th3) {
                         th = th3;
                         Result.Companion companion22 = Result.Companion;
-                        m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
-                        CompletableDeferredKt.completeWith(completableDeferred, m10243constructorimpl);
+                        m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
+                        CompletableDeferredKt.completeWith(completableDeferred, m9182constructorimpl);
                         return Unit.INSTANCE;
                     }
                 }
-                m10243constructorimpl = Result.m10243constructorimpl(obj);
-                CompletableDeferredKt.completeWith(completableDeferred, m10243constructorimpl);
+                m9182constructorimpl = Result.m9182constructorimpl(obj);
+                CompletableDeferredKt.completeWith(completableDeferred, m9182constructorimpl);
                 return Unit.INSTANCE;
             }
         }
@@ -426,8 +412,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         i = dataStoreImpl$handleUpdate$1.label;
         if (i != 0) {
         }
-        m10243constructorimpl = Result.m10243constructorimpl(obj2);
-        CompletableDeferredKt.completeWith(completableDeferred, m10243constructorimpl);
+        m9182constructorimpl = Result.m9182constructorimpl(obj2);
+        CompletableDeferredKt.completeWith(completableDeferred, m9182constructorimpl);
         return Unit.INSTANCE;
     }
 

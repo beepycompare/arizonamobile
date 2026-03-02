@@ -211,10 +211,11 @@ public class SampleQueue implements TrackOutput {
         if (peekSampleMetadata == -4 && !decoderInputBuffer.isEndOfStream()) {
             boolean z2 = (i & 1) != 0;
             if ((i & 4) == 0) {
+                SampleDataQueue sampleDataQueue = this.sampleDataQueue;
                 if (z2) {
-                    this.sampleDataQueue.peekToBuffer(decoderInputBuffer, this.extrasHolder);
+                    sampleDataQueue.peekToBuffer(decoderInputBuffer, this.extrasHolder);
                 } else {
-                    this.sampleDataQueue.readToBuffer(decoderInputBuffer, this.extrasHolder);
+                    sampleDataQueue.readToBuffer(decoderInputBuffer, this.extrasHolder);
                 }
             }
             if (!z2) {
@@ -236,37 +237,57 @@ public class SampleQueue implements TrackOutput {
     }
 
     public final synchronized boolean seekTo(long j, boolean z) {
-        SampleQueue sampleQueue;
+        Throwable th;
         long j2;
-        int findSampleBefore;
+        int findSampleAfter;
+        SampleQueue sampleQueue;
         try {
             try {
                 rewind();
                 int relativeIndex = getRelativeIndex(this.readPosition);
                 if (hasNextSample() && j >= this.timesUs[relativeIndex] && (j <= this.largestQueuedTimestampUs || z)) {
-                    if (this.allSamplesAreSyncSamples) {
-                        sampleQueue = this;
-                        j2 = j;
-                        findSampleBefore = sampleQueue.findSampleAfter(relativeIndex, this.length - this.readPosition, j2, z);
+                    boolean z2 = this.allSamplesAreSyncSamples;
+                    int i = this.length;
+                    if (z2) {
+                        try {
+                            j2 = j;
+                            try {
+                                findSampleAfter = findSampleAfter(relativeIndex, i - this.readPosition, j2, z);
+                                sampleQueue = this;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                th = th;
+                                throw th;
+                            }
+                        } catch (Throwable th3) {
+                            th = th3;
+                            throw th;
+                        }
                     } else {
-                        sampleQueue = this;
                         j2 = j;
-                        findSampleBefore = sampleQueue.findSampleBefore(relativeIndex, sampleQueue.length - sampleQueue.readPosition, j2, true);
+                        try {
+                            int i2 = i - this.readPosition;
+                            sampleQueue = this;
+                            findSampleAfter = sampleQueue.findSampleBefore(relativeIndex, i2, j2, true);
+                        } catch (Throwable th4) {
+                            th = th4;
+                            th = th;
+                            throw th;
+                        }
                     }
-                    if (findSampleBefore == -1) {
+                    if (findSampleAfter == -1) {
                         return false;
                     }
                     sampleQueue.startTimeUs = j2;
-                    sampleQueue.readPosition += findSampleBefore;
+                    sampleQueue.readPosition += findSampleAfter;
                     return true;
                 }
                 return false;
-            } catch (Throwable th) {
-                th = th;
-                throw th;
+            } catch (Throwable th5) {
+                th = th5;
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th6) {
+            th = th6;
         }
     }
 

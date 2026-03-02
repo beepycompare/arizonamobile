@@ -32,7 +32,7 @@ public abstract class AlignmentLines {
     }
 
     /* renamed from: calculatePositionInParent-R5De75A  reason: not valid java name */
-    protected abstract long mo7029calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j);
+    protected abstract long mo6370calculatePositionInParentR5De75A(NodeCoordinator nodeCoordinator, long j);
 
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract Map<AlignmentLine, Integer> getAlignmentLinesMap(NodeCoordinator nodeCoordinator);
@@ -108,13 +108,12 @@ public abstract class AlignmentLines {
     }
 
     public final void recalculateQueryOwner() {
-        AlignmentLinesOwner alignmentLinesOwner;
         AlignmentLines alignmentLines;
         AlignmentLines alignmentLines2;
-        if (getQueried$ui()) {
-            alignmentLinesOwner = this.alignmentLinesOwner;
-        } else {
-            AlignmentLinesOwner parentAlignmentLinesOwner = this.alignmentLinesOwner.getParentAlignmentLinesOwner();
+        boolean queried$ui = getQueried$ui();
+        AlignmentLinesOwner alignmentLinesOwner = this.alignmentLinesOwner;
+        if (!queried$ui) {
+            AlignmentLinesOwner parentAlignmentLinesOwner = alignmentLinesOwner.getParentAlignmentLinesOwner();
             if (parentAlignmentLinesOwner == null) {
                 return;
             }
@@ -217,22 +216,22 @@ public abstract class AlignmentLines {
     public final void addAlignmentLine(AlignmentLine alignmentLine, int i, NodeCoordinator nodeCoordinator) {
         float intBitsToFloat;
         float f = i;
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L));
         while (true) {
-            m5171constructorimpl = mo7029calculatePositionInParentR5De75A(nodeCoordinator, m5171constructorimpl);
+            m4519constructorimpl = mo6370calculatePositionInParentR5De75A(nodeCoordinator, m4519constructorimpl);
             nodeCoordinator = nodeCoordinator.getWrappedBy$ui();
             Intrinsics.checkNotNull(nodeCoordinator);
             if (Intrinsics.areEqual(nodeCoordinator, this.alignmentLinesOwner.getInnerCoordinator())) {
                 break;
             } else if (getAlignmentLinesMap(nodeCoordinator).containsKey(alignmentLine)) {
                 float positionFor = getPositionFor(nodeCoordinator, alignmentLine);
-                m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(positionFor) << 32) | (Float.floatToRawIntBits(positionFor) & 4294967295L));
+                m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(positionFor) << 32) | (Float.floatToRawIntBits(positionFor) & 4294967295L));
             }
         }
         if (alignmentLine instanceof HorizontalAlignmentLine) {
-            intBitsToFloat = Float.intBitsToFloat((int) (m5171constructorimpl & 4294967295L));
+            intBitsToFloat = Float.intBitsToFloat((int) (m4519constructorimpl & 4294967295L));
         } else {
-            intBitsToFloat = Float.intBitsToFloat((int) (m5171constructorimpl >> 32));
+            intBitsToFloat = Float.intBitsToFloat((int) (m4519constructorimpl >> 32));
         }
         int round = Math.round(intBitsToFloat);
         Map<AlignmentLine, Integer> map = this.alignmentLineMap;

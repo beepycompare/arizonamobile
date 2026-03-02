@@ -49,7 +49,7 @@ public final class LazyLayoutScrollDeltaBetweenPasses {
         float f2;
         Job launch$default;
         f2 = LazyLayoutScrollDeltaBetweenPassesKt.DeltaThresholdForScrollAnimation;
-        if (f <= density.mo464toPx0680j_4(f2)) {
+        if (f <= density.mo405toPx0680j_4(f2)) {
             return;
         }
         Snapshot.Companion companion = Snapshot.Companion;

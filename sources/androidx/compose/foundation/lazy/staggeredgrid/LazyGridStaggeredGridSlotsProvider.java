@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface LazyGridStaggeredGridSlotsProvider {
     /* renamed from: invoke-0kLqBqw  reason: not valid java name */
-    LazyStaggeredGridSlots mo1166invoke0kLqBqw(Density density, long j);
+    LazyStaggeredGridSlots mo1025invoke0kLqBqw(Density density, long j);
 }

@@ -110,8 +110,8 @@ public final class BoundsAnimation {
         if (!this.transitionScope.isTransitionActive() || (animationState = getAnimationState()) == null || (value = animationState.getValue()) == null) {
             return null;
         }
-        long m5189unboximpl = this.momentumOffset.invoke().m5189unboximpl();
-        return !Offset.m5176equalsimpl0(m5189unboximpl, Offset.Companion.m5195getZeroF1C5BW0()) ? value.m5216translatek4lQ0M(m5189unboximpl) : value;
+        long m4537unboximpl = this.momentumOffset.invoke().m4537unboximpl();
+        return !Offset.m4524equalsimpl0(m4537unboximpl, Offset.Companion.m4543getZeroF1C5BW0()) ? value.m4564translatek4lQ0M(m4537unboximpl) : value;
     }
 
     public static /* synthetic */ void animate$default(BoundsAnimation boundsAnimation, Rect rect, Rect rect2, BoundsTransform boundsTransform, int i, Object obj) {

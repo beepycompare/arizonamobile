@@ -7,5 +7,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface CornerSize {
     /* renamed from: toPx-TmRCtEA  reason: not valid java name */
-    float mo1274toPxTmRCtEA(long j, Density density);
+    float mo1117toPxTmRCtEA(long j, Density density);
 }

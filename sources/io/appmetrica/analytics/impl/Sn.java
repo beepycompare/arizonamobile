@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Sn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0400lb f787a;
+    public final C0399lb f787a;
 
-    public Sn(C0400lb c0400lb) {
-        this.f787a = c0400lb;
+    public Sn(C0399lb c0399lb) {
+        this.f787a = c0399lb;
     }
 }

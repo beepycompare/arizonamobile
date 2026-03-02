@@ -63,21 +63,19 @@ final class DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1 implements Function
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1.invoke$lambda$1$lambda$0(list, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1.invoke$lambda$1$lambda$0(list, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3255TextNvy7gAk(formatMonthYear, SemanticsModifierKt.semantics$default(padding, false, (Function1) rememberedValue, 1, null), this.$colors.m2293getSubheadContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
+        TextKt.m2712TextNvy7gAk(formatMonthYear, SemanticsModifierKt.semantics$default(padding, false, (Function1) rememberedValue, 1, null), this.$colors.m1976getSubheadContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(List list, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setCustomActions(semanticsPropertyReceiver, list);
         return Unit.INSTANCE;

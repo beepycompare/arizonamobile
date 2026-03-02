@@ -51,9 +51,9 @@ public final class CursorAnchorInfoController$startOrStopMonitoring$1 extends Su
             Flow filterNotNull = FlowKt.filterNotNull(FlowKt.drop(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.CursorAnchorInfoController$startOrStopMonitoring$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    CursorAnchorInfo access$calculateCursorAnchorInfo;
-                    access$calculateCursorAnchorInfo = CursorAnchorInfoController.access$calculateCursorAnchorInfo(CursorAnchorInfoController.this);
-                    return access$calculateCursorAnchorInfo;
+                    CursorAnchorInfo calculateCursorAnchorInfo;
+                    calculateCursorAnchorInfo = CursorAnchorInfoController.this.calculateCursorAnchorInfo();
+                    return calculateCursorAnchorInfo;
                 }
             }), 1));
             final CursorAnchorInfoController cursorAnchorInfoController2 = this.this$0;

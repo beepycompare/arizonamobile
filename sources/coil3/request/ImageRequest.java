@@ -1029,9 +1029,7 @@ public final class ImageRequest {
             return placeholder(new Function1() { // from class: coil3.request.ImageRequest$Builder$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image placeholder$lambda$25;
-                    placeholder$lambda$25 = ImageRequest.Builder.placeholder$lambda$25(Image.this, (ImageRequest) obj);
-                    return placeholder$lambda$25;
+                    return ImageRequest.Builder.placeholder$lambda$25(Image.this, (ImageRequest) obj);
                 }
             });
         }
@@ -1045,9 +1043,7 @@ public final class ImageRequest {
             return error(new Function1() { // from class: coil3.request.ImageRequest$Builder$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image error$lambda$27;
-                    error$lambda$27 = ImageRequest.Builder.error$lambda$27(Image.this, (ImageRequest) obj);
-                    return error$lambda$27;
+                    return ImageRequest.Builder.error$lambda$27(Image.this, (ImageRequest) obj);
                 }
             });
         }
@@ -1061,9 +1057,7 @@ public final class ImageRequest {
             return fallback(new Function1() { // from class: coil3.request.ImageRequest$Builder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Image fallback$lambda$29;
-                    fallback$lambda$29 = ImageRequest.Builder.fallback$lambda$29(Image.this, (ImageRequest) obj);
-                    return fallback$lambda$29;
+                    return ImageRequest.Builder.fallback$lambda$29(Image.this, (ImageRequest) obj);
                 }
             });
         }

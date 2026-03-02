@@ -14,18 +14,18 @@ public final class VelocityTracker {
     }
 
     /* renamed from: addPosition-Uv8p0NA  reason: not valid java name */
-    public final void m6848addPositionUv8p0NA(long j, long j2) {
-        this.platformVelocityTracker.mo6839addPositionUv8p0NA(j, j2);
+    public final void m6189addPositionUv8p0NA(long j, long j2) {
+        this.platformVelocityTracker.mo6180addPositionUv8p0NA(j, j2);
     }
 
     /* renamed from: calculateVelocity-9UxMQ8M  reason: not valid java name */
-    public final long m6849calculateVelocity9UxMQ8M() {
-        return m6850calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
+    public final long m6190calculateVelocity9UxMQ8M() {
+        return m6191calculateVelocityAH228Gc(VelocityKt.Velocity(Float.MAX_VALUE, Float.MAX_VALUE));
     }
 
     /* renamed from: calculateVelocity-AH228Gc  reason: not valid java name */
-    public final long m6850calculateVelocityAH228Gc(long j) {
-        return this.platformVelocityTracker.mo6840calculateVelocityAH228Gc(j);
+    public final long m6191calculateVelocityAH228Gc(long j) {
+        return this.platformVelocityTracker.mo6181calculateVelocityAH228Gc(j);
     }
 
     public final void resetTracking() {

@@ -8,7 +8,7 @@ public interface FocusManager {
     void clearFocus(boolean z);
 
     /* renamed from: moveFocus-3ESFkO8  reason: not valid java name */
-    boolean mo5068moveFocus3ESFkO8(int i);
+    boolean mo4416moveFocus3ESFkO8(int i);
 
     /* compiled from: FocusManager.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)

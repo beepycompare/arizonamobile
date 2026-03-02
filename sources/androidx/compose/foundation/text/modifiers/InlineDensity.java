@@ -10,44 +10,44 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class InlineDensity {
     public static final Companion Companion = new Companion(null);
-    private static final long Unspecified = m1762constructorimpl(Float.NaN, Float.NaN);
+    private static final long Unspecified = m1524constructorimpl(Float.NaN, Float.NaN);
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ InlineDensity m1761boximpl(long j) {
+    public static final /* synthetic */ InlineDensity m1523boximpl(long j) {
         return new InlineDensity(j);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static long m1763constructorimpl(long j) {
+    private static long m1525constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1765equalsimpl(long j, Object obj) {
-        return (obj instanceof InlineDensity) && j == ((InlineDensity) obj).m1771unboximpl();
+    public static boolean m1527equalsimpl(long j, Object obj) {
+        return (obj instanceof InlineDensity) && j == ((InlineDensity) obj).m1533unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1766equalsimpl0(long j, long j2) {
+    public static final boolean m1528equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1769hashCodeimpl(long j) {
+    public static int m1531hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m1765equalsimpl(this.packedValue, obj);
+        return m1527equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m1769hashCodeimpl(this.packedValue);
+        return m1531hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m1771unboximpl() {
+    public final /* synthetic */ long m1533unboximpl() {
         return this.packedValue;
     }
 
@@ -56,17 +56,17 @@ public final class InlineDensity {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1764constructorimpl(Density density) {
-        return m1762constructorimpl(density.getDensity(), density.getFontScale());
+    public static long m1526constructorimpl(Density density) {
+        return m1524constructorimpl(density.getDensity(), density.getFontScale());
     }
 
     public String toString() {
-        return m1770toStringimpl(this.packedValue);
+        return m1532toStringimpl(this.packedValue);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1770toStringimpl(long j) {
-        return "InlineDensity(density=" + m1767getDensityimpl(j) + ", fontScale=" + m1768getFontScaleimpl(j) + ')';
+    public static String m1532toStringimpl(long j) {
+        return "InlineDensity(density=" + m1529getDensityimpl(j) + ", fontScale=" + m1530getFontScaleimpl(j) + ')';
     }
 
     /* compiled from: InlineDensity.kt */
@@ -81,23 +81,23 @@ public final class InlineDensity {
         }
 
         /* renamed from: getUnspecified-L26CHvs  reason: not valid java name */
-        public final long m1772getUnspecifiedL26CHvs() {
+        public final long m1534getUnspecifiedL26CHvs() {
             return InlineDensity.Unspecified;
         }
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m1762constructorimpl(float f, float f2) {
-        return m1763constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+    public static long m1524constructorimpl(float f, float f2) {
+        return m1525constructorimpl((Float.floatToRawIntBits(f2) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* renamed from: getDensity-impl  reason: not valid java name */
-    public static final float m1767getDensityimpl(long j) {
+    public static final float m1529getDensityimpl(long j) {
         return Float.intBitsToFloat((int) (j >> 32));
     }
 
     /* renamed from: getFontScale-impl  reason: not valid java name */
-    public static final float m1768getFontScaleimpl(long j) {
+    public static final float m1530getFontScaleimpl(long j) {
         return Float.intBitsToFloat((int) (j & 4294967295L));
     }
 }

@@ -36,53 +36,41 @@ public final class EasingFunctionsKt {
     private static final Easing EaseInElastic = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda0
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseInElastic$lambda$0;
-            EaseInElastic$lambda$0 = EasingFunctionsKt.EaseInElastic$lambda$0(f);
-            return EaseInElastic$lambda$0;
+            return EasingFunctionsKt.EaseInElastic$lambda$0(f);
         }
     };
     private static final Easing EaseOutElastic = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda1
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseOutElastic$lambda$0;
-            EaseOutElastic$lambda$0 = EasingFunctionsKt.EaseOutElastic$lambda$0(f);
-            return EaseOutElastic$lambda$0;
+            return EasingFunctionsKt.EaseOutElastic$lambda$0(f);
         }
     };
     private static final Easing EaseInOutElastic = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda2
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseInOutElastic$lambda$0;
-            EaseInOutElastic$lambda$0 = EasingFunctionsKt.EaseInOutElastic$lambda$0(f);
-            return EaseInOutElastic$lambda$0;
+            return EasingFunctionsKt.EaseInOutElastic$lambda$0(f);
         }
     };
     private static final Easing EaseOutBounce = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda3
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseOutBounce$lambda$0;
-            EaseOutBounce$lambda$0 = EasingFunctionsKt.EaseOutBounce$lambda$0(f);
-            return EaseOutBounce$lambda$0;
+            return EasingFunctionsKt.EaseOutBounce$lambda$0(f);
         }
     };
     private static final Easing EaseInBounce = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda4
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseInBounce$lambda$0;
-            EaseInBounce$lambda$0 = EasingFunctionsKt.EaseInBounce$lambda$0(f);
-            return EaseInBounce$lambda$0;
+            return EasingFunctionsKt.EaseInBounce$lambda$0(f);
         }
     };
     private static final Easing EaseInOutBounce = new Easing() { // from class: androidx.compose.animation.core.EasingFunctionsKt$$ExternalSyntheticLambda5
         @Override // androidx.compose.animation.core.Easing
         public final float transform(float f) {
-            float EaseInOutBounce$lambda$0;
-            EaseInOutBounce$lambda$0 = EasingFunctionsKt.EaseInOutBounce$lambda$0(f);
-            return EaseInOutBounce$lambda$0;
+            return EasingFunctionsKt.EaseInOutBounce$lambda$0(f);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseOutBounce$lambda$0(float f) {
         if (f < 0.36363637f) {
             return 7.5625f * f * f;
@@ -215,7 +203,7 @@ public final class EasingFunctionsKt {
         return EaseInElastic;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInElastic$lambda$0(float f) {
         if (f == 0.0f) {
             return 0.0f;
@@ -231,7 +219,7 @@ public final class EasingFunctionsKt {
         return EaseOutElastic;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseOutElastic$lambda$0(float f) {
         if (f == 0.0f) {
             return 0.0f;
@@ -246,7 +234,7 @@ public final class EasingFunctionsKt {
         return EaseInOutElastic;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInOutElastic$lambda$0(float f) {
         double d;
         double d2;
@@ -271,7 +259,7 @@ public final class EasingFunctionsKt {
         return EaseInBounce;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInBounce$lambda$0(float f) {
         return 1 - EaseOutBounce.transform(1.0f - f);
     }
@@ -280,7 +268,7 @@ public final class EasingFunctionsKt {
         return EaseInOutBounce;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float EaseInOutBounce$lambda$0(float f) {
         float transform;
         if (f < 0.5d) {

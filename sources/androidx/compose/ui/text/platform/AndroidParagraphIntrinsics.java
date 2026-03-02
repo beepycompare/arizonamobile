@@ -42,7 +42,6 @@ public final class AndroidParagraphIntrinsics implements ParagraphIntrinsics {
     public AndroidParagraphIntrinsics(String str, TextStyle textStyle, List<? extends AnnotatedString.Range<? extends AnnotatedString.Annotation>> list, List<AnnotatedString.Range<Placeholder>> list2, FontFamily.Resolver resolver, Density density) {
         boolean hasEmojiCompat;
         Object obj;
-        ArrayList arrayList;
         AnnotatedString.Range<? extends AnnotatedString.Annotation> range;
         this.text = str;
         this.style = textStyle;
@@ -54,13 +53,11 @@ public final class AndroidParagraphIntrinsics implements ParagraphIntrinsics {
         this.textPaint = androidTextPaint;
         hasEmojiCompat = AndroidParagraphIntrinsics_androidKt.getHasEmojiCompat(textStyle);
         this.emojiCompatProcessed = !hasEmojiCompat ? false : EmojiCompatStatus.INSTANCE.getFontLoaded().getValue().booleanValue();
-        this.textDirectionHeuristic = AndroidParagraphIntrinsics_androidKt.m7964resolveTextDirectionHeuristicsHklW4sA(textStyle.m7744getTextDirections_7Xco(), textStyle.getLocaleList());
+        this.textDirectionHeuristic = AndroidParagraphIntrinsics_androidKt.m7261resolveTextDirectionHeuristicsHklW4sA(textStyle.m7046getTextDirections_7Xco(), textStyle.getLocaleList());
         Function4 function4 = new Function4() { // from class: androidx.compose.ui.text.platform.AndroidParagraphIntrinsics$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj2, Object obj3, Object obj4, Object obj5) {
-                Typeface _init_$lambda$0;
-                _init_$lambda$0 = AndroidParagraphIntrinsics._init_$lambda$0(AndroidParagraphIntrinsics.this, (FontFamily) obj2, (FontWeight) obj3, (FontStyle) obj4, (FontSynthesis) obj5);
-                return _init_$lambda$0;
+                return AndroidParagraphIntrinsics._init_$lambda$0(AndroidParagraphIntrinsics.this, (FontFamily) obj2, (FontWeight) obj3, (FontStyle) obj4, (FontSynthesis) obj5);
             }
         };
         TextPaintExtensions_androidKt.setTextMotion(androidTextPaint, textStyle.getTextMotion());
@@ -79,8 +76,9 @@ public final class AndroidParagraphIntrinsics implements ParagraphIntrinsics {
             i++;
         }
         SpanStyle applySpanStyle = TextPaintExtensions_androidKt.applySpanStyle(androidTextPaint, spanStyle, function4, density, obj != null);
+        ArrayList arrayList = this.annotations;
         if (applySpanStyle != null) {
-            int size2 = this.annotations.size() + 1;
+            int size2 = arrayList.size() + 1;
             ArrayList arrayList2 = new ArrayList(size2);
             for (int i2 = 0; i2 < size2; i2++) {
                 if (i2 == 0) {
@@ -91,8 +89,6 @@ public final class AndroidParagraphIntrinsics implements ParagraphIntrinsics {
                 arrayList2.add(range);
             }
             arrayList = arrayList2;
-        } else {
-            arrayList = this.annotations;
         }
         CharSequence createCharSequence = AndroidParagraphHelper_androidKt.createCharSequence(this.text, this.textPaint.getTextSize(), this.style, arrayList, this.placeholders, this.density, function4, this.emojiCompatProcessed);
         this.charSequence = createCharSequence;
@@ -165,15 +161,15 @@ public final class AndroidParagraphIntrinsics implements ParagraphIntrinsics {
         return this.textDirectionHeuristic;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Typeface _init_$lambda$0(AndroidParagraphIntrinsics androidParagraphIntrinsics, FontFamily fontFamily, FontWeight fontWeight, FontStyle fontStyle, FontSynthesis fontSynthesis) {
-        State<Object> mo7787resolveDPcqOEQ = androidParagraphIntrinsics.fontFamilyResolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, fontStyle.m7818unboximpl(), fontSynthesis.m7831unboximpl());
-        if (!(mo7787resolveDPcqOEQ instanceof TypefaceResult.Immutable)) {
-            TypefaceDirtyTrackerLinkedList typefaceDirtyTrackerLinkedList = new TypefaceDirtyTrackerLinkedList(mo7787resolveDPcqOEQ, androidParagraphIntrinsics.resolvedTypefaces);
+        State<Object> mo7088resolveDPcqOEQ = androidParagraphIntrinsics.fontFamilyResolver.mo7088resolveDPcqOEQ(fontFamily, fontWeight, fontStyle.m7118unboximpl(), fontSynthesis.m7131unboximpl());
+        if (!(mo7088resolveDPcqOEQ instanceof TypefaceResult.Immutable)) {
+            TypefaceDirtyTrackerLinkedList typefaceDirtyTrackerLinkedList = new TypefaceDirtyTrackerLinkedList(mo7088resolveDPcqOEQ, androidParagraphIntrinsics.resolvedTypefaces);
             androidParagraphIntrinsics.resolvedTypefaces = typefaceDirtyTrackerLinkedList;
             return typefaceDirtyTrackerLinkedList.getTypeface();
         }
-        Object value = ((TypefaceResult.Immutable) mo7787resolveDPcqOEQ).getValue();
+        Object value = ((TypefaceResult.Immutable) mo7088resolveDPcqOEQ).getValue();
         Intrinsics.checkNotNull(value, "null cannot be cast to non-null type android.graphics.Typeface");
         return (Typeface) value;
     }

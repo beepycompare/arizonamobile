@@ -38,20 +38,20 @@ public final class TextMeasurer {
     }
 
     /* renamed from: measure-xDpz5zY$default */
-    public static /* synthetic */ TextLayoutResult m7675measurexDpz5zY$default(TextMeasurer textMeasurer, AnnotatedString annotatedString, TextStyle textStyle, int i, boolean z, int i2, List list, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2, int i3, Object obj) {
+    public static /* synthetic */ TextLayoutResult m6977measurexDpz5zY$default(TextMeasurer textMeasurer, AnnotatedString annotatedString, TextStyle textStyle, int i, boolean z, int i2, List list, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             textStyle = TextStyle.Companion.getDefault();
         }
-        return textMeasurer.m7677measurexDpz5zY(annotatedString, textStyle, (i3 & 4) != 0 ? TextOverflow.Companion.m8193getClipgIe3tQ8() : i, (i3 & 8) != 0 ? true : z, (i3 & 16) != 0 ? Integer.MAX_VALUE : i2, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null) : j, (i3 & 128) != 0 ? textMeasurer.defaultLayoutDirection : layoutDirection, (i3 & 256) != 0 ? textMeasurer.defaultDensity : density, (i3 & 512) != 0 ? textMeasurer.defaultFontFamilyResolver : resolver, (i3 & 1024) != 0 ? false : z2);
+        return textMeasurer.m6979measurexDpz5zY(annotatedString, textStyle, (i3 & 4) != 0 ? TextOverflow.Companion.m7490getClipgIe3tQ8() : i, (i3 & 8) != 0 ? true : z, (i3 & 16) != 0 ? Integer.MAX_VALUE : i2, (i3 & 32) != 0 ? CollectionsKt.emptyList() : list, (i3 & 64) != 0 ? ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null) : j, (i3 & 128) != 0 ? textMeasurer.defaultLayoutDirection : layoutDirection, (i3 & 256) != 0 ? textMeasurer.defaultDensity : density, (i3 & 512) != 0 ? textMeasurer.defaultFontFamilyResolver : resolver, (i3 & 1024) != 0 ? false : z2);
     }
 
     /* renamed from: measure-xDpz5zY */
-    public final TextLayoutResult m7677measurexDpz5zY(AnnotatedString annotatedString, TextStyle textStyle, int i, boolean z, int i2, List<AnnotatedString.Range<Placeholder>> list, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2) {
+    public final TextLayoutResult m6979measurexDpz5zY(AnnotatedString annotatedString, TextStyle textStyle, int i, boolean z, int i2, List<AnnotatedString.Range<Placeholder>> list, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2) {
         TextLayoutCache textLayoutCache;
         TextLayoutInput textLayoutInput = new TextLayoutInput(annotatedString, textStyle, list, i2, z, i, density, layoutDirection, resolver, j, (DefaultConstructorMarker) null);
         TextLayoutResult textLayoutResult = (z2 || (textLayoutCache = this.textLayoutCache) == null) ? null : textLayoutCache.get(textLayoutInput);
         if (textLayoutResult != null) {
-            return textLayoutResult.m7670copyO0kMr_c(textLayoutInput, ConstraintsKt.m8225constrain4WqzIAM(j, IntSize.m8424constructorimpl((ParagraphKt.ceilToInt(textLayoutResult.getMultiParagraph().getWidth()) << 32) | (ParagraphKt.ceilToInt(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L))));
+            return textLayoutResult.m6972copyO0kMr_c(textLayoutInput, ConstraintsKt.m7522constrain4WqzIAM(j, IntSize.m7721constructorimpl((ParagraphKt.ceilToInt(textLayoutResult.getMultiParagraph().getWidth()) << 32) | (ParagraphKt.ceilToInt(textLayoutResult.getMultiParagraph().getHeight()) & 4294967295L))));
         }
         TextLayoutResult layout = Companion.layout(textLayoutInput);
         TextLayoutCache textLayoutCache2 = this.textLayoutCache;
@@ -62,20 +62,20 @@ public final class TextMeasurer {
     }
 
     /* renamed from: measure-wNUYSr0$default */
-    public static /* synthetic */ TextLayoutResult m7674measurewNUYSr0$default(TextMeasurer textMeasurer, String str, TextStyle textStyle, int i, boolean z, int i2, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2, int i3, Object obj) {
+    public static /* synthetic */ TextLayoutResult m6976measurewNUYSr0$default(TextMeasurer textMeasurer, String str, TextStyle textStyle, int i, boolean z, int i2, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             textStyle = TextStyle.Companion.getDefault();
         }
         TextStyle textStyle2 = textStyle;
         if ((i3 & 4) != 0) {
-            i = TextOverflow.Companion.m8193getClipgIe3tQ8();
+            i = TextOverflow.Companion.m7490getClipgIe3tQ8();
         }
-        return textMeasurer.m7676measurewNUYSr0(str, textStyle2, i, (i3 & 8) != 0 ? true : z, (i3 & 16) != 0 ? Integer.MAX_VALUE : i2, (i3 & 32) != 0 ? ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null) : j, (i3 & 64) != 0 ? textMeasurer.defaultLayoutDirection : layoutDirection, (i3 & 128) != 0 ? textMeasurer.defaultDensity : density, (i3 & 256) != 0 ? textMeasurer.defaultFontFamilyResolver : resolver, (i3 & 512) != 0 ? false : z2);
+        return textMeasurer.m6978measurewNUYSr0(str, textStyle2, i, (i3 & 8) != 0 ? true : z, (i3 & 16) != 0 ? Integer.MAX_VALUE : i2, (i3 & 32) != 0 ? ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null) : j, (i3 & 64) != 0 ? textMeasurer.defaultLayoutDirection : layoutDirection, (i3 & 128) != 0 ? textMeasurer.defaultDensity : density, (i3 & 256) != 0 ? textMeasurer.defaultFontFamilyResolver : resolver, (i3 & 512) != 0 ? false : z2);
     }
 
     /* renamed from: measure-wNUYSr0 */
-    public final TextLayoutResult m7676measurewNUYSr0(String str, TextStyle textStyle, int i, boolean z, int i2, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2) {
-        return m7675measurexDpz5zY$default(this, new AnnotatedString(str, null, 2, null), textStyle, i, z, i2, null, j, layoutDirection, density, resolver, z2, 32, null);
+    public final TextLayoutResult m6978measurewNUYSr0(String str, TextStyle textStyle, int i, boolean z, int i2, long j, LayoutDirection layoutDirection, Density density, FontFamily.Resolver resolver, boolean z2) {
+        return m6977measurexDpz5zY$default(this, new AnnotatedString(str, null, 2, null), textStyle, i, z, i2, null, j, layoutDirection, density, resolver, z2, 32, null);
     }
 
     /* compiled from: TextMeasurer.kt */
@@ -98,45 +98,45 @@ public final class TextMeasurer {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final TextLayoutResult layout(TextLayoutInput textLayoutInput) {
-            int m8211getMaxWidthimpl;
+            int m7508getMaxWidthimpl;
             int maxLines;
-            boolean m7679isEllipsisMW5ApA;
-            boolean m7679isEllipsisMW5ApA2;
+            boolean m6981isEllipsisMW5ApA;
+            boolean m6981isEllipsisMW5ApA2;
             MultiParagraphIntrinsics multiParagraphIntrinsics = new MultiParagraphIntrinsics(textLayoutInput.getText(), TextStyleKt.resolveDefaults(textLayoutInput.getStyle(), textLayoutInput.getLayoutDirection()), textLayoutInput.getPlaceholders(), textLayoutInput.getDensity(), textLayoutInput.getFontFamilyResolver());
-            int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(textLayoutInput.m7667getConstraintsmsEJaDk());
+            int m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(textLayoutInput.m6969getConstraintsmsEJaDk());
             if (!textLayoutInput.getSoftWrap()) {
-                m7679isEllipsisMW5ApA2 = TextMeasurerKt.m7679isEllipsisMW5ApA(textLayoutInput.m7668getOverflowgIe3tQ8());
+                m6981isEllipsisMW5ApA2 = TextMeasurerKt.m6981isEllipsisMW5ApA(textLayoutInput.m6970getOverflowgIe3tQ8());
             }
-            if (Constraints.m8207getHasBoundedWidthimpl(textLayoutInput.m7667getConstraintsmsEJaDk())) {
-                m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(textLayoutInput.m7667getConstraintsmsEJaDk());
+            if (Constraints.m7504getHasBoundedWidthimpl(textLayoutInput.m6969getConstraintsmsEJaDk())) {
+                m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(textLayoutInput.m6969getConstraintsmsEJaDk());
                 if (!textLayoutInput.getSoftWrap()) {
-                    m7679isEllipsisMW5ApA = TextMeasurerKt.m7679isEllipsisMW5ApA(textLayoutInput.m7668getOverflowgIe3tQ8());
-                    if (m7679isEllipsisMW5ApA) {
+                    m6981isEllipsisMW5ApA = TextMeasurerKt.m6981isEllipsisMW5ApA(textLayoutInput.m6970getOverflowgIe3tQ8());
+                    if (m6981isEllipsisMW5ApA) {
                         maxLines = 1;
                         int i = maxLines;
-                        if (m8213getMinWidthimpl != m8211getMaxWidthimpl) {
-                            m8211getMaxWidthimpl = RangesKt.coerceIn(ParagraphKt.ceilToInt(multiParagraphIntrinsics.getMaxIntrinsicWidth()), m8213getMinWidthimpl, m8211getMaxWidthimpl);
+                        if (m7510getMinWidthimpl != m7508getMaxWidthimpl) {
+                            m7508getMaxWidthimpl = RangesKt.coerceIn(ParagraphKt.ceilToInt(multiParagraphIntrinsics.getMaxIntrinsicWidth()), m7510getMinWidthimpl, m7508getMaxWidthimpl);
                         }
-                        MultiParagraph multiParagraph = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(0, m8211getMaxWidthimpl, 0, Constraints.m8210getMaxHeightimpl(textLayoutInput.m7667getConstraintsmsEJaDk())), i, textLayoutInput.m7668getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
-                        return new TextLayoutResult(textLayoutInput, multiParagraph, ConstraintsKt.m8225constrain4WqzIAM(textLayoutInput.m7667getConstraintsmsEJaDk(), IntSize.m8424constructorimpl((((int) Math.ceil(multiParagraph.getWidth())) << 32) | (((int) Math.ceil(multiParagraph.getHeight())) & 4294967295L))), null);
+                        MultiParagraph multiParagraph = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA(0, m7508getMaxWidthimpl, 0, Constraints.m7507getMaxHeightimpl(textLayoutInput.m6969getConstraintsmsEJaDk())), i, textLayoutInput.m6970getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
+                        return new TextLayoutResult(textLayoutInput, multiParagraph, ConstraintsKt.m7522constrain4WqzIAM(textLayoutInput.m6969getConstraintsmsEJaDk(), IntSize.m7721constructorimpl((((int) Math.ceil(multiParagraph.getWidth())) << 32) | (((int) Math.ceil(multiParagraph.getHeight())) & 4294967295L))), null);
                     }
                 }
                 maxLines = textLayoutInput.getMaxLines();
                 int i2 = maxLines;
-                if (m8213getMinWidthimpl != m8211getMaxWidthimpl) {
+                if (m7510getMinWidthimpl != m7508getMaxWidthimpl) {
                 }
-                MultiParagraph multiParagraph2 = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(0, m8211getMaxWidthimpl, 0, Constraints.m8210getMaxHeightimpl(textLayoutInput.m7667getConstraintsmsEJaDk())), i2, textLayoutInput.m7668getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
-                return new TextLayoutResult(textLayoutInput, multiParagraph2, ConstraintsKt.m8225constrain4WqzIAM(textLayoutInput.m7667getConstraintsmsEJaDk(), IntSize.m8424constructorimpl((((int) Math.ceil(multiParagraph2.getWidth())) << 32) | (((int) Math.ceil(multiParagraph2.getHeight())) & 4294967295L))), null);
+                MultiParagraph multiParagraph2 = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA(0, m7508getMaxWidthimpl, 0, Constraints.m7507getMaxHeightimpl(textLayoutInput.m6969getConstraintsmsEJaDk())), i2, textLayoutInput.m6970getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
+                return new TextLayoutResult(textLayoutInput, multiParagraph2, ConstraintsKt.m7522constrain4WqzIAM(textLayoutInput.m6969getConstraintsmsEJaDk(), IntSize.m7721constructorimpl((((int) Math.ceil(multiParagraph2.getWidth())) << 32) | (((int) Math.ceil(multiParagraph2.getHeight())) & 4294967295L))), null);
             }
-            m8211getMaxWidthimpl = Integer.MAX_VALUE;
+            m7508getMaxWidthimpl = Integer.MAX_VALUE;
             if (!textLayoutInput.getSoftWrap()) {
             }
             maxLines = textLayoutInput.getMaxLines();
             int i22 = maxLines;
-            if (m8213getMinWidthimpl != m8211getMaxWidthimpl) {
+            if (m7510getMinWidthimpl != m7508getMaxWidthimpl) {
             }
-            MultiParagraph multiParagraph22 = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(0, m8211getMaxWidthimpl, 0, Constraints.m8210getMaxHeightimpl(textLayoutInput.m7667getConstraintsmsEJaDk())), i22, textLayoutInput.m7668getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
-            return new TextLayoutResult(textLayoutInput, multiParagraph22, ConstraintsKt.m8225constrain4WqzIAM(textLayoutInput.m7667getConstraintsmsEJaDk(), IntSize.m8424constructorimpl((((int) Math.ceil(multiParagraph22.getWidth())) << 32) | (((int) Math.ceil(multiParagraph22.getHeight())) & 4294967295L))), null);
+            MultiParagraph multiParagraph22 = new MultiParagraph(multiParagraphIntrinsics, Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA(0, m7508getMaxWidthimpl, 0, Constraints.m7507getMaxHeightimpl(textLayoutInput.m6969getConstraintsmsEJaDk())), i22, textLayoutInput.m6970getOverflowgIe3tQ8(), (DefaultConstructorMarker) null);
+            return new TextLayoutResult(textLayoutInput, multiParagraph22, ConstraintsKt.m7522constrain4WqzIAM(textLayoutInput.m6969getConstraintsmsEJaDk(), IntSize.m7721constructorimpl((((int) Math.ceil(multiParagraph22.getWidth())) << 32) | (((int) Math.ceil(multiParagraph22.getHeight())) & 4294967295L))), null);
         }
     }
 }

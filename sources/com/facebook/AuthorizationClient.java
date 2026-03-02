@@ -371,11 +371,12 @@ public class AuthorizationClient implements Serializable {
         boolean onActivityResult(int i, int i2, Intent intent) {
             logEvent(AnalyticsEvents.EVENT_NATIVE_LOGIN_DIALOG_COMPLETE, AnalyticsEvents.PARAMETER_NATIVE_LOGIN_DIALOG_COMPLETE_TIME, this.callId);
             Result createCancelResult = intent == null ? Result.createCancelResult(AuthorizationClient.this.pendingRequest, "Operation canceled") : NativeProtocol.isServiceDisabledResult20121101(intent) ? null : i2 == 0 ? createCancelOrErrorResult(AuthorizationClient.this.pendingRequest, intent) : i2 != -1 ? Result.createErrorResult(AuthorizationClient.this.pendingRequest, "Unexpected resultCode from authorization.", null) : handleResultOk(intent);
+            AuthorizationClient authorizationClient = AuthorizationClient.this;
             if (createCancelResult != null) {
-                AuthorizationClient.this.completeAndValidate(createCancelResult);
+                authorizationClient.completeAndValidate(createCancelResult);
                 return true;
             }
-            AuthorizationClient.this.tryNextHandler();
+            authorizationClient.tryNextHandler();
             return true;
         }
 
@@ -427,7 +428,9 @@ public class AuthorizationClient implements Serializable {
             } else if (ServerProtocol.errorsProxyAuthDisabled.contains(string)) {
                 return null;
             } else {
-                return ServerProtocol.errorsUserCanceled.contains(string) ? Result.createCancelResult(AuthorizationClient.this.pendingRequest, null) : Result.createErrorResult(AuthorizationClient.this.pendingRequest, string, string3, string2);
+                boolean contains = ServerProtocol.errorsUserCanceled.contains(string);
+                AuthorizationClient authorizationClient = AuthorizationClient.this;
+                return contains ? Result.createCancelResult(authorizationClient.pendingRequest, null) : Result.createErrorResult(authorizationClient.pendingRequest, string, string3, string2);
             }
         }
 
@@ -436,8 +439,8 @@ public class AuthorizationClient implements Serializable {
             return "katana_proxy_auth";
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:12:0x002f  */
-        /* JADX WARN: Removed duplicated region for block: B:13:0x0035  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x0031  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0035  */
         @Override // com.facebook.AuthorizationClient.AuthHandler
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -451,17 +454,19 @@ public class AuthorizationClient implements Serializable {
                 stringExtra = "Operation canceled";
             } else if (i2 != 0) {
                 createErrorResult = i2 != -1 ? Result.createErrorResult(AuthorizationClient.this.pendingRequest, "Unexpected resultCode from authorization.", null) : handleResultOk(intent);
+                AuthorizationClient authorizationClient = AuthorizationClient.this;
                 if (createErrorResult == null) {
-                    AuthorizationClient.this.completeAndValidate(createErrorResult);
+                    authorizationClient.completeAndValidate(createErrorResult);
                     return true;
                 }
-                AuthorizationClient.this.tryNextHandler();
+                authorizationClient.tryNextHandler();
                 return true;
             } else {
                 authorizationRequest = AuthorizationClient.this.pendingRequest;
                 stringExtra = intent.getStringExtra("error");
             }
             createErrorResult = Result.createCancelResult(authorizationRequest, stringExtra);
+            AuthorizationClient authorizationClient2 = AuthorizationClient.this;
             if (createErrorResult == null) {
             }
         }

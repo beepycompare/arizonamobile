@@ -5,79 +5,93 @@ import java.lang.annotation.Annotation;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.serialization.ExperimentalSerializationApi;
+import kotlinx.serialization.internal.PluginGeneratedSerialDescriptorKt;
 /* compiled from: SerialDescriptors.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0001¢\u0006\u0004\b\u0005\u0010\u0006J\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0097\u0001J\u0011\u0010\u000e\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\rH\u0097\u0001J\u0011\u0010\u000f\u001a\u00020\r2\u0006\u0010\u0010\u001a\u00020\u0003H\u0097\u0001J\u0011\u0010\u0011\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\rH\u0097\u0001J\u0011\u0010\u0012\u001a\u00020\u00132\u0006\u0010\f\u001a\u00020\rH\u0097\u0001R\u0014\u0010\u0002\u001a\u00020\u0003X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u000b0\n8VX\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\r8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0019R\u0014\u0010\u001a\u001a\u00020\u00138VX\u0096\u0005¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u00138VX\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001bR\u0014\u0010\u001d\u001a\u00020\u001e8\u0016X\u0097\u0005¢\u0006\u0006\u001a\u0004\b\u001f\u0010 ¨\u0006!"}, d2 = {"Lkotlinx/serialization/descriptors/WrappedSerialDescriptor;", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "serialName", "", "original", "<init>", "(Ljava/lang/String;Lkotlinx/serialization/descriptors/SerialDescriptor;)V", "getSerialName", "()Ljava/lang/String;", "getElementAnnotations", "", "", FirebaseAnalytics.Param.INDEX, "", "getElementDescriptor", "getElementIndex", "name", "getElementName", "isElementOptional", "", "annotations", "getAnnotations", "()Ljava/util/List;", "elementsCount", "getElementsCount", "()I", "isInline", "()Z", "isNullable", "kind", "Lkotlinx/serialization/descriptors/SerialKind;", "getKind", "()Lkotlinx/serialization/descriptors/SerialKind;", "kotlinx-serialization-core"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0010\u001b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0019\bF\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0001¢\u0006\u0004\b\u0005\u0010\u0006J\u0014\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0096\u0082\u0004J\n\u0010\r\u001a\u00020\u000eH\u0096\u0080\u0004J\n\u0010\u000f\u001a\u00020\u0003H\u0096\u0080\u0004J\u0018\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u00112\u0006\u0010\u0013\u001a\u00020\u000eH\u0096\u0081\u0004J\u0012\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u000eH\u0096\u0081\u0004J\u0012\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u0003H\u0096\u0081\u0004J\u0012\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0013\u001a\u00020\u000eH\u0096\u0081\u0004J\u0012\u0010\u0018\u001a\u00020\n2\u0006\u0010\u0013\u001a\u00020\u000eH\u0096\u0081\u0004R\u0015\u0010\u0002\u001a\u00020\u0003X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u000f\u0010\u0004\u001a\u00020\u0001X\u0082\u0084\b¢\u0006\u0002\n\u0000R\u001b\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00120\u00118VX\u0096\u0085\b¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0013\u0010\u001c\u001a\u00020\u000eX\u0096\u0085\b¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u001eR\u0015\u0010\u001f\u001a\u00020\n8VX\u0096\u0085\b¢\u0006\u0006\u001a\u0004\b\u001f\u0010 R\u0015\u0010!\u001a\u00020\n8VX\u0096\u0085\b¢\u0006\u0006\u001a\u0004\b!\u0010 R\u0013\u0010\"\u001a\u00020#X\u0096\u0085\b¢\u0006\u0006\u001a\u0004\b$\u0010%¨\u0006&"}, d2 = {"Lkotlinx/serialization/descriptors/WrappedSerialDescriptor;", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "serialName", "", "original", "<init>", "(Ljava/lang/String;Lkotlinx/serialization/descriptors/SerialDescriptor;)V", "getSerialName", "()Ljava/lang/String;", "equals", "", "other", "", "hashCode", "", "toString", "getElementAnnotations", "", "", FirebaseAnalytics.Param.INDEX, "getElementDescriptor", "getElementIndex", "name", "getElementName", "isElementOptional", "annotations", "getAnnotations", "()Ljava/util/List;", "elementsCount", "getElementsCount", "()I", "isInline", "()Z", "isNullable", "kind", "Lkotlinx/serialization/descriptors/SerialKind;", "getKind", "()Lkotlinx/serialization/descriptors/SerialKind;", "kotlinx-serialization-core"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class WrappedSerialDescriptor implements SerialDescriptor {
-    private final /* synthetic */ SerialDescriptor $$delegate_0;
+    private final SerialDescriptor original;
     private final String serialName;
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public List<Annotation> getAnnotations() {
-        return this.$$delegate_0.getAnnotations();
+        return this.original.getAnnotations();
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
-    @ExperimentalSerializationApi
     public List<Annotation> getElementAnnotations(int i) {
-        return this.$$delegate_0.getElementAnnotations(i);
+        return this.original.getElementAnnotations(i);
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
-    @ExperimentalSerializationApi
     public SerialDescriptor getElementDescriptor(int i) {
-        return this.$$delegate_0.getElementDescriptor(i);
+        return this.original.getElementDescriptor(i);
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
-    @ExperimentalSerializationApi
     public int getElementIndex(String name) {
         Intrinsics.checkNotNullParameter(name, "name");
-        return this.$$delegate_0.getElementIndex(name);
+        return this.original.getElementIndex(name);
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
-    @ExperimentalSerializationApi
     public String getElementName(int i) {
-        return this.$$delegate_0.getElementName(i);
+        return this.original.getElementName(i);
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public int getElementsCount() {
-        return this.$$delegate_0.getElementsCount();
+        return this.original.getElementsCount();
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public SerialKind getKind() {
-        return this.$$delegate_0.getKind();
+        return this.original.getKind();
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
-    @ExperimentalSerializationApi
     public boolean isElementOptional(int i) {
-        return this.$$delegate_0.isElementOptional(i);
+        return this.original.isElementOptional(i);
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public boolean isInline() {
-        return this.$$delegate_0.isInline();
+        return this.original.isInline();
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public boolean isNullable() {
-        return this.$$delegate_0.isNullable();
+        return this.original.isNullable();
     }
 
     public WrappedSerialDescriptor(String serialName, SerialDescriptor original) {
         Intrinsics.checkNotNullParameter(serialName, "serialName");
         Intrinsics.checkNotNullParameter(original, "original");
-        this.$$delegate_0 = original;
         this.serialName = serialName;
+        this.original = original;
     }
 
     @Override // kotlinx.serialization.descriptors.SerialDescriptor
     public String getSerialName() {
         return this.serialName;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof WrappedSerialDescriptor) {
+            WrappedSerialDescriptor wrappedSerialDescriptor = (WrappedSerialDescriptor) obj;
+            return Intrinsics.areEqual(getSerialName(), wrappedSerialDescriptor.getSerialName()) && Intrinsics.areEqual(this.original, wrappedSerialDescriptor.original);
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return (getSerialName().hashCode() * 31) + this.original.hashCode();
+    }
+
+    public String toString() {
+        return PluginGeneratedSerialDescriptorKt.toStringImpl(this);
     }
 }

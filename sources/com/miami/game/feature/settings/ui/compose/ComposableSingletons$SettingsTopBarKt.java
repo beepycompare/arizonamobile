@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsTopBar.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$SettingsTopBarKt {
     public static final ComposableSingletons$SettingsTopBarKt INSTANCE = new ComposableSingletons$SettingsTopBarKt();
@@ -28,18 +28,16 @@ public final class ComposableSingletons$SettingsTopBarKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f146lambda$1729539213 = ComposableLambdaKt.composableLambdaInstance(-1729539213, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsTopBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__1729539213$lambda$0;
-            lambda__1729539213$lambda$0 = ComposableSingletons$SettingsTopBarKt.lambda__1729539213$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__1729539213$lambda$0;
+            return ComposableSingletons$SettingsTopBarKt.lambda__1729539213$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
-    /* renamed from: getLambda$-1729539213$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m10166getLambda$1729539213$settings_release() {
+    /* renamed from: getLambda$-1729539213$settings  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9126getLambda$1729539213$settings() {
         return f146lambda$1729539213;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1729539213$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C49@1777L85,48@1746L267:SettingsTopBar.kt#1gr92h");
@@ -49,7 +47,7 @@ public final class ComposableSingletons$SettingsTopBarKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1729539213, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsTopBarKt.lambda$-1729539213.<anonymous> (SettingsTopBar.kt:48)");
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
+            ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.btn_back_launcher, composer, 0), (String) null, SizeKt.m850height3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(72)), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

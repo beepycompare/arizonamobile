@@ -46,7 +46,7 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode
     /* renamed from: onDragStarted-k-4lQ0M */
-    public void mo485onDragStartedk4lQ0M(long j) {
+    public void mo423onDragStartedk4lQ0M(long j) {
     }
 
     public Scrollable2DNode(Scrollable2DState scrollable2DState, OverscrollEffect overscrollEffect, FlingBehavior flingBehavior, boolean z, MutableInteractionSource mutableInteractionSource) {
@@ -134,12 +134,12 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
 
     @Override // androidx.compose.foundation.gestures.DragGestureNode, androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
         for (int i = 0; i < size; i++) {
-            if (getCanDrag().invoke(PointerType.m6812boximpl(changes.get(i).m6747getTypeT8wyACA())).booleanValue()) {
-                super.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+            if (getCanDrag().invoke(PointerType.m6153boximpl(changes.get(i).m6088getTypeT8wyACA())).booleanValue()) {
+                super.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
                 return;
             }
         }
@@ -164,15 +164,13 @@ public final class Scrollable2DNode extends DragGestureNode implements Semantics
         this.scrollByAction = new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean scrollSemanticsActions$lambda$0;
-                scrollSemanticsActions$lambda$0 = Scrollable2DNode.setScrollSemanticsActions$lambda$0(Scrollable2DNode.this, ((Float) obj).floatValue(), ((Float) obj2).floatValue());
-                return Boolean.valueOf(scrollSemanticsActions$lambda$0);
+                return Boolean.valueOf(Scrollable2DNode.setScrollSemanticsActions$lambda$0(Scrollable2DNode.this, ((Float) obj).floatValue(), ((Float) obj2).floatValue()));
             }
         };
         this.scrollByOffsetAction = new Scrollable2DNode$setScrollSemanticsActions$2(this, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean setScrollSemanticsActions$lambda$0(Scrollable2DNode scrollable2DNode, float f, float f2) {
         BuildersKt__Builders_commonKt.launch$default(scrollable2DNode.getCoroutineScope(), null, null, new Scrollable2DNode$setScrollSemanticsActions$1$1(scrollable2DNode, f, f2, null), 3, null);
         return true;

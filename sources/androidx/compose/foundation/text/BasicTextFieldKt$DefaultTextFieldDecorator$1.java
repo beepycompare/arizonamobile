@@ -18,7 +18,7 @@ public final class BasicTextFieldKt$DefaultTextFieldDecorator$1 implements TextF
     BasicTextFieldKt$DefaultTextFieldDecorator$1() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Decoration$lambda$0(BasicTextFieldKt$DefaultTextFieldDecorator$1 basicTextFieldKt$DefaultTextFieldDecorator$1, Function2 function2, int i, Composer composer, int i2) {
         basicTextFieldKt$DefaultTextFieldDecorator$1.Decoration(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -53,9 +53,7 @@ public final class BasicTextFieldKt$DefaultTextFieldDecorator$1 implements TextF
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicTextFieldKt$DefaultTextFieldDecorator$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Decoration$lambda$0;
-                    Decoration$lambda$0 = BasicTextFieldKt$DefaultTextFieldDecorator$1.Decoration$lambda$0(BasicTextFieldKt$DefaultTextFieldDecorator$1.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Decoration$lambda$0;
+                    return BasicTextFieldKt$DefaultTextFieldDecorator$1.Decoration$lambda$0(BasicTextFieldKt$DefaultTextFieldDecorator$1.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

@@ -1,10 +1,10 @@
 package io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate;
 
-import io.appmetrica.analytics.impl.C0740z2;
+import io.appmetrica.analytics.impl.C0739z2;
 /* loaded from: classes3.dex */
 public enum ApplicationState {
     UNKNOWN("unknown"),
-    BACKGROUND(C0740z2.g),
+    BACKGROUND(C0739z2.g),
     VISIBLE("visible");
     
 

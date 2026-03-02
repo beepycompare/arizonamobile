@@ -13,7 +13,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface Renderer extends PlayerMessage.Target {
     public static final long DEFAULT_DURATION_TO_PROGRESS_US = 10000;
     public static final long DEFAULT_IDLE_DURATION_TO_PROGRESS_US = 1000000;
@@ -47,18 +47,18 @@ public interface Renderer extends PlayerMessage.Target {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface MessageType {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface State {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface WakeupListener {
         void onSleep();
 

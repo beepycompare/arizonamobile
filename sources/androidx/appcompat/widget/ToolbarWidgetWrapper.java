@@ -353,21 +353,25 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
                 updateToolbarLogo();
             }
             if ((i2 & 8) != 0) {
-                if ((i & 8) != 0) {
-                    this.mToolbar.setTitle(this.mTitle);
+                int i3 = i & 8;
+                Toolbar toolbar = this.mToolbar;
+                if (i3 != 0) {
+                    toolbar.setTitle(this.mTitle);
                     this.mToolbar.setSubtitle(this.mSubtitle);
                 } else {
-                    this.mToolbar.setTitle((CharSequence) null);
+                    toolbar.setTitle((CharSequence) null);
                     this.mToolbar.setSubtitle((CharSequence) null);
                 }
             }
             if ((i2 & 16) == 0 || (view = this.mCustomView) == null) {
                 return;
             }
-            if ((i & 16) != 0) {
-                this.mToolbar.addView(view);
+            int i4 = i & 16;
+            Toolbar toolbar2 = this.mToolbar;
+            if (i4 != 0) {
+                toolbar2.addView(view);
             } else {
-                this.mToolbar.removeView(view);
+                toolbar2.removeView(view);
             }
         }
     }
@@ -568,8 +572,9 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
     }
 
     private void updateNavigationIcon() {
-        if ((this.mDisplayOpts & 4) != 0) {
-            Toolbar toolbar = this.mToolbar;
+        int i = this.mDisplayOpts & 4;
+        Toolbar toolbar = this.mToolbar;
+        if (i != 0) {
             Drawable drawable = this.mNavIcon;
             if (drawable == null) {
                 drawable = this.mDefaultNavigationIcon;
@@ -577,7 +582,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             toolbar.setNavigationIcon(drawable);
             return;
         }
-        this.mToolbar.setNavigationIcon((Drawable) null);
+        toolbar.setNavigationIcon((Drawable) null);
     }
 
     @Override // androidx.appcompat.widget.DecorToolbar
@@ -593,10 +598,12 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
 
     private void updateHomeAccessibility() {
         if ((this.mDisplayOpts & 4) != 0) {
-            if (TextUtils.isEmpty(this.mHomeDescription)) {
-                this.mToolbar.setNavigationContentDescription(this.mDefaultNavigationContentDescription);
+            boolean isEmpty = TextUtils.isEmpty(this.mHomeDescription);
+            Toolbar toolbar = this.mToolbar;
+            if (isEmpty) {
+                toolbar.setNavigationContentDescription(this.mDefaultNavigationContentDescription);
             } else {
-                this.mToolbar.setNavigationContentDescription(this.mHomeDescription);
+                toolbar.setNavigationContentDescription(this.mHomeDescription);
             }
         }
     }

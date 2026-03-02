@@ -33,13 +33,13 @@ import kotlin.reflect.KClass;
 @Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a,\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u0011\u0010\u0005\u001a\r\u0012\u0004\u0012\u00020\u00010\u0006¢\u0006\u0002\b\u0007H\u0007¢\u0006\u0002\u0010\b\u001a$\u0010\t\u001a\u00020\u0001*\u00020\u00042\u0011\u0010\u0005\u001a\r\u0012\u0004\u0012\u00020\u00010\u0006¢\u0006\u0002\b\u0007H\u0003¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"LocalOwnersProvider", "", "Landroidx/navigation/NavBackStackEntry;", "saveableStateHolder", "Landroidx/compose/runtime/saveable/SaveableStateHolder;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/navigation/NavBackStackEntry;Landroidx/compose/runtime/saveable/SaveableStateHolder;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "SaveableStateProvider", "(Landroidx/compose/runtime/saveable/SaveableStateHolder;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "navigation-compose_release"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class NavBackStackEntryProviderKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LocalOwnersProvider$lambda$0(NavBackStackEntry navBackStackEntry, SaveableStateHolder saveableStateHolder, Function2 function2, int i, Composer composer, int i2) {
         LocalOwnersProvider(navBackStackEntry, saveableStateHolder, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SaveableStateProvider$lambda$3(SaveableStateHolder saveableStateHolder, Function2 function2, int i, Composer composer, int i2) {
         SaveableStateProvider(saveableStateHolder, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -98,9 +98,7 @@ public final class NavBackStackEntryProviderKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavBackStackEntryProviderKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LocalOwnersProvider$lambda$0;
-                    LocalOwnersProvider$lambda$0 = NavBackStackEntryProviderKt.LocalOwnersProvider$lambda$0(NavBackStackEntry.this, saveableStateHolder, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LocalOwnersProvider$lambda$0;
+                    return NavBackStackEntryProviderKt.LocalOwnersProvider$lambda$0(NavBackStackEntry.this, saveableStateHolder, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -130,9 +128,7 @@ public final class NavBackStackEntryProviderKt {
                 rememberedValue = new Function1() { // from class: androidx.navigation.compose.NavBackStackEntryProviderKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        BackStackEntryIdViewModel SaveableStateProvider$lambda$2$lambda$1;
-                        SaveableStateProvider$lambda$2$lambda$1 = NavBackStackEntryProviderKt.SaveableStateProvider$lambda$2$lambda$1((CreationExtras) obj);
-                        return SaveableStateProvider$lambda$2$lambda$1;
+                        return NavBackStackEntryProviderKt.SaveableStateProvider$lambda$2$lambda$1((CreationExtras) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -169,15 +165,13 @@ public final class NavBackStackEntryProviderKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavBackStackEntryProviderKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SaveableStateProvider$lambda$3;
-                    SaveableStateProvider$lambda$3 = NavBackStackEntryProviderKt.SaveableStateProvider$lambda$3(SaveableStateHolder.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SaveableStateProvider$lambda$3;
+                    return NavBackStackEntryProviderKt.SaveableStateProvider$lambda$3(SaveableStateHolder.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final BackStackEntryIdViewModel SaveableStateProvider$lambda$2$lambda$1(CreationExtras creationExtras) {
         return new BackStackEntryIdViewModel(SavedStateHandleSupport.createSavedStateHandle(creationExtras));
     }

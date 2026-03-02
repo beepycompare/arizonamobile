@@ -35,7 +35,7 @@ public final class TimePickerStateImpl implements TimePickerState {
             throw new IllegalArgumentException("initialMinute should be in [0..59] range".toString());
         }
         this.is24hour = z;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimePickerSelectionMode.m3335boximpl(TimePickerSelectionMode.Companion.m3342getHouryecRtBI()), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TimePickerSelectionMode.m2775boximpl(TimePickerSelectionMode.Companion.m2782getHouryecRtBI()), null, 2, null);
         this.selection$delegate = mutableStateOf$default;
         this.hourState = SnapshotIntStateKt.mutableIntStateOf(i);
         this.minuteState = SnapshotIntStateKt.mutableIntStateOf(i2);
@@ -53,14 +53,14 @@ public final class TimePickerStateImpl implements TimePickerState {
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: getSelection-yecRtBI */
-    public int mo1969getSelectionyecRtBI() {
-        return ((TimePickerSelectionMode) this.selection$delegate.getValue()).m3341unboximpl();
+    public int mo1702getSelectionyecRtBI() {
+        return ((TimePickerSelectionMode) this.selection$delegate.getValue()).m2781unboximpl();
     }
 
     @Override // androidx.compose.material3.TimePickerState
     /* renamed from: setSelection-6_8s6DQ */
-    public void mo1971setSelection6_8s6DQ(int i) {
-        this.selection$delegate.setValue(TimePickerSelectionMode.m3335boximpl(i));
+    public void mo1704setSelection6_8s6DQ(int i) {
+        this.selection$delegate.setValue(TimePickerSelectionMode.m2775boximpl(i));
     }
 
     public final MutableIntState getHourState() {
@@ -106,26 +106,20 @@ public final class TimePickerStateImpl implements TimePickerState {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.TimePickerStateImpl$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List Saver$lambda$0;
-                    Saver$lambda$0 = TimePickerStateImpl.Companion.Saver$lambda$0((SaverScope) obj, (TimePickerStateImpl) obj2);
-                    return Saver$lambda$0;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf(Integer.valueOf(r2.getHour()), Integer.valueOf(r2.getMinute()), Boolean.valueOf(((TimePickerStateImpl) obj2).is24hour()));
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.material3.TimePickerStateImpl$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    TimePickerStateImpl Saver$lambda$1;
-                    Saver$lambda$1 = TimePickerStateImpl.Companion.Saver$lambda$1((List) obj);
-                    return Saver$lambda$1;
+                    return TimePickerStateImpl.Companion.Saver$lambda$1((List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List Saver$lambda$0(SaverScope saverScope, TimePickerStateImpl timePickerStateImpl) {
-            return CollectionsKt.listOf(Integer.valueOf(timePickerStateImpl.getHour()), Integer.valueOf(timePickerStateImpl.getMinute()), Boolean.valueOf(timePickerStateImpl.is24hour()));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final TimePickerStateImpl Saver$lambda$1(List list) {
             Object obj = list.get(0);
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");

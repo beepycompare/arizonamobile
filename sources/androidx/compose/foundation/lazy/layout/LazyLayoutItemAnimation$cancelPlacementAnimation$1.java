@@ -46,7 +46,7 @@ public final class LazyLayoutItemAnimation$cancelPlacementAnimation$1 extends Su
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.placementDeltaAnimation;
             this.label = 1;
-            if (animatable.snapTo(IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac()), this) == coroutine_suspended) {
+            if (animatable.snapTo(IntOffset.m7674boximpl(IntOffset.Companion.m7694getZeronOccac()), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -54,7 +54,7 @@ public final class LazyLayoutItemAnimation$cancelPlacementAnimation$1 extends Su
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        this.this$0.m1112setPlacementDeltagyyYBs(IntOffset.Companion.m8397getZeronOccac());
+        this.this$0.m977setPlacementDeltagyyYBs(IntOffset.Companion.m7694getZeronOccac());
         this.this$0.setPlacementAnimationInProgress(false);
         return Unit.INSTANCE;
     }

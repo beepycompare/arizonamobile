@@ -31,7 +31,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\b\u0010\u0000\u001a\u00020\u0001H\u0000\u001a`\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00030\u00052\u0006\u0010\u0006\u001a\u00020\u00012\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00030\b2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00030\u00052\u0006\u0010\u000b\u001a\u00020\f2\u0011\u0010\r\u001a\r\u0012\u0004\u0012\u00020\u00030\u0005¢\u0006\u0002\b\u000eH\u0001¢\u0006\u0002\u0010\u000f¨\u0006\u0010²\u0006\u0015\u0010\u0011\u001a\r\u0012\u0004\u0012\u00020\u00030\u0005¢\u0006\u0002\b\u000eX\u008a\u0084\u0002"}, d2 = {"createDefaultModalWideNavigationRailProperties", "Landroidx/compose/material3/ModalWideNavigationRailProperties;", "ModalWideNavigationRailDialog", "", "onDismissRequest", "Lkotlin/Function0;", "properties", "onPredictiveBack", "Lkotlin/Function1;", "", "onPredictiveBackCancelled", "predictiveBackState", "Landroidx/compose/material3/RailPredictiveBackState;", FirebaseAnalytics.Param.CONTENT, "Landroidx/compose/runtime/Composable;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/material3/ModalWideNavigationRailProperties;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/material3/RailPredictiveBackState;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "material3", "currentContent"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class WideNavigationRail_androidKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRailDialog$lambda$10(Function0 function0, ModalWideNavigationRailProperties modalWideNavigationRailProperties, Function1 function1, Function0 function02, RailPredictiveBackState railPredictiveBackState, Function2 function2, int i, Composer composer, int i2) {
         ModalWideNavigationRailDialog(function0, modalWideNavigationRailProperties, function1, function02, railPredictiveBackState, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -97,9 +97,9 @@ public final class WideNavigationRail_androidKt {
                 rememberedValue = new Function0() { // from class: androidx.compose.material3.WideNavigationRail_androidKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        UUID ModalWideNavigationRailDialog$lambda$2$lambda$1;
-                        ModalWideNavigationRailDialog$lambda$2$lambda$1 = WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$2$lambda$1();
-                        return ModalWideNavigationRailDialog$lambda$2$lambda$1;
+                        UUID randomUUID;
+                        randomUUID = UUID.randomUUID();
+                        return randomUUID;
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -135,9 +135,7 @@ public final class WideNavigationRail_androidKt {
                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.WideNavigationRail_androidKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult ModalWideNavigationRailDialog$lambda$7$lambda$6;
-                        ModalWideNavigationRailDialog$lambda$7$lambda$6 = WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$7$lambda$6(ModalWideNavigationRailDialogWrapper.this, (DisposableEffectScope) obj);
-                        return ModalWideNavigationRailDialog$lambda$7$lambda$6;
+                        return WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$7$lambda$6(ModalWideNavigationRailDialogWrapper.this, (DisposableEffectScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -155,9 +153,7 @@ public final class WideNavigationRail_androidKt {
                 rememberedValue4 = new Function0() { // from class: androidx.compose.material3.WideNavigationRail_androidKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit ModalWideNavigationRailDialog$lambda$9$lambda$8;
-                        ModalWideNavigationRailDialog$lambda$9$lambda$8 = WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$9$lambda$8(ModalWideNavigationRailDialogWrapper.this, function03, modalWideNavigationRailProperties, layoutDirection);
-                        return ModalWideNavigationRailDialog$lambda$9$lambda$8;
+                        return WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$9$lambda$8(ModalWideNavigationRailDialogWrapper.this, function03, modalWideNavigationRailProperties, layoutDirection);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -173,20 +169,13 @@ public final class WideNavigationRail_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.WideNavigationRail_androidKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ModalWideNavigationRailDialog$lambda$10;
-                    ModalWideNavigationRailDialog$lambda$10 = WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$10(Function0.this, modalWideNavigationRailProperties, function1, function02, railPredictiveBackState, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ModalWideNavigationRailDialog$lambda$10;
+                    return WideNavigationRail_androidKt.ModalWideNavigationRailDialog$lambda$10(Function0.this, modalWideNavigationRailProperties, function1, function02, railPredictiveBackState, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final UUID ModalWideNavigationRailDialog$lambda$2$lambda$1() {
-        return UUID.randomUUID();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult ModalWideNavigationRailDialog$lambda$7$lambda$6(final ModalWideNavigationRailDialogWrapper modalWideNavigationRailDialogWrapper, DisposableEffectScope disposableEffectScope) {
         modalWideNavigationRailDialogWrapper.show();
         return new DisposableEffectResult() { // from class: androidx.compose.material3.WideNavigationRail_androidKt$ModalWideNavigationRailDialog$lambda$7$lambda$6$$inlined$onDispose$1
@@ -198,7 +187,7 @@ public final class WideNavigationRail_androidKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ModalWideNavigationRailDialog$lambda$9$lambda$8(ModalWideNavigationRailDialogWrapper modalWideNavigationRailDialogWrapper, Function0 function0, ModalWideNavigationRailProperties modalWideNavigationRailProperties, LayoutDirection layoutDirection) {
         modalWideNavigationRailDialogWrapper.updateParameters(function0, modalWideNavigationRailProperties, layoutDirection);
         return Unit.INSTANCE;

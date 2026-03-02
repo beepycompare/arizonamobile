@@ -39,12 +39,13 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
         }
         Preconditions.checkArgument(occurrences > 0, "occurrences cannot be negative: %s", occurrences);
         int indexOf = this.backingMap.indexOf(element);
+        ObjectCountHashMap<E> objectCountHashMap = this.backingMap;
         if (indexOf == -1) {
-            this.backingMap.put(element, occurrences);
+            objectCountHashMap.put(element, occurrences);
             this.size += occurrences;
             return 0;
         }
-        int value = this.backingMap.getValue(indexOf);
+        int value = objectCountHashMap.getValue(indexOf);
         long j = occurrences;
         long j2 = value + j;
         Preconditions.checkArgument(j2 <= SieveCacheKt.NodeLinkMask, "too many occurrences: %s", j2);
@@ -64,10 +65,11 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
             return 0;
         }
         int value = this.backingMap.getValue(indexOf);
+        ObjectCountHashMap<E> objectCountHashMap = this.backingMap;
         if (value > occurrences) {
-            this.backingMap.setValue(indexOf, value - occurrences);
+            objectCountHashMap.setValue(indexOf, value - occurrences);
         } else {
-            this.backingMap.removeEntry(indexOf);
+            objectCountHashMap.removeEntry(indexOf);
             occurrences = value;
         }
         this.size -= occurrences;
@@ -100,11 +102,12 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
         } else if (this.backingMap.getValue(indexOf) != oldCount) {
             return false;
         } else {
+            ObjectCountHashMap<E> objectCountHashMap = this.backingMap;
             if (newCount == 0) {
-                this.backingMap.removeEntry(indexOf);
+                objectCountHashMap.removeEntry(indexOf);
                 this.size -= oldCount;
             } else {
-                this.backingMap.setValue(indexOf, newCount);
+                objectCountHashMap.setValue(indexOf, newCount);
                 this.size += newCount - oldCount;
             }
             return true;

@@ -35,8 +35,12 @@ class RemitSyncToDBHelper {
     public void endAndEnsureToDB(int i) {
         this.executor.removePostWithId(i);
         try {
-            if (!this.executor.isFreeToDatabase(i)) {
-                this.executor.postSync(i);
+            boolean isFreeToDatabase = this.executor.isFreeToDatabase(i);
+            RemitSyncExecutor remitSyncExecutor = this.executor;
+            if (!isFreeToDatabase) {
+                remitSyncExecutor.postSync(i);
+            } else {
+                remitSyncExecutor.postRemoveFreeId(i);
             }
         } finally {
             this.executor.postRemoveFreeId(i);

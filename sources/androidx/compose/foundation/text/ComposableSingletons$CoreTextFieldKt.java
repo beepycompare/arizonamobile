@@ -15,9 +15,7 @@ public final class ComposableSingletons$CoreTextFieldKt {
     private static Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> lambda$559628295 = ComposableLambdaKt.composableLambdaInstance(559628295, false, new Function3() { // from class: androidx.compose.foundation.text.ComposableSingletons$CoreTextFieldKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_559628295$lambda$0;
-            lambda_559628295$lambda$0 = ComposableSingletons$CoreTextFieldKt.lambda_559628295$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_559628295$lambda$0;
+            return ComposableSingletons$CoreTextFieldKt.lambda_559628295$lambda$0((Function2) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
@@ -25,7 +23,7 @@ public final class ComposableSingletons$CoreTextFieldKt {
         return lambda$559628295;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_559628295$lambda$0(Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(innerTextField)210@11952L16:CoreTextField.kt#423gt5");
         if ((i & 6) == 0) {

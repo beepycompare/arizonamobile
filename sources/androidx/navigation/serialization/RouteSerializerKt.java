@@ -48,9 +48,7 @@ public final class RouteSerializerKt {
         assertNotAbstractClass(kSerializer, new Function0() { // from class: androidx.navigation.serialization.RouteSerializerKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit generateRoutePattern$lambda$0;
-                generateRoutePattern$lambda$0 = RouteSerializerKt.generateRoutePattern$lambda$0(KSerializer.this);
-                return generateRoutePattern$lambda$0;
+                return RouteSerializerKt.generateRoutePattern$lambda$0(KSerializer.this);
             }
         });
         if (str != null) {
@@ -61,22 +59,20 @@ public final class RouteSerializerKt {
         forEachIndexedKType(kSerializer, typeMap, new Function3() { // from class: androidx.navigation.serialization.RouteSerializerKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit generateRoutePattern$lambda$1;
-                generateRoutePattern$lambda$1 = RouteSerializerKt.generateRoutePattern$lambda$1(RouteBuilder.this, ((Integer) obj).intValue(), (String) obj2, (NavType) obj3);
-                return generateRoutePattern$lambda$1;
+                return RouteSerializerKt.generateRoutePattern$lambda$1(RouteBuilder.this, ((Integer) obj).intValue(), (String) obj2, (NavType) obj3);
             }
         });
         return routeBuilder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit generateRoutePattern$lambda$0(KSerializer kSerializer) {
         StringBuilder sb = new StringBuilder("Cannot generate route pattern from polymorphic class ");
         KClass<?> capturedKClass = ContextAwareKt.getCapturedKClass(kSerializer.getDescriptor());
         throw new IllegalArgumentException(sb.append(capturedKClass != null ? capturedKClass.getSimpleName() : null).append(". Routes can only be generated from concrete classes or objects.").toString());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit generateRoutePattern$lambda$1(RouteBuilder routeBuilder, int i, String argName, NavType navType) {
         Intrinsics.checkNotNullParameter(argName, "argName");
         Intrinsics.checkNotNullParameter(navType, "navType");
@@ -97,9 +93,7 @@ public final class RouteSerializerKt {
         assertNotAbstractClass(kSerializer, new Function0() { // from class: androidx.navigation.serialization.RouteSerializerKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit generateNavArguments$lambda$2;
-                generateNavArguments$lambda$2 = RouteSerializerKt.generateNavArguments$lambda$2(KSerializer.this);
-                return generateNavArguments$lambda$2;
+                return RouteSerializerKt.generateNavArguments$lambda$2(KSerializer.this);
             }
         });
         int elementsCount = kSerializer.getDescriptor().getElementsCount();
@@ -109,21 +103,19 @@ public final class RouteSerializerKt {
             arrayList.add(NamedNavArgumentKt.navArgument(elementName, new Function1() { // from class: androidx.navigation.serialization.RouteSerializerKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit generateNavArguments$lambda$4$lambda$3;
-                    generateNavArguments$lambda$4$lambda$3 = RouteSerializerKt.generateNavArguments$lambda$4$lambda$3(KSerializer.this, i, typeMap, elementName, (NavArgumentBuilder) obj);
-                    return generateNavArguments$lambda$4$lambda$3;
+                    return RouteSerializerKt.generateNavArguments$lambda$4$lambda$3(KSerializer.this, i, typeMap, elementName, (NavArgumentBuilder) obj);
                 }
             }));
         }
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit generateNavArguments$lambda$2(KSerializer kSerializer) {
         throw new IllegalArgumentException("Cannot generate NavArguments for polymorphic serializer " + kSerializer + ". Arguments can only be generated from concrete classes or objects.");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit generateNavArguments$lambda$4$lambda$3(KSerializer kSerializer, int i, Map map, String str, NavArgumentBuilder navArgument) {
         Intrinsics.checkNotNullParameter(navArgument, "$this$navArgument");
         SerialDescriptor elementDescriptor = kSerializer.getDescriptor().getElementDescriptor(i);
@@ -149,15 +141,13 @@ public final class RouteSerializerKt {
         forEachIndexedName(serializer, typeMap, new Function3() { // from class: androidx.navigation.serialization.RouteSerializerKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit generateRouteWithArgs$lambda$5;
-                generateRouteWithArgs$lambda$5 = RouteSerializerKt.generateRouteWithArgs$lambda$5(encodeToArgMap, routeBuilder, ((Integer) obj).intValue(), (String) obj2, (NavType) obj3);
-                return generateRouteWithArgs$lambda$5;
+                return RouteSerializerKt.generateRouteWithArgs$lambda$5(encodeToArgMap, routeBuilder, ((Integer) obj).intValue(), (String) obj2, (NavType) obj3);
             }
         });
         return routeBuilder.build();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit generateRouteWithArgs$lambda$5(Map map, RouteBuilder routeBuilder, int i, String argName, NavType navType) {
         Intrinsics.checkNotNullParameter(argName, "argName");
         Intrinsics.checkNotNullParameter(navType, "navType");

@@ -150,10 +150,17 @@ public final class Cea708Decoder extends CeaDecoder {
         this.selectedServiceNumber = i == -1 ? 1 : i;
         this.isWideAspectRatio = (list == null || !CodecSpecificDataUtil.parseCea708InitializationData(list)) ? false : z;
         this.cueInfoBuilders = new CueInfoBuilder[8];
-        for (int i2 = 0; i2 < 8; i2++) {
-            this.cueInfoBuilders[i2] = new CueInfoBuilder();
+        int i2 = 0;
+        while (true) {
+            CueInfoBuilder[] cueInfoBuilderArr = this.cueInfoBuilders;
+            if (i2 < 8) {
+                cueInfoBuilderArr[i2] = new CueInfoBuilder();
+                i2++;
+            } else {
+                this.currentCueInfoBuilder = cueInfoBuilderArr[0];
+                return;
+            }
         }
-        this.currentCueInfoBuilder = this.cueInfoBuilders[0];
     }
 
     @Override // androidx.media3.extractor.text.cea.CeaDecoder, androidx.media3.decoder.Decoder
@@ -269,47 +276,49 @@ public final class Cea708Decoder extends CeaDecoder {
                     Log.w(TAG, "Invalid extended service number: " + readBits);
                 }
             }
-            if (readBits2 == 0) {
-                if (readBits != 0) {
-                    Log.w(TAG, "serviceNumber is non-zero (" + readBits + ") when blockSize is 0");
-                }
-            } else if (readBits != this.selectedServiceNumber) {
-                this.captionChannelPacketData.skipBytes(readBits2);
-            } else {
-                int position = this.captionChannelPacketData.getPosition() + (readBits2 * 8);
-                while (this.captionChannelPacketData.getPosition() < position) {
-                    int readBits3 = this.captionChannelPacketData.readBits(8);
-                    if (readBits3 == 16) {
-                        int readBits4 = this.captionChannelPacketData.readBits(8);
-                        if (readBits4 <= 31) {
-                            handleC2Command(readBits4);
-                        } else {
-                            if (readBits4 <= 127) {
-                                handleG2Character(readBits4);
-                            } else if (readBits4 <= 159) {
-                                handleC3Command(readBits4);
-                            } else if (readBits4 <= 255) {
-                                handleG3Character(readBits4);
+            if (readBits2 != 0) {
+                int i = this.selectedServiceNumber;
+                ParsableBitArray parsableBitArray = this.captionChannelPacketData;
+                if (readBits != i) {
+                    parsableBitArray.skipBytes(readBits2);
+                } else {
+                    int position = parsableBitArray.getPosition() + (readBits2 * 8);
+                    while (this.captionChannelPacketData.getPosition() < position) {
+                        int readBits3 = this.captionChannelPacketData.readBits(8);
+                        if (readBits3 == 16) {
+                            int readBits4 = this.captionChannelPacketData.readBits(8);
+                            if (readBits4 <= 31) {
+                                handleC2Command(readBits4);
                             } else {
-                                Log.w(TAG, "Invalid extended command: " + readBits4);
+                                if (readBits4 <= 127) {
+                                    handleG2Character(readBits4);
+                                } else if (readBits4 <= 159) {
+                                    handleC3Command(readBits4);
+                                } else if (readBits4 <= 255) {
+                                    handleG3Character(readBits4);
+                                } else {
+                                    Log.w(TAG, "Invalid extended command: " + readBits4);
+                                }
+                                z = true;
+                            }
+                        } else if (readBits3 <= 31) {
+                            handleC0Command(readBits3);
+                        } else {
+                            if (readBits3 <= 127) {
+                                handleG0Character(readBits3);
+                            } else if (readBits3 <= 159) {
+                                handleC1Command(readBits3);
+                            } else if (readBits3 <= 255) {
+                                handleG1Character(readBits3);
+                            } else {
+                                Log.w(TAG, "Invalid base command: " + readBits3);
                             }
                             z = true;
                         }
-                    } else if (readBits3 <= 31) {
-                        handleC0Command(readBits3);
-                    } else {
-                        if (readBits3 <= 127) {
-                            handleG0Character(readBits3);
-                        } else if (readBits3 <= 159) {
-                            handleC1Command(readBits3);
-                        } else if (readBits3 <= 255) {
-                            handleG1Character(readBits3);
-                        } else {
-                            Log.w(TAG, "Invalid base command: " + readBits3);
-                        }
-                        z = true;
                     }
                 }
+            } else if (readBits != 0) {
+                Log.w(TAG, "serviceNumber is non-zero (" + readBits + ") when blockSize is 0");
             }
         }
         if (z) {
@@ -499,10 +508,11 @@ public final class Cea708Decoder extends CeaDecoder {
     }
 
     private void handleG0Character(int i) {
+        CueInfoBuilder cueInfoBuilder = this.currentCueInfoBuilder;
         if (i == 127) {
-            this.currentCueInfoBuilder.append((char) 9835);
+            cueInfoBuilder.append((char) 9835);
         } else {
-            this.currentCueInfoBuilder.append((char) (i & 255));
+            cueInfoBuilder.append((char) (i & 255));
         }
     }
 
@@ -949,19 +959,20 @@ public final class Cea708Decoder extends CeaDecoder {
             return new SpannableString(spannableStringBuilder);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:23:0x0062  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x0064  */
         /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x008a  */
-        /* JADX WARN: Removed duplicated region for block: B:28:0x008e  */
-        /* JADX WARN: Removed duplicated region for block: B:34:0x009d  */
-        /* JADX WARN: Removed duplicated region for block: B:35:0x009f  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x00aa  */
-        /* JADX WARN: Removed duplicated region for block: B:41:0x00ac  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x0088  */
+        /* JADX WARN: Removed duplicated region for block: B:28:0x008c  */
+        /* JADX WARN: Removed duplicated region for block: B:34:0x009b  */
+        /* JADX WARN: Removed duplicated region for block: B:35:0x009d  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x00a8  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x00aa  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public Cea708CueInfo build() {
             Layout.Alignment alignment;
+            boolean z;
             float f;
             float f2;
             int i;
@@ -987,11 +998,13 @@ public final class Cea708Decoder extends CeaDecoder {
                 } else if (i5 != 3) {
                     throw new IllegalArgumentException("Unexpected justification value: " + this.justification);
                 }
-                if (!this.relativePositioning) {
-                    f = this.horizontalAnchor / 99.0f;
+                z = this.relativePositioning;
+                int i7 = this.horizontalAnchor;
+                if (!z) {
+                    f = i7 / 99.0f;
                     f2 = this.verticalAnchor / 99.0f;
                 } else {
-                    f = this.horizontalAnchor / 209.0f;
+                    f = i7 / 209.0f;
                     f2 = this.verticalAnchor / 74.0f;
                 }
                 float f4 = (f * 0.9f) + 0.05f;
@@ -1018,7 +1031,9 @@ public final class Cea708Decoder extends CeaDecoder {
                 return new Cea708CueInfo(spannableStringBuilder, alignment, f5, 0, i3, f3, i6, -3.4028235E38f, this.windowFillColor == COLOR_SOLID_BLACK, this.windowFillColor, this.priority);
             }
             alignment = Layout.Alignment.ALIGN_NORMAL;
-            if (!this.relativePositioning) {
+            z = this.relativePositioning;
+            int i72 = this.horizontalAnchor;
+            if (!z) {
             }
             float f42 = (f * 0.9f) + 0.05f;
             float f52 = (f2 * 0.9f) + 0.05f;

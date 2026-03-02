@@ -5,12 +5,12 @@ import kotlin.text.Charsets;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
 public abstract class Qf {
-    public static final String a(C0218e9 c0218e9) {
+    public static final String a(C0217e9 c0217e9) {
         String str;
         StringBuilder sb = new StringBuilder("Event sent: ");
-        int i = c0218e9.c;
-        String str2 = c0218e9.d;
-        byte[] bArr = c0218e9.e;
+        int i = c0217e9.c;
+        String str2 = c0217e9.d;
+        byte[] bArr = c0217e9.e;
         if (i == 1) {
             str = "Attribution";
         } else if (i == 2) {
@@ -67,17 +67,17 @@ public abstract class Qf {
         return sb.append(str).toString();
     }
 
-    public static final String a(String str, EnumC0143bb enumC0143bb, String str2, String str3) {
-        if (AbstractC0672w9.d.contains(EnumC0143bb.a(enumC0143bb.f917a))) {
+    public static final String a(String str, EnumC0142bb enumC0142bb, String str2, String str3) {
+        if (AbstractC0671w9.d.contains(EnumC0142bb.a(enumC0142bb.f917a))) {
             StringBuilder sb = new StringBuilder();
             sb.append(str);
             sb.append(": ");
-            sb.append(enumC0143bb.name());
-            if (AbstractC0672w9.f.contains(enumC0143bb) && !TextUtils.isEmpty(str2)) {
+            sb.append(enumC0142bb.name());
+            if (AbstractC0671w9.f.contains(enumC0142bb) && !TextUtils.isEmpty(str2)) {
                 sb.append(" with name ");
                 sb.append(str2);
             }
-            if (AbstractC0672w9.e.contains(enumC0143bb) && !TextUtils.isEmpty(str3)) {
+            if (AbstractC0671w9.e.contains(enumC0142bb) && !TextUtils.isEmpty(str3)) {
                 sb.append(" with value ");
                 sb.append(str3);
             }

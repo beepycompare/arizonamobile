@@ -49,7 +49,7 @@ public final class FocusRestorerNode extends Modifier.Node implements Compositio
             if (Intrinsics.areEqual(FocusRestorerNode.this.getFallback(), FocusRequester.Companion.getCancel())) {
                 focusEnterExitScope.cancelFocusChange();
             } else {
-                FocusRequester.m5084requestFocus3ESFkO8$default(FocusRestorerNode.this.getFallback(), 0, 1, null);
+                FocusRequester.m4432requestFocus3ESFkO8$default(FocusRestorerNode.this.getFallback(), 0, 1, null);
             }
         }
     };

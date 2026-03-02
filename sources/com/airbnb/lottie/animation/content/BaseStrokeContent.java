@@ -309,16 +309,14 @@ public abstract class BaseStrokeContent implements BaseKeyframeAnimation.Animati
         }
         for (int i = 0; i < this.dashPatternAnimations.size(); i++) {
             this.dashPatternValues[i] = this.dashPatternAnimations.get(i).getValue().floatValue();
-            if (i % 2 == 0) {
-                float[] fArr = this.dashPatternValues;
+            int i2 = i % 2;
+            float[] fArr = this.dashPatternValues;
+            if (i2 == 0) {
                 if (fArr[i] < 1.0f) {
                     fArr[i] = 1.0f;
                 }
-            } else {
-                float[] fArr2 = this.dashPatternValues;
-                if (fArr2[i] < 0.1f) {
-                    fArr2[i] = 0.1f;
-                }
+            } else if (fArr[i] < 0.1f) {
+                fArr[i] = 0.1f;
             }
         }
         BaseKeyframeAnimation<?, Float> baseKeyframeAnimation = this.dashPatternOffsetAnimation;

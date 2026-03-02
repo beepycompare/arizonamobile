@@ -11,6 +11,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.internal.Symbol;
 /*  JADX ERROR: JadxRuntimeException in pass: ClassModifier
     jadx.core.utils.exceptions.JadxRuntimeException: Not class type: T
     	at jadx.core.dex.info.ClassInfo.checkClassType(ClassInfo.java:53)
@@ -221,10 +222,13 @@ public final class FlowKt__ShareKt$launchSharing$1 extends SuspendLambda impleme
                     if (i2 != 3) {
                         throw new NoWhenBranchMatchedException();
                     }
-                    if (this.$initialValue == SharedFlowKt.NO_VALUE) {
-                        this.$shared.resetReplayCache();
+                    T t = this.$initialValue;
+                    Symbol symbol = SharedFlowKt.NO_VALUE;
+                    MutableSharedFlow<T> mutableSharedFlow = this.$shared;
+                    if (t == symbol) {
+                        mutableSharedFlow.resetReplayCache();
                     } else {
-                        Boxing.boxBoolean(this.$shared.tryEmit(this.$initialValue));
+                        Boxing.boxBoolean(mutableSharedFlow.tryEmit(this.$initialValue));
                     }
                 }
             } else if (i != 1) {

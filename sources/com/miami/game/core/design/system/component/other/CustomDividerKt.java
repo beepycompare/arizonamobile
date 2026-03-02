@@ -16,10 +16,10 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 /* compiled from: CustomDivider.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"CustomDivider", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0017\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"CustomDivider", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class CustomDividerKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CustomDivider$lambda$0(Modifier modifier, int i, int i2, Composer composer, int i3) {
         CustomDivider(modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -50,7 +50,7 @@ public final class CustomDividerKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-2147212628, i3, -1, "com.miami.game.core.design.system.component.other.CustomDivider (CustomDivider.kt:15)");
             }
-            BoxKt.Box(BackgroundKt.background$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m8258constructorimpl(1)), Brush.Companion.m5371horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU()), Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
+            BoxKt.Box(BackgroundKt.background$default(SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth(companion, 0.8f), Dp.m7555constructorimpl(1)), Brush.Companion.m4719horizontalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU()), Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -60,9 +60,7 @@ public final class CustomDividerKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.other.CustomDividerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit CustomDivider$lambda$0;
-                    CustomDivider$lambda$0 = CustomDividerKt.CustomDivider$lambda$0(Modifier.this, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return CustomDivider$lambda$0;
+                    return CustomDividerKt.CustomDivider$lambda$0(Modifier.this, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }

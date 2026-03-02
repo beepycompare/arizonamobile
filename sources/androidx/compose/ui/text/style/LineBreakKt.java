@@ -6,11 +6,11 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class LineBreakKt {
     /* renamed from: isSpecified-CZqVlQI$annotations  reason: not valid java name */
-    public static /* synthetic */ void m8089isSpecifiedCZqVlQI$annotations(int i) {
+    public static /* synthetic */ void m7386isSpecifiedCZqVlQI$annotations(int i) {
     }
 
     /* renamed from: isSpecified-CZqVlQI  reason: not valid java name */
-    public static final boolean m8088isSpecifiedCZqVlQI(int i) {
-        return !LineBreak.m8040equalsimpl0(i, LineBreak.Companion.m8054getUnspecifiedrAG3T2k());
+    public static final boolean m7385isSpecifiedCZqVlQI(int i) {
+        return !LineBreak.m7337equalsimpl0(i, LineBreak.Companion.m7351getUnspecifiedrAG3T2k());
     }
 }

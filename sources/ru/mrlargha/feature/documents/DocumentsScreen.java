@@ -57,7 +57,7 @@ import ru.mrlargha.feature.documents.databinding.DocumentsHealthBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsLayoutBinding;
 import ru.mrlargha.feature.documents.databinding.DocumentsMainBinding;
 /* compiled from: DocumentScreen.kt */
-@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002OPB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\b\u0010!\u001a\u00020\u001dH\u0002J\u0010\u0010\"\u001a\u00020\u001d2\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u000204H\u0002J8\u00105\u001a\u00020\u001d2\u0006\u00106\u001a\u00020$2\u0006\u00107\u001a\u00020$2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010B\u001a\u00020\u001d2\u0006\u00100\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u00100\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u001dH\u0002J\u0010\u0010G\u001a\u00020\u001d2\u0006\u00100\u001a\u00020HH\u0002J\b\u0010I\u001a\u00020\u001dH\u0002J\u0010\u0010J\u001a\u00020\u001d2\u0006\u00100\u001a\u00020KH\u0002J\b\u0010L\u001a\u00020\u001dH\u0002J\u0010\u0010M\u001a\u00020\u001d2\u0006\u00100\u001a\u00020NH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessage", "", "data", "", "subId", "setBgRes", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "isHasLicenses", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", TtmlNode.RUBY_CONTAINER, "Landroid/view/View;", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0002OPB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0016J\b\u0010!\u001a\u00020\u001dH\u0002J\u0010\u0010\"\u001a\u00020\u001d2\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0016\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050(2\u0006\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020.H\u0002J\u0010\u0010/\u001a\u00020\u001d2\u0006\u00100\u001a\u000201H\u0002J\u0010\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u000204H\u0002J8\u00105\u001a\u00020\u001d2\u0006\u00106\u001a\u00020$2\u0006\u00107\u001a\u00020$2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u001d2\u0006\u0010@\u001a\u00020\u0005H\u0002J\u0010\u0010B\u001a\u00020\u001d2\u0006\u00100\u001a\u00020CH\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u00100\u001a\u00020EH\u0002J\b\u0010F\u001a\u00020\u001dH\u0002J\u0010\u0010G\u001a\u00020\u001d2\u0006\u00100\u001a\u00020HH\u0002J\b\u0010I\u001a\u00020\u001dH\u0002J\u0010\u0010J\u001a\u00020\u001d2\u0006\u00100\u001a\u00020KH\u0002J\b\u0010L\u001a\u00020\u001dH\u0002J\u0010\u0010M\u001a\u00020\u001d2\u0006\u00100\u001a\u00020NH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/feature/documents/databinding/DocumentsLayoutBinding;", "isShowingDocs", "emptyPhoto", "propertyResidentalAdapter", "Lru/mrlargha/feature/documents/PropertyAdapter;", "propertyComercialAdapter", "vipLevelAdapter", "Lru/mrlargha/feature/documents/VipLevelAdapter;", "vipTypeAdapter", "Lru/mrlargha/feature/documents/VipTypeAdapter;", "transportAdapter", "Lru/mrlargha/feature/documents/TransportAdapter;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundIdNavigation", "soundIdOther", "onBackendMessage", "", "data", "", "subId", "setBgRes", "setVisibility", "visible", "", "setTabsVisibility", "bites", "intToBitArrayMSB", "", "number", "setNavigation", "setAdapters", "navigateTo", "nav", "Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "setMainInfo", "info", "Lru/mrlargha/feature/documents/data/InfoItemMain;", "setLicensesInfo", "licenseInfo", "Lru/mrlargha/feature/documents/data/LicenseInfo;", "setLicensesItem", "isRight", "isHasLicenses", "document", "Landroid/widget/ImageView;", "title", "Landroid/widget/TextView;", "item", TtmlNode.RUBY_CONTAINER, "Landroid/view/View;", "showDocs", "int", "dipLicense", "setHealthInfo", "Lru/mrlargha/feature/documents/data/HealthInfo;", "setArmyInfo", "Lru/mrlargha/feature/documents/data/ArmyInfo;", "clearPropertyInfo", "setPropertyInfo", "Lru/mrlargha/feature/documents/data/PropertyInfo;", "clearVipInfo", "setVipInfo", "Lru/mrlargha/feature/documents/data/VipInfo;", "clearTransportInfo", "setTransportInfo", "Lru/mrlargha/feature/documents/data/TransportInfo;", "Navigation", "Spawner", "documents"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DocumentsScreen extends SAMPUIElement {
     private final DocumentsLayoutBinding binding;
@@ -74,7 +74,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     private final VipTypeAdapter vipTypeAdapter;
 
     /* compiled from: DocumentScreen.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -138,17 +138,13 @@ public final class DocumentsScreen extends SAMPUIElement {
         this.vipLevelAdapter = new VipLevelAdapter(new Function1() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vipLevelAdapter$lambda$0;
-                vipLevelAdapter$lambda$0 = DocumentsScreen.vipLevelAdapter$lambda$0(DocumentsScreen.this, ((Integer) obj).intValue());
-                return vipLevelAdapter$lambda$0;
+                return DocumentsScreen.vipLevelAdapter$lambda$0(DocumentsScreen.this, ((Integer) obj).intValue());
             }
         });
         this.vipTypeAdapter = new VipTypeAdapter(new Function1() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit vipTypeAdapter$lambda$0;
-                vipTypeAdapter$lambda$0 = DocumentsScreen.vipTypeAdapter$lambda$0(DocumentsScreen.this, ((Integer) obj).intValue());
-                return vipTypeAdapter$lambda$0;
+                return DocumentsScreen.vipTypeAdapter$lambda$0(DocumentsScreen.this, ((Integer) obj).intValue());
             }
         });
         this.transportAdapter = new TransportAdapter(targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._6sdp), targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._10sdp));
@@ -163,14 +159,14 @@ public final class DocumentsScreen extends SAMPUIElement {
         setBgRes();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit vipLevelAdapter$lambda$0(DocumentsScreen documentsScreen, int i) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         documentsScreen.notifyClick(3, 1, String.valueOf(i));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit vipTypeAdapter$lambda$0(DocumentsScreen documentsScreen, int i) {
         documentsScreen.soundPool.play(documentsScreen.soundIdOther, 1.0f, 1.0f, 0, 0, 1.0f);
         documentsScreen.notifyClick(0, 1, String.valueOf(i));
@@ -547,8 +543,9 @@ public final class DocumentsScreen extends SAMPUIElement {
 
     private final void setMainInfo(InfoItemMain infoItemMain) {
         int i;
-        if (infoItemMain.getNot() == 1) {
-            DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        int not = infoItemMain.getNot();
+        DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        if (not == 1) {
             documentsLayoutBinding.main.notAvailableContainer.setVisibility(0);
             documentsLayoutBinding.main.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -558,25 +555,24 @@ public final class DocumentsScreen extends SAMPUIElement {
             });
             return;
         }
-        DocumentsLayoutBinding documentsLayoutBinding2 = this.binding;
-        documentsLayoutBinding2.main.notAvailableContainer.setVisibility(8);
+        documentsLayoutBinding.main.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
         String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.main.photo);
-        documentsLayoutBinding2.main.name.setText(infoItemMain.getName());
-        documentsLayoutBinding2.main.sex.setText(infoItemMain.getSex());
-        documentsLayoutBinding2.main.birth.setText(infoItemMain.getBirthday());
-        documentsLayoutBinding2.main.citizenship.setText(infoItemMain.getCitizen());
-        documentsLayoutBinding2.main.familyStatus.setText(infoItemMain.getMarried());
-        documentsLayoutBinding2.main.yearsCitizen.setText(infoItemMain.getLevel());
-        documentsLayoutBinding2.main.lawAbiding.setText(infoItemMain.getZakono());
-        documentsLayoutBinding2.main.job.setText(infoItemMain.getJob());
-        documentsLayoutBinding2.main.armyWrit.setText(infoItemMain.getAgenda());
-        documentsLayoutBinding2.main.charity.setText(infoItemMain.getCharity());
-        documentsLayoutBinding2.main.rank.setText(infoItemMain.getRank());
-        documentsLayoutBinding2.main.series.setText(infoItemMain.getSeria());
-        documentsLayoutBinding2.main.number.setText(infoItemMain.getNumber());
-        documentsLayoutBinding2.main.signature.setText(infoItemMain.getSignature());
+        picasso.load(resourceUrl$default + infoItemMain.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.main.photo);
+        documentsLayoutBinding.main.name.setText(infoItemMain.getName());
+        documentsLayoutBinding.main.sex.setText(infoItemMain.getSex());
+        documentsLayoutBinding.main.birth.setText(infoItemMain.getBirthday());
+        documentsLayoutBinding.main.citizenship.setText(infoItemMain.getCitizen());
+        documentsLayoutBinding.main.familyStatus.setText(infoItemMain.getMarried());
+        documentsLayoutBinding.main.yearsCitizen.setText(infoItemMain.getLevel());
+        documentsLayoutBinding.main.lawAbiding.setText(infoItemMain.getZakono());
+        documentsLayoutBinding.main.job.setText(infoItemMain.getJob());
+        documentsLayoutBinding.main.armyWrit.setText(infoItemMain.getAgenda());
+        documentsLayoutBinding.main.charity.setText(infoItemMain.getCharity());
+        documentsLayoutBinding.main.rank.setText(infoItemMain.getRank());
+        documentsLayoutBinding.main.series.setText(infoItemMain.getSeria());
+        documentsLayoutBinding.main.number.setText(infoItemMain.getNumber());
+        documentsLayoutBinding.main.signature.setText(infoItemMain.getSignature());
         String agenda_color = infoItemMain.getAgenda_color();
         if (agenda_color == null || agenda_color.length() == 0) {
             return;
@@ -586,7 +582,7 @@ public final class DocumentsScreen extends SAMPUIElement {
         } catch (Exception unused) {
             i = -1;
         }
-        documentsLayoutBinding2.main.lawAbiding.setTextColor(i);
+        documentsLayoutBinding.main.lawAbiding.setTextColor(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1494,8 +1490,9 @@ public final class DocumentsScreen extends SAMPUIElement {
 
     private final void setHealthInfo(HealthInfo healthInfo) {
         int i;
-        if (healthInfo.getNot() == 1) {
-            DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        int not = healthInfo.getNot();
+        DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        if (not == 1) {
             documentsLayoutBinding.health.notAvailableContainer.setVisibility(0);
             documentsLayoutBinding.health.gpsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.documents.DocumentsScreen$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
@@ -1505,90 +1502,89 @@ public final class DocumentsScreen extends SAMPUIElement {
             });
             return;
         }
-        DocumentsLayoutBinding documentsLayoutBinding2 = this.binding;
-        documentsLayoutBinding2.health.notAvailableContainer.setVisibility(8);
+        documentsLayoutBinding.health.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
         String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(resourceUrl$default + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding2.health.photo);
-        documentsLayoutBinding2.health.name.setText(healthInfo.getName());
-        documentsLayoutBinding2.health.hpState.setText(healthInfo.getState());
-        documentsLayoutBinding2.health.duration.setText(healthInfo.getMed_card_time());
-        documentsLayoutBinding2.health.drugs.setText(healthInfo.getZavisimost());
-        documentsLayoutBinding2.health.insurance.setText(healthInfo.getHealth_insurance());
-        documentsLayoutBinding2.health.psych.setVisibility(8);
-        documentsLayoutBinding2.health.psychLabel.setVisibility(8);
-        documentsLayoutBinding2.health.psychDesc.setVisibility(8);
+        picasso.load(resourceUrl$default + healthInfo.getSkin_image_url()).error(this.emptyPhoto).into(documentsLayoutBinding.health.photo);
+        documentsLayoutBinding.health.name.setText(healthInfo.getName());
+        documentsLayoutBinding.health.hpState.setText(healthInfo.getState());
+        documentsLayoutBinding.health.duration.setText(healthInfo.getMed_card_time());
+        documentsLayoutBinding.health.drugs.setText(healthInfo.getZavisimost());
+        documentsLayoutBinding.health.insurance.setText(healthInfo.getHealth_insurance());
+        documentsLayoutBinding.health.psych.setVisibility(8);
+        documentsLayoutBinding.health.psychLabel.setVisibility(8);
+        documentsLayoutBinding.health.psychDesc.setVisibility(8);
         Demorgan demorgan = healthInfo.getDemorgan();
         if (demorgan != null) {
-            documentsLayoutBinding2.health.psych.setVisibility(0);
-            documentsLayoutBinding2.health.psychLabel.setVisibility(0);
-            documentsLayoutBinding2.health.psychDesc.setVisibility(8);
-            documentsLayoutBinding2.health.psych.setText(demorgan.getCount());
+            documentsLayoutBinding.health.psych.setVisibility(0);
+            documentsLayoutBinding.health.psychLabel.setVisibility(0);
+            documentsLayoutBinding.health.psychDesc.setVisibility(8);
+            documentsLayoutBinding.health.psych.setText(demorgan.getCount());
             String sub_text = demorgan.getSub_text();
             if (sub_text != null) {
-                documentsLayoutBinding2.health.psychDesc.setVisibility(0);
-                documentsLayoutBinding2.health.psychDesc.setText(sub_text);
+                documentsLayoutBinding.health.psychDesc.setVisibility(0);
+                documentsLayoutBinding.health.psychDesc.setText(sub_text);
                 try {
                     i = Color.parseColor(demorgan.getSub_text_color());
                 } catch (Exception unused) {
                     i = -1;
                 }
-                documentsLayoutBinding2.health.psychDesc.setTextColor(i);
+                documentsLayoutBinding.health.psychDesc.setTextColor(i);
             }
         }
         int med_osmotr_progress = healthInfo.getMed_osmotr_progress();
-        documentsLayoutBinding2.health.bar1.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar2.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar3.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar4.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar5.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar6.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar7.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar8.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar9.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
-        documentsLayoutBinding2.health.bar10.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar1.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar2.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar3.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar4.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar5.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar6.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar7.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar8.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar9.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
+        documentsLayoutBinding.health.bar10.bar.setBackgroundResource(R.drawable.documents_bar_item_empty_bg);
         if (med_osmotr_progress >= 1) {
-            documentsLayoutBinding2.health.bar1.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar1.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 2) {
-            documentsLayoutBinding2.health.bar2.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar2.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 3) {
-            documentsLayoutBinding2.health.bar3.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar3.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 4) {
-            documentsLayoutBinding2.health.bar4.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar4.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 5) {
-            documentsLayoutBinding2.health.bar5.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar5.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 6) {
-            documentsLayoutBinding2.health.bar6.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar6.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 7) {
-            documentsLayoutBinding2.health.bar7.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar7.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 8) {
-            documentsLayoutBinding2.health.bar8.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar8.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 9) {
-            documentsLayoutBinding2.health.bar9.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar9.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress >= 10) {
-            documentsLayoutBinding2.health.bar10.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
+            documentsLayoutBinding.health.bar10.bar.setBackgroundResource(R.drawable.documents_bar_item_bg);
         }
         if (med_osmotr_progress == 10) {
-            documentsLayoutBinding2.health.medReviewCount.setVisibility(8);
-            documentsLayoutBinding2.health.medReviewImage.setVisibility(0);
-            documentsLayoutBinding2.health.medReviewText.setVisibility(0);
-            documentsLayoutBinding2.health.desc.setText("Вы прошли необходимые 10 мед. осмотров у врачей и теперь можете не проходить\n обязательный мед. осмотр перед вылетом на работе пилота.");
+            documentsLayoutBinding.health.medReviewCount.setVisibility(8);
+            documentsLayoutBinding.health.medReviewImage.setVisibility(0);
+            documentsLayoutBinding.health.medReviewText.setVisibility(0);
+            documentsLayoutBinding.health.desc.setText("Вы прошли необходимые 10 мед. осмотров у врачей и теперь можете не проходить\n обязательный мед. осмотр перед вылетом на работе пилота.");
             return;
         }
-        documentsLayoutBinding2.health.medReviewCount.setVisibility(0);
-        documentsLayoutBinding2.health.medReviewImage.setVisibility(8);
-        documentsLayoutBinding2.health.medReviewText.setVisibility(8);
-        documentsLayoutBinding2.health.medReviewCount.setText(med_osmotr_progress + " / 10");
-        documentsLayoutBinding2.health.desc.setText("Пройдите 10 мед.осмотров у врачей 3+ ранга, чтобы больше\n не проходить его перед вылетом на работе пилота.");
+        documentsLayoutBinding.health.medReviewCount.setVisibility(0);
+        documentsLayoutBinding.health.medReviewImage.setVisibility(8);
+        documentsLayoutBinding.health.medReviewText.setVisibility(8);
+        documentsLayoutBinding.health.medReviewCount.setText(med_osmotr_progress + " / 10");
+        documentsLayoutBinding.health.desc.setText("Пройдите 10 мед.осмотров у врачей 3+ ранга, чтобы больше\n не проходить его перед вылетом на работе пилота.");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1598,11 +1594,12 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     private final void setArmyInfo(ArmyInfo armyInfo) {
-        if (armyInfo.getNot() == 1) {
-            this.binding.army.notAvailableContainer.setVisibility(0);
+        int not = armyInfo.getNot();
+        DocumentsLayoutBinding documentsLayoutBinding = this.binding;
+        if (not == 1) {
+            documentsLayoutBinding.army.notAvailableContainer.setVisibility(0);
             return;
         }
-        DocumentsLayoutBinding documentsLayoutBinding = this.binding;
         documentsLayoutBinding.army.notAvailableContainer.setVisibility(8);
         Picasso picasso = Picasso.get();
         String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
@@ -1760,7 +1757,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: DocumentScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Main", "Licenses", "Health", "Army", "Property", "Transport", "Vip", "documents_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\n\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen$Navigation;", "", "<init>", "(Ljava/lang/String;I)V", "Main", "Licenses", "Health", "Army", "Property", "Transport", "Vip", "documents"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Navigation {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -1800,7 +1797,7 @@ public final class DocumentsScreen extends SAMPUIElement {
     }
 
     /* compiled from: DocumentScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "documents_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/feature/documents/DocumentsScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "documents"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.ARIZONA_DOCUMENTS);

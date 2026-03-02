@@ -34,7 +34,7 @@ public final class RxSchedulerKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.4.2, binary compatibility with earlier versions")
     /* renamed from: asCoroutineDispatcher  reason: collision with other method in class */
-    public static final /* synthetic */ SchedulerCoroutineDispatcher m11863asCoroutineDispatcher(Scheduler scheduler) {
+    public static final /* synthetic */ SchedulerCoroutineDispatcher m10774asCoroutineDispatcher(Scheduler scheduler) {
         return new SchedulerCoroutineDispatcher(scheduler);
     }
 
@@ -68,7 +68,7 @@ public final class RxSchedulerKt {
         return Disposables.disposed();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void scheduleTask$lambda$0(Ref.ObjectRef objectRef) {
         DisposableHandle disposableHandle = (DisposableHandle) objectRef.element;
         if (disposableHandle != null) {
@@ -107,9 +107,7 @@ public final class RxSchedulerKt {
                     Function0 function0 = new Function0() { // from class: kotlinx.coroutines.rx2.RxSchedulerKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit scheduleTask$task$lambda$1;
-                            scheduleTask$task$lambda$1 = RxSchedulerKt.scheduleTask$task$lambda$1(runnable);
-                            return scheduleTask$task$lambda$1;
+                            return RxSchedulerKt.scheduleTask$task$lambda$1(runnable);
                         }
                     };
                     rxSchedulerKt$scheduleTask$task$1.L$0 = coroutineContext;
@@ -135,7 +133,7 @@ public final class RxSchedulerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit scheduleTask$task$lambda$1(Runnable runnable) {
         runnable.run();
         return Unit.INSTANCE;

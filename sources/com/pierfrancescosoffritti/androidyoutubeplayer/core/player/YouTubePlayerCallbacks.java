@@ -32,7 +32,7 @@ public final class YouTubePlayerCallbacks {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendBooleanValue$lambda$0(YouTubePlayerCallbacks youTubePlayerCallbacks, long j, boolean z) {
         BooleanProvider remove = youTubePlayerCallbacks.booleanCallbacks.remove(Long.valueOf(j));
         if (remove != null) {

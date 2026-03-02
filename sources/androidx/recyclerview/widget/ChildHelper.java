@@ -161,11 +161,18 @@ public class ChildHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void removeAllViewsUnfiltered() {
         this.mBucket.reset();
-        for (int size = this.mHiddenViews.size() - 1; size >= 0; size--) {
-            this.mCallback.onLeftHiddenState(this.mHiddenViews.get(size));
-            this.mHiddenViews.remove(size);
+        int size = this.mHiddenViews.size();
+        while (true) {
+            size--;
+            Callback callback = this.mCallback;
+            if (size >= 0) {
+                callback.onLeftHiddenState(this.mHiddenViews.get(size));
+                this.mHiddenViews.remove(size);
+            } else {
+                callback.removeAllViews();
+                return;
+            }
         }
-        this.mCallback.removeAllViews();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -389,16 +396,17 @@ public class ChildHelper {
 
         int countOnesBefore(int i) {
             Bucket bucket = this.mNext;
-            if (bucket == null) {
-                if (i >= 64) {
-                    return Long.bitCount(this.mData);
+            if (bucket != null) {
+                if (i < 64) {
+                    return Long.bitCount(this.mData & ((1 << i) - 1));
                 }
-                return Long.bitCount(this.mData & ((1 << i) - 1));
-            } else if (i < 64) {
-                return Long.bitCount(this.mData & ((1 << i) - 1));
-            } else {
                 return bucket.countOnesBefore(i - 64) + Long.bitCount(this.mData);
             }
+            long j = this.mData;
+            if (i >= 64) {
+                return Long.bitCount(j);
+            }
+            return Long.bitCount(((1 << i) - 1) & j);
         }
 
         public String toString() {

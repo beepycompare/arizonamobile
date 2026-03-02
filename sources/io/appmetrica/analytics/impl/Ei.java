@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 import android.os.Bundle;
 import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes5.dex */
-public final class Ei extends AbstractCallableC0705xh {
+public final class Ei extends AbstractCallableC0704xh {
     public final Bf e;
 
-    public Ei(C0489p0 c0489p0, Zk zk, Bf bf) {
-        super(c0489p0, zk);
+    public Ei(C0488p0 c0488p0, Zk zk, Bf bf) {
+        super(c0488p0, zk);
         this.e = bf;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractCallableC0705xh
+    @Override // io.appmetrica.analytics.impl.AbstractCallableC0704xh
     public final void a(IAppMetricaService iAppMetricaService) {
         Bundle bundle = new Bundle();
         Bf bf = this.e;

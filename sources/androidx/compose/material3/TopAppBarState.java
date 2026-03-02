@@ -21,16 +21,15 @@ public final class TopAppBarState {
     private static final Saver<TopAppBarState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.TopAppBarState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = TopAppBarState.Saver$lambda$0((SaverScope) obj, (TopAppBarState) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(r2.heightOffsetLimit), Float.valueOf(r2.getHeightOffset()), Float.valueOf(((TopAppBarState) obj2).getContentOffset())});
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.material3.TopAppBarState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            TopAppBarState Saver$lambda$1;
-            Saver$lambda$1 = TopAppBarState.Saver$lambda$1((List) obj);
-            return Saver$lambda$1;
+            return TopAppBarState.Saver$lambda$1((List) obj);
         }
     });
     private MutableFloatState _heightOffset;
@@ -98,12 +97,7 @@ public final class TopAppBarState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, TopAppBarState topAppBarState) {
-        return CollectionsKt.listOf((Object[]) new Float[]{Float.valueOf(topAppBarState.heightOffsetLimit), Float.valueOf(topAppBarState.getHeightOffset()), Float.valueOf(topAppBarState.getContentOffset())});
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TopAppBarState Saver$lambda$1(List list) {
         return new TopAppBarState(((Number) list.get(0)).floatValue(), ((Number) list.get(1)).floatValue(), ((Number) list.get(2)).floatValue());
     }

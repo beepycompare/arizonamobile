@@ -10,14 +10,10 @@ public final class TargetedFlingBehaviorKt {
     private static final Function1<Float, Unit> NoOnReport = new Function1() { // from class: androidx.compose.foundation.gestures.TargetedFlingBehaviorKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit NoOnReport$lambda$0;
-            NoOnReport$lambda$0 = TargetedFlingBehaviorKt.NoOnReport$lambda$0(((Float) obj).floatValue());
-            return NoOnReport$lambda$0;
+            Unit unit;
+            ((Float) obj).floatValue();
+            unit = Unit.INSTANCE;
+            return unit;
         }
     };
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit NoOnReport$lambda$0(float f) {
-        return Unit.INSTANCE;
-    }
 }

@@ -8,7 +8,7 @@ public final class G5 {
     public final BroadcastReceiver f591a;
     public boolean b = false;
 
-    public G5(C0590t2 c0590t2) {
-        this.f591a = c0590t2;
+    public G5(C0589t2 c0589t2) {
+        this.f591a = c0589t2;
     }
 }

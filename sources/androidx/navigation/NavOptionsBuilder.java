@@ -105,16 +105,14 @@ public final class NavOptionsBuilder {
             function1 = new Function1() { // from class: androidx.navigation.NavOptionsBuilder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit popUpTo$lambda$1;
-                    popUpTo$lambda$1 = NavOptionsBuilder.popUpTo$lambda$1((PopUpToBuilder) obj2);
-                    return popUpTo$lambda$1;
+                    return NavOptionsBuilder.popUpTo$lambda$1((PopUpToBuilder) obj2);
                 }
             };
         }
         navOptionsBuilder.popUpTo(i, function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit popUpTo$lambda$1(PopUpToBuilder popUpToBuilder) {
         Intrinsics.checkNotNullParameter(popUpToBuilder, "<this>");
         return Unit.INSTANCE;
@@ -136,16 +134,14 @@ public final class NavOptionsBuilder {
             function1 = new Function1() { // from class: androidx.navigation.NavOptionsBuilder$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit popUpTo$lambda$2;
-                    popUpTo$lambda$2 = NavOptionsBuilder.popUpTo$lambda$2((PopUpToBuilder) obj2);
-                    return popUpTo$lambda$2;
+                    return NavOptionsBuilder.popUpTo$lambda$2((PopUpToBuilder) obj2);
                 }
             };
         }
         navOptionsBuilder.popUpTo(str, (Function1<? super PopUpToBuilder, Unit>) function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit popUpTo$lambda$2(PopUpToBuilder popUpToBuilder) {
         Intrinsics.checkNotNullParameter(popUpToBuilder, "<this>");
         return Unit.INSTANCE;
@@ -219,16 +215,14 @@ public final class NavOptionsBuilder {
             function1 = new Function1() { // from class: androidx.navigation.NavOptionsBuilder$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj3) {
-                    Unit popUpTo$lambda$3;
-                    popUpTo$lambda$3 = NavOptionsBuilder.popUpTo$lambda$3((PopUpToBuilder) obj3);
-                    return popUpTo$lambda$3;
+                    return NavOptionsBuilder.popUpTo$lambda$3((PopUpToBuilder) obj3);
                 }
             };
         }
         navOptionsBuilder.popUpTo((NavOptionsBuilder) obj, (Function1<? super PopUpToBuilder, Unit>) function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit popUpTo$lambda$3(PopUpToBuilder popUpToBuilder) {
         Intrinsics.checkNotNullParameter(popUpToBuilder, "<this>");
         return Unit.INSTANCE;

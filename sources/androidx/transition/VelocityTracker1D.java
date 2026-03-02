@@ -32,7 +32,6 @@ class VelocityTracker1D {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float calculateVelocity() {
-        float kineticEnergyToVelocity;
         int i = this.mIndex;
         if (i == 0 && this.mTimeSamples[i] == Long.MIN_VALUE) {
             return 0.0f;
@@ -62,8 +61,8 @@ class VelocityTracker1D {
         if (i2 < 2) {
             return 0.0f;
         }
+        int i3 = this.mIndex;
         if (i2 == 2) {
-            int i3 = this.mIndex;
             int i4 = i3 == 0 ? 19 : i3 - 1;
             long[] jArr = this.mTimeSamples;
             float f = (float) (jArr[i3] - jArr[i4]);
@@ -71,32 +70,29 @@ class VelocityTracker1D {
                 return 0.0f;
             }
             float[] fArr = this.mDataSamples;
-            kineticEnergyToVelocity = (fArr[i3] - fArr[i4]) / f;
-        } else {
-            int i5 = this.mIndex;
-            int i6 = ((i5 - i2) + 21) % 20;
-            int i7 = (i5 + 21) % 20;
-            long j4 = this.mTimeSamples[i6];
-            float f2 = this.mDataSamples[i6];
-            int i8 = i6 + 1;
-            float f3 = 0.0f;
-            for (int i9 = i8 % 20; i9 != i7; i9 = (i9 + 1) % 20) {
-                long j5 = this.mTimeSamples[i9];
-                float f4 = (float) (j5 - j4);
-                if (f4 != 0.0f) {
-                    float f5 = this.mDataSamples[i9];
-                    float f6 = (f5 - f2) / f4;
-                    f3 += (f6 - kineticEnergyToVelocity(f3)) * Math.abs(f6);
-                    if (i9 == i8) {
-                        f3 *= 0.5f;
-                    }
-                    f2 = f5;
-                    j4 = j5;
-                }
-            }
-            kineticEnergyToVelocity = kineticEnergyToVelocity(f3);
+            return ((fArr[i3] - fArr[i4]) / f) * 1000.0f;
         }
-        return kineticEnergyToVelocity * 1000.0f;
+        int i5 = ((i3 - i2) + 21) % 20;
+        int i6 = (i3 + 21) % 20;
+        long j4 = this.mTimeSamples[i5];
+        float f2 = this.mDataSamples[i5];
+        int i7 = i5 + 1;
+        float f3 = 0.0f;
+        for (int i8 = i7 % 20; i8 != i6; i8 = (i8 + 1) % 20) {
+            long j5 = this.mTimeSamples[i8];
+            float f4 = (float) (j5 - j4);
+            if (f4 != 0.0f) {
+                float f5 = this.mDataSamples[i8];
+                float f6 = (f5 - f2) / f4;
+                f3 += (f6 - kineticEnergyToVelocity(f3)) * Math.abs(f6);
+                if (i8 == i7) {
+                    f3 *= 0.5f;
+                }
+                f2 = f5;
+                j4 = j5;
+            }
+        }
+        return kineticEnergyToVelocity(f3) * 1000.0f;
     }
 
     private float kineticEnergyToVelocity(float f) {

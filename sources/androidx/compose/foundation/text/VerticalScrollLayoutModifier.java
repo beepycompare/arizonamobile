@@ -105,20 +105,18 @@ public final class VerticalScrollLayoutModifier implements LayoutModifier {
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo1371measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
-        final int min = Math.min(mo6875measureBRTryo0.getHeight(), Constraints.m8210getMaxHeightimpl(j));
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.VerticalScrollLayoutModifier$$ExternalSyntheticLambda0
+    public MeasureResult mo1198measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, Integer.MAX_VALUE, 7, null));
+        final int min = Math.min(mo6216measureBRTryo0.getHeight(), Constraints.m7507getMaxHeightimpl(j));
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), min, null, new Function1() { // from class: androidx.compose.foundation.text.VerticalScrollLayoutModifier$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = VerticalScrollLayoutModifier.measure_3p2s80s$lambda$0(VerticalScrollLayoutModifier.this, mo6875measureBRTryo0, min, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return VerticalScrollLayoutModifier.measure_3p2s80s$lambda$0(VerticalScrollLayoutModifier.this, mo6216measureBRTryo0, min, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(VerticalScrollLayoutModifier verticalScrollLayoutModifier, Placeable placeable, int i, Placeable.PlacementScope placementScope) {
         Rect cursorRectInScroller;
         Placeable.PlacementScope placementScope2 = placementScope;

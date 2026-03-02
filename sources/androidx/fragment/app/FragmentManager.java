@@ -115,25 +115,25 @@ public abstract class FragmentManager implements FragmentResultOwner {
     private final Consumer<Configuration> mOnConfigurationChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda0
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.m8800lambda$new$0$androidxfragmentappFragmentManager((Configuration) obj);
+            FragmentManager.this.m8087lambda$new$0$androidxfragmentappFragmentManager((Configuration) obj);
         }
     };
     private final Consumer<Integer> mOnTrimMemoryListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda1
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.m8801lambda$new$1$androidxfragmentappFragmentManager((Integer) obj);
+            FragmentManager.this.m8088lambda$new$1$androidxfragmentappFragmentManager((Integer) obj);
         }
     };
     private final Consumer<MultiWindowModeChangedInfo> mOnMultiWindowModeChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda2
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.m8802lambda$new$2$androidxfragmentappFragmentManager((MultiWindowModeChangedInfo) obj);
+            FragmentManager.this.m8089lambda$new$2$androidxfragmentappFragmentManager((MultiWindowModeChangedInfo) obj);
         }
     };
     private final Consumer<PictureInPictureModeChangedInfo> mOnPictureInPictureModeChangedListener = new Consumer() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda3
         @Override // androidx.core.util.Consumer
         public final void accept(Object obj) {
-            FragmentManager.this.m8803lambda$new$3$androidxfragmentappFragmentManager((PictureInPictureModeChangedInfo) obj);
+            FragmentManager.this.m8090lambda$new$3$androidxfragmentappFragmentManager((PictureInPictureModeChangedInfo) obj);
         }
     };
     private final MenuProvider mMenuProvider = new MenuProvider() { // from class: androidx.fragment.app.FragmentManager.2
@@ -319,7 +319,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-fragment-app-FragmentManager  reason: not valid java name */
-    public /* synthetic */ void m8800lambda$new$0$androidxfragmentappFragmentManager(Configuration configuration) {
+    public /* synthetic */ void m8087lambda$new$0$androidxfragmentappFragmentManager(Configuration configuration) {
         if (isParentAdded()) {
             dispatchConfigurationChanged(configuration, false);
         }
@@ -327,7 +327,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-fragment-app-FragmentManager  reason: not valid java name */
-    public /* synthetic */ void m8801lambda$new$1$androidxfragmentappFragmentManager(Integer num) {
+    public /* synthetic */ void m8088lambda$new$1$androidxfragmentappFragmentManager(Integer num) {
         if (isParentAdded() && num.intValue() == 80) {
             dispatchLowMemory(false);
         }
@@ -335,7 +335,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-fragment-app-FragmentManager  reason: not valid java name */
-    public /* synthetic */ void m8802lambda$new$2$androidxfragmentappFragmentManager(MultiWindowModeChangedInfo multiWindowModeChangedInfo) {
+    public /* synthetic */ void m8089lambda$new$2$androidxfragmentappFragmentManager(MultiWindowModeChangedInfo multiWindowModeChangedInfo) {
         if (isParentAdded()) {
             dispatchMultiWindowModeChanged(multiWindowModeChangedInfo.isInMultiWindowMode(), false);
         }
@@ -343,7 +343,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$3$androidx-fragment-app-FragmentManager  reason: not valid java name */
-    public /* synthetic */ void m8803lambda$new$3$androidxfragmentappFragmentManager(PictureInPictureModeChangedInfo pictureInPictureModeChangedInfo) {
+    public /* synthetic */ void m8090lambda$new$3$androidxfragmentappFragmentManager(PictureInPictureModeChangedInfo pictureInPictureModeChangedInfo) {
         if (isParentAdded()) {
             dispatchPictureInPictureModeChanged(pictureInPictureModeChangedInfo.isInPictureInPictureMode(), false);
         }
@@ -1183,10 +1183,12 @@ public abstract class FragmentManager implements FragmentResultOwner {
         boolean z2 = false;
         for (int i3 = i; i3 < i2; i3++) {
             BackStackRecord backStackRecord = arrayList.get(i3);
-            if (!arrayList2.get(i3).booleanValue()) {
-                primaryNavigationFragment = backStackRecord.expandOps(this.mTmpAddedFragments, primaryNavigationFragment);
+            boolean booleanValue = arrayList2.get(i3).booleanValue();
+            ArrayList<Fragment> arrayList5 = this.mTmpAddedFragments;
+            if (!booleanValue) {
+                primaryNavigationFragment = backStackRecord.expandOps(arrayList5, primaryNavigationFragment);
             } else {
-                primaryNavigationFragment = backStackRecord.trackAddedFragmentsInPop(this.mTmpAddedFragments, primaryNavigationFragment);
+                primaryNavigationFragment = backStackRecord.trackAddedFragmentsInPop(arrayList5, primaryNavigationFragment);
             }
             z2 = z2 || backStackRecord.mAddToBackStack;
         }
@@ -1203,7 +1205,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
             }
         }
         executeOps(arrayList, arrayList2, i, i2);
-        boolean booleanValue = arrayList2.get(i2 - 1).booleanValue();
+        boolean booleanValue2 = arrayList2.get(i2 - 1).booleanValue();
         if (z2 && (arrayList3 = this.mBackStackChangeListeners) != null && !arrayList3.isEmpty()) {
             LinkedHashSet<Fragment> linkedHashSet = new LinkedHashSet();
             Iterator<BackStackRecord> it2 = arrayList.iterator();
@@ -1214,20 +1216,20 @@ public abstract class FragmentManager implements FragmentResultOwner {
             while (it3.hasNext()) {
                 OnBackStackChangedListener next = it3.next();
                 for (Fragment fragment2 : linkedHashSet) {
-                    next.onBackStackChangeStarted(fragment2, booleanValue);
+                    next.onBackStackChangeStarted(fragment2, booleanValue2);
                 }
             }
             Iterator<OnBackStackChangedListener> it4 = this.mBackStackChangeListeners.iterator();
             while (it4.hasNext()) {
                 OnBackStackChangedListener next2 = it4.next();
                 for (Fragment fragment3 : linkedHashSet) {
-                    next2.onBackStackChangeCommitted(fragment3, booleanValue);
+                    next2.onBackStackChangeCommitted(fragment3, booleanValue2);
                 }
             }
         }
         for (int i5 = i; i5 < i2; i5++) {
             BackStackRecord backStackRecord2 = arrayList.get(i5);
-            if (booleanValue) {
+            if (booleanValue2) {
                 for (int size = backStackRecord2.mOps.size() - 1; size >= 0; size--) {
                     Fragment fragment4 = backStackRecord2.mOps.get(size).mFragment;
                     if (fragment4 != null) {
@@ -1246,7 +1248,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
         }
         moveToState(this.mCurState, true);
         for (SpecialEffectsController specialEffectsController : collectChangedControllers(arrayList, i, i2)) {
-            specialEffectsController.updateOperationDirection(booleanValue);
+            specialEffectsController.updateOperationDirection(booleanValue2);
             specialEffectsController.markPostponedState();
             specialEffectsController.executePendingOperations();
         }
@@ -1342,17 +1344,23 @@ public abstract class FragmentManager implements FragmentResultOwner {
 
     private boolean generateOpsForPendingActions(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2) {
         synchronized (this.mPendingActions) {
+            int i = 0;
             if (this.mPendingActions.isEmpty()) {
                 return false;
             }
             int size = this.mPendingActions.size();
             boolean z = false;
-            for (int i = 0; i < size; i++) {
-                z |= this.mPendingActions.get(i).generateOps(arrayList, arrayList2);
+            while (true) {
+                ArrayList<OpGenerator> arrayList3 = this.mPendingActions;
+                if (i < size) {
+                    z |= arrayList3.get(i).generateOps(arrayList, arrayList2);
+                    i++;
+                } else {
+                    arrayList3.clear();
+                    this.mHost.getHandler().removeCallbacks(this.mExecCommit);
+                    return z;
+                }
             }
-            this.mPendingActions.clear();
-            this.mHost.getHandler().removeCallbacks(this.mExecCommit);
-            return z;
         }
     }
 
@@ -1573,16 +1581,16 @@ public abstract class FragmentManager implements FragmentResultOwner {
         if (this.mHost instanceof SavedStateRegistryOwner) {
             throwException(new IllegalStateException("You cannot use saveAllState when your FragmentHostCallback implements SavedStateRegistryOwner."));
         }
-        Bundle m8799lambda$attachController$4$androidxfragmentappFragmentManager = m8799lambda$attachController$4$androidxfragmentappFragmentManager();
-        if (m8799lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
+        Bundle m8086lambda$attachController$4$androidxfragmentappFragmentManager = m8086lambda$attachController$4$androidxfragmentappFragmentManager();
+        if (m8086lambda$attachController$4$androidxfragmentappFragmentManager.isEmpty()) {
             return null;
         }
-        return m8799lambda$attachController$4$androidxfragmentappFragmentManager;
+        return m8086lambda$attachController$4$androidxfragmentappFragmentManager;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: saveAllStateInternal */
-    public Bundle m8799lambda$attachController$4$androidxfragmentappFragmentManager() {
+    public Bundle m8086lambda$attachController$4$androidxfragmentappFragmentManager() {
         BackStackRecordState[] backStackRecordStateArr;
         int size;
         Bundle bundle = new Bundle();
@@ -1814,7 +1822,7 @@ public abstract class FragmentManager implements FragmentResultOwner {
             savedStateRegistry.registerSavedStateProvider(SAVED_STATE_KEY, new SavedStateRegistry.SavedStateProvider() { // from class: androidx.fragment.app.FragmentManager$$ExternalSyntheticLambda4
                 @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
                 public final Bundle saveState() {
-                    return FragmentManager.this.m8799lambda$attachController$4$androidxfragmentappFragmentManager();
+                    return FragmentManager.this.m8086lambda$attachController$4$androidxfragmentappFragmentManager();
                 }
             });
             Bundle consumeRestoredStateForKey = savedStateRegistry.consumeRestoredStateForKey(SAVED_STATE_KEY);

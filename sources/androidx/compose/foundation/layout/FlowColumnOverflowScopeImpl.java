@@ -20,9 +20,9 @@ public final class FlowColumnOverflowScopeImpl implements FlowColumnScope, FlowC
     private final Lazy totalItemCount$delegate = FlowLayoutOverflowKt.lazyInt$default(null, new Function0() { // from class: androidx.compose.foundation.layout.FlowColumnOverflowScopeImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            int i;
-            i = FlowColumnOverflowScopeImpl.totalItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl.this);
-            return Integer.valueOf(i);
+            int itemCount$foundation_layout;
+            itemCount$foundation_layout = FlowColumnOverflowScopeImpl.this.state.getItemCount$foundation_layout();
+            return Integer.valueOf(itemCount$foundation_layout);
         }
     }, 1, null);
 
@@ -56,26 +56,16 @@ public final class FlowColumnOverflowScopeImpl implements FlowColumnScope, FlowC
         this.shownItemCount$delegate = FlowLayoutOverflowKt.lazyInt(flowLayoutOverflowState.getShownItemLazyErrorMessage$foundation_layout(), new Function0() { // from class: androidx.compose.foundation.layout.FlowColumnOverflowScopeImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int shownItemCount_delegate$lambda$0;
-                shownItemCount_delegate$lambda$0 = FlowColumnOverflowScopeImpl.shownItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl.this);
-                return Integer.valueOf(shownItemCount_delegate$lambda$0);
+                int itemShown$foundation_layout;
+                itemShown$foundation_layout = FlowColumnOverflowScopeImpl.this.state.getItemShown$foundation_layout();
+                return Integer.valueOf(itemShown$foundation_layout);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int totalItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl flowColumnOverflowScopeImpl) {
-        return flowColumnOverflowScopeImpl.state.getItemCount$foundation_layout();
     }
 
     @Override // androidx.compose.foundation.layout.FlowColumnOverflowScope
     public int getTotalItemCount() {
         return ((Number) this.totalItemCount$delegate.getValue()).intValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int shownItemCount_delegate$lambda$0(FlowColumnOverflowScopeImpl flowColumnOverflowScopeImpl) {
-        return flowColumnOverflowScopeImpl.state.getItemShown$foundation_layout();
     }
 
     @Override // androidx.compose.foundation.layout.FlowColumnOverflowScope

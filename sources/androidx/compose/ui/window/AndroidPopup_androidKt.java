@@ -93,7 +93,7 @@ public final class AndroidPopup_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m8510PopupK5zGePQ(Alignment alignment, long j, Function0<Unit> function0, PopupProperties popupProperties, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
+    public static final void m7807PopupK5zGePQ(Alignment alignment, long j, Function0<Unit> function0, PopupProperties popupProperties, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j2;
@@ -108,7 +108,7 @@ public final class AndroidPopup_androidKt {
         final PopupProperties popupProperties2;
         ScopeUpdateScope endRestartGroup;
         Composer startRestartGroup = composer.startRestartGroup(71005054);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Popup)P(!1,2:c#ui.unit.IntOffset,3,4)270@12403L82,272@12491L166:AndroidPopup.android.kt#2oxthz");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Popup)P(!1,2:c#ui.unit.IntOffset,3,4)271@12454L82,273@12542L166:AndroidPopup.android.kt#2oxthz");
         int i6 = i2 & 1;
         if (i6 != 0) {
             i3 = i | 6;
@@ -148,14 +148,14 @@ public final class AndroidPopup_androidKt {
                         alignment2 = i6 != 0 ? Alignment.Companion.getTopStart() : obj;
                         if (i7 != 0) {
                             long j4 = 0;
-                            j3 = IntOffset.m8380constructorimpl((j4 & 4294967295L) | (j4 << 32));
+                            j3 = IntOffset.m7677constructorimpl((j4 & 4294967295L) | (j4 << 32));
                         } else {
                             j3 = j2;
                         }
                         Function0<Unit> function03 = i4 != 0 ? null : obj2;
                         PopupProperties popupProperties3 = i5 != 0 ? new PopupProperties(false, false, false, false, 15, (DefaultConstructorMarker) null) : obj3;
                         if (ComposerKt.isTraceInProgress()) {
-                            ComposerKt.traceEventStart(71005054, i3, -1, "androidx.compose.ui.window.Popup (AndroidPopup.android.kt:268)");
+                            ComposerKt.traceEventStart(71005054, i3, -1, "androidx.compose.ui.window.Popup (AndroidPopup.android.kt:269)");
                         }
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -483613200, "CC(remember):AndroidPopup.android.kt#9igjgp");
                         boolean z = ((i3 & 112) == 32) | ((i3 & 14) == 4);
@@ -195,7 +195,7 @@ public final class AndroidPopup_androidKt {
                             }
 
                             public final void invoke(Composer composer2, int i8) {
-                                AndroidPopup_androidKt.m8510PopupK5zGePQ(Alignment.this, j3, function02, popupProperties2, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+                                AndroidPopup_androidKt.m7807PopupK5zGePQ(Alignment.this, j3, function02, popupProperties2, function2, composer2, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
                             }
                         });
                         return;
@@ -269,7 +269,7 @@ public final class AndroidPopup_androidKt {
         final LayoutDirection layoutDirection;
         final PopupPositionProvider popupPositionProvider2 = popupPositionProvider;
         Composer startRestartGroup = composer.startRestartGroup(-1772091631);
-        ComposerKt.sourceInformation(startRestartGroup, "C(Popup)P(2,1,3)298@13379L7,299@13418L7,300@13462L7,301@13517L7,302@13553L28,303@13608L29,304@13673L21,304@13656L38,306@13824L7,307@13854L1203,337@15093L388,337@15063L418,352@15498L219,352@15487L230,361@15763L126,361@15723L166,373@16480L147,373@16452L175,386@16896L573,394@17477L99,383@16805L771:AndroidPopup.android.kt#2oxthz");
+        ComposerKt.sourceInformation(startRestartGroup, "C(Popup)P(2,1,3)299@13430L7,300@13469L7,301@13513L7,302@13568L7,303@13604L28,304@13659L29,305@13724L21,305@13707L38,307@13875L7,308@13905L1203,338@15144L388,338@15114L418,353@15549L219,353@15538L230,362@15814L126,362@15774L166,374@16531L147,374@16503L175,387@16947L573,395@17528L99,384@16856L771:AndroidPopup.android.kt#2oxthz");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changed(popupPositionProvider2) ? 4 : 2) | i;
         } else {
@@ -294,7 +294,7 @@ public final class AndroidPopup_androidKt {
                     final Function0<Unit> function03 = i7 != 0 ? null : obj;
                     final PopupProperties popupProperties3 = i4 != 0 ? new PopupProperties(false, false, false, false, 15, (DefaultConstructorMarker) null) : obj2;
                     if (ComposerKt.isTraceInProgress()) {
-                        ComposerKt.traceEventStart(-1772091631, i3, -1, "androidx.compose.ui.window.Popup (AndroidPopup.android.kt:297)");
+                        ComposerKt.traceEventStart(-1772091631, i3, -1, "androidx.compose.ui.window.Popup (AndroidPopup.android.kt:298)");
                     }
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalView());
@@ -356,13 +356,13 @@ public final class AndroidPopup_androidKt {
                             }
 
                             public final void invoke(Composer composer2, int i8) {
-                                ComposerKt.sourceInformation(composer2, "C320@14403L616,320@14342L677:AndroidPopup.android.kt#2oxthz");
+                                ComposerKt.sourceInformation(composer2, "C321@14454L616,321@14393L677:AndroidPopup.android.kt#2oxthz");
                                 if (!composer2.shouldExecute((i8 & 3) != 2, i8 & 1)) {
                                     composer2.skipToGroupEnd();
                                     return;
                                 }
                                 if (ComposerKt.isTraceInProgress()) {
-                                    ComposerKt.traceEventStart(-297523940, i8, -1, "androidx.compose.ui.window.Popup.<anonymous>.<anonymous>.<anonymous> (AndroidPopup.android.kt:320)");
+                                    ComposerKt.traceEventStart(-297523940, i8, -1, "androidx.compose.ui.window.Popup.<anonymous>.<anonymous>.<anonymous> (AndroidPopup.android.kt:321)");
                                 }
                                 ProvidedValue<Boolean> provides = AndroidPopup_androidKt.getLocalIsInPopupLayout().provides(true);
                                 final PopupLayout popupLayout2 = PopupLayout.this;
@@ -382,13 +382,13 @@ public final class AndroidPopup_androidKt {
 
                                     public final void invoke(Composer composer3, int i9) {
                                         Function2 Popup$lambda$0;
-                                        ComposerKt.sourceInformation(composer3, "C322@14489L16,324@14616L146,321@14429L568:AndroidPopup.android.kt#2oxthz");
+                                        ComposerKt.sourceInformation(composer3, "C323@14540L16,325@14667L146,322@14480L568:AndroidPopup.android.kt#2oxthz");
                                         if (!composer3.shouldExecute((i9 & 3) != 2, i9 & 1)) {
                                             composer3.skipToGroupEnd();
                                             return;
                                         }
                                         if (ComposerKt.isTraceInProgress()) {
-                                            ComposerKt.traceEventStart(1022273628, i9, -1, "androidx.compose.ui.window.Popup.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AndroidPopup.android.kt:321)");
+                                            ComposerKt.traceEventStart(1022273628, i9, -1, "androidx.compose.ui.window.Popup.<anonymous>.<anonymous>.<anonymous>.<anonymous> (AndroidPopup.android.kt:322)");
                                         }
                                         Modifier.Companion companion = Modifier.Companion;
                                         ComposerKt.sourceInformationMarkerStart(composer3, -1142551508, "CC(remember):AndroidPopup.android.kt#9igjgp");
@@ -423,13 +423,13 @@ public final class AndroidPopup_androidKt {
 
                                                 @Override // kotlin.jvm.functions.Function1
                                                 public /* bridge */ /* synthetic */ Unit invoke(IntSize intSize) {
-                                                    m8511invokeozmzZPI(intSize.m8433unboximpl());
+                                                    m7808invokeozmzZPI(intSize.m7730unboximpl());
                                                     return Unit.INSTANCE;
                                                 }
 
                                                 /* renamed from: invoke-ozmzZPI  reason: not valid java name */
-                                                public final void m8511invokeozmzZPI(long j) {
-                                                    PopupLayout.this.m8514setPopupContentSizefhxjrPA(IntSize.m8421boximpl(j));
+                                                public final void m7808invokeozmzZPI(long j) {
+                                                    PopupLayout.this.m7811setPopupContentSizefhxjrPA(IntSize.m7718boximpl(j));
                                                     PopupLayout.this.updatePosition();
                                                 }
                                             };
@@ -438,7 +438,7 @@ public final class AndroidPopup_androidKt {
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
                                         Modifier alpha = AlphaKt.alpha(OnRemeasuredModifierKt.onSizeChanged(semantics$default, (Function1) rememberedValue4), PopupLayout.this.getCanCalculatePosition() ? 1.0f : 0.0f);
                                         Popup$lambda$0 = AndroidPopup_androidKt.Popup$lambda$0(state);
-                                        ComposerKt.sourceInformationMarkerStart(composer3, 26279861, "CC(SimpleStack)P(1)448@19598L899,448@19551L946:AndroidPopup.android.kt#2oxthz");
+                                        ComposerKt.sourceInformationMarkerStart(composer3, 26279861, "CC(SimpleStack)P(1)449@19649L899,449@19602L946:AndroidPopup.android.kt#2oxthz");
                                         ComposerKt.sourceInformationMarkerStart(composer3, -514852264, "CC(remember):AndroidPopup.android.kt#9igjgp");
                                         AndroidPopup_androidKt$SimpleStack$1$1 rememberedValue5 = composer3.rememberedValue();
                                         if (rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -462,12 +462,12 @@ public final class AndroidPopup_androidKt {
                                         } else {
                                             composer3.useNode();
                                         }
-                                        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
-                                        Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                                        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                                        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
+                                        Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                                        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                         Popup$lambda$0.invoke(composer3, 0);
                                         composer3.endNode();
                                         ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -628,7 +628,7 @@ public final class AndroidPopup_androidKt {
                         rememberedValue8 = new MeasurePolicy() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$Popup$8$1
                             @Override // androidx.compose.ui.layout.MeasurePolicy
                             /* renamed from: measure-3p2s80s */
-                            public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                            public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                                 PopupLayout.this.setParentLayoutDirection(layoutDirection);
                                 return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidPopup_androidKt$Popup$8$1.1
                                     /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -662,12 +662,12 @@ public final class AndroidPopup_androidKt {
                     } else {
                         startRestartGroup.useNode();
                     }
-                    Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                    Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                    Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                    Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                    Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -958253783, "C:AndroidPopup.android.kt#2oxthz");
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     startRestartGroup.endNode();
@@ -749,7 +749,7 @@ public final class AndroidPopup_androidKt {
     public static final void PopupTestTag(final String str, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(1357513789);
-        ComposerKt.sourceInformation(startRestartGroup, "C(PopupTestTag)P(1)440@19213L75:AndroidPopup.android.kt#2oxthz");
+        ComposerKt.sourceInformation(startRestartGroup, "C(PopupTestTag)P(1)441@19264L75:AndroidPopup.android.kt#2oxthz");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(str) ? 4 : 2) | i;
         } else {
@@ -762,7 +762,7 @@ public final class AndroidPopup_androidKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1357513789, i2, -1, "androidx.compose.ui.window.PopupTestTag (AndroidPopup.android.kt:439)");
+                ComposerKt.traceEventStart(1357513789, i2, -1, "androidx.compose.ui.window.PopupTestTag (AndroidPopup.android.kt:440)");
             }
             CompositionLocalKt.CompositionLocalProvider(LocalPopupTestTag.provides(str), function2, startRestartGroup, (i2 & 112) | ProvidedValue.$stable);
             if (ComposerKt.isTraceInProgress()) {
@@ -793,7 +793,7 @@ public final class AndroidPopup_androidKt {
     }
 
     private static final void SimpleStack(Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, int i) {
-        ComposerKt.sourceInformationMarkerStart(composer, 26279861, "CC(SimpleStack)P(1)448@19598L899,448@19551L946:AndroidPopup.android.kt#2oxthz");
+        ComposerKt.sourceInformationMarkerStart(composer, 26279861, "CC(SimpleStack)P(1)449@19649L899,449@19602L946:AndroidPopup.android.kt#2oxthz");
         ComposerKt.sourceInformationMarkerStart(composer, -514852264, "CC(remember):AndroidPopup.android.kt#9igjgp");
         AndroidPopup_androidKt$SimpleStack$1$1 rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
@@ -819,12 +819,12 @@ public final class AndroidPopup_androidKt {
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-        Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-        Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+        Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         function2.invoke(composer, Integer.valueOf((i3 >> 6) & 14));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);

@@ -166,12 +166,13 @@ public class ArrayRow implements LinearSystem.Row {
             }
             this.mConstantValue = i;
         }
+        ArrayRowVariables arrayRowVariables = this.variables;
         if (!z) {
-            this.variables.put(solverVariable, -1.0f);
+            arrayRowVariables.put(solverVariable, -1.0f);
             this.variables.put(solverVariable2, 1.0f);
             return this;
         }
-        this.variables.put(solverVariable, 1.0f);
+        arrayRowVariables.put(solverVariable, 1.0f);
         this.variables.put(solverVariable2, -1.0f);
         return this;
     }
@@ -191,13 +192,14 @@ public class ArrayRow implements LinearSystem.Row {
             }
             this.mConstantValue = i;
         }
+        ArrayRowVariables arrayRowVariables = this.variables;
         if (!z) {
-            this.variables.put(solverVariable, -1.0f);
+            arrayRowVariables.put(solverVariable, -1.0f);
             this.variables.put(solverVariable2, 1.0f);
             this.variables.put(solverVariable3, 1.0f);
             return this;
         }
-        this.variables.put(solverVariable, 1.0f);
+        arrayRowVariables.put(solverVariable, 1.0f);
         this.variables.put(solverVariable2, -1.0f);
         this.variables.put(solverVariable3, -1.0f);
         return this;
@@ -218,13 +220,14 @@ public class ArrayRow implements LinearSystem.Row {
             }
             this.mConstantValue = i;
         }
+        ArrayRowVariables arrayRowVariables = this.variables;
         if (!z) {
-            this.variables.put(solverVariable, -1.0f);
+            arrayRowVariables.put(solverVariable, -1.0f);
             this.variables.put(solverVariable2, 1.0f);
             this.variables.put(solverVariable3, -1.0f);
             return this;
         }
-        this.variables.put(solverVariable, 1.0f);
+        arrayRowVariables.put(solverVariable, 1.0f);
         this.variables.put(solverVariable2, -1.0f);
         this.variables.put(solverVariable3, 1.0f);
         return this;
@@ -242,13 +245,16 @@ public class ArrayRow implements LinearSystem.Row {
             this.variables.put(solverVariable, 1.0f);
             this.variables.put(solverVariable2, -1.0f);
             return this;
-        } else if (f3 == 0.0f) {
-            this.variables.put(solverVariable3, 1.0f);
-            this.variables.put(solverVariable4, -1.0f);
-            return this;
         } else {
+            int i = (f3 > 0.0f ? 1 : (f3 == 0.0f ? 0 : -1));
+            ArrayRowVariables arrayRowVariables = this.variables;
+            if (i == 0) {
+                arrayRowVariables.put(solverVariable3, 1.0f);
+                this.variables.put(solverVariable4, -1.0f);
+                return this;
+            }
             float f4 = (f / f2) / (f3 / f2);
-            this.variables.put(solverVariable, 1.0f);
+            arrayRowVariables.put(solverVariable, 1.0f);
             this.variables.put(solverVariable2, -1.0f);
             this.variables.put(solverVariable4, f4);
             this.variables.put(solverVariable3, -f4);
@@ -296,14 +302,17 @@ public class ArrayRow implements LinearSystem.Row {
             this.variables.put(solverVariable2, 1.0f);
             this.mConstantValue = i;
             return this;
-        } else if (f >= 1.0f) {
-            this.variables.put(solverVariable4, -1.0f);
-            this.variables.put(solverVariable3, 1.0f);
-            this.mConstantValue = -i2;
-            return this;
         } else {
+            int i3 = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
+            ArrayRowVariables arrayRowVariables = this.variables;
+            if (i3 >= 0) {
+                arrayRowVariables.put(solverVariable4, -1.0f);
+                this.variables.put(solverVariable3, 1.0f);
+                this.mConstantValue = -i2;
+                return this;
+            }
             float f2 = 1.0f - f;
-            this.variables.put(solverVariable, f2 * 1.0f);
+            arrayRowVariables.put(solverVariable, f2 * 1.0f);
             this.variables.put(solverVariable2, f2 * (-1.0f));
             this.variables.put(solverVariable3, (-1.0f) * f);
             this.variables.put(solverVariable4, 1.0f * f);
@@ -559,6 +568,7 @@ public class ArrayRow implements LinearSystem.Row {
 
     @Override // androidx.constraintlayout.core.LinearSystem.Row
     public void updateFromSystem(LinearSystem linearSystem) {
+        ArrayList<SolverVariable> arrayList;
         if (linearSystem.mRows.length == 0) {
             return;
         }
@@ -573,8 +583,13 @@ public class ArrayRow implements LinearSystem.Row {
             }
             int size = this.mVariablesToUpdate.size();
             if (size > 0) {
-                for (int i2 = 0; i2 < size; i2++) {
-                    SolverVariable solverVariable = this.mVariablesToUpdate.get(i2);
+                int i2 = 0;
+                while (true) {
+                    arrayList = this.mVariablesToUpdate;
+                    if (i2 >= size) {
+                        break;
+                    }
+                    SolverVariable solverVariable = arrayList.get(i2);
                     if (solverVariable.isFinalValue) {
                         updateFromFinalVariable(linearSystem, solverVariable, true);
                     } else if (solverVariable.mIsSynonym) {
@@ -582,8 +597,9 @@ public class ArrayRow implements LinearSystem.Row {
                     } else {
                         updateFromRow(linearSystem, linearSystem.mRows[solverVariable.mDefinitionId], true);
                     }
+                    i2++;
                 }
-                this.mVariablesToUpdate.clear();
+                arrayList.clear();
             } else {
                 z = true;
             }

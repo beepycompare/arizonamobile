@@ -8,13 +8,13 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.HashSet;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class LoudnessCodecController {
     private android.media.LoudnessCodecController loudnessCodecController;
     private final HashSet<MediaCodec> mediaCodecs;
     private final LoudnessParameterUpdateListener updateListener;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface LoudnessParameterUpdateListener {
         public static final LoudnessParameterUpdateListener DEFAULT = new LoudnessParameterUpdateListener() { // from class: androidx.media3.exoplayer.mediacodec.LoudnessCodecController$LoudnessParameterUpdateListener$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.mediacodec.LoudnessCodecController.LoudnessParameterUpdateListener

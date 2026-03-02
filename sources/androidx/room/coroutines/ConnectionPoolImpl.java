@@ -36,12 +36,12 @@ public final class ConnectionPoolImpl implements ConnectionPool {
     private final Pool writers;
 
     /* renamed from: getTimeout-UwyO8pc$room_runtime  reason: not valid java name */
-    public final long m9192getTimeoutUwyO8pc$room_runtime() {
+    public final long m8402getTimeoutUwyO8pc$room_runtime() {
         return this.timeout;
     }
 
     /* renamed from: setTimeout-LRDsOJo$room_runtime  reason: not valid java name */
-    public final void m9193setTimeoutLRDsOJo$room_runtime(long j) {
+    public final void m8403setTimeoutLRDsOJo$room_runtime(long j) {
         this.timeout = j;
     }
 
@@ -92,9 +92,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
         this.readers = new Pool(i, new Function0() { // from class: androidx.room.coroutines.ConnectionPoolImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SQLiteConnection _init_$lambda$4;
-                _init_$lambda$4 = ConnectionPoolImpl._init_$lambda$4(SQLiteDriver.this, fileName);
-                return _init_$lambda$4;
+                return ConnectionPoolImpl._init_$lambda$4(SQLiteDriver.this, fileName);
             }
         }, i3);
         this.writers = new Pool(i2, new Function0() { // from class: androidx.room.coroutines.ConnectionPoolImpl$$ExternalSyntheticLambda1
@@ -107,7 +105,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
         }, i3);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SQLiteConnection _init_$lambda$4(SQLiteDriver sQLiteDriver, String str) {
         SQLiteConnection open = sQLiteDriver.open(str);
         SQLite.execSQL(open, "PRAGMA query_only = 1");
@@ -191,9 +189,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                                 Function0<Unit> function0 = new Function0() { // from class: androidx.room.coroutines.ConnectionPoolImpl$$ExternalSyntheticLambda2
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        Unit useConnection$lambda$6;
-                                        useConnection$lambda$6 = ConnectionPoolImpl.useConnection$lambda$6(ConnectionPoolImpl.this, z3);
-                                        return useConnection$lambda$6;
+                                        return ConnectionPoolImpl.useConnection$lambda$6(ConnectionPoolImpl.this, z3);
                                     }
                                 };
                                 connectionPoolImpl$useConnection$1.L$0 = function2;
@@ -204,12 +200,12 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                                 connectionPoolImpl$useConnection$1.L$5 = connectionElementKey2;
                                 connectionPoolImpl$useConnection$1.Z$0 = z3;
                                 connectionPoolImpl$useConnection$1.label = 3;
-                                Object m9194acquireWithTimeoutKLykuaI = pool.m9194acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
-                                if (m9194acquireWithTimeoutKLykuaI != coroutine_suspended) {
+                                Object m8404acquireWithTimeoutKLykuaI = pool.m8404acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
+                                if (m8404acquireWithTimeoutKLykuaI != coroutine_suspended) {
                                     function22 = function2;
                                     connectionElementKey = connectionElementKey2;
                                     pool3 = pool;
-                                    obj = m9194acquireWithTimeoutKLykuaI;
+                                    obj = m8404acquireWithTimeoutKLykuaI;
                                     objectRef2 = objectRef;
                                 }
                             } catch (Throwable th2) {
@@ -327,7 +323,7 @@ public final class ConnectionPoolImpl implements ConnectionPool {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit useConnection$lambda$6(ConnectionPoolImpl connectionPoolImpl, boolean z) {
         connectionPoolImpl.onTimeout(z);
         return Unit.INSTANCE;

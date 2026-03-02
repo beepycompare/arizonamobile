@@ -50,17 +50,13 @@ public final class RealImageLoaderKt {
             builder.addFetcherFactories(new Function0() { // from class: coil3.RealImageLoaderKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List addServiceLoaderComponents$lambda$3;
-                    addServiceLoaderComponents$lambda$3 = RealImageLoaderKt.addServiceLoaderComponents$lambda$3();
-                    return addServiceLoaderComponents$lambda$3;
+                    return RealImageLoaderKt.addServiceLoaderComponents$lambda$3();
                 }
             });
             builder.addDecoderFactories(new Function0() { // from class: coil3.RealImageLoaderKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List addServiceLoaderComponents$lambda$6;
-                    addServiceLoaderComponents$lambda$6 = RealImageLoaderKt.addServiceLoaderComponents$lambda$6();
-                    return addServiceLoaderComponents$lambda$6;
+                    return RealImageLoaderKt.addServiceLoaderComponents$lambda$6();
                 }
             });
         }

@@ -218,7 +218,6 @@ public final class SilenceMediaSource extends BaseMediaSource {
 
         public SilenceSampleStream(long j) {
             this.durationBytes = SilenceMediaSource.getAudioByteCount(j);
-            seekTo(0L);
         }
 
         public void seekTo(long j) {
@@ -262,11 +261,11 @@ public final class SilenceMediaSource extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static long getAudioByteCount(long j) {
-        return Util.getPcmFrameSize(2, 2) * ((j * 44100) / 1000000);
+        return Util.getPcmFrameSize(2, 2) * Util.durationUsToSampleCount(j, SAMPLE_RATE_HZ);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static long getAudioPositionUs(long j) {
-        return ((j / Util.getPcmFrameSize(2, 2)) * 1000000) / 44100;
+        return Util.sampleCountToDurationUs(j / Util.getPcmFrameSize(2, 2), SAMPLE_RATE_HZ);
     }
 }

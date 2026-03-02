@@ -43,7 +43,7 @@ public final class TransferableContent_androidKt {
                 for (int i2 = 1; i2 < size; i2++) {
                     clipData2.addItem((ClipData.Item) arrayList.get(i2));
                 }
-                return new TransferableContent(AndroidClipboardManager_androidKt.toClipEntry(clipData2), AndroidClipboardManager_androidKt.toClipMetadata(clipDescription), transferableContent.m409getSourcekB6V9T0(), transferableContent.getPlatformTransferableContent(), null);
+                return new TransferableContent(AndroidClipboardManager_androidKt.toClipEntry(clipData2), AndroidClipboardManager_androidKt.toClipMetadata(clipDescription), transferableContent.m355getSourcekB6V9T0(), transferableContent.getPlatformTransferableContent(), null);
             }
         }
         return transferableContent;

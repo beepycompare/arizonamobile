@@ -2,9 +2,10 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* JADX INFO: Access modifiers changed from: package-private */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
-final class zzj implements zzq {
+public final class zzj implements zzq {
     private final Executor zza;
     private final Object zzb = new Object();
     @Nullable
@@ -16,19 +17,29 @@ final class zzj implements zzq {
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzc() {
-        synchronized (this.zzb) {
-            this.zzc = null;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.zzq
-    public final void zzd(Task task) {
+    public final void zza(Task task) {
         synchronized (this.zzb) {
             if (this.zzc == null) {
                 return;
             }
             this.zza.execute(new zzi(this, task));
         }
+    }
+
+    @Override // com.google.android.gms.tasks.zzq
+    public final void zzb() {
+        synchronized (this.zzb) {
+            this.zzc = null;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Object zzc() {
+        return this.zzb;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ OnCompleteListener zzd() {
+        return this.zzc;
     }
 }

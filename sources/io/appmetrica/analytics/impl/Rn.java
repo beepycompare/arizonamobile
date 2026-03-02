@@ -9,13 +9,13 @@ public final class Rn implements ProtobufConverter {
     /* renamed from: a  reason: collision with root package name */
     public final Fn f771a;
     public final W b;
-    public final C0293h6 c;
+    public final C0292h6 c;
     public final Bl d;
     public final He e;
     public final Ie f;
 
     public Rn() {
-        this(new Fn(), new W(new C0711xn()), new C0293h6(), new Bl(), new He(), new Ie());
+        this(new Fn(), new W(new C0710xn()), new C0292h6(), new Bl(), new He(), new Ie());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -57,10 +57,10 @@ public final class Rn implements ProtobufConverter {
         throw new UnsupportedOperationException();
     }
 
-    public Rn(Fn fn, W w, C0293h6 c0293h6, Bl bl, He he, Ie ie) {
+    public Rn(Fn fn, W w, C0292h6 c0292h6, Bl bl, He he, Ie ie) {
         this.b = w;
         this.f771a = fn;
-        this.c = c0293h6;
+        this.c = c0292h6;
         this.d = bl;
         this.e = he;
         this.f = ie;

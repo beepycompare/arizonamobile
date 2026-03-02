@@ -20,21 +20,19 @@ public final class InteractiveComponentSizeKt {
     private static final ProvidableCompositionLocal<Boolean> LocalMinimumInteractiveComponentEnforcement = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.InteractiveComponentSizeKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            boolean LocalMinimumInteractiveComponentEnforcement$lambda$0;
-            LocalMinimumInteractiveComponentEnforcement$lambda$0 = InteractiveComponentSizeKt.LocalMinimumInteractiveComponentEnforcement$lambda$0();
-            return Boolean.valueOf(LocalMinimumInteractiveComponentEnforcement$lambda$0);
+            return Boolean.valueOf(InteractiveComponentSizeKt.LocalMinimumInteractiveComponentEnforcement$lambda$0());
         }
     });
     private static final ProvidableCompositionLocal<Dp> LocalMinimumInteractiveComponentSize = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.material3.InteractiveComponentSizeKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Dp LocalMinimumInteractiveComponentSize$lambda$1;
-            LocalMinimumInteractiveComponentSize$lambda$1 = InteractiveComponentSizeKt.LocalMinimumInteractiveComponentSize$lambda$1();
-            return LocalMinimumInteractiveComponentSize$lambda$1;
+            Dp m7553boximpl;
+            m7553boximpl = Dp.m7553boximpl(Dp.m7555constructorimpl(48));
+            return m7553boximpl;
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean LocalMinimumInteractiveComponentEnforcement$lambda$0() {
         return true;
     }
@@ -61,10 +59,5 @@ public final class InteractiveComponentSizeKt {
 
     public static final ProvidableCompositionLocal<Dp> getLocalMinimumInteractiveComponentSize() {
         return LocalMinimumInteractiveComponentSize;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Dp LocalMinimumInteractiveComponentSize$lambda$1() {
-        return Dp.m8256boximpl(Dp.m8258constructorimpl(48));
     }
 }

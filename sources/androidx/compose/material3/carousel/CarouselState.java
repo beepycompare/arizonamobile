@@ -30,16 +30,15 @@ public final class CarouselState implements ScrollableState {
     private static final Saver<CarouselState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.carousel.CarouselState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$1;
-            Saver$lambda$1 = CarouselState.Saver$lambda$1((SaverScope) obj, (CarouselState) obj2);
-            return Saver$lambda$1;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf(Integer.valueOf(r2.pagerState.getCurrentPage()), Float.valueOf(r2.pagerState.getCurrentPageOffsetFraction()), Integer.valueOf(((CarouselState) obj2).pagerState.getPageCount()));
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.material3.carousel.CarouselState$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            CarouselState Saver$lambda$3;
-            Saver$lambda$3 = CarouselState.Saver$lambda$3((List) obj);
-            return Saver$lambda$3;
+            return CarouselState.Saver$lambda$3((List) obj);
         }
     });
 
@@ -117,12 +116,7 @@ public final class CarouselState implements ScrollableState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$1(SaverScope saverScope, CarouselState carouselState) {
-        return CollectionsKt.listOf(Integer.valueOf(carouselState.pagerState.getCurrentPage()), Float.valueOf(carouselState.pagerState.getCurrentPageOffsetFraction()), Integer.valueOf(carouselState.pagerState.getPageCount()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CarouselState Saver$lambda$3(final List list) {
         Object obj = list.get(0);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");
@@ -132,14 +126,12 @@ public final class CarouselState implements ScrollableState {
         return new CarouselState(intValue, ((Float) obj2).floatValue(), new Function0() { // from class: androidx.compose.material3.carousel.CarouselState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int Saver$lambda$3$lambda$2;
-                Saver$lambda$3$lambda$2 = CarouselState.Saver$lambda$3$lambda$2(list);
-                return Integer.valueOf(Saver$lambda$3$lambda$2);
+                return Integer.valueOf(CarouselState.Saver$lambda$3$lambda$2(list));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int Saver$lambda$3$lambda$2(List list) {
         Object obj = list.get(2);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");

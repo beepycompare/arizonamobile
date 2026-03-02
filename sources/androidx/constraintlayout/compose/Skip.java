@@ -12,49 +12,49 @@ public final class Skip {
     private final String description;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Skip m8707boximpl(String str) {
+    public static final /* synthetic */ Skip m8004boximpl(String str) {
         return new Skip(str);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static String m8710constructorimpl(String str) {
+    private static String m8007constructorimpl(String str) {
         return str;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8711equalsimpl(String str, Object obj) {
-        return (obj instanceof Skip) && Intrinsics.areEqual(str, ((Skip) obj).m8715unboximpl());
+    public static boolean m8008equalsimpl(String str, Object obj) {
+        return (obj instanceof Skip) && Intrinsics.areEqual(str, ((Skip) obj).m8012unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8712equalsimpl0(String str, String str2) {
+    public static final boolean m8009equalsimpl0(String str, String str2) {
         return Intrinsics.areEqual(str, str2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8713hashCodeimpl(String str) {
+    public static int m8010hashCodeimpl(String str) {
         return str.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8714toStringimpl(String str) {
+    public static String m8011toStringimpl(String str) {
         return "Skip(description=" + str + ')';
     }
 
     public boolean equals(Object obj) {
-        return m8711equalsimpl(this.description, obj);
+        return m8008equalsimpl(this.description, obj);
     }
 
     public int hashCode() {
-        return m8713hashCodeimpl(this.description);
+        return m8010hashCodeimpl(this.description);
     }
 
     public String toString() {
-        return m8714toStringimpl(this.description);
+        return m8011toStringimpl(this.description);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ String m8715unboximpl() {
+    public final /* synthetic */ String m8012unboximpl() {
         return this.description;
     }
 
@@ -67,12 +67,12 @@ public final class Skip {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m8709constructorimpl(int i, int i2, int i3) {
-        return m8710constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).append('x').append(i3).toString());
+    public static String m8006constructorimpl(int i, int i2, int i3) {
+        return m8007constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).append('x').append(i3).toString());
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static String m8708constructorimpl(int i, int i2) {
-        return m8710constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).toString());
+    public static String m8005constructorimpl(int i, int i2) {
+        return m8007constructorimpl(new StringBuilder().append(i).append(AbstractJsonLexerKt.COLON).append(i2).toString());
     }
 }

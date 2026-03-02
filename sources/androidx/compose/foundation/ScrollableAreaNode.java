@@ -142,9 +142,7 @@ public final class ScrollableAreaNode extends DelegatingNode implements Composit
                 ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.ScrollableAreaNode$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit attachOverscrollNodeIfNeeded$lambda$0;
-                        attachOverscrollNodeIfNeeded$lambda$0 = ScrollableAreaNode.attachOverscrollNodeIfNeeded$lambda$0(ScrollableAreaNode.this);
-                        return attachOverscrollNodeIfNeeded$lambda$0;
+                        return ScrollableAreaNode.attachOverscrollNodeIfNeeded$lambda$0(ScrollableAreaNode.this);
                     }
                 });
             }
@@ -162,7 +160,7 @@ public final class ScrollableAreaNode extends DelegatingNode implements Composit
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit attachOverscrollNodeIfNeeded$lambda$0(ScrollableAreaNode scrollableAreaNode) {
         OverscrollFactory overscrollFactory = (OverscrollFactory) CompositionLocalConsumerModifierNodeKt.currentValueOf(scrollableAreaNode, OverscrollKt.getLocalOverscrollFactory());
         scrollableAreaNode.localOverscrollFactory = overscrollFactory;

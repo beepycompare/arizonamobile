@@ -533,14 +533,14 @@ public class ConstraintWidgetContainer extends WidgetContainer {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x022d  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0236  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0255 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x02da  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x02f7  */
-    /* JADX WARN: Removed duplicated region for block: B:159:0x0306  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0351  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0253 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x02d8  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x034c  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x034f  */
     /* JADX WARN: Type inference failed for: r18v2 */
     /* JADX WARN: Type inference failed for: r18v3 */
     /* JADX WARN: Type inference failed for: r18v5 */
@@ -666,6 +666,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
                         z2 = z5;
                         e.printStackTrace();
                         System.out.println("EXCEPTION : " + e);
+                        LinearSystem linearSystem = this.mSystem;
                         if (z9) {
                         }
                         if (z7) {
@@ -704,6 +705,7 @@ public class ConstraintWidgetContainer extends WidgetContainer {
                         e = e3;
                         e.printStackTrace();
                         System.out.println("EXCEPTION : " + e);
+                        LinearSystem linearSystem2 = this.mSystem;
                         if (z9) {
                         }
                         if (z7) {
@@ -750,10 +752,11 @@ public class ConstraintWidgetContainer extends WidgetContainer {
                 z2 = z5;
                 c = c2;
             }
+            LinearSystem linearSystem22 = this.mSystem;
             if (z9) {
-                z3 = updateChildrenFromSolver(this.mSystem, Optimizer.sFlags);
+                z3 = updateChildrenFromSolver(linearSystem22, Optimizer.sFlags);
             } else {
-                updateFromSolver(this.mSystem, optimizeFor);
+                updateFromSolver(linearSystem22, optimizeFor);
                 for (int i11 = i3; i11 < size; i11++) {
                     this.mChildren.get(i11).updateFromSolver(this.mSystem, optimizeFor);
                 }

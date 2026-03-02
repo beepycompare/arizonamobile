@@ -50,10 +50,12 @@ public class LicenseValidator {
 
     private void handleResponse(int i, ResponseData responseData) {
         this.mPolicy.processServerResponse(i, responseData);
-        if (this.mPolicy.allowAccess()) {
-            this.mCallback.allow(i);
+        boolean allowAccess = this.mPolicy.allowAccess();
+        LicenseCheckerCallback licenseCheckerCallback = this.mCallback;
+        if (allowAccess) {
+            licenseCheckerCallback.allow(i);
         } else {
-            this.mCallback.dontAllow(i);
+            licenseCheckerCallback.dontAllow(i);
         }
     }
 

@@ -29,12 +29,12 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: AnimatedLoading.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\b\u0010\t¨\u0006\n²\u0006\n\u0010\u000b\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"AnimatedLoading", "", "isChecking", "", "width", "Landroidx/compose/ui/unit/Dp;", "modifier", "Landroidx/compose/ui/Modifier;", "AnimatedLoading-uFdPcIQ", "(ZFLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system_release", Key.ROTATION, ""}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\u001a+\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0004\b\b\u0010\t¨\u0006\n²\u0006\n\u0010\u000b\u001a\u00020\fX\u008a\u0084\u0002"}, d2 = {"AnimatedLoading", "", "isChecking", "", "width", "Landroidx/compose/ui/unit/Dp;", "modifier", "Landroidx/compose/ui/Modifier;", "AnimatedLoading-uFdPcIQ", "(ZFLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "design-system", Key.ROTATION, ""}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class AnimatedLoadingKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit AnimatedLoading_uFdPcIQ$lambda$1(boolean z, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        m10063AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m9081AnimatedLoadinguFdPcIQ(z, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -50,7 +50,7 @@ public final class AnimatedLoadingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m10063AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void m9081AnimatedLoadinguFdPcIQ(final boolean z, float f, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         float f2;
         int i4;
@@ -83,7 +83,7 @@ public final class AnimatedLoadingKt {
                     f3 = f2;
                     modifier2 = obj;
                 } else {
-                    float m8258constructorimpl = i5 != 0 ? Dp.m8258constructorimpl(60) : f2;
+                    float m7555constructorimpl = i5 != 0 ? Dp.m7555constructorimpl(60) : f2;
                     Modifier.Companion companion = i4 != 0 ? Modifier.Companion : obj;
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(-113788150, i3, -1, "com.miami.game.core.design.system.component.other.AnimatedLoading (AnimatedLoading.kt:21)");
@@ -92,30 +92,28 @@ public final class AnimatedLoadingKt {
                         startRestartGroup.startReplaceGroup(-1133444200);
                         ComposerKt.sourceInformation(startRestartGroup, "23@999L28,24@1071L418,39@1624L84,35@1498L260");
                         modifier3 = companion;
-                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m981width3ABfNKs(companion, m8258constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 48, 120);
+                        ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.loading_animated_icon, startRestartGroup, 0), (String) null, RotateKt.rotate(SizeKt.m869width3ABfNKs(companion, m7555constructorimpl), AnimatedLoading_uFdPcIQ$lambda$0(InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1), 0.0f, 360.0f, AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, EasingKt.getLinearEasing(), 2, null), RepeatMode.Restart, 0L, 4, null), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8))), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 48, 120);
                         startRestartGroup = startRestartGroup;
                         startRestartGroup.endReplaceGroup();
                     } else {
                         modifier3 = companion;
                         startRestartGroup.startReplaceGroup(-1132659373);
                         ComposerKt.sourceInformation(startRestartGroup, "47@1788L53");
-                        SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(60)), startRestartGroup, 6);
+                        SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(60)), startRestartGroup, 6);
                         startRestartGroup.endReplaceGroup();
                     }
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                     modifier2 = modifier3;
-                    f3 = m8258constructorimpl;
+                    f3 = m7555constructorimpl;
                 }
                 endRestartGroup = startRestartGroup.endRestartGroup();
                 if (endRestartGroup != null) {
                     endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.other.AnimatedLoadingKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit AnimatedLoading_uFdPcIQ$lambda$1;
-                            AnimatedLoading_uFdPcIQ$lambda$1 = AnimatedLoadingKt.AnimatedLoading_uFdPcIQ$lambda$1(z, f3, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                            return AnimatedLoading_uFdPcIQ$lambda$1;
+                            return AnimatedLoadingKt.AnimatedLoading_uFdPcIQ$lambda$1(z, f3, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;

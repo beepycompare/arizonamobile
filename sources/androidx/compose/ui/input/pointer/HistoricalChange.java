@@ -23,11 +23,11 @@ public final class HistoricalChange {
     private HistoricalChange(long j, long j2) {
         this.uptimeMillis = j;
         this.position = j2;
-        this.originalEventPosition = Offset.Companion.m5195getZeroF1C5BW0();
+        this.originalEventPosition = Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m6655getPositionF1C5BW0() {
+    public final long m5996getPositionF1C5BW0() {
         return this.position;
     }
 
@@ -36,7 +36,7 @@ public final class HistoricalChange {
     }
 
     /* renamed from: getOriginalEventPosition-F1C5BW0$ui  reason: not valid java name */
-    public final long m6654getOriginalEventPositionF1C5BW0$ui() {
+    public final long m5995getOriginalEventPositionF1C5BW0$ui() {
         return this.originalEventPosition;
     }
 
@@ -46,6 +46,6 @@ public final class HistoricalChange {
     }
 
     public String toString() {
-        return "HistoricalChange(uptimeMillis=" + this.uptimeMillis + ", position=" + ((Object) Offset.m5187toStringimpl(this.position)) + ')';
+        return "HistoricalChange(uptimeMillis=" + this.uptimeMillis + ", position=" + ((Object) Offset.m4535toStringimpl(this.position)) + ')';
     }
 }

@@ -104,9 +104,9 @@ public final class SemanticsSortKt {
         CollectionsKt.sortWith(arrayList4, new Comparator() { // from class: androidx.compose.ui.semantics.SemanticsSortKt$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                int sortByGeometryGroupings$lambda$1;
-                sortByGeometryGroupings$lambda$1 = SemanticsSortKt.sortByGeometryGroupings$lambda$1(Function2.this, obj, obj2);
-                return sortByGeometryGroupings$lambda$1;
+                int intValue;
+                intValue = ((Number) Function2.this.invoke(obj, obj2)).intValue();
+                return intValue;
             }
         });
         while (i <= CollectionsKt.getLastIndex(arrayList4)) {
@@ -125,11 +125,6 @@ public final class SemanticsSortKt {
             }
         }
         return arrayList4;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int sortByGeometryGroupings$lambda$1(Function2 function2, Object obj, Object obj2) {
-        return ((Number) function2.invoke(obj, obj2)).intValue();
     }
 
     private static final boolean placedEntryRowOverlaps(ArrayList<Pair<Rect, List<SemanticsNode>>> arrayList, SemanticsNode semanticsNode) {

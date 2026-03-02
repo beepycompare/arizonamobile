@@ -24,30 +24,30 @@ public final class ImagePainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo6125getIntrinsicSizeNHjbRc() {
+    public long mo5466getIntrinsicSizeNHjbRc() {
         int width = this.image.getWidth();
         float f = width > 0 ? width : Float.NaN;
         int height = this.image.getHeight();
-        return Size.m5239constructorimpl((Float.floatToRawIntBits(height > 0 ? height : Float.NaN) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+        return Size.m4587constructorimpl((Float.floatToRawIntBits(height > 0 ? height : Float.NaN) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.graphics.painter.Painter
     public void onDraw(DrawScope drawScope) {
         int width = this.image.getWidth();
-        float intBitsToFloat = width > 0 ? Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)) / width : 1.0f;
+        float intBitsToFloat = width > 0 ? Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) / width : 1.0f;
         int height = this.image.getHeight();
-        float intBitsToFloat2 = height > 0 ? Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) / height : 1.0f;
-        long m5195getZeroF1C5BW0 = Offset.Companion.m5195getZeroF1C5BW0();
+        float intBitsToFloat2 = height > 0 ? Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) / height : 1.0f;
+        long m4543getZeroF1C5BW0 = Offset.Companion.m4543getZeroF1C5BW0();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5933scale0AR0LA0(intBitsToFloat, intBitsToFloat2, m5195getZeroF1C5BW0);
+            drawContext.getTransform().mo5274scale0AR0LA0(intBitsToFloat, intBitsToFloat2, m4543getZeroF1C5BW0);
             this.image.draw(ImagePainter_androidKt.getNativeCanvas(drawScope.getDrawContext().getCanvas()));
         } finally {
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
         }
     }
 }

@@ -489,17 +489,23 @@ public final class Hpack {
         }
 
         public final void writeInt(int i, int i2, int i3) {
+            Buffer buffer = this.out;
             if (i < i2) {
-                this.out.writeByte(i | i3);
+                buffer.writeByte(i | i3);
                 return;
             }
-            this.out.writeByte(i3 | i2);
+            buffer.writeByte(i3 | i2);
             int i4 = i - i2;
-            while (i4 >= 128) {
-                this.out.writeByte(128 | (i4 & 127));
-                i4 >>>= 7;
+            while (true) {
+                Buffer buffer2 = this.out;
+                if (i4 >= 128) {
+                    buffer2.writeByte(128 | (i4 & 127));
+                    i4 >>>= 7;
+                } else {
+                    buffer2.writeByte(i4);
+                    return;
+                }
             }
-            this.out.writeByte(i4);
         }
 
         public final void writeByteString(ByteString data) throws IOException {

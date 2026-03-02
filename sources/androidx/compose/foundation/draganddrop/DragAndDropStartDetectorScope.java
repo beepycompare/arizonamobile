@@ -9,16 +9,16 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface DragAndDropStartDetectorScope extends PointerInputScope {
     /* renamed from: requestDragAndDropTransfer-k-4lQ0M */
-    void mo456requestDragAndDropTransferk4lQ0M(long j);
+    void mo397requestDragAndDropTransferk4lQ0M(long j);
 
     /* renamed from: requestDragAndDropTransfer-k-4lQ0M$default  reason: not valid java name */
-    static /* synthetic */ void m469requestDragAndDropTransferk4lQ0M$default(DragAndDropStartDetectorScope dragAndDropStartDetectorScope, long j, int i, Object obj) {
+    static /* synthetic */ void m410requestDragAndDropTransferk4lQ0M$default(DragAndDropStartDetectorScope dragAndDropStartDetectorScope, long j, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: requestDragAndDropTransfer-k-4lQ0M");
         }
         if ((i & 1) != 0) {
-            j = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            j = Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
-        dragAndDropStartDetectorScope.mo456requestDragAndDropTransferk4lQ0M(j);
+        dragAndDropStartDetectorScope.mo397requestDragAndDropTransferk4lQ0M(j);
     }
 }

@@ -57,12 +57,12 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
     }
 
     /* renamed from: component4-D9Ej5fM  reason: not valid java name */
-    private final float m855component4D9Ej5fM() {
+    private final float m753component4D9Ej5fM() {
         return this.mainAxisSpacing;
     }
 
     /* renamed from: component6-D9Ej5fM  reason: not valid java name */
-    private final float m856component6D9Ej5fM() {
+    private final float m754component6D9Ej5fM() {
         return this.crossAxisArrangementSpacing;
     }
 
@@ -79,7 +79,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
     }
 
     /* renamed from: copy-E4Q9ldg$default  reason: not valid java name */
-    public static /* synthetic */ FlowMeasureLazyPolicy m857copyE4Q9ldg$default(FlowMeasureLazyPolicy flowMeasureLazyPolicy, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, float f, CrossAxisAlignment crossAxisAlignment, float f2, int i, int i2, int i3, FlowLayoutOverflowState flowLayoutOverflowState, List list, Function4 function4, int i4, Object obj) {
+    public static /* synthetic */ FlowMeasureLazyPolicy m755copyE4Q9ldg$default(FlowMeasureLazyPolicy flowMeasureLazyPolicy, boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, float f, CrossAxisAlignment crossAxisAlignment, float f2, int i, int i2, int i3, FlowLayoutOverflowState flowLayoutOverflowState, List list, Function4 function4, int i4, Object obj) {
         if ((i4 & 1) != 0) {
             z = flowMeasureLazyPolicy.isHorizontal;
         }
@@ -126,7 +126,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
         int i7 = i2;
         CrossAxisAlignment crossAxisAlignment2 = crossAxisAlignment;
         float f3 = f2;
-        return flowMeasureLazyPolicy.m859copyE4Q9ldg(z, horizontal, vertical, f, crossAxisAlignment2, f3, i6, i7, i5, flowLayoutOverflowState2, list3, function43);
+        return flowMeasureLazyPolicy.m757copyE4Q9ldg(z, horizontal, vertical, f, crossAxisAlignment2, f3, i6, i7, i5, flowLayoutOverflowState2, list3, function43);
     }
 
     public final boolean component1() {
@@ -146,7 +146,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
     }
 
     /* renamed from: copy-E4Q9ldg  reason: not valid java name */
-    public final FlowMeasureLazyPolicy m859copyE4Q9ldg(boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, float f, CrossAxisAlignment crossAxisAlignment, float f2, int i, int i2, int i3, FlowLayoutOverflowState flowLayoutOverflowState, List<? extends Function2<? super Composer, ? super Integer, Unit>> list, Function4<? super Integer, ? super FlowLineInfo, ? super Composer, ? super Integer, Unit> function4) {
+    public final FlowMeasureLazyPolicy m757copyE4Q9ldg(boolean z, Arrangement.Horizontal horizontal, Arrangement.Vertical vertical, float f, CrossAxisAlignment crossAxisAlignment, float f2, int i, int i2, int i3, FlowLayoutOverflowState flowLayoutOverflowState, List<? extends Function2<? super Composer, ? super Integer, Unit>> list, Function4<? super Integer, ? super FlowLineInfo, ? super Composer, ? super Integer, Unit> function4) {
         return new FlowMeasureLazyPolicy(z, horizontal, vertical, f, crossAxisAlignment, f2, i, i2, i3, flowLayoutOverflowState, list, function4, null);
     }
 
@@ -156,18 +156,18 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
         }
         if (obj instanceof FlowMeasureLazyPolicy) {
             FlowMeasureLazyPolicy flowMeasureLazyPolicy = (FlowMeasureLazyPolicy) obj;
-            return this.isHorizontal == flowMeasureLazyPolicy.isHorizontal && Intrinsics.areEqual(this.horizontalArrangement, flowMeasureLazyPolicy.horizontalArrangement) && Intrinsics.areEqual(this.verticalArrangement, flowMeasureLazyPolicy.verticalArrangement) && Dp.m8263equalsimpl0(this.mainAxisSpacing, flowMeasureLazyPolicy.mainAxisSpacing) && Intrinsics.areEqual(this.crossAxisAlignment, flowMeasureLazyPolicy.crossAxisAlignment) && Dp.m8263equalsimpl0(this.crossAxisArrangementSpacing, flowMeasureLazyPolicy.crossAxisArrangementSpacing) && this.itemCount == flowMeasureLazyPolicy.itemCount && this.maxLines == flowMeasureLazyPolicy.maxLines && this.maxItemsInMainAxis == flowMeasureLazyPolicy.maxItemsInMainAxis && Intrinsics.areEqual(this.overflow, flowMeasureLazyPolicy.overflow) && Intrinsics.areEqual(this.overflowComposables, flowMeasureLazyPolicy.overflowComposables) && Intrinsics.areEqual(this.getComposable, flowMeasureLazyPolicy.getComposable);
+            return this.isHorizontal == flowMeasureLazyPolicy.isHorizontal && Intrinsics.areEqual(this.horizontalArrangement, flowMeasureLazyPolicy.horizontalArrangement) && Intrinsics.areEqual(this.verticalArrangement, flowMeasureLazyPolicy.verticalArrangement) && Dp.m7560equalsimpl0(this.mainAxisSpacing, flowMeasureLazyPolicy.mainAxisSpacing) && Intrinsics.areEqual(this.crossAxisAlignment, flowMeasureLazyPolicy.crossAxisAlignment) && Dp.m7560equalsimpl0(this.crossAxisArrangementSpacing, flowMeasureLazyPolicy.crossAxisArrangementSpacing) && this.itemCount == flowMeasureLazyPolicy.itemCount && this.maxLines == flowMeasureLazyPolicy.maxLines && this.maxItemsInMainAxis == flowMeasureLazyPolicy.maxItemsInMainAxis && Intrinsics.areEqual(this.overflow, flowMeasureLazyPolicy.overflow) && Intrinsics.areEqual(this.overflowComposables, flowMeasureLazyPolicy.overflowComposables) && Intrinsics.areEqual(this.getComposable, flowMeasureLazyPolicy.getComposable);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((Boolean.hashCode(this.isHorizontal) * 31) + this.horizontalArrangement.hashCode()) * 31) + this.verticalArrangement.hashCode()) * 31) + Dp.m8264hashCodeimpl(this.mainAxisSpacing)) * 31) + this.crossAxisAlignment.hashCode()) * 31) + Dp.m8264hashCodeimpl(this.crossAxisArrangementSpacing)) * 31) + Integer.hashCode(this.itemCount)) * 31) + Integer.hashCode(this.maxLines)) * 31) + Integer.hashCode(this.maxItemsInMainAxis)) * 31) + this.overflow.hashCode()) * 31) + this.overflowComposables.hashCode()) * 31) + this.getComposable.hashCode();
+        return (((((((((((((((((((((Boolean.hashCode(this.isHorizontal) * 31) + this.horizontalArrangement.hashCode()) * 31) + this.verticalArrangement.hashCode()) * 31) + Dp.m7561hashCodeimpl(this.mainAxisSpacing)) * 31) + this.crossAxisAlignment.hashCode()) * 31) + Dp.m7561hashCodeimpl(this.crossAxisArrangementSpacing)) * 31) + Integer.hashCode(this.itemCount)) * 31) + Integer.hashCode(this.maxLines)) * 31) + Integer.hashCode(this.maxItemsInMainAxis)) * 31) + this.overflow.hashCode()) * 31) + this.overflowComposables.hashCode()) * 31) + this.getComposable.hashCode();
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder("FlowMeasureLazyPolicy(isHorizontal=");
-        sb.append(this.isHorizontal).append(", horizontalArrangement=").append(this.horizontalArrangement).append(", verticalArrangement=").append(this.verticalArrangement).append(", mainAxisSpacing=").append((Object) Dp.m8269toStringimpl(this.mainAxisSpacing)).append(", crossAxisAlignment=").append(this.crossAxisAlignment).append(", crossAxisArrangementSpacing=").append((Object) Dp.m8269toStringimpl(this.crossAxisArrangementSpacing)).append(", itemCount=").append(this.itemCount).append(", maxLines=").append(this.maxLines).append(", maxItemsInMainAxis=").append(this.maxItemsInMainAxis).append(", overflow=").append(this.overflow).append(", overflowComposables=").append(this.overflowComposables).append(", getComposable=");
+        sb.append(this.isHorizontal).append(", horizontalArrangement=").append(this.horizontalArrangement).append(", verticalArrangement=").append(this.verticalArrangement).append(", mainAxisSpacing=").append((Object) Dp.m7566toStringimpl(this.mainAxisSpacing)).append(", crossAxisAlignment=").append(this.crossAxisAlignment).append(", crossAxisArrangementSpacing=").append((Object) Dp.m7566toStringimpl(this.crossAxisArrangementSpacing)).append(", itemCount=").append(this.itemCount).append(", maxLines=").append(this.maxLines).append(", maxItemsInMainAxis=").append(this.maxItemsInMainAxis).append(", overflow=").append(this.overflow).append(", overflowComposables=").append(this.overflowComposables).append(", getComposable=");
         sb.append(this.getComposable).append(')');
         return sb.toString();
     }
@@ -208,51 +208,53 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
         return this.crossAxisAlignment;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final MeasureResult getMeasurePolicy$lambda$0(FlowMeasureLazyPolicy flowMeasureLazyPolicy, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        return flowMeasureLazyPolicy.m858measure0kLqBqw(subcomposeMeasureScope, constraints.m8217unboximpl());
-    }
-
     public final Function2<SubcomposeMeasureScope, Constraints, MeasureResult> getMeasurePolicy() {
         return new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                MeasureResult measurePolicy$lambda$0;
-                measurePolicy$lambda$0 = FlowMeasureLazyPolicy.getMeasurePolicy$lambda$0(FlowMeasureLazyPolicy.this, (SubcomposeMeasureScope) obj, (Constraints) obj2);
-                return measurePolicy$lambda$0;
+                MeasureResult m756measure0kLqBqw;
+                m756measure0kLqBqw = FlowMeasureLazyPolicy.this.m756measure0kLqBqw((SubcomposeMeasureScope) obj, ((Constraints) obj2).m7514unboximpl());
+                return m756measure0kLqBqw;
             }
         };
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: measure-0kLqBqw  reason: not valid java name */
-    private final MeasureResult m858measure0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, long j) {
+    public final MeasureResult m756measure0kLqBqw(final SubcomposeMeasureScope subcomposeMeasureScope, long j) {
         LayoutOrientation layoutOrientation;
-        if (this.itemCount <= 0 || this.maxLines == 0 || this.maxItemsInMainAxis == 0 || (Constraints.m8210getMaxHeightimpl(j) == 0 && this.overflow.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.Visible)) {
+        if (this.itemCount <= 0 || this.maxLines == 0 || this.maxItemsInMainAxis == 0 || (Constraints.m7507getMaxHeightimpl(j) == 0 && this.overflow.getType$foundation_layout() != FlowLayoutOverflow.OverflowType.Visible)) {
             return MeasureScope.layout$default(subcomposeMeasureScope, 0, 0, null, new Function1() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_0kLqBqw$lambda$0;
-                    measure_0kLqBqw$lambda$0 = FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$0((Placeable.PlacementScope) obj);
-                    return measure_0kLqBqw$lambda$0;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, 4, null);
         }
         ContextualFlowItemIterator contextualFlowItemIterator = new ContextualFlowItemIterator(this.itemCount, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                List measure_0kLqBqw$lambda$1;
-                measure_0kLqBqw$lambda$1 = FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$1(SubcomposeMeasureScope.this, this, ((Integer) obj).intValue(), (FlowLineInfo) obj2);
-                return measure_0kLqBqw$lambda$1;
+                List subcompose;
+                subcompose = SubcomposeMeasureScope.this.subcompose(Integer.valueOf(r3), ComposableLambdaKt.composableLambdaInstance(-195060736, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function2
+                    public final Object invoke(Object obj3, Object obj4) {
+                        Unit measure_0kLqBqw$lambda$1$0;
+                        measure_0kLqBqw$lambda$1$0 = FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$1$0(FlowMeasureLazyPolicy.this, r2, r3, (Composer) obj3, ((Integer) obj4).intValue());
+                        return measure_0kLqBqw$lambda$1$0;
+                    }
+                }));
+                return subcompose;
             }
         });
         this.overflow.setItemCount$foundation_layout(this.itemCount);
         FlowMeasureLazyPolicy flowMeasureLazyPolicy = this;
-        this.overflow.m848setOverflowMeasurablesVKLhPVY$foundation_layout(flowMeasureLazyPolicy, j, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda4
+        this.overflow.m746setOverflowMeasurablesVKLhPVY$foundation_layout(flowMeasureLazyPolicy, j, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Measurable measure_0kLqBqw$lambda$2;
-                measure_0kLqBqw$lambda$2 = FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$2(FlowMeasureLazyPolicy.this, subcomposeMeasureScope, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
-                return measure_0kLqBqw$lambda$2;
+                return FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$2(FlowMeasureLazyPolicy.this, subcomposeMeasureScope, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
             }
         });
         SubcomposeMeasureScope subcomposeMeasureScope2 = subcomposeMeasureScope;
@@ -264,24 +266,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
         } else {
             layoutOrientation = LayoutOrientation.Vertical;
         }
-        return FlowLayoutKt.m840breakDownItemsdi9J0FM(subcomposeMeasureScope2, flowMeasureLazyPolicy, contextualFlowItemIterator2, f, f2, OrientationIndependentConstraints.m896constructorimpl(j, layoutOrientation), this.maxItemsInMainAxis, this.maxLines, this.overflow);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_0kLqBqw$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List measure_0kLqBqw$lambda$1(SubcomposeMeasureScope subcomposeMeasureScope, final FlowMeasureLazyPolicy flowMeasureLazyPolicy, final int i, final FlowLineInfo flowLineInfo) {
-        return subcomposeMeasureScope.subcompose(Integer.valueOf(i), ComposableLambdaKt.composableLambdaInstance(-195060736, true, new Function2() { // from class: androidx.compose.foundation.layout.FlowMeasureLazyPolicy$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
-                Unit measure_0kLqBqw$lambda$1$0;
-                measure_0kLqBqw$lambda$1$0 = FlowMeasureLazyPolicy.measure_0kLqBqw$lambda$1$0(FlowMeasureLazyPolicy.this, i, flowLineInfo, (Composer) obj, ((Integer) obj2).intValue());
-                return measure_0kLqBqw$lambda$1$0;
-            }
-        }));
+        return FlowLayoutKt.m738breakDownItemsdi9J0FM(subcomposeMeasureScope2, flowMeasureLazyPolicy, contextualFlowItemIterator2, f, f2, OrientationIndependentConstraints.m787constructorimpl(j, layoutOrientation), this.maxItemsInMainAxis, this.maxLines, this.overflow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -301,7 +286,7 @@ public final class FlowMeasureLazyPolicy implements FlowLineMeasurePolicy {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Measurable measure_0kLqBqw$lambda$2(FlowMeasureLazyPolicy flowMeasureLazyPolicy, SubcomposeMeasureScope subcomposeMeasureScope, boolean z, int i) {
         Function2<? super Composer, ? super Integer, Unit> function2 = (Function2) CollectionsKt.getOrNull(flowMeasureLazyPolicy.overflowComposables, !z ? 1 : 0);
         if (function2 != null) {

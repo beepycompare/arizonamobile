@@ -110,10 +110,11 @@ public final class MaybeDelayOtherPublisher<T, U> extends AbstractMaybeWithUpstr
         @Override // org.reactivestreams.Subscriber
         public void onError(Throwable th) {
             Throwable th2 = this.error;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (th2 == null) {
-                this.downstream.onError(th);
+                maybeObserver.onError(th);
             } else {
-                this.downstream.onError(new CompositeException(th2, th));
+                maybeObserver.onError(new CompositeException(th2, th));
             }
         }
 
@@ -125,10 +126,11 @@ public final class MaybeDelayOtherPublisher<T, U> extends AbstractMaybeWithUpstr
                 return;
             }
             T t = this.value;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                maybeObserver.onSuccess(t);
             } else {
-                this.downstream.onComplete();
+                maybeObserver.onComplete();
             }
         }
     }

@@ -87,14 +87,16 @@ public final class TaskQueue {
         Intrinsics.checkNotNullParameter(task, "task");
         synchronized (this.taskRunner) {
             if (this.shutdown) {
-                if (task.getCancelable()) {
-                    Logger logger$okhttp = this.taskRunner.getLogger$okhttp();
+                boolean cancelable = task.getCancelable();
+                TaskRunner taskRunner = this.taskRunner;
+                if (cancelable) {
+                    Logger logger$okhttp = taskRunner.getLogger$okhttp();
                     if (logger$okhttp.isLoggable(Level.FINE)) {
                         TaskLoggerKt.log(logger$okhttp, task, this, "schedule canceled (queue is shutdown)");
                     }
                     return;
                 }
-                Logger logger$okhttp2 = this.taskRunner.getLogger$okhttp();
+                Logger logger$okhttp2 = taskRunner.getLogger$okhttp();
                 if (logger$okhttp2.isLoggable(Level.FINE)) {
                     TaskLoggerKt.log(logger$okhttp2, task, this, "schedule failed (queue is shutdown)");
                 }

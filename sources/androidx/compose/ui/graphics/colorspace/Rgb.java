@@ -1,7 +1,6 @@
 package androidx.compose.ui.graphics.colorspace;
 
 import androidx.compose.ui.graphics.ColorKt;
-import androidx.compose.ui.graphics.colorspace.Rgb;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Arrays;
@@ -13,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: Rgb.kt */
 @Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u0006\n\u0002\b\"\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0010\t\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0007\u0018\u0000 _2\u00020\u0001:\u0001_B]\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\t\u001a\u00020\n\u0012\u0006\u0010\u000b\u001a\u00020\n\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u0012\b\u0010\u000f\u001a\u0004\u0018\u00010\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012¢\u0006\u0004\b\u0013\u0010\u0014BE\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0015\u001a\u00020\u0005\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016\u0012\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016¢\u0006\u0004\b\u0013\u0010\u0018B]\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016\u0012\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r¢\u0006\u0004\b\u0013\u0010\u0019B%\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0015\u001a\u00020\u0005\u0012\u0006\u0010\u001a\u001a\u00020\u0010¢\u0006\u0004\b\u0013\u0010\u001bB-\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u001a\u001a\u00020\u0010¢\u0006\u0004\b\u0013\u0010\u001cB1\b\u0010\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u001a\u001a\u00020\u0010\u0012\u0006\u0010\u0011\u001a\u00020\u0012¢\u0006\u0004\b\u0013\u0010\u001dB%\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0015\u001a\u00020\u0005\u0012\u0006\u0010\u001e\u001a\u00020\u0017¢\u0006\u0004\b\u0013\u0010\u001fB-\b\u0016\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u001e\u001a\u00020\u0017¢\u0006\u0004\b\u0013\u0010 BA\b\u0010\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\u001e\u001a\u00020\u0017\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u0012\u0006\u0010\u0011\u001a\u00020\u0012¢\u0006\u0004\b\u0013\u0010!B!\b\u0010\u0012\u0006\u0010\"\u001a\u00020\u0000\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\u0013\u0010#J\b\u0010=\u001a\u00020\u0005H\u0007J\b\u0010>\u001a\u00020\u0005H\u0007J\b\u0010?\u001a\u00020\u0005H\u0007J\u0012\u0010=\u001a\u00020\u00052\b\b\u0001\u0010\u0004\u001a\u00020\u0005H\u0007J\u0012\u0010>\u001a\u00020\u00052\b\b\u0001\u0010\b\u001a\u00020\u0005H\u0007J\u0012\u0010?\u001a\u00020\u00052\b\b\u0001\u0010+\u001a\u00020\u0005H\u0007J\u0010\u0010@\u001a\u00020\r2\u0006\u0010A\u001a\u00020\u0012H\u0016J\u0010\u0010B\u001a\u00020\r2\u0006\u0010A\u001a\u00020\u0012H\u0016J \u0010C\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\r2\u0006\u0010E\u001a\u00020\r2\u0006\u0010F\u001a\u00020\rH\u0007J\u0012\u0010C\u001a\u00020\u00052\b\b\u0001\u0010G\u001a\u00020\u0005H\u0007J \u0010H\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\r2\u0006\u0010E\u001a\u00020\r2\u0006\u0010F\u001a\u00020\rH\u0007J\u0012\u0010H\u001a\u00020\u00052\b\b\u0001\u0010G\u001a\u00020\u0005H\u0007J\u0010\u0010I\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0016J%\u0010J\u001a\u00020K2\u0006\u0010L\u001a\u00020\r2\u0006\u0010M\u001a\u00020\r2\u0006\u0010N\u001a\u00020\rH\u0010¢\u0006\u0002\bOJ%\u0010P\u001a\u00020\r2\u0006\u0010L\u001a\u00020\r2\u0006\u0010M\u001a\u00020\r2\u0006\u0010N\u001a\u00020\rH\u0010¢\u0006\u0002\bQJ7\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020\r2\u0006\u0010U\u001a\u00020\r2\u0006\u0010V\u001a\u00020\r2\u0006\u0010W\u001a\u00020\r2\u0006\u0010\"\u001a\u00020\u0001H\u0010¢\u0006\u0004\bX\u0010YJ\u0010\u0010Z\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0016J\u0013\u0010[\u001a\u00020:2\b\u0010\\\u001a\u0004\u0018\u00010]H\u0096\u0002J\b\u0010^\u001a\u00020\u0012H\u0016R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b$\u0010%R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u0010¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0014\u0010\u0004\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0014\u0010\b\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010)R\u0014\u0010+\u001a\u00020\u0005X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b,\u0010)R\u0014\u0010-\u001a\u00020\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b.\u0010/R\u001d\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016¢\u0006\b\n\u0000\u001a\u0004\b0\u00101R\u0014\u00102\u001a\u00020\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u0010/R\u0014\u00104\u001a\u00020\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b5\u0010/R\u001d\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00170\u0016¢\u0006\b\n\u0000\u001a\u0004\b6\u00101R\u0014\u00107\u001a\u00020\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b8\u0010/R\u0014\u00109\u001a\u00020:X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b9\u0010;R\u0014\u0010<\u001a\u00020:X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b<\u0010;¨\u0006`"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/Rgb;", "Landroidx/compose/ui/graphics/colorspace/ColorSpace;", "name", "", "primaries", "", "whitePoint", "Landroidx/compose/ui/graphics/colorspace/WhitePoint;", "transform", "oetf", "Landroidx/compose/ui/graphics/colorspace/DoubleFunction;", "eotf", "min", "", "max", "transferParameters", "Landroidx/compose/ui/graphics/colorspace/TransferParameters;", "id", "", "<init>", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;[FLandroidx/compose/ui/graphics/colorspace/DoubleFunction;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;FFLandroidx/compose/ui/graphics/colorspace/TransferParameters;I)V", "toXYZ", "Lkotlin/Function1;", "", "(Ljava/lang/String;[FLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FF)V", "function", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/TransferParameters;)V", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/TransferParameters;)V", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/TransferParameters;I)V", "gamma", "(Ljava/lang/String;[FD)V", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;D)V", "(Ljava/lang/String;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;DFFI)V", "colorSpace", "(Landroidx/compose/ui/graphics/colorspace/Rgb;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;)V", "getWhitePoint", "()Landroidx/compose/ui/graphics/colorspace/WhitePoint;", "getTransferParameters", "()Landroidx/compose/ui/graphics/colorspace/TransferParameters;", "getPrimaries$ui_graphics", "()[F", "getTransform$ui_graphics", "inverseTransform", "getInverseTransform$ui_graphics", "oetfOrig", "getOetfOrig$ui_graphics", "()Landroidx/compose/ui/graphics/colorspace/DoubleFunction;", "getOetf", "()Lkotlin/jvm/functions/Function1;", "oetfFunc", "getOetfFunc$ui_graphics", "eotfOrig", "getEotfOrig$ui_graphics", "getEotf", "eotfFunc", "getEotfFunc$ui_graphics", "isWideGamut", "", "()Z", "isSrgb", "getPrimaries", "getTransform", "getInverseTransform", "getMinValue", "component", "getMaxValue", "toLinear", "r", "g", "b", "v", "fromLinear", "toXyz", "toXy", "", "v0", "v1", "v2", "toXy$ui_graphics", "toZ", "toZ$ui_graphics", "xyzaToColor", "Landroidx/compose/ui/graphics/Color;", "x", "y", "z", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "xyzaToColor-JlNiLsg$ui_graphics", "(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J", "fromXyz", "equals", "other", "", "hashCode", "Companion", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class Rgb extends ColorSpace {
     private final Function1<Double, Double> eotf;
     private final DoubleFunction eotfFunc;
@@ -35,13 +34,11 @@ public final class Rgb extends ColorSpace {
     private static final DoubleFunction DoubleIdentity = new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda2
         @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
         public final double invoke(double d) {
-            double DoubleIdentity$lambda$0;
-            DoubleIdentity$lambda$0 = Rgb.DoubleIdentity$lambda$0(d);
-            return DoubleIdentity$lambda$0;
+            return Rgb.DoubleIdentity$lambda$0(d);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final double DoubleIdentity$lambda$0(double d) {
         return d;
     }
@@ -55,7 +52,7 @@ public final class Rgb extends ColorSpace {
     }
 
     public Rgb(String str, float[] fArr, WhitePoint whitePoint, float[] fArr2, DoubleFunction doubleFunction, DoubleFunction doubleFunction2, float f, float f2, TransferParameters transferParameters, int i) {
-        super(str, ColorModel.Companion.m5863getRgbxdoWZVw(), i, null);
+        super(str, ColorModel.Companion.m5209getRgbxdoWZVw(), i, null);
         this.whitePoint = whitePoint;
         this.min = f;
         this.max = f2;
@@ -85,9 +82,10 @@ public final class Rgb extends ColorSpace {
         this.oetfFunc = new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda0
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double oetfFunc$lambda$0;
-                oetfFunc$lambda$0 = Rgb.oetfFunc$lambda$0(Rgb.this, d);
-                return oetfFunc$lambda$0;
+                double coerceIn;
+                Rgb rgb = Rgb.this;
+                coerceIn = RangesKt.coerceIn(rgb.oetfOrig.invoke(d), rgb.min, rgb.max);
+                return coerceIn;
             }
         };
         this.eotfOrig = doubleFunction2;
@@ -115,9 +113,10 @@ public final class Rgb extends ColorSpace {
         this.eotfFunc = new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda1
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double eotfFunc$lambda$0;
-                eotfFunc$lambda$0 = Rgb.eotfFunc$lambda$0(Rgb.this, d);
-                return eotfFunc$lambda$0;
+                double invoke;
+                Rgb rgb = Rgb.this;
+                invoke = rgb.eotfOrig.invoke(RangesKt.coerceIn(d, rgb.min, rgb.max));
+                return invoke;
             }
         };
         if (fArr.length != 6 && fArr.length != 9) {
@@ -166,11 +165,6 @@ public final class Rgb extends ColorSpace {
         return this.oetfFunc;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double oetfFunc$lambda$0(Rgb rgb, double d) {
-        return RangesKt.coerceIn(rgb.oetfOrig.invoke(d), rgb.min, rgb.max);
-    }
-
     public final DoubleFunction getEotfOrig$ui_graphics() {
         return this.eotfOrig;
     }
@@ -181,11 +175,6 @@ public final class Rgb extends ColorSpace {
 
     public final DoubleFunction getEotfFunc$ui_graphics() {
         return this.eotfFunc;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double eotfFunc$lambda$0(Rgb rgb, double d) {
-        return rgb.eotfOrig.invoke(RangesKt.coerceIn(d, rgb.min, rgb.max));
     }
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
@@ -227,57 +216,37 @@ public final class Rgb extends ColorSpace {
         this(str, r0.computePrimaries$ui_graphics(fArr), r0.computeWhitePoint(fArr), null, new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda3
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double _init_$lambda$0;
-                _init_$lambda$0 = Rgb._init_$lambda$0(Function1.this, d);
-                return _init_$lambda$0;
+                double doubleValue;
+                doubleValue = ((Number) Function1.this.invoke(Double.valueOf(d))).doubleValue();
+                return doubleValue;
             }
         }, new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda4
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double _init_$lambda$1;
-                _init_$lambda$1 = Rgb._init_$lambda$1(Function1.this, d);
-                return _init_$lambda$1;
+                double doubleValue;
+                doubleValue = ((Number) Function1.this.invoke(Double.valueOf(d))).doubleValue();
+                return doubleValue;
             }
         }, 0.0f, 1.0f, null, -1);
         Companion companion = Companion;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double _init_$lambda$0(Function1 function1, double d) {
-        return ((Number) function1.invoke(Double.valueOf(d))).doubleValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double _init_$lambda$1(Function1 function1, double d) {
-        return ((Number) function1.invoke(Double.valueOf(d))).doubleValue();
     }
 
     public Rgb(String str, float[] fArr, WhitePoint whitePoint, final Function1<? super Double, Double> function1, final Function1<? super Double, Double> function12, float f, float f2) {
         this(str, fArr, whitePoint, null, new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda7
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double _init_$lambda$2;
-                _init_$lambda$2 = Rgb._init_$lambda$2(Function1.this, d);
-                return _init_$lambda$2;
+                double doubleValue;
+                doubleValue = ((Number) Function1.this.invoke(Double.valueOf(d))).doubleValue();
+                return doubleValue;
             }
         }, new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda8
             @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
             public final double invoke(double d) {
-                double _init_$lambda$3;
-                _init_$lambda$3 = Rgb._init_$lambda$3(Function1.this, d);
-                return _init_$lambda$3;
+                double doubleValue;
+                doubleValue = ((Number) Function1.this.invoke(Double.valueOf(d))).doubleValue();
+                return doubleValue;
             }
         }, f, f2, null, -1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double _init_$lambda$2(Function1 function1, double d) {
-        return ((Number) function1.invoke(Double.valueOf(d))).doubleValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final double _init_$lambda$3(Function1 function1, double d) {
-        return ((Number) function1.invoke(Double.valueOf(d))).doubleValue();
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -330,9 +299,7 @@ public final class Rgb extends ColorSpace {
             doubleFunction = new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda5
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d2) {
-                    double _init_$lambda$4;
-                    _init_$lambda$4 = Rgb._init_$lambda$4(d, d2);
-                    return _init_$lambda$4;
+                    return Rgb._init_$lambda$4(d, d2);
                 }
             };
         }
@@ -343,15 +310,13 @@ public final class Rgb extends ColorSpace {
             doubleFunction2 = new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$$ExternalSyntheticLambda6
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d2) {
-                    double _init_$lambda$5;
-                    _init_$lambda$5 = Rgb._init_$lambda$5(d, d2);
-                    return _init_$lambda$5;
+                    return Rgb._init_$lambda$5(d, d2);
                 }
             };
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final double _init_$lambda$4(double d, double d2) {
         if (d2 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             d2 = 0.0d;
@@ -359,7 +324,7 @@ public final class Rgb extends ColorSpace {
         return Math.pow(d2, 1.0d / d);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final double _init_$lambda$5(double d, double d2) {
         if (d2 < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             d2 = 0.0d;
@@ -455,7 +420,7 @@ public final class Rgb extends ColorSpace {
 
     @Override // androidx.compose.ui.graphics.colorspace.ColorSpace
     /* renamed from: xyzaToColor-JlNiLsg$ui_graphics */
-    public long mo5866xyzaToColorJlNiLsg$ui_graphics(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
+    public long mo5212xyzaToColorJlNiLsg$ui_graphics(float f, float f2, float f3, float f4, ColorSpace colorSpace) {
         float[] fArr = this.inverseTransform;
         return ColorKt.Color((float) this.oetfFunc.invoke((fArr[0] * f) + (fArr[3] * f2) + (fArr[6] * f3)), (float) this.oetfFunc.invoke((fArr[1] * f) + (fArr[4] * f2) + (fArr[7] * f3)), (float) this.oetfFunc.invoke((fArr[2] * f) + (fArr[5] * f2) + (fArr[8] * f3)), f4, colorSpace);
     }
@@ -511,7 +476,7 @@ public final class Rgb extends ColorSpace {
 
     /* compiled from: Rgb.kt */
     @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J@\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J \u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J \u0010\u0018\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0002J\u0010\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\b\u001a\u00020\tH\u0002J)\u0010\u001a\u001a\u00020\u000f2\u0006\u0010\u001b\u001a\u00020\u000f2\u0006\u0010\u001c\u001a\u00020\u000f2\u0006\u0010\u001d\u001a\u00020\u000f2\u0006\u0010\u001e\u001a\u00020\u000fH\u0082\bJ\u0018\u0010\u001f\u001a\u00020\u00072\u0006\u0010 \u001a\u00020\t2\u0006\u0010!\u001a\u00020\tH\u0002J\u0015\u0010\"\u001a\u00020\t2\u0006\u0010#\u001a\u00020\tH\u0000¢\u0006\u0002\b$J\u0010\u0010%\u001a\u00020\u000b2\u0006\u0010#\u001a\u00020\tH\u0002J\u0010\u0010&\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\tH\u0002J\u0018\u0010'\u001a\u00020\t2\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0010\u0010(\u001a\u00020\u00052\u0006\u0010)\u001a\u00020*H\u0002J\u0010\u0010+\u001a\u00020\u00052\u0006\u0010)\u001a\u00020*H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;", "", "<init>", "()V", "DoubleIdentity", "Landroidx/compose/ui/graphics/colorspace/DoubleFunction;", "isSrgb", "", "primaries", "", "whitePoint", "Landroidx/compose/ui/graphics/colorspace/WhitePoint;", "OETF", "EOTF", "min", "", "max", "id", "", "compare", "point", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "isWideGamut", "area", "cross", "ax", "ay", "bx", "by", "contains", "p1", "p2", "computePrimaries", "toXYZ", "computePrimaries$ui_graphics", "computeWhitePoint", "xyPrimaries", "computeXYZMatrix", "generateOetf", "function", "Landroidx/compose/ui/graphics/colorspace/TransferParameters;", "generateEotf", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -677,9 +642,9 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda4
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateOetf$lambda$0;
-                        generateOetf$lambda$0 = Rgb.Companion.generateOetf$lambda$0(TransferParameters.this, d);
-                        return generateOetf$lambda$0;
+                        double transferHlgOetf$ui_graphics;
+                        transferHlgOetf$ui_graphics = ColorSpaces.INSTANCE.transferHlgOetf$ui_graphics(TransferParameters.this, d);
+                        return transferHlgOetf$ui_graphics;
                     }
                 };
             }
@@ -687,9 +652,9 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda5
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateOetf$lambda$1;
-                        generateOetf$lambda$1 = Rgb.Companion.generateOetf$lambda$1(TransferParameters.this, d);
-                        return generateOetf$lambda$1;
+                        double transferSt2048Oetf$ui_graphics;
+                        transferSt2048Oetf$ui_graphics = ColorSpaces.INSTANCE.transferSt2048Oetf$ui_graphics(TransferParameters.this, d);
+                        return transferSt2048Oetf$ui_graphics;
                     }
                 };
             }
@@ -697,40 +662,20 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda6
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateOetf$lambda$2;
-                        generateOetf$lambda$2 = Rgb.Companion.generateOetf$lambda$2(TransferParameters.this, d);
-                        return generateOetf$lambda$2;
+                        double rcpResponse;
+                        rcpResponse = ColorSpaceKt.rcpResponse(d, r0.getA(), r0.getB(), r0.getC(), r0.getD(), TransferParameters.this.getGamma());
+                        return rcpResponse;
                     }
                 };
             }
             return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda7
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d) {
-                    double generateOetf$lambda$3;
-                    generateOetf$lambda$3 = Rgb.Companion.generateOetf$lambda$3(TransferParameters.this, d);
-                    return generateOetf$lambda$3;
+                    double rcpResponse;
+                    rcpResponse = ColorSpaceKt.rcpResponse(d, r0.getA(), r0.getB(), r0.getC(), r0.getD(), r0.getE(), r0.getF(), TransferParameters.this.getGamma());
+                    return rcpResponse;
                 }
             };
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateOetf$lambda$0(TransferParameters transferParameters, double d) {
-            return ColorSpaces.INSTANCE.transferHlgOetf$ui_graphics(transferParameters, d);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateOetf$lambda$1(TransferParameters transferParameters, double d) {
-            return ColorSpaces.INSTANCE.transferSt2048Oetf$ui_graphics(transferParameters, d);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateOetf$lambda$2(TransferParameters transferParameters, double d) {
-            return ColorSpaceKt.rcpResponse(d, transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getGamma());
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateOetf$lambda$3(TransferParameters transferParameters, double d) {
-            return ColorSpaceKt.rcpResponse(d, transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getE(), transferParameters.getF(), transferParameters.getGamma());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -739,9 +684,9 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda0
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateEotf$lambda$0;
-                        generateEotf$lambda$0 = Rgb.Companion.generateEotf$lambda$0(TransferParameters.this, d);
-                        return generateEotf$lambda$0;
+                        double transferHlgEotf$ui_graphics;
+                        transferHlgEotf$ui_graphics = ColorSpaces.INSTANCE.transferHlgEotf$ui_graphics(TransferParameters.this, d);
+                        return transferHlgEotf$ui_graphics;
                     }
                 };
             }
@@ -749,9 +694,9 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda1
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateEotf$lambda$1;
-                        generateEotf$lambda$1 = Rgb.Companion.generateEotf$lambda$1(TransferParameters.this, d);
-                        return generateEotf$lambda$1;
+                        double transferSt2048Eotf$ui_graphics;
+                        transferSt2048Eotf$ui_graphics = ColorSpaces.INSTANCE.transferSt2048Eotf$ui_graphics(TransferParameters.this, d);
+                        return transferSt2048Eotf$ui_graphics;
                     }
                 };
             }
@@ -759,40 +704,20 @@ public final class Rgb extends ColorSpace {
                 return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda2
                     @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                     public final double invoke(double d) {
-                        double generateEotf$lambda$2;
-                        generateEotf$lambda$2 = Rgb.Companion.generateEotf$lambda$2(TransferParameters.this, d);
-                        return generateEotf$lambda$2;
+                        double response;
+                        response = ColorSpaceKt.response(d, r0.getA(), r0.getB(), r0.getC(), r0.getD(), TransferParameters.this.getGamma());
+                        return response;
                     }
                 };
             }
             return new DoubleFunction() { // from class: androidx.compose.ui.graphics.colorspace.Rgb$Companion$$ExternalSyntheticLambda3
                 @Override // androidx.compose.ui.graphics.colorspace.DoubleFunction
                 public final double invoke(double d) {
-                    double generateEotf$lambda$3;
-                    generateEotf$lambda$3 = Rgb.Companion.generateEotf$lambda$3(TransferParameters.this, d);
-                    return generateEotf$lambda$3;
+                    double response;
+                    response = ColorSpaceKt.response(d, r0.getA(), r0.getB(), r0.getC(), r0.getD(), r0.getE(), r0.getF(), TransferParameters.this.getGamma());
+                    return response;
                 }
             };
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateEotf$lambda$0(TransferParameters transferParameters, double d) {
-            return ColorSpaces.INSTANCE.transferHlgEotf$ui_graphics(transferParameters, d);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateEotf$lambda$1(TransferParameters transferParameters, double d) {
-            return ColorSpaces.INSTANCE.transferSt2048Eotf$ui_graphics(transferParameters, d);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateEotf$lambda$2(TransferParameters transferParameters, double d) {
-            return ColorSpaceKt.response(d, transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getGamma());
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final double generateEotf$lambda$3(TransferParameters transferParameters, double d) {
-            return ColorSpaceKt.response(d, transferParameters.getA(), transferParameters.getB(), transferParameters.getC(), transferParameters.getD(), transferParameters.getE(), transferParameters.getF(), transferParameters.getGamma());
         }
     }
 }

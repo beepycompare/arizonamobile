@@ -127,7 +127,7 @@ public final class Operations extends OperationsDebugStringFormattable {
 
     public final void push(Operation operation, Function1<? super WriteScope, Unit> function1) {
         pushOp(operation);
-        function1.invoke(WriteScope.m4737boximpl(WriteScope.m4738constructorimpl(this)));
+        function1.invoke(WriteScope.m4102boximpl(WriteScope.m4103constructorimpl(this)));
         ensureAllArgumentsPushedFor(operation);
     }
 
@@ -162,7 +162,7 @@ public final class Operations extends OperationsDebugStringFormattable {
                 if (i > 0) {
                     sb3.append(", ");
                 }
-                sb3.append(operation.mo4686objectParamName31yXWZQ(Operation.ObjectParameter.m4712constructorimpl(i4)));
+                sb3.append(operation.mo4054objectParamName31yXWZQ(Operation.ObjectParameter.m4080constructorimpl(i4)));
                 i3++;
             }
         }
@@ -227,7 +227,7 @@ public final class Operations extends OperationsDebugStringFormattable {
     }
 
     /* renamed from: topObjectIndexOf-31yXWZQ  reason: not valid java name */
-    private final int m4736topObjectIndexOf31yXWZQ(int i) {
+    private final int m4101topObjectIndexOf31yXWZQ(int i) {
         return (this.objectArgsSize - this.opCodes[this.opCodesSize - 1].getObjects()) + i;
     }
 
@@ -239,49 +239,49 @@ public final class Operations extends OperationsDebugStringFormattable {
         private final Operations stack;
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ WriteScope m4737boximpl(Operations operations) {
+        public static final /* synthetic */ WriteScope m4102boximpl(Operations operations) {
             return new WriteScope(operations);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static Operations m4738constructorimpl(Operations operations) {
+        public static Operations m4103constructorimpl(Operations operations) {
             return operations;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m4739equalsimpl(Operations operations, Object obj) {
-            return (obj instanceof WriteScope) && Intrinsics.areEqual(operations, ((WriteScope) obj).m4751unboximpl());
+        public static boolean m4104equalsimpl(Operations operations, Object obj) {
+            return (obj instanceof WriteScope) && Intrinsics.areEqual(operations, ((WriteScope) obj).m4116unboximpl());
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m4740equalsimpl0(Operations operations, Operations operations2) {
+        public static final boolean m4105equalsimpl0(Operations operations, Operations operations2) {
             return Intrinsics.areEqual(operations, operations2);
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m4742hashCodeimpl(Operations operations) {
+        public static int m4107hashCodeimpl(Operations operations) {
             return operations.hashCode();
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m4750toStringimpl(Operations operations) {
+        public static String m4115toStringimpl(Operations operations) {
             return "WriteScope(stack=" + operations + ')';
         }
 
         public boolean equals(Object obj) {
-            return m4739equalsimpl(this.stack, obj);
+            return m4104equalsimpl(this.stack, obj);
         }
 
         public int hashCode() {
-            return m4742hashCodeimpl(this.stack);
+            return m4107hashCodeimpl(this.stack);
         }
 
         public String toString() {
-            return m4750toStringimpl(this.stack);
+            return m4115toStringimpl(this.stack);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ Operations m4751unboximpl() {
+        public final /* synthetic */ Operations m4116unboximpl() {
             return this.stack;
         }
 
@@ -290,12 +290,12 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: setInt-impl  reason: not valid java name */
-        public static final void m4743setIntimpl(Operations operations, int i, int i2) {
+        public static final void m4108setIntimpl(Operations operations, int i, int i2) {
             operations.intArgs[(operations.intArgsSize - operations.opCodes[operations.opCodesSize - 1].getInts()) + i] = i2;
         }
 
         /* renamed from: setInts-impl  reason: not valid java name */
-        public static final void m4744setIntsimpl(Operations operations, int i, int i2, int i3, int i4) {
+        public static final void m4109setIntsimpl(Operations operations, int i, int i2, int i3, int i4) {
             int ints = operations.intArgsSize - operations.opCodes[operations.opCodesSize - 1].getInts();
             int[] iArr = operations.intArgs;
             iArr[i + ints] = i2;
@@ -303,7 +303,7 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: setInts-impl  reason: not valid java name */
-        public static final void m4745setIntsimpl(Operations operations, int i, int i2, int i3, int i4, int i5, int i6) {
+        public static final void m4110setIntsimpl(Operations operations, int i, int i2, int i3, int i4, int i5, int i6) {
             int ints = operations.intArgsSize - operations.opCodes[operations.opCodesSize - 1].getInts();
             int[] iArr = operations.intArgs;
             iArr[i + ints] = i2;
@@ -312,12 +312,12 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: setObject-DKhxnng  reason: not valid java name */
-        public static final <T> void m4746setObjectDKhxnng(Operations operations, int i, T t) {
+        public static final <T> void m4111setObjectDKhxnng(Operations operations, int i, T t) {
             operations.objectArgs[(operations.objectArgsSize - operations.opCodes[operations.opCodesSize - 1].getObjects()) + i] = t;
         }
 
         /* renamed from: setObjects-4uCC6AY  reason: not valid java name */
-        public static final <T, U> void m4747setObjects4uCC6AY(Operations operations, int i, T t, int i2, U u) {
+        public static final <T, U> void m4112setObjects4uCC6AY(Operations operations, int i, T t, int i2, U u) {
             int objects = operations.objectArgsSize - operations.opCodes[operations.opCodesSize - 1].getObjects();
             Object[] objArr = operations.objectArgs;
             objArr[i + objects] = t;
@@ -325,7 +325,7 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: setObjects-t7hvbck  reason: not valid java name */
-        public static final <T, U, V> void m4749setObjectst7hvbck(Operations operations, int i, T t, int i2, U u, int i3, V v) {
+        public static final <T, U, V> void m4114setObjectst7hvbck(Operations operations, int i, T t, int i2, U u, int i3, V v) {
             int objects = operations.objectArgsSize - operations.opCodes[operations.opCodesSize - 1].getObjects();
             Object[] objArr = operations.objectArgs;
             objArr[i + objects] = t;
@@ -334,7 +334,7 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: setObjects-OGa0p1M  reason: not valid java name */
-        public static final <T, U, V, W> void m4748setObjectsOGa0p1M(Operations operations, int i, T t, int i2, U u, int i3, V v, int i4, W w) {
+        public static final <T, U, V, W> void m4113setObjectsOGa0p1M(Operations operations, int i, T t, int i2, U u, int i3, V v, int i4, W w) {
             int objects = operations.objectArgsSize - operations.opCodes[operations.opCodesSize - 1].getObjects();
             Object[] objArr = operations.objectArgs;
             objArr[i + objects] = t;
@@ -344,7 +344,7 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
 
         /* renamed from: getOperation-impl  reason: not valid java name */
-        public static final Operation m4741getOperationimpl(Operations operations) {
+        public static final Operation m4106getOperationimpl(Operations operations) {
             return operations.opCodes[operations.opCodesSize - 1];
         }
     }
@@ -383,7 +383,7 @@ public final class Operations extends OperationsDebugStringFormattable {
 
         @Override // androidx.compose.runtime.changelist.OperationArgContainer
         /* renamed from: getObject-31yXWZQ */
-        public <T> T mo4733getObject31yXWZQ(int i) {
+        public <T> T mo4100getObject31yXWZQ(int i) {
             return (T) Operations.this.objectArgs[this.objIdx + i];
         }
 
@@ -452,8 +452,8 @@ public final class Operations extends OperationsDebugStringFormattable {
         }
         int objects = operation.getObjects();
         for (int i2 = 0; i2 < objects; i2++) {
-            int m4712constructorimpl = Operation.ObjectParameter.m4712constructorimpl(i2);
-            String mo4686objectParamName31yXWZQ = operation.mo4686objectParamName31yXWZQ(m4712constructorimpl);
+            int m4080constructorimpl = Operation.ObjectParameter.m4080constructorimpl(i2);
+            String mo4054objectParamName31yXWZQ = operation.mo4054objectParamName31yXWZQ(m4080constructorimpl);
             if (z) {
                 z = false;
             } else {
@@ -461,9 +461,9 @@ public final class Operations extends OperationsDebugStringFormattable {
             }
             Intrinsics.checkNotNullExpressionValue(sb.append('\n'), "append(...)");
             sb.append(indent);
-            sb.append(mo4686objectParamName31yXWZQ);
+            sb.append(mo4054objectParamName31yXWZQ);
             sb.append(" = ");
-            sb.append(formatOpArgumentToString(opIterator.mo4733getObject31yXWZQ(m4712constructorimpl), indent));
+            sb.append(formatOpArgumentToString(opIterator.mo4100getObject31yXWZQ(m4080constructorimpl), indent));
         }
         Intrinsics.checkNotNullExpressionValue(sb.append('\n'), "append(...)");
         sb.append(str);
@@ -473,7 +473,8 @@ public final class Operations extends OperationsDebugStringFormattable {
         return sb2;
     }
 
-    private final String formatOpArgumentToString(Object obj, String str) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final String formatOpArgumentToString(Object obj, String str) {
         if (obj == null) {
             return AbstractJsonLexerKt.NULL;
         }
@@ -484,16 +485,11 @@ public final class Operations extends OperationsDebugStringFormattable {
         return CollectionsKt.joinToString$default(iterable, ", ", "[", "]", 0, null, new Function1() { // from class: androidx.compose.runtime.changelist.Operations$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence collectionString$lambda$0;
-                collectionString$lambda$0 = Operations.toCollectionString$lambda$0(Operations.this, str, obj);
-                return collectionString$lambda$0;
+                CharSequence formatOpArgumentToString;
+                formatOpArgumentToString = Operations.this.formatOpArgumentToString(obj, str);
+                return formatOpArgumentToString;
             }
         }, 24, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence toCollectionString$lambda$0(Operations operations, String str, Object obj) {
-        return operations.formatOpArgumentToString(obj, str);
     }
 
     public final void drain(Function1<? super OpIterator, Unit> function1) {

@@ -14,16 +14,14 @@ import kotlinx.serialization.descriptors.SerialDescriptorsKt;
 import kotlinx.serialization.encoding.Decoder;
 import kotlinx.serialization.encoding.Encoder;
 /* compiled from: JsonElementSerializers.kt */
-@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u0002H\u0016J\u0010\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0014\u0010\u0005\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\u0011"}, d2 = {"Lkotlinx/serialization/json/JsonElementSerializer;", "Lkotlinx/serialization/KSerializer;", "Lkotlinx/serialization/json/JsonElement;", "<init>", "()V", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "getDescriptor", "()Lkotlinx/serialization/descriptors/SerialDescriptor;", "serialize", "", "encoder", "Lkotlinx/serialization/encoding/Encoder;", "value", "deserialize", "decoder", "Lkotlinx/serialization/encoding/Decoder;", "kotlinx-serialization-json"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\t\bB¢\u0006\u0004\b\u0003\u0010\u0004J\u001a\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u0002H\u0096\u0080\u0004J\u0012\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u0010H\u0096\u0080\u0004R\u0015\u0010\u0005\u001a\u00020\u0006X\u0096\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\b¨\u0006\u0011"}, d2 = {"Lkotlinx/serialization/json/JsonElementSerializer;", "Lkotlinx/serialization/KSerializer;", "Lkotlinx/serialization/json/JsonElement;", "<init>", "()V", "descriptor", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "getDescriptor", "()Lkotlinx/serialization/descriptors/SerialDescriptor;", "serialize", "", "encoder", "Lkotlinx/serialization/encoding/Encoder;", "value", "deserialize", "decoder", "Lkotlinx/serialization/encoding/Decoder;", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class JsonElementSerializer implements KSerializer<JsonElement> {
     public static final JsonElementSerializer INSTANCE = new JsonElementSerializer();
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildSerialDescriptor("kotlinx.serialization.json.JsonElement", PolymorphicKind.SEALED.INSTANCE, new SerialDescriptor[0], new Function1() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$5;
-            descriptor$lambda$5 = JsonElementSerializer.descriptor$lambda$5((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$5;
+            return JsonElementSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -35,74 +33,74 @@ public final class JsonElementSerializer implements KSerializer<JsonElement> {
         return descriptor;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit descriptor$lambda$5(ClassSerialDescriptorBuilder buildSerialDescriptor) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildSerialDescriptor, "$this$buildSerialDescriptor");
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "JsonPrimitive", JsonElementSerializersKt.access$defer(new Function0() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerialDescriptor descriptor$lambda$5$lambda$0;
-                descriptor$lambda$5$lambda$0 = JsonElementSerializer.descriptor$lambda$5$lambda$0();
-                return descriptor$lambda$5$lambda$0;
+                SerialDescriptor descriptor$lambda$0$0;
+                descriptor$lambda$0$0 = JsonElementSerializer.descriptor$lambda$0$0();
+                return descriptor$lambda$0$0;
             }
         }), null, false, 12, null);
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "JsonNull", JsonElementSerializersKt.access$defer(new Function0() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerialDescriptor descriptor$lambda$5$lambda$1;
-                descriptor$lambda$5$lambda$1 = JsonElementSerializer.descriptor$lambda$5$lambda$1();
-                return descriptor$lambda$5$lambda$1;
+                SerialDescriptor descriptor$lambda$0$1;
+                descriptor$lambda$0$1 = JsonElementSerializer.descriptor$lambda$0$1();
+                return descriptor$lambda$0$1;
             }
         }), null, false, 12, null);
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "JsonLiteral", JsonElementSerializersKt.access$defer(new Function0() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerialDescriptor descriptor$lambda$5$lambda$2;
-                descriptor$lambda$5$lambda$2 = JsonElementSerializer.descriptor$lambda$5$lambda$2();
-                return descriptor$lambda$5$lambda$2;
+                SerialDescriptor descriptor$lambda$0$2;
+                descriptor$lambda$0$2 = JsonElementSerializer.descriptor$lambda$0$2();
+                return descriptor$lambda$0$2;
             }
         }), null, false, 12, null);
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "JsonObject", JsonElementSerializersKt.access$defer(new Function0() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerialDescriptor descriptor$lambda$5$lambda$3;
-                descriptor$lambda$5$lambda$3 = JsonElementSerializer.descriptor$lambda$5$lambda$3();
-                return descriptor$lambda$5$lambda$3;
+                SerialDescriptor descriptor$lambda$0$3;
+                descriptor$lambda$0$3 = JsonElementSerializer.descriptor$lambda$0$3();
+                return descriptor$lambda$0$3;
             }
         }), null, false, 12, null);
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "JsonArray", JsonElementSerializersKt.access$defer(new Function0() { // from class: kotlinx.serialization.json.JsonElementSerializer$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SerialDescriptor descriptor$lambda$5$lambda$4;
-                descriptor$lambda$5$lambda$4 = JsonElementSerializer.descriptor$lambda$5$lambda$4();
-                return descriptor$lambda$5$lambda$4;
+                SerialDescriptor descriptor$lambda$0$4;
+                descriptor$lambda$0$4 = JsonElementSerializer.descriptor$lambda$0$4();
+                return descriptor$lambda$0$4;
             }
         }), null, false, 12, null);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor$lambda$5$lambda$0() {
+    public static final SerialDescriptor descriptor$lambda$0$0() {
         return JsonPrimitiveSerializer.INSTANCE.getDescriptor();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor$lambda$5$lambda$1() {
+    public static final SerialDescriptor descriptor$lambda$0$1() {
         return JsonNullSerializer.INSTANCE.getDescriptor();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor$lambda$5$lambda$2() {
+    public static final SerialDescriptor descriptor$lambda$0$2() {
         return JsonLiteralSerializer.INSTANCE.getDescriptor();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor$lambda$5$lambda$3() {
+    public static final SerialDescriptor descriptor$lambda$0$3() {
         return JsonObjectSerializer.INSTANCE.getDescriptor();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final SerialDescriptor descriptor$lambda$5$lambda$4() {
+    public static final SerialDescriptor descriptor$lambda$0$4() {
         return JsonArraySerializer.INSTANCE.getDescriptor();
     }
 

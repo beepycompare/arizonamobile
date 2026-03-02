@@ -46,7 +46,9 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
     }
 
     public boolean isEmpty() {
-        return this.step > 0 ? Intrinsics.compare((int) this.first, (int) this.last) > 0 : Intrinsics.compare((int) this.first, (int) this.last) < 0;
+        int i = this.step;
+        char c = this.first;
+        return i > 0 ? Intrinsics.compare((int) c, (int) this.last) > 0 : Intrinsics.compare((int) c, (int) this.last) < 0;
     }
 
     public boolean equals(Object obj) {
@@ -70,11 +72,13 @@ public class CharProgression implements Iterable<Character>, KMappedMarker {
     public String toString() {
         StringBuilder append;
         int i;
-        if (this.step > 0) {
-            append = new StringBuilder().append(this.first).append("..").append(this.last).append(" step ");
+        int i2 = this.step;
+        char c = this.first;
+        if (i2 > 0) {
+            append = new StringBuilder().append(c).append("..").append(this.last).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append(this.first).append(" downTo ").append(this.last).append(" step ");
+            append = new StringBuilder().append(c).append(" downTo ").append(this.last).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();

@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes2.dex */
 public final class SynchronizedObjectKt {
     /* renamed from: synchronized  reason: not valid java name */
-    public static final <T> T m8876synchronized(SynchronizedObject lock, Function0<? extends T> action) {
+    public static final <T> T m8149synchronized(SynchronizedObject lock, Function0<? extends T> action) {
         T invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(action, "action");

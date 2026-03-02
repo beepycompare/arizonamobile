@@ -30,29 +30,34 @@ final class VectorizedFloatDecaySpec<V extends AnimationVector> implements Vecto
 
     @Override // androidx.compose.animation.core.VectorizedDecayAnimationSpec
     public V getValueFromNanos(long j, V v, V v2) {
+        V v3;
         if (this.valueVector == null) {
             this.valueVector = (V) AnimationVectorsKt.newInstance(v);
         }
-        V v3 = this.valueVector;
-        if (v3 == null) {
+        V v4 = this.valueVector;
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("valueVector");
-            v3 = null;
+            v4 = null;
         }
-        int size$animation_core = v3.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v4 = this.valueVector;
-            if (v4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("valueVector");
-                v4 = null;
+        int size$animation_core = v4.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v3 = this.valueVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v4.set$animation_core(i, this.floatDecaySpec.getValueFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i)));
+            if (v3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("valueVector");
+                v3 = null;
+            }
+            v3.set$animation_core(i, this.floatDecaySpec.getValueFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i)));
+            i++;
         }
-        V v5 = this.valueVector;
-        if (v5 == null) {
+        if (v3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("valueVector");
             return null;
         }
-        return v5;
+        return v3;
     }
 
     @Override // androidx.compose.animation.core.VectorizedDecayAnimationSpec
@@ -75,55 +80,65 @@ final class VectorizedFloatDecaySpec<V extends AnimationVector> implements Vecto
 
     @Override // androidx.compose.animation.core.VectorizedDecayAnimationSpec
     public V getVelocityFromNanos(long j, V v, V v2) {
+        V v3;
         if (this.velocityVector == null) {
             this.velocityVector = (V) AnimationVectorsKt.newInstance(v);
         }
-        V v3 = this.velocityVector;
-        if (v3 == null) {
+        V v4 = this.velocityVector;
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
-            v3 = null;
+            v4 = null;
         }
-        int size$animation_core = v3.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v4 = this.velocityVector;
-            if (v4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
-                v4 = null;
+        int size$animation_core = v4.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v3 = this.velocityVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v4.set$animation_core(i, this.floatDecaySpec.getVelocityFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i)));
+            if (v3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
+                v3 = null;
+            }
+            v3.set$animation_core(i, this.floatDecaySpec.getVelocityFromNanos(j, v.get$animation_core(i), v2.get$animation_core(i)));
+            i++;
         }
-        V v5 = this.velocityVector;
-        if (v5 == null) {
+        if (v3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("velocityVector");
             return null;
         }
-        return v5;
+        return v3;
     }
 
     @Override // androidx.compose.animation.core.VectorizedDecayAnimationSpec
     public V getTargetValue(V v, V v2) {
+        V v3;
         if (this.targetVector == null) {
             this.targetVector = (V) AnimationVectorsKt.newInstance(v);
         }
-        V v3 = this.targetVector;
-        if (v3 == null) {
+        V v4 = this.targetVector;
+        if (v4 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("targetVector");
-            v3 = null;
+            v4 = null;
         }
-        int size$animation_core = v3.getSize$animation_core();
-        for (int i = 0; i < size$animation_core; i++) {
-            V v4 = this.targetVector;
-            if (v4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("targetVector");
-                v4 = null;
+        int size$animation_core = v4.getSize$animation_core();
+        int i = 0;
+        while (true) {
+            v3 = this.targetVector;
+            if (i >= size$animation_core) {
+                break;
             }
-            v4.set$animation_core(i, this.floatDecaySpec.getTargetValue(v.get$animation_core(i), v2.get$animation_core(i)));
+            if (v3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("targetVector");
+                v3 = null;
+            }
+            v3.set$animation_core(i, this.floatDecaySpec.getTargetValue(v.get$animation_core(i), v2.get$animation_core(i)));
+            i++;
         }
-        V v5 = this.targetVector;
-        if (v5 == null) {
+        if (v3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("targetVector");
             return null;
         }
-        return v5;
+        return v3;
     }
 }

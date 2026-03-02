@@ -18,62 +18,62 @@ public interface Density extends FontScaling {
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m8246toDpGaN1DYA(Density density, long j) {
-            return Density.super.mo459toDpGaN1DYA(j);
+        public static float m7543toDpGaN1DYA(Density density, long j) {
+            return Density.super.mo400toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m8253toSp0xMU5do(Density density, float f) {
-            return Density.super.mo466toSp0xMU5do(f);
+        public static long m7550toSp0xMU5do(Density density, float f) {
+            return Density.super.mo407toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m8251toPx0680j_4(Density density, float f) {
-            return Density.super.mo464toPx0680j_4(f);
+        public static float m7548toPx0680j_4(Density density, float f) {
+            return Density.super.mo405toPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m8245roundToPx0680j_4(Density density, float f) {
-            return Density.super.mo458roundToPx0680j_4(f);
+        public static int m7542roundToPx0680j_4(Density density, float f) {
+            return Density.super.mo399roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m8250toPxR2X_6o(Density density, long j) {
-            return Density.super.mo463toPxR2X_6o(j);
+        public static float m7547toPxR2X_6o(Density density, long j) {
+            return Density.super.mo404toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m8244roundToPxR2X_6o(Density density, long j) {
-            return Density.super.mo457roundToPxR2X_6o(j);
+        public static int m7541roundToPxR2X_6o(Density density, long j) {
+            return Density.super.mo398roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m8248toDpu2uoSUM(Density density, int i) {
-            return Density.super.mo461toDpu2uoSUM(i);
+        public static float m7545toDpu2uoSUM(Density density, int i) {
+            return Density.super.mo402toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m8255toSpkPz2Gy4(Density density, int i) {
-            return Density.super.mo468toSpkPz2Gy4(i);
+        public static long m7552toSpkPz2Gy4(Density density, int i) {
+            return Density.super.mo409toSpkPz2Gy4(i);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m8247toDpu2uoSUM(Density density, float f) {
-            return Density.super.mo460toDpu2uoSUM(f);
+        public static float m7544toDpu2uoSUM(Density density, float f) {
+            return Density.super.mo401toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m8254toSpkPz2Gy4(Density density, float f) {
-            return Density.super.mo467toSpkPz2Gy4(f);
+        public static long m7551toSpkPz2Gy4(Density density, float f) {
+            return Density.super.mo408toSpkPz2Gy4(f);
         }
 
         @Deprecated
@@ -83,82 +83,82 @@ public interface Density extends FontScaling {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m8252toSizeXkaWNTQ(Density density, long j) {
-            return Density.super.mo465toSizeXkaWNTQ(j);
+        public static long m7549toSizeXkaWNTQ(Density density, long j) {
+            return Density.super.mo406toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m8249toDpSizekrfVVM(Density density, long j) {
-            return Density.super.mo462toDpSizekrfVVM(j);
+        public static long m7546toDpSizekrfVVM(Density density, long j) {
+            return Density.super.mo403toDpSizekrfVVM(j);
         }
     }
 
     /* renamed from: toPx-0680j_4 */
-    default float mo464toPx0680j_4(float f) {
+    default float mo405toPx0680j_4(float f) {
         return f * getDensity();
     }
 
     /* renamed from: roundToPx-0680j_4 */
-    default int mo458roundToPx0680j_4(float f) {
-        float mo464toPx0680j_4 = mo464toPx0680j_4(f);
-        if (Float.isInfinite(mo464toPx0680j_4)) {
+    default int mo399roundToPx0680j_4(float f) {
+        float mo405toPx0680j_4 = mo405toPx0680j_4(f);
+        if (Float.isInfinite(mo405toPx0680j_4)) {
             return Integer.MAX_VALUE;
         }
-        return Math.round(mo464toPx0680j_4);
+        return Math.round(mo405toPx0680j_4);
     }
 
     /* renamed from: toPx--R2X_6o */
-    default float mo463toPxR2X_6o(long j) {
-        if (!TextUnitType.m8480equalsimpl0(TextUnit.m8451getTypeUIouoOA(j), TextUnitType.Companion.m8485getSpUIouoOA())) {
+    default float mo404toPxR2X_6o(long j) {
+        if (!TextUnitType.m7777equalsimpl0(TextUnit.m7748getTypeUIouoOA(j), TextUnitType.Companion.m7782getSpUIouoOA())) {
             InlineClassHelperKt.throwIllegalStateException("Only Sp can convert to Px");
         }
-        return mo464toPx0680j_4(mo459toDpGaN1DYA(j));
+        return mo405toPx0680j_4(mo400toDpGaN1DYA(j));
     }
 
     /* renamed from: roundToPx--R2X_6o */
-    default int mo457roundToPxR2X_6o(long j) {
-        return Math.round(mo463toPxR2X_6o(j));
+    default int mo398roundToPxR2X_6o(long j) {
+        return Math.round(mo404toPxR2X_6o(j));
     }
 
     /* renamed from: toDp-u2uoSUM */
-    default float mo461toDpu2uoSUM(int i) {
-        return Dp.m8258constructorimpl(i / getDensity());
+    default float mo402toDpu2uoSUM(int i) {
+        return Dp.m7555constructorimpl(i / getDensity());
     }
 
     /* renamed from: toSp-kPz2Gy4 */
-    default long mo468toSpkPz2Gy4(int i) {
-        return mo466toSp0xMU5do(mo461toDpu2uoSUM(i));
+    default long mo409toSpkPz2Gy4(int i) {
+        return mo407toSp0xMU5do(mo402toDpu2uoSUM(i));
     }
 
     /* renamed from: toDp-u2uoSUM */
-    default float mo460toDpu2uoSUM(float f) {
-        return Dp.m8258constructorimpl(f / getDensity());
+    default float mo401toDpu2uoSUM(float f) {
+        return Dp.m7555constructorimpl(f / getDensity());
     }
 
     /* renamed from: toSp-kPz2Gy4 */
-    default long mo467toSpkPz2Gy4(float f) {
-        return mo466toSp0xMU5do(mo460toDpu2uoSUM(f));
+    default long mo408toSpkPz2Gy4(float f) {
+        return mo407toSp0xMU5do(mo401toDpu2uoSUM(f));
     }
 
     default Rect toRect(DpRect dpRect) {
-        return new Rect(mo464toPx0680j_4(dpRect.m8341getLeftD9Ej5fM()), mo464toPx0680j_4(dpRect.m8343getTopD9Ej5fM()), mo464toPx0680j_4(dpRect.m8342getRightD9Ej5fM()), mo464toPx0680j_4(dpRect.m8340getBottomD9Ej5fM()));
+        return new Rect(mo405toPx0680j_4(dpRect.m7638getLeftD9Ej5fM()), mo405toPx0680j_4(dpRect.m7640getTopD9Ej5fM()), mo405toPx0680j_4(dpRect.m7639getRightD9Ej5fM()), mo405toPx0680j_4(dpRect.m7637getBottomD9Ej5fM()));
     }
 
     /* renamed from: toSize-XkaWNTQ */
-    default long mo465toSizeXkaWNTQ(long j) {
+    default long mo406toSizeXkaWNTQ(long j) {
         if (j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            float mo464toPx0680j_4 = mo464toPx0680j_4(DpSize.m8356getWidthD9Ej5fM(j));
-            return Size.m5239constructorimpl((Float.floatToRawIntBits(mo464toPx0680j_4(DpSize.m8354getHeightD9Ej5fM(j))) & 4294967295L) | (Float.floatToRawIntBits(mo464toPx0680j_4) << 32));
+            float mo405toPx0680j_4 = mo405toPx0680j_4(DpSize.m7653getWidthD9Ej5fM(j));
+            return Size.m4587constructorimpl((Float.floatToRawIntBits(mo405toPx0680j_4(DpSize.m7651getHeightD9Ej5fM(j))) & 4294967295L) | (Float.floatToRawIntBits(mo405toPx0680j_4) << 32));
         }
-        return Size.Companion.m5256getUnspecifiedNHjbRc();
+        return Size.Companion.m4604getUnspecifiedNHjbRc();
     }
 
     /* renamed from: toDpSize-k-rfVVM */
-    default long mo462toDpSizekrfVVM(long j) {
+    default long mo403toDpSizekrfVVM(long j) {
         if (j != androidx.compose.ui.geometry.InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return DpKt.m8280DpSizeYgX7TsA(mo460toDpu2uoSUM(Float.intBitsToFloat((int) (j >> 32))), mo460toDpu2uoSUM(Float.intBitsToFloat((int) (j & 4294967295L))));
+            return DpKt.m7577DpSizeYgX7TsA(mo401toDpu2uoSUM(Float.intBitsToFloat((int) (j >> 32))), mo401toDpu2uoSUM(Float.intBitsToFloat((int) (j & 4294967295L))));
         }
-        return DpSize.Companion.m8365getUnspecifiedMYxV2XQ();
+        return DpSize.Companion.m7662getUnspecifiedMYxV2XQ();
     }
 }

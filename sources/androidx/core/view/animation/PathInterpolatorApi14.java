@@ -54,10 +54,11 @@ class PathInterpolatorApi14 implements Interpolator {
         float f2 = fArr[length];
         float f3 = fArr[i];
         float f4 = f2 - f3;
-        if (f4 == 0.0f) {
-            return this.mY[i];
-        }
+        int i3 = (f4 > 0.0f ? 1 : (f4 == 0.0f ? 0 : -1));
         float[] fArr2 = this.mY;
+        if (i3 == 0) {
+            return fArr2[i];
+        }
         float f5 = fArr2[i];
         return f5 + (((f - f3) / f4) * (fArr2[length] - f5));
     }

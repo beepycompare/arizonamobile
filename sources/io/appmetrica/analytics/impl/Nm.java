@@ -22,13 +22,13 @@ public final class Nm extends Rm {
 
     @Override // io.appmetrica.analytics.impl.Rm
     public final IBinaryDataHelper a(Context context) {
-        return C0449na.I.B().b(context);
+        return C0448na.I.B().b(context);
     }
 
     @Override // io.appmetrica.analytics.impl.Rm
     public final IBinaryDataHelper b(Context context) {
         IBinaryDataHelper a2;
-        C0733yk B = C0449na.I.B();
+        C0732yk B = C0448na.I.B();
         synchronized (B) {
             a2 = B.a(context);
         }
@@ -42,12 +42,12 @@ public final class Nm extends Rm {
         String str = this.f715a;
         ProtobufStateSerializer protobufStateSerializer = this.b;
         try {
-            bArr = AbstractC0280gj.a(context.getPackageName());
+            bArr = AbstractC0279gj.a(context.getPackageName());
         } catch (Throwable unused) {
             bArr = new byte[16];
         }
         try {
-            bArr2 = AbstractC0280gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
+            bArr2 = AbstractC0279gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
         } catch (Throwable unused2) {
             bArr2 = new byte[16];
         }

@@ -22,11 +22,12 @@ public final class zzhj implements ServiceConnection {
         if (iBinder != null) {
             try {
                 com.google.android.gms.internal.measurement.zzbq zzb = com.google.android.gms.internal.measurement.zzbp.zzb(iBinder);
+                zzhk zzhkVar = this.zza;
                 if (zzb == null) {
-                    this.zza.zza.zzaV().zze().zza("Install Referrer Service implementation was not found");
+                    zzhkVar.zza.zzaV().zze().zza("Install Referrer Service implementation was not found");
                     return;
                 }
-                zzic zzicVar = this.zza.zza;
+                zzic zzicVar = zzhkVar.zza;
                 zzicVar.zzaV().zzk().zza("Install Referrer Service connected");
                 zzicVar.zzaW().zzj(new zzhi(this, zzb, this));
                 return;

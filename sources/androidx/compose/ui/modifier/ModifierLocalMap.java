@@ -18,7 +18,7 @@ public abstract class ModifierLocalMap {
     public abstract <T> T get$ui(ModifierLocal<T> modifierLocal);
 
     /* renamed from: set$ui */
-    public abstract <T> void mo7028set$ui(ModifierLocal<T> modifierLocal, T t);
+    public abstract <T> void mo6369set$ui(ModifierLocal<T> modifierLocal, T t);
 
     private ModifierLocalMap() {
     }

@@ -43,8 +43,7 @@ public class DefaultLoadErrorHandlingPolicy implements LoadErrorHandlingPolicy {
 
     @Override // androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy
     public long getRetryDelayMsFor(LoadErrorHandlingPolicy.LoadErrorInfo loadErrorInfo) {
-        IOException iOException = loadErrorInfo.exception;
-        return ((iOException instanceof ParserException) || (iOException instanceof FileNotFoundException) || (iOException instanceof HttpDataSource.CleartextNotPermittedException) || (iOException instanceof Loader.UnexpectedLoaderException) || DataSourceException.isCausedByPositionOutOfRange(iOException)) ? C.TIME_UNSET : Math.min((loadErrorInfo.errorCount - 1) * 1000, 5000);
+        return isAnyCauseNonRetriable(loadErrorInfo.exception) ? C.TIME_UNSET : Math.min((loadErrorInfo.errorCount - 1) * 1000, 5000);
     }
 
     @Override // androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy
@@ -59,5 +58,22 @@ public class DefaultLoadErrorHandlingPolicy implements LoadErrorHandlingPolicy {
             return invalidResponseCodeException.responseCode == 403 || invalidResponseCodeException.responseCode == 404 || invalidResponseCodeException.responseCode == 410 || invalidResponseCodeException.responseCode == 416 || invalidResponseCodeException.responseCode == 500 || invalidResponseCodeException.responseCode == 503;
         }
         return false;
+    }
+
+    private boolean isAnyCauseNonRetriable(Throwable th) {
+        while (th != null) {
+            if (isNonRetriableException(th)) {
+                return true;
+            }
+            th = th.getCause();
+        }
+        return false;
+    }
+
+    private boolean isNonRetriableException(Throwable th) {
+        if ((th instanceof ParserException) || (th instanceof FileNotFoundException) || (th instanceof HttpDataSource.CleartextNotPermittedException) || (th instanceof Loader.UnexpectedLoaderException)) {
+            return true;
+        }
+        return (th instanceof DataSourceException) && ((DataSourceException) th).reason == 2008;
     }
 }

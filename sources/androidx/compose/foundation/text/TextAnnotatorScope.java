@@ -45,14 +45,12 @@ public final class TextAnnotatorScope {
         this.styledText = this.initialText.mapAnnotations(new Function1() { // from class: androidx.compose.foundation.text.TextAnnotatorScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                AnnotatedString.Range replaceStyle$lambda$0;
-                replaceStyle$lambda$0 = TextAnnotatorScope.replaceStyle$lambda$0(Ref.BooleanRef.this, range, spanStyle, (AnnotatedString.Range) obj);
-                return replaceStyle$lambda$0;
+                return TextAnnotatorScope.replaceStyle$lambda$0(Ref.BooleanRef.this, range, spanStyle, (AnnotatedString.Range) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnnotatedString.Range replaceStyle$lambda$0(Ref.BooleanRef booleanRef, AnnotatedString.Range range, SpanStyle spanStyle, AnnotatedString.Range range2) {
         AnnotatedString.Range range3;
         AnnotatedString.Range range4;

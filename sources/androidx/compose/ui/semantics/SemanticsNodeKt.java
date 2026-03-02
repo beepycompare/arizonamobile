@@ -17,15 +17,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SemanticsNodeKt {
     public static final SemanticsNode SemanticsNode(LayoutNode layoutNode, boolean z) {
         NodeChain nodes$ui = layoutNode.getNodes$ui();
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(8);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(8);
         SemanticsModifierNode semanticsModifierNode = null;
-        if ((nodes$ui.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        if ((nodes$ui.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             Modifier.Node head$ui = nodes$ui.getHead$ui();
             loop0: while (true) {
                 if (head$ui == null) {
                     break;
                 }
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
@@ -33,10 +33,10 @@ public final class SemanticsNodeKt {
                             semanticsModifierNode = node;
                             break loop0;
                         }
-                        if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -62,7 +62,7 @@ public final class SemanticsNodeKt {
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     break;
                 }
                 head$ui = head$ui.getChild$ui();

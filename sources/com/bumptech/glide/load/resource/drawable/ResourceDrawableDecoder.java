@@ -44,20 +44,23 @@ public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
         Context findContextForPackage = findContextForPackage(uri, authority);
         int findResourceIdFromUri = findResourceIdFromUri(findContextForPackage, uri);
         Resources.Theme theme = ((String) Preconditions.checkNotNull(authority)).equals(this.context.getPackageName()) ? (Resources.Theme) options.get(THEME) : null;
+        Context context = this.context;
         if (theme == null) {
-            drawable = DrawableDecoderCompat.getDrawable(this.context, findContextForPackage, findResourceIdFromUri);
+            drawable = DrawableDecoderCompat.getDrawable(context, findContextForPackage, findResourceIdFromUri);
         } else {
-            drawable = DrawableDecoderCompat.getDrawable(this.context, findResourceIdFromUri, theme);
+            drawable = DrawableDecoderCompat.getDrawable(context, findResourceIdFromUri, theme);
         }
         return NonOwnedDrawableResource.newInstance(drawable);
     }
 
     private Context findContextForPackage(Uri uri, String str) {
-        if (str.equals(this.context.getPackageName())) {
-            return this.context;
+        boolean equals = str.equals(this.context.getPackageName());
+        Context context = this.context;
+        if (equals) {
+            return context;
         }
         try {
-            return this.context.createPackageContext(str, 0);
+            return context.createPackageContext(str, 0);
         } catch (PackageManager.NameNotFoundException e) {
             if (str.contains(this.context.getPackageName())) {
                 return this.context;

@@ -341,14 +341,12 @@ public final class NavGraphImpl {
         setStartDestination$navigation_common_release(SerializersKt.serializer(startDestRoute), new Function1() { // from class: androidx.navigation.internal.NavGraphImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String startDestination$lambda$12;
-                startDestination$lambda$12 = NavGraphImpl.setStartDestination$lambda$12((NavDestination) obj);
-                return startDestination$lambda$12;
+                return NavGraphImpl.setStartDestination$lambda$12((NavDestination) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String setStartDestination$lambda$12(NavDestination startDestination) {
         Intrinsics.checkNotNullParameter(startDestination, "startDestination");
         String route = startDestination.getRoute();
@@ -361,14 +359,12 @@ public final class NavGraphImpl {
         setStartDestination$navigation_common_release(SerializersKt.serializer(Reflection.getOrCreateKotlinClass(startDestRoute.getClass())), new Function1() { // from class: androidx.navigation.internal.NavGraphImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                String startDestination$lambda$14;
-                startDestination$lambda$14 = NavGraphImpl.setStartDestination$lambda$14(startDestRoute, (NavDestination) obj);
-                return startDestination$lambda$14;
+                return NavGraphImpl.setStartDestination$lambda$14(startDestRoute, (NavDestination) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String setStartDestination$lambda$14(Object obj, NavDestination startDestination) {
         Intrinsics.checkNotNullParameter(startDestination, "startDestination");
         Map<String, NavArgument> arguments = startDestination.getArguments();

@@ -60,9 +60,7 @@ public class ActivityNavigator extends Navigator<Destination> {
         Iterator it = SequencesKt.generateSequence(context, new Function1() { // from class: androidx.navigation.ActivityNavigator$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Context hostActivity$lambda$0;
-                hostActivity$lambda$0 = ActivityNavigator.hostActivity$lambda$0((Context) obj2);
-                return hostActivity$lambda$0;
+                return ActivityNavigator.hostActivity$lambda$0((Context) obj2);
             }
         }).iterator();
         while (true) {
@@ -78,7 +76,7 @@ public class ActivityNavigator extends Navigator<Destination> {
         this.hostActivity = (Activity) obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Context hostActivity$lambda$0(Context it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it instanceof ContextWrapper) {
@@ -119,10 +117,10 @@ public class ActivityNavigator extends Navigator<Destination> {
                     StringBuffer stringBuffer = new StringBuffer();
                     Matcher matcher = Pattern.compile("\\{(.+?)\\}").matcher(str);
                     while (matcher.find()) {
-                        Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
+                        Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
                         String group = matcher.group(1);
                         Intrinsics.checkNotNull(group);
-                        if (!SavedStateReader.m9210containsimpl(m9209constructorimpl, group)) {
+                        if (!SavedStateReader.m8415containsimpl(m8414constructorimpl, group)) {
                             throw new IllegalArgumentException(("Could not find " + group + " in " + bundle + " to fill data pattern " + dataPattern).toString());
                         }
                         matcher.appendReplacement(stringBuffer, "");
@@ -165,10 +163,11 @@ public class ActivityNavigator extends Navigator<Destination> {
             }
             if (z) {
                 ActivityOptionsCompat activityOptions = ((Extras) extras).getActivityOptions();
+                Context context = this.context;
                 if (activityOptions != null) {
-                    ActivityCompat.startActivity(this.context, intent2, activityOptions.toBundle());
+                    ActivityCompat.startActivity(context, intent2, activityOptions.toBundle());
                 } else {
-                    this.context.startActivity(intent2);
+                    context.startActivity(intent2);
                 }
             } else {
                 this.context.startActivity(intent2);

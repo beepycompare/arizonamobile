@@ -12,7 +12,7 @@ public final class N {
     public final I f1587a;
     public final K b;
     public final L c;
-    public final InterfaceC0820g d;
+    public final InterfaceC0819g d;
 
     public N(I persistentMetricsEventDataSource, K persistentMetricsEventDtoFactory, L persistentMetricsEventMapper, X.b logger) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventDataSource, "persistentMetricsEventDataSource");

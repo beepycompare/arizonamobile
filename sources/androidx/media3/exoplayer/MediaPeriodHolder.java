@@ -16,7 +16,7 @@ import androidx.media3.exoplayer.upstream.Allocator;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MediaPeriodHolder {
     private static final String TAG = "MediaPeriodHolder";
     public boolean allRenderersInCorrectState;
@@ -37,7 +37,7 @@ public final class MediaPeriodHolder {
     private TrackSelectorResult trackSelectorResult;
     public final Object uid;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     interface Factory {
         MediaPeriodHolder create(MediaPeriodInfo mediaPeriodInfo, long j);
     }

@@ -187,10 +187,8 @@ public final class WindowInsetsAnimationCompat {
 
         public float getInterpolatedFraction() {
             Interpolator interpolator = this.mInterpolator;
-            if (interpolator != null) {
-                return interpolator.getInterpolation(this.mFraction);
-            }
-            return this.mFraction;
+            float f = this.mFraction;
+            return interpolator != null ? interpolator.getInterpolation(f) : f;
         }
 
         public Interpolator getInterpolator() {

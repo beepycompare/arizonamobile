@@ -8,8 +8,8 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NotificationsViewModel.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {61, RectListKt.BitOffsetForGesturable, 68, TsExtractor.TS_SYNC_BYTE}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$loadNotifications$2"}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6", "I$0", "I$1"}, v = 1)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {61, RectListKt.BitOffsetForGesturable, 68, TsExtractor.TS_SYNC_BYTE}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$loadNotifications$2"}, nl = {RectListKt.BitOffsetForGesturable, 64, 69, 72}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6", "I$0", "I$1"}, v = 2)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel$loadNotifications$1 extends ContinuationImpl {
     int I$0;

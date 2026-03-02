@@ -12,7 +12,7 @@ public final class Pn implements to {
     }
 
     @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0381kh c0381kh) {
+    public final byte[] a(N8 n8, C0380kh c0380kh) {
         byte[] bArr = new byte[0];
         try {
             bArr = Base64Utils.decompressBase64GzipAsBytes(n8.b);

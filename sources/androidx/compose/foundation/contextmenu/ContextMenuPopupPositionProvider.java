@@ -40,22 +40,22 @@ public final class ContextMenuPopupPositionProvider implements PopupPositionProv
         this(new Function0() { // from class: androidx.compose.foundation.contextmenu.ContextMenuPopupPositionProvider$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                IntOffset m8377boximpl;
-                m8377boximpl = IntOffset.m8377boximpl(j);
-                return m8377boximpl;
+                IntOffset m7674boximpl;
+                m7674boximpl = IntOffset.m7674boximpl(j);
+                return m7674boximpl;
             }
         }, function2);
     }
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4  reason: not valid java name */
-    public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
-        long m8395unboximpl = this.anchorPositionBlock.invoke().m8395unboximpl();
-        long m8380constructorimpl = IntOffset.m8380constructorimpl((ContextMenuPopupPositionProviderKt.alignPopupAxis(intRect.getLeft() + IntOffset.m8386getXimpl(m8395unboximpl), (int) (j2 >> 32), (int) (j >> 32), layoutDirection == LayoutDirection.Ltr) << 32) | (4294967295L & ContextMenuPopupPositionProviderKt.alignPopupAxis$default(intRect.getTop() + IntOffset.m8387getYimpl(m8395unboximpl), (int) (j2 & 4294967295L), (int) (j & 4294967295L), false, 8, null)));
+    public long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+        long m7692unboximpl = this.anchorPositionBlock.invoke().m7692unboximpl();
+        long m7677constructorimpl = IntOffset.m7677constructorimpl((ContextMenuPopupPositionProviderKt.alignPopupAxis(intRect.getLeft() + IntOffset.m7683getXimpl(m7692unboximpl), (int) (j2 >> 32), (int) (j >> 32), layoutDirection == LayoutDirection.Ltr) << 32) | (4294967295L & ContextMenuPopupPositionProviderKt.alignPopupAxis$default(intRect.getTop() + IntOffset.m7684getYimpl(m7692unboximpl), (int) (j2 & 4294967295L), (int) (j & 4294967295L), false, 8, null)));
         Function2<IntOffset, IntRect, Unit> function2 = this.onPositionCalculated;
         if (function2 != null) {
-            function2.invoke(IntOffset.m8377boximpl(m8395unboximpl), IntRectKt.m8419IntRectVbeCjmY(m8380constructorimpl, j2));
+            function2.invoke(IntOffset.m7674boximpl(m7692unboximpl), IntRectKt.m7716IntRectVbeCjmY(m7677constructorimpl, j2));
         }
-        return m8380constructorimpl;
+        return m7677constructorimpl;
     }
 }

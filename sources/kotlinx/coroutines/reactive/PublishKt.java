@@ -28,9 +28,7 @@ public final class PublishKt {
     private static final Function2<Throwable, CoroutineContext, Unit> DEFAULT_HANDLER = new Function2() { // from class: kotlinx.coroutines.reactive.PublishKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit DEFAULT_HANDLER$lambda$2;
-            DEFAULT_HANDLER$lambda$2 = PublishKt.DEFAULT_HANDLER$lambda$2((Throwable) obj, (CoroutineContext) obj2);
-            return DEFAULT_HANDLER$lambda$2;
+            return PublishKt.DEFAULT_HANDLER$lambda$2((Throwable) obj, (CoroutineContext) obj2);
         }
     };
     private static final long SIGNALLED = -2;
@@ -58,7 +56,7 @@ public final class PublishKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void publishInternal$lambda$1(CoroutineScope coroutineScope, CoroutineContext coroutineContext, Function2 function2, Function2 function22, Subscriber subscriber) {
         if (subscriber == null) {
             throw new NullPointerException("Subscriber cannot be null");
@@ -68,7 +66,7 @@ public final class PublishKt {
         publisherCoroutine.start(CoroutineStart.DEFAULT, publisherCoroutine, function22);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DEFAULT_HANDLER$lambda$2(Throwable th, CoroutineContext coroutineContext) {
         if (!(th instanceof CancellationException)) {
             CoroutineExceptionHandlerKt.handleCoroutineException(coroutineContext, th);

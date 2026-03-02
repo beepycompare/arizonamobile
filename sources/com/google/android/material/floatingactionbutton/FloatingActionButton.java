@@ -688,11 +688,14 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
             }
             Rect rect = this.tmpRect;
             DescendantOffsetUtils.getDescendantRect(coordinatorLayout, appBarLayout, rect);
-            if (rect.bottom <= appBarLayout.getMinimumHeightForVisibleOverlappingContent()) {
-                floatingActionButton.hide(this.internalAutoHideListener, false);
+            int i = rect.bottom;
+            int minimumHeightForVisibleOverlappingContent = appBarLayout.getMinimumHeightForVisibleOverlappingContent();
+            OnVisibilityChangedListener onVisibilityChangedListener = this.internalAutoHideListener;
+            if (i <= minimumHeightForVisibleOverlappingContent) {
+                floatingActionButton.hide(onVisibilityChangedListener, false);
                 return true;
             }
-            floatingActionButton.show(this.internalAutoHideListener, false);
+            floatingActionButton.show(onVisibilityChangedListener, false);
             return true;
         }
 
@@ -700,11 +703,14 @@ public class FloatingActionButton extends VisibilityAwareImageButton implements 
             if (ignoreUpdateVisibility(view, floatingActionButton)) {
                 return false;
             }
-            if (view.getTop() < (floatingActionButton.getHeight() / 2) + ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).topMargin) {
-                floatingActionButton.hide(this.internalAutoHideListener, false);
+            int top = view.getTop();
+            int height = (floatingActionButton.getHeight() / 2) + ((CoordinatorLayout.LayoutParams) floatingActionButton.getLayoutParams()).topMargin;
+            OnVisibilityChangedListener onVisibilityChangedListener = this.internalAutoHideListener;
+            if (top < height) {
+                floatingActionButton.hide(onVisibilityChangedListener, false);
                 return true;
             }
-            floatingActionButton.show(this.internalAutoHideListener, false);
+            floatingActionButton.show(onVisibilityChangedListener, false);
             return true;
         }
 

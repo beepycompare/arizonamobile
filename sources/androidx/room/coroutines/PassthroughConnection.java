@@ -159,8 +159,8 @@ public final class PassthroughConnection implements Transactor, RawConnectionAcc
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0039  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0097  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -209,11 +209,12 @@ public final class PassthroughConnection implements Transactor, RawConnectionAcc
                     if (this.nestedTransactionCount.decrementAndGet() == 0) {
                         this.currentTransactionType = null;
                     }
+                    SQLiteConnection sQLiteConnection = this.delegate;
                     if (i2 == 0) {
-                        SQLite.execSQL(this.delegate, "END TRANSACTION");
+                        SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
                         return obj;
                     }
-                    SQLite.execSQL(this.delegate, "ROLLBACK TRANSACTION");
+                    SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
                     return obj;
                 }
             }
@@ -221,6 +222,7 @@ public final class PassthroughConnection implements Transactor, RawConnectionAcc
             }
             if (this.nestedTransactionCount.decrementAndGet() == 0) {
             }
+            SQLiteConnection sQLiteConnection2 = this.delegate;
             if (i2 == 0) {
             }
         } catch (Throwable th) {

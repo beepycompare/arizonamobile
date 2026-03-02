@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 /* loaded from: classes.dex */
 public final class LazyGridLayoutInfoKt {
     public static final int visibleLinesAverageMainAxisSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        long mo1082getSizeYbymL2g;
+        long mo952getSizeYbymL2g;
         boolean z = lazyGridLayoutInfo.getOrientation() == Orientation.Vertical;
         List<LazyGridItemInfo> visibleItemsInfo = lazyGridLayoutInfo.getVisibleItemsInfo();
         if (visibleItemsInfo.isEmpty()) {
@@ -26,11 +26,11 @@ public final class LazyGridLayoutInfoKt {
                 int i4 = 0;
                 while (i < visibleItemsInfo.size() && visibleLinesAverageMainAxisSize$lineOf(z, lazyGridLayoutInfo, i) == visibleLinesAverageMainAxisSize$lineOf) {
                     if (z) {
-                        mo1082getSizeYbymL2g = visibleItemsInfo.get(i).mo1082getSizeYbymL2g() & 4294967295L;
+                        mo952getSizeYbymL2g = visibleItemsInfo.get(i).mo952getSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo1082getSizeYbymL2g = visibleItemsInfo.get(i).mo1082getSizeYbymL2g() >> 32;
+                        mo952getSizeYbymL2g = visibleItemsInfo.get(i).mo952getSizeYbymL2g() >> 32;
                     }
-                    i4 = Math.max(i4, (int) mo1082getSizeYbymL2g);
+                    i4 = Math.max(i4, (int) mo952getSizeYbymL2g);
                     i++;
                 }
                 i2 += i4;
@@ -45,7 +45,7 @@ public final class LazyGridLayoutInfoKt {
     }
 
     public static final int getSingleAxisViewportSize(LazyGridLayoutInfo lazyGridLayoutInfo) {
-        return (int) (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical ? lazyGridLayoutInfo.mo1087getViewportSizeYbymL2g() & 4294967295L : lazyGridLayoutInfo.mo1087getViewportSizeYbymL2g() >> 32);
+        return (int) (lazyGridLayoutInfo.getOrientation() == Orientation.Vertical ? lazyGridLayoutInfo.mo956getViewportSizeYbymL2g() & 4294967295L : lazyGridLayoutInfo.mo956getViewportSizeYbymL2g() >> 32);
     }
 
     public static final int getFirstVisibleItemLineIndex(LazyGridLayoutInfo lazyGridLayoutInfo) {

@@ -224,16 +224,23 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
         this.mRecyclerView.removeItemDecoration(this);
         this.mRecyclerView.removeOnItemTouchListener(this.mOnItemTouchListener);
         this.mRecyclerView.removeOnChildAttachStateChangeListener(this);
-        for (int size = this.mRecoverAnimations.size() - 1; size >= 0; size--) {
-            RecoverAnimation recoverAnimation = this.mRecoverAnimations.get(0);
-            recoverAnimation.cancel();
-            this.mCallback.clearView(this.mRecyclerView, recoverAnimation.mViewHolder);
+        int size = this.mRecoverAnimations.size();
+        while (true) {
+            size--;
+            List<RecoverAnimation> list = this.mRecoverAnimations;
+            if (size >= 0) {
+                RecoverAnimation recoverAnimation = list.get(0);
+                recoverAnimation.cancel();
+                this.mCallback.clearView(this.mRecyclerView, recoverAnimation.mViewHolder);
+            } else {
+                list.clear();
+                this.mOverdrawChild = null;
+                this.mOverdrawChildPosition = -1;
+                releaseVelocityTracker();
+                stopGestureDetection();
+                return;
+            }
         }
-        this.mRecoverAnimations.clear();
-        this.mOverdrawChild = null;
-        this.mOverdrawChildPosition = -1;
-        releaseVelocityTracker();
-        stopGestureDetection();
     }
 
     private void startGestureDetection() {
@@ -353,14 +360,16 @@ public class ItemTouchHelper extends RecyclerView.ItemDecoration implements Recy
                         if (this.mOverridden) {
                             return;
                         }
-                        if (swipeIfNecessary <= 0) {
-                            ItemTouchHelper.this.mCallback.clearView(ItemTouchHelper.this.mRecyclerView, viewHolder2);
+                        int i5 = swipeIfNecessary;
+                        ItemTouchHelper itemTouchHelper = ItemTouchHelper.this;
+                        if (i5 <= 0) {
+                            itemTouchHelper.mCallback.clearView(ItemTouchHelper.this.mRecyclerView, viewHolder2);
                         } else {
-                            ItemTouchHelper.this.mPendingCleanup.add(viewHolder2.itemView);
+                            itemTouchHelper.mPendingCleanup.add(viewHolder2.itemView);
                             this.mIsPendingCleanup = true;
-                            int i5 = swipeIfNecessary;
-                            if (i5 > 0) {
-                                ItemTouchHelper.this.postDispatchSwipe(this, i5);
+                            int i6 = swipeIfNecessary;
+                            if (i6 > 0) {
+                                ItemTouchHelper.this.postDispatchSwipe(this, i6);
                             }
                         }
                         if (ItemTouchHelper.this.mOverdrawChild == viewHolder2.itemView) {

@@ -33,8 +33,8 @@ public class P5 implements CounterReportApi, Parcelable {
     public String h;
     public long i;
     public long j;
-    public EnumC0194da k;
-    public EnumC0423m9 l;
+    public EnumC0193da k;
+    public EnumC0422m9 l;
     public Bundle m;
     public Boolean n;
     public Integer o;
@@ -75,7 +75,7 @@ public class P5 implements CounterReportApi, Parcelable {
         return this.c;
     }
 
-    public final EnumC0194da g() {
+    public final EnumC0193da g() {
         return this.k;
     }
 
@@ -130,7 +130,7 @@ public class P5 implements CounterReportApi, Parcelable {
         return this.h;
     }
 
-    public final EnumC0423m9 k() {
+    public final EnumC0422m9 k() {
         return this.l;
     }
 
@@ -139,7 +139,7 @@ public class P5 implements CounterReportApi, Parcelable {
     }
 
     public final boolean m() {
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         return -1 == this.d;
     }
 
@@ -181,7 +181,7 @@ public class P5 implements CounterReportApi, Parcelable {
     public final String toString() {
         Locale locale = Locale.US;
         String str = this.f736a;
-        String str2 = EnumC0143bb.a(this.d).b;
+        String str2 = EnumC0142bb.a(this.d).b;
         String str3 = this.b;
         if (str3 == null) {
             str3 = null;
@@ -216,9 +216,9 @@ public class P5 implements CounterReportApi, Parcelable {
         }
         bundle.putLong("CounterReport.CreationElapsedRealtime", this.i);
         bundle.putLong("CounterReport.CreationTimestamp", this.j);
-        EnumC0423m9 enumC0423m9 = this.l;
-        if (enumC0423m9 != null) {
-            bundle.putInt("CounterReport.Source", enumC0423m9.f1114a);
+        EnumC0422m9 enumC0422m9 = this.l;
+        if (enumC0422m9 != null) {
+            bundle.putInt("CounterReport.Source", enumC0422m9.f1114a);
         }
         Boolean bool = this.n;
         if (bool != null) {
@@ -237,7 +237,7 @@ public class P5 implements CounterReportApi, Parcelable {
     }
 
     public static P5 e(P5 p5) {
-        return a(p5, EnumC0143bb.EVENT_TYPE_APP_UPDATE);
+        return a(p5, EnumC0142bb.EVENT_TYPE_APP_UPDATE);
     }
 
     public final void b(String str) {
@@ -273,7 +273,7 @@ public class P5 implements CounterReportApi, Parcelable {
     }
 
     public P5(String str, String str2, int i, SystemTimeProvider systemTimeProvider) {
-        this.k = EnumC0194da.UNKNOWN;
+        this.k = EnumC0193da.UNKNOWN;
         this.p = new HashMap();
         this.f736a = str2;
         this.d = i;
@@ -297,7 +297,7 @@ public class P5 implements CounterReportApi, Parcelable {
     }
 
     public static P5 c(P5 p5) {
-        return a(p5, EnumC0143bb.EVENT_TYPE_INIT);
+        return a(p5, EnumC0142bb.EVENT_TYPE_INIT);
     }
 
     public static P5 d(P5 p5) {
@@ -312,12 +312,12 @@ public class P5 implements CounterReportApi, Parcelable {
         return p52;
     }
 
-    public final void a(EnumC0194da enumC0194da) {
-        this.k = enumC0194da;
+    public final void a(EnumC0193da enumC0193da) {
+        this.k = enumC0193da;
     }
 
-    public final void a(EnumC0423m9 enumC0423m9) {
-        this.l = enumC0423m9;
+    public final void a(EnumC0422m9 enumC0422m9) {
+        this.l = enumC0422m9;
     }
 
     public final void a(Boolean bool) {
@@ -335,29 +335,29 @@ public class P5 implements CounterReportApi, Parcelable {
         return null;
     }
 
-    public static P5 a(P5 p5, EnumC0143bb enumC0143bb) {
+    public static P5 a(P5 p5, EnumC0142bb enumC0142bb) {
         P5 d = d(p5);
-        d.d = enumC0143bb.f917a;
+        d.d = enumC0142bb.f917a;
         return d;
     }
 
     public static P5 b(P5 p5) {
-        return a(p5, EnumC0143bb.EVENT_TYPE_FIRST_ACTIVATION);
+        return a(p5, EnumC0142bb.EVENT_TYPE_FIRST_ACTIVATION);
     }
 
     public static P5 a(P5 p5) {
-        return a(p5, EnumC0143bb.EVENT_TYPE_ALIVE);
+        return a(p5, EnumC0142bb.EVENT_TYPE_ALIVE);
     }
 
     public static P5 a(P5 p5, M9 m9) {
-        P5 a2 = a(p5, EnumC0143bb.EVENT_TYPE_START);
-        a2.setValueBytes(MessageNano.toByteArray(new C0498p9().fromModel(new C0473o9((String) m9.b.a()))));
+        P5 a2 = a(p5, EnumC0142bb.EVENT_TYPE_START);
+        a2.setValueBytes(MessageNano.toByteArray(new C0497p9().fromModel(new C0472o9((String) m9.b.a()))));
         a2.j = p5.j;
         a2.i = p5.i;
         return a2;
     }
 
-    public static P5 a(P5 p5, Collection<PermissionState> collection, C0690x2 c0690x2, C0160c2 c0160c2, List<String> list) {
+    public static P5 a(P5 p5, Collection<PermissionState> collection, C0689x2 c0689x2, C0159c2 c0159c2, List<String> list) {
         String str;
         String str2;
         P5 d = d(p5);
@@ -367,12 +367,12 @@ public class P5 implements CounterReportApi, Parcelable {
                 jSONArray.put(new JSONObject().put("name", permissionState.name).put("granted", permissionState.granted));
             }
             JSONObject jSONObject = new JSONObject();
-            if (c0690x2 != null) {
-                jSONObject.put("background_restricted", c0690x2.b);
-                EnumC0665w2 enumC0665w2 = c0690x2.f1296a;
-                c0160c2.getClass();
-                if (enumC0665w2 != null) {
-                    int ordinal = enumC0665w2.ordinal();
+            if (c0689x2 != null) {
+                jSONObject.put("background_restricted", c0689x2.b);
+                EnumC0664w2 enumC0664w2 = c0689x2.f1296a;
+                c0159c2.getClass();
+                if (enumC0664w2 != null) {
+                    int ordinal = enumC0664w2.ordinal();
                     if (ordinal == 0) {
                         str2 = "EXEMPTED";
                     } else if (ordinal == 1) {
@@ -395,7 +395,7 @@ public class P5 implements CounterReportApi, Parcelable {
         } catch (Throwable unused) {
             str = "";
         }
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         d.d = 12288;
         d.setValue(str);
         return d;
@@ -403,7 +403,7 @@ public class P5 implements CounterReportApi, Parcelable {
 
     public static P5 a(P5 p5, String str) {
         P5 d = d(p5);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         d.d = 12289;
         d.setValue(str);
         return d;
@@ -411,17 +411,17 @@ public class P5 implements CounterReportApi, Parcelable {
 
     public static P5 a() {
         P5 p5 = new P5("", 0);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         p5.d = 16384;
         return p5;
     }
 
     public static P5 a(String str) {
         P5 p5 = new P5("", 0);
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         p5.d = 12320;
         p5.b = str;
-        p5.l = EnumC0423m9.JS;
+        p5.l = EnumC0422m9.JS;
         return p5;
     }
 }

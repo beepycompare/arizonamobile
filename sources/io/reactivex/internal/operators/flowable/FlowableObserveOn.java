@@ -363,10 +363,11 @@ public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, 
                 if (z) {
                     this.cancelled = true;
                     Throwable th = this.error;
+                    Subscriber<? super T> subscriber = this.downstream;
                     if (th != null) {
-                        this.downstream.onError(th);
+                        subscriber.onError(th);
                     } else {
-                        this.downstream.onComplete();
+                        subscriber.onComplete();
                     }
                     this.worker.dispose();
                     return;
@@ -554,10 +555,11 @@ public final class FlowableObserveOn<T> extends AbstractFlowableWithUpstream<T, 
                 if (z) {
                     this.cancelled = true;
                     Throwable th = this.error;
+                    ConditionalSubscriber<? super T> conditionalSubscriber = this.downstream;
                     if (th != null) {
-                        this.downstream.onError(th);
+                        conditionalSubscriber.onError(th);
                     } else {
-                        this.downstream.onComplete();
+                        conditionalSubscriber.onComplete();
                     }
                     this.worker.dispose();
                     return;

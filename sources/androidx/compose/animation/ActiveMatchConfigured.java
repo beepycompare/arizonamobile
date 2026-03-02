@@ -61,20 +61,20 @@ public final class ActiveMatchConfigured extends MatchIsOrHasBeenConfigured {
 
     @Override // androidx.compose.animation.SharedTransitionStateMachine.State
     /* renamed from: configureActiveMatch-38uP1EE  reason: not valid java name */
-    public SharedTransitionStateMachine.State mo49configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
-        SharedTransitionStateMachineKt.m143access$updateTargetDataBGTQxF0(getTargetData(), j, j2, j3, !Intrinsics.areEqual(getTargetBoundsProvider(), boundsProvider));
+    public SharedTransitionStateMachine.State mo36configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
+        SharedTransitionStateMachineKt.m130access$updateTargetDataBGTQxF0(getTargetData(), j, j2, j3, !Intrinsics.areEqual(getTargetBoundsProvider(), boundsProvider));
         setTargetBoundsProvider(boundsProvider);
         return this;
     }
 
     @Override // androidx.compose.animation.SharedTransitionStateMachine.State
     public SharedTransitionStateMachine.State onVisibleContentRemovedDuringTransition() {
-        Rect calculateAlternativeTargetBounds = getTargetBoundsProvider().calculateAlternativeTargetBounds(RectKt.m5219Recttz77jQw(Offset.m5184plusMKHz9U(getTargetData().m157getCurrentMfrOffsetF1C5BW0(), getTargetData().m160getTargetStructuralOffsetF1C5BW0()), getTargetData().m159getSizeNHjbRc()));
+        Rect calculateAlternativeTargetBounds = getTargetBoundsProvider().calculateAlternativeTargetBounds(RectKt.m4567Recttz77jQw(Offset.m4532plusMKHz9U(getTargetData().m144getCurrentMfrOffsetF1C5BW0(), getTargetData().m147getTargetStructuralOffsetF1C5BW0()), getTargetData().m146getSizeNHjbRc()));
         if (calculateAlternativeTargetBounds == null) {
             return NoMatchFound.INSTANCE;
         }
-        TargetData targetData = new TargetData(calculateAlternativeTargetBounds.m5212getSizeNHjbRc(), getTargetData().m158getInitialMfrOffsetF1C5BW0(), Offset.m5183minusMKHz9U(calculateAlternativeTargetBounds.m5214getTopLeftF1C5BW0(), getTargetData().m157getCurrentMfrOffsetF1C5BW0()), null);
-        targetData.m161setCurrentMfrOffsetk4lQ0M(getTargetData().m157getCurrentMfrOffsetF1C5BW0());
+        TargetData targetData = new TargetData(calculateAlternativeTargetBounds.m4560getSizeNHjbRc(), getTargetData().m145getInitialMfrOffsetF1C5BW0(), Offset.m4531minusMKHz9U(calculateAlternativeTargetBounds.m4562getTopLeftF1C5BW0(), getTargetData().m144getCurrentMfrOffsetF1C5BW0()), null);
+        targetData.m148setCurrentMfrOffsetk4lQ0M(getTargetData().m144getCurrentMfrOffsetF1C5BW0());
         return new ActiveMatchRemovedDuringTransition(targetData, getCurrentBounds());
     }
 

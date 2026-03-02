@@ -51,19 +51,19 @@ import kotlinx.coroutines.CoroutineStart;
 @Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\u0007\u001a \u0010\b\u001a\u00020\u00012\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0007¢\u0006\u0002\u0010\t\u001aJ\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u000b2\u0014\u0010\f\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u000b\u0012\u0004\u0012\u00020\u00010\r2\u0011\u0010\u000e\u001a\r\u0012\u0004\u0012\u00020\u00010\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u000f¨\u0006\u0010²\u0006\f\u0010\n\u001a\u0004\u0018\u00010\u000bX\u008a\u008e\u0002"}, d2 = {"SelectionContainer", "", "modifier", "Landroidx/compose/ui/Modifier;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "Landroidx/compose/runtime/Composable;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "DisableSelection", "(Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V", "selection", "Landroidx/compose/foundation/text/selection/Selection;", "onSelectionChange", "Lkotlin/Function1;", "children", "(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/text/selection/Selection;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "foundation"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class SelectionContainerKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DisableSelection$lambda$0(Function2 function2, int i, Composer composer, int i2) {
         DisableSelection(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectionContainer$lambda$11(Modifier modifier, Selection selection, Function1 function1, Function2 function2, int i, int i2, Composer composer, int i3) {
         SelectionContainer(modifier, selection, function1, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectionContainer$lambda$4(Modifier modifier, Function2 function2, int i, int i2, Composer composer, int i3) {
         SelectionContainer(modifier, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -132,9 +132,7 @@ public final class SelectionContainerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda11
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SelectionContainer$lambda$4;
-                    SelectionContainer$lambda$4 = SelectionContainerKt.SelectionContainer$lambda$4(Modifier.this, function22, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return SelectionContainer$lambda$4;
+                    return SelectionContainerKt.SelectionContainer$lambda$4(Modifier.this, function22, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -175,9 +173,7 @@ public final class SelectionContainerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DisableSelection$lambda$0;
-                    DisableSelection$lambda$0 = SelectionContainerKt.DisableSelection$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DisableSelection$lambda$0;
+                    return SelectionContainerKt.DisableSelection$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -233,7 +229,7 @@ public final class SelectionContainerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
+            final SelectionRegistrarImpl selectionRegistrarImpl = (SelectionRegistrarImpl) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, startRestartGroup, (int) RendererCapabilities.DECODER_SUPPORT_MASK);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665248388, "CC(remember):SelectionContainer.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -307,9 +303,7 @@ public final class SelectionContainerKt {
             SimpleLayoutKt.SimpleLayout(companion.then(selectionManager.getModifier()), ComposableLambdaKt.rememberComposableLambda(-1799563674, true, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit SelectionContainer$lambda$9;
-                    SelectionContainer$lambda$9 = SelectionContainerKt.SelectionContainer$lambda$9(SelectionManager.this, selectionRegistrarImpl, function2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SelectionContainer$lambda$9;
+                    return SelectionContainerKt.SelectionContainer$lambda$9(SelectionManager.this, selectionRegistrarImpl, function2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, 48, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1665119814, "CC(remember):SelectionContainer.kt#9igjgp");
@@ -338,9 +332,7 @@ public final class SelectionContainerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionContainerKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit SelectionContainer$lambda$11;
-                    SelectionContainer$lambda$11 = SelectionContainerKt.SelectionContainer$lambda$11(Modifier.this, selection, function1, function2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SelectionContainer$lambda$11;
+                    return SelectionContainerKt.SelectionContainer$lambda$11(Modifier.this, selection, function1, function2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -357,7 +349,7 @@ public final class SelectionContainerKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectionContainer$lambda$9(final SelectionManager selectionManager, final SelectionRegistrarImpl selectionRegistrarImpl, final Function2 function2, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C135@5455L2427,135@5430L2452:SelectionContainer.kt#eksfi3");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -500,7 +492,7 @@ public final class SelectionContainerKt {
                             composer.updateRememberedValue(rememberedValue3);
                         }
                         ComposerKt.sourceInformationMarkerEnd(composer);
-                        AndroidSelectionHandles_androidKt.m1823SelectionHandlewLIcFTc(selectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0, booleanValue, direction, handlesCrossed, 0L, f, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), composer, 0, 16);
+                        AndroidSelectionHandles_androidKt.m1579SelectionHandlewLIcFTc(selectionContainerKt$sam$androidx_compose_foundation_text_selection_OffsetProvider$0, booleanValue, direction, handlesCrossed, 0L, f, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), composer, 0, 16);
                     }
                     composer.endReplaceGroup();
                 }
@@ -516,14 +508,14 @@ public final class SelectionContainerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset SelectionContainer$lambda$9$0$0$0$0$1$0(SelectionManager selectionManager) {
-        Offset m1885getStartHandlePosition_m7T9E = selectionManager.m1885getStartHandlePosition_m7T9E();
-        return Offset.m5168boximpl(m1885getStartHandlePosition_m7T9E != null ? m1885getStartHandlePosition_m7T9E.m5189unboximpl() : Offset.Companion.m5194getUnspecifiedF1C5BW0());
+        Offset m1628getStartHandlePosition_m7T9E = selectionManager.m1628getStartHandlePosition_m7T9E();
+        return Offset.m4516boximpl(m1628getStartHandlePosition_m7T9E != null ? m1628getStartHandlePosition_m7T9E.m4537unboximpl() : Offset.Companion.m4542getUnspecifiedF1C5BW0());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset SelectionContainer$lambda$9$0$0$0$0$1$1(SelectionManager selectionManager) {
-        Offset m1884getEndHandlePosition_m7T9E = selectionManager.m1884getEndHandlePosition_m7T9E();
-        return Offset.m5168boximpl(m1884getEndHandlePosition_m7T9E != null ? m1884getEndHandlePosition_m7T9E.m5189unboximpl() : Offset.Companion.m5194getUnspecifiedF1C5BW0());
+        Offset m1627getEndHandlePosition_m7T9E = selectionManager.m1627getEndHandlePosition_m7T9E();
+        return Offset.m4516boximpl(m1627getEndHandlePosition_m7T9E != null ? m1627getEndHandlePosition_m7T9E.m4537unboximpl() : Offset.Companion.m4542getUnspecifiedF1C5BW0());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -95,14 +95,14 @@ public final class ChangeTracker implements TextFieldBuffer.ChangeList {
 
     @Override // androidx.compose.foundation.text.input.TextFieldBuffer.ChangeList
     /* renamed from: getRange--jx7JFs */
-    public long mo1534getRangejx7JFs(int i) {
+    public long mo1333getRangejx7JFs(int i) {
         Change change = this._changes.content[i];
         return TextRangeKt.TextRange(change.getPreStart(), change.getPreEnd());
     }
 
     @Override // androidx.compose.foundation.text.input.TextFieldBuffer.ChangeList
     /* renamed from: getOriginalRange--jx7JFs */
-    public long mo1533getOriginalRangejx7JFs(int i) {
+    public long mo1332getOriginalRangejx7JFs(int i) {
         Change change = this._changes.content[i];
         return TextRangeKt.TextRange(change.getOriginalStart(), change.getOriginalEnd());
     }

@@ -42,7 +42,7 @@ public final class SavedStateConfigurationKt {
         return builder.build$savedstate();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final KSerializer DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0(List elementSerializers) {
         Intrinsics.checkNotNullParameter(elementSerializers, "elementSerializers");
         return new MutableStateFlowSerializer((KSerializer) CollectionsKt.first((List<? extends Object>) elementSerializers));
@@ -54,9 +54,7 @@ public final class SavedStateConfigurationKt {
         serializersModuleBuilder.contextual(Reflection.getOrCreateKotlinClass(MutableStateFlow.class), new Function1() { // from class: androidx.savedstate.serialization.SavedStateConfigurationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                KSerializer DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0;
-                DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0 = SavedStateConfigurationKt.DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0((List) obj);
-                return DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0;
+                return SavedStateConfigurationKt.DEFAULT_SERIALIZERS_MODULE$lambda$1$lambda$0((List) obj);
             }
         });
         DEFAULT_SERIALIZERS_MODULE = SerializersModuleKt.plus(serializersModuleBuilder.build(), SavedStateConfiguration_androidKt.getDefaultSerializersModuleOnPlatform());

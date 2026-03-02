@@ -78,12 +78,12 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
     }
 
     /* renamed from: getThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m3726getThresholdD9Ej5fM() {
+    public final float m3110getThresholdD9Ej5fM() {
         return this.threshold;
     }
 
     /* renamed from: setThreshold-0680j_4  reason: not valid java name */
-    public final void m3727setThreshold0680j_4(float f) {
+    public final void m3111setThreshold0680j_4(float f) {
         this.threshold = f;
     }
 
@@ -121,7 +121,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
 
     /* JADX INFO: Access modifiers changed from: private */
     public final int getThresholdPx() {
-        return DelegatableNodeKt.requireDensity(this).mo458roundToPx0680j_4(this.threshold);
+        return DelegatableNodeKt.requireDensity(this).mo399roundToPx0680j_4(this.threshold);
     }
 
     private final float getProgress() {
@@ -137,28 +137,28 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPreScroll-OzD1aCk */
-    public long mo1009onPreScrollOzD1aCk(long j, int i) {
+    public long mo896onPreScrollOzD1aCk(long j, int i) {
         if (!this.state.isAnimating() && this.enabled) {
-            if (NestedScrollSource.m6612equalsimpl0(i, NestedScrollSource.Companion.m6624getUserInputWNlRxjI()) && Float.intBitsToFloat((int) (4294967295L & j)) < 0.0f) {
-                return m3725consumeAvailableOffsetMKHz9U(j);
+            if (NestedScrollSource.m5953equalsimpl0(i, NestedScrollSource.Companion.m5965getUserInputWNlRxjI()) && Float.intBitsToFloat((int) (4294967295L & j)) < 0.0f) {
+                return m3109consumeAvailableOffsetMKHz9U(j);
             }
-            return Offset.Companion.m5195getZeroF1C5BW0();
+            return Offset.Companion.m4543getZeroF1C5BW0();
         }
-        return Offset.Companion.m5195getZeroF1C5BW0();
+        return Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     @Override // androidx.compose.ui.input.nestedscroll.NestedScrollConnection
     /* renamed from: onPostScroll-DzOQY0M */
-    public long mo656onPostScrollDzOQY0M(long j, long j2, int i) {
+    public long mo573onPostScrollDzOQY0M(long j, long j2, int i) {
         if (!this.state.isAnimating() && this.enabled) {
-            if (NestedScrollSource.m6612equalsimpl0(i, NestedScrollSource.Companion.m6624getUserInputWNlRxjI())) {
-                long m3725consumeAvailableOffsetMKHz9U = m3725consumeAvailableOffsetMKHz9U(j2);
+            if (NestedScrollSource.m5953equalsimpl0(i, NestedScrollSource.Companion.m5965getUserInputWNlRxjI())) {
+                long m3109consumeAvailableOffsetMKHz9U = m3109consumeAvailableOffsetMKHz9U(j2);
                 BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new PullToRefreshModifierNode$onPostScroll$1(this, null), 3, null);
-                return m3725consumeAvailableOffsetMKHz9U;
+                return m3109consumeAvailableOffsetMKHz9U;
             }
-            return Offset.Companion.m5195getZeroF1C5BW0();
+            return Offset.Companion.m4543getZeroF1C5BW0();
         }
-        return Offset.Companion.m5195getZeroF1C5BW0();
+        return Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -168,7 +168,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object mo1008onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
+    public Object mo895onPreFlingQWom1Mo(long j, Continuation<? super Velocity> continuation) {
         PullToRefreshModifierNode$onPreFling$1 pullToRefreshModifierNode$onPreFling$1;
         int i;
         float f;
@@ -181,10 +181,10 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
                 i = pullToRefreshModifierNode$onPreFling$1.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    float m8497getYimpl = Velocity.m8497getYimpl(j);
+                    float m7794getYimpl = Velocity.m7794getYimpl(j);
                     pullToRefreshModifierNode$onPreFling$1.F$0 = 0.0f;
                     pullToRefreshModifierNode$onPreFling$1.label = 1;
-                    obj = onRelease(m8497getYimpl, pullToRefreshModifierNode$onPreFling$1);
+                    obj = onRelease(m7794getYimpl, pullToRefreshModifierNode$onPreFling$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -195,7 +195,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
                     f = pullToRefreshModifierNode$onPreFling$1.F$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                return Velocity.m8487boximpl(VelocityKt.Velocity(f, ((Number) obj).floatValue()));
+                return Velocity.m7784boximpl(VelocityKt.Velocity(f, ((Number) obj).floatValue()));
             }
         }
         pullToRefreshModifierNode$onPreFling$1 = new PullToRefreshModifierNode$onPreFling$1(this, continuation);
@@ -204,7 +204,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
         i = pullToRefreshModifierNode$onPreFling$1.label;
         if (i != 0) {
         }
-        return Velocity.m8487boximpl(VelocityKt.Velocity(f, ((Number) obj2).floatValue()));
+        return Velocity.m7784boximpl(VelocityKt.Velocity(f, ((Number) obj2).floatValue()));
     }
 
     public final void update() {
@@ -212,7 +212,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
     }
 
     /* renamed from: consumeAvailableOffset-MK-Hz9U  reason: not valid java name */
-    private final long m3725consumeAvailableOffsetMKHz9U(long j) {
+    private final long m3109consumeAvailableOffsetMKHz9U(long j) {
         float distancePulled;
         if (this.isRefreshing) {
             distancePulled = 0.0f;
@@ -222,7 +222,7 @@ public final class PullToRefreshModifierNode extends DelegatingNode implements N
             setDistancePulled(coerceAtLeast);
             setVerticalOffset(calculateVerticalOffset());
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(distancePulled) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(distancePulled) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

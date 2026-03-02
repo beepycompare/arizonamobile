@@ -23,30 +23,30 @@ public final class InsetsPaddingValues implements PaddingValues {
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateLeftPadding-u2uoSUM  reason: not valid java name */
-    public float mo873calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
+    public float mo768calculateLeftPaddingu2uoSUM(LayoutDirection layoutDirection) {
         Density density = this.density;
-        return density.mo461toDpu2uoSUM(this.insets.getLeft(density, layoutDirection));
+        return density.mo402toDpu2uoSUM(this.insets.getLeft(density, layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateTopPadding-D9Ej5fM  reason: not valid java name */
-    public float mo875calculateTopPaddingD9Ej5fM() {
+    public float mo770calculateTopPaddingD9Ej5fM() {
         Density density = this.density;
-        return density.mo461toDpu2uoSUM(this.insets.getTop(density));
+        return density.mo402toDpu2uoSUM(this.insets.getTop(density));
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateRightPadding-u2uoSUM  reason: not valid java name */
-    public float mo874calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
+    public float mo769calculateRightPaddingu2uoSUM(LayoutDirection layoutDirection) {
         Density density = this.density;
-        return density.mo461toDpu2uoSUM(this.insets.getRight(density, layoutDirection));
+        return density.mo402toDpu2uoSUM(this.insets.getRight(density, layoutDirection));
     }
 
     @Override // androidx.compose.foundation.layout.PaddingValues
     /* renamed from: calculateBottomPadding-D9Ej5fM  reason: not valid java name */
-    public float mo872calculateBottomPaddingD9Ej5fM() {
+    public float mo767calculateBottomPaddingD9Ej5fM() {
         Density density = this.density;
-        return density.mo461toDpu2uoSUM(this.insets.getBottom(density));
+        return density.mo402toDpu2uoSUM(this.insets.getBottom(density));
     }
 
     public String toString() {

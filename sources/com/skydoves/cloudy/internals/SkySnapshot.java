@@ -32,7 +32,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc$default  reason: not valid java name */
-    public static /* synthetic */ SkySnapshot m10201copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
+    public static /* synthetic */ SkySnapshot m9143copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             i = skySnapshot.radius;
         }
@@ -70,7 +70,7 @@ public final class SkySnapshot {
         float f8 = f5;
         float f9 = f4;
         float f10 = f2;
-        return skySnapshot.m10203copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
+        return skySnapshot.m9145copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
     }
 
     public final int component1() {
@@ -78,7 +78,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: component10-0d7_KjU  reason: not valid java name */
-    public final long m10202component100d7_KjU() {
+    public final long m9144component100d7_KjU() {
         return this.tintColor;
     }
 
@@ -115,7 +115,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc  reason: not valid java name */
-    public final SkySnapshot m10203copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
+    public final SkySnapshot m9145copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
         Intrinsics.checkNotNullParameter(direction, "direction");
         Intrinsics.checkNotNullParameter(easing, "easing");
         return new SkySnapshot(i, f, f2, f3, f4, direction, f5, f6, easing, j, null);
@@ -127,17 +127,17 @@ public final class SkySnapshot {
         }
         if (obj instanceof SkySnapshot) {
             SkySnapshot skySnapshot = (SkySnapshot) obj;
-            return this.radius == skySnapshot.radius && Float.compare(this.offsetX, skySnapshot.offsetX) == 0 && Float.compare(this.offsetY, skySnapshot.offsetY) == 0 && Float.compare(this.childWidth, skySnapshot.childWidth) == 0 && Float.compare(this.childHeight, skySnapshot.childHeight) == 0 && this.direction == skySnapshot.direction && Float.compare(this.fadeStart, skySnapshot.fadeStart) == 0 && Float.compare(this.fadeEnd, skySnapshot.fadeEnd) == 0 && Intrinsics.areEqual(this.easing, skySnapshot.easing) && Color.m5425equalsimpl0(this.tintColor, skySnapshot.tintColor);
+            return this.radius == skySnapshot.radius && Float.compare(this.offsetX, skySnapshot.offsetX) == 0 && Float.compare(this.offsetY, skySnapshot.offsetY) == 0 && Float.compare(this.childWidth, skySnapshot.childWidth) == 0 && Float.compare(this.childHeight, skySnapshot.childHeight) == 0 && this.direction == skySnapshot.direction && Float.compare(this.fadeStart, skySnapshot.fadeStart) == 0 && Float.compare(this.fadeEnd, skySnapshot.fadeEnd) == 0 && Intrinsics.areEqual(this.easing, skySnapshot.easing) && Color.m4773equalsimpl0(this.tintColor, skySnapshot.tintColor);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((Integer.hashCode(this.radius) * 31) + Float.hashCode(this.offsetX)) * 31) + Float.hashCode(this.offsetY)) * 31) + Float.hashCode(this.childWidth)) * 31) + Float.hashCode(this.childHeight)) * 31) + this.direction.hashCode()) * 31) + Float.hashCode(this.fadeStart)) * 31) + Float.hashCode(this.fadeEnd)) * 31) + this.easing.hashCode()) * 31) + Color.m5431hashCodeimpl(this.tintColor);
+        return (((((((((((((((((Integer.hashCode(this.radius) * 31) + Float.hashCode(this.offsetX)) * 31) + Float.hashCode(this.offsetY)) * 31) + Float.hashCode(this.childWidth)) * 31) + Float.hashCode(this.childHeight)) * 31) + this.direction.hashCode()) * 31) + Float.hashCode(this.fadeStart)) * 31) + Float.hashCode(this.fadeEnd)) * 31) + this.easing.hashCode()) * 31) + Color.m4779hashCodeimpl(this.tintColor);
     }
 
     public String toString() {
-        return "SkySnapshot(radius=" + this.radius + ", offsetX=" + this.offsetX + ", offsetY=" + this.offsetY + ", childWidth=" + this.childWidth + ", childHeight=" + this.childHeight + ", direction=" + this.direction + ", fadeStart=" + this.fadeStart + ", fadeEnd=" + this.fadeEnd + ", easing=" + this.easing + ", tintColor=" + ((Object) Color.m5432toStringimpl(this.tintColor)) + ')';
+        return "SkySnapshot(radius=" + this.radius + ", offsetX=" + this.offsetX + ", offsetY=" + this.offsetY + ", childWidth=" + this.childWidth + ", childHeight=" + this.childHeight + ", direction=" + this.direction + ", fadeStart=" + this.fadeStart + ", fadeEnd=" + this.fadeEnd + ", easing=" + this.easing + ", tintColor=" + ((Object) Color.m4780toStringimpl(this.tintColor)) + ')';
     }
 
     private SkySnapshot(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
@@ -192,7 +192,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m10204getTintColor0d7_KjU() {
+    public final long m9146getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
@@ -247,7 +247,7 @@ public final class SkySnapshot {
         }
 
         /* renamed from: fromProgressive-PE3pjmc  reason: not valid java name */
-        public final SkySnapshot m10205fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
+        public final SkySnapshot m9147fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
             ProgressiveParams progressiveParams;
             ProgressiveParams progressiveParams2;
             Intrinsics.checkNotNullParameter(progressive, "progressive");

@@ -166,7 +166,6 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
             return this;
         }
 
-        @Deprecated
         public Builder updateApiModule(UpdateApiModule updateApiModule) {
             Preconditions.checkNotNull(updateApiModule);
             return this;

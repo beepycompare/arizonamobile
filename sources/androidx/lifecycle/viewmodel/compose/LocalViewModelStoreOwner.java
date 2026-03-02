@@ -17,13 +17,11 @@ public final class LocalViewModelStoreOwner {
     private static final ProvidableCompositionLocal<ViewModelStoreOwner> LocalViewModelStoreOwner = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ViewModelStoreOwner LocalViewModelStoreOwner$lambda$0;
-            LocalViewModelStoreOwner$lambda$0 = LocalViewModelStoreOwner.LocalViewModelStoreOwner$lambda$0();
-            return LocalViewModelStoreOwner$lambda$0;
+            return LocalViewModelStoreOwner.LocalViewModelStoreOwner$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ViewModelStoreOwner LocalViewModelStoreOwner$lambda$0() {
         return null;
     }

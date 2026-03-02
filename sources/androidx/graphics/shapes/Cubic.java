@@ -84,18 +84,18 @@ public class Cubic {
     }
 
     private Cubic(long j, long j2, long j3, long j4) {
-        this(new float[]{PointKt.m8821getXDnnuFBc(j), PointKt.m8822getYDnnuFBc(j), PointKt.m8821getXDnnuFBc(j2), PointKt.m8822getYDnnuFBc(j2), PointKt.m8821getXDnnuFBc(j3), PointKt.m8822getYDnnuFBc(j3), PointKt.m8821getXDnnuFBc(j4), PointKt.m8822getYDnnuFBc(j4)});
+        this(new float[]{PointKt.m8106getXDnnuFBc(j), PointKt.m8107getYDnnuFBc(j), PointKt.m8106getXDnnuFBc(j2), PointKt.m8107getYDnnuFBc(j2), PointKt.m8106getXDnnuFBc(j3), PointKt.m8107getYDnnuFBc(j3), PointKt.m8106getXDnnuFBc(j4), PointKt.m8107getYDnnuFBc(j4)});
     }
 
     /* renamed from: pointOnCurve-OOQOV4g$graphics_shapes  reason: not valid java name */
-    public final long m8809pointOnCurveOOQOV4g$graphics_shapes(float f) {
+    public final long m8095pointOnCurveOOQOV4g$graphics_shapes(float f) {
         float f2 = 1 - f;
         float f3 = f2 * f2 * f2;
         float f4 = 3 * f;
         float f5 = f4 * f2 * f2;
         float f6 = f4 * f * f2;
         float f7 = f * f * f;
-        return FloatFloatPair.m25constructorimpl((getAnchor0X() * f3) + (getControl0X() * f5) + (getControl1X() * f6) + (getAnchor1X() * f7), (getAnchor0Y() * f3) + (getControl0Y() * f5) + (getControl1Y() * f6) + (getAnchor1Y() * f7));
+        return FloatFloatPair.m12constructorimpl((getAnchor0X() * f3) + (getControl0X() * f5) + (getControl1X() * f6) + (getAnchor1X() * f7), (getAnchor0Y() * f3) + (getControl0Y() * f5) + (getControl1Y() * f6) + (getAnchor1Y() * f7));
     }
 
     public final boolean zeroLength$graphics_shapes() {
@@ -104,7 +104,7 @@ public class Cubic {
 
     public final boolean convexTo$graphics_shapes(Cubic next) {
         Intrinsics.checkNotNullParameter(next, "next");
-        return Utils.m8856convexb22R3LQ(FloatFloatPair.m25constructorimpl(getAnchor0X(), getAnchor0Y()), FloatFloatPair.m25constructorimpl(getAnchor1X(), getAnchor1Y()), FloatFloatPair.m25constructorimpl(next.getAnchor1X(), next.getAnchor1Y()));
+        return Utils.m8139convexb22R3LQ(FloatFloatPair.m12constructorimpl(getAnchor0X(), getAnchor0Y()), FloatFloatPair.m12constructorimpl(getAnchor1X(), getAnchor1Y()), FloatFloatPair.m12constructorimpl(next.getAnchor1X(), next.getAnchor1Y()));
     }
 
     private final boolean zeroIsh(float f) {
@@ -144,7 +144,7 @@ public class Cubic {
         char c3;
         float f;
         float control0Y;
-        float m8822getYDnnuFBc;
+        float m8107getYDnnuFBc;
         float f2;
         Intrinsics.checkNotNullParameter(bounds, "bounds");
         if (zeroLength$graphics_shapes()) {
@@ -183,22 +183,22 @@ public class Cubic {
                 float f8 = control0X * f4;
                 float sqrt = (((float) Math.sqrt(d)) + f7) / f8;
                 if (0.0f <= sqrt && sqrt <= 1.0f) {
-                    float m8821getXDnnuFBc = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt));
-                    if (m8821getXDnnuFBc < min) {
-                        min = m8821getXDnnuFBc;
+                    float m8106getXDnnuFBc = PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(sqrt));
+                    if (m8106getXDnnuFBc < min) {
+                        min = m8106getXDnnuFBc;
                     }
-                    if (m8821getXDnnuFBc > max) {
-                        max = m8821getXDnnuFBc;
+                    if (m8106getXDnnuFBc > max) {
+                        max = m8106getXDnnuFBc;
                     }
                 }
                 float sqrt2 = (f7 - ((float) Math.sqrt(d))) / f8;
                 if (0.0f <= sqrt2 && sqrt2 <= 1.0f) {
-                    float m8821getXDnnuFBc2 = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt2));
-                    if (m8821getXDnnuFBc2 < min) {
-                        min = m8821getXDnnuFBc2;
+                    float m8106getXDnnuFBc2 = PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(sqrt2));
+                    if (m8106getXDnnuFBc2 < min) {
+                        min = m8106getXDnnuFBc2;
                     }
-                    if (m8821getXDnnuFBc2 > max) {
-                        max = m8821getXDnnuFBc2;
+                    if (m8106getXDnnuFBc2 > max) {
+                        max = m8106getXDnnuFBc2;
                     }
                 }
                 control0Y = (((-getAnchor0Y()) + (getControl0Y() * f3)) - (f3 * getControl1Y())) + getAnchor1Y();
@@ -212,18 +212,18 @@ public class Cubic {
                         float f11 = f4 * control0Y;
                         float sqrt3 = (((float) Math.sqrt(d2)) + f10) / f11;
                         if (0.0f <= sqrt3 && sqrt3 <= 1.0f) {
-                            float m8822getYDnnuFBc2 = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt3));
-                            if (m8822getYDnnuFBc2 < f) {
-                                f = m8822getYDnnuFBc2;
+                            float m8107getYDnnuFBc2 = PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(sqrt3));
+                            if (m8107getYDnnuFBc2 < f) {
+                                f = m8107getYDnnuFBc2;
                             }
-                            if (m8822getYDnnuFBc2 > max2) {
-                                max2 = m8822getYDnnuFBc2;
+                            if (m8107getYDnnuFBc2 > max2) {
+                                max2 = m8107getYDnnuFBc2;
                             }
                         }
                         float sqrt4 = (f10 - ((float) Math.sqrt(d2))) / f11;
                         if (0.0f <= sqrt4 && sqrt4 <= 1.0f) {
-                            m8822getYDnnuFBc = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt4));
-                            f2 = m8822getYDnnuFBc < f ? m8822getYDnnuFBc : f;
+                            m8107getYDnnuFBc = PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(sqrt4));
+                            f2 = m8107getYDnnuFBc < f ? m8107getYDnnuFBc : f;
                         }
                     }
                     f2 = f;
@@ -231,8 +231,8 @@ public class Cubic {
                     if (anchor0Y != 0.0f) {
                         float f12 = (f4 * control0Y2) / ((-2) * anchor0Y);
                         if (0.0f <= f12 && f12 <= 1.0f) {
-                            m8822getYDnnuFBc = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(f12));
-                            f2 = m8822getYDnnuFBc < f ? m8822getYDnnuFBc : f;
+                            m8107getYDnnuFBc = PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(f12));
+                            f2 = m8107getYDnnuFBc < f ? m8107getYDnnuFBc : f;
                         }
                     }
                     f2 = f;
@@ -245,12 +245,12 @@ public class Cubic {
         } else if (anchor0X != 0.0f) {
             float f13 = (control0X2 * f4) / ((-2) * anchor0X);
             if (0.0f <= f13 && f13 <= 1.0f) {
-                float m8821getXDnnuFBc3 = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(f13));
-                if (m8821getXDnnuFBc3 < min) {
-                    min = m8821getXDnnuFBc3;
+                float m8106getXDnnuFBc3 = PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes(f13));
+                if (m8106getXDnnuFBc3 < min) {
+                    min = m8106getXDnnuFBc3;
                 }
-                if (m8821getXDnnuFBc3 > max) {
-                    max = m8821getXDnnuFBc3;
+                if (m8106getXDnnuFBc3 > max) {
+                    max = m8106getXDnnuFBc3;
                 }
             }
         }
@@ -271,11 +271,11 @@ public class Cubic {
 
     public final Pair<Cubic, Cubic> split(float f) {
         float f2 = 1 - f;
-        long m8809pointOnCurveOOQOV4g$graphics_shapes = m8809pointOnCurveOOQOV4g$graphics_shapes(f);
+        long m8095pointOnCurveOOQOV4g$graphics_shapes = m8095pointOnCurveOOQOV4g$graphics_shapes(f);
         float f3 = f2 * f2;
         float f4 = 2 * f2 * f;
         float f5 = f * f;
-        return TuplesKt.to(CubicKt.Cubic(getAnchor0X(), getAnchor0Y(), (getAnchor0X() * f2) + (getControl0X() * f), (getAnchor0Y() * f2) + (getControl0Y() * f), (getAnchor0X() * f3) + (getControl0X() * f4) + (getControl1X() * f5), (getAnchor0Y() * f3) + (getControl0Y() * f4) + (getControl1Y() * f5), PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes)), CubicKt.Cubic(PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), (getControl0X() * f3) + (getControl1X() * f4) + (getAnchor1X() * f5), (getControl0Y() * f3) + (getControl1Y() * f4) + (getAnchor1Y() * f5), (getControl1X() * f2) + (getAnchor1X() * f), (getControl1Y() * f2) + (getAnchor1Y() * f), getAnchor1X(), getAnchor1Y()));
+        return TuplesKt.to(CubicKt.Cubic(getAnchor0X(), getAnchor0Y(), (getAnchor0X() * f2) + (getControl0X() * f), (getAnchor0Y() * f2) + (getControl0Y() * f), (getAnchor0X() * f3) + (getControl0X() * f4) + (getControl1X() * f5), (getAnchor0Y() * f3) + (getControl0Y() * f4) + (getControl1Y() * f5), PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes)), CubicKt.Cubic(PointKt.m8106getXDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8107getYDnnuFBc(m8095pointOnCurveOOQOV4g$graphics_shapes), (getControl0X() * f3) + (getControl1X() * f4) + (getAnchor1X() * f5), (getControl0Y() * f3) + (getControl1Y() * f4) + (getAnchor1Y() * f5), (getControl1X() * f2) + (getAnchor1X() * f), (getControl1Y() * f2) + (getAnchor1Y() * f), getAnchor1X(), getAnchor1Y()));
     }
 
     public final Cubic reverse() {
@@ -363,15 +363,15 @@ public class Cubic {
             float f11 = f5 - f;
             float f12 = f6 - f2;
             long directionVector2 = Utils.directionVector(f11, f12);
-            long m8859rotate90DnnuFBc = Utils.m8859rotate90DnnuFBc(directionVector);
-            long m8859rotate90DnnuFBc2 = Utils.m8859rotate90DnnuFBc(directionVector2);
-            boolean z = PointKt.m8816dotProduct5P9i7ZU(m8859rotate90DnnuFBc, f11, f12) >= 0.0f;
-            float m8817dotProductybeJwSQ = PointKt.m8817dotProductybeJwSQ(directionVector, directionVector2);
-            if (m8817dotProductybeJwSQ > 0.999f) {
+            long m8142rotate90DnnuFBc = Utils.m8142rotate90DnnuFBc(directionVector);
+            long m8142rotate90DnnuFBc2 = Utils.m8142rotate90DnnuFBc(directionVector2);
+            boolean z = PointKt.m8101dotProduct5P9i7ZU(m8142rotate90DnnuFBc, f11, f12) >= 0.0f;
+            float m8102dotProductybeJwSQ = PointKt.m8102dotProductybeJwSQ(directionVector, directionVector2);
+            if (m8102dotProductybeJwSQ > 0.999f) {
                 return straightLine(f3, f4, f5, f6);
             }
-            float distance = ((((Utils.distance(f9, f10) * 4.0f) / 3.0f) * (((float) Math.sqrt(2 * f8)) - ((float) Math.sqrt(f7 - (m8817dotProductybeJwSQ * m8817dotProductybeJwSQ))))) / (1 - m8817dotProductybeJwSQ)) * (z ? 1.0f : -1.0f);
-            return CubicKt.Cubic(f3, f4, f3 + (PointKt.m8821getXDnnuFBc(m8859rotate90DnnuFBc) * distance), f4 + (PointKt.m8822getYDnnuFBc(m8859rotate90DnnuFBc) * distance), f5 - (PointKt.m8821getXDnnuFBc(m8859rotate90DnnuFBc2) * distance), f6 - (PointKt.m8822getYDnnuFBc(m8859rotate90DnnuFBc2) * distance), f5, f6);
+            float distance = ((((Utils.distance(f9, f10) * 4.0f) / 3.0f) * (((float) Math.sqrt(2 * f8)) - ((float) Math.sqrt(f7 - (m8102dotProductybeJwSQ * m8102dotProductybeJwSQ))))) / (1 - m8102dotProductybeJwSQ)) * (z ? 1.0f : -1.0f);
+            return CubicKt.Cubic(f3, f4, f3 + (PointKt.m8106getXDnnuFBc(m8142rotate90DnnuFBc) * distance), f4 + (PointKt.m8107getYDnnuFBc(m8142rotate90DnnuFBc) * distance), f5 - (PointKt.m8106getXDnnuFBc(m8142rotate90DnnuFBc2) * distance), f6 - (PointKt.m8107getYDnnuFBc(m8142rotate90DnnuFBc2) * distance), f5, f6);
         }
 
         @JvmStatic

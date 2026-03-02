@@ -1,9 +1,9 @@
 package androidx.paging;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.exifinterface.media.ExifInterface;
 import androidx.paging.PagingSource;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -15,9 +15,9 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineDispatcher;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: LegacyPageFetcher.jvm.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003*\u00020\u0005H\u008a@"}, d2 = {"<anonymous>", "", "K", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.LegacyPageFetcher$scheduleLoad$1", f = "LegacyPageFetcher.jvm.kt", i = {0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"})
+/* compiled from: LegacyPageFetcher.jvmAndAndroid.kt */
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.LegacyPageFetcher$scheduleLoad$1", f = "LegacyPageFetcher.jvmAndAndroid.kt", i = {0}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, m = "invokeSuspend", n = {"$this$launch"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class LegacyPageFetcher$scheduleLoad$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ PagingSource.LoadParams<K> $params;
@@ -71,19 +71,21 @@ public final class LegacyPageFetcher$scheduleLoad$1 extends SuspendLambda implem
             ResultKt.throwOnFailure(obj);
         }
         PagingSource.LoadResult loadResult = (PagingSource.LoadResult) obj;
-        if (!this.this$0.getSource().getInvalid()) {
-            coroutineDispatcher = ((LegacyPageFetcher) this.this$0).notifyDispatcher;
+        boolean invalid = this.this$0.getSource().getInvalid();
+        LegacyPageFetcher<K, V> legacyPageFetcher = this.this$0;
+        if (!invalid) {
+            coroutineDispatcher = ((LegacyPageFetcher) legacyPageFetcher).notifyDispatcher;
             BuildersKt__Builders_commonKt.launch$default(coroutineScope, coroutineDispatcher, null, new AnonymousClass1(loadResult, this.this$0, this.$type, null), 2, null);
             return Unit.INSTANCE;
         }
-        this.this$0.detach();
+        legacyPageFetcher.detach();
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: LegacyPageFetcher.jvm.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u0003*\u00020\u0005H\u008a@"}, d2 = {"<anonymous>", "", "K", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {1, 8, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.LegacyPageFetcher$scheduleLoad$1$1", f = "LegacyPageFetcher.jvm.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+    /* compiled from: LegacyPageFetcher.jvmAndAndroid.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
+    @DebugMetadata(c = "androidx.paging.LegacyPageFetcher$scheduleLoad$1$1", f = "LegacyPageFetcher.jvmAndAndroid.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.LegacyPageFetcher$scheduleLoad$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -124,6 +126,8 @@ public final class LegacyPageFetcher$scheduleLoad$1 extends SuspendLambda implem
                 this.this$0.onLoadError(this.$type, ((PagingSource.LoadResult.Error) obj2).getThrowable());
             } else if (obj2 instanceof PagingSource.LoadResult.Invalid) {
                 this.this$0.onLoadInvalid();
+            } else {
+                throw new NoWhenBranchMatchedException();
             }
             return Unit.INSTANCE;
         }

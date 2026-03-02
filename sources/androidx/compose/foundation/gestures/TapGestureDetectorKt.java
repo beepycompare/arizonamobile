@@ -371,11 +371,11 @@ public final class TapGestureDetectorKt {
             int i = 0;
             while (true) {
                 if (i < size) {
-                    if (!PointerType.m6815equalsimpl0(changes.get(i).m6747getTypeT8wyACA(), PointerType.Companion.m6820getMouseT8wyACA())) {
+                    if (!PointerType.m6156equalsimpl0(changes.get(i).m6088getTypeT8wyACA(), PointerType.Companion.m6161getMouseT8wyACA())) {
                         break;
                     }
                     i++;
-                } else if (!PointerEvent_androidKt.m6717isPrimaryPressedaHzCxE(pointerEvent.m6684getButtonsry648PA())) {
+                } else if (!PointerEvent_androidKt.m6058isPrimaryPressedaHzCxE(pointerEvent.m6025getButtonsry648PA())) {
                     return false;
                 }
             }
@@ -479,7 +479,7 @@ public final class TapGestureDetectorKt {
                                 int size3 = changes4.size();
                                 for (int i4 = 0; i4 < size3; i4++) {
                                     PointerInputChange pointerInputChange = changes4.get(i4);
-                                    if (pointerInputChange.isConsumed() || PointerEventKt.m6689isOutOfBoundsjwHxaWs(pointerInputChange, awaitPointerEventScope3.mo6640getSizeYbymL2g(), awaitPointerEventScope3.mo6639getExtendedTouchPaddingNHjbRc())) {
+                                    if (pointerInputChange.isConsumed() || PointerEventKt.m6030isOutOfBoundsjwHxaWs(pointerInputChange, awaitPointerEventScope3.mo5981getSizeYbymL2g(), awaitPointerEventScope3.mo5980getExtendedTouchPaddingNHjbRc())) {
                                         break;
                                     }
                                 }

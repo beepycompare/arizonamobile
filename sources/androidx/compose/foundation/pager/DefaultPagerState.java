@@ -23,16 +23,15 @@ public final class DefaultPagerState extends PagerState {
     private static final Saver<DefaultPagerState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.pager.DefaultPagerState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = DefaultPagerState.Saver$lambda$0((SaverScope) obj, (DefaultPagerState) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf(Integer.valueOf(r2.getCurrentPage()), Float.valueOf(RangesKt.coerceIn(r2.getCurrentPageOffsetFraction(), -0.5f, 0.5f)), Integer.valueOf(((DefaultPagerState) obj2).getPageCount()));
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.pager.DefaultPagerState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            DefaultPagerState Saver$lambda$1;
-            Saver$lambda$1 = DefaultPagerState.Saver$lambda$1((List) obj);
-            return Saver$lambda$1;
+            return DefaultPagerState.Saver$lambda$1((List) obj);
         }
     });
     private MutableState<Function0<Integer>> pageCountState;
@@ -73,12 +72,7 @@ public final class DefaultPagerState extends PagerState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, DefaultPagerState defaultPagerState) {
-        return CollectionsKt.listOf(Integer.valueOf(defaultPagerState.getCurrentPage()), Float.valueOf(RangesKt.coerceIn(defaultPagerState.getCurrentPageOffsetFraction(), -0.5f, 0.5f)), Integer.valueOf(defaultPagerState.getPageCount()));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DefaultPagerState Saver$lambda$1(final List list) {
         Object obj = list.get(0);
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Int");

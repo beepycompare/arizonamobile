@@ -57,9 +57,9 @@ public final class LazyGridState$prefetchScope$1 implements LazyGridPrefetchScop
                     Pair<Integer, Constraints> pair = invoke.get(i2);
                     LazyLayoutPrefetchState prefetchState$foundation = lazyGridState.getPrefetchState$foundation();
                     int intValue = pair.getFirst().intValue();
-                    long m8217unboximpl = pair.getSecond().m8217unboximpl();
+                    long m7514unboximpl = pair.getSecond().m7514unboximpl();
                     z = lazyGridState.executeRequestsInHighPriorityMode;
-                    arrayList.add(prefetchState$foundation.m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(intValue, m8217unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
+                    arrayList.add(prefetchState$foundation.m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(intValue, m7514unboximpl, z, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridState$prefetchScope$1$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
                             Unit scheduleLinePrefetch$lambda$0$0$0$0;
@@ -78,16 +78,16 @@ public final class LazyGridState$prefetchScope$1 implements LazyGridPrefetchScop
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit scheduleLinePrefetch$lambda$0$0$0$0(List list, Ref.IntRef intRef, List list2, Function1 function1, int i, LazyGridMeasureResult lazyGridMeasureResult, LazyLayoutPrefetchState.PrefetchResultScope prefetchResultScope) {
-        long mo1141getSizeYEO4UFw;
+        long mo1003getSizeYEO4UFw;
         int placeablesCount = prefetchResultScope.getPlaceablesCount();
         int i2 = 0;
         for (int i3 = 0; i3 < placeablesCount; i3++) {
             if (lazyGridMeasureResult.getOrientation() == Orientation.Vertical) {
-                mo1141getSizeYEO4UFw = prefetchResultScope.mo1141getSizeYEO4UFw(i3) & 4294967295L;
+                mo1003getSizeYEO4UFw = prefetchResultScope.mo1003getSizeYEO4UFw(i3) & 4294967295L;
             } else {
-                mo1141getSizeYEO4UFw = prefetchResultScope.mo1141getSizeYEO4UFw(i3) >> 32;
+                mo1003getSizeYEO4UFw = prefetchResultScope.mo1003getSizeYEO4UFw(i3) >> 32;
             }
-            i2 += (int) mo1141getSizeYEO4UFw;
+            i2 += (int) mo1003getSizeYEO4UFw;
         }
         if (list != null) {
             list.add(Integer.valueOf(i2));

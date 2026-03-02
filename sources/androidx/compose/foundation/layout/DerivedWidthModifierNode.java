@@ -51,35 +51,29 @@ final class DerivedWidthModifierNode extends InsetsConsumingModifierNode impleme
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         int intValue = this.widthCalc.invoke(this.widthInsets, measureScope.getLayoutDirection(), measureScope).intValue();
         if (intValue == 0) {
             return MeasureScope.layout$default(measureScope, 0, 0, null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$0;
-                    measure_3p2s80s$lambda$0 = DerivedWidthModifierNode.measure_3p2s80s$lambda$0((Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$0;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }, 4, null);
         }
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
-        return MeasureScope.layout$default(measureScope, intValue, mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifierNode$$ExternalSyntheticLambda1
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, intValue, intValue, 0, 0, 12, null));
+        return MeasureScope.layout$default(measureScope, intValue, mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.DerivedWidthModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = DerivedWidthModifierNode.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return DerivedWidthModifierNode.measure_3p2s80s$lambda$1(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measure_3p2s80s$lambda$0(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.placeRelative$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;

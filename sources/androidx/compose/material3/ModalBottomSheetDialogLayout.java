@@ -24,7 +24,7 @@ public final class ModalBottomSheetDialogLayout extends AbstractComposeView impl
     private boolean shouldCreateCompositionOnAttachedToWindow;
     private final Window window;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Content$lambda$0(ModalBottomSheetDialogLayout modalBottomSheetDialogLayout, int i, Composer composer, int i2) {
         modalBottomSheetDialogLayout.Content(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -39,7 +39,7 @@ public final class ModalBottomSheetDialogLayout extends AbstractComposeView impl
         super(context, null, 0, 6, null);
         MutableState mutableStateOf$default;
         this.window = window;
-        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m2255getLambda$91331245$material3(), null, 2, null);
+        mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(ComposableSingletons$ModalBottomSheet_androidKt.INSTANCE.m1941getLambda$91331245$material3(), null, 2, null);
         this.content$delegate = mutableStateOf$default;
     }
 
@@ -89,9 +89,7 @@ public final class ModalBottomSheetDialogLayout extends AbstractComposeView impl
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ModalBottomSheetDialogLayout$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Content$lambda$0;
-                    Content$lambda$0 = ModalBottomSheetDialogLayout.Content$lambda$0(ModalBottomSheetDialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Content$lambda$0;
+                    return ModalBottomSheetDialogLayout.Content$lambda$0(ModalBottomSheetDialogLayout.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

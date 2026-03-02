@@ -26,10 +26,10 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0053, code lost:
-        if (r7.emit(r6, r0) == r1) goto L23;
+        if (r5.emit(r7, r0) == r1) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0063, code lost:
-        if (r6 == r1) goto L23;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0061, code lost:
+        if (r7 == r1) goto L23;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */
@@ -61,13 +61,14 @@ public final class FlowKt__LimitKt$take$2$1<T> implements FlowCollector {
                 }
                 ResultKt.throwOnFailure(obj);
                 this.$consumed.element++;
-                if (this.$consumed.element >= this.$count) {
-                    FlowCollector<T> flowCollector = this.$this_flow;
+                int i2 = this.$consumed.element;
+                int i3 = this.$count;
+                FlowCollector<T> flowCollector = this.$this_flow;
+                if (i2 >= i3) {
                     Object obj2 = this.$ownershipMarker;
                     flowKt__LimitKt$take$2$1$emit$1.label = 2;
                     emitAbort$FlowKt__LimitKt = FlowKt__LimitKt.emitAbort$FlowKt__LimitKt(flowCollector, t, obj2, flowKt__LimitKt$take$2$1$emit$1);
                 } else {
-                    FlowCollector<T> flowCollector2 = this.$this_flow;
                     flowKt__LimitKt$take$2$1$emit$1.label = 1;
                 }
                 return coroutine_suspended;

@@ -57,22 +57,22 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getHyphens-EaSxIns$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7565getHyphensEaSxIns$annotations() {
+    public static /* synthetic */ void m6893getHyphensEaSxIns$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getLineBreak-LgCVezo$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7566getLineBreakLgCVezo$annotations() {
+    public static /* synthetic */ void m6894getLineBreakLgCVezo$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getTextAlign-buA522U$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7567getTextAlignbuA522U$annotations() {
+    public static /* synthetic */ void m6895getTextAlignbuA522U$annotations() {
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Kept for backwards compatibility.")
     /* renamed from: getTextDirection-mmuk1to$annotations  reason: not valid java name */
-    public static /* synthetic */ void m7568getTextDirectionmmuk1to$annotations() {
+    public static /* synthetic */ void m6896getTextDirectionmmuk1to$annotations() {
     }
 
     private ParagraphStyle(int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
@@ -85,31 +85,31 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
         this.lineBreak = i3;
         this.hyphens = i4;
         this.textMotion = textMotion;
-        if (TextUnit.m8449equalsimpl0(j, TextUnit.Companion.m8463getUnspecifiedXSAIIZE())) {
+        if (TextUnit.m7746equalsimpl0(j, TextUnit.Companion.m7760getUnspecifiedXSAIIZE())) {
             return;
         }
-        if (TextUnit.m8452getValueimpl(j) >= 0.0f) {
+        if (TextUnit.m7749getValueimpl(j) >= 0.0f) {
             return;
         }
-        InlineClassHelperKt.throwIllegalStateException("lineHeight can't be negative (" + TextUnit.m8452getValueimpl(j) + ')');
+        InlineClassHelperKt.throwIllegalStateException("lineHeight can't be negative (" + TextUnit.m7749getValueimpl(j) + ')');
     }
 
     public /* synthetic */ ParagraphStyle(int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i5 & 1) != 0 ? TextAlign.Companion.m8142getUnspecifiede0LSkKk() : i, (i5 & 2) != 0 ? TextDirection.Companion.m8158getUnspecifieds_7Xco() : i2, (i5 & 4) != 0 ? TextUnit.Companion.m8463getUnspecifiedXSAIIZE() : j, (i5 & 8) != 0 ? null : textIndent, (i5 & 16) != 0 ? null : platformParagraphStyle, (i5 & 32) != 0 ? null : lineHeightStyle, (i5 & 64) != 0 ? LineBreak.Companion.m8054getUnspecifiedrAG3T2k() : i3, (i5 & 128) != 0 ? Hyphens.Companion.m8030getUnspecifiedvmbZdU8() : i4, (i5 & 256) == 0 ? textMotion : null, (DefaultConstructorMarker) null);
+        this((i5 & 1) != 0 ? TextAlign.Companion.m7439getUnspecifiede0LSkKk() : i, (i5 & 2) != 0 ? TextDirection.Companion.m7455getUnspecifieds_7Xco() : i2, (i5 & 4) != 0 ? TextUnit.Companion.m7760getUnspecifiedXSAIIZE() : j, (i5 & 8) != 0 ? null : textIndent, (i5 & 16) != 0 ? null : platformParagraphStyle, (i5 & 32) != 0 ? null : lineHeightStyle, (i5 & 64) != 0 ? LineBreak.Companion.m7351getUnspecifiedrAG3T2k() : i3, (i5 & 128) != 0 ? Hyphens.Companion.m7327getUnspecifiedvmbZdU8() : i4, (i5 & 256) == 0 ? textMotion : null, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: getTextAlign-e0LSkKk  reason: not valid java name */
-    public final int m7580getTextAligne0LSkKk() {
+    public final int m6908getTextAligne0LSkKk() {
         return this.textAlign;
     }
 
     /* renamed from: getTextDirection-s_7X-co  reason: not valid java name */
-    public final int m7582getTextDirections_7Xco() {
+    public final int m6910getTextDirections_7Xco() {
         return this.textDirection;
     }
 
     /* renamed from: getLineHeight-XSAIIZE  reason: not valid java name */
-    public final long m7578getLineHeightXSAIIZE() {
+    public final long m6906getLineHeightXSAIIZE() {
         return this.lineHeight;
     }
 
@@ -126,12 +126,12 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getLineBreak-rAG3T2k  reason: not valid java name */
-    public final int m7577getLineBreakrAG3T2k() {
+    public final int m6905getLineBreakrAG3T2k() {
         return this.lineBreak;
     }
 
     /* renamed from: getHyphens-vmbZdU8  reason: not valid java name */
-    public final int m7575getHyphensvmbZdU8() {
+    public final int m6903getHyphensvmbZdU8() {
         return this.hyphens;
     }
 
@@ -140,55 +140,55 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: getTextAlign-buA522U  reason: not valid java name */
-    public final TextAlign m7579getTextAlignbuA522U() {
-        return TextAlign.m8129boximpl(this.textAlign);
+    public final TextAlign m6907getTextAlignbuA522U() {
+        return TextAlign.m7426boximpl(this.textAlign);
     }
 
     /* renamed from: getTextDirection-mmuk1to  reason: not valid java name */
-    public final TextDirection m7581getTextDirectionmmuk1to() {
-        return TextDirection.m8146boximpl(this.textDirection);
+    public final TextDirection m6909getTextDirectionmmuk1to() {
+        return TextDirection.m7443boximpl(this.textDirection);
     }
 
     /* renamed from: getHyphens-EaSxIns  reason: not valid java name */
-    public final Hyphens m7574getHyphensEaSxIns() {
-        return Hyphens.m8021boximpl(this.hyphens);
+    public final Hyphens m6902getHyphensEaSxIns() {
+        return Hyphens.m7318boximpl(this.hyphens);
     }
 
     /* renamed from: getLineBreak-LgCVezo  reason: not valid java name */
-    public final LineBreak m7576getLineBreakLgCVezo() {
-        return LineBreak.m8034boximpl(this.lineBreak);
+    public final LineBreak m6904getLineBreakLgCVezo() {
+        return LineBreak.m7331boximpl(this.lineBreak);
     }
 
     public /* synthetic */ ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m8463getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, (i & 64) != 0 ? null : lineBreak, (i & 128) != 0 ? null : hyphens, (i & 256) == 0 ? textMotion : null, (DefaultConstructorMarker) null);
+        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m7760getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, (i & 64) != 0 ? null : lineBreak, (i & 128) != 0 ? null : hyphens, (i & 256) == 0 ? textMotion : null, (DefaultConstructorMarker) null);
     }
 
     private ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        this(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m8046unboximpl() : LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m8027unboximpl() : Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null);
+        this(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m7343unboximpl() : LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7324unboximpl() : Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m8463getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, null);
+        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m7760getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, null);
     }
 
     private ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent) {
-        this(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, (PlatformParagraphStyle) null, (LineHeightStyle) null, LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
+        this(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, (PlatformParagraphStyle) null, (LineHeightStyle) null, LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m8463getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, null);
+        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m7760getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, null);
     }
 
     private ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle) {
-        this(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
+        this(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
     }
 
     public /* synthetic */ ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m8463getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, (i & 64) != 0 ? null : lineBreak, (i & 128) == 0 ? hyphens : null, (DefaultConstructorMarker) null);
+        this((i & 1) != 0 ? null : textAlign, (i & 2) != 0 ? null : textDirection, (i & 4) != 0 ? TextUnit.Companion.m7760getUnspecifiedXSAIIZE() : j, (i & 8) != 0 ? null : textIndent, (i & 16) != 0 ? null : platformParagraphStyle, (i & 32) != 0 ? null : lineHeightStyle, (i & 64) != 0 ? null : lineBreak, (i & 128) == 0 ? hyphens : null, (DefaultConstructorMarker) null);
     }
 
     private ParagraphStyle(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
-        this(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m8046unboximpl() : LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m8027unboximpl() : Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
+        this(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m7343unboximpl() : LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7324unboximpl() : Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), (TextMotion) null, (DefaultConstructorMarker) null);
     }
 
     public static /* synthetic */ ParagraphStyle merge$default(ParagraphStyle paragraphStyle, ParagraphStyle paragraphStyle2, int i, Object obj) {
@@ -199,7 +199,7 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
     }
 
     public final ParagraphStyle merge(ParagraphStyle paragraphStyle) {
-        return paragraphStyle == null ? this : ParagraphStyleKt.m7583fastMergej5T8yCg(this, paragraphStyle.textAlign, paragraphStyle.textDirection, paragraphStyle.lineHeight, paragraphStyle.textIndent, paragraphStyle.platformStyle, paragraphStyle.lineHeightStyle, paragraphStyle.lineBreak, paragraphStyle.hyphens, paragraphStyle.textMotion);
+        return paragraphStyle == null ? this : ParagraphStyleKt.m6911fastMergej5T8yCg(this, paragraphStyle.textAlign, paragraphStyle.textDirection, paragraphStyle.lineHeight, paragraphStyle.textIndent, paragraphStyle.platformStyle, paragraphStyle.lineHeightStyle, paragraphStyle.lineBreak, paragraphStyle.hyphens, paragraphStyle.textMotion);
     }
 
     public final ParagraphStyle plus(ParagraphStyle paragraphStyle) {
@@ -207,12 +207,12 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
     }
 
     /* renamed from: copy-Elsmlbk$default  reason: not valid java name */
-    public static /* synthetic */ ParagraphStyle m7560copyElsmlbk$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, int i, Object obj) {
+    public static /* synthetic */ ParagraphStyle m6888copyElsmlbk$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, int i, Object obj) {
         if ((i & 1) != 0) {
-            textAlign = TextAlign.m8129boximpl(paragraphStyle.textAlign);
+            textAlign = TextAlign.m7426boximpl(paragraphStyle.textAlign);
         }
         if ((i & 2) != 0) {
-            textDirection = TextDirection.m8146boximpl(paragraphStyle.textDirection);
+            textDirection = TextDirection.m7443boximpl(paragraphStyle.textDirection);
         }
         if ((i & 4) != 0) {
             j = paragraphStyle.lineHeight;
@@ -221,22 +221,22 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
             textIndent = paragraphStyle.textIndent;
         }
         TextIndent textIndent2 = textIndent;
-        return paragraphStyle.m7569copyElsmlbk(textAlign, textDirection, j, textIndent2);
+        return paragraphStyle.m6897copyElsmlbk(textAlign, textDirection, j, textIndent2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "ParagraphStyle copy constructors that do not take new stable parameters like LineHeightStyle, LineBreak, Hyphens are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-Elsmlbk  reason: not valid java name */
-    public final /* synthetic */ ParagraphStyle m7569copyElsmlbk(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent) {
-        return new ParagraphStyle(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, this.platformStyle, this.lineHeightStyle, this.lineBreak, this.hyphens, this.textMotion, (DefaultConstructorMarker) null);
+    public final /* synthetic */ ParagraphStyle m6897copyElsmlbk(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent) {
+        return new ParagraphStyle(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, this.platformStyle, this.lineHeightStyle, this.lineBreak, this.hyphens, this.textMotion, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-xPh5V4g$default  reason: not valid java name */
-    public static /* synthetic */ ParagraphStyle m7563copyxPh5V4g$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i, Object obj) {
+    public static /* synthetic */ ParagraphStyle m6891copyxPh5V4g$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i, Object obj) {
         if ((i & 1) != 0) {
-            textAlign = TextAlign.m8129boximpl(paragraphStyle.textAlign);
+            textAlign = TextAlign.m7426boximpl(paragraphStyle.textAlign);
         }
         if ((i & 2) != 0) {
-            textDirection = TextDirection.m8146boximpl(paragraphStyle.textDirection);
+            textDirection = TextDirection.m7443boximpl(paragraphStyle.textDirection);
         }
         if ((i & 4) != 0) {
             j = paragraphStyle.lineHeight;
@@ -253,22 +253,22 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
         LineHeightStyle lineHeightStyle2 = lineHeightStyle;
         TextIndent textIndent2 = textIndent;
         long j2 = j;
-        return paragraphStyle.m7572copyxPh5V4g(textAlign, textDirection, j2, textIndent2, platformParagraphStyle, lineHeightStyle2);
+        return paragraphStyle.m6900copyxPh5V4g(textAlign, textDirection, j2, textIndent2, platformParagraphStyle, lineHeightStyle2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "ParagraphStyle copy constructors that do not take new stable parameters like LineHeightStyle, LineBreak, Hyphens are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-xPh5V4g  reason: not valid java name */
-    public final /* synthetic */ ParagraphStyle m7572copyxPh5V4g(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle) {
-        return new ParagraphStyle(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, this.lineBreak, this.hyphens, this.textMotion, (DefaultConstructorMarker) null);
+    public final /* synthetic */ ParagraphStyle m6900copyxPh5V4g(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle) {
+        return new ParagraphStyle(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, this.lineBreak, this.hyphens, this.textMotion, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-ciSxzs0$default  reason: not valid java name */
-    public static /* synthetic */ ParagraphStyle m7562copyciSxzs0$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, Object obj) {
+    public static /* synthetic */ ParagraphStyle m6890copyciSxzs0$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, int i, Object obj) {
         if ((i & 1) != 0) {
-            textAlign = TextAlign.m8129boximpl(paragraphStyle.textAlign);
+            textAlign = TextAlign.m7426boximpl(paragraphStyle.textAlign);
         }
         if ((i & 2) != 0) {
-            textDirection = TextDirection.m8146boximpl(paragraphStyle.textDirection);
+            textDirection = TextDirection.m7443boximpl(paragraphStyle.textDirection);
         }
         if ((i & 4) != 0) {
             j = paragraphStyle.lineHeight;
@@ -283,31 +283,31 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
             lineHeightStyle = paragraphStyle.lineHeightStyle;
         }
         if ((i & 64) != 0) {
-            lineBreak = LineBreak.m8034boximpl(paragraphStyle.lineBreak);
+            lineBreak = LineBreak.m7331boximpl(paragraphStyle.lineBreak);
         }
         if ((i & 128) != 0) {
-            hyphens = Hyphens.m8021boximpl(paragraphStyle.hyphens);
+            hyphens = Hyphens.m7318boximpl(paragraphStyle.hyphens);
         }
         Hyphens hyphens2 = hyphens;
         LineHeightStyle lineHeightStyle2 = lineHeightStyle;
         TextIndent textIndent2 = textIndent;
         long j2 = j;
-        return paragraphStyle.m7571copyciSxzs0(textAlign, textDirection, j2, textIndent2, platformParagraphStyle, lineHeightStyle2, lineBreak, hyphens2);
+        return paragraphStyle.m6899copyciSxzs0(textAlign, textDirection, j2, textIndent2, platformParagraphStyle, lineHeightStyle2, lineBreak, hyphens2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "ParagraphStyle copy constructors that do not take new stable parameters like LineBreak, Hyphens, TextMotion are deprecated. Please use the new stable copy constructor.")
     /* renamed from: copy-ciSxzs0  reason: not valid java name */
-    public final /* synthetic */ ParagraphStyle m7571copyciSxzs0(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
-        return new ParagraphStyle(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m8046unboximpl() : LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m8027unboximpl() : Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), this.textMotion, (DefaultConstructorMarker) null);
+    public final /* synthetic */ ParagraphStyle m6899copyciSxzs0(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens) {
+        return new ParagraphStyle(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m7343unboximpl() : LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7324unboximpl() : Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), this.textMotion, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-NH1kkwU$default  reason: not valid java name */
-    public static /* synthetic */ ParagraphStyle m7561copyNH1kkwU$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
+    public static /* synthetic */ ParagraphStyle m6889copyNH1kkwU$default(ParagraphStyle paragraphStyle, TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion, int i, Object obj) {
         if ((i & 1) != 0) {
-            textAlign = TextAlign.m8129boximpl(paragraphStyle.textAlign);
+            textAlign = TextAlign.m7426boximpl(paragraphStyle.textAlign);
         }
         if ((i & 2) != 0) {
-            textDirection = TextDirection.m8146boximpl(paragraphStyle.textDirection);
+            textDirection = TextDirection.m7443boximpl(paragraphStyle.textDirection);
         }
         if ((i & 4) != 0) {
             j = paragraphStyle.lineHeight;
@@ -322,10 +322,10 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
             lineHeightStyle = paragraphStyle.lineHeightStyle;
         }
         if ((i & 64) != 0) {
-            lineBreak = LineBreak.m8034boximpl(paragraphStyle.lineBreak);
+            lineBreak = LineBreak.m7331boximpl(paragraphStyle.lineBreak);
         }
         if ((i & 128) != 0) {
-            hyphens = Hyphens.m8021boximpl(paragraphStyle.hyphens);
+            hyphens = Hyphens.m7318boximpl(paragraphStyle.hyphens);
         }
         if ((i & 256) != 0) {
             textMotion = paragraphStyle.textMotion;
@@ -333,17 +333,17 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
         Hyphens hyphens2 = hyphens;
         TextMotion textMotion2 = textMotion;
         long j2 = j;
-        return paragraphStyle.m7570copyNH1kkwU(textAlign, textDirection, j2, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak, hyphens2, textMotion2);
+        return paragraphStyle.m6898copyNH1kkwU(textAlign, textDirection, j2, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak, hyphens2, textMotion2);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "ParagraphStyle copy constructors that take nullable TextAlign, TextDirection, LineBreak, and Hyphens are deprecated. Please use a new constructor where these parameters are non-nullable. Null value has been replaced by a special Unspecified object for performance reason.")
     /* renamed from: copy-NH1kkwU  reason: not valid java name */
-    public final /* synthetic */ ParagraphStyle m7570copyNH1kkwU(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
-        return new ParagraphStyle(textAlign != null ? textAlign.m8135unboximpl() : TextAlign.Companion.m8142getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m8152unboximpl() : TextDirection.Companion.m8158getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m8046unboximpl() : LineBreak.Companion.m8054getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m8027unboximpl() : Hyphens.Companion.m8030getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null);
+    public final /* synthetic */ ParagraphStyle m6898copyNH1kkwU(TextAlign textAlign, TextDirection textDirection, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, LineBreak lineBreak, Hyphens hyphens, TextMotion textMotion) {
+        return new ParagraphStyle(textAlign != null ? textAlign.m7432unboximpl() : TextAlign.Companion.m7439getUnspecifiede0LSkKk(), textDirection != null ? textDirection.m7449unboximpl() : TextDirection.Companion.m7455getUnspecifieds_7Xco(), j, textIndent, platformParagraphStyle, lineHeightStyle, lineBreak != null ? lineBreak.m7343unboximpl() : LineBreak.Companion.m7351getUnspecifiedrAG3T2k(), hyphens != null ? hyphens.m7324unboximpl() : Hyphens.Companion.m7327getUnspecifiedvmbZdU8(), textMotion, (DefaultConstructorMarker) null);
     }
 
     /* renamed from: copy-ykzQM6k$default  reason: not valid java name */
-    public static /* synthetic */ ParagraphStyle m7564copyykzQM6k$default(ParagraphStyle paragraphStyle, int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
+    public static /* synthetic */ ParagraphStyle m6892copyykzQM6k$default(ParagraphStyle paragraphStyle, int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion, int i5, Object obj) {
         if ((i5 & 1) != 0) {
             i = paragraphStyle.textAlign;
         }
@@ -374,11 +374,11 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
         int i6 = i4;
         TextMotion textMotion2 = textMotion;
         long j2 = j;
-        return paragraphStyle.m7573copyykzQM6k(i, i2, j2, textIndent, platformParagraphStyle, lineHeightStyle, i3, i6, textMotion2);
+        return paragraphStyle.m6901copyykzQM6k(i, i2, j2, textIndent, platformParagraphStyle, lineHeightStyle, i3, i6, textMotion2);
     }
 
     /* renamed from: copy-ykzQM6k  reason: not valid java name */
-    public final ParagraphStyle m7573copyykzQM6k(int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
+    public final ParagraphStyle m6901copyykzQM6k(int i, int i2, long j, TextIndent textIndent, PlatformParagraphStyle platformParagraphStyle, LineHeightStyle lineHeightStyle, int i3, int i4, TextMotion textMotion) {
         return new ParagraphStyle(i, i2, j, textIndent, platformParagraphStyle, lineHeightStyle, i3, i4, textMotion, (DefaultConstructorMarker) null);
     }
 
@@ -388,24 +388,24 @@ public final class ParagraphStyle implements AnnotatedString.Annotation {
         }
         if (obj instanceof ParagraphStyle) {
             ParagraphStyle paragraphStyle = (ParagraphStyle) obj;
-            return TextAlign.m8132equalsimpl0(this.textAlign, paragraphStyle.textAlign) && TextDirection.m8149equalsimpl0(this.textDirection, paragraphStyle.textDirection) && TextUnit.m8449equalsimpl0(this.lineHeight, paragraphStyle.lineHeight) && Intrinsics.areEqual(this.textIndent, paragraphStyle.textIndent) && Intrinsics.areEqual(this.platformStyle, paragraphStyle.platformStyle) && Intrinsics.areEqual(this.lineHeightStyle, paragraphStyle.lineHeightStyle) && LineBreak.m8040equalsimpl0(this.lineBreak, paragraphStyle.lineBreak) && Hyphens.m8024equalsimpl0(this.hyphens, paragraphStyle.hyphens) && Intrinsics.areEqual(this.textMotion, paragraphStyle.textMotion);
+            return TextAlign.m7429equalsimpl0(this.textAlign, paragraphStyle.textAlign) && TextDirection.m7446equalsimpl0(this.textDirection, paragraphStyle.textDirection) && TextUnit.m7746equalsimpl0(this.lineHeight, paragraphStyle.lineHeight) && Intrinsics.areEqual(this.textIndent, paragraphStyle.textIndent) && Intrinsics.areEqual(this.platformStyle, paragraphStyle.platformStyle) && Intrinsics.areEqual(this.lineHeightStyle, paragraphStyle.lineHeightStyle) && LineBreak.m7337equalsimpl0(this.lineBreak, paragraphStyle.lineBreak) && Hyphens.m7321equalsimpl0(this.hyphens, paragraphStyle.hyphens) && Intrinsics.areEqual(this.textMotion, paragraphStyle.textMotion);
         }
         return false;
     }
 
     public int hashCode() {
-        int m8133hashCodeimpl = ((((TextAlign.m8133hashCodeimpl(this.textAlign) * 31) + TextDirection.m8150hashCodeimpl(this.textDirection)) * 31) + TextUnit.m8453hashCodeimpl(this.lineHeight)) * 31;
+        int m7430hashCodeimpl = ((((TextAlign.m7430hashCodeimpl(this.textAlign) * 31) + TextDirection.m7447hashCodeimpl(this.textDirection)) * 31) + TextUnit.m7750hashCodeimpl(this.lineHeight)) * 31;
         TextIndent textIndent = this.textIndent;
-        int hashCode = (m8133hashCodeimpl + (textIndent != null ? textIndent.hashCode() : 0)) * 31;
+        int hashCode = (m7430hashCodeimpl + (textIndent != null ? textIndent.hashCode() : 0)) * 31;
         PlatformParagraphStyle platformParagraphStyle = this.platformStyle;
         int hashCode2 = (hashCode + (platformParagraphStyle != null ? platformParagraphStyle.hashCode() : 0)) * 31;
         LineHeightStyle lineHeightStyle = this.lineHeightStyle;
-        int hashCode3 = (((((hashCode2 + (lineHeightStyle != null ? lineHeightStyle.hashCode() : 0)) * 31) + LineBreak.m8044hashCodeimpl(this.lineBreak)) * 31) + Hyphens.m8025hashCodeimpl(this.hyphens)) * 31;
+        int hashCode3 = (((((hashCode2 + (lineHeightStyle != null ? lineHeightStyle.hashCode() : 0)) * 31) + LineBreak.m7341hashCodeimpl(this.lineBreak)) * 31) + Hyphens.m7322hashCodeimpl(this.hyphens)) * 31;
         TextMotion textMotion = this.textMotion;
         return hashCode3 + (textMotion != null ? textMotion.hashCode() : 0);
     }
 
     public String toString() {
-        return "ParagraphStyle(textAlign=" + ((Object) TextAlign.m8134toStringimpl(this.textAlign)) + ", textDirection=" + ((Object) TextDirection.m8151toStringimpl(this.textDirection)) + ", lineHeight=" + ((Object) TextUnit.m8459toStringimpl(this.lineHeight)) + ", textIndent=" + this.textIndent + ", platformStyle=" + this.platformStyle + ", lineHeightStyle=" + this.lineHeightStyle + ", lineBreak=" + ((Object) LineBreak.m8045toStringimpl(this.lineBreak)) + ", hyphens=" + ((Object) Hyphens.m8026toStringimpl(this.hyphens)) + ", textMotion=" + this.textMotion + ')';
+        return "ParagraphStyle(textAlign=" + ((Object) TextAlign.m7431toStringimpl(this.textAlign)) + ", textDirection=" + ((Object) TextDirection.m7448toStringimpl(this.textDirection)) + ", lineHeight=" + ((Object) TextUnit.m7756toStringimpl(this.lineHeight)) + ", textIndent=" + this.textIndent + ", platformStyle=" + this.platformStyle + ", lineHeightStyle=" + this.lineHeightStyle + ", lineBreak=" + ((Object) LineBreak.m7342toStringimpl(this.lineBreak)) + ", hyphens=" + ((Object) Hyphens.m7323toStringimpl(this.hyphens)) + ", textMotion=" + this.textMotion + ')';
     }
 }

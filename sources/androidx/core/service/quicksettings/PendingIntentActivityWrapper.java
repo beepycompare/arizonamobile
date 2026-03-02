@@ -59,9 +59,10 @@ public class PendingIntentActivityWrapper {
 
     private PendingIntent createPendingIntent() {
         Bundle bundle = this.mOptions;
+        Context context = this.mContext;
         if (bundle == null) {
-            return PendingIntentCompat.getActivity(this.mContext, this.mRequestCode, this.mIntent, this.mFlags, this.mIsMutable);
+            return PendingIntentCompat.getActivity(context, this.mRequestCode, this.mIntent, this.mFlags, this.mIsMutable);
         }
-        return PendingIntentCompat.getActivity(this.mContext, this.mRequestCode, this.mIntent, this.mFlags, bundle, this.mIsMutable);
+        return PendingIntentCompat.getActivity(context, this.mRequestCode, this.mIntent, this.mFlags, bundle, this.mIsMutable);
     }
 }

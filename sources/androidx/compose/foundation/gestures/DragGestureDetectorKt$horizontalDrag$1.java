@@ -27,6 +27,6 @@ public final class DragGestureDetectorKt$horizontalDrag$1 extends ContinuationIm
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m548horizontalDragjO51t88(null, 0L, null, this);
+        return DragGestureDetectorKt.m474horizontalDragjO51t88(null, 0L, null, this);
     }
 }

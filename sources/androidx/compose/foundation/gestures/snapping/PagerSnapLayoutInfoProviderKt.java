@@ -54,13 +54,15 @@ public final class PagerSnapLayoutInfoProviderKt {
                 if (pageSize$foundation == 0) {
                     return 0.0f;
                 }
-                if (f < 0.0f) {
-                    firstVisiblePage$foundation = PagerState.this.getFirstVisiblePage$foundation() + 1;
+                int i = (f > 0.0f ? 1 : (f == 0.0f ? 0 : -1));
+                PagerState pagerState2 = PagerState.this;
+                if (i < 0) {
+                    firstVisiblePage$foundation = pagerState2.getFirstVisiblePage$foundation() + 1;
                 } else {
-                    firstVisiblePage$foundation = PagerState.this.getFirstVisiblePage$foundation();
+                    firstVisiblePage$foundation = pagerState2.getFirstVisiblePage$foundation();
                 }
-                int i = firstVisiblePage$foundation;
-                int coerceAtLeast = RangesKt.coerceAtLeast(Math.abs((RangesKt.coerceIn(pagerSnapDistance.calculateTargetPage(i, RangesKt.coerceIn(((int) (f2 / pageSize$foundation)) + i, 0, PagerState.this.getPageCount()), f, PagerState.this.getPageSize$foundation(), PagerState.this.getPageSpacing$foundation()), 0, PagerState.this.getPageCount()) - i) * pageSize$foundation) - pageSize$foundation, 0);
+                int i2 = firstVisiblePage$foundation;
+                int coerceAtLeast = RangesKt.coerceAtLeast(Math.abs((RangesKt.coerceIn(pagerSnapDistance.calculateTargetPage(i2, RangesKt.coerceIn(((int) (f2 / pageSize$foundation)) + i2, 0, PagerState.this.getPageCount()), f, PagerState.this.getPageSize$foundation(), PagerState.this.getPageSpacing$foundation()), 0, PagerState.this.getPageCount()) - i2) * pageSize$foundation) - pageSize$foundation, 0);
                 return coerceAtLeast == 0 ? coerceAtLeast : coerceAtLeast * Math.signum(f);
             }
 
@@ -126,9 +128,9 @@ public final class PagerSnapLayoutInfoProviderKt {
 
     private static final float dragGestureDelta(PagerState pagerState) {
         if (pagerState.getLayoutInfo().getOrientation() == Orientation.Horizontal) {
-            return Float.intBitsToFloat((int) (pagerState.m1236getUpDownDifferenceF1C5BW0$foundation() >> 32));
+            return Float.intBitsToFloat((int) (pagerState.m1084getUpDownDifferenceF1C5BW0$foundation() >> 32));
         }
-        return Float.intBitsToFloat((int) (pagerState.m1236getUpDownDifferenceF1C5BW0$foundation() & 4294967295L));
+        return Float.intBitsToFloat((int) (pagerState.m1084getUpDownDifferenceF1C5BW0$foundation() & 4294967295L));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x008a A[RETURN] */
@@ -144,11 +146,11 @@ public final class PagerSnapLayoutInfoProviderKt {
         float dragGestureDelta = pageSize == 0 ? 0.0f : dragGestureDelta(pagerState) / pageSize;
         float f5 = dragGestureDelta - ((int) dragGestureDelta);
         int calculateFinalSnappingItem = LazyListSnapLayoutInfoProviderKt.calculateFinalSnappingItem(pagerState.getDensity$foundation(), f2);
-        if (FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m713getClosestItembbeMdSM())) {
+        if (FinalSnappingItem.m621equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m625getClosestItembbeMdSM())) {
             return (Math.abs(f5) <= f ? Math.abs(dragGestureDelta) < Math.abs(pagerState.getPositionThresholdFraction$foundation()) ? Math.abs(f3) >= Math.abs(f4) : !isScrollingForward : isScrollingForward) ? f4 : f3;
         }
-        if (!FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m714getNextItembbeMdSM())) {
-            if (!FinalSnappingItem.m709equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m715getPreviousItembbeMdSM())) {
+        if (!FinalSnappingItem.m621equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m626getNextItembbeMdSM())) {
+            if (!FinalSnappingItem.m621equalsimpl0(calculateFinalSnappingItem, FinalSnappingItem.Companion.m627getPreviousItembbeMdSM())) {
                 return 0.0f;
             }
         }

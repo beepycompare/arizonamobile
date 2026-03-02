@@ -22,13 +22,11 @@ public final class LocalFullyDrawnReporterOwner {
     private static final ProvidableCompositionLocal<FullyDrawnReporterOwner> LocalFullyDrawnReporterOwner = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.activity.compose.LocalFullyDrawnReporterOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            FullyDrawnReporterOwner LocalFullyDrawnReporterOwner$lambda$0;
-            LocalFullyDrawnReporterOwner$lambda$0 = LocalFullyDrawnReporterOwner.LocalFullyDrawnReporterOwner$lambda$0();
-            return LocalFullyDrawnReporterOwner$lambda$0;
+            return LocalFullyDrawnReporterOwner.LocalFullyDrawnReporterOwner$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final FullyDrawnReporterOwner LocalFullyDrawnReporterOwner$lambda$0() {
         return null;
     }

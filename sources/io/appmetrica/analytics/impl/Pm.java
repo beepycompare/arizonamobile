@@ -14,10 +14,10 @@ public final class Pm {
         Km km = new Km();
         Lm lm = new Lm();
         Mm mm = new Mm();
-        hashMap.put(C0360jm.class, jm);
+        hashMap.put(C0359jm.class, jm);
         hashMap.put(T1.class, km);
-        hashMap.put(C0199df.class, lm);
-        hashMap.put(C0566s3.class, mm);
+        hashMap.put(C0198df.class, lm);
+        hashMap.put(C0565s3.class, mm);
     }
 
     public static Qm a(Class cls) {

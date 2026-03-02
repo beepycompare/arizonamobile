@@ -48,27 +48,18 @@ public final class SerializableSaverKt {
         return SaverKt.Saver(new Function2() { // from class: androidx.compose.runtime.saveable.serialization.SerializableSaverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Bundle serializableSaver$lambda$0;
-                serializableSaver$lambda$0 = SerializableSaverKt.serializableSaver$lambda$0(KSerializer.this, savedStateConfiguration, (SaverScope) obj, obj2);
-                return serializableSaver$lambda$0;
+                Bundle encodeToSavedState;
+                SaverScope saverScope = (SaverScope) obj;
+                encodeToSavedState = SavedStateEncoderKt.encodeToSavedState(KSerializer.this, obj2, savedStateConfiguration);
+                return encodeToSavedState;
             }
         }, new Function1() { // from class: androidx.compose.runtime.saveable.serialization.SerializableSaverKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object serializableSaver$lambda$1;
-                serializableSaver$lambda$1 = SerializableSaverKt.serializableSaver$lambda$1(KSerializer.this, savedStateConfiguration, (Bundle) obj);
-                return serializableSaver$lambda$1;
+                Object decodeFromSavedState;
+                decodeFromSavedState = SavedStateDecoderKt.decodeFromSavedState(KSerializer.this, (Bundle) obj, savedStateConfiguration);
+                return decodeFromSavedState;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle serializableSaver$lambda$0(KSerializer kSerializer, SavedStateConfiguration savedStateConfiguration, SaverScope saverScope, Object obj) {
-        return SavedStateEncoderKt.encodeToSavedState(kSerializer, obj, savedStateConfiguration);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Object serializableSaver$lambda$1(KSerializer kSerializer, SavedStateConfiguration savedStateConfiguration, Bundle bundle) {
-        return SavedStateDecoderKt.decodeFromSavedState(kSerializer, bundle, savedStateConfiguration);
     }
 }

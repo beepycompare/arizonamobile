@@ -68,49 +68,53 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
 
     @Override // androidx.compose.foundation.lazy.layout.LazyLayoutMeasurePolicy
     /* renamed from: measure-0kLqBqw  reason: not valid java name */
-    public final MeasureResult mo1043measure0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
+    public final MeasureResult mo920measure0kLqBqw(final LazyLayoutMeasureScope lazyLayoutMeasureScope, final long j) {
         int i;
         int i2;
         final int i3;
-        float mo789getSpacingD9Ej5fM;
-        int m8211getMaxWidthimpl;
+        float mo694getSpacingD9Ej5fM;
+        int m7508getMaxWidthimpl;
         LazyListItemProvider lazyListItemProvider;
-        long m8380constructorimpl;
+        long m7677constructorimpl;
         float scrollToBeConsumed$foundation;
-        ObservableScopeInvalidator.m1146attachToScopeimpl(this.$state.m1061getMeasurementScopeInvalidatorzYiylxw$foundation());
+        ObservableScopeInvalidator.m1005attachToScopeimpl(this.$state.m936getMeasurementScopeInvalidatorzYiylxw$foundation());
         boolean z = this.$state.getHasLookaheadOccurred$foundation() || lazyLayoutMeasureScope.isLookingAhead();
-        CheckScrollableContainerConstraintsKt.m333checkScrollableContainerConstraintsK40F9xA(j, this.$isVertical ? Orientation.Vertical : Orientation.Horizontal);
-        if (this.$isVertical) {
-            i = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo873calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
+        CheckScrollableContainerConstraintsKt.m291checkScrollableContainerConstraintsK40F9xA(j, this.$isVertical ? Orientation.Vertical : Orientation.Horizontal);
+        boolean z2 = this.$isVertical;
+        PaddingValues paddingValues = this.$contentPadding;
+        if (z2) {
+            i = lazyLayoutMeasureScope.mo399roundToPx0680j_4(paddingValues.mo768calculateLeftPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
         } else {
-            i = lazyLayoutMeasureScope.mo458roundToPx0680j_4(PaddingKt.calculateStartPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
+            i = lazyLayoutMeasureScope.mo399roundToPx0680j_4(PaddingKt.calculateStartPadding(paddingValues, lazyLayoutMeasureScope.getLayoutDirection()));
         }
-        if (this.$isVertical) {
-            i2 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo874calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
+        boolean z3 = this.$isVertical;
+        PaddingValues paddingValues2 = this.$contentPadding;
+        if (z3) {
+            i2 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(paddingValues2.mo769calculateRightPaddingu2uoSUM(lazyLayoutMeasureScope.getLayoutDirection()));
         } else {
-            i2 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(PaddingKt.calculateEndPadding(this.$contentPadding, lazyLayoutMeasureScope.getLayoutDirection()));
+            i2 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(PaddingKt.calculateEndPadding(paddingValues2, lazyLayoutMeasureScope.getLayoutDirection()));
         }
-        int i4 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo875calculateTopPaddingD9Ej5fM());
-        int i5 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(this.$contentPadding.mo872calculateBottomPaddingD9Ej5fM());
+        int i4 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(this.$contentPadding.mo770calculateTopPaddingD9Ej5fM());
+        int i5 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(this.$contentPadding.mo767calculateBottomPaddingD9Ej5fM());
         final int i6 = i4 + i5;
         final int i7 = i + i2;
-        boolean z2 = this.$isVertical;
-        int i8 = z2 ? i6 : i7;
-        if (z2 && !this.$reverseLayout) {
+        boolean z4 = this.$isVertical;
+        int i8 = z4 ? i6 : i7;
+        if (z4 && !this.$reverseLayout) {
             i3 = i4;
-        } else if (z2 && this.$reverseLayout) {
+        } else if (z4 && this.$reverseLayout) {
             i3 = i5;
         } else {
-            i3 = (z2 || this.$reverseLayout) ? i2 : i;
+            i3 = (z4 || this.$reverseLayout) ? i2 : i;
         }
         final int i9 = i8 - i3;
-        final long m8230offsetNN6EwU = ConstraintsKt.m8230offsetNN6EwU(j, -i7, -i6);
+        final long m7527offsetNN6EwU = ConstraintsKt.m7527offsetNN6EwU(j, -i7, -i6);
         LazyListItemProvider invoke = this.$itemProviderLambda.invoke();
-        invoke.getItemScope().setMaxSize(Constraints.m8211getMaxWidthimpl(m8230offsetNN6EwU), Constraints.m8210getMaxHeightimpl(m8230offsetNN6EwU));
+        invoke.getItemScope().setMaxSize(Constraints.m7508getMaxWidthimpl(m7527offsetNN6EwU), Constraints.m7507getMaxHeightimpl(m7527offsetNN6EwU));
         if (this.$isVertical) {
             Arrangement.Vertical vertical = this.$verticalArrangement;
             if (vertical != null) {
-                mo789getSpacingD9Ej5fM = vertical.mo789getSpacingD9Ej5fM();
+                mo694getSpacingD9Ej5fM = vertical.mo694getSpacingD9Ej5fM();
             } else {
                 InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalArrangement when isVertical == true");
                 throw new KotlinNothingValueException();
@@ -118,42 +122,42 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
         } else {
             Arrangement.Horizontal horizontal = this.$horizontalArrangement;
             if (horizontal != null) {
-                mo789getSpacingD9Ej5fM = horizontal.mo789getSpacingD9Ej5fM();
+                mo694getSpacingD9Ej5fM = horizontal.mo694getSpacingD9Ej5fM();
             } else {
                 InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null horizontalAlignment when isVertical == false");
                 throw new KotlinNothingValueException();
             }
         }
-        final int i10 = lazyLayoutMeasureScope.mo458roundToPx0680j_4(mo789getSpacingD9Ej5fM);
+        final int i10 = lazyLayoutMeasureScope.mo399roundToPx0680j_4(mo694getSpacingD9Ej5fM);
         final int itemCount = invoke.getItemCount();
         if (this.$isVertical) {
-            m8211getMaxWidthimpl = Constraints.m8210getMaxHeightimpl(j) - i6;
+            m7508getMaxWidthimpl = Constraints.m7507getMaxHeightimpl(j) - i6;
         } else {
-            m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j) - i7;
+            m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j) - i7;
         }
-        int i11 = m8211getMaxWidthimpl;
+        int i11 = m7508getMaxWidthimpl;
         if (this.$reverseLayout && i11 <= 0) {
-            boolean z3 = this.$isVertical;
-            if (!z3) {
+            boolean z5 = this.$isVertical;
+            if (!z5) {
                 i += i11;
             }
-            if (z3) {
+            if (z5) {
                 i4 += i11;
             }
             lazyListItemProvider = invoke;
-            m8380constructorimpl = IntOffset.m8380constructorimpl((i << 32) | (i4 & 4294967295L));
+            m7677constructorimpl = IntOffset.m7677constructorimpl((i << 32) | (i4 & 4294967295L));
         } else {
             lazyListItemProvider = invoke;
-            m8380constructorimpl = IntOffset.m8380constructorimpl((i << 32) | (i4 & 4294967295L));
+            m7677constructorimpl = IntOffset.m7677constructorimpl((i << 32) | (i4 & 4294967295L));
         }
-        final boolean z4 = this.$isVertical;
+        final boolean z6 = this.$isVertical;
         final Alignment.Horizontal horizontal2 = this.$horizontalAlignment;
-        final long j2 = m8380constructorimpl;
+        final long j2 = m7677constructorimpl;
         final LazyListItemProvider lazyListItemProvider2 = lazyListItemProvider;
         final Alignment.Vertical vertical2 = this.$verticalAlignment;
-        final boolean z5 = this.$reverseLayout;
+        final boolean z7 = this.$reverseLayout;
         final LazyListState lazyListState = this.$state;
-        LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m8230offsetNN6EwU, z4, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i10, horizontal2, vertical2, z5, i3, i9, j2, lazyListState) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
+        LazyListMeasuredItemProvider lazyListMeasuredItemProvider = new LazyListMeasuredItemProvider(m7527offsetNN6EwU, z6, lazyListItemProvider2, lazyLayoutMeasureScope, itemCount, i10, horizontal2, vertical2, z7, i3, i9, j2, lazyListState) { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$measuredItemProvider$1
             final /* synthetic */ int $afterContentPadding;
             final /* synthetic */ int $beforeContentPadding;
             final /* synthetic */ Alignment.Horizontal $horizontalAlignment;
@@ -168,13 +172,13 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.$isVertical = z4;
+                this.$isVertical = z6;
                 this.$this_LazyLayoutMeasurePolicy = lazyLayoutMeasureScope;
                 this.$itemsCount = itemCount;
                 this.$spaceBetweenItems = i10;
                 this.$horizontalAlignment = horizontal2;
                 this.$verticalAlignment = vertical2;
-                this.$reverseLayout = z5;
+                this.$reverseLayout = z7;
                 this.$beforeContentPadding = i3;
                 this.$afterContentPadding = i9;
                 this.$visualItemOffset = j2;
@@ -183,7 +187,7 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
 
             @Override // androidx.compose.foundation.lazy.LazyListMeasuredItemProvider
             /* renamed from: createItem-X9ElhV4  reason: not valid java name */
-            public LazyListMeasuredItem mo1044createItemX9ElhV4(int i12, Object obj, Object obj2, List<? extends Placeable> list, long j3) {
+            public LazyListMeasuredItem mo921createItemX9ElhV4(int i12, Object obj, Object obj2, List<? extends Placeable> list, long j3) {
                 return new LazyListMeasuredItem(i12, list, this.$isVertical, this.$horizontalAlignment, this.$verticalAlignment, this.$this_LazyLayoutMeasurePolicy.getLayoutDirection(), this.$reverseLayout, this.$beforeContentPadding, this.$afterContentPadding, i12 == this.$itemsCount + (-1) ? 0 : this.$spaceBetweenItems, this.$visualItemOffset, obj, obj2, this.$state.getItemAnimator$foundation(), j3, null);
             }
         };
@@ -204,29 +208,25 @@ public final class LazyListKt$rememberLazyListMeasurePolicy$1$1 implements LazyL
                 scrollToBeConsumed$foundation = this.$state.getScrollDeltaBetweenPasses$foundation();
             }
             LazyListMeasuredItemProvider lazyListMeasuredItemProvider2 = lazyListMeasuredItemProvider;
-            LazyListMeasureResult m1049measureLazyList_s_dbAc = LazyListMeasureKt.m1049measureLazyList_s_dbAc(itemCount, lazyListMeasuredItemProvider2, i11, i3, i9, i10, updateScrollPositionIfTheFirstItemWasMoved$foundation, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation, m8230offsetNN6EwU, this.$isVertical, this.$verticalArrangement, this.$horizontalArrangement, this.$reverseLayout, lazyLayoutMeasureScope, this.$state.getItemAnimator$foundation(), this.$beyondBoundsItemCount, calculateLazyLayoutPinnedIndices, z, lazyLayoutMeasureScope.isLookingAhead(), this.$coroutineScope, this.$state.m1062getPlacementScopeInvalidatorzYiylxw$foundation(), this.$graphicsContext, this.$stickyItemsPlacement, new Function3() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$$ExternalSyntheticLambda0
+            LazyListMeasureResult m926measureLazyList_s_dbAc = LazyListMeasureKt.m926measureLazyList_s_dbAc(itemCount, lazyListMeasuredItemProvider2, i11, i3, i9, i10, updateScrollPositionIfTheFirstItemWasMoved$foundation, firstVisibleItemScrollOffset, scrollToBeConsumed$foundation, m7527offsetNN6EwU, this.$isVertical, this.$verticalArrangement, this.$horizontalArrangement, this.$reverseLayout, lazyLayoutMeasureScope, this.$state.getItemAnimator$foundation(), this.$beyondBoundsItemCount, calculateLazyLayoutPinnedIndices, z, lazyLayoutMeasureScope.isLookingAhead(), this.$coroutineScope, this.$state.m937getPlacementScopeInvalidatorzYiylxw$foundation(), this.$graphicsContext, this.$stickyItemsPlacement, new Function3() { // from class: androidx.compose.foundation.lazy.LazyListKt$rememberLazyListMeasurePolicy$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    MeasureResult measure_0kLqBqw$lambda$3;
-                    measure_0kLqBqw$lambda$3 = LazyListKt$rememberLazyListMeasurePolicy$1$1.measure_0kLqBqw$lambda$3(LazyLayoutMeasureScope.this, j, i7, i6, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), (Function1) obj3);
-                    return measure_0kLqBqw$lambda$3;
+                    MeasureResult layout;
+                    Function1 function1 = (Function1) obj3;
+                    layout = LazyLayoutMeasureScope.this.layout(ConstraintsKt.m7525constrainWidthK40F9xA(r1, ((Integer) obj).intValue() + i7), ConstraintsKt.m7524constrainHeightK40F9xA(j, ((Integer) obj2).intValue() + i6), MapsKt.emptyMap(), function1);
+                    return layout;
                 }
             });
-            LazyListState.applyMeasureResult$foundation$default(this.$state, m1049measureLazyList_s_dbAc, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
+            LazyListState.applyMeasureResult$foundation$default(this.$state, m926measureLazyList_s_dbAc, lazyLayoutMeasureScope.isLookingAhead(), false, 4, null);
             LazyListPrefetchStrategy prefetchStrategy$foundation = this.$state.getPrefetchStrategy$foundation();
             CacheWindowLogic cacheWindowLogic = prefetchStrategy$foundation instanceof CacheWindowLogic ? (CacheWindowLogic) prefetchStrategy$foundation : null;
             if (cacheWindowLogic != null) {
-                LazyListKt.keepAroundItems(cacheWindowLogic, m1049measureLazyList_s_dbAc.getVisibleItemsInfo(), lazyListMeasuredItemProvider2);
+                LazyListKt.keepAroundItems(cacheWindowLogic, m926measureLazyList_s_dbAc.getVisibleItemsInfo(), lazyListMeasuredItemProvider2);
             }
-            return m1049measureLazyList_s_dbAc;
+            return m926measureLazyList_s_dbAc;
         } catch (Throwable th) {
             companion.restoreNonObservable(currentThreadSnapshot, makeCurrentNonObservable, readObserver);
             throw th;
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final MeasureResult measure_0kLqBqw$lambda$3(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, int i, int i2, int i3, int i4, Function1 function1) {
-        return lazyLayoutMeasureScope.layout(ConstraintsKt.m8228constrainWidthK40F9xA(j, i3 + i), ConstraintsKt.m8227constrainHeightK40F9xA(j, i4 + i2), MapsKt.emptyMap(), function1);
     }
 }

@@ -149,9 +149,9 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:62:0x013d  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0146  */
-    /* JADX WARN: Removed duplicated region for block: B:71:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x013b  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0144  */
+    /* JADX WARN: Removed duplicated region for block: B:73:? A[RETURN, SYNTHETIC] */
     @Override // androidx.compose.ui.semantics.SemanticsListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -201,10 +201,13 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
         if (!Intrinsics.areEqual(fillableData, fillableData2)) {
             if (fillableData == null) {
                 this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, true);
-            } else if (fillableData2 == null) {
-                this.platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, false);
             } else {
-                this.platformAutofillManager.notifyValueChanged(this.view, semanticsId, ((AndroidFillableData) fillableData2).getAutofillValue$ui());
+                PlatformAutofillManager platformAutofillManager = this.platformAutofillManager;
+                if (fillableData2 == null) {
+                    platformAutofillManager.notifyViewVisibilityChanged(this.view, semanticsId, false);
+                } else {
+                    platformAutofillManager.notifyValueChanged(this.view, semanticsId, ((AndroidFillableData) fillableData2).getAutofillValue$ui());
+                }
             }
         }
         if (semanticsConfiguration != null) {
@@ -218,11 +221,12 @@ public final class AndroidAutofillManager extends AutofillManager implements Sem
                     }
                 }
                 if (z == z2) {
+                    MutableIntSet mutableIntSet = this.currentlyDisplayedIDs;
                     if (z2) {
-                        this.currentlyDisplayedIDs.add(semanticsId);
+                        mutableIntSet.add(semanticsId);
                         return;
                     } else {
-                        this.currentlyDisplayedIDs.remove(semanticsId);
+                        mutableIntSet.remove(semanticsId);
                         return;
                     }
                 }

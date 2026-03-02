@@ -86,13 +86,15 @@ public final class PairedStatsAccumulator {
             return LinearTransformation.forNaN();
         }
         double sumOfSquaresOfDeltas = this.xStats.sumOfSquaresOfDeltas();
-        if (sumOfSquaresOfDeltas > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
-            if (this.yStats.sumOfSquaresOfDeltas() > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
+        int i = (sumOfSquaresOfDeltas > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? 1 : (sumOfSquaresOfDeltas == FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE ? 0 : -1));
+        StatsAccumulator statsAccumulator = this.yStats;
+        if (i > 0) {
+            if (statsAccumulator.sumOfSquaresOfDeltas() > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
                 return LinearTransformation.mapping(this.xStats.mean(), this.yStats.mean()).withSlope(this.sumOfProductsOfDeltas / sumOfSquaresOfDeltas);
             }
             return LinearTransformation.horizontal(this.yStats.mean());
         }
-        Preconditions.checkState(this.yStats.sumOfSquaresOfDeltas() > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
+        Preconditions.checkState(statsAccumulator.sumOfSquaresOfDeltas() > FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE);
         return LinearTransformation.vertical(this.xStats.mean());
     }
 

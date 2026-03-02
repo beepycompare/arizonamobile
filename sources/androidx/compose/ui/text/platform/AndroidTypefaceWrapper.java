@@ -28,7 +28,7 @@ public final class AndroidTypefaceWrapper implements AndroidTypeface {
 
     @Override // androidx.compose.ui.text.platform.AndroidTypeface
     /* renamed from: getNativeTypeface-PYhJU0U */
-    public Typeface mo7959getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
+    public Typeface mo7256getNativeTypefacePYhJU0U(FontWeight fontWeight, int i, int i2) {
         return this.typeface;
     }
 }

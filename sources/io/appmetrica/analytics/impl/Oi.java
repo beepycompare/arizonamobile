@@ -8,15 +8,15 @@ public final class Oi {
     /* renamed from: a  reason: collision with root package name */
     public final Revenue f726a;
     public final Um b;
-    public final C0207dn c;
-    public final C0207dn d;
+    public final C0206dn c;
+    public final C0206dn d;
     public final PublicLogger e;
 
     public Oi(Revenue revenue, PublicLogger publicLogger) {
         this.e = publicLogger;
         this.f726a = revenue;
         this.b = new Um(30720, "revenue payload", publicLogger);
-        this.c = new C0207dn(new Um(184320, "receipt data", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
-        this.d = new C0207dn(new Xm(1000, "receipt signature", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
+        this.c = new C0206dn(new Um(184320, "receipt data", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
+        this.d = new C0206dn(new Xm(1000, "receipt signature", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
     }
 }

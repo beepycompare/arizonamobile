@@ -33,9 +33,7 @@ public final class TextFieldSelectionState_androidKt {
         return TextContextMenuModifier_androidKt.addTextContextMenuComponentsWithContext(modifier, new Function2() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit addBasicTextFieldTextContextMenuComponents$lambda$0;
-                addBasicTextFieldTextContextMenuComponents$lambda$0 = TextFieldSelectionState_androidKt.addBasicTextFieldTextContextMenuComponents$lambda$0(TextFieldSelectionState.this, coroutineScope, (TextContextMenuBuilderScope) obj, (Context) obj2);
-                return addBasicTextFieldTextContextMenuComponents$lambda$0;
+                return TextFieldSelectionState_androidKt.addBasicTextFieldTextContextMenuComponents$lambda$0(TextFieldSelectionState.this, coroutineScope, (TextContextMenuBuilderScope) obj, (Context) obj2);
             }
         });
     }
@@ -89,9 +87,9 @@ public final class TextFieldSelectionState_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit addBasicTextFieldTextContextMenuComponents$lambda$0(final TextFieldSelectionState textFieldSelectionState, final CoroutineScope coroutineScope, TextContextMenuBuilderScope textContextMenuBuilderScope, final Context context) {
-        PlatformSelectionBehaviors_androidKt.m1846addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, textFieldSelectionState.getEditable$foundation(), textFieldSelectionState.getTextFieldState$foundation().getVisualText().getText(), TextRange.m7689boximpl(textFieldSelectionState.getTextFieldState$foundation().getVisualText().m1537getSelectiond9O1mEE()), textFieldSelectionState.getPlatformSelectionBehaviors$foundation(), new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState_androidKt$$ExternalSyntheticLambda6
+        PlatformSelectionBehaviors_androidKt.m1600addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, textFieldSelectionState.getEditable$foundation(), textFieldSelectionState.getTextFieldState$foundation().getVisualText().getText(), TextRange.m6991boximpl(textFieldSelectionState.getTextFieldState$foundation().getVisualText().m1336getSelectiond9O1mEE()), textFieldSelectionState.getPlatformSelectionBehaviors$foundation(), new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState_androidKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit addBasicTextFieldTextContextMenuComponents$lambda$0$2;

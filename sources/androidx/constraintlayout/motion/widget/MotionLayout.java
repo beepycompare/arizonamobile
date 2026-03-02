@@ -777,10 +777,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     MotionLayout.this.transitionToState(this.mEndState);
                 } else {
                     int i2 = this.mEndState;
+                    MotionLayout motionLayout = MotionLayout.this;
                     if (i2 == -1) {
-                        MotionLayout.this.setState(i, -1, -1);
+                        motionLayout.setState(i, -1, -1);
                     } else {
-                        MotionLayout.this.setTransition(i, i2);
+                        motionLayout.setTransition(i, i2);
                     }
                 }
                 MotionLayout.this.setState(TransitionState.SETUP);
@@ -1062,10 +1063,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         } else {
             f3 = (i == 2 || i == 6) ? 1.0f : 1.0f;
         }
-        if (this.mScene.getAutoCompleteMode() == 0) {
-            this.mStopLogic.config(this.mTransitionLastPosition, f3, f2, this.mTransitionDuration, this.mScene.getMaxAcceleration(), this.mScene.getMaxVelocity());
+        int autoCompleteMode = this.mScene.getAutoCompleteMode();
+        StopLogic stopLogic = this.mStopLogic;
+        if (autoCompleteMode == 0) {
+            stopLogic.config(this.mTransitionLastPosition, f3, f2, this.mTransitionDuration, this.mScene.getMaxAcceleration(), this.mScene.getMaxVelocity());
         } else {
-            this.mStopLogic.springConfig(this.mTransitionLastPosition, f3, f2, this.mScene.getSpringMass(), this.mScene.getSpringStiffiness(), this.mScene.getSpringDamping(), this.mScene.getSpringStopThreshold(), this.mScene.getSpringBoundary());
+            stopLogic.springConfig(this.mTransitionLastPosition, f3, f2, this.mScene.getSpringMass(), this.mScene.getSpringStiffiness(), this.mScene.getSpringDamping(), this.mScene.getSpringStopThreshold(), this.mScene.getSpringBoundary());
         }
         int i3 = this.mCurrentState;
         this.mTransitionGoalPosition = f3;
@@ -1115,8 +1118,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             float f2;
             float f3;
             float f4 = this.mInitialV;
-            if (f4 > 0.0f) {
-                float f5 = this.mMaxA;
+            int i = (f4 > 0.0f ? 1 : (f4 == 0.0f ? 0 : -1));
+            float f5 = this.mMaxA;
+            if (i > 0) {
                 if (f4 / f5 < f) {
                     f = f4 / f5;
                 }
@@ -1124,11 +1128,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 f2 = (this.mInitialV * f) - (((this.mMaxA * f) * f) / 2.0f);
                 f3 = this.mCurrentP;
             } else {
-                float f6 = this.mMaxA;
-                if ((-f4) / f6 < f) {
-                    f = (-f4) / f6;
+                if ((-f4) / f5 < f) {
+                    f = (-f4) / f5;
                 }
-                MotionLayout.this.mLastVelocity = f4 + (f6 * f);
+                MotionLayout.this.mLastVelocity = f4 + (f5 * f);
                 f2 = (this.mInitialV * f) + (((this.mMaxA * f) * f) / 2.0f);
                 f3 = this.mCurrentP;
             }
@@ -1703,8 +1706,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             motionLayout3.resolveSystem(constraintWidgetContainer3, optimizationLevel, i5, i);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:24:0x00e7  */
-        /* JADX WARN: Removed duplicated region for block: B:40:0x0141 A[SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x00e5  */
+        /* JADX WARN: Removed duplicated region for block: B:40:0x013d A[SYNTHETIC] */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
@@ -1734,25 +1737,27 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                             int i5 = MotionLayout.this.mPreRotateHeight;
                             str = MotionLayout.TAG;
                             motionController2.setStartState(viewState, childAt2, i3, i4, i5);
-                            if (this.mEnd != null) {
+                            if (this.mEnd == null) {
                                 ConstraintWidget widget = getWidget(this.mLayoutEnd, childAt2);
+                                MotionLayout motionLayout = MotionLayout.this;
                                 if (widget != null) {
-                                    motionController2.setEndState(MotionLayout.this.toRect(widget), this.mEnd, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
-                                } else if (MotionLayout.this.mDebugPath != 0) {
+                                    motionController2.setEndState(motionLayout.toRect(widget), this.mEnd, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
+                                } else if (motionLayout.mDebugPath != 0) {
                                     Log.e(str, Debug.getLocation() + "no widget for  " + Debug.getName(childAt2) + " (" + childAt2.getClass().getName() + ")");
                                 }
                             }
                         }
                     } else {
                         ConstraintWidget widget2 = getWidget(this.mLayoutStart, childAt2);
+                        MotionLayout motionLayout2 = MotionLayout.this;
                         if (widget2 != null) {
-                            motionController2.setStartState(MotionLayout.this.toRect(widget2), this.mStart, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
-                        } else if (MotionLayout.this.mDebugPath != 0) {
+                            motionController2.setStartState(motionLayout2.toRect(widget2), this.mStart, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
+                        } else if (motionLayout2.mDebugPath != 0) {
                             Log.e(MotionLayout.TAG, Debug.getLocation() + "no widget for  " + Debug.getName(childAt2) + " (" + childAt2.getClass().getName() + ")");
                         }
                     }
                     str = MotionLayout.TAG;
-                    if (this.mEnd != null) {
+                    if (this.mEnd == null) {
                     }
                 }
             }

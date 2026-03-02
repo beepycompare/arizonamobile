@@ -53,6 +53,7 @@ public class ChainRun extends WidgetRun {
 
     private void build() {
         ConstraintWidget constraintWidget;
+        ArrayList<WidgetRun> arrayList;
         ConstraintWidget constraintWidget2 = this.mWidget;
         ConstraintWidget previousChainMember = constraintWidget2.getPreviousChainMember(this.orientation);
         while (true) {
@@ -67,11 +68,15 @@ public class ChainRun extends WidgetRun {
         this.mWidget = constraintWidget;
         this.mWidgets.add(constraintWidget.getRun(this.orientation));
         ConstraintWidget nextChainMember = constraintWidget.getNextChainMember(this.orientation);
-        while (nextChainMember != null) {
-            this.mWidgets.add(nextChainMember.getRun(this.orientation));
+        while (true) {
+            arrayList = this.mWidgets;
+            if (nextChainMember == null) {
+                break;
+            }
+            arrayList.add(nextChainMember.getRun(this.orientation));
             nextChainMember = nextChainMember.getNextChainMember(this.orientation);
         }
-        Iterator<WidgetRun> it = this.mWidgets.iterator();
+        Iterator<WidgetRun> it = arrayList.iterator();
         while (it.hasNext()) {
             WidgetRun next = it.next();
             if (this.orientation == 0) {
@@ -81,8 +86,8 @@ public class ChainRun extends WidgetRun {
             }
         }
         if (this.orientation == 0 && ((ConstraintWidgetContainer) this.mWidget.getParent()).isRtl() && this.mWidgets.size() > 1) {
-            ArrayList<WidgetRun> arrayList = this.mWidgets;
-            this.mWidget = arrayList.get(arrayList.size() - 1).mWidget;
+            ArrayList<WidgetRun> arrayList2 = this.mWidgets;
+            this.mWidget = arrayList2.get(arrayList2.size() - 1).mWidget;
         }
         this.mChainStyle = this.orientation == 0 ? this.mWidget.getHorizontalChainStyle() : this.mWidget.getVerticalChainStyle();
     }

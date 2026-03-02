@@ -10,53 +10,53 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextGranularity {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Character = m7656constructorimpl(0);
-    private static final int Word = m7656constructorimpl(1);
+    private static final int Character = m6959constructorimpl(0);
+    private static final int Word = m6959constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextGranularity m7655boximpl(int i) {
+    public static final /* synthetic */ TextGranularity m6958boximpl(int i) {
         return new TextGranularity(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m7656constructorimpl(int i) {
+    private static int m6959constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7657equalsimpl(int i, Object obj) {
-        return (obj instanceof TextGranularity) && i == ((TextGranularity) obj).m7661unboximpl();
+    public static boolean m6960equalsimpl(int i, Object obj) {
+        return (obj instanceof TextGranularity) && i == ((TextGranularity) obj).m6964unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7658equalsimpl0(int i, int i2) {
+    public static final boolean m6961equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7659hashCodeimpl(int i) {
+    public static int m6962hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7660toStringimpl(int i) {
+    public static String m6963toStringimpl(int i) {
         return "TextGranularity(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m7657equalsimpl(this.value, obj);
+        return m6960equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7659hashCodeimpl(this.value);
+        return m6962hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m7660toStringimpl(this.value);
+        return m6963toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7661unboximpl() {
+    public final /* synthetic */ int m6964unboximpl() {
         return this.value;
     }
 
@@ -72,12 +72,12 @@ public final class TextGranularity {
         }
 
         /* renamed from: getCharacter-DRrd7Zo  reason: not valid java name */
-        public final int m7662getCharacterDRrd7Zo() {
+        public final int m6965getCharacterDRrd7Zo() {
             return TextGranularity.Character;
         }
 
         /* renamed from: getWord-DRrd7Zo  reason: not valid java name */
-        public final int m7663getWordDRrd7Zo() {
+        public final int m6966getWordDRrd7Zo() {
             return TextGranularity.Word;
         }
     }

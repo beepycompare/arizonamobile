@@ -31,18 +31,18 @@ final class SelectionManager$contextMenuAreaModifier$1 extends SuspendLambda imp
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         SelectionManager$contextMenuAreaModifier$1 selectionManager$contextMenuAreaModifier$1 = new SelectionManager$contextMenuAreaModifier$1(this.this$0, continuation);
-        selectionManager$contextMenuAreaModifier$1.J$0 = ((Offset) obj).m5189unboximpl();
+        selectionManager$contextMenuAreaModifier$1.J$0 = ((Offset) obj).m4537unboximpl();
         return selectionManager$contextMenuAreaModifier$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Unit> continuation) {
-        return m1889invoke3MmeM6k(offset.m5189unboximpl(), continuation);
+        return m1632invoke3MmeM6k(offset.m4537unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
-    public final Object m1889invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
-        return ((SelectionManager$contextMenuAreaModifier$1) create(Offset.m5168boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m1632invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
+        return ((SelectionManager$contextMenuAreaModifier$1) create(Offset.m4516boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -56,12 +56,12 @@ final class SelectionManager$contextMenuAreaModifier$1 extends SuspendLambda imp
             if (contextTextAndSelection$foundation != null) {
                 SelectionManager selectionManager = this.this$0;
                 AnnotatedString component1 = contextTextAndSelection$foundation.component1();
-                long m7705unboximpl = contextTextAndSelection$foundation.component2().m7705unboximpl();
+                long m7007unboximpl = contextTextAndSelection$foundation.component2().m7007unboximpl();
                 PlatformSelectionBehaviors platformSelectionBehaviors$foundation = selectionManager.getPlatformSelectionBehaviors$foundation();
                 if (platformSelectionBehaviors$foundation != null) {
-                    Offset m5168boximpl = Offset.m5168boximpl(j);
+                    Offset m4516boximpl = Offset.m4516boximpl(j);
                     this.label = 1;
-                    if (platformSelectionBehaviors$foundation.mo1834onShowContextMenu_2OEclM(component1, m7705unboximpl, m5168boximpl, this) == coroutine_suspended) {
+                    if (platformSelectionBehaviors$foundation.mo1590onShowContextMenu_2OEclM(component1, m7007unboximpl, m4516boximpl, this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }

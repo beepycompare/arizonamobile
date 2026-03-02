@@ -13,9 +13,7 @@ public final class CheckMainThreadKt {
     private static final Lazy mainThreadId$delegate = LazyKt.lazy(new Function0() { // from class: com.arkivanov.decompose.mainthread.CheckMainThreadKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Long mainThreadId_delegate$lambda$0;
-            mainThreadId_delegate$lambda$0 = CheckMainThreadKt.mainThreadId_delegate$lambda$0();
-            return mainThreadId_delegate$lambda$0;
+            return CheckMainThreadKt.mainThreadId_delegate$lambda$0();
         }
     });
 
@@ -23,7 +21,7 @@ public final class CheckMainThreadKt {
         return (Long) mainThreadId$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Long mainThreadId_delegate$lambda$0() {
         try {
             return Long.valueOf(Looper.getMainLooper().getThread().getId());

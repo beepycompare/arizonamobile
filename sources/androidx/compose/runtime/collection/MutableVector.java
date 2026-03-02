@@ -617,17 +617,24 @@ public final class MutableVector<T> implements RandomAccess {
     public final void removeIf(Function1<? super T, Boolean> function1) {
         int size = getSize();
         int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            if (function1.invoke((Object) this.content[i2]).booleanValue()) {
+        int i2 = 0;
+        while (true) {
+            T[] tArr = this.content;
+            if (i < size) {
+                if (function1.invoke((Object) tArr[i]).booleanValue()) {
+                    i2++;
+                } else if (i2 > 0) {
+                    T[] tArr2 = this.content;
+                    tArr2[i - i2] = tArr2[i];
+                }
                 i++;
-            } else if (i > 0) {
-                T[] tArr = this.content;
-                tArr[i2 - i] = tArr[i2];
+            } else {
+                int i3 = size - i2;
+                ArraysKt.fill(tArr, (Object) null, i3, size);
+                setSize(i3);
+                return;
             }
         }
-        int i3 = size - i;
-        ArraysKt.fill(this.content, (Object) null, i3, size);
-        setSize(i3);
     }
 
     public final boolean retainAll(Collection<? extends T> collection) {

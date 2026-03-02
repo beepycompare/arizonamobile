@@ -603,15 +603,19 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
             return;
         }
         MaterialShapeDrawable materialShapeDrawable = this.shapeDrawable;
-        if (hasBadgeContent()) {
-            badgeShapeAppearanceResId = this.state.getBadgeWithTextShapeAppearanceResId();
+        boolean hasBadgeContent = hasBadgeContent();
+        BadgeState badgeState = this.state;
+        if (hasBadgeContent) {
+            badgeShapeAppearanceResId = badgeState.getBadgeWithTextShapeAppearanceResId();
         } else {
-            badgeShapeAppearanceResId = this.state.getBadgeShapeAppearanceResId();
+            badgeShapeAppearanceResId = badgeState.getBadgeShapeAppearanceResId();
         }
-        if (hasBadgeContent()) {
-            badgeShapeAppearanceOverlayResId = this.state.getBadgeWithTextShapeAppearanceOverlayResId();
+        boolean hasBadgeContent2 = hasBadgeContent();
+        BadgeState badgeState2 = this.state;
+        if (hasBadgeContent2) {
+            badgeShapeAppearanceOverlayResId = badgeState2.getBadgeWithTextShapeAppearanceOverlayResId();
         } else {
-            badgeShapeAppearanceOverlayResId = this.state.getBadgeShapeAppearanceOverlayResId();
+            badgeShapeAppearanceOverlayResId = badgeState2.getBadgeShapeAppearanceOverlayResId();
         }
         materialShapeDrawable.setShapeAppearanceModel(ShapeAppearanceModel.builder(context, badgeShapeAppearanceResId, badgeShapeAppearanceOverlayResId).build());
         invalidateSelf();
@@ -662,13 +666,17 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
 
     private int getTotalHorizontalOffsetForState() {
         int horizontalOffsetWithoutText;
-        if (hasBadgeContent()) {
-            horizontalOffsetWithoutText = this.state.getHorizontalOffsetWithText();
+        boolean hasBadgeContent = hasBadgeContent();
+        BadgeState badgeState = this.state;
+        if (hasBadgeContent) {
+            horizontalOffsetWithoutText = badgeState.getHorizontalOffsetWithText();
         } else {
-            horizontalOffsetWithoutText = this.state.getHorizontalOffsetWithoutText();
+            horizontalOffsetWithoutText = badgeState.getHorizontalOffsetWithoutText();
         }
         if (this.state.offsetAlignmentMode == 1) {
-            horizontalOffsetWithoutText += hasBadgeContent() ? this.state.horizontalInsetWithText : this.state.horizontalInset;
+            boolean hasBadgeContent2 = hasBadgeContent();
+            BadgeState badgeState2 = this.state;
+            horizontalOffsetWithoutText += hasBadgeContent2 ? badgeState2.horizontalInsetWithText : badgeState2.horizontalInset;
         }
         return horizontalOffsetWithoutText + this.state.getAdditionalHorizontalOffset();
     }
@@ -676,14 +684,20 @@ public class BadgeDrawable extends Drawable implements TextDrawableHelper.TextDr
     private void calculateCenterAndBounds(Rect rect, View view) {
         float f;
         float f2;
-        float f3 = hasBadgeContent() ? this.state.badgeWithTextRadius : this.state.badgeRadius;
+        boolean hasBadgeContent = hasBadgeContent();
+        BadgeState badgeState = this.state;
+        float f3 = hasBadgeContent ? badgeState.badgeWithTextRadius : badgeState.badgeRadius;
         this.cornerRadius = f3;
         if (f3 != -1.0f) {
             this.halfBadgeWidth = f3;
             this.halfBadgeHeight = f3;
         } else {
-            this.halfBadgeWidth = Math.round((hasBadgeContent() ? this.state.badgeWithTextWidth : this.state.badgeWidth) / 2.0f);
-            this.halfBadgeHeight = Math.round((hasBadgeContent() ? this.state.badgeWithTextHeight : this.state.badgeHeight) / 2.0f);
+            boolean hasBadgeContent2 = hasBadgeContent();
+            BadgeState badgeState2 = this.state;
+            this.halfBadgeWidth = Math.round((hasBadgeContent2 ? badgeState2.badgeWithTextWidth : badgeState2.badgeWidth) / 2.0f);
+            boolean hasBadgeContent3 = hasBadgeContent();
+            BadgeState badgeState3 = this.state;
+            this.halfBadgeHeight = Math.round((hasBadgeContent3 ? badgeState3.badgeWithTextHeight : badgeState3.badgeHeight) / 2.0f);
         }
         if (hasBadgeContent()) {
             String badgeContent = getBadgeContent();

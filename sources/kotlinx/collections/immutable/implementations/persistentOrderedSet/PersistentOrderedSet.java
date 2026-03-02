@@ -27,14 +27,14 @@ public final class PersistentOrderedSet<E> extends AbstractSet<E> implements Per
     private final PersistentHashMap<E, Links> hashMap;
     private final Object lastElement;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean equals$lambda$4(Links links, Links links2) {
         Intrinsics.checkNotNullParameter(links, "<unused var>");
         Intrinsics.checkNotNullParameter(links2, "<unused var>");
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean equals$lambda$5(Links links, Links links2) {
         Intrinsics.checkNotNullParameter(links, "<unused var>");
         Intrinsics.checkNotNullParameter(links2, "<unused var>");
@@ -186,9 +186,7 @@ public final class PersistentOrderedSet<E> extends AbstractSet<E> implements Per
                 return this.hashMap.getNode$kotlinx_collections_immutable().equalsWith$kotlinx_collections_immutable((TrieNode<E, Links>) ((PersistentOrderedSet) obj).hashMap.getNode$kotlinx_collections_immutable(), new Function2() { // from class: kotlinx.collections.immutable.implementations.persistentOrderedSet.PersistentOrderedSet$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        boolean equals$lambda$4;
-                        equals$lambda$4 = PersistentOrderedSet.equals$lambda$4((Links) obj2, (Links) obj3);
-                        return Boolean.valueOf(equals$lambda$4);
+                        return Boolean.valueOf(PersistentOrderedSet.equals$lambda$4((Links) obj2, (Links) obj3));
                     }
                 });
             }
@@ -196,9 +194,7 @@ public final class PersistentOrderedSet<E> extends AbstractSet<E> implements Per
                 return this.hashMap.getNode$kotlinx_collections_immutable().equalsWith$kotlinx_collections_immutable((TrieNode<E, Links>) ((PersistentOrderedSetBuilder) obj).getHashMapBuilder$kotlinx_collections_immutable().getNode$kotlinx_collections_immutable(), new Function2() { // from class: kotlinx.collections.immutable.implementations.persistentOrderedSet.PersistentOrderedSet$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        boolean equals$lambda$5;
-                        equals$lambda$5 = PersistentOrderedSet.equals$lambda$5((Links) obj2, (Links) obj3);
-                        return Boolean.valueOf(equals$lambda$5);
+                        return Boolean.valueOf(PersistentOrderedSet.equals$lambda$5((Links) obj2, (Links) obj3));
                     }
                 });
             }

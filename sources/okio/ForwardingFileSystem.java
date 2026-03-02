@@ -90,14 +90,12 @@ public abstract class ForwardingFileSystem extends FileSystem {
         return SequencesKt.map(this.delegate.listRecursively(onPathParameter(dir, "listRecursively", "dir"), z), new Function1() { // from class: okio.ForwardingFileSystem$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Path listRecursively$lambda$0;
-                listRecursively$lambda$0 = ForwardingFileSystem.listRecursively$lambda$0(ForwardingFileSystem.this, (Path) obj);
-                return listRecursively$lambda$0;
+                return ForwardingFileSystem.listRecursively$lambda$0(ForwardingFileSystem.this, (Path) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Path listRecursively$lambda$0(ForwardingFileSystem forwardingFileSystem, Path it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return forwardingFileSystem.onPathResult(it, "listRecursively");

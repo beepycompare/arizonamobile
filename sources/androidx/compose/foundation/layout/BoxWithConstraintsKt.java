@@ -22,7 +22,7 @@ import kotlin.jvm.functions.Function3;
 @Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aN\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072!\u0010\b\u001a\u001d\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\t¢\u0006\u0002\b\u000b¢\u0006\u0002\b\f¢\u0006\u0002\b\rH\u0007¢\u0006\u0002\u0010\u000e¨\u0006\u000f"}, d2 = {"BoxWithConstraints", "", "modifier", "Landroidx/compose/ui/Modifier;", "contentAlignment", "Landroidx/compose/ui/Alignment;", "propagateMinConstraints", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/BoxWithConstraintsScope;", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/ui/UiComposable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "foundation-layout"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class BoxWithConstraintsKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BoxWithConstraints$lambda$1(Modifier modifier, Alignment alignment, boolean z, Function3 function3, int i, int i2, Composer composer, int i3) {
         BoxWithConstraints(modifier, alignment, z, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -119,9 +119,7 @@ public final class BoxWithConstraintsKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit BoxWithConstraints$lambda$1;
-                            BoxWithConstraints$lambda$1 = BoxWithConstraintsKt.BoxWithConstraints$lambda$1(Modifier.this, alignment3, z3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return BoxWithConstraints$lambda$1;
+                            return BoxWithConstraintsKt.BoxWithConstraints$lambda$1(Modifier.this, alignment3, z3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -153,15 +151,15 @@ public final class BoxWithConstraintsKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult BoxWithConstraints$lambda$0$0(MeasurePolicy measurePolicy, final Function3 function3, SubcomposeMeasureScope subcomposeMeasureScope, Constraints constraints) {
-        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m8217unboximpl(), null);
-        return measurePolicy.mo54measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda2
+        final BoxWithConstraintsScopeImpl boxWithConstraintsScopeImpl = new BoxWithConstraintsScopeImpl(subcomposeMeasureScope, constraints.m7514unboximpl(), null);
+        return measurePolicy.mo41measure3p2s80s(subcomposeMeasureScope, subcomposeMeasureScope.subcompose(Unit.INSTANCE, ComposableLambdaKt.composableLambdaInstance(-431986394, true, new Function2() { // from class: androidx.compose.foundation.layout.BoxWithConstraintsKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 Unit BoxWithConstraints$lambda$0$0$0;
                 BoxWithConstraints$lambda$0$0$0 = BoxWithConstraintsKt.BoxWithConstraints$lambda$0$0$0(Function3.this, boxWithConstraintsScopeImpl, (Composer) obj, ((Integer) obj2).intValue());
                 return BoxWithConstraints$lambda$0$0$0;
             }
-        })), constraints.m8217unboximpl());
+        })), constraints.m7514unboximpl());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

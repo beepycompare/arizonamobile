@@ -49,10 +49,12 @@ final class SizeStrategy implements LruPoolStrategy {
 
     private void decrementBitmapOfSize(Integer num) {
         Integer num2 = (Integer) this.sortedSizes.get(num);
-        if (num2.intValue() == 1) {
-            this.sortedSizes.remove(num);
+        int intValue = num2.intValue();
+        NavigableMap<Integer, Integer> navigableMap = this.sortedSizes;
+        if (intValue == 1) {
+            navigableMap.remove(num);
         } else {
-            this.sortedSizes.put(num, Integer.valueOf(num2.intValue() - 1));
+            navigableMap.put(num, Integer.valueOf(num2.intValue() - 1));
         }
     }
 

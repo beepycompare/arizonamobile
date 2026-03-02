@@ -173,14 +173,14 @@ public final class TrackSelectionDialogBuilder {
         return new DialogInterface.OnClickListener() { // from class: androidx.media3.ui.TrackSelectionDialogBuilder$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                TrackSelectionDialogBuilder.this.m9103xc121951d(trackSelectionView, dialogInterface, i);
+                TrackSelectionDialogBuilder.this.m8381xc121951d(trackSelectionView, dialogInterface, i);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setUpDialogView$1$androidx-media3-ui-TrackSelectionDialogBuilder  reason: not valid java name */
-    public /* synthetic */ void m9103xc121951d(TrackSelectionView trackSelectionView, DialogInterface dialogInterface, int i) {
+    public /* synthetic */ void m8381xc121951d(TrackSelectionView trackSelectionView, DialogInterface dialogInterface, int i) {
         this.callback.onTracksSelected(trackSelectionView.getIsDisabled(), trackSelectionView.getOverrides());
     }
 }

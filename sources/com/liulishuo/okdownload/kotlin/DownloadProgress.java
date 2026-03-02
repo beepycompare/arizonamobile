@@ -108,9 +108,8 @@ public final class DownloadProgress {
         if (j == -1) {
             return 0.0f;
         }
-        if (j == 0) {
-            return this.currentOffset == 0 ? 1.0f : 0.0f;
-        }
-        return (((float) this.currentOffset) * 1.0f) / ((float) j);
+        int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
+        long j2 = this.currentOffset;
+        return i == 0 ? j2 == 0 ? 1.0f : 0.0f : (((float) j2) * 1.0f) / ((float) j);
     }
 }

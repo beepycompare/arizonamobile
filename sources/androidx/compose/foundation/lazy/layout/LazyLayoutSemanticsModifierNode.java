@@ -23,9 +23,7 @@ public final class LazyLayoutSemanticsModifierNode extends Modifier.Node impleme
     private final Function1<Object, Integer> indexForKeyMapping = new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            int indexForKeyMapping$lambda$0;
-            indexForKeyMapping$lambda$0 = LazyLayoutSemanticsModifierNode.indexForKeyMapping$lambda$0(LazyLayoutSemanticsModifierNode.this, obj);
-            return Integer.valueOf(indexForKeyMapping$lambda$0);
+            return Integer.valueOf(LazyLayoutSemanticsModifierNode.indexForKeyMapping$lambda$0(LazyLayoutSemanticsModifierNode.this, obj));
         }
     };
     private Function0<? extends LazyLayoutItemProvider> itemProviderLambda;
@@ -58,7 +56,7 @@ public final class LazyLayoutSemanticsModifierNode extends Modifier.Node impleme
         return this.state.collectionInfo();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int indexForKeyMapping$lambda$0(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode, Object obj) {
         LazyLayoutItemProvider invoke = lazyLayoutSemanticsModifierNode.itemProviderLambda.invoke();
         int itemCount = invoke.getItemCount();
@@ -90,20 +88,20 @@ public final class LazyLayoutSemanticsModifierNode extends Modifier.Node impleme
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setTraversalGroup(semanticsPropertyReceiver, true);
         SemanticsPropertiesKt.indexForKey(semanticsPropertyReceiver, this.indexForKeyMapping);
-        if (isVertical()) {
-            ScrollAxisRange scrollAxisRange = this.scrollAxisRange;
+        boolean isVertical = isVertical();
+        ScrollAxisRange scrollAxisRange = this.scrollAxisRange;
+        if (isVertical) {
             if (scrollAxisRange == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("scrollAxisRange");
                 scrollAxisRange = null;
             }
             SemanticsPropertiesKt.setVerticalScrollAxisRange(semanticsPropertyReceiver, scrollAxisRange);
         } else {
-            ScrollAxisRange scrollAxisRange2 = this.scrollAxisRange;
-            if (scrollAxisRange2 == null) {
+            if (scrollAxisRange == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("scrollAxisRange");
-                scrollAxisRange2 = null;
+                scrollAxisRange = null;
             }
-            SemanticsPropertiesKt.setHorizontalScrollAxisRange(semanticsPropertyReceiver, scrollAxisRange2);
+            SemanticsPropertiesKt.setHorizontalScrollAxisRange(semanticsPropertyReceiver, scrollAxisRange);
         }
         Function1<? super Integer, Boolean> function1 = this.scrollToIndexAction;
         if (function1 != null) {
@@ -112,56 +110,40 @@ public final class LazyLayoutSemanticsModifierNode extends Modifier.Node impleme
         SemanticsPropertiesKt.getScrollViewportLength$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Float applySemantics$lambda$1;
-                applySemantics$lambda$1 = LazyLayoutSemanticsModifierNode.applySemantics$lambda$1(LazyLayoutSemanticsModifierNode.this);
-                return applySemantics$lambda$1;
+                Float valueOf;
+                LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode = LazyLayoutSemanticsModifierNode.this;
+                valueOf = Float.valueOf(lazyLayoutSemanticsModifierNode.state.getViewport() - lazyLayoutSemanticsModifierNode.state.getContentPadding());
+                return valueOf;
             }
         }, 1, null);
         SemanticsPropertiesKt.setCollectionInfo(semanticsPropertyReceiver, getCollectionInfo());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Float applySemantics$lambda$1(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
-        return Float.valueOf(lazyLayoutSemanticsModifierNode.state.getViewport() - lazyLayoutSemanticsModifierNode.state.getContentPadding());
     }
 
     private final void updateCachedSemanticsValues() {
         this.scrollAxisRange = new ScrollAxisRange(new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float updateCachedSemanticsValues$lambda$0;
-                updateCachedSemanticsValues$lambda$0 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$0(LazyLayoutSemanticsModifierNode.this);
-                return Float.valueOf(updateCachedSemanticsValues$lambda$0);
+                float scrollOffset;
+                scrollOffset = LazyLayoutSemanticsModifierNode.this.state.getScrollOffset();
+                return Float.valueOf(scrollOffset);
             }
         }, new Function0() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float updateCachedSemanticsValues$lambda$1;
-                updateCachedSemanticsValues$lambda$1 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$1(LazyLayoutSemanticsModifierNode.this);
-                return Float.valueOf(updateCachedSemanticsValues$lambda$1);
+                float maxScrollOffset;
+                maxScrollOffset = LazyLayoutSemanticsModifierNode.this.state.getMaxScrollOffset();
+                return Float.valueOf(maxScrollOffset);
             }
         }, this.reverseScrolling);
         this.scrollToIndexAction = this.userScrollEnabled ? new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutSemanticsModifierNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean updateCachedSemanticsValues$lambda$2;
-                updateCachedSemanticsValues$lambda$2 = LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$2(LazyLayoutSemanticsModifierNode.this, ((Integer) obj).intValue());
-                return Boolean.valueOf(updateCachedSemanticsValues$lambda$2);
+                return Boolean.valueOf(LazyLayoutSemanticsModifierNode.updateCachedSemanticsValues$lambda$2(LazyLayoutSemanticsModifierNode.this, ((Integer) obj).intValue()));
             }
         } : null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float updateCachedSemanticsValues$lambda$0(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
-        return lazyLayoutSemanticsModifierNode.state.getScrollOffset();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float updateCachedSemanticsValues$lambda$1(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode) {
-        return lazyLayoutSemanticsModifierNode.state.getMaxScrollOffset();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean updateCachedSemanticsValues$lambda$2(LazyLayoutSemanticsModifierNode lazyLayoutSemanticsModifierNode, int i) {
         LazyLayoutItemProvider invoke = lazyLayoutSemanticsModifierNode.itemProviderLambda.invoke();
         if (!(i >= 0 && i < invoke.getItemCount())) {

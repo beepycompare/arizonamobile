@@ -105,14 +105,22 @@ public class ProtectionLayout extends FrameLayout {
     }
 
     private void removeProtectionViews() {
-        if (this.mGroup != null) {
-            removeViews(getChildCount() - this.mGroup.size(), this.mGroup.size());
-            int size = this.mGroup.size();
-            for (int i = 0; i < size; i++) {
-                this.mGroup.getProtection(i).getAttributes().setCallback(null);
+        if (this.mGroup == null) {
+            return;
+        }
+        removeViews(getChildCount() - this.mGroup.size(), this.mGroup.size());
+        int size = this.mGroup.size();
+        int i = 0;
+        while (true) {
+            ProtectionGroup protectionGroup = this.mGroup;
+            if (i < size) {
+                protectionGroup.getProtection(i).getAttributes().setCallback(null);
+                i++;
+            } else {
+                protectionGroup.dispose();
+                this.mGroup = null;
+                return;
             }
-            this.mGroup.dispose();
-            this.mGroup = null;
         }
     }
 

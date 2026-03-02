@@ -68,32 +68,24 @@ public final class ValueExtKt {
             LifecycleExtKt.subscribe$default(lifecycle, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$0;
-                    subscribe$lambda$0 = ValueExtKt.subscribe$lambda$0(Ref.ObjectRef.this, value, observer);
-                    return subscribe$lambda$0;
+                    return ValueExtKt.subscribe$lambda$0(Ref.ObjectRef.this, value, observer);
                 }
             }, null, null, null, null, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$1;
-                    subscribe$lambda$1 = ValueExtKt.subscribe$lambda$1(Ref.ObjectRef.this);
-                    return subscribe$lambda$1;
+                    return ValueExtKt.subscribe$lambda$1(Ref.ObjectRef.this);
                 }
             }, 30, null);
         } else if (i == 2) {
             LifecycleExtKt.subscribe$default(lifecycle, null, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$2;
-                    subscribe$lambda$2 = ValueExtKt.subscribe$lambda$2(Ref.ObjectRef.this, value, observer);
-                    return subscribe$lambda$2;
+                    return ValueExtKt.subscribe$lambda$2(Ref.ObjectRef.this, value, observer);
                 }
             }, null, null, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$3;
-                    subscribe$lambda$3 = ValueExtKt.subscribe$lambda$3(Ref.ObjectRef.this);
-                    return subscribe$lambda$3;
+                    return ValueExtKt.subscribe$lambda$3(Ref.ObjectRef.this);
                 }
             }, null, 45, null);
         } else if (i != 3) {
@@ -102,29 +94,25 @@ public final class ValueExtKt {
             LifecycleExtKt.subscribe$default(lifecycle, null, null, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$4;
-                    subscribe$lambda$4 = ValueExtKt.subscribe$lambda$4(Ref.ObjectRef.this, value, observer);
-                    return subscribe$lambda$4;
+                    return ValueExtKt.subscribe$lambda$4(Ref.ObjectRef.this, value, observer);
                 }
             }, new Function0() { // from class: com.arkivanov.decompose.value.ValueExtKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit subscribe$lambda$5;
-                    subscribe$lambda$5 = ValueExtKt.subscribe$lambda$5(Ref.ObjectRef.this);
-                    return subscribe$lambda$5;
+                    return ValueExtKt.subscribe$lambda$5(Ref.ObjectRef.this);
                 }
             }, null, null, 51, null);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r1v1, types: [com.arkivanov.decompose.Cancellation, T] */
     public static final Unit subscribe$lambda$0(Ref.ObjectRef objectRef, Value value, Function1 function1) {
         objectRef.element = value.subscribe(function1);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribe$lambda$1(Ref.ObjectRef objectRef) {
         Cancellation cancellation = (Cancellation) objectRef.element;
         if (cancellation != null) {
@@ -133,14 +121,14 @@ public final class ValueExtKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r1v1, types: [com.arkivanov.decompose.Cancellation, T] */
     public static final Unit subscribe$lambda$2(Ref.ObjectRef objectRef, Value value, Function1 function1) {
         objectRef.element = value.subscribe(function1);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribe$lambda$3(Ref.ObjectRef objectRef) {
         Cancellation cancellation = (Cancellation) objectRef.element;
         if (cancellation != null) {
@@ -149,14 +137,14 @@ public final class ValueExtKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r1v1, types: [com.arkivanov.decompose.Cancellation, T] */
     public static final Unit subscribe$lambda$4(Ref.ObjectRef objectRef, Value value, Function1 function1) {
         objectRef.element = value.subscribe(function1);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subscribe$lambda$5(Ref.ObjectRef objectRef) {
         Cancellation cancellation = (Cancellation) objectRef.element;
         if (cancellation != null) {

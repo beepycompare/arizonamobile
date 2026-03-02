@@ -5,7 +5,7 @@ import dagger.internal.AbstractMapFactory;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class MapProviderFactory<K, V> extends AbstractMapFactory<K, V, Provider<V>> implements Lazy<Map<K, Provider<V>>> {
     public static <K, V> Builder<K, V> builder(int size) {
         return new Builder<>(size);
@@ -20,7 +20,7 @@ public final class MapProviderFactory<K, V> extends AbstractMapFactory<K, V, Pro
         return contributingMap();
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder<K, V> extends AbstractMapFactory.Builder<K, V, Provider<V>> {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // dagger.internal.AbstractMapFactory.Builder
@@ -52,7 +52,13 @@ public final class MapProviderFactory<K, V> extends AbstractMapFactory<K, V, Pro
 
         @Deprecated
         public Builder<K, V> putAll(final javax.inject.Provider<Map<K, javax.inject.Provider<V>>> mapProviderFactory) {
-            return putAll((Provider) new Provider<Map<K, Provider<V>>>() { // from class: dagger.internal.MapProviderFactory.Builder.1
+            return putAll((Provider) new Provider<Map<K, Provider<V>>>(this) { // from class: dagger.internal.MapProviderFactory.Builder.1
+                final /* synthetic */ Builder this$0;
+
+                {
+                    this.this$0 = this;
+                }
+
                 @Override // javax.inject.Provider, jakarta.inject.Provider
                 public Map<K, Provider<V>> get() {
                     Map map = (Map) mapProviderFactory.get();

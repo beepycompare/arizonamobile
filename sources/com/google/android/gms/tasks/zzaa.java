@@ -1,23 +1,39 @@
 package com.google.android.gms.tasks;
 
-import java.util.ArrayList;
-import java.util.Collection;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
-final class zzaa implements Continuation {
-    final /* synthetic */ Collection zza;
+final class zzaa<T> implements zzab<T> {
+    private final CountDownLatch zza = new CountDownLatch(1);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public zzaa(Collection collection) {
-        this.zza = collection;
+    private zzaa() {
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public final /* bridge */ /* synthetic */ Object then(Task task) throws Exception {
-        ArrayList arrayList = new ArrayList();
-        for (Task task2 : this.zza) {
-            arrayList.add(task2.getResult());
-        }
-        return arrayList;
+    @Override // com.google.android.gms.tasks.OnCanceledListener
+    public final void onCanceled() {
+        this.zza.countDown();
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        this.zza.countDown();
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(T t) {
+        this.zza.countDown();
+    }
+
+    public final void zza() throws InterruptedException {
+        this.zza.await();
+    }
+
+    public final boolean zzb(long j, TimeUnit timeUnit) throws InterruptedException {
+        return this.zza.await(j, timeUnit);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public /* synthetic */ zzaa(byte[] bArr) {
     }
 }

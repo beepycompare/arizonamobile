@@ -822,11 +822,18 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
             int i;
             int horizontalOriginalOffset;
             Drawable background = getBackground();
+            AppCompatSpinner appCompatSpinner = AppCompatSpinner.this;
             if (background != null) {
-                background.getPadding(AppCompatSpinner.this.mTempRect);
-                i = ViewUtils.isLayoutRtl(AppCompatSpinner.this) ? AppCompatSpinner.this.mTempRect.right : -AppCompatSpinner.this.mTempRect.left;
+                background.getPadding(appCompatSpinner.mTempRect);
+                boolean isLayoutRtl = ViewUtils.isLayoutRtl(AppCompatSpinner.this);
+                AppCompatSpinner appCompatSpinner2 = AppCompatSpinner.this;
+                if (isLayoutRtl) {
+                    i = appCompatSpinner2.mTempRect.right;
+                } else {
+                    i = -appCompatSpinner2.mTempRect.left;
+                }
             } else {
-                Rect rect = AppCompatSpinner.this.mTempRect;
+                Rect rect = appCompatSpinner.mTempRect;
                 AppCompatSpinner.this.mTempRect.right = 0;
                 rect.left = 0;
                 i = 0;
@@ -834,14 +841,16 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
             int paddingLeft = AppCompatSpinner.this.getPaddingLeft();
             int paddingRight = AppCompatSpinner.this.getPaddingRight();
             int width = AppCompatSpinner.this.getWidth();
-            if (AppCompatSpinner.this.mDropDownWidth == -2) {
-                int compatMeasureContentWidth = AppCompatSpinner.this.compatMeasureContentWidth((SpinnerAdapter) this.mAdapter, getBackground());
-                int i2 = (AppCompatSpinner.this.getContext().getResources().getDisplayMetrics().widthPixels - AppCompatSpinner.this.mTempRect.left) - AppCompatSpinner.this.mTempRect.right;
-                if (compatMeasureContentWidth > i2) {
-                    compatMeasureContentWidth = i2;
+            int i2 = AppCompatSpinner.this.mDropDownWidth;
+            AppCompatSpinner appCompatSpinner3 = AppCompatSpinner.this;
+            if (i2 == -2) {
+                int compatMeasureContentWidth = appCompatSpinner3.compatMeasureContentWidth((SpinnerAdapter) this.mAdapter, getBackground());
+                int i3 = (AppCompatSpinner.this.getContext().getResources().getDisplayMetrics().widthPixels - AppCompatSpinner.this.mTempRect.left) - AppCompatSpinner.this.mTempRect.right;
+                if (compatMeasureContentWidth > i3) {
+                    compatMeasureContentWidth = i3;
                 }
                 setContentWidth(Math.max(compatMeasureContentWidth, (width - paddingLeft) - paddingRight));
-            } else if (AppCompatSpinner.this.mDropDownWidth == -1) {
+            } else if (appCompatSpinner3.mDropDownWidth == -1) {
                 setContentWidth((width - paddingLeft) - paddingRight);
             } else {
                 setContentWidth(AppCompatSpinner.this.mDropDownWidth);
@@ -873,11 +882,13 @@ public class AppCompatSpinner extends Spinner implements TintableBackgroundView 
                 @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
                 public void onGlobalLayout() {
                     DropdownPopup dropdownPopup = DropdownPopup.this;
-                    if (!dropdownPopup.isVisibleToUser(AppCompatSpinner.this)) {
-                        DropdownPopup.this.dismiss();
+                    boolean isVisibleToUser = dropdownPopup.isVisibleToUser(AppCompatSpinner.this);
+                    DropdownPopup dropdownPopup2 = DropdownPopup.this;
+                    if (!isVisibleToUser) {
+                        dropdownPopup2.dismiss();
                         return;
                     }
-                    DropdownPopup.this.computeContentWidth();
+                    dropdownPopup2.computeContentWidth();
                     DropdownPopup.super.show();
                 }
             };

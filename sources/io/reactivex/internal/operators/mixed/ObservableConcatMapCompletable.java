@@ -195,11 +195,12 @@ public final class ObservableConcatMapCompletable<T> extends Completable {
                         if (z2 && z) {
                             this.disposed = true;
                             Throwable terminate = atomicThrowable.terminate();
+                            CompletableObserver completableObserver = this.downstream;
                             if (terminate != null) {
-                                this.downstream.onError(terminate);
+                                completableObserver.onError(terminate);
                                 return;
                             } else {
-                                this.downstream.onComplete();
+                                completableObserver.onComplete();
                                 return;
                             }
                         } else if (!z) {

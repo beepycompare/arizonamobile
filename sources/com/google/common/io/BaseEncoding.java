@@ -487,6 +487,7 @@ public abstract class BaseEncoding {
 
         @Override // com.google.common.io.BaseEncoding
         int decodeTo(byte[] target, CharSequence chars) throws DecodingException {
+            Alphabet alphabet;
             Preconditions.checkNotNull(target);
             CharSequence trimTrailingPadding = trimTrailingPadding(chars);
             if (!this.alphabet.isValidPaddingStartPosition(trimTrailingPadding.length())) {
@@ -497,18 +498,25 @@ public abstract class BaseEncoding {
             while (i < trimTrailingPadding.length()) {
                 long j = 0;
                 int i3 = 0;
-                for (int i4 = 0; i4 < this.alphabet.charsPerChunk; i4++) {
-                    j <<= this.alphabet.bitsPerChar;
-                    if (i + i4 < trimTrailingPadding.length()) {
-                        j |= this.alphabet.decode(trimTrailingPadding.charAt(i3 + i));
-                        i3++;
+                int i4 = 0;
+                while (true) {
+                    int i5 = this.alphabet.charsPerChunk;
+                    alphabet = this.alphabet;
+                    if (i3 >= i5) {
+                        break;
                     }
+                    j <<= alphabet.bitsPerChar;
+                    if (i + i3 < trimTrailingPadding.length()) {
+                        j |= this.alphabet.decode(trimTrailingPadding.charAt(i4 + i));
+                        i4++;
+                    }
+                    i3++;
                 }
-                int i5 = (this.alphabet.bytesPerChunk * 8) - (i3 * this.alphabet.bitsPerChar);
-                int i6 = (this.alphabet.bytesPerChunk - 1) * 8;
-                while (i6 >= i5) {
-                    target[i2] = (byte) ((j >>> i6) & 255);
-                    i6 -= 8;
+                int i6 = (alphabet.bytesPerChunk * 8) - (i4 * this.alphabet.bitsPerChar);
+                int i7 = (this.alphabet.bytesPerChunk - 1) * 8;
+                while (i7 >= i6) {
+                    target[i2] = (byte) ((j >>> i7) & 255);
+                    i7 -= 8;
                     i2++;
                 }
                 i += this.alphabet.charsPerChunk;

@@ -72,10 +72,12 @@ public final class LruArrayPool implements ArrayPool {
     public synchronized <T> T get(int i, Class<T> cls) {
         Key key;
         Integer ceilingKey = getSizesForAdapter(cls).ceilingKey(Integer.valueOf(i));
-        if (mayFillRequest(i, ceilingKey)) {
-            key = this.keyPool.get(ceilingKey.intValue(), cls);
+        boolean mayFillRequest = mayFillRequest(i, ceilingKey);
+        KeyPool keyPool = this.keyPool;
+        if (mayFillRequest) {
+            key = keyPool.get(ceilingKey.intValue(), cls);
         } else {
-            key = this.keyPool.get(i, cls);
+            key = keyPool.get(i, cls);
         }
         return (T) getForKey(key, cls);
     }

@@ -8,6 +8,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class AlphaKt {
     public static final Modifier alpha(Modifier modifier, float f) {
-        return f == 1.0f ? modifier : GraphicsLayerModifierKt.m5591graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, true, null, 0L, 0L, 0, 0, null, 520187, null);
+        return f == 1.0f ? modifier : GraphicsLayerModifierKt.m4937graphicsLayer_6ThJ44$default(modifier, 0.0f, 0.0f, f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0L, null, true, null, 0L, 0L, 0, 0, null, 520187, null);
     }
 }

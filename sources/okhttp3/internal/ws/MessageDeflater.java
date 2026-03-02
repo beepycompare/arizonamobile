@@ -41,8 +41,10 @@ public final class MessageDeflater implements Closeable {
         this.deflaterSink.flush();
         Buffer buffer2 = this.deflatedBytes;
         byteString = MessageDeflaterKt.EMPTY_DEFLATE_BLOCK;
-        if (endsWith(buffer2, byteString)) {
-            long size = this.deflatedBytes.size() - 4;
+        boolean endsWith = endsWith(buffer2, byteString);
+        Buffer buffer3 = this.deflatedBytes;
+        if (endsWith) {
+            long size = buffer3.size() - 4;
             Buffer.UnsafeCursor readAndWriteUnsafe$default = Buffer.readAndWriteUnsafe$default(this.deflatedBytes, null, 1, null);
             try {
                 Long.valueOf(readAndWriteUnsafe$default.resizeBuffer(size));
@@ -50,10 +52,10 @@ public final class MessageDeflater implements Closeable {
             } finally {
             }
         } else {
-            this.deflatedBytes.writeByte(0);
+            buffer3.writeByte(0);
         }
-        Buffer buffer3 = this.deflatedBytes;
-        buffer.write(buffer3, buffer3.size());
+        Buffer buffer4 = this.deflatedBytes;
+        buffer.write(buffer4, buffer4.size());
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

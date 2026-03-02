@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.mediacodec;
 import android.os.Bundle;
 import androidx.media3.decoder.CryptoInfo;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface MediaCodecBufferEnqueuer {
     void flush();
 

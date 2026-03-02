@@ -12,8 +12,8 @@ import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFact
 public final class Mb implements Kb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0652ve f691a = new C0652ve();
-    public final C0624ub b = new C0624ub();
+    public final C0651ve f691a = new C0651ve();
+    public final C0623ub b = new C0623ub();
     public final Wb c = new Wb();
 
     @Override // io.appmetrica.analytics.impl.Kb, io.appmetrica.analytics.impl.Nb

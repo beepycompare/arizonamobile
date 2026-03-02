@@ -25,41 +25,41 @@ public final class AndroidTextFieldKeyEventHandler extends TextFieldKeyEventHand
 
     @Override // androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler
     /* renamed from: onPreKeyEvent-MyFupTE  reason: not valid java name */
-    public boolean mo1565onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
-        boolean m1665isKeyCodeYhN2O0w;
-        boolean m1665isKeyCodeYhN2O0w2;
-        boolean m1665isKeyCodeYhN2O0w3;
-        boolean m1665isKeyCodeYhN2O0w4;
-        boolean m1665isKeyCodeYhN2O0w5;
-        boolean mo1565onPreKeyEventMyFupTE = super.mo1565onPreKeyEventMyFupTE(keyEvent, transformedTextFieldState, textFieldSelectionState, focusManager, softwareKeyboardController);
+    public boolean mo1363onPreKeyEventMyFupTE(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextFieldSelectionState textFieldSelectionState, FocusManager focusManager, SoftwareKeyboardController softwareKeyboardController) {
+        boolean m1439isKeyCodeYhN2O0w;
+        boolean m1439isKeyCodeYhN2O0w2;
+        boolean m1439isKeyCodeYhN2O0w3;
+        boolean m1439isKeyCodeYhN2O0w4;
+        boolean m1439isKeyCodeYhN2O0w5;
+        boolean mo1363onPreKeyEventMyFupTE = super.mo1363onPreKeyEventMyFupTE(keyEvent, transformedTextFieldState, textFieldSelectionState, focusManager, softwareKeyboardController);
         if (ComposeFoundationFlags.isTextFieldDpadNavigationEnabled) {
-            return mo1565onPreKeyEventMyFupTE;
+            return mo1363onPreKeyEventMyFupTE;
         }
-        if (mo1565onPreKeyEventMyFupTE) {
+        if (mo1363onPreKeyEventMyFupTE) {
             return true;
         }
         InputDevice device = keyEvent.getDevice();
-        if (device == null || !device.supportsSource(InputDeviceCompat.SOURCE_DPAD) || device.isVirtual() || !KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6584getKeyDownCS__XNY()) || keyEvent.getSource() == 257) {
+        if (device == null || !device.supportsSource(InputDeviceCompat.SOURCE_DPAD) || device.isVirtual() || !KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5925getKeyDownCS__XNY()) || keyEvent.getSource() == 257) {
             return false;
         }
-        m1665isKeyCodeYhN2O0w = TextFieldKeyEventHandler_androidKt.m1665isKeyCodeYhN2O0w(keyEvent, 19);
-        if (m1665isKeyCodeYhN2O0w) {
-            return focusManager.mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5065getUpdhqQ8s());
+        m1439isKeyCodeYhN2O0w = TextFieldKeyEventHandler_androidKt.m1439isKeyCodeYhN2O0w(keyEvent, 19);
+        if (m1439isKeyCodeYhN2O0w) {
+            return focusManager.mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4413getUpdhqQ8s());
         }
-        m1665isKeyCodeYhN2O0w2 = TextFieldKeyEventHandler_androidKt.m1665isKeyCodeYhN2O0w(keyEvent, 20);
-        if (m1665isKeyCodeYhN2O0w2) {
-            return focusManager.mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5058getDowndhqQ8s());
+        m1439isKeyCodeYhN2O0w2 = TextFieldKeyEventHandler_androidKt.m1439isKeyCodeYhN2O0w(keyEvent, 20);
+        if (m1439isKeyCodeYhN2O0w2) {
+            return focusManager.mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4406getDowndhqQ8s());
         }
-        m1665isKeyCodeYhN2O0w3 = TextFieldKeyEventHandler_androidKt.m1665isKeyCodeYhN2O0w(keyEvent, 21);
-        if (m1665isKeyCodeYhN2O0w3) {
-            return focusManager.mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5061getLeftdhqQ8s());
+        m1439isKeyCodeYhN2O0w3 = TextFieldKeyEventHandler_androidKt.m1439isKeyCodeYhN2O0w(keyEvent, 21);
+        if (m1439isKeyCodeYhN2O0w3) {
+            return focusManager.mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4409getLeftdhqQ8s());
         }
-        m1665isKeyCodeYhN2O0w4 = TextFieldKeyEventHandler_androidKt.m1665isKeyCodeYhN2O0w(keyEvent, 22);
-        if (m1665isKeyCodeYhN2O0w4) {
-            return focusManager.mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5064getRightdhqQ8s());
+        m1439isKeyCodeYhN2O0w4 = TextFieldKeyEventHandler_androidKt.m1439isKeyCodeYhN2O0w(keyEvent, 22);
+        if (m1439isKeyCodeYhN2O0w4) {
+            return focusManager.mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4412getRightdhqQ8s());
         }
-        m1665isKeyCodeYhN2O0w5 = TextFieldKeyEventHandler_androidKt.m1665isKeyCodeYhN2O0w(keyEvent, 23);
-        if (m1665isKeyCodeYhN2O0w5) {
+        m1439isKeyCodeYhN2O0w5 = TextFieldKeyEventHandler_androidKt.m1439isKeyCodeYhN2O0w(keyEvent, 23);
+        if (m1439isKeyCodeYhN2O0w5) {
             softwareKeyboardController.show();
             return true;
         }
@@ -68,10 +68,10 @@ public final class AndroidTextFieldKeyEventHandler extends TextFieldKeyEventHand
 
     @Override // androidx.compose.foundation.text.input.internal.TextFieldKeyEventHandler
     /* renamed from: onKeyEvent-8zsqlwg  reason: not valid java name */
-    public boolean mo1564onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
-        if (KeyEventType.m6580equalsimpl0(KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent), KeyEventType.Companion.m6584getKeyDownCS__XNY()) && keyEvent.isFromSource(257) && (!TextFieldKeyEventHandler_androidKt.m1664isFromSoftKeyboardZmokQxo(keyEvent) || !TextFieldKeyInput_androidKt.m1455isTypedEventZmokQxo(keyEvent))) {
+    public boolean mo1362onKeyEvent8zsqlwg(KeyEvent keyEvent, TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, Function1<? super KeyCommand, ? extends Unit> function1, SoftwareKeyboardController softwareKeyboardController, boolean z, boolean z2, Function0<Boolean> function0) {
+        if (KeyEventType.m5921equalsimpl0(KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent), KeyEventType.Companion.m5925getKeyDownCS__XNY()) && keyEvent.isFromSource(257) && (!TextFieldKeyEventHandler_androidKt.m1438isFromSoftKeyboardZmokQxo(keyEvent) || !TextFieldKeyInput_androidKt.m1279isTypedEventZmokQxo(keyEvent))) {
             textFieldSelectionState.setInTouchMode(false);
         }
-        return super.mo1564onKeyEvent8zsqlwg(keyEvent, transformedTextFieldState, textLayoutState, textFieldSelectionState, function1, softwareKeyboardController, z, z2, function0);
+        return super.mo1362onKeyEvent8zsqlwg(keyEvent, transformedTextFieldState, textLayoutState, textFieldSelectionState, function1, softwareKeyboardController, z, z2, function0);
     }
 }

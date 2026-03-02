@@ -330,15 +330,17 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
                 CircularProgressDrawable.this.applyTransformation(1.0f, ring, true);
                 ring.storeOriginals();
                 ring.goToNextColor();
-                if (CircularProgressDrawable.this.mFinishing) {
-                    CircularProgressDrawable.this.mFinishing = false;
+                boolean z = CircularProgressDrawable.this.mFinishing;
+                CircularProgressDrawable circularProgressDrawable = CircularProgressDrawable.this;
+                if (z) {
+                    circularProgressDrawable.mFinishing = false;
                     animator.cancel();
                     animator.setDuration(1332L);
                     animator.start();
                     ring.setShowArrow(false);
                     return;
                 }
-                CircularProgressDrawable.this.mRotationCount += 1.0f;
+                circularProgressDrawable.mRotationCount += 1.0f;
             }
         });
         this.mAnimator = ofFloat;

@@ -11,7 +11,7 @@ public final class RequestChildFocusKt {
     public static final boolean requestFocusForChildInRootBounds(DelegatableNode delegatableNode, int i, int i2, int i3, int i4) {
         FocusTargetModifierNode findFocusableNodeFromRect$ui = DelegatableNodeKt.requireOwner(delegatableNode).getRectManager().findFocusableNodeFromRect$ui(i, i2, i3, i4, DelegatableNodeKt.requireLayoutNode(delegatableNode).getSemanticsId());
         if (findFocusableNodeFromRect$ui != null) {
-            return FocusTargetModifierNode.m5086requestFocus3ESFkO8$default(findFocusableNodeFromRect$ui, 0, 1, null);
+            return FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(findFocusableNodeFromRect$ui, 0, 1, null);
         }
         return false;
     }

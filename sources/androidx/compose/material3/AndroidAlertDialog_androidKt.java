@@ -19,9 +19,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aÜ\u0001\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0011\u0010\u0004\u001a\r\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0015\b\u0002\u0010\b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00052\u0015\b\u0002\u0010\t\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00052\u0015\b\u0002\u0010\n\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00052\u0015\b\u0002\u0010\u000b\u001a\u000f\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0003¢\u0006\u0002\b\u00052\b\b\u0002\u0010\f\u001a\u00020\r2\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\b\b\u0002\u0010\u0010\u001a\u00020\u000f2\b\b\u0002\u0010\u0011\u001a\u00020\u000f2\b\b\u0002\u0010\u0012\u001a\u00020\u000f2\b\b\u0002\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u0016H\u0007¢\u0006\u0004\b\u0017\u0010\u0018¨\u0006\u0019"}, d2 = {"AlertDialog", "", "onDismissRequest", "Lkotlin/Function0;", "confirmButton", "Landroidx/compose/runtime/Composable;", "modifier", "Landroidx/compose/ui/Modifier;", "dismissButton", "icon", "title", "text", "shape", "Landroidx/compose/ui/graphics/Shape;", "containerColor", "Landroidx/compose/ui/graphics/Color;", "iconContentColor", "titleContentColor", "textContentColor", "tonalElevation", "Landroidx/compose/ui/unit/Dp;", "properties", "Landroidx/compose/ui/window/DialogProperties;", "AlertDialog-Oix01E0", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/graphics/Shape;JJJJFLandroidx/compose/ui/window/DialogProperties;Landroidx/compose/runtime/Composer;III)V", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class AndroidAlertDialog_androidKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit AlertDialog_Oix01E0$lambda$0(Function0 function0, Function2 function2, Modifier modifier, Function2 function22, Function2 function23, Function2 function24, Function2 function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, int i, int i2, int i3, Composer composer, int i4) {
-        m1972AlertDialogOix01E0(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m1705AlertDialogOix01E0(function0, function2, modifier, function22, function23, function24, function25, shape, j, j2, j3, j4, f, dialogProperties, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -58,7 +58,7 @@ public final class AndroidAlertDialog_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1972AlertDialogOix01E0(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1705AlertDialogOix01E0(final Function0<Unit> function0, final Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, Function2<? super Composer, ? super Integer, Unit> function22, Function2<? super Composer, ? super Integer, Unit> function23, Function2<? super Composer, ? super Integer, Unit> function24, Function2<? super Composer, ? super Integer, Unit> function25, Shape shape, long j, long j2, long j3, long j4, float f, DialogProperties dialogProperties, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         int i5;
         Modifier.Companion companion;
@@ -249,13 +249,13 @@ public final class AndroidAlertDialog_androidKt {
                                             } else {
                                                 j13 = j5;
                                             }
-                                            float m1960getTonalElevationD9Ej5fM = i11 != 0 ? AlertDialogDefaults.INSTANCE.m1960getTonalElevationD9Ej5fM() : f;
+                                            float m1697getTonalElevationD9Ej5fM = i11 != 0 ? AlertDialogDefaults.INSTANCE.m1697getTonalElevationD9Ej5fM() : f;
                                             if (i13 != 0) {
-                                                f3 = m1960getTonalElevationD9Ej5fM;
+                                                f3 = m1697getTonalElevationD9Ej5fM;
                                                 dialogProperties3 = new DialogProperties(false, false, false, 7, (DefaultConstructorMarker) null);
                                             } else {
                                                 dialogProperties3 = dialogProperties;
-                                                f3 = m1960getTonalElevationD9Ej5fM;
+                                                f3 = m1697getTonalElevationD9Ej5fM;
                                             }
                                             function210 = obj2;
                                             function211 = obj3;
@@ -310,7 +310,7 @@ public final class AndroidAlertDialog_androidKt {
                                             ComposerKt.traceEventStart(i14, i15, i16, "androidx.compose.material3.AlertDialog (AndroidAlertDialog.android.kt:46)");
                                         }
                                         composer2 = startRestartGroup;
-                                        AlertDialogKt.m1966AlertDialogImplwrnwzgE(function0, function2, modifier3, function213, function212, function210, function211, shape3, j14, j16, j15, j17, f3, dialogProperties3, composer2, i15 & 2147483646, i16 & 8190);
+                                        AlertDialogKt.m1700AlertDialogImplwrnwzgE(function0, function2, modifier3, function213, function212, function210, function211, shape3, j14, j16, j15, j17, f3, dialogProperties3, composer2, i15 & 2147483646, i16 & 8190);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -347,9 +347,7 @@ public final class AndroidAlertDialog_androidKt {
                                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AndroidAlertDialog_androidKt$$ExternalSyntheticLambda0
                                             @Override // kotlin.jvm.functions.Function2
                                             public final Object invoke(Object obj5, Object obj6) {
-                                                Unit AlertDialog_Oix01E0$lambda$0;
-                                                AlertDialog_Oix01E0$lambda$0 = AndroidAlertDialog_androidKt.AlertDialog_Oix01E0$lambda$0(Function0.this, function2, modifier2, function26, function27, function28, function29, shape2, j8, j9, j6, j7, f2, dialogProperties2, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
-                                                return AlertDialog_Oix01E0$lambda$0;
+                                                return AndroidAlertDialog_androidKt.AlertDialog_Oix01E0$lambda$0(Function0.this, function2, modifier2, function26, function27, function28, function29, shape2, j8, j9, j6, j7, f2, dialogProperties2, i, i2, i3, (Composer) obj5, ((Integer) obj6).intValue());
                                             }
                                         });
                                         return;

@@ -37,42 +37,39 @@ final class TabRowDefaults$tabIndicatorOffset$2 implements Function3<Modifier, C
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1541271084, i, -1, "androidx.compose.material3.TabRowDefaults.tabIndicatorOffset.<anonymous> (TabRow.kt:1108)");
         }
-        State<Dp> m174animateDpAsStateAjpBEmI = AnimateAsStateKt.m174animateDpAsStateAjpBEmI(this.$currentTabPosition.m3129getWidthD9Ej5fM(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, composer, 6), null, null, composer, 0, 12);
-        final State<Dp> m174animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m174animateDpAsStateAjpBEmI(this.$currentTabPosition.m3127getLeftD9Ej5fM(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, composer, 6), null, null, composer, 0, 12);
+        State<Dp> m161animateDpAsStateAjpBEmI = AnimateAsStateKt.m161animateDpAsStateAjpBEmI(this.$currentTabPosition.m2608getWidthD9Ej5fM(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, composer, 6), null, null, composer, 0, 12);
+        final State<Dp> m161animateDpAsStateAjpBEmI2 = AnimateAsStateKt.m161animateDpAsStateAjpBEmI(this.$currentTabPosition.m2606getLeftD9Ej5fM(), MotionSchemeKt.value(MotionSchemeKeyTokens.DefaultSpatial, composer, 6), null, null, composer, 0, 12);
         Modifier wrapContentSize$default = SizeKt.wrapContentSize$default(SizeKt.fillMaxWidth$default(modifier, 0.0f, 1, null), Alignment.Companion.getBottomStart(), false, 2, null);
         ComposerKt.sourceInformationMarkerStart(composer, 602226121, "CC(remember):TabRow.kt#9igjgp");
-        boolean changed = composer.changed(m174animateDpAsStateAjpBEmI2);
+        boolean changed = composer.changed(m161animateDpAsStateAjpBEmI2);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = new Function1() { // from class: androidx.compose.material3.TabRowDefaults$tabIndicatorOffset$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    IntOffset invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$3$lambda$2(State.this, (Density) obj);
-                    return invoke$lambda$3$lambda$2;
+                    IntOffset m7674boximpl;
+                    State state = State.this;
+                    Density density = (Density) obj;
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((density.mo399roundToPx0680j_4(TabRowDefaults$tabIndicatorOffset$2.invoke$lambda$1(state)) << 32) | (0 & 4294967295L)));
+                    return m7674boximpl;
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m981width3ABfNKs = SizeKt.m981width3ABfNKs(OffsetKt.offset(wrapContentSize$default, (Function1) rememberedValue), invoke$lambda$0(m174animateDpAsStateAjpBEmI));
+        Modifier m869width3ABfNKs = SizeKt.m869width3ABfNKs(OffsetKt.offset(wrapContentSize$default, (Function1) rememberedValue), invoke$lambda$0(m161animateDpAsStateAjpBEmI));
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m981width3ABfNKs;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final IntOffset invoke$lambda$3$lambda$2(State state, Density density) {
-        return IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((density.mo458roundToPx0680j_4(invoke$lambda$1(state)) << 32) | (0 & 4294967295L)));
+        return m869width3ABfNKs;
     }
 
     private static final float invoke$lambda$0(State<Dp> state) {
-        return state.getValue().m8272unboximpl();
+        return state.getValue().m7569unboximpl();
     }
 
     private static final float invoke$lambda$1(State<Dp> state) {
-        return state.getValue().m8272unboximpl();
+        return state.getValue().m7569unboximpl();
     }
 }

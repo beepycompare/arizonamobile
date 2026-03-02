@@ -2,18 +2,18 @@ package io.appmetrica.analytics.impl;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Mn implements InterfaceC0135b3 {
+public final class Mn implements InterfaceC0134b3 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Object f699a;
-    public final InterfaceC0135b3 b;
+    public final InterfaceC0134b3 b;
 
-    public Mn(Object obj, InterfaceC0135b3 interfaceC0135b3) {
+    public Mn(Object obj, InterfaceC0134b3 interfaceC0134b3) {
         this.f699a = obj;
-        this.b = interfaceC0135b3;
+        this.b = interfaceC0134b3;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0135b3
+    @Override // io.appmetrica.analytics.impl.InterfaceC0134b3
     public final int getBytesTruncated() {
         return this.b.getBytesTruncated();
     }

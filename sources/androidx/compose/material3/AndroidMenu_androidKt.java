@@ -45,27 +45,27 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class AndroidMenu_androidKt {
     private static final PopupProperties DefaultMenuProperties = new PopupProperties(true, false, false, false, 14, (DefaultConstructorMarker) null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DropdownMenuItem$lambda$7(Function2 function2, Function0 function0, Modifier modifier, Function2 function22, Function2 function23, boolean z, MenuItemColors menuItemColors, PaddingValues paddingValues, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         DropdownMenuItem(function2, function0, modifier, function22, function23, z, menuItemColors, paddingValues, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DropdownMenu_4kj__NE$lambda$5(boolean z, Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1976DropdownMenu4kj_NE(z, function0, modifier, j, scrollState, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m1706DropdownMenu4kj_NE(z, function0, modifier, j, scrollState, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DropdownMenu_ILWXrKs$lambda$6(boolean z, Function0 function0, Modifier modifier, long j, PopupProperties popupProperties, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m1977DropdownMenuILWXrKs(z, function0, modifier, j, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m1707DropdownMenuILWXrKs(z, function0, modifier, j, popupProperties, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DropdownMenu_IlH_yew$lambda$4(boolean z, Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Shape shape, long j2, float f, float f2, BorderStroke borderStroke, Function3 function3, int i, int i2, int i3, Composer composer, int i4) {
-        m1978DropdownMenuIlH_yew(z, function0, modifier, j, scrollState, popupProperties, shape, j2, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
+        m1708DropdownMenuIlH_yew(z, function0, modifier, j, scrollState, popupProperties, shape, j2, f, f2, borderStroke, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
@@ -98,7 +98,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1978DropdownMenuIlH_yew(final boolean z, final Function0<Unit> function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Shape shape, long j2, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
+    public static final void m1708DropdownMenuIlH_yew(final boolean z, final Function0<Unit> function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, Shape shape, long j2, float f, float f2, BorderStroke borderStroke, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2, final int i3) {
         int i4;
         Object obj;
         int i5;
@@ -251,7 +251,7 @@ public final class AndroidMenu_androidKt {
                             Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj2;
                             if (i6 != 0) {
                                 float f7 = 0;
-                                j3 = DpOffset.m8314constructorimpl((Float.floatToRawIntBits(Dp.m8258constructorimpl(f7)) << i7) | (Float.floatToRawIntBits(Dp.m8258constructorimpl(f7)) & 4294967295L));
+                                j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(f7)) << i7) | (Float.floatToRawIntBits(Dp.m7555constructorimpl(f7)) & 4294967295L));
                             }
                             if ((i3 & 16) != 0) {
                                 scrollState3 = ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1);
@@ -274,8 +274,8 @@ public final class AndroidMenu_androidKt {
                             } else {
                                 j6 = j2;
                             }
-                            float m2632getTonalElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM() : f;
-                            float m2631getShadowElevationD9Ej5fM = i11 != 0 ? MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM() : f2;
+                            float m2235getTonalElevationD9Ej5fM = i9 != 0 ? MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM() : f;
+                            float m2234getShadowElevationD9Ej5fM = i11 != 0 ? MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM() : f2;
                             if (i13 != 0) {
                                 modifier3 = companion;
                                 borderStroke3 = null;
@@ -286,8 +286,8 @@ public final class AndroidMenu_androidKt {
                             shape5 = shape4;
                             scrollState4 = scrollState3;
                             j7 = j6;
-                            f5 = m2632getTonalElevationD9Ej5fM;
-                            f6 = m2631getShadowElevationD9Ej5fM;
+                            f5 = m2235getTonalElevationD9Ej5fM;
+                            f6 = m2234getShadowElevationD9Ej5fM;
                         }
                         startRestartGroup.endDefaults();
                         if (ComposerKt.isTraceInProgress()) {
@@ -311,7 +311,7 @@ public final class AndroidMenu_androidKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 453251986, "CC(remember):AndroidMenu.android.kt#9igjgp");
                             Object rememberedValue2 = startRestartGroup.rememberedValue();
                             if (rememberedValue2 == Composer.Companion.getEmpty()) {
-                                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m5826boximpl(TransformOrigin.Companion.m5839getCenterSzJe1aQ()), null, 2, null);
+                                rememberedValue2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(TransformOrigin.m5172boximpl(TransformOrigin.Companion.m5185getCenterSzJe1aQ()), null, 2, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                             }
                             final MutableState mutableState = (MutableState) rememberedValue2;
@@ -330,9 +330,7 @@ public final class AndroidMenu_androidKt {
                                 rememberedValue3 = new DropdownMenuPositionProvider(j3, density, 0, new Function2() { // from class: androidx.compose.material3.AndroidMenu_androidKt$$ExternalSyntheticLambda0
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj4, Object obj5) {
-                                        Unit DropdownMenu_IlH_yew$lambda$3$lambda$2;
-                                        DropdownMenu_IlH_yew$lambda$3$lambda$2 = AndroidMenu_androidKt.DropdownMenu_IlH_yew$lambda$3$lambda$2(MutableState.this, (IntRect) obj4, (IntRect) obj5);
-                                        return DropdownMenu_IlH_yew$lambda$3$lambda$2;
+                                        return AndroidMenu_androidKt.DropdownMenu_IlH_yew$lambda$3$lambda$2(MutableState.this, (IntRect) obj4, (IntRect) obj5);
                                     }
                                 }, 4, null);
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -354,7 +352,7 @@ public final class AndroidMenu_androidKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-917492520, i17, -1, "androidx.compose.material3.DropdownMenu.<anonymous> (AndroidMenu.android.kt:73)");
                                     }
-                                    MenuKt.m2646DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState, scrollState4, shape5, j7, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
+                                    MenuKt.m2248DropdownMenuContentQj0Zi0g(Modifier.this, mutableTransitionState, mutableState, scrollState4, shape5, j7, f5, f6, borderStroke3, function3, composer3, (MutableTransitionState.$stable << 3) | RendererCapabilities.DECODER_SUPPORT_MASK);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -396,9 +394,7 @@ public final class AndroidMenu_androidKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AndroidMenu_androidKt$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj4, Object obj5) {
-                                Unit DropdownMenu_IlH_yew$lambda$4;
-                                DropdownMenu_IlH_yew$lambda$4 = AndroidMenu_androidKt.DropdownMenu_IlH_yew$lambda$4(z, function0, modifier2, j4, scrollState2, popupProperties2, shape3, j5, f4, f3, borderStroke2, function3, i, i2, i3, (Composer) obj4, ((Integer) obj5).intValue());
-                                return DropdownMenu_IlH_yew$lambda$4;
+                                return AndroidMenu_androidKt.DropdownMenu_IlH_yew$lambda$4(z, function0, modifier2, j4, scrollState2, popupProperties2, shape3, j5, f4, f3, borderStroke2, function3, i, i2, i3, (Composer) obj4, ((Integer) obj5).intValue());
                             }
                         });
                         return;
@@ -490,9 +486,9 @@ public final class AndroidMenu_androidKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DropdownMenu_IlH_yew$lambda$3$lambda$2(MutableState mutableState, IntRect intRect, IntRect intRect2) {
-        mutableState.setValue(TransformOrigin.m5826boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
+        mutableState.setValue(TransformOrigin.m5172boximpl(MenuKt.calculateTransformOrigin(intRect, intRect2)));
         return Unit.INSTANCE;
     }
 
@@ -517,7 +513,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1976DropdownMenu4kj_NE(final boolean z, final Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m1706DropdownMenu4kj_NE(final boolean z, final Function0 function0, Modifier modifier, long j, ScrollState scrollState, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
         boolean z2;
         int i3;
         Function0 function02;
@@ -612,13 +608,13 @@ public final class AndroidMenu_androidKt {
                                 }
                                 if (i4 != 0) {
                                     float f = 0;
-                                    float m8258constructorimpl = Dp.m8258constructorimpl(f);
-                                    float m8258constructorimpl2 = Dp.m8258constructorimpl(f);
-                                    long floatToRawIntBits = Float.floatToRawIntBits(m8258constructorimpl);
-                                    int floatToRawIntBits2 = Float.floatToRawIntBits(m8258constructorimpl2);
+                                    float m7555constructorimpl = Dp.m7555constructorimpl(f);
+                                    float m7555constructorimpl2 = Dp.m7555constructorimpl(f);
+                                    long floatToRawIntBits = Float.floatToRawIntBits(m7555constructorimpl);
+                                    int floatToRawIntBits2 = Float.floatToRawIntBits(m7555constructorimpl2);
                                     i7 = -57345;
                                     modifier3 = companion;
-                                    j2 = DpOffset.m8314constructorimpl((floatToRawIntBits2 & 4294967295L) | (floatToRawIntBits << 32));
+                                    j2 = DpOffset.m7611constructorimpl((floatToRawIntBits2 & 4294967295L) | (floatToRawIntBits << 32));
                                 } else {
                                     i7 = -57345;
                                     modifier3 = companion;
@@ -640,7 +636,7 @@ public final class AndroidMenu_androidKt {
                                         ComposerKt.traceEventStart(i9, i8, -1, "androidx.compose.material3.DropdownMenu (AndroidMenu.android.kt:123)");
                                     }
                                     composer2 = startRestartGroup;
-                                    m1978DropdownMenuIlH_yew(z2, function02, modifier4, j4, scrollState3, popupProperties3, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM(), null, function3, composer2, (i8 & 14) | 905969664 | (i8 & 112) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | (458752 & i8), ((i8 >> 15) & 112) | 6, 0);
+                                    m1708DropdownMenuIlH_yew(z2, function02, modifier4, j4, scrollState3, popupProperties3, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM(), null, function3, composer2, (i8 & 14) | 905969664 | (i8 & 112) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | (458752 & i8), ((i8 >> 15) & 112) | 6, 0);
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventEnd();
                                     }
@@ -673,7 +669,7 @@ public final class AndroidMenu_androidKt {
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             composer2 = startRestartGroup;
-                            m1978DropdownMenuIlH_yew(z2, function02, modifier4, j4, scrollState3, popupProperties3, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2632getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2631getShadowElevationD9Ej5fM(), null, function3, composer2, (i8 & 14) | 905969664 | (i8 & 112) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | (458752 & i8), ((i8 >> 15) & 112) | 6, 0);
+                            m1708DropdownMenuIlH_yew(z2, function02, modifier4, j4, scrollState3, popupProperties3, MenuDefaults.INSTANCE.getShape(startRestartGroup, 6), MenuDefaults.INSTANCE.getContainerColor(startRestartGroup, 6), MenuDefaults.INSTANCE.m2235getTonalElevationD9Ej5fM(), MenuDefaults.INSTANCE.m2234getShadowElevationD9Ej5fM(), null, function3, composer2, (i8 & 14) | 905969664 | (i8 & 112) | (i8 & 896) | (i8 & 7168) | (57344 & i8) | (458752 & i8), ((i8 >> 15) & 112) | 6, 0);
                             if (ComposerKt.isTraceInProgress()) {
                             }
                             modifier2 = modifier4;
@@ -693,9 +689,7 @@ public final class AndroidMenu_androidKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AndroidMenu_androidKt$$ExternalSyntheticLambda4
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit DropdownMenu_4kj__NE$lambda$5;
-                                    DropdownMenu_4kj__NE$lambda$5 = AndroidMenu_androidKt.DropdownMenu_4kj__NE$lambda$5(z, function0, modifier2, j3, scrollState2, popupProperties2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return DropdownMenu_4kj__NE$lambda$5;
+                                    return AndroidMenu_androidKt.DropdownMenu_4kj__NE$lambda$5(z, function0, modifier2, j3, scrollState2, popupProperties2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -773,7 +767,7 @@ public final class AndroidMenu_androidKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1977DropdownMenuILWXrKs(final boolean z, final Function0 function0, Modifier modifier, long j, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m1707DropdownMenuILWXrKs(final boolean z, final Function0 function0, Modifier modifier, long j, PopupProperties popupProperties, final Function3 function3, Composer composer, final int i, final int i2) {
         boolean z2;
         int i3;
         Function0 function02;
@@ -841,8 +835,8 @@ public final class AndroidMenu_androidKt {
                     } else {
                         Modifier.Companion companion = i6 != 0 ? Modifier.Companion : obj;
                         if (i4 != 0) {
-                            float m8258constructorimpl = Dp.m8258constructorimpl(0);
-                            j3 = DpOffset.m8314constructorimpl((Float.floatToRawIntBits(Dp.m8258constructorimpl(f)) & 4294967295L) | (Float.floatToRawIntBits(m8258constructorimpl) << 32));
+                            float m7555constructorimpl = Dp.m7555constructorimpl(0);
+                            j3 = DpOffset.m7611constructorimpl((Float.floatToRawIntBits(Dp.m7555constructorimpl(f)) & 4294967295L) | (Float.floatToRawIntBits(m7555constructorimpl) << 32));
                         } else {
                             j3 = j;
                         }
@@ -851,7 +845,7 @@ public final class AndroidMenu_androidKt {
                             ComposerKt.traceEventStart(1744198621, i3, -1, "androidx.compose.material3.DropdownMenu (AndroidMenu.android.kt:158)");
                         }
                         composer2 = startRestartGroup;
-                        m1978DropdownMenuIlH_yew(z2, function02, companion, j3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj2, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
+                        m1708DropdownMenuIlH_yew(z2, function02, companion, j3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), popupProperties3, null, 0L, 0.0f, 0.0f, null, obj2, composer2, (i3 & 8190) | ((i3 << 3) & 458752), (i3 >> 12) & 112, 1984);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -864,9 +858,7 @@ public final class AndroidMenu_androidKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AndroidMenu_androidKt$$ExternalSyntheticLambda3
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit DropdownMenu_ILWXrKs$lambda$6;
-                                DropdownMenu_ILWXrKs$lambda$6 = AndroidMenu_androidKt.DropdownMenu_ILWXrKs$lambda$6(z, function0, modifier2, j2, popupProperties2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return DropdownMenu_ILWXrKs$lambda$6;
+                                return AndroidMenu_androidKt.DropdownMenu_ILWXrKs$lambda$6(z, function0, modifier2, j2, popupProperties2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -1105,9 +1097,7 @@ public final class AndroidMenu_androidKt {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.AndroidMenu_androidKt$$ExternalSyntheticLambda2
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj4, Object obj5) {
-                                            Unit DropdownMenuItem$lambda$7;
-                                            DropdownMenuItem$lambda$7 = AndroidMenu_androidKt.DropdownMenuItem$lambda$7(Function2.this, function0, modifier2, function25, function26, z3, menuItemColors2, paddingValues2, mutableInteractionSource2, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                            return DropdownMenuItem$lambda$7;
+                                            return AndroidMenu_androidKt.DropdownMenuItem$lambda$7(Function2.this, function0, modifier2, function25, function26, z3, menuItemColors2, paddingValues2, mutableInteractionSource2, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                                         }
                                     });
                                     return;

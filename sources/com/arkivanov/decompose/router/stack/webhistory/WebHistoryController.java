@@ -22,7 +22,7 @@ public interface WebHistoryController {
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class DefaultImpls {
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static boolean attach$lambda$0(List list, List list2) {
             Intrinsics.checkNotNullParameter(list, "<unused var>");
             Intrinsics.checkNotNullParameter(list2, "<unused var>");
@@ -37,9 +37,7 @@ public interface WebHistoryController {
                 function2 = new Function2() { // from class: com.arkivanov.decompose.router.stack.webhistory.WebHistoryController$DefaultImpls$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        boolean attach$lambda$0;
-                        attach$lambda$0 = WebHistoryController.DefaultImpls.attach$lambda$0((List) obj2, (List) obj3);
-                        return Boolean.valueOf(attach$lambda$0);
+                        return Boolean.valueOf(WebHistoryController.DefaultImpls.attach$lambda$0((List) obj2, (List) obj3));
                     }
                 };
             }

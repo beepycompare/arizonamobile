@@ -59,9 +59,7 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
             Function1<? super DragEvent.DragDelta, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = AnchoredDraggableNode$drag$2.invokeSuspend$lambda$0(AnchoredDraggableNode.this, anchoredDragScope, (DragEvent.DragDelta) obj2);
-                    return invokeSuspend$lambda$0;
+                    return AnchoredDraggableNode$drag$2.invokeSuspend$lambda$0(AnchoredDraggableNode.this, anchoredDragScope, (DragEvent.DragDelta) obj2);
                 }
             };
             this.label = 1;
@@ -76,25 +74,25 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(final AnchoredDraggableNode anchoredDraggableNode, final AnchoredDragScope anchoredDragScope, DragEvent.DragDelta dragDelta) {
-        long m480reverseIfNeededMKHz9U;
-        float m482toFloatk4lQ0M;
+        long m418reverseIfNeededMKHz9U;
+        float m420toFloatk4lQ0M;
         OverscrollEffect overscrollEffect;
         OverscrollEffect overscrollEffect2;
-        long m483toOffsettuRUvjQ;
+        long m421toOffsettuRUvjQ;
         AnchoredDraggableState anchoredDraggableState;
-        m480reverseIfNeededMKHz9U = anchoredDraggableNode.m480reverseIfNeededMKHz9U(dragDelta.m523getDeltaF1C5BW0());
-        m482toFloatk4lQ0M = anchoredDraggableNode.m482toFloatk4lQ0M(m480reverseIfNeededMKHz9U);
+        m418reverseIfNeededMKHz9U = anchoredDraggableNode.m418reverseIfNeededMKHz9U(dragDelta.m454getDeltaF1C5BW0());
+        m420toFloatk4lQ0M = anchoredDraggableNode.m420toFloatk4lQ0M(m418reverseIfNeededMKHz9U);
         overscrollEffect = anchoredDraggableNode.overscrollEffect;
         if (overscrollEffect == null) {
             anchoredDraggableState = anchoredDraggableNode.state;
-            AnchoredDragScope.dragTo$default(anchoredDragScope, anchoredDraggableState.newOffsetForDelta$foundation(m482toFloatk4lQ0M), 0.0f, 2, null);
+            AnchoredDragScope.dragTo$default(anchoredDragScope, anchoredDraggableState.newOffsetForDelta$foundation(m420toFloatk4lQ0M), 0.0f, 2, null);
         } else {
             overscrollEffect2 = anchoredDraggableNode.overscrollEffect;
             Intrinsics.checkNotNull(overscrollEffect2);
-            m483toOffsettuRUvjQ = anchoredDraggableNode.m483toOffsettuRUvjQ(m482toFloatk4lQ0M);
-            Offset.m5168boximpl(overscrollEffect2.mo275applyToScrollRhakbz0(m483toOffsettuRUvjQ, NestedScrollSource.Companion.m6624getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda0
+            m421toOffsettuRUvjQ = anchoredDraggableNode.m421toOffsettuRUvjQ(m420toFloatk4lQ0M);
+            Offset.m4516boximpl(overscrollEffect2.mo242applyToScrollRhakbz0(m421toOffsettuRUvjQ, NestedScrollSource.Companion.m5965getUserInputWNlRxjI(), new Function1() { // from class: androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
                     Offset invokeSuspend$lambda$0$0;
@@ -109,15 +107,15 @@ final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Fun
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset invokeSuspend$lambda$0$0(AnchoredDraggableNode anchoredDraggableNode, AnchoredDragScope anchoredDragScope, Offset offset) {
         AnchoredDraggableState anchoredDraggableState;
-        float m482toFloatk4lQ0M;
+        float m420toFloatk4lQ0M;
         AnchoredDraggableState anchoredDraggableState2;
-        long m483toOffsettuRUvjQ;
+        long m421toOffsettuRUvjQ;
         anchoredDraggableState = anchoredDraggableNode.state;
-        m482toFloatk4lQ0M = anchoredDraggableNode.m482toFloatk4lQ0M(offset.m5189unboximpl());
-        float newOffsetForDelta$foundation = anchoredDraggableState.newOffsetForDelta$foundation(m482toFloatk4lQ0M);
+        m420toFloatk4lQ0M = anchoredDraggableNode.m420toFloatk4lQ0M(offset.m4537unboximpl());
+        float newOffsetForDelta$foundation = anchoredDraggableState.newOffsetForDelta$foundation(m420toFloatk4lQ0M);
         anchoredDraggableState2 = anchoredDraggableNode.state;
-        m483toOffsettuRUvjQ = anchoredDraggableNode.m483toOffsettuRUvjQ(newOffsetForDelta$foundation - anchoredDraggableState2.requireOffset());
+        m421toOffsettuRUvjQ = anchoredDraggableNode.m421toOffsettuRUvjQ(newOffsetForDelta$foundation - anchoredDraggableState2.requireOffset());
         AnchoredDragScope.dragTo$default(anchoredDragScope, newOffsetForDelta$foundation, 0.0f, 2, null);
-        return Offset.m5168boximpl(m483toOffsettuRUvjQ);
+        return Offset.m4516boximpl(m421toOffsettuRUvjQ);
     }
 }

@@ -159,12 +159,13 @@ public class CachedContentIndex {
             int i = cachedContent.id;
             boolean z = this.newIds.get(i);
             this.storage.onRemove(cachedContent, z);
+            SparseArray<String> sparseArray = this.idToKey;
             if (z) {
-                this.idToKey.remove(i);
+                sparseArray.remove(i);
                 this.newIds.delete(i);
                 return;
             }
-            this.idToKey.put(i, null);
+            sparseArray.put(i, null);
             this.removedIds.put(i, true);
         }
     }
@@ -620,10 +621,11 @@ public class CachedContentIndex {
 
         @Override // androidx.media3.datasource.cache.CachedContentIndex.Storage
         public void onRemove(CachedContent cachedContent, boolean z) {
+            SparseArray<CachedContent> sparseArray = this.pendingUpdates;
             if (z) {
-                this.pendingUpdates.delete(cachedContent.id);
+                sparseArray.delete(cachedContent.id);
             } else {
-                this.pendingUpdates.put(cachedContent.id, null);
+                sparseArray.put(cachedContent.id, null);
             }
         }
 

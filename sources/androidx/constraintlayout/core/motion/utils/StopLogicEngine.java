@@ -128,12 +128,16 @@ public class StopLogicEngine implements StopEngine {
         float calcY = calcY(f);
         this.mLastPosition = calcY;
         this.mLastTime = f;
-        return this.mBackwards ? this.mStartPosition - calcY : this.mStartPosition + calcY;
+        boolean z = this.mBackwards;
+        float f2 = this.mStartPosition;
+        return z ? f2 - calcY : f2 + calcY;
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine
     public float getVelocity() {
-        return this.mBackwards ? -getVelocity(this.mLastTime) : getVelocity(this.mLastTime);
+        boolean z = this.mBackwards;
+        float f = this.mLastTime;
+        return z ? -getVelocity(f) : getVelocity(f);
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine

@@ -25,27 +25,27 @@ public final class CardColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2078getContainerColor0d7_KjU() {
+    public final long m1779getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2079getContentColor0d7_KjU() {
+    public final long m1780getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getDisabledContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m2080getDisabledContainerColor0d7_KjU() {
+    public final long m1781getDisabledContainerColor0d7_KjU() {
         return this.disabledContainerColor;
     }
 
     /* renamed from: getDisabledContentColor-0d7_KjU  reason: not valid java name */
-    public final long m2081getDisabledContentColor0d7_KjU() {
+    public final long m1782getDisabledContentColor0d7_KjU() {
         return this.disabledContentColor;
     }
 
     /* renamed from: copy-jRlVdoo$default  reason: not valid java name */
-    public static /* synthetic */ CardColors m2074copyjRlVdoo$default(CardColors cardColors, long j, long j2, long j3, long j4, int i, Object obj) {
+    public static /* synthetic */ CardColors m1775copyjRlVdoo$default(CardColors cardColors, long j, long j2, long j3, long j4, int i, Object obj) {
         if ((i & 1) != 0) {
             j = cardColors.containerColor;
         }
@@ -57,21 +57,21 @@ public final class CardColors {
         if ((i & 4) != 0) {
             j3 = cardColors.disabledContainerColor;
         }
-        return cardColors.m2077copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? cardColors.disabledContentColor : j4);
+        return cardColors.m1778copyjRlVdoo(j5, j6, j3, (i & 8) != 0 ? cardColors.disabledContentColor : j4);
     }
 
     /* renamed from: copy-jRlVdoo  reason: not valid java name */
-    public final CardColors m2077copyjRlVdoo(long j, long j2, long j3, long j4) {
+    public final CardColors m1778copyjRlVdoo(long j, long j2, long j3, long j4) {
         return new CardColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.contentColor, j3 != 16 ? j3 : this.disabledContainerColor, j4 != 16 ? j4 : this.disabledContentColor, null);
     }
 
     /* renamed from: containerColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2075containerColorvNxB06k$material3(boolean z) {
+    public final long m1776containerColorvNxB06k$material3(boolean z) {
         return z ? this.containerColor : this.disabledContainerColor;
     }
 
     /* renamed from: contentColor-vNxB06k$material3  reason: not valid java name */
-    public final long m2076contentColorvNxB06k$material3(boolean z) {
+    public final long m1777contentColorvNxB06k$material3(boolean z) {
         return z ? this.contentColor : this.disabledContentColor;
     }
 
@@ -83,10 +83,10 @@ public final class CardColors {
             return false;
         }
         CardColors cardColors = (CardColors) obj;
-        return Color.m5425equalsimpl0(this.containerColor, cardColors.containerColor) && Color.m5425equalsimpl0(this.contentColor, cardColors.contentColor) && Color.m5425equalsimpl0(this.disabledContainerColor, cardColors.disabledContainerColor) && Color.m5425equalsimpl0(this.disabledContentColor, cardColors.disabledContentColor);
+        return Color.m4773equalsimpl0(this.containerColor, cardColors.containerColor) && Color.m4773equalsimpl0(this.contentColor, cardColors.contentColor) && Color.m4773equalsimpl0(this.disabledContainerColor, cardColors.disabledContainerColor) && Color.m4773equalsimpl0(this.disabledContentColor, cardColors.disabledContentColor);
     }
 
     public int hashCode() {
-        return (((((Color.m5431hashCodeimpl(this.containerColor) * 31) + Color.m5431hashCodeimpl(this.contentColor)) * 31) + Color.m5431hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m5431hashCodeimpl(this.disabledContentColor);
+        return (((((Color.m4779hashCodeimpl(this.containerColor) * 31) + Color.m4779hashCodeimpl(this.contentColor)) * 31) + Color.m4779hashCodeimpl(this.disabledContainerColor)) * 31) + Color.m4779hashCodeimpl(this.disabledContentColor);
     }
 }

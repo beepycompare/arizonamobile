@@ -2,6 +2,7 @@ package androidx.media3.common;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -96,6 +97,7 @@ public final class MediaMetadata {
     public final byte[] artworkData;
     public final Integer artworkDataType;
     public final Uri artworkUri;
+    public final CharSequence author;
     public final CharSequence compilation;
     public final CharSequence composer;
     public final CharSequence conductor;
@@ -262,6 +264,7 @@ public final class MediaMetadata {
         private byte[] artworkData;
         private Integer artworkDataType;
         private Uri artworkUri;
+        private CharSequence author;
         private CharSequence compilation;
         private CharSequence composer;
         private CharSequence conductor;
@@ -322,6 +325,7 @@ public final class MediaMetadata {
             this.releaseMonth = mediaMetadata.releaseMonth;
             this.releaseDay = mediaMetadata.releaseDay;
             this.writer = mediaMetadata.writer;
+            this.author = mediaMetadata.author;
             this.composer = mediaMetadata.composer;
             this.conductor = mediaMetadata.conductor;
             this.discNumber = mediaMetadata.discNumber;
@@ -473,6 +477,11 @@ public final class MediaMetadata {
 
         public Builder setWriter(CharSequence charSequence) {
             this.writer = charSequence;
+            return this;
+        }
+
+        public Builder setAuthor(CharSequence charSequence) {
+            this.author = charSequence;
             return this;
         }
 
@@ -699,6 +708,7 @@ public final class MediaMetadata {
         this.releaseMonth = builder.releaseMonth;
         this.releaseDay = builder.releaseDay;
         this.writer = builder.writer;
+        this.author = builder.author;
         this.composer = builder.composer;
         this.conductor = builder.conductor;
         this.discNumber = builder.discNumber;
@@ -721,7 +731,7 @@ public final class MediaMetadata {
         }
         if (obj != null && getClass() == obj.getClass()) {
             MediaMetadata mediaMetadata = (MediaMetadata) obj;
-            if (Objects.equals(this.title, mediaMetadata.title) && Objects.equals(this.artist, mediaMetadata.artist) && Objects.equals(this.albumTitle, mediaMetadata.albumTitle) && Objects.equals(this.albumArtist, mediaMetadata.albumArtist) && Objects.equals(this.displayTitle, mediaMetadata.displayTitle) && Objects.equals(this.subtitle, mediaMetadata.subtitle) && Objects.equals(this.description, mediaMetadata.description) && Objects.equals(this.durationMs, mediaMetadata.durationMs) && Objects.equals(this.userRating, mediaMetadata.userRating) && Objects.equals(this.overallRating, mediaMetadata.overallRating) && Arrays.equals(this.artworkData, mediaMetadata.artworkData) && Objects.equals(this.artworkDataType, mediaMetadata.artworkDataType) && Objects.equals(this.artworkUri, mediaMetadata.artworkUri) && Objects.equals(this.trackNumber, mediaMetadata.trackNumber) && Objects.equals(this.totalTrackCount, mediaMetadata.totalTrackCount) && Objects.equals(this.folderType, mediaMetadata.folderType) && Objects.equals(this.isBrowsable, mediaMetadata.isBrowsable) && Objects.equals(this.isPlayable, mediaMetadata.isPlayable) && Objects.equals(this.recordingYear, mediaMetadata.recordingYear) && Objects.equals(this.recordingMonth, mediaMetadata.recordingMonth) && Objects.equals(this.recordingDay, mediaMetadata.recordingDay) && Objects.equals(this.releaseYear, mediaMetadata.releaseYear) && Objects.equals(this.releaseMonth, mediaMetadata.releaseMonth) && Objects.equals(this.releaseDay, mediaMetadata.releaseDay) && Objects.equals(this.writer, mediaMetadata.writer) && Objects.equals(this.composer, mediaMetadata.composer) && Objects.equals(this.conductor, mediaMetadata.conductor) && Objects.equals(this.discNumber, mediaMetadata.discNumber) && Objects.equals(this.totalDiscCount, mediaMetadata.totalDiscCount) && Objects.equals(this.genre, mediaMetadata.genre) && Objects.equals(this.compilation, mediaMetadata.compilation) && Objects.equals(this.station, mediaMetadata.station) && Objects.equals(this.mediaType, mediaMetadata.mediaType) && Objects.equals(this.supportedCommands, mediaMetadata.supportedCommands)) {
+            if (TextUtils.equals(this.title, mediaMetadata.title) && TextUtils.equals(this.artist, mediaMetadata.artist) && TextUtils.equals(this.albumTitle, mediaMetadata.albumTitle) && TextUtils.equals(this.albumArtist, mediaMetadata.albumArtist) && TextUtils.equals(this.displayTitle, mediaMetadata.displayTitle) && TextUtils.equals(this.subtitle, mediaMetadata.subtitle) && TextUtils.equals(this.description, mediaMetadata.description) && Objects.equals(this.durationMs, mediaMetadata.durationMs) && Objects.equals(this.userRating, mediaMetadata.userRating) && Objects.equals(this.overallRating, mediaMetadata.overallRating) && Arrays.equals(this.artworkData, mediaMetadata.artworkData) && Objects.equals(this.artworkDataType, mediaMetadata.artworkDataType) && Objects.equals(this.artworkUri, mediaMetadata.artworkUri) && Objects.equals(this.trackNumber, mediaMetadata.trackNumber) && Objects.equals(this.totalTrackCount, mediaMetadata.totalTrackCount) && Objects.equals(this.folderType, mediaMetadata.folderType) && Objects.equals(this.isBrowsable, mediaMetadata.isBrowsable) && Objects.equals(this.isPlayable, mediaMetadata.isPlayable) && Objects.equals(this.recordingYear, mediaMetadata.recordingYear) && Objects.equals(this.recordingMonth, mediaMetadata.recordingMonth) && Objects.equals(this.recordingDay, mediaMetadata.recordingDay) && Objects.equals(this.releaseYear, mediaMetadata.releaseYear) && Objects.equals(this.releaseMonth, mediaMetadata.releaseMonth) && Objects.equals(this.releaseDay, mediaMetadata.releaseDay) && TextUtils.equals(this.writer, mediaMetadata.writer) && TextUtils.equals(this.composer, mediaMetadata.composer) && TextUtils.equals(this.conductor, mediaMetadata.conductor) && Objects.equals(this.discNumber, mediaMetadata.discNumber) && Objects.equals(this.totalDiscCount, mediaMetadata.totalDiscCount) && TextUtils.equals(this.genre, mediaMetadata.genre) && TextUtils.equals(this.compilation, mediaMetadata.compilation) && TextUtils.equals(this.station, mediaMetadata.station) && Objects.equals(this.mediaType, mediaMetadata.mediaType) && Objects.equals(this.supportedCommands, mediaMetadata.supportedCommands)) {
                 if ((this.extras == null) == (mediaMetadata.extras == null)) {
                     return true;
                 }
@@ -885,7 +895,7 @@ public final class MediaMetadata {
         Builder description = builder.setTitle(bundle.getCharSequence(FIELD_TITLE)).setArtist(bundle.getCharSequence(FIELD_ARTIST)).setAlbumTitle(bundle.getCharSequence(FIELD_ALBUM_TITLE)).setAlbumArtist(bundle.getCharSequence(FIELD_ALBUM_ARTIST)).setDisplayTitle(bundle.getCharSequence(FIELD_DISPLAY_TITLE)).setSubtitle(bundle.getCharSequence(FIELD_SUBTITLE)).setDescription(bundle.getCharSequence(FIELD_DESCRIPTION));
         byte[] byteArray = bundle.getByteArray(FIELD_ARTWORK_DATA);
         String str = FIELD_ARTWORK_DATA_TYPE;
-        description.setArtworkData(byteArray, bundle.containsKey(str) ? Integer.valueOf(bundle.getInt(str)) : null).setArtworkUri((Uri) bundle.getParcelable(FIELD_ARTWORK_URI)).setWriter(bundle.getCharSequence(FIELD_WRITER)).setComposer(bundle.getCharSequence(FIELD_COMPOSER)).setConductor(bundle.getCharSequence(FIELD_CONDUCTOR)).setGenre(bundle.getCharSequence(FIELD_GENRE)).setCompilation(bundle.getCharSequence(FIELD_COMPILATION)).setStation(bundle.getCharSequence(FIELD_STATION)).setExtras(bundle.getBundle(FIELD_EXTRAS));
+        description.setArtworkData(byteArray, bundle.containsKey(str) ? Integer.valueOf(bundle.getInt(str)) : null).setArtworkUri((Uri) bundle.getParcelable(FIELD_ARTWORK_URI)).setWriter(bundle.getCharSequence(FIELD_WRITER)).setComposer(bundle.getCharSequence(FIELD_COMPOSER)).setConductor(bundle.getCharSequence(FIELD_CONDUCTOR)).setGenre(bundle.getCharSequence(FIELD_GENRE)).setCompilation(bundle.getCharSequence(FIELD_COMPILATION)).setStation(bundle.getCharSequence(FIELD_STATION)).setExtras(Util.convertToNullIfInvalid(bundle.getBundle(FIELD_EXTRAS)));
         String str2 = FIELD_USER_RATING;
         if (bundle.containsKey(str2) && (bundle3 = bundle.getBundle(str2)) != null) {
             builder.setUserRating(Rating.fromBundle(bundle3));

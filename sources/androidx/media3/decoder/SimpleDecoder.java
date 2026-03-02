@@ -238,13 +238,17 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
             synchronized (this.lock) {
                 if (this.flushed) {
                     o.release();
-                } else if (o.shouldBeSkipped) {
-                    this.skippedOutputBufferCount++;
-                    o.release();
                 } else {
-                    o.skippedOutputBufferCount = this.skippedOutputBufferCount;
-                    this.skippedOutputBufferCount = 0;
-                    this.queuedOutputBuffers.addLast(o);
+                    boolean z2 = o.shouldBeSkipped;
+                    int i2 = this.skippedOutputBufferCount;
+                    if (z2) {
+                        this.skippedOutputBufferCount = i2 + 1;
+                        o.release();
+                    } else {
+                        o.skippedOutputBufferCount = i2;
+                        this.skippedOutputBufferCount = 0;
+                        this.queuedOutputBuffers.addLast(o);
+                    }
                 }
                 releaseInputBufferInternal(removeFirst);
             }

@@ -2,7 +2,7 @@ package com.google.android.gms.dynamite;
 
 import android.content.Context;
 import com.google.android.gms.dynamite.DynamiteModule;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zzh implements DynamiteModule.VersionPolicy {
     @Override // com.google.android.gms.dynamite.DynamiteModule.VersionPolicy

@@ -13,42 +13,42 @@ public final class LongSaturatedMathKt {
     }
 
     /* renamed from: saturatingAdd-NuflL3o  reason: not valid java name */
-    public static final long m11713saturatingAddNuflL3o(long j, DurationUnit unit, long j2) {
+    public static final long m10645saturatingAddNuflL3o(long j, DurationUnit unit, long j2) {
         Intrinsics.checkNotNullParameter(unit, "unit");
-        long m11644toLongimpl = Duration.m11644toLongimpl(j2, unit);
+        long m10577toLongimpl = Duration.m10577toLongimpl(j2, unit);
         if (((j - 1) | 1) == Long.MAX_VALUE) {
-            return m11712checkInfiniteSumDefinedPjuGub4(j, j2, m11644toLongimpl);
+            return m10644checkInfiniteSumDefinedPjuGub4(j, j2, m10577toLongimpl);
         }
-        if (((m11644toLongimpl - 1) | 1) == Long.MAX_VALUE) {
-            return m11714saturatingAddInHalvesNuflL3o(j, unit, j2);
+        if (((m10577toLongimpl - 1) | 1) == Long.MAX_VALUE) {
+            return m10646saturatingAddInHalvesNuflL3o(j, unit, j2);
         }
-        long j3 = j + m11644toLongimpl;
-        return ((j ^ j3) & (m11644toLongimpl ^ j3)) < 0 ? j < 0 ? Long.MIN_VALUE : Long.MAX_VALUE : j3;
+        long j3 = j + m10577toLongimpl;
+        return ((j ^ j3) & (m10577toLongimpl ^ j3)) < 0 ? j < 0 ? Long.MIN_VALUE : Long.MAX_VALUE : j3;
     }
 
     /* renamed from: checkInfiniteSumDefined-PjuGub4  reason: not valid java name */
-    private static final long m11712checkInfiniteSumDefinedPjuGub4(long j, long j2, long j3) {
-        if (!Duration.m11630isInfiniteimpl(j2) || (j ^ j3) >= 0) {
+    private static final long m10644checkInfiniteSumDefinedPjuGub4(long j, long j2, long j3) {
+        if (!Duration.m10563isInfiniteimpl(j2) || (j ^ j3) >= 0) {
             return j;
         }
         throw new IllegalArgumentException("Summing infinities of different signs");
     }
 
     /* renamed from: saturatingAddInHalves-NuflL3o  reason: not valid java name */
-    private static final long m11714saturatingAddInHalvesNuflL3o(long j, DurationUnit durationUnit, long j2) {
-        long m11608divUwyO8pc = Duration.m11608divUwyO8pc(j2, 2);
-        long m11644toLongimpl = Duration.m11644toLongimpl(m11608divUwyO8pc, durationUnit);
-        return (1 | (m11644toLongimpl - 1)) == Long.MAX_VALUE ? m11644toLongimpl : m11713saturatingAddNuflL3o(m11713saturatingAddNuflL3o(j, durationUnit, m11608divUwyO8pc), durationUnit, Duration.m11633minusLRDsOJo(j2, m11608divUwyO8pc));
+    private static final long m10646saturatingAddInHalvesNuflL3o(long j, DurationUnit durationUnit, long j2) {
+        long m10541divUwyO8pc = Duration.m10541divUwyO8pc(j2, 2);
+        long m10577toLongimpl = Duration.m10577toLongimpl(m10541divUwyO8pc, durationUnit);
+        return (1 | (m10577toLongimpl - 1)) == Long.MAX_VALUE ? m10577toLongimpl : m10645saturatingAddNuflL3o(m10645saturatingAddNuflL3o(j, durationUnit, m10541divUwyO8pc), durationUnit, Duration.m10566minusLRDsOJo(j2, m10541divUwyO8pc));
     }
 
     private static final long infinityOfSign(long j) {
-        return j < 0 ? Duration.Companion.m11699getNEG_INFINITEUwyO8pc$kotlin_stdlib() : Duration.Companion.m11697getINFINITEUwyO8pc();
+        return j < 0 ? Duration.Companion.m10632getNEG_INFINITEUwyO8pc$kotlin_stdlib() : Duration.Companion.m10630getINFINITEUwyO8pc();
     }
 
     public static final long saturatingDiff(long j, long j2, DurationUnit unit) {
         Intrinsics.checkNotNullParameter(unit, "unit");
         if ((1 | (j2 - 1)) == Long.MAX_VALUE) {
-            return Duration.m11649unaryMinusUwyO8pc(infinityOfSign(j2));
+            return Duration.m10582unaryMinusUwyO8pc(infinityOfSign(j2));
         }
         return saturatingFiniteDiff(j, j2, unit);
     }
@@ -57,9 +57,9 @@ public final class LongSaturatedMathKt {
         Intrinsics.checkNotNullParameter(unit, "unit");
         if (((j2 - 1) | 1) == Long.MAX_VALUE) {
             if (j == j2) {
-                return Duration.Companion.m11700getZEROUwyO8pc();
+                return Duration.Companion.m10633getZEROUwyO8pc();
             }
-            return Duration.m11649unaryMinusUwyO8pc(infinityOfSign(j2));
+            return Duration.m10582unaryMinusUwyO8pc(infinityOfSign(j2));
         } else if ((1 | (j - 1)) == Long.MAX_VALUE) {
             return infinityOfSign(j);
         } else {
@@ -74,9 +74,9 @@ public final class LongSaturatedMathKt {
                 long convertDurationUnit = DurationUnitKt.convertDurationUnit(1L, DurationUnit.MILLISECONDS, durationUnit);
                 long j4 = (j % convertDurationUnit) - (j2 % convertDurationUnit);
                 Duration.Companion companion = Duration.Companion;
-                return Duration.m11634plusLRDsOJo(DurationKt.toDuration((j / convertDurationUnit) - (j2 / convertDurationUnit), DurationUnit.MILLISECONDS), DurationKt.toDuration(j4, durationUnit));
+                return Duration.m10567plusLRDsOJo(DurationKt.toDuration((j / convertDurationUnit) - (j2 / convertDurationUnit), DurationUnit.MILLISECONDS), DurationKt.toDuration(j4, durationUnit));
             }
-            return Duration.m11649unaryMinusUwyO8pc(infinityOfSign(j3));
+            return Duration.m10582unaryMinusUwyO8pc(infinityOfSign(j3));
         }
         return DurationKt.toDuration(j3, durationUnit);
     }

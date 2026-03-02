@@ -80,11 +80,12 @@ public final class ObservableFromArray<T> extends Observable<T> {
             int length = tArr.length;
             for (int i = 0; i < length && !isDisposed(); i++) {
                 T t = tArr[i];
+                Observer<? super T> observer = this.downstream;
                 if (t == null) {
-                    this.downstream.onError(new NullPointerException("The element at index " + i + " is null"));
+                    observer.onError(new NullPointerException("The element at index " + i + " is null"));
                     return;
                 }
-                this.downstream.onNext(t);
+                observer.onNext(t);
             }
             if (isDisposed()) {
                 return;

@@ -106,9 +106,7 @@ public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLam
                 if (Animatable.animateTo$default(Animatable$default, boxFloat, null, boxFloat2, new Function1() { // from class: androidx.compose.foundation.layout.WindowInsetsNestedScrollConnection$fling$3$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = WindowInsetsNestedScrollConnection$fling$3.AnonymousClass1.invokeSuspend$lambda$0(WindowInsetsNestedScrollConnection.this, (Animatable) obj2);
-                        return invokeSuspend$lambda$0;
+                        return WindowInsetsNestedScrollConnection$fling$3.AnonymousClass1.invokeSuspend$lambda$0(WindowInsetsNestedScrollConnection.this, (Animatable) obj2);
                     }
                 }, this, 2, null) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -123,7 +121,7 @@ public final class WindowInsetsNestedScrollConnection$fling$3 extends SuspendLam
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(WindowInsetsNestedScrollConnection windowInsetsNestedScrollConnection, Animatable animatable) {
             windowInsetsNestedScrollConnection.adjustInsets(((Number) animatable.getValue()).floatValue());
             return Unit.INSTANCE;

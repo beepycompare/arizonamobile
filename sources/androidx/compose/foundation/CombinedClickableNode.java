@@ -86,7 +86,7 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
     }
 
     /* renamed from: update-2tQrsxU  reason: not valid java name */
-    public final void m359update2tQrsxU(Function0<Unit> function0, String str, Function0<Unit> function02, Function0<Unit> function03, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str2, Role role) {
+    public final void m316update2tQrsxU(Function0<Unit> function0, String str, Function0<Unit> function02, Function0<Unit> function03, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z, boolean z2, String str2, Role role) {
         boolean z3;
         if (!Intrinsics.areEqual(this.onLongClickLabel, str)) {
             this.onLongClickLabel = str;
@@ -105,7 +105,7 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
         }
         this.onDoubleClick = function03;
         boolean z4 = getEnabled() == z2 ? z3 : true;
-        m268updateCommonO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, str2, role, function0);
+        m235updateCommonO2vRcR0(mutableInteractionSource, indicationNodeFactory, z, z2, str2, role, function0);
         if (z4) {
             resetPointerInputHandler();
         }
@@ -117,15 +117,13 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
             SemanticsPropertiesKt.onLongClick(semanticsPropertyReceiver, this.onLongClickLabel, new Function0() { // from class: androidx.compose.foundation.CombinedClickableNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean applyAdditionalSemantics$lambda$0;
-                    applyAdditionalSemantics$lambda$0 = CombinedClickableNode.applyAdditionalSemantics$lambda$0(CombinedClickableNode.this);
-                    return Boolean.valueOf(applyAdditionalSemantics$lambda$0);
+                    return Boolean.valueOf(CombinedClickableNode.applyAdditionalSemantics$lambda$0(CombinedClickableNode.this));
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applyAdditionalSemantics$lambda$0(CombinedClickableNode combinedClickableNode) {
         Function0<Unit> function0 = combinedClickableNode.onLongClick;
         if (function0 != null) {
@@ -137,29 +135,29 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyDownEvent-ZmokQxo */
-    protected boolean mo263onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
+    protected boolean mo230onClickKeyDownEventZmokQxo(KeyEvent keyEvent) {
         boolean z;
         Job launch$default;
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-        if (this.onLongClick == null || this.longKeyPressJobs.get(m6587getKeyZmokQxo) != null) {
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+        if (this.onLongClick == null || this.longKeyPressJobs.get(m5928getKeyZmokQxo) != null) {
             z = false;
         } else {
             MutableLongObjectMap<Job> mutableLongObjectMap = this.longKeyPressJobs;
             launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyDownEvent$1(this, null), 3, null);
-            mutableLongObjectMap.set(m6587getKeyZmokQxo, launch$default);
+            mutableLongObjectMap.set(m5928getKeyZmokQxo, launch$default);
             z = true;
         }
-        DoubleKeyClickState doubleKeyClickState = this.doubleKeyClickStates.get(m6587getKeyZmokQxo);
+        DoubleKeyClickState doubleKeyClickState = this.doubleKeyClickStates.get(m5928getKeyZmokQxo);
         if (doubleKeyClickState != null) {
             if (doubleKeyClickState.getJob().isActive()) {
                 Job.DefaultImpls.cancel$default(doubleKeyClickState.getJob(), (CancellationException) null, 1, (Object) null);
                 if (!doubleKeyClickState.getDoubleTapMinTimeMillisElapsed()) {
                     getOnClick().invoke();
-                    this.doubleKeyClickStates.remove(m6587getKeyZmokQxo);
+                    this.doubleKeyClickStates.remove(m5928getKeyZmokQxo);
                     return z;
                 }
             } else {
-                this.doubleKeyClickStates.remove(m6587getKeyZmokQxo);
+                this.doubleKeyClickStates.remove(m5928getKeyZmokQxo);
             }
         }
         return z;
@@ -167,13 +165,13 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
 
     @Override // androidx.compose.foundation.AbstractClickableNode
     /* renamed from: onClickKeyUpEvent-ZmokQxo */
-    protected boolean mo264onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
+    protected boolean mo231onClickKeyUpEventZmokQxo(KeyEvent keyEvent) {
         Function0<Unit> function0;
         Job launch$default;
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
         boolean z = false;
-        if (this.longKeyPressJobs.get(m6587getKeyZmokQxo) != null) {
-            Job job = this.longKeyPressJobs.get(m6587getKeyZmokQxo);
+        if (this.longKeyPressJobs.get(m5928getKeyZmokQxo) != null) {
+            Job job = this.longKeyPressJobs.get(m5928getKeyZmokQxo);
             if (job != null) {
                 if (job.isActive()) {
                     Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
@@ -181,18 +179,18 @@ public final class CombinedClickableNode extends AbstractClickableNode implement
                     z = true;
                 }
             }
-            this.longKeyPressJobs.remove(m6587getKeyZmokQxo);
+            this.longKeyPressJobs.remove(m5928getKeyZmokQxo);
         }
         if (this.onDoubleClick != null) {
-            if (this.doubleKeyClickStates.get(m6587getKeyZmokQxo) != null) {
+            if (this.doubleKeyClickStates.get(m5928getKeyZmokQxo) != null) {
                 if (!z && (function0 = this.onDoubleClick) != null) {
                     function0.invoke();
                 }
-                this.doubleKeyClickStates.remove(m6587getKeyZmokQxo);
+                this.doubleKeyClickStates.remove(m5928getKeyZmokQxo);
             } else if (!z) {
                 MutableLongObjectMap<DoubleKeyClickState> mutableLongObjectMap = this.doubleKeyClickStates;
-                launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyUpEvent$2(this, m6587getKeyZmokQxo, null), 3, null);
-                mutableLongObjectMap.set(m6587getKeyZmokQxo, new DoubleKeyClickState(launch$default));
+                launch$default = BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new CombinedClickableNode$onClickKeyUpEvent$2(this, m5928getKeyZmokQxo, null), 3, null);
+                mutableLongObjectMap.set(m5928getKeyZmokQxo, new DoubleKeyClickState(launch$default));
             }
         } else if (!z) {
             getOnClick().invoke();

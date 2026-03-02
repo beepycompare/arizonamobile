@@ -55,9 +55,7 @@ public final class SearchBarState {
         this.currentValue$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.SearchBarState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SearchBarValue currentValue_delegate$lambda$0;
-                currentValue_delegate$lambda$0 = SearchBarState.currentValue_delegate$lambda$0(SearchBarState.this);
-                return currentValue_delegate$lambda$0;
+                return SearchBarState.currentValue_delegate$lambda$0(SearchBarState.this);
             }
         });
     }
@@ -93,7 +91,7 @@ public final class SearchBarState {
         return (SearchBarValue) this.currentValue$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SearchBarValue currentValue_delegate$lambda$0(SearchBarState searchBarState) {
         if (searchBarState.animatable.getValue().floatValue() == 0.0f) {
             return SearchBarValue.Collapsed;
@@ -131,26 +129,20 @@ public final class SearchBarState {
             return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.SearchBarState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List Saver$lambda$0;
-                    Saver$lambda$0 = SearchBarState.Companion.Saver$lambda$0((SaverScope) obj, (SearchBarState) obj2);
-                    return Saver$lambda$0;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf(Float.valueOf(((SearchBarState) obj2).getProgress()));
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.material3.SearchBarState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SearchBarState Saver$lambda$1;
-                    Saver$lambda$1 = SearchBarState.Companion.Saver$lambda$1(AnimationSpec.this, animationSpec2, (List) obj);
-                    return Saver$lambda$1;
+                    return SearchBarState.Companion.Saver$lambda$1(AnimationSpec.this, animationSpec2, (List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List Saver$lambda$0(SaverScope saverScope, SearchBarState searchBarState) {
-            return CollectionsKt.listOf(Float.valueOf(searchBarState.getProgress()));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SearchBarState Saver$lambda$1(AnimationSpec animationSpec, AnimationSpec animationSpec2, List list) {
             return new SearchBarState(new Animatable(list.get(0), VectorConvertersKt.getVectorConverter(FloatCompanionObject.INSTANCE), null, null, 12, null), animationSpec, animationSpec2, null);
         }

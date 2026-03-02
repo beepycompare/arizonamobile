@@ -40,7 +40,7 @@ public interface RootForTest {
     }
 
     /* renamed from: sendKeyEvent-ZmokQxo  reason: not valid java name */
-    boolean mo7263sendKeyEventZmokQxo(KeyEvent keyEvent);
+    boolean mo6603sendKeyEventZmokQxo(KeyEvent keyEvent);
 
     default void setAccessibilityEventBatchIntervalMillis(long j) {
     }

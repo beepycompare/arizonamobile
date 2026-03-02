@@ -56,10 +56,12 @@ public class ResultReceiver implements Parcelable {
 
         @Override // android.support.v4.os.IResultReceiver
         public void send(int i, Bundle bundle) {
-            if (ResultReceiver.this.mHandler != null) {
-                ResultReceiver.this.mHandler.post(new MyRunnable(i, bundle));
+            Handler handler = ResultReceiver.this.mHandler;
+            ResultReceiver resultReceiver = ResultReceiver.this;
+            if (handler != null) {
+                resultReceiver.mHandler.post(new MyRunnable(i, bundle));
             } else {
-                ResultReceiver.this.onReceiveResult(i, bundle);
+                resultReceiver.onReceiveResult(i, bundle);
             }
         }
     }

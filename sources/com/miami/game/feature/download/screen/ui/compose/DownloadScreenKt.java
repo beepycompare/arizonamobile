@@ -28,16 +28,16 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: DownloadScreen.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a#\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0007¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\n\u0010\u0006\u001a\u00020\u0007X\u008a\u0084\u0002"}, d2 = {"DownloadScreenRoute", "", "component", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent;Landroidx/compose/runtime/Composer;I)V", "DownloadScreen", "uiState", "Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;", "onSoundClick", "Lkotlin/Function0;", "(Lcom/miami/game/feature/download/screen/ui/model/DownloadScreenUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "download-screen"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DownloadScreenKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DownloadScreen$lambda$0(DownloadScreenUiState downloadScreenUiState, Function0 function0, int i, Composer composer, int i2) {
         DownloadScreen(downloadScreenUiState, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DownloadScreenRoute$lambda$6(DownloadScreenComponent downloadScreenComponent, int i, Composer composer, int i2) {
         DownloadScreenRoute(downloadScreenComponent, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -111,9 +111,7 @@ public final class DownloadScreenKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
             DownloadScreen(DownloadScreenRoute$lambda$3, (Function0) ((KFunction) rememberedValue4), composer2, 0);
-            if (!DownloadScreenRoute$lambda$3(collectAsStateWithLifecycle).isDialogVisible()) {
-                composer2.startReplaceGroup(-1580938236);
-            } else {
+            if (DownloadScreenRoute$lambda$3(collectAsStateWithLifecycle).isDialogVisible()) {
                 composer2.startReplaceGroup(-1578904698);
                 ComposerKt.sourceInformation(composer2, "54@2100L2,54@2057L46");
                 ComposerKt.sourceInformationMarkerStart(composer2, 1750184544, "CC(remember):DownloadScreen.kt#9igjgp");
@@ -132,8 +130,11 @@ public final class DownloadScreenKt {
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute(null, (Function0) rememberedValue5, null, composer2, 48, 5);
                 composer2 = composer2;
+                composer2.endReplaceGroup();
+            } else {
+                composer2.startReplaceGroup(-1578845116);
+                composer2.endReplaceGroup();
             }
-            composer2.endReplaceGroup();
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -143,9 +144,7 @@ public final class DownloadScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadScreenRoute$lambda$6;
-                    DownloadScreenRoute$lambda$6 = DownloadScreenKt.DownloadScreenRoute$lambda$6(DownloadScreenComponent.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadScreenRoute$lambda$6;
+                    return DownloadScreenKt.DownloadScreenRoute$lambda$6(DownloadScreenComponent.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -181,9 +180,7 @@ public final class DownloadScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.screen.ui.compose.DownloadScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DownloadScreen$lambda$0;
-                    DownloadScreen$lambda$0 = DownloadScreenKt.DownloadScreen$lambda$0(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DownloadScreen$lambda$0;
+                    return DownloadScreenKt.DownloadScreen$lambda$0(DownloadScreenUiState.this, onSoundClick, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

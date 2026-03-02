@@ -39,10 +39,12 @@ public abstract class AbstractDirectedNetworkConnections<N, E> implements Networ
             @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<E> iterator() {
                 Iterable union;
-                if (AbstractDirectedNetworkConnections.this.selfLoopCount == 0) {
-                    union = Iterables.concat(AbstractDirectedNetworkConnections.this.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet());
+                int i = AbstractDirectedNetworkConnections.this.selfLoopCount;
+                AbstractDirectedNetworkConnections abstractDirectedNetworkConnections = AbstractDirectedNetworkConnections.this;
+                if (i == 0) {
+                    union = Iterables.concat(abstractDirectedNetworkConnections.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet());
                 } else {
-                    union = Sets.union(AbstractDirectedNetworkConnections.this.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet());
+                    union = Sets.union(abstractDirectedNetworkConnections.inEdgeMap.keySet(), AbstractDirectedNetworkConnections.this.outEdgeMap.keySet());
                 }
                 return Iterators.unmodifiableIterator(union.iterator());
             }

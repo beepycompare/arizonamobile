@@ -163,10 +163,11 @@ public abstract class WidgetRun implements Dependency {
                     this.end.resolve(margin2);
                     return;
                 }
+                ConstraintWidget constraintWidget = this.mWidget;
                 if (i == 0) {
-                    verticalBiasPercent = this.mWidget.getHorizontalBiasPercent();
+                    verticalBiasPercent = constraintWidget.getHorizontalBiasPercent();
                 } else {
-                    verticalBiasPercent = this.mWidget.getVerticalBiasPercent();
+                    verticalBiasPercent = constraintWidget.getVerticalBiasPercent();
                 }
                 if (target == target2) {
                     margin = target.value;
@@ -197,10 +198,11 @@ public abstract class WidgetRun implements Dependency {
                     widgetRun = parent.mVerticalRun;
                 }
                 if (widgetRun.mDimension.resolved) {
+                    ConstraintWidget constraintWidget = this.mWidget;
                     if (i == 0) {
-                        f = this.mWidget.mMatchConstraintPercentWidth;
+                        f = constraintWidget.mMatchConstraintPercentWidth;
                     } else {
-                        f = this.mWidget.mMatchConstraintPercentHeight;
+                        f = constraintWidget.mMatchConstraintPercentHeight;
                     }
                     this.mDimension.resolve(getLimitedDimension((int) ((widgetRun.mDimension.value * f) + 0.5f), i));
                 }
@@ -210,7 +212,8 @@ public abstract class WidgetRun implements Dependency {
             if (this.mWidget.mHorizontalRun.mDimensionBehavior == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.mWidget.mHorizontalRun.matchConstraintsType == 3 && this.mWidget.mVerticalRun.mDimensionBehavior == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.mWidget.mVerticalRun.matchConstraintsType == 3) {
                 return;
             }
-            WidgetRun widgetRun2 = i == 0 ? this.mWidget.mVerticalRun : this.mWidget.mHorizontalRun;
+            ConstraintWidget constraintWidget2 = this.mWidget;
+            WidgetRun widgetRun2 = i == 0 ? constraintWidget2.mVerticalRun : constraintWidget2.mHorizontalRun;
             if (widgetRun2.mDimension.resolved) {
                 float dimensionRatio = this.mWidget.getDimensionRatio();
                 if (i == 1) {
@@ -225,8 +228,9 @@ public abstract class WidgetRun implements Dependency {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int getLimitedDimension(int i, int i2) {
+        ConstraintWidget constraintWidget = this.mWidget;
         if (i2 == 0) {
-            int i3 = this.mWidget.mMatchConstraintMaxWidth;
+            int i3 = constraintWidget.mMatchConstraintMaxWidth;
             int max = Math.max(this.mWidget.mMatchConstraintMinWidth, i);
             if (i3 > 0) {
                 max = Math.min(i3, i);
@@ -235,7 +239,7 @@ public abstract class WidgetRun implements Dependency {
                 return max;
             }
         } else {
-            int i4 = this.mWidget.mMatchConstraintMaxHeight;
+            int i4 = constraintWidget.mMatchConstraintMaxHeight;
             int max2 = Math.max(this.mWidget.mMatchConstraintMinHeight, i);
             if (i4 > 0) {
                 max2 = Math.min(i4, i);

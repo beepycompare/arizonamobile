@@ -11,20 +11,20 @@ import androidx.window.core.layout.WindowSizeClass;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Shape.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J'\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016¢\u0006\u0004\b\f\u0010\r¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/design/system/theme/NewsShape;", "Landroidx/compose/ui/graphics/Shape;", "<init>", "()V", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "design-system_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J'\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016¢\u0006\u0004\b\f\u0010\r¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/design/system/theme/NewsShape;", "Landroidx/compose/ui/graphics/Shape;", "<init>", "()V", "createOutline", "Landroidx/compose/ui/graphics/Outline;", "size", "Landroidx/compose/ui/geometry/Size;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "density", "Landroidx/compose/ui/unit/Density;", "createOutline-Pq9zytI", "(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;", "design-system"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NewsShape implements Shape {
     public static final int $stable = 0;
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Intrinsics.checkNotNullParameter(layoutDirection, "layoutDirection");
         Intrinsics.checkNotNullParameter(density, "density");
         Path path$default = PathParser.toPath$default(new PathParser().parsePathString("M 0.1061 23.9289 C -1.0259 11.0671 9.1099 0 22.0214 0 H 432.15 C 443.553 0 453.066 8.7123 454.066 20.0711 L 475.894 268.071 C 477.026 280.933 466.89 292 453.979 292 H 43.8496 C 32.4469 292 22.9341 283.288 21.9343 271.929 L 0.1061 23.9289 Z"), null, 1, null);
-        float[] m5670constructorimpl$default = Matrix.m5670constructorimpl$default(null, 1, null);
-        Matrix.m5686scaleimpl$default(m5670constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / ((float) WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND), Float.intBitsToFloat((int) (j & 4294967295L)) / 292, 0.0f, 4, null);
-        path$default.mo5315transform58bKbWc(m5670constructorimpl$default);
+        float[] m5016constructorimpl$default = Matrix.m5016constructorimpl$default(null, 1, null);
+        Matrix.m5032scaleimpl$default(m5016constructorimpl$default, Float.intBitsToFloat((int) (j >> 32)) / ((float) WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND), Float.intBitsToFloat((int) (j & 4294967295L)) / 292, 0.0f, 4, null);
+        path$default.mo4663transform58bKbWc(m5016constructorimpl$default);
         return new Outline.Generic(path$default);
     }
 }

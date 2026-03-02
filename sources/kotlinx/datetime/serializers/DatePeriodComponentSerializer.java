@@ -25,9 +25,7 @@ public final class DatePeriodComponentSerializer implements KSerializer<DatePeri
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.DatePeriod/components", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.DatePeriodComponentSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$0;
-            descriptor$lambda$0 = DatePeriodComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$0;
+            return DatePeriodComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -112,7 +110,7 @@ public final class DatePeriodComponentSerializer implements KSerializer<DatePeri
         beginStructure.endStructure(descriptor2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("years", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), true);

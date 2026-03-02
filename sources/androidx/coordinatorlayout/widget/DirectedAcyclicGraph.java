@@ -67,13 +67,20 @@ public final class DirectedAcyclicGraph<T> {
 
     public void clear() {
         int size = this.mGraph.size();
-        for (int i = 0; i < size; i++) {
-            ArrayList<T> valueAt = this.mGraph.valueAt(i);
-            if (valueAt != null) {
-                poolList(valueAt);
+        int i = 0;
+        while (true) {
+            SimpleArrayMap<T, ArrayList<T>> simpleArrayMap = this.mGraph;
+            if (i < size) {
+                ArrayList<T> valueAt = simpleArrayMap.valueAt(i);
+                if (valueAt != null) {
+                    poolList(valueAt);
+                }
+                i++;
+            } else {
+                simpleArrayMap.clear();
+                return;
             }
         }
-        this.mGraph.clear();
     }
 
     public ArrayList<T> getSortedList() {

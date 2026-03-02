@@ -78,9 +78,7 @@ public final class SnapshotObserverKt {
         return new Function1() { // from class: androidx.compose.runtime.snapshots.tooling.SnapshotObserverKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mergeObservers$lambda$1;
-                mergeObservers$lambda$1 = SnapshotObserverKt.mergeObservers$lambda$1(Function1.this, function12, obj);
-                return mergeObservers$lambda$1;
+                return SnapshotObserverKt.mergeObservers$lambda$1(Function1.this, function12, obj);
             }
         };
     }

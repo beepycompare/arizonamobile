@@ -251,10 +251,12 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
     }
 
     private void replaceRangeWithSameLowerBound(Range<C> range) {
-        if (range.isEmpty()) {
-            this.rangesByLowerBound.remove(range.lowerBound);
+        boolean isEmpty = range.isEmpty();
+        NavigableMap<Cut<C>, Range<C>> navigableMap = this.rangesByLowerBound;
+        if (isEmpty) {
+            navigableMap.remove(range.lowerBound);
         } else {
-            this.rangesByLowerBound.put(range.lowerBound, range);
+            navigableMap.put(range.lowerBound, range);
         }
     }
 
@@ -349,16 +351,22 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
         @Override // com.google.common.collect.Maps.IteratorBasedAbstractMap
         public Iterator<Map.Entry<Cut<C>, Range<C>>> entryIterator() {
             final Iterator<Range<C>> it;
-            if (!this.upperBoundWindow.hasLowerBound()) {
-                it = this.rangesByLowerBound.values().iterator();
+            boolean hasLowerBound = this.upperBoundWindow.hasLowerBound();
+            NavigableMap<Cut<C>, Range<C>> navigableMap = this.rangesByLowerBound;
+            if (!hasLowerBound) {
+                it = navigableMap.values().iterator();
             } else {
-                Map.Entry<Cut<C>, Range<C>> lowerEntry = this.rangesByLowerBound.lowerEntry(this.upperBoundWindow.lowerEndpoint());
+                Map.Entry<Cut<C>, Range<C>> lowerEntry = navigableMap.lowerEntry(this.upperBoundWindow.lowerEndpoint());
                 if (lowerEntry == null) {
                     it = this.rangesByLowerBound.values().iterator();
-                } else if (this.upperBoundWindow.lowerBound.isLessThan(lowerEntry.getValue().upperBound)) {
-                    it = this.rangesByLowerBound.tailMap(lowerEntry.getKey(), true).values().iterator();
                 } else {
-                    it = this.rangesByLowerBound.tailMap(this.upperBoundWindow.lowerEndpoint(), true).values().iterator();
+                    boolean isLessThan = this.upperBoundWindow.lowerBound.isLessThan(lowerEntry.getValue().upperBound);
+                    NavigableMap<Cut<C>, Range<C>> navigableMap2 = this.rangesByLowerBound;
+                    if (isLessThan) {
+                        it = navigableMap2.tailMap(lowerEntry.getKey(), true).values().iterator();
+                    } else {
+                        it = navigableMap2.tailMap(this.upperBoundWindow.lowerEndpoint(), true).values().iterator();
+                    }
                 }
             }
             return new AbstractIterator<Map.Entry<Cut<C>, Range<C>>>(this) { // from class: com.google.common.collect.TreeRangeSet.RangesByUpperBound.1
@@ -387,10 +395,12 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
         @Override // com.google.common.collect.AbstractNavigableMap
         Iterator<Map.Entry<Cut<C>, Range<C>>> descendingEntryIterator() {
             Collection<Range<C>> values;
-            if (this.upperBoundWindow.hasUpperBound()) {
-                values = this.rangesByLowerBound.headMap(this.upperBoundWindow.upperEndpoint(), false).descendingMap().values();
+            boolean hasUpperBound = this.upperBoundWindow.hasUpperBound();
+            NavigableMap<Cut<C>, Range<C>> navigableMap = this.rangesByLowerBound;
+            if (hasUpperBound) {
+                values = navigableMap.headMap(this.upperBoundWindow.upperEndpoint(), false).descendingMap().values();
             } else {
-                values = this.rangesByLowerBound.descendingMap().values();
+                values = navigableMap.descendingMap().values();
             }
             final PeekingIterator peekingIterator = Iterators.peekingIterator(values.iterator());
             if (peekingIterator.hasNext() && this.upperBoundWindow.upperBound.isLessThan(((Range) peekingIterator.peek()).upperBound)) {
@@ -497,10 +507,12 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
         public Iterator<Map.Entry<Cut<C>, Range<C>>> entryIterator() {
             Collection<Range<C>> values;
             Cut cut;
-            if (this.complementLowerBoundWindow.hasLowerBound()) {
-                values = this.positiveRangesByUpperBound.tailMap(this.complementLowerBoundWindow.lowerEndpoint(), this.complementLowerBoundWindow.lowerBoundType() == BoundType.CLOSED).values();
+            boolean hasLowerBound = this.complementLowerBoundWindow.hasLowerBound();
+            NavigableMap<Cut<C>, Range<C>> navigableMap = this.positiveRangesByUpperBound;
+            if (hasLowerBound) {
+                values = navigableMap.tailMap(this.complementLowerBoundWindow.lowerEndpoint(), this.complementLowerBoundWindow.lowerBoundType() == BoundType.CLOSED).values();
             } else {
-                values = this.positiveRangesByUpperBound.values();
+                values = navigableMap.values();
             }
             PeekingIterator peekingIterator = Iterators.peekingIterator(values.iterator());
             if (this.complementLowerBoundWindow.contains(Cut.belowAll()) && (!peekingIterator.hasNext() || ((Range) peekingIterator.peek()).lowerBound != Cut.belowAll())) {
@@ -724,13 +736,15 @@ public class TreeRangeSet<C extends Comparable<?>> extends AbstractRangeSet<C> i
                 try {
                     Cut<C> cut = (Cut) key;
                     if (this.lowerBoundWindow.contains(cut) && cut.compareTo(this.restriction.lowerBound) >= 0 && cut.compareTo(this.restriction.upperBound) < 0) {
-                        if (cut.equals(this.restriction.lowerBound)) {
-                            Range range = (Range) Maps.valueOrNull(this.rangesByLowerBound.floorEntry(cut));
+                        boolean equals = cut.equals(this.restriction.lowerBound);
+                        NavigableMap<Cut<C>, Range<C>> navigableMap = this.rangesByLowerBound;
+                        if (equals) {
+                            Range range = (Range) Maps.valueOrNull(navigableMap.floorEntry(cut));
                             if (range != null && range.upperBound.compareTo((Cut) this.restriction.lowerBound) > 0) {
                                 return range.intersection(this.restriction);
                             }
                         } else {
-                            Range range2 = (Range) this.rangesByLowerBound.get(cut);
+                            Range range2 = (Range) navigableMap.get(cut);
                             if (range2 != null) {
                                 return range2.intersection(this.restriction);
                             }

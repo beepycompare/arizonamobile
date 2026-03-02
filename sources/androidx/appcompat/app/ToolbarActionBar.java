@@ -536,9 +536,11 @@ class ToolbarActionBar extends ActionBar {
 
         @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
         public void onMenuModeChange(MenuBuilder menuBuilder) {
-            if (ToolbarActionBar.this.mDecorToolbar.isOverflowMenuShowing()) {
-                ToolbarActionBar.this.mWindowCallback.onPanelClosed(108, menuBuilder);
-            } else if (ToolbarActionBar.this.mWindowCallback.onPreparePanel(0, null, menuBuilder)) {
+            boolean isOverflowMenuShowing = ToolbarActionBar.this.mDecorToolbar.isOverflowMenuShowing();
+            ToolbarActionBar toolbarActionBar = ToolbarActionBar.this;
+            if (isOverflowMenuShowing) {
+                toolbarActionBar.mWindowCallback.onPanelClosed(108, menuBuilder);
+            } else if (toolbarActionBar.mWindowCallback.onPreparePanel(0, null, menuBuilder)) {
                 ToolbarActionBar.this.mWindowCallback.onMenuOpened(108, menuBuilder);
             }
         }

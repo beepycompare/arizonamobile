@@ -96,10 +96,16 @@ public class AnimatorInflaterCompat {
             if (!PathParser.canMorph(this.mNodeArray, pathDataNodeArr)) {
                 this.mNodeArray = PathParser.deepCopyNodes(pathDataNodeArr);
             }
-            for (int i = 0; i < pathDataNodeArr.length; i++) {
-                this.mNodeArray[i].interpolatePathDataNode(pathDataNodeArr[i], pathDataNodeArr2[i], f);
+            int i = 0;
+            while (true) {
+                int length = pathDataNodeArr.length;
+                PathParser.PathDataNode[] pathDataNodeArr3 = this.mNodeArray;
+                if (i >= length) {
+                    return pathDataNodeArr3;
+                }
+                pathDataNodeArr3[i].interpolatePathDataNode(pathDataNodeArr[i], pathDataNodeArr2[i], f);
+                i++;
             }
-            return this.mNodeArray;
         }
     }
 

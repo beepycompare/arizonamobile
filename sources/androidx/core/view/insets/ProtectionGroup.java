@@ -125,9 +125,16 @@ class ProtectionGroup implements SystemBarStateMonitor.Callback {
         }
         this.mDisposed = true;
         this.mMonitor.removeCallback(this);
-        for (int size = this.mProtections.size() - 1; size >= 0; size--) {
-            this.mProtections.get(size).setController(null);
+        int size = this.mProtections.size() - 1;
+        while (true) {
+            ArrayList<Protection> arrayList = this.mProtections;
+            if (size >= 0) {
+                arrayList.get(size).setController(null);
+                size--;
+            } else {
+                arrayList.clear();
+                return;
+            }
         }
-        this.mProtections.clear();
     }
 }

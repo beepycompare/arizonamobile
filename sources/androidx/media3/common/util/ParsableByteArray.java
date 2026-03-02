@@ -154,14 +154,14 @@ public final class ParsableByteArray {
 
     private char peekChar(ByteOrder byteOrder, int i) {
         maybeAssertAtLeastBytesLeftForLegacyMethod(2);
-        if (byteOrder == ByteOrder.BIG_ENDIAN) {
-            byte[] bArr = this.data;
+        ByteOrder byteOrder2 = ByteOrder.BIG_ENDIAN;
+        byte[] bArr = this.data;
+        if (byteOrder == byteOrder2) {
             int i2 = this.position;
             return Chars.fromBytes(bArr[i2 + i], bArr[i2 + i + 1]);
         }
-        byte[] bArr2 = this.data;
         int i3 = this.position;
-        return Chars.fromBytes(bArr2[i3 + i + 1], bArr2[i3 + i]);
+        return Chars.fromBytes(bArr[i3 + i + 1], bArr[i3 + i]);
     }
 
     public int peekCodePoint(Charset charset) {

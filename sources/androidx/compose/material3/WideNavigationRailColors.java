@@ -27,32 +27,32 @@ public final class WideNavigationRailColors {
     }
 
     /* renamed from: getContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3513getContainerColor0d7_KjU() {
+    public final long m2943getContainerColor0d7_KjU() {
         return this.containerColor;
     }
 
     /* renamed from: getContentColor-0d7_KjU  reason: not valid java name */
-    public final long m3514getContentColor0d7_KjU() {
+    public final long m2944getContentColor0d7_KjU() {
         return this.contentColor;
     }
 
     /* renamed from: getModalContainerColor-0d7_KjU  reason: not valid java name */
-    public final long m3515getModalContainerColor0d7_KjU() {
+    public final long m2945getModalContainerColor0d7_KjU() {
         return this.modalContainerColor;
     }
 
     /* renamed from: getModalScrimColor-0d7_KjU  reason: not valid java name */
-    public final long m3517getModalScrimColor0d7_KjU() {
+    public final long m2947getModalScrimColor0d7_KjU() {
         return this.modalScrimColor;
     }
 
     /* renamed from: getModalContentColor-0d7_KjU  reason: not valid java name */
-    public final long m3516getModalContentColor0d7_KjU() {
+    public final long m2946getModalContentColor0d7_KjU() {
         return this.modalContentColor;
     }
 
     /* renamed from: copy-t635Npw$default  reason: not valid java name */
-    public static /* synthetic */ WideNavigationRailColors m3511copyt635Npw$default(WideNavigationRailColors wideNavigationRailColors, long j, long j2, long j3, long j4, long j5, int i, Object obj) {
+    public static /* synthetic */ WideNavigationRailColors m2941copyt635Npw$default(WideNavigationRailColors wideNavigationRailColors, long j, long j2, long j3, long j4, long j5, int i, Object obj) {
         if ((i & 1) != 0) {
             j = wideNavigationRailColors.containerColor;
         }
@@ -60,11 +60,11 @@ public final class WideNavigationRailColors {
         if ((i & 2) != 0) {
             j2 = wideNavigationRailColors.contentColor;
         }
-        return wideNavigationRailColors.m3512copyt635Npw(j6, j2, (i & 4) != 0 ? wideNavigationRailColors.modalContainerColor : j3, (i & 8) != 0 ? wideNavigationRailColors.modalScrimColor : j4, (i & 16) != 0 ? wideNavigationRailColors.modalContentColor : j5);
+        return wideNavigationRailColors.m2942copyt635Npw(j6, j2, (i & 4) != 0 ? wideNavigationRailColors.modalContainerColor : j3, (i & 8) != 0 ? wideNavigationRailColors.modalScrimColor : j4, (i & 16) != 0 ? wideNavigationRailColors.modalContentColor : j5);
     }
 
     /* renamed from: copy-t635Npw  reason: not valid java name */
-    public final WideNavigationRailColors m3512copyt635Npw(long j, long j2, long j3, long j4, long j5) {
+    public final WideNavigationRailColors m2942copyt635Npw(long j, long j2, long j3, long j4, long j5) {
         return new WideNavigationRailColors(j != 16 ? j : this.containerColor, j2 != 16 ? j2 : this.contentColor, j3 != 16 ? j3 : this.modalContainerColor, j4 != 16 ? j4 : this.modalScrimColor, j5 != 16 ? j5 : this.modalContentColor, null);
     }
 
@@ -76,10 +76,10 @@ public final class WideNavigationRailColors {
             return false;
         }
         WideNavigationRailColors wideNavigationRailColors = (WideNavigationRailColors) obj;
-        return Color.m5425equalsimpl0(this.containerColor, wideNavigationRailColors.containerColor) && Color.m5425equalsimpl0(this.contentColor, wideNavigationRailColors.contentColor) && Color.m5425equalsimpl0(this.modalContainerColor, wideNavigationRailColors.modalContainerColor) && Color.m5425equalsimpl0(this.modalScrimColor, wideNavigationRailColors.modalScrimColor);
+        return Color.m4773equalsimpl0(this.containerColor, wideNavigationRailColors.containerColor) && Color.m4773equalsimpl0(this.contentColor, wideNavigationRailColors.contentColor) && Color.m4773equalsimpl0(this.modalContainerColor, wideNavigationRailColors.modalContainerColor) && Color.m4773equalsimpl0(this.modalScrimColor, wideNavigationRailColors.modalScrimColor);
     }
 
     public int hashCode() {
-        return (((((((Color.m5431hashCodeimpl(this.containerColor) * 31) + Color.m5431hashCodeimpl(this.contentColor)) * 31) + Color.m5431hashCodeimpl(this.modalContainerColor)) * 31) + Color.m5431hashCodeimpl(this.modalScrimColor)) * 31) + Color.m5431hashCodeimpl(this.modalContentColor);
+        return (((((((Color.m4779hashCodeimpl(this.containerColor) * 31) + Color.m4779hashCodeimpl(this.contentColor)) * 31) + Color.m4779hashCodeimpl(this.modalContainerColor)) * 31) + Color.m4779hashCodeimpl(this.modalScrimColor)) * 31) + Color.m4779hashCodeimpl(this.modalContentColor);
     }
 }

@@ -760,21 +760,25 @@ public abstract class CodedOutputStream extends ByteOutput {
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public final void writeUInt32NoTag(int value) throws IOException {
-            while ((value & (-128)) != 0) {
+            while (true) {
+                int i = value & (-128);
+                byte[] bArr = this.buffer;
+                if (i == 0) {
+                    int i2 = this.position;
+                    this.position = i2 + 1;
+                    bArr[i2] = (byte) value;
+                    return;
+                }
                 try {
-                    byte[] bArr = this.buffer;
-                    int i = this.position;
-                    this.position = i + 1;
-                    bArr[i] = (byte) ((value | 128) & 255);
+                    int i3 = this.position;
+                    this.position = i3 + 1;
+                    bArr[i3] = (byte) ((value | 128) & 255);
                     value >>>= 7;
                 } catch (IndexOutOfBoundsException e) {
                     throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
                 }
+                throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
             }
-            byte[] bArr2 = this.buffer;
-            int i2 = this.position;
-            this.position = i2 + 1;
-            bArr2[i2] = (byte) value;
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
@@ -800,35 +804,41 @@ public abstract class CodedOutputStream extends ByteOutput {
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public final void writeUInt64NoTag(long value) throws IOException {
-            if (CodedOutputStream.HAS_UNSAFE_ARRAY_OPERATIONS && spaceLeft() >= 10) {
-                while ((value & (-128)) != 0) {
+            if (!CodedOutputStream.HAS_UNSAFE_ARRAY_OPERATIONS || spaceLeft() < 10) {
+                while (true) {
+                    int i = ((value & (-128)) > 0L ? 1 : ((value & (-128)) == 0L ? 0 : -1));
                     byte[] bArr = this.buffer;
-                    int i = this.position;
-                    this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) value) | 128) & 255));
-                    value >>>= 7;
-                }
-                byte[] bArr2 = this.buffer;
-                int i2 = this.position;
-                this.position = i2 + 1;
-                UnsafeUtil.putByte(bArr2, i2, (byte) value);
-                return;
-            }
-            while ((value & (-128)) != 0) {
-                try {
-                    byte[] bArr3 = this.buffer;
-                    int i3 = this.position;
-                    this.position = i3 + 1;
-                    bArr3[i3] = (byte) ((((int) value) | 128) & 255);
-                    value >>>= 7;
-                } catch (IndexOutOfBoundsException e) {
+                    if (i == 0) {
+                        int i2 = this.position;
+                        this.position = i2 + 1;
+                        bArr[i2] = (byte) value;
+                        return;
+                    }
+                    try {
+                        int i3 = this.position;
+                        this.position = i3 + 1;
+                        bArr[i3] = (byte) ((((int) value) | 128) & 255);
+                        value >>>= 7;
+                    } catch (IndexOutOfBoundsException e) {
+                        throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
+                    }
                     throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.position), Integer.valueOf(this.limit), 1), e);
                 }
             }
-            byte[] bArr4 = this.buffer;
-            int i4 = this.position;
-            this.position = i4 + 1;
-            bArr4[i4] = (byte) value;
+            while (true) {
+                int i4 = ((value & (-128)) > 0L ? 1 : ((value & (-128)) == 0L ? 0 : -1));
+                byte[] bArr2 = this.buffer;
+                if (i4 == 0) {
+                    int i5 = this.position;
+                    this.position = i5 + 1;
+                    UnsafeUtil.putByte(bArr2, i5, (byte) value);
+                    return;
+                }
+                int i6 = this.position;
+                this.position = i6 + 1;
+                UnsafeUtil.putByte(bArr2, i6, (byte) ((((int) value) | 128) & 255));
+                value >>>= 7;
+            }
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
@@ -1117,15 +1127,21 @@ public abstract class CodedOutputStream extends ByteOutput {
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public void writeUInt32NoTag(int value) throws IOException {
-            while ((value & (-128)) != 0) {
+            while (true) {
+                int i = value & (-128);
+                ByteBuffer byteBuffer = this.buffer;
+                if (i == 0) {
+                    byteBuffer.put((byte) value);
+                    return;
+                }
                 try {
-                    this.buffer.put((byte) ((value | 128) & 255));
+                    byteBuffer.put((byte) ((value | 128) & 255));
                     value >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new OutOfSpaceException(e);
                 }
+                throw new OutOfSpaceException(e);
             }
-            this.buffer.put((byte) value);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
@@ -1139,15 +1155,21 @@ public abstract class CodedOutputStream extends ByteOutput {
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public void writeUInt64NoTag(long value) throws IOException {
-            while (((-128) & value) != 0) {
+            while (true) {
+                int i = (((-128) & value) > 0L ? 1 : (((-128) & value) == 0L ? 0 : -1));
+                ByteBuffer byteBuffer = this.buffer;
+                if (i == 0) {
+                    byteBuffer.put((byte) value);
+                    return;
+                }
                 try {
-                    this.buffer.put((byte) ((((int) value) | 128) & 255));
+                    byteBuffer.put((byte) ((((int) value) | 128) & 255));
                     value >>>= 7;
                 } catch (BufferOverflowException e) {
                     throw new OutOfSpaceException(e);
                 }
+                throw new OutOfSpaceException(e);
             }
-            this.buffer.put((byte) value);
         }
 
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
@@ -1424,30 +1446,33 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public void writeUInt32NoTag(int value) throws IOException {
             if (this.position <= this.oneVarintLimit) {
-                while ((value & (-128)) != 0) {
+                while (true) {
+                    int i = value & (-128);
                     long j = this.position;
+                    if (i == 0) {
+                        this.position = 1 + j;
+                        UnsafeUtil.putByte(j, (byte) value);
+                        return;
+                    }
                     this.position = j + 1;
                     UnsafeUtil.putByte(j, (byte) ((value | 128) & 255));
                     value >>>= 7;
                 }
-                long j2 = this.position;
-                this.position = 1 + j2;
-                UnsafeUtil.putByte(j2, (byte) value);
-                return;
-            }
-            while (true) {
-                long j3 = this.position;
-                if (j3 >= this.limit) {
-                    throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.position), Long.valueOf(this.limit), 1));
+            } else {
+                while (true) {
+                    long j2 = this.position;
+                    if (j2 >= this.limit) {
+                        throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.position), Long.valueOf(this.limit), 1));
+                    }
+                    if ((value & (-128)) == 0) {
+                        this.position = 1 + j2;
+                        UnsafeUtil.putByte(j2, (byte) value);
+                        return;
+                    }
+                    this.position = j2 + 1;
+                    UnsafeUtil.putByte(j2, (byte) ((value | 128) & 255));
+                    value >>>= 7;
                 }
-                if ((value & (-128)) == 0) {
-                    this.position = 1 + j3;
-                    UnsafeUtil.putByte(j3, (byte) value);
-                    return;
-                }
-                this.position = j3 + 1;
-                UnsafeUtil.putByte(j3, (byte) ((value | 128) & 255));
-                value >>>= 7;
             }
         }
 
@@ -1460,30 +1485,33 @@ public abstract class CodedOutputStream extends ByteOutput {
         @Override // androidx.datastore.preferences.protobuf.CodedOutputStream
         public void writeUInt64NoTag(long value) throws IOException {
             if (this.position <= this.oneVarintLimit) {
-                while ((value & (-128)) != 0) {
+                while (true) {
+                    int i = ((value & (-128)) > 0L ? 1 : ((value & (-128)) == 0L ? 0 : -1));
                     long j = this.position;
+                    if (i == 0) {
+                        this.position = 1 + j;
+                        UnsafeUtil.putByte(j, (byte) value);
+                        return;
+                    }
                     this.position = j + 1;
                     UnsafeUtil.putByte(j, (byte) ((((int) value) | 128) & 255));
                     value >>>= 7;
                 }
-                long j2 = this.position;
-                this.position = 1 + j2;
-                UnsafeUtil.putByte(j2, (byte) value);
-                return;
-            }
-            while (true) {
-                long j3 = this.position;
-                if (j3 >= this.limit) {
-                    throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.position), Long.valueOf(this.limit), 1));
+            } else {
+                while (true) {
+                    long j2 = this.position;
+                    if (j2 >= this.limit) {
+                        throw new OutOfSpaceException(String.format("Pos: %d, limit: %d, len: %d", Long.valueOf(this.position), Long.valueOf(this.limit), 1));
+                    }
+                    if ((value & (-128)) == 0) {
+                        this.position = 1 + j2;
+                        UnsafeUtil.putByte(j2, (byte) value);
+                        return;
+                    }
+                    this.position = j2 + 1;
+                    UnsafeUtil.putByte(j2, (byte) ((((int) value) | 128) & 255));
+                    value >>>= 7;
                 }
-                if ((value & (-128)) == 0) {
-                    this.position = 1 + j3;
-                    UnsafeUtil.putByte(j3, (byte) value);
-                    return;
-                }
-                this.position = j3 + 1;
-                UnsafeUtil.putByte(j3, (byte) ((((int) value) | 128) & 255));
-                value >>>= 7;
             }
         }
 
@@ -1638,65 +1666,77 @@ public abstract class CodedOutputStream extends ByteOutput {
         final void bufferUInt32NoTag(int value) {
             if (CodedOutputStream.HAS_UNSAFE_ARRAY_OPERATIONS) {
                 long j = this.position;
-                while ((value & (-128)) != 0) {
+                while (true) {
+                    int i = value & (-128);
                     byte[] bArr = this.buffer;
-                    int i = this.position;
-                    this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((value | 128) & 255));
+                    if (i == 0) {
+                        int i2 = this.position;
+                        this.position = i2 + 1;
+                        UnsafeUtil.putByte(bArr, i2, (byte) value);
+                        this.totalBytesWritten += (int) (this.position - j);
+                        return;
+                    }
+                    int i3 = this.position;
+                    this.position = i3 + 1;
+                    UnsafeUtil.putByte(bArr, i3, (byte) ((value | 128) & 255));
                     value >>>= 7;
                 }
-                byte[] bArr2 = this.buffer;
-                int i2 = this.position;
-                this.position = i2 + 1;
-                UnsafeUtil.putByte(bArr2, i2, (byte) value);
-                this.totalBytesWritten += (int) (this.position - j);
-                return;
+            } else {
+                while (true) {
+                    int i4 = value & (-128);
+                    byte[] bArr2 = this.buffer;
+                    if (i4 == 0) {
+                        int i5 = this.position;
+                        this.position = i5 + 1;
+                        bArr2[i5] = (byte) value;
+                        this.totalBytesWritten++;
+                        return;
+                    }
+                    int i6 = this.position;
+                    this.position = i6 + 1;
+                    bArr2[i6] = (byte) ((value | 128) & 255);
+                    this.totalBytesWritten++;
+                    value >>>= 7;
+                }
             }
-            while ((value & (-128)) != 0) {
-                byte[] bArr3 = this.buffer;
-                int i3 = this.position;
-                this.position = i3 + 1;
-                bArr3[i3] = (byte) ((value | 128) & 255);
-                this.totalBytesWritten++;
-                value >>>= 7;
-            }
-            byte[] bArr4 = this.buffer;
-            int i4 = this.position;
-            this.position = i4 + 1;
-            bArr4[i4] = (byte) value;
-            this.totalBytesWritten++;
         }
 
         final void bufferUInt64NoTag(long value) {
             if (CodedOutputStream.HAS_UNSAFE_ARRAY_OPERATIONS) {
                 long j = this.position;
-                while ((value & (-128)) != 0) {
+                while (true) {
+                    int i = ((value & (-128)) > 0L ? 1 : ((value & (-128)) == 0L ? 0 : -1));
                     byte[] bArr = this.buffer;
-                    int i = this.position;
-                    this.position = i + 1;
-                    UnsafeUtil.putByte(bArr, i, (byte) ((((int) value) | 128) & 255));
+                    if (i == 0) {
+                        int i2 = this.position;
+                        this.position = i2 + 1;
+                        UnsafeUtil.putByte(bArr, i2, (byte) value);
+                        this.totalBytesWritten += (int) (this.position - j);
+                        return;
+                    }
+                    int i3 = this.position;
+                    this.position = i3 + 1;
+                    UnsafeUtil.putByte(bArr, i3, (byte) ((((int) value) | 128) & 255));
                     value >>>= 7;
                 }
-                byte[] bArr2 = this.buffer;
-                int i2 = this.position;
-                this.position = i2 + 1;
-                UnsafeUtil.putByte(bArr2, i2, (byte) value);
-                this.totalBytesWritten += (int) (this.position - j);
-                return;
+            } else {
+                while (true) {
+                    int i4 = ((value & (-128)) > 0L ? 1 : ((value & (-128)) == 0L ? 0 : -1));
+                    byte[] bArr2 = this.buffer;
+                    if (i4 == 0) {
+                        int i5 = this.position;
+                        this.position = i5 + 1;
+                        bArr2[i5] = (byte) value;
+                        this.totalBytesWritten++;
+                        return;
+                    }
+                    int i6 = this.position;
+                    this.position = i6 + 1;
+                    bArr2[i6] = (byte) ((((int) value) | 128) & 255);
+                    this.totalBytesWritten++;
+                    value >>>= 7;
+                }
             }
-            while ((value & (-128)) != 0) {
-                byte[] bArr3 = this.buffer;
-                int i3 = this.position;
-                this.position = i3 + 1;
-                bArr3[i3] = (byte) ((((int) value) | 128) & 255);
-                this.totalBytesWritten++;
-                value >>>= 7;
-            }
-            byte[] bArr4 = this.buffer;
-            int i4 = this.position;
-            this.position = i4 + 1;
-            bArr4[i4] = (byte) value;
-            this.totalBytesWritten++;
         }
 
         final void bufferFixed32NoTag(int value) {

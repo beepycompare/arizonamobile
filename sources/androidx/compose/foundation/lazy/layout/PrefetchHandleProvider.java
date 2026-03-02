@@ -67,7 +67,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: schedulePremeasure-m8Kt_7k  reason: not valid java name */
-    public final LazyLayoutPrefetchState.PrefetchHandle m1157schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
+    public final LazyLayoutPrefetchState.PrefetchHandle m1016schedulePremeasurem8Kt_7k(int i, long j, PrefetchMetrics prefetchMetrics, boolean z, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
         PrefetchScheduler prefetchScheduler = this.executor;
         HandleAndRequestImpl handleAndRequestImpl = new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, function1, null);
         executeWithPriority(this.executor, handleAndRequestImpl, z);
@@ -86,7 +86,7 @@ public final class PrefetchHandleProvider {
     }
 
     /* renamed from: createNestedPrefetchRequest-VKLhPVY  reason: not valid java name */
-    public final PrefetchRequest m1156createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
+    public final PrefetchRequest m1015createNestedPrefetchRequestVKLhPVY(int i, long j, PrefetchMetrics prefetchMetrics) {
         PrefetchScheduler prefetchScheduler = this.executor;
         return new HandleAndRequestImpl(this, i, j, prefetchMetrics, prefetchScheduler instanceof PriorityPrefetchScheduler ? (PriorityPrefetchScheduler) prefetchScheduler : null, null, null);
     }
@@ -130,7 +130,7 @@ public final class PrefetchHandleProvider {
             this.prefetchMetrics = prefetchMetrics;
             this.priorityPrefetchScheduler = priorityPrefetchScheduler;
             this.onItemPremeasured = function1;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11723markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m10655markNowz9LOYto();
         }
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
@@ -140,7 +140,7 @@ public final class PrefetchHandleProvider {
 
         private HandleAndRequestImpl(PrefetchHandleProvider prefetchHandleProvider, int i, long j, PrefetchMetrics prefetchMetrics, PriorityPrefetchScheduler priorityPrefetchScheduler, Function1<? super LazyLayoutPrefetchState.PrefetchResultScope, Unit> function1) {
             this(i, prefetchMetrics, priorityPrefetchScheduler, function1);
-            this.premeasureConstraints = Constraints.m8198boximpl(j);
+            this.premeasureConstraints = Constraints.m7495boximpl(j);
         }
 
         private final boolean isComposed() {
@@ -173,9 +173,9 @@ public final class PrefetchHandleProvider {
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
         /* renamed from: getSize-YEO4UFw */
-        public long mo1141getSizeYEO4UFw(int i) {
+        public long mo1003getSizeYEO4UFw(int i) {
             SubcomposeLayoutState.PrecomposedSlotHandle precomposedSlotHandle = this.precomposeHandle;
-            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6902getSizeYEO4UFw(i) : IntSize.Companion.m8434getZeroYbymL2g();
+            return precomposedSlotHandle != null ? precomposedSlotHandle.mo6243getSizeYEO4UFw(i) : IntSize.Companion.m7731getZeroYbymL2g();
         }
 
         private final boolean shouldExecute(long j, long j2) {
@@ -187,18 +187,18 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11723markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m10655markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m11723markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11723markNowz9LOYto();
-            long m11618getInWholeNanosecondsimpl = Duration.m11618getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11734minus6eNON_k(m11723markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m11618getInWholeNanosecondsimpl;
-            long j = this.availableTimeNanos - m11618getInWholeNanosecondsimpl;
+            long m10655markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m10655markNowz9LOYto();
+            long m10551getInWholeNanosecondsimpl = Duration.m10551getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m10666minus6eNON_k(m10655markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m10551getInWholeNanosecondsimpl;
+            long j = this.availableTimeNanos - m10551getInWholeNanosecondsimpl;
             this.availableTimeNanos = j;
-            this.startTime = m11723markNowz9LOYto;
+            this.startTime = m10655markNowz9LOYto;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
@@ -254,8 +254,10 @@ public final class PrefetchHandleProvider {
                     boolean isComposed = isComposed();
                     resetAvailableTimeTo(prefetchRequestScope.availableTimeNanos());
                     if (!isComposed()) {
-                        if (ComposeFoundationFlags.isPausableCompositionInPrefetchEnabled) {
-                            if (shouldExecute(this.availableTimeNanos, average.getResumeTimeNanos() + average.getPauseTimeNanos())) {
+                        boolean z = ComposeFoundationFlags.isPausableCompositionInPrefetchEnabled;
+                        long j = this.availableTimeNanos;
+                        if (z) {
+                            if (shouldExecute(j, average.getResumeTimeNanos() + average.getPauseTimeNanos())) {
                                 Trace.beginSection("compose:lazy:prefetch:compose");
                                 try {
                                     performPausableComposition(prefetchRequestScope, key, contentType, average);
@@ -263,7 +265,7 @@ public final class PrefetchHandleProvider {
                                 } finally {
                                 }
                             }
-                        } else if (shouldExecute(this.availableTimeNanos, average.getCompositionTimeNanos())) {
+                        } else if (shouldExecute(j, average.getCompositionTimeNanos())) {
                             Trace.beginSection("compose:lazy:prefetch:compose");
                             try {
                                 performFullComposition(key, contentType);
@@ -324,7 +326,7 @@ public final class PrefetchHandleProvider {
                         }
                         Trace.beginSection("compose:lazy:prefetch:measure");
                         try {
-                            m1158performMeasureBRTryo0(constraints.m8217unboximpl());
+                            m1017performMeasureBRTryo0(constraints.m7514unboximpl());
                             Unit unit5 = Unit.INSTANCE;
                             Trace.endSection();
                             updateElapsedAndAvailableTime();
@@ -364,21 +366,21 @@ public final class PrefetchHandleProvider {
                 pausedPrecomposition.resume(new ShouldPauseCallback() { // from class: androidx.compose.foundation.lazy.layout.PrefetchHandleProvider$HandleAndRequestImpl$$ExternalSyntheticLambda1
                     @Override // androidx.compose.runtime.ShouldPauseCallback
                     public final boolean shouldPause() {
-                        boolean performPausableComposition$lambda$1;
-                        performPausableComposition$lambda$1 = PrefetchHandleProvider.HandleAndRequestImpl.performPausableComposition$lambda$1(PrefetchHandleProvider.HandleAndRequestImpl.this, averages);
-                        return performPausableComposition$lambda$1;
+                        return PrefetchHandleProvider.HandleAndRequestImpl.performPausableComposition$lambda$1(PrefetchHandleProvider.HandleAndRequestImpl.this, averages);
                     }
                 });
             }
             updateElapsedAndAvailableTime();
-            if (this.pauseRequested) {
-                averages.savePauseTimeNanos(this.elapsedTimeNanos);
+            boolean z = this.pauseRequested;
+            long j = this.elapsedTimeNanos;
+            if (z) {
+                averages.savePauseTimeNanos(j);
             } else {
-                averages.saveResumeTimeNanos(this.elapsedTimeNanos);
+                averages.saveResumeTimeNanos(j);
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean performPausableComposition$lambda$1(HandleAndRequestImpl handleAndRequestImpl, Averages averages) {
             if (!handleAndRequestImpl.pauseRequested) {
                 handleAndRequestImpl.updateElapsedAndAvailableTime();
@@ -409,7 +411,7 @@ public final class PrefetchHandleProvider {
         }
 
         /* renamed from: performMeasure-BRTryo0  reason: not valid java name */
-        private final void m1158performMeasureBRTryo0(long j) {
+        private final void m1017performMeasureBRTryo0(long j) {
             if (this.isCanceled) {
                 InlineClassHelperKt.throwIllegalArgumentException("Callers should check whether the request is still valid before calling performMeasure()");
             }
@@ -421,7 +423,7 @@ public final class PrefetchHandleProvider {
             if (precomposedSlotHandle != null) {
                 int placeablesCount = precomposedSlotHandle.getPlaceablesCount();
                 for (int i = 0; i < placeablesCount; i++) {
-                    precomposedSlotHandle.mo6903premeasure0kLqBqw(i, j);
+                    precomposedSlotHandle.mo6244premeasure0kLqBqw(i, j);
                 }
                 return;
             }
@@ -436,9 +438,7 @@ public final class PrefetchHandleProvider {
                 precomposedSlotHandle.traverseDescendants("androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode", new Function1() { // from class: androidx.compose.foundation.lazy.layout.PrefetchHandleProvider$HandleAndRequestImpl$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$1;
-                        resolveNestedPrefetchStates$lambda$1 = PrefetchHandleProvider.HandleAndRequestImpl.resolveNestedPrefetchStates$lambda$1(Ref.ObjectRef.this, (TraversableNode) obj);
-                        return resolveNestedPrefetchStates$lambda$1;
+                        return PrefetchHandleProvider.HandleAndRequestImpl.resolveNestedPrefetchStates$lambda$1(Ref.ObjectRef.this, (TraversableNode) obj);
                     }
                 });
                 List list = (List) objectRef.element;
@@ -451,7 +451,7 @@ public final class PrefetchHandleProvider {
             throw new KotlinNothingValueException();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: Multi-variable type inference failed */
         public static final TraversableNode.Companion.TraverseDescendantsAction resolveNestedPrefetchStates$lambda$1(Ref.ObjectRef objectRef, TraversableNode traversableNode) {
             T t;

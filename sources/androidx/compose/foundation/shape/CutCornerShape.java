@@ -20,9 +20,9 @@ public final class CutCornerShape extends CornerBasedShape {
 
     @Override // androidx.compose.foundation.shape.CornerBasedShape
     /* renamed from: createOutline-LjSzlW0 */
-    public Outline mo1266createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
+    public Outline mo1109createOutlineLjSzlW0(long j, float f, float f2, float f3, float f4, LayoutDirection layoutDirection) {
         if (f + f2 + f4 + f3 == 0.0f) {
-            return new Outline.Rectangle(SizeKt.m5269toRectuvyYCjk(j));
+            return new Outline.Rectangle(SizeKt.m4617toRectuvyYCjk(j));
         }
         Path Path = AndroidPath_androidKt.Path();
         float f5 = layoutDirection == LayoutDirection.Ltr ? f : f2;

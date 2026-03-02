@@ -11,7 +11,7 @@ public final class TrieNodeKeysIterator<K, V> extends TrieNodeBaseIterator<K, V,
 
     @Override // java.util.Iterator
     public K next() {
-        CommonFunctionsKt.m4792assert(hasNextKey());
+        CommonFunctionsKt.m4157assert(hasNextKey());
         setIndex(getIndex() + 2);
         return (K) getBuffer()[getIndex() - 2];
     }

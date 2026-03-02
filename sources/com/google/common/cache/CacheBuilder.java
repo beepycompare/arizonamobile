@@ -397,9 +397,13 @@ public final class CacheBuilder<K, V> {
     private void checkWeightWithWeigher() {
         if (this.weigher == null) {
             Preconditions.checkState(this.maximumWeight == -1, "maximumWeight requires weigher");
-        } else if (this.strictParsing) {
-            Preconditions.checkState(this.maximumWeight != -1, "weigher requires maximumWeight");
-        } else if (this.maximumWeight == -1) {
+            return;
+        }
+        boolean z = this.strictParsing;
+        long j = this.maximumWeight;
+        if (z) {
+            Preconditions.checkState(j != -1, "weigher requires maximumWeight");
+        } else if (j == -1) {
             LoggerHolder.logger.log(Level.WARNING, "ignoring weigher specified without maximumWeight");
         }
     }

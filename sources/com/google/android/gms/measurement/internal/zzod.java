@@ -89,98 +89,32 @@ public final class zzod {
         return sb.toString();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x004c, code lost:
-        if ("1".equals(r2.get("EnableAdvertiserConsentMode")) != false) goto L7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0058, code lost:
-        if (((java.lang.Boolean) r0.zzb(null)).booleanValue() == false) goto L35;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x005a, code lost:
-        r0 = r9.zza;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0062, code lost:
-        if (r0.get("Version") != null) goto L14;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0068, code lost:
-        return zzf();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x006d, code lost:
-        if (zzg() >= 0) goto L16;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0071, code lost:
-        r1 = new android.os.Bundle();
-        r2 = com.google.android.gms.measurement.internal.zzjk.AD_STORAGE.zze;
-        r6 = "denied";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0089, code lost:
-        if (true == java.util.Objects.equals(r0.get("AuthorizePurpose1"), "1")) goto L34;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x008b, code lost:
-        r4 = "denied";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x008d, code lost:
-        r4 = "granted";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x008e, code lost:
-        r1.putString(r2, r4);
-        r2 = com.google.android.gms.measurement.internal.zzjk.AD_PERSONALIZATION.zze;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x009f, code lost:
-        if (java.util.Objects.equals(r0.get("AuthorizePurpose3"), "1") == false) goto L33;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00ab, code lost:
-        if (java.util.Objects.equals(r0.get("AuthorizePurpose4"), "1") == false) goto L33;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ad, code lost:
-        r4 = "granted";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00af, code lost:
-        r4 = "denied";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00b0, code lost:
-        r1.putString(r2, r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x00b8, code lost:
-        if (zzg() < 4) goto L32;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00ba, code lost:
-        r2 = com.google.android.gms.measurement.internal.zzjk.AD_USER_DATA.zze;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c6, code lost:
-        if (java.util.Objects.equals(r0.get("AuthorizePurpose1"), "1") == false) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00d2, code lost:
-        if (java.util.Objects.equals(r0.get("AuthorizePurpose7"), "1") == false) goto L31;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00d4, code lost:
-        r6 = "granted";
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00d5, code lost:
-        r1.putString(r2, r6);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00d8, code lost:
-        return r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00dd, code lost:
-        return zzf();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0029, code lost:
-        if ("1".equals(r2.get("EnableAdvertiserConsentMode")) != false) goto L7;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final Bundle zzb() {
         zzfx zzfxVar = zzfy.zzaZ;
-        if (((Boolean) zzfxVar.zzb(null)).booleanValue()) {
-            Map map = this.zza;
-            if ("1".equals(map.get("gdprApplies"))) {
-            }
-            return Bundle.EMPTY;
-        }
-        Map map2 = this.zza;
-        if ("1".equals(map2.get("GoogleConsent"))) {
-            if ("1".equals(map2.get("gdprApplies"))) {
+        boolean booleanValue = ((Boolean) zzfxVar.zzb(null)).booleanValue();
+        Map map = this.zza;
+        if (!booleanValue ? !(!"1".equals(map.get("GoogleConsent")) || !"1".equals(map.get("gdprApplies")) || !"1".equals(map.get("EnableAdvertiserConsentMode"))) : !(!"1".equals(map.get("gdprApplies")) || !"1".equals(map.get("EnableAdvertiserConsentMode")))) {
+            if (((Boolean) zzfxVar.zzb(null)).booleanValue()) {
+                Map map2 = this.zza;
+                if (map2.get("Version") == null) {
+                    return zzf();
+                }
+                if (zzg() >= 0) {
+                    Bundle bundle = new Bundle();
+                    String str = "denied";
+                    bundle.putString(zzjk.AD_STORAGE.zze, true != Objects.equals(map2.get("AuthorizePurpose1"), "1") ? "denied" : "granted");
+                    bundle.putString(zzjk.AD_PERSONALIZATION.zze, (Objects.equals(map2.get("AuthorizePurpose3"), "1") && Objects.equals(map2.get("AuthorizePurpose4"), "1")) ? "granted" : "denied");
+                    if (zzg() >= 4) {
+                        String str2 = zzjk.AD_USER_DATA.zze;
+                        if (Objects.equals(map2.get("AuthorizePurpose1"), "1") && Objects.equals(map2.get("AuthorizePurpose7"), "1")) {
+                            str = "granted";
+                        }
+                        bundle.putString(str2, str);
+                    }
+                    return bundle;
+                }
+            } else {
+                return zzf();
             }
         }
         return Bundle.EMPTY;

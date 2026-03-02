@@ -65,15 +65,15 @@ public abstract class Snapshot {
     public abstract boolean hasPendingChanges();
 
     /* renamed from: nestedActivated$runtime */
-    public abstract void mo4864nestedActivated$runtime(Snapshot snapshot);
+    public abstract void mo4217nestedActivated$runtime(Snapshot snapshot);
 
     /* renamed from: nestedDeactivated$runtime */
-    public abstract void mo4865nestedDeactivated$runtime(Snapshot snapshot);
+    public abstract void mo4218nestedDeactivated$runtime(Snapshot snapshot);
 
     public abstract void notifyObjectsInitialized$runtime();
 
     /* renamed from: recordModified$runtime */
-    public abstract void mo4866recordModified$runtime(StateObject stateObject);
+    public abstract void mo4219recordModified$runtime(StateObject stateObject);
 
     public abstract Snapshot takeNestedSnapshot(Function1<Object, Unit> function1);
 
@@ -536,7 +536,7 @@ public abstract class Snapshot {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void registerApplyObserver$lambda$1(Function2 function2) {
             synchronized (SnapshotKt.getLock()) {
                 SnapshotKt.access$setApplyObservers$p(CollectionsKt.minus(SnapshotKt.access$getApplyObservers$p(), function2));
@@ -544,7 +544,7 @@ public abstract class Snapshot {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void registerGlobalWriteObserver$lambda$1(Function1 function1) {
             synchronized (SnapshotKt.getLock()) {
                 SnapshotKt.access$setGlobalWriteObservers$p(CollectionsKt.minus(SnapshotKt.access$getGlobalWriteObservers$p(), function1));

@@ -72,11 +72,13 @@ public final class RealStrongMemoryCache implements StrongMemoryCache {
 
     @Override // coil3.memory.StrongMemoryCache
     public void set(MemoryCache.Key key, Image image, Map<String, ? extends Object> map, long j) {
-        if (j <= getMaxSize()) {
-            put(key, new InternalValue(image, map, j));
+        int i = (j > getMaxSize() ? 1 : (j == getMaxSize() ? 0 : -1));
+        RealStrongMemoryCache$cache$1 realStrongMemoryCache$cache$1 = this.cache;
+        if (i <= 0) {
+            realStrongMemoryCache$cache$1.put(key, new InternalValue(image, map, j));
             return;
         }
-        remove(key);
+        realStrongMemoryCache$cache$1.remove(key);
         this.weakMemoryCache.set(key, image, map, j);
     }
 

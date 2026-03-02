@@ -189,11 +189,12 @@ public class MaterialDividerItemDecoration extends RecyclerView.ItemDecoration {
             if (shouldDrawDivider(recyclerView, childAt)) {
                 recyclerView.getLayoutManager().getDecoratedBoundsWithMargins(childAt, this.tempRect);
                 int round = Math.round(childAt.getTranslationX());
+                Rect rect = this.tempRect;
                 if (isLayoutRtl) {
-                    i3 = this.tempRect.left + round;
+                    i3 = rect.left + round;
                     i2 = this.thickness + i3;
                 } else {
-                    i2 = round + this.tempRect.right;
+                    i2 = round + rect.right;
                     i3 = i2 - this.thickness;
                 }
                 this.dividerDrawable.setBounds(i3, i4, i2, i5);
@@ -210,10 +211,14 @@ public class MaterialDividerItemDecoration extends RecyclerView.ItemDecoration {
         if (shouldDrawDivider(recyclerView, view)) {
             if (this.orientation == 1) {
                 rect.bottom = this.thickness;
-            } else if (ViewUtils.isLayoutRtl(recyclerView)) {
-                rect.left = this.thickness;
+                return;
+            }
+            boolean isLayoutRtl = ViewUtils.isLayoutRtl(recyclerView);
+            int i = this.thickness;
+            if (isLayoutRtl) {
+                rect.left = i;
             } else {
-                rect.right = this.thickness;
+                rect.right = i;
             }
         }
     }

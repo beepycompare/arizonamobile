@@ -50,23 +50,21 @@ public final class DatePickerKt$MonthsNavigation$1$1 implements Function2<Compos
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$MonthsNavigation$1$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DatePickerKt$MonthsNavigation$1$1.invoke$lambda$1$lambda$0(str2, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DatePickerKt$MonthsNavigation$1$1.invoke$lambda$1$lambda$0(str2, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        TextKt.m3255TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), this.$colors.m2288getNavigationContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
+        TextKt.m2712TextNvy7gAk(str, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), this.$colors.m1971getNavigationContentColor0d7_KjU(), null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer, 0, 0, 262136);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(String str, SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m7460setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m7434getPolite0phEisY());
+        SemanticsPropertiesKt.m6792setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6766getPolite0phEisY());
         SemanticsPropertiesKt.setContentDescription(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }

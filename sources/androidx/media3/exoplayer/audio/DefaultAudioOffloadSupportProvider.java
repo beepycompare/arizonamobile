@@ -12,7 +12,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.AudioOffloadSupport;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSink.AudioOffloadSupportProvider {
     private static final String OFFLOAD_VARIABLE_RATE_SUPPORTED_KEY = "offloadVariableRateSupported";
     private final Context context;
@@ -71,7 +71,7 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
         return this.isOffloadVariableRateSupported.booleanValue();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private static final class Api29 {
         private Api29() {
         }
@@ -84,7 +84,7 @@ public final class DefaultAudioOffloadSupportProvider implements DefaultAudioSin
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private static final class Api31 {
         private Api31() {
         }

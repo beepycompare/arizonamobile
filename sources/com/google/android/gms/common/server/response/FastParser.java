@@ -98,13 +98,16 @@ public class FastParser<T extends FastJsonResponse> {
     }
 
     private final char zai(BufferedReader bufferedReader) throws ParseException, IOException {
+        char[] cArr;
         if (bufferedReader.read(this.zao) != -1) {
-            while (Character.isWhitespace(this.zao[0])) {
-                if (bufferedReader.read(this.zao) == -1) {
-                    return (char) 0;
+            do {
+                boolean isWhitespace = Character.isWhitespace(this.zao[0]);
+                cArr = this.zao;
+                if (!isWhitespace) {
+                    return cArr[0];
                 }
-            }
-            return this.zao[0];
+            } while (bufferedReader.read(cArr) != -1);
+            return (char) 0;
         }
         return (char) 0;
     }

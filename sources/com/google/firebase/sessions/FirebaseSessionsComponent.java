@@ -168,28 +168,24 @@ public interface FirebaseSessionsComponent {
                 return createDataStore$default(this, SessionConfigsSerializer.INSTANCE, new ReplaceFileCorruptionHandler(new Function1() { // from class: com.google.firebase.sessions.FirebaseSessionsComponent$MainModule$Companion$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        SessionConfigs sessionConfigsDataStore$lambda$0;
-                        sessionConfigsDataStore$lambda$0 = FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore$lambda$0((CorruptionException) obj);
-                        return sessionConfigsDataStore$lambda$0;
+                        return FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore$lambda$0((CorruptionException) obj);
                     }
                 }), null, CoroutineScopeKt.CoroutineScope(blockingDispatcher), new Function0() { // from class: com.google.firebase.sessions.FirebaseSessionsComponent$MainModule$Companion$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        File sessionConfigsDataStore$lambda$2;
-                        sessionConfigsDataStore$lambda$2 = FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore$lambda$2(appContext);
-                        return sessionConfigsDataStore$lambda$2;
+                        return FirebaseSessionsComponent.MainModule.Companion.sessionConfigsDataStore$lambda$2(appContext);
                     }
                 }, 4, null);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final SessionConfigs sessionConfigsDataStore$lambda$0(CorruptionException ex) {
                 Intrinsics.checkNotNullParameter(ex, "ex");
                 Log.w(FirebaseSessions.TAG, "CorruptionException in session configs DataStore", ex);
                 return SessionConfigsSerializer.INSTANCE.getDefaultValue();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final File sessionConfigsDataStore$lambda$2(Context context) {
                 File dataStoreFile = DataStoreFile.dataStoreFile(context, "firebaseSessions/sessionConfigsDataStore.data");
                 $$INSTANCE.prepDataStoreFile(dataStoreFile);
@@ -205,28 +201,24 @@ public interface FirebaseSessionsComponent {
                 return createDataStore$default(this, sessionDataSerializer, new ReplaceFileCorruptionHandler(new Function1() { // from class: com.google.firebase.sessions.FirebaseSessionsComponent$MainModule$Companion$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        SessionData sessionDataStore$lambda$3;
-                        sessionDataStore$lambda$3 = FirebaseSessionsComponent.MainModule.Companion.sessionDataStore$lambda$3(SessionDataSerializer.this, (CorruptionException) obj);
-                        return sessionDataStore$lambda$3;
+                        return FirebaseSessionsComponent.MainModule.Companion.sessionDataStore$lambda$3(SessionDataSerializer.this, (CorruptionException) obj);
                     }
                 }), null, CoroutineScopeKt.CoroutineScope(blockingDispatcher), new Function0() { // from class: com.google.firebase.sessions.FirebaseSessionsComponent$MainModule$Companion$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        File sessionDataStore$lambda$5;
-                        sessionDataStore$lambda$5 = FirebaseSessionsComponent.MainModule.Companion.sessionDataStore$lambda$5(appContext);
-                        return sessionDataStore$lambda$5;
+                        return FirebaseSessionsComponent.MainModule.Companion.sessionDataStore$lambda$5(appContext);
                     }
                 }, 4, null);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final SessionData sessionDataStore$lambda$3(SessionDataSerializer sessionDataSerializer, CorruptionException ex) {
                 Intrinsics.checkNotNullParameter(ex, "ex");
                 Log.w(FirebaseSessions.TAG, "CorruptionException in session data DataStore", ex);
                 return sessionDataSerializer.getDefaultValue();
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final File sessionDataStore$lambda$5(Context context) {
                 File dataStoreFile = DataStoreFile.dataStoreFile(context, "firebaseSessions/sessionDataStore.data");
                 $$INSTANCE.prepDataStoreFile(dataStoreFile);

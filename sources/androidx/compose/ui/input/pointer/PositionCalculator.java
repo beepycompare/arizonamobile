@@ -6,8 +6,8 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface PositionCalculator {
     /* renamed from: localToScreen-MK-Hz9U  reason: not valid java name */
-    long mo6824localToScreenMKHz9U(long j);
+    long mo6165localToScreenMKHz9U(long j);
 
     /* renamed from: screenToLocal-MK-Hz9U  reason: not valid java name */
-    long mo6825screenToLocalMKHz9U(long j);
+    long mo6166screenToLocalMKHz9U(long j);
 }

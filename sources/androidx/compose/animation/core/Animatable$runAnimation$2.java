@@ -78,9 +78,7 @@ public final class Animatable$runAnimation$2<T, V> extends SuspendLambda impleme
                 if (SuspendAnimationKt.animate(copy$default, animation, j, new Function1() { // from class: androidx.compose.animation.core.Animatable$runAnimation$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = Animatable$runAnimation$2.invokeSuspend$lambda$0(Animatable.this, copy$default, function1, booleanRef2, (AnimationScope) obj2);
-                        return invokeSuspend$lambda$0;
+                        return Animatable$runAnimation$2.invokeSuspend$lambda$0(Animatable.this, copy$default, function1, booleanRef2, (AnimationScope) obj2);
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -103,7 +101,7 @@ public final class Animatable$runAnimation$2<T, V> extends SuspendLambda impleme
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Unit invokeSuspend$lambda$0(Animatable animatable, AnimationState animationState, Function1 function1, Ref.BooleanRef booleanRef, AnimationScope animationScope) {
         Object clampToBounds;

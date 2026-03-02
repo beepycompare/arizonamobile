@@ -132,9 +132,16 @@ abstract class AbstractStreamingHasher extends AbstractHasher {
 
     private void munch() {
         Java8Compatibility.flip(this.buffer);
-        while (this.buffer.remaining() >= this.chunkSize) {
-            process(this.buffer);
+        while (true) {
+            int remaining = this.buffer.remaining();
+            int i = this.chunkSize;
+            ByteBuffer byteBuffer = this.buffer;
+            if (remaining >= i) {
+                process(byteBuffer);
+            } else {
+                byteBuffer.compact();
+                return;
+            }
         }
-        this.buffer.compact();
     }
 }

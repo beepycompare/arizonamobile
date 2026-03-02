@@ -7,7 +7,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
 import javax.annotation.Nullable;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public final class WakeLockEvent extends StatsEvent {

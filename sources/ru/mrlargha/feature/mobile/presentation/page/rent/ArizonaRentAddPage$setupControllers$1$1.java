@@ -19,8 +19,8 @@ import ru.mrlargha.feature.mobile.databinding.MpArizonaRentAddPageBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreateAdModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentAddPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupControllers$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {413}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupControllers$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {413}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage$setupControllers$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ MpArizonaRentAddPageBinding $this_with;
@@ -62,8 +62,10 @@ public final class ArizonaRentAddPage$setupControllers$1$1 extends SuspendLambda
                 }
 
                 public final Object emit(ArizonaRentCreateAdModel arizonaRentCreateAdModel, Continuation<? super Unit> continuation) {
-                    if (arizonaRentCreateAdModel.checkAllIsReady()) {
-                        MpArizonaRentAddPageBinding.this.tvCreateAd.setTextColor(Color.parseColor("#E5000000"));
+                    boolean checkAllIsReady = arizonaRentCreateAdModel.checkAllIsReady();
+                    MpArizonaRentAddPageBinding mpArizonaRentAddPageBinding2 = MpArizonaRentAddPageBinding.this;
+                    if (checkAllIsReady) {
+                        mpArizonaRentAddPageBinding2.tvCreateAd.setTextColor(Color.parseColor("#E5000000"));
                         CustomCardView btnCreateAd = MpArizonaRentAddPageBinding.this.btnCreateAd;
                         Intrinsics.checkNotNullExpressionValue(btnCreateAd, "btnCreateAd");
                         CustomCardView.setBackground$default(btnCreateAd, Color.parseColor("#2857F4"), Color.parseColor("#6CD0FA"), null, null, 12, null);
@@ -71,7 +73,7 @@ public final class ArizonaRentAddPage$setupControllers$1$1 extends SuspendLambda
                         MpArizonaRentAddPageBinding.this.btnCreateAd.setClickable(true);
                         MpArizonaRentAddPageBinding.this.btnCreateAd.setEnabled(true);
                     } else {
-                        MpArizonaRentAddPageBinding.this.tvCreateAd.setTextColor(Color.parseColor("#80FFFFFF"));
+                        mpArizonaRentAddPageBinding2.tvCreateAd.setTextColor(Color.parseColor("#80FFFFFF"));
                         MpArizonaRentAddPageBinding.this.btnCreateAd.setBorder(Color.parseColor("#1AFFFFFF"));
                         MpArizonaRentAddPageBinding.this.btnCreateAd.setBackground(Color.parseColor("#111111"));
                         MpArizonaRentAddPageBinding.this.btnCreateAd.setClickable(false);

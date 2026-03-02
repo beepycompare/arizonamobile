@@ -283,9 +283,7 @@ public abstract class CacheWindowLogic {
         this.prefetchWindowHandles.set(i, cacheWindowScope.schedulePrefetch(i, new Function2() { // from class: androidx.compose.foundation.lazy.layout.CacheWindowLogic$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit itemSizeOrPrefetch$lambda$4;
-                itemSizeOrPrefetch$lambda$4 = CacheWindowLogic.getItemSizeOrPrefetch$lambda$4(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return itemSizeOrPrefetch$lambda$4;
+                return CacheWindowLogic.getItemSizeOrPrefetch$lambda$4(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
             }
         }));
         if (z && (list = this.prefetchWindowHandles.get(i)) != null) {
@@ -298,7 +296,7 @@ public abstract class CacheWindowLogic {
         return -1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit getItemSizeOrPrefetch$lambda$4(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
         cacheWindowLogic.onItemPrefetched(cacheWindowScope, i, i2);
         return Unit.INSTANCE;
@@ -504,14 +502,12 @@ public abstract class CacheWindowLogic {
         this.prefetchWindowHandles.set(i, cacheWindowScope.schedulePrefetch(i, new Function2() { // from class: androidx.compose.foundation.lazy.layout.CacheWindowLogic$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit scheduleNextItemIfNeeded$lambda$1;
-                scheduleNextItemIfNeeded$lambda$1 = CacheWindowLogic.scheduleNextItemIfNeeded$lambda$1(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
-                return scheduleNextItemIfNeeded$lambda$1;
+                return CacheWindowLogic.scheduleNextItemIfNeeded$lambda$1(CacheWindowLogic.this, cacheWindowScope, ((Integer) obj).intValue(), ((Integer) obj2).intValue());
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit scheduleNextItemIfNeeded$lambda$1(CacheWindowLogic cacheWindowLogic, CacheWindowScope cacheWindowScope, int i, int i2) {
         cacheWindowLogic.onItemPrefetched(cacheWindowScope, i, i2);
         return Unit.INSTANCE;

@@ -9,7 +9,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.AudioSink;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class DefaultAudioTrackProvider implements DefaultAudioSink.AudioTrackProvider {
     protected AudioTrack.Builder customizeAudioTrackBuilder(AudioTrack.Builder builder) {
         return builder;

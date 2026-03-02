@@ -228,72 +228,76 @@ public final class zzlk extends zzlm {
     @Override // com.google.android.gms.internal.measurement.zzlm
     public final void zzr(int i) throws IOException {
         int i2;
-        IndexOutOfBoundsException indexOutOfBoundsException;
         int i3 = this.zze;
-        while ((i & (-128)) != 0) {
-            try {
+        while (true) {
+            int i4 = i & (-128);
+            byte[] bArr = this.zzc;
+            if (i4 == 0) {
                 i2 = i3 + 1;
-                try {
-                    this.zzc[i3] = (byte) (i | 128);
-                    i >>>= 7;
-                    i3 = i2;
-                } catch (IndexOutOfBoundsException e) {
-                    indexOutOfBoundsException = e;
-                    i3 = i2;
-                    throw new zzll(i3, this.zzd, 1, indexOutOfBoundsException);
-                }
-            } catch (IndexOutOfBoundsException e2) {
-                indexOutOfBoundsException = e2;
-                throw new zzll(i3, this.zzd, 1, indexOutOfBoundsException);
+                bArr[i3] = (byte) i;
+                this.zze = i2;
+                return;
             }
+            i2 = i3 + 1;
+            try {
+                bArr[i3] = (byte) (i | 128);
+                i >>>= 7;
+                i3 = i2;
+            } catch (IndexOutOfBoundsException e) {
+                throw new zzll(i2, this.zzd, 1, e);
+            }
+            throw new zzll(i2, this.zzd, 1, e);
         }
-        i2 = i3 + 1;
-        this.zzc[i3] = (byte) i;
-        this.zze = i2;
     }
 
     @Override // com.google.android.gms.internal.measurement.zzlm
     public final void zzt(long j) throws IOException {
         boolean z;
+        byte[] bArr;
         int i;
-        IndexOutOfBoundsException indexOutOfBoundsException;
         int i2;
+        byte[] bArr2;
         z = zzlm.zzd;
         int i3 = this.zze;
         if (!z || this.zzd - i3 < 10) {
-            while ((j & (-128)) != 0) {
-                try {
-                    i2 = i3 + 1;
-                } catch (IndexOutOfBoundsException e) {
-                    indexOutOfBoundsException = e;
+            while (true) {
+                int i4 = ((j & (-128)) > 0L ? 1 : ((j & (-128)) == 0L ? 0 : -1));
+                bArr = this.zzc;
+                if (i4 == 0) {
+                    break;
                 }
+                int i5 = i3 + 1;
                 try {
-                    this.zzc[i3] = (byte) (((int) j) | 128);
+                    bArr[i3] = (byte) (((int) j) | 128);
                     j >>>= 7;
-                    i3 = i2;
-                } catch (IndexOutOfBoundsException e2) {
-                    indexOutOfBoundsException = e2;
-                    i3 = i2;
-                    throw new zzll(i3, this.zzd, 1, indexOutOfBoundsException);
+                    i3 = i5;
+                } catch (IndexOutOfBoundsException e) {
+                    e = e;
+                    i = i5;
                 }
+                throw new zzll(i, this.zzd, 1, e);
             }
             i = i3 + 1;
             try {
-                this.zzc[i3] = (byte) j;
-            } catch (IndexOutOfBoundsException e3) {
-                indexOutOfBoundsException = e3;
-                i3 = i;
-                throw new zzll(i3, this.zzd, 1, indexOutOfBoundsException);
+                bArr[i3] = (byte) j;
+                i2 = i;
+            } catch (IndexOutOfBoundsException e2) {
+                e = e2;
             }
         } else {
-            while ((j & (-128)) != 0) {
-                zzop.zzp(this.zzc, i3, (byte) (((int) j) | 128));
+            while (true) {
+                int i6 = ((j & (-128)) > 0L ? 1 : ((j & (-128)) == 0L ? 0 : -1));
+                bArr2 = this.zzc;
+                if (i6 == 0) {
+                    break;
+                }
+                zzop.zzp(bArr2, i3, (byte) (((int) j) | 128));
                 j >>>= 7;
                 i3++;
             }
-            i = i3 + 1;
-            zzop.zzp(this.zzc, i3, (byte) j);
+            i2 = i3 + 1;
+            zzop.zzp(bArr2, i3, (byte) j);
         }
-        this.zze = i;
+        this.zze = i2;
     }
 }

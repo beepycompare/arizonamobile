@@ -24,31 +24,29 @@ public final class SignParser<Output> implements ParserOperation<Output> {
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11907consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10796consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (i >= input.length()) {
-            return ParseResult.Companion.m11918OkQi1bsqg(i);
+            return ParseResult.Companion.m10807OkQi1bsqg(i);
         }
         final char charAt = input.charAt(i);
         if (charAt == '-') {
             this.isNegativeSetter.invoke(output, true);
-            return ParseResult.Companion.m11918OkQi1bsqg(i + 1);
+            return ParseResult.Companion.m10807OkQi1bsqg(i + 1);
         } else if (charAt == '+' && this.withPlusSign) {
             this.isNegativeSetter.invoke(output, false);
-            return ParseResult.Companion.m11918OkQi1bsqg(i + 1);
+            return ParseResult.Companion.m10807OkQi1bsqg(i + 1);
         } else {
-            return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.SignParser$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.SignParser$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String consume_FANa98k$lambda$0;
-                    consume_FANa98k$lambda$0 = SignParser.consume_FANa98k$lambda$0(SignParser.this, charAt);
-                    return consume_FANa98k$lambda$0;
+                    return SignParser.consume_FANa98k$lambda$0(SignParser.this, charAt);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$0(SignParser signParser, char c) {
         return "Expected " + signParser.whatThisExpects + " but got " + c;
     }

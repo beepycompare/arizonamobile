@@ -3,8 +3,8 @@ package io.appmetrica.analytics.impl;
 public final class Xc extends D2 {
     public final String b;
 
-    public Xc(String str, InterfaceC0634ul interfaceC0634ul) {
-        super(interfaceC0634ul);
+    public Xc(String str, InterfaceC0633ul interfaceC0633ul) {
+        super(interfaceC0633ul);
         this.b = str;
     }
 

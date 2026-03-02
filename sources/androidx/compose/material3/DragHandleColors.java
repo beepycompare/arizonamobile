@@ -23,17 +23,17 @@ public final class DragHandleColors {
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m2404getColor0d7_KjU() {
+    public final long m2041getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: getDraggedColor-0d7_KjU  reason: not valid java name */
-    public final long m2405getDraggedColor0d7_KjU() {
+    public final long m2042getDraggedColor0d7_KjU() {
         return this.draggedColor;
     }
 
     /* renamed from: getPressedColor-0d7_KjU  reason: not valid java name */
-    public final long m2406getPressedColor0d7_KjU() {
+    public final long m2043getPressedColor0d7_KjU() {
         return this.pressedColor;
     }
 
@@ -45,10 +45,10 @@ public final class DragHandleColors {
             return false;
         }
         DragHandleColors dragHandleColors = (DragHandleColors) obj;
-        return Color.m5425equalsimpl0(this.color, dragHandleColors.color) && Color.m5425equalsimpl0(this.pressedColor, dragHandleColors.pressedColor) && Color.m5425equalsimpl0(this.draggedColor, dragHandleColors.draggedColor);
+        return Color.m4773equalsimpl0(this.color, dragHandleColors.color) && Color.m4773equalsimpl0(this.pressedColor, dragHandleColors.pressedColor) && Color.m4773equalsimpl0(this.draggedColor, dragHandleColors.draggedColor);
     }
 
     public int hashCode() {
-        return (((Color.m5431hashCodeimpl(this.color) * 31) + Color.m5431hashCodeimpl(this.pressedColor)) * 31) + Color.m5431hashCodeimpl(this.draggedColor);
+        return (((Color.m4779hashCodeimpl(this.color) * 31) + Color.m4779hashCodeimpl(this.pressedColor)) * 31) + Color.m4779hashCodeimpl(this.draggedColor);
     }
 }

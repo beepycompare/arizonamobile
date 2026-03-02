@@ -28,10 +28,11 @@ public final class GapBuffer {
 
     public final char get(int i) {
         int i2 = this.gapStart;
+        char[] cArr = this.buffer;
         if (i < i2) {
-            return this.buffer[i];
+            return cArr[i];
         }
-        return this.buffer[(i - i2) + this.gapEnd];
+        return cArr[(i - i2) + this.gapEnd];
     }
 
     private final void makeSureAvailableSpace(int i) {

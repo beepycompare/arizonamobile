@@ -168,14 +168,14 @@ public abstract class NavigationBarItemView extends FrameLayout implements Navig
         linearLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.google.android.material.navigation.NavigationBarItemView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                NavigationBarItemView.this.m9874xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
+                NavigationBarItemView.this.m8904xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-navigation-NavigationBarItemView  reason: not valid java name */
-    public /* synthetic */ void m9874xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+    public /* synthetic */ void m8904xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         boolean z;
         if (this.icon.getVisibility() == 0) {
             tryUpdateBadgeBounds(this.icon);
@@ -789,14 +789,17 @@ public abstract class NavigationBarItemView extends FrameLayout implements Navig
         if (Build.VERSION.SDK_INT > 34) {
             this.smallLabel.setGravity(17);
             this.largeLabel.setGravity(17);
-        } else if (i > 1) {
-            this.smallLabel.setEllipsize(null);
-            this.largeLabel.setEllipsize(null);
-            this.smallLabel.setGravity(17);
-            this.largeLabel.setGravity(17);
         } else {
-            this.smallLabel.setGravity(16);
-            this.largeLabel.setGravity(16);
+            TextView textView = this.smallLabel;
+            if (i > 1) {
+                textView.setEllipsize(null);
+                this.largeLabel.setEllipsize(null);
+                this.smallLabel.setGravity(17);
+                this.largeLabel.setGravity(17);
+            } else {
+                textView.setGravity(16);
+                this.largeLabel.setGravity(16);
+            }
         }
         requestLayout();
     }

@@ -38,7 +38,7 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo10758dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         Runnable runnable2;
         try {
             Executor executor = getExecutor();
@@ -53,13 +53,13 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
                 abstractTimeSource2.unTrackTask();
             }
             cancelJobOnRejection(coroutineContext, e);
-            Dispatchers.getIO().mo11837dispatch(coroutineContext, runnable);
+            Dispatchers.getIO().mo10758dispatch(coroutineContext, runnable);
         }
     }
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo11838scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo10759scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         long j2;
         Executor executor = getExecutor();
         ScheduledFuture<?> scheduledFuture = null;
@@ -73,7 +73,7 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
         if (scheduledFuture != null) {
             CancellableContinuationKt.invokeOnCancellation(cancellableContinuation, new CancelFutureOnCancel(scheduledFuture));
         } else {
-            DefaultExecutor.INSTANCE.mo11838scheduleResumeAfterDelay(j2, cancellableContinuation);
+            DefaultExecutor.INSTANCE.mo10759scheduleResumeAfterDelay(j2, cancellableContinuation);
         }
     }
 

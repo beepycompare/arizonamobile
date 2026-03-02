@@ -15,14 +15,12 @@ public final class SelectableGroupKt {
         return SemanticsModifierKt.semantics$default(modifier, false, new Function1() { // from class: androidx.compose.foundation.selection.SelectableGroupKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit selectableGroup$lambda$0;
-                selectableGroup$lambda$0 = SelectableGroupKt.selectableGroup$lambda$0((SemanticsPropertyReceiver) obj);
-                return selectableGroup$lambda$0;
+                return SelectableGroupKt.selectableGroup$lambda$0((SemanticsPropertyReceiver) obj);
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit selectableGroup$lambda$0(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.selectableGroup(semanticsPropertyReceiver);
         return Unit.INSTANCE;

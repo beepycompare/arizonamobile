@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class R {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class string {
         public static int exo_download_completed = 0x7f1200b1;
         public static int exo_download_description = 0x7f1200b2;

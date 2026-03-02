@@ -352,12 +352,16 @@ public class FloatingActionButtonImpl {
     }
 
     void onDrawableStateChangedForLollipop() {
-        if (this.view.isEnabled()) {
-            this.view.setElevation(this.elevation);
-            if (this.view.isPressed()) {
-                this.view.setTranslationZ(this.pressedTranslationZ);
+        boolean isEnabled = this.view.isEnabled();
+        FloatingActionButton floatingActionButton = this.view;
+        if (isEnabled) {
+            floatingActionButton.setElevation(this.elevation);
+            boolean isPressed = this.view.isPressed();
+            FloatingActionButton floatingActionButton2 = this.view;
+            if (isPressed) {
+                floatingActionButton2.setTranslationZ(this.pressedTranslationZ);
                 return;
-            } else if (this.view.isFocused() || this.view.isHovered()) {
+            } else if (floatingActionButton2.isFocused() || this.view.isHovered()) {
                 this.view.setTranslationZ(this.hoveredFocusedTranslationZ);
                 return;
             } else {
@@ -365,7 +369,7 @@ public class FloatingActionButtonImpl {
                 return;
             }
         }
-        this.view.setElevation(0.0f);
+        floatingActionButton.setElevation(0.0f);
         this.view.setTranslationZ(0.0f);
     }
 
@@ -481,8 +485,10 @@ public class FloatingActionButtonImpl {
             animator.cancel();
         }
         boolean z2 = this.showMotionSpec == null;
-        if (shouldAnimateVisibilityChange()) {
-            if (this.view.getVisibility() != 0) {
+        boolean shouldAnimateVisibilityChange = shouldAnimateVisibilityChange();
+        FloatingActionButton floatingActionButton = this.view;
+        if (shouldAnimateVisibilityChange) {
+            if (floatingActionButton.getVisibility() != 0) {
                 this.view.setAlpha(0.0f);
                 this.view.setScaleY(z2 ? 0.4f : 0.0f);
                 this.view.setScaleX(z2 ? 0.4f : 0.0f);
@@ -524,7 +530,7 @@ public class FloatingActionButtonImpl {
             createDefaultAnimator.start();
             return;
         }
-        this.view.internalSetVisibility(0, z);
+        floatingActionButton.internalSetVisibility(0, z);
         this.view.setAlpha(1.0f);
         this.view.setScaleY(1.0f);
         this.view.setScaleX(1.0f);
@@ -575,7 +581,7 @@ public class FloatingActionButtonImpl {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.floatingactionbutton.FloatingActionButtonImpl$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FloatingActionButtonImpl.this.m9872x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
+                FloatingActionButtonImpl.this.m8902x7a82a444(alpha, f, scaleX, f2, scaleY, f4, f3, matrix, valueAnimator);
             }
         });
         arrayList.add(ofFloat);
@@ -587,7 +593,7 @@ public class FloatingActionButtonImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createDefaultAnimator$0$com-google-android-material-floatingactionbutton-FloatingActionButtonImpl  reason: not valid java name */
-    public /* synthetic */ void m9872x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8902x7a82a444(float f, float f2, float f3, float f4, float f5, float f6, float f7, Matrix matrix, ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.view.setAlpha(AnimationUtils.lerp(f, f2, 0.0f, 0.2f, floatValue));
         this.view.setScaleX(AnimationUtils.lerp(f3, f4, floatValue));
@@ -741,12 +747,16 @@ public class FloatingActionButtonImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean isOrWillBeShown() {
-        return this.view.getVisibility() != 0 ? this.animState == 2 : this.animState != 1;
+        int visibility = this.view.getVisibility();
+        int i = this.animState;
+        return visibility != 0 ? i == 2 : i != 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean isOrWillBeHidden() {
-        return this.view.getVisibility() == 0 ? this.animState == 1 : this.animState != 2;
+        int visibility = this.view.getVisibility();
+        int i = this.animState;
+        return visibility == 0 ? i == 1 : i != 2;
     }
 
     private Animator createElevationAnimator(float f, float f2) {

@@ -1450,11 +1450,12 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                 this.buffer[this.pos + length] = (byte) charAt;
                 length--;
             }
+            int i4 = this.pos;
             if (length == -1) {
-                this.pos--;
+                this.pos = i4 - 1;
                 return;
             }
-            this.pos += length;
+            this.pos = i4 + length;
             while (length >= 0) {
                 char charAt2 = in.charAt(length);
                 if (charAt2 < 128 && (i3 = this.pos) > this.offsetMinusOne) {
@@ -1463,21 +1464,21 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                     bArr[i3] = (byte) charAt2;
                 } else if (charAt2 < 2048 && (i2 = this.pos) > this.offset) {
                     byte[] bArr2 = this.buffer;
-                    int i4 = i2 - 1;
-                    this.pos = i4;
+                    int i5 = i2 - 1;
+                    this.pos = i5;
                     bArr2[i2] = (byte) ((charAt2 & '?') | 128);
                     this.pos = i2 - 2;
-                    bArr2[i4] = (byte) ((charAt2 >>> 6) | 960);
+                    bArr2[i5] = (byte) ((charAt2 >>> 6) | 960);
                 } else if ((charAt2 < 55296 || 57343 < charAt2) && (i = this.pos) > this.offset + 1) {
                     byte[] bArr3 = this.buffer;
-                    int i5 = i - 1;
-                    this.pos = i5;
-                    bArr3[i] = (byte) ((charAt2 & '?') | 128);
-                    int i6 = i - 2;
+                    int i6 = i - 1;
                     this.pos = i6;
-                    bArr3[i5] = (byte) (((charAt2 >>> 6) & 63) | 128);
+                    bArr3[i] = (byte) ((charAt2 & '?') | 128);
+                    int i7 = i - 2;
+                    this.pos = i7;
+                    bArr3[i6] = (byte) (((charAt2 >>> 6) & 63) | 128);
                     this.pos = i - 3;
-                    bArr3[i6] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
+                    bArr3[i7] = (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND);
                 } else if (this.pos > this.offset + 2) {
                     if (length != 0) {
                         char charAt3 = in.charAt(length - 1);
@@ -1485,18 +1486,18 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                             length--;
                             int codePoint = Character.toCodePoint(charAt3, charAt2);
                             byte[] bArr4 = this.buffer;
-                            int i7 = this.pos;
-                            int i8 = i7 - 1;
-                            this.pos = i8;
-                            bArr4[i7] = (byte) ((codePoint & 63) | 128);
-                            int i9 = i7 - 2;
+                            int i8 = this.pos;
+                            int i9 = i8 - 1;
                             this.pos = i9;
-                            bArr4[i8] = (byte) (((codePoint >>> 6) & 63) | 128);
-                            int i10 = i7 - 3;
+                            bArr4[i8] = (byte) ((codePoint & 63) | 128);
+                            int i10 = i8 - 2;
                             this.pos = i10;
-                            bArr4[i9] = (byte) (((codePoint >>> 12) & 63) | 128);
-                            this.pos = i7 - 4;
-                            bArr4[i10] = (byte) ((codePoint >>> 18) | 240);
+                            bArr4[i9] = (byte) (((codePoint >>> 6) & 63) | 128);
+                            int i11 = i8 - 3;
+                            this.pos = i11;
+                            bArr4[i10] = (byte) (((codePoint >>> 12) & 63) | 128);
+                            this.pos = i8 - 4;
+                            bArr4[i11] = (byte) ((codePoint >>> 18) | 240);
                         }
                     }
                     throw new Utf8.UnpairedSurrogateException(length - 1, length);
@@ -2774,11 +2775,12 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                 this.buffer.put(this.pos + length, (byte) charAt);
                 length--;
             }
+            int i4 = this.pos;
             if (length == -1) {
-                this.pos--;
+                this.pos = i4 - 1;
                 return;
             }
-            this.pos += length;
+            this.pos = i4 + length;
             while (length >= 0) {
                 char charAt2 = in.charAt(length);
                 if (charAt2 < 128 && (i3 = this.pos) >= 0) {
@@ -2790,21 +2792,21 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                     this.pos = i2 - 1;
                     byteBuffer2.put(i2, (byte) ((charAt2 & '?') | 128));
                     ByteBuffer byteBuffer3 = this.buffer;
-                    int i4 = this.pos;
-                    this.pos = i4 - 1;
-                    byteBuffer3.put(i4, (byte) ((charAt2 >>> 6) | 960));
+                    int i5 = this.pos;
+                    this.pos = i5 - 1;
+                    byteBuffer3.put(i5, (byte) ((charAt2 >>> 6) | 960));
                 } else if ((charAt2 < 55296 || 57343 < charAt2) && (i = this.pos) > 1) {
                     ByteBuffer byteBuffer4 = this.buffer;
                     this.pos = i - 1;
                     byteBuffer4.put(i, (byte) ((charAt2 & '?') | 128));
                     ByteBuffer byteBuffer5 = this.buffer;
-                    int i5 = this.pos;
-                    this.pos = i5 - 1;
-                    byteBuffer5.put(i5, (byte) (((charAt2 >>> 6) & 63) | 128));
-                    ByteBuffer byteBuffer6 = this.buffer;
                     int i6 = this.pos;
                     this.pos = i6 - 1;
-                    byteBuffer6.put(i6, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
+                    byteBuffer5.put(i6, (byte) (((charAt2 >>> 6) & 63) | 128));
+                    ByteBuffer byteBuffer6 = this.buffer;
+                    int i7 = this.pos;
+                    this.pos = i7 - 1;
+                    byteBuffer6.put(i7, (byte) ((charAt2 >>> '\f') | WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND));
                 } else if (this.pos > 2) {
                     if (length != 0) {
                         char charAt3 = in.charAt(length - 1);
@@ -2812,21 +2814,21 @@ public abstract class BinaryWriter extends ByteOutput implements Writer {
                             length--;
                             int codePoint = Character.toCodePoint(charAt3, charAt2);
                             ByteBuffer byteBuffer7 = this.buffer;
-                            int i7 = this.pos;
-                            this.pos = i7 - 1;
-                            byteBuffer7.put(i7, (byte) ((codePoint & 63) | 128));
-                            ByteBuffer byteBuffer8 = this.buffer;
                             int i8 = this.pos;
                             this.pos = i8 - 1;
-                            byteBuffer8.put(i8, (byte) (((codePoint >>> 6) & 63) | 128));
-                            ByteBuffer byteBuffer9 = this.buffer;
+                            byteBuffer7.put(i8, (byte) ((codePoint & 63) | 128));
+                            ByteBuffer byteBuffer8 = this.buffer;
                             int i9 = this.pos;
                             this.pos = i9 - 1;
-                            byteBuffer9.put(i9, (byte) (((codePoint >>> 12) & 63) | 128));
-                            ByteBuffer byteBuffer10 = this.buffer;
+                            byteBuffer8.put(i9, (byte) (((codePoint >>> 6) & 63) | 128));
+                            ByteBuffer byteBuffer9 = this.buffer;
                             int i10 = this.pos;
                             this.pos = i10 - 1;
-                            byteBuffer10.put(i10, (byte) ((codePoint >>> 18) | 240));
+                            byteBuffer9.put(i10, (byte) (((codePoint >>> 12) & 63) | 128));
+                            ByteBuffer byteBuffer10 = this.buffer;
+                            int i11 = this.pos;
+                            this.pos = i11 - 1;
+                            byteBuffer10.put(i11, (byte) ((codePoint >>> 18) | 240));
                         }
                     }
                     throw new Utf8.UnpairedSurrogateException(length - 1, length);

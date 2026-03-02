@@ -28,7 +28,7 @@ public final class K6 extends InterruptionSafeThread {
         while (it2.hasNext()) {
             ((S8) it2.next()).a(arrayList2);
         }
-        ((C0369k5) this.f654a.p).e();
+        ((C0368k5) this.f654a.p).e();
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
@@ -52,7 +52,7 @@ public final class K6 extends InterruptionSafeThread {
             L6 l6 = this.b;
             l6.getClass();
             if (!arrayList.isEmpty()) {
-                long j = ((C0381kh) l6.h.k.a()).v;
+                long j = ((C0380kh) l6.h.k.a()).v;
                 l6.b.lock();
                 SQLiteDatabase sQLiteDatabase = null;
                 try {

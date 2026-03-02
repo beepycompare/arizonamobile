@@ -16,35 +16,35 @@ public final class Fn implements ProtobufConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0138b6 fromModel(Gn gn) {
-        C0138b6 c0138b6 = new C0138b6();
-        c0138b6.f913a = (String) WrapUtils.getOrDefault(gn.f603a, "");
-        c0138b6.b = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(gn.b, ""));
+    public final C0137b6 fromModel(Gn gn) {
+        C0137b6 c0137b6 = new C0137b6();
+        c0137b6.f913a = (String) WrapUtils.getOrDefault(gn.f603a, "");
+        c0137b6.b = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(gn.b, ""));
         List<Dl> list = gn.c;
         if (list != null) {
-            c0138b6.c = this.f585a.fromModel(list);
+            c0137b6.c = this.f585a.fromModel(list);
         }
         Gn gn2 = gn.d;
         if (gn2 != null) {
-            c0138b6.d = fromModel(gn2);
+            c0137b6.d = fromModel(gn2);
         }
         List<Gn> list2 = gn.e;
         int i = 0;
         if (list2 == null) {
-            c0138b6.e = new C0138b6[0];
-            return c0138b6;
+            c0137b6.e = new C0137b6[0];
+            return c0137b6;
         }
-        c0138b6.e = new C0138b6[list2.size()];
+        c0137b6.e = new C0137b6[list2.size()];
         for (Gn gn3 : list2) {
-            c0138b6.e[i] = fromModel(gn3);
+            c0137b6.e[i] = fromModel(gn3);
             i++;
         }
-        return c0138b6;
+        return c0137b6;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0138b6 c0138b6 = (C0138b6) obj;
+        C0137b6 c0137b6 = (C0137b6) obj;
         throw new UnsupportedOperationException();
     }
 
@@ -52,7 +52,7 @@ public final class Fn implements ProtobufConverter {
         this.f585a = bl;
     }
 
-    public final Gn a(C0138b6 c0138b6) {
+    public final Gn a(C0137b6 c0137b6) {
         throw new UnsupportedOperationException();
     }
 }

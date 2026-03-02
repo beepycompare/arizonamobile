@@ -87,7 +87,7 @@ public final class m implements ServiceModuleReporterComponentLifecycleListener 
         } else {
             billingType = BillingType.NONE;
         }
-        k kVar = new k(this.f315a.getServiceStorageProvider().createBinaryStateStorageFactory("auto_inapp_collecting_info_data", new e(), new C0097b(null, 1, null)).create(this.f315a.getContext()));
+        k kVar = new k(this.f315a.getServiceStorageProvider().createBinaryStateStorageFactory("auto_inapp_collecting_info_data", new e(), new C0096b(null, 1, null)).create(this.f315a.getContext()));
         j jVar = new j(serviceModuleReporterComponentContext.getReporter(), this.f315a.getExecutorProvider().getReportRunnableExecutor(), null, 4, null);
         int i = l.f314a[billingType.ordinal()];
         if (i == 1) {

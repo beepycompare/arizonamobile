@@ -152,7 +152,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m9877x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
+                DeterminateDrawable.this.m8907x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
             }
         });
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0) {
@@ -163,7 +163,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m9877x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8907x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0 && isVisible()) {
             invalidateSelf();
         }
@@ -183,14 +183,14 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         this.amplitudeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m9876x5e685e4b(valueAnimator2);
+                DeterminateDrawable.this.m8906x5e685e4b(valueAnimator2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeInitializeAmplitudeAnimator$1$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m9876x5e685e4b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m8906x5e685e4b(ValueAnimator valueAnimator) {
         this.activeIndicator.amplitudeFraction = this.amplitudeInterpolator.getInterpolation(this.amplitudeAnimator.getAnimatedFraction());
     }
 
@@ -243,13 +243,15 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
     @Override // android.graphics.drawable.Drawable
     protected boolean onLevelChange(int i) {
         float amplitudeFractionFromLevel = getAmplitudeFractionFromLevel(i);
-        if (this.skipAnimationOnLevelChange) {
-            this.springAnimation.skipToEnd();
+        boolean z = this.skipAnimationOnLevelChange;
+        SpringAnimation springAnimation = this.springAnimation;
+        if (z) {
+            springAnimation.skipToEnd();
             setIndicatorFraction(i / 10000.0f);
             setAmplitudeFraction(amplitudeFractionFromLevel);
             return true;
         }
-        this.springAnimation.setStartValue(getIndicatorFraction() * 10000.0f);
+        springAnimation.setStartValue(getIndicatorFraction() * 10000.0f);
         this.springAnimation.animateToFinalPosition(i);
         return true;
     }
@@ -274,8 +276,10 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         if (this.baseSpec.hasWavyEffect(true)) {
             maybeInitializeAmplitudeAnimator();
             float amplitudeFractionFromLevel = getAmplitudeFractionFromLevel(i);
-            if (amplitudeFractionFromLevel != this.targetAmplitudeFraction) {
-                if (this.amplitudeAnimator.isRunning()) {
+            int i2 = (amplitudeFractionFromLevel > this.targetAmplitudeFraction ? 1 : (amplitudeFractionFromLevel == this.targetAmplitudeFraction ? 0 : -1));
+            ValueAnimator valueAnimator = this.amplitudeAnimator;
+            if (i2 != 0) {
+                if (valueAnimator.isRunning()) {
                     this.amplitudeAnimator.cancel();
                 }
                 this.targetAmplitudeFraction = amplitudeFractionFromLevel;
@@ -286,7 +290,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
                 }
                 this.amplitudeInterpolator = this.amplitudeOffInterpolator;
                 this.amplitudeAnimator.reverse();
-            } else if (this.amplitudeAnimator.isRunning()) {
+            } else if (valueAnimator.isRunning()) {
             } else {
                 setAmplitudeFraction(amplitudeFractionFromLevel);
             }
@@ -303,15 +307,17 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
             this.paint.setStyle(Paint.Style.FILL);
             this.paint.setAntiAlias(true);
             this.activeIndicator.color = this.baseSpec.indicatorColors[0];
-            if (this.baseSpec.indicatorTrackGapSize > 0) {
-                if (this.drawingDelegate instanceof LinearDrawingDelegate) {
+            int i = this.baseSpec.indicatorTrackGapSize;
+            DrawingDelegate<S> drawingDelegate = this.drawingDelegate;
+            if (i > 0) {
+                if (drawingDelegate instanceof LinearDrawingDelegate) {
                     clamp = this.baseSpec.indicatorTrackGapSize;
                 } else {
                     clamp = (int) ((this.baseSpec.indicatorTrackGapSize * MathUtils.clamp(getIndicatorFraction(), 0.0f, 0.01f)) / 0.01f);
                 }
                 this.drawingDelegate.fillTrack(canvas, this.paint, getIndicatorFraction(), 1.0f, this.baseSpec.trackColor, getAlpha(), clamp);
             } else {
-                this.drawingDelegate.fillTrack(canvas, this.paint, 0.0f, 1.0f, this.baseSpec.trackColor, getAlpha(), 0);
+                drawingDelegate.fillTrack(canvas, this.paint, 0.0f, 1.0f, this.baseSpec.trackColor, getAlpha(), 0);
             }
             this.drawingDelegate.fillIndicator(canvas, this.paint, this.activeIndicator, getAlpha());
             this.drawingDelegate.drawStopIndicator(canvas, this.paint, this.baseSpec.indicatorColors[0], getAlpha());

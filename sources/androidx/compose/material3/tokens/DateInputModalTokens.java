@@ -11,11 +11,11 @@ public final class DateInputModalTokens {
     private static final float HeaderContainerWidth;
     public static final DateInputModalTokens INSTANCE = new DateInputModalTokens();
     private static final ColorSchemeKeyTokens ContainerColor = ColorSchemeKeyTokens.Surface;
-    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3978getLevel3D9Ej5fM();
-    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 512.0d);
+    private static final float ContainerElevation = ElevationTokens.INSTANCE.m3362getLevel3D9Ej5fM();
+    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 512.0d);
     private static final ShapeKeyTokens ContainerShape = ShapeKeyTokens.CornerExtraLarge;
     private static final ColorSchemeKeyTokens ContainerSurfaceTintLayerColor = ColorSchemeKeyTokens.SurfaceTint;
-    private static final float HeaderContainerHeight = Dp.m8258constructorimpl((float) 120.0d);
+    private static final float HeaderContainerHeight = Dp.m7555constructorimpl((float) 120.0d);
     private static final ColorSchemeKeyTokens HeaderHeadlineColor = ColorSchemeKeyTokens.OnSurfaceVariant;
     private static final TypographyKeyTokens HeaderHeadlineFont = TypographyKeyTokens.HeadlineLarge;
     private static final ColorSchemeKeyTokens HeaderSupportingTextColor = ColorSchemeKeyTokens.OnSurfaceVariant;
@@ -26,8 +26,8 @@ public final class DateInputModalTokens {
 
     static {
         float f = (float) 328.0d;
-        ContainerWidth = Dp.m8258constructorimpl(f);
-        HeaderContainerWidth = Dp.m8258constructorimpl(f);
+        ContainerWidth = Dp.m7555constructorimpl(f);
+        HeaderContainerWidth = Dp.m7555constructorimpl(f);
     }
 
     public final ColorSchemeKeyTokens getContainerColor() {
@@ -35,12 +35,12 @@ public final class DateInputModalTokens {
     }
 
     /* renamed from: getContainerElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3923getContainerElevationD9Ej5fM() {
+    public final float m3307getContainerElevationD9Ej5fM() {
         return ContainerElevation;
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3924getContainerHeightD9Ej5fM() {
+    public final float m3308getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
@@ -53,17 +53,17 @@ public final class DateInputModalTokens {
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3925getContainerWidthD9Ej5fM() {
+    public final float m3309getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getHeaderContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3926getHeaderContainerHeightD9Ej5fM() {
+    public final float m3310getHeaderContainerHeightD9Ej5fM() {
         return HeaderContainerHeight;
     }
 
     /* renamed from: getHeaderContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m3927getHeaderContainerWidthD9Ej5fM() {
+    public final float m3311getHeaderContainerWidthD9Ej5fM() {
         return HeaderContainerWidth;
     }
 

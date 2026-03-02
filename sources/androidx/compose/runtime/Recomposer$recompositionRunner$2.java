@@ -87,9 +87,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
             ObserverHandle registerApplyObserver = companion.registerApplyObserver(new Function2() { // from class: androidx.compose.runtime.Recomposer$recompositionRunner$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj3, Object obj4) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = Recomposer$recompositionRunner$2.invokeSuspend$lambda$0(Recomposer.this, (Set) obj3, (Snapshot) obj4);
-                    return invokeSuspend$lambda$0;
+                    return Recomposer$recompositionRunner$2.invokeSuspend$lambda$0(Recomposer.this, (Set) obj3, (Snapshot) obj4);
                 }
             });
             Recomposer.Companion companion2 = Recomposer.Companion;
@@ -158,7 +156,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Recomposer recomposer, Set set, Snapshot snapshot) {
         MutableStateFlow mutableStateFlow;
         CancellableContinuation cancellableContinuation;
@@ -182,7 +180,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                                         Object obj = objArr[(i << 3) + i3];
                                         if (obj instanceof StateObjectImpl) {
                                             ReaderKind.Companion companion = ReaderKind.Companion;
-                                            if (!((StateObjectImpl) obj).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(1))) {
+                                            if (!((StateObjectImpl) obj).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(1))) {
                                             }
                                         }
                                         mutableScatterSet.add(obj);
@@ -203,7 +201,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
                     for (Object obj2 : set) {
                         if (obj2 instanceof StateObjectImpl) {
                             ReaderKind.Companion companion2 = ReaderKind.Companion;
-                            if (!((StateObjectImpl) obj2).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(1))) {
+                            if (!((StateObjectImpl) obj2).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(1))) {
                             }
                         }
                         mutableScatterSet.add(obj2);
@@ -216,7 +214,7 @@ public final class Recomposer$recompositionRunner$2 extends SuspendLambda implem
         }
         if (cancellableContinuation != null) {
             Result.Companion companion3 = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }

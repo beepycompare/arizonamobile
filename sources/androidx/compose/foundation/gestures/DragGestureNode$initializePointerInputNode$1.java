@@ -49,114 +49,104 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
         Function3 function3 = new Function3() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = DragGestureNode$initializePointerInputNode$1.invoke$lambda$0(DragGestureNode.this, velocityTracker, (PointerInputChange) obj, (PointerInputChange) obj2, (Offset) obj3);
-                return invoke$lambda$0;
+                return DragGestureNode$initializePointerInputNode$1.invoke$lambda$0(DragGestureNode.this, velocityTracker, (PointerInputChange) obj, (PointerInputChange) obj2, (Offset) obj3);
             }
         };
         final DragGestureNode dragGestureNode2 = this.this$0;
         Function1 function1 = new Function1() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$1;
-                invoke$lambda$1 = DragGestureNode$initializePointerInputNode$1.invoke$lambda$1(VelocityTracker.this, pointerInputScope, dragGestureNode2, (PointerInputChange) obj);
-                return invoke$lambda$1;
+                return DragGestureNode$initializePointerInputNode$1.invoke$lambda$1(VelocityTracker.this, pointerInputScope, dragGestureNode2, (PointerInputChange) obj);
             }
         };
         final DragGestureNode dragGestureNode3 = this.this$0;
         Function0 function0 = new Function0() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit invoke$lambda$2;
-                invoke$lambda$2 = DragGestureNode$initializePointerInputNode$1.invoke$lambda$2(DragGestureNode.this);
-                return invoke$lambda$2;
+                return DragGestureNode$initializePointerInputNode$1.invoke$lambda$2(DragGestureNode.this);
             }
         };
         final DragGestureNode dragGestureNode4 = this.this$0;
         Function0 function02 = new Function0() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean invoke$lambda$3;
-                invoke$lambda$3 = DragGestureNode$initializePointerInputNode$1.invoke$lambda$3(DragGestureNode.this);
-                return Boolean.valueOf(invoke$lambda$3);
+                return Boolean.valueOf(DragGestureNode$initializePointerInputNode$1.invoke$lambda$3(DragGestureNode.this));
             }
         };
         final DragGestureNode dragGestureNode5 = this.this$0;
         Object coroutineScope = CoroutineScopeKt.coroutineScope(new AnonymousClass1(pointerInputScope, this.this$0, function3, function1, function0, function02, new Function2() { // from class: androidx.compose.foundation.gestures.DragGestureNode$initializePointerInputNode$1$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit invoke$lambda$4;
-                invoke$lambda$4 = DragGestureNode$initializePointerInputNode$1.invoke$lambda$4(DragGestureNode.this, longRef, velocityTracker, (PointerInputChange) obj, (Offset) obj2);
-                return invoke$lambda$4;
+                return DragGestureNode$initializePointerInputNode$1.invoke$lambda$4(DragGestureNode.this, longRef, velocityTracker, (PointerInputChange) obj, (Offset) obj2);
             }
         }, null), continuation);
         return coroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? coroutineScope : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(DragGestureNode dragGestureNode, VelocityTracker velocityTracker, PointerInputChange pointerInputChange, PointerInputChange pointerInputChange2, Offset offset) {
         Channel channel;
-        dragGestureNode.nodeOffset = Offset.Companion.m5195getZeroF1C5BW0();
-        if (dragGestureNode.getCanDrag().invoke(PointerType.m6812boximpl(pointerInputChange.m6747getTypeT8wyACA())).booleanValue()) {
+        dragGestureNode.nodeOffset = Offset.Companion.m4543getZeroF1C5BW0();
+        if (dragGestureNode.getCanDrag().invoke(PointerType.m6153boximpl(pointerInputChange.m6088getTypeT8wyACA())).booleanValue()) {
             if (!dragGestureNode.isListeningForEvents$foundation()) {
                 dragGestureNode.startListeningForEvents();
             }
             VelocityTrackerKt.addPointerInputChange(velocityTracker, pointerInputChange);
-            long m5183minusMKHz9U = Offset.m5183minusMKHz9U(pointerInputChange2.m6744getPositionF1C5BW0(), offset.m5189unboximpl());
+            long m4531minusMKHz9U = Offset.m4531minusMKHz9U(pointerInputChange2.m6085getPositionF1C5BW0(), offset.m4537unboximpl());
             channel = dragGestureNode.channel;
             if (channel != null) {
-                ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(new DragEvent.DragStarted(m5183minusMKHz9U, null)));
+                ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(new DragEvent.DragStarted(m4531minusMKHz9U, null)));
             }
         }
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1(VelocityTracker velocityTracker, PointerInputScope pointerInputScope, DragGestureNode dragGestureNode, PointerInputChange pointerInputChange) {
         Channel channel;
         VelocityTrackerKt.addPointerInputChange(velocityTracker, pointerInputChange);
         float maximumFlingVelocity = pointerInputScope.getViewConfiguration().getMaximumFlingVelocity();
-        long m6850calculateVelocityAH228Gc = velocityTracker.m6850calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
+        long m6191calculateVelocityAH228Gc = velocityTracker.m6191calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
         velocityTracker.resetTracking();
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m568toValidVelocityTH1AsA0(m6850calculateVelocityAH228Gc), false, null)));
+            ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m488toValidVelocityTH1AsA0(m6191calculateVelocityAH228Gc), false, null)));
         }
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$2(DragGestureNode dragGestureNode) {
         Channel channel;
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+            ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
         }
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$3(DragGestureNode dragGestureNode) {
         return !dragGestureNode.startDragImmediately();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$4(DragGestureNode dragGestureNode, Ref.LongRef longRef, VelocityTracker velocityTracker, PointerInputChange pointerInputChange, Offset offset) {
         long j;
         Channel channel;
         long j2;
         long positionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(dragGestureNode));
-        if (!Offset.m5176equalsimpl0(positionOnScreen, longRef.element)) {
-            long m5183minusMKHz9U = Offset.m5183minusMKHz9U(positionOnScreen, longRef.element);
+        if (!Offset.m4524equalsimpl0(positionOnScreen, longRef.element)) {
+            long m4531minusMKHz9U = Offset.m4531minusMKHz9U(positionOnScreen, longRef.element);
             j2 = dragGestureNode.nodeOffset;
-            dragGestureNode.nodeOffset = Offset.m5184plusMKHz9U(j2, m5183minusMKHz9U);
+            dragGestureNode.nodeOffset = Offset.m4532plusMKHz9U(j2, m4531minusMKHz9U);
         }
         longRef.element = positionOnScreen;
         j = dragGestureNode.nodeOffset;
-        VelocityTrackerKt.m6851addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, j);
+        VelocityTrackerKt.m6192addPointerInputChange0AR0LA0(velocityTracker, pointerInputChange, j);
         channel = dragGestureNode.channel;
         if (channel != null) {
-            ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(new DragEvent.DragDelta(offset.m5189unboximpl(), false, null)));
+            ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(new DragEvent.DragDelta(offset.m4537unboximpl(), false, null)));
         }
         return Unit.INSTANCE;
     }
@@ -233,7 +223,7 @@ public final class DragGestureNode$initializePointerInputNode$1 implements Point
             } catch (CancellationException e) {
                 channel = this.this$0.channel;
                 if (channel != null) {
-                    ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
+                    ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE));
                 }
                 if (!CoroutineScopeKt.isActive(r1)) {
                     throw e;

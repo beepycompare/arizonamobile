@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.adrevenue.fyber.v3.impl;
 
 import com.fyber.fairbid.ads.PlacementType;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class a {
 
     /* renamed from: a  reason: collision with root package name */

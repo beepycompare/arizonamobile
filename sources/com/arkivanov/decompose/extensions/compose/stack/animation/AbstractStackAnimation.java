@@ -114,15 +114,15 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         composer.startReplaceGroup(619201461);
@@ -137,9 +137,7 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
                 rememberedValue4 = new Function0() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.AbstractStackAnimation$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit invoke$lambda$16$lambda$15$lambda$10$lambda$9;
-                        invoke$lambda$16$lambda$15$lambda$10$lambda$9 = AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$10$lambda$9(AbstractStackAnimation.AnimationItem.this, key, mutableState2);
-                        return invoke$lambda$16$lambda$15$lambda$10$lambda$9;
+                        return AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$10$lambda$9(AbstractStackAnimation.AnimationItem.this, key, mutableState2);
                     }
                 };
                 composer.updateRememberedValue(rememberedValue4);
@@ -154,9 +152,7 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
                     rememberedValue5 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.AbstractStackAnimation$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            DisposableEffectResult invoke$lambda$16$lambda$15$lambda$14$lambda$13;
-                            invoke$lambda$16$lambda$15$lambda$14$lambda$13 = AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$14$lambda$13(MutableState.this, mutableState2, (DisposableEffectScope) obj);
-                            return invoke$lambda$16$lambda$15$lambda$14$lambda$13;
+                            return AbstractStackAnimation.invoke$lambda$16$lambda$15$lambda$14$lambda$13(MutableState.this, mutableState2, (DisposableEffectScope) obj);
                         }
                     };
                     composer.updateRememberedValue(rememberedValue5);
@@ -197,7 +193,7 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
         return mutableState.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$16$lambda$15$lambda$10$lambda$9(AnimationItem animationItem, Object obj, MutableState mutableState) {
         if (DirectionKt.isExit(animationItem.getDirection())) {
             mutableState.setValue(MapsKt.minus(invoke$lambda$4(mutableState), obj));
@@ -342,7 +338,7 @@ public abstract class AbstractStackAnimation<C, T> implements StackAnimation<C, 
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult invoke$lambda$16$lambda$15$lambda$14$lambda$13(final MutableState mutableState, final MutableState mutableState2, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         return new DisposableEffectResult() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.AbstractStackAnimation$invoke$lambda$16$lambda$15$lambda$14$lambda$13$$inlined$onDispose$1

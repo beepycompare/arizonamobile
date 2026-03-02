@@ -8,7 +8,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.Objects;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class DeviceProperties {
     private static Boolean zza;

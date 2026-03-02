@@ -16,7 +16,7 @@ import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DialogButton.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEventHandler {
     final /* synthetic */ MutableState<Boolean> $selected$delegate;
@@ -72,8 +72,8 @@ public final class DialogButtonKt$DialogButtonYes$2$1 implements PointerInputEve
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DialogButton.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1", f = "DialogButton.kt", i = {0, 1}, l = {87, TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "$this$awaitPointerEventScope"}, s = {"L$0", "L$0"}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1", f = "DialogButton.kt", i = {0, 1}, l = {87, TsExtractor.TS_STREAM_TYPE_DVBSUBS}, m = "invokeSuspend", n = {"$this$awaitPointerEventScope", "$this$awaitPointerEventScope"}, nl = {88, 90}, s = {"L$0", "L$0"}, v = 2)
     /* renamed from: com.miami.game.core.design.system.component.button.DialogButtonKt$DialogButtonYes$2$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {

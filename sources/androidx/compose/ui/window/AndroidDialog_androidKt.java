@@ -301,21 +301,21 @@ public final class AndroidDialog_androidKt {
                 rememberedValue = new MeasurePolicy() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$DialogLayout$1$1
                     @Override // androidx.compose.ui.layout.MeasurePolicy
                     /* renamed from: measure-3p2s80s */
-                    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                         ArrayList arrayList = new ArrayList(list.size());
                         int size = list.size();
                         int i5 = 0;
                         int i6 = 0;
                         for (int i7 = 0; i7 < size; i7++) {
-                            Placeable mo6875measureBRTryo0 = list.get(i7).mo6875measureBRTryo0(j);
-                            i5 = Math.max(i5, mo6875measureBRTryo0.getWidth());
-                            i6 = Math.max(i6, mo6875measureBRTryo0.getHeight());
-                            arrayList.add(mo6875measureBRTryo0);
+                            Placeable mo6216measureBRTryo0 = list.get(i7).mo6216measureBRTryo0(j);
+                            i5 = Math.max(i5, mo6216measureBRTryo0.getWidth());
+                            i6 = Math.max(i6, mo6216measureBRTryo0.getHeight());
+                            arrayList.add(mo6216measureBRTryo0);
                         }
                         final ArrayList arrayList2 = arrayList;
                         if (list.isEmpty()) {
-                            i5 = Constraints.m8213getMinWidthimpl(j);
-                            i6 = Constraints.m8212getMinHeightimpl(j);
+                            i5 = Constraints.m7510getMinWidthimpl(j);
+                            i6 = Constraints.m7509getMinHeightimpl(j);
                         }
                         return MeasureScope.layout$default(measureScope, i5, i6, null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.ui.window.AndroidDialog_androidKt$DialogLayout$1$1.1
                             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -362,12 +362,12 @@ public final class AndroidDialog_androidKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             function2.invoke(startRestartGroup, Integer.valueOf((i6 >> 6) & 14));
             startRestartGroup.endNode();
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

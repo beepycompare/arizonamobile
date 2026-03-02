@@ -50,7 +50,7 @@ public final class TextLayout_androidKt {
     }
 
     public static final long VerticalPaddings(int i, int i2) {
-        return VerticalPaddings.m7750constructorimpl((i2 & 4294967295L) | (i << 32));
+        return VerticalPaddings.m7051constructorimpl((i2 & 4294967295L) | (i << 32));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

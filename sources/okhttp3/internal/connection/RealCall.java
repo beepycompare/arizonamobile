@@ -176,7 +176,7 @@ public final class RealCall implements Call, Cloneable, Lockable {
         Iterator<RoutePlanner.Plan> it = this.plansToCancel.iterator();
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
-            it.next().mo12160cancel();
+            it.next().mo11028cancel();
         }
         this.eventListener.canceled(this);
     }
@@ -457,12 +457,13 @@ public final class RealCall implements Call, Cloneable, Lockable {
                 }
             }
             IOException timeoutExit = timeoutExit(iOException);
+            EventListener eventListener = this.eventListener;
             if (iOException != null) {
                 Intrinsics.checkNotNull(timeoutExit);
-                this.eventListener.callFailed(this, timeoutExit);
+                eventListener.callFailed(this, timeoutExit);
                 return timeoutExit;
             }
-            this.eventListener.callEnd(this);
+            eventListener.callEnd(this);
             return timeoutExit;
         }
         throw new AssertionError("Thread " + Thread.currentThread().getName() + " MUST NOT hold lock on " + realCall);

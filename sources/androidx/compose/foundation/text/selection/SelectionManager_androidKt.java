@@ -36,22 +36,20 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: classes.dex */
 public final class SelectionManager_androidKt {
     /* renamed from: isCopyKeyEvent-ZmokQxo  reason: not valid java name */
-    public static final boolean m1897isCopyKeyEventZmokQxo(KeyEvent keyEvent) {
-        return KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1373mapZmokQxo(keyEvent) == KeyCommand.COPY;
+    public static final boolean m1639isCopyKeyEventZmokQxo(KeyEvent keyEvent) {
+        return KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1200mapZmokQxo(keyEvent) == KeyCommand.COPY;
     }
 
     public static final Modifier selectionMagnifier(Modifier modifier, final SelectionManager selectionManager) {
         return !Magnifier_androidKt.isPlatformMagnifierSupported$default(0, 1, null) ? modifier : ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier selectionMagnifier$lambda$0;
-                selectionMagnifier$lambda$0 = SelectionManager_androidKt.selectionMagnifier$lambda$0(SelectionManager.this, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return selectionMagnifier$lambda$0;
+                return SelectionManager_androidKt.selectionMagnifier$lambda$0(SelectionManager.this, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier selectionMagnifier$lambda$0(final SelectionManager selectionManager, Modifier modifier, Composer composer, int i) {
         composer.startReplaceGroup(-1914520728);
         ComposerKt.sourceInformation(composer, "C51@2356L7,52@2393L41,54@2501L68,55@2603L540:SelectionManager.android.kt#eksfi3");
@@ -65,7 +63,7 @@ public final class SelectionManager_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1608414511, "CC(remember):SelectionManager.android.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8421boximpl(IntSize.Companion.m8434getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7718boximpl(IntSize.Companion.m7731getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
@@ -110,21 +108,21 @@ public final class SelectionManager_androidKt {
     }
 
     private static final long selectionMagnifier$lambda$0$1(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m8433unboximpl();
+        return mutableState.getValue().m7730unboximpl();
     }
 
     private static final void selectionMagnifier$lambda$0$2(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m8421boximpl(j));
+        mutableState.setValue(IntSize.m7718boximpl(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset selectionMagnifier$lambda$0$3$0(SelectionManager selectionManager, MutableState mutableState) {
-        return Offset.m5168boximpl(SelectionManagerKt.m1891calculateSelectionMagnifierCenterAndroidO0kMr_c(selectionManager, selectionMagnifier$lambda$0$1(mutableState)));
+        return Offset.m4516boximpl(SelectionManagerKt.m1634calculateSelectionMagnifierCenterAndroidO0kMr_c(selectionManager, selectionMagnifier$lambda$0$1(mutableState)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Modifier selectionMagnifier$lambda$0$4$0(final Density density, final MutableState mutableState, final Function0 function0) {
-        return Magnifier_androidKt.m381magnifierjPUL71Q$default(Modifier.Companion, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda10
+        return Magnifier_androidKt.m333magnifierjPUL71Q$default(Modifier.Companion, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Offset selectionMagnifier$lambda$0$4$0$0;
@@ -148,7 +146,7 @@ public final class SelectionManager_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit selectionMagnifier$lambda$0$4$0$1(Density density, MutableState mutableState, DpSize dpSize) {
-        selectionMagnifier$lambda$0$2(mutableState, IntSize.m8424constructorimpl((density.mo458roundToPx0680j_4(DpSize.m8356getWidthD9Ej5fM(dpSize.m8364unboximpl())) << 32) | (density.mo458roundToPx0680j_4(DpSize.m8354getHeightD9Ej5fM(dpSize.m8364unboximpl())) & 4294967295L)));
+        selectionMagnifier$lambda$0$2(mutableState, IntSize.m7721constructorimpl((density.mo399roundToPx0680j_4(DpSize.m7653getWidthD9Ej5fM(dpSize.m7661unboximpl())) << 32) | (density.mo399roundToPx0680j_4(DpSize.m7651getHeightD9Ej5fM(dpSize.m7661unboximpl())) & 4294967295L)));
         return Unit.INSTANCE;
     }
 
@@ -156,9 +154,7 @@ public final class SelectionManager_androidKt {
         return TextContextMenuModifier_androidKt.addTextContextMenuComponentsWithContext(modifier, new Function2() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit addSelectionContainerTextContextMenuComponents$lambda$0;
-                addSelectionContainerTextContextMenuComponents$lambda$0 = SelectionManager_androidKt.addSelectionContainerTextContextMenuComponents$lambda$0(SelectionManager.this, (TextContextMenuBuilderScope) obj, (Context) obj2);
-                return addSelectionContainerTextContextMenuComponents$lambda$0;
+                return SelectionManager_androidKt.addSelectionContainerTextContextMenuComponents$lambda$0(SelectionManager.this, (TextContextMenuBuilderScope) obj, (Context) obj2);
             }
         });
     }
@@ -190,10 +186,10 @@ public final class SelectionManager_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit addSelectionContainerTextContextMenuComponents$lambda$0(final SelectionManager selectionManager, TextContextMenuBuilderScope textContextMenuBuilderScope, final Context context) {
         Pair<AnnotatedString, TextRange> contextTextAndSelection$foundation = selectionManager.getContextTextAndSelection$foundation();
-        PlatformSelectionBehaviors_androidKt.m1846addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, false, contextTextAndSelection$foundation != null ? contextTextAndSelection$foundation.getFirst() : null, contextTextAndSelection$foundation != null ? contextTextAndSelection$foundation.getSecond() : null, selectionManager.getPlatformSelectionBehaviors$foundation(), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda3
+        PlatformSelectionBehaviors_androidKt.m1600addPlatformTextContextMenuItems71BSaZU(textContextMenuBuilderScope, context, false, contextTextAndSelection$foundation != null ? contextTextAndSelection$foundation.getFirst() : null, contextTextAndSelection$foundation != null ? contextTextAndSelection$foundation.getSecond() : null, selectionManager.getPlatformSelectionBehaviors$foundation(), new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManager_androidKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit addSelectionContainerTextContextMenuComponents$lambda$0$1;

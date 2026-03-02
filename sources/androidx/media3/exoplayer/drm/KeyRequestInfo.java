@@ -6,12 +6,12 @@ import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
 import org.checkerframework.dataflow.qual.SideEffectFree;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class KeyRequestInfo {
     public final ImmutableList<LoadEventInfo> loadInfos;
     public final ImmutableList<DrmInitData.SchemeData> schemeDatas;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private final ImmutableList.Builder<LoadEventInfo> loadEventInfos = ImmutableList.builder();
         private ImmutableList<DrmInitData.SchemeData> schemeDatas;

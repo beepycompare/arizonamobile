@@ -73,10 +73,12 @@ public class RemitStoreOnSQLite implements RemitSyncExecutor.RemitAgent, Downloa
     @Override // com.liulishuo.okdownload.core.breakpoint.DownloadStore
     public void onTaskEnd(int i, EndCause endCause, Exception exc) {
         this.sqliteCache.onTaskEnd(i, endCause, exc);
-        if (endCause == EndCause.COMPLETED) {
-            this.remitHelper.discard(i);
+        EndCause endCause2 = EndCause.COMPLETED;
+        RemitSyncToDBHelper remitSyncToDBHelper = this.remitHelper;
+        if (endCause == endCause2) {
+            remitSyncToDBHelper.discard(i);
         } else {
-            this.remitHelper.endAndEnsureToDB(i);
+            remitSyncToDBHelper.endAndEnsureToDB(i);
         }
     }
 

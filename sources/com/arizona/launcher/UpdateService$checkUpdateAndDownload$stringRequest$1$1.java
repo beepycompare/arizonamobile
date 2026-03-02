@@ -21,8 +21,8 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1101, 1102}, m = "invokeSuspend", n = {"gameDataInfo"}, s = {"L$0"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1154, 1155}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {1155, 1168}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<Unit> $onFinish;
@@ -93,8 +93,8 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -133,35 +133,35 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
             this.this$0.mUpdateFiles = this.$gameDataInfo.getFirst();
             this.this$0.resetGameStatus();
             this.this$0.setUpdateStatus(UpdateService.UpdateStatus.Undefined);
-            BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new C00451(this.$onFinish, null), 2, null);
+            BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new C00441(this.$onFinish, null), 2, null);
             this.this$0.stopForegroundService();
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: UpdateService.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-        @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+        @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
         /* renamed from: com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */
-        public static final class C00451 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        public static final class C00441 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function0<Unit> $onFinish;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00451(Function0<Unit> function0, Continuation<? super C00451> continuation) {
+            C00441(Function0<Unit> function0, Continuation<? super C00441> continuation) {
                 super(2, continuation);
                 this.$onFinish = function0;
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new C00451(this.$onFinish, continuation);
+                return new C00441(this.$onFinish, continuation);
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-                return ((C00451) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00441) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

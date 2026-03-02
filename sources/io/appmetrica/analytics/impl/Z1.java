@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
 public final class Z1 implements AppSetIdListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0108a2 f876a;
+    public final /* synthetic */ C0107a2 f876a;
 
-    public Z1(C0108a2 c0108a2) {
-        this.f876a = c0108a2;
+    public Z1(C0107a2 c0107a2) {
+        this.f876a = c0107a2;
     }
 
     @Override // io.appmetrica.analytics.appsetid.internal.AppSetIdListener

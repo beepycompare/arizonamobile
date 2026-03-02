@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface RendererCapabilitiesList {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface Factory {
         RendererCapabilitiesList createRendererCapabilitiesList();
     }

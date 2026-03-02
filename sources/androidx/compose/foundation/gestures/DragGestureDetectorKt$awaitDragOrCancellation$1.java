@@ -24,6 +24,6 @@ public final class DragGestureDetectorKt$awaitDragOrCancellation$1 extends Conti
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m532awaitDragOrCancellationrnUCldI(null, 0L, this);
+        return DragGestureDetectorKt.m458awaitDragOrCancellationrnUCldI(null, 0L, this);
     }
 }

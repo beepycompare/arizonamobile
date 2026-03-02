@@ -36,7 +36,7 @@ public final class CloudyBackground_androidKt {
 
     @FunctionKeyMeta(endOffset = 4051, key = -1688490395, startOffset = 3089)
     /* renamed from: cloudy-NpZTi58  reason: not valid java name */
-    public static final Modifier m10198cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
+    public static final Modifier m9141cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
         Function1<? super CloudyState, Unit> function12;
         Intrinsics.checkNotNullParameter(cloudy, "$this$cloudy");
         Intrinsics.checkNotNullParameter(sky, "sky");
@@ -44,7 +44,7 @@ public final class CloudyBackground_androidKt {
         ComposerKt.sourceInformation(composer, "C(cloudy)N(sky,radius,progressive,tint:c#ui.graphics.Color,enabled,cpuBlurEnabled,onStateChanged)145@5053L2,93@3529L281,93@3498L312:CloudyBackground.android.kt#nw4b6b");
         int i4 = (i3 & 2) != 0 ? 20 : i;
         CloudyProgressive.None none = (i3 & 4) != 0 ? CloudyProgressive.None.INSTANCE : cloudyProgressive;
-        long m5459getTransparent0d7_KjU = (i3 & 8) != 0 ? Color.Companion.m5459getTransparent0d7_KjU() : j;
+        long m4807getTransparent0d7_KjU = (i3 & 8) != 0 ? Color.Companion.m4807getTransparent0d7_KjU() : j;
         boolean z3 = (i3 & 16) != 0 ? true : z;
         boolean z4 = (i3 & 32) != 0 ? false : z2;
         if ((i3 & 64) != 0) {
@@ -87,7 +87,7 @@ public final class CloudyBackground_androidKt {
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
             EffectsKt.LaunchedEffect(valueOf, (Function2) rememberedValue2, composer, (i2 >> 18) & 14);
-            Modifier then = cloudy.then(new CloudyBackgroundModifierElement(sky, i4, none, m5459getTransparent0d7_KjU, z4, function12, null));
+            Modifier then = cloudy.then(new CloudyBackgroundModifierElement(sky, i4, none, m4807getTransparent0d7_KjU, z4, function12, null));
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

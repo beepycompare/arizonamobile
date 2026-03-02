@@ -43,9 +43,7 @@ public final class WideNavigationRailStateImpl implements WideNavigationRailStat
         this._currentVal = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.material3.WideNavigationRailStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                WideNavigationRailValue _currentVal$lambda$0;
-                _currentVal$lambda$0 = WideNavigationRailStateImpl._currentVal$lambda$0(WideNavigationRailStateImpl.this);
-                return _currentVal$lambda$0;
+                return WideNavigationRailStateImpl._currentVal$lambda$0(WideNavigationRailStateImpl.this);
             }
         });
     }
@@ -58,7 +56,7 @@ public final class WideNavigationRailStateImpl implements WideNavigationRailStat
         this.initialValue = wideNavigationRailValue;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final WideNavigationRailValue _currentVal$lambda$0(WideNavigationRailStateImpl wideNavigationRailStateImpl) {
         if (wideNavigationRailStateImpl.internalState.getValue().floatValue() == 1.0f) {
             return WideNavigationRailValue.Expanded;
@@ -123,26 +121,20 @@ public final class WideNavigationRailStateImpl implements WideNavigationRailStat
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.WideNavigationRailStateImpl$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    WideNavigationRailValue Saver$lambda$0;
-                    Saver$lambda$0 = WideNavigationRailStateImpl.Companion.Saver$lambda$0((SaverScope) obj, (WideNavigationRailState) obj2);
-                    return Saver$lambda$0;
+                    WideNavigationRailValue targetValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    targetValue = ((WideNavigationRailState) obj2).getTargetValue();
+                    return targetValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.WideNavigationRailStateImpl$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    WideNavigationRailState Saver$lambda$1;
-                    Saver$lambda$1 = WideNavigationRailStateImpl.Companion.Saver$lambda$1(AnimationSpec.this, (WideNavigationRailValue) obj);
-                    return Saver$lambda$1;
+                    return WideNavigationRailStateImpl.Companion.Saver$lambda$1(AnimationSpec.this, (WideNavigationRailValue) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final WideNavigationRailValue Saver$lambda$0(SaverScope saverScope, WideNavigationRailState wideNavigationRailState) {
-            return wideNavigationRailState.getTargetValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final WideNavigationRailState Saver$lambda$1(AnimationSpec animationSpec, WideNavigationRailValue wideNavigationRailValue) {
             return new WideNavigationRailStateImpl(wideNavigationRailValue, animationSpec);
         }

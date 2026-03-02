@@ -57,16 +57,14 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
             ResultKt.throwOnFailure(obj);
             final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
             TwoWayConverter<Offset, AnimationVector2D> vectorConverter = VectorConvertersKt.getVectorConverter(Offset.Companion);
-            Offset m5168boximpl = Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0());
-            Offset m5168boximpl2 = Offset.m5168boximpl(this.f13$$v$c$androidxcomposeuigeometryOffset$offset$0);
+            Offset m4516boximpl = Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0());
+            Offset m4516boximpl2 = Offset.m4516boximpl(this.f13$$v$c$androidxcomposeuigeometryOffset$offset$0);
             final Ref.LongRef longRef = this.$previousValue;
             this.label = 1;
-            if (SuspendAnimationKt.animate$default(vectorConverter, m5168boximpl, m5168boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animate$default(vectorConverter, m4516boximpl, m4516boximpl2, null, null, new Function2() { // from class: androidx.compose.foundation.gestures.Scrollable2DKt$semanticsScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = Scrollable2DKt$semanticsScrollBy$2.invokeSuspend$lambda$0(Ref.LongRef.this, nestedScrollScope, (Offset) obj2, (Offset) obj3);
-                    return invokeSuspend$lambda$0;
+                    return Scrollable2DKt$semanticsScrollBy$2.invokeSuspend$lambda$0(Ref.LongRef.this, nestedScrollScope, (Offset) obj2, (Offset) obj3);
                 }
             }, this, 24, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -79,9 +77,9 @@ public final class Scrollable2DKt$semanticsScrollBy$2 extends SuspendLambda impl
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, NestedScrollScope nestedScrollScope, Offset offset, Offset offset2) {
-        longRef.element = Offset.m5184plusMKHz9U(longRef.element, nestedScrollScope.mo611scrollByOzD1aCk(Offset.m5183minusMKHz9U(offset.m5189unboximpl(), longRef.element), NestedScrollSource.Companion.m6624getUserInputWNlRxjI()));
+        longRef.element = Offset.m4532plusMKHz9U(longRef.element, nestedScrollScope.mo530scrollByOzD1aCk(Offset.m4531minusMKHz9U(offset.m4537unboximpl(), longRef.element), NestedScrollSource.Companion.m5965getUserInputWNlRxjI()));
         return Unit.INSTANCE;
     }
 }

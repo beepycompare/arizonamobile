@@ -19,9 +19,7 @@ public final class InputMethodManagerImpl implements InputMethodManager {
     private final Lazy imm$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.input.internal.InputMethodManagerImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            android.view.inputmethod.InputMethodManager imm_delegate$lambda$0;
-            imm_delegate$lambda$0 = InputMethodManagerImpl.imm_delegate$lambda$0(InputMethodManagerImpl.this);
-            return imm_delegate$lambda$0;
+            return InputMethodManagerImpl.imm_delegate$lambda$0(InputMethodManagerImpl.this);
         }
     });
     private final SoftwareKeyboardControllerCompat softwareKeyboardControllerCompat;
@@ -36,7 +34,7 @@ public final class InputMethodManagerImpl implements InputMethodManager {
         return (android.view.inputmethod.InputMethodManager) this.imm$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final android.view.inputmethod.InputMethodManager imm_delegate$lambda$0(InputMethodManagerImpl inputMethodManagerImpl) {
         Object systemService = inputMethodManagerImpl.view.getContext().getSystemService("input_method");
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");

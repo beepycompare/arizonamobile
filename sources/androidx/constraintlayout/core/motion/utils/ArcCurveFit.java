@@ -21,160 +21,178 @@ public class ArcCurveFit extends CurveFit {
 
     @Override // androidx.constraintlayout.core.motion.utils.CurveFit
     public void getPos(double d, double[] dArr) {
-        if (this.mExtrapolate) {
-            if (d < this.mArcs[0].mTime1) {
-                double d2 = this.mArcs[0].mTime1;
+        boolean z = this.mExtrapolate;
+        Arc[] arcArr = this.mArcs;
+        if (z) {
+            int i = (d > arcArr[0].mTime1 ? 1 : (d == arcArr[0].mTime1 ? 0 : -1));
+            Arc[] arcArr2 = this.mArcs;
+            if (i < 0) {
+                double d2 = arcArr2[0].mTime1;
                 double d3 = d - this.mArcs[0].mTime1;
-                if (this.mArcs[0].mLinear) {
-                    dArr[0] = this.mArcs[0].getLinearX(d2) + (this.mArcs[0].getLinearDX(d2) * d3);
+                boolean z2 = this.mArcs[0].mLinear;
+                Arc[] arcArr3 = this.mArcs;
+                if (z2) {
+                    dArr[0] = arcArr3[0].getLinearX(d2) + (this.mArcs[0].getLinearDX(d2) * d3);
                     dArr[1] = this.mArcs[0].getLinearY(d2) + (d3 * this.mArcs[0].getLinearDY(d2));
                     return;
                 }
-                this.mArcs[0].setPoint(d2);
+                arcArr3[0].setPoint(d2);
                 dArr[0] = this.mArcs[0].getX() + (this.mArcs[0].getDX() * d3);
                 dArr[1] = this.mArcs[0].getY() + (d3 * this.mArcs[0].getDY());
                 return;
-            }
-            Arc[] arcArr = this.mArcs;
-            if (d > arcArr[arcArr.length - 1].mTime2) {
-                Arc[] arcArr2 = this.mArcs;
-                double d4 = arcArr2[arcArr2.length - 1].mTime2;
+            } else if (d > arcArr2[arcArr2.length - 1].mTime2) {
+                Arc[] arcArr4 = this.mArcs;
+                double d4 = arcArr4[arcArr4.length - 1].mTime2;
                 double d5 = d - d4;
-                Arc[] arcArr3 = this.mArcs;
-                int length = arcArr3.length - 1;
-                if (arcArr3[length].mLinear) {
-                    dArr[0] = this.mArcs[length].getLinearX(d4) + (this.mArcs[length].getLinearDX(d4) * d5);
+                Arc[] arcArr5 = this.mArcs;
+                int length = arcArr5.length - 1;
+                boolean z3 = arcArr5[length].mLinear;
+                Arc[] arcArr6 = this.mArcs;
+                if (z3) {
+                    dArr[0] = arcArr6[length].getLinearX(d4) + (this.mArcs[length].getLinearDX(d4) * d5);
                     dArr[1] = this.mArcs[length].getLinearY(d4) + (d5 * this.mArcs[length].getLinearDY(d4));
                     return;
                 }
-                this.mArcs[length].setPoint(d);
+                arcArr6[length].setPoint(d);
                 dArr[0] = this.mArcs[length].getX() + (this.mArcs[length].getDX() * d5);
                 dArr[1] = this.mArcs[length].getY() + (d5 * this.mArcs[length].getDY());
                 return;
             }
         } else {
-            if (d < this.mArcs[0].mTime1) {
+            if (d < arcArr[0].mTime1) {
                 d = this.mArcs[0].mTime1;
             }
-            Arc[] arcArr4 = this.mArcs;
-            if (d > arcArr4[arcArr4.length - 1].mTime2) {
-                Arc[] arcArr5 = this.mArcs;
-                d = arcArr5[arcArr5.length - 1].mTime2;
+            Arc[] arcArr7 = this.mArcs;
+            if (d > arcArr7[arcArr7.length - 1].mTime2) {
+                Arc[] arcArr8 = this.mArcs;
+                d = arcArr8[arcArr8.length - 1].mTime2;
             }
         }
-        int i = 0;
+        int i2 = 0;
         while (true) {
-            Arc[] arcArr6 = this.mArcs;
-            if (i >= arcArr6.length) {
+            Arc[] arcArr9 = this.mArcs;
+            if (i2 >= arcArr9.length) {
                 return;
             }
-            if (d <= arcArr6[i].mTime2) {
-                if (this.mArcs[i].mLinear) {
-                    dArr[0] = this.mArcs[i].getLinearX(d);
-                    dArr[1] = this.mArcs[i].getLinearY(d);
+            if (d <= arcArr9[i2].mTime2) {
+                boolean z4 = this.mArcs[i2].mLinear;
+                Arc[] arcArr10 = this.mArcs;
+                if (z4) {
+                    dArr[0] = arcArr10[i2].getLinearX(d);
+                    dArr[1] = this.mArcs[i2].getLinearY(d);
                     return;
                 }
-                this.mArcs[i].setPoint(d);
-                dArr[0] = this.mArcs[i].getX();
-                dArr[1] = this.mArcs[i].getY();
+                arcArr10[i2].setPoint(d);
+                dArr[0] = this.mArcs[i2].getX();
+                dArr[1] = this.mArcs[i2].getY();
                 return;
             }
-            i++;
+            i2++;
         }
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.CurveFit
     public void getPos(double d, float[] fArr) {
-        if (this.mExtrapolate) {
-            if (d < this.mArcs[0].mTime1) {
-                double d2 = this.mArcs[0].mTime1;
+        boolean z = this.mExtrapolate;
+        Arc[] arcArr = this.mArcs;
+        if (z) {
+            int i = (d > arcArr[0].mTime1 ? 1 : (d == arcArr[0].mTime1 ? 0 : -1));
+            Arc[] arcArr2 = this.mArcs;
+            if (i < 0) {
+                double d2 = arcArr2[0].mTime1;
                 double d3 = d - this.mArcs[0].mTime1;
-                if (this.mArcs[0].mLinear) {
-                    fArr[0] = (float) (this.mArcs[0].getLinearX(d2) + (this.mArcs[0].getLinearDX(d2) * d3));
+                boolean z2 = this.mArcs[0].mLinear;
+                Arc[] arcArr3 = this.mArcs;
+                if (z2) {
+                    fArr[0] = (float) (arcArr3[0].getLinearX(d2) + (this.mArcs[0].getLinearDX(d2) * d3));
                     fArr[1] = (float) (this.mArcs[0].getLinearY(d2) + (d3 * this.mArcs[0].getLinearDY(d2)));
                     return;
                 }
-                this.mArcs[0].setPoint(d2);
+                arcArr3[0].setPoint(d2);
                 fArr[0] = (float) (this.mArcs[0].getX() + (this.mArcs[0].getDX() * d3));
                 fArr[1] = (float) (this.mArcs[0].getY() + (d3 * this.mArcs[0].getDY()));
                 return;
-            }
-            Arc[] arcArr = this.mArcs;
-            if (d > arcArr[arcArr.length - 1].mTime2) {
-                Arc[] arcArr2 = this.mArcs;
-                double d4 = arcArr2[arcArr2.length - 1].mTime2;
+            } else if (d > arcArr2[arcArr2.length - 1].mTime2) {
+                Arc[] arcArr4 = this.mArcs;
+                double d4 = arcArr4[arcArr4.length - 1].mTime2;
                 double d5 = d - d4;
-                Arc[] arcArr3 = this.mArcs;
-                int length = arcArr3.length - 1;
-                if (arcArr3[length].mLinear) {
-                    fArr[0] = (float) (this.mArcs[length].getLinearX(d4) + (this.mArcs[length].getLinearDX(d4) * d5));
+                Arc[] arcArr5 = this.mArcs;
+                int length = arcArr5.length - 1;
+                boolean z3 = arcArr5[length].mLinear;
+                Arc[] arcArr6 = this.mArcs;
+                if (z3) {
+                    fArr[0] = (float) (arcArr6[length].getLinearX(d4) + (this.mArcs[length].getLinearDX(d4) * d5));
                     fArr[1] = (float) (this.mArcs[length].getLinearY(d4) + (d5 * this.mArcs[length].getLinearDY(d4)));
                     return;
                 }
-                this.mArcs[length].setPoint(d);
+                arcArr6[length].setPoint(d);
                 fArr[0] = (float) this.mArcs[length].getX();
                 fArr[1] = (float) this.mArcs[length].getY();
                 return;
             }
-        } else if (d < this.mArcs[0].mTime1) {
-            d = this.mArcs[0].mTime1;
         } else {
-            Arc[] arcArr4 = this.mArcs;
-            if (d > arcArr4[arcArr4.length - 1].mTime2) {
-                Arc[] arcArr5 = this.mArcs;
-                d = arcArr5[arcArr5.length - 1].mTime2;
+            int i2 = (d > arcArr[0].mTime1 ? 1 : (d == arcArr[0].mTime1 ? 0 : -1));
+            Arc[] arcArr7 = this.mArcs;
+            if (i2 < 0) {
+                d = arcArr7[0].mTime1;
+            } else if (d > arcArr7[arcArr7.length - 1].mTime2) {
+                Arc[] arcArr8 = this.mArcs;
+                d = arcArr8[arcArr8.length - 1].mTime2;
             }
         }
-        int i = 0;
+        int i3 = 0;
         while (true) {
-            Arc[] arcArr6 = this.mArcs;
-            if (i >= arcArr6.length) {
+            Arc[] arcArr9 = this.mArcs;
+            if (i3 >= arcArr9.length) {
                 return;
             }
-            if (d <= arcArr6[i].mTime2) {
-                if (this.mArcs[i].mLinear) {
-                    fArr[0] = (float) this.mArcs[i].getLinearX(d);
-                    fArr[1] = (float) this.mArcs[i].getLinearY(d);
+            if (d <= arcArr9[i3].mTime2) {
+                boolean z4 = this.mArcs[i3].mLinear;
+                Arc[] arcArr10 = this.mArcs;
+                if (z4) {
+                    fArr[0] = (float) arcArr10[i3].getLinearX(d);
+                    fArr[1] = (float) this.mArcs[i3].getLinearY(d);
                     return;
                 }
-                this.mArcs[i].setPoint(d);
-                fArr[0] = (float) this.mArcs[i].getX();
-                fArr[1] = (float) this.mArcs[i].getY();
+                arcArr10[i3].setPoint(d);
+                fArr[0] = (float) this.mArcs[i3].getX();
+                fArr[1] = (float) this.mArcs[i3].getY();
                 return;
             }
-            i++;
+            i3++;
         }
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.CurveFit
     public void getSlope(double d, double[] dArr) {
-        if (d < this.mArcs[0].mTime1) {
-            d = this.mArcs[0].mTime1;
-        } else {
-            Arc[] arcArr = this.mArcs;
-            if (d > arcArr[arcArr.length - 1].mTime2) {
-                Arc[] arcArr2 = this.mArcs;
-                d = arcArr2[arcArr2.length - 1].mTime2;
-            }
+        int i = (d > this.mArcs[0].mTime1 ? 1 : (d == this.mArcs[0].mTime1 ? 0 : -1));
+        Arc[] arcArr = this.mArcs;
+        if (i < 0) {
+            d = arcArr[0].mTime1;
+        } else if (d > arcArr[arcArr.length - 1].mTime2) {
+            Arc[] arcArr2 = this.mArcs;
+            d = arcArr2[arcArr2.length - 1].mTime2;
         }
-        int i = 0;
+        int i2 = 0;
         while (true) {
             Arc[] arcArr3 = this.mArcs;
-            if (i >= arcArr3.length) {
+            if (i2 >= arcArr3.length) {
                 return;
             }
-            if (d <= arcArr3[i].mTime2) {
-                if (this.mArcs[i].mLinear) {
-                    dArr[0] = this.mArcs[i].getLinearDX(d);
-                    dArr[1] = this.mArcs[i].getLinearDY(d);
+            if (d <= arcArr3[i2].mTime2) {
+                boolean z = this.mArcs[i2].mLinear;
+                Arc[] arcArr4 = this.mArcs;
+                if (z) {
+                    dArr[0] = arcArr4[i2].getLinearDX(d);
+                    dArr[1] = this.mArcs[i2].getLinearDY(d);
                     return;
                 }
-                this.mArcs[i].setPoint(d);
-                dArr[0] = this.mArcs[i].getDX();
-                dArr[1] = this.mArcs[i].getDY();
+                arcArr4[i2].setPoint(d);
+                dArr[0] = this.mArcs[i2].getDX();
+                dArr[1] = this.mArcs[i2].getDY();
                 return;
             }
-            i++;
+            i2++;
         }
     }
 
@@ -182,75 +200,84 @@ public class ArcCurveFit extends CurveFit {
     public double getPos(double d, int i) {
         Arc[] arcArr;
         Arc[] arcArr2;
-        Arc[] arcArr3;
-        Arc[] arcArr4;
-        double d2;
         double linearY;
         double linearDY;
         double y;
         double dy;
+        double linearY2;
+        double linearDY2;
+        boolean z = this.mExtrapolate;
+        Arc[] arcArr3 = this.mArcs;
         int i2 = 0;
-        if (this.mExtrapolate) {
-            if (d < this.mArcs[0].mTime1) {
-                double d3 = this.mArcs[0].mTime1;
-                d2 = d - this.mArcs[0].mTime1;
-                if (!this.mArcs[0].mLinear) {
-                    this.mArcs[0].setPoint(d3);
-                    if (i == 0) {
-                        y = this.mArcs[0].getX();
-                        dy = this.mArcs[0].getDX();
-                    } else {
-                        y = this.mArcs[0].getY();
-                        dy = this.mArcs[0].getDY();
-                    }
-                    return y + (d2 * dy);
-                } else if (i == 0) {
-                    linearY = this.mArcs[0].getLinearX(d3);
-                    linearDY = this.mArcs[0].getLinearDX(d3);
-                } else {
-                    linearY = this.mArcs[0].getLinearY(d3);
-                    linearDY = this.mArcs[0].getLinearDY(d3);
-                }
-            } else {
-                if (d > this.mArcs[arcArr3.length - 1].mTime2) {
-                    double d4 = this.mArcs[arcArr4.length - 1].mTime2;
-                    d2 = d - d4;
+        if (z) {
+            int i3 = (d > arcArr3[0].mTime1 ? 1 : (d == arcArr3[0].mTime1 ? 0 : -1));
+            Arc[] arcArr4 = this.mArcs;
+            if (i3 < 0) {
+                double d2 = arcArr4[0].mTime1;
+                double d3 = d - this.mArcs[0].mTime1;
+                if (this.mArcs[0].mLinear) {
                     Arc[] arcArr5 = this.mArcs;
-                    int length = arcArr5.length - 1;
                     if (i == 0) {
-                        linearY = arcArr5[length].getLinearX(d4);
-                        linearDY = this.mArcs[length].getLinearDX(d4);
+                        linearY2 = arcArr5[0].getLinearX(d2);
+                        linearDY2 = this.mArcs[0].getLinearDX(d2);
                     } else {
-                        linearY = arcArr5[length].getLinearY(d4);
-                        linearDY = this.mArcs[length].getLinearDY(d4);
+                        linearY2 = arcArr5[0].getLinearY(d2);
+                        linearDY2 = this.mArcs[0].getLinearDY(d2);
                     }
+                    return linearY2 + (d3 * linearDY2);
                 }
+                this.mArcs[0].setPoint(d2);
+                Arc[] arcArr6 = this.mArcs;
+                if (i == 0) {
+                    y = arcArr6[0].getX();
+                    dy = this.mArcs[0].getDX();
+                } else {
+                    y = arcArr6[0].getY();
+                    dy = this.mArcs[0].getDY();
+                }
+                return y + (d3 * dy);
+            } else if (d > arcArr4[arcArr4.length - 1].mTime2) {
+                double d4 = this.mArcs[arcArr2.length - 1].mTime2;
+                double d5 = d - d4;
+                Arc[] arcArr7 = this.mArcs;
+                int length = arcArr7.length - 1;
+                if (i == 0) {
+                    linearY = arcArr7[length].getLinearX(d4);
+                    linearDY = this.mArcs[length].getLinearDX(d4);
+                } else {
+                    linearY = arcArr7[length].getLinearY(d4);
+                    linearDY = this.mArcs[length].getLinearDY(d4);
+                }
+                return linearY + (d5 * linearDY);
             }
-            return linearY + (d2 * linearDY);
-        } else if (d < this.mArcs[0].mTime1) {
-            d = this.mArcs[0].mTime1;
         } else {
-            if (d > this.mArcs[arcArr.length - 1].mTime2) {
-                d = this.mArcs[arcArr2.length - 1].mTime2;
+            int i4 = (d > arcArr3[0].mTime1 ? 1 : (d == arcArr3[0].mTime1 ? 0 : -1));
+            Arc[] arcArr8 = this.mArcs;
+            if (i4 < 0) {
+                d = arcArr8[0].mTime1;
+            } else if (d > arcArr8[arcArr8.length - 1].mTime2) {
+                d = this.mArcs[arcArr.length - 1].mTime2;
             }
         }
         while (true) {
-            Arc[] arcArr6 = this.mArcs;
-            if (i2 >= arcArr6.length) {
+            Arc[] arcArr9 = this.mArcs;
+            if (i2 >= arcArr9.length) {
                 return Double.NaN;
             }
-            if (d <= arcArr6[i2].mTime2) {
+            if (d <= arcArr9[i2].mTime2) {
                 if (this.mArcs[i2].mLinear) {
+                    Arc[] arcArr10 = this.mArcs;
                     if (i == 0) {
-                        return this.mArcs[i2].getLinearX(d);
+                        return arcArr10[i2].getLinearX(d);
                     }
-                    return this.mArcs[i2].getLinearY(d);
+                    return arcArr10[i2].getLinearY(d);
                 }
                 this.mArcs[i2].setPoint(d);
+                Arc[] arcArr11 = this.mArcs;
                 if (i == 0) {
-                    return this.mArcs[i2].getX();
+                    return arcArr11[i2].getX();
                 }
-                return this.mArcs[i2].getY();
+                return arcArr11[i2].getY();
             }
             i2++;
         }
@@ -274,16 +301,18 @@ public class ArcCurveFit extends CurveFit {
             }
             if (d <= arcArr3[i2].mTime2) {
                 if (this.mArcs[i2].mLinear) {
+                    Arc[] arcArr4 = this.mArcs;
                     if (i == 0) {
-                        return this.mArcs[i2].getLinearDX(d);
+                        return arcArr4[i2].getLinearDX(d);
                     }
-                    return this.mArcs[i2].getLinearDY(d);
+                    return arcArr4[i2].getLinearDY(d);
                 }
                 this.mArcs[i2].setPoint(d);
+                Arc[] arcArr5 = this.mArcs;
                 if (i == 0) {
-                    return this.mArcs[i2].getDX();
+                    return arcArr5[i2].getDX();
                 }
-                return this.mArcs[i2].getDY();
+                return arcArr5[i2].getDY();
             }
             i2++;
         }

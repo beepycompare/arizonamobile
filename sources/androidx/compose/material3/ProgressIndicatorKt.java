@@ -66,104 +66,104 @@ public final class ProgressIndicatorKt {
     public static final int SecondLineHeadDuration = 850;
     public static final int SecondLineTailDelay = 900;
     public static final int SecondLineTailDuration = 850;
-    private static final float LinearIndicatorWidth = Dp.m8258constructorimpl(240);
-    private static final float LinearIndicatorHeight = LinearProgressIndicatorTokens.INSTANCE.m4112getHeightD9Ej5fM();
-    private static final float StopIndicatorTrailingSpace = Dp.m8258constructorimpl(6);
-    private static final float CircularIndicatorDiameter = CircularProgressIndicatorTokens.INSTANCE.m3821getSizeD9Ej5fM();
+    private static final float LinearIndicatorWidth = Dp.m7555constructorimpl(240);
+    private static final float LinearIndicatorHeight = LinearProgressIndicatorTokens.INSTANCE.m3496getHeightD9Ej5fM();
+    private static final float StopIndicatorTrailingSpace = Dp.m7555constructorimpl(6);
+    private static final float CircularIndicatorDiameter = CircularProgressIndicatorTokens.INSTANCE.m3205getSizeD9Ej5fM();
     private static final CubicBezierEasing LinearIndeterminateProgressEasing = MotionTokens.INSTANCE.getEasingEmphasizedAccelerateCubicBezier();
     private static final CubicBezierEasing CircularProgressEasing = MotionTokens.INSTANCE.getEasingStandardCubicBezier();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_4lLiAd8$lambda$35(Modifier modifier, long j, float f, long j2, int i, float f2, int i2, int i3, Composer composer, int i4) {
-        m2830CircularProgressIndicator4lLiAd8(modifier, j, f, j2, i, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2367CircularProgressIndicator4lLiAd8(modifier, j, f, j2, i, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_DUhRLBM$lambda$20(Function0 function0, Modifier modifier, long j, float f, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2832CircularProgressIndicatorDUhRLBM(function0, modifier, j, f, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2369CircularProgressIndicatorDUhRLBM(function0, modifier, j, f, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36(float f) {
         return f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_DUhRLBM$lambda$38(float f, Modifier modifier, long j, float f2, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2831CircularProgressIndicatorDUhRLBM(f, modifier, j, f2, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2368CircularProgressIndicatorDUhRLBM(f, modifier, j, f2, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_IyT6zlY$lambda$29(Function0 function0, Modifier modifier, long j, float f, long j2, int i, float f2, int i2, int i3, Composer composer, int i4) {
-        m2833CircularProgressIndicatorIyT6zlY(function0, modifier, j, f, j2, i, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2370CircularProgressIndicatorIyT6zlY(function0, modifier, j, f, j2, i, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_LxG7B9w$lambda$30(Modifier modifier, long j, float f, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2834CircularProgressIndicatorLxG7B9w(modifier, j, f, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2371CircularProgressIndicatorLxG7B9w(modifier, j, f, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_MBs18nI$lambda$39(float f, Modifier modifier, long j, float f2, int i, int i2, Composer composer, int i3) {
-        m2835CircularProgressIndicatorMBs18nI(f, modifier, j, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2372CircularProgressIndicatorMBs18nI(f, modifier, j, f2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_aM_cp0Q$lambda$40(Modifier modifier, long j, float f, int i, int i2, Composer composer, int i3) {
-        m2836CircularProgressIndicatoraMcp0Q(modifier, j, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2373CircularProgressIndicatoraMcp0Q(modifier, j, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_2cYBFYY$lambda$11(Modifier modifier, long j, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2837LinearProgressIndicator2cYBFYY(modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2374LinearProgressIndicator2cYBFYY(modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_GJbTh5U$lambda$10(Function0 function0, Modifier modifier, long j, long j2, int i, float f, Function1 function1, int i2, int i3, Composer composer, int i4) {
-        m2838LinearProgressIndicatorGJbTh5U(function0, modifier, j, j2, i, f, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2375LinearProgressIndicatorGJbTh5U(function0, modifier, j, j2, i, f, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_RIQooxk$lambda$19(Modifier modifier, long j, long j2, int i, int i2, Composer composer, int i3) {
-        m2839LinearProgressIndicatorRIQooxk(modifier, j, j2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2376LinearProgressIndicatorRIQooxk(modifier, j, j2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator__5eSR_E$lambda$0(Function0 function0, Modifier modifier, long j, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2841LinearProgressIndicator_5eSRE(function0, modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2378LinearProgressIndicator_5eSRE(function0, modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float LinearProgressIndicator__5eSR_E$lambda$16$lambda$15(float f) {
         return f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator__5eSR_E$lambda$17(float f, Modifier modifier, long j, long j2, int i, int i2, int i3, Composer composer, int i4) {
-        m2840LinearProgressIndicator_5eSRE(f, modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2377LinearProgressIndicator_5eSRE(f, modifier, j, j2, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_eaDK9VM$lambda$18(float f, Modifier modifier, long j, long j2, int i, int i2, Composer composer, int i3) {
-        m2842LinearProgressIndicatoreaDK9VM(f, modifier, j, j2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2379LinearProgressIndicatoreaDK9VM(f, modifier, j, j2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_rIrjwxo$lambda$14(Modifier modifier, long j, long j2, int i, float f, int i2, int i3, Composer composer, int i4) {
-        m2843LinearProgressIndicatorrIrjwxo(modifier, j, j2, i, f, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+        m2380LinearProgressIndicatorrIrjwxo(modifier, j, j2, i, f, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
         return Unit.INSTANCE;
     }
 
@@ -184,7 +184,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2841LinearProgressIndicator_5eSRE(final Function0 function0, Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2378LinearProgressIndicator_5eSRE(final Function0 function0, Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
         Function0 function02;
         int i4;
         Object obj;
@@ -278,7 +278,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -7169;
                         }
                         if (i5 != 0) {
-                            i8 = ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw();
+                            i8 = ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw();
                             j8 = j4;
                         } else {
                             j8 = j4;
@@ -292,7 +292,7 @@ public final class ProgressIndicatorKt {
                         ComposerKt.traceEventStart(-1796992155, i4, -1, "androidx.compose.material3.LinearProgressIndicator (ProgressIndicator.kt:100)");
                     }
                     composer2 = startRestartGroup;
-                    m2838LinearProgressIndicatorGJbTh5U(function02, modifier3, j9, j8, i8, ProgressIndicatorDefaults.INSTANCE.m2818getLinearIndicatorTrackGapSizeD9Ej5fM(), null, composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i4 & 57344), 64);
+                    m2375LinearProgressIndicatorGJbTh5U(function02, modifier3, j9, j8, i8, ProgressIndicatorDefaults.INSTANCE.m2364getLinearIndicatorTrackGapSizeD9Ej5fM(), null, composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (i4 & 57344), 64);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -313,9 +313,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda22
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit LinearProgressIndicator__5eSR_E$lambda$0;
-                            LinearProgressIndicator__5eSR_E$lambda$0 = ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$0(Function0.this, modifier2, j5, j6, i7, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return LinearProgressIndicator__5eSR_E$lambda$0;
+                            return ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$0(Function0.this, modifier2, j5, j6, i7, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -345,9 +343,9 @@ public final class ProgressIndicatorKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1(long j, int i, DrawScope drawScope) {
-        ProgressIndicatorDefaults.INSTANCE.m2813drawStopIndicatorEgI2THU(drawScope, ProgressIndicatorDefaults.INSTANCE.m2820getLinearTrackStopIndicatorSizeD9Ej5fM(), j, i);
+        ProgressIndicatorDefaults.INSTANCE.m2359drawStopIndicatorEgI2THU(drawScope, ProgressIndicatorDefaults.INSTANCE.m2366getLinearTrackStopIndicatorSizeD9Ej5fM(), j, i);
         return Unit.INSTANCE;
     }
 
@@ -371,7 +369,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2838LinearProgressIndicatorGJbTh5U(final Function0<Float> function0, Modifier modifier, long j, long j2, int i, float f, Function1<? super DrawScope, Unit> function1, Composer composer, final int i2, final int i3) {
+    public static final void m2375LinearProgressIndicatorGJbTh5U(final Function0<Float> function0, Modifier modifier, long j, long j2, int i, float f, Function1<? super DrawScope, Unit> function1, Composer composer, final int i2, final int i3) {
         int i4;
         Object obj;
         final long j3;
@@ -467,9 +465,9 @@ public final class ProgressIndicatorKt {
                             j4 = ProgressIndicatorDefaults.INSTANCE.getLinearTrackColor(startRestartGroup, 6);
                             i4 &= -7169;
                         }
-                        final int m2819getLinearStrokeCapKaPHkGw = i5 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw() : i6;
+                        final int m2365getLinearStrokeCapKaPHkGw = i5 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw() : i6;
                         if (i7 != 0) {
-                            f2 = ProgressIndicatorDefaults.INSTANCE.m2818getLinearIndicatorTrackGapSizeD9Ej5fM();
+                            f2 = ProgressIndicatorDefaults.INSTANCE.m2364getLinearIndicatorTrackGapSizeD9Ej5fM();
                         }
                         if ((i3 & 64) != 0) {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -293677151, "CC(remember):ProgressIndicator.kt#9igjgp");
@@ -479,9 +477,7 @@ public final class ProgressIndicatorKt {
                                 rememberedValue = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj2) {
-                                        Unit LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1;
-                                        LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1 = ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1(j3, m2819getLinearStrokeCapKaPHkGw, (DrawScope) obj2);
-                                        return LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1;
+                                        return ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$2$lambda$1(j3, m2365getLinearStrokeCapKaPHkGw, (DrawScope) obj2);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -493,7 +489,7 @@ public final class ProgressIndicatorKt {
                             function13 = function1;
                         }
                         f4 = f2;
-                        i9 = m2819getLinearStrokeCapKaPHkGw;
+                        i9 = m2365getLinearStrokeCapKaPHkGw;
                     }
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
@@ -506,9 +502,7 @@ public final class ProgressIndicatorKt {
                         rememberedValue2 = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                float LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3;
-                                LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3 = ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3(Function0.this);
-                                return Float.valueOf(LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3);
+                                return Float.valueOf(ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3(Function0.this));
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -523,15 +517,13 @@ public final class ProgressIndicatorKt {
                         rememberedValue3 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda3
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6;
-                                LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6 = ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6(Function0.this, (SemanticsPropertyReceiver) obj2);
-                                return LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6;
+                                return ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6(Function0.this, (SemanticsPropertyReceiver) obj2);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue3);
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    Modifier m978sizeVpY3zN4 = SizeKt.m978sizeVpY3zN4(SemanticsModifierKt.semantics(then, true, (Function1) rememberedValue3), LinearIndicatorWidth, LinearIndicatorHeight);
+                    Modifier m866sizeVpY3zN4 = SizeKt.m866sizeVpY3zN4(SemanticsModifierKt.semantics(then, true, (Function1) rememberedValue3), LinearIndicatorWidth, LinearIndicatorHeight);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -293653456, "CC(remember):ProgressIndicator.kt#9igjgp");
                     boolean changed2 = ((57344 & i4) == 16384) | ((458752 & i4) == 131072) | startRestartGroup.changed(function02) | ((((i4 & 7168) ^ 3072) > 2048 && startRestartGroup.changed(j4)) || (i4 & 3072) == 2048) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && startRestartGroup.changed(j3)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
                     if ((((3670016 & i4) ^ 1572864) <= 1048576 || !startRestartGroup.changed(function13)) && (i4 & 1572864) != 1048576) {
@@ -546,9 +538,7 @@ public final class ProgressIndicatorKt {
                         rememberedValue4 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda4
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8;
-                                LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8 = ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8(i9, f4, function02, j7, j6, function14, (DrawScope) obj2);
-                                return LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8;
+                                return ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8(i9, f4, function02, j7, j6, function14, (DrawScope) obj2);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -558,7 +548,7 @@ public final class ProgressIndicatorKt {
                         j7 = j4;
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    CanvasKt.Canvas(m978sizeVpY3zN4, (Function1) rememberedValue4, startRestartGroup, 0);
+                    CanvasKt.Canvas(m866sizeVpY3zN4, (Function1) rememberedValue4, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -582,9 +572,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit LinearProgressIndicator_GJbTh5U$lambda$10;
-                            LinearProgressIndicator_GJbTh5U$lambda$10 = ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$10(Function0.this, modifier2, j5, j8, i8, f3, function12, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return LinearProgressIndicator_GJbTh5U$lambda$10;
+                            return ProgressIndicatorKt.LinearProgressIndicator_GJbTh5U$lambda$10(Function0.this, modifier2, j5, j8, i8, f3, function12, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -626,7 +614,7 @@ public final class ProgressIndicatorKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float LinearProgressIndicator_GJbTh5U$lambda$4$lambda$3(Function0 function0) {
         float floatValue = ((Number) function0.invoke()).floatValue();
         if (floatValue < 0.0f) {
@@ -638,7 +626,7 @@ public final class ProgressIndicatorKt {
         return floatValue;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_GJbTh5U$lambda$7$lambda$6(Function0 function0, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         Object invoke = function0.invoke();
         if (Float.isNaN(((Number) invoke).floatValue())) {
@@ -649,18 +637,18 @@ public final class ProgressIndicatorKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_GJbTh5U$lambda$9$lambda$8(int i, float f, Function0 function0, long j, long j2, Function1 function1, DrawScope drawScope) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L));
-        if (!StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5800getButtKaPHkGw()) && Float.intBitsToFloat((int) (4294967295L & drawScope.mo6005getSizeNHjbRc())) <= Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) {
-            f = Dp.m8258constructorimpl(f + drawScope.mo460toDpu2uoSUM(intBitsToFloat));
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
+        if (!StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) && Float.intBitsToFloat((int) (4294967295L & drawScope.mo5346getSizeNHjbRc())) <= Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) {
+            f = Dp.m7555constructorimpl(f + drawScope.mo401toDpu2uoSUM(intBitsToFloat));
         }
         float floatValue = ((Number) function0.invoke()).floatValue();
-        float min = floatValue + Math.min(floatValue, f / drawScope.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))));
+        float min = floatValue + Math.min(floatValue, f / drawScope.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))));
         if (min <= 1.0f) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, min, 1.0f, j, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, min, 1.0f, j, intBitsToFloat, i);
         }
-        m2848drawLinearIndicatorqYKTg0g(drawScope, 0.0f, floatValue, j2, intBitsToFloat, i);
+        m2385drawLinearIndicatorqYKTg0g(drawScope, 0.0f, floatValue, j2, intBitsToFloat, i);
         function1.invoke(drawScope);
         return Unit.INSTANCE;
     }
@@ -676,7 +664,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2837LinearProgressIndicator2cYBFYY(Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2374LinearProgressIndicator2cYBFYY(Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -756,7 +744,7 @@ public final class ProgressIndicatorKt {
                         i4 &= -897;
                     }
                     if (i10 != 0) {
-                        i7 = ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw();
+                        i7 = ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw();
                         j7 = j4;
                     } else {
                         j7 = j4;
@@ -769,7 +757,7 @@ public final class ProgressIndicatorKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-476865359, i4, -1, "androidx.compose.material3.LinearProgressIndicator (ProgressIndicator.kt:219)");
                 }
-                m2843LinearProgressIndicatorrIrjwxo(modifier3, j8, j7, i7, ProgressIndicatorDefaults.INSTANCE.m2818getLinearIndicatorTrackGapSizeD9Ej5fM(), startRestartGroup, (i4 & 14) | 24576 | (i4 & 112) | (i4 & 896) | (i4 & 7168), 0);
+                m2380LinearProgressIndicatorrIrjwxo(modifier3, j8, j7, i7, ProgressIndicatorDefaults.INSTANCE.m2364getLinearIndicatorTrackGapSizeD9Ej5fM(), startRestartGroup, (i4 & 14) | 24576 | (i4 & 112) | (i4 & 896) | (i4 & 7168), 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -789,9 +777,7 @@ public final class ProgressIndicatorKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit LinearProgressIndicator_2cYBFYY$lambda$11;
-                        LinearProgressIndicator_2cYBFYY$lambda$11 = ProgressIndicatorKt.LinearProgressIndicator_2cYBFYY$lambda$11(Modifier.this, j5, j6, i6, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                        return LinearProgressIndicator_2cYBFYY$lambda$11;
+                        return ProgressIndicatorKt.LinearProgressIndicator_2cYBFYY$lambda$11(Modifier.this, j5, j6, i6, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -824,7 +810,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2843LinearProgressIndicatorrIrjwxo(Modifier modifier, long j, long j2, int i, float f, Composer composer, final int i2, final int i3) {
+    public static final void m2380LinearProgressIndicatorrIrjwxo(Modifier modifier, long j, long j2, int i, float f, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -839,7 +825,7 @@ public final class ProgressIndicatorKt {
         final int i7;
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
-        final float m2818getLinearIndicatorTrackGapSizeD9Ej5fM;
+        final float m2364getLinearIndicatorTrackGapSizeD9Ej5fM;
         boolean changed;
         Object rememberedValue;
         final long j7;
@@ -904,10 +890,10 @@ public final class ProgressIndicatorKt {
                             i4 &= -897;
                         }
                         if (i9 != 0) {
-                            i5 = ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw();
+                            i5 = ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw();
                         }
                         if (i6 != 0) {
-                            m2818getLinearIndicatorTrackGapSizeD9Ej5fM = ProgressIndicatorDefaults.INSTANCE.m2818getLinearIndicatorTrackGapSizeD9Ej5fM();
+                            m2364getLinearIndicatorTrackGapSizeD9Ej5fM = ProgressIndicatorDefaults.INSTANCE.m2364getLinearIndicatorTrackGapSizeD9Ej5fM();
                             final int i10 = i5;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -919,7 +905,7 @@ public final class ProgressIndicatorKt {
                             final State<Float> animateFloat3 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition, 0.0f, 1.0f, getLinearIndeterminateSecondLineHeadAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                             final State<Float> animateFloat4 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition, 0.0f, 1.0f, getLinearIndeterminateSecondLineTailAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                             composer2 = startRestartGroup;
-                            Modifier m978sizeVpY3zN4 = SizeKt.m978sizeVpY3zN4(ProgressSemanticsKt.progressSemantics(companion.then(AccessibilityUtilKt.getIncreaseVerticalSemanticsBounds())), LinearIndicatorWidth, LinearIndicatorHeight);
+                            Modifier m866sizeVpY3zN4 = SizeKt.m866sizeVpY3zN4(ProgressSemanticsKt.progressSemantics(companion.then(AccessibilityUtilKt.getIncreaseVerticalSemanticsBounds())), LinearIndicatorWidth, LinearIndicatorHeight);
                             ComposerKt.sourceInformationMarkerStart(composer2, -7544576, "CC(remember):ProgressIndicator.kt#9igjgp");
                             changed = ((57344 & i4) != 16384) | ((i4 & 7168) != 2048) | composer2.changed(animateFloat) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && composer2.changed(j4)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer2.changed(animateFloat2) | ((((i4 & 112) ^ 48) <= 32 && composer2.changed(j3)) || (i4 & 48) == 32) | composer2.changed(animateFloat3) | composer2.changed(animateFloat4);
                             rememberedValue = composer2.rememberedValue();
@@ -929,9 +915,7 @@ public final class ProgressIndicatorKt {
                                 rememberedValue = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda7
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj2) {
-                                        Unit LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12;
-                                        LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12 = ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12(i10, m2818getLinearIndicatorTrackGapSizeD9Ej5fM, animateFloat, j8, animateFloat2, j7, animateFloat3, animateFloat4, (DrawScope) obj2);
-                                        return LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12;
+                                        return ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12(i10, m2364getLinearIndicatorTrackGapSizeD9Ej5fM, animateFloat, j8, animateFloat2, j7, animateFloat3, animateFloat4, (DrawScope) obj2);
                                     }
                                 };
                                 composer2.updateRememberedValue(rememberedValue);
@@ -940,18 +924,18 @@ public final class ProgressIndicatorKt {
                                 j8 = j4;
                             }
                             ComposerKt.sourceInformationMarkerEnd(composer2);
-                            CanvasKt.Canvas(m978sizeVpY3zN4, (Function1) rememberedValue, composer2, 0);
+                            CanvasKt.Canvas(m866sizeVpY3zN4, (Function1) rememberedValue, composer2, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             modifier2 = companion;
                             i7 = i10;
-                            f2 = m2818getLinearIndicatorTrackGapSizeD9Ej5fM;
+                            f2 = m2364getLinearIndicatorTrackGapSizeD9Ej5fM;
                             j6 = j8;
                             j5 = j7;
                         }
                     }
-                    m2818getLinearIndicatorTrackGapSizeD9Ej5fM = f2;
+                    m2364getLinearIndicatorTrackGapSizeD9Ej5fM = f2;
                     final int i102 = i5;
                     startRestartGroup.endDefaults();
                     if (ComposerKt.isTraceInProgress()) {
@@ -962,7 +946,7 @@ public final class ProgressIndicatorKt {
                     final State animateFloat32 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition2, 0.0f, 1.0f, getLinearIndeterminateSecondLineHeadAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                     final State animateFloat42 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition2, 0.0f, 1.0f, getLinearIndeterminateSecondLineTailAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                     composer2 = startRestartGroup;
-                    Modifier m978sizeVpY3zN42 = SizeKt.m978sizeVpY3zN4(ProgressSemanticsKt.progressSemantics(companion.then(AccessibilityUtilKt.getIncreaseVerticalSemanticsBounds())), LinearIndicatorWidth, LinearIndicatorHeight);
+                    Modifier m866sizeVpY3zN42 = SizeKt.m866sizeVpY3zN4(ProgressSemanticsKt.progressSemantics(companion.then(AccessibilityUtilKt.getIncreaseVerticalSemanticsBounds())), LinearIndicatorWidth, LinearIndicatorHeight);
                     ComposerKt.sourceInformationMarkerStart(composer2, -7544576, "CC(remember):ProgressIndicator.kt#9igjgp");
                     if ((i4 & 7168) != 2048) {
                     }
@@ -975,19 +959,17 @@ public final class ProgressIndicatorKt {
                     rememberedValue = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12;
-                            LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12 = ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12(i102, m2818getLinearIndicatorTrackGapSizeD9Ej5fM, animateFloat5, j8, animateFloat22, j7, animateFloat32, animateFloat42, (DrawScope) obj2);
-                            return LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12;
+                            return ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12(i102, m2364getLinearIndicatorTrackGapSizeD9Ej5fM, animateFloat5, j8, animateFloat22, j7, animateFloat32, animateFloat42, (DrawScope) obj2);
                         }
                     };
                     composer2.updateRememberedValue(rememberedValue);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
-                    CanvasKt.Canvas(m978sizeVpY3zN42, (Function1) rememberedValue, composer2, 0);
+                    CanvasKt.Canvas(m866sizeVpY3zN42, (Function1) rememberedValue, composer2, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = companion;
                     i7 = i102;
-                    f2 = m2818getLinearIndicatorTrackGapSizeD9Ej5fM;
+                    f2 = m2364getLinearIndicatorTrackGapSizeD9Ej5fM;
                     j6 = j8;
                     j5 = j7;
                 } else {
@@ -1003,9 +985,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda8
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit LinearProgressIndicator_rIrjwxo$lambda$14;
-                            LinearProgressIndicator_rIrjwxo$lambda$14 = ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$14(Modifier.this, j5, j6, i7, f2, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return LinearProgressIndicator_rIrjwxo$lambda$14;
+                            return ProgressIndicatorKt.LinearProgressIndicator_rIrjwxo$lambda$14(Modifier.this, j5, j6, i7, f2, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -1031,27 +1011,27 @@ public final class ProgressIndicatorKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinearProgressIndicator_rIrjwxo$lambda$13$lambda$12(int i, float f, State state, long j, State state2, long j2, State state3, State state4, DrawScope drawScope) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L));
-        if (!StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5800getButtKaPHkGw()) && Float.intBitsToFloat((int) (4294967295L & drawScope.mo6005getSizeNHjbRc())) <= Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) {
-            f = Dp.m8258constructorimpl(f + drawScope.mo460toDpu2uoSUM(intBitsToFloat));
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
+        if (!StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) && Float.intBitsToFloat((int) (4294967295L & drawScope.mo5346getSizeNHjbRc())) <= Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) {
+            f = Dp.m7555constructorimpl(f + drawScope.mo401toDpu2uoSUM(intBitsToFloat));
         }
-        float f2 = f / drawScope.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)));
+        float f2 = f / drawScope.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)));
         if (((Number) state.getValue()).floatValue() < 1.0f - f2) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, ((Number) state.getValue()).floatValue() > 0.0f ? ((Number) state.getValue()).floatValue() + f2 : 0.0f, 1.0f, j, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, ((Number) state.getValue()).floatValue() > 0.0f ? ((Number) state.getValue()).floatValue() + f2 : 0.0f, 1.0f, j, intBitsToFloat, i);
         }
         if (((Number) state.getValue()).floatValue() - ((Number) state2.getValue()).floatValue() > 0.0f) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, ((Number) state.getValue()).floatValue(), ((Number) state2.getValue()).floatValue(), j2, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, ((Number) state.getValue()).floatValue(), ((Number) state2.getValue()).floatValue(), j2, intBitsToFloat, i);
         }
         if (((Number) state2.getValue()).floatValue() > f2) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, ((Number) state3.getValue()).floatValue() > 0.0f ? ((Number) state3.getValue()).floatValue() + f2 : 0.0f, ((Number) state2.getValue()).floatValue() < 1.0f ? ((Number) state2.getValue()).floatValue() - f2 : 1.0f, j, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, ((Number) state3.getValue()).floatValue() > 0.0f ? ((Number) state3.getValue()).floatValue() + f2 : 0.0f, ((Number) state2.getValue()).floatValue() < 1.0f ? ((Number) state2.getValue()).floatValue() - f2 : 1.0f, j, intBitsToFloat, i);
         }
         if (((Number) state3.getValue()).floatValue() - ((Number) state4.getValue()).floatValue() > 0.0f) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, ((Number) state3.getValue()).floatValue(), ((Number) state4.getValue()).floatValue(), j2, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, ((Number) state3.getValue()).floatValue(), ((Number) state4.getValue()).floatValue(), j2, intBitsToFloat, i);
         }
         if (((Number) state4.getValue()).floatValue() > f2) {
-            m2848drawLinearIndicatorqYKTg0g(drawScope, 0.0f, ((Number) state4.getValue()).floatValue() < 1.0f ? ((Number) state4.getValue()).floatValue() - f2 : 1.0f, j, intBitsToFloat, i);
+            m2385drawLinearIndicatorqYKTg0g(drawScope, 0.0f, ((Number) state4.getValue()).floatValue() < 1.0f ? ((Number) state4.getValue()).floatValue() - f2 : 1.0f, j, intBitsToFloat, i);
         }
         return Unit.INSTANCE;
     }
@@ -1076,7 +1056,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2840LinearProgressIndicator_5eSRE(final float f, Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final void m2377LinearProgressIndicator_5eSRE(final float f, Modifier modifier, long j, long j2, int i, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -1089,7 +1069,7 @@ public final class ProgressIndicatorKt {
         final long j6;
         final int i7;
         ScopeUpdateScope endRestartGroup;
-        int m2819getLinearStrokeCapKaPHkGw;
+        int m2365getLinearStrokeCapKaPHkGw;
         boolean z;
         Object rememberedValue;
         Composer startRestartGroup = composer.startRestartGroup(905419617);
@@ -1141,7 +1121,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -7169;
                         }
                         if (i5 != 0) {
-                            m2819getLinearStrokeCapKaPHkGw = ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw();
+                            m2365getLinearStrokeCapKaPHkGw = ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw();
                             long j7 = j4;
                             long j8 = j3;
                             Modifier modifier3 = companion;
@@ -1156,23 +1136,21 @@ public final class ProgressIndicatorKt {
                                 rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda10
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        float LinearProgressIndicator__5eSR_E$lambda$16$lambda$15;
-                                        LinearProgressIndicator__5eSR_E$lambda$16$lambda$15 = ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$16$lambda$15(f);
-                                        return Float.valueOf(LinearProgressIndicator__5eSR_E$lambda$16$lambda$15);
+                                        return Float.valueOf(ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$16$lambda$15(f));
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue);
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             composer2 = startRestartGroup;
-                            m2838LinearProgressIndicatorGJbTh5U((Function0) rememberedValue, modifier3, j8, j7, m2819getLinearStrokeCapKaPHkGw, 0.0f, null, composer2, i4 & 65520, 96);
+                            m2375LinearProgressIndicatorGJbTh5U((Function0) rememberedValue, modifier3, j8, j7, m2365getLinearStrokeCapKaPHkGw, 0.0f, null, composer2, i4 & 65520, 96);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
                             modifier2 = modifier3;
                             j5 = j8;
                             j6 = j7;
-                            i7 = m2819getLinearStrokeCapKaPHkGw;
+                            i7 = m2365getLinearStrokeCapKaPHkGw;
                         }
                     } else {
                         startRestartGroup.skipToGroupEnd();
@@ -1183,7 +1161,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -7169;
                         }
                     }
-                    m2819getLinearStrokeCapKaPHkGw = i6;
+                    m2365getLinearStrokeCapKaPHkGw = i6;
                     long j72 = j4;
                     long j82 = j3;
                     Modifier modifier32 = companion;
@@ -1199,21 +1177,19 @@ public final class ProgressIndicatorKt {
                     rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda10
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            float LinearProgressIndicator__5eSR_E$lambda$16$lambda$15;
-                            LinearProgressIndicator__5eSR_E$lambda$16$lambda$15 = ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$16$lambda$15(f);
-                            return Float.valueOf(LinearProgressIndicator__5eSR_E$lambda$16$lambda$15);
+                            return Float.valueOf(ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$16$lambda$15(f));
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     composer2 = startRestartGroup;
-                    m2838LinearProgressIndicatorGJbTh5U((Function0) rememberedValue, modifier32, j82, j72, m2819getLinearStrokeCapKaPHkGw, 0.0f, null, composer2, i4 & 65520, 96);
+                    m2375LinearProgressIndicatorGJbTh5U((Function0) rememberedValue, modifier32, j82, j72, m2365getLinearStrokeCapKaPHkGw, 0.0f, null, composer2, i4 & 65520, 96);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = modifier32;
                     j5 = j82;
                     j6 = j72;
-                    i7 = m2819getLinearStrokeCapKaPHkGw;
+                    i7 = m2365getLinearStrokeCapKaPHkGw;
                 } else {
                     composer2 = startRestartGroup;
                     composer2.skipToGroupEnd();
@@ -1227,9 +1203,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda12
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit LinearProgressIndicator__5eSR_E$lambda$17;
-                            LinearProgressIndicator__5eSR_E$lambda$17 = ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$17(f, modifier2, j5, j6, i7, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
-                            return LinearProgressIndicator__5eSR_E$lambda$17;
+                            return ProgressIndicatorKt.LinearProgressIndicator__5eSR_E$lambda$17(f, modifier2, j5, j6, i7, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -1274,7 +1248,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2842LinearProgressIndicatoreaDK9VM(final float f, Modifier modifier, long j, long j2, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m2379LinearProgressIndicatoreaDK9VM(final float f, Modifier modifier, long j, long j2, Composer composer, final int i, final int i2) {
         float f2;
         int i3;
         Object obj;
@@ -1366,7 +1340,7 @@ public final class ProgressIndicatorKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(-372717133, i3, -1, "androidx.compose.material3.LinearProgressIndicator (ProgressIndicator.kt:376)");
                 }
-                m2840LinearProgressIndicator_5eSRE(f2, modifier3, j9, j8, ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw(), startRestartGroup, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
+                m2377LinearProgressIndicator_5eSRE(f2, modifier3, j9, j8, ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw(), startRestartGroup, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -1384,9 +1358,7 @@ public final class ProgressIndicatorKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda18
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit LinearProgressIndicator_eaDK9VM$lambda$18;
-                        LinearProgressIndicator_eaDK9VM$lambda$18 = ProgressIndicatorKt.LinearProgressIndicator_eaDK9VM$lambda$18(f, modifier2, j5, j6, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return LinearProgressIndicator_eaDK9VM$lambda$18;
+                        return ProgressIndicatorKt.LinearProgressIndicator_eaDK9VM$lambda$18(f, modifier2, j5, j6, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -1407,7 +1379,7 @@ public final class ProgressIndicatorKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     /* renamed from: LinearProgressIndicator-RIQooxk  reason: not valid java name */
-    public static final /* synthetic */ void m2839LinearProgressIndicatorRIQooxk(Modifier modifier, long j, long j2, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m2376LinearProgressIndicatorRIQooxk(Modifier modifier, long j, long j2, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j3;
@@ -1493,7 +1465,7 @@ public final class ProgressIndicatorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(585576195, i3, -1, "androidx.compose.material3.LinearProgressIndicator (ProgressIndicator.kt:391)");
             }
-            m2843LinearProgressIndicatorrIrjwxo(modifier3, j8, j7, ProgressIndicatorDefaults.INSTANCE.m2819getLinearStrokeCapKaPHkGw(), 0.0f, startRestartGroup, (i3 & 14) | 3072 | (i3 & 112) | (i3 & 896), 16);
+            m2380LinearProgressIndicatorrIrjwxo(modifier3, j8, j7, ProgressIndicatorDefaults.INSTANCE.m2365getLinearStrokeCapKaPHkGw(), 0.0f, startRestartGroup, (i3 & 14) | 3072 | (i3 & 112) | (i3 & 896), 16);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -1511,25 +1483,23 @@ public final class ProgressIndicatorKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda16
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit LinearProgressIndicator_RIQooxk$lambda$19;
-                    LinearProgressIndicator_RIQooxk$lambda$19 = ProgressIndicatorKt.LinearProgressIndicator_RIQooxk$lambda$19(Modifier.this, j5, j6, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                    return LinearProgressIndicator_RIQooxk$lambda$19;
+                    return ProgressIndicatorKt.LinearProgressIndicator_RIQooxk$lambda$19(Modifier.this, j5, j6, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
     }
 
     /* renamed from: drawLinearIndicator-qYKTg0g  reason: not valid java name */
-    private static final void m2848drawLinearIndicatorqYKTg0g(DrawScope drawScope, float f, float f2, long j, float f3, int i) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L));
+    private static final void m2385drawLinearIndicatorqYKTg0g(DrawScope drawScope, float f, float f2, long j, float f3, int i) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L));
         float f4 = 2;
         float f5 = intBitsToFloat2 / f4;
         boolean z = drawScope.getLayoutDirection() == LayoutDirection.Ltr;
         float f6 = (z ? f : 1.0f - f2) * intBitsToFloat;
         float f7 = (z ? f2 : 1.0f - f) * intBitsToFloat;
-        if (StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5800getButtKaPHkGw()) || intBitsToFloat2 > intBitsToFloat) {
-            DrawScope.m5991drawLineNGM6Ib0$default(drawScope, j, Offset.m5171constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(f7) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, 0, null, 0.0f, null, 0, 496, null);
+        if (StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) || intBitsToFloat2 > intBitsToFloat) {
+            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f7) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, 0, null, 0.0f, null, 0, 496, null);
             return;
         }
         float f8 = f3 / f4;
@@ -1547,7 +1517,7 @@ public final class ProgressIndicatorKt {
             f9 = f7;
         }
         if (Math.abs(f2 - f) > 0.0f) {
-            DrawScope.m5991drawLineNGM6Ib0$default(drawScope, j, Offset.m5171constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(f9) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, i, null, 0.0f, null, 0, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, null);
+            DrawScope.m5332drawLineNGM6Ib0$default(drawScope, j, Offset.m4519constructorimpl((Float.floatToRawIntBits(f6) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f9) << 32) | (Float.floatToRawIntBits(f5) & 4294967295L)), f3, i, null, 0.0f, null, 0, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, null);
         }
     }
 
@@ -1570,7 +1540,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2832CircularProgressIndicatorDUhRLBM(final Function0 function0, Modifier modifier, long j, float f, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2369CircularProgressIndicatorDUhRLBM(final Function0 function0, Modifier modifier, long j, float f, long j2, int i, Composer composer, final int i2, final int i3) {
         Function0 function02;
         int i4;
         Object obj;
@@ -1680,14 +1650,14 @@ public final class ProgressIndicatorKt {
                                 i4 &= -897;
                             }
                             if (i5 != 0) {
-                                f2 = ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM();
+                                f2 = ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM();
                             }
                             if ((i3 & 16) != 0) {
                                 i4 &= -57345;
                                 j4 = ProgressIndicatorDefaults.INSTANCE.getCircularDeterminateTrackColor(startRestartGroup, 6);
                             }
                             if (i6 != 0) {
-                                i9 = ProgressIndicatorDefaults.INSTANCE.m2814getCircularDeterminateStrokeCapKaPHkGw();
+                                i9 = ProgressIndicatorDefaults.INSTANCE.m2360getCircularDeterminateStrokeCapKaPHkGw();
                                 f4 = f2;
                                 j7 = j4;
                                 modifier3 = companion;
@@ -1706,7 +1676,7 @@ public final class ProgressIndicatorKt {
                             ComposerKt.traceEventStart(i10, i4, -1, "androidx.compose.material3.CircularProgressIndicator (ProgressIndicator.kt:480)");
                         }
                         composer2 = startRestartGroup;
-                        m2833CircularProgressIndicatorIyT6zlY(function02, modifier3, j8, f4, j7, i9, ProgressIndicatorDefaults.INSTANCE.m2816getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | 1572864 | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (i4 & 458752), 0);
+                        m2370CircularProgressIndicatorIyT6zlY(function02, modifier3, j8, f4, j7, i9, ProgressIndicatorDefaults.INSTANCE.m2362getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | 1572864 | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4) | (i4 & 458752), 0);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -1729,9 +1699,7 @@ public final class ProgressIndicatorKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda11
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj2, Object obj3) {
-                                Unit CircularProgressIndicator_DUhRLBM$lambda$20;
-                                CircularProgressIndicator_DUhRLBM$lambda$20 = ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$20(Function0.this, modifier2, j5, f3, j6, i8, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                                return CircularProgressIndicator_DUhRLBM$lambda$20;
+                                return ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$20(Function0.this, modifier2, j5, f3, j6, i8, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                             }
                         });
                         return;
@@ -1808,7 +1776,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2833CircularProgressIndicatorIyT6zlY(final Function0<Float> function0, Modifier modifier, long j, float f, long j2, int i, float f2, Composer composer, final int i2, final int i3) {
+    public static final void m2370CircularProgressIndicatorIyT6zlY(final Function0<Float> function0, Modifier modifier, long j, float f, long j2, int i, float f2, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -1899,7 +1867,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -897;
                         }
                         if (i5 != 0) {
-                            f3 = ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM();
+                            f3 = ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM();
                         }
                         if ((i3 & 16) != 0) {
                             j6 = ProgressIndicatorDefaults.INSTANCE.getCircularDeterminateTrackColor(startRestartGroup, 6);
@@ -1908,10 +1876,10 @@ public final class ProgressIndicatorKt {
                             j6 = j4;
                         }
                         if (i6 != 0) {
-                            i7 = ProgressIndicatorDefaults.INSTANCE.m2814getCircularDeterminateStrokeCapKaPHkGw();
+                            i7 = ProgressIndicatorDefaults.INSTANCE.m2360getCircularDeterminateStrokeCapKaPHkGw();
                         }
                         if (i8 != 0) {
-                            f6 = ProgressIndicatorDefaults.INSTANCE.m2816getCircularIndicatorTrackGapSizeD9Ej5fM();
+                            f6 = ProgressIndicatorDefaults.INSTANCE.m2362getCircularIndicatorTrackGapSizeD9Ej5fM();
                             i9 = i7;
                             startRestartGroup.endDefaults();
                             if (ComposerKt.isTraceInProgress()) {
@@ -1924,9 +1892,7 @@ public final class ProgressIndicatorKt {
                                 rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda24
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        float CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21;
-                                        CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21(Function0.this);
-                                        return Float.valueOf(CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21);
+                                        return Float.valueOf(ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21(Function0.this));
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -1936,7 +1902,7 @@ public final class ProgressIndicatorKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            final Stroke stroke = new Stroke(((Density) consume).mo464toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
+                            final Stroke stroke = new Stroke(((Density) consume).mo405toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2144709926, "CC(remember):ProgressIndicator.kt#9igjgp");
                             changed = startRestartGroup.changed(function02);
                             rememberedValue2 = startRestartGroup.rememberedValue();
@@ -1944,15 +1910,13 @@ public final class ProgressIndicatorKt {
                                 rememberedValue2 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda25
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
-                                        Unit CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25;
-                                        CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25(Function0.this, (SemanticsPropertyReceiver) obj);
-                                        return CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25;
+                                        return ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25(Function0.this, (SemanticsPropertyReceiver) obj);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue2), CircularIndicatorDiameter);
+                            Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue2), CircularIndicatorDiameter);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2144719754, "CC(remember):ProgressIndicator.kt#9igjgp");
                             changed2 = startRestartGroup.changed(function02) | ((458752 & i4) != 131072) | ((3670016 & i4) != 1048576) | ((i4 & 7168) != 2048) | ((((57344 & i4) ^ 24576) <= 16384 && startRestartGroup.changed(j6)) || (i4 & 24576) == 16384) | startRestartGroup.changedInstance(stroke) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j3)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
                             rememberedValue3 = startRestartGroup.rememberedValue();
@@ -1963,9 +1927,7 @@ public final class ProgressIndicatorKt {
                                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda26
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
-                                        Unit CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27;
-                                        CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27(Function0.this, i9, f6, f7, j7, stroke, j8, (DrawScope) obj);
-                                        return CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27;
+                                        return ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27(Function0.this, i9, f6, f7, j7, stroke, j8, (DrawScope) obj);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -1975,7 +1937,7 @@ public final class ProgressIndicatorKt {
                                 f7 = f3;
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            CanvasKt.Canvas(m976size3ABfNKs, (Function1) rememberedValue3, startRestartGroup, 0);
+                            CanvasKt.Canvas(m864size3ABfNKs, (Function1) rememberedValue3, startRestartGroup, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2007,9 +1969,7 @@ public final class ProgressIndicatorKt {
                     rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda24
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            float CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21;
-                            CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21(Function0.this);
-                            return Float.valueOf(CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21);
+                            return Float.valueOf(ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21(Function0.this));
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2018,7 +1978,7 @@ public final class ProgressIndicatorKt {
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final Stroke stroke2 = new Stroke(((Density) consume2).mo464toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
+                    final Stroke stroke2 = new Stroke(((Density) consume2).mo405toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2144709926, "CC(remember):ProgressIndicator.kt#9igjgp");
                     changed = startRestartGroup.changed(function022);
                     rememberedValue2 = startRestartGroup.rememberedValue();
@@ -2027,14 +1987,12 @@ public final class ProgressIndicatorKt {
                     rememberedValue2 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda25
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25;
-                            CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25(Function0.this, (SemanticsPropertyReceiver) obj);
-                            return CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25;
+                            return ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25(Function0.this, (SemanticsPropertyReceiver) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    Modifier m976size3ABfNKs2 = SizeKt.m976size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue2), CircularIndicatorDiameter);
+                    Modifier m864size3ABfNKs2 = SizeKt.m864size3ABfNKs(SemanticsModifierKt.semantics(companion, true, (Function1) rememberedValue2), CircularIndicatorDiameter);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2144719754, "CC(remember):ProgressIndicator.kt#9igjgp");
                     changed2 = startRestartGroup.changed(function022) | ((458752 & i4) != 131072) | ((3670016 & i4) != 1048576) | ((i4 & 7168) != 2048) | ((((57344 & i4) ^ 24576) <= 16384 && startRestartGroup.changed(j6)) || (i4 & 24576) == 16384) | startRestartGroup.changedInstance(stroke2) | ((((i4 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) <= 256 && startRestartGroup.changed(j3)) || (i4 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
                     rememberedValue3 = startRestartGroup.rememberedValue();
@@ -2046,14 +2004,12 @@ public final class ProgressIndicatorKt {
                     rememberedValue3 = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda26
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27;
-                            CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27(Function0.this, i9, f6, f7, j7, stroke2, j8, (DrawScope) obj);
-                            return CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27;
+                            return ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27(Function0.this, i9, f6, f7, j7, stroke2, j8, (DrawScope) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    CanvasKt.Canvas(m976size3ABfNKs2, (Function1) rememberedValue3, startRestartGroup, 0);
+                    CanvasKt.Canvas(m864size3ABfNKs2, (Function1) rememberedValue3, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     f5 = f7;
@@ -2075,9 +2031,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda27
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit CircularProgressIndicator_IyT6zlY$lambda$29;
-                            CircularProgressIndicator_IyT6zlY$lambda$29 = ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$29(Function0.this, modifier2, j5, f5, j9, i11, f8, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
-                            return CircularProgressIndicator_IyT6zlY$lambda$29;
+                            return ProgressIndicatorKt.CircularProgressIndicator_IyT6zlY$lambda$29(Function0.this, modifier2, j5, f5, j9, i11, f8, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -2121,7 +2075,7 @@ public final class ProgressIndicatorKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float CircularProgressIndicator_IyT6zlY$lambda$22$lambda$21(Function0 function0) {
         float floatValue = ((Number) function0.invoke()).floatValue();
         if (floatValue < 0.0f) {
@@ -2133,7 +2087,7 @@ public final class ProgressIndicatorKt {
         return floatValue;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_IyT6zlY$lambda$26$lambda$25(Function0 function0, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         Object invoke = function0.invoke();
         if (Float.isNaN(((Number) invoke).floatValue())) {
@@ -2144,15 +2098,15 @@ public final class ProgressIndicatorKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_IyT6zlY$lambda$28$lambda$27(Function0 function0, int i, float f, float f2, long j, Stroke stroke, long j2, DrawScope drawScope) {
         float floatValue = ((Number) function0.invoke()).floatValue() * 360.0f;
-        if (!StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5800getButtKaPHkGw()) && Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) <= Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) {
-            f = Dp.m8258constructorimpl(f + f2);
+        if (!StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) && Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) <= Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) {
+            f = Dp.m7555constructorimpl(f + f2);
         }
-        float f3 = (f / ((float) (drawScope.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) * 3.141592653589793d))) * 360.0f;
-        m2844drawCircularIndicator42QJj7c(drawScope, 270.0f + floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
-        m2846drawDeterminateCircularIndicator42QJj7c(drawScope, 270.0f, floatValue, j2, stroke);
+        float f3 = (f / ((float) (drawScope.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) * 3.141592653589793d))) * 360.0f;
+        m2381drawCircularIndicator42QJj7c(drawScope, 270.0f + floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
+        m2383drawDeterminateCircularIndicator42QJj7c(drawScope, 270.0f, floatValue, j2, stroke);
         return Unit.INSTANCE;
     }
 
@@ -2173,7 +2127,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2834CircularProgressIndicatorLxG7B9w(Modifier modifier, long j, float f, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final /* synthetic */ void m2371CircularProgressIndicatorLxG7B9w(Modifier modifier, long j, float f, long j2, int i, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -2270,14 +2224,14 @@ public final class ProgressIndicatorKt {
                             i4 &= -113;
                         }
                         if (i12 != 0) {
-                            f2 = ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM();
+                            f2 = ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM();
                         }
                         if ((i3 & 8) != 0) {
                             j4 = ProgressIndicatorDefaults.INSTANCE.getCircularIndeterminateTrackColor(startRestartGroup, 6);
                             i4 &= -7169;
                         }
                         if (i5 != 0) {
-                            i8 = ProgressIndicatorDefaults.INSTANCE.m2815getCircularIndeterminateStrokeCapKaPHkGw();
+                            i8 = ProgressIndicatorDefaults.INSTANCE.m2361getCircularIndeterminateStrokeCapKaPHkGw();
                             f4 = f2;
                             j7 = j4;
                             modifier3 = companion;
@@ -2287,7 +2241,7 @@ public final class ProgressIndicatorKt {
                                 ComposerKt.traceEventStart(-115871647, i4, -1, "androidx.compose.material3.CircularProgressIndicator (ProgressIndicator.kt:594)");
                             }
                             composer2 = startRestartGroup;
-                            m2830CircularProgressIndicator4lLiAd8(modifier3, j8, f4, j7, i8, ProgressIndicatorDefaults.INSTANCE.m2816getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4), 0);
+                            m2367CircularProgressIndicator4lLiAd8(modifier3, j8, f4, j7, i8, ProgressIndicatorDefaults.INSTANCE.m2362getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4), 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -2308,7 +2262,7 @@ public final class ProgressIndicatorKt {
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     composer2 = startRestartGroup;
-                    m2830CircularProgressIndicator4lLiAd8(modifier3, j82, f4, j7, i8, ProgressIndicatorDefaults.INSTANCE.m2816getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4), 0);
+                    m2367CircularProgressIndicator4lLiAd8(modifier3, j82, f4, j7, i8, ProgressIndicatorDefaults.INSTANCE.m2362getCircularIndicatorTrackGapSizeD9Ej5fM(), composer2, (i4 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i4 & 112) | (i4 & 896) | (i4 & 7168) | (57344 & i4), 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     modifier2 = modifier3;
@@ -2330,9 +2284,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda30
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit CircularProgressIndicator_LxG7B9w$lambda$30;
-                            CircularProgressIndicator_LxG7B9w$lambda$30 = ProgressIndicatorKt.CircularProgressIndicator_LxG7B9w$lambda$30(Modifier.this, j5, f3, j6, i7, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return CircularProgressIndicator_LxG7B9w$lambda$30;
+                            return ProgressIndicatorKt.CircularProgressIndicator_LxG7B9w$lambda$30(Modifier.this, j5, f3, j6, i7, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -2376,7 +2328,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2830CircularProgressIndicator4lLiAd8(Modifier modifier, long j, float f, long j2, int i, float f2, Composer composer, final int i2, final int i3) {
+    public static final void m2367CircularProgressIndicator4lLiAd8(Modifier modifier, long j, float f, long j2, int i, float f2, Composer composer, final int i2, final int i3) {
         Object obj;
         int i4;
         long j3;
@@ -2396,7 +2348,7 @@ public final class ProgressIndicatorKt {
         ScopeUpdateScope endRestartGroup;
         Modifier.Companion companion;
         long j7;
-        final float m2816getCircularIndicatorTrackGapSizeD9Ej5fM;
+        final float m2362getCircularIndicatorTrackGapSizeD9Ej5fM;
         final int i9;
         final long j8;
         final long j9;
@@ -2460,7 +2412,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -7169;
                         }
                         companion = obj;
-                        m2816getCircularIndicatorTrackGapSizeD9Ej5fM = f4;
+                        m2362getCircularIndicatorTrackGapSizeD9Ej5fM = f4;
                         i9 = i6;
                         j7 = j4;
                     } else {
@@ -2470,7 +2422,7 @@ public final class ProgressIndicatorKt {
                             i4 &= -113;
                         }
                         if (i11 != 0) {
-                            f3 = ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM();
+                            f3 = ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM();
                         }
                         if ((i3 & 8) != 0) {
                             j7 = ProgressIndicatorDefaults.INSTANCE.getCircularIndeterminateTrackColor(startRestartGroup, 6);
@@ -2479,9 +2431,9 @@ public final class ProgressIndicatorKt {
                             j7 = j4;
                         }
                         if (i5 != 0) {
-                            i6 = ProgressIndicatorDefaults.INSTANCE.m2815getCircularIndeterminateStrokeCapKaPHkGw();
+                            i6 = ProgressIndicatorDefaults.INSTANCE.m2361getCircularIndeterminateStrokeCapKaPHkGw();
                         }
-                        m2816getCircularIndicatorTrackGapSizeD9Ej5fM = i7 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2816getCircularIndicatorTrackGapSizeD9Ej5fM() : f4;
+                        m2362getCircularIndicatorTrackGapSizeD9Ej5fM = i7 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2362getCircularIndicatorTrackGapSizeD9Ej5fM() : f4;
                         i9 = i6;
                     }
                     startRestartGroup.endDefaults();
@@ -2491,12 +2443,12 @@ public final class ProgressIndicatorKt {
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    final Stroke stroke = new Stroke(((Density) consume).mo464toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
+                    final Stroke stroke = new Stroke(((Density) consume).mo405toPx0680j_4(f3), 0.0f, i9, 0, null, 26, null);
                     InfiniteTransition rememberInfiniteTransition = InfiniteTransitionKt.rememberInfiniteTransition(null, startRestartGroup, 0, 1);
                     final State<Float> animateFloat = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition, 0.0f, 1080.0f, getCircularIndeterminateGlobalRotationAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                     final State<Float> animateFloat2 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition, 0.0f, 360.0f, getCircularIndeterminateRotationAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
                     final State<Float> animateFloat3 = InfiniteTransitionKt.animateFloat(rememberInfiniteTransition, 0.1f, 0.87f, getCircularIndeterminateProgressAnimationSpec(), null, startRestartGroup, InfiniteTransition.$stable | 432 | (InfiniteRepeatableSpec.$stable << 9), 8);
-                    Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(ProgressSemanticsKt.progressSemantics(companion), CircularIndicatorDiameter);
+                    Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(ProgressSemanticsKt.progressSemantics(companion), CircularIndicatorDiameter);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1961263937, "CC(remember):ProgressIndicator.kt#9igjgp");
                     Modifier modifier3 = companion;
                     boolean changed = ((57344 & i4) == 16384) | startRestartGroup.changed(animateFloat3) | ((458752 & i4) == 131072) | ((i4 & 896) == 256) | startRestartGroup.changed(animateFloat) | startRestartGroup.changed(animateFloat2) | ((((i4 & 7168) ^ 3072) > 2048 && startRestartGroup.changed(j7)) || (i4 & 3072) == 2048) | startRestartGroup.changedInstance(stroke) | ((((i4 & 112) ^ 48) > 32 && startRestartGroup.changed(j3)) || (i4 & 48) == 32);
@@ -2508,9 +2460,7 @@ public final class ProgressIndicatorKt {
                         rememberedValue = new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda28
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
-                                Unit CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33;
-                                CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33 = ProgressIndicatorKt.CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33(State.this, i9, m2816getCircularIndicatorTrackGapSizeD9Ej5fM, f7, animateFloat, animateFloat2, j8, stroke, j9, (DrawScope) obj2);
-                                return CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33;
+                                return ProgressIndicatorKt.CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33(State.this, i9, m2362getCircularIndicatorTrackGapSizeD9Ej5fM, f7, animateFloat, animateFloat2, j8, stroke, j9, (DrawScope) obj2);
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2520,14 +2470,14 @@ public final class ProgressIndicatorKt {
                         f7 = f3;
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    CanvasKt.Canvas(m976size3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
+                    CanvasKt.Canvas(m864size3ABfNKs, (Function1) rememberedValue, startRestartGroup, 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
                     modifier2 = modifier3;
                     composer2 = startRestartGroup;
                     i8 = i9;
-                    f5 = m2816getCircularIndicatorTrackGapSizeD9Ej5fM;
+                    f5 = m2362getCircularIndicatorTrackGapSizeD9Ej5fM;
                     f6 = f7;
                     j6 = j8;
                     j5 = j9;
@@ -2546,9 +2496,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda29
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit CircularProgressIndicator_4lLiAd8$lambda$35;
-                            CircularProgressIndicator_4lLiAd8$lambda$35 = ProgressIndicatorKt.CircularProgressIndicator_4lLiAd8$lambda$35(Modifier.this, j5, f6, j6, i8, f5, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                            return CircularProgressIndicator_4lLiAd8$lambda$35;
+                            return ProgressIndicatorKt.CircularProgressIndicator_4lLiAd8$lambda$35(Modifier.this, j5, f6, j6, i8, f5, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -2582,28 +2530,28 @@ public final class ProgressIndicatorKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CircularProgressIndicator_4lLiAd8$lambda$34$lambda$33(State state, int i, float f, float f2, State state2, State state3, long j, Stroke stroke, long j2, DrawScope drawScope) {
         float floatValue = ((Number) state.getValue()).floatValue() * 360.0f;
-        if (!StrokeCap.m5796equalsimpl0(i, StrokeCap.Companion.m5800getButtKaPHkGw()) && Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)) <= Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) {
-            f = Dp.m8258constructorimpl(f + f2);
+        if (!StrokeCap.m5142equalsimpl0(i, StrokeCap.Companion.m5146getButtKaPHkGw()) && Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)) <= Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) {
+            f = Dp.m7555constructorimpl(f + f2);
         }
-        float f3 = (f / ((float) (drawScope.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32))) * 3.141592653589793d))) * 360.0f;
+        float f3 = (f / ((float) (drawScope.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32))) * 3.141592653589793d))) * 360.0f;
         float floatValue2 = ((Number) state2.getValue()).floatValue() + ((Number) state3.getValue()).floatValue();
-        long mo6004getCenterF1C5BW0 = drawScope.mo6004getCenterF1C5BW0();
+        long mo5345getCenterF1C5BW0 = drawScope.mo5345getCenterF1C5BW0();
         DrawContext drawContext = drawScope.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5932rotateUv8p0NA(floatValue2, mo6004getCenterF1C5BW0);
-            m2844drawCircularIndicator42QJj7c(drawScope, floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
-            m2846drawDeterminateCircularIndicator42QJj7c(drawScope, 0.0f, floatValue, j2, stroke);
+            drawContext.getTransform().mo5273rotateUv8p0NA(floatValue2, mo5345getCenterF1C5BW0);
+            m2381drawCircularIndicator42QJj7c(drawScope, floatValue + Math.min(floatValue, f3), (360.0f - floatValue) - (Math.min(floatValue, f3) * 2), j, stroke);
+            m2383drawDeterminateCircularIndicator42QJj7c(drawScope, 0.0f, floatValue, j2, stroke);
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             throw th;
         }
     }
@@ -2630,7 +2578,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2831CircularProgressIndicatorDUhRLBM(final float f, Modifier modifier, long j, float f2, long j2, int i, Composer composer, final int i2, final int i3) {
+    public static final void m2368CircularProgressIndicatorDUhRLBM(final float f, Modifier modifier, long j, float f2, long j2, int i, Composer composer, final int i2, final int i3) {
         int i4;
         Modifier.Companion companion;
         long j3;
@@ -2646,7 +2594,7 @@ public final class ProgressIndicatorKt {
         final long j6;
         final int i8;
         ScopeUpdateScope endRestartGroup;
-        int m2814getCircularDeterminateStrokeCapKaPHkGw;
+        int m2360getCircularDeterminateStrokeCapKaPHkGw;
         boolean z;
         float f5;
         long j7;
@@ -2724,14 +2672,14 @@ public final class ProgressIndicatorKt {
                                 i4 &= -897;
                             }
                             if (i5 != 0) {
-                                f3 = ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM();
+                                f3 = ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM();
                             }
                             if ((i3 & 16) != 0) {
                                 j4 = ProgressIndicatorDefaults.INSTANCE.getCircularTrackColor(startRestartGroup, 6);
                                 i4 &= -57345;
                             }
                             if (i6 != 0) {
-                                m2814getCircularDeterminateStrokeCapKaPHkGw = ProgressIndicatorDefaults.INSTANCE.m2814getCircularDeterminateStrokeCapKaPHkGw();
+                                m2360getCircularDeterminateStrokeCapKaPHkGw = ProgressIndicatorDefaults.INSTANCE.m2360getCircularDeterminateStrokeCapKaPHkGw();
                                 z = false;
                                 f5 = f3;
                                 j7 = j4;
@@ -2751,16 +2699,14 @@ public final class ProgressIndicatorKt {
                                     rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda21
                                         @Override // kotlin.jvm.functions.Function0
                                         public final Object invoke() {
-                                            float CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36;
-                                            CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36 = ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36(f);
-                                            return Float.valueOf(CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36);
+                                            return Float.valueOf(ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36(f));
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue);
                                 }
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 composer2 = startRestartGroup;
-                                m2833CircularProgressIndicatorIyT6zlY((Function0) rememberedValue, modifier3, j8, f5, j7, m2814getCircularDeterminateStrokeCapKaPHkGw, 0.0f, composer2, i4 & 524272, 64);
+                                m2370CircularProgressIndicatorIyT6zlY((Function0) rememberedValue, modifier3, j8, f5, j7, m2360getCircularDeterminateStrokeCapKaPHkGw, 0.0f, composer2, i4 & 524272, 64);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -2768,7 +2714,7 @@ public final class ProgressIndicatorKt {
                                 j5 = j8;
                                 f4 = f5;
                                 j6 = j7;
-                                i8 = m2814getCircularDeterminateStrokeCapKaPHkGw;
+                                i8 = m2360getCircularDeterminateStrokeCapKaPHkGw;
                             }
                         } else {
                             startRestartGroup.skipToGroupEnd();
@@ -2783,7 +2729,7 @@ public final class ProgressIndicatorKt {
                         z = false;
                         i9 = -1472321743;
                         modifier3 = companion;
-                        m2814getCircularDeterminateStrokeCapKaPHkGw = i7;
+                        m2360getCircularDeterminateStrokeCapKaPHkGw = i7;
                         j7 = j4;
                         long j82 = j3;
                         startRestartGroup.endDefaults();
@@ -2798,22 +2744,20 @@ public final class ProgressIndicatorKt {
                         rememberedValue = new Function0() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda21
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
-                                float CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36;
-                                CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36 = ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36(f);
-                                return Float.valueOf(CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36);
+                                return Float.valueOf(ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$37$lambda$36(f));
                             }
                         };
                         startRestartGroup.updateRememberedValue(rememberedValue);
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                         composer2 = startRestartGroup;
-                        m2833CircularProgressIndicatorIyT6zlY((Function0) rememberedValue, modifier3, j82, f5, j7, m2814getCircularDeterminateStrokeCapKaPHkGw, 0.0f, composer2, i4 & 524272, 64);
+                        m2370CircularProgressIndicatorIyT6zlY((Function0) rememberedValue, modifier3, j82, f5, j7, m2360getCircularDeterminateStrokeCapKaPHkGw, 0.0f, composer2, i4 & 524272, 64);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier2 = modifier3;
                         j5 = j82;
                         f4 = f5;
                         j6 = j7;
-                        i8 = m2814getCircularDeterminateStrokeCapKaPHkGw;
+                        i8 = m2360getCircularDeterminateStrokeCapKaPHkGw;
                     } else {
                         composer2 = startRestartGroup;
                         composer2.skipToGroupEnd();
@@ -2828,9 +2772,7 @@ public final class ProgressIndicatorKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda23
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj, Object obj2) {
-                                Unit CircularProgressIndicator_DUhRLBM$lambda$38;
-                                CircularProgressIndicator_DUhRLBM$lambda$38 = ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$38(f, modifier2, j5, f4, j6, i8, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
-                                return CircularProgressIndicator_DUhRLBM$lambda$38;
+                                return ProgressIndicatorKt.CircularProgressIndicator_DUhRLBM$lambda$38(f, modifier2, j5, f4, j6, i8, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
                             }
                         });
                         return;
@@ -2892,7 +2834,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2835CircularProgressIndicatorMBs18nI(final float f, Modifier modifier, long j, float f2, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m2372CircularProgressIndicatorMBs18nI(final float f, Modifier modifier, long j, float f2, Composer composer, final int i, final int i2) {
         float f3;
         int i3;
         Object obj;
@@ -2903,7 +2845,7 @@ public final class ProgressIndicatorKt {
         final long j3;
         final float f5;
         ScopeUpdateScope endRestartGroup;
-        float m2817getCircularStrokeWidthD9Ej5fM;
+        float m2363getCircularStrokeWidthD9Ej5fM;
         long j4;
         Modifier modifier3;
         Composer startRestartGroup = composer.startRestartGroup(402841196);
@@ -2945,7 +2887,7 @@ public final class ProgressIndicatorKt {
                             i3 &= -897;
                         }
                         modifier3 = obj;
-                        m2817getCircularStrokeWidthD9Ej5fM = f4;
+                        m2363getCircularStrokeWidthD9Ej5fM = f4;
                         j4 = j2;
                     } else {
                         Modifier.Companion companion = i5 != 0 ? Modifier.Companion : obj;
@@ -2953,7 +2895,7 @@ public final class ProgressIndicatorKt {
                             j2 = ProgressIndicatorDefaults.INSTANCE.getCircularColor(startRestartGroup, 6);
                             i3 &= -897;
                         }
-                        m2817getCircularStrokeWidthD9Ej5fM = i4 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM() : f4;
+                        m2363getCircularStrokeWidthD9Ej5fM = i4 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM() : f4;
                         j4 = j2;
                         modifier3 = companion;
                     }
@@ -2961,8 +2903,8 @@ public final class ProgressIndicatorKt {
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventStart(402841196, i3, -1, "androidx.compose.material3.CircularProgressIndicator (ProgressIndicator.kt:723)");
                     }
-                    float f6 = m2817getCircularStrokeWidthD9Ej5fM;
-                    m2831CircularProgressIndicatorDUhRLBM(f3, modifier3, j4, f6, ProgressIndicatorDefaults.INSTANCE.getCircularTrackColor(startRestartGroup, 6), ProgressIndicatorDefaults.INSTANCE.m2814getCircularDeterminateStrokeCapKaPHkGw(), startRestartGroup, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
+                    float f6 = m2363getCircularStrokeWidthD9Ej5fM;
+                    m2368CircularProgressIndicatorDUhRLBM(f3, modifier3, j4, f6, ProgressIndicatorDefaults.INSTANCE.getCircularTrackColor(startRestartGroup, 6), ProgressIndicatorDefaults.INSTANCE.m2360getCircularDeterminateStrokeCapKaPHkGw(), startRestartGroup, (i3 & 14) | ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE | (i3 & 112) | (i3 & 896) | (i3 & 7168), 0);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -2980,9 +2922,7 @@ public final class ProgressIndicatorKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda14
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit CircularProgressIndicator_MBs18nI$lambda$39;
-                            CircularProgressIndicator_MBs18nI$lambda$39 = ProgressIndicatorKt.CircularProgressIndicator_MBs18nI$lambda$39(f, modifier2, j3, f5, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                            return CircularProgressIndicator_MBs18nI$lambda$39;
+                            return ProgressIndicatorKt.CircularProgressIndicator_MBs18nI$lambda$39(f, modifier2, j3, f5, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -3021,7 +2961,7 @@ public final class ProgressIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m2836CircularProgressIndicatoraMcp0Q(Modifier modifier, long j, float f, Composer composer, final int i, final int i2) {
+    public static final /* synthetic */ void m2373CircularProgressIndicatoraMcp0Q(Modifier modifier, long j, float f, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j2;
@@ -3030,7 +2970,7 @@ public final class ProgressIndicatorKt {
         final long j3;
         final float f3;
         ScopeUpdateScope endRestartGroup;
-        float m2817getCircularStrokeWidthD9Ej5fM;
+        float m2363getCircularStrokeWidthD9Ej5fM;
         long j4;
         Modifier modifier3;
         Composer startRestartGroup = composer.startRestartGroup(947193756);
@@ -3066,7 +3006,7 @@ public final class ProgressIndicatorKt {
                     if ((i2 & 2) != 0) {
                         i3 &= -113;
                     }
-                    m2817getCircularStrokeWidthD9Ej5fM = f2;
+                    m2363getCircularStrokeWidthD9Ej5fM = f2;
                     j4 = j2;
                     modifier3 = obj;
                 } else {
@@ -3075,7 +3015,7 @@ public final class ProgressIndicatorKt {
                         j2 = ProgressIndicatorDefaults.INSTANCE.getCircularColor(startRestartGroup, 6);
                         i3 &= -113;
                     }
-                    m2817getCircularStrokeWidthD9Ej5fM = i5 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2817getCircularStrokeWidthD9Ej5fM() : f2;
+                    m2363getCircularStrokeWidthD9Ej5fM = i5 != 0 ? ProgressIndicatorDefaults.INSTANCE.m2363getCircularStrokeWidthD9Ej5fM() : f2;
                     j4 = j2;
                     modifier3 = companion;
                 }
@@ -3083,13 +3023,13 @@ public final class ProgressIndicatorKt {
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(947193756, i3, -1, "androidx.compose.material3.CircularProgressIndicator (ProgressIndicator.kt:740)");
                 }
-                m2830CircularProgressIndicator4lLiAd8(modifier3, j4, m2817getCircularStrokeWidthD9Ej5fM, ProgressIndicatorDefaults.INSTANCE.getCircularTrackColor(startRestartGroup, 6), ProgressIndicatorDefaults.INSTANCE.m2815getCircularIndeterminateStrokeCapKaPHkGw(), 0.0f, startRestartGroup, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896), 32);
+                m2367CircularProgressIndicator4lLiAd8(modifier3, j4, m2363getCircularStrokeWidthD9Ej5fM, ProgressIndicatorDefaults.INSTANCE.getCircularTrackColor(startRestartGroup, 6), ProgressIndicatorDefaults.INSTANCE.m2361getCircularIndeterminateStrokeCapKaPHkGw(), 0.0f, startRestartGroup, (i3 & 14) | 24576 | (i3 & 112) | (i3 & 896), 32);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
                 modifier2 = modifier3;
                 j3 = j4;
-                f3 = m2817getCircularStrokeWidthD9Ej5fM;
+                f3 = m2363getCircularStrokeWidthD9Ej5fM;
             } else {
                 startRestartGroup.skipToGroupEnd();
                 modifier2 = obj;
@@ -3101,9 +3041,7 @@ public final class ProgressIndicatorKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda20
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit CircularProgressIndicator_aM_cp0Q$lambda$40;
-                        CircularProgressIndicator_aM_cp0Q$lambda$40 = ProgressIndicatorKt.CircularProgressIndicator_aM_cp0Q$lambda$40(Modifier.this, j3, f3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return CircularProgressIndicator_aM_cp0Q$lambda$40;
+                        return ProgressIndicatorKt.CircularProgressIndicator_aM_cp0Q$lambda$40(Modifier.this, j3, f3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -3119,44 +3057,42 @@ public final class ProgressIndicatorKt {
     }
 
     /* renamed from: drawCircularIndicator-42QJj7c  reason: not valid java name */
-    private static final void m2844drawCircularIndicator42QJj7c(DrawScope drawScope, float f, float f2, long j, Stroke stroke) {
+    private static final void m2381drawCircularIndicator42QJj7c(DrawScope drawScope, float f, float f2, long j, Stroke stroke) {
         float width;
         float f3 = 2;
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)) - (f3 * (stroke.getWidth() / f3));
-        DrawScope.m5984drawArcyD3GUKo$default(drawScope, j, f, f2, false, Offset.m5171constructorimpl((Float.floatToRawIntBits(width) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), Size.m5239constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), 0.0f, stroke, null, 0, 832, null);
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)) - (f3 * (stroke.getWidth() / f3));
+        DrawScope.m5325drawArcyD3GUKo$default(drawScope, j, f, f2, false, Offset.m4519constructorimpl((Float.floatToRawIntBits(width) & 4294967295L) | (Float.floatToRawIntBits(width) << 32)), Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L)), 0.0f, stroke, null, 0, 832, null);
     }
 
     /* renamed from: drawCircularIndicatorTrack-bw27NRU  reason: not valid java name */
-    private static final void m2845drawCircularIndicatorTrackbw27NRU(DrawScope drawScope, long j, Stroke stroke) {
-        m2844drawCircularIndicator42QJj7c(drawScope, 0.0f, 360.0f, j, stroke);
+    private static final void m2382drawCircularIndicatorTrackbw27NRU(DrawScope drawScope, long j, Stroke stroke) {
+        m2381drawCircularIndicator42QJj7c(drawScope, 0.0f, 360.0f, j, stroke);
     }
 
     /* renamed from: drawDeterminateCircularIndicator-42QJj7c  reason: not valid java name */
-    private static final void m2846drawDeterminateCircularIndicator42QJj7c(DrawScope drawScope, float f, float f2, long j, Stroke stroke) {
-        m2844drawCircularIndicator42QJj7c(drawScope, f, f2, j, stroke);
+    private static final void m2383drawDeterminateCircularIndicator42QJj7c(DrawScope drawScope, float f, float f2, long j, Stroke stroke) {
+        m2381drawCircularIndicator42QJj7c(drawScope, f, f2, j, stroke);
     }
 
     /* renamed from: drawIndeterminateCircularIndicator-hrjfTZI  reason: not valid java name */
-    private static final void m2847drawIndeterminateCircularIndicatorhrjfTZI(DrawScope drawScope, float f, float f2, float f3, long j, Stroke stroke) {
-        m2844drawCircularIndicator42QJj7c(drawScope, f + (StrokeCap.m5796equalsimpl0(stroke.m6074getCapKaPHkGw(), StrokeCap.Companion.m5800getButtKaPHkGw()) ? 0.0f : ((f2 / Dp.m8258constructorimpl(CircularIndicatorDiameter / 2)) * 57.29578f) / 2.0f), Math.max(f3, 0.1f), j, stroke);
+    private static final void m2384drawIndeterminateCircularIndicatorhrjfTZI(DrawScope drawScope, float f, float f2, float f3, long j, Stroke stroke) {
+        m2381drawCircularIndicator42QJj7c(drawScope, f + (StrokeCap.m5142equalsimpl0(stroke.m5415getCapKaPHkGw(), StrokeCap.Companion.m5146getButtKaPHkGw()) ? 0.0f : ((f2 / Dp.m7555constructorimpl(CircularIndicatorDiameter / 2)) * 57.29578f) / 2.0f), Math.max(f3, 0.1f), j, stroke);
     }
 
     public static final InfiniteRepeatableSpec<Float> getCircularIndeterminateGlobalRotationAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(6000, 0, EasingKt.getLinearEasing(), 2, null), null, 0L, 6, null);
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(6000, 0, EasingKt.getLinearEasing(), 2, null), null, 0L, 6, null);
     }
 
     public static final InfiniteRepeatableSpec<Float> getCircularIndeterminateRotationAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda15
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_circularIndeterminateRotationAnimationSpec_$lambda$41;
-                _get_circularIndeterminateRotationAnimationSpec_$lambda$41 = ProgressIndicatorKt._get_circularIndeterminateRotationAnimationSpec_$lambda$41((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_circularIndeterminateRotationAnimationSpec_$lambda$41;
+                return ProgressIndicatorKt._get_circularIndeterminateRotationAnimationSpec_$lambda$41((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_circularIndeterminateRotationAnimationSpec_$lambda$41(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(6000);
         Float valueOf = Float.valueOf(90.0f);
@@ -3175,17 +3111,15 @@ public final class ProgressIndicatorKt {
     }
 
     public static final InfiniteRepeatableSpec<Float> getCircularIndeterminateProgressAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda13
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_circularIndeterminateProgressAnimationSpec_$lambda$42;
-                _get_circularIndeterminateProgressAnimationSpec_$lambda$42 = ProgressIndicatorKt._get_circularIndeterminateProgressAnimationSpec_$lambda$42((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_circularIndeterminateProgressAnimationSpec_$lambda$42;
+                return ProgressIndicatorKt._get_circularIndeterminateProgressAnimationSpec_$lambda$42((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_circularIndeterminateProgressAnimationSpec_$lambda$42(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(6000);
         keyframesSpecConfig.using(keyframesSpecConfig.at((KeyframesSpec.KeyframesSpecConfig) Float.valueOf(0.87f), 3000), CircularProgressEasing);
@@ -3194,17 +3128,15 @@ public final class ProgressIndicatorKt {
     }
 
     public static final InfiniteRepeatableSpec<Float> getLinearIndeterminateFirstLineHeadAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda0
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43;
-                _get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43 = ProgressIndicatorKt._get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43;
+                return ProgressIndicatorKt._get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_linearIndeterminateFirstLineHeadAnimationSpec_$lambda$43(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(LinearAnimationDuration);
         keyframesSpecConfig.using(keyframesSpecConfig.at((KeyframesSpec.KeyframesSpecConfig) Float.valueOf(0.0f), 0), LinearIndeterminateProgressEasing);
@@ -3213,17 +3145,15 @@ public final class ProgressIndicatorKt {
     }
 
     public static final InfiniteRepeatableSpec<Float> getLinearIndeterminateFirstLineTailAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda9
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44;
-                _get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44 = ProgressIndicatorKt._get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44;
+                return ProgressIndicatorKt._get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_linearIndeterminateFirstLineTailAnimationSpec_$lambda$44(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(LinearAnimationDuration);
         keyframesSpecConfig.using(keyframesSpecConfig.at((KeyframesSpec.KeyframesSpecConfig) Float.valueOf(0.0f), 250), LinearIndeterminateProgressEasing);
@@ -3232,17 +3162,15 @@ public final class ProgressIndicatorKt {
     }
 
     public static final InfiniteRepeatableSpec<Float> getLinearIndeterminateSecondLineHeadAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda17
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45;
-                _get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45 = ProgressIndicatorKt._get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45;
+                return ProgressIndicatorKt._get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_linearIndeterminateSecondLineHeadAnimationSpec_$lambda$45(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(LinearAnimationDuration);
         keyframesSpecConfig.using(keyframesSpecConfig.at((KeyframesSpec.KeyframesSpecConfig) Float.valueOf(0.0f), SecondLineHeadDelay), LinearIndeterminateProgressEasing);
@@ -3251,17 +3179,15 @@ public final class ProgressIndicatorKt {
     }
 
     public static final InfiniteRepeatableSpec<Float> getLinearIndeterminateSecondLineTailAnimationSpec() {
-        return AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda19
+        return AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.keyframes(new Function1() { // from class: androidx.compose.material3.ProgressIndicatorKt$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46;
-                _get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46 = ProgressIndicatorKt._get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46((KeyframesSpec.KeyframesSpecConfig) obj);
-                return _get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46;
+                return ProgressIndicatorKt._get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46((KeyframesSpec.KeyframesSpecConfig) obj);
             }
         }), null, 0L, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _get_linearIndeterminateSecondLineTailAnimationSpec_$lambda$46(KeyframesSpec.KeyframesSpecConfig keyframesSpecConfig) {
         keyframesSpecConfig.setDurationMillis(LinearAnimationDuration);
         keyframesSpecConfig.using(keyframesSpecConfig.at((KeyframesSpec.KeyframesSpecConfig) Float.valueOf(0.0f), 900), LinearIndeterminateProgressEasing);

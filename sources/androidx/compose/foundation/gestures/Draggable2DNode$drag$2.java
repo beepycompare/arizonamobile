@@ -54,9 +54,7 @@ final class Draggable2DNode$drag$2 extends SuspendLambda implements Function2<Dr
             Function1<? super DragEvent.DragDelta, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.Draggable2DNode$drag$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = Draggable2DNode$drag$2.invokeSuspend$lambda$0(Drag2DScope.this, draggable2DNode, (DragEvent.DragDelta) obj2);
-                    return invokeSuspend$lambda$0;
+                    return Draggable2DNode$drag$2.invokeSuspend$lambda$0(Drag2DScope.this, draggable2DNode, (DragEvent.DragDelta) obj2);
                 }
             };
             this.label = 1;
@@ -71,13 +69,13 @@ final class Draggable2DNode$drag$2 extends SuspendLambda implements Function2<Dr
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Drag2DScope drag2DScope, Draggable2DNode draggable2DNode, DragEvent.DragDelta dragDelta) {
-        long m523getDeltaF1C5BW0 = dragDelta.m523getDeltaF1C5BW0();
+        long m454getDeltaF1C5BW0 = dragDelta.m454getDeltaF1C5BW0();
         if (draggable2DNode.reverseDirection) {
-            m523getDeltaF1C5BW0 = Offset.m5171constructorimpl((-9223372034707292160L) ^ m523getDeltaF1C5BW0);
+            m454getDeltaF1C5BW0 = Offset.m4519constructorimpl((-9223372034707292160L) ^ m454getDeltaF1C5BW0);
         }
-        drag2DScope.mo512dragByk4lQ0M(m523getDeltaF1C5BW0);
+        drag2DScope.mo443dragByk4lQ0M(m454getDeltaF1C5BW0);
         return Unit.INSTANCE;
     }
 }

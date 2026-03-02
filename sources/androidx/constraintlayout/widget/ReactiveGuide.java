@@ -152,30 +152,34 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
             if (i4 != 0) {
                 currentState = i4;
             }
+            boolean z = this.mAnimateChange;
+            boolean z2 = this.mApplyToAllConstraintSets;
             int i5 = 0;
-            if (this.mAnimateChange) {
-                if (this.mApplyToAllConstraintSets) {
+            if (!z) {
+                if (z2) {
                     int[] constraintSetIds = motionLayout.getConstraintSetIds();
                     while (i5 < constraintSetIds.length) {
-                        int i6 = constraintSetIds[i5];
-                        if (i6 != currentState) {
-                            changeValue(i2, id, motionLayout, i6);
-                        }
+                        changeValue(i2, id, motionLayout, constraintSetIds[i5]);
                         i5++;
                     }
+                    return;
                 }
-                ConstraintSet cloneConstraintSet = motionLayout.cloneConstraintSet(currentState);
-                cloneConstraintSet.setGuidelineEnd(id, i2);
-                motionLayout.updateStateAnimate(currentState, cloneConstraintSet, 1000);
-            } else if (this.mApplyToAllConstraintSets) {
+                changeValue(i2, id, motionLayout, currentState);
+                return;
+            }
+            if (z2) {
                 int[] constraintSetIds2 = motionLayout.getConstraintSetIds();
                 while (i5 < constraintSetIds2.length) {
-                    changeValue(i2, id, motionLayout, constraintSetIds2[i5]);
+                    int i6 = constraintSetIds2[i5];
+                    if (i6 != currentState) {
+                        changeValue(i2, id, motionLayout, i6);
+                    }
                     i5++;
                 }
-            } else {
-                changeValue(i2, id, motionLayout, currentState);
             }
+            ConstraintSet cloneConstraintSet = motionLayout.cloneConstraintSet(currentState);
+            cloneConstraintSet.setGuidelineEnd(id, i2);
+            motionLayout.updateStateAnimate(currentState, cloneConstraintSet, 1000);
         }
     }
 

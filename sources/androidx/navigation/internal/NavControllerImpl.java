@@ -292,7 +292,7 @@ public final class NavControllerImpl {
         return this.lifecycleObserver;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void lifecycleObserver$lambda$1(NavControllerImpl navControllerImpl, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");
@@ -349,7 +349,7 @@ public final class NavControllerImpl {
         return this.entrySavedState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit navigateInternal$lambda$3(NavBackStackEntry it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
@@ -361,9 +361,7 @@ public final class NavControllerImpl {
             function12 = new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit navigateInternal$lambda$3;
-                    navigateInternal$lambda$3 = NavControllerImpl.navigateInternal$lambda$3((NavBackStackEntry) obj2);
-                    return navigateInternal$lambda$3;
+                    return NavControllerImpl.navigateInternal$lambda$3((NavBackStackEntry) obj2);
                 }
             };
         }
@@ -379,7 +377,7 @@ public final class NavControllerImpl {
         this.addToBackStackHandler = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit popBackStackInternal$lambda$4(NavBackStackEntry it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
@@ -391,9 +389,7 @@ public final class NavControllerImpl {
             function1 = new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit popBackStackInternal$lambda$4;
-                    popBackStackInternal$lambda$4 = NavControllerImpl.popBackStackInternal$lambda$4((NavBackStackEntry) obj2);
-                    return popBackStackInternal$lambda$4;
+                    return NavControllerImpl.popBackStackInternal$lambda$4((NavBackStackEntry) obj2);
                 }
             };
         }
@@ -451,9 +447,7 @@ public final class NavControllerImpl {
             popBackStackFromNavigator$navigation_runtime_release(popUpTo, new Function0() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit pop$lambda$6;
-                    pop$lambda$6 = NavControllerImpl.pop$lambda$6(Function0.this);
-                    return pop$lambda$6;
+                    return NavControllerImpl.pop$lambda$6(Function0.this);
                 }
             });
             return;
@@ -463,7 +457,7 @@ public final class NavControllerImpl {
         navControllerNavigatorState.pop(popUpTo, z);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit pop$lambda$6(Function0 function0) {
         function0.invoke();
         return Unit.INSTANCE;
@@ -663,9 +657,7 @@ public final class NavControllerImpl {
             popBackStackInternal$navigation_runtime_release((Navigator) it.next(), this.backQueue.last(), z3, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit executePopOperations$lambda$10;
-                    executePopOperations$lambda$10 = NavControllerImpl.executePopOperations$lambda$10(Ref.BooleanRef.this, booleanRef, navControllerImpl, z3, arrayDeque, (NavBackStackEntry) obj);
-                    return executePopOperations$lambda$10;
+                    return NavControllerImpl.executePopOperations$lambda$10(Ref.BooleanRef.this, booleanRef, navControllerImpl, z3, arrayDeque, (NavBackStackEntry) obj);
                 }
             });
             if (!booleanRef2.element) {
@@ -678,16 +670,12 @@ public final class NavControllerImpl {
                 for (NavDestination navDestination : SequencesKt.takeWhile(SequencesKt.generateSequence(foundDestination, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        NavDestination executePopOperations$lambda$11;
-                        executePopOperations$lambda$11 = NavControllerImpl.executePopOperations$lambda$11((NavDestination) obj);
-                        return executePopOperations$lambda$11;
+                        return NavControllerImpl.executePopOperations$lambda$11((NavDestination) obj);
                     }
                 }), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean executePopOperations$lambda$12;
-                        executePopOperations$lambda$12 = NavControllerImpl.executePopOperations$lambda$12(NavControllerImpl.this, (NavDestination) obj);
-                        return Boolean.valueOf(executePopOperations$lambda$12);
+                        return Boolean.valueOf(NavControllerImpl.executePopOperations$lambda$12(NavControllerImpl.this, (NavDestination) obj));
                     }
                 })) {
                     Map<Integer, String> map = navControllerImpl.backStackMap;
@@ -701,16 +689,12 @@ public final class NavControllerImpl {
                 for (NavDestination navDestination2 : SequencesKt.takeWhile(SequencesKt.generateSequence(findDestination$navigation_runtime_release$default(this, first.getDestinationId(), null, 2, null), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        NavDestination executePopOperations$lambda$14;
-                        executePopOperations$lambda$14 = NavControllerImpl.executePopOperations$lambda$14((NavDestination) obj);
-                        return executePopOperations$lambda$14;
+                        return NavControllerImpl.executePopOperations$lambda$14((NavDestination) obj);
                     }
                 }), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda4
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean executePopOperations$lambda$15;
-                        executePopOperations$lambda$15 = NavControllerImpl.executePopOperations$lambda$15(NavControllerImpl.this, (NavDestination) obj);
-                        return Boolean.valueOf(executePopOperations$lambda$15);
+                        return Boolean.valueOf(NavControllerImpl.executePopOperations$lambda$15(NavControllerImpl.this, (NavDestination) obj));
                     }
                 })) {
                     navControllerImpl.backStackMap.put(Integer.valueOf(navDestination2.getId()), first.getId());
@@ -724,7 +708,7 @@ public final class NavControllerImpl {
         return booleanRef.element;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit executePopOperations$lambda$10(Ref.BooleanRef booleanRef, Ref.BooleanRef booleanRef2, NavControllerImpl navControllerImpl, boolean z, ArrayDeque arrayDeque, NavBackStackEntry entry) {
         Intrinsics.checkNotNullParameter(entry, "entry");
         booleanRef.element = true;
@@ -733,7 +717,7 @@ public final class NavControllerImpl {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavDestination executePopOperations$lambda$11(NavDestination destination) {
         Intrinsics.checkNotNullParameter(destination, "destination");
         NavGraph parent = destination.getParent();
@@ -743,13 +727,13 @@ public final class NavControllerImpl {
         return destination.getParent();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean executePopOperations$lambda$12(NavControllerImpl navControllerImpl, NavDestination destination) {
         Intrinsics.checkNotNullParameter(destination, "destination");
         return !navControllerImpl.backStackMap.containsKey(Integer.valueOf(destination.getId()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavDestination executePopOperations$lambda$14(NavDestination destination) {
         Intrinsics.checkNotNullParameter(destination, "destination");
         NavGraph parent = destination.getParent();
@@ -759,7 +743,7 @@ public final class NavControllerImpl {
         return destination.getParent();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean executePopOperations$lambda$15(NavControllerImpl navControllerImpl, NavDestination destination) {
         Intrinsics.checkNotNullParameter(destination, "destination");
         return !navControllerImpl.backStackMap.containsKey(Integer.valueOf(destination.getId()));
@@ -854,9 +838,7 @@ public final class NavControllerImpl {
         boolean restoreStateInternal = restoreStateInternal(i, null, NavOptionsBuilderKt.navOptions(new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit clearBackStackInternal$lambda$19;
-                clearBackStackInternal$lambda$19 = NavControllerImpl.clearBackStackInternal$lambda$19((NavOptionsBuilder) obj);
-                return clearBackStackInternal$lambda$19;
+                return NavControllerImpl.clearBackStackInternal$lambda$19((NavOptionsBuilder) obj);
             }
         }), null);
         for (NavController.NavControllerNavigatorState navControllerNavigatorState2 : this.navigatorState.values()) {
@@ -865,7 +847,7 @@ public final class NavControllerImpl {
         return restoreStateInternal && popBackStackInternal$navigation_runtime_release(i, true, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit clearBackStackInternal$lambda$19(NavOptionsBuilder navOptions) {
         Intrinsics.checkNotNullParameter(navOptions, "$this$navOptions");
         navOptions.setRestoreState(true);
@@ -1073,12 +1055,12 @@ public final class NavControllerImpl {
     public final void onGraphCreated$navigation_runtime_release(Bundle bundle) {
         Bundle bundle2 = this.navigatorStateToRestore;
         if (bundle2 != null) {
-            Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle2);
-            if (SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
-                for (String str : SavedStateReader.m9283getStringListimpl(m9209constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
+            Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle2);
+            if (SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
+                for (String str : SavedStateReader.m8488getStringListimpl(m8414constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
                     Navigator navigator = this._navigatorProvider.getNavigator(str);
-                    if (SavedStateReader.m9210containsimpl(m9209constructorimpl, str)) {
-                        navigator.onRestoreState(SavedStateReader.m9266getSavedStateimpl(m9209constructorimpl, str));
+                    if (SavedStateReader.m8415containsimpl(m8414constructorimpl, str)) {
+                        navigator.onRestoreState(SavedStateReader.m8471getSavedStateimpl(m8414constructorimpl, str));
                     }
                 }
             }
@@ -1197,19 +1179,20 @@ public final class NavControllerImpl {
         }
         Intrinsics.checkNotNull(navGraph2);
         if (navGraph2.getId() == i) {
+            NavGraph navGraph3 = this._graph;
             if (navDestination != null) {
-                if (Intrinsics.areEqual(this._graph, navDestination) && navDestination.getParent() == null) {
+                if (Intrinsics.areEqual(navGraph3, navDestination) && navDestination.getParent() == null) {
                     return this._graph;
                 }
             } else {
-                return this._graph;
+                return navGraph3;
             }
         }
         NavBackStackEntry lastOrNull = this.backQueue.lastOrNull();
         if (lastOrNull == null || (navGraph = lastOrNull.getDestination()) == null) {
-            NavGraph navGraph3 = this._graph;
-            Intrinsics.checkNotNull(navGraph3);
-            navGraph = navGraph3;
+            NavGraph navGraph4 = this._graph;
+            Intrinsics.checkNotNull(navGraph4);
+            navGraph = navGraph4;
         }
         return findDestinationComprehensive$navigation_runtime_release(navGraph, i, false, navDestination);
     }
@@ -1331,7 +1314,7 @@ public final class NavControllerImpl {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 addInDefaultArgs = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9295constructorimpl(addInDefaultArgs);
+                SavedStateWriter.m8500constructorimpl(addInDefaultArgs);
             }
             NavDestination destination = matchDeepLinkComprehensive.getDestination();
             this.navController.writeIntent$navigation_runtime_release(request, addInDefaultArgs);
@@ -1382,9 +1365,7 @@ public final class NavControllerImpl {
                     navigateInternal$navigation_runtime_release(this._navigatorProvider.getNavigator(node.getNavigatorName()), CollectionsKt.listOf(NavBackStackEntry.Companion.create$default(NavBackStackEntry.Companion, getNavContext(), node, addInDefaultArgs, getHostLifecycleState$navigation_runtime_release(), this.viewModel, null, null, 96, null)), navOptions, extras, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda6
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit navigate$lambda$44;
-                            navigate$lambda$44 = NavControllerImpl.navigate$lambda$44(Ref.BooleanRef.this, this, node, addInDefaultArgs, (NavBackStackEntry) obj);
-                            return navigate$lambda$44;
+                            return NavControllerImpl.navigate$lambda$44(Ref.BooleanRef.this, this, node, addInDefaultArgs, (NavBackStackEntry) obj);
                         }
                     });
                 }
@@ -1416,7 +1397,7 @@ public final class NavControllerImpl {
         dispatchOnDestinationChanged$navigation_runtime_release();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit navigate$lambda$44(Ref.BooleanRef booleanRef, NavControllerImpl navControllerImpl, NavDestination navDestination, Bundle bundle, NavBackStackEntry it) {
         Intrinsics.checkNotNullParameter(it, "it");
         booleanRef.element = true;
@@ -1448,9 +1429,7 @@ public final class NavControllerImpl {
             List list = SequencesKt.toList(SequencesKt.map(NavGraph.Companion.childHierarchy((NavGraph) navDestination), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    int launchSingleTopInternal$lambda$47;
-                    launchSingleTopInternal$lambda$47 = NavControllerImpl.launchSingleTopInternal$lambda$47((NavDestination) obj);
-                    return Integer.valueOf(launchSingleTopInternal$lambda$47);
+                    return Integer.valueOf(NavControllerImpl.launchSingleTopInternal$lambda$47((NavDestination) obj));
                 }
             }));
             if (this.backQueue.size() - i != list.size()) {
@@ -1488,7 +1467,7 @@ public final class NavControllerImpl {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int launchSingleTopInternal$lambda$47(NavDestination it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getId();
@@ -1500,19 +1479,14 @@ public final class NavControllerImpl {
             CollectionsKt.removeAll(this.backStackMap.values(), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda13
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean restoreStateInternal$lambda$51;
-                    restoreStateInternal$lambda$51 = NavControllerImpl.restoreStateInternal$lambda$51(str, (String) obj);
-                    return Boolean.valueOf(restoreStateInternal$lambda$51);
+                    boolean areEqual;
+                    areEqual = Intrinsics.areEqual((String) obj, str);
+                    return Boolean.valueOf(areEqual);
                 }
             });
             return executeRestoreState(instantiateBackStack((ArrayDeque) TypeIntrinsics.asMutableMap(this.backStackStates).remove(str)), bundle, navOptions, extras);
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean restoreStateInternal$lambda$51(String str, String str2) {
-        return Intrinsics.areEqual(str2, str);
     }
 
     private final boolean restoreStateInternal(String str) {
@@ -1529,9 +1503,9 @@ public final class NavControllerImpl {
         CollectionsKt.removeAll(this.backStackMap.values(), new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean restoreStateInternal$lambda$53;
-                restoreStateInternal$lambda$53 = NavControllerImpl.restoreStateInternal$lambda$53(str2, (String) obj);
-                return Boolean.valueOf(restoreStateInternal$lambda$53);
+                boolean areEqual;
+                areEqual = Intrinsics.areEqual((String) obj, str2);
+                return Boolean.valueOf(areEqual);
             }
         });
         ArrayDeque<NavBackStackEntryState> arrayDeque = (ArrayDeque) TypeIntrinsics.asMutableMap(this.backStackStates).remove(str2);
@@ -1541,11 +1515,6 @@ public final class NavControllerImpl {
             return executeRestoreState(instantiateBackStack(arrayDeque), null, null, null);
         }
         return false;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean restoreStateInternal$lambda$53(String str, String str2) {
-        return Intrinsics.areEqual(str2, str);
     }
 
     private final boolean executeRestoreState(final List<NavBackStackEntry> list, final Bundle bundle, NavOptions navOptions, Navigator.Extras extras) {
@@ -1573,16 +1542,14 @@ public final class NavControllerImpl {
             navigateInternal$navigation_runtime_release(navigator, list3, navOptions, extras, new Function1() { // from class: androidx.navigation.internal.NavControllerImpl$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit executeRestoreState$lambda$57;
-                    executeRestoreState$lambda$57 = NavControllerImpl.executeRestoreState$lambda$57(Ref.BooleanRef.this, list, intRef, this, bundle, (NavBackStackEntry) obj2);
-                    return executeRestoreState$lambda$57;
+                    return NavControllerImpl.executeRestoreState$lambda$57(Ref.BooleanRef.this, list, intRef, this, bundle, (NavBackStackEntry) obj2);
                 }
             });
         }
         return booleanRef.element;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit executeRestoreState$lambda$57(Ref.BooleanRef booleanRef, List list, Ref.IntRef intRef, NavControllerImpl navControllerImpl, Bundle bundle, NavBackStackEntry entry) {
         List<NavBackStackEntry> emptyList;
         Intrinsics.checkNotNullParameter(entry, "entry");
@@ -1711,7 +1678,7 @@ public final class NavControllerImpl {
         while (destination2 != null && findDestination$navigation_runtime_release(destination2.getId(), destination2) != destination2) {
             NavGraph parent2 = destination2.getParent();
             if (parent2 != null) {
-                Bundle bundle3 = (bundle2 == null || !SavedStateReader.m9287isEmptyimpl(SavedStateReader.m9209constructorimpl(bundle2))) ? bundle2 : null;
+                Bundle bundle3 = (bundle2 == null || !SavedStateReader.m8492isEmptyimpl(SavedStateReader.m8414constructorimpl(bundle2))) ? bundle2 : null;
                 ListIterator<NavBackStackEntry> listIterator2 = list2.listIterator(list2.size());
                 while (true) {
                     if (!listIterator2.hasPrevious()) {
@@ -1828,7 +1795,7 @@ public final class NavControllerImpl {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 addInDefaultArgs = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9295constructorimpl(addInDefaultArgs);
+                SavedStateWriter.m8500constructorimpl(addInDefaultArgs);
             }
             NavDestination destination2 = matchRouteComprehensive.getDestination();
             this.navController.writeIntent$navigation_runtime_release(NavDeepLinkRequest.Builder.Companion.fromUri(NavUriKt.NavUri(NavDestination.Companion.createRoute(destination.getRoute()))).build(), addInDefaultArgs);
@@ -1875,13 +1842,13 @@ public final class NavControllerImpl {
             pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         for (Map.Entry<String, Navigator<? extends NavDestination>> entry2 : this._navigatorProvider.getNavigators().entrySet()) {
             String key = entry2.getKey();
             Bundle onSaveState = entry2.getValue().onSaveState();
             if (onSaveState != null) {
                 arrayList.add(key);
-                SavedStateWriter.m9322putSavedStateimpl(SavedStateWriter.m9295constructorimpl(bundleOf), key, onSaveState);
+                SavedStateWriter.m8527putSavedStateimpl(SavedStateWriter.m8500constructorimpl(bundleOf), key, onSaveState);
             }
         }
         if (arrayList.isEmpty()) {
@@ -1898,9 +1865,9 @@ public final class NavControllerImpl {
                 pairArr5 = (Pair[]) arrayList3.toArray(new Pair[0]);
             }
             bundle = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr5, pairArr5.length));
-            Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(bundle);
-            SavedStateWriter.m9330putStringListimpl(SavedStateWriter.m9295constructorimpl(bundleOf), KEY_NAVIGATOR_STATE_NAMES, arrayList);
-            SavedStateWriter.m9322putSavedStateimpl(m9295constructorimpl, KEY_NAVIGATOR_STATE, bundleOf);
+            Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(bundle);
+            SavedStateWriter.m8535putStringListimpl(SavedStateWriter.m8500constructorimpl(bundleOf), KEY_NAVIGATOR_STATE_NAMES, arrayList);
+            SavedStateWriter.m8527putSavedStateimpl(m8500constructorimpl, KEY_NAVIGATOR_STATE, bundleOf);
         }
         if (!this.backQueue.isEmpty()) {
             if (bundle == null) {
@@ -1915,7 +1882,7 @@ public final class NavControllerImpl {
                     pairArr4 = (Pair[]) arrayList4.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr4, pairArr4.length));
-                SavedStateWriter.m9295constructorimpl(bundleOf2);
+                SavedStateWriter.m8500constructorimpl(bundleOf2);
                 bundle = bundleOf2;
             }
             ArrayList arrayList5 = new ArrayList();
@@ -1923,7 +1890,7 @@ public final class NavControllerImpl {
             while (it.hasNext()) {
                 arrayList5.add(new NavBackStackEntryState((NavBackStackEntry) it.next()).writeToState());
             }
-            SavedStateWriter.m9324putSavedStateListimpl(SavedStateWriter.m9295constructorimpl(bundle), KEY_BACK_STACK, arrayList5);
+            SavedStateWriter.m8529putSavedStateListimpl(SavedStateWriter.m8500constructorimpl(bundle), KEY_BACK_STACK, arrayList5);
         }
         if (!this.backStackMap.isEmpty()) {
             if (bundle == null) {
@@ -1938,7 +1905,7 @@ public final class NavControllerImpl {
                     pairArr3 = (Pair[]) arrayList6.toArray(new Pair[0]);
                 }
                 Bundle bundleOf3 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr3, pairArr3.length));
-                SavedStateWriter.m9295constructorimpl(bundleOf3);
+                SavedStateWriter.m8500constructorimpl(bundleOf3);
                 bundle = bundleOf3;
             }
             int[] iArr = new int[this.backStackMap.size()];
@@ -1955,9 +1922,9 @@ public final class NavControllerImpl {
                 arrayList7.add(value);
                 i = i2;
             }
-            Bundle m9295constructorimpl2 = SavedStateWriter.m9295constructorimpl(bundle);
-            SavedStateWriter.m9313putIntArrayimpl(m9295constructorimpl2, KEY_BACK_STACK_DEST_IDS, iArr);
-            SavedStateWriter.m9330putStringListimpl(m9295constructorimpl2, KEY_BACK_STACK_IDS, arrayList7);
+            Bundle m8500constructorimpl2 = SavedStateWriter.m8500constructorimpl(bundle);
+            SavedStateWriter.m8518putIntArrayimpl(m8500constructorimpl2, KEY_BACK_STACK_DEST_IDS, iArr);
+            SavedStateWriter.m8535putStringListimpl(m8500constructorimpl2, KEY_BACK_STACK_IDS, arrayList7);
         }
         if (!this.backStackStates.isEmpty()) {
             if (bundle == null) {
@@ -1972,7 +1939,7 @@ public final class NavControllerImpl {
                     pairArr2 = (Pair[]) arrayList8.toArray(new Pair[0]);
                 }
                 bundle = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9295constructorimpl(bundle);
+                SavedStateWriter.m8500constructorimpl(bundle);
             }
             ArrayList arrayList9 = new ArrayList();
             for (Map.Entry<String, ArrayDeque<NavBackStackEntryState>> entry8 : this.backStackStates.entrySet()) {
@@ -1982,9 +1949,9 @@ public final class NavControllerImpl {
                 for (NavBackStackEntryState navBackStackEntryState : entry8.getValue()) {
                     arrayList10.add(navBackStackEntryState.writeToState());
                 }
-                SavedStateWriter.m9324putSavedStateListimpl(SavedStateWriter.m9295constructorimpl(bundle), KEY_BACK_STACK_STATES_PREFIX + key2, arrayList10);
+                SavedStateWriter.m8529putSavedStateListimpl(SavedStateWriter.m8500constructorimpl(bundle), KEY_BACK_STACK_STATES_PREFIX + key2, arrayList10);
             }
-            SavedStateWriter.m9330putStringListimpl(SavedStateWriter.m9295constructorimpl(bundle), KEY_BACK_STACK_STATES_IDS, arrayList9);
+            SavedStateWriter.m8535putStringListimpl(SavedStateWriter.m8500constructorimpl(bundle), KEY_BACK_STACK_STATES_IDS, arrayList9);
         }
         return bundle;
     }
@@ -2144,30 +2111,30 @@ public final class NavControllerImpl {
         if (bundle == null) {
             return;
         }
-        Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
-        this.navigatorStateToRestore = SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_NAVIGATOR_STATE) ? SavedStateReader.m9266getSavedStateimpl(m9209constructorimpl, KEY_NAVIGATOR_STATE) : null;
+        Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
+        this.navigatorStateToRestore = SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_NAVIGATOR_STATE) ? SavedStateReader.m8471getSavedStateimpl(m8414constructorimpl, KEY_NAVIGATOR_STATE) : null;
         int i = 0;
-        this.backStackToRestore = SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_BACK_STACK) ? (Bundle[]) SavedStateReader.m9269getSavedStateListimpl(m9209constructorimpl, KEY_BACK_STACK).toArray(new Bundle[0]) : null;
+        this.backStackToRestore = SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_BACK_STACK) ? (Bundle[]) SavedStateReader.m8474getSavedStateListimpl(m8414constructorimpl, KEY_BACK_STACK).toArray(new Bundle[0]) : null;
         this.backStackStates.clear();
-        if (SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_BACK_STACK_DEST_IDS) && SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_BACK_STACK_IDS)) {
-            int[] m9241getIntArrayimpl = SavedStateReader.m9241getIntArrayimpl(m9209constructorimpl, KEY_BACK_STACK_DEST_IDS);
-            List<String> m9283getStringListimpl = SavedStateReader.m9283getStringListimpl(m9209constructorimpl, KEY_BACK_STACK_IDS);
-            int length = m9241getIntArrayimpl.length;
+        if (SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_BACK_STACK_DEST_IDS) && SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_BACK_STACK_IDS)) {
+            int[] m8446getIntArrayimpl = SavedStateReader.m8446getIntArrayimpl(m8414constructorimpl, KEY_BACK_STACK_DEST_IDS);
+            List<String> m8488getStringListimpl = SavedStateReader.m8488getStringListimpl(m8414constructorimpl, KEY_BACK_STACK_IDS);
+            int length = m8446getIntArrayimpl.length;
             int i2 = 0;
             while (i < length) {
                 int i3 = i2 + 1;
-                this.backStackMap.put(Integer.valueOf(m9241getIntArrayimpl[i]), !Intrinsics.areEqual(m9283getStringListimpl.get(i2), "") ? m9283getStringListimpl.get(i2) : null);
+                this.backStackMap.put(Integer.valueOf(m8446getIntArrayimpl[i]), !Intrinsics.areEqual(m8488getStringListimpl.get(i2), "") ? m8488getStringListimpl.get(i2) : null);
                 i++;
                 i2 = i3;
             }
         }
-        if (SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
-            for (String str : SavedStateReader.m9283getStringListimpl(m9209constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
-                if (SavedStateReader.m9210containsimpl(m9209constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str)) {
-                    List<Bundle> m9269getSavedStateListimpl = SavedStateReader.m9269getSavedStateListimpl(m9209constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str);
+        if (SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
+            for (String str : SavedStateReader.m8488getStringListimpl(m8414constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
+                if (SavedStateReader.m8415containsimpl(m8414constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str)) {
+                    List<Bundle> m8474getSavedStateListimpl = SavedStateReader.m8474getSavedStateListimpl(m8414constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str);
                     Map<String, ArrayDeque<NavBackStackEntryState>> map = this.backStackStates;
-                    ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>(m9269getSavedStateListimpl.size());
-                    for (Bundle bundle2 : m9269getSavedStateListimpl) {
+                    ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>(m8474getSavedStateListimpl.size());
+                    for (Bundle bundle2 : m8474getSavedStateListimpl) {
                         arrayDeque.add(new NavBackStackEntryState(bundle2));
                     }
                     map.put(str, arrayDeque);

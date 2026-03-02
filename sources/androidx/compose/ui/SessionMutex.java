@@ -19,49 +19,49 @@ public final class SessionMutex<T> {
     private final AtomicReference<Session<T>> currentSessionHolder;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SessionMutex m4911boximpl(AtomicReference atomicReference) {
+    public static final /* synthetic */ SessionMutex m4259boximpl(AtomicReference atomicReference) {
         return new SessionMutex(atomicReference);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static <T> AtomicReference<Session<T>> m4913constructorimpl(AtomicReference<Session<T>> atomicReference) {
+    private static <T> AtomicReference<Session<T>> m4261constructorimpl(AtomicReference<Session<T>> atomicReference) {
         return atomicReference;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4914equalsimpl(AtomicReference<Session<T>> atomicReference, Object obj) {
-        return (obj instanceof SessionMutex) && Intrinsics.areEqual(atomicReference, ((SessionMutex) obj).m4920unboximpl());
+    public static boolean m4262equalsimpl(AtomicReference<Session<T>> atomicReference, Object obj) {
+        return (obj instanceof SessionMutex) && Intrinsics.areEqual(atomicReference, ((SessionMutex) obj).m4268unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4915equalsimpl0(AtomicReference<Session<Object>> atomicReference, AtomicReference<Session<Object>> atomicReference2) {
+    public static final boolean m4263equalsimpl0(AtomicReference<Session<Object>> atomicReference, AtomicReference<Session<Object>> atomicReference2) {
         return Intrinsics.areEqual(atomicReference, atomicReference2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4917hashCodeimpl(AtomicReference<Session<T>> atomicReference) {
+    public static int m4265hashCodeimpl(AtomicReference<Session<T>> atomicReference) {
         return atomicReference.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4918toStringimpl(AtomicReference<Session<T>> atomicReference) {
+    public static String m4266toStringimpl(AtomicReference<Session<T>> atomicReference) {
         return "SessionMutex(currentSessionHolder=" + atomicReference + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4914equalsimpl(this.currentSessionHolder, obj);
+        return m4262equalsimpl(this.currentSessionHolder, obj);
     }
 
     public int hashCode() {
-        return m4917hashCodeimpl(this.currentSessionHolder);
+        return m4265hashCodeimpl(this.currentSessionHolder);
     }
 
     public String toString() {
-        return m4918toStringimpl(this.currentSessionHolder);
+        return m4266toStringimpl(this.currentSessionHolder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ AtomicReference m4920unboximpl() {
+    public final /* synthetic */ AtomicReference m4268unboximpl() {
         return this.currentSessionHolder;
     }
 
@@ -70,12 +70,12 @@ public final class SessionMutex<T> {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> AtomicReference<Session<T>> m4912constructorimpl() {
-        return m4913constructorimpl(new AtomicReference(null));
+    public static <T> AtomicReference<Session<T>> m4260constructorimpl() {
+        return m4261constructorimpl(new AtomicReference(null));
     }
 
     /* renamed from: getCurrentSession-impl  reason: not valid java name */
-    public static final T m4916getCurrentSessionimpl(AtomicReference<Session<T>> atomicReference) {
+    public static final T m4264getCurrentSessionimpl(AtomicReference<Session<T>> atomicReference) {
         Session<T> session = atomicReference.get();
         if (session != null) {
             return session.getValue();
@@ -84,7 +84,7 @@ public final class SessionMutex<T> {
     }
 
     /* renamed from: withSessionCancellingPrevious-impl  reason: not valid java name */
-    public static final <R> Object m4919withSessionCancellingPreviousimpl(AtomicReference<Session<T>> atomicReference, Function1<? super CoroutineScope, ? extends T> function1, Function2<? super T, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
+    public static final <R> Object m4267withSessionCancellingPreviousimpl(AtomicReference<Session<T>> atomicReference, Function1<? super CoroutineScope, ? extends T> function1, Function2<? super T, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {
         return CoroutineScopeKt.coroutineScope(new SessionMutex$withSessionCancellingPrevious$2(function1, atomicReference, function2, null), continuation);
     }
 

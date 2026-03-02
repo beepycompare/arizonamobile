@@ -345,7 +345,7 @@ public class MutableSnapshot extends Snapshot {
         }
         super.dispose();
         MutableSnapshot mutableSnapshot = this;
-        mo4865nestedDeactivated$runtime(mutableSnapshot);
+        mo4218nestedDeactivated$runtime(mutableSnapshot);
         SnapshotObserverKt.dispatchObserverOnPreDispose(mutableSnapshot);
     }
 
@@ -408,13 +408,13 @@ public class MutableSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public void mo4864nestedActivated$runtime(Snapshot snapshot) {
+    public void mo4217nestedActivated$runtime(Snapshot snapshot) {
         this.snapshots++;
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
+    public void mo4218nestedDeactivated$runtime(Snapshot snapshot) {
         if (!(this.snapshots > 0)) {
             PreconditionsKt.throwIllegalArgumentException("no pending nested snapshots");
         }
@@ -702,7 +702,7 @@ public class MutableSnapshot extends Snapshot {
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public void mo4866recordModified$runtime(StateObject stateObject) {
+    public void mo4219recordModified$runtime(StateObject stateObject) {
         MutableScatterSet<StateObject> modified$runtime = getModified$runtime();
         if (modified$runtime == null) {
             modified$runtime = ScatterSetKt.mutableScatterSetOf();

@@ -22,18 +22,18 @@ final class DefaultScrollable2DState implements Scrollable2DState {
     private final Scroll2DScope scrollScope = new Scroll2DScope() { // from class: androidx.compose.foundation.gestures.DefaultScrollable2DState$scrollScope$1
         @Override // androidx.compose.foundation.gestures.Scroll2DScope
         /* renamed from: scrollBy-MK-Hz9U  reason: not valid java name */
-        public long mo515scrollByMKHz9U(long j) {
+        public long mo446scrollByMKHz9U(long j) {
             if (Float.isNaN(Float.intBitsToFloat((int) (j >> 32))) || Float.isNaN(Float.intBitsToFloat((int) (4294967295L & j)))) {
-                return Offset.Companion.m5195getZeroF1C5BW0();
+                return Offset.Companion.m4543getZeroF1C5BW0();
             }
-            return DefaultScrollable2DState.this.getOnDelta().invoke(Offset.m5168boximpl(j)).m5189unboximpl();
+            return DefaultScrollable2DState.this.getOnDelta().invoke(Offset.m4516boximpl(j)).m4537unboximpl();
         }
     };
     private final MutatorMutex scrollMutex = new MutatorMutex();
 
     @Override // androidx.compose.foundation.gestures.Scrollable2DState
     /* renamed from: canScroll-k-4lQ0M  reason: not valid java name */
-    public boolean mo513canScrollk4lQ0M(long j) {
+    public boolean mo444canScrollk4lQ0M(long j) {
         return true;
     }
 
@@ -57,8 +57,8 @@ final class DefaultScrollable2DState implements Scrollable2DState {
 
     @Override // androidx.compose.foundation.gestures.Scrollable2DState
     /* renamed from: dispatchRawDelta-MK-Hz9U  reason: not valid java name */
-    public long mo514dispatchRawDeltaMKHz9U(long j) {
-        return this.onDelta.invoke(Offset.m5168boximpl(j)).m5189unboximpl();
+    public long mo445dispatchRawDeltaMKHz9U(long j) {
+        return this.onDelta.invoke(Offset.m4516boximpl(j)).m4537unboximpl();
     }
 
     @Override // androidx.compose.foundation.gestures.Scrollable2DState

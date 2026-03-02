@@ -147,8 +147,10 @@ public final class H264Reader implements ElementaryStreamReader {
         if (!this.hasOutputFormat || this.sampleReader.needsSpsPps()) {
             this.sps.endNalUnit(i2);
             this.pps.endNalUnit(i2);
-            if (!this.hasOutputFormat) {
-                if (this.sps.isCompleted() && this.pps.isCompleted()) {
+            boolean z = this.hasOutputFormat;
+            NalUnitTargetBuffer nalUnitTargetBuffer = this.sps;
+            if (!z) {
+                if (nalUnitTargetBuffer.isCompleted() && this.pps.isCompleted()) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(Arrays.copyOf(this.sps.nalData, this.sps.nalLength));
                     arrayList.add(Arrays.copyOf(this.pps.nalData, this.pps.nalLength));
@@ -162,7 +164,7 @@ public final class H264Reader implements ElementaryStreamReader {
                     this.sps.reset();
                     this.pps.reset();
                 }
-            } else if (this.sps.isCompleted()) {
+            } else if (nalUnitTargetBuffer.isCompleted()) {
                 NalUnitUtil.SpsData parseSpsNalUnit2 = NalUnitUtil.parseSpsNalUnit(this.sps.nalData, 3, this.sps.nalLength);
                 this.seiReader.setReorderingQueueSize(parseSpsNalUnit2.maxNumReorderFrames);
                 this.sampleReader.putSps(parseSpsNalUnit2);

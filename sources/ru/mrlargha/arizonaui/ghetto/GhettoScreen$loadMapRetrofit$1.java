@@ -1,5 +1,6 @@
 package ru.mrlargha.arizonaui.ghetto;
 
+import androidx.media3.extractor.ts.TsExtractor;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -13,12 +14,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
-import okhttp3.internal.ws.WebSocketProtocol;
 import ru.mrlargha.arizonaui.databinding.GhettoMainBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GhettoScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$loadMapRetrofit$1", f = "GhettoScreen.kt", i = {}, l = {WebSocketProtocol.PAYLOAD_SHORT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$loadMapRetrofit$1", f = "GhettoScreen.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {}, nl = {133}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class GhettoScreen$loadMapRetrofit$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -43,25 +43,38 @@ public final class GhettoScreen$loadMapRetrofit$1 extends SuspendLambda implemen
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        List list;
         GhettoMainBinding ghettoMainBinding;
+        List list2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            this.label = 1;
-            obj = BuildersKt.withContext(Dispatchers.getIO(), new GhettoScreen$loadMapRetrofit$1$listFamilies$1(this.this$0, null), this);
-            if (obj == coroutine_suspended) {
-                return coroutine_suspended;
+            list = this.this$0.mapInfo;
+            if (list.isEmpty()) {
+                this.label = 1;
+                obj = BuildersKt.withContext(Dispatchers.getIO(), new GhettoScreen$loadMapRetrofit$1$listFamilies$1(this.this$0, null), this);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
             }
+            ghettoMainBinding = this.this$0.binding;
+            GridOverlayView overlayView = ghettoMainBinding.map.overlayView;
+            Intrinsics.checkNotNullExpressionValue(overlayView, "overlayView");
+            list2 = this.this$0.mapInfo;
+            GridOverlayView.setDataAndTryToDraw$default(overlayView, list2, null, 2, null);
+            return Unit.INSTANCE;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.throwOnFailure(obj);
         }
+        this.this$0.mapInfo = (List) obj;
         ghettoMainBinding = this.this$0.binding;
-        GridOverlayView overlayView = ghettoMainBinding.map.overlayView;
-        Intrinsics.checkNotNullExpressionValue(overlayView, "overlayView");
-        GridOverlayView.setDataAndTryToDraw$default(overlayView, (List) obj, null, 2, null);
+        GridOverlayView overlayView2 = ghettoMainBinding.map.overlayView;
+        Intrinsics.checkNotNullExpressionValue(overlayView2, "overlayView");
+        list2 = this.this$0.mapInfo;
+        GridOverlayView.setDataAndTryToDraw$default(overlayView2, list2, null, 2, null);
         return Unit.INSTANCE;
     }
 }

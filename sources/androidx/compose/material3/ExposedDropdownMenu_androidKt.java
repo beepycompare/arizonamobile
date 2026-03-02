@@ -30,13 +30,13 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000B\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001H\u0001¢\u0006\u0002\u0010\u0002\u001a\u001b\u0010\u0003\u001a\u00020\u00042\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00040\u0006H\u0001¢\u0006\u0002\u0010\u0007\u001a\u001f\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0001¢\u0006\u0004\b\u000e\u0010\u000f\u001a+\u0010\u0010\u001a\u00020\u00042\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00040\u0006H\u0003¢\u0006\u0002\u0010\u0016\u001a\f\u0010\u0017\u001a\u00020\u0018*\u00020\u0012H\u0002¨\u0006\u0019²\u0006\n\u0010\u001a\u001a\u00020\rX\u008a\u0084\u0002"}, d2 = {"platformWindowBoundsCalculator", "Landroidx/compose/material3/WindowBoundsCalculator;", "(Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/WindowBoundsCalculator;", "OnPlatformWindowBoundsChange", "", "block", "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "popupPropertiesForAnchorType", "Landroidx/compose/ui/window/PopupProperties;", "anchorType", "Landroidx/compose/material3/ExposedDropdownMenuAnchorType;", "alwaysFocusable", "", "popupPropertiesForAnchorType-BTG8-q0", "(Ljava/lang/String;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/window/PopupProperties;", "SoftKeyboardListener", "view", "Landroid/view/View;", "density", "Landroidx/compose/ui/unit/Density;", "onKeyboardVisibilityChange", "(Landroid/view/View;Landroidx/compose/ui/unit/Density;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "getWindowBounds", "Landroidx/compose/ui/unit/IntRect;", "material3", "a11yServicesEnabled"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class ExposedDropdownMenu_androidKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit OnPlatformWindowBoundsChange$lambda$1(Function0 function0, int i, Composer composer, int i2) {
         OnPlatformWindowBoundsChange(function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SoftKeyboardListener$lambda$6(View view, Density density, Function0 function0, int i, Composer composer, int i2) {
         SoftKeyboardListener(view, density, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -101,23 +101,21 @@ public final class ExposedDropdownMenu_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenu_androidKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit OnPlatformWindowBoundsChange$lambda$1;
-                    OnPlatformWindowBoundsChange$lambda$1 = ExposedDropdownMenu_androidKt.OnPlatformWindowBoundsChange$lambda$1(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return OnPlatformWindowBoundsChange$lambda$1;
+                    return ExposedDropdownMenu_androidKt.OnPlatformWindowBoundsChange$lambda$1(Function0.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
     /* renamed from: popupPropertiesForAnchorType-BTG8-q0  reason: not valid java name */
-    public static final PopupProperties m2459popupPropertiesForAnchorTypeBTG8q0(String str, boolean z, Composer composer, int i) {
+    public static final PopupProperties m2084popupPropertiesForAnchorTypeBTG8q0(String str, boolean z, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 895018515, "C(popupPropertiesForAnchorType)N(anchorType:c#material3.ExposedDropdownMenuAnchorType,alwaysFocusable)58@2156L35:ExposedDropdownMenu.android.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(895018515, i, -1, "androidx.compose.material3.popupPropertiesForAnchorType (ExposedDropdownMenu.android.kt:57)");
         }
         State<Boolean> rememberAccessibilityServiceState = AccessibilityServiceStateProvider_androidKt.rememberAccessibilityServiceState(false, false, false, composer, 0, 7);
         int i2 = !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState) ? 393248 : 393216;
-        if ((ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2431getPrimaryEditableoYjWRB4()) || (ExposedDropdownMenuAnchorType.m2427equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2433getSecondaryEditableoYjWRB4()) && !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState))) && !z) {
+        if ((ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2061getPrimaryEditableoYjWRB4()) || (ExposedDropdownMenuAnchorType.m2057equalsimpl0(str, ExposedDropdownMenuAnchorType.Companion.m2063getSecondaryEditableoYjWRB4()) && !popupPropertiesForAnchorType_BTG8_q0$lambda$2(rememberAccessibilityServiceState))) && !z) {
             i2 |= 8;
         }
         PopupProperties popupProperties = new PopupProperties(i2, false, false, false, false, false, 62, (DefaultConstructorMarker) null);
@@ -156,9 +154,7 @@ public final class ExposedDropdownMenu_androidKt {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.ExposedDropdownMenu_androidKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult SoftKeyboardListener$lambda$5$lambda$4;
-                        SoftKeyboardListener$lambda$5$lambda$4 = ExposedDropdownMenu_androidKt.SoftKeyboardListener$lambda$5$lambda$4(view, function0, (DisposableEffectScope) obj);
-                        return SoftKeyboardListener$lambda$5$lambda$4;
+                        return ExposedDropdownMenu_androidKt.SoftKeyboardListener$lambda$5$lambda$4(view, function0, (DisposableEffectScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -174,15 +170,13 @@ public final class ExposedDropdownMenu_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ExposedDropdownMenu_androidKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SoftKeyboardListener$lambda$6;
-                    SoftKeyboardListener$lambda$6 = ExposedDropdownMenu_androidKt.SoftKeyboardListener$lambda$6(view, density, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SoftKeyboardListener$lambda$6;
+                    return ExposedDropdownMenu_androidKt.SoftKeyboardListener$lambda$6(view, density, function0, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult SoftKeyboardListener$lambda$5$lambda$4(View view, Function0 function0, DisposableEffectScope disposableEffectScope) {
         final ExposedDropdownMenu_androidKt$SoftKeyboardListener$1$1$listener$1 exposedDropdownMenu_androidKt$SoftKeyboardListener$1$1$listener$1 = new ExposedDropdownMenu_androidKt$SoftKeyboardListener$1$1$listener$1(view, function0);
         return new DisposableEffectResult() { // from class: androidx.compose.material3.ExposedDropdownMenu_androidKt$SoftKeyboardListener$lambda$5$lambda$4$$inlined$onDispose$1

@@ -114,9 +114,9 @@ public final class BitmapFactoryDecoder implements Decoder {
                     Function0 function0 = new Function0() { // from class: coil3.decode.BitmapFactoryDecoder$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            DecodeResult decode$lambda$1$lambda$0;
-                            decode$lambda$1$lambda$0 = BitmapFactoryDecoder.decode$lambda$1$lambda$0(BitmapFactoryDecoder.this);
-                            return decode$lambda$1$lambda$0;
+                            DecodeResult decode;
+                            decode = BitmapFactoryDecoder.this.decode(new BitmapFactory.Options());
+                            return decode;
                         }
                     };
                     bitmapFactoryDecoder$decode$1.L$0 = semaphore;
@@ -137,9 +137,9 @@ public final class BitmapFactoryDecoder implements Decoder {
             Function0 function02 = new Function0() { // from class: coil3.decode.BitmapFactoryDecoder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    DecodeResult decode$lambda$1$lambda$0;
-                    decode$lambda$1$lambda$0 = BitmapFactoryDecoder.decode$lambda$1$lambda$0(BitmapFactoryDecoder.this);
-                    return decode$lambda$1$lambda$0;
+                    DecodeResult decode;
+                    decode = BitmapFactoryDecoder.this.decode(new BitmapFactory.Options());
+                    return decode;
                 }
             };
             bitmapFactoryDecoder$decode$1.L$0 = semaphore;
@@ -165,11 +165,7 @@ public final class BitmapFactoryDecoder implements Decoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DecodeResult decode$lambda$1$lambda$0(BitmapFactoryDecoder bitmapFactoryDecoder) {
-        return bitmapFactoryDecoder.decode(new BitmapFactory.Options());
-    }
-
-    private final DecodeResult decode(BitmapFactory.Options options) {
+    public final DecodeResult decode(BitmapFactory.Options options) {
         ExceptionCatchingSource exceptionCatchingSource = new ExceptionCatchingSource(this.source.source());
         BufferedSource buffer = Okio.buffer(exceptionCatchingSource);
         boolean z = true;
@@ -235,11 +231,11 @@ public final class BitmapFactoryDecoder implements Decoder {
         }
         int i = ExifUtilsKt.isSwapped(exifData) ? options.outHeight : options.outWidth;
         int i2 = ExifUtilsKt.isSwapped(exifData) ? options.outWidth : options.outHeight;
-        long m9432computeDstSizesEdh43o = DecodeUtils.m9432computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
-        int m9490getFirstimpl = IntPair.m9490getFirstimpl(m9432computeDstSizesEdh43o);
-        int m9491getSecondimpl = IntPair.m9491getSecondimpl(m9432computeDstSizesEdh43o);
-        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m9490getFirstimpl, m9491getSecondimpl, this.options.getScale());
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m9490getFirstimpl, m9491getSecondimpl, this.options.getScale());
+        long m8578computeDstSizesEdh43o = DecodeUtils.m8578computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
+        int m8628getFirstimpl = IntPair.m8628getFirstimpl(m8578computeDstSizesEdh43o);
+        int m8629getSecondimpl = IntPair.m8629getSecondimpl(m8578computeDstSizesEdh43o);
+        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m8628getFirstimpl, m8629getSecondimpl, this.options.getScale());
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m8628getFirstimpl, m8629getSecondimpl, this.options.getScale());
         if (this.options.getPrecision() == Precision.INEXACT) {
             computeSizeMultiplier = RangesKt.coerceAtMost(computeSizeMultiplier, 1.0d);
         }

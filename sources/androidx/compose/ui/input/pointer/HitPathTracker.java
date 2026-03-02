@@ -33,15 +33,15 @@ public final class HitPathTracker {
     }
 
     /* renamed from: addHitPath-QJqDSyo$default  reason: not valid java name */
-    public static /* synthetic */ void m6656addHitPathQJqDSyo$default(HitPathTracker hitPathTracker, long j, List list, boolean z, int i, Object obj) {
+    public static /* synthetic */ void m5997addHitPathQJqDSyo$default(HitPathTracker hitPathTracker, long j, List list, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = false;
         }
-        hitPathTracker.m6657addHitPathQJqDSyo(j, list, z);
+        hitPathTracker.m5998addHitPathQJqDSyo(j, list, z);
     }
 
     /* renamed from: addHitPath-QJqDSyo  reason: not valid java name */
-    public final void m6657addHitPathQJqDSyo(long j, List<? extends Modifier.Node> list, boolean z) {
+    public final void m5998addHitPathQJqDSyo(long j, List<? extends Modifier.Node> list, boolean z) {
         Node node;
         Node node2 = this.root;
         int size = list.size();
@@ -171,6 +171,7 @@ public final class HitPathTracker {
     }
 
     public final boolean dispatchChanges(InternalPointerEvent internalPointerEvent, boolean z) {
+        MutableObjectList<Modifier.Node> mutableObjectList;
         if (this.root.buildCache(internalPointerEvent.getChanges(), this.rootCoordinates, internalPointerEvent, z)) {
             boolean z2 = true;
             this.dispatchingEvent = true;
@@ -182,10 +183,16 @@ public final class HitPathTracker {
             if (this.removeSpecificNodesAfterDispatchedEvent) {
                 this.removeSpecificNodesAfterDispatchedEvent = false;
                 int size = this.nodesToRemove.getSize();
-                for (int i = 0; i < size; i++) {
-                    removePointerInputModifierNode(this.nodesToRemove.get(i));
+                int i = 0;
+                while (true) {
+                    mutableObjectList = this.nodesToRemove;
+                    if (i >= size) {
+                        break;
+                    }
+                    removePointerInputModifierNode(mutableObjectList.get(i));
+                    i++;
                 }
-                this.nodesToRemove.clear();
+                mutableObjectList.clear();
             }
             if (this.dispatchCancelAfterDispatchedEvent) {
                 this.dispatchCancelAfterDispatchedEvent = false;

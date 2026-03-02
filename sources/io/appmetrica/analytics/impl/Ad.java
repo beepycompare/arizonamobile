@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public abstract class Ad implements InterfaceC0233eo, InterfaceC0315i2 {
+public abstract class Ad implements InterfaceC0232eo, InterfaceC0314i2 {
 
     /* renamed from: a  reason: collision with root package name */
     public final String f498a;
@@ -18,16 +18,16 @@ public abstract class Ad implements InterfaceC0233eo, InterfaceC0315i2 {
         this.d = j2;
     }
 
-    public final C0259fo a() {
-        C0259fo c0259fo = new C0259fo();
-        c0259fo.b = this.b;
-        c0259fo.f1001a = this.f498a.getBytes();
-        c0259fo.d = new C0311ho();
-        c0259fo.c = new C0285go();
-        return c0259fo;
+    public final C0258fo a() {
+        C0258fo c0258fo = new C0258fo();
+        c0258fo.b = this.b;
+        c0258fo.f1001a = this.f498a.getBytes();
+        c0258fo.d = new C0310ho();
+        c0258fo.c = new C0284go();
+        return c0258fo;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
+    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
     public abstract /* synthetic */ void a(Cdo cdo);
 
     public final J2 b() {
@@ -55,7 +55,7 @@ public abstract class Ad implements InterfaceC0233eo, InterfaceC0315i2 {
         return false;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
+    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
     public final void a(PublicLogger publicLogger) {
         this.e = publicLogger;
     }

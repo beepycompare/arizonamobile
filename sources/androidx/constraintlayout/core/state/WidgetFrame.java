@@ -378,34 +378,42 @@ public class WidgetFrame {
     }
 
     public void setCustomAttribute(String str, int i, float f) {
-        if (this.mCustom.containsKey(str)) {
-            this.mCustom.get(str).setFloatValue(f);
+        boolean containsKey = this.mCustom.containsKey(str);
+        HashMap<String, CustomVariable> hashMap = this.mCustom;
+        if (containsKey) {
+            hashMap.get(str).setFloatValue(f);
         } else {
-            this.mCustom.put(str, new CustomVariable(str, i, f));
+            hashMap.put(str, new CustomVariable(str, i, f));
         }
     }
 
     public void setCustomAttribute(String str, int i, int i2) {
-        if (this.mCustom.containsKey(str)) {
-            this.mCustom.get(str).setIntValue(i2);
+        boolean containsKey = this.mCustom.containsKey(str);
+        HashMap<String, CustomVariable> hashMap = this.mCustom;
+        if (containsKey) {
+            hashMap.get(str).setIntValue(i2);
         } else {
-            this.mCustom.put(str, new CustomVariable(str, i, i2));
+            hashMap.put(str, new CustomVariable(str, i, i2));
         }
     }
 
     public void setCustomAttribute(String str, int i, boolean z) {
-        if (this.mCustom.containsKey(str)) {
-            this.mCustom.get(str).setBooleanValue(z);
+        boolean containsKey = this.mCustom.containsKey(str);
+        HashMap<String, CustomVariable> hashMap = this.mCustom;
+        if (containsKey) {
+            hashMap.get(str).setBooleanValue(z);
         } else {
-            this.mCustom.put(str, new CustomVariable(str, i, z));
+            hashMap.put(str, new CustomVariable(str, i, z));
         }
     }
 
     public void setCustomAttribute(String str, int i, String str2) {
-        if (this.mCustom.containsKey(str)) {
-            this.mCustom.get(str).setStringValue(str2);
+        boolean containsKey = this.mCustom.containsKey(str);
+        HashMap<String, CustomVariable> hashMap = this.mCustom;
+        if (containsKey) {
+            hashMap.get(str).setStringValue(str2);
         } else {
-            this.mCustom.put(str, new CustomVariable(str, i, str2));
+            hashMap.put(str, new CustomVariable(str, i, str2));
         }
     }
 
@@ -607,10 +615,14 @@ public class WidgetFrame {
             String content = value.content();
             if (content.matches("#[0-9a-fA-F]+")) {
                 setCustomAttribute(this.name, TypedValues.Custom.TYPE_COLOR, Integer.parseInt(content.substring(1), 16));
-            } else if (value instanceof CLNumber) {
-                setCustomAttribute(this.name, TypedValues.Custom.TYPE_FLOAT, value.getFloat());
             } else {
-                setCustomAttribute(this.name, TypedValues.Custom.TYPE_STRING, content);
+                boolean z = value instanceof CLNumber;
+                String str = this.name;
+                if (z) {
+                    setCustomAttribute(str, TypedValues.Custom.TYPE_FLOAT, value.getFloat());
+                } else {
+                    setCustomAttribute(str, TypedValues.Custom.TYPE_STRING, content);
+                }
             }
         }
     }

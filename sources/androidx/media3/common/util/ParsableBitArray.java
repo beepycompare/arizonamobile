@@ -215,18 +215,22 @@ public final class ParsableBitArray {
         int i7 = i2 - min;
         bArr[i6] = (byte) (b | ((i >>> i7) << i4));
         int i8 = i6 + 1;
-        while (i7 > 8) {
-            this.data[i8] = (byte) (i >>> (i7 - 8));
-            i7 -= 8;
-            i8++;
+        while (true) {
+            byte[] bArr2 = this.data;
+            if (i7 > 8) {
+                bArr2[i8] = (byte) (i >>> (i7 - 8));
+                i7 -= 8;
+                i8++;
+            } else {
+                int i9 = 8 - i7;
+                byte b2 = (byte) (bArr2[i8] & ((1 << i9) - 1));
+                bArr2[i8] = b2;
+                bArr2[i8] = (byte) (((i & ((1 << i7) - 1)) << i9) | b2);
+                skipBits(i2);
+                assertValidOffset();
+                return;
+            }
         }
-        int i9 = 8 - i7;
-        byte[] bArr2 = this.data;
-        byte b2 = (byte) (bArr2[i8] & ((1 << i9) - 1));
-        bArr2[i8] = b2;
-        bArr2[i8] = (byte) (((i & ((1 << i7) - 1)) << i9) | b2);
-        skipBits(i2);
-        assertValidOffset();
     }
 
     private void assertValidOffset() {

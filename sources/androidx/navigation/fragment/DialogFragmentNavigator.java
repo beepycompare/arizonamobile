@@ -294,7 +294,7 @@ public final class DialogFragmentNavigator extends Navigator<Destination> {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onAttach$lambda$1(DialogFragmentNavigator dialogFragmentNavigator, FragmentManager fragmentManager, Fragment childFragment) {
         Intrinsics.checkNotNullParameter(fragmentManager, "<unused var>");
         Intrinsics.checkNotNullParameter(childFragment, "childFragment");

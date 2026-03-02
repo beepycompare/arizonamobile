@@ -19,8 +19,8 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battlepassWinter2025.data.CommonTaskReward;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassTaskRewardItemBinding;
 /* compiled from: RewardsTasksAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.RewardsTasksAdapter$onBindViewHolder$1$1", f = "RewardsTasksAdapter.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.RewardsTasksAdapter$onBindViewHolder$1$1", f = "RewardsTasksAdapter.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, nl = {39}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class RewardsTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ RodinaBattlePassTaskRewardItemViewHolder $holder;
@@ -64,12 +64,13 @@ final class RewardsTasksAdapter$onBindViewHolder$1$1 extends SuspendLambda imple
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        WinterBattlepassTaskRewardItemBinding winterBattlepassTaskRewardItemBinding = this.$this_apply;
         if (bitmap != null) {
-            ImageView taskInfoRewardItemImage = this.$this_apply.taskInfoRewardItemImage;
+            ImageView taskInfoRewardItemImage = winterBattlepassTaskRewardItemBinding.taskInfoRewardItemImage;
             Intrinsics.checkNotNullExpressionValue(taskInfoRewardItemImage, "taskInfoRewardItemImage");
             UtilsKt.setImage(taskInfoRewardItemImage, bitmap);
         } else {
-            ImageView taskInfoRewardItemImage2 = this.$this_apply.taskInfoRewardItemImage;
+            ImageView taskInfoRewardItemImage2 = winterBattlepassTaskRewardItemBinding.taskInfoRewardItemImage;
             Intrinsics.checkNotNullExpressionValue(taskInfoRewardItemImage2, "taskInfoRewardItemImage");
             Context context = this.$holder.getBinding().getRoot().getContext();
             Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");

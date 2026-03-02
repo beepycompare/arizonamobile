@@ -61,7 +61,7 @@ final class SplitController$splitInfoList$1 extends SuspendLambda implements Fun
             final Consumer<List<SplitInfo>> consumer = new Consumer() { // from class: androidx.window.embedding.SplitController$splitInfoList$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo9174trySendJP2dKIU((List) obj2);
+                    ProducerScope.this.mo8396trySendJP2dKIU((List) obj2);
                 }
             };
             embeddingBackend = this.this$0.embeddingBackend;
@@ -71,9 +71,7 @@ final class SplitController$splitInfoList$1 extends SuspendLambda implements Fun
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.window.embedding.SplitController$splitInfoList$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$1;
-                    invokeSuspend$lambda$1 = SplitController$splitInfoList$1.invokeSuspend$lambda$1(SplitController.this, consumer);
-                    return invokeSuspend$lambda$1;
+                    return SplitController$splitInfoList$1.invokeSuspend$lambda$1(SplitController.this, consumer);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -86,7 +84,7 @@ final class SplitController$splitInfoList$1 extends SuspendLambda implements Fun
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(SplitController splitController, Consumer consumer) {
         EmbeddingBackend embeddingBackend;
         embeddingBackend = splitController.embeddingBackend;

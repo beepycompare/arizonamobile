@@ -14,7 +14,6 @@ import kotlin.jvm.internal.Intrinsics;
 public interface TextForegroundStyle {
     public static final Companion Companion = Companion.$$INSTANCE;
 
-    /* JADX INFO: Access modifiers changed from: private */
     static TextForegroundStyle merge$lambda$1(TextForegroundStyle textForegroundStyle) {
         return textForegroundStyle;
     }
@@ -24,7 +23,7 @@ public interface TextForegroundStyle {
     Brush getBrush();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo8016getColor0d7_KjU();
+    long mo7313getColor0d7_KjU();
 
     default TextForegroundStyle merge(TextForegroundStyle textForegroundStyle) {
         boolean z = textForegroundStyle instanceof BrushStyle;
@@ -32,9 +31,7 @@ public interface TextForegroundStyle {
             return (!z || (this instanceof BrushStyle)) ? (z || !(this instanceof BrushStyle)) ? textForegroundStyle.takeOrElse(new Function0() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    TextForegroundStyle merge$lambda$1;
-                    merge$lambda$1 = TextForegroundStyle.merge$lambda$1(TextForegroundStyle.this);
-                    return merge$lambda$1;
+                    return TextForegroundStyle.merge$lambda$1(TextForegroundStyle.this);
                 }
             }) : this : textForegroundStyle;
         }
@@ -42,16 +39,11 @@ public interface TextForegroundStyle {
         return new BrushStyle(brushStyle.getValue(), TextDrawStyleKt.access$takeOrElse(brushStyle.getAlpha(), new Function0() { // from class: androidx.compose.ui.text.style.TextForegroundStyle$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float merge$lambda$0;
-                merge$lambda$0 = TextForegroundStyle.merge$lambda$0(TextForegroundStyle.this);
-                return Float.valueOf(merge$lambda$0);
+                float alpha;
+                alpha = ((BrushStyle) TextForegroundStyle.this).getAlpha();
+                return Float.valueOf(alpha);
             }
         }));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    static float merge$lambda$0(TextForegroundStyle textForegroundStyle) {
-        return ((BrushStyle) textForegroundStyle).getAlpha();
     }
 
     default TextForegroundStyle takeOrElse(Function0<? extends TextForegroundStyle> function0) {
@@ -80,8 +72,8 @@ public interface TextForegroundStyle {
 
         @Override // androidx.compose.ui.text.style.TextForegroundStyle
         /* renamed from: getColor-0d7_KjU */
-        public long mo8016getColor0d7_KjU() {
-            return Color.Companion.m5460getUnspecified0d7_KjU();
+        public long mo7313getColor0d7_KjU() {
+            return Color.Companion.m4808getUnspecified0d7_KjU();
         }
     }
 
@@ -95,7 +87,7 @@ public interface TextForegroundStyle {
         }
 
         /* renamed from: from-8_81llA  reason: not valid java name */
-        public final TextForegroundStyle m8163from8_81llA(long j) {
+        public final TextForegroundStyle m7460from8_81llA(long j) {
             return j != 16 ? new ColorStyle(j, null) : Unspecified.INSTANCE;
         }
 
@@ -104,7 +96,7 @@ public interface TextForegroundStyle {
                 return Unspecified.INSTANCE;
             }
             if (brush instanceof SolidColor) {
-                return m8163from8_81llA(TextDrawStyleKt.m8162modulateDxMtmZc(((SolidColor) brush).m5782getValue0d7_KjU(), f));
+                return m7460from8_81llA(TextDrawStyleKt.m7459modulateDxMtmZc(((SolidColor) brush).m5128getValue0d7_KjU(), f));
             }
             if (brush instanceof ShaderBrush) {
                 return new BrushStyle((ShaderBrush) brush, f);

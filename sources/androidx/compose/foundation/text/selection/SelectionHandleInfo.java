@@ -19,7 +19,7 @@ public final class SelectionHandleInfo {
     }
 
     /* renamed from: copy-ubNVwUQ$default  reason: not valid java name */
-    public static /* synthetic */ SelectionHandleInfo m1854copyubNVwUQ$default(SelectionHandleInfo selectionHandleInfo, Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z, int i, Object obj) {
+    public static /* synthetic */ SelectionHandleInfo m1604copyubNVwUQ$default(SelectionHandleInfo selectionHandleInfo, Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             handle = selectionHandleInfo.handle;
         }
@@ -32,7 +32,7 @@ public final class SelectionHandleInfo {
         if ((i & 8) != 0) {
             z = selectionHandleInfo.visible;
         }
-        return selectionHandleInfo.m1856copyubNVwUQ(handle, j, selectionHandleAnchor, z);
+        return selectionHandleInfo.m1606copyubNVwUQ(handle, j, selectionHandleAnchor, z);
     }
 
     public final Handle component1() {
@@ -40,7 +40,7 @@ public final class SelectionHandleInfo {
     }
 
     /* renamed from: component2-F1C5BW0  reason: not valid java name */
-    public final long m1855component2F1C5BW0() {
+    public final long m1605component2F1C5BW0() {
         return this.position;
     }
 
@@ -53,7 +53,7 @@ public final class SelectionHandleInfo {
     }
 
     /* renamed from: copy-ubNVwUQ  reason: not valid java name */
-    public final SelectionHandleInfo m1856copyubNVwUQ(Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z) {
+    public final SelectionHandleInfo m1606copyubNVwUQ(Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z) {
         return new SelectionHandleInfo(handle, j, selectionHandleAnchor, z, null);
     }
 
@@ -63,17 +63,17 @@ public final class SelectionHandleInfo {
         }
         if (obj instanceof SelectionHandleInfo) {
             SelectionHandleInfo selectionHandleInfo = (SelectionHandleInfo) obj;
-            return this.handle == selectionHandleInfo.handle && Offset.m5176equalsimpl0(this.position, selectionHandleInfo.position) && this.anchor == selectionHandleInfo.anchor && this.visible == selectionHandleInfo.visible;
+            return this.handle == selectionHandleInfo.handle && Offset.m4524equalsimpl0(this.position, selectionHandleInfo.position) && this.anchor == selectionHandleInfo.anchor && this.visible == selectionHandleInfo.visible;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.handle.hashCode() * 31) + Offset.m5181hashCodeimpl(this.position)) * 31) + this.anchor.hashCode()) * 31) + Boolean.hashCode(this.visible);
+        return (((((this.handle.hashCode() * 31) + Offset.m4529hashCodeimpl(this.position)) * 31) + this.anchor.hashCode()) * 31) + Boolean.hashCode(this.visible);
     }
 
     public String toString() {
-        return "SelectionHandleInfo(handle=" + this.handle + ", position=" + ((Object) Offset.m5187toStringimpl(this.position)) + ", anchor=" + this.anchor + ", visible=" + this.visible + ')';
+        return "SelectionHandleInfo(handle=" + this.handle + ", position=" + ((Object) Offset.m4535toStringimpl(this.position)) + ", anchor=" + this.anchor + ", visible=" + this.visible + ')';
     }
 
     private SelectionHandleInfo(Handle handle, long j, SelectionHandleAnchor selectionHandleAnchor, boolean z) {
@@ -88,7 +88,7 @@ public final class SelectionHandleInfo {
     }
 
     /* renamed from: getPosition-F1C5BW0  reason: not valid java name */
-    public final long m1857getPositionF1C5BW0() {
+    public final long m1607getPositionF1C5BW0() {
         return this.position;
     }
 

@@ -25,11 +25,11 @@ public final class AndroidWindowSizeClass_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume = composer.consume(CompositionLocalsKt.getLocalDensity());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        WindowSizeClass m4571calculateFromSizeqzXmJYc$default = WindowSizeClass.Companion.m4571calculateFromSizeqzXmJYc$default(WindowSizeClass.Companion, ((Density) consume).mo462toDpSizekrfVVM(RectHelper_androidKt.toComposeRect(WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(activity).getBounds()).m5212getSizeNHjbRc()), null, null, 6, null);
+        WindowSizeClass m3955calculateFromSizeqzXmJYc$default = WindowSizeClass.Companion.m3955calculateFromSizeqzXmJYc$default(WindowSizeClass.Companion, ((Density) consume).mo403toDpSizekrfVVM(RectHelper_androidKt.toComposeRect(WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(activity).getBounds()).m4560getSizeNHjbRc()), null, null, 6, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m4571calculateFromSizeqzXmJYc$default;
+        return m3955calculateFromSizeqzXmJYc$default;
     }
 }

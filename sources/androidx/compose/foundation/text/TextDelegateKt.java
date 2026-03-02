@@ -18,12 +18,12 @@ public final class TextDelegateKt {
     }
 
     /* renamed from: updateTextDelegate-rm0N8CA$default */
-    public static /* synthetic */ TextDelegate m1426updateTextDelegaterm0N8CA$default(TextDelegate textDelegate, AnnotatedString annotatedString, TextStyle textStyle, Density density, FontFamily.Resolver resolver, boolean z, int i, int i2, int i3, List list, int i4, Object obj) {
+    public static /* synthetic */ TextDelegate m1252updateTextDelegaterm0N8CA$default(TextDelegate textDelegate, AnnotatedString annotatedString, TextStyle textStyle, Density density, FontFamily.Resolver resolver, boolean z, int i, int i2, int i3, List list, int i4, Object obj) {
         if ((i4 & 32) != 0) {
             z = true;
         }
         if ((i4 & 64) != 0) {
-            i = TextOverflow.Companion.m8193getClipgIe3tQ8();
+            i = TextOverflow.Companion.m7490getClipgIe3tQ8();
         }
         if ((i4 & 128) != 0) {
             i2 = Integer.MAX_VALUE;
@@ -31,11 +31,11 @@ public final class TextDelegateKt {
         if ((i4 & 256) != 0) {
             i3 = 1;
         }
-        return m1425updateTextDelegaterm0N8CA(textDelegate, annotatedString, textStyle, density, resolver, z, i, i2, i3, list);
+        return m1251updateTextDelegaterm0N8CA(textDelegate, annotatedString, textStyle, density, resolver, z, i, i2, i3, list);
     }
 
     /* renamed from: updateTextDelegate-rm0N8CA */
-    public static final TextDelegate m1425updateTextDelegaterm0N8CA(TextDelegate textDelegate, AnnotatedString annotatedString, TextStyle textStyle, Density density, FontFamily.Resolver resolver, boolean z, int i, int i2, int i3, List<AnnotatedString.Range<Placeholder>> list) {
+    public static final TextDelegate m1251updateTextDelegaterm0N8CA(TextDelegate textDelegate, AnnotatedString annotatedString, TextStyle textStyle, Density density, FontFamily.Resolver resolver, boolean z, int i, int i2, int i3, List<AnnotatedString.Range<Placeholder>> list) {
         FontFamily.Resolver resolver2;
         boolean z2;
         int i4;
@@ -46,7 +46,7 @@ public final class TextDelegateKt {
             z2 = z;
             if (textDelegate.getSoftWrap() == z2) {
                 i4 = i;
-                if (TextOverflow.m8184equalsimpl0(textDelegate.m1423getOverflowgIe3tQ8(), i4)) {
+                if (TextOverflow.m7481equalsimpl0(textDelegate.m1249getOverflowgIe3tQ8(), i4)) {
                     i5 = i2;
                     if (textDelegate.getMaxLines() == i5) {
                         i6 = i3;

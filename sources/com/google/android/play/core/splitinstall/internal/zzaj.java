@@ -21,10 +21,12 @@ final class zzaj implements Runnable {
         zzam zzamVar;
         try {
             zzamVar = this.zzc.zzc;
-            if (zzamVar.zzb(this.zza)) {
-                zzak.zzc(this.zzc, this.zzb);
+            boolean zzb = zzamVar.zzb(this.zza);
+            zzak zzakVar = this.zzc;
+            if (zzb) {
+                zzak.zzc(zzakVar, this.zzb);
             } else {
-                zzak.zzb(this.zzc, this.zza, this.zzb);
+                zzak.zzb(zzakVar, this.zza, this.zzb);
             }
         } catch (Exception e) {
             Log.e("SplitCompat", "Error checking verified files.", e);

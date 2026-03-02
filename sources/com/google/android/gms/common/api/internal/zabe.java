@@ -188,24 +188,17 @@ public final class zabe extends GoogleApiClient implements zabz {
     @Override // com.google.android.gms.common.api.GoogleApiClient
     @ResultIgnorabilityUnspecified
     public final ConnectionResult blockingConnect() {
-        boolean z = true;
         Preconditions.checkState(Looper.myLooper() != Looper.getMainLooper(), "blockingConnect must not be called on the UI thread");
         this.zaj.lock();
         try {
-            if (this.zam >= 0) {
-                if (this.zaw == null) {
-                    z = false;
-                }
-                Preconditions.checkState(z, "Sign-in mode should have been set explicitly by auto-manage.");
-            } else {
-                Integer num = this.zaw;
-                if (num != null) {
-                    if (num.intValue() == 2) {
-                        throw new IllegalStateException("Cannot call blockingConnect() when sign-in mode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
-                    }
-                } else {
-                    this.zaw = Integer.valueOf(zad(this.zac.values(), false));
-                }
+            int i = this.zam;
+            Integer num = this.zaw;
+            if (i >= 0) {
+                Preconditions.checkState(num != null, "Sign-in mode should have been set explicitly by auto-manage.");
+            } else if (num == null) {
+                this.zaw = Integer.valueOf(zad(this.zac.values(), false));
+            } else if (num.intValue() == 2) {
+                throw new IllegalStateException("Cannot call blockingConnect() when sign-in mode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
             }
             zal(((Integer) Preconditions.checkNotNull(this.zaw)).intValue());
             this.zak.zab();
@@ -247,34 +240,31 @@ public final class zabe extends GoogleApiClient implements zabz {
     public final void connect() {
         this.zaj.lock();
         try {
-            int i = 2;
+            int i = this.zam;
+            Integer num = this.zaw;
+            int i2 = 2;
             boolean z = false;
-            if (this.zam >= 0) {
-                Preconditions.checkState(this.zaw != null, "Sign-in mode should have been set explicitly by auto-manage.");
-            } else {
-                Integer num = this.zaw;
-                if (num != null) {
-                    if (num.intValue() == 2) {
-                        throw new IllegalStateException("Cannot call connect() when SignInMode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
-                    }
-                } else {
-                    this.zaw = Integer.valueOf(zad(this.zac.values(), false));
-                }
+            if (i >= 0) {
+                Preconditions.checkState(num != null, "Sign-in mode should have been set explicitly by auto-manage.");
+            } else if (num == null) {
+                this.zaw = Integer.valueOf(zad(this.zac.values(), false));
+            } else if (num.intValue() == 2) {
+                throw new IllegalStateException("Cannot call connect() when SignInMode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
             }
             int intValue = ((Integer) Preconditions.checkNotNull(this.zaw)).intValue();
             this.zaj.lock();
             if (intValue == 3 || intValue == 1) {
-                i = intValue;
+                i2 = intValue;
             } else if (intValue != 2) {
-                i = intValue;
-                Preconditions.checkArgument(z, "Illegal sign-in mode: " + i);
-                zal(i);
+                i2 = intValue;
+                Preconditions.checkArgument(z, "Illegal sign-in mode: " + i2);
+                zal(i2);
                 zan();
                 this.zaj.unlock();
             }
             z = true;
-            Preconditions.checkArgument(z, "Illegal sign-in mode: " + i);
-            zal(i);
+            Preconditions.checkArgument(z, "Illegal sign-in mode: " + i2);
+            zal(i2);
             zan();
             this.zaj.unlock();
         } finally {

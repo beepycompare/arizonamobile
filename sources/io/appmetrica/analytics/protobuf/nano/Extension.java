@@ -455,15 +455,19 @@ public class Extension<M extends ExtendableMessageNano<M>, T> {
     }
 
     protected Object readData(CodedInputByteBufferNano codedInputByteBufferNano) {
-        Class componentType = this.repeated ? this.clazz.getComponentType() : this.clazz;
+        boolean z = this.repeated;
+        Class cls = this.clazz;
+        if (z) {
+            cls = cls.getComponentType();
+        }
         try {
             int i = this.type;
             if (i == 10) {
-                MessageNano messageNano = (MessageNano) componentType.newInstance();
+                MessageNano messageNano = (MessageNano) cls.newInstance();
                 codedInputByteBufferNano.readGroup(messageNano, WireFormatNano.getTagFieldNumber(this.tag));
                 return messageNano;
             } else if (i == 11) {
-                MessageNano messageNano2 = (MessageNano) componentType.newInstance();
+                MessageNano messageNano2 = (MessageNano) cls.newInstance();
                 codedInputByteBufferNano.readMessage(messageNano2);
                 return messageNano2;
             } else {
@@ -472,9 +476,9 @@ public class Extension<M extends ExtendableMessageNano<M>, T> {
         } catch (IOException e) {
             throw new IllegalArgumentException("Error reading extension field", e);
         } catch (IllegalAccessException e2) {
-            throw new IllegalArgumentException("Error creating instance of class " + componentType, e2);
+            throw new IllegalArgumentException("Error creating instance of class " + cls, e2);
         } catch (InstantiationException e3) {
-            throw new IllegalArgumentException("Error creating instance of class " + componentType, e3);
+            throw new IllegalArgumentException("Error creating instance of class " + cls, e3);
         }
     }
 

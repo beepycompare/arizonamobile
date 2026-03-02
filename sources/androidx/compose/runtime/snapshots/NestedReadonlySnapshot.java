@@ -49,7 +49,7 @@ public final class NestedReadonlySnapshot extends Snapshot {
         super(j, snapshotIdSet, (DefaultConstructorMarker) null);
         this.readObserver = function1;
         this.parent = snapshot;
-        snapshot.mo4864nestedActivated$runtime(this);
+        snapshot.mo4217nestedActivated$runtime(this);
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
@@ -103,28 +103,28 @@ public final class NestedReadonlySnapshot extends Snapshot {
             closeAndReleasePinning$runtime();
         }
         NestedReadonlySnapshot nestedReadonlySnapshot = this;
-        this.parent.mo4865nestedDeactivated$runtime(nestedReadonlySnapshot);
+        this.parent.mo4218nestedDeactivated$runtime(nestedReadonlySnapshot);
         super.dispose();
         SnapshotObserverKt.dispatchObserverOnPreDispose(nestedReadonlySnapshot);
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: recordModified$runtime */
-    public Void mo4866recordModified$runtime(StateObject stateObject) {
+    public Void mo4219recordModified$runtime(StateObject stateObject) {
         SnapshotKt.reportReadonlySnapshotWrite();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedDeactivated$runtime */
-    public Void mo4865nestedDeactivated$runtime(Snapshot snapshot) {
+    public Void mo4218nestedDeactivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }
 
     @Override // androidx.compose.runtime.snapshots.Snapshot
     /* renamed from: nestedActivated$runtime */
-    public Void mo4864nestedActivated$runtime(Snapshot snapshot) {
+    public Void mo4217nestedActivated$runtime(Snapshot snapshot) {
         SnapshotStateMapKt.unsupported();
         throw new KotlinNothingValueException();
     }

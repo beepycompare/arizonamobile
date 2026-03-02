@@ -119,8 +119,9 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
 
     @Override // androidx.dynamicanimation.animation.DynamicAnimation
     boolean updateValueAndVelocity(long j) {
-        if (this.mEndRequested) {
-            float f = this.mPendingPosition;
+        boolean z = this.mEndRequested;
+        float f = this.mPendingPosition;
+        if (z) {
             if (f != Float.MAX_VALUE) {
                 this.mSpring.setFinalPosition(f);
                 this.mPendingPosition = Float.MAX_VALUE;
@@ -130,16 +131,18 @@ public final class SpringAnimation extends DynamicAnimation<SpringAnimation> {
             this.mEndRequested = false;
             return true;
         }
-        if (this.mPendingPosition != Float.MAX_VALUE) {
+        int i = (f > Float.MAX_VALUE ? 1 : (f == Float.MAX_VALUE ? 0 : -1));
+        SpringForce springForce = this.mSpring;
+        if (i != 0) {
             long j2 = j / 2;
-            DynamicAnimation.MassState updateValues = this.mSpring.updateValues(this.mValue, this.mVelocity, j2);
+            DynamicAnimation.MassState updateValues = springForce.updateValues(this.mValue, this.mVelocity, j2);
             this.mSpring.setFinalPosition(this.mPendingPosition);
             this.mPendingPosition = Float.MAX_VALUE;
             DynamicAnimation.MassState updateValues2 = this.mSpring.updateValues(updateValues.mValue, updateValues.mVelocity, j2);
             this.mValue = updateValues2.mValue;
             this.mVelocity = updateValues2.mVelocity;
         } else {
-            DynamicAnimation.MassState updateValues3 = this.mSpring.updateValues(this.mValue, this.mVelocity, j);
+            DynamicAnimation.MassState updateValues3 = springForce.updateValues(this.mValue, this.mVelocity, j);
             this.mValue = updateValues3.mValue;
             this.mVelocity = updateValues3.mVelocity;
         }

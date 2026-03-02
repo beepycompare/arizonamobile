@@ -62,7 +62,7 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
         int i2;
         State animatedOpacity;
         State animatedScale;
-        Modifier m5588graphicsLayerAp8cVGQ;
+        Modifier m4934graphicsLayerAp8cVGQ;
         ComposerKt.sourceInformation(composer, "CN(children)342@13530L7,344@13628L313,341@13443L521,355@14190L7,353@14013L252,364@14543L374,358@14282L704:SnackbarHost.kt#uh7d8r");
         if ((i & 6) == 0) {
             i2 = i | (composer.changedInstance(function2) ? 4 : 2);
@@ -87,9 +87,7 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
             rememberedValue = new Function0() { // from class: androidx.compose.material3.SnackbarHostKt$FadeInFadeOutWithScale$1$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$2$lambda$1;
-                    invoke$lambda$2$lambda$1 = SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$2$lambda$1(SnackbarData.this, fadeInFadeOutState);
-                    return invoke$lambda$2$lambda$1;
+                    return SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$2$lambda$1(SnackbarData.this, fadeInFadeOutState);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -97,7 +95,7 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
         ComposerKt.sourceInformationMarkerEnd(composer);
         animatedOpacity = SnackbarHostKt.animatedOpacity(value, areEqual, (Function0) rememberedValue, composer, 0, 0);
         animatedScale = SnackbarHostKt.animatedScale(MotionSchemeKt.value(MotionSchemeKeyTokens.FastSpatial, composer, 6), areEqual, composer, 0);
-        m5588graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m5588graphicsLayerAp8cVGQ(Modifier.Companion, (r41 & 1) != 0 ? 1.0f : ((Number) animatedScale.getValue()).floatValue(), (r41 & 2) != 0 ? 1.0f : ((Number) animatedScale.getValue()).floatValue(), (r41 & 4) == 0 ? ((Number) animatedOpacity.getValue()).floatValue() : 1.0f, (r41 & 8) != 0 ? 0.0f : 0.0f, (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5839getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : null, (r41 & 4096) != 0 ? false : false, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m5515getAutoNrFUSI() : 0);
+        m4934graphicsLayerAp8cVGQ = GraphicsLayerModifierKt.m4934graphicsLayerAp8cVGQ(Modifier.Companion, (r41 & 1) != 0 ? 1.0f : ((Number) animatedScale.getValue()).floatValue(), (r41 & 2) != 0 ? 1.0f : ((Number) animatedScale.getValue()).floatValue(), (r41 & 4) == 0 ? ((Number) animatedOpacity.getValue()).floatValue() : 1.0f, (r41 & 8) != 0 ? 0.0f : 0.0f, (r41 & 16) != 0 ? 0.0f : 0.0f, (r41 & 32) != 0 ? 0.0f : 0.0f, (r41 & 64) != 0 ? 0.0f : 0.0f, (r41 & 128) != 0 ? 0.0f : 0.0f, (r41 & 256) == 0 ? 0.0f : 0.0f, (r41 & 512) != 0 ? 8.0f : 0.0f, (r41 & 1024) != 0 ? TransformOrigin.Companion.m5185getCenterSzJe1aQ() : 0L, (r41 & 2048) != 0 ? RectangleShapeKt.getRectangleShape() : null, (r41 & 4096) != 0 ? false : false, (r41 & 8192) != 0 ? null : null, (r41 & 16384) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (32768 & r41) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : 0L, (r41 & 65536) != 0 ? CompositingStrategy.Companion.m4861getAutoNrFUSI() : 0);
         ComposerKt.sourceInformationMarkerStart(composer, 643576561, "CC(remember):SnackbarHost.kt#9igjgp");
         boolean changed2 = composer.changed(areEqual) | composer.changed(this.$key) | composer.changed(this.$a11yPaneTitle);
         final String str = this.$a11yPaneTitle;
@@ -107,15 +105,13 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.SnackbarHostKt$FadeInFadeOutWithScale$1$1$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$5$lambda$4;
-                    invoke$lambda$5$lambda$4 = SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$5$lambda$4(areEqual, str, snackbarData2, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$5$lambda$4;
+                    return SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$5$lambda$4(areEqual, str, snackbarData2, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics$default = SemanticsModifierKt.semantics$default(m5588graphicsLayerAp8cVGQ, false, (Function1) rememberedValue2, 1, null);
+        Modifier semantics$default = SemanticsModifierKt.semantics$default(m4934graphicsLayerAp8cVGQ, false, (Function1) rememberedValue2, 1, null);
         ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
         ComposerKt.sourceInformationMarkerStart(composer, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
@@ -133,15 +129,15 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, -2093234184, "C375@14958L10:SnackbarHost.kt#uh7d8r");
@@ -157,15 +153,15 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$2$lambda$1(final SnackbarData snackbarData, FadeInFadeOutState fadeInFadeOutState) {
         if (!Intrinsics.areEqual(snackbarData, fadeInFadeOutState.getCurrent())) {
             CollectionsKt.removeAll(fadeInFadeOutState.getItems(), new Function1() { // from class: androidx.compose.material3.SnackbarHostKt$FadeInFadeOutWithScale$1$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean invoke$lambda$2$lambda$1$lambda$0;
-                    invoke$lambda$2$lambda$1$lambda$0 = SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$2$lambda$1$lambda$0(SnackbarData.this, (FadeInFadeOutAnimationItem) obj);
-                    return Boolean.valueOf(invoke$lambda$2$lambda$1$lambda$0);
+                    boolean areEqual;
+                    areEqual = Intrinsics.areEqual(((FadeInFadeOutAnimationItem) obj).getKey(), SnackbarData.this);
+                    return Boolean.valueOf(areEqual);
                 }
             });
             RecomposeScope scope = fadeInFadeOutState.getScope();
@@ -176,29 +172,22 @@ public final class SnackbarHostKt$FadeInFadeOutWithScale$1$1 implements Function
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean invoke$lambda$2$lambda$1$lambda$0(SnackbarData snackbarData, FadeInFadeOutAnimationItem fadeInFadeOutAnimationItem) {
-        return Intrinsics.areEqual(fadeInFadeOutAnimationItem.getKey(), snackbarData);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$5$lambda$4(boolean z, String str, final SnackbarData snackbarData, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         if (z) {
-            SemanticsPropertiesKt.m7460setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m7434getPolite0phEisY());
+            SemanticsPropertiesKt.m6792setLiveRegionhR3wRGc(semanticsPropertyReceiver, LiveRegionMode.Companion.m6766getPolite0phEisY());
         }
         SemanticsPropertiesKt.dismiss$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.SnackbarHostKt$FadeInFadeOutWithScale$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean invoke$lambda$5$lambda$4$lambda$3;
-                invoke$lambda$5$lambda$4$lambda$3 = SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$5$lambda$4$lambda$3(SnackbarData.this);
-                return Boolean.valueOf(invoke$lambda$5$lambda$4$lambda$3);
+                return Boolean.valueOf(SnackbarHostKt$FadeInFadeOutWithScale$1$1.invoke$lambda$5$lambda$4$lambda$3(SnackbarData.this));
             }
         }, 1, null);
         SemanticsPropertiesKt.setPaneTitle(semanticsPropertyReceiver, str);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$5$lambda$4$lambda$3(SnackbarData snackbarData) {
         snackbarData.dismiss();
         return true;

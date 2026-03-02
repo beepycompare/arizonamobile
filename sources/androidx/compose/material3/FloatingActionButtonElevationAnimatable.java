@@ -39,16 +39,16 @@ public final class FloatingActionButtonElevationAnimatable {
         this.pressedElevation = f2;
         this.hoveredElevation = f3;
         this.focusedElevation = f4;
-        this.animatable = new Animatable<>(Dp.m8256boximpl(this.defaultElevation), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
+        this.animatable = new Animatable<>(Dp.m7553boximpl(this.defaultElevation), VectorConvertersKt.getVectorConverter(Dp.Companion), null, null, 12, null);
     }
 
     /* renamed from: calculateTarget-u2uoSUM  reason: not valid java name */
-    private final float m2484calculateTargetu2uoSUM(Interaction interaction) {
+    private final float m2109calculateTargetu2uoSUM(Interaction interaction) {
         return interaction instanceof PressInteraction.Press ? this.pressedElevation : interaction instanceof HoverInteraction.Enter ? this.hoveredElevation : interaction instanceof FocusInteraction.Focus ? this.focusedElevation : this.defaultElevation;
     }
 
     /* renamed from: updateElevation-lDy3nrA  reason: not valid java name */
-    public final Object m2485updateElevationlDy3nrA(float f, float f2, float f3, float f4, Continuation<? super Unit> continuation) {
+    public final Object m2110updateElevationlDy3nrA(float f, float f2, float f3, float f4, Continuation<? super Unit> continuation) {
         this.defaultElevation = f;
         this.pressedElevation = f2;
         this.hoveredElevation = f3;
@@ -76,12 +76,12 @@ public final class FloatingActionButtonElevationAnimatable {
                     i = floatingActionButtonElevationAnimatable$snapElevation$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        float m2484calculateTargetu2uoSUM = m2484calculateTargetu2uoSUM(this.targetInteraction);
-                        if (!Dp.m8263equalsimpl0(this.animatable.getTargetValue().m8272unboximpl(), m2484calculateTargetu2uoSUM)) {
+                        float m2109calculateTargetu2uoSUM = m2109calculateTargetu2uoSUM(this.targetInteraction);
+                        if (!Dp.m7560equalsimpl0(this.animatable.getTargetValue().m7569unboximpl(), m2109calculateTargetu2uoSUM)) {
                             Animatable<Dp, AnimationVector1D> animatable = this.animatable;
-                            Dp m8256boximpl = Dp.m8256boximpl(m2484calculateTargetu2uoSUM);
+                            Dp m7553boximpl = Dp.m7553boximpl(m2109calculateTargetu2uoSUM);
                             floatingActionButtonElevationAnimatable$snapElevation$1.label = 1;
-                            if (animatable.snapTo(m8256boximpl, floatingActionButtonElevationAnimatable$snapElevation$1) == coroutine_suspended) {
+                            if (animatable.snapTo(m7553boximpl, floatingActionButtonElevationAnimatable$snapElevation$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
@@ -129,17 +129,17 @@ public final class FloatingActionButtonElevationAnimatable {
                     i = floatingActionButtonElevationAnimatable$animateElevation$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        float m2484calculateTargetu2uoSUM = m2484calculateTargetu2uoSUM(interaction);
+                        float m2109calculateTargetu2uoSUM = m2109calculateTargetu2uoSUM(interaction);
                         this.targetInteraction = interaction;
                         interaction2 = interaction;
-                        if (!Dp.m8263equalsimpl0(this.animatable.getTargetValue().m8272unboximpl(), m2484calculateTargetu2uoSUM)) {
+                        if (!Dp.m7560equalsimpl0(this.animatable.getTargetValue().m7569unboximpl(), m2109calculateTargetu2uoSUM)) {
                             Animatable<Dp, AnimationVector1D> animatable = this.animatable;
                             Interaction interaction3 = this.lastTargetInteraction;
                             floatingActionButtonElevationAnimatable$animateElevation$1.L$0 = interaction;
                             floatingActionButtonElevationAnimatable$animateElevation$1.label = 1;
-                            Object m3612animateElevationrAjV9yQ = ElevationKt.m3612animateElevationrAjV9yQ(animatable, m2484calculateTargetu2uoSUM, interaction3, interaction, floatingActionButtonElevationAnimatable$animateElevation$1);
+                            Object m3003animateElevationrAjV9yQ = ElevationKt.m3003animateElevationrAjV9yQ(animatable, m2109calculateTargetu2uoSUM, interaction3, interaction, floatingActionButtonElevationAnimatable$animateElevation$1);
                             interaction2 = interaction;
-                            if (m3612animateElevationrAjV9yQ == coroutine_suspended) {
+                            if (m3003animateElevationrAjV9yQ == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }

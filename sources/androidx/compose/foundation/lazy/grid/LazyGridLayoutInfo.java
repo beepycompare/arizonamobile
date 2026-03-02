@@ -24,7 +24,7 @@ public interface LazyGridLayoutInfo {
     int getViewportEndOffset();
 
     /* renamed from: getViewportSize-YbymL2g  reason: not valid java name */
-    long mo1087getViewportSizeYbymL2g();
+    long mo956getViewportSizeYbymL2g();
 
     int getViewportStartOffset();
 

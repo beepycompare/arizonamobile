@@ -25,7 +25,7 @@ import java.util.function.BiConsumer;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AudioTrackAudioOutputProvider implements AudioOutputProvider {
     private static final String TAG = "ATAudioOutputProvider";
     public static boolean failOnSpuriousAudioTimestamp = false;
@@ -42,7 +42,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
     private ListenerSet<AudioOutputProvider.Listener> listeners;
     private Looper playbackLooper;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private AudioCapabilities audioCapabilities;
         private DefaultAudioSink.AudioOffloadSupportProvider audioOffloadSupportProvider;
@@ -344,10 +344,16 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
         Format format = formatConfig.format;
         if (!Objects.equals(format.sampleMimeType, MimeTypes.AUDIO_RAW)) {
             return this.audioCapabilities.isPassthroughPlaybackSupported(format, formatConfig.audioAttributes) ? 2 : 0;
-        } else if (Util.isEncodingLinearPcm(format.pcmEncoding)) {
-            return (format.pcmEncoding == 2 || (formatConfig.enableHighResolutionPcmOutput && format.pcmEncoding == 4)) ? 2 : 1;
+        } else if (format.pcmEncoding == 2) {
+            return 2;
         } else {
-            Log.w(TAG, "Invalid PCM encoding: " + format.pcmEncoding);
+            if (formatConfig.enableHighResolutionPcmOutput) {
+                if (Util.isEncodingLinearPcm(format.pcmEncoding)) {
+                    return Build.VERSION.SDK_INT < Util.getApiLevelThatAudioFormatIntroducedAudioEncoding(format.pcmEncoding) ? 0 : 2;
+                }
+                Log.w(TAG, "Invalid PCM encoding: " + format.pcmEncoding);
+                return 0;
+            }
             return 0;
         }
     }
@@ -361,7 +367,7 @@ public final class AudioTrackAudioOutputProvider implements AudioOutputProvider 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public final class CapabilityChangeListener implements AudioTrackAudioOutput.CapabilityChangeListener {
         private CapabilityChangeListener() {
         }

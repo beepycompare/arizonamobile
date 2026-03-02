@@ -4,34 +4,34 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int employment_center_bg1 = 0x7f080730;
-        public static int employment_center_bg2 = 0x7f080731;
-        public static int employment_center_bus = 0x7f080732;
-        public static int employment_center_cash_collector = 0x7f080733;
-        public static int employment_center_farmer = 0x7f080734;
-        public static int employment_center_fish = 0x7f080735;
-        public static int employment_center_food = 0x7f080736;
-        public static int employment_center_forklift = 0x7f080737;
-        public static int employment_center_garbage = 0x7f080738;
-        public static int employment_center_hauler = 0x7f080739;
-        public static int employment_center_hotdog = 0x7f08073a;
-        public static int employment_center_lifeguard = 0x7f08073b;
-        public static int employment_center_main_bg = 0x7f08073c;
-        public static int employment_center_mechanic = 0x7f08073d;
-        public static int employment_center_movers = 0x7f08073e;
-        public static int employment_center_offshore = 0x7f08073f;
-        public static int employment_center_oil = 0x7f080740;
-        public static int employment_center_parking = 0x7f080741;
-        public static int employment_center_pilot = 0x7f080742;
-        public static int employment_center_pizza = 0x7f080743;
-        public static int employment_center_plant = 0x7f080744;
-        public static int employment_center_postman = 0x7f080745;
-        public static int employment_center_road = 0x7f080746;
-        public static int employment_center_taxi = 0x7f080747;
-        public static int employment_center_timer = 0x7f080748;
-        public static int employment_center_train = 0x7f080749;
-        public static int employment_center_tram = 0x7f08074a;
-        public static int employment_center_truck = 0x7f08074b;
+        public static int employment_center_bg1 = 0x7f08072f;
+        public static int employment_center_bg2 = 0x7f080730;
+        public static int employment_center_bus = 0x7f080731;
+        public static int employment_center_cash_collector = 0x7f080732;
+        public static int employment_center_farmer = 0x7f080733;
+        public static int employment_center_fish = 0x7f080734;
+        public static int employment_center_food = 0x7f080735;
+        public static int employment_center_forklift = 0x7f080736;
+        public static int employment_center_garbage = 0x7f080737;
+        public static int employment_center_hauler = 0x7f080738;
+        public static int employment_center_hotdog = 0x7f080739;
+        public static int employment_center_lifeguard = 0x7f08073a;
+        public static int employment_center_main_bg = 0x7f08073b;
+        public static int employment_center_mechanic = 0x7f08073c;
+        public static int employment_center_movers = 0x7f08073d;
+        public static int employment_center_offshore = 0x7f08073e;
+        public static int employment_center_oil = 0x7f08073f;
+        public static int employment_center_parking = 0x7f080740;
+        public static int employment_center_pilot = 0x7f080741;
+        public static int employment_center_pizza = 0x7f080742;
+        public static int employment_center_plant = 0x7f080743;
+        public static int employment_center_postman = 0x7f080744;
+        public static int employment_center_road = 0x7f080745;
+        public static int employment_center_taxi = 0x7f080746;
+        public static int employment_center_timer = 0x7f080747;
+        public static int employment_center_train = 0x7f080748;
+        public static int employment_center_tram = 0x7f080749;
+        public static int employment_center_truck = 0x7f08074a;
 
         private drawable() {
         }

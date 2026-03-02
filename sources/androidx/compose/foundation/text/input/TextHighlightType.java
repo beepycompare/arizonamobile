@@ -10,53 +10,53 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextHighlightType {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int HandwritingSelectPreview = m1544constructorimpl(0);
-    private static final int HandwritingDeletePreview = m1544constructorimpl(1);
+    private static final int HandwritingSelectPreview = m1343constructorimpl(0);
+    private static final int HandwritingDeletePreview = m1343constructorimpl(1);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextHighlightType m1543boximpl(int i) {
+    public static final /* synthetic */ TextHighlightType m1342boximpl(int i) {
         return new TextHighlightType(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m1544constructorimpl(int i) {
+    private static int m1343constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1545equalsimpl(int i, Object obj) {
-        return (obj instanceof TextHighlightType) && i == ((TextHighlightType) obj).m1549unboximpl();
+    public static boolean m1344equalsimpl(int i, Object obj) {
+        return (obj instanceof TextHighlightType) && i == ((TextHighlightType) obj).m1348unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1546equalsimpl0(int i, int i2) {
+    public static final boolean m1345equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1547hashCodeimpl(int i) {
+    public static int m1346hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1548toStringimpl(int i) {
+    public static String m1347toStringimpl(int i) {
         return "TextHighlightType(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1545equalsimpl(this.value, obj);
+        return m1344equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1547hashCodeimpl(this.value);
+        return m1346hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m1548toStringimpl(this.value);
+        return m1347toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1549unboximpl() {
+    public final /* synthetic */ int m1348unboximpl() {
         return this.value;
     }
 
@@ -72,12 +72,12 @@ public final class TextHighlightType {
         }
 
         /* renamed from: getHandwritingSelectPreview-s-xJuwY  reason: not valid java name */
-        public final int m1551getHandwritingSelectPreviewsxJuwY() {
+        public final int m1350getHandwritingSelectPreviewsxJuwY() {
             return TextHighlightType.HandwritingSelectPreview;
         }
 
         /* renamed from: getHandwritingDeletePreview-s-xJuwY  reason: not valid java name */
-        public final int m1550getHandwritingDeletePreviewsxJuwY() {
+        public final int m1349getHandwritingDeletePreviewsxJuwY() {
             return TextHighlightType.HandwritingDeletePreview;
         }
     }

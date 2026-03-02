@@ -40,16 +40,14 @@ public final class ChildPanelsFactoryKt {
             function2 = new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit childPanels$lambda$0;
-                    childPanels$lambda$0 = ChildPanelsFactoryKt.childPanels$lambda$0((Panels) obj2, (Panels) obj3);
-                    return childPanels$lambda$0;
+                    return ChildPanelsFactoryKt.childPanels$lambda$0((Panels) obj2, (Panels) obj3);
                 }
             };
         }
         return childPanels(genericComponentContext, navigationSource, pair, function0, str2, function2, (i & 32) != 0 ? false : z, function22, function23);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$0(Panels panels, Panels panels2) {
         Intrinsics.checkNotNullParameter(panels, "<unused var>");
         return Unit.INSTANCE;
@@ -75,7 +73,7 @@ public final class ChildPanelsFactoryKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$2(Panels panels, Panels panels2) {
         Intrinsics.checkNotNullParameter(panels, "<unused var>");
         return Unit.INSTANCE;
@@ -109,14 +107,12 @@ public final class ChildPanelsFactoryKt {
         return childPanels(genericComponentContext, navigationSource, triple, function0, str, (i & 16) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj2, Object obj3) {
-                Unit childPanels$lambda$3;
-                childPanels$lambda$3 = ChildPanelsFactoryKt.childPanels$lambda$3((Panels) obj2, (Panels) obj3);
-                return childPanels$lambda$3;
+                return ChildPanelsFactoryKt.childPanels$lambda$3((Panels) obj2, (Panels) obj3);
             }
         } : function2, (i & 32) != 0 ? false : z, function22, function23, function24);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$3(Panels panels, Panels panels2) {
         Intrinsics.checkNotNullParameter(panels, "<unused var>");
         return Unit.INSTANCE;
@@ -134,21 +130,17 @@ public final class ChildPanelsFactoryKt {
         return childPanels(ctx, source, initialPanels, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                SerializableContainer childPanels$lambda$4;
-                childPanels$lambda$4 = ChildPanelsFactoryKt.childPanels$lambda$4(Triple.this, (Panels) obj);
-                return childPanels$lambda$4;
+                return ChildPanelsFactoryKt.childPanels$lambda$4(Triple.this, (Panels) obj);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Panels childPanels$lambda$5;
-                childPanels$lambda$5 = ChildPanelsFactoryKt.childPanels$lambda$5(Triple.this, (SerializableContainer) obj);
-                return childPanels$lambda$5;
+                return ChildPanelsFactoryKt.childPanels$lambda$5(Triple.this, (SerializableContainer) obj);
             }
         }, key, onStateChanged, z, mainFactory, detailsFactory, extraFactory);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerializableContainer childPanels$lambda$4(Triple triple, Panels panels) {
         Intrinsics.checkNotNullParameter(panels, "panels");
         if (triple == null) {
@@ -157,7 +149,7 @@ public final class ChildPanelsFactoryKt {
         return SerializableContainerKt.SerializableContainer(panels, Panels.Companion.serializer((KSerializer) triple.component1(), (KSerializer) triple.component2(), (KSerializer) triple.component3()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Panels childPanels$lambda$5(Triple triple, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         if (triple == null) {
@@ -166,7 +158,7 @@ public final class ChildPanelsFactoryKt {
         return (Panels) container.consume(Panels.Companion.serializer((KSerializer) triple.component1(), (KSerializer) triple.component2(), (KSerializer) triple.component3()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$6(Panels panels, Panels panels2) {
         Intrinsics.checkNotNullParameter(panels, "<unused var>");
         return Unit.INSTANCE;
@@ -186,81 +178,63 @@ public final class ChildPanelsFactoryKt {
         return ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                PanelsNavState childPanels$lambda$7;
-                childPanels$lambda$7 = ChildPanelsFactoryKt.childPanels$lambda$7(Function0.this);
-                return childPanels$lambda$7;
+                return ChildPanelsFactoryKt.childPanels$lambda$7(Function0.this);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                SerializableContainer childPanels$lambda$8;
-                childPanels$lambda$8 = ChildPanelsFactoryKt.childPanels$lambda$8(Function1.this, (PanelsNavState) obj);
-                return childPanels$lambda$8;
+                return ChildPanelsFactoryKt.childPanels$lambda$8(Function1.this, (PanelsNavState) obj);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                PanelsNavState childPanels$lambda$9;
-                childPanels$lambda$9 = ChildPanelsFactoryKt.childPanels$lambda$9(Function1.this, (SerializableContainer) obj);
-                return childPanels$lambda$9;
+                return ChildPanelsFactoryKt.childPanels$lambda$9(Function1.this, (SerializableContainer) obj);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                PanelsNavState childPanels$lambda$10;
-                childPanels$lambda$10 = ChildPanelsFactoryKt.childPanels$lambda$10((PanelsNavState) obj, (PanelsNavigation.Event) obj2);
-                return childPanels$lambda$10;
+                return ChildPanelsFactoryKt.childPanels$lambda$10((PanelsNavState) obj, (PanelsNavigation.Event) obj2);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                ChildPanels childPanels$lambda$16;
-                childPanels$lambda$16 = ChildPanelsFactoryKt.childPanels$lambda$16((PanelsNavState) obj, (List) obj2);
-                return childPanels$lambda$16;
+                return ChildPanelsFactoryKt.childPanels$lambda$16((PanelsNavState) obj, (List) obj2);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit childPanels$lambda$17;
-                childPanels$lambda$17 = ChildPanelsFactoryKt.childPanels$lambda$17(Function2.this, (PanelsNavState) obj, (PanelsNavState) obj2);
-                return childPanels$lambda$17;
+                return ChildPanelsFactoryKt.childPanels$lambda$17(Function2.this, (PanelsNavState) obj, (PanelsNavState) obj2);
             }
         }, new Function3() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit childPanels$lambda$18;
-                childPanels$lambda$18 = ChildPanelsFactoryKt.childPanels$lambda$18((PanelsNavigation.Event) obj, (PanelsNavState) obj2, (PanelsNavState) obj3);
-                return childPanels$lambda$18;
+                return ChildPanelsFactoryKt.childPanels$lambda$18((PanelsNavigation.Event) obj, (PanelsNavState) obj2, (PanelsNavState) obj3);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Function0 childPanels$lambda$21;
-                childPanels$lambda$21 = ChildPanelsFactoryKt.childPanels$lambda$21(z, (PanelsNavState) obj);
-                return childPanels$lambda$21;
+                return ChildPanelsFactoryKt.childPanels$lambda$21(z, (PanelsNavState) obj);
             }
         }, new Function2() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Panel childPanels$lambda$22;
-                childPanels$lambda$22 = ChildPanelsFactoryKt.childPanels$lambda$22(Function2.this, detailsFactory, extraFactory, (Config) obj, (GenericComponentContext) obj2);
-                return childPanels$lambda$22;
+                return ChildPanelsFactoryKt.childPanels$lambda$22(Function2.this, detailsFactory, extraFactory, (Config) obj, (GenericComponentContext) obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PanelsNavState childPanels$lambda$7(Function0 function0) {
         return new PanelsNavState((Panels) function0.invoke());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerializableContainer childPanels$lambda$8(Function1 function1, PanelsNavState it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return (SerializableContainer) function1.invoke(it.getPanels());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PanelsNavState childPanels$lambda$9(Function1 function1, SerializableContainer it) {
         Intrinsics.checkNotNullParameter(it, "it");
         Panels panels = (Panels) function1.invoke(it);
@@ -270,14 +244,14 @@ public final class ChildPanelsFactoryKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PanelsNavState childPanels$lambda$10(PanelsNavState state, PanelsNavigation.Event event) {
         Intrinsics.checkNotNullParameter(state, "state");
         Intrinsics.checkNotNullParameter(event, "event");
         return new PanelsNavState((Panels) event.getTransformer().invoke(state.getPanels()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ChildPanels childPanels$lambda$16(PanelsNavState state, List children) {
         Panel.Main main;
         Panel.Details details;
@@ -345,14 +319,14 @@ public final class ChildPanelsFactoryKt {
         return new ChildPanels(new Child.Created(main.getConfig(), main.getInstance()), details != null ? new Child.Created(details.getConfig(), details.getInstance()) : null, extra != null ? new Child.Created(extra.getConfig(), extra.getInstance()) : null, state.getPanels().getMode());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$17(Function2 function2, PanelsNavState newState, PanelsNavState panelsNavState) {
         Intrinsics.checkNotNullParameter(newState, "newState");
         function2.invoke(newState.getPanels(), panelsNavState != null ? panelsNavState.getPanels() : null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit childPanels$lambda$18(PanelsNavigation.Event event, PanelsNavState newState, PanelsNavState oldState) {
         Intrinsics.checkNotNullParameter(event, "event");
         Intrinsics.checkNotNullParameter(newState, "newState");
@@ -361,7 +335,7 @@ public final class ChildPanelsFactoryKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Function0 childPanels$lambda$21(boolean z, final PanelsNavState state) {
         Intrinsics.checkNotNullParameter(state, "state");
         final Panels panels = state.getPanels();
@@ -370,9 +344,9 @@ public final class ChildPanelsFactoryKt {
                 return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        PanelsNavState childPanels$lambda$21$lambda$19;
-                        childPanels$lambda$21$lambda$19 = ChildPanelsFactoryKt.childPanels$lambda$21$lambda$19(PanelsNavState.this, panels);
-                        return childPanels$lambda$21$lambda$19;
+                        PanelsNavState copy;
+                        copy = PanelsNavState.this.copy(Panels.copy$default(panels, null, null, null, null, 11, null));
+                        return copy;
                     }
                 };
             }
@@ -382,26 +356,16 @@ public final class ChildPanelsFactoryKt {
             return new Function0() { // from class: com.arkivanov.decompose.router.panels.ChildPanelsFactoryKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    PanelsNavState childPanels$lambda$21$lambda$20;
-                    childPanels$lambda$21$lambda$20 = ChildPanelsFactoryKt.childPanels$lambda$21$lambda$20(PanelsNavState.this, panels);
-                    return childPanels$lambda$21$lambda$20;
+                    PanelsNavState copy;
+                    copy = PanelsNavState.this.copy(Panels.copy$default(panels, null, null, null, null, 13, null));
+                    return copy;
                 }
             };
         }
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final PanelsNavState childPanels$lambda$21$lambda$19(PanelsNavState panelsNavState, Panels panels) {
-        return panelsNavState.copy(Panels.copy$default(panels, null, null, null, null, 11, null));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final PanelsNavState childPanels$lambda$21$lambda$20(PanelsNavState panelsNavState, Panels panels) {
-        return panelsNavState.copy(Panels.copy$default(panels, null, null, null, null, 13, null));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Panel childPanels$lambda$22(Function2 function2, Function2 function22, Function2 function23, Config config, GenericComponentContext ctx) {
         Intrinsics.checkNotNullParameter(config, "config");
         Intrinsics.checkNotNullParameter(ctx, "ctx");

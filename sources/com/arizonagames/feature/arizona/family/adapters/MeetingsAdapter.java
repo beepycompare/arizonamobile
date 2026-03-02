@@ -20,7 +20,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: MeetingsAdapter.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u0012H\u0016J\b\u0010\u0017\u001a\u00020\u0012H\u0016J\u0014\u0010\u0018\u001a\u00020\u00142\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00070\u001aJ\u000e\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u000e\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u000e\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u0006\u0010 \u001a\u00020\u0014R\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006!"}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsItemViewHolder;", "<init>", "()V", "itemsList", "", "Lcom/arizonagames/feature/arizona/family/data/CapturesItem;", "getItemsList", "()Ljava/util/List;", "currentZone", "", "getCurrentZone", "()Ljava/lang/String;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "getItemCount", "addAllItems", "items", "", "sort1", RemoteConfigConstants.ResponseFieldKey.STATE, "", "sort2", "sort3", "clearList", "family_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0016J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u0012H\u0016J\b\u0010\u0017\u001a\u00020\u0012H\u0016J\u0014\u0010\u0018\u001a\u00020\u00142\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00070\u001aJ\u000e\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u000e\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u000e\u0010\u001f\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u001dJ\u0006\u0010 \u001a\u00020\u0014R\u0017\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006!"}, d2 = {"Lcom/arizonagames/feature/arizona/family/adapters/MeetingsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/arizona/family/adapters/MeetingsItemViewHolder;", "<init>", "()V", "itemsList", "", "Lcom/arizonagames/feature/arizona/family/data/CapturesItem;", "getItemsList", "()Ljava/util/List;", "currentZone", "", "getCurrentZone", "()Ljava/lang/String;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "getItemCount", "addAllItems", "items", "", "sort1", RemoteConfigConstants.ResponseFieldKey.STATE, "", "sort2", "sort3", "clearList", "family"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemViewHolder> {
     private final List<CapturesItem> itemsList = new ArrayList();
@@ -73,8 +73,8 @@ public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemView
     }
 
     public final void sort1(boolean z) {
+        List<CapturesItem> list = this.itemsList;
         if (z) {
-            List<CapturesItem> list = this.itemsList;
             if (list.size() > 1) {
                 CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort1$$inlined$sortBy$1
                     @Override // java.util.Comparator
@@ -83,23 +83,20 @@ public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemView
                     }
                 });
             }
-        } else {
-            List<CapturesItem> list2 = this.itemsList;
-            if (list2.size() > 1) {
-                CollectionsKt.sortWith(list2, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort1$$inlined$sortByDescending$1
-                    @Override // java.util.Comparator
-                    public final int compare(T t, T t2) {
-                        return ComparisonsKt.compareValues(Long.valueOf(((CapturesItem) t2).getDate_attack_unix()), Long.valueOf(((CapturesItem) t).getDate_attack_unix()));
-                    }
-                });
-            }
+        } else if (list.size() > 1) {
+            CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort1$$inlined$sortByDescending$1
+                @Override // java.util.Comparator
+                public final int compare(T t, T t2) {
+                    return ComparisonsKt.compareValues(Long.valueOf(((CapturesItem) t2).getDate_attack_unix()), Long.valueOf(((CapturesItem) t).getDate_attack_unix()));
+                }
+            });
         }
         notifyDataSetChanged();
     }
 
     public final void sort2(boolean z) {
+        List<CapturesItem> list = this.itemsList;
         if (z) {
-            List<CapturesItem> list = this.itemsList;
             if (list.size() > 1) {
                 CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort2$$inlined$sortByDescending$1
                     @Override // java.util.Comparator
@@ -108,23 +105,20 @@ public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemView
                     }
                 });
             }
-        } else {
-            List<CapturesItem> list2 = this.itemsList;
-            if (list2.size() > 1) {
-                CollectionsKt.sortWith(list2, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort2$$inlined$sortBy$1
-                    @Override // java.util.Comparator
-                    public final int compare(T t, T t2) {
-                        return ComparisonsKt.compareValues(Integer.valueOf(((CapturesItem) t).getCapture_id_zone()), Integer.valueOf(((CapturesItem) t2).getCapture_id_zone()));
-                    }
-                });
-            }
+        } else if (list.size() > 1) {
+            CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort2$$inlined$sortBy$1
+                @Override // java.util.Comparator
+                public final int compare(T t, T t2) {
+                    return ComparisonsKt.compareValues(Integer.valueOf(((CapturesItem) t).getCapture_id_zone()), Integer.valueOf(((CapturesItem) t2).getCapture_id_zone()));
+                }
+            });
         }
         notifyDataSetChanged();
     }
 
     public final void sort3(boolean z) {
+        List<CapturesItem> list = this.itemsList;
         if (z) {
-            List<CapturesItem> list = this.itemsList;
             if (list.size() > 1) {
                 CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort3$$inlined$sortByDescending$1
                     @Override // java.util.Comparator
@@ -133,16 +127,13 @@ public final class MeetingsAdapter extends RecyclerView.Adapter<MeetingsItemView
                     }
                 });
             }
-        } else {
-            List<CapturesItem> list2 = this.itemsList;
-            if (list2.size() > 1) {
-                CollectionsKt.sortWith(list2, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort3$$inlined$sortBy$1
-                    @Override // java.util.Comparator
-                    public final int compare(T t, T t2) {
-                        return ComparisonsKt.compareValues(((CapturesItem) t).getFamily_name(), ((CapturesItem) t2).getFamily_name());
-                    }
-                });
-            }
+        } else if (list.size() > 1) {
+            CollectionsKt.sortWith(list, new Comparator() { // from class: com.arizonagames.feature.arizona.family.adapters.MeetingsAdapter$sort3$$inlined$sortBy$1
+                @Override // java.util.Comparator
+                public final int compare(T t, T t2) {
+                    return ComparisonsKt.compareValues(((CapturesItem) t).getFamily_name(), ((CapturesItem) t2).getFamily_name());
+                }
+            });
         }
         notifyDataSetChanged();
     }

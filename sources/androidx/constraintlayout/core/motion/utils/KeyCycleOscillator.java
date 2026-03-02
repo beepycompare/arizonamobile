@@ -208,10 +208,10 @@ public abstract class KeyCycleOscillator {
 
         public double getValues(float f) {
             CurveFit curveFit = this.mCurveFit;
+            double[] dArr = this.mSplineValueCache;
             if (curveFit != null) {
-                curveFit.getPos(f, this.mSplineValueCache);
+                curveFit.getPos(f, dArr);
             } else {
-                double[] dArr = this.mSplineValueCache;
                 dArr[0] = this.mOffsetArr[0];
                 dArr[1] = this.mPhaseArr[0];
                 dArr[2] = this.mValues[0];
@@ -228,12 +228,12 @@ public abstract class KeyCycleOscillator {
 
         public double getSlope(float f) {
             CurveFit curveFit = this.mCurveFit;
+            double[] dArr = this.mSplineSlopeCache;
             if (curveFit != null) {
                 double d = f;
-                curveFit.getSlope(d, this.mSplineSlopeCache);
+                curveFit.getSlope(d, dArr);
                 this.mCurveFit.getPos(d, this.mSplineValueCache);
             } else {
-                double[] dArr = this.mSplineSlopeCache;
                 dArr[0] = 0.0d;
                 dArr[1] = 0.0d;
                 dArr[2] = 0.0d;

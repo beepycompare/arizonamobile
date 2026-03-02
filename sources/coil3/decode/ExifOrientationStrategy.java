@@ -11,34 +11,26 @@ public interface ExifOrientationStrategy {
     public static final ExifOrientationStrategy IGNORE = new ExifOrientationStrategy() { // from class: coil3.decode.ExifOrientationStrategy$$ExternalSyntheticLambda0
         @Override // coil3.decode.ExifOrientationStrategy
         public final boolean supports(String str, BufferedSource bufferedSource) {
-            boolean IGNORE$lambda$0;
-            IGNORE$lambda$0 = ExifOrientationStrategy.IGNORE$lambda$0(str, bufferedSource);
-            return IGNORE$lambda$0;
+            return ExifOrientationStrategy.IGNORE$lambda$0(str, bufferedSource);
         }
     };
     public static final ExifOrientationStrategy RESPECT_PERFORMANCE = new ExifOrientationStrategy() { // from class: coil3.decode.ExifOrientationStrategy$$ExternalSyntheticLambda1
         @Override // coil3.decode.ExifOrientationStrategy
         public final boolean supports(String str, BufferedSource bufferedSource) {
-            boolean RESPECT_PERFORMANCE$lambda$1;
-            RESPECT_PERFORMANCE$lambda$1 = ExifOrientationStrategy.RESPECT_PERFORMANCE$lambda$1(str, bufferedSource);
-            return RESPECT_PERFORMANCE$lambda$1;
+            return ExifOrientationStrategy.RESPECT_PERFORMANCE$lambda$1(str, bufferedSource);
         }
     };
     public static final ExifOrientationStrategy RESPECT_ALL = new ExifOrientationStrategy() { // from class: coil3.decode.ExifOrientationStrategy$$ExternalSyntheticLambda2
         @Override // coil3.decode.ExifOrientationStrategy
         public final boolean supports(String str, BufferedSource bufferedSource) {
-            boolean RESPECT_ALL$lambda$2;
-            RESPECT_ALL$lambda$2 = ExifOrientationStrategy.RESPECT_ALL$lambda$2(str, bufferedSource);
-            return RESPECT_ALL$lambda$2;
+            return ExifOrientationStrategy.RESPECT_ALL$lambda$2(str, bufferedSource);
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
     static boolean IGNORE$lambda$0(String str, BufferedSource bufferedSource) {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     static boolean RESPECT_ALL$lambda$2(String str, BufferedSource bufferedSource) {
         return true;
     }
@@ -55,7 +47,6 @@ public interface ExifOrientationStrategy {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     static boolean RESPECT_PERFORMANCE$lambda$1(String str, BufferedSource bufferedSource) {
         if (str != null) {
             return Intrinsics.areEqual(str, "image/jpeg") || Intrinsics.areEqual(str, "image/webp") || Intrinsics.areEqual(str, "image/heic") || Intrinsics.areEqual(str, "image/heif");

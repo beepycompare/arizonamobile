@@ -920,7 +920,6 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     */
     ActionMode startSupportActionModeFromWindow(ActionMode.Callback callback) {
         ActionMode actionMode;
-        Context context;
         ActionMode actionMode2;
         AppCompatCallback appCompatCallback;
         endOnGoingFadeAnimation();
@@ -945,14 +944,14 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                         TypedValue typedValue = new TypedValue();
                         Resources.Theme theme = this.mContext.getTheme();
                         theme.resolveAttribute(R.attr.actionBarTheme, typedValue, true);
-                        if (typedValue.resourceId != 0) {
-                            Resources.Theme newTheme = this.mContext.getResources().newTheme();
+                        int i = typedValue.resourceId;
+                        Context context = this.mContext;
+                        if (i != 0) {
+                            Resources.Theme newTheme = context.getResources().newTheme();
                             newTheme.setTo(theme);
                             newTheme.applyStyle(typedValue.resourceId, true);
                             context = new androidx.appcompat.view.ContextThemeWrapper(this.mContext, 0);
                             context.getTheme().setTo(newTheme);
-                        } else {
-                            context = this.mContext;
                         }
                         this.mActionModeView = new ActionBarContextView(context);
                         PopupWindow popupWindow = new PopupWindow(context, (AttributeSet) null, R.attr.actionModePopupWindowStyle);
@@ -968,10 +967,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                             public void run() {
                                 AppCompatDelegateImpl.this.mActionModePopup.showAtLocation(AppCompatDelegateImpl.this.mActionModeView, 55, 0, 0);
                                 AppCompatDelegateImpl.this.endOnGoingFadeAnimation();
-                                if (AppCompatDelegateImpl.this.shouldAnimateActionModeView()) {
-                                    AppCompatDelegateImpl.this.mActionModeView.setAlpha(0.0f);
-                                    AppCompatDelegateImpl appCompatDelegateImpl = AppCompatDelegateImpl.this;
-                                    appCompatDelegateImpl.mFadeAnim = ViewCompat.animate(appCompatDelegateImpl.mActionModeView).alpha(1.0f);
+                                boolean shouldAnimateActionModeView = AppCompatDelegateImpl.this.shouldAnimateActionModeView();
+                                AppCompatDelegateImpl appCompatDelegateImpl = AppCompatDelegateImpl.this;
+                                if (shouldAnimateActionModeView) {
+                                    appCompatDelegateImpl.mActionModeView.setAlpha(0.0f);
+                                    AppCompatDelegateImpl appCompatDelegateImpl2 = AppCompatDelegateImpl.this;
+                                    appCompatDelegateImpl2.mFadeAnim = ViewCompat.animate(appCompatDelegateImpl2.mActionModeView).alpha(1.0f);
                                     AppCompatDelegateImpl.this.mFadeAnim.setListener(new ViewPropertyAnimatorListenerAdapter() { // from class: androidx.appcompat.app.AppCompatDelegateImpl.6.1
                                         @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
                                         public void onAnimationStart(View view) {
@@ -987,7 +988,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                                     });
                                     return;
                                 }
-                                AppCompatDelegateImpl.this.mActionModeView.setAlpha(1.0f);
+                                appCompatDelegateImpl.mActionModeView.setAlpha(1.0f);
                                 AppCompatDelegateImpl.this.mActionModeView.setVisibility(0);
                             }
                         };
@@ -1007,8 +1008,10 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                         standaloneActionMode.invalidate();
                         this.mActionModeView.initForMode(standaloneActionMode);
                         this.mActionMode = standaloneActionMode;
-                        if (shouldAnimateActionModeView()) {
-                            this.mActionModeView.setAlpha(0.0f);
+                        boolean shouldAnimateActionModeView = shouldAnimateActionModeView();
+                        ActionBarContextView actionBarContextView = this.mActionModeView;
+                        if (shouldAnimateActionModeView) {
+                            actionBarContextView.setAlpha(0.0f);
                             ViewPropertyAnimatorCompat alpha = ViewCompat.animate(this.mActionModeView).alpha(1.0f);
                             this.mFadeAnim = alpha;
                             alpha.setListener(new ViewPropertyAnimatorListenerAdapter() { // from class: androidx.appcompat.app.AppCompatDelegateImpl.7
@@ -1028,7 +1031,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                                 }
                             });
                         } else {
-                            this.mActionModeView.setAlpha(1.0f);
+                            actionBarContextView.setAlpha(1.0f);
                             this.mActionModeView.setVisibility(0);
                             if (this.mActionModeView.getParent() instanceof View) {
                                 ViewCompat.requestApplyInsets((View) this.mActionModeView.getParent());
@@ -1769,10 +1772,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     private void updateStatusGuardColor(View view) {
         int color;
-        if ((ViewCompat.getWindowSystemUiVisibility(view) & 8192) != 0) {
-            color = ContextCompat.getColor(this.mContext, R.color.abc_decor_view_status_guard_light);
+        int windowSystemUiVisibility = ViewCompat.getWindowSystemUiVisibility(view) & 8192;
+        Context context = this.mContext;
+        if (windowSystemUiVisibility != 0) {
+            color = ContextCompat.getColor(context, R.color.abc_decor_view_status_guard_light);
         } else {
-            color = ContextCompat.getColor(this.mContext, R.color.abc_decor_view_status_guard);
+            color = ContextCompat.getColor(context, R.color.abc_decor_view_status_guard);
         }
         view.setBackgroundColor(color);
     }
@@ -2133,7 +2138,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                     @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
                     public void onAnimationEnd(View view) {
                         AppCompatDelegateImpl.this.mActionModeView.setVisibility(8);
-                        if (AppCompatDelegateImpl.this.mActionModePopup != null) {
+                        PopupWindow popupWindow = AppCompatDelegateImpl.this.mActionModePopup;
+                        ActionModeCallbackWrapperV9 actionModeCallbackWrapperV9 = ActionModeCallbackWrapperV9.this;
+                        if (popupWindow != null) {
                             AppCompatDelegateImpl.this.mActionModePopup.dismiss();
                         } else if (AppCompatDelegateImpl.this.mActionModeView.getParent() instanceof View) {
                             ViewCompat.requestApplyInsets((View) AppCompatDelegateImpl.this.mActionModeView.getParent());
@@ -2170,12 +2177,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             }
             PanelFeatureState findMenuPanel = appCompatDelegateImpl.findMenuPanel(menuBuilder);
             if (findMenuPanel != null) {
+                AppCompatDelegateImpl appCompatDelegateImpl2 = AppCompatDelegateImpl.this;
                 if (z2) {
-                    AppCompatDelegateImpl.this.callOnPanelClosed(findMenuPanel.featureId, findMenuPanel, rootMenu);
+                    appCompatDelegateImpl2.callOnPanelClosed(findMenuPanel.featureId, findMenuPanel, rootMenu);
                     AppCompatDelegateImpl.this.closePanel(findMenuPanel, true);
                     return;
                 }
-                AppCompatDelegateImpl.this.closePanel(findMenuPanel, z);
+                appCompatDelegateImpl2.closePanel(findMenuPanel, z);
             }
         }
 

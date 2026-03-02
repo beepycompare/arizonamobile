@@ -1332,10 +1332,12 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         return new FragmentContainer() { // from class: androidx.fragment.app.Fragment.5
             @Override // androidx.fragment.app.FragmentContainer
             public View onFindViewById(int i) {
-                if (Fragment.this.mView == null) {
-                    throw new IllegalStateException("Fragment " + Fragment.this + " does not have a view");
+                View view = Fragment.this.mView;
+                Fragment fragment = Fragment.this;
+                if (view == null) {
+                    throw new IllegalStateException("Fragment " + fragment + " does not have a view");
                 }
-                return Fragment.this.mView.findViewById(i);
+                return fragment.mView.findViewById(i);
             }
 
             @Override // androidx.fragment.app.FragmentContainer
@@ -1392,13 +1394,14 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         this.mViewLifecycleOwner = new FragmentViewLifecycleOwner(this, getViewModelStore(), new Runnable() { // from class: androidx.fragment.app.Fragment$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Fragment.this.m8793lambda$performCreateView$0$androidxfragmentappFragment();
+                Fragment.this.m8081lambda$performCreateView$0$androidxfragmentappFragment();
             }
         });
         View onCreateView = onCreateView(layoutInflater, viewGroup, bundle);
         this.mView = onCreateView;
+        FragmentViewLifecycleOwner fragmentViewLifecycleOwner = this.mViewLifecycleOwner;
         if (onCreateView != null) {
-            this.mViewLifecycleOwner.initialize();
+            fragmentViewLifecycleOwner.initialize();
             if (FragmentManager.isLoggingEnabled(3)) {
                 Log.d(FragmentManager.TAG, "Setting ViewLifecycleOwner on View " + this.mView + " for Fragment " + this);
             }
@@ -1406,7 +1409,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
             ViewTreeViewModelStoreOwner.set(this.mView, this.mViewLifecycleOwner);
             ViewTreeSavedStateRegistryOwner.set(this.mView, this.mViewLifecycleOwner);
             this.mViewLifecycleOwnerLiveData.setValue(this.mViewLifecycleOwner);
-        } else if (this.mViewLifecycleOwner.isInitialized()) {
+        } else if (fragmentViewLifecycleOwner.isInitialized()) {
             throw new IllegalStateException("Called getViewLifecycleOwner() but onCreateView() returned null");
         } else {
             this.mViewLifecycleOwner = null;
@@ -1415,7 +1418,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$performCreateView$0$androidx-fragment-app-Fragment  reason: not valid java name */
-    public /* synthetic */ void m8793lambda$performCreateView$0$androidxfragmentappFragment() {
+    public /* synthetic */ void m8081lambda$performCreateView$0$androidxfragmentappFragment() {
         this.mViewLifecycleOwner.performRestore(this.mSavedViewRegistryState);
         this.mSavedViewRegistryState = null;
     }
@@ -1841,11 +1844,13 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
     public final <I, O> ActivityResultLauncher<I> registerForActivityResult(ActivityResultContract<I, O> activityResultContract, ActivityResultCallback<O> activityResultCallback) {
         return prepareCallInternal(activityResultContract, new Function<Void, ActivityResultRegistry>() { // from class: androidx.fragment.app.Fragment.7
             @Override // androidx.arch.core.util.Function
-            public ActivityResultRegistry apply(Void r1) {
-                if (Fragment.this.mHost instanceof ActivityResultRegistryOwner) {
-                    return ((ActivityResultRegistryOwner) Fragment.this.mHost).getActivityResultRegistry();
+            public ActivityResultRegistry apply(Void r2) {
+                boolean z = Fragment.this.mHost instanceof ActivityResultRegistryOwner;
+                Fragment fragment = Fragment.this;
+                if (z) {
+                    return ((ActivityResultRegistryOwner) fragment.mHost).getActivityResultRegistry();
                 }
-                return Fragment.this.requireActivity().getActivityResultRegistry();
+                return fragment.requireActivity().getActivityResultRegistry();
             }
         }, activityResultCallback);
     }

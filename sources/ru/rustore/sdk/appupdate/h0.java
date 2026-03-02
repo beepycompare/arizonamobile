@@ -22,7 +22,7 @@ public final class h0 implements ServiceConnection {
     public final Function0<Unit> c;
     public final Function1<RuStoreException, Unit> d;
 
-    public h0(Context context, String applicationId, C0809v onSuccess, C0810w onError) {
+    public h0(Context context, String applicationId, C0808v onSuccess, C0809w onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");

@@ -75,49 +75,53 @@ public final class AspectRatioFrameLayout extends FrameLayout {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0043, code lost:
+        if (r10 > 0) goto L20;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0054, code lost:
+        if (r10 > 0) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0056, code lost:
+        r1 = r1 / r4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0058, code lost:
+        r2 = r2 * r4;
+     */
     @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     protected void onMeasure(int i, int i2) {
         float f;
-        float f2;
         super.onMeasure(i, i2);
         if (this.videoAspectRatio <= 0.0f) {
             return;
         }
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        float f3 = measuredWidth;
-        float f4 = measuredHeight;
-        float f5 = f3 / f4;
-        float f6 = (this.videoAspectRatio / f5) - 1.0f;
-        if (Math.abs(f6) <= 0.01f) {
-            this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f5, false);
+        float f2 = measuredWidth;
+        float f3 = measuredHeight;
+        float f4 = f2 / f3;
+        float f5 = (this.videoAspectRatio / f4) - 1.0f;
+        if (Math.abs(f5) <= 0.01f) {
+            this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f4, false);
             return;
         }
         int i3 = this.resizeMode;
-        if (i3 != 0) {
-            if (i3 != 1) {
-                if (i3 == 2) {
-                    f = this.videoAspectRatio;
-                } else if (i3 == 4) {
-                    if (f6 > 0.0f) {
-                        f = this.videoAspectRatio;
-                    } else {
-                        f2 = this.videoAspectRatio;
-                    }
-                }
-                measuredWidth = (int) (f4 * f);
-            } else {
-                f2 = this.videoAspectRatio;
-            }
-            measuredHeight = (int) (f3 / f2);
-        } else if (f6 > 0.0f) {
-            f2 = this.videoAspectRatio;
-            measuredHeight = (int) (f3 / f2);
-        } else {
+        if (i3 == 0) {
+            int i4 = (f5 > 0.0f ? 1 : (f5 == 0.0f ? 0 : -1));
             f = this.videoAspectRatio;
-            measuredWidth = (int) (f4 * f);
+        } else if (i3 == 1) {
+            float f6 = f2 / this.videoAspectRatio;
+            measuredHeight = (int) f6;
+        } else if (i3 == 2) {
+            float f7 = f3 * this.videoAspectRatio;
+            measuredWidth = (int) f7;
+        } else if (i3 == 4) {
+            int i5 = (f5 > 0.0f ? 1 : (f5 == 0.0f ? 0 : -1));
+            f = this.videoAspectRatio;
         }
-        this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f5, true);
+        this.aspectRatioUpdateDispatcher.scheduleUpdate(this.videoAspectRatio, f4, true);
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
     }
 

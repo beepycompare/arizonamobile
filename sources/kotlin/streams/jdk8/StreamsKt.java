@@ -74,18 +74,13 @@ public final class StreamsKt {
         Stream<T> stream = StreamSupport.stream(new Supplier() { // from class: kotlin.streams.jdk8.StreamsKt$$ExternalSyntheticLambda0
             @Override // java.util.function.Supplier
             public final Object get() {
-                Spliterator asStream$lambda$0;
-                asStream$lambda$0 = StreamsKt.asStream$lambda$0(Sequence.this);
-                return asStream$lambda$0;
+                Spliterator spliteratorUnknownSize;
+                spliteratorUnknownSize = Spliterators.spliteratorUnknownSize(Sequence.this.iterator(), 16);
+                return spliteratorUnknownSize;
             }
         }, 16, false);
         Intrinsics.checkNotNullExpressionValue(stream, "stream(...)");
         return stream;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Spliterator asStream$lambda$0(Sequence sequence) {
-        return Spliterators.spliteratorUnknownSize(sequence.iterator(), 16);
     }
 
     public static final <T> List<T> toList(Stream<T> stream) {

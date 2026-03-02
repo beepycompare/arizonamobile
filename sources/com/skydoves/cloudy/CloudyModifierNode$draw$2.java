@@ -59,16 +59,16 @@ final class CloudyModifierNode$draw$2 extends SuspendLambda implements Function2
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:48:0x010e, code lost:
-        if (r10 == r0) goto L48;
+        if (r10 == r0) goto L49;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x0184, code lost:
-        if (r9.$node.isAttached() != false) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0182, code lost:
+        if (r9.$node.isAttached() != false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x0186, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0184, code lost:
         androidx.compose.ui.node.DrawModifierNodeKt.invalidateDraw(r9.$node);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:83:0x0214, code lost:
-        if (r9.$node.isAttached() != false) goto L22;
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0212, code lost:
+        if (r9.$node.isAttached() != false) goto L23;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -142,11 +142,13 @@ final class CloudyModifierNode$draw$2 extends SuspendLambda implements Function2
                         throw new RuntimeException("Blur processing returned null");
                     }
                     if (this.$node.isAttached()) {
-                        if (CloudyModifierNode.isTransparentBitmap$default(this.this$0, platformBitmap.getBitmap(), 0, 2, null)) {
-                            this.this$0.isProcessing = false;
+                        boolean isTransparentBitmap$default = CloudyModifierNode.isTransparentBitmap$default(this.this$0, platformBitmap.getBitmap(), 0, 2, null);
+                        CloudyModifierNode cloudyModifierNode = this.this$0;
+                        if (isTransparentBitmap$default) {
+                            cloudyModifierNode.isProcessing = false;
                             this.this$0.contentMayHaveChanged = true;
                         } else {
-                            this.this$0.cachedBlurRadius = this.$currentRadius;
+                            cloudyModifierNode.cachedBlurRadius = this.$currentRadius;
                             this.this$0.blurredBitmap = platformBitmap;
                             this.this$0.contentMayHaveChanged = false;
                             DrawModifierNodeKt.invalidateDraw(this.$node);

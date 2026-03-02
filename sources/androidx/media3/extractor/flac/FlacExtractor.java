@@ -188,9 +188,10 @@ public final class FlacExtractor implements Extractor {
         if (limit < 32768) {
             int read = extractorInput.read(this.buffer.getData(), limit, 32768 - limit);
             z = read == -1;
+            ParsableByteArray parsableByteArray = this.buffer;
             if (!z) {
-                this.buffer.setLimit(limit + read);
-            } else if (this.buffer.bytesLeft() == 0) {
+                parsableByteArray.setLimit(limit + read);
+            } else if (parsableByteArray.bytesLeft() == 0) {
                 outputSampleMetadata();
                 return -1;
             }
@@ -201,8 +202,8 @@ public final class FlacExtractor implements Extractor {
         int i = this.currentFrameBytesWritten;
         int i2 = this.minFrameSize;
         if (i < i2) {
-            ParsableByteArray parsableByteArray = this.buffer;
-            parsableByteArray.skipBytes(Math.min(i2 - i, parsableByteArray.bytesLeft()));
+            ParsableByteArray parsableByteArray2 = this.buffer;
+            parsableByteArray2.skipBytes(Math.min(i2 - i, parsableByteArray2.bytesLeft()));
         }
         long findFrame = findFrame(this.buffer, z);
         int position2 = this.buffer.getPosition() - position;

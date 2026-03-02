@@ -52,7 +52,7 @@ public final class Transition<S> {
     private final TransitionState<S> transitionState;
     private final MutableState updateChildrenNeeded$delegate;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit animateTo$lambda$3(Transition transition, Object obj, int i, Composer composer, int i2) {
         transition.animateTo$animation_core(obj, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -470,9 +470,7 @@ public final class Transition<S> {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.animation.core.Transition$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit animateTo$lambda$3;
-                    animateTo$lambda$3 = Transition.animateTo$lambda$3(Transition.this, s, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return animateTo$lambda$3;
+                    return Transition.animateTo$lambda$3(Transition.this, s, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

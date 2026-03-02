@@ -58,7 +58,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         LocaleList androidLocalList;
-        Object m1839classifyTextM8tDOmk;
+        Object m1595classifyTextM8tDOmk;
         long j;
         Mutex mutex;
         CharSequence charSequence;
@@ -70,7 +70,7 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             TextClassifier textClassifier = (TextClassifier) this.L$0;
-            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7699getMinimpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0), TextRange.m7698getMaximpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0));
+            TextSelection.Request.Builder builder = new TextSelection.Request.Builder(this.$text, TextRange.m7001getMinimpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0), TextRange.m7000getMaximpl(this.f59$$v$c$androidxcomposeuitextTextRange$selection$0));
             androidLocalList = this.this$0.getAndroidLocalList();
             TextSelection.Request.Builder defaultLocales = builder.setDefaultLocales(androidLocalList);
             if (Build.VERSION.SDK_INT >= 31) {
@@ -81,8 +81,8 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             if (Build.VERSION.SDK_INT < 31 || suggestSelection.getTextClassification() == null) {
                 this.J$0 = TextRange;
                 this.label = 2;
-                m1839classifyTextM8tDOmk = this.this$0.m1839classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
-                if (m1839classifyTextM8tDOmk != coroutine_suspended) {
+                m1595classifyTextM8tDOmk = this.this$0.m1595classifyTextM8tDOmk(this.$text, TextRange, textClassifier, this);
+                if (m1595classifyTextM8tDOmk != coroutine_suspended) {
                     j = TextRange;
                     j2 = j;
                 }
@@ -131,6 +131,6 @@ final class PlatformSelectionBehaviorsImpl$suggestSelectionForLongPressOrDoubleC
             ResultKt.throwOnFailure(obj);
             j2 = j;
         }
-        return TextRange.m7689boximpl(j2);
+        return TextRange.m6991boximpl(j2);
     }
 }

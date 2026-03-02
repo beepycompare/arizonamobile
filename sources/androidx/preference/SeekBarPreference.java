@@ -112,10 +112,11 @@ public class SeekBarPreference extends Preference {
         seekBar.setOnSeekBarChangeListener(this.mSeekBarChangeListener);
         this.mSeekBar.setMax(this.mMax - this.mMin);
         int i = this.mSeekBarIncrement;
+        SeekBar seekBar2 = this.mSeekBar;
         if (i != 0) {
-            this.mSeekBar.setKeyProgressIncrement(i);
+            seekBar2.setKeyProgressIncrement(i);
         } else {
-            this.mSeekBarIncrement = this.mSeekBar.getKeyProgressIncrement();
+            this.mSeekBarIncrement = seekBar2.getKeyProgressIncrement();
         }
         this.mSeekBar.setProgress(this.mSeekBarValue - this.mMin);
         updateLabelValue(this.mSeekBarValue);

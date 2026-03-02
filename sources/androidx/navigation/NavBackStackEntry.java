@@ -57,9 +57,9 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
         this.savedStateHandle$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.NavBackStackEntry$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SavedStateHandle savedStateHandle_delegate$lambda$0;
-                savedStateHandle_delegate$lambda$0 = NavBackStackEntry.savedStateHandle_delegate$lambda$0(NavBackStackEntry.this);
-                return savedStateHandle_delegate$lambda$0;
+                SavedStateHandle savedStateHandle$navigation_common_release;
+                savedStateHandle$navigation_common_release = NavBackStackEntry.this.impl.getSavedStateHandle$navigation_common_release();
+                return savedStateHandle$navigation_common_release;
             }
         });
     }
@@ -164,11 +164,6 @@ public final class NavBackStackEntry implements LifecycleOwner, ViewModelStoreOw
 
     public final Bundle getArguments() {
         return this.impl.getArguments$navigation_common_release();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final SavedStateHandle savedStateHandle_delegate$lambda$0(NavBackStackEntry navBackStackEntry) {
-        return navBackStackEntry.impl.getSavedStateHandle$navigation_common_release();
     }
 
     public final SavedStateHandle getSavedStateHandle() {

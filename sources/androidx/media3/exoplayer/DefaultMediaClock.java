@@ -3,7 +3,7 @@ package androidx.media3.exoplayer;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.util.Clock;
 import com.google.common.base.Preconditions;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 final class DefaultMediaClock implements MediaClock {
     private boolean isUsingStandaloneClock = true;
     private final PlaybackParametersListener listener;
@@ -12,7 +12,7 @@ final class DefaultMediaClock implements MediaClock {
     private final StandaloneMediaClock standaloneClock;
     private boolean standaloneClockIsStarted;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface PlaybackParametersListener {
         void onPlaybackParametersChanged(PlaybackParameters playbackParameters);
     }

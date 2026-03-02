@@ -35,9 +35,9 @@ public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> 
 
     public final <T> M setExtension(Extension<M, T> extension, T t) {
         int tagFieldNumber = WireFormatNano.getTagFieldNumber(extension.tag);
+        FieldArray fieldArray = this.unknownFieldData;
         FieldData fieldData = null;
         if (t == null) {
-            FieldArray fieldArray = this.unknownFieldData;
             if (fieldArray != null) {
                 fieldArray.remove(tagFieldNumber);
                 if (this.unknownFieldData.isEmpty()) {
@@ -46,11 +46,10 @@ public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> 
             }
             return this;
         }
-        FieldArray fieldArray2 = this.unknownFieldData;
-        if (fieldArray2 == null) {
+        if (fieldArray == null) {
             this.unknownFieldData = new FieldArray();
         } else {
-            fieldData = fieldArray2.get(tagFieldNumber);
+            fieldData = fieldArray.get(tagFieldNumber);
         }
         if (fieldData == null) {
             this.unknownFieldData.put(tagFieldNumber, new FieldData(extension, t));
@@ -95,8 +94,8 @@ public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> 
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     /* renamed from: clone */
-    public M mo10236clone() throws CloneNotSupportedException {
-        M m = (M) super.mo10236clone();
+    public M mo9175clone() throws CloneNotSupportedException {
+        M m = (M) super.mo9175clone();
         InternalNano.cloneUnknownFieldData(this, m);
         return m;
     }

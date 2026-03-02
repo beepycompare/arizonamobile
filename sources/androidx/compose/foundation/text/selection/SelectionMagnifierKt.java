@@ -30,40 +30,34 @@ public final class SelectionMagnifierKt {
     private static final TwoWayConverter<Offset, AnimationVector2D> UnspecifiedSafeOffsetVectorConverter = VectorConvertersKt.TwoWayConverter(new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AnimationVector2D UnspecifiedSafeOffsetVectorConverter$lambda$0;
-            UnspecifiedSafeOffsetVectorConverter$lambda$0 = SelectionMagnifierKt.UnspecifiedSafeOffsetVectorConverter$lambda$0((Offset) obj);
-            return UnspecifiedSafeOffsetVectorConverter$lambda$0;
+            return SelectionMagnifierKt.UnspecifiedSafeOffsetVectorConverter$lambda$0((Offset) obj);
         }
     }, new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Offset UnspecifiedSafeOffsetVectorConverter$lambda$1;
-            UnspecifiedSafeOffsetVectorConverter$lambda$1 = SelectionMagnifierKt.UnspecifiedSafeOffsetVectorConverter$lambda$1((AnimationVector2D) obj);
-            return UnspecifiedSafeOffsetVectorConverter$lambda$1;
+            Offset m4516boximpl;
+            AnimationVector2D animationVector2D = (AnimationVector2D) obj;
+            m4516boximpl = Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
+            return m4516boximpl;
         }
     });
 
     static {
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(0.01f) << 32) | (Float.floatToRawIntBits(0.01f) & 4294967295L));
-        OffsetDisplacementThreshold = m5171constructorimpl;
-        MagnifierSpringSpec = new SpringSpec<>(0.0f, 0.0f, Offset.m5168boximpl(m5171constructorimpl), 3, null);
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(0.01f) << 32) | (Float.floatToRawIntBits(0.01f) & 4294967295L));
+        OffsetDisplacementThreshold = m4519constructorimpl;
+        MagnifierSpringSpec = new SpringSpec<>(0.0f, 0.0f, Offset.m4516boximpl(m4519constructorimpl), 3, null);
     }
 
     public static final TwoWayConverter<Offset, AnimationVector2D> getUnspecifiedSafeOffsetVectorConverter() {
         return UnspecifiedSafeOffsetVectorConverter;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnimationVector2D UnspecifiedSafeOffsetVectorConverter$lambda$0(Offset offset) {
-        if ((offset.m5189unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m5189unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m5189unboximpl() & 4294967295L)));
+        if ((offset.m4537unboximpl() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            return new AnimationVector2D(Float.intBitsToFloat((int) (offset.m4537unboximpl() >> 32)), Float.intBitsToFloat((int) (offset.m4537unboximpl() & 4294967295L)));
         }
         return UnspecifiedAnimationVector2D;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Offset UnspecifiedSafeOffsetVectorConverter$lambda$1(AnimationVector2D animationVector2D) {
-        return Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(animationVector2D.getV1()) << 32) | (Float.floatToRawIntBits(animationVector2D.getV2()) & 4294967295L)));
     }
 
     public static final long getOffsetDisplacementThreshold() {
@@ -78,14 +72,12 @@ public final class SelectionMagnifierKt {
         return ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.selection.SelectionMagnifierKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier animatedSelectionMagnifier$lambda$0;
-                animatedSelectionMagnifier$lambda$0 = SelectionMagnifierKt.animatedSelectionMagnifier$lambda$0(Function0.this, function1, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return animatedSelectionMagnifier$lambda$0;
+                return SelectionMagnifierKt.animatedSelectionMagnifier$lambda$0(Function0.this, function1, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier animatedSelectionMagnifier$lambda$0(Function0 function0, Function1 function1, Modifier modifier, Composer composer, int i) {
         composer.startReplaceGroup(759876635);
         ComposerKt.sourceInformation(composer, "C64@2538L70,65@2647L18:SelectionMagnifier.kt#eksfi3");
@@ -118,7 +110,7 @@ public final class SelectionMagnifierKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Offset animatedSelectionMagnifier$lambda$0$1$0(State state) {
-        return Offset.m5168boximpl(animatedSelectionMagnifier$lambda$0$0(state));
+        return Offset.m4516boximpl(animatedSelectionMagnifier$lambda$0$0(state));
     }
 
     private static final State<Offset> rememberAnimatedMagnifierPosition(Function0<Offset> function0, Composer composer, int i) {
@@ -137,7 +129,7 @@ public final class SelectionMagnifierKt {
         ComposerKt.sourceInformationMarkerStart(composer, 1215129023, "CC(remember):SelectionMagnifier.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
-            Object animatable = new Animatable(Offset.m5168boximpl(rememberAnimatedMagnifierPosition$lambda$1(state)), UnspecifiedSafeOffsetVectorConverter, Offset.m5168boximpl(OffsetDisplacementThreshold), null, 8, null);
+            Object animatable = new Animatable(Offset.m4516boximpl(rememberAnimatedMagnifierPosition$lambda$1(state)), UnspecifiedSafeOffsetVectorConverter, Offset.m4516boximpl(OffsetDisplacementThreshold), null, 8, null);
             composer.updateRememberedValue(animatable);
             rememberedValue2 = animatable;
         }
@@ -162,11 +154,11 @@ public final class SelectionMagnifierKt {
     }
 
     private static final long animatedSelectionMagnifier$lambda$0$0(State<Offset> state) {
-        return state.getValue().m5189unboximpl();
+        return state.getValue().m4537unboximpl();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long rememberAnimatedMagnifierPosition$lambda$1(State<Offset> state) {
-        return state.getValue().m5189unboximpl();
+        return state.getValue().m4537unboximpl();
     }
 }

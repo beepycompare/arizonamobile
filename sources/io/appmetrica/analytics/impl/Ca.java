@@ -57,7 +57,7 @@ public interface Ca extends Hc, A6, Ta {
 
     AdvIdentifiersResult h();
 
-    C0350jc i();
+    C0349jc i();
 
     @Override // io.appmetrica.analytics.impl.Hc
     /* synthetic */ void putAppEnvironmentValue(String str, String str2);

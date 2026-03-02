@@ -1,15 +1,15 @@
 package com.google.android.gms.common.internal;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ServiceSpecificExtraArgs {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface CastExtraArgs {
         public static final String LISTENER = "listener";
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface GamesExtraArgs {
         public static final String DESIRED_LOCALE = "com.google.android.gms.games.key.desiredLocale";
@@ -18,7 +18,7 @@ public final class ServiceSpecificExtraArgs {
         public static final String WINDOW_TOKEN = "com.google.android.gms.games.key.popupWindowToken";
     }
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public interface PlusExtraArgs {
         public static final String PLUS_AUTH_PACKAGE = "auth_package";

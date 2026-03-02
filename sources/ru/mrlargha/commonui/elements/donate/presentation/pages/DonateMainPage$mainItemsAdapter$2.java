@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateMainPage.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final /* synthetic */ class DonateMainPage$mainItemsAdapter$2 extends FunctionReferenceImpl implements Function1<Integer, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -109,6 +109,7 @@ public class GradientFillContent implements DrawingContent, BaseKeyframeAnimatio
 
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void draw(Canvas canvas, Matrix matrix, int i, DropShadow dropShadow) {
+        Path path;
         Shader radialGradient;
         if (this.hidden) {
             return;
@@ -117,10 +118,17 @@ public class GradientFillContent implements DrawingContent, BaseKeyframeAnimatio
             L.beginSection("GradientFillContent#draw");
         }
         this.path.reset();
-        for (int i2 = 0; i2 < this.paths.size(); i2++) {
-            this.path.addPath(this.paths.get(i2).getPath(), matrix);
+        int i2 = 0;
+        while (true) {
+            int size = this.paths.size();
+            path = this.path;
+            if (i2 >= size) {
+                break;
+            }
+            path.addPath(this.paths.get(i2).getPath(), matrix);
+            i2++;
         }
-        this.path.computeBounds(this.boundsRect, false);
+        path.computeBounds(this.boundsRect, false);
         if (this.type == GradientType.LINEAR) {
             radialGradient = getLinearGradient();
         } else {
@@ -156,11 +164,19 @@ public class GradientFillContent implements DrawingContent, BaseKeyframeAnimatio
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void getBounds(RectF rectF, Matrix matrix, boolean z) {
         this.path.reset();
-        for (int i = 0; i < this.paths.size(); i++) {
-            this.path.addPath(this.paths.get(i).getPath(), matrix);
+        int i = 0;
+        while (true) {
+            int size = this.paths.size();
+            Path path = this.path;
+            if (i < size) {
+                path.addPath(this.paths.get(i).getPath(), matrix);
+                i++;
+            } else {
+                path.computeBounds(rectF, false);
+                rectF.set(rectF.left - 1.0f, rectF.top - 1.0f, rectF.right + 1.0f, rectF.bottom + 1.0f);
+                return;
+            }
         }
-        this.path.computeBounds(rectF, false);
-        rectF.set(rectF.left - 1.0f, rectF.top - 1.0f, rectF.right + 1.0f, rectF.bottom + 1.0f);
     }
 
     @Override // com.airbnb.lottie.animation.content.Content

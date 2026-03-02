@@ -69,7 +69,7 @@ public abstract class AbstractProgressFragment extends Fragment {
         return (InstallViewModel) this.installViewModel$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InstallViewModel installViewModel_delegate$lambda$0(AbstractProgressFragment abstractProgressFragment) {
         ViewModelStore viewModelStore = abstractProgressFragment.getViewModelStore();
         Intrinsics.checkNotNullExpressionValue(viewModelStore, "<get-viewModelStore>(...)");
@@ -77,11 +77,6 @@ public abstract class AbstractProgressFragment extends Fragment {
         CreationExtras defaultViewModelCreationExtras = abstractProgressFragment.getDefaultViewModelCreationExtras();
         Intrinsics.checkNotNullExpressionValue(defaultViewModelCreationExtras, "<get-defaultViewModelCreationExtras>(...)");
         return (InstallViewModel) new ViewModelProvider(viewModelStore, factory, defaultViewModelCreationExtras).get(InstallViewModel.class);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int destinationId_delegate$lambda$1(AbstractProgressFragment abstractProgressFragment) {
-        return abstractProgressFragment.requireArguments().getInt(Constants.DESTINATION_ID);
     }
 
     private final int getDestinationId() {
@@ -92,34 +87,27 @@ public abstract class AbstractProgressFragment extends Fragment {
         return (Bundle) this.destinationArgs$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Bundle destinationArgs_delegate$lambda$2(AbstractProgressFragment abstractProgressFragment) {
-        return abstractProgressFragment.requireArguments().getBundle(Constants.DESTINATION_ARGS);
-    }
-
     public AbstractProgressFragment() {
         this.installViewModel$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                InstallViewModel installViewModel_delegate$lambda$0;
-                installViewModel_delegate$lambda$0 = AbstractProgressFragment.installViewModel_delegate$lambda$0(AbstractProgressFragment.this);
-                return installViewModel_delegate$lambda$0;
+                return AbstractProgressFragment.installViewModel_delegate$lambda$0(AbstractProgressFragment.this);
             }
         });
         this.destinationId$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int destinationId_delegate$lambda$1;
-                destinationId_delegate$lambda$1 = AbstractProgressFragment.destinationId_delegate$lambda$1(AbstractProgressFragment.this);
-                return Integer.valueOf(destinationId_delegate$lambda$1);
+                int i;
+                i = AbstractProgressFragment.this.requireArguments().getInt(Constants.DESTINATION_ID);
+                return Integer.valueOf(i);
             }
         });
         this.destinationArgs$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Bundle destinationArgs_delegate$lambda$2;
-                destinationArgs_delegate$lambda$2 = AbstractProgressFragment.destinationArgs_delegate$lambda$2(AbstractProgressFragment.this);
-                return destinationArgs_delegate$lambda$2;
+                Bundle bundle;
+                bundle = AbstractProgressFragment.this.requireArguments().getBundle(Constants.DESTINATION_ARGS);
+                return bundle;
             }
         });
         ActivityResultLauncher<IntentSenderRequest> registerForActivityResult = registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), new ActivityResultCallback() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda3
@@ -137,25 +125,23 @@ public abstract class AbstractProgressFragment extends Fragment {
         this.installViewModel$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                InstallViewModel installViewModel_delegate$lambda$0;
-                installViewModel_delegate$lambda$0 = AbstractProgressFragment.installViewModel_delegate$lambda$0(AbstractProgressFragment.this);
-                return installViewModel_delegate$lambda$0;
+                return AbstractProgressFragment.installViewModel_delegate$lambda$0(AbstractProgressFragment.this);
             }
         });
         this.destinationId$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                int destinationId_delegate$lambda$1;
-                destinationId_delegate$lambda$1 = AbstractProgressFragment.destinationId_delegate$lambda$1(AbstractProgressFragment.this);
-                return Integer.valueOf(destinationId_delegate$lambda$1);
+                int i2;
+                i2 = AbstractProgressFragment.this.requireArguments().getInt(Constants.DESTINATION_ID);
+                return Integer.valueOf(i2);
             }
         });
         this.destinationArgs$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Bundle destinationArgs_delegate$lambda$2;
-                destinationArgs_delegate$lambda$2 = AbstractProgressFragment.destinationArgs_delegate$lambda$2(AbstractProgressFragment.this);
-                return destinationArgs_delegate$lambda$2;
+                Bundle bundle;
+                bundle = AbstractProgressFragment.this.requireArguments().getBundle(Constants.DESTINATION_ARGS);
+                return bundle;
             }
         });
         ActivityResultLauncher<IntentSenderRequest> registerForActivityResult = registerForActivityResult(new ActivityResultContracts.StartIntentSenderForResult(), new ActivityResultCallback() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$$ExternalSyntheticLambda3
@@ -168,7 +154,7 @@ public abstract class AbstractProgressFragment extends Fragment {
         this.intentSenderLauncher = registerForActivityResult;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void intentSenderLauncher$lambda$3(AbstractProgressFragment abstractProgressFragment, ActivityResult activityResult) {
         if (activityResult.getResultCode() == 0) {
             abstractProgressFragment.onCancelled();
@@ -265,18 +251,19 @@ public abstract class AbstractProgressFragment extends Fragment {
                 case 8:
                     try {
                         SplitInstallManager splitInstallManager = this.monitor.getSplitInstallManager();
+                        final AbstractProgressFragment abstractProgressFragment = this.this$0;
                         if (splitInstallManager == null) {
-                            this.this$0.onFailed(-100);
+                            abstractProgressFragment.onFailed(-100);
+                            return;
+                        } else {
+                            splitInstallManager.startConfirmationDialogForResult(sessionState, new IntentSenderForResultStarter() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$StateObserver$$ExternalSyntheticLambda0
+                                @Override // com.google.android.play.core.common.IntentSenderForResultStarter
+                                public final void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4, Bundle bundle) {
+                                    AbstractProgressFragment.StateObserver.onChanged$lambda$0(AbstractProgressFragment.this, intentSender, i, intent, i2, i3, i4, bundle);
+                                }
+                            }, 1);
                             return;
                         }
-                        final AbstractProgressFragment abstractProgressFragment = this.this$0;
-                        splitInstallManager.startConfirmationDialogForResult(sessionState, new IntentSenderForResultStarter() { // from class: androidx.navigation.dynamicfeatures.fragment.ui.AbstractProgressFragment$StateObserver$$ExternalSyntheticLambda0
-                            @Override // com.google.android.play.core.common.IntentSenderForResultStarter
-                            public final void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4, Bundle bundle) {
-                                AbstractProgressFragment.StateObserver.onChanged$lambda$0(AbstractProgressFragment.this, intentSender, i, intent, i2, i3, i4, bundle);
-                            }
-                        }, 1);
-                        return;
                     } catch (IntentSender.SendIntentException unused) {
                         this.this$0.onFailed(-100);
                         return;
@@ -286,7 +273,7 @@ public abstract class AbstractProgressFragment extends Fragment {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void onChanged$lambda$0(AbstractProgressFragment abstractProgressFragment, IntentSender intent, int i, Intent intent2, int i2, int i3, int i4, Bundle bundle) {
             Intrinsics.checkNotNullParameter(intent, "intent");
             abstractProgressFragment.intentSenderLauncher.launch(new IntentSenderRequest.Builder(intent).setFillInIntent(intent2).setFlags(i3, i2).build());

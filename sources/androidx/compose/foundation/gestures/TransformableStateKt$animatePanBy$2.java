@@ -57,17 +57,15 @@ final class TransformableStateKt$animatePanBy$2 extends SuspendLambda implements
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             final TransformScope transformScope = (TransformScope) this.L$0;
-            AnimationState animationState = new AnimationState(VectorConvertersKt.getVectorConverter(Offset.Companion), Offset.m5168boximpl(this.$previous.element), null, 0L, 0L, false, 60, null);
-            Offset m5168boximpl = Offset.m5168boximpl(this.f19$$v$c$androidxcomposeuigeometryOffset$offset$0);
+            AnimationState animationState = new AnimationState(VectorConvertersKt.getVectorConverter(Offset.Companion), Offset.m4516boximpl(this.$previous.element), null, 0L, 0L, false, 60, null);
+            Offset m4516boximpl = Offset.m4516boximpl(this.f19$$v$c$androidxcomposeuigeometryOffset$offset$0);
             AnimationSpec<Offset> animationSpec = this.$animationSpec;
             final Ref.LongRef longRef = this.$previous;
             this.label = 1;
-            if (SuspendAnimationKt.animateTo$default(animationState, m5168boximpl, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animatePanBy$2$$ExternalSyntheticLambda0
+            if (SuspendAnimationKt.animateTo$default(animationState, m4516boximpl, animationSpec, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableStateKt$animatePanBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TransformableStateKt$animatePanBy$2.invokeSuspend$lambda$0(Ref.LongRef.this, transformScope, (AnimationScope) obj2);
-                    return invokeSuspend$lambda$0;
+                    return TransformableStateKt$animatePanBy$2.invokeSuspend$lambda$0(Ref.LongRef.this, transformScope, (AnimationScope) obj2);
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -80,10 +78,10 @@ final class TransformableStateKt$animatePanBy$2 extends SuspendLambda implements
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.LongRef longRef, TransformScope transformScope, AnimationScope animationScope) {
-        TransformScope.m695transformByd4ec7I$default(transformScope, 0.0f, Offset.m5183minusMKHz9U(((Offset) animationScope.getValue()).m5189unboximpl(), longRef.element), 0.0f, 5, null);
-        longRef.element = ((Offset) animationScope.getValue()).m5189unboximpl();
+        TransformScope.m610transformByd4ec7I$default(transformScope, 0.0f, Offset.m4531minusMKHz9U(((Offset) animationScope.getValue()).m4537unboximpl(), longRef.element), 0.0f, 5, null);
+        longRef.element = ((Offset) animationScope.getValue()).m4537unboximpl();
         return Unit.INSTANCE;
     }
 }

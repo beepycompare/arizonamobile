@@ -408,11 +408,12 @@ public final class FlowableConcatMap<T, R> extends AbstractFlowableWithUpstream<
                             boolean z2 = poll == null;
                             if (z && z2) {
                                 Throwable terminate = this.errors.terminate();
+                                Subscriber<? super R> subscriber = this.downstream;
                                 if (terminate != null) {
-                                    this.downstream.onError(terminate);
+                                    subscriber.onError(terminate);
                                     return;
                                 } else {
-                                    this.downstream.onComplete();
+                                    subscriber.onComplete();
                                     return;
                                 }
                             } else if (!z2) {

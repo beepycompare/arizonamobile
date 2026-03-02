@@ -3,29 +3,24 @@ package kotlinx.serialization.json.internal;
 import kotlin.Metadata;
 import kotlin.Result;
 import kotlin.ResultKt;
-import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: ArrayPools.kt */
-@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\b\n\u0000\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0002"}, d2 = {"MAX_CHARS_IN_POOL", "", "kotlinx-serialization-json"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\b\n\u0000\n\u0002\u0010\b\n\u0000\"\u000f\u0010\u0000\u001a\u00020\u0001X\u0082\u0084\b¢\u0006\u0002\n\u0000¨\u0006\u0002"}, d2 = {"MAX_CHARS_IN_POOL", "", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ArrayPoolsKt {
     private static final int MAX_CHARS_IN_POOL;
 
     static {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             String property = System.getProperty("kotlinx.serialization.json.pool.size");
-            Intrinsics.checkNotNullExpressionValue(property, "getProperty(...)");
-            m10243constructorimpl = Result.m10243constructorimpl(StringsKt.toIntOrNull(property));
+            m9182constructorimpl = Result.m9182constructorimpl(property != null ? StringsKt.toIntOrNull(property) : null);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m10249isFailureimpl(m10243constructorimpl)) {
-            m10243constructorimpl = null;
-        }
-        Integer num = (Integer) m10243constructorimpl;
+        Integer num = Result.m9188isFailureimpl(m9182constructorimpl) ? null : m9182constructorimpl;
         MAX_CHARS_IN_POOL = num != null ? num.intValue() : 2097152;
     }
 }

@@ -10,69 +10,69 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 final class SLOperation {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int CancelPausedPrecomposition = m6958constructorimpl(0);
-    private static final int ReuseForceSyncDeactivation = m6958constructorimpl(1);
-    private static final int ReuseScheduleOutOfFrameDeactivation = m6958constructorimpl(2);
-    private static final int ReuseSyncDeactivation = m6958constructorimpl(3);
-    private static final int ReuseDeactivationViaHost = m6958constructorimpl(4);
-    private static final int TookFromPrecomposeMap = m6958constructorimpl(5);
-    private static final int Subcompose = m6958constructorimpl(6);
-    private static final int SubcomposeNew = m6958constructorimpl(7);
-    private static final int SubcomposePausable = m6958constructorimpl(8);
-    private static final int SubcomposeForceReuse = m6958constructorimpl(9);
-    private static final int DeactivateOutOfFrame = m6958constructorimpl(10);
-    private static final int DeactivateOutOfFrameCancelled = m6958constructorimpl(11);
-    private static final int SlotToReusedFromOnDeactivate = m6958constructorimpl(12);
-    private static final int SlotToReusedFromOnReuse = m6958constructorimpl(13);
-    private static final int Reused = m6958constructorimpl(14);
-    private static final int ResumePaused = m6958constructorimpl(15);
-    private static final int PausePaused = m6958constructorimpl(16);
-    private static final int ApplyPaused = m6958constructorimpl(17);
+    private static final int CancelPausedPrecomposition = m6299constructorimpl(0);
+    private static final int ReuseForceSyncDeactivation = m6299constructorimpl(1);
+    private static final int ReuseScheduleOutOfFrameDeactivation = m6299constructorimpl(2);
+    private static final int ReuseSyncDeactivation = m6299constructorimpl(3);
+    private static final int ReuseDeactivationViaHost = m6299constructorimpl(4);
+    private static final int TookFromPrecomposeMap = m6299constructorimpl(5);
+    private static final int Subcompose = m6299constructorimpl(6);
+    private static final int SubcomposeNew = m6299constructorimpl(7);
+    private static final int SubcomposePausable = m6299constructorimpl(8);
+    private static final int SubcomposeForceReuse = m6299constructorimpl(9);
+    private static final int DeactivateOutOfFrame = m6299constructorimpl(10);
+    private static final int DeactivateOutOfFrameCancelled = m6299constructorimpl(11);
+    private static final int SlotToReusedFromOnDeactivate = m6299constructorimpl(12);
+    private static final int SlotToReusedFromOnReuse = m6299constructorimpl(13);
+    private static final int Reused = m6299constructorimpl(14);
+    private static final int ResumePaused = m6299constructorimpl(15);
+    private static final int PausePaused = m6299constructorimpl(16);
+    private static final int ApplyPaused = m6299constructorimpl(17);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SLOperation m6957boximpl(int i) {
+    public static final /* synthetic */ SLOperation m6298boximpl(int i) {
         return new SLOperation(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6958constructorimpl(int i) {
+    public static int m6299constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6959equalsimpl(int i, Object obj) {
-        return (obj instanceof SLOperation) && i == ((SLOperation) obj).m6963unboximpl();
+    public static boolean m6300equalsimpl(int i, Object obj) {
+        return (obj instanceof SLOperation) && i == ((SLOperation) obj).m6304unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6960equalsimpl0(int i, int i2) {
+    public static final boolean m6301equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6961hashCodeimpl(int i) {
+    public static int m6302hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6962toStringimpl(int i) {
+    public static String m6303toStringimpl(int i) {
         return "SLOperation(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6959equalsimpl(this.value, obj);
+        return m6300equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6961hashCodeimpl(this.value);
+        return m6302hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m6962toStringimpl(this.value);
+        return m6303toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6963unboximpl() {
+    public final /* synthetic */ int m6304unboximpl() {
         return this.value;
     }
 
@@ -88,92 +88,92 @@ final class SLOperation {
         }
 
         /* renamed from: getCancelPausedPrecomposition-NjRlDlw  reason: not valid java name */
-        public final int m6965getCancelPausedPrecompositionNjRlDlw() {
+        public final int m6306getCancelPausedPrecompositionNjRlDlw() {
             return SLOperation.CancelPausedPrecomposition;
         }
 
         /* renamed from: getReuseForceSyncDeactivation-NjRlDlw  reason: not valid java name */
-        public final int m6971getReuseForceSyncDeactivationNjRlDlw() {
+        public final int m6312getReuseForceSyncDeactivationNjRlDlw() {
             return SLOperation.ReuseForceSyncDeactivation;
         }
 
         /* renamed from: getReuseScheduleOutOfFrameDeactivation-NjRlDlw  reason: not valid java name */
-        public final int m6972getReuseScheduleOutOfFrameDeactivationNjRlDlw() {
+        public final int m6313getReuseScheduleOutOfFrameDeactivationNjRlDlw() {
             return SLOperation.ReuseScheduleOutOfFrameDeactivation;
         }
 
         /* renamed from: getReuseSyncDeactivation-NjRlDlw  reason: not valid java name */
-        public final int m6973getReuseSyncDeactivationNjRlDlw() {
+        public final int m6314getReuseSyncDeactivationNjRlDlw() {
             return SLOperation.ReuseSyncDeactivation;
         }
 
         /* renamed from: getReuseDeactivationViaHost-NjRlDlw  reason: not valid java name */
-        public final int m6970getReuseDeactivationViaHostNjRlDlw() {
+        public final int m6311getReuseDeactivationViaHostNjRlDlw() {
             return SLOperation.ReuseDeactivationViaHost;
         }
 
         /* renamed from: getTookFromPrecomposeMap-NjRlDlw  reason: not valid java name */
-        public final int m6981getTookFromPrecomposeMapNjRlDlw() {
+        public final int m6322getTookFromPrecomposeMapNjRlDlw() {
             return SLOperation.TookFromPrecomposeMap;
         }
 
         /* renamed from: getSubcompose-NjRlDlw  reason: not valid java name */
-        public final int m6977getSubcomposeNjRlDlw() {
+        public final int m6318getSubcomposeNjRlDlw() {
             return SLOperation.Subcompose;
         }
 
         /* renamed from: getSubcomposeNew-NjRlDlw  reason: not valid java name */
-        public final int m6979getSubcomposeNewNjRlDlw() {
+        public final int m6320getSubcomposeNewNjRlDlw() {
             return SLOperation.SubcomposeNew;
         }
 
         /* renamed from: getSubcomposePausable-NjRlDlw  reason: not valid java name */
-        public final int m6980getSubcomposePausableNjRlDlw() {
+        public final int m6321getSubcomposePausableNjRlDlw() {
             return SLOperation.SubcomposePausable;
         }
 
         /* renamed from: getSubcomposeForceReuse-NjRlDlw  reason: not valid java name */
-        public final int m6978getSubcomposeForceReuseNjRlDlw() {
+        public final int m6319getSubcomposeForceReuseNjRlDlw() {
             return SLOperation.SubcomposeForceReuse;
         }
 
         /* renamed from: getDeactivateOutOfFrame-NjRlDlw  reason: not valid java name */
-        public final int m6966getDeactivateOutOfFrameNjRlDlw() {
+        public final int m6307getDeactivateOutOfFrameNjRlDlw() {
             return SLOperation.DeactivateOutOfFrame;
         }
 
         /* renamed from: getDeactivateOutOfFrameCancelled-NjRlDlw  reason: not valid java name */
-        public final int m6967getDeactivateOutOfFrameCancelledNjRlDlw() {
+        public final int m6308getDeactivateOutOfFrameCancelledNjRlDlw() {
             return SLOperation.DeactivateOutOfFrameCancelled;
         }
 
         /* renamed from: getSlotToReusedFromOnDeactivate-NjRlDlw  reason: not valid java name */
-        public final int m6975getSlotToReusedFromOnDeactivateNjRlDlw() {
+        public final int m6316getSlotToReusedFromOnDeactivateNjRlDlw() {
             return SLOperation.SlotToReusedFromOnDeactivate;
         }
 
         /* renamed from: getSlotToReusedFromOnReuse-NjRlDlw  reason: not valid java name */
-        public final int m6976getSlotToReusedFromOnReuseNjRlDlw() {
+        public final int m6317getSlotToReusedFromOnReuseNjRlDlw() {
             return SLOperation.SlotToReusedFromOnReuse;
         }
 
         /* renamed from: getReused-NjRlDlw  reason: not valid java name */
-        public final int m6974getReusedNjRlDlw() {
+        public final int m6315getReusedNjRlDlw() {
             return SLOperation.Reused;
         }
 
         /* renamed from: getResumePaused-NjRlDlw  reason: not valid java name */
-        public final int m6969getResumePausedNjRlDlw() {
+        public final int m6310getResumePausedNjRlDlw() {
             return SLOperation.ResumePaused;
         }
 
         /* renamed from: getPausePaused-NjRlDlw  reason: not valid java name */
-        public final int m6968getPausePausedNjRlDlw() {
+        public final int m6309getPausePausedNjRlDlw() {
             return SLOperation.PausePaused;
         }
 
         /* renamed from: getApplyPaused-NjRlDlw  reason: not valid java name */
-        public final int m6964getApplyPausedNjRlDlw() {
+        public final int m6305getApplyPausedNjRlDlw() {
             return SLOperation.ApplyPaused;
         }
     }

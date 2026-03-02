@@ -43,13 +43,13 @@ import androidx.media3.exoplayer.video.spherical.CameraMotionListener;
 import androidx.media3.extractor.ExtractorsFactory;
 import java.util.List;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     private final ConditionVariable constructorFinished;
     private final ExoPlayerImpl player;
 
     @Deprecated
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private final ExoPlayer.Builder wrappedBuilder;
 

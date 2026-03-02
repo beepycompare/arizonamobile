@@ -48,16 +48,25 @@ public class ContentCaptureSessionCompat {
     public void notifyViewsAppeared(List<ViewStructure> list) {
         if (Build.VERSION.SDK_INT >= 34) {
             Api34Impl.notifyViewsAppeared((ContentCaptureSession) this.mWrappedObj, list);
-        } else if (Build.VERSION.SDK_INT >= 29) {
+        } else if (Build.VERSION.SDK_INT < 29) {
+        } else {
             ViewStructure newViewStructure = Api29Impl.newViewStructure((ContentCaptureSession) this.mWrappedObj, this.mView);
             Api23Impl.getExtras(newViewStructure).putBoolean(KEY_VIEW_TREE_APPEARING, true);
             Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure);
-            for (int i = 0; i < list.size(); i++) {
-                Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, list.get(i));
+            int i = 0;
+            while (true) {
+                int size = list.size();
+                Object obj = this.mWrappedObj;
+                if (i < size) {
+                    Api29Impl.notifyViewAppeared((ContentCaptureSession) obj, list.get(i));
+                    i++;
+                } else {
+                    ViewStructure newViewStructure2 = Api29Impl.newViewStructure((ContentCaptureSession) obj, this.mView);
+                    Api23Impl.getExtras(newViewStructure2).putBoolean(KEY_VIEW_TREE_APPEARED, true);
+                    Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure2);
+                    return;
+                }
             }
-            ViewStructure newViewStructure2 = Api29Impl.newViewStructure((ContentCaptureSession) this.mWrappedObj, this.mView);
-            Api23Impl.getExtras(newViewStructure2).putBoolean(KEY_VIEW_TREE_APPEARED, true);
-            Api29Impl.notifyViewAppeared((ContentCaptureSession) this.mWrappedObj, newViewStructure2);
         }
     }
 

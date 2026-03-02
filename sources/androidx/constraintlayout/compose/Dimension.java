@@ -36,14 +36,14 @@ public interface Dimension {
         }
 
         /* renamed from: preferredValue-0680j_4  reason: not valid java name */
-        public final MinCoercible m8614preferredValue0680j_4(float f) {
+        public final MinCoercible m7911preferredValue0680j_4(float f) {
             DimensionDescription dimensionDescription = new DimensionDescription("spread");
-            dimensionDescription.getMax$constraintlayout_compose_release().m8616update0680j_4(f);
+            dimensionDescription.getMax$constraintlayout_compose_release().m7913update0680j_4(f);
             return dimensionDescription;
         }
 
         /* renamed from: value-0680j_4  reason: not valid java name */
-        public final Dimension m8615value0680j_4(float f) {
+        public final Dimension m7912value0680j_4(float f) {
             return new DimensionDescription(f, (DefaultConstructorMarker) null);
         }
 

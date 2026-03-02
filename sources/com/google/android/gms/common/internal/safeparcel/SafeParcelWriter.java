@@ -13,7 +13,7 @@ import androidx.core.internal.view.SupportMenu;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class SafeParcelWriter {
     private SafeParcelWriter() {

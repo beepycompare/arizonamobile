@@ -7,9 +7,9 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.descriptors.SerialDescriptor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonElementMarker.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
-public /* synthetic */ class JsonElementMarker$origin$1 extends FunctionReferenceImpl implements Function2<SerialDescriptor, Integer, Boolean> {
+public final /* synthetic */ class JsonElementMarker$origin$1 extends FunctionReferenceImpl implements Function2<SerialDescriptor, Integer, Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public JsonElementMarker$origin$1(Object obj) {
         super(2, obj, JsonElementMarker.class, "readIfAbsent", "readIfAbsent(Lkotlinx/serialization/descriptors/SerialDescriptor;I)Z", 0);

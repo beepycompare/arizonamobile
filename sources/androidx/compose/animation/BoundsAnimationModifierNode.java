@@ -73,8 +73,8 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: isMeasurementApproachInProgress-ozmzZPI  reason: not valid java name */
-    public boolean mo88isMeasurementApproachInProgressozmzZPI(long j) {
-        this.boundsAnimation.m93updateTargetSizeuvyYCjk(IntSizeKt.m8441toSizeozmzZPI(j));
+    public boolean mo75isMeasurementApproachInProgressozmzZPI(long j) {
+        this.boundsAnimation.m80updateTargetSizeuvyYCjk(IntSizeKt.m7738toSizeozmzZPI(j));
         return !this.boundsAnimation.isIdle();
     }
 
@@ -92,22 +92,22 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
 
     @Override // androidx.compose.ui.layout.ApproachLayoutModifierNode
     /* renamed from: approachMeasure-3p2s80s  reason: not valid java name */
-    public MeasureResult mo87approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
-        long m90getCurrentSizeNHjbRc;
-        if (this.boundsAnimation.m90getCurrentSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats) {
-            m90getCurrentSizeNHjbRc = IntSizeKt.m8441toSizeozmzZPI(approachMeasureScope.mo6853getLookaheadSizeYbymL2g());
+    public MeasureResult mo74approachMeasure3p2s80s(ApproachMeasureScope approachMeasureScope, Measurable measurable, long j) {
+        long m77getCurrentSizeNHjbRc;
+        if (this.boundsAnimation.m77getCurrentSizeNHjbRc() == InlineClassHelperKt.UnspecifiedPackedFloats) {
+            m77getCurrentSizeNHjbRc = IntSizeKt.m7738toSizeozmzZPI(approachMeasureScope.mo6194getLookaheadSizeYbymL2g());
         } else {
-            m90getCurrentSizeNHjbRc = this.boundsAnimation.m90getCurrentSizeNHjbRc();
+            m77getCurrentSizeNHjbRc = this.boundsAnimation.m77getCurrentSizeNHjbRc();
         }
         Rect value = this.boundsAnimation.getValue();
         if (value != null) {
-            m90getCurrentSizeNHjbRc = value.m5212getSizeNHjbRc();
+            m77getCurrentSizeNHjbRc = value.m4560getSizeNHjbRc();
         }
-        long m8437roundToIntSizeuvyYCjk = IntSizeKt.m8437roundToIntSizeuvyYCjk(m90getCurrentSizeNHjbRc);
-        long m8217unboximpl = this.onChooseMeasureConstraints.invoke(IntSize.m8421boximpl(m8437roundToIntSizeuvyYCjk), Constraints.m8198boximpl(j)).m8217unboximpl();
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(m8217unboximpl);
-        long m8225constrain4WqzIAM = ConstraintsKt.m8225constrain4WqzIAM(m8217unboximpl, m8437roundToIntSizeuvyYCjk);
-        return MeasureScope.layout$default(approachMeasureScope, (int) (m8225constrain4WqzIAM >> 32), (int) (m8225constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.BoundsAnimationModifierNode$approachMeasure$1
+        long m7734roundToIntSizeuvyYCjk = IntSizeKt.m7734roundToIntSizeuvyYCjk(m77getCurrentSizeNHjbRc);
+        long m7514unboximpl = this.onChooseMeasureConstraints.invoke(IntSize.m7718boximpl(m7734roundToIntSizeuvyYCjk), Constraints.m7495boximpl(j)).m7514unboximpl();
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(m7514unboximpl);
+        long m7522constrain4WqzIAM = ConstraintsKt.m7522constrain4WqzIAM(m7514unboximpl, m7734roundToIntSizeuvyYCjk);
+        return MeasureScope.layout$default(approachMeasureScope, (int) (m7522constrain4WqzIAM >> 32), (int) (m7522constrain4WqzIAM & 4294967295L), null, new Function1<Placeable.PlacementScope, Unit>() { // from class: androidx.compose.animation.BoundsAnimationModifierNode$approachMeasure$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -124,25 +124,26 @@ public final class BoundsAnimationModifierNode extends Modifier.Node implements 
             public final void invoke2(Placeable.PlacementScope placementScope) {
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation;
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation2;
-                long m5214getTopLeftF1C5BW0;
+                long m4562getTopLeftF1C5BW0;
                 BoundsTransformDeferredAnimation boundsTransformDeferredAnimation3;
                 boundsTransformDeferredAnimation = BoundsAnimationModifierNode.this.boundsAnimation;
                 Rect value2 = boundsTransformDeferredAnimation.getValue();
                 LookaheadScope lookaheadScope = BoundsAnimationModifierNode.this.getLookaheadScope();
                 BoundsAnimationModifierNode boundsAnimationModifierNode = BoundsAnimationModifierNode.this;
                 LayoutCoordinates coordinates = placementScope.getCoordinates();
-                Offset m5168boximpl = coordinates != null ? Offset.m5168boximpl(lookaheadScope.getLookaheadScopeCoordinates(placementScope).mo6885localPositionOfS_NoaFU(coordinates, Offset.Companion.m5195getZeroF1C5BW0(), boundsAnimationModifierNode.getAnimateMotionFrameOfReference())) : null;
+                Offset m4516boximpl = coordinates != null ? Offset.m4516boximpl(lookaheadScope.getLookaheadScopeCoordinates(placementScope).mo6226localPositionOfS_NoaFU(coordinates, Offset.Companion.m4543getZeroF1C5BW0(), boundsAnimationModifierNode.getAnimateMotionFrameOfReference())) : null;
+                BoundsAnimationModifierNode boundsAnimationModifierNode2 = BoundsAnimationModifierNode.this;
                 if (value2 != null) {
-                    boundsTransformDeferredAnimation3 = BoundsAnimationModifierNode.this.boundsAnimation;
-                    boundsTransformDeferredAnimation3.m92updateCurrentBoundstz77jQw(value2.m5214getTopLeftF1C5BW0(), value2.m5212getSizeNHjbRc());
-                    m5214getTopLeftF1C5BW0 = value2.m5214getTopLeftF1C5BW0();
+                    boundsTransformDeferredAnimation3 = boundsAnimationModifierNode2.boundsAnimation;
+                    boundsTransformDeferredAnimation3.m79updateCurrentBoundstz77jQw(value2.m4562getTopLeftF1C5BW0(), value2.m4560getSizeNHjbRc());
+                    m4562getTopLeftF1C5BW0 = value2.m4562getTopLeftF1C5BW0();
                 } else {
-                    boundsTransformDeferredAnimation2 = BoundsAnimationModifierNode.this.boundsAnimation;
+                    boundsTransformDeferredAnimation2 = boundsAnimationModifierNode2.boundsAnimation;
                     Rect currentBounds = boundsTransformDeferredAnimation2.getCurrentBounds();
-                    m5214getTopLeftF1C5BW0 = currentBounds != null ? currentBounds.m5214getTopLeftF1C5BW0() : Offset.Companion.m5195getZeroF1C5BW0();
+                    m4562getTopLeftF1C5BW0 = currentBounds != null ? currentBounds.m4562getTopLeftF1C5BW0() : Offset.Companion.m4543getZeroF1C5BW0();
                 }
-                long m5183minusMKHz9U = m5168boximpl != null ? Offset.m5183minusMKHz9U(m5214getTopLeftF1C5BW0, m5168boximpl.m5189unboximpl()) : Offset.Companion.m5195getZeroF1C5BW0();
-                Placeable.PlacementScope.place$default(placementScope, mo6875measureBRTryo0, Math.round(Float.intBitsToFloat((int) (m5183minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m5183minusMKHz9U & 4294967295L))), 0.0f, 4, null);
+                long m4531minusMKHz9U = m4516boximpl != null ? Offset.m4531minusMKHz9U(m4562getTopLeftF1C5BW0, m4516boximpl.m4537unboximpl()) : Offset.Companion.m4543getZeroF1C5BW0();
+                Placeable.PlacementScope.place$default(placementScope, mo6216measureBRTryo0, Math.round(Float.intBitsToFloat((int) (m4531minusMKHz9U >> 32))), Math.round(Float.intBitsToFloat((int) (m4531minusMKHz9U & 4294967295L))), 0.0f, 4, null);
             }
         }, 4, null);
     }

@@ -75,16 +75,16 @@ public final class SavedStateEncoder extends AbstractEncoder {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
-        SavedStateWriter.m9322putSavedStateimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
+        SavedStateWriter.m8527putSavedStateimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, bundleOf);
         putClassDiscriminatorIfRequired(this.configuration, descriptor, bundleOf);
         return new SavedStateEncoder(bundleOf, this.configuration);
     }
 
     private final void putClassDiscriminatorIfRequired(SavedStateConfiguration savedStateConfiguration, SerialDescriptor serialDescriptor, Bundle bundle) {
-        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(bundle), "type")) {
+        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(bundle), "type")) {
             if (Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.CLASS.INSTANCE) || Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.OBJECT.INSTANCE)) {
-                SavedStateWriter.m9328putStringimpl(SavedStateWriter.m9295constructorimpl(bundle), "type", serialDescriptor.getSerialName());
+                SavedStateWriter.m8533putStringimpl(SavedStateWriter.m8500constructorimpl(bundle), "type", serialDescriptor.getSerialName());
             }
         }
     }
@@ -94,10 +94,10 @@ public final class SavedStateEncoder extends AbstractEncoder {
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         this.key = descriptor.getElementName(i);
         if (this.configuration.getClassDiscriminatorMode() == 1) {
-            boolean m9210containsimpl = SavedStateReader.m9210containsimpl(SavedStateReader.m9209constructorimpl(this.savedState), "type");
+            boolean m8415containsimpl = SavedStateReader.m8415containsimpl(SavedStateReader.m8414constructorimpl(this.savedState), "type");
             boolean areEqual = Intrinsics.areEqual(this.key, "type");
-            if (m9210containsimpl && areEqual) {
-                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m9280getStringimpl(SavedStateReader.m9209constructorimpl(this.savedState), "type") + " has property '" + this.key + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
+            if (m8415containsimpl && areEqual) {
+                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m8485getStringimpl(SavedStateReader.m8414constructorimpl(this.savedState), "type") + " has property '" + this.key + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
             }
         }
         return true;
@@ -105,59 +105,59 @@ public final class SavedStateEncoder extends AbstractEncoder {
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeBoolean(boolean z) {
-        SavedStateWriter.m9301putBooleanimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, z);
+        SavedStateWriter.m8506putBooleanimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, z);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeByte(byte b) {
-        SavedStateWriter.m9312putIntimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, b);
+        SavedStateWriter.m8517putIntimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, b);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeShort(short s) {
-        SavedStateWriter.m9312putIntimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, s);
+        SavedStateWriter.m8517putIntimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, s);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeInt(int i) {
-        SavedStateWriter.m9312putIntimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, i);
+        SavedStateWriter.m8517putIntimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, i);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeLong(long j) {
-        SavedStateWriter.m9316putLongimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, j);
+        SavedStateWriter.m8521putLongimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, j);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeFloat(float f) {
-        SavedStateWriter.m9310putFloatimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, f);
+        SavedStateWriter.m8515putFloatimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, f);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeDouble(double d) {
-        SavedStateWriter.m9308putDoubleimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, d);
+        SavedStateWriter.m8513putDoubleimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, d);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeChar(char c) {
-        SavedStateWriter.m9303putCharimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, c);
+        SavedStateWriter.m8508putCharimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, c);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeString(String value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        SavedStateWriter.m9328putStringimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, value);
+        SavedStateWriter.m8533putStringimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, value);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeEnum(SerialDescriptor enumDescriptor, int i) {
         Intrinsics.checkNotNullParameter(enumDescriptor, "enumDescriptor");
-        SavedStateWriter.m9312putIntimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key, i);
+        SavedStateWriter.m8517putIntimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key, i);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
     public void encodeNull() {
-        SavedStateWriter.m9318putNullimpl(SavedStateWriter.m9295constructorimpl(this.savedState), this.key);
+        SavedStateWriter.m8523putNullimpl(SavedStateWriter.m8500constructorimpl(this.savedState), this.key);
     }
 
     @Override // kotlinx.serialization.encoding.AbstractEncoder, kotlinx.serialization.encoding.Encoder
@@ -179,57 +179,57 @@ public final class SavedStateEncoder extends AbstractEncoder {
                                             super.encodeSerializableValue(serializer, t);
                                             return;
                                         }
-                                        Bundle m9295constructorimpl = SavedStateWriter.m9295constructorimpl(this.savedState);
+                                        Bundle m8500constructorimpl = SavedStateWriter.m8500constructorimpl(this.savedState);
                                         String str = this.key;
                                         Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.Array<kotlin.String>");
-                                        SavedStateWriter.m9329putStringArrayimpl(m9295constructorimpl, str, (String[]) t);
+                                        SavedStateWriter.m8534putStringArrayimpl(m8500constructorimpl, str, (String[]) t);
                                         return;
                                     }
-                                    Bundle m9295constructorimpl2 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                                    Bundle m8500constructorimpl2 = SavedStateWriter.m8500constructorimpl(this.savedState);
                                     String str2 = this.key;
                                     Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.LongArray");
-                                    SavedStateWriter.m9317putLongArrayimpl(m9295constructorimpl2, str2, (long[]) t);
+                                    SavedStateWriter.m8522putLongArrayimpl(m8500constructorimpl2, str2, (long[]) t);
                                     return;
                                 }
-                                Bundle m9295constructorimpl3 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                                Bundle m8500constructorimpl3 = SavedStateWriter.m8500constructorimpl(this.savedState);
                                 String str3 = this.key;
                                 Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.IntArray");
-                                SavedStateWriter.m9313putIntArrayimpl(m9295constructorimpl3, str3, (int[]) t);
+                                SavedStateWriter.m8518putIntArrayimpl(m8500constructorimpl3, str3, (int[]) t);
                                 return;
                             }
-                            Bundle m9295constructorimpl4 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                            Bundle m8500constructorimpl4 = SavedStateWriter.m8500constructorimpl(this.savedState);
                             String str4 = this.key;
                             Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.FloatArray");
-                            SavedStateWriter.m9311putFloatArrayimpl(m9295constructorimpl4, str4, (float[]) t);
+                            SavedStateWriter.m8516putFloatArrayimpl(m8500constructorimpl4, str4, (float[]) t);
                             return;
                         }
-                        Bundle m9295constructorimpl5 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                        Bundle m8500constructorimpl5 = SavedStateWriter.m8500constructorimpl(this.savedState);
                         String str5 = this.key;
                         Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.DoubleArray");
-                        SavedStateWriter.m9309putDoubleArrayimpl(m9295constructorimpl5, str5, (double[]) t);
+                        SavedStateWriter.m8514putDoubleArrayimpl(m8500constructorimpl5, str5, (double[]) t);
                         return;
                     }
-                    Bundle m9295constructorimpl6 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                    Bundle m8500constructorimpl6 = SavedStateWriter.m8500constructorimpl(this.savedState);
                     String str6 = this.key;
                     Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.CharArray");
-                    SavedStateWriter.m9304putCharArrayimpl(m9295constructorimpl6, str6, (char[]) t);
+                    SavedStateWriter.m8509putCharArrayimpl(m8500constructorimpl6, str6, (char[]) t);
                     return;
                 }
-                Bundle m9295constructorimpl7 = SavedStateWriter.m9295constructorimpl(this.savedState);
+                Bundle m8500constructorimpl7 = SavedStateWriter.m8500constructorimpl(this.savedState);
                 String str7 = this.key;
                 Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.BooleanArray");
-                SavedStateWriter.m9302putBooleanArrayimpl(m9295constructorimpl7, str7, (boolean[]) t);
+                SavedStateWriter.m8507putBooleanArrayimpl(m8500constructorimpl7, str7, (boolean[]) t);
                 return;
             }
-            Bundle m9295constructorimpl8 = SavedStateWriter.m9295constructorimpl(this.savedState);
+            Bundle m8500constructorimpl8 = SavedStateWriter.m8500constructorimpl(this.savedState);
             String str8 = this.key;
             Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.collections.List<kotlin.String>");
-            SavedStateWriter.m9330putStringListimpl(m9295constructorimpl8, str8, (List) t);
+            SavedStateWriter.m8535putStringListimpl(m8500constructorimpl8, str8, (List) t);
             return;
         }
-        Bundle m9295constructorimpl9 = SavedStateWriter.m9295constructorimpl(this.savedState);
+        Bundle m8500constructorimpl9 = SavedStateWriter.m8500constructorimpl(this.savedState);
         String str9 = this.key;
         Intrinsics.checkNotNull(t, "null cannot be cast to non-null type kotlin.collections.List<kotlin.Int>");
-        SavedStateWriter.m9314putIntListimpl(m9295constructorimpl9, str9, (List) t);
+        SavedStateWriter.m8519putIntListimpl(m8500constructorimpl9, str9, (List) t);
     }
 }

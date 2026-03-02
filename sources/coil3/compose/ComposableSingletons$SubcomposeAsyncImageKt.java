@@ -14,9 +14,7 @@ public final class ComposableSingletons$SubcomposeAsyncImageKt {
     private static Function3<SubcomposeAsyncImageScope, Composer, Integer, Unit> lambda$1938077476 = ComposableLambdaKt.composableLambdaInstance(1938077476, false, new Function3() { // from class: coil3.compose.ComposableSingletons$SubcomposeAsyncImageKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_1938077476$lambda$0;
-            lambda_1938077476$lambda$0 = ComposableSingletons$SubcomposeAsyncImageKt.lambda_1938077476$lambda$0((SubcomposeAsyncImageScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_1938077476$lambda$0;
+            return ComposableSingletons$SubcomposeAsyncImageKt.lambda_1938077476$lambda$0((SubcomposeAsyncImageScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
@@ -24,7 +22,7 @@ public final class ComposableSingletons$SubcomposeAsyncImageKt {
         return lambda$1938077476;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_1938077476$lambda$0(SubcomposeAsyncImageScope subcomposeAsyncImageScope, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "C309@13094L29:SubcomposeAsyncImage.kt#8xxpns");

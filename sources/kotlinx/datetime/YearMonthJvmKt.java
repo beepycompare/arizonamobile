@@ -17,9 +17,9 @@ public final class YearMonthJvmKt {
     private static final Lazy isoFormat$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.YearMonthJvmKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormatter isoFormat_delegate$lambda$0;
-            isoFormat_delegate$lambda$0 = YearMonthJvmKt.isoFormat_delegate$lambda$0();
-            return isoFormat_delegate$lambda$0;
+            DateTimeFormatter formatter;
+            formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendValue(ChronoField.YEAR, 4, 10, SignStyle.EXCEEDS_PAD).appendLiteral('-').appendValue(ChronoField.MONTH_OF_YEAR, 2).toFormatter();
+            return formatter;
         }
     });
 
@@ -42,10 +42,5 @@ public final class YearMonthJvmKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final DateTimeFormatter getIsoFormat() {
         return (DateTimeFormatter) isoFormat$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final DateTimeFormatter isoFormat_delegate$lambda$0() {
-        return new DateTimeFormatterBuilder().parseCaseInsensitive().appendValue(ChronoField.YEAR, 4, 10, SignStyle.EXCEEDS_PAD).appendLiteral('-').appendValue(ChronoField.MONTH_OF_YEAR, 2).toFormatter();
     }
 }

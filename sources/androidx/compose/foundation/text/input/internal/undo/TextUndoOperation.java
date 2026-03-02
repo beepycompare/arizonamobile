@@ -20,7 +20,7 @@ public final class TextUndoOperation {
     private static final Saver<TextUndoOperation, Object> Saver = new Saver<TextUndoOperation, Object>() { // from class: androidx.compose.foundation.text.input.internal.undo.TextUndoOperation$Companion$Saver$1
         @Override // androidx.compose.runtime.saveable.Saver
         public Object save(SaverScope saverScope, TextUndoOperation textUndoOperation) {
-            return CollectionsKt.listOf(Integer.valueOf(textUndoOperation.getIndex()), textUndoOperation.getPreText(), textUndoOperation.getPostText(), Integer.valueOf(TextRange.m7701getStartimpl(textUndoOperation.m1760getPreSelectiond9O1mEE())), Integer.valueOf(TextRange.m7696getEndimpl(textUndoOperation.m1760getPreSelectiond9O1mEE())), Integer.valueOf(TextRange.m7701getStartimpl(textUndoOperation.m1759getPostSelectiond9O1mEE())), Integer.valueOf(TextRange.m7696getEndimpl(textUndoOperation.m1759getPostSelectiond9O1mEE())), Long.valueOf(textUndoOperation.getTimeInMillis()));
+            return CollectionsKt.listOf(Integer.valueOf(textUndoOperation.getIndex()), textUndoOperation.getPreText(), textUndoOperation.getPostText(), Integer.valueOf(TextRange.m7003getStartimpl(textUndoOperation.m1522getPreSelectiond9O1mEE())), Integer.valueOf(TextRange.m6998getEndimpl(textUndoOperation.m1522getPreSelectiond9O1mEE())), Integer.valueOf(TextRange.m7003getStartimpl(textUndoOperation.m1521getPostSelectiond9O1mEE())), Integer.valueOf(TextRange.m6998getEndimpl(textUndoOperation.m1521getPostSelectiond9O1mEE())), Long.valueOf(textUndoOperation.getTimeInMillis()));
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
@@ -98,12 +98,12 @@ public final class TextUndoOperation {
     }
 
     /* renamed from: getPreSelection-d9O1mEE  reason: not valid java name */
-    public final long m1760getPreSelectiond9O1mEE() {
+    public final long m1522getPreSelectiond9O1mEE() {
         return this.preSelection;
     }
 
     /* renamed from: getPostSelection-d9O1mEE  reason: not valid java name */
-    public final long m1759getPostSelectiond9O1mEE() {
+    public final long m1521getPostSelectiond9O1mEE() {
         return this.postSelection;
     }
 
@@ -124,13 +124,15 @@ public final class TextUndoOperation {
     }
 
     public final TextDeleteType getDeletionType() {
-        if (this.textEditType == TextEditType.Delete && TextRange.m7695getCollapsedimpl(this.postSelection)) {
-            if (TextRange.m7695getCollapsedimpl(this.preSelection)) {
-                if (TextRange.m7701getStartimpl(this.preSelection) > TextRange.m7701getStartimpl(this.postSelection)) {
+        if (this.textEditType == TextEditType.Delete && TextRange.m6997getCollapsedimpl(this.postSelection)) {
+            boolean m6997getCollapsedimpl = TextRange.m6997getCollapsedimpl(this.preSelection);
+            long j = this.preSelection;
+            if (m6997getCollapsedimpl) {
+                if (TextRange.m7003getStartimpl(j) > TextRange.m7003getStartimpl(this.postSelection)) {
                     return TextDeleteType.Start;
                 }
                 return TextDeleteType.End;
-            } else if (TextRange.m7701getStartimpl(this.preSelection) == TextRange.m7701getStartimpl(this.postSelection) && TextRange.m7701getStartimpl(this.preSelection) == this.index) {
+            } else if (TextRange.m7003getStartimpl(j) == TextRange.m7003getStartimpl(this.postSelection) && TextRange.m7003getStartimpl(this.preSelection) == this.index) {
                 return TextDeleteType.Inner;
             } else {
                 return TextDeleteType.NotByUser;

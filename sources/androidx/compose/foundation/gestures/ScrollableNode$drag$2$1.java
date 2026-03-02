@@ -55,9 +55,7 @@ final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<N
             Function1<? super DragEvent.DragDelta, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.ScrollableNode$drag$2$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = ScrollableNode$drag$2$1.invokeSuspend$lambda$0(NestedScrollScope.this, scrollingLogic, (DragEvent.DragDelta) obj2);
-                    return invokeSuspend$lambda$0;
+                    return ScrollableNode$drag$2$1.invokeSuspend$lambda$0(NestedScrollScope.this, scrollingLogic, (DragEvent.DragDelta) obj2);
                 }
             };
             this.label = 1;
@@ -72,9 +70,9 @@ final class ScrollableNode$drag$2$1 extends SuspendLambda implements Function2<N
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(NestedScrollScope nestedScrollScope, ScrollingLogic scrollingLogic, DragEvent.DragDelta dragDelta) {
-        nestedScrollScope.mo612scrollByWithOverscrollOzD1aCk(Offset.m5186timestuRUvjQ(scrollingLogic.m671singleAxisOffsetMKHz9U(dragDelta.m523getDeltaF1C5BW0()), dragDelta.isIndirectPointerEvent() ? -1.0f : 1.0f), NestedScrollSource.Companion.m6624getUserInputWNlRxjI());
+        nestedScrollScope.mo531scrollByWithOverscrollOzD1aCk(Offset.m4534timestuRUvjQ(scrollingLogic.m588singleAxisOffsetMKHz9U(dragDelta.m454getDeltaF1C5BW0()), dragDelta.isIndirectPointerEvent() ? -1.0f : 1.0f), NestedScrollSource.Companion.m5965getUserInputWNlRxjI());
         return Unit.INSTANCE;
     }
 }

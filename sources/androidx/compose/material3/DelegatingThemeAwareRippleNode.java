@@ -50,14 +50,12 @@ public final class DelegatingThemeAwareRippleNode extends DelegatingNode impleme
         ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit updateConfiguration$lambda$0;
-                updateConfiguration$lambda$0 = DelegatingThemeAwareRippleNode.updateConfiguration$lambda$0(DelegatingThemeAwareRippleNode.this);
-                return updateConfiguration$lambda$0;
+                return DelegatingThemeAwareRippleNode.updateConfiguration$lambda$0(DelegatingThemeAwareRippleNode.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit updateConfiguration$lambda$0(DelegatingThemeAwareRippleNode delegatingThemeAwareRippleNode) {
         if (((RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(delegatingThemeAwareRippleNode, RippleKt.getLocalRippleConfiguration())) == null) {
             delegatingThemeAwareRippleNode.removeRipple();
@@ -71,31 +69,29 @@ public final class DelegatingThemeAwareRippleNode extends DelegatingNode impleme
         Function0 function0 = new Function0() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                RippleAlpha attachNewRipple$lambda$1;
-                attachNewRipple$lambda$1 = DelegatingThemeAwareRippleNode.attachNewRipple$lambda$1(DelegatingThemeAwareRippleNode.this);
-                return attachNewRipple$lambda$1;
+                return DelegatingThemeAwareRippleNode.attachNewRipple$lambda$1(DelegatingThemeAwareRippleNode.this);
             }
         };
-        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1950createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
+        this.rippleNode = delegate(androidx.compose.material.ripple.RippleKt.m1687createRippleModifierNodeTDGSqEk(this.interactionSource, this.bounded, this.radius, new ColorProducer() { // from class: androidx.compose.material3.DelegatingThemeAwareRippleNode$attachNewRipple$calculateColor$1
             @Override // androidx.compose.ui.graphics.ColorProducer
             /* renamed from: invoke-0d7_KjU  reason: not valid java name */
-            public final long mo2386invoke0d7_KjU() {
+            public final long mo2027invoke0d7_KjU() {
                 ColorProducer colorProducer;
                 colorProducer = DelegatingThemeAwareRippleNode.this.color;
-                long mo2386invoke0d7_KjU = colorProducer.mo2386invoke0d7_KjU();
-                if (mo2386invoke0d7_KjU != 16) {
-                    return mo2386invoke0d7_KjU;
+                long mo2027invoke0d7_KjU = colorProducer.mo2027invoke0d7_KjU();
+                if (mo2027invoke0d7_KjU != 16) {
+                    return mo2027invoke0d7_KjU;
                 }
                 RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, RippleKt.getLocalRippleConfiguration());
-                if (rippleConfiguration != null && rippleConfiguration.m2864getColor0d7_KjU() != 16) {
-                    return rippleConfiguration.m2864getColor0d7_KjU();
+                if (rippleConfiguration != null && rippleConfiguration.m2400getColor0d7_KjU() != 16) {
+                    return rippleConfiguration.m2400getColor0d7_KjU();
                 }
-                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m5434unboximpl();
+                return ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(DelegatingThemeAwareRippleNode.this, ContentColorKt.getLocalContentColor())).m4782unboximpl();
             }
         }, function0));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final RippleAlpha attachNewRipple$lambda$1(DelegatingThemeAwareRippleNode delegatingThemeAwareRippleNode) {
         RippleAlpha rippleAlpha;
         RippleConfiguration rippleConfiguration = (RippleConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(delegatingThemeAwareRippleNode, RippleKt.getLocalRippleConfiguration());

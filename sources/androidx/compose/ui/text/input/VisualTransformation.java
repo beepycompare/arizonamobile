@@ -19,9 +19,7 @@ public interface VisualTransformation {
         private static final VisualTransformation None = new VisualTransformation() { // from class: androidx.compose.ui.text.input.VisualTransformation$Companion$$ExternalSyntheticLambda0
             @Override // androidx.compose.ui.text.input.VisualTransformation
             public final TransformedText filter(AnnotatedString annotatedString) {
-                TransformedText None$lambda$0;
-                None$lambda$0 = VisualTransformation.Companion.None$lambda$0(annotatedString);
-                return None$lambda$0;
+                return VisualTransformation.Companion.None$lambda$0(annotatedString);
             }
         };
 
@@ -35,7 +33,7 @@ public interface VisualTransformation {
             return None;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final TransformedText None$lambda$0(AnnotatedString annotatedString) {
             return new TransformedText(annotatedString, OffsetMapping.Companion.getIdentity());
         }

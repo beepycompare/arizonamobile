@@ -85,9 +85,7 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.window.area.WindowAreaControllerImpl$windowAreaInfos$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$2;
-                    invokeSuspend$lambda$2 = WindowAreaControllerImpl$windowAreaInfos$1.invokeSuspend$lambda$2(WindowAreaControllerImpl.this, consumer2, consumer22);
-                    return invokeSuspend$lambda$2;
+                    return WindowAreaControllerImpl$windowAreaInfos$1.invokeSuspend$lambda$2(WindowAreaControllerImpl.this, consumer2, consumer22);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -100,7 +98,7 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$0(WindowAreaControllerImpl windowAreaControllerImpl, ProducerScope producerScope, int i) {
         HashMap hashMap;
         windowAreaControllerImpl.updateRearDisplayAvailability(i);
@@ -108,10 +106,10 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
         hashMap = windowAreaControllerImpl.currentWindowAreaInfoMap;
         Collection values = hashMap.values();
         Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
-        channel.mo9174trySendJP2dKIU(CollectionsKt.toList(values));
+        channel.mo8396trySendJP2dKIU(CollectionsKt.toList(values));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$1(WindowAreaControllerImpl windowAreaControllerImpl, ProducerScope producerScope, ExtensionWindowAreaStatus extensionWindowAreaStatus) {
         HashMap hashMap;
         windowAreaControllerImpl.updateRearDisplayPresentationAvailability(extensionWindowAreaStatus);
@@ -119,10 +117,10 @@ final class WindowAreaControllerImpl$windowAreaInfos$1 extends SuspendLambda imp
         hashMap = windowAreaControllerImpl.currentWindowAreaInfoMap;
         Collection values = hashMap.values();
         Intrinsics.checkNotNullExpressionValue(values, "<get-values>(...)");
-        channel.mo9174trySendJP2dKIU(CollectionsKt.toList(values));
+        channel.mo8396trySendJP2dKIU(CollectionsKt.toList(values));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$2(WindowAreaControllerImpl windowAreaControllerImpl, Consumer2 consumer2, Consumer2 consumer22) {
         WindowAreaComponent windowAreaComponent;
         WindowAreaComponent windowAreaComponent2;

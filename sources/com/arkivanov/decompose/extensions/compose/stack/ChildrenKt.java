@@ -37,19 +37,19 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000R\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u008b\u0001\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0012\u0010\u0005\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0016\b\u0002\u0010\t\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0004\u0018\u00010\n22\u0010\u000b\u001a.\u0012\u001f\u0012\u001d\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\r¢\u0006\f\b\u000e\u0012\b\b\u000f\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0002\u0010\u0012\u001a\u0091\u0001\u0010\u0000\u001a\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\u0004*\u00020\u00032\u0018\u0010\u0005\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\u00060\u00132\b\b\u0002\u0010\u0007\u001a\u00020\b2\u0016\b\u0002\u0010\t\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0004\u0018\u00010\n22\u0010\u000b\u001a.\u0012\u001f\u0012\u001d\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00040\r¢\u0006\f\b\u000e\u0012\b\b\u000f\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u00020\u00010\f¢\u0006\u0002\b\u0011H\u0007¢\u0006\u0002\u0010\u0014\u001a\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016*\n\u0012\u0002\b\u0003\u0012\u0002\b\u00030\u0006H\u0002\u001a\u001f\u0010\u0018\u001a\u00020\u0001*\u00020\u00192\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016H\u0003¢\u0006\u0002\u0010\u001b¨\u0006\u001c"}, d2 = {"Children", "", "C", "", ExifInterface.GPS_DIRECTION_TRUE, "stack", "Lcom/arkivanov/decompose/router/stack/ChildStack;", "modifier", "Landroidx/compose/ui/Modifier;", "animation", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/StackAnimation;", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Lcom/arkivanov/decompose/Child$Created;", "Lkotlin/ParameterName;", "name", "child", "Landroidx/compose/runtime/Composable;", "(Lcom/arkivanov/decompose/router/stack/ChildStack;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/stack/animation/StackAnimation;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Lcom/arkivanov/decompose/value/Value;", "(Lcom/arkivanov/decompose/value/Value;Landroidx/compose/ui/Modifier;Lcom/arkivanov/decompose/extensions/compose/stack/animation/StackAnimation;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "getKeys", "", "", "retainStates", "Landroidx/compose/runtime/saveable/SaveableStateHolder;", "currentKeys", "(Landroidx/compose/runtime/saveable/SaveableStateHolder;Ljava/util/Set;Landroidx/compose/runtime/Composer;I)V", "extensions-compose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ChildrenKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Children$lambda$0(ChildStack childStack, Modifier modifier, StackAnimation stackAnimation, Function3 function3, int i, int i2, Composer composer, int i3) {
         Children(childStack, modifier, stackAnimation, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Children$lambda$1(Value value, Modifier modifier, StackAnimation stackAnimation, Function3 function3, int i, int i2, Composer composer, int i3) {
         Children(value, modifier, stackAnimation, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainStates$lambda$8(SaveableStateHolder saveableStateHolder, Set set, int i, Composer composer, int i2) {
         retainStates(saveableStateHolder, set, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -176,9 +176,7 @@ public final class ChildrenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Children$lambda$0;
-                    Children$lambda$0 = ChildrenKt.Children$lambda$0(ChildStack.this, modifier2, stackAnimation3, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return Children$lambda$0;
+                    return ChildrenKt.Children$lambda$0(ChildStack.this, modifier2, stackAnimation3, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -240,9 +238,7 @@ public final class ChildrenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Children$lambda$1;
-                    Children$lambda$1 = ChildrenKt.Children$lambda$1(Value.this, modifier2, stackAnimation2, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return Children$lambda$1;
+                    return ChildrenKt.Children$lambda$1(Value.this, modifier2, stackAnimation2, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -287,9 +283,7 @@ public final class ChildrenKt {
                 rememberedValue2 = new Function1() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult retainStates$lambda$7$lambda$6;
-                        retainStates$lambda$7$lambda$6 = ChildrenKt.retainStates$lambda$7$lambda$6(Keys.this, set, saveableStateHolder, (DisposableEffectScope) obj);
-                        return retainStates$lambda$7$lambda$6;
+                        return ChildrenKt.retainStates$lambda$7$lambda$6(Keys.this, set, saveableStateHolder, (DisposableEffectScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -307,15 +301,13 @@ public final class ChildrenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.stack.ChildrenKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit retainStates$lambda$8;
-                    retainStates$lambda$8 = ChildrenKt.retainStates$lambda$8(SaveableStateHolder.this, set, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return retainStates$lambda$8;
+                    return ChildrenKt.retainStates$lambda$8(SaveableStateHolder.this, set, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult retainStates$lambda$7$lambda$6(Keys keys, Set set, SaveableStateHolder saveableStateHolder, DisposableEffectScope DisposableEffect) {
         Intrinsics.checkNotNullParameter(DisposableEffect, "$this$DisposableEffect");
         for (Object obj : keys.getSet()) {

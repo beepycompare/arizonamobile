@@ -88,12 +88,12 @@ public final class zzaa {
     }
 
     public final void zzd(String str, Object obj) {
-        if (obj == null) {
-            this.zzd.remove(str);
-            return;
-        }
         Map map = this.zzd;
-        map.put(str, zzh(str, map.get(str), obj));
+        if (obj == null) {
+            map.remove(str);
+        } else {
+            map.put(str, zzh(str, map.get(str), obj));
+        }
     }
 
     public final Object zze(String str) {

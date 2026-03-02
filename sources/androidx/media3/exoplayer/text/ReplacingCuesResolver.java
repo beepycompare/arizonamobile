@@ -16,11 +16,13 @@ final class ReplacingCuesResolver implements CuesResolver {
         Preconditions.checkArgument(cuesWithTiming.startTimeUs != C.TIME_UNSET);
         boolean z = cuesWithTiming.startTimeUs <= j && (cuesWithTiming.endTimeUs == C.TIME_UNSET || j < cuesWithTiming.endTimeUs);
         for (int size = this.cuesWithTimingList.size() - 1; size >= 0; size--) {
-            if (cuesWithTiming.startTimeUs >= this.cuesWithTimingList.get(size).startTimeUs) {
-                this.cuesWithTimingList.add(size + 1, cuesWithTiming);
+            int i = (cuesWithTiming.startTimeUs > this.cuesWithTimingList.get(size).startTimeUs ? 1 : (cuesWithTiming.startTimeUs == this.cuesWithTimingList.get(size).startTimeUs ? 0 : -1));
+            ArrayList<CuesWithTiming> arrayList = this.cuesWithTimingList;
+            if (i >= 0) {
+                arrayList.add(size + 1, cuesWithTiming);
                 return z;
             }
-            if (this.cuesWithTimingList.get(size).startTimeUs <= j) {
+            if (arrayList.get(size).startTimeUs <= j) {
                 z = false;
             }
         }
@@ -59,25 +61,32 @@ final class ReplacingCuesResolver implements CuesResolver {
         if (this.cuesWithTimingList.isEmpty() || j < this.cuesWithTimingList.get(0).startTimeUs) {
             return C.TIME_UNSET;
         }
-        for (int i = 1; i < this.cuesWithTimingList.size(); i++) {
-            long j2 = this.cuesWithTimingList.get(i).startTimeUs;
-            int i2 = (j > j2 ? 1 : (j == j2 ? 0 : -1));
-            if (i2 == 0) {
-                return j2;
-            }
-            if (i2 < 0) {
-                CuesWithTiming cuesWithTiming = this.cuesWithTimingList.get(i - 1);
-                if (cuesWithTiming.endTimeUs != C.TIME_UNSET && cuesWithTiming.endTimeUs <= j) {
-                    return cuesWithTiming.endTimeUs;
+        int i = 1;
+        while (true) {
+            int size = this.cuesWithTimingList.size();
+            ArrayList<CuesWithTiming> arrayList = this.cuesWithTimingList;
+            if (i < size) {
+                long j2 = arrayList.get(i).startTimeUs;
+                int i2 = (j > j2 ? 1 : (j == j2 ? 0 : -1));
+                if (i2 == 0) {
+                    return j2;
                 }
-                return cuesWithTiming.startTimeUs;
+                if (i2 < 0) {
+                    CuesWithTiming cuesWithTiming = this.cuesWithTimingList.get(i - 1);
+                    if (cuesWithTiming.endTimeUs != C.TIME_UNSET && cuesWithTiming.endTimeUs <= j) {
+                        return cuesWithTiming.endTimeUs;
+                    }
+                    return cuesWithTiming.startTimeUs;
+                }
+                i++;
+            } else {
+                CuesWithTiming cuesWithTiming2 = (CuesWithTiming) Iterables.getLast(arrayList);
+                if (cuesWithTiming2.endTimeUs == C.TIME_UNSET || j < cuesWithTiming2.endTimeUs) {
+                    return cuesWithTiming2.startTimeUs;
+                }
+                return cuesWithTiming2.endTimeUs;
             }
         }
-        CuesWithTiming cuesWithTiming2 = (CuesWithTiming) Iterables.getLast(this.cuesWithTimingList);
-        if (cuesWithTiming2.endTimeUs == C.TIME_UNSET || j < cuesWithTiming2.endTimeUs) {
-            return cuesWithTiming2.startTimeUs;
-        }
-        return cuesWithTiming2.endTimeUs;
     }
 
     @Override // androidx.media3.exoplayer.text.CuesResolver
@@ -88,21 +97,28 @@ final class ReplacingCuesResolver implements CuesResolver {
         if (j < this.cuesWithTimingList.get(0).startTimeUs) {
             return this.cuesWithTimingList.get(0).startTimeUs;
         }
-        for (int i = 1; i < this.cuesWithTimingList.size(); i++) {
-            CuesWithTiming cuesWithTiming = this.cuesWithTimingList.get(i);
-            if (j < cuesWithTiming.startTimeUs) {
-                CuesWithTiming cuesWithTiming2 = this.cuesWithTimingList.get(i - 1);
-                if (cuesWithTiming2.endTimeUs != C.TIME_UNSET && cuesWithTiming2.endTimeUs > j && cuesWithTiming2.endTimeUs < cuesWithTiming.startTimeUs) {
-                    return cuesWithTiming2.endTimeUs;
+        int i = 1;
+        while (true) {
+            int size = this.cuesWithTimingList.size();
+            ArrayList<CuesWithTiming> arrayList = this.cuesWithTimingList;
+            if (i < size) {
+                CuesWithTiming cuesWithTiming = arrayList.get(i);
+                if (j < cuesWithTiming.startTimeUs) {
+                    CuesWithTiming cuesWithTiming2 = this.cuesWithTimingList.get(i - 1);
+                    if (cuesWithTiming2.endTimeUs != C.TIME_UNSET && cuesWithTiming2.endTimeUs > j && cuesWithTiming2.endTimeUs < cuesWithTiming.startTimeUs) {
+                        return cuesWithTiming2.endTimeUs;
+                    }
+                    return cuesWithTiming.startTimeUs;
                 }
-                return cuesWithTiming.startTimeUs;
+                i++;
+            } else {
+                CuesWithTiming cuesWithTiming3 = (CuesWithTiming) Iterables.getLast(arrayList);
+                if (cuesWithTiming3.endTimeUs == C.TIME_UNSET || j >= cuesWithTiming3.endTimeUs) {
+                    return Long.MIN_VALUE;
+                }
+                return cuesWithTiming3.endTimeUs;
             }
         }
-        CuesWithTiming cuesWithTiming3 = (CuesWithTiming) Iterables.getLast(this.cuesWithTimingList);
-        if (cuesWithTiming3.endTimeUs == C.TIME_UNSET || j >= cuesWithTiming3.endTimeUs) {
-            return Long.MIN_VALUE;
-        }
-        return cuesWithTiming3.endTimeUs;
     }
 
     @Override // androidx.media3.exoplayer.text.CuesResolver
@@ -111,11 +127,18 @@ final class ReplacingCuesResolver implements CuesResolver {
     }
 
     private int getIndexOfCuesStartingAfter(long j) {
-        for (int i = 0; i < this.cuesWithTimingList.size(); i++) {
-            if (j < this.cuesWithTimingList.get(i).startTimeUs) {
-                return i;
+        int i = 0;
+        while (true) {
+            int size = this.cuesWithTimingList.size();
+            ArrayList<CuesWithTiming> arrayList = this.cuesWithTimingList;
+            if (i < size) {
+                if (j < arrayList.get(i).startTimeUs) {
+                    return i;
+                }
+                i++;
+            } else {
+                return arrayList.size();
             }
         }
-        return this.cuesWithTimingList.size();
     }
 }

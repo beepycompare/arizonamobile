@@ -13,20 +13,20 @@ public final class Uk {
     /* renamed from: a  reason: collision with root package name */
     public final String f815a;
     protected final We b;
-    public C0246fb c;
+    public C0245fb c;
 
     public Uk(We we, String str) {
         this.b = we;
         this.f815a = str;
-        C0246fb c0246fb = new C0246fb();
+        C0245fb c0245fb = new C0245fb();
         try {
             String h2 = we.h(str);
             if (!TextUtils.isEmpty(h2)) {
-                c0246fb = new C0246fb(h2);
+                c0245fb = new C0245fb(h2);
             }
         } catch (Throwable unused) {
         }
-        this.c = c0246fb;
+        this.c = c0245fb;
     }
 
     public final Uk a(long j) {
@@ -65,10 +65,10 @@ public final class Uk {
     }
 
     public final Boolean i() {
-        C0246fb c0246fb = this.c;
-        c0246fb.getClass();
+        C0245fb c0245fb = this.c;
+        c0245fb.getClass();
         try {
-            return Boolean.valueOf(c0246fb.getBoolean(i));
+            return Boolean.valueOf(c0245fb.getBoolean(i));
         } catch (Throwable unused) {
             return null;
         }
@@ -106,7 +106,7 @@ public final class Uk {
     }
 
     public final void a() {
-        this.c = new C0246fb();
+        this.c = new C0245fb();
         b();
     }
 }

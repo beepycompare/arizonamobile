@@ -61,9 +61,9 @@ public final class T {
                 l.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
                 String str2 = dto.f1583a;
-                C0832t c0832t = l.f1585a;
+                C0831t c0831t = l.f1585a;
                 String jsonString = StringsKt.decodeToString(dto.b);
-                c0832t.getClass();
+                c0831t.getClass();
                 Intrinsics.checkNotNullParameter(jsonString, "jsonString");
                 JSONObject jSONObject = new JSONObject(jsonString);
                 String string = jSONObject.getString("name");

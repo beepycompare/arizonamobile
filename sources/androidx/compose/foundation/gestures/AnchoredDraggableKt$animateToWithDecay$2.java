@@ -126,7 +126,7 @@ public final class AnchoredDraggableKt$animateToWithDecay$2<T> extends SuspendLa
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$2(float f, Ref.FloatRef floatRef, AnchoredDragScope anchoredDragScope, Ref.FloatRef floatRef2, AnimationScope animationScope) {
         float coerceToTarget;
         if ((((Number) animationScope.getValue()).floatValue() < f && floatRef.element > f) || (((Number) animationScope.getValue()).floatValue() > f && floatRef.element < f)) {

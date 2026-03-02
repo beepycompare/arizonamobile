@@ -59,7 +59,7 @@ import java.util.Collections;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class DownloadHelper {
     public static final DefaultTrackSelector.Parameters DEFAULT_TRACK_SELECTOR_PARAMETERS;
     @Deprecated
@@ -86,14 +86,14 @@ public final class DownloadHelper {
     private final DefaultTrackSelector trackSelector;
     private final Timeline.Window window;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface Callback {
         void onPrepareError(DownloadHelper downloadHelper, IOException iOException);
 
         void onPrepared(DownloadHelper downloadHelper, boolean z);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static class LiveContentUnsupportedException extends IOException {
     }
 
@@ -106,7 +106,7 @@ public final class DownloadHelper {
     public static /* synthetic */ void lambda$new$0() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Factory {
         private DataSource.Factory dataSourceFactory;
         private boolean debugLoggingEnabled;
@@ -275,7 +275,7 @@ public final class DownloadHelper {
             this.callbackHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadHelper.this.m8996xe2e8f097(callback);
+                    DownloadHelper.this.m8273xe2e8f097(callback);
                 }
             });
         }
@@ -283,7 +283,7 @@ public final class DownloadHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepare$1$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8996xe2e8f097(Callback callback) {
+    public /* synthetic */ void m8273xe2e8f097(Callback callback) {
         callback.onPrepared(this, false);
     }
 
@@ -571,14 +571,14 @@ public final class DownloadHelper {
         ((Handler) Preconditions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8995x26f1c63b(z);
+                DownloadHelper.this.m8272x26f1c63b(z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPrepared$2$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8995x26f1c63b(boolean z) {
+    public /* synthetic */ void m8272x26f1c63b(boolean z) {
         ((Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this, z);
     }
 
@@ -587,14 +587,14 @@ public final class DownloadHelper {
         ((Handler) Preconditions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8994x83f2c593(iOException);
+                DownloadHelper.this.m8271x83f2c593(iOException);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPreparationFailed$3$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8994x83f2c593(IOException iOException) {
+    public /* synthetic */ void m8271x83f2c593(IOException iOException) {
         ((Callback) Preconditions.checkNotNull(this.callback)).onPrepareError(this, iOException);
     }
 
@@ -630,6 +630,7 @@ public final class DownloadHelper {
 
     @RequiresNonNull({"trackGroupArrays", "trackSelectionsByPeriodAndRenderer", "mediaPreparer", "mediaPreparer.timeline"})
     private TrackSelectorResult runTrackSelection(int i) throws ExoPlaybackException {
+        SparseIntArray sparseIntArray;
         TrackSelectorResult selectTracks = this.trackSelector.selectTracks(this.rendererCapabilities.getRendererCapabilities(), this.trackGroupArrays[i], new MediaSource.MediaPeriodId(this.mediaPreparer.timeline.getUidOfPeriod(i)), this.mediaPreparer.timeline);
         for (int i2 = 0; i2 < selectTracks.length; i2++) {
             ExoTrackSelection exoTrackSelection = selectTracks.selections[i2];
@@ -644,10 +645,17 @@ public final class DownloadHelper {
                             for (int i4 = 0; i4 < exoTrackSelection2.length(); i4++) {
                                 this.scratchSet.put(exoTrackSelection2.getIndexInTrackGroup(i4), 0);
                             }
-                            for (int i5 = 0; i5 < exoTrackSelection.length(); i5++) {
-                                this.scratchSet.put(exoTrackSelection.getIndexInTrackGroup(i5), 0);
+                            int i5 = 0;
+                            while (true) {
+                                int length = exoTrackSelection.length();
+                                sparseIntArray = this.scratchSet;
+                                if (i5 >= length) {
+                                    break;
+                                }
+                                sparseIntArray.put(exoTrackSelection.getIndexInTrackGroup(i5), 0);
+                                i5++;
                             }
-                            int[] iArr = new int[this.scratchSet.size()];
+                            int[] iArr = new int[sparseIntArray.size()];
                             for (int i6 = 0; i6 < this.scratchSet.size(); i6++) {
                                 iArr[i6] = this.scratchSet.keyAt(i6);
                             }
@@ -710,7 +718,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class MediaPreparer implements MediaSource.MediaSourceCaller, ProgressiveMediaSource.Listener, MediaPeriod.Callback, Handler.Callback {
         private static final int DOWNLOAD_HELPER_CALLBACK_MESSAGE_FAILED = 2;
         private static final int DOWNLOAD_HELPER_CALLBACK_MESSAGE_PREPARED = 1;
@@ -885,7 +893,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class DownloadTrackSelection extends BaseTrackSelection {
         @Override // androidx.media3.exoplayer.trackselection.ExoTrackSelection
         public int getSelectedIndex() {
@@ -906,7 +914,7 @@ public final class DownloadHelper {
         public void updateSelectedTrack(long j, long j2, long j3, List<? extends MediaChunk> list, MediaChunkIterator[] mediaChunkIteratorArr) {
         }
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes.dex */
         private static final class Factory implements ExoTrackSelection.Factory {
             private Factory() {
             }
@@ -926,7 +934,7 @@ public final class DownloadHelper {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     private static final class FakeBandwidthMeter implements BandwidthMeter {
         @Override // androidx.media3.exoplayer.upstream.BandwidthMeter
         public void addEventListener(Handler handler, BandwidthMeter.EventListener eventListener) {
@@ -951,7 +959,7 @@ public final class DownloadHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class UnreleaseableRendererCapabilitiesList implements RendererCapabilitiesList {
         private final RendererCapabilities[] rendererCapabilities;
 

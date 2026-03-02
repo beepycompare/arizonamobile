@@ -1,7 +1,6 @@
 package coil3;
 
 import androidx.exifinterface.media.ExifInterface;
-import coil3.ComponentRegistry;
 import coil3.decode.Decoder;
 import coil3.fetch.Fetcher;
 import coil3.fetch.SourceFetchResult;
@@ -59,17 +58,13 @@ public final class ComponentRegistry {
         this.fetcherFactories$delegate = LazyKt.lazy(new Function0() { // from class: coil3.ComponentRegistry$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List fetcherFactories_delegate$lambda$2;
-                fetcherFactories_delegate$lambda$2 = ComponentRegistry.fetcherFactories_delegate$lambda$2(ComponentRegistry.this);
-                return fetcherFactories_delegate$lambda$2;
+                return ComponentRegistry.fetcherFactories_delegate$lambda$2(ComponentRegistry.this);
             }
         });
         this.decoderFactories$delegate = LazyKt.lazy(new Function0() { // from class: coil3.ComponentRegistry$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List decoderFactories_delegate$lambda$5;
-                decoderFactories_delegate$lambda$5 = ComponentRegistry.decoderFactories_delegate$lambda$5(ComponentRegistry.this);
-                return decoderFactories_delegate$lambda$5;
+                return ComponentRegistry.decoderFactories_delegate$lambda$5(ComponentRegistry.this);
             }
         });
     }
@@ -94,7 +89,7 @@ public final class ComponentRegistry {
         return (List) this.fetcherFactories$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List fetcherFactories_delegate$lambda$2(ComponentRegistry componentRegistry) {
         List<? extends Function0<? extends List<? extends Pair<? extends Fetcher.Factory<? extends Object>, ? extends KClass<? extends Object>>>>> list = componentRegistry.lazyFetcherFactories;
         ArrayList arrayList = new ArrayList();
@@ -110,7 +105,7 @@ public final class ComponentRegistry {
         return (List) this.decoderFactories$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List decoderFactories_delegate$lambda$5(ComponentRegistry componentRegistry) {
         List<? extends Function0<? extends List<? extends Decoder.Factory>>> list = componentRegistry.lazyDecoderFactories;
         ArrayList arrayList = new ArrayList();
@@ -307,17 +302,12 @@ public final class ComponentRegistry {
             this.lazyFetcherFactories.add(new Function0() { // from class: coil3.ComponentRegistry$Builder$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List add$lambda$8$lambda$7;
-                    add$lambda$8$lambda$7 = ComponentRegistry.Builder.add$lambda$8$lambda$7(Fetcher.Factory.this, kClass);
-                    return add$lambda$8$lambda$7;
+                    List listOf;
+                    listOf = CollectionsKt.listOf(TuplesKt.to(Fetcher.Factory.this, kClass));
+                    return listOf;
                 }
             });
             return this;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List add$lambda$8$lambda$7(Fetcher.Factory factory, KClass kClass) {
-            return CollectionsKt.listOf(TuplesKt.to(factory, kClass));
         }
 
         public final Builder addFetcherFactories(Function0<? extends List<? extends Pair<? extends Fetcher.Factory<? extends Object>, ? extends KClass<? extends Object>>>> function0) {

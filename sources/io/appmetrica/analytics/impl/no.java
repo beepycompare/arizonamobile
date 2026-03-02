@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 public final class no implements Ka {
     @Override // io.appmetrica.analytics.impl.Ka
     public final String a(Context context) {
-        C0360jm c0360jm;
+        C0359jm c0359jm;
         try {
-            Qm a2 = Pm.a(C0360jm.class);
+            Qm a2 = Pm.a(C0359jm.class);
             if (a2 != null) {
                 Rm rm = (Rm) a2;
                 ProtobufStateStorage<Object> a3 = rm.a(context, rm.a(context));
-                if (a3 == null || (c0360jm = (C0360jm) a3.read()) == null) {
+                if (a3 == null || (c0359jm = (C0359jm) a3.read()) == null) {
                     return null;
                 }
-                return c0360jm.f1068a;
+                return c0359jm.f1068a;
             }
             return null;
         } catch (Throwable unused) {

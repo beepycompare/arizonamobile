@@ -9,55 +9,55 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes2.dex */
 public final class IndirectPointerEventPrimaryDirectionalMotionAxis {
     public static final Companion Companion = new Companion(null);
-    private static final int None = m6251constructorimpl(0);
-    private static final int X = m6251constructorimpl(1);
-    private static final int Y = m6251constructorimpl(2);
+    private static final int None = m5592constructorimpl(0);
+    private static final int X = m5592constructorimpl(1);
+    private static final int Y = m5592constructorimpl(2);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ IndirectPointerEventPrimaryDirectionalMotionAxis m6250boximpl(int i) {
+    public static final /* synthetic */ IndirectPointerEventPrimaryDirectionalMotionAxis m5591boximpl(int i) {
         return new IndirectPointerEventPrimaryDirectionalMotionAxis(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m6251constructorimpl(int i) {
+    private static int m5592constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6252equalsimpl(int i, Object obj) {
-        return (obj instanceof IndirectPointerEventPrimaryDirectionalMotionAxis) && i == ((IndirectPointerEventPrimaryDirectionalMotionAxis) obj).m6256unboximpl();
+    public static boolean m5593equalsimpl(int i, Object obj) {
+        return (obj instanceof IndirectPointerEventPrimaryDirectionalMotionAxis) && i == ((IndirectPointerEventPrimaryDirectionalMotionAxis) obj).m5597unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6253equalsimpl0(int i, int i2) {
+    public static final boolean m5594equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6254hashCodeimpl(int i) {
+    public static int m5595hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6255toStringimpl(int i) {
+    public static String m5596toStringimpl(int i) {
         return "IndirectPointerEventPrimaryDirectionalMotionAxis(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6252equalsimpl(this.value, obj);
+        return m5593equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6254hashCodeimpl(this.value);
+        return m5595hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m6255toStringimpl(this.value);
+        return m5596toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6256unboximpl() {
+    public final /* synthetic */ int m5597unboximpl() {
         return this.value;
     }
 
@@ -73,17 +73,17 @@ public final class IndirectPointerEventPrimaryDirectionalMotionAxis {
         }
 
         /* renamed from: getNone-nZO2Niw  reason: not valid java name */
-        public final int m6257getNonenZO2Niw() {
+        public final int m5598getNonenZO2Niw() {
             return IndirectPointerEventPrimaryDirectionalMotionAxis.None;
         }
 
         /* renamed from: getX-nZO2Niw  reason: not valid java name */
-        public final int m6258getXnZO2Niw() {
+        public final int m5599getXnZO2Niw() {
             return IndirectPointerEventPrimaryDirectionalMotionAxis.X;
         }
 
         /* renamed from: getY-nZO2Niw  reason: not valid java name */
-        public final int m6259getYnZO2Niw() {
+        public final int m5600getYnZO2Niw() {
             return IndirectPointerEventPrimaryDirectionalMotionAxis.Y;
         }
     }

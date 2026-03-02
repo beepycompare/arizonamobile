@@ -25,14 +25,12 @@ public final class DragSourceNodeWithDefaultPainter extends DelegatingNode {
         this.dragAndDropModifierNode = (DragAndDropSourceNode) delegate(new DragAndDropSourceNode(new Function1() { // from class: androidx.compose.foundation.draganddrop.DragSourceNodeWithDefaultPainter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropModifierNode$lambda$0;
-                dragAndDropModifierNode$lambda$0 = DragSourceNodeWithDefaultPainter.dragAndDropModifierNode$lambda$0(DragSourceNodeWithDefaultPainter.this, (DrawScope) obj);
-                return dragAndDropModifierNode$lambda$0;
+                return DragSourceNodeWithDefaultPainter.dragAndDropModifierNode$lambda$0(DragSourceNodeWithDefaultPainter.this, (DrawScope) obj);
             }
         }, function2, function1));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropModifierNode$lambda$0(DragSourceNodeWithDefaultPainter dragSourceNodeWithDefaultPainter, DrawScope drawScope) {
         dragSourceNodeWithDefaultPainter.cacheDrawScopeDragShadowCallback.drawDragShadow(drawScope);
         return Unit.INSTANCE;

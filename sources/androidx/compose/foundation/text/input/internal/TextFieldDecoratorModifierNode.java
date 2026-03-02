@@ -153,17 +153,13 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         textFieldSelectionState.setRequestAutofillAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = TextFieldDecoratorModifierNode._init_$lambda$0(TextFieldDecoratorModifierNode.this);
-                return _init_$lambda$0;
+                return TextFieldDecoratorModifierNode._init_$lambda$0(TextFieldDecoratorModifierNode.this);
             }
         });
         this.focusableNode = new FocusableNode(this.interactionSource, 0, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit focusableNode$lambda$0;
-                focusableNode$lambda$0 = TextFieldDecoratorModifierNode.focusableNode$lambda$0(TextFieldDecoratorModifierNode.this, ((Boolean) obj).booleanValue());
-                return focusableNode$lambda$0;
+                return TextFieldDecoratorModifierNode.focusableNode$lambda$0(TextFieldDecoratorModifierNode.this, ((Boolean) obj).booleanValue());
             }
         }, 2, null);
         this.pointerInputNode = (SuspendingPointerInputModifierNode) delegate(SuspendingPointerInputFilterKt.SuspendingPointerInputModifierNode(new PointerInputEventHandler() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1
@@ -321,69 +317,53 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         this.dragAndDropNode = (DragAndDropTargetModifierNode) delegate(TextFieldDragAndDropNode_androidKt.textFieldDragAndDropNode$default(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Set dragAndDropNode$lambda$0;
-                dragAndDropNode$lambda$0 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$0(TextFieldDecoratorModifierNode.this);
-                return dragAndDropNode$lambda$0;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$0(TextFieldDecoratorModifierNode.this);
             }
         }, new Function2() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean dragAndDropNode$lambda$1;
-                dragAndDropNode$lambda$1 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$1(TextFieldDecoratorModifierNode.this, (ClipEntry) obj, (ClipMetadata) obj2);
-                return Boolean.valueOf(dragAndDropNode$lambda$1);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.dragAndDropNode$lambda$1(TextFieldDecoratorModifierNode.this, (ClipEntry) obj, (ClipMetadata) obj2));
             }
         }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$2;
-                dragAndDropNode$lambda$2 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$2(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$2;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$2(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
             }
         }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$3;
-                dragAndDropNode$lambda$3 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$3;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
             }
         }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$4;
-                dragAndDropNode$lambda$4 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode.this, (Offset) obj);
-                return dragAndDropNode$lambda$4;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode.this, (Offset) obj);
             }
         }, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$5;
-                dragAndDropNode$lambda$5 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$5;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
             }
         }, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit dragAndDropNode$lambda$6;
-                dragAndDropNode$lambda$6 = TextFieldDecoratorModifierNode.dragAndDropNode$lambda$6(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
-                return dragAndDropNode$lambda$6;
+                return TextFieldDecoratorModifierNode.dragAndDropNode$lambda$6(TextFieldDecoratorModifierNode.this, (DragAndDropEvent) obj);
             }
         }, 72, null));
         this.textFieldKeyEventHandler = TextFieldKeyEventHandler_androidKt.createTextFieldKeyEventHandler();
         this.keyboardActionScope = new TextFieldDecoratorModifierNode$keyboardActionScope$1(this);
-        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1574constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
+        this.clipboardKeyCommandsHandler = ClipboardKeyCommandsHandler.m1369constructorimpl(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit clipboardKeyCommandsHandler$lambda$0;
-                clipboardKeyCommandsHandler$lambda$0 = TextFieldDecoratorModifierNode.clipboardKeyCommandsHandler$lambda$0(TextFieldDecoratorModifierNode.this, (KeyCommand) obj);
-                return clipboardKeyCommandsHandler$lambda$0;
+                return TextFieldDecoratorModifierNode.clipboardKeyCommandsHandler$lambda$0(TextFieldDecoratorModifierNode.this, (KeyCommand) obj);
             }
         });
         this.receiveContentConfigurationProvider = new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$0;
-                receiveContentConfigurationProvider$lambda$0 = TextFieldDecoratorModifierNode.receiveContentConfigurationProvider$lambda$0(TextFieldDecoratorModifierNode.this);
-                return receiveContentConfigurationProvider$lambda$0;
+                ReceiveContentConfiguration receiveContentConfiguration;
+                receiveContentConfiguration = ReceiveContentConfigurationKt.getReceiveContentConfiguration(TextFieldDecoratorModifierNode.this);
+                return receiveContentConfiguration;
             }
         };
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
@@ -486,13 +466,13 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         this.stylusHandwritingTrigger = mutableSharedFlow;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         DelegatableNodeKt.requestAutofill(textFieldDecoratorModifierNode);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit focusableNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, boolean z) {
         boolean z2 = textFieldDecoratorModifierNode.enabled && !textFieldDecoratorModifierNode.readOnly;
         if (!z) {
@@ -514,7 +494,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Set dragAndDropNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         Set set;
         Set set2;
@@ -526,7 +506,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return set;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropNode$lambda$2(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         if (ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode) != null) {
             DragAndDropRequestPermission_androidKt.dragAndDropRequestPermission(textFieldDecoratorModifierNode, dragAndDropEvent);
@@ -534,7 +514,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropNode$lambda$3(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         ReceiveContentListener receiveContentListener;
         HoverInteraction.Enter enter = new HoverInteraction.Enter();
@@ -547,18 +527,18 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropNode$lambda$4(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, Offset offset) {
-        long m1683fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1683fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m5189unboximpl());
-        int m1673getOffsetForPosition3MmeM6k$default = TextLayoutState.m1673getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1683fromWindowToDecorationUv8p0NA, false, 2, null);
-        if (m1673getOffsetForPosition3MmeM6k$default >= 0) {
-            textFieldDecoratorModifierNode.textFieldState.m1694selectCharsIn5zctL8(TextRangeKt.TextRange(m1673getOffsetForPosition3MmeM6k$default));
+        long m1456fromWindowToDecorationUv8p0NA = TextLayoutStateKt.m1456fromWindowToDecorationUv8p0NA(textFieldDecoratorModifierNode.textLayoutState, offset.m4537unboximpl());
+        int m1446getOffsetForPosition3MmeM6k$default = TextLayoutState.m1446getOffsetForPosition3MmeM6k$default(textFieldDecoratorModifierNode.textLayoutState, m1456fromWindowToDecorationUv8p0NA, false, 2, null);
+        if (m1446getOffsetForPosition3MmeM6k$default >= 0) {
+            textFieldDecoratorModifierNode.textFieldState.m1466selectCharsIn5zctL8(TextRangeKt.TextRange(m1446getOffsetForPosition3MmeM6k$default));
         }
-        textFieldDecoratorModifierNode.textFieldSelectionState.m1743updateHandleDraggingUv8p0NA(Handle.Cursor, m1683fromWindowToDecorationUv8p0NA);
+        textFieldDecoratorModifierNode.textFieldSelectionState.m1510updateHandleDraggingUv8p0NA(Handle.Cursor, m1456fromWindowToDecorationUv8p0NA);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean dragAndDropNode$lambda$1(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, ClipEntry clipEntry, ClipMetadata clipMetadata) {
         ClipEntry clipEntry2;
         textFieldDecoratorModifierNode.emitDragExitEvent();
@@ -566,7 +546,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         String readPlainText = TransferableContent_androidKt.readPlainText(clipEntry);
         ReceiveContentConfiguration receiveContentConfiguration = ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode);
         if (receiveContentConfiguration != null) {
-            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m418getDragAndDropkB6V9T0(), null, 8, null));
+            TransferableContent onReceive = receiveContentConfiguration.getReceiveContentListener().onReceive(new TransferableContent(clipEntry, clipMetadata, TransferableContent.Source.Companion.m364getDragAndDropkB6V9T0(), null, 8, null));
             readPlainText = (onReceive == null || (clipEntry2 = onReceive.getClipEntry()) == null) ? null : TransferableContent_androidKt.readPlainText(clipEntry2);
         }
         if (readPlainText != null) {
@@ -576,7 +556,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropNode$lambda$5(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         ReceiveContentListener receiveContentListener;
         textFieldDecoratorModifierNode.emitDragExitEvent();
@@ -588,7 +568,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropNode$lambda$6(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, DragAndDropEvent dragAndDropEvent) {
         textFieldDecoratorModifierNode.emitDragExitEvent();
         return Unit.INSTANCE;
@@ -599,15 +579,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return this.focusableNode.getFocusState().isFocused() && (windowInfo = this.windowInfo) != null && windowInfo.isWindowFocused();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit clipboardKeyCommandsHandler$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, KeyCommand keyCommand) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, CoroutineStart.UNDISPATCHED, new TextFieldDecoratorModifierNode$clipboardKeyCommandsHandler$1$1(keyCommand, textFieldDecoratorModifierNode, null), 1, null);
         return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ReceiveContentConfiguration receiveContentConfigurationProvider$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        return ReceiveContentConfigurationKt.getReceiveContentConfiguration(textFieldDecoratorModifierNode);
     }
 
     private final boolean getAutofillHighlightOn() {
@@ -625,7 +600,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         if (getAutofillHighlightOn()) {
             ContentDrawScope contentDrawScope2 = contentDrawScope;
             TextFieldDecoratorModifierNode textFieldDecoratorModifierNode = this;
-            DrawScope.m5998drawRectAsUm42w$default(contentDrawScope2, AutofillHighlightKt.m1292resolveAutofillHighlightWkMShQ((Brush) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightBrush()), ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightColor())).m5434unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor()), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+            DrawScope.m5339drawRectAsUm42w$default(contentDrawScope2, AutofillHighlightKt.m1132resolveAutofillHighlightWkMShQ((Brush) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightBrush()), ((Color) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, AutofillHighlightKt.getLocalAutofillHighlightColor())).m4782unboximpl(), AutofillHighlight_androidKt.autofillHighlightColor()), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
     }
 
@@ -634,9 +609,9 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         Object collect = FlowKt.take(FlowKt.drop(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String observeUntransformedTextChanges$lambda$0;
-                observeUntransformedTextChanges$lambda$0 = TextFieldDecoratorModifierNode.observeUntransformedTextChanges$lambda$0(TextFieldDecoratorModifierNode.this);
-                return observeUntransformedTextChanges$lambda$0;
+                String textFieldCharSequence;
+                textFieldCharSequence = TextFieldDecoratorModifierNode.this.textFieldState.getUntransformedText().toString();
+                return textFieldCharSequence;
             }
         }), 1), 1).collect(new FlowCollector() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$observeUntransformedTextChanges$3
             @Override // kotlinx.coroutines.flow.FlowCollector
@@ -650,11 +625,6 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             }
         }, continuation);
         return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final String observeUntransformedTextChanges$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        return textFieldDecoratorModifierNode.textFieldState.getUntransformedText().toString();
     }
 
     public final void updateNode(TransformedTextFieldState transformedTextFieldState, TextLayoutState textLayoutState, TextFieldSelectionState textFieldSelectionState, InputTransformation inputTransformation, boolean z, boolean z2, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, boolean z3, MutableInteractionSource mutableInteractionSource, boolean z4, MutableSharedFlow<Unit> mutableSharedFlow) {
@@ -696,7 +666,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
                 disposeInputSession();
             }
         }
-        if (z != z6 || z5 != z7 || !ImeAction.m7873equalsimpl0(keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation(), keyboardOptions2.m1389getImeActionOrDefaulteUduSuo$foundation()) || z4 != z8) {
+        if (z != z6 || z5 != z7 || !ImeAction.m7171equalsimpl0(keyboardOptions.m1216getImeActionOrDefaulteUduSuo$foundation(), keyboardOptions2.m1216getImeActionOrDefaulteUduSuo$foundation()) || z4 != z8) {
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         if (!Intrinsics.areEqual(textFieldSelectionState, textFieldSelectionState2)) {
@@ -714,9 +684,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             textFieldSelectionState.setRequestAutofillAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit updateNode$lambda$0;
-                    updateNode$lambda$0 = TextFieldDecoratorModifierNode.updateNode$lambda$0(TextFieldDecoratorModifierNode.this);
-                    return updateNode$lambda$0;
+                    return TextFieldDecoratorModifierNode.updateNode$lambda$0(TextFieldDecoratorModifierNode.this);
                 }
             });
         }
@@ -727,16 +695,17 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             }
         }
         if (z != z6) {
+            FocusableNode focusableNode = this.focusableNode;
             if (z) {
-                delegate(this.focusableNode);
+                delegate(focusableNode);
                 this.focusableNode.update(mutableInteractionSource);
                 return;
             }
-            undelegate(this.focusableNode);
+            undelegate(focusableNode);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit updateNode$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         DelegatableNodeKt.requestAutofill(textFieldDecoratorModifierNode);
         return Unit.INSTANCE;
@@ -745,10 +714,10 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         TextFieldCharSequence outputText = this.textFieldState.getOutputText();
-        long m1537getSelectiond9O1mEE = outputText.m1537getSelectiond9O1mEE();
+        long m1336getSelectiond9O1mEE = outputText.m1336getSelectiond9O1mEE();
         SemanticsPropertiesKt.setInputText(semanticsPropertyReceiver, new AnnotatedString(this.textFieldState.getUntransformedText().toString(), null, 2, null));
         SemanticsPropertiesKt.setEditableText(semanticsPropertyReceiver, new AnnotatedString(outputText.toString(), null, 2, null));
-        SemanticsPropertiesKt.m7462setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1537getSelectiond9O1mEE);
+        SemanticsPropertiesKt.m6794setTextSelectionRangeFDrldGo(semanticsPropertyReceiver, m1336getSelectiond9O1mEE);
         if (!this.enabled) {
             SemanticsPropertiesKt.disabled(semanticsPropertyReceiver);
         }
@@ -765,96 +734,76 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         SemanticsPropertiesKt.onFillData$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$1;
-                applySemantics$lambda$1 = TextFieldDecoratorModifierNode.applySemantics$lambda$1(z, this, (FillableData) obj);
-                return Boolean.valueOf(applySemantics$lambda$1);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$1(z, this, (FillableData) obj));
             }
         }, 1, null);
-        int m1390getKeyboardTypePjHm6EE = this.keyboardOptions.m1390getKeyboardTypePjHm6EE();
-        if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7942getEmailPjHm6EE())) {
+        int m1217getKeyboardTypePjHm6EE = this.keyboardOptions.m1217getKeyboardTypePjHm6EE();
+        if (KeyboardType.m7224equalsimpl0(m1217getKeyboardTypePjHm6EE, KeyboardType.Companion.m7240getEmailPjHm6EE())) {
             SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getEmailAddress());
-        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7945getPasswordPjHm6EE())) {
+        } else if (KeyboardType.m7224equalsimpl0(m1217getKeyboardTypePjHm6EE, KeyboardType.Companion.m7243getPasswordPjHm6EE())) {
             SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
-        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7944getNumberPasswordPjHm6EE())) {
+        } else if (KeyboardType.m7224equalsimpl0(m1217getKeyboardTypePjHm6EE, KeyboardType.Companion.m7242getNumberPasswordPjHm6EE())) {
             SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPassword());
-        } else if (KeyboardType.m7926equalsimpl0(m1390getKeyboardTypePjHm6EE, KeyboardType.Companion.m7946getPhonePjHm6EE())) {
+        } else if (KeyboardType.m7224equalsimpl0(m1217getKeyboardTypePjHm6EE, KeyboardType.Companion.m7244getPhonePjHm6EE())) {
             SemanticsPropertiesKt.setContentType(semanticsPropertyReceiver, ContentType.Companion.getPhoneNumber());
         }
         SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$2;
-                applySemantics$lambda$2 = TextFieldDecoratorModifierNode.applySemantics$lambda$2(TextFieldDecoratorModifierNode.this, (List) obj);
-                return Boolean.valueOf(applySemantics$lambda$2);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$2(TextFieldDecoratorModifierNode.this, (List) obj));
             }
         }, 1, null);
         if (z) {
             SemanticsPropertiesKt.setText$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda21
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean applySemantics$lambda$3;
-                    applySemantics$lambda$3 = TextFieldDecoratorModifierNode.applySemantics$lambda$3(z, this, (AnnotatedString) obj);
-                    return Boolean.valueOf(applySemantics$lambda$3);
+                    return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$3(z, this, (AnnotatedString) obj));
                 }
             }, 1, null);
             SemanticsPropertiesKt.insertTextAtCursor$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda22
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean applySemantics$lambda$4;
-                    applySemantics$lambda$4 = TextFieldDecoratorModifierNode.applySemantics$lambda$4(z, this, (AnnotatedString) obj);
-                    return Boolean.valueOf(applySemantics$lambda$4);
+                    return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$4(z, this, (AnnotatedString) obj));
                 }
             }, 1, null);
         }
         SemanticsPropertiesKt.setSelection$default(semanticsPropertyReceiver, null, new Function3() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                boolean applySemantics$lambda$5;
-                applySemantics$lambda$5 = TextFieldDecoratorModifierNode.applySemantics$lambda$5(TextFieldDecoratorModifierNode.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Boolean) obj3).booleanValue());
-                return Boolean.valueOf(applySemantics$lambda$5);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$5(TextFieldDecoratorModifierNode.this, ((Integer) obj).intValue(), ((Integer) obj2).intValue(), ((Boolean) obj3).booleanValue()));
             }
         }, 1, null);
-        final int m1389getImeActionOrDefaulteUduSuo$foundation = this.keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation();
-        SemanticsPropertiesKt.m7458onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1389getImeActionOrDefaulteUduSuo$foundation, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
+        final int m1216getImeActionOrDefaulteUduSuo$foundation = this.keyboardOptions.m1216getImeActionOrDefaulteUduSuo$foundation();
+        SemanticsPropertiesKt.m6790onImeAction9UiTYpY$default(semanticsPropertyReceiver, m1216getImeActionOrDefaulteUduSuo$foundation, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$6;
-                applySemantics$lambda$6 = TextFieldDecoratorModifierNode.applySemantics$lambda$6(TextFieldDecoratorModifierNode.this, m1389getImeActionOrDefaulteUduSuo$foundation);
-                return Boolean.valueOf(applySemantics$lambda$6);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$6(TextFieldDecoratorModifierNode.this, m1216getImeActionOrDefaulteUduSuo$foundation));
             }
         }, 2, null);
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$7;
-                applySemantics$lambda$7 = TextFieldDecoratorModifierNode.applySemantics$lambda$7(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(applySemantics$lambda$7);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$7(TextFieldDecoratorModifierNode.this));
             }
         }, 1, null);
         SemanticsPropertiesKt.onLongClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$8;
-                applySemantics$lambda$8 = TextFieldDecoratorModifierNode.applySemantics$lambda$8(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(applySemantics$lambda$8);
+                return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$8(TextFieldDecoratorModifierNode.this));
             }
         }, 1, null);
-        if (!TextRange.m7695getCollapsedimpl(m1537getSelectiond9O1mEE) && !this.isPassword) {
+        if (!TextRange.m6997getCollapsedimpl(m1336getSelectiond9O1mEE) && !this.isPassword) {
             SemanticsPropertiesKt.copyText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean applySemantics$lambda$9;
-                    applySemantics$lambda$9 = TextFieldDecoratorModifierNode.applySemantics$lambda$9(TextFieldDecoratorModifierNode.this);
-                    return Boolean.valueOf(applySemantics$lambda$9);
+                    return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$9(TextFieldDecoratorModifierNode.this));
                 }
             }, 1, null);
             if (this.enabled && !this.readOnly) {
                 SemanticsPropertiesKt.cutText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean applySemantics$lambda$10;
-                        applySemantics$lambda$10 = TextFieldDecoratorModifierNode.applySemantics$lambda$10(TextFieldDecoratorModifierNode.this);
-                        return Boolean.valueOf(applySemantics$lambda$10);
+                        return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$10(TextFieldDecoratorModifierNode.this));
                     }
                 }, 1, null);
             }
@@ -863,9 +812,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             SemanticsPropertiesKt.pasteText$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda19
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean applySemantics$lambda$11;
-                    applySemantics$lambda$11 = TextFieldDecoratorModifierNode.applySemantics$lambda$11(TextFieldDecoratorModifierNode.this);
-                    return Boolean.valueOf(applySemantics$lambda$11);
+                    return Boolean.valueOf(TextFieldDecoratorModifierNode.applySemantics$lambda$11(TextFieldDecoratorModifierNode.this));
                 }
             }, 1, null);
         }
@@ -878,7 +825,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$1(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, FillableData fillableData) {
         if (z) {
             CharSequence textValue = fillableData.getTextValue();
@@ -892,7 +839,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$2(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, List list) {
         TextLayoutResult layoutResult = textFieldDecoratorModifierNode.textLayoutState.getLayoutResult();
         if (layoutResult != null) {
@@ -901,7 +848,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$3(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
         if (z) {
             textFieldDecoratorModifierNode.textFieldState.replaceAll(annotatedString);
@@ -910,7 +857,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$4(boolean z, TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, AnnotatedString annotatedString) {
         if (z) {
             TransformedTextFieldState.replaceSelectedText$default(textFieldDecoratorModifierNode.textFieldState, annotatedString, true, null, false, 12, null);
@@ -919,7 +866,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$5(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i, int i2, boolean z) {
         TextFieldCharSequence visualText;
         if (z) {
@@ -927,11 +874,11 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         } else {
             visualText = textFieldDecoratorModifierNode.textFieldState.getVisualText();
         }
-        long m1537getSelectiond9O1mEE = visualText.m1537getSelectiond9O1mEE();
+        long m1336getSelectiond9O1mEE = visualText.m1336getSelectiond9O1mEE();
         if (!textFieldDecoratorModifierNode.enabled || Math.min(i, i2) < 0 || Math.max(i, i2) > visualText.length()) {
             return false;
         }
-        if (i == TextRange.m7701getStartimpl(m1537getSelectiond9O1mEE) && i2 == TextRange.m7696getEndimpl(m1537getSelectiond9O1mEE)) {
+        if (i == TextRange.m7003getStartimpl(m1336getSelectiond9O1mEE) && i2 == TextRange.m6998getEndimpl(m1336getSelectiond9O1mEE)) {
             return true;
         }
         long TextRange = TextRangeKt.TextRange(i, i2);
@@ -941,20 +888,20 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
             textFieldDecoratorModifierNode.textFieldSelectionState.updateTextToolbarState(TextToolbarState.Selection);
         }
         if (z) {
-            textFieldDecoratorModifierNode.textFieldState.m1695selectUntransformedCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1467selectUntransformedCharsIn5zctL8(TextRange);
         } else {
-            textFieldDecoratorModifierNode.textFieldState.m1694selectCharsIn5zctL8(TextRange);
+            textFieldDecoratorModifierNode.textFieldState.m1466selectCharsIn5zctL8(TextRange);
         }
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$6(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.m1655onImeActionPerformedKlQnJC8(i);
+        textFieldDecoratorModifierNode.m1432onImeActionPerformedKlQnJC8(i);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$7(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         if (!textFieldDecoratorModifierNode.isFocused()) {
             textFieldDecoratorModifierNode.requestFocus();
@@ -967,7 +914,7 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$8(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         if (!textFieldDecoratorModifierNode.isFocused()) {
             textFieldDecoratorModifierNode.requestFocus();
@@ -976,19 +923,19 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$9(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$10$1(textFieldDecoratorModifierNode, null), 3, null);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$10(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$11$1(textFieldDecoratorModifierNode, null), 3, null);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$11(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         BuildersKt__Builders_commonKt.launch$default(textFieldDecoratorModifierNode.getCoroutineScope(), null, null, new TextFieldDecoratorModifierNode$applySemantics$12$1(textFieldDecoratorModifierNode, null), 3, null);
         return true;
@@ -1047,8 +994,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputNode.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -1058,26 +1005,21 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onPreKeyEvent-ZmokQxo */
-    public boolean mo267onPreKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1565onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
+    public boolean mo234onPreKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1363onPreKeyEventMyFupTE(keyEvent, this.textFieldState, this.textFieldSelectionState, (FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager()), requireKeyboardController());
     }
 
     @Override // androidx.compose.ui.input.key.KeyInputModifierNode
     /* renamed from: onKeyEvent-ZmokQxo */
-    public boolean mo265onKeyEventZmokQxo(KeyEvent keyEvent) {
-        return this.textFieldKeyEventHandler.mo1564onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
+    public boolean mo232onKeyEventZmokQxo(KeyEvent keyEvent) {
+        return this.textFieldKeyEventHandler.mo1362onKeyEvent8zsqlwg(keyEvent, this.textFieldState, this.textLayoutState, this.textFieldSelectionState, this.clipboardKeyCommandsHandler, requireKeyboardController(), this.enabled && !this.readOnly, this.singleLine, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean onKeyEvent_ZmokQxo$lambda$0;
-                onKeyEvent_ZmokQxo$lambda$0 = TextFieldDecoratorModifierNode.onKeyEvent_ZmokQxo$lambda$0(TextFieldDecoratorModifierNode.this);
-                return Boolean.valueOf(onKeyEvent_ZmokQxo$lambda$0);
+                boolean m1432onImeActionPerformedKlQnJC8;
+                m1432onImeActionPerformedKlQnJC8 = r0.m1432onImeActionPerformedKlQnJC8(TextFieldDecoratorModifierNode.this.keyboardOptions.m1216getImeActionOrDefaulteUduSuo$foundation());
+                return Boolean.valueOf(m1432onImeActionPerformedKlQnJC8);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean onKeyEvent_ZmokQxo$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
-        return textFieldDecoratorModifierNode.m1655onImeActionPerformedKlQnJC8(textFieldDecoratorModifierNode.keyboardOptions.m1389getImeActionOrDefaulteUduSuo$foundation());
     }
 
     @Override // androidx.compose.ui.node.ObserverModifierNode
@@ -1089,14 +1031,12 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit updateWindowFocus$lambda$0;
-                updateWindowFocus$lambda$0 = TextFieldDecoratorModifierNode.updateWindowFocus$lambda$0(TextFieldDecoratorModifierNode.this);
-                return updateWindowFocus$lambda$0;
+                return TextFieldDecoratorModifierNode.updateWindowFocus$lambda$0(TextFieldDecoratorModifierNode.this);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit updateWindowFocus$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         textFieldDecoratorModifierNode.windowInfo = (WindowInfo) CompositionLocalConsumerModifierNodeKt.currentValueOf(textFieldDecoratorModifierNode, CompositionLocalsKt.getLocalWindowInfo());
         textFieldDecoratorModifierNode.onIsFocusedUpdated();
@@ -1110,8 +1050,8 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo453onRemeasuredozmzZPI(long j) {
-        this.dragAndDropNode.mo453onRemeasuredozmzZPI(j);
+    public void mo394onRemeasuredozmzZPI(long j) {
+        this.dragAndDropNode.mo394onRemeasuredozmzZPI(j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1154,18 +1094,16 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onImeActionPerformed-KlQnJC8  reason: not valid java name */
-    public final boolean m1655onImeActionPerformedKlQnJC8(final int i) {
+    public final boolean m1432onImeActionPerformedKlQnJC8(final int i) {
         KeyboardActionHandler keyboardActionHandler;
-        if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7890getNoneeUduSuo()) || ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7886getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
-            return m1654defaultKeyboardActionWithResultKlQnJC8(i);
+        if (ImeAction.m7171equalsimpl0(i, ImeAction.Companion.m7188getNoneeUduSuo()) || ImeAction.m7171equalsimpl0(i, ImeAction.Companion.m7184getDefaulteUduSuo()) || (keyboardActionHandler = this.keyboardActionHandler) == null) {
+            return m1431defaultKeyboardActionWithResultKlQnJC8(i);
         }
         if (keyboardActionHandler != null) {
             keyboardActionHandler.onKeyboardAction(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$$ExternalSyntheticLambda18
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit onImeActionPerformed_KlQnJC8$lambda$0;
-                    onImeActionPerformed_KlQnJC8$lambda$0 = TextFieldDecoratorModifierNode.onImeActionPerformed_KlQnJC8$lambda$0(TextFieldDecoratorModifierNode.this, i);
-                    return onImeActionPerformed_KlQnJC8$lambda$0;
+                    return TextFieldDecoratorModifierNode.onImeActionPerformed_KlQnJC8$lambda$0(TextFieldDecoratorModifierNode.this, i);
                 }
             });
             return true;
@@ -1173,22 +1111,22 @@ public final class TextFieldDecoratorModifierNode extends DelegatingNode impleme
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onImeActionPerformed_KlQnJC8$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode, int i) {
-        textFieldDecoratorModifierNode.keyboardActionScope.mo1375defaultKeyboardActionKlQnJC8(i);
+        textFieldDecoratorModifierNode.keyboardActionScope.mo1202defaultKeyboardActionKlQnJC8(i);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: defaultKeyboardActionWithResult-KlQnJC8  reason: not valid java name */
-    public final boolean m1654defaultKeyboardActionWithResultKlQnJC8(int i) {
-        if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7889getNexteUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5062getNextdhqQ8s());
+    public final boolean m1431defaultKeyboardActionWithResultKlQnJC8(int i) {
+        if (ImeAction.m7171equalsimpl0(i, ImeAction.Companion.m7187getNexteUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4410getNextdhqQ8s());
             return true;
-        } else if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7891getPreviouseUduSuo())) {
-            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo5068moveFocus3ESFkO8(FocusDirection.Companion.m5063getPreviousdhqQ8s());
+        } else if (ImeAction.m7171equalsimpl0(i, ImeAction.Companion.m7189getPreviouseUduSuo())) {
+            ((FocusManager) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalFocusManager())).mo4416moveFocus3ESFkO8(FocusDirection.Companion.m4411getPreviousdhqQ8s());
             return true;
-        } else if (ImeAction.m7873equalsimpl0(i, ImeAction.Companion.m7887getDoneeUduSuo())) {
+        } else if (ImeAction.m7171equalsimpl0(i, ImeAction.Companion.m7185getDoneeUduSuo())) {
             requireKeyboardController().hide();
             return true;
         } else {

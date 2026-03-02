@@ -30,13 +30,13 @@ import kotlin.jvm.internal.Ref;
 @Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a^\u0010\u0000\u001a\u00020\u00012\u001c\u0010\u0002\u001a\u0018\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0005¢\u0006\u0002\b\u00062\b\b\u0002\u0010\u0007\u001a\u00020\b2\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\b\b\u0002\u0010\u000b\u001a\u00020\f2\u0011\u0010\r\u001a\r\u0012\u0004\u0012\u00020\u00010\u000e¢\u0006\u0002\b\u0005H\u0007¢\u0006\u0002\u0010\u000f\u001a%\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\f2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\t\u001a\u00020\nH\u0003¢\u0006\u0002\u0010\u0014¨\u0006\u0015"}, d2 = {TextFieldImplKt.LabelId, "", Constants.ScionAnalytics.PARAM_LABEL, "Lkotlin/Function1;", "Landroidx/compose/material3/TooltipScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "modifier", "Landroidx/compose/ui/Modifier;", "interactionSource", "Landroidx/compose/foundation/interaction/MutableInteractionSource;", "isPersistent", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function0;", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/interaction/MutableInteractionSource;ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V", "HandleInteractions", "enabled", RemoteConfigConstants.ResponseFieldKey.STATE, "Landroidx/compose/material3/TooltipState;", "(ZLandroidx/compose/material3/TooltipState;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;I)V", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class LabelKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit HandleInteractions$lambda$7(boolean z, TooltipState tooltipState, MutableInteractionSource mutableInteractionSource, int i, Composer composer, int i2) {
         HandleInteractions(z, tooltipState, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Label$lambda$5(Function3 function3, Modifier modifier, MutableInteractionSource mutableInteractionSource, boolean z, Function2 function2, int i, int i2, Composer composer, int i3) {
         Label(function3, modifier, mutableInteractionSource, z, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -133,7 +133,7 @@ public final class LabelKt {
                             startRestartGroup.endReplaceGroup();
                             mutableInteractionSource3 = mutableInteractionSource4;
                         }
-                        PopupPositionProvider m3452rememberTooltipPositionProviderHu5FAss = TooltipDefaults.INSTANCE.m3452rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3439getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2);
+                        PopupPositionProvider m2891rememberTooltipPositionProviderHu5FAss = TooltipDefaults.INSTANCE.m2891rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m2878getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2);
                         if (z4) {
                             startRestartGroup.startReplaceGroup(857995293);
                             ComposerKt.sourceInformation(startRestartGroup, "76@3363L29");
@@ -146,11 +146,11 @@ public final class LabelKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             startRestartGroup.endReplaceGroup();
                             rememberBasicTooltipState = (LabelStateImpl) rememberedValue2;
-                            popupPositionProvider = m3452rememberTooltipPositionProviderHu5FAss;
+                            popupPositionProvider = m2891rememberTooltipPositionProviderHu5FAss;
                         } else {
                             startRestartGroup.startReplaceGroup(1690246656);
                             ComposerKt.sourceInformation(startRestartGroup, "77@3406L56");
-                            popupPositionProvider = m3452rememberTooltipPositionProviderHu5FAss;
+                            popupPositionProvider = m2891rememberTooltipPositionProviderHu5FAss;
                             rememberBasicTooltipState = BasicTooltipKt.rememberBasicTooltipState(false, false, new MutatorMutex(), startRestartGroup, 0, 3);
                             startRestartGroup.endReplaceGroup();
                         }
@@ -170,9 +170,7 @@ public final class LabelKt {
                             rememberedValue4 = new TooltipScopeImpl(new Function0() { // from class: androidx.compose.material3.LabelKt$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    LayoutCoordinates Label$lambda$4$lambda$3;
-                                    Label$lambda$4$lambda$3 = LabelKt.Label$lambda$4$lambda$3(Ref.ObjectRef.this);
-                                    return Label$lambda$4$lambda$3;
+                                    return LabelKt.Label$lambda$4$lambda$3(Ref.ObjectRef.this);
                                 }
                             }, popupPositionProvider);
                             startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -215,9 +213,7 @@ public final class LabelKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.LabelKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit Label$lambda$5;
-                                Label$lambda$5 = LabelKt.Label$lambda$5(Function3.this, modifier2, mutableInteractionSource2, z3, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return Label$lambda$5;
+                                return LabelKt.Label$lambda$5(Function3.this, modifier2, mutableInteractionSource2, z3, function2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -264,7 +260,7 @@ public final class LabelKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final LayoutCoordinates Label$lambda$4$lambda$3(Ref.ObjectRef objectRef) {
         return (LayoutCoordinates) ((MutableState) objectRef.element).getValue();
     }
@@ -321,9 +317,7 @@ public final class LabelKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.LabelKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit HandleInteractions$lambda$7;
-                    HandleInteractions$lambda$7 = LabelKt.HandleInteractions$lambda$7(z, tooltipState, mutableInteractionSource, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return HandleInteractions$lambda$7;
+                    return LabelKt.HandleInteractions$lambda$7(z, tooltipState, mutableInteractionSource, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

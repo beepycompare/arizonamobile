@@ -97,7 +97,7 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
         this.label = 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(MutableState mutableState, InfiniteTransition infiniteTransition, Ref.FloatRef floatRef, CoroutineScope coroutineScope, long j) {
         long j2;
         MutableVector mutableVector;
@@ -170,10 +170,5 @@ public final class InfiniteTransition$run$1$1 extends SuspendLambda implements F
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float invokeSuspend$lambda$1(CoroutineScope coroutineScope) {
-        return SuspendAnimationKt.getDurationScale(coroutineScope.getCoroutineContext());
     }
 }

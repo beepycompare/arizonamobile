@@ -26,7 +26,7 @@ public final class DotsIndicatorAttacher$setup$1 extends Lambda implements Funct
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invoke$lambda$0(BaseDotsIndicator baseDotsIndicator) {
         Intrinsics.checkNotNullParameter(baseDotsIndicator, "$baseDotsIndicator");
         baseDotsIndicator.refreshDots();

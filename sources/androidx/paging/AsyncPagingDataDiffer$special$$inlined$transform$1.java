@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,8 +13,8 @@ import kotlinx.coroutines.YieldKt;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: Emitters.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004H\u008a@¨\u0006\u0005"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "Lkotlinx/coroutines/flow/FlowCollector;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1"}, k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1", f = "AsyncPagingDataDiffer.kt", i = {}, l = {40}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n¨\u0006\u0004"}, d2 = {"<anonymous>", "", "R", "Lkotlinx/coroutines/flow/FlowCollector;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1"}, k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1", f = "AsyncPagingDataDiffer.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends SuspendLambda implements Function2<FlowCollector<? super CombinedLoadStates>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Flow $this_transform;
@@ -42,41 +41,21 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
         return ((AsyncPagingDataDiffer$special$$inlined$transform$1) create(flowCollector, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    public final Object invokeSuspend(Object obj) {
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.label;
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            this.label = 1;
-            if (this.$this_transform.collect(new AnonymousClass1((FlowCollector) this.L$0, this.this$0), this) == coroutine_suspended) {
-                return coroutine_suspended;
-            }
-        } else if (i != 1) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        } else {
-            ResultKt.throwOnFailure(obj);
-        }
-        return Unit.INSTANCE;
-    }
-
     /* compiled from: Emitters.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\u0007"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$transform$1$1"}, k = 3, mv = {1, 8, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
     /* renamed from: androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1<T> implements FlowCollector {
         final /* synthetic */ FlowCollector<CombinedLoadStates> $$this$flow;
         final /* synthetic */ AsyncPagingDataDiffer this$0;
 
-        /* compiled from: Emitters.kt */
-        @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-        @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1", f = "AsyncPagingDataDiffer.kt", i = {0, 0, 0, 1, 1}, l = {224, 225, 229}, m = "emit", n = {"this", "it", "$this$loadStateFlow_u24lambda_u242", "it", "$this$loadStateFlow_u24lambda_u242"}, s = {"L$0", "L$1", "L$2", "L$0", "L$1"})
+        @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+        @DebugMetadata(c = "androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1", f = "AsyncPagingDataDiffer.kt", i = {0, 0, 1, 1}, l = {40, 41, 43}, m = "emit", n = {"it", "$this$loadStateFlow_u24lambda_u240", "it", "$this$loadStateFlow_u24lambda_u240"}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 1)
         /* renamed from: androidx.paging.AsyncPagingDataDiffer$special$$inlined$transform$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes3.dex */
         public static final class C00341 extends ContinuationImpl {
             Object L$0;
             Object L$1;
-            Object L$2;
             int label;
             /* synthetic */ Object result;
 
@@ -97,14 +76,14 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
             this.$$this$flow = flowCollector;
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:25:0x009f, code lost:
-            if (kotlinx.coroutines.flow.FlowKt.firstOrNull(r5.this$0.getInGetItem$paging_runtime_release(), new androidx.paging.AsyncPagingDataDiffer$loadStateFlow$1$1(null), r0) != r1) goto L18;
+        /* JADX WARN: Code restructure failed: missing block: B:25:0x0096, code lost:
+            if (kotlinx.coroutines.flow.FlowKt.firstOrNull(r7.this$0.getInGetItem$paging_runtime(), new androidx.paging.AsyncPagingDataDiffer$loadStateFlow$1$1(null), r0) != r1) goto L18;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x00ae, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x00a5, code lost:
             if (r9.emit(r8, r0) != r1) goto L12;
          */
         /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-        /* JADX WARN: Removed duplicated region for block: B:18:0x0056  */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
         @Override // kotlinx.coroutines.flow.FlowCollector
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -114,7 +93,6 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
             int i;
             FlowCollector<CombinedLoadStates> flowCollector;
             CombinedLoadStates combinedLoadStates;
-            AnonymousClass1<T> anonymousClass1;
             CombinedLoadStates combinedLoadStates2;
             FlowCollector<CombinedLoadStates> flowCollector2;
             if (continuation instanceof C00341) {
@@ -128,13 +106,11 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                         ResultKt.throwOnFailure(obj);
                         flowCollector = this.$$this$flow;
                         combinedLoadStates = (CombinedLoadStates) t;
-                        if (this.this$0.getInGetItem$paging_runtime_release().getValue().booleanValue()) {
-                            c00341.L$0 = this;
-                            c00341.L$1 = combinedLoadStates;
-                            c00341.L$2 = flowCollector;
+                        if (this.this$0.getInGetItem$paging_runtime().getValue().booleanValue()) {
+                            c00341.L$0 = combinedLoadStates;
+                            c00341.L$1 = flowCollector;
                             c00341.label = 1;
                             if (YieldKt.yield(c00341) != coroutine_suspended) {
-                                anonymousClass1 = this;
                                 combinedLoadStates2 = combinedLoadStates;
                                 flowCollector2 = flowCollector;
                             }
@@ -144,9 +120,8 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                         c00341.L$1 = null;
                         c00341.label = 3;
                     } else if (i == 1) {
-                        flowCollector2 = (FlowCollector) c00341.L$2;
-                        combinedLoadStates2 = (CombinedLoadStates) c00341.L$1;
-                        anonymousClass1 = (AnonymousClass1) c00341.L$0;
+                        flowCollector2 = (FlowCollector) c00341.L$1;
+                        combinedLoadStates2 = (CombinedLoadStates) c00341.L$0;
                         ResultKt.throwOnFailure(obj);
                     } else if (i != 2) {
                         if (i == 3) {
@@ -166,7 +141,6 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
                     }
                     c00341.L$0 = combinedLoadStates2;
                     c00341.L$1 = flowCollector2;
-                    c00341.L$2 = null;
                     c00341.label = 2;
                 }
             }
@@ -178,8 +152,25 @@ public final class AsyncPagingDataDiffer$special$$inlined$transform$1 extends Su
             }
             c00341.L$0 = combinedLoadStates2;
             c00341.L$1 = flowCollector2;
-            c00341.L$2 = null;
             c00341.label = 2;
         }
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.label;
+        if (i == 0) {
+            ResultKt.throwOnFailure(obj);
+            this.label = 1;
+            if (this.$this_transform.collect(new AnonymousClass1((FlowCollector) this.L$0, this.this$0), this) == coroutine_suspended) {
+                return coroutine_suspended;
+            }
+        } else if (i != 1) {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        } else {
+            ResultKt.throwOnFailure(obj);
+        }
+        return Unit.INSTANCE;
     }
 }

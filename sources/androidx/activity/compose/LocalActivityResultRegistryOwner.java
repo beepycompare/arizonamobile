@@ -20,13 +20,11 @@ public final class LocalActivityResultRegistryOwner {
     private static final ProvidableCompositionLocal<ActivityResultRegistryOwner> LocalComposition = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.activity.compose.LocalActivityResultRegistryOwner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ActivityResultRegistryOwner LocalComposition$lambda$0;
-            LocalComposition$lambda$0 = LocalActivityResultRegistryOwner.LocalComposition$lambda$0();
-            return LocalComposition$lambda$0;
+            return LocalActivityResultRegistryOwner.LocalComposition$lambda$0();
         }
     }, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ActivityResultRegistryOwner LocalComposition$lambda$0() {
         return null;
     }

@@ -55,9 +55,9 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
             }
             FocusOwner focusOwner = DelegatableNodeKt.requireOwner(FocusGroupPropertiesNode.this).getFocusOwner();
             View requireView = DelegatableNode_androidKt.requireView(FocusGroupPropertiesNode.this);
-            Integer m5066toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m5066toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo5050getRequestedFocusDirectiondhqQ8s());
+            Integer m4414toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4414toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4398getRequestedFocusDirectiondhqQ8s());
             currentlyFocusedRect = FocusGroupNode_androidKt.getCurrentlyFocusedRect(focusOwner, requireView, embeddedView);
-            if (FocusInteropUtils_androidKt.requestInteropFocus(embeddedView, m5066toAndroidFocusDirection3ESFkO8, currentlyFocusedRect)) {
+            if (FocusInteropUtils_androidKt.requestInteropFocus(embeddedView, m4414toAndroidFocusDirection3ESFkO8, currentlyFocusedRect)) {
                 return;
             }
             focusEnterExitScope.cancelFocusChange();
@@ -92,8 +92,8 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
                 View requireView = DelegatableNode_androidKt.requireView(FocusGroupPropertiesNode.this);
                 if (embeddedView instanceof ViewGroup) {
                     currentlyFocusedRect = FocusGroupNode_androidKt.getCurrentlyFocusedRect(focusOwner, requireView, embeddedView);
-                    Integer m5066toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m5066toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo5050getRequestedFocusDirectiondhqQ8s());
-                    int intValue = m5066toAndroidFocusDirection3ESFkO8 != null ? m5066toAndroidFocusDirection3ESFkO8.intValue() : TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
+                    Integer m4414toAndroidFocusDirection3ESFkO8 = FocusInteropUtils_androidKt.m4414toAndroidFocusDirection3ESFkO8(focusEnterExitScope.mo4398getRequestedFocusDirectiondhqQ8s());
+                    int intValue = m4414toAndroidFocusDirection3ESFkO8 != null ? m4414toAndroidFocusDirection3ESFkO8.intValue() : TsExtractor.TS_STREAM_TYPE_HDMV_DTS;
                     FocusFinder focusFinder = FocusFinder.getInstance();
                     FocusGroupPropertiesNode focusGroupPropertiesNode = FocusGroupPropertiesNode.this;
                     if (focusGroupPropertiesNode.getFocusedChild() != null) {
@@ -154,15 +154,15 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
 
     private final FocusTargetNode getFocusTargetOfEmbeddedViewWrapper() {
         FocusGroupPropertiesNode focusGroupPropertiesNode = this;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
         if (!focusGroupPropertiesNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
         Modifier.Node node = focusGroupPropertiesNode.getNode();
-        if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+        if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
             boolean z = false;
             for (Modifier.Node child$ui = node.getChild$ui(); child$ui != null; child$ui = child$ui.getChild$ui()) {
-                if ((child$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((child$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node2 = child$ui;
                     MutableVector mutableVector = null;
                     while (node2 != null) {
@@ -172,10 +172,10 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
                                 return focusTargetNode;
                             }
                             z = true;
-                        } else if ((node2.getKindSet$ui() & m7195constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
+                        } else if ((node2.getKindSet$ui() & m6535constructorimpl) != 0 && (node2 instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node2).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node2 = delegate$ui;
@@ -250,7 +250,7 @@ final class FocusGroupPropertiesNode extends Modifier.Node implements FocusPrope
                         } else if (z) {
                             this.focusedChild = null;
                             if (getFocusTargetOfEmbeddedViewWrapper().getFocusState().isFocused()) {
-                                focusOwner.mo5070clearFocusI7lrPNg(false, true, false, FocusDirection.Companion.m5060getExitdhqQ8s());
+                                focusOwner.mo4418clearFocusI7lrPNg(false, true, false, FocusDirection.Companion.m4408getExitdhqQ8s());
                                 return;
                             }
                             return;

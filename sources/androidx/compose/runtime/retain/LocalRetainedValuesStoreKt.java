@@ -19,13 +19,13 @@ public final class LocalRetainedValuesStoreKt {
     private static final ProvidableCompositionLocal<RetainedValuesStore> LocalRetainedValuesStore = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.runtime.retain.LocalRetainedValuesStoreKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            RetainedValuesStore LocalRetainedValuesStore$lambda$0;
-            LocalRetainedValuesStore$lambda$0 = LocalRetainedValuesStoreKt.LocalRetainedValuesStore$lambda$0();
-            return LocalRetainedValuesStore$lambda$0;
+            RetainedValuesStore retainedValuesStore;
+            retainedValuesStore = ForgetfulRetainedValuesStore.INSTANCE;
+            return retainedValuesStore;
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LocalRetainedValuesStoreProvider$lambda$2(RetainedValuesStore retainedValuesStore, Function2 function2, int i, Composer composer, int i2) {
         LocalRetainedValuesStoreProvider(retainedValuesStore, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -33,11 +33,6 @@ public final class LocalRetainedValuesStoreKt {
 
     public static final ProvidableCompositionLocal<RetainedValuesStore> getLocalRetainedValuesStore() {
         return LocalRetainedValuesStore;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final RetainedValuesStore LocalRetainedValuesStore$lambda$0() {
-        return ForgetfulRetainedValuesStore.INSTANCE;
     }
 
     public static final void LocalRetainedValuesStoreProvider(final RetainedValuesStore retainedValuesStore, final Function2<? super Composer, ? super Integer, Unit> function2, Composer composer, final int i) {
@@ -80,9 +75,7 @@ public final class LocalRetainedValuesStoreKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.retain.LocalRetainedValuesStoreKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LocalRetainedValuesStoreProvider$lambda$2;
-                    LocalRetainedValuesStoreProvider$lambda$2 = LocalRetainedValuesStoreKt.LocalRetainedValuesStoreProvider$lambda$2(RetainedValuesStore.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LocalRetainedValuesStoreProvider$lambda$2;
+                    return LocalRetainedValuesStoreKt.LocalRetainedValuesStoreProvider$lambda$2(RetainedValuesStore.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

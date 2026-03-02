@@ -18,7 +18,7 @@ public interface BeyondBoundsLayout {
     }
 
     /* renamed from: layout-o7g1Pn8 */
-    <T> T mo1108layouto7g1Pn8(int i, Function1<? super BeyondBoundsScope, ? extends T> function1);
+    <T> T mo973layouto7g1Pn8(int i, Function1<? super BeyondBoundsScope, ? extends T> function1);
 
     /* compiled from: BeyondBoundsLayout.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\u0011\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\u0006\u001a\u00020\u0007H\u0016¢\u0006\u0004\b\b\u0010\tJ\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0003HÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0088\u0001\u0002\u0092\u0001\u00020\u0003¨\u0006\u000f"}, d2 = {"Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;", "", "value", "", "constructor-impl", "(I)I", "toString", "", "toString-impl", "(I)Ljava/lang/String;", "equals", "", "other", "hashCode", "Companion", "ui"}, k = 1, mv = {2, 0, 0}, xi = 48)
@@ -27,48 +27,48 @@ public interface BeyondBoundsLayout {
     public static final class LayoutDirection {
         private final int value;
         public static final Companion Companion = new Companion(null);
-        private static final int Before = m6856constructorimpl(1);
-        private static final int After = m6856constructorimpl(2);
-        private static final int Left = m6856constructorimpl(3);
-        private static final int Right = m6856constructorimpl(4);
-        private static final int Above = m6856constructorimpl(5);
-        private static final int Below = m6856constructorimpl(6);
+        private static final int Before = m6197constructorimpl(1);
+        private static final int After = m6197constructorimpl(2);
+        private static final int Left = m6197constructorimpl(3);
+        private static final int Right = m6197constructorimpl(4);
+        private static final int Above = m6197constructorimpl(5);
+        private static final int Below = m6197constructorimpl(6);
 
         /* renamed from: box-impl  reason: not valid java name */
-        public static final /* synthetic */ LayoutDirection m6855boximpl(int i) {
+        public static final /* synthetic */ LayoutDirection m6196boximpl(int i) {
             return new LayoutDirection(i);
         }
 
         /* renamed from: constructor-impl  reason: not valid java name */
-        public static int m6856constructorimpl(int i) {
+        public static int m6197constructorimpl(int i) {
             return i;
         }
 
         /* renamed from: equals-impl  reason: not valid java name */
-        public static boolean m6857equalsimpl(int i, Object obj) {
-            return (obj instanceof LayoutDirection) && i == ((LayoutDirection) obj).m6861unboximpl();
+        public static boolean m6198equalsimpl(int i, Object obj) {
+            return (obj instanceof LayoutDirection) && i == ((LayoutDirection) obj).m6202unboximpl();
         }
 
         /* renamed from: equals-impl0  reason: not valid java name */
-        public static final boolean m6858equalsimpl0(int i, int i2) {
+        public static final boolean m6199equalsimpl0(int i, int i2) {
             return i == i2;
         }
 
         /* renamed from: hashCode-impl  reason: not valid java name */
-        public static int m6859hashCodeimpl(int i) {
+        public static int m6200hashCodeimpl(int i) {
             return Integer.hashCode(i);
         }
 
         public boolean equals(Object obj) {
-            return m6857equalsimpl(this.value, obj);
+            return m6198equalsimpl(this.value, obj);
         }
 
         public int hashCode() {
-            return m6859hashCodeimpl(this.value);
+            return m6200hashCodeimpl(this.value);
         }
 
         /* renamed from: unbox-impl  reason: not valid java name */
-        public final /* synthetic */ int m6861unboximpl() {
+        public final /* synthetic */ int m6202unboximpl() {
             return this.value;
         }
 
@@ -84,32 +84,32 @@ public interface BeyondBoundsLayout {
             }
 
             /* renamed from: getBefore-hoxUOeE  reason: not valid java name */
-            public final int m6864getBeforehoxUOeE() {
+            public final int m6205getBeforehoxUOeE() {
                 return LayoutDirection.Before;
             }
 
             /* renamed from: getAfter-hoxUOeE  reason: not valid java name */
-            public final int m6863getAfterhoxUOeE() {
+            public final int m6204getAfterhoxUOeE() {
                 return LayoutDirection.After;
             }
 
             /* renamed from: getLeft-hoxUOeE  reason: not valid java name */
-            public final int m6866getLefthoxUOeE() {
+            public final int m6207getLefthoxUOeE() {
                 return LayoutDirection.Left;
             }
 
             /* renamed from: getRight-hoxUOeE  reason: not valid java name */
-            public final int m6867getRighthoxUOeE() {
+            public final int m6208getRighthoxUOeE() {
                 return LayoutDirection.Right;
             }
 
             /* renamed from: getAbove-hoxUOeE  reason: not valid java name */
-            public final int m6862getAbovehoxUOeE() {
+            public final int m6203getAbovehoxUOeE() {
                 return LayoutDirection.Above;
             }
 
             /* renamed from: getBelow-hoxUOeE  reason: not valid java name */
-            public final int m6865getBelowhoxUOeE() {
+            public final int m6206getBelowhoxUOeE() {
                 return LayoutDirection.Below;
             }
         }
@@ -119,12 +119,12 @@ public interface BeyondBoundsLayout {
         }
 
         public String toString() {
-            return m6860toStringimpl(this.value);
+            return m6201toStringimpl(this.value);
         }
 
         /* renamed from: toString-impl  reason: not valid java name */
-        public static String m6860toStringimpl(int i) {
-            return m6858equalsimpl0(i, Before) ? "Before" : m6858equalsimpl0(i, After) ? "After" : m6858equalsimpl0(i, Left) ? "Left" : m6858equalsimpl0(i, Right) ? "Right" : m6858equalsimpl0(i, Above) ? "Above" : m6858equalsimpl0(i, Below) ? "Below" : "invalid LayoutDirection";
+        public static String m6201toStringimpl(int i) {
+            return m6199equalsimpl0(i, Before) ? "Before" : m6199equalsimpl0(i, After) ? "After" : m6199equalsimpl0(i, Left) ? "Left" : m6199equalsimpl0(i, Right) ? "Right" : m6199equalsimpl0(i, Above) ? "Above" : m6199equalsimpl0(i, Below) ? "Below" : "invalid LayoutDirection";
         }
     }
 }

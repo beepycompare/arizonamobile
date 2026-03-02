@@ -1,6 +1,6 @@
 package com.google.android.gms.tasks;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class zzb extends CancellationToken {
     private final zzw zza = new zzw();
@@ -17,6 +17,6 @@ public final class zzb extends CancellationToken {
     }
 
     public final void zza() {
-        this.zza.zze(null);
+        this.zza.zzb(null);
     }
 }

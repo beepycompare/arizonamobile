@@ -51,7 +51,7 @@ public final class FirebaseSessions {
         Intrinsics.checkNotNullParameter(sessionsActivityLifecycleCallbacks, "sessionsActivityLifecycleCallbacks");
         this.firebaseApp = firebaseApp;
         this.settings = settings;
-        Log.d(TAG, "Initializing Firebase Sessions 3.0.3.");
+        Log.d(TAG, "Initializing Firebase Sessions 3.0.4.");
         Context applicationContext = firebaseApp.getApplicationContext().getApplicationContext();
         if (applicationContext instanceof Application) {
             ((Application) applicationContext).registerActivityLifecycleCallbacks(sessionsActivityLifecycleCallbacks);
@@ -140,7 +140,7 @@ public final class FirebaseSessions {
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void invokeSuspend$lambda$1(SessionsActivityLifecycleCallbacks sessionsActivityLifecycleCallbacks, String str, FirebaseOptions firebaseOptions) {
             Log.w(FirebaseSessions.TAG, "FirebaseApp instance deleted. Sessions library will stop collecting data.");
             sessionsActivityLifecycleCallbacks.onAppDelete();

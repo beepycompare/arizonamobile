@@ -368,10 +368,12 @@ public class MaterialButtonHelper {
         if (layerDrawable == null || layerDrawable.getNumberOfLayers() <= 1) {
             return null;
         }
-        if (this.rippleDrawable.getNumberOfLayers() > 2) {
-            return (Shapeable) this.rippleDrawable.getDrawable(2);
+        int numberOfLayers = this.rippleDrawable.getNumberOfLayers();
+        LayerDrawable layerDrawable2 = this.rippleDrawable;
+        if (numberOfLayers > 2) {
+            return (Shapeable) layerDrawable2.getDrawable(2);
         }
-        return (Shapeable) this.rippleDrawable.getDrawable(1);
+        return (Shapeable) layerDrawable2.getDrawable(1);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

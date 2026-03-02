@@ -65,9 +65,7 @@ public final class DefaultChildBackHandler implements ChildBackHandler, BackHand
         delegate.addEnabledChangedListener(new Function1() { // from class: com.arkivanov.decompose.backhandler.DefaultChildBackHandler$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$1;
-                _init_$lambda$1 = DefaultChildBackHandler._init_$lambda$1(DefaultChildBackHandler.this, ((Boolean) obj).booleanValue());
-                return _init_$lambda$1;
+                return DefaultChildBackHandler._init_$lambda$1(DefaultChildBackHandler.this, ((Boolean) obj).booleanValue());
             }
         });
     }
@@ -96,7 +94,7 @@ public final class DefaultChildBackHandler implements ChildBackHandler, BackHand
         this.parentCallback.setPriority(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$1(DefaultChildBackHandler defaultChildBackHandler, boolean z) {
         defaultChildBackHandler.updateParentCallbackEnabledState();
         return Unit.INSTANCE;

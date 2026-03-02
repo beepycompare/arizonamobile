@@ -13,7 +13,7 @@ final class ColorResourceHelper {
     }
 
     /* renamed from: getColor-WaAFU9c  reason: not valid java name */
-    public final long m2157getColorWaAFU9c(Context context, int i) {
+    public final long m1845getColorWaAFU9c(Context context, int i) {
         return ColorKt.Color(context.getResources().getColor(i, context.getTheme()));
     }
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListUpdateCallback;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -35,11 +36,11 @@ import kotlinx.coroutines.flow.FlowKt__ContextKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: AsyncPagingDataDiffer.kt */
-@Metadata(d1 = {"\u0000\u009f\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0015\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0002B'\b\u0017\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b¢\u0006\u0002\u0010\tB1\b\u0017\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\b\b\u0002\u0010\n\u001a\u00020\b¢\u0006\u0002\u0010\u000bB1\b\u0007\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\f\u0012\b\b\u0002\u0010\n\u001a\u00020\f¢\u0006\u0002\u0010\rJ\u001a\u00109\u001a\u00020\u001b2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b0\u0019J!\u0010;\u001a\u00020\u001b2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b0\u0019H\u0000¢\u0006\u0002\b<J\u0014\u0010=\u001a\u00020\u001b2\f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u001b0>J\u0019\u0010?\u001a\u0004\u0018\u00018\u00002\b\b\u0001\u0010@\u001a\u00020%H\u0007¢\u0006\u0002\u0010AJ\u0019\u0010B\u001a\u0004\u0018\u00018\u00002\b\b\u0001\u0010@\u001a\u00020%H\u0007¢\u0006\u0002\u0010AJ\u0006\u0010C\u001a\u00020\u001bJ\u001a\u0010D\u001a\u00020\u001b2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b0\u0019J\u0014\u0010E\u001a\u00020\u001b2\f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u001b0>J\u0006\u0010F\u001a\u00020\u001bJ\f\u0010G\u001a\b\u0012\u0004\u0012\u00028\u00000HJ\u001c\u0010I\u001a\u00020\u001b2\u0006\u0010J\u001a\u00020K2\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000MJ\u001c\u0010I\u001a\u00020\u001b2\f\u0010L\u001a\b\u0012\u0004\u0012\u00028\u00000MH\u0086@¢\u0006\u0002\u0010NR\u001b\u0010\u000e\u001a\u00020\u000f8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0012\u0010\u0013\u001a\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0014\u001a\b\u0012\u0004\u0012\u00028\u00000\u0015X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0016R \u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b0\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001dX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R \u0010!\u001a\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b0\u0019X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0011\u0010$\u001a\u00020%8F¢\u0006\u0006\u001a\u0004\b&\u0010'R\u000e\u0010(\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u0017\u0010)\u001a\b\u0012\u0004\u0012\u00020\u001a0*¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,R\u000e\u0010\u0007\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010-\u001a\b\u0012\u0004\u0012\u00020\u001b0*¢\u0006\b\n\u0000\u001a\u0004\b.\u0010,R\"\u0010/\u001a\u0016\u0012\u0012\u0012\u0010\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u001900X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00101\u001a\b\u0012\u0004\u0012\u00028\u000002X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b3\u00104R\u001a\u00105\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000600X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006O"}, d2 = {"Landroidx/paging/AsyncPagingDataDiffer;", ExifInterface.GPS_DIRECTION_TRUE, "", "diffCallback", "Landroidx/recyclerview/widget/DiffUtil$ItemCallback;", "updateCallback", "Landroidx/recyclerview/widget/ListUpdateCallback;", "mainDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlinx/coroutines/CoroutineDispatcher;)V", "workerDispatcher", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlinx/coroutines/CoroutineDispatcher;Lkotlinx/coroutines/CoroutineDispatcher;)V", "Lkotlin/coroutines/CoroutineContext;", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)V", "LoadStateListenerHandler", "Landroid/os/Handler;", "getLoadStateListenerHandler", "()Landroid/os/Handler;", "LoadStateListenerHandler$delegate", "Lkotlin/Lazy;", "LoadStateListenerRunnable", "androidx/paging/AsyncPagingDataDiffer$LoadStateListenerRunnable$1", "Landroidx/paging/AsyncPagingDataDiffer$LoadStateListenerRunnable$1;", "childLoadStateListeners", "Ljava/util/concurrent/CopyOnWriteArrayList;", "Lkotlin/Function1;", "Landroidx/paging/CombinedLoadStates;", "", "inGetItem", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "getInGetItem$paging_runtime_release", "()Lkotlinx/coroutines/flow/MutableStateFlow;", "internalLoadStateListener", "getInternalLoadStateListener$paging_runtime_release", "()Lkotlin/jvm/functions/Function1;", "itemCount", "", "getItemCount", "()I", "lastAccessedIndex", "loadStateFlow", "Lkotlinx/coroutines/flow/Flow;", "getLoadStateFlow", "()Lkotlinx/coroutines/flow/Flow;", "onPagesUpdatedFlow", "getOnPagesUpdatedFlow", "parentLoadStateListener", "Ljava/util/concurrent/atomic/AtomicReference;", "presenter", "Landroidx/paging/PagingDataPresenter;", "getPresenter$paging_runtime_release", "()Landroidx/paging/PagingDataPresenter;", "previousPresenter", "Landroidx/paging/PlaceholderPaddedList;", "submitDataId", "Ljava/util/concurrent/atomic/AtomicInteger;", "addLoadStateListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "addLoadStateListenerInternal", "addLoadStateListenerInternal$paging_runtime_release", "addOnPagesUpdatedListener", "Lkotlin/Function0;", "getItem", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "peek", "refresh", "removeLoadStateListener", "removeOnPagesUpdatedListener", "retry", "snapshot", "Landroidx/paging/ItemSnapshotList;", "submitData", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "pagingData", "Landroidx/paging/PagingData;", "(Landroidx/paging/PagingData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "paging-runtime_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¡\u0001\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\b\u0003*\u0001N\u0018\u0000*\b\b\u0000\u0010\u0001*\u00020\u00022\u00020\u0002B3\b\u0007\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b\u0012\b\b\u0002\u0010\t\u001a\u00020\b¢\u0006\u0004\b\n\u0010\u000bB)\b\u0017\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\f¢\u0006\u0004\b\n\u0010\rB3\b\u0017\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\b\b\u0002\u0010\u0007\u001a\u00020\f\u0012\b\b\u0002\u0010\t\u001a\u00020\f¢\u0006\u0004\b\n\u0010\u000eJ\u001c\u0010\u001f\u001a\u00020 2\f\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\"H\u0086@¢\u0006\u0002\u0010#J\u001c\u0010\u001f\u001a\u00020 2\u0006\u0010$\u001a\u00020%2\f\u0010!\u001a\b\u0012\u0004\u0012\u00028\u00000\"J\u0006\u0010&\u001a\u00020 J\u0006\u0010'\u001a\u00020 J\u0019\u0010(\u001a\u0004\u0018\u00018\u00002\b\b\u0001\u0010)\u001a\u00020\u0015H\u0007¢\u0006\u0002\u0010*J\u0019\u0010+\u001a\u0004\u0018\u00018\u00002\b\b\u0001\u0010)\u001a\u00020\u0015H\u0007¢\u0006\u0002\u0010*J\f\u0010,\u001a\b\u0012\u0004\u0012\u00028\u00000-J\u0014\u00108\u001a\u00020 2\f\u00109\u001a\b\u0012\u0004\u0012\u00020 0:J\u0014\u0010;\u001a\u00020 2\f\u00109\u001a\b\u0012\u0004\u0012\u00020 0:J\u001a\u0010@\u001a\u00020 2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 0=J\u001a\u0010A\u001a\u00020 2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 0=J!\u0010B\u001a\u00020 2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 0=H\u0000¢\u0006\u0002\bCR\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00028\u00000\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00028\u00000\u001aX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010.\u001a\u00020\u00158F¢\u0006\u0006\u001a\u0004\b/\u00100R\u0017\u00101\u001a\b\u0012\u0004\u0012\u00020302¢\u0006\b\n\u0000\u001a\u0004\b4\u00105R\u0017\u00106\u001a\b\u0012\u0004\u0012\u00020 02¢\u0006\b\n\u0000\u001a\u0004\b7\u00105R\"\u0010<\u001a\u0016\u0012\u0012\u0012\u0010\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 \u0018\u00010=0\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010>\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 0=0?X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010D\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u00020 0=X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\bE\u0010FR\u001b\u0010G\u001a\u00020H8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\bK\u0010L\u001a\u0004\bI\u0010JR\u0010\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0004\n\u0002\u0010O¨\u0006P"}, d2 = {"Landroidx/paging/AsyncPagingDataDiffer;", ExifInterface.GPS_DIRECTION_TRUE, "", "diffCallback", "Landroidx/recyclerview/widget/DiffUtil$ItemCallback;", "updateCallback", "Landroidx/recyclerview/widget/ListUpdateCallback;", "mainDispatcher", "Lkotlin/coroutines/CoroutineContext;", "workerDispatcher", "<init>", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)V", "Lkotlinx/coroutines/CoroutineDispatcher;", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlinx/coroutines/CoroutineDispatcher;)V", "(Landroidx/recyclerview/widget/DiffUtil$ItemCallback;Landroidx/recyclerview/widget/ListUpdateCallback;Lkotlinx/coroutines/CoroutineDispatcher;Lkotlinx/coroutines/CoroutineDispatcher;)V", "inGetItem", "Lkotlinx/coroutines/flow/MutableStateFlow;", "", "getInGetItem$paging_runtime", "()Lkotlinx/coroutines/flow/MutableStateFlow;", "lastAccessedIndex", "", "previousPresenter", "Ljava/util/concurrent/atomic/AtomicReference;", "Landroidx/paging/PlaceholderPaddedList;", "presenter", "Landroidx/paging/PagingDataPresenter;", "getPresenter$paging_runtime", "()Landroidx/paging/PagingDataPresenter;", "submitDataId", "Ljava/util/concurrent/atomic/AtomicInteger;", "submitData", "", "pagingData", "Landroidx/paging/PagingData;", "(Landroidx/paging/PagingData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "retry", "refresh", "getItem", FirebaseAnalytics.Param.INDEX, "(I)Ljava/lang/Object;", "peek", "snapshot", "Landroidx/paging/ItemSnapshotList;", "itemCount", "getItemCount", "()I", "loadStateFlow", "Lkotlinx/coroutines/flow/Flow;", "Landroidx/paging/CombinedLoadStates;", "getLoadStateFlow", "()Lkotlinx/coroutines/flow/Flow;", "onPagesUpdatedFlow", "getOnPagesUpdatedFlow", "addOnPagesUpdatedListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lkotlin/Function0;", "removeOnPagesUpdatedListener", "parentLoadStateListener", "Lkotlin/Function1;", "childLoadStateListeners", "Ljava/util/concurrent/CopyOnWriteArrayList;", "addLoadStateListener", "removeLoadStateListener", "addLoadStateListenerInternal", "addLoadStateListenerInternal$paging_runtime", "internalLoadStateListener", "getInternalLoadStateListener$paging_runtime", "()Lkotlin/jvm/functions/Function1;", "LoadStateListenerHandler", "Landroid/os/Handler;", "getLoadStateListenerHandler", "()Landroid/os/Handler;", "LoadStateListenerHandler$delegate", "Lkotlin/Lazy;", "LoadStateListenerRunnable", "androidx/paging/AsyncPagingDataDiffer$LoadStateListenerRunnable$1", "Landroidx/paging/AsyncPagingDataDiffer$LoadStateListenerRunnable$1;", "paging-runtime"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class AsyncPagingDataDiffer<T> {
     private final Lazy LoadStateListenerHandler$delegate;
-    private final AsyncPagingDataDiffer$LoadStateListenerRunnable$1<T> LoadStateListenerRunnable;
+    private final AsyncPagingDataDiffer$LoadStateListenerRunnable$1 LoadStateListenerRunnable;
     private final CopyOnWriteArrayList<Function1<CombinedLoadStates, Unit>> childLoadStateListeners;
     private final DiffUtil.ItemCallback<T> diffCallback;
     private final MutableStateFlow<Boolean> inGetItem;
@@ -90,52 +91,16 @@ public final class AsyncPagingDataDiffer<T> {
         this.onPagesUpdatedFlow = asyncPagingDataDiffer$presenter$1.getOnPagesUpdatedFlow();
         this.parentLoadStateListener = new AtomicReference<>(null);
         this.childLoadStateListeners = new CopyOnWriteArrayList<>();
-        this.internalLoadStateListener = new Function1<CombinedLoadStates, Unit>(this) { // from class: androidx.paging.AsyncPagingDataDiffer$internalLoadStateListener$1
-            final /* synthetic */ AsyncPagingDataDiffer<T> this$0;
-
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-                this.this$0 = this;
-            }
-
+        this.internalLoadStateListener = new Function1() { // from class: androidx.paging.AsyncPagingDataDiffer$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
-            public /* bridge */ /* synthetic */ Unit invoke(CombinedLoadStates combinedLoadStates) {
-                invoke2(combinedLoadStates);
-                return Unit.INSTANCE;
-            }
-
-            /* renamed from: invoke  reason: avoid collision after fix types in other method */
-            public final void invoke2(CombinedLoadStates loadState) {
-                Handler loadStateListenerHandler;
-                AsyncPagingDataDiffer$LoadStateListenerRunnable$1 asyncPagingDataDiffer$LoadStateListenerRunnable$1;
-                AsyncPagingDataDiffer$LoadStateListenerRunnable$1 asyncPagingDataDiffer$LoadStateListenerRunnable$12;
-                AsyncPagingDataDiffer$LoadStateListenerRunnable$1 asyncPagingDataDiffer$LoadStateListenerRunnable$13;
-                CopyOnWriteArrayList<Function1> copyOnWriteArrayList;
-                Intrinsics.checkNotNullParameter(loadState, "loadState");
-                if (!this.this$0.getInGetItem$paging_runtime_release().getValue().booleanValue()) {
-                    copyOnWriteArrayList = ((AsyncPagingDataDiffer) this.this$0).childLoadStateListeners;
-                    for (Function1 function1 : copyOnWriteArrayList) {
-                        function1.invoke(loadState);
-                    }
-                    return;
-                }
-                loadStateListenerHandler = this.this$0.getLoadStateListenerHandler();
-                AsyncPagingDataDiffer<T> asyncPagingDataDiffer = this.this$0;
-                asyncPagingDataDiffer$LoadStateListenerRunnable$1 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer).LoadStateListenerRunnable;
-                loadStateListenerHandler.removeCallbacks(asyncPagingDataDiffer$LoadStateListenerRunnable$1);
-                asyncPagingDataDiffer$LoadStateListenerRunnable$12 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer).LoadStateListenerRunnable;
-                asyncPagingDataDiffer$LoadStateListenerRunnable$12.getLoadState().set(loadState);
-                asyncPagingDataDiffer$LoadStateListenerRunnable$13 = ((AsyncPagingDataDiffer) asyncPagingDataDiffer).LoadStateListenerRunnable;
-                loadStateListenerHandler.post(asyncPagingDataDiffer$LoadStateListenerRunnable$13);
+            public final Object invoke(Object obj) {
+                return AsyncPagingDataDiffer.internalLoadStateListener$lambda$0(AsyncPagingDataDiffer.this, (CombinedLoadStates) obj);
             }
         };
-        this.LoadStateListenerHandler$delegate = LazyKt.lazy(new Function0<Handler>() { // from class: androidx.paging.AsyncPagingDataDiffer$LoadStateListenerHandler$2
-            /* JADX WARN: Can't rename method to resolve collision */
+        this.LoadStateListenerHandler$delegate = LazyKt.lazy(new Function0() { // from class: androidx.paging.AsyncPagingDataDiffer$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
-            public final Handler invoke() {
-                return new Handler(Looper.getMainLooper());
+            public final Object invoke() {
+                return AsyncPagingDataDiffer.LoadStateListenerHandler_delegate$lambda$0();
             }
         });
         this.LoadStateListenerRunnable = new AsyncPagingDataDiffer$LoadStateListenerRunnable$1(this);
@@ -172,11 +137,11 @@ public final class AsyncPagingDataDiffer<T> {
         Intrinsics.checkNotNullParameter(workerDispatcher, "workerDispatcher");
     }
 
-    public final MutableStateFlow<Boolean> getInGetItem$paging_runtime_release() {
+    public final MutableStateFlow<Boolean> getInGetItem$paging_runtime() {
         return this.inGetItem;
     }
 
-    public final PagingDataPresenter<T> getPresenter$paging_runtime_release() {
+    public final PagingDataPresenter<T> getPresenter$paging_runtime() {
         return this.presenter;
     }
 
@@ -284,7 +249,7 @@ public final class AsyncPagingDataDiffer<T> {
     public final void addLoadStateListener(Function1<? super CombinedLoadStates, Unit> listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
         if (this.parentLoadStateListener.get() == null) {
-            addLoadStateListenerInternal$paging_runtime_release(this.internalLoadStateListener);
+            addLoadStateListenerInternal$paging_runtime(this.internalLoadStateListener);
         }
         this.childLoadStateListeners.add(listener);
     }
@@ -299,18 +264,39 @@ public final class AsyncPagingDataDiffer<T> {
         this.presenter.removeLoadStateListener(function1);
     }
 
-    public final void addLoadStateListenerInternal$paging_runtime_release(Function1<? super CombinedLoadStates, Unit> listener) {
+    public final void addLoadStateListenerInternal$paging_runtime(Function1<? super CombinedLoadStates, Unit> listener) {
         Intrinsics.checkNotNullParameter(listener, "listener");
         this.parentLoadStateListener.set(listener);
         this.presenter.addLoadStateListener(listener);
     }
 
-    public final Function1<CombinedLoadStates, Unit> getInternalLoadStateListener$paging_runtime_release() {
+    public final Function1<CombinedLoadStates, Unit> getInternalLoadStateListener$paging_runtime() {
         return this.internalLoadStateListener;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Handler getLoadStateListenerHandler() {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit internalLoadStateListener$lambda$0(AsyncPagingDataDiffer asyncPagingDataDiffer, CombinedLoadStates loadState) {
+        Intrinsics.checkNotNullParameter(loadState, "loadState");
+        if (asyncPagingDataDiffer.inGetItem.getValue().booleanValue()) {
+            Handler loadStateListenerHandler = asyncPagingDataDiffer.getLoadStateListenerHandler();
+            loadStateListenerHandler.removeCallbacks(asyncPagingDataDiffer.LoadStateListenerRunnable);
+            asyncPagingDataDiffer.LoadStateListenerRunnable.getLoadState().set(loadState);
+            loadStateListenerHandler.post(asyncPagingDataDiffer.LoadStateListenerRunnable);
+        } else {
+            Iterator<T> it = asyncPagingDataDiffer.childLoadStateListeners.iterator();
+            while (it.hasNext()) {
+                ((Function1) it.next()).invoke(loadState);
+            }
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Handler LoadStateListenerHandler_delegate$lambda$0() {
+        return new Handler(Looper.getMainLooper());
+    }
+
+    private final Handler getLoadStateListenerHandler() {
         return (Handler) this.LoadStateListenerHandler$delegate.getValue();
     }
 }

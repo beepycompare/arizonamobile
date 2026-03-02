@@ -7,14 +7,14 @@ import java.util.Map;
 public final class Zc implements ModuleSelfReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qj f885a = AbstractC0689x1.a();
+    public final Qj f885a = AbstractC0688x1.a();
     public final int b = 4;
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportError(String str, Throwable th) {
         Qj qj = this.f885a;
         qj.getClass();
-        qj.a(new C0508pj(str, th));
+        qj.a(new C0507pj(str, th));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter

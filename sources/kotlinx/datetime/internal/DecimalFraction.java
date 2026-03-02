@@ -31,10 +31,11 @@ public final class DecimalFraction implements Comparable<DecimalFraction> {
         if (i == i2) {
             return this.fractionalPart;
         }
+        int i3 = this.fractionalPart;
         if (i > i2) {
-            return this.fractionalPart * MathKt.getPOWERS_OF_TEN()[i - this.digits];
+            return i3 * MathKt.getPOWERS_OF_TEN()[i - this.digits];
         }
-        return this.fractionalPart / MathKt.getPOWERS_OF_TEN()[this.digits - i];
+        return i3 / MathKt.getPOWERS_OF_TEN()[this.digits - i];
     }
 
     @Override // java.lang.Comparable

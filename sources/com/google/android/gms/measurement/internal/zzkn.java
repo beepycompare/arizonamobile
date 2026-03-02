@@ -17,10 +17,12 @@ public final class zzkn implements zzpo {
 
     @Override // com.google.android.gms.measurement.internal.zzpo
     public final void zza(String str, String str2, Bundle bundle) {
-        if (!TextUtils.isEmpty(str)) {
-            this.zza.zzI("auto", "_err", bundle, str);
+        boolean isEmpty = TextUtils.isEmpty(str);
+        zzlj zzljVar = this.zza;
+        if (!isEmpty) {
+            zzljVar.zzI("auto", "_err", bundle, str);
         } else {
-            this.zza.zzB("auto", "_err", bundle);
+            zzljVar.zzB("auto", "_err", bundle);
         }
     }
 }

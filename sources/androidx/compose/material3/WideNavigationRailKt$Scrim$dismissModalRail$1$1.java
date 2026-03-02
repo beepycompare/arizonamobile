@@ -22,7 +22,7 @@ public final class WideNavigationRailKt$Scrim$dismissModalRail$1$1 implements Po
         this.$dismiss$delegate = mutableState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(MutableState mutableState, Offset offset) {
         WideNavigationRailKt.Scrim_3J_VO9M$lambda$29(mutableState, true);
         return Unit.INSTANCE;
@@ -34,9 +34,7 @@ public final class WideNavigationRailKt$Scrim$dismissModalRail$1$1 implements Po
         Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, null, new Function1() { // from class: androidx.compose.material3.WideNavigationRailKt$Scrim$dismissModalRail$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = WideNavigationRailKt$Scrim$dismissModalRail$1$1.invoke$lambda$0(MutableState.this, (Offset) obj);
-                return invoke$lambda$0;
+                return WideNavigationRailKt$Scrim$dismissModalRail$1$1.invoke$lambda$0(MutableState.this, (Offset) obj);
             }
         }, continuation, 7, null);
         return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;

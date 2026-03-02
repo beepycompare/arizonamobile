@@ -361,18 +361,11 @@ public class SafeParcelResponse extends FastSafeParcelableJsonResponse {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        zan zanVar;
         int i2 = this.zaa;
         int beginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
         SafeParcelWriter.writeInt(parcel, 1, i2);
         SafeParcelWriter.writeParcel(parcel, 2, zaE(), false);
-        int i3 = this.zac;
-        if (i3 != 0) {
-            zanVar = i3 != 1 ? this.zad : this.zad;
-        } else {
-            zanVar = null;
-        }
-        SafeParcelWriter.writeParcelable(parcel, 3, zanVar, i, false);
+        SafeParcelWriter.writeParcelable(parcel, 3, this.zac != 0 ? this.zad : null, i, false);
         SafeParcelWriter.finishObjectHeader(parcel, beginObjectHeader);
     }
 

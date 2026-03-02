@@ -6,17 +6,17 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface BoxWithConstraintsScope extends BoxScope {
     /* renamed from: getConstraints-msEJaDk  reason: not valid java name */
-    long mo809getConstraintsmsEJaDk();
+    long mo712getConstraintsmsEJaDk();
 
     /* renamed from: getMaxHeight-D9Ej5fM  reason: not valid java name */
-    float mo810getMaxHeightD9Ej5fM();
+    float mo713getMaxHeightD9Ej5fM();
 
     /* renamed from: getMaxWidth-D9Ej5fM  reason: not valid java name */
-    float mo811getMaxWidthD9Ej5fM();
+    float mo714getMaxWidthD9Ej5fM();
 
     /* renamed from: getMinHeight-D9Ej5fM  reason: not valid java name */
-    float mo812getMinHeightD9Ej5fM();
+    float mo715getMinHeightD9Ej5fM();
 
     /* renamed from: getMinWidth-D9Ej5fM  reason: not valid java name */
-    float mo813getMinWidthD9Ej5fM();
+    float mo716getMinWidthD9Ej5fM();
 }

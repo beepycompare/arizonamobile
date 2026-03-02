@@ -19,11 +19,11 @@ public final class M7 {
 
     /* renamed from: a  reason: collision with root package name */
     public final U f688a;
-    public final C0108a2 b;
+    public final C0107a2 b;
 
-    public M7(U u, C0108a2 c0108a2) {
+    public M7(U u, C0107a2 c0107a2) {
         this.f688a = u;
-        this.b = c0108a2;
+        this.b = c0107a2;
     }
 
     public final String a() {
@@ -65,6 +65,6 @@ public final class M7 {
     }
 
     public M7() {
-        this(C0449na.k().c(), C0449na.k().d());
+        this(C0448na.k().c(), C0448na.k().d());
     }
 }

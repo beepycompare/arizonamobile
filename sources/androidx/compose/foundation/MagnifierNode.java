@@ -74,7 +74,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         this.clippingEnabled = z2;
         this.platformMagnifierFactory = platformMagnifierFactory;
         this.layoutCoordinates$delegate = SnapshotStateKt.mutableStateOf(null, SnapshotStateKt.neverEqualPolicy());
-        this.sourceCenterInRoot = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        this.sourceCenterInRoot = Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     public final Function1<Density, Offset> getSourceCenter() {
@@ -118,36 +118,36 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     }
 
     public /* synthetic */ MagnifierNode(Function1 function1, Function1 function12, Function1 function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m8365getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, (i & 512) != 0 ? PlatformMagnifierFactory.Companion.getForCurrentPlatform() : platformMagnifierFactory, null);
+        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m7662getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, (i & 512) != 0 ? PlatformMagnifierFactory.Companion.getForCurrentPlatform() : platformMagnifierFactory, null);
     }
 
     /* renamed from: getSize-MYxV2XQ  reason: not valid java name */
-    public final long m373getSizeMYxV2XQ() {
+    public final long m325getSizeMYxV2XQ() {
         return this.size;
     }
 
     /* renamed from: setSize-EaSLcWc  reason: not valid java name */
-    public final void m376setSizeEaSLcWc(long j) {
+    public final void m328setSizeEaSLcWc(long j) {
         this.size = j;
     }
 
     /* renamed from: getCornerRadius-D9Ej5fM  reason: not valid java name */
-    public final float m371getCornerRadiusD9Ej5fM() {
+    public final float m323getCornerRadiusD9Ej5fM() {
         return this.cornerRadius;
     }
 
     /* renamed from: setCornerRadius-0680j_4  reason: not valid java name */
-    public final void m374setCornerRadius0680j_4(float f) {
+    public final void m326setCornerRadius0680j_4(float f) {
         this.cornerRadius = f;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m372getElevationD9Ej5fM() {
+    public final float m324getElevationD9Ej5fM() {
         return this.elevation;
     }
 
     /* renamed from: setElevation-0680j_4  reason: not valid java name */
-    public final void m375setElevation0680j_4(float f) {
+    public final void m327setElevation0680j_4(float f) {
         this.elevation = f;
     }
 
@@ -176,29 +176,27 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     }
 
     /* renamed from: getAnchorPositionInRoot-F1C5BW0  reason: not valid java name */
-    private final long m370getAnchorPositionInRootF1C5BW0() {
+    private final long m322getAnchorPositionInRootF1C5BW0() {
         if (this.anchorPositionInRootState == null) {
             this.anchorPositionInRootState = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Offset anchorPositionInRoot_F1C5BW0$lambda$0;
-                    anchorPositionInRoot_F1C5BW0$lambda$0 = MagnifierNode.getAnchorPositionInRoot_F1C5BW0$lambda$0(MagnifierNode.this);
-                    return anchorPositionInRoot_F1C5BW0$lambda$0;
+                    return MagnifierNode.getAnchorPositionInRoot_F1C5BW0$lambda$0(MagnifierNode.this);
                 }
             });
         }
         State<Offset> state = this.anchorPositionInRootState;
-        return state != null ? state.getValue().m5189unboximpl() : Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        return state != null ? state.getValue().m4537unboximpl() : Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Offset getAnchorPositionInRoot_F1C5BW0$lambda$0(MagnifierNode magnifierNode) {
         LayoutCoordinates layoutCoordinates = magnifierNode.getLayoutCoordinates();
-        return Offset.m5168boximpl(layoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(layoutCoordinates) : Offset.Companion.m5194getUnspecifiedF1C5BW0());
+        return Offset.m4516boximpl(layoutCoordinates != null ? LayoutCoordinatesKt.positionInRoot(layoutCoordinates) : Offset.Companion.m4542getUnspecifiedF1C5BW0());
     }
 
     /* renamed from: update-5F03MCQ  reason: not valid java name */
-    public final void m377update5F03MCQ(Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, float f, boolean z, long j, float f2, float f3, boolean z2, Function1<? super DpSize, Unit> function13, PlatformMagnifierFactory platformMagnifierFactory) {
+    public final void m329update5F03MCQ(Function1<? super Density, Offset> function1, Function1<? super Density, Offset> function12, float f, boolean z, long j, float f2, float f3, boolean z2, Function1<? super DpSize, Unit> function13, PlatformMagnifierFactory platformMagnifierFactory) {
         float f4 = this.zoom;
         long j2 = this.size;
         float f5 = this.cornerRadius;
@@ -221,7 +219,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         MagnifierNode magnifierNode = this;
         View requireView = DelegatableNode_androidKt.requireView(magnifierNode);
         Density requireDensity = DelegatableNodeKt.requireDensity(magnifierNode);
-        if (this.magnifier != null && ((!Magnifier_androidKt.equalsIncludingNaN(f, f4) && !platformMagnifierFactory.getCanUpdateZoom()) || !DpSize.m8353equalsimpl0(j, j2) || !Dp.m8263equalsimpl0(f2, f5) || !Dp.m8263equalsimpl0(f3, f6) || z != z3 || z2 != z4 || !Intrinsics.areEqual(platformMagnifierFactory, platformMagnifierFactory2) || !Intrinsics.areEqual(requireView, view) || !Intrinsics.areEqual(requireDensity, density))) {
+        if (this.magnifier != null && ((!Magnifier_androidKt.equalsIncludingNaN(f, f4) && !platformMagnifierFactory.getCanUpdateZoom()) || !DpSize.m7650equalsimpl0(j, j2) || !Dp.m7560equalsimpl0(f2, f5) || !Dp.m7560equalsimpl0(f3, f6) || z != z3 || z2 != z4 || !Intrinsics.areEqual(platformMagnifierFactory, platformMagnifierFactory2) || !Intrinsics.areEqual(requireView, view) || !Intrinsics.areEqual(requireDensity, density))) {
             recreateMagnifier();
         }
         updateMagnifier();
@@ -243,7 +241,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         this.magnifier = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onObservedReadsChanged$lambda$0(MagnifierNode magnifierNode) {
         magnifierNode.updateMagnifier();
         return Unit.INSTANCE;
@@ -254,9 +252,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit onObservedReadsChanged$lambda$0;
-                onObservedReadsChanged$lambda$0 = MagnifierNode.onObservedReadsChanged$lambda$0(MagnifierNode.this);
-                return onObservedReadsChanged$lambda$0;
+                return MagnifierNode.onObservedReadsChanged$lambda$0(MagnifierNode.this);
             }
         });
     }
@@ -278,7 +274,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         }
         Density density2 = density;
         this.density = density2;
-        this.magnifier = this.platformMagnifierFactory.mo405createnHHXs2Y(view2, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, density2, this.zoom);
+        this.magnifier = this.platformMagnifierFactory.mo354createnHHXs2Y(view2, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, density2, this.zoom);
         updateSizeIfNecessary();
     }
 
@@ -288,38 +284,38 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void updateMagnifier() {
-        long m5194getUnspecifiedF1C5BW0;
+        long m4542getUnspecifiedF1C5BW0;
         PlatformMagnifier platformMagnifier;
         Density density = this.density;
         if (density == null) {
             density = DelegatableNodeKt.requireDensity(this);
             this.density = density;
         }
-        long m5189unboximpl = this.sourceCenter.invoke(density).m5189unboximpl();
-        if ((m5189unboximpl & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (m370getAnchorPositionInRootF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            this.sourceCenterInRoot = Offset.m5184plusMKHz9U(m370getAnchorPositionInRootF1C5BW0(), m5189unboximpl);
+        long m4537unboximpl = this.sourceCenter.invoke(density).m4537unboximpl();
+        if ((m4537unboximpl & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats && (m322getAnchorPositionInRootF1C5BW0() & 9223372034707292159L) != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            this.sourceCenterInRoot = Offset.m4532plusMKHz9U(m322getAnchorPositionInRootF1C5BW0(), m4537unboximpl);
             Function1<? super Density, Offset> function1 = this.magnifierCenter;
             if (function1 != null) {
-                Offset m5168boximpl = Offset.m5168boximpl(function1.invoke(density).m5189unboximpl());
-                if ((m5168boximpl.m5189unboximpl() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
-                    m5168boximpl = null;
+                Offset m4516boximpl = Offset.m4516boximpl(function1.invoke(density).m4537unboximpl());
+                if ((m4516boximpl.m4537unboximpl() & 9223372034707292159L) == InlineClassHelperKt.UnspecifiedPackedFloats) {
+                    m4516boximpl = null;
                 }
-                if (m5168boximpl != null) {
-                    m5194getUnspecifiedF1C5BW0 = Offset.m5184plusMKHz9U(m370getAnchorPositionInRootF1C5BW0(), m5168boximpl.m5189unboximpl());
-                    long j = m5194getUnspecifiedF1C5BW0;
+                if (m4516boximpl != null) {
+                    m4542getUnspecifiedF1C5BW0 = Offset.m4532plusMKHz9U(m322getAnchorPositionInRootF1C5BW0(), m4516boximpl.m4537unboximpl());
+                    long j = m4542getUnspecifiedF1C5BW0;
                     if (this.magnifier == null) {
                         recreateMagnifier();
                     }
                     platformMagnifier = this.magnifier;
                     if (platformMagnifier != null) {
-                        platformMagnifier.mo404updateWko1d7g(this.sourceCenterInRoot, j, this.zoom);
+                        platformMagnifier.mo353updateWko1d7g(this.sourceCenterInRoot, j, this.zoom);
                     }
                     updateSizeIfNecessary();
                     return;
                 }
             }
-            m5194getUnspecifiedF1C5BW0 = Offset.Companion.m5194getUnspecifiedF1C5BW0();
-            long j2 = m5194getUnspecifiedF1C5BW0;
+            m4542getUnspecifiedF1C5BW0 = Offset.Companion.m4542getUnspecifiedF1C5BW0();
+            long j2 = m4542getUnspecifiedF1C5BW0;
             if (this.magnifier == null) {
             }
             platformMagnifier = this.magnifier;
@@ -328,7 +324,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
             updateSizeIfNecessary();
             return;
         }
-        this.sourceCenterInRoot = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        this.sourceCenterInRoot = Offset.Companion.m4542getUnspecifiedF1C5BW0();
         PlatformMagnifier platformMagnifier2 = this.magnifier;
         if (platformMagnifier2 != null) {
             platformMagnifier2.dismiss();
@@ -338,14 +334,14 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
     private final void updateSizeIfNecessary() {
         Density density;
         PlatformMagnifier platformMagnifier = this.magnifier;
-        if (platformMagnifier == null || (density = this.density) == null || IntSize.m8426equalsimpl(platformMagnifier.mo403getSizeYbymL2g(), this.previousSize)) {
+        if (platformMagnifier == null || (density = this.density) == null || IntSize.m7723equalsimpl(platformMagnifier.mo352getSizeYbymL2g(), this.previousSize)) {
             return;
         }
         Function1<? super DpSize, Unit> function1 = this.onSizeChanged;
         if (function1 != null) {
-            function1.invoke(DpSize.m8344boximpl(density.mo462toDpSizekrfVVM(IntSizeKt.m8441toSizeozmzZPI(platformMagnifier.mo403getSizeYbymL2g()))));
+            function1.invoke(DpSize.m7641boximpl(density.mo403toDpSizekrfVVM(IntSizeKt.m7738toSizeozmzZPI(platformMagnifier.mo352getSizeYbymL2g()))));
         }
-        this.previousSize = IntSize.m8421boximpl(platformMagnifier.mo403getSizeYbymL2g());
+        this.previousSize = IntSize.m7718boximpl(platformMagnifier.mo352getSizeYbymL2g());
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -353,7 +349,7 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         contentDrawScope.drawContent();
         Channel<Unit> channel = this.drawSignalChannel;
         if (channel != null) {
-            ChannelResult.m11784boximpl(channel.mo9174trySendJP2dKIU(Unit.INSTANCE));
+            ChannelResult.m10709boximpl(channel.mo8396trySendJP2dKIU(Unit.INSTANCE));
         }
     }
 
@@ -362,19 +358,14 @@ public final class MagnifierNode extends Modifier.Node implements GlobalPosition
         setLayoutCoordinates(layoutCoordinates);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Offset applySemantics$lambda$0(MagnifierNode magnifierNode) {
-        return Offset.m5168boximpl(magnifierNode.sourceCenterInRoot);
-    }
-
     @Override // androidx.compose.ui.node.SemanticsModifierNode
     public void applySemantics(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         semanticsPropertyReceiver.set(Magnifier_androidKt.getMagnifierPositionInRoot(), new Function0() { // from class: androidx.compose.foundation.MagnifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Offset applySemantics$lambda$0;
-                applySemantics$lambda$0 = MagnifierNode.applySemantics$lambda$0(MagnifierNode.this);
-                return applySemantics$lambda$0;
+                Offset m4516boximpl;
+                m4516boximpl = Offset.m4516boximpl(MagnifierNode.this.sourceCenterInRoot);
+                return m4516boximpl;
             }
         });
     }

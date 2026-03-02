@@ -88,8 +88,8 @@ public final class DialogWrapper extends ComponentDialog implements ViewRootForI
         this.onDismissRequest = function0;
         this.properties = dialogProperties;
         this.composeView = view;
-        float m8258constructorimpl = Dp.m8258constructorimpl(8);
-        this.maxSupportedElevation = m8258constructorimpl;
+        float m7555constructorimpl = Dp.m7555constructorimpl(8);
+        this.maxSupportedElevation = m7555constructorimpl;
         Window window = getWindow();
         if (window == null) {
             throw new IllegalStateException("Dialog has no window".toString());
@@ -114,7 +114,7 @@ public final class DialogWrapper extends ComponentDialog implements ViewRootForI
         setTitle(this.properties.getWindowTitle());
         dialogLayout.setTag(R.id.compose_view_saveable_id_tag, "Dialog:" + uuid);
         dialogLayout.setClipChildren(false);
-        dialogLayout.setElevation(density.mo464toPx0680j_4(m8258constructorimpl));
+        dialogLayout.setElevation(density.mo405toPx0680j_4(m7555constructorimpl));
         dialogLayout.setOutlineProvider(new ViewOutlineProvider() { // from class: androidx.compose.ui.window.DialogWrapper$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view2, Outline outline) {

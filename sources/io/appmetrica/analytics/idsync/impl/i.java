@@ -8,7 +8,7 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class i extends MessageNano {
     public static volatile i[] c;
 

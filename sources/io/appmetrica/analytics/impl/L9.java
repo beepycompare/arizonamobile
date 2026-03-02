@@ -4,7 +4,7 @@ import android.util.Base64;
 /* loaded from: classes5.dex */
 public final class L9 implements G8 {
     @Override // io.appmetrica.analytics.impl.G8
-    public final C0746z8 a(P5 p5) {
+    public final C0745z8 a(P5 p5) {
         throw new UnsupportedOperationException();
     }
 

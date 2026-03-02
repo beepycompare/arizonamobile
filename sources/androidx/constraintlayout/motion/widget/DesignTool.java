@@ -226,13 +226,19 @@ public class DesignTool {
         int lookUpConstraintId = this.mMotionLayout.lookUpConstraintId(str);
         this.mLastStartStateId = lookUpConstraintId;
         if (lookUpConstraintId != 0) {
-            if (lookUpConstraintId == this.mMotionLayout.getStartState()) {
-                this.mMotionLayout.setProgress(0.0f);
-            } else if (lookUpConstraintId == this.mMotionLayout.getEndState()) {
-                this.mMotionLayout.setProgress(1.0f);
+            int startState = this.mMotionLayout.getStartState();
+            MotionLayout motionLayout = this.mMotionLayout;
+            if (lookUpConstraintId == startState) {
+                motionLayout.setProgress(0.0f);
             } else {
-                this.mMotionLayout.transitionToState(lookUpConstraintId);
-                this.mMotionLayout.setProgress(1.0f);
+                int endState = motionLayout.getEndState();
+                MotionLayout motionLayout2 = this.mMotionLayout;
+                if (lookUpConstraintId == endState) {
+                    motionLayout2.setProgress(1.0f);
+                } else {
+                    motionLayout2.transitionToState(lookUpConstraintId);
+                    this.mMotionLayout.setProgress(1.0f);
+                }
             }
         }
         this.mMotionLayout.requestLayout();

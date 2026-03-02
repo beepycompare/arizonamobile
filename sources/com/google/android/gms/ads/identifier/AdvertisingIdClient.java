@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.ParametersAreNonnullByDefault;
-/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 @ParametersAreNonnullByDefault
 /* loaded from: classes4.dex */
 public class AdvertisingIdClient {
@@ -35,7 +35,7 @@ public class AdvertisingIdClient {
     final long zzf;
     private final Context zzi;
 
-    /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+    /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
     /* loaded from: classes4.dex */
     public static final class Info {
         private final String zza;
@@ -56,7 +56,15 @@ public class AdvertisingIdClient {
         }
 
         public String toString() {
-            return "{" + this.zza + "}" + this.zzb;
+            String str = this.zza;
+            int length = String.valueOf(str).length();
+            boolean z = this.zzb;
+            StringBuilder sb = new StringBuilder(length + 2 + String.valueOf(z).length());
+            sb.append("{");
+            sb.append(str);
+            sb.append("}");
+            sb.append(z);
+            return sb.toString();
         }
     }
 
@@ -64,8 +72,8 @@ public class AdvertisingIdClient {
         this(context, 30000L, false, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00bc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -74,6 +82,11 @@ public class AdvertisingIdClient {
         AdvertisingIdClient advertisingIdClient;
         zzd zzdVar;
         Throwable th;
+        int i;
+        long j;
+        int i2;
+        Info zzf;
+        long elapsedRealtime;
         AdvertisingIdClient advertisingIdClient2 = zzh;
         if (advertisingIdClient2 == null) {
             synchronized (zzg) {
@@ -92,93 +105,104 @@ public class AdvertisingIdClient {
         }
         Log.d("AdvertisingIdClient", "AdvertisingIdClient already created.");
         zzd zza = zzd.zza(context2);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        int i = -1;
+        long elapsedRealtime2 = SystemClock.elapsedRealtime();
         try {
-            Info zzf = advertisingIdClient2.zzf(-1);
-            long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
+            zzf = advertisingIdClient2.zzf(-1);
+            elapsedRealtime = SystemClock.elapsedRealtime() - elapsedRealtime2;
             advertisingIdClient = advertisingIdClient2;
+        } catch (Throwable th2) {
+            th = th2;
+            advertisingIdClient = advertisingIdClient2;
+        }
+        try {
+            advertisingIdClient.zzd(zzf, true, 0.0f, elapsedRealtime, "", null);
             try {
-                advertisingIdClient.zze(zzf, true, 0.0f, elapsedRealtime2, "", null);
                 try {
+                    zza.zzb(35401, 0, elapsedRealtime2, SystemClock.elapsedRealtime(), (int) (SystemClock.elapsedRealtime() - elapsedRealtime2));
+                    zzdVar = zza;
+                    elapsedRealtime2 = elapsedRealtime2;
                     try {
-                        zza.zzc(35401, 0, elapsedRealtime, System.currentTimeMillis(), (int) (SystemClock.elapsedRealtime() - elapsedRealtime));
-                        zzdVar = zza;
-                        elapsedRealtime = elapsedRealtime;
-                        try {
-                            Log.i("AdvertisingIdClient", "GetInfoInternal elapse " + elapsedRealtime2 + "ms");
-                            return zzf;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            th = th;
-                            advertisingIdClient.zze(null, true, 0.0f, -1L, "", th);
-                            if (th instanceof IOException) {
-                            }
-                            long j = elapsedRealtime;
-                            zzdVar.zzc(35401, i, j, System.currentTimeMillis(), (int) (SystemClock.elapsedRealtime() - j));
-                            throw th;
-                        }
+                        StringBuilder sb = new StringBuilder(String.valueOf(elapsedRealtime).length() + 25);
+                        sb.append("GetInfoInternal elapse ");
+                        sb.append(elapsedRealtime);
+                        sb.append("ms");
+                        Log.i("AdvertisingIdClient", sb.toString());
+                        return zzf;
                     } catch (Throwable th3) {
                         th = th3;
-                        zzdVar = zza;
-                        elapsedRealtime = elapsedRealtime;
                         th = th;
-                        advertisingIdClient.zze(null, true, 0.0f, -1L, "", th);
+                        advertisingIdClient.zzd(null, true, 0.0f, -1L, "", th);
                         if (th instanceof IOException) {
+                            i = 1;
+                        } else if (th instanceof GooglePlayServicesNotAvailableException) {
+                            i = 9;
+                        } else if (th instanceof GooglePlayServicesRepairableException) {
+                            i = 16;
+                        } else if (!(th instanceof IllegalStateException)) {
+                            j = elapsedRealtime2;
+                            i2 = -1;
+                            zzdVar.zzb(35401, i2, j, SystemClock.elapsedRealtime(), (int) (SystemClock.elapsedRealtime() - j));
+                            throw th;
+                        } else {
+                            i = 8;
                         }
-                        long j2 = elapsedRealtime;
-                        zzdVar.zzc(35401, i, j2, System.currentTimeMillis(), (int) (SystemClock.elapsedRealtime() - j2));
+                        j = elapsedRealtime2;
+                        i2 = i;
+                        zzdVar.zzb(35401, i2, j, SystemClock.elapsedRealtime(), (int) (SystemClock.elapsedRealtime() - j));
                         throw th;
                     }
                 } catch (Throwable th4) {
                     th = th4;
                     zzdVar = zza;
+                    elapsedRealtime2 = elapsedRealtime2;
+                    th = th;
+                    advertisingIdClient.zzd(null, true, 0.0f, -1L, "", th);
+                    if (th instanceof IOException) {
+                    }
+                    j = elapsedRealtime2;
+                    i2 = i;
+                    zzdVar.zzb(35401, i2, j, SystemClock.elapsedRealtime(), (int) (SystemClock.elapsedRealtime() - j));
+                    throw th;
                 }
             } catch (Throwable th5) {
                 th = th5;
                 zzdVar = zza;
-                th = th;
-                advertisingIdClient.zze(null, true, 0.0f, -1L, "", th);
-                if (th instanceof IOException) {
-                    i = 1;
-                } else if (th instanceof GooglePlayServicesNotAvailableException) {
-                    i = 9;
-                } else if (th instanceof GooglePlayServicesRepairableException) {
-                    i = 16;
-                } else if (th instanceof IllegalStateException) {
-                    i = 8;
-                }
-                long j22 = elapsedRealtime;
-                zzdVar.zzc(35401, i, j22, System.currentTimeMillis(), (int) (SystemClock.elapsedRealtime() - j22));
-                throw th;
             }
         } catch (Throwable th6) {
             th = th6;
-            advertisingIdClient = advertisingIdClient2;
+            zzdVar = zza;
+            th = th;
+            advertisingIdClient.zzd(null, true, 0.0f, -1L, "", th);
+            if (th instanceof IOException) {
+            }
+            j = elapsedRealtime2;
+            i2 = i;
+            zzdVar.zzb(35401, i2, j, SystemClock.elapsedRealtime(), (int) (SystemClock.elapsedRealtime() - j));
+            throw th;
         }
     }
 
     public static boolean getIsAdIdFakeForDebugLogging(Context context) throws IOException, GooglePlayServicesNotAvailableException, GooglePlayServicesRepairableException {
-        boolean zzd;
+        boolean zze;
         AdvertisingIdClient advertisingIdClient = new AdvertisingIdClient(context, -1L, false, false);
         try {
-            advertisingIdClient.zzc(false);
+            advertisingIdClient.zza(false);
             Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
             synchronized (advertisingIdClient) {
-                advertisingIdClient.zzd();
+                advertisingIdClient.zze();
                 Preconditions.checkNotNull(advertisingIdClient.zza);
                 Preconditions.checkNotNull(advertisingIdClient.zzb);
                 try {
-                    zzd = advertisingIdClient.zzb.zzd();
+                    zze = advertisingIdClient.zzb.zze();
                 } catch (RemoteException e) {
                     Log.i("AdvertisingIdClient", "GMS remote exception ", e);
                     throw new IOException("Remote exception", e);
                 }
             }
             advertisingIdClient.zzb();
-            return zzd;
+            return zze;
         } finally {
-            advertisingIdClient.zza();
+            advertisingIdClient.zzc();
         }
     }
 
@@ -189,11 +213,11 @@ public class AdvertisingIdClient {
         Info info;
         Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
         synchronized (this) {
-            zzd();
+            zze();
             Preconditions.checkNotNull(this.zza);
             Preconditions.checkNotNull(this.zzb);
             try {
-                info = new Info(this.zzb.zzc(), this.zzb.zze(true));
+                info = new Info(this.zzb.zzc(), this.zzb.zzd(true));
             } catch (RemoteException e) {
                 Log.i("AdvertisingIdClient", "GMS remote exception ", e);
                 throw new IOException("Remote exception", e);
@@ -204,7 +228,7 @@ public class AdvertisingIdClient {
     }
 
     protected final void finalize() throws Throwable {
-        zza();
+        zzc();
         super.finalize();
     }
 
@@ -213,42 +237,10 @@ public class AdvertisingIdClient {
     }
 
     public void start() throws IOException, IllegalStateException, GooglePlayServicesNotAvailableException, GooglePlayServicesRepairableException {
-        zzc(true);
+        zza(true);
     }
 
-    public final void zza() {
-        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
-        synchronized (this) {
-            if (this.zzi == null || this.zza == null) {
-                return;
-            }
-            if (this.zzc) {
-                ConnectionTracker.getInstance().unbindService(this.zzi, this.zza);
-            }
-            this.zzc = false;
-            this.zzb = null;
-            this.zza = null;
-        }
-    }
-
-    final void zzb() {
-        synchronized (this.zzd) {
-            zzb zzbVar = this.zze;
-            if (zzbVar != null) {
-                zzbVar.zza.countDown();
-                try {
-                    this.zze.join();
-                } catch (InterruptedException unused) {
-                }
-            }
-            long j = this.zzf;
-            if (j > 0) {
-                this.zze = new zzb(this, j);
-            }
-        }
-    }
-
-    protected final void zzc(boolean z) throws IOException, IllegalStateException, GooglePlayServicesNotAvailableException, GooglePlayServicesRepairableException {
+    protected final void zza(boolean z) throws IOException, IllegalStateException, GooglePlayServicesNotAvailableException, GooglePlayServicesRepairableException {
         Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
         if (z) {
             zzb();
@@ -286,22 +278,40 @@ public class AdvertisingIdClient {
         }
     }
 
-    final synchronized void zzd() throws IOException {
-        if (!this.zzc) {
-            try {
-                Log.d("AdvertisingIdClient", "AdvertisingIdClient is not bounded. Starting to bind it...");
-                zzc(false);
-                Log.d("AdvertisingIdClient", "AdvertisingIdClient is bounded");
-                if (!this.zzc) {
-                    throw new IOException("AdvertisingIdClient cannot reconnect.");
+    final void zzb() {
+        synchronized (this.zzd) {
+            zzb zzbVar = this.zze;
+            if (zzbVar != null) {
+                zzbVar.zza.countDown();
+                try {
+                    this.zze.join();
+                } catch (InterruptedException unused) {
                 }
-            } catch (Exception e) {
-                throw new IOException("AdvertisingIdClient cannot reconnect.", e);
+            }
+            long j = this.zzf;
+            if (j > 0) {
+                this.zze = new zzb(this, j);
             }
         }
     }
 
-    final boolean zze(Info info, boolean z, float f, long j, String str, Throwable th) {
+    public final void zzc() {
+        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
+        synchronized (this) {
+            Context context = this.zzi;
+            if (context == null || this.zza == null) {
+                return;
+            }
+            if (this.zzc) {
+                ConnectionTracker.getInstance().unbindService(context, this.zza);
+            }
+            this.zzc = false;
+            this.zzb = null;
+            this.zza = null;
+        }
+    }
+
+    final boolean zzd(Info info, boolean z, float f, long j, String str, Throwable th) {
         if (Math.random() <= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE) {
             HashMap hashMap = new HashMap();
             hashMap.put("app_context", "1");
@@ -321,6 +331,21 @@ public class AdvertisingIdClient {
             return true;
         }
         return false;
+    }
+
+    final synchronized void zze() throws IOException {
+        if (!this.zzc) {
+            try {
+                Log.d("AdvertisingIdClient", "AdvertisingIdClient is not bounded. Starting to bind it...");
+                zza(false);
+                Log.d("AdvertisingIdClient", "AdvertisingIdClient is bounded");
+                if (!this.zzc) {
+                    throw new IOException("AdvertisingIdClient cannot reconnect.");
+                }
+            } catch (Exception e) {
+                throw new IOException("AdvertisingIdClient cannot reconnect.", e);
+            }
+        }
     }
 
     public AdvertisingIdClient(Context context, long j, boolean z, boolean z2) {

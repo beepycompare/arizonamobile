@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Map;
 import java.util.UUID;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface DrmSession {
     public static final int STATE_ERROR = 1;
     public static final int STATE_OPENED = 3;
@@ -21,7 +21,7 @@ public interface DrmSession {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface State {
     }
 
@@ -59,7 +59,7 @@ public interface DrmSession {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class DrmSessionException extends IOException {
         public final int errorCode;
 

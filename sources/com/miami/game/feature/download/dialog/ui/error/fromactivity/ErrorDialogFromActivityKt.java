@@ -48,12 +48,12 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ErrorDialogFromActivity.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a7\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a?\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"ErrorDialogFromActivityRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onRetry", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "ErrorDialogFromActivityScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;", "onConfirm", "onDismiss", "onClose", "(Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a7\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a?\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"ErrorDialogFromActivityRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onRetry", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "ErrorDialogFromActivityScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;", "onConfirm", "onDismiss", "onClose", "(Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ErrorDialogFromActivityKt {
 
     /* compiled from: ErrorDialogFromActivity.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -84,13 +84,13 @@ public final class ErrorDialogFromActivityKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ErrorDialogFromActivityRoute$lambda$2(ErrorDialogComponent errorDialogComponent, Function0 function0, Function0 function02, int i, int i2, Composer composer, int i3) {
         ErrorDialogFromActivityRoute(errorDialogComponent, function0, function02, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ErrorDialogFromActivityScreen$lambda$1(ErrorDialogExternalUiState errorDialogExternalUiState, Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
         ErrorDialogFromActivityScreen(errorDialogExternalUiState, function0, function02, function03, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -153,9 +153,7 @@ public final class ErrorDialogFromActivityKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityRoute$lambda$2;
-                    ErrorDialogFromActivityRoute$lambda$2 = ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute$lambda$2(ErrorDialogComponent.this, onBackClick, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityRoute$lambda$2;
+                    return ErrorDialogFromActivityKt.ErrorDialogFromActivityRoute$lambda$2(ErrorDialogComponent.this, onBackClick, function02, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -213,9 +211,7 @@ public final class ErrorDialogFromActivityKt {
             DialogFrameKt.DialogFrame(num2, onClose, ComposableLambdaKt.rememberComposableLambda(-210437023, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityScreen$lambda$0;
-                    ErrorDialogFromActivityScreen$lambda$0 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0(ErrorDialogExternalUiState.this, j, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityScreen$lambda$0;
+                    return ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0(ErrorDialogExternalUiState.this, j, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
             }, startRestartGroup, 54), composer2, ((i3 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -227,15 +223,13 @@ public final class ErrorDialogFromActivityKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ErrorDialogFromActivityScreen$lambda$1;
-                    ErrorDialogFromActivityScreen$lambda$1 = ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$1(ErrorDialogExternalUiState.this, onConfirm, onDismiss, onClose, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ErrorDialogFromActivityScreen$lambda$1;
+                    return ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$1(ErrorDialogExternalUiState.this, onConfirm, onDismiss, onClose, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ErrorDialogFromActivityScreen$lambda$0(final ErrorDialogExternalUiState errorDialogExternalUiState, long j, final Function0 function0, final Function0 function02, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "C74@2689L10,74@2662L114,96@3414L54,94@3394L186,103@3589L42,104@3640L710:ErrorDialogFromActivity.kt#11d4x");
@@ -243,7 +237,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-210437023, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous> (ErrorDialogFromActivity.kt:74)");
             }
-            TextKt.m3255TextNvy7gAk(errorDialogExternalUiState.getTitle(), null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 0, 0, 131066);
+            TextKt.m2712TextNvy7gAk(errorDialogExternalUiState.getTitle(), null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 0, 0, 131066);
             int i3 = WhenMappings.$EnumSwitchMapping$0[errorDialogExternalUiState.getType().ordinal()];
             if (i3 == 1) {
                 i2 = R.drawable.dialog_frame_check_files_error;
@@ -258,7 +252,7 @@ public final class ErrorDialogFromActivityKt {
             } else {
                 i2 = R.drawable.check_files_success_icon;
             }
-            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, SizeKt.m976size3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(96)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
+            ImageKt.Image(PainterResources_androidKt.painterResource(i2, composer, 0), (String) null, SizeKt.m864size3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(96)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
             DialogDescriptionTextKt.DialogDescriptionText(errorDialogExternalUiState.getDescription(), composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), composer, 0);
@@ -277,17 +271,18 @@ public final class ErrorDialogFromActivityKt {
             } else {
                 composer.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-            Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(composer, -2001654796, "C:ErrorDialogFromActivity.kt#11d4x");
             if (errorDialogExternalUiState.getNegativeText().length() == 0) {
-                composer.startReplaceGroup(-2005305667);
+                composer.startReplaceGroup(-2001344611);
+                composer.endReplaceGroup();
             } else {
                 composer.startReplaceGroup(-2001630028);
                 ComposerKt.sourceInformation(composer, "106@3738L51,108@3791L187,106@3713L265");
@@ -314,10 +309,10 @@ public final class ErrorDialogFromActivityKt {
                         return ErrorDialogFromActivityScreen$lambda$0$0$1;
                     }
                 }, composer, 54), composer, 48);
+                composer.endReplaceGroup();
             }
-            composer.endReplaceGroup();
             if (errorDialogExternalUiState.getPositiveText().length() == 0) {
-                composer.startReplaceGroup(-2005305667);
+                composer.startReplaceGroup(-2000999395);
                 composer.endReplaceGroup();
             } else {
                 composer.startReplaceGroup(-2001285773);
@@ -378,7 +373,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1469251392, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:109)");
             }
-            TextKt.m3255TextNvy7gAk(errorDialogExternalUiState.getNegativeText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
+            TextKt.m2712TextNvy7gAk(errorDialogExternalUiState.getNegativeText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -402,7 +397,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1442369824, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:119)");
             }
-            TextKt.m3255TextNvy7gAk(errorDialogExternalUiState.getPositiveText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
+            TextKt.m2712TextNvy7gAk(errorDialogExternalUiState.getPositiveText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

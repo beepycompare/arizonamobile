@@ -14,20 +14,20 @@ public final class SharedTransitionStateMachineKt {
     public static final boolean SharedTransitionDebug = false;
 
     /* renamed from: access$updateTargetData-BGTQxF0 */
-    public static final /* synthetic */ void m143access$updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
-        m144updateTargetDataBGTQxF0(targetData, j, j2, j3, z);
+    public static final /* synthetic */ void m130access$updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
+        m131updateTargetDataBGTQxF0(targetData, j, j2, j3, z);
     }
 
     /* renamed from: updateTargetData-BGTQxF0 */
-    public static final void m144updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
-        if (!Offset.m5176equalsimpl0(targetData.m160getTargetStructuralOffsetF1C5BW0(), j3) || !Size.m5244equalsimpl0(targetData.m159getSizeNHjbRc(), j) || z) {
-            targetData.m163setSizeuvyYCjk(j);
-            targetData.m164setTargetStructuralOffsetk4lQ0M(j3);
+    public static final void m131updateTargetDataBGTQxF0(TargetData targetData, long j, long j2, long j3, boolean z) {
+        if (!Offset.m4524equalsimpl0(targetData.m147getTargetStructuralOffsetF1C5BW0(), j3) || !Size.m4592equalsimpl0(targetData.m146getSizeNHjbRc(), j) || z) {
+            targetData.m150setSizeuvyYCjk(j);
+            targetData.m151setTargetStructuralOffsetk4lQ0M(j3);
             if (z) {
-                targetData.m162setInitialMfrOffsetk4lQ0M(Offset.m5183minusMKHz9U(Offset.m5183minusMKHz9U(j2, j3), Offset.m5183minusMKHz9U(targetData.m157getCurrentMfrOffsetF1C5BW0(), targetData.m158getInitialMfrOffsetF1C5BW0())));
+                targetData.m149setInitialMfrOffsetk4lQ0M(Offset.m4531minusMKHz9U(Offset.m4531minusMKHz9U(j2, j3), Offset.m4531minusMKHz9U(targetData.m144getCurrentMfrOffsetF1C5BW0(), targetData.m145getInitialMfrOffsetF1C5BW0())));
             }
         }
-        targetData.m161setCurrentMfrOffsetk4lQ0M(Offset.m5183minusMKHz9U(j2, j3));
+        targetData.m148setCurrentMfrOffsetk4lQ0M(Offset.m4531minusMKHz9U(j2, j3));
     }
 
     public static final Rect obtainBoundsFromLastTarget(SharedElement sharedElement, BoundsProvider boundsProvider) {
@@ -45,10 +45,10 @@ public final class SharedTransitionStateMachineKt {
     }
 
     public static final Rect getTargetBounds(TargetData targetData) {
-        return RectKt.m5219Recttz77jQw(Offset.m5184plusMKHz9U(targetData.m158getInitialMfrOffsetF1C5BW0(), targetData.m160getTargetStructuralOffsetF1C5BW0()), targetData.m159getSizeNHjbRc());
+        return RectKt.m4567Recttz77jQw(Offset.m4532plusMKHz9U(targetData.m145getInitialMfrOffsetF1C5BW0(), targetData.m147getTargetStructuralOffsetF1C5BW0()), targetData.m146getSizeNHjbRc());
     }
 
     public static final long calculateOffsetFromDirectManipulation(TargetData targetData, Rect rect) {
-        return Offset.m5184plusMKHz9U(Offset.m5183minusMKHz9U(rect.m5214getTopLeftF1C5BW0(), targetData.m158getInitialMfrOffsetF1C5BW0()), targetData.m157getCurrentMfrOffsetF1C5BW0());
+        return Offset.m4532plusMKHz9U(Offset.m4531minusMKHz9U(rect.m4562getTopLeftF1C5BW0(), targetData.m145getInitialMfrOffsetF1C5BW0()), targetData.m144getCurrentMfrOffsetF1C5BW0());
     }
 }

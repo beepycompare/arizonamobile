@@ -16,8 +16,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", ""}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.UtilsKt$textChanges$1", f = "Utils.kt", i = {0, 0}, l = {26}, m = "invokeSuspend", n = {"$this$callbackFlow", "watcher"}, s = {"L$0", "L$1"}, v = 1)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/channels/ProducerScope;", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.UtilsKt$textChanges$1", f = "Utils.kt", i = {0, 0}, l = {26}, m = "invokeSuspend", n = {"$this$callbackFlow", "watcher"}, nl = {27}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<ProducerScope<? super String>, Continuation<? super Unit>, Object> {
     final /* synthetic */ EditText $this_textChanges;
@@ -63,7 +63,7 @@ final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<Pro
 
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
-                    producerScope.mo9174trySendJP2dKIU(String.valueOf(editable));
+                    producerScope.mo8396trySendJP2dKIU(String.valueOf(editable));
                 }
             };
             this.$this_textChanges.addTextChangedListener((TextWatcher) r7);
@@ -74,9 +74,7 @@ final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<Pro
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: com.arizonagames.feature.arizona.family.UtilsKt$textChanges$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = UtilsKt$textChanges$1.invokeSuspend$lambda$0(editText, r7);
-                    return invokeSuspend$lambda$0;
+                    return UtilsKt$textChanges$1.invokeSuspend$lambda$0(editText, r7);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -90,7 +88,7 @@ final class UtilsKt$textChanges$1 extends SuspendLambda implements Function2<Pro
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(EditText editText, UtilsKt$textChanges$1$watcher$1 utilsKt$textChanges$1$watcher$1) {
         editText.removeTextChangedListener(utilsKt$textChanges$1$watcher$1);
         return Unit.INSTANCE;

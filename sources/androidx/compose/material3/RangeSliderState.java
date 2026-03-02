@@ -75,9 +75,7 @@ public final class RangeSliderState {
         this.gestureEndAction = new Function1() { // from class: androidx.compose.material3.RangeSliderState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit gestureEndAction$lambda$0;
-                gestureEndAction$lambda$0 = RangeSliderState.gestureEndAction$lambda$0(RangeSliderState.this, ((Boolean) obj).booleanValue());
-                return gestureEndAction$lambda$0;
+                return RangeSliderState.gestureEndAction$lambda$0(RangeSliderState.this, ((Boolean) obj).booleanValue());
             }
         };
         this.maxPx$delegate = PrimitiveSnapshotStateKt.mutableFloatStateOf(0.0f);
@@ -220,7 +218,7 @@ public final class RangeSliderState {
         this.isRtl$delegate.setValue(Boolean.valueOf(z));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit gestureEndAction$lambda$0(RangeSliderState rangeSliderState, boolean z) {
         Function0<Unit> function0 = rangeSliderState.onValueChangeFinished;
         if (function0 != null) {
@@ -262,16 +260,16 @@ public final class RangeSliderState {
             float rawOffsetStart$material3 = getRawOffsetStart$material3();
             SliderRange = SliderKt.SliderRange(rawOffsetStart$material3, RangesKt.coerceAtLeast(SliderKt.access$snapValueToTick(RangesKt.coerceIn(getRawOffsetEnd$material3(), rawOffsetStart$material3, getMaxPx()), this.tickFractions, getMinPx(), getMaxPx()), rawOffsetStart$material3));
         }
-        long m2856scaleToUserValue8bqG3aw = m2856scaleToUserValue8bqG3aw(z, getMinPx(), getMaxPx(), SliderRange);
-        if (SliderRange.m3055equalsimpl0(m2856scaleToUserValue8bqG3aw, SliderKt.SliderRange(getActiveRangeStart(), getActiveRangeEnd()))) {
+        long m2393scaleToUserValue8bqG3aw = m2393scaleToUserValue8bqG3aw(z, getMinPx(), getMaxPx(), SliderRange);
+        if (SliderRange.m2543equalsimpl0(m2393scaleToUserValue8bqG3aw, SliderKt.SliderRange(getActiveRangeStart(), getActiveRangeEnd()))) {
             return;
         }
         Function1<? super SliderRange, Unit> function1 = this.onValueChange;
         if (function1 == null) {
-            setActiveRangeStart(SliderRange.m3057getStartimpl(m2856scaleToUserValue8bqG3aw));
-            setActiveRangeEnd(SliderRange.m3056getEndInclusiveimpl(m2856scaleToUserValue8bqG3aw));
+            setActiveRangeStart(SliderRange.m2545getStartimpl(m2393scaleToUserValue8bqG3aw));
+            setActiveRangeEnd(SliderRange.m2544getEndInclusiveimpl(m2393scaleToUserValue8bqG3aw));
         } else if (function1 != null) {
-            function1.invoke(SliderRange.m3052boximpl(m2856scaleToUserValue8bqG3aw));
+            function1.invoke(SliderRange.m2540boximpl(m2393scaleToUserValue8bqG3aw));
         }
     }
 
@@ -292,8 +290,8 @@ public final class RangeSliderState {
     }
 
     /* renamed from: scaleToUserValue-8bqG3aw  reason: not valid java name */
-    private final long m2856scaleToUserValue8bqG3aw(boolean z, float f, float f2, long j) {
-        return SliderKt.m3044access$scale2geJ7wY(z, f, f2, j, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
+    private final long m2393scaleToUserValue8bqG3aw(boolean z, float f, float f2, long j) {
+        return SliderKt.m2533access$scale2geJ7wY(z, f, f2, j, this.valueRange.getStart().floatValue(), this.valueRange.getEndInclusive().floatValue());
     }
 
     private final float scaleToOffset(float f, float f2, float f3) {
@@ -331,26 +329,20 @@ public final class RangeSliderState {
             return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.material3.RangeSliderState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List Saver$lambda$0;
-                    Saver$lambda$0 = RangeSliderState.Companion.Saver$lambda$0((SaverScope) obj, (RangeSliderState) obj2);
-                    return Saver$lambda$0;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf(Float.valueOf(r2.getActiveRangeStart()), Float.valueOf(r2.getActiveRangeEnd()), Integer.valueOf(((RangeSliderState) obj2).getSteps()));
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.material3.RangeSliderState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    RangeSliderState Saver$lambda$1;
-                    Saver$lambda$1 = RangeSliderState.Companion.Saver$lambda$1(Function0.this, closedFloatingPointRange, (List) obj);
-                    return Saver$lambda$1;
+                    return RangeSliderState.Companion.Saver$lambda$1(Function0.this, closedFloatingPointRange, (List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List Saver$lambda$0(SaverScope saverScope, RangeSliderState rangeSliderState) {
-            return CollectionsKt.listOf(Float.valueOf(rangeSliderState.getActiveRangeStart()), Float.valueOf(rangeSliderState.getActiveRangeEnd()), Integer.valueOf(rangeSliderState.getSteps()));
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final RangeSliderState Saver$lambda$1(Function0 function0, ClosedFloatingPointRange closedFloatingPointRange, List list) {
             Object obj = list.get(0);
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.Float");

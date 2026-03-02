@@ -101,12 +101,12 @@ public final class ComposableSingletons$ScaffoldKt {
     });
 
     /* renamed from: getLambda$-1514016380$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2256getLambda$1514016380$material3() {
+    public final Function2<Composer, Integer, Unit> m1942getLambda$1514016380$material3() {
         return f87lambda$1514016380;
     }
 
     /* renamed from: getLambda$-39202156$material3  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m2257getLambda$39202156$material3() {
+    public final Function2<Composer, Integer, Unit> m1943getLambda$39202156$material3() {
         return f88lambda$39202156;
     }
 

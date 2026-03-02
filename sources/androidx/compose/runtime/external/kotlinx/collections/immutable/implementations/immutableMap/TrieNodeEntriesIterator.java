@@ -12,7 +12,7 @@ public final class TrieNodeEntriesIterator<K, V> extends TrieNodeBaseIterator<K,
 
     @Override // java.util.Iterator
     public Map.Entry<K, V> next() {
-        CommonFunctionsKt.m4792assert(hasNextKey());
+        CommonFunctionsKt.m4157assert(hasNextKey());
         setIndex(getIndex() + 2);
         return new MapEntry(getBuffer()[getIndex() - 2], getBuffer()[getIndex() - 1]);
     }

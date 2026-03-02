@@ -17,13 +17,11 @@ public final class SaveableStateRegistryKt {
     private static final ProvidableCompositionLocal<SaveableStateRegistry> LocalSaveableStateRegistry = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.runtime.saveable.SaveableStateRegistryKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SaveableStateRegistry LocalSaveableStateRegistry$lambda$0;
-            LocalSaveableStateRegistry$lambda$0 = SaveableStateRegistryKt.LocalSaveableStateRegistry$lambda$0();
-            return LocalSaveableStateRegistry$lambda$0;
+            return SaveableStateRegistryKt.LocalSaveableStateRegistry$lambda$0();
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SaveableStateRegistry LocalSaveableStateRegistry$lambda$0() {
         return null;
     }

@@ -8,14 +8,14 @@ import kotlin.Metadata;
 public final class LayoutNodeDrawScopeKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Modifier.Node nextDrawNode(DelegatableNode delegatableNode) {
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(4);
-        int m7195constructorimpl2 = NodeKind.m7195constructorimpl(2);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(4);
+        int m6535constructorimpl2 = NodeKind.m6535constructorimpl(2);
         Modifier.Node child$ui = delegatableNode.getNode().getChild$ui();
-        if (child$ui == null || (child$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+        if (child$ui == null || (child$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
             return null;
         }
-        while (child$ui != null && (child$ui.getKindSet$ui() & m7195constructorimpl2) == 0) {
-            if ((child$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+        while (child$ui != null && (child$ui.getKindSet$ui() & m6535constructorimpl2) == 0) {
+            if ((child$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                 return child$ui;
             }
             child$ui = child$ui.getChild$ui();

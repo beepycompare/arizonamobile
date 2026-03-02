@@ -19,49 +19,49 @@ public final class SafeMultiValueMap<K, V> {
     private final MutableScatterMap<Object, Object> map;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ SafeMultiValueMap m4834boximpl(MutableScatterMap mutableScatterMap) {
+    public static final /* synthetic */ SafeMultiValueMap m4191boximpl(MutableScatterMap mutableScatterMap) {
         return new SafeMultiValueMap(mutableScatterMap);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <K, V> MutableScatterMap<Object, Object> m4836constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static <K, V> MutableScatterMap<Object, Object> m4193constructorimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4839equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
-        return (obj instanceof SafeMultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((SafeMultiValueMap) obj).m4853unboximpl());
+    public static boolean m4196equalsimpl(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+        return (obj instanceof SafeMultiValueMap) && Intrinsics.areEqual(mutableScatterMap, ((SafeMultiValueMap) obj).m4210unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4840equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
+    public static final boolean m4197equalsimpl0(MutableScatterMap<Object, Object> mutableScatterMap, MutableScatterMap<Object, Object> mutableScatterMap2) {
         return Intrinsics.areEqual(mutableScatterMap, mutableScatterMap2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4843hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static int m4200hashCodeimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4850toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static String m4207toStringimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return "SafeMultiValueMap(map=" + mutableScatterMap + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4839equalsimpl(this.map, obj);
+        return m4196equalsimpl(this.map, obj);
     }
 
     public int hashCode() {
-        return m4843hashCodeimpl(this.map);
+        return m4200hashCodeimpl(this.map);
     }
 
     public String toString() {
-        return m4850toStringimpl(this.map);
+        return m4207toStringimpl(this.map);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ MutableScatterMap m4853unboximpl() {
+    public final /* synthetic */ MutableScatterMap m4210unboximpl() {
         return this.map;
     }
 
@@ -70,15 +70,15 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ MutableScatterMap m4837constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableScatterMap m4194constructorimpl$default(MutableScatterMap mutableScatterMap, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableScatterMap = new MutableScatterMap(0, 1, null);
         }
-        return m4836constructorimpl(mutableScatterMap);
+        return m4193constructorimpl(mutableScatterMap);
     }
 
     /* renamed from: add-impl  reason: not valid java name */
-    public static final void m4833addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
+    public static final void m4190addimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
         Object obj;
         Object mutableObjectListOf;
         Object obj2;
@@ -91,7 +91,7 @@ public final class SafeMultiValueMap<K, V> {
         Object obj3 = null;
         Object obj4 = z ? null : mutableScatterMap.values[findInsertIndex];
         if (obj4 == null) {
-            mutableObjectListOf = m4849safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, v);
+            mutableObjectListOf = m4206safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, v);
         } else if (obj4 instanceof MutableObjectList) {
             Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type androidx.collection.MutableObjectList<kotlin.Any?>");
             MutableObjectList mutableObjectList = (MutableObjectList) obj4;
@@ -118,12 +118,12 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: clear-impl  reason: not valid java name */
-    public static final void m4835clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final void m4192clearimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         mutableScatterMap.clear();
     }
 
     /* renamed from: contains-impl  reason: not valid java name */
-    public static final boolean m4838containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final boolean m4195containsimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         Object obj;
         if (k == null) {
             obj = SafeMultiValueMapKt.NULL_SENTINEL;
@@ -133,17 +133,17 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m4844isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m4201isEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isEmpty();
     }
 
     /* renamed from: isNotEmpty-impl  reason: not valid java name */
-    public static final boolean m4845isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final boolean m4202isNotEmptyimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         return mutableScatterMap.isNotEmpty();
     }
 
     /* renamed from: removeLast-impl  reason: not valid java name */
-    public static final V m4847removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
+    public static final V m4204removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k) {
         Object obj;
         Object obj2;
         if (k == null) {
@@ -158,7 +158,7 @@ public final class SafeMultiValueMap<K, V> {
             MutableObjectList mutableObjectList = (MutableObjectList) v;
             V v2 = (V) mutableObjectList.removeAt(mutableObjectList.getSize() - 1);
             if (mutableObjectList.getSize() == 1) {
-                mutableScatterMap.set(k, m4849safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
+                mutableScatterMap.set(k, m4206safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
             }
             return v2;
         }
@@ -174,7 +174,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: removeLast-impl  reason: not valid java name */
-    public static final V m4848removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
+    public static final V m4205removeLastimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
         Object obj;
         Object obj2;
         if (k == null) {
@@ -192,7 +192,7 @@ public final class SafeMultiValueMap<K, V> {
                 mutableScatterMap.remove(k);
             }
             if (mutableObjectList.getSize() == 1) {
-                mutableScatterMap.set(k, m4849safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
+                mutableScatterMap.set(k, m4206safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
             }
             return v3;
         }
@@ -208,7 +208,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: removeFirst-impl  reason: not valid java name */
-    public static final V m4846removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
+    public static final V m4203removeFirstimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, V v) {
         Object obj;
         Object obj2;
         if (k == null) {
@@ -226,7 +226,7 @@ public final class SafeMultiValueMap<K, V> {
                 mutableScatterMap.remove(k);
             }
             if (mutableObjectList.getSize() == 1) {
-                mutableScatterMap.set(k, m4849safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
+                mutableScatterMap.set(k, m4206safeWrapIfNecessaryimpl$runtime_retain(mutableScatterMap, mutableObjectList.first()));
             }
             return v2;
         }
@@ -242,7 +242,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: values-impl  reason: not valid java name */
-    public static final ObjectList<V> m4852valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
+    public static final ObjectList<V> m4209valuesimpl(MutableScatterMap<Object, Object> mutableScatterMap) {
         if (mutableScatterMap.isEmpty()) {
             return ObjectListKt.emptyObjectList();
         }
@@ -283,7 +283,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: forEachValue-impl  reason: not valid java name */
-    public static final void m4841forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
+    public static final void m4198forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, K k, Function1<? super V, Unit> function1) {
         Object obj;
         Object obj2;
         if (k == null) {
@@ -314,7 +314,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: forEachValue-impl  reason: not valid java name */
-    public static final void m4842forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super V, Unit> function1) {
+    public static final void m4199forEachValueimpl(MutableScatterMap<Object, Object> mutableScatterMap, Function1<? super V, Unit> function1) {
         MutableScatterMap<Object, Object> mutableScatterMap2 = mutableScatterMap;
         Object[] objArr = mutableScatterMap2.values;
         long[] jArr = mutableScatterMap2.metadata;
@@ -372,7 +372,7 @@ public final class SafeMultiValueMap<K, V> {
     }
 
     /* renamed from: safeWrapIfNecessary-impl$runtime_retain  reason: not valid java name */
-    public static final Object m4849safeWrapIfNecessaryimpl$runtime_retain(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+    public static final Object m4206safeWrapIfNecessaryimpl$runtime_retain(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
         Object obj2;
         if (obj instanceof MutableObjectList) {
             return new ValueSafetyWrapper(obj);
@@ -386,7 +386,7 @@ public final class SafeMultiValueMap<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: unwrapSafeValue-impl$runtime_retain  reason: not valid java name */
-    public static final V m4851unwrapSafeValueimpl$runtime_retain(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
+    public static final V m4208unwrapSafeValueimpl$runtime_retain(MutableScatterMap<Object, Object> mutableScatterMap, Object obj) {
         Object obj2;
         if (obj instanceof ValueSafetyWrapper) {
             return (V) ((ValueSafetyWrapper) obj).getValue();

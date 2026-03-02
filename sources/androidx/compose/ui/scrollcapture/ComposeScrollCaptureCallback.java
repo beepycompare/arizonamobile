@@ -80,16 +80,16 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x007a, code lost:
-        if (r4.scrollRangeToCenter(r11, r2, r0) == r1) goto L32;
+        if (r7.scrollRangeToCenter(r12, r2, r0) == r1) goto L32;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0093, code lost:
-        if (r5.scrollRangeIntoView(r11, r2, r0) == r1) goto L32;
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0091, code lost:
+        if (r7.scrollRangeIntoView(r12, r2, r0) == r1) goto L32;
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x005b  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -116,15 +116,15 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
                     ResultKt.throwOnFailure(obj);
                     top = intRect.getTop();
                     bottom = intRect.getBottom();
-                    if (ComposeUiFlags.isScrollCaptureCenteringEnabled) {
-                        RelativeScroller relativeScroller = this.scrollTracker;
+                    boolean z = ComposeUiFlags.isScrollCaptureCenteringEnabled;
+                    RelativeScroller relativeScroller = this.scrollTracker;
+                    if (z) {
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$1 = bottom;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.label = 1;
                     } else {
-                        RelativeScroller relativeScroller2 = this.scrollTracker;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$0 = scrollCaptureSession;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.L$1 = intRect;
                         composeScrollCaptureCallback$onScrollCaptureImageRequest$2.I$0 = top;
@@ -238,7 +238,7 @@ public final class ComposeScrollCaptureCallback implements ScrollCaptureCallback
     }
 
     private final void drawDebugBackground(Canvas canvas) {
-        canvas.drawColor(ColorKt.m5478toArgb8_81llA(Color.Companion.m5448hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
+        canvas.drawColor(ColorKt.m4826toArgb8_81llA(Color.Companion.m4796hslJlNiLsg$default(Color.Companion, Random.Default.nextFloat() * 360.0f, 0.75f, 0.5f, 1.0f, null, 16, null)));
     }
 
     private final void drawDebugOverlay(Canvas canvas) {

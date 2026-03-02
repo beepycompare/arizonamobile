@@ -4,7 +4,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor;
 import java.util.ArrayList;
 import java.util.Iterator;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class a implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */

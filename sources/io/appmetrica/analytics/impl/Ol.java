@@ -25,7 +25,7 @@ public final class Ol implements Pl {
 
     /* renamed from: a  reason: collision with root package name */
     public final List f729a;
-    public final C0681wi b;
+    public final C0680wi b;
     public final Wl c;
     public final Handler d;
     public PublicLogger e;
@@ -35,8 +35,8 @@ public final class Ol implements Pl {
     public HashMap i;
     public boolean j;
 
-    public Ol(Context context, C0681wi c0681wi, Ve ve, Handler handler) {
-        this(c0681wi, new Wl(context, ve), handler);
+    public Ol(Context context, C0680wi c0680wi, Ve ve, Handler handler) {
+        this(c0680wi, new Wl(context, ve), handler);
     }
 
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list, Map<String, String> map) {
@@ -107,7 +107,7 @@ public final class Ol implements Pl {
                     wl.f = j;
                     C3 c3 = wl.k;
                     hashMap = wl.e;
-                    HashMap a14 = AbstractC0272gb.a(a8.id);
+                    HashMap a14 = AbstractC0271gb.a(a8.id);
                     c3.getClass();
                     if (!lo.a((Map) hashMap)) {
                         equals = lo.a((Map) a14);
@@ -137,7 +137,7 @@ public final class Ol implements Pl {
             wl.f = j;
             C3 c32 = wl.k;
             hashMap = wl.e;
-            HashMap a142 = AbstractC0272gb.a(a8.id);
+            HashMap a142 = AbstractC0271gb.a(a8.id);
             c32.getClass();
             if (!lo.a((Map) hashMap)) {
             }
@@ -146,7 +146,7 @@ public final class Ol implements Pl {
             wl.h = j2;
             wl.c();
         }
-        C0136b4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
+        C0135b4.l().m().a(bundle2, new SdkIdentifiers(a2.id, a3.id, a4.id));
         h();
     }
 
@@ -213,12 +213,12 @@ public final class Ol implements Pl {
         }
     }
 
-    public Ol(C0681wi c0681wi, Wl wl, Handler handler) {
+    public Ol(C0680wi c0680wi, Wl wl, Handler handler) {
         this.f729a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
-        this.b = c0681wi;
+        this.b = c0680wi;
         this.c = wl;
         this.d = handler;
         this.f = new Ml(this);
@@ -234,17 +234,17 @@ public final class Ol implements Pl {
 
     public final void a(List list, A6 a6, Map map, boolean z) {
         B6 b6 = new B6(this.d, a6);
-        C0681wi c0681wi = this.b;
-        c0681wi.getClass();
+        C0680wi c0680wi = this.b;
+        c0680wi.getClass();
         Bundle bundle = new Bundle();
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new Xa(b6, list, map, z));
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = AbstractC0672w9.f1284a;
+        Set set = AbstractC0671w9.f1284a;
         M3 m3 = new M3("", "", 1536, 0, anonymousInstance);
         m3.m = bundle;
-        F4 f4 = c0681wi.f1288a;
-        c0681wi.a(C0681wi.a(m3, f4), f4, 1, (Map) null);
+        F4 f4 = c0680wi.f1288a;
+        c0680wi.a(C0680wi.a(m3, f4), f4, 1, (Map) null);
     }
 
     public final void a(Map<String, String> map) {
@@ -339,10 +339,10 @@ public final class Ol implements Pl {
             }
             this.h.remove(startupParamsCallback);
             if (this.h.isEmpty()) {
-                C0489p0 c0489p0 = this.b.d;
-                synchronized (c0489p0.f) {
-                    c0489p0.c = false;
-                    c0489p0.c();
+                C0488p0 c0488p0 = this.b.d;
+                synchronized (c0488p0.f) {
+                    c0488p0.c = false;
+                    c0488p0.c();
                 }
             }
         }
@@ -358,7 +358,7 @@ public final class Ol implements Pl {
         IdentifiersResult identifiersResult = (IdentifiersResult) this.c.b.get("appmetrica_clids");
         String str = identifiersResult == null ? null : identifiersResult.id;
         if (!TextUtils.isEmpty(str)) {
-            return AbstractC0272gb.a(str);
+            return AbstractC0271gb.a(str);
         }
         return this.i;
     }
@@ -383,10 +383,10 @@ public final class Ol implements Pl {
 
     public final void a(StartupParamsCallback startupParamsCallback, List list) {
         if (this.h.isEmpty()) {
-            C0489p0 c0489p0 = this.b.d;
-            synchronized (c0489p0.f) {
-                c0489p0.c = true;
-                c0489p0.b();
+            C0488p0 c0488p0 = this.b.d;
+            synchronized (c0488p0.f) {
+                c0488p0.c = true;
+                c0488p0.b();
             }
         }
         this.h.put(startupParamsCallback, list);

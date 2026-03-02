@@ -73,61 +73,61 @@ import kotlin.reflect.KType;
 @Metadata(d1 = {"\u0000\u0094\u0001\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u001aL\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00052\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\r\u001aÚ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00052\u001f\b\u0002\u0010\u0010\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0014\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0016\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0017\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\f2\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\u0018\u001a\u0098\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00052$\b\u0002\u0010\u0010\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0014\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0016\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0017\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2(\b\u0002\u0010\u001a\u001a\"\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0012\u0004\u0018\u00010\u001b\u0018\u00010\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\u001c\u001a¿\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\n\u0010\u0004\u001a\u0006\u0012\u0002\b\u00030\u001d2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u000e\b\u0002\u0010\b\u001a\b\u0012\u0002\b\u0003\u0018\u00010\u001d2\u001d\b\u0002\u0010\u001e\u001a\u0017\u0012\u0004\u0012\u00020 \u0012\r\u0012\u000b\u0012\u0002\b\u00030!¢\u0006\u0002\b\u00190\u001f2$\b\u0002\u0010\u0010\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0014\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0016\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0017\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2(\b\u0002\u0010\u001a\u001a\"\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0012\u0004\u0018\u00010\u001b\u0018\u00010\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010\"\u001a»\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020#2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u000e\b\u0002\u0010\b\u001a\b\u0012\u0002\b\u0003\u0018\u00010\u001d2\u001d\b\u0002\u0010\u001e\u001a\u0017\u0012\u0004\u0012\u00020 \u0012\r\u0012\u000b\u0012\u0002\b\u00030!¢\u0006\u0002\b\u00190\u001f2$\b\u0002\u0010\u0010\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0014\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0016\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0017\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2(\b\u0002\u0010\u001a\u001a\"\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0012\u0004\u0018\u00010\u001b\u0018\u00010\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2\u0017\u0010\t\u001a\u0013\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00010\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010$\u001a'\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010%\u001a\u00020&2\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010'\u001aµ\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010%\u001a\u00020&2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u001f\b\u0002\u0010\u0010\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0014\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0016\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\f2\u001f\b\u0002\u0010\u0017\u001a\u0019\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010(\u001aó\u0001\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010%\u001a\u00020&2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\u000e\u001a\u00020\u000f2$\b\u0002\u0010\u0010\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0014\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0016\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00130\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2$\b\u0002\u0010\u0017\u001a\u001e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00150\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\f2(\b\u0002\u0010\u001a\u001a\"\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0006\u0012\u0004\u0018\u00010\u001b\u0018\u00010\n¢\u0006\u0002\b\u0019¢\u0006\u0002\b\fH\u0007¢\u0006\u0002\u0010)\u001a\u001c\u0010*\u001a\u0004\u0018\u00010\u0013*\u00020+2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002\u001a\u001c\u0010-\u001a\u0004\u0018\u00010\u0015*\u00020+2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002\u001a\u001c\u0010.\u001a\u0004\u0018\u00010\u0013*\u00020+2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002\u001a\u001c\u0010/\u001a\u0004\u0018\u00010\u0015*\u00020+2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002\u001a\u001c\u00100\u001a\u0004\u0018\u00010\u001b*\u00020+2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011H\u0002¨\u00061²\u0006\u0010\u00102\u001a\b\u0012\u0004\u0012\u00020\u001203X\u008a\u0084\u0002²\u0006\n\u00104\u001a\u000205X\u008a\u008e\u0002²\u0006\n\u00106\u001a\u000207X\u008a\u008e\u0002²\u0006\u0010\u00108\u001a\b\u0012\u0004\u0012\u00020\u001203X\u008a\u0084\u0002²\u0006\u0010\u00109\u001a\b\u0012\u0004\u0012\u00020\u001203X\u008a\u0084\u0002"}, d2 = {"NavHost", "", "navController", "Landroidx/navigation/NavHostController;", "startDestination", "", "modifier", "Landroidx/compose/ui/Modifier;", "route", "builder", "Lkotlin/Function1;", "Landroidx/navigation/NavGraphBuilder;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/navigation/NavHostController;Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "contentAlignment", "Landroidx/compose/ui/Alignment;", "enterTransition", "Landroidx/compose/animation/AnimatedContentTransitionScope;", "Landroidx/navigation/NavBackStackEntry;", "Landroidx/compose/animation/EnterTransition;", "exitTransition", "Landroidx/compose/animation/ExitTransition;", "popEnterTransition", "popExitTransition", "(Landroidx/navigation/NavHostController;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "Lkotlin/jvm/JvmSuppressWildcards;", "sizeTransform", "Landroidx/compose/animation/SizeTransform;", "(Landroidx/navigation/NavHostController;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "Lkotlin/reflect/KClass;", "typeMap", "", "Lkotlin/reflect/KType;", "Landroidx/navigation/NavType;", "(Landroidx/navigation/NavHostController;Lkotlin/reflect/KClass;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Lkotlin/reflect/KClass;Ljava/util/Map;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "", "(Landroidx/navigation/NavHostController;Ljava/lang/Object;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Lkotlin/reflect/KClass;Ljava/util/Map;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;III)V", "graph", "Landroidx/navigation/NavGraph;", "(Landroidx/navigation/NavHostController;Landroidx/navigation/NavGraph;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/navigation/NavHostController;Landroidx/navigation/NavGraph;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "(Landroidx/navigation/NavHostController;Landroidx/navigation/NavGraph;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "createEnterTransition", "Landroidx/navigation/NavDestination;", "scope", "createExitTransition", "createPopEnterTransition", "createPopExitTransition", "createSizeTransform", "navigation-compose_release", "currentBackStack", "", "progress", "", "inPredictiveBack", "", "allVisibleEntries", "visibleEntries"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class NavHostKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$1(NavHostController navHostController, String str, Modifier modifier, String str2, Function1 function1, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, str, modifier, str2, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$13(NavHostController navHostController, String str, Modifier modifier, Alignment alignment, String str2, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, Function1 function16, int i, int i2, int i3, Composer composer, int i4) {
         NavHost(navHostController, str, modifier, alignment, str2, function1, function12, function13, function14, function15, function16, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$19(NavHostController navHostController, KClass kClass, Modifier modifier, Alignment alignment, KClass kClass2, Map map, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, Function1 function16, int i, int i2, int i3, Composer composer, int i4) {
         NavHost(navHostController, (KClass<?>) kClass, modifier, alignment, (KClass<?>) kClass2, (Map<KType, NavType<?>>) map, (Function1<AnimatedContentTransitionScope<NavBackStackEntry>, EnterTransition>) function1, (Function1<AnimatedContentTransitionScope<NavBackStackEntry>, ExitTransition>) function12, (Function1<AnimatedContentTransitionScope<NavBackStackEntry>, EnterTransition>) function13, (Function1<AnimatedContentTransitionScope<NavBackStackEntry>, ExitTransition>) function14, (Function1<AnimatedContentTransitionScope<NavBackStackEntry>, SizeTransform>) function15, (Function1<? super NavGraphBuilder, Unit>) function16, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$25(NavHostController navHostController, Object obj, Modifier modifier, Alignment alignment, KClass kClass, Map map, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, Function1 function16, int i, int i2, int i3, Composer composer, int i4) {
         NavHost(navHostController, obj, modifier, alignment, kClass, map, function1, function12, function13, function14, function15, function16, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), RecomposeScopeImplKt.updateChangedFlags(i2), i3);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$26(NavHostController navHostController, NavGraph navGraph, Modifier modifier, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, navGraph, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$31(NavHostController navHostController, NavGraph navGraph, Modifier modifier, Alignment alignment, Function1 function1, Function1 function12, Function1 function13, Function1 function14, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, navGraph, modifier, alignment, function1, function12, function13, function14, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$37(NavHostController navHostController, NavGraph navGraph, Modifier modifier, Alignment alignment, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, navGraph, modifier, alignment, function1, function12, function13, function14, function15, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$7(NavHostController navHostController, String str, Modifier modifier, Alignment alignment, String str2, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, str, modifier, alignment, str2, function1, function12, function13, function14, function15, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$79(NavHostController navHostController, NavGraph navGraph, Modifier modifier, Alignment alignment, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, navGraph, modifier, alignment, function1, function12, function13, function14, function15, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit NavHost$lambda$80(NavHostController navHostController, NavGraph navGraph, Modifier modifier, Alignment alignment, Function1 function1, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, int i2, Composer composer, int i3) {
         NavHost(navHostController, navGraph, modifier, alignment, function1, function12, function13, function14, function15, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -232,9 +232,7 @@ public final class NavHostKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda18
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit NavHost$lambda$1;
-                            NavHost$lambda$1 = NavHostKt.NavHost$lambda$1(NavHostController.this, str, modifier2, str4, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return NavHost$lambda$1;
+                            return NavHostKt.NavHost$lambda$1(NavHostController.this, str, modifier2, str4, function1, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -308,16 +306,6 @@ public final class NavHostKt {
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$3$lambda$2(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$5$lambda$4(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x011b  */
@@ -483,9 +471,10 @@ public final class NavHostKt {
                                     rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj7) {
-                                            EnterTransition NavHost$lambda$3$lambda$2;
-                                            NavHost$lambda$3$lambda$2 = NavHostKt.NavHost$lambda$3$lambda$2((AnimatedContentTransitionScope) obj7);
-                                            return NavHost$lambda$3$lambda$2;
+                                            EnterTransition fadeIn$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj7;
+                                            fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeIn$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -500,9 +489,10 @@ public final class NavHostKt {
                                     rememberedValue3 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda5
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj7) {
-                                            ExitTransition NavHost$lambda$5$lambda$4;
-                                            NavHost$lambda$5$lambda$4 = NavHostKt.NavHost$lambda$5$lambda$4((AnimatedContentTransitionScope) obj7);
-                                            return NavHost$lambda$5$lambda$4;
+                                            ExitTransition fadeOut$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj7;
+                                            fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeOut$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -622,9 +612,7 @@ public final class NavHostKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda6
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj7, Object obj8) {
-                                Unit NavHost$lambda$7;
-                                NavHost$lambda$7 = NavHostKt.NavHost$lambda$7(NavHostController.this, str, modifier2, alignment3, str4, function111, function113, function110, function112, function15, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
-                                return NavHost$lambda$7;
+                                return NavHostKt.NavHost$lambda$7(NavHostController.this, str, modifier2, alignment3, str4, function111, function113, function110, function112, function15, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
                             }
                         });
                         return;
@@ -744,16 +732,6 @@ public final class NavHostKt {
         }
         if ((i2 & 256) == 0) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$9$lambda$8(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$11$lambda$10(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:100:0x0119  */
@@ -942,9 +920,10 @@ public final class NavHostKt {
                                         rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda14
                                             @Override // kotlin.jvm.functions.Function1
                                             public final Object invoke(Object obj9) {
-                                                EnterTransition NavHost$lambda$9$lambda$8;
-                                                NavHost$lambda$9$lambda$8 = NavHostKt.NavHost$lambda$9$lambda$8((AnimatedContentTransitionScope) obj9);
-                                                return NavHost$lambda$9$lambda$8;
+                                                EnterTransition fadeIn$default;
+                                                AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj9;
+                                                fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                return fadeIn$default;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -959,9 +938,10 @@ public final class NavHostKt {
                                         rememberedValue3 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda15
                                             @Override // kotlin.jvm.functions.Function1
                                             public final Object invoke(Object obj9) {
-                                                ExitTransition NavHost$lambda$11$lambda$10;
-                                                NavHost$lambda$11$lambda$10 = NavHostKt.NavHost$lambda$11$lambda$10((AnimatedContentTransitionScope) obj9);
-                                                return NavHost$lambda$11$lambda$10;
+                                                ExitTransition fadeOut$default;
+                                                AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj9;
+                                                fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                return fadeOut$default;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -1071,9 +1051,7 @@ public final class NavHostKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda16
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj12, Object obj13) {
-                                    Unit NavHost$lambda$13;
-                                    NavHost$lambda$13 = NavHostKt.NavHost$lambda$13(NavHostController.this, str, modifier2, alignment2, str4, function114, function115, function112, function113, function111, function16, i, i2, i3, (Composer) obj12, ((Integer) obj13).intValue());
-                                    return NavHost$lambda$13;
+                                    return NavHostKt.NavHost$lambda$13(NavHostController.this, str, modifier2, alignment2, str4, function114, function115, function112, function113, function111, function16, i, i2, i3, (Composer) obj12, ((Integer) obj13).intValue());
                                 }
                             });
                             return;
@@ -1391,16 +1369,6 @@ public final class NavHostKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$15$lambda$14(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$17$lambda$16(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:107:0x0130  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x0136  */
     /* JADX WARN: Removed duplicated region for block: B:111:0x013d  */
@@ -1599,9 +1567,10 @@ public final class NavHostKt {
                                     rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda19
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj9) {
-                                            EnterTransition NavHost$lambda$15$lambda$14;
-                                            NavHost$lambda$15$lambda$14 = NavHostKt.NavHost$lambda$15$lambda$14((AnimatedContentTransitionScope) obj9);
-                                            return NavHost$lambda$15$lambda$14;
+                                            EnterTransition fadeIn$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj9;
+                                            fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeIn$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1616,9 +1585,10 @@ public final class NavHostKt {
                                     rememberedValue3 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda20
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj9) {
-                                            ExitTransition NavHost$lambda$17$lambda$16;
-                                            NavHost$lambda$17$lambda$16 = NavHostKt.NavHost$lambda$17$lambda$16((AnimatedContentTransitionScope) obj9);
-                                            return NavHost$lambda$17$lambda$16;
+                                            ExitTransition fadeOut$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj9;
+                                            fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeOut$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -1764,9 +1734,7 @@ public final class NavHostKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda21
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj9, Object obj10) {
-                                Unit NavHost$lambda$19;
-                                NavHost$lambda$19 = NavHostKt.NavHost$lambda$19(NavHostController.this, kClass, modifier2, alignment2, kClass4, map3, function113, function114, function115, function111, function112, function16, i, i2, i3, (Composer) obj9, ((Integer) obj10).intValue());
-                                return NavHost$lambda$19;
+                                return NavHostKt.NavHost$lambda$19(NavHostController.this, kClass, modifier2, alignment2, kClass4, map3, function113, function114, function115, function111, function112, function16, i, i2, i3, (Composer) obj9, ((Integer) obj10).intValue());
                             }
                         });
                         return;
@@ -2068,16 +2036,6 @@ public final class NavHostKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$21$lambda$20(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$23$lambda$22(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:107:0x0130  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x0136  */
     /* JADX WARN: Removed duplicated region for block: B:111:0x013d  */
@@ -2276,9 +2234,10 @@ public final class NavHostKt {
                                     rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda7
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj10) {
-                                            EnterTransition NavHost$lambda$21$lambda$20;
-                                            NavHost$lambda$21$lambda$20 = NavHostKt.NavHost$lambda$21$lambda$20((AnimatedContentTransitionScope) obj10);
-                                            return NavHost$lambda$21$lambda$20;
+                                            EnterTransition fadeIn$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj10;
+                                            fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeIn$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -2293,9 +2252,10 @@ public final class NavHostKt {
                                     rememberedValue3 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda8
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj10) {
-                                            ExitTransition NavHost$lambda$23$lambda$22;
-                                            NavHost$lambda$23$lambda$22 = NavHostKt.NavHost$lambda$23$lambda$22((AnimatedContentTransitionScope) obj10);
-                                            return NavHost$lambda$23$lambda$22;
+                                            ExitTransition fadeOut$default;
+                                            AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj10;
+                                            fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                            return fadeOut$default;
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -2441,9 +2401,7 @@ public final class NavHostKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda9
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj10, Object obj11) {
-                                Unit NavHost$lambda$25;
-                                NavHost$lambda$25 = NavHostKt.NavHost$lambda$25(NavHostController.this, obj, modifier2, alignment2, kClass3, map3, function113, function114, function115, function111, function112, function16, i, i2, i3, (Composer) obj10, ((Integer) obj11).intValue());
-                                return NavHost$lambda$25;
+                                return NavHostKt.NavHost$lambda$25(NavHostController.this, obj, modifier2, alignment2, kClass3, map3, function113, function114, function115, function111, function112, function16, i, i2, i3, (Composer) obj10, ((Integer) obj11).intValue());
                             }
                         });
                         return;
@@ -2808,9 +2766,7 @@ public final class NavHostKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda17
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj3, Object obj4) {
-                        Unit NavHost$lambda$26;
-                        NavHost$lambda$26 = NavHostKt.NavHost$lambda$26(NavHostController.this, navGraph, modifier2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                        return NavHost$lambda$26;
+                        return NavHostKt.NavHost$lambda$26(NavHostController.this, navGraph, modifier2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                     }
                 });
                 return;
@@ -2831,16 +2787,6 @@ public final class NavHostKt {
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$28$lambda$27(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$30$lambda$29(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:111:0x014e  */
@@ -2981,9 +2927,10 @@ public final class NavHostKt {
                                         rememberedValue = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda10
                                             @Override // kotlin.jvm.functions.Function1
                                             public final Object invoke(Object obj7) {
-                                                EnterTransition NavHost$lambda$28$lambda$27;
-                                                NavHost$lambda$28$lambda$27 = NavHostKt.NavHost$lambda$28$lambda$27((AnimatedContentTransitionScope) obj7);
-                                                return NavHost$lambda$28$lambda$27;
+                                                EnterTransition fadeIn$default;
+                                                AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj7;
+                                                fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                return fadeIn$default;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2998,9 +2945,10 @@ public final class NavHostKt {
                                         rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda12
                                             @Override // kotlin.jvm.functions.Function1
                                             public final Object invoke(Object obj7) {
-                                                ExitTransition NavHost$lambda$30$lambda$29;
-                                                NavHost$lambda$30$lambda$29 = NavHostKt.NavHost$lambda$30$lambda$29((AnimatedContentTransitionScope) obj7);
-                                                return NavHost$lambda$30$lambda$29;
+                                                ExitTransition fadeOut$default;
+                                                AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj7;
+                                                fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                return fadeOut$default;
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3083,9 +3031,7 @@ public final class NavHostKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda13
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj7, Object obj8) {
-                                    Unit NavHost$lambda$31;
-                                    NavHost$lambda$31 = NavHostKt.NavHost$lambda$31(NavHostController.this, navGraph, modifier2, alignment2, function17, function18, function19, function110, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
-                                    return NavHost$lambda$31;
+                                    return NavHostKt.NavHost$lambda$31(NavHostController.this, navGraph, modifier2, alignment2, function17, function18, function19, function110, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
                                 }
                             });
                             return;
@@ -3215,16 +3161,6 @@ public final class NavHostKt {
         }
         if ((i2 & 128) != 0) {
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final EnterTransition NavHost$lambda$33$lambda$32(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ExitTransition NavHost$lambda$35$lambda$34(AnimatedContentTransitionScope animatedContentTransitionScope) {
-        return EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:240:0x04a2, code lost:
@@ -3387,9 +3323,10 @@ public final class NavHostKt {
                                                 rememberedValue = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda0
                                                     @Override // kotlin.jvm.functions.Function1
                                                     public final Object invoke(Object obj6) {
-                                                        EnterTransition NavHost$lambda$33$lambda$32;
-                                                        NavHost$lambda$33$lambda$32 = NavHostKt.NavHost$lambda$33$lambda$32((AnimatedContentTransitionScope) obj6);
-                                                        return NavHost$lambda$33$lambda$32;
+                                                        EnterTransition fadeIn$default;
+                                                        AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj6;
+                                                        fadeIn$default = EnterExitTransitionKt.fadeIn$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                        return fadeIn$default;
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -3406,9 +3343,10 @@ public final class NavHostKt {
                                                 rememberedValue2 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda24
                                                     @Override // kotlin.jvm.functions.Function1
                                                     public final Object invoke(Object obj6) {
-                                                        ExitTransition NavHost$lambda$35$lambda$34;
-                                                        NavHost$lambda$35$lambda$34 = NavHostKt.NavHost$lambda$35$lambda$34((AnimatedContentTransitionScope) obj6);
-                                                        return NavHost$lambda$35$lambda$34;
+                                                        ExitTransition fadeOut$default;
+                                                        AnimatedContentTransitionScope animatedContentTransitionScope = (AnimatedContentTransitionScope) obj6;
+                                                        fadeOut$default = EnterExitTransitionKt.fadeOut$default(AnimationSpecKt.tween$default(TypedValues.TransitionType.TYPE_DURATION, 0, null, 6, null), 0.0f, 2, null);
+                                                        return fadeOut$default;
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -3463,9 +3401,7 @@ public final class NavHostKt {
                                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda25
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public final Object invoke(Object obj6, Object obj7) {
-                                                            Unit NavHost$lambda$37;
-                                                            NavHost$lambda$37 = NavHostKt.NavHost$lambda$37(NavHostController.this, navGraph, modifier2, alignment2, obj4, function19, function121, function110, function111, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                                                            return NavHost$lambda$37;
+                                                            return NavHostKt.NavHost$lambda$37(NavHostController.this, navGraph, modifier2, alignment2, obj4, function19, function121, function110, function111, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                                                         }
                                                     });
                                                     return;
@@ -3524,9 +3460,7 @@ public final class NavHostKt {
                                                 rememberedValue6 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda26
                                                     @Override // kotlin.jvm.functions.Function1
                                                     public final Object invoke(Object obj6) {
-                                                        DisposableEffectResult NavHost$lambda$48$lambda$47;
-                                                        NavHost$lambda$48$lambda$47 = NavHostKt.NavHost$lambda$48$lambda$47(NavHostController.this, lifecycleOwner, (DisposableEffectScope) obj6);
-                                                        return NavHost$lambda$48$lambda$47;
+                                                        return NavHostKt.NavHost$lambda$48$lambda$47(NavHostController.this, lifecycleOwner, (DisposableEffectScope) obj6);
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue6);
@@ -3541,9 +3475,7 @@ public final class NavHostKt {
                                                 rememberedValue7 = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda27
                                                     @Override // kotlin.jvm.functions.Function0
                                                     public final Object invoke() {
-                                                        List NavHost$lambda$52$lambda$51;
-                                                        NavHost$lambda$52$lambda$51 = NavHostKt.NavHost$lambda$52$lambda$51(State.this);
-                                                        return NavHost$lambda$52$lambda$51;
+                                                        return NavHostKt.NavHost$lambda$52$lambda$51(State.this);
                                                     }
                                                 });
                                                 startRestartGroup.updateRememberedValue(rememberedValue7);
@@ -3569,9 +3501,7 @@ public final class NavHostKt {
                                                     rememberedValue9 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda28
                                                         @Override // kotlin.jvm.functions.Function1
                                                         public final Object invoke(Object obj6) {
-                                                            EnterTransition NavHost$lambda$58$lambda$57;
-                                                            NavHost$lambda$58$lambda$57 = NavHostKt.NavHost$lambda$58$lambda$57(ComposeNavigator.this, function122, function123, mutableState, (AnimatedContentTransitionScope) obj6);
-                                                            return NavHost$lambda$58$lambda$57;
+                                                            return NavHostKt.NavHost$lambda$58$lambda$57(ComposeNavigator.this, function122, function123, mutableState, (AnimatedContentTransitionScope) obj6);
                                                         }
                                                     };
                                                     startRestartGroup.updateRememberedValue(rememberedValue9);
@@ -3586,9 +3516,7 @@ public final class NavHostKt {
                                                     rememberedValue10 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda29
                                                         @Override // kotlin.jvm.functions.Function1
                                                         public final Object invoke(Object obj6) {
-                                                            ExitTransition NavHost$lambda$62$lambda$61;
-                                                            NavHost$lambda$62$lambda$61 = NavHostKt.NavHost$lambda$62$lambda$61(ComposeNavigator.this, function125, function124, mutableState, (AnimatedContentTransitionScope) obj6);
-                                                            return NavHost$lambda$62$lambda$61;
+                                                            return NavHostKt.NavHost$lambda$62$lambda$61(ComposeNavigator.this, function125, function124, mutableState, (AnimatedContentTransitionScope) obj6);
                                                         }
                                                     };
                                                     startRestartGroup.updateRememberedValue(rememberedValue10);
@@ -3603,9 +3531,7 @@ public final class NavHostKt {
                                                     rememberedValue11 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda1
                                                         @Override // kotlin.jvm.functions.Function1
                                                         public final Object invoke(Object obj6) {
-                                                            SizeTransform NavHost$lambda$65$lambda$64;
-                                                            NavHost$lambda$65$lambda$64 = NavHostKt.NavHost$lambda$65$lambda$64(Function1.this, (AnimatedContentTransitionScope) obj6);
-                                                            return NavHost$lambda$65$lambda$64;
+                                                            return NavHostKt.NavHost$lambda$65$lambda$64(Function1.this, (AnimatedContentTransitionScope) obj6);
                                                         }
                                                     };
                                                     startRestartGroup.updateRememberedValue(rememberedValue11);
@@ -3624,9 +3550,7 @@ public final class NavHostKt {
                                                 rememberedValue12 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda2
                                                     @Override // kotlin.jvm.functions.Function1
                                                     public final Object invoke(Object obj6) {
-                                                        DisposableEffectResult NavHost$lambda$69$lambda$68;
-                                                        NavHost$lambda$69$lambda$68 = NavHostKt.NavHost$lambda$69$lambda$68(State.this, composeNavigator, (DisposableEffectScope) obj6);
-                                                        return NavHost$lambda$69$lambda$68;
+                                                        return NavHostKt.NavHost$lambda$69$lambda$68(State.this, composeNavigator, (DisposableEffectScope) obj6);
                                                     }
                                                 };
                                                 startRestartGroup.updateRememberedValue(rememberedValue12);
@@ -3685,9 +3609,7 @@ public final class NavHostKt {
                                                     rememberedValue16 = new Function1() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda3
                                                         @Override // kotlin.jvm.functions.Function1
                                                         public final Object invoke(Object obj6) {
-                                                            ContentTransform NavHost$lambda$75$lambda$74;
-                                                            NavHost$lambda$75$lambda$74 = NavHostKt.NavHost$lambda$75$lambda$74(MutableObjectFloatMap.this, composeNavigator2, function127, function128, function129, state, mutableState5, (AnimatedContentTransitionScope) obj6);
-                                                            return NavHost$lambda$75$lambda$74;
+                                                            return NavHostKt.NavHost$lambda$75$lambda$74(MutableObjectFloatMap.this, composeNavigator2, function127, function128, function129, state, mutableState5, (AnimatedContentTransitionScope) obj6);
                                                         }
                                                     };
                                                     mutableObjectFloatMap = mutableObjectFloatMap2;
@@ -3830,9 +3752,7 @@ public final class NavHostKt {
                                                     endRestartGroup2.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda22
                                                         @Override // kotlin.jvm.functions.Function2
                                                         public final Object invoke(Object obj6, Object obj7) {
-                                                            Unit NavHost$lambda$79;
-                                                            NavHost$lambda$79 = NavHostKt.NavHost$lambda$79(NavHostController.this, navGraph, modifier3, alignment4, function131, function124, function134, function132, function133, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                                                            return NavHost$lambda$79;
+                                                            return NavHostKt.NavHost$lambda$79(NavHostController.this, navGraph, modifier3, alignment4, function131, function124, function134, function132, function133, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                                                         }
                                                     });
                                                     return;
@@ -3895,9 +3815,7 @@ public final class NavHostKt {
                                     endRestartGroup3.updateScope(new Function2() { // from class: androidx.navigation.compose.NavHostKt$$ExternalSyntheticLambda23
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj6, Object obj7) {
-                                            Unit NavHost$lambda$80;
-                                            NavHost$lambda$80 = NavHostKt.NavHost$lambda$80(NavHostController.this, navGraph, modifier3, alignment4, function117, function116, function120, function118, function119, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                                            return NavHost$lambda$80;
+                                            return NavHostKt.NavHost$lambda$80(NavHostController.this, navGraph, modifier3, alignment4, function117, function116, function120, function118, function119, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                                         }
                                     });
                                     return;
@@ -4245,7 +4163,7 @@ public final class NavHostKt {
         mutableState.setValue(Boolean.valueOf(z));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult NavHost$lambda$48$lambda$47(NavHostController navHostController, LifecycleOwner lifecycleOwner, DisposableEffectScope disposableEffectScope) {
         navHostController.setLifecycleOwner(lifecycleOwner);
         return new DisposableEffectResult() { // from class: androidx.navigation.compose.NavHostKt$NavHost$lambda$48$lambda$47$$inlined$onDispose$1
@@ -4255,7 +4173,7 @@ public final class NavHostKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List NavHost$lambda$52$lambda$51(State state) {
         ArrayList arrayList = new ArrayList();
         for (Object obj : NavHost$lambda$49(state)) {
@@ -4266,7 +4184,7 @@ public final class NavHostKt {
         return arrayList;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final EnterTransition NavHost$lambda$58$lambda$57(ComposeNavigator composeNavigator, Function1 function1, Function1 function12, MutableState mutableState, AnimatedContentTransitionScope animatedContentTransitionScope) {
         NavDestination destination = ((NavBackStackEntry) animatedContentTransitionScope.getTargetState()).getDestination();
         Intrinsics.checkNotNull(destination, "null cannot be cast to non-null type androidx.navigation.compose.ComposeNavigator.Destination");
@@ -4300,7 +4218,7 @@ public final class NavHostKt {
         return enterTransition == null ? (EnterTransition) function12.invoke(animatedContentTransitionScope) : enterTransition;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ExitTransition NavHost$lambda$62$lambda$61(ComposeNavigator composeNavigator, Function1 function1, Function1 function12, MutableState mutableState, AnimatedContentTransitionScope animatedContentTransitionScope) {
         NavDestination destination = ((NavBackStackEntry) animatedContentTransitionScope.getInitialState()).getDestination();
         Intrinsics.checkNotNull(destination, "null cannot be cast to non-null type androidx.navigation.compose.ComposeNavigator.Destination");
@@ -4334,7 +4252,7 @@ public final class NavHostKt {
         return exitTransition == null ? (ExitTransition) function12.invoke(animatedContentTransitionScope) : exitTransition;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SizeTransform NavHost$lambda$65$lambda$64(Function1 function1, AnimatedContentTransitionScope animatedContentTransitionScope) {
         SizeTransform sizeTransform;
         NavDestination destination = ((NavBackStackEntry) animatedContentTransitionScope.getTargetState()).getDestination();
@@ -4359,7 +4277,7 @@ public final class NavHostKt {
         return sizeTransform;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ContentTransform NavHost$lambda$75$lambda$74(MutableObjectFloatMap mutableObjectFloatMap, ComposeNavigator composeNavigator, Function1 function1, Function1 function12, Function1 function13, State state, MutableState mutableState, AnimatedContentTransitionScope animatedContentTransitionScope) {
         float f;
         if (NavHost$lambda$53(state).contains(animatedContentTransitionScope.getInitialState())) {
@@ -4469,7 +4387,7 @@ public final class NavHostKt {
         return state.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult NavHost$lambda$69$lambda$68(final State state, final ComposeNavigator composeNavigator, DisposableEffectScope disposableEffectScope) {
         return new DisposableEffectResult() { // from class: androidx.navigation.compose.NavHostKt$NavHost$lambda$69$lambda$68$$inlined$onDispose$1
             @Override // androidx.compose.runtime.DisposableEffectResult

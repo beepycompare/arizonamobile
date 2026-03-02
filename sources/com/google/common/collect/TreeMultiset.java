@@ -885,10 +885,10 @@ public final class TreeMultiset<E> extends AbstractSortedMultiset<E> implements 
             this.elemCount = 0;
             TreeMultiset.successor(pred(), succ());
             AvlNode<E> avlNode = this.left;
-            if (avlNode == null) {
-                return this.right;
-            }
             AvlNode<E> avlNode2 = this.right;
+            if (avlNode == null) {
+                return avlNode2;
+            }
             if (avlNode2 == null) {
                 return avlNode;
             }

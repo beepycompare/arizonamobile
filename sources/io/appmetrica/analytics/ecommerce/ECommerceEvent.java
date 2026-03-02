@@ -1,40 +1,40 @@
 package io.appmetrica.analytics.ecommerce;
 
-import io.appmetrica.analytics.impl.C0153bl;
-import io.appmetrica.analytics.impl.C0205dl;
-import io.appmetrica.analytics.impl.C0256fl;
-import io.appmetrica.analytics.impl.C0290h3;
-import io.appmetrica.analytics.impl.C0453ne;
+import io.appmetrica.analytics.impl.C0152bl;
+import io.appmetrica.analytics.impl.C0204dl;
+import io.appmetrica.analytics.impl.C0255fl;
+import io.appmetrica.analytics.impl.C0289h3;
+import io.appmetrica.analytics.impl.C0452ne;
 import io.appmetrica.analytics.impl.Kf;
 import java.util.List;
 /* loaded from: classes3.dex */
 public abstract class ECommerceEvent implements Kf {
     public static ECommerceEvent addCartItemEvent(ECommerceCartItem eCommerceCartItem) {
-        return new C0290h3(4, eCommerceCartItem);
+        return new C0289h3(4, eCommerceCartItem);
     }
 
     public static ECommerceEvent beginCheckoutEvent(ECommerceOrder eCommerceOrder) {
-        return new C0453ne(6, eCommerceOrder);
+        return new C0452ne(6, eCommerceOrder);
     }
 
     public static ECommerceEvent purchaseEvent(ECommerceOrder eCommerceOrder) {
-        return new C0453ne(7, eCommerceOrder);
+        return new C0452ne(7, eCommerceOrder);
     }
 
     public static ECommerceEvent removeCartItemEvent(ECommerceCartItem eCommerceCartItem) {
-        return new C0290h3(5, eCommerceCartItem);
+        return new C0289h3(5, eCommerceCartItem);
     }
 
     public static ECommerceEvent showProductCardEvent(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
-        return new C0153bl(eCommerceProduct, eCommerceScreen);
+        return new C0152bl(eCommerceProduct, eCommerceScreen);
     }
 
     public static ECommerceEvent showProductDetailsEvent(ECommerceProduct eCommerceProduct, ECommerceReferrer eCommerceReferrer) {
-        return new C0205dl(eCommerceProduct, eCommerceReferrer);
+        return new C0204dl(eCommerceProduct, eCommerceReferrer);
     }
 
     public static ECommerceEvent showScreenEvent(ECommerceScreen eCommerceScreen) {
-        return new C0256fl(eCommerceScreen);
+        return new C0255fl(eCommerceScreen);
     }
 
     public String getPublicDescription() {

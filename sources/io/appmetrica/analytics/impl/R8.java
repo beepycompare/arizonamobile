@@ -11,7 +11,7 @@ public final class R8 {
     public final IBinaryDataHelper c;
 
     public R8(Context context, Q4 q4) {
-        this(new Q8(), new P8(), C0449na.k().B().a(context, q4));
+        this(new Q8(), new P8(), C0448na.k().B().a(context, q4));
     }
 
     public R8(Q8 q8, P8 p8, IBinaryDataHelper iBinaryDataHelper) {

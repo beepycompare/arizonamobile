@@ -260,10 +260,11 @@ public class BottomSheetDialog extends AppCompatDialog {
             });
         }
         this.bottomSheet.removeAllViews();
+        FrameLayout frameLayout = this.bottomSheet;
         if (layoutParams == null) {
-            this.bottomSheet.addView(view);
+            frameLayout.addView(view);
         } else {
-            this.bottomSheet.addView(view, layoutParams);
+            frameLayout.addView(view, layoutParams);
         }
         coordinatorLayout.findViewById(R.id.touch_outside).setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.bottomsheet.BottomSheetDialog.2
             @Override // android.view.View.OnClickListener

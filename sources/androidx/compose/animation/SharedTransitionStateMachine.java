@@ -108,7 +108,7 @@ public final class SharedTransitionStateMachine {
         }
 
         /* renamed from: configureActiveMatch-38uP1EE */
-        public State mo49configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
+        public State mo36configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
             throw new IllegalStateException(("Active match can only be configured in ActiveMatchFoundConfigPending or ActiveMatchConfigured state. Current state: " + this).toString());
         }
     }
@@ -289,11 +289,11 @@ public final class SharedTransitionStateMachine {
     }
 
     /* renamed from: configureActiveMatch-L7TYDSY  reason: not valid java name */
-    public final void m142configureActiveMatchL7TYDSY(long j, long j2, long j3) {
+    public final void m129configureActiveMatchL7TYDSY(long j, long j2, long j3) {
         State state = getState();
         SharedElement sharedElement = this.sharedElement;
         BoundsProvider boundsProvider = this.targetBoundsProvider;
         Intrinsics.checkNotNull(boundsProvider);
-        setState(state.mo49configureActiveMatch38uP1EE(sharedElement, boundsProvider, j, j2, j3));
+        setState(state.mo36configureActiveMatch38uP1EE(sharedElement, boundsProvider, j, j2, j3));
     }
 }

@@ -171,11 +171,12 @@ public final class JsonValueObjectEncoderContext implements ObjectEncoderContext
     @Override // com.google.firebase.encoders.ValueEncoderContext
     public JsonValueObjectEncoderContext add(byte[] bArr) throws IOException {
         maybeUnNest();
+        JsonWriter jsonWriter = this.jsonWriter;
         if (bArr == null) {
-            this.jsonWriter.nullValue();
+            jsonWriter.nullValue();
             return this;
         }
-        this.jsonWriter.value(Base64.encodeToString(bArr, 2));
+        jsonWriter.value(Base64.encodeToString(bArr, 2));
         return this;
     }
 

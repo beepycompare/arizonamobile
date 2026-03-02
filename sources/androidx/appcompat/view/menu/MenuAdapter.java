@@ -38,7 +38,9 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        ArrayList<MenuItemImpl> nonActionItems = this.mOverflowOnly ? this.mAdapterMenu.getNonActionItems() : this.mAdapterMenu.getVisibleItems();
+        boolean z = this.mOverflowOnly;
+        MenuBuilder menuBuilder = this.mAdapterMenu;
+        ArrayList<MenuItemImpl> nonActionItems = z ? menuBuilder.getNonActionItems() : menuBuilder.getVisibleItems();
         if (this.mExpandedIndex < 0) {
             return nonActionItems.size();
         }
@@ -51,7 +53,9 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public MenuItemImpl getItem(int i) {
-        ArrayList<MenuItemImpl> nonActionItems = this.mOverflowOnly ? this.mAdapterMenu.getNonActionItems() : this.mAdapterMenu.getVisibleItems();
+        boolean z = this.mOverflowOnly;
+        MenuBuilder menuBuilder = this.mAdapterMenu;
+        ArrayList<MenuItemImpl> nonActionItems = z ? menuBuilder.getNonActionItems() : menuBuilder.getVisibleItems();
         int i2 = this.mExpandedIndex;
         if (i2 >= 0 && i >= i2) {
             i++;

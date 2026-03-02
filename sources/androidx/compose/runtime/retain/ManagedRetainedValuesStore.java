@@ -14,7 +14,7 @@ public final class ManagedRetainedValuesStore implements RetainedValuesStore {
     private boolean isContentComposed;
     private boolean isDisposed;
     private boolean isEnabled = true;
-    private final MutableScatterMap<Object, Object> keptExitedValues = SafeMultiValueMap.m4837constructorimpl$default(null, 1, null);
+    private final MutableScatterMap<Object, Object> keptExitedValues = SafeMultiValueMap.m4194constructorimpl$default(null, 1, null);
 
     public final boolean isRetainingExitedValues() {
         return this.isEnabled && !this.isContentComposed;
@@ -45,7 +45,7 @@ public final class ManagedRetainedValuesStore implements RetainedValuesStore {
         if (!this.isContentComposed) {
             PreconditionsKt.throwIllegalStateException("ManagedValuesStore tried to leave composition twice. Is the store installed in multiple places?");
         }
-        if (!SafeMultiValueMap.m4844isEmptyimpl(this.keptExitedValues)) {
+        if (!SafeMultiValueMap.m4201isEmptyimpl(this.keptExitedValues)) {
             PreconditionsKt.throwIllegalStateException("Attempted to start retaining exited values with pending exited values");
         }
         this.isContentComposed = false;
@@ -104,18 +104,18 @@ public final class ManagedRetainedValuesStore implements RetainedValuesStore {
                 i++;
             }
         }
-        SafeMultiValueMap.m4835clearimpl(this.keptExitedValues);
+        SafeMultiValueMap.m4192clearimpl(this.keptExitedValues);
     }
 
     @Override // androidx.compose.runtime.retain.RetainedValuesStore
     public Object consumeExitedValueOrDefault(Object obj, Object obj2) {
-        return SafeMultiValueMap.m4848removeLastimpl(this.keptExitedValues, obj, obj2);
+        return SafeMultiValueMap.m4205removeLastimpl(this.keptExitedValues, obj, obj2);
     }
 
     @Override // androidx.compose.runtime.retain.RetainedValuesStore
     public void saveExitingValue(Object obj, Object obj2) {
         if (isRetainingExitedValues()) {
-            SafeMultiValueMap.m4833addimpl(this.keptExitedValues, obj, obj2);
+            SafeMultiValueMap.m4190addimpl(this.keptExitedValues, obj, obj2);
         } else if (obj2 instanceof RetainObserver) {
             ((RetainObserver) obj2).onRetired();
         }

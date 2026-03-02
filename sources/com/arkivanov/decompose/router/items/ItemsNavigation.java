@@ -36,14 +36,12 @@ public interface ItemsNavigation<C> extends ItemsNavigator<C>, NavigationSource<
             this(function1, (i & 2) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.items.ItemsNavigation$Event$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = ItemsNavigation.Event._init_$lambda$0((Items) obj, (Items) obj2);
-                    return _init_$lambda$0;
+                    return ItemsNavigation.Event._init_$lambda$0((Items) obj, (Items) obj2);
                 }
             } : function2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit _init_$lambda$0(Items items, Items items2) {
             Intrinsics.checkNotNullParameter(items, "<unused var>");
             Intrinsics.checkNotNullParameter(items2, "<unused var>");

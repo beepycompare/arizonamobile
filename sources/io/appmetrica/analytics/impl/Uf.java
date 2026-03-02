@@ -9,9 +9,9 @@ public final class Uf implements Runnable {
     public final File f812a;
     public final Consumer b;
 
-    public Uf(File file, C0267g6 c0267g6) {
+    public Uf(File file, C0266g6 c0266g6) {
         this.f812a = file;
-        this.b = c0267g6;
+        this.b = c0266g6;
     }
 
     @Override // java.lang.Runnable

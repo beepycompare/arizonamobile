@@ -194,10 +194,12 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
             return;
         }
         if (this.fileSystem.exists(this.journalFileBackup)) {
-            if (this.fileSystem.exists(this.journalFile)) {
-                this.fileSystem.delete(this.journalFileBackup);
+            boolean exists = this.fileSystem.exists(this.journalFile);
+            FileSystem fileSystem = this.fileSystem;
+            if (exists) {
+                fileSystem.delete(this.journalFileBackup);
             } else {
-                this.fileSystem.atomicMove(this.journalFileBackup, this.journalFile);
+                fileSystem.atomicMove(this.journalFileBackup, this.journalFile);
             }
         }
         this.civilizedFileSystem = _UtilCommonKt.isCivilized(this.fileSystem, this.journalFileBackup);
@@ -283,9 +285,7 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
         return Okio.buffer(new FaultHidingSink(this.fileSystem.appendingSink(this.journalFile), new Function1() { // from class: okhttp3.internal.cache.DiskLruCache$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit newJournalWriter$lambda$0;
-                newJournalWriter$lambda$0 = DiskLruCache.newJournalWriter$lambda$0(DiskLruCache.this, (IOException) obj);
-                return newJournalWriter$lambda$0;
+                return DiskLruCache.newJournalWriter$lambda$0(DiskLruCache.this, (IOException) obj);
             }
         }));
     }
@@ -417,12 +417,14 @@ public final class DiskLruCache implements Closeable, Flushable, Lockable {
         }
         th = null;
         if (th == null) {
-            if (this.fileSystem.exists(this.journalFile)) {
-                this.fileSystem.atomicMove(this.journalFile, this.journalFileBackup);
+            boolean exists = this.fileSystem.exists(this.journalFile);
+            FileSystem fileSystem = this.fileSystem;
+            if (exists) {
+                fileSystem.atomicMove(this.journalFile, this.journalFileBackup);
                 this.fileSystem.atomicMove(this.journalFileTmp, this.journalFile);
                 _UtilCommonKt.deleteIfExists(this.fileSystem, this.journalFileBackup);
             } else {
-                this.fileSystem.atomicMove(this.journalFileTmp, this.journalFile);
+                fileSystem.atomicMove(this.journalFileTmp, this.journalFile);
             }
             BufferedSink bufferedSink3 = this.journalWriter;
             if (bufferedSink3 != null) {

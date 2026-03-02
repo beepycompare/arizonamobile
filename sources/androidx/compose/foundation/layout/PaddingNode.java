@@ -37,42 +37,42 @@ public final class PaddingNode extends Modifier.Node implements LayoutModifierNo
     }
 
     /* renamed from: getStart-D9Ej5fM  reason: not valid java name */
-    public final float m936getStartD9Ej5fM() {
+    public final float m825getStartD9Ej5fM() {
         return this.start;
     }
 
     /* renamed from: setStart-0680j_4  reason: not valid java name */
-    public final void m940setStart0680j_4(float f) {
+    public final void m829setStart0680j_4(float f) {
         this.start = f;
     }
 
     /* renamed from: getTop-D9Ej5fM  reason: not valid java name */
-    public final float m937getTopD9Ej5fM() {
+    public final float m826getTopD9Ej5fM() {
         return this.top;
     }
 
     /* renamed from: setTop-0680j_4  reason: not valid java name */
-    public final void m941setTop0680j_4(float f) {
+    public final void m830setTop0680j_4(float f) {
         this.top = f;
     }
 
     /* renamed from: getEnd-D9Ej5fM  reason: not valid java name */
-    public final float m935getEndD9Ej5fM() {
+    public final float m824getEndD9Ej5fM() {
         return this.end;
     }
 
     /* renamed from: setEnd-0680j_4  reason: not valid java name */
-    public final void m939setEnd0680j_4(float f) {
+    public final void m828setEnd0680j_4(float f) {
         this.end = f;
     }
 
     /* renamed from: getBottom-D9Ej5fM  reason: not valid java name */
-    public final float m934getBottomD9Ej5fM() {
+    public final float m823getBottomD9Ej5fM() {
         return this.bottom;
     }
 
     /* renamed from: setBottom-0680j_4  reason: not valid java name */
-    public final void m938setBottom0680j_4(float f) {
+    public final void m827setBottom0680j_4(float f) {
         this.bottom = f;
     }
 
@@ -86,31 +86,29 @@ public final class PaddingNode extends Modifier.Node implements LayoutModifierNo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        int i = measureScope.mo458roundToPx0680j_4(this.start) + measureScope.mo458roundToPx0680j_4(this.end);
-        int i2 = measureScope.mo458roundToPx0680j_4(this.top) + measureScope.mo458roundToPx0680j_4(this.bottom);
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.m8230offsetNN6EwU(j, -i, -i2));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m8228constrainWidthK40F9xA(j, mo6875measureBRTryo0.getWidth() + i), ConstraintsKt.m8227constrainHeightK40F9xA(j, mo6875measureBRTryo0.getHeight() + i2), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingNode$$ExternalSyntheticLambda0
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        int i = measureScope.mo399roundToPx0680j_4(this.start) + measureScope.mo399roundToPx0680j_4(this.end);
+        int i2 = measureScope.mo399roundToPx0680j_4(this.top) + measureScope.mo399roundToPx0680j_4(this.bottom);
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.m7527offsetNN6EwU(j, -i, -i2));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7525constrainWidthK40F9xA(j, mo6216measureBRTryo0.getWidth() + i), ConstraintsKt.m7524constrainHeightK40F9xA(j, mo6216measureBRTryo0.getHeight() + i2), null, new Function1() { // from class: androidx.compose.foundation.layout.PaddingNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = PaddingNode.measure_3p2s80s$lambda$0(PaddingNode.this, mo6875measureBRTryo0, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return PaddingNode.measure_3p2s80s$lambda$0(PaddingNode.this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(PaddingNode paddingNode, Placeable placeable, Placeable.PlacementScope placementScope) {
         if (paddingNode.rtlAware) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo458roundToPx0680j_4(paddingNode.start), placementScope.mo458roundToPx0680j_4(paddingNode.top), 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(paddingNode.start), placementScope.mo399roundToPx0680j_4(paddingNode.top), 0.0f, 4, null);
         } else {
-            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo458roundToPx0680j_4(paddingNode.start), placementScope.mo458roundToPx0680j_4(paddingNode.top), 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(paddingNode.start), placementScope.mo399roundToPx0680j_4(paddingNode.top), 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }
 
     public /* synthetic */ PaddingNode(float f, float f2, float f3, float f4, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? Dp.m8258constructorimpl(0) : f, (i & 2) != 0 ? Dp.m8258constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m8258constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m8258constructorimpl(0) : f4, z, null);
+        this((i & 1) != 0 ? Dp.m7555constructorimpl(0) : f, (i & 2) != 0 ? Dp.m7555constructorimpl(0) : f2, (i & 4) != 0 ? Dp.m7555constructorimpl(0) : f3, (i & 8) != 0 ? Dp.m7555constructorimpl(0) : f4, z, null);
     }
 }

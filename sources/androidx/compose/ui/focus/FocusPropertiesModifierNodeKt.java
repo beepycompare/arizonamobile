@@ -13,7 +13,7 @@ import kotlin.Metadata;
 public final class FocusPropertiesModifierNodeKt {
     public static final void invalidateFocusProperties(FocusPropertiesModifierNode focusPropertiesModifierNode) {
         FocusPropertiesModifierNode focusPropertiesModifierNode2 = focusPropertiesModifierNode;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
         if (!focusPropertiesModifierNode2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -26,21 +26,21 @@ public final class FocusPropertiesModifierNodeKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
                         MutableVector mutableVector2 = null;
                         while (node != null) {
                             if (node instanceof FocusTargetNode) {
                                 FocusTargetNodeKt.invalidateFocusTarget((FocusTargetNode) node);
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;

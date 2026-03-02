@@ -228,10 +228,14 @@ public class NavGraph extends NavDestination implements Iterable<NavDestination>
         if (findNode == null) {
             if (getStartDestinationRoute() != null) {
                 sb.append(getStartDestinationRoute());
-            } else if (this.impl.getStartDestIdName$navigation_common_release() != null) {
-                sb.append(this.impl.getStartDestIdName$navigation_common_release());
             } else {
-                sb.append("0x" + Integer.toHexString(this.impl.getStartDestId$navigation_common_release()));
+                String startDestIdName$navigation_common_release = this.impl.getStartDestIdName$navigation_common_release();
+                NavGraphImpl navGraphImpl = this.impl;
+                if (startDestIdName$navigation_common_release != null) {
+                    sb.append(navGraphImpl.getStartDestIdName$navigation_common_release());
+                } else {
+                    sb.append("0x" + Integer.toHexString(navGraphImpl.getStartDestId$navigation_common_release()));
+                }
             }
         } else {
             sb.append("{");
@@ -294,14 +298,12 @@ public class NavGraph extends NavDestination implements Iterable<NavDestination>
             return SequencesKt.generateSequence(navGraph, new Function1() { // from class: androidx.navigation.NavGraph$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    NavDestination childHierarchy$lambda$0;
-                    childHierarchy$lambda$0 = NavGraph.Companion.childHierarchy$lambda$0((NavDestination) obj);
-                    return childHierarchy$lambda$0;
+                    return NavGraph.Companion.childHierarchy$lambda$0((NavDestination) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final NavDestination childHierarchy$lambda$0(NavDestination it) {
             Intrinsics.checkNotNullParameter(it, "it");
             if (it instanceof NavGraph) {

@@ -395,15 +395,16 @@ public final class Http2Reader implements Closeable {
             Intrinsics.checkNotNullParameter(sink, "sink");
             while (true) {
                 int i = this.left;
+                BufferedSource bufferedSource = this.source;
                 if (i == 0) {
-                    this.source.skip(this.padding);
+                    bufferedSource.skip(this.padding);
                     this.padding = 0;
                     if ((this.flags & 4) != 0) {
                         return -1L;
                     }
                     readContinuationHeader();
                 } else {
-                    long read = this.source.read(sink, Math.min(j, i));
+                    long read = bufferedSource.read(sink, Math.min(j, i));
                     if (read == -1) {
                         return -1L;
                     }

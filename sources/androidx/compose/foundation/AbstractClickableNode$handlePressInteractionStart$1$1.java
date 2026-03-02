@@ -65,10 +65,12 @@ public final class AbstractClickableNode$handlePressInteractionStart$1$1 extends
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.throwOnFailure(obj);
-                if (this.$indirectPointer) {
-                    this.this$0.indirectPointerPressInteraction = this.$press;
+                boolean z = this.$indirectPointer;
+                AbstractClickableNode abstractClickableNode = this.this$0;
+                if (z) {
+                    abstractClickableNode.indirectPointerPressInteraction = this.$press;
                 } else {
-                    this.this$0.pressInteraction = this.$press;
+                    abstractClickableNode.pressInteraction = this.$press;
                 }
                 return Unit.INSTANCE;
             }

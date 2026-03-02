@@ -24,7 +24,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.dialogs.table.DialogTableAdapter;
 import ru.mrlargha.commonui.utils.ConverterKt;
 /* compiled from: DialogTableAdapter.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010%\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\"Bg\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u000e\b\u0002\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0004\u0012\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\r\u0012\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00070\r¢\u0006\u0004\b\u0010\u0010\u0011J\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u000eH\u0016J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u000eH\u0016J\b\u0010!\u001a\u00020\u000eH\u0016R\u001a\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00070\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0012\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "rows", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "useFirstRowAsHeader", "", "targetActivity", "Landroid/app/Activity;", "weightsFormula", "", "maxLengthInRow", "", "", "needNewColumn", "<init>", "(Ljava/util/List;ZLandroid/app/Activity;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)V", "selectedItemId", "getSelectedItemId", "()I", "setSelectedItemId", "(I)V", "getSelectedRowText", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "", "holder", "position", "getItemCount", "DialogRowViewHolder", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010%\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\"Bg\u0012\u0012\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u000e\b\u0002\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0004\u0012\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\r\u0012\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00070\r¢\u0006\u0004\b\u0010\u0010\u0011J\u0006\u0010\u0017\u001a\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u000eH\u0016J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u000eH\u0016J\b\u0010!\u001a\u00020\u000eH\u0016R\u001a\u0010\u0003\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u00040\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00070\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u0012\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "rows", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "useFirstRowAsHeader", "", "targetActivity", "Landroid/app/Activity;", "weightsFormula", "", "maxLengthInRow", "", "", "needNewColumn", "<init>", "(Ljava/util/List;ZLandroid/app/Activity;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)V", "selectedItemId", "getSelectedItemId", "()I", "setSelectedItemId", "(I)V", "getSelectedRowText", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "", "holder", "position", "getItemCount", "DialogRowViewHolder", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowViewHolder> {
     private Map<Integer, Integer> maxLengthInRow;
@@ -97,14 +97,16 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
             int i5 = 0;
             for (TableCell tableCell3 : list5) {
                 int i6 = i5 + 1;
-                if (this.maxLengthInRow.get(Integer.valueOf(i5)) != null) {
-                    Integer num = this.maxLengthInRow.get(Integer.valueOf(i5));
-                    Intrinsics.checkNotNull(num);
-                    if (num.intValue() < tableCell3.getText().length()) {
+                Integer num = this.maxLengthInRow.get(Integer.valueOf(i5));
+                Map<Integer, Integer> map = this.maxLengthInRow;
+                if (num != null) {
+                    Integer num2 = map.get(Integer.valueOf(i5));
+                    Intrinsics.checkNotNull(num2);
+                    if (num2.intValue() < tableCell3.getText().length()) {
                         this.maxLengthInRow.put(Integer.valueOf(i5), Integer.valueOf(tableCell3.getText().length()));
                     }
                 } else {
-                    this.maxLengthInRow.put(Integer.valueOf(i5), Integer.valueOf(tableCell3.getText().length()));
+                    map.put(Integer.valueOf(i5), Integer.valueOf(tableCell3.getText().length()));
                 }
                 i5 = i6;
             }
@@ -135,9 +137,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
                 String joinToString$default = CollectionsKt.joinToString$default(list, "\t", null, null, 0, null, new Function1() { // from class: ru.mrlargha.commonui.elements.dialogs.table.DialogTableAdapter$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        CharSequence selectedRowText$lambda$0;
-                        selectedRowText$lambda$0 = DialogTableAdapter.getSelectedRowText$lambda$0((TableCell) obj);
-                        return selectedRowText$lambda$0;
+                        return DialogTableAdapter.getSelectedRowText$lambda$0((TableCell) obj);
                     }
                 }, 30, null);
                 if (joinToString$default != null) {
@@ -149,14 +149,14 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
         return "";
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getSelectedRowText$lambda$0(TableCell it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return it.getText();
     }
 
     /* compiled from: DialogTableAdapter.kt */
-    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\u0018\u0000 \u00182\u00020\u0001:\u0001\u0018B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u000e\u001a\u00020\u000f2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011J\u001c\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0011R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "<init>", "(Landroid/view/View;Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;)V", "getAdapter", "()Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "layout", "Landroid/widget/LinearLayout;", "getLayout", "()Landroid/widget/LinearLayout;", "bind", "", "cells", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "createCells", "amount", "", "weightsFormula", "", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\u0018\u0000 \u00182\u00020\u0001:\u0001\u0018B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u000e\u001a\u00020\u000f2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011J\u001c\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0011R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "<init>", "(Landroid/view/View;Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;)V", "getAdapter", "()Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "layout", "Landroid/widget/LinearLayout;", "getLayout", "()Landroid/widget/LinearLayout;", "bind", "", "cells", "", "Lru/mrlargha/commonui/elements/dialogs/table/TableCell;", "createCells", "amount", "", "weightsFormula", "", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class DialogRowViewHolder extends RecyclerView.ViewHolder {
         public static final Companion Companion = new Companion(null);
@@ -187,7 +187,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
             return this.layout;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void _init_$lambda$0(DialogRowViewHolder dialogRowViewHolder, View view, View view2) {
             if (dialogRowViewHolder.adapter.useFirstRowAsHeader && dialogRowViewHolder.getAdapterPosition() == 0) {
                 return;
@@ -242,10 +242,14 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
                 layoutParams.gravity = GravityCompat.START;
                 if (i2 == 0) {
                     layoutParams.setMarginStart(0);
-                } else if (i2 == i - 1) {
-                    layoutParams.setMarginStart(ConverterKt.dpToPx(7, this.adapter.targetActivity));
                 } else {
-                    layoutParams.setMarginStart(ConverterKt.dpToPx(7, this.adapter.targetActivity));
+                    int i3 = i - 1;
+                    DialogTableAdapter dialogTableAdapter = this.adapter;
+                    if (i2 == i3) {
+                        layoutParams.setMarginStart(ConverterKt.dpToPx(7, dialogTableAdapter.targetActivity));
+                    } else {
+                        layoutParams.setMarginStart(ConverterKt.dpToPx(7, dialogTableAdapter.targetActivity));
+                    }
                 }
                 textView.setLayoutParams(layoutParams);
                 textView.setTextAlignment(5);
@@ -257,7 +261,7 @@ public final class DialogTableAdapter extends RecyclerView.Adapter<DialogRowView
         }
 
         /* compiled from: DialogTableAdapter.kt */
-        @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder$Companion;", "", "<init>", "()V", "from", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "parent", "Landroid/view/ViewGroup;", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder$Companion;", "", "<init>", "()V", "from", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter$DialogRowViewHolder;", "parent", "Landroid/view/ViewGroup;", "adapter", "Lru/mrlargha/commonui/elements/dialogs/table/DialogTableAdapter;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
         /* loaded from: classes6.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

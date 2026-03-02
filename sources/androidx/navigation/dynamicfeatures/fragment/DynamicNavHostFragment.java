@@ -59,9 +59,7 @@ public class DynamicNavHostFragment extends NavHostFragment {
         dynamicGraphNavigator.installDefaultProgressDestination(new Function0() { // from class: androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NavDestination onCreateNavHostController$lambda$1;
-                onCreateNavHostController$lambda$1 = DynamicNavHostFragment.onCreateNavHostController$lambda$1(DynamicFragmentNavigator.this);
-                return onCreateNavHostController$lambda$1;
+                return DynamicNavHostFragment.onCreateNavHostController$lambda$1(DynamicFragmentNavigator.this);
             }
         });
         navigatorProvider.addNavigator(dynamicGraphNavigator);
@@ -70,7 +68,7 @@ public class DynamicNavHostFragment extends NavHostFragment {
         navigatorProvider.addNavigator(new DynamicIncludeGraphNavigator(requireContext3, navigatorProvider, navHostController.getNavInflater(), dynamicInstallManager));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavDestination onCreateNavHostController$lambda$1(DynamicFragmentNavigator dynamicFragmentNavigator) {
         DynamicFragmentNavigator.Destination createDestination = dynamicFragmentNavigator.createDestination();
         String name = DefaultProgressFragment.class.getName();

@@ -10,12 +10,12 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
     public final Fa f718a;
-    public final C0544r6 b = C0136b4.l().n();
-    public final C0470o6 c = new C0470o6();
+    public final C0543r6 b = C0135b4.l().n();
+    public final C0469o6 c = new C0469o6();
     public final Dn d = new Dn();
 
-    public O1(C0370k6 c0370k6) {
-        this.f718a = c0370k6;
+    public O1(C0369k6 c0369k6) {
+        this.f718a = c0369k6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -24,7 +24,7 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
         try {
             e.set(true);
             Fa fa = this.f718a;
-            C0686wn apply = this.c.apply(thread);
+            C0685wn apply = this.c.apply(thread);
             Dn dn = this.d;
             Thread a2 = dn.f556a.a();
             ArrayList a3 = dn.a(a2, thread);
@@ -40,7 +40,7 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
                 } catch (SecurityException unused2) {
                     stackTraceElementArr = null;
                 }
-                a3.add(0, (C0686wn) dn.b.apply(a2, stackTraceElementArr));
+                a3.add(0, (C0685wn) dn.b.apply(a2, stackTraceElementArr));
             }
             fa.a(th, new V(apply, a3, this.b.f1202a.a()));
         } catch (Throwable th2) {

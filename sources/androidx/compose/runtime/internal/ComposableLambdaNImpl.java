@@ -130,16 +130,14 @@ public final class ComposableLambdaNImpl implements ComposableLambdaN {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.internal.ComposableLambdaNImpl$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj4, Object obj5) {
-                    Unit invoke$lambda$0;
-                    invoke$lambda$0 = ComposableLambdaNImpl.invoke$lambda$0(objArr, realParamCount, this, (Composer) obj4, ((Integer) obj5).intValue());
-                    return invoke$lambda$0;
+                    return ComposableLambdaNImpl.invoke$lambda$0(objArr, realParamCount, this, (Composer) obj4, ((Integer) obj5).intValue());
                 }
             });
         }
         return invoke;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(Object[] objArr, int i, ComposableLambdaNImpl composableLambdaNImpl, Composer composer, int i2) {
         Object[] array = ArraysKt.slice(objArr, RangesKt.until(0, i)).toArray(new Object[0]);
         Object obj = objArr[i + 1];

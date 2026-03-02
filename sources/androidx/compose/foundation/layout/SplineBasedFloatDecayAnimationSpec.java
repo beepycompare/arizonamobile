@@ -35,7 +35,7 @@ final class SplineBasedFloatDecayAnimationSpec implements FloatDecayAnimationSpe
     @Override // androidx.compose.animation.core.FloatDecayAnimationSpec
     public float getValueFromNanos(long j, float f, float f2) {
         long durationNanos = getDurationNanos(0.0f, f2);
-        return f + (flingDistance(f2) * AndroidFlingSpline.FlingResult.m774getDistanceCoefficientimpl(AndroidFlingSpline.INSTANCE.m769flingPositionLfoxSSI(durationNanos > 0 ? ((float) j) / ((float) durationNanos) : 1.0f)));
+        return f + (flingDistance(f2) * AndroidFlingSpline.FlingResult.m683getDistanceCoefficientimpl(AndroidFlingSpline.INSTANCE.m678flingPositionLfoxSSI(durationNanos > 0 ? ((float) j) / ((float) durationNanos) : 1.0f)));
     }
 
     @Override // androidx.compose.animation.core.FloatDecayAnimationSpec
@@ -46,6 +46,6 @@ final class SplineBasedFloatDecayAnimationSpec implements FloatDecayAnimationSpe
     @Override // androidx.compose.animation.core.FloatDecayAnimationSpec
     public float getVelocityFromNanos(long j, float f, float f2) {
         long durationNanos = getDurationNanos(0.0f, f2);
-        return ((AndroidFlingSpline.FlingResult.m775getVelocityCoefficientimpl(AndroidFlingSpline.INSTANCE.m769flingPositionLfoxSSI(durationNanos > 0 ? ((float) j) / ((float) durationNanos) : 1.0f)) * flingDistance(f2)) / ((float) durationNanos)) * 1.0E9f;
+        return ((AndroidFlingSpline.FlingResult.m684getVelocityCoefficientimpl(AndroidFlingSpline.INSTANCE.m678flingPositionLfoxSSI(durationNanos > 0 ? ((float) j) / ((float) durationNanos) : 1.0f)) * flingDistance(f2)) / ((float) durationNanos)) * 1.0E9f;
     }
 }

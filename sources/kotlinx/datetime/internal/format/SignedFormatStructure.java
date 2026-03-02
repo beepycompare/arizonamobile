@@ -72,14 +72,12 @@ public final class SignedFormatStructure<T> implements NonConcatenatedFormatStru
         return ParserKt.concat(CollectionsKt.listOf((Object[]) new ParserStructure[]{new ParserStructure(CollectionsKt.listOf(new SignParser(new Function2() { // from class: kotlinx.datetime.internal.format.SignedFormatStructure$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit parser$lambda$2;
-                parser$lambda$2 = SignedFormatStructure.parser$lambda$2(SignedFormatStructure.this, obj, ((Boolean) obj2).booleanValue());
-                return parser$lambda$2;
+                return SignedFormatStructure.parser$lambda$2(SignedFormatStructure.this, obj, ((Boolean) obj2).booleanValue());
             }
         }, this.withPlusSign, "sign for " + this.fieldSigns)), CollectionsKt.emptyList()), this.format.parser()}));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit parser$lambda$2(SignedFormatStructure signedFormatStructure, Object obj, boolean z) {
         for (FieldSign<T> fieldSign : signedFormatStructure.fieldSigns) {
             boolean z2 = true;

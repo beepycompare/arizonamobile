@@ -14,11 +14,11 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class SafeParcelReader {
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public static class ParseException extends RuntimeException {
         /* JADX WARN: Illegal instructions before constructor call */

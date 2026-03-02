@@ -69,9 +69,7 @@ final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda imp
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.core.os.Profiling$registerForAllProfilingResults$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$2;
-                    invokeSuspend$lambda$2 = Profiling$registerForAllProfilingResults$1.invokeSuspend$lambda$2(profilingManager, consumer);
-                    return invokeSuspend$lambda$2;
+                    return Profiling$registerForAllProfilingResults$1.invokeSuspend$lambda$2(profilingManager, consumer);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -84,13 +82,13 @@ final class Profiling$registerForAllProfilingResults$1 extends SuspendLambda imp
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, ProfilingResult profilingResult) {
         Intrinsics.checkNotNull(profilingResult);
-        producerScope.mo9174trySendJP2dKIU(profilingResult);
+        producerScope.mo8396trySendJP2dKIU(profilingResult);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$2(ProfilingManager profilingManager, Consumer consumer) {
         profilingManager.unregisterForAllProfilingResults(consumer);
         return Unit.INSTANCE;

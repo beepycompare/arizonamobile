@@ -96,16 +96,16 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             slotTable.collectSourceInformation();
         }
         this.slotTable = slotTable;
-        this.observations = ScopeMap.m4778constructorimpl$default(null, 1, null);
+        this.observations = ScopeMap.m4143constructorimpl$default(null, 1, null);
         this.invalidatedScopes = new MutableScatterSet<>(0, 1, null);
         this.conditionallyInvalidatedScopes = new MutableScatterSet<>(0, 1, null);
-        this.derivedStates = ScopeMap.m4778constructorimpl$default(null, 1, null);
+        this.derivedStates = ScopeMap.m4143constructorimpl$default(null, 1, null);
         ChangeList changeList = new ChangeList();
         this.changes = changeList;
         ChangeList changeList2 = new ChangeList();
         this.lateChanges = changeList2;
-        this.observationsProcessed = ScopeMap.m4778constructorimpl$default(null, 1, null);
-        this.invalidations = ScopeMap.m4778constructorimpl$default(null, 1, null);
+        this.observationsProcessed = ScopeMap.m4143constructorimpl$default(null, 1, null);
+        this.invalidations = ScopeMap.m4143constructorimpl$default(null, 1, null);
         CompositionObserverHolder compositionObserverHolder = new CompositionObserverHolder(null, false, compositionContext, 3, null);
         this.observerHolder = compositionObserverHolder;
         this.rememberManager = new RememberEventDispatcher();
@@ -404,13 +404,13 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         try {
             synchronized (this.lock) {
                 drainPendingModificationsForCompositionLocked();
-                MutableScatterMap<Object, Object> m4601takeInvalidationsafanTW4 = m4601takeInvalidationsafanTW4();
+                MutableScatterMap<Object, Object> m3984takeInvalidationsafanTW4 = m3984takeInvalidationsafanTW4();
                 try {
-                    this.composer.m4596composeContentZbOJvo$runtime(m4601takeInvalidationsafanTW4, function2, this.shouldPause);
+                    this.composer.m3980composeContentZbOJvo$runtime(m3984takeInvalidationsafanTW4, function2, this.shouldPause);
                     Unit unit = Unit.INSTANCE;
                     Unit unit2 = Unit.INSTANCE;
                 } catch (Throwable th) {
-                    this.invalidations = m4601takeInvalidationsafanTW4;
+                    this.invalidations = m3984takeInvalidationsafanTW4;
                     throw th;
                 }
             }
@@ -434,7 +434,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     public final void updateMovingInvalidations$runtime() {
         synchronized (this.lock) {
             drainPendingModificationsOutOfBandLocked();
-            this.composer.m4598updateComposerInvalidationsRY85e9Y(m4601takeInvalidationsafanTW4());
+            this.composer.m3982updateComposerInvalidationsRY85e9Y(m3984takeInvalidationsafanTW4());
             Unit unit = Unit.INSTANCE;
             Unit unit2 = Unit.INSTANCE;
         }
@@ -481,7 +481,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     public boolean getHasInvalidations() {
         boolean z;
         synchronized (this.lock) {
-            z = ScopeMap.m4783getSizeimpl(this.invalidations) > 0;
+            z = ScopeMap.m4148getSizeimpl(this.invalidations) > 0;
         }
         return z;
     }
@@ -538,7 +538,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         Object obj2;
         int i3;
         boolean z2;
-        if (ScopeMap.m4783getSizeimpl(this.invalidations) > 0) {
+        if (ScopeMap.m4148getSizeimpl(this.invalidations) > 0) {
             ArrayList arrayList = new ArrayList();
             MutableScatterMap mutableScatterMap = this.invalidations;
             long[] jArr3 = mutableScatterMap.metadata;
@@ -700,7 +700,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                     for (int i3 = 0; i3 < i2; i3++) {
                         if ((255 & j) < 128) {
                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr[(i << 3) + i3];
-                            if (!ScopeMap.m4785removeimpl(this.observationsProcessed, obj, recomposeScopeImpl) && recomposeScopeImpl.invalidateForResult(obj) != InvalidationResult.IGNORED) {
+                            if (!ScopeMap.m4150removeimpl(this.observationsProcessed, obj, recomposeScopeImpl) && recomposeScopeImpl.invalidateForResult(obj) != InvalidationResult.IGNORED) {
                                 if (recomposeScopeImpl.isConditional() && !z) {
                                     this.conditionallyInvalidatedScopes.add(recomposeScopeImpl);
                                 } else {
@@ -721,7 +721,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             }
         } else {
             RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj2;
-            if (ScopeMap.m4785removeimpl(this.observationsProcessed, obj, recomposeScopeImpl2) || recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IGNORED) {
+            if (ScopeMap.m4150removeimpl(this.observationsProcessed, obj, recomposeScopeImpl2) || recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IGNORED) {
                 return;
             }
             if (recomposeScopeImpl2.isConditional() && !z) {
@@ -793,7 +793,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                                     int i14 = (i11 << 3) + i13;
                                                     i3 = i8;
                                                     i4 = i13;
-                                                    if (!ScopeMap.m4779containsimpl(this.observations, (DerivedState) objArr2[i14])) {
+                                                    if (!ScopeMap.m4144containsimpl(this.observations, (DerivedState) objArr2[i14])) {
                                                         mutableScatterSet.removeElementAt(i14);
                                                     }
                                                 } else {
@@ -836,7 +836,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 i = i8;
                                 j5 = j7;
                                 Intrinsics.checkNotNull(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
-                                if (ScopeMap.m4779containsimpl(this.observations, (DerivedState) obj2)) {
+                                if (ScopeMap.m4144containsimpl(this.observations, (DerivedState) obj2)) {
                                     z = false;
                                 }
                             }
@@ -945,13 +945,13 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         }
         if (obj instanceof StateObjectImpl) {
             ReaderKind.Companion companion = ReaderKind.Companion;
-            ((StateObjectImpl) obj).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(1));
+            ((StateObjectImpl) obj).m4234recordReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(1));
         }
-        ScopeMap.m4772addimpl(this.observations, obj, currentRecomposeScope$runtime);
+        ScopeMap.m4137addimpl(this.observations, obj, currentRecomposeScope$runtime);
         if (obj instanceof DerivedState) {
             DerivedState<?> derivedState = (DerivedState) obj;
             DerivedState.Record<?> currentRecord = derivedState.getCurrentRecord();
-            ScopeMap.m4787removeScopeimpl(this.derivedStates, obj);
+            ScopeMap.m4152removeScopeimpl(this.derivedStates, obj);
             ObjectIntMap<StateObject> dependencies = currentRecord.getDependencies();
             Object[] objArr = dependencies.keys;
             long[] jArr = dependencies.metadata;
@@ -971,11 +971,11 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                                 if (stateObject instanceof StateObjectImpl) {
                                     ReaderKind.Companion companion2 = ReaderKind.Companion;
                                     i3 = i6;
-                                    ((StateObjectImpl) stateObject).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(i2));
+                                    ((StateObjectImpl) stateObject).m4234recordReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(i2));
                                 } else {
                                     i3 = i6;
                                 }
-                                ScopeMap.m4772addimpl(this.derivedStates, stateObject, obj);
+                                ScopeMap.m4137addimpl(this.derivedStates, stateObject, obj);
                             } else {
                                 i2 = i4;
                                 i3 = i6;
@@ -1025,7 +1025,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         if ((255 & j) < 128) {
                             RecomposeScopeImpl recomposeScopeImpl = (RecomposeScopeImpl) objArr[(i << 3) + i3];
                             if (recomposeScopeImpl.invalidateForResult(obj) == InvalidationResult.IMMINENT) {
-                                ScopeMap.m4772addimpl(this.observationsProcessed, obj, recomposeScopeImpl);
+                                ScopeMap.m4137addimpl(this.observationsProcessed, obj, recomposeScopeImpl);
                             }
                         }
                         j >>= 8;
@@ -1042,7 +1042,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
         } else {
             RecomposeScopeImpl recomposeScopeImpl2 = (RecomposeScopeImpl) obj2;
             if (recomposeScopeImpl2.invalidateForResult(obj) == InvalidationResult.IMMINENT) {
-                ScopeMap.m4772addimpl(this.observationsProcessed, obj, recomposeScopeImpl2);
+                ScopeMap.m4137addimpl(this.observationsProcessed, obj, recomposeScopeImpl2);
             }
         }
     }
@@ -1098,15 +1098,15 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 return false;
             }
             drainPendingModificationsForCompositionLocked();
-            MutableScatterMap<Object, Object> m4601takeInvalidationsafanTW4 = m4601takeInvalidationsafanTW4();
+            MutableScatterMap<Object, Object> m3984takeInvalidationsafanTW4 = m3984takeInvalidationsafanTW4();
             try {
-                boolean m4597recomposeaFTiNEg$runtime = this.composer.m4597recomposeaFTiNEg$runtime(m4601takeInvalidationsafanTW4, this.shouldPause);
-                if (!m4597recomposeaFTiNEg$runtime) {
+                boolean m3981recomposeaFTiNEg$runtime = this.composer.m3981recomposeaFTiNEg$runtime(m3984takeInvalidationsafanTW4, this.shouldPause);
+                if (!m3981recomposeaFTiNEg$runtime) {
                     drainPendingModificationsLocked();
                 }
-                return m4597recomposeaFTiNEg$runtime;
+                return m3981recomposeaFTiNEg$runtime;
             } catch (Throwable th) {
-                this.invalidations = m4601takeInvalidationsafanTW4;
+                this.invalidations = m3984takeInvalidationsafanTW4;
                 throw th;
             }
         }
@@ -1346,11 +1346,11 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     private final <T> T guardInvalidationsLocked(Function1<? super ScopeMap<RecomposeScopeImpl, Object>, ? extends T> function1) {
-        MutableScatterMap<Object, Object> m4601takeInvalidationsafanTW4 = m4601takeInvalidationsafanTW4();
+        MutableScatterMap<Object, Object> m3984takeInvalidationsafanTW4 = m3984takeInvalidationsafanTW4();
         try {
-            return function1.invoke(ScopeMap.m4775boximpl(m4601takeInvalidationsafanTW4));
+            return function1.invoke(ScopeMap.m4140boximpl(m3984takeInvalidationsafanTW4));
         } catch (Throwable th) {
-            this.invalidations = m4601takeInvalidationsafanTW4;
+            this.invalidations = m3984takeInvalidationsafanTW4;
             throw th;
         }
     }
@@ -1486,52 +1486,56 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                 if (tryImminentInvalidation(recomposeScopeImpl, obj)) {
                     return InvalidationResult.IMMINENT;
                 } else if (obj == null) {
-                    ScopeMap.m4789setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
-                } else if (obj instanceof DerivedState) {
-                    Object obj2 = this.invalidations.get(recomposeScopeImpl);
-                    if (obj2 != null) {
-                        if (obj2 instanceof MutableScatterSet) {
-                            MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
-                            Object[] objArr = mutableScatterSet.elements;
-                            long[] jArr = mutableScatterSet.metadata;
-                            int length = jArr.length - 2;
-                            if (length >= 0) {
-                                int i2 = 0;
-                                loop0: while (true) {
-                                    long j = jArr[i2];
-                                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                                        int i3 = 8;
-                                        int i4 = 8 - ((~(i2 - length)) >>> 31);
-                                        int i5 = 0;
-                                        while (i5 < i4) {
-                                            if ((j & 255) < 128) {
-                                                i = i3;
-                                                if (objArr[(i2 << 3) + i5] == ScopeInvalidated.INSTANCE) {
-                                                    break loop0;
+                    ScopeMap.m4154setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
+                } else {
+                    boolean z = obj instanceof DerivedState;
+                    MutableScatterMap<Object, Object> mutableScatterMap = this.invalidations;
+                    if (z) {
+                        Object obj2 = mutableScatterMap.get(recomposeScopeImpl);
+                        if (obj2 != null) {
+                            if (obj2 instanceof MutableScatterSet) {
+                                MutableScatterSet mutableScatterSet = (MutableScatterSet) obj2;
+                                Object[] objArr = mutableScatterSet.elements;
+                                long[] jArr = mutableScatterSet.metadata;
+                                int length = jArr.length - 2;
+                                if (length >= 0) {
+                                    int i2 = 0;
+                                    loop0: while (true) {
+                                        long j = jArr[i2];
+                                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i3 = 8;
+                                            int i4 = 8 - ((~(i2 - length)) >>> 31);
+                                            int i5 = 0;
+                                            while (i5 < i4) {
+                                                if ((j & 255) < 128) {
+                                                    i = i3;
+                                                    if (objArr[(i2 << 3) + i5] == ScopeInvalidated.INSTANCE) {
+                                                        break loop0;
+                                                    }
+                                                } else {
+                                                    i = i3;
                                                 }
-                                            } else {
-                                                i = i3;
+                                                j >>= i;
+                                                i5++;
+                                                i3 = i;
                                             }
-                                            j >>= i;
-                                            i5++;
-                                            i3 = i;
+                                            if (i4 != i3) {
+                                                break;
+                                            }
                                         }
-                                        if (i4 != i3) {
+                                        if (i2 == length) {
                                             break;
                                         }
+                                        i2++;
                                     }
-                                    if (i2 == length) {
-                                        break;
-                                    }
-                                    i2++;
                                 }
+                            } else if (obj2 == ScopeInvalidated.INSTANCE) {
                             }
-                        } else if (obj2 == ScopeInvalidated.INSTANCE) {
                         }
+                        ScopeMap.m4137addimpl(this.invalidations, recomposeScopeImpl, obj);
+                    } else {
+                        ScopeMap.m4154setimpl(mutableScatterMap, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
                     }
-                    ScopeMap.m4772addimpl(this.invalidations, recomposeScopeImpl, obj);
-                } else {
-                    ScopeMap.m4789setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
                 }
             }
             if (compositionImpl2 != null) {
@@ -1543,20 +1547,20 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
     }
 
     public final void removeObservation$runtime(Object obj, RecomposeScopeImpl recomposeScopeImpl) {
-        ScopeMap.m4785removeimpl(this.observations, obj, recomposeScopeImpl);
+        ScopeMap.m4150removeimpl(this.observations, obj, recomposeScopeImpl);
     }
 
     public final void removeDerivedStateObservation$runtime(DerivedState<?> derivedState) {
-        if (ScopeMap.m4779containsimpl(this.observations, derivedState)) {
+        if (ScopeMap.m4144containsimpl(this.observations, derivedState)) {
             return;
         }
-        ScopeMap.m4787removeScopeimpl(this.derivedStates, derivedState);
+        ScopeMap.m4152removeScopeimpl(this.derivedStates, derivedState);
     }
 
     /* renamed from: takeInvalidations-afanTW4 */
-    private final MutableScatterMap<Object, Object> m4601takeInvalidationsafanTW4() {
+    private final MutableScatterMap<Object, Object> m3984takeInvalidationsafanTW4() {
         MutableScatterMap<Object, Object> mutableScatterMap = this.invalidations;
-        this.invalidations = ScopeMap.m4778constructorimpl$default(null, 1, null);
+        this.invalidations = ScopeMap.m4143constructorimpl$default(null, 1, null);
         return mutableScatterMap;
     }
 
@@ -1631,9 +1635,9 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                     throw th;
                 }
             }
-            ScopeMap.m4776clearimpl(this.observations);
-            ScopeMap.m4776clearimpl(this.derivedStates);
-            ScopeMap.m4776clearimpl(this.invalidations);
+            ScopeMap.m4141clearimpl(this.observations);
+            ScopeMap.m4141clearimpl(this.derivedStates);
+            ScopeMap.m4141clearimpl(this.invalidations);
             this.changes.clear();
             this.lateChanges.clear();
             this.composer.deactivate$runtime();
@@ -1669,7 +1673,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
                         for (int i3 = 0; i3 < i2; i3++) {
                             if ((255 & j) < 128) {
                                 Object obj = objArr[(i << 3) + i3];
-                                if (ScopeMap.m4779containsimpl(this.observations, obj) || ScopeMap.m4779containsimpl(this.derivedStates, obj)) {
+                                if (ScopeMap.m4144containsimpl(this.observations, obj) || ScopeMap.m4144containsimpl(this.derivedStates, obj)) {
                                     break loop0;
                                 }
                             }
@@ -1687,7 +1691,7 @@ public final class CompositionImpl implements ControlledComposition, ReusableCom
             }
         } else {
             for (Object obj2 : set) {
-                if (ScopeMap.m4779containsimpl(this.observations, obj2) || ScopeMap.m4779containsimpl(this.derivedStates, obj2)) {
+                if (ScopeMap.m4144containsimpl(this.observations, obj2) || ScopeMap.m4144containsimpl(this.derivedStates, obj2)) {
                     return true;
                 }
                 while (r15.hasNext()) {

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0016¨\u0006\n"}, d2 = {"Lio/appmetrica/analytics/appsetid/internal/AppSetIdRetriever;", "Lio/appmetrica/analytics/appsetid/internal/IAppSetIdRetriever;", "Landroid/content/Context;", "context", "Lio/appmetrica/analytics/appsetid/internal/AppSetIdListener;", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "", "retrieveAppSetId", "<init>", "()V", "appsetid_release"}, k = 1, mv = {1, 6, 0})
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class AppSetIdRetriever implements IAppSetIdRetriever {
 
     /* renamed from: a  reason: collision with root package name */
@@ -43,10 +43,12 @@ public final class AppSetIdRetriever implements IAppSetIdRetriever {
                     list = appSetIdRetriever.b;
                     list.remove(this);
                 }
-                if (task.isSuccessful()) {
-                    appSetIdListener.onAppSetIdRetrieved(task.getResult().getId(), AppSetIdRetriever.access$convertScope(AppSetIdRetriever.this, task.getResult().getScope()));
+                boolean isSuccessful = task.isSuccessful();
+                AppSetIdListener appSetIdListener2 = appSetIdListener;
+                if (isSuccessful) {
+                    appSetIdListener2.onAppSetIdRetrieved(task.getResult().getId(), AppSetIdRetriever.access$convertScope(AppSetIdRetriever.this, task.getResult().getScope()));
                 } else {
-                    appSetIdListener.onFailure(task.getException());
+                    appSetIdListener2.onFailure(task.getException());
                 }
             }
         };

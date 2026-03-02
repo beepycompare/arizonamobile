@@ -37,7 +37,7 @@ public final class LifecycleController {
         finish();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void observer$lambda$0(LifecycleController lifecycleController, Job job, LifecycleOwner source, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(event, "<unused var>");

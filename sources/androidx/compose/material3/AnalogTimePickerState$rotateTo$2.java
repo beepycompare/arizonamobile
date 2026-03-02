@@ -48,7 +48,7 @@ public final class AnalogTimePickerState$rotateTo$2 extends SuspendLambda implem
         return ((AnalogTimePickerState$rotateTo$2) create(continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x00ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x00a9, code lost:
         if (r12.snapTo(kotlin.coroutines.jvm.internal.Boxing.boxFloat(r1), r11) == r0) goto L23;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -71,8 +71,9 @@ public final class AnalogTimePickerState$rotateTo$2 extends SuspendLambda implem
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            if (TimePickerSelectionMode.m3338equalsimpl0(this.this$0.mo1969getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m3342getHouryecRtBI())) {
-                AnalogTimePickerState analogTimePickerState = this.this$0;
+            boolean m2778equalsimpl0 = TimePickerSelectionMode.m2778equalsimpl0(this.this$0.mo1702getSelectionyecRtBI(), TimePickerSelectionMode.Companion.m2782getHouryecRtBI());
+            AnalogTimePickerState analogTimePickerState = this.this$0;
+            if (m2778equalsimpl0) {
                 hour = analogTimePickerState.toHour(this.$angle);
                 analogTimePickerState.hourAngle = (hour % 12) * 0.5235988f;
                 TimePickerState state = this.this$0.getState();
@@ -81,23 +82,23 @@ public final class AnalogTimePickerState$rotateTo$2 extends SuspendLambda implem
                 hour2 = analogTimePickerState2.toHour(f2);
                 state.setHour((hour2 % 12) + (TimePickerKt.isPm(this.this$0) ? 12 : 0));
             } else {
-                AnalogTimePickerState analogTimePickerState3 = this.this$0;
-                minute = analogTimePickerState3.toMinute(this.$angle);
-                analogTimePickerState3.minuteAngle = minute * 0.10471976f;
+                minute = analogTimePickerState.toMinute(this.$angle);
+                analogTimePickerState.minuteAngle = minute * 0.10471976f;
                 TimePickerState state2 = this.this$0.getState();
-                AnalogTimePickerState analogTimePickerState4 = this.this$0;
-                f = analogTimePickerState4.minuteAngle;
-                minute2 = analogTimePickerState4.toMinute(f);
+                AnalogTimePickerState analogTimePickerState3 = this.this$0;
+                f = analogTimePickerState3.minuteAngle;
+                minute2 = analogTimePickerState3.toMinute(f);
                 state2.setMinute(minute2);
             }
-            if (!this.$animate) {
-                animatable2 = this.this$0.anim;
+            boolean z = this.$animate;
+            AnalogTimePickerState analogTimePickerState4 = this.this$0;
+            if (!z) {
+                animatable2 = analogTimePickerState4.anim;
                 offsetAngle2 = this.this$0.offsetAngle(this.$angle);
                 this.label = 1;
             } else {
-                AnalogTimePickerState analogTimePickerState5 = this.this$0;
-                offsetAngle = analogTimePickerState5.offsetAngle(this.$angle);
-                endValueForAnimation = analogTimePickerState5.endValueForAnimation(offsetAngle);
+                offsetAngle = analogTimePickerState4.offsetAngle(this.$angle);
+                endValueForAnimation = analogTimePickerState4.endValueForAnimation(offsetAngle);
                 animatable = this.this$0.anim;
                 this.label = 2;
                 Object animateTo$default = Animatable.animateTo$default(animatable, Boxing.boxFloat(endValueForAnimation), this.$animationSpec, null, null, this, 12, null);

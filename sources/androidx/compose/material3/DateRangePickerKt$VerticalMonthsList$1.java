@@ -76,12 +76,12 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         this.$selectableDates = selectableDates;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float invoke$lambda$5$lambda$4$lambda$2() {
         return 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float invoke$lambda$5$lambda$4$lambda$3() {
         return 0.0f;
     }
@@ -113,9 +113,9 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);
         Strings.Companion companion = Strings.Companion;
-        String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_range_picker_scroll_to_previous_month), composer, 0);
+        String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_scroll_to_previous_month), composer, 0);
         Strings.Companion companion2 = Strings.Companion;
-        String m3697getString2EP1pXo2 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_range_picker_scroll_to_next_month), composer, 0);
+        String m3088getString2EP1pXo2 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_scroll_to_next_month), composer, 0);
         ComposerKt.sourceInformationMarkerStart(composer, 261262006, "CC(remember):DateRangePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$selectedStartDateMillis) | composer.changed(this.$selectedEndDateMillis) | composer.changed(this.$onDatesSelectionChange);
         final Long l = this.$selectedStartDateMillis;
@@ -126,16 +126,14 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$1$lambda$0(l, l2, function2, ((Long) obj).longValue());
-                    return invoke$lambda$1$lambda$0;
+                    return DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$1$lambda$0(l, l2, function2, ((Long) obj).longValue());
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         final Function1 function1 = (Function1) rememberedValue2;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        customScrollActions = DateRangePickerKt.customScrollActions(this.$lazyListState, coroutineScope, m3697getString2EP1pXo, m3697getString2EP1pXo2);
+        customScrollActions = DateRangePickerKt.customScrollActions(this.$lazyListState, coroutineScope, m3088getString2EP1pXo, m3088getString2EP1pXo2);
         Modifier.Companion companion3 = Modifier.Companion;
         ComposerKt.sourceInformationMarkerStart(composer, 261288524, "CC(remember):DateRangePicker.kt#9igjgp");
         Object rememberedValue3 = composer.rememberedValue();
@@ -143,9 +141,7 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
             rememberedValue3 = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$5$lambda$4;
-                    invoke$lambda$5$lambda$4 = DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4((SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$5$lambda$4;
+                    return DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4((SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue3);
@@ -169,9 +165,7 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
             Object obj = new Function1() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invoke$lambda$7$lambda$6;
-                    invoke$lambda$7$lambda$6 = DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$7$lambda$6(IntRange.this, calendarModel, calendarMonth, l3, l4, function1, calendarDate, datePickerFormatter, selectableDates, datePickerColors, customScrollActions, (LazyListScope) obj2);
-                    return invoke$lambda$7$lambda$6;
+                    return DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$7$lambda$6(IntRange.this, calendarModel, calendarMonth, l3, l4, function1, calendarDate, datePickerFormatter, selectableDates, datePickerColors, customScrollActions, (LazyListScope) obj2);
                 }
             };
             composer.updateRememberedValue(obj);
@@ -184,33 +178,29 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(Long l, Long l2, Function2 function2, long j) {
         DateRangePickerKt.updateDateSelection(j, l, l2, function2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$5$lambda$4(SemanticsPropertyReceiver semanticsPropertyReceiver) {
         SemanticsPropertiesKt.setVerticalScrollAxisRange(semanticsPropertyReceiver, new ScrollAxisRange(new Function0() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float invoke$lambda$5$lambda$4$lambda$2;
-                invoke$lambda$5$lambda$4$lambda$2 = DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4$lambda$2();
-                return Float.valueOf(invoke$lambda$5$lambda$4$lambda$2);
+                return Float.valueOf(DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4$lambda$2());
             }
         }, new Function0() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float invoke$lambda$5$lambda$4$lambda$3;
-                invoke$lambda$5$lambda$4$lambda$3 = DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4$lambda$3();
-                return Float.valueOf(invoke$lambda$5$lambda$4$lambda$3);
+                return Float.valueOf(DateRangePickerKt$VerticalMonthsList$1.invoke$lambda$5$lambda$4$lambda$3());
             }
         }, false, 4, null));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$7$lambda$6(IntRange intRange, final CalendarModel calendarModel, final CalendarMonth calendarMonth, final Long l, final Long l2, final Function1 function1, final CalendarDate calendarDate, final DatePickerFormatter datePickerFormatter, final SelectableDates selectableDates, final DatePickerColors datePickerColors, final List list, LazyListScope lazyListScope) {
         LazyListScope.items$default(lazyListScope, DatePickerKt.numberOfMonthsInRange(intRange), null, null, ComposableLambdaKt.composableLambdaInstance(682334170, true, new Function4<LazyItemScope, Integer, Composer, Integer, Unit>() { // from class: androidx.compose.material3.DateRangePickerKt$VerticalMonthsList$1$2$1$1
             @Override // kotlin.jvm.functions.Function4
@@ -269,15 +259,15 @@ public final class DateRangePickerKt$VerticalMonthsList$1 implements Function2<C
                 } else {
                     composer.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-                Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+                Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 185122771, "C857@38312L5,857@38319L653,857@38242L730,883@39764L602:DateRangePicker.kt#uh7d8r");

@@ -17,7 +17,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class F0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bb f575a = new Bb(C0136b4.l().d());
+    public final Bb f575a = new Bb(C0135b4.l().d());
     public final Cb b = new Cb();
     public final Eb c = new Eb();
 
@@ -25,8 +25,8 @@ public final class F0 {
         Bb bb = this.f575a;
         if (bb.c.a((Void) null).f1194a && bb.d.a(str).f1194a && bb.e.a(str2).f1194a && bb.f.a(str3).f1194a) {
             this.b.getClass();
-            IHandlerExecutor a2 = C0136b4.l().c.a();
-            ((C0747z9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.F0$$ExternalSyntheticLambda0
+            IHandlerExecutor a2 = C0135b4.l().c.a();
+            ((C0746z9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.F0$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     F0.a(F0.this, str, str2, str3);
@@ -38,7 +38,7 @@ public final class F0 {
     }
 
     public static final void a(F0 f0, String str, String str2, String str3) {
-        List<InterfaceC0587t> list;
+        List<InterfaceC0586t> list;
         Context a2;
         Eb eb = f0.c;
         eb.getClass();
@@ -58,14 +58,14 @@ public final class F0 {
         Map<String, Object> mutableMapOf = MapsKt.mutableMapOf(pairArr);
         ModuleEvent.Builder withName = ModuleEvent.newBuilder(4).withName("appmetrica_system_event_42");
         synchronized (eb) {
-            if (eb.f565a == null && (a2 = C0136b4.l().g.a()) != null) {
-                eb.f565a = CollectionsKt.listOf((Object[]) new InterfaceC0587t[]{new Pd(), new C0258fn(a2), new Jo()});
+            if (eb.f565a == null && (a2 = C0135b4.l().g.a()) != null) {
+                eb.f565a = CollectionsKt.listOf((Object[]) new InterfaceC0586t[]{new Pd(), new C0257fn(a2), new Jo()});
             }
             list = eb.f565a;
         }
         if (list != null) {
-            for (InterfaceC0587t interfaceC0587t : list) {
-                interfaceC0587t.a(mutableMapOf);
+            for (InterfaceC0586t interfaceC0586t : list) {
+                interfaceC0586t.a(mutableMapOf);
             }
         }
         ModulesFacade.reportEvent(withName.withAttributes(mutableMapOf).build());

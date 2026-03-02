@@ -59,7 +59,7 @@ public final class SelectableTextAnnotatedStringNode extends DelegatingNode impl
     }
 
     public /* synthetic */ SelectableTextAnnotatedStringNode(AnnotatedString annotatedString, TextStyle textStyle, FontFamily.Resolver resolver, Function1 function1, int i, boolean z, int i2, int i3, List list, Function1 function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize, Function1 function13, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m8193getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
+        this(annotatedString, textStyle, resolver, (i4 & 8) != 0 ? null : function1, (i4 & 16) != 0 ? TextOverflow.Companion.m7490getClipgIe3tQ8() : i, (i4 & 32) != 0 ? true : z, (i4 & 64) != 0 ? Integer.MAX_VALUE : i2, (i4 & 128) != 0 ? 1 : i3, (i4 & 256) != 0 ? null : list, (i4 & 512) != 0 ? null : function12, (i4 & 1024) != 0 ? null : selectionController, (i4 & 2048) != 0 ? null : colorProducer, (i4 & 4096) != 0 ? null : textAutoSize, (i4 & 8192) != 0 ? null : function13, null);
     }
 
     @Override // androidx.compose.ui.node.GlobalPositionAwareModifierNode
@@ -77,8 +77,8 @@ public final class SelectableTextAnnotatedStringNode extends DelegatingNode impl
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        return this.textAnnotatedStringNode.m1818measureNonExtension3p2s80s(measureScope, measurable, j);
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        return this.textAnnotatedStringNode.m1575measureNonExtension3p2s80s(measureScope, measurable, j);
     }
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
@@ -102,9 +102,9 @@ public final class SelectableTextAnnotatedStringNode extends DelegatingNode impl
     }
 
     /* renamed from: update-7NebLg4  reason: not valid java name */
-    public final void m1812update7NebLg4(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, Function1<? super TextLayoutResult, Unit> function1, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize) {
+    public final void m1574update7NebLg4(AnnotatedString annotatedString, TextStyle textStyle, List<AnnotatedString.Range<Placeholder>> list, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3, Function1<? super TextLayoutResult, Unit> function1, Function1<? super List<Rect>, Unit> function12, SelectionController selectionController, ColorProducer colorProducer, TextAutoSize textAutoSize) {
         TextAnnotatedStringNode textAnnotatedStringNode = this.textAnnotatedStringNode;
-        textAnnotatedStringNode.doInvalidations(textAnnotatedStringNode.updateDraw(colorProducer, textStyle), this.textAnnotatedStringNode.updateText$foundation(annotatedString), this.textAnnotatedStringNode.m1819updateLayoutRelatedArgsy0kMQk(textStyle, list, i, i2, z, resolver, i3, textAutoSize), this.textAnnotatedStringNode.updateCallbacks(function1, function12, selectionController, this.onShowTranslation));
+        textAnnotatedStringNode.doInvalidations(textAnnotatedStringNode.updateDraw(colorProducer, textStyle), this.textAnnotatedStringNode.updateText$foundation(annotatedString), this.textAnnotatedStringNode.m1576updateLayoutRelatedArgsy0kMQk(textStyle, list, i, i2, z, resolver, i3, textAutoSize), this.textAnnotatedStringNode.updateCallbacks(function1, function12, selectionController, this.onShowTranslation));
         this.selectionController = selectionController;
         LayoutModifierNodeKt.invalidateMeasurement(this);
     }

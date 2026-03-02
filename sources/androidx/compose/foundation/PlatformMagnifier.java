@@ -8,10 +8,10 @@ public interface PlatformMagnifier {
     void dismiss();
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    long mo403getSizeYbymL2g();
+    long mo352getSizeYbymL2g();
 
     /* renamed from: update-Wko1d7g  reason: not valid java name */
-    void mo404updateWko1d7g(long j, long j2, float f);
+    void mo353updateWko1d7g(long j, long j2, float f);
 
     void updateContent();
 }

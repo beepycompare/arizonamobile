@@ -137,24 +137,22 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            float m500calculateScrollDeltaI_oMVgE;
+            float m432calculateScrollDeltaI_oMVgE;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 final NestedScrollScope nestedScrollScope = (NestedScrollScope) this.L$0;
                 UpdatableAnimationState updatableAnimationState = this.$animationState;
-                m500calculateScrollDeltaI_oMVgE = this.this$0.m500calculateScrollDeltaI_oMVgE(this.$bringIntoViewSpec, this.f9x677d03b0);
-                updatableAnimationState.setValue(m500calculateScrollDeltaI_oMVgE);
+                m432calculateScrollDeltaI_oMVgE = this.this$0.m432calculateScrollDeltaI_oMVgE(this.$bringIntoViewSpec, this.f9x677d03b0);
+                updatableAnimationState.setValue(m432calculateScrollDeltaI_oMVgE);
                 final UpdatableAnimationState updatableAnimationState2 = this.$animationState;
                 final ContentInViewNode contentInViewNode = this.this$0;
                 final Job job = this.$animationJob;
                 Function1<? super Float, Unit> function1 = new Function1() { // from class: androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = ContentInViewNode$launchAnimation$2.AnonymousClass1.invokeSuspend$lambda$0(ContentInViewNode.this, updatableAnimationState2, job, nestedScrollScope, ((Float) obj2).floatValue());
-                        return invokeSuspend$lambda$0;
+                        return ContentInViewNode$launchAnimation$2.AnonymousClass1.invokeSuspend$lambda$0(ContentInViewNode.this, updatableAnimationState2, job, nestedScrollScope, ((Float) obj2).floatValue());
                     }
                 };
                 final ContentInViewNode contentInViewNode2 = this.this$0;
@@ -164,9 +162,7 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 if (updatableAnimationState2.animateToZero(function1, new Function0() { // from class: androidx.compose.foundation.gestures.ContentInViewNode$launchAnimation$2$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit invokeSuspend$lambda$1;
-                        invokeSuspend$lambda$1 = ContentInViewNode$launchAnimation$2.AnonymousClass1.invokeSuspend$lambda$1(ContentInViewNode.this, updatableAnimationState3, bringIntoViewSpec);
-                        return invokeSuspend$lambda$1;
+                        return ContentInViewNode$launchAnimation$2.AnonymousClass1.invokeSuspend$lambda$1(ContentInViewNode.this, updatableAnimationState3, bringIntoViewSpec);
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -179,28 +175,28 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(ContentInViewNode contentInViewNode, UpdatableAnimationState updatableAnimationState, Job job, NestedScrollScope nestedScrollScope, float f) {
             boolean z;
             ScrollingLogic scrollingLogic;
             z = contentInViewNode.reverseDirection;
             float f2 = z ? 1.0f : -1.0f;
             scrollingLogic = contentInViewNode.scrollingLogic;
-            float m672toFloatk4lQ0M = f2 * scrollingLogic.m672toFloatk4lQ0M(scrollingLogic.m670reverseIfNeededMKHz9U(nestedScrollScope.mo611scrollByOzD1aCk(scrollingLogic.m670reverseIfNeededMKHz9U(scrollingLogic.m673toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m6624getUserInputWNlRxjI())));
-            if (Math.abs(m672toFloatk4lQ0M) < Math.abs(f)) {
-                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m672toFloatk4lQ0M + " < " + f + ')', null, 2, null);
+            float m589toFloatk4lQ0M = f2 * scrollingLogic.m589toFloatk4lQ0M(scrollingLogic.m587reverseIfNeededMKHz9U(nestedScrollScope.mo530scrollByOzD1aCk(scrollingLogic.m587reverseIfNeededMKHz9U(scrollingLogic.m590toOffsettuRUvjQ(f2 * f)), NestedScrollSource.Companion.m5965getUserInputWNlRxjI())));
+            if (Math.abs(m589toFloatk4lQ0M) < Math.abs(f)) {
+                JobKt__JobKt.cancel$default(job, "Scroll animation cancelled because scroll was not consumed (" + m589toFloatk4lQ0M + " < " + f + ')', null, 2, null);
             }
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$1(ContentInViewNode contentInViewNode, UpdatableAnimationState updatableAnimationState, BringIntoViewSpec bringIntoViewSpec) {
             boolean z;
             ContentInViewNode contentInViewNode2;
             boolean z2;
-            float m500calculateScrollDeltaI_oMVgE;
+            float m432calculateScrollDeltaI_oMVgE;
             Rect focusedChildBounds;
-            boolean m504isMaxVisibleEQwtKw$default;
+            boolean m436isMaxVisibleEQwtKw$default;
             BringIntoViewRequestPriorityQueue bringIntoViewRequestPriorityQueue = contentInViewNode.bringIntoViewRequests;
             while (true) {
                 z = true;
@@ -211,31 +207,31 @@ public final class ContentInViewNode$launchAnimation$2 extends SuspendLambda imp
                 Rect invoke = ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.last()).getCurrentBounds().invoke();
                 if (invoke == null) {
                     contentInViewNode2 = contentInViewNode;
-                    m504isMaxVisibleEQwtKw$default = true;
+                    m436isMaxVisibleEQwtKw$default = true;
                 } else {
                     contentInViewNode2 = contentInViewNode;
-                    m504isMaxVisibleEQwtKw$default = ContentInViewNode.m504isMaxVisibleEQwtKw$default(contentInViewNode2, invoke, 0L, 0L, 3, null);
+                    m436isMaxVisibleEQwtKw$default = ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, invoke, 0L, 0L, 3, null);
                 }
-                if (!m504isMaxVisibleEQwtKw$default) {
+                if (!m436isMaxVisibleEQwtKw$default) {
                     break;
                 }
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m10243constructorimpl(unit));
+                ((ContentInViewNode.Request) bringIntoViewRequestPriorityQueue.requests.removeAt(bringIntoViewRequestPriorityQueue.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9182constructorimpl(unit));
                 contentInViewNode = contentInViewNode2;
             }
             z2 = contentInViewNode2.trackingFocusedChild;
             if (z2) {
                 focusedChildBounds = contentInViewNode2.getFocusedChildBounds();
-                if (focusedChildBounds == null || !ContentInViewNode.m504isMaxVisibleEQwtKw$default(contentInViewNode2, focusedChildBounds, 0L, 0L, 3, null)) {
+                if (focusedChildBounds == null || !ContentInViewNode.m436isMaxVisibleEQwtKw$default(contentInViewNode2, focusedChildBounds, 0L, 0L, 3, null)) {
                     z = false;
                 }
                 if (z) {
                     contentInViewNode2.trackingFocusedChild = false;
                 }
             }
-            m500calculateScrollDeltaI_oMVgE = contentInViewNode2.m500calculateScrollDeltaI_oMVgE(bringIntoViewSpec, IntOffset.Companion.m8397getZeronOccac());
-            updatableAnimationState.setValue(m500calculateScrollDeltaI_oMVgE);
+            m432calculateScrollDeltaI_oMVgE = contentInViewNode2.m432calculateScrollDeltaI_oMVgE(bringIntoViewSpec, IntOffset.Companion.m7694getZeronOccac());
+            updatableAnimationState.setValue(m432calculateScrollDeltaI_oMVgE);
             return Unit.INSTANCE;
         }
     }

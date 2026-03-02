@@ -25,9 +25,9 @@ public final class AndroidPrefetchScheduler implements PrefetchScheduler, Priori
     private final PriorityQueue<PriorityTask> prefetchRequests = new PriorityQueue<>(11, new Comparator() { // from class: androidx.compose.foundation.lazy.layout.AndroidPrefetchScheduler$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int prefetchRequests$lambda$0;
-            prefetchRequests$lambda$0 = AndroidPrefetchScheduler.prefetchRequests$lambda$0((PriorityTask) obj, (PriorityTask) obj2);
-            return prefetchRequests$lambda$0;
+            int compare;
+            compare = Intrinsics.compare(((PriorityTask) obj2).getPriority(), ((PriorityTask) obj).getPriority());
+            return compare;
         }
     });
     private final Choreographer choreographer = Choreographer.getInstance();
@@ -40,11 +40,6 @@ public final class AndroidPrefetchScheduler implements PrefetchScheduler, Priori
         if (view.isAttachedToWindow()) {
             onViewAttachedToWindow(view);
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final int prefetchRequests$lambda$0(PriorityTask priorityTask, PriorityTask priorityTask2) {
-        return Intrinsics.compare(priorityTask2.getPriority(), priorityTask.getPriority());
     }
 
     @Override // java.lang.Runnable

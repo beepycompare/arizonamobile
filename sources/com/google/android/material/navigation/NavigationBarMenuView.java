@@ -698,10 +698,11 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
     }
 
     public void setItemOnTouchListener(int i, View.OnTouchListener onTouchListener) {
+        SparseArray<View.OnTouchListener> sparseArray = this.onTouchListeners;
         if (onTouchListener == null) {
-            this.onTouchListeners.remove(i);
+            sparseArray.remove(i);
         } else {
-            this.onTouchListeners.put(i, onTouchListener);
+            sparseArray.put(i, onTouchListener);
         }
         NavigationBarMenuItemView[] navigationBarMenuItemViewArr = this.buttons;
         if (navigationBarMenuItemViewArr != null) {

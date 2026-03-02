@@ -54,37 +54,37 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class DefaultTextContextMenuDropdownProvider_androidKt {
     private static final PopupProperties DefaultPopupProperties = new PopupProperties(true, false, false, false, 14, (DefaultConstructorMarker) null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DefaultTextContextMenuDropdown$lambda$1(TextContextMenuSession textContextMenuSession, TextContextMenuData textContextMenuData, int i, Composer composer, int i2) {
         DefaultTextContextMenuDropdown(textContextMenuSession, textContextMenuData, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconBox_RPmYEkk$lambda$1(int i, long j, int i2, Composer composer, int i3) {
-        m1494IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m1305IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconBox_RPmYEkk$lambda$3(int i, long j, int i2, Composer composer, int i3) {
-        m1494IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m1305IconBoxRPmYEkk(i, j, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit OpenContextMenu$lambda$3(TextContextMenuSession textContextMenuSession, TextContextMenuDataProvider textContextMenuDataProvider, Function0 function0, int i, Composer composer, int i2) {
         OpenContextMenu(textContextMenuSession, textContextMenuDataProvider, function0, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ProvideDefaultTextContextMenuDropdown$lambda$0(Function2 function2, int i, Composer composer, int i2) {
         ProvideDefaultTextContextMenuDropdown(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ProvideDefaultTextContextMenuDropdown$lambda$1(Modifier modifier, Function2 function2, int i, Composer composer, int i2) {
         ProvideDefaultTextContextMenuDropdown(modifier, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -115,9 +115,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ProvideDefaultTextContextMenuDropdown$lambda$0;
-                    ProvideDefaultTextContextMenuDropdown$lambda$0 = DefaultTextContextMenuDropdownProvider_androidKt.ProvideDefaultTextContextMenuDropdown$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ProvideDefaultTextContextMenuDropdown$lambda$0;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.ProvideDefaultTextContextMenuDropdown$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -157,9 +155,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit ProvideDefaultTextContextMenuDropdown$lambda$1;
-                    ProvideDefaultTextContextMenuDropdown$lambda$1 = DefaultTextContextMenuDropdownProvider_androidKt.ProvideDefaultTextContextMenuDropdown$lambda$1(Modifier.this, function22, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return ProvideDefaultTextContextMenuDropdown$lambda$1;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.ProvideDefaultTextContextMenuDropdown$lambda$1(Modifier.this, function22, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -170,7 +166,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1197778906, i, -1, "androidx.compose.foundation.text.contextmenu.internal.defaultTextContextMenuDropdown (DefaultTextContextMenuDropdownProvider.android.kt:98)");
         }
-        BasicTextContextMenuProvider basicTextContextMenuProvider = BasicTextContextMenuProviderKt.basicTextContextMenuProvider(ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt.INSTANCE.m1488getLambda$1357803046$foundation(), composer, 6);
+        BasicTextContextMenuProvider basicTextContextMenuProvider = BasicTextContextMenuProviderKt.basicTextContextMenuProvider(ComposableSingletons$DefaultTextContextMenuDropdownProvider_androidKt.INSTANCE.m1301getLambda$1357803046$foundation(), composer, 6);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -237,9 +233,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             AndroidPopup_androidKt.Popup(maintainWindowPositionPopupPositionProvider, (Function0) rememberedValue2, DefaultPopupProperties, ComposableLambdaKt.rememberComposableLambda(1315155414, true, new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit OpenContextMenu$lambda$2;
-                    OpenContextMenu$lambda$2 = DefaultTextContextMenuDropdownProvider_androidKt.OpenContextMenu$lambda$2(TextContextMenuDataProvider.this, textContextMenuSession, (Composer) obj, ((Integer) obj2).intValue());
-                    return OpenContextMenu$lambda$2;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.OpenContextMenu$lambda$2(TextContextMenuDataProvider.this, textContextMenuSession, (Composer) obj, ((Integer) obj2).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, 3456, 0);
             if (ComposerKt.isTraceInProgress()) {
@@ -251,9 +245,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit OpenContextMenu$lambda$3;
-                    OpenContextMenu$lambda$3 = DefaultTextContextMenuDropdownProvider_androidKt.OpenContextMenu$lambda$3(TextContextMenuSession.this, textContextMenuDataProvider, function0, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return OpenContextMenu$lambda$3;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.OpenContextMenu$lambda$3(TextContextMenuSession.this, textContextMenuDataProvider, function0, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -261,7 +253,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset OpenContextMenu$lambda$0$0(TextContextMenuDataProvider textContextMenuDataProvider, Function0 function0) {
-        return IntOffset.m8377boximpl(IntOffsetKt.m8403roundk4lQ0M(textContextMenuDataProvider.mo1514positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
+        return IntOffset.m7674boximpl(IntOffsetKt.m7700roundk4lQ0M(textContextMenuDataProvider.mo1319positiontuRUvjQ((LayoutCoordinates) function0.invoke())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -270,7 +262,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit OpenContextMenu$lambda$2(TextContextMenuDataProvider textContextMenuDataProvider, TextContextMenuSession textContextMenuSession, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C124@5506L61,125@5576L45:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -359,9 +351,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DefaultTextContextMenuDropdown$lambda$1;
-                    DefaultTextContextMenuDropdown$lambda$1 = DefaultTextContextMenuDropdownProvider_androidKt.DefaultTextContextMenuDropdown$lambda$1(TextContextMenuSession.this, textContextMenuData, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DefaultTextContextMenuDropdown$lambda$1;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.DefaultTextContextMenuDropdown$lambda$1(TextContextMenuSession.this, textContextMenuData, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -387,12 +377,12 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                 }, null, false, ((TextContextMenuItem) textContextMenuComponent).getLeadingIcon() == 0 ? null : ComposableLambdaKt.composableLambdaInstance(-1930700965, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$DefaultTextContextMenuDropdown$1$1$1$2
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                        m1496invokeek8zF_U(color.m5434unboximpl(), composer, num.intValue());
+                        m1307invokeek8zF_U(color.m4782unboximpl(), composer, num.intValue());
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                    public final void m1496invokeek8zF_U(long j, Composer composer, int i2) {
+                    public final void m1307invokeek8zF_U(long j, Composer composer, int i2) {
                         ComposerKt.sourceInformation(composer, "CN(color:c#ui.graphics.Color)150@6375L37:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                         if ((i2 & 6) == 0) {
                             i2 |= composer.changed(j) ? 4 : 2;
@@ -404,7 +394,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1930700965, i2, -1, "androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdown.<anonymous>.<anonymous>.<anonymous>.<anonymous> (DefaultTextContextMenuDropdownProvider.android.kt:150)");
                         }
-                        DefaultTextContextMenuDropdownProvider_androidKt.m1494IconBoxRPmYEkk(((TextContextMenuItem) TextContextMenuComponent.this).getLeadingIcon(), j, composer, (i2 << 3) & 112);
+                        DefaultTextContextMenuDropdownProvider_androidKt.m1305IconBoxRPmYEkk(((TextContextMenuItem) TextContextMenuComponent.this).getLeadingIcon(), j, composer, (i2 << 3) & 112);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -455,7 +445,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: IconBox-RPmYEkk  reason: not valid java name */
-    public static final void m1494IconBoxRPmYEkk(final int i, final long j, Composer composer, final int i2) {
+    public static final void m1305IconBoxRPmYEkk(final int i, final long j, Composer composer, final int i2) {
         int i3;
         ScopeUpdateScope endRestartGroup;
         Function2<? super Composer, ? super Integer, Unit> function2;
@@ -497,9 +487,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
                     function2 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda8
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit IconBox_RPmYEkk$lambda$1;
-                            IconBox_RPmYEkk$lambda$1 = DefaultTextContextMenuDropdownProvider_androidKt.IconBox_RPmYEkk$lambda$1(i, j, i2, (Composer) obj, ((Integer) obj2).intValue());
-                            return IconBox_RPmYEkk$lambda$1;
+                            return DefaultTextContextMenuDropdownProvider_androidKt.IconBox_RPmYEkk$lambda$1(i, j, i2, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     };
                     endRestartGroup.updateScope(function2);
@@ -511,11 +499,11 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             boolean z = (i3 & 112) == 32;
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (z || rememberedValue2 == Composer.Companion.getEmpty()) {
-                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m5465tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
+                rememberedValue2 = j == 16 ? null : ColorFilter.Companion.m4813tintxETnrds$default(ColorFilter.Companion, j, 0, 2, null);
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BoxKt.Box(PainterModifierKt.paint$default(SizeKt.m976size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m436getIconSizeD9Ej5fM()), painterResource, false, null, ContentScale.Companion.getFit(), 0.0f, (ColorFilter) rememberedValue2, 22, null), startRestartGroup, 0);
+            BoxKt.Box(PainterModifierKt.paint$default(SizeKt.m864size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m381getIconSizeD9Ej5fM()), painterResource, false, null, ContentScale.Companion.getFit(), 0.0f, (ColorFilter) rememberedValue2, 22, null), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -525,9 +513,7 @@ public final class DefaultTextContextMenuDropdownProvider_androidKt {
             function2 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.DefaultTextContextMenuDropdownProvider_androidKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit IconBox_RPmYEkk$lambda$3;
-                    IconBox_RPmYEkk$lambda$3 = DefaultTextContextMenuDropdownProvider_androidKt.IconBox_RPmYEkk$lambda$3(i, j, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return IconBox_RPmYEkk$lambda$3;
+                    return DefaultTextContextMenuDropdownProvider_androidKt.IconBox_RPmYEkk$lambda$3(i, j, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             endRestartGroup.updateScope(function2);

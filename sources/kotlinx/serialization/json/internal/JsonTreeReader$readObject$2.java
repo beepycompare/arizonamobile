@@ -6,10 +6,13 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonTreeReader.kt */
-@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader", f = "JsonTreeReader.kt", i = {0, 0, 0, 0}, l = {24}, m = "readObject", n = {"$this$readObject", "this_$iv", "result$iv", "key$iv"}, s = {"L$0", "L$1", "L$2", "L$3"})
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.serialization.json.internal.JsonTreeReader", f = "JsonTreeReader.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {22}, m = "readObject", n = {"$this$readObject", "this_$iv", "result$iv", "key$iv", "$i$f$readObjectImpl", "lastToken$iv", "$i$a$-readObjectImpl-JsonTreeReader$readObject$3"}, nl = {127}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "B$0", "I$1"}, v = 2)
 /* loaded from: classes5.dex */
 public final class JsonTreeReader$readObject$2 extends ContinuationImpl {
+    byte B$0;
+    int I$0;
+    int I$1;
     Object L$0;
     Object L$1;
     Object L$2;

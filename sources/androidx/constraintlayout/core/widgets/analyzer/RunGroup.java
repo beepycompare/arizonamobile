@@ -103,10 +103,11 @@ public class RunGroup {
             if (contains) {
                 return Math.max(traverseStart(this.mFirstRun.start, this.mFirstRun.start.mMargin), this.mFirstRun.start.mMargin + wrapDimension);
             }
+            WidgetRun widgetRun2 = this.mFirstRun;
             if (contains2) {
-                return Math.max(-traverseEnd(this.mFirstRun.end, this.mFirstRun.end.mMargin), (-this.mFirstRun.end.mMargin) + wrapDimension);
+                return Math.max(-traverseEnd(widgetRun2.end, this.mFirstRun.end.mMargin), (-this.mFirstRun.end.mMargin) + wrapDimension);
             }
-            return (this.mFirstRun.start.mMargin + this.mFirstRun.getWrapDimension()) - this.mFirstRun.end.mMargin;
+            return (widgetRun2.start.mMargin + this.mFirstRun.getWrapDimension()) - this.mFirstRun.end.mMargin;
         }
         long traverseStart = traverseStart(this.mFirstRun.start, 0L);
         long traverseEnd = traverseEnd(this.mFirstRun.end, 0L);

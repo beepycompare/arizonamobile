@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ApiMetadata extends AbstractSafeParcelable {
     public static final ApiMetadata zza;
@@ -15,7 +15,7 @@ public final class ApiMetadata extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ApiMetadata> CREATOR = zza.zza();
     private static final ApiMetadata zzb = newBuilder().build();
 
-    /* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+    /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
     /* loaded from: classes4.dex */
     public static final class Builder {
         private ComplianceOptions zza;

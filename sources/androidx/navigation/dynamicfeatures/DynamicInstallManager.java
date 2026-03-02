@@ -98,9 +98,7 @@ public class DynamicInstallManager {
         final Function1 function1 = new Function1() { // from class: androidx.navigation.dynamicfeatures.DynamicInstallManager$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit requestInstall$lambda$2;
-                requestInstall$lambda$2 = DynamicInstallManager.requestInstall$lambda$2(DynamicInstallMonitor.this, this, mutableLiveData, str, (Integer) obj);
-                return requestInstall$lambda$2;
+                return DynamicInstallManager.requestInstall$lambda$2(DynamicInstallMonitor.this, this, mutableLiveData, str, (Integer) obj);
             }
         };
         startInstall.addOnSuccessListener(new OnSuccessListener() { // from class: androidx.navigation.dynamicfeatures.DynamicInstallManager$$ExternalSyntheticLambda1
@@ -116,7 +114,7 @@ public class DynamicInstallManager {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit requestInstall$lambda$2(DynamicInstallMonitor dynamicInstallMonitor, DynamicInstallManager dynamicInstallManager, MutableLiveData mutableLiveData, String str, Integer num) {
         Intrinsics.checkNotNull(num);
         dynamicInstallMonitor.setSessionId$navigation_dynamic_features_runtime_release(num.intValue());
@@ -130,7 +128,7 @@ public class DynamicInstallManager {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void requestInstall$lambda$4(String str, DynamicInstallMonitor dynamicInstallMonitor, MutableLiveData mutableLiveData, Exception exception) {
         Intrinsics.checkNotNullParameter(exception, "exception");
         Log.i("DynamicInstallManager", "Error requesting install of " + str + ": " + exception.getMessage());

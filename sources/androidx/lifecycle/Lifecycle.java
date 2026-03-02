@@ -46,7 +46,7 @@ public abstract class Lifecycle {
         return FlowKt.asStateFlow(MutableStateFlow);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _get_currentStateFlow_$lambda$0(MutableStateFlow mutableStateFlow, LifecycleOwner lifecycleOwner, Event event) {
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<unused var>");
         Intrinsics.checkNotNullParameter(event, "event");

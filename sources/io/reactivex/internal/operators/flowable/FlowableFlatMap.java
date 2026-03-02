@@ -657,10 +657,12 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
 
         @Override // org.reactivestreams.Subscriber
         public void onNext(U u) {
-            if (this.fusionMode != 2) {
-                this.parent.tryEmit(u, this);
+            int i = this.fusionMode;
+            MergeSubscriber<T, U> mergeSubscriber = this.parent;
+            if (i != 2) {
+                mergeSubscriber.tryEmit(u, this);
             } else {
-                this.parent.drain();
+                mergeSubscriber.drain();
             }
         }
 

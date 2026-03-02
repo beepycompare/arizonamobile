@@ -133,10 +133,18 @@ public final class zzp implements ServiceConnection {
             zzsVar.zzc(zztVar);
         }
         this.zzd.clear();
-        for (int i3 = 0; i3 < this.zze.size(); i3++) {
-            ((zzs) this.zze.valueAt(i3)).zzc(zztVar);
+        int i3 = 0;
+        while (true) {
+            int size = this.zze.size();
+            SparseArray sparseArray = this.zze;
+            if (i3 >= size) {
+                sparseArray.clear();
+                return;
+            } else {
+                ((zzs) sparseArray.valueAt(i3)).zzc(zztVar);
+                i3++;
+            }
         }
-        this.zze.clear();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

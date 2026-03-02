@@ -1006,17 +1006,16 @@ public class ConstraintWidget {
         int i = this.mWidth;
         int i2 = 0;
         if (this.mListDimensionBehaviors[0] == DimensionBehaviour.MATCH_CONSTRAINT) {
-            if (this.mMatchConstraintDefaultWidth == 1) {
-                i2 = Math.max(this.mMatchConstraintMinWidth, i);
-            } else {
-                int i3 = this.mMatchConstraintMinWidth;
-                if (i3 > 0) {
-                    this.mWidth = i3;
-                    i2 = i3;
-                }
+            int i3 = this.mMatchConstraintDefaultWidth;
+            int i4 = this.mMatchConstraintMinWidth;
+            if (i3 == 1) {
+                i2 = Math.max(i4, i);
+            } else if (i4 > 0) {
+                this.mWidth = i4;
+                i2 = i4;
             }
-            int i4 = this.mMatchConstraintMaxWidth;
-            return (i4 <= 0 || i4 >= i2) ? i2 : i4;
+            int i5 = this.mMatchConstraintMaxWidth;
+            return (i5 <= 0 || i5 >= i2) ? i2 : i5;
         }
         return i;
     }
@@ -1024,20 +1023,17 @@ public class ConstraintWidget {
     public int getOptimizerWrapHeight() {
         int i = this.mHeight;
         if (this.mListDimensionBehaviors[1] == DimensionBehaviour.MATCH_CONSTRAINT) {
-            if (this.mMatchConstraintDefaultHeight == 1) {
-                i = Math.max(this.mMatchConstraintMinHeight, i);
+            int i2 = this.mMatchConstraintDefaultHeight;
+            int i3 = this.mMatchConstraintMinHeight;
+            if (i2 == 1) {
+                i3 = Math.max(i3, i);
+            } else if (i3 > 0) {
+                this.mHeight = i3;
             } else {
-                i = this.mMatchConstraintMinHeight;
-                if (i > 0) {
-                    this.mHeight = i;
-                } else {
-                    i = 0;
-                }
+                i3 = 0;
             }
-            int i2 = this.mMatchConstraintMaxHeight;
-            if (i2 > 0 && i2 < i) {
-                return i2;
-            }
+            int i4 = this.mMatchConstraintMaxHeight;
+            return (i4 <= 0 || i4 >= i3) ? i3 : i4;
         }
         return i;
     }
@@ -1892,8 +1888,8 @@ public class ConstraintWidget {
     /* JADX WARN: Removed duplicated region for block: B:271:0x04bd  */
     /* JADX WARN: Removed duplicated region for block: B:273:0x04c0  */
     /* JADX WARN: Removed duplicated region for block: B:312:0x05a1  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x05d3  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x05fa  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x05d1  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x05f8  */
     /* JADX WARN: Removed duplicated region for block: B:325:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:39:0x007d  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00ae  */
@@ -2241,10 +2237,12 @@ public class ConstraintWidget {
                                             constraintWidget3 = this;
                                         }
                                         if (z14) {
-                                            if (constraintWidget3.mResolvedDimensionRatioSide == 1) {
-                                                linearSystem.addRatio(solverVariable11, solverVariable10, solverVariable3, solverVariable2, constraintWidget3.mResolvedDimensionRatio, 8);
+                                            int i26 = constraintWidget3.mResolvedDimensionRatioSide;
+                                            float f3 = constraintWidget3.mResolvedDimensionRatio;
+                                            if (i26 == 1) {
+                                                linearSystem.addRatio(solverVariable11, solverVariable10, solverVariable3, solverVariable2, f3, 8);
                                             } else {
-                                                linearSystem.addRatio(solverVariable3, solverVariable2, solverVariable11, solverVariable10, constraintWidget3.mResolvedDimensionRatio, 8);
+                                                linearSystem.addRatio(solverVariable3, solverVariable2, solverVariable11, solverVariable10, f3, 8);
                                                 linearSystem2 = linearSystem;
                                                 if (constraintWidget3.mCenter.isConnected()) {
                                                     linearSystem2.addCenterPoint(constraintWidget3, constraintWidget3.mCenter.getTarget().getOwner(), (float) Math.toRadians(constraintWidget3.mCircleConstraintAngle + 90.0f), constraintWidget3.mCenter.getMargin());

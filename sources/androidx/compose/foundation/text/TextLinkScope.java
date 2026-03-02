@@ -78,13 +78,13 @@ public final class TextLinkScope {
     private AnnotatedString text;
     private final MutableState textLayoutResult$delegate;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LinksComposables$lambda$1(TextLinkScope textLinkScope, int i, Composer composer, int i2) {
         textLinkScope.LinksComposables(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit StyleAnnotation$lambda$1(TextLinkScope textLinkScope, Object[] objArr, Function1 function1, int i, Composer composer, int i2) {
         textLinkScope.StyleAnnotation(objArr, function1, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -98,9 +98,7 @@ public final class TextLinkScope {
         this.text = annotatedString.flatMapAnnotations(new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List _init_$lambda$0;
-                _init_$lambda$0 = TextLinkScope._init_$lambda$0((AnnotatedString.Range) obj);
-                return _init_$lambda$0;
+                return TextLinkScope._init_$lambda$0((AnnotatedString.Range) obj);
             }
         });
         this.annotators = SnapshotStateKt.mutableStateListOf();
@@ -126,7 +124,7 @@ public final class TextLinkScope {
         this.text = annotatedString;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List _init_$lambda$0(AnnotatedString.Range range) {
         ArrayList arrayListOf;
         boolean isNullOrEmpty;
@@ -153,7 +151,7 @@ public final class TextLinkScope {
         return arrayListOf;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _get_shouldMeasureLinks_$lambda$0(TextLinkScope textLinkScope) {
         TextLayoutInput layoutInput;
         AnnotatedString annotatedString = textLinkScope.text;
@@ -165,9 +163,7 @@ public final class TextLinkScope {
         return new Function0() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean _get_shouldMeasureLinks_$lambda$0;
-                _get_shouldMeasureLinks_$lambda$0 = TextLinkScope._get_shouldMeasureLinks_$lambda$0(TextLinkScope.this);
-                return Boolean.valueOf(_get_shouldMeasureLinks_$lambda$0);
+                return Boolean.valueOf(TextLinkScope._get_shouldMeasureLinks_$lambda$0(TextLinkScope.this));
             }
         };
     }
@@ -176,14 +172,12 @@ public final class TextLinkScope {
         return modifier.then(new TextRangeLayoutModifier(new TextRangeScopeMeasurePolicy() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda3
             @Override // androidx.compose.foundation.text.TextRangeScopeMeasurePolicy
             public final TextRangeLayoutMeasureResult measure(TextRangeLayoutMeasureScope textRangeLayoutMeasureScope) {
-                TextRangeLayoutMeasureResult textRange$lambda$0;
-                textRange$lambda$0 = TextLinkScope.textRange$lambda$0(TextLinkScope.this, range, textRangeLayoutMeasureScope);
-                return textRange$lambda$0;
+                return TextLinkScope.textRange$lambda$0(TextLinkScope.this, range, textRangeLayoutMeasureScope);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextRangeLayoutMeasureResult textRange$lambda$0(TextLinkScope textLinkScope, AnnotatedString.Range range, TextRangeLayoutMeasureScope textRangeLayoutMeasureScope) {
         TextLayoutResult textLayoutResult = textLinkScope.getTextLayoutResult();
         if (textLayoutResult == null) {
@@ -220,31 +214,29 @@ public final class TextLinkScope {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$0$0() {
-        return IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac());
+        return IntOffset.m7674boximpl(IntOffset.Companion.m7694getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$0$1() {
-        return IntOffset.m8377boximpl(IntOffset.Companion.m8397getZeronOccac());
+        return IntOffset.m7674boximpl(IntOffset.Companion.m7694getZeronOccac());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final IntOffset textRange$lambda$0$2(IntRect intRect) {
-        return IntOffset.m8377boximpl(intRect.m8415getTopLeftnOccac());
+        return IntOffset.m7674boximpl(intRect.m7712getTopLeftnOccac());
     }
 
     private final Modifier clipLink(Modifier modifier, final AnnotatedString.Range<LinkAnnotation> range) {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit clipLink$lambda$0;
-                clipLink$lambda$0 = TextLinkScope.clipLink$lambda$0(TextLinkScope.this, range, (GraphicsLayerScope) obj);
-                return clipLink$lambda$0;
+                return TextLinkScope.clipLink$lambda$0(TextLinkScope.this, range, (GraphicsLayerScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit clipLink$lambda$0(TextLinkScope textLinkScope, AnnotatedString.Range range, GraphicsLayerScope graphicsLayerScope) {
         Shape shapeForRange = textLinkScope.shapeForRange(range);
         if (shapeForRange != null) {
@@ -259,7 +251,7 @@ public final class TextLinkScope {
         return pathForRangeInRangeCoordinates != null ? new Shape() { // from class: androidx.compose.foundation.text.TextLinkScope$shapeForRange$1$1
             @Override // androidx.compose.ui.graphics.Shape
             /* renamed from: createOutline-Pq9zytI */
-            public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+            public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
                 return new Outline.Generic(Path.this);
             }
         } : null;
@@ -277,7 +269,7 @@ public final class TextLinkScope {
                 path = textLayoutResult.getPathForRange(calculateVisibleLinkRange.getStart(), calculateVisibleLinkRange.getEnd());
                 Rect boundingBox = textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getStart());
                 float min = textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getStart()) == textLayoutResult.getLineForOffset(calculateVisibleLinkRange.getEnd() + (-1)) ? Math.min(textLayoutResult.getBoundingBox(calculateVisibleLinkRange.getEnd() - 1).getLeft(), boundingBox.getLeft()) : 0.0f;
-                path.mo5316translatek4lQ0M(Offset.m5171constructorimpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
+                path.mo4664translatek4lQ0M(Offset.m4519constructorimpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(min) << 32) | (Float.floatToRawIntBits(boundingBox.getTop()) & 4294967295L)) ^ (-9223372034707292160L)));
             }
             return path;
         }
@@ -365,7 +357,7 @@ public final class TextLinkScope {
                         startRestartGroup.updateRememberedValue(rememberedValue3);
                     }
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    BoxKt.Box(ClickableKt.m346combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
+                    BoxKt.Box(ClickableKt.m303combinedClickableauXiCPI$default(pointerHoverIcon$default, mutableInteractionSource, null, false, null, null, null, null, null, false, rememberedValue3, TypedValues.PositionType.TYPE_CURVE_FIT, null), startRestartGroup, 0);
                     isNullOrEmpty = TextLinkScopeKt.isNullOrEmpty(range.getItem().getStyles());
                     if (isNullOrEmpty) {
                         startRestartGroup.startReplaceGroup(716130110);
@@ -432,9 +424,7 @@ public final class TextLinkScope {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LinksComposables$lambda$1;
-                    LinksComposables$lambda$1 = TextLinkScope.LinksComposables$lambda$1(TextLinkScope.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LinksComposables$lambda$1;
+                    return TextLinkScope.LinksComposables$lambda$1(TextLinkScope.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -558,9 +548,7 @@ public final class TextLinkScope {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.TextLinkScope$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit StyleAnnotation$lambda$1;
-                    StyleAnnotation$lambda$1 = TextLinkScope.StyleAnnotation$lambda$1(TextLinkScope.this, objArr, function1, i, (Composer) obj2, ((Integer) obj3).intValue());
-                    return StyleAnnotation$lambda$1;
+                    return TextLinkScope.StyleAnnotation$lambda$1(TextLinkScope.this, objArr, function1, i, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }

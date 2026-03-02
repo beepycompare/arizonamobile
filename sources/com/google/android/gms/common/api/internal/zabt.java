@@ -34,12 +34,13 @@ final class zabt implements Runnable {
         if (this.zaa.isSuccess()) {
             this.zab.zaf = true;
             client = this.zab.zab;
-            if (client.requiresSignIn()) {
-                this.zab.zah();
+            boolean requiresSignIn = client.requiresSignIn();
+            zabu zabuVar2 = this.zab;
+            if (requiresSignIn) {
+                zabuVar2.zah();
                 return;
             }
             try {
-                zabu zabuVar2 = this.zab;
                 client3 = zabuVar2.zab;
                 client4 = zabuVar2.zab;
                 client3.getRemoteService(null, client4.getScopesForConnectionlessNonSignIn());

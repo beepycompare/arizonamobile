@@ -45,7 +45,7 @@ public final class DatePickerKt$DatePicker$6 implements Function2<Composer, Inte
         }
         Long selectedDateMillis = this.$state.getSelectedDateMillis();
         long displayedMonthMillis = this.$state.getDisplayedMonthMillis();
-        int mo2328getDisplayModejFl4v0 = this.$state.mo2328getDisplayModejFl4v0();
+        int mo1996getDisplayModejFl4v0 = this.$state.mo1996getDisplayModejFl4v0();
         ComposerKt.sourceInformationMarkerStart(composer, -1589289911, "CC(remember):DatePicker.kt#9igjgp");
         boolean changed = composer.changed(this.$state);
         final DatePickerState datePickerState = this.$state;
@@ -54,9 +54,7 @@ public final class DatePickerKt$DatePicker$6 implements Function2<Composer, Inte
             rememberedValue = new Function1() { // from class: androidx.compose.material3.DatePickerKt$DatePicker$6$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = DatePickerKt$DatePicker$6.invoke$lambda$1$lambda$0(DatePickerState.this, (Long) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return DatePickerKt$DatePicker$6.invoke$lambda$1$lambda$0(DatePickerState.this, (Long) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -71,27 +69,25 @@ public final class DatePickerKt$DatePicker$6 implements Function2<Composer, Inte
             rememberedValue2 = new Function1() { // from class: androidx.compose.material3.DatePickerKt$DatePicker$6$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$3$lambda$2;
-                    invoke$lambda$3$lambda$2 = DatePickerKt$DatePicker$6.invoke$lambda$3$lambda$2(DatePickerState.this, ((Long) obj).longValue());
-                    return invoke$lambda$3$lambda$2;
+                    return DatePickerKt$DatePicker$6.invoke$lambda$3$lambda$2(DatePickerState.this, ((Long) obj).longValue());
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DatePickerKt.m2321SwitchableDateEntryContentKaiTk9E(selectedDateMillis, displayedMonthMillis, mo2328getDisplayModejFl4v0, function1, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
+        DatePickerKt.m1992SwitchableDateEntryContentKaiTk9E(selectedDateMillis, displayedMonthMillis, mo1996getDisplayModejFl4v0, function1, (Function1) rememberedValue2, this.$calendarModel, this.$state.getYearRange(), this.$dateFormatter, this.$state.getSelectableDates(), this.$colors, this.$focusRequester, composer, 0, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(DatePickerState datePickerState, Long l) {
         datePickerState.setSelectedDateMillis(l);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$3$lambda$2(DatePickerState datePickerState, long j) {
         datePickerState.setDisplayedMonthMillis(j);
         return Unit.INSTANCE;

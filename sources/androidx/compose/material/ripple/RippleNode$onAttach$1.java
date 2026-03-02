@@ -64,16 +64,19 @@ final class RippleNode$onAttach$1 extends SuspendLambda implements Function2<Cor
                 public final Object emit(Interaction interaction, Continuation<? super Unit> continuation) {
                     boolean z;
                     MutableObjectList mutableObjectList;
-                    if (interaction instanceof PressInteraction) {
-                        z = RippleNode.this.hasValidSize;
+                    boolean z2 = interaction instanceof PressInteraction;
+                    RippleNode rippleNode2 = RippleNode.this;
+                    if (z2) {
+                        z = rippleNode2.hasValidSize;
+                        RippleNode rippleNode3 = RippleNode.this;
                         if (z) {
-                            RippleNode.this.handlePressInteraction((PressInteraction) interaction);
+                            rippleNode3.handlePressInteraction((PressInteraction) interaction);
                         } else {
-                            mutableObjectList = RippleNode.this.pendingInteractions;
+                            mutableObjectList = rippleNode3.pendingInteractions;
                             mutableObjectList.add(interaction);
                         }
                     } else {
-                        RippleNode.this.updateStateLayer(interaction, coroutineScope);
+                        rippleNode2.updateStateLayer(interaction, coroutineScope);
                     }
                     return Unit.INSTANCE;
                 }

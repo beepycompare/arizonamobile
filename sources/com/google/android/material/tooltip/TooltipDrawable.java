@@ -248,9 +248,11 @@ public class TooltipDrawable extends MaterialShapeDrawable implements TextDrawab
 
     private float calculatePointerOffset() {
         int i;
-        if (((this.displayFrame.right - getBounds().right) - this.locationOnScreenX) - this.layoutMargin < 0) {
-            i = ((this.displayFrame.right - getBounds().right) - this.locationOnScreenX) - this.layoutMargin;
-        } else if (((this.displayFrame.left - getBounds().left) - this.locationOnScreenX) + this.layoutMargin <= 0) {
+        int i2 = ((this.displayFrame.right - getBounds().right) - this.locationOnScreenX) - this.layoutMargin;
+        Rect rect = this.displayFrame;
+        if (i2 < 0) {
+            i = ((rect.right - getBounds().right) - this.locationOnScreenX) - this.layoutMargin;
+        } else if (((rect.left - getBounds().left) - this.locationOnScreenX) + this.layoutMargin <= 0) {
             return 0.0f;
         } else {
             i = ((this.displayFrame.left - getBounds().left) - this.locationOnScreenX) + this.layoutMargin;

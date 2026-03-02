@@ -29,11 +29,11 @@ public final class PointerEventKt {
     }
 
     public static final boolean positionChanged(PointerInputChange pointerInputChange) {
-        return !Offset.m5176equalsimpl0(positionChangeInternal(pointerInputChange, false), Offset.Companion.m5195getZeroF1C5BW0());
+        return !Offset.m4524equalsimpl0(positionChangeInternal(pointerInputChange, false), Offset.Companion.m4543getZeroF1C5BW0());
     }
 
     public static final boolean positionChangedIgnoreConsumed(PointerInputChange pointerInputChange) {
-        return !Offset.m5176equalsimpl0(positionChangeInternal(pointerInputChange, true), Offset.Companion.m5195getZeroF1C5BW0());
+        return !Offset.m4524equalsimpl0(positionChangeInternal(pointerInputChange, true), Offset.Companion.m4543getZeroF1C5BW0());
     }
 
     public static final long positionChange(PointerInputChange pointerInputChange) {
@@ -52,7 +52,7 @@ public final class PointerEventKt {
     }
 
     private static final long positionChangeInternal(PointerInputChange pointerInputChange, boolean z) {
-        return (z || !pointerInputChange.isConsumed()) ? Offset.m5183minusMKHz9U(pointerInputChange.m6744getPositionF1C5BW0(), pointerInputChange.m6745getPreviousPositionF1C5BW0()) : Offset.Companion.m5195getZeroF1C5BW0();
+        return (z || !pointerInputChange.isConsumed()) ? Offset.m4531minusMKHz9U(pointerInputChange.m6085getPositionF1C5BW0(), pointerInputChange.m6086getPreviousPositionF1C5BW0()) : Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     @Deprecated(message = "Partial consumption has been deprecated. Use isConsumed instead", replaceWith = @ReplaceWith(expression = "isConsumed", imports = {}))
@@ -74,7 +74,7 @@ public final class PointerEventKt {
 
     @Deprecated(message = "Partial consumption has been deprecated. Use consume() instead.", replaceWith = @ReplaceWith(expression = "if (positionChange() != Offset.Zero) consume()", imports = {}))
     public static final void consumePositionChange(PointerInputChange pointerInputChange) {
-        if (Offset.m5176equalsimpl0(positionChange(pointerInputChange), Offset.Companion.m5195getZeroF1C5BW0())) {
+        if (Offset.m4524equalsimpl0(positionChange(pointerInputChange), Offset.Companion.m4543getZeroF1C5BW0())) {
             return;
         }
         pointerInputChange.consume();
@@ -87,23 +87,23 @@ public final class PointerEventKt {
 
     @Deprecated(message = "Use isOutOfBounds() that supports minimum touch target", replaceWith = @ReplaceWith(expression = "this.isOutOfBounds(size, extendedTouchPadding)", imports = {}))
     /* renamed from: isOutOfBounds-O0kMr_c  reason: not valid java name */
-    public static final boolean m6688isOutOfBoundsO0kMr_c(PointerInputChange pointerInputChange, long j) {
-        long m6744getPositionF1C5BW0 = pointerInputChange.m6744getPositionF1C5BW0();
-        float intBitsToFloat = Float.intBitsToFloat((int) (m6744getPositionF1C5BW0 >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (m6744getPositionF1C5BW0 & 4294967295L));
+    public static final boolean m6029isOutOfBoundsO0kMr_c(PointerInputChange pointerInputChange, long j) {
+        long m6085getPositionF1C5BW0 = pointerInputChange.m6085getPositionF1C5BW0();
+        float intBitsToFloat = Float.intBitsToFloat((int) (m6085getPositionF1C5BW0 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (m6085getPositionF1C5BW0 & 4294967295L));
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
         return (intBitsToFloat > ((float) i)) | (intBitsToFloat < 0.0f) | (intBitsToFloat2 < 0.0f) | (intBitsToFloat2 > ((float) i2));
     }
 
     /* renamed from: isOutOfBounds-jwHxaWs  reason: not valid java name */
-    public static final boolean m6689isOutOfBoundsjwHxaWs(PointerInputChange pointerInputChange, long j, long j2) {
-        boolean m6815equalsimpl0 = PointerType.m6815equalsimpl0(pointerInputChange.m6747getTypeT8wyACA(), PointerType.Companion.m6822getTouchT8wyACA());
-        long m6744getPositionF1C5BW0 = pointerInputChange.m6744getPositionF1C5BW0();
-        float intBitsToFloat = Float.intBitsToFloat((int) (m6744getPositionF1C5BW0 >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (m6744getPositionF1C5BW0 & 4294967295L));
+    public static final boolean m6030isOutOfBoundsjwHxaWs(PointerInputChange pointerInputChange, long j, long j2) {
+        boolean m6156equalsimpl0 = PointerType.m6156equalsimpl0(pointerInputChange.m6088getTypeT8wyACA(), PointerType.Companion.m6163getTouchT8wyACA());
+        long m6085getPositionF1C5BW0 = pointerInputChange.m6085getPositionF1C5BW0();
+        float intBitsToFloat = Float.intBitsToFloat((int) (m6085getPositionF1C5BW0 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (m6085getPositionF1C5BW0 & 4294967295L));
         float intBitsToFloat3 = Float.intBitsToFloat((int) (j2 >> 32));
-        float f = m6815equalsimpl0 ? 1.0f : 0.0f;
+        float f = m6156equalsimpl0 ? 1.0f : 0.0f;
         float f2 = intBitsToFloat3 * f;
         float f3 = ((int) (j >> 32)) + f2;
         float intBitsToFloat4 = Float.intBitsToFloat((int) (j2 & 4294967295L)) * f;

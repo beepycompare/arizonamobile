@@ -10,55 +10,55 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes.dex */
 public final class GroupKind {
     public static final Companion Companion = new Companion(null);
-    private static final int Group = m4605constructorimpl(0);
-    private static final int Node = m4605constructorimpl(1);
-    private static final int ReusableNode = m4605constructorimpl(2);
+    private static final int Group = m3987constructorimpl(0);
+    private static final int Node = m3987constructorimpl(1);
+    private static final int ReusableNode = m3987constructorimpl(2);
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ GroupKind m4604boximpl(int i) {
+    public static final /* synthetic */ GroupKind m3986boximpl(int i) {
         return new GroupKind(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static int m4605constructorimpl(int i) {
+    private static int m3987constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4606equalsimpl(int i, Object obj) {
-        return (obj instanceof GroupKind) && i == ((GroupKind) obj).m4612unboximpl();
+    public static boolean m3988equalsimpl(int i, Object obj) {
+        return (obj instanceof GroupKind) && i == ((GroupKind) obj).m3994unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4607equalsimpl0(int i, int i2) {
+    public static final boolean m3989equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4608hashCodeimpl(int i) {
+    public static int m3990hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4611toStringimpl(int i) {
+    public static String m3993toStringimpl(int i) {
         return "GroupKind(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4606equalsimpl(this.value, obj);
+        return m3988equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4608hashCodeimpl(this.value);
+        return m3990hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m4611toStringimpl(this.value);
+        return m3993toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m4612unboximpl() {
+    public final /* synthetic */ int m3994unboximpl() {
         return this.value;
     }
 
@@ -71,13 +71,13 @@ public final class GroupKind {
     }
 
     /* renamed from: isNode-impl  reason: not valid java name */
-    public static final boolean m4609isNodeimpl(int i) {
-        return i != Companion.m4613getGroupULZAiWs();
+    public static final boolean m3991isNodeimpl(int i) {
+        return i != Companion.m3995getGroupULZAiWs();
     }
 
     /* renamed from: isReusable-impl  reason: not valid java name */
-    public static final boolean m4610isReusableimpl(int i) {
-        return i != Companion.m4614getNodeULZAiWs();
+    public static final boolean m3992isReusableimpl(int i) {
+        return i != Companion.m3996getNodeULZAiWs();
     }
 
     /* compiled from: ComposerImpl.kt */
@@ -92,17 +92,17 @@ public final class GroupKind {
         }
 
         /* renamed from: getGroup-ULZAiWs  reason: not valid java name */
-        public final int m4613getGroupULZAiWs() {
+        public final int m3995getGroupULZAiWs() {
             return GroupKind.Group;
         }
 
         /* renamed from: getNode-ULZAiWs  reason: not valid java name */
-        public final int m4614getNodeULZAiWs() {
+        public final int m3996getNodeULZAiWs() {
             return GroupKind.Node;
         }
 
         /* renamed from: getReusableNode-ULZAiWs  reason: not valid java name */
-        public final int m4615getReusableNodeULZAiWs() {
+        public final int m3997getReusableNodeULZAiWs() {
             return GroupKind.ReusableNode;
         }
     }

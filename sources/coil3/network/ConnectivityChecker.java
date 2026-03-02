@@ -9,13 +9,10 @@ public interface ConnectivityChecker {
     public static final ConnectivityChecker ONLINE = new ConnectivityChecker() { // from class: coil3.network.ConnectivityChecker$$ExternalSyntheticLambda0
         @Override // coil3.network.ConnectivityChecker
         public final boolean isOnline() {
-            boolean ONLINE$lambda$0;
-            ONLINE$lambda$0 = ConnectivityChecker.ONLINE$lambda$0();
-            return ONLINE$lambda$0;
+            return ConnectivityChecker.ONLINE$lambda$0();
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: private */
     static boolean ONLINE$lambda$0() {
         return true;
     }

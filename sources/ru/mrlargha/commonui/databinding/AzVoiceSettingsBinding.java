@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class AzVoiceSettingsBinding implements ViewBinding {
     public final AppCompatImageView appCompatImageView2;
     public final AppCompatImageView closeButton;

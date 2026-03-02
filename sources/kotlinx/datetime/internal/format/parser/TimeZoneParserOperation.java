@@ -33,24 +33,22 @@ public final class TimeZoneParserOperation<Output> implements ParserOperation<Ou
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11907consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10796consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         int validateTimeZone = Companion.validateTimeZone(input, i);
         if (validateTimeZone > i) {
             ParserOperationKt.setWithoutReassigning(this.setter, output, input.subSequence(i, validateTimeZone).toString(), i, validateTimeZone);
-            return ParseResult.Companion.m11918OkQi1bsqg(validateTimeZone);
+            return ParseResult.Companion.m10807OkQi1bsqg(validateTimeZone);
         }
-        return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.TimeZoneParserOperation$$ExternalSyntheticLambda0
+        return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.TimeZoneParserOperation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String consume_FANa98k$lambda$0;
-                consume_FANa98k$lambda$0 = TimeZoneParserOperation.consume_FANa98k$lambda$0();
-                return consume_FANa98k$lambda$0;
+                return TimeZoneParserOperation.consume_FANa98k$lambda$0();
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$0() {
         return "Invalid timezone format";
     }

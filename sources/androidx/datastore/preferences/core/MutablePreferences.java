@@ -105,14 +105,17 @@ public final class MutablePreferences extends Preferences {
             remove(key);
         } else if (obj instanceof Set) {
             this.preferencesMap.put(key, Actual_jvmAndroidKt.immutableCopyOfSet((Set) obj));
-        } else if (!(obj instanceof byte[])) {
-            this.preferencesMap.put(key, obj);
         } else {
+            boolean z = obj instanceof byte[];
             Map<Preferences.Key<?>, Object> map = this.preferencesMap;
-            byte[] bArr = (byte[]) obj;
-            byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
-            Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
-            map.put(key, copyOf);
+            if (z) {
+                byte[] bArr = (byte[]) obj;
+                byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+                Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
+                map.put(key, copyOf);
+                return;
+            }
+            map.put(key, obj);
         }
     }
 
@@ -211,14 +214,12 @@ public final class MutablePreferences extends Preferences {
         return CollectionsKt.joinToString$default(this.preferencesMap.entrySet(), ",\n", "{\n", "\n}", 0, null, new Function1() { // from class: androidx.datastore.preferences.core.MutablePreferences$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence string$lambda$0;
-                string$lambda$0 = MutablePreferences.toString$lambda$0((Map.Entry) obj);
-                return string$lambda$0;
+                return MutablePreferences.toString$lambda$0((Map.Entry) obj);
             }
         }, 24, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence toString$lambda$0(Map.Entry entry) {
         Intrinsics.checkNotNullParameter(entry, "entry");
         Object value = entry.getValue();

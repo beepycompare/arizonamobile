@@ -231,22 +231,20 @@ public class ActionMenuItemView extends AppCompatTextView implements MenuView.It
     @Override // androidx.appcompat.widget.AppCompatTextView, android.widget.TextView, android.view.View
     public void onMeasure(int i, int i2) {
         int i3;
-        int i4;
         boolean hasText = hasText();
-        if (hasText && (i4 = this.mSavedPaddingLeft) >= 0) {
-            super.setPadding(i4, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+        if (hasText && (i3 = this.mSavedPaddingLeft) >= 0) {
+            super.setPadding(i3, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
         super.onMeasure(i, i2);
         int mode = View.MeasureSpec.getMode(i);
         int size = View.MeasureSpec.getSize(i);
         int measuredWidth = getMeasuredWidth();
+        int i4 = this.mMinWidth;
         if (mode == Integer.MIN_VALUE) {
-            i3 = Math.min(size, this.mMinWidth);
-        } else {
-            i3 = this.mMinWidth;
+            i4 = Math.min(size, i4);
         }
-        if (mode != 1073741824 && this.mMinWidth > 0 && measuredWidth < i3) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i3, 1073741824), i2);
+        if (mode != 1073741824 && this.mMinWidth > 0 && measuredWidth < i4) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), i2);
         }
         if (hasText || this.mIcon == null) {
             return;

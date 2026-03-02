@@ -35,7 +35,7 @@ public final class SingleLocalMap extends ModifierLocalMap {
 
     @Override // androidx.compose.ui.modifier.ModifierLocalMap
     /* renamed from: set$ui */
-    public <T> void mo7028set$ui(ModifierLocal<T> modifierLocal, T t) {
+    public <T> void mo6369set$ui(ModifierLocal<T> modifierLocal, T t) {
         if (!(modifierLocal == this.key)) {
             InlineClassHelperKt.throwIllegalStateException("Check failed.");
         }

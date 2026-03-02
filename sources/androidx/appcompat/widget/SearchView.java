@@ -190,15 +190,29 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: androidx.appcompat.widget.SearchView.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                if (view == SearchView.this.mSearchButton) {
-                    SearchView.this.onSearchClicked();
-                } else if (view == SearchView.this.mCloseButton) {
-                    SearchView.this.onCloseClicked();
-                } else if (view == SearchView.this.mGoButton) {
-                    SearchView.this.onSubmitQuery();
-                } else if (view == SearchView.this.mVoiceButton) {
-                    SearchView.this.onVoiceClicked();
-                } else if (view == SearchView.this.mSearchSrcTextView) {
+                ImageView imageView = SearchView.this.mSearchButton;
+                SearchView searchView = SearchView.this;
+                if (view == imageView) {
+                    searchView.onSearchClicked();
+                    return;
+                }
+                ImageView imageView2 = searchView.mCloseButton;
+                SearchView searchView2 = SearchView.this;
+                if (view == imageView2) {
+                    searchView2.onCloseClicked();
+                    return;
+                }
+                ImageView imageView3 = searchView2.mGoButton;
+                SearchView searchView3 = SearchView.this;
+                if (view == imageView3) {
+                    searchView3.onSubmitQuery();
+                    return;
+                }
+                ImageView imageView4 = searchView3.mVoiceButton;
+                SearchView searchView4 = SearchView.this;
+                if (view == imageView4) {
+                    searchView4.onVoiceClicked();
+                } else if (view == searchView4.mSearchSrcTextView) {
                     SearchView.this.forceSuggestionQuery();
                 }
             }
@@ -1115,12 +1129,14 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
     }
 
     void forceSuggestionQuery() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            Api29Impl.refreshAutoCompleteResults(this.mSearchSrcTextView);
+        int i = Build.VERSION.SDK_INT;
+        SearchAutoComplete searchAutoComplete = this.mSearchSrcTextView;
+        if (i >= 29) {
+            Api29Impl.refreshAutoCompleteResults(searchAutoComplete);
             return;
         }
         PreQAutoCompleteTextViewReflector preQAutoCompleteTextViewReflector = PRE_API_29_HIDDEN_METHOD_INVOKER;
-        preQAutoCompleteTextViewReflector.doBeforeTextChanged(this.mSearchSrcTextView);
+        preQAutoCompleteTextViewReflector.doBeforeTextChanged(searchAutoComplete);
         preQAutoCompleteTextViewReflector.doAfterTextChanged(this.mSearchSrcTextView);
     }
 

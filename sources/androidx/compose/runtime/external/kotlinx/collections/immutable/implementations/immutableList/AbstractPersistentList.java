@@ -63,7 +63,7 @@ public abstract class AbstractPersistentList<E> extends AbstractList<E> implemen
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainAll$lambda$0(Collection collection, Object obj) {
         return !collection.contains(obj);
     }
@@ -73,9 +73,7 @@ public abstract class AbstractPersistentList<E> extends AbstractList<E> implemen
         return removeAll((Function1) new Function1() { // from class: androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableList.AbstractPersistentList$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean retainAll$lambda$0;
-                retainAll$lambda$0 = AbstractPersistentList.retainAll$lambda$0(collection, obj);
-                return Boolean.valueOf(retainAll$lambda$0);
+                return Boolean.valueOf(AbstractPersistentList.retainAll$lambda$0(collection, obj));
             }
         });
     }

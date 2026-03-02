@@ -36,17 +36,12 @@ public final class OnTimeout {
         Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.selects.OnTimeout$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                OnTimeout.register$lambda$0(SelectInstance.this, this);
+                SelectInstance.this.trySelect(this, Unit.INSTANCE);
             }
         };
         Intrinsics.checkNotNull(selectInstance, "null cannot be cast to non-null type kotlinx.coroutines.selects.SelectImplementation<*>");
         SelectImplementation selectImplementation = (SelectImplementation) selectInstance;
         CoroutineContext context = selectImplementation.getContext();
         selectImplementation.disposeOnCompletion(DelayKt.getDelay(context).invokeOnTimeout(this.timeMillis, runnable, context));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void register$lambda$0(SelectInstance selectInstance, OnTimeout onTimeout) {
-        selectInstance.trySelect(onTimeout, Unit.INSTANCE);
     }
 }

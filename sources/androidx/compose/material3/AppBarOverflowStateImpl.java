@@ -20,16 +20,15 @@ public final class AppBarOverflowStateImpl implements AppBarOverflowState {
     private static final Saver<AppBarOverflowStateImpl, ?> Saver = SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.AppBarOverflowStateImpl$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = AppBarOverflowStateImpl.Saver$lambda$0((SaverScope) obj, (AppBarOverflowStateImpl) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(r2.getTotalItemCount()), Integer.valueOf(((AppBarOverflowStateImpl) obj2).getVisibleItemCount())});
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.material3.AppBarOverflowStateImpl$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            AppBarOverflowStateImpl Saver$lambda$2;
-            Saver$lambda$2 = AppBarOverflowStateImpl.Saver$lambda$2((List) obj);
-            return Saver$lambda$2;
+            return AppBarOverflowStateImpl.Saver$lambda$2((List) obj);
         }
     });
     private final MutableIntState totalItemCount$delegate = SnapshotIntStateKt.mutableIntStateOf(0);
@@ -71,12 +70,7 @@ public final class AppBarOverflowStateImpl implements AppBarOverflowState {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, AppBarOverflowStateImpl appBarOverflowStateImpl) {
-        return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(appBarOverflowStateImpl.getTotalItemCount()), Integer.valueOf(appBarOverflowStateImpl.getVisibleItemCount())});
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AppBarOverflowStateImpl Saver$lambda$2(List list) {
         AppBarOverflowStateImpl appBarOverflowStateImpl = new AppBarOverflowStateImpl();
         appBarOverflowStateImpl.setTotalItemCount(((Number) list.get(0)).intValue());

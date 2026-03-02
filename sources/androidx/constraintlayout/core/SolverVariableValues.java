@@ -280,23 +280,26 @@ public class SolverVariableValues implements ArrayRow.ArrayRowVariables {
     private void insertVariable(int i, SolverVariable solverVariable, float f) {
         int findEmptySlot = findEmptySlot();
         addVariable(findEmptySlot, solverVariable, f);
+        int[] iArr = this.mPrevious;
         if (i != -1) {
-            this.mPrevious[findEmptySlot] = i;
-            int[] iArr = this.mNext;
-            iArr[findEmptySlot] = iArr[i];
-            iArr[i] = findEmptySlot;
+            iArr[findEmptySlot] = i;
+            int[] iArr2 = this.mNext;
+            iArr2[findEmptySlot] = iArr2[i];
+            iArr2[i] = findEmptySlot;
         } else {
-            this.mPrevious[findEmptySlot] = -1;
-            if (this.mCount > 0) {
-                this.mNext[findEmptySlot] = this.mHead;
+            iArr[findEmptySlot] = -1;
+            int i2 = this.mCount;
+            int[] iArr3 = this.mNext;
+            if (i2 > 0) {
+                iArr3[findEmptySlot] = this.mHead;
                 this.mHead = findEmptySlot;
             } else {
-                this.mNext[findEmptySlot] = -1;
+                iArr3[findEmptySlot] = -1;
             }
         }
-        int i2 = this.mNext[findEmptySlot];
-        if (i2 != -1) {
-            this.mPrevious[i2] = findEmptySlot;
+        int i3 = this.mNext[findEmptySlot];
+        if (i3 != -1) {
+            this.mPrevious[i3] = findEmptySlot;
         }
         addToHashMap(solverVariable, findEmptySlot);
     }

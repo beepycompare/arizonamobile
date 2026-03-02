@@ -43,7 +43,7 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
         if (size() <= 32) {
             throw new IllegalArgumentException(("Trie-based persistent vector should have at least 33 elements, got " + size()).toString());
         }
-        CommonFunctionsKt.m11753assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(tail.length, 32));
+        CommonFunctionsKt.m10682assert(size() - UtilsKt.rootSize(size()) <= RangesKt.coerceAtMost(tail.length, 32));
     }
 
     private final int rootSize() {
@@ -113,12 +113,12 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
         int size = size() - rootSize();
         Object[] copyOf = Arrays.copyOf(this.tail, 32);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");
+        Object[] objArr2 = this.tail;
         if (size < 32) {
-            ArraysKt.copyInto(this.tail, copyOf, i + 1, i, size);
+            ArraysKt.copyInto(objArr2, copyOf, i + 1, i, size);
             copyOf[i] = obj;
             return new PersistentVector<>(objArr, copyOf, size() + 1, this.rootShift);
         }
-        Object[] objArr2 = this.tail;
         Object obj2 = objArr2[31];
         ArraysKt.copyInto(objArr2, copyOf, i + 1, i, size - 1);
         copyOf[i] = obj;
@@ -162,15 +162,16 @@ public final class PersistentVector<E> extends AbstractPersistentList<E> impleme
     public PersistentList<E> removeAt(int i) {
         ListImplementation.checkElementIndex$kotlinx_collections_immutable(i, size());
         int rootSize = rootSize();
+        Object[] objArr = this.root;
         if (i >= rootSize) {
-            return removeFromTailAt(this.root, rootSize, this.rootShift, i - rootSize);
+            return removeFromTailAt(objArr, rootSize, this.rootShift, i - rootSize);
         }
-        return removeFromTailAt(removeFromRootAt(this.root, this.rootShift, i, new ObjectRef(this.tail[0])), rootSize, this.rootShift, 0);
+        return removeFromTailAt(removeFromRootAt(objArr, this.rootShift, i, new ObjectRef(this.tail[0])), rootSize, this.rootShift, 0);
     }
 
     private final PersistentList<E> removeFromTailAt(Object[] objArr, int i, int i2, int i3) {
         int size = size() - i;
-        CommonFunctionsKt.m11753assert(i3 < size);
+        CommonFunctionsKt.m10682assert(i3 < size);
         if (size == 1) {
             return pullLastBufferFromRoot(objArr, i, i2);
         }

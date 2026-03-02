@@ -30,9 +30,7 @@ public final class CoroutineLiveData<T> extends MediatorLiveData<T> {
         this.blockRunner = new BlockRunner<>(this, block, j, CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().getImmediate().plus(context).plus(SupervisorKt.SupervisorJob((Job) context.get(Job.Key)))), new Function0() { // from class: androidx.lifecycle.CoroutineLiveData$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = CoroutineLiveData._init_$lambda$0(CoroutineLiveData.this);
-                return _init_$lambda$0;
+                return CoroutineLiveData._init_$lambda$0(CoroutineLiveData.this);
             }
         });
     }
@@ -41,7 +39,7 @@ public final class CoroutineLiveData<T> extends MediatorLiveData<T> {
         this((i & 1) != 0 ? EmptyCoroutineContext.INSTANCE : emptyCoroutineContext, (i & 2) != 0 ? 5000L : j, function2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(CoroutineLiveData coroutineLiveData) {
         coroutineLiveData.blockRunner = null;
         return Unit.INSTANCE;

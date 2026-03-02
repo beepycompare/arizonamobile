@@ -16,9 +16,7 @@ public final class LocalActivityKt {
     private static final ProvidableCompositionLocal<Activity> LocalActivity = CompositionLocalKt.compositionLocalWithComputedDefaultOf(new Function1() { // from class: androidx.activity.compose.LocalActivityKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Activity LocalActivity$lambda$0;
-            LocalActivity$lambda$0 = LocalActivityKt.LocalActivity$lambda$0((CompositionLocalAccessorScope) obj);
-            return LocalActivity$lambda$0;
+            return LocalActivityKt.LocalActivity$lambda$0((CompositionLocalAccessorScope) obj);
         }
     });
 
@@ -26,7 +24,7 @@ public final class LocalActivityKt {
         return LocalActivity;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Activity LocalActivity$lambda$0(CompositionLocalAccessorScope compositionLocalAccessorScope) {
         Activity activity = (Context) compositionLocalAccessorScope.getCurrentValue(AndroidCompositionLocals_androidKt.getLocalContext());
         while (true) {

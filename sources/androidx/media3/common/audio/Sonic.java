@@ -213,20 +213,22 @@ public final class Sonic {
                 if (i8 > i10) {
                     i8 = i10;
                 }
-                if (this.channelCount == 1) {
-                    i2 = this.impl.findPitchPeriodInRangeWithInputBuffer(i, i7, i8);
+                int i11 = this.channelCount;
+                SonicImpl<?> sonicImpl = this.impl;
+                if (i11 == 1) {
+                    i2 = sonicImpl.findPitchPeriodInRangeWithInputBuffer(i, i7, i8);
                 } else {
-                    this.impl.downSampleInput(i, 1);
+                    sonicImpl.downSampleInput(i, 1);
                     i2 = this.impl.findPitchPeriodInRangeWithDownsampleBuffer(0, i7, i8);
                 }
             } else {
                 i2 = findPitchPeriodInRangeWithDownsampleBuffer;
             }
         }
-        int i11 = this.impl.isPreviousPeriodBetter() ? this.prevPeriod : i2;
+        int i12 = this.impl.isPreviousPeriodBetter() ? this.prevPeriod : i2;
         this.impl.updatePreviousMinDiff();
         this.prevPeriod = i2;
-        return i11;
+        return i12;
     }
 
     private void adjustRate(float f, int i) {
@@ -294,16 +296,18 @@ public final class Sonic {
 
     private int skipPitchPeriod(int i, double d, int i2) {
         int i3;
-        if (d >= 2.0d) {
-            double d2 = (i2 / (d - 1.0d)) + this.accumulatedSpeedAdjustmentError;
-            int round = (int) Math.round(d2);
-            this.accumulatedSpeedAdjustmentError = d2 - round;
+        int i4 = (d > 2.0d ? 1 : (d == 2.0d ? 0 : -1));
+        double d2 = this.accumulatedSpeedAdjustmentError;
+        if (i4 >= 0) {
+            double d3 = (i2 / (d - 1.0d)) + d2;
+            int round = (int) Math.round(d3);
+            this.accumulatedSpeedAdjustmentError = d3 - round;
             i3 = round;
         } else {
-            double d3 = ((i2 * (2.0d - d)) / (d - 1.0d)) + this.accumulatedSpeedAdjustmentError;
-            int round2 = (int) Math.round(d3);
+            double d4 = ((i2 * (2.0d - d)) / (d - 1.0d)) + d2;
+            int round2 = (int) Math.round(d4);
             this.remainingInputToCopyFrameCount = round2;
-            this.accumulatedSpeedAdjustmentError = d3 - round2;
+            this.accumulatedSpeedAdjustmentError = d4 - round2;
             i3 = i2;
         }
         this.impl.ensureAdditionalFramesInOutputBuffer(i3);
@@ -314,26 +318,27 @@ public final class Sonic {
 
     private int insertPitchPeriod(int i, double d, int i2) {
         int i3;
-        if (d < 0.5d) {
-            double d2 = ((i2 * d) / (1.0d - d)) + this.accumulatedSpeedAdjustmentError;
-            int round = (int) Math.round(d2);
-            this.accumulatedSpeedAdjustmentError = d2 - round;
-            i3 = round;
+        int i4 = (d > 0.5d ? 1 : (d == 0.5d ? 0 : -1));
+        double d2 = this.accumulatedSpeedAdjustmentError;
+        if (i4 < 0) {
+            double d3 = ((i2 * d) / (1.0d - d)) + d2;
+            i3 = (int) Math.round(d3);
+            this.accumulatedSpeedAdjustmentError = d3 - i3;
         } else {
-            double d3 = ((i2 * ((2.0d * d) - 1.0d)) / (1.0d - d)) + this.accumulatedSpeedAdjustmentError;
-            int round2 = (int) Math.round(d3);
-            this.remainingInputToCopyFrameCount = round2;
-            this.accumulatedSpeedAdjustmentError = d3 - round2;
+            double d4 = ((i2 * ((2.0d * d) - 1.0d)) / (1.0d - d)) + d2;
+            int round = (int) Math.round(d4);
+            this.remainingInputToCopyFrameCount = round;
+            this.accumulatedSpeedAdjustmentError = d4 - round;
             i3 = i2;
         }
-        int i4 = i2 + i3;
-        this.impl.ensureAdditionalFramesInOutputBuffer(i4);
+        int i5 = i2 + i3;
+        this.impl.ensureAdditionalFramesInOutputBuffer(i5);
         Object outputBuffer = this.impl.getOutputBuffer();
-        int i5 = this.outputFrameCount;
-        int i6 = this.channelCount;
-        System.arraycopy(this.impl.getInputBuffer(), this.channelCount * i, outputBuffer, i5 * i6, i6 * i2);
+        int i6 = this.outputFrameCount;
+        int i7 = this.channelCount;
+        System.arraycopy(this.impl.getInputBuffer(), this.channelCount * i, outputBuffer, i6 * i7, i7 * i2);
         this.impl.overlapAdd(i3, this.channelCount, this.outputFrameCount + i2, i + i2, i);
-        this.outputFrameCount += i4;
+        this.outputFrameCount += i5;
         return i3;
     }
 

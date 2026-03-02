@@ -15,7 +15,7 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public interface FocusOwner extends FocusManager {
     /* renamed from: clearFocus-I7lrPNg */
-    boolean mo5070clearFocusI7lrPNg(boolean z, boolean z2, boolean z3, int i);
+    boolean mo4418clearFocusI7lrPNg(boolean z, boolean z2, boolean z3, int i);
 
     void clearOwnerFocus();
 
@@ -24,15 +24,15 @@ public interface FocusOwner extends FocusManager {
     boolean dispatchIndirectPointerEvent(IndirectPointerEvent indirectPointerEvent);
 
     /* renamed from: dispatchInterceptedSoftKeyboardEvent-ZmokQxo */
-    boolean mo5071dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent keyEvent);
+    boolean mo4419dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent keyEvent);
 
     /* renamed from: dispatchKeyEvent-YhN2O0w */
-    boolean mo5072dispatchKeyEventYhN2O0w(KeyEvent keyEvent, Function0<Boolean> function0);
+    boolean mo4420dispatchKeyEventYhN2O0w(KeyEvent keyEvent, Function0<Boolean> function0);
 
     boolean dispatchRotaryEvent(RotaryScrollEvent rotaryScrollEvent, Function0<Boolean> function0);
 
     /* renamed from: focusSearch-ULY8qGw */
-    Boolean mo5073focusSearchULY8qGw(int i, Rect rect, Function1<? super FocusTargetNode, Boolean> function1);
+    Boolean mo4421focusSearchULY8qGw(int i, Rect rect, Function1<? super FocusTargetNode, Boolean> function1);
 
     void focusTargetAvailable();
 
@@ -53,15 +53,15 @@ public interface FocusOwner extends FocusManager {
     boolean isFocusCaptured();
 
     /* renamed from: moveFocus-aToIllA */
-    boolean mo5074moveFocusaToIllA(int i, boolean z);
+    boolean mo4422moveFocusaToIllA(int i, boolean z);
 
     void releaseFocus();
 
     /* renamed from: requestOwnerFocus-7o62pno */
-    boolean mo5075requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect);
+    boolean mo4423requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect);
 
     /* renamed from: resetFocus-3ESFkO8 */
-    boolean mo5076resetFocus3ESFkO8(int i);
+    boolean mo4424resetFocus3ESFkO8(int i);
 
     void scheduleInvalidation(FocusEventModifierNode focusEventModifierNode);
 
@@ -74,11 +74,11 @@ public interface FocusOwner extends FocusManager {
     void setFocusCaptured(boolean z);
 
     /* renamed from: takeFocus-aToIllA */
-    boolean mo5077takeFocusaToIllA(int i, Rect rect);
+    boolean mo4425takeFocusaToIllA(int i, Rect rect);
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: dispatchKeyEvent-YhN2O0w$default */
-    static /* synthetic */ boolean m5069dispatchKeyEventYhN2O0w$default(FocusOwner focusOwner, KeyEvent keyEvent, Function0 function0, int i, Object obj) {
+    static /* synthetic */ boolean m4417dispatchKeyEventYhN2O0w$default(FocusOwner focusOwner, KeyEvent keyEvent, Function0 function0, int i, Object obj) {
         if (obj == null) {
             if ((i & 2) != 0) {
                 function0 = new Function0<Boolean>() { // from class: androidx.compose.ui.focus.FocusOwner$dispatchKeyEvent$1
@@ -89,7 +89,7 @@ public interface FocusOwner extends FocusManager {
                     }
                 };
             }
-            return focusOwner.mo5072dispatchKeyEventYhN2O0w(keyEvent, function0);
+            return focusOwner.mo4420dispatchKeyEventYhN2O0w(keyEvent, function0);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: dispatchKeyEvent-YhN2O0w");
     }

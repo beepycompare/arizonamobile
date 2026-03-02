@@ -10,21 +10,21 @@ import kotlin.Metadata;
 public final class DrawModifierNodeKt {
     public static final void invalidateDraw(DrawModifierNode drawModifierNode) {
         if (drawModifierNode.getNode().isAttached()) {
-            DelegatableNodeKt.m7046requireCoordinator64DMado(drawModifierNode, NodeKind.m7195constructorimpl(1)).invalidateLayer();
+            DelegatableNodeKt.m6387requireCoordinator64DMado(drawModifierNode, NodeKind.m6535constructorimpl(1)).invalidateLayer();
         }
     }
 
     public static final void dispatchDraw(DelegatableNode delegatableNode, ContentDrawScope contentDrawScope) {
         Modifier.Node node = delegatableNode.getNode();
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(4);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(4);
         MutableVector mutableVector = null;
         while (node != null) {
             if (node instanceof DrawModifierNode) {
                 ((DrawModifierNode) node).draw(contentDrawScope);
-            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                 int i = 0;
                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         i++;
                         if (i == 1) {
                             node = delegate$ui;

@@ -526,12 +526,14 @@ public final class ViewPager2 extends ViewGroup {
                 return;
             }
             double d2 = min;
-            if (Math.abs(d2 - d) > 3.0d) {
-                this.mRecyclerView.scrollToPosition(d2 > d ? min - 3 : min + 3);
+            int i3 = (Math.abs(d2 - d) > 3.0d ? 1 : (Math.abs(d2 - d) == 3.0d ? 0 : -1));
+            RecyclerView recyclerView = this.mRecyclerView;
+            if (i3 > 0) {
+                recyclerView.scrollToPosition(d2 > d ? min - 3 : min + 3);
                 this.mRecyclerView.post(new SmoothScrollToPosition(min, this.mRecyclerView));
                 return;
             }
-            this.mRecyclerView.smoothScrollToPosition(min);
+            recyclerView.smoothScrollToPosition(min);
         }
     }
 
@@ -613,13 +615,14 @@ public final class ViewPager2 extends ViewGroup {
     }
 
     public void setPageTransformer(PageTransformer pageTransformer) {
+        boolean z = this.mSavedItemAnimatorPresent;
         if (pageTransformer != null) {
-            if (!this.mSavedItemAnimatorPresent) {
+            if (!z) {
                 this.mSavedItemAnimator = this.mRecyclerView.getItemAnimator();
                 this.mSavedItemAnimatorPresent = true;
             }
             this.mRecyclerView.setItemAnimator(null);
-        } else if (this.mSavedItemAnimatorPresent) {
+        } else if (z) {
             this.mRecyclerView.setItemAnimator(this.mSavedItemAnimator);
             this.mSavedItemAnimator = null;
             this.mSavedItemAnimatorPresent = false;
@@ -1034,10 +1037,11 @@ public final class ViewPager2 extends ViewGroup {
             if (!handlesPerformAccessibilityAction(i, bundle)) {
                 throw new IllegalStateException();
             }
+            ViewPager2 viewPager2 = ViewPager2.this;
             if (i == 8192) {
-                currentItem = ViewPager2.this.getCurrentItem() - 1;
+                currentItem = viewPager2.getCurrentItem() - 1;
             } else {
-                currentItem = ViewPager2.this.getCurrentItem() + 1;
+                currentItem = viewPager2.getCurrentItem() + 1;
             }
             setCurrentItemFromAccessibilityCommand(currentItem);
             return true;
@@ -1065,8 +1069,10 @@ public final class ViewPager2 extends ViewGroup {
             if (ViewPager2.this.getAdapter() == null || (itemCount = ViewPager2.this.getAdapter().getItemCount()) == 0 || !ViewPager2.this.isUserInputEnabled()) {
                 return;
             }
-            if (ViewPager2.this.getOrientation() == 0) {
-                boolean isRtl = ViewPager2.this.isRtl();
+            int orientation = ViewPager2.this.getOrientation();
+            ViewPager2 viewPager22 = ViewPager2.this;
+            if (orientation == 0) {
+                boolean isRtl = viewPager22.isRtl();
                 int i = isRtl ? 16908360 : 16908361;
                 int i2 = isRtl ? 16908361 : 16908360;
                 if (ViewPager2.this.mCurrentItem < itemCount - 1) {
@@ -1078,7 +1084,7 @@ public final class ViewPager2 extends ViewGroup {
                 }
                 return;
             }
-            if (ViewPager2.this.mCurrentItem < itemCount - 1) {
+            if (viewPager22.mCurrentItem < itemCount - 1) {
                 ViewCompat.replaceAccessibilityAction(viewPager2, new AccessibilityNodeInfoCompat.AccessibilityActionCompat(16908359, null), null, this.mActionPageForward);
             }
             if (ViewPager2.this.mCurrentItem > 0) {
@@ -1090,12 +1096,14 @@ public final class ViewPager2 extends ViewGroup {
             int i;
             int i2;
             if (ViewPager2.this.getAdapter() != null) {
+                int orientation = ViewPager2.this.getOrientation();
+                ViewPager2 viewPager2 = ViewPager2.this;
                 i2 = 1;
-                if (ViewPager2.this.getOrientation() == 1) {
-                    i2 = ViewPager2.this.getAdapter().getItemCount();
+                if (orientation == 1) {
+                    i2 = viewPager2.getAdapter().getItemCount();
                     i = 1;
                 } else {
-                    i = ViewPager2.this.getAdapter().getItemCount();
+                    i = viewPager2.getAdapter().getItemCount();
                 }
             } else {
                 i = 0;

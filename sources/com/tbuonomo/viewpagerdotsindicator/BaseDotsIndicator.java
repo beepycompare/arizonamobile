@@ -274,7 +274,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onAttachedToWindow$lambda$0(BaseDotsIndicator this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.refreshDots();
@@ -344,7 +344,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void refreshDots$lambda$1(BaseDotsIndicator this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.refreshDotsCount();
@@ -425,7 +425,7 @@ public abstract class BaseDotsIndicator extends FrameLayout {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onRestoreInstanceState$lambda$3(BaseDotsIndicator this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.refreshDots();

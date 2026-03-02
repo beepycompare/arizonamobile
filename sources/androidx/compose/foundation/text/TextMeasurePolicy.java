@@ -32,7 +32,7 @@ public final class TextMeasurePolicy implements MeasurePolicy {
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         final ArrayList arrayList;
         final List measureWithTextRangeMeasureConstraints;
         Pair pair;
@@ -53,9 +53,9 @@ public final class TextMeasurePolicy implements MeasurePolicy {
             for (int i2 = 0; i2 < size2; i2++) {
                 Rect rect = invoke.get(i2);
                 if (rect != null) {
-                    Placeable mo6875measureBRTryo0 = ((Measurable) arrayList3.get(i2)).mo6875measureBRTryo0(ConstraintsKt.Constraints$default(0, (int) Math.floor(rect.getRight() - rect.getLeft()), 0, (int) Math.floor(rect.getBottom() - rect.getTop()), 5, null));
+                    Placeable mo6216measureBRTryo0 = ((Measurable) arrayList3.get(i2)).mo6216measureBRTryo0(ConstraintsKt.Constraints$default(0, (int) Math.floor(rect.getRight() - rect.getLeft()), 0, (int) Math.floor(rect.getBottom() - rect.getTop()), 5, null));
                     int round = Math.round(rect.getLeft());
-                    pair = new Pair(mo6875measureBRTryo0, IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((Math.round(rect.getTop()) & 4294967295L) | (round << 32))));
+                    pair = new Pair(mo6216measureBRTryo0, IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((Math.round(rect.getTop()) & 4294967295L) | (round << 32))));
                 } else {
                     pair = null;
                 }
@@ -76,23 +76,21 @@ public final class TextMeasurePolicy implements MeasurePolicy {
             }
         }
         measureWithTextRangeMeasureConstraints = BasicTextKt.measureWithTextRangeMeasureConstraints(arrayList5, this.shouldMeasureLinks);
-        return MeasureScope.layout$default(measureScope, Constraints.m8211getMaxWidthimpl(j), Constraints.m8210getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.TextMeasurePolicy$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, Constraints.m7508getMaxWidthimpl(j), Constraints.m7507getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.foundation.text.TextMeasurePolicy$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$3;
-                measure_3p2s80s$lambda$3 = TextMeasurePolicy.measure_3p2s80s$lambda$3(arrayList, measureWithTextRangeMeasureConstraints, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$3;
+                return TextMeasurePolicy.measure_3p2s80s$lambda$3(arrayList, measureWithTextRangeMeasureConstraints, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$3(List list, List list2, Placeable.PlacementScope placementScope) {
         if (list != null) {
             int size = list.size();
             for (int i = 0; i < size; i++) {
                 Pair pair = (Pair) list.get(i);
-                Placeable.PlacementScope.m6941place70tqf50$default(placementScope, (Placeable) pair.component1(), ((IntOffset) pair.component2()).m8395unboximpl(), 0.0f, 2, null);
+                Placeable.PlacementScope.m6282place70tqf50$default(placementScope, (Placeable) pair.component1(), ((IntOffset) pair.component2()).m7692unboximpl(), 0.0f, 2, null);
             }
         }
         if (list2 != null) {
@@ -101,7 +99,7 @@ public final class TextMeasurePolicy implements MeasurePolicy {
                 Pair pair2 = (Pair) list2.get(i2);
                 Placeable placeable = (Placeable) pair2.component1();
                 Function0 function0 = (Function0) pair2.component2();
-                Placeable.PlacementScope.m6941place70tqf50$default(placementScope, placeable, function0 != null ? ((IntOffset) function0.invoke()).m8395unboximpl() : IntOffset.Companion.m8397getZeronOccac(), 0.0f, 2, null);
+                Placeable.PlacementScope.m6282place70tqf50$default(placementScope, placeable, function0 != null ? ((IntOffset) function0.invoke()).m7692unboximpl() : IntOffset.Companion.m7694getZeronOccac(), 0.0f, 2, null);
             }
         }
         return Unit.INSTANCE;

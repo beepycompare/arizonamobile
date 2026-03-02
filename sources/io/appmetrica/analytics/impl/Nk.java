@@ -17,7 +17,7 @@ public final class Nk {
         this.f713a = "session_extras";
         this.b = new Ik();
         this.c = new Mk();
-        this.d = C0449na.k().B().a(context, q4);
+        this.d = C0448na.k().B().a(context, q4);
     }
 
     public final Map a() {

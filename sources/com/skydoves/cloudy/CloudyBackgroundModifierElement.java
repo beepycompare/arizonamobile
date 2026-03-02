@@ -24,7 +24,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: copy-Bx497Mc$default  reason: not valid java name */
-    public static /* synthetic */ CloudyBackgroundModifierElement m10192copyBx497Mc$default(CloudyBackgroundModifierElement cloudyBackgroundModifierElement, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ CloudyBackgroundModifierElement m9135copyBx497Mc$default(CloudyBackgroundModifierElement cloudyBackgroundModifierElement, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             sky = cloudyBackgroundModifierElement.sky;
         }
@@ -46,7 +46,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
         }
         long j2 = j;
         CloudyProgressive cloudyProgressive2 = cloudyProgressive;
-        return cloudyBackgroundModifierElement.m10194copyBx497Mc(sky, i, cloudyProgressive2, j2, z, function12);
+        return cloudyBackgroundModifierElement.m9137copyBx497Mc(sky, i, cloudyProgressive2, j2, z, function12);
     }
 
     public final Sky component1() {
@@ -62,7 +62,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: component4-0d7_KjU  reason: not valid java name */
-    public final long m10193component40d7_KjU() {
+    public final long m9136component40d7_KjU() {
         return this.tint;
     }
 
@@ -75,7 +75,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: copy-Bx497Mc  reason: not valid java name */
-    public final CloudyBackgroundModifierElement m10194copyBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
+    public final CloudyBackgroundModifierElement m9137copyBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
         Intrinsics.checkNotNullParameter(sky, "sky");
         Intrinsics.checkNotNullParameter(progressive, "progressive");
         Intrinsics.checkNotNullParameter(onStateChanged, "onStateChanged");
@@ -89,18 +89,18 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
         }
         if (obj instanceof CloudyBackgroundModifierElement) {
             CloudyBackgroundModifierElement cloudyBackgroundModifierElement = (CloudyBackgroundModifierElement) obj;
-            return Intrinsics.areEqual(this.sky, cloudyBackgroundModifierElement.sky) && this.radius == cloudyBackgroundModifierElement.radius && Intrinsics.areEqual(this.progressive, cloudyBackgroundModifierElement.progressive) && Color.m5425equalsimpl0(this.tint, cloudyBackgroundModifierElement.tint) && this.cpuBlurEnabled == cloudyBackgroundModifierElement.cpuBlurEnabled && Intrinsics.areEqual(this.onStateChanged, cloudyBackgroundModifierElement.onStateChanged);
+            return Intrinsics.areEqual(this.sky, cloudyBackgroundModifierElement.sky) && this.radius == cloudyBackgroundModifierElement.radius && Intrinsics.areEqual(this.progressive, cloudyBackgroundModifierElement.progressive) && Color.m4773equalsimpl0(this.tint, cloudyBackgroundModifierElement.tint) && this.cpuBlurEnabled == cloudyBackgroundModifierElement.cpuBlurEnabled && Intrinsics.areEqual(this.onStateChanged, cloudyBackgroundModifierElement.onStateChanged);
         }
         return false;
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public int hashCode() {
-        return (((((((((this.sky.hashCode() * 31) + Integer.hashCode(this.radius)) * 31) + this.progressive.hashCode()) * 31) + Color.m5431hashCodeimpl(this.tint)) * 31) + Boolean.hashCode(this.cpuBlurEnabled)) * 31) + this.onStateChanged.hashCode();
+        return (((((((((this.sky.hashCode() * 31) + Integer.hashCode(this.radius)) * 31) + this.progressive.hashCode()) * 31) + Color.m4779hashCodeimpl(this.tint)) * 31) + Boolean.hashCode(this.cpuBlurEnabled)) * 31) + this.onStateChanged.hashCode();
     }
 
     public String toString() {
-        return "CloudyBackgroundModifierElement(sky=" + this.sky + ", radius=" + this.radius + ", progressive=" + this.progressive + ", tint=" + ((Object) Color.m5432toStringimpl(this.tint)) + ", cpuBlurEnabled=" + this.cpuBlurEnabled + ", onStateChanged=" + this.onStateChanged + ')';
+        return "CloudyBackgroundModifierElement(sky=" + this.sky + ", radius=" + this.radius + ", progressive=" + this.progressive + ", tint=" + ((Object) Color.m4780toStringimpl(this.tint)) + ", cpuBlurEnabled=" + this.cpuBlurEnabled + ", onStateChanged=" + this.onStateChanged + ')';
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -129,7 +129,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: getTint-0d7_KjU  reason: not valid java name */
-    public final long m10195getTint0d7_KjU() {
+    public final long m9138getTint0d7_KjU() {
         return this.tint;
     }
 
@@ -148,7 +148,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
         inspectorInfo.getProperties().set("sky", this.sky);
         inspectorInfo.getProperties().set("radius", Integer.valueOf(this.radius));
         inspectorInfo.getProperties().set("progressive", this.progressive);
-        inspectorInfo.getProperties().set("tint", Color.m5414boximpl(this.tint));
+        inspectorInfo.getProperties().set("tint", Color.m4762boximpl(this.tint));
         inspectorInfo.getProperties().set("cpuBlurEnabled", Boolean.valueOf(this.cpuBlurEnabled));
     }
 
@@ -160,6 +160,6 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(CloudyBackgroundModifierNode node) {
         Intrinsics.checkNotNullParameter(node, "node");
-        node.m10196updateBx497Mc(this.sky, this.radius, this.progressive, this.tint, this.cpuBlurEnabled, this.onStateChanged);
+        node.m9139updateBx497Mc(this.sky, this.radius, this.progressive, this.tint, this.cpuBlurEnabled, this.onStateChanged);
     }
 }

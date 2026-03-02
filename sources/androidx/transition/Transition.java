@@ -574,24 +574,32 @@ public abstract class Transition implements Cloneable {
     public void prepareAnimatorsForSeeking() {
         ArrayMap<Animator, AnimationInfo> runningAnimators = getRunningAnimators();
         this.mTotalDuration = 0L;
-        for (int i = 0; i < this.mAnimators.size(); i++) {
-            Animator animator = this.mAnimators.get(i);
-            AnimationInfo animationInfo = runningAnimators.get(animator);
-            if (animator != null && animationInfo != null) {
-                if (getDuration() >= 0) {
-                    animationInfo.mAnimator.setDuration(getDuration());
+        int i = 0;
+        while (true) {
+            int size = this.mAnimators.size();
+            ArrayList<Animator> arrayList = this.mAnimators;
+            if (i < size) {
+                Animator animator = arrayList.get(i);
+                AnimationInfo animationInfo = runningAnimators.get(animator);
+                if (animator != null && animationInfo != null) {
+                    if (getDuration() >= 0) {
+                        animationInfo.mAnimator.setDuration(getDuration());
+                    }
+                    if (getStartDelay() >= 0) {
+                        animationInfo.mAnimator.setStartDelay(getStartDelay() + animationInfo.mAnimator.getStartDelay());
+                    }
+                    if (getInterpolator() != null) {
+                        animationInfo.mAnimator.setInterpolator(getInterpolator());
+                    }
+                    this.mCurrentAnimators.add(animator);
+                    this.mTotalDuration = Math.max(this.mTotalDuration, Impl26.getTotalDuration(animator));
                 }
-                if (getStartDelay() >= 0) {
-                    animationInfo.mAnimator.setStartDelay(getStartDelay() + animationInfo.mAnimator.getStartDelay());
-                }
-                if (getInterpolator() != null) {
-                    animationInfo.mAnimator.setInterpolator(getInterpolator());
-                }
-                this.mCurrentAnimators.add(animator);
-                this.mTotalDuration = Math.max(this.mTotalDuration, Impl26.getTotalDuration(animator));
+                i++;
+            } else {
+                arrayList.clear();
+                return;
             }
         }
-        this.mAnimators.clear();
     }
 
     public Transition addTarget(View view) {
@@ -1246,7 +1254,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Transition mo9339clone() {
+    public Transition mo8541clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();
@@ -1640,14 +1648,14 @@ public abstract class Transition implements Cloneable {
             this.mSpringAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: androidx.transition.Transition$SeekController$$ExternalSyntheticLambda0
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                    Transition.SeekController.this.m9340x76b2d240(dynamicAnimation, z, f, f2);
+                    Transition.SeekController.this.m8542x76b2d240(dynamicAnimation, z, f, f2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$ensureAnimation$0$androidx-transition-Transition$SeekController  reason: not valid java name */
-        public /* synthetic */ void m9340x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+        public /* synthetic */ void m8542x76b2d240(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
             if (z) {
                 return;
             }

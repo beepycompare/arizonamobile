@@ -55,13 +55,13 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Offset offset) {
-                    m1513invokek4lQ0M(offset.m5189unboximpl());
+                    m1318invokek4lQ0M(offset.m4537unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-k-4lQ0M  reason: not valid java name */
-                public final void m1513invokek4lQ0M(long j) {
-                    ((TextContextMenuGestureNode) this.receiver).m1512tryShowContextMenuk4lQ0M(j);
+                public final void m1318invokek4lQ0M(long j) {
+                    ((TextContextMenuGestureNode) this.receiver).m1317tryShowContextMenuk4lQ0M(j);
                 }
             }
 
@@ -105,7 +105,7 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: tryShowContextMenu-k-4lQ0M  reason: not valid java name */
-    public final void m1512tryShowContextMenuk4lQ0M(long j) {
+    public final void m1317tryShowContextMenuk4lQ0M(long j) {
         TextContextMenuProvider textContextMenuProvider = (TextContextMenuProvider) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, TextContextMenuProviderKt.getLocalTextContextMenuDropdownProvider());
         if (textContextMenuProvider == null) {
             return;
@@ -130,10 +130,10 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
         @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
         /* renamed from: position-tuRUvjQ  reason: not valid java name */
-        public long mo1514positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
+        public long mo1319positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
             LayoutCoordinates localCoordinates = TextContextMenuGestureNode.this.getLocalCoordinates();
             if (localCoordinates != null) {
-                return layoutCoordinates.mo6884localPositionOfR5De75A(localCoordinates, this.localClickOffset);
+                return layoutCoordinates.mo6225localPositionOfR5De75A(localCoordinates, this.localClickOffset);
             }
             InlineClassHelperKt.throwIllegalStateExceptionForNullCheck(TextContextMenuGestureNode.MESSAGE);
             throw new KotlinNothingValueException();
@@ -141,7 +141,7 @@ public final class TextContextMenuGestureNode extends DelegatingNode implements 
 
         @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
         public Rect contentBounds(LayoutCoordinates layoutCoordinates) {
-            return RectKt.m5219Recttz77jQw(mo1514positiontuRUvjQ(layoutCoordinates), Size.Companion.m5257getZeroNHjbRc());
+            return RectKt.m4567Recttz77jQw(mo1319positiontuRUvjQ(layoutCoordinates), Size.Companion.m4605getZeroNHjbRc());
         }
 
         @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider

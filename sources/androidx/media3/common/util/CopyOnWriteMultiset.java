@@ -39,13 +39,15 @@ public final class CopyOnWriteMultiset<E> implements Iterable<E> {
             ArrayList arrayList = new ArrayList(this.elements);
             arrayList.remove(e);
             this.elements = Collections.unmodifiableList(arrayList);
-            if (num.intValue() == 1) {
-                this.elementCounts.remove(e);
+            int intValue = num.intValue();
+            Map<E, Integer> map = this.elementCounts;
+            if (intValue == 1) {
+                map.remove(e);
                 HashSet hashSet = new HashSet(this.elementSet);
                 hashSet.remove(e);
                 this.elementSet = Collections.unmodifiableSet(hashSet);
             } else {
-                this.elementCounts.put(e, Integer.valueOf(num.intValue() - 1));
+                map.put(e, Integer.valueOf(num.intValue() - 1));
             }
         }
     }

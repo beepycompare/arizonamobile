@@ -14,27 +14,29 @@ public final class PointerInputChangeEventProducer {
     public final InternalPointerEvent produce(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator) {
         long uptime;
         boolean down;
-        long mo6825screenToLocalMKHz9U;
+        long mo6166screenToLocalMKHz9U;
         LongSparseArray longSparseArray = new LongSparseArray(pointerInputEvent.getPointers().size());
         List<PointerInputEventData> pointers = pointerInputEvent.getPointers();
         int size = pointers.size();
         for (int i = 0; i < size; i++) {
             PointerInputEventData pointerInputEventData = pointers.get(i);
-            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m6758getIdJ3iCeTQ());
+            PointerInputData pointerInputData = this.previousPointerInputData.get(pointerInputEventData.m6099getIdJ3iCeTQ());
             if (pointerInputData == null) {
                 down = false;
                 uptime = pointerInputEventData.getUptime();
-                mo6825screenToLocalMKHz9U = pointerInputEventData.m6760getPositionF1C5BW0();
+                mo6166screenToLocalMKHz9U = pointerInputEventData.m6101getPositionF1C5BW0();
             } else {
                 uptime = pointerInputData.getUptime();
                 down = pointerInputData.getDown();
-                mo6825screenToLocalMKHz9U = positionCalculator.mo6825screenToLocalMKHz9U(pointerInputData.m6749getPositionOnScreenF1C5BW0());
+                mo6166screenToLocalMKHz9U = positionCalculator.mo6166screenToLocalMKHz9U(pointerInputData.m6090getPositionOnScreenF1C5BW0());
             }
-            longSparseArray.put(pointerInputEventData.m6758getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m6758getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m6760getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo6825screenToLocalMKHz9U, down, false, pointerInputEventData.m6763getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m6762getScrollDeltaF1C5BW0(), pointerInputEventData.m6759getOriginalEventPositionF1C5BW0(), null));
-            if (pointerInputEventData.getDown()) {
-                this.previousPointerInputData.put(pointerInputEventData.m6758getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m6761getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
+            longSparseArray.put(pointerInputEventData.m6099getIdJ3iCeTQ(), new PointerInputChange(pointerInputEventData.m6099getIdJ3iCeTQ(), pointerInputEventData.getUptime(), pointerInputEventData.m6101getPositionF1C5BW0(), pointerInputEventData.getDown(), pointerInputEventData.getPressure(), uptime, mo6166screenToLocalMKHz9U, down, false, pointerInputEventData.m6104getTypeT8wyACA(), pointerInputEventData.getHistorical(), pointerInputEventData.m6103getScrollDeltaF1C5BW0(), pointerInputEventData.m6100getOriginalEventPositionF1C5BW0(), null));
+            boolean down2 = pointerInputEventData.getDown();
+            LongSparseArray<PointerInputData> longSparseArray2 = this.previousPointerInputData;
+            if (down2) {
+                longSparseArray2.put(pointerInputEventData.m6099getIdJ3iCeTQ(), new PointerInputData(pointerInputEventData.getUptime(), pointerInputEventData.m6102getPositionOnScreenF1C5BW0(), pointerInputEventData.getDown(), null));
             } else {
-                this.previousPointerInputData.remove(pointerInputEventData.m6758getIdJ3iCeTQ());
+                longSparseArray2.remove(pointerInputEventData.m6099getIdJ3iCeTQ());
             }
         }
         return new InternalPointerEvent(longSparseArray, pointerInputEvent);
@@ -67,7 +69,7 @@ public final class PointerInputChangeEventProducer {
         }
 
         /* renamed from: getPositionOnScreen-F1C5BW0  reason: not valid java name */
-        public final long m6749getPositionOnScreenF1C5BW0() {
+        public final long m6090getPositionOnScreenF1C5BW0() {
             return this.positionOnScreen;
         }
 

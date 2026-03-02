@@ -363,10 +363,11 @@ public class AppCompatTextViewAutoSizeHelper {
                 } catch (Exception e) {
                     Log.w(TAG, "Failed to invoke TextView#nullLayouts() method", e);
                 }
+                TextView textView = this.mTextView;
                 if (!isInLayout) {
-                    this.mTextView.requestLayout();
+                    textView.requestLayout();
                 } else {
-                    this.mTextView.forceLayout();
+                    textView.forceLayout();
                 }
                 this.mTextView.invalidate();
             }

@@ -26,9 +26,7 @@ public final class LocalTimeComponentSerializer implements KSerializer<LocalTime
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.LocalTime/components", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.LocalTimeComponentSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$0;
-            descriptor$lambda$0 = LocalTimeComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$0;
+            return LocalTimeComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -94,7 +92,7 @@ public final class LocalTimeComponentSerializer implements KSerializer<LocalTime
         beginStructure.endStructure(descriptor2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("hour", ShortSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

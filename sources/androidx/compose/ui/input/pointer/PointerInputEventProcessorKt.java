@@ -10,6 +10,6 @@ public final class PointerInputEventProcessorKt {
     }
 
     public static final int ProcessResult(boolean z, boolean z2, boolean z3) {
-        return ProcessResult.m6827constructorimpl((z ? 1 : 0) | ((z2 ? 1 : 0) << 1) | ((z3 ? 1 : 0) << 2));
+        return ProcessResult.m6168constructorimpl((z ? 1 : 0) | ((z2 ? 1 : 0) << 1) | ((z3 ? 1 : 0) << 2));
     }
 }

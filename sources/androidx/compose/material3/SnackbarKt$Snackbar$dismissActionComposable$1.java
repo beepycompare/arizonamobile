@@ -24,7 +24,7 @@ public final class SnackbarKt$Snackbar$dismissActionComposable$1 implements Func
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(SnackbarData snackbarData) {
         snackbarData.dismiss();
         return Unit.INSTANCE;
@@ -47,9 +47,7 @@ public final class SnackbarKt$Snackbar$dismissActionComposable$1 implements Func
             rememberedValue = new Function0() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$dismissActionComposable$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = SnackbarKt$Snackbar$dismissActionComposable$1.invoke$lambda$1$lambda$0(SnackbarData.this);
-                    return invoke$lambda$1$lambda$0;
+                    return SnackbarKt$Snackbar$dismissActionComposable$1.invoke$lambda$1$lambda$0(SnackbarData.this);
                 }
             };
             composer.updateRememberedValue(rememberedValue);

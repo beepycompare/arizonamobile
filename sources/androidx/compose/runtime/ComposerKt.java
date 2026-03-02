@@ -32,7 +32,7 @@ public final class ComposerKt {
     public static final int providerValuesKey = 203;
     public static final int referenceKey = 206;
     public static final int reuseKey = 207;
-    private static int composeStackTraceMode = ComposeStackTraceMode.Companion.m4896getNoneMD5MrJc();
+    private static int composeStackTraceMode = ComposeStackTraceMode.Companion.m4244getNoneMD5MrJc();
     private static final Object invocation = new OpaqueKey("provider");
     private static final Object provider = new OpaqueKey("provider");
     private static final Object compositionLocalMap = new OpaqueKey("compositionLocalMap");
@@ -118,7 +118,7 @@ public final class ComposerKt {
     }
 
     /* renamed from: setComposeStackTraceMode-76WK1J0 */
-    public static final void m4600setComposeStackTraceMode76WK1J0(int i) {
+    public static final void m3983setComposeStackTraceMode76WK1J0(int i) {
         composeStackTraceMode = i;
     }
 
@@ -153,9 +153,7 @@ public final class ComposerKt {
         slotWriter.forAllDataInRememberOrder(slotWriter.getCurrentGroup(), new Function2() { // from class: androidx.compose.runtime.ComposerKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit removeCurrentGroup$lambda$0;
-                removeCurrentGroup$lambda$0 = ComposerKt.removeCurrentGroup$lambda$0(RememberManager.this, ((Integer) obj).intValue(), obj2);
-                return removeCurrentGroup$lambda$0;
+                return ComposerKt.removeCurrentGroup$lambda$0(RememberManager.this, ((Integer) obj).intValue(), obj2);
             }
         });
         slotWriter.removeGroup();
@@ -292,7 +290,7 @@ public final class ComposerKt {
         if (anchor$runtime.getValid()) {
             Intrinsics.checkNotNull(controlledComposition, "null cannot be cast to non-null type androidx.compose.runtime.CompositionImpl");
             CompositionImpl compositionImpl = (CompositionImpl) controlledComposition;
-            if (ScopeMap.m4783getSizeimpl(compositionImpl.invalidations) > 0) {
+            if (ScopeMap.m4148getSizeimpl(compositionImpl.invalidations) > 0) {
                 emptyList = new ArrayList();
                 MutableScatterMap mutableScatterMap = compositionImpl.invalidations;
                 long[] jArr3 = mutableScatterMap.metadata;

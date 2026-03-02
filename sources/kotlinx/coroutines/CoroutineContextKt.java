@@ -31,14 +31,12 @@ public final class CoroutineContextKt {
         return ((Boolean) coroutineContext.fold(false, new Function2() { // from class: kotlinx.coroutines.CoroutineContextKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                boolean hasCopyableElements$lambda$0;
-                hasCopyableElements$lambda$0 = CoroutineContextKt.hasCopyableElements$lambda$0(((Boolean) obj).booleanValue(), (CoroutineContext.Element) obj2);
-                return Boolean.valueOf(hasCopyableElements$lambda$0);
+                return Boolean.valueOf(CoroutineContextKt.hasCopyableElements$lambda$0(((Boolean) obj).booleanValue(), (CoroutineContext.Element) obj2));
             }
         })).booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean hasCopyableElements$lambda$0(boolean z, CoroutineContext.Element element) {
         return z || (element instanceof CopyableThreadContextElement);
     }
@@ -56,25 +54,21 @@ public final class CoroutineContextKt {
         CoroutineContext coroutineContext3 = (CoroutineContext) coroutineContext.fold(EmptyCoroutineContext.INSTANCE, new Function2() { // from class: kotlinx.coroutines.CoroutineContextKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                CoroutineContext foldCopies$lambda$1;
-                foldCopies$lambda$1 = CoroutineContextKt.foldCopies$lambda$1(Ref.ObjectRef.this, z, (CoroutineContext) obj, (CoroutineContext.Element) obj2);
-                return foldCopies$lambda$1;
+                return CoroutineContextKt.foldCopies$lambda$1(Ref.ObjectRef.this, z, (CoroutineContext) obj, (CoroutineContext.Element) obj2);
             }
         });
         if (hasCopyableElements2) {
             objectRef.element = ((CoroutineContext) objectRef.element).fold(EmptyCoroutineContext.INSTANCE, new Function2() { // from class: kotlinx.coroutines.CoroutineContextKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    CoroutineContext foldCopies$lambda$2;
-                    foldCopies$lambda$2 = CoroutineContextKt.foldCopies$lambda$2((CoroutineContext) obj, (CoroutineContext.Element) obj2);
-                    return foldCopies$lambda$2;
+                    return CoroutineContextKt.foldCopies$lambda$2((CoroutineContext) obj, (CoroutineContext.Element) obj2);
                 }
             });
         }
         return coroutineContext3.plus((CoroutineContext) objectRef.element);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r3v3, types: [T, kotlin.coroutines.CoroutineContext] */
     public static final CoroutineContext foldCopies$lambda$1(Ref.ObjectRef objectRef, boolean z, CoroutineContext coroutineContext, CoroutineContext.Element element) {
         if (element instanceof CopyableThreadContextElement) {
@@ -88,7 +82,7 @@ public final class CoroutineContextKt {
         return coroutineContext.plus(element);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CoroutineContext foldCopies$lambda$2(CoroutineContext coroutineContext, CoroutineContext.Element element) {
         if (element instanceof CopyableThreadContextElement) {
             return coroutineContext.plus(((CopyableThreadContextElement) element).copyForChild());

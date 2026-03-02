@@ -56,18 +56,17 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 return;
             }
             symbol2 = StateFlowKt.NONE;
+            AtomicReference<Object> atomicReference2 = this._state;
             if (value == symbol2) {
-                AtomicReference<Object> atomicReference2 = this._state;
                 symbol3 = StateFlowKt.PENDING;
                 if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference2, value, symbol3)) {
                     return;
                 }
             } else {
-                AtomicReference<Object> atomicReference3 = this._state;
                 symbol4 = StateFlowKt.NONE;
-                if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference3, value, symbol4)) {
+                if (MutatorMutex$$ExternalSyntheticBackportWithForwarding0.m(atomicReference2, value, symbol4)) {
                     Result.Companion companion = Result.Companion;
-                    ((CancellableContinuationImpl) value).resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+                    ((CancellableContinuationImpl) value).resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
                     return;
                 }
             }
@@ -108,7 +107,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 }
             }
             Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+            cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {

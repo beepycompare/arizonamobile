@@ -448,13 +448,17 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         public void onAnimationEnd(Animator animator) {
             if (this.mCanceled) {
                 this.mCanceled = false;
-            } else if (((Float) FastScroller.this.mShowHideAnimator.getAnimatedValue()).floatValue() == 0.0f) {
-                FastScroller.this.mAnimationState = 0;
-                FastScroller.this.setState(0);
-            } else {
-                FastScroller.this.mAnimationState = 2;
-                FastScroller.this.requestRedraw();
+                return;
             }
+            int i = (((Float) FastScroller.this.mShowHideAnimator.getAnimatedValue()).floatValue() > 0.0f ? 1 : (((Float) FastScroller.this.mShowHideAnimator.getAnimatedValue()).floatValue() == 0.0f ? 0 : -1));
+            FastScroller fastScroller = FastScroller.this;
+            if (i == 0) {
+                fastScroller.mAnimationState = 0;
+                FastScroller.this.setState(0);
+                return;
+            }
+            fastScroller.mAnimationState = 2;
+            FastScroller.this.requestRedraw();
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

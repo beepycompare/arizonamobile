@@ -40,9 +40,9 @@ public final class TextFieldDelegateKt {
     }
 
     public static final long computeSizeForDefaultText(TextStyle textStyle, Density density, FontFamily.Resolver resolver, String str, int i) {
-        Paragraph m7554ParagraphUl8oQg4;
-        m7554ParagraphUl8oQg4 = ParagraphKt.m7554ParagraphUl8oQg4(str, textStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), density, resolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : CollectionsKt.emptyList(), (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : i, (r22 & 256) != 0 ? TextOverflow.Companion.m8193getClipgIe3tQ8() : TextOverflow.Companion.m8193getClipgIe3tQ8());
-        return IntSize.m8424constructorimpl((TextDelegateKt.ceilToIntPx(m7554ParagraphUl8oQg4.getMinIntrinsicWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m7554ParagraphUl8oQg4.getHeight()) & 4294967295L));
+        Paragraph m6882ParagraphUl8oQg4;
+        m6882ParagraphUl8oQg4 = ParagraphKt.m6882ParagraphUl8oQg4(str, textStyle, ConstraintsKt.Constraints$default(0, 0, 0, 0, 15, null), density, resolver, (r22 & 32) != 0 ? CollectionsKt.emptyList() : CollectionsKt.emptyList(), (r22 & 64) != 0 ? CollectionsKt.emptyList() : null, (r22 & 128) != 0 ? Integer.MAX_VALUE : i, (r22 & 256) != 0 ? TextOverflow.Companion.m7490getClipgIe3tQ8() : TextOverflow.Companion.m7490getClipgIe3tQ8());
+        return IntSize.m7721constructorimpl((TextDelegateKt.ceilToIntPx(m6882ParagraphUl8oQg4.getMinIntrinsicWidth()) << 32) | (TextDelegateKt.ceilToIntPx(m6882ParagraphUl8oQg4.getHeight()) & 4294967295L));
     }
 
     public static final Rect focusedRectInRoot(TextLayoutResult textLayoutResult, LayoutCoordinates layoutCoordinates, int i, Function0<IntSize> function0) {
@@ -52,14 +52,14 @@ public final class TextFieldDelegateKt {
         } else if (i != 0) {
             rect = textLayoutResult.getBoundingBox(i - 1);
         } else {
-            rect = new Rect(0.0f, 0.0f, 1.0f, (int) (function0.invoke().m8433unboximpl() & 4294967295L));
+            rect = new Rect(0.0f, 0.0f, 1.0f, (int) (function0.invoke().m7730unboximpl() & 4294967295L));
         }
         float left = rect.getLeft();
         float top = rect.getTop();
-        long mo6886localToRootMKHz9U = layoutCoordinates.mo6886localToRootMKHz9U(Offset.m5171constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
-        long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo6886localToRootMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo6886localToRootMKHz9U & 4294967295L))) & 4294967295L));
+        long mo6227localToRootMKHz9U = layoutCoordinates.mo6227localToRootMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32)));
+        long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo6227localToRootMKHz9U >> 32))) << 32) | (Float.floatToRawIntBits(Float.intBitsToFloat((int) (mo6227localToRootMKHz9U & 4294967295L))) & 4294967295L));
         float right = rect.getRight() - rect.getLeft();
         float bottom = rect.getBottom() - rect.getTop();
-        return RectKt.m5219Recttz77jQw(m5171constructorimpl, Size.m5239constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32)));
+        return RectKt.m4567Recttz77jQw(m4519constructorimpl, Size.m4587constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32)));
     }
 }

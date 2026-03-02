@@ -163,12 +163,17 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
             @Override // java.lang.Runnable
             public void run() {
                 NvEventQueueActivity.this.waitingForResume = true;
-                while (NvEventQueueActivity.this.cachedSurfaceHolder == null) {
-                    NvEventQueueActivity.this.mSleep(1000L);
+                while (true) {
+                    SurfaceHolder surfaceHolder = NvEventQueueActivity.this.cachedSurfaceHolder;
+                    NvEventQueueActivity nvEventQueueActivity = NvEventQueueActivity.this;
+                    if (surfaceHolder != null) {
+                        nvEventQueueActivity.waitingForResume = false;
+                        NvEventQueueActivity.this.resumeEvent();
+                        NvEventQueueActivity.this.ResumeEventDone = true;
+                        return;
+                    }
+                    nvEventQueueActivity.mSleep(1000L);
                 }
-                NvEventQueueActivity.this.waitingForResume = false;
-                NvEventQueueActivity.this.resumeEvent();
-                NvEventQueueActivity.this.ResumeEventDone = true;
             }
         }).start();
     }
@@ -350,62 +355,69 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
     /* JADX WARN: Multi-variable type inference failed */
     protected boolean initEGL(int i, int i2) {
         int i3;
+        int[] iArr;
+        int[] iArr2;
         int eglGetError;
         int i4;
         int i5;
         if (this.configAttrs == null) {
             this.configAttrs = new int[]{12344};
         }
-        int[] iArr = this.configAttrs;
-        this.configAttrs = new int[iArr.length + 2];
+        int[] iArr3 = this.configAttrs;
+        this.configAttrs = new int[iArr3.length + 2];
         int i6 = 0;
         int i7 = 0;
         while (true) {
             i3 = 1;
-            if (i7 >= iArr.length - 1) {
+            int length = iArr3.length - 1;
+            iArr = this.configAttrs;
+            if (i7 >= length) {
                 break;
             }
-            this.configAttrs[i7] = iArr[i7];
+            iArr[i7] = iArr3[i7];
             i7++;
         }
-        int[] iArr2 = this.configAttrs;
         int i8 = i7 + 1;
-        iArr2[i7] = EGL_RENDERABLE_TYPE;
+        iArr[i7] = EGL_RENDERABLE_TYPE;
         int i9 = i7 + 2;
         if (i == 3) {
-            iArr2[i8] = EGL_OPENGL_ES3_BIT;
+            iArr[i8] = EGL_OPENGL_ES3_BIT;
         } else {
-            iArr2[i8] = 4;
+            iArr[i8] = 4;
         }
-        iArr2[i9] = 12344;
+        iArr[i9] = 12344;
         this.contextAttrs = new int[]{EGL_CONTEXT_CLIENT_VERSION, i, 12344};
-        if (iArr2 == null) {
+        if (iArr == null) {
             this.configAttrs = new int[]{12344};
         }
-        int[] iArr3 = this.configAttrs;
-        this.configAttrs = new int[iArr3.length + 12];
+        int[] iArr4 = this.configAttrs;
+        this.configAttrs = new int[iArr4.length + 12];
         int i10 = 0;
-        while (i10 < iArr3.length - 1) {
-            this.configAttrs[i10] = iArr3[i10];
+        while (true) {
+            int length2 = iArr4.length - 1;
+            iArr2 = this.configAttrs;
+            if (i10 >= length2) {
+                break;
+            }
+            iArr2[i10] = iArr4[i10];
             i10++;
         }
-        int[] iArr4 = this.configAttrs;
         int i11 = 12324;
-        iArr4[i10] = 12324;
-        iArr4[i10 + 1] = this.redSize;
+        iArr2[i10] = 12324;
+        iArr2[i10 + 1] = this.redSize;
         int i12 = 12323;
-        iArr4[i10 + 2] = 12323;
-        iArr4[i10 + 3] = this.greenSize;
+        iArr2[i10 + 2] = 12323;
+        iArr2[i10 + 3] = this.greenSize;
         int i13 = 12322;
-        iArr4[i10 + 4] = 12322;
-        iArr4[i10 + 5] = this.blueSize;
-        iArr4[i10 + 6] = 12321;
-        iArr4[i10 + 7] = this.alphaSize;
-        iArr4[i10 + 8] = 12326;
-        iArr4[i10 + 9] = this.stencilSize;
-        iArr4[i10 + 10] = 12325;
-        iArr4[i10 + 11] = i2;
-        iArr4[i10 + 12] = 12344;
+        iArr2[i10 + 4] = 12322;
+        iArr2[i10 + 5] = this.blueSize;
+        iArr2[i10 + 6] = 12321;
+        iArr2[i10 + 7] = this.alphaSize;
+        iArr2[i10 + 8] = 12326;
+        iArr2[i10 + 9] = this.stencilSize;
+        iArr2[i10 + 10] = 12325;
+        iArr2[i10 + 11] = i2;
+        iArr2[i10 + 12] = 12344;
         EGL10 egl10 = (EGL10) EGLContext.getEGL();
         this.egl = egl10;
         egl10.eglGetError();
@@ -426,11 +438,13 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
             while (i15 < iArr5[i6]) {
                 int i16 = i6;
                 while (true) {
-                    if (i16 < ((iArr3.length - i3) >> i3)) {
+                    int length3 = (iArr4.length - i3) >> i3;
+                    EGL10 egl102 = this.egl;
+                    if (i16 < length3) {
                         i4 = i6;
                         i5 = i3;
                         int i17 = i16 * 2;
-                        this.egl.eglGetConfigAttrib(this.eglDisplay, eGLConfigArr[i15], this.configAttrs[i17], iArr6);
+                        egl102.eglGetConfigAttrib(this.eglDisplay, eGLConfigArr[i15], this.configAttrs[i17], iArr6);
                         int i18 = iArr6[i4];
                         int i19 = this.configAttrs[i17 + 1];
                         if ((i18 & i19) != i19) {
@@ -442,7 +456,7 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
                     } else {
                         i4 = i6;
                         i5 = i3;
-                        this.egl.eglGetConfigAttrib(this.eglDisplay, eGLConfigArr[i15], i11, iArr6);
+                        egl102.eglGetConfigAttrib(this.eglDisplay, eGLConfigArr[i15], i11, iArr6);
                         int i20 = iArr6[i4];
                         this.egl.eglGetConfigAttrib(this.eglDisplay, eGLConfigArr[i15], i12, iArr6);
                         int i21 = iArr6[i4];
@@ -980,14 +994,18 @@ public abstract class NvEventQueueActivity extends Activity implements SensorEve
                 @Override // android.view.SurfaceHolder.Callback
                 public void surfaceCreated(SurfaceHolder surfaceHolder) {
                     NvEventQueueActivity.this.vidViewIsActive = true;
-                    if (!NvEventQueueActivity.this.vidViewCreated) {
-                        if (NvEventQueueActivity.this.UseSubtitles) {
-                            NvEventQueueActivity.this.movieTextView.setVisibility(0);
+                    boolean z2 = NvEventQueueActivity.this.vidViewCreated;
+                    NvEventQueueActivity nvEventQueueActivity = NvEventQueueActivity.this;
+                    if (!z2) {
+                        boolean z3 = nvEventQueueActivity.UseSubtitles;
+                        NvEventQueueActivity nvEventQueueActivity2 = NvEventQueueActivity.this;
+                        if (z3) {
+                            nvEventQueueActivity2.movieTextView.setVisibility(0);
                         } else {
-                            NvEventQueueActivity.this.vidView.setVisibility(4);
+                            nvEventQueueActivity2.vidView.setVisibility(4);
                         }
                         NvEventQueueActivity.this.vidViewCreated = true;
-                    } else if (NvEventQueueActivity.this.UseSubtitles) {
+                    } else if (nvEventQueueActivity.UseSubtitles) {
                         NvEventQueueActivity.this.movieTextView.setVisibility(0);
                     }
                     NvEventQueueActivity.this.InVideview = false;

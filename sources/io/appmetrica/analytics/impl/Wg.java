@@ -14,8 +14,8 @@ public final class Wg extends Rg {
             return false;
         }
         if (!this.b.d()) {
-            C0373k9 c0373k9 = x4.n;
-            c0373k9.c.b(P5.a(p5, EnumC0143bb.EVENT_TYPE_FIRST_ACTIVATION));
+            C0372k9 c0372k9 = x4.n;
+            c0372k9.c.b(P5.a(p5, EnumC0142bb.EVENT_TYPE_FIRST_ACTIVATION));
         }
         xo xoVar = this.b;
         synchronized (xoVar) {

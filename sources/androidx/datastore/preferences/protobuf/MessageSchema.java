@@ -5784,10 +5784,11 @@ public final class MessageSchema<T> implements Schema<T> {
     private final <K, V> void mergeMap(Object message, int pos, Object mapDefaultEntry, ExtensionRegistryLite extensionRegistry, Reader reader) throws IOException {
         long offset = offset(typeAndOffsetAt(pos));
         Object object = UnsafeUtil.getObject(message, offset);
+        MapFieldSchema mapFieldSchema = this.mapFieldSchema;
         if (object == null) {
-            object = this.mapFieldSchema.newMapField(mapDefaultEntry);
+            object = mapFieldSchema.newMapField(mapDefaultEntry);
             UnsafeUtil.putObject(message, offset, object);
-        } else if (this.mapFieldSchema.isImmutable(object)) {
+        } else if (mapFieldSchema.isImmutable(object)) {
             Object newMapField = this.mapFieldSchema.newMapField(mapDefaultEntry);
             this.mapFieldSchema.mergeFrom(newMapField, object);
             UnsafeUtil.putObject(message, offset, newMapField);
@@ -5947,10 +5948,12 @@ public final class MessageSchema<T> implements Schema<T> {
     }
 
     private void readStringList(Object message, int typeAndOffset, Reader reader) throws IOException {
-        if (isEnforceUtf8(typeAndOffset)) {
-            reader.readStringListRequireUtf8(this.listFieldSchema.mutableListAt(message, offset(typeAndOffset)));
+        boolean isEnforceUtf8 = isEnforceUtf8(typeAndOffset);
+        ListFieldSchema listFieldSchema = this.listFieldSchema;
+        if (isEnforceUtf8) {
+            reader.readStringListRequireUtf8(listFieldSchema.mutableListAt(message, offset(typeAndOffset)));
         } else {
-            reader.readStringList(this.listFieldSchema.mutableListAt(message, offset(typeAndOffset)));
+            reader.readStringList(listFieldSchema.mutableListAt(message, offset(typeAndOffset)));
         }
     }
 

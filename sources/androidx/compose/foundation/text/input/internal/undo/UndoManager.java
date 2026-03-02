@@ -58,10 +58,17 @@ public final class UndoManager<T> {
 
     public final void record(T t) {
         this.redoStack.clear();
-        while (getSize() > this.capacity - 1) {
-            CollectionsKt.removeFirst(this.undoStack);
+        while (true) {
+            int size = getSize();
+            int i = this.capacity - 1;
+            SnapshotStateList<T> snapshotStateList = this.undoStack;
+            if (size > i) {
+                CollectionsKt.removeFirst(snapshotStateList);
+            } else {
+                snapshotStateList.add(t);
+                return;
+            }
         }
-        this.undoStack.add(t);
     }
 
     public final T undo() {

@@ -32,15 +32,13 @@ public final class BringIntoViewRequestPriorityQueue {
         Rect invoke = request.getCurrentBounds().invoke();
         if (invoke == null) {
             Result.Companion companion = Result.Companion;
-            request.getContinuation().resumeWith(Result.m10243constructorimpl(Unit.INSTANCE));
+            request.getContinuation().resumeWith(Result.m9182constructorimpl(Unit.INSTANCE));
             return false;
         }
         request.getContinuation().invokeOnCancellation(new Function1() { // from class: androidx.compose.foundation.gestures.BringIntoViewRequestPriorityQueue$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit enqueue$lambda$1;
-                enqueue$lambda$1 = BringIntoViewRequestPriorityQueue.enqueue$lambda$1(BringIntoViewRequestPriorityQueue.this, request, (Throwable) obj);
-                return enqueue$lambda$1;
+                return BringIntoViewRequestPriorityQueue.enqueue$lambda$1(BringIntoViewRequestPriorityQueue.this, request, (Throwable) obj);
             }
         });
         IntRange until = RangesKt.until(0, this.requests.getSize());
@@ -78,7 +76,7 @@ public final class BringIntoViewRequestPriorityQueue {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit enqueue$lambda$1(BringIntoViewRequestPriorityQueue bringIntoViewRequestPriorityQueue, ContentInViewNode.Request request, Throwable th) {
         bringIntoViewRequestPriorityQueue.requests.remove(request);
         return Unit.INSTANCE;
@@ -104,7 +102,7 @@ public final class BringIntoViewRequestPriorityQueue {
             while (true) {
                 Unit unit = Unit.INSTANCE;
                 Result.Companion companion = Result.Companion;
-                this.requests.content[first].getContinuation().resumeWith(Result.m10243constructorimpl(unit));
+                this.requests.content[first].getContinuation().resumeWith(Result.m9182constructorimpl(unit));
                 if (first == last) {
                     break;
                 }
@@ -118,7 +116,7 @@ public final class BringIntoViewRequestPriorityQueue {
         while (this.requests.getSize() != 0 && function1.invoke(((ContentInViewNode.Request) this.requests.last()).getCurrentBounds().invoke()).booleanValue()) {
             Unit unit = Unit.INSTANCE;
             Result.Companion companion = Result.Companion;
-            ((ContentInViewNode.Request) this.requests.removeAt(this.requests.getSize() - 1)).getContinuation().resumeWith(Result.m10243constructorimpl(unit));
+            ((ContentInViewNode.Request) this.requests.removeAt(this.requests.getSize() - 1)).getContinuation().resumeWith(Result.m9182constructorimpl(unit));
         }
     }
 

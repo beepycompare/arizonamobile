@@ -483,9 +483,9 @@ public abstract class ObjectList<E> {
     }
 
     public final int indexOf(E e) {
+        Object[] objArr = this.content;
         int i = 0;
         if (e == null) {
-            Object[] objArr = this.content;
             int i2 = this._size;
             while (i < i2) {
                 if (objArr[i] == null) {
@@ -495,10 +495,9 @@ public abstract class ObjectList<E> {
             }
             return -1;
         }
-        Object[] objArr2 = this.content;
         int i3 = this._size;
         while (i < i3) {
-            if (e.equals(objArr2[i])) {
+            if (e.equals(objArr[i])) {
                 return i;
             }
             i++;
@@ -568,17 +567,16 @@ public abstract class ObjectList<E> {
     }
 
     public final int lastIndexOf(E e) {
+        Object[] objArr = this.content;
         if (e == null) {
-            Object[] objArr = this.content;
             for (int i = this._size - 1; -1 < i; i--) {
                 if (objArr[i] == null) {
                     return i;
                 }
             }
         } else {
-            Object[] objArr2 = this.content;
             for (int i2 = this._size - 1; -1 < i2; i2--) {
-                if (e.equals(objArr2[i2])) {
+                if (e.equals(objArr[i2])) {
                     return i2;
                 }
             }

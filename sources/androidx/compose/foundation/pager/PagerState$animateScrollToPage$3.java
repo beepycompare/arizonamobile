@@ -61,9 +61,7 @@ public final class PagerState$animateScrollToPage$3 extends SuspendLambda implem
             if (PagerStateKt.access$animateScrollToPage(LazyLayoutScrollScope, i2, f, animationSpec, new Function2() { // from class: androidx.compose.foundation.pager.PagerState$animateScrollToPage$3$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = PagerState$animateScrollToPage$3.invokeSuspend$lambda$0(PagerState.this, (ScrollScope) obj2, ((Integer) obj3).intValue());
-                    return invokeSuspend$lambda$0;
+                    return PagerState$animateScrollToPage$3.invokeSuspend$lambda$0(PagerState.this, (ScrollScope) obj2, ((Integer) obj3).intValue());
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -76,7 +74,7 @@ public final class PagerState$animateScrollToPage$3 extends SuspendLambda implem
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(PagerState pagerState, ScrollScope scrollScope, int i) {
         pagerState.updateTargetPage(scrollScope, i);
         return Unit.INSTANCE;

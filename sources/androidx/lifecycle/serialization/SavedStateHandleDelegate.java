@@ -96,7 +96,7 @@ public final class SavedStateHandleDelegate<T> implements ReadWriteProperty<Obje
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         return bundleOf;
     }
 

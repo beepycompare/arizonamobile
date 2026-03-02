@@ -416,10 +416,11 @@ public final class MediaBrowserCompat {
                 List<Bundle> optionsList = subscription.getOptionsList();
                 for (int i = 0; i < callbacks.size(); i++) {
                     Bundle bundle = optionsList.get(i);
+                    SubscriptionCallback subscriptionCallback = SubscriptionCallback.this;
                     if (bundle == null) {
-                        SubscriptionCallback.this.onChildrenLoaded(str, fromMediaItemList);
+                        subscriptionCallback.onChildrenLoaded(str, fromMediaItemList);
                     } else {
-                        SubscriptionCallback.this.onChildrenLoaded(str, applyOptions(fromMediaItemList, bundle), bundle);
+                        subscriptionCallback.onChildrenLoaded(str, applyOptions(fromMediaItemList, bundle), bundle);
                     }
                 }
             }
@@ -558,10 +559,12 @@ public final class MediaBrowserCompat {
                     if (MediaBrowserCompat.DEBUG && MediaBrowserImplBase.this.mServiceConnection != null) {
                         throw new RuntimeException("mServiceConnection should be null. Instead it is " + MediaBrowserImplBase.this.mServiceConnection);
                     }
-                    if (MediaBrowserImplBase.this.mServiceBinderWrapper != null) {
-                        throw new RuntimeException("mServiceBinderWrapper should be null. Instead it is " + MediaBrowserImplBase.this.mServiceBinderWrapper);
+                    ServiceBinderWrapper serviceBinderWrapper = MediaBrowserImplBase.this.mServiceBinderWrapper;
+                    MediaBrowserImplBase mediaBrowserImplBase = MediaBrowserImplBase.this;
+                    if (serviceBinderWrapper != null) {
+                        throw new RuntimeException("mServiceBinderWrapper should be null. Instead it is " + mediaBrowserImplBase.mServiceBinderWrapper);
                     }
-                    if (MediaBrowserImplBase.this.mCallbacksMessenger != null) {
+                    if (mediaBrowserImplBase.mCallbacksMessenger != null) {
                         throw new RuntimeException("mCallbacksMessenger should be null. Instead it is " + MediaBrowserImplBase.this.mCallbacksMessenger);
                     }
                     Intent intent = new Intent(MediaBrowserServiceCompat.SERVICE_INTERFACE);

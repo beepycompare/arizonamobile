@@ -45,10 +45,12 @@ public final class InnerQueuedObserver<T> extends AtomicReference<Disposable> im
 
     @Override // io.reactivex.Observer
     public void onNext(T t) {
-        if (this.fusionMode == 0) {
-            this.parent.innerNext(this, t);
+        int i = this.fusionMode;
+        InnerQueuedObserverSupport<T> innerQueuedObserverSupport = this.parent;
+        if (i == 0) {
+            innerQueuedObserverSupport.innerNext(this, t);
         } else {
-            this.parent.drain();
+            innerQueuedObserverSupport.drain();
         }
     }
 

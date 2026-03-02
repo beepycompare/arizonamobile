@@ -23,13 +23,13 @@ public final class ClickableAppBarItem implements AppBarItem {
     private final String label;
     private final Function0<Unit> onClick;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit AppbarContent$lambda$0(ClickableAppBarItem clickableAppBarItem, int i, Composer composer, int i2) {
         clickableAppBarItem.AppbarContent(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MenuContent$lambda$3(ClickableAppBarItem clickableAppBarItem, AppBarMenuState appBarMenuState, int i, Composer composer, int i2) {
         clickableAppBarItem.MenuContent(appBarMenuState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -59,7 +59,7 @@ public final class ClickableAppBarItem implements AppBarItem {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1170649368, i2, -1, "androidx.compose.material3.ClickableAppBarItem.AppbarContent (AppBarDsl.kt:158)");
             }
-            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m3452rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m3439getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(-816691117, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ClickableAppBarItem$AppbarContent$1
+            TooltipKt.TooltipBox(TooltipDefaults.INSTANCE.m2891rememberTooltipPositionProviderHu5FAss(TooltipAnchorPosition.Companion.m2878getAbovelOKsHw4(), 0.0f, startRestartGroup, 390, 2), ComposableLambdaKt.rememberComposableLambda(-816691117, true, new Function3<TooltipScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.ClickableAppBarItem$AppbarContent$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(TooltipScope tooltipScope, Composer composer2, Integer num) {
                     invoke(tooltipScope, composer2, num.intValue());
@@ -82,7 +82,7 @@ public final class ClickableAppBarItem implements AppBarItem {
                         ComposerKt.traceEventStart(-816691117, i4, -1, "androidx.compose.material3.ClickableAppBarItem.AppbarContent.<anonymous> (AppBarDsl.kt:163)");
                     }
                     final ClickableAppBarItem clickableAppBarItem = ClickableAppBarItem.this;
-                    TooltipKt.m3460PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(837175745, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ClickableAppBarItem$AppbarContent$1.1
+                    TooltipKt.m2894PlainTooltipgv3ox5I(tooltipScope, null, null, 0.0f, null, 0L, 0L, 0.0f, 0.0f, ComposableLambdaKt.rememberComposableLambda(837175745, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.ClickableAppBarItem$AppbarContent$1.1
                         @Override // kotlin.jvm.functions.Function2
                         public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                             invoke(composer3, num.intValue());
@@ -100,7 +100,7 @@ public final class ClickableAppBarItem implements AppBarItem {
                                 ComposerKt.traceEventStart(837175745, i5, -1, "androidx.compose.material3.ClickableAppBarItem.AppbarContent.<anonymous>.<anonymous> (AppBarDsl.kt:163)");
                             }
                             str = ClickableAppBarItem.this.label;
-                            TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
+                            TextKt.m2712TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer3, 0, 0, 262142);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -149,9 +149,7 @@ public final class ClickableAppBarItem implements AppBarItem {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ClickableAppBarItem$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit AppbarContent$lambda$0;
-                    AppbarContent$lambda$0 = ClickableAppBarItem.AppbarContent$lambda$0(ClickableAppBarItem.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return AppbarContent$lambda$0;
+                    return ClickableAppBarItem.AppbarContent$lambda$0(ClickableAppBarItem.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -196,7 +194,7 @@ public final class ClickableAppBarItem implements AppBarItem {
                         ComposerKt.traceEventStart(900574477, i3, -1, "androidx.compose.material3.ClickableAppBarItem.MenuContent.<anonymous> (AppBarDsl.kt:174)");
                     }
                     str = ClickableAppBarItem.this.label;
-                    TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
+                    TextKt.m2712TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
                     if (ComposerKt.isTraceInProgress()) {
                         ComposerKt.traceEventEnd();
                     }
@@ -213,9 +211,7 @@ public final class ClickableAppBarItem implements AppBarItem {
                 rememberedValue = new Function0() { // from class: androidx.compose.material3.ClickableAppBarItem$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit MenuContent$lambda$2$lambda$1;
-                        MenuContent$lambda$2$lambda$1 = ClickableAppBarItem.MenuContent$lambda$2$lambda$1(ClickableAppBarItem.this, appBarMenuState);
-                        return MenuContent$lambda$2$lambda$1;
+                        return ClickableAppBarItem.MenuContent$lambda$2$lambda$1(ClickableAppBarItem.this, appBarMenuState);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -231,15 +227,13 @@ public final class ClickableAppBarItem implements AppBarItem {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.ClickableAppBarItem$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MenuContent$lambda$3;
-                    MenuContent$lambda$3 = ClickableAppBarItem.MenuContent$lambda$3(ClickableAppBarItem.this, appBarMenuState, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MenuContent$lambda$3;
+                    return ClickableAppBarItem.MenuContent$lambda$3(ClickableAppBarItem.this, appBarMenuState, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MenuContent$lambda$2$lambda$1(ClickableAppBarItem clickableAppBarItem, AppBarMenuState appBarMenuState) {
         clickableAppBarItem.onClick.invoke();
         appBarMenuState.dismiss();

@@ -389,10 +389,12 @@ public class OffscreenLayer {
             this.lastShadowBlurRadius = dropShadow.getRadius();
         }
         this.shadowPaint.setColor(dropShadow.getColor());
-        if (dropShadow.getRadius() > 0.0f) {
-            this.shadowPaint.setMaskFilter(this.shadowBlurFilter);
+        int i = (dropShadow.getRadius() > 0.0f ? 1 : (dropShadow.getRadius() == 0.0f ? 0 : -1));
+        LPaint lPaint2 = this.shadowPaint;
+        if (i > 0) {
+            lPaint2.setMaskFilter(this.shadowBlurFilter);
         } else {
-            this.shadowPaint.setMaskFilter(null);
+            lPaint2.setMaskFilter(null);
         }
         this.shadowPaint.setFilterBitmap(true);
         this.shadowBitmapCanvas.drawBitmap(this.shadowMaskBitmap, Math.round(dropShadow.getDx() * f), Math.round(dropShadow.getDy() * f2), this.shadowPaint);

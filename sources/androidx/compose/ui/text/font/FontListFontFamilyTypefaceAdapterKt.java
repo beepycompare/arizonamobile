@@ -21,14 +21,14 @@ public final class FontListFontFamilyTypefaceAdapterKt {
     public static final Pair<List<Font>, Object> firstImmediatelyAvailable(List<? extends Font> list, TypefaceRequest typefaceRequest, AsyncTypefaceCache asyncTypefaceCache, PlatformFontLoader platformFontLoader, Function1<? super TypefaceRequest, ? extends Object> function1) {
         Object invoke;
         Object obj;
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         Object obj2;
         int size = list.size();
         List list2 = null;
         for (int i = 0; i < size; i++) {
             Font font = list.get(i);
-            int mo7759getLoadingStrategyPKNRLFQ = font.mo7759getLoadingStrategyPKNRLFQ();
-            if (FontLoadingStrategy.m7802equalsimpl0(mo7759getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7807getBlockingPKNRLFQ())) {
+            int mo7060getLoadingStrategyPKNRLFQ = font.mo7060getLoadingStrategyPKNRLFQ();
+            if (FontLoadingStrategy.m7102equalsimpl0(mo7060getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7107getBlockingPKNRLFQ())) {
                 synchronized (asyncTypefaceCache.cacheLock) {
                     AsyncTypefaceCache.Key key = new AsyncTypefaceCache.Key(font, platformFontLoader.getCacheKey());
                     AsyncTypefaceCache.AsyncTypefaceResult asyncTypefaceResult = (AsyncTypefaceCache.AsyncTypefaceResult) asyncTypefaceCache.resultCache.get(key);
@@ -36,7 +36,7 @@ public final class FontListFontFamilyTypefaceAdapterKt {
                         asyncTypefaceResult = (AsyncTypefaceCache.AsyncTypefaceResult) asyncTypefaceCache.permanentCache.get(key);
                     }
                     if (asyncTypefaceResult != null) {
-                        obj = asyncTypefaceResult.m7776unboximpl();
+                        obj = asyncTypefaceResult.m7077unboximpl();
                     } else {
                         Unit unit = Unit.INSTANCE;
                         try {
@@ -52,9 +52,9 @@ public final class FontListFontFamilyTypefaceAdapterKt {
                 if (obj == null) {
                     obj = function1.invoke(typefaceRequest);
                 }
-                return TuplesKt.to(list2, FontSynthesis_androidKt.m7837synthesizeTypefaceFxwP2eA(typefaceRequest.m7863getFontSynthesisGVVA2EU(), obj, font, typefaceRequest.getFontWeight(), typefaceRequest.m7862getFontStyle_LCdwA()));
+                return TuplesKt.to(list2, FontSynthesis_androidKt.m7137synthesizeTypefaceFxwP2eA(typefaceRequest.m7162getFontSynthesisGVVA2EU(), obj, font, typefaceRequest.getFontWeight(), typefaceRequest.m7161getFontStyle_LCdwA()));
             }
-            if (FontLoadingStrategy.m7802equalsimpl0(mo7759getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7808getOptionalLocalPKNRLFQ())) {
+            if (FontLoadingStrategy.m7102equalsimpl0(mo7060getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7108getOptionalLocalPKNRLFQ())) {
                 synchronized (asyncTypefaceCache.cacheLock) {
                     AsyncTypefaceCache.Key key2 = new AsyncTypefaceCache.Key(font, platformFontLoader.getCacheKey());
                     AsyncTypefaceCache.AsyncTypefaceResult asyncTypefaceResult2 = (AsyncTypefaceCache.AsyncTypefaceResult) asyncTypefaceCache.resultCache.get(key2);
@@ -62,36 +62,36 @@ public final class FontListFontFamilyTypefaceAdapterKt {
                         asyncTypefaceResult2 = (AsyncTypefaceCache.AsyncTypefaceResult) asyncTypefaceCache.permanentCache.get(key2);
                     }
                     if (asyncTypefaceResult2 != null) {
-                        obj2 = asyncTypefaceResult2.m7776unboximpl();
+                        obj2 = asyncTypefaceResult2.m7077unboximpl();
                     } else {
                         Unit unit2 = Unit.INSTANCE;
                         try {
                             Result.Companion companion = Result.Companion;
-                            m10243constructorimpl = Result.m10243constructorimpl(platformFontLoader.loadBlocking(font));
+                            m9182constructorimpl = Result.m9182constructorimpl(platformFontLoader.loadBlocking(font));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
                         }
-                        Object obj4 = Result.m10249isFailureimpl(m10243constructorimpl) ? null : m10243constructorimpl;
+                        Object obj4 = Result.m9188isFailureimpl(m9182constructorimpl) ? null : m9182constructorimpl;
                         AsyncTypefaceCache.put$default(asyncTypefaceCache, font, platformFontLoader, obj4, false, 8, null);
                         obj2 = obj4;
                     }
                 }
                 if (obj2 != null) {
-                    return TuplesKt.to(list2, FontSynthesis_androidKt.m7837synthesizeTypefaceFxwP2eA(typefaceRequest.m7863getFontSynthesisGVVA2EU(), obj2, font, typefaceRequest.getFontWeight(), typefaceRequest.m7862getFontStyle_LCdwA()));
+                    return TuplesKt.to(list2, FontSynthesis_androidKt.m7137synthesizeTypefaceFxwP2eA(typefaceRequest.m7162getFontSynthesisGVVA2EU(), obj2, font, typefaceRequest.getFontWeight(), typefaceRequest.m7161getFontStyle_LCdwA()));
                 }
-            } else if (!FontLoadingStrategy.m7802equalsimpl0(mo7759getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7806getAsyncPKNRLFQ())) {
+            } else if (!FontLoadingStrategy.m7102equalsimpl0(mo7060getLoadingStrategyPKNRLFQ, FontLoadingStrategy.Companion.m7106getAsyncPKNRLFQ())) {
                 throw new IllegalStateException("Unknown font type " + font);
             } else {
-                AsyncTypefaceCache.AsyncTypefaceResult m7768get1ASDuI8 = asyncTypefaceCache.m7768get1ASDuI8(font, platformFontLoader);
-                if (m7768get1ASDuI8 == null) {
+                AsyncTypefaceCache.AsyncTypefaceResult m7069get1ASDuI8 = asyncTypefaceCache.m7069get1ASDuI8(font, platformFontLoader);
+                if (m7069get1ASDuI8 == null) {
                     if (list2 == null) {
                         list2 = CollectionsKt.mutableListOf(font);
                     } else {
                         list2.add(font);
                     }
-                } else if (!AsyncTypefaceCache.AsyncTypefaceResult.m7774isPermanentFailureimpl(m7768get1ASDuI8.m7776unboximpl()) && m7768get1ASDuI8.m7776unboximpl() != null) {
-                    return TuplesKt.to(list2, FontSynthesis_androidKt.m7837synthesizeTypefaceFxwP2eA(typefaceRequest.m7863getFontSynthesisGVVA2EU(), m7768get1ASDuI8.m7776unboximpl(), font, typefaceRequest.getFontWeight(), typefaceRequest.m7862getFontStyle_LCdwA()));
+                } else if (!AsyncTypefaceCache.AsyncTypefaceResult.m7075isPermanentFailureimpl(m7069get1ASDuI8.m7077unboximpl()) && m7069get1ASDuI8.m7077unboximpl() != null) {
+                    return TuplesKt.to(list2, FontSynthesis_androidKt.m7137synthesizeTypefaceFxwP2eA(typefaceRequest.m7162getFontSynthesisGVVA2EU(), m7069get1ASDuI8.m7077unboximpl(), font, typefaceRequest.getFontWeight(), typefaceRequest.m7161getFontStyle_LCdwA()));
                 }
             }
         }

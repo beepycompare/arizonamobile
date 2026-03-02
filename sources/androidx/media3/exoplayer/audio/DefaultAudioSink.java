@@ -44,7 +44,7 @@ import java.util.ArrayDeque;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class DefaultAudioSink implements AudioSink {
     private static final int AUDIO_OUTPUT_SMALLER_BUFFER_RETRY_SIZE = 1000000;
     private static final int AUDIO_OUTPUT_VOLUME_RAMP_TIME_MS = 20;
@@ -119,17 +119,17 @@ public final class DefaultAudioSink implements AudioSink {
     private long writtenEncodedFrames;
     private long writtenPcmBytes;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface AudioOffloadSupportProvider {
         AudioOffloadSupport getAudioOffloadSupport(Format format, AudioAttributes audioAttributes);
     }
 
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface AudioProcessorChain extends androidx.media3.common.audio.AudioProcessorChain {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface AudioTrackBufferSizeProvider {
         public static final AudioTrackBufferSizeProvider DEFAULT = new DefaultAudioTrackBufferSizeProvider.Builder().build();
 
@@ -139,7 +139,7 @@ public final class DefaultAudioSink implements AudioSink {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface OutputMode {
     }
 
@@ -155,7 +155,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface AudioTrackProvider {
         public static final AudioTrackProvider DEFAULT = new DefaultAudioTrackProvider();
 
@@ -166,7 +166,7 @@ public final class DefaultAudioSink implements AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class DefaultAudioProcessorChain implements AudioProcessorChain {
         private final AudioProcessor[] audioProcessors;
         private final SilenceSkippingAudioProcessor silenceSkippingAudioProcessor;
@@ -215,7 +215,7 @@ public final class DefaultAudioSink implements AudioSink {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private AudioCapabilities audioCapabilities;
         private ExoPlayer.AudioOffloadListener audioOffloadListener;
@@ -308,8 +308,10 @@ public final class DefaultAudioSink implements AudioSink {
             if (this.audioProcessorChain == null) {
                 this.audioProcessorChain = new DefaultAudioProcessorChain(new AudioProcessor[0]);
             }
-            if (this.audioOutputProvider == null) {
-                if (this.audioOffloadSupportProvider == null) {
+            AudioOutputProvider audioOutputProvider = this.audioOutputProvider;
+            AudioOffloadSupportProvider audioOffloadSupportProvider = this.audioOffloadSupportProvider;
+            if (audioOutputProvider == null) {
+                if (audioOffloadSupportProvider == null) {
                     this.audioOffloadSupportProvider = new DefaultAudioOffloadSupportProvider(this.context);
                 }
                 if (this.audioTrackBufferSizeProvider == null) {
@@ -317,7 +319,7 @@ public final class DefaultAudioSink implements AudioSink {
                 }
                 this.audioOutputProvider = new AudioTrackAudioOutputProvider.Builder(this.context).setAudioCapabilities(this.context != null ? null : this.audioCapabilities).setAudioOffloadSupportProvider(this.audioOffloadSupportProvider).setAudioTrackBufferSizeProvider(this.audioTrackBufferSizeProvider).setAudioTrackProvider(this.audioTrackProvider).build();
             } else {
-                Preconditions.checkState(this.audioOffloadSupportProvider == null);
+                Preconditions.checkState(audioOffloadSupportProvider == null);
                 Preconditions.checkState(this.audioTrackBufferSizeProvider == null);
                 Preconditions.checkState(this.audioTrackProvider == null);
             }
@@ -376,15 +378,30 @@ public final class DefaultAudioSink implements AudioSink {
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
     public int getFormatSupport(Format format) {
+        boolean z;
+        if (Util.isEncodingLinearPcm(format.pcmEncoding)) {
+            boolean shouldUseFloatOutput = shouldUseFloatOutput(format.pcmEncoding);
+            if (!shouldUseFloatOutput || format.pcmEncoding == 4) {
+                z = false;
+            } else {
+                format = format.buildUpon().setPcmEncoding(4).build();
+                z = true;
+            }
+            if (!shouldUseFloatOutput && format.pcmEncoding != 2) {
+                format = format.buildUpon().setPcmEncoding(2).build();
+                z = true;
+            }
+        } else {
+            z = false;
+        }
         int i = this.audioOutputProvider.getFormatSupport(getFormatConfig(format)).supportLevel;
-        int i2 = 1;
         if (i != 1) {
-            i2 = 2;
             if (i != 2) {
                 return 0;
             }
+            return z ? 1 : 2;
         }
-        return i2;
+        return 1;
     }
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
@@ -1221,7 +1238,7 @@ public final class DefaultAudioSink implements AudioSink {
         AudioOutputProvider.Listener listener = new AudioOutputProvider.Listener() { // from class: androidx.media3.exoplayer.audio.DefaultAudioSink$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.audio.AudioOutputProvider.Listener
             public final void onFormatSupportChanged() {
-                DefaultAudioSink.this.m8972x5f4a2db();
+                DefaultAudioSink.this.m8249x5f4a2db();
             }
         };
         this.audioOutputProviderListener = listener;
@@ -1230,7 +1247,7 @@ public final class DefaultAudioSink implements AudioSink {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeAddAudioOutputProviderListener$0$androidx-media3-exoplayer-audio-DefaultAudioSink  reason: not valid java name */
-    public /* synthetic */ void m8972x5f4a2db() {
+    public /* synthetic */ void m8249x5f4a2db() {
         AudioSink.Listener listener = this.listener;
         if (listener != null) {
             listener.onAudioCapabilitiesChanged();
@@ -1378,7 +1395,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public final class AudioOutputListener implements AudioOutput.Listener {
         private final AudioOutputProvider.OutputConfig outputConfig;
 
@@ -1424,7 +1441,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaPositionParameters {
         public final long audioOutputPositionUs;
         public long mediaPositionDriftUs;
@@ -1439,7 +1456,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Configuration {
         private final Format afterProcessingInputFormat;
         private final AudioProcessingPipeline audioProcessingPipeline;
@@ -1489,7 +1506,7 @@ public final class DefaultAudioSink implements AudioSink {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class PendingExceptionHolder<T extends Exception> {
         private static final int RETRY_DELAY_MS = 50;
         private static final int RETRY_DURATION_MS = 200;

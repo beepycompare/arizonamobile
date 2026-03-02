@@ -40,9 +40,7 @@ public final class TextFieldSelectionStateKt {
         Object detectTapAndPress = TapGestureDetectorKt.detectTapAndPress(pointerInputScope, new TextFieldSelectionStateKt$defaultDetectTextFieldTapGestures$2(mutableInteractionSource, textFieldSelectionState, null), new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionStateKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit defaultDetectTextFieldTapGestures$lambda$0;
-                defaultDetectTextFieldTapGestures$lambda$0 = TextFieldSelectionStateKt.defaultDetectTextFieldTapGestures$lambda$0(Function0.this, textFieldSelectionState, function02, (Offset) obj);
-                return defaultDetectTextFieldTapGestures$lambda$0;
+                return TextFieldSelectionStateKt.defaultDetectTextFieldTapGestures$lambda$0(Function0.this, textFieldSelectionState, function02, (Offset) obj);
             }
         }, continuation);
         return detectTapAndPress == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapAndPress : Unit.INSTANCE;
@@ -66,7 +64,7 @@ public final class TextFieldSelectionStateKt {
                 }
             }
             textFieldSelectionState.updateTextToolbarState(TextToolbarState.None);
-            textFieldSelectionState.m1742placeCursorAtNearestOffsetk4lQ0M(TextLayoutStateKt.m1681fromDecorationToTextLayoutUv8p0NA(textFieldSelectionState.getTextLayoutState$foundation(), textFieldSelectionState.getTextLayoutState$foundation().m1674coercedInVisibleBoundsOfInputTextMKHz9U$foundation(offset.m5189unboximpl())));
+            textFieldSelectionState.m1509placeCursorAtNearestOffsetk4lQ0M(TextLayoutStateKt.m1454fromDecorationToTextLayoutUv8p0NA(textFieldSelectionState.getTextLayoutState$foundation(), textFieldSelectionState.getTextLayoutState$foundation().m1447coercedInVisibleBoundsOfInputTextMKHz9U$foundation(offset.m4537unboximpl())));
         }
         return Unit.INSTANCE;
     }
@@ -81,8 +79,8 @@ public final class TextFieldSelectionStateKt {
     }
 
     /* renamed from: reverse-5zc-tL8 */
-    public static final long m1756reverse5zctL8(long j) {
-        return TextRangeKt.TextRange(TextRange.m7696getEndimpl(j), TextRange.m7701getStartimpl(j));
+    public static final long m1518reverse5zctL8(long j) {
+        return TextRangeKt.TextRange(TextRange.m6998getEndimpl(j), TextRange.m7003getStartimpl(j));
     }
 
     public static final Function0<Unit> menuItem(final TextFieldSelectionState textFieldSelectionState, boolean z, final TextToolbarState textToolbarState, final Function0<Unit> function0) {
@@ -108,21 +106,19 @@ public final class TextFieldSelectionStateKt {
         return new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionStateKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contextMenuBuilder$lambda$0;
-                contextMenuBuilder$lambda$0 = TextFieldSelectionStateKt.contextMenuBuilder$lambda$0(State.this, contextMenuState, function2, textFieldSelectionState, (ContextMenuScope) obj);
-                return contextMenuBuilder$lambda$0;
+                return TextFieldSelectionStateKt.contextMenuBuilder$lambda$0(State.this, contextMenuState, function2, textFieldSelectionState, (ContextMenuScope) obj);
             }
         };
     }
 
     public static final Unit contextMenuBuilder$lambda$0(State state, ContextMenuState contextMenuState, Function2 function2, TextFieldSelectionState textFieldSelectionState, ContextMenuScope contextMenuScope) {
-        int m1413unboximpl = ((MenuItemsAvailability) state.getValue()).m1413unboximpl();
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Cut, MenuItemsAvailability.m1408getCanCutimpl(m1413unboximpl));
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Copy, MenuItemsAvailability.m1407getCanCopyimpl(m1413unboximpl));
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Paste, MenuItemsAvailability.m1409getCanPasteimpl(m1413unboximpl));
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1410getCanSelectAllimpl(m1413unboximpl));
+        int m1239unboximpl = ((MenuItemsAvailability) state.getValue()).m1239unboximpl();
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Cut, MenuItemsAvailability.m1234getCanCutimpl(m1239unboximpl));
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Copy, MenuItemsAvailability.m1233getCanCopyimpl(m1239unboximpl));
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Paste, MenuItemsAvailability.m1235getCanPasteimpl(m1239unboximpl));
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1236getCanSelectAllimpl(m1239unboximpl));
         if (PlatformUtils_androidKt.isAutofillAvailable()) {
-            contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1406getCanAutofillimpl(m1413unboximpl));
+            contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, function2, textFieldSelectionState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1232getCanAutofillimpl(m1239unboximpl));
         }
         return Unit.INSTANCE;
     }

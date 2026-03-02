@@ -82,10 +82,11 @@ public final class FlowableSingleMaybe<T> extends Maybe<T> implements FuseToFlow
             this.upstream = SubscriptionHelper.CANCELLED;
             T t = this.value;
             this.value = null;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (t == null) {
-                this.downstream.onComplete();
+                maybeObserver.onComplete();
             } else {
-                this.downstream.onSuccess(t);
+                maybeObserver.onSuccess(t);
             }
         }
 

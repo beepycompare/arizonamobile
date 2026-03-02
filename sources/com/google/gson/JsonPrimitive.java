@@ -71,10 +71,12 @@ public final class JsonPrimitive extends JsonElement {
         if (isNumber()) {
             return getAsNumber().toString();
         }
-        if (isBoolean()) {
-            return ((Boolean) this.value).toString();
+        boolean isBoolean = isBoolean();
+        Object obj2 = this.value;
+        if (isBoolean) {
+            return ((Boolean) obj2).toString();
         }
-        throw new AssertionError("Unexpected value type: " + this.value.getClass());
+        throw new AssertionError("Unexpected value type: " + obj2.getClass());
     }
 
     @Override // com.google.gson.JsonElement

@@ -82,17 +82,17 @@ public final class NavigationBarKt {
     private static final String IndicatorRippleLayoutIdTag = "indicatorRipple";
     private static final float IndicatorVerticalPadding;
     private static final String LabelLayoutIdTag = "label";
-    private static final float NavigationBarHeight = NavigationBarTokens.INSTANCE.m4157getTallContainerHeightD9Ej5fM();
-    private static final float NavigationBarItemHorizontalPadding = Dp.m8258constructorimpl(8);
-    private static final float NavigationBarIndicatorToLabelPadding = Dp.m8258constructorimpl(4);
-    private static final float IndicatorVerticalOffset = Dp.m8258constructorimpl(12);
-    private static final float NavigationBarItemToIconMinimumPadding = Dp.m8258constructorimpl(44);
+    private static final float NavigationBarHeight = NavigationBarTokens.INSTANCE.m3541getTallContainerHeightD9Ej5fM();
+    private static final float NavigationBarItemHorizontalPadding = Dp.m7555constructorimpl(8);
+    private static final float NavigationBarIndicatorToLabelPadding = Dp.m7555constructorimpl(4);
+    private static final float IndicatorVerticalOffset = Dp.m7555constructorimpl(12);
+    private static final float NavigationBarItemToIconMinimumPadding = Dp.m7555constructorimpl(44);
     private static final ProvidableCompositionLocal<NavigationBarOverride> LocalNavigationBarOverride = CompositionLocalKt.compositionLocalOf$default(null, new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            NavigationBarOverride LocalNavigationBarOverride$lambda$28;
-            LocalNavigationBarOverride$lambda$28 = NavigationBarKt.LocalNavigationBarOverride$lambda$28();
-            return LocalNavigationBarOverride$lambda$28;
+            NavigationBarOverride navigationBarOverride;
+            navigationBarOverride = DefaultNavigationBarOverride.INSTANCE;
+            return navigationBarOverride;
         }
     }, 1, null);
 
@@ -107,7 +107,7 @@ public final class NavigationBarKt {
     }
 
     public static final Unit NavigationBar_HsRjFd4$lambda$1(Modifier modifier, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2691NavigationBarHsRjFd4(modifier, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2274NavigationBarHsRjFd4(modifier, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -131,7 +131,7 @@ public final class NavigationBarKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2691NavigationBarHsRjFd4(Modifier modifier, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2274NavigationBarHsRjFd4(Modifier modifier, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super RowScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         long j3;
@@ -243,11 +243,11 @@ public final class NavigationBarKt {
                             i3 &= -113;
                         }
                         if ((i2 & 4) != 0) {
-                            j4 = ColorSchemeKt.m2215contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), j3);
+                            j4 = ColorSchemeKt.m1901contentColorFor4WTKRHQ(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6), j3);
                             i3 &= -897;
                         }
                         if (i8 != 0) {
-                            f2 = NavigationBarDefaults.INSTANCE.m2673getElevationD9Ej5fM();
+                            f2 = NavigationBarDefaults.INSTANCE.m2259getElevationD9Ej5fM();
                         }
                         if ((i2 & 16) != 0) {
                             i3 &= -57345;
@@ -306,9 +306,7 @@ public final class NavigationBarKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj4, Object obj5) {
-                            Unit NavigationBar_HsRjFd4$lambda$1;
-                            NavigationBar_HsRjFd4$lambda$1 = NavigationBarKt.NavigationBar_HsRjFd4$lambda$1(Modifier.this, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                            return NavigationBar_HsRjFd4$lambda$1;
+                            return NavigationBarKt.NavigationBar_HsRjFd4$lambda$1(Modifier.this, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                         }
                     });
                     return;
@@ -592,14 +590,14 @@ public final class NavigationBarKt {
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventStart(802208206, i16, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:227)");
                                             }
-                                            ProvideContentColorTextStyleKt.m3616ProvideContentColorTextStyle3JVO9M(invoke$lambda$0(SingleValueAnimationKt.m147animateColorAsStateeuL9pac(NavigationBarItemColors.this.m2685textColorWaAFU9c$material3(z, z11), value, null, null, composer3, 0, 12)), TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), composer3, 6), function210, composer3, 0);
+                                            ProvideContentColorTextStyleKt.m3007ProvideContentColorTextStyle3JVO9M(invoke$lambda$0(SingleValueAnimationKt.m134animateColorAsStateeuL9pac(NavigationBarItemColors.this.m2271textColorWaAFU9c$material3(z, z11), value, null, null, composer3, 0, 12)), TypographyKt.getValue(NavigationBarTokens.INSTANCE.getLabelTextFont(), composer3, 6), function210, composer3, 0);
                                             if (ComposerKt.isTraceInProgress()) {
                                                 ComposerKt.traceEventEnd();
                                             }
                                         }
 
                                         private static final long invoke$lambda$0(State<Color> state) {
-                                            return state.getValue().m5434unboximpl();
+                                            return state.getValue().m4782unboximpl();
                                         }
                                     }, startRestartGroup, 54);
                                 }
@@ -614,16 +612,14 @@ public final class NavigationBarKt {
                                 boolean z12 = z8;
                                 Modifier modifier3 = modifier2;
                                 MutableInteractionSource mutableInteractionSource5 = mutableInteractionSource4;
-                                Modifier weight$default = RowScope.weight$default(rowScope, SizeKt.m961defaultMinSizeVpY3zN4$default(SelectableKt.m1243selectableO2vRcR0(modifier3, z, mutableInteractionSource5, null, z12, Role.m7435boximpl(Role.Companion.m7449getTabo7Vup1c()), obj), 0.0f, NavigationBarHeight, 1, null), 1.0f, false, 2, null);
+                                Modifier weight$default = RowScope.weight$default(rowScope, SizeKt.m849defaultMinSizeVpY3zN4$default(SelectableKt.m1088selectableO2vRcR0(modifier3, z, mutableInteractionSource5, null, z12, Role.m6767boximpl(Role.Companion.m6781getTabo7Vup1c()), obj), 0.0f, NavigationBarHeight, 1, null), 1.0f, false, 2, null);
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -7194694, "CC(remember):NavigationBar.kt#9igjgp");
                                 Object rememberedValue3 = startRestartGroup.rememberedValue();
                                 if (rememberedValue3 == Composer.Companion.getEmpty()) {
                                     rememberedValue3 = new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda3
                                         @Override // kotlin.jvm.functions.Function1
                                         public final Object invoke(Object obj9) {
-                                            Unit NavigationBarItem$lambda$8$lambda$7;
-                                            NavigationBarItem$lambda$8$lambda$7 = NavigationBarKt.NavigationBarItem$lambda$8$lambda$7(MutableIntState.this, (IntSize) obj9);
-                                            return NavigationBarItem$lambda$8$lambda$7;
+                                            return NavigationBarKt.NavigationBarItem$lambda$8$lambda$7(MutableIntState.this, (IntSize) obj9);
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -648,15 +644,15 @@ public final class NavigationBarKt {
                                 } else {
                                     startRestartGroup.useNode();
                                 }
-                                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                 }
-                                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1565191211, "C263@11734L7,260@11504L252,269@12046L7,266@11819L249,275@12351L7,281@12645L128,288@12988L273,296@13310L404,313@13979L32,314@14049L31,307@13724L367:NavigationBar.kt#uh7d8r");
@@ -667,13 +663,13 @@ public final class NavigationBarKt {
                                 Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                 Density density = (Density) consume;
-                                long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits((NavigationBarItem$lambda$5(mutableIntState) - density.mo458roundToPx0680j_4(NavigationBarVerticalItemTokens.INSTANCE.m4159getActiveIndicatorWidthD9Ej5fM())) / 2) << c) | (4294967295L & Float.floatToRawIntBits(density.mo464toPx0680j_4(IndicatorVerticalOffset))));
+                                long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits((NavigationBarItem$lambda$5(mutableIntState) - density.mo399roundToPx0680j_4(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM())) / 2) << c) | (4294967295L & Float.floatToRawIntBits(density.mo405toPx0680j_4(IndicatorVerticalOffset))));
                                 Unit unit = Unit.INSTANCE;
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1196471708, "CC(remember):NavigationBar.kt#9igjgp");
-                                boolean changed = startRestartGroup.changed(mutableInteractionSource5) | startRestartGroup.changed(m5171constructorimpl);
+                                boolean changed = startRestartGroup.changed(mutableInteractionSource5) | startRestartGroup.changed(m4519constructorimpl);
                                 Object rememberedValue4 = startRestartGroup.rememberedValue();
                                 if (changed || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                    rememberedValue4 = new MappedInteractionSource(mutableInteractionSource5, m5171constructorimpl, null);
+                                    rememberedValue4 = new MappedInteractionSource(mutableInteractionSource5, m4519constructorimpl, null);
                                     startRestartGroup.updateRememberedValue(rememberedValue4);
                                 }
                                 final MappedInteractionSource mappedInteractionSource = (MappedInteractionSource) rememberedValue4;
@@ -694,7 +690,7 @@ public final class NavigationBarKt {
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(-2082182507, i16, -1, "androidx.compose.material3.NavigationBarItem.<anonymous>.<anonymous> (NavigationBar.kt:289)");
                                         }
-                                        BoxKt.Box(IndicationKt.indication(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, "indicatorRipple"), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer3, 6)), MappedInteractionSource.this, RippleKt.m2867rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), composer3, 0);
+                                        BoxKt.Box(IndicationKt.indication(ClipKt.clip(LayoutIdKt.layoutId(Modifier.Companion, "indicatorRipple"), ShapesKt.getValue(NavigationBarTokens.INSTANCE.getItemActiveIndicatorShape(), composer3, 6)), MappedInteractionSource.this, RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 7, null)), composer3, 0);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -708,9 +704,9 @@ public final class NavigationBarKt {
                                     rememberedValue5 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda4
                                         @Override // kotlin.jvm.functions.Function0
                                         public final Object invoke() {
-                                            float NavigationBarItem$lambda$15$lambda$12$lambda$11;
-                                            NavigationBarItem$lambda$15$lambda$12$lambda$11 = NavigationBarKt.NavigationBarItem$lambda$15$lambda$12$lambda$11(State.this);
-                                            return Float.valueOf(NavigationBarItem$lambda$15$lambda$12$lambda$11);
+                                            float floatValue;
+                                            floatValue = ((Number) State.this.getValue()).floatValue();
+                                            return Float.valueOf(floatValue);
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -724,9 +720,9 @@ public final class NavigationBarKt {
                                     rememberedValue6 = new Function0() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda5
                                         @Override // kotlin.jvm.functions.Function0
                                         public final Object invoke() {
-                                            float NavigationBarItem$lambda$15$lambda$14$lambda$13;
-                                            NavigationBarItem$lambda$15$lambda$14$lambda$13 = NavigationBarKt.NavigationBarItem$lambda$15$lambda$14$lambda$13(State.this);
-                                            return Float.valueOf(NavigationBarItem$lambda$15$lambda$14$lambda$13);
+                                            float floatValue;
+                                            floatValue = ((Number) State.this.getValue()).floatValue();
+                                            return Float.valueOf(floatValue);
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue6);
@@ -763,9 +759,7 @@ public final class NavigationBarKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda6
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj9, Object obj10) {
-                                        Unit NavigationBarItem$lambda$16;
-                                        NavigationBarItem$lambda$16 = NavigationBarKt.NavigationBarItem$lambda$16(RowScope.this, z, function0, function2, companion, z6, function23, z5, navigationBarItemColors2, mutableInteractionSource2, i, i2, (Composer) obj9, ((Integer) obj10).intValue());
-                                        return NavigationBarItem$lambda$16;
+                                        return NavigationBarKt.NavigationBarItem$lambda$16(RowScope.this, z, function0, function2, companion, z6, function23, z5, navigationBarItemColors2, mutableInteractionSource2, i, i2, (Composer) obj9, ((Integer) obj10).intValue());
                                     }
                                 });
                                 return;
@@ -853,16 +847,8 @@ public final class NavigationBarKt {
     }
 
     public static final Unit NavigationBarItem$lambda$8$lambda$7(MutableIntState mutableIntState, IntSize intSize) {
-        mutableIntState.setIntValue((int) (intSize.m8433unboximpl() >> 32));
+        mutableIntState.setIntValue((int) (intSize.m7730unboximpl() >> 32));
         return Unit.INSTANCE;
-    }
-
-    public static final float NavigationBarItem$lambda$15$lambda$12$lambda$11(State state) {
-        return ((Number) state.getValue()).floatValue();
-    }
-
-    public static final float NavigationBarItem$lambda$15$lambda$14$lambda$13(State state) {
-        return ((Number) state.getValue()).floatValue();
     }
 
     private static final void NavigationBarItemLayout(final Function2<? super Composer, ? super Integer, Unit> function2, final Function2<? super Composer, ? super Integer, Unit> function22, final Function2<? super Composer, ? super Integer, Unit> function23, final Function2<? super Composer, ? super Integer, Unit> function24, final boolean z, final Function0<Float> function0, final Function0<Float> function02, Composer composer, final int i) {
@@ -907,33 +893,33 @@ public final class NavigationBarKt {
                 rememberedValue = new MeasurePolicy() { // from class: androidx.compose.material3.NavigationBarKt$NavigationBarItemLayout$1$1
                     @Override // androidx.compose.ui.layout.MeasurePolicy
                     /* renamed from: measure-3p2s80s */
-                    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+                    public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
                         float f;
                         Measurable measurable;
                         Placeable placeable;
-                        MeasureResult m2695placeLabelAndIconzUg2_y0;
-                        MeasureResult m2694placeIconX9ElhV4;
+                        MeasureResult m2278placeLabelAndIconzUg2_y0;
+                        MeasureResult m2277placeIconX9ElhV4;
                         MeasureScope measureScope2 = measureScope;
                         float coerceAtLeast = RangesKt.coerceAtLeast(function02.invoke().floatValue(), 0.0f);
-                        long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
+                        long m7498copyZbe2FdA$default = Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
                         List<? extends Measurable> list2 = list;
                         int size = list2.size();
                         int i4 = 0;
                         while (i4 < size) {
                             Measurable measurable2 = list.get(i4);
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable2), "icon")) {
-                                Placeable mo6875measureBRTryo0 = measurable2.mo6875measureBRTryo0(m8201copyZbe2FdA$default);
-                                int width = mo6875measureBRTryo0.getWidth();
+                                Placeable mo6216measureBRTryo0 = measurable2.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
+                                int width = mo6216measureBRTryo0.getWidth();
                                 f = NavigationBarKt.IndicatorHorizontalPadding;
                                 float f2 = 2;
-                                int i5 = width + measureScope2.mo458roundToPx0680j_4(Dp.m8258constructorimpl(f * f2));
+                                int i5 = width + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(f * f2));
                                 int roundToInt = MathKt.roundToInt(i5 * coerceAtLeast);
-                                int height = mo6875measureBRTryo0.getHeight() + measureScope2.mo458roundToPx0680j_4(Dp.m8258constructorimpl(NavigationBarKt.getIndicatorVerticalPadding() * f2));
+                                int height = mo6216measureBRTryo0.getHeight() + measureScope2.mo399roundToPx0680j_4(Dp.m7555constructorimpl(NavigationBarKt.getIndicatorVerticalPadding() * f2));
                                 int size2 = list2.size();
                                 for (int i6 = 0; i6 < size2; i6++) {
                                     Measurable measurable3 = list.get(i6);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicatorRipple")) {
-                                        Placeable mo6875measureBRTryo02 = measurable3.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(i5, height));
+                                        Placeable mo6216measureBRTryo02 = measurable3.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(i5, height));
                                         int size3 = list2.size();
                                         int i7 = 0;
                                         while (true) {
@@ -948,13 +934,13 @@ public final class NavigationBarKt {
                                             i7++;
                                         }
                                         Measurable measurable4 = measurable;
-                                        Placeable mo6875measureBRTryo03 = measurable4 != null ? measurable4.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(roundToInt, height)) : null;
+                                        Placeable mo6216measureBRTryo03 = measurable4 != null ? measurable4.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(roundToInt, height)) : null;
                                         if (function24 != null) {
                                             int size4 = list2.size();
                                             for (int i8 = 0; i8 < size4; i8++) {
                                                 Measurable measurable5 = list.get(i8);
                                                 if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable5), Constants.ScionAnalytics.PARAM_LABEL)) {
-                                                    placeable = measurable5.mo6875measureBRTryo0(m8201copyZbe2FdA$default);
+                                                    placeable = measurable5.mo6216measureBRTryo0(m7498copyZbe2FdA$default);
                                                 }
                                             }
                                             ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -962,12 +948,12 @@ public final class NavigationBarKt {
                                         }
                                         placeable = null;
                                         if (function24 == null) {
-                                            m2694placeIconX9ElhV4 = NavigationBarKt.m2694placeIconX9ElhV4(measureScope, mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j);
-                                            return m2694placeIconX9ElhV4;
+                                            m2277placeIconX9ElhV4 = NavigationBarKt.m2277placeIconX9ElhV4(measureScope, mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j);
+                                            return m2277placeIconX9ElhV4;
                                         }
                                         Intrinsics.checkNotNull(placeable);
-                                        m2695placeLabelAndIconzUg2_y0 = NavigationBarKt.m2695placeLabelAndIconzUg2_y0(measureScope, placeable, mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j, z, coerceAtLeast);
-                                        return m2695placeLabelAndIconzUg2_y0;
+                                        m2278placeLabelAndIconzUg2_y0 = NavigationBarKt.m2278placeLabelAndIconzUg2_y0(measureScope, placeable, mo6216measureBRTryo0, mo6216measureBRTryo02, mo6216measureBRTryo03, j, z, coerceAtLeast);
+                                        return m2278placeLabelAndIconzUg2_y0;
                                     }
                                 }
                                 ListUtilsKt.throwNoSuchElementException("Collection contains no element matching the predicate.");
@@ -1000,15 +986,15 @@ public final class NavigationBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -660603938, "C557@24911L17,558@24941L11,560@24966L50:NavigationBar.kt#uh7d8r");
             function2.invoke(startRestartGroup, Integer.valueOf(i4 & 14));
             function22.invoke(startRestartGroup, Integer.valueOf((i4 >> 3) & 14));
@@ -1030,15 +1016,15 @@ public final class NavigationBarKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+            if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
             }
-            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1252746358, "C560@25008L6:NavigationBar.kt#uh7d8r");
@@ -1060,9 +1046,7 @@ public final class NavigationBarKt {
                     rememberedValue2 = new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda8
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit NavigationBarItemLayout$lambda$22$lambda$20$lambda$19;
-                            NavigationBarItemLayout$lambda$22$lambda$20$lambda$19 = NavigationBarKt.NavigationBarItemLayout$lambda$22$lambda$20$lambda$19(z, function0, (GraphicsLayerScope) obj);
-                            return NavigationBarItemLayout$lambda$22$lambda$20$lambda$19;
+                            return NavigationBarKt.NavigationBarItemLayout$lambda$22$lambda$20$lambda$19(z, function0, (GraphicsLayerScope) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1086,15 +1070,15 @@ public final class NavigationBarKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                if (m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                    m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                 }
-                Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 874979034, "C568@25292L7:NavigationBar.kt#uh7d8r");
@@ -1123,9 +1107,7 @@ public final class NavigationBarKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda9
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit NavigationBarItemLayout$lambda$23;
-                    NavigationBarItemLayout$lambda$23 = NavigationBarKt.NavigationBarItemLayout$lambda$23(Function2.this, function22, function23, function24, z, function0, function02, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return NavigationBarItemLayout$lambda$23;
+                    return NavigationBarKt.NavigationBarItemLayout$lambda$23(Function2.this, function22, function23, function24, z, function0, function02, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -1137,25 +1119,23 @@ public final class NavigationBarKt {
     }
 
     /* renamed from: placeIcon-X9ElhV4 */
-    public static final MeasureResult m2694placeIconX9ElhV4(MeasureScope measureScope, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, long j) {
-        int m8211getMaxWidthimpl;
-        if (Constraints.m8211getMaxWidthimpl(j) == Integer.MAX_VALUE) {
-            m8211getMaxWidthimpl = placeable.getWidth() + (measureScope.mo458roundToPx0680j_4(NavigationBarItemToIconMinimumPadding) * 2);
+    public static final MeasureResult m2277placeIconX9ElhV4(MeasureScope measureScope, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, long j) {
+        int m7508getMaxWidthimpl;
+        if (Constraints.m7508getMaxWidthimpl(j) == Integer.MAX_VALUE) {
+            m7508getMaxWidthimpl = placeable.getWidth() + (measureScope.mo399roundToPx0680j_4(NavigationBarItemToIconMinimumPadding) * 2);
         } else {
-            m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+            m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
         }
-        final int i = m8211getMaxWidthimpl;
-        final int m8227constrainHeightK40F9xA = ConstraintsKt.m8227constrainHeightK40F9xA(j, measureScope.mo458roundToPx0680j_4(NavigationBarHeight));
+        final int i = m7508getMaxWidthimpl;
+        final int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(j, measureScope.mo399roundToPx0680j_4(NavigationBarHeight));
         final int width = (i - placeable.getWidth()) / 2;
-        final int height = (m8227constrainHeightK40F9xA - placeable.getHeight()) / 2;
+        final int height = (m7524constrainHeightK40F9xA - placeable.getHeight()) / 2;
         final int width2 = (i - placeable2.getWidth()) / 2;
-        final int height2 = (m8227constrainHeightK40F9xA - placeable2.getHeight()) / 2;
-        return MeasureScope.layout$default(measureScope, i, m8227constrainHeightK40F9xA, null, new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda7
+        final int height2 = (m7524constrainHeightK40F9xA - placeable2.getHeight()) / 2;
+        return MeasureScope.layout$default(measureScope, i, m7524constrainHeightK40F9xA, null, new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeIcon_X9ElhV4$lambda$25;
-                placeIcon_X9ElhV4$lambda$25 = NavigationBarKt.placeIcon_X9ElhV4$lambda$25(Placeable.this, placeable, width, height, placeable2, width2, height2, i, m8227constrainHeightK40F9xA, (Placeable.PlacementScope) obj);
-                return placeIcon_X9ElhV4$lambda$25;
+                return NavigationBarKt.placeIcon_X9ElhV4$lambda$25(Placeable.this, placeable, width, height, placeable2, width2, height2, i, m7524constrainHeightK40F9xA, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
@@ -1170,40 +1150,38 @@ public final class NavigationBarKt {
     }
 
     /* renamed from: placeLabelAndIcon-zUg2_y0 */
-    public static final MeasureResult m2695placeLabelAndIconzUg2_y0(final MeasureScope measureScope, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, final Placeable placeable4, long j, final boolean z, final float f) {
-        int m8211getMaxWidthimpl;
+    public static final MeasureResult m2278placeLabelAndIconzUg2_y0(final MeasureScope measureScope, final Placeable placeable, final Placeable placeable2, final Placeable placeable3, final Placeable placeable4, long j, final boolean z, final float f) {
+        int m7508getMaxWidthimpl;
         float f2 = IndicatorVerticalPadding;
-        float height = placeable2.getHeight() + measureScope.mo464toPx0680j_4(f2);
+        float height = placeable2.getHeight() + measureScope.mo405toPx0680j_4(f2);
         float f3 = NavigationBarIndicatorToLabelPadding;
-        float f4 = height + measureScope.mo464toPx0680j_4(f3) + placeable.getHeight();
+        float f4 = height + measureScope.mo405toPx0680j_4(f3) + placeable.getHeight();
         float f5 = 2;
-        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m8212getMinHeightimpl(j) - f4) / f5, measureScope.mo464toPx0680j_4(f2));
+        final float coerceAtLeast = RangesKt.coerceAtLeast((Constraints.m7509getMinHeightimpl(j) - f4) / f5, measureScope.mo405toPx0680j_4(f2));
         float f6 = f4 + (coerceAtLeast * f5);
         final float height2 = ((z ? coerceAtLeast : (f6 - placeable2.getHeight()) / f5) - coerceAtLeast) * (1 - f);
-        final float height3 = placeable2.getHeight() + coerceAtLeast + measureScope.mo464toPx0680j_4(f2) + measureScope.mo464toPx0680j_4(f3);
-        if (Constraints.m8211getMaxWidthimpl(j) == Integer.MAX_VALUE) {
-            m8211getMaxWidthimpl = placeable2.getWidth() + (measureScope.mo458roundToPx0680j_4(NavigationBarItemToIconMinimumPadding) * 2);
+        final float height3 = placeable2.getHeight() + coerceAtLeast + measureScope.mo405toPx0680j_4(f2) + measureScope.mo405toPx0680j_4(f3);
+        if (Constraints.m7508getMaxWidthimpl(j) == Integer.MAX_VALUE) {
+            m7508getMaxWidthimpl = placeable2.getWidth() + (measureScope.mo399roundToPx0680j_4(NavigationBarItemToIconMinimumPadding) * 2);
         } else {
-            m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
+            m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
         }
-        final int i = m8211getMaxWidthimpl;
+        final int i = m7508getMaxWidthimpl;
         final int width = (i - placeable.getWidth()) / 2;
         final int width2 = (i - placeable2.getWidth()) / 2;
         final int width3 = (i - placeable3.getWidth()) / 2;
-        final float f7 = coerceAtLeast - measureScope.mo464toPx0680j_4(f2);
+        final float f7 = coerceAtLeast - measureScope.mo405toPx0680j_4(f2);
         return MeasureScope.layout$default(measureScope, i, MathKt.roundToInt(f6), null, new Function1() { // from class: androidx.compose.material3.NavigationBarKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit placeLabelAndIcon_zUg2_y0$lambda$27;
-                placeLabelAndIcon_zUg2_y0$lambda$27 = NavigationBarKt.placeLabelAndIcon_zUg2_y0$lambda$27(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f7, i, measureScope, (Placeable.PlacementScope) obj);
-                return placeLabelAndIcon_zUg2_y0$lambda$27;
+                return NavigationBarKt.placeLabelAndIcon_zUg2_y0$lambda$27(Placeable.this, z, f, placeable, width, height3, height2, placeable2, width2, coerceAtLeast, placeable3, width3, f7, i, measureScope, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
     public static final Unit placeLabelAndIcon_zUg2_y0$lambda$27(Placeable placeable, boolean z, float f, Placeable placeable2, int i, float f2, float f3, Placeable placeable3, int i2, float f4, Placeable placeable4, int i3, float f5, int i4, MeasureScope measureScope, Placeable.PlacementScope placementScope) {
         if (placeable != null) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, (i4 - placeable.getWidth()) / 2, MathKt.roundToInt((f4 - measureScope.mo458roundToPx0680j_4(IndicatorVerticalPadding)) + f3), 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, (i4 - placeable.getWidth()) / 2, MathKt.roundToInt((f4 - measureScope.mo399roundToPx0680j_4(IndicatorVerticalPadding)) + f3), 0.0f, 4, null);
         }
         if (z || f != 0.0f) {
             Placeable.PlacementScope.placeRelative$default(placementScope, placeable2, i, MathKt.roundToInt(f2 + f3), 0.0f, 4, null);
@@ -1215,8 +1193,8 @@ public final class NavigationBarKt {
 
     static {
         float f = 2;
-        IndicatorHorizontalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m4159getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m4161getIconSizeD9Ej5fM()) / f);
-        IndicatorVerticalPadding = Dp.m8258constructorimpl(Dp.m8258constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m4158getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m4161getIconSizeD9Ej5fM()) / f);
+        IndicatorHorizontalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3543getActiveIndicatorWidthD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / f);
+        IndicatorVerticalPadding = Dp.m7555constructorimpl(Dp.m7555constructorimpl(NavigationBarVerticalItemTokens.INSTANCE.m3542getActiveIndicatorHeightD9Ej5fM() - NavigationBarVerticalItemTokens.INSTANCE.m3545getIconSizeD9Ej5fM()) / f);
     }
 
     public static final float getNavigationBarItemHorizontalPadding() {
@@ -1237,9 +1215,5 @@ public final class NavigationBarKt {
 
     public static final ProvidableCompositionLocal<NavigationBarOverride> getLocalNavigationBarOverride() {
         return LocalNavigationBarOverride;
-    }
-
-    public static final NavigationBarOverride LocalNavigationBarOverride$lambda$28() {
-        return DefaultNavigationBarOverride.INSTANCE;
     }
 }

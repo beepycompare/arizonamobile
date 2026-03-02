@@ -202,11 +202,12 @@ class BaseCircleIndicator extends LinearLayout {
         LinearLayout.LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
         generateDefaultLayoutParams.width = this.mIndicatorWidth;
         generateDefaultLayoutParams.height = this.mIndicatorHeight;
+        int i2 = this.mIndicatorMargin;
         if (i == 0) {
-            generateDefaultLayoutParams.leftMargin = this.mIndicatorMargin;
+            generateDefaultLayoutParams.leftMargin = i2;
             generateDefaultLayoutParams.rightMargin = this.mIndicatorMargin;
         } else {
-            generateDefaultLayoutParams.topMargin = this.mIndicatorMargin;
+            generateDefaultLayoutParams.topMargin = i2;
             generateDefaultLayoutParams.bottomMargin = this.mIndicatorMargin;
         }
         addView(view, generateDefaultLayoutParams);

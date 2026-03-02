@@ -91,6 +91,7 @@ public class FillContent implements DrawingContent, BaseKeyframeAnimation.Animat
 
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void draw(Canvas canvas, Matrix matrix, int i, DropShadow dropShadow) {
+        Path path;
         if (this.hidden) {
             return;
         }
@@ -99,6 +100,7 @@ public class FillContent implements DrawingContent, BaseKeyframeAnimation.Animat
         }
         int intValue = ((ColorKeyframeAnimation) this.colorAnimation).getIntValue();
         float intValue2 = this.opacityAnimation.getValue().intValue() / 100.0f;
+        int i2 = 0;
         this.paint.setColor((MiscUtils.clamp((int) (i * intValue2), 0, 255) << 24) | (intValue & ViewCompat.MEASURED_SIZE_MASK));
         BaseKeyframeAnimation<ColorFilter, ColorFilter> baseKeyframeAnimation = this.colorFilterAnimation;
         if (baseKeyframeAnimation != null) {
@@ -114,16 +116,23 @@ public class FillContent implements DrawingContent, BaseKeyframeAnimation.Animat
             }
             this.blurMaskFilterRadius = floatValue;
         }
+        Paint paint = this.paint;
         if (dropShadow != null) {
-            dropShadow.applyWithAlpha((int) (intValue2 * 255.0f), this.paint);
+            dropShadow.applyWithAlpha((int) (intValue2 * 255.0f), paint);
         } else {
-            this.paint.clearShadowLayer();
+            paint.clearShadowLayer();
         }
         this.path.reset();
-        for (int i2 = 0; i2 < this.paths.size(); i2++) {
-            this.path.addPath(this.paths.get(i2).getPath(), matrix);
+        while (true) {
+            int size = this.paths.size();
+            path = this.path;
+            if (i2 >= size) {
+                break;
+            }
+            path.addPath(this.paths.get(i2).getPath(), matrix);
+            i2++;
         }
-        canvas.drawPath(this.path, this.paint);
+        canvas.drawPath(path, this.paint);
         if (L.isTraceEnabled()) {
             L.endSection("FillContent#draw");
         }
@@ -132,11 +141,19 @@ public class FillContent implements DrawingContent, BaseKeyframeAnimation.Animat
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void getBounds(RectF rectF, Matrix matrix, boolean z) {
         this.path.reset();
-        for (int i = 0; i < this.paths.size(); i++) {
-            this.path.addPath(this.paths.get(i).getPath(), matrix);
+        int i = 0;
+        while (true) {
+            int size = this.paths.size();
+            Path path = this.path;
+            if (i < size) {
+                path.addPath(this.paths.get(i).getPath(), matrix);
+                i++;
+            } else {
+                path.computeBounds(rectF, false);
+                rectF.set(rectF.left - 1.0f, rectF.top - 1.0f, rectF.right + 1.0f, rectF.bottom + 1.0f);
+                return;
+            }
         }
-        this.path.computeBounds(rectF, false);
-        rectF.set(rectF.left - 1.0f, rectF.top - 1.0f, rectF.right + 1.0f, rectF.bottom + 1.0f);
     }
 
     @Override // com.airbnb.lottie.model.KeyPathElement

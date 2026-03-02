@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
-import dagger.hilt.android.internal.managers.SavedStateHandleHolder;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.UnsafeCasts;
 /* loaded from: classes3.dex */
@@ -15,7 +14,6 @@ public abstract class Hilt_MainEntrench extends AppCompatActivity implements Gen
     private volatile ActivityComponentManager componentManager;
     private final Object componentManagerLock;
     private boolean injected;
-    private SavedStateHandleHolder savedStateHandleHolder;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Hilt_MainEntrench() {
@@ -40,29 +38,22 @@ public abstract class Hilt_MainEntrench extends AppCompatActivity implements Gen
         });
     }
 
-    private void initSavedStateHandleHolder() {
-        SavedStateHandleHolder savedStateHandleHolder = componentManager().getSavedStateHandleHolder();
-        this.savedStateHandleHolder = savedStateHandleHolder;
-        if (savedStateHandleHolder.isInvalid()) {
-            this.savedStateHandleHolder.setExtras(getDefaultViewModelCreationExtras());
-        }
+    private void initSavedStateHandleHolders() {
+        componentManager().initSavedStateHandleHolders();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initSavedStateHandleHolder();
+        initSavedStateHandleHolders();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
-        SavedStateHandleHolder savedStateHandleHolder = this.savedStateHandleHolder;
-        if (savedStateHandleHolder != null) {
-            savedStateHandleHolder.clear();
-        }
+        componentManager().clearSavedStateHandleHolders();
     }
 
     @Override // dagger.hilt.internal.GeneratedComponentManager

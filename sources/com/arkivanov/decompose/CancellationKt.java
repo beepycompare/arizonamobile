@@ -19,7 +19,7 @@ public final class CancellationKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void doOnCancel$lambda$0(Cancellation cancellation, Function0 function0) {
         cancellation.cancel();
         function0.invoke();

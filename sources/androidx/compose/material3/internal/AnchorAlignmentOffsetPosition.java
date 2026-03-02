@@ -82,9 +82,15 @@ public final class AnchorAlignmentOffsetPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Horizontal
         /* renamed from: position-95KtPRI  reason: not valid java name */
-        public int mo3577position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
+        public int mo2982position95KtPRI(IntRect intRect, long j, int i, LayoutDirection layoutDirection) {
             int align = this.anchorAlignment.align(0, intRect.getWidth(), layoutDirection);
-            return intRect.getLeft() + align + (-this.menuAlignment.align(0, i, layoutDirection)) + (layoutDirection == LayoutDirection.Ltr ? this.offset : -this.offset);
+            int i2 = -this.menuAlignment.align(0, i, layoutDirection);
+            LayoutDirection layoutDirection2 = LayoutDirection.Ltr;
+            int i3 = this.offset;
+            if (layoutDirection != layoutDirection2) {
+                i3 = -i3;
+            }
+            return intRect.getLeft() + align + i2 + i3;
         }
     }
 
@@ -153,7 +159,7 @@ public final class AnchorAlignmentOffsetPosition {
 
         @Override // androidx.compose.material3.internal.MenuPosition.Vertical
         /* renamed from: position-JVtK1S4  reason: not valid java name */
-        public int mo3578positionJVtK1S4(IntRect intRect, long j, int i) {
+        public int mo2983positionJVtK1S4(IntRect intRect, long j, int i) {
             return intRect.getTop() + this.anchorAlignment.align(0, intRect.getHeight()) + (-this.menuAlignment.align(0, i)) + this.offset;
         }
     }

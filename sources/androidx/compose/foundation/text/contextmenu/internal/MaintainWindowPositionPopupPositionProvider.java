@@ -25,12 +25,12 @@ final class MaintainWindowPositionPopupPositionProvider implements PopupPosition
     }
 
     /* renamed from: getPreviousWindowSize-bOM6tXw  reason: not valid java name */
-    public final IntSize m1499getPreviousWindowSizebOM6tXw() {
+    public final IntSize m1310getPreviousWindowSizebOM6tXw() {
         return this.previousWindowSize;
     }
 
     /* renamed from: setPreviousWindowSize-fhxjrPA  reason: not valid java name */
-    public final void m1502setPreviousWindowSizefhxjrPA(IntSize intSize) {
+    public final void m1313setPreviousWindowSizefhxjrPA(IntSize intSize) {
         this.previousWindowSize = intSize;
     }
 
@@ -43,43 +43,43 @@ final class MaintainWindowPositionPopupPositionProvider implements PopupPosition
     }
 
     /* renamed from: getPreviousPopupContentSize-bOM6tXw  reason: not valid java name */
-    public final IntSize m1497getPreviousPopupContentSizebOM6tXw() {
+    public final IntSize m1308getPreviousPopupContentSizebOM6tXw() {
         return this.previousPopupContentSize;
     }
 
     /* renamed from: setPreviousPopupContentSize-fhxjrPA  reason: not valid java name */
-    public final void m1500setPreviousPopupContentSizefhxjrPA(IntSize intSize) {
+    public final void m1311setPreviousPopupContentSizefhxjrPA(IntSize intSize) {
         this.previousPopupContentSize = intSize;
     }
 
     /* renamed from: getPreviousPosition-JyOPPKE  reason: not valid java name */
-    public final IntOffset m1498getPreviousPositionJyOPPKE() {
+    public final IntOffset m1309getPreviousPositionJyOPPKE() {
         return this.previousPosition;
     }
 
     /* renamed from: setPreviousPosition-fg0MpWk  reason: not valid java name */
-    public final void m1501setPreviousPositionfg0MpWk(IntOffset intOffset) {
+    public final void m1312setPreviousPositionfg0MpWk(IntOffset intOffset) {
         this.previousPosition = intOffset;
     }
 
     @Override // androidx.compose.ui.window.PopupPositionProvider
     /* renamed from: calculatePosition-llwVHH4 */
-    public long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
+    public long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2) {
         IntOffset intOffset = this.previousPosition;
         if (intOffset != null) {
             IntSize intSize = this.previousWindowSize;
-            if ((intSize == null ? false : IntSize.m8427equalsimpl0(intSize.m8433unboximpl(), j)) && this.previousLayoutDirection == layoutDirection) {
+            if ((intSize == null ? false : IntSize.m7724equalsimpl0(intSize.m7730unboximpl(), j)) && this.previousLayoutDirection == layoutDirection) {
                 IntSize intSize2 = this.previousPopupContentSize;
-                if (intSize2 != null ? IntSize.m8427equalsimpl0(intSize2.m8433unboximpl(), j2) : false) {
-                    return intOffset.m8395unboximpl();
+                if (intSize2 != null ? IntSize.m7724equalsimpl0(intSize2.m7730unboximpl(), j2) : false) {
+                    return intOffset.m7692unboximpl();
                 }
             }
         }
-        long mo428calculatePositionllwVHH4 = this.popupPositionProvider.mo428calculatePositionllwVHH4(intRect, j, layoutDirection, j2);
-        this.previousWindowSize = IntSize.m8421boximpl(j);
+        long mo373calculatePositionllwVHH4 = this.popupPositionProvider.mo373calculatePositionllwVHH4(intRect, j, layoutDirection, j2);
+        this.previousWindowSize = IntSize.m7718boximpl(j);
         this.previousLayoutDirection = layoutDirection;
-        this.previousPopupContentSize = IntSize.m8421boximpl(j2);
-        this.previousPosition = IntOffset.m8377boximpl(mo428calculatePositionllwVHH4);
-        return mo428calculatePositionllwVHH4;
+        this.previousPopupContentSize = IntSize.m7718boximpl(j2);
+        this.previousPosition = IntOffset.m7674boximpl(mo373calculatePositionllwVHH4);
+        return mo373calculatePositionllwVHH4;
     }
 }

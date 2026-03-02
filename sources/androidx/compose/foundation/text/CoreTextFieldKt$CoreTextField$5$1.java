@@ -62,9 +62,9 @@ public final class CoreTextFieldKt$CoreTextField$5$1 extends SuspendLambda imple
                 Flow snapshotFlow = SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.CoreTextFieldKt$CoreTextField$5$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean access$CoreTextField$lambda$14;
-                        access$CoreTextField$lambda$14 = CoreTextFieldKt.access$CoreTextField$lambda$14(State.this);
-                        return Boolean.valueOf(access$CoreTextField$lambda$14);
+                        boolean CoreTextField$lambda$14;
+                        CoreTextField$lambda$14 = CoreTextFieldKt.CoreTextField$lambda$14(State.this);
+                        return Boolean.valueOf(CoreTextField$lambda$14);
                     }
                 });
                 final LegacyTextFieldState legacyTextFieldState = this.$state;

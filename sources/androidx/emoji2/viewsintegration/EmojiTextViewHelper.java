@@ -115,10 +115,12 @@ public final class EmojiTextViewHelper {
 
         @Override // androidx.emoji2.viewsintegration.EmojiTextViewHelper.HelperInternal
         void setEnabled(boolean z) {
-            if (skipBecauseEmojiCompatNotInitialized()) {
-                this.mHelperDelegate.setEnabledUnsafe(z);
+            boolean skipBecauseEmojiCompatNotInitialized = skipBecauseEmojiCompatNotInitialized();
+            HelperInternal19 helperInternal19 = this.mHelperDelegate;
+            if (skipBecauseEmojiCompatNotInitialized) {
+                helperInternal19.setEnabledUnsafe(z);
             } else {
-                this.mHelperDelegate.setEnabled(z);
+                helperInternal19.setEnabled(z);
             }
         }
 

@@ -42,9 +42,7 @@ final class PolymorphicSerializer<T> implements KSerializer<T> {
         this.descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("PolymorphicSerializer", new SerialDescriptor[0], new Function1() { // from class: com.arkivanov.essenty.statekeeper.PolymorphicSerializer$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit descriptor$lambda$0;
-                descriptor$lambda$0 = PolymorphicSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-                return descriptor$lambda$0;
+                return PolymorphicSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
             }
         });
     }
@@ -71,6 +69,7 @@ final class PolymorphicSerializer<T> implements KSerializer<T> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public T deserialize(Decoder decoder) {
+        Object decodeSerializableElement$default;
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         SerialDescriptor descriptor = getDescriptor();
         CompositeDecoder beginStructure = decoder.beginStructure(descriptor);
@@ -94,7 +93,8 @@ final class PolymorphicSerializer<T> implements KSerializer<T> {
                     if (polymorphic == null) {
                         throw new IllegalArgumentException("Required value was null.".toString());
                     }
-                    t = (T) CompositeDecoder.DefaultImpls.decodeSerializableElement$default(beginStructure, getDescriptor(), 1, polymorphic, null, 8, null);
+                    decodeSerializableElement$default = CompositeDecoder.decodeSerializableElement$default(beginStructure, getDescriptor(), 1, polymorphic, null, 8, null);
+                    t = (T) decodeSerializableElement$default;
                 } else {
                     throw new IllegalArgumentException("Required value was null.".toString());
                 }
@@ -180,7 +180,7 @@ final class PolymorphicSerializer<T> implements KSerializer<T> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("type", StringSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

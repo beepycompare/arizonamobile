@@ -86,10 +86,12 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
     }
 
     public void syncState() {
-        if (this.mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-            this.mSlider.setPosition(1.0f);
+        boolean isDrawerOpen = this.mDrawerLayout.isDrawerOpen(GravityCompat.START);
+        SlideDrawable slideDrawable = this.mSlider;
+        if (isDrawerOpen) {
+            slideDrawable.setPosition(1.0f);
         } else {
-            this.mSlider.setPosition(0.0f);
+            slideDrawable.setPosition(0.0f);
         }
         if (this.mDrawerIndicatorEnabled) {
             setActionBarUpIndicator(this.mSlider, this.mDrawerLayout.isDrawerOpen(GravityCompat.START) ? this.mCloseDrawerContentDescRes : this.mOpenDrawerContentDescRes);
@@ -139,11 +141,13 @@ public class ActionBarDrawerToggle implements DrawerLayout.DrawerListener {
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem != null && menuItem.getItemId() == ID_HOME && this.mDrawerIndicatorEnabled) {
-            if (this.mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
-                this.mDrawerLayout.closeDrawer(GravityCompat.START);
+            boolean isDrawerVisible = this.mDrawerLayout.isDrawerVisible(GravityCompat.START);
+            DrawerLayout drawerLayout = this.mDrawerLayout;
+            if (isDrawerVisible) {
+                drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
-            this.mDrawerLayout.openDrawer(GravityCompat.START);
+            drawerLayout.openDrawer(GravityCompat.START);
             return true;
         }
         return false;

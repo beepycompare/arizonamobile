@@ -37,7 +37,7 @@ public final class LazySaveableStateHolder implements SaveableStateRegistry, Sav
     private final SaveableStateHolder wrappedHolder;
     private final SaveableStateRegistry wrappedRegistry;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SaveableStateProvider$lambda$1(LazySaveableStateHolder lazySaveableStateHolder, Object obj, Function2 function2, int i, Composer composer, int i2) {
         lazySaveableStateHolder.SaveableStateProvider(obj, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -68,14 +68,12 @@ public final class LazySaveableStateHolder implements SaveableStateRegistry, Sav
         this(SaveableStateRegistryKt.SaveableStateRegistry(map, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazySaveableStateHolder$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = LazySaveableStateHolder._init_$lambda$0(SaveableStateRegistry.this, obj);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(LazySaveableStateHolder._init_$lambda$0(SaveableStateRegistry.this, obj));
             }
         }), saveableStateHolder);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(SaveableStateRegistry saveableStateRegistry, Object obj) {
         if (saveableStateRegistry != null) {
             return saveableStateRegistry.canBeSaved(obj);
@@ -163,9 +161,7 @@ public final class LazySaveableStateHolder implements SaveableStateRegistry, Sav
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.lazy.layout.LazySaveableStateHolder$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit SaveableStateProvider$lambda$1;
-                    SaveableStateProvider$lambda$1 = LazySaveableStateHolder.SaveableStateProvider$lambda$1(LazySaveableStateHolder.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
-                    return SaveableStateProvider$lambda$1;
+                    return LazySaveableStateHolder.SaveableStateProvider$lambda$1(LazySaveableStateHolder.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -204,21 +200,17 @@ public final class LazySaveableStateHolder implements SaveableStateRegistry, Sav
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.foundation.lazy.layout.LazySaveableStateHolder$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Map saver$lambda$0;
-                    saver$lambda$0 = LazySaveableStateHolder.Companion.saver$lambda$0((SaverScope) obj, (LazySaveableStateHolder) obj2);
-                    return saver$lambda$0;
+                    return LazySaveableStateHolder.Companion.saver$lambda$0((SaverScope) obj, (LazySaveableStateHolder) obj2);
                 }
             }, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazySaveableStateHolder$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    LazySaveableStateHolder saver$lambda$1;
-                    saver$lambda$1 = LazySaveableStateHolder.Companion.saver$lambda$1(SaveableStateRegistry.this, saveableStateHolder, (Map) obj);
-                    return saver$lambda$1;
+                    return LazySaveableStateHolder.Companion.saver$lambda$1(SaveableStateRegistry.this, saveableStateHolder, (Map) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Map saver$lambda$0(SaverScope saverScope, LazySaveableStateHolder lazySaveableStateHolder) {
             Map<String, List<Object>> performSave = lazySaveableStateHolder.performSave();
             if (performSave.isEmpty()) {
@@ -227,7 +219,7 @@ public final class LazySaveableStateHolder implements SaveableStateRegistry, Sav
             return performSave;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final LazySaveableStateHolder saver$lambda$1(SaveableStateRegistry saveableStateRegistry, SaveableStateHolder saveableStateHolder, Map map) {
             return new LazySaveableStateHolder(saveableStateRegistry, map, saveableStateHolder);
         }

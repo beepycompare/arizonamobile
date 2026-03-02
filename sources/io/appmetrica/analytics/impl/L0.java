@@ -8,15 +8,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class L0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f666a = C0136b4.l().g().a();
-    public final C0738z0 b;
+    public final IHandlerExecutor f666a = C0135b4.l().g().a();
+    public final C0737z0 b;
     public final Qe c;
     public final Te d;
 
     public L0() {
-        C0738z0 c0738z0 = new C0738z0();
-        this.b = c0738z0;
-        this.c = new Qe(c0738z0);
+        C0737z0 c0737z0 = new C0737z0();
+        this.b = c0737z0;
+        this.c = new Qe(c0737z0);
         this.d = new Te();
     }
 
@@ -69,27 +69,27 @@ public final class L0 {
 
     public static final void a(L0 l0, PluginErrorDetails pluginErrorDetails, String str) {
         l0.b.getClass();
-        C0713y0 c0713y0 = C0713y0.e;
-        Intrinsics.checkNotNull(c0713y0);
-        C0350jc i = c0713y0.f().i();
+        C0712y0 c0712y0 = C0712y0.e;
+        Intrinsics.checkNotNull(c0712y0);
+        C0349jc i = c0712y0.f().i();
         Intrinsics.checkNotNull(i);
         i.f1062a.getPluginExtension().reportError(pluginErrorDetails, str);
     }
 
     public static final void a(L0 l0, String str, String str2, PluginErrorDetails pluginErrorDetails) {
         l0.b.getClass();
-        C0713y0 c0713y0 = C0713y0.e;
-        Intrinsics.checkNotNull(c0713y0);
-        C0350jc i = c0713y0.f().i();
+        C0712y0 c0712y0 = C0712y0.e;
+        Intrinsics.checkNotNull(c0712y0);
+        C0349jc i = c0712y0.f().i();
         Intrinsics.checkNotNull(i);
         i.f1062a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
     }
 
     public static final void a(L0 l0, PluginErrorDetails pluginErrorDetails) {
         l0.b.getClass();
-        C0713y0 c0713y0 = C0713y0.e;
-        Intrinsics.checkNotNull(c0713y0);
-        C0350jc i = c0713y0.f().i();
+        C0712y0 c0712y0 = C0712y0.e;
+        Intrinsics.checkNotNull(c0712y0);
+        C0349jc i = c0712y0.f().i();
         Intrinsics.checkNotNull(i);
         i.f1062a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
     }

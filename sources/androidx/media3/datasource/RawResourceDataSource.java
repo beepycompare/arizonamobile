@@ -186,13 +186,13 @@ public final class RawResourceDataSource extends BaseDataSource {
             }
         }
         int read = ((InputStream) Util.castNonNull(this.inputStream)).read(bArr, i, i2);
+        long j2 = this.bytesRemaining;
         if (read == -1) {
-            if (this.bytesRemaining == -1) {
+            if (j2 == -1) {
                 return -1;
             }
             throw new RawResourceDataSourceException("End of stream reached having not read sufficient data.", new EOFException(), 2000);
         }
-        long j2 = this.bytesRemaining;
         if (j2 != -1) {
             this.bytesRemaining = j2 - read;
         }

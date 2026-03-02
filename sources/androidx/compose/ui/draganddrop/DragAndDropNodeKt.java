@@ -76,19 +76,19 @@ public final class DragAndDropNodeKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: contains-Uv8p0NA  reason: not valid java name */
-    public static final boolean m4937containsUv8p0NA(DragAndDropNode dragAndDropNode, long j) {
+    public static final boolean m4285containsUv8p0NA(DragAndDropNode dragAndDropNode, long j) {
         if (dragAndDropNode.getNode().isAttached()) {
             LayoutCoordinates coordinates = DelegatableNodeKt.requireLayoutNode(dragAndDropNode).getCoordinates();
             if (coordinates.isAttached()) {
                 long positionInRoot = LayoutCoordinatesKt.positionInRoot(coordinates);
                 float intBitsToFloat = Float.intBitsToFloat((int) (positionInRoot >> 32));
                 float intBitsToFloat2 = Float.intBitsToFloat((int) (positionInRoot & 4294967295L));
-                float m4931getSizeYbymL2g$ui = ((int) (dragAndDropNode.m4931getSizeYbymL2g$ui() >> 32)) + intBitsToFloat;
-                float m4931getSizeYbymL2g$ui2 = ((int) (dragAndDropNode.m4931getSizeYbymL2g$ui() & 4294967295L)) + intBitsToFloat2;
+                float m4279getSizeYbymL2g$ui = ((int) (dragAndDropNode.m4279getSizeYbymL2g$ui() >> 32)) + intBitsToFloat;
+                float m4279getSizeYbymL2g$ui2 = ((int) (dragAndDropNode.m4279getSizeYbymL2g$ui() & 4294967295L)) + intBitsToFloat2;
                 float intBitsToFloat3 = Float.intBitsToFloat((int) (j >> 32));
-                if (intBitsToFloat <= intBitsToFloat3 && intBitsToFloat3 <= m4931getSizeYbymL2g$ui) {
+                if (intBitsToFloat <= intBitsToFloat3 && intBitsToFloat3 <= m4279getSizeYbymL2g$ui) {
                     float intBitsToFloat4 = Float.intBitsToFloat((int) (j & 4294967295L));
-                    if (intBitsToFloat2 <= intBitsToFloat4 && intBitsToFloat4 <= m4931getSizeYbymL2g$ui2) {
+                    if (intBitsToFloat2 <= intBitsToFloat4 && intBitsToFloat4 <= m4279getSizeYbymL2g$ui2) {
                         return true;
                     }
                 }

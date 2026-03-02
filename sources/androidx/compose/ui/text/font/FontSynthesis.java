@@ -11,56 +11,56 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class FontSynthesis {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int None = m7824constructorimpl(0);
-    private static final int Weight = m7824constructorimpl(1);
-    private static final int Style = m7824constructorimpl(2);
-    private static final int All = m7824constructorimpl(65535);
+    private static final int None = m7124constructorimpl(0);
+    private static final int Weight = m7124constructorimpl(1);
+    private static final int Style = m7124constructorimpl(2);
+    private static final int All = m7124constructorimpl(65535);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ FontSynthesis m7823boximpl(int i) {
+    public static final /* synthetic */ FontSynthesis m7123boximpl(int i) {
         return new FontSynthesis(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m7824constructorimpl(int i) {
+    public static int m7124constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7825equalsimpl(int i, Object obj) {
-        return (obj instanceof FontSynthesis) && i == ((FontSynthesis) obj).m7831unboximpl();
+    public static boolean m7125equalsimpl(int i, Object obj) {
+        return (obj instanceof FontSynthesis) && i == ((FontSynthesis) obj).m7131unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7826equalsimpl0(int i, int i2) {
+    public static final boolean m7126equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7827hashCodeimpl(int i) {
+    public static int m7127hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: isStyleOn-impl$ui_text  reason: not valid java name */
-    public static final boolean m7828isStyleOnimpl$ui_text(int i) {
+    public static final boolean m7128isStyleOnimpl$ui_text(int i) {
         return (i & 2) != 0;
     }
 
     /* renamed from: isWeightOn-impl$ui_text  reason: not valid java name */
-    public static final boolean m7829isWeightOnimpl$ui_text(int i) {
+    public static final boolean m7129isWeightOnimpl$ui_text(int i) {
         return (i & 1) != 0;
     }
 
     public boolean equals(Object obj) {
-        return m7825equalsimpl(this.value, obj);
+        return m7125equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m7827hashCodeimpl(this.value);
+        return m7127hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m7831unboximpl() {
+    public final /* synthetic */ int m7131unboximpl() {
         return this.value;
     }
 
@@ -73,12 +73,12 @@ public final class FontSynthesis {
     }
 
     public String toString() {
-        return m7830toStringimpl(this.value);
+        return m7130toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7830toStringimpl(int i) {
-        return m7826equalsimpl0(i, None) ? "None" : m7826equalsimpl0(i, Weight) ? "Weight" : m7826equalsimpl0(i, Style) ? "Style" : m7826equalsimpl0(i, All) ? "All" : "Invalid";
+    public static String m7130toStringimpl(int i) {
+        return m7126equalsimpl0(i, None) ? "None" : m7126equalsimpl0(i, Weight) ? "Weight" : m7126equalsimpl0(i, Style) ? "Style" : m7126equalsimpl0(i, All) ? "All" : "Invalid";
     }
 
     /* compiled from: FontSynthesis.kt */
@@ -93,27 +93,27 @@ public final class FontSynthesis {
         }
 
         /* renamed from: getNone-GVVA2EU  reason: not valid java name */
-        public final int m7833getNoneGVVA2EU() {
+        public final int m7133getNoneGVVA2EU() {
             return FontSynthesis.None;
         }
 
         /* renamed from: getWeight-GVVA2EU  reason: not valid java name */
-        public final int m7835getWeightGVVA2EU() {
+        public final int m7135getWeightGVVA2EU() {
             return FontSynthesis.Weight;
         }
 
         /* renamed from: getStyle-GVVA2EU  reason: not valid java name */
-        public final int m7834getStyleGVVA2EU() {
+        public final int m7134getStyleGVVA2EU() {
             return FontSynthesis.Style;
         }
 
         /* renamed from: getAll-GVVA2EU  reason: not valid java name */
-        public final int m7832getAllGVVA2EU() {
+        public final int m7132getAllGVVA2EU() {
             return FontSynthesis.All;
         }
 
         /* renamed from: valueOf-9CiegCU  reason: not valid java name */
-        public final int m7836valueOf9CiegCU(int i) {
+        public final int m7136valueOf9CiegCU(int i) {
             boolean z = true;
             if (i != 0 && i != 1 && i != 2 && i != 65535) {
                 z = false;
@@ -121,7 +121,7 @@ public final class FontSynthesis {
             if (!z) {
                 InlineClassHelperKt.throwIllegalArgumentException("The given value=" + i + " is not recognized by FontSynthesis.");
             }
-            return FontSynthesis.m7824constructorimpl(i);
+            return FontSynthesis.m7124constructorimpl(i);
         }
     }
 }

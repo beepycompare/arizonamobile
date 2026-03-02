@@ -66,16 +66,11 @@ public final class ImageRequests_androidKt {
         return builder.placeholder(new Function1() { // from class: coil3.request.ImageRequests_androidKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Image placeholder$lambda$0;
-                placeholder$lambda$0 = ImageRequests_androidKt.placeholder$lambda$0(i, (ImageRequest) obj);
-                return placeholder$lambda$0;
+                Image asImage;
+                asImage = Image_androidKt.asImage(ContextsKt.getDrawableCompat(((ImageRequest) obj).getContext(), i));
+                return asImage;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Image placeholder$lambda$0(int i, ImageRequest imageRequest) {
-        return Image_androidKt.asImage(ContextsKt.getDrawableCompat(imageRequest.getContext(), i));
     }
 
     public static final ImageRequest.Builder placeholder(ImageRequest.Builder builder, Drawable drawable) {
@@ -86,16 +81,11 @@ public final class ImageRequests_androidKt {
         return builder.error(new Function1() { // from class: coil3.request.ImageRequests_androidKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Image error$lambda$1;
-                error$lambda$1 = ImageRequests_androidKt.error$lambda$1(i, (ImageRequest) obj);
-                return error$lambda$1;
+                Image asImage;
+                asImage = Image_androidKt.asImage(ContextsKt.getDrawableCompat(((ImageRequest) obj).getContext(), i));
+                return asImage;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Image error$lambda$1(int i, ImageRequest imageRequest) {
-        return Image_androidKt.asImage(ContextsKt.getDrawableCompat(imageRequest.getContext(), i));
     }
 
     public static final ImageRequest.Builder error(ImageRequest.Builder builder, Drawable drawable) {
@@ -106,16 +96,11 @@ public final class ImageRequests_androidKt {
         return builder.fallback(new Function1() { // from class: coil3.request.ImageRequests_androidKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Image fallback$lambda$2;
-                fallback$lambda$2 = ImageRequests_androidKt.fallback$lambda$2(i, (ImageRequest) obj);
-                return fallback$lambda$2;
+                Image asImage;
+                asImage = Image_androidKt.asImage(ContextsKt.getDrawableCompat(((ImageRequest) obj).getContext(), i));
+                return asImage;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Image fallback$lambda$2(int i, ImageRequest imageRequest) {
-        return Image_androidKt.asImage(ContextsKt.getDrawableCompat(imageRequest.getContext(), i));
     }
 
     public static final ImageRequest.Builder fallback(ImageRequest.Builder builder, Drawable drawable) {

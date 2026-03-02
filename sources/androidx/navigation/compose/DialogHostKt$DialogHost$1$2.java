@@ -40,7 +40,7 @@ final class DialogHostKt$DialogHost$1$2 implements Function2<Composer, Integer, 
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DisposableEffectResult invoke$lambda$2$lambda$1(final SnapshotStateList snapshotStateList, final NavBackStackEntry navBackStackEntry, final DialogNavigator dialogNavigator, DisposableEffectScope disposableEffectScope) {
         snapshotStateList.add(navBackStackEntry);
         return new DisposableEffectResult() { // from class: androidx.navigation.compose.DialogHostKt$DialogHost$1$2$invoke$lambda$2$lambda$1$$inlined$onDispose$1
@@ -69,9 +69,7 @@ final class DialogHostKt$DialogHost$1$2 implements Function2<Composer, Integer, 
                 rememberedValue = new Function1() { // from class: androidx.navigation.compose.DialogHostKt$DialogHost$1$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        DisposableEffectResult invoke$lambda$2$lambda$1;
-                        invoke$lambda$2$lambda$1 = DialogHostKt$DialogHost$1$2.invoke$lambda$2$lambda$1(SnapshotStateList.this, navBackStackEntry2, dialogNavigator, (DisposableEffectScope) obj);
-                        return invoke$lambda$2$lambda$1;
+                        return DialogHostKt$DialogHost$1$2.invoke$lambda$2$lambda$1(SnapshotStateList.this, navBackStackEntry2, dialogNavigator, (DisposableEffectScope) obj);
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);

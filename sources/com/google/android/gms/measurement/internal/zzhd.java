@@ -35,10 +35,11 @@ public final class zzhd {
         }
         zzhh zzhhVar = this.zza;
         SharedPreferences.Editor edit = zzhhVar.zzd().edit();
-        if (bundle2.size() == 0) {
-            edit.remove(this.zzb);
+        int size = bundle2.size();
+        String str = this.zzb;
+        if (size == 0) {
+            edit.remove(str);
         } else {
-            String str = this.zzb;
             JSONArray jSONArray = new JSONArray();
             for (String str2 : bundle2.keySet()) {
                 Object obj = bundle2.get(str2);

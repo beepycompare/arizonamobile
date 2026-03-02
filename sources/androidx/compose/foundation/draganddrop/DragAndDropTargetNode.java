@@ -53,15 +53,10 @@ public final class DragAndDropTargetNode extends DelegatingNode {
         this.dragAndDropNode = (DragAndDropTargetModifierNode) delegate(DragAndDropNodeKt.DragAndDropTargetModifierNode(new Function1() { // from class: androidx.compose.foundation.draganddrop.DragAndDropTargetNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean createAndAttachDragAndDropModifierNode$lambda$0;
-                createAndAttachDragAndDropModifierNode$lambda$0 = DragAndDropTargetNode.createAndAttachDragAndDropModifierNode$lambda$0(DragAndDropTargetNode.this, (DragAndDropEvent) obj);
-                return Boolean.valueOf(createAndAttachDragAndDropModifierNode$lambda$0);
+                boolean booleanValue;
+                booleanValue = DragAndDropTargetNode.this.shouldStartDragAndDrop.invoke((DragAndDropEvent) obj).booleanValue();
+                return Boolean.valueOf(booleanValue);
             }
         }, this.target));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean createAndAttachDragAndDropModifierNode$lambda$0(DragAndDropTargetNode dragAndDropTargetNode, DragAndDropEvent dragAndDropEvent) {
-        return dragAndDropTargetNode.shouldStartDragAndDrop.invoke(dragAndDropEvent).booleanValue();
     }
 }

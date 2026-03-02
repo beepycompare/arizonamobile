@@ -64,12 +64,14 @@ public final class Arrangement {
         }
         float f9 = (f4 - calculateLargeSize) * this.largeCount;
         float min = Math.min(Math.abs(f9), f8 * 0.1f * i3);
-        if (f9 > 0.0f) {
-            this.mediumSize -= min / this.mediumCount;
+        int i4 = (f9 > 0.0f ? 1 : (f9 == 0.0f ? 0 : -1));
+        float f10 = this.mediumSize;
+        if (i4 > 0) {
+            this.mediumSize = f10 - (min / this.mediumCount);
             this.largeSize += min / this.largeCount;
             return;
         }
-        this.mediumSize += min / this.mediumCount;
+        this.mediumSize = f10 + (min / this.mediumCount);
         this.largeSize -= min / this.largeCount;
     }
 

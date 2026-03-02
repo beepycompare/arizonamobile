@@ -54,7 +54,7 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes.dex */
 public final class CheckboxKt {
     private static final float CheckboxDefaultPadding;
-    private static final float CheckboxSize = Dp.m8258constructorimpl(20);
+    private static final float CheckboxSize = Dp.m7555constructorimpl(20);
     private static final float RadiusSize;
     private static final int SnapAnimationDelay = 100;
 
@@ -82,31 +82,31 @@ public final class CheckboxKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Checkbox$lambda$3(boolean z, Function1 function1, Modifier modifier, boolean z2, CheckboxColors checkboxColors, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         Checkbox(z, function1, modifier, z2, checkboxColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Checkbox$lambda$6(boolean z, Function1 function1, Stroke stroke, Stroke stroke2, Modifier modifier, boolean z2, CheckboxColors checkboxColors, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         Checkbox(z, function1, stroke, stroke2, modifier, z2, checkboxColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CheckboxImpl$lambda$15(boolean z, ToggleableState toggleableState, Modifier modifier, CheckboxColors checkboxColors, Stroke stroke, Stroke stroke2, int i, Composer composer, int i2) {
         CheckboxImpl(z, toggleableState, modifier, checkboxColors, stroke, stroke2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TriStateCheckbox$lambda$8(ToggleableState toggleableState, Function0 function0, Modifier modifier, boolean z, CheckboxColors checkboxColors, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         TriStateCheckbox(toggleableState, function0, modifier, z, checkboxColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TriStateCheckbox$lambda$9(ToggleableState toggleableState, Function0 function0, Stroke stroke, Stroke stroke2, Modifier modifier, boolean z, CheckboxColors checkboxColors, MutableInteractionSource mutableInteractionSource, int i, int i2, Composer composer, int i3) {
         TriStateCheckbox(toggleableState, function0, stroke, stroke2, modifier, z, checkboxColors, mutableInteractionSource, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -223,7 +223,7 @@ public final class CheckboxKt {
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                 Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                float floor = (float) Math.floor(((Density) consume).mo464toPx0680j_4(CheckboxDefaults.INSTANCE.m2106getStrokeWidthD9Ej5fM()));
+                                float floor = (float) Math.floor(((Density) consume).mo405toPx0680j_4(CheckboxDefaults.INSTANCE.m1804getStrokeWidthD9Ej5fM()));
                                 ToggleableState ToggleableState = ToggleableStateKt.ToggleableState(z);
                                 if (function1 == null) {
                                     startRestartGroup.startReplaceGroup(2066152950);
@@ -235,9 +235,7 @@ public final class CheckboxKt {
                                         rememberedValue = new Function0() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda6
                                             @Override // kotlin.jvm.functions.Function0
                                             public final Object invoke() {
-                                                Unit Checkbox$lambda$2$lambda$1;
-                                                Checkbox$lambda$2$lambda$1 = CheckboxKt.Checkbox$lambda$2$lambda$1(Function1.this, z);
-                                                return Checkbox$lambda$2$lambda$1;
+                                                return CheckboxKt.Checkbox$lambda$2$lambda$1(Function1.this, z);
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -251,7 +249,7 @@ public final class CheckboxKt {
                                     function0 = null;
                                 }
                                 composer2 = startRestartGroup;
-                                TriStateCheckbox(ToggleableState, function0, new Stroke(floor, 0.0f, StrokeCap.Companion.m5802getSquareKaPHkGw(), 0, null, 26, null), new Stroke(floor, 0.0f, 0, 0, null, 30, null), modifier3, z5, checkboxColors3, mutableInteractionSource3, composer2, (i3 << 6) & 33546240, 0);
+                                TriStateCheckbox(ToggleableState, function0, new Stroke(floor, 0.0f, StrokeCap.Companion.m5148getSquareKaPHkGw(), 0, null, 26, null), new Stroke(floor, 0.0f, 0, 0, null, 30, null), modifier3, z5, checkboxColors3, mutableInteractionSource3, composer2, (i3 << 6) & 33546240, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -276,12 +274,12 @@ public final class CheckboxKt {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                         Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        float floor2 = (float) Math.floor(((Density) consume2).mo464toPx0680j_4(CheckboxDefaults.INSTANCE.m2106getStrokeWidthD9Ej5fM()));
+                        float floor2 = (float) Math.floor(((Density) consume2).mo405toPx0680j_4(CheckboxDefaults.INSTANCE.m1804getStrokeWidthD9Ej5fM()));
                         ToggleableState ToggleableState2 = ToggleableStateKt.ToggleableState(z);
                         if (function1 == null) {
                         }
                         composer2 = startRestartGroup;
-                        TriStateCheckbox(ToggleableState2, function0, new Stroke(floor2, 0.0f, StrokeCap.Companion.m5802getSquareKaPHkGw(), 0, null, 26, null), new Stroke(floor2, 0.0f, 0, 0, null, 30, null), modifier32, z5, checkboxColors3, mutableInteractionSource3, composer2, (i3 << 6) & 33546240, 0);
+                        TriStateCheckbox(ToggleableState2, function0, new Stroke(floor2, 0.0f, StrokeCap.Companion.m5148getSquareKaPHkGw(), 0, null, 26, null), new Stroke(floor2, 0.0f, 0, 0, null, 30, null), modifier32, z5, checkboxColors3, mutableInteractionSource3, composer2, (i3 << 6) & 33546240, 0);
                         if (ComposerKt.isTraceInProgress()) {
                         }
                         modifier2 = modifier32;
@@ -301,9 +299,7 @@ public final class CheckboxKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda7
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit Checkbox$lambda$3;
-                                Checkbox$lambda$3 = CheckboxKt.Checkbox$lambda$3(z, function1, modifier2, z4, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return Checkbox$lambda$3;
+                                return CheckboxKt.Checkbox$lambda$3(z, function1, modifier2, z4, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -348,7 +344,7 @@ public final class CheckboxKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Checkbox$lambda$2$lambda$1(Function1 function1, boolean z) {
         function1.invoke(Boolean.valueOf(!z));
         return Unit.INSTANCE;
@@ -506,9 +502,7 @@ public final class CheckboxKt {
                                     rememberedValue = new Function0() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda3
                                         @Override // kotlin.jvm.functions.Function0
                                         public final Object invoke() {
-                                            Unit Checkbox$lambda$5$lambda$4;
-                                            Checkbox$lambda$5$lambda$4 = CheckboxKt.Checkbox$lambda$5$lambda$4(Function1.this, z);
-                                            return Checkbox$lambda$5$lambda$4;
+                                            return CheckboxKt.Checkbox$lambda$5$lambda$4(Function1.this, z);
                                         }
                                     };
                                     startRestartGroup.updateRememberedValue(rememberedValue);
@@ -591,9 +585,7 @@ public final class CheckboxKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj3, Object obj4) {
-                            Unit Checkbox$lambda$6;
-                            Checkbox$lambda$6 = CheckboxKt.Checkbox$lambda$6(z, function1, stroke, stroke2, modifier2, z4, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                            return Checkbox$lambda$6;
+                            return CheckboxKt.Checkbox$lambda$6(z, function1, stroke, stroke2, modifier2, z4, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                         }
                     });
                     return;
@@ -631,7 +623,7 @@ public final class CheckboxKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Checkbox$lambda$5$lambda$4(Function1 function1, boolean z) {
         function1.invoke(Boolean.valueOf(!z));
         return Unit.INSTANCE;
@@ -758,8 +750,8 @@ public final class CheckboxKt {
                                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                                 Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                                float floor = (float) Math.floor(((Density) consume).mo464toPx0680j_4(CheckboxDefaults.INSTANCE.m2106getStrokeWidthD9Ej5fM()));
-                                Stroke stroke = new Stroke(floor, 0.0f, StrokeCap.Companion.m5802getSquareKaPHkGw(), 0, null, 26, null);
+                                float floor = (float) Math.floor(((Density) consume).mo405toPx0680j_4(CheckboxDefaults.INSTANCE.m1804getStrokeWidthD9Ej5fM()));
+                                Stroke stroke = new Stroke(floor, 0.0f, StrokeCap.Companion.m5148getSquareKaPHkGw(), 0, null, 26, null);
                                 Stroke stroke2 = new Stroke(floor, 0.0f, 0, 0, null, 30, null);
                                 int i9 = i3 & WebSocketProtocol.PAYLOAD_SHORT;
                                 int i10 = i3 << i6;
@@ -786,8 +778,8 @@ public final class CheckboxKt {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                         Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        float floor2 = (float) Math.floor(((Density) consume2).mo464toPx0680j_4(CheckboxDefaults.INSTANCE.m2106getStrokeWidthD9Ej5fM()));
-                        Stroke stroke3 = new Stroke(floor2, 0.0f, StrokeCap.Companion.m5802getSquareKaPHkGw(), 0, null, 26, null);
+                        float floor2 = (float) Math.floor(((Density) consume2).mo405toPx0680j_4(CheckboxDefaults.INSTANCE.m1804getStrokeWidthD9Ej5fM()));
+                        Stroke stroke3 = new Stroke(floor2, 0.0f, StrokeCap.Companion.m5148getSquareKaPHkGw(), 0, null, 26, null);
                         Stroke stroke22 = new Stroke(floor2, 0.0f, 0, 0, null, 30, null);
                         int i92 = i3 & WebSocketProtocol.PAYLOAD_SHORT;
                         int i102 = i3 << i6;
@@ -812,9 +804,7 @@ public final class CheckboxKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda5
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj4, Object obj5) {
-                                Unit TriStateCheckbox$lambda$8;
-                                TriStateCheckbox$lambda$8 = CheckboxKt.TriStateCheckbox$lambda$8(ToggleableState.this, function0, modifier2, z3, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                return TriStateCheckbox$lambda$8;
+                                return CheckboxKt.TriStateCheckbox$lambda$8(ToggleableState.this, function0, modifier2, z3, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                             }
                         });
                         return;
@@ -994,7 +984,7 @@ public final class CheckboxKt {
                         }
                         if (function0 != null) {
                             boolean z5 = z4;
-                            companion = ToggleableKt.m1256triStateToggleableO2vRcR0(Modifier.Companion, toggleableState, obj5, RippleKt.m2867rippleH2RKhps$default(false, Dp.m8258constructorimpl(CheckboxTokens.INSTANCE.m3809getStateLayerSizeD9Ej5fM() / 2), 0L, 4, null), z5, Role.m7435boximpl(Role.Companion.m7444getCheckboxo7Vup1c()), function0);
+                            companion = ToggleableKt.m1101triStateToggleableO2vRcR0(Modifier.Companion, toggleableState, obj5, RippleKt.m2402rippleH2RKhps$default(false, Dp.m7555constructorimpl(CheckboxTokens.INSTANCE.m3193getStateLayerSizeD9Ej5fM() / 2), 0L, 4, null), z5, Role.m6767boximpl(Role.Companion.m6776getCheckboxo7Vup1c()), function0);
                             obj4 = obj5;
                             z4 = z5;
                         } else {
@@ -1008,7 +998,7 @@ public final class CheckboxKt {
                         }
                         int i9 = i6 << 6;
                         CheckboxColors checkboxColors3 = obj3;
-                        CheckboxImpl(z4, toggleableState, PaddingKt.m928padding3ABfNKs(modifier3.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3, stroke, obj, startRestartGroup, ((i6 >> 15) & 14) | ((i6 << 3) & 112) | ((i6 >> 9) & 7168) | (57344 & i9) | (i9 & 458752));
+                        CheckboxImpl(z4, toggleableState, PaddingKt.m818padding3ABfNKs(modifier3.then(companion2).then(companion), CheckboxDefaultPadding), checkboxColors3, stroke, obj, startRestartGroup, ((i6 >> 15) & 14) | ((i6 << 3) & 112) | ((i6 >> 9) & 7168) | (57344 & i9) | (i9 & 458752));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -1029,9 +1019,7 @@ public final class CheckboxKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj6, Object obj7) {
-                                Unit TriStateCheckbox$lambda$9;
-                                TriStateCheckbox$lambda$9 = CheckboxKt.TriStateCheckbox$lambda$9(ToggleableState.this, function0, stroke, stroke2, modifier2, z3, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
-                                return TriStateCheckbox$lambda$9;
+                                return CheckboxKt.TriStateCheckbox$lambda$9(ToggleableState.this, function0, stroke, stroke2, modifier2, z3, checkboxColors2, mutableInteractionSource2, i, i2, (Composer) obj6, ((Integer) obj7).intValue());
                             }
                         });
                         return;
@@ -1296,7 +1284,7 @@ public final class CheckboxKt {
                             int i11 = (i8 & 896) | (i3 & WebSocketProtocol.PAYLOAD_SHORT);
                             final State<Color> boxColor$material3 = checkboxColors.boxColor$material3(z, toggleableState, composer2, i11);
                             final State<Color> borderColor$material3 = checkboxColors.borderColor$material3(z, toggleableState, composer2, i11);
-                            Modifier m968requiredSize3ABfNKs = SizeKt.m968requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+                            Modifier m856requiredSize3ABfNKs = SizeKt.m856requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
                             ComposerKt.sourceInformationMarkerStart(composer2, -1869775460, "CC(remember):Checkbox.kt#9igjgp");
                             changed = composer2.changed(boxColor$material3) | composer2.changed(borderColor$material3) | composer2.changedInstance(stroke2) | composer2.changed(checkmarkColor$material3) | composer2.changed(createTransitionAnimation) | composer2.changed(createTransitionAnimation2) | composer2.changedInstance(stroke);
                             rememberedValue2 = composer2.rememberedValue();
@@ -1304,16 +1292,14 @@ public final class CheckboxKt {
                                 Function1 function1 = new Function1() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda0
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
-                                        Unit CheckboxImpl$lambda$14$lambda$13;
-                                        CheckboxImpl$lambda$14$lambda$13 = CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material3, stroke2, checkmarkColor$material3, createTransitionAnimation, createTransitionAnimation2, stroke, checkDrawingCache2, (DrawScope) obj);
-                                        return CheckboxImpl$lambda$14$lambda$13;
+                                        return CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material3, stroke2, checkmarkColor$material3, createTransitionAnimation, createTransitionAnimation2, stroke, checkDrawingCache2, (DrawScope) obj);
                                     }
                                 };
                                 composer2.updateRememberedValue(function1);
                                 rememberedValue2 = function1;
                             }
                             ComposerKt.sourceInformationMarkerEnd(composer2);
-                            CanvasKt.Canvas(m968requiredSize3ABfNKs, (Function1) rememberedValue2, composer2, 0);
+                            CanvasKt.Canvas(m856requiredSize3ABfNKs, (Function1) rememberedValue2, composer2, 0);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1394,7 +1380,7 @@ public final class CheckboxKt {
                     int i112 = (i8 & 896) | (i3 & WebSocketProtocol.PAYLOAD_SHORT);
                     final State boxColor$material32 = checkboxColors.boxColor$material3(z, toggleableState, composer2, i112);
                     final State borderColor$material32 = checkboxColors.borderColor$material3(z, toggleableState, composer2, i112);
-                    Modifier m968requiredSize3ABfNKs2 = SizeKt.m968requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+                    Modifier m856requiredSize3ABfNKs2 = SizeKt.m856requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
                     ComposerKt.sourceInformationMarkerStart(composer2, -1869775460, "CC(remember):Checkbox.kt#9igjgp");
                     changed = composer2.changed(boxColor$material32) | composer2.changed(borderColor$material32) | composer2.changedInstance(stroke2) | composer2.changed(checkmarkColor$material32) | composer2.changed(createTransitionAnimation3) | composer2.changed(createTransitionAnimation22) | composer2.changedInstance(stroke);
                     rememberedValue2 = composer2.rememberedValue();
@@ -1403,15 +1389,13 @@ public final class CheckboxKt {
                     Function1 function12 = new Function1() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit CheckboxImpl$lambda$14$lambda$13;
-                            CheckboxImpl$lambda$14$lambda$13 = CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material32, stroke2, checkmarkColor$material32, createTransitionAnimation3, createTransitionAnimation22, stroke, checkDrawingCache22, (DrawScope) obj);
-                            return CheckboxImpl$lambda$14$lambda$13;
+                            return CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material32, stroke2, checkmarkColor$material32, createTransitionAnimation3, createTransitionAnimation22, stroke, checkDrawingCache22, (DrawScope) obj);
                         }
                     };
                     composer2.updateRememberedValue(function12);
                     rememberedValue2 = function12;
                     ComposerKt.sourceInformationMarkerEnd(composer2);
-                    CanvasKt.Canvas(m968requiredSize3ABfNKs2, (Function1) rememberedValue2, composer2, 0);
+                    CanvasKt.Canvas(m856requiredSize3ABfNKs2, (Function1) rememberedValue2, composer2, 0);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                 } else if (i10 != 3) {
@@ -1504,7 +1488,7 @@ public final class CheckboxKt {
             int i1122 = (i8 & 896) | (i3 & WebSocketProtocol.PAYLOAD_SHORT);
             final State boxColor$material322 = checkboxColors.boxColor$material3(z, toggleableState, composer2, i1122);
             final State borderColor$material322 = checkboxColors.borderColor$material3(z, toggleableState, composer2, i1122);
-            Modifier m968requiredSize3ABfNKs22 = SizeKt.m968requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
+            Modifier m856requiredSize3ABfNKs22 = SizeKt.m856requiredSize3ABfNKs(SizeKt.wrapContentSize$default(modifier, Alignment.Companion.getCenter(), false, 2, null), CheckboxSize);
             ComposerKt.sourceInformationMarkerStart(composer2, -1869775460, "CC(remember):Checkbox.kt#9igjgp");
             changed = composer2.changed(boxColor$material322) | composer2.changed(borderColor$material322) | composer2.changedInstance(stroke2) | composer2.changed(checkmarkColor$material322) | composer2.changed(createTransitionAnimation32) | composer2.changed(createTransitionAnimation222) | composer2.changedInstance(stroke);
             rememberedValue2 = composer2.rememberedValue();
@@ -1513,15 +1497,13 @@ public final class CheckboxKt {
             Function1 function122 = new Function1() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit CheckboxImpl$lambda$14$lambda$13;
-                    CheckboxImpl$lambda$14$lambda$13 = CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material322, stroke2, checkmarkColor$material322, createTransitionAnimation32, createTransitionAnimation222, stroke, checkDrawingCache222, (DrawScope) obj);
-                    return CheckboxImpl$lambda$14$lambda$13;
+                    return CheckboxKt.CheckboxImpl$lambda$14$lambda$13(State.this, borderColor$material322, stroke2, checkmarkColor$material322, createTransitionAnimation32, createTransitionAnimation222, stroke, checkDrawingCache222, (DrawScope) obj);
                 }
             };
             composer2.updateRememberedValue(function122);
             rememberedValue2 = function122;
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            CanvasKt.Canvas(m968requiredSize3ABfNKs22, (Function1) rememberedValue2, composer2, 0);
+            CanvasKt.Canvas(m856requiredSize3ABfNKs22, (Function1) rememberedValue2, composer2, 0);
             if (ComposerKt.isTraceInProgress()) {
             }
         }
@@ -1530,46 +1512,44 @@ public final class CheckboxKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CheckboxKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit CheckboxImpl$lambda$15;
-                    CheckboxImpl$lambda$15 = CheckboxKt.CheckboxImpl$lambda$15(z, toggleableState, modifier, checkboxColors, stroke, stroke2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return CheckboxImpl$lambda$15;
+                    return CheckboxKt.CheckboxImpl$lambda$15(z, toggleableState, modifier, checkboxColors, stroke, stroke2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit CheckboxImpl$lambda$14$lambda$13(State state, State state2, Stroke stroke, State state3, State state4, State state5, Stroke stroke2, CheckDrawingCache checkDrawingCache, DrawScope drawScope) {
-        m2111drawBox1wkBAMs(drawScope, ((Color) state.getValue()).m5434unboximpl(), ((Color) state2.getValue()).m5434unboximpl(), drawScope.mo464toPx0680j_4(RadiusSize), stroke);
-        m2112drawCheck3IgeMak(drawScope, ((Color) state3.getValue()).m5434unboximpl(), ((Number) state4.getValue()).floatValue(), ((Number) state5.getValue()).floatValue(), stroke2, checkDrawingCache);
+        m1805drawBox1wkBAMs(drawScope, ((Color) state.getValue()).m4782unboximpl(), ((Color) state2.getValue()).m4782unboximpl(), drawScope.mo405toPx0680j_4(RadiusSize), stroke);
+        m1806drawCheck3IgeMak(drawScope, ((Color) state3.getValue()).m4782unboximpl(), ((Number) state4.getValue()).floatValue(), ((Number) state5.getValue()).floatValue(), stroke2, checkDrawingCache);
         return Unit.INSTANCE;
     }
 
     /* renamed from: drawBox-1wkBAMs  reason: not valid java name */
-    private static final void m2111drawBox1wkBAMs(DrawScope drawScope, long j, long j2, float f, Stroke stroke) {
+    private static final void m1805drawBox1wkBAMs(DrawScope drawScope, long j, long j2, float f, Stroke stroke) {
         float f2;
         float width = stroke.getWidth() / 2.0f;
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32));
-        if (!Color.m5425equalsimpl0(j, j2)) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32));
+        if (!Color.m4773equalsimpl0(j, j2)) {
             float width2 = stroke.getWidth();
             float width3 = stroke.getWidth();
-            long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(width2) << 32) | (Float.floatToRawIntBits(width3) & 4294967295L));
+            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(width2) << 32) | (Float.floatToRawIntBits(width3) & 4294967295L));
             float width4 = intBitsToFloat - (stroke.getWidth() * 2);
-            long m5239constructorimpl = Size.m5239constructorimpl((Float.floatToRawIntBits(intBitsToFloat - (stroke.getWidth() * f2)) << 32) | (Float.floatToRawIntBits(width4) & 4294967295L));
+            long m4587constructorimpl = Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat - (stroke.getWidth() * f2)) << 32) | (Float.floatToRawIntBits(width4) & 4294967295L));
             float max = Math.max(0.0f, f - stroke.getWidth());
-            DrawScope.m6001drawRoundRectuAw5IA$default(drawScope, j, m5171constructorimpl, m5239constructorimpl, CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(max) << 32) | (Float.floatToRawIntBits(max) & 4294967295L)), Fill.INSTANCE, 0.0f, null, 0, 224, null);
-            long m5171constructorimpl2 = Offset.m5171constructorimpl((Float.floatToRawIntBits(width) << 32) | (Float.floatToRawIntBits(width) & 4294967295L));
+            DrawScope.m5342drawRoundRectuAw5IA$default(drawScope, j, m4519constructorimpl, m4587constructorimpl, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(max) << 32) | (Float.floatToRawIntBits(max) & 4294967295L)), Fill.INSTANCE, 0.0f, null, 0, 224, null);
+            long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits(width) << 32) | (Float.floatToRawIntBits(width) & 4294967295L));
             float width5 = intBitsToFloat - stroke.getWidth();
             float f3 = f - width;
-            DrawScope.m6001drawRoundRectuAw5IA$default(drawScope, j2, m5171constructorimpl2, Size.m5239constructorimpl((Float.floatToRawIntBits(intBitsToFloat - stroke.getWidth()) & 4294967295L) | (Float.floatToRawIntBits(width5) << 32)), CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f3) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)), stroke, 0.0f, null, 0, 224, null);
+            DrawScope.m5342drawRoundRectuAw5IA$default(drawScope, j2, m4519constructorimpl2, Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat - stroke.getWidth()) & 4294967295L) | (Float.floatToRawIntBits(width5) << 32)), CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f3) << 32) | (Float.floatToRawIntBits(f3) & 4294967295L)), stroke, 0.0f, null, 0, 224, null);
             return;
         }
-        DrawScope.m6001drawRoundRectuAw5IA$default(drawScope, j, 0L, Size.m5239constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Fill.INSTANCE, 0.0f, null, 0, 226, null);
+        DrawScope.m5342drawRoundRectuAw5IA$default(drawScope, j, 0L, Size.m4587constructorimpl((Float.floatToRawIntBits(intBitsToFloat) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32)), CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Fill.INSTANCE, 0.0f, null, 0, 226, null);
     }
 
     /* renamed from: drawCheck-3IgeMak  reason: not valid java name */
-    private static final void m2112drawCheck3IgeMak(DrawScope drawScope, long j, float f, float f2, Stroke stroke, CheckDrawingCache checkDrawingCache) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32));
+    private static final void m1806drawCheck3IgeMak(DrawScope drawScope, long j, float f, float f2, Stroke stroke, CheckDrawingCache checkDrawingCache) {
+        float intBitsToFloat = Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32));
         float lerp = MathHelpersKt.lerp(0.4f, 0.5f, f2);
         float lerp2 = MathHelpersKt.lerp(0.7f, 0.5f, f2);
         float lerp3 = MathHelpersKt.lerp(0.5f, 0.5f, f2);
@@ -1581,12 +1561,12 @@ public final class CheckboxKt {
         checkDrawingCache.getPathMeasure().setPath(checkDrawingCache.getCheckPath(), false);
         checkDrawingCache.getPathToDraw().rewind();
         checkDrawingCache.getPathMeasure().getSegment(0.0f, checkDrawingCache.getPathMeasure().getLength() * f, checkDrawingCache.getPathToDraw(), true);
-        DrawScope.m5995drawPathLG529CI$default(drawScope, checkDrawingCache.getPathToDraw(), j, 0.0f, stroke, null, 0, 52, null);
+        DrawScope.m5336drawPathLG529CI$default(drawScope, checkDrawingCache.getPathToDraw(), j, 0.0f, stroke, null, 0, 52, null);
     }
 
     static {
         float f = 2;
-        CheckboxDefaultPadding = Dp.m8258constructorimpl(f);
-        RadiusSize = Dp.m8258constructorimpl(f);
+        CheckboxDefaultPadding = Dp.m7555constructorimpl(f);
+        RadiusSize = Dp.m7555constructorimpl(f);
     }
 }

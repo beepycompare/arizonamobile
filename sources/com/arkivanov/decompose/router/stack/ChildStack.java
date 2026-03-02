@@ -71,9 +71,7 @@ public final class ChildStack<C, T> {
         this.items = new GettingList(backStack.size() + 1, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStack$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Child.Created items$lambda$0;
-                items$lambda$0 = ChildStack.items$lambda$0(ChildStack.this, ((Integer) obj).intValue());
-                return items$lambda$0;
+                return ChildStack.items$lambda$0(ChildStack.this, ((Integer) obj).intValue());
             }
         });
     }
@@ -109,7 +107,7 @@ public final class ChildStack<C, T> {
         return this.items;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Child.Created items$lambda$0(ChildStack childStack, int i) {
         Child.Created created = (Child.Created) CollectionsKt.getOrNull(childStack.backStack, i);
         return created == null ? childStack.active : created;

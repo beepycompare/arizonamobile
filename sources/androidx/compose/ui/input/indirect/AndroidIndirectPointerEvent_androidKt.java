@@ -19,18 +19,18 @@ public final class AndroidIndirectPointerEvent_androidKt {
     }
 
     /* renamed from: IndirectPointerEvent-eAXfkT4$default  reason: not valid java name */
-    public static /* synthetic */ IndirectPointerEvent m6249IndirectPointerEventeAXfkT4$default(MotionEvent motionEvent, int i, MotionEvent motionEvent2, int i2, Object obj) {
+    public static /* synthetic */ IndirectPointerEvent m5590IndirectPointerEventeAXfkT4$default(MotionEvent motionEvent, int i, MotionEvent motionEvent2, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            i = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6257getNonenZO2Niw();
+            i = IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
         }
         if ((i2 & 4) != 0) {
             motionEvent2 = null;
         }
-        return m6248IndirectPointerEventeAXfkT4(motionEvent, i, motionEvent2);
+        return m5589IndirectPointerEventeAXfkT4(motionEvent, i, motionEvent2);
     }
 
     /* renamed from: IndirectPointerEvent-eAXfkT4  reason: not valid java name */
-    public static final IndirectPointerEvent m6248IndirectPointerEventeAXfkT4(MotionEvent motionEvent, int i, MotionEvent motionEvent2) {
+    public static final IndirectPointerEvent m5589IndirectPointerEventeAXfkT4(MotionEvent motionEvent, int i, MotionEvent motionEvent2) {
         int i2;
         int i3;
         long j;
@@ -52,8 +52,8 @@ public final class AndroidIndirectPointerEvent_androidKt {
         int i4 = 0;
         while (i4 < pointerCount) {
             int pointerId = motionEvent3.getPointerId(i4);
-            long m6724constructorimpl = PointerId.m6724constructorimpl(pointerId);
-            long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(motionEvent3.getX(i4)) << 32) | (Float.floatToRawIntBits(motionEvent3.getY(i4)) & 4294967295L));
+            long m6065constructorimpl = PointerId.m6065constructorimpl(pointerId);
+            long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(motionEvent3.getX(i4)) << 32) | (Float.floatToRawIntBits(motionEvent3.getY(i4)) & 4294967295L));
             i2 = i2;
             boolean z3 = i4 != i2;
             int findPointerIndex = motionEvent4 != null ? motionEvent4.findPointerIndex(pointerId) : -1;
@@ -61,17 +61,17 @@ public final class AndroidIndirectPointerEvent_androidKt {
                 Intrinsics.checkNotNull(motionEvent4);
                 j2 = motionEvent4.getEventTime();
                 i3 = actionMasked;
-                j = Offset.m5171constructorimpl((Float.floatToRawIntBits(motionEvent4.getX(findPointerIndex)) << 32) | (Float.floatToRawIntBits(motionEvent4.getY(findPointerIndex)) & 4294967295L));
+                j = Offset.m4519constructorimpl((Float.floatToRawIntBits(motionEvent4.getX(findPointerIndex)) << 32) | (Float.floatToRawIntBits(motionEvent4.getY(findPointerIndex)) & 4294967295L));
                 z = z2;
             } else {
                 i3 = actionMasked;
-                j = m5171constructorimpl;
+                j = m4519constructorimpl;
                 j2 = eventTime;
                 z = false;
             }
             long j3 = j;
             ArrayList arrayList2 = arrayList;
-            arrayList2.add(new IndirectPointerInputChange(m6724constructorimpl, eventTime, m5171constructorimpl, z3, motionEvent.getPressure(i4), j2, j3, z, null));
+            arrayList2.add(new IndirectPointerInputChange(m6065constructorimpl, eventTime, m4519constructorimpl, z3, motionEvent.getPressure(i4), j2, j3, z, null));
             i4++;
             arrayList = arrayList2;
             pointerCount = pointerCount;
@@ -86,17 +86,17 @@ public final class AndroidIndirectPointerEvent_androidKt {
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
-                    return IndirectPointerEventType.Companion.m6267getMove4ZHQPSE();
+                    return IndirectPointerEventType.Companion.m5608getMove4ZHQPSE();
                 }
                 if (i != 5) {
                     if (i != 6) {
-                        return IndirectPointerEventType.Companion.m6270getUnknown4ZHQPSE();
+                        return IndirectPointerEventType.Companion.m5611getUnknown4ZHQPSE();
                     }
                 }
             }
-            return IndirectPointerEventType.Companion.m6269getRelease4ZHQPSE();
+            return IndirectPointerEventType.Companion.m5610getRelease4ZHQPSE();
         }
-        return IndirectPointerEventType.Companion.m6268getPress4ZHQPSE();
+        return IndirectPointerEventType.Companion.m5609getPress4ZHQPSE();
     }
 
     public static final int indirectPrimaryDirectionalScrollAxis(MotionEvent motionEvent) {
@@ -108,22 +108,22 @@ public final class AndroidIndirectPointerEvent_androidKt {
             InputDevice.MotionRange motionRange = device.getMotionRange(0);
             InputDevice.MotionRange motionRange2 = device.getMotionRange(1);
             if (motionRange != null && motionRange2 == null) {
-                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw();
+                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw();
             }
             if (motionRange2 != null && motionRange == null) {
-                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw();
+                return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw();
             }
             if (motionRange != null && motionRange2 != null) {
                 float range = motionRange.getRange();
                 float range2 = motionRange2.getRange();
                 if (range > range2 && (range2 == 0.0f || range / range2 >= RATIO_CUTOFF)) {
-                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw();
+                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw();
                 }
                 if (range2 > range && (range == 0.0f || range2 / range >= RATIO_CUTOFF)) {
-                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw();
+                    return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw();
                 }
             }
         }
-        return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6257getNonenZO2Niw();
+        return IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5598getNonenZO2Niw();
     }
 }

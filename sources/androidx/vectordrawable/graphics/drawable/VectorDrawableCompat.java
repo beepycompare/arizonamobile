@@ -216,9 +216,11 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
         }
         this.mTmpBounds.offsetTo(0, 0);
         this.mVectorState.createCachedBitmapIfNeeded(min, min2);
-        if (!this.mAllowCaching) {
-            this.mVectorState.updateCachedBitmap(min, min2);
-        } else if (!this.mVectorState.canReuseCache()) {
+        boolean z = this.mAllowCaching;
+        VectorDrawableCompatState vectorDrawableCompatState = this.mVectorState;
+        if (!z) {
+            vectorDrawableCompatState.updateCachedBitmap(min, min2);
+        } else if (!vectorDrawableCompatState.canReuseCache()) {
             this.mVectorState.updateCachedBitmap(min, min2);
             this.mVectorState.updateCacheStates();
         }
@@ -924,11 +926,13 @@ public class VectorDrawableCompat extends VectorDrawableCommon {
                 float f5 = f3 * length;
                 float f6 = f4 * length;
                 path.reset();
-                if (f5 > f6) {
-                    this.mPathMeasure.getSegment(f5, length, path, true);
+                int i3 = (f5 > f6 ? 1 : (f5 == f6 ? 0 : -1));
+                PathMeasure pathMeasure = this.mPathMeasure;
+                if (i3 > 0) {
+                    pathMeasure.getSegment(f5, length, path, true);
                     this.mPathMeasure.getSegment(0.0f, f6, path, true);
                 } else {
-                    this.mPathMeasure.getSegment(f5, f6, path, true);
+                    pathMeasure.getSegment(f5, f6, path, true);
                 }
                 path.rLineTo(0.0f, 0.0f);
             }

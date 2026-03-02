@@ -11,11 +11,15 @@ final class ConstantBitrateSeeker extends ConstantBitrateSeekMap implements Seek
     private final int frameSize;
 
     public ConstantBitrateSeeker(long j, long j2, MpegAudioUtil.Header header, boolean z) {
-        this(j, j2, header.bitrate, header.frameSize, z);
+        this(j, j2, header.bitrate, header.frameSize, z, true);
     }
 
     public ConstantBitrateSeeker(long j, long j2, int i, int i2, boolean z) {
-        super(j, j2, i, i2, z);
+        this(j, j2, i, i2, z, true);
+    }
+
+    private ConstantBitrateSeeker(long j, long j2, int i, int i2, boolean z, boolean z2) {
+        super(j, j2, i, i2, z, z2);
         long j3 = j;
         this.firstFramePosition = j2;
         this.bitrate = i;
@@ -45,6 +49,6 @@ final class ConstantBitrateSeeker extends ConstantBitrateSeekMap implements Seek
     }
 
     public ConstantBitrateSeeker copyWithNewDataEndPosition(long j) {
-        return new ConstantBitrateSeeker(j, this.firstFramePosition, this.bitrate, this.frameSize, this.allowSeeksIfLengthUnknown);
+        return new ConstantBitrateSeeker(j, this.firstFramePosition, this.bitrate, this.frameSize, this.allowSeeksIfLengthUnknown, false);
     }
 }

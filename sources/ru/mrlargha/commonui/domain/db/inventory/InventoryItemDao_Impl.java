@@ -8,7 +8,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.SQLiteStatementUtil;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
-import io.appmetrica.analytics.impl.C0740z2;
+import io.appmetrica.analytics.impl.C0739z2;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -22,8 +22,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: InventoryItemDao_Impl.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0016\u0010\u000f\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0014\u0010\u0010\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00120\u0011H\u0016J\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0012H\u0096@¢\u0006\u0002\u0010\u0014J\u0016\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\u0017H\u0096@¢\u0006\u0002\u0010\u0018J\u0010\u0010\u0019\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u001a\u001a\u00020\fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfInventoryItemEntity", "Landroidx/room/EntityInsertAdapter;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;", "__updateAdapterOfInventoryItemEntity", "Landroidx/room/EntityDeleteOrUpdateAdapter;", "insertAll", "", "info", "(Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateInfo", "getCollectInventoryList", "Lkotlinx/coroutines/flow/Flow;", "", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "findByItem", "item", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "deleteByItem", "deleteAllItems", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes5.dex */
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0016\u0010\u000f\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\u000eJ\u0014\u0010\u0010\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00120\u0011H\u0016J\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0012H\u0096@¢\u0006\u0002\u0010\u0014J\u0016\u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\u0017H\u0096@¢\u0006\u0002\u0010\u0018J\u0010\u0010\u0019\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\b\u0010\u001a\u001a\u00020\fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfInventoryItemEntity", "Landroidx/room/EntityInsertAdapter;", "Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;", "__updateAdapterOfInventoryItemEntity", "Landroidx/room/EntityDeleteOrUpdateAdapter;", "insertAll", "", "info", "(Lru/mrlargha/commonui/domain/db/inventory/InventoryItemEntity;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateInfo", "getCollectInventoryList", "Lkotlinx/coroutines/flow/Flow;", "", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "findByItem", "item", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "deleteByItem", "deleteAllItems", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+/* loaded from: classes3.dex */
 public final class InventoryItemDao_Impl implements InventoryItemDao {
     public static final Companion Companion = new Companion(null);
     private final RoomDatabase __db;
@@ -44,118 +44,118 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9197bindLong(1, entity.getSlot());
+                statement.mo8407bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo9198bindNull(2);
+                    statement.mo8408bindNull(2);
                 } else {
-                    statement.mo9197bindLong(2, item.intValue());
+                    statement.mo8407bindLong(2, item.intValue());
                 }
-                statement.mo9197bindLong(3, entity.getId());
+                statement.mo8407bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo9198bindNull(4);
+                    statement.mo8408bindNull(4);
                 } else {
-                    statement.mo9199bindText(4, text);
+                    statement.mo8409bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo9198bindNull(5);
+                    statement.mo8408bindNull(5);
                 } else {
-                    statement.mo9197bindLong(5, item_type.intValue());
+                    statement.mo8407bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo9198bindNull(6);
+                    statement.mo8408bindNull(6);
                 } else {
-                    statement.mo9197bindLong(6, amount.intValue());
+                    statement.mo8407bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo9198bindNull(7);
+                    statement.mo8408bindNull(7);
                 } else {
-                    statement.mo9197bindLong(7, background.intValue());
+                    statement.mo8407bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo9198bindNull(8);
+                    statement.mo8408bindNull(8);
                 } else {
-                    statement.mo9197bindLong(8, color.intValue());
+                    statement.mo8407bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo9198bindNull(9);
+                    statement.mo8408bindNull(9);
                 } else {
-                    statement.mo9197bindLong(9, bits.intValue());
+                    statement.mo8407bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo9198bindNull(10);
+                    statement.mo8408bindNull(10);
                 } else {
-                    statement.mo9197bindLong(10, available.intValue());
+                    statement.mo8407bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo9198bindNull(11);
+                    statement.mo8408bindNull(11);
                 } else {
-                    statement.mo9197bindLong(11, enchant.intValue());
+                    statement.mo8407bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo9198bindNull(12);
+                    statement.mo8408bindNull(12);
                 } else {
-                    statement.mo9197bindLong(12, breaks.intValue());
+                    statement.mo8407bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo9198bindNull(13);
+                    statement.mo8408bindNull(13);
                 } else {
-                    statement.mo9197bindLong(13, isActive.intValue());
+                    statement.mo8407bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo9198bindNull(14);
+                    statement.mo8408bindNull(14);
                 } else {
-                    statement.mo9197bindLong(14, itemStrength.intValue());
+                    statement.mo8407bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo9198bindNull(15);
+                    statement.mo8408bindNull(15);
                 } else {
-                    statement.mo9197bindLong(15, blackout.intValue());
+                    statement.mo8407bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo9198bindNull(16);
+                    statement.mo8408bindNull(16);
                 } else {
-                    statement.mo9197bindLong(16, time.longValue());
+                    statement.mo8407bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo9198bindNull(17);
+                    statement.mo8408bindNull(17);
                 } else {
-                    statement.mo9197bindLong(17, acsSlot.intValue());
+                    statement.mo8407bindLong(17, acsSlot.intValue());
                 }
-                statement.mo9197bindLong(18, entity.getInventoryType());
-                statement.mo9197bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo9197bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8407bindLong(18, entity.getInventoryType());
+                statement.mo8407bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8407bindLong(20, entity.isLocked() ? 1L : 0L);
                 String effect = entity.getEffect();
                 if (effect == null) {
-                    statement.mo9198bindNull(21);
+                    statement.mo8408bindNull(21);
                 } else {
-                    statement.mo9199bindText(21, effect);
+                    statement.mo8409bindText(21, effect);
                 }
                 Integer effectType = entity.getEffectType();
                 if (effectType == null) {
-                    statement.mo9198bindNull(22);
+                    statement.mo8408bindNull(22);
                 } else {
-                    statement.mo9197bindLong(22, effectType.intValue());
+                    statement.mo8407bindLong(22, effectType.intValue());
                 }
                 Integer quality = entity.getQuality();
                 if (quality == null) {
-                    statement.mo9198bindNull(23);
+                    statement.mo8408bindNull(23);
                 } else {
-                    statement.mo9197bindLong(23, quality.intValue());
+                    statement.mo8407bindLong(23, quality.intValue());
                 }
             }
         };
@@ -170,120 +170,120 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             public void bind(SQLiteStatement statement, InventoryItemEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9197bindLong(1, entity.getSlot());
+                statement.mo8407bindLong(1, entity.getSlot());
                 Integer item = entity.getItem();
                 if (item == null) {
-                    statement.mo9198bindNull(2);
+                    statement.mo8408bindNull(2);
                 } else {
-                    statement.mo9197bindLong(2, item.intValue());
+                    statement.mo8407bindLong(2, item.intValue());
                 }
-                statement.mo9197bindLong(3, entity.getId());
+                statement.mo8407bindLong(3, entity.getId());
                 String text = entity.getText();
                 if (text == null) {
-                    statement.mo9198bindNull(4);
+                    statement.mo8408bindNull(4);
                 } else {
-                    statement.mo9199bindText(4, text);
+                    statement.mo8409bindText(4, text);
                 }
                 Integer item_type = entity.getItem_type();
                 if (item_type == null) {
-                    statement.mo9198bindNull(5);
+                    statement.mo8408bindNull(5);
                 } else {
-                    statement.mo9197bindLong(5, item_type.intValue());
+                    statement.mo8407bindLong(5, item_type.intValue());
                 }
                 Integer amount = entity.getAmount();
                 if (amount == null) {
-                    statement.mo9198bindNull(6);
+                    statement.mo8408bindNull(6);
                 } else {
-                    statement.mo9197bindLong(6, amount.intValue());
+                    statement.mo8407bindLong(6, amount.intValue());
                 }
                 Integer background = entity.getBackground();
                 if (background == null) {
-                    statement.mo9198bindNull(7);
+                    statement.mo8408bindNull(7);
                 } else {
-                    statement.mo9197bindLong(7, background.intValue());
+                    statement.mo8407bindLong(7, background.intValue());
                 }
                 Integer color = entity.getColor();
                 if (color == null) {
-                    statement.mo9198bindNull(8);
+                    statement.mo8408bindNull(8);
                 } else {
-                    statement.mo9197bindLong(8, color.intValue());
+                    statement.mo8407bindLong(8, color.intValue());
                 }
                 Integer bits = entity.getBits();
                 if (bits == null) {
-                    statement.mo9198bindNull(9);
+                    statement.mo8408bindNull(9);
                 } else {
-                    statement.mo9197bindLong(9, bits.intValue());
+                    statement.mo8407bindLong(9, bits.intValue());
                 }
                 Integer available = entity.getAvailable();
                 if (available == null) {
-                    statement.mo9198bindNull(10);
+                    statement.mo8408bindNull(10);
                 } else {
-                    statement.mo9197bindLong(10, available.intValue());
+                    statement.mo8407bindLong(10, available.intValue());
                 }
                 Integer enchant = entity.getEnchant();
                 if (enchant == null) {
-                    statement.mo9198bindNull(11);
+                    statement.mo8408bindNull(11);
                 } else {
-                    statement.mo9197bindLong(11, enchant.intValue());
+                    statement.mo8407bindLong(11, enchant.intValue());
                 }
                 Integer breaks = entity.getBreaks();
                 if (breaks == null) {
-                    statement.mo9198bindNull(12);
+                    statement.mo8408bindNull(12);
                 } else {
-                    statement.mo9197bindLong(12, breaks.intValue());
+                    statement.mo8407bindLong(12, breaks.intValue());
                 }
                 Integer isActive = entity.isActive();
                 if (isActive == null) {
-                    statement.mo9198bindNull(13);
+                    statement.mo8408bindNull(13);
                 } else {
-                    statement.mo9197bindLong(13, isActive.intValue());
+                    statement.mo8407bindLong(13, isActive.intValue());
                 }
                 Integer itemStrength = entity.getItemStrength();
                 if (itemStrength == null) {
-                    statement.mo9198bindNull(14);
+                    statement.mo8408bindNull(14);
                 } else {
-                    statement.mo9197bindLong(14, itemStrength.intValue());
+                    statement.mo8407bindLong(14, itemStrength.intValue());
                 }
                 Integer blackout = entity.getBlackout();
                 if (blackout == null) {
-                    statement.mo9198bindNull(15);
+                    statement.mo8408bindNull(15);
                 } else {
-                    statement.mo9197bindLong(15, blackout.intValue());
+                    statement.mo8407bindLong(15, blackout.intValue());
                 }
                 Long time = entity.getTime();
                 if (time == null) {
-                    statement.mo9198bindNull(16);
+                    statement.mo8408bindNull(16);
                 } else {
-                    statement.mo9197bindLong(16, time.longValue());
+                    statement.mo8407bindLong(16, time.longValue());
                 }
                 Integer acsSlot = entity.getAcsSlot();
                 if (acsSlot == null) {
-                    statement.mo9198bindNull(17);
+                    statement.mo8408bindNull(17);
                 } else {
-                    statement.mo9197bindLong(17, acsSlot.intValue());
+                    statement.mo8407bindLong(17, acsSlot.intValue());
                 }
-                statement.mo9197bindLong(18, entity.getInventoryType());
-                statement.mo9197bindLong(19, entity.isColored() ? 1L : 0L);
-                statement.mo9197bindLong(20, entity.isLocked() ? 1L : 0L);
+                statement.mo8407bindLong(18, entity.getInventoryType());
+                statement.mo8407bindLong(19, entity.isColored() ? 1L : 0L);
+                statement.mo8407bindLong(20, entity.isLocked() ? 1L : 0L);
                 String effect = entity.getEffect();
                 if (effect == null) {
-                    statement.mo9198bindNull(21);
+                    statement.mo8408bindNull(21);
                 } else {
-                    statement.mo9199bindText(21, effect);
+                    statement.mo8409bindText(21, effect);
                 }
                 Integer effectType = entity.getEffectType();
                 if (effectType == null) {
-                    statement.mo9198bindNull(22);
+                    statement.mo8408bindNull(22);
                 } else {
-                    statement.mo9197bindLong(22, effectType.intValue());
+                    statement.mo8407bindLong(22, effectType.intValue());
                 }
                 Integer quality = entity.getQuality();
                 if (quality == null) {
-                    statement.mo9198bindNull(23);
+                    statement.mo8408bindNull(23);
                 } else {
-                    statement.mo9197bindLong(23, quality.intValue());
+                    statement.mo8407bindLong(23, quality.intValue());
                 }
-                statement.mo9197bindLong(24, entity.getSlot());
+                statement.mo8407bindLong(24, entity.getSlot());
             }
         };
     }
@@ -293,15 +293,13 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit insertAll$lambda$0;
-                insertAll$lambda$0 = InventoryItemDao_Impl.insertAll$lambda$0(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
-                return insertAll$lambda$0;
+                return InventoryItemDao_Impl.insertAll$lambda$0(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit insertAll$lambda$0(InventoryItemDao_Impl inventoryItemDao_Impl, InventoryItemEntity inventoryItemEntity, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         inventoryItemDao_Impl.__insertAdapterOfInventoryItemEntity.insert(_connection, (SQLiteConnection) inventoryItemEntity);
@@ -313,15 +311,13 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Object performSuspending = DBUtil.performSuspending(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit updateInfo$lambda$0;
-                updateInfo$lambda$0 = InventoryItemDao_Impl.updateInfo$lambda$0(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
-                return updateInfo$lambda$0;
+                return InventoryItemDao_Impl.updateInfo$lambda$0(InventoryItemDao_Impl.this, inventoryItemEntity, (SQLiteConnection) obj);
             }
         }, continuation);
         return performSuspending == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? performSuspending : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit updateInfo$lambda$0(InventoryItemDao_Impl inventoryItemDao_Impl, InventoryItemEntity inventoryItemEntity, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         inventoryItemDao_Impl.__updateAdapterOfInventoryItemEntity.handle(_connection, inventoryItemEntity);
@@ -333,14 +329,12 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return FlowUtil.createFlow(this.__db, false, new String[]{"inventoryitementity"}, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List collectInventoryList$lambda$0;
-                collectInventoryList$lambda$0 = InventoryItemDao_Impl.getCollectInventoryList$lambda$0(r1, (SQLiteConnection) obj);
-                return collectInventoryList$lambda$0;
+                return InventoryItemDao_Impl.getCollectInventoryList$lambda$0(r1, (SQLiteConnection) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List getCollectInventoryList$lambda$0(String str, SQLiteConnection _connection) {
         int i;
         Integer valueOf;
@@ -367,7 +361,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0739z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -496,14 +490,12 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List all$lambda$0;
-                all$lambda$0 = InventoryItemDao_Impl.getAll$lambda$0(r1, (SQLiteConnection) obj);
-                return all$lambda$0;
+                return InventoryItemDao_Impl.getAll$lambda$0(r1, (SQLiteConnection) obj);
             }
         }, continuation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List getAll$lambda$0(String str, SQLiteConnection _connection) {
         int i;
         Integer valueOf;
@@ -530,7 +522,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0739z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -659,28 +651,26 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         return DBUtil.performSuspending(this.__db, true, false, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                InventoryItemEntity findByItem$lambda$0;
-                findByItem$lambda$0 = InventoryItemDao_Impl.findByItem$lambda$0(r1, i, (SQLiteConnection) obj);
-                return findByItem$lambda$0;
+                return InventoryItemDao_Impl.findByItem$lambda$0(r1, i, (SQLiteConnection) obj);
             }
         }, continuation);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InventoryItemEntity findByItem$lambda$0(String str, int i, SQLiteConnection _connection) {
         int i2;
         Integer valueOf;
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo9197bindLong(1, i);
+            prepare.mo8407bindLong(1, i);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0739z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -719,19 +709,17 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteByItem$lambda$0;
-                deleteByItem$lambda$0 = InventoryItemDao_Impl.deleteByItem$lambda$0(r1, i, (SQLiteConnection) obj);
-                return deleteByItem$lambda$0;
+                return InventoryItemDao_Impl.deleteByItem$lambda$0(r1, i, (SQLiteConnection) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit deleteByItem$lambda$0(String str, int i, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            prepare.mo9197bindLong(1, i);
+            prepare.mo8407bindLong(1, i);
             prepare.step();
             prepare.close();
             return Unit.INSTANCE;
@@ -746,14 +734,12 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         DBUtil.performBlocking(this.__db, false, true, new Function1() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit deleteAllItems$lambda$0;
-                deleteAllItems$lambda$0 = InventoryItemDao_Impl.deleteAllItems$lambda$0(r1, (SQLiteConnection) obj);
-                return deleteAllItems$lambda$0;
+                return InventoryItemDao_Impl.deleteAllItems$lambda$0(r1, (SQLiteConnection) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit deleteAllItems$lambda$0(String str, SQLiteConnection _connection) {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
@@ -768,8 +754,8 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
     }
 
     /* compiled from: InventoryItemDao_Impl.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -33,14 +33,12 @@ final class TextToolbarHelperApi28 {
         add.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextToolbarHelperApi28$$ExternalSyntheticLambda1
             @Override // android.view.MenuItem.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean addMenuItem$lambda$0;
-                addMenuItem$lambda$0 = TextToolbarHelperApi28.addMenuItem$lambda$0(remoteAction, menuItem);
-                return addMenuItem$lambda$0;
+                return TextToolbarHelperApi28.addMenuItem$lambda$0(remoteAction, menuItem);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean addMenuItem$lambda$0(RemoteAction remoteAction, MenuItem menuItem) {
         TextClassificationHelperApi28.INSTANCE.sendPendingIntent(remoteAction.getActionIntent());
         return true;
@@ -53,14 +51,12 @@ final class TextToolbarHelperApi28 {
         add.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextToolbarHelperApi28$$ExternalSyntheticLambda0
             @Override // android.view.MenuItem.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean addLegacyMenuItem$lambda$0;
-                addLegacyMenuItem$lambda$0 = TextToolbarHelperApi28.addLegacyMenuItem$lambda$0(context, textClassification, menuItem);
-                return addLegacyMenuItem$lambda$0;
+                return TextToolbarHelperApi28.addLegacyMenuItem$lambda$0(context, textClassification, menuItem);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean addLegacyMenuItem$lambda$0(Context context, TextClassification textClassification, MenuItem menuItem) {
         TextClassificationHelperApi28.INSTANCE.sendLegacyIntent(context, textClassification);
         return true;

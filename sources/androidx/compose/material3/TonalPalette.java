@@ -190,437 +190,437 @@ public final class TonalPalette {
     }
 
     /* renamed from: getNeutral100-0d7_KjU  reason: not valid java name */
-    public final long m3347getNeutral1000d7_KjU() {
+    public final long m2786getNeutral1000d7_KjU() {
         return this.neutral100;
     }
 
     /* renamed from: getNeutral99-0d7_KjU  reason: not valid java name */
-    public final long m3368getNeutral990d7_KjU() {
+    public final long m2807getNeutral990d7_KjU() {
         return this.neutral99;
     }
 
     /* renamed from: getNeutral98-0d7_KjU  reason: not valid java name */
-    public final long m3367getNeutral980d7_KjU() {
+    public final long m2806getNeutral980d7_KjU() {
         return this.neutral98;
     }
 
     /* renamed from: getNeutral96-0d7_KjU  reason: not valid java name */
-    public final long m3366getNeutral960d7_KjU() {
+    public final long m2805getNeutral960d7_KjU() {
         return this.neutral96;
     }
 
     /* renamed from: getNeutral95-0d7_KjU  reason: not valid java name */
-    public final long m3365getNeutral950d7_KjU() {
+    public final long m2804getNeutral950d7_KjU() {
         return this.neutral95;
     }
 
     /* renamed from: getNeutral94-0d7_KjU  reason: not valid java name */
-    public final long m3364getNeutral940d7_KjU() {
+    public final long m2803getNeutral940d7_KjU() {
         return this.neutral94;
     }
 
     /* renamed from: getNeutral92-0d7_KjU  reason: not valid java name */
-    public final long m3363getNeutral920d7_KjU() {
+    public final long m2802getNeutral920d7_KjU() {
         return this.neutral92;
     }
 
     /* renamed from: getNeutral90-0d7_KjU  reason: not valid java name */
-    public final long m3362getNeutral900d7_KjU() {
+    public final long m2801getNeutral900d7_KjU() {
         return this.neutral90;
     }
 
     /* renamed from: getNeutral87-0d7_KjU  reason: not valid java name */
-    public final long m3361getNeutral870d7_KjU() {
+    public final long m2800getNeutral870d7_KjU() {
         return this.neutral87;
     }
 
     /* renamed from: getNeutral80-0d7_KjU  reason: not valid java name */
-    public final long m3360getNeutral800d7_KjU() {
+    public final long m2799getNeutral800d7_KjU() {
         return this.neutral80;
     }
 
     /* renamed from: getNeutral70-0d7_KjU  reason: not valid java name */
-    public final long m3359getNeutral700d7_KjU() {
+    public final long m2798getNeutral700d7_KjU() {
         return this.neutral70;
     }
 
     /* renamed from: getNeutral60-0d7_KjU  reason: not valid java name */
-    public final long m3358getNeutral600d7_KjU() {
+    public final long m2797getNeutral600d7_KjU() {
         return this.neutral60;
     }
 
     /* renamed from: getNeutral50-0d7_KjU  reason: not valid java name */
-    public final long m3356getNeutral500d7_KjU() {
+    public final long m2795getNeutral500d7_KjU() {
         return this.neutral50;
     }
 
     /* renamed from: getNeutral40-0d7_KjU  reason: not valid java name */
-    public final long m3355getNeutral400d7_KjU() {
+    public final long m2794getNeutral400d7_KjU() {
         return this.neutral40;
     }
 
     /* renamed from: getNeutral30-0d7_KjU  reason: not valid java name */
-    public final long m3353getNeutral300d7_KjU() {
+    public final long m2792getNeutral300d7_KjU() {
         return this.neutral30;
     }
 
     /* renamed from: getNeutral24-0d7_KjU  reason: not valid java name */
-    public final long m3352getNeutral240d7_KjU() {
+    public final long m2791getNeutral240d7_KjU() {
         return this.neutral24;
     }
 
     /* renamed from: getNeutral22-0d7_KjU  reason: not valid java name */
-    public final long m3351getNeutral220d7_KjU() {
+    public final long m2790getNeutral220d7_KjU() {
         return this.neutral22;
     }
 
     /* renamed from: getNeutral20-0d7_KjU  reason: not valid java name */
-    public final long m3350getNeutral200d7_KjU() {
+    public final long m2789getNeutral200d7_KjU() {
         return this.neutral20;
     }
 
     /* renamed from: getNeutral17-0d7_KjU  reason: not valid java name */
-    public final long m3349getNeutral170d7_KjU() {
+    public final long m2788getNeutral170d7_KjU() {
         return this.neutral17;
     }
 
     /* renamed from: getNeutral12-0d7_KjU  reason: not valid java name */
-    public final long m3348getNeutral120d7_KjU() {
+    public final long m2787getNeutral120d7_KjU() {
         return this.neutral12;
     }
 
     /* renamed from: getNeutral10-0d7_KjU  reason: not valid java name */
-    public final long m3346getNeutral100d7_KjU() {
+    public final long m2785getNeutral100d7_KjU() {
         return this.neutral10;
     }
 
     /* renamed from: getNeutral6-0d7_KjU  reason: not valid java name */
-    public final long m3357getNeutral60d7_KjU() {
+    public final long m2796getNeutral60d7_KjU() {
         return this.neutral6;
     }
 
     /* renamed from: getNeutral4-0d7_KjU  reason: not valid java name */
-    public final long m3354getNeutral40d7_KjU() {
+    public final long m2793getNeutral40d7_KjU() {
         return this.neutral4;
     }
 
     /* renamed from: getNeutral0-0d7_KjU  reason: not valid java name */
-    public final long m3345getNeutral00d7_KjU() {
+    public final long m2784getNeutral00d7_KjU() {
         return this.neutral0;
     }
 
     /* renamed from: getNeutralVariant100-0d7_KjU  reason: not valid java name */
-    public final long m3371getNeutralVariant1000d7_KjU() {
+    public final long m2810getNeutralVariant1000d7_KjU() {
         return this.neutralVariant100;
     }
 
     /* renamed from: getNeutralVariant99-0d7_KjU  reason: not valid java name */
-    public final long m3392getNeutralVariant990d7_KjU() {
+    public final long m2831getNeutralVariant990d7_KjU() {
         return this.neutralVariant99;
     }
 
     /* renamed from: getNeutralVariant98-0d7_KjU  reason: not valid java name */
-    public final long m3391getNeutralVariant980d7_KjU() {
+    public final long m2830getNeutralVariant980d7_KjU() {
         return this.neutralVariant98;
     }
 
     /* renamed from: getNeutralVariant96-0d7_KjU  reason: not valid java name */
-    public final long m3390getNeutralVariant960d7_KjU() {
+    public final long m2829getNeutralVariant960d7_KjU() {
         return this.neutralVariant96;
     }
 
     /* renamed from: getNeutralVariant95-0d7_KjU  reason: not valid java name */
-    public final long m3389getNeutralVariant950d7_KjU() {
+    public final long m2828getNeutralVariant950d7_KjU() {
         return this.neutralVariant95;
     }
 
     /* renamed from: getNeutralVariant94-0d7_KjU  reason: not valid java name */
-    public final long m3388getNeutralVariant940d7_KjU() {
+    public final long m2827getNeutralVariant940d7_KjU() {
         return this.neutralVariant94;
     }
 
     /* renamed from: getNeutralVariant92-0d7_KjU  reason: not valid java name */
-    public final long m3387getNeutralVariant920d7_KjU() {
+    public final long m2826getNeutralVariant920d7_KjU() {
         return this.neutralVariant92;
     }
 
     /* renamed from: getNeutralVariant90-0d7_KjU  reason: not valid java name */
-    public final long m3386getNeutralVariant900d7_KjU() {
+    public final long m2825getNeutralVariant900d7_KjU() {
         return this.neutralVariant90;
     }
 
     /* renamed from: getNeutralVariant87-0d7_KjU  reason: not valid java name */
-    public final long m3385getNeutralVariant870d7_KjU() {
+    public final long m2824getNeutralVariant870d7_KjU() {
         return this.neutralVariant87;
     }
 
     /* renamed from: getNeutralVariant80-0d7_KjU  reason: not valid java name */
-    public final long m3384getNeutralVariant800d7_KjU() {
+    public final long m2823getNeutralVariant800d7_KjU() {
         return this.neutralVariant80;
     }
 
     /* renamed from: getNeutralVariant70-0d7_KjU  reason: not valid java name */
-    public final long m3383getNeutralVariant700d7_KjU() {
+    public final long m2822getNeutralVariant700d7_KjU() {
         return this.neutralVariant70;
     }
 
     /* renamed from: getNeutralVariant60-0d7_KjU  reason: not valid java name */
-    public final long m3382getNeutralVariant600d7_KjU() {
+    public final long m2821getNeutralVariant600d7_KjU() {
         return this.neutralVariant60;
     }
 
     /* renamed from: getNeutralVariant50-0d7_KjU  reason: not valid java name */
-    public final long m3380getNeutralVariant500d7_KjU() {
+    public final long m2819getNeutralVariant500d7_KjU() {
         return this.neutralVariant50;
     }
 
     /* renamed from: getNeutralVariant40-0d7_KjU  reason: not valid java name */
-    public final long m3379getNeutralVariant400d7_KjU() {
+    public final long m2818getNeutralVariant400d7_KjU() {
         return this.neutralVariant40;
     }
 
     /* renamed from: getNeutralVariant30-0d7_KjU  reason: not valid java name */
-    public final long m3377getNeutralVariant300d7_KjU() {
+    public final long m2816getNeutralVariant300d7_KjU() {
         return this.neutralVariant30;
     }
 
     /* renamed from: getNeutralVariant24-0d7_KjU  reason: not valid java name */
-    public final long m3376getNeutralVariant240d7_KjU() {
+    public final long m2815getNeutralVariant240d7_KjU() {
         return this.neutralVariant24;
     }
 
     /* renamed from: getNeutralVariant22-0d7_KjU  reason: not valid java name */
-    public final long m3375getNeutralVariant220d7_KjU() {
+    public final long m2814getNeutralVariant220d7_KjU() {
         return this.neutralVariant22;
     }
 
     /* renamed from: getNeutralVariant20-0d7_KjU  reason: not valid java name */
-    public final long m3374getNeutralVariant200d7_KjU() {
+    public final long m2813getNeutralVariant200d7_KjU() {
         return this.neutralVariant20;
     }
 
     /* renamed from: getNeutralVariant17-0d7_KjU  reason: not valid java name */
-    public final long m3373getNeutralVariant170d7_KjU() {
+    public final long m2812getNeutralVariant170d7_KjU() {
         return this.neutralVariant17;
     }
 
     /* renamed from: getNeutralVariant12-0d7_KjU  reason: not valid java name */
-    public final long m3372getNeutralVariant120d7_KjU() {
+    public final long m2811getNeutralVariant120d7_KjU() {
         return this.neutralVariant12;
     }
 
     /* renamed from: getNeutralVariant10-0d7_KjU  reason: not valid java name */
-    public final long m3370getNeutralVariant100d7_KjU() {
+    public final long m2809getNeutralVariant100d7_KjU() {
         return this.neutralVariant10;
     }
 
     /* renamed from: getNeutralVariant6-0d7_KjU  reason: not valid java name */
-    public final long m3381getNeutralVariant60d7_KjU() {
+    public final long m2820getNeutralVariant60d7_KjU() {
         return this.neutralVariant6;
     }
 
     /* renamed from: getNeutralVariant4-0d7_KjU  reason: not valid java name */
-    public final long m3378getNeutralVariant40d7_KjU() {
+    public final long m2817getNeutralVariant40d7_KjU() {
         return this.neutralVariant4;
     }
 
     /* renamed from: getNeutralVariant0-0d7_KjU  reason: not valid java name */
-    public final long m3369getNeutralVariant00d7_KjU() {
+    public final long m2808getNeutralVariant00d7_KjU() {
         return this.neutralVariant0;
     }
 
     /* renamed from: getPrimary100-0d7_KjU  reason: not valid java name */
-    public final long m3395getPrimary1000d7_KjU() {
+    public final long m2834getPrimary1000d7_KjU() {
         return this.primary100;
     }
 
     /* renamed from: getPrimary99-0d7_KjU  reason: not valid java name */
-    public final long m3405getPrimary990d7_KjU() {
+    public final long m2844getPrimary990d7_KjU() {
         return this.primary99;
     }
 
     /* renamed from: getPrimary95-0d7_KjU  reason: not valid java name */
-    public final long m3404getPrimary950d7_KjU() {
+    public final long m2843getPrimary950d7_KjU() {
         return this.primary95;
     }
 
     /* renamed from: getPrimary90-0d7_KjU  reason: not valid java name */
-    public final long m3403getPrimary900d7_KjU() {
+    public final long m2842getPrimary900d7_KjU() {
         return this.primary90;
     }
 
     /* renamed from: getPrimary80-0d7_KjU  reason: not valid java name */
-    public final long m3402getPrimary800d7_KjU() {
+    public final long m2841getPrimary800d7_KjU() {
         return this.primary80;
     }
 
     /* renamed from: getPrimary70-0d7_KjU  reason: not valid java name */
-    public final long m3401getPrimary700d7_KjU() {
+    public final long m2840getPrimary700d7_KjU() {
         return this.primary70;
     }
 
     /* renamed from: getPrimary60-0d7_KjU  reason: not valid java name */
-    public final long m3400getPrimary600d7_KjU() {
+    public final long m2839getPrimary600d7_KjU() {
         return this.primary60;
     }
 
     /* renamed from: getPrimary50-0d7_KjU  reason: not valid java name */
-    public final long m3399getPrimary500d7_KjU() {
+    public final long m2838getPrimary500d7_KjU() {
         return this.primary50;
     }
 
     /* renamed from: getPrimary40-0d7_KjU  reason: not valid java name */
-    public final long m3398getPrimary400d7_KjU() {
+    public final long m2837getPrimary400d7_KjU() {
         return this.primary40;
     }
 
     /* renamed from: getPrimary30-0d7_KjU  reason: not valid java name */
-    public final long m3397getPrimary300d7_KjU() {
+    public final long m2836getPrimary300d7_KjU() {
         return this.primary30;
     }
 
     /* renamed from: getPrimary20-0d7_KjU  reason: not valid java name */
-    public final long m3396getPrimary200d7_KjU() {
+    public final long m2835getPrimary200d7_KjU() {
         return this.primary20;
     }
 
     /* renamed from: getPrimary10-0d7_KjU  reason: not valid java name */
-    public final long m3394getPrimary100d7_KjU() {
+    public final long m2833getPrimary100d7_KjU() {
         return this.primary10;
     }
 
     /* renamed from: getPrimary0-0d7_KjU  reason: not valid java name */
-    public final long m3393getPrimary00d7_KjU() {
+    public final long m2832getPrimary00d7_KjU() {
         return this.primary0;
     }
 
     /* renamed from: getSecondary100-0d7_KjU  reason: not valid java name */
-    public final long m3408getSecondary1000d7_KjU() {
+    public final long m2847getSecondary1000d7_KjU() {
         return this.secondary100;
     }
 
     /* renamed from: getSecondary99-0d7_KjU  reason: not valid java name */
-    public final long m3418getSecondary990d7_KjU() {
+    public final long m2857getSecondary990d7_KjU() {
         return this.secondary99;
     }
 
     /* renamed from: getSecondary95-0d7_KjU  reason: not valid java name */
-    public final long m3417getSecondary950d7_KjU() {
+    public final long m2856getSecondary950d7_KjU() {
         return this.secondary95;
     }
 
     /* renamed from: getSecondary90-0d7_KjU  reason: not valid java name */
-    public final long m3416getSecondary900d7_KjU() {
+    public final long m2855getSecondary900d7_KjU() {
         return this.secondary90;
     }
 
     /* renamed from: getSecondary80-0d7_KjU  reason: not valid java name */
-    public final long m3415getSecondary800d7_KjU() {
+    public final long m2854getSecondary800d7_KjU() {
         return this.secondary80;
     }
 
     /* renamed from: getSecondary70-0d7_KjU  reason: not valid java name */
-    public final long m3414getSecondary700d7_KjU() {
+    public final long m2853getSecondary700d7_KjU() {
         return this.secondary70;
     }
 
     /* renamed from: getSecondary60-0d7_KjU  reason: not valid java name */
-    public final long m3413getSecondary600d7_KjU() {
+    public final long m2852getSecondary600d7_KjU() {
         return this.secondary60;
     }
 
     /* renamed from: getSecondary50-0d7_KjU  reason: not valid java name */
-    public final long m3412getSecondary500d7_KjU() {
+    public final long m2851getSecondary500d7_KjU() {
         return this.secondary50;
     }
 
     /* renamed from: getSecondary40-0d7_KjU  reason: not valid java name */
-    public final long m3411getSecondary400d7_KjU() {
+    public final long m2850getSecondary400d7_KjU() {
         return this.secondary40;
     }
 
     /* renamed from: getSecondary30-0d7_KjU  reason: not valid java name */
-    public final long m3410getSecondary300d7_KjU() {
+    public final long m2849getSecondary300d7_KjU() {
         return this.secondary30;
     }
 
     /* renamed from: getSecondary20-0d7_KjU  reason: not valid java name */
-    public final long m3409getSecondary200d7_KjU() {
+    public final long m2848getSecondary200d7_KjU() {
         return this.secondary20;
     }
 
     /* renamed from: getSecondary10-0d7_KjU  reason: not valid java name */
-    public final long m3407getSecondary100d7_KjU() {
+    public final long m2846getSecondary100d7_KjU() {
         return this.secondary10;
     }
 
     /* renamed from: getSecondary0-0d7_KjU  reason: not valid java name */
-    public final long m3406getSecondary00d7_KjU() {
+    public final long m2845getSecondary00d7_KjU() {
         return this.secondary0;
     }
 
     /* renamed from: getTertiary100-0d7_KjU  reason: not valid java name */
-    public final long m3421getTertiary1000d7_KjU() {
+    public final long m2860getTertiary1000d7_KjU() {
         return this.tertiary100;
     }
 
     /* renamed from: getTertiary99-0d7_KjU  reason: not valid java name */
-    public final long m3431getTertiary990d7_KjU() {
+    public final long m2870getTertiary990d7_KjU() {
         return this.tertiary99;
     }
 
     /* renamed from: getTertiary95-0d7_KjU  reason: not valid java name */
-    public final long m3430getTertiary950d7_KjU() {
+    public final long m2869getTertiary950d7_KjU() {
         return this.tertiary95;
     }
 
     /* renamed from: getTertiary90-0d7_KjU  reason: not valid java name */
-    public final long m3429getTertiary900d7_KjU() {
+    public final long m2868getTertiary900d7_KjU() {
         return this.tertiary90;
     }
 
     /* renamed from: getTertiary80-0d7_KjU  reason: not valid java name */
-    public final long m3428getTertiary800d7_KjU() {
+    public final long m2867getTertiary800d7_KjU() {
         return this.tertiary80;
     }
 
     /* renamed from: getTertiary70-0d7_KjU  reason: not valid java name */
-    public final long m3427getTertiary700d7_KjU() {
+    public final long m2866getTertiary700d7_KjU() {
         return this.tertiary70;
     }
 
     /* renamed from: getTertiary60-0d7_KjU  reason: not valid java name */
-    public final long m3426getTertiary600d7_KjU() {
+    public final long m2865getTertiary600d7_KjU() {
         return this.tertiary60;
     }
 
     /* renamed from: getTertiary50-0d7_KjU  reason: not valid java name */
-    public final long m3425getTertiary500d7_KjU() {
+    public final long m2864getTertiary500d7_KjU() {
         return this.tertiary50;
     }
 
     /* renamed from: getTertiary40-0d7_KjU  reason: not valid java name */
-    public final long m3424getTertiary400d7_KjU() {
+    public final long m2863getTertiary400d7_KjU() {
         return this.tertiary40;
     }
 
     /* renamed from: getTertiary30-0d7_KjU  reason: not valid java name */
-    public final long m3423getTertiary300d7_KjU() {
+    public final long m2862getTertiary300d7_KjU() {
         return this.tertiary30;
     }
 
     /* renamed from: getTertiary20-0d7_KjU  reason: not valid java name */
-    public final long m3422getTertiary200d7_KjU() {
+    public final long m2861getTertiary200d7_KjU() {
         return this.tertiary20;
     }
 
     /* renamed from: getTertiary10-0d7_KjU  reason: not valid java name */
-    public final long m3420getTertiary100d7_KjU() {
+    public final long m2859getTertiary100d7_KjU() {
         return this.tertiary10;
     }
 
     /* renamed from: getTertiary0-0d7_KjU  reason: not valid java name */
-    public final long m3419getTertiary00d7_KjU() {
+    public final long m2858getTertiary00d7_KjU() {
         return this.tertiary0;
     }
 }

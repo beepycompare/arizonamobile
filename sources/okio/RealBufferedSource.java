@@ -333,19 +333,25 @@ public final class RealBufferedSource implements BufferedSource {
 
     @Override // okio.BufferedSource
     public long readAll(Sink sink) {
+        Buffer buffer;
         Intrinsics.checkNotNullParameter(sink, "sink");
         long j = 0;
-        while (this.source.read(this.bufferField, PlaybackStateCompat.ACTION_PLAY_FROM_URI) != -1) {
-            long completeSegmentByteCount = this.bufferField.completeSegmentByteCount();
+        while (true) {
+            int i = (this.source.read(this.bufferField, PlaybackStateCompat.ACTION_PLAY_FROM_URI) > (-1L) ? 1 : (this.source.read(this.bufferField, PlaybackStateCompat.ACTION_PLAY_FROM_URI) == (-1L) ? 0 : -1));
+            buffer = this.bufferField;
+            if (i == 0) {
+                break;
+            }
+            long completeSegmentByteCount = buffer.completeSegmentByteCount();
             if (completeSegmentByteCount > 0) {
                 j += completeSegmentByteCount;
                 sink.write(this.bufferField, completeSegmentByteCount);
             }
         }
-        if (this.bufferField.size() > 0) {
+        if (buffer.size() > 0) {
             long size = j + this.bufferField.size();
-            Buffer buffer = this.bufferField;
-            sink.write(buffer, buffer.size());
+            Buffer buffer2 = this.bufferField;
+            sink.write(buffer2, buffer2.size());
             return size;
         }
         return j;
@@ -373,13 +379,15 @@ public final class RealBufferedSource implements BufferedSource {
     @Override // okio.BufferedSource
     public String readUtf8Line() {
         long indexOf = indexOf((byte) 10);
-        if (indexOf == -1) {
-            if (this.bufferField.size() != 0) {
+        int i = (indexOf > (-1L) ? 1 : (indexOf == (-1L) ? 0 : -1));
+        Buffer buffer = this.bufferField;
+        if (i == 0) {
+            if (buffer.size() != 0) {
                 return readUtf8(this.bufferField.size());
             }
             return null;
         }
-        return okio.internal.Buffer.readUtf8Line(this.bufferField, indexOf);
+        return okio.internal.Buffer.readUtf8Line(buffer, indexOf);
     }
 
     @Override // okio.BufferedSource

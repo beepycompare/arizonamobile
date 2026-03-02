@@ -18,8 +18,8 @@ public abstract class SelectionMode {
     public static final SelectionMode Vertical = new SelectionMode("Vertical", 0) { // from class: androidx.compose.foundation.text.selection.SelectionMode.Vertical
         @Override // androidx.compose.foundation.text.selection.SelectionMode
         /* renamed from: compare-3MmeM6k$foundation */
-        public int mo1899compare3MmeM6k$foundation(long j, Rect rect) {
-            if (SelectionManagerKt.m1892containsInclusiveUv8p0NA(rect, j)) {
+        public int mo1641compare3MmeM6k$foundation(long j, Rect rect) {
+            if (SelectionManagerKt.m1635containsInclusiveUv8p0NA(rect, j)) {
                 return 0;
             }
             int i = (int) (4294967295L & j);
@@ -32,8 +32,8 @@ public abstract class SelectionMode {
     public static final SelectionMode Horizontal = new SelectionMode("Horizontal", 1) { // from class: androidx.compose.foundation.text.selection.SelectionMode.Horizontal
         @Override // androidx.compose.foundation.text.selection.SelectionMode
         /* renamed from: compare-3MmeM6k$foundation */
-        public int mo1899compare3MmeM6k$foundation(long j, Rect rect) {
-            if (SelectionManagerKt.m1892containsInclusiveUv8p0NA(rect, j)) {
+        public int mo1641compare3MmeM6k$foundation(long j, Rect rect) {
+            if (SelectionManagerKt.m1635containsInclusiveUv8p0NA(rect, j)) {
                 return 0;
             }
             int i = (int) (j >> 32);
@@ -65,7 +65,7 @@ public abstract class SelectionMode {
     }
 
     /* renamed from: compare-3MmeM6k$foundation  reason: not valid java name */
-    public abstract int mo1899compare3MmeM6k$foundation(long j, Rect rect);
+    public abstract int mo1641compare3MmeM6k$foundation(long j, Rect rect);
 
     private SelectionMode(String str, int i) {
     }
@@ -77,15 +77,15 @@ public abstract class SelectionMode {
     }
 
     /* renamed from: isSelected-2x9bVx0$foundation  reason: not valid java name */
-    public final boolean m1900isSelected2x9bVx0$foundation(Rect rect, long j, long j2) {
-        if (m1898containsInclusiveUv8p0NA(rect, j) || m1898containsInclusiveUv8p0NA(rect, j2)) {
+    public final boolean m1642isSelected2x9bVx0$foundation(Rect rect, long j, long j2) {
+        if (m1640containsInclusiveUv8p0NA(rect, j) || m1640containsInclusiveUv8p0NA(rect, j2)) {
             return true;
         }
-        return (mo1899compare3MmeM6k$foundation(j, rect) > 0) ^ (mo1899compare3MmeM6k$foundation(j2, rect) > 0);
+        return (mo1641compare3MmeM6k$foundation(j, rect) > 0) ^ (mo1641compare3MmeM6k$foundation(j2, rect) > 0);
     }
 
     /* renamed from: containsInclusive-Uv8p0NA  reason: not valid java name */
-    private final boolean m1898containsInclusiveUv8p0NA(Rect rect, long j) {
+    private final boolean m1640containsInclusiveUv8p0NA(Rect rect, long j) {
         float left = rect.getLeft();
         float right = rect.getRight();
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

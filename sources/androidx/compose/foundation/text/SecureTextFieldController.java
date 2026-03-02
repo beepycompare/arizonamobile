@@ -24,17 +24,13 @@ public final class SecureTextFieldController {
     private final CodepointTransformation codepointTransformation = new CodepointTransformation() { // from class: androidx.compose.foundation.text.SecureTextFieldController$$ExternalSyntheticLambda0
         @Override // androidx.compose.foundation.text.input.internal.CodepointTransformation
         public final int transform(int i, int i2) {
-            int codepointTransformation$lambda$0;
-            codepointTransformation$lambda$0 = SecureTextFieldController.codepointTransformation$lambda$0(SecureTextFieldController.this, i, i2);
-            return codepointTransformation$lambda$0;
+            return SecureTextFieldController.codepointTransformation$lambda$0(SecureTextFieldController.this, i, i2);
         }
     };
     private final Modifier focusChangeModifier = FocusChangedModifierKt.onFocusChanged(Modifier.Companion, new Function1() { // from class: androidx.compose.foundation.text.SecureTextFieldController$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit focusChangeModifier$lambda$0;
-            focusChangeModifier$lambda$0 = SecureTextFieldController.focusChangeModifier$lambda$0(SecureTextFieldController.this, (FocusState) obj);
-            return focusChangeModifier$lambda$0;
+            return SecureTextFieldController.focusChangeModifier$lambda$0(SecureTextFieldController.this, (FocusState) obj);
         }
     });
     private final Channel<Unit> resetTimerSignal = ChannelKt.Channel$default(Integer.MAX_VALUE, null, null, 6, null);
@@ -51,7 +47,7 @@ public final class SecureTextFieldController {
         return this.codepointTransformation;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int codepointTransformation$lambda$0(SecureTextFieldController secureTextFieldController, int i, int i2) {
         return i == secureTextFieldController.passwordInputTransformation.getRevealCodepointIndex$foundation() ? i2 : secureTextFieldController.obfuscationMaskState.getValue().charValue();
     }
@@ -60,7 +56,7 @@ public final class SecureTextFieldController {
         return this.focusChangeModifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit focusChangeModifier$lambda$0(SecureTextFieldController secureTextFieldController, FocusState focusState) {
         if (!focusState.isFocused()) {
             secureTextFieldController.passwordInputTransformation.hide();
@@ -75,7 +71,7 @@ public final class SecureTextFieldController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void scheduleHide() {
-        if (ChannelResult.m11793isFailureimpl(this.resetTimerSignal.mo9174trySendJP2dKIU(Unit.INSTANCE))) {
+        if (ChannelResult.m10718isFailureimpl(this.resetTimerSignal.mo8396trySendJP2dKIU(Unit.INSTANCE))) {
             this.passwordInputTransformation.hide();
         }
     }

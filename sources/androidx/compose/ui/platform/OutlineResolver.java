@@ -42,8 +42,8 @@ public final class OutlineResolver {
         Outline outline = new Outline();
         outline.setAlpha(1.0f);
         this.cachedOutline = outline;
-        this.rectTopLeft = Offset.Companion.m5195getZeroF1C5BW0();
-        this.rectSize = Size.Companion.m5257getZeroNHjbRc();
+        this.rectTopLeft = Offset.Companion.m4543getZeroF1C5BW0();
+        this.rectSize = Size.Companion.m4605getZeroNHjbRc();
     }
 
     public final boolean getCacheIsDirty$ui() {
@@ -68,7 +68,7 @@ public final class OutlineResolver {
     }
 
     /* renamed from: update-S_szKao  reason: not valid java name */
-    public final boolean m7413updateS_szKao(androidx.compose.ui.graphics.Outline outline, float f, boolean z, float f2, long j) {
+    public final boolean m6747updateS_szKao(androidx.compose.ui.graphics.Outline outline, float f, boolean z, float f2, long j) {
         this.cachedOutline.setAlpha(f);
         boolean areEqual = Intrinsics.areEqual(this.outline, outline);
         boolean z2 = !areEqual;
@@ -86,7 +86,7 @@ public final class OutlineResolver {
     }
 
     /* renamed from: isInOutline-k-4lQ0M  reason: not valid java name */
-    public final boolean m7412isInOutlinek4lQ0M(long j) {
+    public final boolean m6746isInOutlinek4lQ0M(long j) {
         androidx.compose.ui.graphics.Outline outline;
         if (this.outlineNeeded && (outline = this.outline) != null) {
             return ShapeContainingUtilKt.isInOutline(outline, Float.intBitsToFloat((int) (j >> 32)), Float.intBitsToFloat((int) (j & 4294967295L)), this.tmpTouchPointPath, this.tmpOpPath);
@@ -95,7 +95,7 @@ public final class OutlineResolver {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002e, code lost:
-        if (m7411isSameBounds4L21HEs(r1, r18.rectTopLeft, r18.rectSize, r6) == false) goto L14;
+        if (m6745isSameBounds4L21HEs(r1, r18.rectTopLeft, r18.rectSize, r6) == false) goto L14;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -103,7 +103,7 @@ public final class OutlineResolver {
     public final void clipToOutline(Canvas canvas) {
         Path clipPath = getClipPath();
         if (clipPath != null) {
-            Canvas.m5395clipPathmtrdDE$default(canvas, clipPath, 0, 2, null);
+            Canvas.m4743clipPathmtrdDE$default(canvas, clipPath, 0, 2, null);
             return;
         }
         float f = this.roundedCornerRadius;
@@ -116,24 +116,24 @@ public final class OutlineResolver {
             float intBitsToFloat3 = Float.intBitsToFloat((int) (outlineResolver.rectSize >> 32)) + Float.intBitsToFloat((int) (outlineResolver.rectTopLeft >> 32));
             float intBitsToFloat4 = Float.intBitsToFloat((int) (outlineResolver.rectSize & 4294967295L)) + Float.intBitsToFloat((int) (outlineResolver.rectTopLeft & 4294967295L));
             float f2 = outlineResolver.roundedCornerRadius;
-            RoundRect m5233RoundRectgG7oq9Y = RoundRectKt.m5233RoundRectgG7oq9Y(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, intBitsToFloat4, CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)));
+            RoundRect m4581RoundRectgG7oq9Y = RoundRectKt.m4581RoundRectgG7oq9Y(intBitsToFloat, intBitsToFloat2, intBitsToFloat3, intBitsToFloat4, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)));
             if (path == null) {
                 path = AndroidPath_androidKt.Path();
             } else {
                 path.reset();
             }
-            Path.addRoundRect$default(path, m5233RoundRectgG7oq9Y, null, 2, null);
-            outlineResolver.tmpRoundRect = m5233RoundRectgG7oq9Y;
+            Path.addRoundRect$default(path, m4581RoundRectgG7oq9Y, null, 2, null);
+            outlineResolver.tmpRoundRect = m4581RoundRectgG7oq9Y;
             outlineResolver.tmpPath = path;
-            Canvas.m5395clipPathmtrdDE$default(canvas, path, 0, 2, null);
+            Canvas.m4743clipPathmtrdDE$default(canvas, path, 0, 2, null);
             return;
         }
-        Canvas.m5396clipRectN_I0leg$default(canvas, Float.intBitsToFloat((int) (this.rectTopLeft >> 32)), Float.intBitsToFloat((int) (this.rectTopLeft & 4294967295L)), Float.intBitsToFloat((int) (this.rectSize >> 32)) + Float.intBitsToFloat((int) (this.rectTopLeft >> 32)), Float.intBitsToFloat((int) (this.rectSize & 4294967295L)) + Float.intBitsToFloat((int) (this.rectTopLeft & 4294967295L)), 0, 16, null);
+        Canvas.m4744clipRectN_I0leg$default(canvas, Float.intBitsToFloat((int) (this.rectTopLeft >> 32)), Float.intBitsToFloat((int) (this.rectTopLeft & 4294967295L)), Float.intBitsToFloat((int) (this.rectSize >> 32)) + Float.intBitsToFloat((int) (this.rectTopLeft >> 32)), Float.intBitsToFloat((int) (this.rectSize & 4294967295L)) + Float.intBitsToFloat((int) (this.rectTopLeft & 4294967295L)), 0, 16, null);
     }
 
     private final void updateCache() {
         if (this.cacheIsDirty) {
-            this.rectTopLeft = Offset.Companion.m5195getZeroF1C5BW0();
+            this.rectTopLeft = Offset.Companion.m4543getZeroF1C5BW0();
             this.roundedCornerRadius = 0.0f;
             this.outlinePath = null;
             this.cacheIsDirty = false;
@@ -161,21 +161,21 @@ public final class OutlineResolver {
     private final void updateCacheWithRect(Rect rect) {
         float left = rect.getLeft();
         float top = rect.getTop();
-        this.rectTopLeft = Offset.m5171constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
+        this.rectTopLeft = Offset.m4519constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
         float right = rect.getRight() - rect.getLeft();
         float bottom = rect.getBottom() - rect.getTop();
-        this.rectSize = Size.m5239constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
+        this.rectSize = Size.m4587constructorimpl((Float.floatToRawIntBits(bottom) & 4294967295L) | (Float.floatToRawIntBits(right) << 32));
         this.cachedOutline.setRect(Math.round(rect.getLeft()), Math.round(rect.getTop()), Math.round(rect.getRight()), Math.round(rect.getBottom()));
     }
 
     private final void updateCacheWithRoundRect(RoundRect roundRect) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() >> 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() >> 32));
         float left = roundRect.getLeft();
         float top = roundRect.getTop();
-        this.rectTopLeft = Offset.m5171constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
+        this.rectTopLeft = Offset.m4519constructorimpl((Float.floatToRawIntBits(top) & 4294967295L) | (Float.floatToRawIntBits(left) << 32));
         float width = roundRect.getWidth();
         float height = roundRect.getHeight();
-        this.rectSize = Size.m5239constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32));
+        this.rectSize = Size.m4587constructorimpl((Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32));
         if (RoundRectKt.isSimple(roundRect)) {
             this.cachedOutline.setRoundRect(Math.round(roundRect.getLeft()), Math.round(roundRect.getTop()), Math.round(roundRect.getRight()), Math.round(roundRect.getBottom()), intBitsToFloat);
             this.roundedCornerRadius = intBitsToFloat;
@@ -213,12 +213,12 @@ public final class OutlineResolver {
     }
 
     /* renamed from: isSameBounds-4L21HEs  reason: not valid java name */
-    private final boolean m7411isSameBounds4L21HEs(RoundRect roundRect, long j, long j2, float f) {
+    private final boolean m6745isSameBounds4L21HEs(RoundRect roundRect, long j, long j2, float f) {
         if (roundRect != null && RoundRectKt.isSimple(roundRect)) {
             int i = (int) (j >> 32);
             if (roundRect.getLeft() == Float.intBitsToFloat(i)) {
                 int i2 = (int) (j & 4294967295L);
-                if (roundRect.getTop() == Float.intBitsToFloat(i2) && roundRect.getRight() == Float.intBitsToFloat(i) + Float.intBitsToFloat((int) (j2 >> 32)) && roundRect.getBottom() == Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 & 4294967295L)) && Float.intBitsToFloat((int) (roundRect.m5229getTopLeftCornerRadiuskKHJgLs() >> 32)) == f) {
+                if (roundRect.getTop() == Float.intBitsToFloat(i2) && roundRect.getRight() == Float.intBitsToFloat(i) + Float.intBitsToFloat((int) (j2 >> 32)) && roundRect.getBottom() == Float.intBitsToFloat(i2) + Float.intBitsToFloat((int) (j2 & 4294967295L)) && Float.intBitsToFloat((int) (roundRect.m4577getTopLeftCornerRadiuskKHJgLs() >> 32)) == f) {
                     return true;
                 }
             }

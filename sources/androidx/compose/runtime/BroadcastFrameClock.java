@@ -84,13 +84,13 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             CancellableContinuation<? super R> cancellableContinuation = this.continuation;
             if (cancellableContinuation != null) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuation.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(th)));
             }
         }
 
         public final void resume(long j) {
             CancellableContinuation<? super R> cancellableContinuation;
-            Object m10243constructorimpl;
+            Object m9182constructorimpl;
             Function1<? super Long, ? extends R> function1 = this.onFrame;
             if (function1 == null || (cancellableContinuation = this.continuation) == null) {
                 return;
@@ -98,12 +98,12 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             try {
                 Result.Companion companion = Result.Companion;
                 FrameAwaiter<R> frameAwaiter = this;
-                m10243constructorimpl = Result.m10243constructorimpl(function1.invoke(Long.valueOf(j)));
+                m9182constructorimpl = Result.m9182constructorimpl(function1.invoke(Long.valueOf(j)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
             }
-            cancellableContinuation.resumeWith(m10243constructorimpl);
+            cancellableContinuation.resumeWith(m9182constructorimpl);
         }
     }
 
@@ -111,7 +111,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         return this.queue.getHasAwaiters();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit sendFrame$lambda$0(long j, FrameAwaiter frameAwaiter) {
         frameAwaiter.resume(j);
         return Unit.INSTANCE;
@@ -121,9 +121,7 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
         this.queue.flushAndDispatchAwaiters(new Function1() { // from class: androidx.compose.runtime.BroadcastFrameClock$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit sendFrame$lambda$0;
-                sendFrame$lambda$0 = BroadcastFrameClock.sendFrame$lambda$0(j, (BroadcastFrameClock.FrameAwaiter) obj);
-                return sendFrame$lambda$0;
+                return BroadcastFrameClock.sendFrame$lambda$0(j, (BroadcastFrameClock.FrameAwaiter) obj);
             }
         });
     }

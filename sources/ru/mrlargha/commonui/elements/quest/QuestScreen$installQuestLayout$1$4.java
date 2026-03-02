@@ -13,7 +13,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.RodinaQuestScreenBinding;
 import ru.mrlargha.commonui.elements.quest.QuestAdapter;
 /* compiled from: QuestScreen.kt */
-@Metadata(d1 = {"\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0016¨\u0006\u0006"}, d2 = {"ru/mrlargha/commonui/elements/quest/QuestScreen$installQuestLayout$1$4", "Lru/mrlargha/commonui/elements/quest/QuestAdapter$OnQuestClickListener;", "callback", "", "quest", "Lru/mrlargha/commonui/elements/quest/QuestLine;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0016¨\u0006\u0006"}, d2 = {"ru/mrlargha/commonui/elements/quest/QuestScreen$installQuestLayout$1$4", "Lru/mrlargha/commonui/elements/quest/QuestAdapter$OnQuestClickListener;", "callback", "", "quest", "Lru/mrlargha/commonui/elements/quest/QuestLine;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.OnQuestClickListener {
     final /* synthetic */ RodinaQuestScreenBinding $this_apply;
@@ -26,7 +26,7 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
     }
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0140  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0146  */
     @Override // ru.mrlargha.commonui.elements.quest.QuestAdapter.OnQuestClickListener
     /*
@@ -70,21 +70,22 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
                         constraintLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda0
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                QuestScreen$installQuestLayout$1$4.callback$lambda$1(QuestScreen.this, quest, view);
+                                SAMPUIElement.notifyClick$default(QuestScreen.this, 0, quest.getId(), null, 4, null);
                             }
                         });
                         z2 = this.this$0.isArizonaType;
+                        RodinaQuestScreenBinding rodinaQuestScreenBinding = this.$this_apply;
                         if (z2) {
-                            this.$this_apply.rodinaQuestAwardsCancelButton.setVisibility(0);
+                            rodinaQuestScreenBinding.rodinaQuestAwardsCancelButton.setVisibility(0);
                         } else {
-                            this.$this_apply.rodinaQuestAwardsCancelButton.setVisibility(8);
+                            rodinaQuestScreenBinding.rodinaQuestAwardsCancelButton.setVisibility(8);
                         }
                         ConstraintLayout constraintLayout2 = this.$this_apply.rodinaQuestAwardsCancelButton;
                         final QuestScreen questScreen2 = this.this$0;
                         constraintLayout2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda1
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
-                                QuestScreen$installQuestLayout$1$4.callback$lambda$2(QuestScreen.this, quest, view);
+                                SAMPUIElement.notifyClick$default(QuestScreen.this, 1, quest.getId(), null, 4, null);
                             }
                         });
                     }
@@ -104,10 +105,11 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
                 constraintLayout3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        QuestScreen$installQuestLayout$1$4.callback$lambda$1(QuestScreen.this, quest, view);
+                        SAMPUIElement.notifyClick$default(QuestScreen.this, 0, quest.getId(), null, 4, null);
                     }
                 });
                 z2 = this.this$0.isArizonaType;
+                RodinaQuestScreenBinding rodinaQuestScreenBinding2 = this.$this_apply;
                 if (z2) {
                 }
                 ConstraintLayout constraintLayout22 = this.$this_apply.rodinaQuestAwardsCancelButton;
@@ -115,7 +117,7 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
                 constraintLayout22.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        QuestScreen$installQuestLayout$1$4.callback$lambda$2(QuestScreen.this, quest, view);
+                        SAMPUIElement.notifyClick$default(QuestScreen.this, 1, quest.getId(), null, 4, null);
                     }
                 });
             }
@@ -138,10 +140,11 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
         constraintLayout32.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestScreen$installQuestLayout$1$4.callback$lambda$1(QuestScreen.this, quest, view);
+                SAMPUIElement.notifyClick$default(QuestScreen.this, 0, quest.getId(), null, 4, null);
             }
         });
         z2 = this.this$0.isArizonaType;
+        RodinaQuestScreenBinding rodinaQuestScreenBinding22 = this.$this_apply;
         if (z2) {
         }
         ConstraintLayout constraintLayout222 = this.$this_apply.rodinaQuestAwardsCancelButton;
@@ -149,18 +152,8 @@ public final class QuestScreen$installQuestLayout$1$4 implements QuestAdapter.On
         constraintLayout222.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$installQuestLayout$1$4$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestScreen$installQuestLayout$1$4.callback$lambda$2(QuestScreen.this, quest, view);
+                SAMPUIElement.notifyClick$default(QuestScreen.this, 1, quest.getId(), null, 4, null);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void callback$lambda$1(QuestScreen questScreen, QuestLine questLine, View view) {
-        SAMPUIElement.notifyClick$default(questScreen, 0, questLine.getId(), null, 4, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void callback$lambda$2(QuestScreen questScreen, QuestLine questLine, View view) {
-        SAMPUIElement.notifyClick$default(questScreen, 1, questLine.getId(), null, 4, null);
     }
 }

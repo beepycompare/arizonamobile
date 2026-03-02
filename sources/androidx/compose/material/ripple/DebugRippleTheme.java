@@ -18,18 +18,18 @@ public final class DebugRippleTheme implements RippleTheme {
     @Override // androidx.compose.material.ripple.RippleTheme
     @Deprecated(message = "Super method is deprecated")
     /* renamed from: defaultColor-WaAFU9c  reason: not valid java name */
-    public long mo1941defaultColorWaAFU9c(Composer composer, int i) {
+    public long mo1680defaultColorWaAFU9c(Composer composer, int i) {
         composer.startReplaceGroup(2042140174);
         ComposerKt.sourceInformation(composer, "C(defaultColor):RippleTheme.kt#vhb33q");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(2042140174, i, -1, "androidx.compose.material.ripple.DebugRippleTheme.defaultColor (RippleTheme.kt:237)");
         }
-        long m1955defaultRippleColor5vOe2sY = RippleTheme.Companion.m1955defaultRippleColor5vOe2sY(Color.Companion.m5450getBlack0d7_KjU(), true);
+        long m1692defaultRippleColor5vOe2sY = RippleTheme.Companion.m1692defaultRippleColor5vOe2sY(Color.Companion.m4798getBlack0d7_KjU(), true);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m1955defaultRippleColor5vOe2sY;
+        return m1692defaultRippleColor5vOe2sY;
     }
 
     @Override // androidx.compose.material.ripple.RippleTheme
@@ -40,11 +40,11 @@ public final class DebugRippleTheme implements RippleTheme {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1629816343, i, -1, "androidx.compose.material.ripple.DebugRippleTheme.rippleAlpha (RippleTheme.kt:242)");
         }
-        RippleAlpha m1954defaultRippleAlphaDxMtmZc = RippleTheme.Companion.m1954defaultRippleAlphaDxMtmZc(Color.Companion.m5450getBlack0d7_KjU(), true);
+        RippleAlpha m1691defaultRippleAlphaDxMtmZc = RippleTheme.Companion.m1691defaultRippleAlphaDxMtmZc(Color.Companion.m4798getBlack0d7_KjU(), true);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m1954defaultRippleAlphaDxMtmZc;
+        return m1691defaultRippleAlphaDxMtmZc;
     }
 }

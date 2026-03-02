@@ -118,18 +118,18 @@ public final class TextLayout {
             if (lineHeightSpans == null || (lineHeightStyleSpan2 = (LineHeightStyleSpan) ArraysKt.firstOrNull(lineHeightSpans)) == null) {
                 z4 = i10;
             } else {
-                z4 = (lineHeightStyleSpan2.getTrimFirstLineTop() && LineHeightStyle.Mode.m8109equalsimpl0(lineHeightStyleSpan2.m7758getModelzQqcRY(), LineHeightStyle.Mode.Companion.m8115getTightlzQqcRY())) ? z3 : i10;
+                z4 = (lineHeightStyleSpan2.getTrimFirstLineTop() && LineHeightStyle.Mode.m7406equalsimpl0(lineHeightStyleSpan2.m7059getModelzQqcRY(), LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) ? z3 : i10;
             }
-            boolean z6 = (lineHeightSpans == null || (lineHeightStyleSpan = (LineHeightStyleSpan) ArraysKt.firstOrNull(lineHeightSpans)) == null || !lineHeightStyleSpan.getTrimLastLineBottom() || !LineHeightStyle.Mode.m8109equalsimpl0(lineHeightStyleSpan.m7758getModelzQqcRY(), LineHeightStyle.Mode.Companion.m8115getTightlzQqcRY())) ? i10 : z3;
+            boolean z6 = (lineHeightSpans == null || (lineHeightStyleSpan = (LineHeightStyleSpan) ArraysKt.firstOrNull(lineHeightSpans)) == null || !lineHeightStyleSpan.getTrimLastLineBottom() || !LineHeightStyle.Mode.m7406equalsimpl0(lineHeightStyleSpan.m7059getModelzQqcRY(), LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) ? i10 : z3;
             if (!z4 || !z6) {
                 verticalPaddings = TextLayout_androidKt.getVerticalPaddings(this);
-                VerticalPaddings = TextLayout_androidKt.VerticalPaddings(z4 ? i10 : VerticalPaddings.m7754getTopPaddingimpl(verticalPaddings), z6 ? i10 : VerticalPaddings.m7753getBottomPaddingimpl(verticalPaddings));
+                VerticalPaddings = TextLayout_androidKt.VerticalPaddings(z4 ? i10 : VerticalPaddings.m7055getTopPaddingimpl(verticalPaddings), z6 ? i10 : VerticalPaddings.m7054getBottomPaddingimpl(verticalPaddings));
             } else {
                 VerticalPaddings = TextLayout_androidKt.ZeroVerticalPadding;
             }
             long lineHeightPaddings = lineHeightSpans != null ? TextLayout_androidKt.getLineHeightPaddings(lineHeightSpans) : TextLayout_androidKt.ZeroVerticalPadding;
-            this.topPadding = Math.max(VerticalPaddings.m7754getTopPaddingimpl(VerticalPaddings), VerticalPaddings.m7754getTopPaddingimpl(lineHeightPaddings));
-            this.bottomPadding = Math.max(VerticalPaddings.m7753getBottomPaddingimpl(VerticalPaddings), VerticalPaddings.m7753getBottomPaddingimpl(lineHeightPaddings));
+            this.topPadding = Math.max(VerticalPaddings.m7055getTopPaddingimpl(VerticalPaddings), VerticalPaddings.m7055getTopPaddingimpl(lineHeightPaddings));
+            this.bottomPadding = Math.max(VerticalPaddings.m7054getBottomPaddingimpl(VerticalPaddings), VerticalPaddings.m7054getBottomPaddingimpl(lineHeightPaddings));
             lastLineMetrics = TextLayout_androidKt.getLastLineMetrics(this, textPaint2, textDirectionHeuristic, lineHeightSpans);
             this.lastLineExtra = lastLineMetrics != null ? lastLineMetrics.bottom - ((int) getLineHeight(i11)) : i10;
             this.lastLineFontMetrics = lastLineMetrics;
@@ -247,10 +247,12 @@ public final class TextLayout {
 
     public final int getHeight() {
         int height;
-        if (this.didExceedMaxLines) {
-            height = this.layout.getLineBottom(this.lineCount - 1);
+        boolean z = this.didExceedMaxLines;
+        Layout layout = this.layout;
+        if (z) {
+            height = layout.getLineBottom(this.lineCount - 1);
         } else {
-            height = this.layout.getHeight();
+            height = layout.getHeight();
         }
         return height + this.topPadding + this.bottomPadding + this.lastLineExtra;
     }

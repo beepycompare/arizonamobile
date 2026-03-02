@@ -22,7 +22,7 @@ public final class Rl implements NetworkResponseHandler {
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkResponseHandler
     /* renamed from: a */
-    public final C0206dm handle(ResponseDataHolder responseDataHolder) {
+    public final C0205dm handle(ResponseDataHolder responseDataHolder) {
         String str;
         String str2;
         if (200 == responseDataHolder.getResponseCode()) {
@@ -35,11 +35,11 @@ public final class Rl implements NetworkResponseHandler {
             if (responseData != null) {
                 Yl yl = this.f770a;
                 yl.getClass();
-                C0206dm c0206dm = new C0206dm();
+                C0205dm c0205dm = new C0205dm();
                 try {
                     yl.h.getClass();
-                    C0246fb c0246fb = new C0246fb(new String(responseData, "UTF-8"));
-                    JSONObject optJSONObject = c0246fb.optJSONObject("device_id");
+                    C0245fb c0245fb = new C0245fb(new String(responseData, "UTF-8"));
+                    JSONObject optJSONObject = c0245fb.optJSONObject("device_id");
                     if (optJSONObject == null) {
                         str = "";
                         str2 = "";
@@ -47,16 +47,16 @@ public final class Rl implements NetworkResponseHandler {
                         str = optJSONObject.optString("hash");
                         str2 = optJSONObject.optString("value");
                     }
-                    c0206dm.h = str2;
-                    c0206dm.i = str;
-                    yl.a(c0206dm, c0246fb);
-                    c0206dm.f962a = TextUtils.isEmpty(c0206dm.i) ? 1 : 2;
+                    c0205dm.h = str2;
+                    c0205dm.i = str;
+                    yl.a(c0205dm, c0245fb);
+                    c0205dm.f962a = TextUtils.isEmpty(c0205dm.i) ? 1 : 2;
                 } catch (Throwable unused) {
-                    c0206dm = new C0206dm();
-                    c0206dm.f962a = 1;
+                    c0205dm = new C0205dm();
+                    c0205dm.f962a = 1;
                 }
-                if (2 == c0206dm.f962a) {
-                    return c0206dm;
+                if (2 == c0205dm.f962a) {
+                    return c0205dm;
                 }
             }
         }

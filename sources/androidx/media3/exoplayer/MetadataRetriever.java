@@ -12,12 +12,12 @@ import androidx.media3.extractor.DefaultExtractorsFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MetadataRetriever implements AutoCloseable {
     public static final int DEFAULT_MAXIMUM_PARALLEL_RETRIEVALS = 5;
     private final MetadataRetrieverInternal internalRetriever;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private Clock clock;
         private final Context context;
@@ -75,7 +75,6 @@ public final class MetadataRetriever implements AutoCloseable {
         return retrieveMetadata(factory, mediaItem, Clock.DEFAULT);
     }
 
-    @Deprecated
     static ListenableFuture<TrackGroupArray> retrieveMetadata(Context context, MediaItem mediaItem, Clock clock) {
         MetadataRetriever build = new Builder(context, mediaItem).setClock(clock).build();
         try {
@@ -96,7 +95,6 @@ public final class MetadataRetriever implements AutoCloseable {
         }
     }
 
-    @Deprecated
     private static ListenableFuture<TrackGroupArray> retrieveMetadata(MediaSource.Factory factory, MediaItem mediaItem, Clock clock) {
         MetadataRetriever build = new Builder(null, mediaItem).setMediaSourceFactory(factory).setClock(clock).build();
         try {

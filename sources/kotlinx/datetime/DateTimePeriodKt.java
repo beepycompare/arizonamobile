@@ -95,8 +95,8 @@ public final class DateTimePeriodKt {
     }
 
     /* renamed from: toDateTimePeriod-LRDsOJo  reason: not valid java name */
-    public static final DateTimePeriod m11866toDateTimePeriodLRDsOJo(long j) {
-        return buildDateTimePeriod$default(0L, 0, Duration.m11618getInWholeNanosecondsimpl(j), 3, null);
+    public static final DateTimePeriod m10776toDateTimePeriodLRDsOJo(long j) {
+        return buildDateTimePeriod$default(0L, 0, Duration.m10551getInWholeNanosecondsimpl(j), 3, null);
     }
 
     @Deprecated(level = DeprecationLevel.WARNING, message = "Adding periods is not a well-defined operation. See https://github.com/Kotlin/kotlinx-datetime/issues/381")

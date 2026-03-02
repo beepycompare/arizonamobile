@@ -35,7 +35,7 @@ public final class TooltipScopeImpl implements TooltipScope {
         return this.positionProvider;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DrawResult drawCaret$lambda$0(Function2 function2, TooltipScopeImpl tooltipScopeImpl, CacheDrawScope cacheDrawScope) {
         return (DrawResult) function2.invoke(cacheDrawScope, tooltipScopeImpl.getAnchorBounds.invoke());
     }
@@ -46,9 +46,7 @@ public final class TooltipScopeImpl implements TooltipScope {
         return DrawModifierKt.drawWithCache(modifier, new Function1() { // from class: androidx.compose.material3.TooltipScopeImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                DrawResult drawCaret$lambda$0;
-                drawCaret$lambda$0 = TooltipScopeImpl.drawCaret$lambda$0(Function2.this, this, (CacheDrawScope) obj);
-                return drawCaret$lambda$0;
+                return TooltipScopeImpl.drawCaret$lambda$0(Function2.this, this, (CacheDrawScope) obj);
             }
         });
     }

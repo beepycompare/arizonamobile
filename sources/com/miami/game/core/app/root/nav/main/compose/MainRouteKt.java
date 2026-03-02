@@ -45,16 +45,16 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KFunction;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: MainRoute.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a'\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"MainRoute", "", "component", "Lcom/miami/game/core/app/root/nav/main/MainComponent;", "windowSizeClass", "Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/runtime/Composer;I)V", "Children", "modifier", "Landroidx/compose/ui/Modifier;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "app-root_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001d\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001a'\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\tH\u0003¢\u0006\u0002\u0010\n¨\u0006\u000b"}, d2 = {"MainRoute", "", "component", "Lcom/miami/game/core/app/root/nav/main/MainComponent;", "windowSizeClass", "Landroidx/compose/material3/windowsizeclass/WindowSizeClass;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/runtime/Composer;I)V", "Children", "modifier", "Landroidx/compose/ui/Modifier;", "(Lcom/miami/game/core/app/root/nav/main/MainComponent;Landroidx/compose/material3/windowsizeclass/WindowSizeClass;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "app-root"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class MainRouteKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Children$lambda$1(MainComponent mainComponent, WindowSizeClass windowSizeClass, Modifier modifier, int i, int i2, Composer composer, int i3) {
         Children(mainComponent, windowSizeClass, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MainRoute$lambda$0(MainComponent mainComponent, WindowSizeClass windowSizeClass, int i, Composer composer, int i2) {
         MainRoute(mainComponent, windowSizeClass, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -96,9 +96,7 @@ public final class MainRouteKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MainRoute$lambda$0;
-                    MainRoute$lambda$0 = MainRouteKt.MainRoute$lambda$0(MainComponent.this, windowSizeClass2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MainRoute$lambda$0;
+                    return MainRouteKt.MainRoute$lambda$0(MainComponent.this, windowSizeClass2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -131,9 +129,7 @@ public final class MainRouteKt {
             MainScaffoldKt.MainScaffold(WindowInsetsPadding_androidKt.imePadding(modifier), null, null, null, ComposableLambdaKt.rememberComposableLambda(-254427970, true, new Function3() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    Unit Children$lambda$0;
-                    Children$lambda$0 = MainRouteKt.Children$lambda$0(MainComponent.this, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                    return Children$lambda$0;
+                    return MainRouteKt.Children$lambda$0(MainComponent.this, (PaddingValues) obj, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             }, startRestartGroup, 54), startRestartGroup, 24576, 14);
             if (ComposerKt.isTraceInProgress()) {
@@ -146,15 +142,13 @@ public final class MainRouteKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.app.root.nav.main.compose.MainRouteKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Children$lambda$1;
-                    Children$lambda$1 = MainRouteKt.Children$lambda$1(MainComponent.this, windowSizeClass, modifier2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                    return Children$lambda$1;
+                    return MainRouteKt.Children$lambda$1(MainComponent.this, windowSizeClass, modifier2, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Children$lambda$0(final MainComponent mainComponent, PaddingValues it, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(it, "it");
         ComposerKt.sourceInformation(composer, "CN(it)48@1881L2310,44@1760L2431,102@4328L2146,98@4201L2273:MainRoute.kt#v8698m");

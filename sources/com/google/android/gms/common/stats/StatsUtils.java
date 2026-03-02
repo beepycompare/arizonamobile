@@ -3,7 +3,7 @@ package com.google.android.gms.common.stats;
 import android.os.PowerManager;
 import android.os.Process;
 import android.text.TextUtils;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 @Deprecated
 /* loaded from: classes4.dex */
 public class StatsUtils {

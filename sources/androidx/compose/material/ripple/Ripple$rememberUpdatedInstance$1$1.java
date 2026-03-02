@@ -66,10 +66,14 @@ final class Ripple$rememberUpdatedInstance$1$1 extends SuspendLambda implements 
                         RippleIndicationInstance.this.addRipple((PressInteraction.Press) interaction, coroutineScope);
                     } else if (interaction instanceof PressInteraction.Release) {
                         RippleIndicationInstance.this.removeRipple(((PressInteraction.Release) interaction).getPress());
-                    } else if (interaction instanceof PressInteraction.Cancel) {
-                        RippleIndicationInstance.this.removeRipple(((PressInteraction.Cancel) interaction).getPress());
                     } else {
-                        RippleIndicationInstance.this.updateStateLayer$material_ripple(interaction, coroutineScope);
+                        boolean z = interaction instanceof PressInteraction.Cancel;
+                        RippleIndicationInstance rippleIndicationInstance2 = RippleIndicationInstance.this;
+                        if (z) {
+                            rippleIndicationInstance2.removeRipple(((PressInteraction.Cancel) interaction).getPress());
+                        } else {
+                            rippleIndicationInstance2.updateStateLayer$material_ripple(interaction, coroutineScope);
+                        }
                     }
                     return Unit.INSTANCE;
                 }

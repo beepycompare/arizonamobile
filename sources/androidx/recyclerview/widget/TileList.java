@@ -41,11 +41,12 @@ class TileList<T> {
 
     public Tile<T> addOrReplace(Tile<T> tile) {
         int indexOfKey = this.mTiles.indexOfKey(tile.mStartPosition);
+        SparseArray<Tile<T>> sparseArray = this.mTiles;
         if (indexOfKey < 0) {
-            this.mTiles.put(tile.mStartPosition, tile);
+            sparseArray.put(tile.mStartPosition, tile);
             return null;
         }
-        Tile<T> valueAt = this.mTiles.valueAt(indexOfKey);
+        Tile<T> valueAt = sparseArray.valueAt(indexOfKey);
         this.mTiles.setValueAt(indexOfKey, tile);
         if (this.mLastAccessedTile == valueAt) {
             this.mLastAccessedTile = tile;

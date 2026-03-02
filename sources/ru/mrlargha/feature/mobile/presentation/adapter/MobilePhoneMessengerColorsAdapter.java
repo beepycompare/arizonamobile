@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MessengerProfileColorItemBinding;
 /* compiled from: MobilePhoneMessengerColorsAdapter.kt */
-@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001d\u0012\u0014\b\u0002\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u000e\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00020\u0011J\u0014\u0010\u0018\u001a\u00020\u00062\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\u0019J\u0006\u0010\u001a\u001a\u00020\u0006R\u001d\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorViewHolder;", "onColorSelect", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/adapter/ColorItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnColorSelect", "()Lkotlin/jvm/functions/Function1;", "colors", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "selectColor", "selectedColor", "addData", "", "clearData", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u001d\u0012\u0014\b\u0002\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0010\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J\u000e\u0010\u0016\u001a\u00020\u00062\u0006\u0010\u0014\u001a\u00020\u0011J\u0014\u0010\u0018\u001a\u00020\u00062\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\u0019J\u0006\u0010\u001a\u001a\u00020\u0006R\u001d\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorViewHolder;", "onColorSelect", "Lkotlin/Function1;", "Lru/mrlargha/feature/mobile/presentation/adapter/ColorItem;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "getOnColorSelect", "()Lkotlin/jvm/functions/Function1;", "colors", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "selectColor", "selectedColor", "addData", "", "clearData", "mobile"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapter<MobilePhoneMessengerColorViewHolder> {
     private final List<ColorItem> colors;
@@ -37,14 +37,12 @@ public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapte
         this((i & 1) != 0 ? new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.adapter.MobilePhoneMessengerColorsAdapter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = MobilePhoneMessengerColorsAdapter._init_$lambda$0((ColorItem) obj);
-                return _init_$lambda$0;
+                return MobilePhoneMessengerColorsAdapter._init_$lambda$0((ColorItem) obj);
             }
         } : function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(ColorItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
@@ -81,7 +79,7 @@ public final class MobilePhoneMessengerColorsAdapter extends RecyclerView.Adapte
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBindViewHolder$lambda$1(MobilePhoneMessengerColorsAdapter mobilePhoneMessengerColorsAdapter, ColorItem colorItem, View view) {
         mobilePhoneMessengerColorsAdapter.selectColor(colorItem);
         mobilePhoneMessengerColorsAdapter.onColorSelect.invoke(colorItem);

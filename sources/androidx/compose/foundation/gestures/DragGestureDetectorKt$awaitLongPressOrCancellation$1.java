@@ -25,6 +25,6 @@ public final class DragGestureDetectorKt$awaitLongPressOrCancellation$1 extends 
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return DragGestureDetectorKt.m537awaitLongPressOrCancellationrnUCldI(null, 0L, this);
+        return DragGestureDetectorKt.m463awaitLongPressOrCancellationrnUCldI(null, 0L, this);
     }
 }

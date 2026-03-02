@@ -33,7 +33,7 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy
     /* renamed from: createConstraints-xF2OJ5Q */
-    default long mo817createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
+    default long mo720createConstraintsxF2OJ5Q(int i, int i2, int i3, int i4, boolean z) {
         if (isHorizontal()) {
             return RowKt.createRowConstraints(z, i, i2, i3, i4);
         }
@@ -90,7 +90,7 @@ public interface FlowLineMeasurePolicy extends RowColumnMeasurePolicy {
         if (rowColumnParentData == null || (crossAxisAlignment = rowColumnParentData.getCrossAxisAlignment()) == null) {
             crossAxisAlignment = getCrossAxisAlignment();
         }
-        return crossAxisAlignment.align$foundation_layout(i, layoutDirection, placeable, i2);
+        return crossAxisAlignment.align$foundation_layout(i, crossAxisSize(placeable), layoutDirection, placeable, i2);
     }
 
     @Override // androidx.compose.foundation.layout.RowColumnMeasurePolicy

@@ -20,6 +20,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
     private MediaPeriod.Callback callback;
     private ClippingMediaSource.IllegalClippingException clippingError;
     long endUs;
+    private long lastReportedDiscontinuityUs;
     public final MediaPeriod mediaPeriod;
     private long pendingInitialDiscontinuityPositionUs;
     private ClippingSampleStream[] sampleStreams = new ClippingSampleStream[0];
@@ -27,7 +28,8 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
 
     public ClippingMediaPeriod(MediaPeriod mediaPeriod, boolean z, long j, long j2) {
         this.mediaPeriod = mediaPeriod;
-        this.pendingInitialDiscontinuityPositionUs = z ? j : C.TIME_UNSET;
+        this.pendingInitialDiscontinuityPositionUs = z ? j : -9223372036854775807L;
+        this.lastReportedDiscontinuityUs = C.TIME_UNSET;
         this.startUs = j;
         this.endUs = j2;
     }
@@ -89,10 +91,12 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
         long enforceClippingRange = enforceClippingRange(selectTracks, j, this.endUs);
         this.pendingInitialDiscontinuityPositionUs = (isPendingInitialDiscontinuity() && shouldKeepInitialDiscontinuity(selectTracks, j, exoTrackSelectionArr)) ? enforceClippingRange : C.TIME_UNSET;
         for (int i2 = 0; i2 < sampleStreamArr.length; i2++) {
-            if (sampleStreamArr2[i2] == null) {
-                this.sampleStreams[i2] = null;
+            SampleStream sampleStream2 = sampleStreamArr2[i2];
+            ClippingSampleStream[] clippingSampleStreamArr2 = this.sampleStreams;
+            if (sampleStream2 == null) {
+                clippingSampleStreamArr2[i2] = null;
             } else {
-                ClippingSampleStream clippingSampleStream2 = this.sampleStreams[i2];
+                ClippingSampleStream clippingSampleStream2 = clippingSampleStreamArr2[i2];
                 if (clippingSampleStream2 == null || clippingSampleStream2.childStream != sampleStreamArr2[i2]) {
                     this.sampleStreams[i2] = new ClippingSampleStream(sampleStreamArr2[i2]);
                 }
@@ -117,11 +121,20 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
         if (isPendingInitialDiscontinuity()) {
             long j = this.pendingInitialDiscontinuityPositionUs;
             this.pendingInitialDiscontinuityPositionUs = C.TIME_UNSET;
+            this.lastReportedDiscontinuityUs = j;
             long readDiscontinuity = readDiscontinuity();
             return readDiscontinuity != C.TIME_UNSET ? readDiscontinuity : j;
         }
         long readDiscontinuity2 = this.mediaPeriod.readDiscontinuity();
-        return readDiscontinuity2 == C.TIME_UNSET ? C.TIME_UNSET : enforceClippingRange(readDiscontinuity2, this.startUs, this.endUs);
+        if (readDiscontinuity2 == C.TIME_UNSET) {
+            return C.TIME_UNSET;
+        }
+        long enforceClippingRange = enforceClippingRange(readDiscontinuity2, this.startUs, this.endUs);
+        if (enforceClippingRange == this.lastReportedDiscontinuityUs) {
+            return C.TIME_UNSET;
+        }
+        this.lastReportedDiscontinuityUs = enforceClippingRange;
+        return enforceClippingRange;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod, androidx.media3.exoplayer.source.SequenceableLoader

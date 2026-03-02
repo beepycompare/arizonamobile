@@ -69,7 +69,7 @@ public final class TextFieldSelectionManagerKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit TextFieldSelectionHandle$lambda$3(boolean z, ResolvedTextDirection resolvedTextDirection, TextFieldSelectionManager textFieldSelectionManager, int i, Composer composer, int i2) {
         TextFieldSelectionHandle(z, resolvedTextDirection, textFieldSelectionManager, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -113,15 +113,15 @@ public final class TextFieldSelectionManagerKt {
                 rememberedValue2 = new OffsetProvider() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$TextFieldSelectionHandle$1$1
                     @Override // androidx.compose.foundation.text.selection.OffsetProvider
                     /* renamed from: provide-F1C5BW0 */
-                    public final long mo1308provideF1C5BW0() {
-                        return TextFieldSelectionManager.this.m1921getHandlePositiontuRUvjQ$foundation(z);
+                    public final long mo1144provideF1C5BW0() {
+                        return TextFieldSelectionManager.this.m1662getHandlePositiontuRUvjQ$foundation(z);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             OffsetProvider offsetProvider = (OffsetProvider) rememberedValue2;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            boolean m7700getReversedimpl = TextRange.m7700getReversedimpl(textFieldSelectionManager.getValue$foundation().m7955getSelectiond9O1mEE());
+            boolean m7002getReversedimpl = TextRange.m7002getReversedimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE());
             float handleLineHeight$foundation = textFieldSelectionManager.getHandleLineHeight$foundation(z);
             Modifier.Companion companion = Modifier.Companion;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 664052843, "CC(remember):TextFieldSelectionManager.kt#9igjgp");
@@ -138,7 +138,7 @@ public final class TextFieldSelectionManagerKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            AndroidSelectionHandles_androidKt.m1823SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, m7700getReversedimpl, 0L, handleLineHeight$foundation, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), startRestartGroup, (i2 << 3) & 1008, 16);
+            AndroidSelectionHandles_androidKt.m1579SelectionHandlewLIcFTc(offsetProvider, z, resolvedTextDirection, m7002getReversedimpl, 0L, handleLineHeight$foundation, SuspendingPointerInputFilterKt.pointerInput(companion, textDragObserver, (PointerInputEventHandler) rememberedValue3), startRestartGroup, (i2 << 3) & 1008, 16);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -148,9 +148,7 @@ public final class TextFieldSelectionManagerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit TextFieldSelectionHandle$lambda$3;
-                    TextFieldSelectionHandle$lambda$3 = TextFieldSelectionManagerKt.TextFieldSelectionHandle$lambda$3(z, resolvedTextDirection, textFieldSelectionManager, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return TextFieldSelectionHandle$lambda$3;
+                    return TextFieldSelectionManagerKt.TextFieldSelectionHandle$lambda$3(z, resolvedTextDirection, textFieldSelectionManager, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -163,73 +161,71 @@ public final class TextFieldSelectionManagerKt {
         if (state$foundation == null || (layoutCoordinates = state$foundation.getLayoutCoordinates()) == null || (visibleBounds = SelectionManagerKt.visibleBounds(layoutCoordinates)) == null) {
             return false;
         }
-        return SelectionManagerKt.m1892containsInclusiveUv8p0NA(visibleBounds, textFieldSelectionManager.m1921getHandlePositiontuRUvjQ$foundation(z));
+        return SelectionManagerKt.m1635containsInclusiveUv8p0NA(visibleBounds, textFieldSelectionManager.m1662getHandlePositiontuRUvjQ$foundation(z));
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-O0kMr_c  reason: not valid java name */
-    public static final long m1931calculateSelectionMagnifierCenterAndroidO0kMr_c(TextFieldSelectionManager textFieldSelectionManager, long j) {
-        int m7701getStartimpl;
+    public static final long m1671calculateSelectionMagnifierCenterAndroidO0kMr_c(TextFieldSelectionManager textFieldSelectionManager, long j) {
+        int m7003getStartimpl;
         TextLayoutResultProxy layoutResult;
         TextDelegate textDelegate;
         AnnotatedString text;
-        Offset m1919getCurrentDragPosition_m7T9E = textFieldSelectionManager.m1919getCurrentDragPosition_m7T9E();
-        if (m1919getCurrentDragPosition_m7T9E == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        Offset m1660getCurrentDragPosition_m7T9E = textFieldSelectionManager.m1660getCurrentDragPosition_m7T9E();
+        if (m1660getCurrentDragPosition_m7T9E == null) {
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
-        long m5189unboximpl = m1919getCurrentDragPosition_m7T9E.m5189unboximpl();
+        long m4537unboximpl = m1660getCurrentDragPosition_m7T9E.m4537unboximpl();
         AnnotatedString transformedText$foundation = textFieldSelectionManager.getTransformedText$foundation();
         if (transformedText$foundation == null || transformedText$foundation.length() == 0) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         Handle draggingHandle = textFieldSelectionManager.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
         if (i == -1) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         if (i == 1 || i == 2) {
-            m7701getStartimpl = TextRange.m7701getStartimpl(textFieldSelectionManager.getValue$foundation().m7955getSelectiond9O1mEE());
+            m7003getStartimpl = TextRange.m7003getStartimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE());
         } else if (i != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            m7701getStartimpl = TextRange.m7696getEndimpl(textFieldSelectionManager.getValue$foundation().m7955getSelectiond9O1mEE());
+            m7003getStartimpl = TextRange.m6998getEndimpl(textFieldSelectionManager.getValue$foundation().m7253getSelectiond9O1mEE());
         }
         LegacyTextFieldState state$foundation = textFieldSelectionManager.getState$foundation();
         if (state$foundation == null || (layoutResult = state$foundation.getLayoutResult()) == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         LegacyTextFieldState state$foundation2 = textFieldSelectionManager.getState$foundation();
         if (state$foundation2 == null || (textDelegate = state$foundation2.getTextDelegate()) == null || (text = textDelegate.getText()) == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
-        int coerceIn = RangesKt.coerceIn(textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(m7701getStartimpl), 0, text.length());
-        float intBitsToFloat = Float.intBitsToFloat((int) (layoutResult.m1472translateDecorationToInnerCoordinatesMKHz9U$foundation(m5189unboximpl) >> 32));
+        int coerceIn = RangesKt.coerceIn(textFieldSelectionManager.getOffsetMapping$foundation().originalToTransformed(m7003getStartimpl), 0, text.length());
+        float intBitsToFloat = Float.intBitsToFloat((int) (layoutResult.m1293translateDecorationToInnerCoordinatesMKHz9U$foundation(m4537unboximpl) >> 32));
         TextLayoutResult value = layoutResult.getValue();
         int lineForOffset = value.getLineForOffset(coerceIn);
         float lineLeft = value.getLineLeft(lineForOffset);
         float lineRight = value.getLineRight(lineForOffset);
         float coerceIn2 = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
-        if (!IntSize.m8427equalsimpl0(j, IntSize.Companion.m8434getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn2) > ((int) (j >> 32)) / 2) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        if (!IntSize.m7724equalsimpl0(j, IntSize.Companion.m7731getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn2) > ((int) (j >> 32)) / 2) {
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         float lineTop = value.getLineTop(lineForOffset);
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceIn2) << 32) | (Float.floatToRawIntBits(((value.getLineBottom(lineForOffset) - lineTop) / 2) + lineTop) & 4294967295L));
     }
 
     public static final Function1<ContextMenuScope, Unit> contextMenuBuilder(final TextFieldSelectionManager textFieldSelectionManager, final ContextMenuState contextMenuState, final State<MenuItemsAvailability> state) {
         return new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contextMenuBuilder$lambda$0;
-                contextMenuBuilder$lambda$0 = TextFieldSelectionManagerKt.contextMenuBuilder$lambda$0(State.this, textFieldSelectionManager, contextMenuState, (ContextMenuScope) obj);
-                return contextMenuBuilder$lambda$0;
+                return TextFieldSelectionManagerKt.contextMenuBuilder$lambda$0(State.this, textFieldSelectionManager, contextMenuState, (ContextMenuScope) obj);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit contextMenuBuilder$lambda$0(State state, final TextFieldSelectionManager textFieldSelectionManager, ContextMenuState contextMenuState, ContextMenuScope contextMenuScope) {
-        int m1413unboximpl = ((MenuItemsAvailability) state.getValue()).m1413unboximpl();
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Cut, MenuItemsAvailability.m1408getCanCutimpl(m1413unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda2
+        int m1239unboximpl = ((MenuItemsAvailability) state.getValue()).m1239unboximpl();
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Cut, MenuItemsAvailability.m1234getCanCutimpl(m1239unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$0$0;
@@ -237,7 +233,7 @@ public final class TextFieldSelectionManagerKt {
                 return contextMenuBuilder$lambda$0$0;
             }
         });
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Copy, MenuItemsAvailability.m1407getCanCopyimpl(m1413unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda3
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Copy, MenuItemsAvailability.m1233getCanCopyimpl(m1239unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$0$1;
@@ -245,7 +241,7 @@ public final class TextFieldSelectionManagerKt {
                 return contextMenuBuilder$lambda$0$1;
             }
         });
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Paste, MenuItemsAvailability.m1409getCanPasteimpl(m1413unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda4
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Paste, MenuItemsAvailability.m1235getCanPasteimpl(m1239unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$0$2;
@@ -253,7 +249,7 @@ public final class TextFieldSelectionManagerKt {
                 return contextMenuBuilder$lambda$0$2;
             }
         });
-        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1410getCanSelectAllimpl(m1413unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda5
+        contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.SelectAll, MenuItemsAvailability.m1236getCanSelectAllimpl(m1239unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit contextMenuBuilder$lambda$0$3;
@@ -262,7 +258,7 @@ public final class TextFieldSelectionManagerKt {
             }
         });
         if (PlatformUtils_androidKt.isAutofillAvailable()) {
-            contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1406getCanAutofillimpl(m1413unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda6
+            contextMenuBuilder$lambda$0$textFieldItem(contextMenuScope, contextMenuState, TextContextMenuItems.Autofill, MenuItemsAvailability.m1232getCanAutofillimpl(m1239unboximpl), new Function0() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManagerKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit contextMenuBuilder$lambda$0$4;

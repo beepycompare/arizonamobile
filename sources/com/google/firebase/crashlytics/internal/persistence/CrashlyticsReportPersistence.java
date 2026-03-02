@@ -239,10 +239,11 @@ public class CrashlyticsReportPersistence {
                 return;
             }
             Logger.getLogger().d("appQualitySessionId: " + str2);
+            FileStore fileStore = this.fileStore;
             if (z) {
-                report = this.fileStore.getPriorityReport(session.getIdentifier());
+                report = fileStore.getPriorityReport(session.getIdentifier());
             } else {
-                report = this.fileStore.getReport(session.getIdentifier());
+                report = fileStore.getReport(session.getIdentifier());
             }
             writeTextFile(report, crashlyticsReportJsonTransform.reportToJson(withEvents));
         } catch (IOException e) {

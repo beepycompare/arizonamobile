@@ -34,29 +34,25 @@ public final class ChildBackHandlerKt {
             LifecycleExtKt.subscribe$default(lifecycle, null, new Function0() { // from class: com.arkivanov.decompose.backhandler.ChildBackHandlerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit child$lambda$0;
-                    child$lambda$0 = ChildBackHandlerKt.child$lambda$0(ChildBackHandler.this);
-                    return child$lambda$0;
+                    return ChildBackHandlerKt.child$lambda$0(ChildBackHandler.this);
                 }
             }, null, null, new Function0() { // from class: com.arkivanov.decompose.backhandler.ChildBackHandlerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit child$lambda$1;
-                    child$lambda$1 = ChildBackHandlerKt.child$lambda$1(ChildBackHandler.this);
-                    return child$lambda$1;
+                    return ChildBackHandlerKt.child$lambda$1(ChildBackHandler.this);
                 }
             }, new ChildBackHandlerKt$child$3(childBackHandler), 13, null);
         }
         return childBackHandler;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit child$lambda$0(ChildBackHandler childBackHandler) {
         childBackHandler.setEnabled(true);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit child$lambda$1(ChildBackHandler childBackHandler) {
         childBackHandler.setEnabled(false);
         return Unit.INSTANCE;

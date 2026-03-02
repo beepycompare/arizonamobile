@@ -26,7 +26,7 @@ public final class LazyStaggeredGridIntervalContent extends LazyLayoutIntervalCo
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object item$lambda$1(Object obj, int i) {
         return obj;
     }
@@ -61,9 +61,7 @@ public final class LazyStaggeredGridIntervalContent extends LazyLayoutIntervalCo
         } : null, new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridIntervalContent$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj3) {
-                Object item$lambda$1;
-                item$lambda$1 = LazyStaggeredGridIntervalContent.item$lambda$1(obj2, ((Integer) obj3).intValue());
-                return item$lambda$1;
+                return LazyStaggeredGridIntervalContent.item$lambda$1(obj2, ((Integer) obj3).intValue());
             }
         }, staggeredGridItemSpan != null ? new Function1() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridIntervalContent$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
@@ -75,14 +73,12 @@ public final class LazyStaggeredGridIntervalContent extends LazyLayoutIntervalCo
         } : null, ComposableLambdaKt.composableLambdaInstance(1062451479, true, new Function4() { // from class: androidx.compose.foundation.lazy.staggeredgrid.LazyStaggeredGridIntervalContent$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj3, Object obj4, Object obj5, Object obj6) {
-                Unit item$lambda$3;
-                item$lambda$3 = LazyStaggeredGridIntervalContent.item$lambda$3(Function3.this, (LazyStaggeredGridItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
-                return item$lambda$3;
+                return LazyStaggeredGridIntervalContent.item$lambda$3(Function3.this, (LazyStaggeredGridItemScope) obj3, ((Integer) obj4).intValue(), (Composer) obj5, ((Integer) obj6).intValue());
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit item$lambda$3(Function3 function3, LazyStaggeredGridItemScope lazyStaggeredGridItemScope, int i, Composer composer, int i2) {
         ComposerKt.sourceInformation(composer, "CN(it)44@1597L9:LazyStaggeredGridIntervalContent.kt#fzvcnm");
         if ((i2 & 6) == 0) {

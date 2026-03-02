@@ -10,29 +10,29 @@ public final class FabMediumTokens {
     private static final float ContainerHeight;
     private static final float ContainerWidth;
     public static final FabMediumTokens INSTANCE = new FabMediumTokens();
-    private static final float IconSize = Dp.m8258constructorimpl((float) 28.0d);
+    private static final float IconSize = Dp.m7555constructorimpl((float) 28.0d);
 
     private FabMediumTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m4012getContainerHeightD9Ej5fM() {
+    public final float m3396getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 
     /* renamed from: getContainerWidth-D9Ej5fM  reason: not valid java name */
-    public final float m4013getContainerWidthD9Ej5fM() {
+    public final float m3397getContainerWidthD9Ej5fM() {
         return ContainerWidth;
     }
 
     /* renamed from: getIconSize-D9Ej5fM  reason: not valid java name */
-    public final float m4014getIconSizeD9Ej5fM() {
+    public final float m3398getIconSizeD9Ej5fM() {
         return IconSize;
     }
 
     static {
         float f = (float) 80.0d;
-        ContainerHeight = Dp.m8258constructorimpl(f);
-        ContainerWidth = Dp.m8258constructorimpl(f);
+        ContainerHeight = Dp.m7555constructorimpl(f);
+        ContainerWidth = Dp.m7555constructorimpl(f);
     }
 }

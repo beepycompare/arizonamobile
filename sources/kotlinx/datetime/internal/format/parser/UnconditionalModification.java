@@ -18,9 +18,9 @@ public final class UnconditionalModification<Output> implements ParserOperation<
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11907consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10796consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         this.operation.invoke(output);
-        return ParseResult.Companion.m11918OkQi1bsqg(i);
+        return ParseResult.Companion.m10807OkQi1bsqg(i);
     }
 }

@@ -51,12 +51,14 @@ public final class ObservableTakeFirst$subscribe$wrappedObserver$1<T> implements
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onNext(T t) {
-        if (this.emitCounterLeft.decrementAndGet() == 0) {
-            this.$downstream.onNext(t);
+        int decrementAndGet = this.emitCounterLeft.decrementAndGet();
+        ObservableObserver<T> observableObserver = this.$downstream;
+        if (decrementAndGet == 0) {
+            observableObserver.onNext(t);
             onCompleteInternal();
             return;
         }
-        this.$downstream.onNext(t);
+        observableObserver.onNext(t);
     }
 
     private final void onCompleteInternal() {

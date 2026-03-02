@@ -49,15 +49,13 @@ public final class Transformations$switchMap$2<X> implements Observer<X> {
             mediatorLiveData2.addSource(liveData, new Transformations$sam$androidx_lifecycle_Observer$0(new Function1() { // from class: androidx.lifecycle.Transformations$switchMap$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit onChanged$lambda$0;
-                    onChanged$lambda$0 = Transformations$switchMap$2.onChanged$lambda$0(MediatorLiveData.this, obj2);
-                    return onChanged$lambda$0;
+                    return Transformations$switchMap$2.onChanged$lambda$0(MediatorLiveData.this, obj2);
                 }
             }));
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onChanged$lambda$0(MediatorLiveData mediatorLiveData, Object obj) {
         mediatorLiveData.setValue(obj);
         return Unit.INSTANCE;

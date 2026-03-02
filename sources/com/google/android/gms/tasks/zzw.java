@@ -5,7 +5,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -20,14 +20,14 @@ public final class zzw<TResult> extends Task<TResult> {
     }
 
     private final void zzg() {
-        if (this.zzd) {
-            throw new CancellationException("Task is already canceled.");
+        if (this.zzc) {
+            throw DuplicateTaskCompletionException.of(this);
         }
     }
 
     private final void zzh() {
-        if (this.zzc) {
-            throw DuplicateTaskCompletionException.of(this);
+        if (this.zzd) {
+            throw new CancellationException("Task is already canceled.");
         }
     }
 
@@ -99,7 +99,7 @@ public final class zzw<TResult> extends Task<TResult> {
         TResult tresult;
         synchronized (this.zza) {
             zzf();
-            zzg();
+            zzh();
             Exception exc = this.zzf;
             if (exc == null) {
                 tresult = (TResult) this.zze;
@@ -145,35 +145,35 @@ public final class zzw<TResult> extends Task<TResult> {
         return zzwVar;
     }
 
-    public final void zza(Exception exc) {
-        Preconditions.checkNotNull(exc, "Exception must not be null");
+    public final void zza(Object obj) {
         synchronized (this.zza) {
-            zzh();
-            this.zzc = true;
-            this.zzf = exc;
-        }
-        this.zzb.zzb(this);
-    }
-
-    public final void zzb(Object obj) {
-        synchronized (this.zza) {
-            zzh();
+            zzg();
             this.zzc = true;
             this.zze = obj;
         }
         this.zzb.zzb(this);
     }
 
-    public final boolean zzc() {
+    public final boolean zzb(Object obj) {
         synchronized (this.zza) {
             if (this.zzc) {
                 return false;
             }
             this.zzc = true;
-            this.zzd = true;
+            this.zze = obj;
             this.zzb.zzb(this);
             return true;
         }
+    }
+
+    public final void zzc(Exception exc) {
+        Preconditions.checkNotNull(exc, "Exception must not be null");
+        synchronized (this.zza) {
+            zzg();
+            this.zzc = true;
+            this.zzf = exc;
+        }
+        this.zzb.zzb(this);
     }
 
     public final boolean zzd(Exception exc) {
@@ -189,13 +189,13 @@ public final class zzw<TResult> extends Task<TResult> {
         }
     }
 
-    public final boolean zze(Object obj) {
+    public final boolean zze() {
         synchronized (this.zza) {
             if (this.zzc) {
                 return false;
             }
             this.zzc = true;
-            this.zze = obj;
+            this.zzd = true;
             this.zzb.zzb(this);
             return true;
         }
@@ -276,16 +276,16 @@ public final class zzw<TResult> extends Task<TResult> {
         TResult tresult;
         synchronized (this.zza) {
             zzf();
-            zzg();
-            if (!cls.isInstance(this.zzf)) {
-                Exception exc = this.zzf;
-                if (exc == null) {
-                    tresult = (TResult) this.zze;
-                } else {
-                    throw new RuntimeExecutionException(exc);
-                }
+            zzh();
+            boolean isInstance = cls.isInstance(this.zzf);
+            Exception exc = this.zzf;
+            if (isInstance) {
+                throw cls.cast(exc);
+            }
+            if (exc == null) {
+                tresult = (TResult) this.zze;
             } else {
-                throw cls.cast(this.zzf);
+                throw new RuntimeExecutionException(exc);
             }
         }
         return tresult;

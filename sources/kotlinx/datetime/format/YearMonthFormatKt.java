@@ -24,9 +24,14 @@ public final class YearMonthFormatKt {
     private static final Lazy ISO_YEAR_MONTH$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.YearMonthFormatKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormat ISO_YEAR_MONTH_delegate$lambda$1;
-            ISO_YEAR_MONTH_delegate$lambda$1 = YearMonthFormatKt.ISO_YEAR_MONTH_delegate$lambda$1();
-            return ISO_YEAR_MONTH_delegate$lambda$1;
+            DateTimeFormat build;
+            build = YearMonthFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.YearMonthFormatKt$$ExternalSyntheticLambda1
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return YearMonthFormatKt.ISO_YEAR_MONTH_delegate$lambda$1$lambda$0((DateTimeFormatBuilder.WithYearMonth) obj);
+                }
+            });
+            return build;
         }
     });
 
@@ -71,23 +76,11 @@ public final class YearMonthFormatKt {
         return (DateTimeFormat) ISO_YEAR_MONTH$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final DateTimeFormat ISO_YEAR_MONTH_delegate$lambda$1() {
-        return YearMonthFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.YearMonthFormatKt$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit ISO_YEAR_MONTH_delegate$lambda$1$lambda$0;
-                ISO_YEAR_MONTH_delegate$lambda$1$lambda$0 = YearMonthFormatKt.ISO_YEAR_MONTH_delegate$lambda$1$lambda$0((DateTimeFormatBuilder.WithYearMonth) obj);
-                return ISO_YEAR_MONTH_delegate$lambda$1$lambda$0;
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit ISO_YEAR_MONTH_delegate$lambda$1$lambda$0(DateTimeFormatBuilder.WithYearMonth build) {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         DateTimeFormatBuilder.WithYearMonth.year$default(build, null, 1, null);
-        DateTimeFormatBuilderKt.m11885char(build, '-');
+        DateTimeFormatBuilderKt.m10789char(build, '-');
         DateTimeFormatBuilder.WithYearMonth.monthNumber$default(build, null, 1, null);
         return Unit.INSTANCE;
     }

@@ -23,18 +23,18 @@ public final class ElevationKt {
     private static final Easing OutgoingSpecEasing;
 
     /* renamed from: animateElevation-rAjV9yQ$default  reason: not valid java name */
-    public static /* synthetic */ Object m3613animateElevationrAjV9yQ$default(Animatable animatable, float f, Interaction interaction, Interaction interaction2, Continuation continuation, int i, Object obj) {
+    public static /* synthetic */ Object m3004animateElevationrAjV9yQ$default(Animatable animatable, float f, Interaction interaction, Interaction interaction2, Continuation continuation, int i, Object obj) {
         if ((i & 2) != 0) {
             interaction = null;
         }
         if ((i & 4) != 0) {
             interaction2 = null;
         }
-        return m3612animateElevationrAjV9yQ(animatable, f, interaction, interaction2, continuation);
+        return m3003animateElevationrAjV9yQ(animatable, f, interaction, interaction2, continuation);
     }
 
     /* renamed from: animateElevation-rAjV9yQ  reason: not valid java name */
-    public static final Object m3612animateElevationrAjV9yQ(Animatable<Dp, ?> animatable, float f, Interaction interaction, Interaction interaction2, Continuation<? super Unit> continuation) {
+    public static final Object m3003animateElevationrAjV9yQ(Animatable<Dp, ?> animatable, float f, Interaction interaction, Interaction interaction2, Continuation<? super Unit> continuation) {
         AnimationSpec<Dp> outgoingAnimationSpecForInteraction;
         if (interaction2 != null) {
             outgoingAnimationSpecForInteraction = ElevationDefaults.INSTANCE.incomingAnimationSpecForInteraction(interaction2);
@@ -43,10 +43,10 @@ public final class ElevationKt {
         }
         AnimationSpec<Dp> animationSpec = outgoingAnimationSpecForInteraction;
         if (animationSpec != null) {
-            Object animateTo$default = Animatable.animateTo$default(animatable, Dp.m8256boximpl(f), animationSpec, null, null, continuation, 12, null);
+            Object animateTo$default = Animatable.animateTo$default(animatable, Dp.m7553boximpl(f), animationSpec, null, null, continuation, 12, null);
             return animateTo$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? animateTo$default : Unit.INSTANCE;
         }
-        Object snapTo = animatable.snapTo(Dp.m8256boximpl(f), continuation);
+        Object snapTo = animatable.snapTo(Dp.m7553boximpl(f), continuation);
         return snapTo == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? snapTo : Unit.INSTANCE;
     }
 

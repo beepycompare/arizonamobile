@@ -90,9 +90,7 @@ public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLa
             obj = Animatable.animateTo$default(animatable2, boxFloat, finiteAnimationSpec, null, new Function1() { // from class: androidx.compose.foundation.lazy.layout.LazyLayoutItemAnimation$animateAppearance$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = LazyLayoutItemAnimation$animateAppearance$2.invokeSuspend$lambda$0(GraphicsLayer.this, lazyLayoutItemAnimation, (Animatable) obj2);
-                    return invokeSuspend$lambda$0;
+                    return LazyLayoutItemAnimation$animateAppearance$2.invokeSuspend$lambda$0(GraphicsLayer.this, lazyLayoutItemAnimation, (Animatable) obj2);
                 }
             }, this, 4, null);
         } catch (Throwable th) {
@@ -101,7 +99,7 @@ public final class LazyLayoutItemAnimation$animateAppearance$2 extends SuspendLa
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(GraphicsLayer graphicsLayer, LazyLayoutItemAnimation lazyLayoutItemAnimation, Animatable animatable) {
         Function0 function0;
         graphicsLayer.setAlpha(((Number) animatable.getValue()).floatValue());

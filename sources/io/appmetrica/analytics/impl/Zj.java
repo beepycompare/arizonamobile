@@ -6,10 +6,10 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public final class Zj implements ServiceComponentModuleConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0468o4 f890a;
+    public final C0467o4 f890a;
 
-    public Zj(C0468o4 c0468o4) {
-        this.f890a = c0468o4;
+    public Zj(C0467o4 c0467o4) {
+        this.f890a = c0467o4;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig

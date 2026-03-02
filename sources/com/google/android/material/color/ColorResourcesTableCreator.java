@@ -393,11 +393,13 @@ public final class ColorResourcesTableCreator {
             this.offsetTable = new int[i];
             int i3 = 0;
             for (short s = 0; s < i; s = (short) (s + 1)) {
-                if (set.contains(Short.valueOf(s))) {
-                    this.offsetTable[s] = i3;
+                boolean contains = set.contains(Short.valueOf(s));
+                int[] iArr = this.offsetTable;
+                if (contains) {
+                    iArr[s] = i3;
                     i3 += 16;
                 } else {
-                    this.offsetTable[s] = -1;
+                    iArr[s] = -1;
                 }
             }
             this.header = new ResChunkHeader(ColorResourcesTableCreator.HEADER_TYPE_TYPE, HEADER_SIZE, getChunkSize());

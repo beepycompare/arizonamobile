@@ -32,9 +32,10 @@ public final class SnapshotKt {
     private static final Function1<SnapshotIdSet, Unit> emptyLambda = new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit emptyLambda$lambda$0;
-            emptyLambda$lambda$0 = SnapshotKt.emptyLambda$lambda$0((SnapshotIdSet) obj);
-            return emptyLambda$lambda$0;
+            Unit unit;
+            SnapshotIdSet snapshotIdSet = (SnapshotIdSet) obj;
+            unit = Unit.INSTANCE;
+            return unit;
         }
     };
     private static final SnapshotThreadLocal<Snapshot> threadSnapshot = new SnapshotThreadLocal<>();
@@ -81,10 +82,6 @@ public final class SnapshotKt {
         pendingApplyObserverCount = new AtomicInt(0);
     }
 
-    public static final Unit emptyLambda$lambda$0(SnapshotIdSet snapshotIdSet) {
-        return Unit.INSTANCE;
-    }
-
     public static /* synthetic */ Snapshot createTransparentSnapshotWithNoParentReadObserver$default(Snapshot snapshot, Function1 function1, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             function1 = null;
@@ -120,9 +117,7 @@ public final class SnapshotKt {
         return new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mergedReadObserver$lambda$0;
-                mergedReadObserver$lambda$0 = SnapshotKt.mergedReadObserver$lambda$0(Function1.this, function12, obj);
-                return mergedReadObserver$lambda$0;
+                return SnapshotKt.mergedReadObserver$lambda$0(Function1.this, function12, obj);
             }
         };
     }
@@ -140,9 +135,7 @@ public final class SnapshotKt {
         return new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit mergedWriteObserver$lambda$0;
-                mergedWriteObserver$lambda$0 = SnapshotKt.mergedWriteObserver$lambda$0(Function1.this, function12, obj);
-                return mergedWriteObserver$lambda$0;
+                return SnapshotKt.mergedWriteObserver$lambda$0(Function1.this, function12, obj);
             }
         };
     }
@@ -249,9 +242,7 @@ public final class SnapshotKt {
         return (T) advanceGlobalSnapshot(new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Snapshot takeNewSnapshot$lambda$0;
-                takeNewSnapshot$lambda$0 = SnapshotKt.takeNewSnapshot$lambda$0(Function1.this, (SnapshotIdSet) obj);
-                return takeNewSnapshot$lambda$0;
+                return SnapshotKt.takeNewSnapshot$lambda$0(Function1.this, (SnapshotIdSet) obj);
             }
         });
     }
@@ -470,7 +461,7 @@ public final class SnapshotKt {
     public static final <T extends StateRecord> T writableRecord(T t, StateObject stateObject, Snapshot snapshot) {
         T t2;
         if (snapshot.getReadOnly()) {
-            snapshot.mo4866recordModified$runtime(stateObject);
+            snapshot.mo4219recordModified$runtime(stateObject);
         }
         long snapshotId = snapshot.getSnapshotId();
         T t3 = (T) readable(t, snapshotId, snapshot.getInvalid$runtime());
@@ -491,7 +482,7 @@ public final class SnapshotKt {
             }
             Intrinsics.checkNotNull(t2, "null cannot be cast to non-null type T of androidx.compose.runtime.snapshots.SnapshotKt.writableRecord");
             if (t3.getSnapshotId$runtime() != SnapshotId_jvmKt.toSnapshotId(1)) {
-                snapshot.mo4866recordModified$runtime(stateObject);
+                snapshot.mo4219recordModified$runtime(stateObject);
             }
             return t2;
         }
@@ -500,7 +491,7 @@ public final class SnapshotKt {
     public static final <T extends StateRecord> T overwritableRecord(T t, StateObject stateObject, Snapshot snapshot, T t2) {
         T t3;
         if (snapshot.getReadOnly()) {
-            snapshot.mo4866recordModified$runtime(stateObject);
+            snapshot.mo4219recordModified$runtime(stateObject);
         }
         long snapshotId = snapshot.getSnapshotId();
         if (t2.getSnapshotId$runtime() == snapshotId) {
@@ -511,7 +502,7 @@ public final class SnapshotKt {
         }
         t3.setSnapshotId$runtime(snapshotId);
         if (t2.getSnapshotId$runtime() != SnapshotId_jvmKt.toSnapshotId(1)) {
-            snapshot.mo4866recordModified$runtime(stateObject);
+            snapshot.mo4219recordModified$runtime(stateObject);
         }
         return t3;
     }

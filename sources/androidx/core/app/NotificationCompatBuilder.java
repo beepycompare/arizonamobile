@@ -254,10 +254,12 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
     }
 
     protected Notification buildInternal() {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return this.mBuilder.build();
+        int i = Build.VERSION.SDK_INT;
+        Notification.Builder builder = this.mBuilder;
+        if (i >= 26) {
+            return builder.build();
         }
-        Notification build = this.mBuilder.build();
+        Notification build = builder.build();
         if (this.mGroupAlertBehavior != 0) {
             if (Api20Impl.getGroup(build) != null && (build.flags & 512) != 0 && this.mGroupAlertBehavior == 2) {
                 removeSoundAndVibration(build);

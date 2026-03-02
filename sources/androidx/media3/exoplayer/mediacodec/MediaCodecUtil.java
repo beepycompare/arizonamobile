@@ -1,5 +1,6 @@
 package androidx.media3.exoplayer.mediacodec;
 
+import android.content.Context;
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.os.Build;
@@ -22,14 +23,14 @@ import java.util.HashMap;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MediaCodecUtil {
     private static final String TAG = "MediaCodecUtil";
     private static final HashMap<CodecKey, List<MediaCodecInfo>> decoderInfosCache = new HashMap<>();
     private static int maxH264DecodableFrameSize = -1;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface MediaCodecListCompat {
         int getCodecCount();
 
@@ -43,7 +44,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface ScoreProvider<T> {
         int getScore(T t);
     }
@@ -85,7 +86,7 @@ public final class MediaCodecUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class DecoderQueryException extends Exception {
         private DecoderQueryException(Throwable th) {
             super("Failed to query underlying media codecs", th);
@@ -154,40 +155,36 @@ public final class MediaCodecUtil {
         return mediaCodecSelector.getDecoderInfos(alternativeCodecMimeType, z, z2);
     }
 
-    public static List<MediaCodecInfo> getDecoderInfosSortedByFormatSupport(List<MediaCodecInfo> list, final Format format) {
+    public static List<MediaCodecInfo> getDecoderInfosSortedByFormatSupport(final Context context, List<MediaCodecInfo> list, final Format format) {
         ArrayList arrayList = new ArrayList(list);
-        sortByScore(arrayList, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda4
+        sortByScore(arrayList, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda3
             @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.ScoreProvider
             public final int getScore(Object obj) {
-                return MediaCodecUtil.lambda$getDecoderInfosSortedByFormatSupport$0(Format.this, (MediaCodecInfo) obj);
+                return MediaCodecUtil.lambda$getDecoderInfosSortedByFormatSupport$0(context, format, (MediaCodecInfo) obj);
             }
         });
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ int lambda$getDecoderInfosSortedByFormatSupport$0(Format format, MediaCodecInfo mediaCodecInfo) {
-        return mediaCodecInfo.isFormatFunctionallySupported(format) ? 1 : 0;
+    public static /* synthetic */ int lambda$getDecoderInfosSortedByFormatSupport$0(Context context, Format format, MediaCodecInfo mediaCodecInfo) {
+        return mediaCodecInfo.isFormatFunctionallySupported(context, format) ? 1 : 0;
     }
 
-    public static List<MediaCodecInfo> getDecoderInfosSortedByFullFormatSupport(List<MediaCodecInfo> list, final Format format) {
+    public static List<MediaCodecInfo> getDecoderInfosSortedByFullFormatSupport(final Context context, List<MediaCodecInfo> list, final Format format) {
         ArrayList arrayList = new ArrayList(list);
         sortByScore(arrayList, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda1
             @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.ScoreProvider
             public final int getScore(Object obj) {
-                return MediaCodecUtil.lambda$getDecoderInfosSortedByFullFormatSupport$1(Format.this, (MediaCodecInfo) obj);
+                return MediaCodecUtil.lambda$getDecoderInfosSortedByFullFormatSupport$1(context, format, (MediaCodecInfo) obj);
             }
         });
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ int lambda$getDecoderInfosSortedByFullFormatSupport$1(Format format, MediaCodecInfo mediaCodecInfo) {
-        try {
-            return mediaCodecInfo.isFormatSupported(format) ? 1 : 0;
-        } catch (DecoderQueryException unused) {
-            return -1;
-        }
+    public static /* synthetic */ int lambda$getDecoderInfosSortedByFullFormatSupport$1(Context context, Format format, MediaCodecInfo mediaCodecInfo) {
+        return mediaCodecInfo.isFormatSupported(context, format) ? 1 : 0;
     }
 
     public static List<MediaCodecInfo> getDecoderInfosSortedBySoftwareOnly(List<MediaCodecInfo> list) {
@@ -406,7 +403,7 @@ public final class MediaCodecUtil {
             if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && list.size() == 1 && list.get(0).name.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 list.add(MediaCodecInfo.newInstance("OMX.google.raw.decoder", MimeTypes.AUDIO_RAW, MimeTypes.AUDIO_RAW, null, false, true, false, false, false));
             }
-            sortByScore(list, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda3
+            sortByScore(list, new ScoreProvider() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecUtil$$ExternalSyntheticLambda4
                 @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.ScoreProvider
                 public final int getScore(Object obj) {
                     return MediaCodecUtil.lambda$applyWorkarounds$3((MediaCodecInfo) obj);
@@ -492,7 +489,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaCodecListCompatV21 implements MediaCodecListCompat {
         private final int codecKind;
         private android.media.MediaCodecInfo[] mediaCodecInfos;
@@ -536,7 +533,7 @@ public final class MediaCodecUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private static final class MediaCodecListCompatV16 implements MediaCodecListCompat {
         @Override // androidx.media3.exoplayer.mediacodec.MediaCodecUtil.MediaCodecListCompat
         public boolean isFeatureRequired(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -568,7 +565,7 @@ public final class MediaCodecUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class CodecKey {
         public final String mimeType;
         public final boolean secure;

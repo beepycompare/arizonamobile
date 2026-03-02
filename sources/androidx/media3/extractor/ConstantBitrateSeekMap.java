@@ -11,17 +11,24 @@ public class ConstantBitrateSeekMap implements SeekMap {
     private final long firstFrameBytePosition;
     private final int frameSize;
     private final long inputLength;
+    private final boolean isEstimated;
 
     public ConstantBitrateSeekMap(long j, long j2, int i, int i2) {
         this(j, j2, i, i2, false);
     }
 
     public ConstantBitrateSeekMap(long j, long j2, int i, int i2, boolean z) {
+        this(j, j2, i, i2, z, true);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public ConstantBitrateSeekMap(long j, long j2, int i, int i2, boolean z, boolean z2) {
         this.inputLength = j;
         this.firstFrameBytePosition = j2;
         this.frameSize = i2 == -1 ? 1 : i2;
         this.bitrate = i;
         this.allowSeeksIfLengthUnknown = z;
+        this.isEstimated = z2;
         if (j == -1) {
             this.dataSize = -1L;
             this.durationUs = C.TIME_UNSET;
@@ -57,6 +64,11 @@ public class ConstantBitrateSeekMap implements SeekMap {
     @Override // androidx.media3.extractor.SeekMap
     public long getDurationUs() {
         return this.durationUs;
+    }
+
+    @Override // androidx.media3.extractor.SeekMap
+    public boolean isEstimated() {
+        return this.isEstimated;
     }
 
     public long getTimeUsAtPosition(long j) {

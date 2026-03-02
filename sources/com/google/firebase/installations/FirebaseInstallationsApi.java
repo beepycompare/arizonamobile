@@ -5,6 +5,8 @@ import com.google.firebase.installations.internal.FidListener;
 import com.google.firebase.installations.internal.FidListenerHandle;
 /* loaded from: classes4.dex */
 public interface FirebaseInstallationsApi {
+    void clearFidCache();
+
     Task<Void> delete();
 
     Task<String> getId();

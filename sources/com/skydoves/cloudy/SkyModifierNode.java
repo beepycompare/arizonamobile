@@ -33,7 +33,7 @@ final class SkyModifierNode extends Modifier.Node implements DrawModifierNode, G
     public SkyModifierNode(Sky sky) {
         Intrinsics.checkNotNullParameter(sky, "sky");
         this.sky = sky;
-        this.positionInRoot = Offset.Companion.m5195getZeroF1C5BW0();
+        this.positionInRoot = Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     public final Sky getSky() {
@@ -67,7 +67,7 @@ final class SkyModifierNode extends Modifier.Node implements DrawModifierNode, G
         Intrinsics.checkNotNullParameter(coordinates, "coordinates");
         long positionInRoot = LayoutCoordinatesKt.positionInRoot(coordinates);
         this.positionInRoot = positionInRoot;
-        this.sky.setSourceBounds$cloudy_release(RectKt.m5219Recttz77jQw(positionInRoot, IntSizeKt.m8441toSizeozmzZPI(coordinates.mo6883getSizeYbymL2g())));
+        this.sky.setSourceBounds$cloudy_release(RectKt.m4567Recttz77jQw(positionInRoot, IntSizeKt.m7738toSizeozmzZPI(coordinates.mo6224getSizeYbymL2g())));
     }
 
     @Override // androidx.compose.ui.node.DrawModifierNode
@@ -81,12 +81,10 @@ final class SkyModifierNode extends Modifier.Node implements DrawModifierNode, G
         }
         GraphicsLayer graphicsLayer2 = graphicsLayer;
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m6003recordJVtK1S4$default(contentDrawScope2, graphicsLayer2, 0L, new Function1() { // from class: com.skydoves.cloudy.SkyModifierNode$$ExternalSyntheticLambda0
+        DrawScope.m5344recordJVtK1S4$default(contentDrawScope2, graphicsLayer2, 0L, new Function1() { // from class: com.skydoves.cloudy.SkyModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit draw$lambda$1;
-                draw$lambda$1 = SkyModifierNode.draw$lambda$1(ContentDrawScope.this, (DrawScope) obj);
-                return draw$lambda$1;
+                return SkyModifierNode.draw$lambda$1(ContentDrawScope.this, (DrawScope) obj);
             }
         }, 1, null);
         this.sky.setBackgroundLayer$cloudy_release(graphicsLayer2);
@@ -94,7 +92,7 @@ final class SkyModifierNode extends Modifier.Node implements DrawModifierNode, G
         GraphicsLayerKt.drawLayer(contentDrawScope2, graphicsLayer2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit draw$lambda$1(ContentDrawScope contentDrawScope, DrawScope record) {
         Intrinsics.checkNotNullParameter(record, "$this$record");
         contentDrawScope.drawContent();

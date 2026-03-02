@@ -37,7 +37,7 @@ public final class AndroidAssetFont extends AndroidPreloadedFont {
     }
 
     public /* synthetic */ AndroidAssetFont(AssetManager assetManager, String str, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(assetManager, str, (i2 & 4) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 8) != 0 ? FontStyle.Companion.m7822getNormal_LCdwA() : i, settings, null);
+        this(assetManager, str, (i2 & 4) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 8) != 0 ? FontStyle.Companion.m7122getNormal_LCdwA() : i, settings, null);
     }
 
     @Override // androidx.compose.ui.text.font.AndroidPreloadedFont
@@ -54,7 +54,7 @@ public final class AndroidAssetFont extends AndroidPreloadedFont {
     }
 
     public String toString() {
-        return "Font(assetManager, path=" + this.path + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7817toStringimpl(mo7767getStyle_LCdwA())) + ')';
+        return "Font(assetManager, path=" + this.path + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7117toStringimpl(mo7068getStyle_LCdwA())) + ')';
     }
 
     public boolean equals(Object obj) {

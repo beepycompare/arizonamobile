@@ -25,12 +25,13 @@ public final class zzad implements Iterator {
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         zzae zzaeVar = this.zza;
-        if (this.zzb < zzaeVar.zzh()) {
-            int i = this.zzb;
-            this.zzb = i + 1;
-            return zzaeVar.zzl(i);
-        }
+        int i = this.zzb;
+        int zzh = zzaeVar.zzh();
         int i2 = this.zzb;
+        if (i < zzh) {
+            this.zzb = i2 + 1;
+            return zzaeVar.zzl(i2);
+        }
         StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 21);
         sb.append("Out of bounds index: ");
         sb.append(i2);

@@ -6,7 +6,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function2;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$3 implements Function2<LazyGridItemSpanScope, Integer, GridItemSpan> {
     final /* synthetic */ List $items;
@@ -19,11 +19,11 @@ public final class SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inl
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ GridItemSpan invoke(LazyGridItemSpanScope lazyGridItemSpanScope, Integer num) {
-        return GridItemSpan.m1063boximpl(m10155invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
+        return GridItemSpan.m938boximpl(m9122invoke_orMbw(lazyGridItemSpanScope, num.intValue()));
     }
 
     /* renamed from: invoke-_-orMbw  reason: not valid java name */
-    public final long m10155invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
-        return ((GridItemSpan) this.$span.invoke(lazyGridItemSpanScope, this.$items.get(i))).m1070unboximpl();
+    public final long m9122invoke_orMbw(LazyGridItemSpanScope lazyGridItemSpanScope, int i) {
+        return ((GridItemSpan) this.$span.invoke(lazyGridItemSpanScope, this.$items.get(i))).m945unboximpl();
     }
 }

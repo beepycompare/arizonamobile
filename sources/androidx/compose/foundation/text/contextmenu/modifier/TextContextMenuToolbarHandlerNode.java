@@ -33,9 +33,7 @@ public final class TextContextMenuToolbarHandlerNode extends DelegatingNode impl
     private final State derivedData$delegate = SnapshotStateKt.derivedStateOf(new Function0() { // from class: androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuToolbarHandlerNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            TextContextMenuData derivedData_delegate$lambda$0;
-            derivedData_delegate$lambda$0 = TextContextMenuToolbarHandlerNode.derivedData_delegate$lambda$0(TextContextMenuToolbarHandlerNode.this);
-            return derivedData_delegate$lambda$0;
+            return TextContextMenuToolbarHandlerNode.derivedData_delegate$lambda$0(TextContextMenuToolbarHandlerNode.this);
         }
     });
     private Rect previousContentBounds = Rect.Companion.getZero();
@@ -83,7 +81,7 @@ public final class TextContextMenuToolbarHandlerNode extends DelegatingNode impl
         return (TextContextMenuData) this.derivedData$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TextContextMenuData derivedData_delegate$lambda$0(TextContextMenuToolbarHandlerNode textContextMenuToolbarHandlerNode) {
         return textContextMenuToolbarHandlerNode.isAttached() ? TextContextMenuModifierKt.collectTextContextMenuData(textContextMenuToolbarHandlerNode) : TextContextMenuData.Companion.getEmpty();
     }
@@ -139,17 +137,14 @@ public final class TextContextMenuToolbarHandlerNode extends DelegatingNode impl
 
     @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
     /* renamed from: position-tuRUvjQ */
-    public long mo1514positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
-        return contentBounds(layoutCoordinates).m5214getTopLeftF1C5BW0();
+    public long mo1319positiontuRUvjQ(LayoutCoordinates layoutCoordinates) {
+        return contentBounds(layoutCoordinates).m4562getTopLeftF1C5BW0();
     }
 
     @Override // androidx.compose.foundation.text.contextmenu.provider.TextContextMenuDataProvider
     public Rect contentBounds(LayoutCoordinates layoutCoordinates) {
-        if (isAttached()) {
-            Rect invoke = this.computeContentBounds.invoke(layoutCoordinates);
-            if (invoke == null) {
-                return this.previousContentBounds;
-            }
+        Rect invoke;
+        if (isAttached() && (invoke = this.computeContentBounds.invoke(layoutCoordinates)) != null) {
             this.previousContentBounds = invoke;
             return invoke;
         }

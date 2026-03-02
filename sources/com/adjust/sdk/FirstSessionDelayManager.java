@@ -24,11 +24,13 @@ public class FirstSessionDelayManager {
     }
 
     public final void a(String str, IRunActivityHandler iRunActivityHandler) {
-        if (this.c == 3) {
-            this.f230a.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
+        int i = this.c;
+        ActivityHandler activityHandler = this.f230a;
+        if (i == 3) {
+            activityHandler.getAdjustConfig().getLogger().debug("Enqueuing \"" + str + "\" action to be executed after first session delay ends", new Object[0]);
             this.f230a.getAdjustConfig().preLaunchActions.preLaunchActionsArray.add(iRunActivityHandler);
             return;
         }
-        iRunActivityHandler.run(this.f230a);
+        iRunActivityHandler.run(activityHandler);
     }
 }

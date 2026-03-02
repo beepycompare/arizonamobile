@@ -20,7 +20,7 @@ public interface LazyStaggeredGridLayoutInfo {
     int getViewportEndOffset();
 
     /* renamed from: getViewportSize-YbymL2g  reason: not valid java name */
-    long mo1180getViewportSizeYbymL2g();
+    long mo1034getViewportSizeYbymL2g();
 
     int getViewportStartOffset();
 

@@ -30,10 +30,10 @@ public final class WindowInsetsRulers_androidKt {
     private static final IntObjectMap<WindowInsetsRulers> WindowInsetsTypeMap;
 
     public static final void provideWindowInsetsRulers(RulerScope rulerScope, WindowInsetsRulerProvider windowInsetsRulerProvider) {
-        long mo6883getSizeYbymL2g = rulerScope.getCoordinates().mo6883getSizeYbymL2g();
+        long mo6224getSizeYbymL2g = rulerScope.getCoordinates().mo6224getSizeYbymL2g();
         ScatterMap<Object, WindowWindowInsetsAnimationValues> insetsValues = windowInsetsRulerProvider.getInsetsListener().getInsetsValues();
-        int i = (int) (mo6883getSizeYbymL2g >> 32);
-        int i2 = (int) (mo6883getSizeYbymL2g & 4294967295L);
+        int i = (int) (mo6224getSizeYbymL2g >> 32);
+        int i2 = (int) (mo6224getSizeYbymL2g & 4294967295L);
         WindowInsetsRulers[] windowInsetsRulersArr = AnimatableInsetsRulers;
         int length = windowInsetsRulersArr.length;
         int i3 = 0;
@@ -43,12 +43,12 @@ public final class WindowInsetsRulers_androidKt {
             Intrinsics.checkNotNull(windowWindowInsetsAnimationValues);
             WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues2 = windowWindowInsetsAnimationValues;
             RulerScope rulerScope2 = rulerScope;
-            m7019provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getCurrent(), windowWindowInsetsAnimationValues2.m7020getCurrenthdzbrEE(), i, i2);
+            m6360provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getCurrent(), windowWindowInsetsAnimationValues2.m6361getCurrenthdzbrEE(), i, i2);
             if (windowWindowInsetsAnimationValues2.isAnimating()) {
-                m7019provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getSource(), windowWindowInsetsAnimationValues2.m7022getSourceValueInsetshdzbrEE(), i, i2);
-                m7019provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getTarget(), windowWindowInsetsAnimationValues2.m7023getTargetValueInsetshdzbrEE(), i, i2);
+                m6360provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getSource(), windowWindowInsetsAnimationValues2.m6363getSourceValueInsetshdzbrEE(), i, i2);
+                m6360provideInsetsValuescytEWk0(rulerScope2, windowWindowInsetsAnimationValues2.getTarget(), windowWindowInsetsAnimationValues2.m6364getTargetValueInsetshdzbrEE(), i, i2);
             }
-            m7019provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getMaximum(), windowWindowInsetsAnimationValues2.m7021getMaximumhdzbrEE(), i, i2);
+            m6360provideInsetsValuescytEWk0(rulerScope2, windowInsetsRulers.getMaximum(), windowWindowInsetsAnimationValues2.m6362getMaximumhdzbrEE(), i, i2);
             i3++;
             rulerScope = rulerScope2;
         }
@@ -74,12 +74,12 @@ public final class WindowInsetsRulers_androidKt {
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         LayoutCoordinates findRootCoordinates = coordinates != null ? LayoutCoordinatesKt.findRootCoordinates(coordinates) : null;
         for (NodeCoordinator nodeCoordinator = findRootCoordinates instanceof NodeCoordinator ? (NodeCoordinator) findRootCoordinates : null; nodeCoordinator != null; nodeCoordinator = nodeCoordinator.getWrapped$ui()) {
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
-            boolean m7204getIncludeSelfInTraversalH91voCI = NodeKindKt.m7204getIncludeSelfInTraversalH91voCI(m7195constructorimpl);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
+            boolean m6544getIncludeSelfInTraversalH91voCI = NodeKindKt.m6544getIncludeSelfInTraversalH91voCI(m6535constructorimpl);
             Modifier.Node tail = nodeCoordinator.getTail();
-            if (m7204getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui()) != null) {
-                for (Modifier.Node access$headNode = NodeCoordinator.access$headNode(nodeCoordinator, m7204getIncludeSelfInTraversalH91voCI); access$headNode != null && (access$headNode.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0; access$headNode = access$headNode.getChild$ui()) {
-                    if ((access$headNode.getKindSet$ui() & m7195constructorimpl) != 0) {
+            if (m6544getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui()) != null) {
+                for (Modifier.Node access$headNode = NodeCoordinator.access$headNode(nodeCoordinator, m6544getIncludeSelfInTraversalH91voCI); access$headNode != null && (access$headNode.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0; access$headNode = access$headNode.getChild$ui()) {
+                    if ((access$headNode.getKindSet$ui() & m6535constructorimpl) != 0) {
                         MutableVector mutableVector = null;
                         Modifier.Node node = access$headNode;
                         while (node != null) {
@@ -88,10 +88,10 @@ public final class WindowInsetsRulers_androidKt {
                                 if (traversableNode.getTraverseKey() == RulerKey) {
                                     return ((WindowInsetsRulerProvider) traversableNode).getCutoutRulers();
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -129,12 +129,12 @@ public final class WindowInsetsRulers_androidKt {
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         LayoutCoordinates findRootCoordinates = coordinates != null ? LayoutCoordinatesKt.findRootCoordinates(coordinates) : null;
         for (NodeCoordinator nodeCoordinator = findRootCoordinates instanceof NodeCoordinator ? (NodeCoordinator) findRootCoordinates : null; nodeCoordinator != null; nodeCoordinator = nodeCoordinator.getWrapped$ui()) {
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
-            boolean m7204getIncludeSelfInTraversalH91voCI = NodeKindKt.m7204getIncludeSelfInTraversalH91voCI(m7195constructorimpl);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
+            boolean m6544getIncludeSelfInTraversalH91voCI = NodeKindKt.m6544getIncludeSelfInTraversalH91voCI(m6535constructorimpl);
             Modifier.Node tail = nodeCoordinator.getTail();
-            if (m7204getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui()) != null) {
-                for (Modifier.Node access$headNode = NodeCoordinator.access$headNode(nodeCoordinator, m7204getIncludeSelfInTraversalH91voCI); access$headNode != null && (access$headNode.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0; access$headNode = access$headNode.getChild$ui()) {
-                    if ((access$headNode.getKindSet$ui() & m7195constructorimpl) != 0) {
+            if (m6544getIncludeSelfInTraversalH91voCI || (tail = tail.getParent$ui()) != null) {
+                for (Modifier.Node access$headNode = NodeCoordinator.access$headNode(nodeCoordinator, m6544getIncludeSelfInTraversalH91voCI); access$headNode != null && (access$headNode.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0; access$headNode = access$headNode.getChild$ui()) {
+                    if ((access$headNode.getKindSet$ui() & m6535constructorimpl) != 0) {
                         MutableVector mutableVector = null;
                         Modifier.Node node = access$headNode;
                         while (node != null) {
@@ -144,10 +144,10 @@ public final class WindowInsetsRulers_androidKt {
                                     WindowWindowInsetsAnimationValues windowWindowInsetsAnimationValues = ((WindowInsetsRulerProvider) traversableNode).getInsetsValues().get(windowInsetsRulers);
                                     return windowWindowInsetsAnimationValues != null ? windowWindowInsetsAnimationValues : NoWindowInsetsAnimation.INSTANCE;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -182,8 +182,8 @@ public final class WindowInsetsRulers_androidKt {
     }
 
     /* renamed from: provideInsetsValues-cytEWk0  reason: not valid java name */
-    private static final void m7019provideInsetsValuescytEWk0(RulerScope rulerScope, RectRulers rectRulers, long j, int i, int i2) {
-        if (ValueInsets.m7011equalsimpl0(j, ValueInsets_androidKt.getUnsetValueInsets())) {
+    private static final void m6360provideInsetsValuescytEWk0(RulerScope rulerScope, RectRulers rectRulers, long j, int i, int i2) {
+        if (ValueInsets.m6352equalsimpl0(j, ValueInsets_androidKt.getUnsetValueInsets())) {
             return;
         }
         rulerScope.provides(rectRulers.getLeft(), (int) ((j >>> 48) & WebSocketProtocol.PAYLOAD_SHORT_MAX));

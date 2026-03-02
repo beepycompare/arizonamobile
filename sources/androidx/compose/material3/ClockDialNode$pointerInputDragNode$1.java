@@ -29,30 +29,26 @@ final class ClockDialNode$pointerInputDragNode$1 implements PointerInputEventHan
         Function0 function0 = new Function0() { // from class: androidx.compose.material3.ClockDialNode$pointerInputDragNode$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = ClockDialNode$pointerInputDragNode$1.invoke$lambda$0(ClockDialNode.this);
-                return invoke$lambda$0;
+                return ClockDialNode$pointerInputDragNode$1.invoke$lambda$0(ClockDialNode.this);
             }
         };
         final ClockDialNode clockDialNode2 = this.this$0;
         Object detectDragGestures$default = DragGestureDetectorKt.detectDragGestures$default(pointerInputScope, null, function0, null, new Function2() { // from class: androidx.compose.material3.ClockDialNode$pointerInputDragNode$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit invoke$lambda$1;
-                invoke$lambda$1 = ClockDialNode$pointerInputDragNode$1.invoke$lambda$1(ClockDialNode.this, (PointerInputChange) obj, (Offset) obj2);
-                return invoke$lambda$1;
+                return ClockDialNode$pointerInputDragNode$1.invoke$lambda$1(ClockDialNode.this, (PointerInputChange) obj, (Offset) obj2);
             }
         }, continuation, 5, null);
         return detectDragGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectDragGestures$default : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(ClockDialNode clockDialNode) {
         BuildersKt__Builders_commonKt.launch$default(clockDialNode.getCoroutineScope(), null, null, new ClockDialNode$pointerInputDragNode$1$1$1(clockDialNode, null), 3, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1(ClockDialNode clockDialNode, PointerInputChange pointerInputChange, Offset offset) {
         BuildersKt__Builders_commonKt.launch$default(clockDialNode.getCoroutineScope(), null, null, new ClockDialNode$pointerInputDragNode$1$2$1(clockDialNode, offset, null), 3, null);
         return Unit.INSTANCE;

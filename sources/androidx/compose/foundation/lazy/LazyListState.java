@@ -53,16 +53,15 @@ public final class LazyListState implements ScrollableState {
     private static final Saver<LazyListState, ?> Saver = ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            List Saver$lambda$0;
-            Saver$lambda$0 = LazyListState.Saver$lambda$0((SaverScope) obj, (LazyListState) obj2);
-            return Saver$lambda$0;
+            List listOf;
+            SaverScope saverScope = (SaverScope) obj;
+            listOf = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(r2.getFirstVisibleItemIndex()), Integer.valueOf(((LazyListState) obj2).getFirstVisibleItemScrollOffset())});
+            return listOf;
         }
     }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            LazyListState Saver$lambda$1;
-            Saver$lambda$1 = LazyListState.Saver$lambda$1((List) obj);
-            return Saver$lambda$1;
+            return LazyListState.Saver$lambda$1((List) obj);
         }
     });
     private final LazyLayoutScrollDeltaBetweenPasses _lazyLayoutScrollDeltaBetweenPasses;
@@ -110,9 +109,7 @@ public final class LazyListState implements ScrollableState {
         this.scrollableState = ScrollableStateKt.ScrollableState(new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                float scrollableState$lambda$0;
-                scrollableState$lambda$0 = LazyListState.scrollableState$lambda$0(LazyListState.this, ((Float) obj).floatValue());
-                return Float.valueOf(scrollableState$lambda$0);
+                return Float.valueOf(LazyListState.scrollableState$lambda$0(LazyListState.this, ((Float) obj).floatValue()));
             }
         });
         this.prefetchingEnabled = true;
@@ -128,9 +125,7 @@ public final class LazyListState implements ScrollableState {
         this.prefetchState = new LazyLayoutPrefetchState(lazyListPrefetchStrategy.getPrefetchScheduler(), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit prefetchState$lambda$0;
-                prefetchState$lambda$0 = LazyListState.prefetchState$lambda$0(LazyListState.this, i, (NestedPrefetchScope) obj);
-                return prefetchState$lambda$0;
+                return LazyListState.prefetchState$lambda$0(LazyListState.this, i, (NestedPrefetchScope) obj);
             }
         });
         this.prefetchScope = new LazyListState$prefetchScope$1(this);
@@ -154,12 +149,12 @@ public final class LazyListState implements ScrollableState {
         };
         this.pinnedItems = new LazyLayoutPinnedItemList();
         lazyListScrollPosition.getNearestRangeState();
-        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
+        this.measurementScopeInvalidator = ObservableScopeInvalidator.m1008constructorimpl$default(null, 1, null);
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollForward$delegate = mutableStateOf$default;
         mutableStateOf$default2 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(false, null, 2, null);
         this.canScrollBackward$delegate = mutableStateOf$default2;
-        this.placementScopeInvalidator = ObservableScopeInvalidator.m1149constructorimpl$default(null, 1, null);
+        this.placementScopeInvalidator = ObservableScopeInvalidator.m1008constructorimpl$default(null, 1, null);
         this._lazyLayoutScrollDeltaBetweenPasses = new LazyLayoutScrollDeltaBetweenPasses();
     }
 
@@ -223,7 +218,7 @@ public final class LazyListState implements ScrollableState {
         return this.layoutInfoState.getValue().getDensity();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float scrollableState$lambda$0(LazyListState lazyListState, float f) {
         return -lazyListState.onScroll$foundation(-f);
     }
@@ -264,7 +259,7 @@ public final class LazyListState implements ScrollableState {
         return this.prefetchState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit prefetchState$lambda$0(LazyListState lazyListState, int i, NestedPrefetchScope nestedPrefetchScope) {
         LazyListPrefetchStrategy lazyListPrefetchStrategy = lazyListState.prefetchStrategy;
         Snapshot.Companion companion = Snapshot.Companion;
@@ -300,7 +295,7 @@ public final class LazyListState implements ScrollableState {
     }
 
     /* renamed from: getMeasurementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
-    public final MutableState<Unit> m1061getMeasurementScopeInvalidatorzYiylxw$foundation() {
+    public final MutableState<Unit> m936getMeasurementScopeInvalidatorzYiylxw$foundation() {
         return this.measurementScopeInvalidator;
     }
 
@@ -336,7 +331,7 @@ public final class LazyListState implements ScrollableState {
             }
             return;
         }
-        ObservableScopeInvalidator.m1153invalidateScopeimpl(this.measurementScopeInvalidator);
+        ObservableScopeInvalidator.m1012invalidateScopeimpl(this.measurementScopeInvalidator);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:19:0x005f, code lost:
@@ -446,7 +441,7 @@ public final class LazyListState implements ScrollableState {
     }
 
     /* renamed from: getPlacementScopeInvalidator-zYiylxw$foundation  reason: not valid java name */
-    public final MutableState<Unit> m1062getPlacementScopeInvalidatorzYiylxw$foundation() {
+    public final MutableState<Unit> m937getPlacementScopeInvalidatorzYiylxw$foundation() {
         return this.placementScopeInvalidator;
     }
 
@@ -473,7 +468,7 @@ public final class LazyListState implements ScrollableState {
                 }
                 if (copyWithScrollDeltaWithoutRemeasure != null) {
                     applyMeasureResult$foundation(copyWithScrollDeltaWithoutRemeasure, this.hasLookaheadOccurred, true);
-                    ObservableScopeInvalidator.m1153invalidateScopeimpl(this.placementScopeInvalidator);
+                    ObservableScopeInvalidator.m1012invalidateScopeimpl(this.placementScopeInvalidator);
                     notifyPrefetchOnScroll(f3 - this.scrollToBeConsumed, copyWithScrollDeltaWithoutRemeasure);
                 } else {
                     Remeasurement remeasurement = this.remeasurement;
@@ -593,26 +588,20 @@ public final class LazyListState implements ScrollableState {
             return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List saver$lambda$0;
-                    saver$lambda$0 = LazyListState.Companion.saver$lambda$0((SaverScope) obj, (LazyListState) obj2);
-                    return saver$lambda$0;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(r2.getFirstVisibleItemIndex()), Integer.valueOf(((LazyListState) obj2).getFirstVisibleItemScrollOffset())});
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    LazyListState saver$lambda$1;
-                    saver$lambda$1 = LazyListState.Companion.saver$lambda$1(LazyListPrefetchStrategy.this, (List) obj);
-                    return saver$lambda$1;
+                    return LazyListState.Companion.saver$lambda$1(LazyListPrefetchStrategy.this, (List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List saver$lambda$0(SaverScope saverScope, LazyListState lazyListState) {
-            return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final LazyListState saver$lambda$1(LazyListPrefetchStrategy lazyListPrefetchStrategy, List list) {
             return new LazyListState(((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue(), lazyListPrefetchStrategy);
         }
@@ -621,37 +610,26 @@ public final class LazyListState implements ScrollableState {
             return ListSaverKt.listSaver(new Function2() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    List saver$lambda$2;
-                    saver$lambda$2 = LazyListState.Companion.saver$lambda$2((SaverScope) obj, (LazyListState) obj2);
-                    return saver$lambda$2;
+                    List listOf;
+                    SaverScope saverScope = (SaverScope) obj;
+                    listOf = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(r2.getFirstVisibleItemIndex()), Integer.valueOf(((LazyListState) obj2).getFirstVisibleItemScrollOffset())});
+                    return listOf;
                 }
             }, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    LazyListState saver$lambda$3;
-                    saver$lambda$3 = LazyListState.Companion.saver$lambda$3(LazyLayoutCacheWindow.this, (List) obj);
-                    return saver$lambda$3;
+                    return LazyListState.Companion.saver$lambda$3(LazyLayoutCacheWindow.this, (List) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final List saver$lambda$2(SaverScope saverScope, LazyListState lazyListState) {
-            return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final LazyListState saver$lambda$3(LazyLayoutCacheWindow lazyLayoutCacheWindow, List list) {
             return new LazyListState(lazyLayoutCacheWindow, ((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue());
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List Saver$lambda$0(SaverScope saverScope, LazyListState lazyListState) {
-        return CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(lazyListState.getFirstVisibleItemIndex()), Integer.valueOf(lazyListState.getFirstVisibleItemScrollOffset())});
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final LazyListState Saver$lambda$1(List list) {
         return new LazyListState(((Number) list.get(0)).intValue(), ((Number) list.get(1)).intValue());
     }

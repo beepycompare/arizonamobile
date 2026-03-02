@@ -19,14 +19,12 @@ public final class BundleExtKt {
         bundle.putParcelable(str, new ValueHolder(t, LazyKt.lazy(new Function0() { // from class: com.arkivanov.essenty.statekeeper.BundleExtKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                byte[] putSerializable$lambda$0;
-                putSerializable$lambda$0 = BundleExtKt.putSerializable$lambda$0(t, strategy);
-                return putSerializable$lambda$0;
+                return BundleExtKt.putSerializable$lambda$0(t, strategy);
             }
         })));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final byte[] putSerializable$lambda$0(Object obj, SerializationStrategy serializationStrategy) {
         if (obj != null) {
             return Utils_javaKt.serialize(obj, serializationStrategy);

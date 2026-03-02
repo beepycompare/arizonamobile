@@ -48,28 +48,28 @@ public final class EnterExitTransitionKt {
     private static final TwoWayConverter<TransformOrigin, AnimationVector2D> TransformOriginVectorConverter = VectorConvertersKt.TwoWayConverter(new Function1<TransformOrigin, AnimationVector2D>() { // from class: androidx.compose.animation.EnterExitTransitionKt$TransformOriginVectorConverter$1
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ AnimationVector2D invoke(TransformOrigin transformOrigin) {
-            return m106invoke__ExYCQ(transformOrigin.m5838unboximpl());
+            return m93invoke__ExYCQ(transformOrigin.m5184unboximpl());
         }
 
         /* renamed from: invoke-__ExYCQ  reason: not valid java name */
-        public final AnimationVector2D m106invoke__ExYCQ(long j) {
-            return new AnimationVector2D(TransformOrigin.m5834getPivotFractionXimpl(j), TransformOrigin.m5835getPivotFractionYimpl(j));
+        public final AnimationVector2D m93invoke__ExYCQ(long j) {
+            return new AnimationVector2D(TransformOrigin.m5180getPivotFractionXimpl(j), TransformOrigin.m5181getPivotFractionYimpl(j));
         }
     }, new Function1<AnimationVector2D, TransformOrigin>() { // from class: androidx.compose.animation.EnterExitTransitionKt$TransformOriginVectorConverter$2
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ TransformOrigin invoke(AnimationVector2D animationVector2D) {
-            return TransformOrigin.m5826boximpl(m107invokeLIALnN8(animationVector2D));
+            return TransformOrigin.m5172boximpl(m94invokeLIALnN8(animationVector2D));
         }
 
         /* renamed from: invoke-LIALnN8  reason: not valid java name */
-        public final long m107invokeLIALnN8(AnimationVector2D animationVector2D) {
+        public final long m94invokeLIALnN8(AnimationVector2D animationVector2D) {
             return TransformOriginKt.TransformOrigin(animationVector2D.getV1(), animationVector2D.getV2());
         }
     });
     private static final SpringSpec<Float> DefaultAlphaAndScaleSpring = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
     private static final SpringSpec<Color> DefaultColorAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
-    private static final SpringSpec<IntOffset> DefaultOffsetAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
-    private static final SpringSpec<IntSize> DefaultSizeAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+    private static final SpringSpec<IntOffset> DefaultOffsetAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+    private static final SpringSpec<IntSize> DefaultSizeAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
 
     public static final EnterTransition withEffect(EnterTransition enterTransition, TransitionEffect transitionEffect) {
         return new EnterTransitionImpl(new TransitionData(null, null, null, null, null, false, MapsKt.mapOf(TuplesKt.to(transitionEffect.getKey$animation(), transitionEffect)), 63, null));
@@ -109,7 +109,7 @@ public final class EnterExitTransitionKt {
 
     public static /* synthetic */ EnterTransition slideIn$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         return slideIn(finiteAnimationSpec, function1);
     }
@@ -120,7 +120,7 @@ public final class EnterExitTransitionKt {
 
     public static /* synthetic */ ExitTransition slideOut$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         return slideOut(finiteAnimationSpec, function1);
     }
@@ -130,7 +130,7 @@ public final class EnterExitTransitionKt {
     }
 
     /* renamed from: scaleIn-L8ZKh-E$default  reason: not valid java name */
-    public static /* synthetic */ EnterTransition m99scaleInL8ZKhE$default(FiniteAnimationSpec finiteAnimationSpec, float f, long j, int i, Object obj) {
+    public static /* synthetic */ EnterTransition m86scaleInL8ZKhE$default(FiniteAnimationSpec finiteAnimationSpec, float f, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
         }
@@ -138,18 +138,18 @@ public final class EnterExitTransitionKt {
             f = 0.0f;
         }
         if ((i & 4) != 0) {
-            j = TransformOrigin.Companion.m5839getCenterSzJe1aQ();
+            j = TransformOrigin.Companion.m5185getCenterSzJe1aQ();
         }
-        return m98scaleInL8ZKhE(finiteAnimationSpec, f, j);
+        return m85scaleInL8ZKhE(finiteAnimationSpec, f, j);
     }
 
     /* renamed from: scaleIn-L8ZKh-E  reason: not valid java name */
-    public static final EnterTransition m98scaleInL8ZKhE(FiniteAnimationSpec<Float> finiteAnimationSpec, float f, long j) {
+    public static final EnterTransition m85scaleInL8ZKhE(FiniteAnimationSpec<Float> finiteAnimationSpec, float f, long j) {
         return new EnterTransitionImpl(new TransitionData(null, null, null, new Scale(f, j, finiteAnimationSpec, null), null, false, null, 119, null));
     }
 
     /* renamed from: scaleOut-L8ZKh-E$default  reason: not valid java name */
-    public static /* synthetic */ ExitTransition m101scaleOutL8ZKhE$default(FiniteAnimationSpec finiteAnimationSpec, float f, long j, int i, Object obj) {
+    public static /* synthetic */ ExitTransition m88scaleOutL8ZKhE$default(FiniteAnimationSpec finiteAnimationSpec, float f, long j, int i, Object obj) {
         if ((i & 1) != 0) {
             finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
         }
@@ -157,57 +157,57 @@ public final class EnterExitTransitionKt {
             f = 0.0f;
         }
         if ((i & 4) != 0) {
-            j = TransformOrigin.Companion.m5839getCenterSzJe1aQ();
+            j = TransformOrigin.Companion.m5185getCenterSzJe1aQ();
         }
-        return m100scaleOutL8ZKhE(finiteAnimationSpec, f, j);
+        return m87scaleOutL8ZKhE(finiteAnimationSpec, f, j);
     }
 
     /* renamed from: scaleOut-L8ZKh-E  reason: not valid java name */
-    public static final ExitTransition m100scaleOutL8ZKhE(FiniteAnimationSpec<Float> finiteAnimationSpec, float f, long j) {
+    public static final ExitTransition m87scaleOutL8ZKhE(FiniteAnimationSpec<Float> finiteAnimationSpec, float f, long j) {
         return new ExitTransitionImpl(new TransitionData(null, null, null, new Scale(f, j, finiteAnimationSpec, null), null, false, null, 119, null));
     }
 
     /* renamed from: unveilIn-bw27NRU$default  reason: not valid java name */
-    public static /* synthetic */ EnterTransition m103unveilInbw27NRU$default(FiniteAnimationSpec finiteAnimationSpec, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ EnterTransition m90unveilInbw27NRU$default(FiniteAnimationSpec finiteAnimationSpec, long j, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
         }
         if ((i & 2) != 0) {
-            j = Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
+            j = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
         }
         if ((i & 4) != 0) {
             z = false;
         }
-        return m102unveilInbw27NRU(finiteAnimationSpec, j, z);
+        return m89unveilInbw27NRU(finiteAnimationSpec, j, z);
     }
 
     /* renamed from: unveilIn-bw27NRU  reason: not valid java name */
-    public static final EnterTransition m102unveilInbw27NRU(FiniteAnimationSpec<Color> finiteAnimationSpec, long j, boolean z) {
-        return new EnterTransitionImpl(new TransitionData(null, null, null, null, new Veil(j, Color.m5423copywmQWz5c$default(j, 0.0f, 0.0f, 0.0f, 0.0f, 14, null), finiteAnimationSpec, z, null), false, null, 111, null));
+    public static final EnterTransition m89unveilInbw27NRU(FiniteAnimationSpec<Color> finiteAnimationSpec, long j, boolean z) {
+        return new EnterTransitionImpl(new TransitionData(null, null, null, null, new Veil(j, Color.m4771copywmQWz5c$default(j, 0.0f, 0.0f, 0.0f, 0.0f, 14, null), finiteAnimationSpec, z, null), false, null, 111, null));
     }
 
     /* renamed from: veilOut-bw27NRU$default  reason: not valid java name */
-    public static /* synthetic */ ExitTransition m105veilOutbw27NRU$default(FiniteAnimationSpec finiteAnimationSpec, long j, boolean z, int i, Object obj) {
+    public static /* synthetic */ ExitTransition m92veilOutbw27NRU$default(FiniteAnimationSpec finiteAnimationSpec, long j, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, null, 5, null);
         }
         if ((i & 2) != 0) {
-            j = Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
+            j = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
         }
         if ((i & 4) != 0) {
             z = false;
         }
-        return m104veilOutbw27NRU(finiteAnimationSpec, j, z);
+        return m91veilOutbw27NRU(finiteAnimationSpec, j, z);
     }
 
     /* renamed from: veilOut-bw27NRU  reason: not valid java name */
-    public static final ExitTransition m104veilOutbw27NRU(FiniteAnimationSpec<Color> finiteAnimationSpec, long j, boolean z) {
-        return new ExitTransitionImpl(new TransitionData(null, null, null, null, new Veil(Color.m5423copywmQWz5c$default(j, 0.0f, 0.0f, 0.0f, 0.0f, 14, null), j, finiteAnimationSpec, z, null), false, null, 111, null));
+    public static final ExitTransition m91veilOutbw27NRU(FiniteAnimationSpec<Color> finiteAnimationSpec, long j, boolean z) {
+        return new ExitTransitionImpl(new TransitionData(null, null, null, null, new Veil(Color.m4771copywmQWz5c$default(j, 0.0f, 0.0f, 0.0f, 0.0f, 14, null), j, finiteAnimationSpec, z, null), false, null, 111, null));
     }
 
     public static /* synthetic */ EnterTransition expandIn$default(FiniteAnimationSpec finiteAnimationSpec, Alignment alignment, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             alignment = Alignment.Companion.getBottomEnd();
@@ -219,13 +219,13 @@ public final class EnterExitTransitionKt {
             function1 = new Function1<IntSize, IntSize>() { // from class: androidx.compose.animation.EnterExitTransitionKt$expandIn$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                    return IntSize.m8421boximpl(m110invokemzRDjE0(intSize.m8433unboximpl()));
+                    return IntSize.m7718boximpl(m97invokemzRDjE0(intSize.m7730unboximpl()));
                 }
 
                 /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-                public final long m110invokemzRDjE0(long j) {
+                public final long m97invokemzRDjE0(long j) {
                     long j2 = 0;
-                    return IntSize.m8424constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                    return IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
                 }
             };
         }
@@ -238,7 +238,7 @@ public final class EnterExitTransitionKt {
 
     public static /* synthetic */ ExitTransition shrinkOut$default(FiniteAnimationSpec finiteAnimationSpec, Alignment alignment, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             alignment = Alignment.Companion.getBottomEnd();
@@ -250,13 +250,13 @@ public final class EnterExitTransitionKt {
             function1 = new Function1<IntSize, IntSize>() { // from class: androidx.compose.animation.EnterExitTransitionKt$shrinkOut$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                    return IntSize.m8421boximpl(m113invokemzRDjE0(intSize.m8433unboximpl()));
+                    return IntSize.m7718boximpl(m100invokemzRDjE0(intSize.m7730unboximpl()));
                 }
 
                 /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-                public final long m113invokemzRDjE0(long j) {
+                public final long m100invokemzRDjE0(long j) {
                     long j2 = 0;
-                    return IntSize.m8424constructorimpl((j2 & 4294967295L) | (j2 << 32));
+                    return IntSize.m7721constructorimpl((j2 & 4294967295L) | (j2 << 32));
                 }
             };
         }
@@ -269,7 +269,7 @@ public final class EnterExitTransitionKt {
 
     public static /* synthetic */ EnterTransition expandHorizontally$default(FiniteAnimationSpec finiteAnimationSpec, Alignment.Horizontal horizontal, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             horizontal = Alignment.Companion.getEnd();
@@ -303,19 +303,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                return IntSize.m8421boximpl(m109invokemzRDjE0(intSize.m8433unboximpl()));
+                return IntSize.m7718boximpl(m96invokemzRDjE0(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-            public final long m109invokemzRDjE0(long j) {
-                return IntSize.m8424constructorimpl((((int) (j & 4294967295L)) & 4294967295L) | (function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32));
+            public final long m96invokemzRDjE0(long j) {
+                return IntSize.m7721constructorimpl((((int) (j & 4294967295L)) & 4294967295L) | (function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32));
             }
         });
     }
 
     public static /* synthetic */ EnterTransition expandVertically$default(FiniteAnimationSpec finiteAnimationSpec, Alignment.Vertical vertical, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             vertical = Alignment.Companion.getBottom();
@@ -349,19 +349,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                return IntSize.m8421boximpl(m111invokemzRDjE0(intSize.m8433unboximpl()));
+                return IntSize.m7718boximpl(m98invokemzRDjE0(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-            public final long m111invokemzRDjE0(long j) {
-                return IntSize.m8424constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
+            public final long m98invokemzRDjE0(long j) {
+                return IntSize.m7721constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
             }
         });
     }
 
     public static /* synthetic */ ExitTransition shrinkHorizontally$default(FiniteAnimationSpec finiteAnimationSpec, Alignment.Horizontal horizontal, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             horizontal = Alignment.Companion.getEnd();
@@ -395,19 +395,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                return IntSize.m8421boximpl(m112invokemzRDjE0(intSize.m8433unboximpl()));
+                return IntSize.m7718boximpl(m99invokemzRDjE0(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-            public final long m112invokemzRDjE0(long j) {
-                return IntSize.m8424constructorimpl((((int) (j & 4294967295L)) & 4294967295L) | (function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32));
+            public final long m99invokemzRDjE0(long j) {
+                return IntSize.m7721constructorimpl((((int) (j & 4294967295L)) & 4294967295L) | (function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32));
             }
         });
     }
 
     public static /* synthetic */ ExitTransition shrinkVertically$default(FiniteAnimationSpec finiteAnimationSpec, Alignment.Vertical vertical, boolean z, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m8421boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntSize.m7718boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntSize.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             vertical = Alignment.Companion.getBottom();
@@ -441,19 +441,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntSize invoke(IntSize intSize) {
-                return IntSize.m8421boximpl(m114invokemzRDjE0(intSize.m8433unboximpl()));
+                return IntSize.m7718boximpl(m101invokemzRDjE0(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mzRDjE0  reason: not valid java name */
-            public final long m114invokemzRDjE0(long j) {
-                return IntSize.m8424constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
+            public final long m101invokemzRDjE0(long j) {
+                return IntSize.m7721constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (((int) (j >> 32)) << 32));
             }
         });
     }
 
     public static /* synthetic */ EnterTransition slideInHorizontally$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.EnterExitTransitionKt$slideInHorizontally$1
@@ -481,19 +481,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize) {
-                return IntOffset.m8377boximpl(m115invokemHKZG7I(intSize.m8433unboximpl()));
+                return IntOffset.m7674boximpl(m102invokemHKZG7I(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
-            public final long m115invokemHKZG7I(long j) {
-                return IntOffset.m8380constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
+            public final long m102invokemHKZG7I(long j) {
+                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
             }
         });
     }
 
     public static /* synthetic */ EnterTransition slideInVertically$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.EnterExitTransitionKt$slideInVertically$1
@@ -521,19 +521,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize) {
-                return IntOffset.m8377boximpl(m116invokemHKZG7I(intSize.m8433unboximpl()));
+                return IntOffset.m7674boximpl(m103invokemHKZG7I(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
-            public final long m116invokemHKZG7I(long j) {
-                return IntOffset.m8380constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
+            public final long m103invokemHKZG7I(long j) {
+                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
             }
         });
     }
 
     public static /* synthetic */ ExitTransition slideOutHorizontally$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.EnterExitTransitionKt$slideOutHorizontally$1
@@ -561,19 +561,19 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize) {
-                return IntOffset.m8377boximpl(m117invokemHKZG7I(intSize.m8433unboximpl()));
+                return IntOffset.m7674boximpl(m104invokemHKZG7I(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
-            public final long m117invokemHKZG7I(long j) {
-                return IntOffset.m8380constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
+            public final long m104invokemHKZG7I(long j) {
+                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j >> 32))).intValue() << 32) | (0 & 4294967295L));
             }
         });
     }
 
     public static /* synthetic */ ExitTransition slideOutVertically$default(FiniteAnimationSpec finiteAnimationSpec, Function1 function1, int i, Object obj) {
         if ((i & 1) != 0) {
-            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m8377boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
+            finiteAnimationSpec = AnimationSpecKt.spring$default(0.0f, 400.0f, IntOffset.m7674boximpl(VisibilityThresholdsKt.getVisibilityThreshold(IntOffset.Companion)), 1, null);
         }
         if ((i & 2) != 0) {
             function1 = new Function1<Integer, Integer>() { // from class: androidx.compose.animation.EnterExitTransitionKt$slideOutVertically$1
@@ -601,12 +601,12 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ IntOffset invoke(IntSize intSize) {
-                return IntOffset.m8377boximpl(m118invokemHKZG7I(intSize.m8433unboximpl()));
+                return IntOffset.m7674boximpl(m105invokemHKZG7I(intSize.m7730unboximpl()));
             }
 
             /* renamed from: invoke-mHKZG7I  reason: not valid java name */
-            public final long m118invokemHKZG7I(long j) {
-                return IntOffset.m8380constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
+            public final long m105invokemHKZG7I(long j) {
+                return IntOffset.m7677constructorimpl((function1.invoke(Integer.valueOf((int) (j & 4294967295L))).intValue() & 4294967295L) | (0 << 32));
             }
         });
     }
@@ -641,7 +641,7 @@ public final class EnterExitTransitionKt {
         Transition.DeferredAnimation deferredAnimation2;
         Transition.DeferredAnimation deferredAnimation3;
         ChangeSize changeSize;
-        Rgb m5428getColorSpaceimpl;
+        Rgb m4776getColorSpaceimpl;
         final boolean z;
         Transition<EnterExitState> transition2;
         Modifier.Companion companion;
@@ -734,24 +734,24 @@ public final class EnterExitTransitionKt {
         ChangeSize changeSize2 = trackActiveEnter.getData$animation().getChangeSize();
         boolean z5 = ((changeSize2 == null || changeSize2.getClip()) && ((changeSize = trackActiveExit.getData$animation().getChangeSize()) == null || changeSize.getClip()) && z4) ? false : true;
         Veil veil = trackActiveEnter.getData$animation().getVeil();
-        if (veil == null || (m5428getColorSpaceimpl = Color.m5428getColorSpaceimpl(veil.m171getInitialColor0d7_KjU())) == null) {
+        if (veil == null || (m4776getColorSpaceimpl = Color.m4776getColorSpaceimpl(veil.m158getInitialColor0d7_KjU())) == null) {
             Veil veil2 = trackActiveEnter.getData$animation().getVeil();
             if (veil2 != null) {
-                m5428getColorSpaceimpl = Color.m5428getColorSpaceimpl(veil2.m172getTargetColor0d7_KjU());
+                m4776getColorSpaceimpl = Color.m4776getColorSpaceimpl(veil2.m159getTargetColor0d7_KjU());
             } else {
                 Veil veil3 = trackActiveExit.getData$animation().getVeil();
-                m5428getColorSpaceimpl = veil3 != null ? Color.m5428getColorSpaceimpl(veil3.m171getInitialColor0d7_KjU()) : null;
-                if (m5428getColorSpaceimpl == null) {
+                m4776getColorSpaceimpl = veil3 != null ? Color.m4776getColorSpaceimpl(veil3.m158getInitialColor0d7_KjU()) : null;
+                if (m4776getColorSpaceimpl == null) {
                     Veil veil4 = trackActiveExit.getData$animation().getVeil();
-                    ColorSpace m5428getColorSpaceimpl2 = veil4 != null ? Color.m5428getColorSpaceimpl(veil4.m172getTargetColor0d7_KjU()) : null;
-                    m5428getColorSpaceimpl = m5428getColorSpaceimpl2 == null ? ColorSpaces.INSTANCE.getSrgb() : m5428getColorSpaceimpl2;
+                    ColorSpace m4776getColorSpaceimpl2 = veil4 != null ? Color.m4776getColorSpaceimpl(veil4.m159getTargetColor0d7_KjU()) : null;
+                    m4776getColorSpaceimpl = m4776getColorSpaceimpl2 == null ? ColorSpaces.INSTANCE.getSrgb() : m4776getColorSpaceimpl2;
                 }
             }
         }
         if (z2) {
             composer.startReplaceGroup(134871569);
             ComposerKt.sourceInformation(composer, "976@43322L26,974@43222L145");
-            TwoWayConverter<Color, AnimationVector4D> invoke = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m5428getColorSpaceimpl);
+            TwoWayConverter<Color, AnimationVector4D> invoke = ColorVectorConverterKt.getVectorConverter(Color.Companion).invoke(m4776getColorSpaceimpl);
             ComposerKt.sourceInformationMarkerStart(composer, 1389828560, "CC(remember):EnterExitTransition.kt#9igjgp");
             Object rememberedValue5 = composer.rememberedValue();
             if (rememberedValue5 == Composer.Companion.getEmpty()) {
@@ -1050,7 +1050,7 @@ public final class EnterExitTransitionKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Function1 createGraphicsLayerBlock$lambda$2$0(Transition.DeferredAnimation deferredAnimation, Transition.DeferredAnimation deferredAnimation2, Transition transition, final EnterTransition enterTransition, final ExitTransition exitTransition, Transition.DeferredAnimation deferredAnimation3) {
-        final TransformOrigin m5826boximpl;
+        final TransformOrigin m5172boximpl;
         final State animate = deferredAnimation != null ? deferredAnimation.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<Float>>() { // from class: androidx.compose.animation.EnterExitTransitionKt$createGraphicsLayerBlock$1$1$alpha$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1228,15 +1228,15 @@ public final class EnterExitTransitionKt {
         if (transition.getCurrentState() == EnterExitState.PreEnter) {
             Scale scale = enterTransition.getData$animation().getScale();
             if (scale != null || (scale = exitTransition.getData$animation().getScale()) != null) {
-                m5826boximpl = TransformOrigin.m5826boximpl(scale.m132getTransformOriginSzJe1aQ());
+                m5172boximpl = TransformOrigin.m5172boximpl(scale.m119getTransformOriginSzJe1aQ());
             }
-            m5826boximpl = null;
+            m5172boximpl = null;
         } else {
             Scale scale2 = exitTransition.getData$animation().getScale();
             if (scale2 != null || (scale2 = enterTransition.getData$animation().getScale()) != null) {
-                m5826boximpl = TransformOrigin.m5826boximpl(scale2.m132getTransformOriginSzJe1aQ());
+                m5172boximpl = TransformOrigin.m5172boximpl(scale2.m119getTransformOriginSzJe1aQ());
             }
-            m5826boximpl = null;
+            m5172boximpl = null;
         }
         final State animate3 = deferredAnimation3 != null ? deferredAnimation3.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<TransformOrigin>>() { // from class: androidx.compose.animation.EnterExitTransitionKt$createGraphicsLayerBlock$1$1$transformOrigin$1
             @Override // kotlin.jvm.functions.Function1
@@ -1277,11 +1277,11 @@ public final class EnterExitTransitionKt {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ TransformOrigin invoke(EnterExitState enterExitState) {
-                return TransformOrigin.m5826boximpl(m108invokeLIALnN8(enterExitState));
+                return TransformOrigin.m5172boximpl(m95invokeLIALnN8(enterExitState));
             }
 
             /* renamed from: invoke-LIALnN8  reason: not valid java name */
-            public final long m108invokeLIALnN8(EnterExitState enterExitState) {
+            public final long m95invokeLIALnN8(EnterExitState enterExitState) {
                 TransformOrigin transformOrigin;
                 int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
                 if (i != 1) {
@@ -1289,23 +1289,23 @@ public final class EnterExitTransitionKt {
                     if (i == 2) {
                         Scale scale3 = enterTransition.getData$animation().getScale();
                         if (scale3 != null || (scale3 = exitTransition.getData$animation().getScale()) != null) {
-                            transformOrigin = TransformOrigin.m5826boximpl(scale3.m132getTransformOriginSzJe1aQ());
+                            transformOrigin = TransformOrigin.m5172boximpl(scale3.m119getTransformOriginSzJe1aQ());
                         }
                     } else if (i != 3) {
                         throw new NoWhenBranchMatchedException();
                     } else {
                         Scale scale4 = exitTransition.getData$animation().getScale();
                         if (scale4 != null || (scale4 = enterTransition.getData$animation().getScale()) != null) {
-                            transformOrigin = TransformOrigin.m5826boximpl(scale4.m132getTransformOriginSzJe1aQ());
+                            transformOrigin = TransformOrigin.m5172boximpl(scale4.m119getTransformOriginSzJe1aQ());
                         }
                     }
                 } else {
                     transformOrigin = TransformOrigin.this;
                 }
                 if (transformOrigin != null) {
-                    return transformOrigin.m5838unboximpl();
+                    return transformOrigin.m5184unboximpl();
                 }
-                return TransformOrigin.Companion.m5839getCenterSzJe1aQ();
+                return TransformOrigin.Companion.m5185getCenterSzJe1aQ();
             }
         }) : null;
         return new Function1<GraphicsLayerScope, Unit>() { // from class: androidx.compose.animation.EnterExitTransitionKt$createGraphicsLayerBlock$1$1$block$1
@@ -1330,7 +1330,7 @@ public final class EnterExitTransitionKt {
                 State<Float> state3 = animate2;
                 graphicsLayerScope.setScaleY(state3 != null ? state3.getValue().floatValue() : 1.0f);
                 State<TransformOrigin> state4 = animate3;
-                graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(state4 != null ? state4.getValue().m5838unboximpl() : TransformOrigin.Companion.m5839getCenterSzJe1aQ());
+                graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(state4 != null ? state4.getValue().m5184unboximpl() : TransformOrigin.Companion.m5185getCenterSzJe1aQ());
             }
         };
     }

@@ -55,14 +55,15 @@ public final class DeflaterSink implements Sink {
         Buffer buffer = this.sink.getBuffer();
         while (true) {
             writableSegment$okio = buffer.writableSegment$okio(1);
+            Deflater deflater = this.deflater;
             if (z) {
                 try {
-                    deflate = this.deflater.deflate(writableSegment$okio.data, writableSegment$okio.limit, 8192 - writableSegment$okio.limit, 2);
+                    deflate = deflater.deflate(writableSegment$okio.data, writableSegment$okio.limit, 8192 - writableSegment$okio.limit, 2);
                 } catch (NullPointerException e) {
                     throw new IOException("Deflater already closed", e);
                 }
             } else {
-                deflate = this.deflater.deflate(writableSegment$okio.data, writableSegment$okio.limit, 8192 - writableSegment$okio.limit);
+                deflate = deflater.deflate(writableSegment$okio.data, writableSegment$okio.limit, 8192 - writableSegment$okio.limit);
             }
             if (deflate > 0) {
                 writableSegment$okio.limit += deflate;

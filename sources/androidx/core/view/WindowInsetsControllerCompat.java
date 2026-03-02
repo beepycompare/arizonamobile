@@ -338,14 +338,15 @@ public final class WindowInsetsControllerCompat {
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public void setAppearanceLightStatusBars(boolean z) {
+            Window window = this.mWindow;
             if (z) {
-                if (this.mWindow != null) {
+                if (window != null) {
                     setSystemUiFlag(8192);
                 }
                 this.mInsetsController.setSystemBarsAppearance(8, 8);
                 return;
             }
-            if (this.mWindow != null) {
+            if (window != null) {
                 unsetSystemUiFlag(8192);
             }
             this.mInsetsController.setSystemBarsAppearance(0, 8);
@@ -359,14 +360,15 @@ public final class WindowInsetsControllerCompat {
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public void setAppearanceLightNavigationBars(boolean z) {
+            Window window = this.mWindow;
             if (z) {
-                if (this.mWindow != null) {
+                if (window != null) {
                     setSystemUiFlag(16);
                 }
                 this.mInsetsController.setSystemBarsAppearance(16, 16);
                 return;
             }
-            if (this.mWindow != null) {
+            if (window != null) {
                 unsetSystemUiFlag(16);
             }
             this.mInsetsController.setSystemBarsAppearance(0, 16);
@@ -440,7 +442,7 @@ public final class WindowInsetsControllerCompat {
             WindowInsetsController.OnControllableInsetsChangedListener onControllableInsetsChangedListener2 = new WindowInsetsController.OnControllableInsetsChangedListener() { // from class: androidx.core.view.WindowInsetsControllerCompat$Impl30$$ExternalSyntheticLambda0
                 @Override // android.view.WindowInsetsController.OnControllableInsetsChangedListener
                 public final void onControllableInsetsChanged(WindowInsetsController windowInsetsController, int i) {
-                    WindowInsetsControllerCompat.Impl30.this.m8770xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
+                    WindowInsetsControllerCompat.Impl30.this.m8066xe96d8c51(onControllableInsetsChangedListener, windowInsetsController, i);
                 }
             };
             this.mListeners.put(onControllableInsetsChangedListener, onControllableInsetsChangedListener2);
@@ -449,7 +451,7 @@ public final class WindowInsetsControllerCompat {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addOnControllableInsetsChangedListener$0$androidx-core-view-WindowInsetsControllerCompat$Impl30  reason: not valid java name */
-        public /* synthetic */ void m8770xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
+        public /* synthetic */ void m8066xe96d8c51(OnControllableInsetsChangedListener onControllableInsetsChangedListener, WindowInsetsController windowInsetsController, int i) {
             if (this.mInsetsController == windowInsetsController) {
                 onControllableInsetsChangedListener.onControllableInsetsChanged(this.mCompatController, i);
             }

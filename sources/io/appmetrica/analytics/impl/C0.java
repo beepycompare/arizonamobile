@@ -29,30 +29,30 @@ public final class C0 implements Ca {
     public final Ba b;
     public final Ve c;
     public final Ol d;
-    public final C0354jg e;
+    public final C0353jg e;
     public final Bf f;
-    public final C0356ji g;
-    public final C0681wi h;
+    public final C0355ji g;
+    public final C0680wi h;
     public final D7 i;
     public final Wk j;
-    public volatile C0350jc k;
-    public final C0414m0 l;
+    public volatile C0349jc k;
+    public final C0413m0 l;
     public boolean m;
 
     public C0(Context context, Ba ba) {
         this.f527a = context;
         this.b = ba;
-        Ve b = C0136b4.l().b(context);
+        Ve b = C0135b4.l().b(context);
         this.c = b;
-        ArrayList a2 = C0576sd.a();
-        C0136b4 l = C0136b4.l();
+        ArrayList a2 = C0575sd.a();
+        C0135b4 l = C0135b4.l();
         l.m().a(new K3(context));
         D0.a(context).a(a2);
         Bf a3 = D0.a(context, D0.a(ba.b(), this));
         this.f = a3;
         D7 j = l.j();
         this.i = j;
-        C0681wi a4 = D0.a(a3, context, ba.getDefaultExecutor());
+        C0680wi a4 = D0.a(a3, context, ba.getDefaultExecutor());
         this.h = a4;
         j.a(a4);
         Ol a5 = D0.a(context, a4, b, ba.b());
@@ -61,7 +61,7 @@ public final class C0 implements Ca {
         this.e = D0.a(a4, b, ba.b());
         this.g = D0.a(context, a3, a4, ba.b(), a5);
         this.j = l.o();
-        this.l = new C0414m0(b);
+        this.l = new C0413m0(b);
     }
 
     @Override // io.appmetrica.analytics.impl.Ca
@@ -95,17 +95,17 @@ public final class C0 implements Ca {
     }
 
     @Override // io.appmetrica.analytics.impl.Ca
-    public final C0350jc i() {
+    public final C0349jc i() {
         return this.k;
     }
 
     public final Ia j() {
-        C0350jc c0350jc = this.k;
-        Intrinsics.checkNotNull(c0350jc);
-        return c0350jc.f1062a;
+        C0349jc c0349jc = this.k;
+        Intrinsics.checkNotNull(c0349jc);
+        return c0349jc.f1062a;
     }
 
-    public final C0356ji k() {
+    public final C0355ji k() {
         return this.g;
     }
 
@@ -127,11 +127,11 @@ public final class C0 implements Ca {
     @Override // io.appmetrica.analytics.impl.Ca
     public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         Boolean bool;
-        C0414m0 c0414m0 = this.l;
-        C0663w0 c0663w0 = c0414m0.b;
-        c0663w0.getClass();
+        C0413m0 c0413m0 = this.l;
+        C0662w0 c0662w0 = c0413m0.b;
+        c0662w0.getClass();
         AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-        if (c0663w0.f1277a.b() && Intrinsics.areEqual(c0663w0.b.f934a, Boolean.TRUE)) {
+        if (c0662w0.f1277a.b() && Intrinsics.areEqual(c0662w0.b.f934a, Boolean.TRUE)) {
             newConfigBuilder.handleFirstActivationAsUpdate(true);
         }
         Boolean bool2 = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -140,7 +140,7 @@ public final class C0 implements Ca {
         }
         newConfigBuilder.withAdvIdentifiersTracking(bool2.booleanValue());
         AppMetricaConfig build = newConfigBuilder.build();
-        AppMetricaConfig.Builder f = c0414m0.f1105a.f();
+        AppMetricaConfig.Builder f = c0413m0.f1105a.f();
         if (f != null) {
             if (f.build().advIdentifiersTracking == null && (bool = build.advIdentifiersTracking) != null) {
                 f.withAdvIdentifiersTracking(bool.booleanValue());
@@ -200,30 +200,30 @@ public final class C0 implements Ca {
 
     @Override // io.appmetrica.analytics.impl.Ca
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, AbstractC0272gb.c(this.f.f520a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, AbstractC0271gb.c(this.f.f520a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
-    public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, InterfaceC0675wc interfaceC0675wc, boolean z) {
+    public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, InterfaceC0674wc interfaceC0674wc, boolean z) {
         if (this.k == null) {
             a(publicLogger, appMetricaConfig, z);
             this.e.a();
-            C0299hc a2 = interfaceC0675wc.a();
-            C0720y7 c0720y7 = new C0720y7(a2);
-            C0350jc c0350jc = new C0350jc(a2, c0720y7);
-            this.b.c().a(c0720y7);
-            this.k = c0350jc;
-            C0419m5 c0419m5 = this.j.b;
-            synchronized (c0419m5) {
-                c0419m5.f1110a = a2;
-                Iterator it = c0419m5.b.iterator();
+            C0298hc a2 = interfaceC0674wc.a();
+            C0719y7 c0719y7 = new C0719y7(a2);
+            C0349jc c0349jc = new C0349jc(a2, c0719y7);
+            this.b.c().a(c0719y7);
+            this.k = c0349jc;
+            C0418m5 c0418m5 = this.j.b;
+            synchronized (c0418m5) {
+                c0418m5.f1110a = a2;
+                Iterator it = c0418m5.b.iterator();
                 while (it.hasNext()) {
-                    ((InterfaceC0120ae) it.next()).consume(a2);
+                    ((InterfaceC0119ae) it.next()).consume(a2);
                 }
-                c0419m5.b.clear();
+                c0418m5.b.clear();
             }
             return true;
         }
-        interfaceC0675wc.a();
+        interfaceC0674wc.a();
         return false;
     }
 
@@ -237,18 +237,21 @@ public final class C0 implements Ca {
             publicLogger.setEnabled(false);
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
-        if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue()) {
-            this.b.d().a(this.f527a, appMetricaConfig, this);
+        boolean booleanValue = ((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue();
+        Ba ba = this.b;
+        if (booleanValue) {
+            ba.d().a(this.f527a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
-            this.b.d().a();
+            ba.d().a();
             publicLogger.info("Disable all crash handlers", new Object[0]);
         }
-        if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.sessionsAutoTrackingEnabled, bool2)).booleanValue()) {
-            this.j.a();
+        boolean booleanValue2 = ((Boolean) WrapUtils.getOrDefault(appMetricaConfig.sessionsAutoTrackingEnabled, bool2)).booleanValue();
+        Wk wk = this.j;
+        if (booleanValue2) {
+            wk.a();
         } else {
-            Wk wk = this.j;
             synchronized (wk) {
                 if (wk.g) {
                     wk.f842a.unregisterListener(wk.c, ActivityEvent.RESUMED);

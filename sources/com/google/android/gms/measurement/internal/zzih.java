@@ -21,10 +21,12 @@ final class zzih implements Runnable {
         zzjd zzjdVar = this.zzc;
         zzjdVar.zzL().zzZ();
         zzah zzahVar = this.zza;
-        if (zzahVar.zzc.zza() == null) {
-            zzjdVar.zzL().zzam(zzahVar, this.zzb);
-            return;
+        Object zza = zzahVar.zzc.zza();
+        zzr zzrVar = this.zzb;
+        if (zza == null) {
+            zzjdVar.zzL().zzam(zzahVar, zzrVar);
+        } else {
+            zzjdVar.zzL().zzak(zzahVar, zzrVar);
         }
-        zzjdVar.zzL().zzak(zzahVar, this.zzb);
     }
 }

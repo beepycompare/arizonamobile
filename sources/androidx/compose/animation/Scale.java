@@ -20,7 +20,7 @@ public final class Scale {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: copy-bnNdC4k$default  reason: not valid java name */
-    public static /* synthetic */ Scale m129copybnNdC4k$default(Scale scale, float f, long j, FiniteAnimationSpec finiteAnimationSpec, int i, Object obj) {
+    public static /* synthetic */ Scale m116copybnNdC4k$default(Scale scale, float f, long j, FiniteAnimationSpec finiteAnimationSpec, int i, Object obj) {
         if ((i & 1) != 0) {
             f = scale.scale;
         }
@@ -30,7 +30,7 @@ public final class Scale {
         if ((i & 4) != 0) {
             finiteAnimationSpec = scale.animationSpec;
         }
-        return scale.m131copybnNdC4k(f, j, finiteAnimationSpec);
+        return scale.m118copybnNdC4k(f, j, finiteAnimationSpec);
     }
 
     public final float component1() {
@@ -38,7 +38,7 @@ public final class Scale {
     }
 
     /* renamed from: component2-SzJe1aQ  reason: not valid java name */
-    public final long m130component2SzJe1aQ() {
+    public final long m117component2SzJe1aQ() {
         return this.transformOrigin;
     }
 
@@ -47,7 +47,7 @@ public final class Scale {
     }
 
     /* renamed from: copy-bnNdC4k  reason: not valid java name */
-    public final Scale m131copybnNdC4k(float f, long j, FiniteAnimationSpec<Float> finiteAnimationSpec) {
+    public final Scale m118copybnNdC4k(float f, long j, FiniteAnimationSpec<Float> finiteAnimationSpec) {
         return new Scale(f, j, finiteAnimationSpec, null);
     }
 
@@ -57,17 +57,17 @@ public final class Scale {
         }
         if (obj instanceof Scale) {
             Scale scale = (Scale) obj;
-            return Float.compare(this.scale, scale.scale) == 0 && TransformOrigin.m5833equalsimpl0(this.transformOrigin, scale.transformOrigin) && Intrinsics.areEqual(this.animationSpec, scale.animationSpec);
+            return Float.compare(this.scale, scale.scale) == 0 && TransformOrigin.m5179equalsimpl0(this.transformOrigin, scale.transformOrigin) && Intrinsics.areEqual(this.animationSpec, scale.animationSpec);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((Float.hashCode(this.scale) * 31) + TransformOrigin.m5836hashCodeimpl(this.transformOrigin)) * 31) + this.animationSpec.hashCode();
+        return (((Float.hashCode(this.scale) * 31) + TransformOrigin.m5182hashCodeimpl(this.transformOrigin)) * 31) + this.animationSpec.hashCode();
     }
 
     public String toString() {
-        return "Scale(scale=" + this.scale + ", transformOrigin=" + ((Object) TransformOrigin.m5837toStringimpl(this.transformOrigin)) + ", animationSpec=" + this.animationSpec + ')';
+        return "Scale(scale=" + this.scale + ", transformOrigin=" + ((Object) TransformOrigin.m5183toStringimpl(this.transformOrigin)) + ", animationSpec=" + this.animationSpec + ')';
     }
 
     private Scale(float f, long j, FiniteAnimationSpec<Float> finiteAnimationSpec) {
@@ -81,7 +81,7 @@ public final class Scale {
     }
 
     /* renamed from: getTransformOrigin-SzJe1aQ  reason: not valid java name */
-    public final long m132getTransformOriginSzJe1aQ() {
+    public final long m119getTransformOriginSzJe1aQ() {
         return this.transformOrigin;
     }
 

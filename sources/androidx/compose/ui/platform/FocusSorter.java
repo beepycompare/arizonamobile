@@ -22,17 +22,13 @@ final class FocusSorter {
     private static final Comparator<View> topsComparator = new Comparator() { // from class: androidx.compose.ui.platform.FocusSorter$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int i;
-            i = FocusSorter.topsComparator$lambda$0((View) obj, (View) obj2);
-            return i;
+            return FocusSorter.topsComparator$lambda$0((View) obj, (View) obj2);
         }
     };
     private static final Comparator<View> sidesComparator = new Comparator() { // from class: androidx.compose.ui.platform.FocusSorter$$ExternalSyntheticLambda1
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int sidesComparator$lambda$0;
-            sidesComparator$lambda$0 = FocusSorter.sidesComparator$lambda$0((View) obj, (View) obj2);
-            return sidesComparator$lambda$0;
+            return FocusSorter.sidesComparator$lambda$0((View) obj, (View) obj2);
         }
     };
 
@@ -67,7 +63,7 @@ final class FocusSorter {
         return topsComparator;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int topsComparator$lambda$0(View view, View view2) {
         if (view == view2) {
             return 0;
@@ -87,7 +83,7 @@ final class FocusSorter {
         return sidesComparator;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int sidesComparator$lambda$0(View view, View view2) {
         if (view == view2) {
             return 0;

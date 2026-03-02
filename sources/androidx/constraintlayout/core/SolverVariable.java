@@ -163,13 +163,13 @@ public class SolverVariable implements Comparable<SolverVariable> {
         int i = 0;
         while (true) {
             int i2 = this.mClientEquationsCount;
+            ArrayRow[] arrayRowArr = this.mClientEquations;
             if (i < i2) {
-                if (this.mClientEquations[i] == arrayRow) {
+                if (arrayRowArr[i] == arrayRow) {
                     return;
                 }
                 i++;
             } else {
-                ArrayRow[] arrayRowArr = this.mClientEquations;
                 if (i2 >= arrayRowArr.length) {
                     this.mClientEquations = (ArrayRow[]) Arrays.copyOf(arrayRowArr, arrayRowArr.length * 2);
                 }

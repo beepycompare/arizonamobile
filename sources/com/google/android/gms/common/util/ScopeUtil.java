@@ -3,7 +3,7 @@ package com.google.android.gms.common.util;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Set;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class ScopeUtil {
     private ScopeUtil() {

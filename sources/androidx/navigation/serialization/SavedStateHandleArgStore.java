@@ -43,7 +43,7 @@ final class SavedStateHandleArgStore extends ArgStore {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9295constructorimpl(bundleOf);
+        SavedStateWriter.m8500constructorimpl(bundleOf);
         NavType<?> navType = this.typeMap.get(key);
         if (navType != null) {
             return navType.get(bundleOf, key);

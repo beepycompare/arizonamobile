@@ -572,20 +572,22 @@ public class DownloadThread {
     }
 
     private void updateDownloadDatabase(int i, boolean z, int i2, int i3, boolean z2, String str) {
+        int i4;
         this.mInfo.mStatus = i;
         this.mInfo.mRetryAfter = i2;
         this.mInfo.mRedirectCount = i3;
         this.mInfo.mLastMod = System.currentTimeMillis();
+        DownloadInfo downloadInfo = this.mInfo;
         if (z) {
-            DownloadInfo downloadInfo = this.mInfo;
-            if (z2) {
-                downloadInfo.mNumFailed = 1;
-            } else {
+            i4 = 1;
+            if (!z2) {
                 downloadInfo.mNumFailed++;
+                this.mDB.updateDownload(this.mInfo);
             }
         } else {
-            this.mInfo.mNumFailed = 0;
+            i4 = 0;
         }
+        downloadInfo.mNumFailed = i4;
         this.mDB.updateDownload(this.mInfo);
     }
 

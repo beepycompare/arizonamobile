@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RouletteRecyclerView.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B=\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0006\u0010\u0011\u001a\u00020\fJ$\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\f0\u000bR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView;", "Landroidx/recyclerview/widget/RecyclerView;", "context", "Landroid/content/Context;", "isPremium", "", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "onSellPrise", "Lkotlin/Function0;", "", "<init>", "(Landroid/content/Context;ZLandroid/util/AttributeSet;ILkotlin/jvm/functions/Function0;)V", "rouletteAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteAdapter;", "notifyAdapter", "startRotation", "position", "prise", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseModel;", "endScrolling", "Companion", "battle-pass_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B=\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0006\u0010\u0011\u001a\u00020\fJ$\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\f0\u000bR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView;", "Landroidx/recyclerview/widget/RecyclerView;", "context", "Landroid/content/Context;", "isPremium", "", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "onSellPrise", "Lkotlin/Function0;", "", "<init>", "(Landroid/content/Context;ZLandroid/util/AttributeSet;ILkotlin/jvm/functions/Function0;)V", "rouletteAdapter", "Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteAdapter;", "notifyAdapter", "startRotation", "position", "prise", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseModel;", "endScrolling", "Companion", "battle-pass"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RouletteRecyclerView extends RecyclerView {
     public static final Companion Companion = new Companion(null);
@@ -35,7 +35,7 @@ public final class RouletteRecyclerView extends RecyclerView {
         Intrinsics.checkNotNullParameter(onSellPrise, "onSellPrise");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(View view, MotionEvent motionEvent) {
         return true;
     }
@@ -55,9 +55,7 @@ public final class RouletteRecyclerView extends RecyclerView {
         setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteRecyclerView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = RouletteRecyclerView._init_$lambda$0(view, motionEvent);
-                return _init_$lambda$0;
+                return RouletteRecyclerView._init_$lambda$0(view, motionEvent);
             }
         });
     }
@@ -98,7 +96,7 @@ public final class RouletteRecyclerView extends RecyclerView {
     }
 
     /* compiled from: RouletteRecyclerView.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView$Companion;", "", "<init>", "()V", "MAIN_POSITION", "", "battle-pass_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView$Companion;", "", "<init>", "()V", "MAIN_POSITION", "", "battle-pass"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -60,14 +60,18 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
         return new IUnusedAppRestrictionsBackportCallback.Stub() { // from class: androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.1
             @Override // androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback
             public void onIsPermissionRevocationEnabledForAppResult(boolean z, boolean z2) throws RemoteException {
-                if (!z) {
-                    UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(0);
-                    Log.e(PackageManagerCompat.LOG_TAG, "Unable to retrieve the permission revocation setting from the backport");
-                } else if (z2) {
-                    UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(3);
-                } else {
-                    UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(2);
+                if (z) {
+                    UnusedAppRestrictionsBackportServiceConnection unusedAppRestrictionsBackportServiceConnection = UnusedAppRestrictionsBackportServiceConnection.this;
+                    if (z2) {
+                        unusedAppRestrictionsBackportServiceConnection.mResultFuture.set(3);
+                        return;
+                    } else {
+                        unusedAppRestrictionsBackportServiceConnection.mResultFuture.set(2);
+                        return;
+                    }
                 }
+                UnusedAppRestrictionsBackportServiceConnection.this.mResultFuture.set(0);
+                Log.e(PackageManagerCompat.LOG_TAG, "Unable to retrieve the permission revocation setting from the backport");
             }
         };
     }

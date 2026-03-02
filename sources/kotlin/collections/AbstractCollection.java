@@ -91,14 +91,12 @@ public abstract class AbstractCollection<E> implements Collection<E>, KMappedMar
         return CollectionsKt.joinToString$default(this, ", ", "[", "]", 0, null, new Function1() { // from class: kotlin.collections.AbstractCollection$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence string$lambda$0;
-                string$lambda$0 = AbstractCollection.toString$lambda$0(AbstractCollection.this, obj);
-                return string$lambda$0;
+                return AbstractCollection.toString$lambda$0(AbstractCollection.this, obj);
             }
         }, 24, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence toString$lambda$0(AbstractCollection abstractCollection, Object obj) {
         return obj == abstractCollection ? "(this Collection)" : String.valueOf(obj);
     }

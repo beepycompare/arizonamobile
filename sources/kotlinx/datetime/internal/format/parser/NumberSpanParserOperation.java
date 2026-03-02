@@ -112,20 +112,20 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             arrayList.add(sb.append(length == null ? "at least one digit" : length + " digits").append(" for ").append(numberConsumer.getWhatThisExpects()).toString());
         }
         ArrayList arrayList2 = arrayList;
-        return this.isFlexible ? "a number with at least " + this.minLength + " digits: " + arrayList2 : "a number with exactly " + this.minLength + " digits: " + arrayList2;
+        boolean z = this.isFlexible;
+        int i = this.minLength;
+        return z ? "a number with at least " + i + " digits: " + arrayList2 : "a number with exactly " + i + " digits: " + arrayList2;
     }
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k  reason: not valid java name */
-    public Object mo11907consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo10796consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.minLength + i > input.length()) {
-            return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String consume_FANa98k$lambda$8;
-                    consume_FANa98k$lambda$8 = NumberSpanParserOperation.consume_FANa98k$lambda$8(NumberSpanParserOperation.this);
-                    return consume_FANa98k$lambda$8;
+                    return NumberSpanParserOperation.consume_FANa98k$lambda$8(NumberSpanParserOperation.this);
                 }
             });
         }
@@ -135,12 +135,10 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             int i2 = intRef.element;
         }
         if (intRef.element < this.minLength) {
-            return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
+            return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    String consume_FANa98k$lambda$9;
-                    consume_FANa98k$lambda$9 = NumberSpanParserOperation.consume_FANa98k$lambda$9(Ref.IntRef.this, this);
-                    return consume_FANa98k$lambda$9;
+                    return NumberSpanParserOperation.consume_FANa98k$lambda$9(Ref.IntRef.this, this);
                 }
             });
         }
@@ -152,32 +150,30 @@ public final class NumberSpanParserOperation<Output> implements ParserOperation<
             final NumberConsumptionError consume = this.consumers.get(i3).consume(output, input, i, intValue);
             if (consume != null) {
                 final String obj = input.subSequence(i, intValue).toString();
-                return ParseResult.Companion.m11917ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
+                return ParseResult.Companion.m10806ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.NumberSpanParserOperation$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        String consume_FANa98k$lambda$10;
-                        consume_FANa98k$lambda$10 = NumberSpanParserOperation.consume_FANa98k$lambda$10(obj, this, i3, consume);
-                        return consume_FANa98k$lambda$10;
+                        return NumberSpanParserOperation.consume_FANa98k$lambda$10(obj, this, i3, consume);
                     }
                 });
             }
             i3++;
             i = intValue;
         }
-        return ParseResult.Companion.m11918OkQi1bsqg(i);
+        return ParseResult.Companion.m10807OkQi1bsqg(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$8(NumberSpanParserOperation numberSpanParserOperation) {
         return "Unexpected end of input: yet to parse " + numberSpanParserOperation.getWhatThisExpects();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$9(Ref.IntRef intRef, NumberSpanParserOperation numberSpanParserOperation) {
         return "Only found " + intRef.element + " digits in a row, but need to parse " + numberSpanParserOperation.getWhatThisExpects();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String consume_FANa98k$lambda$10(String str, NumberSpanParserOperation numberSpanParserOperation, int i, NumberConsumptionError numberConsumptionError) {
         return "Can not interpret the string '" + str + "' as " + numberSpanParserOperation.consumers.get(i).getWhatThisExpects() + ": " + numberConsumptionError.errorMessage();
     }

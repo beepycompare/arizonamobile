@@ -47,7 +47,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class MediaCodecAudioRenderer extends MediaCodecRenderer implements MediaClock {
     private static final String TAG = "MediaCodecAudioRenderer";
     private static final String VIVO_BITS_PER_SAMPLE_KEY = "v-bits-per-sample";
@@ -62,6 +62,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     private Format decryptOnlyCodecFormat;
     private final AudioRendererEventListener.EventDispatcher eventDispatcher;
     private boolean hasPendingReportedSkippedSilence;
+    private boolean hasReportedAudioPositionAdvancing;
     private Format inputFormat;
     private boolean isStarted;
     private final LoudnessCodecController loudnessCodecController;
@@ -107,7 +108,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     public MediaCodecAudioRenderer(Context context, MediaCodecAdapter.Factory factory, MediaCodecSelector mediaCodecSelector, boolean z, Handler handler, AudioRendererEventListener audioRendererEventListener, AudioSink audioSink, LoudnessCodecController loudnessCodecController) {
-        super(1, factory, mediaCodecSelector, z, 44100.0f);
+        super(context.getApplicationContext(), 1, factory, mediaCodecSelector, z, 44100.0f);
         this.context = context.getApplicationContext();
         this.audioSink = audioSink;
         this.loudnessCodecController = loudnessCodecController;
@@ -155,11 +156,11 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             return RendererCapabilities.create(2);
         }
         MediaCodecInfo mediaCodecInfo = decoderInfos.get(0);
-        boolean isFormatSupported = mediaCodecInfo.isFormatSupported(format);
+        boolean isFormatSupported = mediaCodecInfo.isFormatSupported(this.context, format);
         if (!isFormatSupported) {
             for (int i3 = 1; i3 < decoderInfos.size(); i3++) {
                 MediaCodecInfo mediaCodecInfo2 = decoderInfos.get(i3);
-                if (mediaCodecInfo2.isFormatSupported(format)) {
+                if (mediaCodecInfo2.isFormatSupported(this.context, format)) {
                     z = false;
                     mediaCodecInfo = mediaCodecInfo2;
                     break;
@@ -186,7 +187,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected List<MediaCodecInfo> getDecoderInfos(MediaCodecSelector mediaCodecSelector, Format format, boolean z) throws MediaCodecUtil.DecoderQueryException {
-        return MediaCodecUtil.getDecoderInfosSortedByFormatSupport(getDecoderInfos(mediaCodecSelector, format, z, this.audioSink), format);
+        return MediaCodecUtil.getDecoderInfosSortedByFormatSupport(this.context, getDecoderInfos(mediaCodecSelector, format, z, this.audioSink), format);
     }
 
     private static List<MediaCodecInfo> getDecoderInfos(MediaCodecSelector mediaCodecSelector, Format format, boolean z, AudioSink audioSink) throws MediaCodecUtil.DecoderQueryException {
@@ -250,10 +251,10 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
             return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         }
         long audioTrackBufferSizeUs = this.audioSink.getAudioTrackBufferSizeUs();
-        if (!z2 || audioTrackBufferSizeUs == C.TIME_UNSET) {
-            return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        if (this.hasReportedAudioPositionAdvancing && z2 && audioTrackBufferSizeUs != C.TIME_UNSET) {
+            return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, (((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f);
         }
-        return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, ((((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f) - (Util.msToUs(getClock().elapsedRealtime()) - j2));
+        return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
@@ -345,10 +346,12 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     protected void onEnabled(boolean z, boolean z2) throws ExoPlaybackException {
         super.onEnabled(z, z2);
         this.eventDispatcher.enabled(this.decoderCounters);
-        if (getConfiguration().tunneling) {
-            this.audioSink.enableTunnelingV21();
+        boolean z3 = getConfiguration().tunneling;
+        AudioSink audioSink = this.audioSink;
+        if (z3) {
+            audioSink.enableTunnelingV21();
         } else {
-            this.audioSink.disableTunneling();
+            audioSink.disableTunneling();
         }
         this.audioSink.setPlayerId(getPlayerId());
         this.audioSink.setClock(getClock());
@@ -361,6 +364,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.currentPositionUs = j;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
         this.hasPendingReportedSkippedSilence = false;
+        this.hasReportedAudioPositionAdvancing = false;
         this.allowPositionDiscontinuity = true;
     }
 
@@ -377,6 +381,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.isStarted = false;
         this.audioSink.pause();
         super.onStopped();
+        this.hasReportedAudioPositionAdvancing = false;
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
@@ -384,6 +389,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         this.audioSinkNeedsReset = true;
         this.inputFormat = null;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
+        this.hasReportedAudioPositionAdvancing = false;
         try {
             this.audioSink.flush();
             try {
@@ -402,6 +408,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
     protected void onReset() {
         this.hasPendingReportedSkippedSilence = false;
+        this.hasReportedAudioPositionAdvancing = false;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
         try {
             super.onReset();
@@ -643,7 +650,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         return str.equals("OMX.google.opus.decoder") || str.equals("c2.android.opus.decoder") || str.equals("OMX.google.vorbis.decoder") || str.equals("c2.android.vorbis.decoder");
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }
@@ -660,6 +667,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
         @Override // androidx.media3.exoplayer.audio.AudioSink.Listener
         public void onPositionAdvancing(long j) {
+            MediaCodecAudioRenderer.this.hasReportedAudioPositionAdvancing = true;
             MediaCodecAudioRenderer.this.eventDispatcher.positionAdvancing(j);
         }
 

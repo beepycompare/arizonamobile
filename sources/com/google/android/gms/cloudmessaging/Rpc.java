@@ -193,10 +193,12 @@ public class Rpc {
             });
             return taskCompletionSource.getTask();
         }
-        if (this.zzg.zzb() == 2) {
-            this.zzf.sendBroadcast(intent);
+        int zzb2 = this.zzg.zzb();
+        Context context = this.zzf;
+        if (zzb2 == 2) {
+            context.sendBroadcast(intent);
         } else {
-            this.zzf.startService(intent);
+            context.startService(intent);
         }
         final ScheduledFuture schedule2 = this.zzh.schedule(new Runnable() { // from class: com.google.android.gms.cloudmessaging.zzac
             @Override // java.lang.Runnable

@@ -29,7 +29,7 @@ public final class AndroidFileFont extends AndroidPreloadedFont {
     }
 
     public /* synthetic */ AndroidFileFont(File file, FontWeight fontWeight, int i, FontVariation.Settings settings, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(file, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m7822getNormal_LCdwA() : i, settings, null);
+        this(file, (i2 & 2) != 0 ? FontWeight.Companion.getNormal() : fontWeight, (i2 & 4) != 0 ? FontStyle.Companion.m7122getNormal_LCdwA() : i, settings, null);
     }
 
     @Override // androidx.compose.ui.text.font.AndroidPreloadedFont
@@ -46,6 +46,6 @@ public final class AndroidFileFont extends AndroidPreloadedFont {
     }
 
     public String toString() {
-        return "Font(file=" + this.file + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7817toStringimpl(mo7767getStyle_LCdwA())) + ')';
+        return "Font(file=" + this.file + ", weight=" + getWeight() + ", style=" + ((Object) FontStyle.m7117toStringimpl(mo7068getStyle_LCdwA())) + ')';
     }
 }

@@ -41,20 +41,24 @@ class VersionedParcelParcel extends VersionedParcel {
 
     @Override // androidx.versionedparcelable.VersionedParcel
     public boolean readField(int i) {
-        while (this.mNextRead < this.mEnd) {
-            int i2 = this.mFieldId;
-            if (i2 == i) {
+        while (true) {
+            int i2 = this.mNextRead;
+            int i3 = this.mEnd;
+            int i4 = this.mFieldId;
+            if (i2 >= i3) {
+                return i4 == i;
+            } else if (i4 == i) {
                 return true;
+            } else {
+                if (String.valueOf(i4).compareTo(String.valueOf(i)) > 0) {
+                    return false;
+                }
+                this.mParcel.setDataPosition(this.mNextRead);
+                int readInt = this.mParcel.readInt();
+                this.mFieldId = this.mParcel.readInt();
+                this.mNextRead += readInt;
             }
-            if (String.valueOf(i2).compareTo(String.valueOf(i)) > 0) {
-                return false;
-            }
-            this.mParcel.setDataPosition(this.mNextRead);
-            int readInt = this.mParcel.readInt();
-            this.mFieldId = this.mParcel.readInt();
-            this.mNextRead += readInt;
         }
-        return this.mFieldId == i;
     }
 
     @Override // androidx.versionedparcelable.VersionedParcel
@@ -91,22 +95,24 @@ class VersionedParcelParcel extends VersionedParcel {
 
     @Override // androidx.versionedparcelable.VersionedParcel
     public void writeByteArray(byte[] bArr) {
+        Parcel parcel = this.mParcel;
         if (bArr != null) {
-            this.mParcel.writeInt(bArr.length);
+            parcel.writeInt(bArr.length);
             this.mParcel.writeByteArray(bArr);
             return;
         }
-        this.mParcel.writeInt(-1);
+        parcel.writeInt(-1);
     }
 
     @Override // androidx.versionedparcelable.VersionedParcel
     public void writeByteArray(byte[] bArr, int i, int i2) {
+        Parcel parcel = this.mParcel;
         if (bArr != null) {
-            this.mParcel.writeInt(bArr.length);
+            parcel.writeInt(bArr.length);
             this.mParcel.writeByteArray(bArr, i, i2);
             return;
         }
-        this.mParcel.writeInt(-1);
+        parcel.writeInt(-1);
     }
 
     @Override // androidx.versionedparcelable.VersionedParcel

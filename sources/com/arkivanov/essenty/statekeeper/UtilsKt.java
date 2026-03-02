@@ -14,9 +14,7 @@ public final class UtilsKt {
     private static final Json essentyJson = JsonKt.Json$default(null, new Function1() { // from class: com.arkivanov.essenty.statekeeper.UtilsKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit essentyJson$lambda$0;
-            essentyJson$lambda$0 = UtilsKt.essentyJson$lambda$0((JsonBuilder) obj);
-            return essentyJson$lambda$0;
+            return UtilsKt.essentyJson$lambda$0((JsonBuilder) obj);
         }
     }, 1, null);
 
@@ -24,7 +22,7 @@ public final class UtilsKt {
         return essentyJson;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit essentyJson$lambda$0(JsonBuilder Json) {
         Intrinsics.checkNotNullParameter(Json, "$this$Json");
         Json.setAllowStructuredMapKeys(true);

@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class D4 implements E2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0617u4 f542a;
+    public final /* synthetic */ C0616u4 f542a;
 
-    public D4(C0617u4 c0617u4) {
-        this.f542a = c0617u4;
+    public D4(C0616u4 c0616u4) {
+        this.f542a = c0616u4;
     }
 
     @Override // io.appmetrica.analytics.impl.E2

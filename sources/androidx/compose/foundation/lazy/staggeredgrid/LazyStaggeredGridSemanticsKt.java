@@ -48,13 +48,16 @@ public final class LazyStaggeredGridSemanticsKt {
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState
                 public int getViewport() {
-                    long mo1180getViewportSizeYbymL2g;
-                    if (LazyStaggeredGridState.this.getLayoutInfo().getOrientation() == Orientation.Vertical) {
-                        mo1180getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo1180getViewportSizeYbymL2g() & 4294967295L;
+                    long mo1034getViewportSizeYbymL2g;
+                    Orientation orientation = LazyStaggeredGridState.this.getLayoutInfo().getOrientation();
+                    Orientation orientation2 = Orientation.Vertical;
+                    LazyStaggeredGridState lazyStaggeredGridState2 = LazyStaggeredGridState.this;
+                    if (orientation == orientation2) {
+                        mo1034getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1034getViewportSizeYbymL2g() & 4294967295L;
                     } else {
-                        mo1180getViewportSizeYbymL2g = LazyStaggeredGridState.this.getLayoutInfo().mo1180getViewportSizeYbymL2g() >> 32;
+                        mo1034getViewportSizeYbymL2g = lazyStaggeredGridState2.getLayoutInfo().mo1034getViewportSizeYbymL2g() >> 32;
                     }
-                    return (int) mo1180getViewportSizeYbymL2g;
+                    return (int) mo1034getViewportSizeYbymL2g;
                 }
 
                 @Override // androidx.compose.foundation.lazy.layout.LazyLayoutSemanticState

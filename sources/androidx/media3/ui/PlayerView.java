@@ -321,7 +321,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             obj = Proxy.newProxyInstance(cls2.getClassLoader(), new Class[]{cls2}, new InvocationHandler() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda0
                 @Override // java.lang.reflect.InvocationHandler
                 public final Object invoke(Object obj2, Method method2, Object[] objArr) {
-                    return PlayerView.this.m9099lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
+                    return PlayerView.this.m8377lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
                 }
             });
         } catch (ClassNotFoundException | NoSuchMethodException unused) {
@@ -392,7 +392,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ Object m9099lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
+    public /* synthetic */ Object m8377lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
         if (method.getName().equals("onImageAvailable")) {
             onImageAvailable((Bitmap) objArr[1]);
             return null;
@@ -572,14 +572,13 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             return;
         }
         this.useController = z;
-        if (useController()) {
-            this.controller.setPlayer(this.player);
-        } else {
-            PlayerControlView playerControlView = this.controller;
-            if (playerControlView != null) {
-                playerControlView.hide();
-                this.controller.setPlayer(null);
-            }
+        boolean useController = useController();
+        PlayerControlView playerControlView = this.controller;
+        if (useController) {
+            playerControlView.setPlayer(this.player);
+        } else if (playerControlView != null) {
+            playerControlView.hide();
+            this.controller.setPlayer(null);
         }
         updateContentDescription();
     }
@@ -1097,14 +1096,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         this.mainLooperHandler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PlayerView.this.m9100lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
+                PlayerView.this.m8378lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onImageAvailable$1$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ void m9100lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
+    public /* synthetic */ void m8378lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
         setImage(new BitmapDrawable(getResources(), bitmap));
         if (hasSelectedVideoTrack()) {
             return;
@@ -1257,10 +1256,12 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         public void onRenderedFirstFrame() {
             if (PlayerView.this.shutterView != null) {
                 PlayerView.this.shutterView.setVisibility(4);
-                if (PlayerView.this.hasSelectedImageTrack()) {
-                    PlayerView.this.hideImage();
+                boolean hasSelectedImageTrack = PlayerView.this.hasSelectedImageTrack();
+                PlayerView playerView = PlayerView.this;
+                if (hasSelectedImageTrack) {
+                    playerView.hideImage();
                 } else {
-                    PlayerView.this.hideAndClearImage();
+                    playerView.hideAndClearImage();
                 }
             }
         }
@@ -1360,14 +1361,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             handler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlayerView.SurfaceSyncGroupCompatV34.this.m9102xd2b35cc8(surfaceView, runnable);
+                    PlayerView.SurfaceSyncGroupCompatV34.this.m8380xd2b35cc8(surfaceView, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRegister$1$androidx-media3-ui-PlayerView$SurfaceSyncGroupCompatV34  reason: not valid java name */
-        public /* synthetic */ void m9102xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
+        public /* synthetic */ void m8380xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
             AttachedSurfaceControl rootSurfaceControl = surfaceView.getRootSurfaceControl();
             if (rootSurfaceControl == null) {
                 return;

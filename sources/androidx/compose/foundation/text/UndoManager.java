@@ -97,15 +97,16 @@ public final class UndoManager {
         }
         String text = textFieldValue.getText();
         Entry entry2 = this.undoStack;
-        if (Intrinsics.areEqual(text, (entry2 == null || (value = entry2.getValue()) == null) ? null : value.getText())) {
-            Entry entry3 = this.undoStack;
+        boolean areEqual = Intrinsics.areEqual(text, (entry2 == null || (value = entry2.getValue()) == null) ? null : value.getText());
+        Entry entry3 = this.undoStack;
+        if (areEqual) {
             if (entry3 != null) {
                 entry3.setValue(textFieldValue);
                 return;
             }
             return;
         }
-        this.undoStack = new Entry(this.undoStack, textFieldValue);
+        this.undoStack = new Entry(entry3, textFieldValue);
         this.redoStack = null;
         int length = this.storedCharacters + textFieldValue.getText().length();
         this.storedCharacters = length;

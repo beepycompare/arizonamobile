@@ -126,21 +126,21 @@ public final class DebugProbesImpl {
     }
 
     private final Function1<Boolean, Unit> getDynamicAttach() {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             DebugProbesImpl debugProbesImpl = this;
             Object newInstance = Class.forName("kotlinx.coroutines.debug.ByteBuddyDynamicAttach").getConstructors()[0].newInstance(new Object[0]);
             Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Function1<kotlin.Boolean, kotlin.Unit>");
-            m10243constructorimpl = Result.m10243constructorimpl((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(newInstance, 1));
+            m9182constructorimpl = Result.m9182constructorimpl((Function1) TypeIntrinsics.beforeCheckcastToFunctionOfArity(newInstance, 1));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m10249isFailureimpl(m10243constructorimpl)) {
-            m10243constructorimpl = null;
+        if (Result.m9188isFailureimpl(m9182constructorimpl)) {
+            m9182constructorimpl = null;
         }
-        return (Function1) m10243constructorimpl;
+        return (Function1) m9182constructorimpl;
     }
 
     public final void install$kotlinx_coroutines_core() {
@@ -176,14 +176,12 @@ public final class DebugProbesImpl {
         weakRefCleanerThread = ThreadsKt.thread$default(false, true, null, "Coroutines Debugger Cleaner", 0, new Function0() { // from class: kotlinx.coroutines.debug.internal.DebugProbesImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit startWeakRefCleanerThread$lambda$2;
-                startWeakRefCleanerThread$lambda$2 = DebugProbesImpl.startWeakRefCleanerThread$lambda$2();
-                return startWeakRefCleanerThread$lambda$2;
+                return DebugProbesImpl.startWeakRefCleanerThread$lambda$2();
             }
         }, 21, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit startWeakRefCleanerThread$lambda$2() {
         callerInfoCache.runWeakRefQueueCleaningLoopUntilInterrupted();
         return Unit.INSTANCE;
@@ -327,9 +325,7 @@ public final class DebugProbesImpl {
         for (CoroutineOwner coroutineOwner : SequencesKt.sortedWith(SequencesKt.filter(CollectionsKt.asSequence(getCapturedCoroutines()), new Function1() { // from class: kotlinx.coroutines.debug.internal.DebugProbesImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean dumpCoroutinesSynchronized$lambda$14;
-                dumpCoroutinesSynchronized$lambda$14 = DebugProbesImpl.dumpCoroutinesSynchronized$lambda$14((DebugProbesImpl.CoroutineOwner) obj);
-                return Boolean.valueOf(dumpCoroutinesSynchronized$lambda$14);
+                return Boolean.valueOf(DebugProbesImpl.dumpCoroutinesSynchronized$lambda$14((DebugProbesImpl.CoroutineOwner) obj));
             }
         }), new Comparator() { // from class: kotlinx.coroutines.debug.internal.DebugProbesImpl$dumpCoroutinesSynchronized$$inlined$sortedBy$1
             @Override // java.util.Comparator
@@ -356,7 +352,7 @@ public final class DebugProbesImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean dumpCoroutinesSynchronized$lambda$14(CoroutineOwner coroutineOwner) {
         return !INSTANCE.isFinished(coroutineOwner);
     }
@@ -373,20 +369,20 @@ public final class DebugProbesImpl {
     }
 
     private final List<StackTraceElement> enhanceStackTraceWithThreadDumpImpl(String str, Thread thread, List<StackTraceElement> list) {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         if (Intrinsics.areEqual(str, DebugCoroutineInfoImplKt.RUNNING) && thread != null) {
             try {
                 Result.Companion companion = Result.Companion;
                 DebugProbesImpl debugProbesImpl = this;
-                m10243constructorimpl = Result.m10243constructorimpl(thread.getStackTrace());
+                m9182constructorimpl = Result.m9182constructorimpl(thread.getStackTrace());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m10249isFailureimpl(m10243constructorimpl)) {
-                m10243constructorimpl = null;
+            if (Result.m9188isFailureimpl(m9182constructorimpl)) {
+                m9182constructorimpl = null;
             }
-            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m10243constructorimpl;
+            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m9182constructorimpl;
             if (stackTraceElementArr != null) {
                 int length = stackTraceElementArr.length;
                 int i = 0;

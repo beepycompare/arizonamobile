@@ -12,15 +12,15 @@ public final class Tf implements Runnable {
     public final Consumer c;
     public final Consumer d;
     public final Z9 e;
-    public final InterfaceC0127al f;
+    public final InterfaceC0126al f;
 
-    public Tf(File file, Function function, Consumer consumer, Consumer consumer2, Z9 z9, InterfaceC0127al interfaceC0127al) {
+    public Tf(File file, Function function, Consumer consumer, Consumer consumer2, Z9 z9, InterfaceC0126al interfaceC0126al) {
         this.f799a = file;
         this.b = function;
         this.c = consumer;
         this.d = consumer2;
         this.e = z9;
-        this.f = interfaceC0127al;
+        this.f = interfaceC0126al;
     }
 
     public static final void a(File file) {
@@ -29,7 +29,7 @@ public final class Tf implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         if (this.f799a.exists()) {
-            C0697x9 b = this.e.b(this.f799a.getName());
+            C0696x9 b = this.e.b(this.f799a.getName());
             Consumer consumer = this.c;
             try {
                 b.f1302a.lock();

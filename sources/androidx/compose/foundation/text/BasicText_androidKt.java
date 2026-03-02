@@ -33,9 +33,7 @@ public final class BasicText_androidKt {
     private static final ProvidableCompositionLocal<Executor> LocalBackgroundTextMeasurementExecutor = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.compose.foundation.text.BasicText_androidKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Executor LocalBackgroundTextMeasurementExecutor$lambda$0;
-            LocalBackgroundTextMeasurementExecutor$lambda$0 = BasicText_androidKt.LocalBackgroundTextMeasurementExecutor$lambda$0();
-            return LocalBackgroundTextMeasurementExecutor$lambda$0;
+            return BasicText_androidKt.LocalBackgroundTextMeasurementExecutor$lambda$0();
         }
     });
     private static final int MaxTextLengthThreshold = 1000;
@@ -43,7 +41,7 @@ public final class BasicText_androidKt {
     private static final int PrefetchTextMinimumCoreCount = 4;
     private static Boolean backingCoreCountSatisfactory;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Executor LocalBackgroundTextMeasurementExecutor$lambda$0() {
         return null;
     }

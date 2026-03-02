@@ -20,8 +20,8 @@ import ru.mrlargha.commonui.elements.craft.domain.CraftItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CraftItemsViewHolder.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.craft.presentation.viewHolder.CraftItemsViewHolder$bind$1$2", f = "CraftItemsViewHolder.kt", i = {}, l = {35}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.craft.presentation.viewHolder.CraftItemsViewHolder$bind$1$2", f = "CraftItemsViewHolder.kt", i = {}, l = {35}, m = "invokeSuspend", n = {}, nl = {38}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CraftItemsViewHolder$bind$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ CraftItem $item;
@@ -66,12 +66,13 @@ public final class CraftItemsViewHolder$bind$1$2 extends SuspendLambda implement
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        ItemBulletBinding itemBulletBinding2 = this.$this_with;
         if (bitmap != null) {
-            ImageView ivItemIcon = this.$this_with.ivItemIcon;
+            ImageView ivItemIcon = itemBulletBinding2.ivItemIcon;
             Intrinsics.checkNotNullExpressionValue(ivItemIcon, "ivItemIcon");
             UtilsKt.setImage(ivItemIcon, bitmap);
         } else {
-            ImageView ivItemIcon2 = this.$this_with.ivItemIcon;
+            ImageView ivItemIcon2 = itemBulletBinding2.ivItemIcon;
             Intrinsics.checkNotNullExpressionValue(ivItemIcon2, "ivItemIcon");
             itemBulletBinding = this.this$0.binding;
             Context context = itemBulletBinding.getRoot().getContext();

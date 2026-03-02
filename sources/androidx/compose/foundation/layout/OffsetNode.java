@@ -37,12 +37,12 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: getX-D9Ej5fM  reason: not valid java name */
-    public final float m887getXD9Ej5fM() {
+    public final float m779getXD9Ej5fM() {
         return this.x;
     }
 
     /* renamed from: getY-D9Ej5fM  reason: not valid java name */
-    public final float m888getYD9Ej5fM() {
+    public final float m780getYD9Ej5fM() {
         return this.y;
     }
 
@@ -51,12 +51,12 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: setX-0680j_4  reason: not valid java name */
-    public final void m889setX0680j_4(float f) {
+    public final void m781setX0680j_4(float f) {
         this.x = f;
     }
 
     /* renamed from: setY-0680j_4  reason: not valid java name */
-    public final void m890setY0680j_4(float f) {
+    public final void m782setY0680j_4(float f) {
         this.y = f;
     }
 
@@ -66,8 +66,8 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
     }
 
     /* renamed from: update-Md-fbLM  reason: not valid java name */
-    public final void m891updateMdfbLM(float f, float f2, boolean z) {
-        if (!Dp.m8263equalsimpl0(this.x, f) || !Dp.m8263equalsimpl0(this.y, f2) || this.rtlAware != z) {
+    public final void m783updateMdfbLM(float f, float f2, boolean z) {
+        if (!Dp.m7560equalsimpl0(this.x, f) || !Dp.m7560equalsimpl0(this.y, f2) || this.rtlAware != z) {
             LayoutModifierNodeKt.invalidatePlacement(this);
         }
         this.x = f;
@@ -77,24 +77,22 @@ public final class OffsetNode extends Modifier.Node implements LayoutModifierNod
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.OffsetNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo6875measureBRTryo0, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return OffsetNode.measure_3p2s80s$lambda$0(OffsetNode.this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(OffsetNode offsetNode, Placeable placeable, Placeable.PlacementScope placementScope) {
         if (offsetNode.rtlAware) {
-            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo458roundToPx0680j_4(offsetNode.x), placementScope.mo458roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
+            Placeable.PlacementScope.placeRelative$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(offsetNode.x), placementScope.mo399roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
         } else {
-            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo458roundToPx0680j_4(offsetNode.x), placementScope.mo458roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
+            Placeable.PlacementScope.place$default(placementScope, placeable, placementScope.mo399roundToPx0680j_4(offsetNode.x), placementScope.mo399roundToPx0680j_4(offsetNode.y), 0.0f, 4, null);
         }
         return Unit.INSTANCE;
     }

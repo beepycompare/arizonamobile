@@ -1120,10 +1120,11 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             this.chipIconVisible = z;
             boolean showsChipIcon2 = showsChipIcon();
             if (showsChipIcon != showsChipIcon2) {
+                Drawable drawable = this.chipIcon;
                 if (showsChipIcon2) {
-                    applyChildDrawable(this.chipIcon);
+                    applyChildDrawable(drawable);
                 } else {
-                    unapplyChildDrawable(this.chipIcon);
+                    unapplyChildDrawable(drawable);
                 }
                 invalidateSelf();
                 onSizeChange();
@@ -1228,10 +1229,11 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             this.closeIconVisible = z;
             boolean showsCloseIcon2 = showsCloseIcon();
             if (showsCloseIcon != showsCloseIcon2) {
+                Drawable drawable = this.closeIcon;
                 if (showsCloseIcon2) {
-                    applyChildDrawable(this.closeIcon);
+                    applyChildDrawable(drawable);
                 } else {
-                    unapplyChildDrawable(this.closeIcon);
+                    unapplyChildDrawable(drawable);
                 }
                 invalidateSelf();
                 onSizeChange();
@@ -1372,10 +1374,11 @@ public class ChipDrawable extends MaterialShapeDrawable implements TintAwareDraw
             this.checkedIconVisible = z;
             boolean showsCheckedIcon2 = showsCheckedIcon();
             if (showsCheckedIcon != showsCheckedIcon2) {
+                Drawable drawable = this.checkedIcon;
                 if (showsCheckedIcon2) {
-                    applyChildDrawable(this.checkedIcon);
+                    applyChildDrawable(drawable);
                 } else {
-                    unapplyChildDrawable(this.checkedIcon);
+                    unapplyChildDrawable(drawable);
                 }
                 invalidateSelf();
                 onSizeChange();

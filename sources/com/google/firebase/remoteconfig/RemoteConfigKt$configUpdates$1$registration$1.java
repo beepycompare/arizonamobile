@@ -19,11 +19,6 @@ public final class RemoteConfigKt$configUpdates$1$registration$1 implements Conf
         this.$$this$callbackFlow = producerScope;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void onUpdate$lambda$0(ProducerScope producerScope, ConfigUpdate configUpdate) {
-        ChannelsKt.trySendBlocking(producerScope, configUpdate);
-    }
-
     @Override // com.google.firebase.remoteconfig.ConfigUpdateListener
     public void onUpdate(final ConfigUpdate configUpdate) {
         Intrinsics.checkNotNullParameter(configUpdate, "configUpdate");
@@ -32,7 +27,7 @@ public final class RemoteConfigKt$configUpdates$1$registration$1 implements Conf
         firebaseRemoteConfig.schedule(new Runnable() { // from class: com.google.firebase.remoteconfig.RemoteConfigKt$configUpdates$1$registration$1$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                RemoteConfigKt$configUpdates$1$registration$1.onUpdate$lambda$0(ProducerScope.this, configUpdate);
+                ChannelsKt.trySendBlocking(ProducerScope.this, configUpdate);
             }
         });
     }

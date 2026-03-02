@@ -27,7 +27,7 @@ public final class Y3 {
     public final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
 
     public static void a(String str, String str2, Throwable th) {
-        Qj qj = AbstractC0483oj.f1158a;
+        Qj qj = AbstractC0482oj.f1158a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         qj.getClass();
         qj.a(new Pj("client_module_errors", mapOf));

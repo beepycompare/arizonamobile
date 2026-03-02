@@ -14,49 +14,49 @@ public final class ClipboardKeyCommandsHandler {
     private final Function1<KeyCommand, Unit> handler;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ClipboardKeyCommandsHandler m1573boximpl(Function1 function1) {
+    public static final /* synthetic */ ClipboardKeyCommandsHandler m1368boximpl(Function1 function1) {
         return new ClipboardKeyCommandsHandler(function1);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Function1<? super KeyCommand, ? extends Unit> m1574constructorimpl(Function1<? super KeyCommand, Unit> function1) {
+    public static Function1<? super KeyCommand, ? extends Unit> m1369constructorimpl(Function1<? super KeyCommand, Unit> function1) {
         return function1;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1575equalsimpl(Function1<? super KeyCommand, ? extends Unit> function1, Object obj) {
-        return (obj instanceof ClipboardKeyCommandsHandler) && Intrinsics.areEqual(function1, ((ClipboardKeyCommandsHandler) obj).m1579unboximpl());
+    public static boolean m1370equalsimpl(Function1<? super KeyCommand, ? extends Unit> function1, Object obj) {
+        return (obj instanceof ClipboardKeyCommandsHandler) && Intrinsics.areEqual(function1, ((ClipboardKeyCommandsHandler) obj).m1374unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1576equalsimpl0(Function1<? super KeyCommand, ? extends Unit> function1, Function1<? super KeyCommand, ? extends Unit> function12) {
+    public static final boolean m1371equalsimpl0(Function1<? super KeyCommand, ? extends Unit> function1, Function1<? super KeyCommand, ? extends Unit> function12) {
         return Intrinsics.areEqual(function1, function12);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1577hashCodeimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
+    public static int m1372hashCodeimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
         return function1.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1578toStringimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
+    public static String m1373toStringimpl(Function1<? super KeyCommand, ? extends Unit> function1) {
         return "ClipboardKeyCommandsHandler(handler=" + function1 + ')';
     }
 
     public boolean equals(Object obj) {
-        return m1575equalsimpl(this.handler, obj);
+        return m1370equalsimpl(this.handler, obj);
     }
 
     public int hashCode() {
-        return m1577hashCodeimpl(this.handler);
+        return m1372hashCodeimpl(this.handler);
     }
 
     public String toString() {
-        return m1578toStringimpl(this.handler);
+        return m1373toStringimpl(this.handler);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Function1 m1579unboximpl() {
+    public final /* synthetic */ Function1 m1374unboximpl() {
         return this.handler;
     }
 

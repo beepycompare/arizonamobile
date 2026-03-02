@@ -60,15 +60,15 @@ public final class HandlerDispatcherKt {
     }
 
     static {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
+            m9182constructorimpl = Result.m9182constructorimpl(new HandlerContext(asHandler(Looper.getMainLooper(), true), null, 2, null));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
         }
-        Main = Result.m10249isFailureimpl(m10243constructorimpl) ? null : m10243constructorimpl;
+        Main = Result.m9188isFailureimpl(m9182constructorimpl) ? null : m9182constructorimpl;
     }
 
     public static final Object awaitFrame(Continuation<? super Long> continuation) {
@@ -102,14 +102,9 @@ public final class HandlerDispatcherKt {
         choreographer2.postFrameCallback(new Choreographer.FrameCallback() { // from class: kotlinx.coroutines.android.HandlerDispatcherKt$$ExternalSyntheticLambda0
             @Override // android.view.Choreographer.FrameCallback
             public final void doFrame(long j) {
-                HandlerDispatcherKt.postFrameCallback$lambda$5(CancellableContinuation.this, j);
+                CancellableContinuation.this.resumeUndispatched(Dispatchers.getMain(), Long.valueOf(j));
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void postFrameCallback$lambda$5(CancellableContinuation cancellableContinuation, long j) {
-        cancellableContinuation.resumeUndispatched(Dispatchers.getMain(), Long.valueOf(j));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -120,7 +115,7 @@ public final class HandlerDispatcherKt {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             updateChoreographerAndPostFrameCallback(cancellableContinuationImpl2);
         } else {
-            Dispatchers.getMain().mo11837dispatch(cancellableContinuationImpl2.getContext(), new Runnable() { // from class: kotlinx.coroutines.android.HandlerDispatcherKt$awaitFrameSlowPath$2$1
+            Dispatchers.getMain().mo10758dispatch(cancellableContinuationImpl2.getContext(), new Runnable() { // from class: kotlinx.coroutines.android.HandlerDispatcherKt$awaitFrameSlowPath$2$1
                 @Override // java.lang.Runnable
                 public final void run() {
                     HandlerDispatcherKt.updateChoreographerAndPostFrameCallback(cancellableContinuationImpl2);

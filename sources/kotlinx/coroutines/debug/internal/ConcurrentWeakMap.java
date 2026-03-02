@@ -41,7 +41,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         this(false, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object _get_keys_$lambda$0(Object obj, Object obj2) {
         return obj;
     }
@@ -149,14 +149,12 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         return new KeyValueSet(new Function2() { // from class: kotlinx.coroutines.debug.internal.ConcurrentWeakMap$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Object _get_keys_$lambda$0;
-                _get_keys_$lambda$0 = ConcurrentWeakMap._get_keys_$lambda$0(obj, obj2);
-                return _get_keys_$lambda$0;
+                return ConcurrentWeakMap._get_keys_$lambda$0(obj, obj2);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Map.Entry _get_entries_$lambda$1(Object obj, Object obj2) {
         return new Entry(obj, obj2);
     }
@@ -166,9 +164,7 @@ public final class ConcurrentWeakMap<K, V> extends AbstractMutableMap<K, V> {
         return new KeyValueSet(new Function2() { // from class: kotlinx.coroutines.debug.internal.ConcurrentWeakMap$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Map.Entry _get_entries_$lambda$1;
-                _get_entries_$lambda$1 = ConcurrentWeakMap._get_entries_$lambda$1(obj, obj2);
-                return _get_entries_$lambda$1;
+                return ConcurrentWeakMap._get_entries_$lambda$1(obj, obj2);
             }
         });
     }

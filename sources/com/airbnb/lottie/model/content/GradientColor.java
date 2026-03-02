@@ -92,10 +92,10 @@ public class GradientColor {
             return this.colors[binarySearch];
         }
         int i = -(binarySearch + 1);
-        if (i == 0) {
-            return this.colors[0];
-        }
         int[] iArr = this.colors;
+        if (i == 0) {
+            return iArr[0];
+        }
         if (i == iArr.length - 1) {
             return iArr[iArr.length - 1];
         }

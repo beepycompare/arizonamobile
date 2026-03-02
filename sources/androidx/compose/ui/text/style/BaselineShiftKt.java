@@ -9,17 +9,17 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes2.dex */
 public final class BaselineShiftKt {
     /* renamed from: isSpecified-4Dl_Bck  reason: not valid java name */
-    public static final boolean m8013isSpecified4Dl_Bck(float f) {
+    public static final boolean m7310isSpecified4Dl_Bck(float f) {
         return !Float.isNaN(f);
     }
 
     /* renamed from: takeOrElse-JpAxnlU  reason: not valid java name */
-    public static final float m8015takeOrElseJpAxnlU(float f, Function0<BaselineShift> function0) {
-        return Float.isNaN(f) ? function0.invoke().m8004unboximpl() : f;
+    public static final float m7312takeOrElseJpAxnlU(float f, Function0<BaselineShift> function0) {
+        return Float.isNaN(f) ? function0.invoke().m7301unboximpl() : f;
     }
 
     /* renamed from: lerp-jWV1Mfo  reason: not valid java name */
-    public static final float m8014lerpjWV1Mfo(float f, float f2, float f3) {
-        return BaselineShift.m7999constructorimpl(MathHelpersKt.lerp(f, f2, f3));
+    public static final float m7311lerpjWV1Mfo(float f, float f2, float f3) {
+        return BaselineShift.m7296constructorimpl(MathHelpersKt.lerp(f, f2, f3));
     }
 }

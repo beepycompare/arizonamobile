@@ -32,13 +32,13 @@ import kotlinx.serialization.KSerializer;
 @Metadata(d1 = {"\u0000r\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0083\u0004\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u000e\b\u0000\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004\"\b\b\u0001\u0010\u0005*\u00020\u0006\"\b\b\u0002\u0010\u0007*\u00020\u0006\"\b\b\u0003\u0010\b*\u00020\u0006\"\u000e\b\u0004\u0010\t*\b\u0012\u0004\u0012\u0002H\u00050\n\"\b\b\u0005\u0010\u0002*\u00020\u0006*\u0002H\u00032\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\b0\f2\u000e\u0010\r\u001a\n\u0012\u0004\u0012\u0002H\t\u0018\u00010\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\t0\u00102\u0006\u0010\u0011\u001a\u00020\u001226\u0010\u0013\u001a2\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0013\u0012\u0011H\b¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u0002H\t0\u00142H\u0010\u0019\u001aD\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012%\u0012#\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0005\u0012\u0004\u0012\u0002H\u00070\u001b0\u001a¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0000\u0012\u0004\u0012\u0002H\u00020\u00142:\b\u0002\u0010\u001c\u001a4\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001d\u0012\u0015\u0012\u0013\u0018\u0001H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u001f0\u00142M\b\u0002\u0010 \u001aG\u0012\u0013\u0012\u0011H\b¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u001f0!2+\b\u0002\u0010\"\u001a%\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\f\u0012\n\u0012\u0004\u0012\u0002H\t\u0018\u00010\u00100#26\u0010$\u001a2\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(%\u0012\u0013\u0012\u0011H\u0003¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(&\u0012\u0004\u0012\u0002H\u00070\u0014¢\u0006\u0002\u0010'\u001a½\u0004\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u000e\b\u0000\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004\"\b\b\u0001\u0010\u0005*\u00020\u0006\"\b\b\u0002\u0010\u0007*\u00020\u0006\"\b\b\u0003\u0010\b*\u00020\u0006\"\u000e\b\u0004\u0010\t*\b\u0012\u0004\u0012\u0002H\u00050\n\"\b\b\u0005\u0010\u0002*\u00020\u0006*\u0002H\u00032\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\b0\f2\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\t0\u00102#\u0010(\u001a\u001f\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0006\u0012\u0004\u0018\u00010)0#2#\u0010*\u001a\u001f\u0012\u0013\u0012\u00110)¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(+\u0012\u0006\u0012\u0004\u0018\u0001H\t0#26\u0010\u0013\u001a2\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0013\u0012\u0011H\b¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u0002H\t0\u00142H\u0010\u0019\u001aD\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012%\u0012#\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0005\u0012\u0004\u0012\u0002H\u00070\u001b0\u001a¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0000\u0012\u0004\u0012\u0002H\u00020\u00142:\b\u0002\u0010\u001c\u001a4\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001d\u0012\u0015\u0012\u0013\u0018\u0001H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u001f0\u00142M\b\u0002\u0010 \u001aG\u0012\u0013\u0012\u0011H\b¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u001f0!2+\b\u0002\u0010\"\u001a%\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\f\u0012\n\u0012\u0004\u0012\u0002H\t\u0018\u00010\u00100#26\u0010$\u001a2\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(%\u0012\u0013\u0012\u0011H\u0003¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(&\u0012\u0004\u0012\u0002H\u00070\u0014¢\u0006\u0002\u0010,\u001aï\u0001\u0010-\u001a\u0014\u0012\u0004\u0012\u0002H\u0005\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u0002H\t0.\"\u000e\b\u0000\u0010\u0003*\b\u0012\u0004\u0012\u0002H\u00030\u0004\"\b\b\u0001\u0010\u0005*\u00020\u0006\"\b\b\u0002\u0010\u0007*\u00020\u0006\"\u000e\b\u0003\u0010\t*\b\u0012\u0004\u0012\u0002H\u00050\n*\u0002H\u00032\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\t0\u00102#\u0010(\u001a\u001f\u0012\u0013\u0012\u0011H\t¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0006\u0012\u0004\u0018\u00010)0#2#\u0010*\u001a\u001f\u0012\u0013\u0012\u00110)¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(+\u0012\u0006\u0012\u0004\u0018\u0001H\t0#26\u0010$\u001a2\u0012\u0013\u0012\u0011H\u0005¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(%\u0012\u0013\u0012\u0011H\u0003¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(&\u0012\u0004\u0012\u0002H\u00070\u0014H\u0002¢\u0006\u0002\u0010/¨\u00060"}, d2 = {"children", "Lcom/arkivanov/decompose/value/Value;", ExifInterface.LATITUDE_SOUTH, "Ctx", "Lcom/arkivanov/decompose/GenericComponentContext;", "C", "", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.LONGITUDE_EAST, "N", "Lcom/arkivanov/decompose/router/children/NavState;", "source", "Lcom/arkivanov/decompose/router/children/NavigationSource;", "stateSerializer", "Lkotlinx/serialization/KSerializer;", "initialState", "Lkotlin/Function0;", "key", "", "navTransformer", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", RemoteConfigConstants.ResponseFieldKey.STATE, NotificationCompat.CATEGORY_EVENT, "stateMapper", "", "Lcom/arkivanov/decompose/Child;", "onStateChanged", DownloaderClientMarshaller.PARAM_NEW_STATE, "oldState", "", "onEventComplete", "Lkotlin/Function3;", "backTransformer", "Lkotlin/Function1;", "childFactory", "configuration", "componentContext", "(Lcom/arkivanov/decompose/GenericComponentContext;Lcom/arkivanov/decompose/router/children/NavigationSource;Lkotlinx/serialization/KSerializer;Lkotlin/jvm/functions/Function0;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lcom/arkivanov/decompose/value/Value;", "saveState", "Lcom/arkivanov/essenty/statekeeper/SerializableContainer;", "restoreState", TtmlNode.RUBY_CONTAINER, "(Lcom/arkivanov/decompose/GenericComponentContext;Lcom/arkivanov/decompose/router/children/NavigationSource;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lcom/arkivanov/decompose/value/Value;", "childrenNavigator", "Lcom/arkivanov/decompose/router/children/ChildrenNavigator;", "(Lcom/arkivanov/decompose/GenericComponentContext;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lcom/arkivanov/decompose/router/children/ChildrenNavigator;", "decompose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ChildrenFactoryKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$0(NavState navState, NavState navState2) {
         Intrinsics.checkNotNullParameter(navState, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$1(Object obj, NavState navState, NavState navState2) {
         Intrinsics.checkNotNullParameter(obj, "<unused var>");
         Intrinsics.checkNotNullParameter(navState, "<unused var>");
@@ -60,21 +60,17 @@ public final class ChildrenFactoryKt {
         return children(ctx, source, key, initialState, new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                SerializableContainer children$lambda$2;
-                children$lambda$2 = ChildrenFactoryKt.children$lambda$2(KSerializer.this, (NavState) obj);
-                return children$lambda$2;
+                return ChildrenFactoryKt.children$lambda$2(KSerializer.this, (NavState) obj);
             }
         }, new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                NavState children$lambda$3;
-                children$lambda$3 = ChildrenFactoryKt.children$lambda$3(KSerializer.this, (SerializableContainer) obj);
-                return children$lambda$3;
+                return ChildrenFactoryKt.children$lambda$3(KSerializer.this, (SerializableContainer) obj);
             }
         }, navTransformer, stateMapper, onStateChanged, onEventComplete, backTransformer, childFactory);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerializableContainer children$lambda$2(KSerializer kSerializer, NavState state) {
         Intrinsics.checkNotNullParameter(state, "state");
         if (kSerializer != null) {
@@ -83,7 +79,7 @@ public final class ChildrenFactoryKt {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavState children$lambda$3(KSerializer kSerializer, SerializableContainer container) {
         Intrinsics.checkNotNullParameter(container, "container");
         if (kSerializer != null) {
@@ -92,38 +88,13 @@ public final class ChildrenFactoryKt {
         return null;
     }
 
-    public static /* synthetic */ Value children$default(GenericComponentContext genericComponentContext, NavigationSource navigationSource, String str, Function0 function0, Function1 function1, Function1 function12, Function2 function2, Function2 function22, Function2 function23, Function3 function3, Function1 function13, Function2 function24, int i, Object obj) {
-        return children(genericComponentContext, navigationSource, str, function0, function1, function12, function2, function22, (i & 128) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda8
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj2, Object obj3) {
-                Unit children$lambda$4;
-                children$lambda$4 = ChildrenFactoryKt.children$lambda$4((NavState) obj2, (NavState) obj3);
-                return children$lambda$4;
-            }
-        } : function23, (i & 256) != 0 ? new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda9
-            @Override // kotlin.jvm.functions.Function3
-            public final Object invoke(Object obj2, Object obj3, Object obj4) {
-                Unit children$lambda$5;
-                children$lambda$5 = ChildrenFactoryKt.children$lambda$5(obj2, (NavState) obj3, (NavState) obj4);
-                return children$lambda$5;
-            }
-        } : function3, (i & 512) != 0 ? new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$children$8
-            /* JADX WARN: Incorrect types in method signature: (TN;)Ljava/lang/Void; */
-            @Override // kotlin.jvm.functions.Function1
-            public final Void invoke(NavState it) {
-                Intrinsics.checkNotNullParameter(it, "it");
-                return null;
-            }
-        } : function13, function24);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$4(NavState navState, NavState navState2) {
         Intrinsics.checkNotNullParameter(navState, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$5(Object obj, NavState navState, NavState navState2) {
         Intrinsics.checkNotNullParameter(obj, "<unused var>");
         Intrinsics.checkNotNullParameter(navState, "<unused var>");
@@ -149,26 +120,20 @@ public final class ChildrenFactoryKt {
         final Cancellation subscribe = source.subscribe(new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit children$lambda$6;
-                children$lambda$6 = ChildrenFactoryKt.children$lambda$6(Relay.this, obj);
-                return children$lambda$6;
+                return ChildrenFactoryKt.children$lambda$6(Relay.this, obj);
             }
         });
         final BackCallback BackCallback$default = BackCallbackKt.BackCallback$default(false, 0, null, null, null, new Function0() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit children$lambda$7;
-                children$lambda$7 = ChildrenFactoryKt.children$lambda$7(Relay.this);
-                return children$lambda$7;
+                return ChildrenFactoryKt.children$lambda$7(Relay.this);
             }
         }, 31, null);
         relay.subscribe(new ChildrenFactoryKt$children$9(new EventProcessor()));
         Holder holder = new Holder(childrenNavigator(ctx, key, initialState, saveState, restoreState, childFactory), stateMapper, navTransformer, new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit children$lambda$8;
-                children$lambda$8 = ChildrenFactoryKt.children$lambda$8(BackCallback.this, onStateChanged, (NavState) obj, (NavState) obj2, ((Boolean) obj3).booleanValue());
-                return children$lambda$8;
+                return ChildrenFactoryKt.children$lambda$8(BackCallback.this, onStateChanged, (NavState) obj, (NavState) obj2, ((Boolean) obj3).booleanValue());
             }
         }, onEventComplete, backTransformer);
         relay.accept(new NavEvent.Init(holder));
@@ -212,20 +177,20 @@ public final class ChildrenFactoryKt {
         return holder.getState();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$6(Relay relay, Object it) {
         Intrinsics.checkNotNullParameter(it, "it");
         relay.accept(new NavEvent.Event(it));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$7(Relay relay) {
         relay.accept(NavEvent.Back.INSTANCE);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit children$lambda$8(BackCallback backCallback, Function2 function2, NavState newState, NavState navState, boolean z) {
         Intrinsics.checkNotNullParameter(newState, "newState");
         backCallback.setEnabled(z);
@@ -243,23 +208,19 @@ public final class ChildrenFactoryKt {
         final ChildrenNavigator<C, T, N> childrenNavigator = new ChildrenNavigator<>(ctx3.getLifecycle(), new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                InstanceKeeper.Instance childrenNavigator$lambda$11$lambda$9;
-                childrenNavigator$lambda$11$lambda$9 = ChildrenFactoryKt.childrenNavigator$lambda$11$lambda$9(GenericComponentContext.this, str, (Function0) obj);
-                return childrenNavigator$lambda$11$lambda$9;
+                return ChildrenFactoryKt.childrenNavigator$lambda$11$lambda$9(GenericComponentContext.this, str, (Function0) obj);
             }
         }, new DefaultChildItemFactory(ctx.getComponentContextFactory(), ctx3.getLifecycle(), ChildBackHandlerKt.child$default(ctx.getBackHandler(), null, 1, 1, null), function2), invoke == null ? function0.invoke() : invoke, (savedState == null || (childState = savedState.getChildState()) == null || invoke == null) ? null : childState);
         ctx2.getStateKeeper().register(str, SavedState.Companion.serializer(), new Function0() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SavedState childrenNavigator$lambda$13;
-                childrenNavigator$lambda$13 = ChildrenFactoryKt.childrenNavigator$lambda$13(Function1.this, childrenNavigator);
-                return childrenNavigator$lambda$13;
+                return ChildrenFactoryKt.childrenNavigator$lambda$13(Function1.this, childrenNavigator);
             }
         });
         return childrenNavigator;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InstanceKeeper.Instance childrenNavigator$lambda$11$lambda$9(GenericComponentContext genericComponentContext, String str, Function0 factory) {
         Intrinsics.checkNotNullParameter(factory, "factory");
         InstanceKeeper instanceKeeper = genericComponentContext.getInstanceKeeper();
@@ -272,7 +233,7 @@ public final class ChildrenFactoryKt {
         return instance;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedState childrenNavigator$lambda$13(Function1 function1, ChildrenNavigator childrenNavigator) {
         SerializableContainer serializableContainer = (SerializableContainer) function1.invoke(childrenNavigator.getNavState());
         if (serializableContainer != null) {

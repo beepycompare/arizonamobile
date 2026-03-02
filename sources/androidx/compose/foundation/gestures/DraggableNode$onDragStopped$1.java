@@ -45,18 +45,18 @@ final class DraggableNode$onDragStopped$1 extends SuspendLambda implements Funct
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Function3 function3;
-        long m572reverseIfNeededAH228Gc;
+        long m492reverseIfNeededAH228Gc;
         Orientation orientation;
-        float m567toFloatsFctU;
+        float m487toFloatsFctU;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             function3 = this.this$0.onDragStopped;
-            m572reverseIfNeededAH228Gc = this.this$0.m572reverseIfNeededAH228Gc(this.$event.m525getVelocity9UxMQ8M());
+            m492reverseIfNeededAH228Gc = this.this$0.m492reverseIfNeededAH228Gc(this.$event.m456getVelocity9UxMQ8M());
             orientation = this.this$0.orientation;
-            m567toFloatsFctU = DraggableKt.m567toFloatsFctU(m572reverseIfNeededAH228Gc, orientation);
-            Float boxFloat = Boxing.boxFloat(m567toFloatsFctU);
+            m487toFloatsFctU = DraggableKt.m487toFloatsFctU(m492reverseIfNeededAH228Gc, orientation);
+            Float boxFloat = Boxing.boxFloat(m487toFloatsFctU);
             this.label = 1;
             if (function3.invoke((CoroutineScope) this.L$0, boxFloat, this) == coroutine_suspended) {
                 return coroutine_suspended;

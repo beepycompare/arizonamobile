@@ -71,10 +71,11 @@ public class GuidelineReference implements Facade, Reference {
             return;
         }
         int i2 = this.mEnd;
+        Guideline guideline = this.mGuidelineWidget;
         if (i2 != -1) {
-            this.mGuidelineWidget.setGuideEnd(i2);
+            guideline.setGuideEnd(i2);
         } else {
-            this.mGuidelineWidget.setGuidePercent(this.mPercent);
+            guideline.setGuidePercent(this.mPercent);
         }
     }
 

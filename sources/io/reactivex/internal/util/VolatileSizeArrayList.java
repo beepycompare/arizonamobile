@@ -153,10 +153,12 @@ public final class VolatileSizeArrayList<T> extends AtomicInteger implements Lis
 
     @Override // java.util.List, java.util.Collection
     public boolean equals(Object obj) {
-        if (obj instanceof VolatileSizeArrayList) {
-            return this.list.equals(((VolatileSizeArrayList) obj).list);
+        boolean z = obj instanceof VolatileSizeArrayList;
+        ArrayList<T> arrayList = this.list;
+        if (z) {
+            return arrayList.equals(((VolatileSizeArrayList) obj).list);
         }
-        return this.list.equals(obj);
+        return arrayList.equals(obj);
     }
 
     @Override // java.util.List, java.util.Collection

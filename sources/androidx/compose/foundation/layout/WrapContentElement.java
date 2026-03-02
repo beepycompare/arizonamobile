@@ -1,6 +1,5 @@
 package androidx.compose.foundation.layout;
 
-import androidx.compose.foundation.layout.WrapContentElement;
 import androidx.compose.ui.Alignment;
 import androidx.compose.ui.node.ModifierNodeElement;
 import androidx.compose.ui.platform.InspectorInfo;
@@ -83,48 +82,39 @@ final class WrapContentElement extends ModifierNodeElement<WrapContentNode> {
             return new WrapContentElement(Direction.Horizontal, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    IntOffset width$lambda$0;
-                    width$lambda$0 = WrapContentElement.Companion.width$lambda$0(Alignment.Horizontal.this, (IntSize) obj, (LayoutDirection) obj2);
-                    return width$lambda$0;
+                    IntOffset m7674boximpl;
+                    Alignment.Horizontal horizontal2 = Alignment.Horizontal.this;
+                    IntSize intSize = (IntSize) obj;
+                    LayoutDirection layoutDirection = (LayoutDirection) obj2;
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((horizontal2.align(0, (int) (intSize.m7730unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
+                    return m7674boximpl;
                 }
             }, horizontal, "wrapContentWidth");
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final IntOffset width$lambda$0(Alignment.Horizontal horizontal, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((horizontal.align(0, (int) (intSize.m8433unboximpl() >> 32), layoutDirection) << 32) | (0 & 4294967295L)));
         }
 
         public final WrapContentElement height(final Alignment.Vertical vertical, boolean z) {
             return new WrapContentElement(Direction.Vertical, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    IntOffset height$lambda$0;
-                    height$lambda$0 = WrapContentElement.Companion.height$lambda$0(Alignment.Vertical.this, (IntSize) obj, (LayoutDirection) obj2);
-                    return height$lambda$0;
+                    IntOffset m7674boximpl;
+                    Alignment.Vertical vertical2 = Alignment.Vertical.this;
+                    IntSize intSize = (IntSize) obj;
+                    LayoutDirection layoutDirection = (LayoutDirection) obj2;
+                    m7674boximpl = IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((0 << 32) | (4294967295L & vertical2.align(0, (int) (intSize.m7730unboximpl() & 4294967295L)))));
+                    return m7674boximpl;
                 }
             }, vertical, "wrapContentHeight");
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final IntOffset height$lambda$0(Alignment.Vertical vertical, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((0 << 32) | (4294967295L & vertical.align(0, (int) (intSize.m8433unboximpl() & 4294967295L)))));
         }
 
         public final WrapContentElement size(final Alignment alignment, boolean z) {
             return new WrapContentElement(Direction.Both, z, new Function2() { // from class: androidx.compose.foundation.layout.WrapContentElement$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    IntOffset size$lambda$0;
-                    size$lambda$0 = WrapContentElement.Companion.size$lambda$0(Alignment.this, (IntSize) obj, (LayoutDirection) obj2);
-                    return size$lambda$0;
+                    IntOffset m7674boximpl;
+                    m7674boximpl = IntOffset.m7674boximpl(Alignment.this.mo4246alignKFBX0sM(IntSize.Companion.m7731getZeroYbymL2g(), ((IntSize) obj).m7730unboximpl(), (LayoutDirection) obj2));
+                    return m7674boximpl;
                 }
             }, alignment, "wrapContentSize");
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final IntOffset size$lambda$0(Alignment alignment, IntSize intSize, LayoutDirection layoutDirection) {
-            return IntOffset.m8377boximpl(alignment.mo4898alignKFBX0sM(IntSize.Companion.m8434getZeroYbymL2g(), intSize.m8433unboximpl(), layoutDirection));
         }
     }
 }

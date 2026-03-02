@@ -15,9 +15,14 @@ public final class LocalDateTimeFormatKt {
     private static final Lazy ISO_DATETIME$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.format.LocalDateTimeFormatKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            LocalDateTimeFormat ISO_DATETIME_delegate$lambda$3;
-            ISO_DATETIME_delegate$lambda$3 = LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3();
-            return ISO_DATETIME_delegate$lambda$3;
+            LocalDateTimeFormat build;
+            build = LocalDateTimeFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateTimeFormatKt$$ExternalSyntheticLambda3
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2((DateTimeFormatBuilder.WithDateTime) obj);
+                }
+            });
+            return build;
         }
     });
     private static final IncompleteLocalDateTime emptyIncompleteLocalDateTime = new IncompleteLocalDateTime(null, null, 3, null);
@@ -26,33 +31,18 @@ public final class LocalDateTimeFormatKt {
         return (LocalDateTimeFormat) ISO_DATETIME$delegate.getValue();
     }
 
-    public static final LocalDateTimeFormat ISO_DATETIME_delegate$lambda$3() {
-        return LocalDateTimeFormat.Companion.build(new Function1() { // from class: kotlinx.datetime.format.LocalDateTimeFormatKt$$ExternalSyntheticLambda3
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                Unit ISO_DATETIME_delegate$lambda$3$lambda$2;
-                ISO_DATETIME_delegate$lambda$3$lambda$2 = LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2((DateTimeFormatBuilder.WithDateTime) obj);
-                return ISO_DATETIME_delegate$lambda$3$lambda$2;
-            }
-        });
-    }
-
     public static final Unit ISO_DATETIME_delegate$lambda$3$lambda$2(DateTimeFormatBuilder.WithDateTime build) {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         build.date(LocalDateFormatKt.getISO_DATE());
         DateTimeFormatBuilderKt.alternativeParsing(build, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.LocalDateTimeFormatKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0;
-                ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0 = LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0((DateTimeFormatBuilder.WithDateTime) obj);
-                return ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0;
+                return LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0((DateTimeFormatBuilder.WithDateTime) obj);
             }
         }}, new Function1() { // from class: kotlinx.datetime.format.LocalDateTimeFormatKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1;
-                ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1 = LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1((DateTimeFormatBuilder.WithDateTime) obj);
-                return ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1;
+                return LocalDateTimeFormatKt.ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1((DateTimeFormatBuilder.WithDateTime) obj);
             }
         });
         build.time(LocalTimeFormatKt.getISO_TIME());
@@ -61,13 +51,13 @@ public final class LocalDateTimeFormatKt {
 
     public static final Unit ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$0(DateTimeFormatBuilder.WithDateTime alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-        DateTimeFormatBuilderKt.m11885char(alternativeParsing, 't');
+        DateTimeFormatBuilderKt.m10789char(alternativeParsing, 't');
         return Unit.INSTANCE;
     }
 
     public static final Unit ISO_DATETIME_delegate$lambda$3$lambda$2$lambda$1(DateTimeFormatBuilder.WithDateTime alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-        DateTimeFormatBuilderKt.m11885char(alternativeParsing, 'T');
+        DateTimeFormatBuilderKt.m10789char(alternativeParsing, 'T');
         return Unit.INSTANCE;
     }
 }

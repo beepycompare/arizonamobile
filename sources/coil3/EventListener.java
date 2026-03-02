@@ -1,7 +1,6 @@
 package coil3;
 
 import android.graphics.Bitmap;
-import coil3.EventListener;
 import coil3.decode.DecodeResult;
 import coil3.decode.Decoder;
 import coil3.fetch.FetchResult;
@@ -89,9 +88,9 @@ public abstract class EventListener implements ImageRequest.Listener {
         public static final Factory NONE = new Factory() { // from class: coil3.EventListener$Factory$$ExternalSyntheticLambda0
             @Override // coil3.EventListener.Factory
             public final EventListener create(ImageRequest imageRequest) {
-                EventListener NONE$lambda$0;
-                NONE$lambda$0 = EventListener.Factory.NONE$lambda$0(imageRequest);
-                return NONE$lambda$0;
+                EventListener eventListener;
+                eventListener = EventListener.NONE;
+                return eventListener;
             }
         };
 
@@ -105,11 +104,6 @@ public abstract class EventListener implements ImageRequest.Listener {
 
             private Companion() {
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        static EventListener NONE$lambda$0(ImageRequest imageRequest) {
-            return EventListener.NONE;
         }
     }
 

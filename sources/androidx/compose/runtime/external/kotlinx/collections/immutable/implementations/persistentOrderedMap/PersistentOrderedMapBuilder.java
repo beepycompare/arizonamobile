@@ -49,8 +49,8 @@ public final class PersistentOrderedMapBuilder<K, V> extends AbstractMutableMap<
         PersistentOrderedMap<K, V> persistentOrderedMap;
         PersistentHashMap<K, LinkedValue<V>> build = this.hashMapBuilder.build();
         if (build == this.map.getHashMap$runtime()) {
-            CommonFunctionsKt.m4792assert(this.firstKey == this.map.getFirstKey$runtime());
-            CommonFunctionsKt.m4792assert(this.lastKey == this.map.getLastKey$runtime());
+            CommonFunctionsKt.m4157assert(this.firstKey == this.map.getFirstKey$runtime());
+            CommonFunctionsKt.m4157assert(this.lastKey == this.map.getLastKey$runtime());
             persistentOrderedMap = this.map;
         } else {
             persistentOrderedMap = new PersistentOrderedMap<>(this.firstKey, this.lastKey, build);
@@ -108,7 +108,7 @@ public final class PersistentOrderedMapBuilder<K, V> extends AbstractMutableMap<
             LinkedValue<V> linkedValue2 = this.hashMapBuilder.get(obj);
             Intrinsics.checkNotNull(linkedValue2);
             LinkedValue<V> linkedValue3 = linkedValue2;
-            CommonFunctionsKt.m4792assert(!linkedValue3.getHasNext());
+            CommonFunctionsKt.m4157assert(!linkedValue3.getHasNext());
             this.hashMapBuilder.put(obj, linkedValue3.withNext(k));
             this.hashMapBuilder.put(k, new LinkedValue<>(v, obj));
             this.lastKey = k;

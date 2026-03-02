@@ -96,7 +96,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.ServerSideAdInsertionMediaSource$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ServerSideAdInsertionMediaSource.this.m9023x8b1696bf(immutableMap, timeline);
+                        ServerSideAdInsertionMediaSource.this.m8301x8b1696bf(immutableMap, timeline);
                     }
                 });
             }
@@ -105,7 +105,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAdPlaybackStates$0$androidx-media3-exoplayer-source-ads-ServerSideAdInsertionMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9023x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
+    public /* synthetic */ void m8301x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
         AdPlaybackState adPlaybackState;
         for (SharedMediaPeriod sharedMediaPeriod : this.mediaPeriods.values()) {
             AdPlaybackState adPlaybackState2 = (AdPlaybackState) immutableMap.get(sharedMediaPeriod.periodUid);
@@ -189,12 +189,13 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         SharedMediaPeriod sharedMediaPeriod2 = this.lastUsedMediaPeriod;
         boolean z = false;
         if (sharedMediaPeriod2 != null) {
-            if (sharedMediaPeriod2.periodUid.equals(mediaPeriodId.periodUid)) {
-                sharedMediaPeriod = this.lastUsedMediaPeriod;
+            boolean equals = sharedMediaPeriod2.periodUid.equals(mediaPeriodId.periodUid);
+            sharedMediaPeriod = this.lastUsedMediaPeriod;
+            if (equals) {
                 this.mediaPeriods.put(pair, sharedMediaPeriod);
                 z = true;
             } else {
-                this.lastUsedMediaPeriod.release(this.mediaSource);
+                sharedMediaPeriod.release(this.mediaSource);
                 sharedMediaPeriod = null;
             }
             this.lastUsedMediaPeriod = null;

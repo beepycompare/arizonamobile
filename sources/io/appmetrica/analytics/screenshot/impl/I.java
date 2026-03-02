@@ -4,7 +4,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class I implements InterfaceC0770i {
+public final class I implements InterfaceC0769i {
 
     /* renamed from: a  reason: collision with root package name */
     public final ClientContext f1446a;
@@ -15,8 +15,8 @@ public final class I implements InterfaceC0770i {
         this.b = u;
     }
 
-    @Override // io.appmetrica.analytics.screenshot.impl.InterfaceC0770i
+    @Override // io.appmetrica.analytics.screenshot.impl.InterfaceC0769i
     public final List<T> a() {
-        return CollectionsKt.listOf((Object[]) new T[]{new C0782v(this.f1446a, this.b), new g0(this.f1446a, this.b)});
+        return CollectionsKt.listOf((Object[]) new T[]{new C0781v(this.f1446a, this.b), new g0(this.f1446a, this.b)});
     }
 }

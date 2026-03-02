@@ -18,7 +18,7 @@ public interface Ia extends Da, Hc {
 
     void a(Ho ho);
 
-    void a(EnumC0438n enumC0438n);
+    void a(EnumC0437n enumC0437n);
 
     @Override // io.appmetrica.analytics.impl.Hc
     /* synthetic */ void a(String str);

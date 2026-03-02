@@ -8,7 +8,7 @@ public final class G7 {
     public static final F7 f592a = new F7();
     public static final String b = "appmetrica";
 
-    public final C0307hk a(Context context) {
-        return new C0307hk(context.getPackageName());
+    public final C0306hk a(Context context) {
+        return new C0306hk(context.getPackageName());
     }
 }

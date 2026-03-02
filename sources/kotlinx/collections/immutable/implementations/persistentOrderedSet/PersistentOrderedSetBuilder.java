@@ -21,14 +21,14 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
     private final PersistentHashMapBuilder<E, Links> hashMapBuilder;
     private Object lastElement;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean equals$lambda$2(Links links, Links links2) {
         Intrinsics.checkNotNullParameter(links, "<unused var>");
         Intrinsics.checkNotNullParameter(links2, "<unused var>");
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean equals$lambda$3(Links links, Links links2) {
         Intrinsics.checkNotNullParameter(links, "<unused var>");
         Intrinsics.checkNotNullParameter(links2, "<unused var>");
@@ -64,12 +64,12 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
     public PersistentSet<E> build() {
         PersistentOrderedSet<E> persistentOrderedSet = this.builtSet;
         if (persistentOrderedSet != null) {
-            CommonFunctionsKt.m11753assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
-            CommonFunctionsKt.m11753assert(this.firstElement == persistentOrderedSet.getFirstElement$kotlinx_collections_immutable());
-            CommonFunctionsKt.m11753assert(this.lastElement == persistentOrderedSet.getLastElement$kotlinx_collections_immutable());
+            CommonFunctionsKt.m10682assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() != null);
+            CommonFunctionsKt.m10682assert(this.firstElement == persistentOrderedSet.getFirstElement$kotlinx_collections_immutable());
+            CommonFunctionsKt.m10682assert(this.lastElement == persistentOrderedSet.getLastElement$kotlinx_collections_immutable());
             return persistentOrderedSet;
         }
-        CommonFunctionsKt.m11753assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
+        CommonFunctionsKt.m10682assert(this.hashMapBuilder.getBuiltMap$kotlinx_collections_immutable() == null);
         PersistentOrderedSet<E> persistentOrderedSet2 = new PersistentOrderedSet<>(this.firstElement, this.lastElement, this.hashMapBuilder.build());
         this.builtSet = persistentOrderedSet2;
         return persistentOrderedSet2;
@@ -153,9 +153,7 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
                 return this.hashMapBuilder.getNode$kotlinx_collections_immutable().equalsWith$kotlinx_collections_immutable((TrieNode<E, Links>) ((PersistentOrderedSet) obj).getHashMap$kotlinx_collections_immutable().getNode$kotlinx_collections_immutable(), new Function2() { // from class: kotlinx.collections.immutable.implementations.persistentOrderedSet.PersistentOrderedSetBuilder$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        boolean equals$lambda$2;
-                        equals$lambda$2 = PersistentOrderedSetBuilder.equals$lambda$2((Links) obj2, (Links) obj3);
-                        return Boolean.valueOf(equals$lambda$2);
+                        return Boolean.valueOf(PersistentOrderedSetBuilder.equals$lambda$2((Links) obj2, (Links) obj3));
                     }
                 });
             }
@@ -163,9 +161,7 @@ public final class PersistentOrderedSetBuilder<E> extends AbstractMutableSet<E> 
                 return this.hashMapBuilder.getNode$kotlinx_collections_immutable().equalsWith$kotlinx_collections_immutable((TrieNode<E, Links>) ((PersistentOrderedSetBuilder) obj).hashMapBuilder.getNode$kotlinx_collections_immutable(), new Function2() { // from class: kotlinx.collections.immutable.implementations.persistentOrderedSet.PersistentOrderedSetBuilder$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        boolean equals$lambda$3;
-                        equals$lambda$3 = PersistentOrderedSetBuilder.equals$lambda$3((Links) obj2, (Links) obj3);
-                        return Boolean.valueOf(equals$lambda$3);
+                        return Boolean.valueOf(PersistentOrderedSetBuilder.equals$lambda$3((Links) obj2, (Links) obj3));
                     }
                 });
             }

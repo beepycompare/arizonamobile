@@ -13,7 +13,6 @@ import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TraceUtil;
-import androidx.media3.common.util.Util;
 import androidx.media3.decoder.CryptoConfig;
 import androidx.media3.decoder.Decoder;
 import androidx.media3.decoder.DecoderException;
@@ -34,7 +33,7 @@ import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer, ? extends SimpleDecoderOutputBuffer, ? extends DecoderException>> extends BaseRenderer implements MediaClock {
     private static final int MAX_PENDING_OUTPUT_STREAM_OFFSET_COUNT = 10;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -56,6 +55,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     private boolean firstStreamSampleRead;
     private final DecoderInputBuffer flagsOnlyBuffer;
     private boolean hasPendingReportedSkippedSilence;
+    private boolean hasReportedAudioPositionAdvancing;
     private DecoderInputBuffer inputBuffer;
     private Format inputFormat;
     private boolean inputStreamEnded;
@@ -122,10 +122,10 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
         }
         long audioTrackBufferSizeUs = this.audioSink.getAudioTrackBufferSizeUs();
-        if (!z || audioTrackBufferSizeUs == C.TIME_UNSET) {
-            return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
+        if (this.hasReportedAudioPositionAdvancing && z && audioTrackBufferSizeUs != C.TIME_UNSET) {
+            return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, (((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f);
         }
-        return Math.max((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US, ((((float) Math.min(audioTrackBufferSizeUs, this.nextBufferToWritePresentationTimeUs - j)) / (getPlaybackParameters() != null ? getPlaybackParameters().speed : 1.0f)) / 2.0f) - (Util.msToUs(getClock().elapsedRealtime()) - j2));
+        return Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
     }
 
     @Override // androidx.media3.exoplayer.RendererCapabilities
@@ -395,10 +395,12 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         DecoderCounters decoderCounters = new DecoderCounters();
         this.decoderCounters = decoderCounters;
         this.eventDispatcher.enabled(decoderCounters);
-        if (getConfiguration().tunneling) {
-            this.audioSink.enableTunnelingV21();
+        boolean z3 = getConfiguration().tunneling;
+        AudioSink audioSink = this.audioSink;
+        if (z3) {
+            audioSink.enableTunnelingV21();
         } else {
-            this.audioSink.disableTunneling();
+            audioSink.disableTunneling();
         }
         this.audioSink.setPlayerId(getPlayerId());
         this.audioSink.setClock(getClock());
@@ -410,6 +412,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         this.currentPositionUs = j;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
         this.hasPendingReportedSkippedSilence = false;
+        this.hasReportedAudioPositionAdvancing = false;
         this.allowPositionDiscontinuity = true;
         this.inputStreamEnded = false;
         this.outputStreamEnded = false;
@@ -429,6 +432,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         updateCurrentPosition();
         this.audioSink.pause();
         this.isStarted = false;
+        this.hasReportedAudioPositionAdvancing = false;
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
@@ -437,6 +441,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         this.audioTrackNeedsConfigure = true;
         setOutputStreamOffsetUs(C.TIME_UNSET);
         this.hasPendingReportedSkippedSilence = false;
+        this.hasReportedAudioPositionAdvancing = false;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
         try {
             setSourceDrmSession(null);
@@ -597,7 +602,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }
@@ -614,6 +619,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
         @Override // androidx.media3.exoplayer.audio.AudioSink.Listener
         public void onPositionAdvancing(long j) {
+            DecoderAudioRenderer.this.hasReportedAudioPositionAdvancing = true;
             DecoderAudioRenderer.this.eventDispatcher.positionAdvancing(j);
         }
 

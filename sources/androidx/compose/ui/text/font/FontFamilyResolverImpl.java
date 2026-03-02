@@ -34,9 +34,9 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
         this.createDefaultTypeface = new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object createDefaultTypeface$lambda$0;
-                createDefaultTypeface$lambda$0 = FontFamilyResolverImpl.createDefaultTypeface$lambda$0(FontFamilyResolverImpl.this, (TypefaceRequest) obj);
-                return createDefaultTypeface$lambda$0;
+                Object value;
+                value = FontFamilyResolverImpl.this.resolve(TypefaceRequest.m7157copye1PVR60$default((TypefaceRequest) obj, null, null, 0, 0, null, 30, null)).getValue();
+                return value;
             }
         };
     }
@@ -47,11 +47,6 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
 
     public /* synthetic */ FontFamilyResolverImpl(PlatformFontLoader platformFontLoader, PlatformResolveInterceptor platformResolveInterceptor, TypefaceRequestCache typefaceRequestCache, FontListFontFamilyTypefaceAdapter fontListFontFamilyTypefaceAdapter, PlatformFontFamilyTypefaceAdapter platformFontFamilyTypefaceAdapter, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(platformFontLoader, (i & 2) != 0 ? PlatformResolveInterceptor.Companion.getDefault$ui_text() : platformResolveInterceptor, (i & 4) != 0 ? FontFamilyResolverKt.getGlobalTypefaceRequestCache() : typefaceRequestCache, (i & 8) != 0 ? new FontListFontFamilyTypefaceAdapter(FontFamilyResolverKt.getGlobalAsyncTypefaceCache(), null, 2, null) : fontListFontFamilyTypefaceAdapter, (i & 16) != 0 ? new PlatformFontFamilyTypefaceAdapter() : platformFontFamilyTypefaceAdapter);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Object createDefaultTypeface$lambda$0(FontFamilyResolverImpl fontFamilyResolverImpl, TypefaceRequest typefaceRequest) {
-        return fontFamilyResolverImpl.resolve(TypefaceRequest.m7858copye1PVR60$default(typefaceRequest, null, null, 0, 0, null, 30, null)).getValue();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -96,14 +91,12 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
                 size = fonts.size();
                 for (i2 = 0; i2 < size; i2++) {
                     Font font = fonts.get(i2);
-                    arrayList.add(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(font.getWeight()), this.platformResolveInterceptor.m7842interceptFontStyleT2F_aPo(font.mo7767getStyle_LCdwA()), FontSynthesis.Companion.m7832getAllGVVA2EU(), this.platformFontLoader.getCacheKey(), null));
+                    arrayList.add(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(font.getWeight()), this.platformResolveInterceptor.m7141interceptFontStyleT2F_aPo(font.mo7068getStyle_LCdwA()), FontSynthesis.Companion.m7132getAllGVVA2EU(), this.platformFontLoader.getCacheKey(), null));
                 }
                 this.typefaceRequestCache.preWarmCache(arrayList, new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        TypefaceResult preload$lambda$1;
-                        preload$lambda$1 = FontFamilyResolverImpl.preload$lambda$1(FontFamilyResolverImpl.this, (TypefaceRequest) obj2);
-                        return preload$lambda$1;
+                        return FontFamilyResolverImpl.preload$lambda$1(FontFamilyResolverImpl.this, (TypefaceRequest) obj2);
                     }
                 });
                 return Unit.INSTANCE;
@@ -123,15 +116,13 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
         this.typefaceRequestCache.preWarmCache(arrayList2, new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj22) {
-                TypefaceResult preload$lambda$1;
-                preload$lambda$1 = FontFamilyResolverImpl.preload$lambda$1(FontFamilyResolverImpl.this, (TypefaceRequest) obj22);
-                return preload$lambda$1;
+                return FontFamilyResolverImpl.preload$lambda$1(FontFamilyResolverImpl.this, (TypefaceRequest) obj22);
             }
         });
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TypefaceResult preload$lambda$1(FontFamilyResolverImpl fontFamilyResolverImpl, TypefaceRequest typefaceRequest) {
         TypefaceResult resolve = fontFamilyResolverImpl.fontListFontFamilyTypefaceAdapter.resolve(typefaceRequest, fontFamilyResolverImpl.platformFontLoader, new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -170,22 +161,20 @@ public final class FontFamilyResolverImpl implements FontFamily.Resolver {
 
     @Override // androidx.compose.ui.text.font.FontFamily.Resolver
     /* renamed from: resolve-DPcqOEQ */
-    public State<Object> mo7787resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
-        return resolve(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(fontWeight), this.platformResolveInterceptor.m7842interceptFontStyleT2F_aPo(i), this.platformResolveInterceptor.m7843interceptFontSynthesisMscr08Y(i2), this.platformFontLoader.getCacheKey(), null));
+    public State<Object> mo7088resolveDPcqOEQ(FontFamily fontFamily, FontWeight fontWeight, int i, int i2) {
+        return resolve(new TypefaceRequest(this.platformResolveInterceptor.interceptFontFamily(fontFamily), this.platformResolveInterceptor.interceptFontWeight(fontWeight), this.platformResolveInterceptor.m7141interceptFontStyleT2F_aPo(i), this.platformResolveInterceptor.m7142interceptFontSynthesisMscr08Y(i2), this.platformFontLoader.getCacheKey(), null));
     }
 
     private final State<Object> resolve(final TypefaceRequest typefaceRequest) {
         return this.typefaceRequestCache.runCached(typefaceRequest, new Function1() { // from class: androidx.compose.ui.text.font.FontFamilyResolverImpl$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                TypefaceResult resolve$lambda$0;
-                resolve$lambda$0 = FontFamilyResolverImpl.resolve$lambda$0(FontFamilyResolverImpl.this, typefaceRequest, (Function1) obj);
-                return resolve$lambda$0;
+                return FontFamilyResolverImpl.resolve$lambda$0(FontFamilyResolverImpl.this, typefaceRequest, (Function1) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final TypefaceResult resolve$lambda$0(FontFamilyResolverImpl fontFamilyResolverImpl, TypefaceRequest typefaceRequest, Function1 function1) {
         TypefaceResult resolve = fontFamilyResolverImpl.fontListFontFamilyTypefaceAdapter.resolve(typefaceRequest, fontFamilyResolverImpl.platformFontLoader, function1, fontFamilyResolverImpl.createDefaultTypeface);
         if (resolve == null) {

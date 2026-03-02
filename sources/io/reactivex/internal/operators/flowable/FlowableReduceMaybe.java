@@ -108,10 +108,11 @@ public final class FlowableReduceMaybe<T> extends Maybe<T> implements HasUpstrea
             }
             this.done = true;
             T t = this.value;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                maybeObserver.onSuccess(t);
             } else {
-                this.downstream.onComplete();
+                maybeObserver.onComplete();
             }
         }
     }

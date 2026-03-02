@@ -126,25 +126,24 @@ public final class AccessibilityIterators {
                         Intrinsics.throwUninitializedPropertyAccessException("impl");
                         breakIterator = null;
                     }
-                    if (!breakIterator.isBoundary(i)) {
-                        BreakIterator breakIterator2 = this.impl;
+                    boolean isBoundary = breakIterator.isBoundary(i);
+                    BreakIterator breakIterator2 = this.impl;
+                    if (isBoundary) {
                         if (breakIterator2 == null) {
                             Intrinsics.throwUninitializedPropertyAccessException("impl");
                             breakIterator2 = null;
                         }
-                        i = breakIterator2.following(i);
-                    } else {
-                        BreakIterator breakIterator3 = this.impl;
-                        if (breakIterator3 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("impl");
-                            breakIterator3 = null;
-                        }
-                        int following = breakIterator3.following(i);
+                        int following = breakIterator2.following(i);
                         if (following == -1) {
                             return null;
                         }
                         return getRange(i, following);
                     }
+                    if (breakIterator2 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("impl");
+                        breakIterator2 = null;
+                    }
+                    i = breakIterator2.following(i);
                 } while (i != -1);
                 return null;
             }
@@ -164,25 +163,24 @@ public final class AccessibilityIterators {
                         Intrinsics.throwUninitializedPropertyAccessException("impl");
                         breakIterator = null;
                     }
-                    if (!breakIterator.isBoundary(i)) {
-                        BreakIterator breakIterator2 = this.impl;
+                    boolean isBoundary = breakIterator.isBoundary(i);
+                    BreakIterator breakIterator2 = this.impl;
+                    if (isBoundary) {
                         if (breakIterator2 == null) {
                             Intrinsics.throwUninitializedPropertyAccessException("impl");
                             breakIterator2 = null;
                         }
-                        i = breakIterator2.preceding(i);
-                    } else {
-                        BreakIterator breakIterator3 = this.impl;
-                        if (breakIterator3 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("impl");
-                            breakIterator3 = null;
-                        }
-                        int preceding = breakIterator3.preceding(i);
+                        int preceding = breakIterator2.preceding(i);
                         if (preceding == -1) {
                             return null;
                         }
                         return getRange(preceding, i);
                     }
+                    if (breakIterator2 == null) {
+                        Intrinsics.throwUninitializedPropertyAccessException("impl");
+                        breakIterator2 = null;
+                    }
+                    i = breakIterator2.preceding(i);
                 } while (i != -1);
                 return null;
             }
@@ -481,28 +479,27 @@ public final class AccessibilityIterators {
         public int[] following(int i) {
             int i2;
             if (getText().length() > 0 && i < getText().length()) {
+                TextLayoutResult textLayoutResult = this.layoutResult;
                 if (i < 0) {
-                    TextLayoutResult textLayoutResult = this.layoutResult;
                     if (textLayoutResult == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                         textLayoutResult = null;
                     }
                     i2 = textLayoutResult.getLineForOffset(0);
                 } else {
-                    TextLayoutResult textLayoutResult2 = this.layoutResult;
-                    if (textLayoutResult2 == null) {
+                    if (textLayoutResult == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
-                        textLayoutResult2 = null;
+                        textLayoutResult = null;
                     }
-                    int lineForOffset = textLayoutResult2.getLineForOffset(i);
+                    int lineForOffset = textLayoutResult.getLineForOffset(i);
                     i2 = getLineEdgeIndex(lineForOffset, DirectionStart) == i ? lineForOffset : lineForOffset + 1;
                 }
-                TextLayoutResult textLayoutResult3 = this.layoutResult;
-                if (textLayoutResult3 == null) {
+                TextLayoutResult textLayoutResult2 = this.layoutResult;
+                if (textLayoutResult2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
-                    textLayoutResult3 = null;
+                    textLayoutResult2 = null;
                 }
-                if (i2 >= textLayoutResult3.getLineCount()) {
+                if (i2 >= textLayoutResult2.getLineCount()) {
                     return null;
                 }
                 return getRange(getLineEdgeIndex(i2, DirectionStart), getLineEdgeIndex(i2, DirectionEnd) + 1);
@@ -514,20 +511,20 @@ public final class AccessibilityIterators {
         public int[] preceding(int i) {
             int i2;
             if (getText().length() > 0 && i > 0) {
-                if (i > getText().length()) {
-                    TextLayoutResult textLayoutResult = this.layoutResult;
+                int length = getText().length();
+                TextLayoutResult textLayoutResult = this.layoutResult;
+                if (i > length) {
                     if (textLayoutResult == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                         textLayoutResult = null;
                     }
                     i2 = textLayoutResult.getLineForOffset(getText().length());
                 } else {
-                    TextLayoutResult textLayoutResult2 = this.layoutResult;
-                    if (textLayoutResult2 == null) {
+                    if (textLayoutResult == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
-                        textLayoutResult2 = null;
+                        textLayoutResult = null;
                     }
-                    int lineForOffset = textLayoutResult2.getLineForOffset(i);
+                    int lineForOffset = textLayoutResult.getLineForOffset(i);
                     i2 = getLineEdgeIndex(lineForOffset, DirectionEnd) + 1 == i ? lineForOffset : lineForOffset - 1;
                 }
                 if (i2 < 0) {
@@ -551,8 +548,9 @@ public final class AccessibilityIterators {
                 Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                 textLayoutResult3 = null;
             }
-            if (resolvedTextDirection != textLayoutResult3.getParagraphDirection(lineStart)) {
-                TextLayoutResult textLayoutResult4 = this.layoutResult;
+            ResolvedTextDirection paragraphDirection = textLayoutResult3.getParagraphDirection(lineStart);
+            TextLayoutResult textLayoutResult4 = this.layoutResult;
+            if (resolvedTextDirection != paragraphDirection) {
                 if (textLayoutResult4 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                 } else {
@@ -560,12 +558,11 @@ public final class AccessibilityIterators {
                 }
                 return textLayoutResult2.getLineStart(i);
             }
-            TextLayoutResult textLayoutResult5 = this.layoutResult;
-            if (textLayoutResult5 == null) {
+            if (textLayoutResult4 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
-                textLayoutResult5 = null;
+                textLayoutResult4 = null;
             }
-            return TextLayoutResult.getLineEnd$default(textLayoutResult5, i, false, 2, null) - 1;
+            return TextLayoutResult.getLineEnd$default(textLayoutResult4, i, false, 2, null) - 1;
         }
     }
 
@@ -653,8 +650,9 @@ public final class AccessibilityIterators {
                         Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                         textLayoutResult5 = null;
                     }
-                    if (lineTop < textLayoutResult4.getLineTop(textLayoutResult5.getLineCount() - 1)) {
-                        TextLayoutResult textLayoutResult6 = this.layoutResult;
+                    int i2 = (lineTop > textLayoutResult4.getLineTop(textLayoutResult5.getLineCount() - 1) ? 1 : (lineTop == textLayoutResult4.getLineTop(textLayoutResult5.getLineCount() - 1) ? 0 : -1));
+                    TextLayoutResult textLayoutResult6 = this.layoutResult;
+                    if (i2 < 0) {
                         if (textLayoutResult6 == null) {
                             Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                         } else {
@@ -662,11 +660,10 @@ public final class AccessibilityIterators {
                         }
                         lineCount = textLayoutResult.getLineForVerticalPosition(lineTop);
                     } else {
-                        TextLayoutResult textLayoutResult7 = this.layoutResult;
-                        if (textLayoutResult7 == null) {
+                        if (textLayoutResult6 == null) {
                             Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                         } else {
-                            textLayoutResult = textLayoutResult7;
+                            textLayoutResult = textLayoutResult6;
                         }
                         lineCount = textLayoutResult.getLineCount();
                     }
@@ -739,8 +736,9 @@ public final class AccessibilityIterators {
                 Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                 textLayoutResult3 = null;
             }
-            if (resolvedTextDirection != textLayoutResult3.getParagraphDirection(lineStart)) {
-                TextLayoutResult textLayoutResult4 = this.layoutResult;
+            ResolvedTextDirection paragraphDirection = textLayoutResult3.getParagraphDirection(lineStart);
+            TextLayoutResult textLayoutResult4 = this.layoutResult;
+            if (resolvedTextDirection != paragraphDirection) {
                 if (textLayoutResult4 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
                 } else {
@@ -748,12 +746,11 @@ public final class AccessibilityIterators {
                 }
                 return textLayoutResult2.getLineStart(i);
             }
-            TextLayoutResult textLayoutResult5 = this.layoutResult;
-            if (textLayoutResult5 == null) {
+            if (textLayoutResult4 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("layoutResult");
-                textLayoutResult5 = null;
+                textLayoutResult4 = null;
             }
-            return TextLayoutResult.getLineEnd$default(textLayoutResult5, i, false, 2, null) - 1;
+            return TextLayoutResult.getLineEnd$default(textLayoutResult4, i, false, 2, null) - 1;
         }
     }
 }

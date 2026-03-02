@@ -39,9 +39,9 @@ import okhttp3.internal.ws.WebSocketProtocol;
 @Metadata(d1 = {"\u0000J\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u008f\u0001\u0010\u0000\u001a\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00032:\u0010\u0005\u001a6\u0012\u0015\u0012\u0013\u0018\u00010\u0003¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\u0015\u0012\u0013\u0018\u00010\u0003¢\u0006\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\n\u0012\u0004\u0012\u00020\u00010\u00062\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0001¢\u0006\u0002\u0010\u0017\"\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001a¨\u0006\u001b"}, d2 = {"DateRangeInputContent", "", "selectedStartDateMillis", "", "selectedEndDateMillis", "onDatesSelectionChange", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "startDateMillis", "endDateMillis", "calendarModel", "Landroidx/compose/material3/internal/CalendarModel;", "yearRange", "Lkotlin/ranges/IntRange;", "dateFormatter", "Landroidx/compose/material3/DatePickerFormatter;", "selectableDates", "Landroidx/compose/material3/SelectableDates;", "colors", "Landroidx/compose/material3/DatePickerColors;", "focusRequester", "Landroidx/compose/ui/focus/FocusRequester;", "(Ljava/lang/Long;Ljava/lang/Long;Lkotlin/jvm/functions/Function2;Landroidx/compose/material3/internal/CalendarModel;Lkotlin/ranges/IntRange;Landroidx/compose/material3/DatePickerFormatter;Landroidx/compose/material3/SelectableDates;Landroidx/compose/material3/DatePickerColors;Landroidx/compose/ui/focus/FocusRequester;Landroidx/compose/runtime/Composer;I)V", "TextFieldSpacing", "Landroidx/compose/ui/unit/Dp;", "F", "material3"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
 public final class DateRangeInputKt {
-    private static final float TextFieldSpacing = Dp.m8258constructorimpl(8);
+    private static final float TextFieldSpacing = Dp.m7555constructorimpl(8);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DateRangeInputContent$lambda$8(Long l, Long l2, Function2 function2, CalendarModel calendarModel, IntRange intRange, DatePickerFormatter datePickerFormatter, SelectableDates selectableDates, DatePickerColors datePickerColors, FocusRequester focusRequester, int i, Composer composer, int i2) {
         DateRangeInputContent(l, l2, function2, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -112,20 +112,20 @@ public final class DateRangeInputKt {
             DateInputFormat dateInputFormat = (DateInputFormat) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Strings.Companion companion = Strings.Companion;
-            String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_input_invalid_for_pattern), startRestartGroup, 0);
+            String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_input_invalid_for_pattern), startRestartGroup, 0);
             Strings.Companion companion2 = Strings.Companion;
-            String m3697getString2EP1pXo2 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_input_invalid_year_range), startRestartGroup, 0);
+            String m3088getString2EP1pXo2 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_input_invalid_year_range), startRestartGroup, 0);
             Strings.Companion companion3 = Strings.Companion;
-            String m3697getString2EP1pXo3 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_input_invalid_not_allowed), startRestartGroup, 0);
+            String m3088getString2EP1pXo3 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_input_invalid_not_allowed), startRestartGroup, 0);
             Strings.Companion companion4 = Strings.Companion;
-            String m3697getString2EP1pXo4 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_range_input_invalid_range_input), startRestartGroup, 0);
+            String m3088getString2EP1pXo4 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_input_invalid_range_input), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 622615433, "CC(remember):DateRangeInput.kt#9igjgp");
             boolean changed2 = startRestartGroup.changed(dateInputFormat) | ((i2 & 458752) == 131072 || ((i2 & 262144) != 0 && startRestartGroup.changed(datePickerFormatter)));
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
                 str = "CC(remember):DateRangeInput.kt#9igjgp";
                 i3 = i2;
-                dateInputValidator = new DateInputValidator(intRange2, selectableDates2, dateInputFormat, datePickerFormatter, m3697getString2EP1pXo, m3697getString2EP1pXo2, m3697getString2EP1pXo3, m3697getString2EP1pXo4);
+                dateInputValidator = new DateInputValidator(intRange2, selectableDates2, dateInputFormat, datePickerFormatter, m3088getString2EP1pXo, m3088getString2EP1pXo2, m3088getString2EP1pXo3, m3088getString2EP1pXo4);
                 dateInputFormat = dateInputFormat;
                 startRestartGroup.updateRememberedValue(dateInputValidator);
             } else {
@@ -139,7 +139,7 @@ public final class DateRangeInputKt {
             dateInputValidator2.setCurrentEndDateMillis(l2);
             Modifier padding = PaddingKt.padding(Modifier.Companion, DateInputKt.getInputTextFieldPadding());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 693286680, "CC(Row)P(2,1,3)99@5124L58,100@5187L130:Row.kt#2w3rfo");
-            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m783spacedBy0680j_4(TextFieldSpacing), Alignment.Companion.getTop(), startRestartGroup, 6);
+            MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m688spacedBy0680j_4(TextFieldSpacing), Alignment.Companion.getTop(), startRestartGroup, 6);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
             int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
@@ -155,24 +155,24 @@ public final class DateRangeInputKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-            if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+            if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
             }
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 34166529, "C75@3274L56,88@3872L203,79@3468L219,86@3715L62,76@3339L1026,99@4393L54,111@4959L199,103@4585L191,109@4804L62,100@4456L1165:DateRangeInput.kt#uh7d8r");
             String upperCase = dateInputFormat.getPatternWithDelimiters().toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "toUpperCase(...)");
             Strings.Companion companion5 = Strings.Companion;
-            String m3697getString2EP1pXo5 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_range_picker_start_headline), startRestartGroup, 0);
+            String m3088getString2EP1pXo5 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_start_headline), startRestartGroup, 0);
             Modifier weight$default = RowScope.weight$default(rowScopeInstance, Modifier.Companion, 0.5f, false, 2, null);
-            int m2582getStartDateInputJ2x2o4M = InputIdentifier.Companion.m2582getStartDateInputJ2x2o4M();
+            int m2192getStartDateInputJ2x2o4M = InputIdentifier.Companion.m2192getStartDateInputJ2x2o4M();
             Locale locale2 = calendarModel.getLocale();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1122021, str);
             int i4 = i3 & 896;
@@ -183,9 +183,7 @@ public final class DateRangeInputKt {
                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.DateRangeInputKt$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit DateRangeInputContent$lambda$7$lambda$4$lambda$3;
-                        DateRangeInputContent$lambda$7$lambda$4$lambda$3 = DateRangeInputKt.DateRangeInputContent$lambda$7$lambda$4$lambda$3(Function2.this, l2, (Long) obj);
-                        return DateRangeInputContent$lambda$7$lambda$4$lambda$3;
+                        return DateRangeInputKt.DateRangeInputContent$lambda$7$lambda$4$lambda$3(Function2.this, l2, (Long) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -197,11 +195,11 @@ public final class DateRangeInputKt {
             String str2 = str;
             int i9 = i3;
             composer2 = startRestartGroup;
-            DateInputKt.m2268DateInputTextFieldxJ3Ic0Y(weight$default, l, (Function1) rememberedValue3, calendarModel, ComposableLambdaKt.rememberComposableLambda(1740538748, true, new DateRangeInputKt$DateRangeInputContent$2$2(m3697getString2EP1pXo5, upperCase), startRestartGroup, 54), ComposableLambdaKt.rememberComposableLambda(1229526589, true, new DateRangeInputKt$DateRangeInputContent$2$3(upperCase), startRestartGroup, 54), m2582getStartDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale2, datePickerColors, focusRequester, composer2, ((i3 << 3) & 112) | 1794048 | i6, i7 & WebSocketProtocol.PAYLOAD_SHORT);
+            DateInputKt.m1954DateInputTextFieldxJ3Ic0Y(weight$default, l, (Function1) rememberedValue3, calendarModel, ComposableLambdaKt.rememberComposableLambda(1740538748, true, new DateRangeInputKt$DateRangeInputContent$2$2(m3088getString2EP1pXo5, upperCase), startRestartGroup, 54), ComposableLambdaKt.rememberComposableLambda(1229526589, true, new DateRangeInputKt$DateRangeInputContent$2$3(upperCase), startRestartGroup, 54), m2192getStartDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale2, datePickerColors, focusRequester, composer2, ((i3 << 3) & 112) | 1794048 | i6, i7 & WebSocketProtocol.PAYLOAD_SHORT);
             Strings.Companion companion6 = Strings.Companion;
-            String m3697getString2EP1pXo6 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(R.string.m3c_date_range_picker_end_headline), composer2, 0);
+            String m3088getString2EP1pXo6 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(R.string.m3c_date_range_picker_end_headline), composer2, 0);
             Modifier weight$default2 = RowScope.weight$default(rowScopeInstance, Modifier.Companion, 0.5f, false, 2, null);
-            int m2580getEndDateInputJ2x2o4M = InputIdentifier.Companion.m2580getEndDateInputJ2x2o4M();
+            int m2190getEndDateInputJ2x2o4M = InputIdentifier.Companion.m2190getEndDateInputJ2x2o4M();
             Locale locale3 = calendarModel.getLocale();
             ComposerKt.sourceInformationMarkerStart(composer2, 1156801, str2);
             boolean z2 = (i4 == 256) | ((i9 & 14) == 4);
@@ -211,9 +209,7 @@ public final class DateRangeInputKt {
                 rememberedValue4 = new Function1() { // from class: androidx.compose.material3.DateRangeInputKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit DateRangeInputContent$lambda$7$lambda$6$lambda$5;
-                        DateRangeInputContent$lambda$7$lambda$6$lambda$5 = DateRangeInputKt.DateRangeInputContent$lambda$7$lambda$6$lambda$5(Function2.this, l, (Long) obj);
-                        return DateRangeInputContent$lambda$7$lambda$6$lambda$5;
+                        return DateRangeInputKt.DateRangeInputContent$lambda$7$lambda$6$lambda$5(Function2.this, l, (Long) obj);
                     }
                 };
                 composer2.updateRememberedValue(rememberedValue4);
@@ -221,7 +217,7 @@ public final class DateRangeInputKt {
                 function22 = function2;
             }
             ComposerKt.sourceInformationMarkerEnd(composer2);
-            DateInputKt.m2268DateInputTextFieldxJ3Ic0Y(weight$default2, l2, (Function1) rememberedValue4, calendarModel, ComposableLambdaKt.rememberComposableLambda(-882370893, true, new DateRangeInputKt$DateRangeInputContent$2$5(m3697getString2EP1pXo6, upperCase), composer2, 54), ComposableLambdaKt.rememberComposableLambda(1956183348, true, new DateRangeInputKt$DateRangeInputContent$2$6(upperCase), composer2, 54), m2580getEndDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale3, datePickerColors, null, composer2, i5 | 1794048 | i6, i8 | 48);
+            DateInputKt.m1954DateInputTextFieldxJ3Ic0Y(weight$default2, l2, (Function1) rememberedValue4, calendarModel, ComposableLambdaKt.rememberComposableLambda(-882370893, true, new DateRangeInputKt$DateRangeInputContent$2$5(m3088getString2EP1pXo6, upperCase), composer2, 54), ComposableLambdaKt.rememberComposableLambda(1956183348, true, new DateRangeInputKt$DateRangeInputContent$2$6(upperCase), composer2, 54), m2190getEndDateInputJ2x2o4M, dateInputValidator2, dateInputFormat, locale3, datePickerColors, null, composer2, i5 | 1794048 | i6, i8 | 48);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();
@@ -238,21 +234,19 @@ public final class DateRangeInputKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.DateRangeInputKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DateRangeInputContent$lambda$8;
-                    DateRangeInputContent$lambda$8 = DateRangeInputKt.DateRangeInputContent$lambda$8(l, l2, function23, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DateRangeInputContent$lambda$8;
+                    return DateRangeInputKt.DateRangeInputContent$lambda$8(l, l2, function23, calendarModel, intRange, datePickerFormatter, selectableDates, datePickerColors, focusRequester, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DateRangeInputContent$lambda$7$lambda$4$lambda$3(Function2 function2, Long l, Long l2) {
         function2.invoke(l2, l);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DateRangeInputContent$lambda$7$lambda$6$lambda$5(Function2 function2, Long l, Long l2) {
         function2.invoke(l, l2);
         return Unit.INSTANCE;

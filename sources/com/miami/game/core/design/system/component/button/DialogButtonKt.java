@@ -53,18 +53,18 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogButton.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\u001aC\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001a9\u0010\f\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\r\"\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002"}, d2 = {"DialogButtonYes", "", "onClick", "Lkotlin/Function0;", "isActive", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/BoxScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DialogButtonNo", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "design-system_release", "selected", "scale", ""}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\u001aC\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001a9\u0010\f\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\r\"\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002"}, d2 = {"DialogButtonYes", "", "onClick", "Lkotlin/Function0;", "isActive", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/BoxScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DialogButtonNo", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "design-system", "selected", "scale", ""}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class DialogButtonKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M 56.01 125.71 L 5.52 49.71 C -8.61 28.44 6.64 0 32.17 0 H 419.34 C 430.06 0 440.06 5.37 445.99 14.29 L 496.48 90.29 C 510.61 111.56 495.36 140 469.83 140 H 82.66 C 71.94 140 61.94 134.63 56.01 125.71 Z"), null, 1, null);
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DialogButtonNo$lambda$8(Function0 function0, Function3 function3, int i, Composer composer, int i2) {
         DialogButtonNo(function0, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DialogButtonYes$lambda$8(Function0 function0, boolean z, Function3 function3, int i, int i2, Composer composer, int i3) {
         DialogButtonYes(function0, z, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
@@ -123,9 +123,9 @@ public final class DialogButtonKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 final boolean z4 = z2;
                 State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(DialogButtonYes$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22);
-                final long m5423copywmQWz5c$default = Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
+                final long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 int i5 = i3;
-                Modifier clip = ClipKt.clip(BackgroundKt.m298backgroundbw27NRU(SizeKt.m962height3ABfNKs(SizeKt.m981width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m8258constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m8258constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2189getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+                Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m7555constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m7555constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1877getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596201909, "CC(remember):DialogButton.kt#9igjgp");
                 int i6 = i5 & 112;
                 boolean z5 = i6 == 32;
@@ -135,14 +135,14 @@ public final class DialogButtonKt {
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
                             DrawResult DialogButtonYes$lambda$4$0;
-                            DialogButtonYes$lambda$4$0 = DialogButtonKt.DialogButtonYes$lambda$4$0(z4, m5423copywmQWz5c$default, (CacheDrawScope) obj);
+                            DialogButtonYes$lambda$4$0 = DialogButtonKt.DialogButtonYes$lambda$4$0(z4, m4771copywmQWz5c$default, (CacheDrawScope) obj);
                             return DialogButtonYes$lambda$4$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier m316borderziNgDLE = BorderKt.m316borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m8258constructorimpl(2), Brush.Companion.m5379verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+                Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
                 Unit unit = Unit.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596229154, "CC(remember):DialogButton.kt#9igjgp");
                 DialogButtonKt$DialogButtonYes$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
@@ -151,7 +151,7 @@ public final class DialogButtonKt {
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(m316borderziNgDLE, unit, (PointerInputEventHandler) rememberedValue3);
+                Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(m277borderziNgDLE, unit, (PointerInputEventHandler) rememberedValue3);
                 ClickIndicationType clickIndicationType = ClickIndicationType.NO_INDICATION;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596242356, "CC(remember):DialogButton.kt#9igjgp");
                 boolean z6 = (i6 == 32) | ((i5 & 14) == 4);
@@ -187,12 +187,12 @@ public final class DialogButtonKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2092945714, "C102@4081L9:DialogButton.kt#x0o0f5");
                 content.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i5 >> 3) & 112) | 6));
@@ -212,9 +212,7 @@ public final class DialogButtonKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.button.DialogButtonKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj, Object obj2) {
-                        Unit DialogButtonYes$lambda$8;
-                        DialogButtonYes$lambda$8 = DialogButtonKt.DialogButtonYes$lambda$8(Function0.this, z3, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                        return DialogButtonYes$lambda$8;
+                        return DialogButtonKt.DialogButtonYes$lambda$8(Function0.this, z3, content, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                     }
                 });
                 return;
@@ -243,7 +241,7 @@ public final class DialogButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult DialogButtonYes$lambda$4$0(final boolean z, final long j, CacheDrawScope drawWithCache) {
         Intrinsics.checkNotNullParameter(drawWithCache, "$this$drawWithCache");
-        final Brush m5373linearGradientmHitzGk$default = Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null);
+        final Brush m4721linearGradientmHitzGk$default = Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null);
         return drawWithCache.onDrawBehind(new Function1() { // from class: com.miami.game.core.design.system.component.button.DialogButtonKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -291,7 +289,7 @@ public final class DialogButtonKt {
             }
             MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier clip = ClipKt.clip(BackgroundKt.m298backgroundbw27NRU(SizeKt.m962height3ABfNKs(SizeKt.m981width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m8258constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m8258constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2208getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+            Modifier clip = ClipKt.clip(BackgroundKt.m263backgroundbw27NRU(SizeKt.m850height3ABfNKs(SizeKt.m869width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m7555constructorimpl((float) TsExtractor.TS_STREAM_TYPE_AC4)), Dp.m7555constructorimpl(45)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m1896getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615040052, "CC(remember):DialogButton.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -306,7 +304,7 @@ public final class DialogButtonKt {
                 startRestartGroup.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier m316borderziNgDLE = BorderKt.m316borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m8258constructorimpl(2), Brush.Companion.m5379verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+            Modifier m277borderziNgDLE = BorderKt.m277borderziNgDLE(DrawModifierKt.drawWithCache(clip, (Function1) rememberedValue2), Dp.m7555constructorimpl(2), Brush.Companion.m4727verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.35f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
             Unit unit = Unit.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615063732, "CC(remember):DialogButton.kt#9igjgp");
             DialogButtonKt$DialogButtonNo$2$1 rememberedValue3 = startRestartGroup.rememberedValue();
@@ -315,7 +313,7 @@ public final class DialogButtonKt {
                 startRestartGroup.updateRememberedValue(rememberedValue3);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(m316borderziNgDLE, unit, (PointerInputEventHandler) rememberedValue3);
+            Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(m277borderziNgDLE, unit, (PointerInputEventHandler) rememberedValue3);
             ClickIndicationType clickIndicationType = ClickIndicationType.NO_INDICATION;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615076880, "CC(remember):DialogButton.kt#9igjgp");
             boolean z = (i3 & 14) == 4;
@@ -351,12 +349,12 @@ public final class DialogButtonKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 273090324, "C160@5951L9:DialogButton.kt#x0o0f5");
             content.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf((i3 & 112) | 6));
@@ -375,9 +373,7 @@ public final class DialogButtonKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.button.DialogButtonKt$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DialogButtonNo$lambda$8;
-                    DialogButtonNo$lambda$8 = DialogButtonKt.DialogButtonNo$lambda$8(Function0.this, content, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DialogButtonNo$lambda$8;
+                    return DialogButtonKt.DialogButtonNo$lambda$8(Function0.this, content, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -395,7 +391,7 @@ public final class DialogButtonKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final DrawResult DialogButtonNo$lambda$4$0(CacheDrawScope drawWithCache) {
         Intrinsics.checkNotNullParameter(drawWithCache, "$this$drawWithCache");
-        final Brush m5373linearGradientmHitzGk$default = Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null);
+        final Brush m4721linearGradientmHitzGk$default = Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.2f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m4762boximpl(Color.Companion.m4807getTransparent0d7_KjU())}), 0L, 0L, 0, 14, (Object) null);
         return drawWithCache.onDrawBehind(new Function1() { // from class: com.miami.game.core.design.system.component.button.DialogButtonKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -412,30 +408,30 @@ public final class DialogButtonKt {
         return Unit.INSTANCE;
     }
 
-    private static final float DialogButtonYes$lambda$3(State<Float> state) {
-        return state.getValue().floatValue();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonYes$lambda$4$0$0(Brush brush, boolean z, long j, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
-        float f = onDrawBehind.mo464toPx0680j_4(Dp.m8258constructorimpl(10));
-        DrawScope.m6000drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
+        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10));
+        DrawScope.m5341drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         if (!z) {
-            DrawScope.m6001drawRoundRectuAw5IA$default(onDrawBehind, j, 0L, 0L, 0L, null, 0.0f, null, 0, 254, null);
+            DrawScope.m5342drawRoundRectuAw5IA$default(onDrawBehind, j, 0L, 0L, 0L, null, 0.0f, null, 0, 254, null);
         }
         return Unit.INSTANCE;
     }
 
-    private static final float DialogButtonNo$lambda$3(State<Float> state) {
+    private static final float DialogButtonYes$lambda$3(State<Float> state) {
         return state.getValue().floatValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonNo$lambda$4$0$0(Brush brush, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
-        float f = onDrawBehind.mo464toPx0680j_4(Dp.m8258constructorimpl(10));
-        DrawScope.m6000drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m5133constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
+        float f = onDrawBehind.mo405toPx0680j_4(Dp.m7555constructorimpl(10));
+        DrawScope.m5341drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m4481constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         return Unit.INSTANCE;
+    }
+
+    private static final float DialogButtonNo$lambda$3(State<Float> state) {
+        return state.getValue().floatValue();
     }
 }

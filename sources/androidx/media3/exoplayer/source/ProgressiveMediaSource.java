@@ -38,6 +38,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     private final DataSource.Factory dataSourceFactory;
     private final Supplier<ReleasableExecutor> downloadExecutorSupplier;
     private final DrmSessionManager drmSessionManager;
+    private boolean hasSeenNonEstimatedSeekMap;
     private Listener listener;
     private final boolean loadOnlySelectedTracks;
     private final LoadErrorHandlingPolicy loadableLoadErrorHandlingPolicy;
@@ -245,6 +246,10 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
 
     @Override // androidx.media3.exoplayer.source.ProgressiveMediaPeriod.Listener
     public void onSourceInfoRefreshed(long j, SeekMap seekMap, boolean z) {
+        if (this.hasSeenNonEstimatedSeekMap && seekMap.isEstimated()) {
+            return;
+        }
+        this.hasSeenNonEstimatedSeekMap = !seekMap.isEstimated();
         if (j == C.TIME_UNSET) {
             j = this.timelineDurationUs;
         }

@@ -27,7 +27,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
                 return;
             }
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:573)");
+                ComposerKt.traceEventStart(-1131826196, i, -1, "androidx.compose.ui.window.ComposableSingletons$AndroidPopup_androidKt.lambda$-1131826196.<anonymous> (AndroidPopup.android.kt:574)");
             }
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -36,7 +36,7 @@ public final class ComposableSingletons$AndroidPopup_androidKt {
     });
 
     /* renamed from: getLambda$-1131826196$ui  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m8512getLambda$1131826196$ui() {
+    public final Function2<Composer, Integer, Unit> m7809getLambda$1131826196$ui() {
         return f123lambda$1131826196;
     }
 }

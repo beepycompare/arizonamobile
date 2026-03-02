@@ -38,7 +38,7 @@ public final class AndroidAccessibilitySpannableString_androidKt {
             int size = spanStylesOrNull$ui_text.size();
             for (int i = 0; i < size; i++) {
                 AnnotatedString.Range<SpanStyle> range = spanStylesOrNull$ui_text.get(i);
-                setSpanStyle(spannableString, SpanStyle.m7632copyGSF8kmg$default(range.component1(), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, null, 65503, null), range.component2(), range.component3(), density, resolver);
+                setSpanStyle(spannableString, SpanStyle.m6935copyGSF8kmg$default(range.component1(), 0L, 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, null, 65503, null), range.component2(), range.component3(), density, resolver);
             }
         }
         List<AnnotatedString.Range<TtsAnnotation>> ttsAnnotations = annotatedString.getTtsAnnotations(0, annotatedString.length());
@@ -71,23 +71,23 @@ public final class AndroidAccessibilitySpannableString_androidKt {
 
     private static final void setSpanStyle(SpannableString spannableString, SpanStyle spanStyle, int i, int i2, Density density, FontFamily.Resolver resolver) {
         SpannableString spannableString2 = spannableString;
-        SpannableExtensions_androidKt.m7986setColorRPmYEkk(spannableString2, spanStyle.m7641getColor0d7_KjU(), i, i2);
-        SpannableExtensions_androidKt.m7987setFontSizeKmRG4DE(spannableString2, spanStyle.m7642getFontSizeXSAIIZE(), density, i, i2);
-        if (spanStyle.getFontWeight() != null || spanStyle.m7643getFontStyle4Lr2A7w() != null) {
+        SpannableExtensions_androidKt.m7283setColorRPmYEkk(spannableString2, spanStyle.m6944getColor0d7_KjU(), i, i2);
+        SpannableExtensions_androidKt.m7284setFontSizeKmRG4DE(spannableString2, spanStyle.m6945getFontSizeXSAIIZE(), density, i, i2);
+        if (spanStyle.getFontWeight() != null || spanStyle.m6946getFontStyle4Lr2A7w() != null) {
             FontWeight fontWeight = spanStyle.getFontWeight();
             if (fontWeight == null) {
                 fontWeight = FontWeight.Companion.getNormal();
             }
-            FontStyle m7643getFontStyle4Lr2A7w = spanStyle.m7643getFontStyle4Lr2A7w();
-            spannableString.setSpan(new StyleSpan(AndroidFontUtils_androidKt.m7766getAndroidTypefaceStyleFO1MlWM(fontWeight, m7643getFontStyle4Lr2A7w != null ? m7643getFontStyle4Lr2A7w.m7818unboximpl() : FontStyle.Companion.m7822getNormal_LCdwA())), i, i2, 33);
+            FontStyle m6946getFontStyle4Lr2A7w = spanStyle.m6946getFontStyle4Lr2A7w();
+            spannableString.setSpan(new StyleSpan(AndroidFontUtils_androidKt.m7067getAndroidTypefaceStyleFO1MlWM(fontWeight, m6946getFontStyle4Lr2A7w != null ? m6946getFontStyle4Lr2A7w.m7118unboximpl() : FontStyle.Companion.m7122getNormal_LCdwA())), i, i2, 33);
         }
         if (spanStyle.getFontFamily() != null) {
             if (spanStyle.getFontFamily() instanceof GenericFontFamily) {
                 spannableString.setSpan(new TypefaceSpan(((GenericFontFamily) spanStyle.getFontFamily()).getName()), i, i2, 33);
             } else if (Build.VERSION.SDK_INT >= 28) {
                 FontFamily fontFamily = spanStyle.getFontFamily();
-                FontSynthesis m7644getFontSynthesisZQGJjVo = spanStyle.m7644getFontSynthesisZQGJjVo();
-                Object value = FontFamily.Resolver.m7786resolveDPcqOEQ$default(resolver, fontFamily, null, 0, m7644getFontSynthesisZQGJjVo != null ? m7644getFontSynthesisZQGJjVo.m7831unboximpl() : FontSynthesis.Companion.m7832getAllGVVA2EU(), 6, null).getValue();
+                FontSynthesis m6947getFontSynthesisZQGJjVo = spanStyle.m6947getFontSynthesisZQGJjVo();
+                Object value = FontFamily.Resolver.m7087resolveDPcqOEQ$default(resolver, fontFamily, null, 0, m6947getFontSynthesisZQGJjVo != null ? m6947getFontSynthesisZQGJjVo.m7131unboximpl() : FontSynthesis.Companion.m7132getAllGVVA2EU(), 6, null).getValue();
                 Intrinsics.checkNotNull(value, "null cannot be cast to non-null type android.graphics.Typeface");
                 spannableString.setSpan(Api28Impl.INSTANCE.createTypefaceSpan((Typeface) value), i, i2, 33);
             }
@@ -104,7 +104,7 @@ public final class AndroidAccessibilitySpannableString_androidKt {
             spannableString.setSpan(new ScaleXSpan(spanStyle.getTextGeometricTransform().getScaleX()), i, i2, 33);
         }
         SpannableExtensions_androidKt.setLocaleList(spannableString2, spanStyle.getLocaleList(), i, i2);
-        SpannableExtensions_androidKt.m7984setBackgroundRPmYEkk(spannableString2, spanStyle.m7639getBackground0d7_KjU(), i, i2);
+        SpannableExtensions_androidKt.m7281setBackgroundRPmYEkk(spannableString2, spanStyle.m6942getBackground0d7_KjU(), i, i2);
     }
 
     private static final AnnotatedString.Range<LinkAnnotation.Url> toUrlLink(AnnotatedString.Range<LinkAnnotation> range) {

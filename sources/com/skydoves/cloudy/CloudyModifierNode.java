@@ -56,14 +56,12 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         this((i2 & 1) != 0 ? 10 : i, (i2 & 2) != 0 ? new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = CloudyModifierNode._init_$lambda$0((CloudyState) obj);
-                return _init_$lambda$0;
+                return CloudyModifierNode._init_$lambda$0((CloudyState) obj);
             }
         } : function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(CloudyState it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
@@ -109,12 +107,10 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         GraphicsContext requireGraphicsContext = DelegatableNodeKt.requireGraphicsContext(this);
         GraphicsLayer createGraphicsLayer = requireGraphicsContext.createGraphicsLayer();
         ContentDrawScope contentDrawScope2 = contentDrawScope;
-        DrawScope.m6003recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
+        DrawScope.m5344recordJVtK1S4$default(contentDrawScope2, createGraphicsLayer, 0L, new Function1() { // from class: com.skydoves.cloudy.CloudyModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit draw$lambda$0;
-                draw$lambda$0 = CloudyModifierNode.draw$lambda$0(ContentDrawScope.this, (DrawScope) obj);
-                return draw$lambda$0;
+                return CloudyModifierNode.draw$lambda$0(ContentDrawScope.this, (DrawScope) obj);
             }
         }, 1, null);
         if (this.radius <= 0) {
@@ -124,7 +120,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         }
         PlatformBitmap platformBitmap = this.blurredBitmap;
         if (platformBitmap != null && !platformBitmap.getBitmap().isRecycled()) {
-            DrawScope.m5989drawImagegbVJVH8$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0.0f, null, null, 0, 62, null);
+            DrawScope.m5330drawImagegbVJVH8$default(contentDrawScope2, AndroidImageBitmap_androidKt.asImageBitmap(platformBitmap.getBitmap()), 0L, 0.0f, null, null, 0, 62, null);
         } else {
             GraphicsLayerKt.drawLayer(contentDrawScope2, createGraphicsLayer);
         }
@@ -143,7 +139,7 @@ final class CloudyModifierNode extends Modifier.Node implements DrawModifierNode
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit draw$lambda$0(ContentDrawScope contentDrawScope, DrawScope record) {
         Intrinsics.checkNotNullParameter(record, "$this$record");
         contentDrawScope.drawContent();

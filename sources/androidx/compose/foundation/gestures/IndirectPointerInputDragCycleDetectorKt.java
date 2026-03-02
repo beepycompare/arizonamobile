@@ -15,14 +15,14 @@ public final class IndirectPointerInputDragCycleDetectorKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: positionChange-_bfSUIo  reason: not valid java name */
-    public static final long m594positionChange_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
-        return m596positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, false);
+    public static final long m513positionChange_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+        return m515positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: positionChangeIgnoreConsumed-_bfSUIo  reason: not valid java name */
-    public static final long m595positionChangeIgnoreConsumed_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
-        return m596positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, true);
+    public static final long m514positionChangeIgnoreConsumed_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+        return m515positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,83 +40,83 @@ public final class IndirectPointerInputDragCycleDetectorKt {
     }
 
     /* renamed from: positionChangeInternal-wfG_k4k$default  reason: not valid java name */
-    static /* synthetic */ long m597positionChangeInternalwfG_k4k$default(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, boolean z, int i, Object obj) {
+    static /* synthetic */ long m516positionChangeInternalwfG_k4k$default(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = false;
         }
-        return m596positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, z);
+        return m515positionChangeInternalwfG_k4k(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis, z);
     }
 
     /* renamed from: positionChangeInternal-wfG_k4k  reason: not valid java name */
-    private static final long m596positionChangeInternalwfG_k4k(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, boolean z) {
-        return (z || !indirectPointerInputChange.isConsumed()) ? Offset.m5183minusMKHz9U(m598primaryAxisPosition_bfSUIo(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis), m600primaryAxisPreviousPosition_bfSUIo(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis)) : Offset.Companion.m5195getZeroF1C5BW0();
+    private static final long m515positionChangeInternalwfG_k4k(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, boolean z) {
+        return (z || !indirectPointerInputChange.isConsumed()) ? Offset.m4531minusMKHz9U(m517primaryAxisPosition_bfSUIo(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis), m519primaryAxisPreviousPosition_bfSUIo(indirectPointerInputChange, orientation, indirectPointerEventPrimaryDirectionalMotionAxis)) : Offset.Companion.m4543getZeroF1C5BW0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: primaryAxisPosition-_bfSUIo  reason: not valid java name */
-    public static final long m598primaryAxisPosition_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+    public static final long m517primaryAxisPosition_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
         float intBitsToFloat;
         if (orientation == null) {
-            return indirectPointerInputChange.m6272getPositionF1C5BW0();
+            return indirectPointerInputChange.m5613getPositionF1C5BW0();
         }
-        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw())) {
-            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m6272getPositionF1C5BW0() >> 32));
+        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw())) {
+            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m5613getPositionF1C5BW0() >> 32));
         } else {
-            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw()) : false)) {
-                return indirectPointerInputChange.m6272getPositionF1C5BW0();
+            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw()) : false)) {
+                return indirectPointerInputChange.m5613getPositionF1C5BW0();
             }
-            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m6272getPositionF1C5BW0() & 4294967295L));
+            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m5613getPositionF1C5BW0() & 4294967295L));
         }
         if (orientation == Orientation.Horizontal) {
-            return Offset.m5171constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
     }
 
     /* renamed from: primaryAxisPosition-grjNGvw  reason: not valid java name */
-    private static final long m599primaryAxisPositiongrjNGvw(long j, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+    private static final long m518primaryAxisPositiongrjNGvw(long j, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
         float intBitsToFloat;
         if (orientation == null) {
             return j;
         }
-        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw())) {
+        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw())) {
             intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
         } else {
-            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw()) : false)) {
+            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw()) : false)) {
                 return j;
             }
             intBitsToFloat = Float.intBitsToFloat((int) (j & 4294967295L));
         }
         if (orientation == Orientation.Horizontal) {
-            return Offset.m5171constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: primaryAxisPreviousPosition-_bfSUIo  reason: not valid java name */
-    public static final long m600primaryAxisPreviousPosition_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
+    public static final long m519primaryAxisPreviousPosition_bfSUIo(IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis) {
         float intBitsToFloat;
         if (orientation == null) {
-            return indirectPointerInputChange.m6273getPreviousPositionF1C5BW0();
+            return indirectPointerInputChange.m5614getPreviousPositionF1C5BW0();
         }
-        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6258getXnZO2Niw())) {
-            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m6273getPreviousPositionF1C5BW0() >> 32));
+        if (indirectPointerEventPrimaryDirectionalMotionAxis == null ? false : IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5599getXnZO2Niw())) {
+            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m5614getPreviousPositionF1C5BW0() >> 32));
         } else {
-            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m6253equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m6256unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m6259getYnZO2Niw()) : false)) {
-                return indirectPointerInputChange.m6273getPreviousPositionF1C5BW0();
+            if (!(indirectPointerEventPrimaryDirectionalMotionAxis != null ? IndirectPointerEventPrimaryDirectionalMotionAxis.m5594equalsimpl0(indirectPointerEventPrimaryDirectionalMotionAxis.m5597unboximpl(), IndirectPointerEventPrimaryDirectionalMotionAxis.Companion.m5600getYnZO2Niw()) : false)) {
+                return indirectPointerInputChange.m5614getPreviousPositionF1C5BW0();
             }
-            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m6273getPreviousPositionF1C5BW0() & 4294967295L));
+            intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m5614getPreviousPositionF1C5BW0() & 4294967295L));
         }
         if (orientation == Orientation.Horizontal) {
-            return Offset.m5171constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
+            return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L));
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(intBitsToFloat) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: addIndirectPointerInputChange-Qf4Zb88  reason: not valid java name */
-    public static final void m593addIndirectPointerInputChangeQf4Zb88(VelocityTracker velocityTracker, IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, IndirectPointerInputEventSmoother indirectPointerInputEventSmoother, long j) {
-        velocityTracker.m6848addPositionUv8p0NA(indirectPointerInputChange.getUptimeMillis(), Offset.m5184plusMKHz9U(m599primaryAxisPositiongrjNGvw(indirectPointerInputEventSmoother.m601smoothEventPositiontuRUvjQ(indirectPointerInputChange), orientation, indirectPointerEventPrimaryDirectionalMotionAxis), j));
+    public static final void m512addIndirectPointerInputChangeQf4Zb88(VelocityTracker velocityTracker, IndirectPointerInputChange indirectPointerInputChange, Orientation orientation, IndirectPointerEventPrimaryDirectionalMotionAxis indirectPointerEventPrimaryDirectionalMotionAxis, IndirectPointerInputEventSmoother indirectPointerInputEventSmoother, long j) {
+        velocityTracker.m6189addPositionUv8p0NA(indirectPointerInputChange.getUptimeMillis(), Offset.m4532plusMKHz9U(m518primaryAxisPositiongrjNGvw(indirectPointerInputEventSmoother.m520smoothEventPositiontuRUvjQ(indirectPointerInputChange), orientation, indirectPointerEventPrimaryDirectionalMotionAxis), j));
     }
 }

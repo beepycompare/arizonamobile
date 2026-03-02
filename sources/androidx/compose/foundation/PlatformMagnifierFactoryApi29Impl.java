@@ -25,22 +25,22 @@ public final class PlatformMagnifierFactoryApi29Impl implements PlatformMagnifie
 
     @Override // androidx.compose.foundation.PlatformMagnifierFactory
     /* renamed from: create-nHHXs2Y */
-    public PlatformMagnifierImpl mo405createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3) {
+    public PlatformMagnifierImpl mo354createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3) {
         if (z) {
             return new PlatformMagnifierImpl(new Magnifier(view));
         }
-        long mo465toSizeXkaWNTQ = density.mo465toSizeXkaWNTQ(j);
-        float mo464toPx0680j_4 = density.mo464toPx0680j_4(f);
-        float mo464toPx0680j_42 = density.mo464toPx0680j_4(f2);
+        long mo406toSizeXkaWNTQ = density.mo406toSizeXkaWNTQ(j);
+        float mo405toPx0680j_4 = density.mo405toPx0680j_4(f);
+        float mo405toPx0680j_42 = density.mo405toPx0680j_4(f2);
         Magnifier.Builder builder = new Magnifier.Builder(view);
-        if (mo465toSizeXkaWNTQ != InlineClassHelperKt.UnspecifiedPackedFloats) {
-            builder.setSize(MathKt.roundToInt(Float.intBitsToFloat((int) (mo465toSizeXkaWNTQ >> 32))), MathKt.roundToInt(Float.intBitsToFloat((int) (mo465toSizeXkaWNTQ & 4294967295L))));
+        if (mo406toSizeXkaWNTQ != InlineClassHelperKt.UnspecifiedPackedFloats) {
+            builder.setSize(MathKt.roundToInt(Float.intBitsToFloat((int) (mo406toSizeXkaWNTQ >> 32))), MathKt.roundToInt(Float.intBitsToFloat((int) (mo406toSizeXkaWNTQ & 4294967295L))));
         }
-        if (!Float.isNaN(mo464toPx0680j_4)) {
-            builder.setCornerRadius(mo464toPx0680j_4);
+        if (!Float.isNaN(mo405toPx0680j_4)) {
+            builder.setCornerRadius(mo405toPx0680j_4);
         }
-        if (!Float.isNaN(mo464toPx0680j_42)) {
-            builder.setElevation(mo464toPx0680j_42);
+        if (!Float.isNaN(mo405toPx0680j_42)) {
+            builder.setElevation(mo405toPx0680j_42);
         }
         if (!Float.isNaN(f3)) {
             builder.setInitialZoom(f3);
@@ -61,7 +61,7 @@ public final class PlatformMagnifierFactoryApi29Impl implements PlatformMagnifie
 
         @Override // androidx.compose.foundation.PlatformMagnifierFactoryApi28Impl.PlatformMagnifierImpl, androidx.compose.foundation.PlatformMagnifier
         /* renamed from: update-Wko1d7g */
-        public void mo404updateWko1d7g(long j, long j2, float f) {
+        public void mo353updateWko1d7g(long j, long j2, float f) {
             if (!Float.isNaN(f)) {
                 getMagnifier().setZoom(f);
             }

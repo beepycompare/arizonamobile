@@ -63,7 +63,7 @@ public final class OutlinedTextFieldDefaults$decorator$2 implements TextFieldDec
         this.$container = function27;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Decoration$lambda$2(OutlinedTextFieldDefaults$decorator$2 outlinedTextFieldDefaults$decorator$2, Function2 function2, int i, Composer composer, int i2) {
         outlinedTextFieldDefaults$decorator$2.Decoration(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -92,22 +92,23 @@ public final class OutlinedTextFieldDefaults$decorator$2 implements TextFieldDec
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(794272399, i2, -1, "androidx.compose.material3.OutlinedTextFieldDefaults.decorator.<no name provided>.Decoration (TextFieldDefaults.kt:994)");
             }
-            if (this.$outputTransformation == null) {
-                asCharSequence = this.$state.getText();
+            OutputTransformation outputTransformation = this.$outputTransformation;
+            TextFieldState textFieldState = this.$state;
+            if (outputTransformation == null) {
+                asCharSequence = textFieldState.getText();
             } else {
-                TextFieldState textFieldState = this.$state;
                 TextFieldBuffer startEdit = textFieldState.startEdit();
                 try {
                     textFieldState.commitEdit(startEdit);
                     textFieldState.finishEditing();
-                    OutputTransformation outputTransformation = this.$outputTransformation;
+                    OutputTransformation outputTransformation2 = this.$outputTransformation;
                     if (startEdit == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("buffer");
                         textFieldBuffer = null;
                     } else {
                         textFieldBuffer = startEdit;
                     }
-                    outputTransformation.transformOutput(textFieldBuffer);
+                    outputTransformation2.transformOutput(textFieldBuffer);
                     asCharSequence = startEdit.asCharSequence();
                 } catch (Throwable th) {
                     textFieldState.finishEditing();
@@ -125,9 +126,7 @@ public final class OutlinedTextFieldDefaults$decorator$2 implements TextFieldDec
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.OutlinedTextFieldDefaults$decorator$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Decoration$lambda$2;
-                    Decoration$lambda$2 = OutlinedTextFieldDefaults$decorator$2.Decoration$lambda$2(OutlinedTextFieldDefaults$decorator$2.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Decoration$lambda$2;
+                    return OutlinedTextFieldDefaults$decorator$2.Decoration$lambda$2(OutlinedTextFieldDefaults$decorator$2.this, function2, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

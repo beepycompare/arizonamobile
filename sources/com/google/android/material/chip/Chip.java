@@ -45,7 +45,7 @@ import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.shape.Shapeable;
 import com.google.android.material.theme.overlay.MaterialThemeOverlay;
-import io.appmetrica.analytics.impl.C0740z2;
+import io.appmetrica.analytics.impl.C0739z2;
 import java.util.List;
 /* loaded from: classes4.dex */
 public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Shapeable, MaterialCheckable<Chip> {
@@ -105,7 +105,9 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
             @Override // com.google.android.material.resources.TextAppearanceFontCallback
             public void onFontRetrieved(Typeface typeface, boolean z) {
                 Chip chip = Chip.this;
-                chip.setText(chip.chipDrawable.shouldDrawText() ? Chip.this.chipDrawable.getText() : Chip.this.getText());
+                boolean shouldDrawText = chip.chipDrawable.shouldDrawText();
+                Chip chip2 = Chip.this;
+                chip.setText(shouldDrawText ? chip2.chipDrawable.getText() : chip2.getText());
                 Chip.this.requestLayout();
                 Chip.this.invalidate();
             }
@@ -141,14 +143,14 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         super.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.google.android.material.chip.Chip$$ExternalSyntheticLambda0
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
-                Chip.this.m9823lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
+                Chip.this.m8853lambda$new$0$comgoogleandroidmaterialchipChip(compoundButton, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-chip-Chip  reason: not valid java name */
-    public /* synthetic */ void m9823lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
+    public /* synthetic */ void m8853lambda$new$0$comgoogleandroidmaterialchipChip(CompoundButton compoundButton, boolean z) {
         MaterialCheckable.OnCheckedChangeListener<Chip> onCheckedChangeListener = this.onCheckedChangeListenerInternal;
         if (onCheckedChangeListener != null) {
             onCheckedChangeListener.onCheckedChanged(this, z);
@@ -232,7 +234,7 @@ public class Chip extends AppCompatCheckBox implements ChipDrawable.Delegate, Sh
         if (attributeSet == null) {
             return;
         }
-        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, C0740z2.g) != null) {
+        if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, C0739z2.g) != null) {
             Log.w(TAG, "Do not set the background; Chip manages its own background drawable.");
         }
         if (attributeSet.getAttributeValue(NAMESPACE_ANDROID, "drawableLeft") != null) {

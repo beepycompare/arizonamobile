@@ -17,13 +17,13 @@ public final class CustomAppBarItem implements AppBarItem {
     private final Function2<Composer, Integer, Unit> appbarContent;
     private final Function3<AppBarMenuState, Composer, Integer, Unit> menuContent;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit AppbarContent$lambda$0(CustomAppBarItem customAppBarItem, int i, Composer composer, int i2) {
         customAppBarItem.AppbarContent(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit MenuContent$lambda$1(CustomAppBarItem customAppBarItem, AppBarMenuState appBarMenuState, int i, Composer composer, int i2) {
         customAppBarItem.MenuContent(appBarMenuState, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -61,9 +61,7 @@ public final class CustomAppBarItem implements AppBarItem {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CustomAppBarItem$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit AppbarContent$lambda$0;
-                    AppbarContent$lambda$0 = CustomAppBarItem.AppbarContent$lambda$0(CustomAppBarItem.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return AppbarContent$lambda$0;
+                    return CustomAppBarItem.AppbarContent$lambda$0(CustomAppBarItem.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -98,9 +96,7 @@ public final class CustomAppBarItem implements AppBarItem {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.CustomAppBarItem$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit MenuContent$lambda$1;
-                    MenuContent$lambda$1 = CustomAppBarItem.MenuContent$lambda$1(CustomAppBarItem.this, appBarMenuState, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return MenuContent$lambda$1;
+                    return CustomAppBarItem.MenuContent$lambda$1(CustomAppBarItem.this, appBarMenuState, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

@@ -46,7 +46,7 @@ public final class MagnifierElement extends ModifierNodeElement<MagnifierNode> {
     }
 
     public /* synthetic */ MagnifierElement(Function1 function1, Function1 function12, Function1 function13, float f, boolean z, long j, float f2, float f3, boolean z2, PlatformMagnifierFactory platformMagnifierFactory, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m8365getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m8278getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, platformMagnifierFactory, null);
+        this(function1, (i & 2) != 0 ? null : function12, (i & 4) != 0 ? null : function13, (i & 8) != 0 ? Float.NaN : f, (i & 16) != 0 ? false : z, (i & 32) != 0 ? DpSize.Companion.m7662getUnspecifiedMYxV2XQ() : j, (i & 64) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f2, (i & 128) != 0 ? Dp.Companion.m7575getUnspecifiedD9Ej5fM() : f3, (i & 256) != 0 ? true : z2, platformMagnifierFactory, null);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -57,7 +57,7 @@ public final class MagnifierElement extends ModifierNodeElement<MagnifierNode> {
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(MagnifierNode magnifierNode) {
-        magnifierNode.m377update5F03MCQ(this.sourceCenter, this.magnifierCenter, this.zoom, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, this.onSizeChanged, this.platformMagnifierFactory);
+        magnifierNode.m329update5F03MCQ(this.sourceCenter, this.magnifierCenter, this.zoom, this.useTextDefault, this.size, this.cornerRadius, this.elevation, this.clippingEnabled, this.onSizeChanged, this.platformMagnifierFactory);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -67,7 +67,7 @@ public final class MagnifierElement extends ModifierNodeElement<MagnifierNode> {
         }
         if (obj instanceof MagnifierElement) {
             MagnifierElement magnifierElement = (MagnifierElement) obj;
-            return this.sourceCenter == magnifierElement.sourceCenter && this.magnifierCenter == magnifierElement.magnifierCenter && this.zoom == magnifierElement.zoom && this.useTextDefault == magnifierElement.useTextDefault && DpSize.m8353equalsimpl0(this.size, magnifierElement.size) && Dp.m8263equalsimpl0(this.cornerRadius, magnifierElement.cornerRadius) && Dp.m8263equalsimpl0(this.elevation, magnifierElement.elevation) && this.clippingEnabled == magnifierElement.clippingEnabled && this.onSizeChanged == magnifierElement.onSizeChanged && Intrinsics.areEqual(this.platformMagnifierFactory, magnifierElement.platformMagnifierFactory);
+            return this.sourceCenter == magnifierElement.sourceCenter && this.magnifierCenter == magnifierElement.magnifierCenter && this.zoom == magnifierElement.zoom && this.useTextDefault == magnifierElement.useTextDefault && DpSize.m7650equalsimpl0(this.size, magnifierElement.size) && Dp.m7560equalsimpl0(this.cornerRadius, magnifierElement.cornerRadius) && Dp.m7560equalsimpl0(this.elevation, magnifierElement.elevation) && this.clippingEnabled == magnifierElement.clippingEnabled && this.onSizeChanged == magnifierElement.onSizeChanged && Intrinsics.areEqual(this.platformMagnifierFactory, magnifierElement.platformMagnifierFactory);
         }
         return false;
     }
@@ -76,7 +76,7 @@ public final class MagnifierElement extends ModifierNodeElement<MagnifierNode> {
     public int hashCode() {
         int hashCode = this.sourceCenter.hashCode() * 31;
         Function1<Density, Offset> function1 = this.magnifierCenter;
-        int hashCode2 = (((((((((((((hashCode + (function1 != null ? function1.hashCode() : 0)) * 31) + Float.hashCode(this.zoom)) * 31) + Boolean.hashCode(this.useTextDefault)) * 31) + DpSize.m8358hashCodeimpl(this.size)) * 31) + Dp.m8264hashCodeimpl(this.cornerRadius)) * 31) + Dp.m8264hashCodeimpl(this.elevation)) * 31) + Boolean.hashCode(this.clippingEnabled)) * 31;
+        int hashCode2 = (((((((((((((hashCode + (function1 != null ? function1.hashCode() : 0)) * 31) + Float.hashCode(this.zoom)) * 31) + Boolean.hashCode(this.useTextDefault)) * 31) + DpSize.m7655hashCodeimpl(this.size)) * 31) + Dp.m7561hashCodeimpl(this.cornerRadius)) * 31) + Dp.m7561hashCodeimpl(this.elevation)) * 31) + Boolean.hashCode(this.clippingEnabled)) * 31;
         Function1<DpSize, Unit> function12 = this.onSizeChanged;
         return ((hashCode2 + (function12 != null ? function12.hashCode() : 0)) * 31) + this.platformMagnifierFactory.hashCode();
     }
@@ -87,9 +87,9 @@ public final class MagnifierElement extends ModifierNodeElement<MagnifierNode> {
         inspectorInfo.getProperties().set("sourceCenter", this.sourceCenter);
         inspectorInfo.getProperties().set("magnifierCenter", this.magnifierCenter);
         inspectorInfo.getProperties().set("zoom", Float.valueOf(this.zoom));
-        inspectorInfo.getProperties().set("size", DpSize.m8344boximpl(this.size));
-        inspectorInfo.getProperties().set("cornerRadius", Dp.m8256boximpl(this.cornerRadius));
-        inspectorInfo.getProperties().set("elevation", Dp.m8256boximpl(this.elevation));
+        inspectorInfo.getProperties().set("size", DpSize.m7641boximpl(this.size));
+        inspectorInfo.getProperties().set("cornerRadius", Dp.m7553boximpl(this.cornerRadius));
+        inspectorInfo.getProperties().set("elevation", Dp.m7553boximpl(this.elevation));
         inspectorInfo.getProperties().set("clippingEnabled", Boolean.valueOf(this.clippingEnabled));
     }
 }

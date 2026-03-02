@@ -60,10 +60,14 @@ public final class SingleDematerialize<T, R> extends Maybe<R> {
                 Notification notification = (Notification) ObjectHelper.requireNonNull(this.selector.apply(t), "The selector returned a null Notification");
                 if (notification.isOnNext()) {
                     this.downstream.onSuccess((Object) notification.getValue());
-                } else if (notification.isOnComplete()) {
-                    this.downstream.onComplete();
+                    return;
+                }
+                boolean isOnComplete = notification.isOnComplete();
+                MaybeObserver<? super R> maybeObserver = this.downstream;
+                if (isOnComplete) {
+                    maybeObserver.onComplete();
                 } else {
-                    this.downstream.onError(notification.getError());
+                    maybeObserver.onError(notification.getError());
                 }
             } catch (Throwable th) {
                 Exceptions.throwIfFatal(th);

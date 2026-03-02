@@ -35,7 +35,7 @@ import kotlin.ranges.RangesKt;
 /* loaded from: classes.dex */
 public final class SnapFlingBehaviorKt {
     private static final boolean DEBUG = false;
-    private static final float MinFlingVelocityDp = Dp.m8258constructorimpl(400);
+    private static final float MinFlingVelocityDp = Dp.m7555constructorimpl(400);
     public static final float NoDistance = 0.0f;
     public static final float NoVelocity = 0.0f;
 
@@ -115,9 +115,7 @@ public final class SnapFlingBehaviorKt {
                     Function1 function12 = new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehaviorKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit animateDecay$lambda$0;
-                            animateDecay$lambda$0 = SnapFlingBehaviorKt.animateDecay$lambda$0(f, floatRef2, scrollScope, function1, (AnimationScope) obj2);
-                            return animateDecay$lambda$0;
+                            return SnapFlingBehaviorKt.animateDecay$lambda$0(f, floatRef2, scrollScope, function1, (AnimationScope) obj2);
                         }
                     };
                     snapFlingBehaviorKt$animateDecay$1.L$0 = animationState;
@@ -204,9 +202,7 @@ public final class SnapFlingBehaviorKt {
                     Function1 function12 = new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehaviorKt$$ExternalSyntheticLambda1
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit animateWithTarget$lambda$0;
-                            animateWithTarget$lambda$0 = SnapFlingBehaviorKt.animateWithTarget$lambda$0(f2, floatRef2, scrollScope, function1, (AnimationScope) obj2);
-                            return animateWithTarget$lambda$0;
+                            return SnapFlingBehaviorKt.animateWithTarget$lambda$0(f2, floatRef2, scrollScope, function1, (AnimationScope) obj2);
                         }
                     };
                     snapFlingBehaviorKt$animateWithTarget$12.L$0 = animationState;
@@ -280,10 +276,10 @@ public final class SnapFlingBehaviorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final float m718calculateFinalOffsetFhqu1e0(int i, float f, float f2) {
-        if (!FinalSnappingItem.m709equalsimpl0(i, FinalSnappingItem.Companion.m713getClosestItembbeMdSM())) {
-            if (!FinalSnappingItem.m709equalsimpl0(i, FinalSnappingItem.Companion.m714getNextItembbeMdSM())) {
-                if (!FinalSnappingItem.m709equalsimpl0(i, FinalSnappingItem.Companion.m715getPreviousItembbeMdSM())) {
+    public static final float m628calculateFinalOffsetFhqu1e0(int i, float f, float f2) {
+        if (!FinalSnappingItem.m621equalsimpl0(i, FinalSnappingItem.Companion.m625getClosestItembbeMdSM())) {
+            if (!FinalSnappingItem.m621equalsimpl0(i, FinalSnappingItem.Companion.m626getNextItembbeMdSM())) {
+                if (!FinalSnappingItem.m621equalsimpl0(i, FinalSnappingItem.Companion.m627getPreviousItembbeMdSM())) {
                     f = 0.0f;
                 }
             }

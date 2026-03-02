@@ -86,11 +86,14 @@ public class AdjustConfig {
         } else if (str.equals(ENVIRONMENT_SANDBOX)) {
             this.logger.warnInProduction("SANDBOX: Adjust is running in Sandbox mode. Use this setting for testing. Don't forget to set the environment to `production` before publishing!", new Object[0]);
             return true;
-        } else if (str.equals(ENVIRONMENT_PRODUCTION)) {
-            this.logger.warnInProduction("PRODUCTION: Adjust is running in Production mode. Use this setting only for the build that you want to publish. Set the environment to `sandbox` if you want to test your app!", new Object[0]);
-            return true;
         } else {
-            this.logger.error("Unknown environment '%s'", str);
+            boolean equals = str.equals(ENVIRONMENT_PRODUCTION);
+            ILogger iLogger = this.logger;
+            if (equals) {
+                iLogger.warnInProduction("PRODUCTION: Adjust is running in Production mode. Use this setting only for the build that you want to publish. Set the environment to `sandbox` if you want to test your app!", new Object[0]);
+                return true;
+            }
+            iLogger.error("Unknown environment '%s'", str);
             return false;
         }
     }

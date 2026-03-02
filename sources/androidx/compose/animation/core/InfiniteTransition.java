@@ -27,7 +27,7 @@ public final class InfiniteTransition {
     private final MutableState refreshChildNeeded$delegate;
     private long startTimeNanos;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit run$lambda$2(InfiniteTransition infiniteTransition, int i, Composer composer, int i2) {
         infiniteTransition.run$animation_core(composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -237,9 +237,7 @@ public final class InfiniteTransition {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.animation.core.InfiniteTransition$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit run$lambda$2;
-                    run$lambda$2 = InfiniteTransition.run$lambda$2(InfiniteTransition.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return run$lambda$2;
+                    return InfiniteTransition.run$lambda$2(InfiniteTransition.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

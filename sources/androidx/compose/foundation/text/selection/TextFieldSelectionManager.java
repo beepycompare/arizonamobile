@@ -113,9 +113,10 @@ public final class TextFieldSelectionManager {
         this.onValueChange = new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit onValueChange$lambda$0;
-                onValueChange$lambda$0 = TextFieldSelectionManager.onValueChange$lambda$0((TextFieldValue) obj);
-                return onValueChange$lambda$0;
+                Unit unit;
+                TextFieldValue textFieldValue = (TextFieldValue) obj;
+                unit = Unit.INSTANCE;
+                return unit;
             }
         };
         mutableStateOf$default = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(new TextFieldValue((String) null, 0L, (TextRange) null, 7, (DefaultConstructorMarker) null), null, 2, null);
@@ -125,8 +126,8 @@ public final class TextFieldSelectionManager {
         this.editable$delegate = mutableStateOf$default2;
         mutableStateOf$default3 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(true, null, 2, null);
         this.enabled$delegate = mutableStateOf$default3;
-        this.dragBeginPosition = Offset.Companion.m5195getZeroF1C5BW0();
-        this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+        this.dragBeginPosition = Offset.Companion.m4543getZeroF1C5BW0();
+        this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
         mutableStateOf$default4 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
         this.draggingHandle$delegate = mutableStateOf$default4;
         mutableStateOf$default5 = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(null, null, 2, null);
@@ -143,7 +144,7 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDown-k-4lQ0M */
-            public void mo1427onDownk4lQ0M(long j) {
+            public void mo1253onDownk4lQ0M(long j) {
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
@@ -152,13 +153,13 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onStart-3MmeM6k */
-            public void mo1429onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
+            public void mo1255onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
                 long j2;
                 TextLayoutResultProxy layoutResult;
-                TextFieldValue m1913createTextFieldValueFDrldGo;
+                TextFieldValue m1654createTextFieldValueFDrldGo;
                 long j3;
                 TextLayoutResultProxy layoutResult2;
-                long m1917updateSelection8UEBfa8;
+                long m1658updateSelection8UEBfa8;
                 if (TextFieldSelectionManager.this.getEnabled() && TextFieldSelectionManager.this.getDraggingHandle() == null) {
                     TextFieldSelectionManager.this.setDraggingHandle(Handle.SelectionEnd);
                     TextFieldSelectionManager.this.previousRawDragOffset = -1;
@@ -166,20 +167,20 @@ public final class TextFieldSelectionManager {
                     this.selectionAdjustmentMode = selectionAdjustment;
                     TextFieldSelectionManager.this.hideSelectionToolbar$foundation();
                     LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
-                    if (state$foundation == null || (layoutResult2 = state$foundation.getLayoutResult()) == null || !layoutResult2.m1471isPositionOnTextk4lQ0M(j)) {
+                    if (state$foundation == null || (layoutResult2 = state$foundation.getLayoutResult()) == null || !layoutResult2.m1292isPositionOnTextk4lQ0M(j)) {
                         j2 = j;
                         LegacyTextFieldState state$foundation2 = TextFieldSelectionManager.this.getState$foundation();
                         if (state$foundation2 != null && (layoutResult = state$foundation2.getLayoutResult()) != null) {
                             TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
-                            int transformedToOriginal = textFieldSelectionManager.getOffsetMapping$foundation().transformedToOriginal(TextLayoutResultProxy.m1469getOffsetForPosition3MmeM6k$default(layoutResult, j2, false, 2, null));
-                            m1913createTextFieldValueFDrldGo = textFieldSelectionManager.m1913createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(transformedToOriginal, transformedToOriginal));
+                            int transformedToOriginal = textFieldSelectionManager.getOffsetMapping$foundation().transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(layoutResult, j2, false, 2, null));
+                            m1654createTextFieldValueFDrldGo = textFieldSelectionManager.m1654createTextFieldValueFDrldGo(textFieldSelectionManager.getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(transformedToOriginal, transformedToOriginal));
                             textFieldSelectionManager.enterSelectionMode$foundation(false);
                             HapticFeedback hapticFeedBack = textFieldSelectionManager.getHapticFeedBack();
                             if (hapticFeedBack != null) {
-                                hapticFeedBack.mo6200performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6217getTextHandleMove5zf0vsI());
+                                hapticFeedBack.mo5541performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5558getTextHandleMove5zf0vsI());
                             }
-                            textFieldSelectionManager.getOnValueChange$foundation().invoke(m1913createTextFieldValueFDrldGo);
-                            textFieldSelectionManager.m1925setLatestSelectionOEnZFl4$foundation(TextRange.m7689boximpl(m1913createTextFieldValueFDrldGo.m7955getSelectiond9O1mEE()));
+                            textFieldSelectionManager.getOnValueChange$foundation().invoke(m1654createTextFieldValueFDrldGo);
+                            textFieldSelectionManager.m1666setLatestSelectionOEnZFl4$foundation(TextRange.m6991boximpl(m1654createTextFieldValueFDrldGo.m7253getSelectiond9O1mEE()));
                         }
                         this.isLongPressSelectionOnly = false;
                     } else if (TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0) {
@@ -187,17 +188,17 @@ public final class TextFieldSelectionManager {
                     } else {
                         TextFieldSelectionManager.this.enterSelectionMode$foundation(false);
                         TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
-                        m1917updateSelection8UEBfa8 = textFieldSelectionManager2.m1917updateSelection8UEBfa8(TextFieldValue.m7950copy3r_uNRQ$default(textFieldSelectionManager2.getValue$foundation(), (AnnotatedString) null, TextRange.Companion.m7706getZerod9O1mEE(), (TextRange) null, 5, (Object) null), j, true, false, this.selectionAdjustmentMode, true);
+                        m1658updateSelection8UEBfa8 = textFieldSelectionManager2.m1658updateSelection8UEBfa8(TextFieldValue.m7248copy3r_uNRQ$default(textFieldSelectionManager2.getValue$foundation(), (AnnotatedString) null, TextRange.Companion.m7008getZerod9O1mEE(), (TextRange) null, 5, (Object) null), j, true, false, this.selectionAdjustmentMode, true);
                         j2 = j;
-                        TextFieldSelectionManager.this.dragBeginSelection = TextRange.m7689boximpl(m1917updateSelection8UEBfa8);
-                        this.runningSelection = TextRange.m7689boximpl(m1917updateSelection8UEBfa8);
+                        TextFieldSelectionManager.this.dragBeginSelection = TextRange.m6991boximpl(m1658updateSelection8UEBfa8);
+                        this.runningSelection = TextRange.m6991boximpl(m1658updateSelection8UEBfa8);
                     }
                     TextFieldSelectionManager.this.setHandleState(HandleState.None);
                     TextFieldSelectionManager.this.dragBeginPosition = j2;
                     TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                     j3 = textFieldSelectionManager3.dragBeginPosition;
-                    textFieldSelectionManager3.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(j3));
-                    TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+                    textFieldSelectionManager3.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(j3));
+                    TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
                 }
             }
 
@@ -207,7 +208,7 @@ public final class TextFieldSelectionManager {
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            public void mo1428onDragk4lQ0M(long j) {
+            public void mo1254onDragk4lQ0M(long j) {
                 long j2;
                 TextLayoutResultProxy layoutResult;
                 long j3;
@@ -216,9 +217,9 @@ public final class TextFieldSelectionManager {
                 TextFieldSelectionManager textFieldSelectionManager;
                 TextRange textRange2;
                 long j5;
-                int m1470getOffsetForPosition3MmeM6k;
+                int m1291getOffsetForPosition3MmeM6k;
                 TextRange textRange3;
-                long m1917updateSelection8UEBfa8;
+                long m1658updateSelection8UEBfa8;
                 TextRange textRange4;
                 long j6;
                 SelectionAdjustment word;
@@ -227,38 +228,38 @@ public final class TextFieldSelectionManager {
                 }
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager2.dragTotalDistance;
-                textFieldSelectionManager2.dragTotalDistance = Offset.m5184plusMKHz9U(j2, j);
+                textFieldSelectionManager2.dragTotalDistance = Offset.m4532plusMKHz9U(j2, j);
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation != null && (layoutResult = state$foundation.getLayoutResult()) != null) {
                     TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                     j3 = textFieldSelectionManager3.dragBeginPosition;
                     j4 = textFieldSelectionManager3.dragTotalDistance;
-                    textFieldSelectionManager3.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(Offset.m5184plusMKHz9U(j3, j4)));
+                    textFieldSelectionManager3.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(Offset.m4532plusMKHz9U(j3, j4)));
                     textRange = textFieldSelectionManager3.dragBeginSelection;
                     if (textRange == null) {
-                        Offset m1919getCurrentDragPosition_m7T9E = textFieldSelectionManager3.m1919getCurrentDragPosition_m7T9E();
-                        Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E);
-                        if (!layoutResult.m1471isPositionOnTextk4lQ0M(m1919getCurrentDragPosition_m7T9E.m5189unboximpl())) {
+                        Offset m1660getCurrentDragPosition_m7T9E = textFieldSelectionManager3.m1660getCurrentDragPosition_m7T9E();
+                        Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E);
+                        if (!layoutResult.m1292isPositionOnTextk4lQ0M(m1660getCurrentDragPosition_m7T9E.m4537unboximpl())) {
                             OffsetMapping offsetMapping$foundation = textFieldSelectionManager3.getOffsetMapping$foundation();
                             j6 = textFieldSelectionManager3.dragBeginPosition;
-                            int transformedToOriginal = offsetMapping$foundation.transformedToOriginal(TextLayoutResultProxy.m1469getOffsetForPosition3MmeM6k$default(layoutResult, j6, false, 2, null));
+                            int transformedToOriginal = offsetMapping$foundation.transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(layoutResult, j6, false, 2, null));
                             OffsetMapping offsetMapping$foundation2 = textFieldSelectionManager3.getOffsetMapping$foundation();
-                            Offset m1919getCurrentDragPosition_m7T9E2 = textFieldSelectionManager3.m1919getCurrentDragPosition_m7T9E();
-                            Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E2);
-                            if (transformedToOriginal == offsetMapping$foundation2.transformedToOriginal(TextLayoutResultProxy.m1469getOffsetForPosition3MmeM6k$default(layoutResult, m1919getCurrentDragPosition_m7T9E2.m5189unboximpl(), false, 2, null))) {
+                            Offset m1660getCurrentDragPosition_m7T9E2 = textFieldSelectionManager3.m1660getCurrentDragPosition_m7T9E();
+                            Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E2);
+                            if (transformedToOriginal == offsetMapping$foundation2.transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(layoutResult, m1660getCurrentDragPosition_m7T9E2.m4537unboximpl(), false, 2, null))) {
                                 word = SelectionAdjustment.Companion.getNone();
                             } else {
                                 word = SelectionAdjustment.Companion.getWord();
                             }
                             SelectionAdjustment selectionAdjustment = word;
                             TextFieldValue value$foundation = textFieldSelectionManager3.getValue$foundation();
-                            Offset m1919getCurrentDragPosition_m7T9E3 = textFieldSelectionManager3.m1919getCurrentDragPosition_m7T9E();
-                            Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E3);
+                            Offset m1660getCurrentDragPosition_m7T9E3 = textFieldSelectionManager3.m1660getCurrentDragPosition_m7T9E();
+                            Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E3);
                             textFieldSelectionManager = textFieldSelectionManager3;
-                            m1917updateSelection8UEBfa8 = textFieldSelectionManager.m1917updateSelection8UEBfa8(value$foundation, m1919getCurrentDragPosition_m7T9E3.m5189unboximpl(), false, false, selectionAdjustment, true);
-                            this.runningSelection = TextRange.m7689boximpl(m1917updateSelection8UEBfa8);
+                            m1658updateSelection8UEBfa8 = textFieldSelectionManager.m1658updateSelection8UEBfa8(value$foundation, m1660getCurrentDragPosition_m7T9E3.m4537unboximpl(), false, false, selectionAdjustment, true);
+                            this.runningSelection = TextRange.m6991boximpl(m1658updateSelection8UEBfa8);
                             textRange4 = textFieldSelectionManager.dragBeginSelection;
-                            if (!TextRange.m7693equalsimpl(m1917updateSelection8UEBfa8, textRange4)) {
+                            if (!TextRange.m6995equalsimpl(m1658updateSelection8UEBfa8, textRange4)) {
                                 this.isLongPressSelectionOnly = false;
                             }
                         }
@@ -266,25 +267,25 @@ public final class TextFieldSelectionManager {
                     textFieldSelectionManager = textFieldSelectionManager3;
                     textRange2 = textFieldSelectionManager.dragBeginSelection;
                     if (textRange2 != null) {
-                        m1470getOffsetForPosition3MmeM6k = TextRange.m7701getStartimpl(textRange2.m7705unboximpl());
+                        m1291getOffsetForPosition3MmeM6k = TextRange.m7003getStartimpl(textRange2.m7007unboximpl());
                     } else {
                         j5 = textFieldSelectionManager.dragBeginPosition;
-                        m1470getOffsetForPosition3MmeM6k = layoutResult.m1470getOffsetForPosition3MmeM6k(j5, false);
+                        m1291getOffsetForPosition3MmeM6k = layoutResult.m1291getOffsetForPosition3MmeM6k(j5, false);
                     }
-                    Offset m1919getCurrentDragPosition_m7T9E4 = textFieldSelectionManager.m1919getCurrentDragPosition_m7T9E();
-                    Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E4);
-                    int m1470getOffsetForPosition3MmeM6k2 = layoutResult.m1470getOffsetForPosition3MmeM6k(m1919getCurrentDragPosition_m7T9E4.m5189unboximpl(), false);
+                    Offset m1660getCurrentDragPosition_m7T9E4 = textFieldSelectionManager.m1660getCurrentDragPosition_m7T9E();
+                    Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E4);
+                    int m1291getOffsetForPosition3MmeM6k2 = layoutResult.m1291getOffsetForPosition3MmeM6k(m1660getCurrentDragPosition_m7T9E4.m4537unboximpl(), false);
                     textRange3 = textFieldSelectionManager.dragBeginSelection;
-                    if (textRange3 == null && m1470getOffsetForPosition3MmeM6k == m1470getOffsetForPosition3MmeM6k2) {
+                    if (textRange3 == null && m1291getOffsetForPosition3MmeM6k == m1291getOffsetForPosition3MmeM6k2) {
                         return;
                     }
                     TextFieldValue value$foundation2 = textFieldSelectionManager.getValue$foundation();
-                    Offset m1919getCurrentDragPosition_m7T9E5 = textFieldSelectionManager.m1919getCurrentDragPosition_m7T9E();
-                    Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E5);
-                    m1917updateSelection8UEBfa8 = textFieldSelectionManager.m1917updateSelection8UEBfa8(value$foundation2, m1919getCurrentDragPosition_m7T9E5.m5189unboximpl(), false, false, this.selectionAdjustmentMode, true);
-                    this.runningSelection = TextRange.m7689boximpl(m1917updateSelection8UEBfa8);
+                    Offset m1660getCurrentDragPosition_m7T9E5 = textFieldSelectionManager.m1660getCurrentDragPosition_m7T9E();
+                    Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E5);
+                    m1658updateSelection8UEBfa8 = textFieldSelectionManager.m1658updateSelection8UEBfa8(value$foundation2, m1660getCurrentDragPosition_m7T9E5.m4537unboximpl(), false, false, this.selectionAdjustmentMode, true);
+                    this.runningSelection = TextRange.m6991boximpl(m1658updateSelection8UEBfa8);
                     textRange4 = textFieldSelectionManager.dragBeginSelection;
-                    if (!TextRange.m7693equalsimpl(m1917updateSelection8UEBfa8, textRange4)) {
+                    if (!TextRange.m6995equalsimpl(m1658updateSelection8UEBfa8, textRange4)) {
                     }
                 }
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
@@ -303,24 +304,24 @@ public final class TextFieldSelectionManager {
             private final void onEnd() {
                 TextRange textRange;
                 TextFieldSelectionManager.this.setDraggingHandle(null);
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(null);
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(null);
                 this.selectionAdjustmentMode = SelectionAdjustment.Companion.getNone();
                 boolean z = true;
                 TextFieldSelectionManager.this.updateFloatingToolbar(true);
                 TextRange textRange2 = this.runningSelection;
-                boolean m7695getCollapsedimpl = TextRange.m7695getCollapsedimpl(textRange2 != null ? textRange2.m7705unboximpl() : TextFieldSelectionManager.this.getValue$foundation().m7955getSelectiond9O1mEE());
-                TextFieldSelectionManager.this.setHandleState(m7695getCollapsedimpl ? HandleState.Cursor : HandleState.Selection);
+                boolean m6997getCollapsedimpl = TextRange.m6997getCollapsedimpl(textRange2 != null ? textRange2.m7007unboximpl() : TextFieldSelectionManager.this.getValue$foundation().m7253getSelectiond9O1mEE());
+                TextFieldSelectionManager.this.setHandleState(m6997getCollapsedimpl ? HandleState.Cursor : HandleState.Selection);
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation != null) {
-                    state$foundation.setShowSelectionHandleStart(!m7695getCollapsedimpl && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true));
+                    state$foundation.setShowSelectionHandleStart(!m6997getCollapsedimpl && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true));
                 }
                 LegacyTextFieldState state$foundation2 = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation2 != null) {
-                    state$foundation2.setShowSelectionHandleEnd(!m7695getCollapsedimpl && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, false));
+                    state$foundation2.setShowSelectionHandleEnd(!m6997getCollapsedimpl && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, false));
                 }
                 LegacyTextFieldState state$foundation3 = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation3 != null) {
-                    if (!m7695getCollapsedimpl || !TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true)) {
+                    if (!m6997getCollapsedimpl || !TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(TextFieldSelectionManager.this, true)) {
                         z = false;
                     }
                     state$foundation3.setShowCursorHandle(z);
@@ -328,7 +329,7 @@ public final class TextFieldSelectionManager {
                 if (this.isLongPressSelectionOnly) {
                     TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
                     textRange = textFieldSelectionManager.dragBeginSelection;
-                    textFieldSelectionManager.m1915maybeSuggestSelectionOEnZFl4(textRange);
+                    textFieldSelectionManager.m1656maybeSuggestSelectionOEnZFl4(textRange);
                 }
                 TextFieldSelectionManager.this.dragBeginSelection = null;
             }
@@ -355,7 +356,7 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onExtend-k-4lQ0M */
-            public boolean mo1750onExtendk4lQ0M(long j) {
+            public boolean mo1514onExtendk4lQ0M(long j) {
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation == null || state$foundation.getLayoutResult() == null || !TextFieldSelectionManager.this.getEnabled()) {
                     return false;
@@ -363,7 +364,7 @@ public final class TextFieldSelectionManager {
                 TextFieldSelectionManager.this.previousRawDragOffset = -1;
                 FocusRequester focusRequester = TextFieldSelectionManager.this.getFocusRequester();
                 if (focusRequester != null) {
-                    FocusRequester.m5084requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+                    FocusRequester.m4432requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
                 }
                 updateMouseSelection(TextFieldSelectionManager.this.getValue$foundation(), j, false, SelectionAdjustment.Companion.getNone());
                 return true;
@@ -371,7 +372,7 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onExtendDrag-k-4lQ0M */
-            public boolean mo1751onExtendDragk4lQ0M(long j) {
+            public boolean mo1515onExtendDragk4lQ0M(long j) {
                 LegacyTextFieldState state$foundation;
                 if (!TextFieldSelectionManager.this.getEnabled() || TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0 || (state$foundation = TextFieldSelectionManager.this.getState$foundation()) == null || state$foundation.getLayoutResult() == null) {
                     return false;
@@ -382,7 +383,7 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onStart-9KIMszo */
-            public boolean mo1752onStart9KIMszo(long j, SelectionAdjustment selectionAdjustment, int i) {
+            public boolean mo1516onStart9KIMszo(long j, SelectionAdjustment selectionAdjustment, int i) {
                 long j2;
                 if (!TextFieldSelectionManager.this.getEnabled() || TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0) {
                     return false;
@@ -393,7 +394,7 @@ public final class TextFieldSelectionManager {
                 }
                 FocusRequester focusRequester = TextFieldSelectionManager.this.getFocusRequester();
                 if (focusRequester != null) {
-                    FocusRequester.m5084requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+                    FocusRequester.m4432requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
                 }
                 TextFieldSelectionManager.this.dragBeginPosition = j;
                 TextFieldSelectionManager.this.previousRawDragOffset = -1;
@@ -403,14 +404,14 @@ public final class TextFieldSelectionManager {
                 long updateMouseSelection = updateMouseSelection(value$foundation, j2, true, selectionAdjustment);
                 if (i >= 2) {
                     this.isDoubleOrTripleClickSelectionOnly = true;
-                    this.initialSelection = TextRange.m7689boximpl(updateMouseSelection);
+                    this.initialSelection = TextRange.m6991boximpl(updateMouseSelection);
                 }
                 return true;
             }
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             /* renamed from: onDrag-3MmeM6k */
-            public boolean mo1749onDrag3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
+            public boolean mo1513onDrag3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
                 LegacyTextFieldState state$foundation;
                 if (!TextFieldSelectionManager.this.getEnabled() || TextFieldSelectionManager.this.getValue$foundation().getText().length() == 0 || (state$foundation = TextFieldSelectionManager.this.getState$foundation()) == null || state$foundation.getLayoutResult() == null) {
                     return false;
@@ -420,19 +421,19 @@ public final class TextFieldSelectionManager {
             }
 
             public final long updateMouseSelection(TextFieldValue textFieldValue, long j, boolean z, SelectionAdjustment selectionAdjustment) {
-                long m1917updateSelection8UEBfa8;
-                m1917updateSelection8UEBfa8 = TextFieldSelectionManager.this.m1917updateSelection8UEBfa8(textFieldValue, j, z, false, selectionAdjustment, false);
-                if (!TextRange.m7693equalsimpl(m1917updateSelection8UEBfa8, this.initialSelection)) {
+                long m1658updateSelection8UEBfa8;
+                m1658updateSelection8UEBfa8 = TextFieldSelectionManager.this.m1658updateSelection8UEBfa8(textFieldValue, j, z, false, selectionAdjustment, false);
+                if (!TextRange.m6995equalsimpl(m1658updateSelection8UEBfa8, this.initialSelection)) {
                     this.isDoubleOrTripleClickSelectionOnly = false;
                 }
-                TextFieldSelectionManager.this.setHandleState(TextRange.m7695getCollapsedimpl(m1917updateSelection8UEBfa8) ? HandleState.Cursor : HandleState.Selection);
-                return m1917updateSelection8UEBfa8;
+                TextFieldSelectionManager.this.setHandleState(TextRange.m6997getCollapsedimpl(m1658updateSelection8UEBfa8) ? HandleState.Cursor : HandleState.Selection);
+                return m1658updateSelection8UEBfa8;
             }
 
             @Override // androidx.compose.foundation.text.selection.MouseSelectionObserver
             public void onDragDone() {
                 if (this.isDoubleOrTripleClickSelectionOnly) {
-                    TextFieldSelectionManager.this.m1915maybeSuggestSelectionOEnZFl4(this.initialSelection);
+                    TextFieldSelectionManager.this.m1656maybeSuggestSelectionOEnZFl4(this.initialSelection);
                 }
             }
         };
@@ -452,11 +453,6 @@ public final class TextFieldSelectionManager {
 
     public final void setOffsetMapping$foundation(OffsetMapping offsetMapping) {
         this.offsetMapping = offsetMapping;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onValueChange$lambda$0(TextFieldValue textFieldValue) {
-        return Unit.INSTANCE;
     }
 
     public final Function1<TextFieldValue, Unit> getOnValueChange$foundation() {
@@ -481,7 +477,7 @@ public final class TextFieldSelectionManager {
 
     public final void setValue$foundation(TextFieldValue textFieldValue) {
         this.valueState.setValue(textFieldValue);
-        this.latestSelection = TextRange.m7689boximpl(textFieldValue.m7955getSelectiond9O1mEE());
+        this.latestSelection = TextRange.m6991boximpl(textFieldValue.m7253getSelectiond9O1mEE());
     }
 
     public final AnnotatedString getTransformedText$foundation() {
@@ -584,22 +580,22 @@ public final class TextFieldSelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setCurrentDragPosition-_kEHs6E  reason: not valid java name */
-    public final void m1916setCurrentDragPosition_kEHs6E(Offset offset) {
+    public final void m1657setCurrentDragPosition_kEHs6E(Offset offset) {
         this.currentDragPosition$delegate.setValue(offset);
     }
 
     /* renamed from: getCurrentDragPosition-_m7T9-E  reason: not valid java name */
-    public final Offset m1919getCurrentDragPosition_m7T9E() {
+    public final Offset m1660getCurrentDragPosition_m7T9E() {
         return (Offset) this.currentDragPosition$delegate.getValue();
     }
 
     /* renamed from: getLatestSelection-MzsxiRA$foundation  reason: not valid java name */
-    public final TextRange m1922getLatestSelectionMzsxiRA$foundation() {
+    public final TextRange m1663getLatestSelectionMzsxiRA$foundation() {
         return this.latestSelection;
     }
 
     /* renamed from: setLatestSelection-OEnZFl4$foundation  reason: not valid java name */
-    public final void m1925setLatestSelectionOEnZFl4$foundation(TextRange textRange) {
+    public final void m1666setLatestSelectionOEnZFl4$foundation(TextRange textRange) {
         this.latestSelection = textRange;
     }
 
@@ -623,14 +619,12 @@ public final class TextFieldSelectionManager {
         return !getEnabled() ? Modifier.Companion : TextContextMenuToolbarHandlerModifierKt.textContextMenuToolbarHandler(TextContextMenuGesturesModifierKt.showTextContextMenuOnSecondaryClick(Modifier.Companion, new TextFieldSelectionManager$contextMenuAreaModifier$1(this, null)), this.toolbarRequester, new TextFieldSelectionManager$contextMenuAreaModifier$2(this, null), new TextFieldSelectionManager$contextMenuAreaModifier$3(this, null), new Function1() { // from class: androidx.compose.foundation.text.selection.TextFieldSelectionManager$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Rect _get_contextMenuAreaModifier_$lambda$0;
-                _get_contextMenuAreaModifier_$lambda$0 = TextFieldSelectionManager._get_contextMenuAreaModifier_$lambda$0(TextFieldSelectionManager.this, (LayoutCoordinates) obj);
-                return _get_contextMenuAreaModifier_$lambda$0;
+                return TextFieldSelectionManager._get_contextMenuAreaModifier_$lambda$0(TextFieldSelectionManager.this, (LayoutCoordinates) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Rect _get_contextMenuAreaModifier_$lambda$0(TextFieldSelectionManager textFieldSelectionManager, LayoutCoordinates layoutCoordinates) {
         LayoutCoordinates layoutCoordinates2;
         Rect contentRect = textFieldSelectionManager.getContentRect();
@@ -651,7 +645,7 @@ public final class TextFieldSelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: maybeSuggestSelection-OEnZFl4  reason: not valid java name */
-    public final void m1915maybeSuggestSelectionOEnZFl4(TextRange textRange) {
+    public final void m1656maybeSuggestSelectionOEnZFl4(TextRange textRange) {
         PlatformSelectionBehaviors platformSelectionBehaviors;
         AnnotatedString transformedText$foundation;
         String text;
@@ -660,8 +654,8 @@ public final class TextFieldSelectionManager {
             return;
         }
         OffsetMapping offsetMapping = this.offsetMapping;
-        long TextRange = TextRangeKt.TextRange(offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(textRange.m7705unboximpl())), offsetMapping.originalToTransformed(TextRange.m7696getEndimpl(textRange.m7705unboximpl())));
-        if (text.length() <= 0 || TextRange.m7695getCollapsedimpl(TextRange) || (coroutineScope = this.coroutineScope) == null) {
+        long TextRange = TextRangeKt.TextRange(offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(textRange.m7007unboximpl())), offsetMapping.originalToTransformed(TextRange.m6998getEndimpl(textRange.m7007unboximpl())));
+        if (text.length() <= 0 || TextRange.m6997getCollapsedimpl(TextRange) || (coroutineScope = this.coroutineScope) == null) {
             return;
         }
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new TextFieldSelectionManager$maybeSuggestSelection$1(platformSelectionBehaviors, text, TextRange, textRange, this, offsetMapping, null), 3, null);
@@ -675,23 +669,23 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onStart-3MmeM6k */
-            public void mo1429onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
+            public void mo1255onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDown-k-4lQ0M */
-            public void mo1427onDownk4lQ0M(long j) {
+            public void mo1253onDownk4lQ0M(long j) {
                 TextLayoutResultProxy layoutResult;
                 TextFieldSelectionManager.this.setDraggingHandle(z ? Handle.SelectionStart : Handle.SelectionEnd);
-                long m1858getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1858getAdjustedCoordinatesk4lQ0M(TextFieldSelectionManager.this.m1921getHandlePositiontuRUvjQ$foundation(z));
+                long m1608getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1608getAdjustedCoordinatesk4lQ0M(TextFieldSelectionManager.this.m1662getHandlePositiontuRUvjQ$foundation(z));
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation == null || (layoutResult = state$foundation.getLayoutResult()) == null) {
                     return;
                 }
-                long m1473translateInnerToDecorationCoordinatesMKHz9U$foundation = layoutResult.m1473translateInnerToDecorationCoordinatesMKHz9U$foundation(m1858getAdjustedCoordinatesk4lQ0M);
-                TextFieldSelectionManager.this.dragBeginPosition = m1473translateInnerToDecorationCoordinatesMKHz9U$foundation;
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(m1473translateInnerToDecorationCoordinatesMKHz9U$foundation));
-                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+                long m1294translateInnerToDecorationCoordinatesMKHz9U$foundation = layoutResult.m1294translateInnerToDecorationCoordinatesMKHz9U$foundation(m1608getAdjustedCoordinatesk4lQ0M);
+                TextFieldSelectionManager.this.dragBeginPosition = m1294translateInnerToDecorationCoordinatesMKHz9U$foundation;
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(m1294translateInnerToDecorationCoordinatesMKHz9U$foundation));
+                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
                 TextFieldSelectionManager.this.previousRawDragOffset = -1;
                 LegacyTextFieldState state$foundation2 = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation2 != null) {
@@ -703,35 +697,35 @@ public final class TextFieldSelectionManager {
             @Override // androidx.compose.foundation.text.TextDragObserver
             public void onUp() {
                 TextFieldSelectionManager.this.setDraggingHandle(null);
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(null);
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(null);
                 TextFieldSelectionManager.this.updateFloatingToolbar(true);
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDrag-k-4lQ0M */
-            public void mo1428onDragk4lQ0M(long j) {
+            public void mo1254onDragk4lQ0M(long j) {
                 long j2;
                 long j3;
                 long j4;
                 TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager.dragTotalDistance;
-                textFieldSelectionManager.dragTotalDistance = Offset.m5184plusMKHz9U(j2, j);
+                textFieldSelectionManager.dragTotalDistance = Offset.m4532plusMKHz9U(j2, j);
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j3 = textFieldSelectionManager2.dragBeginPosition;
                 j4 = TextFieldSelectionManager.this.dragTotalDistance;
-                textFieldSelectionManager2.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(Offset.m5184plusMKHz9U(j3, j4)));
+                textFieldSelectionManager2.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(Offset.m4532plusMKHz9U(j3, j4)));
                 TextFieldSelectionManager textFieldSelectionManager3 = TextFieldSelectionManager.this;
                 TextFieldValue value$foundation = textFieldSelectionManager3.getValue$foundation();
-                Offset m1919getCurrentDragPosition_m7T9E = TextFieldSelectionManager.this.m1919getCurrentDragPosition_m7T9E();
-                Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E);
-                textFieldSelectionManager3.m1917updateSelection8UEBfa8(value$foundation, m1919getCurrentDragPosition_m7T9E.m5189unboximpl(), false, z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate(), true);
+                Offset m1660getCurrentDragPosition_m7T9E = TextFieldSelectionManager.this.m1660getCurrentDragPosition_m7T9E();
+                Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E);
+                textFieldSelectionManager3.m1658updateSelection8UEBfa8(value$foundation, m1660getCurrentDragPosition_m7T9E.m4537unboximpl(), false, z, SelectionAdjustment.Companion.getCharacterWithWordAccelerate(), true);
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             public void onStop() {
                 TextFieldSelectionManager.this.setDraggingHandle(null);
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(null);
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(null);
                 TextFieldSelectionManager.this.updateFloatingToolbar(true);
             }
         };
@@ -745,44 +739,44 @@ public final class TextFieldSelectionManager {
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDown-k-4lQ0M */
-            public void mo1427onDownk4lQ0M(long j) {
+            public void mo1253onDownk4lQ0M(long j) {
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             public void onUp() {
                 TextFieldSelectionManager.this.setDraggingHandle(null);
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(null);
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(null);
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onStart-3MmeM6k */
-            public void mo1429onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
+            public void mo1255onStart3MmeM6k(long j, SelectionAdjustment selectionAdjustment) {
                 TextLayoutResultProxy layoutResult;
-                long m1858getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1858getAdjustedCoordinatesk4lQ0M(TextFieldSelectionManager.this.m1921getHandlePositiontuRUvjQ$foundation(true));
+                long m1608getAdjustedCoordinatesk4lQ0M = SelectionHandlesKt.m1608getAdjustedCoordinatesk4lQ0M(TextFieldSelectionManager.this.m1662getHandlePositiontuRUvjQ$foundation(true));
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation == null || (layoutResult = state$foundation.getLayoutResult()) == null) {
                     return;
                 }
-                long m1473translateInnerToDecorationCoordinatesMKHz9U$foundation = layoutResult.m1473translateInnerToDecorationCoordinatesMKHz9U$foundation(m1858getAdjustedCoordinatesk4lQ0M);
-                TextFieldSelectionManager.this.dragBeginPosition = m1473translateInnerToDecorationCoordinatesMKHz9U$foundation;
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(m1473translateInnerToDecorationCoordinatesMKHz9U$foundation));
-                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m5195getZeroF1C5BW0();
+                long m1294translateInnerToDecorationCoordinatesMKHz9U$foundation = layoutResult.m1294translateInnerToDecorationCoordinatesMKHz9U$foundation(m1608getAdjustedCoordinatesk4lQ0M);
+                TextFieldSelectionManager.this.dragBeginPosition = m1294translateInnerToDecorationCoordinatesMKHz9U$foundation;
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(m1294translateInnerToDecorationCoordinatesMKHz9U$foundation));
+                TextFieldSelectionManager.this.dragTotalDistance = Offset.Companion.m4543getZeroF1C5BW0();
                 TextFieldSelectionManager.this.setDraggingHandle(Handle.Cursor);
                 TextFieldSelectionManager.this.updateFloatingToolbar(false);
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             /* renamed from: onDrag-k-4lQ0M */
-            public void mo1428onDragk4lQ0M(long j) {
+            public void mo1254onDragk4lQ0M(long j) {
                 long j2;
                 TextLayoutResultProxy layoutResult;
                 long j3;
                 long j4;
                 HapticFeedback hapticFeedBack;
-                TextFieldValue m1913createTextFieldValueFDrldGo;
+                TextFieldValue m1654createTextFieldValueFDrldGo;
                 TextFieldSelectionManager textFieldSelectionManager = TextFieldSelectionManager.this;
                 j2 = textFieldSelectionManager.dragTotalDistance;
-                textFieldSelectionManager.dragTotalDistance = Offset.m5184plusMKHz9U(j2, j);
+                textFieldSelectionManager.dragTotalDistance = Offset.m4532plusMKHz9U(j2, j);
                 LegacyTextFieldState state$foundation = TextFieldSelectionManager.this.getState$foundation();
                 if (state$foundation == null || (layoutResult = state$foundation.getLayoutResult()) == null) {
                     return;
@@ -790,29 +784,29 @@ public final class TextFieldSelectionManager {
                 TextFieldSelectionManager textFieldSelectionManager2 = TextFieldSelectionManager.this;
                 j3 = textFieldSelectionManager2.dragBeginPosition;
                 j4 = textFieldSelectionManager2.dragTotalDistance;
-                textFieldSelectionManager2.m1916setCurrentDragPosition_kEHs6E(Offset.m5168boximpl(Offset.m5184plusMKHz9U(j3, j4)));
+                textFieldSelectionManager2.m1657setCurrentDragPosition_kEHs6E(Offset.m4516boximpl(Offset.m4532plusMKHz9U(j3, j4)));
                 OffsetMapping offsetMapping$foundation = textFieldSelectionManager2.getOffsetMapping$foundation();
-                Offset m1919getCurrentDragPosition_m7T9E = textFieldSelectionManager2.m1919getCurrentDragPosition_m7T9E();
-                Intrinsics.checkNotNull(m1919getCurrentDragPosition_m7T9E);
-                int transformedToOriginal = offsetMapping$foundation.transformedToOriginal(TextLayoutResultProxy.m1469getOffsetForPosition3MmeM6k$default(layoutResult, m1919getCurrentDragPosition_m7T9E.m5189unboximpl(), false, 2, null));
+                Offset m1660getCurrentDragPosition_m7T9E = textFieldSelectionManager2.m1660getCurrentDragPosition_m7T9E();
+                Intrinsics.checkNotNull(m1660getCurrentDragPosition_m7T9E);
+                int transformedToOriginal = offsetMapping$foundation.transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(layoutResult, m1660getCurrentDragPosition_m7T9E.m4537unboximpl(), false, 2, null));
                 long TextRange = TextRangeKt.TextRange(transformedToOriginal, transformedToOriginal);
-                if (TextRange.m7694equalsimpl0(TextRange, textFieldSelectionManager2.getValue$foundation().m7955getSelectiond9O1mEE())) {
+                if (TextRange.m6996equalsimpl0(TextRange, textFieldSelectionManager2.getValue$foundation().m7253getSelectiond9O1mEE())) {
                     return;
                 }
                 LegacyTextFieldState state$foundation2 = textFieldSelectionManager2.getState$foundation();
                 if ((state$foundation2 == null || state$foundation2.isInTouchMode()) && (hapticFeedBack = textFieldSelectionManager2.getHapticFeedBack()) != null) {
-                    hapticFeedBack.mo6200performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6217getTextHandleMove5zf0vsI());
+                    hapticFeedBack.mo5541performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5558getTextHandleMove5zf0vsI());
                 }
                 Function1<TextFieldValue, Unit> onValueChange$foundation = textFieldSelectionManager2.getOnValueChange$foundation();
-                m1913createTextFieldValueFDrldGo = textFieldSelectionManager2.m1913createTextFieldValueFDrldGo(textFieldSelectionManager2.getValue$foundation().getAnnotatedString(), TextRange);
-                onValueChange$foundation.invoke(m1913createTextFieldValueFDrldGo);
-                textFieldSelectionManager2.m1925setLatestSelectionOEnZFl4$foundation(TextRange.m7689boximpl(TextRange));
+                m1654createTextFieldValueFDrldGo = textFieldSelectionManager2.m1654createTextFieldValueFDrldGo(textFieldSelectionManager2.getValue$foundation().getAnnotatedString(), TextRange);
+                onValueChange$foundation.invoke(m1654createTextFieldValueFDrldGo);
+                textFieldSelectionManager2.m1666setLatestSelectionOEnZFl4$foundation(TextRange.m6991boximpl(TextRange));
             }
 
             @Override // androidx.compose.foundation.text.TextDragObserver
             public void onStop() {
                 TextFieldSelectionManager.this.setDraggingHandle(null);
-                TextFieldSelectionManager.this.m1916setCurrentDragPosition_kEHs6E(null);
+                TextFieldSelectionManager.this.m1657setCurrentDragPosition_kEHs6E(null);
             }
         };
     }
@@ -828,7 +822,7 @@ public final class TextFieldSelectionManager {
         FocusRequester focusRequester;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null && !legacyTextFieldState.getHasFocus() && (focusRequester = this.focusRequester) != null) {
-            FocusRequester.m5084requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
+            FocusRequester.m4432requestFocus3ESFkO8$default(focusRequester, 0, 1, null);
         }
         this.oldValue = getValue$foundation();
         updateFloatingToolbar(z);
@@ -841,59 +835,59 @@ public final class TextFieldSelectionManager {
     }
 
     /* renamed from: deselect-_kEHs6E$foundation$default  reason: not valid java name */
-    public static /* synthetic */ void m1914deselect_kEHs6E$foundation$default(TextFieldSelectionManager textFieldSelectionManager, Offset offset, int i, Object obj) {
+    public static /* synthetic */ void m1655deselect_kEHs6E$foundation$default(TextFieldSelectionManager textFieldSelectionManager, Offset offset, int i, Object obj) {
         if ((i & 1) != 0) {
             offset = null;
         }
-        textFieldSelectionManager.m1918deselect_kEHs6E$foundation(offset);
+        textFieldSelectionManager.m1659deselect_kEHs6E$foundation(offset);
     }
 
     /* renamed from: deselect-_kEHs6E$foundation  reason: not valid java name */
-    public final void m1918deselect_kEHs6E$foundation(Offset offset) {
-        int m7698getMaximpl;
-        if (!TextRange.m7695getCollapsedimpl(getValue$foundation().m7955getSelectiond9O1mEE())) {
+    public final void m1659deselect_kEHs6E$foundation(Offset offset) {
+        int m7000getMaximpl;
+        if (!TextRange.m6997getCollapsedimpl(getValue$foundation().m7253getSelectiond9O1mEE())) {
             LegacyTextFieldState legacyTextFieldState = this.state;
             TextLayoutResultProxy layoutResult = legacyTextFieldState != null ? legacyTextFieldState.getLayoutResult() : null;
             if (offset != null && layoutResult != null) {
-                m7698getMaximpl = this.offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1469getOffsetForPosition3MmeM6k$default(layoutResult, offset.m5189unboximpl(), false, 2, null));
+                m7000getMaximpl = this.offsetMapping.transformedToOriginal(TextLayoutResultProxy.m1290getOffsetForPosition3MmeM6k$default(layoutResult, offset.m4537unboximpl(), false, 2, null));
             } else {
-                m7698getMaximpl = TextRange.m7698getMaximpl(getValue$foundation().m7955getSelectiond9O1mEE());
+                m7000getMaximpl = TextRange.m7000getMaximpl(getValue$foundation().m7253getSelectiond9O1mEE());
             }
-            TextFieldValue m7950copy3r_uNRQ$default = TextFieldValue.m7950copy3r_uNRQ$default(getValue$foundation(), (AnnotatedString) null, TextRangeKt.TextRange(m7698getMaximpl), (TextRange) null, 5, (Object) null);
-            this.onValueChange.invoke(m7950copy3r_uNRQ$default);
-            this.latestSelection = TextRange.m7689boximpl(m7950copy3r_uNRQ$default.m7955getSelectiond9O1mEE());
+            TextFieldValue m7248copy3r_uNRQ$default = TextFieldValue.m7248copy3r_uNRQ$default(getValue$foundation(), (AnnotatedString) null, TextRangeKt.TextRange(m7000getMaximpl), (TextRange) null, 5, (Object) null);
+            this.onValueChange.invoke(m7248copy3r_uNRQ$default);
+            this.latestSelection = TextRange.m6991boximpl(m7248copy3r_uNRQ$default.m7253getSelectiond9O1mEE());
         }
         setHandleState((offset == null || getValue$foundation().getText().length() <= 0) ? HandleState.None : HandleState.Cursor);
         updateFloatingToolbar(false);
     }
 
     /* renamed from: setSelectionPreviewHighlight-5zc-tL8$foundation  reason: not valid java name */
-    public final void m1926setSelectionPreviewHighlight5zctL8$foundation(long j) {
+    public final void m1667setSelectionPreviewHighlight5zctL8$foundation(long j) {
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null) {
-            legacyTextFieldState.m1398setSelectionPreviewHighlightRange5zctL8(j);
+            legacyTextFieldState.m1225setSelectionPreviewHighlightRange5zctL8(j);
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1395setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
+            legacyTextFieldState2.m1222setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
         }
-        if (TextRange.m7695getCollapsedimpl(j)) {
+        if (TextRange.m6997getCollapsedimpl(j)) {
             return;
         }
         exitSelectionMode$foundation();
     }
 
     /* renamed from: setDeletionPreviewHighlight-5zc-tL8$foundation  reason: not valid java name */
-    public final void m1924setDeletionPreviewHighlight5zctL8$foundation(long j) {
+    public final void m1665setDeletionPreviewHighlight5zctL8$foundation(long j) {
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null) {
-            legacyTextFieldState.m1395setDeletionPreviewHighlightRange5zctL8(j);
+            legacyTextFieldState.m1222setDeletionPreviewHighlightRange5zctL8(j);
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1398setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
+            legacyTextFieldState2.m1225setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
         }
-        if (TextRange.m7695getCollapsedimpl(j)) {
+        if (TextRange.m6997getCollapsedimpl(j)) {
             return;
         }
         exitSelectionMode$foundation();
@@ -902,11 +896,11 @@ public final class TextFieldSelectionManager {
     public final void clearPreviewHighlight$foundation() {
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState != null) {
-            legacyTextFieldState.m1395setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
+            legacyTextFieldState.m1222setDeletionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
-            legacyTextFieldState2.m1398setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7706getZerod9O1mEE());
+            legacyTextFieldState2.m1225setSelectionPreviewHighlightRange5zctL8(TextRange.Companion.m7008getZerod9O1mEE());
         }
     }
 
@@ -933,7 +927,7 @@ public final class TextFieldSelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean getHasSelection() {
-        return !TextRange.m7695getCollapsedimpl(getValue$foundation().m7955getSelectiond9O1mEE());
+        return !TextRange.m6997getCollapsedimpl(getValue$foundation().m7253getSelectiond9O1mEE());
     }
 
     public final boolean isCopyAllowed$foundation() {
@@ -997,8 +991,8 @@ public final class TextFieldSelectionManager {
         if (transformedText$foundation == null || (text = transformedText$foundation.getText()) == null || (textRange = this.latestSelection) == null) {
             return null;
         }
-        long m7705unboximpl = textRange.m7705unboximpl();
-        return new Pair<>(text, TextRange.m7689boximpl(TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(m7705unboximpl)), this.offsetMapping.originalToTransformed(TextRange.m7696getEndimpl(m7705unboximpl)))));
+        long m7007unboximpl = textRange.m7007unboximpl();
+        return new Pair<>(text, TextRange.m6991boximpl(TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(m7007unboximpl)), this.offsetMapping.originalToTransformed(TextRange.m6998getEndimpl(m7007unboximpl)))));
     }
 
     public final boolean isPasteAllowed$foundation() {
@@ -1010,11 +1004,11 @@ public final class TextFieldSelectionManager {
     }
 
     public final boolean canShowSelectAllMenuItem$foundation() {
-        return TextRange.m7697getLengthimpl(getValue$foundation().m7955getSelectiond9O1mEE()) != getValue$foundation().getText().length();
+        return TextRange.m6999getLengthimpl(getValue$foundation().m7253getSelectiond9O1mEE()) != getValue$foundation().getText().length();
     }
 
     public final boolean canShowAutofillMenuItem$foundation() {
-        return getEditable() && TextRange.m7695getCollapsedimpl(getValue$foundation().m7955getSelectiond9O1mEE());
+        return getEditable() && TextRange.m6997getCollapsedimpl(getValue$foundation().m7253getSelectiond9O1mEE());
     }
 
     public static /* synthetic */ Job copy$foundation$default(TextFieldSelectionManager textFieldSelectionManager, boolean z, int i, Object obj) {
@@ -1062,10 +1056,10 @@ public final class TextFieldSelectionManager {
     }
 
     public final void selectAll$foundation() {
-        TextFieldValue m1913createTextFieldValueFDrldGo = m1913createTextFieldValueFDrldGo(getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(0, getValue$foundation().getText().length()));
-        this.onValueChange.invoke(m1913createTextFieldValueFDrldGo);
-        this.latestSelection = TextRange.m7689boximpl(m1913createTextFieldValueFDrldGo.m7955getSelectiond9O1mEE());
-        this.oldValue = TextFieldValue.m7950copy3r_uNRQ$default(this.oldValue, (AnnotatedString) null, m1913createTextFieldValueFDrldGo.m7955getSelectiond9O1mEE(), (TextRange) null, 5, (Object) null);
+        TextFieldValue m1654createTextFieldValueFDrldGo = m1654createTextFieldValueFDrldGo(getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(0, getValue$foundation().getText().length()));
+        this.onValueChange.invoke(m1654createTextFieldValueFDrldGo);
+        this.latestSelection = TextRange.m6991boximpl(m1654createTextFieldValueFDrldGo.m7253getSelectiond9O1mEE());
+        this.oldValue = TextFieldValue.m7248copy3r_uNRQ$default(this.oldValue, (AnnotatedString) null, m1654createTextFieldValueFDrldGo.m7253getSelectiond9O1mEE(), (TextRange) null, 5, (Object) null);
         enterSelectionMode$foundation(true);
     }
 
@@ -1077,44 +1071,44 @@ public final class TextFieldSelectionManager {
     }
 
     /* renamed from: getHandlePosition-tuRUvjQ$foundation  reason: not valid java name */
-    public final long m1921getHandlePositiontuRUvjQ$foundation(boolean z) {
+    public final long m1662getHandlePositiontuRUvjQ$foundation(boolean z) {
         TextLayoutResultProxy layoutResult;
         TextLayoutResult value;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || (value = layoutResult.getValue()) == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         AnnotatedString transformedText$foundation = getTransformedText$foundation();
         if (transformedText$foundation == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         if (Intrinsics.areEqual(transformedText$foundation.getText(), value.getLayoutInput().getText().getText())) {
-            long m7955getSelectiond9O1mEE = getValue$foundation().m7955getSelectiond9O1mEE();
-            return TextSelectionDelegateKt.getSelectionHandleCoordinates(value, this.offsetMapping.originalToTransformed(z ? TextRange.m7701getStartimpl(m7955getSelectiond9O1mEE) : TextRange.m7696getEndimpl(m7955getSelectiond9O1mEE)), z, TextRange.m7700getReversedimpl(getValue$foundation().m7955getSelectiond9O1mEE()));
+            long m7253getSelectiond9O1mEE = getValue$foundation().m7253getSelectiond9O1mEE();
+            return TextSelectionDelegateKt.getSelectionHandleCoordinates(value, this.offsetMapping.originalToTransformed(z ? TextRange.m7003getStartimpl(m7253getSelectiond9O1mEE) : TextRange.m6998getEndimpl(m7253getSelectiond9O1mEE)), z, TextRange.m7002getReversedimpl(getValue$foundation().m7253getSelectiond9O1mEE()));
         }
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     public final float getHandleLineHeight$foundation(boolean z) {
         TextLayoutResultProxy layoutResult;
         TextLayoutResult value;
-        int m7701getStartimpl = z ? TextRange.m7701getStartimpl(getValue$foundation().m7955getSelectiond9O1mEE()) : TextRange.m7696getEndimpl(getValue$foundation().m7955getSelectiond9O1mEE());
+        int m7003getStartimpl = z ? TextRange.m7003getStartimpl(getValue$foundation().m7253getSelectiond9O1mEE()) : TextRange.m6998getEndimpl(getValue$foundation().m7253getSelectiond9O1mEE());
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || (value = layoutResult.getValue()) == null) {
             return 0.0f;
         }
-        return TextLayoutHelperKt.getLineHeight(value, m7701getStartimpl);
+        return TextLayoutHelperKt.getLineHeight(value, m7003getStartimpl);
     }
 
     /* renamed from: getCursorPosition-tuRUvjQ$foundation  reason: not valid java name */
-    public final long m1920getCursorPositiontuRUvjQ$foundation(Density density) {
-        int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(getValue$foundation().m7955getSelectiond9O1mEE()));
+    public final long m1661getCursorPositiontuRUvjQ$foundation(Density density) {
+        int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(getValue$foundation().m7253getSelectiond9O1mEE()));
         LegacyTextFieldState legacyTextFieldState = this.state;
         TextLayoutResultProxy layoutResult = legacyTextFieldState != null ? legacyTextFieldState.getLayoutResult() : null;
         Intrinsics.checkNotNull(layoutResult);
         TextLayoutResult value = layoutResult.getValue();
         Rect cursorRect = value.getCursorRect(RangesKt.coerceIn(originalToTransformed, 0, value.getLayoutInput().getText().length()));
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo464toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2)) << 32) | (Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(cursorRect.getLeft() + (density.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness()) / 2)) << 32) | (Float.floatToRawIntBits(cursorRect.getBottom()) & 4294967295L));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1175,13 +1169,13 @@ public final class TextFieldSelectionManager {
     }
 
     /* renamed from: selectWordAtPositionIfNotAlreadySelected-k-4lQ0M  reason: not valid java name */
-    public final void m1923selectWordAtPositionIfNotAlreadySelectedk4lQ0M(long j) {
+    public final void m1664selectWordAtPositionIfNotAlreadySelectedk4lQ0M(long j) {
         TextLayoutResultProxy layoutResult;
         LegacyTextFieldState legacyTextFieldState = this.state;
-        if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || TextLayoutHelperKt.m1467isPositionInsideSelectionuaM50fQ(layoutResult.getValue(), layoutResult.m1472translateDecorationToInnerCoordinatesMKHz9U$foundation(j), TextRange.m7689boximpl(getValue$foundation().m7955getSelectiond9O1mEE()))) {
+        if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null || TextLayoutHelperKt.m1288isPositionInsideSelectionuaM50fQ(layoutResult.getValue(), layoutResult.m1293translateDecorationToInnerCoordinatesMKHz9U$foundation(j), TextRange.m6991boximpl(getValue$foundation().m7253getSelectiond9O1mEE()))) {
             return;
         }
-        m1917updateSelection8UEBfa8(getValue$foundation(), j, true, false, SelectionAdjustment.Companion.getWord(), false);
+        m1658updateSelection8UEBfa8(getValue$foundation(), j, true, false, SelectionAdjustment.Companion.getWord(), false);
     }
 
     public final boolean isTextChanged$foundation() {
@@ -1207,12 +1201,12 @@ public final class TextFieldSelectionManager {
                 legacyTextFieldState = null;
             }
             if (legacyTextFieldState != null) {
-                int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(getValue$foundation().m7955getSelectiond9O1mEE()));
-                int originalToTransformed2 = this.offsetMapping.originalToTransformed(TextRange.m7696getEndimpl(getValue$foundation().m7955getSelectiond9O1mEE()));
+                int originalToTransformed = this.offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(getValue$foundation().m7253getSelectiond9O1mEE()));
+                int originalToTransformed2 = this.offsetMapping.originalToTransformed(TextRange.m6998getEndimpl(getValue$foundation().m7253getSelectiond9O1mEE()));
                 LegacyTextFieldState legacyTextFieldState2 = this.state;
-                long m5195getZeroF1C5BW0 = (legacyTextFieldState2 == null || (layoutCoordinates4 = legacyTextFieldState2.getLayoutCoordinates()) == null) ? Offset.Companion.m5195getZeroF1C5BW0() : layoutCoordinates4.mo6886localToRootMKHz9U(m1921getHandlePositiontuRUvjQ$foundation(true));
+                long m4543getZeroF1C5BW0 = (legacyTextFieldState2 == null || (layoutCoordinates4 = legacyTextFieldState2.getLayoutCoordinates()) == null) ? Offset.Companion.m4543getZeroF1C5BW0() : layoutCoordinates4.mo6227localToRootMKHz9U(m1662getHandlePositiontuRUvjQ$foundation(true));
                 LegacyTextFieldState legacyTextFieldState3 = this.state;
-                long m5195getZeroF1C5BW02 = (legacyTextFieldState3 == null || (layoutCoordinates3 = legacyTextFieldState3.getLayoutCoordinates()) == null) ? Offset.Companion.m5195getZeroF1C5BW0() : layoutCoordinates3.mo6886localToRootMKHz9U(m1921getHandlePositiontuRUvjQ$foundation(false));
+                long m4543getZeroF1C5BW02 = (legacyTextFieldState3 == null || (layoutCoordinates3 = legacyTextFieldState3.getLayoutCoordinates()) == null) ? Offset.Companion.m4543getZeroF1C5BW0() : layoutCoordinates3.mo6227localToRootMKHz9U(m1662getHandlePositiontuRUvjQ$foundation(false));
                 LegacyTextFieldState legacyTextFieldState4 = this.state;
                 float f2 = 0.0f;
                 if (legacyTextFieldState4 == null || (layoutCoordinates2 = legacyTextFieldState4.getLayoutCoordinates()) == null) {
@@ -1223,16 +1217,16 @@ public final class TextFieldSelectionManager {
                     TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
                     c = ' ';
                     j = 4294967295L;
-                    f = Float.intBitsToFloat((int) (layoutCoordinates2.mo6886localToRootMKHz9U(Offset.m5171constructorimpl((Float.floatToRawIntBits((layoutResult == null || (value2 = layoutResult.getValue()) == null || (cursorRect2 = value2.getCursorRect(originalToTransformed)) == null) ? 0.0f : cursorRect2.getTop()) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32))) & 4294967295L));
+                    f = Float.intBitsToFloat((int) (layoutCoordinates2.mo6227localToRootMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits((layoutResult == null || (value2 = layoutResult.getValue()) == null || (cursorRect2 = value2.getCursorRect(originalToTransformed)) == null) ? 0.0f : cursorRect2.getTop()) & 4294967295L) | (Float.floatToRawIntBits(0.0f) << 32))) & 4294967295L));
                 }
                 LegacyTextFieldState legacyTextFieldState5 = this.state;
                 if (legacyTextFieldState5 != null && (layoutCoordinates = legacyTextFieldState5.getLayoutCoordinates()) != null) {
                     TextLayoutResultProxy layoutResult2 = legacyTextFieldState.getLayoutResult();
-                    f2 = Float.intBitsToFloat((int) (layoutCoordinates.mo6886localToRootMKHz9U(Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << c) | (Float.floatToRawIntBits((layoutResult2 == null || (value = layoutResult2.getValue()) == null || (cursorRect = value.getCursorRect(originalToTransformed2)) == null) ? 0.0f : cursorRect.getTop()) & j))) & j));
+                    f2 = Float.intBitsToFloat((int) (layoutCoordinates.mo6227localToRootMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << c) | (Float.floatToRawIntBits((layoutResult2 == null || (value = layoutResult2.getValue()) == null || (cursorRect = value.getCursorRect(originalToTransformed2)) == null) ? 0.0f : cursorRect.getTop()) & j))) & j));
                 }
-                int i = (int) (m5195getZeroF1C5BW0 >> c);
-                int i2 = (int) (m5195getZeroF1C5BW02 >> c);
-                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m5195getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m5195getZeroF1C5BW02 & j))) + (Dp.m8258constructorimpl(25) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
+                int i = (int) (m4543getZeroF1C5BW0 >> c);
+                int i2 = (int) (m4543getZeroF1C5BW02 >> c);
+                return new Rect(Math.min(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.min(f, f2), Math.max(Float.intBitsToFloat(i), Float.intBitsToFloat(i2)), Math.max(Float.intBitsToFloat((int) (m4543getZeroF1C5BW0 & j)), Float.intBitsToFloat((int) (m4543getZeroF1C5BW02 & j))) + (Dp.m7555constructorimpl(25) * legacyTextFieldState.getTextDelegate().getDensity().getDensity()));
             }
         }
         return Rect.Companion.getZero();
@@ -1240,43 +1234,43 @@ public final class TextFieldSelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: updateSelection-8UEBfa8  reason: not valid java name */
-    public final long m1917updateSelection8UEBfa8(TextFieldValue textFieldValue, long j, boolean z, boolean z2, SelectionAdjustment selectionAdjustment, boolean z3) {
+    public final long m1658updateSelection8UEBfa8(TextFieldValue textFieldValue, long j, boolean z, boolean z2, SelectionAdjustment selectionAdjustment, boolean z3) {
         TextLayoutResultProxy layoutResult;
         int i;
         HapticFeedback hapticFeedback;
         LegacyTextFieldState legacyTextFieldState = this.state;
         if (legacyTextFieldState == null || (layoutResult = legacyTextFieldState.getLayoutResult()) == null) {
-            return TextRange.Companion.m7706getZerod9O1mEE();
+            return TextRange.Companion.m7008getZerod9O1mEE();
         }
-        long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(textFieldValue.m7955getSelectiond9O1mEE())), this.offsetMapping.originalToTransformed(TextRange.m7696getEndimpl(textFieldValue.m7955getSelectiond9O1mEE())));
+        long TextRange = TextRangeKt.TextRange(this.offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(textFieldValue.m7253getSelectiond9O1mEE())), this.offsetMapping.originalToTransformed(TextRange.m6998getEndimpl(textFieldValue.m7253getSelectiond9O1mEE())));
         boolean z4 = false;
-        int m1470getOffsetForPosition3MmeM6k = layoutResult.m1470getOffsetForPosition3MmeM6k(j, false);
-        int m7701getStartimpl = (z2 || z) ? m1470getOffsetForPosition3MmeM6k : TextRange.m7701getStartimpl(TextRange);
-        int m7696getEndimpl = (!z2 || z) ? m1470getOffsetForPosition3MmeM6k : TextRange.m7696getEndimpl(TextRange);
+        int m1291getOffsetForPosition3MmeM6k = layoutResult.m1291getOffsetForPosition3MmeM6k(j, false);
+        int m7003getStartimpl = (z2 || z) ? m1291getOffsetForPosition3MmeM6k : TextRange.m7003getStartimpl(TextRange);
+        int m6998getEndimpl = (!z2 || z) ? m1291getOffsetForPosition3MmeM6k : TextRange.m6998getEndimpl(TextRange);
         SelectionLayout selectionLayout = this.previousSelectionLayout;
         if (z || selectionLayout == null || (i = this.previousRawDragOffset) == -1) {
             i = -1;
         }
-        SelectionLayout m1862getTextFieldSelectionLayoutRcvTLA = SelectionLayoutKt.m1862getTextFieldSelectionLayoutRcvTLA(layoutResult.getValue(), m7701getStartimpl, m7696getEndimpl, i, TextRange, z, z2);
-        if (!m1862getTextFieldSelectionLayoutRcvTLA.shouldRecomputeSelection(selectionLayout)) {
-            return textFieldValue.m7955getSelectiond9O1mEE();
+        SelectionLayout m1611getTextFieldSelectionLayoutRcvTLA = SelectionLayoutKt.m1611getTextFieldSelectionLayoutRcvTLA(layoutResult.getValue(), m7003getStartimpl, m6998getEndimpl, i, TextRange, z, z2);
+        if (!m1611getTextFieldSelectionLayoutRcvTLA.shouldRecomputeSelection(selectionLayout)) {
+            return textFieldValue.m7253getSelectiond9O1mEE();
         }
-        this.previousSelectionLayout = m1862getTextFieldSelectionLayoutRcvTLA;
-        this.previousRawDragOffset = m1470getOffsetForPosition3MmeM6k;
-        Selection adjust = selectionAdjustment.adjust(m1862getTextFieldSelectionLayoutRcvTLA);
+        this.previousSelectionLayout = m1611getTextFieldSelectionLayoutRcvTLA;
+        this.previousRawDragOffset = m1291getOffsetForPosition3MmeM6k;
+        Selection adjust = selectionAdjustment.adjust(m1611getTextFieldSelectionLayoutRcvTLA);
         long TextRange2 = TextRangeKt.TextRange(this.offsetMapping.transformedToOriginal(adjust.getStart().getOffset()), this.offsetMapping.transformedToOriginal(adjust.getEnd().getOffset()));
-        if (TextRange.m7694equalsimpl0(TextRange2, textFieldValue.m7955getSelectiond9O1mEE())) {
-            return textFieldValue.m7955getSelectiond9O1mEE();
+        if (TextRange.m6996equalsimpl0(TextRange2, textFieldValue.m7253getSelectiond9O1mEE())) {
+            return textFieldValue.m7253getSelectiond9O1mEE();
         }
-        boolean z5 = TextRange.m7700getReversedimpl(TextRange2) != TextRange.m7700getReversedimpl(textFieldValue.m7955getSelectiond9O1mEE()) && TextRange.m7694equalsimpl0(TextRangeKt.TextRange(TextRange.m7696getEndimpl(TextRange2), TextRange.m7701getStartimpl(TextRange2)), textFieldValue.m7955getSelectiond9O1mEE());
-        boolean z6 = TextRange.m7695getCollapsedimpl(TextRange2) && TextRange.m7695getCollapsedimpl(textFieldValue.m7955getSelectiond9O1mEE());
+        boolean z5 = TextRange.m7002getReversedimpl(TextRange2) != TextRange.m7002getReversedimpl(textFieldValue.m7253getSelectiond9O1mEE()) && TextRange.m6996equalsimpl0(TextRangeKt.TextRange(TextRange.m6998getEndimpl(TextRange2), TextRange.m7003getStartimpl(TextRange2)), textFieldValue.m7253getSelectiond9O1mEE());
+        boolean z6 = TextRange.m6997getCollapsedimpl(TextRange2) && TextRange.m6997getCollapsedimpl(textFieldValue.m7253getSelectiond9O1mEE());
         if (z3 && textFieldValue.getText().length() > 0 && !z5 && !z6 && (hapticFeedback = this.hapticFeedBack) != null) {
-            hapticFeedback.mo6200performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m6217getTextHandleMove5zf0vsI());
+            hapticFeedback.mo5541performHapticFeedbackCdsT49E(HapticFeedbackType.Companion.m5558getTextHandleMove5zf0vsI());
         }
-        this.onValueChange.invoke(m1913createTextFieldValueFDrldGo(textFieldValue.getAnnotatedString(), TextRange2));
-        this.latestSelection = TextRange.m7689boximpl(TextRange2);
+        this.onValueChange.invoke(m1654createTextFieldValueFDrldGo(textFieldValue.getAnnotatedString(), TextRange2));
+        this.latestSelection = TextRange.m6991boximpl(TextRange2);
         if (!z3) {
-            updateFloatingToolbar(!TextRange.m7695getCollapsedimpl(TextRange2));
+            updateFloatingToolbar(!TextRange.m6997getCollapsedimpl(TextRange2));
         }
         LegacyTextFieldState legacyTextFieldState2 = this.state;
         if (legacyTextFieldState2 != null) {
@@ -1284,15 +1278,15 @@ public final class TextFieldSelectionManager {
         }
         LegacyTextFieldState legacyTextFieldState3 = this.state;
         if (legacyTextFieldState3 != null) {
-            legacyTextFieldState3.setShowSelectionHandleStart(!TextRange.m7695getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, true));
+            legacyTextFieldState3.setShowSelectionHandleStart(!TextRange.m6997getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, true));
         }
         LegacyTextFieldState legacyTextFieldState4 = this.state;
         if (legacyTextFieldState4 != null) {
-            legacyTextFieldState4.setShowSelectionHandleEnd(!TextRange.m7695getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, false));
+            legacyTextFieldState4.setShowSelectionHandleEnd(!TextRange.m6997getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, false));
         }
         LegacyTextFieldState legacyTextFieldState5 = this.state;
         if (legacyTextFieldState5 != null) {
-            if (TextRange.m7695getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, true)) {
+            if (TextRange.m6997getCollapsedimpl(TextRange2) && TextFieldSelectionManager_androidKt.isSelectionHandleInVisibleBound(this, true)) {
                 z4 = true;
             }
             legacyTextFieldState5.setShowCursorHandle(z4);
@@ -1315,7 +1309,7 @@ public final class TextFieldSelectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: createTextFieldValue-FDrldGo  reason: not valid java name */
-    public final TextFieldValue m1913createTextFieldValueFDrldGo(AnnotatedString annotatedString, long j) {
+    public final TextFieldValue m1654createTextFieldValueFDrldGo(AnnotatedString annotatedString, long j) {
         return new TextFieldValue(annotatedString, j, (TextRange) null, 4, (DefaultConstructorMarker) null);
     }
 
@@ -1340,8 +1334,8 @@ public final class TextFieldSelectionManager {
         }
         AnnotatedString selectedText = TextFieldValueKt.getSelectedText(getValue$foundation());
         if (z) {
-            int m7698getMaximpl = TextRange.m7698getMaximpl(getValue$foundation().m7955getSelectiond9O1mEE());
-            this.onValueChange.invoke(m1913createTextFieldValueFDrldGo(getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(m7698getMaximpl, m7698getMaximpl)));
+            int m7000getMaximpl = TextRange.m7000getMaximpl(getValue$foundation().m7253getSelectiond9O1mEE());
+            this.onValueChange.invoke(m1654createTextFieldValueFDrldGo(getValue$foundation().getAnnotatedString(), TextRangeKt.TextRange(m7000getMaximpl, m7000getMaximpl)));
             setHandleState(HandleState.None);
             return selectedText;
         }
@@ -1351,8 +1345,8 @@ public final class TextFieldSelectionManager {
     public final void paste$foundation(AnnotatedString annotatedString) {
         if (getEditable()) {
             AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(getValue$foundation(), getValue$foundation().getText().length()).plus(annotatedString).plus(TextFieldValueKt.getTextAfterSelection(getValue$foundation(), getValue$foundation().getText().length()));
-            int m7699getMinimpl = TextRange.m7699getMinimpl(getValue$foundation().m7955getSelectiond9O1mEE()) + annotatedString.length();
-            this.onValueChange.invoke(m1913createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7699getMinimpl, m7699getMinimpl)));
+            int m7001getMinimpl = TextRange.m7001getMinimpl(getValue$foundation().m7253getSelectiond9O1mEE()) + annotatedString.length();
+            this.onValueChange.invoke(m1654createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7001getMinimpl, m7001getMinimpl)));
             setHandleState(HandleState.None);
             UndoManager undoManager = this.undoManager;
             if (undoManager != null) {
@@ -1365,8 +1359,8 @@ public final class TextFieldSelectionManager {
         if (getHasSelection() && getEditable() && !isPassword()) {
             AnnotatedString selectedText = TextFieldValueKt.getSelectedText(getValue$foundation());
             AnnotatedString plus = TextFieldValueKt.getTextBeforeSelection(getValue$foundation(), getValue$foundation().getText().length()).plus(TextFieldValueKt.getTextAfterSelection(getValue$foundation(), getValue$foundation().getText().length()));
-            int m7699getMinimpl = TextRange.m7699getMinimpl(getValue$foundation().m7955getSelectiond9O1mEE());
-            this.onValueChange.invoke(m1913createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7699getMinimpl, m7699getMinimpl)));
+            int m7001getMinimpl = TextRange.m7001getMinimpl(getValue$foundation().m7253getSelectiond9O1mEE());
+            this.onValueChange.invoke(m1654createTextFieldValueFDrldGo(plus, TextRangeKt.TextRange(m7001getMinimpl, m7001getMinimpl)));
             setHandleState(HandleState.None);
             UndoManager undoManager = this.undoManager;
             if (undoManager != null) {

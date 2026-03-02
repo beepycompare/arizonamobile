@@ -1,7 +1,7 @@
 package io.appmetrica.analytics;
 
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class StartupParamsItem {
 
     /* renamed from: a  reason: collision with root package name */

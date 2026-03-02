@@ -61,9 +61,9 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
 
         @Override // androidx.compose.ui.layout.Measurable
         /* renamed from: measure-BRTryo0 */
-        public Placeable mo6875measureBRTryo0(long j) {
+        public Placeable mo6216measureBRTryo0(long j) {
             LookaheadDelegateImpl lookaheadDelegateImpl = this;
-            LookaheadDelegate.m7129access$setMeasurementConstraintsBRTryo0(lookaheadDelegateImpl, j);
+            LookaheadDelegate.m6469access$setMeasurementConstraintsBRTryo0(lookaheadDelegateImpl, j);
             MutableVector<LayoutNode> mutableVector = getLayoutNode().get_children$ui();
             LayoutNode[] layoutNodeArr = mutableVector.content;
             int size = mutableVector.getSize();
@@ -72,7 +72,7 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
                 Intrinsics.checkNotNull(lookaheadPassDelegate$ui);
                 lookaheadPassDelegate$ui.setMeasuredByParent$ui(LayoutNode.UsageByParent.NotUsed);
             }
-            LookaheadDelegate.access$set_measureResult(lookaheadDelegateImpl, getLayoutNode().getMeasurePolicy().mo54measure3p2s80s(this, getLayoutNode().getChildLookaheadMeasurables$ui(), j));
+            LookaheadDelegate.access$set_measureResult(lookaheadDelegateImpl, getLayoutNode().getMeasurePolicy().mo41measure3p2s80s(this, getLayoutNode().getChildLookaheadMeasurables$ui(), j));
             return lookaheadDelegateImpl;
         }
 
@@ -121,20 +121,20 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
 
     @Override // androidx.compose.ui.layout.Measurable
     /* renamed from: measure-BRTryo0 */
-    public Placeable mo6875measureBRTryo0(long j) {
+    public Placeable mo6216measureBRTryo0(long j) {
         if (getForceMeasureWithLookaheadConstraints$ui()) {
             LookaheadDelegate lookaheadDelegate = getLookaheadDelegate();
             Intrinsics.checkNotNull(lookaheadDelegate);
-            j = lookaheadDelegate.m7131getConstraintsmsEJaDk$ui();
+            j = lookaheadDelegate.m6471getConstraintsmsEJaDk$ui();
         }
-        m6940setMeasurementConstraintsBRTryo0(j);
+        m6281setMeasurementConstraintsBRTryo0(j);
         MutableVector<LayoutNode> mutableVector = getLayoutNode().get_children$ui();
         LayoutNode[] layoutNodeArr = mutableVector.content;
         int size = mutableVector.getSize();
         for (int i = 0; i < size; i++) {
             layoutNodeArr[i].getMeasurePassDelegate$ui().setMeasuredByParent$ui(LayoutNode.UsageByParent.NotUsed);
         }
-        setMeasureResult$ui(getLayoutNode().getMeasurePolicy().mo54measure3p2s80s(this, getLayoutNode().getChildMeasurables$ui(), j));
+        setMeasureResult$ui(getLayoutNode().getMeasurePolicy().mo41measure3p2s80s(this, getLayoutNode().getChildMeasurables$ui(), j));
         onMeasured();
         return this;
     }
@@ -162,16 +162,16 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.node.NodeCoordinator, androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo6938placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
-        super.mo6938placeAtf8xVGno(j, f, graphicsLayer);
+    public void mo6279placeAtf8xVGno(long j, float f, GraphicsLayer graphicsLayer) {
+        super.mo6279placeAtf8xVGno(j, f, graphicsLayer);
         onAfterPlaceAt();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.compose.ui.node.NodeCoordinator, androidx.compose.ui.layout.Placeable
     /* renamed from: placeAt-f8xVGno */
-    public void mo6876placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
-        super.mo6876placeAtf8xVGno(j, f, function1);
+    public void mo6217placeAtf8xVGno(long j, float f, Function1<? super GraphicsLayerScope, Unit> function1) {
+        super.mo6217placeAtf8xVGno(j, f, function1);
         onAfterPlaceAt();
     }
 
@@ -213,7 +213,7 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0036, code lost:
-        if ((java.lang.Float.floatToRawIntBits(m7177distanceInMinimumTouchTargettz77jQw(r12, m7180getMinimumTouchTargetSizeNHjbRc())) & Integer.MAX_VALUE) < 2139095040) goto L6;
+        if ((java.lang.Float.floatToRawIntBits(m6517distanceInMinimumTouchTargettz77jQw(r12, m6520getMinimumTouchTargetSizeNHjbRc())) & Integer.MAX_VALUE) < 2139095040) goto L6;
      */
     /* JADX WARN: Removed duplicated region for block: B:16:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
@@ -222,18 +222,18 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void mo7092hitTestChildqzLsGqo(NodeCoordinator.HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
+    public void mo6433hitTestChildqzLsGqo(NodeCoordinator.HitTestSource hitTestSource, long j, HitTestResult hitTestResult, int i, boolean z) {
         int i2;
         boolean z2;
         boolean z3;
         boolean z4 = false;
         if (hitTestSource.shouldHitTestChildren(getLayoutNode())) {
-            if (m7189withinLayerBoundsk4lQ0M(j)) {
+            if (m6529withinLayerBoundsk4lQ0M(j)) {
                 i2 = i;
                 z4 = z;
             } else {
                 i2 = i;
-                if (PointerType.m6815equalsimpl0(i, PointerType.Companion.m6822getTouchT8wyACA())) {
+                if (PointerType.m6156equalsimpl0(i, PointerType.Companion.m6163getTouchT8wyACA())) {
                 }
             }
             z2 = true;
@@ -249,7 +249,7 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
                 if (layoutNode.isPlaced()) {
                     int i4 = i2;
                     z3 = z4;
-                    hitTestSource.mo7190childHitTestqzLsGqo(layoutNode, j, hitTestResult, i4, z3);
+                    hitTestSource.mo6530childHitTestqzLsGqo(layoutNode, j, hitTestResult, i4, z3);
                     if (!hitTestResult.hasHit()) {
                         continue;
                     } else if (!layoutNode.getOuterCoordinator$ui().shouldSharePointerInputWithSiblings()) {
@@ -292,9 +292,9 @@ public final class InnerNodeCoordinator extends NodeCoordinator {
 
     static {
         Paint Paint = AndroidPaint_androidKt.Paint();
-        Paint.mo5300setColor8_81llA(Color.Companion.m5458getRed0d7_KjU());
+        Paint.mo4648setColor8_81llA(Color.Companion.m4806getRed0d7_KjU());
         Paint.setStrokeWidth(1.0f);
-        Paint.mo5304setStylek9PVt8s(PaintingStyle.Companion.m5708getStrokeTiuSbCo());
+        Paint.mo4652setStylek9PVt8s(PaintingStyle.Companion.m5054getStrokeTiuSbCo());
         innerBoundsPaint = Paint;
     }
 }

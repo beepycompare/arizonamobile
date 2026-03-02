@@ -123,7 +123,9 @@ public class YearMonthProgression implements Collection<YearMonth>, KMappedMarke
     }
 
     public String toString() {
-        return this.longProgression.getStep() > 0 ? this.first + ".." + this.last + " step " + this.longProgression.getStep() + 'M' : this.first + " downTo " + this.last + " step " + this.longProgression.getStep() + 'M';
+        int i = (this.longProgression.getStep() > 0L ? 1 : (this.longProgression.getStep() == 0L ? 0 : -1));
+        YearMonth yearMonth = this.first;
+        return i > 0 ? yearMonth + ".." + this.last + " step " + this.longProgression.getStep() + 'M' : yearMonth + " downTo " + this.last + " step " + this.longProgression.getStep() + 'M';
     }
 
     public int getSize() {

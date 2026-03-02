@@ -13,40 +13,40 @@ final class Snake {
     private final int[] data;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Snake m7265boximpl(int[] iArr) {
+    public static final /* synthetic */ Snake m6605boximpl(int[] iArr) {
         return new Snake(iArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int[] m7266constructorimpl(int[] iArr) {
+    public static int[] m6606constructorimpl(int[] iArr) {
         return iArr;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m7267equalsimpl(int[] iArr, Object obj) {
-        return (obj instanceof Snake) && Intrinsics.areEqual(iArr, ((Snake) obj).m7279unboximpl());
+    public static boolean m6607equalsimpl(int[] iArr, Object obj) {
+        return (obj instanceof Snake) && Intrinsics.areEqual(iArr, ((Snake) obj).m6619unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m7268equalsimpl0(int[] iArr, int[] iArr2) {
+    public static final boolean m6608equalsimpl0(int[] iArr, int[] iArr2) {
         return Intrinsics.areEqual(iArr, iArr2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m7276hashCodeimpl(int[] iArr) {
+    public static int m6616hashCodeimpl(int[] iArr) {
         return Arrays.hashCode(iArr);
     }
 
     public boolean equals(Object obj) {
-        return m7267equalsimpl(this.data, obj);
+        return m6607equalsimpl(this.data, obj);
     }
 
     public int hashCode() {
-        return m7276hashCodeimpl(this.data);
+        return m6616hashCodeimpl(this.data);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int[] m7279unboximpl() {
+    public final /* synthetic */ int[] m6619unboximpl() {
         return this.data;
     }
 
@@ -59,63 +59,63 @@ final class Snake {
     }
 
     /* renamed from: getStartX-impl  reason: not valid java name */
-    public static final int m7274getStartXimpl(int[] iArr) {
+    public static final int m6614getStartXimpl(int[] iArr) {
         return iArr[0];
     }
 
     /* renamed from: getStartY-impl  reason: not valid java name */
-    public static final int m7275getStartYimpl(int[] iArr) {
+    public static final int m6615getStartYimpl(int[] iArr) {
         return iArr[1];
     }
 
     /* renamed from: getEndX-impl  reason: not valid java name */
-    public static final int m7270getEndXimpl(int[] iArr) {
+    public static final int m6610getEndXimpl(int[] iArr) {
         return iArr[2];
     }
 
     /* renamed from: getEndY-impl  reason: not valid java name */
-    public static final int m7271getEndYimpl(int[] iArr) {
+    public static final int m6611getEndYimpl(int[] iArr) {
         return iArr[3];
     }
 
     /* renamed from: getReverse-impl  reason: not valid java name */
-    public static final boolean m7273getReverseimpl(int[] iArr) {
+    public static final boolean m6613getReverseimpl(int[] iArr) {
         return iArr[4] != 0;
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m7278toStringimpl(int[] iArr) {
+    public static String m6618toStringimpl(int[] iArr) {
         return "Snake(" + iArr[0] + AbstractJsonLexerKt.COMMA + iArr[1] + AbstractJsonLexerKt.COMMA + iArr[2] + AbstractJsonLexerKt.COMMA + iArr[3] + AbstractJsonLexerKt.COMMA + (iArr[4] != 0) + ')';
     }
 
     public String toString() {
-        return m7278toStringimpl(this.data);
+        return m6618toStringimpl(this.data);
     }
 
     /* renamed from: getDiagonalSize-impl  reason: not valid java name */
-    public static final int m7269getDiagonalSizeimpl(int[] iArr) {
+    public static final int m6609getDiagonalSizeimpl(int[] iArr) {
         return Math.min(iArr[2] - iArr[0], iArr[3] - iArr[1]);
     }
 
     /* renamed from: getHasAdditionOrRemoval-impl  reason: not valid java name */
-    private static final boolean m7272getHasAdditionOrRemovalimpl(int[] iArr) {
+    private static final boolean m6612getHasAdditionOrRemovalimpl(int[] iArr) {
         return iArr[3] - iArr[1] != iArr[2] - iArr[0];
     }
 
     /* renamed from: isAddition-impl  reason: not valid java name */
-    private static final boolean m7277isAdditionimpl(int[] iArr) {
+    private static final boolean m6617isAdditionimpl(int[] iArr) {
         return iArr[3] - iArr[1] > iArr[2] - iArr[0];
     }
 
     /* renamed from: addDiagonalToStack-impl  reason: not valid java name */
-    public static final void m7264addDiagonalToStackimpl(int[] iArr, IntStack intStack) {
+    public static final void m6604addDiagonalToStackimpl(int[] iArr, IntStack intStack) {
         int i;
         int i2 = iArr[0];
         int i3 = iArr[1];
-        if (m7272getHasAdditionOrRemovalimpl(iArr)) {
+        if (m6612getHasAdditionOrRemovalimpl(iArr)) {
             i = Math.min(iArr[2] - iArr[0], iArr[3] - iArr[1]);
-            i2 += ((iArr[4] != 0 ? 1 : 0) | (m7277isAdditionimpl(iArr) ? 1 : 0)) ^ 1;
-            i3 += ((!m7277isAdditionimpl(iArr) ? 1 : 0) | (iArr[4] != 0 ? 1 : 0)) ^ 1;
+            i2 += ((iArr[4] != 0 ? 1 : 0) | (m6617isAdditionimpl(iArr) ? 1 : 0)) ^ 1;
+            i3 += ((!m6617isAdditionimpl(iArr) ? 1 : 0) | (iArr[4] != 0 ? 1 : 0)) ^ 1;
         } else {
             i = iArr[2] - iArr[0];
         }

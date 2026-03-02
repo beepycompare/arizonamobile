@@ -24,15 +24,15 @@ public final class PointerInputEventProcessor {
     }
 
     /* renamed from: process-BIzXfog$default  reason: not valid java name */
-    public static /* synthetic */ int m6764processBIzXfog$default(PointerInputEventProcessor pointerInputEventProcessor, PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z, int i, Object obj) {
+    public static /* synthetic */ int m6105processBIzXfog$default(PointerInputEventProcessor pointerInputEventProcessor, PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = true;
         }
-        return pointerInputEventProcessor.m6765processBIzXfog(pointerInputEvent, positionCalculator, z);
+        return pointerInputEventProcessor.m6106processBIzXfog(pointerInputEvent, positionCalculator, z);
     }
 
     /* renamed from: process-BIzXfog  reason: not valid java name */
-    public final int m6765processBIzXfog(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z) {
+    public final int m6106processBIzXfog(PointerInputEvent pointerInputEvent, PositionCalculator positionCalculator, boolean z) {
         boolean z2;
         boolean z3;
         if (this.isProcessing) {
@@ -55,9 +55,9 @@ public final class PointerInputEventProcessor {
             for (int i2 = 0; i2 < size2; i2++) {
                 PointerInputChange valueAt2 = produce.getChanges().valueAt(i2);
                 if (z2 || PointerEventKt.changedToDownIgnoreConsumed(valueAt2)) {
-                    LayoutNode.m7097hitTest6fMxITs$ui$default(this.root, valueAt2.m6744getPositionF1C5BW0(), this.hitResult, valueAt2.m6747getTypeT8wyACA(), false, 8, null);
+                    LayoutNode.m6437hitTest6fMxITs$ui$default(this.root, valueAt2.m6085getPositionF1C5BW0(), this.hitResult, valueAt2.m6088getTypeT8wyACA(), false, 8, null);
                     if (!this.hitResult.isEmpty()) {
-                        this.hitPathTracker.m6657addHitPathQJqDSyo(valueAt2.m6742getIdJ3iCeTQ(), this.hitResult, PointerEventKt.changedToDownIgnoreConsumed(valueAt2));
+                        this.hitPathTracker.m5998addHitPathQJqDSyo(valueAt2.m6083getIdJ3iCeTQ(), this.hitResult, PointerEventKt.changedToDownIgnoreConsumed(valueAt2));
                         this.hitResult.clear();
                     }
                 }

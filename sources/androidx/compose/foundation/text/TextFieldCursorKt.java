@@ -35,14 +35,12 @@ public final class TextFieldCursorKt {
         return z ? ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.TextFieldCursorKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier cursor$lambda$0;
-                cursor$lambda$0 = TextFieldCursorKt.cursor$lambda$0(Brush.this, legacyTextFieldState, textFieldValue, offsetMapping, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return cursor$lambda$0;
+                return TextFieldCursorKt.cursor$lambda$0(Brush.this, legacyTextFieldState, textFieldValue, offsetMapping, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null) : modifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier cursor$lambda$0(final Brush brush, final LegacyTextFieldState legacyTextFieldState, final TextFieldValue textFieldValue, final OffsetMapping offsetMapping, Modifier modifier, Composer composer, int i) {
         Modifier.Companion companion;
         composer.startReplaceGroup(-84507373);
@@ -63,15 +61,15 @@ public final class TextFieldCursorKt {
         }
         final CursorAnimationState cursorAnimationState = (CursorAnimationState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        boolean z = ((brush instanceof SolidColor) && ((SolidColor) brush).m5782getValue0d7_KjU() == 16) ? false : true;
+        boolean z = ((brush instanceof SolidColor) && ((SolidColor) brush).m5128getValue0d7_KjU() == 16) ? false : true;
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(CompositionLocalsKt.getLocalWindowInfo());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        if (((WindowInfo) consume2).isWindowFocused() && legacyTextFieldState.getHasFocus() && TextRange.m7695getCollapsedimpl(textFieldValue.m7955getSelectiond9O1mEE()) && z) {
+        if (((WindowInfo) consume2).isWindowFocused() && legacyTextFieldState.getHasFocus() && TextRange.m6997getCollapsedimpl(textFieldValue.m7253getSelectiond9O1mEE()) && z) {
             composer.startReplaceGroup(-707487962);
             ComposerKt.sourceInformation(composer, "58@2517L81,58@2462L136,61@2631L1888");
             AnnotatedString annotatedString = textFieldValue.getAnnotatedString();
-            TextRange m7689boximpl = TextRange.m7689boximpl(textFieldValue.m7955getSelectiond9O1mEE());
+            TextRange m6991boximpl = TextRange.m6991boximpl(textFieldValue.m7253getSelectiond9O1mEE());
             ComposerKt.sourceInformationMarkerStart(composer, 392820132, "CC(remember):TextFieldCursor.kt#9igjgp");
             boolean changedInstance = composer.changedInstance(cursorAnimationState);
             Object rememberedValue2 = composer.rememberedValue();
@@ -80,7 +78,7 @@ public final class TextFieldCursorKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            EffectsKt.LaunchedEffect(annotatedString, m7689boximpl, (Function2) rememberedValue2, composer, 0);
+            EffectsKt.LaunchedEffect(annotatedString, m6991boximpl, (Function2) rememberedValue2, composer, 0);
             ComposerKt.sourceInformationMarkerStart(composer, 392825587, "CC(remember):TextFieldCursor.kt#9igjgp");
             boolean changedInstance2 = composer.changedInstance(cursorAnimationState) | composer.changedInstance(offsetMapping) | composer.changed(textFieldValue) | composer.changedInstance(legacyTextFieldState) | composer.changed(brush);
             Object rememberedValue3 = composer.rememberedValue();
@@ -119,21 +117,21 @@ public final class TextFieldCursorKt {
         contentDrawScope.drawContent();
         float cursorAlpha = cursorAnimationState.getCursorAlpha();
         if (cursorAlpha != 0.0f) {
-            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7701getStartimpl(textFieldValue.m7955getSelectiond9O1mEE()));
+            int originalToTransformed = offsetMapping.originalToTransformed(TextRange.m7003getStartimpl(textFieldValue.m7253getSelectiond9O1mEE()));
             TextLayoutResultProxy layoutResult = legacyTextFieldState.getLayoutResult();
             if (layoutResult == null || (value = layoutResult.getValue()) == null || (rect = value.getCursorRect(originalToTransformed)) == null) {
                 rect = new Rect(0.0f, 0.0f, 0.0f, 0.0f);
             }
-            float coerceAtLeast = RangesKt.coerceAtLeast((float) Math.floor(contentDrawScope.mo464toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness())), 1.0f);
+            float coerceAtLeast = RangesKt.coerceAtLeast((float) Math.floor(contentDrawScope.mo405toPx0680j_4(TextFieldCursor_androidKt.getDefaultCursorThickness())), 1.0f);
             float f = coerceAtLeast / 2;
-            float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(rect.getLeft() + f, Float.intBitsToFloat((int) (contentDrawScope.mo6005getSizeNHjbRc() >> 32)) - f), f);
+            float coerceAtLeast2 = RangesKt.coerceAtLeast(RangesKt.coerceAtMost(rect.getLeft() + f, Float.intBitsToFloat((int) (contentDrawScope.mo5346getSizeNHjbRc() >> 32)) - f), f);
             if (((int) coerceAtLeast) % 2 == 1) {
                 rint = ((float) Math.floor(coerceAtLeast2)) + 0.5f;
             } else {
                 rint = (float) Math.rint(coerceAtLeast2);
             }
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5990drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m5171constructorimpl((Float.floatToRawIntBits(rect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), Offset.m5171constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
+            DrawScope.m5331drawLine1RTmtNc$default(contentDrawScope2, brush, Offset.m4519constructorimpl((Float.floatToRawIntBits(rect.getTop()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), Offset.m4519constructorimpl((Float.floatToRawIntBits(rect.getBottom()) & 4294967295L) | (Float.floatToRawIntBits(rint) << 32)), coerceAtLeast, 0, null, cursorAlpha, null, 0, 432, null);
         }
         return Unit.INSTANCE;
     }

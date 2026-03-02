@@ -44,26 +44,19 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         return CollectionsKt.listOf((Object[]) new Component[]{Component.builder(FirebaseSessions.class).name(LIBRARY_NAME).add(Dependency.required(firebaseSessionsComponent)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda0
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                FirebaseSessions components$lambda$0;
-                components$lambda$0 = FirebaseSessionsRegistrar.getComponents$lambda$0(componentContainer);
-                return components$lambda$0;
+                FirebaseSessions firebaseSessions;
+                firebaseSessions = ((FirebaseSessionsComponent) componentContainer.get(FirebaseSessionsRegistrar.firebaseSessionsComponent)).getFirebaseSessions();
+                return firebaseSessions;
             }
         }).eagerInDefaultApp().build(), Component.builder(FirebaseSessionsComponent.class).name("fire-sessions-component").add(Dependency.required(appContext)).add(Dependency.required(backgroundDispatcher)).add(Dependency.required(blockingDispatcher)).add(Dependency.required(firebaseApp)).add(Dependency.required(firebaseInstallationsApi)).add(Dependency.requiredProvider(transportFactory)).factory(new ComponentFactory() { // from class: com.google.firebase.sessions.FirebaseSessionsRegistrar$$ExternalSyntheticLambda1
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {
-                FirebaseSessionsComponent components$lambda$1;
-                components$lambda$1 = FirebaseSessionsRegistrar.getComponents$lambda$1(componentContainer);
-                return components$lambda$1;
+                return FirebaseSessionsRegistrar.getComponents$lambda$1(componentContainer);
             }
         }).build(), LibraryVersionComponent.create(LIBRARY_NAME, BuildConfig.VERSION_NAME)});
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final FirebaseSessions getComponents$lambda$0(ComponentContainer componentContainer) {
-        return ((FirebaseSessionsComponent) componentContainer.get(firebaseSessionsComponent)).getFirebaseSessions();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final FirebaseSessionsComponent getComponents$lambda$1(ComponentContainer componentContainer) {
         FirebaseSessionsComponent.Builder builder = DaggerFirebaseSessionsComponent.builder();
         Object obj = componentContainer.get(appContext);

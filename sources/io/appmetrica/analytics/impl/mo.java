@@ -7,7 +7,7 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class mo implements Ka {
     @Override // io.appmetrica.analytics.impl.Ka
     public final String a(Context context) {
-        IdentifiersResult q = new Ve(C0136b4.l().c(context).a(context)).q();
+        IdentifiersResult q = new Ve(C0135b4.l().c(context).a(context)).q();
         if (TextUtils.isEmpty(q.id)) {
             return null;
         }

@@ -20,7 +20,7 @@ public final class Veil {
     }
 
     /* renamed from: copy-RFnl5yQ$default  reason: not valid java name */
-    public static /* synthetic */ Veil m167copyRFnl5yQ$default(Veil veil, long j, long j2, FiniteAnimationSpec finiteAnimationSpec, boolean z, int i, Object obj) {
+    public static /* synthetic */ Veil m154copyRFnl5yQ$default(Veil veil, long j, long j2, FiniteAnimationSpec finiteAnimationSpec, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             j = veil.initialColor;
         }
@@ -37,16 +37,16 @@ public final class Veil {
         if ((i & 8) != 0) {
             z = veil.matchParentSize;
         }
-        return veil.m170copyRFnl5yQ(j3, j4, finiteAnimationSpec3, z);
+        return veil.m157copyRFnl5yQ(j3, j4, finiteAnimationSpec3, z);
     }
 
     /* renamed from: component1-0d7_KjU  reason: not valid java name */
-    public final long m168component10d7_KjU() {
+    public final long m155component10d7_KjU() {
         return this.initialColor;
     }
 
     /* renamed from: component2-0d7_KjU  reason: not valid java name */
-    public final long m169component20d7_KjU() {
+    public final long m156component20d7_KjU() {
         return this.targetColor;
     }
 
@@ -59,7 +59,7 @@ public final class Veil {
     }
 
     /* renamed from: copy-RFnl5yQ  reason: not valid java name */
-    public final Veil m170copyRFnl5yQ(long j, long j2, FiniteAnimationSpec<Color> finiteAnimationSpec, boolean z) {
+    public final Veil m157copyRFnl5yQ(long j, long j2, FiniteAnimationSpec<Color> finiteAnimationSpec, boolean z) {
         return new Veil(j, j2, finiteAnimationSpec, z, null);
     }
 
@@ -69,17 +69,17 @@ public final class Veil {
         }
         if (obj instanceof Veil) {
             Veil veil = (Veil) obj;
-            return Color.m5425equalsimpl0(this.initialColor, veil.initialColor) && Color.m5425equalsimpl0(this.targetColor, veil.targetColor) && Intrinsics.areEqual(this.animationSpec, veil.animationSpec) && this.matchParentSize == veil.matchParentSize;
+            return Color.m4773equalsimpl0(this.initialColor, veil.initialColor) && Color.m4773equalsimpl0(this.targetColor, veil.targetColor) && Intrinsics.areEqual(this.animationSpec, veil.animationSpec) && this.matchParentSize == veil.matchParentSize;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Color.m5431hashCodeimpl(this.initialColor) * 31) + Color.m5431hashCodeimpl(this.targetColor)) * 31) + this.animationSpec.hashCode()) * 31) + Boolean.hashCode(this.matchParentSize);
+        return (((((Color.m4779hashCodeimpl(this.initialColor) * 31) + Color.m4779hashCodeimpl(this.targetColor)) * 31) + this.animationSpec.hashCode()) * 31) + Boolean.hashCode(this.matchParentSize);
     }
 
     public String toString() {
-        return "Veil(initialColor=" + ((Object) Color.m5432toStringimpl(this.initialColor)) + ", targetColor=" + ((Object) Color.m5432toStringimpl(this.targetColor)) + ", animationSpec=" + this.animationSpec + ", matchParentSize=" + this.matchParentSize + ')';
+        return "Veil(initialColor=" + ((Object) Color.m4780toStringimpl(this.initialColor)) + ", targetColor=" + ((Object) Color.m4780toStringimpl(this.targetColor)) + ", animationSpec=" + this.animationSpec + ", matchParentSize=" + this.matchParentSize + ')';
     }
 
     private Veil(long j, long j2, FiniteAnimationSpec<Color> finiteAnimationSpec, boolean z) {
@@ -90,12 +90,12 @@ public final class Veil {
     }
 
     /* renamed from: getInitialColor-0d7_KjU  reason: not valid java name */
-    public final long m171getInitialColor0d7_KjU() {
+    public final long m158getInitialColor0d7_KjU() {
         return this.initialColor;
     }
 
     /* renamed from: getTargetColor-0d7_KjU  reason: not valid java name */
-    public final long m172getTargetColor0d7_KjU() {
+    public final long m159getTargetColor0d7_KjU() {
         return this.targetColor;
     }
 

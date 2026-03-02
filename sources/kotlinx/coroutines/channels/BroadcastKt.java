@@ -37,14 +37,12 @@ public final class BroadcastKt {
         return broadcast$default(CoroutineScopeKt.plus(CoroutineScopeKt.plus(GlobalScope.INSTANCE, Dispatchers.getUnconfined()), new BroadcastKt$broadcast$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key)), null, i, coroutineStart, new Function1() { // from class: kotlinx.coroutines.channels.BroadcastKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit broadcast$lambda$1;
-                broadcast$lambda$1 = BroadcastKt.broadcast$lambda$1(ReceiveChannel.this, (Throwable) obj);
-                return broadcast$lambda$1;
+                return BroadcastKt.broadcast$lambda$1(ReceiveChannel.this, (Throwable) obj);
             }
         }, new BroadcastKt$broadcast$2(receiveChannel, null), 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit broadcast$lambda$1(ReceiveChannel receiveChannel, Throwable th) {
         ChannelsKt.cancelConsumed(receiveChannel, th);
         return Unit.INSTANCE;

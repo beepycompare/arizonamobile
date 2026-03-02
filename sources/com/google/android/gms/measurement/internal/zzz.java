@@ -59,12 +59,12 @@ public final class zzz {
         r0 = r16;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x014d  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x014f  */
     /* JADX WARN: Removed duplicated region for block: B:66:0x0186  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01ab  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01fa  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01a9  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01cf  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01f8  */
     /* JADX WARN: Type inference failed for: r14v6, types: [long] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -74,7 +74,7 @@ public final class zzz {
         com.google.android.gms.internal.measurement.zzhs zzhsVar2;
         long j;
         Pair pair;
-        long j2;
+        int i;
         ArrayList arrayList;
         ?? longValue;
         String zzd = zzhsVar.zzd();
@@ -97,10 +97,12 @@ public final class zzz {
                         longValue = l.longValue();
                         if (longValue == this.zzc.longValue()) {
                             j = 0;
-                            j2 = this.zzd - 1;
+                            long j2 = this.zzd - 1;
                             this.zzd = j2;
-                            if (j2 > j) {
-                                zzav zzj2 = this.zza.zzg.zzj();
+                            i = (j2 > j ? 1 : (j2 == j ? 0 : -1));
+                            zzad zzadVar2 = this.zza;
+                            if (i > 0) {
+                                zzav zzj2 = zzadVar2.zzg.zzj();
                                 zzj2.zzg();
                                 zzj2.zzu.zzaV().zzk().zzb("Clearing complex main event info. appId", str);
                                 try {
@@ -109,7 +111,7 @@ public final class zzz {
                                     zzj2.zzu.zzaV().zzb().zzb("Error clearing complex main event", e);
                                 }
                             } else {
-                                this.zza.zzg.zzj().zzT(str, l, this.zzd, this.zzb);
+                                zzadVar2.zzg.zzj().zzT(str, l, this.zzd, this.zzb);
                             }
                             arrayList = new ArrayList();
                             for (com.google.android.gms.internal.measurement.zzhw zzhwVar : this.zzb.zza()) {
@@ -170,9 +172,11 @@ public final class zzz {
                     this.zzd = ((Long) pair2.second).longValue();
                     this.zza.zzg.zzp();
                     this.zzc = (Long) zzpk.zzI(this.zzb, "_eid");
-                    j2 = this.zzd - 1;
-                    this.zzd = j2;
-                    if (j2 > j) {
+                    long j22 = this.zzd - 1;
+                    this.zzd = j22;
+                    i = (j22 > j ? 1 : (j22 == j ? 0 : -1));
+                    zzad zzadVar22 = this.zza;
+                    if (i > 0) {
                     }
                     arrayList = new ArrayList();
                     while (r2.hasNext()) {

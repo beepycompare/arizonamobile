@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.core.util.Consumer;
-import androidx.window.embedding.EmbeddingBackend;
 import androidx.window.embedding.SplitController;
 import java.util.List;
 import java.util.Set;
@@ -92,16 +91,28 @@ public interface EmbeddingBackend {
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private static Function1<? super EmbeddingBackend, ? extends EmbeddingBackend> decorator = new Function1() { // from class: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda1
+            /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+                jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.embedding.EmbeddingBackend.Companion.decorator$lambda$0(androidx.window.embedding.EmbeddingBackend):androidx.window.embedding.EmbeddingBackend
+                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+                	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+                Caused by: java.lang.NullPointerException
+                */
             @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                return EmbeddingBackend.Companion.decorator$lambda$0((EmbeddingBackend) obj);
+            public final java.lang.Object invoke(java.lang.Object r1) {
+                /*
+                    r0 = this;
+                    androidx.window.embedding.EmbeddingBackend r1 = (androidx.window.embedding.EmbeddingBackend) r1
+                    androidx.window.embedding.EmbeddingBackend r1 = androidx.window.embedding.EmbeddingBackend.Companion.decorator$lambda$0(r1)
+                    return r1
+                */
+                throw new UnsupportedOperationException("Method not decompiled: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda1.invoke(java.lang.Object):java.lang.Object");
             }
         };
 
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
             java.lang.NullPointerException
             */
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.embedding.EmbeddingBackend decorator$lambda$0(androidx.window.embedding.EmbeddingBackend r1) {
             /*
                 java.lang.String r0 = "it"
@@ -114,7 +125,7 @@ public interface EmbeddingBackend {
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
             java.lang.NullPointerException
             */
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.embedding.EmbeddingBackend reset$lambda$1(androidx.window.embedding.EmbeddingBackend r1) {
             /*
                 java.lang.String r0 = "it"
@@ -142,9 +153,21 @@ public interface EmbeddingBackend {
         @JvmStatic
         public final void reset() {
             decorator = new Function1() { // from class: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda0
+                /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+                    jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.embedding.EmbeddingBackend.Companion.reset$lambda$1(androidx.window.embedding.EmbeddingBackend):androidx.window.embedding.EmbeddingBackend
+                    	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+                    	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+                    Caused by: java.lang.NullPointerException
+                    */
                 @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    return EmbeddingBackend.Companion.reset$lambda$1((EmbeddingBackend) obj);
+                public final java.lang.Object invoke(java.lang.Object r1) {
+                    /*
+                        r0 = this;
+                        androidx.window.embedding.EmbeddingBackend r1 = (androidx.window.embedding.EmbeddingBackend) r1
+                        androidx.window.embedding.EmbeddingBackend r1 = androidx.window.embedding.EmbeddingBackend.Companion.reset$lambda$1(r1)
+                        return r1
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: androidx.window.embedding.EmbeddingBackend$Companion$$ExternalSyntheticLambda0.invoke(java.lang.Object):java.lang.Object");
                 }
             };
         }

@@ -7,7 +7,7 @@ import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
 import androidx.media3.exoplayer.drm.DrmSessionManager;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface DrmSessionManager {
     public static final DrmSessionManager DRM_UNSUPPORTED = new DrmSessionManager() { // from class: androidx.media3.exoplayer.drm.DrmSessionManager.1
         @Override // androidx.media3.exoplayer.drm.DrmSessionManager
@@ -28,7 +28,7 @@ public interface DrmSessionManager {
         }
     };
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface DrmSessionReference {
         public static final DrmSessionReference EMPTY = new DrmSessionReference() { // from class: androidx.media3.exoplayer.drm.DrmSessionManager$DrmSessionReference$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.drm.DrmSessionManager.DrmSessionReference

@@ -37,12 +37,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ComposeExtensions.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\u001a8\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a.\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\r\u001a\u00020\u0001*\u00020\u0001¨\u0006\u000e²\u0006\n\u0010\u000f\u001a\u00020\u0010X\u008a\u008e\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002"}, d2 = {"clickWithDelay", "Landroidx/compose/ui/Modifier;", "enabled", "", "clicksDelayTimeMs", "", "indicationType", "Lcom/miami/game/core/ui/utils/extensions/ClickIndicationType;", "onClick", "Lkotlin/Function0;", "", "clickWithDelayNoRipple", "interceptClick", "shimmerEffect", "ui-utils_release", "size", "Landroidx/compose/ui/unit/IntSize;", "startOffsetX", ""}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\u001a8\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a.\u0010\u000b\u001a\u00020\u0001*\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\t\u001a\n\u0010\f\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\r\u001a\u00020\u0001*\u00020\u0001¨\u0006\u000e²\u0006\n\u0010\u000f\u001a\u00020\u0010X\u008a\u008e\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0012X\u008a\u0084\u0002"}, d2 = {"clickWithDelay", "Landroidx/compose/ui/Modifier;", "enabled", "", "clicksDelayTimeMs", "", "indicationType", "Lcom/miami/game/core/ui/utils/extensions/ClickIndicationType;", "onClick", "Lkotlin/Function0;", "", "clickWithDelayNoRipple", "interceptClick", "shimmerEffect", "ui-utils", "size", "Landroidx/compose/ui/unit/IntSize;", "startOffsetX", ""}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposeExtensionsKt {
 
     /* compiled from: ComposeExtensions.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -106,7 +106,7 @@ public final class ComposeExtensionsKt {
         } else if (i2 == 2) {
             composer.startReplaceGroup(-351485176);
             composer.endReplaceGroup();
-            indicationNodeFactory = RippleKt.m2867rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
+            indicationNodeFactory = RippleKt.m2402rippleH2RKhps$default(false, 0.0f, 0L, 6, null);
         } else if (i2 != 3) {
             composer.startReplaceGroup(-351489068);
             composer.endReplaceGroup();
@@ -146,12 +146,12 @@ public final class ComposeExtensionsKt {
             composer.updateRememberedValue(rememberedValue3);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m338clickableO2vRcR0$default = ClickableKt.m338clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
+        Modifier m295clickableO2vRcR0$default = ClickableKt.m295clickableO2vRcR0$default(companion2, mutableInteractionSource, indication, z, null, null, rememberedValue3, 24, null);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         composer.endReplaceGroup();
-        return m338clickableO2vRcR0$default;
+        return m295clickableO2vRcR0$default;
     }
 
     public static final Unit clickWithDelay$lambda$1$2$0(MultipleClicksCutter multipleClicksCutter, final Function0 function0) {
@@ -203,9 +203,7 @@ public final class ComposeExtensionsKt {
         return ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: com.miami.game.core.ui.utils.extensions.ComposeExtensionsKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier shimmerEffect$lambda$0;
-                shimmerEffect$lambda$0 = ComposeExtensionsKt.shimmerEffect$lambda$0((Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return shimmerEffect$lambda$0;
+                return ComposeExtensionsKt.shimmerEffect$lambda$0((Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
@@ -220,13 +218,13 @@ public final class ComposeExtensionsKt {
         ComposerKt.sourceInformationMarkerStart(composer, -1680139201, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue = composer.rememberedValue();
         if (rememberedValue == Composer.Companion.getEmpty()) {
-            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m8421boximpl(IntSize.Companion.m8434getZeroYbymL2g()), null, 2, null);
+            rememberedValue = SnapshotStateKt__SnapshotStateKt.mutableStateOf$default(IntSize.m7718boximpl(IntSize.Companion.m7731getZeroYbymL2g()), null, 2, null);
             composer.updateRememberedValue(rememberedValue);
         }
         final MutableState mutableState = (MutableState) rememberedValue;
         ComposerKt.sourceInformationMarkerEnd(composer);
-        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), AnimationSpecKt.m185infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
-        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m5373linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(ColorKt.Color(4279446612L)), Color.m5414boximpl(ColorKt.Color(4280499561L)), Color.m5414boximpl(ColorKt.Color(4279446612L))}), Offset.m5171constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$0$1(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat) + ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
+        State<Float> animateFloat = InfiniteTransitionKt.animateFloat(InfiniteTransitionKt.rememberInfiniteTransition("", composer, 6, 0), (-2) * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), 2 * ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32)), AnimationSpecKt.m172infiniteRepeatable9IiC70o$default(AnimationSpecKt.tween$default(1000, 0, null, 6, null), null, 0L, 6, null), "", composer, (InfiniteRepeatableSpec.$stable << 9) | InfiniteTransition.$stable | 24576, 0);
+        Modifier background$default = BackgroundKt.background$default(composed, Brush.Companion.m4721linearGradientmHitzGk$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m4762boximpl(ColorKt.Color(4279446612L)), Color.m4762boximpl(ColorKt.Color(4280499561L)), Color.m4762boximpl(ColorKt.Color(4279446612L))}), Offset.m4519constructorimpl((Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat)) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits((int) (shimmerEffect$lambda$0$1(mutableState) & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits(shimmerEffect$lambda$0$3(animateFloat) + ((int) (shimmerEffect$lambda$0$1(mutableState) >> 32))) << 32)), 0, 8, (Object) null), null, 0.0f, 6, null);
         ComposerKt.sourceInformationMarkerStart(composer, -1680115216, "CC(remember):ComposeExtensions.kt#9igjgp");
         Object rememberedValue2 = composer.rememberedValue();
         if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -250,16 +248,16 @@ public final class ComposeExtensionsKt {
     }
 
     private static final long shimmerEffect$lambda$0$1(MutableState<IntSize> mutableState) {
-        return mutableState.getValue().m8433unboximpl();
+        return mutableState.getValue().m7730unboximpl();
     }
 
     private static final void shimmerEffect$lambda$0$2(MutableState<IntSize> mutableState, long j) {
-        mutableState.setValue(IntSize.m8421boximpl(j));
+        mutableState.setValue(IntSize.m7718boximpl(j));
     }
 
     public static final Unit shimmerEffect$lambda$0$4$0(MutableState mutableState, LayoutCoordinates it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        shimmerEffect$lambda$0$2(mutableState, it.mo6883getSizeYbymL2g());
+        shimmerEffect$lambda$0$2(mutableState, it.mo6224getSizeYbymL2g());
         return Unit.INSTANCE;
     }
 
@@ -311,9 +309,7 @@ public final class ComposeExtensionsKt {
         return ComposedModifierKt.composed(modifier, noInspectorInfo, new Function3() { // from class: com.miami.game.core.ui.utils.extensions.ComposeExtensionsKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier clickWithDelay$lambda$1;
-                clickWithDelay$lambda$1 = ComposeExtensionsKt.clickWithDelay$lambda$1(j2, clickIndicationType, z3, function02, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return clickWithDelay$lambda$1;
+                return ComposeExtensionsKt.clickWithDelay$lambda$1(j2, clickIndicationType, z3, function02, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }

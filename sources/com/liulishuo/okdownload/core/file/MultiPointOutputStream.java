@@ -260,16 +260,18 @@ public class MultiPointOutputStream {
     void inspectStreamState(StreamsState streamsState) {
         streamsState.newNoMoreStreamBlockList.clear();
         int size = new HashSet((List) this.noMoreStreamList.clone()).size();
-        if (size != this.requireStreamBlocks.size()) {
-            Util.d(TAG, "task[" + this.task.getId() + "] current need fetching block count " + this.requireStreamBlocks.size() + " is not equal to no more stream block count " + size);
+        int size2 = this.requireStreamBlocks.size();
+        DownloadTask downloadTask = this.task;
+        if (size != size2) {
+            Util.d(TAG, "task[" + downloadTask.getId() + "] current need fetching block count " + this.requireStreamBlocks.size() + " is not equal to no more stream block count " + size);
             streamsState.isNoMoreStream = false;
         } else {
-            Util.d(TAG, "task[" + this.task.getId() + "] current need fetching block count " + this.requireStreamBlocks.size() + " is equal to no more stream block count " + size);
+            Util.d(TAG, "task[" + downloadTask.getId() + "] current need fetching block count " + this.requireStreamBlocks.size() + " is equal to no more stream block count " + size);
             streamsState.isNoMoreStream = true;
         }
         SparseArray<DownloadOutputStream> clone = this.outputStreamMap.clone();
-        int size2 = clone.size();
-        for (int i = 0; i < size2; i++) {
+        int size3 = clone.size();
+        for (int i = 0; i < size3; i++) {
             int keyAt = clone.keyAt(i);
             if (this.noMoreStreamList.contains(Integer.valueOf(keyAt)) && !streamsState.noMoreStreamBlockList.contains(Integer.valueOf(keyAt))) {
                 streamsState.noMoreStreamBlockList.add(Integer.valueOf(keyAt));
@@ -348,14 +350,21 @@ public class MultiPointOutputStream {
             }
         }
         int size = this.parkedRunBlockThreadMap.size();
-        for (int i2 = 0; i2 < size; i2++) {
-            Thread valueAt = this.parkedRunBlockThreadMap.valueAt(i2);
-            if (valueAt != null) {
-                unparkThread(valueAt);
+        int i2 = 0;
+        while (true) {
+            SparseArray<Thread> sparseArray = this.parkedRunBlockThreadMap;
+            if (i2 < size) {
+                Thread valueAt = sparseArray.valueAt(i2);
+                if (valueAt != null) {
+                    unparkThread(valueAt);
+                }
+                i2++;
+            } else {
+                sparseArray.clear();
+                Util.d(TAG, "OutputStream stop flush looper task[" + this.task.getId() + "]");
+                return;
             }
         }
-        this.parkedRunBlockThreadMap.clear();
-        Util.d(TAG, "OutputStream stop flush looper task[" + this.task.getId() + "]");
     }
 
     boolean isNoNeedFlushForLength() {
@@ -415,8 +424,9 @@ public class MultiPointOutputStream {
         downloadOutputStream = this.outputStreamMap.get(i);
         if (downloadOutputStream == null) {
             boolean isUriFileScheme = Util.isUriFileScheme(this.task.getUri());
+            DownloadTask downloadTask = this.task;
             if (isUriFileScheme) {
-                File file = this.task.getFile();
+                File file = downloadTask.getFile();
                 if (file == null) {
                     throw new FileNotFoundException("Filename is not ready!");
                 }
@@ -429,7 +439,7 @@ public class MultiPointOutputStream {
                 }
                 uri = Uri.fromFile(file);
             } else {
-                uri = this.task.getUri();
+                uri = downloadTask.getUri();
             }
             DownloadOutputStream create = OkDownload.with().outputStreamFactory().create(OkDownload.with().context(), uri, this.flushBufferSize);
             if (this.supportSeek) {

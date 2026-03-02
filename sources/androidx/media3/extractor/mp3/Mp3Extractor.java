@@ -59,9 +59,9 @@ public final class Mp3Extractor implements Extractor {
     private final int flags;
     private final long forcedFirstSampleTimestampUs;
     private final GaplessInfoHolder gaplessInfoHolder;
+    private Metadata id3Metadata;
     private final Id3Peeker id3Peeker;
     private boolean isSeekInProgress;
-    private Metadata metadata;
     private TrackOutput realTrackOutput;
     private int sampleBytesRemaining;
     private long samplesRead;
@@ -71,6 +71,7 @@ public final class Mp3Extractor implements Extractor {
     private final TrackOutput skippingTrackOutput;
     private final MpegAudioUtil.Header synchronizedHeader;
     private int synchronizedHeaderData;
+    private Metadata xingMetadata;
     public static final ExtractorsFactory FACTORY = new ExtractorsFactory() { // from class: androidx.media3.extractor.mp3.Mp3Extractor$$ExternalSyntheticLambda0
         @Override // androidx.media3.extractor.ExtractorsFactory
         public final Extractor[] createExtractors() {
@@ -199,11 +200,20 @@ public final class Mp3Extractor implements Extractor {
             Seeker computeSeeker = computeSeeker(extractorInput);
             this.seeker = computeSeeker;
             this.extractorOutput.seekMap(computeSeeker);
-            Format.Builder metadata = new Format.Builder().setContainerMimeType(MimeTypes.AUDIO_MPEG).setSampleMimeType(this.synchronizedHeader.mimeType).setMaxInputSize(4096).setChannelCount(this.synchronizedHeader.channels).setSampleRate(this.synchronizedHeader.sampleRate).setEncoderDelay(this.gaplessInfoHolder.encoderDelay).setEncoderPadding(this.gaplessInfoHolder.encoderPadding).setMetadata((this.flags & 8) != 0 ? null : this.metadata);
-            if (this.seeker.getAverageBitrate() != -2147483647) {
-                metadata.setAverageBitrate(this.seeker.getAverageBitrate());
+            Metadata metadata = this.id3Metadata;
+            if (metadata != null && (this.flags & 8) == 0) {
+                Metadata metadata2 = this.xingMetadata;
+                if (metadata2 != null) {
+                    metadata = metadata.copyWithAppendedEntriesFrom(metadata2);
+                }
+            } else {
+                metadata = this.xingMetadata;
             }
-            this.currentTrackOutput.format(metadata.build());
+            Format.Builder metadata3 = new Format.Builder().setContainerMimeType(MimeTypes.AUDIO_MPEG).setSampleMimeType(this.synchronizedHeader.mimeType).setMaxInputSize(4096).setChannelCount(this.synchronizedHeader.channels).setSampleRate(this.synchronizedHeader.sampleRate).setEncoderDelay(this.gaplessInfoHolder.encoderDelay).setEncoderPadding(this.gaplessInfoHolder.encoderPadding).setMetadata(metadata);
+            if (this.seeker.getAverageBitrate() != -2147483647) {
+                metadata3.setAverageBitrate(this.seeker.getAverageBitrate());
+            }
+            this.currentTrackOutput.format(metadata3.build());
             this.firstSamplePosition = extractorInput.getPosition();
         } else if (this.firstSamplePosition != 0) {
             long position = extractorInput.getPosition();
@@ -274,7 +284,7 @@ public final class Mp3Extractor implements Extractor {
         extractorInput.resetPeekPosition();
         if (extractorInput.getPosition() == 0) {
             Metadata peekId3Data = this.id3Peeker.peekId3Data(extractorInput, (this.flags & 8) == 0 ? null : REQUIRED_ID3_FRAME_PREDICATE, 131072);
-            this.metadata = peekId3Data;
+            this.id3Metadata = peekId3Data;
             if (peekId3Data != null) {
                 this.gaplessInfoHolder.setFromMetadata(peekId3Data);
             }
@@ -356,7 +366,7 @@ public final class Mp3Extractor implements Extractor {
     private Seeker computeSeeker(ExtractorInput extractorInput) throws IOException {
         long length;
         Seeker maybeReadSeekFrame = maybeReadSeekFrame(extractorInput);
-        MlltSeeker maybeHandleSeekMetadata = maybeHandleSeekMetadata(this.metadata, extractorInput.getPosition());
+        MlltSeeker maybeHandleSeekMetadata = maybeHandleSeekMetadata(this.id3Metadata, extractorInput.getPosition());
         if (this.disableSeeking) {
             return new Seeker.UnseekableSeeker();
         }
@@ -394,15 +404,17 @@ public final class Mp3Extractor implements Extractor {
     private Seeker maybeReadSeekFrame(ExtractorInput extractorInput) throws IOException {
         ParsableByteArray parsableByteArray = new ParsableByteArray(this.synchronizedHeader.frameSize);
         extractorInput.peekFully(parsableByteArray.getData(), 0, this.synchronizedHeader.frameSize);
-        int i = 21;
-        if ((this.synchronizedHeader.version & 1) != 0) {
-            if (this.synchronizedHeader.channels != 1) {
-                i = 36;
+        int i = this.synchronizedHeader.version & 1;
+        MpegAudioUtil.Header header = this.synchronizedHeader;
+        int i2 = 21;
+        if (i != 0) {
+            if (header.channels != 1) {
+                i2 = 36;
             }
-        } else if (this.synchronizedHeader.channels == 1) {
-            i = 13;
+        } else if (header.channels == 1) {
+            i2 = 13;
         }
-        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i);
+        int seekFrameHeader = getSeekFrameHeader(parsableByteArray, i2);
         if (seekFrameHeader != SEEK_HEADER_INFO) {
             if (seekFrameHeader == SEEK_HEADER_VBRI) {
                 VbriSeeker create = VbriSeeker.create(extractorInput.getLength(), extractorInput.getPosition(), this.synchronizedHeader, parsableByteArray);
@@ -418,6 +430,7 @@ public final class Mp3Extractor implements Extractor {
             this.gaplessInfoHolder.encoderDelay = parse.encoderDelay;
             this.gaplessInfoHolder.encoderPadding = parse.encoderPadding;
         }
+        this.xingMetadata = parse.getMetadata();
         long position = extractorInput.getPosition();
         if (extractorInput.getLength() != -1 && parse.dataSize != -1 && extractorInput.getLength() != parse.dataSize + position) {
             Log.i(TAG, "Data size mismatch between stream (" + extractorInput.getLength() + ") and Xing frame (" + (parse.dataSize + position) + "), using Xing value.");

@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Wm implements InterfaceC0233eo {
+public final class Wm implements InterfaceC0232eo {
 
     /* renamed from: a  reason: collision with root package name */
     public final ArrayList f844a;
@@ -26,7 +26,7 @@ public final class Wm implements InterfaceC0233eo {
         this.f844a = arrayList;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
+    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
     public final void a(Cdo cdo) {
         Iterator it = this.f844a.iterator();
         while (it.hasNext()) {
@@ -34,7 +34,7 @@ public final class Wm implements InterfaceC0233eo {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
+    @Override // io.appmetrica.analytics.impl.InterfaceC0232eo
     public final void a(PublicLogger publicLogger) {
         Iterator it = this.f844a.iterator();
         while (it.hasNext()) {

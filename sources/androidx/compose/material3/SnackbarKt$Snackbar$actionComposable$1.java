@@ -40,7 +40,7 @@ public final class SnackbarKt$Snackbar$actionComposable$1 implements Function2<C
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1378313599, i, -1, "androidx.compose.material3.Snackbar.<anonymous> (Snackbar.kt:211)");
         }
-        ButtonColors m2071textButtonColorsro_MJ88 = ButtonDefaults.INSTANCE.m2071textButtonColorsro_MJ88(0L, this.$actionColor, 0L, 0L, composer, 24576, 13);
+        ButtonColors m1774textButtonColorsro_MJ88 = ButtonDefaults.INSTANCE.m1774textButtonColorsro_MJ88(0L, this.$actionColor, 0L, 0L, composer, 24576, 13);
         ComposerKt.sourceInformationMarkerStart(composer, -1709436639, "CC(remember):Snackbar.kt#9igjgp");
         boolean changed = composer.changed(this.$snackbarData);
         final SnackbarData snackbarData = this.$snackbarData;
@@ -49,16 +49,14 @@ public final class SnackbarKt$Snackbar$actionComposable$1 implements Function2<C
             rememberedValue = new Function0() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$actionComposable$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = SnackbarKt$Snackbar$actionComposable$1.invoke$lambda$1$lambda$0(SnackbarData.this);
-                    return invoke$lambda$1$lambda$0;
+                    return SnackbarKt$Snackbar$actionComposable$1.invoke$lambda$1$lambda$0(SnackbarData.this);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
         final String str = this.$actionLabel;
-        ButtonKt.TextButton((Function0) rememberedValue, null, false, null, m2071textButtonColorsro_MJ88, null, null, null, null, ComposableLambdaKt.rememberComposableLambda(521110564, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$actionComposable$1.2
+        ButtonKt.TextButton((Function0) rememberedValue, null, false, null, m1774textButtonColorsro_MJ88, null, null, null, null, ComposableLambdaKt.rememberComposableLambda(521110564, true, new Function3<RowScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.SnackbarKt$Snackbar$actionComposable$1.2
             @Override // kotlin.jvm.functions.Function3
             public /* bridge */ /* synthetic */ Unit invoke(RowScope rowScope, Composer composer2, Integer num) {
                 invoke(rowScope, composer2, num.intValue());
@@ -74,7 +72,7 @@ public final class SnackbarKt$Snackbar$actionComposable$1 implements Function2<C
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventStart(521110564, i2, -1, "androidx.compose.material3.Snackbar.<anonymous>.<anonymous> (Snackbar.kt:214)");
                 }
-                TextKt.m3255TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
+                TextKt.m2712TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, composer2, 0, 0, 262142);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }
@@ -85,7 +83,7 @@ public final class SnackbarKt$Snackbar$actionComposable$1 implements Function2<C
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(SnackbarData snackbarData) {
         snackbarData.performAction();
         return Unit.INSTANCE;

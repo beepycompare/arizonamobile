@@ -60,10 +60,12 @@ public class FragmentStore {
         }
         this.mActive.put(fragment.mWho, fragmentStateManager);
         if (fragment.mRetainInstanceChangedWhileDetached) {
-            if (fragment.mRetainInstance) {
-                this.mNonConfig.addRetainedFragment(fragment);
+            boolean z = fragment.mRetainInstance;
+            FragmentManagerViewModel fragmentManagerViewModel = this.mNonConfig;
+            if (z) {
+                fragmentManagerViewModel.addRetainedFragment(fragment);
             } else {
-                this.mNonConfig.removeRetainedFragment(fragment);
+                fragmentManagerViewModel.removeRetainedFragment(fragment);
             }
             fragment.mRetainInstanceChangedWhileDetached = false;
         }
@@ -146,10 +148,11 @@ public class FragmentStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Bundle setSavedState(String str, Bundle bundle) {
+        HashMap<String, Bundle> hashMap = this.mSavedState;
         if (bundle != null) {
-            return this.mSavedState.put(str, bundle);
+            return hashMap.put(str, bundle);
         }
-        return this.mSavedState.remove(str);
+        return hashMap.remove(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

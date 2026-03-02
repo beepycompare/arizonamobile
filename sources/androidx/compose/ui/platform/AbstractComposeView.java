@@ -121,15 +121,15 @@ public abstract class AbstractComposeView extends ViewGroup {
     }
 
     /* renamed from: getAutoClearFocusBehavior-4UtRPd4  reason: not valid java name */
-    public final int m7299getAutoClearFocusBehavior4UtRPd4() {
+    public final int m6639getAutoClearFocusBehavior4UtRPd4() {
         Object tag = getTag(R.id.auto_clear_focus_behavior_tag);
         AutoClearFocusBehavior autoClearFocusBehavior = tag instanceof AutoClearFocusBehavior ? (AutoClearFocusBehavior) tag : null;
-        return autoClearFocusBehavior != null ? autoClearFocusBehavior.m7337unboximpl() : AutoClearFocusBehavior.Companion.m7339getDefault4UtRPd4();
+        return autoClearFocusBehavior != null ? autoClearFocusBehavior.m6673unboximpl() : AutoClearFocusBehavior.Companion.m6675getDefault4UtRPd4();
     }
 
     /* renamed from: setAutoClearFocusBehavior-17tfJxM  reason: not valid java name */
-    public final void m7300setAutoClearFocusBehavior17tfJxM(int i) {
-        setTag(R.id.auto_clear_focus_behavior_tag, AutoClearFocusBehavior.m7331boximpl(i));
+    public final void m6640setAutoClearFocusBehavior17tfJxM(int i) {
+        setTag(R.id.auto_clear_focus_behavior_tag, AutoClearFocusBehavior.m6667boximpl(i));
     }
 
     public final void createComposition() {

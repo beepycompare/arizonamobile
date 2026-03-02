@@ -50,10 +50,11 @@ public final class MaybeDelay<T> extends AbstractMaybeWithUpstream<T, T> {
                 return;
             }
             T t = this.value;
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                maybeObserver.onSuccess(t);
             } else {
-                this.downstream.onComplete();
+                maybeObserver.onComplete();
             }
         }
 

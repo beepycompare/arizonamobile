@@ -104,9 +104,7 @@ public final class MultiProcessDataStoreFactory {
         FileStorage fileStorage = new FileStorage(serializer, new Function1() { // from class: androidx.datastore.core.MultiProcessDataStoreFactory$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                InterProcessCoordinator create$lambda$0;
-                create$lambda$0 = MultiProcessDataStoreFactory.create$lambda$0(CoroutineScope.this, (File) obj);
-                return create$lambda$0;
+                return MultiProcessDataStoreFactory.create$lambda$0(CoroutineScope.this, (File) obj);
             }
         }, produceFile);
         List listOf = CollectionsKt.listOf(DataMigrationInitializer.Companion.getInitializer(migrations));
@@ -116,7 +114,7 @@ public final class MultiProcessDataStoreFactory {
         return new DataStoreImpl(fileStorage, listOf, replaceFileCorruptionHandler, scope);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InterProcessCoordinator create$lambda$0(CoroutineScope coroutineScope, File it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return new MultiProcessCoordinator(coroutineScope.getCoroutineContext(), it);

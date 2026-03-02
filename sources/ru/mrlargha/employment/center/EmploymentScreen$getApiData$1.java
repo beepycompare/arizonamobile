@@ -13,11 +13,10 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import ru.mrlargha.employment.center.EmploymentScreen$getApiData$1;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EmploymentScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.employment.center.EmploymentScreen$getApiData$1", f = "EmploymentScreen.kt", i = {1, 1}, l = {111, 114}, m = "invokeSuspend", n = {"data", "list1"}, s = {"L$0", "L$1"}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.employment.center.EmploymentScreen$getApiData$1", f = "EmploymentScreen.kt", i = {1, 1}, l = {111, 114}, m = "invokeSuspend", n = {"data", "list1"}, nl = {112, 118}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class EmploymentScreen$getApiData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -91,8 +90,8 @@ public final class EmploymentScreen$getApiData$1 extends SuspendLambda implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: EmploymentScreen.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.employment.center.EmploymentScreen$getApiData$1$1", f = "EmploymentScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.employment.center.EmploymentScreen$getApiData$1$1", f = "EmploymentScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.employment.center.EmploymentScreen$getApiData$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -132,19 +131,15 @@ public final class EmploymentScreen$getApiData$1 extends SuspendLambda implement
                 jobsAdapter2.select(jobsAdapter3.getSelected(), new Function1() { // from class: ru.mrlargha.employment.center.EmploymentScreen$getApiData$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = EmploymentScreen$getApiData$1.AnonymousClass1.invokeSuspend$lambda$0(((Integer) obj2).intValue());
-                        return invokeSuspend$lambda$0;
+                        Unit unit;
+                        ((Integer) obj2).intValue();
+                        unit = Unit.INSTANCE;
+                        return unit;
                     }
                 });
                 return Unit.INSTANCE;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final Unit invokeSuspend$lambda$0(int i) {
-            return Unit.INSTANCE;
         }
     }
 }

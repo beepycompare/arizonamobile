@@ -13,49 +13,49 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class TextAlign {
     private final int value;
     public static final Companion Companion = new Companion(null);
-    private static final int Left = m8130constructorimpl(1);
-    private static final int Right = m8130constructorimpl(2);
-    private static final int Center = m8130constructorimpl(3);
-    private static final int Justify = m8130constructorimpl(4);
-    private static final int Start = m8130constructorimpl(5);
-    private static final int End = m8130constructorimpl(6);
-    private static final int Unspecified = m8130constructorimpl(0);
+    private static final int Left = m7427constructorimpl(1);
+    private static final int Right = m7427constructorimpl(2);
+    private static final int Center = m7427constructorimpl(3);
+    private static final int Justify = m7427constructorimpl(4);
+    private static final int Start = m7427constructorimpl(5);
+    private static final int End = m7427constructorimpl(6);
+    private static final int Unspecified = m7427constructorimpl(0);
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ TextAlign m8129boximpl(int i) {
+    public static final /* synthetic */ TextAlign m7426boximpl(int i) {
         return new TextAlign(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m8130constructorimpl(int i) {
+    public static int m7427constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8131equalsimpl(int i, Object obj) {
-        return (obj instanceof TextAlign) && i == ((TextAlign) obj).m8135unboximpl();
+    public static boolean m7428equalsimpl(int i, Object obj) {
+        return (obj instanceof TextAlign) && i == ((TextAlign) obj).m7432unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8132equalsimpl0(int i, int i2) {
+    public static final boolean m7429equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8133hashCodeimpl(int i) {
+    public static int m7430hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     public boolean equals(Object obj) {
-        return m8131equalsimpl(this.value, obj);
+        return m7428equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m8133hashCodeimpl(this.value);
+        return m7430hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m8135unboximpl() {
+    public final /* synthetic */ int m7432unboximpl() {
         return this.value;
     }
 
@@ -68,12 +68,12 @@ public final class TextAlign {
     }
 
     public String toString() {
-        return m8134toStringimpl(this.value);
+        return m7431toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8134toStringimpl(int i) {
-        return m8132equalsimpl0(i, Left) ? "Left" : m8132equalsimpl0(i, Right) ? "Right" : m8132equalsimpl0(i, Center) ? "Center" : m8132equalsimpl0(i, Justify) ? "Justify" : m8132equalsimpl0(i, Start) ? "Start" : m8132equalsimpl0(i, End) ? "End" : m8132equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
+    public static String m7431toStringimpl(int i) {
+        return m7429equalsimpl0(i, Left) ? "Left" : m7429equalsimpl0(i, Right) ? "Right" : m7429equalsimpl0(i, Center) ? "Center" : m7429equalsimpl0(i, Justify) ? "Justify" : m7429equalsimpl0(i, Start) ? "Start" : m7429equalsimpl0(i, End) ? "End" : m7429equalsimpl0(i, Unspecified) ? "Unspecified" : "Invalid";
     }
 
     /* compiled from: TextAlign.kt */
@@ -88,46 +88,46 @@ public final class TextAlign {
         }
 
         /* renamed from: getLeft-e0LSkKk  reason: not valid java name */
-        public final int m8139getLefte0LSkKk() {
+        public final int m7436getLefte0LSkKk() {
             return TextAlign.Left;
         }
 
         /* renamed from: getRight-e0LSkKk  reason: not valid java name */
-        public final int m8140getRighte0LSkKk() {
+        public final int m7437getRighte0LSkKk() {
             return TextAlign.Right;
         }
 
         /* renamed from: getCenter-e0LSkKk  reason: not valid java name */
-        public final int m8136getCentere0LSkKk() {
+        public final int m7433getCentere0LSkKk() {
             return TextAlign.Center;
         }
 
         /* renamed from: getJustify-e0LSkKk  reason: not valid java name */
-        public final int m8138getJustifye0LSkKk() {
+        public final int m7435getJustifye0LSkKk() {
             return TextAlign.Justify;
         }
 
         /* renamed from: getStart-e0LSkKk  reason: not valid java name */
-        public final int m8141getStarte0LSkKk() {
+        public final int m7438getStarte0LSkKk() {
             return TextAlign.Start;
         }
 
         /* renamed from: getEnd-e0LSkKk  reason: not valid java name */
-        public final int m8137getEnde0LSkKk() {
+        public final int m7434getEnde0LSkKk() {
             return TextAlign.End;
         }
 
         /* renamed from: getUnspecified-e0LSkKk  reason: not valid java name */
-        public final int m8142getUnspecifiede0LSkKk() {
+        public final int m7439getUnspecifiede0LSkKk() {
             return TextAlign.Unspecified;
         }
 
         public final List<TextAlign> values() {
-            return CollectionsKt.listOf((Object[]) new TextAlign[]{TextAlign.m8129boximpl(m8139getLefte0LSkKk()), TextAlign.m8129boximpl(m8140getRighte0LSkKk()), TextAlign.m8129boximpl(m8136getCentere0LSkKk()), TextAlign.m8129boximpl(m8138getJustifye0LSkKk()), TextAlign.m8129boximpl(m8141getStarte0LSkKk()), TextAlign.m8129boximpl(m8137getEnde0LSkKk())});
+            return CollectionsKt.listOf((Object[]) new TextAlign[]{TextAlign.m7426boximpl(m7436getLefte0LSkKk()), TextAlign.m7426boximpl(m7437getRighte0LSkKk()), TextAlign.m7426boximpl(m7433getCentere0LSkKk()), TextAlign.m7426boximpl(m7435getJustifye0LSkKk()), TextAlign.m7426boximpl(m7438getStarte0LSkKk()), TextAlign.m7426boximpl(m7434getEnde0LSkKk())});
         }
 
         /* renamed from: valueOf-IgVj0fw  reason: not valid java name */
-        public final int m8143valueOfIgVj0fw(int i) {
+        public final int m7440valueOfIgVj0fw(int i) {
             boolean z = false;
             if (i >= 0 && i < 7) {
                 z = true;
@@ -135,7 +135,7 @@ public final class TextAlign {
             if (!z) {
                 InlineClassHelperKt.throwIllegalArgumentException("The given value=" + i + " is not recognized by TextAlign.");
             }
-            return TextAlign.m8130constructorimpl(i);
+            return TextAlign.m7427constructorimpl(i);
         }
     }
 }

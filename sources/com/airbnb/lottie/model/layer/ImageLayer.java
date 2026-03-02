@@ -61,10 +61,12 @@ public class ImageLayer extends BaseLayer {
             dropShadow = dropShadowKeyframeAnimation.evaluate(matrix, i);
         }
         this.src.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        if (this.lottieDrawable.getMaintainOriginalImageBounds()) {
-            this.dst.set(0, 0, (int) (this.lottieImageAsset.getWidth() * dpScale), (int) (this.lottieImageAsset.getHeight() * dpScale));
+        boolean maintainOriginalImageBounds = this.lottieDrawable.getMaintainOriginalImageBounds();
+        Rect rect = this.dst;
+        if (maintainOriginalImageBounds) {
+            rect.set(0, 0, (int) (this.lottieImageAsset.getWidth() * dpScale), (int) (this.lottieImageAsset.getHeight() * dpScale));
         } else {
-            this.dst.set(0, 0, (int) (bitmap.getWidth() * dpScale), (int) (bitmap.getHeight() * dpScale));
+            rect.set(0, 0, (int) (bitmap.getWidth() * dpScale), (int) (bitmap.getHeight() * dpScale));
         }
         boolean z = dropShadow != null;
         if (z) {

@@ -7,6 +7,6 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public final class TextObfuscationMode_androidKt {
     public static final int getDefault(TextObfuscationMode.Companion companion) {
-        return TextObfuscationMode.Companion.m1560getRevealLastTypedvTwcZD0();
+        return TextObfuscationMode.Companion.m1359getRevealLastTypedvTwcZD0();
     }
 }

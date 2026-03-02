@@ -20,9 +20,7 @@ public final class DefaultBackDispatcher implements BackDispatcher {
     private final Function1<Boolean, Unit> onCallbackEnabledChanged = new Function1() { // from class: com.arkivanov.essenty.backhandler.DefaultBackDispatcher$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit onCallbackEnabledChanged$lambda$0;
-            onCallbackEnabledChanged$lambda$0 = DefaultBackDispatcher.onCallbackEnabledChanged$lambda$0(DefaultBackDispatcher.this, ((Boolean) obj).booleanValue());
-            return onCallbackEnabledChanged$lambda$0;
+            return DefaultBackDispatcher.onCallbackEnabledChanged$lambda$0(DefaultBackDispatcher.this, ((Boolean) obj).booleanValue());
         }
     };
 
@@ -40,7 +38,7 @@ public final class DefaultBackDispatcher implements BackDispatcher {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCallbackEnabledChanged$lambda$0(DefaultBackDispatcher defaultBackDispatcher, boolean z) {
         defaultBackDispatcher.onCallbackEnabledChanged();
         return Unit.INSTANCE;

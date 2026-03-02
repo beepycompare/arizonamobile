@@ -16,16 +16,16 @@ public final class TraversableNodeKt {
     public static final <T extends TraversableNode> T findNearestAncestor(T t) {
         NodeChain nodes$ui;
         T t2 = t;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!t2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui = t2.getNode().getParent$ui();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(t2);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node = parent$ui;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -34,10 +34,10 @@ public final class TraversableNodeKt {
                                 if (Intrinsics.areEqual(t.getTraverseKey(), t3.getTraverseKey()) && Actual_jvmKt.areObjectsOfSameType(t, t3)) {
                                     return t3;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -76,16 +76,16 @@ public final class TraversableNodeKt {
     public static final <T extends TraversableNode> void traverseAncestors(T t, Function1<? super T, Boolean> function1) {
         NodeChain nodes$ui;
         T t2 = t;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!t2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui = t2.getNode().getParent$ui();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(t2);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node = parent$ui;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -98,10 +98,10 @@ public final class TraversableNodeKt {
                                 if (!z) {
                                     return;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -144,7 +144,7 @@ public final class TraversableNodeKt {
     */
     public static final <T extends TraversableNode> void traverseChildren(T t, Function1<? super T, Boolean> function1) {
         T t2 = t;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!t2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -157,13 +157,13 @@ public final class TraversableNodeKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
                         MutableVector mutableVector2 = null;
                         while (node != null) {
                             if (node instanceof TraversableNode) {
@@ -171,10 +171,10 @@ public final class TraversableNodeKt {
                                 if (!((Intrinsics.areEqual(t.getTraverseKey(), traversableNode.getTraverseKey()) && Actual_jvmKt.areObjectsOfSameType(t, traversableNode)) ? function1.invoke(traversableNode).booleanValue() : true)) {
                                     return;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -211,7 +211,7 @@ public final class TraversableNodeKt {
     public static final <T extends TraversableNode> void traverseDescendants(T t, Function1<? super T, ? extends TraversableNode.Companion.TraverseDescendantsAction> function1) {
         TraversableNode.Companion.TraverseDescendantsAction traverseDescendantsAction;
         T t2 = t;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!t2.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -224,9 +224,9 @@ public final class TraversableNodeKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 for (Modifier.Node node2 = node; node2 != null && node2.isAttached(); node2 = node2.getChild$ui()) {
-                    if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node3 = node2;
                         MutableVector mutableVector2 = null;
                         while (node3 != null) {
@@ -243,10 +243,10 @@ public final class TraversableNodeKt {
                                 if (traverseDescendantsAction == TraversableNode.Companion.TraverseDescendantsAction.SkipSubtreeAndContinueTraversal) {
                                     break;
                                 }
-                            } else if ((node3.getKindSet$ui() & m7195constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                            } else if ((node3.getKindSet$ui() & m6535constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node3 = delegate$ui;
@@ -281,16 +281,16 @@ public final class TraversableNodeKt {
 
     public static final TraversableNode findNearestAncestor(DelegatableNode delegatableNode, Object obj) {
         NodeChain nodes$ui;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui = delegatableNode.getNode().getParent$ui();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(delegatableNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node = parent$ui;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -299,10 +299,10 @@ public final class TraversableNodeKt {
                                 if (Intrinsics.areEqual(obj, traversableNode.getTraverseKey())) {
                                     return traversableNode;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -340,16 +340,16 @@ public final class TraversableNodeKt {
 
     public static final void traverseAncestors(DelegatableNode delegatableNode, Object obj, Function1<? super TraversableNode, Boolean> function1) {
         NodeChain nodes$ui;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
         }
         Modifier.Node parent$ui = delegatableNode.getNode().getParent$ui();
         LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(delegatableNode);
         while (requireLayoutNode != null) {
-            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 while (parent$ui != null) {
-                    if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node = parent$ui;
                         MutableVector mutableVector = null;
                         while (node != null) {
@@ -358,10 +358,10 @@ public final class TraversableNodeKt {
                                 if (!(Intrinsics.areEqual(obj, traversableNode.getTraverseKey()) ? function1.invoke(traversableNode).booleanValue() : true)) {
                                     return;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -403,7 +403,7 @@ public final class TraversableNodeKt {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void traverseChildren(DelegatableNode delegatableNode, Object obj, Function1<? super TraversableNode, Boolean> function1) {
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
         }
@@ -416,13 +416,13 @@ public final class TraversableNodeKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+            if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                 DelegatableNodeKt.addLayoutNodeChildren(mutableVector, node, false);
             } else {
                 while (true) {
                     if (node == null) {
                         break;
-                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
                         MutableVector mutableVector2 = null;
                         while (node != null) {
                             if (node instanceof TraversableNode) {
@@ -430,10 +430,10 @@ public final class TraversableNodeKt {
                                 if (!(Intrinsics.areEqual(obj, traversableNode.getTraverseKey()) ? function1.invoke(traversableNode).booleanValue() : true)) {
                                     return;
                                 }
-                            } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node = delegate$ui;
@@ -469,7 +469,7 @@ public final class TraversableNodeKt {
 
     public static final void traverseDescendants(DelegatableNode delegatableNode, Object obj, Function1<? super TraversableNode, ? extends TraversableNode.Companion.TraverseDescendantsAction> function1) {
         TraversableNode.Companion.TraverseDescendantsAction traverseDescendantsAction;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(262144);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(262144);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
         }
@@ -482,9 +482,9 @@ public final class TraversableNodeKt {
         }
         while (mutableVector.getSize() != 0) {
             Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-            if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+            if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                 for (Modifier.Node node2 = node; node2 != null && node2.isAttached(); node2 = node2.getChild$ui()) {
-                    if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                         Modifier.Node node3 = node2;
                         MutableVector mutableVector2 = null;
                         while (node3 != null) {
@@ -501,10 +501,10 @@ public final class TraversableNodeKt {
                                 if (traverseDescendantsAction == TraversableNode.Companion.TraverseDescendantsAction.SkipSubtreeAndContinueTraversal) {
                                     break;
                                 }
-                            } else if ((node3.getKindSet$ui() & m7195constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                            } else if ((node3.getKindSet$ui() & m6535constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                 int i = 0;
                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         i++;
                                         if (i == 1) {
                                             node3 = delegate$ui;

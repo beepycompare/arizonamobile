@@ -163,8 +163,10 @@ public class AsyncRequestQueue extends RequestQueue {
                 return;
             }
             this.mRequest.addMarker("cache-queue-take");
-            if (AsyncRequestQueue.this.mAsyncCache != null) {
-                AsyncRequestQueue.this.mAsyncCache.get(this.mRequest.getCacheKey(), new AsyncCache.OnGetCompleteCallback() { // from class: com.android.volley.AsyncRequestQueue.CacheTask.1
+            AsyncCache asyncCache = AsyncRequestQueue.this.mAsyncCache;
+            AsyncRequestQueue asyncRequestQueue = AsyncRequestQueue.this;
+            if (asyncCache != null) {
+                asyncRequestQueue.mAsyncCache.get(this.mRequest.getCacheKey(), new AsyncCache.OnGetCompleteCallback() { // from class: com.android.volley.AsyncRequestQueue.CacheTask.1
                     @Override // com.android.volley.AsyncCache.OnGetCompleteCallback
                     public void onGetComplete(Cache.Entry entry) {
                         AsyncRequestQueue.this.handleEntry(entry, CacheTask.this.mRequest);
@@ -172,7 +174,7 @@ public class AsyncRequestQueue extends RequestQueue {
                 });
                 return;
             }
-            AsyncRequestQueue.this.handleEntry(AsyncRequestQueue.this.getCache().get(this.mRequest.getCacheKey()), this.mRequest);
+            AsyncRequestQueue.this.handleEntry(asyncRequestQueue.getCache().get(this.mRequest.getCacheKey()), this.mRequest);
         }
     }
 
@@ -223,15 +225,17 @@ public class AsyncRequestQueue extends RequestQueue {
             this.mRequest.addMarker("cache-hit-refresh-needed");
             this.mRequest.setCacheEntry(this.entry);
             parseNetworkResponse.intermediate = true;
-            if (!AsyncRequestQueue.this.mWaitingRequestManager.maybeAddToWaitingRequests(this.mRequest)) {
-                AsyncRequestQueue.this.getResponseDelivery().postResponse(this.mRequest, parseNetworkResponse, new Runnable() { // from class: com.android.volley.AsyncRequestQueue.CacheParseTask.1
+            boolean maybeAddToWaitingRequests = AsyncRequestQueue.this.mWaitingRequestManager.maybeAddToWaitingRequests(this.mRequest);
+            AsyncRequestQueue asyncRequestQueue = AsyncRequestQueue.this;
+            if (!maybeAddToWaitingRequests) {
+                asyncRequestQueue.getResponseDelivery().postResponse(this.mRequest, parseNetworkResponse, new Runnable() { // from class: com.android.volley.AsyncRequestQueue.CacheParseTask.1
                     @Override // java.lang.Runnable
                     public void run() {
                         AsyncRequestQueue.this.sendRequestOverNetwork(CacheParseTask.this.mRequest);
                     }
                 });
             } else {
-                AsyncRequestQueue.this.getResponseDelivery().postResponse(this.mRequest, parseNetworkResponse);
+                asyncRequestQueue.getResponseDelivery().postResponse(this.mRequest, parseNetworkResponse);
             }
         }
     }
@@ -304,10 +308,14 @@ public class AsyncRequestQueue extends RequestQueue {
             this.mRequest.addMarker("network-parse-complete");
             if (!this.mRequest.shouldCache() || parseNetworkResponse.cacheEntry == null) {
                 AsyncRequestQueue.this.finishRequest(this.mRequest, parseNetworkResponse, false);
-            } else if (AsyncRequestQueue.this.mAsyncCache != null) {
-                AsyncRequestQueue.this.mNonBlockingExecutor.execute(new CachePutTask(this.mRequest, parseNetworkResponse));
+                return;
+            }
+            AsyncCache asyncCache = AsyncRequestQueue.this.mAsyncCache;
+            AsyncRequestQueue asyncRequestQueue = AsyncRequestQueue.this;
+            if (asyncCache != null) {
+                asyncRequestQueue.mNonBlockingExecutor.execute(new CachePutTask(this.mRequest, parseNetworkResponse));
             } else {
-                AsyncRequestQueue.this.mBlockingExecutor.execute(new CachePutTask(this.mRequest, parseNetworkResponse));
+                asyncRequestQueue.mBlockingExecutor.execute(new CachePutTask(this.mRequest, parseNetworkResponse));
             }
         }
     }
@@ -323,8 +331,10 @@ public class AsyncRequestQueue extends RequestQueue {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (AsyncRequestQueue.this.mAsyncCache != null) {
-                AsyncRequestQueue.this.mAsyncCache.put(this.mRequest.getCacheKey(), this.response.cacheEntry, new AsyncCache.OnWriteCompleteCallback() { // from class: com.android.volley.AsyncRequestQueue.CachePutTask.1
+            AsyncCache asyncCache = AsyncRequestQueue.this.mAsyncCache;
+            AsyncRequestQueue asyncRequestQueue = AsyncRequestQueue.this;
+            if (asyncCache != null) {
+                asyncRequestQueue.mAsyncCache.put(this.mRequest.getCacheKey(), this.response.cacheEntry, new AsyncCache.OnWriteCompleteCallback() { // from class: com.android.volley.AsyncRequestQueue.CachePutTask.1
                     @Override // com.android.volley.AsyncCache.OnWriteCompleteCallback
                     public void onWriteComplete() {
                         AsyncRequestQueue.this.finishRequest(CachePutTask.this.mRequest, CachePutTask.this.response, true);
@@ -332,7 +342,7 @@ public class AsyncRequestQueue extends RequestQueue {
                 });
                 return;
             }
-            AsyncRequestQueue.this.getCache().put(this.mRequest.getCacheKey(), this.response.cacheEntry);
+            asyncRequestQueue.getCache().put(this.mRequest.getCacheKey(), this.response.cacheEntry);
             AsyncRequestQueue.this.finishRequest(this.mRequest, this.response, true);
         }
     }

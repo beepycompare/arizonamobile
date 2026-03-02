@@ -6,7 +6,14 @@ import androidx.media3.common.Timeline;
 public final class TimelineWithUpdatedMediaItem extends ForwardingTimeline {
     private final MediaItem updatedMediaItem;
 
-    public TimelineWithUpdatedMediaItem(Timeline timeline, MediaItem mediaItem) {
+    public static TimelineWithUpdatedMediaItem create(Timeline timeline, MediaItem mediaItem) {
+        if (timeline instanceof TimelineWithUpdatedMediaItem) {
+            return new TimelineWithUpdatedMediaItem(((TimelineWithUpdatedMediaItem) timeline).timeline, mediaItem);
+        }
+        return new TimelineWithUpdatedMediaItem(timeline, mediaItem);
+    }
+
+    private TimelineWithUpdatedMediaItem(Timeline timeline, MediaItem mediaItem) {
         super(timeline);
         this.updatedMediaItem = mediaItem;
     }

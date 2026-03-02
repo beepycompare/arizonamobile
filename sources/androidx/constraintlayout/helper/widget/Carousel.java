@@ -246,10 +246,12 @@ public class Carousel extends MotionHelper {
         int max = Math.max(0, i2);
         this.mAnimateTargetDelay = max;
         this.mMotionLayout.setTransitionDuration(max);
-        if (i < this.mIndex) {
-            this.mMotionLayout.transitionToState(this.mPreviousState, this.mAnimateTargetDelay);
+        int i3 = this.mIndex;
+        MotionLayout motionLayout = this.mMotionLayout;
+        if (i < i3) {
+            motionLayout.transitionToState(this.mPreviousState, this.mAnimateTargetDelay);
         } else {
-            this.mMotionLayout.transitionToState(this.mNextState, this.mAnimateTargetDelay);
+            motionLayout.transitionToState(this.mNextState, this.mAnimateTargetDelay);
         }
     }
 
@@ -286,15 +288,17 @@ public class Carousel extends MotionHelper {
         } else if (i == this.mPreviousState) {
             this.mIndex = i2 - 1;
         }
-        if (this.mInfiniteCarousel) {
-            if (this.mIndex >= this.mAdapter.count()) {
+        boolean z = this.mInfiniteCarousel;
+        int i3 = this.mIndex;
+        if (z) {
+            if (i3 >= this.mAdapter.count()) {
                 this.mIndex = 0;
             }
             if (this.mIndex < 0) {
                 this.mIndex = this.mAdapter.count() - 1;
             }
         } else {
-            if (this.mIndex >= this.mAdapter.count()) {
+            if (i3 >= this.mAdapter.count()) {
                 this.mIndex = this.mAdapter.count() - 1;
             }
             if (this.mIndex < 0) {
@@ -400,10 +404,11 @@ public class Carousel extends MotionHelper {
                     } else {
                         updateViewVisibility(view, 0);
                     }
-                    if (i2 % this.mAdapter.count() == 0) {
-                        this.mAdapter.populate(view, 0);
+                    int count = i2 % this.mAdapter.count();
+                    Adapter adapter2 = this.mAdapter;
+                    if (count == 0) {
+                        adapter2.populate(view, 0);
                     } else {
-                        Adapter adapter2 = this.mAdapter;
                         adapter2.populate(view, adapter2.count() + (i2 % this.mAdapter.count()));
                     }
                 } else if (i2 >= this.mAdapter.count()) {
@@ -437,7 +442,7 @@ public class Carousel extends MotionHelper {
             this.mMotionLayout.post(new Runnable() { // from class: androidx.constraintlayout.helper.widget.Carousel$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Carousel.this.m8740xc943cdea();
+                    Carousel.this.m8037xc943cdea();
                 }
             });
         } else if (i5 == this.mIndex) {
@@ -446,30 +451,38 @@ public class Carousel extends MotionHelper {
         if (this.mBackwardTransition == -1 || this.mForwardTransition == -1) {
             Log.w(TAG, "No backward or forward transitions defined for Carousel!");
         } else if (!this.mInfiniteCarousel) {
-            int count = this.mAdapter.count();
-            if (this.mIndex == 0) {
-                enableTransition(this.mBackwardTransition, false);
+            int count2 = this.mAdapter.count();
+            int i6 = this.mIndex;
+            int i7 = this.mBackwardTransition;
+            if (i6 == 0) {
+                enableTransition(i7, false);
             } else {
-                enableTransition(this.mBackwardTransition, true);
+                enableTransition(i7, true);
                 this.mMotionLayout.setTransition(this.mBackwardTransition);
             }
-            if (this.mIndex == count - 1) {
-                enableTransition(this.mForwardTransition, false);
+            int i8 = this.mIndex;
+            int i9 = count2 - 1;
+            int i10 = this.mForwardTransition;
+            if (i8 == i9) {
+                enableTransition(i10, false);
                 return;
             }
-            enableTransition(this.mForwardTransition, true);
+            enableTransition(i10, true);
             this.mMotionLayout.setTransition(this.mForwardTransition);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateItems$0$androidx-constraintlayout-helper-widget-Carousel  reason: not valid java name */
-    public /* synthetic */ void m8740xc943cdea() {
+    public /* synthetic */ void m8037xc943cdea() {
         this.mMotionLayout.setTransitionDuration(this.mAnimateTargetDelay);
-        if (this.mTargetIndex < this.mIndex) {
-            this.mMotionLayout.transitionToState(this.mPreviousState, this.mAnimateTargetDelay);
+        int i = this.mTargetIndex;
+        int i2 = this.mIndex;
+        MotionLayout motionLayout = this.mMotionLayout;
+        if (i < i2) {
+            motionLayout.transitionToState(this.mPreviousState, this.mAnimateTargetDelay);
         } else {
-            this.mMotionLayout.transitionToState(this.mNextState, this.mAnimateTargetDelay);
+            motionLayout.transitionToState(this.mNextState, this.mAnimateTargetDelay);
         }
     }
 }

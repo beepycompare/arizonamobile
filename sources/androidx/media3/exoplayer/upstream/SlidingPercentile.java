@@ -96,17 +96,23 @@ public class SlidingPercentile {
         ensureSortedByValue();
         float f2 = f * this.totalWeight;
         int i = 0;
-        for (int i2 = 0; i2 < this.samples.size(); i2++) {
-            Sample sample = this.samples.get(i2);
-            i += sample.weight;
-            if (i >= f2) {
-                return sample.value;
+        int i2 = 0;
+        while (true) {
+            int size = this.samples.size();
+            ArrayList<Sample> arrayList2 = this.samples;
+            if (i < size) {
+                Sample sample = arrayList2.get(i);
+                i2 += sample.weight;
+                if (i2 >= f2) {
+                    return sample.value;
+                }
+                i++;
+            } else if (arrayList2.isEmpty()) {
+                return Float.NaN;
+            } else {
+                return this.samples.get(arrayList.size() - 1).value;
             }
         }
-        if (this.samples.isEmpty()) {
-            return Float.NaN;
-        }
-        return this.samples.get(arrayList.size() - 1).value;
     }
 
     private void ensureSortedByIndex() {

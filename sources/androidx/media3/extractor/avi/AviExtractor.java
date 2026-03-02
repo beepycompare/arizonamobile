@@ -136,16 +136,18 @@ public final class AviExtractor implements Extractor {
                 extractorInput.readFully(this.scratch.getData(), 0, 12);
                 this.scratch.setPosition(0);
                 this.chunkHeaderHolder.populateWithListHeaderFrom(this.scratch);
-                if (this.chunkHeaderHolder.listType != 1819436136) {
-                    throw ParserException.createForMalformedContainer("hdrl expected, found: " + this.chunkHeaderHolder.listType, null);
+                int i = this.chunkHeaderHolder.listType;
+                ChunkHeaderHolder chunkHeaderHolder = this.chunkHeaderHolder;
+                if (i != 1819436136) {
+                    throw ParserException.createForMalformedContainer("hdrl expected, found: " + chunkHeaderHolder.listType, null);
                 }
-                this.hdrlSize = this.chunkHeaderHolder.size;
+                this.hdrlSize = chunkHeaderHolder.size;
                 this.state = 2;
                 return 0;
             case 2:
-                int i = this.hdrlSize - 4;
-                ParsableByteArray parsableByteArray = new ParsableByteArray(i);
-                extractorInput.readFully(parsableByteArray.getData(), 0, i);
+                int i2 = this.hdrlSize - 4;
+                ParsableByteArray parsableByteArray = new ParsableByteArray(i2);
+                extractorInput.readFully(parsableByteArray.getData(), 0, i2);
                 parseHdrlBody(parsableByteArray);
                 this.state = 3;
                 return 0;
@@ -298,10 +300,12 @@ public final class AviExtractor implements Extractor {
             chunkReader2.commitIndex();
         }
         this.seekMapHasBeenOutput = true;
-        if (this.chunkReaders.length == 0) {
-            this.extractorOutput.seekMap(new SeekMap.Unseekable(this.durationUs));
+        int length = this.chunkReaders.length;
+        ExtractorOutput extractorOutput = this.extractorOutput;
+        if (length == 0) {
+            extractorOutput.seekMap(new SeekMap.Unseekable(this.durationUs));
         } else {
-            this.extractorOutput.seekMap(new AviSeekMap(this.durationUs));
+            extractorOutput.seekMap(new AviSeekMap(this.durationUs));
         }
     }
 
@@ -341,13 +345,14 @@ public final class AviExtractor implements Extractor {
             extractorInput.peekFully(this.scratch.getData(), 0, 12);
             this.scratch.setPosition(0);
             int readLittleEndianInt = this.scratch.readLittleEndianInt();
+            ParsableByteArray parsableByteArray = this.scratch;
             if (readLittleEndianInt == 1414744396) {
-                this.scratch.setPosition(8);
+                parsableByteArray.setPosition(8);
                 extractorInput.skipFully(this.scratch.readLittleEndianInt() != 1769369453 ? 8 : 12);
                 extractorInput.resetPeekPosition();
                 return 0;
             }
-            int readLittleEndianInt2 = this.scratch.readLittleEndianInt();
+            int readLittleEndianInt2 = parsableByteArray.readLittleEndianInt();
             if (readLittleEndianInt == 1263424842) {
                 this.pendingReposition = extractorInput.getPosition() + readLittleEndianInt2 + 8;
                 return 0;

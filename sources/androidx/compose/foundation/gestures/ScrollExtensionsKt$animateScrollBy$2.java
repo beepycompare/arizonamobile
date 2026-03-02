@@ -58,9 +58,7 @@ public final class ScrollExtensionsKt$animateScrollBy$2 extends SuspendLambda im
             if (SuspendAnimationKt.animate$default(0.0f, f, 0.0f, animationSpec, new Function2() { // from class: androidx.compose.foundation.gestures.ScrollExtensionsKt$animateScrollBy$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = ScrollExtensionsKt$animateScrollBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
-                    return invokeSuspend$lambda$0;
+                    return ScrollExtensionsKt$animateScrollBy$2.invokeSuspend$lambda$0(Ref.FloatRef.this, scrollScope, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
                 }
             }, this, 4, null) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -73,7 +71,7 @@ public final class ScrollExtensionsKt$animateScrollBy$2 extends SuspendLambda im
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(Ref.FloatRef floatRef, ScrollScope scrollScope, float f, float f2) {
         floatRef.element += scrollScope.scrollBy(f - floatRef.element);
         return Unit.INSTANCE;

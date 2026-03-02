@@ -66,7 +66,7 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
         return Float.valueOf(getFloatValue());
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit component2$lambda$0(SnapshotMutableFloatStateImpl snapshotMutableFloatStateImpl, float f) {
         snapshotMutableFloatStateImpl.setFloatValue(f);
         return Unit.INSTANCE;
@@ -77,9 +77,7 @@ public class SnapshotMutableFloatStateImpl extends StateObjectImpl implements Mu
         return new Function1() { // from class: androidx.compose.runtime.SnapshotMutableFloatStateImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit component2$lambda$0;
-                component2$lambda$0 = SnapshotMutableFloatStateImpl.component2$lambda$0(SnapshotMutableFloatStateImpl.this, ((Float) obj).floatValue());
-                return component2$lambda$0;
+                return SnapshotMutableFloatStateImpl.component2$lambda$0(SnapshotMutableFloatStateImpl.this, ((Float) obj).floatValue());
             }
         };
     }

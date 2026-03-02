@@ -83,11 +83,12 @@ public class CircleIndicator extends BaseCircleIndicator {
                 if (count == CircleIndicator.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator.this.mLastPosition < count) {
-                    CircleIndicator circleIndicator = CircleIndicator.this;
+                int i = CircleIndicator.this.mLastPosition;
+                CircleIndicator circleIndicator = CircleIndicator.this;
+                if (i < count) {
                     circleIndicator.mLastPosition = circleIndicator.mViewpager.getCurrentItem();
                 } else {
-                    CircleIndicator.this.mLastPosition = -1;
+                    circleIndicator.mLastPosition = -1;
                 }
                 CircleIndicator.this.createIndicators();
             }
@@ -125,11 +126,12 @@ public class CircleIndicator extends BaseCircleIndicator {
                 if (count == CircleIndicator.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator.this.mLastPosition < count) {
-                    CircleIndicator circleIndicator = CircleIndicator.this;
+                int i = CircleIndicator.this.mLastPosition;
+                CircleIndicator circleIndicator = CircleIndicator.this;
+                if (i < count) {
                     circleIndicator.mLastPosition = circleIndicator.mViewpager.getCurrentItem();
                 } else {
-                    CircleIndicator.this.mLastPosition = -1;
+                    circleIndicator.mLastPosition = -1;
                 }
                 CircleIndicator.this.createIndicators();
             }
@@ -167,11 +169,12 @@ public class CircleIndicator extends BaseCircleIndicator {
                 if (count == CircleIndicator.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator.this.mLastPosition < count) {
-                    CircleIndicator circleIndicator = CircleIndicator.this;
+                int i2 = CircleIndicator.this.mLastPosition;
+                CircleIndicator circleIndicator = CircleIndicator.this;
+                if (i2 < count) {
                     circleIndicator.mLastPosition = circleIndicator.mViewpager.getCurrentItem();
                 } else {
-                    CircleIndicator.this.mLastPosition = -1;
+                    circleIndicator.mLastPosition = -1;
                 }
                 CircleIndicator.this.createIndicators();
             }
@@ -209,11 +212,12 @@ public class CircleIndicator extends BaseCircleIndicator {
                 if (count == CircleIndicator.this.getChildCount()) {
                     return;
                 }
-                if (CircleIndicator.this.mLastPosition < count) {
-                    CircleIndicator circleIndicator = CircleIndicator.this;
+                int i22 = CircleIndicator.this.mLastPosition;
+                CircleIndicator circleIndicator = CircleIndicator.this;
+                if (i22 < count) {
                     circleIndicator.mLastPosition = circleIndicator.mViewpager.getCurrentItem();
                 } else {
-                    CircleIndicator.this.mLastPosition = -1;
+                    circleIndicator.mLastPosition = -1;
                 }
                 CircleIndicator.this.createIndicators();
             }

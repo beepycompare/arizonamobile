@@ -54,10 +54,11 @@ public class FieldData implements Cloneable {
                 if (extension != fieldData.cachedExtension) {
                     return false;
                 }
-                if (!extension.clazz.isArray()) {
-                    return this.value.equals(fieldData.value);
-                }
+                boolean isArray = extension.clazz.isArray();
                 Object obj2 = this.value;
+                if (!isArray) {
+                    return obj2.equals(fieldData.value);
+                }
                 if (obj2 instanceof byte[]) {
                     return Arrays.equals((byte[]) obj2, (byte[]) fieldData.value);
                 }
@@ -151,7 +152,7 @@ public class FieldData implements Cloneable {
     }
 
     /* renamed from: clone */
-    public final FieldData m10238clone() {
+    public final FieldData m9177clone() {
         FieldData fieldData = new FieldData();
         try {
             fieldData.cachedExtension = this.cachedExtension;
@@ -164,7 +165,7 @@ public class FieldData implements Cloneable {
             Object obj = this.value;
             if (obj != null) {
                 if (obj instanceof MessageNano) {
-                    fieldData.value = ((MessageNano) obj).mo10236clone();
+                    fieldData.value = ((MessageNano) obj).mo9175clone();
                     return fieldData;
                 } else if (obj instanceof byte[]) {
                     fieldData.value = ((byte[]) obj).clone();
@@ -199,7 +200,7 @@ public class FieldData implements Cloneable {
                         MessageNano[] messageNanoArr2 = new MessageNano[messageNanoArr.length];
                         fieldData.value = messageNanoArr2;
                         while (i < messageNanoArr.length) {
-                            messageNanoArr2[i] = messageNanoArr[i].mo10236clone();
+                            messageNanoArr2[i] = messageNanoArr[i].mo9175clone();
                             i++;
                         }
                     }

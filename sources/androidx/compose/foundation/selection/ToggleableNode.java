@@ -33,9 +33,7 @@ public final class ToggleableNode extends ClickableNode {
         super(mutableInteractionSource, indicationNodeFactory, z2, z3, null, role, new Function0() { // from class: androidx.compose.foundation.selection.ToggleableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = ToggleableNode._init_$lambda$0(Function1.this, z);
-                return _init_$lambda$0;
+                return ToggleableNode._init_$lambda$0(Function1.this, z);
             }
         }, null);
         this.value = z;
@@ -43,20 +41,18 @@ public final class ToggleableNode extends ClickableNode {
         this._onClick = new Function0() { // from class: androidx.compose.foundation.selection.ToggleableNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit _onClick$lambda$0;
-                _onClick$lambda$0 = ToggleableNode._onClick$lambda$0(ToggleableNode.this);
-                return _onClick$lambda$0;
+                return ToggleableNode._onClick$lambda$0(ToggleableNode.this);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(Function1 function1, boolean z) {
         function1.invoke(Boolean.valueOf(!z));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _onClick$lambda$0(ToggleableNode toggleableNode) {
         toggleableNode.onValueChange.invoke(Boolean.valueOf(!toggleableNode.value));
         return Unit.INSTANCE;
@@ -67,13 +63,13 @@ public final class ToggleableNode extends ClickableNode {
     }
 
     /* renamed from: update-O2vRcR0  reason: not valid java name */
-    public final void m1263updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function1<? super Boolean, Unit> function1) {
+    public final void m1107updateO2vRcR0(boolean z, MutableInteractionSource mutableInteractionSource, IndicationNodeFactory indicationNodeFactory, boolean z2, boolean z3, Role role, Function1<? super Boolean, Unit> function1) {
         if (this.value != z) {
             this.value = z;
             SemanticsModifierNodeKt.invalidateSemantics(this);
         }
         this.onValueChange = function1;
-        super.m357updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, this._onClick);
+        super.m314updateO2vRcR0(mutableInteractionSource, indicationNodeFactory, z2, z3, (String) null, role, this._onClick);
     }
 
     @Override // androidx.compose.foundation.AbstractClickableNode
@@ -87,14 +83,12 @@ public final class ToggleableNode extends ClickableNode {
         SemanticsPropertiesKt.onFillData$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.selection.ToggleableNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applyAdditionalSemantics$lambda$1;
-                applyAdditionalSemantics$lambda$1 = ToggleableNode.applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver.this, (FillableData) obj);
-                return Boolean.valueOf(applyAdditionalSemantics$lambda$1);
+                return Boolean.valueOf(ToggleableNode.applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver.this, (FillableData) obj));
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applyAdditionalSemantics$lambda$1(SemanticsPropertyReceiver semanticsPropertyReceiver, FillableData fillableData) {
         Boolean booleanValue = fillableData.getBooleanValue();
         if (booleanValue != null) {

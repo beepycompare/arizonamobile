@@ -114,10 +114,12 @@ public final class SeekableTransitionState$seekTo$3 extends SuspendLambda implem
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
-                if (!Intrinsics.areEqual(this.$targetState, this.$oldTargetState)) {
-                    this.this$0.moveAnimationToInitialState();
+                boolean areEqual = Intrinsics.areEqual(this.$targetState, this.$oldTargetState);
+                SeekableTransitionState<S> seekableTransitionState = this.this$0;
+                if (!areEqual) {
+                    seekableTransitionState.moveAnimationToInitialState();
                 } else {
-                    ((SeekableTransitionState) this.this$0).currentAnimation = null;
+                    ((SeekableTransitionState) seekableTransitionState).currentAnimation = null;
                     if (Intrinsics.areEqual(this.this$0.getCurrentState(), this.$targetState)) {
                         return Unit.INSTANCE;
                     }

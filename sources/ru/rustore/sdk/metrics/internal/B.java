@@ -20,9 +20,9 @@ import org.json.JSONObject;
 public final class B {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0835w f1572a;
-    public final C0836x b;
-    public final C0838z c;
+    public final C0834w f1572a;
+    public final C0835x b;
+    public final C0837z c;
     public final A d;
 
     /* loaded from: classes6.dex */
@@ -43,7 +43,7 @@ public final class B {
         }
     }
 
-    public B(C0835w migrationDtoVer1Factory, C0836x migrationDtoVer1Serializer, C0838z migrationDtoVer2Mapper, A migrationDtoVer2Serializer) {
+    public B(C0834w migrationDtoVer1Factory, C0835x migrationDtoVer1Serializer, C0837z migrationDtoVer2Mapper, A migrationDtoVer2Serializer) {
         Intrinsics.checkNotNullParameter(migrationDtoVer1Factory, "migrationDtoVer1Factory");
         Intrinsics.checkNotNullParameter(migrationDtoVer1Serializer, "migrationDtoVer1Serializer");
         Intrinsics.checkNotNullParameter(migrationDtoVer2Mapper, "migrationDtoVer2Mapper");
@@ -64,15 +64,15 @@ public final class B {
             int columnIndexOrThrow = rawQuery.getColumnIndexOrThrow(CommonUrlParts.UUID);
             int columnIndexOrThrow2 = rawQuery.getColumnIndexOrThrow("metrics_event");
             while (rawQuery.moveToNext()) {
-                C0835w c0835w = b.f1572a;
+                C0834w c0834w = b.f1572a;
                 String value = rawQuery.getString(columnIndexOrThrow);
                 Intrinsics.checkNotNullExpressionValue(value, "cursor.getString(uuidColumnIndex)");
                 Intrinsics.checkNotNullParameter(value, "value");
                 byte[] blob = rawQuery.getBlob(columnIndexOrThrow2);
                 Intrinsics.checkNotNullExpressionValue(blob, "cursor.getBlob(serializedMetricsEventColumnIndex)");
                 String decodeToString = StringsKt.decodeToString(blob);
-                c0835w.getClass();
-                arrayList.add(C0835w.a(value, decodeToString));
+                c0834w.getClass();
+                arrayList.add(C0834w.a(value, decodeToString));
             }
             Unit unit = Unit.INSTANCE;
             CloseableKt.closeFinally(rawQuery, null);
@@ -83,15 +83,15 @@ public final class B {
             ArrayList arrayList2 = new ArrayList();
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                C0834v dto = (C0834v) it.next();
-                C0838z c0838z = b.c;
-                c0838z.getClass();
+                C0833v dto = (C0833v) it.next();
+                C0837z c0837z = b.c;
+                c0837z.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
                 String str = dto.f1627a;
                 String str2 = dto.b;
                 Map<String, String> map = dto.c;
-                c0838z.f1629a.getClass();
-                C0837y dto2 = new C0837y(str, str2, map, System.currentTimeMillis());
+                c0837z.f1629a.getClass();
+                C0836y dto2 = new C0836y(str, str2, map, System.currentTimeMillis());
                 b.b.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
                 JSONObject jSONObject = new JSONObject();
@@ -106,7 +106,7 @@ public final class B {
                 byte[] bytes = jSONObject3.getBytes(Charsets.UTF_8);
                 Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
                 Intrinsics.checkNotNullParameter(bytes, "<this>");
-                String joinToString$default = ArraysKt.joinToString$default(bytes, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0814a.f1600a, 30, (Object) null);
+                String joinToString$default = ArraysKt.joinToString$default(bytes, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0813a.f1600a, 30, (Object) null);
                 b.d.getClass();
                 Intrinsics.checkNotNullParameter(dto2, "dto");
                 JSONObject jSONObject4 = new JSONObject();
@@ -123,7 +123,7 @@ public final class B {
                 Intrinsics.checkNotNullExpressionValue(bytes2, "this as java.lang.String).getBytes(charset)");
                 Intrinsics.checkNotNullParameter(bytes2, "<this>");
                 arrayList2.add(dto.f1627a);
-                sb.append("\n                WHEN metrics_event = x'" + joinToString$default + "' THEN x'" + ArraysKt.joinToString$default(bytes2, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0814a.f1600a, 30, (Object) null) + "'\n            ");
+                sb.append("\n                WHEN metrics_event = x'" + joinToString$default + "' THEN x'" + ArraysKt.joinToString$default(bytes2, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0813a.f1600a, 30, (Object) null) + "'\n            ");
                 i = 0;
                 b = this;
             }

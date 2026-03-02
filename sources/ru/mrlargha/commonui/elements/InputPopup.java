@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 /* compiled from: InputPopup.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018J\u0010\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u001a\u001a\u00020\u0013H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/InputPopup;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "textInput", "Landroid/widget/EditText;", "button", "Lcom/google/android/material/button/MaterialButton;", "passwordToggle", "Landroid/widget/ImageButton;", "targetID", "bindID", "", "id", "isPassword", "", "bindText", "", "setPasswordMode", "commitResult", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u0000 \u001b2\u00020\u0001:\u0001\u001bB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001e\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018J\u0010\u0010\u0019\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u001a\u001a\u00020\u0013H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/InputPopup;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "textInput", "Landroid/widget/EditText;", "button", "Lcom/google/android/material/button/MaterialButton;", "passwordToggle", "Landroid/widget/ImageButton;", "targetID", "bindID", "", "id", "isPassword", "", "bindText", "", "setPasswordMode", "commitResult", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InputPopup extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -52,9 +52,7 @@ public final class InputPopup extends SAMPUIElement {
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.InputPopup$$ExternalSyntheticLambda0
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = InputPopup._init_$lambda$0(targetActivity, this, textView, i2, keyEvent);
-                return _init_$lambda$0;
+                return InputPopup._init_$lambda$0(targetActivity, this, textView, i2, keyEvent);
             }
         });
         materialButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.InputPopup$$ExternalSyntheticLambda1
@@ -72,14 +70,12 @@ public final class InputPopup extends SAMPUIElement {
         editText.setOnKeyListener(new View.OnKeyListener() { // from class: ru.mrlargha.commonui.elements.InputPopup$$ExternalSyntheticLambda3
             @Override // android.view.View.OnKeyListener
             public final boolean onKey(View view, int i2, KeyEvent keyEvent) {
-                boolean _init_$lambda$3;
-                _init_$lambda$3 = InputPopup._init_$lambda$3(InputPopup.this, view, i2, keyEvent);
-                return _init_$lambda$3;
+                return InputPopup._init_$lambda$3(InputPopup.this, view, i2, keyEvent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(Activity activity, InputPopup inputPopup, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
             SAMPUIElement.Companion.hideKeyboard(activity);
@@ -91,19 +87,19 @@ public final class InputPopup extends SAMPUIElement {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$1(Activity activity, InputPopup inputPopup, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         inputPopup.commitResult();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$2(InputPopup inputPopup, View view) {
         inputPopup.setPasswordMode(inputPopup.textInput.getTransformationMethod() == null);
         inputPopup.passwordToggle.setImageResource(inputPopup.textInput.getTransformationMethod() == null ? R.drawable.eye : R.drawable.eye_off);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$3(InputPopup inputPopup, View view, int i, KeyEvent keyEvent) {
         if (i == 66 && keyEvent.isCtrlPressed()) {
             inputPopup.commitResult();
@@ -128,10 +124,11 @@ public final class InputPopup extends SAMPUIElement {
     }
 
     private final void setPasswordMode(boolean z) {
+        EditText editText = this.textInput;
         if (z) {
-            this.textInput.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         } else {
-            this.textInput.setTransformationMethod(null);
+            editText.setTransformationMethod(null);
         }
     }
 
@@ -141,7 +138,7 @@ public final class InputPopup extends SAMPUIElement {
     }
 
     /* compiled from: InputPopup.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/elements/InputPopup$Companion;", "", "<init>", "()V", "passwordDialogsCount", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/elements/InputPopup$Companion;", "", "<init>", "()V", "passwordDialogsCount", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

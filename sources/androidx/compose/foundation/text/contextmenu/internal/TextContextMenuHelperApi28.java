@@ -35,19 +35,19 @@ import kotlin.jvm.functions.Function3;
 public final class TextContextMenuHelperApi28 {
     public static final TextContextMenuHelperApi28 INSTANCE = new TextContextMenuHelperApi28();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconBox$lambda$1(TextContextMenuHelperApi28 textContextMenuHelperApi28, Icon icon, int i, Composer composer, int i2) {
         textContextMenuHelperApi28.IconBox(icon, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconBox$lambda$2(TextContextMenuHelperApi28 textContextMenuHelperApi28, Icon icon, int i, Composer composer, int i2) {
         textContextMenuHelperApi28.IconBox(icon, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconBox$lambda$4(TextContextMenuHelperApi28 textContextMenuHelperApi28, Drawable drawable, int i, Composer composer, int i2) {
         textContextMenuHelperApi28.IconBox(drawable, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -66,21 +66,19 @@ public final class TextContextMenuHelperApi28 {
             Function2 function2 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    String textClassificationItem$lambda$0;
-                    textClassificationItem$lambda$0 = TextContextMenuHelperApi28.textClassificationItem$lambda$0(textClassification, (Composer) obj, ((Integer) obj2).intValue());
-                    return textClassificationItem$lambda$0;
+                    return TextContextMenuHelperApi28.textClassificationItem$lambda$0(textClassification, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             final Drawable icon = textClassification.getIcon();
             ContextMenuScope.item$default(contextMenuScope, function2, null, false, icon != null ? ComposableLambdaKt.composableLambdaInstance(-1123224187, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$2$1
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1508invokeek8zF_U(color.m5434unboximpl(), composer, num.intValue());
+                    m1314invokeek8zF_U(color.m4782unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                public final void m1508invokeek8zF_U(long j, Composer composer, int i) {
+                public final void m1314invokeek8zF_U(long j, Composer composer, int i) {
                     ComposerKt.sourceInformation(composer, "CN(color:c#ui.graphics.Color)247@9913L13:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                     if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
                         composer.skipToGroupEnd();
@@ -97,9 +95,7 @@ public final class TextContextMenuHelperApi28 {
             }) : null, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit textClassificationItem$lambda$2;
-                    textClassificationItem$lambda$2 = TextContextMenuHelperApi28.textClassificationItem$lambda$2(context, textClassification);
-                    return textClassificationItem$lambda$2;
+                    return TextContextMenuHelperApi28.textClassificationItem$lambda$2(context, textClassification);
                 }
             }, 6, null);
             return;
@@ -109,21 +105,19 @@ public final class TextContextMenuHelperApi28 {
         Function2 function22 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                String textClassificationItem$lambda$3;
-                textClassificationItem$lambda$3 = TextContextMenuHelperApi28.textClassificationItem$lambda$3(remoteAction, (Composer) obj, ((Integer) obj2).intValue());
-                return textClassificationItem$lambda$3;
+                return TextContextMenuHelperApi28.textClassificationItem$lambda$3(remoteAction, (Composer) obj, ((Integer) obj2).intValue());
             }
         };
         if (z || remoteAction.shouldShowIcon()) {
             r3 = ComposableLambdaKt.composableLambdaInstance(-1261173016, true, new Function3<Color, Composer, Integer, Unit>() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$textClassificationItem$5
                 @Override // kotlin.jvm.functions.Function3
                 public /* bridge */ /* synthetic */ Unit invoke(Color color, Composer composer, Integer num) {
-                    m1509invokeek8zF_U(color.m5434unboximpl(), composer, num.intValue());
+                    m1315invokeek8zF_U(color.m4782unboximpl(), composer, num.intValue());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-ek8zF_U  reason: not valid java name */
-                public final void m1509invokeek8zF_U(long j, Composer composer, int i) {
+                public final void m1315invokeek8zF_U(long j, Composer composer, int i) {
                     ComposerKt.sourceInformation(composer, "CN(it:c#ui.graphics.Color)257@10329L20:DefaultTextContextMenuDropdownProvider.android.kt#18dpbw");
                     if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
                         composer.skipToGroupEnd();
@@ -142,14 +136,12 @@ public final class TextContextMenuHelperApi28 {
         ContextMenuScope.item$default(contextMenuScope, function22, null, false, r3, new Function0() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit textClassificationItem$lambda$4;
-                textClassificationItem$lambda$4 = TextContextMenuHelperApi28.textClassificationItem$lambda$4(remoteAction);
-                return textClassificationItem$lambda$4;
+                return TextContextMenuHelperApi28.textClassificationItem$lambda$4(remoteAction);
             }
         }, 6, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String textClassificationItem$lambda$0(TextClassification textClassification, Composer composer, int i) {
         composer.startReplaceGroup(950061013);
         if (ComposerKt.isTraceInProgress()) {
@@ -163,13 +155,13 @@ public final class TextContextMenuHelperApi28 {
         return valueOf;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit textClassificationItem$lambda$2(Context context, TextClassification textClassification) {
         TextClassificationHelperApi28.INSTANCE.sendLegacyIntent(context, textClassification);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final String textClassificationItem$lambda$3(RemoteAction remoteAction, Composer composer, int i) {
         composer.startReplaceGroup(-1376593684);
         if (ComposerKt.isTraceInProgress()) {
@@ -183,7 +175,7 @@ public final class TextContextMenuHelperApi28 {
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit textClassificationItem$lambda$4(RemoteAction remoteAction) {
         TextClassificationHelperApi28.INSTANCE.sendPendingIntent(remoteAction.getActionIntent());
         return Unit.INSTANCE;
@@ -237,9 +229,7 @@ public final class TextContextMenuHelperApi28 {
                     function2 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit IconBox$lambda$1;
-                            IconBox$lambda$1 = TextContextMenuHelperApi28.IconBox$lambda$1(TextContextMenuHelperApi28.this, icon, i, (Composer) obj, ((Integer) obj2).intValue());
-                            return IconBox$lambda$1;
+                            return TextContextMenuHelperApi28.IconBox$lambda$1(TextContextMenuHelperApi28.this, icon, i, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     };
                     endRestartGroup.updateScope(function2);
@@ -252,9 +242,7 @@ public final class TextContextMenuHelperApi28 {
             function2 = new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit IconBox$lambda$2;
-                    IconBox$lambda$2 = TextContextMenuHelperApi28.IconBox$lambda$2(TextContextMenuHelperApi28.this, icon, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return IconBox$lambda$2;
+                    return TextContextMenuHelperApi28.IconBox$lambda$2(TextContextMenuHelperApi28.this, icon, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             };
             endRestartGroup.updateScope(function2);
@@ -277,7 +265,7 @@ public final class TextContextMenuHelperApi28 {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(257732500, i2, -1, "androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28.IconBox (DefaultTextContextMenuDropdownProvider.android.kt:274)");
             }
-            Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m436getIconSizeD9Ej5fM());
+            Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(Modifier.Companion, ContextMenuSpec.INSTANCE.m381getIconSizeD9Ej5fM());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1427166931, "CC(remember):DefaultTextContextMenuDropdownProvider.android.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(drawable);
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -293,7 +281,7 @@ public final class TextContextMenuHelperApi28 {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BoxKt.Box(DrawModifierKt.drawBehind(m976size3ABfNKs, (Function1) rememberedValue), startRestartGroup, 0);
+            BoxKt.Box(DrawModifierKt.drawBehind(m864size3ABfNKs, (Function1) rememberedValue), startRestartGroup, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -303,9 +291,7 @@ public final class TextContextMenuHelperApi28 {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.contextmenu.internal.TextContextMenuHelperApi28$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit IconBox$lambda$4;
-                    IconBox$lambda$4 = TextContextMenuHelperApi28.IconBox$lambda$4(TextContextMenuHelperApi28.this, drawable, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return IconBox$lambda$4;
+                    return TextContextMenuHelperApi28.IconBox$lambda$4(TextContextMenuHelperApi28.this, drawable, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -314,7 +300,7 @@ public final class TextContextMenuHelperApi28 {
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit IconBox$lambda$3$0(Drawable drawable, DrawScope drawScope) {
         Canvas canvas = drawScope.getDrawContext().getCanvas();
-        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo6005getSizeNHjbRc() & 4294967295L)));
+        drawable.setBounds(0, 0, (int) Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() >> 32)), (int) Float.intBitsToFloat((int) (drawScope.mo5346getSizeNHjbRc() & 4294967295L)));
         drawable.draw(AndroidCanvas_androidKt.getNativeCanvas(canvas));
         return Unit.INSTANCE;
     }

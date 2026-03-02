@@ -30,20 +30,21 @@ public final class AudioBecomingNoisyManager {
         if (z == this.isEnabled) {
             return;
         }
+        HandlerWrapper handlerWrapper = this.backgroundHandler;
         if (z) {
-            this.backgroundHandler.post(new Runnable() { // from class: androidx.media3.common.audio.AudioBecomingNoisyManager$$ExternalSyntheticLambda0
+            handlerWrapper.post(new Runnable() { // from class: androidx.media3.common.audio.AudioBecomingNoisyManager$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioBecomingNoisyManager.this.m8886xc439ca36();
+                    AudioBecomingNoisyManager.this.m8159xc439ca36();
                 }
             });
             this.isEnabled = true;
             return;
         }
-        this.backgroundHandler.post(new Runnable() { // from class: androidx.media3.common.audio.AudioBecomingNoisyManager$$ExternalSyntheticLambda1
+        handlerWrapper.post(new Runnable() { // from class: androidx.media3.common.audio.AudioBecomingNoisyManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                AudioBecomingNoisyManager.this.m8887xc5701d15();
+                AudioBecomingNoisyManager.this.m8160xc5701d15();
             }
         });
         this.isEnabled = false;
@@ -51,13 +52,13 @@ public final class AudioBecomingNoisyManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$0$androidx-media3-common-audio-AudioBecomingNoisyManager  reason: not valid java name */
-    public /* synthetic */ void m8886xc439ca36() {
+    public /* synthetic */ void m8159xc439ca36() {
         this.context.registerReceiver(this.receiver, new IntentFilter("android.media.AUDIO_BECOMING_NOISY"));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setEnabled$1$androidx-media3-common-audio-AudioBecomingNoisyManager  reason: not valid java name */
-    public /* synthetic */ void m8887xc5701d15() {
+    public /* synthetic */ void m8160xc5701d15() {
         this.context.unregisterReceiver(this.receiver);
     }
 

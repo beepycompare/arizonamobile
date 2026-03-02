@@ -27,12 +27,14 @@ public final class ResumeAwaitOnCompletion<T> extends JobNode {
         if (DebugKt.getASSERTIONS_ENABLED() && (state$kotlinx_coroutines_core instanceof Incomplete)) {
             throw new AssertionError();
         }
-        if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
+        boolean z = state$kotlinx_coroutines_core instanceof CompletedExceptionally;
+        CancellableContinuationImpl<T> cancellableContinuationImpl = this.continuation;
+        if (z) {
             Result.Companion companion = Result.Companion;
-            this.continuation.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(((CompletedExceptionally) state$kotlinx_coroutines_core).cause)));
+            cancellableContinuationImpl.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(((CompletedExceptionally) state$kotlinx_coroutines_core).cause)));
             return;
         }
         Result.Companion companion2 = Result.Companion;
-        this.continuation.resumeWith(Result.m10243constructorimpl(JobSupportKt.unboxState(state$kotlinx_coroutines_core)));
+        cancellableContinuationImpl.resumeWith(Result.m9182constructorimpl(JobSupportKt.unboxState(state$kotlinx_coroutines_core)));
     }
 }

@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 /* loaded from: classes4.dex */
 public final class zzb extends Thread {
     final CountDownLatch zza;
@@ -22,7 +22,7 @@ public final class zzb extends Thread {
     private final void zza() {
         AdvertisingIdClient advertisingIdClient = (AdvertisingIdClient) this.zzb.get();
         if (advertisingIdClient != null) {
-            advertisingIdClient.zza();
+            advertisingIdClient.zzc();
         }
     }
 

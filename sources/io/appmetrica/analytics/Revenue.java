@@ -1,9 +1,9 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0146be;
+import io.appmetrica.analytics.impl.C0145be;
 import io.appmetrica.analytics.impl.En;
 import java.util.Currency;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class Revenue {
     public final Currency currency;
     public final String payload;
@@ -12,9 +12,9 @@ public class Revenue {
     public final Integer quantity;
     public final Receipt receipt;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
-        private static final En g = new En(new C0146be("revenue currency"));
+        private static final En g = new En(new C0145be("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
         final long f287a;
@@ -59,12 +59,12 @@ public class Revenue {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Receipt {
         public final String data;
         public final String signature;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */

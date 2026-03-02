@@ -63,11 +63,11 @@ public final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m1456invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m1280invoked4ec7I(pressGestureScope, offset.m4537unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m1456invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m1280invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$scope, this.$pressedInteraction, this.$interactionSource, continuation);
             anonymousClass1.L$0 = pressGestureScope;
             anonymousClass1.J$0 = j;
@@ -273,15 +273,13 @@ public final class TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1
         Object detectTapAndPress = TapGestureDetectorKt.detectTapAndPress(pointerInputScope, new AnonymousClass1(this.$scope, this.$pressedInteraction, this.$interactionSource, null), new Function1() { // from class: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1.invoke$lambda$0(State.this, (Offset) obj);
-                return invoke$lambda$0;
+                return TextFieldPressGestureFilterKt$tapPressTextFieldModifier$1$2$1.invoke$lambda$0(State.this, (Offset) obj);
             }
         }, continuation);
         return detectTapAndPress == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapAndPress : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(State state, Offset offset) {
         ((Function1) state.getValue()).invoke(offset);
         return Unit.INSTANCE;

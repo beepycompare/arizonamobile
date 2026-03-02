@@ -122,9 +122,7 @@ public final class SplitAttributes {
                 Object compute = SpecificationComputer.Companion.startSpecification$default(companion, valueOf, str, VerificationMode.STRICT, null, 4, null).require("Ratio must be in range (0.0, 1.0). Use SplitType.expandContainers() instead of 0 or 1.", new Function1() { // from class: androidx.window.embedding.SplitAttributes$SplitType$Companion$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean ratio$lambda$0;
-                        ratio$lambda$0 = SplitAttributes.SplitType.Companion.ratio$lambda$0(f, ((Float) obj).floatValue());
-                        return Boolean.valueOf(ratio$lambda$0);
+                        return Boolean.valueOf(SplitAttributes.SplitType.Companion.ratio$lambda$0(f, ((Float) obj).floatValue()));
                     }
                 }).compute();
                 Intrinsics.checkNotNull(compute);
@@ -132,7 +130,7 @@ public final class SplitAttributes {
                 return new SplitType("ratio:" + floatValue, floatValue);
             }
 
-            /* JADX INFO: Access modifiers changed from: private */
+            /* JADX INFO: Access modifiers changed from: package-private */
             public static final boolean ratio$lambda$0(float f, float f2) {
                 double d = f;
                 return FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE <= d && d <= 1.0d && !ArraysKt.contains(new Float[]{Float.valueOf(0.0f), Float.valueOf(1.0f)}, Float.valueOf(f));

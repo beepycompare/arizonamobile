@@ -57,7 +57,7 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
             final Consumer<WindowLayoutInfo> consumer = new Consumer() { // from class: androidx.window.layout.WindowInfoTrackerImpl$windowLayoutInfo$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo9174trySendJP2dKIU((WindowLayoutInfo) obj2);
+                    ProducerScope.this.mo8396trySendJP2dKIU((WindowLayoutInfo) obj2);
                 }
             };
             windowBackend = this.this$0.windowBackend;
@@ -67,9 +67,7 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
             if (ProduceKt.awaitClose(producerScope, new Function0() { // from class: androidx.window.layout.WindowInfoTrackerImpl$windowLayoutInfo$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$1;
-                    invokeSuspend$lambda$1 = WindowInfoTrackerImpl$windowLayoutInfo$1.invokeSuspend$lambda$1(WindowInfoTrackerImpl.this, consumer);
-                    return invokeSuspend$lambda$1;
+                    return WindowInfoTrackerImpl$windowLayoutInfo$1.invokeSuspend$lambda$1(WindowInfoTrackerImpl.this, consumer);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -82,7 +80,7 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(WindowInfoTrackerImpl windowInfoTrackerImpl, Consumer consumer) {
         WindowBackend windowBackend;
         windowBackend = windowInfoTrackerImpl.windowBackend;

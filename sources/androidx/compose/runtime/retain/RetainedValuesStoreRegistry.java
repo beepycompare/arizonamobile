@@ -20,13 +20,13 @@ public final class RetainedValuesStoreRegistry {
     private final MutableScatterMap<Object, ManagedRetainedValuesStore> childStores = new MutableScatterMap<>(0, 1, null);
     private boolean isDisposed;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LocalRetainedValuesStoreProvider$lambda$0(RetainedValuesStoreRegistry retainedValuesStoreRegistry, Object obj, Function2 function2, int i, Composer composer, int i2) {
         retainedValuesStoreRegistry.LocalRetainedValuesStoreProvider(obj, function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean dispose$lambda$0(Object obj) {
         return true;
     }
@@ -62,9 +62,7 @@ public final class RetainedValuesStoreRegistry {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.retain.RetainedValuesStoreRegistry$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
-                    Unit LocalRetainedValuesStoreProvider$lambda$0;
-                    LocalRetainedValuesStoreProvider$lambda$0 = RetainedValuesStoreRegistry.LocalRetainedValuesStoreProvider$lambda$0(RetainedValuesStoreRegistry.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
-                    return LocalRetainedValuesStoreProvider$lambda$0;
+                    return RetainedValuesStoreRegistry.LocalRetainedValuesStoreProvider$lambda$0(RetainedValuesStoreRegistry.this, obj, function2, i, (Composer) obj2, ((Integer) obj3).intValue());
                 }
             });
         }
@@ -133,9 +131,7 @@ public final class RetainedValuesStoreRegistry {
         clearChildren(new Function1() { // from class: androidx.compose.runtime.retain.RetainedValuesStoreRegistry$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean dispose$lambda$0;
-                dispose$lambda$0 = RetainedValuesStoreRegistry.dispose$lambda$0(obj);
-                return Boolean.valueOf(dispose$lambda$0);
+                return Boolean.valueOf(RetainedValuesStoreRegistry.dispose$lambda$0(obj));
             }
         });
     }

@@ -52,13 +52,20 @@ public final class CachedContent {
     }
 
     public boolean lockRange(long j, long j2) {
-        for (int i = 0; i < this.lockedRanges.size(); i++) {
-            if (this.lockedRanges.get(i).intersects(j, j2)) {
-                return false;
+        int i = 0;
+        while (true) {
+            int size = this.lockedRanges.size();
+            ArrayList<Range> arrayList = this.lockedRanges;
+            if (i < size) {
+                if (arrayList.get(i).intersects(j, j2)) {
+                    return false;
+                }
+                i++;
+            } else {
+                arrayList.add(new Range(j, j2));
+                return true;
             }
         }
-        this.lockedRanges.add(new Range(j, j2));
-        return true;
     }
 
     public void unlockRange(long j) {

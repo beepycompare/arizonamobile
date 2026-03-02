@@ -495,13 +495,14 @@ public class IconCompat extends CustomVersionedParcelable {
                 return;
             case 1:
             case 5:
+                Object obj = this.mObj1;
                 if (z) {
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                    ((Bitmap) this.mObj1).compress(Bitmap.CompressFormat.PNG, 90, byteArrayOutputStream);
+                    ((Bitmap) obj).compress(Bitmap.CompressFormat.PNG, 90, byteArrayOutputStream);
                     this.mData = byteArrayOutputStream.toByteArray();
                     return;
                 }
-                this.mParcelable = (Parcelable) this.mObj1;
+                this.mParcelable = (Parcelable) obj;
                 return;
             case 2:
                 this.mData = ((String) this.mObj1).getBytes(Charset.forName("UTF-16"));

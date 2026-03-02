@@ -22,7 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0001¢\u0006\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"InputConsumingOverlay", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V", "extensions-compose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class InputConsumingOverlayKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit InputConsumingOverlay$lambda$1(Modifier modifier, int i, Composer composer, int i2) {
         InputConsumingOverlay(modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -154,9 +154,7 @@ public final class InputConsumingOverlayKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.arkivanov.decompose.extensions.compose.utils.InputConsumingOverlayKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit InputConsumingOverlay$lambda$1;
-                    InputConsumingOverlay$lambda$1 = InputConsumingOverlayKt.InputConsumingOverlay$lambda$1(Modifier.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return InputConsumingOverlay$lambda$1;
+                    return InputConsumingOverlayKt.InputConsumingOverlay$lambda$1(Modifier.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

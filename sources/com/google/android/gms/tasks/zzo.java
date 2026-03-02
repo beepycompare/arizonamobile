@@ -1,7 +1,9 @@
 package com.google.android.gms.tasks;
 
+import java.util.Objects;
 import java.util.concurrent.CancellationException;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+import java.util.concurrent.Executor;
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zzo implements Runnable {
     final /* synthetic */ Task zza;
@@ -9,28 +11,31 @@ final class zzo implements Runnable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzo(zzp zzpVar, Task task) {
-        this.zzb = zzpVar;
         this.zza = task;
+        Objects.requireNonNull(zzpVar);
+        this.zzb = zzpVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        SuccessContinuation successContinuation;
         try {
-            successContinuation = this.zzb.zzb;
-            Task then = successContinuation.then(this.zza.getResult());
+            Task then = this.zzb.zzc().then(this.zza.getResult());
+            zzp zzpVar = this.zzb;
             if (then == null) {
-                this.zzb.onFailure(new NullPointerException("Continuation returned null"));
+                zzpVar.onFailure(new NullPointerException("Continuation returned null"));
                 return;
             }
-            then.addOnSuccessListener(TaskExecutors.zza, this.zzb);
-            then.addOnFailureListener(TaskExecutors.zza, this.zzb);
-            then.addOnCanceledListener(TaskExecutors.zza, this.zzb);
+            Executor executor = TaskExecutors.zza;
+            then.addOnSuccessListener(executor, zzpVar);
+            then.addOnFailureListener(executor, zzpVar);
+            then.addOnCanceledListener(executor, zzpVar);
         } catch (RuntimeExecutionException e) {
-            if (e.getCause() instanceof Exception) {
-                this.zzb.onFailure((Exception) e.getCause());
+            boolean z = e.getCause() instanceof Exception;
+            zzp zzpVar2 = this.zzb;
+            if (z) {
+                zzpVar2.onFailure((Exception) e.getCause());
             } else {
-                this.zzb.onFailure(e);
+                zzpVar2.onFailure(e);
             }
         } catch (CancellationException unused) {
             this.zzb.onCanceled();

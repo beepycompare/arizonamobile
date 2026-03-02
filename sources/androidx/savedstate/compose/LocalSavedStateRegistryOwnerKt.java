@@ -25,7 +25,7 @@ public final class LocalSavedStateRegistryOwnerKt {
         r1 = null;
      */
     static {
-        Object m10243constructorimpl;
+        Object m9182constructorimpl;
         ProvidableCompositionLocal providableCompositionLocal;
         try {
             Result.Companion companion = Result.Companion;
@@ -50,26 +50,24 @@ public final class LocalSavedStateRegistryOwnerKt {
                     }
                 }
             }
-            m10243constructorimpl = Result.m10243constructorimpl(providableCompositionLocal);
+            m9182constructorimpl = Result.m9182constructorimpl(providableCompositionLocal);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+            m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
         }
-        ProvidableCompositionLocal<SavedStateRegistryOwner> providableCompositionLocal2 = Result.m10249isFailureimpl(m10243constructorimpl) ? null : m10243constructorimpl;
+        ProvidableCompositionLocal<SavedStateRegistryOwner> providableCompositionLocal2 = Result.m9188isFailureimpl(m9182constructorimpl) ? null : m9182constructorimpl;
         if (providableCompositionLocal2 == null) {
             providableCompositionLocal2 = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.savedstate.compose.LocalSavedStateRegistryOwnerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    SavedStateRegistryOwner LocalSavedStateRegistryOwner$lambda$3$lambda$2;
-                    LocalSavedStateRegistryOwner$lambda$3$lambda$2 = LocalSavedStateRegistryOwnerKt.LocalSavedStateRegistryOwner$lambda$3$lambda$2();
-                    return LocalSavedStateRegistryOwner$lambda$3$lambda$2;
+                    return LocalSavedStateRegistryOwnerKt.LocalSavedStateRegistryOwner$lambda$3$lambda$2();
                 }
             });
         }
         LocalSavedStateRegistryOwner = providableCompositionLocal2;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedStateRegistryOwner LocalSavedStateRegistryOwner$lambda$3$lambda$2() {
         throw new IllegalStateException("CompositionLocal LocalSavedStateRegistryOwner not present".toString());
     }

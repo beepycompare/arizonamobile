@@ -245,13 +245,13 @@ public abstract class RoomDatabase {
         this.typeConverters.put(kclass, converter);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0123 A[LOOP:0: B:49:0x0123->B:54:0x012c, LOOP_START, PHI: r0 
-      PHI: (r0v30 androidx.sqlite.db.SupportSQLiteOpenHelper) = (r0v29 androidx.sqlite.db.SupportSQLiteOpenHelper), (r0v32 androidx.sqlite.db.SupportSQLiteOpenHelper) binds: [B:47:0x011f, B:54:0x012c] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x017a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0121 A[LOOP:0: B:47:0x0121->B:52:0x012a, LOOP_START, PHI: r0 
+      PHI: (r0v30 androidx.sqlite.db.SupportSQLiteOpenHelper) = (r0v29 androidx.sqlite.db.SupportSQLiteOpenHelper), (r0v32 androidx.sqlite.db.SupportSQLiteOpenHelper) binds: [B:45:0x011d, B:52:0x012a] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0178 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -281,20 +281,20 @@ public abstract class RoomDatabase {
             }
             this.internalTransactionExecutor = new TransactionExecutor(executor);
             this.coroutineScope = CoroutineScopeKt.CoroutineScope(configuration.queryCoroutineContext.plus(SupervisorKt.SupervisorJob((Job) configuration.queryCoroutineContext.get(Job.Key))));
-            if (inCompatibilityMode()) {
-                CoroutineScope coroutineScope2 = this.coroutineScope;
+            boolean inCompatibilityMode = inCompatibilityMode();
+            CoroutineScope coroutineScope2 = this.coroutineScope;
+            if (inCompatibilityMode) {
                 if (coroutineScope2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("coroutineScope");
                     coroutineScope2 = null;
                 }
                 coroutineContext = coroutineScope2.getCoroutineContext().plus(coroutineDispatcher.limitedParallelism(1));
             } else {
-                CoroutineScope coroutineScope3 = this.coroutineScope;
-                if (coroutineScope3 == null) {
+                if (coroutineScope2 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("coroutineScope");
-                    coroutineScope3 = null;
+                    coroutineScope2 = null;
                 }
-                coroutineContext = coroutineScope3.getCoroutineContext();
+                coroutineContext = coroutineScope2.getCoroutineContext();
             }
             this.transactionContext = coroutineContext;
         } else {
@@ -352,11 +352,11 @@ public abstract class RoomDatabase {
                 if (autoClosingRoomOpenHelper != null) {
                     this.autoCloser = autoClosingRoomOpenHelper.getAutoCloser$room_runtime();
                     AutoCloser autoCloser$room_runtime = autoClosingRoomOpenHelper.getAutoCloser$room_runtime();
-                    CoroutineScope coroutineScope4 = this.coroutineScope;
-                    if (coroutineScope4 == null) {
+                    CoroutineScope coroutineScope3 = this.coroutineScope;
+                    if (coroutineScope3 == null) {
                         Intrinsics.throwUninitializedPropertyAccessException("coroutineScope");
                     } else {
-                        coroutineScope = coroutineScope4;
+                        coroutineScope = coroutineScope3;
                     }
                     autoCloser$room_runtime.initCoroutineScope(coroutineScope);
                     getInvalidationTracker().setAutoCloser$room_runtime(autoClosingRoomOpenHelper.getAutoCloser$room_runtime());
@@ -409,16 +409,14 @@ public abstract class RoomDatabase {
             return new RoomConnectionManager(configuration, new Function1() { // from class: androidx.room.RoomDatabase$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SupportSQLiteOpenHelper createConnectionManager$lambda$2;
-                    createConnectionManager$lambda$2 = RoomDatabase.createConnectionManager$lambda$2(RoomDatabase.this, (DatabaseConfiguration) obj);
-                    return createConnectionManager$lambda$2;
+                    return RoomDatabase.createConnectionManager$lambda$2(RoomDatabase.this, (DatabaseConfiguration) obj);
                 }
             }, new RoomDatabase$createConnectionManager$2(this));
         }
         return new RoomConnectionManager(configuration, roomOpenDelegate, new RoomDatabase$createConnectionManager$3(this));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SupportSQLiteOpenHelper createConnectionManager$lambda$2(RoomDatabase roomDatabase, DatabaseConfiguration config) {
         Intrinsics.checkNotNullParameter(config, "config");
         return roomDatabase.createOpenHelper(config);
@@ -690,7 +688,7 @@ public abstract class RoomDatabase {
         getOpenHelper().getWritableDatabase().setTransactionSuccessful();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit runInTransaction$lambda$10(Runnable runnable) {
         runnable.run();
         return Unit.INSTANCE;
@@ -701,9 +699,7 @@ public abstract class RoomDatabase {
         runInTransaction(new Function0() { // from class: androidx.room.RoomDatabase$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit runInTransaction$lambda$10;
-                runInTransaction$lambda$10 = RoomDatabase.runInTransaction$lambda$10(body);
-                return runInTransaction$lambda$10;
+                return RoomDatabase.runInTransaction$lambda$10(body);
             }
         });
     }
@@ -734,14 +730,12 @@ public abstract class RoomDatabase {
         return (T) DBUtil.performBlocking(this, false, true, new Function1() { // from class: androidx.room.RoomDatabase$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Object runInTransaction$lambda$12;
-                runInTransaction$lambda$12 = RoomDatabase.runInTransaction$lambda$12(Function0.this, (SQLiteConnection) obj);
-                return runInTransaction$lambda$12;
+                return RoomDatabase.runInTransaction$lambda$12(Function0.this, (SQLiteConnection) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object runInTransaction$lambda$12(Function0 function0, SQLiteConnection it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return function0.invoke();
@@ -1124,12 +1118,15 @@ public abstract class RoomDatabase {
             SQLiteDriver sQLiteDriver = this.driver;
             if (sQLiteDriver == null && this.supportOpenHelperFactory == null) {
                 queryInterceptorOpenHelperFactory = new FrameworkSQLiteOpenHelperFactory();
-            } else if (sQLiteDriver == null) {
-                queryInterceptorOpenHelperFactory = this.supportOpenHelperFactory;
-            } else if (this.supportOpenHelperFactory != null) {
-                throw new IllegalArgumentException("A RoomDatabase cannot be configured with both a SQLiteDriver and a SupportOpenHelper.Factory.");
             } else {
-                queryInterceptorOpenHelperFactory = null;
+                SupportSQLiteOpenHelper.Factory factory2 = this.supportOpenHelperFactory;
+                if (sQLiteDriver == null) {
+                    queryInterceptorOpenHelperFactory = factory2;
+                } else if (factory2 != null) {
+                    throw new IllegalArgumentException("A RoomDatabase cannot be configured with both a SQLiteDriver and a SupportOpenHelper.Factory.");
+                } else {
+                    queryInterceptorOpenHelperFactory = null;
+                }
             }
             boolean z = this.autoCloseTimeout > 0;
             boolean z2 = (this.copyFromAssetPath == null && this.copyFromFile == null && this.copyFromInputStream == null) ? false : true;

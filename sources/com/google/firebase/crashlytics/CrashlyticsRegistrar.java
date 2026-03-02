@@ -42,7 +42,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
                 buildCrashlytics = CrashlyticsRegistrar.this.buildCrashlytics(componentContainer);
                 return buildCrashlytics;
             }
-        }).eagerInDefaultApp().build(), LibraryVersionComponent.create(LIBRARY_NAME, "20.0.3"));
+        }).eagerInDefaultApp().build(), LibraryVersionComponent.create(LIBRARY_NAME, "20.0.4"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

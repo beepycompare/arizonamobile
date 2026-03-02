@@ -149,7 +149,7 @@ public final class SharedElementEntry implements LayerRenderer, RememberObserver
     }
 
     public final Rect calculateTargetBounds(Rect rect) {
-        return getUserState().getConfig$animation().m137alternativeTargetBoundsInTransitionScopeAfterRemovalcSwnlzA(getUserState(), rect, IntSizeKt.m8441toSizeozmzZPI(getSharedElement().getScope().getLookaheadRoot$animation().mo6883getSizeYbymL2g()));
+        return getUserState().getConfig$animation().m124alternativeTargetBoundsInTransitionScopeAfterRemovalcSwnlzA(getUserState(), rect, IntSizeKt.m7738toSizeozmzZPI(getSharedElement().getScope().getLookaheadRoot$animation().mo6224getSizeYbymL2g()));
     }
 
     public final Path getClipPathInOverlay$animation() {
@@ -167,23 +167,23 @@ public final class SharedElementEntry implements LayerRenderer, RememberObserver
         if (layer == null || (currentBounds = getSharedElement().getState$animation().getCurrentBounds()) == null || !getShouldRenderInOverlay$animation()) {
             return;
         }
-        long m5214getTopLeftF1C5BW0 = currentBounds.m5214getTopLeftF1C5BW0();
-        float intBitsToFloat = Float.intBitsToFloat((int) (m5214getTopLeftF1C5BW0 >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (m5214getTopLeftF1C5BW0 & 4294967295L));
+        long m4562getTopLeftF1C5BW0 = currentBounds.m4562getTopLeftF1C5BW0();
+        float intBitsToFloat = Float.intBitsToFloat((int) (m4562getTopLeftF1C5BW0 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (m4562getTopLeftF1C5BW0 & 4294967295L));
         Path path = this.clipPathInOverlay;
         if (path != null) {
-            int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+            int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
             DrawContext drawContext = drawScope.getDrawContext();
-            long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+            long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
             drawContext.getCanvas().save();
             try {
-                drawContext.getTransform().mo5928clipPathmtrdDE(path, m5413getIntersectrtfAjoo);
+                drawContext.getTransform().mo5269clipPathmtrdDE(path, m4761getIntersectrtfAjoo);
                 drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);
                 GraphicsLayerKt.drawLayer(drawScope, layer);
                 return;
             } finally {
                 drawContext.getCanvas().restore();
-                drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+                drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             }
         }
         drawScope.getDrawContext().getTransform().translate(intBitsToFloat, intBitsToFloat2);

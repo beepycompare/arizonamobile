@@ -62,7 +62,7 @@ import ru.mrlargha.feature.workshop.presentation.PotionsScreen;
 import ru.mrlargha.feature.workshop.presentation.WorkshopScreen;
 import ru.mrlargha.rodina_ui.screens.excavation.ExcavationScreen;
 /* compiled from: CommonElementsFactory.kt */
-@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lru/mrlargha/feature/common_factory/CommonElementsFactory;", "Lru/mrlargha/commonui/core/UIElementFactory;", "<init>", "()V", "common-factory_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lru/mrlargha/feature/common_factory/CommonElementsFactory;", "Lru/mrlargha/commonui/core/UIElementFactory;", "<init>", "()V", "common-factory"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CommonElementsFactory extends UIElementFactory {
     public CommonElementsFactory() {

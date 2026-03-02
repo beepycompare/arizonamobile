@@ -64,13 +64,15 @@ public class UrlStrategy {
             return Arrays.asList(Constants.GDPR_URL, GDPR_URL_IO);
         }
         ArrayList arrayList = new ArrayList();
-        if (this.useSubdomains) {
-            Iterator<String> it = this.urlStrategyDomains.iterator();
+        boolean z = this.useSubdomains;
+        List<String> list2 = this.urlStrategyDomains;
+        if (z) {
+            Iterator<String> it = list2.iterator();
             while (it.hasNext()) {
                 arrayList.add("https://gdpr." + it.next());
             }
         } else {
-            Iterator<String> it2 = this.urlStrategyDomains.iterator();
+            Iterator<String> it2 = list2.iterator();
             while (it2.hasNext()) {
                 arrayList.add("https://" + it2.next());
             }
@@ -84,13 +86,15 @@ public class UrlStrategy {
             return Arrays.asList(Constants.PURCHASE_VERIFICATION_URL, PURCHASE_VERIFICATION_URL_IO);
         }
         ArrayList arrayList = new ArrayList();
-        if (this.useSubdomains) {
-            Iterator<String> it = this.urlStrategyDomains.iterator();
+        boolean z = this.useSubdomains;
+        List<String> list2 = this.urlStrategyDomains;
+        if (z) {
+            Iterator<String> it = list2.iterator();
             while (it.hasNext()) {
                 arrayList.add("https://ssrv." + it.next());
             }
         } else {
-            Iterator<String> it2 = this.urlStrategyDomains.iterator();
+            Iterator<String> it2 = list2.iterator();
             while (it2.hasNext()) {
                 arrayList.add("https://" + it2.next());
             }
@@ -104,13 +108,15 @@ public class UrlStrategy {
             return Arrays.asList(Constants.SUBSCRIPTION_URL, SUBSCRIPTION_URL_IO);
         }
         ArrayList arrayList = new ArrayList();
-        if (this.useSubdomains) {
-            Iterator<String> it = this.urlStrategyDomains.iterator();
+        boolean z = this.useSubdomains;
+        List<String> list2 = this.urlStrategyDomains;
+        if (z) {
+            Iterator<String> it = list2.iterator();
             while (it.hasNext()) {
                 arrayList.add("https://subscription." + it.next());
             }
         } else {
-            Iterator<String> it2 = this.urlStrategyDomains.iterator();
+            Iterator<String> it2 = list2.iterator();
             while (it2.hasNext()) {
                 arrayList.add("https://" + it2.next());
             }

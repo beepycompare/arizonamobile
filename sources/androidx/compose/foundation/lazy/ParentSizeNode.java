@@ -58,31 +58,29 @@ public final class ParentSizeNode extends Modifier.Node implements LayoutModifie
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         State<Integer> state = this.widthState;
         int round = (state == null || state.getValue().intValue() == Integer.MAX_VALUE) ? Integer.MAX_VALUE : Math.round(state.getValue().floatValue() * this.fraction);
         State<Integer> state2 = this.heightState;
         int round2 = (state2 == null || state2.getValue().intValue() == Integer.MAX_VALUE) ? Integer.MAX_VALUE : Math.round(state2.getValue().floatValue() * this.fraction);
-        int m8213getMinWidthimpl = round != Integer.MAX_VALUE ? round : Constraints.m8213getMinWidthimpl(j);
-        int m8212getMinHeightimpl = round2 != Integer.MAX_VALUE ? round2 : Constraints.m8212getMinHeightimpl(j);
+        int m7510getMinWidthimpl = round != Integer.MAX_VALUE ? round : Constraints.m7510getMinWidthimpl(j);
+        int m7509getMinHeightimpl = round2 != Integer.MAX_VALUE ? round2 : Constraints.m7509getMinHeightimpl(j);
         if (round == Integer.MAX_VALUE) {
-            round = Constraints.m8211getMaxWidthimpl(j);
+            round = Constraints.m7508getMaxWidthimpl(j);
         }
         if (round2 == Integer.MAX_VALUE) {
-            round2 = Constraints.m8210getMaxHeightimpl(j);
+            round2 = Constraints.m7507getMaxHeightimpl(j);
         }
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.Constraints(m8213getMinWidthimpl, round, m8212getMinHeightimpl, round2));
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.ParentSizeNode$$ExternalSyntheticLambda0
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.Constraints(m7510getMinWidthimpl, round, m7509getMinHeightimpl, round2));
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.lazy.ParentSizeNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$2;
-                measure_3p2s80s$lambda$2 = ParentSizeNode.measure_3p2s80s$lambda$2(Placeable.this, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$2;
+                return ParentSizeNode.measure_3p2s80s$lambda$2(Placeable.this, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$2(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;

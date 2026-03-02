@@ -191,114 +191,117 @@ public final class Relay implements Lockable {
             this.fileOperator = new FileOperator(channel);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:22:0x0053, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0051, code lost:
+            r8 = r20.this$0;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:22:0x0055, code lost:
             if (r0 != true) goto L21;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:23:0x0055, code lost:
-            r6 = java.lang.Math.min(r21, r19.this$0.getUpstreamPos() - r19.sourcePos);
-            r2 = r19.fileOperator;
+        /* JADX WARN: Code restructure failed: missing block: B:23:0x0057, code lost:
+            r6 = java.lang.Math.min(r22, r8.getUpstreamPos() - r20.sourcePos);
+            r2 = r20.fileOperator;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
-            r2.read(r19.sourcePos + 32, r20, r6);
-            r19.sourcePos += r6;
+            r2.read(r20.sourcePos + 32, r21, r6);
+            r20.sourcePos += r6;
          */
         /* JADX WARN: Code restructure failed: missing block: B:24:0x0072, code lost:
             return r6;
          */
         /* JADX WARN: Code restructure failed: missing block: B:26:0x0074, code lost:
-            r0 = r19.this$0.getUpstream();
+            r0 = r8.getUpstream();
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0);
-            r11 = r0.read(r19.this$0.getUpstreamBuffer(), r19.this$0.getBufferMaxSize());
+            r12 = r0.read(r20.this$0.getUpstreamBuffer(), r20.this$0.getBufferMaxSize());
          */
-        /* JADX WARN: Code restructure failed: missing block: B:27:0x008f, code lost:
-            if (r11 != (-1)) goto L35;
+        /* JADX WARN: Code restructure failed: missing block: B:27:0x008d, code lost:
+            if (r12 != (-1)) goto L35;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:28:0x0091, code lost:
-            r0 = r19.this$0;
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x008f, code lost:
+            r0 = r20.this$0;
             r0.commit(r0.getUpstreamPos());
          */
-        /* JADX WARN: Code restructure failed: missing block: B:29:0x009a, code lost:
-            r2 = r19.this$0;
+        /* JADX WARN: Code restructure failed: missing block: B:29:0x0098, code lost:
+            r2 = r20.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:30:0x009c, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:30:0x009a, code lost:
             monitor-enter(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:31:0x009d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:31:0x009b, code lost:
             r2.setUpstreamReader(null);
             r0 = r2;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
             r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:32:0x00af, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:32:0x00ad, code lost:
             monitor-exit(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:33:0x00b0, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:33:0x00ae, code lost:
             return -1;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:37:0x00b4, code lost:
-            r6 = java.lang.Math.min(r11, r21);
-            r19.this$0.getUpstreamBuffer().copyTo(r20, 0, r6);
-            r19.sourcePos += r6;
-            r13 = r19.fileOperator;
-            kotlin.jvm.internal.Intrinsics.checkNotNull(r13);
-            r13.write(r19.this$0.getUpstreamPos() + 32, r19.this$0.getUpstreamBuffer().clone(), r11);
-            r4 = r19.this$0;
+        /* JADX WARN: Code restructure failed: missing block: B:37:0x00b2, code lost:
+            r6 = java.lang.Math.min(r12, r22);
+            r20.this$0.getUpstreamBuffer().copyTo(r21, 0, r6);
+            r20.sourcePos += r6;
+            r14 = r20.fileOperator;
+            kotlin.jvm.internal.Intrinsics.checkNotNull(r14);
+            r14.write(r20.this$0.getUpstreamPos() + 32, r20.this$0.getUpstreamBuffer().clone(), r12);
+            r4 = r20.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:38:0x00ea, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:38:0x00e8, code lost:
             monitor-enter(r4);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:39:0x00eb, code lost:
-            r4.getBuffer().write(r4.getUpstreamBuffer(), r11);
+        /* JADX WARN: Code restructure failed: missing block: B:39:0x00e9, code lost:
+            r4.getBuffer().write(r4.getUpstreamBuffer(), r12);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:40:0x0104, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:40:0x0102, code lost:
             if (r4.getBuffer().size() <= r4.getBufferMaxSize()) goto L40;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:41:0x0106, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:41:0x0104, code lost:
             r4.getBuffer().skip(r4.getBuffer().size() - r4.getBufferMaxSize());
          */
-        /* JADX WARN: Code restructure failed: missing block: B:42:0x011a, code lost:
-            r4.setUpstreamPos(r4.getUpstreamPos() + r11);
+        /* JADX WARN: Code restructure failed: missing block: B:42:0x0118, code lost:
+            r4.setUpstreamPos(r4.getUpstreamPos() + r12);
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:43:0x0124, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:43:0x0122, code lost:
             monitor-exit(r4);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:44:0x0125, code lost:
-            r2 = r19.this$0;
+        /* JADX WARN: Code restructure failed: missing block: B:44:0x0123, code lost:
+            r2 = r20.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:45:0x0127, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:45:0x0125, code lost:
             monitor-enter(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:46:0x0128, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:46:0x0126, code lost:
             r2.setUpstreamReader(null);
             r0 = r2;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r0, "null cannot be cast to non-null type java.lang.Object");
             r0.notifyAll();
             r0 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:47:0x013a, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:47:0x0138, code lost:
             monitor-exit(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:48:0x013b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:48:0x0139, code lost:
             return r6;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:55:0x0142, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:55:0x0140, code lost:
             r0 = move-exception;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:56:0x0143, code lost:
-            r2 = r19.this$0;
+        /* JADX WARN: Code restructure failed: missing block: B:56:0x0141, code lost:
+            r2 = r20.this$0;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:57:0x0145, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:57:0x0143, code lost:
             monitor-enter(r2);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:58:0x0146, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:58:0x0144, code lost:
             r2.setUpstreamReader(null);
             r3 = r2;
             kotlin.jvm.internal.Intrinsics.checkNotNull(r3, "null cannot be cast to non-null type java.lang.Object");
             r3.notifyAll();
             r3 = kotlin.Unit.INSTANCE;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:60:0x0159, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:60:0x0157, code lost:
             throw r0;
          */
         @Override // okio.Source

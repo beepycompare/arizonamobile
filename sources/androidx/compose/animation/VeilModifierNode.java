@@ -69,7 +69,7 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
 
     @Override // androidx.compose.ui.node.DrawModifierNode
     public void draw(ContentDrawScope contentDrawScope) {
-        long m5257getZeroNHjbRc;
+        long m4605getZeroNHjbRc;
         contentDrawScope.drawContent();
         State<Color> animate = this.veilAnimation.animate(new Function1<Transition.Segment<EnterExitState>, FiniteAnimationSpec<Color>>() { // from class: androidx.compose.animation.VeilModifierNode$draw$veilColor$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -136,31 +136,31 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Color invoke(EnterExitState enterExitState) {
-                return Color.m5414boximpl(m173invokevNxB06k(enterExitState));
+                return Color.m4762boximpl(m160invokevNxB06k(enterExitState));
             }
 
             /* renamed from: invoke-vNxB06k  reason: not valid java name */
-            public final long m173invokevNxB06k(EnterExitState enterExitState) {
+            public final long m160invokevNxB06k(EnterExitState enterExitState) {
                 int i = WhenMappings.$EnumSwitchMapping$0[enterExitState.ordinal()];
                 if (i == 1) {
                     Veil veil = VeilModifierNode.this.getEnter().getData$animation().getVeil();
                     if (veil != null) {
-                        return veil.m172getTargetColor0d7_KjU();
+                        return veil.m159getTargetColor0d7_KjU();
                     }
                     Veil veil2 = VeilModifierNode.this.getExit().getData$animation().getVeil();
-                    return veil2 != null ? veil2.m171getInitialColor0d7_KjU() : Color.Companion.m5459getTransparent0d7_KjU();
+                    return veil2 != null ? veil2.m158getInitialColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
                 } else if (i == 2) {
                     Veil veil3 = VeilModifierNode.this.getEnter().getData$animation().getVeil();
-                    return veil3 != null ? veil3.m171getInitialColor0d7_KjU() : Color.Companion.m5459getTransparent0d7_KjU();
+                    return veil3 != null ? veil3.m158getInitialColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
                 } else if (i != 3) {
                     throw new NoWhenBranchMatchedException();
                 } else {
                     Veil veil4 = VeilModifierNode.this.getExit().getData$animation().getVeil();
-                    return veil4 != null ? veil4.m172getTargetColor0d7_KjU() : Color.Companion.m5459getTransparent0d7_KjU();
+                    return veil4 != null ? veil4.m159getTargetColor0d7_KjU() : Color.Companion.m4807getTransparent0d7_KjU();
                 }
             }
         });
-        if (Color.m5426getAlphaimpl(animate.getValue().m5434unboximpl()) == 0.0f) {
+        if (Color.m4774getAlphaimpl(animate.getValue().m4782unboximpl()) == 0.0f) {
             return;
         }
         Veil veil = this.enter.getData$animation().getVeil();
@@ -171,16 +171,16 @@ final class VeilModifierNode extends Modifier.Node implements DrawModifierNode {
             LayoutCoordinates requireLayoutCoordinates = DelegatableNodeKt.requireLayoutCoordinates(this);
             LayoutCoordinates parentLayoutCoordinates = requireLayoutCoordinates.getParentLayoutCoordinates();
             if (parentLayoutCoordinates == null) {
-                m5257getZeroNHjbRc = Size.Companion.m5257getZeroNHjbRc();
+                m4605getZeroNHjbRc = Size.Companion.m4605getZeroNHjbRc();
             } else {
-                long mo6883getSizeYbymL2g = parentLayoutCoordinates.mo6883getSizeYbymL2g();
-                m5257getZeroNHjbRc = Size.m5239constructorimpl((Float.floatToRawIntBits((int) (mo6883getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6883getSizeYbymL2g >> 32)) << 32));
+                long mo6224getSizeYbymL2g = parentLayoutCoordinates.mo6224getSizeYbymL2g();
+                m4605getZeroNHjbRc = Size.m4587constructorimpl((Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g >> 32)) << 32));
             }
             long positionInParent = LayoutCoordinatesKt.positionInParent(requireLayoutCoordinates);
             ContentDrawScope contentDrawScope2 = contentDrawScope;
-            DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m5434unboximpl(), Offset.m5171constructorimpl(positionInParent ^ (-9223372034707292160L)), m5257getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
+            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope2, animate.getValue().m4782unboximpl(), Offset.m4519constructorimpl(positionInParent ^ (-9223372034707292160L)), m4605getZeroNHjbRc, 0.0f, null, null, 0, 120, null);
             return;
         }
-        DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope, animate.getValue().m5434unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope, animate.getValue().m4782unboximpl(), 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
     }
 }

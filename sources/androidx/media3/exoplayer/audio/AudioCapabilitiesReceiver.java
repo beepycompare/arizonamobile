@@ -14,7 +14,7 @@ import androidx.media3.common.audio.AudioManagerCompat;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AudioCapabilitiesReceiver {
     private AudioAttributes audioAttributes;
     private AudioCapabilities audioCapabilities;
@@ -27,7 +27,7 @@ public final class AudioCapabilitiesReceiver {
     private boolean registered;
     private AudioDeviceInfo routedDevice;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         void onAudioCapabilitiesChanged(AudioCapabilities audioCapabilities);
     }
@@ -108,7 +108,7 @@ public final class AudioCapabilitiesReceiver {
         this.listener.onAudioCapabilitiesChanged(audioCapabilities);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class HdmiAudioPlugBroadcastReceiver extends BroadcastReceiver {
         private HdmiAudioPlugBroadcastReceiver() {
         }
@@ -123,7 +123,7 @@ public final class AudioCapabilitiesReceiver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class ExternalSurroundSoundSettingObserver extends ContentObserver {
         private final ContentResolver resolver;
         private final Uri settingUri;
@@ -149,7 +149,7 @@ public final class AudioCapabilitiesReceiver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class AudioDeviceCallback extends android.media.AudioDeviceCallback {
         private AudioDeviceCallback() {
         }

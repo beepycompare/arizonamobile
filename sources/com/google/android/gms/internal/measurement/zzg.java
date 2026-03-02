@@ -69,10 +69,11 @@ public final class zzg {
         if (this.zzd.containsKey(str)) {
             return;
         }
+        Map map = this.zzc;
         if (zzaoVar == null) {
-            this.zzc.remove(str);
+            map.remove(str);
         } else {
-            this.zzc.put(str, zzaoVar);
+            map.put(str, zzaoVar);
         }
     }
 

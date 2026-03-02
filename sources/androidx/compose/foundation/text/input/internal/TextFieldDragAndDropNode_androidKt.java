@@ -51,9 +51,7 @@ public final class TextFieldDragAndDropNode_androidKt {
         return DragAndDropNodeKt.DragAndDropTargetModifierNode(new Function1() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDragAndDropNode_androidKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean textFieldDragAndDropNode$lambda$0;
-                textFieldDragAndDropNode$lambda$0 = TextFieldDragAndDropNode_androidKt.textFieldDragAndDropNode$lambda$0(Function0.this, (DragAndDropEvent) obj);
-                return Boolean.valueOf(textFieldDragAndDropNode$lambda$0);
+                return Boolean.valueOf(TextFieldDragAndDropNode_androidKt.textFieldDragAndDropNode$lambda$0(Function0.this, (DragAndDropEvent) obj));
             }
         }, new DragAndDropTarget() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDragAndDropNode_androidKt$textFieldDragAndDropNode$2
             @Override // androidx.compose.ui.draganddrop.DragAndDropTarget
@@ -83,7 +81,7 @@ public final class TextFieldDragAndDropNode_androidKt {
                 DragEvent androidDragEvent = DragAndDrop_androidKt.toAndroidDragEvent(dragAndDropEvent);
                 Function1<Offset, Unit> function18 = function14;
                 if (function18 != null) {
-                    function18.invoke(Offset.m5168boximpl(Offset.m5171constructorimpl((Float.floatToRawIntBits(androidDragEvent.getX()) << 32) | (Float.floatToRawIntBits(androidDragEvent.getY()) & 4294967295L))));
+                    function18.invoke(Offset.m4516boximpl(Offset.m4519constructorimpl((Float.floatToRawIntBits(androidDragEvent.getX()) << 32) | (Float.floatToRawIntBits(androidDragEvent.getY()) & 4294967295L))));
                 }
             }
 
@@ -113,7 +111,7 @@ public final class TextFieldDragAndDropNode_androidKt {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

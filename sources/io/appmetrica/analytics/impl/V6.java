@@ -12,7 +12,7 @@ public final class V6 extends DatabaseScript {
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS preferences");
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS binary_data");
         sQLiteDatabase.execSQL("DROP TABLE IF EXISTS temp_cache");
-        for (ModuleServicesDatabase moduleServicesDatabase : C0449na.I.p().b()) {
+        for (ModuleServicesDatabase moduleServicesDatabase : C0448na.I.p().b()) {
             for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
                 sQLiteDatabase.execSQL(tableDescription.getDropTableScript());
             }

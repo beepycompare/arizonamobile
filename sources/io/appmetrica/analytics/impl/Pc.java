@@ -8,7 +8,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabas
 import java.util.List;
 import java.util.Map;
 /* loaded from: classes5.dex */
-public interface Pc extends InterfaceC0477od {
+public interface Pc extends InterfaceC0476od {
     List<ModuleServicesDatabase> b();
 
     /* synthetic */ Map c();

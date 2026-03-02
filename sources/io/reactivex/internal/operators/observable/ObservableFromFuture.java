@@ -29,7 +29,8 @@ public final class ObservableFromFuture<T> extends Observable<T> {
         }
         try {
             TimeUnit timeUnit = this.unit;
-            deferredScalarDisposable.complete(ObjectHelper.requireNonNull(timeUnit != null ? this.future.get(this.timeout, timeUnit) : this.future.get(), "Future returned null"));
+            Future<? extends T> future = this.future;
+            deferredScalarDisposable.complete(ObjectHelper.requireNonNull(timeUnit != null ? future.get(this.timeout, timeUnit) : future.get(), "Future returned null"));
         } catch (Throwable th) {
             Exceptions.throwIfFatal(th);
             if (deferredScalarDisposable.isDisposed()) {

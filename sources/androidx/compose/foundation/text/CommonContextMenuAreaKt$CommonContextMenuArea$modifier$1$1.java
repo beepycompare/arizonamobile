@@ -30,22 +30,22 @@ final class CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 extends S
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1 = new CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1(this.$selectionState, continuation);
-        commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1.J$0 = ((Offset) obj).m5189unboximpl();
+        commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1.J$0 = ((Offset) obj).m4537unboximpl();
         return commonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Offset offset, Continuation<? super Unit> continuation) {
-        return m1331invoke3MmeM6k(offset.m5189unboximpl(), continuation);
+        return m1165invoke3MmeM6k(offset.m4537unboximpl(), continuation);
     }
 
     /* renamed from: invoke-3MmeM6k  reason: not valid java name */
-    public final Object m1331invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
-        return ((CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1) create(Offset.m5168boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m1165invoke3MmeM6k(long j, Continuation<? super Unit> continuation) {
+        return ((CommonContextMenuAreaKt$CommonContextMenuArea$modifier$1$1) create(Offset.m4516boximpl(j), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0067, code lost:
-        if (r5.mo1834onShowContextMenu_2OEclM(r11.$selectionState.getTextFieldState$foundation().getVisualText().getText(), r11.$selectionState.getTextFieldState$foundation().getVisualText().m1537getSelectiond9O1mEE(), androidx.compose.ui.geometry.Offset.m5168boximpl(r3), r11) == r0) goto L16;
+        if (r5.mo1590onShowContextMenu_2OEclM(r11.$selectionState.getTextFieldState$foundation().getVisualText().getText(), r11.$selectionState.getTextFieldState$foundation().getVisualText().m1336getSelectiond9O1mEE(), androidx.compose.ui.geometry.Offset.m4516boximpl(r3), r11) == r0) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*

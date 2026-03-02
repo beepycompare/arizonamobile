@@ -34,14 +34,14 @@ public final class PasswordInputTransformation implements InputTransformation {
 
     @Override // androidx.compose.foundation.text.input.InputTransformation
     public void transformInput(TextFieldBuffer textFieldBuffer) {
-        if (textFieldBuffer.getChanges().getChangeCount() != 1 || TextRange.m7697getLengthimpl(textFieldBuffer.getChanges().mo1534getRangejx7JFs(0)) != 1 || textFieldBuffer.hasSelection()) {
+        if (textFieldBuffer.getChanges().getChangeCount() != 1 || TextRange.m6999getLengthimpl(textFieldBuffer.getChanges().mo1333getRangejx7JFs(0)) != 1 || textFieldBuffer.hasSelection()) {
             setRevealCodepointIndex(-1);
             return;
         }
-        int m7699getMinimpl = TextRange.m7699getMinimpl(textFieldBuffer.getChanges().mo1534getRangejx7JFs(0));
-        if (getRevealCodepointIndex$foundation() != m7699getMinimpl) {
+        int m7001getMinimpl = TextRange.m7001getMinimpl(textFieldBuffer.getChanges().mo1333getRangejx7JFs(0));
+        if (getRevealCodepointIndex$foundation() != m7001getMinimpl) {
             this.scheduleHide.invoke();
-            setRevealCodepointIndex(m7699getMinimpl);
+            setRevealCodepointIndex(m7001getMinimpl);
         }
     }
 

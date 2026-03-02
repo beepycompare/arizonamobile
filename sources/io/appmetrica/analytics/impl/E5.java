@@ -7,13 +7,13 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 public final class E5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0463o f561a;
+    public final C0462o f561a;
     public final IReporter b;
     public Context c;
     public final D5 d;
 
-    public E5(C0463o c0463o) {
-        this(c0463o, 0);
+    public E5(C0462o c0462o) {
+        this(c0462o, 0);
     }
 
     public final synchronized void a(Context context) {
@@ -25,14 +25,14 @@ public final class E5 {
         }
     }
 
-    public E5(C0463o c0463o, IReporter iReporter) {
-        this.f561a = c0463o;
+    public E5(C0462o c0462o, IReporter iReporter) {
+        this.f561a = c0462o;
         this.b = iReporter;
         this.d = new D5(this);
     }
 
-    public /* synthetic */ E5(C0463o c0463o, int i) {
-        this(c0463o, AbstractC0689x1.a());
+    public /* synthetic */ E5(C0462o c0462o, int i) {
+        this(c0462o, AbstractC0688x1.a());
     }
 
     public final synchronized Context a() {

@@ -208,11 +208,13 @@ public final class FlvExtractor implements Extractor {
     }
 
     private ParsableByteArray prepareTagData(ExtractorInput extractorInput) throws IOException {
-        if (this.tagDataSize > this.tagData.capacity()) {
-            ParsableByteArray parsableByteArray = this.tagData;
+        int i = this.tagDataSize;
+        int capacity = this.tagData.capacity();
+        ParsableByteArray parsableByteArray = this.tagData;
+        if (i > capacity) {
             parsableByteArray.reset(new byte[Math.max(parsableByteArray.capacity() * 2, this.tagDataSize)], 0);
         } else {
-            this.tagData.setPosition(0);
+            parsableByteArray.setPosition(0);
         }
         this.tagData.setLimit(this.tagDataSize);
         extractorInput.readFully(this.tagData.getData(), 0, this.tagDataSize);

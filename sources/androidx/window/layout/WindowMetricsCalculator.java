@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import androidx.window.core.Bounds;
-import androidx.window.layout.WindowMetricsCalculator;
 import androidx.window.layout.util.WindowMetricsCompatHelper;
 import kotlin.Metadata;
 import kotlin.NotImplementedError;
@@ -52,23 +51,29 @@ public interface WindowMetricsCalculator {
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private static Function1<? super WindowMetricsCalculator, ? extends WindowMetricsCalculator> decorator = new Function1() { // from class: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda1
+            /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+                jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.layout.WindowMetricsCalculator.Companion.decorator$lambda$0(androidx.window.layout.WindowMetricsCalculator):androidx.window.layout.WindowMetricsCalculator
+                	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+                	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+                Caused by: java.lang.NullPointerException
+                */
             @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                return WindowMetricsCalculator.Companion.decorator$lambda$0((WindowMetricsCalculator) obj);
+            public final java.lang.Object invoke(java.lang.Object r1) {
+                /*
+                    r0 = this;
+                    androidx.window.layout.WindowMetricsCalculator r1 = (androidx.window.layout.WindowMetricsCalculator) r1
+                    androidx.window.layout.WindowMetricsCalculator r1 = androidx.window.layout.WindowMetricsCalculator.Companion.decorator$lambda$0(r1)
+                    return r1
+                */
+                throw new UnsupportedOperationException("Method not decompiled: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda1.invoke(java.lang.Object):java.lang.Object");
             }
         };
         private static final WindowMetricsCalculatorCompat windowMetricsCalculatorCompat = new WindowMetricsCalculatorCompat(null, 1, null);
 
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
+            java.lang.NullPointerException
             */
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.layout.WindowMetricsCalculator decorator$lambda$0(androidx.window.layout.WindowMetricsCalculator r1) {
             /*
                 java.lang.String r0 = "it"
@@ -79,15 +84,9 @@ public interface WindowMetricsCalculator {
         }
 
         /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-            java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
-            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
-            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
-            	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
+            java.lang.NullPointerException
             */
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final androidx.window.layout.WindowMetricsCalculator reset$lambda$1(androidx.window.layout.WindowMetricsCalculator r1) {
             /*
                 java.lang.String r0 = "it"
@@ -114,9 +113,21 @@ public interface WindowMetricsCalculator {
         @JvmStatic
         public final void reset() {
             decorator = new Function1() { // from class: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda0
+                /*  JADX ERROR: JadxRuntimeException in pass: InlineMethods
+                    jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: androidx.window.layout.WindowMetricsCalculator.Companion.reset$lambda$1(androidx.window.layout.WindowMetricsCalculator):androidx.window.layout.WindowMetricsCalculator
+                    	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
+                    	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
+                    Caused by: java.lang.NullPointerException
+                    */
                 @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Object obj) {
-                    return WindowMetricsCalculator.Companion.reset$lambda$1((WindowMetricsCalculator) obj);
+                public final java.lang.Object invoke(java.lang.Object r1) {
+                    /*
+                        r0 = this;
+                        androidx.window.layout.WindowMetricsCalculator r1 = (androidx.window.layout.WindowMetricsCalculator) r1
+                        androidx.window.layout.WindowMetricsCalculator r1 = androidx.window.layout.WindowMetricsCalculator.Companion.reset$lambda$1(r1)
+                        return r1
+                    */
+                    throw new UnsupportedOperationException("Method not decompiled: androidx.window.layout.WindowMetricsCalculator$Companion$$ExternalSyntheticLambda0.invoke(java.lang.Object):java.lang.Object");
                 }
             };
         }

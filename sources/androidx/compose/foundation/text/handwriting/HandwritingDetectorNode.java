@@ -22,17 +22,15 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
     private final Lazy composeImm$delegate = LazyKt.lazy(LazyThreadSafetyMode.NONE, new Function0() { // from class: androidx.compose.foundation.text.handwriting.HandwritingDetectorNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ComposeInputMethodManager composeImm_delegate$lambda$0;
-            composeImm_delegate$lambda$0 = HandwritingDetectorNode.composeImm_delegate$lambda$0(HandwritingDetectorNode.this);
-            return composeImm_delegate$lambda$0;
+            ComposeInputMethodManager ComposeInputMethodManager;
+            ComposeInputMethodManager = ComposeInputMethodManager_androidKt.ComposeInputMethodManager(DelegatableNode_androidKt.requireView(HandwritingDetectorNode.this));
+            return ComposeInputMethodManager;
         }
     });
     private final StylusHandwritingNode pointerInputNode = (StylusHandwritingNode) delegate(new StylusHandwritingNode(new Function0() { // from class: androidx.compose.foundation.text.handwriting.HandwritingDetectorNode$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Unit pointerInputNode$lambda$0;
-            pointerInputNode$lambda$0 = HandwritingDetectorNode.pointerInputNode$lambda$0(HandwritingDetectorNode.this);
-            return pointerInputNode$lambda$0;
+            return HandwritingDetectorNode.pointerInputNode$lambda$0(HandwritingDetectorNode.this);
         }
     }));
 
@@ -48,19 +46,14 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
         this.callback = function0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final ComposeInputMethodManager composeImm_delegate$lambda$0(HandwritingDetectorNode handwritingDetectorNode) {
-        return ComposeInputMethodManager_androidKt.ComposeInputMethodManager(DelegatableNode_androidKt.requireView(handwritingDetectorNode));
-    }
-
     private final ComposeInputMethodManager getComposeImm() {
         return (ComposeInputMethodManager) this.composeImm$delegate.getValue();
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: onPointerEvent-H0pRuoY */
-    public void mo266onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
-        this.pointerInputNode.mo266onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
+    public void mo233onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j) {
+        this.pointerInputNode.mo233onPointerEventH0pRuoY(pointerEvent, pointerEventPass, j);
     }
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
@@ -72,7 +65,7 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
         return this.pointerInputNode;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit pointerInputNode$lambda$0(HandwritingDetectorNode handwritingDetectorNode) {
         handwritingDetectorNode.callback.invoke();
         handwritingDetectorNode.getComposeImm().prepareStylusHandwritingDelegation();
@@ -81,7 +74,7 @@ public final class HandwritingDetectorNode extends DelegatingNode implements Poi
 
     @Override // androidx.compose.ui.node.PointerInputModifierNode
     /* renamed from: getTouchBoundsExpansion-RZrCHBk  reason: not valid java name */
-    public long mo1521getTouchBoundsExpansionRZrCHBk() {
-        return this.pointerInputNode.mo1521getTouchBoundsExpansionRZrCHBk();
+    public long mo1322getTouchBoundsExpansionRZrCHBk() {
+        return this.pointerInputNode.mo1322getTouchBoundsExpansionRZrCHBk();
     }
 }

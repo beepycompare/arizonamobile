@@ -57,17 +57,13 @@ public class OverlayControllerImpl {
         WindowSdkExtensions.Companion.getInstance().requireExtensionVersion$window_release(8);
         embeddingExtension.setActivityStackAttributesCalculator(new Function() { // from class: androidx.window.embedding.OverlayControllerImpl$$ExternalSyntheticLambda0
             public final Object apply(Object obj) {
-                ActivityStackAttributes _init_$lambda$3;
-                _init_$lambda$3 = OverlayControllerImpl._init_$lambda$3(OverlayControllerImpl.this, (ActivityStackAttributesCalculatorParams) obj);
-                return _init_$lambda$3;
+                return OverlayControllerImpl._init_$lambda$3(OverlayControllerImpl.this, (ActivityStackAttributesCalculatorParams) obj);
             }
         });
         embeddingExtension.registerActivityStackCallback(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new OverlayControllerActivityStackConsumer(new Function1() { // from class: androidx.window.embedding.OverlayControllerImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$6;
-                _init_$lambda$6 = OverlayControllerImpl._init_$lambda$6(OverlayControllerImpl.this, (List) obj);
-                return _init_$lambda$6;
+                return OverlayControllerImpl._init_$lambda$6(OverlayControllerImpl.this, (List) obj);
             }
         }));
     }
@@ -93,7 +89,7 @@ public class OverlayControllerImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ActivityStackAttributes _init_$lambda$3(OverlayControllerImpl overlayControllerImpl, ActivityStackAttributesCalculatorParams activityStackAttributesCalculatorParams) {
         ReentrantLock reentrantLock = overlayControllerImpl.globalLock;
         reentrantLock.lock();
@@ -136,7 +132,7 @@ public class OverlayControllerImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$6(OverlayControllerImpl overlayControllerImpl, List activityStacks) {
         Intrinsics.checkNotNullParameter(activityStacks, "activityStacks");
         ReentrantLock reentrantLock = overlayControllerImpl.globalLock;
@@ -281,7 +277,7 @@ public class OverlayControllerImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void addOverlayInfoCallback$lambda$11$lambda$10(String str, OverlayControllerImpl overlayControllerImpl, Consumer consumer, List activityStacks) {
         OverlayInfo overlayInfo;
         Intrinsics.checkNotNullParameter(activityStacks, "activityStacks");

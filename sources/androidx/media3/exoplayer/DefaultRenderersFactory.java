@@ -29,7 +29,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class DefaultRenderersFactory implements RenderersFactory {
     public static final long DEFAULT_ALLOWED_VIDEO_JOINING_TIME_MS = 5000;
     public static final int EXTENSION_RENDERER_MODE_OFF = 0;
@@ -53,7 +53,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface ExtensionRendererMode {
     }
 

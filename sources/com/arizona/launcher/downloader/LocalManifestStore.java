@@ -18,7 +18,7 @@ import kotlinx.serialization.json.JsonBuilder;
 import kotlinx.serialization.json.JsonKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: LocalManifestRepository.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0003\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u0010\f\u001a\u00020\rJ\u0006\u0010\u000e\u001a\u00020\rJ\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\u0012J \u0010\u0013\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u00102\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u0018\u0010\u0017\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0015\u001a\u00020\u0016J5\u0010\u0018\u001a\u00020\r2#\u0010\u0019\u001a\u001f\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00100\u001b\u0012\u0004\u0012\u00020\r0\u001a¢\u0006\u0002\b\u001c2\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u0010\u0010\u001d\u001a\u00020\r2\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u001e\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 J\u0010\u0010\"\u001a\u00020\u00122\u0006\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0016H\u0002J\u0014\u0010%\u001a\u00020\r2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010'H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lcom/arizona/launcher/downloader/LocalManifestStore;", "", "manifestFile", "Ljava/io/File;", "json", "Lkotlinx/serialization/json/Json;", "<init>", "(Ljava/io/File;Lkotlinx/serialization/json/Json;)V", "lock", "Ljava/util/concurrent/locks/ReentrantReadWriteLock;", "manifest", "Lcom/arizona/launcher/downloader/LocalManifest;", "load", "", "save", "get", "Lcom/arizona/launcher/downloader/FileHashEntry;", "relativePath", "", "put", "entry", "autoSave", "", "remove", "update", "block", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "clear", "isSameByMeta", "fileSize", "", "lastModified", "normalize", "path", "ensureManifestFile", "resetManifestFile", "reason", "", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u0003\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0006\u0010\f\u001a\u00020\rJ\u0006\u0010\u000e\u001a\u00020\rJ\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\u0012J \u0010\u0013\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u00102\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u0018\u0010\u0017\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010\u0015\u001a\u00020\u0016J5\u0010\u0018\u001a\u00020\r2#\u0010\u0019\u001a\u001f\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00100\u001b\u0012\u0004\u0012\u00020\r0\u001a¢\u0006\u0002\b\u001c2\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u0010\u0010\u001d\u001a\u00020\r2\b\b\u0002\u0010\u0015\u001a\u00020\u0016J\u001e\u0010\u001e\u001a\u00020\u00162\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020 J\u0010\u0010\"\u001a\u00020\u00122\u0006\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0016H\u0002J\u0014\u0010%\u001a\u00020\r2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010'H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lcom/arizona/launcher/downloader/LocalManifestStore;", "", "manifestFile", "Ljava/io/File;", "json", "Lkotlinx/serialization/json/Json;", "<init>", "(Ljava/io/File;Lkotlinx/serialization/json/Json;)V", "lock", "Ljava/util/concurrent/locks/ReentrantReadWriteLock;", "manifest", "Lcom/arizona/launcher/downloader/LocalManifest;", "load", "", "save", "get", "Lcom/arizona/launcher/downloader/FileHashEntry;", "relativePath", "", "put", "entry", "autoSave", "", "remove", "update", "block", "Lkotlin/Function1;", "", "Lkotlin/ExtensionFunctionType;", "clear", "isSameByMeta", "fileSize", "", "lastModified", "normalize", "path", "ensureManifestFile", "resetManifestFile", "reason", "", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LocalManifestStore {
     public static final int $stable = 8;
@@ -41,14 +41,12 @@ public final class LocalManifestStore {
         this(file, (i & 2) != 0 ? JsonKt.Json$default(null, new Function1() { // from class: com.arizona.launcher.downloader.LocalManifestStore$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = LocalManifestStore._init_$lambda$0((JsonBuilder) obj);
-                return _init_$lambda$0;
+                return LocalManifestStore._init_$lambda$0((JsonBuilder) obj);
             }
         }, 1, null) : json);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(JsonBuilder Json) {
         Intrinsics.checkNotNullParameter(Json, "$this$Json");
         Json.setPrettyPrint(true);
@@ -92,13 +90,13 @@ public final class LocalManifestStore {
                         String readText = FilesKt.readText(this.manifestFile, Charsets.UTF_8);
                         Json json = this.json;
                         json.getSerializersModule();
-                        Object m10243constructorimpl = Result.m10243constructorimpl((LocalManifest) json.decodeFromString(LocalManifest.Companion.serializer(), readText));
-                        Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
-                        if (m10246exceptionOrNullimpl != null) {
-                            resetManifestFile(m10246exceptionOrNullimpl);
-                            m10243constructorimpl = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
+                        Object m9182constructorimpl = Result.m9182constructorimpl((LocalManifest) json.decodeFromString(LocalManifest.Companion.serializer(), readText));
+                        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
+                        if (m9185exceptionOrNullimpl != null) {
+                            resetManifestFile(m9185exceptionOrNullimpl);
+                            m9182constructorimpl = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
                         }
-                        localManifest = (LocalManifest) m10243constructorimpl;
+                        localManifest = (LocalManifest) m9182constructorimpl;
                     } else {
                         localManifest = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
                     }
@@ -374,11 +372,11 @@ public final class LocalManifestStore {
                 File file = new File(this.manifestFile.getParentFile(), "local_manifest.bak_" + System.currentTimeMillis() + ".json");
                 Result.Companion companion = Result.Companion;
                 LocalManifestStore localManifestStore = this;
-                Result.m10243constructorimpl(FilesKt.copyTo$default(this.manifestFile, file, true, 0, 4, null));
+                Result.m9182constructorimpl(FilesKt.copyTo$default(this.manifestFile, file, true, 0, 4, null));
             }
             Result.Companion companion2 = Result.Companion;
             LocalManifestStore localManifestStore2 = this;
-            Result.m10243constructorimpl(Boolean.valueOf(this.manifestFile.delete()));
+            Result.m9182constructorimpl(Boolean.valueOf(this.manifestFile.delete()));
             Result.Companion companion3 = Result.Companion;
             LocalManifestStore localManifestStore3 = this;
             this.manifestFile.createNewFile();
@@ -387,7 +385,7 @@ public final class LocalManifestStore {
             LocalManifest localManifest = new LocalManifest((Map) null, 1, (DefaultConstructorMarker) null);
             json.getSerializersModule();
             FilesKt.writeText(file2, json.encodeToString(LocalManifest.Companion.serializer(), localManifest), Charsets.UTF_8);
-            Result.m10242boximpl(Result.m10243constructorimpl(Unit.INSTANCE));
+            Result.m9181boximpl(Result.m9182constructorimpl(Unit.INSTANCE));
         } catch (Throwable th2) {
             Integer.valueOf(Log.e("LocalManifestStore", "resetManifestFile failed: " + this.manifestFile.getAbsolutePath(), th2));
         }

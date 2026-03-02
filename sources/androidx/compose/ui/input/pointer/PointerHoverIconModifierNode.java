@@ -25,8 +25,8 @@ public final class PointerHoverIconModifierNode extends HoverIconModifierNode {
 
     @Override // androidx.compose.ui.input.pointer.HoverIconModifierNode
     /* renamed from: isRelevantPointerType-uerMTgs */
-    public boolean mo6658isRelevantPointerTypeuerMTgs(int i) {
-        return (PointerType.m6815equalsimpl0(i, PointerType.Companion.m6821getStylusT8wyACA()) || PointerType.m6815equalsimpl0(i, PointerType.Companion.m6819getEraserT8wyACA())) ? false : true;
+    public boolean mo5999isRelevantPointerTypeuerMTgs(int i) {
+        return (PointerType.m6156equalsimpl0(i, PointerType.Companion.m6162getStylusT8wyACA()) || PointerType.m6156equalsimpl0(i, PointerType.Companion.m6160getEraserT8wyACA())) ? false : true;
     }
 
     @Override // androidx.compose.ui.input.pointer.HoverIconModifierNode

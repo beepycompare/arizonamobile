@@ -210,7 +210,7 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
     }
@@ -228,7 +228,7 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
     }
@@ -246,7 +246,7 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
         function2.invoke(composer, Integer.valueOf((i >> 6) & 14));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -265,7 +265,7 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
         function2.invoke(composer, Integer.valueOf((i >> 6) & 14));
         composer.endNode();
         ComposerKt.sourceInformationMarkerEnd(composer);
@@ -284,8 +284,8 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
-        function3.invoke(SkippableUpdater.m4641boximpl(SkippableUpdater.m4642constructorimpl(composer)), composer, Integer.valueOf((i >> 3) & 112));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
+        function3.invoke(SkippableUpdater.m4014boximpl(SkippableUpdater.m4015constructorimpl(composer)), composer, Integer.valueOf((i >> 3) & 112));
         composer.startReplaceableGroup(2058660585);
         function2.invoke(composer, Integer.valueOf((i >> 9) & 14));
         composer.endReplaceableGroup();
@@ -306,8 +306,8 @@ public final class ComposablesKt {
         } else {
             composer.useNode();
         }
-        function1.invoke(Updater.m4672boximpl(Updater.m4673constructorimpl(composer)));
-        function3.invoke(SkippableUpdater.m4641boximpl(SkippableUpdater.m4642constructorimpl(composer)), composer, Integer.valueOf((i >> 3) & 112));
+        function1.invoke(Updater.m4040boximpl(Updater.m4041constructorimpl(composer)));
+        function3.invoke(SkippableUpdater.m4014boximpl(SkippableUpdater.m4015constructorimpl(composer)), composer, Integer.valueOf((i >> 3) & 112));
         composer.startReplaceableGroup(2058660585);
         function2.invoke(composer, Integer.valueOf((i >> 9) & 14));
         composer.endReplaceableGroup();

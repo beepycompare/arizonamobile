@@ -12,8 +12,8 @@ public final class Nf implements to {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final byte[] a(N8 n8, C0381kh c0381kh) {
-        C0455ng c0455ng;
+    public final byte[] a(N8 n8, C0380kh c0380kh) {
+        C0454ng c0454ng;
         String str;
         byte[] bytes;
         int ordinal;
@@ -21,18 +21,18 @@ public final class Nf implements to {
             try {
                 byte[] decode = Base64.decode(n8.b, 0);
                 if (decode != null && decode.length != 0) {
-                    c0455ng = new C0455ng(decode);
+                    c0454ng = new C0454ng(decode);
                     Vf vf = new Vf();
-                    str = c0455ng.f1137a;
+                    str = c0454ng.f1137a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
                     vf.f828a = bytes;
-                    vf.c = c0455ng.b;
-                    vf.b = c0455ng.c;
-                    ordinal = c0455ng.d.ordinal();
+                    vf.c = c0454ng.b;
+                    vf.b = c0454ng.c;
+                    ordinal = c0454ng.d.ordinal();
                     int i = 1;
                     if (ordinal != 1) {
                         i = 2;
@@ -43,15 +43,15 @@ public final class Nf implements to {
                     vf.d = i;
                     return MessageNano.toByteArray(vf);
                 }
-                c0455ng = null;
+                c0454ng = null;
                 Vf vf2 = new Vf();
-                str = c0455ng.f1137a;
+                str = c0454ng.f1137a;
                 if (str != null) {
                 }
                 vf2.f828a = bytes;
-                vf2.c = c0455ng.b;
-                vf2.b = c0455ng.c;
-                ordinal = c0455ng.d.ordinal();
+                vf2.c = c0454ng.b;
+                vf2.b = c0454ng.c;
+                ordinal = c0454ng.d.ordinal();
                 int i2 = 1;
                 if (ordinal != 1) {
                 }

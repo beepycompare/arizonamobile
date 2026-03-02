@@ -43,8 +43,8 @@ public final class L implements JsonParser {
         N n;
         P p;
         Q q;
-        boolean z = AbstractC0776o.f1481a;
-        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0776o.f1481a);
+        boolean z = AbstractC0775o.f1481a;
+        boolean extractFeature = RemoteConfigJsonUtils.extractFeature(jSONObject, "screenshot", AbstractC0775o.f1481a);
         Y y = this.f1449a;
         X x = this.b;
         x.getClass();
@@ -54,7 +54,7 @@ public final class L implements JsonParser {
             q.f1454a = new N();
             q.b = new P();
             O o = new O();
-            o.c = AbstractC0776o.b;
+            o.c = AbstractC0775o.b;
             q.c = o;
         } else {
             Q q2 = new Q();

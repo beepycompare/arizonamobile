@@ -72,12 +72,14 @@ public class DataCollectionArbiter {
         this.crashlyticsDataCollectionEnabled = bool != null ? bool : getDataCollectionValueFromManifest(this.firebaseApp.getApplicationContext());
         storeDataCollectionValueInSharedPreferences(this.sharedPreferences, bool);
         synchronized (this.taskLock) {
-            if (isAutomaticDataCollectionEnabled()) {
-                if (!this.taskResolved) {
+            boolean isAutomaticDataCollectionEnabled = isAutomaticDataCollectionEnabled();
+            boolean z = this.taskResolved;
+            if (isAutomaticDataCollectionEnabled) {
+                if (!z) {
                     this.dataCollectionEnabledTask.trySetResult(null);
                     this.taskResolved = true;
                 }
-            } else if (this.taskResolved) {
+            } else if (z) {
                 this.dataCollectionEnabledTask = new TaskCompletionSource<>();
                 this.taskResolved = false;
             }

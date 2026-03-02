@@ -74,10 +74,11 @@ public final class MaybeToSingle<T> extends Single<T> implements HasUpstreamMayb
         public void onComplete() {
             this.upstream = DisposableHelper.DISPOSED;
             T t = this.defaultValue;
+            SingleObserver<? super T> singleObserver = this.downstream;
             if (t != null) {
-                this.downstream.onSuccess(t);
+                singleObserver.onSuccess(t);
             } else {
-                this.downstream.onError(new NoSuchElementException("The MaybeSource is empty"));
+                singleObserver.onError(new NoSuchElementException("The MaybeSource is empty"));
             }
         }
     }

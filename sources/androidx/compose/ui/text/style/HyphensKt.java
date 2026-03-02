@@ -7,12 +7,12 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes2.dex */
 public final class HyphensKt {
     /* renamed from: isSpecified--3fSNIE  reason: not valid java name */
-    public static final boolean m8032isSpecified3fSNIE(int i) {
+    public static final boolean m7329isSpecified3fSNIE(int i) {
         return i != 0;
     }
 
     /* renamed from: takeOrElse-Kk21toE  reason: not valid java name */
-    public static final int m8033takeOrElseKk21toE(int i, Function0<Hyphens> function0) {
-        return i != 0 ? i : function0.invoke().m8027unboximpl();
+    public static final int m7330takeOrElseKk21toE(int i, Function0<Hyphens> function0) {
+        return i != 0 ? i : function0.invoke().m7324unboximpl();
     }
 }

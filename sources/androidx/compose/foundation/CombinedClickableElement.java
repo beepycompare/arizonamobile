@@ -53,7 +53,7 @@ public final class CombinedClickableElement extends ModifierNodeElement<Combined
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(CombinedClickableNode combinedClickableNode) {
         combinedClickableNode.setHapticFeedbackEnabled(this.hapticFeedbackEnabled);
-        combinedClickableNode.m359update2tQrsxU(this.onClick, this.onLongClickLabel, this.onLongClick, this.onDoubleClick, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.onClickLabel, this.role);
+        combinedClickableNode.m316update2tQrsxU(this.onClick, this.onLongClickLabel, this.onLongClick, this.onDoubleClick, this.interactionSource, this.indicationNodeFactory, this.useLocalIndication, this.enabled, this.onClickLabel, this.role);
     }
 
     @Override // androidx.compose.ui.node.ModifierNodeElement
@@ -92,9 +92,9 @@ public final class CombinedClickableElement extends ModifierNodeElement<Combined
         String str = this.onClickLabel;
         int hashCode3 = (hashCode2 + (str != null ? str.hashCode() : 0)) * 31;
         Role role = this.role;
-        int m7439hashCodeimpl = (((hashCode3 + (role != null ? Role.m7439hashCodeimpl(role.m7441unboximpl()) : 0)) * 31) + this.onClick.hashCode()) * 31;
+        int m6771hashCodeimpl = (((hashCode3 + (role != null ? Role.m6771hashCodeimpl(role.m6773unboximpl()) : 0)) * 31) + this.onClick.hashCode()) * 31;
         String str2 = this.onLongClickLabel;
-        int hashCode4 = (m7439hashCodeimpl + (str2 != null ? str2.hashCode() : 0)) * 31;
+        int hashCode4 = (m6771hashCodeimpl + (str2 != null ? str2.hashCode() : 0)) * 31;
         Function0<Unit> function0 = this.onLongClick;
         int hashCode5 = (hashCode4 + (function0 != null ? function0.hashCode() : 0)) * 31;
         Function0<Unit> function02 = this.onDoubleClick;

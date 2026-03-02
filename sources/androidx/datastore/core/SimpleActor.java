@@ -39,36 +39,34 @@ public final class SimpleActor<T> {
             job.invokeOnCompletion(new Function1() { // from class: androidx.datastore.core.SimpleActor$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = SimpleActor._init_$lambda$0(Function1.this, this, onUndeliveredElement, (Throwable) obj);
-                    return _init_$lambda$0;
+                    return SimpleActor._init_$lambda$0(Function1.this, this, onUndeliveredElement, (Throwable) obj);
                 }
             });
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(Function1 function1, SimpleActor simpleActor, Function2 function2, Throwable th) {
         function1.invoke(th);
         simpleActor.messageQueue.close(th);
         while (true) {
-            Object m11789getOrNullimpl = ChannelResult.m11789getOrNullimpl(simpleActor.messageQueue.mo11777tryReceivePtdJZtk());
-            if (m11789getOrNullimpl == null) {
+            Object m10714getOrNullimpl = ChannelResult.m10714getOrNullimpl(simpleActor.messageQueue.mo10702tryReceivePtdJZtk());
+            if (m10714getOrNullimpl == null) {
                 return Unit.INSTANCE;
             }
-            function2.invoke(m11789getOrNullimpl, th);
+            function2.invoke(m10714getOrNullimpl, th);
         }
     }
 
     public final void offer(T t) {
-        Object obj = this.messageQueue.mo9174trySendJP2dKIU(t);
+        Object obj = this.messageQueue.mo8396trySendJP2dKIU(t);
         if (obj instanceof ChannelResult.Closed) {
-            Throwable m11788exceptionOrNullimpl = ChannelResult.m11788exceptionOrNullimpl(obj);
-            if (m11788exceptionOrNullimpl != null) {
-                throw m11788exceptionOrNullimpl;
+            Throwable m10713exceptionOrNullimpl = ChannelResult.m10713exceptionOrNullimpl(obj);
+            if (m10713exceptionOrNullimpl != null) {
+                throw m10713exceptionOrNullimpl;
             }
             throw new ClosedSendChannelException("Channel was closed normally");
-        } else if (!ChannelResult.m11794isSuccessimpl(obj)) {
+        } else if (!ChannelResult.m10719isSuccessimpl(obj)) {
             throw new IllegalStateException("Check failed.".toString());
         } else {
             if (this.remainingMessages.getAndIncrement() == 0) {

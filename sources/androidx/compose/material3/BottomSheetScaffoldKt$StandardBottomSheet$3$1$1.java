@@ -95,15 +95,13 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
             rememberedValue = new Function0() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$1$lambda$0(SheetState.this, coroutineScope);
-                    return invoke$lambda$1$lambda$0;
+                    return BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$1$lambda$0(SheetState.this, coroutineScope);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier m340clickableXHw0xAI$default = ClickableKt.m340clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
+        Modifier m297clickableXHw0xAI$default = ClickableKt.m297clickableXHw0xAI$default(companion, false, null, null, (Function0) rememberedValue, 7, null);
         ComposerKt.sourceInformationMarkerStart(composer, -2108914877, "CC(remember):BottomSheetScaffold.kt#9igjgp");
         boolean changed2 = composer.changed(this.$state) | composer.changed(this.$sheetSwipeEnabled) | composer.changed(this.$expandActionLabel) | composer.changedInstance(this.$scope) | composer.changed(this.$partialExpandActionLabel) | composer.changed(this.$dismissActionLabel);
         final SheetState sheetState2 = this.$state;
@@ -117,16 +115,14 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
             Function1 function1 = new Function1() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$7$lambda$6;
-                    invoke$lambda$7$lambda$6 = BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6(SheetState.this, z, str, str2, str3, coroutineScope2, (SemanticsPropertyReceiver) obj);
-                    return invoke$lambda$7$lambda$6;
+                    return BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6(SheetState.this, z, str, str2, str3, coroutineScope2, (SemanticsPropertyReceiver) obj);
                 }
             };
             composer.updateRememberedValue(function1);
             rememberedValue2 = function1;
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        Modifier semantics = SemanticsModifierKt.semantics(m340clickableXHw0xAI$default, true, (Function1) rememberedValue2);
+        Modifier semantics = SemanticsModifierKt.semantics(m297clickableXHw0xAI$default, true, (Function1) rememberedValue2);
         Function2<Composer, Integer, Unit> function2 = this.$dragHandle;
         ComposerKt.sourceInformationMarkerStart(composer, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
         MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -145,15 +141,15 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
         BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
         ComposerKt.sourceInformationMarkerStart(composer, 2015269861, "C395@19490L12:BottomSheetScaffold.kt#uh7d8r");
@@ -169,7 +165,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(SheetState sheetState, CoroutineScope coroutineScope) {
         int i = WhenMappings.$EnumSwitchMapping$0[sheetState.getCurrentValue().ordinal()];
         if (i == 1) {
@@ -182,7 +178,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$7$lambda$6(final SheetState sheetState, boolean z, String str, String str2, String str3, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
         if (sheetState.getAnchoredDraggableState$material3().getAnchors().getSize() > 1 && z) {
             if (sheetState.getCurrentValue() == SheetValue.PartiallyExpanded) {
@@ -190,9 +186,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
                     SemanticsPropertiesKt.expand(semanticsPropertyReceiver, str, new Function0() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            boolean invoke$lambda$7$lambda$6$lambda$5$lambda$2;
-                            invoke$lambda$7$lambda$6$lambda$5$lambda$2 = BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$2(CoroutineScope.this, sheetState);
-                            return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$2);
+                            return Boolean.valueOf(BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$2(CoroutineScope.this, sheetState));
                         }
                     });
                 }
@@ -200,9 +194,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
                 SemanticsPropertiesKt.collapse(semanticsPropertyReceiver, str2, new Function0() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean invoke$lambda$7$lambda$6$lambda$5$lambda$3;
-                        invoke$lambda$7$lambda$6$lambda$5$lambda$3 = BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$3(CoroutineScope.this, sheetState);
-                        return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$3);
+                        return Boolean.valueOf(BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$3(CoroutineScope.this, sheetState));
                     }
                 });
             }
@@ -210,9 +202,7 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
                 SemanticsPropertiesKt.dismiss(semanticsPropertyReceiver, str3, new Function0() { // from class: androidx.compose.material3.BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        boolean invoke$lambda$7$lambda$6$lambda$5$lambda$4;
-                        invoke$lambda$7$lambda$6$lambda$5$lambda$4 = BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$4(CoroutineScope.this, sheetState);
-                        return Boolean.valueOf(invoke$lambda$7$lambda$6$lambda$5$lambda$4);
+                        return Boolean.valueOf(BottomSheetScaffoldKt$StandardBottomSheet$3$1$1.invoke$lambda$7$lambda$6$lambda$5$lambda$4(CoroutineScope.this, sheetState));
                     }
                 });
             }
@@ -220,19 +210,19 @@ public final class BottomSheetScaffoldKt$StandardBottomSheet$3$1$1 implements Fu
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$2(CoroutineScope coroutineScope, SheetState sheetState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$2$1$1$1$1(sheetState, null), 3, null);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$3(CoroutineScope coroutineScope, SheetState sheetState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$2$1$1$2$1(sheetState, null), 3, null);
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean invoke$lambda$7$lambda$6$lambda$5$lambda$4(CoroutineScope coroutineScope, SheetState sheetState) {
         BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new BottomSheetScaffoldKt$StandardBottomSheet$3$1$1$2$1$1$3$1(sheetState, null), 3, null);
         return true;

@@ -43,7 +43,7 @@ final class TransformableStateKt$panBy$2 extends SuspendLambda implements Functi
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            ((TransformScope) this.L$0).mo516transformByd4ec7I(1.0f, this.f20$$v$c$androidxcomposeuigeometryOffset$offset$0, 0.0f);
+            ((TransformScope) this.L$0).mo447transformByd4ec7I(1.0f, this.f20$$v$c$androidxcomposeuigeometryOffset$offset$0, 0.0f);
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

@@ -41,15 +41,13 @@ public final class TasksKt {
         deferred.invokeOnCompletion(new Function1() { // from class: kotlinx.coroutines.tasks.TasksKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit asTask$lambda$0;
-                asTask$lambda$0 = TasksKt.asTask$lambda$0(CancellationTokenSource.this, deferred, taskCompletionSource, (Throwable) obj);
-                return asTask$lambda$0;
+                return TasksKt.asTask$lambda$0(CancellationTokenSource.this, deferred, taskCompletionSource, (Throwable) obj);
             }
         });
         return taskCompletionSource.getTask();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit asTask$lambda$0(CancellationTokenSource cancellationTokenSource, Deferred deferred, TaskCompletionSource taskCompletionSource, Throwable th) {
         if (th instanceof CancellationException) {
             cancellationTokenSource.cancel();
@@ -101,9 +99,7 @@ public final class TasksKt {
             CompletableDeferred$default.invokeOnCompletion(new Function1() { // from class: kotlinx.coroutines.tasks.TasksKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit asDeferredImpl$lambda$2;
-                    asDeferredImpl$lambda$2 = TasksKt.asDeferredImpl$lambda$2(CancellationTokenSource.this, (Throwable) obj);
-                    return asDeferredImpl$lambda$2;
+                    return TasksKt.asDeferredImpl$lambda$2(CancellationTokenSource.this, (Throwable) obj);
                 }
             });
         }
@@ -238,7 +234,7 @@ public final class TasksKt {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void asDeferredImpl$lambda$1(CompletableDeferred completableDeferred, Task task) {
         Exception exception = task.getException();
         if (exception == null) {
@@ -253,7 +249,7 @@ public final class TasksKt {
         completableDeferred.completeExceptionally(exception);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit asDeferredImpl$lambda$2(CancellationTokenSource cancellationTokenSource, Throwable th) {
         cancellationTokenSource.cancel();
         return Unit.INSTANCE;
@@ -287,16 +283,18 @@ public final class TasksKt {
             public final void onComplete(Task<T> task2) {
                 Exception exception2 = task2.getException();
                 if (exception2 == null) {
-                    if (task2.isCanceled()) {
-                        CancellableContinuation.DefaultImpls.cancel$default(cancellableContinuationImpl2, null, 1, null);
+                    boolean isCanceled = task2.isCanceled();
+                    CancellableContinuation<T> cancellableContinuation = cancellableContinuationImpl2;
+                    if (isCanceled) {
+                        CancellableContinuation.DefaultImpls.cancel$default(cancellableContinuation, null, 1, null);
                         return;
                     }
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(task2.getResult()));
+                    cancellableContinuation.resumeWith(Result.m9182constructorimpl(task2.getResult()));
                     return;
                 }
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(exception2)));
+                cancellableContinuationImpl2.resumeWith(Result.m9182constructorimpl(ResultKt.createFailure(exception2)));
             }
         });
         if (cancellationTokenSource != null) {

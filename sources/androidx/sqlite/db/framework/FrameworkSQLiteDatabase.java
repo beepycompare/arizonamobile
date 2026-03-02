@@ -44,17 +44,13 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
     private static final Lazy<Method> getThreadSessionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda3
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Method threadSessionMethod_delegate$lambda$7;
-            threadSessionMethod_delegate$lambda$7 = FrameworkSQLiteDatabase.getThreadSessionMethod_delegate$lambda$7();
-            return threadSessionMethod_delegate$lambda$7;
+            return FrameworkSQLiteDatabase.getThreadSessionMethod_delegate$lambda$7();
         }
     });
     private static final Lazy<Method> beginTransactionMethod$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            Method beginTransactionMethod_delegate$lambda$8;
-            beginTransactionMethod_delegate$lambda$8 = FrameworkSQLiteDatabase.beginTransactionMethod_delegate$lambda$8();
-            return beginTransactionMethod_delegate$lambda$8;
+            return FrameworkSQLiteDatabase.beginTransactionMethod_delegate$lambda$8();
         }
     });
 
@@ -173,7 +169,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
     }
 
     /* renamed from: setMaximumSize  reason: collision with other method in class */
-    public void m9337setMaximumSize(long j) {
+    public void m8540setMaximumSize(long j) {
         this.delegate.setMaximumSize(j);
     }
 
@@ -227,31 +223,27 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
         final Function4 function4 = new Function4() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                SQLiteCursor query$lambda$0;
-                query$lambda$0 = FrameworkSQLiteDatabase.query$lambda$0(SupportSQLiteQuery.this, (SQLiteDatabase) obj, (SQLiteCursorDriver) obj2, (String) obj3, (SQLiteQuery) obj4);
-                return query$lambda$0;
+                return FrameworkSQLiteDatabase.query$lambda$0(SupportSQLiteQuery.this, (SQLiteDatabase) obj, (SQLiteCursorDriver) obj2, (String) obj3, (SQLiteQuery) obj4);
             }
         };
         Cursor rawQueryWithFactory = this.delegate.rawQueryWithFactory(new SQLiteDatabase.CursorFactory() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda2
             @Override // android.database.sqlite.SQLiteDatabase.CursorFactory
             public final Cursor newCursor(SQLiteDatabase sQLiteDatabase, SQLiteCursorDriver sQLiteCursorDriver, String str, SQLiteQuery sQLiteQuery) {
-                Cursor query$lambda$1;
-                query$lambda$1 = FrameworkSQLiteDatabase.query$lambda$1(Function4.this, sQLiteDatabase, sQLiteCursorDriver, str, sQLiteQuery);
-                return query$lambda$1;
+                return FrameworkSQLiteDatabase.query$lambda$1(Function4.this, sQLiteDatabase, sQLiteCursorDriver, str, sQLiteQuery);
             }
         }, query.getSql(), EMPTY_STRING_ARRAY, null);
         Intrinsics.checkNotNullExpressionValue(rawQueryWithFactory, "rawQueryWithFactory(...)");
         return rawQueryWithFactory;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SQLiteCursor query$lambda$0(SupportSQLiteQuery supportSQLiteQuery, SQLiteDatabase sQLiteDatabase, SQLiteCursorDriver sQLiteCursorDriver, String str, SQLiteQuery sQLiteQuery) {
         Intrinsics.checkNotNull(sQLiteQuery);
         supportSQLiteQuery.bindTo(new FrameworkSQLiteProgram(sQLiteQuery));
         return new SQLiteCursor(sQLiteCursorDriver, str, sQLiteQuery);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Cursor query$lambda$1(Function4 function4, SQLiteDatabase sQLiteDatabase, SQLiteCursorDriver sQLiteCursorDriver, String str, SQLiteQuery sQLiteQuery) {
         return (Cursor) function4.invoke(sQLiteDatabase, sQLiteCursorDriver, str, sQLiteQuery);
     }
@@ -263,9 +255,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
         SQLiteDatabase.CursorFactory cursorFactory = new SQLiteDatabase.CursorFactory() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteDatabase$$ExternalSyntheticLambda0
             @Override // android.database.sqlite.SQLiteDatabase.CursorFactory
             public final Cursor newCursor(SQLiteDatabase sQLiteDatabase2, SQLiteCursorDriver sQLiteCursorDriver, String str, SQLiteQuery sQLiteQuery) {
-                Cursor query$lambda$2;
-                query$lambda$2 = FrameworkSQLiteDatabase.query$lambda$2(SupportSQLiteQuery.this, sQLiteDatabase2, sQLiteCursorDriver, str, sQLiteQuery);
-                return query$lambda$2;
+                return FrameworkSQLiteDatabase.query$lambda$2(SupportSQLiteQuery.this, sQLiteDatabase2, sQLiteCursorDriver, str, sQLiteQuery);
             }
         };
         String sql = query.getSql();
@@ -276,7 +266,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
         return rawQueryWithFactory;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Cursor query$lambda$2(SupportSQLiteQuery supportSQLiteQuery, SQLiteDatabase sQLiteDatabase, SQLiteCursorDriver sQLiteCursorDriver, String str, SQLiteQuery sQLiteQuery) {
         Intrinsics.checkNotNull(sQLiteQuery);
         supportSQLiteQuery.bindTo(new FrameworkSQLiteProgram(sQLiteQuery));
@@ -464,7 +454,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Method getThreadSessionMethod_delegate$lambda$7() {
         try {
             Method declaredMethod = SQLiteDatabase.class.getDeclaredMethod("getThreadSession", new Class[0]);
@@ -475,7 +465,7 @@ public final class FrameworkSQLiteDatabase implements SupportSQLiteDatabase {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Method beginTransactionMethod_delegate$lambda$8() {
         Class<?> returnType;
         try {

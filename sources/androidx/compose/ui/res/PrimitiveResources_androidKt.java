@@ -71,11 +71,11 @@ public final class PrimitiveResources_androidKt {
         ComposerKt.sourceInformationMarkerStart(composer, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
         Object consume2 = composer.consume(AndroidCompositionLocals_androidKt.getLocalResources());
         ComposerKt.sourceInformationMarkerEnd(composer);
-        float m8258constructorimpl = Dp.m8258constructorimpl(((Resources) consume2).getDimension(i) / ((Density) consume).getDensity());
+        float m7555constructorimpl = Dp.m7555constructorimpl(((Resources) consume2).getDimension(i) / ((Density) consume).getDensity());
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m8258constructorimpl;
+        return m7555constructorimpl;
     }
 }

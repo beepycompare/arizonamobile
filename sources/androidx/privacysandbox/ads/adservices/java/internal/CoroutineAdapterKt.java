@@ -25,16 +25,14 @@ public final class CoroutineAdapterKt {
         ListenableFuture<T> future = CallbackToFutureAdapter.getFuture(new CallbackToFutureAdapter.Resolver() { // from class: androidx.privacysandbox.ads.adservices.java.internal.CoroutineAdapterKt$$ExternalSyntheticLambda0
             @Override // androidx.concurrent.futures.CallbackToFutureAdapter.Resolver
             public final Object attachCompleter(CallbackToFutureAdapter.Completer completer) {
-                Object asListenableFuture$lambda$0;
-                asListenableFuture$lambda$0 = CoroutineAdapterKt.asListenableFuture$lambda$0(Deferred.this, obj, completer);
-                return asListenableFuture$lambda$0;
+                return CoroutineAdapterKt.asListenableFuture$lambda$0(Deferred.this, obj, completer);
             }
         });
         Intrinsics.checkNotNullExpressionValue(future, "getFuture { completer ->…      }\n        tag\n    }");
         return future;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object asListenableFuture$lambda$0(final Deferred this_asListenableFuture, Object obj, final CallbackToFutureAdapter.Completer completer) {
         Intrinsics.checkNotNullParameter(this_asListenableFuture, "$this_asListenableFuture");
         Intrinsics.checkNotNullParameter(completer, "completer");
@@ -55,11 +53,13 @@ public final class CoroutineAdapterKt {
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(Throwable th) {
                 if (th != null) {
-                    if (th instanceof CancellationException) {
-                        completer.setCancelled();
+                    boolean z = th instanceof CancellationException;
+                    CallbackToFutureAdapter.Completer<T> completer2 = completer;
+                    if (z) {
+                        completer2.setCancelled();
                         return;
                     } else {
-                        completer.setException(th);
+                        completer2.setException(th);
                         return;
                     }
                 }

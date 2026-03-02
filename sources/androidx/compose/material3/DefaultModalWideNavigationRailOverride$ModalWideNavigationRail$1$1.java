@@ -78,7 +78,7 @@ final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 e
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 boolean booleanValue = it.next().booleanValue();
-                Boolean bool = (Boolean) ChannelResult.m11789getOrNullimpl(this.$channel.mo11777tryReceivePtdJZtk());
+                Boolean bool = (Boolean) ChannelResult.m10714getOrNullimpl(this.$channel.mo10702tryReceivePtdJZtk());
                 if (bool != null) {
                     booleanValue = bool.booleanValue();
                 }
@@ -126,12 +126,12 @@ final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 e
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:13:0x002d, code lost:
-            if (r4.$modalState.expand(r4) == r0) goto L15;
+            if (r1.expand(r4) == r0) goto L15;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:16:0x003b, code lost:
-            if (r4.$modalState.collapse(r4) == r0) goto L15;
+        /* JADX WARN: Code restructure failed: missing block: B:16:0x0039, code lost:
+            if (r1.collapse(r4) == r0) goto L15;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:17:0x003d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:17:0x003b, code lost:
             return r0;
          */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -143,7 +143,9 @@ final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 e
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                if (this.$newTarget) {
+                boolean z = this.$newTarget;
+                ModalWideNavigationRailState modalWideNavigationRailState = this.$modalState;
+                if (z) {
                     this.label = 1;
                 } else {
                     this.label = 2;

@@ -29,14 +29,12 @@ public final class TextContextMenuModifierKt {
         TraversableNodeKt.traverseAncestors(delegatableNode, TextContextMenuDataTraverseKey.INSTANCE, new Function1() { // from class: androidx.compose.foundation.text.contextmenu.modifier.TextContextMenuModifierKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean traverseTextContextMenuDataNodes$lambda$0;
-                traverseTextContextMenuDataNodes$lambda$0 = TextContextMenuModifierKt.traverseTextContextMenuDataNodes$lambda$0(Function1.this, function1, (TraversableNode) obj);
-                return Boolean.valueOf(traverseTextContextMenuDataNodes$lambda$0);
+                return Boolean.valueOf(TextContextMenuModifierKt.traverseTextContextMenuDataNodes$lambda$0(Function1.this, function1, (TraversableNode) obj));
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean traverseTextContextMenuDataNodes$lambda$0(Function1 function1, Function1 function12, TraversableNode traversableNode) {
         if (traversableNode instanceof AddTextContextMenuDataComponentsNode) {
             function1.invoke(((AddTextContextMenuDataComponentsNode) traversableNode).getBuilder());

@@ -61,7 +61,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
     }
 
     /* renamed from: getMode-lzQqcRY  reason: not valid java name */
-    public final int m7758getModelzQqcRY() {
+    public final int m7059getModelzQqcRY() {
         return this.mode;
     }
 
@@ -80,7 +80,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         }
         boolean z = i == this.startIndex;
         boolean z2 = i2 == this.endIndex;
-        if (z && z2 && this.trimFirstLineTop && this.trimLastLineBottom && !LineHeightStyle.Mode.m8109equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8115getTightlzQqcRY())) {
+        if (z && z2 && this.trimFirstLineTop && this.trimLastLineBottom && !LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) {
             return;
         }
         if (this.firstAscent == Integer.MIN_VALUE) {
@@ -97,7 +97,7 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         int lineHeight = LineHeightStyleSpan_androidKt.lineHeight(fontMetricsInt);
         int ceil2 = (int) Math.ceil(this.lineHeight);
         int i = ceil2 - lineHeight;
-        if (LineHeightStyle.Mode.m8109equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8114getMinimumlzQqcRY()) && i <= 0) {
+        if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7411getMinimumlzQqcRY()) && i <= 0) {
             this.ascent = fontMetricsInt.ascent;
             int i2 = fontMetricsInt.descent;
             this.descent = i2;
@@ -119,12 +119,12 @@ public final class LineHeightStyleSpan implements android.text.style.LineHeightS
         int i3 = fontMetricsInt.descent + ((int) ceil);
         this.descent = i3;
         this.ascent = i3 - ceil2;
-        if (LineHeightStyle.Mode.m8109equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8113getFixedlzQqcRY()) || i >= 0) {
+        if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7410getFixedlzQqcRY()) || i >= 0) {
             this.firstAscent = this.trimFirstLineTop ? fontMetricsInt.ascent : this.ascent;
             this.lastDescent = this.trimLastLineBottom ? fontMetricsInt.descent : this.descent;
             this.firstAscentDiff = fontMetricsInt.ascent - this.firstAscent;
             this.lastDescentDiff = this.lastDescent - fontMetricsInt.descent;
-        } else if (LineHeightStyle.Mode.m8109equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m8115getTightlzQqcRY())) {
+        } else if (LineHeightStyle.Mode.m7406equalsimpl0(this.mode, LineHeightStyle.Mode.Companion.m7412getTightlzQqcRY())) {
             if (this.trimFirstLineTop) {
                 min = Math.max(fontMetricsInt.ascent, this.ascent);
             } else {

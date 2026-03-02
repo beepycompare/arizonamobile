@@ -7,12 +7,11 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FlowExt.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1$1", f = "FlowExt.kt", i = {0}, l = {73, 76}, m = "emit", n = {"this"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.FlowExtKt$simpleRunningReduce$1$1", f = "FlowExt.kt", i = {}, l = {68, 70}, m = "emit", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlowExtKt$simpleRunningReduce$1$1$emit$1 extends ContinuationImpl {
     Object L$0;
-    Object L$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ FlowExtKt$simpleRunningReduce$1.AnonymousClass1<T> this$0;

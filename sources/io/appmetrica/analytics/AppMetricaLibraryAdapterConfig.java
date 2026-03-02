@@ -1,11 +1,11 @@
 package io.appmetrica.analytics;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AppMetricaLibraryAdapterConfig {
     public final Boolean advIdentifiersTracking;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

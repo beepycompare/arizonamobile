@@ -12,7 +12,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class DerivedSize {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
-    private static final DerivedSize Zero = new DerivedSize(IntSize.Companion.m8434getZeroYbymL2g(), DpSize.Companion.m8366getZeroMYxV2XQ(), null);
+    private static final DerivedSize Zero = new DerivedSize(IntSize.Companion.m7731getZeroYbymL2g(), DpSize.Companion.m7663getZeroMYxV2XQ(), null);
     private final long dpSize;
     private final long pxSize;
 
@@ -36,13 +36,13 @@ public final class DerivedSize {
         }
 
         /* renamed from: fromPxSize-viCIZxY  reason: not valid java name */
-        public final DerivedSize m7355fromPxSizeviCIZxY(long j, Density density) {
-            return new DerivedSize(j, density.mo462toDpSizekrfVVM(IntSizeKt.m8441toSizeozmzZPI(j)), null);
+        public final DerivedSize m6691fromPxSizeviCIZxY(long j, Density density) {
+            return new DerivedSize(j, density.mo403toDpSizekrfVVM(IntSizeKt.m7738toSizeozmzZPI(j)), null);
         }
 
         /* renamed from: fromDpSize-itqla9I  reason: not valid java name */
-        public final DerivedSize m7354fromDpSizeitqla9I(long j, Density density) {
-            return new DerivedSize(IntSizeKt.m8440toIntSizeuvyYCjk(density.mo465toSizeXkaWNTQ(j)), j, null);
+        public final DerivedSize m6690fromDpSizeitqla9I(long j, Density density) {
+            return new DerivedSize(IntSizeKt.m7737toIntSizeuvyYCjk(density.mo406toSizeXkaWNTQ(j)), j, null);
         }
     }
 
@@ -52,12 +52,12 @@ public final class DerivedSize {
     }
 
     /* renamed from: getDpSize-MYxV2XQ  reason: not valid java name */
-    public final long m7352getDpSizeMYxV2XQ() {
+    public final long m6688getDpSizeMYxV2XQ() {
         return this.dpSize;
     }
 
     /* renamed from: getPxSize-YbymL2g  reason: not valid java name */
-    public final long m7353getPxSizeYbymL2g() {
+    public final long m6689getPxSizeYbymL2g() {
         return this.pxSize;
     }
 
@@ -67,12 +67,12 @@ public final class DerivedSize {
         }
         if (obj instanceof DerivedSize) {
             DerivedSize derivedSize = (DerivedSize) obj;
-            return IntSize.m8427equalsimpl0(this.pxSize, derivedSize.pxSize) && DpSize.m8353equalsimpl0(this.dpSize, derivedSize.dpSize);
+            return IntSize.m7724equalsimpl0(this.pxSize, derivedSize.pxSize) && DpSize.m7650equalsimpl0(this.dpSize, derivedSize.dpSize);
         }
         return false;
     }
 
     public int hashCode() {
-        return (IntSize.m8430hashCodeimpl(this.pxSize) * 31) + DpSize.m8358hashCodeimpl(this.dpSize);
+        return (IntSize.m7727hashCodeimpl(this.pxSize) * 31) + DpSize.m7655hashCodeimpl(this.dpSize);
     }
 }

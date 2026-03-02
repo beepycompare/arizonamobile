@@ -19,16 +19,11 @@ public final class OkHttpNetworkFetcher {
         return new NetworkFetcher.Factory(new Function0() { // from class: coil3.network.okhttp.OkHttpNetworkFetcher$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NetworkClient OkHttpNetworkFetcherFactory$lambda$0;
-                OkHttpNetworkFetcherFactory$lambda$0 = OkHttpNetworkFetcher.OkHttpNetworkFetcherFactory$lambda$0();
-                return OkHttpNetworkFetcherFactory$lambda$0;
+                NetworkClient asNetworkClient;
+                asNetworkClient = OkHttpNetworkFetcher.asNetworkClient(new OkHttpClient());
+                return asNetworkClient;
             }
         }, null, null, 6, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final NetworkClient OkHttpNetworkFetcherFactory$lambda$0() {
-        return asNetworkClient(new OkHttpClient());
     }
 
     public static final NetworkFetcher.Factory factory(final Call.Factory factory) {
@@ -46,16 +41,11 @@ public final class OkHttpNetworkFetcher {
         return new NetworkFetcher.Factory(new Function0() { // from class: coil3.network.okhttp.OkHttpNetworkFetcher$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NetworkClient OkHttpNetworkFetcherFactory$lambda$2;
-                OkHttpNetworkFetcherFactory$lambda$2 = OkHttpNetworkFetcher.OkHttpNetworkFetcherFactory$lambda$2(Function0.this);
-                return OkHttpNetworkFetcherFactory$lambda$2;
+                NetworkClient asNetworkClient;
+                asNetworkClient = OkHttpNetworkFetcher.asNetworkClient((Call.Factory) Function0.this.invoke());
+                return asNetworkClient;
             }
         }, null, null, 6, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final NetworkClient OkHttpNetworkFetcherFactory$lambda$2(Function0 function0) {
-        return asNetworkClient((Call.Factory) function0.invoke());
     }
 
     public static /* synthetic */ NetworkFetcher.Factory factory$default(Function0 function0, Function0 function02, int i, Object obj) {
@@ -79,16 +69,11 @@ public final class OkHttpNetworkFetcher {
         return new NetworkFetcher.Factory(new Function0() { // from class: coil3.network.okhttp.OkHttpNetworkFetcher$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NetworkClient OkHttpNetworkFetcherFactory$lambda$4;
-                OkHttpNetworkFetcherFactory$lambda$4 = OkHttpNetworkFetcher.OkHttpNetworkFetcherFactory$lambda$4(Function0.this);
-                return OkHttpNetworkFetcherFactory$lambda$4;
+                NetworkClient asNetworkClient;
+                asNetworkClient = OkHttpNetworkFetcher.asNetworkClient((Call.Factory) Function0.this.invoke());
+                return asNetworkClient;
             }
         }, function02, null, 4, null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final NetworkClient OkHttpNetworkFetcherFactory$lambda$4(Function0 function0) {
-        return asNetworkClient((Call.Factory) function0.invoke());
     }
 
     public static /* synthetic */ NetworkFetcher.Factory factory$default(Function0 function0, Function0 function02, Function1 function1, int i, Object obj) {
@@ -115,19 +100,14 @@ public final class OkHttpNetworkFetcher {
         return new NetworkFetcher.Factory(new Function0() { // from class: coil3.network.okhttp.OkHttpNetworkFetcher$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                NetworkClient OkHttpNetworkFetcherFactory$lambda$6;
-                OkHttpNetworkFetcherFactory$lambda$6 = OkHttpNetworkFetcher.OkHttpNetworkFetcherFactory$lambda$6(Function0.this);
-                return OkHttpNetworkFetcherFactory$lambda$6;
+                NetworkClient asNetworkClient;
+                asNetworkClient = OkHttpNetworkFetcher.asNetworkClient((Call.Factory) Function0.this.invoke());
+                return asNetworkClient;
             }
         }, function02, function1);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final NetworkClient OkHttpNetworkFetcherFactory$lambda$6(Function0 function0) {
-        return asNetworkClient((Call.Factory) function0.invoke());
-    }
-
     public static final NetworkClient asNetworkClient(Call.Factory factory) {
-        return CallFactoryNetworkClient.m9457boximpl(CallFactoryNetworkClient.m9458constructorimpl(factory));
+        return CallFactoryNetworkClient.m8597boximpl(CallFactoryNetworkClient.m8598constructorimpl(factory));
     }
 }

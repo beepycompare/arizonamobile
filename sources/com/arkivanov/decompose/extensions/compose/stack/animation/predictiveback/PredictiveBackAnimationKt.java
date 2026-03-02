@@ -22,16 +22,14 @@ public final class PredictiveBackAnimationKt {
             function3 = new Function3() { // from class: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimationKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj2, Object obj3, Object obj4) {
-                    PredictiveBackAnimatable predictiveBackAnimation$lambda$0;
-                    predictiveBackAnimation$lambda$0 = PredictiveBackAnimationKt.predictiveBackAnimation$lambda$0((BackEvent) obj2, (Child.Created) obj3, (Child.Created) obj4);
-                    return predictiveBackAnimation$lambda$0;
+                    return PredictiveBackAnimationKt.predictiveBackAnimation$lambda$0((BackEvent) obj2, (Child.Created) obj3, (Child.Created) obj4);
                 }
             };
         }
         return predictiveBackAnimation(backHandler, stackAnimation, function3, function0);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final PredictiveBackAnimatable predictiveBackAnimation$lambda$0(BackEvent initialBackEvent, Child.Created created, Child.Created created2) {
         Intrinsics.checkNotNullParameter(initialBackEvent, "initialBackEvent");
         Intrinsics.checkNotNullParameter(created, "<unused var>");

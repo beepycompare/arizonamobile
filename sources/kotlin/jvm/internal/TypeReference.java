@@ -134,9 +134,7 @@ public final class TypeReference implements KType {
         String str = name + (getArguments().isEmpty() ? "" : CollectionsKt.joinToString$default(getArguments(), ", ", "<", ">", 0, null, new Function1() { // from class: kotlin.jvm.internal.TypeReference$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence asString$lambda$0;
-                asString$lambda$0 = TypeReference.asString$lambda$0(TypeReference.this, (KTypeProjection) obj);
-                return asString$lambda$0;
+                return TypeReference.asString$lambda$0(TypeReference.this, (KTypeProjection) obj);
             }
         }, 24, null)) + (isMarkedNullable() ? "?" : "");
         KType kType = this.platformTypeUpperBound;
@@ -147,7 +145,7 @@ public final class TypeReference implements KType {
         return str;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence asString$lambda$0(TypeReference typeReference, KTypeProjection it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return typeReference.asString(it);

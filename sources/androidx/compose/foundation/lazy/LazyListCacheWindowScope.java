@@ -102,14 +102,12 @@ public final class LazyListCacheWindowScope implements CacheWindowScope {
         return CollectionsKt.listOf(getPrefetchScope().schedulePrefetch(i, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListCacheWindowScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit schedulePrefetch$lambda$0;
-                schedulePrefetch$lambda$0 = LazyListCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, (LazyListPrefetchResultScope) obj);
-                return schedulePrefetch$lambda$0;
+                return LazyListCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, (LazyListPrefetchResultScope) obj);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit schedulePrefetch$lambda$0(Function2 function2, LazyListPrefetchResultScope lazyListPrefetchResultScope) {
         function2.invoke(Integer.valueOf(lazyListPrefetchResultScope.getIndex()), Integer.valueOf(lazyListPrefetchResultScope.getMainAxisSize()));
         return Unit.INSTANCE;

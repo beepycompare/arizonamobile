@@ -54,8 +54,9 @@ public abstract class BaseKeyFrameScope {
             protected void afterChange(KProperty<?> kProperty, T t2, T t3) {
                 Map map;
                 Map map2;
+                BaseKeyFrameScope baseKeyFrameScope = this;
                 if (t3 != null) {
-                    map2 = this.keyFramePropertiesValue;
+                    map2 = baseKeyFrameScope.keyFramePropertiesValue;
                     String str2 = str;
                     if (str2 == null) {
                         str2 = kProperty.getName();
@@ -63,7 +64,7 @@ public abstract class BaseKeyFrameScope {
                     map2.put(str2, t3);
                     return;
                 }
-                map = this.keyFramePropertiesValue;
+                map = baseKeyFrameScope.keyFramePropertiesValue;
                 String str3 = str;
                 if (str3 == null) {
                     str3 = kProperty.getName();
@@ -124,7 +125,7 @@ public abstract class BaseKeyFrameScope {
                 cLString.setEnd(charArray.length - 1);
                 arrayOrCreate.add(cLString);
             } else if (value instanceof Dp) {
-                arrayOrCreate.add(new CLNumber(((Dp) value).m8272unboximpl()));
+                arrayOrCreate.add(new CLNumber(((Dp) value).m7569unboximpl()));
             } else if (value instanceof Number) {
                 arrayOrCreate.add(new CLNumber(((Number) value).floatValue()));
             }

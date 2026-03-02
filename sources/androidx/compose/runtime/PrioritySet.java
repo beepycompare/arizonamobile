@@ -13,49 +13,49 @@ public final class PrioritySet {
     private final MutableIntList list;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ PrioritySet m4626boximpl(MutableIntList mutableIntList) {
+    public static final /* synthetic */ PrioritySet m4001boximpl(MutableIntList mutableIntList) {
         return new PrioritySet(mutableIntList);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static MutableIntList m4627constructorimpl(MutableIntList mutableIntList) {
+    public static MutableIntList m4002constructorimpl(MutableIntList mutableIntList) {
         return mutableIntList;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4629equalsimpl(MutableIntList mutableIntList, Object obj) {
-        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m4638unboximpl());
+    public static boolean m4004equalsimpl(MutableIntList mutableIntList, Object obj) {
+        return (obj instanceof PrioritySet) && Intrinsics.areEqual(mutableIntList, ((PrioritySet) obj).m4013unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4630equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
+    public static final boolean m4005equalsimpl0(MutableIntList mutableIntList, MutableIntList mutableIntList2) {
         return Intrinsics.areEqual(mutableIntList, mutableIntList2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4631hashCodeimpl(MutableIntList mutableIntList) {
+    public static int m4006hashCodeimpl(MutableIntList mutableIntList) {
         return mutableIntList.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4636toStringimpl(MutableIntList mutableIntList) {
+    public static String m4011toStringimpl(MutableIntList mutableIntList) {
         return "PrioritySet(list=" + mutableIntList + ')';
     }
 
     public boolean equals(Object obj) {
-        return m4629equalsimpl(this.list, obj);
+        return m4004equalsimpl(this.list, obj);
     }
 
     public int hashCode() {
-        return m4631hashCodeimpl(this.list);
+        return m4006hashCodeimpl(this.list);
     }
 
     public String toString() {
-        return m4636toStringimpl(this.list);
+        return m4011toStringimpl(this.list);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ MutableIntList m4638unboximpl() {
+    public final /* synthetic */ MutableIntList m4013unboximpl() {
         return this.list;
     }
 
@@ -64,7 +64,7 @@ public final class PrioritySet {
     }
 
     /* renamed from: add-impl  reason: not valid java name */
-    public static final void m4625addimpl(MutableIntList mutableIntList, int i) {
+    public static final void m4000addimpl(MutableIntList mutableIntList, int i) {
         MutableIntList mutableIntList2 = mutableIntList;
         if (mutableIntList2._size == 0 || !(mutableIntList.get(0) == i || mutableIntList.get(mutableIntList2._size - 1) == i)) {
             int i2 = mutableIntList2._size;
@@ -83,22 +83,22 @@ public final class PrioritySet {
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static final boolean m4632isEmptyimpl(MutableIntList mutableIntList) {
+    public static final boolean m4007isEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size == 0;
     }
 
     /* renamed from: isNotEmpty-impl  reason: not valid java name */
-    public static final boolean m4633isNotEmptyimpl(MutableIntList mutableIntList) {
+    public static final boolean m4008isNotEmptyimpl(MutableIntList mutableIntList) {
         return mutableIntList._size != 0;
     }
 
     /* renamed from: peek-impl  reason: not valid java name */
-    public static final int m4634peekimpl(MutableIntList mutableIntList) {
+    public static final int m4009peekimpl(MutableIntList mutableIntList) {
         return mutableIntList.first();
     }
 
     /* renamed from: takeMax-impl  reason: not valid java name */
-    public static final int m4635takeMaximpl(MutableIntList mutableIntList) {
+    public static final int m4010takeMaximpl(MutableIntList mutableIntList) {
         int i;
         MutableIntList mutableIntList2 = mutableIntList;
         int i2 = mutableIntList2._size;
@@ -131,7 +131,7 @@ public final class PrioritySet {
     }
 
     /* renamed from: validateHeap-impl  reason: not valid java name */
-    public static final void m4637validateHeapimpl(MutableIntList mutableIntList) {
+    public static final void m4012validateHeapimpl(MutableIntList mutableIntList) {
         int i = mutableIntList._size;
         int i2 = i / 2;
         int i3 = 0;
@@ -153,10 +153,10 @@ public final class PrioritySet {
     }
 
     /* renamed from: constructor-impl$default  reason: not valid java name */
-    public static /* synthetic */ MutableIntList m4628constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public static /* synthetic */ MutableIntList m4003constructorimpl$default(MutableIntList mutableIntList, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
             mutableIntList = new MutableIntList(0, 1, null);
         }
-        return m4627constructorimpl(mutableIntList);
+        return m4002constructorimpl(mutableIntList);
     }
 }

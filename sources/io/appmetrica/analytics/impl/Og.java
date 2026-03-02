@@ -68,11 +68,11 @@ public final class Og extends Rg {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter(Constants.REFERRER);
                 if (!TextUtils.isEmpty(queryParameter)) {
-                    C0416m2 c0416m2 = this.f767a.t().y;
+                    C0415m2 c0415m2 = this.f767a.t().y;
                     for (String str2 : Uri.decode(queryParameter).split("&")) {
                         String decode = Uri.decode(str2);
                         int indexOf = decode.indexOf("=");
-                        if (indexOf >= 0 && a(Uri.decode(decode.substring(0, indexOf)), Uri.decode(decode.substring(indexOf + 1)), c0416m2)) {
+                        if (indexOf >= 0 && a(Uri.decode(decode.substring(0, indexOf)), Uri.decode(decode.substring(indexOf + 1)), c0415m2)) {
                             return true;
                         }
                     }
@@ -83,14 +83,14 @@ public final class Og extends Rg {
         return false;
     }
 
-    public static boolean a(String str, String str2, C0416m2 c0416m2) {
+    public static boolean a(String str, String str2, C0415m2 c0415m2) {
         Object obj;
         if ("reattribution".equals(str) && "1".equals(str2)) {
             return true;
         }
-        if (c0416m2 != null) {
-            for (Pair pair : c0416m2.f1107a) {
-                if (lo.a(pair.first, str) && ((obj = pair.second) == null || ((C0391l2) obj).f1088a.equals(str2))) {
+        if (c0415m2 != null) {
+            for (Pair pair : c0415m2.f1107a) {
+                if (lo.a(pair.first, str) && ((obj = pair.second) == null || ((C0390l2) obj).f1088a.equals(str2))) {
                     return true;
                 }
             }

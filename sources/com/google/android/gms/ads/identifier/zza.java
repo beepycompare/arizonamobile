@@ -2,8 +2,9 @@ package com.google.android.gms.ads.identifier;
 
 import android.net.Uri;
 import java.util.Map;
+import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 /* loaded from: classes4.dex */
 public final class zza extends Thread {
     final /* synthetic */ Map zza;
@@ -11,6 +12,7 @@ public final class zza extends Thread {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zza(AdvertisingIdClient advertisingIdClient, Map map) {
         this.zza = map;
+        Objects.requireNonNull(advertisingIdClient);
     }
 
     @Override // java.lang.Thread, java.lang.Runnable

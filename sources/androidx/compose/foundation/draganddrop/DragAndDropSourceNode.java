@@ -35,13 +35,11 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
     private Function1<? super DrawScope, Unit> drawDragDecoration;
     private PointerInputModifierNode inputModifierNode;
     private Function1<? super Offset, DragAndDropTransferData> transferData;
-    private long size = IntSize.Companion.m8434getZeroYbymL2g();
+    private long size = IntSize.Companion.m7731getZeroYbymL2g();
     private final DragAndDropSourceModifierNode dragAndDropModifierNode = (DragAndDropSourceModifierNode) delegate(DragAndDropNodeKt.DragAndDropSourceModifierNode(new Function2() { // from class: androidx.compose.foundation.draganddrop.DragAndDropSourceNode$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Unit dragAndDropModifierNode$lambda$0;
-            dragAndDropModifierNode$lambda$0 = DragAndDropSourceNode.dragAndDropModifierNode$lambda$0(DragAndDropSourceNode.this, (DragAndDropStartTransferScope) obj, (Offset) obj2);
-            return dragAndDropModifierNode$lambda$0;
+            return DragAndDropSourceNode.dragAndDropModifierNode$lambda$0(DragAndDropSourceNode.this, (DragAndDropStartTransferScope) obj, (Offset) obj2);
         }
     }));
 
@@ -75,11 +73,11 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
         this.transferData = function1;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit dragAndDropModifierNode$lambda$0(DragAndDropSourceNode dragAndDropSourceNode, DragAndDropStartTransferScope dragAndDropStartTransferScope, Offset offset) {
         DragAndDropTransferData invoke = dragAndDropSourceNode.transferData.invoke(offset);
         if (invoke != null) {
-            dragAndDropStartTransferScope.mo4929startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m8441toSizeozmzZPI(dragAndDropSourceNode.size), dragAndDropSourceNode.drawDragDecoration);
+            dragAndDropStartTransferScope.mo4277startDragAndDropTransfer12SF9DM(invoke, IntSizeKt.m7738toSizeozmzZPI(dragAndDropSourceNode.size), dragAndDropSourceNode.drawDragDecoration);
         }
         return Unit.INSTANCE;
     }
@@ -109,8 +107,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
                     /* renamed from: getExtendedTouchPadding-NH-jbRc  reason: not valid java name */
-                    public long mo454getExtendedTouchPaddingNHjbRc() {
-                        return this.$$delegate_0.mo454getExtendedTouchPaddingNHjbRc();
+                    public long mo395getExtendedTouchPaddingNHjbRc() {
+                        return this.$$delegate_0.mo395getExtendedTouchPaddingNHjbRc();
                     }
 
                     @Override // androidx.compose.ui.unit.FontScaling
@@ -125,8 +123,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
                     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-                    public long mo455getSizeYbymL2g() {
-                        return this.$$delegate_0.mo455getSizeYbymL2g();
+                    public long mo396getSizeYbymL2g() {
+                        return this.$$delegate_0.mo396getSizeYbymL2g();
                     }
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -136,14 +134,14 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-                    public int mo457roundToPxR2X_6o(long j) {
-                        return this.$$delegate_0.mo457roundToPxR2X_6o(j);
+                    public int mo398roundToPxR2X_6o(long j) {
+                        return this.$$delegate_0.mo398roundToPxR2X_6o(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-                    public int mo458roundToPx0680j_4(float f) {
-                        return this.$$delegate_0.mo458roundToPx0680j_4(f);
+                    public int mo399roundToPx0680j_4(float f) {
+                        return this.$$delegate_0.mo399roundToPx0680j_4(f);
                     }
 
                     @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -153,38 +151,38 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.FontScaling
                     /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-                    public float mo459toDpGaN1DYA(long j) {
-                        return this.$$delegate_0.mo459toDpGaN1DYA(j);
+                    public float mo400toDpGaN1DYA(long j) {
+                        return this.$$delegate_0.mo400toDpGaN1DYA(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-                    public float mo460toDpu2uoSUM(float f) {
-                        return this.$$delegate_0.mo460toDpu2uoSUM(f);
+                    public float mo401toDpu2uoSUM(float f) {
+                        return this.$$delegate_0.mo401toDpu2uoSUM(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-                    public float mo461toDpu2uoSUM(int i) {
-                        return this.$$delegate_0.mo461toDpu2uoSUM(i);
+                    public float mo402toDpu2uoSUM(int i) {
+                        return this.$$delegate_0.mo402toDpu2uoSUM(i);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-                    public long mo462toDpSizekrfVVM(long j) {
-                        return this.$$delegate_0.mo462toDpSizekrfVVM(j);
+                    public long mo403toDpSizekrfVVM(long j) {
+                        return this.$$delegate_0.mo403toDpSizekrfVVM(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toPx--R2X_6o  reason: not valid java name */
-                    public float mo463toPxR2X_6o(long j) {
-                        return this.$$delegate_0.mo463toPxR2X_6o(j);
+                    public float mo404toPxR2X_6o(long j) {
+                        return this.$$delegate_0.mo404toPxR2X_6o(j);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toPx-0680j_4  reason: not valid java name */
-                    public float mo464toPx0680j_4(float f) {
-                        return this.$$delegate_0.mo464toPx0680j_4(f);
+                    public float mo405toPx0680j_4(float f) {
+                        return this.$$delegate_0.mo405toPx0680j_4(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
@@ -194,26 +192,26 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-                    public long mo465toSizeXkaWNTQ(long j) {
-                        return this.$$delegate_0.mo465toSizeXkaWNTQ(j);
+                    public long mo406toSizeXkaWNTQ(long j) {
+                        return this.$$delegate_0.mo406toSizeXkaWNTQ(j);
                     }
 
                     @Override // androidx.compose.ui.unit.FontScaling
                     /* renamed from: toSp-0xMU5do  reason: not valid java name */
-                    public long mo466toSp0xMU5do(float f) {
-                        return this.$$delegate_0.mo466toSp0xMU5do(f);
+                    public long mo407toSp0xMU5do(float f) {
+                        return this.$$delegate_0.mo407toSp0xMU5do(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-                    public long mo467toSpkPz2Gy4(float f) {
-                        return this.$$delegate_0.mo467toSpkPz2Gy4(f);
+                    public long mo408toSpkPz2Gy4(float f) {
+                        return this.$$delegate_0.mo408toSpkPz2Gy4(f);
                     }
 
                     @Override // androidx.compose.ui.unit.Density
                     /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-                    public long mo468toSpkPz2Gy4(int i) {
-                        return this.$$delegate_0.mo468toSpkPz2Gy4(i);
+                    public long mo409toSpkPz2Gy4(int i) {
+                        return this.$$delegate_0.mo409toSpkPz2Gy4(i);
                     }
 
                     AnonymousClass1(PointerInputScope pointerInputScope, DragAndDropSourceNode dragAndDropSourceNode) {
@@ -223,10 +221,10 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
                     @Override // androidx.compose.foundation.draganddrop.DragAndDropStartDetectorScope
                     /* renamed from: requestDragAndDropTransfer-k-4lQ0M  reason: not valid java name */
-                    public void mo456requestDragAndDropTransferk4lQ0M(long j) {
+                    public void mo397requestDragAndDropTransferk4lQ0M(long j) {
                         DragAndDropSourceModifierNode dragAndDropSourceModifierNode;
                         dragAndDropSourceModifierNode = this.this$0.dragAndDropModifierNode;
-                        dragAndDropSourceModifierNode.mo4932requestDragAndDropTransferk4lQ0M(j);
+                        dragAndDropSourceModifierNode.mo4280requestDragAndDropTransferk4lQ0M(j);
                     }
                 }
 
@@ -254,8 +252,8 @@ public final class DragAndDropSourceNode extends DelegatingNode implements Layou
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI  reason: not valid java name */
-    public void mo453onRemeasuredozmzZPI(long j) {
+    public void mo394onRemeasuredozmzZPI(long j) {
         this.size = j;
-        this.dragAndDropModifierNode.mo453onRemeasuredozmzZPI(j);
+        this.dragAndDropModifierNode.mo394onRemeasuredozmzZPI(j);
     }
 }

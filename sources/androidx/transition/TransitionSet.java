@@ -323,6 +323,7 @@ public class TransitionSet extends Transition {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.transition.Transition
     public void runAnimators() {
+        ArrayList<Transition> arrayList;
         if (this.mTransitions.isEmpty()) {
             start();
             end();
@@ -330,17 +331,24 @@ public class TransitionSet extends Transition {
         }
         setupStartEndListeners();
         if (!this.mPlayTogether) {
-            for (int i = 1; i < this.mTransitions.size(); i++) {
+            int i = 1;
+            while (true) {
+                int size = this.mTransitions.size();
+                arrayList = this.mTransitions;
+                if (i >= size) {
+                    break;
+                }
                 final Transition transition = this.mTransitions.get(i);
-                this.mTransitions.get(i - 1).addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionSet.1
+                arrayList.get(i - 1).addListener(new TransitionListenerAdapter() { // from class: androidx.transition.TransitionSet.1
                     @Override // androidx.transition.TransitionListenerAdapter, androidx.transition.Transition.TransitionListener
                     public void onTransitionEnd(Transition transition2) {
                         transition.runAnimators();
                         transition2.removeListener(this);
                     }
                 });
+                i++;
             }
-            Transition transition2 = this.mTransitions.get(0);
+            Transition transition2 = arrayList.get(0);
             if (transition2 != null) {
                 transition2.runAnimators();
                 return;
@@ -395,12 +403,19 @@ public class TransitionSet extends Transition {
     }
 
     private int indexOfTransition(long j) {
-        for (int i = 1; i < this.mTransitions.size(); i++) {
-            if (this.mTransitions.get(i).mSeekOffsetInParent > j) {
-                return i - 1;
+        int i = 1;
+        while (true) {
+            int size = this.mTransitions.size();
+            ArrayList<Transition> arrayList = this.mTransitions;
+            if (i < size) {
+                if (arrayList.get(i).mSeekOffsetInParent > j) {
+                    return i - 1;
+                }
+                i++;
+            } else {
+                return arrayList.size() - 1;
             }
         }
-        return this.mTransitions.size() - 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -628,12 +643,12 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* renamed from: clone */
-    public Transition mo9339clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo9339clone();
+    public Transition mo8541clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo8541clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo9339clone());
+            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo8541clone());
         }
         return transitionSet;
     }

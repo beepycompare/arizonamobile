@@ -49,7 +49,7 @@ public final class SharedElement$momentumAnimationOffset$1$2$1 extends SuspendLa
             ResultKt.throwOnFailure(obj);
             animatable = this.this$0.momentumAnimation;
             this.label = 1;
-            if (Animatable.animateTo$default(animatable, Offset.m5168boximpl(Offset.Companion.m5195getZeroF1C5BW0()), this.$spring, null, null, this, 12, null) == coroutine_suspended) {
+            if (Animatable.animateTo$default(animatable, Offset.m4516boximpl(Offset.Companion.m4543getZeroF1C5BW0()), this.$spring, null, null, this, 12, null) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

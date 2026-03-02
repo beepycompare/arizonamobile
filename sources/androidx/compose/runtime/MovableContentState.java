@@ -24,11 +24,6 @@ public final class MovableContentState {
         return this.slotTable;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Integer extractNestedStates$lambda$1(MovableContentState movableContentState, MovableContentStateReference movableContentStateReference) {
-        return Integer.valueOf(movableContentState.slotTable.anchorIndex(movableContentStateReference.getAnchor$runtime()));
-    }
-
     private static final void extractNestedStates$lambda$2$closeToGroupContaining(SlotWriter slotWriter, int i) {
         while (slotWriter.getParent() >= 0 && slotWriter.getCurrentGroupEnd() <= i) {
             slotWriter.skipToGroupEnd();
@@ -78,9 +73,9 @@ public final class MovableContentState {
         ObjectList sortedBy = ExtensionsKt.sortedBy(objectList, new Function1() { // from class: androidx.compose.runtime.MovableContentState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Integer extractNestedStates$lambda$1;
-                extractNestedStates$lambda$1 = MovableContentState.extractNestedStates$lambda$1(MovableContentState.this, (MovableContentStateReference) obj2);
-                return extractNestedStates$lambda$1;
+                Integer valueOf;
+                valueOf = Integer.valueOf(MovableContentState.this.slotTable.anchorIndex(((MovableContentStateReference) obj2).getAnchor$runtime()));
+                return valueOf;
             }
         });
         if (sortedBy.isEmpty()) {

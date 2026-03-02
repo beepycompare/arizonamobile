@@ -104,7 +104,7 @@ public class PersistentHashSetIterator<E> implements Iterator<E>, KMappedMarker 
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final E currentElement() {
-        CommonFunctionsKt.m11753assert(hasNext());
+        CommonFunctionsKt.m10682assert(hasNext());
         return this.path.get(this.pathLastIndex).currentElement();
     }
 }

@@ -29,9 +29,7 @@ public abstract class WindowAreaController {
     private static final Lazy<WindowAreaController> windowAreaController$delegate = LazyKt.lazy(new Function0() { // from class: androidx.window.area.WindowAreaController$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            WindowAreaController windowAreaController_delegate$lambda$1;
-            windowAreaController_delegate$lambda$1 = WindowAreaController.windowAreaController_delegate$lambda$1();
-            return windowAreaController_delegate$lambda$1;
+            return WindowAreaController.windowAreaController_delegate$lambda$1();
         }
     });
 
@@ -88,7 +86,7 @@ public abstract class WindowAreaController {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final WindowAreaController windowAreaController_delegate$lambda$1() {
         WindowAreaComponent windowAreaComponent = null;
         try {

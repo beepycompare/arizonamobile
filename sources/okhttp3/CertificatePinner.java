@@ -69,14 +69,12 @@ public final class CertificatePinner {
         check$okhttp(hostname, new Function0() { // from class: okhttp3.CertificatePinner$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List check$lambda$0;
-                check$lambda$0 = CertificatePinner.check$lambda$0(CertificatePinner.this, peerCertificates, hostname);
-                return check$lambda$0;
+                return CertificatePinner.check$lambda$0(CertificatePinner.this, peerCertificates, hostname);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List check$lambda$0(CertificatePinner certificatePinner, List list, String str) {
         List<Certificate> clean;
         CertificateChainCleaner certificateChainCleaner = certificatePinner.certificateChainCleaner;
@@ -242,16 +240,20 @@ public final class CertificatePinner {
 
         public final boolean matchesHostname(String hostname) {
             Intrinsics.checkNotNullParameter(hostname, "hostname");
-            if (StringsKt.startsWith$default(this.pattern, "**.", false, 2, (Object) null)) {
-                int length = this.pattern.length() - 3;
+            boolean startsWith$default = StringsKt.startsWith$default(this.pattern, "**.", false, 2, (Object) null);
+            String str = this.pattern;
+            if (startsWith$default) {
+                int length = str.length() - 3;
                 int length2 = hostname.length() - length;
                 return StringsKt.regionMatches$default(hostname, hostname.length() - length, this.pattern, 3, length, false, 16, (Object) null) && (length2 == 0 || hostname.charAt(length2 - 1) == '.');
-            } else if (StringsKt.startsWith$default(this.pattern, "*.", false, 2, (Object) null)) {
-                int length3 = this.pattern.length() - 1;
-                return StringsKt.regionMatches$default(hostname, hostname.length() - length3, this.pattern, 1, length3, false, 16, (Object) null) && StringsKt.lastIndexOf$default((CharSequence) hostname, '.', (hostname.length() - length3) + (-1), false, 4, (Object) null) == -1;
-            } else {
-                return Intrinsics.areEqual(hostname, this.pattern);
             }
+            boolean startsWith$default2 = StringsKt.startsWith$default(str, "*.", false, 2, (Object) null);
+            String str2 = this.pattern;
+            if (startsWith$default2) {
+                int length3 = str2.length() - 1;
+                return StringsKt.regionMatches$default(hostname, hostname.length() - length3, this.pattern, 1, length3, false, 16, (Object) null) && StringsKt.lastIndexOf$default((CharSequence) hostname, '.', (hostname.length() - length3) + (-1), false, 4, (Object) null) == -1;
+            }
+            return Intrinsics.areEqual(hostname, str2);
         }
 
         public final boolean matchesCertificate(X509Certificate certificate) {

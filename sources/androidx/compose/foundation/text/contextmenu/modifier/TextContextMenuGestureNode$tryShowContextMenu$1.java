@@ -67,7 +67,7 @@ public final class TextContextMenuGestureNode$tryShowContextMenu$1 extends Suspe
             ResultKt.throwOnFailure(obj);
             function2 = this.this$0.onPreShowContextMenu;
             if (function2 != null) {
-                Offset m5168boximpl = Offset.m5168boximpl(this.f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0);
+                Offset m4516boximpl = Offset.m4516boximpl(this.f56$$v$c$androidxcomposeuigeometryOffset$localClickOffset$0);
                 this.label = 1;
             }
         } else if (i != 1) {

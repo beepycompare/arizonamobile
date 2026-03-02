@@ -30,24 +30,22 @@ public final class NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1 implemen
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
-        final Placeable mo6875measureBRTryo0 = list.get(0).mo6875measureBRTryo0(j);
-        final Placeable mo6875measureBRTryo02 = list.get(1).mo6875measureBRTryo0(j);
-        int width = mo6875measureBRTryo02.getWidth();
-        int height = mo6875measureBRTryo02.getHeight();
+    public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        final Placeable mo6216measureBRTryo0 = list.get(0).mo6216measureBRTryo0(j);
+        final Placeable mo6216measureBRTryo02 = list.get(1).mo6216measureBRTryo0(j);
+        int width = mo6216measureBRTryo02.getWidth();
+        int height = mo6216measureBRTryo02.getHeight();
         final DrawerState drawerState = this.$drawerState;
         final MutableState<Boolean> mutableState = this.$anchorsInitialized$delegate;
         return MeasureScope.layout$default(measureScope, width, height, null, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1(DrawerState.this, mo6875measureBRTryo0, mo6875measureBRTryo02, mutableState, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1(DrawerState.this, mo6216measureBRTryo0, mo6216measureBRTryo02, mutableState, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(DrawerState drawerState, Placeable placeable, Placeable placeable2, MutableState mutableState, Placeable.PlacementScope placementScope) {
         boolean DismissibleNavigationDrawer$lambda$27;
         boolean DismissibleNavigationDrawer$lambda$272;
@@ -62,9 +60,7 @@ public final class NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1 implemen
             AnchoredDraggableState.updateAnchors$default(drawerState.getAnchoredDraggableState$material3(), AnchoredDraggableKt.DraggableAnchors(new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$1$lambda$0;
-                    measure_3p2s80s$lambda$1$lambda$0 = NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1$lambda$0(f, (DraggableAnchorsConfig) obj);
-                    return measure_3p2s80s$lambda$1$lambda$0;
+                    return NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1.measure_3p2s80s$lambda$1$lambda$0(f, (DraggableAnchorsConfig) obj);
                 }
             }), null, 2, null);
         }
@@ -73,7 +69,7 @@ public final class NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1 implemen
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1$lambda$0(float f, DraggableAnchorsConfig draggableAnchorsConfig) {
         draggableAnchorsConfig.at(DrawerValue.Closed, f);
         draggableAnchorsConfig.at(DrawerValue.Open, 0.0f);

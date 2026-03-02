@@ -35,10 +35,12 @@ public final class LruCache implements Cache {
             throw new NullPointerException("key == null || bitmap == null");
         }
         int bitmapBytes = Utils.getBitmapBytes(bitmap);
-        if (bitmapBytes > maxSize()) {
-            this.cache.remove(str);
+        int maxSize = maxSize();
+        android.util.LruCache<String, BitmapAndSize> lruCache = this.cache;
+        if (bitmapBytes > maxSize) {
+            lruCache.remove(str);
         } else {
-            this.cache.put(str, new BitmapAndSize(bitmap, bitmapBytes));
+            lruCache.put(str, new BitmapAndSize(bitmap, bitmapBytes));
         }
     }
 

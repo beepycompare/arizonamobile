@@ -36,13 +36,13 @@ public final class LazyWindowInfo implements WindowInfo {
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getKeyboardModifiers-k7X9c1A */
-    public int mo7388getKeyboardModifiersk7X9c1A() {
-        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().getValue().m6811unboximpl();
+    public int mo6722getKeyboardModifiersk7X9c1A() {
+        return WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().getValue().m6152unboximpl();
     }
 
     /* renamed from: setKeyboardModifiers-5xRPYO0 */
-    public void m7389setKeyboardModifiers5xRPYO0(int i) {
-        WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().setValue(PointerKeyboardModifiers.m6805boximpl(i));
+    public void m6723setKeyboardModifiers5xRPYO0(int i) {
+        WindowInfoImpl.Companion.getGlobalKeyboardModifiers$ui().setValue(PointerKeyboardModifiers.m6146boximpl(i));
     }
 
     public final void updateContainerSizeIfObserved(Function0<DerivedSize> function0) {
@@ -60,7 +60,7 @@ public final class LazyWindowInfo implements WindowInfo {
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getContainerSize-YbymL2g */
-    public long mo7387getContainerSizeYbymL2g() {
+    public long mo6721getContainerSizeYbymL2g() {
         DerivedSize zero;
         MutableState<DerivedSize> mutableStateOf$default;
         if (this._containerSize == null) {
@@ -74,12 +74,12 @@ public final class LazyWindowInfo implements WindowInfo {
         }
         MutableState<DerivedSize> mutableState = this._containerSize;
         Intrinsics.checkNotNull(mutableState);
-        return mutableState.getValue().m7353getPxSizeYbymL2g();
+        return mutableState.getValue().m6689getPxSizeYbymL2g();
     }
 
     @Override // androidx.compose.ui.platform.WindowInfo
     /* renamed from: getContainerDpSize-MYxV2XQ */
-    public long mo7386getContainerDpSizeMYxV2XQ() {
+    public long mo6720getContainerDpSizeMYxV2XQ() {
         DerivedSize zero;
         MutableState<DerivedSize> mutableStateOf$default;
         if (this._containerSize == null) {
@@ -93,6 +93,6 @@ public final class LazyWindowInfo implements WindowInfo {
         }
         MutableState<DerivedSize> mutableState = this._containerSize;
         Intrinsics.checkNotNull(mutableState);
-        return mutableState.getValue().m7352getDpSizeMYxV2XQ();
+        return mutableState.getValue().m6688getDpSizeMYxV2XQ();
     }
 }

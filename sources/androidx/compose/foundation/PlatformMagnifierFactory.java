@@ -11,7 +11,7 @@ public interface PlatformMagnifierFactory {
     public static final Companion Companion = Companion.$$INSTANCE;
 
     /* renamed from: create-nHHXs2Y  reason: not valid java name */
-    PlatformMagnifier mo405createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3);
+    PlatformMagnifier mo354createnHHXs2Y(View view, boolean z, long j, float f, float f2, boolean z2, Density density, float f3);
 
     boolean getCanUpdateZoom();
 

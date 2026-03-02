@@ -3,7 +3,7 @@ package androidx.media3.exoplayer;
 import android.os.HandlerThread;
 import android.os.Looper;
 import com.google.common.base.Preconditions;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PlaybackLooperProvider {
     private HandlerThread internalPlaybackThread;
     private final Object lock;

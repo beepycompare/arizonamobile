@@ -37,14 +37,12 @@ public final class TextFieldPressGestureFilterKt {
         return z ? ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.TextFieldPressGestureFilterKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier tapPressTextFieldModifier$lambda$0;
-                tapPressTextFieldModifier$lambda$0 = TextFieldPressGestureFilterKt.tapPressTextFieldModifier$lambda$0(Function1.this, mutableInteractionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return tapPressTextFieldModifier$lambda$0;
+                return TextFieldPressGestureFilterKt.tapPressTextFieldModifier$lambda$0(Function1.this, mutableInteractionSource, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null) : modifier;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Modifier tapPressTextFieldModifier$lambda$0(Function1 function1, final MutableInteractionSource mutableInteractionSource, Modifier modifier, Composer composer, int i) {
         composer.startReplaceGroup(-102778667);
         ComposerKt.sourceInformation(composer, "C40@1628L24,41@1690L58,42@1778L27,43@1854L343,43@1818L379,52@2251L1562:TextFieldPressGestureFilter.kt#423gt5");

@@ -17,8 +17,8 @@ import ru.rustore.sdk.metrics.internal.X;
 public final class I {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0828o f1580a;
-    public final InterfaceC0820g b;
+    public final C0827o f1580a;
+    public final InterfaceC0819g b;
     public final Lazy c;
 
     /* loaded from: classes6.dex */
@@ -57,7 +57,7 @@ public final class I {
         }
     }
 
-    public I(C0828o metricsEventDataBaseHelper, X.b logger) {
+    public I(C0827o metricsEventDataBaseHelper, X.b logger) {
         Intrinsics.checkNotNullParameter(metricsEventDataBaseHelper, "metricsEventDataBaseHelper");
         Intrinsics.checkNotNullParameter(logger, "logger");
         this.f1580a = metricsEventDataBaseHelper;

@@ -50,7 +50,7 @@ public final class FocusOwnerImpl implements FocusOwner {
     private MutableLongSet keysCurrentlyDown;
     private final Owner owner;
     private final PlatformFocusOwner platformFocusOwner;
-    private FocusTargetNode rootFocusNode = new FocusTargetNode(Focusability.Companion.m5114getNeverLCbbffg(), false, null, null, 14, null);
+    private FocusTargetNode rootFocusNode = new FocusTargetNode(Focusability.Companion.m4462getNeverLCbbffg(), false, null, null, 14, null);
     private final Modifier modifier = new ModifierNodeElement<FocusTargetNode>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$modifier$1
         @Override // androidx.compose.ui.node.ModifierNodeElement
         public boolean equals(Object obj) {
@@ -127,14 +127,14 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: requestOwnerFocus-7o62pno */
-    public boolean mo5075requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect) {
-        return this.platformFocusOwner.mo5121requestOwnerFocus7o62pno(focusDirection, rect);
+    public boolean mo4423requestOwnerFocus7o62pno(FocusDirection focusDirection, Rect rect) {
+        return this.platformFocusOwner.mo4469requestOwnerFocus7o62pno(focusDirection, rect);
     }
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: takeFocus-aToIllA */
-    public boolean mo5077takeFocusaToIllA(final int i, Rect rect) {
-        Boolean mo5073focusSearchULY8qGw = mo5073focusSearchULY8qGw(i, rect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$takeFocus$1
+    public boolean mo4425takeFocusaToIllA(final int i, Rect rect) {
+        Boolean mo4421focusSearchULY8qGw = mo4421focusSearchULY8qGw(i, rect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$takeFocus$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -143,11 +143,11 @@ public final class FocusOwnerImpl implements FocusOwner {
 
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                return Boolean.valueOf(focusTargetNode.mo5088requestFocus3ESFkO8(i));
+                return Boolean.valueOf(focusTargetNode.mo4436requestFocus3ESFkO8(i));
             }
         });
-        if (mo5073focusSearchULY8qGw != null) {
-            return mo5073focusSearchULY8qGw.booleanValue();
+        if (mo4421focusSearchULY8qGw != null) {
+            return mo4421focusSearchULY8qGw.booleanValue();
         }
         return false;
     }
@@ -172,15 +172,15 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusManager
     public void clearFocus(boolean z) {
-        mo5070clearFocusI7lrPNg(z, true, true, FocusDirection.Companion.m5060getExitdhqQ8s());
+        mo4418clearFocusI7lrPNg(z, true, true, FocusDirection.Companion.m4408getExitdhqQ8s());
     }
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: clearFocus-I7lrPNg */
-    public boolean mo5070clearFocusI7lrPNg(boolean z, boolean z2, boolean z3, int i) {
+    public boolean mo4418clearFocusI7lrPNg(boolean z, boolean z2, boolean z3, int i) {
         boolean clearFocus;
         if (!z) {
-            int i2 = WhenMappings.$EnumSwitchMapping$0[FocusTransactionsKt.m5097performCustomClearFocusMxy_nc0(this.rootFocusNode, i).ordinal()];
+            int i2 = WhenMappings.$EnumSwitchMapping$0[FocusTransactionsKt.m4445performCustomClearFocusMxy_nc0(this.rootFocusNode, i).ordinal()];
             if (i2 == 1 || i2 == 2 || i2 == 3) {
                 clearFocus = false;
             } else if (i2 != 4) {
@@ -199,9 +199,9 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: resetFocus-3ESFkO8 */
-    public boolean mo5076resetFocus3ESFkO8(final int i) {
-        if (mo5070clearFocusI7lrPNg(false, true, false, i)) {
-            Boolean mo5073focusSearchULY8qGw = mo5073focusSearchULY8qGw(i, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$resetFocus$successfulReset$1
+    public boolean mo4424resetFocus3ESFkO8(final int i) {
+        if (mo4418clearFocusI7lrPNg(false, true, false, i)) {
+            Boolean mo4421focusSearchULY8qGw = mo4421focusSearchULY8qGw(i, null, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$resetFocus$successfulReset$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -210,10 +210,10 @@ public final class FocusOwnerImpl implements FocusOwner {
 
                 @Override // kotlin.jvm.functions.Function1
                 public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                    return Boolean.valueOf(focusTargetNode.mo5088requestFocus3ESFkO8(i));
+                    return Boolean.valueOf(focusTargetNode.mo4436requestFocus3ESFkO8(i));
                 }
             });
-            boolean booleanValue = mo5073focusSearchULY8qGw != null ? mo5073focusSearchULY8qGw.booleanValue() : false;
+            boolean booleanValue = mo4421focusSearchULY8qGw != null ? mo4421focusSearchULY8qGw.booleanValue() : false;
             if (!booleanValue) {
                 clearOwnerFocus();
             }
@@ -240,25 +240,25 @@ public final class FocusOwnerImpl implements FocusOwner {
             if (z2 && activeFocusTargetNode != null) {
                 activeFocusTargetNode.dispatchFocusCallbacks$ui(isFocusCaptured() ? FocusStateImpl.Captured : FocusStateImpl.Active, FocusStateImpl.Inactive);
                 FocusTargetNode focusTargetNode = activeFocusTargetNode;
-                int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+                int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
                 if (!focusTargetNode.getNode().isAttached()) {
                     InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                 }
                 Modifier.Node parent$ui = focusTargetNode.getNode().getParent$ui();
                 LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(focusTargetNode);
                 while (requireLayoutNode != null) {
-                    if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                    if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                         while (parent$ui != null) {
-                            if ((parent$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                            if ((parent$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                 MutableVector mutableVector = null;
                                 Modifier.Node node = parent$ui;
                                 while (node != null) {
                                     if (node instanceof FocusTargetNode) {
                                         ((FocusTargetNode) node).dispatchFocusCallbacks$ui(FocusStateImpl.ActiveParent, FocusStateImpl.Inactive);
-                                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                         int i = 0;
                                         for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                            if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                            if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                                 i++;
                                                 if (i == 1) {
                                                     node = delegate$ui;
@@ -298,22 +298,22 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusManager
     /* renamed from: moveFocus-3ESFkO8 */
-    public boolean mo5068moveFocus3ESFkO8(int i) {
-        return mo5074moveFocusaToIllA(i, true);
+    public boolean mo4416moveFocus3ESFkO8(int i) {
+        return mo4422moveFocusaToIllA(i, true);
     }
 
     /* JADX WARN: Type inference failed for: r3v0, types: [T, java.lang.Boolean] */
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: moveFocus-aToIllA */
-    public boolean mo5074moveFocusaToIllA(final int i, boolean z) {
+    public boolean mo4422moveFocusaToIllA(final int i, boolean z) {
         FocusTargetNode activeFocusTargetNode;
-        if ((ComposeUiFlags.isViewFocusFixEnabled || (ComposeUiFlags.isBypassUnfocusableComposeViewEnabled && (activeFocusTargetNode = getActiveFocusTargetNode()) != null && activeFocusTargetNode.isInteropViewHost())) && this.platformFocusOwner.mo5120moveFocusInChildren3ESFkO8(i)) {
+        if ((ComposeUiFlags.isViewFocusFixEnabled || (ComposeUiFlags.isBypassUnfocusableComposeViewEnabled && (activeFocusTargetNode = getActiveFocusTargetNode()) != null && activeFocusTargetNode.isInteropViewHost())) && this.platformFocusOwner.mo4468moveFocusInChildren3ESFkO8(i)) {
             return true;
         }
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
         objectRef.element = false;
         FocusTargetNode activeFocusTargetNode2 = getActiveFocusTargetNode();
-        Boolean mo5073focusSearchULY8qGw = mo5073focusSearchULY8qGw(i, this.platformFocusOwner.getEmbeddedViewFocusRect(), new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$moveFocus$focusSearchSuccess$1
+        Boolean mo4421focusSearchULY8qGw = mo4421focusSearchULY8qGw(i, this.platformFocusOwner.getEmbeddedViewFocusRect(), new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$moveFocus$focusSearchSuccess$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -323,19 +323,19 @@ public final class FocusOwnerImpl implements FocusOwner {
             /* JADX WARN: Type inference failed for: r3v2, types: [T, java.lang.Boolean] */
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(FocusTargetNode focusTargetNode) {
-                objectRef.element = Boolean.valueOf(focusTargetNode.mo5088requestFocus3ESFkO8(i));
+                objectRef.element = Boolean.valueOf(focusTargetNode.mo4436requestFocus3ESFkO8(i));
                 return objectRef.element;
             }
         });
-        if (!Intrinsics.areEqual((Object) mo5073focusSearchULY8qGw, (Object) true) || activeFocusTargetNode2 == getActiveFocusTargetNode()) {
-            if (mo5073focusSearchULY8qGw != null && objectRef.element != 0) {
-                if (mo5073focusSearchULY8qGw.booleanValue() && ((Boolean) objectRef.element).booleanValue()) {
+        if (!Intrinsics.areEqual((Object) mo4421focusSearchULY8qGw, (Object) true) || activeFocusTargetNode2 == getActiveFocusTargetNode()) {
+            if (mo4421focusSearchULY8qGw != null && objectRef.element != 0) {
+                if (mo4421focusSearchULY8qGw.booleanValue() && ((Boolean) objectRef.element).booleanValue()) {
                     return true;
                 }
-                if (FocusOwnerImplKt.m5081is1dFocusSearch3ESFkO8(i) && z) {
-                    return mo5070clearFocusI7lrPNg(false, true, false, i) && mo5077takeFocusaToIllA(i, null);
+                if (FocusOwnerImplKt.m4429is1dFocusSearch3ESFkO8(i) && z) {
+                    return mo4418clearFocusI7lrPNg(false, true, false, i) && mo4425takeFocusaToIllA(i, null);
                 } else if (!ComposeUiFlags.isViewFocusFixEnabled && !ComposeUiFlags.isBypassUnfocusableComposeViewEnabled) {
-                    return this.platformFocusOwner.mo5120moveFocusInChildren3ESFkO8(i);
+                    return this.platformFocusOwner.mo4468moveFocusInChildren3ESFkO8(i);
                 }
             }
             return false;
@@ -351,42 +351,42 @@ public final class FocusOwnerImpl implements FocusOwner {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Boolean mo5073focusSearchULY8qGw(int i, Rect rect, final Function1<? super FocusTargetNode, Boolean> function1) {
+    public Boolean mo4421focusSearchULY8qGw(int i, Rect rect, final Function1<? super FocusTargetNode, Boolean> function1) {
         final FocusTargetNode findFocusTargetNode = findFocusTargetNode();
         MutableVector mutableVector = null;
         if (findFocusTargetNode != null) {
-            FocusRequester m5103customFocusSearchOMvw8 = FocusTraversalKt.m5103customFocusSearchOMvw8(findFocusTargetNode, i, this.owner.getLayoutDirection());
-            if (Intrinsics.areEqual(m5103customFocusSearchOMvw8, FocusRequester.Companion.getCancel())) {
+            FocusRequester m4451customFocusSearchOMvw8 = FocusTraversalKt.m4451customFocusSearchOMvw8(findFocusTargetNode, i, this.owner.getLayoutDirection());
+            if (Intrinsics.areEqual(m4451customFocusSearchOMvw8, FocusRequester.Companion.getCancel())) {
                 return null;
             }
-            if (Intrinsics.areEqual(m5103customFocusSearchOMvw8, FocusRequester.Companion.getRedirect$ui())) {
+            if (Intrinsics.areEqual(m4451customFocusSearchOMvw8, FocusRequester.Companion.getRedirect$ui())) {
                 FocusTargetNode findFocusTargetNode2 = findFocusTargetNode();
                 if (findFocusTargetNode2 != null) {
                     return function1.invoke(findFocusTargetNode2);
                 }
                 return null;
-            } else if (!Intrinsics.areEqual(m5103customFocusSearchOMvw8, FocusRequester.Companion.getDefault())) {
+            } else if (!Intrinsics.areEqual(m4451customFocusSearchOMvw8, FocusRequester.Companion.getDefault())) {
                 if (!ComposeUiFlags.isRequestFocusOnNonFocusableFocusTargetEnabled) {
-                    return Boolean.valueOf(m5103customFocusSearchOMvw8.findFocusTargetNode$ui(function1));
+                    return Boolean.valueOf(m4451customFocusSearchOMvw8.findFocusTargetNode$ui(function1));
                 }
-                if (m5103customFocusSearchOMvw8 == FocusRequester.Companion.getDefault()) {
+                if (m4451customFocusSearchOMvw8 == FocusRequester.Companion.getDefault()) {
                     throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
                 }
-                if (m5103customFocusSearchOMvw8 == FocusRequester.Companion.getCancel()) {
+                if (m4451customFocusSearchOMvw8 == FocusRequester.Companion.getCancel()) {
                     throw new IllegalStateException("\n    Please check whether the focusRequester is FocusRequester.Cancel or FocusRequester.Default\n    before invoking any functions on the focusRequester.\n".toString());
                 }
                 boolean z = false;
-                if (m5103customFocusSearchOMvw8.getFocusRequesterNodes$ui().getSize() == 0) {
+                if (m4451customFocusSearchOMvw8.getFocusRequesterNodes$ui().getSize() == 0) {
                     System.out.println((Object) "FocusRelatedWarning: \n   FocusRequester is not initialized. Here are some possible fixes:\n\n   1. Remember the FocusRequester: val focusRequester = remember { FocusRequester() }\n   2. Did you forget to add a Modifier.focusRequester() ?\n   3. Are you attempting to request focus during composition? Focus requests should be made in\n   response to some event. Eg Modifier.clickable { focusRequester.requestFocus() }\n");
                 } else {
-                    MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = m5103customFocusSearchOMvw8.getFocusRequesterNodes$ui();
+                    MutableVector<FocusRequesterModifierNode> focusRequesterNodes$ui = m4451customFocusSearchOMvw8.getFocusRequesterNodes$ui();
                     FocusRequesterModifierNode[] focusRequesterModifierNodeArr = focusRequesterNodes$ui.content;
                     int size = focusRequesterNodes$ui.getSize();
                     int i2 = 0;
                     boolean z2 = false;
                     while (i2 < size) {
                         FocusRequesterModifierNode focusRequesterModifierNode = focusRequesterModifierNodeArr[i2];
-                        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+                        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
                         if (!focusRequesterModifierNode.getNode().isAttached()) {
                             InlineClassHelperKt.throwIllegalStateException("visitChildren called on an unattached node");
                         }
@@ -400,13 +400,13 @@ public final class FocusOwnerImpl implements FocusOwner {
                         while (true) {
                             if (mutableVector2.getSize() != 0) {
                                 Modifier.Node node = (Modifier.Node) mutableVector2.removeAt(mutableVector2.getSize() - 1);
-                                if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                                if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                                     DelegatableNodeKt.addLayoutNodeChildren(mutableVector2, node, false);
                                 } else {
                                     while (true) {
                                         if (node == null) {
                                             break;
-                                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             MutableVector mutableVector3 = mutableVector;
                                             while (node != null) {
                                                 if (node instanceof FocusTargetNode) {
@@ -414,10 +414,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                                         z2 = true;
                                                         break;
                                                     }
-                                                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                                } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                                     int i3 = 0;
                                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                                             i3++;
                                                             if (i3 == 1) {
                                                                 node = delegate$ui;
@@ -463,7 +463,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         } else {
             findFocusTargetNode = null;
         }
-        return FocusTraversalKt.m5104focusSearch0X8WOeE(this.rootFocusNode, i, this.owner.getLayoutDirection(), rect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$focusSearch$1
+        return FocusTraversalKt.m4452focusSearch0X8WOeE(this.rootFocusNode, i, this.owner.getLayoutDirection(), rect, new Function1<FocusTargetNode, Boolean>() { // from class: androidx.compose.ui.focus.FocusOwnerImpl$focusSearch$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             /* JADX WARN: Multi-variable type inference failed */
@@ -488,7 +488,7 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: dispatchKeyEvent-YhN2O0w */
-    public boolean mo5072dispatchKeyEventYhN2O0w(KeyEvent keyEvent, Function0<Boolean> function0) {
+    public boolean mo4420dispatchKeyEventYhN2O0w(KeyEvent keyEvent, Function0<Boolean> function0) {
         Modifier.Node node;
         Modifier.Node node2;
         NodeChain nodes$ui;
@@ -500,12 +500,12 @@ public final class FocusOwnerImpl implements FocusOwner {
             if (this.focusInvalidationManager.hasPendingInvalidation()) {
                 System.out.println((Object) "FocusRelatedWarning: Dispatching key event while focus system is invalidated.");
                 return false;
-            } else if (m5080validateKeyEventZmokQxo(keyEvent)) {
+            } else if (m4428validateKeyEventZmokQxo(keyEvent)) {
                 FocusTargetNode findFocusTargetNode = findFocusTargetNode();
                 if (findFocusTargetNode == null || (node2 = lastLocalKeyInputNode(findFocusTargetNode)) == null) {
                     if (findFocusTargetNode != null) {
                         FocusTargetNode focusTargetNode = findFocusTargetNode;
-                        int m7195constructorimpl = NodeKind.m7195constructorimpl(8192);
+                        int m6535constructorimpl = NodeKind.m6535constructorimpl(8192);
                         if (!focusTargetNode.getNode().isAttached()) {
                             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                         }
@@ -516,19 +516,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                                 node3 = null;
                                 break;
                             }
-                            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                            if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                                 while (node4 != null) {
-                                    if ((node4.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                    if ((node4.getKindSet$ui() & m6535constructorimpl) != 0) {
                                         MutableVector mutableVector = null;
                                         node3 = node4;
                                         while (node3 != null) {
                                             if (node3 instanceof KeyInputModifierNode) {
                                                 break loop10;
                                             }
-                                            if ((node3.getKindSet$ui() & m7195constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                                            if ((node3.getKindSet$ui() & m6535constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                                 int i = 0;
                                                 for (Modifier.Node delegate$ui = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                                    if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                                    if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                                         i++;
                                                         if (i == 1) {
                                                             Unit unit = Unit.INSTANCE;
@@ -568,7 +568,7 @@ public final class FocusOwnerImpl implements FocusOwner {
                         }
                     }
                     FocusTargetNode focusTargetNode2 = this.rootFocusNode;
-                    int m7195constructorimpl2 = NodeKind.m7195constructorimpl(8192);
+                    int m6535constructorimpl2 = NodeKind.m6535constructorimpl(8192);
                     if (!focusTargetNode2.getNode().isAttached()) {
                         InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                     }
@@ -579,19 +579,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                             node = null;
                             break;
                         }
-                        if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl2) != 0) {
                             while (parent$ui != null) {
-                                if ((parent$ui.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                if ((parent$ui.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                     MutableVector mutableVector2 = null;
                                     node = parent$ui;
                                     while (node != null) {
                                         if (node instanceof KeyInputModifierNode) {
                                             break loop14;
                                         }
-                                        if ((node.getKindSet$ui() & m7195constructorimpl2) != 0 && (node instanceof DelegatingNode)) {
+                                        if ((node.getKindSet$ui() & m6535constructorimpl2) != 0 && (node instanceof DelegatingNode)) {
                                             int i2 = 0;
                                             for (Modifier.Node delegate$ui2 = ((DelegatingNode) node).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                                if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                                if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                                     i2++;
                                                     if (i2 == 1) {
                                                         Unit unit2 = Unit.INSTANCE;
@@ -630,7 +630,7 @@ public final class FocusOwnerImpl implements FocusOwner {
                 }
                 if (node2 != null) {
                     Modifier.Node node5 = node2;
-                    int m7195constructorimpl3 = NodeKind.m7195constructorimpl(8192);
+                    int m6535constructorimpl3 = NodeKind.m6535constructorimpl(8192);
                     if (!node5.getNode().isAttached()) {
                         InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
                     }
@@ -638,9 +638,9 @@ public final class FocusOwnerImpl implements FocusOwner {
                     LayoutNode requireLayoutNode3 = DelegatableNodeKt.requireLayoutNode(node5);
                     ArrayList arrayList = null;
                     while (requireLayoutNode3 != null) {
-                        if ((requireLayoutNode3.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl3) != 0) {
+                        if ((requireLayoutNode3.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl3) != 0) {
                             while (parent$ui2 != null) {
-                                if ((parent$ui2.getKindSet$ui() & m7195constructorimpl3) != 0) {
+                                if ((parent$ui2.getKindSet$ui() & m6535constructorimpl3) != 0) {
                                     Modifier.Node node6 = parent$ui2;
                                     MutableVector mutableVector3 = null;
                                     while (node6 != null) {
@@ -649,10 +649,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                                 arrayList = new ArrayList();
                                             }
                                             arrayList.add(node6);
-                                        } else if ((node6.getKindSet$ui() & m7195constructorimpl3) != 0 && (node6 instanceof DelegatingNode)) {
+                                        } else if ((node6.getKindSet$ui() & m6535constructorimpl3) != 0 && (node6 instanceof DelegatingNode)) {
                                             int i3 = 0;
                                             for (Modifier.Node delegate$ui3 = ((DelegatingNode) node6).getDelegate$ui(); delegate$ui3 != null; delegate$ui3 = delegate$ui3.getChild$ui()) {
-                                                if ((delegate$ui3.getKindSet$ui() & m7195constructorimpl3) != 0) {
+                                                if ((delegate$ui3.getKindSet$ui() & m6535constructorimpl3) != 0) {
                                                     i3++;
                                                     if (i3 == 1) {
                                                         Unit unit3 = Unit.INSTANCE;
@@ -690,7 +690,7 @@ public final class FocusOwnerImpl implements FocusOwner {
                         if (size >= 0) {
                             while (true) {
                                 int i4 = size - 1;
-                                if (((KeyInputModifierNode) arrayList.get(size)).mo267onPreKeyEventZmokQxo(keyEvent)) {
+                                if (((KeyInputModifierNode) arrayList.get(size)).mo234onPreKeyEventZmokQxo(keyEvent)) {
                                     return true;
                                 }
                                 if (i4 < 0) {
@@ -705,13 +705,13 @@ public final class FocusOwnerImpl implements FocusOwner {
                     MutableVector mutableVector4 = null;
                     while (node7 != null) {
                         if (node7 instanceof KeyInputModifierNode) {
-                            if (((KeyInputModifierNode) node7).mo267onPreKeyEventZmokQxo(keyEvent)) {
+                            if (((KeyInputModifierNode) node7).mo234onPreKeyEventZmokQxo(keyEvent)) {
                                 return true;
                             }
-                        } else if ((node7.getKindSet$ui() & m7195constructorimpl3) != 0 && (node7 instanceof DelegatingNode)) {
+                        } else if ((node7.getKindSet$ui() & m6535constructorimpl3) != 0 && (node7 instanceof DelegatingNode)) {
                             int i5 = 0;
                             for (Modifier.Node delegate$ui4 = ((DelegatingNode) node7).getDelegate$ui(); delegate$ui4 != null; delegate$ui4 = delegate$ui4.getChild$ui()) {
-                                if ((delegate$ui4.getKindSet$ui() & m7195constructorimpl3) != 0) {
+                                if ((delegate$ui4.getKindSet$ui() & m6535constructorimpl3) != 0) {
                                     i5++;
                                     if (i5 == 1) {
                                         Unit unit5 = Unit.INSTANCE;
@@ -744,13 +744,13 @@ public final class FocusOwnerImpl implements FocusOwner {
                     MutableVector mutableVector5 = null;
                     while (node8 != null) {
                         if (node8 instanceof KeyInputModifierNode) {
-                            if (((KeyInputModifierNode) node8).mo265onKeyEventZmokQxo(keyEvent)) {
+                            if (((KeyInputModifierNode) node8).mo232onKeyEventZmokQxo(keyEvent)) {
                                 return true;
                             }
-                        } else if ((node8.getKindSet$ui() & m7195constructorimpl3) != 0 && (node8 instanceof DelegatingNode)) {
+                        } else if ((node8.getKindSet$ui() & m6535constructorimpl3) != 0 && (node8 instanceof DelegatingNode)) {
                             int i6 = 0;
                             for (Modifier.Node delegate$ui5 = ((DelegatingNode) node8).getDelegate$ui(); delegate$ui5 != null; delegate$ui5 = delegate$ui5.getChild$ui()) {
-                                if ((delegate$ui5.getKindSet$ui() & m7195constructorimpl3) != 0) {
+                                if ((delegate$ui5.getKindSet$ui() & m6535constructorimpl3) != 0) {
                                     i6++;
                                     if (i6 == 1) {
                                         Unit unit6 = Unit.INSTANCE;
@@ -779,7 +779,7 @@ public final class FocusOwnerImpl implements FocusOwner {
                     if (arrayList != null) {
                         int size2 = arrayList.size();
                         for (int i7 = 0; i7 < size2; i7++) {
-                            if (((KeyInputModifierNode) arrayList.get(i7)).mo265onKeyEventZmokQxo(keyEvent)) {
+                            if (((KeyInputModifierNode) arrayList.get(i7)).mo232onKeyEventZmokQxo(keyEvent)) {
                                 return true;
                             }
                         }
@@ -798,7 +798,7 @@ public final class FocusOwnerImpl implements FocusOwner {
 
     @Override // androidx.compose.ui.focus.FocusOwner
     /* renamed from: dispatchInterceptedSoftKeyboardEvent-ZmokQxo */
-    public boolean mo5071dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent keyEvent) {
+    public boolean mo4419dispatchInterceptedSoftKeyboardEventZmokQxo(KeyEvent keyEvent) {
         SoftKeyboardInterceptionModifierNode softKeyboardInterceptionModifierNode;
         int i;
         NodeChain nodes$ui;
@@ -811,7 +811,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         FocusTargetNode findActiveFocusNode = FocusTraversalKt.findActiveFocusNode(this.rootFocusNode);
         if (findActiveFocusNode != null) {
             FocusTargetNode focusTargetNode = findActiveFocusNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(131072);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(131072);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -822,19 +822,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                     node = null;
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (node2 != null) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             MutableVector mutableVector = null;
                             node = node2;
                             while (node != null) {
                                 if (node instanceof SoftKeyboardInterceptionModifierNode) {
                                     break loop0;
                                 }
-                                if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i2++;
                                             if (i2 == 1) {
                                                 node = delegate$ui;
@@ -873,7 +873,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         }
         if (softKeyboardInterceptionModifierNode != null) {
             SoftKeyboardInterceptionModifierNode softKeyboardInterceptionModifierNode2 = softKeyboardInterceptionModifierNode;
-            int m7195constructorimpl2 = NodeKind.m7195constructorimpl(131072);
+            int m6535constructorimpl2 = NodeKind.m6535constructorimpl(131072);
             if (!softKeyboardInterceptionModifierNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -881,9 +881,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             LayoutNode requireLayoutNode2 = DelegatableNodeKt.requireLayoutNode(softKeyboardInterceptionModifierNode2);
             ArrayList arrayList = null;
             while (requireLayoutNode2 != null) {
-                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl2) != 0) {
+                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl2) != 0) {
                     while (parent$ui != null) {
-                        if ((parent$ui.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((parent$ui.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             Modifier.Node node3 = parent$ui;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -892,10 +892,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                         arrayList = new ArrayList();
                                     }
                                     arrayList.add(node3);
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i3 = 0;
                                     for (Modifier.Node delegate$ui2 = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                        if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                        if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                             i3++;
                                             if (i3 == 1) {
                                                 node3 = delegate$ui2;
@@ -930,7 +930,7 @@ public final class FocusOwnerImpl implements FocusOwner {
             if (arrayList != null && arrayList.size() - 1 >= 0) {
                 while (true) {
                     int i4 = i - 1;
-                    if (((SoftKeyboardInterceptionModifierNode) arrayList.get(i)).mo6275onPreInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
+                    if (((SoftKeyboardInterceptionModifierNode) arrayList.get(i)).mo5616onPreInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
                         return true;
                     }
                     if (i4 < 0) {
@@ -943,13 +943,13 @@ public final class FocusOwnerImpl implements FocusOwner {
             MutableVector mutableVector3 = null;
             while (node4 != null) {
                 if (node4 instanceof SoftKeyboardInterceptionModifierNode) {
-                    if (((SoftKeyboardInterceptionModifierNode) node4).mo6275onPreInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
+                    if (((SoftKeyboardInterceptionModifierNode) node4).mo5616onPreInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
                         return true;
                     }
-                } else if ((node4.getKindSet$ui() & m7195constructorimpl2) != 0 && (node4 instanceof DelegatingNode)) {
+                } else if ((node4.getKindSet$ui() & m6535constructorimpl2) != 0 && (node4 instanceof DelegatingNode)) {
                     int i5 = 0;
                     for (Modifier.Node delegate$ui3 = ((DelegatingNode) node4).getDelegate$ui(); delegate$ui3 != null; delegate$ui3 = delegate$ui3.getChild$ui()) {
-                        if ((delegate$ui3.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((delegate$ui3.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             i5++;
                             if (i5 == 1) {
                                 node4 = delegate$ui3;
@@ -978,13 +978,13 @@ public final class FocusOwnerImpl implements FocusOwner {
             MutableVector mutableVector4 = null;
             while (node5 != null) {
                 if (node5 instanceof SoftKeyboardInterceptionModifierNode) {
-                    if (((SoftKeyboardInterceptionModifierNode) node5).mo6274onInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
+                    if (((SoftKeyboardInterceptionModifierNode) node5).mo5615onInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
                         return true;
                     }
-                } else if ((node5.getKindSet$ui() & m7195constructorimpl2) != 0 && (node5 instanceof DelegatingNode)) {
+                } else if ((node5.getKindSet$ui() & m6535constructorimpl2) != 0 && (node5 instanceof DelegatingNode)) {
                     int i6 = 0;
                     for (Modifier.Node delegate$ui4 = ((DelegatingNode) node5).getDelegate$ui(); delegate$ui4 != null; delegate$ui4 = delegate$ui4.getChild$ui()) {
-                        if ((delegate$ui4.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((delegate$ui4.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             i6++;
                             if (i6 == 1) {
                                 node5 = delegate$ui4;
@@ -1012,7 +1012,7 @@ public final class FocusOwnerImpl implements FocusOwner {
             if (arrayList != null) {
                 int size = arrayList.size();
                 for (int i7 = 0; i7 < size; i7++) {
-                    if (((SoftKeyboardInterceptionModifierNode) arrayList.get(i7)).mo6274onInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
+                    if (((SoftKeyboardInterceptionModifierNode) arrayList.get(i7)).mo5615onInterceptKeyBeforeSoftKeyboardZmokQxo(keyEvent)) {
                         return true;
                     }
                 }
@@ -1035,7 +1035,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         FocusTargetNode findFocusTargetNode = findFocusTargetNode();
         if (findFocusTargetNode != null) {
             FocusTargetNode focusTargetNode = findFocusTargetNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(16384);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(16384);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1046,19 +1046,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                     node = null;
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (node2 != null) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             MutableVector mutableVector = null;
                             node = node2;
                             while (node != null) {
                                 if (node instanceof RotaryInputModifierNode) {
                                     break loop0;
                                 }
-                                if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i2++;
                                             if (i2 == 1) {
                                                 node = delegate$ui;
@@ -1097,7 +1097,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         }
         if (rotaryInputModifierNode != null) {
             RotaryInputModifierNode rotaryInputModifierNode2 = rotaryInputModifierNode;
-            int m7195constructorimpl2 = NodeKind.m7195constructorimpl(16384);
+            int m6535constructorimpl2 = NodeKind.m6535constructorimpl(16384);
             if (!rotaryInputModifierNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1105,9 +1105,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             LayoutNode requireLayoutNode2 = DelegatableNodeKt.requireLayoutNode(rotaryInputModifierNode2);
             ArrayList arrayList = null;
             while (requireLayoutNode2 != null) {
-                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl2) != 0) {
+                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl2) != 0) {
                     while (parent$ui != null) {
-                        if ((parent$ui.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((parent$ui.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             Modifier.Node node3 = parent$ui;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -1116,10 +1116,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                         arrayList = new ArrayList();
                                     }
                                     arrayList.add(node3);
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i3 = 0;
                                     for (Modifier.Node delegate$ui2 = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                        if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                        if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                             i3++;
                                             if (i3 == 1) {
                                                 node3 = delegate$ui2;
@@ -1170,10 +1170,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                     if (((RotaryInputModifierNode) node4).onPreRotaryScrollEvent(rotaryScrollEvent)) {
                         return true;
                     }
-                } else if ((node4.getKindSet$ui() & m7195constructorimpl2) != 0 && (node4 instanceof DelegatingNode)) {
+                } else if ((node4.getKindSet$ui() & m6535constructorimpl2) != 0 && (node4 instanceof DelegatingNode)) {
                     int i5 = 0;
                     for (Modifier.Node delegate$ui3 = ((DelegatingNode) node4).getDelegate$ui(); delegate$ui3 != null; delegate$ui3 = delegate$ui3.getChild$ui()) {
-                        if ((delegate$ui3.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((delegate$ui3.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             i5++;
                             if (i5 == 1) {
                                 node4 = delegate$ui3;
@@ -1208,10 +1208,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                     if (((RotaryInputModifierNode) node5).onRotaryScrollEvent(rotaryScrollEvent)) {
                         return true;
                     }
-                } else if ((node5.getKindSet$ui() & m7195constructorimpl2) != 0 && (node5 instanceof DelegatingNode)) {
+                } else if ((node5.getKindSet$ui() & m6535constructorimpl2) != 0 && (node5 instanceof DelegatingNode)) {
                     int i6 = 0;
                     for (Modifier.Node delegate$ui4 = ((DelegatingNode) node5).getDelegate$ui(); delegate$ui4 != null; delegate$ui4 = delegate$ui4.getChild$ui()) {
-                        if ((delegate$ui4.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((delegate$ui4.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             i6++;
                             if (i6 == 1) {
                                 node5 = delegate$ui4;
@@ -1263,7 +1263,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         FocusTargetNode activeFocusTargetNode = getActiveFocusTargetNode();
         if (activeFocusTargetNode != null) {
             FocusTargetNode focusTargetNode = activeFocusTargetNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(2097152);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(2097152);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1274,19 +1274,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                     node = null;
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (node2 != null) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             MutableVector mutableVector = null;
                             node = node2;
                             while (node != null) {
                                 if (node instanceof IndirectPointerInputModifierNode) {
                                     break loop0;
                                 }
-                                if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i3 = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i3++;
                                             if (i3 == 1) {
                                                 node = delegate$ui;
@@ -1325,7 +1325,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         }
         if (indirectPointerInputModifierNode != null) {
             IndirectPointerInputModifierNode indirectPointerInputModifierNode2 = indirectPointerInputModifierNode;
-            int m7195constructorimpl2 = NodeKind.m7195constructorimpl(2097152);
+            int m6535constructorimpl2 = NodeKind.m6535constructorimpl(2097152);
             if (!indirectPointerInputModifierNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1333,9 +1333,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             LayoutNode requireLayoutNode2 = DelegatableNodeKt.requireLayoutNode(indirectPointerInputModifierNode2);
             ArrayList arrayList = null;
             while (requireLayoutNode2 != null) {
-                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl2) != 0) {
+                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl2) != 0) {
                     while (parent$ui != null) {
-                        if ((parent$ui.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((parent$ui.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             Modifier.Node node3 = parent$ui;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -1344,10 +1344,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                         arrayList = new ArrayList();
                                     }
                                     arrayList.add(node3);
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i4 = 0;
                                     for (Modifier.Node delegate$ui2 = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                        if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                        if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                             i4++;
                                             if (i4 == 1) {
                                                 node3 = delegate$ui2;
@@ -1428,7 +1428,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         FocusTargetNode activeFocusTargetNode = getActiveFocusTargetNode();
         if (activeFocusTargetNode != null) {
             FocusTargetNode focusTargetNode = activeFocusTargetNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(2097152);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(2097152);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1439,19 +1439,19 @@ public final class FocusOwnerImpl implements FocusOwner {
                     node = null;
                     break;
                 }
-                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((requireLayoutNode.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     while (node2 != null) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             MutableVector mutableVector = null;
                             node = node2;
                             while (node != null) {
                                 if (node instanceof IndirectPointerInputModifierNode) {
                                     break loop0;
                                 }
-                                if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node = delegate$ui;
@@ -1490,7 +1490,7 @@ public final class FocusOwnerImpl implements FocusOwner {
         }
         if (indirectPointerInputModifierNode != null) {
             IndirectPointerInputModifierNode indirectPointerInputModifierNode2 = indirectPointerInputModifierNode;
-            int m7195constructorimpl2 = NodeKind.m7195constructorimpl(2097152);
+            int m6535constructorimpl2 = NodeKind.m6535constructorimpl(2097152);
             if (!indirectPointerInputModifierNode2.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
             }
@@ -1498,9 +1498,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             LayoutNode requireLayoutNode2 = DelegatableNodeKt.requireLayoutNode(indirectPointerInputModifierNode2);
             ArrayList arrayList = null;
             while (requireLayoutNode2 != null) {
-                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m7195constructorimpl2) != 0) {
+                if ((requireLayoutNode2.getNodes$ui().getHead$ui().getAggregateChildKindSet$ui() & m6535constructorimpl2) != 0) {
                     while (parent$ui != null) {
-                        if ((parent$ui.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                        if ((parent$ui.getKindSet$ui() & m6535constructorimpl2) != 0) {
                             Modifier.Node node3 = parent$ui;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -1509,10 +1509,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                         arrayList = new ArrayList();
                                     }
                                     arrayList.add(node3);
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl2) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i2 = 0;
                                     for (Modifier.Node delegate$ui2 = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui2 != null; delegate$ui2 = delegate$ui2.getChild$ui()) {
-                                        if ((delegate$ui2.getKindSet$ui() & m7195constructorimpl2) != 0) {
+                                        if ((delegate$ui2.getKindSet$ui() & m6535constructorimpl2) != 0) {
                                             i2++;
                                             if (i2 == 1) {
                                                 node3 = delegate$ui2;
@@ -1587,7 +1587,7 @@ public final class FocusOwnerImpl implements FocusOwner {
     public boolean hasFocusableContent() {
         if (this.rootFocusNode.isAttached()) {
             FocusTargetNode focusTargetNode = this.rootFocusNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
             }
@@ -1600,9 +1600,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             }
             while (mutableVector.getSize() != 0) {
                 Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-                if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     for (Modifier.Node node2 = node; node2 != null && node2.isAttached(); node2 = node2.getChild$ui()) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             Modifier.Node node3 = node2;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -1611,10 +1611,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                     if (focusTargetNode2.isAttached() && focusTargetNode2.fetchFocusProperties$ui().getCanFocus()) {
                                         return true;
                                     }
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node3 = delegate$ui;
@@ -1654,7 +1654,7 @@ public final class FocusOwnerImpl implements FocusOwner {
     public boolean hasNonInteropFocusableContent() {
         if (this.rootFocusNode.isAttached()) {
             FocusTargetNode focusTargetNode = this.rootFocusNode;
-            int m7195constructorimpl = NodeKind.m7195constructorimpl(1024);
+            int m6535constructorimpl = NodeKind.m6535constructorimpl(1024);
             if (!focusTargetNode.getNode().isAttached()) {
                 InlineClassHelperKt.throwIllegalStateException("visitSubtreeIf called on an unattached node");
             }
@@ -1667,9 +1667,9 @@ public final class FocusOwnerImpl implements FocusOwner {
             }
             while (mutableVector.getSize() != 0) {
                 Modifier.Node node = (Modifier.Node) mutableVector.removeAt(mutableVector.getSize() - 1);
-                if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
                     for (Modifier.Node node2 = node; node2 != null && node2.isAttached(); node2 = node2.getChild$ui()) {
-                        if ((node2.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((node2.getKindSet$ui() & m6535constructorimpl) != 0) {
                             Modifier.Node node3 = node2;
                             MutableVector mutableVector2 = null;
                             while (node3 != null) {
@@ -1681,10 +1681,10 @@ public final class FocusOwnerImpl implements FocusOwner {
                                             return true;
                                         }
                                     }
-                                } else if ((node3.getKindSet$ui() & m7195constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
+                                } else if ((node3.getKindSet$ui() & m6535constructorimpl) != 0 && (node3 instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node3).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node3 = delegate$ui;
@@ -1774,31 +1774,31 @@ public final class FocusOwnerImpl implements FocusOwner {
     }
 
     /* renamed from: validateKeyEvent-ZmokQxo  reason: not valid java name */
-    private final boolean m5080validateKeyEventZmokQxo(KeyEvent keyEvent) {
-        long m6587getKeyZmokQxo = KeyEvent_androidKt.m6587getKeyZmokQxo(keyEvent);
-        int m6588getTypeZmokQxo = KeyEvent_androidKt.m6588getTypeZmokQxo(keyEvent);
-        if (KeyEventType.m6580equalsimpl0(m6588getTypeZmokQxo, KeyEventType.Companion.m6584getKeyDownCS__XNY())) {
+    private final boolean m4428validateKeyEventZmokQxo(KeyEvent keyEvent) {
+        long m5928getKeyZmokQxo = KeyEvent_androidKt.m5928getKeyZmokQxo(keyEvent);
+        int m5929getTypeZmokQxo = KeyEvent_androidKt.m5929getTypeZmokQxo(keyEvent);
+        if (KeyEventType.m5921equalsimpl0(m5929getTypeZmokQxo, KeyEventType.Companion.m5925getKeyDownCS__XNY())) {
             MutableLongSet mutableLongSet = this.keysCurrentlyDown;
             if (mutableLongSet == null) {
                 mutableLongSet = new MutableLongSet(3);
                 this.keysCurrentlyDown = mutableLongSet;
             }
-            mutableLongSet.plusAssign(m6587getKeyZmokQxo);
-        } else if (KeyEventType.m6580equalsimpl0(m6588getTypeZmokQxo, KeyEventType.Companion.m6585getKeyUpCS__XNY())) {
+            mutableLongSet.plusAssign(m5928getKeyZmokQxo);
+        } else if (KeyEventType.m5921equalsimpl0(m5929getTypeZmokQxo, KeyEventType.Companion.m5926getKeyUpCS__XNY())) {
             MutableLongSet mutableLongSet2 = this.keysCurrentlyDown;
-            if (mutableLongSet2 == null || !mutableLongSet2.contains(m6587getKeyZmokQxo)) {
+            if (mutableLongSet2 == null || !mutableLongSet2.contains(m5928getKeyZmokQxo)) {
                 return false;
             }
             MutableLongSet mutableLongSet3 = this.keysCurrentlyDown;
             if (mutableLongSet3 != null) {
-                mutableLongSet3.remove(m6587getKeyZmokQxo);
+                mutableLongSet3.remove(m5928getKeyZmokQxo);
             }
         }
         return true;
     }
 
     /* renamed from: traverseAncestorsIncludingSelf-QFhIj7k  reason: not valid java name */
-    private final /* synthetic */ <T extends DelegatableNode> void m5079traverseAncestorsIncludingSelfQFhIj7k(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1, Function0<Unit> function0, Function1<? super T, Unit> function12) {
+    private final /* synthetic */ <T extends DelegatableNode> void m4427traverseAncestorsIncludingSelfQFhIj7k(DelegatableNode delegatableNode, int i, Function1<? super T, Unit> function1, Function0<Unit> function0, Function1<? super T, Unit> function12) {
         int i2;
         int i3;
         NodeChain nodes$ui;
@@ -1951,7 +1951,7 @@ public final class FocusOwnerImpl implements FocusOwner {
     /* JADX WARN: Type inference failed for: r2v25 */
     /* JADX WARN: Type inference failed for: r2v27 */
     /* renamed from: nearestAncestorIncludingSelf-64DMado  reason: not valid java name */
-    private final /* synthetic */ <T> T m5078nearestAncestorIncludingSelf64DMado(DelegatableNode delegatableNode, int i) {
+    private final /* synthetic */ <T> T m4426nearestAncestorIncludingSelf64DMado(DelegatableNode delegatableNode, int i) {
         NodeChain nodes$ui;
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitAncestors called on an unattached node");
@@ -2011,16 +2011,16 @@ public final class FocusOwnerImpl implements FocusOwner {
     }
 
     private final Modifier.Node lastLocalKeyInputNode(DelegatableNode delegatableNode) {
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(1024) | NodeKind.m7195constructorimpl(8192);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(1024) | NodeKind.m6535constructorimpl(8192);
         if (!delegatableNode.getNode().isAttached()) {
             InlineClassHelperKt.throwIllegalStateException("visitLocalDescendants called on an unattached node");
         }
         Modifier.Node node = delegatableNode.getNode();
         Modifier.Node node2 = null;
-        if ((node.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0) {
+        if ((node.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0) {
             for (Modifier.Node child$ui = node.getChild$ui(); child$ui != null; child$ui = child$ui.getChild$ui()) {
-                if ((child$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
-                    if ((NodeKind.m7195constructorimpl(1024) & child$ui.getKindSet$ui()) != 0) {
+                if ((child$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
+                    if ((NodeKind.m6535constructorimpl(1024) & child$ui.getKindSet$ui()) != 0) {
                         return node2;
                     }
                     node2 = child$ui;

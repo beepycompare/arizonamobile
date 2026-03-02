@@ -15,7 +15,7 @@ import kotlinx.serialization.KSerializer;
 @Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0087\u0001\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00040\u00030\u0001\"\u0004\b\u0000\u0010\u0004\"\u0004\b\u0001\u0010\u0005*\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u0002H\u00050\b2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\n2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2#\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u0001H\u0005¢\u0006\f\b\u000e\u0012\b\b\u000f\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u0002H\u00040\nH\u0007\u001a\u0087\u0001\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00040\u00030\u0001\"\u0004\b\u0000\u0010\u0004\"\u0004\b\u0001\u0010\u0005*\u00020\u00112\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u0002H\u00050\b2\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u0002H\u0004\u0012\u0004\u0012\u0002H\u00050\n2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2#\u0010\r\u001a\u001f\u0012\u0015\u0012\u0013\u0018\u0001H\u0005¢\u0006\f\b\u000e\u0012\b\b\u000f\u0012\u0004\b\b(\u0010\u0012\u0004\u0012\u0002H\u00040\nH\u0007\u001aV\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00040\u00120\u0001\"\u0004\b\u0000\u0010\u0004*\u00020\u00062\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u0002H\u00040\b2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2\f\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\u00040\u0013H\u0007\u001aV\u0010\u0000\u001a\u001e\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0012\u0012\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0004\u0012\u0002H\u00040\u00120\u0001\"\u0004\b\u0000\u0010\u0004*\u00020\u00112\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u0002H\u00040\b2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2\f\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\u00040\u0013H\u0007¨\u0006\u0014"}, d2 = {"saveable", "Lkotlin/properties/PropertyDelegateProvider;", "", "Lkotlin/properties/ReadOnlyProperty;", ExifInterface.GPS_DIRECTION_TRUE, ExifInterface.LATITUDE_SOUTH, "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "serializer", "Lkotlinx/serialization/KSerializer;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlin/Function1;", "key", "", "init", "Lkotlin/ParameterName;", "name", "savedState", "Lcom/arkivanov/essenty/statekeeper/StateKeeperOwner;", "Lkotlin/properties/ReadWriteProperty;", "Lkotlin/Function0;", "state-keeper_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class StateKeeperExtKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object saveable$lambda$2$lambda$1(Object obj, Object obj2, KProperty kProperty) {
         Intrinsics.checkNotNullParameter(kProperty, "<unused var>");
         return obj;
@@ -36,14 +36,12 @@ public final class StateKeeperExtKt {
         return new PropertyDelegateProvider() { // from class: com.arkivanov.essenty.statekeeper.StateKeeperExtKt$$ExternalSyntheticLambda4
             @Override // kotlin.properties.PropertyDelegateProvider
             public final Object provideDelegate(Object obj, KProperty kProperty) {
-                ReadOnlyProperty saveable$lambda$2;
-                saveable$lambda$2 = StateKeeperExtKt.saveable$lambda$2(str, serializer, init, stateKeeper, state, obj, kProperty);
-                return saveable$lambda$2;
+                return StateKeeperExtKt.saveable$lambda$2(str, serializer, init, stateKeeper, state, obj, kProperty);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ReadOnlyProperty saveable$lambda$2(String str, KSerializer kSerializer, Function1 function1, StateKeeper stateKeeper, final Function1 function12, Object obj, KProperty property) {
         Intrinsics.checkNotNullParameter(property, "property");
         if (str == null) {
@@ -55,22 +53,18 @@ public final class StateKeeperExtKt {
         stateKeeper.register(str, serializer, new Function0() { // from class: com.arkivanov.essenty.statekeeper.StateKeeperExtKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Holder saveable$lambda$2$lambda$0;
-                saveable$lambda$2$lambda$0 = StateKeeperExtKt.saveable$lambda$2$lambda$0(Function1.this, invoke);
-                return saveable$lambda$2$lambda$0;
+                return StateKeeperExtKt.saveable$lambda$2$lambda$0(Function1.this, invoke);
             }
         });
         return new ReadOnlyProperty() { // from class: com.arkivanov.essenty.statekeeper.StateKeeperExtKt$$ExternalSyntheticLambda1
             @Override // kotlin.properties.ReadOnlyProperty
             public final Object getValue(Object obj2, KProperty kProperty) {
-                Object saveable$lambda$2$lambda$1;
-                saveable$lambda$2$lambda$1 = StateKeeperExtKt.saveable$lambda$2$lambda$1(invoke, obj2, kProperty);
-                return saveable$lambda$2$lambda$1;
+                return StateKeeperExtKt.saveable$lambda$2$lambda$1(invoke, obj2, kProperty);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Holder saveable$lambda$2$lambda$0(Function1 function1, Object obj) {
         return new Holder(function1.invoke(obj));
     }
@@ -104,14 +98,12 @@ public final class StateKeeperExtKt {
         return new PropertyDelegateProvider() { // from class: com.arkivanov.essenty.statekeeper.StateKeeperExtKt$$ExternalSyntheticLambda3
             @Override // kotlin.properties.PropertyDelegateProvider
             public final Object provideDelegate(Object obj, KProperty kProperty) {
-                Holder saveable$lambda$4;
-                saveable$lambda$4 = StateKeeperExtKt.saveable$lambda$4(str, serializer, stateKeeper, init, obj, kProperty);
-                return saveable$lambda$4;
+                return StateKeeperExtKt.saveable$lambda$4(str, serializer, stateKeeper, init, obj, kProperty);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Holder saveable$lambda$4(String str, KSerializer kSerializer, StateKeeper stateKeeper, Function0 function0, Object obj, KProperty property) {
         Intrinsics.checkNotNullParameter(property, "property");
         if (str == null) {
@@ -125,15 +117,13 @@ public final class StateKeeperExtKt {
         stateKeeper.register(str, serializer, new Function0() { // from class: com.arkivanov.essenty.statekeeper.StateKeeperExtKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Holder saveable$lambda$4$lambda$3;
-                saveable$lambda$4$lambda$3 = StateKeeperExtKt.saveable$lambda$4$lambda$3(Holder.this);
-                return saveable$lambda$4$lambda$3;
+                return StateKeeperExtKt.saveable$lambda$4$lambda$3(Holder.this);
             }
         });
         return holder;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Holder saveable$lambda$4$lambda$3(Holder holder) {
         return new Holder(holder.getValue());
     }

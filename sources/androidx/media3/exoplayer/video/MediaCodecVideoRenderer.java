@@ -270,7 +270,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
     }
 
     protected MediaCodecVideoRenderer(Builder builder) {
-        super(2, builder.codecAdapterFactory, builder.mediaCodecSelector, builder.enableDecoderFallback, builder.assumedMinimumCodecOperatingRate);
+        super(builder.context.getApplicationContext(), 2, builder.codecAdapterFactory, builder.mediaCodecSelector, builder.enableDecoderFallback, builder.assumedMinimumCodecOperatingRate);
         Context applicationContext = builder.context.getApplicationContext();
         this.context = applicationContext;
         this.maxDroppedFramesToNotify = builder.maxDroppedFramesToNotify;
@@ -352,11 +352,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             return RendererCapabilities.create(2);
         }
         MediaCodecInfo mediaCodecInfo = decoderInfos.get(0);
-        boolean isFormatSupported = mediaCodecInfo.isFormatSupported(format);
+        boolean isFormatSupported = mediaCodecInfo.isFormatSupported(context, format);
         if (!isFormatSupported) {
             for (int i2 = 1; i2 < decoderInfos.size(); i2++) {
                 MediaCodecInfo mediaCodecInfo2 = decoderInfos.get(i2);
-                if (mediaCodecInfo2.isFormatSupported(format)) {
+                if (mediaCodecInfo2.isFormatSupported(context, format)) {
                     z = false;
                     isFormatSupported = true;
                     mediaCodecInfo = mediaCodecInfo2;
@@ -375,8 +375,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         if (isFormatSupported) {
             List<MediaCodecInfo> decoderInfos2 = getDecoderInfos(context, mediaCodecSelector, format, z2, true);
             if (!decoderInfos2.isEmpty()) {
-                MediaCodecInfo mediaCodecInfo3 = MediaCodecUtil.getDecoderInfosSortedByFormatSupport(decoderInfos2, format).get(0);
-                if (mediaCodecInfo3.isFormatSupported(format) && mediaCodecInfo3.isSeamlessAdaptationSupported(format)) {
+                MediaCodecInfo mediaCodecInfo3 = MediaCodecUtil.getDecoderInfosSortedByFormatSupport(context, decoderInfos2, format).get(0);
+                if (mediaCodecInfo3.isFormatSupported(context, format) && mediaCodecInfo3.isSeamlessAdaptationSupported(format)) {
                     i = 32;
                 }
             }
@@ -386,7 +386,8 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected List<MediaCodecInfo> getDecoderInfos(MediaCodecSelector mediaCodecSelector, Format format, boolean z) throws MediaCodecUtil.DecoderQueryException {
-        return MediaCodecUtil.getDecoderInfosSortedByFormatSupport(getDecoderInfos(this.context, mediaCodecSelector, format, z, this.tunneling), format);
+        Context context = this.context;
+        return MediaCodecUtil.getDecoderInfosSortedByFormatSupport(context, getDecoderInfos(context, mediaCodecSelector, format, z, this.tunneling), format);
     }
 
     private static List<MediaCodecInfo> getDecoderInfos(Context context, MediaCodecSelector mediaCodecSelector, Format format, boolean z, boolean z2) throws MediaCodecUtil.DecoderQueryException {
@@ -855,6 +856,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
         }
         if (getMaxInputSize(mediaCodecInfo, format2) > codecMaxValues.inputSize) {
             i |= 64;
+        }
+        if (this.changeFrameRateStrategy != Integer.MIN_VALUE && format.frameRate != -1.0f && format2.frameRate != -1.0f && Math.abs(format2.frameRate - format.frameRate) > 1.0f && cannotChangeSurfaceFrameRateMidPlayback()) {
+            i |= 65536;
         }
         int i2 = i;
         return new DecoderReuseEvaluation(mediaCodecInfo.name, format, format2, i2 != 0 ? 0 : canReuseCodec.result, i2);
@@ -1850,6 +1854,13 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
     private static int getMaxSampleSize(int i, int i2) {
         return (i * 3) / (i2 * 2);
+    }
+
+    private static boolean cannotChangeSurfaceFrameRateMidPlayback() {
+        if (Build.VERSION.SDK_INT >= 30) {
+            return Build.VERSION.SDK_INT == 30 && Build.MODEL.startsWith("MiTV");
+        }
+        return true;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -3196,12 +3207,14 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
             if (this != MediaCodecVideoRenderer.this.tunnelingOnFrameRenderedListener || MediaCodecVideoRenderer.this.getCodec() == null) {
                 return;
             }
-            if (j == Long.MAX_VALUE) {
-                MediaCodecVideoRenderer.this.onProcessedTunneledEndOfStream();
+            int i = (j > Long.MAX_VALUE ? 1 : (j == Long.MAX_VALUE ? 0 : -1));
+            MediaCodecVideoRenderer mediaCodecVideoRenderer = MediaCodecVideoRenderer.this;
+            if (i == 0) {
+                mediaCodecVideoRenderer.onProcessedTunneledEndOfStream();
                 return;
             }
             try {
-                MediaCodecVideoRenderer.this.onProcessedTunneledBuffer(j);
+                mediaCodecVideoRenderer.onProcessedTunneledBuffer(j);
             } catch (ExoPlaybackException e) {
                 MediaCodecVideoRenderer.this.setPendingPlaybackException(e);
             }

@@ -72,10 +72,12 @@ public class FilteredKeyMultimap<K, V> extends AbstractMultimap<K, V> implements
 
     @Override // com.google.common.collect.Multimap, com.google.common.collect.ListMultimap
     public Collection<V> get(@ParametricNullness K key) {
-        if (this.keyPredicate.apply(key)) {
-            return this.unfiltered.get(key);
+        boolean apply = this.keyPredicate.apply(key);
+        Multimap<K, V> multimap = this.unfiltered;
+        if (apply) {
+            return multimap.get(key);
         }
-        if (this.unfiltered instanceof SetMultimap) {
+        if (multimap instanceof SetMultimap) {
             return new AddRejectingSet(key);
         }
         return new AddRejectingList(key);

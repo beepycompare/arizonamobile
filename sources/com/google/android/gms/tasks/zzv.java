@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.internal.LifecycleFragment;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 final class zzv extends LifecycleCallback {
     private final List zza;
@@ -31,20 +31,22 @@ final class zzv extends LifecycleCallback {
 
     @Override // com.google.android.gms.common.api.internal.LifecycleCallback
     public final void onStop() {
-        synchronized (this.zza) {
-            for (WeakReference weakReference : this.zza) {
+        List<WeakReference> list = this.zza;
+        synchronized (list) {
+            for (WeakReference weakReference : list) {
                 zzq zzqVar = (zzq) weakReference.get();
                 if (zzqVar != null) {
-                    zzqVar.zzc();
+                    zzqVar.zzb();
                 }
             }
-            this.zza.clear();
+            list.clear();
         }
     }
 
     public final void zzb(zzq zzqVar) {
-        synchronized (this.zza) {
-            this.zza.add(new WeakReference(zzqVar));
+        List list = this.zza;
+        synchronized (list) {
+            list.add(new WeakReference(zzqVar));
         }
     }
 }

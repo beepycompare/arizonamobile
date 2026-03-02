@@ -65,9 +65,7 @@ final class AnchoredDraggableKt$animateTo$2<T> extends SuspendLambda implements 
                 if (SuspendAnimationKt.animate(floatRef.element, positionOf, this.$velocity, this.$this_animateTo.getAnimationSpec().invoke(), new Function2() { // from class: androidx.compose.material3.internal.AnchoredDraggableKt$animateTo$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = AnchoredDraggableKt$animateTo$2.invokeSuspend$lambda$0(AnchoredDragScope.this, floatRef, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
-                        return invokeSuspend$lambda$0;
+                        return AnchoredDraggableKt$animateTo$2.invokeSuspend$lambda$0(AnchoredDragScope.this, floatRef, ((Float) obj2).floatValue(), ((Float) obj3).floatValue());
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -81,7 +79,7 @@ final class AnchoredDraggableKt$animateTo$2<T> extends SuspendLambda implements 
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(AnchoredDragScope anchoredDragScope, Ref.FloatRef floatRef, float f, float f2) {
         anchoredDragScope.dragTo(f, f2);
         floatRef.element = f;

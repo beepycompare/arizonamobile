@@ -27,9 +27,7 @@ public final class ComposableSingletons$ContextMenuUiKt {
     private static Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> f7lambda$1571120048 = ComposableLambdaKt.composableLambdaInstance(-1571120048, false, new Function8() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function8
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, Object obj8) {
-            Unit lambda__1571120048$lambda$0;
-            lambda__1571120048$lambda$0 = ComposableSingletons$ContextMenuUiKt.lambda__1571120048$lambda$0((Modifier) obj, (String) obj2, ((Boolean) obj3).booleanValue(), (ContextMenuColors) obj4, (Function3) obj5, (Function0) obj6, (Composer) obj7, ((Integer) obj8).intValue());
-            return lambda__1571120048$lambda$0;
+            return ComposableSingletons$ContextMenuUiKt.lambda__1571120048$lambda$0((Modifier) obj, (String) obj2, ((Boolean) obj3).booleanValue(), (ContextMenuColors) obj4, (Function3) obj5, (Function0) obj6, (Composer) obj7, ((Integer) obj8).intValue());
         }
     });
 
@@ -37,23 +35,21 @@ public final class ComposableSingletons$ContextMenuUiKt {
     private static Function3<ContextMenuColors, Composer, Integer, Unit> f6lambda$1455401925 = ComposableLambdaKt.composableLambdaInstance(-1455401925, false, new Function3() { // from class: androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__1455401925$lambda$0;
-            lambda__1455401925$lambda$0 = ComposableSingletons$ContextMenuUiKt.lambda__1455401925$lambda$0((ContextMenuColors) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__1455401925$lambda$0;
+            return ComposableSingletons$ContextMenuUiKt.lambda__1455401925$lambda$0((ContextMenuColors) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
     /* renamed from: getLambda$-1455401925$foundation  reason: not valid java name */
-    public final Function3<ContextMenuColors, Composer, Integer, Unit> m420getLambda$1455401925$foundation() {
+    public final Function3<ContextMenuColors, Composer, Integer, Unit> m366getLambda$1455401925$foundation() {
         return f6lambda$1455401925;
     }
 
     /* renamed from: getLambda$-1571120048$foundation  reason: not valid java name */
-    public final Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> m421getLambda$1571120048$foundation() {
+    public final Function8<Modifier, String, Boolean, ContextMenuColors, Function3<? super Color, ? super Composer, ? super Integer, Unit>, Function0<Unit>, Composer, Integer, Unit> m367getLambda$1571120048$foundation() {
         return f7lambda$1571120048;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1571120048$lambda$0(Modifier modifier, String str, boolean z, ContextMenuColors contextMenuColors, Function3 function3, Function0 function0, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(modifier,label,enabled,colors,leadingIcon,onClick)136@5002L71:ContextMenuUi.kt#3xeu6s");
@@ -91,7 +87,7 @@ public final class ComposableSingletons$ContextMenuUiKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1455401925$lambda$0(ContextMenuColors contextMenuColors, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(colors)305@11326L290:ContextMenuUi.kt#3xeu6s");
         if ((i & 6) == 0) {
@@ -103,7 +99,7 @@ public final class ComposableSingletons$ContextMenuUiKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1455401925, i, -1, "androidx.compose.foundation.contextmenu.ComposableSingletons$ContextMenuUiKt.lambda$-1455401925.<anonymous> (ContextMenuUi.kt:305)");
             }
-            BoxKt.Box(BackgroundKt.m299backgroundbw27NRU$default(SizeKt.m962height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m930paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m433getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m432getDividerHeightD9Ej5fM()), contextMenuColors.m426getIconColor0d7_KjU(), null, 2, null), composer, 0);
+            BoxKt.Box(BackgroundKt.m264backgroundbw27NRU$default(SizeKt.m850height3ABfNKs(SizeKt.fillMaxWidth$default(PaddingKt.m820paddingVpY3zN4$default(Modifier.Companion, 0.0f, ContextMenuSpec.INSTANCE.m378getDividerVerticalPaddingD9Ej5fM(), 1, null), 0.0f, 1, null), ContextMenuSpec.INSTANCE.m377getDividerHeightD9Ej5fM()), contextMenuColors.m371getIconColor0d7_KjU(), null, 2, null), composer, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

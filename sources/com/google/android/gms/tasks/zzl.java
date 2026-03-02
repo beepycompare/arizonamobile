@@ -3,7 +3,7 @@ package com.google.android.gms.tasks;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class zzl implements zzq {
     private final Executor zza;
@@ -17,14 +17,7 @@ public final class zzl implements zzq {
     }
 
     @Override // com.google.android.gms.tasks.zzq
-    public final void zzc() {
-        synchronized (this.zzb) {
-            this.zzc = null;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.zzq
-    public final void zzd(Task task) {
+    public final void zza(Task task) {
         if (task.isSuccessful() || task.isCanceled()) {
             return;
         }
@@ -34,5 +27,22 @@ public final class zzl implements zzq {
             }
             this.zza.execute(new zzk(this, task));
         }
+    }
+
+    @Override // com.google.android.gms.tasks.zzq
+    public final void zzb() {
+        synchronized (this.zzb) {
+            this.zzc = null;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ Object zzc() {
+        return this.zzb;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public final /* synthetic */ OnFailureListener zzd() {
+        return this.zzc;
     }
 }

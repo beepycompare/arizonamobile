@@ -28,7 +28,7 @@ import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: InventoryPersonSection.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u000b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0002J\u0014\u0010\u0013\u001a\u00020\u00112\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\b\u0010\u0017\u001a\u00020\u0011H\u0002J\b\u0010\u0018\u001a\u00020\u0011H\u0002J\b\u0010\u0019\u001a\u00020\u0011H\u0002J\b\u0010\u001a\u001a\u00020\u0011H\u0002J\u0006\u0010\u001b\u001a\u00020\u0011J\u000e\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eJ\u0016\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u00162\u0006\u0010!\u001a\u00020\"J\b\u0010#\u001a\u00020\u0011H\u0002J\b\u0010$\u001a\u00020\u0011H\u0002J\b\u0010%\u001a\u00020\u0011H\u0002J\b\u0010&\u001a\u00020\u0011H\u0002J\b\u0010'\u001a\u00020\u0011H\u0002J\b\u0010(\u001a\u00020\u0011H\u0002J\u0006\u0010)\u001a\u00020\u0011J\b\u0010*\u001a\u00020\u0011H\u0002J\u0006\u0010+\u001a\u00020\u0011J\u0006\u0010,\u001a\u00020\u0011R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "", "inventory", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "binding", "Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;)V", "getInventory", "()Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "getBinding", "()Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "currentPersonType", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonType;", "currentPage", "", "setupListeners", "", "initAdapters", "initSub", "list", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "accessoriesNotVisible", "accessoriesVisible", "btnAccessoriesPressed", "setPageNumber", "updateSet", "updateAccessories", "newResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryEditResponse;", "changeAccessoriesItem", "item", "isColorItem", "", "upgradesNotVisible", "upgradesVisible", "btnUpgradesPressed", "walletNotVisible", "walletVisible", "btnWalletPressed", "openFishing", "setPersonTypeVisible", "defaultPersonSection", "refresh", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u000b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0002J\u0014\u0010\u0013\u001a\u00020\u00112\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\b\u0010\u0017\u001a\u00020\u0011H\u0002J\b\u0010\u0018\u001a\u00020\u0011H\u0002J\b\u0010\u0019\u001a\u00020\u0011H\u0002J\b\u0010\u001a\u001a\u00020\u0011H\u0002J\u0006\u0010\u001b\u001a\u00020\u0011J\u000e\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eJ\u0016\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u00162\u0006\u0010!\u001a\u00020\"J\b\u0010#\u001a\u00020\u0011H\u0002J\b\u0010$\u001a\u00020\u0011H\u0002J\b\u0010%\u001a\u00020\u0011H\u0002J\b\u0010&\u001a\u00020\u0011H\u0002J\b\u0010'\u001a\u00020\u0011H\u0002J\b\u0010(\u001a\u00020\u0011H\u0002J\u0006\u0010)\u001a\u00020\u0011J\b\u0010*\u001a\u00020\u0011H\u0002J\u0006\u0010+\u001a\u00020\u0011J\u0006\u0010,\u001a\u00020\u0011R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "", "inventory", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "binding", "Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;)V", "getInventory", "()Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "getBinding", "()Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "currentPersonType", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonType;", "currentPage", "", "setupListeners", "", "initAdapters", "initSub", "list", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "accessoriesNotVisible", "accessoriesVisible", "btnAccessoriesPressed", "setPageNumber", "updateSet", "updateAccessories", "newResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryEditResponse;", "changeAccessoriesItem", "item", "isColorItem", "", "upgradesNotVisible", "upgradesVisible", "btnUpgradesPressed", "walletNotVisible", "walletVisible", "btnWalletPressed", "openFishing", "setPersonTypeVisible", "defaultPersonSection", "refresh", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryPersonSection {
     private final InventoryPersonSectionBinding binding;
@@ -222,22 +222,26 @@ public final class InventoryPersonSection {
                 InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem);
                 if (i >= 0) {
                     arrayList.add(Integer.valueOf(i));
-                    if (inventoryItem.getItem() != null) {
-                        List<InventoryItem> subAccessoriesList = this.inventory.getSubAccessoriesList();
+                    Integer item = inventoryItem.getItem();
+                    BaseInventory baseInventory = this.inventory;
+                    if (item != null) {
+                        List<InventoryItem> subAccessoriesList = baseInventory.getSubAccessoriesList();
                         if (updateInventoryItem == null) {
                             updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                         }
                         subAccessoriesList.set(i, updateInventoryItem);
                     } else {
-                        this.inventory.getSubAccessoriesList().set(i, inventoryItem);
+                        baseInventory.getSubAccessoriesList().set(i, inventoryItem);
                     }
                 }
             }
         }
-        if (BaseInventory.Companion.getAccessPages() != null) {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
+        BaseInventory baseInventory2 = this.inventory;
+        if (accessPages != null) {
+            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
         } else {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
+            baseInventory2.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
         }
     }
 
@@ -278,10 +282,12 @@ public final class InventoryPersonSection {
             arrayList.add(inventoryItem);
         }
         baseInventory.setSubAccessoriesList(CollectionsKt.toMutableList((Collection) arrayList));
-        if (BaseInventory.Companion.getAccessPages() != null) {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        AccessPagesModel accessPages2 = BaseInventory.Companion.getAccessPages();
+        BaseInventory baseInventory2 = this.inventory;
+        if (accessPages2 != null) {
+            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
         } else {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
+            baseInventory2.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
         }
     }
 

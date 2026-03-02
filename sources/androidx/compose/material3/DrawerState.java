@@ -41,7 +41,7 @@ public final class DrawerState {
     private final State<Float> offset;
     private FiniteAnimationSpec<Float> openDrawerMotionSpec;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(DrawerValue drawerValue) {
         return true;
     }
@@ -62,16 +62,14 @@ public final class DrawerState {
         this.anchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(drawerValue, new Function1() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                float anchoredDraggableState$lambda$1;
-                anchoredDraggableState$lambda$1 = DrawerState.anchoredDraggableState$lambda$1(((Float) obj).floatValue());
-                return Float.valueOf(anchoredDraggableState$lambda$1);
+                return Float.valueOf(DrawerState.anchoredDraggableState$lambda$1(((Float) obj).floatValue()));
             }
         }, new Function0() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float anchoredDraggableState$lambda$3;
-                anchoredDraggableState$lambda$3 = DrawerState.anchoredDraggableState$lambda$3(DrawerState.this);
-                return Float.valueOf(anchoredDraggableState$lambda$3);
+                float mo405toPx0680j_4;
+                mo405toPx0680j_4 = DrawerState.this.requireDensity().mo405toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
+                return Float.valueOf(mo405toPx0680j_4);
             }
         }, access$getAnchoredDraggableDefaultAnimationSpec$p, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
         this.offset = new State<Float>() { // from class: androidx.compose.material3.DrawerState$offset$1
@@ -91,9 +89,7 @@ public final class DrawerState {
         this(drawerValue, (i & 2) != 0 ? new Function1() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = DrawerState._init_$lambda$0((DrawerValue) obj);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(DrawerState._init_$lambda$0((DrawerValue) obj));
             }
         } : function1);
     }
@@ -114,14 +110,9 @@ public final class DrawerState {
         return this.anchoredDraggableState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final float anchoredDraggableState$lambda$1(float f) {
         return f * NavigationDrawerKt.access$getDrawerPositionalThreshold$p();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float anchoredDraggableState$lambda$3(DrawerState drawerState) {
-        return drawerState.requireDensity().mo464toPx0680j_4(NavigationDrawerKt.access$getDrawerVelocityThreshold$p());
     }
 
     public final boolean isOpen() {
@@ -237,26 +228,20 @@ public final class DrawerState {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.DrawerState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    DrawerValue Saver$lambda$0;
-                    Saver$lambda$0 = DrawerState.Companion.Saver$lambda$0((SaverScope) obj, (DrawerState) obj2);
-                    return Saver$lambda$0;
+                    DrawerValue currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((DrawerState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.DrawerState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    DrawerState Saver$lambda$1;
-                    Saver$lambda$1 = DrawerState.Companion.Saver$lambda$1(Function1.this, (DrawerValue) obj);
-                    return Saver$lambda$1;
+                    return DrawerState.Companion.Saver$lambda$1(Function1.this, (DrawerValue) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final DrawerValue Saver$lambda$0(SaverScope saverScope, DrawerState drawerState) {
-            return drawerState.getCurrentValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final DrawerState Saver$lambda$1(Function1 function1, DrawerValue drawerValue) {
             return new DrawerState(drawerValue, function1);
         }

@@ -101,14 +101,12 @@ final class LazyGridCacheWindowScope implements CacheWindowScope {
         return getPrefetchScope().scheduleLinePrefetch(i, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridCacheWindowScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit schedulePrefetch$lambda$0;
-                schedulePrefetch$lambda$0 = LazyGridCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, i, (LazyGridPrefetchResultScope) obj);
-                return schedulePrefetch$lambda$0;
+                return LazyGridCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, i, (LazyGridPrefetchResultScope) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit schedulePrefetch$lambda$0(Function2 function2, int i, LazyGridPrefetchResultScope lazyGridPrefetchResultScope) {
         int lineItemCount = lazyGridPrefetchResultScope.getLineItemCount();
         int i2 = Integer.MIN_VALUE;

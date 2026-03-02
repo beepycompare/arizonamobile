@@ -39,7 +39,9 @@ public final class PointerInteropFilter_androidKt {
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(MotionEvent motionEvent) {
                 boolean dispatchTouchEvent;
-                switch (motionEvent.getActionMasked()) {
+                int actionMasked = motionEvent.getActionMasked();
+                AndroidViewHolder androidViewHolder2 = AndroidViewHolder.this;
+                switch (actionMasked) {
                     case 0:
                     case 1:
                     case 2:
@@ -47,10 +49,10 @@ public final class PointerInteropFilter_androidKt {
                     case 4:
                     case 5:
                     case 6:
-                        dispatchTouchEvent = AndroidViewHolder.this.dispatchTouchEvent(motionEvent);
+                        dispatchTouchEvent = androidViewHolder2.dispatchTouchEvent(motionEvent);
                         break;
                     default:
-                        dispatchTouchEvent = AndroidViewHolder.this.dispatchGenericMotionEvent(motionEvent);
+                        dispatchTouchEvent = androidViewHolder2.dispatchGenericMotionEvent(motionEvent);
                         break;
                 }
                 return Boolean.valueOf(dispatchTouchEvent);

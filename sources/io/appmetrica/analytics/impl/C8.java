@@ -12,7 +12,7 @@ public final class C8 implements to {
     }
 
     @Override // io.appmetrica.analytics.impl.to
-    public final byte[] a(N8 n8, C0381kh c0381kh) {
+    public final byte[] a(N8 n8, C0380kh c0380kh) {
         byte[] bArr;
         String str = n8.b;
         if (str != null) {

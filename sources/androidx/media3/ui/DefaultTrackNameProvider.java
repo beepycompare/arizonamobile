@@ -64,10 +64,11 @@ public class DefaultTrackNameProvider implements TrackNameProvider {
                 if (i == 6 || i == 7) {
                     return this.resources.getString(R.string.exo_track_surround_5_point_1);
                 }
+                Resources resources = this.resources;
                 if (i == 8) {
-                    return this.resources.getString(R.string.exo_track_surround_7_point_1);
+                    return resources.getString(R.string.exo_track_surround_7_point_1);
                 }
-                return this.resources.getString(R.string.exo_track_surround);
+                return resources.getString(R.string.exo_track_surround);
             }
             return this.resources.getString(R.string.exo_track_stereo);
         }

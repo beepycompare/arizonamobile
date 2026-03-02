@@ -104,17 +104,15 @@ public final class PagerCacheWindowScope implements CacheWindowScope {
 
     @Override // androidx.compose.foundation.lazy.layout.CacheWindowScope
     public List<LazyLayoutPrefetchState.PrefetchHandle> schedulePrefetch(int i, final Function2<? super Integer, ? super Integer, Unit> function2) {
-        return CollectionsKt.listOf(getState().m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, getLayoutInfo().m1232getChildConstraintsmsEJaDk(), true, new Function1() { // from class: androidx.compose.foundation.pager.PagerCacheWindowScope$$ExternalSyntheticLambda0
+        return CollectionsKt.listOf(getState().m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, getLayoutInfo().m1080getChildConstraintsmsEJaDk(), true, new Function1() { // from class: androidx.compose.foundation.pager.PagerCacheWindowScope$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit schedulePrefetch$lambda$0;
-                schedulePrefetch$lambda$0 = PagerCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, this, (LazyLayoutPrefetchState.PrefetchResultScope) obj);
-                return schedulePrefetch$lambda$0;
+                return PagerCacheWindowScope.schedulePrefetch$lambda$0(Function2.this, this, (LazyLayoutPrefetchState.PrefetchResultScope) obj);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit schedulePrefetch$lambda$0(Function2 function2, PagerCacheWindowScope pagerCacheWindowScope, LazyLayoutPrefetchState.PrefetchResultScope prefetchResultScope) {
         function2.invoke(Integer.valueOf(prefetchResultScope.getIndex()), Integer.valueOf(pagerCacheWindowScope.getLayoutInfo().getPageSize()));
         return Unit.INSTANCE;

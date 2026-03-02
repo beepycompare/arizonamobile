@@ -3,7 +3,6 @@ package androidx.activity;
 import android.app.Activity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import androidx.activity.ImmLeaksCleaner;
 import androidx.core.app.NotificationCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
@@ -23,9 +22,7 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
     private static final Lazy<Cleaner> cleaner$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ImmLeaksCleaner$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            ImmLeaksCleaner.Cleaner cleaner_delegate$lambda$0;
-            cleaner_delegate$lambda$0 = ImmLeaksCleaner.cleaner_delegate$lambda$0();
-            return cleaner_delegate$lambda$0;
+            return ImmLeaksCleaner.cleaner_delegate$lambda$0();
         }
     });
     private final Activity activity;
@@ -179,7 +176,7 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Cleaner cleaner_delegate$lambda$0() {
         try {
             Field declaredField = InputMethodManager.class.getDeclaredField("mServedView");

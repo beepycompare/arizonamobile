@@ -22,7 +22,7 @@ public abstract class PointerInputFilter {
     public abstract void onCancel();
 
     /* renamed from: onPointerEvent-H0pRuoY  reason: not valid java name */
-    public abstract void mo6767onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j);
+    public abstract void mo6108onPointerEventH0pRuoY(PointerEvent pointerEvent, PointerEventPass pointerEventPass, long j);
 
     public final LayoutCoordinates getLayoutCoordinates$ui() {
         return this.layoutCoordinates;
@@ -33,9 +33,9 @@ public abstract class PointerInputFilter {
     }
 
     /* renamed from: getSize-YbymL2g  reason: not valid java name */
-    public final long m6766getSizeYbymL2g() {
+    public final long m6107getSizeYbymL2g() {
         LayoutCoordinates layoutCoordinates = this.layoutCoordinates;
-        return layoutCoordinates != null ? layoutCoordinates.mo6883getSizeYbymL2g() : IntSize.Companion.m8434getZeroYbymL2g();
+        return layoutCoordinates != null ? layoutCoordinates.mo6224getSizeYbymL2g() : IntSize.Companion.m7731getZeroYbymL2g();
     }
 
     public final boolean isAttached$ui() {

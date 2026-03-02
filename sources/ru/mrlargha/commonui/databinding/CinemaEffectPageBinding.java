@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class CinemaEffectPageBinding implements ViewBinding {
     public final ConstraintLayout cinemaEffectBottomShield;
     public final ConstraintLayout cinemaEffectPage;

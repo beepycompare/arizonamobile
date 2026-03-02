@@ -11,7 +11,7 @@ import kotlin.reflect.KClass;
 import kotlin.reflect.KClassifier;
 import kotlin.reflect.KType;
 import kotlinx.serialization.modules.SerializersModule;
-@Metadata(d1 = {"kotlinx/serialization/SerializersKt__SerializersJvmKt", "kotlinx/serialization/SerializersKt__SerializersKt"}, k = 4, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"kotlinx/serialization/SerializersKt__SerializersJvmKt", "kotlinx/serialization/SerializersKt__SerializersKt"}, k = 4, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SerializersKt {
     public static final KSerializer<?> moduleThenPolymorphic(SerializersModule serializersModule, KClass<?> kClass) {

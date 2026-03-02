@@ -76,9 +76,7 @@ public final class CharDirectionality {
         directionalityMap$delegate = LazyKt.lazy(new Function0() { // from class: kotlin.text.CharDirectionality$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Map directionalityMap_delegate$lambda$0;
-                directionalityMap_delegate$lambda$0 = CharDirectionality.directionalityMap_delegate$lambda$0();
-                return directionalityMap_delegate$lambda$0;
+                return CharDirectionality.directionalityMap_delegate$lambda$0();
             }
         });
     }
@@ -107,7 +105,7 @@ public final class CharDirectionality {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Map directionalityMap_delegate$lambda$0() {
         EnumEntries<CharDirectionality> entries = getEntries();
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(entries, 10)), 16));

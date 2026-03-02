@@ -183,9 +183,7 @@ public interface MemoryCache {
             this.maxSizeBytesFactory = new Function0() { // from class: coil3.memory.MemoryCache$Builder$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    long maxSizeBytes$lambda$1$lambda$0;
-                    maxSizeBytes$lambda$1$lambda$0 = MemoryCache.Builder.maxSizeBytes$lambda$1$lambda$0(j);
-                    return Long.valueOf(maxSizeBytes$lambda$1$lambda$0);
+                    return Long.valueOf(MemoryCache.Builder.maxSizeBytes$lambda$1$lambda$0(j));
                 }
             };
             return this;
@@ -210,9 +208,7 @@ public interface MemoryCache {
             this.maxSizeBytesFactory = new Function0() { // from class: coil3.memory.MemoryCache$Builder$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    long maxSizePercent$lambda$5$lambda$4;
-                    maxSizePercent$lambda$5$lambda$4 = MemoryCache.Builder.maxSizePercent$lambda$5$lambda$4(d, context);
-                    return Long.valueOf(maxSizePercent$lambda$5$lambda$4);
+                    return Long.valueOf(MemoryCache.Builder.maxSizePercent$lambda$5$lambda$4(d, context));
                 }
             };
             return this;

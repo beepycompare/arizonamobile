@@ -1219,39 +1219,43 @@ public class MotionController {
             if (this.mStartPoint.mVisibilityMode == 0) {
                 if (adjustedPosition <= f3) {
                     view2.setVisibility(this.mStartPoint.mVisibility);
-                } else if (adjustedPosition >= f2) {
-                    view2.setVisibility(this.mEndPoint.mVisibility);
-                } else if (this.mEndPoint.mVisibility != this.mStartPoint.mVisibility) {
-                    view2.setVisibility(0);
+                } else {
+                    int i2 = (adjustedPosition > f2 ? 1 : (adjustedPosition == f2 ? 0 : -1));
+                    MotionConstrainedPoint motionConstrainedPoint = this.mEndPoint;
+                    if (i2 >= 0) {
+                        view2.setVisibility(motionConstrainedPoint.mVisibility);
+                    } else if (motionConstrainedPoint.mVisibility != this.mStartPoint.mVisibility) {
+                        view2.setVisibility(0);
+                    }
                 }
             }
             if (this.mKeyTriggers != null) {
-                int i2 = 0;
+                int i3 = 0;
                 while (true) {
                     KeyTrigger[] keyTriggerArr = this.mKeyTriggers;
-                    if (i2 >= keyTriggerArr.length) {
+                    if (i3 >= keyTriggerArr.length) {
                         break;
                     }
-                    keyTriggerArr[i2].conditionallyFire(adjustedPosition, view2);
-                    i2++;
+                    keyTriggerArr[i3].conditionallyFire(adjustedPosition, view2);
+                    i3++;
                 }
             }
         } else {
             view2 = view;
             float f9 = this.mStartMotionPath.mX + ((this.mEndMotionPath.mX - this.mStartMotionPath.mX) * adjustedPosition);
             float f10 = f9 + 0.5f;
-            int i3 = (int) f10;
+            int i4 = (int) f10;
             float f11 = this.mStartMotionPath.mY + ((this.mEndMotionPath.mY - this.mStartMotionPath.mY) * adjustedPosition) + 0.5f;
-            int i4 = (int) f11;
-            int i5 = (int) (f10 + this.mStartMotionPath.mWidth + ((this.mEndMotionPath.mWidth - this.mStartMotionPath.mWidth) * adjustedPosition));
-            int i6 = (int) (f11 + this.mStartMotionPath.mHeight + ((this.mEndMotionPath.mHeight - this.mStartMotionPath.mHeight) * adjustedPosition));
-            int i7 = i5 - i3;
+            int i5 = (int) f11;
+            int i6 = (int) (f10 + this.mStartMotionPath.mWidth + ((this.mEndMotionPath.mWidth - this.mStartMotionPath.mWidth) * adjustedPosition));
+            int i7 = (int) (f11 + this.mStartMotionPath.mHeight + ((this.mEndMotionPath.mHeight - this.mStartMotionPath.mHeight) * adjustedPosition));
             int i8 = i6 - i4;
+            int i9 = i7 - i5;
             if (this.mEndMotionPath.mWidth != this.mStartMotionPath.mWidth || this.mEndMotionPath.mHeight != this.mStartMotionPath.mHeight || this.mForceMeasure) {
-                view2.measure(View.MeasureSpec.makeMeasureSpec(i7, 1073741824), View.MeasureSpec.makeMeasureSpec(i8, 1073741824));
+                view2.measure(View.MeasureSpec.makeMeasureSpec(i8, 1073741824), View.MeasureSpec.makeMeasureSpec(i9, 1073741824));
                 this.mForceMeasure = false;
             }
-            view2.layout(i3, i4, i5, i6);
+            view2.layout(i4, i5, i6, i7);
         }
         HashMap<String, ViewOscillator> hashMap4 = this.mCycleMap;
         if (hashMap4 != null) {

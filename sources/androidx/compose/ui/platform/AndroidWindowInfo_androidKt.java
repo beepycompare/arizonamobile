@@ -23,10 +23,10 @@ public final class AndroidWindowInfo_androidKt {
         Context tryUnwrapContext = tryUnwrapContext(context);
         if (tryUnwrapContext != null) {
             WindowMetrics computeCurrentWindowMetrics = WindowMetricsCalculator.Companion.getOrCreate().computeCurrentWindowMetrics(tryUnwrapContext);
-            return DerivedSize.Companion.m7355fromPxSizeviCIZxY(IntSize.m8424constructorimpl((computeCurrentWindowMetrics.getBounds().width() << 32) | (computeCurrentWindowMetrics.getBounds().height() & 4294967295L)), AndroidDensity_androidKt.Density(tryUnwrapContext));
+            return DerivedSize.Companion.m6691fromPxSizeviCIZxY(IntSize.m7721constructorimpl((computeCurrentWindowMetrics.getBounds().width() << 32) | (computeCurrentWindowMetrics.getBounds().height() & 4294967295L)), AndroidDensity_androidKt.Density(tryUnwrapContext));
         }
         Configuration configuration = context.getResources().getConfiguration();
-        return DerivedSize.Companion.m7354fromDpSizeitqla9I(DpKt.m8280DpSizeYgX7TsA(Dp.m8258constructorimpl(configuration.screenWidthDp), Dp.m8258constructorimpl(configuration.screenHeightDp)), AndroidDensity_androidKt.Density(context));
+        return DerivedSize.Companion.m6690fromDpSizeitqla9I(DpKt.m7577DpSizeYgX7TsA(Dp.m7555constructorimpl(configuration.screenWidthDp), Dp.m7555constructorimpl(configuration.screenHeightDp)), AndroidDensity_androidKt.Density(context));
     }
 
     private static final Context tryUnwrapContext(Context context) {

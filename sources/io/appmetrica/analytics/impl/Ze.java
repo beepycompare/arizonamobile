@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.Set;
 /* loaded from: classes5.dex */
-public final class Ze extends AbstractC0726yd implements Bo {
+public final class Ze extends AbstractC0725yd implements Bo {
     public static final Ye d = new Ye("LOCATION_TRACKING_ENABLED", null);
     public static final Ye e = new Ye("PREF_KEY_OFFSET", null);
     public static final Ye f = new Ye("UNCHECKED_TIME", null);
@@ -119,7 +119,7 @@ public final class Ze extends AbstractC0726yd implements Bo {
         return null;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0726yd
+    @Override // io.appmetrica.analytics.impl.AbstractC0725yd
     public final String f(String str) {
         return new Ye(str, null).b;
     }

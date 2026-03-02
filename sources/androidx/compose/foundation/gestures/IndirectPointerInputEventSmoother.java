@@ -18,12 +18,12 @@ public final class IndirectPointerInputEventSmoother {
     public static final int $stable = 8;
 
     /* renamed from: smoothEventPosition-tuRUvjQ  reason: not valid java name */
-    public final long m601smoothEventPositiontuRUvjQ(IndirectPointerInputChange indirectPointerInputChange) {
+    public final long m520smoothEventPositiontuRUvjQ(IndirectPointerInputChange indirectPointerInputChange) {
         boolean changedToDownIgnoreConsumed;
         boolean changedToUpIgnoreConsumed;
         boolean changedToDownIgnoreConsumed2;
-        float intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m6272getPositionF1C5BW0() >> 32));
-        float intBitsToFloat2 = Float.intBitsToFloat((int) (indirectPointerInputChange.m6272getPositionF1C5BW0() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (indirectPointerInputChange.m5613getPositionF1C5BW0() >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (indirectPointerInputChange.m5613getPositionF1C5BW0() & 4294967295L));
         changedToDownIgnoreConsumed = IndirectPointerInputDragCycleDetectorKt.changedToDownIgnoreConsumed(indirectPointerInputChange);
         if (changedToDownIgnoreConsumed) {
             this.eventRotatingIndex = 0;
@@ -33,34 +33,35 @@ public final class IndirectPointerInputEventSmoother {
         if (!changedToUpIgnoreConsumed) {
             changedToDownIgnoreConsumed2 = IndirectPointerInputDragCycleDetectorKt.changedToDownIgnoreConsumed(indirectPointerInputChange);
             if (!changedToDownIgnoreConsumed2) {
-                if (this.eventRotatingArray.size() == 3) {
-                    List<IndirectPointerInputChange> list = this.eventRotatingArray;
+                int size = this.eventRotatingArray.size();
+                List<IndirectPointerInputChange> list = this.eventRotatingArray;
+                if (size == 3) {
                     int i = this.eventRotatingIndex;
                     this.eventRotatingIndex = i + 1;
                     list.set(i, indirectPointerInputChange);
                 } else {
-                    this.eventRotatingArray.add(indirectPointerInputChange);
+                    list.add(indirectPointerInputChange);
                 }
                 if (this.eventRotatingIndex == 3) {
                     this.eventRotatingIndex = 0;
                 }
                 List<IndirectPointerInputChange> list2 = this.eventRotatingArray;
                 ArrayList arrayList = new ArrayList(list2.size());
-                int size = list2.size();
-                for (int i2 = 0; i2 < size; i2++) {
-                    arrayList.add(Float.valueOf(Float.intBitsToFloat((int) (list2.get(i2).m6272getPositionF1C5BW0() >> 32))));
+                int size2 = list2.size();
+                for (int i2 = 0; i2 < size2; i2++) {
+                    arrayList.add(Float.valueOf(Float.intBitsToFloat((int) (list2.get(i2).m5613getPositionF1C5BW0() >> 32))));
                 }
                 intBitsToFloat = (float) CollectionsKt.averageOfFloat(arrayList);
                 List<IndirectPointerInputChange> list3 = this.eventRotatingArray;
                 ArrayList arrayList2 = new ArrayList(list3.size());
-                int size2 = list3.size();
-                for (int i3 = 0; i3 < size2; i3++) {
-                    arrayList2.add(Float.valueOf(Float.intBitsToFloat((int) (list3.get(i3).m6272getPositionF1C5BW0() & 4294967295L))));
+                int size3 = list3.size();
+                for (int i3 = 0; i3 < size3; i3++) {
+                    arrayList2.add(Float.valueOf(Float.intBitsToFloat((int) (list3.get(i3).m5613getPositionF1C5BW0() & 4294967295L))));
                 }
                 intBitsToFloat2 = (float) CollectionsKt.averageOfFloat(arrayList2);
             }
         }
-        return Offset.m5171constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
+        return Offset.m4519constructorimpl((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32));
     }
 
     /* compiled from: IndirectPointerInputDragCycleDetector.kt */

@@ -538,11 +538,12 @@ public class TrackSelectionParameters {
         }
 
         public Builder setTrackTypeDisabled(int i, boolean z) {
+            HashSet<Integer> hashSet = this.disabledTrackTypes;
             if (z) {
-                this.disabledTrackTypes.add(Integer.valueOf(i));
+                hashSet.add(Integer.valueOf(i));
                 return this;
             }
-            this.disabledTrackTypes.remove(Integer.valueOf(i));
+            hashSet.remove(Integer.valueOf(i));
             return this;
         }
 

@@ -43,12 +43,12 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
         return ((MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0083, code lost:
         if (r13 != r0) goto L8;
      */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x003c A[Catch: all -> 0x0028, TryCatch #0 {all -> 0x0028, blocks: (B:7:0x0013, B:17:0x0032, B:19:0x003c, B:23:0x0053, B:12:0x0024), top: B:30:0x0009 }] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0086  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x0083 -> B:8:0x0016). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x003e A[Catch: all -> 0x0028, TRY_ENTER, TryCatch #0 {all -> 0x0028, blocks: (B:7:0x0013, B:17:0x0032, B:20:0x003e, B:24:0x0053, B:12:0x0024), top: B:31:0x0009 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0083 -> B:8:0x0016). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -62,6 +62,7 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
         float f2;
         ScrollingLogic scrollingLogic;
         Object dispatchMouseWheelScroll;
+        boolean isActive;
         Channel channel;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -69,30 +70,34 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 coroutineScope = (CoroutineScope) this.L$0;
-                if (!JobKt.isActive(coroutineScope.getCoroutineContext())) {
+                isActive = JobKt.isActive(coroutineScope.getCoroutineContext());
+                MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
+                if (!isActive) {
                 }
             } else if (i == 1) {
                 coroutineScope2 = (CoroutineScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 density = this.this$0.density;
                 f = MouseWheelScrollableKt.AnimationThreshold;
-                float mo464toPx0680j_4 = density.mo464toPx0680j_4(f);
+                float mo405toPx0680j_4 = density.mo405toPx0680j_4(f);
                 density2 = this.this$0.density;
                 f2 = MouseWheelScrollableKt.AnimationSpeed;
-                float mo464toPx0680j_42 = density2.mo464toPx0680j_4(f2);
-                MouseWheelScrollingLogic mouseWheelScrollingLogic = this.this$0;
-                scrollingLogic = mouseWheelScrollingLogic.scrollingLogic;
+                float mo405toPx0680j_42 = density2.mo405toPx0680j_4(f2);
+                MouseWheelScrollingLogic mouseWheelScrollingLogic2 = this.this$0;
+                scrollingLogic = mouseWheelScrollingLogic2.scrollingLogic;
                 this.L$0 = coroutineScope2;
                 this.label = 2;
-                dispatchMouseWheelScroll = mouseWheelScrollingLogic.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo464toPx0680j_4, mo464toPx0680j_42, this);
+                dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo405toPx0680j_4, mo405toPx0680j_42, this);
             } else if (i != 2) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
                 coroutineScope2 = (CoroutineScope) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 coroutineScope = coroutineScope2;
-                if (!JobKt.isActive(coroutineScope.getCoroutineContext())) {
-                    channel = this.this$0.channel;
+                isActive = JobKt.isActive(coroutineScope.getCoroutineContext());
+                MouseWheelScrollingLogic mouseWheelScrollingLogic3 = this.this$0;
+                if (!isActive) {
+                    channel = mouseWheelScrollingLogic3.channel;
                     this.L$0 = coroutineScope;
                     this.label = 1;
                     Object receive = channel.receive(this);
@@ -103,17 +108,17 @@ public final class MouseWheelScrollingLogic$startReceivingMouseWheelEvents$1 ext
                     obj = receive;
                     density = this.this$0.density;
                     f = MouseWheelScrollableKt.AnimationThreshold;
-                    float mo464toPx0680j_43 = density.mo464toPx0680j_4(f);
+                    float mo405toPx0680j_43 = density.mo405toPx0680j_4(f);
                     density2 = this.this$0.density;
                     f2 = MouseWheelScrollableKt.AnimationSpeed;
-                    float mo464toPx0680j_422 = density2.mo464toPx0680j_4(f2);
-                    MouseWheelScrollingLogic mouseWheelScrollingLogic2 = this.this$0;
-                    scrollingLogic = mouseWheelScrollingLogic2.scrollingLogic;
+                    float mo405toPx0680j_422 = density2.mo405toPx0680j_4(f2);
+                    MouseWheelScrollingLogic mouseWheelScrollingLogic22 = this.this$0;
+                    scrollingLogic = mouseWheelScrollingLogic22.scrollingLogic;
                     this.L$0 = coroutineScope2;
                     this.label = 2;
-                    dispatchMouseWheelScroll = mouseWheelScrollingLogic2.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo464toPx0680j_43, mo464toPx0680j_422, this);
+                    dispatchMouseWheelScroll = mouseWheelScrollingLogic22.dispatchMouseWheelScroll(scrollingLogic, (MouseWheelScrollingLogic.MouseWheelScrollDelta) obj, mo405toPx0680j_43, mo405toPx0680j_422, this);
                 } else {
-                    this.this$0.receivingMouseWheelEventsJob = null;
+                    mouseWheelScrollingLogic3.receivingMouseWheelEventsJob = null;
                     return Unit.INSTANCE;
                 }
             }

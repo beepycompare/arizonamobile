@@ -55,9 +55,7 @@ public final class TextFieldCoreModifierNode$startCursorJob$1 extends SuspendLam
             if (FlowKt.collectLatest(SnapshotStateKt.snapshotFlow(new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldCoreModifierNode$startCursorJob$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    int invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TextFieldCoreModifierNode$startCursorJob$1.invokeSuspend$lambda$0(TextFieldCoreModifierNode.this, intRef);
-                    return Integer.valueOf(invokeSuspend$lambda$0);
+                    return Integer.valueOf(TextFieldCoreModifierNode$startCursorJob$1.invokeSuspend$lambda$0(TextFieldCoreModifierNode.this, intRef));
                 }
             }), new AnonymousClass2(this.this$0, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -70,7 +68,7 @@ public final class TextFieldCoreModifierNode$startCursorJob$1 extends SuspendLam
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final int invokeSuspend$lambda$0(TextFieldCoreModifierNode textFieldCoreModifierNode, Ref.IntRef intRef) {
         TransformedTextFieldState transformedTextFieldState;
         transformedTextFieldState = textFieldCoreModifierNode.textFieldState;

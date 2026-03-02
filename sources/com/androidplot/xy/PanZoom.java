@@ -220,13 +220,14 @@ public class PanZoom implements View.OnTouchListener {
         float f;
         float floatValue;
         int height;
+        XYPlot xYPlot = this.plot;
         if (z) {
-            region.setMinMax(this.plot.getBounds().getxRegion());
+            region.setMinMax(xYPlot.getBounds().getxRegion());
             f = pointF.x - this.firstFingerPos.x;
             floatValue = region.getMax().floatValue() - region.getMin().floatValue();
             height = this.plot.getWidth();
         } else {
-            region.setMinMax(this.plot.getBounds().getyRegion());
+            region.setMinMax(xYPlot.getBounds().getyRegion());
             f = -(pointF.y - this.firstFingerPos.y);
             floatValue = region.getMax().floatValue() - region.getMin().floatValue();
             height = this.plot.getHeight();
@@ -360,8 +361,9 @@ public class PanZoom implements View.OnTouchListener {
         float f4 = f2 * f;
         float f5 = f4 / 2.0f;
         RectRegion outerLimits = this.plot.getOuterLimits();
+        ZoomLimit zoomLimit = this.zoomLimit;
         if (z) {
-            if (this.zoomLimit == ZoomLimit.MIN_TICKS && this.plot.getDomainStepValue() > f4) {
+            if (zoomLimit == ZoomLimit.MIN_TICKS && this.plot.getDomainStepValue() > f4) {
                 f5 = (float) (this.plot.getDomainStepValue() / 2.0d);
             }
             rectF.left = f3 - f5;
@@ -378,7 +380,7 @@ public class PanZoom implements View.OnTouchListener {
             }
             return;
         }
-        if (this.zoomLimit == ZoomLimit.MIN_TICKS && this.plot.getRangeStepValue() > f4) {
+        if (zoomLimit == ZoomLimit.MIN_TICKS && this.plot.getRangeStepValue() > f4) {
             f5 = (float) (this.plot.getRangeStepValue() / 2.0d);
         }
         rectF.top = f3 - f5;

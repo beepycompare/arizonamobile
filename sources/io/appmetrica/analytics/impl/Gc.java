@@ -12,15 +12,15 @@ public final class Gc {
     static {
         SparseArray sparseArray = new SparseArray();
         c = sparseArray;
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5891, new Gc("jvm", "binder"));
-        EnumC0143bb enumC0143bb2 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb2 = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5890, new Gc("jvm", "file"));
-        EnumC0143bb enumC0143bb3 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb3 = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5889, new Gc("jvm", "file"));
-        EnumC0143bb enumC0143bb4 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb4 = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5897, new Gc("jni_native", "file"));
-        EnumC0143bb enumC0143bb5 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb5 = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5898, new Gc("jni_native", "file"));
     }
 

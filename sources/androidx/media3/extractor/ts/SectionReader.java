@@ -79,21 +79,23 @@ public final class SectionReader implements TsPayloadReader {
                 int i5 = this.bytesRead + min2;
                 this.bytesRead = i5;
                 int i6 = this.totalSectionLength;
-                if (i5 != i6) {
-                    continue;
-                } else {
-                    if (this.sectionSyntaxIndicator) {
-                        if (Util.crc32(this.sectionData.getData(), 0, this.totalSectionLength, -1) != 0) {
+                if (i5 == i6) {
+                    boolean z2 = this.sectionSyntaxIndicator;
+                    ParsableByteArray parsableByteArray2 = this.sectionData;
+                    if (z2) {
+                        if (Util.crc32(parsableByteArray2.getData(), 0, this.totalSectionLength, -1) != 0) {
                             this.waitingForPayloadStart = true;
                             return;
                         }
                         this.sectionData.setLimit(this.totalSectionLength - 4);
                     } else {
-                        this.sectionData.setLimit(i6);
+                        parsableByteArray2.setLimit(i6);
                     }
                     this.sectionData.setPosition(0);
                     this.reader.consume(this.sectionData);
                     this.bytesRead = 0;
+                } else {
+                    continue;
                 }
             }
         }

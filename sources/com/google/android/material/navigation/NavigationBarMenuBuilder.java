@@ -54,8 +54,10 @@ public class NavigationBarMenuBuilder {
         this.visibleMainItemCount = 0;
         for (int i = 0; i < this.menuBuilder.size(); i++) {
             MenuItem item = this.menuBuilder.getItem(i);
-            if (item.hasSubMenu()) {
-                if (!this.items.isEmpty()) {
+            boolean hasSubMenu = item.hasSubMenu();
+            List<MenuItem> list4 = this.items;
+            if (hasSubMenu) {
+                if (!list4.isEmpty()) {
                     if (!(this.items.get(list3.size() - 1) instanceof DividerMenuItem) && item.isVisible()) {
                         this.items.add(new DividerMenuItem());
                     }
@@ -75,7 +77,7 @@ public class NavigationBarMenuBuilder {
                 }
                 this.items.add(new DividerMenuItem());
             } else {
-                this.items.add(item);
+                list4.add(item);
                 this.contentItemCount++;
                 if (item.isVisible()) {
                     this.visibleContentItemCount++;

@@ -66,7 +66,7 @@ public final class RetainedComponentHolder<T> implements InstanceKeeper.Instance
         return this.onBackPressedDispatcher;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void onBackPressedDispatcher$lambda$0(RetainedComponentHolder retainedComponentHolder, Boolean bool) {
         Function1<? super Boolean, Unit> function1 = retainedComponentHolder.onBackEnabledChangedListener;
         if (function1 != null) {

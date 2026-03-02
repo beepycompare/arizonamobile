@@ -17,7 +17,6 @@ import androidx.lifecycle.viewmodel.MutableCreationExtras;
 import androidx.navigation.NavBackStackEntry;
 import androidx.navigation.NavDestination;
 import androidx.navigation.NavViewModelStoreProvider;
-import androidx.navigation.internal.NavBackStackEntryImpl;
 import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateWriter;
@@ -69,9 +68,7 @@ public final class NavBackStackEntryImpl {
         this.defaultFactory$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.internal.NavBackStackEntryImpl$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SavedStateViewModelFactory defaultFactory_delegate$lambda$0;
-                defaultFactory_delegate$lambda$0 = NavBackStackEntryImpl.defaultFactory_delegate$lambda$0();
-                return defaultFactory_delegate$lambda$0;
+                return NavBackStackEntryImpl.defaultFactory_delegate$lambda$0();
             }
         });
         this.lifecycle = new LifecycleRegistry(entry);
@@ -80,9 +77,7 @@ public final class NavBackStackEntryImpl {
         this.navResultSavedStateFactory$delegate = LazyKt.lazy(new Function0() { // from class: androidx.navigation.internal.NavBackStackEntryImpl$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                ViewModelProvider.Factory navResultSavedStateFactory_delegate$lambda$10;
-                navResultSavedStateFactory_delegate$lambda$10 = NavBackStackEntryImpl.navResultSavedStateFactory_delegate$lambda$10();
-                return navResultSavedStateFactory_delegate$lambda$10;
+                return NavBackStackEntryImpl.navResultSavedStateFactory_delegate$lambda$10();
             }
         });
     }
@@ -141,7 +136,7 @@ public final class NavBackStackEntryImpl {
         this.savedStateRegistryAttached = z;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedStateViewModelFactory defaultFactory_delegate$lambda$0() {
         return new SavedStateViewModelFactory();
     }
@@ -166,7 +161,7 @@ public final class NavBackStackEntryImpl {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9299putAllimpl(SavedStateWriter.m9295constructorimpl(bundleOf), this.immutableArgs);
+        SavedStateWriter.m8504putAllimpl(SavedStateWriter.m8500constructorimpl(bundleOf), this.immutableArgs);
         return bundleOf;
     }
 
@@ -210,10 +205,13 @@ public final class NavBackStackEntryImpl {
             }
             this.savedStateRegistryController.performRestore(this.savedState);
         }
-        if (this.hostLifecycleState.ordinal() < this.maxLifecycle.ordinal()) {
-            this.lifecycle.setCurrentState(this.hostLifecycleState);
+        int ordinal = this.hostLifecycleState.ordinal();
+        int ordinal2 = this.maxLifecycle.ordinal();
+        LifecycleRegistry lifecycleRegistry = this.lifecycle;
+        if (ordinal < ordinal2) {
+            lifecycleRegistry.setCurrentState(this.hostLifecycleState);
         } else {
-            this.lifecycle.setCurrentState(this.maxLifecycle);
+            lifecycleRegistry.setCurrentState(this.maxLifecycle);
         }
     }
 
@@ -270,7 +268,7 @@ public final class NavBackStackEntryImpl {
         return (ViewModelProvider.Factory) this.navResultSavedStateFactory$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SavedStateViewModel navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8(CreationExtras initializer) {
         Intrinsics.checkNotNullParameter(initializer, "$this$initializer");
         return new SavedStateViewModel(SavedStateHandleSupport.createSavedStateHandle(initializer));
@@ -293,15 +291,13 @@ public final class NavBackStackEntryImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final ViewModelProvider.Factory navResultSavedStateFactory_delegate$lambda$10() {
         InitializerViewModelFactoryBuilder initializerViewModelFactoryBuilder = new InitializerViewModelFactoryBuilder();
         initializerViewModelFactoryBuilder.addInitializer(Reflection.getOrCreateKotlinClass(SavedStateViewModel.class), new Function1() { // from class: androidx.navigation.internal.NavBackStackEntryImpl$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                NavBackStackEntryImpl.SavedStateViewModel navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8;
-                navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8 = NavBackStackEntryImpl.navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8((CreationExtras) obj);
-                return navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8;
+                return NavBackStackEntryImpl.navResultSavedStateFactory_delegate$lambda$10$lambda$9$lambda$8((CreationExtras) obj);
             }
         });
         return initializerViewModelFactoryBuilder.build();

@@ -92,8 +92,9 @@ public final class MeasuredPage implements PageInfo {
         for (int i4 = 0; i4 < size; i4++) {
             Placeable placeable = list.get(i4);
             int i5 = i4 * 2;
-            if (this.isVertical) {
-                int[] iArr = this.placeableOffsets;
+            boolean z = this.isVertical;
+            int[] iArr = this.placeableOffsets;
+            if (z) {
                 Alignment.Horizontal horizontal = this.horizontalAlignment;
                 if (horizontal != null) {
                     iArr[i5] = horizontal.align(placeable.getWidth(), i2, this.layoutDirection);
@@ -104,12 +105,11 @@ public final class MeasuredPage implements PageInfo {
                     throw new KotlinNothingValueException();
                 }
             } else {
-                int[] iArr2 = this.placeableOffsets;
-                iArr2[i5] = i;
+                iArr[i5] = i;
                 int i6 = i5 + 1;
                 Alignment.Vertical vertical = this.verticalAlignment;
                 if (vertical != null) {
-                    iArr2[i6] = vertical.align(placeable.getHeight(), i3);
+                    iArr[i6] = vertical.align(placeable.getHeight(), i3);
                     width = placeable.getWidth();
                 } else {
                     InlineClassHelperKt.throwIllegalArgumentExceptionForNullCheck("null verticalAlignment");
@@ -122,7 +122,7 @@ public final class MeasuredPage implements PageInfo {
 
     public final void place(Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope placementScope2;
-        int m8387getYimpl;
+        int m7684getYimpl;
         int i = 0;
         if (!(this.mainAxisLayoutSize != Integer.MIN_VALUE)) {
             InlineClassHelperKt.throwIllegalArgumentException("position() should be called first");
@@ -130,23 +130,23 @@ public final class MeasuredPage implements PageInfo {
         int size = this.placeables.size();
         while (i < size) {
             Placeable placeable = this.placeables.get(i);
-            long m1216getOffsetBjo55l4 = m1216getOffsetBjo55l4(i);
+            long m1069getOffsetBjo55l4 = m1069getOffsetBjo55l4(i);
             if (this.reverseLayout) {
-                int m8386getXimpl = this.isVertical ? IntOffset.m8386getXimpl(m1216getOffsetBjo55l4) : (this.mainAxisLayoutSize - IntOffset.m8386getXimpl(m1216getOffsetBjo55l4)) - getMainAxisSize(placeable);
+                int m7683getXimpl = this.isVertical ? IntOffset.m7683getXimpl(m1069getOffsetBjo55l4) : (this.mainAxisLayoutSize - IntOffset.m7683getXimpl(m1069getOffsetBjo55l4)) - getMainAxisSize(placeable);
                 if (this.isVertical) {
-                    m8387getYimpl = (this.mainAxisLayoutSize - IntOffset.m8387getYimpl(m1216getOffsetBjo55l4)) - getMainAxisSize(placeable);
+                    m7684getYimpl = (this.mainAxisLayoutSize - IntOffset.m7684getYimpl(m1069getOffsetBjo55l4)) - getMainAxisSize(placeable);
                 } else {
-                    m8387getYimpl = IntOffset.m8387getYimpl(m1216getOffsetBjo55l4);
+                    m7684getYimpl = IntOffset.m7684getYimpl(m1069getOffsetBjo55l4);
                 }
-                m1216getOffsetBjo55l4 = IntOffset.m8380constructorimpl((m8386getXimpl << 32) | (m8387getYimpl & 4294967295L));
+                m1069getOffsetBjo55l4 = IntOffset.m7677constructorimpl((m7683getXimpl << 32) | (m7684getYimpl & 4294967295L));
             }
-            long m8390plusqkQi6aY = IntOffset.m8390plusqkQi6aY(m1216getOffsetBjo55l4, this.visualOffset);
+            long m7687plusqkQi6aY = IntOffset.m7687plusqkQi6aY(m1069getOffsetBjo55l4, this.visualOffset);
             if (this.isVertical) {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6945placeWithLayeraW9wM$default(placementScope2, placeable, m8390plusqkQi6aY, 0.0f, (Function1) null, 6, (Object) null);
+                Placeable.PlacementScope.m6286placeWithLayeraW9wM$default(placementScope2, placeable, m7687plusqkQi6aY, 0.0f, (Function1) null, 6, (Object) null);
             } else {
                 placementScope2 = placementScope;
-                Placeable.PlacementScope.m6943placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m8390plusqkQi6aY, 0.0f, (Function1) null, 6, (Object) null);
+                Placeable.PlacementScope.m6284placeRelativeWithLayeraW9wM$default(placementScope2, placeable, m7687plusqkQi6aY, 0.0f, (Function1) null, 6, (Object) null);
             }
             i++;
             placementScope = placementScope2;
@@ -166,10 +166,10 @@ public final class MeasuredPage implements PageInfo {
     }
 
     /* renamed from: getOffset-Bjo55l4  reason: not valid java name */
-    private final long m1216getOffsetBjo55l4(int i) {
+    private final long m1069getOffsetBjo55l4(int i) {
         int[] iArr = this.placeableOffsets;
         int i2 = i * 2;
-        return IntOffset.m8380constructorimpl((iArr[i2] << 32) | (iArr[i2 + 1] & 4294967295L));
+        return IntOffset.m7677constructorimpl((iArr[i2] << 32) | (iArr[i2 + 1] & 4294967295L));
     }
 
     private final int getMainAxisSize(Placeable placeable) {
@@ -177,13 +177,13 @@ public final class MeasuredPage implements PageInfo {
     }
 
     /* renamed from: copy-4Tuh3kE  reason: not valid java name */
-    private final long m1215copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
-        int m8386getXimpl = this.isVertical ? IntOffset.m8386getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m8386getXimpl(j))).intValue();
+    private final long m1068copy4Tuh3kE(long j, Function1<? super Integer, Integer> function1) {
+        int m7683getXimpl = this.isVertical ? IntOffset.m7683getXimpl(j) : function1.invoke(Integer.valueOf(IntOffset.m7683getXimpl(j))).intValue();
         boolean z = this.isVertical;
-        int m8387getYimpl = IntOffset.m8387getYimpl(j);
+        int m7684getYimpl = IntOffset.m7684getYimpl(j);
         if (z) {
-            m8387getYimpl = function1.invoke(Integer.valueOf(m8387getYimpl)).intValue();
+            m7684getYimpl = function1.invoke(Integer.valueOf(m7684getYimpl)).intValue();
         }
-        return IntOffset.m8380constructorimpl((m8386getXimpl << 32) | (m8387getYimpl & 4294967295L));
+        return IntOffset.m7677constructorimpl((m7683getXimpl << 32) | (m7684getYimpl & 4294967295L));
     }
 }

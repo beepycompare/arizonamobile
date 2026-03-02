@@ -7,6 +7,10 @@ public interface SeekMap {
 
     SeekPoints getSeekPoints(long j);
 
+    default boolean isEstimated() {
+        return false;
+    }
+
     boolean isSeekable();
 
     /* loaded from: classes3.dex */

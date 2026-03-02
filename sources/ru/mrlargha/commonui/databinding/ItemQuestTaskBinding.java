@@ -14,7 +14,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textview.MaterialTextView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class ItemQuestTaskBinding implements ViewBinding {
     public final Button btnShowClue;
     public final ConstraintLayout expandedLayout;

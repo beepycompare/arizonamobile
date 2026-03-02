@@ -19,8 +19,9 @@ public class EventResponseData extends ResponseData {
             return null;
         }
         AdjustEventFailure adjustEventFailure = new AdjustEventFailure();
-        if (PluginErrorDetails.Platform.UNITY.equals(this.sdkPlatform)) {
-            String str = this.eventToken;
+        boolean equals = PluginErrorDetails.Platform.UNITY.equals(this.sdkPlatform);
+        String str = this.eventToken;
+        if (equals) {
             if (str == null) {
                 str = "";
             }
@@ -50,7 +51,7 @@ public class EventResponseData extends ResponseData {
             adjustEventFailure.jsonResponse = jSONObject;
             return adjustEventFailure;
         }
-        adjustEventFailure.eventToken = this.eventToken;
+        adjustEventFailure.eventToken = str;
         adjustEventFailure.message = this.message;
         adjustEventFailure.timestamp = this.timestamp;
         adjustEventFailure.adid = this.adid;
@@ -63,8 +64,9 @@ public class EventResponseData extends ResponseData {
     public AdjustEventSuccess getSuccessResponseData() {
         if (this.success) {
             AdjustEventSuccess adjustEventSuccess = new AdjustEventSuccess();
-            if (PluginErrorDetails.Platform.UNITY.equals(this.sdkPlatform)) {
-                String str = this.eventToken;
+            boolean equals = PluginErrorDetails.Platform.UNITY.equals(this.sdkPlatform);
+            String str = this.eventToken;
+            if (equals) {
                 if (str == null) {
                     str = "";
                 }
@@ -93,7 +95,7 @@ public class EventResponseData extends ResponseData {
                 adjustEventSuccess.jsonResponse = jSONObject;
                 return adjustEventSuccess;
             }
-            adjustEventSuccess.eventToken = this.eventToken;
+            adjustEventSuccess.eventToken = str;
             adjustEventSuccess.message = this.message;
             adjustEventSuccess.timestamp = this.timestamp;
             adjustEventSuccess.adid = this.adid;

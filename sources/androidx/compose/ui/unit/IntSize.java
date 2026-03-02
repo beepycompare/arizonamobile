@@ -10,36 +10,36 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes2.dex */
 public final class IntSize {
     public static final Companion Companion = new Companion(null);
-    private static final long Zero = m8424constructorimpl(0);
+    private static final long Zero = m7721constructorimpl(0);
     private final long packedValue;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ IntSize m8421boximpl(long j) {
+    public static final /* synthetic */ IntSize m7718boximpl(long j) {
         return new IntSize(j);
     }
 
     /* renamed from: component1-impl  reason: not valid java name */
-    public static final int m8422component1impl(long j) {
+    public static final int m7719component1impl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: component2-impl  reason: not valid java name */
-    public static final int m8423component2impl(long j) {
+    public static final int m7720component2impl(long j) {
         return (int) (j & 4294967295L);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m8424constructorimpl(long j) {
+    public static long m7721constructorimpl(long j) {
         return j;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m8426equalsimpl(long j, Object obj) {
-        return (obj instanceof IntSize) && j == ((IntSize) obj).m8433unboximpl();
+    public static boolean m7723equalsimpl(long j, Object obj) {
+        return (obj instanceof IntSize) && j == ((IntSize) obj).m7730unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m8427equalsimpl0(long j, long j2) {
+    public static final boolean m7724equalsimpl0(long j, long j2) {
         return j == j2;
     }
 
@@ -47,7 +47,7 @@ public final class IntSize {
     }
 
     /* renamed from: getHeight-impl  reason: not valid java name */
-    public static final int m8428getHeightimpl(long j) {
+    public static final int m7725getHeightimpl(long j) {
         return (int) (j & 4294967295L);
     }
 
@@ -55,25 +55,25 @@ public final class IntSize {
     }
 
     /* renamed from: getWidth-impl  reason: not valid java name */
-    public static final int m8429getWidthimpl(long j) {
+    public static final int m7726getWidthimpl(long j) {
         return (int) (j >> 32);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m8430hashCodeimpl(long j) {
+    public static int m7727hashCodeimpl(long j) {
         return Long.hashCode(j);
     }
 
     public boolean equals(Object obj) {
-        return m8426equalsimpl(this.packedValue, obj);
+        return m7723equalsimpl(this.packedValue, obj);
     }
 
     public int hashCode() {
-        return m8430hashCodeimpl(this.packedValue);
+        return m7727hashCodeimpl(this.packedValue);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ long m8433unboximpl() {
+    public final /* synthetic */ long m7730unboximpl() {
         return this.packedValue;
     }
 
@@ -86,22 +86,22 @@ public final class IntSize {
     }
 
     /* renamed from: times-YEO4UFw  reason: not valid java name */
-    public static final long m8431timesYEO4UFw(long j, int i) {
-        return m8424constructorimpl(((((int) (j >> 32)) * i) << 32) | ((((int) (j & 4294967295L)) * i) & 4294967295L));
+    public static final long m7728timesYEO4UFw(long j, int i) {
+        return m7721constructorimpl(((((int) (j >> 32)) * i) << 32) | ((((int) (j & 4294967295L)) * i) & 4294967295L));
     }
 
     /* renamed from: div-YEO4UFw  reason: not valid java name */
-    public static final long m8425divYEO4UFw(long j, int i) {
-        return m8424constructorimpl(((((int) (j >> 32)) / i) << 32) | ((((int) (j & 4294967295L)) / i) & 4294967295L));
+    public static final long m7722divYEO4UFw(long j, int i) {
+        return m7721constructorimpl(((((int) (j >> 32)) / i) << 32) | ((((int) (j & 4294967295L)) / i) & 4294967295L));
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m8432toStringimpl(long j) {
+    public static String m7729toStringimpl(long j) {
         return ((int) (j >> 32)) + " x " + ((int) (j & 4294967295L));
     }
 
     public String toString() {
-        return m8432toStringimpl(this.packedValue);
+        return m7729toStringimpl(this.packedValue);
     }
 
     /* compiled from: IntSize.kt */
@@ -116,7 +116,7 @@ public final class IntSize {
         }
 
         /* renamed from: getZero-YbymL2g  reason: not valid java name */
-        public final long m8434getZeroYbymL2g() {
+        public final long m7731getZeroYbymL2g() {
             return IntSize.Zero;
         }
     }

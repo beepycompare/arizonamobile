@@ -479,6 +479,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimations() {
+        ArrayList<ChangeInfo> arrayList;
         int size = this.mPendingMoves.size();
         while (true) {
             size--;
@@ -507,43 +508,49 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             dispatchAddFinished(viewHolder);
             this.mPendingAdditions.remove(size3);
         }
-        for (int size4 = this.mPendingChanges.size() - 1; size4 >= 0; size4--) {
-            endChangeAnimationIfNecessary(this.mPendingChanges.get(size4));
+        int size4 = this.mPendingChanges.size();
+        while (true) {
+            size4--;
+            arrayList = this.mPendingChanges;
+            if (size4 < 0) {
+                break;
+            }
+            endChangeAnimationIfNecessary(arrayList.get(size4));
         }
-        this.mPendingChanges.clear();
+        arrayList.clear();
         if (isRunning()) {
             for (int size5 = this.mMovesList.size() - 1; size5 >= 0; size5--) {
-                ArrayList<MoveInfo> arrayList = this.mMovesList.get(size5);
-                for (int size6 = arrayList.size() - 1; size6 >= 0; size6--) {
-                    MoveInfo moveInfo2 = arrayList.get(size6);
+                ArrayList<MoveInfo> arrayList2 = this.mMovesList.get(size5);
+                for (int size6 = arrayList2.size() - 1; size6 >= 0; size6--) {
+                    MoveInfo moveInfo2 = arrayList2.get(size6);
                     View view2 = moveInfo2.holder.itemView;
                     view2.setTranslationY(0.0f);
                     view2.setTranslationX(0.0f);
                     dispatchMoveFinished(moveInfo2.holder);
-                    arrayList.remove(size6);
-                    if (arrayList.isEmpty()) {
-                        this.mMovesList.remove(arrayList);
+                    arrayList2.remove(size6);
+                    if (arrayList2.isEmpty()) {
+                        this.mMovesList.remove(arrayList2);
                     }
                 }
             }
             for (int size7 = this.mAdditionsList.size() - 1; size7 >= 0; size7--) {
-                ArrayList<RecyclerView.ViewHolder> arrayList2 = this.mAdditionsList.get(size7);
-                for (int size8 = arrayList2.size() - 1; size8 >= 0; size8--) {
-                    RecyclerView.ViewHolder viewHolder2 = arrayList2.get(size8);
+                ArrayList<RecyclerView.ViewHolder> arrayList3 = this.mAdditionsList.get(size7);
+                for (int size8 = arrayList3.size() - 1; size8 >= 0; size8--) {
+                    RecyclerView.ViewHolder viewHolder2 = arrayList3.get(size8);
                     viewHolder2.itemView.setAlpha(1.0f);
                     dispatchAddFinished(viewHolder2);
-                    arrayList2.remove(size8);
-                    if (arrayList2.isEmpty()) {
-                        this.mAdditionsList.remove(arrayList2);
+                    arrayList3.remove(size8);
+                    if (arrayList3.isEmpty()) {
+                        this.mAdditionsList.remove(arrayList3);
                     }
                 }
             }
             for (int size9 = this.mChangesList.size() - 1; size9 >= 0; size9--) {
-                ArrayList<ChangeInfo> arrayList3 = this.mChangesList.get(size9);
-                for (int size10 = arrayList3.size() - 1; size10 >= 0; size10--) {
-                    endChangeAnimationIfNecessary(arrayList3.get(size10));
-                    if (arrayList3.isEmpty()) {
-                        this.mChangesList.remove(arrayList3);
+                ArrayList<ChangeInfo> arrayList4 = this.mChangesList.get(size9);
+                for (int size10 = arrayList4.size() - 1; size10 >= 0; size10--) {
+                    endChangeAnimationIfNecessary(arrayList4.get(size10));
+                    if (arrayList4.isEmpty()) {
+                        this.mChangesList.remove(arrayList4);
                     }
                 }
             }

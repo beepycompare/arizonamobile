@@ -64,24 +64,22 @@ public final class DraggableAnchorsNode<T> extends Modifier.Node implements Layo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
+    public MeasureResult mo69measure3p2s80s(final MeasureScope measureScope, Measurable measurable, long j) {
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
         if (!measureScope.isLookingAhead() || !this.didLookahead) {
-            Pair<? extends DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m8421boximpl(IntSize.m8424constructorimpl((mo6875measureBRTryo0.getHeight() & 4294967295L) | (mo6875measureBRTryo0.getWidth() << 32))), Constraints.m8198boximpl(j));
+            Pair<? extends DraggableAnchors<T>, ? extends T> invoke = this.anchors.invoke(IntSize.m7718boximpl(IntSize.m7721constructorimpl((mo6216measureBRTryo0.getHeight() & 4294967295L) | (mo6216measureBRTryo0.getWidth() << 32))), Constraints.m7495boximpl(j));
             this.state.updateAnchors(invoke.getFirst(), invoke.getSecond());
         }
         this.didLookahead = measureScope.isLookingAhead() || this.didLookahead;
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.DraggableAnchorsNode$$ExternalSyntheticLambda0
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.internal.DraggableAnchorsNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = DraggableAnchorsNode.measure_3p2s80s$lambda$1(MeasureScope.this, this, mo6875measureBRTryo0, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return DraggableAnchorsNode.measure_3p2s80s$lambda$1(MeasureScope.this, this, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(MeasureScope measureScope, DraggableAnchorsNode draggableAnchorsNode, final Placeable placeable, Placeable.PlacementScope placementScope) {
         final float requireOffset;
         if (measureScope.isLookingAhead()) {
@@ -96,15 +94,13 @@ public final class DraggableAnchorsNode<T> extends Modifier.Node implements Layo
         placementScope.withMotionFrameOfReferencePlacement(new Function1() { // from class: androidx.compose.material3.internal.DraggableAnchorsNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1$lambda$0;
-                measure_3p2s80s$lambda$1$lambda$0 = DraggableAnchorsNode.measure_3p2s80s$lambda$1$lambda$0(Placeable.this, f, requireOffset, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1$lambda$0;
+                return DraggableAnchorsNode.measure_3p2s80s$lambda$1$lambda$0(Placeable.this, f, requireOffset, (Placeable.PlacementScope) obj);
             }
         });
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1$lambda$0(Placeable placeable, float f, float f2, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, MathKt.roundToInt(f), MathKt.roundToInt(f2), 0.0f, 4, null);
         return Unit.INSTANCE;

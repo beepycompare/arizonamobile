@@ -37,14 +37,12 @@ public interface PanelsNavigation<MC, DC, EC> extends PanelsNavigator<MC, DC, EC
             this(function1, (i & 2) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.panels.PanelsNavigation$Event$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit _init_$lambda$0;
-                    _init_$lambda$0 = PanelsNavigation.Event._init_$lambda$0((Panels) obj, (Panels) obj2);
-                    return _init_$lambda$0;
+                    return PanelsNavigation.Event._init_$lambda$0((Panels) obj, (Panels) obj2);
                 }
             } : function2);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit _init_$lambda$0(Panels panels, Panels panels2) {
             Intrinsics.checkNotNullParameter(panels, "<unused var>");
             Intrinsics.checkNotNullParameter(panels2, "<unused var>");

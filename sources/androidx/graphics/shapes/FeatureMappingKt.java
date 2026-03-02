@@ -92,11 +92,11 @@ public final class FeatureMappingKt {
         if ((f1 instanceof Feature.Corner) && (f2 instanceof Feature.Corner) && ((Feature.Corner) f1).getConvex() != ((Feature.Corner) f2).getConvex()) {
             return Float.MAX_VALUE;
         }
-        return PointKt.m8820getDistanceSquaredDnnuFBc(PointKt.m8824minusybeJwSQ(featureRepresentativePoint(f1), featureRepresentativePoint(f2)));
+        return PointKt.m8105getDistanceSquaredDnnuFBc(PointKt.m8109minusybeJwSQ(featureRepresentativePoint(f1), featureRepresentativePoint(f2)));
     }
 
     public static final long featureRepresentativePoint(Feature feature) {
         Intrinsics.checkNotNullParameter(feature, "feature");
-        return FloatFloatPair.m25constructorimpl((((Cubic) CollectionsKt.first((List<? extends Object>) feature.getCubics())).getAnchor0X() + ((Cubic) CollectionsKt.last((List<? extends Object>) feature.getCubics())).getAnchor1X()) / 2.0f, (((Cubic) CollectionsKt.first((List<? extends Object>) feature.getCubics())).getAnchor0Y() + ((Cubic) CollectionsKt.last((List<? extends Object>) feature.getCubics())).getAnchor1Y()) / 2.0f);
+        return FloatFloatPair.m12constructorimpl((((Cubic) CollectionsKt.first((List<? extends Object>) feature.getCubics())).getAnchor0X() + ((Cubic) CollectionsKt.last((List<? extends Object>) feature.getCubics())).getAnchor1X()) / 2.0f, (((Cubic) CollectionsKt.first((List<? extends Object>) feature.getCubics())).getAnchor0Y() + ((Cubic) CollectionsKt.last((List<? extends Object>) feature.getCubics())).getAnchor1Y()) / 2.0f);
     }
 }

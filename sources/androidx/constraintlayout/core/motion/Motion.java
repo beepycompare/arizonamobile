@@ -1122,21 +1122,25 @@ public class Motion implements TypedValues {
             if (this.mStartPoint.mVisibilityMode == 0) {
                 if (f5 <= 0.0f) {
                     motionWidget3.setVisibility(this.mStartPoint.mVisibility);
-                } else if (f5 >= 1.0f) {
-                    motionWidget3.setVisibility(this.mEndPoint.mVisibility);
-                } else if (this.mEndPoint.mVisibility != this.mStartPoint.mVisibility) {
-                    motionWidget3.setVisibility(4);
+                } else {
+                    int i3 = (f5 > 1.0f ? 1 : (f5 == 1.0f ? 0 : -1));
+                    MotionConstrainedPoint motionConstrainedPoint = this.mEndPoint;
+                    if (i3 >= 0) {
+                        motionWidget3.setVisibility(motionConstrainedPoint.mVisibility);
+                    } else if (motionConstrainedPoint.mVisibility != this.mStartPoint.mVisibility) {
+                        motionWidget3.setVisibility(4);
+                    }
                 }
             }
             if (this.mKeyTriggers != null) {
-                int i3 = 0;
+                int i4 = 0;
                 while (true) {
                     MotionKeyTrigger[] motionKeyTriggerArr = this.mKeyTriggers;
-                    if (i3 >= motionKeyTriggerArr.length) {
+                    if (i4 >= motionKeyTriggerArr.length) {
                         break;
                     }
-                    motionKeyTriggerArr[i3].conditionallyFire(f5, motionWidget3);
-                    i3++;
+                    motionKeyTriggerArr[i4].conditionallyFire(f5, motionWidget3);
+                    i4++;
                 }
             }
         } else {

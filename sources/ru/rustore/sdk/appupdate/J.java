@@ -17,12 +17,12 @@ public interface J extends IInterface {
 
         /* renamed from: ru.rustore.sdk.appupdate.J$a$a  reason: collision with other inner class name */
         /* loaded from: classes6.dex */
-        public static class C0087a implements J {
+        public static class C0086a implements J {
 
             /* renamed from: a  reason: collision with root package name */
             public final IBinder f1510a;
 
-            public C0087a(IBinder iBinder) {
+            public C0086a(IBinder iBinder) {
                 this.f1510a = iBinder;
             }
 
@@ -107,7 +107,7 @@ public interface J extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("ru.vk.store.provider.appupdate.AppUpdateProvider");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof J)) ? new C0087a(iBinder) : (J) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof J)) ? new C0086a(iBinder) : (J) queryLocalInterface;
         }
     }
 

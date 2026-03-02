@@ -251,10 +251,12 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
         @Override // com.facebook.widget.PickerFragment.SelectionStrategy
         void toggleSelection(String str) {
             if (str != null) {
-                if (this.selectedIds.contains(str)) {
-                    this.selectedIds.remove(str);
+                boolean contains = this.selectedIds.contains(str);
+                Set<String> set = this.selectedIds;
+                if (contains) {
+                    set.remove(str);
                 } else {
-                    this.selectedIds.add(str);
+                    set.add(str);
                 }
             }
         }

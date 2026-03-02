@@ -27,9 +27,7 @@ public final class LocalDateComponentSerializer implements KSerializer<LocalDate
     private static final SerialDescriptor descriptor = SerialDescriptorsKt.buildClassSerialDescriptor("kotlinx.datetime.LocalDate/components", new SerialDescriptor[0], new Function1() { // from class: kotlinx.datetime.serializers.LocalDateComponentSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Unit descriptor$lambda$0;
-            descriptor$lambda$0 = LocalDateComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
-            return descriptor$lambda$0;
+            return LocalDateComponentSerializer.descriptor$lambda$0((ClassSerialDescriptorBuilder) obj);
         }
     });
 
@@ -86,12 +84,12 @@ public final class LocalDateComponentSerializer implements KSerializer<LocalDate
         CompositeEncoder beginStructure = encoder.beginStructure(descriptor2);
         LocalDateComponentSerializer localDateComponentSerializer = INSTANCE;
         beginStructure.encodeIntElement(localDateComponentSerializer.getDescriptor(), 0, value.getYear());
-        beginStructure.encodeShortElement(localDateComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m11873getMonth()));
+        beginStructure.encodeShortElement(localDateComponentSerializer.getDescriptor(), 1, (short) MonthKt.getNumber(value.m10783getMonth()));
         beginStructure.encodeShortElement(localDateComponentSerializer.getDescriptor(), 2, (short) value.getDay());
         beginStructure.endStructure(descriptor2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
         buildClassSerialDescriptor.element("year", IntSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);

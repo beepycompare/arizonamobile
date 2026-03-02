@@ -66,14 +66,12 @@ public final class SelectionManagerKt {
         return new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionManagerKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit contextMenuBuilder$lambda$0;
-                contextMenuBuilder$lambda$0 = SelectionManagerKt.contextMenuBuilder$lambda$0(SelectionManager.this, contextMenuState, (ContextMenuScope) obj);
-                return contextMenuBuilder$lambda$0;
+                return SelectionManagerKt.contextMenuBuilder$lambda$0(SelectionManager.this, contextMenuState, (ContextMenuScope) obj);
             }
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit contextMenuBuilder$lambda$0(final SelectionManager selectionManager, ContextMenuState contextMenuState, ContextMenuScope contextMenuScope) {
         contextMenuBuilder$lambda$0$selectionItem(contextMenuScope, contextMenuState, TextContextMenuItems.Copy, selectionManager.isNonEmptySelection$foundation(), new Function0() { // from class: androidx.compose.foundation.text.selection.SelectionManagerKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
@@ -163,14 +161,14 @@ public final class SelectionManagerKt {
                     component42 = Math.max(component42, boundingBox.getBottom());
                     i2 = i3 + 1;
                 }
-                long m5171constructorimpl = Offset.m5171constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
-                long m5171constructorimpl2 = Offset.m5171constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
-                long mo6884localPositionOfR5De75A = layoutCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates2, m5171constructorimpl);
-                long mo6884localPositionOfR5De75A2 = layoutCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates2, m5171constructorimpl2);
-                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6884localPositionOfR5De75A >> 32)));
-                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6884localPositionOfR5De75A & 4294967295L)));
-                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6884localPositionOfR5De75A2 >> 32)));
-                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6884localPositionOfR5De75A2 & 4294967295L)));
+                long m4519constructorimpl = Offset.m4519constructorimpl((Float.floatToRawIntBits(component13) << 32) | (Float.floatToRawIntBits(component23) & 4294967295L));
+                long m4519constructorimpl2 = Offset.m4519constructorimpl((Float.floatToRawIntBits(component42) & 4294967295L) | (Float.floatToRawIntBits(component32) << 32));
+                long mo6225localPositionOfR5De75A = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates2, m4519constructorimpl);
+                long mo6225localPositionOfR5De75A2 = layoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates2, m4519constructorimpl2);
+                component1 = Math.min(component1, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A >> 32)));
+                component2 = Math.min(component2, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A & 4294967295L)));
+                component3 = Math.max(component3, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A2 >> 32)));
+                component4 = Math.max(component4, Float.intBitsToFloat((int) (mo6225localPositionOfR5De75A2 & 4294967295L)));
             }
             i++;
             list2 = list;
@@ -180,10 +178,10 @@ public final class SelectionManagerKt {
     }
 
     /* renamed from: calculateSelectionMagnifierCenterAndroid-O0kMr_c  reason: not valid java name */
-    public static final long m1891calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
+    public static final long m1634calculateSelectionMagnifierCenterAndroidO0kMr_c(SelectionManager selectionManager, long j) {
         Selection selection = selectionManager.getSelection();
         if (selection == null) {
-            return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            return Offset.Companion.m4542getUnspecifiedF1C5BW0();
         }
         Handle draggingHandle = selectionManager.getDraggingHandle();
         int i = draggingHandle == null ? -1 : WhenMappings.$EnumSwitchMapping$0[draggingHandle.ordinal()];
@@ -195,54 +193,54 @@ public final class SelectionManagerKt {
                     }
                     throw new IllegalStateException("SelectionContainer does not support cursor".toString());
                 }
-                return m1893getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
+                return m1636getMagnifierCenterJVtK1S4(selectionManager, j, selection.getEnd());
             }
-            return m1893getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
+            return m1636getMagnifierCenterJVtK1S4(selectionManager, j, selection.getStart());
         }
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     /* renamed from: getMagnifierCenter-JVtK1S4  reason: not valid java name */
-    private static final long m1893getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
+    private static final long m1636getMagnifierCenterJVtK1S4(SelectionManager selectionManager, long j, Selection.AnchorInfo anchorInfo) {
         LayoutCoordinates containerLayoutCoordinates;
         LayoutCoordinates layoutCoordinates;
         int offset;
         float coerceIn;
         Selectable anchorSelectable$foundation = selectionManager.getAnchorSelectable$foundation(anchorInfo);
         if (anchorSelectable$foundation != null && (containerLayoutCoordinates = selectionManager.getContainerLayoutCoordinates()) != null && (layoutCoordinates = anchorSelectable$foundation.getLayoutCoordinates()) != null && (offset = anchorInfo.getOffset()) <= anchorSelectable$foundation.getLastVisibleOffset()) {
-            Offset m1881getCurrentDragPosition_m7T9E = selectionManager.m1881getCurrentDragPosition_m7T9E();
-            Intrinsics.checkNotNull(m1881getCurrentDragPosition_m7T9E);
-            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6884localPositionOfR5De75A(containerLayoutCoordinates, m1881getCurrentDragPosition_m7T9E.m5189unboximpl()) >> 32));
-            long mo1829getRangeOfLineContainingjx7JFs = anchorSelectable$foundation.mo1829getRangeOfLineContainingjx7JFs(offset);
-            if (TextRange.m7695getCollapsedimpl(mo1829getRangeOfLineContainingjx7JFs)) {
+            Offset m1624getCurrentDragPosition_m7T9E = selectionManager.m1624getCurrentDragPosition_m7T9E();
+            Intrinsics.checkNotNull(m1624getCurrentDragPosition_m7T9E);
+            float intBitsToFloat = Float.intBitsToFloat((int) (layoutCoordinates.mo6225localPositionOfR5De75A(containerLayoutCoordinates, m1624getCurrentDragPosition_m7T9E.m4537unboximpl()) >> 32));
+            long mo1585getRangeOfLineContainingjx7JFs = anchorSelectable$foundation.mo1585getRangeOfLineContainingjx7JFs(offset);
+            if (TextRange.m6997getCollapsedimpl(mo1585getRangeOfLineContainingjx7JFs)) {
                 coerceIn = anchorSelectable$foundation.getLineLeft(offset);
             } else {
-                float lineLeft = anchorSelectable$foundation.getLineLeft(TextRange.m7701getStartimpl(mo1829getRangeOfLineContainingjx7JFs));
-                float lineRight = anchorSelectable$foundation.getLineRight(TextRange.m7696getEndimpl(mo1829getRangeOfLineContainingjx7JFs) - 1);
+                float lineLeft = anchorSelectable$foundation.getLineLeft(TextRange.m7003getStartimpl(mo1585getRangeOfLineContainingjx7JFs));
+                float lineRight = anchorSelectable$foundation.getLineRight(TextRange.m6998getEndimpl(mo1585getRangeOfLineContainingjx7JFs) - 1);
                 coerceIn = RangesKt.coerceIn(intBitsToFloat, Math.min(lineLeft, lineRight), Math.max(lineLeft, lineRight));
             }
             if (coerceIn == -1.0f) {
-                return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
-            if (!IntSize.m8427equalsimpl0(j, IntSize.Companion.m8434getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
-                return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+            if (!IntSize.m7724equalsimpl0(j, IntSize.Companion.m7731getZeroYbymL2g()) && Math.abs(intBitsToFloat - coerceIn) > ((int) (j >> 32)) / 2) {
+                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
             float centerYForOffset = anchorSelectable$foundation.getCenterYForOffset(offset);
             if (centerYForOffset == -1.0f) {
-                return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                return Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
-            return containerLayoutCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates, Offset.m5171constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
+            return containerLayoutCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, Offset.m4519constructorimpl((Float.floatToRawIntBits(coerceIn) << 32) | (4294967295L & Float.floatToRawIntBits(centerYForOffset))));
         }
-        return Offset.Companion.m5194getUnspecifiedF1C5BW0();
+        return Offset.Companion.m4542getUnspecifiedF1C5BW0();
     }
 
     public static final Rect visibleBounds(LayoutCoordinates layoutCoordinates) {
         Rect boundsInWindow$default = LayoutCoordinatesKt.boundsInWindow$default(layoutCoordinates, false, 1, null);
-        return RectKt.m5217Rect0a9Yr6o(layoutCoordinates.mo6892windowToLocalMKHz9U(boundsInWindow$default.m5214getTopLeftF1C5BW0()), layoutCoordinates.mo6892windowToLocalMKHz9U(boundsInWindow$default.m5208getBottomRightF1C5BW0()));
+        return RectKt.m4565Rect0a9Yr6o(layoutCoordinates.mo6233windowToLocalMKHz9U(boundsInWindow$default.m4562getTopLeftF1C5BW0()), layoutCoordinates.mo6233windowToLocalMKHz9U(boundsInWindow$default.m4556getBottomRightF1C5BW0()));
     }
 
     /* renamed from: containsInclusive-Uv8p0NA  reason: not valid java name */
-    public static final boolean m1892containsInclusiveUv8p0NA(Rect rect, long j) {
+    public static final boolean m1635containsInclusiveUv8p0NA(Rect rect, long j) {
         float left = rect.getLeft();
         float right = rect.getRight();
         float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));

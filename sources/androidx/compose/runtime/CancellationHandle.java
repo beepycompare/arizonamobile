@@ -23,7 +23,7 @@ public interface CancellationHandle {
             }
         };
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void Empty$lambda$0() {
         }
 

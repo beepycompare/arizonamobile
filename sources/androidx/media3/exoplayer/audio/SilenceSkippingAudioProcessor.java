@@ -5,7 +5,7 @@ import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     private static final int AVOID_TRUNCATION_FACTOR = 1000;
     public static final long DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US = 2000000;
@@ -251,8 +251,8 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
             return;
         }
         Preconditions.checkArgument(this.maybeSilenceBufferContentsSize >= i);
+        int i3 = this.maybeSilenceBufferStartIndex;
         if (i2 == 2) {
-            int i3 = this.maybeSilenceBufferStartIndex;
             int i4 = this.maybeSilenceBufferContentsSize;
             int i5 = i3 + i4;
             byte[] bArr = this.maybeSilenceBuffer;
@@ -269,14 +269,13 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
                 }
             }
         } else {
-            int i7 = this.maybeSilenceBufferStartIndex;
-            int i8 = i7 + i;
+            int i7 = i3 + i;
             byte[] bArr2 = this.maybeSilenceBuffer;
-            if (i8 <= bArr2.length) {
-                System.arraycopy(bArr2, i7, this.contiguousOutputBuffer, 0, i);
+            if (i7 <= bArr2.length) {
+                System.arraycopy(bArr2, i3, this.contiguousOutputBuffer, 0, i);
             } else {
-                int length2 = bArr2.length - i7;
-                System.arraycopy(bArr2, i7, this.contiguousOutputBuffer, 0, length2);
+                int length2 = bArr2.length - i3;
+                System.arraycopy(bArr2, i3, this.contiguousOutputBuffer, 0, length2);
                 System.arraycopy(this.maybeSilenceBuffer, 0, this.contiguousOutputBuffer, length2, i - length2);
             }
         }

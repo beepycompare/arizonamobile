@@ -37,59 +37,55 @@ public final class RecalculateWindowInsetsModifierNode extends InsetsConsumingMo
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, final Measurable measurable, long j) {
-        if (!Constraints.m8209getHasFixedWidthimpl(j) || !Constraints.m8208getHasFixedHeightimpl(j)) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, final Measurable measurable, long j) {
+        if (!Constraints.m7506getHasFixedWidthimpl(j) || !Constraints.m7505getHasFixedHeightimpl(j)) {
             if (this.insets.getValue$foundation_layout().getLeft() != -1) {
                 this.insets.setValue$foundation_layout(new InsetsValues(-1, -1, -1, -1));
                 insetsInvalidated();
             }
-            final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
-            return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda0
+            final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(j);
+            return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measure_3p2s80s$lambda$0;
-                    measure_3p2s80s$lambda$0 = RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
-                    return measure_3p2s80s$lambda$0;
+                    return RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$0(Placeable.this, (Placeable.PlacementScope) obj);
                 }
             }, 4, null);
         }
-        final int m8211getMaxWidthimpl = Constraints.m8211getMaxWidthimpl(j);
-        final int m8210getMaxHeightimpl = Constraints.m8210getMaxHeightimpl(j);
-        return MeasureScope.layout$default(measureScope, m8211getMaxWidthimpl, m8210getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda1
+        final int m7508getMaxWidthimpl = Constraints.m7508getMaxWidthimpl(j);
+        final int m7507getMaxHeightimpl = Constraints.m7507getMaxHeightimpl(j);
+        return MeasureScope.layout$default(measureScope, m7508getMaxWidthimpl, m7507getMaxHeightimpl, null, new Function1() { // from class: androidx.compose.foundation.layout.RecalculateWindowInsetsModifierNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$1;
-                measure_3p2s80s$lambda$1 = RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$1(RecalculateWindowInsetsModifierNode.this, measurable, m8211getMaxWidthimpl, m8210getMaxHeightimpl, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$1;
+                return RecalculateWindowInsetsModifierNode.measure_3p2s80s$lambda$1(RecalculateWindowInsetsModifierNode.this, measurable, m7508getMaxWidthimpl, m7507getMaxHeightimpl, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$1(RecalculateWindowInsetsModifierNode recalculateWindowInsetsModifierNode, Measurable measurable, int i, int i2, Placeable.PlacementScope placementScope) {
         LayoutCoordinates coordinates = placementScope.getCoordinates();
         if (coordinates != null) {
             long positionInRoot = LayoutCoordinatesKt.positionInRoot(coordinates);
-            long mo6883getSizeYbymL2g = coordinates.mo6883getSizeYbymL2g();
-            long mo6886localToRootMKHz9U = coordinates.mo6886localToRootMKHz9U(Offset.m5171constructorimpl((Float.floatToRawIntBits((int) (mo6883getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6883getSizeYbymL2g >> 32)) << 32)));
-            long mo6883getSizeYbymL2g2 = LayoutCoordinatesKt.findRootCoordinates(coordinates).mo6883getSizeYbymL2g();
+            long mo6224getSizeYbymL2g = coordinates.mo6224getSizeYbymL2g();
+            long mo6227localToRootMKHz9U = coordinates.mo6227localToRootMKHz9U(Offset.m4519constructorimpl((Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (mo6224getSizeYbymL2g >> 32)) << 32)));
+            long mo6224getSizeYbymL2g2 = LayoutCoordinatesKt.findRootCoordinates(coordinates).mo6224getSizeYbymL2g();
             int round = Math.round(Float.intBitsToFloat((int) (positionInRoot >> 32)));
             int round2 = Math.round(Float.intBitsToFloat((int) (positionInRoot & 4294967295L)));
-            int round3 = ((int) (mo6883getSizeYbymL2g2 >> 32)) - Math.round(Float.intBitsToFloat((int) (mo6886localToRootMKHz9U >> 32)));
-            int round4 = ((int) (mo6883getSizeYbymL2g2 & 4294967295L)) - Math.round(Float.intBitsToFloat((int) (mo6886localToRootMKHz9U & 4294967295L)));
+            int round3 = ((int) (mo6224getSizeYbymL2g2 >> 32)) - Math.round(Float.intBitsToFloat((int) (mo6227localToRootMKHz9U >> 32)));
+            int round4 = ((int) (mo6224getSizeYbymL2g2 & 4294967295L)) - Math.round(Float.intBitsToFloat((int) (mo6227localToRootMKHz9U & 4294967295L)));
             InsetsValues value$foundation_layout = recalculateWindowInsetsModifierNode.insets.getValue$foundation_layout();
             if (value$foundation_layout.getLeft() != round || value$foundation_layout.getTop() != round2 || value$foundation_layout.getRight() != round3 || value$foundation_layout.getBottom() != round4) {
                 recalculateWindowInsetsModifierNode.insets.setValue$foundation_layout(new InsetsValues(round, round2, round3, round4));
                 recalculateWindowInsetsModifierNode.insetsInvalidated();
             }
         }
-        Placeable.PlacementScope.place$default(placementScope, measurable.mo6875measureBRTryo0(Constraints.Companion.m8221fixedJhjzzOo(i, i2)), 0, 0, 0.0f, 4, null);
+        Placeable.PlacementScope.place$default(placementScope, measurable.mo6216measureBRTryo0(Constraints.Companion.m7518fixedJhjzzOo(i, i2)), 0, 0, 0.0f, 4, null);
         return Unit.INSTANCE;
     }
 

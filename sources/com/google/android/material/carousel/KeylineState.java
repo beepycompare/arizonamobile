@@ -193,8 +193,9 @@ public final class KeylineState {
                 this.latestAnchorKeylineIndex = this.tmpKeylines.size();
             }
             Keyline keyline = new Keyline(Float.MIN_VALUE, f, f2, f3, z2, f4, f5, f6);
+            Keyline keyline2 = this.tmpFirstFocalKeyline;
             if (z) {
-                if (this.tmpFirstFocalKeyline == null) {
+                if (keyline2 == null) {
                     this.tmpFirstFocalKeyline = keyline;
                     this.firstFocalKeylineIndex = this.tmpKeylines.size();
                 }
@@ -206,7 +207,7 @@ public final class KeylineState {
                 }
                 this.tmpLastFocalKeyline = keyline;
                 this.lastFocalKeylineIndex = this.tmpKeylines.size();
-            } else if (this.tmpFirstFocalKeyline == null && keyline.maskedItemSize < this.lastKeylineMaskedSize) {
+            } else if (keyline2 == null && keyline.maskedItemSize < this.lastKeylineMaskedSize) {
                 throw new IllegalArgumentException("Keylines before the first focal keyline must be ordered by incrementing masked item size.");
             } else {
                 if (this.tmpLastFocalKeyline != null && keyline.maskedItemSize > this.lastKeylineMaskedSize) {

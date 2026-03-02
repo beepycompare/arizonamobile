@@ -22,8 +22,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.mrlargha.commonui.R;
 /* compiled from: SAMPUIElement.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 >2\u00020\u0001:\u0002>?B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\u001e\u0010\"\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u0005J\"\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020\r2\b\b\u0002\u0010)\u001a\u00020\u00052\b\b\u0002\u0010*\u001a\u00020\u0005J\"\u0010+\u001a\u00020\u001e2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\u0018\u0010/\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u000f2\u0006\u0010-\u001a\u00020\u0005H\u0016J\b\u00101\u001a\u00020\u001eH\u0016J\u0010\u00102\u001a\u00020\u001e2\u0006\u00103\u001a\u00020\u000fH\u0016J\u0006\u00104\u001a\u00020\u001eJ\u0006\u00105\u001a\u00020\u0005J&\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\n\u00107\u001a\u00020\u001e*\u00020\rJ\n\u00108\u001a\u00020\u001e*\u00020\rJ*\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\f\u0010.\u001a\b\u0012\u0004\u0012\u00020\u000f09J\b\u0010:\u001a\u00020\u001eH\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u0005H\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020=H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0014\u0010\u0013\u001a\u00020\u0014X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u0018X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "", "visible", "", "isOnScreen", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", "id", "subId", "message", "onBackendMessage", "data", "onLayoutClick", "consumeUserInput", "text", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "Lkotlin/Function0;", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 >2\u00020\u0001:\u0002>?B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\u001e\u0010\"\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u0005J\"\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020\r2\b\b\u0002\u0010)\u001a\u00020\u00052\b\b\u0002\u0010*\u001a\u00020\u0005J\"\u0010+\u001a\u00020\u001e2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\u0018\u0010/\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u000f2\u0006\u0010-\u001a\u00020\u0005H\u0016J\b\u00101\u001a\u00020\u001eH\u0016J\u0010\u00102\u001a\u00020\u001e2\u0006\u00103\u001a\u00020\u000fH\u0016J\u0006\u00104\u001a\u00020\u001eJ\u0006\u00105\u001a\u00020\u0005J&\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u000fJ\n\u00107\u001a\u00020\u001e*\u00020\rJ\n\u00108\u001a\u00020\u001e*\u00020\rJ*\u00106\u001a\u00020\u001e*\u00020\r2\u0006\u0010,\u001a\u00020\u00052\b\b\u0002\u0010-\u001a\u00020\u00052\f\u0010.\u001a\b\u0012\u0004\u0012\u00020\u000f09J\b\u0010:\u001a\u00020\u001eH\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u0005H\u0016J\u0018\u0010;\u001a\u00020\u001e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010<\u001a\u00020=H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0014\u0010\u0013\u001a\u00020\u0014X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u0018X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006@"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "", "visible", "", "isOnScreen", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", "id", "subId", "message", "onBackendMessage", "data", "onLayoutClick", "consumeUserInput", "text", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "Lkotlin/Function0;", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public abstract class SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     public static final String SP_NAME = "UI_ELEMENTS_SP";
@@ -37,8 +37,8 @@ public abstract class SAMPUIElement {
     private final Activity targetActivity;
 
     /* compiled from: SAMPUIElement.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -105,8 +105,8 @@ public abstract class SAMPUIElement {
     }
 
     /* compiled from: SAMPUIElement.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$Companion;", "", "<init>", "()V", "SP_NAME", "", "TAG", "hideKeyboard", "", "activity", "Landroid/app/Activity;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\nR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$Companion;", "", "<init>", "()V", "SP_NAME", "", "TAG", "hideKeyboard", "", "activity", "Landroid/app/Activity;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -173,8 +173,8 @@ public abstract class SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: SAMPUIElement.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u0000 \u00112\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "", "backendCode", "", "<init>", "(Ljava/lang/String;II)V", "getBackendCode", "()I", "LEFT_TOP", "RIGHT_TOP", "CENTER_TOP", "LEFT_CENTER", "CENTER", "RIGHT_CENTER", "LEFT_BOTTOM", "CENTER_BOTTOM", "RIGHT_BOTTOM", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u0000 \u00112\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u0011B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "", "backendCode", "", "<init>", "(Ljava/lang/String;II)V", "getBackendCode", "()I", "LEFT_TOP", "RIGHT_TOP", "CENTER_TOP", "LEFT_CENTER", "CENTER", "RIGHT_CENTER", "LEFT_BOTTOM", "CENTER_BOTTOM", "RIGHT_BOTTOM", "Companion", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes2.dex */
     public static final class PositionType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
         private static final /* synthetic */ PositionType[] $VALUES;
@@ -227,8 +227,8 @@ public abstract class SAMPUIElement {
         }
 
         /* compiled from: SAMPUIElement.kt */
-        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType$Companion;", "", "<init>", "()V", "valueOf", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "value", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
-        /* loaded from: classes.dex */
+        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement$PositionType$Companion;", "", "<init>", "()V", "valueOf", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "value", "", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+        /* loaded from: classes2.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -530,14 +530,12 @@ public abstract class SAMPUIElement {
         this.baseLayout.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.core.SAMPUIElement$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view7, MotionEvent motionEvent) {
-                boolean addViewToConstraintLayout$lambda$2;
-                addViewToConstraintLayout$lambda$2 = SAMPUIElement.addViewToConstraintLayout$lambda$2(SAMPUIElement.this, view7, motionEvent);
-                return addViewToConstraintLayout$lambda$2;
+                return SAMPUIElement.addViewToConstraintLayout$lambda$2(SAMPUIElement.this, view7, motionEvent);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean addViewToConstraintLayout$lambda$2(SAMPUIElement sAMPUIElement, View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             view.performClick();
@@ -617,7 +615,7 @@ public abstract class SAMPUIElement {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void bindBackendClick$lambda$0(SAMPUIElement sAMPUIElement, int i, int i2, String str, View view) {
         Log.d(TAG, "Click on backendId: " + sAMPUIElement.backendID + ",  viewId: " + i + ", subId: " + i2 + ", message: " + str);
         IBackendNotifier notifier = sAMPUIElement.getNotifier();
@@ -658,7 +656,7 @@ public abstract class SAMPUIElement {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void bindBackendClick$lambda$1(SAMPUIElement sAMPUIElement, int i, int i2, Function0 function0, View view) {
         Log.d(TAG, "Click on backendId: " + sAMPUIElement.backendID + ", id: " + i + ", subId: " + i2 + ", message: lambda function");
         IBackendNotifier notifier = sAMPUIElement.getNotifier();

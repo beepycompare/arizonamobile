@@ -54,9 +54,7 @@ public final class Handshake {
         this.peerCertificates$delegate = LazyKt.lazy(new Function0() { // from class: okhttp3.Handshake$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List peerCertificates_delegate$lambda$0;
-                peerCertificates_delegate$lambda$0 = Handshake.peerCertificates_delegate$lambda$0(Function0.this);
-                return peerCertificates_delegate$lambda$0;
+                return Handshake.peerCertificates_delegate$lambda$0(Function0.this);
             }
         });
     }
@@ -77,7 +75,7 @@ public final class Handshake {
         return (List) this.peerCertificates$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List peerCertificates_delegate$lambda$0(Function0 function0) {
         try {
             return (List) function0.invoke();
@@ -88,19 +86,19 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "tlsVersion", imports = {}))
     /* renamed from: -deprecated_tlsVersion  reason: not valid java name */
-    public final TlsVersion m12062deprecated_tlsVersion() {
+    public final TlsVersion m10933deprecated_tlsVersion() {
         return this.tlsVersion;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cipherSuite", imports = {}))
     /* renamed from: -deprecated_cipherSuite  reason: not valid java name */
-    public final CipherSuite m12057deprecated_cipherSuite() {
+    public final CipherSuite m10928deprecated_cipherSuite() {
         return this.cipherSuite;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "peerCertificates", imports = {}))
     /* renamed from: -deprecated_peerCertificates  reason: not valid java name */
-    public final List<Certificate> m12060deprecated_peerCertificates() {
+    public final List<Certificate> m10931deprecated_peerCertificates() {
         return peerCertificates();
     }
 
@@ -112,13 +110,13 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "peerPrincipal", imports = {}))
     /* renamed from: -deprecated_peerPrincipal  reason: not valid java name */
-    public final Principal m12061deprecated_peerPrincipal() {
+    public final Principal m10932deprecated_peerPrincipal() {
         return peerPrincipal();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "localCertificates", imports = {}))
     /* renamed from: -deprecated_localCertificates  reason: not valid java name */
-    public final List<Certificate> m12058deprecated_localCertificates() {
+    public final List<Certificate> m10929deprecated_localCertificates() {
         return this.localCertificates;
     }
 
@@ -130,7 +128,7 @@ public final class Handshake {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "localPrincipal", imports = {}))
     /* renamed from: -deprecated_localPrincipal  reason: not valid java name */
-    public final Principal m12059deprecated_localPrincipal() {
+    public final Principal m10930deprecated_localPrincipal() {
         return localPrincipal();
     }
 
@@ -178,12 +176,12 @@ public final class Handshake {
             this();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final List get$lambda$0(List list) {
             return list;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final List handshake$lambda$2(List list) {
             return list;
         }
@@ -219,16 +217,14 @@ public final class Handshake {
             return new Handshake(forJavaName2, forJavaName, _UtilJvmKt.toImmutableList(sSLSession.getLocalCertificates()), new Function0() { // from class: okhttp3.Handshake$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List handshake$lambda$2;
-                    handshake$lambda$2 = Handshake.Companion.handshake$lambda$2(emptyList);
-                    return handshake$lambda$2;
+                    return Handshake.Companion.handshake$lambda$2(emptyList);
                 }
             });
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "sslSession.handshake()", imports = {}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final Handshake m12064deprecated_get(SSLSession sslSession) throws IOException {
+        public final Handshake m10934deprecated_get(SSLSession sslSession) throws IOException {
             Intrinsics.checkNotNullParameter(sslSession, "sslSession");
             return get(sslSession);
         }
@@ -243,9 +239,7 @@ public final class Handshake {
             return new Handshake(tlsVersion, cipherSuite, _UtilJvmKt.toImmutableList(localCertificates), new Function0() { // from class: okhttp3.Handshake$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    List list;
-                    list = Handshake.Companion.get$lambda$0(immutableList);
-                    return list;
+                    return Handshake.Companion.get$lambda$0(immutableList);
                 }
             });
         }

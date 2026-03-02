@@ -11,21 +11,21 @@ public final class MultiParagraphLayoutCacheKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: times-NB67dxo  reason: not valid java name */
-    public static final long m1802timesNB67dxo(long j, long j2) {
-        if (TextUnit.m8454isEmimpl(j2)) {
-            if (TextUnit.m8454isEmimpl(j)) {
-                throw new IllegalStateException("Cannot convert Em to Px when style.fontSize is Em (" + ((Object) TextUnit.m8459toStringimpl(j2)) + "). Please declare the style.fontSize with Sp units instead.");
+    public static final long m1564timesNB67dxo(long j, long j2) {
+        if (TextUnit.m7751isEmimpl(j2)) {
+            if (TextUnit.m7751isEmimpl(j)) {
+                throw new IllegalStateException("Cannot convert Em to Px when style.fontSize is Em (" + ((Object) TextUnit.m7756toStringimpl(j2)) + "). Please declare the style.fontSize with Sp units instead.");
             }
-            if (TextUnit.m8450getRawTypeimpl(j) == 0) {
+            if (TextUnit.m7747getRawTypeimpl(j) == 0) {
                 long j3 = DefaultFontSize;
-                float m8452getValueimpl = TextUnit.m8452getValueimpl(j2);
-                TextUnitKt.m8465checkArithmeticR2X_6o(j3);
-                return TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(j3), TextUnit.m8452getValueimpl(j3) * m8452getValueimpl);
+                float m7749getValueimpl = TextUnit.m7749getValueimpl(j2);
+                TextUnitKt.m7762checkArithmeticR2X_6o(j3);
+                return TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(j3), TextUnit.m7749getValueimpl(j3) * m7749getValueimpl);
             }
-            float m8452getValueimpl2 = TextUnit.m8452getValueimpl(j2);
-            TextUnitKt.m8465checkArithmeticR2X_6o(j);
-            return TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(j), TextUnit.m8452getValueimpl(j) * m8452getValueimpl2);
+            float m7749getValueimpl2 = TextUnit.m7749getValueimpl(j2);
+            TextUnitKt.m7762checkArithmeticR2X_6o(j);
+            return TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(j), TextUnit.m7749getValueimpl(j) * m7749getValueimpl2);
         }
-        throw new IllegalArgumentException("The multiplier must be in em, but was " + ((Object) TextUnit.m8459toStringimpl(j2)) + '.');
+        throw new IllegalArgumentException("The multiplier must be in em, but was " + ((Object) TextUnit.m7756toStringimpl(j2)) + '.');
     }
 }

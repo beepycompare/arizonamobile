@@ -210,7 +210,7 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
         return this.currentSemanticsNodes;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void contentCaptureChangeChecker$lambda$0(AndroidContentCaptureManager androidContentCaptureManager) {
         if (androidContentCaptureManager.isEnabled$ui()) {
             Trace.beginSection("ContentCapture:changeChecker");
@@ -471,13 +471,13 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo9174trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo8396trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {
         AutofillIdCompat autofillId;
         AutofillId autofillId2;
-        String m7416toLegacyClassNameV4PA4sw;
+        String m6750toLegacyClassNameV4PA4sw;
         ContentCaptureSessionWrapper contentCaptureSessionWrapper = this.contentCaptureSession;
         if (contentCaptureSessionWrapper == null || Build.VERSION.SDK_INT < 29 || (autofillId = ViewCompatShims.getAutofillId(this.view)) == null) {
             return null;
@@ -528,13 +528,13 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
             newVirtualViewStructure.setContentDescription(ListUtilsKt.fastJoinToString$default(list2, "\n", null, null, 0, null, null, 62, null));
         }
         Role role = (Role) SemanticsConfigurationKt.getOrNull(unmergedConfig$ui, SemanticsProperties.INSTANCE.getRole());
-        if (role != null && (m7416toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m7416toLegacyClassNameV4PA4sw(role.m7441unboximpl())) != null) {
-            newVirtualViewStructure.setClassName(m7416toLegacyClassNameV4PA4sw);
+        if (role != null && (m6750toLegacyClassNameV4PA4sw = SemanticsUtils_androidKt.m6750toLegacyClassNameV4PA4sw(role.m6773unboximpl())) != null) {
+            newVirtualViewStructure.setClassName(m6750toLegacyClassNameV4PA4sw);
         }
         TextLayoutResult textLayoutResult = SemanticsUtils_androidKt.getTextLayoutResult(unmergedConfig$ui);
         if (textLayoutResult != null) {
             TextLayoutInput layoutInput = textLayoutResult.getLayoutInput();
-            newVirtualViewStructure.setTextStyle(TextUnit.m8452getValueimpl(layoutInput.getStyle().m7732getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
+            newVirtualViewStructure.setTextStyle(TextUnit.m7749getValueimpl(layoutInput.getStyle().m7034getFontSizeXSAIIZE()) * layoutInput.getDensity().getDensity() * layoutInput.getDensity().getFontScale(), 0, 0, 0);
         }
         Rect boundsInParent$ui = semanticsNode.getBoundsInParent$ui();
         newVirtualViewStructure.setDimens((int) boundsInParent$ui.getLeft(), (int) boundsInParent$ui.getTop(), 0, 0, (int) (boundsInParent$ui.getRight() - boundsInParent$ui.getLeft()), (int) (boundsInParent$ui.getBottom() - boundsInParent$ui.getTop()));
@@ -797,18 +797,14 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
                 androidContentCaptureManager.getView().post(new Runnable() { // from class: androidx.compose.ui.contentcapture.AndroidContentCaptureManager$ViewTranslationHelperMethods$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AndroidContentCaptureManager.ViewTranslationHelperMethods.onVirtualViewTranslationResponses$lambda$0(AndroidContentCaptureManager.this, longSparseArray);
+                        AndroidContentCaptureManager.ViewTranslationHelperMethods.INSTANCE.doTranslation(AndroidContentCaptureManager.this, longSparseArray);
                     }
                 });
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static final void onVirtualViewTranslationResponses$lambda$0(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray longSparseArray) {
-            INSTANCE.doTranslation(androidContentCaptureManager, longSparseArray);
-        }
-
-        private final void doTranslation(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray<ViewTranslationResponse> longSparseArray) {
+        public final void doTranslation(AndroidContentCaptureManager androidContentCaptureManager, LongSparseArray<ViewTranslationResponse> longSparseArray) {
             TranslationResponseValue value;
             CharSequence text;
             SemanticsNodeWithAdjustedBounds semanticsNodeWithAdjustedBounds;

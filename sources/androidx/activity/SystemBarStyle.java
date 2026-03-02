@@ -69,13 +69,13 @@ public final class SystemBarStyle {
             this();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean dark$lambda$0(Resources resources) {
             Intrinsics.checkNotNullParameter(resources, "<unused var>");
             return true;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean light$lambda$0(Resources resources) {
             Intrinsics.checkNotNullParameter(resources, "<unused var>");
             return false;
@@ -95,16 +95,14 @@ public final class SystemBarStyle {
                 function1 = new Function1() { // from class: androidx.activity.SystemBarStyle$Companion$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        boolean auto$lambda$0;
-                        auto$lambda$0 = SystemBarStyle.Companion.auto$lambda$0((Resources) obj2);
-                        return Boolean.valueOf(auto$lambda$0);
+                        return Boolean.valueOf(SystemBarStyle.Companion.auto$lambda$0((Resources) obj2));
                     }
                 };
             }
             return companion.auto(i, i2, function1);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final boolean auto$lambda$0(Resources resources) {
             Intrinsics.checkNotNullParameter(resources, "resources");
             return (resources.getConfiguration().uiMode & 48) == 32;
@@ -121,9 +119,7 @@ public final class SystemBarStyle {
             return new SystemBarStyle(i, i, 2, new Function1() { // from class: androidx.activity.SystemBarStyle$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean dark$lambda$0;
-                    dark$lambda$0 = SystemBarStyle.Companion.dark$lambda$0((Resources) obj);
-                    return Boolean.valueOf(dark$lambda$0);
+                    return Boolean.valueOf(SystemBarStyle.Companion.dark$lambda$0((Resources) obj));
                 }
             }, null);
         }
@@ -133,9 +129,7 @@ public final class SystemBarStyle {
             return new SystemBarStyle(i, i2, 1, new Function1() { // from class: androidx.activity.SystemBarStyle$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean light$lambda$0;
-                    light$lambda$0 = SystemBarStyle.Companion.light$lambda$0((Resources) obj);
-                    return Boolean.valueOf(light$lambda$0);
+                    return Boolean.valueOf(SystemBarStyle.Companion.light$lambda$0((Resources) obj));
                 }
             }, null);
         }

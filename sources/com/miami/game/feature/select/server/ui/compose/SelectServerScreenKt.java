@@ -1,9 +1,7 @@
 package com.miami.game.feature.select.server.ui.compose;
 
-import android.content.Context;
 import androidx.activity.compose.BackHandlerKt;
 import androidx.compose.foundation.BackgroundKt;
-import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
@@ -38,14 +36,9 @@ import androidx.compose.ui.Alignment;
 import androidx.compose.ui.ComposedModifierKt;
 import androidx.compose.ui.Modifier;
 import androidx.compose.ui.graphics.Color;
-import androidx.compose.ui.graphics.ColorFilter;
 import androidx.compose.ui.graphics.ColorKt;
-import androidx.compose.ui.graphics.painter.Painter;
-import androidx.compose.ui.layout.ContentScale;
 import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
-import androidx.compose.ui.platform.AndroidCompositionLocals_androidKt;
-import androidx.compose.ui.res.PainterResources_androidKt;
 import androidx.compose.ui.text.TextStyle;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.TextUnit;
@@ -54,11 +47,8 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.compose.FlowExtKt;
 import androidx.media3.exoplayer.RendererCapabilities;
-import coil3.compose.SingletonAsyncImageKt;
-import coil3.request.ImageRequest;
-import coil3.request.ImageRequestsKt;
 import com.miami.game.core.decompose.utils.SharedEventFlow;
-import com.miami.game.core.design.system.component.coil.blur.CoilBlurTransformation;
+import com.miami.game.core.design.system.component.background.Main_backgroundKt;
 import com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt;
 import com.miami.game.core.server.model.ServerModel;
 import com.miami.game.core.server.model.ServerStateCategory;
@@ -84,16 +74,16 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: SelectServerScreen.kt */
-@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a#\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001au\u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\t2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00010\u000b2\u0012\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00010\u000b2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0001¢\u0006\u0002\u0010\u0011¨\u0006\u0012²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"SelectServerRoute", "", "navigateHome", "Lkotlin/Function0;", "component", "Lcom/miami/game/feature/select/server/ui/SelectServerComponent;", "(Lkotlin/jvm/functions/Function0;Lcom/miami/game/feature/select/server/ui/SelectServerComponent;Landroidx/compose/runtime/Composer;I)V", "SelectServerScreen", "uiState", "Lcom/miami/game/feature/select/server/ui/model/SelectServerUiState;", "onSelect", "Lkotlin/Function1;", "Lcom/miami/game/core/server/model/ServerModel;", "onFavorite", "onFavoriteList", "onMobileList", "onDesktopList", "(Lcom/miami/game/feature/select/server/ui/model/SelectServerUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "select-server_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u001a#\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006\u001au\u0010\u0007\u001a\u00020\u00012\u0006\u0010\b\u001a\u00020\t2\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00010\u000b2\u0012\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00010\u000b2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0001¢\u0006\u0002\u0010\u0011¨\u0006\u0012²\u0006\n\u0010\b\u001a\u00020\tX\u008a\u0084\u0002"}, d2 = {"SelectServerRoute", "", "navigateHome", "Lkotlin/Function0;", "component", "Lcom/miami/game/feature/select/server/ui/SelectServerComponent;", "(Lkotlin/jvm/functions/Function0;Lcom/miami/game/feature/select/server/ui/SelectServerComponent;Landroidx/compose/runtime/Composer;I)V", "SelectServerScreen", "uiState", "Lcom/miami/game/feature/select/server/ui/model/SelectServerUiState;", "onSelect", "Lkotlin/Function1;", "Lcom/miami/game/core/server/model/ServerModel;", "onFavorite", "onFavoriteList", "onMobileList", "onDesktopList", "(Lcom/miami/game/feature/select/server/ui/model/SelectServerUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "select-server"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SelectServerScreenKt {
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectServerRoute$lambda$7(Function0 function0, SelectServerComponent selectServerComponent, int i, Composer composer, int i2) {
         SelectServerRoute(function0, selectServerComponent, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SelectServerScreen$lambda$2(SelectServerUiState selectServerUiState, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
         SelectServerScreen(selectServerUiState, function0, function1, function12, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -104,7 +94,7 @@ public final class SelectServerScreenKt {
         Intrinsics.checkNotNullParameter(navigateHome, "navigateHome");
         Intrinsics.checkNotNullParameter(component, "component");
         Composer startRestartGroup = composer.startRestartGroup(-387912032);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerRoute)N(navigateHome,component)61@2839L34,62@2911L29,63@3001L115,63@2964L152,71@3224L19,72@3266L21,73@3312L23,74@3362L25,75@3413L24,68@3121L322:SelectServerScreen.kt#2ojkxh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerRoute)N(navigateHome,component)47@2197L34,48@2269L29,49@2359L115,49@2322L152,57@2582L19,58@2624L21,59@2670L23,60@2720L25,61@2771L24,54@2479L322:SelectServerScreen.kt#2ojkxh");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(navigateHome) ? 4 : 2) | i;
         } else {
@@ -116,7 +106,7 @@ public final class SelectServerScreenKt {
         int i3 = i2;
         if (startRestartGroup.shouldExecute((i3 & 19) != 18, i3 & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-387912032, i3, -1, "com.miami.game.feature.select.server.ui.compose.SelectServerRoute (SelectServerScreen.kt:60)");
+                ComposerKt.traceEventStart(-387912032, i3, -1, "com.miami.game.feature.select.server.ui.compose.SelectServerRoute (SelectServerScreen.kt:46)");
             }
             int i4 = (i3 << 3) & 112;
             BackHandlerKt.BackHandler(false, navigateHome, startRestartGroup, i4, 1);
@@ -190,22 +180,19 @@ public final class SelectServerScreenKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SelectServerRoute$lambda$7;
-                    SelectServerRoute$lambda$7 = SelectServerScreenKt.SelectServerRoute$lambda$7(Function0.this, component, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SelectServerRoute$lambda$7;
+                    return SelectServerScreenKt.SelectServerRoute$lambda$7(Function0.this, component, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v49 */
     public static final void SelectServerScreen(final SelectServerUiState uiState, final Function0<Unit> navigateHome, Function1<? super ServerModel, Unit> onSelect, final Function1<? super ServerModel, Unit> onFavorite, final Function0<Unit> onFavoriteList, final Function0<Unit> onMobileList, final Function0<Unit> onDesktopList, Composer composer, final int i) {
         int i2;
         final Function1<? super ServerModel, Unit> function1;
+        BoxScopeInstance boxScopeInstance;
         boolean z;
-        String str;
         boolean z2;
+        String str;
         int i3;
         int i4;
         int i5;
@@ -218,7 +205,7 @@ public final class SelectServerScreenKt {
         Intrinsics.checkNotNullParameter(onMobileList, "onMobileList");
         Intrinsics.checkNotNullParameter(onDesktopList, "onDesktopList");
         Composer startRestartGroup = composer.startRestartGroup(1256713563);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerScreen)N(uiState,navigateHome,onSelect,onFavorite,onFavoriteList,onMobileList,onDesktopList)93@3841L60,94@3918L24,96@3966L23,100@4067L64,98@3999L211,107@4282L7,106@4220L312,115@4537L2819:SelectServerScreen.kt#2ojkxh");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SelectServerScreen)N(uiState,navigateHome,onSelect,onFavorite,onFavoriteList,onMobileList,onDesktopList)79@3199L60,80@3276L24,82@3324L23,84@3353L95,85@3453L2819:SelectServerScreen.kt#2ojkxh");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(uiState) ? 4 : 2) | i;
         } else {
@@ -247,7 +234,7 @@ public final class SelectServerScreenKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1256713563, i2, -1, "com.miami.game.feature.select.server.ui.compose.SelectServerScreen (SelectServerScreen.kt:92)");
+                ComposerKt.traceEventStart(1256713563, i2, -1, "com.miami.game.feature.select.server.ui.compose.SelectServerScreen (SelectServerScreen.kt:78)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 815932983, "CC(remember):SelectServerScreen.kt#9igjgp");
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -269,18 +256,14 @@ public final class SelectServerScreenKt {
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             final LazyGridState rememberLazyGridState = LazyGridStateKt.rememberLazyGridState(0, 0, startRestartGroup, 0, 3);
-            ImageKt.Image(PainterResources_androidKt.painterResource(uiState.getBackGroundId(), startRestartGroup, 0), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
-            Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
-            ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            SingletonAsyncImageKt.m9410AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
-            Modifier m299backgroundbw27NRU$default = BackgroundKt.m299backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), ColorKt.Color(1711276032), null, 2, null);
+            Main_backgroundKt.BackgroundImage(uiState.getBackGroundId(), true, uiState.getImageBitmap(), uiState.getFile(), uiState.getVersion(), startRestartGroup, 48);
+            Modifier m264backgroundbw27NRU$default = BackgroundKt.m264backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), ColorKt.Color(1711276032), null, 2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
             int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
             CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m299backgroundbw27NRU$default);
+            Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m264backgroundbw27NRU$default);
             Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)399@15590L9:Composables.kt#9igjgp");
             if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -292,15 +275,15 @@ public final class SelectServerScreenKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
-            BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 153058187, "C121@4691L2134,173@6871L157,172@6834L516:SelectServerScreen.kt#2ojkxh");
+            BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 153058187, "C91@3607L2134,143@5787L157,142@5750L516:SelectServerScreen.kt#2ojkxh");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), startRestartGroup, 0);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
@@ -318,15 +301,15 @@ public final class SelectServerScreenKt {
             } else {
                 startRestartGroup.useNode();
             }
-            Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-            Updater.m4681setimpl(m4673constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-            Updater.m4677initimpl(m4673constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
-            Updater.m4679reconcileimpl(m4673constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+            Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+            Updater.m4049setimpl(m4041constructorimpl2, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+            Updater.m4045initimpl(m4041constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
+            Updater.m4047reconcileimpl(m4041constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1498398803, "C127@4937L132,122@4712L358:SelectServerScreen.kt#2ojkxh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1498398803, "C97@3853L132,92@3628L358:SelectServerScreen.kt#2ojkxh");
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -741066877, "CC(remember):SelectServerScreen.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(coroutineScope) | startRestartGroup.changed(rememberLazyGridState);
             Object rememberedValue3 = startRestartGroup.rememberedValue();
@@ -345,13 +328,14 @@ public final class SelectServerScreenKt {
             int i6 = i2 & 14;
             int i7 = i2 >> 6;
             int i8 = i2;
-            ServerTopBarKt.ServerTopBar(uiState, navigateHome, onFavoriteList, onMobileList, onDesktopList, (Function0) rememberedValue3, startRestartGroup, (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i7 & 896) | (i7 & 7168) | (i7 & 57344));
+            ServerTopBarKt.ServerTopBar(uiState, navigateHome, onFavoriteList, onMobileList, onDesktopList, (Function0) rememberedValue3, startRestartGroup, (i7 & 896) | (i2 & WebSocketProtocol.PAYLOAD_SHORT) | (i7 & 7168) | (57344 & i7));
             if (uiState.getSelectedCategory() != ServerStateCategory.Favorite || !uiState.getServersList().isEmpty()) {
+                boxScopeInstance = boxScopeInstance2;
                 z = true;
-                str = "CC(remember):SelectServerScreen.kt#9igjgp";
                 z2 = false;
+                str = "CC(remember):SelectServerScreen.kt#9igjgp";
                 startRestartGroup.startReplaceGroup(-1497411857);
-                ComposerKt.sourceInformation(startRestartGroup, "147@5757L1044");
+                ComposerKt.sourceInformation(startRestartGroup, "117@4673L1044");
                 Modifier fillMaxSize$default = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
                 Alignment center = Alignment.Companion.getCenter();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -371,20 +355,20 @@ public final class SelectServerScreenKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4677initimpl(m4673constructorimpl3, Integer.valueOf(hashCode3), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4679reconcileimpl(m4673constructorimpl3, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                Composer m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4045initimpl(m4041constructorimpl3, Integer.valueOf(hashCode3), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4047reconcileimpl(m4041constructorimpl3, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
-                BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -851043448, "C157@6285L498,151@5913L870:SelectServerScreen.kt#2ojkxh");
+                BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -851043448, "C127@5201L498,121@4829L870:SelectServerScreen.kt#2ojkxh");
                 float f = (float) ComposerImplKt.nodeKey;
-                Modifier m963heightInVpY3zN4 = SizeKt.m963heightInVpY3zN4(Modifier.Companion, Dp.m8258constructorimpl(f), Dp.m8258constructorimpl(300));
-                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m8258constructorimpl(f), null);
+                Modifier m851heightInVpY3zN4 = SizeKt.m851heightInVpY3zN4(Modifier.Companion, Dp.m7555constructorimpl(f), Dp.m7555constructorimpl(300));
+                GridCells.FixedSize fixedSize = new GridCells.FixedSize(Dp.m7555constructorimpl(f), null);
                 Arrangement.HorizontalOrVertical spaceEvenly = Arrangement.INSTANCE.getSpaceEvenly();
-                PaddingValues m925PaddingValuesa9UjIt4$default = PaddingKt.m925PaddingValuesa9UjIt4$default(Dp.m8258constructorimpl(40), 0.0f, Dp.m8258constructorimpl(140), 0.0f, 10, null);
+                PaddingValues m815PaddingValuesa9UjIt4$default = PaddingKt.m815PaddingValuesa9UjIt4$default(Dp.m7555constructorimpl(40), 0.0f, Dp.m7555constructorimpl(140), 0.0f, 10, null);
                 GridCells.FixedSize fixedSize2 = fixedSize;
                 Arrangement.HorizontalOrVertical horizontalOrVertical = spaceEvenly;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1635126503, str);
@@ -408,7 +392,7 @@ public final class SelectServerScreenKt {
                     mutableState = mutableState2;
                 }
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                LazyGridDslKt.LazyHorizontalGrid(fixedSize2, m963heightInVpY3zN4, rememberLazyGridState, m925PaddingValuesa9UjIt4$default, false, null, horizontalOrVertical, null, false, null, rememberedValue4, startRestartGroup, 1575984, 0, 944);
+                LazyGridDslKt.LazyHorizontalGrid(fixedSize2, m851heightInVpY3zN4, rememberLazyGridState, m815PaddingValuesa9UjIt4$default, false, null, horizontalOrVertical, null, false, null, (Function1) rememberedValue4, startRestartGroup, 1575984, 0, 944);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -419,11 +403,10 @@ public final class SelectServerScreenKt {
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(-1497984520);
-                ComposerKt.sourceInformation(startRestartGroup, "133@5196L523");
+                ComposerKt.sourceInformation(startRestartGroup, "103@4112L523");
                 Modifier fillMaxSize$default2 = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
                 Alignment center2 = Alignment.Companion.getCenter();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
-                z2 = false;
                 MeasurePolicy maybeCachedBoxMeasurePolicy3 = BoxKt.maybeCachedBoxMeasurePolicy(center2, false);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)P(!1,2)81@3355L27,84@3521L416:Layout.kt#80mrfh");
                 int hashCode4 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
@@ -440,25 +423,28 @@ public final class SelectServerScreenKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl4 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4677initimpl(m4673constructorimpl4, Integer.valueOf(hashCode4), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4679reconcileimpl(m4673constructorimpl4, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4681setimpl(m4673constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                Composer m4041constructorimpl4 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4045initimpl(m4041constructorimpl4, Integer.valueOf(hashCode4), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4047reconcileimpl(m4041constructorimpl4, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
-                BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1451227624, "C140@5501L10,141@5559L13,142@5611L13,143@5667L12,137@5352L349:SelectServerScreen.kt#2ojkxh");
-                long m5423copywmQWz5c$default = Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
+                BoxScopeInstance boxScopeInstance4 = BoxScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1451227624, "C110@4417L10,111@4475L13,112@4527L13,113@4583L12,107@4268L349:SelectServerScreen.kt#2ojkxh");
+                long m4771copywmQWz5c$default = Color.m4771copywmQWz5c$default(Color.Companion.m4809getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                 TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium();
                 float f2 = 32;
-                long m10183dpToSp8Feqmps = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
-                long m10183dpToSp8Feqmps2 = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
-                long m10183dpToSp8Feqmps3 = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(1), startRestartGroup, 6);
-                TextUnitKt.m8465checkArithmeticR2X_6o(m10183dpToSp8Feqmps3);
+                long m9134dpToSp8Feqmps = TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6);
+                long m9134dpToSp8Feqmps2 = TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(f2), startRestartGroup, 6);
+                long m9134dpToSp8Feqmps3 = TypeKt.m9134dpToSp8Feqmps(Dp.m7555constructorimpl(1), startRestartGroup, 6);
+                TextUnitKt.m7762checkArithmeticR2X_6o(m9134dpToSp8Feqmps3);
+                long pack = TextUnitKt.pack(TextUnit.m7747getRawTypeimpl(m9134dpToSp8Feqmps3), -TextUnit.m7749getValueimpl(m9134dpToSp8Feqmps3));
+                z2 = false;
                 z = true;
                 str = "CC(remember):SelectServerScreen.kt#9igjgp";
-                TextKt.m3255TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m5423copywmQWz5c$default, null, m10183dpToSp8Feqmps, null, null, null, TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(m10183dpToSp8Feqmps3), -TextUnit.m8452getValueimpl(m10183dpToSp8Feqmps3)), null, null, m10183dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
+                boxScopeInstance = boxScopeInstance2;
+                TextKt.m2712TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m4771copywmQWz5c$default, null, m9134dpToSp8Feqmps, null, null, null, pack, null, null, m9134dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -500,7 +486,7 @@ public final class SelectServerScreenKt {
                 function1 = onSelect;
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue5, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomEnd()), ComposableSingletons$SelectServerScreenKt.INSTANCE.getLambda$22973248$select_server_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue5, boxScopeInstance.align(Modifier.Companion, Alignment.Companion.getBottomEnd()), ComposableSingletons$SelectServerScreenKt.INSTANCE.getLambda$22973248$select_server(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -513,12 +499,11 @@ public final class SelectServerScreenKt {
         }
         ScopeUpdateScope endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup != null) {
+            final Function1<? super ServerModel, Unit> function12 = function1;
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.select.server.ui.compose.SelectServerScreenKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit SelectServerScreen$lambda$2;
-                    SelectServerScreen$lambda$2 = SelectServerScreenKt.SelectServerScreen$lambda$2(SelectServerUiState.this, navigateHome, function1, onFavorite, onFavoriteList, onMobileList, onDesktopList, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return SelectServerScreen$lambda$2;
+                    return SelectServerScreenKt.SelectServerScreen$lambda$2(SelectServerUiState.this, navigateHome, function12, onFavorite, onFavoriteList, onMobileList, onDesktopList, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -581,7 +566,7 @@ public final class SelectServerScreenKt {
                 }
                 ServerModel serverModel = (ServerModel) serversList.get(i);
                 composer.startReplaceGroup(-1669064645);
-                ComposerKt.sourceInformation(composer, "CN(it)*161@6473L109,159@6368L367:SelectServerScreen.kt#2ojkxh");
+                ComposerKt.sourceInformation(composer, "CN(it)*131@5389L109,129@5284L367:SelectServerScreen.kt#2ojkxh");
                 ComposerKt.sourceInformationMarkerStart(composer, -1023669018, "CC(remember):SelectServerScreen.kt#9igjgp");
                 Object rememberedValue = composer.rememberedValue();
                 if (rememberedValue == Composer.Companion.getEmpty()) {

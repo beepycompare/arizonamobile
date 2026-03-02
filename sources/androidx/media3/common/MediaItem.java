@@ -1406,7 +1406,7 @@ public final class MediaItem {
         }
 
         public static RequestMetadata fromBundle(Bundle bundle) {
-            return new Builder().setMediaUri((Uri) bundle.getParcelable(FIELD_MEDIA_URI)).setSearchQuery(bundle.getString(FIELD_SEARCH_QUERY)).setExtras(bundle.getBundle(FIELD_EXTRAS)).build();
+            return new Builder().setMediaUri((Uri) bundle.getParcelable(FIELD_MEDIA_URI)).setSearchQuery(bundle.getString(FIELD_SEARCH_QUERY)).setExtras(Util.convertToNullIfInvalid(bundle.getBundle(FIELD_EXTRAS))).build();
         }
     }
 

@@ -35,7 +35,7 @@ public final class ComposeDragShadowBuilder extends View.DragShadowBuilder {
     @Override // android.view.View.DragShadowBuilder
     public void onProvideShadowMetrics(Point point, Point point2) {
         Density density = this.density;
-        point.set(density.mo458roundToPx0680j_4(density.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (this.decorationSize >> 32)))), density.mo458roundToPx0680j_4(density.mo460toDpu2uoSUM(Float.intBitsToFloat((int) (this.decorationSize & 4294967295L)))));
+        point.set(density.mo399roundToPx0680j_4(density.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (this.decorationSize >> 32)))), density.mo399roundToPx0680j_4(density.mo401toDpu2uoSUM(Float.intBitsToFloat((int) (this.decorationSize & 4294967295L)))));
         point2.set(point.x / 2, point.y / 2);
     }
 
@@ -51,12 +51,12 @@ public final class ComposeDragShadowBuilder extends View.DragShadowBuilder {
         Density component1 = drawParams.component1();
         LayoutDirection component2 = drawParams.component2();
         androidx.compose.ui.graphics.Canvas component3 = drawParams.component3();
-        long m5922component4NHjbRc = drawParams.m5922component4NHjbRc();
+        long m5263component4NHjbRc = drawParams.m5263component4NHjbRc();
         CanvasDrawScope.DrawParams drawParams2 = canvasDrawScope.getDrawParams();
         drawParams2.setDensity(density);
         drawParams2.setLayoutDirection(layoutDirection);
         drawParams2.setCanvas(Canvas);
-        drawParams2.m5925setSizeuvyYCjk(j);
+        drawParams2.m5266setSizeuvyYCjk(j);
         Canvas.save();
         function1.invoke(canvasDrawScope);
         Canvas.restore();
@@ -64,6 +64,6 @@ public final class ComposeDragShadowBuilder extends View.DragShadowBuilder {
         drawParams3.setDensity(component1);
         drawParams3.setLayoutDirection(component2);
         drawParams3.setCanvas(component3);
-        drawParams3.m5925setSizeuvyYCjk(m5922component4NHjbRc);
+        drawParams3.m5266setSizeuvyYCjk(m5263component4NHjbRc);
     }
 }

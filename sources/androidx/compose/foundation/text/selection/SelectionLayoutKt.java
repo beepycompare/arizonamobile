@@ -39,8 +39,8 @@ public final class SelectionLayoutKt {
     }
 
     /* renamed from: getTextFieldSelectionLayout-RcvT-LA  reason: not valid java name */
-    public static final SelectionLayout m1862getTextFieldSelectionLayoutRcvTLA(TextLayoutResult textLayoutResult, int i, int i2, int i3, long j, boolean z, boolean z2) {
-        return new SingleSelectionLayout(z2, 1, 1, z ? null : new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7701getStartimpl(j)), TextRange.m7701getStartimpl(j), 1L), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7696getEndimpl(j)), TextRange.m7696getEndimpl(j), 1L), TextRange.m7700getReversedimpl(j)), new SelectableInfo(1L, 1, i, i2, i3, textLayoutResult));
+    public static final SelectionLayout m1611getTextFieldSelectionLayoutRcvTLA(TextLayoutResult textLayoutResult, int i, int i2, int i3, long j, boolean z, boolean z2) {
+        return new SingleSelectionLayout(z2, 1, 1, z ? null : new Selection(new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m7003getStartimpl(j)), TextRange.m7003getStartimpl(j), 1L), new Selection.AnchorInfo(SelectionHelpersKt.getTextDirectionForOffset(textLayoutResult, TextRange.m6998getEndimpl(j)), TextRange.m6998getEndimpl(j), 1L), TextRange.m7002getReversedimpl(j)), new SelectableInfo(1L, 1, i, i2, i3, textLayoutResult));
     }
 
     public static final Direction resolve2dDirection(Direction direction, Direction direction2) {
@@ -85,15 +85,13 @@ public final class SelectionLayoutKt {
         selectionLayout.forEachMiddleInfo(new Function1() { // from class: androidx.compose.foundation.text.selection.SelectionLayoutKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit isCollapsed$lambda$0;
-                isCollapsed$lambda$0 = SelectionLayoutKt.isCollapsed$lambda$0(Ref.BooleanRef.this, (SelectableInfo) obj);
-                return isCollapsed$lambda$0;
+                return SelectionLayoutKt.isCollapsed$lambda$0(Ref.BooleanRef.this, (SelectableInfo) obj);
             }
         });
         return booleanRef.element;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit isCollapsed$lambda$0(Ref.BooleanRef booleanRef, SelectableInfo selectableInfo) {
         if (selectableInfo.getInputText().length() > 0) {
             booleanRef.element = false;

@@ -46,11 +46,12 @@ public final class MaybeCreate<T> extends Maybe<T> {
             if (get() == DisposableHelper.DISPOSED || (andSet = getAndSet(DisposableHelper.DISPOSED)) == DisposableHelper.DISPOSED) {
                 return;
             }
+            MaybeObserver<? super T> maybeObserver = this.downstream;
             try {
                 if (t == null) {
-                    this.downstream.onError(new NullPointerException("onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."));
+                    maybeObserver.onError(new NullPointerException("onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."));
                 } else {
-                    this.downstream.onSuccess(t);
+                    maybeObserver.onSuccess(t);
                 }
                 if (andSet != null) {
                     andSet.dispose();

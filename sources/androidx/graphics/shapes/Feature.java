@@ -210,7 +210,7 @@ public abstract class Feature {
             return new Corner(arrayList, !this.convex);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final CharSequence toString$lambda$1(Cubic it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return "[" + it + AbstractJsonLexerKt.END_LIST;
@@ -220,9 +220,7 @@ public abstract class Feature {
             return "Corner: cubics=" + CollectionsKt.joinToString$default(getCubics(), ", ", null, null, 0, null, new Function1() { // from class: androidx.graphics.shapes.Feature$Corner$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    CharSequence string$lambda$1;
-                    string$lambda$1 = Feature.Corner.toString$lambda$1((Cubic) obj);
-                    return string$lambda$1;
+                    return Feature.Corner.toString$lambda$1((Cubic) obj);
                 }
             }, 30, null) + " convex=" + this.convex;
         }

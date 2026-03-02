@@ -229,10 +229,11 @@ public class GameHelper implements GoogleApiClient.ConnectionCallbacks, GoogleAp
         this.mConnecting = true;
         this.mInvitation = null;
         this.mTurnBasedMatch = null;
+        GoogleApiClient googleApiClient = this.mGoogleApiClient;
         if (z) {
-            this.mGoogleApiClient.blockingConnect(15L, TimeUnit.SECONDS);
+            googleApiClient.blockingConnect(15L, TimeUnit.SECONDS);
         } else {
-            this.mGoogleApiClient.connect();
+            googleApiClient.connect();
         }
     }
 

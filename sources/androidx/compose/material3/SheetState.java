@@ -35,12 +35,12 @@ public final class SheetState {
     private final boolean skipHiddenState;
     private final boolean skipPartiallyExpanded;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(SheetValue sheetValue) {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$7(SheetValue sheetValue) {
         return true;
     }
@@ -62,9 +62,11 @@ public final class SheetState {
         this.anchoredDraggableState = new AnchoredDraggableState<>(sheetValue, new Function1() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                float anchoredDraggableState$lambda$5;
-                anchoredDraggableState$lambda$5 = SheetState.anchoredDraggableState$lambda$5(Function0.this, ((Float) obj).floatValue());
-                return Float.valueOf(anchoredDraggableState$lambda$5);
+                float floatValue;
+                Function0 function03 = Function0.this;
+                ((Float) obj).floatValue();
+                floatValue = ((Number) function03.invoke()).floatValue();
+                return Float.valueOf(floatValue);
             }
         }, function02, new Function0() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
@@ -86,9 +88,7 @@ public final class SheetState {
         this(z, function0, function02, (i & 8) != 0 ? SheetValue.Hidden : sheetValue, (i & 16) != 0 ? new Function1() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean _init_$lambda$0;
-                _init_$lambda$0 = SheetState._init_$lambda$0((SheetValue) obj);
-                return Boolean.valueOf(_init_$lambda$0);
+                return Boolean.valueOf(SheetState._init_$lambda$0((SheetValue) obj));
             }
         } : function1, (i & 32) != 0 ? false : z2);
     }
@@ -206,11 +206,6 @@ public final class SheetState {
         this.anchoredDraggableState = anchoredDraggableState;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float anchoredDraggableState$lambda$5(Function0 function0, float f) {
-        return ((Number) function0.invoke()).floatValue();
-    }
-
     public final float getOffset$material3() {
         return this.anchoredDraggableState.getOffset();
     }
@@ -246,26 +241,20 @@ public final class SheetState {
             return SaverKt.Saver(new Function2() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    SheetValue Saver$lambda$0;
-                    Saver$lambda$0 = SheetState.Companion.Saver$lambda$0((SaverScope) obj, (SheetState) obj2);
-                    return Saver$lambda$0;
+                    SheetValue currentValue;
+                    SaverScope saverScope = (SaverScope) obj;
+                    currentValue = ((SheetState) obj2).getCurrentValue();
+                    return currentValue;
                 }
             }, new Function1() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    SheetState Saver$lambda$1;
-                    Saver$lambda$1 = SheetState.Companion.Saver$lambda$1(z, function0, function02, function1, z2, (SheetValue) obj);
-                    return Saver$lambda$1;
+                    return SheetState.Companion.Saver$lambda$1(z, function0, function02, function1, z2, (SheetValue) obj);
                 }
             });
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final SheetValue Saver$lambda$0(SaverScope saverScope, SheetState sheetState) {
-            return sheetState.getCurrentValue();
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final SheetState Saver$lambda$1(boolean z, Function0 function0, Function0 function02, Function1 function1, boolean z2, SheetValue sheetValue) {
             return new SheetState(z, function0, function02, sheetValue, function1, z2);
         }
@@ -275,28 +264,18 @@ public final class SheetState {
             return Saver(z, new Function0() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float Saver$lambda$3;
-                    Saver$lambda$3 = SheetState.Companion.Saver$lambda$3(Density.this);
-                    return Float.valueOf(Saver$lambda$3);
+                    float mo405toPx0680j_4;
+                    mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1748getPositionalThresholdD9Ej5fM$material3());
+                    return Float.valueOf(mo405toPx0680j_4);
                 }
             }, new Function0() { // from class: androidx.compose.material3.SheetState$Companion$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    float Saver$lambda$5;
-                    Saver$lambda$5 = SheetState.Companion.Saver$lambda$5(Density.this);
-                    return Float.valueOf(Saver$lambda$5);
+                    float mo405toPx0680j_4;
+                    mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1751getVelocityThresholdD9Ej5fM$material3());
+                    return Float.valueOf(mo405toPx0680j_4);
                 }
             }, function1, z2);
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final float Saver$lambda$3(Density density) {
-            return density.mo464toPx0680j_4(BottomSheetDefaults.INSTANCE.m2041getPositionalThresholdD9Ej5fM$material3());
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final float Saver$lambda$5(Density density) {
-            return density.mo464toPx0680j_4(BottomSheetDefaults.INSTANCE.m2044getVelocityThresholdD9Ej5fM$material3());
         }
     }
 
@@ -304,9 +283,7 @@ public final class SheetState {
         this(z, density, (i & 4) != 0 ? SheetValue.Hidden : sheetValue, (i & 8) != 0 ? new Function1() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean _init_$lambda$7;
-                _init_$lambda$7 = SheetState._init_$lambda$7((SheetValue) obj);
-                return Boolean.valueOf(_init_$lambda$7);
+                return Boolean.valueOf(SheetState._init_$lambda$7((SheetValue) obj));
             }
         } : function1, (i & 16) != 0 ? false : z2);
     }
@@ -316,27 +293,17 @@ public final class SheetState {
         this(z, new Function0() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float _init_$lambda$9;
-                _init_$lambda$9 = SheetState._init_$lambda$9(Density.this);
-                return Float.valueOf(_init_$lambda$9);
+                float mo405toPx0680j_4;
+                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1748getPositionalThresholdD9Ej5fM$material3());
+                return Float.valueOf(mo405toPx0680j_4);
             }
         }, new Function0() { // from class: androidx.compose.material3.SheetState$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float _init_$lambda$11;
-                _init_$lambda$11 = SheetState._init_$lambda$11(Density.this);
-                return Float.valueOf(_init_$lambda$11);
+                float mo405toPx0680j_4;
+                mo405toPx0680j_4 = Density.this.mo405toPx0680j_4(BottomSheetDefaults.INSTANCE.m1751getVelocityThresholdD9Ej5fM$material3());
+                return Float.valueOf(mo405toPx0680j_4);
             }
         }, sheetValue, function1, z2);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float _init_$lambda$9(Density density) {
-        return density.mo464toPx0680j_4(BottomSheetDefaults.INSTANCE.m2041getPositionalThresholdD9Ej5fM$material3());
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final float _init_$lambda$11(Density density) {
-        return density.mo464toPx0680j_4(BottomSheetDefaults.INSTANCE.m2044getVelocityThresholdD9Ej5fM$material3());
     }
 }

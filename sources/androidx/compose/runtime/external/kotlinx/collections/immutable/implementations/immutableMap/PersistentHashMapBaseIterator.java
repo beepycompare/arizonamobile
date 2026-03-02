@@ -49,10 +49,11 @@ public abstract class PersistentHashMapBaseIterator<K, V, T> implements Iterator
         }
         if (this.path[i].hasNextNode()) {
             TrieNode<? extends K, ? extends V> currentNode = this.path[i].currentNode();
+            TrieNodeBaseIterator<K, V, T>[] trieNodeBaseIteratorArr = this.path;
             if (i == 6) {
-                this.path[i + 1].reset(currentNode.getBuffer$runtime(), currentNode.getBuffer$runtime().length);
+                trieNodeBaseIteratorArr[i + 1].reset(currentNode.getBuffer$runtime(), currentNode.getBuffer$runtime().length);
             } else {
-                this.path[i + 1].reset(currentNode.getBuffer$runtime(), currentNode.entryCount$runtime() * 2);
+                trieNodeBaseIteratorArr[i + 1].reset(currentNode.getBuffer$runtime(), currentNode.entryCount$runtime() * 2);
             }
             return moveToNextNodeWithData(i + 1);
         }

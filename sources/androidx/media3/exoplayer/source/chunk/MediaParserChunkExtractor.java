@@ -159,7 +159,9 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
 
         @Override // androidx.media3.extractor.ExtractorOutput
         public TrackOutput track(int i, int i2) {
-            return MediaParserChunkExtractor.this.trackOutputProvider != null ? MediaParserChunkExtractor.this.trackOutputProvider.track(i, i2) : MediaParserChunkExtractor.this.discardingTrackOutput;
+            ChunkExtractor.TrackOutputProvider trackOutputProvider = MediaParserChunkExtractor.this.trackOutputProvider;
+            MediaParserChunkExtractor mediaParserChunkExtractor = MediaParserChunkExtractor.this;
+            return trackOutputProvider != null ? mediaParserChunkExtractor.trackOutputProvider.track(i, i2) : mediaParserChunkExtractor.discardingTrackOutput;
         }
 
         @Override // androidx.media3.extractor.ExtractorOutput

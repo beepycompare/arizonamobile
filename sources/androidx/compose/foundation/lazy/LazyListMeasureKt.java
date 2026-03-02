@@ -58,7 +58,7 @@ public final class LazyListMeasureKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final LazyListMeasureResult m1049measureLazyList_s_dbAc(int i, final LazyListMeasuredItemProvider lazyListMeasuredItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, float f, long j, boolean z, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, boolean z2, Density density, LazyLayoutItemAnimator<LazyListMeasuredItem> lazyLayoutItemAnimator, int i8, List<Integer> list, boolean z3, final boolean z4, CoroutineScope coroutineScope, final MutableState<Unit> mutableState, GraphicsContext graphicsContext, StickyItemsPlacement stickyItemsPlacement, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3) {
+    public static final LazyListMeasureResult m926measureLazyList_s_dbAc(int i, final LazyListMeasuredItemProvider lazyListMeasuredItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, float f, long j, boolean z, Arrangement.Vertical vertical, Arrangement.Horizontal horizontal, boolean z2, Density density, LazyLayoutItemAnimator<LazyListMeasuredItem> lazyLayoutItemAnimator, int i8, List<Integer> list, boolean z3, final boolean z4, CoroutineScope coroutineScope, final MutableState<Unit> mutableState, GraphicsContext graphicsContext, StickyItemsPlacement stickyItemsPlacement, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3) {
         int i9;
         int i10;
         int i11;
@@ -82,24 +82,25 @@ public final class LazyListMeasureKt {
             InlineClassHelperKt.throwIllegalArgumentException("invalid afterContentPadding");
         }
         if (i <= 0) {
-            int m8213getMinWidthimpl = Constraints.m8213getMinWidthimpl(j);
-            int m8212getMinHeightimpl = Constraints.m8212getMinHeightimpl(j);
-            lazyLayoutItemAnimator.onMeasured(0, m8213getMinWidthimpl, m8212getMinHeightimpl, new ArrayList(), lazyListMeasuredItemProvider.getKeyIndexMap(), lazyListMeasuredItemProvider, z, z4, 1, z3, 0, 0, coroutineScope, graphicsContext);
+            int m7510getMinWidthimpl = Constraints.m7510getMinWidthimpl(j);
+            int m7509getMinHeightimpl = Constraints.m7509getMinHeightimpl(j);
+            lazyLayoutItemAnimator.onMeasured(0, m7510getMinWidthimpl, m7509getMinHeightimpl, new ArrayList(), lazyListMeasuredItemProvider.getKeyIndexMap(), lazyListMeasuredItemProvider, z, z4, 1, z3, 0, 0, coroutineScope, graphicsContext);
             if (!z4) {
-                long m1123getMinSizeToFitDisappearingItemsYbymL2g = lazyLayoutItemAnimator.m1123getMinSizeToFitDisappearingItemsYbymL2g();
-                if (!IntSize.m8427equalsimpl0(m1123getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m8434getZeroYbymL2g())) {
-                    m8213getMinWidthimpl = ConstraintsKt.m8228constrainWidthK40F9xA(j, (int) (m1123getMinSizeToFitDisappearingItemsYbymL2g >> 32));
-                    m8212getMinHeightimpl = ConstraintsKt.m8227constrainHeightK40F9xA(j, (int) (m1123getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
+                long m987getMinSizeToFitDisappearingItemsYbymL2g = lazyLayoutItemAnimator.m987getMinSizeToFitDisappearingItemsYbymL2g();
+                if (!IntSize.m7724equalsimpl0(m987getMinSizeToFitDisappearingItemsYbymL2g, IntSize.Companion.m7731getZeroYbymL2g())) {
+                    m7510getMinWidthimpl = ConstraintsKt.m7525constrainWidthK40F9xA(j, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g >> 32));
+                    m7509getMinHeightimpl = ConstraintsKt.m7524constrainHeightK40F9xA(j, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g & 4294967295L));
                 }
             }
-            return new LazyListMeasureResult(null, 0, false, 0.0f, function3.invoke(Integer.valueOf(m8213getMinWidthimpl), Integer.valueOf(m8212getMinHeightimpl), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda1
+            return new LazyListMeasureResult(null, 0, false, 0.0f, function3.invoke(Integer.valueOf(m7510getMinWidthimpl), Integer.valueOf(m7509getMinHeightimpl), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measureLazyList__s_dbAc$lambda$2;
-                    measureLazyList__s_dbAc$lambda$2 = LazyListMeasureKt.measureLazyList__s_dbAc$lambda$2((Placeable.PlacementScope) obj);
-                    return measureLazyList__s_dbAc$lambda$2;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
-            }), 0.0f, false, coroutineScope, density, lazyListMeasuredItemProvider.m1058getChildConstraintsmsEJaDk(), CollectionsKt.emptyList(), -i22, i2 + i4, 0, z2, z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
+            }), 0.0f, false, coroutineScope, density, lazyListMeasuredItemProvider.m935getChildConstraintsmsEJaDk(), CollectionsKt.emptyList(), -i22, i2 + i4, 0, z2, z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
         }
         int i23 = i6;
         if (i23 >= i) {
@@ -123,10 +124,10 @@ public final class LazyListMeasureKt {
         while (i28 < 0 && i23 > 0) {
             int i30 = i23 - 1;
             ArrayDeque arrayDeque2 = arrayDeque;
-            LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default = LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i30, 0L, 2, null);
-            arrayDeque2.add(0, m1055getAndMeasure0kLqBqw$default);
-            i29 = Math.max(i29, m1055getAndMeasure0kLqBqw$default.getCrossAxisSize());
-            i28 = m1055getAndMeasure0kLqBqw$default.getMainAxisSizeWithSpacings() + i28;
+            LazyListMeasuredItem m932getAndMeasure0kLqBqw$default = LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i30, 0L, 2, null);
+            arrayDeque2.add(0, m932getAndMeasure0kLqBqw$default);
+            i29 = Math.max(i29, m932getAndMeasure0kLqBqw$default.getCrossAxisSize());
+            i28 = m932getAndMeasure0kLqBqw$default.getMainAxisSizeWithSpacings() + i28;
             i23 = i30;
             arrayDeque = arrayDeque2;
             i27 = i27;
@@ -175,18 +176,18 @@ public final class LazyListMeasureKt {
             int i48 = coerceAtLeast;
             int i49 = i44;
             int i50 = i43;
-            LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default2 = LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i45, 0L, 2, null);
+            LazyListMeasuredItem m932getAndMeasure0kLqBqw$default2 = LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i45, 0L, 2, null);
             int i51 = i45;
-            i41 += m1055getAndMeasure0kLqBqw$default2.getMainAxisSizeWithSpacings();
+            i41 += m932getAndMeasure0kLqBqw$default2.getMainAxisSizeWithSpacings();
             if (i41 <= i33 && i51 != i - 1) {
-                i46 -= m1055getAndMeasure0kLqBqw$default2.getMainAxisSizeWithSpacings();
+                i46 -= m932getAndMeasure0kLqBqw$default2.getMainAxisSizeWithSpacings();
                 Unit unit2 = Unit.INSTANCE;
                 i42 = i47;
                 z6 = true;
                 i43 = i51 + 1;
             } else {
-                int max = Math.max(i47, m1055getAndMeasure0kLqBqw$default2.getCrossAxisSize());
-                Boolean.valueOf(arrayDeque3.add(m1055getAndMeasure0kLqBqw$default2));
+                int max = Math.max(i47, m932getAndMeasure0kLqBqw$default2.getCrossAxisSize());
+                Boolean.valueOf(arrayDeque3.add(m932getAndMeasure0kLqBqw$default2));
                 i43 = i50;
                 i42 = max;
             }
@@ -206,10 +207,10 @@ public final class LazyListMeasureKt {
             while (i59 < i22 && i58 > 0) {
                 i58--;
                 int i60 = i59;
-                LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default3 = LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i58, 0L, 2, null);
-                arrayDeque3.add(0, m1055getAndMeasure0kLqBqw$default3);
-                i55 = Math.max(i55, m1055getAndMeasure0kLqBqw$default3.getCrossAxisSize());
-                i59 = i60 + m1055getAndMeasure0kLqBqw$default3.getMainAxisSizeWithSpacings();
+                LazyListMeasuredItem m932getAndMeasure0kLqBqw$default3 = LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider, i58, 0L, 2, null);
+                arrayDeque3.add(0, m932getAndMeasure0kLqBqw$default3);
+                i55 = Math.max(i55, m932getAndMeasure0kLqBqw$default3.getCrossAxisSize());
+                i59 = i60 + m932getAndMeasure0kLqBqw$default3.getMainAxisSizeWithSpacings();
                 i53 = i53;
                 i22 = i3;
             }
@@ -293,31 +294,31 @@ public final class LazyListMeasureKt {
             i14 = Math.max(i14, createItemsAfterList.get(i64).getCrossAxisSize());
         }
         boolean z7 = Intrinsics.areEqual(lazyListMeasuredItem2, arrayDeque3.first()) && createItemsBeforeList.isEmpty() && createItemsAfterList.isEmpty();
-        int m8228constrainWidthK40F9xA = ConstraintsKt.m8228constrainWidthK40F9xA(j, z ? i14 : i15);
+        int m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(j, z ? i14 : i15);
         if (z) {
             i14 = i15;
         }
-        int m8227constrainHeightK40F9xA = ConstraintsKt.m8227constrainHeightK40F9xA(j, i14);
+        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(j, i14);
         float f6 = f2;
-        int i65 = m8228constrainWidthK40F9xA;
+        int i65 = m7525constrainWidthK40F9xA;
         int i66 = i11;
-        final List<LazyListMeasuredItem> calculateItemsOffsets = calculateItemsOffsets(arrayDeque4, createItemsBeforeList, createItemsAfterList, i65, m8227constrainHeightK40F9xA, i15, i2, i19, z, vertical, horizontal, z2, density);
-        lazyLayoutItemAnimator.onMeasured((int) f6, i65, m8227constrainHeightK40F9xA, calculateItemsOffsets, lazyListMeasuredItemProvider.getKeyIndexMap(), lazyListMeasuredItemProvider, z, z4, 1, z3, i20, i15, coroutineScope, graphicsContext);
+        final List<LazyListMeasuredItem> calculateItemsOffsets = calculateItemsOffsets(arrayDeque4, createItemsBeforeList, createItemsAfterList, i65, m7524constrainHeightK40F9xA, i15, i2, i19, z, vertical, horizontal, z2, density);
+        lazyLayoutItemAnimator.onMeasured((int) f6, i65, m7524constrainHeightK40F9xA, calculateItemsOffsets, lazyListMeasuredItemProvider.getKeyIndexMap(), lazyListMeasuredItemProvider, z, z4, 1, z3, i20, i15, coroutineScope, graphicsContext);
         int i67 = i15;
         if (!z4) {
-            long m1123getMinSizeToFitDisappearingItemsYbymL2g2 = lazyLayoutItemAnimator.m1123getMinSizeToFitDisappearingItemsYbymL2g();
-            if (!IntSize.m8427equalsimpl0(m1123getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m8434getZeroYbymL2g())) {
-                int i68 = z ? m8227constrainHeightK40F9xA : i65;
-                i65 = ConstraintsKt.m8228constrainWidthK40F9xA(j, Math.max(i65, (int) (m1123getMinSizeToFitDisappearingItemsYbymL2g2 >> 32)));
-                int m8227constrainHeightK40F9xA2 = ConstraintsKt.m8227constrainHeightK40F9xA(j, Math.max(m8227constrainHeightK40F9xA, (int) (m1123getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
-                int i69 = z ? m8227constrainHeightK40F9xA2 : i65;
+            long m987getMinSizeToFitDisappearingItemsYbymL2g2 = lazyLayoutItemAnimator.m987getMinSizeToFitDisappearingItemsYbymL2g();
+            if (!IntSize.m7724equalsimpl0(m987getMinSizeToFitDisappearingItemsYbymL2g2, IntSize.Companion.m7731getZeroYbymL2g())) {
+                int i68 = z ? m7524constrainHeightK40F9xA : i65;
+                i65 = ConstraintsKt.m7525constrainWidthK40F9xA(j, Math.max(i65, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 >> 32)));
+                int m7524constrainHeightK40F9xA2 = ConstraintsKt.m7524constrainHeightK40F9xA(j, Math.max(m7524constrainHeightK40F9xA, (int) (m987getMinSizeToFitDisappearingItemsYbymL2g2 & 4294967295L)));
+                int i69 = z ? m7524constrainHeightK40F9xA2 : i65;
                 if (i69 != i68) {
                     int size4 = calculateItemsOffsets.size();
                     for (int i70 = 0; i70 < size4; i70++) {
                         calculateItemsOffsets.get(i70).updateMainAxisLayoutSize(i69);
                     }
                 }
-                i21 = m8227constrainHeightK40F9xA2;
+                i21 = m7524constrainHeightK40F9xA2;
                 int i71 = i65;
                 LazyListMeasuredItem lazyListMeasuredItem3 = (LazyListMeasuredItem) arrayDeque3.firstOrNull();
                 int index = lazyListMeasuredItem3 == null ? lazyListMeasuredItem3.getIndex() : 0;
@@ -325,9 +326,9 @@ public final class LazyListMeasureKt {
                 final List applyStickyItems = LazyLayoutStickyItemsKt.applyStickyItems(stickyItemsPlacement, index, lazyListMeasuredItem4 == null ? lazyListMeasuredItem4.getIndex() : 0, calculateItemsOffsets, lazyListMeasuredItemProvider.getHeaderIndexes(), i3, i4, i71, i21, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default4;
-                        m1055getAndMeasure0kLqBqw$default4 = LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider.this, ((Integer) obj).intValue(), 0L, 2, null);
-                        return m1055getAndMeasure0kLqBqw$default4;
+                        LazyListMeasuredItem m932getAndMeasure0kLqBqw$default4;
+                        m932getAndMeasure0kLqBqw$default4 = LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider.this, ((Integer) obj).intValue(), 0L, 2, null);
+                        return m932getAndMeasure0kLqBqw$default4;
                     }
                 });
                 Integer num = null;
@@ -358,14 +359,12 @@ public final class LazyListMeasureKt {
                 return new LazyListMeasureResult(lazyListMeasuredItem2, i20, i66 >= i || i67 > i2, f6, function3.invoke(Integer.valueOf(i71), Integer.valueOf(i21), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit measureLazyList__s_dbAc$lambda$8;
-                        measureLazyList__s_dbAc$lambda$8 = LazyListMeasureKt.measureLazyList__s_dbAc$lambda$8(MutableState.this, calculateItemsOffsets, applyStickyItems, z4, (Placeable.PlacementScope) obj);
-                        return measureLazyList__s_dbAc$lambda$8;
+                        return LazyListMeasureKt.measureLazyList__s_dbAc$lambda$8(MutableState.this, calculateItemsOffsets, applyStickyItems, z4, (Placeable.PlacementScope) obj);
                     }
-                }), f5, z6, coroutineScope, density, lazyListMeasuredItemProvider.m1058getChildConstraintsmsEJaDk(), LazyLayoutMeasuredItemKt.updatedVisibleItems(valueOf == null ? valueOf.intValue() : 0, num == null ? num.intValue() : 0, calculateItemsOffsets, applyStickyItems), i32, i52, i, z2, !z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
+                }), f5, z6, coroutineScope, density, lazyListMeasuredItemProvider.m935getChildConstraintsmsEJaDk(), LazyLayoutMeasuredItemKt.updatedVisibleItems(valueOf == null ? valueOf.intValue() : 0, num == null ? num.intValue() : 0, calculateItemsOffsets, applyStickyItems), i32, i52, i, z2, !z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
             }
         }
-        i21 = m8227constrainHeightK40F9xA;
+        i21 = m7524constrainHeightK40F9xA;
         int i712 = i65;
         LazyListMeasuredItem lazyListMeasuredItem32 = (LazyListMeasuredItem) arrayDeque3.firstOrNull();
         if (lazyListMeasuredItem32 == null) {
@@ -374,9 +373,9 @@ public final class LazyListMeasureKt {
         final List applyStickyItems2 = LazyLayoutStickyItemsKt.applyStickyItems(stickyItemsPlacement, index, lazyListMeasuredItem42 == null ? lazyListMeasuredItem42.getIndex() : 0, calculateItemsOffsets, lazyListMeasuredItemProvider.getHeaderIndexes(), i3, i4, i712, i21, new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                LazyListMeasuredItem m1055getAndMeasure0kLqBqw$default4;
-                m1055getAndMeasure0kLqBqw$default4 = LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider.this, ((Integer) obj).intValue(), 0L, 2, null);
-                return m1055getAndMeasure0kLqBqw$default4;
+                LazyListMeasuredItem m932getAndMeasure0kLqBqw$default4;
+                m932getAndMeasure0kLqBqw$default4 = LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(LazyListMeasuredItemProvider.this, ((Integer) obj).intValue(), 0L, 2, null);
+                return m932getAndMeasure0kLqBqw$default4;
             }
         });
         Integer num2 = null;
@@ -391,19 +390,12 @@ public final class LazyListMeasureKt {
         return new LazyListMeasureResult(lazyListMeasuredItem2, i20, i66 >= i || i67 > i2, f6, function3.invoke(Integer.valueOf(i712), Integer.valueOf(i21), new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measureLazyList__s_dbAc$lambda$8;
-                measureLazyList__s_dbAc$lambda$8 = LazyListMeasureKt.measureLazyList__s_dbAc$lambda$8(MutableState.this, calculateItemsOffsets, applyStickyItems2, z4, (Placeable.PlacementScope) obj);
-                return measureLazyList__s_dbAc$lambda$8;
+                return LazyListMeasureKt.measureLazyList__s_dbAc$lambda$8(MutableState.this, calculateItemsOffsets, applyStickyItems2, z4, (Placeable.PlacementScope) obj);
             }
-        }), f5, z6, coroutineScope, density, lazyListMeasuredItemProvider.m1058getChildConstraintsmsEJaDk(), LazyLayoutMeasuredItemKt.updatedVisibleItems(valueOf == null ? valueOf.intValue() : 0, num2 == null ? num2.intValue() : 0, calculateItemsOffsets, applyStickyItems2), i32, i52, i, z2, !z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
+        }), f5, z6, coroutineScope, density, lazyListMeasuredItemProvider.m935getChildConstraintsmsEJaDk(), LazyLayoutMeasuredItemKt.updatedVisibleItems(valueOf == null ? valueOf.intValue() : 0, num2 == null ? num2.intValue() : 0, calculateItemsOffsets, applyStickyItems2), i32, i52, i, z2, !z ? Orientation.Vertical : Orientation.Horizontal, i4, i5, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measureLazyList__s_dbAc$lambda$2(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measureLazyList__s_dbAc$lambda$8(MutableState mutableState, final List list, final List list2, final boolean z, Placeable.PlacementScope placementScope) {
         placementScope.withMotionFrameOfReferencePlacement(new Function1() { // from class: androidx.compose.foundation.lazy.LazyListMeasureKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -413,7 +405,7 @@ public final class LazyListMeasureKt {
                 return measureLazyList__s_dbAc$lambda$8$0;
             }
         });
-        ObservableScopeInvalidator.m1146attachToScopeimpl(mutableState);
+        ObservableScopeInvalidator.m1005attachToScopeimpl(mutableState);
         return Unit.INSTANCE;
     }
 
@@ -430,7 +422,7 @@ public final class LazyListMeasureKt {
                     arrayList = new ArrayList();
                 }
                 lazyListMeasuredItemProvider2 = lazyListMeasuredItemProvider;
-                arrayList.add(LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, i3, 0L, 2, null));
+                arrayList.add(LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, i3, 0L, 2, null));
                 if (i3 == min) {
                     break;
                 }
@@ -452,7 +444,7 @@ public final class LazyListMeasureKt {
                     arrayList = new ArrayList();
                 }
                 lazyListMeasuredItemProvider3 = lazyListMeasuredItemProvider2;
-                arrayList.add(LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider3, intValue, 0L, 2, null));
+                arrayList.add(LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider3, intValue, 0L, 2, null));
             } else {
                 lazyListMeasuredItemProvider3 = lazyListMeasuredItemProvider2;
             }
@@ -474,7 +466,7 @@ public final class LazyListMeasureKt {
                     arrayList = new ArrayList();
                 }
                 lazyListMeasuredItemProvider2 = lazyListMeasuredItemProvider;
-                arrayList.add(LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, i4, 0L, 2, null));
+                arrayList.add(LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, i4, 0L, 2, null));
                 if (i4 == max) {
                     break;
                 }
@@ -493,7 +485,7 @@ public final class LazyListMeasureKt {
                     if (arrayList == null) {
                         arrayList = new ArrayList();
                     }
-                    arrayList.add(LazyListMeasuredItemProvider.m1055getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, intValue, 0L, 2, null));
+                    arrayList.add(LazyListMeasuredItemProvider.m932getAndMeasure0kLqBqw$default(lazyListMeasuredItemProvider2, intValue, 0L, 2, null));
                 }
                 if (i5 < 0) {
                     break;

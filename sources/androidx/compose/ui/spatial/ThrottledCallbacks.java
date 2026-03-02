@@ -21,8 +21,8 @@ public final class ThrottledCallbacks {
     private long windowSize;
     private final MutableIntObjectMap<Entry> rectChangedMap = IntObjectMapKt.mutableIntObjectMapOf();
     private long minDebounceDeadline = -1;
-    private long windowOffset = IntOffset.Companion.m8397getZeronOccac();
-    private long screenOffset = IntOffset.Companion.m8397getZeronOccac();
+    private long windowOffset = IntOffset.Companion.m7694getZeronOccac();
+    private long screenOffset = IntOffset.Companion.m7694getZeronOccac();
 
     private final long roundDownToMultipleOf8(long j) {
         return (j >> 3) << 3;
@@ -122,12 +122,12 @@ public final class ThrottledCallbacks {
         }
 
         /* renamed from: fire-9b-9wPM  reason: not valid java name */
-        public final void m7483fire9b9wPM(long j, long j2, long j3, long j4, float[] fArr) {
-            RelativeLayoutBounds m7484rectInfoForDg36KO4 = ThrottledCallbacksKt.m7484rectInfoForDg36KO4(this.node, j, j2, j3, j4, ThrottledCallbacks.this.getWindowSize(), fArr);
-            if (m7484rectInfoForDg36KO4 == null) {
+        public final void m6815fire9b9wPM(long j, long j2, long j3, long j4, float[] fArr) {
+            RelativeLayoutBounds m6816rectInfoForDg36KO4 = ThrottledCallbacksKt.m6816rectInfoForDg36KO4(this.node, j, j2, j3, j4, ThrottledCallbacks.this.getWindowSize(), fArr);
+            if (m6816rectInfoForDg36KO4 == null) {
                 return;
             }
-            this.callback.invoke(m7484rectInfoForDg36KO4);
+            this.callback.invoke(m6816rectInfoForDg36KO4);
         }
     }
 
@@ -152,22 +152,22 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: getWindowOffset-nOcc-ac  reason: not valid java name */
-    public final long m7478getWindowOffsetnOccac() {
+    public final long m6810getWindowOffsetnOccac() {
         return this.windowOffset;
     }
 
     /* renamed from: setWindowOffset--gyyYBs  reason: not valid java name */
-    public final void m7481setWindowOffsetgyyYBs(long j) {
+    public final void m6813setWindowOffsetgyyYBs(long j) {
         this.windowOffset = j;
     }
 
     /* renamed from: getScreenOffset-nOcc-ac  reason: not valid java name */
-    public final long m7476getScreenOffsetnOccac() {
+    public final long m6808getScreenOffsetnOccac() {
         return this.screenOffset;
     }
 
     /* renamed from: setScreenOffset--gyyYBs  reason: not valid java name */
-    public final void m7479setScreenOffsetgyyYBs(long j) {
+    public final void m6811setScreenOffsetgyyYBs(long j) {
         this.screenOffset = j;
     }
 
@@ -180,25 +180,25 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: getViewToWindowMatrix-3i98HWw  reason: not valid java name */
-    public final float[] m7477getViewToWindowMatrix3i98HWw() {
+    public final float[] m6809getViewToWindowMatrix3i98HWw() {
         return this.viewToWindowMatrix;
     }
 
     /* renamed from: setViewToWindowMatrix-Q8lPUPs  reason: not valid java name */
-    public final void m7480setViewToWindowMatrixQ8lPUPs(float[] fArr) {
+    public final void m6812setViewToWindowMatrixQ8lPUPs(float[] fArr) {
         this.viewToWindowMatrix = fArr;
     }
 
     /* renamed from: updateOffsets-LDcG7Xg  reason: not valid java name */
-    public final boolean m7482updateOffsetsLDcG7Xg(long j, long j2, float[] fArr, int i, int i2) {
+    public final boolean m6814updateOffsetsLDcG7Xg(long j, long j2, float[] fArr, int i, int i2) {
         boolean z;
-        if (IntOffset.m8385equalsimpl0(j2, this.windowOffset)) {
+        if (IntOffset.m7682equalsimpl0(j2, this.windowOffset)) {
             z = false;
         } else {
             this.windowOffset = j2;
             z = true;
         }
-        if (!IntOffset.m8385equalsimpl0(j, this.screenOffset)) {
+        if (!IntOffset.m7682equalsimpl0(j, this.screenOffset)) {
             this.screenOffset = j;
             z = true;
         }
@@ -296,7 +296,7 @@ public final class ThrottledCallbacks {
                         while (entry != null) {
                             int i4 = i3;
                             Entry entry2 = entry;
-                            throttledCallbacks.m7475fireWY9HvpM(entry2, j2, j3, fArr, j);
+                            throttledCallbacks.m6807fireWY9HvpM(entry2, j2, j3, fArr, j);
                             entry = entry2.getNext();
                             throttledCallbacks = this;
                             i3 = i4;
@@ -326,11 +326,11 @@ public final class ThrottledCallbacks {
         if (entry != null) {
             for (Entry entry2 = entry; entry2 != null; entry2 = entry2.getNext()) {
                 LayoutNode requireLayoutNode = DelegatableNodeKt.requireLayoutNode(entry2.getNode());
-                long m7464getOffsetFromRectListForBjo55l4 = LayoutNodeKt.requireOwner(requireLayoutNode).getRectManager().m7464getOffsetFromRectListForBjo55l4(requireLayoutNode);
-                long m7102getLastSizeYbymL2g$ui = requireLayoutNode.m7102getLastSizeYbymL2g$ui();
-                entry2.setTopLeft(m7464getOffsetFromRectListForBjo55l4);
-                entry2.setBottomRight(((IntOffset.m8386getXimpl(m7464getOffsetFromRectListForBjo55l4) + ((int) (m7102getLastSizeYbymL2g$ui >> 32))) << 32) | ((IntOffset.m8387getYimpl(m7464getOffsetFromRectListForBjo55l4) + ((int) (m7102getLastSizeYbymL2g$ui & 4294967295L))) & 4294967295L));
-                m7475fireWY9HvpM(entry2, j2, j3, fArr, j);
+                long m6796getOffsetFromRectListForBjo55l4 = LayoutNodeKt.requireOwner(requireLayoutNode).getRectManager().m6796getOffsetFromRectListForBjo55l4(requireLayoutNode);
+                long m6442getLastSizeYbymL2g$ui = requireLayoutNode.m6442getLastSizeYbymL2g$ui();
+                entry2.setTopLeft(m6796getOffsetFromRectListForBjo55l4);
+                entry2.setBottomRight(((IntOffset.m7683getXimpl(m6796getOffsetFromRectListForBjo55l4) + ((int) (m6442getLastSizeYbymL2g$ui >> 32))) << 32) | ((IntOffset.m7684getYimpl(m6796getOffsetFromRectListForBjo55l4) + ((int) (m6442getLastSizeYbymL2g$ui & 4294967295L))) & 4294967295L));
+                m6807fireWY9HvpM(entry2, j2, j3, fArr, j);
             }
         }
     }
@@ -365,7 +365,7 @@ public final class ThrottledCallbacks {
                             while (entry != null) {
                                 int i5 = i2;
                                 Entry entry2 = entry;
-                                j3 = m7474debounceEntryb8qMvQI(entry2, j4, j5, fArr, j, j3);
+                                j3 = m6806debounceEntryb8qMvQI(entry2, j4, j5, fArr, j, j3);
                                 i4 = i4;
                                 entry = entry2.getNext();
                                 i2 = i5;
@@ -397,7 +397,7 @@ public final class ThrottledCallbacks {
         if (entry3 != null) {
             long j8 = j3;
             while (entry3 != null) {
-                j8 = m7474debounceEntryb8qMvQI(entry3, j4, j5, fArr, j, j8);
+                j8 = m6806debounceEntryb8qMvQI(entry3, j4, j5, fArr, j, j8);
                 entry3 = entry3.getNext();
             }
             j3 = j8;
@@ -421,7 +421,7 @@ public final class ThrottledCallbacks {
         if (z && z4) {
             entry.setLastUninvokedFireMillis(-1L);
             entry.setLastInvokeMillis(j3);
-            entry.m7483fire9b9wPM(j, j2, this.windowOffset, this.screenOffset, this.viewToWindowMatrix);
+            entry.m6815fire9b9wPM(j, j2, this.windowOffset, this.screenOffset, this.viewToWindowMatrix);
         } else if (z2) {
         } else {
             entry.setLastUninvokedFireMillis(j3);
@@ -435,14 +435,14 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: fire-WY9HvpM  reason: not valid java name */
-    private final void m7475fireWY9HvpM(Entry entry, long j, long j2, float[] fArr, long j3) {
+    private final void m6807fireWY9HvpM(Entry entry, long j, long j2, float[] fArr, long j3) {
         long lastInvokeMillis = entry.getLastInvokeMillis();
         boolean z = j3 - lastInvokeMillis > entry.getThrottleMillis() || lastInvokeMillis == Long.MIN_VALUE;
         boolean z2 = entry.getDebounceMillis() == 0;
         entry.setLastUninvokedFireMillis(j3);
         if (z && z2) {
             entry.setLastInvokeMillis(j3);
-            entry.m7483fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
+            entry.m6815fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
         }
         if (z2) {
             return;
@@ -456,14 +456,14 @@ public final class ThrottledCallbacks {
     }
 
     /* renamed from: debounceEntry-b8qMvQI  reason: not valid java name */
-    private final long m7474debounceEntryb8qMvQI(Entry entry, long j, long j2, float[] fArr, long j3, long j4) {
+    private final long m6806debounceEntryb8qMvQI(Entry entry, long j, long j2, float[] fArr, long j3, long j4) {
         if (entry.getDebounceMillis() <= 0 || entry.getLastUninvokedFireMillis() <= 0) {
             return j4;
         }
         if (j3 - entry.getLastUninvokedFireMillis() >= entry.getDebounceMillis()) {
             entry.setLastInvokeMillis(j3);
             entry.setLastUninvokedFireMillis(-1L);
-            entry.m7483fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
+            entry.m6815fire9b9wPM(entry.getTopLeft(), entry.getBottomRight(), j, j2, fArr);
             return j4;
         }
         return Math.min(j4, entry.getLastUninvokedFireMillis() + entry.getDebounceMillis());

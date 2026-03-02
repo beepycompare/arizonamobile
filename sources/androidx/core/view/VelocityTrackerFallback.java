@@ -59,47 +59,49 @@ class VelocityTrackerFallback {
     private float getCurrentVelocity() {
         long[] jArr;
         long j;
-        int i = this.mDataPointsBufferSize;
+        int i;
+        int i2 = this.mDataPointsBufferSize;
+        if (i2 < 2) {
+            return 0.0f;
+        }
+        int i3 = this.mDataPointsBufferLastUsedIndex;
+        int i4 = ((i3 + 20) - (i2 - 1)) % 20;
+        long j2 = this.mEventTimes[i3];
+        while (true) {
+            jArr = this.mEventTimes;
+            j = jArr[i4];
+            int i5 = ((j2 - j) > RANGE_MS ? 1 : ((j2 - j) == RANGE_MS ? 0 : -1));
+            i = this.mDataPointsBufferSize;
+            if (i5 <= 0) {
+                break;
+            }
+            this.mDataPointsBufferSize = i - 1;
+            i4 = (i4 + 1) % 20;
+        }
         if (i < 2) {
             return 0.0f;
         }
-        int i2 = this.mDataPointsBufferLastUsedIndex;
-        int i3 = ((i2 + 20) - (i - 1)) % 20;
-        long j2 = this.mEventTimes[i2];
-        while (true) {
-            jArr = this.mEventTimes;
-            j = jArr[i3];
-            if (j2 - j <= RANGE_MS) {
-                break;
-            }
-            this.mDataPointsBufferSize--;
-            i3 = (i3 + 1) % 20;
-        }
-        int i4 = this.mDataPointsBufferSize;
-        if (i4 < 2) {
-            return 0.0f;
-        }
-        if (i4 == 2) {
-            int i5 = (i3 + 1) % 20;
-            long j3 = jArr[i5];
+        if (i == 2) {
+            int i6 = (i4 + 1) % 20;
+            long j3 = jArr[i6];
             if (j == j3) {
                 return 0.0f;
             }
-            return this.mMovements[i5] / ((float) (j3 - j));
+            return this.mMovements[i6] / ((float) (j3 - j));
         }
         float f = 0.0f;
-        int i6 = 0;
-        for (int i7 = 0; i7 < this.mDataPointsBufferSize - 1; i7++) {
-            int i8 = i7 + i3;
+        int i7 = 0;
+        for (int i8 = 0; i8 < this.mDataPointsBufferSize - 1; i8++) {
+            int i9 = i8 + i4;
             long[] jArr2 = this.mEventTimes;
-            long j4 = jArr2[i8 % 20];
-            int i9 = (i8 + 1) % 20;
-            if (jArr2[i9] != j4) {
-                i6++;
+            long j4 = jArr2[i9 % 20];
+            int i10 = (i9 + 1) % 20;
+            if (jArr2[i10] != j4) {
+                i7++;
                 float kineticEnergyToVelocity = kineticEnergyToVelocity(f);
-                float f2 = this.mMovements[i9] / ((float) (this.mEventTimes[i9] - j4));
+                float f2 = this.mMovements[i10] / ((float) (this.mEventTimes[i10] - j4));
                 f += (f2 - kineticEnergyToVelocity) * Math.abs(f2);
-                if (i6 == 1) {
+                if (i7 == 1) {
                     f *= 0.5f;
                 }
             }

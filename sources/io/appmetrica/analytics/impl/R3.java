@@ -8,8 +8,8 @@ public final class R3 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Q3 f759a;
-    public volatile C0747z9 b;
-    public volatile C0747z9 c;
+    public volatile C0746z9 b;
+    public volatile C0746z9 c;
 
     public R3() {
         this(new Q3());
@@ -20,8 +20,8 @@ public final class R3 {
             synchronized (this) {
                 if (this.b == null) {
                     this.f759a.getClass();
-                    HandlerThreadC0169cb a2 = C0747z9.a("IAA-CDE");
-                    this.b = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                    HandlerThreadC0168cb a2 = C0746z9.a("IAA-CDE");
+                    this.b = new C0746z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
             }
         }
@@ -33,8 +33,8 @@ public final class R3 {
             synchronized (this) {
                 if (this.c == null) {
                     this.f759a.getClass();
-                    HandlerThreadC0169cb a2 = C0747z9.a("IAA-CRS");
-                    this.c = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
+                    HandlerThreadC0168cb a2 = C0746z9.a("IAA-CRS");
+                    this.c = new C0746z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
             }
         }

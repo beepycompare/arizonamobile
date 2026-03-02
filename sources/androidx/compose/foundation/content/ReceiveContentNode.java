@@ -32,9 +32,7 @@ public final class ReceiveContentNode extends DelegatingNode implements Modifier
         delegate(ReceiveContentDragAndDropNode_androidKt.ReceiveContentDragAndDropNode(dynamicReceiveContentConfiguration, new Function1() { // from class: androidx.compose.foundation.content.ReceiveContentNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = ReceiveContentNode._init_$lambda$0(ReceiveContentNode.this, (DragAndDropEvent) obj);
-                return _init_$lambda$0;
+                return ReceiveContentNode._init_$lambda$0(ReceiveContentNode.this, (DragAndDropEvent) obj);
             }
         }));
     }
@@ -52,7 +50,7 @@ public final class ReceiveContentNode extends DelegatingNode implements Modifier
         return this.providedValues;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit _init_$lambda$0(ReceiveContentNode receiveContentNode, DragAndDropEvent dragAndDropEvent) {
         DragAndDropRequestPermission_androidKt.dragAndDropRequestPermission(receiveContentNode, dragAndDropEvent);
         return Unit.INSTANCE;

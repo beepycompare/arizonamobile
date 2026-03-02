@@ -96,20 +96,20 @@ import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes.dex */
 public final class NavigationDrawerKt {
     private static final float DrawerPositionalThreshold = 0.5f;
-    private static final float DrawerVelocityThreshold = Dp.m8258constructorimpl(400);
-    private static final float MinimumDrawerWidth = Dp.m8258constructorimpl(240);
-    private static final float PredictiveBackDrawerMaxScaleXDistanceGrow = Dp.m8258constructorimpl(12);
-    private static final float PredictiveBackDrawerMaxScaleXDistanceShrink = Dp.m8258constructorimpl(24);
-    private static final float PredictiveBackDrawerMaxScaleYDistance = Dp.m8258constructorimpl(48);
+    private static final float DrawerVelocityThreshold = Dp.m7555constructorimpl(400);
+    private static final float MinimumDrawerWidth = Dp.m7555constructorimpl(240);
+    private static final float PredictiveBackDrawerMaxScaleXDistanceGrow = Dp.m7555constructorimpl(12);
+    private static final float PredictiveBackDrawerMaxScaleXDistanceShrink = Dp.m7555constructorimpl(24);
+    private static final float PredictiveBackDrawerMaxScaleYDistance = Dp.m7555constructorimpl(48);
     private static final TweenSpec<Float> AnchoredDraggableDefaultAnimationSpec = new TweenSpec<>(256, 0, null, 6, null);
 
     public static final Unit DismissibleDrawerSheet_Snr_uVM$lambda$46(DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2715DismissibleDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2283DismissibleDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     public static final Unit DismissibleDrawerSheet_afqeVBk$lambda$45(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2716DismissibleDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2284DismissibleDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -128,22 +128,22 @@ public final class NavigationDrawerKt {
     }
 
     public static final Unit DrawerSheet_cm3T3N0$lambda$53(DrawerPredictiveBackState drawerPredictiveBackState, WindowInsets windowInsets, Modifier modifier, Shape shape, long j, long j2, float f, FloatProducer floatProducer, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2717DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, floatProducer, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2285DrawerSheetcm3T3N0(drawerPredictiveBackState, windowInsets, modifier, shape, j, j2, f, floatProducer, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     public static final Unit ModalDrawerSheet_Snr_uVM$lambda$44(DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2718ModalDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2286ModalDrawerSheetSnr_uVM(drawerState, modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     public static final Unit ModalDrawerSheet_afqeVBk$lambda$43(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2719ModalDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2287ModalDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$25(Function2 function2, Modifier modifier, DrawerState drawerState, boolean z, long j, Function2 function22, int i, int i2, Composer composer, int i3) {
-        m2720ModalNavigationDrawerFHprtrg(function2, modifier, drawerState, z, j, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2288ModalNavigationDrawerFHprtrg(function2, modifier, drawerState, z, j, function22, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -153,7 +153,7 @@ public final class NavigationDrawerKt {
     }
 
     public static final Unit PermanentDrawerSheet_afqeVBk$lambda$49(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, Function3 function3, int i, int i2, Composer composer, int i3) {
-        m2721PermanentDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m2289PermanentDrawerSheetafqeVBk(modifier, shape, j, j2, f, windowInsets, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -163,8 +163,12 @@ public final class NavigationDrawerKt {
     }
 
     public static final Unit Scrim_Bx497Mc$lambda$72(boolean z, Function0 function0, Function0 function02, long j, int i, Composer composer, int i2) {
-        m2722ScrimBx497Mc(z, function0, function02, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+        m2290ScrimBx497Mc(z, function0, function02, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
+    }
+
+    public static final /* synthetic */ float access$getDrawerVelocityThreshold$p() {
+        return DrawerVelocityThreshold;
     }
 
     public static final boolean rememberDrawerState$lambda$1$lambda$0(DrawerValue drawerValue) {
@@ -180,9 +184,7 @@ public final class NavigationDrawerKt {
                 rememberedValue = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda31
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        boolean rememberDrawerState$lambda$1$lambda$0;
-                        rememberDrawerState$lambda$1$lambda$0 = NavigationDrawerKt.rememberDrawerState$lambda$1$lambda$0((DrawerValue) obj);
-                        return Boolean.valueOf(rememberDrawerState$lambda$1$lambda$0);
+                        return Boolean.valueOf(NavigationDrawerKt.rememberDrawerState$lambda$1$lambda$0((DrawerValue) obj));
                     }
                 };
                 composer.updateRememberedValue(rememberedValue);
@@ -207,15 +209,13 @@ public final class NavigationDrawerKt {
             rememberedValue2 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda32
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    DrawerState rememberDrawerState$lambda$3$lambda$2;
-                    rememberDrawerState$lambda$3$lambda$2 = NavigationDrawerKt.rememberDrawerState$lambda$3$lambda$2(DrawerValue.this, function1);
-                    return rememberDrawerState$lambda$3$lambda$2;
+                    return NavigationDrawerKt.rememberDrawerState$lambda$3$lambda$2(DrawerValue.this, function1);
                 }
             };
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        DrawerState drawerState = (DrawerState) RememberSaveableKt.m4857rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        DrawerState drawerState = (DrawerState) RememberSaveableKt.m4213rememberSaveable(objArr, Saver, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -262,7 +262,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2720ModalNavigationDrawerFHprtrg(Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, DrawerState drawerState, boolean z, long j, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2) {
+    public static final void m2288ModalNavigationDrawerFHprtrg(Function2<? super Composer, ? super Integer, Unit> function2, Modifier modifier, DrawerState drawerState, boolean z, long j, final Function2<? super Composer, ? super Integer, Unit> function22, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         DrawerState drawerState2;
@@ -283,9 +283,9 @@ public final class NavigationDrawerKt {
         Object rememberedValue;
         final DrawerState drawerState5;
         int currentCompositeKeyHash;
-        Composer m4673constructorimpl;
+        Composer m4041constructorimpl;
         int currentCompositeKeyHash2;
-        Composer m4673constructorimpl2;
+        Composer m4041constructorimpl2;
         boolean changedInstance;
         Object rememberedValue2;
         boolean changed2;
@@ -297,7 +297,7 @@ public final class NavigationDrawerKt {
         boolean changed4;
         NavigationDrawerKt$ModalNavigationDrawer$2$6$1 rememberedValue6;
         int currentCompositeKeyHash3;
-        Composer m4673constructorimpl3;
+        Composer m4041constructorimpl3;
         int i5;
         final Function2<? super Composer, ? super Integer, Unit> function23 = function2;
         Composer startRestartGroup = composer.startRestartGroup(-1907430816);
@@ -389,7 +389,7 @@ public final class NavigationDrawerKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Strings.Companion companion2 = Strings.Companion;
-                    final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
+                    final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -430,9 +430,7 @@ public final class NavigationDrawerKt {
                                 rememberedValue = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda2
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        Unit ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10;
-                                        ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10(DrawerState.this, density, value2, value3, value);
-                                        return ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10;
+                                        return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10(DrawerState.this, density, value2, value3, value);
                                     }
                                 };
                                 drawerState5 = drawerState4;
@@ -465,15 +463,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (!m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 101870438, "C370@15180L17,373@15274L183,378@15482L70,371@15206L389,384@15704L601,396@16337L452,407@16801L1218,381@15604L2415:NavigationDrawer.kt#uh7d8r");
@@ -494,15 +492,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (!m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 343987054, "C370@15186L9:NavigationDrawer.kt#uh7d8r");
@@ -521,9 +519,7 @@ public final class NavigationDrawerKt {
                                 rememberedValue2 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda3
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13;
-                                        ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13(z7, drawerState5, coroutineScope);
-                                        return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13;
+                                        return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13(z7, drawerState5, coroutineScope);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -537,15 +533,15 @@ public final class NavigationDrawerKt {
                                 rememberedValue3 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda4
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        float ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15;
-                                        ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15(r1, drawerState5, mutableFloatState);
-                                        return Float.valueOf(ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15);
+                                        float calculateFraction;
+                                        calculateFraction = NavigationDrawerKt.calculateFraction(NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$8(mutableFloatState), r1, drawerState5.requireOffset$material3());
+                                        return Float.valueOf(calculateFraction);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue3);
                             }
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            m2722ScrimBx497Mc(isOpen, function0, (Function0) rememberedValue3, j5, startRestartGroup, (i3 >> 3) & 7168);
+                            m2290ScrimBx497Mc(isOpen, function0, (Function0) rememberedValue3, j5, startRestartGroup, (i3 >> 3) & 7168);
                             Modifier.Companion companion3 = Modifier.Companion;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2081510655, "CC(remember):NavigationDrawer.kt#9igjgp");
                             z6 = (i7 <= 256 && startRestartGroup.changed(drawerState5)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256;
@@ -554,9 +550,7 @@ public final class NavigationDrawerKt {
                                 rememberedValue4 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda5
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj2) {
-                                        IntOffset ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18;
-                                        ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState.this, (Density) obj2);
-                                        return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18;
+                                        return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState.this, (Density) obj2);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue4);
@@ -564,15 +558,13 @@ public final class NavigationDrawerKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             Modifier offset = OffsetKt.offset(companion3, (Function1) rememberedValue4);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2081530762, "CC(remember):NavigationDrawer.kt#9igjgp");
-                            changed3 = startRestartGroup.changed(m3697getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState5)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
+                            changed3 = startRestartGroup.changed(m3088getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState5)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
                             rememberedValue5 = startRestartGroup.rememberedValue();
                             if (!changed3 || rememberedValue5 == Composer.Companion.getEmpty()) {
                                 rememberedValue5 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda6
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj2) {
-                                        Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21;
-                                        ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(m3697getString2EP1pXo, drawerState5, coroutineScope, (SemanticsPropertyReceiver) obj2);
-                                        return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21;
+                                        return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(m3088getString2EP1pXo, drawerState5, coroutineScope, (SemanticsPropertyReceiver) obj2);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -605,15 +597,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl3, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl3, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                            if (!m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                             function23 = function2;
                             function23.invoke(startRestartGroup, Integer.valueOf((i9 >> 6) & 14));
                             startRestartGroup.endNode();
@@ -644,9 +636,7 @@ public final class NavigationDrawerKt {
                     rememberedValue = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10;
-                            ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10(DrawerState.this, density, value2, value3, value);
-                            return ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10;
+                            return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$11$lambda$10(DrawerState.this, density, value2, value3, value);
                         }
                     };
                     drawerState5 = drawerState4;
@@ -672,15 +662,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl.getInserting()) {
+                    if (!m4041constructorimpl.getInserting()) {
                     }
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash4);
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 101870438, "C370@15180L17,373@15274L183,378@15482L70,371@15206L389,384@15704L601,396@16337L452,407@16801L1218,381@15604L2415:NavigationDrawer.kt#uh7d8r");
@@ -697,15 +687,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl2.getInserting()) {
+                    if (!m4041constructorimpl2.getInserting()) {
                     }
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
-                    Updater.m4681setimpl(m4673constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
+                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance22 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 343987054, "C370@15186L9:NavigationDrawer.kt#uh7d8r");
@@ -725,9 +715,7 @@ public final class NavigationDrawerKt {
                     rememberedValue2 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda3
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13;
-                            ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13(z72, drawerState5, coroutineScope);
-                            return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13;
+                            return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$14$lambda$13(z72, drawerState5, coroutineScope);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -741,14 +729,14 @@ public final class NavigationDrawerKt {
                     rememberedValue3 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda4
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            float ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15;
-                            ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15(r1, drawerState5, mutableFloatState);
-                            return Float.valueOf(ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15);
+                            float calculateFraction;
+                            calculateFraction = NavigationDrawerKt.calculateFraction(NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$8(mutableFloatState), r1, drawerState5.requireOffset$material3());
+                            return Float.valueOf(calculateFraction);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue3);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                    m2722ScrimBx497Mc(isOpen2, function02, (Function0) rememberedValue3, j5, startRestartGroup, (i3 >> 3) & 7168);
+                    m2290ScrimBx497Mc(isOpen2, function02, (Function0) rememberedValue3, j5, startRestartGroup, (i3 >> 3) & 7168);
                     Modifier.Companion companion32 = Modifier.Companion;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2081510655, "CC(remember):NavigationDrawer.kt#9igjgp");
                     if (i7 <= 256) {
@@ -759,25 +747,21 @@ public final class NavigationDrawerKt {
                     rememberedValue4 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda5
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            IntOffset ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18;
-                            ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState.this, (Density) obj2);
-                            return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18;
+                            return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState.this, (Density) obj2);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue4);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Modifier offset2 = OffsetKt.offset(companion32, (Function1) rememberedValue4);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2081530762, "CC(remember):NavigationDrawer.kt#9igjgp");
-                    changed3 = startRestartGroup.changed(m3697getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState5)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
+                    changed3 = startRestartGroup.changed(m3088getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState5)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
                     rememberedValue5 = startRestartGroup.rememberedValue();
                     if (!changed3) {
                     }
                     rememberedValue5 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda6
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
-                            Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21;
-                            ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(m3697getString2EP1pXo, drawerState5, coroutineScope, (SemanticsPropertyReceiver) obj2);
-                            return ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21;
+                            return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(m3088getString2EP1pXo, drawerState5, coroutineScope, (SemanticsPropertyReceiver) obj2);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -805,15 +789,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl3, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl3, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash32 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl3.getInserting()) {
+                    if (!m4041constructorimpl3.getInserting()) {
                     }
-                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
-                    Updater.m4681setimpl(m4673constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
+                    Updater.m4049setimpl(m4041constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
                     function23 = function2;
                     function23.invoke(startRestartGroup, Integer.valueOf((i92 >> 6) & 14));
                     startRestartGroup.endNode();
@@ -843,9 +827,7 @@ public final class NavigationDrawerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj2, Object obj3) {
-                            Unit ModalNavigationDrawer_FHprtrg$lambda$25;
-                            ModalNavigationDrawer_FHprtrg$lambda$25 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$25(Function2.this, modifier2, drawerState3, z2, j3, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                            return ModalNavigationDrawer_FHprtrg$lambda$25;
+                            return NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$25(Function2.this, modifier2, drawerState3, z2, j3, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                         }
                     });
                     return;
@@ -906,19 +888,15 @@ public final class NavigationDrawerKt {
         return Unit.INSTANCE;
     }
 
-    public static final float ModalNavigationDrawer_FHprtrg$lambda$24$lambda$16$lambda$15(float f, DrawerState drawerState, MutableFloatState mutableFloatState) {
-        return calculateFraction(ModalNavigationDrawer_FHprtrg$lambda$8(mutableFloatState), f, drawerState.requireOffset$material3());
-    }
-
     public static final IntOffset ModalNavigationDrawer_FHprtrg$lambda$24$lambda$19$lambda$18(DrawerState drawerState, Density density) {
         int i;
         float currentOffset = drawerState.getCurrentOffset();
         if (Float.isNaN(currentOffset)) {
-            i = drawerState.isOpen() ? 0 : -density.mo458roundToPx0680j_4(DrawerDefaults.INSTANCE.m2414getMaximumDrawerWidthD9Ej5fM());
+            i = drawerState.isOpen() ? 0 : -density.mo399roundToPx0680j_4(DrawerDefaults.INSTANCE.m2048getMaximumDrawerWidthD9Ej5fM());
         } else {
             i = MathKt.roundToInt(currentOffset);
         }
-        return IntOffset.m8377boximpl(IntOffset.m8380constructorimpl((i << 32) | (0 & 4294967295L)));
+        return IntOffset.m7674boximpl(IntOffset.m7677constructorimpl((i << 32) | (0 & 4294967295L)));
     }
 
     public static final Unit ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21(String str, final DrawerState drawerState, final CoroutineScope coroutineScope, SemanticsPropertyReceiver semanticsPropertyReceiver) {
@@ -927,9 +905,7 @@ public final class NavigationDrawerKt {
             SemanticsPropertiesKt.dismiss$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20;
-                    ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20 = NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20(DrawerState.this, coroutineScope);
-                    return Boolean.valueOf(ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20);
+                    return Boolean.valueOf(NavigationDrawerKt.ModalNavigationDrawer_FHprtrg$lambda$24$lambda$22$lambda$21$lambda$20(DrawerState.this, coroutineScope));
                 }
             }, 1, null);
         }
@@ -992,17 +968,17 @@ public final class NavigationDrawerKt {
         Object rememberedValue2;
         Object rememberedValue3;
         int currentCompositeKeyHash;
-        Composer m4673constructorimpl;
+        Composer m4041constructorimpl;
         boolean z5;
         NavigationDrawerKt$DismissibleNavigationDrawer$2$2$1 rememberedValue4;
         int currentCompositeKeyHash2;
-        Composer m4673constructorimpl2;
+        Composer m4041constructorimpl2;
         boolean changed2;
         Object rememberedValue5;
         int currentCompositeKeyHash3;
-        Composer m4673constructorimpl3;
+        Composer m4041constructorimpl3;
         int currentCompositeKeyHash4;
-        Composer m4673constructorimpl4;
+        Composer m4041constructorimpl4;
         int i5;
         final Function2<? super Composer, ? super Integer, Unit> function23 = function22;
         Composer startRestartGroup = composer.startRestartGroup(1150092038);
@@ -1086,9 +1062,7 @@ public final class NavigationDrawerKt {
                                 rememberedValue2 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda21
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
-                                        Unit DismissibleNavigationDrawer$lambda$30$lambda$29;
-                                        DismissibleNavigationDrawer$lambda$30$lambda$29 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$30$lambda$29(DrawerState.this, density, value, value2);
-                                        return DismissibleNavigationDrawer$lambda$30$lambda$29;
+                                        return NavigationDrawerKt.DismissibleNavigationDrawer$lambda$30$lambda$29(DrawerState.this, density, value, value2);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1106,7 +1080,7 @@ public final class NavigationDrawerKt {
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                             Strings.Companion companion2 = Strings.Companion;
-                            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
+                            final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1128,15 +1102,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                            if (!m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -901227702, "C508@20959L1256,489@20282L1933:NavigationDrawer.kt#uh7d8r");
@@ -1164,27 +1138,25 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl2, measurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                            if (!m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1778119236, "C492@20374L452,491@20330L570,506@20917L17:NavigationDrawer.kt#uh7d8r");
                             Modifier.Companion companion3 = Modifier.Companion;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2020850041, "CC(remember):NavigationDrawer.kt#9igjgp");
-                            changed2 = startRestartGroup.changed(m3697getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
+                            changed2 = startRestartGroup.changed(m3088getString2EP1pXo) | ((i7 <= 256 && startRestartGroup.changed(drawerState2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope);
                             rememberedValue5 = startRestartGroup.rememberedValue();
                             if (!changed2 || rememberedValue5 == Composer.Companion.getEmpty()) {
                                 rememberedValue5 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda23
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj) {
-                                        Unit DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32;
-                                        DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32(m3697getString2EP1pXo, drawerState2, coroutineScope, (SemanticsPropertyReceiver) obj);
-                                        return DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32;
+                                        return NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32(m3088getString2EP1pXo, drawerState2, coroutineScope, (SemanticsPropertyReceiver) obj);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -1208,15 +1180,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash3 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl3.getInserting() || !Intrinsics.areEqual(m4673constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
-                                m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                                m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
+                            if (!m4041constructorimpl3.getInserting() || !Intrinsics.areEqual(m4041constructorimpl3.rememberedValue(), Integer.valueOf(currentCompositeKeyHash3))) {
+                                m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                                m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash3);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1897277909, "C504@20867L15:NavigationDrawer.kt#uh7d8r");
@@ -1244,15 +1216,15 @@ public final class NavigationDrawerKt {
                             } else {
                                 startRestartGroup.useNode();
                             }
-                            m4673constructorimpl4 = Updater.m4673constructorimpl(startRestartGroup);
-                            Updater.m4681setimpl(m4673constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                            Updater.m4681setimpl(m4673constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                            m4041constructorimpl4 = Updater.m4041constructorimpl(startRestartGroup);
+                            Updater.m4049setimpl(m4041constructorimpl4, maybeCachedBoxMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                            Updater.m4049setimpl(m4041constructorimpl4, currentCompositionLocalMap4, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                             Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash4 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                            if (!m4673constructorimpl4.getInserting() || !Intrinsics.areEqual(m4673constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
-                                m4673constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                                m4673constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
+                            if (!m4041constructorimpl4.getInserting() || !Intrinsics.areEqual(m4041constructorimpl4.rememberedValue(), Integer.valueOf(currentCompositeKeyHash4))) {
+                                m4041constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                                m4041constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash4);
                             }
-                            Updater.m4681setimpl(m4673constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
+                            Updater.m4049setimpl(m4041constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                             BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -272067686, "C506@20923L9:NavigationDrawer.kt#uh7d8r");
@@ -1312,9 +1284,7 @@ public final class NavigationDrawerKt {
                     rememberedValue2 = new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda21
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
-                            Unit DismissibleNavigationDrawer$lambda$30$lambda$29;
-                            DismissibleNavigationDrawer$lambda$30$lambda$29 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$30$lambda$29(DrawerState.this, density2, value3, value22);
-                            return DismissibleNavigationDrawer$lambda$30$lambda$29;
+                            return NavigationDrawerKt.DismissibleNavigationDrawer$lambda$30$lambda$29(DrawerState.this, density2, value3, value22);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -1329,7 +1299,7 @@ public final class NavigationDrawerKt {
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                     Strings.Companion companion22 = Strings.Companion;
-                    final String m3697getString2EP1pXo2 = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
+                    final String m3088getString2EP1pXo2 = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                     Object consume22 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -1347,15 +1317,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy4, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap5, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash5 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl.getInserting()) {
+                    if (!m4041constructorimpl.getInserting()) {
                     }
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash5);
-                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash5);
+                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier5, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance4 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -901227702, "C508@20959L1256,489@20282L1933:NavigationDrawer.kt#uh7d8r");
@@ -1380,28 +1350,26 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl2, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl2, measurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap22, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash22 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl2.getInserting()) {
+                    if (!m4041constructorimpl2.getInserting()) {
                     }
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
-                    Updater.m4681setimpl(m4673constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash22);
+                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier22, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1778119236, "C492@20374L452,491@20330L570,506@20917L17:NavigationDrawer.kt#uh7d8r");
                     Modifier.Companion companion32 = Modifier.Companion;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2020850041, "CC(remember):NavigationDrawer.kt#9igjgp");
-                    changed2 = startRestartGroup.changed(m3697getString2EP1pXo2) | ((i72 <= 256 && startRestartGroup.changed(drawerState2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope2);
+                    changed2 = startRestartGroup.changed(m3088getString2EP1pXo2) | ((i72 <= 256 && startRestartGroup.changed(drawerState2)) || (i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | startRestartGroup.changedInstance(coroutineScope2);
                     rememberedValue5 = startRestartGroup.rememberedValue();
                     if (!changed2) {
                     }
                     rememberedValue5 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda23
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32;
-                            DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32(m3697getString2EP1pXo2, drawerState2, coroutineScope2, (SemanticsPropertyReceiver) obj);
-                            return DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32;
+                            return NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32(m3088getString2EP1pXo2, drawerState2, coroutineScope2, (SemanticsPropertyReceiver) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue5);
@@ -1420,15 +1388,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl3 = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl3, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl3 = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl3, maybeCachedBoxMeasurePolicy22, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl3, currentCompositionLocalMap32, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash32 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl3.getInserting()) {
+                    if (!m4041constructorimpl3.getInserting()) {
                     }
-                    m4673constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
-                    m4673constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
-                    Updater.m4681setimpl(m4673constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl3.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash3));
+                    m4041constructorimpl3.apply(Integer.valueOf(currentCompositeKeyHash3), setCompositeKeyHash32);
+                    Updater.m4049setimpl(m4041constructorimpl3, materializeModifier32, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance22 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1897277909, "C504@20867L15:NavigationDrawer.kt#uh7d8r");
@@ -1452,15 +1420,15 @@ public final class NavigationDrawerKt {
                     startRestartGroup.startReusableNode();
                     if (!startRestartGroup.getInserting()) {
                     }
-                    m4673constructorimpl4 = Updater.m4673constructorimpl(startRestartGroup);
-                    Updater.m4681setimpl(m4673constructorimpl4, maybeCachedBoxMeasurePolicy32, ComposeUiNode.Companion.getSetMeasurePolicy());
-                    Updater.m4681setimpl(m4673constructorimpl4, currentCompositionLocalMap42, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                    m4041constructorimpl4 = Updater.m4041constructorimpl(startRestartGroup);
+                    Updater.m4049setimpl(m4041constructorimpl4, maybeCachedBoxMeasurePolicy32, ComposeUiNode.Companion.getSetMeasurePolicy());
+                    Updater.m4049setimpl(m4041constructorimpl4, currentCompositionLocalMap42, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash42 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                    if (!m4673constructorimpl4.getInserting()) {
+                    if (!m4041constructorimpl4.getInserting()) {
                     }
-                    m4673constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
-                    m4673constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash42);
-                    Updater.m4681setimpl(m4673constructorimpl4, materializeModifier42, ComposeUiNode.Companion.getSetModifier());
+                    m4041constructorimpl4.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash4));
+                    m4041constructorimpl4.apply(Integer.valueOf(currentCompositeKeyHash4), setCompositeKeyHash42);
+                    Updater.m4049setimpl(m4041constructorimpl4, materializeModifier42, ComposeUiNode.Companion.getSetModifier());
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance32 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -272067686, "C506@20923L9:NavigationDrawer.kt#uh7d8r");
@@ -1497,9 +1465,7 @@ public final class NavigationDrawerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda24
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj, Object obj2) {
-                            Unit DismissibleNavigationDrawer$lambda$39;
-                            DismissibleNavigationDrawer$lambda$39 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$39(Function2.this, modifier3, drawerState3, z3, function23, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                            return DismissibleNavigationDrawer$lambda$39;
+                            return NavigationDrawerKt.DismissibleNavigationDrawer$lambda$39(Function2.this, modifier3, drawerState3, z3, function23, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                         }
                     });
                     return;
@@ -1554,9 +1520,7 @@ public final class NavigationDrawerKt {
             SemanticsPropertiesKt.dismiss$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda25
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31;
-                    DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31 = NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31(DrawerState.this, coroutineScope);
-                    return Boolean.valueOf(DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31);
+                    return Boolean.valueOf(NavigationDrawerKt.DismissibleNavigationDrawer$lambda$38$lambda$36$lambda$33$lambda$32$lambda$31(DrawerState.this, coroutineScope));
                 }
             }, 1, null);
         }
@@ -1633,15 +1597,15 @@ public final class NavigationDrawerKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                    m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                    m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                    m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                    m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                 }
-                Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -688649266, "C563@23249L15,564@23273L17:NavigationDrawer.kt#uh7d8r");
@@ -1663,15 +1627,15 @@ public final class NavigationDrawerKt {
                 } else {
                     startRestartGroup.useNode();
                 }
-                Composer m4673constructorimpl2 = Updater.m4673constructorimpl(startRestartGroup);
-                Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Composer m4041constructorimpl2 = Updater.m4041constructorimpl(startRestartGroup);
+                Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                 Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                    m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                    m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                    m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                    m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                 }
-                Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1964035624, "C564@23279L9:NavigationDrawer.kt#uh7d8r");
@@ -1698,9 +1662,7 @@ public final class NavigationDrawerKt {
                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda26
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        Unit PermanentNavigationDrawer$lambda$42;
-                        PermanentNavigationDrawer$lambda$42 = NavigationDrawerKt.PermanentNavigationDrawer$lambda$42(Function2.this, modifier2, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                        return PermanentNavigationDrawer$lambda$42;
+                        return NavigationDrawerKt.PermanentNavigationDrawer$lambda$42(Function2.this, modifier2, function22, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -1733,7 +1695,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2719ModalDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2287ModalDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         Object obj2;
@@ -1880,10 +1842,10 @@ public final class NavigationDrawerKt {
                         }
                         if ((i2 & 8) != 0) {
                             i3 &= -7169;
-                            j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 6) & 14);
+                            j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 6) & 14);
                         }
                         if (i11 != 0) {
-                            f2 = DrawerDefaults.INSTANCE.m2415getModalDrawerElevationD9Ej5fM();
+                            f2 = DrawerDefaults.INSTANCE.m2049getModalDrawerElevationD9Ej5fM();
                         }
                         if ((i2 & 32) != 0) {
                             i3 &= -458753;
@@ -1902,7 +1864,7 @@ public final class NavigationDrawerKt {
                             int i12 = ((i3 >> 12) & 112) | i5;
                             int i13 = i3 << 6;
                             composer2 = startRestartGroup;
-                            m2717DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j8, j7, f4, null, function3, composer2, i12 | (i13 & 896) | (i13 & 7168) | (57344 & i13) | (458752 & i13) | (3670016 & i13) | (i13 & 234881024), 128);
+                            m2285DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j8, j7, f4, null, function3, composer2, i12 | (i13 & 896) | (i13 & 7168) | (57344 & i13) | (458752 & i13) | (3670016 & i13) | (i13 & 234881024), 128);
                             if (ComposerKt.isTraceInProgress()) {
                                 ComposerKt.traceEventEnd();
                             }
@@ -1929,7 +1891,7 @@ public final class NavigationDrawerKt {
                     int i122 = ((i3 >> 12) & 112) | i5;
                     int i132 = i3 << 6;
                     composer2 = startRestartGroup;
-                    m2717DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j8, j7, f4, null, function3, composer2, i122 | (i132 & 896) | (i132 & 7168) | (57344 & i132) | (458752 & i132) | (3670016 & i132) | (i132 & 234881024), 128);
+                    m2285DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j8, j7, f4, null, function3, composer2, i122 | (i132 & 896) | (i132 & 7168) | (57344 & i132) | (458752 & i132) | (3670016 & i132) | (i132 & 234881024), 128);
                     if (ComposerKt.isTraceInProgress()) {
                     }
                     windowInsets2 = windowInsets3;
@@ -1953,9 +1915,7 @@ public final class NavigationDrawerKt {
                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda16
                         @Override // kotlin.jvm.functions.Function2
                         public final Object invoke(Object obj4, Object obj5) {
-                            Unit ModalDrawerSheet_afqeVBk$lambda$43;
-                            ModalDrawerSheet_afqeVBk$lambda$43 = NavigationDrawerKt.ModalDrawerSheet_afqeVBk$lambda$43(Modifier.this, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                            return ModalDrawerSheet_afqeVBk$lambda$43;
+                            return NavigationDrawerKt.ModalDrawerSheet_afqeVBk$lambda$43(Modifier.this, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                         }
                     });
                     return;
@@ -2004,7 +1964,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2718ModalDrawerSheetSnr_uVM(final DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2286ModalDrawerSheetSnr_uVM(final DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         Object obj;
@@ -2127,11 +2087,11 @@ public final class NavigationDrawerKt {
                                 i3 &= -7169;
                             }
                             if ((i2 & 16) != 0) {
-                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                 i3 &= -57345;
                             }
                             if (i4 != 0) {
-                                f2 = DrawerDefaults.INSTANCE.m2415getModalDrawerElevationD9Ej5fM();
+                                f2 = DrawerDefaults.INSTANCE.m2049getModalDrawerElevationD9Ej5fM();
                             }
                             if ((i2 & 64) != 0) {
                                 modifier2 = companion;
@@ -2194,9 +2154,7 @@ public final class NavigationDrawerKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda10
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit ModalDrawerSheet_Snr_uVM$lambda$44;
-                                ModalDrawerSheet_Snr_uVM$lambda$44 = NavigationDrawerKt.ModalDrawerSheet_Snr_uVM$lambda$44(DrawerState.this, modifier2, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return ModalDrawerSheet_Snr_uVM$lambda$44;
+                                return NavigationDrawerKt.ModalDrawerSheet_Snr_uVM$lambda$44(DrawerState.this, modifier2, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -2262,7 +2220,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2716DismissibleDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2284DismissibleDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         Object obj;
         int i3;
         Object obj2;
@@ -2384,11 +2342,11 @@ public final class NavigationDrawerKt {
                                 i3 &= -897;
                             }
                             if ((i2 & 8) != 0) {
-                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 6) & 14);
+                                j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 6) & 14);
                                 i3 &= -7169;
                             }
                             if (i4 != 0) {
-                                f2 = DrawerDefaults.INSTANCE.m2413getDismissibleDrawerElevationD9Ej5fM();
+                                f2 = DrawerDefaults.INSTANCE.m2047getDismissibleDrawerElevationD9Ej5fM();
                             }
                             if ((i2 & 32) != 0) {
                                 i3 &= -458753;
@@ -2414,7 +2372,7 @@ public final class NavigationDrawerKt {
                         }
                         int i10 = i3 << 6;
                         composer2 = startRestartGroup;
-                        m2717DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j7, j8, f4, null, function3, composer2, ((i3 >> 12) & 112) | 6 | (i10 & 896) | (i10 & 7168) | (57344 & i10) | (458752 & i10) | (3670016 & i10) | (i10 & 234881024), 128);
+                        m2285DrawerSheetcm3T3N0(null, windowInsets3, modifier3, shape3, j7, j8, f4, null, function3, composer2, ((i3 >> 12) & 112) | 6 | (i10 & 896) | (i10 & 7168) | (57344 & i10) | (458752 & i10) | (3670016 & i10) | (i10 & 234881024), 128);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2439,9 +2397,7 @@ public final class NavigationDrawerKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda11
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj4, Object obj5) {
-                                Unit DismissibleDrawerSheet_afqeVBk$lambda$45;
-                                DismissibleDrawerSheet_afqeVBk$lambda$45 = NavigationDrawerKt.DismissibleDrawerSheet_afqeVBk$lambda$45(Modifier.this, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
-                                return DismissibleDrawerSheet_afqeVBk$lambda$45;
+                                return NavigationDrawerKt.DismissibleDrawerSheet_afqeVBk$lambda$45(Modifier.this, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj4, ((Integer) obj5).intValue());
                             }
                         });
                         return;
@@ -2509,7 +2465,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2715DismissibleDrawerSheetSnr_uVM(final DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2283DismissibleDrawerSheetSnr_uVM(final DrawerState drawerState, Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Modifier.Companion companion;
         int i4;
@@ -2598,11 +2554,11 @@ public final class NavigationDrawerKt {
                                     i3 &= -7169;
                                 }
                                 if ((i2 & 16) != 0) {
-                                    j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
+                                    j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i3 >> 9) & 14);
                                     i3 &= -57345;
                                 }
                                 if (i5 != 0) {
-                                    f2 = DrawerDefaults.INSTANCE.m2413getDismissibleDrawerElevationD9Ej5fM();
+                                    f2 = DrawerDefaults.INSTANCE.m2047getDismissibleDrawerElevationD9Ej5fM();
                                 }
                                 if ((i2 & 64) != 0) {
                                     modifier2 = companion;
@@ -2662,9 +2618,7 @@ public final class NavigationDrawerKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda17
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj2, Object obj3) {
-                                    Unit DismissibleDrawerSheet_Snr_uVM$lambda$46;
-                                    DismissibleDrawerSheet_Snr_uVM$lambda$46 = NavigationDrawerKt.DismissibleDrawerSheet_Snr_uVM$lambda$46(DrawerState.this, modifier2, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                                    return DismissibleDrawerSheet_Snr_uVM$lambda$46;
+                                    return NavigationDrawerKt.DismissibleDrawerSheet_Snr_uVM$lambda$46(DrawerState.this, modifier2, shape2, j5, j6, f3, windowInsets2, function3, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                                 }
                             });
                             return;
@@ -2751,7 +2705,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2721PermanentDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2289PermanentDrawerSheetafqeVBk(Modifier modifier, Shape shape, long j, long j2, float f, WindowInsets windowInsets, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         long j3;
@@ -2871,19 +2825,19 @@ public final class NavigationDrawerKt {
                                 j7 = j3;
                             }
                             if ((i2 & 8) != 0) {
-                                j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j7, startRestartGroup, (i3 >> 6) & 14);
+                                j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j7, startRestartGroup, (i3 >> 6) & 14);
                                 i3 &= -7169;
                             }
-                            float m2416getPermanentDrawerElevationD9Ej5fM = i4 != 0 ? DrawerDefaults.INSTANCE.m2416getPermanentDrawerElevationD9Ej5fM() : f2;
+                            float m2050getPermanentDrawerElevationD9Ej5fM = i4 != 0 ? DrawerDefaults.INSTANCE.m2050getPermanentDrawerElevationD9Ej5fM() : f2;
                             if ((i2 & 32) != 0) {
                                 i3 &= -458753;
                                 shape3 = rectangleShape;
-                                f4 = m2416getPermanentDrawerElevationD9Ej5fM;
+                                f4 = m2050getPermanentDrawerElevationD9Ej5fM;
                                 j8 = j4;
                                 i5 = 1877158612;
                                 windowInsets4 = DrawerDefaults.INSTANCE.getWindowInsets(startRestartGroup, 6);
                             } else {
-                                f4 = m2416getPermanentDrawerElevationD9Ej5fM;
+                                f4 = m2050getPermanentDrawerElevationD9Ej5fM;
                                 j8 = j4;
                                 windowInsets4 = windowInsets2;
                                 shape3 = rectangleShape;
@@ -2895,17 +2849,15 @@ public final class NavigationDrawerKt {
                             ComposerKt.traceEventStart(i5, i3, -1, "androidx.compose.material3.PermanentDrawerSheet (NavigationDrawer.kt:771)");
                         }
                         Strings.Companion companion2 = Strings.Companion;
-                        final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
+                        final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.navigation_menu), startRestartGroup, 0);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 63182258, "CC(remember):NavigationDrawer.kt#9igjgp");
-                        boolean changed = startRestartGroup.changed(m3697getString2EP1pXo);
+                        boolean changed = startRestartGroup.changed(m3088getString2EP1pXo);
                         Object rememberedValue = startRestartGroup.rememberedValue();
                         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                             rememberedValue = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda19
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj3) {
-                                    Unit PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47;
-                                    PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47 = NavigationDrawerKt.PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47(m3697getString2EP1pXo, (SemanticsPropertyReceiver) obj3);
-                                    return PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47;
+                                    return NavigationDrawerKt.PermanentDrawerSheet_afqeVBk$lambda$48$lambda$47(m3088getString2EP1pXo, (SemanticsPropertyReceiver) obj3);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue);
@@ -2915,7 +2867,7 @@ public final class NavigationDrawerKt {
                         composer2 = startRestartGroup;
                         Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function32 = obj2;
                         long j9 = j7;
-                        m2717DrawerSheetcm3T3N0(null, windowInsets4, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), shape3, j9, j8, f4, null, function32, composer2, ((i3 >> 12) & 112) | 6 | (i10 & 7168) | (57344 & i10) | (458752 & i10) | (3670016 & i10) | (i10 & 234881024), 128);
+                        m2285DrawerSheetcm3T3N0(null, windowInsets4, SemanticsModifierKt.semantics$default(companion, false, (Function1) rememberedValue, 1, null), shape3, j9, j8, f4, null, function32, composer2, ((i3 >> 12) & 112) | 6 | (i10 & 7168) | (57344 & i10) | (458752 & i10) | (3670016 & i10) | (i10 & 234881024), 128);
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -2940,9 +2892,7 @@ public final class NavigationDrawerKt {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda20
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj3, Object obj4) {
-                                Unit PermanentDrawerSheet_afqeVBk$lambda$49;
-                                PermanentDrawerSheet_afqeVBk$lambda$49 = NavigationDrawerKt.PermanentDrawerSheet_afqeVBk$lambda$49(Modifier.this, shape2, j5, j6, f3, windowInsets3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                return PermanentDrawerSheet_afqeVBk$lambda$49;
+                                return NavigationDrawerKt.PermanentDrawerSheet_afqeVBk$lambda$49(Modifier.this, shape2, j5, j6, f3, windowInsets3, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                             }
                         });
                         return;
@@ -3017,7 +2967,7 @@ public final class NavigationDrawerKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m2717DrawerSheetcm3T3N0(final DrawerPredictiveBackState drawerPredictiveBackState, final WindowInsets windowInsets, Modifier modifier, Shape shape, long j, long j2, float f, FloatProducer floatProducer, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public static final void m2285DrawerSheetcm3T3N0(final DrawerPredictiveBackState drawerPredictiveBackState, final WindowInsets windowInsets, Modifier modifier, Shape shape, long j, long j2, float f, FloatProducer floatProducer, final Function3<? super ColumnScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -3152,10 +3102,10 @@ public final class NavigationDrawerKt {
                                     i8 = i7;
                                 }
                                 if ((i2 & 32) != 0) {
-                                    j4 = ColorSchemeKt.m2216contentColorForek8zF_U(j3, startRestartGroup, (i8 >> 12) & 14);
+                                    j4 = ColorSchemeKt.m1902contentColorForek8zF_U(j3, startRestartGroup, (i8 >> 12) & 14);
                                     i8 &= -458753;
                                 }
-                                float m2416getPermanentDrawerElevationD9Ej5fM = i6 != 0 ? DrawerDefaults.INSTANCE.m2416getPermanentDrawerElevationD9Ej5fM() : f;
+                                float m2050getPermanentDrawerElevationD9Ej5fM = i6 != 0 ? DrawerDefaults.INSTANCE.m2050getPermanentDrawerElevationD9Ej5fM() : f;
                                 if ((i2 & 128) != 0) {
                                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, 493671010, "CC(remember):NavigationDrawer.kt#9igjgp");
                                     Object rememberedValue = startRestartGroup.rememberedValue();
@@ -3163,9 +3113,7 @@ public final class NavigationDrawerKt {
                                         rememberedValue = new FloatProducer() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda8
                                             @Override // androidx.compose.material3.internal.FloatProducer
                                             public final float invoke() {
-                                                float DrawerSheet_cm3T3N0$lambda$51$lambda$50;
-                                                DrawerSheet_cm3T3N0$lambda$51$lambda$50 = NavigationDrawerKt.DrawerSheet_cm3T3N0$lambda$51$lambda$50();
-                                                return DrawerSheet_cm3T3N0$lambda$51$lambda$50;
+                                                return NavigationDrawerKt.DrawerSheet_cm3T3N0$lambda$51$lambda$50();
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -3176,7 +3124,7 @@ public final class NavigationDrawerKt {
                                 } else {
                                     floatProducer3 = floatProducer;
                                 }
-                                f3 = m2416getPermanentDrawerElevationD9Ej5fM;
+                                f3 = m2050getPermanentDrawerElevationD9Ej5fM;
                                 j7 = j3;
                                 i9 = 12582912;
                             }
@@ -3189,8 +3137,8 @@ public final class NavigationDrawerKt {
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                            final float m4164getContainerWidthD9Ej5fM = NavigationDrawerTokens.INSTANCE.m4164getContainerWidthD9Ej5fM();
-                            final float mo464toPx0680j_4 = ((Density) consume).mo464toPx0680j_4(m4164getContainerWidthD9Ej5fM);
+                            final float m3548getContainerWidthD9Ej5fM = NavigationDrawerTokens.INSTANCE.m3548getContainerWidthD9Ej5fM();
+                            final float mo405toPx0680j_4 = ((Density) consume).mo405toPx0680j_4(m3548getContainerWidthD9Ej5fM);
                             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
                             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalLayoutDirection());
                             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -3206,7 +3154,7 @@ public final class NavigationDrawerKt {
                             final boolean z2 = z;
                             int i13 = i8 >> 6;
                             composer2 = startRestartGroup;
-                            SurfaceKt.m3083SurfaceT9BRK9s(SizeKt.fillMaxHeight$default(horizontalScaleUp(SizeKt.m980sizeInqDBjuR0$default(modifier3, MinimumDrawerWidth, 0.0f, m4164getContainerWidthD9Ej5fM, 0.0f, 10, null), floatProducer3, mo464toPx0680j_4, z).then(companion2), 0.0f, 1, null), shape3, j7, j8, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-315420087, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationDrawerKt$DrawerSheet$2
+                            SurfaceKt.m2569SurfaceT9BRK9s(SizeKt.fillMaxHeight$default(horizontalScaleUp(SizeKt.m868sizeInqDBjuR0$default(modifier3, MinimumDrawerWidth, 0.0f, m3548getContainerWidthD9Ej5fM, 0.0f, 10, null), floatProducer3, mo405toPx0680j_4, z).then(companion2), 0.0f, 1, null), shape3, j7, j8, f3, 0.0f, null, ComposableLambdaKt.rememberComposableLambda(-315420087, true, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationDrawerKt$DrawerSheet$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -3231,7 +3179,7 @@ public final class NavigationDrawerKt {
                                         companion3 = Modifier.Companion;
                                     }
                                     f4 = NavigationDrawerKt.MinimumDrawerWidth;
-                                    horizontalScaleDown = NavigationDrawerKt.horizontalScaleDown(SizeKt.m980sizeInqDBjuR0$default(Modifier.Companion, f4, 0.0f, m4164getContainerWidthD9Ej5fM, 0.0f, 10, null), floatProducer4, mo464toPx0680j_4, z2);
+                                    horizontalScaleDown = NavigationDrawerKt.horizontalScaleDown(SizeKt.m868sizeInqDBjuR0$default(Modifier.Companion, f4, 0.0f, m3548getContainerWidthD9Ej5fM, 0.0f, 10, null), floatProducer4, mo405toPx0680j_4, z2);
                                     Modifier windowInsetsPadding = WindowInsetsPaddingKt.windowInsetsPadding(horizontalScaleDown.then(companion3), windowInsets2);
                                     Function3<ColumnScope, Composer, Integer, Unit> function32 = function3;
                                     ComposerKt.sourceInformationMarkerStart(composer3, -483455358, "CC(Column)P(2,3,1)87@4442L61,88@4508L133:Column.kt#2w3rfo");
@@ -3251,15 +3199,15 @@ public final class NavigationDrawerKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
-                                    Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
+                                    Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -384672921, "C89@4556L9:Column.kt#2w3rfo");
                                     function32.invoke(ColumnScopeInstance.INSTANCE, composer3, 6);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
@@ -3296,9 +3244,7 @@ public final class NavigationDrawerKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda9
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj3, Object obj4) {
-                                    Unit DrawerSheet_cm3T3N0$lambda$53;
-                                    DrawerSheet_cm3T3N0$lambda$53 = NavigationDrawerKt.DrawerSheet_cm3T3N0$lambda$53(DrawerPredictiveBackState.this, windowInsets, modifier2, shape2, j5, j6, f2, floatProducer2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
-                                    return DrawerSheet_cm3T3N0$lambda$53;
+                                    return NavigationDrawerKt.DrawerSheet_cm3T3N0$lambda$53(DrawerPredictiveBackState.this, windowInsets, modifier2, shape2, j5, j6, f2, floatProducer2, function3, i, i2, (Composer) obj3, ((Integer) obj4).intValue());
                                 }
                             });
                             return;
@@ -3386,9 +3332,7 @@ public final class NavigationDrawerKt {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit horizontalScaleUp$lambda$54;
-                horizontalScaleUp$lambda$54 = NavigationDrawerKt.horizontalScaleUp$lambda$54(FloatProducer.this, f, z, (GraphicsLayerScope) obj);
-                return horizontalScaleUp$lambda$54;
+                return NavigationDrawerKt.horizontalScaleUp$lambda$54(FloatProducer.this, f, z, (GraphicsLayerScope) obj);
             }
         });
     }
@@ -3396,7 +3340,7 @@ public final class NavigationDrawerKt {
     public static final Unit horizontalScaleUp$lambda$54(FloatProducer floatProducer, float f, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float invoke = floatProducer.invoke();
         graphicsLayerScope.setScaleX(invoke > 0.0f ? (invoke / f) + 1.0f : 1.0f);
-        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
+        graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.5f));
         return Unit.INSTANCE;
     }
 
@@ -3404,9 +3348,7 @@ public final class NavigationDrawerKt {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit horizontalScaleDown$lambda$55;
-                horizontalScaleDown$lambda$55 = NavigationDrawerKt.horizontalScaleDown$lambda$55(FloatProducer.this, f, z, (GraphicsLayerScope) obj);
-                return horizontalScaleDown$lambda$55;
+                return NavigationDrawerKt.horizontalScaleDown$lambda$55(FloatProducer.this, f, z, (GraphicsLayerScope) obj);
             }
         });
     }
@@ -3414,7 +3356,7 @@ public final class NavigationDrawerKt {
     public static final Unit horizontalScaleDown$lambda$55(FloatProducer floatProducer, float f, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float invoke = floatProducer.invoke();
         graphicsLayerScope.setScaleX(invoke > 0.0f ? 1 / ((invoke / f) + 1.0f) : 1.0f);
-        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.0f));
+        graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.0f));
         return Unit.INSTANCE;
     }
 
@@ -3422,9 +3364,7 @@ public final class NavigationDrawerKt {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit predictiveBackDrawerContainer$lambda$56;
-                predictiveBackDrawerContainer$lambda$56 = NavigationDrawerKt.predictiveBackDrawerContainer$lambda$56(DrawerPredictiveBackState.this, z, (GraphicsLayerScope) obj);
-                return predictiveBackDrawerContainer$lambda$56;
+                return NavigationDrawerKt.predictiveBackDrawerContainer$lambda$56(DrawerPredictiveBackState.this, z, (GraphicsLayerScope) obj);
             }
         });
     }
@@ -3432,7 +3372,7 @@ public final class NavigationDrawerKt {
     public static final Unit predictiveBackDrawerContainer$lambda$56(DrawerPredictiveBackState drawerPredictiveBackState, boolean z, GraphicsLayerScope graphicsLayerScope) {
         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX(graphicsLayerScope, drawerPredictiveBackState));
         graphicsLayerScope.setScaleY(calculatePredictiveBackScaleY(graphicsLayerScope, drawerPredictiveBackState));
-        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 1.0f : 0.0f, 0.5f));
+        graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 1.0f : 0.0f, 0.5f));
         return Unit.INSTANCE;
     }
 
@@ -3440,9 +3380,7 @@ public final class NavigationDrawerKt {
         return GraphicsLayerModifierKt.graphicsLayer(modifier, new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit predictiveBackDrawerChild$lambda$57;
-                predictiveBackDrawerChild$lambda$57 = NavigationDrawerKt.predictiveBackDrawerChild$lambda$57(DrawerPredictiveBackState.this, z, (GraphicsLayerScope) obj);
-                return predictiveBackDrawerChild$lambda$57;
+                return NavigationDrawerKt.predictiveBackDrawerChild$lambda$57(DrawerPredictiveBackState.this, z, (GraphicsLayerScope) obj);
             }
         });
     }
@@ -3450,12 +3388,12 @@ public final class NavigationDrawerKt {
     public static final Unit predictiveBackDrawerChild$lambda$57(DrawerPredictiveBackState drawerPredictiveBackState, boolean z, GraphicsLayerScope graphicsLayerScope) {
         float calculatePredictiveBackScaleX = calculatePredictiveBackScaleX(graphicsLayerScope, drawerPredictiveBackState);
         graphicsLayerScope.setScaleX(calculatePredictiveBackScaleX == 0.0f ? 1.0f : calculatePredictiveBackScaleY(graphicsLayerScope, drawerPredictiveBackState) / calculatePredictiveBackScaleX);
-        graphicsLayerScope.mo5627setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.0f));
+        graphicsLayerScope.mo4973setTransformOrigin__ExYCQ(TransformOriginKt.TransformOrigin(z ? 0.0f : 1.0f, 0.0f));
         return Unit.INSTANCE;
     }
 
     private static final float calculatePredictiveBackScaleX(GraphicsLayerScope graphicsLayerScope, DrawerPredictiveBackState drawerPredictiveBackState) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() >> 32));
+        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() >> 32));
         if (Float.isNaN(intBitsToFloat) || intBitsToFloat == 0.0f) {
             return 1.0f;
         }
@@ -3463,7 +3401,7 @@ public final class NavigationDrawerKt {
     }
 
     private static final float calculatePredictiveBackScaleY(GraphicsLayerScope graphicsLayerScope, DrawerPredictiveBackState drawerPredictiveBackState) {
-        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L));
         if (Float.isNaN(intBitsToFloat) || intBitsToFloat == 0.0f) {
             return 1.0f;
         }
@@ -3522,9 +3460,9 @@ public final class NavigationDrawerKt {
             Object consume2 = startRestartGroup.consume(CompositionLocalsKt.getLocalDensity());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Density density = (Density) consume2;
-            floatRef.element = density.mo464toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceGrow);
-            floatRef2.element = density.mo464toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceShrink);
-            floatRef3.element = density.mo464toPx0680j_4(PredictiveBackDrawerMaxScaleYDistance);
+            floatRef.element = density.mo405toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceGrow);
+            floatRef2.element = density.mo405toPx0680j_4(PredictiveBackDrawerMaxScaleXDistanceShrink);
+            floatRef3.element = density.mo405toPx0680j_4(PredictiveBackDrawerMaxScaleYDistance);
             boolean isOpen = drawerState.isOpen();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1220265558, "CC(remember):NavigationDrawer.kt#9igjgp");
             int i5 = i4 & 14;
@@ -3564,9 +3502,7 @@ public final class NavigationDrawerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda22
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DrawerPredictiveBackHandler$lambda$62;
-                    DrawerPredictiveBackHandler$lambda$62 = NavigationDrawerKt.DrawerPredictiveBackHandler$lambda$62(DrawerState.this, function3, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DrawerPredictiveBackHandler$lambda$62;
+                    return NavigationDrawerKt.DrawerPredictiveBackHandler$lambda$62(DrawerState.this, function3, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -3730,7 +3666,7 @@ public final class NavigationDrawerKt {
                                     modifier3 = companion;
                                     z3 = false;
                                     z2 = true;
-                                    navigationDrawerItemColors3 = NavigationDrawerItemDefaults.INSTANCE.m2700colorsoq7We08(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 100663296, 255);
+                                    navigationDrawerItemColors3 = NavigationDrawerItemDefaults.INSTANCE.m2282colorsoq7We08(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, startRestartGroup, 100663296, 255);
                                     startRestartGroup = startRestartGroup;
                                     i3 = i10 & (-29360129);
                                 } else {
@@ -3756,9 +3692,7 @@ public final class NavigationDrawerKt {
                                 rememberedValue = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda14
                                     @Override // kotlin.jvm.functions.Function1
                                     public final Object invoke(Object obj7) {
-                                        Unit NavigationDrawerItem$lambda$64$lambda$63;
-                                        NavigationDrawerItem$lambda$64$lambda$63 = NavigationDrawerKt.NavigationDrawerItem$lambda$64$lambda$63((SemanticsPropertyReceiver) obj7);
-                                        return NavigationDrawerItem$lambda$64$lambda$63;
+                                        return NavigationDrawerKt.NavigationDrawerItem$lambda$64$lambda$63((SemanticsPropertyReceiver) obj7);
                                     }
                                 };
                                 startRestartGroup.updateRememberedValue(rememberedValue);
@@ -3770,7 +3704,7 @@ public final class NavigationDrawerKt {
                             final Function2<? super Composer, ? super Integer, Unit> function29 = function26;
                             Modifier modifier5 = modifier4;
                             Shape shape4 = shape3;
-                            SurfaceKt.m3084Surfaced85dljk(z, function0, SizeKt.fillMaxWidth$default(SizeKt.m964heightInVpY3zN4$default(SemanticsModifierKt.semantics$default(modifier4, z3, (Function1) rememberedValue, r2, null), NavigationDrawerTokens.INSTANCE.m4162getActiveIndicatorHeightD9Ej5fM(), 0.0f, 2, null), 0.0f, r2, null), false, shape4, navigationDrawerItemColors4.containerColor(z, startRestartGroup, (i11 & 14) | ((i3 >> 18) & 112)).getValue().m5434unboximpl(), 0L, 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource3, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-1173018444, r2, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationDrawerKt$NavigationDrawerItem$2
+                            SurfaceKt.m2570Surfaced85dljk(z, function0, SizeKt.fillMaxWidth$default(SizeKt.m852heightInVpY3zN4$default(SemanticsModifierKt.semantics$default(modifier4, z3, (Function1) rememberedValue, r2, null), NavigationDrawerTokens.INSTANCE.m3546getActiveIndicatorHeightD9Ej5fM(), 0.0f, 2, null), 0.0f, r2, null), false, shape4, navigationDrawerItemColors4.containerColor(z, startRestartGroup, (i11 & 14) | ((i3 >> 18) & 112)).getValue().m4782unboximpl(), 0L, 0.0f, 0.0f, (BorderStroke) null, mutableInteractionSource3, (Function2<? super Composer, ? super Integer, Unit>) ComposableLambdaKt.rememberComposableLambda(-1173018444, r2, new Function2<Composer, Integer, Unit>() { // from class: androidx.compose.material3.NavigationDrawerKt$NavigationDrawerItem$2
                                 @Override // kotlin.jvm.functions.Function2
                                 public /* bridge */ /* synthetic */ Unit invoke(Composer composer3, Integer num) {
                                     invoke(composer3, num.intValue());
@@ -3786,7 +3720,7 @@ public final class NavigationDrawerKt {
                                     if (ComposerKt.isTraceInProgress()) {
                                         ComposerKt.traceEventStart(-1173018444, i12, -1, "androidx.compose.material3.NavigationDrawerItem.<anonymous> (NavigationDrawer.kt:1090)");
                                     }
-                                    Modifier m932paddingqDBjuR0$default = PaddingKt.m932paddingqDBjuR0$default(Modifier.Companion, Dp.m8258constructorimpl(16), 0.0f, Dp.m8258constructorimpl(24), 0.0f, 10, null);
+                                    Modifier m822paddingqDBjuR0$default = PaddingKt.m822paddingqDBjuR0$default(Modifier.Companion, Dp.m7555constructorimpl(16), 0.0f, Dp.m7555constructorimpl(24), 0.0f, 10, null);
                                     Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                                     Function2<Composer, Integer, Unit> function210 = function28;
                                     NavigationDrawerItemColors navigationDrawerItemColors6 = navigationDrawerItemColors5;
@@ -3798,7 +3732,7 @@ public final class NavigationDrawerKt {
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                                     int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(composer3, 0);
                                     CompositionLocalMap currentCompositionLocalMap = composer3.getCurrentCompositionLocalMap();
-                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m932paddingqDBjuR0$default);
+                                    Modifier materializeModifier = ComposedModifierKt.materializeModifier(composer3, m822paddingqDBjuR0$default);
                                     Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                                     ComposerKt.sourceInformationMarkerStart(composer3, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                                     if (!(composer3.getApplier() instanceof Applier)) {
@@ -3810,23 +3744,23 @@ public final class NavigationDrawerKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m4673constructorimpl = Updater.m4673constructorimpl(composer3);
-                                    Updater.m4681setimpl(m4673constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4041constructorimpl = Updater.m4041constructorimpl(composer3);
+                                    Updater.m4049setimpl(m4041constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                                        m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                                        m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                                    if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                                        m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                                        m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                                     }
-                                    Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -407735110, "C101@5232L9:Row.kt#2w3rfo");
                                     RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2013922645, "C1099@46835L203:NavigationDrawer.kt#uh7d8r");
                                     if (function210 != null) {
                                         composer3.startReplaceGroup(-2013920011);
                                         ComposerKt.sourceInformation(composer3, "1095@46642L19,1096@46684L78,1097@46779L29");
-                                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(navigationDrawerItemColors6.iconColor(z4, composer3, 0).getValue().m5434unboximpl())), function210, composer3, ProvidedValue.$stable);
-                                        SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(12)), composer3, 6);
+                                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(navigationDrawerItemColors6.iconColor(z4, composer3, 0).getValue().m4782unboximpl())), function210, composer3, ProvidedValue.$stable);
+                                        SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12)), composer3, 6);
                                         composer3.endReplaceGroup();
                                     } else {
                                         composer3.startReplaceGroup(-2013707630);
@@ -3850,19 +3784,19 @@ public final class NavigationDrawerKt {
                                     } else {
                                         composer3.useNode();
                                     }
-                                    Composer m4673constructorimpl2 = Updater.m4673constructorimpl(composer3);
-                                    Updater.m4681setimpl(m4673constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                                    Updater.m4681setimpl(m4673constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                                    Composer m4041constructorimpl2 = Updater.m4041constructorimpl(composer3);
+                                    Updater.m4049setimpl(m4041constructorimpl2, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                                    Updater.m4049setimpl(m4041constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                                     Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash2 = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                                    if (m4673constructorimpl2.getInserting() || !Intrinsics.areEqual(m4673constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
-                                        m4673constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
-                                        m4673constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
+                                    if (m4041constructorimpl2.getInserting() || !Intrinsics.areEqual(m4041constructorimpl2.rememberedValue(), Integer.valueOf(currentCompositeKeyHash2))) {
+                                        m4041constructorimpl2.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash2));
+                                        m4041constructorimpl2.apply(Integer.valueOf(currentCompositeKeyHash2), setCompositeKeyHash2);
                                     }
-                                    Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                                    Updater.m4049setimpl(m4041constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                                     ComposerKt.sourceInformationMarkerStart(composer3, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                                     BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                                     ComposerKt.sourceInformationMarkerStart(composer3, -1767721817, "C1100@46902L19,1101@46944L80:NavigationDrawer.kt#uh7d8r");
-                                    CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(navigationDrawerItemColors6.textColor(z4, composer3, 0).getValue().m5434unboximpl())), function212, composer3, ProvidedValue.$stable);
+                                    CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(navigationDrawerItemColors6.textColor(z4, composer3, 0).getValue().m4782unboximpl())), function212, composer3, ProvidedValue.$stable);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     ComposerKt.sourceInformationMarkerEnd(composer3);
                                     composer3.endNode();
@@ -3872,8 +3806,8 @@ public final class NavigationDrawerKt {
                                     if (function211 != null) {
                                         composer3.startReplaceGroup(-2013454639);
                                         ComposerKt.sourceInformation(composer3, "1104@47088L29,1105@47158L20,1106@47201L80");
-                                        SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(12)), composer3, 6);
-                                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m5414boximpl(navigationDrawerItemColors6.badgeColor(z4, composer3, 0).getValue().m5434unboximpl())), function211, composer3, ProvidedValue.$stable);
+                                        SpacerKt.Spacer(SizeKt.m869width3ABfNKs(Modifier.Companion, Dp.m7555constructorimpl(12)), composer3, 6);
+                                        CompositionLocalKt.CompositionLocalProvider(ContentColorKt.getLocalContentColor().provides(Color.m4762boximpl(navigationDrawerItemColors6.badgeColor(z4, composer3, 0).getValue().m4782unboximpl())), function211, composer3, ProvidedValue.$stable);
                                         composer3.endReplaceGroup();
                                     } else {
                                         composer3.startReplaceGroup(-2013238414);
@@ -3915,9 +3849,7 @@ public final class NavigationDrawerKt {
                             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda15
                                 @Override // kotlin.jvm.functions.Function2
                                 public final Object invoke(Object obj7, Object obj8) {
-                                    Unit NavigationDrawerItem$lambda$65;
-                                    NavigationDrawerItem$lambda$65 = NavigationDrawerKt.NavigationDrawerItem$lambda$65(Function2.this, z, function0, modifier2, function24, function25, shape2, navigationDrawerItemColors2, mutableInteractionSource2, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
-                                    return NavigationDrawerItem$lambda$65;
+                                    return NavigationDrawerKt.NavigationDrawerItem$lambda$65(Function2.this, z, function0, modifier2, function24, function25, shape2, navigationDrawerItemColors2, mutableInteractionSource2, i, i2, (Composer) obj7, ((Integer) obj8).intValue());
                                 }
                             });
                             return;
@@ -4005,16 +3937,16 @@ public final class NavigationDrawerKt {
     }
 
     public static final Unit NavigationDrawerItem$lambda$64$lambda$63(SemanticsPropertyReceiver semanticsPropertyReceiver) {
-        SemanticsPropertiesKt.m7461setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m7449getTabo7Vup1c());
+        SemanticsPropertiesKt.m6793setRolekuIjeqM(semanticsPropertyReceiver, Role.Companion.m6781getTabo7Vup1c());
         return Unit.INSTANCE;
     }
 
-    private static final float calculateFraction(float f, float f2, float f3) {
+    public static final float calculateFraction(float f, float f2, float f3) {
         return RangesKt.coerceIn((f3 - f) / (f2 - f), 0.0f, 1.0f);
     }
 
     /* renamed from: Scrim-Bx497Mc */
-    private static final void m2722ScrimBx497Mc(final boolean z, final Function0<Unit> function0, final Function0<Float> function02, final long j, Composer composer, final int i) {
+    private static final void m2290ScrimBx497Mc(final boolean z, final Function0<Unit> function0, final Function0<Float> function02, final long j, Composer composer, final int i) {
         int i2;
         Modifier.Companion companion;
         Composer startRestartGroup = composer.startRestartGroup(2106487387);
@@ -4040,7 +3972,7 @@ public final class NavigationDrawerKt {
                 ComposerKt.traceEventStart(2106487387, i2, -1, "androidx.compose.material3.Scrim (NavigationDrawer.kt:1284)");
             }
             Strings.Companion companion2 = Strings.Companion;
-            final String m3697getString2EP1pXo = Strings_androidKt.m3697getString2EP1pXo(Strings.m3618constructorimpl(androidx.compose.ui.R.string.close_drawer), startRestartGroup, 0);
+            final String m3088getString2EP1pXo = Strings_androidKt.m3088getString2EP1pXo(Strings.m3009constructorimpl(androidx.compose.ui.R.string.close_drawer), startRestartGroup, 0);
             if (z) {
                 startRestartGroup.startReplaceGroup(598792893);
                 ComposerKt.sourceInformation(startRestartGroup, "1288@54256L35,1289@54344L187");
@@ -4056,15 +3988,13 @@ public final class NavigationDrawerKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 Modifier pointerInput = SuspendingPointerInputFilterKt.pointerInput(companion3, function0, (PointerInputEventHandler) rememberedValue);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1404793334, "CC(remember):NavigationDrawer.kt#9igjgp");
-                boolean changed = (i3 == 32) | startRestartGroup.changed(m3697getString2EP1pXo);
+                boolean changed = (i3 == 32) | startRestartGroup.changed(m3088getString2EP1pXo);
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
                 if (changed || rememberedValue2 == Composer.Companion.getEmpty()) {
                     rememberedValue2 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda27
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj) {
-                            Unit Scrim_Bx497Mc$lambda$69$lambda$68;
-                            Scrim_Bx497Mc$lambda$69$lambda$68 = NavigationDrawerKt.Scrim_Bx497Mc$lambda$69$lambda$68(m3697getString2EP1pXo, function0, (SemanticsPropertyReceiver) obj);
-                            return Scrim_Bx497Mc$lambda$69$lambda$68;
+                            return NavigationDrawerKt.Scrim_Bx497Mc$lambda$69$lambda$68(m3088getString2EP1pXo, function0, (SemanticsPropertyReceiver) obj);
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
@@ -4085,9 +4015,7 @@ public final class NavigationDrawerKt {
                 rememberedValue3 = new Function1() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda28
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit Scrim_Bx497Mc$lambda$71$lambda$70;
-                        Scrim_Bx497Mc$lambda$71$lambda$70 = NavigationDrawerKt.Scrim_Bx497Mc$lambda$71$lambda$70(j, function02, (DrawScope) obj);
-                        return Scrim_Bx497Mc$lambda$71$lambda$70;
+                        return NavigationDrawerKt.Scrim_Bx497Mc$lambda$71$lambda$70(j, function02, (DrawScope) obj);
                     }
                 };
                 startRestartGroup.updateRememberedValue(rememberedValue3);
@@ -4103,9 +4031,7 @@ public final class NavigationDrawerKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda29
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit Scrim_Bx497Mc$lambda$72;
-                    Scrim_Bx497Mc$lambda$72 = NavigationDrawerKt.Scrim_Bx497Mc$lambda$72(z, function0, function02, j, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return Scrim_Bx497Mc$lambda$72;
+                    return NavigationDrawerKt.Scrim_Bx497Mc$lambda$72(z, function0, function02, j, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -4116,9 +4042,7 @@ public final class NavigationDrawerKt {
         SemanticsPropertiesKt.onClick$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.material3.NavigationDrawerKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67;
-                Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67 = NavigationDrawerKt.Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67(Function0.this);
-                return Boolean.valueOf(Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67);
+                return Boolean.valueOf(NavigationDrawerKt.Scrim_Bx497Mc$lambda$69$lambda$68$lambda$67(Function0.this));
             }
         }, 1, null);
         return Unit.INSTANCE;
@@ -4130,7 +4054,7 @@ public final class NavigationDrawerKt {
     }
 
     public static final Unit Scrim_Bx497Mc$lambda$71$lambda$70(long j, Function0 function0, DrawScope drawScope) {
-        DrawScope.m5999drawRectnJ9OG0$default(drawScope, j, 0L, 0L, ((Number) function0.invoke()).floatValue(), null, null, 0, 118, null);
+        DrawScope.m5340drawRectnJ9OG0$default(drawScope, j, 0L, 0L, ((Number) function0.invoke()).floatValue(), null, null, 0, 118, null);
         return Unit.INSTANCE;
     }
 

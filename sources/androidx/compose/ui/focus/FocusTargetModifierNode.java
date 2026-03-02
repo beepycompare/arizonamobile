@@ -12,24 +12,24 @@ public interface FocusTargetModifierNode extends DelegatableNode {
     FocusState getFocusState();
 
     /* renamed from: getFocusability-LCbbffg  reason: not valid java name */
-    int mo5087getFocusabilityLCbbffg();
+    int mo4435getFocusabilityLCbbffg();
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Use the version accepting FocusDirection", replaceWith = @ReplaceWith(expression = "this.requestFocus()", imports = {}))
     /* synthetic */ boolean requestFocus();
 
     /* renamed from: requestFocus-3ESFkO8  reason: not valid java name */
-    boolean mo5088requestFocus3ESFkO8(int i);
+    boolean mo4436requestFocus3ESFkO8(int i);
 
     /* renamed from: setFocusability-josRg5g  reason: not valid java name */
-    void mo5089setFocusabilityjosRg5g(int i);
+    void mo4437setFocusabilityjosRg5g(int i);
 
     /* renamed from: requestFocus-3ESFkO8$default  reason: not valid java name */
-    static /* synthetic */ boolean m5086requestFocus3ESFkO8$default(FocusTargetModifierNode focusTargetModifierNode, int i, int i2, Object obj) {
+    static /* synthetic */ boolean m4434requestFocus3ESFkO8$default(FocusTargetModifierNode focusTargetModifierNode, int i, int i2, Object obj) {
         if (obj == null) {
             if ((i2 & 1) != 0) {
-                i = FocusDirection.Companion.m5059getEnterdhqQ8s();
+                i = FocusDirection.Companion.m4407getEnterdhqQ8s();
             }
-            return focusTargetModifierNode.mo5088requestFocus3ESFkO8(i);
+            return focusTargetModifierNode.mo4436requestFocus3ESFkO8(i);
         }
         throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: requestFocus-3ESFkO8");
     }

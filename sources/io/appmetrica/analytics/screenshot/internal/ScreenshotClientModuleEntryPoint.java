@@ -7,15 +7,15 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
 import io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig;
 import io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration;
 import io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigUpdateListener;
-import io.appmetrica.analytics.screenshot.impl.C0769h;
-import io.appmetrica.analytics.screenshot.impl.C0773l;
-import io.appmetrica.analytics.screenshot.impl.C0774m;
-import io.appmetrica.analytics.screenshot.impl.C0783w;
-import io.appmetrica.analytics.screenshot.impl.C0784x;
+import io.appmetrica.analytics.screenshot.impl.C0768h;
+import io.appmetrica.analytics.screenshot.impl.C0772l;
+import io.appmetrica.analytics.screenshot.impl.C0773m;
+import io.appmetrica.analytics.screenshot.impl.C0782w;
+import io.appmetrica.analytics.screenshot.impl.C0783x;
 import io.appmetrica.analytics.screenshot.impl.D;
 import io.appmetrica.analytics.screenshot.impl.F;
 import io.appmetrica.analytics.screenshot.impl.I;
-import io.appmetrica.analytics.screenshot.impl.InterfaceC0770i;
+import io.appmetrica.analytics.screenshot.impl.InterfaceC0769i;
 import io.appmetrica.analytics.screenshot.impl.T;
 import io.appmetrica.analytics.screenshot.impl.V;
 import kotlin.Metadata;
@@ -26,16 +26,16 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoint<D> {
 
     /* renamed from: a  reason: collision with root package name */
-    private C0773l f1490a;
+    private C0772l f1490a;
     private V d;
-    private final C0769h b = new C0769h();
+    private final C0768h b = new C0768h();
     private final ScreenshotClientModuleEntryPoint$configUpdateListener$1 c = new ServiceConfigUpdateListener<D>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$configUpdateListener$1
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigUpdateListener
         public void onServiceConfigUpdated(ModuleServiceConfig<D> moduleServiceConfig) {
-            C0773l c0773l;
+            C0772l c0772l;
             V v;
             V v2;
-            C0773l c0773l2;
+            C0772l c0772l2;
             ScreenshotClientModuleEntryPoint screenshotClientModuleEntryPoint = ScreenshotClientModuleEntryPoint.this;
             synchronized (screenshotClientModuleEntryPoint) {
                 D featuresConfig = moduleServiceConfig.getFeaturesConfig();
@@ -43,11 +43,11 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                 if (featuresConfig != null) {
                     boolean b = featuresConfig.b();
                     F a2 = featuresConfig.a();
-                    c0773l = new C0773l(b, a2 != null ? new C0774m(a2) : null);
+                    c0772l = new C0772l(b, a2 != null ? new C0773m(a2) : null);
                 } else {
-                    c0773l = null;
+                    c0772l = null;
                 }
-                screenshotClientModuleEntryPoint.f1490a = c0773l;
+                screenshotClientModuleEntryPoint.f1490a = c0772l;
                 v = screenshotClientModuleEntryPoint.d;
                 if (v != null) {
                     v2 = screenshotClientModuleEntryPoint.d;
@@ -56,8 +56,8 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     } else {
                         v3 = v2;
                     }
-                    c0773l2 = screenshotClientModuleEntryPoint.f1490a;
-                    v3.a(c0773l2);
+                    c0772l2 = screenshotClientModuleEntryPoint.f1490a;
+                    v3.a(c0772l2);
                 }
                 Unit unit = Unit.INSTANCE;
             }
@@ -67,9 +67,9 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
     private final ScreenshotClientModuleEntryPoint$serviceConfigExtensionConfiguration$1 f = new ServiceConfigExtensionConfiguration<D>() { // from class: io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint$serviceConfigExtensionConfiguration$1
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration
         public BundleToServiceConfigConverter<D> getBundleConverter() {
-            C0769h c0769h;
-            c0769h = ScreenshotClientModuleEntryPoint.this.b;
-            return c0769h;
+            C0768h c0768h;
+            c0768h = ScreenshotClientModuleEntryPoint.this.b;
+            return c0768h;
         }
 
         @Override // io.appmetrica.analytics.modulesapi.internal.client.ServiceConfigExtensionConfiguration
@@ -92,13 +92,13 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
-        InterfaceC0770i i;
+        InterfaceC0769i i;
         synchronized (this) {
-            C0784x c0784x = new C0784x(clientContext);
+            C0783x c0783x = new C0783x(clientContext);
             if (AndroidUtils.isApiAchieved(34)) {
-                i = new C0783w(clientContext, c0784x);
+                i = new C0782w(clientContext, c0783x);
             } else {
-                i = new I(clientContext, c0784x);
+                i = new I(clientContext, c0783x);
             }
             this.d = new V(i);
             Unit unit = Unit.INSTANCE;
@@ -114,11 +114,11 @@ public final class ScreenshotClientModuleEntryPoint extends ModuleClientEntryPoi
                     Intrinsics.throwUninitializedPropertyAccessException("screenshotCaptorsController");
                     v = null;
                 }
-                C0773l c0773l = this.f1490a;
+                C0772l c0772l = this.f1490a;
                 for (T t : v.f1456a) {
                     t.a();
                 }
-                v.a(c0773l);
+                v.a(c0772l);
             }
             Unit unit = Unit.INSTANCE;
         }

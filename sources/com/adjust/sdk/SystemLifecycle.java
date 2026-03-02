@@ -96,11 +96,13 @@ public class SystemLifecycle implements Application.ActivityLifecycleCallbacks {
             this.logMessageList.add("Cannot register activity lifecycle callbacks without context");
         } else {
             Context applicationContext = context.getApplicationContext();
-            if (!(applicationContext instanceof Application)) {
-                this.logMessageList.add("Cannot register activity lifecycle callbacks without application context as Application");
+            boolean z = applicationContext instanceof Application;
+            CopyOnWriteArrayList<String> copyOnWriteArrayList = this.logMessageList;
+            if (!z) {
+                copyOnWriteArrayList.add("Cannot register activity lifecycle callbacks without application context as Application");
                 return;
             }
-            this.logMessageList.add("Registering activity lifecycle callbacks");
+            copyOnWriteArrayList.add("Registering activity lifecycle callbacks");
             Application application = (Application) applicationContext;
             this.application = application;
             application.registerActivityLifecycleCallbacks(this);

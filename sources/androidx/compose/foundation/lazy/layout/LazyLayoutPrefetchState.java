@@ -41,7 +41,7 @@ public final class LazyLayoutPrefetchState {
         int getPlaceablesCount();
 
         /* renamed from: getSize-YEO4UFw  reason: not valid java name */
-        long mo1141getSizeYEO4UFw(int i);
+        long mo1003getSizeYEO4UFw(int i);
     }
 
     private static /* synthetic */ void getOnNestedPrefetch$annotations() {
@@ -131,33 +131,33 @@ public final class LazyLayoutPrefetchState {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: schedulePrecompositionAndPremeasure-VKLhPVY$default  reason: not valid java name */
-    public static /* synthetic */ PrefetchHandle m1136schedulePrecompositionAndPremeasureVKLhPVY$default(LazyLayoutPrefetchState lazyLayoutPrefetchState, int i, long j, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ PrefetchHandle m998schedulePrecompositionAndPremeasureVKLhPVY$default(LazyLayoutPrefetchState lazyLayoutPrefetchState, int i, long j, Function1 function1, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             function1 = null;
         }
-        return lazyLayoutPrefetchState.m1138schedulePrecompositionAndPremeasureVKLhPVY(i, j, function1);
+        return lazyLayoutPrefetchState.m1000schedulePrecompositionAndPremeasureVKLhPVY(i, j, function1);
     }
 
     /* renamed from: schedulePrecompositionAndPremeasure-VKLhPVY  reason: not valid java name */
-    public final PrefetchHandle m1138schedulePrecompositionAndPremeasureVKLhPVY(int i, long j, Function1<? super PrefetchResultScope, Unit> function1) {
-        return m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, j, true, function1);
+    public final PrefetchHandle m1000schedulePrecompositionAndPremeasureVKLhPVY(int i, long j, Function1<? super PrefetchResultScope, Unit> function1) {
+        return m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, j, true, function1);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: schedulePrecompositionAndPremeasure-_EkL_-Y$foundation$default  reason: not valid java name */
-    public static /* synthetic */ PrefetchHandle m1137schedulePrecompositionAndPremeasure_EkL_Y$foundation$default(LazyLayoutPrefetchState lazyLayoutPrefetchState, int i, long j, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ PrefetchHandle m999schedulePrecompositionAndPremeasure_EkL_Y$foundation$default(LazyLayoutPrefetchState lazyLayoutPrefetchState, int i, long j, boolean z, Function1 function1, int i2, Object obj) {
         Function1<? super PrefetchResultScope, Unit> function12 = function1;
         if ((i2 & 8) != 0) {
             function12 = null;
         }
-        return lazyLayoutPrefetchState.m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, j, z, function12);
+        return lazyLayoutPrefetchState.m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(i, j, z, function12);
     }
 
     /* renamed from: schedulePrecompositionAndPremeasure-_EkL_-Y$foundation  reason: not valid java name */
-    public final PrefetchHandle m1139schedulePrecompositionAndPremeasure_EkL_Y$foundation(int i, long j, boolean z, Function1<? super PrefetchResultScope, Unit> function1) {
-        PrefetchHandle m1157schedulePremeasurem8Kt_7k;
+    public final PrefetchHandle m1001schedulePrecompositionAndPremeasure_EkL_Y$foundation(int i, long j, boolean z, Function1<? super PrefetchResultScope, Unit> function1) {
+        PrefetchHandle m1016schedulePremeasurem8Kt_7k;
         PrefetchHandleProvider prefetchHandleProvider = this.prefetchHandleProvider;
-        return (prefetchHandleProvider == null || (m1157schedulePremeasurem8Kt_7k = prefetchHandleProvider.m1157schedulePremeasurem8Kt_7k(i, j, this.prefetchMetrics, z, function1)) == null) ? DummyHandle.INSTANCE : m1157schedulePremeasurem8Kt_7k;
+        return (prefetchHandleProvider == null || (m1016schedulePremeasurem8Kt_7k = prefetchHandleProvider.m1016schedulePremeasurem8Kt_7k(i, j, this.prefetchMetrics, z, function1)) == null) ? DummyHandle.INSTANCE : m1016schedulePremeasurem8Kt_7k;
     }
 
     public final List<PrefetchRequest> collectNestedPrefetchRequests$foundation() {
@@ -203,12 +203,12 @@ public final class LazyLayoutPrefetchState {
 
         @Override // androidx.compose.foundation.lazy.layout.NestedPrefetchScope
         /* renamed from: schedulePrecompositionAndPremeasure-0kLqBqw  reason: not valid java name */
-        public void mo1140schedulePrecompositionAndPremeasure0kLqBqw(int i, long j) {
+        public void mo1002schedulePrecompositionAndPremeasure0kLqBqw(int i, long j) {
             PrefetchHandleProvider prefetchHandleProvider$foundation = LazyLayoutPrefetchState.this.getPrefetchHandleProvider$foundation();
             if (prefetchHandleProvider$foundation == null) {
                 return;
             }
-            this._requests.add(prefetchHandleProvider$foundation.m1156createNestedPrefetchRequestVKLhPVY(i, j, LazyLayoutPrefetchState.this.prefetchMetrics));
+            this._requests.add(prefetchHandleProvider$foundation.m1015createNestedPrefetchRequestVKLhPVY(i, j, LazyLayoutPrefetchState.this.prefetchMetrics));
         }
     }
 }

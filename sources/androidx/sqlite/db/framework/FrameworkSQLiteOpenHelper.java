@@ -61,9 +61,7 @@ public final class FrameworkSQLiteOpenHelper implements SupportSQLiteOpenHelper 
         this.lazyDelegate = LazyKt.lazy(new Function0() { // from class: androidx.sqlite.db.framework.FrameworkSQLiteOpenHelper$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                FrameworkSQLiteOpenHelper.OpenHelper lazyDelegate$lambda$0;
-                lazyDelegate$lambda$0 = FrameworkSQLiteOpenHelper.lazyDelegate$lambda$0(FrameworkSQLiteOpenHelper.this);
-                return lazyDelegate$lambda$0;
+                return FrameworkSQLiteOpenHelper.lazyDelegate$lambda$0(FrameworkSQLiteOpenHelper.this);
             }
         });
     }
@@ -72,7 +70,7 @@ public final class FrameworkSQLiteOpenHelper implements SupportSQLiteOpenHelper 
         this(context, str, callback, (i & 8) != 0 ? false : z, (i & 16) != 0 ? false : z2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final OpenHelper lazyDelegate$lambda$0(FrameworkSQLiteOpenHelper frameworkSQLiteOpenHelper) {
         OpenHelper openHelper;
         if (frameworkSQLiteOpenHelper.name != null && frameworkSQLiteOpenHelper.useNoBackupDirectory) {
@@ -205,7 +203,7 @@ public final class FrameworkSQLiteOpenHelper implements SupportSQLiteOpenHelper 
             this.lock = new ProcessLock(str2, context.getCacheDir(), false);
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void _init_$lambda$0(SupportSQLiteOpenHelper.Callback callback, DBRefHolder dBRefHolder, SQLiteDatabase sQLiteDatabase) {
             Companion companion = Companion;
             Intrinsics.checkNotNull(sQLiteDatabase);

@@ -254,7 +254,14 @@ public final class CollapsingTextHelper {
         if (i2 == 17 || (i2 & 7) == 1) {
             return (i / 2.0f) - (this.collapsedTextWidth / 2.0f);
         }
-        return ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) ? this.isRtl ? this.collapsedBounds.left : this.collapsedBounds.right - this.collapsedTextWidth : this.isRtl ? this.collapsedBounds.right - this.collapsedTextWidth : this.collapsedBounds.left;
+        if ((i2 & GravityCompat.END) == 8388613 || (i2 & 5) == 5) {
+            boolean z = this.isRtl;
+            Rect rect = this.collapsedBounds;
+            return z ? rect.left : rect.right - this.collapsedTextWidth;
+        }
+        boolean z2 = this.isRtl;
+        Rect rect2 = this.collapsedBounds;
+        return z2 ? rect2.right - this.collapsedTextWidth : rect2.left;
     }
 
     private float getCollapsedTextRightBound(RectF rectF, int i, int i2) {
@@ -588,17 +595,22 @@ public final class CollapsingTextHelper {
         }
         setCollapsedTextBlend(1.0f - lerp(0.0f, 1.0f, 1.0f - f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         setExpandedTextBlend(lerp(1.0f, 0.0f, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
-        if (this.collapsedTextColor != this.expandedTextColor) {
-            this.textPaint.setColor(blendARGB(getCurrentExpandedTextColor(), getCurrentCollapsedTextColor(), f2));
+        ColorStateList colorStateList = this.collapsedTextColor;
+        ColorStateList colorStateList2 = this.expandedTextColor;
+        TextPaint textPaint = this.textPaint;
+        if (colorStateList != colorStateList2) {
+            textPaint.setColor(blendARGB(getCurrentExpandedTextColor(), getCurrentCollapsedTextColor(), f2));
         } else {
-            this.textPaint.setColor(getCurrentCollapsedTextColor());
+            textPaint.setColor(getCurrentCollapsedTextColor());
         }
         float f3 = this.collapsedLetterSpacing;
         float f4 = this.expandedLetterSpacing;
-        if (f3 != f4) {
-            this.textPaint.setLetterSpacing(lerp(f4, f3, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+        int i = (f3 > f4 ? 1 : (f3 == f4 ? 0 : -1));
+        TextPaint textPaint2 = this.textPaint;
+        if (i != 0) {
+            textPaint2.setLetterSpacing(lerp(f4, f3, f, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         } else {
-            this.textPaint.setLetterSpacing(f3);
+            textPaint2.setLetterSpacing(f3);
         }
         this.currentShadowRadius = lerp(this.expandedShadowRadius, this.collapsedShadowRadius, f, null);
         this.currentShadowDx = lerp(this.expandedShadowDx, this.collapsedShadowDx, f, null);
@@ -609,8 +621,8 @@ public final class CollapsingTextHelper {
         if (this.fadeModeEnabled) {
             this.textPaint.setAlpha((int) (calculateFadeModeTextAlpha(f) * this.textPaint.getAlpha()));
             if (Build.VERSION.SDK_INT >= 31) {
-                TextPaint textPaint = this.textPaint;
-                textPaint.setShadowLayer(this.currentShadowRadius, this.currentShadowDx, this.currentShadowDy, MaterialColors.compositeARGBWithAlpha(this.currentShadowColor, textPaint.getAlpha()));
+                TextPaint textPaint3 = this.textPaint;
+                textPaint3.setShadowLayer(this.currentShadowRadius, this.currentShadowDx, this.currentShadowDy, MaterialColors.compositeARGBWithAlpha(this.currentShadowColor, textPaint3.getAlpha()));
             }
         }
         this.view.postInvalidateOnAnimation();
@@ -650,13 +662,12 @@ public final class CollapsingTextHelper {
     private void calculateBaseOffsets(boolean z) {
         StaticLayout staticLayout;
         float measureTextWidth;
-        CharSequence charSequence;
         calculateUsingTextSize(1.0f, z);
         if (this.textToDraw != null && this.textLayout != null) {
-            if (shouldTruncateCollapsedToSingleLine()) {
-                charSequence = TextUtils.ellipsize(this.textToDraw, this.textPaint, this.textLayout.getWidth(), this.titleTextEllipsize);
-            } else {
-                charSequence = this.textToDraw;
+            boolean shouldTruncateCollapsedToSingleLine = shouldTruncateCollapsedToSingleLine();
+            CharSequence charSequence = this.textToDraw;
+            if (shouldTruncateCollapsedToSingleLine) {
+                charSequence = TextUtils.ellipsize(charSequence, this.textPaint, this.textLayout.getWidth(), this.titleTextEllipsize);
             }
             this.textToDrawCollapsed = charSequence;
         }
@@ -710,20 +721,26 @@ public final class CollapsingTextHelper {
         this.expandedLineCount = staticLayout3 != null ? staticLayout3.getLineCount() : 0;
         int absoluteGravity2 = Gravity.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0);
         int i3 = absoluteGravity2 & 112;
-        if (i3 == 48) {
-            this.expandedDrawY = this.expandedBounds.top;
-        } else if (i3 != 80) {
-            this.expandedDrawY = this.expandedBounds.centerY() - (height / 2.0f);
+        if (i3 != 48) {
+            Rect rect2 = this.expandedBounds;
+            if (i3 != 80) {
+                this.expandedDrawY = rect2.centerY() - (height / 2.0f);
+            } else {
+                this.expandedDrawY = (rect2.bottom - height) + (this.alignBaselineAtBottom ? this.textPaint.descent() : 0.0f);
+            }
         } else {
-            this.expandedDrawY = (this.expandedBounds.bottom - height) + (this.alignBaselineAtBottom ? this.textPaint.descent() : 0.0f);
+            this.expandedDrawY = this.expandedBounds.top;
         }
         int i4 = absoluteGravity2 & GravityCompat.RELATIVE_HORIZONTAL_GRAVITY_MASK;
         if (i4 == 1) {
             this.expandedDrawX = this.expandedBounds.centerX() - (measureTextWidth / 2.0f);
-        } else if (i4 == 5) {
-            this.expandedDrawX = this.expandedBounds.right - measureTextWidth;
         } else {
-            this.expandedDrawX = this.expandedBounds.left;
+            Rect rect3 = this.expandedBounds;
+            if (i4 == 5) {
+                this.expandedDrawX = rect3.right - measureTextWidth;
+            } else {
+                this.expandedDrawX = rect3.left;
+            }
         }
         setInterpolatedTextSize(this.expandedFraction);
     }
@@ -733,11 +750,13 @@ public final class CollapsingTextHelper {
     }
 
     private void interpolateBounds(float f) {
-        if (this.fadeModeEnabled) {
-            this.currentBounds.set(f < this.fadeModeThresholdFraction ? this.expandedBounds : this.collapsedBounds);
+        boolean z = this.fadeModeEnabled;
+        RectF rectF = this.currentBounds;
+        if (z) {
+            rectF.set(f < this.fadeModeThresholdFraction ? this.expandedBounds : this.collapsedBounds);
             return;
         }
-        this.currentBounds.left = lerp(this.expandedBounds.left, this.collapsedBounds.left, f, this.positionInterpolator);
+        rectF.left = lerp(this.expandedBounds.left, this.collapsedBounds.left, f, this.positionInterpolator);
         this.currentBounds.top = lerp(this.expandedDrawY, this.collapsedDrawY, f, this.positionInterpolator);
         this.currentBounds.right = lerp(this.expandedBounds.right, this.collapsedBounds.right, f, this.positionInterpolator);
         this.currentBounds.bottom = lerp(this.expandedBounds.bottom, this.collapsedBounds.bottom, f, this.positionInterpolator);
@@ -920,10 +939,11 @@ public final class CollapsingTextHelper {
 
     private Layout.Alignment getMultilineTextLayoutAlignment() {
         int absoluteGravity = Gravity.getAbsoluteGravity(this.expandedTextGravity, this.isRtl ? 1 : 0) & 7;
-        if (absoluteGravity != 1) {
-            return absoluteGravity != 5 ? this.isRtl ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL : this.isRtl ? Layout.Alignment.ALIGN_NORMAL : Layout.Alignment.ALIGN_OPPOSITE;
+        if (absoluteGravity == 1) {
+            return Layout.Alignment.ALIGN_CENTER;
         }
-        return Layout.Alignment.ALIGN_CENTER;
+        boolean z = this.isRtl;
+        return absoluteGravity != 5 ? z ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL : z ? Layout.Alignment.ALIGN_NORMAL : Layout.Alignment.ALIGN_OPPOSITE;
     }
 
     public void recalculate() {

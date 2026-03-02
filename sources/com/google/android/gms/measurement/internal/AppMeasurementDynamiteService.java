@@ -348,10 +348,11 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
     @Override // com.google.android.gms.internal.measurement.zzcr
     public void setConditionalUserProperty(Bundle bundle, long j) throws RemoteException {
         zzb();
+        zzic zzicVar = this.zza;
         if (bundle == null) {
-            this.zza.zzaV().zzb().zza("Conditional user property must not be null");
+            zzicVar.zzaV().zzb().zza("Conditional user property must not be null");
         } else {
-            this.zza.zzj().zzaa(bundle, j);
+            zzicVar.zzj().zzaa(bundle, j);
         }
     }
 
@@ -403,10 +404,12 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
     public void setEventInterceptor(com.google.android.gms.internal.measurement.zzda zzdaVar) throws RemoteException {
         zzb();
         zzp zzpVar = new zzp(this, zzdaVar);
-        if (this.zza.zzaW().zze()) {
-            this.zza.zzj().zzV(zzpVar);
+        boolean zze = this.zza.zzaW().zze();
+        zzic zzicVar = this.zza;
+        if (zze) {
+            zzicVar.zzj().zzV(zzpVar);
         } else {
-            this.zza.zzaW().zzj(new zzl(this, zzpVar));
+            zzicVar.zzaW().zzj(new zzl(this, zzpVar));
         }
     }
 

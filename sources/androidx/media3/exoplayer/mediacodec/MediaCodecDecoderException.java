@@ -2,7 +2,7 @@ package androidx.media3.exoplayer.mediacodec;
 
 import android.media.MediaCodec;
 import androidx.media3.decoder.DecoderException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class MediaCodecDecoderException extends DecoderException {
     public final MediaCodecInfo codecInfo;
     public final String diagnosticInfo;

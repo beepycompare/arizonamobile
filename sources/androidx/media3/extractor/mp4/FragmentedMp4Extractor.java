@@ -234,7 +234,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda3
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                FragmentedMp4Extractor.this.m9077x40e97494(j, parsableByteArray);
+                FragmentedMp4Extractor.this.m8355x40e97494(j, parsableByteArray);
             }
         });
         this.chunkIndexMerger = new ChunkIndexMerger();
@@ -243,7 +243,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-extractor-mp4-FragmentedMp4Extractor  reason: not valid java name */
-    public /* synthetic */ void m9077x40e97494(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m8355x40e97494(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.ceaTrackOutputs);
     }
 
@@ -664,10 +664,12 @@ public class FragmentedMp4Extractor implements Extractor {
             parsableByteArray2.setPosition(0);
             trackOutput.sampleData(parsableByteArray2, bytesLeft);
         }
-        if (j == C.TIME_UNSET) {
-            this.pendingMetadataSampleInfos.addLast(new MetadataSampleInfo(scaleLargeTimestamp, true, bytesLeft));
+        int i = (j > C.TIME_UNSET ? 1 : (j == C.TIME_UNSET ? 0 : -1));
+        ArrayDeque<MetadataSampleInfo> arrayDeque = this.pendingMetadataSampleInfos;
+        if (i == 0) {
+            arrayDeque.addLast(new MetadataSampleInfo(scaleLargeTimestamp, true, bytesLeft));
             this.pendingMetadataSampleBytes += bytesLeft;
-        } else if (!this.pendingMetadataSampleInfos.isEmpty()) {
+        } else if (!arrayDeque.isEmpty()) {
             this.pendingMetadataSampleInfos.addLast(new MetadataSampleInfo(j, false, bytesLeft));
             this.pendingMetadataSampleBytes += bytesLeft;
         } else {
@@ -1136,7 +1138,7 @@ public class FragmentedMp4Extractor implements Extractor {
         trackBundle.fragment.fillEncryptionData(extractorInput);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x0110, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x010e, code lost:
         if ((r5.nalUnitLengthFieldLength + r14) <= (r16.sampleSize - r16.sampleBytesWritten)) goto L48;
      */
     /*
@@ -1181,13 +1183,15 @@ public class FragmentedMp4Extractor implements Extractor {
                 this.sampleSize -= 8;
                 extractorInput.skipFully(8);
             }
-            if (MimeTypes.AUDIO_AC4.equals(trackBundle.moovSampleTable.track.format.sampleMimeType)) {
-                this.sampleBytesWritten = trackBundle.outputSampleEncryptionData(this.sampleSize, 7);
+            boolean equals = MimeTypes.AUDIO_AC4.equals(trackBundle.moovSampleTable.track.format.sampleMimeType);
+            int i = this.sampleSize;
+            if (equals) {
+                this.sampleBytesWritten = trackBundle.outputSampleEncryptionData(i, 7);
                 Ac4Util.getAc4SampleHeader(this.sampleSize, this.scratch);
                 trackBundle.output.sampleData(this.scratch, 7);
                 this.sampleBytesWritten += 7;
             } else {
-                this.sampleBytesWritten = trackBundle.outputSampleEncryptionData(this.sampleSize, 0);
+                this.sampleBytesWritten = trackBundle.outputSampleEncryptionData(i, 0);
             }
             this.sampleSize += this.sampleBytesWritten;
             this.parserState = 4;
@@ -1202,27 +1206,27 @@ public class FragmentedMp4Extractor implements Extractor {
         }
         if (track.nalUnitLengthFieldLength == 0) {
             while (true) {
-                int i = this.sampleBytesWritten;
-                int i2 = this.sampleSize;
-                if (i >= i2) {
+                int i2 = this.sampleBytesWritten;
+                int i3 = this.sampleSize;
+                if (i2 >= i3) {
                     break;
                 }
-                this.sampleBytesWritten += trackOutput.sampleData((DataReader) extractorInput, i2 - i, false);
+                this.sampleBytesWritten += trackOutput.sampleData((DataReader) extractorInput, i3 - i2, false);
             }
         } else {
             byte[] data = this.nalPrefix.getData();
             data[0] = 0;
             data[1] = 0;
             data[2] = 0;
-            int i3 = 4 - track.nalUnitLengthFieldLength;
+            int i4 = 4 - track.nalUnitLengthFieldLength;
             while (this.sampleBytesWritten < this.sampleSize) {
-                int i4 = this.sampleCurrentNalBytesRemaining;
-                if (i4 == 0) {
+                int i5 = this.sampleCurrentNalBytesRemaining;
+                if (i5 == 0) {
                     if (this.ceaTrackOutputs.length > 0 || !this.isSampleDependedOn) {
                         numberOfBytesInNalUnitHeader = NalUnitUtil.numberOfBytesInNalUnitHeader(track.format);
                     }
                     numberOfBytesInNalUnitHeader = 0;
-                    extractorInput.readFully(data, i3, track.nalUnitLengthFieldLength + numberOfBytesInNalUnitHeader);
+                    extractorInput.readFully(data, i4, track.nalUnitLengthFieldLength + numberOfBytesInNalUnitHeader);
                     this.nalPrefix.setPosition(0);
                     int readInt = this.nalPrefix.readInt();
                     if (readInt < 0) {
@@ -1232,7 +1236,7 @@ public class FragmentedMp4Extractor implements Extractor {
                     this.nalStartCode.setPosition(0);
                     trackOutput.sampleData(this.nalStartCode, 4);
                     this.sampleBytesWritten += 4;
-                    this.sampleSize += i3;
+                    this.sampleSize += i4;
                     this.processSeiNalUnitPayload = this.ceaTrackOutputs.length > 0 && numberOfBytesInNalUnitHeader > 0 && NalUnitUtil.isNalUnitSei(track.format, data[4]);
                     trackOutput.sampleData(this.nalPrefix, numberOfBytesInNalUnitHeader);
                     this.sampleBytesWritten += numberOfBytesInNalUnitHeader;
@@ -1241,18 +1245,20 @@ public class FragmentedMp4Extractor implements Extractor {
                     }
                 } else {
                     if (this.processSeiNalUnitPayload) {
-                        this.nalUnitWithoutHeaderBuffer.reset(i4);
+                        this.nalUnitWithoutHeaderBuffer.reset(i5);
                         extractorInput.readFully(this.nalUnitWithoutHeaderBuffer.getData(), 0, this.sampleCurrentNalBytesRemaining);
                         trackOutput.sampleData(this.nalUnitWithoutHeaderBuffer, this.sampleCurrentNalBytesRemaining);
                         sampleData = this.sampleCurrentNalBytesRemaining;
                         int unescapeStream = NalUnitUtil.unescapeStream(this.nalUnitWithoutHeaderBuffer.getData(), this.nalUnitWithoutHeaderBuffer.limit());
                         this.nalUnitWithoutHeaderBuffer.setPosition(0);
                         this.nalUnitWithoutHeaderBuffer.setLimit(unescapeStream);
-                        if (track.format.maxNumReorderSamples == -1) {
-                            if (this.reorderingBufferQueue.getMaxSize() != 0) {
+                        int i6 = track.format.maxNumReorderSamples;
+                        ReorderingBufferQueue reorderingBufferQueue = this.reorderingBufferQueue;
+                        if (i6 == -1) {
+                            if (reorderingBufferQueue.getMaxSize() != 0) {
                                 this.reorderingBufferQueue.setMaxSize(0);
                             }
-                        } else if (this.reorderingBufferQueue.getMaxSize() != track.format.maxNumReorderSamples) {
+                        } else if (reorderingBufferQueue.getMaxSize() != track.format.maxNumReorderSamples) {
                             this.reorderingBufferQueue.setMaxSize(track.format.maxNumReorderSamples);
                         }
                         this.reorderingBufferQueue.add(currentSamplePresentationTimeUs, this.nalUnitWithoutHeaderBuffer);
@@ -1260,7 +1266,7 @@ public class FragmentedMp4Extractor implements Extractor {
                             this.reorderingBufferQueue.flush();
                         }
                     } else {
-                        sampleData = trackOutput.sampleData((DataReader) extractorInput, i4, false);
+                        sampleData = trackOutput.sampleData((DataReader) extractorInput, i5, false);
                     }
                     this.sampleBytesWritten += sampleData;
                     this.sampleCurrentNalBytesRemaining -= sampleData;
@@ -1271,9 +1277,9 @@ public class FragmentedMp4Extractor implements Extractor {
         if (!this.isSampleDependedOn) {
             currentSampleFlags |= 67108864;
         }
-        int i5 = currentSampleFlags;
+        int i7 = currentSampleFlags;
         TrackEncryptionBox encryptionBoxIfEncrypted = trackBundle.getEncryptionBoxIfEncrypted();
-        trackOutput.sampleMetadata(currentSamplePresentationTimeUs, i5, this.sampleSize, 0, encryptionBoxIfEncrypted != null ? encryptionBoxIfEncrypted.cryptoData : null);
+        trackOutput.sampleMetadata(currentSamplePresentationTimeUs, i7, this.sampleSize, 0, encryptionBoxIfEncrypted != null ? encryptionBoxIfEncrypted.cryptoData : null);
         outputPendingMetadataSamples(currentSamplePresentationTimeUs);
         if (!trackBundle.next()) {
             this.currentTrackBundle = null;

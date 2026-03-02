@@ -6,11 +6,10 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RemoteMediatorAccessor.kt */
-@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl", f = "RemoteMediatorAccessor.kt", i = {0}, l = {445}, m = "initialize", n = {"this"}, s = {"L$0"})
+@Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+@DebugMetadata(c = "androidx.paging.RemoteMediatorAccessImpl", f = "RemoteMediatorAccessor.kt", i = {}, l = {417}, m = "initialize", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 public final class RemoteMediatorAccessImpl$initialize$1 extends ContinuationImpl {
-    Object L$0;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ RemoteMediatorAccessImpl<Key, Value> this$0;

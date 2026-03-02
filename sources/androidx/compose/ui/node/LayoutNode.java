@@ -113,12 +113,12 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     private static final NoIntrinsicsMeasurePolicy ErrorMeasurePolicy = new NoIntrinsicsMeasurePolicy() { // from class: androidx.compose.ui.node.LayoutNode$Companion$ErrorMeasurePolicy$1
         @Override // androidx.compose.ui.layout.MeasurePolicy
         /* renamed from: measure-3p2s80s */
-        public /* bridge */ /* synthetic */ MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List list, long j) {
-            return (MeasureResult) m7112measure3p2s80s(measureScope, (List<? extends Measurable>) list, j);
+        public /* bridge */ /* synthetic */ MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List list, long j) {
+            return (MeasureResult) m6452measure3p2s80s(measureScope, (List<? extends Measurable>) list, j);
         }
 
         /* renamed from: measure-3p2s80s  reason: not valid java name */
-        public Void m7112measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        public Void m6452measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
             throw new IllegalStateException("Undefined measure and it is required".toString());
         }
     };
@@ -152,16 +152,14 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
         @Override // androidx.compose.ui.platform.ViewConfiguration
         /* renamed from: getMinimumTouchTargetSize-MYxV2XQ  reason: not valid java name */
-        public long mo7111getMinimumTouchTargetSizeMYxV2XQ() {
-            return DpSize.Companion.m8366getZeroMYxV2XQ();
+        public long mo6451getMinimumTouchTargetSizeMYxV2XQ() {
+            return DpSize.Companion.m7663getZeroMYxV2XQ();
         }
     };
     private static final Comparator<LayoutNode> ZComparator = new Comparator() { // from class: androidx.compose.ui.node.LayoutNode$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
         public final int compare(Object obj, Object obj2) {
-            int ZComparator$lambda$0;
-            ZComparator$lambda$0 = LayoutNode.ZComparator$lambda$0((LayoutNode) obj, (LayoutNode) obj2);
-            return ZComparator$lambda$0;
+            return LayoutNode.ZComparator$lambda$0((LayoutNode) obj, (LayoutNode) obj2);
         }
     };
 
@@ -196,9 +194,9 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         Density density;
         this.isVirtual = z;
         this.semanticsId = i;
-        this.lastOffsetFromParent = IntOffset.Companion.m8396getMaxnOccac();
-        this.lastSize = IntSize.Companion.m8434getZeroYbymL2g();
-        this.outerToInnerOffset = IntOffset.Companion.m8396getMaxnOccac();
+        this.lastOffsetFromParent = IntOffset.Companion.m7693getMaxnOccac();
+        this.lastSize = IntSize.Companion.m7731getZeroYbymL2g();
+        this.outerToInnerOffset = IntOffset.Companion.m7693getMaxnOccac();
         this.outerToInnerOffsetDirty = true;
         this._foldedChildren = new MutableVectorWithMutationTracking<>(new MutableVector(new LayoutNode[16], 0), new Function0<Unit>() { // from class: androidx.compose.ui.node.LayoutNode$_foldedChildren$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -255,32 +253,32 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* renamed from: getLastOffsetFromParent-nOcc-ac$ui */
-    public final long m7101getLastOffsetFromParentnOccac$ui() {
+    public final long m6441getLastOffsetFromParentnOccac$ui() {
         return this.lastOffsetFromParent;
     }
 
     /* renamed from: setLastOffsetFromParent--gyyYBs$ui */
-    public final void m7108setLastOffsetFromParentgyyYBs$ui(long j) {
+    public final void m6448setLastOffsetFromParentgyyYBs$ui(long j) {
         this.lastOffsetFromParent = j;
     }
 
     /* renamed from: getLastSize-YbymL2g$ui */
-    public final long m7102getLastSizeYbymL2g$ui() {
+    public final long m6442getLastSizeYbymL2g$ui() {
         return this.lastSize;
     }
 
     /* renamed from: setLastSize-ozmzZPI$ui */
-    public final void m7109setLastSizeozmzZPI$ui(long j) {
+    public final void m6449setLastSizeozmzZPI$ui(long j) {
         this.lastSize = j;
     }
 
     /* renamed from: getOuterToInnerOffset-nOcc-ac$ui */
-    public final long m7103getOuterToInnerOffsetnOccac$ui() {
+    public final long m6443getOuterToInnerOffsetnOccac$ui() {
         return this.outerToInnerOffset;
     }
 
     /* renamed from: setOuterToInnerOffset--gyyYBs$ui */
-    public final void m7110setOuterToInnerOffsetgyyYBs$ui(long j) {
+    public final void m6450setOuterToInnerOffsetgyyYBs$ui(long j) {
         this.outerToInnerOffset = j;
     }
 
@@ -327,14 +325,15 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             return;
         }
         this.lookaheadRoot = layoutNode;
+        LayoutNodeLayoutDelegate layoutNodeLayoutDelegate = this.layoutDelegate;
         if (layoutNode != null) {
-            this.layoutDelegate.ensureLookaheadDelegateCreated$ui();
+            layoutNodeLayoutDelegate.ensureLookaheadDelegateCreated$ui();
             NodeCoordinator wrapped$ui = getInnerCoordinator$ui().getWrapped$ui();
             for (NodeCoordinator outerCoordinator$ui = getOuterCoordinator$ui(); !Intrinsics.areEqual(outerCoordinator$ui, wrapped$ui) && outerCoordinator$ui != null; outerCoordinator$ui = outerCoordinator$ui.getWrapped$ui()) {
                 outerCoordinator$ui.ensureLookaheadDelegateCreated();
             }
         } else {
-            this.layoutDelegate.onRemovedFromLookaheadScope();
+            layoutNodeLayoutDelegate.onRemovedFromLookaheadScope();
         }
         invalidateMeasurements$ui();
     }
@@ -552,10 +551,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         int size = this._foldedChildren.getVector().getSize();
         while (true) {
             size--;
+            MutableVectorWithMutationTracking<LayoutNode> mutableVectorWithMutationTracking = this._foldedChildren;
             if (-1 < size) {
-                onChildRemoved(this._foldedChildren.getVector().content[size]);
+                onChildRemoved(mutableVectorWithMutationTracking.getVector().content[size]);
             } else {
-                this._foldedChildren.clear();
+                mutableVectorWithMutationTracking.clear();
                 return;
             }
         }
@@ -641,7 +641,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
     @Override // androidx.compose.ui.semantics.SemanticsInfo
     public SemanticsConfiguration getSemanticsConfiguration() {
-        if (isAttached() && !isDeactivated() && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+        if (isAttached() && !isDeactivated() && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
             if (!ComposeUiFlags.isSemanticAutofillEnabled && this._semanticsConfiguration == null) {
                 this._semanticsConfiguration = calculateSemanticsConfiguration();
             }
@@ -675,11 +675,11 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2() {
                 NodeChain nodes$ui = LayoutNode.this.getNodes$ui();
-                int m7195constructorimpl = NodeKind.m7195constructorimpl(8);
+                int m6535constructorimpl = NodeKind.m6535constructorimpl(8);
                 Ref.ObjectRef<SemanticsConfiguration> objectRef2 = objectRef;
-                if ((nodes$ui.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+                if ((nodes$ui.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
                     for (Modifier.Node tail$ui = nodes$ui.getTail$ui(); tail$ui != null; tail$ui = tail$ui.getParent$ui()) {
-                        if ((tail$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                        if ((tail$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                             Modifier.Node node = tail$ui;
                             MutableVector mutableVector = null;
                             while (node != null) {
@@ -693,10 +693,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                                         objectRef2.element.setMergingSemanticsOfDescendants(true);
                                     }
                                     semanticsModifierNode.applySemantics(objectRef2.element);
-                                } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                                } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                                     int i = 0;
                                     for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                        if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                        if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                             i++;
                                             if (i == 1) {
                                                 node = delegate$ui;
@@ -785,7 +785,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                     applyModifier(modifier);
                 }
                 this.pendingModifier = null;
-                if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+                if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
                     invalidateSemantics$ui();
                 }
                 owner.onPreAttach(this);
@@ -795,7 +795,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         layoutNode = this.lookaheadRoot;
                     }
                     setLookaheadRoot(layoutNode);
-                    if (this.lookaheadRoot == null && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(512))) {
+                    if (this.lookaheadRoot == null && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(512))) {
                         setLookaheadRoot(this);
                     }
                 } else {
@@ -822,7 +822,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                     function1.invoke(owner);
                 }
                 this.layoutDelegate.updateParentData();
-                if (ComposeUiFlags.isSemanticAutofillEnabled && !isDeactivated() && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+                if (ComposeUiFlags.isSemanticAutofillEnabled && !isDeactivated() && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
                     invalidateSemantics$ui();
                 }
                 owner.onPostAttach(this);
@@ -896,7 +896,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (function1 != null) {
             function1.invoke(owner);
         }
-        if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+        if (!ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
             invalidateSemantics$ui();
         }
         this.nodes.runDetachLifecycle$ui();
@@ -920,7 +920,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         if (lookaheadPassDelegate$ui2 != null) {
             lookaheadPassDelegate$ui2.onNodeDetached();
         }
-        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
             SemanticsConfiguration semanticsConfiguration = this._semanticsConfiguration;
             this._semanticsConfiguration = null;
             this.isSemanticsInvalidated = false;
@@ -950,8 +950,8 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     public final boolean getHasFixedInnerContentConstraints$ui() {
-        long m7179getLastMeasurementConstraintsmsEJaDk$ui = getInnerCoordinator$ui().m7179getLastMeasurementConstraintsmsEJaDk$ui();
-        return Constraints.m8209getHasFixedWidthimpl(m7179getLastMeasurementConstraintsmsEJaDk$ui) && Constraints.m8208getHasFixedHeightimpl(m7179getLastMeasurementConstraintsmsEJaDk$ui);
+        long m6519getLastMeasurementConstraintsmsEJaDk$ui = getInnerCoordinator$ui().m6519getLastMeasurementConstraintsmsEJaDk$ui();
+        return Constraints.m7506getHasFixedWidthimpl(m6519getLastMeasurementConstraintsmsEJaDk$ui) && Constraints.m7505getHasFixedHeightimpl(m6519getLastMeasurementConstraintsmsEJaDk$ui);
     }
 
     static /* synthetic */ String debugTreeToString$default(LayoutNode layoutNode, int i, int i2, Object obj) {
@@ -997,41 +997,41 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m7113maxIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m6453maxIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m7114maxIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m6454maxIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m7115minIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m6455minIntrinsicHeight(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         @Override // androidx.compose.ui.layout.MeasurePolicy
         public /* bridge */ /* synthetic */ int minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List list, int i) {
-            return ((Number) m7116minIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
+            return ((Number) m6456minIntrinsicWidth(intrinsicMeasureScope, (List<? extends IntrinsicMeasurable>) list, i)).intValue();
         }
 
         /* renamed from: minIntrinsicWidth */
-        public Void m7116minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m6456minIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: minIntrinsicHeight */
-        public Void m7115minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m6455minIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: maxIntrinsicWidth */
-        public Void m7114maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m6454maxIntrinsicWidth(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
 
         /* renamed from: maxIntrinsicHeight */
-        public Void m7113maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
+        public Void m6453maxIntrinsicHeight(IntrinsicMeasureScope intrinsicMeasureScope, List<? extends IntrinsicMeasurable> list, int i) {
             throw new IllegalStateException(this.error.toString());
         }
     }
@@ -1141,19 +1141,19 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         }
         this.viewConfiguration = viewConfiguration;
         NodeChain nodeChain = this.nodes;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(16);
-        if ((nodeChain.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(16);
+        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof PointerInputModifierNode) {
                             ((PointerInputModifierNode) node).onViewConfigurationChange();
-                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1179,7 +1179,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1198,10 +1198,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         setLayoutDirection((LayoutDirection) compositionLocalMap.get(CompositionLocalsKt.getLocalLayoutDirection()));
         setViewConfiguration((ViewConfiguration) compositionLocalMap.get(CompositionLocalsKt.getLocalViewConfiguration()));
         NodeChain nodeChain = this.nodes;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(32768);
-        if ((nodeChain.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(32768);
+        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
@@ -1212,10 +1212,10 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                             } else {
                                 node2.setUpdatedNodeAwaitingAttachForInvalidation$ui(true);
                             }
-                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1241,7 +1241,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1430,20 +1430,20 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     private final void applyModifier(Modifier modifier) {
-        boolean m7156hasH91voCI$ui = this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(16));
-        boolean m7156hasH91voCI$ui2 = this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(1024));
+        boolean m6496hasH91voCI$ui = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(16));
+        boolean m6496hasH91voCI$ui2 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(1024));
         this._modifier = modifier;
         this.nodes.updateFrom$ui(modifier);
-        boolean m7156hasH91voCI$ui3 = this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(16));
-        boolean m7156hasH91voCI$ui4 = this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(1024));
+        boolean m6496hasH91voCI$ui3 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(16));
+        boolean m6496hasH91voCI$ui4 = this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(1024));
         this.layoutDelegate.updateParentData();
-        if (this.lookaheadRoot == null && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(512))) {
+        if (this.lookaheadRoot == null && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(512))) {
             setLookaheadRoot(this);
         }
-        if (m7156hasH91voCI$ui == m7156hasH91voCI$ui3 && m7156hasH91voCI$ui2 == m7156hasH91voCI$ui4) {
+        if (m6496hasH91voCI$ui == m6496hasH91voCI$ui3 && m6496hasH91voCI$ui2 == m6496hasH91voCI$ui4) {
             return;
         }
-        LayoutNodeKt.requireOwner(this).getRectManager().updateFlagsFor(this, m7156hasH91voCI$ui4, m7156hasH91voCI$ui3);
+        LayoutNodeKt.requireOwner(this).getRectManager().updateFlagsFor(this, m6496hasH91voCI$ui4, m6496hasH91voCI$ui3);
     }
 
     private final void resetModifierState() {
@@ -1542,37 +1542,37 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* renamed from: hitTest-6fMxITs$ui$default */
-    public static /* synthetic */ void m7097hitTest6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ void m6437hitTest6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
         if ((i2 & 4) != 0) {
-            i = PointerType.Companion.m6823getUnknownT8wyACA();
+            i = PointerType.Companion.m6164getUnknownT8wyACA();
         }
         int i3 = i;
         if ((i2 & 8) != 0) {
             z = true;
         }
-        layoutNode.m7104hitTest6fMxITs$ui(j, hitTestResult, i3, z);
+        layoutNode.m6444hitTest6fMxITs$ui(j, hitTestResult, i3, z);
     }
 
     /* renamed from: hitTest-6fMxITs$ui */
-    public final void m7104hitTest6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
-        getOuterCoordinator$ui().m7182hitTestqzLsGqo(NodeCoordinator.Companion.getPointerInputSource(), NodeCoordinator.m7164fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, i, z);
+    public final void m6444hitTest6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
+        getOuterCoordinator$ui().m6522hitTestqzLsGqo(NodeCoordinator.Companion.getPointerInputSource(), NodeCoordinator.m6504fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, i, z);
     }
 
     /* renamed from: hitTestSemantics-6fMxITs$ui$default */
-    public static /* synthetic */ void m7098hitTestSemantics6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
+    public static /* synthetic */ void m6438hitTestSemantics6fMxITs$ui$default(LayoutNode layoutNode, long j, HitTestResult hitTestResult, int i, boolean z, int i2, Object obj) {
         if ((i2 & 4) != 0) {
-            i = PointerType.Companion.m6822getTouchT8wyACA();
+            i = PointerType.Companion.m6163getTouchT8wyACA();
         }
         int i3 = i;
         if ((i2 & 8) != 0) {
             z = true;
         }
-        layoutNode.m7105hitTestSemantics6fMxITs$ui(j, hitTestResult, i3, z);
+        layoutNode.m6445hitTestSemantics6fMxITs$ui(j, hitTestResult, i3, z);
     }
 
     /* renamed from: hitTestSemantics-6fMxITs$ui */
-    public final void m7105hitTestSemantics6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
-        getOuterCoordinator$ui().m7182hitTestqzLsGqo(NodeCoordinator.Companion.getSemanticsSource(), NodeCoordinator.m7164fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, PointerType.Companion.m6822getTouchT8wyACA(), z);
+    public final void m6445hitTestSemantics6fMxITs$ui(long j, HitTestResult hitTestResult, int i, boolean z) {
+        getOuterCoordinator$ui().m6522hitTestqzLsGqo(NodeCoordinator.Companion.getSemanticsSource(), NodeCoordinator.m6504fromParentPosition8S9VItk$default(getOuterCoordinator$ui(), j, false, 2, null), hitTestResult, PointerType.Companion.m6163getTouchT8wyACA(), z);
     }
 
     public final void rescheduleRemeasureOrRelayout$ui(LayoutNode layoutNode) {
@@ -1722,20 +1722,20 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             return;
         }
         NodeChain nodeChain = this.nodes;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(256);
-        if ((nodeChain.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(256);
+        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof GlobalPositionAwareModifierNode) {
                             GlobalPositionAwareModifierNode globalPositionAwareModifierNode = (GlobalPositionAwareModifierNode) node;
-                            globalPositionAwareModifierNode.onGloballyPositioned(DelegatableNodeKt.m7046requireCoordinator64DMado(globalPositionAwareModifierNode, NodeKind.m7195constructorimpl(256)));
-                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                            globalPositionAwareModifierNode.onGloballyPositioned(DelegatableNodeKt.m6387requireCoordinator64DMado(globalPositionAwareModifierNode, NodeKind.m6535constructorimpl(256)));
+                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1761,7 +1761,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     return;
                 }
             }
@@ -1774,38 +1774,38 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
     }
 
     /* renamed from: lookaheadRemeasure-_Sx5XlM$ui$default */
-    public static /* synthetic */ boolean m7099lookaheadRemeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
+    public static /* synthetic */ boolean m6439lookaheadRemeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
         if ((i & 1) != 0) {
-            constraints = layoutNode.layoutDelegate.m7120getLastLookaheadConstraintsDWUhwKw();
+            constraints = layoutNode.layoutDelegate.m6460getLastLookaheadConstraintsDWUhwKw();
         }
-        return layoutNode.m7106lookaheadRemeasure_Sx5XlM$ui(constraints);
+        return layoutNode.m6446lookaheadRemeasure_Sx5XlM$ui(constraints);
     }
 
     /* renamed from: lookaheadRemeasure-_Sx5XlM$ui */
-    public final boolean m7106lookaheadRemeasure_Sx5XlM$ui(Constraints constraints) {
+    public final boolean m6446lookaheadRemeasure_Sx5XlM$ui(Constraints constraints) {
         if (constraints == null || this.lookaheadRoot == null) {
             return false;
         }
         LookaheadPassDelegate lookaheadPassDelegate$ui = getLookaheadPassDelegate$ui();
         Intrinsics.checkNotNull(lookaheadPassDelegate$ui);
-        return lookaheadPassDelegate$ui.m7140remeasureBRTryo0(constraints.m8217unboximpl());
+        return lookaheadPassDelegate$ui.m6480remeasureBRTryo0(constraints.m7514unboximpl());
     }
 
     /* renamed from: remeasure-_Sx5XlM$ui$default */
-    public static /* synthetic */ boolean m7100remeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
+    public static /* synthetic */ boolean m6440remeasure_Sx5XlM$ui$default(LayoutNode layoutNode, Constraints constraints, int i, Object obj) {
         if ((i & 1) != 0) {
-            constraints = layoutNode.layoutDelegate.m7119getLastConstraintsDWUhwKw();
+            constraints = layoutNode.layoutDelegate.m6459getLastConstraintsDWUhwKw();
         }
-        return layoutNode.m7107remeasure_Sx5XlM$ui(constraints);
+        return layoutNode.m6447remeasure_Sx5XlM$ui(constraints);
     }
 
     /* renamed from: remeasure-_Sx5XlM$ui */
-    public final boolean m7107remeasure_Sx5XlM$ui(Constraints constraints) {
+    public final boolean m6447remeasure_Sx5XlM$ui(Constraints constraints) {
         if (constraints != null) {
             if (this.intrinsicsUsageByParent == UsageByParent.NotUsed) {
                 clearSubtreeIntrinsicsUsage$ui();
             }
-            return getMeasurePassDelegate$ui().m7151remeasureBRTryo0(constraints.m8217unboximpl());
+            return getMeasurePassDelegate$ui().m6491remeasureBRTryo0(constraints.m7514unboximpl());
         }
         return false;
     }
@@ -1853,22 +1853,22 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         invalidateSemantics$ui();
         requestRemeasure$ui$default(this, false, false, false, 7, null);
         NodeChain nodeChain = this.nodes;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(2);
-        if ((nodeChain.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(2);
+        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof LayoutModifierNode) {
-                            OwnedLayer layer = DelegatableNodeKt.m7046requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m7195constructorimpl(2)).getLayer();
+                            OwnedLayer layer = DelegatableNodeKt.m6387requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m6535constructorimpl(2)).getLayer();
                             if (layer != null) {
                                 layer.invalidate();
                             }
-                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1894,7 +1894,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     break;
                 }
             }
@@ -1930,22 +1930,22 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             parent$ui.invalidateLayer$ui();
         }
         NodeChain nodeChain = this.nodes;
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(2);
-        if ((nodeChain.getAggregateChildKindSet() & m7195constructorimpl) != 0) {
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(2);
+        if ((nodeChain.getAggregateChildKindSet() & m6535constructorimpl) != 0) {
             for (Modifier.Node head$ui = nodeChain.getHead$ui(); head$ui != null; head$ui = head$ui.getChild$ui()) {
-                if ((head$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                if ((head$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                     Modifier.Node node = head$ui;
                     MutableVector mutableVector = null;
                     while (node != null) {
                         if (node instanceof LayoutModifierNode) {
-                            OwnedLayer layer = DelegatableNodeKt.m7046requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m7195constructorimpl(2)).getLayer();
+                            OwnedLayer layer = DelegatableNodeKt.m6387requireCoordinator64DMado((LayoutModifierNode) node, NodeKind.m6535constructorimpl(2)).getLayer();
                             if (layer != null) {
                                 layer.invalidate();
                             }
-                        } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                        } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                             int i = 0;
                             for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                                if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                                if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                     i++;
                                     if (i == 1) {
                                         node = delegate$ui;
@@ -1971,7 +1971,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
                         node = DelegatableNodeKt.pop(mutableVector);
                     }
                 }
-                if ((head$ui.getAggregateChildKindSet$ui() & m7195constructorimpl) == 0) {
+                if ((head$ui.getAggregateChildKindSet$ui() & m6535constructorimpl) == 0) {
                     break;
                 }
             }
@@ -1998,41 +1998,37 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
             requestRemeasure$ui$default(this, false, false, false, 5, null);
             layoutNode = this;
         }
-        Constraints m7119getLastConstraintsDWUhwKw = layoutNode.layoutDelegate.m7119getLastConstraintsDWUhwKw();
-        if (m7119getLastConstraintsDWUhwKw != null) {
-            Owner owner = layoutNode.owner;
+        Constraints m6459getLastConstraintsDWUhwKw = layoutNode.layoutDelegate.m6459getLastConstraintsDWUhwKw();
+        Owner owner = layoutNode.owner;
+        if (m6459getLastConstraintsDWUhwKw != null) {
             if (owner != null) {
-                owner.mo7262measureAndLayout0kLqBqw(this, m7119getLastConstraintsDWUhwKw.m8217unboximpl());
-                return;
+                owner.mo6602measureAndLayout0kLqBqw(this, m6459getLastConstraintsDWUhwKw.m7514unboximpl());
             }
-            return;
-        }
-        Owner owner2 = layoutNode.owner;
-        if (owner2 != null) {
-            Owner.measureAndLayout$default(owner2, false, 1, null);
+        } else if (owner != null) {
+            Owner.measureAndLayout$default(owner, false, 1, null);
         }
     }
 
     @Override // androidx.compose.ui.node.Owner.OnLayoutCompletedListener
     public void onLayoutComplete() {
         NodeCoordinator innerCoordinator$ui = getInnerCoordinator$ui();
-        int m7195constructorimpl = NodeKind.m7195constructorimpl(4194304);
-        boolean m7204getIncludeSelfInTraversalH91voCI = NodeKindKt.m7204getIncludeSelfInTraversalH91voCI(m7195constructorimpl);
+        int m6535constructorimpl = NodeKind.m6535constructorimpl(4194304);
+        boolean m6544getIncludeSelfInTraversalH91voCI = NodeKindKt.m6544getIncludeSelfInTraversalH91voCI(m6535constructorimpl);
         Modifier.Node tail = innerCoordinator$ui.getTail();
-        if (!m7204getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui()) == null) {
+        if (!m6544getIncludeSelfInTraversalH91voCI && (tail = tail.getParent$ui()) == null) {
             return;
         }
-        for (Modifier.Node headNode = innerCoordinator$ui.headNode(m7204getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui() & m7195constructorimpl) != 0; headNode = headNode.getChild$ui()) {
-            if ((headNode.getKindSet$ui() & m7195constructorimpl) != 0) {
+        for (Modifier.Node headNode = innerCoordinator$ui.headNode(m6544getIncludeSelfInTraversalH91voCI); headNode != null && (headNode.getAggregateChildKindSet$ui() & m6535constructorimpl) != 0; headNode = headNode.getChild$ui()) {
+            if ((headNode.getKindSet$ui() & m6535constructorimpl) != 0) {
                 Modifier.Node node = headNode;
                 MutableVector mutableVector = null;
                 while (node != null) {
                     if (node instanceof LayoutAwareModifierNode) {
                         ((LayoutAwareModifierNode) node).onPlaced(getInnerCoordinator$ui());
-                    } else if ((node.getKindSet$ui() & m7195constructorimpl) != 0 && (node instanceof DelegatingNode)) {
+                    } else if ((node.getKindSet$ui() & m6535constructorimpl) != 0 && (node instanceof DelegatingNode)) {
                         int i = 0;
                         for (Modifier.Node delegate$ui = ((DelegatingNode) node).getDelegate$ui(); delegate$ui != null; delegate$ui = delegate$ui.getChild$ui()) {
-                            if ((delegate$ui.getKindSet$ui() & m7195constructorimpl) != 0) {
+                            if ((delegate$ui.getKindSet$ui() & m6535constructorimpl) != 0) {
                                 i++;
                                 if (i == 1) {
                                     node = delegate$ui;
@@ -2161,7 +2157,7 @@ public final class LayoutNode implements ComposeNodeLifecycleCallback, Remeasure
         }
         this.nodes.markAsAttached();
         this.nodes.runAttachLifecycle();
-        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m7156hasH91voCI$ui(NodeKind.m7195constructorimpl(8))) {
+        if (ComposeUiFlags.isSemanticAutofillEnabled && this.nodes.m6496hasH91voCI$ui(NodeKind.m6535constructorimpl(8))) {
             invalidateSemantics$ui();
         }
         rescheduleRemeasureOrRelayout$ui(this);

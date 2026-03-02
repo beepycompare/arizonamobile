@@ -19,7 +19,7 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
     public NestedMutableSnapshot(long j, SnapshotIdSet snapshotIdSet, Function1<Object, Unit> function1, Function1<Object, Unit> function12, MutableSnapshot mutableSnapshot) {
         super(j, snapshotIdSet, function1, function12);
         this.parent = mutableSnapshot;
-        mutableSnapshot.mo4864nestedActivated$runtime(this);
+        mutableSnapshot.mo4217nestedActivated$runtime(this);
     }
 
     public final MutableSnapshot getParent() {
@@ -125,6 +125,6 @@ public final class NestedMutableSnapshot extends MutableSnapshot {
             return;
         }
         this.deactivated = true;
-        this.parent.mo4865nestedDeactivated$runtime(this);
+        this.parent.mo4218nestedDeactivated$runtime(this);
     }
 }

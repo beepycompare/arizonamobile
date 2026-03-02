@@ -17,16 +17,11 @@ public final class SlotNavigatorExtKt {
         slotNavigator.navigate(transformer, new Function2() { // from class: com.arkivanov.decompose.router.slot.SlotNavigatorExtKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit navigate$lambda$0;
-                navigate$lambda$0 = SlotNavigatorExtKt.navigate$lambda$0(obj, obj2);
-                return navigate$lambda$0;
+                Unit unit;
+                unit = Unit.INSTANCE;
+                return unit;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit navigate$lambda$0(Object obj, Object obj2) {
-        return Unit.INSTANCE;
     }
 
     public static /* synthetic */ void activate$default(SlotNavigator slotNavigator, Object configuration, Function0 onComplete, int i, Object obj) {

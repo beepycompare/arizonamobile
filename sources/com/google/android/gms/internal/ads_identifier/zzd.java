@@ -3,7 +3,7 @@ package com.google.android.gms.internal.ads_identifier;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.2.0 */
+/* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 /* loaded from: classes4.dex */
 public final class zzd extends zza implements zzf {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,15 +20,7 @@ public final class zzd extends zza implements zzf {
     }
 
     @Override // com.google.android.gms.internal.ads_identifier.zzf
-    public final boolean zzd() throws RemoteException {
-        Parcel zzb = zzb(6, zza());
-        boolean zza = zzc.zza(zzb);
-        zzb.recycle();
-        return zza;
-    }
-
-    @Override // com.google.android.gms.internal.ads_identifier.zzf
-    public final boolean zze(boolean z) throws RemoteException {
+    public final boolean zzd(boolean z) throws RemoteException {
         Parcel zza = zza();
         int i = zzc.zza;
         zza.writeInt(1);
@@ -36,5 +28,13 @@ public final class zzd extends zza implements zzf {
         boolean zza2 = zzc.zza(zzb);
         zzb.recycle();
         return zza2;
+    }
+
+    @Override // com.google.android.gms.internal.ads_identifier.zzf
+    public final boolean zze() throws RemoteException {
+        Parcel zzb = zzb(6, zza());
+        boolean zza = zzc.zza(zzb);
+        zzb.recycle();
+        return zza;
     }
 }

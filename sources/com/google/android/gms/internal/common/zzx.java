@@ -3,71 +3,62 @@ package com.google.android.gms.internal.common;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class zzx {
     public static String zza(String str, Object... objArr) {
         int length;
-        int length2;
         int indexOf;
-        String sb;
+        StringBuilder sb = new StringBuilder(str.length() + (objArr.length * 16));
         int i = 0;
         int i2 = 0;
         while (true) {
             length = objArr.length;
-            if (i2 >= length) {
+            if (i >= length || (indexOf = str.indexOf("%s", i2)) == -1) {
                 break;
             }
-            Object obj = objArr[i2];
-            if (obj == null) {
-                sb = AbstractJsonLexerKt.NULL;
-            } else {
-                try {
-                    sb = obj.toString();
-                } catch (Exception e) {
-                    String name = obj.getClass().getName();
-                    String hexString = Integer.toHexString(System.identityHashCode(obj));
-                    StringBuilder sb2 = new StringBuilder(String.valueOf(name).length() + 1 + String.valueOf(hexString).length());
-                    sb2.append(name);
-                    sb2.append("@");
-                    sb2.append(hexString);
-                    String sb3 = sb2.toString();
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(sb3), (Throwable) e);
-                    String name2 = e.getClass().getName();
-                    StringBuilder sb4 = new StringBuilder(sb3.length() + 8 + String.valueOf(name2).length() + 1);
-                    sb4.append("<");
-                    sb4.append(sb3);
-                    sb4.append(" threw ");
-                    sb4.append(name2);
-                    sb4.append(">");
-                    sb = sb4.toString();
-                }
-            }
-            objArr[i2] = sb;
-            i2++;
-        }
-        StringBuilder sb5 = new StringBuilder(str.length() + (length * 16));
-        int i3 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i >= length2 || (indexOf = str.indexOf("%s", i3)) == -1) {
-                break;
-            }
-            sb5.append((CharSequence) str, i3, indexOf);
-            sb5.append(objArr[i]);
+            sb.append((CharSequence) str, i2, indexOf);
+            sb.append(zzb(objArr[i]));
+            i2 = indexOf + 2;
             i++;
-            i3 = indexOf + 2;
         }
-        sb5.append((CharSequence) str, i3, str.length());
-        if (i < length2) {
-            sb5.append(" [");
-            sb5.append(objArr[i]);
-            for (int i4 = i + 1; i4 < objArr.length; i4++) {
-                sb5.append(", ");
-                sb5.append(objArr[i4]);
+        sb.append((CharSequence) str, i2, str.length());
+        if (i < length) {
+            String str2 = " [";
+            while (i < objArr.length) {
+                sb.append(str2);
+                sb.append(zzb(objArr[i]));
+                i++;
+                str2 = ", ";
             }
-            sb5.append(AbstractJsonLexerKt.END_LIST);
+            sb.append(AbstractJsonLexerKt.END_LIST);
         }
-        return sb5.toString();
+        return sb.toString();
+    }
+
+    private static String zzb(Object obj) {
+        if (obj == null) {
+            return AbstractJsonLexerKt.NULL;
+        }
+        try {
+            return obj.toString();
+        } catch (Exception e) {
+            String name = obj.getClass().getName();
+            String hexString = Integer.toHexString(System.identityHashCode(obj));
+            StringBuilder sb = new StringBuilder(String.valueOf(name).length() + 1 + String.valueOf(hexString).length());
+            sb.append(name);
+            sb.append("@");
+            sb.append(hexString);
+            String sb2 = sb.toString();
+            Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(sb2), (Throwable) e);
+            String name2 = e.getClass().getName();
+            StringBuilder sb3 = new StringBuilder(sb2.length() + 8 + String.valueOf(name2).length() + 1);
+            sb3.append("<");
+            sb3.append(sb2);
+            sb3.append(" threw ");
+            sb3.append(name2);
+            sb3.append(">");
+            return sb3.toString();
+        }
     }
 }

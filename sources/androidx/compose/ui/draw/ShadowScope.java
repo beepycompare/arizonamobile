@@ -13,15 +13,15 @@ public interface ShadowScope extends Density {
     float getAlpha();
 
     /* renamed from: getBlendMode-0nO6VwU */
-    int mo4938getBlendMode0nO6VwU();
+    int mo4286getBlendMode0nO6VwU();
 
     Brush getBrush();
 
     /* renamed from: getColor-0d7_KjU */
-    long mo4939getColor0d7_KjU();
+    long mo4287getColor0d7_KjU();
 
     /* renamed from: getOffset-F1C5BW0 */
-    long mo4940getOffsetF1C5BW0();
+    long mo4288getOffsetF1C5BW0();
 
     float getRadius();
 
@@ -30,15 +30,15 @@ public interface ShadowScope extends Density {
     void setAlpha(float f);
 
     /* renamed from: setBlendMode-s9anfk8 */
-    void mo4941setBlendModes9anfk8(int i);
+    void mo4289setBlendModes9anfk8(int i);
 
     void setBrush(Brush brush);
 
     /* renamed from: setColor-8_81llA */
-    void mo4942setColor8_81llA(long j);
+    void mo4290setColor8_81llA(long j);
 
     /* renamed from: setOffset-k-4lQ0M */
-    void mo4943setOffsetk4lQ0M(long j);
+    void mo4291setOffsetk4lQ0M(long j);
 
     void setRadius(float f);
 
@@ -50,50 +50,50 @@ public interface ShadowScope extends Density {
     public static final class DefaultImpls {
         @Deprecated
         /* renamed from: roundToPx--R2X_6o  reason: not valid java name */
-        public static int m5037roundToPxR2X_6o(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo457roundToPxR2X_6o(j);
+        public static int m4385roundToPxR2X_6o(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo398roundToPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: roundToPx-0680j_4  reason: not valid java name */
-        public static int m5038roundToPx0680j_4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo458roundToPx0680j_4(f);
+        public static int m4386roundToPx0680j_4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo399roundToPx0680j_4(f);
         }
 
         @Deprecated
         /* renamed from: toDp-GaN1DYA  reason: not valid java name */
-        public static float m5039toDpGaN1DYA(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo459toDpGaN1DYA(j);
+        public static float m4387toDpGaN1DYA(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo400toDpGaN1DYA(j);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5040toDpu2uoSUM(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo460toDpu2uoSUM(f);
+        public static float m4388toDpu2uoSUM(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo401toDpu2uoSUM(f);
         }
 
         @Deprecated
         /* renamed from: toDp-u2uoSUM  reason: not valid java name */
-        public static float m5041toDpu2uoSUM(ShadowScope shadowScope, int i) {
-            return ShadowScope.super.mo461toDpu2uoSUM(i);
+        public static float m4389toDpu2uoSUM(ShadowScope shadowScope, int i) {
+            return ShadowScope.super.mo402toDpu2uoSUM(i);
         }
 
         @Deprecated
         /* renamed from: toDpSize-k-rfVVM  reason: not valid java name */
-        public static long m5042toDpSizekrfVVM(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo462toDpSizekrfVVM(j);
+        public static long m4390toDpSizekrfVVM(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo403toDpSizekrfVVM(j);
         }
 
         @Deprecated
         /* renamed from: toPx--R2X_6o  reason: not valid java name */
-        public static float m5043toPxR2X_6o(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo463toPxR2X_6o(j);
+        public static float m4391toPxR2X_6o(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo404toPxR2X_6o(j);
         }
 
         @Deprecated
         /* renamed from: toPx-0680j_4  reason: not valid java name */
-        public static float m5044toPx0680j_4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo464toPx0680j_4(f);
+        public static float m4392toPx0680j_4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo405toPx0680j_4(f);
         }
 
         @Deprecated
@@ -103,26 +103,26 @@ public interface ShadowScope extends Density {
 
         @Deprecated
         /* renamed from: toSize-XkaWNTQ  reason: not valid java name */
-        public static long m5045toSizeXkaWNTQ(ShadowScope shadowScope, long j) {
-            return ShadowScope.super.mo465toSizeXkaWNTQ(j);
+        public static long m4393toSizeXkaWNTQ(ShadowScope shadowScope, long j) {
+            return ShadowScope.super.mo406toSizeXkaWNTQ(j);
         }
 
         @Deprecated
         /* renamed from: toSp-0xMU5do  reason: not valid java name */
-        public static long m5046toSp0xMU5do(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo466toSp0xMU5do(f);
+        public static long m4394toSp0xMU5do(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo407toSp0xMU5do(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5047toSpkPz2Gy4(ShadowScope shadowScope, float f) {
-            return ShadowScope.super.mo467toSpkPz2Gy4(f);
+        public static long m4395toSpkPz2Gy4(ShadowScope shadowScope, float f) {
+            return ShadowScope.super.mo408toSpkPz2Gy4(f);
         }
 
         @Deprecated
         /* renamed from: toSp-kPz2Gy4  reason: not valid java name */
-        public static long m5048toSpkPz2Gy4(ShadowScope shadowScope, int i) {
-            return ShadowScope.super.mo468toSpkPz2Gy4(i);
+        public static long m4396toSpkPz2Gy4(ShadowScope shadowScope, int i) {
+            return ShadowScope.super.mo409toSpkPz2Gy4(i);
         }
     }
 }

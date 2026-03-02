@@ -8,14 +8,14 @@ import kotlin.Metadata;
 public final class AppBarMediumTokens {
     public static final int $stable = 0;
     public static final AppBarMediumTokens INSTANCE = new AppBarMediumTokens();
-    private static final float ContainerHeight = Dp.m8258constructorimpl((float) 112.0d);
+    private static final float ContainerHeight = Dp.m7555constructorimpl((float) 112.0d);
     private static final TypographyKeyTokens TitleFont = TypographyKeyTokens.HeadlineSmall;
 
     private AppBarMediumTokens() {
     }
 
     /* renamed from: getContainerHeight-D9Ej5fM  reason: not valid java name */
-    public final float m3733getContainerHeightD9Ej5fM() {
+    public final float m3117getContainerHeightD9Ej5fM() {
         return ContainerHeight;
     }
 

@@ -8,5 +8,5 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public interface PopupPositionProvider {
     /* renamed from: calculatePosition-llwVHH4 */
-    long mo428calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2);
+    long mo373calculatePositionllwVHH4(IntRect intRect, long j, LayoutDirection layoutDirection, long j2);
 }

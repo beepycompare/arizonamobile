@@ -62,7 +62,12 @@ public abstract class TwoStatePreference extends Preference {
 
     @Override // androidx.preference.Preference
     public boolean shouldDisableDependents() {
-        return (this.mDisableDependentsState ? this.mChecked : !this.mChecked) || super.shouldDisableDependents();
+        boolean z = this.mDisableDependentsState;
+        boolean z2 = this.mChecked;
+        if (!z) {
+            z2 = !z2;
+        }
+        return z2 || super.shouldDisableDependents();
     }
 
     public void setSummaryOn(CharSequence charSequence) {

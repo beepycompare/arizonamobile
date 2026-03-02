@@ -81,17 +81,13 @@ public final class MergedLifecycle implements Lifecycle {
         final CallbacksImpl callbacksImpl = new CallbacksImpl(new Function1() { // from class: com.arkivanov.decompose.lifecycle.MergedLifecycle$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$0;
-                _init_$lambda$0 = MergedLifecycle._init_$lambda$0(Ref.ObjectRef.this, this, objectRef2, (Lifecycle.State) obj);
-                return _init_$lambda$0;
+                return MergedLifecycle._init_$lambda$0(Ref.ObjectRef.this, this, objectRef2, (Lifecycle.State) obj);
             }
         });
         final CallbacksImpl callbacksImpl2 = new CallbacksImpl(new Function1() { // from class: com.arkivanov.decompose.lifecycle.MergedLifecycle$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit _init_$lambda$1;
-                _init_$lambda$1 = MergedLifecycle._init_$lambda$1(Ref.ObjectRef.this, this, objectRef, (Lifecycle.State) obj);
-                return _init_$lambda$1;
+                return MergedLifecycle._init_$lambda$1(Ref.ObjectRef.this, this, objectRef, (Lifecycle.State) obj);
             }
         });
         CallbacksImpl callbacksImpl3 = callbacksImpl;
@@ -145,7 +141,7 @@ public final class MergedLifecycle implements Lifecycle {
         Intrinsics.checkNotNullParameter(lifecycle2, "lifecycle2");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Unit _init_$lambda$0(Ref.ObjectRef objectRef, MergedLifecycle mergedLifecycle, Ref.ObjectRef objectRef2, Lifecycle.State state) {
         Intrinsics.checkNotNullParameter(state, "state");
@@ -154,7 +150,7 @@ public final class MergedLifecycle implements Lifecycle {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     public static final Unit _init_$lambda$1(Ref.ObjectRef objectRef, MergedLifecycle mergedLifecycle, Ref.ObjectRef objectRef2, Lifecycle.State state) {
         Intrinsics.checkNotNullParameter(state, "state");

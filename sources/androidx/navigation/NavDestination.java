@@ -157,14 +157,14 @@ public class NavDestination {
                     if (bundle == null || other.matchingArgs != null) {
                         if (bundle != null || other.matchingArgs == null) {
                             if (bundle != null) {
-                                int m9289sizeimpl = SavedStateReader.m9289sizeimpl(SavedStateReader.m9209constructorimpl(bundle));
+                                int m8494sizeimpl = SavedStateReader.m8494sizeimpl(SavedStateReader.m8414constructorimpl(bundle));
                                 Bundle bundle2 = other.matchingArgs;
                                 Intrinsics.checkNotNull(bundle2);
-                                int m9289sizeimpl2 = m9289sizeimpl - SavedStateReader.m9289sizeimpl(SavedStateReader.m9209constructorimpl(bundle2));
-                                if (m9289sizeimpl2 > 0) {
+                                int m8494sizeimpl2 = m8494sizeimpl - SavedStateReader.m8494sizeimpl(SavedStateReader.m8414constructorimpl(bundle2));
+                                if (m8494sizeimpl2 > 0) {
                                     return 1;
                                 }
-                                if (m9289sizeimpl2 < 0) {
+                                if (m8494sizeimpl2 < 0) {
                                     return -1;
                                 }
                             }
@@ -194,9 +194,9 @@ public class NavDestination {
             Set<String> keySet = bundle2.keySet();
             Intrinsics.checkNotNullExpressionValue(keySet, "keySet(...)");
             for (String str : keySet) {
-                Bundle m9209constructorimpl = SavedStateReader.m9209constructorimpl(bundle);
+                Bundle m8414constructorimpl = SavedStateReader.m8414constructorimpl(bundle);
                 Intrinsics.checkNotNull(str);
-                if (!SavedStateReader.m9210containsimpl(m9209constructorimpl, str)) {
+                if (!SavedStateReader.m8415containsimpl(m8414constructorimpl, str)) {
                     return false;
                 }
                 NavArgument navArgument = this.destination.getArguments().get(str);
@@ -420,7 +420,7 @@ public class NavDestination {
         }
         Matcher matcher = Pattern.compile("\\{(.+?)\\}").matcher(charSequence);
         StringBuffer stringBuffer = new StringBuffer();
-        if (bundle == null || (emptyMap = SavedStateReader.m9290toMapimpl(SavedStateReader.m9209constructorimpl(bundle))) == null) {
+        if (bundle == null || (emptyMap = SavedStateReader.m8495toMapimpl(SavedStateReader.m8414constructorimpl(bundle))) == null) {
             emptyMap = MapsKt.emptyMap();
         }
         while (matcher.find()) {
@@ -535,7 +535,7 @@ public class NavDestination {
             hashCode = destinationId + (navOptions != null ? navOptions.hashCode() : 0);
             Bundle defaultArguments = navAction.getDefaultArguments();
             if (defaultArguments != null) {
-                hashCode = (hashCode * 31) + SavedStateReader.m9212contentDeepHashCodeimpl(SavedStateReader.m9209constructorimpl(defaultArguments));
+                hashCode = (hashCode * 31) + SavedStateReader.m8417contentDeepHashCodeimpl(SavedStateReader.m8414constructorimpl(defaultArguments));
             }
         }
         for (String str : getArguments().keySet()) {
@@ -604,7 +604,7 @@ public class NavDestination {
             return str != null ? "android-app://androidx.navigation/" + str : "";
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final NavDestination _get_hierarchy_$lambda$1(NavDestination it) {
             Intrinsics.checkNotNullParameter(it, "it");
             return it.getParent();
@@ -615,9 +615,7 @@ public class NavDestination {
             return SequencesKt.generateSequence(navDestination, new Function1() { // from class: androidx.navigation.NavDestination$Companion$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    NavDestination _get_hierarchy_$lambda$1;
-                    _get_hierarchy_$lambda$1 = NavDestination.Companion._get_hierarchy_$lambda$1((NavDestination) obj);
-                    return _get_hierarchy_$lambda$1;
+                    return NavDestination.Companion._get_hierarchy_$lambda$1((NavDestination) obj);
                 }
             });
         }

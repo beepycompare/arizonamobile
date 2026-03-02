@@ -94,9 +94,7 @@ public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implem
             tryApproach = snapFlingBehavior.tryApproach(scrollScope, f, f2, new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$1;
-                    invokeSuspend$lambda$1 = SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$1(Ref.FloatRef.this, function1, ((Float) obj2).floatValue());
-                    return invokeSuspend$lambda$1;
+                    return SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$1(Ref.FloatRef.this, function1, ((Float) obj2).floatValue());
                 }
             }, this);
         } else if (i != 1) {
@@ -128,22 +126,20 @@ public final class SnapFlingBehavior$fling$result$1 extends SuspendLambda implem
         animateWithTarget = SnapFlingBehaviorKt.animateWithTarget(scrollScope2, f3, f4, copy$default, animationSpec, new Function1() { // from class: androidx.compose.foundation.gestures.snapping.SnapFlingBehavior$fling$result$1$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj2) {
-                Unit invokeSuspend$lambda$4;
-                invokeSuspend$lambda$4 = SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$4(Ref.FloatRef.this, function12, ((Float) obj2).floatValue());
-                return invokeSuspend$lambda$4;
+                return SnapFlingBehavior$fling$result$1.invokeSuspend$lambda$4(Ref.FloatRef.this, function12, ((Float) obj2).floatValue());
             }
         }, this);
         return animateWithTarget == coroutine_suspended ? coroutine_suspended : animateWithTarget;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(Ref.FloatRef floatRef, Function1 function1, float f) {
         floatRef.element -= f;
         function1.invoke(Float.valueOf(floatRef.element));
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$4(Ref.FloatRef floatRef, Function1 function1, float f) {
         floatRef.element -= f;
         function1.invoke(Float.valueOf(floatRef.element));

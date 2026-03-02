@@ -77,18 +77,18 @@ public abstract class RectListNode extends Modifier.Node implements GlobalPositi
 
     private final Rect calcBounds(LayoutCoordinates layoutCoordinates, androidx.compose.ui.geometry.Rect rect) {
         LayoutCoordinates findRootCoordinates = LayoutCoordinatesKt.findRootCoordinates(layoutCoordinates);
-        long mo6884localPositionOfR5De75A = findRootCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates, rect.m5214getTopLeftF1C5BW0());
-        long mo6884localPositionOfR5De75A2 = findRootCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates, rect.m5215getTopRightF1C5BW0());
-        long mo6884localPositionOfR5De75A3 = findRootCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates, rect.m5207getBottomLeftF1C5BW0());
-        long mo6884localPositionOfR5De75A4 = findRootCoordinates.mo6884localPositionOfR5De75A(layoutCoordinates, rect.m5208getBottomRightF1C5BW0());
-        int i = (int) (mo6884localPositionOfR5De75A >> 32);
-        int i2 = (int) (mo6884localPositionOfR5De75A2 >> 32);
-        int i3 = (int) (mo6884localPositionOfR5De75A3 >> 32);
-        int i4 = (int) (mo6884localPositionOfR5De75A4 >> 32);
-        int i5 = (int) (mo6884localPositionOfR5De75A & 4294967295L);
-        int i6 = (int) (mo6884localPositionOfR5De75A2 & 4294967295L);
-        int i7 = (int) (mo6884localPositionOfR5De75A3 & 4294967295L);
-        int i8 = (int) (mo6884localPositionOfR5De75A4 & 4294967295L);
+        long mo6225localPositionOfR5De75A = findRootCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, rect.m4562getTopLeftF1C5BW0());
+        long mo6225localPositionOfR5De75A2 = findRootCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, rect.m4563getTopRightF1C5BW0());
+        long mo6225localPositionOfR5De75A3 = findRootCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, rect.m4555getBottomLeftF1C5BW0());
+        long mo6225localPositionOfR5De75A4 = findRootCoordinates.mo6225localPositionOfR5De75A(layoutCoordinates, rect.m4556getBottomRightF1C5BW0());
+        int i = (int) (mo6225localPositionOfR5De75A >> 32);
+        int i2 = (int) (mo6225localPositionOfR5De75A2 >> 32);
+        int i3 = (int) (mo6225localPositionOfR5De75A3 >> 32);
+        int i4 = (int) (mo6225localPositionOfR5De75A4 >> 32);
+        int i5 = (int) (mo6225localPositionOfR5De75A & 4294967295L);
+        int i6 = (int) (mo6225localPositionOfR5De75A2 & 4294967295L);
+        int i7 = (int) (mo6225localPositionOfR5De75A3 & 4294967295L);
+        int i8 = (int) (mo6225localPositionOfR5De75A4 & 4294967295L);
         return new Rect(MathKt.roundToInt(ComparisonsKt.minOf(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))), MathKt.roundToInt(ComparisonsKt.minOf(Float.intBitsToFloat(i5), Float.intBitsToFloat(i6), Float.intBitsToFloat(i7), Float.intBitsToFloat(i8))), MathKt.roundToInt(ComparisonsKt.maxOf(Float.intBitsToFloat(i), Float.intBitsToFloat(i2), Float.intBitsToFloat(i3), Float.intBitsToFloat(i4))), MathKt.roundToInt(ComparisonsKt.maxOf(Float.intBitsToFloat(i5), Float.intBitsToFloat(i6), Float.intBitsToFloat(i7), Float.intBitsToFloat(i8))));
     }
 }

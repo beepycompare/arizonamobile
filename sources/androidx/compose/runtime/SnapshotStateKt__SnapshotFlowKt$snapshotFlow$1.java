@@ -116,11 +116,11 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     intersects$SnapshotStateKt__SnapshotFlowKt = SnapshotStateKt__SnapshotFlowKt.intersects$SnapshotStateKt__SnapshotFlowKt(mutableScatterSet2, set);
                                     if (!intersects$SnapshotStateKt__SnapshotFlowKt) {
                                         i = 0;
-                                        set = (Set) ChannelResult.m11789getOrNullimpl(channel.mo11777tryReceivePtdJZtk());
+                                        set = (Set) ChannelResult.m10714getOrNullimpl(channel.mo10702tryReceivePtdJZtk());
                                     }
                                 }
                                 i = 1;
-                                set = (Set) ChannelResult.m11789getOrNullimpl(channel.mo11777tryReceivePtdJZtk());
+                                set = (Set) ChannelResult.m10714getOrNullimpl(channel.mo10702tryReceivePtdJZtk());
                             } while (set != null);
                             if (i != 0) {
                                 try {
@@ -173,18 +173,14 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 function1 = new Function1() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj3) {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$0(MutableScatterSet.this, obj3);
-                        return invokeSuspend$lambda$0;
+                        return SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$0(MutableScatterSet.this, obj3);
                     }
                 };
                 Channel$default = ChannelKt.Channel$default(Integer.MAX_VALUE, null, null, 6, null);
                 observerHandle = Snapshot.Companion.registerApplyObserver(new Function2() { // from class: androidx.compose.runtime.SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj3, Object obj4) {
-                        Unit invokeSuspend$lambda$1;
-                        invokeSuspend$lambda$1 = SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$1(Channel.this, (Set) obj3, (Snapshot) obj4);
-                        return invokeSuspend$lambda$1;
+                        return SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1.invokeSuspend$lambda$1(Channel.this, (Set) obj3, (Snapshot) obj4);
                     }
                 });
                 Snapshot takeSnapshot2 = Snapshot.Companion.takeSnapshot(function1);
@@ -227,7 +223,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                     if (i == 0) {
                     }
                     i = 1;
-                    set = (Set) ChannelResult.m11789getOrNullimpl(channel.mo11777tryReceivePtdJZtk());
+                    set = (Set) ChannelResult.m10714getOrNullimpl(channel.mo10702tryReceivePtdJZtk());
                 } while (set != null);
                 if (i != 0) {
                 }
@@ -255,17 +251,17 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(MutableScatterSet mutableScatterSet, Object obj) {
         if (obj instanceof StateObjectImpl) {
             ReaderKind.Companion companion = ReaderKind.Companion;
-            ((StateObjectImpl) obj).m4885recordReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4));
+            ((StateObjectImpl) obj).m4234recordReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(4));
         }
         mutableScatterSet.add(obj);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$1(Channel channel, Set set, Snapshot snapshot) {
         if (set instanceof ScatterSetWrapper) {
             ScatterSet<T> set$runtime = ((ScatterSetWrapper) set).getSet$runtime();
@@ -285,7 +281,7 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                                     break loop0;
                                 }
                                 ReaderKind.Companion companion = ReaderKind.Companion;
-                                if (((StateObjectImpl) obj).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4))) {
+                                if (((StateObjectImpl) obj).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(4))) {
                                     break loop0;
                                 }
                             }
@@ -307,10 +303,10 @@ public final class SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1<T> extends Sus
                 for (T t : set2) {
                     if (t instanceof StateObjectImpl) {
                         ReaderKind.Companion companion2 = ReaderKind.Companion;
-                        if (((StateObjectImpl) t).m4884isReadInh_f27i8$runtime(ReaderKind.m4868constructorimpl(4))) {
+                        if (((StateObjectImpl) t).m4233isReadInh_f27i8$runtime(ReaderKind.m4221constructorimpl(4))) {
                         }
                     }
-                    channel.mo9174trySendJP2dKIU(set);
+                    channel.mo8396trySendJP2dKIU(set);
                 }
             }
         }

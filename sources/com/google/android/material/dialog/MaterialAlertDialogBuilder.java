@@ -100,11 +100,13 @@ public class MaterialAlertDialogBuilder extends AlertDialog.Builder {
     }
 
     public MaterialAlertDialogBuilder setBackgroundInsetStart(int i) {
-        if (getContext().getResources().getConfiguration().getLayoutDirection() == 1) {
-            this.backgroundInsets.right = i;
+        int layoutDirection = getContext().getResources().getConfiguration().getLayoutDirection();
+        Rect rect = this.backgroundInsets;
+        if (layoutDirection == 1) {
+            rect.right = i;
             return this;
         }
-        this.backgroundInsets.left = i;
+        rect.left = i;
         return this;
     }
 
@@ -114,11 +116,13 @@ public class MaterialAlertDialogBuilder extends AlertDialog.Builder {
     }
 
     public MaterialAlertDialogBuilder setBackgroundInsetEnd(int i) {
-        if (getContext().getResources().getConfiguration().getLayoutDirection() == 1) {
-            this.backgroundInsets.left = i;
+        int layoutDirection = getContext().getResources().getConfiguration().getLayoutDirection();
+        Rect rect = this.backgroundInsets;
+        if (layoutDirection == 1) {
+            rect.left = i;
             return this;
         }
-        this.backgroundInsets.right = i;
+        rect.right = i;
         return this;
     }
 

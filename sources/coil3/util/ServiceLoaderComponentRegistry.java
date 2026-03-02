@@ -15,17 +15,17 @@ public final class ServiceLoaderComponentRegistry {
     private static final Lazy fetchers$delegate = LazyKt.lazy(new Function0() { // from class: coil3.util.ServiceLoaderComponentRegistry$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            List fetchers_delegate$lambda$0;
-            fetchers_delegate$lambda$0 = ServiceLoaderComponentRegistry.fetchers_delegate$lambda$0();
-            return fetchers_delegate$lambda$0;
+            List immutableList;
+            immutableList = Collections_jvmCommonKt.toImmutableList(SequencesKt.toList(SequencesKt.asSequence(ServiceLoader.load(FetcherServiceLoaderTarget.class, FetcherServiceLoaderTarget.class.getClassLoader()).iterator())));
+            return immutableList;
         }
     });
     private static final Lazy decoders$delegate = LazyKt.lazy(new Function0() { // from class: coil3.util.ServiceLoaderComponentRegistry$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            List decoders_delegate$lambda$1;
-            decoders_delegate$lambda$1 = ServiceLoaderComponentRegistry.decoders_delegate$lambda$1();
-            return decoders_delegate$lambda$1;
+            List immutableList;
+            immutableList = Collections_jvmCommonKt.toImmutableList(SequencesKt.toList(SequencesKt.asSequence(ServiceLoader.load(DecoderServiceLoaderTarget.class, DecoderServiceLoaderTarget.class.getClassLoader()).iterator())));
+            return immutableList;
         }
     });
 
@@ -36,18 +36,8 @@ public final class ServiceLoaderComponentRegistry {
         return (List) fetchers$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List fetchers_delegate$lambda$0() {
-        return Collections_jvmCommonKt.toImmutableList(SequencesKt.toList(SequencesKt.asSequence(ServiceLoader.load(FetcherServiceLoaderTarget.class, FetcherServiceLoaderTarget.class.getClassLoader()).iterator())));
-    }
-
     public final List<DecoderServiceLoaderTarget> getDecoders() {
         return (List) decoders$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List decoders_delegate$lambda$1() {
-        return Collections_jvmCommonKt.toImmutableList(SequencesKt.toList(SequencesKt.asSequence(ServiceLoader.load(DecoderServiceLoaderTarget.class, DecoderServiceLoaderTarget.class.getClassLoader()).iterator())));
     }
 
     public final void register(FetcherServiceLoaderTarget<?> fetcherServiceLoaderTarget) {

@@ -26,9 +26,7 @@ public final class DateTimeUnitSerializer extends AbstractPolymorphicSerializer<
     private static final Lazy impl$delegate = LazyKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0() { // from class: kotlinx.datetime.serializers.DateTimeUnitSerializer$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            SealedClassSerializer impl_delegate$lambda$0;
-            impl_delegate$lambda$0 = DateTimeUnitSerializer.impl_delegate$lambda$0();
-            return impl_delegate$lambda$0;
+            return DateTimeUnitSerializer.impl_delegate$lambda$0();
         }
     });
 
@@ -47,7 +45,7 @@ public final class DateTimeUnitSerializer extends AbstractPolymorphicSerializer<
         return (SealedClassSerializer) impl$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SealedClassSerializer impl_delegate$lambda$0() {
         return new SealedClassSerializer("kotlinx.datetime.DateTimeUnit", Reflection.getOrCreateKotlinClass(DateTimeUnit.class), new KClass[]{Reflection.getOrCreateKotlinClass(DateTimeUnit.DayBased.class), Reflection.getOrCreateKotlinClass(DateTimeUnit.MonthBased.class), Reflection.getOrCreateKotlinClass(DateTimeUnit.TimeBased.class)}, new KSerializer[]{DayBasedDateTimeUnitSerializer.INSTANCE, MonthBasedDateTimeUnitSerializer.INSTANCE, TimeBasedDateTimeUnitSerializer.INSTANCE});
     }

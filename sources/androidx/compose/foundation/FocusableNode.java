@@ -53,11 +53,11 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     private FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1<? super Boolean, Unit> function1) {
         this.interactionSource = mutableInteractionSource;
         this.onFocusChange = function1;
-        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m5090FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
+        this.focusTargetNode = (FocusTargetModifierNode) delegate(FocusTargetModifierNodeKt.m4438FocusTargetModifierNodePYyLHbc(i, new FocusableNode$focusTargetNode$1(this)));
     }
 
     public /* synthetic */ FocusableNode(MutableInteractionSource mutableInteractionSource, int i, Function1 function1, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m5113getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
+        this(mutableInteractionSource, (i2 & 2) != 0 ? Focusability.Companion.m4461getAlwaysLCbbffg() : i, (i2 & 4) != 0 ? null : function1, null);
     }
 
     @Override // androidx.compose.ui.Modifier.Node
@@ -83,7 +83,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     }
 
     public final boolean requestFocus() {
-        return FocusTargetModifierNode.m5086requestFocus3ESFkO8$default(this.focusTargetNode, 0, 1, null);
+        return FocusTargetModifierNode.m4434requestFocus3ESFkO8$default(this.focusTargetNode, 0, 1, null);
     }
 
     private final FocusedBoundsObserverNode getFocusedBoundsObserver() {
@@ -184,15 +184,13 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
         ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.FocusableNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit retrievePinnableContainer$lambda$0;
-                retrievePinnableContainer$lambda$0 = FocusableNode.retrievePinnableContainer$lambda$0(Ref.ObjectRef.this, this);
-                return retrievePinnableContainer$lambda$0;
+                return FocusableNode.retrievePinnableContainer$lambda$0(Ref.ObjectRef.this, this);
             }
         });
         return (PinnableContainer) objectRef.element;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Type inference failed for: r2v2, types: [T, java.lang.Object] */
     public static final Unit retrievePinnableContainer$lambda$0(Ref.ObjectRef objectRef, FocusableNode focusableNode) {
         objectRef.element = CompositionLocalConsumerModifierNodeKt.currentValueOf(focusableNode, PinnableContainerKt.getLocalPinnableContainer());
@@ -214,22 +212,22 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
     private final void emitInteraction(boolean z) {
         MutableInteractionSource mutableInteractionSource = this.interactionSource;
         if (mutableInteractionSource != null) {
-            if (z) {
-                FocusInteraction.Focus focus = this.focusedInteraction;
+            FocusInteraction.Focus focus = this.focusedInteraction;
+            if (!z) {
                 if (focus != null) {
                     emitWithFallback(mutableInteractionSource, new FocusInteraction.Unfocus(focus));
                     this.focusedInteraction = null;
+                    return;
                 }
-                FocusInteraction.Focus focus2 = new FocusInteraction.Focus();
-                emitWithFallback(mutableInteractionSource, focus2);
-                this.focusedInteraction = focus2;
                 return;
             }
-            FocusInteraction.Focus focus3 = this.focusedInteraction;
-            if (focus3 != null) {
-                emitWithFallback(mutableInteractionSource, new FocusInteraction.Unfocus(focus3));
+            if (focus != null) {
+                emitWithFallback(mutableInteractionSource, new FocusInteraction.Unfocus(focus));
                 this.focusedInteraction = null;
             }
+            FocusInteraction.Focus focus2 = new FocusInteraction.Focus();
+            emitWithFallback(mutableInteractionSource, focus2);
+            this.focusedInteraction = focus2;
         }
     }
 
@@ -248,9 +246,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
             BuildersKt__Builders_commonKt.launch$default(getCoroutineScope(), null, null, new FocusableNode$emitWithFallback$1(mutableInteractionSource, interaction, job != null ? job.invokeOnCompletion(new Function1() { // from class: androidx.compose.foundation.FocusableNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit emitWithFallback$lambda$0;
-                    emitWithFallback$lambda$0 = FocusableNode.emitWithFallback$lambda$0(MutableInteractionSource.this, interaction, (Throwable) obj);
-                    return emitWithFallback$lambda$0;
+                    return FocusableNode.emitWithFallback$lambda$0(MutableInteractionSource.this, interaction, (Throwable) obj);
                 }
             }) : null, null), 3, null);
             return;
@@ -258,7 +254,7 @@ public final class FocusableNode extends DelegatingNode implements SemanticsModi
         Boolean.valueOf(mutableInteractionSource.tryEmit(interaction));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit emitWithFallback$lambda$0(MutableInteractionSource mutableInteractionSource, Interaction interaction, Throwable th) {
         mutableInteractionSource.tryEmit(interaction);
         return Unit.INSTANCE;

@@ -132,17 +132,17 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
             throw new KotlinNothingValueException();
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final void invokeSuspend$lambda$0(ComposeInputMethodManager composeInputMethodManager, TextFieldCharSequence textFieldCharSequence, TextFieldCharSequence textFieldCharSequence2, boolean z) {
-            long m1537getSelectiond9O1mEE = textFieldCharSequence.m1537getSelectiond9O1mEE();
-            TextRange m1536getCompositionMzsxiRA = textFieldCharSequence.m1536getCompositionMzsxiRA();
-            long m1537getSelectiond9O1mEE2 = textFieldCharSequence2.m1537getSelectiond9O1mEE();
-            TextRange m1536getCompositionMzsxiRA2 = textFieldCharSequence2.m1536getCompositionMzsxiRA();
+            long m1336getSelectiond9O1mEE = textFieldCharSequence.m1336getSelectiond9O1mEE();
+            TextRange m1335getCompositionMzsxiRA = textFieldCharSequence.m1335getCompositionMzsxiRA();
+            long m1336getSelectiond9O1mEE2 = textFieldCharSequence2.m1336getSelectiond9O1mEE();
+            TextRange m1335getCompositionMzsxiRA2 = textFieldCharSequence2.m1335getCompositionMzsxiRA();
             if (z) {
                 composeInputMethodManager.restartInput();
-            } else if (TextRange.m7694equalsimpl0(m1537getSelectiond9O1mEE, m1537getSelectiond9O1mEE2) && Intrinsics.areEqual(m1536getCompositionMzsxiRA, m1536getCompositionMzsxiRA2)) {
+            } else if (TextRange.m6996equalsimpl0(m1336getSelectiond9O1mEE, m1336getSelectiond9O1mEE2) && Intrinsics.areEqual(m1335getCompositionMzsxiRA, m1335getCompositionMzsxiRA2)) {
             } else {
-                composeInputMethodManager.updateSelection(TextRange.m7699getMinimpl(m1537getSelectiond9O1mEE2), TextRange.m7698getMaximpl(m1537getSelectiond9O1mEE2), m1536getCompositionMzsxiRA2 != null ? TextRange.m7699getMinimpl(m1536getCompositionMzsxiRA2.m7705unboximpl()) : -1, m1536getCompositionMzsxiRA2 != null ? TextRange.m7698getMaximpl(m1536getCompositionMzsxiRA2.m7705unboximpl()) : -1);
+                composeInputMethodManager.updateSelection(TextRange.m7001getMinimpl(m1336getSelectiond9O1mEE2), TextRange.m7000getMaximpl(m1336getSelectiond9O1mEE2), m1335getCompositionMzsxiRA2 != null ? TextRange.m7001getMinimpl(m1335getCompositionMzsxiRA2.m7007unboximpl()) : -1, m1335getCompositionMzsxiRA2 != null ? TextRange.m7000getMaximpl(m1335getCompositionMzsxiRA2.m7007unboximpl()) : -1);
             }
         }
     }
@@ -174,9 +174,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
             if (platformTextInputSession.startInputMethod(new PlatformTextInputMethodRequest() { // from class: androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$$ExternalSyntheticLambda0
                 @Override // androidx.compose.ui.platform.PlatformTextInputMethodRequest
                 public final InputConnection createInputConnection(EditorInfo editorInfo) {
-                    InputConnection invokeSuspend$lambda$1;
-                    invokeSuspend$lambda$1 = AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3.invokeSuspend$lambda$1(TransformedTextFieldState.this, imeOptions, receiveContentConfiguration, composeInputMethodManager, function1, cursorAnchorInfoController, textLayoutState, function0, viewConfiguration, function12, editorInfo);
-                    return invokeSuspend$lambda$1;
+                    return AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3.invokeSuspend$lambda$1(TransformedTextFieldState.this, imeOptions, receiveContentConfiguration, composeInputMethodManager, function1, cursorAnchorInfoController, textLayoutState, function0, viewConfiguration, function12, editorInfo);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -189,7 +187,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
         throw new KotlinNothingValueException();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final InputConnection invokeSuspend$lambda$1(final TransformedTextFieldState transformedTextFieldState, ImeOptions imeOptions, ReceiveContentConfiguration receiveContentConfiguration, ComposeInputMethodManager composeInputMethodManager, Function1 function1, CursorAnchorInfoController cursorAnchorInfoController, TextLayoutState textLayoutState, Function0 function0, ViewConfiguration viewConfiguration, Function1 function12, EditorInfo editorInfo) {
         AndroidTextInputSession_androidKt.logDebug$default(null, new Function0() { // from class: androidx.compose.foundation.text.input.internal.AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
@@ -200,7 +198,7 @@ public final class AndroidTextInputSession_androidKt$platformSpecificTextInputSe
             }
         }, 1, null);
         AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1 = new AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1(new DefaultImeEditCommandScope(transformedTextFieldState), transformedTextFieldState, composeInputMethodManager, function1, receiveContentConfiguration, cursorAnchorInfoController, textLayoutState, function0, viewConfiguration, function12);
-        EditorInfo_androidKt.m1586updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1537getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
+        EditorInfo_androidKt.m1377updatepLxbY9I(editorInfo, transformedTextFieldState.getVisualText(), transformedTextFieldState.getVisualText().m1336getSelectiond9O1mEE(), imeOptions, receiveContentConfiguration != null ? AndroidTextInputSession_androidKt.ALL_MIME_TYPES : null);
         return new StatelessInputConnection(androidTextInputSession_androidKt$platformSpecificTextInputSession$3$3$textInputSession$1, editorInfo);
     }
 

@@ -1,5 +1,6 @@
 package androidx.media3.datasource;
 
+import android.net.TrafficStats;
 import android.net.Uri;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Log;
@@ -199,6 +200,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         this.bytesToRead = 0L;
         transferInitializing(dataSpec);
         try {
+            TrafficStats.setThreadStatsTag((int) getCurrentThreadId());
             HttpURLConnection makeConnection = makeConnection(dataSpec);
             this.connection = makeConnection;
             this.responseCode = makeConnection.getResponseCode();
@@ -303,6 +305,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
             }
             this.connection = null;
             this.dataSpec = null;
+            TrafficStats.clearThreadStatsTag();
         }
     }
 
@@ -467,6 +470,10 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
     private static boolean isCompressed(HttpURLConnection httpURLConnection) {
         return "gzip".equalsIgnoreCase(httpURLConnection.getHeaderField(HttpHeaders.CONTENT_ENCODING));
+    }
+
+    private static long getCurrentThreadId() {
+        return Thread.currentThread().getId();
     }
 
     /* loaded from: classes2.dex */

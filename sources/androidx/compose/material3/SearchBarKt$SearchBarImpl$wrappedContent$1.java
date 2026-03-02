@@ -48,7 +48,7 @@ final class SearchBarKt$SearchBarImpl$wrappedContent$1 implements Function2<Comp
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$1$lambda$0(Animatable animatable, GraphicsLayerScope graphicsLayerScope) {
         graphicsLayerScope.setAlpha(((Number) animatable.getValue()).floatValue());
         return Unit.INSTANCE;
@@ -72,9 +72,7 @@ final class SearchBarKt$SearchBarImpl$wrappedContent$1 implements Function2<Comp
             rememberedValue = new Function1() { // from class: androidx.compose.material3.SearchBarKt$SearchBarImpl$wrappedContent$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit invoke$lambda$1$lambda$0;
-                    invoke$lambda$1$lambda$0 = SearchBarKt$SearchBarImpl$wrappedContent$1.invoke$lambda$1$lambda$0(Animatable.this, (GraphicsLayerScope) obj);
-                    return invoke$lambda$1$lambda$0;
+                    return SearchBarKt$SearchBarImpl$wrappedContent$1.invoke$lambda$1$lambda$0(Animatable.this, (GraphicsLayerScope) obj);
                 }
             };
             composer.updateRememberedValue(rememberedValue);
@@ -100,18 +98,18 @@ final class SearchBarKt$SearchBarImpl$wrappedContent$1 implements Function2<Comp
         } else {
             composer.useNode();
         }
-        Composer m4673constructorimpl = Updater.m4673constructorimpl(composer);
-        Updater.m4681setimpl(m4673constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+        Composer m4041constructorimpl = Updater.m4041constructorimpl(composer);
+        Updater.m4049setimpl(m4041constructorimpl, columnMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
         }
-        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
         ComposerKt.sourceInformationMarkerStart(composer, -384672921, "C89@4556L9:Column.kt#2w3rfo");
         ComposerKt.sourceInformationMarkerStart(composer, 355522356, "C2136@100236L46,2137@100303L9:SearchBar.kt#uh7d8r");
-        DividerKt.m2402HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2876getDividerColor0d7_KjU(), composer, 0, 3);
+        DividerKt.m2039HorizontalDivider9IZ8Weo(null, 0.0f, searchBarColors.m2409getDividerColor0d7_KjU(), composer, 0, 3);
         function3.invoke(ColumnScopeInstance.INSTANCE, composer, 6);
         ComposerKt.sourceInformationMarkerEnd(composer);
         ComposerKt.sourceInformationMarkerEnd(composer);

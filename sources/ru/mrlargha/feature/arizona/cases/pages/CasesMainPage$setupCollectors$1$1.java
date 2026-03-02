@@ -21,8 +21,8 @@ import ru.mrlargha.feature.arizona.cases.CasesInfoModel;
 import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesMainPageBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesMainPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1", f = "CasesMainPage.kt", i = {}, l = {140}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1", f = "CasesMainPage.kt", i = {}, l = {140}, m = "invokeSuspend", n = {}, nl = {150}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ArizonaCasesMainPageBinding $this_with;
@@ -49,8 +49,8 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CasesMainPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1", f = "CasesMainPage.kt", i = {}, l = {141}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1", f = "CasesMainPage.kt", i = {}, l = {141}, m = "invokeSuspend", n = {}, nl = {149}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -77,18 +77,18 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: CasesMainPage.kt */
-        @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003H\n"}, d2 = {"<anonymous>", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-        @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1$1", f = "CasesMainPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+        @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003H\n"}, d2 = {"<anonymous>", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+        @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1$1", f = "CasesMainPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
         /* renamed from: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes6.dex */
-        public static final class C00861 extends SuspendLambda implements Function2<CasesInfoModel, Continuation<? super Unit>, Object> {
+        public static final class C00851 extends SuspendLambda implements Function2<CasesInfoModel, Continuation<? super Unit>, Object> {
             final /* synthetic */ ArizonaCasesMainPageBinding $this_with;
             /* synthetic */ Object L$0;
             int label;
             final /* synthetic */ CasesMainPage this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00861(ArizonaCasesMainPageBinding arizonaCasesMainPageBinding, CasesMainPage casesMainPage, Continuation<? super C00861> continuation) {
+            C00851(ArizonaCasesMainPageBinding arizonaCasesMainPageBinding, CasesMainPage casesMainPage, Continuation<? super C00851> continuation) {
                 super(2, continuation);
                 this.$this_with = arizonaCasesMainPageBinding;
                 this.this$0 = casesMainPage;
@@ -96,14 +96,14 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00861 c00861 = new C00861(this.$this_with, this.this$0, continuation);
-                c00861.L$0 = obj;
-                return c00861;
+                C00851 c00851 = new C00851(this.$this_with, this.this$0, continuation);
+                c00851.L$0 = obj;
+                return c00851;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CasesInfoModel casesInfoModel, Continuation<? super Unit> continuation) {
-                return ((C00861) create(casesInfoModel, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00851) create(casesInfoModel, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -140,7 +140,7 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
                 ResultKt.throwOnFailure(obj);
                 mutableStateFlow = this.this$0.modelState;
                 this.label = 1;
-                if (FlowKt.collectLatest(mutableStateFlow, new C00861(this.$this_with, this.this$0, null), this) == coroutine_suspended) {
+                if (FlowKt.collectLatest(mutableStateFlow, new C00851(this.$this_with, this.this$0, null), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

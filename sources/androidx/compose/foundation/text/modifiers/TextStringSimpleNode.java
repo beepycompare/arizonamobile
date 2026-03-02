@@ -87,7 +87,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     public /* synthetic */ TextStringSimpleNode(String str, TextStyle textStyle, FontFamily.Resolver resolver, int i, boolean z, int i2, int i3, ColorProducer colorProducer, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m8193getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
+        this(str, textStyle, resolver, (i4 & 8) != 0 ? TextOverflow.Companion.m7490getClipgIe3tQ8() : i, (i4 & 16) != 0 ? true : z, (i4 & 32) != 0 ? Integer.MAX_VALUE : i2, (i4 & 64) != 0 ? 1 : i3, (i4 & 128) != 0 ? null : colorProducer, null);
     }
 
     private final ParagraphLayoutCache getLayoutCache() {
@@ -135,7 +135,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
     }
 
     /* renamed from: updateLayoutRelatedArgs-HuAbxIM  reason: not valid java name */
-    public final boolean m1821updateLayoutRelatedArgsHuAbxIM(TextStyle textStyle, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3) {
+    public final boolean m1577updateLayoutRelatedArgsHuAbxIM(TextStyle textStyle, int i, int i2, boolean z, FontFamily.Resolver resolver, int i3) {
         boolean z2 = !this.style.hasSameLayoutAffectingAttributes(textStyle);
         this.style = textStyle;
         if (this.minLines != i) {
@@ -154,7 +154,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             this.fontFamilyResolver = resolver;
             z2 = true;
         }
-        if (TextOverflow.m8184equalsimpl0(this.overflow, i3)) {
+        if (TextOverflow.m7481equalsimpl0(this.overflow, i3)) {
             return z2;
         }
         this.overflow = i3;
@@ -163,7 +163,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
 
     public final void doInvalidations(boolean z, boolean z2, boolean z3) {
         if (z2 || z3) {
-            getLayoutCache().m1811updateL6sJoHM(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
+            getLayoutCache().m1573updateL6sJoHM(this.text, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
         }
         if (isAttached()) {
             if (z2 || (z && this.semanticsTextLayoutResult != null)) {
@@ -295,7 +295,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             textSubstitutionValue.setSubstitution(str);
             ParagraphLayoutCache layoutCache = textSubstitutionValue.getLayoutCache();
             if (layoutCache != null) {
-                layoutCache.m1811updateL6sJoHM(str, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
+                layoutCache.m1573updateL6sJoHM(str, this.style, this.fontFamilyResolver, this.overflow, this.softWrap, this.maxLines, this.minLines);
                 return true;
             }
             return false;
@@ -319,9 +319,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             function1 = new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean applySemantics$lambda$0;
-                    applySemantics$lambda$0 = TextStringSimpleNode.applySemantics$lambda$0(TextStringSimpleNode.this, (List) obj);
-                    return Boolean.valueOf(applySemantics$lambda$0);
+                    return Boolean.valueOf(TextStringSimpleNode.applySemantics$lambda$0(TextStringSimpleNode.this, (List) obj));
                 }
             };
             this.semanticsTextLayoutResult = function1;
@@ -335,36 +333,30 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         SemanticsPropertiesKt.setTextSubstitution$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$1;
-                applySemantics$lambda$1 = TextStringSimpleNode.applySemantics$lambda$1(TextStringSimpleNode.this, (AnnotatedString) obj);
-                return Boolean.valueOf(applySemantics$lambda$1);
+                return Boolean.valueOf(TextStringSimpleNode.applySemantics$lambda$1(TextStringSimpleNode.this, (AnnotatedString) obj));
             }
         }, 1, null);
         SemanticsPropertiesKt.showTextSubstitution$default(semanticsPropertyReceiver, null, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean applySemantics$lambda$2;
-                applySemantics$lambda$2 = TextStringSimpleNode.applySemantics$lambda$2(TextStringSimpleNode.this, ((Boolean) obj).booleanValue());
-                return Boolean.valueOf(applySemantics$lambda$2);
+                return Boolean.valueOf(TextStringSimpleNode.applySemantics$lambda$2(TextStringSimpleNode.this, ((Boolean) obj).booleanValue()));
             }
         }, 1, null);
         SemanticsPropertiesKt.clearTextSubstitution$default(semanticsPropertyReceiver, null, new Function0() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                boolean applySemantics$lambda$3;
-                applySemantics$lambda$3 = TextStringSimpleNode.applySemantics$lambda$3(TextStringSimpleNode.this);
-                return Boolean.valueOf(applySemantics$lambda$3);
+                return Boolean.valueOf(TextStringSimpleNode.applySemantics$lambda$3(TextStringSimpleNode.this));
             }
         }, 1, null);
         SemanticsPropertiesKt.getTextLayoutResult$default(semanticsPropertyReceiver, null, function1, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$0(TextStringSimpleNode textStringSimpleNode, List list) {
         ParagraphLayoutCache layoutCache = textStringSimpleNode.getLayoutCache();
         TextStyle textStyle = textStringSimpleNode.style;
         ColorProducer colorProducer = textStringSimpleNode.overrideColor;
-        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m7721mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2386invoke0d7_KjU() : Color.Companion.m5460getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
+        TextLayoutResult slowCreateTextLayoutResultOrNull = layoutCache.slowCreateTextLayoutResultOrNull(TextStyle.m7023mergedA7vx0o$default(textStyle, colorProducer != null ? colorProducer.mo2027invoke0d7_KjU() : Color.Companion.m4808getUnspecified0d7_KjU(), 0L, null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, 0L, null, null, 0, 0, null, null, 16777214, null));
         if (slowCreateTextLayoutResultOrNull != null) {
             list.add(slowCreateTextLayoutResultOrNull);
         } else {
@@ -373,14 +365,14 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         return slowCreateTextLayoutResultOrNull != null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$1(TextStringSimpleNode textStringSimpleNode, AnnotatedString annotatedString) {
         textStringSimpleNode.setSubstitution(annotatedString.getText());
         textStringSimpleNode.invalidateForTranslate();
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$2(TextStringSimpleNode textStringSimpleNode, boolean z) {
         TextSubstitutionValue textSubstitutionValue = textStringSimpleNode.textSubstitution;
         if (textSubstitutionValue == null) {
@@ -393,7 +385,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean applySemantics$lambda$3(TextStringSimpleNode textStringSimpleNode) {
         textStringSimpleNode.clearSubstitution();
         textStringSimpleNode.invalidateForTranslate();
@@ -408,16 +400,16 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         Trace.beginSection("TextStringSimpleNode::measure");
         try {
             ParagraphLayoutCache layoutCacheForMeasure = getLayoutCacheForMeasure(measureScope);
-            boolean m1809layoutWithConstraintsK40F9xA = layoutCacheForMeasure.m1809layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
+            boolean m1571layoutWithConstraintsK40F9xA = layoutCacheForMeasure.m1571layoutWithConstraintsK40F9xA(j, measureScope.getLayoutDirection());
             layoutCacheForMeasure.getObserveFontChanges$foundation();
             Paragraph paragraph$foundation = layoutCacheForMeasure.getParagraph$foundation();
             Intrinsics.checkNotNull(paragraph$foundation);
-            long m1807getLayoutSizeYbymL2g$foundation = layoutCacheForMeasure.m1807getLayoutSizeYbymL2g$foundation();
-            if (m1809layoutWithConstraintsK40F9xA) {
+            long m1569getLayoutSizeYbymL2g$foundation = layoutCacheForMeasure.m1569getLayoutSizeYbymL2g$foundation();
+            if (m1571layoutWithConstraintsK40F9xA) {
                 LayoutModifierNodeKt.invalidateLayer(this);
                 HashMap hashMap = this.baselineCache;
                 if (hashMap == null) {
@@ -427,9 +419,9 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
                 hashMap.put(AlignmentLineKt.getFirstBaseline(), Integer.valueOf(Math.round(paragraph$foundation.getFirstBaseline())));
                 hashMap.put(AlignmentLineKt.getLastBaseline(), Integer.valueOf(Math.round(paragraph$foundation.getLastBaseline())));
             }
-            int i = (int) (m1807getLayoutSizeYbymL2g$foundation >> 32);
-            int i2 = (int) (m1807getLayoutSizeYbymL2g$foundation & 4294967295L);
-            final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.Companion.m8220fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
+            int i = (int) (m1569getLayoutSizeYbymL2g$foundation >> 32);
+            int i2 = (int) (m1569getLayoutSizeYbymL2g$foundation & 4294967295L);
+            final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.Companion.m7517fitPrioritizingWidthZbe2FdA(i, i, i2, i2));
             Map<AlignmentLine, Integer> map = this.baselineCache;
             Intrinsics.checkNotNull(map);
             return measureScope.layout(i, i2, map, new Function1() { // from class: androidx.compose.foundation.text.modifiers.TextStringSimpleNode$$ExternalSyntheticLambda4
@@ -484,7 +476,7 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
             boolean didOverflow$foundation = layoutCacheOrSubstitute.getDidOverflow$foundation();
             if (didOverflow$foundation) {
                 canvas.save();
-                Canvas.m5396clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m1807getLayoutSizeYbymL2g$foundation() >> 32), (int) (layoutCacheOrSubstitute.m1807getLayoutSizeYbymL2g$foundation() & 4294967295L), 0, 16, null);
+                Canvas.m4744clipRectN_I0leg$default(canvas, 0.0f, 0.0f, (int) (layoutCacheOrSubstitute.m1569getLayoutSizeYbymL2g$foundation() >> 32), (int) (layoutCacheOrSubstitute.m1569getLayoutSizeYbymL2g$foundation() & 4294967295L), 0, 16, null);
             }
             try {
                 TextDecoration textDecoration = this.style.getTextDecoration();
@@ -504,18 +496,18 @@ public final class TextStringSimpleNode extends Modifier.Node implements LayoutM
                 DrawStyle drawStyle2 = drawStyle;
                 Brush brush = this.style.getBrush();
                 if (brush != null) {
-                    Paragraph.m7545painthn5TExg$default(paragraph$foundation, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
+                    Paragraph.m6873painthn5TExg$default(paragraph$foundation, canvas, brush, this.style.getAlpha(), shadow2, textDecoration2, drawStyle2, 0, 64, null);
                 } else {
                     ColorProducer colorProducer = this.overrideColor;
-                    long mo2386invoke0d7_KjU = colorProducer != null ? colorProducer.mo2386invoke0d7_KjU() : Color.Companion.m5460getUnspecified0d7_KjU();
-                    if (mo2386invoke0d7_KjU == 16) {
-                        if (this.style.m7731getColor0d7_KjU() != 16) {
-                            mo2386invoke0d7_KjU = this.style.m7731getColor0d7_KjU();
+                    long mo2027invoke0d7_KjU = colorProducer != null ? colorProducer.mo2027invoke0d7_KjU() : Color.Companion.m4808getUnspecified0d7_KjU();
+                    if (mo2027invoke0d7_KjU == 16) {
+                        if (this.style.m7033getColor0d7_KjU() != 16) {
+                            mo2027invoke0d7_KjU = this.style.m7033getColor0d7_KjU();
                         } else {
-                            mo2386invoke0d7_KjU = Color.Companion.m5450getBlack0d7_KjU();
+                            mo2027invoke0d7_KjU = Color.Companion.m4798getBlack0d7_KjU();
                         }
                     }
-                    Paragraph.m7543paintLG529CI$default(paragraph$foundation, canvas, mo2386invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
+                    Paragraph.m6871paintLG529CI$default(paragraph$foundation, canvas, mo2027invoke0d7_KjU, shadow2, textDecoration2, drawStyle2, 0, 32, null);
                 }
             } finally {
                 if (didOverflow$foundation) {

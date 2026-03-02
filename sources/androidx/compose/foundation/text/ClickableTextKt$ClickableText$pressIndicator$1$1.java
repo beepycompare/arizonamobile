@@ -32,19 +32,17 @@ final class ClickableTextKt$ClickableText$pressIndicator$1$1 implements PointerI
         Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, null, null, new Function1() { // from class: androidx.compose.foundation.text.ClickableTextKt$ClickableText$pressIndicator$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit invoke$lambda$0;
-                invoke$lambda$0 = ClickableTextKt$ClickableText$pressIndicator$1$1.invoke$lambda$0(MutableState.this, function1, (Offset) obj);
-                return invoke$lambda$0;
+                return ClickableTextKt$ClickableText$pressIndicator$1$1.invoke$lambda$0(MutableState.this, function1, (Offset) obj);
             }
         }, continuation, 7, null);
         return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invoke$lambda$0(MutableState mutableState, Function1 function1, Offset offset) {
         TextLayoutResult textLayoutResult = (TextLayoutResult) mutableState.getValue();
         if (textLayoutResult != null) {
-            function1.invoke(Integer.valueOf(textLayoutResult.m7671getOffsetForPositionk4lQ0M(offset.m5189unboximpl())));
+            function1.invoke(Integer.valueOf(textLayoutResult.m6973getOffsetForPositionk4lQ0M(offset.m4537unboximpl())));
         }
         return Unit.INSTANCE;
     }

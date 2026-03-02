@@ -47,7 +47,7 @@ public final class PagerMeasureKt {
     }
 
     /* renamed from: measurePager-7L1iB3k  reason: not valid java name */
-    public static final PagerMeasureResult m1229measurePager7L1iB3k(final LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, final PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, long j, final Orientation orientation, final Alignment.Vertical vertical, final Alignment.Horizontal horizontal, final boolean z, final long j2, final int i8, int i9, List<Integer> list, SnapPosition snapPosition, final MutableState<Unit> mutableState, CoroutineScope coroutineScope, Density density, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3, final MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
+    public static final PagerMeasureResult m1078measurePager7L1iB3k(final LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, final PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, int i2, int i3, int i4, int i5, int i6, int i7, long j, final Orientation orientation, final Alignment.Vertical vertical, final Alignment.Horizontal horizontal, final boolean z, final long j2, final int i8, int i9, List<Integer> list, SnapPosition snapPosition, final MutableState<Unit> mutableState, CoroutineScope coroutineScope, Density density, Function3<? super Integer, ? super Integer, ? super Function1<? super Placeable.PlacementScope, Unit>, ? extends MeasureResult> function3, final MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
         int i10;
         boolean z2;
         int i11;
@@ -68,14 +68,15 @@ public final class PagerMeasureKt {
         }
         int coerceAtLeast = RangesKt.coerceAtLeast(i8 + i5, 0);
         int coerceAtMost = RangesKt.coerceAtMost(i9, i);
-        final long Constraints$default = ConstraintsKt.Constraints$default(0, orientation == Orientation.Vertical ? Constraints.m8211getMaxWidthimpl(j) : i8, 0, orientation != Orientation.Vertical ? Constraints.m8210getMaxHeightimpl(j) : i8, 5, null);
+        final long Constraints$default = ConstraintsKt.Constraints$default(0, orientation == Orientation.Vertical ? Constraints.m7508getMaxWidthimpl(j) : i8, 0, orientation != Orientation.Vertical ? Constraints.m7507getMaxHeightimpl(j) : i8, 5, null);
         if (i <= 0) {
-            return new PagerMeasureResult(CollectionsKt.emptyList(), i8, i5, i4, orientation, -i3, i2 + i4, false, coerceAtMost, null, null, 0.0f, 0, false, snapPosition, function3.invoke(Integer.valueOf(Constraints.m8213getMinWidthimpl(j)), Integer.valueOf(Constraints.m8212getMinHeightimpl(j)), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda0
+            return new PagerMeasureResult(CollectionsKt.emptyList(), i8, i5, i4, orientation, -i3, i2 + i4, false, coerceAtMost, null, null, 0.0f, 0, false, snapPosition, function3.invoke(Integer.valueOf(Constraints.m7510getMinWidthimpl(j)), Integer.valueOf(Constraints.m7509getMinHeightimpl(j)), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    Unit measurePager_7L1iB3k$lambda$3;
-                    measurePager_7L1iB3k$lambda$3 = PagerMeasureKt.measurePager_7L1iB3k$lambda$3((Placeable.PlacementScope) obj);
-                    return measurePager_7L1iB3k$lambda$3;
+                    Unit unit;
+                    Placeable.PlacementScope placementScope = (Placeable.PlacementScope) obj;
+                    unit = Unit.INSTANCE;
+                    return unit;
                 }
             }), false, null, null, coroutineScope, density, Constraints$default, 393216, null);
         }
@@ -98,9 +99,9 @@ public final class PagerMeasureKt {
         int i24 = 0;
         while (i23 < 0 && i18 > 0) {
             int i25 = i18 - 1;
-            MeasuredPage m1228getAndMeasureG5IdpRk = m1228getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i25, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
-            arrayDeque.add(0, m1228getAndMeasureG5IdpRk);
-            i24 = Math.max(i24, m1228getAndMeasureG5IdpRk.getCrossAxisSize());
+            MeasuredPage m1077getAndMeasureG5IdpRk = m1077getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i25, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+            arrayDeque.add(0, m1077getAndMeasureG5IdpRk);
+            i24 = Math.max(i24, m1077getAndMeasureG5IdpRk.getCrossAxisSize());
             i23 += coerceAtLeast;
             i18 = i25;
         }
@@ -134,7 +135,7 @@ public final class PagerMeasureKt {
             int i34 = coerceAtLeast2;
             int i35 = i33;
             int i36 = i24;
-            MeasuredPage m1228getAndMeasureG5IdpRk2 = m1228getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i35, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+            MeasuredPage m1077getAndMeasureG5IdpRk2 = m1077getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i35, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
             int i37 = i32;
             int i38 = i - 1;
             i29 += i35 == i38 ? i8 : coerceAtLeast;
@@ -144,8 +145,8 @@ public final class PagerMeasureKt {
                 Unit unit2 = Unit.INSTANCE;
                 z4 = true;
             } else {
-                i36 = Math.max(i36, m1228getAndMeasureG5IdpRk2.getCrossAxisSize());
-                Boolean.valueOf(arrayDeque.add(m1228getAndMeasureG5IdpRk2));
+                i36 = Math.max(i36, m1077getAndMeasureG5IdpRk2.getCrossAxisSize());
+                Boolean.valueOf(arrayDeque.add(m1077getAndMeasureG5IdpRk2));
                 i16 = i28;
                 i32 = i37;
             }
@@ -165,9 +166,9 @@ public final class PagerMeasureKt {
             i13 = i28;
             while (i12 < i3 && i13 > 0) {
                 int i43 = i13 - 1;
-                MeasuredPage m1228getAndMeasureG5IdpRk3 = m1228getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i43, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
-                arrayDeque.add(0, m1228getAndMeasureG5IdpRk3);
-                i11 = Math.max(i11, m1228getAndMeasureG5IdpRk3.getCrossAxisSize());
+                MeasuredPage m1077getAndMeasureG5IdpRk3 = m1077getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i43, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i8, mutableIntObjectMap);
+                arrayDeque.add(0, m1077getAndMeasureG5IdpRk3);
+                i11 = Math.max(i11, m1077getAndMeasureG5IdpRk3.getCrossAxisSize());
                 i12 += coerceAtLeast;
                 i40 = i40;
                 i13 = i43;
@@ -208,9 +209,9 @@ public final class PagerMeasureKt {
         List<MeasuredPage> createPagesBeforeList = createPagesBeforeList(i13, i17, list, new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                MeasuredPage measurePager_7L1iB3k$lambda$10;
-                measurePager_7L1iB3k$lambda$10 = PagerMeasureKt.measurePager_7L1iB3k$lambda$10(LazyLayoutMeasureScope.this, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, z, i8, mutableIntObjectMap, ((Integer) obj).intValue());
-                return measurePager_7L1iB3k$lambda$10;
+                MeasuredPage m1077getAndMeasureG5IdpRk4;
+                m1077getAndMeasureG5IdpRk4 = PagerMeasureKt.m1077getAndMeasureG5IdpRk(r0, ((Integer) obj).intValue(), Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, LazyLayoutMeasureScope.this.getLayoutDirection(), z, i8, mutableIntObjectMap);
+                return m1077getAndMeasureG5IdpRk4;
             }
         });
         int size2 = createPagesBeforeList.size();
@@ -225,9 +226,9 @@ public final class PagerMeasureKt {
         List<MeasuredPage> createPagesAfterList = createPagesAfterList(((MeasuredPage) arrayDeque.last()).getIndex(), i, i17, list, new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                MeasuredPage measurePager_7L1iB3k$lambda$12;
-                measurePager_7L1iB3k$lambda$12 = PagerMeasureKt.measurePager_7L1iB3k$lambda$12(LazyLayoutMeasureScope.this, Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, z, i8, mutableIntObjectMap, ((Integer) obj).intValue());
-                return measurePager_7L1iB3k$lambda$12;
+                MeasuredPage m1077getAndMeasureG5IdpRk4;
+                m1077getAndMeasureG5IdpRk4 = PagerMeasureKt.m1077getAndMeasureG5IdpRk(r0, ((Integer) obj).intValue(), Constraints$default, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, LazyLayoutMeasureScope.this.getLayoutDirection(), z, i8, mutableIntObjectMap);
+                return m1077getAndMeasureG5IdpRk4;
             }
         });
         int size3 = createPagesAfterList.size();
@@ -239,14 +240,14 @@ public final class PagerMeasureKt {
         }
         int i51 = i17;
         boolean z5 = Intrinsics.areEqual(measuredPage3, arrayDeque.first()) && list2.isEmpty() && createPagesAfterList.isEmpty();
-        int m8228constrainWidthK40F9xA = ConstraintsKt.m8228constrainWidthK40F9xA(j, orientation == Orientation.Vertical ? i48 : i29);
+        int m7525constrainWidthK40F9xA = ConstraintsKt.m7525constrainWidthK40F9xA(j, orientation == Orientation.Vertical ? i48 : i29);
         if (orientation == Orientation.Vertical) {
             i48 = i29;
         }
-        int m8227constrainHeightK40F9xA = ConstraintsKt.m8227constrainHeightK40F9xA(j, i48);
+        int m7524constrainHeightK40F9xA = ConstraintsKt.m7524constrainHeightK40F9xA(j, i48);
         int i52 = i10;
         int i53 = i29;
-        final List<MeasuredPage> calculatePagesOffsets = calculatePagesOffsets(lazyLayoutMeasureScope, arrayDeque, list2, createPagesAfterList, m8228constrainWidthK40F9xA, m8227constrainHeightK40F9xA, i53, i2, i14, orientation, z, lazyLayoutMeasureScope, i5, i8);
+        final List<MeasuredPage> calculatePagesOffsets = calculatePagesOffsets(lazyLayoutMeasureScope, arrayDeque, list2, createPagesAfterList, m7525constrainWidthK40F9xA, m7524constrainHeightK40F9xA, i53, i2, i14, orientation, z, lazyLayoutMeasureScope, i5, i8);
         if (z5) {
             measuredPage = measuredPage3;
             arrayList = calculatePagesOffsets;
@@ -307,32 +308,15 @@ public final class PagerMeasureKt {
         List list4 = arrayList3;
         MeasuredPage measuredPage9 = measuredPage;
         MeasuredPage calculateNewCurrentPage = calculateNewCurrentPage(i2 + i3 + i4, arrayList, i3, i4, i8, snapPosition, i);
-        return new PagerMeasureResult(arrayList, i8, i5, i4, orientation, i21, i27, z, i51, measuredPage9, calculateNewCurrentPage, coerceAtLeast == 0 ? 0.0f : RangesKt.coerceIn((snapPosition.position(i15, i8, i3, i4, calculateNewCurrentPage != null ? calculateNewCurrentPage.getIndex() : 0, i) - (calculateNewCurrentPage != null ? calculateNewCurrentPage.getOffset() : 0)) / coerceAtLeast, -0.5f, 0.5f), i47, i52 < i || i53 > i2, snapPosition, function3.invoke(Integer.valueOf(m8228constrainWidthK40F9xA), Integer.valueOf(m8227constrainHeightK40F9xA), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda3
+        return new PagerMeasureResult(arrayList, i8, i5, i4, orientation, i21, i27, z, i51, measuredPage9, calculateNewCurrentPage, coerceAtLeast == 0 ? 0.0f : RangesKt.coerceIn((snapPosition.position(i15, i8, i3, i4, calculateNewCurrentPage != null ? calculateNewCurrentPage.getIndex() : 0, i) - (calculateNewCurrentPage != null ? calculateNewCurrentPage.getOffset() : 0)) / coerceAtLeast, -0.5f, 0.5f), i47, i52 < i || i53 > i2, snapPosition, function3.invoke(Integer.valueOf(m7525constrainWidthK40F9xA), Integer.valueOf(m7524constrainHeightK40F9xA), new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measurePager_7L1iB3k$lambda$18;
-                measurePager_7L1iB3k$lambda$18 = PagerMeasureKt.measurePager_7L1iB3k$lambda$18(MutableState.this, calculatePagesOffsets, (Placeable.PlacementScope) obj);
-                return measurePager_7L1iB3k$lambda$18;
+                return PagerMeasureKt.measurePager_7L1iB3k$lambda$18(MutableState.this, calculatePagesOffsets, (Placeable.PlacementScope) obj);
             }
         }), z4, list3, list4, coroutineScope, density, Constraints$default, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit measurePager_7L1iB3k$lambda$3(Placeable.PlacementScope placementScope) {
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final MeasuredPage measurePager_7L1iB3k$lambda$10(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, boolean z, int i, MutableIntObjectMap mutableIntObjectMap, int i2) {
-        return m1228getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i2, j, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i, mutableIntObjectMap);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final MeasuredPage measurePager_7L1iB3k$lambda$12(LazyLayoutMeasureScope lazyLayoutMeasureScope, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, boolean z, int i, MutableIntObjectMap mutableIntObjectMap, int i2) {
-        return m1228getAndMeasureG5IdpRk(lazyLayoutMeasureScope, i2, j, pagerLazyLayoutItemProvider, j2, orientation, horizontal, vertical, lazyLayoutMeasureScope.getLayoutDirection(), z, i, mutableIntObjectMap);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measurePager_7L1iB3k$lambda$18(MutableState mutableState, final List list, Placeable.PlacementScope placementScope) {
         placementScope.withMotionFrameOfReferencePlacement(new Function1() { // from class: androidx.compose.foundation.pager.PagerMeasureKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
@@ -342,7 +326,7 @@ public final class PagerMeasureKt {
                 return measurePager_7L1iB3k$lambda$18$0;
             }
         });
-        ObservableScopeInvalidator.m1146attachToScopeimpl(mutableState);
+        ObservableScopeInvalidator.m1005attachToScopeimpl(mutableState);
         return Unit.INSTANCE;
     }
 
@@ -404,8 +388,9 @@ public final class PagerMeasureKt {
         return arrayList == null ? CollectionsKt.emptyList() : arrayList;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getAndMeasure-G5IdpRk  reason: not valid java name */
-    private static final MeasuredPage m1228getAndMeasureG5IdpRk(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, LayoutDirection layoutDirection, boolean z, int i2, MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
+    public static final MeasuredPage m1077getAndMeasureG5IdpRk(LazyLayoutMeasureScope lazyLayoutMeasureScope, int i, long j, PagerLazyLayoutItemProvider pagerLazyLayoutItemProvider, long j2, Orientation orientation, Alignment.Horizontal horizontal, Alignment.Vertical vertical, LayoutDirection layoutDirection, boolean z, int i2, MutableIntObjectMap<List<Placeable>> mutableIntObjectMap) {
         Object key = pagerLazyLayoutItemProvider.getKey(i);
         ArrayList arrayList = mutableIntObjectMap.get(i);
         if (arrayList == null) {
@@ -413,7 +398,7 @@ public final class PagerMeasureKt {
             int size = compose.size();
             ArrayList arrayList2 = new ArrayList(size);
             for (int i3 = 0; i3 < size; i3++) {
-                arrayList2.add(compose.get(i3).mo6875measureBRTryo0(j));
+                arrayList2.add(compose.get(i3).mo6216measureBRTryo0(j));
             }
             arrayList = arrayList2;
             mutableIntObjectMap.set(i, arrayList);
@@ -444,13 +429,13 @@ public final class PagerMeasureKt {
                 iArr[i11] = i7;
             }
             int[] iArr2 = new int[size];
-            Arrangement.HorizontalOrVertical m786spacedBy0680j_4 = Arrangement.Absolute.INSTANCE.m786spacedBy0680j_4(lazyLayoutMeasureScope.mo461toDpu2uoSUM(i6));
+            Arrangement.HorizontalOrVertical m691spacedBy0680j_4 = Arrangement.Absolute.INSTANCE.m691spacedBy0680j_4(lazyLayoutMeasureScope.mo402toDpu2uoSUM(i6));
             if (orientation == Orientation.Vertical) {
-                m786spacedBy0680j_4.arrange(density, i10, iArr, iArr2);
+                m691spacedBy0680j_4.arrange(density, i10, iArr, iArr2);
                 arrayList = arrayList2;
             } else {
                 arrayList = arrayList2;
-                m786spacedBy0680j_4.arrange(density, i10, iArr, LayoutDirection.Ltr, iArr2);
+                m691spacedBy0680j_4.arrange(density, i10, iArr, LayoutDirection.Ltr, iArr2);
             }
             IntRange indices = ArraysKt.getIndices(iArr2);
             if (z) {

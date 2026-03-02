@@ -5,7 +5,7 @@ import androidx.media3.common.PlaybackParameters;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.audio.AudioOutput;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ForwardingAudioOutput implements AudioOutput {
     private final AudioOutput audioOutput;
 

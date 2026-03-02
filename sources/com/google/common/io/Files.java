@@ -114,10 +114,12 @@ public final class Files {
 
         @Override // com.google.common.io.ByteSource
         public long size() throws IOException {
-            if (!this.file.isFile()) {
-                throw new FileNotFoundException(this.file.toString());
+            boolean isFile = this.file.isFile();
+            File file = this.file;
+            if (!isFile) {
+                throw new FileNotFoundException(file.toString());
             }
-            return this.file.length();
+            return file.length();
         }
 
         @Override // com.google.common.io.ByteSource

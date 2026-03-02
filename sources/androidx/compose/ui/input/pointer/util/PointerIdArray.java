@@ -22,12 +22,12 @@ public final class PointerIdArray {
     }
 
     /* renamed from: get-_I2yYro  reason: not valid java name */
-    public final long m6845get_I2yYro(int i) {
-        return PointerId.m6724constructorimpl(this.internalArray[i]);
+    public final long m6186get_I2yYro(int i) {
+        return PointerId.m6065constructorimpl(this.internalArray[i]);
     }
 
     /* renamed from: remove-0FcD4WY  reason: not valid java name */
-    public final boolean m6846remove0FcD4WY(long j) {
+    public final boolean m6187remove0FcD4WY(long j) {
         return remove(j);
     }
 
@@ -80,7 +80,7 @@ public final class PointerIdArray {
     }
 
     /* renamed from: add-0FcD4WY  reason: not valid java name */
-    public final boolean m6843add0FcD4WY(long j) {
+    public final boolean m6184add0FcD4WY(long j) {
         return add(j);
     }
 
@@ -104,7 +104,7 @@ public final class PointerIdArray {
     }
 
     /* renamed from: set-DmW0f2w  reason: not valid java name */
-    public final void m6847setDmW0f2w(int i, long j) {
+    public final void m6188setDmW0f2w(int i, long j) {
         set(i, j);
     }
 
@@ -113,7 +113,7 @@ public final class PointerIdArray {
     }
 
     /* renamed from: contains-0FcD4WY  reason: not valid java name */
-    public final boolean m6844contains0FcD4WY(long j) {
+    public final boolean m6185contains0FcD4WY(long j) {
         return contains(j);
     }
 

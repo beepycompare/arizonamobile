@@ -11,12 +11,12 @@ public final class AnimationKt {
     public static final long MillisToNanos = 1000000;
     public static final long SecondsToMillis = 1000;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnimationVector createAnimation$lambda$0(AnimationVector animationVector) {
         return animationVector;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final AnimationVector createAnimation$lambda$1(AnimationVector animationVector) {
         return animationVector;
     }
@@ -33,16 +33,12 @@ public final class AnimationKt {
         return new TargetBasedAnimation<>(vectorizedAnimationSpec, VectorConvertersKt.TwoWayConverter(new Function1() { // from class: androidx.compose.animation.core.AnimationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                AnimationVector createAnimation$lambda$0;
-                createAnimation$lambda$0 = AnimationKt.createAnimation$lambda$0((AnimationVector) obj);
-                return createAnimation$lambda$0;
+                return AnimationKt.createAnimation$lambda$0((AnimationVector) obj);
             }
         }, new Function1() { // from class: androidx.compose.animation.core.AnimationKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                AnimationVector createAnimation$lambda$1;
-                createAnimation$lambda$1 = AnimationKt.createAnimation$lambda$1((AnimationVector) obj);
-                return createAnimation$lambda$1;
+                return AnimationKt.createAnimation$lambda$1((AnimationVector) obj);
             }
         }), v, v2, v3);
     }

@@ -15,8 +15,8 @@ public interface ImeEditCommandScope {
     boolean endBatchEdit();
 
     /* renamed from: mapFromTransformed-GEjPoXI */
-    long mo1568mapFromTransformedGEjPoXI(long j);
+    long mo1365mapFromTransformedGEjPoXI(long j);
 
     /* renamed from: mapToTransformed-GEjPoXI */
-    long mo1569mapToTransformedGEjPoXI(long j);
+    long mo1366mapToTransformedGEjPoXI(long j);
 }

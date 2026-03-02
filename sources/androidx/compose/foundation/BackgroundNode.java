@@ -50,16 +50,16 @@ public final class BackgroundNode extends Modifier.Node implements DrawModifierN
         this.brush = brush;
         this.alpha = f;
         this.shape = shape;
-        this.lastSize = Size.Companion.m5256getUnspecifiedNHjbRc();
+        this.lastSize = Size.Companion.m4604getUnspecifiedNHjbRc();
     }
 
     /* renamed from: getColor-0d7_KjU  reason: not valid java name */
-    public final long m300getColor0d7_KjU() {
+    public final long m265getColor0d7_KjU() {
         return this.color;
     }
 
     /* renamed from: setColor-8_81llA  reason: not valid java name */
-    public final void m301setColor8_81llA(long j) {
+    public final void m266setColor8_81llA(long j) {
         this.color = j;
     }
 
@@ -109,7 +109,7 @@ public final class BackgroundNode extends Modifier.Node implements DrawModifierN
 
     @Override // androidx.compose.ui.node.ObserverModifierNode
     public void onObservedReadsChanged() {
-        this.lastSize = Size.Companion.m5256getUnspecifiedNHjbRc();
+        this.lastSize = Size.Companion.m4604getUnspecifiedNHjbRc();
         this.lastLayoutDirection = null;
         this.lastOutline = null;
         this.lastShape = null;
@@ -117,54 +117,52 @@ public final class BackgroundNode extends Modifier.Node implements DrawModifierN
     }
 
     private final void drawRect(ContentDrawScope contentDrawScope) {
-        if (!Color.m5425equalsimpl0(this.color, Color.Companion.m5460getUnspecified0d7_KjU())) {
-            DrawScope.m5999drawRectnJ9OG0$default(contentDrawScope, this.color, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
+        if (!Color.m4773equalsimpl0(this.color, Color.Companion.m4808getUnspecified0d7_KjU())) {
+            DrawScope.m5340drawRectnJ9OG0$default(contentDrawScope, this.color, 0L, 0L, 0.0f, null, null, 0, WebSocketProtocol.PAYLOAD_SHORT, null);
         }
         Brush brush = this.brush;
         if (brush != null) {
-            DrawScope.m5998drawRectAsUm42w$default(contentDrawScope, brush, 0L, 0L, this.alpha, null, null, 0, 118, null);
+            DrawScope.m5339drawRectAsUm42w$default(contentDrawScope, brush, 0L, 0L, this.alpha, null, null, 0, 118, null);
         }
     }
 
     private final void drawOutline(ContentDrawScope contentDrawScope) {
         Outline outline = getOutline(contentDrawScope);
-        if (!Color.m5425equalsimpl0(this.color, Color.Companion.m5460getUnspecified0d7_KjU())) {
-            OutlineKt.m5699drawOutlinewDX37Ww$default(contentDrawScope, outline, this.color, 0.0f, null, null, 0, 60, null);
+        if (!Color.m4773equalsimpl0(this.color, Color.Companion.m4808getUnspecified0d7_KjU())) {
+            OutlineKt.m5045drawOutlinewDX37Ww$default(contentDrawScope, outline, this.color, 0.0f, null, null, 0, 60, null);
         }
         Brush brush = this.brush;
         if (brush != null) {
-            OutlineKt.m5697drawOutlinehn5TExg$default(contentDrawScope, outline, brush, this.alpha, null, null, 0, 56, null);
+            OutlineKt.m5043drawOutlinehn5TExg$default(contentDrawScope, outline, brush, this.alpha, null, null, 0, 56, null);
         }
     }
 
     private final Outline getOutline(final ContentDrawScope contentDrawScope) {
         Outline outline;
-        if (Size.m5244equalsimpl0(contentDrawScope.mo6005getSizeNHjbRc(), this.lastSize) && contentDrawScope.getLayoutDirection() == this.lastLayoutDirection && Intrinsics.areEqual(this.lastShape, this.shape)) {
+        if (Size.m4592equalsimpl0(contentDrawScope.mo5346getSizeNHjbRc(), this.lastSize) && contentDrawScope.getLayoutDirection() == this.lastLayoutDirection && Intrinsics.areEqual(this.lastShape, this.shape)) {
             outline = this.lastOutline;
             Intrinsics.checkNotNull(outline);
         } else {
             ObserverModifierNodeKt.observeReads(this, new Function0() { // from class: androidx.compose.foundation.BackgroundNode$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit outline$lambda$0;
-                    outline$lambda$0 = BackgroundNode.getOutline$lambda$0(BackgroundNode.this, contentDrawScope);
-                    return outline$lambda$0;
+                    return BackgroundNode.getOutline$lambda$0(BackgroundNode.this, contentDrawScope);
                 }
             });
             outline = this.tmpOutline;
             this.tmpOutline = null;
         }
         this.lastOutline = outline;
-        this.lastSize = contentDrawScope.mo6005getSizeNHjbRc();
+        this.lastSize = contentDrawScope.mo5346getSizeNHjbRc();
         this.lastLayoutDirection = contentDrawScope.getLayoutDirection();
         this.lastShape = this.shape;
         Intrinsics.checkNotNull(outline);
         return outline;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit getOutline$lambda$0(BackgroundNode backgroundNode, ContentDrawScope contentDrawScope) {
-        backgroundNode.tmpOutline = backgroundNode.shape.mo365createOutlinePq9zytI(contentDrawScope.mo6005getSizeNHjbRc(), contentDrawScope.getLayoutDirection(), contentDrawScope);
+        backgroundNode.tmpOutline = backgroundNode.shape.mo320createOutlinePq9zytI(contentDrawScope.mo5346getSizeNHjbRc(), contentDrawScope.getLayoutDirection(), contentDrawScope);
         return Unit.INSTANCE;
     }
 

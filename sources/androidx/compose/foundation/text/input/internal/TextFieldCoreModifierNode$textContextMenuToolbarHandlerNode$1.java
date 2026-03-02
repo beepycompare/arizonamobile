@@ -40,7 +40,7 @@ public final class TextFieldCoreModifierNode$textContextMenuToolbarHandlerNode$1
         if (r8.updateClipboardEntry(r7) == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0068, code lost:
-        if (r8.mo1835onShowSelectionToolbarSbBc2M(r1, r4.getTextFieldState$foundation().getVisualText().m1537getSelectiond9O1mEE(), r7) == r0) goto L16;
+        if (r8.mo1591onShowSelectionToolbarSbBc2M(r1, r4.getTextFieldState$foundation().getVisualText().m1336getSelectiond9O1mEE(), r7) == r0) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x006a, code lost:
         return r0;

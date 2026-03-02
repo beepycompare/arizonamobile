@@ -170,13 +170,15 @@ public class SimpleXYSeries implements EditableXYSeries, OrderedXYSeries, PlotLi
     public void resize(int i) {
         try {
             this.lock.writeLock().lock();
-            if (this.xVals.size() < i) {
-                for (int size = this.xVals.size(); size < i; size++) {
+            int size = this.xVals.size();
+            LinkedList<Number> linkedList = this.xVals;
+            if (size < i) {
+                for (int size2 = linkedList.size(); size2 < i; size2++) {
                     this.xVals.add(null);
                     this.yVals.add(null);
                 }
-            } else if (this.xVals.size() > i) {
-                for (int size2 = this.xVals.size(); size2 > i; size2--) {
+            } else if (linkedList.size() > i) {
+                for (int size3 = this.xVals.size(); size3 > i; size3--) {
                     this.xVals.removeLast();
                     this.yVals.removeLast();
                 }

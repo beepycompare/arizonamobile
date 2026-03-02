@@ -195,6 +195,9 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         } else {
             this.joiningDeadlineMs = C.TIME_UNSET;
         }
+        if (this.formatQueue.size() > 0) {
+            this.waitingForFirstSampleInFormat = true;
+        }
         this.formatQueue.clear();
     }
 

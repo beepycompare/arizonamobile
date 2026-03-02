@@ -62,9 +62,7 @@ public final class TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2 exten
             if (textFieldSelectionState.detectTextFieldTapGestures(pointerInputScope, interactionSource, function0, new Function0() { // from class: androidx.compose.foundation.text.input.internal.TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2.invokeSuspend$lambda$0(TextFieldDecoratorModifierNode.this);
-                    return invokeSuspend$lambda$0;
+                    return TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2.invokeSuspend$lambda$0(TextFieldDecoratorModifierNode.this);
                 }
             }, this) == coroutine_suspended) {
                 return coroutine_suspended;
@@ -77,7 +75,7 @@ public final class TextFieldDecoratorModifierNode$pointerInputNode$1$1$1$2 exten
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(TextFieldDecoratorModifierNode textFieldDecoratorModifierNode) {
         Job job;
         SoftwareKeyboardController requireKeyboardController;

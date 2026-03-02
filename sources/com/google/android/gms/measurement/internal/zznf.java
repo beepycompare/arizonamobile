@@ -122,11 +122,12 @@ public final class zznf implements ServiceConnection, BaseGmsClient.BaseConnecti
         Context zzaY = zznlVar.zzu.zzaY();
         ConnectionTracker connectionTracker = ConnectionTracker.getInstance();
         synchronized (this) {
-            if (this.zzb) {
-                this.zza.zzu.zzaV().zzk().zza("Connection attempt already in progress");
+            boolean z = this.zzb;
+            zznl zznlVar2 = this.zza;
+            if (z) {
+                zznlVar2.zzu.zzaV().zzk().zza("Connection attempt already in progress");
                 return;
             }
-            zznl zznlVar2 = this.zza;
             zznlVar2.zzu.zzaV().zzk().zza("Using local app measurement service");
             this.zzb = true;
             connectionTracker.bindService(zzaY, intent, zznlVar2.zzY(), TsExtractor.TS_STREAM_TYPE_AC3);

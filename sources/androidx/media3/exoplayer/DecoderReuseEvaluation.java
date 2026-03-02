@@ -8,7 +8,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DecoderReuseEvaluation {
     public static final int DISCARD_REASON_APP_OVERRIDE = 4;
     public static final int DISCARD_REASON_AUDIO_BYPASS_POSSIBLE = 32768;
@@ -22,6 +22,7 @@ public final class DecoderReuseEvaluation {
     public static final int DISCARD_REASON_OPERATING_RATE_CHANGED = 16;
     public static final int DISCARD_REASON_REUSE_NOT_IMPLEMENTED = 1;
     public static final int DISCARD_REASON_VIDEO_COLOR_INFO_CHANGED = 2048;
+    public static final int DISCARD_REASON_VIDEO_FRAME_RATE_CHANGED = 65536;
     public static final int DISCARD_REASON_VIDEO_MAX_RESOLUTION_EXCEEDED = 256;
     public static final int DISCARD_REASON_VIDEO_RESOLUTION_CHANGED = 512;
     public static final int DISCARD_REASON_VIDEO_ROTATION_CHANGED = 1024;
@@ -39,14 +40,14 @@ public final class DecoderReuseEvaluation {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface DecoderDiscardReasons {
     }
 
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface DecoderReuseResult {
     }
 

@@ -20,23 +20,23 @@ public final class E {
     /* renamed from: a  reason: collision with root package name */
     public final AdRevenue f558a;
     public final boolean b;
-    public final InterfaceC0587t c;
+    public final InterfaceC0586t c;
     public final Xm d;
     public final Um e;
 
-    public E(AdRevenue adRevenue, boolean z, C0258fn c0258fn, PublicLogger publicLogger) {
+    public E(AdRevenue adRevenue, boolean z, C0257fn c0257fn, PublicLogger publicLogger) {
         this.f558a = adRevenue;
         this.b = z;
-        this.c = c0258fn;
+        this.c = c0257fn;
         this.d = new Xm(100, "ad revenue strings", publicLogger);
         this.e = new Um(30720, "ad revenue payload", publicLogger);
     }
 
     public final Pair a() {
         Map linkedHashMap;
-        C0562s c0562s = new C0562s();
+        C0561s c0561s = new C0561s();
         int i = 0;
-        for (Pair pair : CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(this.f558a.adNetwork, new C0687x(c0562s)), TuplesKt.to(this.f558a.adPlacementId, new C0712y(c0562s)), TuplesKt.to(this.f558a.adPlacementName, new C0737z(c0562s)), TuplesKt.to(this.f558a.adUnitId, new A(c0562s)), TuplesKt.to(this.f558a.adUnitName, new B(c0562s)), TuplesKt.to(this.f558a.precision, new C(c0562s)), TuplesKt.to(this.f558a.currency.getCurrencyCode(), new D(c0562s))})) {
+        for (Pair pair : CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(this.f558a.adNetwork, new C0686x(c0561s)), TuplesKt.to(this.f558a.adPlacementId, new C0711y(c0561s)), TuplesKt.to(this.f558a.adPlacementName, new C0736z(c0561s)), TuplesKt.to(this.f558a.adUnitId, new A(c0561s)), TuplesKt.to(this.f558a.adUnitName, new B(c0561s)), TuplesKt.to(this.f558a.precision, new C(c0561s)), TuplesKt.to(this.f558a.currency.getCurrencyCode(), new D(c0561s))})) {
             String str = (String) pair.getFirst();
             Xm xm = this.d;
             xm.getClass();
@@ -47,14 +47,14 @@ public final class E {
             i += stringToBytesForProtobuf.length - stringToBytesForProtobuf2.length;
         }
         Integer num = (Integer) F.f574a.get(this.f558a.adType);
-        c0562s.d = num != null ? num.intValue() : 0;
+        c0561s.d = num != null ? num.intValue() : 0;
         r rVar = new r();
         BigDecimal bigDecimal = this.f558a.adRevenue;
-        BigInteger bigInteger = AbstractC0695x7.f1301a;
+        BigInteger bigInteger = AbstractC0694x7.f1301a;
         int i2 = -bigDecimal.scale();
         BigInteger unscaledValue = bigDecimal.unscaledValue();
         while (true) {
-            if (unscaledValue.compareTo(AbstractC0695x7.f1301a) <= 0 && unscaledValue.compareTo(AbstractC0695x7.b) >= 0) {
+            if (unscaledValue.compareTo(AbstractC0694x7.f1301a) <= 0 && unscaledValue.compareTo(AbstractC0694x7.b) >= 0) {
                 break;
             }
             unscaledValue = unscaledValue.divide(BigInteger.TEN);
@@ -65,21 +65,21 @@ public final class E {
         int intValue = ((Number) pair2.getSecond()).intValue();
         rVar.f1195a = longValue;
         rVar.b = intValue;
-        c0562s.b = rVar;
+        c0561s.b = rVar;
         Map<String, String> map = this.f558a.payload;
-        InterfaceC0587t interfaceC0587t = this.c;
+        InterfaceC0586t interfaceC0586t = this.c;
         if (map == null || (linkedHashMap = MapsKt.toMutableMap(map)) == null) {
             linkedHashMap = new LinkedHashMap();
         }
-        String b = AbstractC0272gb.b(interfaceC0587t.a(linkedHashMap));
+        String b = AbstractC0271gb.b(interfaceC0586t.a(linkedHashMap));
         Um um = this.e;
         um.getClass();
         byte[] stringToBytesForProtobuf3 = StringUtils.stringToBytesForProtobuf(um.a(b));
-        c0562s.k = stringToBytesForProtobuf3;
+        c0561s.k = stringToBytesForProtobuf3;
         int length = (StringUtils.stringToBytesForProtobuf(b).length - stringToBytesForProtobuf3.length) + i;
         if (this.b) {
-            c0562s.f1213a = "autocollected".getBytes(Charsets.UTF_8);
+            c0561s.f1213a = "autocollected".getBytes(Charsets.UTF_8);
         }
-        return TuplesKt.to(MessageNano.toByteArray(c0562s), Integer.valueOf(length));
+        return TuplesKt.to(MessageNano.toByteArray(c0561s), Integer.valueOf(length));
     }
 }

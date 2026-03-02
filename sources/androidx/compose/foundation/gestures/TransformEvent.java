@@ -59,7 +59,7 @@ public abstract class TransformEvent {
         }
 
         /* renamed from: getPanChange-F1C5BW0  reason: not valid java name */
-        public final long m693getPanChangeF1C5BW0() {
+        public final long m608getPanChangeF1C5BW0() {
             return this.panChange;
         }
 

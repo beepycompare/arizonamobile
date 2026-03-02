@@ -62,7 +62,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4857rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4213rememberSaveable(objArr, saver, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -117,7 +117,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue2);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4857rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue2, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4213rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue2, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -162,7 +162,7 @@ public final class LazyGridStateKt {
             composer.updateRememberedValue(rememberedValue);
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4857rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue, composer, 0);
+        LazyGridState lazyGridState = (LazyGridState) RememberSaveableKt.m4213rememberSaveable(objArr, saver$foundation, (Function0<? extends Object>) rememberedValue, composer, 0);
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
@@ -208,19 +208,16 @@ public final class LazyGridStateKt {
         EmptyLazyGridLayoutInfo = new LazyGridMeasureResult(null, 0, false, 0.0f, measureResult2, 0.0f, false, CoroutineScopeKt.CoroutineScope(EmptyCoroutineContext.INSTANCE), DensityKt.Density$default(1.0f, 0.0f, 2, null), 0, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return LazyGridStateKt.EmptyLazyGridLayoutInfo$lambda$0(((Integer) obj).intValue());
+                List emptyList2;
+                ((Integer) obj).intValue();
+                emptyList2 = CollectionsKt.emptyList();
+                return emptyList2;
             }
         }, new Function1() { // from class: androidx.compose.foundation.lazy.grid.LazyGridStateKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                int EmptyLazyGridLayoutInfo$lambda$1;
-                EmptyLazyGridLayoutInfo$lambda$1 = LazyGridStateKt.EmptyLazyGridLayoutInfo$lambda$1(((Integer) obj).intValue());
-                return Integer.valueOf(EmptyLazyGridLayoutInfo$lambda$1);
+                return Integer.valueOf(LazyGridStateKt.EmptyLazyGridLayoutInfo$lambda$1(((Integer) obj).intValue()));
             }
         }, emptyList, 0, 0, 0, false, orientation, 0, 0);
-    }
-
-    public static final List EmptyLazyGridLayoutInfo$lambda$0(int i) {
-        return CollectionsKt.emptyList();
     }
 }

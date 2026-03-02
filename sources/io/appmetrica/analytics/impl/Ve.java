@@ -12,7 +12,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Ve extends AbstractC0726yd {
+public final class Ve extends AbstractC0725yd {
     public static final Ye d = new Ye("UUID_RESULT", null);
     public static final Ye e = new Ye("DEVICE_ID_RESULT", null);
     public static final Ye f = new Ye("DEVICE_ID_HASH_RESULT", null);
@@ -104,7 +104,7 @@ public final class Ve extends AbstractC0726yd {
     }
 
     public final ScreenInfo p() {
-        return AbstractC0272gb.e(this.f853a.getString(u.b, null));
+        return AbstractC0271gb.e(this.f853a.getString(u.b, null));
     }
 
     public final IdentifiersResult q() {
@@ -136,7 +136,7 @@ public final class Ve extends AbstractC0726yd {
         if (TextUtils.isEmpty(string)) {
             return null;
         }
-        return AbstractC0272gb.b(string);
+        return AbstractC0271gb.b(string);
     }
 
     public final long a(long j2) {
@@ -225,7 +225,7 @@ public final class Ve extends AbstractC0726yd {
         return (Ve) b(m.b, str);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0726yd
+    @Override // io.appmetrica.analytics.impl.AbstractC0725yd
     public final String f(String str) {
         return new Ye(str, null).b;
     }
@@ -248,14 +248,14 @@ public final class Ve extends AbstractC0726yd {
         return (Ve) b(str, jSONObject.toString());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0726yd
+    @Override // io.appmetrica.analytics.impl.AbstractC0725yd
     /* renamed from: k */
     public final Ve g(String str) {
         return (Ve) d(new Ye(str, null).b);
     }
 
     public final void a(ScreenInfo screenInfo) {
-        b(u.b, AbstractC0272gb.a(screenInfo));
+        b(u.b, AbstractC0271gb.a(screenInfo));
     }
 
     public final void a(AppMetricaConfig appMetricaConfig) {

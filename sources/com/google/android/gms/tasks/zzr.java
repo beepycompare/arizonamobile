@@ -3,7 +3,7 @@ package com.google.android.gms.tasks;
 import java.util.ArrayDeque;
 import java.util.Queue;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* compiled from: com.google.android.gms:play-services-tasks@@18.1.0 */
+/* compiled from: com.google.android.gms:play-services-tasks@@18.4.0 */
 /* loaded from: classes4.dex */
 public final class zzr {
     private final Object zza = new Object();
@@ -32,7 +32,7 @@ public final class zzr {
                             return;
                         }
                     }
-                    zzqVar.zzd(task);
+                    zzqVar.zza(task);
                 }
             }
         }

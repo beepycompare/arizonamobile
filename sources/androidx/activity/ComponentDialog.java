@@ -53,17 +53,13 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         this.onBackPressedInput$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                DirectNavigationEventInput onBackPressedInput_delegate$lambda$0;
-                onBackPressedInput_delegate$lambda$0 = ComponentDialog.onBackPressedInput_delegate$lambda$0(ComponentDialog.this);
-                return onBackPressedInput_delegate$lambda$0;
+                return ComponentDialog.onBackPressedInput_delegate$lambda$0(ComponentDialog.this);
             }
         });
         this.onBackPressedDispatcher$delegate = LazyKt.lazy(new Function0() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0;
-                onBackPressedDispatcher_delegate$lambda$0 = ComponentDialog.onBackPressedDispatcher_delegate$lambda$0(ComponentDialog.this);
-                return onBackPressedDispatcher_delegate$lambda$0;
+                return ComponentDialog.onBackPressedDispatcher_delegate$lambda$0(ComponentDialog.this);
             }
         });
     }
@@ -96,7 +92,7 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         return (DirectNavigationEventInput) this.onBackPressedInput$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final DirectNavigationEventInput onBackPressedInput_delegate$lambda$0(ComponentDialog componentDialog) {
         DirectNavigationEventInput directNavigationEventInput = new DirectNavigationEventInput();
         componentDialog.getNavigationEventDispatcher().addInput(directNavigationEventInput);
@@ -145,7 +141,7 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         return (OnBackPressedDispatcher) this.onBackPressedDispatcher$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final OnBackPressedDispatcher onBackPressedDispatcher_delegate$lambda$0(final ComponentDialog componentDialog) {
         return new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable

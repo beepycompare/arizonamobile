@@ -34,7 +34,7 @@ import kotlin.jvm.internal.TypeIntrinsics;
 public final class WrappedComposition implements Composition, LifecycleEventObserver, CompositionServices {
     private Lifecycle addedToLifecycle;
     private boolean disposed;
-    private Function2<? super Composer, ? super Integer, Unit> lastContent = ComposableSingletons$Wrapper_androidKt.INSTANCE.m7345getLambda$1759434350$ui();
+    private Function2<? super Composer, ? super Integer, Unit> lastContent = ComposableSingletons$Wrapper_androidKt.INSTANCE.m6681getLambda$1759434350$ui();
     private final Composition original;
     private final AndroidComposeView owner;
 

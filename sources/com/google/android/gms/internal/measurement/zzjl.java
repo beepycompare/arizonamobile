@@ -25,13 +25,15 @@ public final class zzjl implements zzjh {
         String str3;
         if (contentResolver != null) {
             synchronized (this) {
+                HashMap hashMap = this.zzb;
+                AtomicBoolean atomicBoolean = this.zza;
                 String str4 = null;
-                if (this.zzb == null) {
-                    this.zza.set(false);
+                if (hashMap == null) {
+                    atomicBoolean.set(false);
                     this.zzb = new HashMap(16, 1.0f);
                     this.zzg = new Object();
                     contentResolver.registerContentObserver(zzjg.zza, true, new zzjj(this, null));
-                } else if (this.zza.getAndSet(false)) {
+                } else if (atomicBoolean.getAndSet(false)) {
                     this.zzb.clear();
                     this.zzc.clear();
                     this.zzd.clear();

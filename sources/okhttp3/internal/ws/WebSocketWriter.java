@@ -88,8 +88,10 @@ public final class WebSocketWriter implements Closeable {
             throw new IllegalArgumentException("Payload size must be less than or equal to 125".toString());
         }
         this.sinkBuffer.writeByte(i | 128);
-        if (this.isClient) {
-            this.sinkBuffer.writeByte(size | 128);
+        boolean z = this.isClient;
+        Buffer buffer = this.sinkBuffer;
+        if (z) {
+            buffer.writeByte(size | 128);
             Random random = this.random;
             byte[] bArr = this.maskKey;
             Intrinsics.checkNotNull(bArr);
@@ -98,16 +100,16 @@ public final class WebSocketWriter implements Closeable {
             if (size > 0) {
                 long size2 = this.sinkBuffer.size();
                 this.sinkBuffer.write(byteString);
-                Buffer buffer = this.sinkBuffer;
+                Buffer buffer2 = this.sinkBuffer;
                 Buffer.UnsafeCursor unsafeCursor = this.maskCursor;
                 Intrinsics.checkNotNull(unsafeCursor);
-                buffer.readAndWriteUnsafe(unsafeCursor);
+                buffer2.readAndWriteUnsafe(unsafeCursor);
                 this.maskCursor.seek(size2);
                 WebSocketProtocol.INSTANCE.toggleMask(this.maskCursor, this.maskKey);
                 this.maskCursor.close();
             }
         } else {
-            this.sinkBuffer.writeByte(size);
+            buffer.writeByte(size);
             this.sinkBuffer.write(byteString);
         }
         this.sink.flush();
@@ -134,12 +136,16 @@ public final class WebSocketWriter implements Closeable {
         int i3 = this.isClient ? 128 : 0;
         if (size <= 125) {
             this.sinkBuffer.writeByte(i3 | ((int) size));
-        } else if (size <= WebSocketProtocol.PAYLOAD_SHORT_MAX) {
-            this.sinkBuffer.writeByte(i3 | WebSocketProtocol.PAYLOAD_SHORT);
-            this.sinkBuffer.writeShort((int) size);
         } else {
-            this.sinkBuffer.writeByte(i3 | 127);
-            this.sinkBuffer.writeLong(size);
+            int i4 = (size > WebSocketProtocol.PAYLOAD_SHORT_MAX ? 1 : (size == WebSocketProtocol.PAYLOAD_SHORT_MAX ? 0 : -1));
+            Buffer buffer = this.sinkBuffer;
+            if (i4 <= 0) {
+                buffer.writeByte(i3 | WebSocketProtocol.PAYLOAD_SHORT);
+                this.sinkBuffer.writeShort((int) size);
+            } else {
+                buffer.writeByte(i3 | 127);
+                this.sinkBuffer.writeLong(size);
+            }
         }
         if (this.isClient) {
             Random random = this.random;
@@ -148,10 +154,10 @@ public final class WebSocketWriter implements Closeable {
             random.nextBytes(bArr);
             this.sinkBuffer.write(this.maskKey);
             if (size > 0) {
-                Buffer buffer = this.messageBuffer;
+                Buffer buffer2 = this.messageBuffer;
                 Buffer.UnsafeCursor unsafeCursor = this.maskCursor;
                 Intrinsics.checkNotNull(unsafeCursor);
-                buffer.readAndWriteUnsafe(unsafeCursor);
+                buffer2.readAndWriteUnsafe(unsafeCursor);
                 this.maskCursor.seek(0L);
                 WebSocketProtocol.INSTANCE.toggleMask(this.maskCursor, this.maskKey);
                 this.maskCursor.close();

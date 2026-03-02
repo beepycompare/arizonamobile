@@ -152,12 +152,13 @@ public class PriorityGoalRow extends ArrayRow {
             SolverVariable solverVariable = this.mArrayGoals[i2];
             if (!zArr[solverVariable.id]) {
                 this.mAccessor.init(solverVariable);
+                GoalVariableAccessor goalVariableAccessor = this.mAccessor;
                 if (i == -1) {
-                    if (!this.mAccessor.isNegative()) {
+                    if (!goalVariableAccessor.isNegative()) {
                     }
                     i = i2;
                 } else {
-                    if (!this.mAccessor.isSmallerThan(this.mArrayGoals[i])) {
+                    if (!goalVariableAccessor.isSmallerThan(this.mArrayGoals[i])) {
                     }
                     i = i2;
                 }
@@ -179,29 +180,31 @@ public class PriorityGoalRow extends ArrayRow {
 
     private void addToGoal(SolverVariable solverVariable) {
         int i;
+        SolverVariable[] solverVariableArr;
         int i2 = this.mNumGoals + 1;
-        SolverVariable[] solverVariableArr = this.mArrayGoals;
-        if (i2 > solverVariableArr.length) {
-            SolverVariable[] solverVariableArr2 = (SolverVariable[]) Arrays.copyOf(solverVariableArr, solverVariableArr.length * 2);
-            this.mArrayGoals = solverVariableArr2;
-            this.mSortArray = (SolverVariable[]) Arrays.copyOf(solverVariableArr2, solverVariableArr2.length * 2);
+        SolverVariable[] solverVariableArr2 = this.mArrayGoals;
+        if (i2 > solverVariableArr2.length) {
+            SolverVariable[] solverVariableArr3 = (SolverVariable[]) Arrays.copyOf(solverVariableArr2, solverVariableArr2.length * 2);
+            this.mArrayGoals = solverVariableArr3;
+            this.mSortArray = (SolverVariable[]) Arrays.copyOf(solverVariableArr3, solverVariableArr3.length * 2);
         }
-        SolverVariable[] solverVariableArr3 = this.mArrayGoals;
+        SolverVariable[] solverVariableArr4 = this.mArrayGoals;
         int i3 = this.mNumGoals;
-        solverVariableArr3[i3] = solverVariable;
+        solverVariableArr4[i3] = solverVariable;
         int i4 = i3 + 1;
         this.mNumGoals = i4;
-        if (i4 > 1 && solverVariableArr3[i3].id > solverVariable.id) {
+        if (i4 > 1 && solverVariableArr4[i3].id > solverVariable.id) {
             int i5 = 0;
             while (true) {
                 i = this.mNumGoals;
+                solverVariableArr = this.mSortArray;
                 if (i5 >= i) {
                     break;
                 }
-                this.mSortArray[i5] = this.mArrayGoals[i5];
+                solverVariableArr[i5] = this.mArrayGoals[i5];
                 i5++;
             }
-            Arrays.sort(this.mSortArray, 0, i, new Comparator<SolverVariable>() { // from class: androidx.constraintlayout.core.PriorityGoalRow.1
+            Arrays.sort(solverVariableArr, 0, i, new Comparator<SolverVariable>() { // from class: androidx.constraintlayout.core.PriorityGoalRow.1
                 @Override // java.util.Comparator
                 public int compare(SolverVariable solverVariable2, SolverVariable solverVariable3) {
                     return solverVariable2.id - solverVariable3.id;

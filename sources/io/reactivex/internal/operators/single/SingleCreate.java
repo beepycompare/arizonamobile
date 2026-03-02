@@ -46,11 +46,12 @@ public final class SingleCreate<T> extends Single<T> {
             if (get() == DisposableHelper.DISPOSED || (andSet = getAndSet(DisposableHelper.DISPOSED)) == DisposableHelper.DISPOSED) {
                 return;
             }
+            SingleObserver<? super T> singleObserver = this.downstream;
             try {
                 if (t == null) {
-                    this.downstream.onError(new NullPointerException("onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."));
+                    singleObserver.onError(new NullPointerException("onSuccess called with null. Null values are generally not allowed in 2.x operators and sources."));
                 } else {
-                    this.downstream.onSuccess(t);
+                    singleObserver.onSuccess(t);
                 }
                 if (andSet != null) {
                     andSet.dispose();

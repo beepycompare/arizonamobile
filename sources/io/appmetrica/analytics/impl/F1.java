@@ -8,11 +8,11 @@ import org.json.JSONObject;
 public final class F1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0116aa f576a;
+    public final C0115aa f576a;
     public boolean b;
 
     public F1() {
-        this(new C0116aa());
+        this(new C0115aa());
     }
 
     public final synchronized long a(Context context) {
@@ -41,8 +41,8 @@ public final class F1 {
         this.b = true;
     }
 
-    public F1(C0116aa c0116aa) {
+    public F1(C0115aa c0115aa) {
         this.b = false;
-        this.f576a = c0116aa;
+        this.f576a = c0115aa;
     }
 }

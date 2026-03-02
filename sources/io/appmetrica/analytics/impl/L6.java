@@ -37,16 +37,16 @@ public final class L6 {
     public final AtomicLong i;
     public final ArrayList j;
     public final H6 k;
-    public final C0242f7 l;
+    public final C0241f7 l;
 
     static {
         HashSet hashSet = new HashSet();
-        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        EnumC0142bb enumC0142bb = EnumC0142bb.EVENT_TYPE_UNDEFINED;
         hashSet.add(0);
         hashSet.add(6400);
     }
 
-    public L6(X4 x4, Y6 y6, H6 h6, C0242f7 c0242f7) {
+    public L6(X4 x4, Y6 y6, H6 h6, C0241f7 c0241f7) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
         this.f672a = reentrantReadWriteLock.readLock();
         this.b = reentrantReadWriteLock.writeLock();
@@ -59,7 +59,7 @@ public final class L6 {
         this.g = x4.getContext();
         this.h = x4;
         this.k = h6;
-        this.l = c0242f7;
+        this.l = c0241f7;
         atomicLong.set(b());
         K6 k6 = new K6(this, x4);
         this.d = k6;
@@ -182,12 +182,12 @@ public final class L6 {
     public final void a(long j, Vk vk, long j2) {
         JSONObject jSONObject;
         boolean b;
-        C0595t7 c0595t7 = new C0595t7(null, 1, null);
-        C0381kh c0381kh = (C0381kh) this.h.k.a();
+        C0594t7 c0594t7 = new C0594t7(null, 1, null);
+        C0380kh c0380kh = (C0380kh) this.h.k.a();
         Long valueOf = Long.valueOf(j);
         Long valueOf2 = Long.valueOf(j2);
         try {
-            jSONObject = new JSONObject().put("dId", c0381kh.getDeviceId()).put("uId", c0381kh.getUuid()).put("appVer", c0381kh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0381kh.getAppBuildNumber()).put("kitBuildType", c0381kh.getAnalyticsSdkBuildType()).put("osVer", c0381kh.getOsVersion()).put("osApiLev", c0381kh.getOsApiLevel()).put("lang", c0381kh.getLocale()).put("root", c0381kh.getDeviceRootStatus()).put("app_debuggable", ((N5) c0381kh).f705a).put(CommonUrlParts.APP_FRAMEWORK, c0381kh.getAppFramework()).put("attribution_id", c0381kh.r).put("analyticsSdkVersionName", c0381kh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0381kh.getAnalyticsSdkBuildNumber());
+            jSONObject = new JSONObject().put("dId", c0380kh.getDeviceId()).put("uId", c0380kh.getUuid()).put("appVer", c0380kh.getAppVersion()).put(RemoteConfigConstants.RequestFieldKey.APP_BUILD, c0380kh.getAppBuildNumber()).put("kitBuildType", c0380kh.getAnalyticsSdkBuildType()).put("osVer", c0380kh.getOsVersion()).put("osApiLev", c0380kh.getOsApiLevel()).put("lang", c0380kh.getLocale()).put("root", c0380kh.getDeviceRootStatus()).put("app_debuggable", ((N5) c0380kh).f705a).put(CommonUrlParts.APP_FRAMEWORK, c0380kh.getAppFramework()).put("attribution_id", c0380kh.r).put("analyticsSdkVersionName", c0380kh.getAnalyticsSdkVersionName()).put("kitBuildNumber", c0380kh.getAnalyticsSdkBuildNumber());
         } catch (Throwable unused) {
             jSONObject = new JSONObject();
         }
@@ -197,7 +197,7 @@ public final class L6 {
         synchronized (xj) {
             b = xj.b.b(true);
         }
-        ContentValues fromModel = c0595t7.fromModel(new C0570s7(valueOf, vk, jSONObject2, new C0545r7(valueOf2, valueOf3, Boolean.valueOf(b))));
+        ContentValues fromModel = c0594t7.fromModel(new C0569s7(valueOf, vk, jSONObject2, new C0544r7(valueOf2, valueOf3, Boolean.valueOf(b))));
         if (fromModel == null) {
             return;
         }
@@ -223,11 +223,11 @@ public final class L6 {
 
     public final int a(SQLiteDatabase sQLiteDatabase) {
         try {
-            return this.k.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", TextUtils.join(", ", AbstractC0672w9.i), TextUtils.join(", ", AbstractC0672w9.j), 10), 2, this.h.b.b, true).b;
+            return this.k.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", TextUtils.join(", ", AbstractC0671w9.i), TextUtils.join(", ", AbstractC0671w9.j), 10), 2, this.h.b.b, true).b;
         } catch (Throwable th) {
-            Qj qj = AbstractC0483oj.f1158a;
+            Qj qj = AbstractC0482oj.f1158a;
             qj.getClass();
-            qj.a(new C0508pj("deleteExcessiveReports exception", th));
+            qj.a(new C0507pj("deleteExcessiveReports exception", th));
             return 0;
         }
     }
@@ -309,12 +309,12 @@ public final class L6 {
 
     public final void a(ContentValues contentValues, String str) {
         Integer asInteger = contentValues.getAsInteger("type");
-        if (AbstractC0672w9.d.contains(EnumC0143bb.a(asInteger != null ? asInteger.intValue() : -1))) {
-            C0216e7 model = new C0242f7(null, 1, null).toModel(contentValues);
+        if (AbstractC0671w9.d.contains(EnumC0142bb.a(asInteger != null ? asInteger.intValue() : -1))) {
+            C0215e7 model = new C0241f7(null, 1, null).toModel(contentValues);
             PublicLogger publicLogger = this.h.m;
-            EnumC0143bb enumC0143bb = model.d;
-            C0191d7 c0191d7 = model.g;
-            publicLogger.info(Qf.a(str, enumC0143bb, c0191d7.b, c0191d7.c), new Object[0]);
+            EnumC0142bb enumC0142bb = model.d;
+            C0190d7 c0190d7 = model.g;
+            publicLogger.info(Qf.a(str, enumC0142bb, c0190d7.b, c0190d7.c), new Object[0]);
         }
     }
 

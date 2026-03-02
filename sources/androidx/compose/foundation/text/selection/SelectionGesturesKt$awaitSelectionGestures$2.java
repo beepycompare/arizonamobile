@@ -54,12 +54,12 @@ public final class SelectionGesturesKt$awaitSelectionGestures$2 extends Restrict
         if (androidx.compose.foundation.text.selection.SelectionGesturesKt.mouseSelection(r1, r12.$mouseSelectionObserver, r12.$clicksCounter, r13, r12) == r0) goto L27;
      */
     /* JADX WARN: Code restructure failed: missing block: B:33:0x00a0, code lost:
-        if (androidx.compose.foundation.text.selection.SelectionGesturesKt.touchSelectionFirstPress(r1, r12.$textDragObserver, r13, r12) == r0) goto L27;
+        if (androidx.compose.foundation.text.selection.SelectionGesturesKt.touchSelectionFirstPress(r1, r6, r13, r12) == r0) goto L27;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00b4, code lost:
         if (r13 == r0) goto L27;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00b6, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -90,7 +90,7 @@ public final class SelectionGesturesKt$awaitSelectionGestures$2 extends Restrict
         PointerEvent pointerEvent = (PointerEvent) obj;
         this.$clicksCounter.update(pointerEvent);
         boolean isMouseOrTouchPad = SelectionGestures_androidKt.isMouseOrTouchPad(pointerEvent);
-        if (isMouseOrTouchPad && PointerEvent_androidKt.m6717isPrimaryPressedaHzCxE(pointerEvent.m6684getButtonsry648PA())) {
+        if (isMouseOrTouchPad && PointerEvent_androidKt.m6058isPrimaryPressedaHzCxE(pointerEvent.m6025getButtonsry648PA())) {
             List<PointerInputChange> changes = pointerEvent.getChanges();
             int size = changes.size();
             for (int i2 = 0; i2 < size; i2++) {
@@ -101,13 +101,15 @@ public final class SelectionGesturesKt$awaitSelectionGestures$2 extends Restrict
             this.label = 2;
         }
         if (!isMouseOrTouchPad) {
-            if (this.$clicksCounter.getClicks() == 1) {
+            int clicks = this.$clicksCounter.getClicks();
+            TextDragObserver textDragObserver = this.$textDragObserver;
+            if (clicks == 1) {
                 this.L$0 = null;
                 this.label = 3;
             } else {
                 this.L$0 = null;
                 this.label = 4;
-                obj2 = SelectionGesturesKt.touchSelectionSubsequentPress(awaitPointerEventScope, this.$textDragObserver, pointerEvent, this.$clicksCounter.getClicks(), this);
+                obj2 = SelectionGesturesKt.touchSelectionSubsequentPress(awaitPointerEventScope, textDragObserver, pointerEvent, this.$clicksCounter.getClicks(), this);
             }
         }
         return Unit.INSTANCE;

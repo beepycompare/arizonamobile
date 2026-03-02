@@ -192,15 +192,15 @@ public final class PagerMeasureResult implements PagerLayoutInfo, MeasureResult 
     }
 
     /* renamed from: getChildConstraints-msEJaDk  reason: not valid java name */
-    public final long m1232getChildConstraintsmsEJaDk() {
+    public final long m1080getChildConstraintsmsEJaDk() {
         return this.childConstraints;
     }
 
     @Override // androidx.compose.foundation.pager.PagerLayoutInfo
     /* renamed from: getViewportSize-YbymL2g */
-    public long mo1225getViewportSizeYbymL2g() {
+    public long mo1076getViewportSizeYbymL2g() {
         int width = getWidth();
-        return IntSize.m8424constructorimpl((getHeight() & 4294967295L) | (width << 32));
+        return IntSize.m7721constructorimpl((getHeight() & 4294967295L) | (width << 32));
     }
 
     @Override // androidx.compose.foundation.pager.PagerLayoutInfo

@@ -100,9 +100,4 @@ final class MagnifierNode$onAttach$1 extends SuspendLambda implements Function2<
         */
         throw new UnsupportedOperationException("Method not decompiled: androidx.compose.foundation.MagnifierNode$onAttach$1.invokeSuspend(java.lang.Object):java.lang.Object");
     }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$0(long j) {
-        return Unit.INSTANCE;
-    }
 }

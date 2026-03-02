@@ -3,7 +3,7 @@ package com.google.android.gms.common.util;
 import android.text.TextUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 final class zzf {
     private static final Pattern zza = Pattern.compile("\\\\u[0-9a-fA-F]{4}");

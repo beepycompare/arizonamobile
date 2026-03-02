@@ -48,10 +48,12 @@ public final class MaybeOnErrorComplete<T> extends AbstractMaybeWithUpstream<T, 
         @Override // io.reactivex.MaybeObserver
         public void onError(Throwable th) {
             try {
-                if (this.predicate.test(th)) {
-                    this.downstream.onComplete();
+                boolean test = this.predicate.test(th);
+                MaybeObserver<? super T> maybeObserver = this.downstream;
+                if (test) {
+                    maybeObserver.onComplete();
                 } else {
-                    this.downstream.onError(th);
+                    maybeObserver.onError(th);
                 }
             } catch (Throwable th2) {
                 Exceptions.throwIfFatal(th2);

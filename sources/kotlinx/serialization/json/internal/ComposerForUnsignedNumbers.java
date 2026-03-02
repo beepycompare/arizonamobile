@@ -8,7 +8,7 @@ import kotlin.ULong;
 import kotlin.UShort;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Composers.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0010\t\n\u0002\u0010\u0005\n\u0002\u0010\n\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\fH\u0016J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\rH\u0016J\u0010\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lkotlinx/serialization/json/internal/ComposerForUnsignedNumbers;", "Lkotlinx/serialization/json/internal/Composer;", "writer", "Lkotlinx/serialization/json/internal/InternalJsonWriter;", "forceQuoting", "", "<init>", "(Lkotlinx/serialization/json/internal/InternalJsonWriter;Z)V", "print", "", "v", "", "", "", "", "kotlinx-serialization-json"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0010\t\n\u0002\u0010\u0005\n\u0002\u0010\n\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u0019\bF\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0012\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\fH\u0096\u0080\u0004J\u0012\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\rH\u0096\u0080\u0004J\u0012\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000eH\u0096\u0080\u0004R\u000f\u0010\u0004\u001a\u00020\u0005X\u0082\u0084\b¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lkotlinx/serialization/json/internal/ComposerForUnsignedNumbers;", "Lkotlinx/serialization/json/internal/Composer;", "writer", "Lkotlinx/serialization/json/internal/InternalJsonWriter;", "forceQuoting", "", "<init>", "(Lkotlinx/serialization/json/internal/InternalJsonWriter;Z)V", "print", "", "v", "", "", "", "", "kotlinx-serialization-json"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposerForUnsignedNumbers extends Composer {
     private final boolean forceQuoting;
@@ -22,17 +22,17 @@ public final class ComposerForUnsignedNumbers extends Composer {
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(int i) {
-        String m10313m;
-        String m10313m2;
+        String m9252m;
+        String m9252m2;
         boolean z = this.forceQuoting;
-        int m10343constructorimpl = UInt.m10343constructorimpl(i);
+        int m9282constructorimpl = UInt.m9282constructorimpl(i);
         if (z) {
-            m10313m2 = UByte$$ExternalSyntheticBackport0.m10313m(m10343constructorimpl, 10);
-            printQuoted(m10313m2);
+            m9252m2 = UByte$$ExternalSyntheticBackport0.m9252m(m9282constructorimpl, 10);
+            printQuoted(m9252m2);
             return;
         }
-        m10313m = UByte$$ExternalSyntheticBackport0.m10313m(m10343constructorimpl, 10);
-        print(m10313m);
+        m9252m = UByte$$ExternalSyntheticBackport0.m9252m(m9282constructorimpl, 10);
+        print(m9252m);
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
@@ -40,35 +40,35 @@ public final class ComposerForUnsignedNumbers extends Composer {
         String m;
         String m2;
         boolean z = this.forceQuoting;
-        long m10422constructorimpl = ULong.m10422constructorimpl(j);
+        long m9361constructorimpl = ULong.m9361constructorimpl(j);
         if (z) {
-            m2 = UByte$$ExternalSyntheticBackport0.m(m10422constructorimpl, 10);
+            m2 = UByte$$ExternalSyntheticBackport0.m(m9361constructorimpl, 10);
             printQuoted(m2);
             return;
         }
-        m = UByte$$ExternalSyntheticBackport0.m(m10422constructorimpl, 10);
+        m = UByte$$ExternalSyntheticBackport0.m(m9361constructorimpl, 10);
         print(m);
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(byte b) {
         boolean z = this.forceQuoting;
-        String m10305toStringimpl = UByte.m10305toStringimpl(UByte.m10261constructorimpl(b));
+        String m9244toStringimpl = UByte.m9244toStringimpl(UByte.m9200constructorimpl(b));
         if (z) {
-            printQuoted(m10305toStringimpl);
+            printQuoted(m9244toStringimpl);
         } else {
-            print(m10305toStringimpl);
+            print(m9244toStringimpl);
         }
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(short s) {
         boolean z = this.forceQuoting;
-        String m10573toStringimpl = UShort.m10573toStringimpl(UShort.m10529constructorimpl(s));
+        String m9512toStringimpl = UShort.m9512toStringimpl(UShort.m9468constructorimpl(s));
         if (z) {
-            printQuoted(m10573toStringimpl);
+            printQuoted(m9512toStringimpl);
         } else {
-            print(m10573toStringimpl);
+            print(m9512toStringimpl);
         }
     }
 }

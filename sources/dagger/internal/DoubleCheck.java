@@ -1,7 +1,7 @@
 package dagger.internal;
 
 import dagger.Lazy;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final Object UNINITIALIZED = new Object();

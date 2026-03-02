@@ -1,5 +1,5 @@
 package dagger.lint;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class R {
     private R() {
     }

@@ -64,7 +64,7 @@ public final class Navigation {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void createNavigateOnClickListener$lambda$0(int i, Bundle bundle, View view) {
         Intrinsics.checkNotNull(view);
         findNavController(view).navigate(i, bundle);
@@ -81,7 +81,7 @@ public final class Navigation {
         };
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void createNavigateOnClickListener$lambda$1(NavDirections navDirections, View view) {
         Intrinsics.checkNotNull(view);
         findNavController(view).navigate(navDirections);
@@ -97,21 +97,17 @@ public final class Navigation {
         return (NavController) SequencesKt.firstOrNull(SequencesKt.mapNotNull(SequencesKt.generateSequence(view, new Function1() { // from class: androidx.navigation.Navigation$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                View findViewNavController$lambda$2;
-                findViewNavController$lambda$2 = Navigation.findViewNavController$lambda$2((View) obj);
-                return findViewNavController$lambda$2;
+                return Navigation.findViewNavController$lambda$2((View) obj);
             }
         }), new Function1() { // from class: androidx.navigation.Navigation$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                NavController findViewNavController$lambda$3;
-                findViewNavController$lambda$3 = Navigation.findViewNavController$lambda$3((View) obj);
-                return findViewNavController$lambda$3;
+                return Navigation.findViewNavController$lambda$3((View) obj);
             }
         }));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final View findViewNavController$lambda$2(View it) {
         Intrinsics.checkNotNullParameter(it, "it");
         ViewParent parent = it.getParent();
@@ -121,7 +117,7 @@ public final class Navigation {
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final NavController findViewNavController$lambda$3(View it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return INSTANCE.getViewNavController(it);

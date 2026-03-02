@@ -37,16 +37,24 @@ public abstract class BaseTrackSelection implements ExoTrackSelection {
     }
 
     public BaseTrackSelection(TrackGroup trackGroup, int[] iArr, int i) {
+        Format[] formatArr;
         Preconditions.checkState(iArr.length > 0);
         this.type = i;
         this.group = (TrackGroup) Preconditions.checkNotNull(trackGroup);
         int length = iArr.length;
         this.length = length;
         this.formats = new Format[length];
-        for (int i2 = 0; i2 < iArr.length; i2++) {
-            this.formats[i2] = trackGroup.getFormat(iArr[i2]);
+        int i2 = 0;
+        while (true) {
+            int length2 = iArr.length;
+            formatArr = this.formats;
+            if (i2 >= length2) {
+                break;
+            }
+            formatArr[i2] = trackGroup.getFormat(iArr[i2]);
+            i2++;
         }
-        Arrays.sort(this.formats, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.BaseTrackSelection$$ExternalSyntheticLambda0
+        Arrays.sort(formatArr, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.BaseTrackSelection$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
                 return BaseTrackSelection.lambda$new$0((Format) obj, (Format) obj2);

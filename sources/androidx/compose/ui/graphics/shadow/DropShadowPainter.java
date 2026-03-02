@@ -11,7 +11,7 @@ import kotlin.Metadata;
 import kotlin.ranges.RangesKt;
 /* compiled from: DropShadowPainter.kt */
 @Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B!\b\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tB\u0019\b\u0016\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\b\u0010\nJ\f\u0010\u0015\u001a\u00020\u0016*\u00020\u0017H\u0014J\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u000b\u001a\u00020\fH\u0014J\u0012\u0010\u001a\u001a\u00020\u00192\b\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0014J\u0010\u0010\u001b\u001a\u00020\u00192\u0006\u0010\r\u001a\u00020\u000eH\u0014R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\u00020\u00128VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0014¨\u0006\u001c"}, d2 = {"Landroidx/compose/ui/graphics/shadow/DropShadowPainter;", "Landroidx/compose/ui/graphics/painter/Painter;", "shape", "Landroidx/compose/ui/graphics/Shape;", "shadow", "Landroidx/compose/ui/graphics/shadow/Shadow;", "renderCreator", "Landroidx/compose/ui/graphics/shadow/DropShadowRendererProvider;", "<init>", "(Landroidx/compose/ui/graphics/Shape;Landroidx/compose/ui/graphics/shadow/Shadow;Landroidx/compose/ui/graphics/shadow/DropShadowRendererProvider;)V", "(Landroidx/compose/ui/graphics/Shape;Landroidx/compose/ui/graphics/shadow/Shadow;)V", "alpha", "", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "colorFilter", "Landroidx/compose/ui/graphics/ColorFilter;", "intrinsicSize", "Landroidx/compose/ui/geometry/Size;", "getIntrinsicSize-NH-jbRc", "()J", "onDraw", "", "Landroidx/compose/ui/graphics/drawscope/DrawScope;", "applyAlpha", "", "applyColorFilter", "applyLayoutDirection", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class DropShadowPainter extends Painter {
     public static final int $stable = 8;
     private float alpha;
@@ -35,18 +35,18 @@ public final class DropShadowPainter extends Painter {
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     /* renamed from: getIntrinsicSize-NH-jbRc */
-    public long mo6125getIntrinsicSizeNHjbRc() {
-        return Size.Companion.m5256getUnspecifiedNHjbRc();
+    public long mo5466getIntrinsicSizeNHjbRc() {
+        return Size.Companion.m4604getUnspecifiedNHjbRc();
     }
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     protected void onDraw(DrawScope drawScope) {
-        DropShadowRenderer mo6132obtainDropShadowRenderereZhPAX0 = this.renderCreator.mo6132obtainDropShadowRenderereZhPAX0(this.shape, drawScope.mo6005getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow);
-        float f = drawScope.mo464toPx0680j_4(DpOffset.m8319getXD9Ej5fM(this.shadow.m6150getOffsetRKDOV3M()));
-        float f2 = drawScope.mo464toPx0680j_4(DpOffset.m8321getYD9Ej5fM(this.shadow.m6150getOffsetRKDOV3M()));
+        DropShadowRenderer mo5473obtainDropShadowRenderereZhPAX0 = this.renderCreator.mo5473obtainDropShadowRenderereZhPAX0(this.shape, drawScope.mo5346getSizeNHjbRc(), drawScope.getLayoutDirection(), drawScope, this.shadow);
+        float f = drawScope.mo405toPx0680j_4(DpOffset.m7616getXD9Ej5fM(this.shadow.m5491getOffsetRKDOV3M()));
+        float f2 = drawScope.mo405toPx0680j_4(DpOffset.m7618getYD9Ej5fM(this.shadow.m5491getOffsetRKDOV3M()));
         drawScope.getDrawContext().getTransform().translate(f, f2);
         try {
-            mo6132obtainDropShadowRenderereZhPAX0.m6154drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo6005getSizeNHjbRc(), mo6132obtainDropShadowRenderereZhPAX0.getShadow().m6149getColor0d7_KjU(), mo6132obtainDropShadowRenderereZhPAX0.getShadow().getBrush(), RangesKt.coerceIn(this.alpha * mo6132obtainDropShadowRenderereZhPAX0.getShadow().getAlpha(), 0.0f, 1.0f), mo6132obtainDropShadowRenderereZhPAX0.getShadow().m6148getBlendMode0nO6VwU());
+            mo5473obtainDropShadowRenderereZhPAX0.m5495drawShadowerFMhIw(drawScope, this.colorFilter, drawScope.mo5346getSizeNHjbRc(), mo5473obtainDropShadowRenderereZhPAX0.getShadow().m5490getColor0d7_KjU(), mo5473obtainDropShadowRenderereZhPAX0.getShadow().getBrush(), RangesKt.coerceIn(this.alpha * mo5473obtainDropShadowRenderereZhPAX0.getShadow().getAlpha(), 0.0f, 1.0f), mo5473obtainDropShadowRenderereZhPAX0.getShadow().m5489getBlendMode0nO6VwU());
         } finally {
             drawScope.getDrawContext().getTransform().translate(-f, -f2);
         }

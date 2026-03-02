@@ -12,7 +12,7 @@ import androidx.media3.exoplayer.trackselection.TrackSelectorResult;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PlaybackInfo {
     private static final MediaSource.MediaPeriodId PLACEHOLDER_MEDIA_PERIOD_ID = new MediaSource.MediaPeriodId(new Object());
     public volatile long bufferedPositionUs;

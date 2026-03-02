@@ -123,16 +123,16 @@ abstract class DragDetectionState {
         }
 
         public /* synthetic */ AwaitTouchSlop(PointerInputChange pointerInputChange, long j, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : pointerInputChange, (i & 2) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? false : z, null);
+            this((i & 1) != 0 ? null : pointerInputChange, (i & 2) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? false : z, null);
         }
 
         /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-        public final long m519getPointerIdJ3iCeTQ() {
+        public final long m450getPointerIdJ3iCeTQ() {
             return this.pointerId;
         }
 
         /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-        public final void m520setPointerId0FcD4WY(long j) {
+        public final void m451setPointerId0FcD4WY(long j) {
             this.pointerId = j;
         }
 
@@ -174,16 +174,16 @@ abstract class DragDetectionState {
         }
 
         public /* synthetic */ AwaitGesturePickup(PointerInputChange pointerInputChange, long j, TouchSlopDetector touchSlopDetector, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : pointerInputChange, (i & 2) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? null : touchSlopDetector, null);
+            this((i & 1) != 0 ? null : pointerInputChange, (i & 2) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, (i & 4) != 0 ? null : touchSlopDetector, null);
         }
 
         /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-        public final long m517getPointerIdJ3iCeTQ() {
+        public final long m448getPointerIdJ3iCeTQ() {
             return this.pointerId;
         }
 
         /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-        public final void m518setPointerId0FcD4WY(long j) {
+        public final void m449setPointerId0FcD4WY(long j) {
             this.pointerId = j;
         }
 
@@ -213,16 +213,16 @@ abstract class DragDetectionState {
         }
 
         public /* synthetic */ Dragging(long j, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? PointerId.m6724constructorimpl(Long.MAX_VALUE) : j, null);
+            this((i & 1) != 0 ? PointerId.m6065constructorimpl(Long.MAX_VALUE) : j, null);
         }
 
         /* renamed from: getPointerId-J3iCeTQ  reason: not valid java name */
-        public final long m521getPointerIdJ3iCeTQ() {
+        public final long m452getPointerIdJ3iCeTQ() {
             return this.pointerId;
         }
 
         /* renamed from: setPointerId-0FcD4WY  reason: not valid java name */
-        public final void m522setPointerId0FcD4WY(long j) {
+        public final void m453setPointerId0FcD4WY(long j) {
             this.pointerId = j;
         }
     }

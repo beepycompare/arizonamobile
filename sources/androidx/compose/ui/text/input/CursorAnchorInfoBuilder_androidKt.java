@@ -35,19 +35,19 @@ public final class CursorAnchorInfoBuilder_androidKt {
     public static final CursorAnchorInfo build(CursorAnchorInfo.Builder builder, TextFieldValue textFieldValue, OffsetMapping offsetMapping, TextLayoutResult textLayoutResult, Matrix matrix, Rect rect, Rect rect2, boolean z, boolean z2, boolean z3, boolean z4) {
         builder.reset();
         builder.setMatrix(matrix);
-        int m7699getMinimpl = TextRange.m7699getMinimpl(textFieldValue.m7955getSelectiond9O1mEE());
-        builder.setSelectionRange(m7699getMinimpl, TextRange.m7698getMaximpl(textFieldValue.m7955getSelectiond9O1mEE()));
+        int m7001getMinimpl = TextRange.m7001getMinimpl(textFieldValue.m7253getSelectiond9O1mEE());
+        builder.setSelectionRange(m7001getMinimpl, TextRange.m7000getMaximpl(textFieldValue.m7253getSelectiond9O1mEE()));
         if (z) {
-            setInsertionMarker(builder, m7699getMinimpl, offsetMapping, textLayoutResult, rect);
+            setInsertionMarker(builder, m7001getMinimpl, offsetMapping, textLayoutResult, rect);
         }
         if (z2) {
-            TextRange m7954getCompositionMzsxiRA = textFieldValue.m7954getCompositionMzsxiRA();
-            int m7699getMinimpl2 = m7954getCompositionMzsxiRA != null ? TextRange.m7699getMinimpl(m7954getCompositionMzsxiRA.m7705unboximpl()) : -1;
-            TextRange m7954getCompositionMzsxiRA2 = textFieldValue.m7954getCompositionMzsxiRA();
-            int m7698getMaximpl = m7954getCompositionMzsxiRA2 != null ? TextRange.m7698getMaximpl(m7954getCompositionMzsxiRA2.m7705unboximpl()) : -1;
-            if (m7699getMinimpl2 >= 0 && m7699getMinimpl2 < m7698getMaximpl) {
-                builder.setComposingText(m7699getMinimpl2, textFieldValue.getText().subSequence(m7699getMinimpl2, m7698getMaximpl));
-                addCharacterBounds(builder, m7699getMinimpl2, m7698getMaximpl, offsetMapping, textLayoutResult, rect);
+            TextRange m7252getCompositionMzsxiRA = textFieldValue.m7252getCompositionMzsxiRA();
+            int m7001getMinimpl2 = m7252getCompositionMzsxiRA != null ? TextRange.m7001getMinimpl(m7252getCompositionMzsxiRA.m7007unboximpl()) : -1;
+            TextRange m7252getCompositionMzsxiRA2 = textFieldValue.m7252getCompositionMzsxiRA();
+            int m7000getMaximpl = m7252getCompositionMzsxiRA2 != null ? TextRange.m7000getMaximpl(m7252getCompositionMzsxiRA2.m7007unboximpl()) : -1;
+            if (m7001getMinimpl2 >= 0 && m7001getMinimpl2 < m7000getMaximpl) {
+                builder.setComposingText(m7001getMinimpl2, textFieldValue.getText().subSequence(m7001getMinimpl2, m7000getMaximpl));
+                addCharacterBounds(builder, m7001getMinimpl2, m7000getMaximpl, offsetMapping, textLayoutResult, rect);
             }
         }
         if (Build.VERSION.SDK_INT >= 33 && z3) {
@@ -65,7 +65,7 @@ public final class CursorAnchorInfoBuilder_androidKt {
         }
         int originalToTransformed = offsetMapping.originalToTransformed(i);
         Rect cursorRect = textLayoutResult.getCursorRect(originalToTransformed);
-        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m7672getSizeYbymL2g() >> 32));
+        float coerceIn = RangesKt.coerceIn(cursorRect.getLeft(), 0.0f, (int) (textLayoutResult.m6974getSizeYbymL2g() >> 32));
         boolean containsInclusive = containsInclusive(rect, coerceIn, cursorRect.getTop());
         boolean containsInclusive2 = containsInclusive(rect, coerceIn, cursorRect.getBottom());
         int i2 = 1;
@@ -90,7 +90,7 @@ public final class CursorAnchorInfoBuilder_androidKt {
         int originalToTransformed = offsetMapping.originalToTransformed(i);
         int originalToTransformed2 = offsetMapping.originalToTransformed(i2);
         float[] fArr = new float[(originalToTransformed2 - originalToTransformed) * 4];
-        textLayoutResult.getMultiParagraph().m7534fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(originalToTransformed, originalToTransformed2), fArr, 0);
+        textLayoutResult.getMultiParagraph().m6863fillBoundingBoxes8ffj60Q(TextRangeKt.TextRange(originalToTransformed, originalToTransformed2), fArr, 0);
         for (int i3 = i; i3 < i2; i3++) {
             int originalToTransformed3 = offsetMapping.originalToTransformed(i3);
             int i4 = (originalToTransformed3 - originalToTransformed) * 4;

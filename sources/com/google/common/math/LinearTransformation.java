@@ -35,11 +35,13 @@ public abstract class LinearTransformation {
         public LinearTransformation and(double x2, double y2) {
             Preconditions.checkArgument(DoubleUtils.isFinite(x2) && DoubleUtils.isFinite(y2));
             double d = this.x1;
-            if (x2 == d) {
-                Preconditions.checkArgument(y2 != this.y1);
+            int i = (x2 > d ? 1 : (x2 == d ? 0 : -1));
+            double d2 = this.y1;
+            if (i == 0) {
+                Preconditions.checkArgument(y2 != d2);
                 return new VerticalLinearTransformation(this.x1);
             }
-            return withSlope((y2 - this.y1) / (x2 - d));
+            return withSlope((y2 - d2) / (x2 - d));
         }
 
         public LinearTransformation withSlope(double slope) {

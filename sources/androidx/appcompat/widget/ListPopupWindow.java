@@ -327,21 +327,22 @@ public class ListPopupWindow implements ShowableListMenu {
                     if (!isInputMethodNotNeeded) {
                         buildDropDown = -1;
                     }
+                    PopupWindow popupWindow = this.mPopup;
                     if (isInputMethodNotNeeded) {
-                        this.mPopup.setWidth(this.mDropDownWidth == -1 ? -1 : 0);
+                        popupWindow.setWidth(this.mDropDownWidth == -1 ? -1 : 0);
                         this.mPopup.setHeight(0);
                     } else {
-                        this.mPopup.setWidth(this.mDropDownWidth == -1 ? -1 : 0);
+                        popupWindow.setWidth(this.mDropDownWidth == -1 ? -1 : 0);
                         this.mPopup.setHeight(-1);
                     }
                 } else if (i2 != -2) {
                     buildDropDown = i2;
                 }
-                PopupWindow popupWindow = this.mPopup;
+                PopupWindow popupWindow2 = this.mPopup;
                 if (this.mForceIgnoreOutsideTouch || this.mDropDownAlwaysVisible) {
                     z = false;
                 }
-                popupWindow.setOutsideTouchable(z);
+                popupWindow2.setOutsideTouchable(z);
                 this.mPopup.update(getAnchorView(), this.mDropDownHorizontalOffset, this.mDropDownVerticalOffset, i < 0 ? -1 : i, buildDropDown < 0 ? -1 : buildDropDown);
                 return;
             }
@@ -362,11 +363,11 @@ public class ListPopupWindow implements ShowableListMenu {
         this.mPopup.setWidth(i3);
         this.mPopup.setHeight(buildDropDown);
         setPopupClipToScreenEnabled(true);
-        PopupWindow popupWindow2 = this.mPopup;
+        PopupWindow popupWindow3 = this.mPopup;
         if (this.mForceIgnoreOutsideTouch || this.mDropDownAlwaysVisible) {
             z = false;
         }
-        popupWindow2.setOutsideTouchable(z);
+        popupWindow3.setOutsideTouchable(z);
         this.mPopup.setTouchInterceptor(this.mTouchInterceptor);
         if (this.mOverlapAnchorSet) {
             PopupWindowCompat.setOverlapAnchor(this.mPopup, this.mOverlapAnchor);
@@ -686,14 +687,15 @@ public class ListPopupWindow implements ShowableListMenu {
             }
         }
         Drawable background = this.mPopup.getBackground();
+        Rect rect = this.mTempRect;
         if (background != null) {
-            background.getPadding(this.mTempRect);
+            background.getPadding(rect);
             i2 = this.mTempRect.top + this.mTempRect.bottom;
             if (!this.mDropDownVerticalOffsetSet) {
                 this.mDropDownVerticalOffset = -this.mTempRect.top;
             }
         } else {
-            this.mTempRect.setEmpty();
+            rect.setEmpty();
             i2 = 0;
         }
         int maxAvailableHeight = getMaxAvailableHeight(getAnchorView(), this.mDropDownVerticalOffset, this.mPopup.getInputMethodMode() == 2);

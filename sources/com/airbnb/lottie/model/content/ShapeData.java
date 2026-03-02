@@ -55,31 +55,33 @@ public class ShapeData {
             Logger.warning("Curves must have the same number of control points. Shape 1: " + shapeData.getCurves().size() + "\tShape 2: " + shapeData2.getCurves().size());
         }
         int min = Math.min(shapeData.getCurves().size(), shapeData2.getCurves().size());
-        if (this.curves.size() < min) {
-            for (int size = this.curves.size(); size < min; size++) {
+        int size = this.curves.size();
+        List<CubicCurveData> list = this.curves;
+        if (size < min) {
+            for (int size2 = list.size(); size2 < min; size2++) {
                 this.curves.add(new CubicCurveData());
             }
-        } else if (this.curves.size() > min) {
-            for (int size2 = this.curves.size() - 1; size2 >= min; size2--) {
-                List<CubicCurveData> list = this.curves;
-                list.remove(list.size() - 1);
+        } else if (list.size() > min) {
+            for (int size3 = this.curves.size() - 1; size3 >= min; size3--) {
+                List<CubicCurveData> list2 = this.curves;
+                list2.remove(list2.size() - 1);
             }
         }
         PointF initialPoint = shapeData.getInitialPoint();
         PointF initialPoint2 = shapeData2.getInitialPoint();
         setInitialPoint(MiscUtils.lerp(initialPoint.x, initialPoint2.x, f), MiscUtils.lerp(initialPoint.y, initialPoint2.y, f));
-        for (int size3 = this.curves.size() - 1; size3 >= 0; size3--) {
-            CubicCurveData cubicCurveData = shapeData.getCurves().get(size3);
-            CubicCurveData cubicCurveData2 = shapeData2.getCurves().get(size3);
+        for (int size4 = this.curves.size() - 1; size4 >= 0; size4--) {
+            CubicCurveData cubicCurveData = shapeData.getCurves().get(size4);
+            CubicCurveData cubicCurveData2 = shapeData2.getCurves().get(size4);
             PointF controlPoint1 = cubicCurveData.getControlPoint1();
             PointF controlPoint2 = cubicCurveData.getControlPoint2();
             PointF vertex = cubicCurveData.getVertex();
             PointF controlPoint12 = cubicCurveData2.getControlPoint1();
             PointF controlPoint22 = cubicCurveData2.getControlPoint2();
             PointF vertex2 = cubicCurveData2.getVertex();
-            this.curves.get(size3).setControlPoint1(MiscUtils.lerp(controlPoint1.x, controlPoint12.x, f), MiscUtils.lerp(controlPoint1.y, controlPoint12.y, f));
-            this.curves.get(size3).setControlPoint2(MiscUtils.lerp(controlPoint2.x, controlPoint22.x, f), MiscUtils.lerp(controlPoint2.y, controlPoint22.y, f));
-            this.curves.get(size3).setVertex(MiscUtils.lerp(vertex.x, vertex2.x, f), MiscUtils.lerp(vertex.y, vertex2.y, f));
+            this.curves.get(size4).setControlPoint1(MiscUtils.lerp(controlPoint1.x, controlPoint12.x, f), MiscUtils.lerp(controlPoint1.y, controlPoint12.y, f));
+            this.curves.get(size4).setControlPoint2(MiscUtils.lerp(controlPoint2.x, controlPoint22.x, f), MiscUtils.lerp(controlPoint2.y, controlPoint22.y, f));
+            this.curves.get(size4).setVertex(MiscUtils.lerp(vertex.x, vertex2.x, f), MiscUtils.lerp(vertex.y, vertex2.y, f));
         }
     }
 

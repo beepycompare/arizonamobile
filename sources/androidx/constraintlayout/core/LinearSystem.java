@@ -136,13 +136,21 @@ public class LinearSystem {
     }
 
     public void reset() {
-        for (int i = 0; i < this.mCache.mIndexedVariables.length; i++) {
-            SolverVariable solverVariable = this.mCache.mIndexedVariables[i];
+        Cache cache;
+        int i = 0;
+        while (true) {
+            int length = this.mCache.mIndexedVariables.length;
+            cache = this.mCache;
+            if (i >= length) {
+                break;
+            }
+            SolverVariable solverVariable = cache.mIndexedVariables[i];
             if (solverVariable != null) {
                 solverVariable.reset();
             }
+            i++;
         }
-        this.mCache.mSolverVariablePool.releaseAll(this.mPoolVariables, this.mPoolVariablesCount);
+        cache.mSolverVariablePool.releaseAll(this.mPoolVariables, this.mPoolVariablesCount);
         this.mPoolVariablesCount = 0;
         Arrays.fill(this.mCache.mIndexedVariables, (Object) null);
         HashMap<String, SolverVariable> hashMap = this.mVariables;
@@ -200,8 +208,10 @@ public class LinearSystem {
 
     public ArrayRow createRow() {
         ArrayRow acquire;
-        if (OPTIMIZED_ENGINE) {
-            acquire = this.mCache.mOptimizedArrayRowPool.acquire();
+        boolean z = OPTIMIZED_ENGINE;
+        Cache cache = this.mCache;
+        if (z) {
+            acquire = cache.mOptimizedArrayRowPool.acquire();
             if (acquire == null) {
                 acquire = new ValuesRow(this.mCache);
                 OPTIMIZED_ARRAY_ROW_CREATION++;
@@ -209,7 +219,7 @@ public class LinearSystem {
                 acquire.reset();
             }
         } else {
-            acquire = this.mCache.mArrayRowPool.acquire();
+            acquire = cache.mArrayRowPool.acquire();
             if (acquire == null) {
                 acquire = new ArrayRow(this.mCache);
                 ARRAY_ROW_CREATION++;
@@ -399,6 +409,7 @@ public class LinearSystem {
 
     final void cleanupRows() {
         int i;
+        ArrayRow[] arrayRowArr;
         int i2 = 0;
         while (i2 < this.mNumRows) {
             ArrayRow arrayRow = this.mRows[i2];
@@ -411,28 +422,31 @@ public class LinearSystem {
                 int i3 = i2;
                 while (true) {
                     i = this.mNumRows;
-                    if (i3 >= i - 1) {
+                    int i4 = i - 1;
+                    arrayRowArr = this.mRows;
+                    if (i3 >= i4) {
                         break;
                     }
-                    ArrayRow[] arrayRowArr = this.mRows;
-                    int i4 = i3 + 1;
-                    arrayRowArr[i3] = arrayRowArr[i4];
-                    i3 = i4;
+                    int i5 = i3 + 1;
+                    arrayRowArr[i3] = arrayRowArr[i5];
+                    i3 = i5;
                 }
-                this.mRows[i - 1] = null;
+                arrayRowArr[i - 1] = null;
                 this.mNumRows = i - 1;
                 i2--;
-                if (OPTIMIZED_ENGINE) {
-                    this.mCache.mOptimizedArrayRowPool.release(arrayRow);
+                boolean z = OPTIMIZED_ENGINE;
+                Cache cache = this.mCache;
+                if (z) {
+                    cache.mOptimizedArrayRowPool.release(arrayRow);
                 } else {
-                    this.mCache.mArrayRowPool.release(arrayRow);
+                    cache.mArrayRowPool.release(arrayRow);
                 }
             }
             i2++;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -479,10 +493,12 @@ public class LinearSystem {
                         if (!arrayRow.mIsSimpleDefinition) {
                             arrayRow.mVariable.updateReferencesWithNewDefinition(this, arrayRow);
                         }
-                        if (OPTIMIZED_ENGINE) {
-                            this.mCache.mOptimizedArrayRowPool.release(arrayRow);
+                        boolean z3 = OPTIMIZED_ENGINE;
+                        Cache cache = this.mCache;
+                        if (z3) {
+                            cache.mOptimizedArrayRowPool.release(arrayRow);
                         } else {
-                            this.mCache.mArrayRowPool.release(arrayRow);
+                            cache.mArrayRowPool.release(arrayRow);
                         }
                         this.mNumRows--;
                     }
@@ -522,10 +538,12 @@ public class LinearSystem {
                 if (arrayRow2 != null && arrayRow2.mIsSimpleDefinition) {
                     ArrayRow arrayRow3 = this.mRows[i2];
                     arrayRow3.mVariable.setFinalValue(this, arrayRow3.mConstantValue);
-                    if (OPTIMIZED_ENGINE) {
-                        this.mCache.mOptimizedArrayRowPool.release(arrayRow3);
+                    boolean z = OPTIMIZED_ENGINE;
+                    Cache cache = this.mCache;
+                    if (z) {
+                        cache.mOptimizedArrayRowPool.release(arrayRow3);
                     } else {
-                        this.mCache.mArrayRowPool.release(arrayRow3);
+                        cache.mArrayRowPool.release(arrayRow3);
                     }
                     this.mRows[i2] = null;
                     int i3 = i2 + 1;
@@ -583,10 +601,12 @@ public class LinearSystem {
         if (!arrayRow.mVariable.isFinalValue) {
             arrayRow.mVariable.setFinalValue(this, arrayRow.mConstantValue);
         }
-        if (OPTIMIZED_ENGINE) {
-            this.mCache.mOptimizedArrayRowPool.release(arrayRow);
+        boolean z = OPTIMIZED_ENGINE;
+        Cache cache = this.mCache;
+        if (z) {
+            cache.mOptimizedArrayRowPool.release(arrayRow);
         } else {
-            this.mCache.mArrayRowPool.release(arrayRow);
+            cache.mArrayRowPool.release(arrayRow);
         }
     }
 

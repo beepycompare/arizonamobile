@@ -166,12 +166,13 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
                     return;
                 }
                 int height = (WindowUtils.getCurrentWindowBounds(BaseTransientBottomBar.this.context).height() - BaseTransientBottomBar.this.getViewAbsoluteBottom()) + ((int) BaseTransientBottomBar.this.view.getTranslationY());
-                if (height >= BaseTransientBottomBar.this.extraBottomMarginGestureInset) {
-                    BaseTransientBottomBar baseTransientBottomBar = BaseTransientBottomBar.this;
+                int i = BaseTransientBottomBar.this.extraBottomMarginGestureInset;
+                BaseTransientBottomBar baseTransientBottomBar = BaseTransientBottomBar.this;
+                if (height >= i) {
                     baseTransientBottomBar.appliedBottomMarginGestureInset = baseTransientBottomBar.extraBottomMarginGestureInset;
                     return;
                 }
-                ViewGroup.LayoutParams layoutParams = BaseTransientBottomBar.this.view.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams = baseTransientBottomBar.view.getLayoutParams();
                 if (!(layoutParams instanceof ViewGroup.MarginLayoutParams)) {
                     Log.w(BaseTransientBottomBar.TAG, "Unable to apply gesture inset because layout params are not MarginLayoutParams");
                     return;
@@ -547,10 +548,12 @@ public abstract class BaseTransientBottomBar<B extends BaseTransientBottomBar<B>
                 if (BaseTransientBottomBar.this.view.getParent() != null) {
                     BaseTransientBottomBar.this.view.setVisibility(0);
                 }
-                if (BaseTransientBottomBar.this.view.getAnimationMode() == 1) {
-                    BaseTransientBottomBar.this.startFadeInAnimation();
+                int animationMode = BaseTransientBottomBar.this.view.getAnimationMode();
+                BaseTransientBottomBar baseTransientBottomBar = BaseTransientBottomBar.this;
+                if (animationMode == 1) {
+                    baseTransientBottomBar.startFadeInAnimation();
                 } else {
-                    BaseTransientBottomBar.this.startSlideInAnimation();
+                    baseTransientBottomBar.startSlideInAnimation();
                 }
             }
         });

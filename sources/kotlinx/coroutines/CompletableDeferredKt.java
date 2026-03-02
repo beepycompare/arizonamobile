@@ -9,8 +9,8 @@ import kotlin.Result;
 public final class CompletableDeferredKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <T> boolean completeWith(CompletableDeferred<T> completableDeferred, Object obj) {
-        Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(obj);
-        return m10246exceptionOrNullimpl == null ? completableDeferred.complete(obj) : completableDeferred.completeExceptionally(m10246exceptionOrNullimpl);
+        Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(obj);
+        return m9185exceptionOrNullimpl == null ? completableDeferred.complete(obj) : completableDeferred.completeExceptionally(m9185exceptionOrNullimpl);
     }
 
     public static /* synthetic */ CompletableDeferred CompletableDeferred$default(Job job, int i, Object obj) {

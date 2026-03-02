@@ -96,18 +96,18 @@ public final class Http2ExchangeCodec implements ExchangeCodec {
             return;
         }
         this.stream = this.http2Connection.newStream(Companion.http2HeadersList(request), request.body() != null);
-        if (this.canceled) {
-            Http2Stream http2Stream = this.stream;
+        boolean z = this.canceled;
+        Http2Stream http2Stream = this.stream;
+        if (z) {
             Intrinsics.checkNotNull(http2Stream);
             http2Stream.closeLater(ErrorCode.CANCEL);
             throw new IOException("Canceled");
         }
+        Intrinsics.checkNotNull(http2Stream);
+        http2Stream.readTimeout().timeout(this.chain.getReadTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
         Http2Stream http2Stream2 = this.stream;
         Intrinsics.checkNotNull(http2Stream2);
-        http2Stream2.readTimeout().timeout(this.chain.getReadTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
-        Http2Stream http2Stream3 = this.stream;
-        Intrinsics.checkNotNull(http2Stream3);
-        http2Stream3.writeTimeout().timeout(this.chain.getWriteTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
+        http2Stream2.writeTimeout().timeout(this.chain.getWriteTimeoutMillis$okhttp(), TimeUnit.MILLISECONDS);
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec

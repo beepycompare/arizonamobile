@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: MainEntrench.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes3.dex */
 final /* synthetic */ class MainEntrench$onCreate$root$1 extends FunctionReferenceImpl implements Function1<ComponentContext, MainComponent> {
     /* JADX INFO: Access modifiers changed from: package-private */

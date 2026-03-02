@@ -425,10 +425,12 @@ public class MotionLabel extends View implements FloatLayout {
             if (isNaN) {
                 float f4 = width;
                 float f5 = height;
-                if (f4 * f3 > f5 * f2) {
-                    this.mPaint.setTextSize((this.mPaintTextSize * f2) / f4);
+                int i5 = ((f4 * f3) > (f5 * f2) ? 1 : ((f4 * f3) == (f5 * f2) ? 0 : -1));
+                TextPaint textPaint = this.mPaint;
+                if (i5 > 0) {
+                    textPaint.setTextSize((this.mPaintTextSize * f2) / f4);
                 } else {
-                    this.mPaint.setTextSize((this.mPaintTextSize * f3) / f5);
+                    textPaint.setTextSize((this.mPaintTextSize * f3) / f5);
                 }
             } else {
                 float f6 = width;
@@ -478,10 +480,12 @@ public class MotionLabel extends View implements FloatLayout {
             float f7 = (f5 - this.mPaddingRight) - this.mPaddingLeft;
             float f8 = (f6 - this.mPaddingBottom) - this.mPaddingTop;
             float width = this.mTempRect.width();
-            if (width * f8 > height * f7) {
-                this.mPaint.setTextSize((this.mPaintTextSize * f7) / width);
+            int i7 = ((width * f8) > (height * f7) ? 1 : ((width * f8) == (height * f7) ? 0 : -1));
+            TextPaint textPaint = this.mPaint;
+            if (i7 > 0) {
+                textPaint.setTextSize((this.mPaintTextSize * f7) / width);
             } else {
-                this.mPaint.setTextSize((this.mPaintTextSize * f8) / height);
+                textPaint.setTextSize((this.mPaintTextSize * f8) / height);
             }
             if (this.mUseOutline || !Float.isNaN(this.mBaseTextSize)) {
                 buildShape(Float.isNaN(this.mBaseTextSize) ? 1.0f : this.mTextSize / this.mBaseTextSize);
@@ -511,11 +515,13 @@ public class MotionLabel extends View implements FloatLayout {
             this.mOutlinePositionMatrix.postTranslate(horizontalOffset, verticalOffset);
             this.mOutlinePositionMatrix.preScale(f, f);
             this.mPath.transform(this.mOutlinePositionMatrix);
-            if (this.mTextShader != null) {
-                this.mPaint.setFilterBitmap(true);
+            BitmapShader bitmapShader = this.mTextShader;
+            TextPaint textPaint = this.mPaint;
+            if (bitmapShader != null) {
+                textPaint.setFilterBitmap(true);
                 this.mPaint.setShader(this.mTextShader);
             } else {
-                this.mPaint.setColor(this.mTextFillColor);
+                textPaint.setColor(this.mTextFillColor);
             }
             this.mPaint.setStyle(Paint.Style.FILL);
             this.mPaint.setStrokeWidth(this.mTextOutlineThickness);

@@ -9,7 +9,7 @@ public final class vo extends SimpleThreadSafeToggle implements ApplicationState
     public vo() {
         super(false, "[VisibleAppStateOnlyTrackingStatusToggle]");
         synchronized (this) {
-            a(C0449na.k().e().registerStickyObserver(this));
+            a(C0448na.k().e().registerStickyObserver(this));
             Unit unit = Unit.INSTANCE;
         }
     }

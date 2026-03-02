@@ -26,7 +26,7 @@ public final class TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1 implement
     TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1() {
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$3(List list, Placeable placeable, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, (Placeable) list.get(0), 0, 0, 0.0f, 4, null);
         Placeable.PlacementScope.place$default(placementScope, (Placeable) list.get(1), 0, ((Placeable) list.get(0)).getHeight(), 0.0f, 4, null);
@@ -36,13 +36,13 @@ public final class TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1 implement
 
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
-    public final MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+    public final MeasureResult mo41measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
         List<? extends Measurable> list2 = list;
         int size = list2.size();
         for (int i = 0; i < size; i++) {
             Measurable measurable = list.get(i);
             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable), "Spacer")) {
-                final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, measureScope.mo458roundToPx0680j_4(TimePickerTokens.INSTANCE.m4435getPeriodSelectorOutlineWidthD9Ej5fM()), 3, null));
+                final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, measureScope.mo399roundToPx0680j_4(TimePickerTokens.INSTANCE.m3819getPeriodSelectorOutlineWidthD9Ej5fM()), 3, null));
                 ArrayList arrayList = new ArrayList(list.size());
                 int size2 = list2.size();
                 for (int i2 = 0; i2 < size2; i2++) {
@@ -55,15 +55,13 @@ public final class TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1 implement
                 ArrayList arrayList3 = new ArrayList(arrayList2.size());
                 int size3 = arrayList2.size();
                 for (int i3 = 0; i3 < size3; i3++) {
-                    arrayList3.add(((Measurable) arrayList2.get(i3)).mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, Constraints.m8210getMaxHeightimpl(j) / 2, 3, null)));
+                    arrayList3.add(((Measurable) arrayList2.get(i3)).mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(j, 0, 0, 0, Constraints.m7507getMaxHeightimpl(j) / 2, 3, null)));
                 }
                 final ArrayList arrayList4 = arrayList3;
-                return MeasureScope.layout$default(measureScope, Constraints.m8211getMaxWidthimpl(j), Constraints.m8210getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1$$ExternalSyntheticLambda0
+                return MeasureScope.layout$default(measureScope, Constraints.m7508getMaxWidthimpl(j), Constraints.m7507getMaxHeightimpl(j), null, new Function1() { // from class: androidx.compose.material3.TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj) {
-                        Unit measure_3p2s80s$lambda$3;
-                        measure_3p2s80s$lambda$3 = TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1.measure_3p2s80s$lambda$3(arrayList4, mo6875measureBRTryo0, (Placeable.PlacementScope) obj);
-                        return measure_3p2s80s$lambda$3;
+                        return TimePickerKt$VerticalPeriodToggle$measurePolicy$1$1.measure_3p2s80s$lambda$3(arrayList4, mo6216measureBRTryo0, (Placeable.PlacementScope) obj);
                     }
                 }, 4, null);
             }

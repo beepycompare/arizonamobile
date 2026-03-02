@@ -48,9 +48,7 @@ public final class PagesWebNavigation<C, T> implements WebNavigation<Pages<? ext
         this.history = MapKt.map(pages, new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesWebNavigation$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                List history$lambda$1;
-                history$lambda$1 = PagesWebNavigation.history$lambda$1(PagesWebNavigation.this, (ChildPages) obj);
-                return history$lambda$1;
+                return PagesWebNavigation.history$lambda$1(PagesWebNavigation.this, (ChildPages) obj);
             }
         });
     }
@@ -65,7 +63,7 @@ public final class PagesWebNavigation<C, T> implements WebNavigation<Pages<? ext
         return this.history;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final List history$lambda$1(PagesWebNavigation pagesWebNavigation, ChildPages pages) {
         Intrinsics.checkNotNullParameter(pages, "pages");
         String invoke = pagesWebNavigation.pathMapper.invoke(pages);
@@ -93,7 +91,7 @@ public final class PagesWebNavigation<C, T> implements WebNavigation<Pages<? ext
         return this.onBeforeNavigate.invoke().booleanValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Pages navigate$lambda$2(List list, Pages it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return (Pages) CollectionsKt.first((List<? extends Object>) list);
@@ -105,9 +103,7 @@ public final class PagesWebNavigation<C, T> implements WebNavigation<Pages<? ext
         PagesNavigatorExtKt.navigate(this.navigator, new Function1() { // from class: com.arkivanov.decompose.router.pages.PagesWebNavigation$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Pages navigate$lambda$2;
-                navigate$lambda$2 = PagesWebNavigation.navigate$lambda$2(history, (Pages) obj);
-                return navigate$lambda$2;
+                return PagesWebNavigation.navigate$lambda$2(history, (Pages) obj);
             }
         });
     }

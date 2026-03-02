@@ -12,25 +12,21 @@ public final class SaverKt {
     private static final Saver<Object, Object> AutoSaver = Saver(new Function2() { // from class: androidx.compose.runtime.saveable.SaverKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
-            Object AutoSaver$lambda$0;
-            AutoSaver$lambda$0 = SaverKt.AutoSaver$lambda$0((SaverScope) obj, obj2);
-            return AutoSaver$lambda$0;
+            return SaverKt.AutoSaver$lambda$0((SaverScope) obj, obj2);
         }
     }, new Function1() { // from class: androidx.compose.runtime.saveable.SaverKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function1
         public final Object invoke(Object obj) {
-            Object AutoSaver$lambda$1;
-            AutoSaver$lambda$1 = SaverKt.AutoSaver$lambda$1(obj);
-            return AutoSaver$lambda$1;
+            return SaverKt.AutoSaver$lambda$1(obj);
         }
     });
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object AutoSaver$lambda$0(SaverScope saverScope, Object obj) {
         return obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Object AutoSaver$lambda$1(Object obj) {
         return obj;
     }

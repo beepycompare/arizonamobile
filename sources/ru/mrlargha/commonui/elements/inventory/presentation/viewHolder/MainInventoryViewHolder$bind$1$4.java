@@ -21,8 +21,8 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MainInventoryViewHolder.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$4", f = "MainInventoryViewHolder.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$4", f = "MainInventoryViewHolder.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "invokeSuspend", n = {}, nl = {133}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class MainInventoryViewHolder$bind$1$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
@@ -67,12 +67,13 @@ public final class MainInventoryViewHolder$bind$1$4 extends SuspendLambda implem
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        ItemInventoryBinding itemInventoryBinding2 = this.$this_with;
         if (bitmap != null) {
-            ImageView ivItemImage = this.$this_with.ivItemImage;
+            ImageView ivItemImage = itemInventoryBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             UtilsKt.setImage(ivItemImage, bitmap);
         } else {
-            ImageView ivItemImage2 = this.$this_with.ivItemImage;
+            ImageView ivItemImage2 = itemInventoryBinding2.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
             itemInventoryBinding = this.this$0.binding;
             Context context = itemInventoryBinding.getRoot().getContext();

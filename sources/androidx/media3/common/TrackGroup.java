@@ -128,10 +128,12 @@ public final class TrackGroup {
             if (i >= formatArr.length) {
                 return;
             }
-            if (!normalizeLanguage.equals(normalizeLanguage(formatArr[i].language))) {
-                logErrorMessage("languages", this.formats[0].language, this.formats[i].language, i);
+            boolean equals = normalizeLanguage.equals(normalizeLanguage(formatArr[i].language));
+            Format[] formatArr2 = this.formats;
+            if (!equals) {
+                logErrorMessage("languages", formatArr2[0].language, this.formats[i].language, i);
                 return;
-            } else if (normalizeRoleFlags != normalizeRoleFlags(this.formats[i].roleFlags)) {
+            } else if (normalizeRoleFlags != normalizeRoleFlags(formatArr2[i].roleFlags)) {
                 logErrorMessage("role flags", Integer.toBinaryString(this.formats[0].roleFlags), Integer.toBinaryString(this.formats[i].roleFlags), i);
                 return;
             } else {

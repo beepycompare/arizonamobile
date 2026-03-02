@@ -18,24 +18,20 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsBottomBar.kt */
-@Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$SettingsBottomBarKt {
     public static final ComposableSingletons$SettingsBottomBarKt INSTANCE = new ComposableSingletons$SettingsBottomBarKt();
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$631972942 = ComposableLambdaKt.composableLambdaInstance(631972942, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_631972942$lambda$0;
-            lambda_631972942$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_631972942$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_631972942$lambda$0;
+            return ComposableSingletons$SettingsBottomBarKt.lambda_631972942$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
     private static Function3<BoxScope, Composer, Integer, Unit> lambda$124095881 = ComposableLambdaKt.composableLambdaInstance(124095881, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_124095881$lambda$0;
-            lambda_124095881$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_124095881$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_124095881$lambda$0;
+            return ComposableSingletons$SettingsBottomBarKt.lambda_124095881$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
@@ -43,26 +39,24 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     private static Function3<BoxScope, Composer, Integer, Unit> f145lambda$1935939771 = ComposableLambdaKt.composableLambdaInstance(-1935939771, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__1935939771$lambda$0;
-            lambda__1935939771$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda__1935939771$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__1935939771$lambda$0;
+            return ComposableSingletons$SettingsBottomBarKt.lambda__1935939771$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
         }
     });
 
-    /* renamed from: getLambda$-1935939771$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m10164getLambda$1935939771$settings_release() {
+    /* renamed from: getLambda$-1935939771$settings  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m9125getLambda$1935939771$settings() {
         return f145lambda$1935939771;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$124095881$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$124095881$settings() {
         return lambda$124095881;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$631972942$settings_release() {
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$631972942$settings() {
         return lambda$631972942;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_631972942$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C59@2183L38,58@2142L232:SettingsBottomBar.kt#1gr92h");
@@ -80,7 +74,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda_124095881$lambda$0(BoxScope ScalingButtonLong, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButtonLong, "$this$ScalingButtonLong");
         ComposerKt.sourceInformation(composer, "C66@2520L38,65@2479L232:SettingsBottomBar.kt#1gr92h");
@@ -98,7 +92,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit lambda__1935939771$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
         ComposerKt.sourceInformation(composer, "C73@2840L42,72@2799L236:SettingsBottomBar.kt#1gr92h");

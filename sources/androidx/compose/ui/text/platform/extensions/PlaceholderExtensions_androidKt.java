@@ -17,50 +17,50 @@ import kotlin.Metadata;
 /* loaded from: classes2.dex */
 public final class PlaceholderExtensions_androidKt {
     /* renamed from: getSpanUnit--R2X_6o$annotations  reason: not valid java name */
-    private static /* synthetic */ void m7978getSpanUnitR2X_6o$annotations(long j) {
+    private static /* synthetic */ void m7275getSpanUnitR2X_6o$annotations(long j) {
     }
 
     /* renamed from: getSpanVerticalAlign-do9X-Gg$annotations  reason: not valid java name */
-    private static /* synthetic */ void m7980getSpanVerticalAligndo9XGg$annotations(int i) {
+    private static /* synthetic */ void m7277getSpanVerticalAligndo9XGg$annotations(int i) {
     }
 
     private static final void setPlaceholder(Spannable spannable, Placeholder placeholder, int i, int i2, Density density) {
         for (Object obj : spannable.getSpans(i, i2, EmojiSpan.class)) {
             spannable.removeSpan((EmojiSpan) obj);
         }
-        SpannableExtensions_androidKt.setSpan(spannable, new PlaceholderSpan(TextUnit.m8452getValueimpl(placeholder.m7588getWidthXSAIIZE()), m7977getSpanUnitR2X_6o(placeholder.m7588getWidthXSAIIZE()), TextUnit.m8452getValueimpl(placeholder.m7586getHeightXSAIIZE()), m7977getSpanUnitR2X_6o(placeholder.m7586getHeightXSAIIZE()), density, m7979getSpanVerticalAligndo9XGg(placeholder.m7587getPlaceholderVerticalAlignJ6kI3mc())), i, i2);
+        SpannableExtensions_androidKt.setSpan(spannable, new PlaceholderSpan(TextUnit.m7749getValueimpl(placeholder.m6916getWidthXSAIIZE()), m7274getSpanUnitR2X_6o(placeholder.m6916getWidthXSAIIZE()), TextUnit.m7749getValueimpl(placeholder.m6914getHeightXSAIIZE()), m7274getSpanUnitR2X_6o(placeholder.m6914getHeightXSAIIZE()), density, m7276getSpanVerticalAligndo9XGg(placeholder.m6915getPlaceholderVerticalAlignJ6kI3mc())), i, i2);
     }
 
     /* renamed from: getSpanUnit--R2X_6o  reason: not valid java name */
-    private static final int m7977getSpanUnitR2X_6o(long j) {
-        long m8451getTypeUIouoOA = TextUnit.m8451getTypeUIouoOA(j);
-        if (TextUnitType.m8480equalsimpl0(m8451getTypeUIouoOA, TextUnitType.Companion.m8485getSpUIouoOA())) {
+    private static final int m7274getSpanUnitR2X_6o(long j) {
+        long m7748getTypeUIouoOA = TextUnit.m7748getTypeUIouoOA(j);
+        if (TextUnitType.m7777equalsimpl0(m7748getTypeUIouoOA, TextUnitType.Companion.m7782getSpUIouoOA())) {
             return 0;
         }
-        return TextUnitType.m8480equalsimpl0(m8451getTypeUIouoOA, TextUnitType.Companion.m8484getEmUIouoOA()) ? 1 : 2;
+        return TextUnitType.m7777equalsimpl0(m7748getTypeUIouoOA, TextUnitType.Companion.m7781getEmUIouoOA()) ? 1 : 2;
     }
 
     /* renamed from: getSpanVerticalAlign-do9X-Gg  reason: not valid java name */
-    private static final int m7979getSpanVerticalAligndo9XGg(int i) {
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7596getAboveBaselineJ6kI3mc())) {
+    private static final int m7276getSpanVerticalAligndo9XGg(int i) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6924getAboveBaselineJ6kI3mc())) {
             return 0;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7602getTopJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6930getTopJ6kI3mc())) {
             return 1;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7597getBottomJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6925getBottomJ6kI3mc())) {
             return 2;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7598getCenterJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6926getCenterJ6kI3mc())) {
             return 3;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7601getTextTopJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6929getTextTopJ6kI3mc())) {
             return 4;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7599getTextBottomJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6927getTextBottomJ6kI3mc())) {
             return 5;
         }
-        if (PlaceholderVerticalAlign.m7592equalsimpl0(i, PlaceholderVerticalAlign.Companion.m7600getTextCenterJ6kI3mc())) {
+        if (PlaceholderVerticalAlign.m6920equalsimpl0(i, PlaceholderVerticalAlign.Companion.m6928getTextCenterJ6kI3mc())) {
             return 6;
         }
         throw new IllegalStateException("Invalid PlaceholderVerticalAlign".toString());

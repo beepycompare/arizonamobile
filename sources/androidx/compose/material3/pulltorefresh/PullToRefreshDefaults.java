@@ -66,15 +66,15 @@ public final class PullToRefreshDefaults {
     private static final Shape shape = RoundedCornerShapeKt.getCircleShape();
     private static final Shape indicatorShape = RoundedCornerShapeKt.getCircleShape();
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$7(PullToRefreshDefaults pullToRefreshDefaults, PullToRefreshState pullToRefreshState, boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, Function3 function3, int i, int i2, Composer composer, int i3) {
-        pullToRefreshDefaults.m3711IndicatorBox1CPYgEU(pullToRefreshState, z, modifier, f, shape2, j, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        pullToRefreshDefaults.m3097IndicatorBox1CPYgEU(pullToRefreshState, z, modifier, f, shape2, j, f2, function3, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit Indicator_2poqoh4$lambda$8(PullToRefreshDefaults pullToRefreshDefaults, PullToRefreshState pullToRefreshState, boolean z, Modifier modifier, long j, long j2, float f, int i, int i2, Composer composer, int i3) {
-        pullToRefreshDefaults.m3710Indicator2poqoh4(pullToRefreshState, z, modifier, j, j2, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        pullToRefreshDefaults.m3096Indicator2poqoh4(pullToRefreshState, z, modifier, j, j2, f, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -94,11 +94,11 @@ public final class PullToRefreshDefaults {
     }
 
     static {
-        float m8258constructorimpl = Dp.m8258constructorimpl(80);
-        PositionalThreshold = m8258constructorimpl;
-        IndicatorMaxDistance = m8258constructorimpl;
-        Elevation = ElevationTokens.INSTANCE.m3977getLevel2D9Ej5fM();
-        LoadingIndicatorElevation = ElevationTokens.INSTANCE.m3975getLevel0D9Ej5fM();
+        float m7555constructorimpl = Dp.m7555constructorimpl(80);
+        PositionalThreshold = m7555constructorimpl;
+        IndicatorMaxDistance = m7555constructorimpl;
+        Elevation = ElevationTokens.INSTANCE.m3361getLevel2D9Ej5fM();
+        LoadingIndicatorElevation = ElevationTokens.INSTANCE.m3359getLevel0D9Ej5fM();
     }
 
     public final Shape getIndicatorShape() {
@@ -110,12 +110,12 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(1066257972, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-containerColor> (PullToRefresh.kt:405)");
         }
-        long m2201getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2201getSurfaceContainerHigh0d7_KjU();
+        long m1889getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1889getSurfaceContainerHigh0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2201getSurfaceContainerHigh0d7_KjU;
+        return m1889getSurfaceContainerHigh0d7_KjU;
     }
 
     public final long getIndicatorContainerColor(Composer composer, int i) {
@@ -123,12 +123,12 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-80510850, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-indicatorContainerColor> (PullToRefresh.kt:409)");
         }
-        long m2201getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2201getSurfaceContainerHigh0d7_KjU();
+        long m1889getSurfaceContainerHigh0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1889getSurfaceContainerHigh0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2201getSurfaceContainerHigh0d7_KjU;
+        return m1889getSurfaceContainerHigh0d7_KjU;
     }
 
     public final long getIndicatorColor(Composer composer, int i) {
@@ -136,31 +136,31 @@ public final class PullToRefreshDefaults {
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(-1441334156, i, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.<get-indicatorColor> (PullToRefresh.kt:413)");
         }
-        long m2182getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2182getOnSurfaceVariant0d7_KjU();
+        long m1870getOnSurfaceVariant0d7_KjU = MaterialTheme.INSTANCE.getColorScheme(composer, 6).m1870getOnSurfaceVariant0d7_KjU();
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventEnd();
         }
         ComposerKt.sourceInformationMarkerEnd(composer);
-        return m2182getOnSurfaceVariant0d7_KjU;
+        return m1870getOnSurfaceVariant0d7_KjU;
     }
 
     /* renamed from: getPositionalThreshold-D9Ej5fM  reason: not valid java name */
-    public final float m3715getPositionalThresholdD9Ej5fM() {
+    public final float m3101getPositionalThresholdD9Ej5fM() {
         return PositionalThreshold;
     }
 
     /* renamed from: getIndicatorMaxDistance-D9Ej5fM  reason: not valid java name */
-    public final float m3713getIndicatorMaxDistanceD9Ej5fM() {
+    public final float m3099getIndicatorMaxDistanceD9Ej5fM() {
         return IndicatorMaxDistance;
     }
 
     /* renamed from: getElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3712getElevationD9Ej5fM() {
+    public final float m3098getElevationD9Ej5fM() {
         return Elevation;
     }
 
     /* renamed from: getLoadingIndicatorElevation-D9Ej5fM  reason: not valid java name */
-    public final float m3714getLoadingIndicatorElevationD9Ej5fM() {
+    public final float m3100getLoadingIndicatorElevationD9Ej5fM() {
         return LoadingIndicatorElevation;
     }
 
@@ -188,7 +188,7 @@ public final class PullToRefreshDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3711IndicatorBox1CPYgEU(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, final Function3<? super BoxScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
+    public final void m3097IndicatorBox1CPYgEU(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, float f, Shape shape2, long j, float f2, final Function3<? super BoxScope, ? super Composer, ? super Integer, Unit> function3, Composer composer, final int i, final int i2) {
         int i3;
         boolean z2;
         int i4;
@@ -288,7 +288,7 @@ public final class PullToRefreshDefaults {
                                 shape4 = shape2;
                             }
                             if (i5 != 0) {
-                                j2 = Color.Companion.m5460getUnspecified0d7_KjU();
+                                j2 = Color.Companion.m4808getUnspecified0d7_KjU();
                             }
                             if ((i2 & 64) != 0) {
                                 i3 &= -3670017;
@@ -311,22 +311,20 @@ public final class PullToRefreshDefaults {
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-1341144489, i3, -1, "androidx.compose.material3.pulltorefresh.PullToRefreshDefaults.IndicatorBox (PullToRefresh.kt:456)");
                         }
-                        Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(companion, PullToRefreshKt.getSpinnerContainerSize());
+                        Modifier m864size3ABfNKs = SizeKt.m864size3ABfNKs(companion, PullToRefreshKt.getSpinnerContainerSize());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -349648245, "CC(remember):PullToRefresh.kt#9igjgp");
                         Object rememberedValue = startRestartGroup.rememberedValue();
                         if (rememberedValue == Composer.Companion.getEmpty()) {
                             rememberedValue = new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj) {
-                                    Unit IndicatorBox_1CPYgEU$lambda$2$lambda$1;
-                                    IndicatorBox_1CPYgEU$lambda$2$lambda$1 = PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$2$lambda$1((ContentDrawScope) obj);
-                                    return IndicatorBox_1CPYgEU$lambda$2$lambda$1;
+                                    return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$2$lambda$1((ContentDrawScope) obj);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier drawWithContent = DrawModifierKt.drawWithContent(m976size3ABfNKs, (Function1) rememberedValue);
+                        Modifier drawWithContent = DrawModifierKt.drawWithContent(m864size3ABfNKs, (Function1) rememberedValue);
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -349634834, "CC(remember):PullToRefresh.kt#9igjgp");
                         boolean z4 = ((i3 & 14) == 4) | ((i3 & 112) == 32) | ((((i3 & 7168) ^ 3072) > 2048 && startRestartGroup.changed(f3)) || (i3 & 3072) == 2048) | ((((3670016 & i3) ^ 1572864) > 1048576 && startRestartGroup.changed(f4)) || (i3 & 1572864) == 1048576);
                         if ((((57344 & i3) ^ 24576) <= 16384 || !startRestartGroup.changed(shape4)) && (i3 & 24576) != 16384) {
@@ -342,15 +340,13 @@ public final class PullToRefreshDefaults {
                             rememberedValue2 = new Function3() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function3
                                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                                    MeasureResult IndicatorBox_1CPYgEU$lambda$6$lambda$5;
-                                    IndicatorBox_1CPYgEU$lambda$6$lambda$5 = PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5(PullToRefreshState.this, z6, f5, f6, shape5, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
-                                    return IndicatorBox_1CPYgEU$lambda$6$lambda$5;
+                                    return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5(PullToRefreshState.this, z6, f5, f6, shape5, (MeasureScope) obj, (Measurable) obj2, (Constraints) obj3);
                                 }
                             };
                             startRestartGroup.updateRememberedValue(rememberedValue2);
                         }
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                        Modifier m298backgroundbw27NRU = BackgroundKt.m298backgroundbw27NRU(LayoutModifierKt.layout(drawWithContent, (Function3) rememberedValue2), j2, shape4);
+                        Modifier m263backgroundbw27NRU = BackgroundKt.m263backgroundbw27NRU(LayoutModifierKt.layout(drawWithContent, (Function3) rememberedValue2), j2, shape4);
                         Alignment center = Alignment.Companion.getCenter();
                         int i8 = ((i3 >> 12) & 7168) | 48;
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, 733328855, "CC(Box)P(2,1,3)71@3423L130:Box.kt#2w3rfo");
@@ -359,7 +355,7 @@ public final class PullToRefreshDefaults {
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1323940314, "CC(Layout)P(!1,2)79@3206L23,82@3357L359:Layout.kt#80mrfh");
                         int currentCompositeKeyHash = ComposablesKt.getCurrentCompositeKeyHash(startRestartGroup, 0);
                         CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m298backgroundbw27NRU);
+                        Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, m263backgroundbw27NRU);
                         Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -692256719, "CC(ReusableComposeNode)P(1,2)355@14017L9:Composables.kt#9igjgp");
                         if (!(startRestartGroup.getApplier() instanceof Applier)) {
@@ -371,15 +367,15 @@ public final class PullToRefreshDefaults {
                         } else {
                             startRestartGroup.useNode();
                         }
-                        Composer m4673constructorimpl = Updater.m4673constructorimpl(startRestartGroup);
-                        Updater.m4681setimpl(m4673constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                        Updater.m4681setimpl(m4673constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                        Composer m4041constructorimpl = Updater.m4041constructorimpl(startRestartGroup);
+                        Updater.m4049setimpl(m4041constructorimpl, maybeCachedBoxMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                        Updater.m4049setimpl(m4041constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
                         Function2<ComposeUiNode, Integer, Unit> setCompositeKeyHash = ComposeUiNode.Companion.getSetCompositeKeyHash();
-                        if (m4673constructorimpl.getInserting() || !Intrinsics.areEqual(m4673constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
-                            m4673constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
-                            m4673constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
+                        if (m4041constructorimpl.getInserting() || !Intrinsics.areEqual(m4041constructorimpl.rememberedValue(), Integer.valueOf(currentCompositeKeyHash))) {
+                            m4041constructorimpl.updateRememberedValue(Integer.valueOf(currentCompositeKeyHash));
+                            m4041constructorimpl.apply(Integer.valueOf(currentCompositeKeyHash), setCompositeKeyHash);
                         }
-                        Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                        Updater.m4049setimpl(m4041constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                         ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2146730711, "C72@3468L9:Box.kt#2w3rfo");
                         function3.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i8 >> 6) & 112) | 6));
                         ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -404,9 +400,7 @@ public final class PullToRefreshDefaults {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda4
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj, Object obj2) {
-                                Unit IndicatorBox_1CPYgEU$lambda$7;
-                                IndicatorBox_1CPYgEU$lambda$7 = PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$7(PullToRefreshDefaults.this, pullToRefreshState, z, modifier2, f7, shape3, j3, f8, function3, i, i2, (Composer) obj, ((Integer) obj2).intValue());
-                                return IndicatorBox_1CPYgEU$lambda$7;
+                                return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$7(PullToRefreshDefaults.this, pullToRefreshState, z, modifier2, f7, shape3, j3, f8, function3, i, i2, (Composer) obj, ((Integer) obj2).intValue());
                             }
                         });
                         return;
@@ -479,56 +473,52 @@ public final class PullToRefreshDefaults {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$2$lambda$1(ContentDrawScope contentDrawScope) {
-        int m5413getIntersectrtfAjoo = ClipOp.Companion.m5413getIntersectrtfAjoo();
+        int m4761getIntersectrtfAjoo = ClipOp.Companion.m4761getIntersectrtfAjoo();
         DrawContext drawContext = contentDrawScope.getDrawContext();
-        long mo5926getSizeNHjbRc = drawContext.mo5926getSizeNHjbRc();
+        long mo5267getSizeNHjbRc = drawContext.mo5267getSizeNHjbRc();
         drawContext.getCanvas().save();
         try {
-            drawContext.getTransform().mo5929clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m5413getIntersectrtfAjoo);
+            drawContext.getTransform().mo5270clipRectN_I0leg(-3.4028235E38f, 0.0f, Float.MAX_VALUE, Float.MAX_VALUE, m4761getIntersectrtfAjoo);
             contentDrawScope.drawContent();
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             return Unit.INSTANCE;
         } catch (Throwable th) {
             drawContext.getCanvas().restore();
-            drawContext.mo5927setSizeuvyYCjk(mo5926getSizeNHjbRc);
+            drawContext.mo5268setSizeuvyYCjk(mo5267getSizeNHjbRc);
             throw th;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final MeasureResult IndicatorBox_1CPYgEU$lambda$6$lambda$5(final PullToRefreshState pullToRefreshState, final boolean z, final float f, final float f2, final Shape shape2, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(constraints.m8217unboximpl());
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda5
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(constraints.m7514unboximpl());
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4;
-                IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4 = PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4(Placeable.this, pullToRefreshState, z, f, f2, shape2, (Placeable.PlacementScope) obj);
-                return IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4;
+                return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4(Placeable.this, pullToRefreshState, z, f, f2, shape2, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4(Placeable placeable, final PullToRefreshState pullToRefreshState, final boolean z, final float f, final float f2, final Shape shape2, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.placeWithLayer$default(placementScope, placeable, 0, 0, 0.0f, new Function1() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3;
-                IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3 = PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3(PullToRefreshState.this, z, f, f2, shape2, (GraphicsLayerScope) obj);
-                return IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3;
+                return PullToRefreshDefaults.IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3(PullToRefreshState.this, z, f, f2, shape2, (GraphicsLayerScope) obj);
             }
         }, 4, (Object) null);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IndicatorBox_1CPYgEU$lambda$6$lambda$5$lambda$4$lambda$3(PullToRefreshState pullToRefreshState, boolean z, float f, float f2, Shape shape2, GraphicsLayerScope graphicsLayerScope) {
         boolean z2 = pullToRefreshState.getDistanceFraction() > 0.0f || z;
-        graphicsLayerScope.setTranslationY((pullToRefreshState.getDistanceFraction() * graphicsLayerScope.mo458roundToPx0680j_4(f)) - Float.intBitsToFloat((int) (graphicsLayerScope.mo5620getSizeNHjbRc() & 4294967295L)));
-        graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo464toPx0680j_4(f2) : 0.0f);
+        graphicsLayerScope.setTranslationY((pullToRefreshState.getDistanceFraction() * graphicsLayerScope.mo399roundToPx0680j_4(f)) - Float.intBitsToFloat((int) (graphicsLayerScope.mo4966getSizeNHjbRc() & 4294967295L)));
+        graphicsLayerScope.setShadowElevation(z2 ? graphicsLayerScope.mo405toPx0680j_4(f2) : 0.0f);
         graphicsLayerScope.setShape(shape2);
         graphicsLayerScope.setClip(true);
         return Unit.INSTANCE;
@@ -552,7 +542,7 @@ public final class PullToRefreshDefaults {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m3710Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
+    public final void m3096Indicator2poqoh4(final PullToRefreshState pullToRefreshState, final boolean z, Modifier modifier, long j, long j2, float f, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         long j3;
@@ -676,7 +666,7 @@ public final class PullToRefreshDefaults {
                 }
                 int i8 = i4 << 6;
                 Modifier modifier3 = companion;
-                m3711IndicatorBox1CPYgEU(pullToRefreshState, z, modifier3, f3, null, j7, 0.0f, ComposableLambdaKt.rememberComposableLambda(298232649, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$Indicator$1
+                m3097IndicatorBox1CPYgEU(pullToRefreshState, z, modifier3, f3, null, j7, 0.0f, ComposableLambdaKt.rememberComposableLambda(298232649, true, new Function3<BoxScope, Composer, Integer, Unit>() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$Indicator$1
                     @Override // kotlin.jvm.functions.Function3
                     public /* bridge */ /* synthetic */ Unit invoke(BoxScope boxScope, Composer composer2, Integer num) {
                         invoke(boxScope, composer2, num.intValue());
@@ -735,7 +725,7 @@ public final class PullToRefreshDefaults {
                                 composer.startReplaceGroup(-499784343);
                                 ComposerKt.sourceInformation(composer, "529@20693L201");
                                 f = PullToRefreshKt.StrokeWidth;
-                                ProgressIndicatorKt.m2830CircularProgressIndicator4lLiAd8(SizeKt.m976size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), this.$color, f, 0L, 0, 0.0f, composer, 390, 56);
+                                ProgressIndicatorKt.m2367CircularProgressIndicator4lLiAd8(SizeKt.m864size3ABfNKs(Modifier.Companion, PullToRefreshKt.getSpinnerSize()), this.$color, f, 0L, 0, 0.0f, composer, 390, 56);
                                 composer.endReplaceGroup();
                             } else {
                                 composer.startReplaceGroup(-499540745);
@@ -831,7 +821,7 @@ public final class PullToRefreshDefaults {
                                         androidx.compose.ui.Modifier$Companion r12 = androidx.compose.ui.Modifier.Companion
                                         androidx.compose.ui.Modifier r12 = (androidx.compose.ui.Modifier) r12
                                         float r14 = androidx.compose.material3.pulltorefresh.PullToRefreshKt.getSpinnerSize()
-                                        androidx.compose.ui.Modifier r0 = androidx.compose.foundation.layout.SizeKt.m976size3ABfNKs(r12, r14)
+                                        androidx.compose.ui.Modifier r0 = androidx.compose.foundation.layout.SizeKt.m864size3ABfNKs(r12, r14)
                                         long r1 = r11.$color
                                         r9 = 390(0x186, float:5.47E-43)
                                         r10 = 56
@@ -839,7 +829,7 @@ public final class PullToRefreshDefaults {
                                         r6 = 0
                                         r7 = 0
                                         r8 = r13
-                                        androidx.compose.material3.ProgressIndicatorKt.m2830CircularProgressIndicator4lLiAd8(r0, r1, r3, r4, r6, r7, r8, r9, r10)
+                                        androidx.compose.material3.ProgressIndicatorKt.m2367CircularProgressIndicator4lLiAd8(r0, r1, r3, r4, r6, r7, r8, r9, r10)
                                         r8.endReplaceGroup()
                                         goto La2
                                     L63:
@@ -867,7 +857,7 @@ public final class PullToRefreshDefaults {
                                         androidx.compose.material3.internal.FloatProducer r14 = (androidx.compose.material3.internal.FloatProducer) r14
                                         androidx.compose.runtime.ComposerKt.sourceInformationMarkerEnd(r8)
                                         long r12 = r11.$color
-                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3720access$CircularArrowProgressIndicatorRPmYEkk(r14, r12, r8, r2)
+                                        androidx.compose.material3.pulltorefresh.PullToRefreshKt.m3104access$CircularArrowProgressIndicatorRPmYEkk(r14, r12, r8, r2)
                                         r8.endReplaceGroup()
                                     La2:
                                         boolean r12 = androidx.compose.runtime.ComposerKt.isTraceInProgress()
@@ -902,9 +892,7 @@ public final class PullToRefreshDefaults {
                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.material3.pulltorefresh.PullToRefreshDefaults$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function2
                             public final Object invoke(Object obj2, Object obj3) {
-                                Unit Indicator_2poqoh4$lambda$8;
-                                Indicator_2poqoh4$lambda$8 = PullToRefreshDefaults.Indicator_2poqoh4$lambda$8(PullToRefreshDefaults.this, pullToRefreshState, z, modifier2, j5, j6, f2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
-                                return Indicator_2poqoh4$lambda$8;
+                                return PullToRefreshDefaults.Indicator_2poqoh4$lambda$8(PullToRefreshDefaults.this, pullToRefreshState, z, modifier2, j5, j6, f2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                             }
                         });
                         return;

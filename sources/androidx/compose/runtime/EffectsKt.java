@@ -25,7 +25,7 @@ public final class EffectsKt {
     private static final DisposableEffectScope InternalDisposableEffectScope = new DisposableEffectScope();
     private static final String LaunchedEffectNoParamError = "LaunchedEffect must provide one or more 'key' parameters that define the identity of the LaunchedEffect and determine when its previous effect coroutine should be cancelled and a new effect launched for the new key.";
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit LaunchedEffect$lambda$0(Function2 function2, int i, Composer composer, int i2) {
         LaunchedEffect(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -151,9 +151,7 @@ public final class EffectsKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.runtime.EffectsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit LaunchedEffect$lambda$0;
-                    LaunchedEffect$lambda$0 = EffectsKt.LaunchedEffect$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return LaunchedEffect$lambda$0;
+                    return EffectsKt.LaunchedEffect$lambda$0(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

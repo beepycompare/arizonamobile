@@ -44,7 +44,7 @@ public final class DragGestureDetectorCopyKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object m3604awaitHorizontalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
+    public static final Object m2995awaitHorizontalPointerSlopOrCancellationgDDlDlE(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Continuation<? super PointerInputChange> continuation) {
         DragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$1 dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$1;
         int i2;
         AwaitPointerEventScope awaitPointerEventScope2;
@@ -76,17 +76,17 @@ public final class DragGestureDetectorCopyKt {
                 PointerEventPass pointerEventPass = null;
                 if (i2 != 0) {
                     ResultKt.throwOnFailure(obj4);
-                    if (m3606isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+                    if (m2997isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
                         return null;
                     }
-                    float m3607pointerSlopE8SPZFQ = m3607pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+                    float m2998pointerSlopE8SPZFQ = m2998pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
                     Ref.LongRef longRef3 = new Ref.LongRef();
                     longRef3.element = j;
                     awaitPointerEventScope2 = awaitPointerEventScope;
                     function22 = function2;
                     longRef = longRef3;
                     dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$12 = dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$1;
-                    f = m3607pointerSlopE8SPZFQ;
+                    f = m2998pointerSlopE8SPZFQ;
                     f2 = 0.0f;
                     dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$12.L$0 = function22;
                     dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$12.L$1 = awaitPointerEventScope2;
@@ -147,7 +147,7 @@ public final class DragGestureDetectorCopyKt {
                                 obj2 = changes.get(i3);
                                 obj = pointerEventPass;
                                 i4 = i3;
-                                if (PointerId.m6726equalsimpl0(((PointerInputChange) obj2).m6742getIdJ3iCeTQ(), longRef2.element)) {
+                                if (PointerId.m6067equalsimpl0(((PointerInputChange) obj2).m6083getIdJ3iCeTQ(), longRef2.element)) {
                                     break;
                                 }
                                 i3 = i4 + 1;
@@ -177,11 +177,11 @@ public final class DragGestureDetectorCopyKt {
                                 if (pointerInputChange3 == null) {
                                     return obj;
                                 }
-                                longRef2.element = pointerInputChange3.m6742getIdJ3iCeTQ();
+                                longRef2.element = pointerInputChange3.m6083getIdJ3iCeTQ();
                                 f2 = f4;
                                 f = f3;
                             } else {
-                                f2 = f4 + (Float.intBitsToFloat((int) (pointerInputChange.m6744getPositionF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (pointerInputChange.m6745getPreviousPositionF1C5BW0() >> 32)));
+                                f2 = f4 + (Float.intBitsToFloat((int) (pointerInputChange.m6085getPositionF1C5BW0() >> 32)) - Float.intBitsToFloat((int) (pointerInputChange.m6086getPreviousPositionF1C5BW0() >> 32)));
                                 if (Math.abs(f2) < f3) {
                                     PointerEventPass pointerEventPass2 = PointerEventPass.Final;
                                     dragGestureDetectorCopyKt$awaitHorizontalPointerSlopOrCancellation$13.L$0 = function22;
@@ -264,15 +264,15 @@ public final class DragGestureDetectorCopyKt {
     }
 
     /* renamed from: awaitPointerSlopOrCancellation-pn7EDYM  reason: not valid java name */
-    private static final Object m3605awaitPointerSlopOrCancellationpn7EDYM(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Function1<? super Offset, Float> function1, Continuation<? super PointerInputChange> continuation) {
+    private static final Object m2996awaitPointerSlopOrCancellationpn7EDYM(AwaitPointerEventScope awaitPointerEventScope, long j, int i, Function2<? super PointerInputChange, ? super Float, Unit> function2, Function1<? super Offset, Float> function1, Continuation<? super PointerInputChange> continuation) {
         float f;
         PointerInputChange pointerInputChange;
         float f2;
         PointerInputChange pointerInputChange2;
-        if (m3606isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
+        if (m2997isPointerUpDmW0f2w(awaitPointerEventScope.getCurrentEvent(), j)) {
             return null;
         }
-        float m3607pointerSlopE8SPZFQ = m3607pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
+        float m2998pointerSlopE8SPZFQ = m2998pointerSlopE8SPZFQ(awaitPointerEventScope.getViewConfiguration(), i);
         Ref.LongRef longRef = new Ref.LongRef();
         longRef.element = j;
         float f3 = 0.0f;
@@ -290,7 +290,7 @@ public final class DragGestureDetectorCopyKt {
                 }
                 pointerInputChange = changes.get(i3);
                 f = f3;
-                if (Boolean.valueOf(PointerId.m6726equalsimpl0(pointerInputChange.m6742getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
+                if (Boolean.valueOf(PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), longRef.element)).booleanValue()) {
                     break;
                 }
                 i3++;
@@ -319,18 +319,18 @@ public final class DragGestureDetectorCopyKt {
                 if (pointerInputChange4 == null) {
                     return null;
                 }
-                longRef.element = pointerInputChange4.m6742getIdJ3iCeTQ();
+                longRef.element = pointerInputChange4.m6083getIdJ3iCeTQ();
                 f2 = f;
             } else {
-                float floatValue = f + (function1.invoke(Offset.m5168boximpl(pointerInputChange3.m6744getPositionF1C5BW0())).floatValue() - function1.invoke(Offset.m5168boximpl(pointerInputChange3.m6745getPreviousPositionF1C5BW0())).floatValue());
-                if (Math.abs(floatValue) < m3607pointerSlopE8SPZFQ) {
+                float floatValue = f + (function1.invoke(Offset.m4516boximpl(pointerInputChange3.m6085getPositionF1C5BW0())).floatValue() - function1.invoke(Offset.m4516boximpl(pointerInputChange3.m6086getPreviousPositionF1C5BW0())).floatValue());
+                if (Math.abs(floatValue) < m2998pointerSlopE8SPZFQ) {
                     awaitPointerEventScope.awaitPointerEvent(PointerEventPass.Final, continuation);
                     if (pointerInputChange3.isConsumed()) {
                         return null;
                     }
                     f2 = floatValue;
                 } else {
-                    function2.invoke(pointerInputChange3, Float.valueOf(floatValue - (Math.signum(floatValue) * m3607pointerSlopE8SPZFQ)));
+                    function2.invoke(pointerInputChange3, Float.valueOf(floatValue - (Math.signum(floatValue) * m2998pointerSlopE8SPZFQ)));
                     if (pointerInputChange3.isConsumed()) {
                         return pointerInputChange3;
                     }
@@ -343,7 +343,7 @@ public final class DragGestureDetectorCopyKt {
     }
 
     /* renamed from: isPointerUp-DmW0f2w  reason: not valid java name */
-    private static final boolean m3606isPointerUpDmW0f2w(PointerEvent pointerEvent, long j) {
+    private static final boolean m2997isPointerUpDmW0f2w(PointerEvent pointerEvent, long j) {
         PointerInputChange pointerInputChange;
         List<PointerInputChange> changes = pointerEvent.getChanges();
         int size = changes.size();
@@ -355,7 +355,7 @@ public final class DragGestureDetectorCopyKt {
                 break;
             }
             pointerInputChange = changes.get(i);
-            if (PointerId.m6726equalsimpl0(pointerInputChange.m6742getIdJ3iCeTQ(), j)) {
+            if (PointerId.m6067equalsimpl0(pointerInputChange.m6083getIdJ3iCeTQ(), j)) {
                 break;
             }
             i++;
@@ -368,15 +368,15 @@ public final class DragGestureDetectorCopyKt {
     }
 
     /* renamed from: pointerSlop-E8SPZFQ  reason: not valid java name */
-    public static final float m3607pointerSlopE8SPZFQ(ViewConfiguration viewConfiguration, int i) {
-        return PointerType.m6815equalsimpl0(i, PointerType.Companion.m6820getMouseT8wyACA()) ? viewConfiguration.getTouchSlop() * mouseToTouchSlopRatio : viewConfiguration.getTouchSlop();
+    public static final float m2998pointerSlopE8SPZFQ(ViewConfiguration viewConfiguration, int i) {
+        return PointerType.m6156equalsimpl0(i, PointerType.Companion.m6161getMouseT8wyACA()) ? viewConfiguration.getTouchSlop() * mouseToTouchSlopRatio : viewConfiguration.getTouchSlop();
     }
 
     static {
-        float m8258constructorimpl = Dp.m8258constructorimpl((float) 0.125d);
-        mouseSlop = m8258constructorimpl;
-        float m8258constructorimpl2 = Dp.m8258constructorimpl(18);
-        defaultTouchSlop = m8258constructorimpl2;
-        mouseToTouchSlopRatio = m8258constructorimpl / m8258constructorimpl2;
+        float m7555constructorimpl = Dp.m7555constructorimpl((float) 0.125d);
+        mouseSlop = m7555constructorimpl;
+        float m7555constructorimpl2 = Dp.m7555constructorimpl(18);
+        defaultTouchSlop = m7555constructorimpl2;
+        mouseToTouchSlopRatio = m7555constructorimpl / m7555constructorimpl2;
     }
 }

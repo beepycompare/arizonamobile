@@ -24,9 +24,9 @@ public final class GenericShape implements Shape {
 
     @Override // androidx.compose.ui.graphics.Shape
     /* renamed from: createOutline-Pq9zytI */
-    public Outline mo365createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
+    public Outline mo320createOutlinePq9zytI(long j, LayoutDirection layoutDirection, Density density) {
         Path Path = AndroidPath_androidKt.Path();
-        this.builder.invoke(Path, Size.m5236boximpl(j), layoutDirection);
+        this.builder.invoke(Path, Size.m4584boximpl(j), layoutDirection);
         Path.close();
         return new Outline.Generic(Path);
     }

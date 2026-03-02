@@ -159,11 +159,6 @@ final class YouTubePlayerImpl implements YouTubePlayer {
         this.mainThread.removeCallbacksAndMessages(null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void invoke$lambda$6(WebView webView, String str, List list) {
-        webView.loadUrl("javascript:" + str + '(' + CollectionsKt.joinToString$default(list, StringUtils.COMMA, null, null, 0, null, null, 62, null) + ')');
-    }
-
     private final void invoke(final WebView webView, final String str, Object... objArr) {
         String obj;
         ArrayList arrayList = new ArrayList(objArr.length);
@@ -179,7 +174,10 @@ final class YouTubePlayerImpl implements YouTubePlayer {
         this.mainThread.post(new Runnable() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerImpl$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                YouTubePlayerImpl.invoke$lambda$6(webView, str, arrayList2);
+                WebView webView2 = webView;
+                String str2 = str;
+                List list = arrayList2;
+                webView2.loadUrl("javascript:" + str2 + '(' + CollectionsKt.joinToString$default(list, StringUtils.COMMA, null, null, 0, null, null, 62, null) + ')');
             }
         });
     }

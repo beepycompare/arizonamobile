@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes2.dex */
 public interface LayoutModifier extends Modifier.Element {
     /* renamed from: measure-3p2s80s */
-    MeasureResult mo1371measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j);
+    MeasureResult mo1198measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j);
 
     /* compiled from: LayoutModifier.kt */
     @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)

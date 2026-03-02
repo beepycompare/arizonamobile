@@ -12,13 +12,13 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes2.dex */
 public final class PointerInteropUtils_androidKt {
     /* renamed from: toMotionEventScope-d-4ec7I  reason: not valid java name */
-    public static final void m6803toMotionEventScoped4ec7I(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1) {
-        m6804toMotionEventScopeubNVwUQ(pointerEvent, j, function1, false);
+    public static final void m6144toMotionEventScoped4ec7I(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1) {
+        m6145toMotionEventScopeubNVwUQ(pointerEvent, j, function1, false);
     }
 
     /* renamed from: toCancelMotionEventScope-d-4ec7I  reason: not valid java name */
-    public static final void m6802toCancelMotionEventScoped4ec7I(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1) {
-        m6804toMotionEventScopeubNVwUQ(pointerEvent, j, function1, true);
+    public static final void m6143toCancelMotionEventScoped4ec7I(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1) {
+        m6145toMotionEventScopeubNVwUQ(pointerEvent, j, function1, true);
     }
 
     public static /* synthetic */ void emptyCancelMotionEventScope$default(long j, Function1 function1, int i, Object obj) {
@@ -36,7 +36,7 @@ public final class PointerInteropUtils_androidKt {
     }
 
     /* renamed from: toMotionEventScope-ubNVwUQ  reason: not valid java name */
-    private static final void m6804toMotionEventScopeubNVwUQ(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1, boolean z) {
+    private static final void m6145toMotionEventScopeubNVwUQ(PointerEvent pointerEvent, long j, Function1<? super MotionEvent, Unit> function1, boolean z) {
         MotionEvent motionEvent = pointerEvent.getMotionEvent();
         if (motionEvent == null) {
             throw new IllegalArgumentException("The PointerEvent receiver cannot have a null MotionEvent.".toString());

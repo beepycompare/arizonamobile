@@ -19,7 +19,7 @@ public final class SelectionGestures_androidKt {
         while (true) {
             if (i >= size) {
                 break;
-            } else if (PointerType.m6815equalsimpl0(changes.get(i).m6747getTypeT8wyACA(), PointerType.Companion.m6820getMouseT8wyACA())) {
+            } else if (PointerType.m6156equalsimpl0(changes.get(i).m6088getTypeT8wyACA(), PointerType.Companion.m6161getMouseT8wyACA())) {
                 i++;
             } else {
                 MotionEvent motionEvent2 = pointerEvent.getMotionEvent();

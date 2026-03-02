@@ -62,14 +62,14 @@ public class Uploader {
         this.executor.execute(new Runnable() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                Uploader.this.m9797x80c37673(transportContext, i, runnable);
+                Uploader.this.m8827x80c37673(transportContext, i, runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$upload$1$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ void m9797x80c37673(final TransportContext transportContext, final int i, Runnable runnable) {
+    public /* synthetic */ void m8827x80c37673(final TransportContext transportContext, final int i, Runnable runnable) {
         try {
             SynchronizationGuard synchronizationGuard = this.guard;
             final EventStore eventStore = this.eventStore;
@@ -84,7 +84,7 @@ public class Uploader {
                 this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda2
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m9796x3eac4914(transportContext, i);
+                        return Uploader.this.m8826x3eac4914(transportContext, i);
                     }
                 });
             } else {
@@ -99,7 +99,7 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$upload$0$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9796x3eac4914(TransportContext transportContext, int i) {
+    public /* synthetic */ Object m8826x3eac4914(TransportContext transportContext, int i) {
         this.workScheduler.schedule(transportContext, i + 1);
         return null;
     }
@@ -109,108 +109,116 @@ public class Uploader {
         TransportBackend transportBackend = this.backendRegistry.get(transportContext.getBackendName());
         BackendResponse ok = BackendResponse.ok(0L);
         final long j = 0;
-        while (((Boolean) this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda5
-            @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
-            public final Object execute() {
-                return Uploader.this.m9789x65f78bd8(transportContext);
-            }
-        })).booleanValue()) {
-            final Iterable<PersistedEvent> iterable = (Iterable) this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda6
+        while (true) {
+            boolean booleanValue = ((Boolean) this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda5
                 @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                 public final Object execute() {
-                    return Uploader.this.m9790xa80eb937(transportContext);
+                    return Uploader.this.m8819x65f78bd8(transportContext);
                 }
-            });
-            if (!iterable.iterator().hasNext()) {
-                return ok;
-            }
-            if (transportBackend == null) {
-                Logging.d(LOG_TAG, "Unknown backend for %s, deleting event batch for it...", transportContext);
-                send = BackendResponse.fatalError();
-            } else {
-                ArrayList arrayList = new ArrayList();
-                for (PersistedEvent persistedEvent : iterable) {
-                    arrayList.add(persistedEvent.getEvent());
-                }
-                if (transportContext.shouldUploadClientHealthMetrics()) {
-                    arrayList.add(createMetricsEvent(transportBackend));
-                }
-                send = transportBackend.send(BackendRequest.builder().setEvents(arrayList).setExtras(transportContext.getExtras()).build());
-            }
-            ok = send;
-            if (ok.getStatus() == BackendResponse.Status.TRANSIENT_ERROR) {
-                final TransportContext transportContext2 = transportContext;
-                this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda7
+            })).booleanValue();
+            SynchronizationGuard synchronizationGuard = this.guard;
+            if (booleanValue) {
+                final Iterable<PersistedEvent> iterable = (Iterable) synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda6
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m9791xea25e696(iterable, transportContext2, j);
+                        return Uploader.this.m8820xa80eb937(transportContext);
                     }
                 });
-                this.workScheduler.schedule(transportContext2, i + 1, true);
-                return ok;
-            }
-            TransportContext transportContext3 = transportContext;
-            this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda8
-                @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
-                public final Object execute() {
-                    return Uploader.this.m9792x2c3d13f5(iterable);
+                if (!iterable.iterator().hasNext()) {
+                    return ok;
                 }
-            });
-            if (ok.getStatus() == BackendResponse.Status.OK) {
-                long max = Math.max(j, ok.getNextRequestWaitMillis());
-                if (transportContext3.shouldUploadClientHealthMetrics()) {
-                    this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda9
+                if (transportBackend == null) {
+                    Logging.d(LOG_TAG, "Unknown backend for %s, deleting event batch for it...", transportContext);
+                    send = BackendResponse.fatalError();
+                } else {
+                    ArrayList arrayList = new ArrayList();
+                    for (PersistedEvent persistedEvent : iterable) {
+                        arrayList.add(persistedEvent.getEvent());
+                    }
+                    if (transportContext.shouldUploadClientHealthMetrics()) {
+                        arrayList.add(createMetricsEvent(transportBackend));
+                    }
+                    send = transportBackend.send(BackendRequest.builder().setEvents(arrayList).setExtras(transportContext.getExtras()).build());
+                }
+                ok = send;
+                BackendResponse.Status status = ok.getStatus();
+                BackendResponse.Status status2 = BackendResponse.Status.TRANSIENT_ERROR;
+                SynchronizationGuard synchronizationGuard2 = this.guard;
+                if (status == status2) {
+                    final TransportContext transportContext2 = transportContext;
+                    synchronizationGuard2.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda7
                         @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                         public final Object execute() {
-                            return Uploader.this.m9793x6e544154();
+                            return Uploader.this.m8821xea25e696(iterable, transportContext2, j);
+                        }
+                    });
+                    this.workScheduler.schedule(transportContext2, i + 1, true);
+                    return ok;
+                }
+                TransportContext transportContext3 = transportContext;
+                synchronizationGuard2.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda8
+                    @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
+                    public final Object execute() {
+                        return Uploader.this.m8822x2c3d13f5(iterable);
+                    }
+                });
+                if (ok.getStatus() == BackendResponse.Status.OK) {
+                    long max = Math.max(j, ok.getNextRequestWaitMillis());
+                    if (transportContext3.shouldUploadClientHealthMetrics()) {
+                        this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda9
+                            @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
+                            public final Object execute() {
+                                return Uploader.this.m8823x6e544154();
+                            }
+                        });
+                    }
+                    j = max;
+                } else if (ok.getStatus() == BackendResponse.Status.INVALID_PAYLOAD) {
+                    final HashMap hashMap = new HashMap();
+                    for (PersistedEvent persistedEvent2 : iterable) {
+                        String transportName = persistedEvent2.getEvent().getTransportName();
+                        if (!hashMap.containsKey(transportName)) {
+                            hashMap.put(transportName, 1);
+                        } else {
+                            hashMap.put(transportName, Integer.valueOf(((Integer) hashMap.get(transportName)).intValue() + 1));
+                        }
+                    }
+                    this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda10
+                        @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
+                        public final Object execute() {
+                            return Uploader.this.m8824xb06b6eb3(hashMap);
                         }
                     });
                 }
-                j = max;
-            } else if (ok.getStatus() == BackendResponse.Status.INVALID_PAYLOAD) {
-                final HashMap hashMap = new HashMap();
-                for (PersistedEvent persistedEvent2 : iterable) {
-                    String transportName = persistedEvent2.getEvent().getTransportName();
-                    if (!hashMap.containsKey(transportName)) {
-                        hashMap.put(transportName, 1);
-                    } else {
-                        hashMap.put(transportName, Integer.valueOf(((Integer) hashMap.get(transportName)).intValue() + 1));
-                    }
-                }
-                this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda10
+                transportContext = transportContext3;
+            } else {
+                final TransportContext transportContext4 = transportContext;
+                synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda1
                     @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                     public final Object execute() {
-                        return Uploader.this.m9794xb06b6eb3(hashMap);
+                        return Uploader.this.m8825xf2829c12(transportContext4, j);
                     }
                 });
+                return ok;
             }
-            transportContext = transportContext3;
         }
-        final TransportContext transportContext4 = transportContext;
-        this.guard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda1
-            @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
-            public final Object execute() {
-                return Uploader.this.m9795xf2829c12(transportContext4, j);
-            }
-        });
-        return ok;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$2$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Boolean m9789x65f78bd8(TransportContext transportContext) {
+    public /* synthetic */ Boolean m8819x65f78bd8(TransportContext transportContext) {
         return Boolean.valueOf(this.eventStore.hasPendingEventsFor(transportContext));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$3$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Iterable m9790xa80eb937(TransportContext transportContext) {
+    public /* synthetic */ Iterable m8820xa80eb937(TransportContext transportContext) {
         return this.eventStore.loadBatch(transportContext);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$4$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9791xea25e696(Iterable iterable, TransportContext transportContext, long j) {
+    public /* synthetic */ Object m8821xea25e696(Iterable iterable, TransportContext transportContext, long j) {
         this.eventStore.recordFailure(iterable);
         this.eventStore.recordNextCallTime(transportContext, this.clock.getTime() + j);
         return null;
@@ -218,21 +226,21 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$5$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9792x2c3d13f5(Iterable iterable) {
+    public /* synthetic */ Object m8822x2c3d13f5(Iterable iterable) {
         this.eventStore.recordSuccess(iterable);
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$6$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9793x6e544154() {
+    public /* synthetic */ Object m8823x6e544154() {
         this.clientHealthMetricsStore.resetClientMetrics();
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$7$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9794xb06b6eb3(Map map) {
+    public /* synthetic */ Object m8824xb06b6eb3(Map map) {
         for (Map.Entry entry : map.entrySet()) {
             this.clientHealthMetricsStore.recordLogEventDropped(((Integer) entry.getValue()).intValue(), LogEventDropped.Reason.INVALID_PAYLOD, (String) entry.getKey());
         }
@@ -241,7 +249,7 @@ public class Uploader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$logAndUpdateState$8$com-google-android-datatransport-runtime-scheduling-jobscheduling-Uploader  reason: not valid java name */
-    public /* synthetic */ Object m9795xf2829c12(TransportContext transportContext, long j) {
+    public /* synthetic */ Object m8825xf2829c12(TransportContext transportContext, long j) {
         this.eventStore.recordNextCallTime(transportContext, this.clock.getTime() + j);
         return null;
     }

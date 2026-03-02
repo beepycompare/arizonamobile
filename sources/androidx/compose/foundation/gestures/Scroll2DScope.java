@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes.dex */
 public interface Scroll2DScope {
     /* renamed from: scrollBy-MK-Hz9U */
-    long mo515scrollByMKHz9U(long j);
+    long mo446scrollByMKHz9U(long j);
 }

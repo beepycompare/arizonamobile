@@ -1,13 +1,18 @@
 package kotlinx.serialization.json.internal;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function0;
@@ -17,13 +22,15 @@ import kotlinx.serialization.SerializationException;
 import kotlinx.serialization.descriptors.SerialDescriptor;
 import kotlinx.serialization.descriptors.SerialKind;
 import kotlinx.serialization.descriptors.StructureKind;
+import kotlinx.serialization.internal.JsonInternalDependenciesKt;
 import kotlinx.serialization.json.Json;
+import kotlinx.serialization.json.JsonIgnoreUnknownKeys;
 import kotlinx.serialization.json.JsonNames;
 import kotlinx.serialization.json.JsonNamingStrategy;
 import kotlinx.serialization.json.JsonSchemaCacheKt;
 import kotlinx.serialization.json.internal.DescriptorSchemaCache;
 /* compiled from: JsonNamesMap.kt */
-@Metadata(d1 = {"\u0000T\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\u001a \u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u0002*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002\u001a \u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u0002*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000bH\u0000\u001a'\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00030\b*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u0012H\u0000¢\u0006\u0002\u0010\u0013\u001a\u001c\u0010\u0014\u001a\u00020\u0003*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0015\u001a\u00020\u0004H\u0000\u001a\u0016\u0010\u0016\u001a\u0004\u0018\u00010\u0012*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0000\u001a\u001c\u0010\u0017\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0018\u001a\u00020\u0003H\u0002\u001a\u0014\u0010\u0019\u001a\u00020\u001a*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000bH\u0002\u001a\u001c\u0010\u001b\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0018\u001a\u00020\u0003H\u0000\u001a&\u0010\u001c\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0018\u001a\u00020\u00032\b\b\u0002\u0010\u001d\u001a\u00020\u0003H\u0000\u001ac\u0010\u001e\u001a\u00020\u001a*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\u00042!\u0010\u001f\u001a\u001d\u0012\u0013\u0012\u00110\u001a¢\u0006\f\b!\u0012\b\b\u0018\u0012\u0004\b\b(\"\u0012\u0004\u0012\u00020\u001a0 2\u000e\u0010#\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030$2\u000e\b\u0002\u0010%\u001a\b\u0012\u0004\u0012\u00020&0$H\u0080\bø\u0001\u0000\"&\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\" \u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\b0\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0006\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006'"}, d2 = {"JsonDeserializationNamesKey", "Lkotlinx/serialization/json/internal/DescriptorSchemaCache$Key;", "", "", "", "getJsonDeserializationNamesKey", "()Lkotlinx/serialization/json/internal/DescriptorSchemaCache$Key;", "JsonSerializationNamesKey", "", "getJsonSerializationNamesKey", "buildDeserializationNamesMap", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "json", "Lkotlinx/serialization/json/Json;", "deserializationNamesMap", "descriptor", "serializationNamesIndices", "strategy", "Lkotlinx/serialization/json/JsonNamingStrategy;", "(Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonNamingStrategy;)[Ljava/lang/String;", "getJsonElementName", FirebaseAnalytics.Param.INDEX, "namingStrategy", "getJsonNameIndexSlowPath", "name", "decodeCaseInsensitive", "", "getJsonNameIndex", "getJsonNameIndexOrThrow", "suffix", "tryCoerceValue", "peekNull", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "consume", "peekString", "Lkotlin/Function0;", "onEnumCoercing", "", "kotlinx-serialization-json"}, k = 2, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000^\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\"\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\u001a\"\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u0002*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0082\u0080\u0004\u001a\"\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u0002*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000bH\u0080\u0080\u0004\u001a)\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00030\b*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u0012H\u0080\u0080\u0004¢\u0006\u0002\u0010\u0013\u001a\u001e\u0010\u0014\u001a\u00020\u0003*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u0015\u001a\u00020\u0004H\u0080\u0080\u0004\u001a\u001c\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00030\u0017*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0080\u0080\u0004\u001a\u0018\u0010\u0018\u001a\u0004\u0018\u00010\u0012*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0080\u0080\u0004\u001a\u001e\u0010\u0019\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u001a\u001a\u00020\u0003H\u0082\u0080\u0004\u001a\u0016\u0010\u001b\u001a\u00020\u001c*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000bH\u0082\u0080\u0004\u001a\u001e\u0010\u001d\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u001a\u001a\u00020\u0003H\u0080\u0080\u0004\u001a(\u0010\u001e\u001a\u00020\u0004*\u00020\u000b2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u001a\u001a\u00020\u00032\b\b\u0002\u0010\u001f\u001a\u00020\u0003H\u0080\u0080\u0004\u001ad\u0010 \u001a\u00020\u001c*\u00020\r2\u0006\u0010\u000f\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\u00042!\u0010!\u001a\u001d\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b#\u0012\b\b\u001a\u0012\u0004\b\b($\u0012\u0004\u0012\u00020\u001c0\"2\u000e\u0010%\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030&2\u000e\b\u0002\u0010'\u001a\b\u0012\u0004\u0012\u00020(0&H\u0080\u0088\u0004ø\u0001\u0000\u001a\u0016\u0010)\u001a\u00020\u001c*\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0080\u0080\u0004\"'\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001X\u0080\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0005\u0010\u0006\"!\u0010\u0007\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\b0\u0001X\u0080\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0006\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006*"}, d2 = {"JsonDeserializationNamesKey", "Lkotlinx/serialization/json/internal/DescriptorSchemaCache$Key;", "", "", "", "getJsonDeserializationNamesKey", "()Lkotlinx/serialization/json/internal/DescriptorSchemaCache$Key;", "JsonSerializationNamesKey", "", "getJsonSerializationNamesKey", "buildDeserializationNamesMap", "Lkotlinx/serialization/descriptors/SerialDescriptor;", "json", "Lkotlinx/serialization/json/Json;", "deserializationNamesMap", "descriptor", "serializationNamesIndices", "strategy", "Lkotlinx/serialization/json/JsonNamingStrategy;", "(Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/json/Json;Lkotlinx/serialization/json/JsonNamingStrategy;)[Ljava/lang/String;", "getJsonElementName", FirebaseAnalytics.Param.INDEX, "getJsonEncodedNames", "", "namingStrategy", "getJsonNameIndexSlowPath", "name", "decodeCaseInsensitive", "", "getJsonNameIndex", "getJsonNameIndexOrThrow", "suffix", "tryCoerceValue", "peekNull", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "consume", "peekString", "Lkotlin/Function0;", "onEnumCoercing", "", "ignoreUnknownKeys", "kotlinx-serialization-json"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class JsonNamesMapKt {
     private static final DescriptorSchemaCache.Key<Map<String, Integer>> JsonDeserializationNamesKey = new DescriptorSchemaCache.Key<>();
@@ -40,7 +47,7 @@ public final class JsonNamesMapKt {
     private static final void buildDeserializationNamesMap$putOrThrow(Map<String, Integer> map, SerialDescriptor serialDescriptor, String str, int i) {
         String str2 = Intrinsics.areEqual(serialDescriptor.getKind(), SerialKind.ENUM.INSTANCE) ? "enum value" : "property";
         if (map.containsKey(str)) {
-            throw new JsonException("The suggested name '" + str + "' for " + str2 + ' ' + serialDescriptor.getElementName(i) + " is already one of the names for " + str2 + ' ' + serialDescriptor.getElementName(((Number) MapsKt.getValue(map, str)).intValue()) + " in " + serialDescriptor);
+            throw new JsonDecodingException("The suggested name '" + str + "' for " + str2 + ' ' + serialDescriptor.getElementName(i) + " is already one of the names for " + str2 + ' ' + serialDescriptor.getElementName(((Number) MapsKt.getValue(map, str)).intValue()) + " in " + serialDescriptor);
         }
         map.put(str, Integer.valueOf(i));
     }
@@ -103,19 +110,23 @@ public final class JsonNamesMapKt {
         return (String[]) JsonSchemaCacheKt.getSchemaCache(json).getOrPut(serialDescriptor, JsonSerializationNamesKey, new Function0() { // from class: kotlinx.serialization.json.internal.JsonNamesMapKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                String[] serializationNamesIndices$lambda$4;
-                serializationNamesIndices$lambda$4 = JsonNamesMapKt.serializationNamesIndices$lambda$4(SerialDescriptor.this, strategy);
-                return serializationNamesIndices$lambda$4;
+                return JsonNamesMapKt.serializationNamesIndices$lambda$0(SerialDescriptor.this, strategy);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final String[] serializationNamesIndices$lambda$4(SerialDescriptor serialDescriptor, JsonNamingStrategy jsonNamingStrategy) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final String[] serializationNamesIndices$lambda$0(SerialDescriptor serialDescriptor, JsonNamingStrategy jsonNamingStrategy) {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
         int elementsCount = serialDescriptor.getElementsCount();
         String[] strArr = new String[elementsCount];
         for (int i = 0; i < elementsCount; i++) {
-            strArr[i] = jsonNamingStrategy.serialNameForJson(serialDescriptor, i, serialDescriptor.getElementName(i));
+            String elementName = serialDescriptor.getElementName(i);
+            String serialNameForJson = jsonNamingStrategy.serialNameForJson(serialDescriptor, i, elementName);
+            if (!linkedHashSet.add(serialNameForJson)) {
+                throw new JsonEncodingException("The transformed name '" + serialNameForJson + "' for property " + elementName + " already exists in " + serialDescriptor);
+            }
+            strArr[i] = serialNameForJson;
         }
         return strArr;
     }
@@ -125,6 +136,13 @@ public final class JsonNamesMapKt {
         Intrinsics.checkNotNullParameter(json, "json");
         JsonNamingStrategy namingStrategy = namingStrategy(serialDescriptor, json);
         return namingStrategy == null ? serialDescriptor.getElementName(i) : serializationNamesIndices(serialDescriptor, json, namingStrategy)[i];
+    }
+
+    public static final Set<String> getJsonEncodedNames(SerialDescriptor serialDescriptor, Json json) {
+        Intrinsics.checkNotNullParameter(serialDescriptor, "<this>");
+        Intrinsics.checkNotNullParameter(json, "json");
+        JsonNamingStrategy namingStrategy = namingStrategy(serialDescriptor, json);
+        return namingStrategy == null ? JsonInternalDependenciesKt.jsonCachedSerialNames(serialDescriptor) : ArraysKt.toSet(serializationNamesIndices(serialDescriptor, json, namingStrategy));
     }
 
     public static final JsonNamingStrategy namingStrategy(SerialDescriptor serialDescriptor, Json json) {
@@ -240,6 +258,24 @@ public final class JsonNamesMapKt {
         if (jsonNameIndex == -3 && (isElementOptional || z)) {
             onEnumCoercing.invoke();
             return true;
+        }
+        return false;
+    }
+
+    public static final boolean ignoreUnknownKeys(SerialDescriptor serialDescriptor, Json json) {
+        Intrinsics.checkNotNullParameter(serialDescriptor, "<this>");
+        Intrinsics.checkNotNullParameter(json, "json");
+        if (json.getConfiguration().getIgnoreUnknownKeys()) {
+            return true;
+        }
+        List<Annotation> annotations = serialDescriptor.getAnnotations();
+        if ((annotations instanceof Collection) && annotations.isEmpty()) {
+            return false;
+        }
+        for (Annotation annotation : annotations) {
+            if (annotation instanceof JsonIgnoreUnknownKeys) {
+                return true;
+            }
         }
         return false;
     }

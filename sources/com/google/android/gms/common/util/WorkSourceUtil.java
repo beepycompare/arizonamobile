@@ -12,7 +12,7 @@ import com.google.android.gms.common.wrappers.Wrappers;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-/* compiled from: com.google.android.gms:play-services-basement@@18.8.0 */
+/* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class WorkSourceUtil {
     private static final int zza = Process.myUid();
@@ -26,8 +26,8 @@ public class WorkSourceUtil {
     private static final Method zzi;
     private static Boolean zzj;
 
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0084 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00aa A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0085 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00ab A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Method method;
         Method method2;

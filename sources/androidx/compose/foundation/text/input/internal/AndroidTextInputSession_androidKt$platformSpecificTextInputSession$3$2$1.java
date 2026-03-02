@@ -70,9 +70,4 @@ final class AndroidTextInputSession_androidKt$platformSpecificTextInputSession$3
         final ComposeInputMethodManager composeInputMethodManager = this.$composeImm;
         this.label = 2;
     }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit invokeSuspend$lambda$0(long j) {
-        return Unit.INSTANCE;
-    }
 }

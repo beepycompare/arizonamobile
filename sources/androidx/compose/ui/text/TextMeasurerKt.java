@@ -10,7 +10,7 @@ public final class TextMeasurerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isEllipsis-MW5-ApA  reason: not valid java name */
-    public static final boolean m7679isEllipsisMW5ApA(int i) {
-        return TextOverflow.m8184equalsimpl0(i, TextOverflow.Companion.m8194getEllipsisgIe3tQ8()) || TextOverflow.m8184equalsimpl0(i, TextOverflow.Companion.m8196getStartEllipsisgIe3tQ8()) || TextOverflow.m8184equalsimpl0(i, TextOverflow.Companion.m8195getMiddleEllipsisgIe3tQ8());
+    public static final boolean m6981isEllipsisMW5ApA(int i) {
+        return TextOverflow.m7481equalsimpl0(i, TextOverflow.Companion.m7491getEllipsisgIe3tQ8()) || TextOverflow.m7481equalsimpl0(i, TextOverflow.Companion.m7493getStartEllipsisgIe3tQ8()) || TextOverflow.m7481equalsimpl0(i, TextOverflow.Companion.m7492getMiddleEllipsisgIe3tQ8());
     }
 }

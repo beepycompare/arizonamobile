@@ -1810,10 +1810,11 @@ public abstract class CodedInputStream {
 
             ByteBuffer getSkippedData() {
                 ByteArrayOutputStream byteArrayOutputStream = this.byteArrayStream;
+                StreamDecoder streamDecoder = StreamDecoder.this;
                 if (byteArrayOutputStream == null) {
-                    return ByteBuffer.wrap(StreamDecoder.this.buffer, this.lastPos, StreamDecoder.this.pos - this.lastPos);
+                    return ByteBuffer.wrap(streamDecoder.buffer, this.lastPos, StreamDecoder.this.pos - this.lastPos);
                 }
-                byteArrayOutputStream.write(StreamDecoder.this.buffer, this.lastPos, StreamDecoder.this.pos);
+                byteArrayOutputStream.write(streamDecoder.buffer, this.lastPos, StreamDecoder.this.pos);
                 return ByteBuffer.wrap(this.byteArrayStream.toByteArray());
             }
         }

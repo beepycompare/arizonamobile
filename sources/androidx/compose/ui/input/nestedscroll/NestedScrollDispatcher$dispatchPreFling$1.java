@@ -25,6 +25,6 @@ public final class NestedScrollDispatcher$dispatchPreFling$1 extends Continuatio
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m6607dispatchPreFlingQWom1Mo(0L, this);
+        return this.this$0.m5948dispatchPreFlingQWom1Mo(0L, this);
     }
 }

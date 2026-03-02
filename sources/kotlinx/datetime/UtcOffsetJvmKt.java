@@ -18,25 +18,25 @@ public final class UtcOffsetJvmKt {
     private static final Lazy isoFormat$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.UtcOffsetJvmKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormatter isoFormat_delegate$lambda$0;
-            isoFormat_delegate$lambda$0 = UtcOffsetJvmKt.isoFormat_delegate$lambda$0();
-            return isoFormat_delegate$lambda$0;
+            DateTimeFormatter formatter;
+            formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffsetId().toFormatter();
+            return formatter;
         }
     });
     private static final Lazy isoBasicFormat$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.UtcOffsetJvmKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormatter isoBasicFormat_delegate$lambda$1;
-            isoBasicFormat_delegate$lambda$1 = UtcOffsetJvmKt.isoBasicFormat_delegate$lambda$1();
-            return isoBasicFormat_delegate$lambda$1;
+            DateTimeFormatter formatter;
+            formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffset("+HHmmss", "Z").toFormatter();
+            return formatter;
         }
     });
     private static final Lazy fourDigitsFormat$delegate = LazyKt.lazy(new Function0() { // from class: kotlinx.datetime.UtcOffsetJvmKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function0
         public final Object invoke() {
-            DateTimeFormatter fourDigitsFormat_delegate$lambda$2;
-            fourDigitsFormat_delegate$lambda$2 = UtcOffsetJvmKt.fourDigitsFormat_delegate$lambda$2();
-            return fourDigitsFormat_delegate$lambda$2;
+            DateTimeFormatter formatter;
+            formatter = new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffset("+HHMM", "+0000").toFormatter();
+            return formatter;
         }
     });
 
@@ -79,28 +79,13 @@ public final class UtcOffsetJvmKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DateTimeFormatter isoFormat_delegate$lambda$0() {
-        return new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffsetId().toFormatter();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static final DateTimeFormatter getIsoBasicFormat() {
         return (DateTimeFormatter) isoBasicFormat$delegate.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final DateTimeFormatter isoBasicFormat_delegate$lambda$1() {
-        return new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffset("+HHmmss", "Z").toFormatter();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public static final DateTimeFormatter getFourDigitsFormat() {
         return (DateTimeFormatter) fourDigitsFormat$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final DateTimeFormatter fourDigitsFormat_delegate$lambda$2() {
-        return new DateTimeFormatterBuilder().parseCaseInsensitive().appendOffset("+HHMM", "+0000").toFormatter();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

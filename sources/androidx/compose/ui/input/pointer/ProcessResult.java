@@ -10,64 +10,64 @@ public final class ProcessResult {
     private final int value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ProcessResult m6826boximpl(int i) {
+    public static final /* synthetic */ ProcessResult m6167boximpl(int i) {
         return new ProcessResult(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m6827constructorimpl(int i) {
+    public static int m6168constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m6828equalsimpl(int i, Object obj) {
-        return (obj instanceof ProcessResult) && i == ((ProcessResult) obj).m6835unboximpl();
+    public static boolean m6169equalsimpl(int i, Object obj) {
+        return (obj instanceof ProcessResult) && i == ((ProcessResult) obj).m6176unboximpl();
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m6829equalsimpl0(int i, int i2) {
+    public static final boolean m6170equalsimpl0(int i, int i2) {
         return i == i2;
     }
 
     /* renamed from: getAnyChangeConsumed-impl  reason: not valid java name */
-    public static final boolean m6830getAnyChangeConsumedimpl(int i) {
+    public static final boolean m6171getAnyChangeConsumedimpl(int i) {
         return (i & 4) != 0;
     }
 
     /* renamed from: getAnyMovementConsumed-impl  reason: not valid java name */
-    public static final boolean m6831getAnyMovementConsumedimpl(int i) {
+    public static final boolean m6172getAnyMovementConsumedimpl(int i) {
         return (i & 2) != 0;
     }
 
     /* renamed from: getDispatchedToAPointerInputModifier-impl  reason: not valid java name */
-    public static final boolean m6832getDispatchedToAPointerInputModifierimpl(int i) {
+    public static final boolean m6173getDispatchedToAPointerInputModifierimpl(int i) {
         return (i & 1) != 0;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m6833hashCodeimpl(int i) {
+    public static int m6174hashCodeimpl(int i) {
         return Integer.hashCode(i);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m6834toStringimpl(int i) {
+    public static String m6175toStringimpl(int i) {
         return "ProcessResult(value=" + i + ')';
     }
 
     public boolean equals(Object obj) {
-        return m6828equalsimpl(this.value, obj);
+        return m6169equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m6833hashCodeimpl(this.value);
+        return m6174hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m6834toStringimpl(this.value);
+        return m6175toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m6835unboximpl() {
+    public final /* synthetic */ int m6176unboximpl() {
         return this.value;
     }
 

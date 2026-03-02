@@ -1,10 +1,10 @@
 package androidx.media3.exoplayer.offline;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface Downloader {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface ProgressListener {
         void onProgress(long j, long j2, float f);
     }

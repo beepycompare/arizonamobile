@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.idsync.impl;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract /* synthetic */ class A {
 
     /* renamed from: a  reason: collision with root package name */

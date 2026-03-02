@@ -43,7 +43,7 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: PreviewInventoryScreen.kt */
-@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0013H\u0016J\u0018\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0006H\u0016J\u0018\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020$H\u0002J\u0016\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00160+2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010.\u001a\u00020 2\u0006\u0010/\u001a\u00020\u0016H\u0002J\u0010\u00100\u001a\u00020 2\u0006\u0010#\u001a\u00020$H\u0002J\b\u00101\u001a\u00020 H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0011*\u0004\u0018\u00010\u00100\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/previewInventory/PreviewInventoryScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "previewScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/PreviewInventoryScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "subCaseArmorSkinList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "subAccessoriesList", "subUpgradesList", "selectedInventoryItem", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "observeUserSkin", "view", "Landroid/widget/ImageView;", "url", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "showSelectorDialog", "item", "sendRequestTo", "closeScreen", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0013H\u0016J\u0018\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0006H\u0016J\u0018\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020$H\u0002J\u0016\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00160+2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010.\u001a\u00020 2\u0006\u0010/\u001a\u00020\u0016H\u0002J\u0010\u00100\u001a\u00020 2\u0006\u0010#\u001a\u00020$H\u0002J\b\u00101\u001a\u00020 H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u0011*\u0004\u0018\u00010\u00100\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/previewInventory/PreviewInventoryScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "previewScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/PreviewInventoryScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "subCaseArmorSkinList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "subAccessoriesList", "subUpgradesList", "selectedInventoryItem", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "observeUserSkin", "view", "Landroid/widget/ImageView;", "url", "editResponseInfo", "", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "showSelectorDialog", "item", "sendRequestTo", "closeScreen", "Spawner", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class PreviewInventoryScreen extends SAMPUIElement implements InterfaceController {
     private final UpgradesInventoryAdapter accessoriesInventoryAdapter;
@@ -82,69 +82,51 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         SubInventoryAdapter subInventoryAdapter = new SubInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$0;
-                subInventoryAdapter$lambda$0 = PreviewInventoryScreen.subInventoryAdapter$lambda$0((DraggedItem) obj);
-                return subInventoryAdapter$lambda$0;
+                return PreviewInventoryScreen.subInventoryAdapter$lambda$0((DraggedItem) obj);
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$1;
-                subInventoryAdapter$lambda$1 = PreviewInventoryScreen.subInventoryAdapter$lambda$1((InventoryItem) obj);
-                return subInventoryAdapter$lambda$1;
+                return PreviewInventoryScreen.subInventoryAdapter$lambda$1((InventoryItem) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit subInventoryAdapter$lambda$2;
-                subInventoryAdapter$lambda$2 = PreviewInventoryScreen.subInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
-                return subInventoryAdapter$lambda$2;
+                return PreviewInventoryScreen.subInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
             }
         });
         this.subInventoryAdapter = subInventoryAdapter;
         UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$0;
-                accessoriesInventoryAdapter$lambda$0 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$0((DraggedItem) obj);
-                return accessoriesInventoryAdapter$lambda$0;
+                return PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$0((DraggedItem) obj);
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$1;
-                accessoriesInventoryAdapter$lambda$1 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$1((InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$1;
+                return PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$1((InventoryItem) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit accessoriesInventoryAdapter$lambda$2;
-                accessoriesInventoryAdapter$lambda$2 = PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
-                return accessoriesInventoryAdapter$lambda$2;
+                return PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
         this.accessoriesInventoryAdapter = upgradesInventoryAdapter;
         UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$0;
-                upgradesInventoryAdapter$lambda$0 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$0((DraggedItem) obj);
-                return upgradesInventoryAdapter$lambda$0;
+                return PreviewInventoryScreen.upgradesInventoryAdapter$lambda$0((DraggedItem) obj);
             }
         }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$1;
-                upgradesInventoryAdapter$lambda$1 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$1((InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$1;
+                return PreviewInventoryScreen.upgradesInventoryAdapter$lambda$1((InventoryItem) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit upgradesInventoryAdapter$lambda$2;
-                upgradesInventoryAdapter$lambda$2 = PreviewInventoryScreen.upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
-                return upgradesInventoryAdapter$lambda$2;
+                return PreviewInventoryScreen.upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
         this.upgradesInventoryAdapter = upgradesInventoryAdapter2;
@@ -162,19 +144,19 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         bind.rvUserUpgrades.setAdapter(upgradesInventoryAdapter2);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subInventoryAdapter$lambda$2(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
@@ -184,19 +166,19 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit accessoriesInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit accessoriesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
@@ -206,19 +188,19 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit upgradesInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit upgradesInventoryAdapter$lambda$1(InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen previewInventoryScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");
         if (it.getItem() != null) {
@@ -326,7 +308,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
     }
 
     /* compiled from: PreviewInventoryScreen.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/previewInventory/PreviewInventoryScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u001a\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000e¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/previewInventory/PreviewInventoryScreen$Spawner;", "Lru/mrlargha/commonui/core/UIElementAbstractSpawner;", "<init>", "()V", "create", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "correctIds", "", "Lru/mrlargha/commonui/core/UIElementID;", "getCorrectIds", "()Ljava/util/Set;", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Spawner extends UIElementAbstractSpawner {
         private final Set<UIElementID> correctIds = SetsKt.setOf(UIElementID.PREVIEW_USER_INVENTORY);

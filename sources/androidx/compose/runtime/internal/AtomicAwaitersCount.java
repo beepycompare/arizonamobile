@@ -19,56 +19,56 @@ final class AtomicAwaitersCount {
     private final AtomicInt value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AtomicAwaitersCount m4794boximpl(AtomicInt atomicInt) {
+    public static final /* synthetic */ AtomicAwaitersCount m4159boximpl(AtomicInt atomicInt) {
         return new AtomicAwaitersCount(atomicInt);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    private static AtomicInt m4796constructorimpl(AtomicInt atomicInt) {
+    private static AtomicInt m4161constructorimpl(AtomicInt atomicInt) {
         return atomicInt;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4798equalsimpl(AtomicInt atomicInt, Object obj) {
-        return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m4809unboximpl());
+    public static boolean m4163equalsimpl(AtomicInt atomicInt, Object obj) {
+        return (obj instanceof AtomicAwaitersCount) && Intrinsics.areEqual(atomicInt, ((AtomicAwaitersCount) obj).m4174unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m4799equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
+    public static final boolean m4164equalsimpl0(AtomicInt atomicInt, AtomicInt atomicInt2) {
         return Intrinsics.areEqual(atomicInt, atomicInt2);
     }
 
     /* renamed from: getCount-impl  reason: not valid java name */
-    private static final int m4800getCountimpl(AtomicInt atomicInt, int i) {
+    private static final int m4165getCountimpl(AtomicInt atomicInt, int i) {
         return 134217727 & i;
     }
 
     /* renamed from: getVersion-impl  reason: not valid java name */
-    private static final int m4801getVersionimpl(AtomicInt atomicInt, int i) {
+    private static final int m4166getVersionimpl(AtomicInt atomicInt, int i) {
         return (i >>> 27) & 15;
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4803hashCodeimpl(AtomicInt atomicInt) {
+    public static int m4168hashCodeimpl(AtomicInt atomicInt) {
         return atomicInt.hashCode();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: pack-impl  reason: not valid java name */
-    public static final int m4806packimpl(AtomicInt atomicInt, int i, int i2) {
+    public static final int m4171packimpl(AtomicInt atomicInt, int i, int i2) {
         return ((i & 15) << 27) | (134217727 & i2);
     }
 
     public boolean equals(Object obj) {
-        return m4798equalsimpl(this.value, obj);
+        return m4163equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4803hashCodeimpl(this.value);
+        return m4168hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ AtomicInt m4809unboximpl() {
+    public final /* synthetic */ AtomicInt m4174unboximpl() {
         return this.value;
     }
 
@@ -77,17 +77,17 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static AtomicInt m4795constructorimpl() {
-        return m4796constructorimpl(new AtomicInt(0));
+    public static AtomicInt m4160constructorimpl() {
+        return m4161constructorimpl(new AtomicInt(0));
     }
 
     /* renamed from: hasAwaiters-impl  reason: not valid java name */
-    public static final boolean m4802hasAwaitersimpl(AtomicInt atomicInt) {
+    public static final boolean m4167hasAwaitersimpl(AtomicInt atomicInt) {
         return (atomicInt.get() & 134217727) > 0;
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    private static final int m4808updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
+    private static final int m4173updateimpl(AtomicInt atomicInt, Function1<? super Integer, Integer> function1) {
         int i;
         int intValue;
         do {
@@ -98,11 +98,11 @@ final class AtomicAwaitersCount {
     }
 
     public String toString() {
-        return m4807toStringimpl(this.value);
+        return m4172toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4807toStringimpl(AtomicInt atomicInt) {
+    public static String m4172toStringimpl(AtomicInt atomicInt) {
         int i = atomicInt.get();
         return "AtomicAwaitersCount(version = " + ((i >>> 27) & 15) + ", count = " + (i & 134217727) + ')';
     }
@@ -120,15 +120,15 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: incrementVersionAndResetCount-impl  reason: not valid java name */
-    public static final void m4805incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
+    public static final void m4170incrementVersionAndResetCountimpl(AtomicInt atomicInt) {
         int i;
         do {
             i = atomicInt.get();
-        } while (!atomicInt.compareAndSet(i, m4806packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
+        } while (!atomicInt.compareAndSet(i, m4171packimpl(atomicInt, ((i >>> 27) & 15) + 1, 0)));
     }
 
     /* renamed from: incrementCountAndGetVersion-impl  reason: not valid java name */
-    public static final int m4804incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
+    public static final int m4169incrementCountAndGetVersionimpl(AtomicInt atomicInt, Function0<Unit> function0) {
         int i;
         int i2;
         do {
@@ -142,7 +142,7 @@ final class AtomicAwaitersCount {
     }
 
     /* renamed from: decrementCount-impl  reason: not valid java name */
-    public static final void m4797decrementCountimpl(AtomicInt atomicInt, int i) {
+    public static final void m4162decrementCountimpl(AtomicInt atomicInt, int i) {
         int i2;
         do {
             i2 = atomicInt.get();

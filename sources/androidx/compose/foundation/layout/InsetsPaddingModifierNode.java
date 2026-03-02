@@ -43,24 +43,22 @@ public class InsetsPaddingModifierNode extends InsetsConsumingModifierNode imple
 
     @Override // androidx.compose.ui.node.LayoutModifierNode
     /* renamed from: measure-3p2s80s */
-    public MeasureResult mo82measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
+    public MeasureResult mo69measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
         MeasureScope measureScope2 = measureScope;
         final int left = getConsumedInsets().getLeft(measureScope2, measureScope.getLayoutDirection()) - getAncestorConsumedInsets().getLeft(measureScope2, measureScope.getLayoutDirection());
         final int top = getConsumedInsets().getTop(measureScope2) - getAncestorConsumedInsets().getTop(measureScope2);
         int right = (getConsumedInsets().getRight(measureScope2, measureScope.getLayoutDirection()) - getAncestorConsumedInsets().getRight(measureScope2, measureScope.getLayoutDirection())) + left;
         int bottom = (getConsumedInsets().getBottom(measureScope2) - getAncestorConsumedInsets().getBottom(measureScope2)) + top;
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(ConstraintsKt.m8230offsetNN6EwU(j, -right, -bottom));
-        return MeasureScope.layout$default(measureScope, ConstraintsKt.m8228constrainWidthK40F9xA(j, mo6875measureBRTryo0.getWidth() + right), ConstraintsKt.m8227constrainHeightK40F9xA(j, mo6875measureBRTryo0.getHeight() + bottom), null, new Function1() { // from class: androidx.compose.foundation.layout.InsetsPaddingModifierNode$$ExternalSyntheticLambda0
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(ConstraintsKt.m7527offsetNN6EwU(j, -right, -bottom));
+        return MeasureScope.layout$default(measureScope, ConstraintsKt.m7525constrainWidthK40F9xA(j, mo6216measureBRTryo0.getWidth() + right), ConstraintsKt.m7524constrainHeightK40F9xA(j, mo6216measureBRTryo0.getHeight() + bottom), null, new Function1() { // from class: androidx.compose.foundation.layout.InsetsPaddingModifierNode$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit measure_3p2s80s$lambda$0;
-                measure_3p2s80s$lambda$0 = InsetsPaddingModifierNode.measure_3p2s80s$lambda$0(Placeable.this, left, top, (Placeable.PlacementScope) obj);
-                return measure_3p2s80s$lambda$0;
+                return InsetsPaddingModifierNode.measure_3p2s80s$lambda$0(Placeable.this, left, top, (Placeable.PlacementScope) obj);
             }
         }, 4, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit measure_3p2s80s$lambda$0(Placeable placeable, int i, int i2, Placeable.PlacementScope placementScope) {
         Placeable.PlacementScope.place$default(placementScope, placeable, i, i2, 0.0f, 4, null);
         return Unit.INSTANCE;

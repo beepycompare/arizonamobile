@@ -18,9 +18,11 @@ public class CompatDecoderFactory<T> implements DecoderFactory<T> {
 
     @Override // com.davemorrissey.labs.subscaleview.decoder.DecoderFactory
     public T make() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        if (this.bitmapConfig == null) {
-            return this.clazz.newInstance();
+        Bitmap.Config config = this.bitmapConfig;
+        Class<? extends T> cls = this.clazz;
+        if (config == null) {
+            return cls.newInstance();
         }
-        return this.clazz.getConstructor(Bitmap.Config.class).newInstance(this.bitmapConfig);
+        return cls.getConstructor(Bitmap.Config.class).newInstance(this.bitmapConfig);
     }
 }

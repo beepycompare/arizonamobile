@@ -221,9 +221,7 @@ public final class SharedPreferencesMigration<T> implements DataMigration<T> {
         this(new Function0() { // from class: androidx.datastore.migrations.SharedPreferencesMigration$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                SharedPreferences _init_$lambda$0;
-                _init_$lambda$0 = SharedPreferencesMigration._init_$lambda$0(context, sharedPreferencesName);
-                return _init_$lambda$0;
+                return SharedPreferencesMigration._init_$lambda$0(context, sharedPreferencesName);
             }
         }, keysToMigrate, shouldRunMigration, migrate, context, sharedPreferencesName);
         Intrinsics.checkNotNullParameter(context, "context");
@@ -233,7 +231,7 @@ public final class SharedPreferencesMigration<T> implements DataMigration<T> {
         Intrinsics.checkNotNullParameter(migrate, "migrate");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SharedPreferences _init_$lambda$0(Context context, String str) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(str, 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");

@@ -1,5 +1,6 @@
 package androidx.paging;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -14,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* compiled from: PagingDataTransforms.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u001c\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001aK\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012\"\u0010\u0004\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00070\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0005H\u0007¢\u0006\u0002\u0010\b\u001a[\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\n0\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\n*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012(\u0010\u000b\u001a$\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\n0\f0\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0005H\u0007¢\u0006\u0002\u0010\b\u001a9\u0010\r\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u0002H\u0002H\u0007¢\u0006\u0002\u0010\u0011\u001a9\u0010\u0012\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u0002H\u0002H\u0007¢\u0006\u0002\u0010\u0011\u001ak\u0010\u0013\u001a\b\u0012\u0004\u0012\u0002H\n0\u0001\"\b\b\u0000\u0010\u0002*\u0002H\n\"\b\b\u0001\u0010\n*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u000e\u001a\u00020\u000f2.\u0010\u0014\u001a*\b\u0001\u0012\u0006\u0012\u0004\u0018\u0001H\u0002\u0012\u0006\u0012\u0004\u0018\u0001H\u0002\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\n0\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0015H\u0007¢\u0006\u0002\u0010\u0016\u001aU\u0010\u0017\u001a\b\u0012\u0004\u0012\u0002H\n0\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\n*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u00012\"\u0010\u000b\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\n0\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0005H\u0007¢\u0006\u0002\u0010\b\u001ad\u0010\u000b\u001a\b\u0012\u0004\u0012\u0002H\n0\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0003\"\b\b\u0001\u0010\n*\u00020\u0003*\b\u0012\u0004\u0012\u0002H\u00020\u000120\b\u0004\u0010\u000b\u001a*\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0018\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\n0\u00180\u0006\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0005H\u0080\b¢\u0006\u0002\u0010\b¨\u0006\u0019"}, d2 = {"filter", "Landroidx/paging/PagingData;", ExifInterface.GPS_DIRECTION_TRUE, "", "predicate", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "(Landroidx/paging/PagingData;Lkotlin/jvm/functions/Function2;)Landroidx/paging/PagingData;", "flatMap", "R", "transform", "", "insertFooterItem", "terminalSeparatorType", "Landroidx/paging/TerminalSeparatorType;", "item", "(Landroidx/paging/PagingData;Landroidx/paging/TerminalSeparatorType;Ljava/lang/Object;)Landroidx/paging/PagingData;", "insertHeaderItem", "insertSeparators", "generator", "Lkotlin/Function3;", "(Landroidx/paging/PagingData;Landroidx/paging/TerminalSeparatorType;Lkotlin/jvm/functions/Function3;)Landroidx/paging/PagingData;", "map", "Landroidx/paging/PageEvent;", "paging-common_release"}, k = 5, mv = {1, 8, 0}, xi = 48, xs = "androidx/paging/PagingDataTransforms")
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u001c\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u001ag\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004\"\b\b\u0001\u0010\u0002*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u000120\b\u0004\u0010\u0000\u001a*\b\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00030\u0006\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u00060\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0005H\u0080\bø\u0001\u0000¢\u0006\u0002\u0010\b\u001aU\u0010\t\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004\"\b\b\u0001\u0010\u0002*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012\"\u0010\u0000\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0005H\u0007¢\u0006\u0002\u0010\b\u001a[\u0010\n\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004\"\b\b\u0001\u0010\u0002*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012(\u0010\u0000\u001a$\b\u0001\u0012\u0004\u0012\u0002H\u0003\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u000b0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0005H\u0007¢\u0006\u0002\u0010\b\u001aK\u0010\f\u001a\b\u0012\u0004\u0012\u0002H\u00030\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012\"\u0010\r\u001a\u001e\b\u0001\u0012\u0004\u0012\u0002H\u0003\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0005H\u0007¢\u0006\u0002\u0010\b\u001ak\u0010\u000f\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\b\b\u0000\u0010\u0003*\u0002H\u0002\"\b\b\u0001\u0010\u0002*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012\b\b\u0002\u0010\u0010\u001a\u00020\u00112.\u0010\u0012\u001a*\b\u0001\u0012\u0006\u0012\u0004\u0018\u0001H\u0003\u0012\u0006\u0012\u0004\u0018\u0001H\u0003\u0012\f\u0012\n\u0012\u0006\u0012\u0004\u0018\u0001H\u00020\u0007\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0013H\u0007¢\u0006\u0002\u0010\u0014\u001a9\u0010\u0015\u001a\b\u0012\u0004\u0012\u0002H\u00030\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u0002H\u0003H\u0007¢\u0006\u0002\u0010\u0017\u001a9\u0010\u0018\u001a\b\u0012\u0004\u0012\u0002H\u00030\u0001\"\b\b\u0000\u0010\u0003*\u00020\u0004*\b\u0012\u0004\u0012\u0002H\u00030\u00012\b\b\u0002\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u0002H\u0003H\u0007¢\u0006\u0002\u0010\u0017\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0019"}, d2 = {"transform", "Landroidx/paging/PagingData;", "R", ExifInterface.GPS_DIRECTION_TRUE, "", "Lkotlin/Function2;", "Landroidx/paging/PageEvent;", "Lkotlin/coroutines/Continuation;", "(Landroidx/paging/PagingData;Lkotlin/jvm/functions/Function2;)Landroidx/paging/PagingData;", "map", "flatMap", "", "filter", "predicate", "", "insertSeparators", "terminalSeparatorType", "Landroidx/paging/TerminalSeparatorType;", "generator", "Lkotlin/Function3;", "(Landroidx/paging/PagingData;Landroidx/paging/TerminalSeparatorType;Lkotlin/jvm/functions/Function3;)Landroidx/paging/PagingData;", "insertHeaderItem", "item", "(Landroidx/paging/PagingData;Landroidx/paging/TerminalSeparatorType;Ljava/lang/Object;)Landroidx/paging/PagingData;", "insertFooterItem", "paging-common"}, k = 5, mv = {2, 0, 0}, xi = 48, xs = "androidx/paging/PagingDataTransforms")
 /* loaded from: classes3.dex */
 public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt {
     public static final <T> PagingData<T> insertFooterItem(PagingData<T> pagingData, T item) {
@@ -36,7 +37,7 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
     public static final <T, R> PagingData<R> transform(PagingData<T> pagingData, Function2<? super PageEvent<T>, ? super Continuation<? super PageEvent<R>>, ? extends Object> transform) {
         Intrinsics.checkNotNullParameter(pagingData, "<this>");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        return new PagingData<>(new PagingDataTransforms__PagingDataTransformsKt$transform$$inlined$map$1(pagingData.getFlow$paging_common_release(), transform), pagingData.getUiReceiver$paging_common_release(), pagingData.getHintReceiver$paging_common_release(), null, 8, null);
+        return new PagingData<>(new PagingDataTransforms__PagingDataTransformsKt$transform$$inlined$map$1(pagingData.getFlow$paging_common(), transform), pagingData.getUiReceiver$paging_common(), pagingData.getHintReceiver$paging_common(), null, 8, null);
     }
 
     public static /* synthetic */ PagingData insertSeparators$default(PagingData pagingData, TerminalSeparatorType terminalSeparatorType, Function3 function3, int i, Object obj) {
@@ -52,7 +53,7 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
         Intrinsics.checkNotNullParameter(pagingData, "<this>");
         Intrinsics.checkNotNullParameter(terminalSeparatorType, "terminalSeparatorType");
         Intrinsics.checkNotNullParameter(generator, "generator");
-        return new PagingData(SeparatorsKt.insertEventSeparators(pagingData.getFlow$paging_common_release(), terminalSeparatorType, generator), pagingData.getUiReceiver$paging_common_release(), pagingData.getHintReceiver$paging_common_release(), null, 8, null);
+        return new PagingData(SeparatorsKt.insertEventSeparators(pagingData.getFlow$paging_common(), terminalSeparatorType, generator), pagingData.getUiReceiver$paging_common(), pagingData.getHintReceiver$paging_common(), null, 8, null);
     }
 
     public static /* synthetic */ PagingData insertHeaderItem$default(PagingData pagingData, TerminalSeparatorType terminalSeparatorType, Object obj, int i, Object obj2) {
@@ -90,20 +91,19 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
     public static final /* synthetic */ PagingData map(PagingData pagingData, final Function2 transform) {
         Intrinsics.checkNotNullParameter(pagingData, "<this>");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        final Flow flow$paging_common_release = pagingData.getFlow$paging_common_release();
+        final Flow flow$paging_common = pagingData.getFlow$paging_common();
         return new PagingData(new Flow<PageEvent<R>>() { // from class: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$map$$inlined$transform$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\t"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2", "androidx/paging/PagingDataTransforms__PagingDataTransformsKt$transform$$inlined$map$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
             /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$map$$inlined$transform$1$2  reason: invalid class name */
             /* loaded from: classes3.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
                 final /* synthetic */ Function2 $transform$inlined;
 
-                /* compiled from: Emitters.kt */
-                @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$map$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {225, 223}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$map$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF, 50}, m = "emit", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$map$$inlined$transform$1$2$1  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
@@ -190,26 +190,25 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
                 Object collect = Flow.this.collect(new AnonymousClass2(flowCollector, transform), continuation);
                 return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
             }
-        }, pagingData.getUiReceiver$paging_common_release(), pagingData.getHintReceiver$paging_common_release(), null, 8, null);
+        }, pagingData.getUiReceiver$paging_common(), pagingData.getHintReceiver$paging_common(), null, 8, null);
     }
 
     public static final /* synthetic */ PagingData flatMap(PagingData pagingData, final Function2 transform) {
         Intrinsics.checkNotNullParameter(pagingData, "<this>");
         Intrinsics.checkNotNullParameter(transform, "transform");
-        final Flow flow$paging_common_release = pagingData.getFlow$paging_common_release();
+        final Flow flow$paging_common = pagingData.getFlow$paging_common();
         return new PagingData(new Flow<PageEvent<R>>() { // from class: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$flatMap$$inlined$transform$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\t"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2", "androidx/paging/PagingDataTransforms__PagingDataTransformsKt$transform$$inlined$map$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
             /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$flatMap$$inlined$transform$1$2  reason: invalid class name */
             /* loaded from: classes3.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
                 final /* synthetic */ Function2 $transform$inlined;
 
-                /* compiled from: Emitters.kt */
-                @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$flatMap$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {225, 223}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$flatMap$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF, 50}, m = "emit", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$flatMap$$inlined$transform$1$2$1  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
@@ -296,26 +295,25 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
                 Object collect = Flow.this.collect(new AnonymousClass2(flowCollector, transform), continuation);
                 return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
             }
-        }, pagingData.getUiReceiver$paging_common_release(), pagingData.getHintReceiver$paging_common_release(), null, 8, null);
+        }, pagingData.getUiReceiver$paging_common(), pagingData.getHintReceiver$paging_common(), null, 8, null);
     }
 
     public static final /* synthetic */ PagingData filter(PagingData pagingData, final Function2 predicate) {
         Intrinsics.checkNotNullParameter(pagingData, "<this>");
         Intrinsics.checkNotNullParameter(predicate, "predicate");
-        final Flow flow$paging_common_release = pagingData.getFlow$paging_common_release();
+        final Flow flow$paging_common = pagingData.getFlow$paging_common();
         return new PagingData(new Flow<PageEvent<T>>() { // from class: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$filter$$inlined$transform$1
 
             /* compiled from: Emitters.kt */
-            @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u00032\u0006\u0010\u0004\u001a\u0002H\u0002H\u008a@¢\u0006\u0004\b\u0005\u0010\u0006¨\u0006\t"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "R", "value", "emit", "(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$1$1", "kotlinx/coroutines/flow/FlowKt__TransformKt$map$$inlined$unsafeTransform$1$2", "androidx/paging/PagingDataTransforms__PagingDataTransformsKt$transform$$inlined$map$1$2"}, k = 3, mv = {1, 8, 0}, xi = 48)
+            @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
             /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$filter$$inlined$transform$1$2  reason: invalid class name */
             /* loaded from: classes3.dex */
             public static final class AnonymousClass2<T> implements FlowCollector {
                 final /* synthetic */ Function2 $predicate$inlined;
                 final /* synthetic */ FlowCollector $this_unsafeFlow;
 
-                /* compiled from: Emitters.kt */
-                @Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$filter$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {225, 223}, m = "emit", n = {}, s = {})
+                @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
+                @DebugMetadata(c = "androidx.paging.PagingDataTransforms__PagingDataTransformsKt$filter$$inlined$transform$1$2", f = "PagingDataTransforms.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF, 50}, m = "emit", n = {}, s = {}, v = 1)
                 /* renamed from: androidx.paging.PagingDataTransforms__PagingDataTransformsKt$filter$$inlined$transform$1$2$1  reason: invalid class name */
                 /* loaded from: classes3.dex */
                 public static final class AnonymousClass1 extends ContinuationImpl {
@@ -402,6 +400,6 @@ public final /* synthetic */ class PagingDataTransforms__PagingDataTransformsKt 
                 Object collect = Flow.this.collect(new AnonymousClass2(flowCollector, predicate), continuation);
                 return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
             }
-        }, pagingData.getUiReceiver$paging_common_release(), pagingData.getHintReceiver$paging_common_release(), null, 8, null);
+        }, pagingData.getUiReceiver$paging_common(), pagingData.getHintReceiver$paging_common(), null, 8, null);
     }
 }

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes5.dex */
 public interface Ba {
-    C0213e4 a();
+    C0212e4 a();
 
     void a(AppMetricaConfig appMetricaConfig, Ta ta);
 
@@ -13,7 +13,7 @@ public interface Ba {
 
     S1 c();
 
-    C0375kb d();
+    C0374kb d();
 
     ICommonExecutor getDefaultExecutor();
 }

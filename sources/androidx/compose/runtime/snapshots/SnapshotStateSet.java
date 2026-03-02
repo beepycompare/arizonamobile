@@ -125,16 +125,11 @@ public final class SnapshotStateSet<T> implements Parcelable, StateObject, Set<T
         return SnapshotStateSetKt.mutateBoolean(this, new Function1() { // from class: androidx.compose.runtime.snapshots.SnapshotStateSet$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                boolean retainAll$lambda$0;
-                retainAll$lambda$0 = SnapshotStateSet.retainAll$lambda$0(collection, (Set) obj);
-                return Boolean.valueOf(retainAll$lambda$0);
+                boolean retainAll;
+                retainAll = ((Set) obj).retainAll(CollectionsKt.toSet(collection));
+                return Boolean.valueOf(retainAll);
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean retainAll$lambda$0(Collection collection, Set set) {
-        return set.retainAll(CollectionsKt.toSet(collection));
     }
 
     @Override // android.os.Parcelable

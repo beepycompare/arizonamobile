@@ -115,7 +115,7 @@ public final class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteP
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit toRoomRawQuery$lambda$1(RoomSQLiteQuery roomSQLiteQuery, SQLiteStatement it) {
         Intrinsics.checkNotNullParameter(it, "it");
         roomSQLiteQuery.bindTo(it);
@@ -126,9 +126,7 @@ public final class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteP
         return new RoomRawQuery(getSql(), new Function1() { // from class: androidx.room.RoomSQLiteQuery$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit roomRawQuery$lambda$1;
-                roomRawQuery$lambda$1 = RoomSQLiteQuery.toRoomRawQuery$lambda$1(RoomSQLiteQuery.this, (SQLiteStatement) obj);
-                return roomRawQuery$lambda$1;
+                return RoomSQLiteQuery.toRoomRawQuery$lambda$1(RoomSQLiteQuery.this, (SQLiteStatement) obj);
             }
         });
     }
@@ -188,23 +186,23 @@ public final class RoomSQLiteQuery implements SupportSQLiteQuery, SupportSQLiteP
         while (true) {
             int i2 = this.bindingTypes[i];
             if (i2 == 1) {
-                statement.mo9198bindNull(i);
+                statement.mo8408bindNull(i);
             } else if (i2 == 2) {
-                statement.mo9197bindLong(i, this.longBindings[i]);
+                statement.mo8407bindLong(i, this.longBindings[i]);
             } else if (i2 == 3) {
-                statement.mo9196bindDouble(i, this.doubleBindings[i]);
+                statement.mo8406bindDouble(i, this.doubleBindings[i]);
             } else if (i2 == 4) {
                 String str = this.stringBindings[i];
                 if (str == null) {
                     throw new IllegalArgumentException("Required value was null.".toString());
                 }
-                statement.mo9199bindText(i, str);
+                statement.mo8409bindText(i, str);
             } else if (i2 == 5) {
                 byte[] bArr = this.blobBindings[i];
                 if (bArr == null) {
                     throw new IllegalArgumentException("Required value was null.".toString());
                 }
-                statement.mo9195bindBlob(i, bArr);
+                statement.mo8405bindBlob(i, bArr);
             }
             if (i == argCount) {
                 return;

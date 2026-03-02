@@ -186,11 +186,6 @@ public final class AndroidLegacyPlatformTextInputServiceAdapter$startInput$2 ext
                 final InputMethodManager inputMethodManager = this.$inputMethodManager;
                 this.label = 2;
             }
-
-            /* JADX INFO: Access modifiers changed from: private */
-            public static final Unit invokeSuspend$lambda$0(long j) {
-                return Unit.INSTANCE;
-            }
         }
     }
 

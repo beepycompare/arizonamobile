@@ -15,8 +15,8 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesOpenPageBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesOpenPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$2", f = "CasesOpenPage.kt", i = {}, l = {109}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$2", f = "CasesOpenPage.kt", i = {}, l = {109}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesOpenPage$setupCollectors$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ArizonaCasesOpenPageBinding $this_with;
@@ -59,13 +59,14 @@ public final class CasesOpenPage$setupCollectors$1$2 extends SuspendLambda imple
 
                 public final Object emit(int i2, Continuation<? super Unit> continuation) {
                     ArizonaCasesOpenPageBinding.this.tvCost.setText("+" + i2);
+                    ArizonaCasesOpenPageBinding arizonaCasesOpenPageBinding2 = ArizonaCasesOpenPageBinding.this;
                     if (i2 > 0) {
-                        ArizonaCasesOpenPageBinding.this.schismContainer.setAlpha(1.0f);
+                        arizonaCasesOpenPageBinding2.schismContainer.setAlpha(1.0f);
                         ArizonaCasesOpenPageBinding.this.getContainer.setAlpha(1.0f);
                         ArizonaCasesOpenPageBinding.this.schismContainer.setEnabled(true);
                         ArizonaCasesOpenPageBinding.this.getContainer.setEnabled(true);
                     } else {
-                        ArizonaCasesOpenPageBinding.this.schismContainer.setAlpha(0.5f);
+                        arizonaCasesOpenPageBinding2.schismContainer.setAlpha(0.5f);
                         ArizonaCasesOpenPageBinding.this.getContainer.setAlpha(0.5f);
                         ArizonaCasesOpenPageBinding.this.schismContainer.setEnabled(false);
                         ArizonaCasesOpenPageBinding.this.getContainer.setEnabled(false);

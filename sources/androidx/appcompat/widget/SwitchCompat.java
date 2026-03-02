@@ -537,7 +537,6 @@ public class SwitchCompat extends CompoundButton implements EmojiCompatConfigura
     public void onMeasure(int i, int i2) {
         int i3;
         int i4;
-        int i5;
         if (this.mShowText) {
             if (this.mOnLayout == null) {
                 this.mOnLayout = makeLayout(this.mTextOnTransformed);
@@ -548,7 +547,7 @@ public class SwitchCompat extends CompoundButton implements EmojiCompatConfigura
         }
         Rect rect = this.mTempRect;
         Drawable drawable = this.mThumbDrawable;
-        int i6 = 0;
+        int i5 = 0;
         if (drawable != null) {
             drawable.getPadding(rect);
             i3 = (this.mThumbDrawable.getIntrinsicWidth() - rect.left) - rect.right;
@@ -561,25 +560,25 @@ public class SwitchCompat extends CompoundButton implements EmojiCompatConfigura
         Drawable drawable2 = this.mTrackDrawable;
         if (drawable2 != null) {
             drawable2.getPadding(rect);
-            i6 = this.mTrackDrawable.getIntrinsicHeight();
+            i5 = this.mTrackDrawable.getIntrinsicHeight();
         } else {
             rect.setEmpty();
         }
-        int i7 = rect.left;
-        int i8 = rect.right;
+        int i6 = rect.left;
+        int i7 = rect.right;
         Drawable drawable3 = this.mThumbDrawable;
         if (drawable3 != null) {
             Rect opticalBounds = DrawableUtils.getOpticalBounds(drawable3);
-            i7 = Math.max(i7, opticalBounds.left);
-            i8 = Math.max(i8, opticalBounds.right);
+            i6 = Math.max(i6, opticalBounds.left);
+            i7 = Math.max(i7, opticalBounds.right);
         }
-        if (this.mEnforceSwitchWidth) {
-            i5 = Math.max(this.mSwitchMinWidth, (this.mThumbWidth * 2) + i7 + i8);
-        } else {
-            i5 = this.mSwitchMinWidth;
+        boolean z = this.mEnforceSwitchWidth;
+        int i8 = this.mSwitchMinWidth;
+        if (z) {
+            i8 = Math.max(i8, (this.mThumbWidth * 2) + i6 + i7);
         }
-        int max = Math.max(i6, i4);
-        this.mSwitchWidth = i5;
+        int max = Math.max(i5, i4);
+        this.mSwitchWidth = i8;
         this.mSwitchHeight = max;
         super.onMeasure(i, i2);
         if (getMeasuredHeight() < max) {
@@ -938,11 +937,10 @@ public class SwitchCompat extends CompoundButton implements EmojiCompatConfigura
     }
 
     private int getThumbOffset() {
-        float f;
-        if (ViewUtils.isLayoutRtl(this)) {
-            f = 1.0f - this.mThumbPosition;
-        } else {
-            f = this.mThumbPosition;
+        boolean isLayoutRtl = ViewUtils.isLayoutRtl(this);
+        float f = this.mThumbPosition;
+        if (isLayoutRtl) {
+            f = 1.0f - f;
         }
         return (int) ((f * getThumbScrollRange()) + 0.5f);
     }

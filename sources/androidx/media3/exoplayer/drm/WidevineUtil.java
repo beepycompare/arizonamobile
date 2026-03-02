@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.drm;
 import android.util.Pair;
 import androidx.media3.common.C;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class WidevineUtil {
     public static final String PROPERTY_LICENSE_DURATION_REMAINING = "LicenseDurationRemaining";
     public static final String PROPERTY_PLAYBACK_DURATION_REMAINING = "PlaybackDurationRemaining";

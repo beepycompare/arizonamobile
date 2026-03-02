@@ -14,7 +14,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnqueuer {
     private static final int MSG_OPEN_CV = 3;
     private static final int MSG_QUEUE_INPUT_BUFFER = 1;
@@ -207,7 +207,7 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class MessageParams {
         public final MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
         public int flags;

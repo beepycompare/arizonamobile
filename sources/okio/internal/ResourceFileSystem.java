@@ -54,9 +54,9 @@ public final class ResourceFileSystem extends FileSystem {
         this.roots$delegate = LazyKt.lazy(new Function0() { // from class: okio.internal.ResourceFileSystem$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                List roots_delegate$lambda$0;
-                roots_delegate$lambda$0 = ResourceFileSystem.roots_delegate$lambda$0(ResourceFileSystem.this);
-                return roots_delegate$lambda$0;
+                List classpathRoots;
+                classpathRoots = r0.toClasspathRoots(ResourceFileSystem.this.classLoader);
+                return classpathRoots;
             }
         });
         if (z) {
@@ -70,11 +70,6 @@ public final class ResourceFileSystem extends FileSystem {
 
     private final List<Pair<FileSystem, Path>> getRoots() {
         return (List) this.roots$delegate.getValue();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final List roots_delegate$lambda$0(ResourceFileSystem resourceFileSystem) {
-        return resourceFileSystem.toClasspathRoots(resourceFileSystem.classLoader);
     }
 
     @Override // okio.FileSystem
@@ -260,7 +255,8 @@ public final class ResourceFileSystem extends FileSystem {
         return canonicalizeInternal(path).relativeTo(ROOT).toString();
     }
 
-    private final List<Pair<FileSystem, Path>> toClasspathRoots(ClassLoader classLoader) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final List<Pair<FileSystem, Path>> toClasspathRoots(ClassLoader classLoader) {
         Enumeration<URL> resources = classLoader.getResources("");
         Intrinsics.checkNotNullExpressionValue(resources, "getResources(...)");
         ArrayList<URL> list = Collections.list(resources);
@@ -307,16 +303,14 @@ public final class ResourceFileSystem extends FileSystem {
             return TuplesKt.to(ZipFilesKt.openZip(Path.Companion.get$default(companion, new File(URI.create(substring)), false, 1, (Object) null), this.systemFileSystem, new Function1() { // from class: okio.internal.ResourceFileSystem$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
-                    boolean jarRoot$lambda$0;
-                    jarRoot$lambda$0 = ResourceFileSystem.toJarRoot$lambda$0((ZipEntry) obj);
-                    return Boolean.valueOf(jarRoot$lambda$0);
+                    return Boolean.valueOf(ResourceFileSystem.toJarRoot$lambda$0((ZipEntry) obj));
                 }
             }), ROOT);
         }
         return null;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean toJarRoot$lambda$0(ZipEntry entry) {
         Intrinsics.checkNotNullParameter(entry, "entry");
         return Companion.keepPath(entry.getCanonicalPath());

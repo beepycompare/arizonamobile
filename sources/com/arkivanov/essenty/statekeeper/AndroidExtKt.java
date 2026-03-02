@@ -12,22 +12,22 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AndroidExtKt {
     private static final String KEY_STATE = "STATE_KEEPER_STATE";
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean StateKeeper$lambda$0() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean StateKeeper$lambda$1() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean stateKeeper$lambda$5() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean stateKeeper$lambda$6() {
         return true;
     }
@@ -40,9 +40,7 @@ public final class AndroidExtKt {
             function0 = new Function0() { // from class: com.arkivanov.essenty.statekeeper.AndroidExtKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean StateKeeper$lambda$0;
-                    StateKeeper$lambda$0 = AndroidExtKt.StateKeeper$lambda$0();
-                    return Boolean.valueOf(StateKeeper$lambda$0);
+                    return Boolean.valueOf(AndroidExtKt.StateKeeper$lambda$0());
                 }
             };
         }
@@ -63,9 +61,7 @@ public final class AndroidExtKt {
             function0 = new Function0() { // from class: com.arkivanov.essenty.statekeeper.AndroidExtKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean StateKeeper$lambda$1;
-                    StateKeeper$lambda$1 = AndroidExtKt.StateKeeper$lambda$1();
-                    return Boolean.valueOf(StateKeeper$lambda$1);
+                    return Boolean.valueOf(AndroidExtKt.StateKeeper$lambda$1());
                 }
             };
         }
@@ -86,15 +82,13 @@ public final class AndroidExtKt {
         savedStateRegistry.registerSavedStateProvider(key, new SavedStateRegistry.SavedStateProvider() { // from class: com.arkivanov.essenty.statekeeper.AndroidExtKt$$ExternalSyntheticLambda1
             @Override // androidx.savedstate.SavedStateRegistry.SavedStateProvider
             public final Bundle saveState() {
-                Bundle StateKeeper$lambda$4;
-                StateKeeper$lambda$4 = AndroidExtKt.StateKeeper$lambda$4(Function0.this, StateKeeperDispatcher);
-                return StateKeeper$lambda$4;
+                return AndroidExtKt.StateKeeper$lambda$4(Function0.this, StateKeeperDispatcher);
             }
         });
         return StateKeeperDispatcher;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Bundle StateKeeper$lambda$4(Function0 function0, StateKeeperDispatcher stateKeeperDispatcher) {
         Bundle bundle = new Bundle();
         if (((Boolean) function0.invoke()).booleanValue()) {
@@ -111,9 +105,7 @@ public final class AndroidExtKt {
             function0 = new Function0() { // from class: com.arkivanov.essenty.statekeeper.AndroidExtKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean stateKeeper$lambda$5;
-                    stateKeeper$lambda$5 = AndroidExtKt.stateKeeper$lambda$5();
-                    return Boolean.valueOf(stateKeeper$lambda$5);
+                    return Boolean.valueOf(AndroidExtKt.stateKeeper$lambda$5());
                 }
             };
         }
@@ -134,9 +126,7 @@ public final class AndroidExtKt {
             function0 = new Function0() { // from class: com.arkivanov.essenty.statekeeper.AndroidExtKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    boolean stateKeeper$lambda$6;
-                    stateKeeper$lambda$6 = AndroidExtKt.stateKeeper$lambda$6();
-                    return Boolean.valueOf(stateKeeper$lambda$6);
+                    return Boolean.valueOf(AndroidExtKt.stateKeeper$lambda$6());
                 }
             };
         }

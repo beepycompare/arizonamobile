@@ -111,14 +111,12 @@ public final class PreferenceDataStoreFactory {
         return new PreferenceDataStore(create(new FileStorage(PreferencesFileSerializer.INSTANCE, null, new Function0() { // from class: androidx.datastore.preferences.core.PreferenceDataStoreFactory$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                File create$lambda$0;
-                create$lambda$0 = PreferenceDataStoreFactory.create$lambda$0(Function0.this);
-                return create$lambda$0;
+                return PreferenceDataStoreFactory.create$lambda$0(Function0.this);
             }
         }, 2, null), replaceFileCorruptionHandler, migrations, scope));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final File create$lambda$0(Function0 function0) {
         File file = (File) function0.invoke();
         if (!Intrinsics.areEqual(FilesKt.getExtension(file), "preferences_pb")) {
@@ -157,15 +155,10 @@ public final class PreferenceDataStoreFactory {
         return create(replaceFileCorruptionHandler, migrations, scope, new Function0() { // from class: androidx.datastore.preferences.core.PreferenceDataStoreFactory$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                File createWithPath$lambda$0;
-                createWithPath$lambda$0 = PreferenceDataStoreFactory.createWithPath$lambda$0(Function0.this);
-                return createWithPath$lambda$0;
+                File file;
+                file = ((Path) Function0.this.invoke()).toFile();
+                return file;
             }
         });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final File createWithPath$lambda$0(Function0 function0) {
-        return ((Path) function0.invoke()).toFile();
     }
 }

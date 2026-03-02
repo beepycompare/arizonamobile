@@ -41,14 +41,12 @@ public final class MovableContentKt {
         return ComposableLambdaKt.composableLambdaInstance(-328108779, true, new Function2() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                Unit movableContentOf$lambda$0;
-                movableContentOf$lambda$0 = MovableContentKt.movableContentOf$lambda$0(MovableContent.this, (Composer) obj, ((Integer) obj2).intValue());
-                return movableContentOf$lambda$0;
+                return MovableContentKt.movableContentOf$lambda$0(MovableContent.this, (Composer) obj, ((Integer) obj2).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$0(MovableContent movableContent, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -70,14 +68,12 @@ public final class MovableContentKt {
         return ComposableLambdaKt.composableLambdaInstance(1032736913, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentOf$lambda$1;
-                movableContentOf$lambda$1 = MovableContentKt.movableContentOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentOf$lambda$1;
+                return MovableContentKt.movableContentOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$1(MovableContent movableContent, Object obj, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -101,22 +97,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(561467799, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentOf$lambda$2;
-                movableContentOf$lambda$2 = MovableContentKt.movableContentOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentOf$lambda$2;
+                return MovableContentKt.movableContentOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(-525773808, true, new Function4() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                Unit movableContentOf$lambda$3;
-                movableContentOf$lambda$3 = MovableContentKt.movableContentOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
-                return movableContentOf$lambda$3;
+                return MovableContentKt.movableContentOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$2(Function4 function4, Pair pair, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it)87@3550L28:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -136,7 +128,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$3(MovableContent movableContent, Object obj, Object obj2, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
@@ -166,22 +158,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-846116651, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentOf$lambda$4;
-                movableContentOf$lambda$4 = MovableContentKt.movableContentOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentOf$lambda$4;
+                return MovableContentKt.movableContentOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(1477386365, true, new Function5() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function5
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                Unit movableContentOf$lambda$5;
-                movableContentOf$lambda$5 = MovableContentKt.movableContentOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
-                return movableContentOf$lambda$5;
+                return MovableContentKt.movableContentOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$4(Function5 function5, Triple triple, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it)113@4607L38:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -201,7 +189,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$5(MovableContent movableContent, Object obj, Object obj2, Object obj3, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");
@@ -234,22 +222,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(743481490, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentOf$lambda$6;
-                movableContentOf$lambda$6 = MovableContentKt.movableContentOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentOf$lambda$6;
+                return MovableContentKt.movableContentOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(-1304803723, true, new Function6() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function6
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
-                Unit movableContentOf$lambda$7;
-                movableContentOf$lambda$7 = MovableContentKt.movableContentOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
-                return movableContentOf$lambda$7;
+                return MovableContentKt.movableContentOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$6(Function6 function6, Object[] objArr, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C143@5808L47:MovableContent.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
@@ -262,7 +246,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentOf$lambda$7(MovableContent movableContent, Object obj, Object obj2, Object obj3, Object obj4, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(p1,p2,p3,p4):MovableContent.kt#9igjgp");
@@ -298,22 +282,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(668517896, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentWithReceiverOf$lambda$0;
-                movableContentWithReceiverOf$lambda$0 = MovableContentKt.movableContentWithReceiverOf$lambda$0(Function3.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentWithReceiverOf$lambda$0;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$0(Function3.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(-1655274392, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentWithReceiverOf$lambda$1;
-                movableContentWithReceiverOf$lambda$1 = MovableContentKt.movableContentWithReceiverOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentWithReceiverOf$lambda$1;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$1(MovableContent.this, obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$0(Function3 function3, Object obj, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it)171@6908L9:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -333,7 +313,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$1(MovableContent movableContent, Object obj, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -357,22 +337,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-95003188, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentWithReceiverOf$lambda$2;
-                movableContentWithReceiverOf$lambda$2 = MovableContentKt.movableContentWithReceiverOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentWithReceiverOf$lambda$2;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$2(Function4.this, (Pair) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(1349529900, true, new Function4() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function4
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                Unit movableContentWithReceiverOf$lambda$3;
-                movableContentWithReceiverOf$lambda$3 = MovableContentKt.movableContentWithReceiverOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
-                return movableContentWithReceiverOf$lambda$3;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$3(MovableContent.this, obj, obj2, (Composer) obj3, ((Integer) obj4).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$2(Function4 function4, Pair pair, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it)196@7934L18:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -392,7 +368,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$3(MovableContent movableContent, Object obj, Object obj2, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(it):MovableContent.kt#9igjgp");
@@ -422,22 +398,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-963896566, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentWithReceiverOf$lambda$4;
-                movableContentWithReceiverOf$lambda$4 = MovableContentKt.movableContentWithReceiverOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentWithReceiverOf$lambda$4;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$4(Function5.this, (Triple) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(2121535275, true, new Function5() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function5
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-                Unit movableContentWithReceiverOf$lambda$5;
-                movableContentWithReceiverOf$lambda$5 = MovableContentKt.movableContentWithReceiverOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
-                return movableContentWithReceiverOf$lambda$5;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$5(MovableContent.this, obj, obj2, obj3, (Composer) obj4, ((Integer) obj5).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$4(Function5 function5, Triple triple, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "CN(it)221@8997L28:MovableContent.kt#9igjgp");
         if ((i & 6) == 0) {
@@ -457,7 +429,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$5(MovableContent movableContent, Object obj, Object obj2, Object obj3, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(p1,p2):MovableContent.kt#9igjgp");
@@ -490,22 +462,18 @@ public final class MovableContentKt {
         final MovableContent movableContent = new MovableContent(ComposableLambdaKt.composableLambdaInstance(-346590649, true, new Function3() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Unit movableContentWithReceiverOf$lambda$6;
-                movableContentWithReceiverOf$lambda$6 = MovableContentKt.movableContentWithReceiverOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return movableContentWithReceiverOf$lambda$6;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$6(Function6.this, (Object[]) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }));
         return ComposableLambdaKt.composableLambdaInstance(572330192, true, new Function6() { // from class: androidx.compose.runtime.MovableContentKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function6
             public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6) {
-                Unit movableContentWithReceiverOf$lambda$7;
-                movableContentWithReceiverOf$lambda$7 = MovableContentKt.movableContentWithReceiverOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
-                return movableContentWithReceiverOf$lambda$7;
+                return MovableContentKt.movableContentWithReceiverOf$lambda$7(MovableContent.this, obj, obj2, obj3, obj4, (Composer) obj5, ((Integer) obj6).intValue());
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$6(Function6 function6, Object[] objArr, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C249@10205L37:MovableContent.kt#9igjgp");
         if (ComposerKt.isTraceInProgress()) {
@@ -518,7 +486,7 @@ public final class MovableContentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit movableContentWithReceiverOf$lambda$7(MovableContent movableContent, Object obj, Object obj2, Object obj3, Object obj4, Composer composer, int i) {
         int i2;
         ComposerKt.sourceInformation(composer, "CN(p1,p2,p3):MovableContent.kt#9igjgp");

@@ -51,7 +51,9 @@ public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSes
     }
 
     private boolean isPermissionGranted(MediaSessionManager.RemoteUserInfoImpl remoteUserInfoImpl, String str) {
-        return remoteUserInfoImpl.getPid() < 0 ? this.mContext.getPackageManager().checkPermission(str, remoteUserInfoImpl.getPackageName()) == 0 : this.mContext.checkPermission(str, remoteUserInfoImpl.getPid(), remoteUserInfoImpl.getUid()) == 0;
+        int pid = remoteUserInfoImpl.getPid();
+        Context context = this.mContext;
+        return pid < 0 ? context.getPackageManager().checkPermission(str, remoteUserInfoImpl.getPackageName()) == 0 : context.checkPermission(str, remoteUserInfoImpl.getPid(), remoteUserInfoImpl.getUid()) == 0;
     }
 
     boolean isEnabledNotificationListener(MediaSessionManager.RemoteUserInfoImpl remoteUserInfoImpl) {

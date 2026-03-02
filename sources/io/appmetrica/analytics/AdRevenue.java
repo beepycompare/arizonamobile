@@ -5,7 +5,7 @@ import io.appmetrica.analytics.impl.lo;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AdRevenue {
     public final String adNetwork;
     public final String adPlacementId;
@@ -18,7 +18,7 @@ public class AdRevenue {
     public final Map<String, String> payload;
     public final String precision;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */

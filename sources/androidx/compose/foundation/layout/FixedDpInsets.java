@@ -28,26 +28,26 @@ public final class FixedDpInsets implements WindowInsets {
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getLeft(Density density, LayoutDirection layoutDirection) {
-        return density.mo458roundToPx0680j_4(this.leftDp);
+        return density.mo399roundToPx0680j_4(this.leftDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getTop(Density density) {
-        return density.mo458roundToPx0680j_4(this.topDp);
+        return density.mo399roundToPx0680j_4(this.topDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getRight(Density density, LayoutDirection layoutDirection) {
-        return density.mo458roundToPx0680j_4(this.rightDp);
+        return density.mo399roundToPx0680j_4(this.rightDp);
     }
 
     @Override // androidx.compose.foundation.layout.WindowInsets
     public int getBottom(Density density) {
-        return density.mo458roundToPx0680j_4(this.bottomDp);
+        return density.mo399roundToPx0680j_4(this.bottomDp);
     }
 
     public String toString() {
-        return "Insets(left=" + ((Object) Dp.m8269toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m8269toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m8269toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m8269toStringimpl(this.bottomDp)) + ')';
+        return "Insets(left=" + ((Object) Dp.m7566toStringimpl(this.leftDp)) + ", top=" + ((Object) Dp.m7566toStringimpl(this.topDp)) + ", right=" + ((Object) Dp.m7566toStringimpl(this.rightDp)) + ", bottom=" + ((Object) Dp.m7566toStringimpl(this.bottomDp)) + ')';
     }
 
     public boolean equals(Object obj) {
@@ -56,12 +56,12 @@ public final class FixedDpInsets implements WindowInsets {
         }
         if (obj instanceof FixedDpInsets) {
             FixedDpInsets fixedDpInsets = (FixedDpInsets) obj;
-            return Dp.m8263equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m8263equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m8263equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m8263equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
+            return Dp.m7560equalsimpl0(this.leftDp, fixedDpInsets.leftDp) && Dp.m7560equalsimpl0(this.topDp, fixedDpInsets.topDp) && Dp.m7560equalsimpl0(this.rightDp, fixedDpInsets.rightDp) && Dp.m7560equalsimpl0(this.bottomDp, fixedDpInsets.bottomDp);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((Dp.m8264hashCodeimpl(this.leftDp) * 31) + Dp.m8264hashCodeimpl(this.topDp)) * 31) + Dp.m8264hashCodeimpl(this.rightDp)) * 31) + Dp.m8264hashCodeimpl(this.bottomDp);
+        return (((((Dp.m7561hashCodeimpl(this.leftDp) * 31) + Dp.m7561hashCodeimpl(this.topDp)) * 31) + Dp.m7561hashCodeimpl(this.rightDp)) * 31) + Dp.m7561hashCodeimpl(this.bottomDp);
     }
 }

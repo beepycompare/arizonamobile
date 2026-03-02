@@ -109,12 +109,13 @@ public class PagerTitleStrip extends ViewGroup {
             z = obtainStyledAttributes2.getBoolean(0, false);
             obtainStyledAttributes2.recycle();
         }
+        TextView textView4 = this.mPrevText;
         if (z) {
-            setSingleLineAllCaps(this.mPrevText);
+            setSingleLineAllCaps(textView4);
             setSingleLineAllCaps(this.mCurrText);
             setSingleLineAllCaps(this.mNextText);
         } else {
-            this.mPrevText.setSingleLine();
+            textView4.setSingleLine();
             this.mCurrText.setSingleLine();
             this.mNextText.setSingleLine();
         }

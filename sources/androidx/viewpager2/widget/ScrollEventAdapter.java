@@ -63,11 +63,13 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         } else {
             if (isInAnyDraggingState() && i == 0) {
                 updateScrollEventValues();
-                if (!this.mScrollHappened) {
-                    if (this.mScrollValues.mPosition != -1) {
+                boolean z = this.mScrollHappened;
+                ScrollEventValues scrollEventValues = this.mScrollValues;
+                if (!z) {
+                    if (scrollEventValues.mPosition != -1) {
                         dispatchScrolled(this.mScrollValues.mPosition, 0.0f, 0);
                     }
-                } else if (this.mScrollValues.mOffsetPx == 0) {
+                } else if (scrollEventValues.mOffsetPx == 0) {
                     if (this.mDragStartPosition != this.mScrollValues.mPosition) {
                         dispatchSelected(this.mScrollValues.mPosition);
                     }

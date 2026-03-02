@@ -91,7 +91,7 @@ public final class TaskHelper {
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Object invokeSuspend(Object obj) {
-                    Object m10243constructorimpl;
+                    Object m9182constructorimpl;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     int i = this.label;
                     try {
@@ -110,19 +110,19 @@ public final class TaskHelper {
                         } else {
                             ResultKt.throwOnFailure(obj);
                         }
-                        m10243constructorimpl = Result.m10243constructorimpl(obj);
+                        m9182constructorimpl = Result.m9182constructorimpl(obj);
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
+                        m9182constructorimpl = Result.m9182constructorimpl(ResultKt.createFailure(th));
                     }
                     Task<T>.TaskResultProvider taskResultProvider = this.$this_create;
-                    if (Result.m10250isSuccessimpl(m10243constructorimpl)) {
-                        taskResultProvider.setTaskSuccessResult(m10243constructorimpl);
+                    if (Result.m9189isSuccessimpl(m9182constructorimpl)) {
+                        taskResultProvider.setTaskSuccessResult(m9182constructorimpl);
                     }
                     Task<T>.TaskResultProvider taskResultProvider2 = this.$this_create;
-                    Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
-                    if (m10246exceptionOrNullimpl != null) {
-                        taskResultProvider2.setTaskErrorResult(m10246exceptionOrNullimpl);
+                    Throwable m9185exceptionOrNullimpl = Result.m9185exceptionOrNullimpl(m9182constructorimpl);
+                    if (m9185exceptionOrNullimpl != null) {
+                        taskResultProvider2.setTaskErrorResult(m9185exceptionOrNullimpl);
                     }
                     return Unit.INSTANCE;
                 }
@@ -142,7 +142,7 @@ public final class TaskHelper {
         return create;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void wrap$lambda$1$lambda$0(CoroutineScope coroutineScope, Throwable th) {
         Intrinsics.checkNotNullParameter(coroutineScope, "$coroutineScope");
         if (th instanceof TaskCancellationException) {

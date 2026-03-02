@@ -127,10 +127,11 @@ public class SingleDateSelector implements DateSelector<Long> {
         editText.addTextChangedListener(new DateFormatTextWatcher(str, simpleDateFormat2, textInputLayout, calendarConstraints) { // from class: com.google.android.material.datepicker.SingleDateSelector.1
             @Override // com.google.android.material.datepicker.DateFormatTextWatcher
             void onValidDate(Long l2) {
+                SingleDateSelector singleDateSelector = SingleDateSelector.this;
                 if (l2 == null) {
-                    SingleDateSelector.this.clearSelection();
+                    singleDateSelector.clearSelection();
                 } else {
-                    SingleDateSelector.this.select(l2.longValue());
+                    singleDateSelector.select(l2.longValue());
                 }
                 SingleDateSelector.this.error = null;
                 onSelectionChangedListener.onSelectionChanged(SingleDateSelector.this.getSelection());

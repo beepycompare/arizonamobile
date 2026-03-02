@@ -77,17 +77,12 @@ public final class YouTubePlayerBridge {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void sendYouTubeIFrameAPIReady$lambda$0(YouTubePlayerBridge youTubePlayerBridge) {
-        youTubePlayerBridge.youTubePlayerOwner.onYouTubeIFrameAPIReady();
-    }
-
     @JavascriptInterface
     public final boolean sendYouTubeIFrameAPIReady() {
         return this.mainThreadHandler.post(new Runnable() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayerBridge$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                YouTubePlayerBridge.sendYouTubeIFrameAPIReady$lambda$0(YouTubePlayerBridge.this);
+                YouTubePlayerBridge.this.youTubePlayerOwner.onYouTubeIFrameAPIReady();
             }
         });
     }
@@ -102,7 +97,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendReady$lambda$2(YouTubePlayerBridge youTubePlayerBridge) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onReady(youTubePlayerBridge.youTubePlayerOwner.getInstance());
@@ -121,7 +116,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendStateChange$lambda$4(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlayerState playerState) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onStateChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playerState);
@@ -140,7 +135,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendPlaybackQualityChange$lambda$6(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlaybackQuality playbackQuality) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onPlaybackQualityChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playbackQuality);
@@ -159,7 +154,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendPlaybackRateChange$lambda$8(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlaybackRate playbackRate) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onPlaybackRateChange(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playbackRate);
@@ -178,7 +173,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendError$lambda$10(YouTubePlayerBridge youTubePlayerBridge, PlayerConstants.PlayerError playerError) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onError(youTubePlayerBridge.youTubePlayerOwner.getInstance(), playerError);
@@ -195,7 +190,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendApiChange$lambda$12(YouTubePlayerBridge youTubePlayerBridge) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onApiChange(youTubePlayerBridge.youTubePlayerOwner.getInstance());
@@ -218,7 +213,7 @@ public final class YouTubePlayerBridge {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendVideoCurrentTime$lambda$14(YouTubePlayerBridge youTubePlayerBridge, float f) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onCurrentSecond(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
@@ -244,7 +239,7 @@ public final class YouTubePlayerBridge {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendVideoDuration$lambda$16(YouTubePlayerBridge youTubePlayerBridge, float f) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onVideoDuration(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
@@ -267,7 +262,7 @@ public final class YouTubePlayerBridge {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendVideoLoadedFraction$lambda$18(YouTubePlayerBridge youTubePlayerBridge, float f) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onVideoLoadedFraction(youTubePlayerBridge.youTubePlayerOwner.getInstance(), f);
@@ -285,7 +280,7 @@ public final class YouTubePlayerBridge {
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void sendVideoId$lambda$20(YouTubePlayerBridge youTubePlayerBridge, String str) {
         for (YouTubePlayerListener youTubePlayerListener : youTubePlayerBridge.youTubePlayerOwner.getListeners()) {
             youTubePlayerListener.onVideoId(youTubePlayerBridge.youTubePlayerOwner.getInstance(), str);

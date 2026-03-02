@@ -113,9 +113,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
             launch$default.invokeOnCompletion(new Function1() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    Unit invokeSuspend$lambda$0;
-                    invokeSuspend$lambda$0 = TextFieldSelectionState$selectionHandleGestures$2.invokeSuspend$lambda$0(TextFieldSelectionState.this, (Throwable) obj2);
-                    return invokeSuspend$lambda$0;
+                    return TextFieldSelectionState$selectionHandleGestures$2.invokeSuspend$lambda$0(TextFieldSelectionState.this, (Throwable) obj2);
                 }
             });
             launch$default2 = BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, CoroutineStart.UNDISPATCHED, new AnonymousClass4(this.this$0, this.$this_selectionHandleGestures, this.$isStartHandle, null), 1, null);
@@ -168,9 +166,9 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                 if (PressDownGestureKt.detectPressDownGesture(pointerInputScope, new TapOnPosition() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState.selectionHandleGestures.2.2.1
                     @Override // androidx.compose.foundation.text.input.internal.selection.TapOnPosition
                     /* renamed from: onEvent-k-4lQ0M */
-                    public final void mo1716onEventk4lQ0M(long j) {
+                    public final void mo1488onEventk4lQ0M(long j) {
                         Handle handle;
-                        long m1734getHandlePositiontuRUvjQ;
+                        long m1501getHandlePositiontuRUvjQ;
                         TextFieldSelectionState.this.markStartContentVisibleOffset();
                         TextFieldSelectionState textFieldSelectionState3 = TextFieldSelectionState.this;
                         if (z) {
@@ -178,15 +176,13 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
                         } else {
                             handle = Handle.SelectionEnd;
                         }
-                        m1734getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1734getHandlePositiontuRUvjQ(z);
-                        textFieldSelectionState3.m1743updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1858getAdjustedCoordinatesk4lQ0M(m1734getHandlePositiontuRUvjQ));
+                        m1501getHandlePositiontuRUvjQ = TextFieldSelectionState.this.m1501getHandlePositiontuRUvjQ(z);
+                        textFieldSelectionState3.m1510updateHandleDraggingUv8p0NA(handle, SelectionHandlesKt.m1608getAdjustedCoordinatesk4lQ0M(m1501getHandlePositiontuRUvjQ));
                     }
                 }, new Function0() { // from class: androidx.compose.foundation.text.input.internal.selection.TextFieldSelectionState$selectionHandleGestures$2$2$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        Unit invokeSuspend$lambda$0;
-                        invokeSuspend$lambda$0 = TextFieldSelectionState$selectionHandleGestures$2.AnonymousClass2.invokeSuspend$lambda$0(TextFieldSelectionState.this);
-                        return invokeSuspend$lambda$0;
+                        return TextFieldSelectionState$selectionHandleGestures$2.AnonymousClass2.invokeSuspend$lambda$0(TextFieldSelectionState.this);
                     }
                 }, this) == coroutine_suspended) {
                     return coroutine_suspended;
@@ -199,7 +195,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
             return Unit.INSTANCE;
         }
 
-        /* JADX INFO: Access modifiers changed from: private */
+        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit invokeSuspend$lambda$0(TextFieldSelectionState textFieldSelectionState) {
             textFieldSelectionState.clearHandleDragging();
             return Unit.INSTANCE;
@@ -257,7 +253,7 @@ public final class TextFieldSelectionState$selectionHandleGestures$2 extends Sus
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit invokeSuspend$lambda$0(TextFieldSelectionState textFieldSelectionState, Throwable th) {
         textFieldSelectionState.clearHandleDragging();
         return Unit.INSTANCE;

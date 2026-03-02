@@ -11,7 +11,7 @@ import kotlin.Pair;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: Brush.kt */
 @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b7\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003J'\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH&¢\u0006\u0004\b\u0010\u0010\u0011R\u0016\u0010\u0004\u001a\u00020\u0005X\u0096\u0004¢\u0006\n\n\u0002\u0010\b\u001a\u0004\b\u0006\u0010\u0007\u0082\u0001\u0002\u0013\u0014¨\u0006\u0015"}, d2 = {"Landroidx/compose/ui/graphics/Brush;", "", "<init>", "()V", "intrinsicSize", "Landroidx/compose/ui/geometry/Size;", "getIntrinsicSize-NH-jbRc", "()J", "J", "applyTo", "", "size", TtmlNode.TAG_P, "Landroidx/compose/ui/graphics/Paint;", "alpha", "", "applyTo-Pq9zytI", "(JLandroidx/compose/ui/graphics/Paint;F)V", "Companion", "Landroidx/compose/ui/graphics/ShaderBrush;", "Landroidx/compose/ui/graphics/SolidColor;", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public abstract class Brush {
     public static final int $stable = 0;
     public static final Companion Companion = new Companion(null);
@@ -22,20 +22,20 @@ public abstract class Brush {
     }
 
     /* renamed from: applyTo-Pq9zytI  reason: not valid java name */
-    public abstract void mo5369applyToPq9zytI(long j, Paint paint, float f);
+    public abstract void mo4717applyToPq9zytI(long j, Paint paint, float f);
 
     private Brush() {
-        this.intrinsicSize = Size.Companion.m5256getUnspecifiedNHjbRc();
+        this.intrinsicSize = Size.Companion.m4604getUnspecifiedNHjbRc();
     }
 
     /* renamed from: getIntrinsicSize-NH-jbRc  reason: not valid java name */
-    public long mo5370getIntrinsicSizeNHjbRc() {
+    public long mo4718getIntrinsicSizeNHjbRc() {
         return this.intrinsicSize;
     }
 
     /* compiled from: Brush.kt */
     @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0019\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JY\u0010\u0004\u001a\u00020\u00052*\u0010\u0006\u001a\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007\"\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u0010\u0010\u0011J;\u0010\u0004\u001a\u00020\u00052\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\n0\u00132\b\b\u0002\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\f2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u0010\u0010\u0014J;\u0010\u0015\u001a\u00020\u00052\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\n0\u00132\b\b\u0002\u0010\u0016\u001a\u00020\t2\b\b\u0002\u0010\u0017\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u0018\u0010\u0019JY\u0010\u0015\u001a\u00020\u00052*\u0010\u0006\u001a\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007\"\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\b\b\u0002\u0010\u0016\u001a\u00020\t2\b\b\u0002\u0010\u0017\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u0018\u0010\u001aJ;\u0010\u001b\u001a\u00020\u00052\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\n0\u00132\b\b\u0002\u0010\u001c\u001a\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u001e\u0010\u0019JY\u0010\u001b\u001a\u00020\u00052*\u0010\u0006\u001a\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007\"\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\b\b\u0002\u0010\u001c\u001a\u00020\t2\b\b\u0002\u0010\u001d\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\u001e\u0010\u001aJY\u0010\u001f\u001a\u00020\u00052*\u0010\u0006\u001a\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007\"\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\b\b\u0002\u0010 \u001a\u00020\f2\b\b\u0002\u0010!\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\"\u0010#J;\u0010\u001f\u001a\u00020\u00052\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\n0\u00132\b\b\u0002\u0010 \u001a\u00020\f2\b\b\u0002\u0010!\u001a\u00020\t2\b\b\u0002\u0010\u000e\u001a\u00020\u000fH\u0007¢\u0006\u0004\b\"\u0010$JE\u0010%\u001a\u00020\u00052*\u0010\u0006\u001a\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007\"\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b2\b\b\u0002\u0010 \u001a\u00020\fH\u0007¢\u0006\u0004\b&\u0010'J'\u0010%\u001a\u00020\u00052\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\n0\u00132\b\b\u0002\u0010 \u001a\u00020\fH\u0007¢\u0006\u0004\b&\u0010(J'\u0010)\u001a\u00020\u00052\u0006\u0010*\u001a\u00020\u00052\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020-H\u0007¢\u0006\u0004\b.\u0010/¨\u00060"}, d2 = {"Landroidx/compose/ui/graphics/Brush$Companion;", "", "<init>", "()V", "linearGradient", "Landroidx/compose/ui/graphics/Brush;", "colorStops", "", "Lkotlin/Pair;", "", "Landroidx/compose/ui/graphics/Color;", TtmlNode.START, "Landroidx/compose/ui/geometry/Offset;", TtmlNode.END, "tileMode", "Landroidx/compose/ui/graphics/TileMode;", "linearGradient-mHitzGk", "([Lkotlin/Pair;JJI)Landroidx/compose/ui/graphics/Brush;", "colors", "", "(Ljava/util/List;JJI)Landroidx/compose/ui/graphics/Brush;", "horizontalGradient", "startX", "endX", "horizontalGradient-8A-3gB4", "(Ljava/util/List;FFI)Landroidx/compose/ui/graphics/Brush;", "([Lkotlin/Pair;FFI)Landroidx/compose/ui/graphics/Brush;", "verticalGradient", "startY", "endY", "verticalGradient-8A-3gB4", "radialGradient", TtmlNode.CENTER, "radius", "radialGradient-P_Vx-Ks", "([Lkotlin/Pair;JFI)Landroidx/compose/ui/graphics/Brush;", "(Ljava/util/List;JFI)Landroidx/compose/ui/graphics/Brush;", "sweepGradient", "sweepGradient-Uv8p0NA", "([Lkotlin/Pair;J)Landroidx/compose/ui/graphics/Brush;", "(Ljava/util/List;J)Landroidx/compose/ui/graphics/Brush;", "composite", "dstBrush", "srcBrush", "blendMode", "Landroidx/compose/ui/graphics/BlendMode;", "composite-7EN7VTw", "(Landroidx/compose/ui/graphics/Brush;Landroidx/compose/ui/graphics/Brush;I)Landroidx/compose/ui/graphics/Brush;", "ui-graphics"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -45,26 +45,26 @@ public abstract class Brush {
         }
 
         /* renamed from: linearGradient-mHitzGk$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5374linearGradientmHitzGk$default(Companion companion, Pair[] pairArr, long j, long j2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4722linearGradientmHitzGk$default(Companion companion, Pair[] pairArr, long j, long j2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
-                j = Offset.Companion.m5195getZeroF1C5BW0();
+                j = Offset.Companion.m4543getZeroF1C5BW0();
             }
             long j3 = j;
             if ((i2 & 4) != 0) {
-                j2 = Offset.Companion.m5193getInfiniteF1C5BW0();
+                j2 = Offset.Companion.m4541getInfiniteF1C5BW0();
             }
             long j4 = j2;
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5385linearGradientmHitzGk(pairArr, j3, j4, i);
+            return companion.m4733linearGradientmHitzGk(pairArr, j3, j4, i);
         }
 
         /* renamed from: linearGradient-mHitzGk  reason: not valid java name */
-        public final Brush m5385linearGradientmHitzGk(Pair<Float, Color>[] pairArr, long j, long j2, int i) {
+        public final Brush m4733linearGradientmHitzGk(Pair<Float, Color>[] pairArr, long j, long j2, int i) {
             ArrayList arrayList = new ArrayList(pairArr.length);
             for (Pair<Float, Color> pair : pairArr) {
-                arrayList.add(Color.m5414boximpl(pair.getSecond().m5434unboximpl()));
+                arrayList.add(Color.m4762boximpl(pair.getSecond().m4782unboximpl()));
             }
             ArrayList arrayList2 = arrayList;
             ArrayList arrayList3 = new ArrayList(pairArr.length);
@@ -75,28 +75,28 @@ public abstract class Brush {
         }
 
         /* renamed from: linearGradient-mHitzGk$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5373linearGradientmHitzGk$default(Companion companion, List list, long j, long j2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4721linearGradientmHitzGk$default(Companion companion, List list, long j, long j2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
-                j = Offset.Companion.m5195getZeroF1C5BW0();
+                j = Offset.Companion.m4543getZeroF1C5BW0();
             }
             long j3 = j;
             if ((i2 & 4) != 0) {
-                j2 = Offset.Companion.m5193getInfiniteF1C5BW0();
+                j2 = Offset.Companion.m4541getInfiniteF1C5BW0();
             }
             long j4 = j2;
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5384linearGradientmHitzGk(list, j3, j4, i);
+            return companion.m4732linearGradientmHitzGk(list, j3, j4, i);
         }
 
         /* renamed from: linearGradient-mHitzGk  reason: not valid java name */
-        public final Brush m5384linearGradientmHitzGk(List<Color> list, long j, long j2, int i) {
+        public final Brush m4732linearGradientmHitzGk(List<Color> list, long j, long j2, int i) {
             return new LinearGradient(list, null, j, j2, i, null);
         }
 
         /* renamed from: horizontalGradient-8A-3gB4$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5371horizontalGradient8A3gB4$default(Companion companion, List list, float f, float f2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4719horizontalGradient8A3gB4$default(Companion companion, List list, float f, float f2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
                 f = 0.0f;
             }
@@ -104,13 +104,13 @@ public abstract class Brush {
                 f2 = Float.POSITIVE_INFINITY;
             }
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5382horizontalGradient8A3gB4(list, f, f2, i);
+            return companion.m4730horizontalGradient8A3gB4(list, f, f2, i);
         }
 
         /* renamed from: horizontalGradient-8A-3gB4$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5372horizontalGradient8A3gB4$default(Companion companion, Pair[] pairArr, float f, float f2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4720horizontalGradient8A3gB4$default(Companion companion, Pair[] pairArr, float f, float f2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
                 f = 0.0f;
             }
@@ -118,18 +118,18 @@ public abstract class Brush {
                 f2 = Float.POSITIVE_INFINITY;
             }
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5383horizontalGradient8A3gB4(pairArr, f, f2, i);
+            return companion.m4731horizontalGradient8A3gB4(pairArr, f, f2, i);
         }
 
         /* renamed from: horizontalGradient-8A-3gB4  reason: not valid java name */
-        public final Brush m5383horizontalGradient8A3gB4(Pair<Float, Color>[] pairArr, float f, float f2, int i) {
-            return m5385linearGradientmHitzGk((Pair[]) Arrays.copyOf(pairArr, pairArr.length), Offset.m5171constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), i);
+        public final Brush m4731horizontalGradient8A3gB4(Pair<Float, Color>[] pairArr, float f, float f2, int i) {
+            return m4733linearGradientmHitzGk((Pair[]) Arrays.copyOf(pairArr, pairArr.length), Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), i);
         }
 
         /* renamed from: verticalGradient-8A-3gB4$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5379verticalGradient8A3gB4$default(Companion companion, List list, float f, float f2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4727verticalGradient8A3gB4$default(Companion companion, List list, float f, float f2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
                 f = 0.0f;
             }
@@ -137,13 +137,13 @@ public abstract class Brush {
                 f2 = Float.POSITIVE_INFINITY;
             }
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5390verticalGradient8A3gB4(list, f, f2, i);
+            return companion.m4738verticalGradient8A3gB4(list, f, f2, i);
         }
 
         /* renamed from: verticalGradient-8A-3gB4$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5380verticalGradient8A3gB4$default(Companion companion, Pair[] pairArr, float f, float f2, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4728verticalGradient8A3gB4$default(Companion companion, Pair[] pairArr, float f, float f2, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
                 f = 0.0f;
             }
@@ -151,20 +151,20 @@ public abstract class Brush {
                 f2 = Float.POSITIVE_INFINITY;
             }
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5391verticalGradient8A3gB4(pairArr, f, f2, i);
+            return companion.m4739verticalGradient8A3gB4(pairArr, f, f2, i);
         }
 
         /* renamed from: verticalGradient-8A-3gB4  reason: not valid java name */
-        public final Brush m5391verticalGradient8A3gB4(Pair<Float, Color>[] pairArr, float f, float f2, int i) {
-            return m5385linearGradientmHitzGk((Pair[]) Arrays.copyOf(pairArr, pairArr.length), Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), i);
+        public final Brush m4739verticalGradient8A3gB4(Pair<Float, Color>[] pairArr, float f, float f2, int i) {
+            return m4733linearGradientmHitzGk((Pair[]) Arrays.copyOf(pairArr, pairArr.length), Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), i);
         }
 
         /* renamed from: radialGradient-P_Vx-Ks$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5376radialGradientP_VxKs$default(Companion companion, Pair[] pairArr, long j, float f, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4724radialGradientP_VxKs$default(Companion companion, Pair[] pairArr, long j, float f, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
-                j = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                j = Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
             long j2 = j;
             if ((i2 & 4) != 0) {
@@ -172,16 +172,16 @@ public abstract class Brush {
             }
             float f2 = f;
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5387radialGradientP_VxKs(pairArr, j2, f2, i);
+            return companion.m4735radialGradientP_VxKs(pairArr, j2, f2, i);
         }
 
         /* renamed from: radialGradient-P_Vx-Ks  reason: not valid java name */
-        public final Brush m5387radialGradientP_VxKs(Pair<Float, Color>[] pairArr, long j, float f, int i) {
+        public final Brush m4735radialGradientP_VxKs(Pair<Float, Color>[] pairArr, long j, float f, int i) {
             ArrayList arrayList = new ArrayList(pairArr.length);
             for (Pair<Float, Color> pair : pairArr) {
-                arrayList.add(Color.m5414boximpl(pair.getSecond().m5434unboximpl()));
+                arrayList.add(Color.m4762boximpl(pair.getSecond().m4782unboximpl()));
             }
             ArrayList arrayList2 = arrayList;
             ArrayList arrayList3 = new ArrayList(pairArr.length);
@@ -192,9 +192,9 @@ public abstract class Brush {
         }
 
         /* renamed from: radialGradient-P_Vx-Ks$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5375radialGradientP_VxKs$default(Companion companion, List list, long j, float f, int i, int i2, Object obj) {
+        public static /* synthetic */ Brush m4723radialGradientP_VxKs$default(Companion companion, List list, long j, float f, int i, int i2, Object obj) {
             if ((i2 & 2) != 0) {
-                j = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                j = Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
             long j2 = j;
             if ((i2 & 4) != 0) {
@@ -202,29 +202,29 @@ public abstract class Brush {
             }
             float f2 = f;
             if ((i2 & 8) != 0) {
-                i = TileMode.Companion.m5821getClamp3opZhB0();
+                i = TileMode.Companion.m5167getClamp3opZhB0();
             }
-            return companion.m5386radialGradientP_VxKs(list, j2, f2, i);
+            return companion.m4734radialGradientP_VxKs(list, j2, f2, i);
         }
 
         /* renamed from: radialGradient-P_Vx-Ks  reason: not valid java name */
-        public final Brush m5386radialGradientP_VxKs(List<Color> list, long j, float f, int i) {
+        public final Brush m4734radialGradientP_VxKs(List<Color> list, long j, float f, int i) {
             return new RadialGradient(list, null, j, f, i, null);
         }
 
         /* renamed from: sweepGradient-Uv8p0NA$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5378sweepGradientUv8p0NA$default(Companion companion, Pair[] pairArr, long j, int i, Object obj) {
+        public static /* synthetic */ Brush m4726sweepGradientUv8p0NA$default(Companion companion, Pair[] pairArr, long j, int i, Object obj) {
             if ((i & 2) != 0) {
-                j = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                j = Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
-            return companion.m5389sweepGradientUv8p0NA(pairArr, j);
+            return companion.m4737sweepGradientUv8p0NA(pairArr, j);
         }
 
         /* renamed from: sweepGradient-Uv8p0NA  reason: not valid java name */
-        public final Brush m5389sweepGradientUv8p0NA(Pair<Float, Color>[] pairArr, long j) {
+        public final Brush m4737sweepGradientUv8p0NA(Pair<Float, Color>[] pairArr, long j) {
             ArrayList arrayList = new ArrayList(pairArr.length);
             for (Pair<Float, Color> pair : pairArr) {
-                arrayList.add(Color.m5414boximpl(pair.getSecond().m5434unboximpl()));
+                arrayList.add(Color.m4762boximpl(pair.getSecond().m4782unboximpl()));
             }
             ArrayList arrayList2 = arrayList;
             ArrayList arrayList3 = new ArrayList(pairArr.length);
@@ -235,31 +235,31 @@ public abstract class Brush {
         }
 
         /* renamed from: sweepGradient-Uv8p0NA$default  reason: not valid java name */
-        public static /* synthetic */ Brush m5377sweepGradientUv8p0NA$default(Companion companion, List list, long j, int i, Object obj) {
+        public static /* synthetic */ Brush m4725sweepGradientUv8p0NA$default(Companion companion, List list, long j, int i, Object obj) {
             if ((i & 2) != 0) {
-                j = Offset.Companion.m5194getUnspecifiedF1C5BW0();
+                j = Offset.Companion.m4542getUnspecifiedF1C5BW0();
             }
-            return companion.m5388sweepGradientUv8p0NA(list, j);
+            return companion.m4736sweepGradientUv8p0NA(list, j);
         }
 
         /* renamed from: sweepGradient-Uv8p0NA  reason: not valid java name */
-        public final Brush m5388sweepGradientUv8p0NA(List<Color> list, long j) {
+        public final Brush m4736sweepGradientUv8p0NA(List<Color> list, long j) {
             return new SweepGradient(j, list, null, null);
         }
 
         /* renamed from: composite-7EN7VTw  reason: not valid java name */
-        public final Brush m5381composite7EN7VTw(Brush brush, Brush brush2, int i) {
+        public final Brush m4729composite7EN7VTw(Brush brush, Brush brush2, int i) {
             return new CompositeShaderBrush(BrushKt.toShaderBrush(brush), BrushKt.toShaderBrush(brush2), i, null);
         }
 
         /* renamed from: horizontalGradient-8A-3gB4  reason: not valid java name */
-        public final Brush m5382horizontalGradient8A3gB4(List<Color> list, float f, float f2, int i) {
-            return m5384linearGradientmHitzGk(list, Offset.m5171constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), i);
+        public final Brush m4730horizontalGradient8A3gB4(List<Color> list, float f, float f2, int i) {
+            return m4732linearGradientmHitzGk(list, Offset.m4519constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(f2) << 32) | (Float.floatToRawIntBits(0.0f) & 4294967295L)), i);
         }
 
         /* renamed from: verticalGradient-8A-3gB4  reason: not valid java name */
-        public final Brush m5390verticalGradient8A3gB4(List<Color> list, float f, float f2, int i) {
-            return m5384linearGradientmHitzGk(list, Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Offset.m5171constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), i);
+        public final Brush m4738verticalGradient8A3gB4(List<Color> list, float f, float f2, int i) {
+            return m4732linearGradientmHitzGk(list, Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), Offset.m4519constructorimpl((Float.floatToRawIntBits(0.0f) << 32) | (Float.floatToRawIntBits(f2) & 4294967295L)), i);
         }
     }
 }

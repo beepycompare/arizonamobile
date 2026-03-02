@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AudioTrackAudioOutput implements AudioOutput {
     private static final int AUDIO_TRACK_VOLUME_RAMP_TIME_MS = 20;
     private static final int ERROR_NATIVE_DEAD_OBJECT = -32;
@@ -53,7 +53,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     private long writtenPcmBytes;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface CapabilityChangeListener {
         void onRecoverableWriteError();
 
@@ -416,7 +416,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class PositionTrackerListener implements AudioTrackPositionTracker.Listener {
         private PositionTrackerListener() {
         }
@@ -455,7 +455,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class InvalidAudioTrackTimestampException extends RuntimeException {
         private InvalidAudioTrackTimestampException(String str) {
             super(str);
@@ -463,7 +463,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class OnRoutingChangedListenerApi24 {
         private final AudioTrack audioTrack;
         private final CapabilityChangeListener capabilityChangeListener;
@@ -499,20 +499,20 @@ public final class AudioTrackAudioOutput implements AudioOutput {
             BackgroundExecutor.get().execute(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8971xdb32c08b(audioRouting);
+                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8248xdb32c08b(audioRouting);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$1$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8971xdb32c08b(AudioRouting audioRouting) {
+        public /* synthetic */ void m8248xdb32c08b(AudioRouting audioRouting) {
             final AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
             if (routedDevice != null) {
                 this.playbackThreadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8970x2346530a(routedDevice);
+                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8247x2346530a(routedDevice);
                     }
                 });
             }
@@ -520,7 +520,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$0$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8970x2346530a(AudioDeviceInfo audioDeviceInfo) {
+        public /* synthetic */ void m8247x2346530a(AudioDeviceInfo audioDeviceInfo) {
             if (this.listener == null) {
                 return;
             }
@@ -528,7 +528,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private final class StreamEventCallbackV29 {
         private final AudioTrack.StreamEventCallback callback;
         private final Handler handler;

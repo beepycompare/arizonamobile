@@ -33,14 +33,12 @@ public final class TextFieldSizeKt {
         return ComposedModifierKt.composed$default(modifier, null, new Function3() { // from class: androidx.compose.foundation.text.TextFieldSizeKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
-                Modifier textFieldMinSize$lambda$0;
-                textFieldMinSize$lambda$0 = TextFieldSizeKt.textFieldMinSize$lambda$0(TextStyle.this, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
-                return textFieldMinSize$lambda$0;
+                return TextFieldSizeKt.textFieldMinSize$lambda$0(TextStyle.this, (Modifier) obj, (Composer) obj2, ((Integer) obj3).intValue());
             }
         }, 1, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v7 */
     /* JADX WARN: Type inference failed for: r9v0, types: [androidx.compose.runtime.Composer] */
@@ -80,10 +78,10 @@ public final class TextFieldSizeKt {
             if (fontWeight == null) {
                 fontWeight = FontWeight.Companion.getNormal();
             }
-            FontStyle m7733getFontStyle4Lr2A7w = textStyle2.m7733getFontStyle4Lr2A7w();
-            int m7818unboximpl = m7733getFontStyle4Lr2A7w != null ? m7733getFontStyle4Lr2A7w.m7818unboximpl() : FontStyle.Companion.m7822getNormal_LCdwA();
-            FontSynthesis m7734getFontSynthesisZQGJjVo = textStyle2.m7734getFontSynthesisZQGJjVo();
-            rememberedValue2 = resolver.mo7787resolveDPcqOEQ(fontFamily, fontWeight, m7818unboximpl, m7734getFontSynthesisZQGJjVo != null ? m7734getFontSynthesisZQGJjVo.m7831unboximpl() : FontSynthesis.Companion.m7832getAllGVVA2EU());
+            FontStyle m7035getFontStyle4Lr2A7w = textStyle2.m7035getFontStyle4Lr2A7w();
+            int m7118unboximpl = m7035getFontStyle4Lr2A7w != null ? m7035getFontStyle4Lr2A7w.m7118unboximpl() : FontStyle.Companion.m7122getNormal_LCdwA();
+            FontSynthesis m7036getFontSynthesisZQGJjVo = textStyle2.m7036getFontSynthesisZQGJjVo();
+            rememberedValue2 = resolver.mo7088resolveDPcqOEQ(fontFamily, fontWeight, m7118unboximpl, m7036getFontSynthesisZQGJjVo != null ? m7036getFontSynthesisZQGJjVo.m7131unboximpl() : FontSynthesis.Companion.m7132getAllGVVA2EU());
             composer.updateRememberedValue(rememberedValue2);
         }
         State state = rememberedValue2;
@@ -123,9 +121,9 @@ public final class TextFieldSizeKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MeasureResult textFieldMinSize$lambda$0$4$0(TextFieldSize textFieldSize, MeasureScope measureScope, Measurable measurable, Constraints constraints) {
-        long m1463getMinSizeYbymL2g = textFieldSize.m1463getMinSizeYbymL2g();
-        final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(Constraints.m8201copyZbe2FdA$default(constraints.m8217unboximpl(), RangesKt.coerceIn((int) (m1463getMinSizeYbymL2g >> 32), Constraints.m8213getMinWidthimpl(constraints.m8217unboximpl()), Constraints.m8211getMaxWidthimpl(constraints.m8217unboximpl())), 0, RangesKt.coerceIn((int) (m1463getMinSizeYbymL2g & 4294967295L), Constraints.m8212getMinHeightimpl(constraints.m8217unboximpl()), Constraints.m8210getMaxHeightimpl(constraints.m8217unboximpl())), 0, 10, null));
-        return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.TextFieldSizeKt$$ExternalSyntheticLambda2
+        long m1285getMinSizeYbymL2g = textFieldSize.m1285getMinSizeYbymL2g();
+        final Placeable mo6216measureBRTryo0 = measurable.mo6216measureBRTryo0(Constraints.m7498copyZbe2FdA$default(constraints.m7514unboximpl(), RangesKt.coerceIn((int) (m1285getMinSizeYbymL2g >> 32), Constraints.m7510getMinWidthimpl(constraints.m7514unboximpl()), Constraints.m7508getMaxWidthimpl(constraints.m7514unboximpl())), 0, RangesKt.coerceIn((int) (m1285getMinSizeYbymL2g & 4294967295L), Constraints.m7509getMinHeightimpl(constraints.m7514unboximpl()), Constraints.m7507getMaxHeightimpl(constraints.m7514unboximpl())), 0, 10, null));
+        return MeasureScope.layout$default(measureScope, mo6216measureBRTryo0.getWidth(), mo6216measureBRTryo0.getHeight(), null, new Function1() { // from class: androidx.compose.foundation.text.TextFieldSizeKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit textFieldMinSize$lambda$0$4$0$0;

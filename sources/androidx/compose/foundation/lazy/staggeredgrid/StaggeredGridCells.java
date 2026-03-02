@@ -55,7 +55,7 @@ public interface StaggeredGridCells {
 
         private Adaptive(float f) {
             this.minSize = f;
-            if (Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl((float) 0)) > 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl((float) 0)) > 0) {
                 return;
             }
             InlineClassHelperKt.throwIllegalArgumentException("invalid minSize");
@@ -64,16 +64,16 @@ public interface StaggeredGridCells {
         @Override // androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
         public int[] calculateCrossAxisCellSizes(Density density, int i, int i2) {
             int[] calculateCellsCrossAxisSizeImpl;
-            calculateCellsCrossAxisSizeImpl = LazyStaggeredGridCellsKt.calculateCellsCrossAxisSizeImpl(i, Math.max((i + i2) / (density.mo458roundToPx0680j_4(this.minSize) + i2), 1), i2);
+            calculateCellsCrossAxisSizeImpl = LazyStaggeredGridCellsKt.calculateCellsCrossAxisSizeImpl(i, Math.max((i + i2) / (density.mo399roundToPx0680j_4(this.minSize) + i2), 1), i2);
             return calculateCellsCrossAxisSizeImpl;
         }
 
         public int hashCode() {
-            return Dp.m8264hashCodeimpl(this.minSize);
+            return Dp.m7561hashCodeimpl(this.minSize);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof Adaptive) && Dp.m8263equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
+            return (obj instanceof Adaptive) && Dp.m7560equalsimpl0(this.minSize, ((Adaptive) obj).minSize);
         }
     }
 
@@ -94,14 +94,14 @@ public interface StaggeredGridCells {
 
         @Override // androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
         public int[] calculateCrossAxisCellSizes(Density density, int i, int i2) {
-            int mo458roundToPx0680j_4 = density.mo458roundToPx0680j_4(this.size);
-            int i3 = mo458roundToPx0680j_4 + i2;
+            int mo399roundToPx0680j_4 = density.mo399roundToPx0680j_4(this.size);
+            int i3 = mo399roundToPx0680j_4 + i2;
             int i4 = i2 + i;
             if (i3 < i4) {
                 int i5 = i4 / i3;
                 int[] iArr = new int[i5];
                 for (int i6 = 0; i6 < i5; i6++) {
-                    iArr[i6] = mo458roundToPx0680j_4;
+                    iArr[i6] = mo399roundToPx0680j_4;
                 }
                 return iArr;
             }
@@ -109,11 +109,11 @@ public interface StaggeredGridCells {
         }
 
         public int hashCode() {
-            return Dp.m8264hashCodeimpl(this.size);
+            return Dp.m7561hashCodeimpl(this.size);
         }
 
         public boolean equals(Object obj) {
-            return (obj instanceof FixedSize) && Dp.m8263equalsimpl0(this.size, ((FixedSize) obj).size);
+            return (obj instanceof FixedSize) && Dp.m7560equalsimpl0(this.size, ((FixedSize) obj).size);
         }
     }
 }

@@ -20,38 +20,38 @@ import kotlin.jvm.functions.Function1;
 /* loaded from: classes.dex */
 public final class ShadowKt {
     /* renamed from: shadow-ziNgDLE$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m5024shadowziNgDLE$default(Modifier modifier, float f, Shape shape, boolean z, int i, Object obj) {
+    public static /* synthetic */ Modifier m4372shadowziNgDLE$default(Modifier modifier, float f, Shape shape, boolean z, int i, Object obj) {
         if ((i & 2) != 0) {
             shape = RectangleShapeKt.getRectangleShape();
         }
         if ((i & 4) != 0) {
             z = false;
-            if (Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl(0)) > 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) > 0) {
                 z = true;
             }
         }
-        return m5023shadowziNgDLE(modifier, f, shape, z);
+        return m4371shadowziNgDLE(modifier, f, shape, z);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Replace with shadow which accepts ambientColor and spotColor parameters", replaceWith = @ReplaceWith(expression = "Modifier.shadow(elevation, shape, clip, DefaultShadowColor, DefaultShadowColor)", imports = {"androidx.compose.ui.draw"}))
     /* renamed from: shadow-ziNgDLE  reason: not valid java name */
-    public static final /* synthetic */ Modifier m5023shadowziNgDLE(Modifier modifier, float f, Shape shape, boolean z) {
-        return m5021shadows4CzXII(modifier, f, shape, z, GraphicsLayerScopeKt.getDefaultShadowColor(), GraphicsLayerScopeKt.getDefaultShadowColor());
+    public static final /* synthetic */ Modifier m4371shadowziNgDLE(Modifier modifier, float f, Shape shape, boolean z) {
+        return m4369shadows4CzXII(modifier, f, shape, z, GraphicsLayerScopeKt.getDefaultShadowColor(), GraphicsLayerScopeKt.getDefaultShadowColor());
     }
 
     /* renamed from: shadow-s4CzXII$default  reason: not valid java name */
-    public static /* synthetic */ Modifier m5022shadows4CzXII$default(Modifier modifier, float f, Shape shape, boolean z, long j, long j2, int i, Object obj) {
+    public static /* synthetic */ Modifier m4370shadows4CzXII$default(Modifier modifier, float f, Shape shape, boolean z, long j, long j2, int i, Object obj) {
         boolean z2;
         Shape rectangleShape = (i & 2) != 0 ? RectangleShapeKt.getRectangleShape() : shape;
         if ((i & 4) != 0) {
             z2 = false;
-            if (Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl(0)) > 0) {
+            if (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl(0)) > 0) {
                 z2 = true;
             }
         } else {
             z2 = z;
         }
-        return m5021shadows4CzXII(modifier, f, rectangleShape, z2, (i & 8) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : j, (i & 16) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : j2);
+        return m4369shadows4CzXII(modifier, f, rectangleShape, z2, (i & 8) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : j, (i & 16) != 0 ? GraphicsLayerScopeKt.getDefaultShadowColor() : j2);
     }
 
     public static final Modifier dropShadow(Modifier modifier, Shape shape, Shadow shadow) {
@@ -74,15 +74,15 @@ public final class ShadowKt {
     public static final void resetShadow(ShadowScope shadowScope) {
         shadowScope.setRadius(0.0f);
         shadowScope.setSpread(0.0f);
-        shadowScope.mo4943setOffsetk4lQ0M(Offset.Companion.m5195getZeroF1C5BW0());
-        shadowScope.mo4942setColor8_81llA(Color.Companion.m5450getBlack0d7_KjU());
+        shadowScope.mo4291setOffsetk4lQ0M(Offset.Companion.m4543getZeroF1C5BW0());
+        shadowScope.mo4290setColor8_81llA(Color.Companion.m4798getBlack0d7_KjU());
         shadowScope.setBrush(null);
         shadowScope.setAlpha(1.0f);
-        shadowScope.mo4941setBlendModes9anfk8(BlendMode.Companion.m5364getSrcOver0nO6VwU());
+        shadowScope.mo4289setBlendModes9anfk8(BlendMode.Companion.m4712getSrcOver0nO6VwU());
     }
 
     /* renamed from: shadow-s4CzXII  reason: not valid java name */
-    public static final Modifier m5021shadows4CzXII(Modifier modifier, float f, Shape shape, boolean z, long j, long j2) {
-        return (Dp.m8257compareTo0680j_4(f, Dp.m8258constructorimpl((float) 0)) > 0 || z) ? modifier.then(new ShadowGraphicsLayerElement(f, shape, z, j, j2, null)) : modifier;
+    public static final Modifier m4369shadows4CzXII(Modifier modifier, float f, Shape shape, boolean z, long j, long j2) {
+        return (Dp.m7554compareTo0680j_4(f, Dp.m7555constructorimpl((float) 0)) > 0 || z) ? modifier.then(new ShadowGraphicsLayerElement(f, shape, z, j, j2, null)) : modifier;
     }
 }

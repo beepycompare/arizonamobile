@@ -96,12 +96,12 @@ public final class ActiveMatchFoundConfigPending extends SharedTransitionStateMa
 
     @Override // androidx.compose.animation.SharedTransitionStateMachine.State
     /* renamed from: configureActiveMatch-38uP1EE */
-    public SharedTransitionStateMachine.State mo49configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
+    public SharedTransitionStateMachine.State mo36configureActiveMatch38uP1EE(SharedElement sharedElement, BoundsProvider boundsProvider, long j, long j2, long j3) {
         long j4;
         SharedElementEntry sharedElementEntry;
         TargetData targetData = getTargetData();
         if (targetData == null) {
-            targetData = new TargetData(j, Offset.m5183minusMKHz9U(j2, j3), j3, null);
+            targetData = new TargetData(j, Offset.m4531minusMKHz9U(j2, j3), j3, null);
         }
         Rect currentBounds = getCurrentBounds();
         if (currentBounds == null) {
@@ -127,15 +127,15 @@ public final class ActiveMatchFoundConfigPending extends SharedTransitionStateMa
             currentBounds = SharedTransitionStateMachineKt.obtainBoundsFromLastTarget(sharedElement, boundsProvider2);
             if (currentBounds == null) {
                 j4 = j2;
-                currentBounds = RectKt.m5219Recttz77jQw(j4, j);
+                currentBounds = RectKt.m4567Recttz77jQw(j4, j);
                 TargetData targetData2 = targetData;
-                SharedTransitionStateMachineKt.m144updateTargetDataBGTQxF0(targetData2, j, j4, j3, true);
+                SharedTransitionStateMachineKt.m131updateTargetDataBGTQxF0(targetData2, j, j4, j3, true);
                 return new ActiveMatchConfigured(targetData2, boundsProvider, currentBounds);
             }
         }
         j4 = j2;
         TargetData targetData22 = targetData;
-        SharedTransitionStateMachineKt.m144updateTargetDataBGTQxF0(targetData22, j, j4, j3, true);
+        SharedTransitionStateMachineKt.m131updateTargetDataBGTQxF0(targetData22, j, j4, j3, true);
         return new ActiveMatchConfigured(targetData22, boundsProvider, currentBounds);
     }
 

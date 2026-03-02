@@ -75,10 +75,12 @@ public final class BlockingFlowableMostRecent<T> implements Iterable<T> {
                     if (NotificationLite.isComplete(this.buf)) {
                         throw new NoSuchElementException();
                     }
-                    if (NotificationLite.isError(this.buf)) {
-                        throw ExceptionHelper.wrapOrThrow(NotificationLite.getError(this.buf));
+                    boolean isError = NotificationLite.isError(this.buf);
+                    Object obj = this.buf;
+                    if (isError) {
+                        throw ExceptionHelper.wrapOrThrow(NotificationLite.getError(obj));
                     }
-                    return (T) NotificationLite.getValue(this.buf);
+                    return (T) NotificationLite.getValue(obj);
                 } finally {
                     this.buf = null;
                 }

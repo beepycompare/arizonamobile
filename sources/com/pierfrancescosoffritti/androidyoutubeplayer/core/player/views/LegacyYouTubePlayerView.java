@@ -93,10 +93,12 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
 
             @Override // com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver.Listener
             public void onNetworkAvailable() {
-                if (!LegacyYouTubePlayerView.this.isYouTubePlayerReady$core_release()) {
-                    LegacyYouTubePlayerView.this.initialize.invoke();
+                boolean isYouTubePlayerReady$core_release = LegacyYouTubePlayerView.this.isYouTubePlayerReady$core_release();
+                LegacyYouTubePlayerView legacyYouTubePlayerView = LegacyYouTubePlayerView.this;
+                if (!isYouTubePlayerReady$core_release) {
+                    legacyYouTubePlayerView.initialize.invoke();
                 } else {
-                    LegacyYouTubePlayerView.this.playbackResumer.resume(LegacyYouTubePlayerView.this.getWebViewYouTubePlayer$core_release().getYoutubePlayer$core_release());
+                    legacyYouTubePlayerView.playbackResumer.resume(LegacyYouTubePlayerView.this.getWebViewYouTubePlayer$core_release().getYoutubePlayer$core_release());
                 }
             }
         });
@@ -136,9 +138,7 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
         Function0<Unit> function0 = new Function0() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                Unit initialize$lambda$2;
-                initialize$lambda$2 = LegacyYouTubePlayerView.initialize$lambda$2(LegacyYouTubePlayerView.this, playerOptions, str, youTubePlayerListener);
-                return initialize$lambda$2;
+                return LegacyYouTubePlayerView.initialize$lambda$2(LegacyYouTubePlayerView.this, playerOptions, str, youTubePlayerListener);
             }
         };
         this.initialize = function0;
@@ -148,20 +148,18 @@ public final class LegacyYouTubePlayerView extends SixteenByNineFrameLayout {
         function0.invoke();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initialize$lambda$2(LegacyYouTubePlayerView legacyYouTubePlayerView, IFramePlayerOptions iFramePlayerOptions, String str, final YouTubePlayerListener youTubePlayerListener) {
         legacyYouTubePlayerView.webViewYouTubePlayer.initialize$core_release(new Function1() { // from class: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.LegacyYouTubePlayerView$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                Unit initialize$lambda$2$lambda$1;
-                initialize$lambda$2$lambda$1 = LegacyYouTubePlayerView.initialize$lambda$2$lambda$1(YouTubePlayerListener.this, (YouTubePlayer) obj);
-                return initialize$lambda$2$lambda$1;
+                return LegacyYouTubePlayerView.initialize$lambda$2$lambda$1(YouTubePlayerListener.this, (YouTubePlayer) obj);
             }
         }, iFramePlayerOptions, str);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit initialize$lambda$2$lambda$1(YouTubePlayerListener youTubePlayerListener, YouTubePlayer it) {
         Intrinsics.checkNotNullParameter(it, "it");
         it.addListener(youTubePlayerListener);

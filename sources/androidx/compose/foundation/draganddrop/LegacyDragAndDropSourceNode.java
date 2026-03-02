@@ -28,7 +28,7 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
     public static final int $stable = 8;
     private Function2<? super DragAndDropSourceScope, ? super Continuation<? super Unit>, ? extends Object> dragAndDropSourceHandler;
     private Function1<? super DrawScope, Unit> drawDragDecoration;
-    private long size = IntSize.Companion.m8434getZeroYbymL2g();
+    private long size = IntSize.Companion.m7731getZeroYbymL2g();
 
     public LegacyDragAndDropSourceNode(Function1<? super DrawScope, Unit> function1, Function2<? super DragAndDropSourceScope, ? super Continuation<? super Unit>, ? extends Object> function2) {
         this.drawDragDecoration = function1;
@@ -57,8 +57,8 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.ui.input.pointer.PointerInputScope
                 /* renamed from: getExtendedTouchPadding-NH-jbRc */
-                public long mo454getExtendedTouchPaddingNHjbRc() {
-                    return this.$$delegate_0.mo454getExtendedTouchPaddingNHjbRc();
+                public long mo395getExtendedTouchPaddingNHjbRc() {
+                    return this.$$delegate_0.mo395getExtendedTouchPaddingNHjbRc();
                 }
 
                 @Override // androidx.compose.ui.unit.FontScaling
@@ -73,8 +73,8 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.ui.input.pointer.PointerInputScope
                 /* renamed from: getSize-YbymL2g */
-                public long mo455getSizeYbymL2g() {
-                    return this.$$delegate_0.mo455getSizeYbymL2g();
+                public long mo396getSizeYbymL2g() {
+                    return this.$$delegate_0.mo396getSizeYbymL2g();
                 }
 
                 @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -84,14 +84,14 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: roundToPx--R2X_6o */
-                public int mo457roundToPxR2X_6o(long j) {
-                    return this.$$delegate_0.mo457roundToPxR2X_6o(j);
+                public int mo398roundToPxR2X_6o(long j) {
+                    return this.$$delegate_0.mo398roundToPxR2X_6o(j);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: roundToPx-0680j_4 */
-                public int mo458roundToPx0680j_4(float f) {
-                    return this.$$delegate_0.mo458roundToPx0680j_4(f);
+                public int mo399roundToPx0680j_4(float f) {
+                    return this.$$delegate_0.mo399roundToPx0680j_4(f);
                 }
 
                 @Override // androidx.compose.ui.input.pointer.PointerInputScope
@@ -101,38 +101,38 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.ui.unit.FontScaling
                 /* renamed from: toDp-GaN1DYA */
-                public float mo459toDpGaN1DYA(long j) {
-                    return this.$$delegate_0.mo459toDpGaN1DYA(j);
+                public float mo400toDpGaN1DYA(long j) {
+                    return this.$$delegate_0.mo400toDpGaN1DYA(j);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toDp-u2uoSUM */
-                public float mo460toDpu2uoSUM(float f) {
-                    return this.$$delegate_0.mo460toDpu2uoSUM(f);
+                public float mo401toDpu2uoSUM(float f) {
+                    return this.$$delegate_0.mo401toDpu2uoSUM(f);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toDp-u2uoSUM */
-                public float mo461toDpu2uoSUM(int i) {
-                    return this.$$delegate_0.mo461toDpu2uoSUM(i);
+                public float mo402toDpu2uoSUM(int i) {
+                    return this.$$delegate_0.mo402toDpu2uoSUM(i);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toDpSize-k-rfVVM */
-                public long mo462toDpSizekrfVVM(long j) {
-                    return this.$$delegate_0.mo462toDpSizekrfVVM(j);
+                public long mo403toDpSizekrfVVM(long j) {
+                    return this.$$delegate_0.mo403toDpSizekrfVVM(j);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toPx--R2X_6o */
-                public float mo463toPxR2X_6o(long j) {
-                    return this.$$delegate_0.mo463toPxR2X_6o(j);
+                public float mo404toPxR2X_6o(long j) {
+                    return this.$$delegate_0.mo404toPxR2X_6o(j);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toPx-0680j_4 */
-                public float mo464toPx0680j_4(float f) {
-                    return this.$$delegate_0.mo464toPx0680j_4(f);
+                public float mo405toPx0680j_4(float f) {
+                    return this.$$delegate_0.mo405toPx0680j_4(f);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
@@ -142,26 +142,26 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toSize-XkaWNTQ */
-                public long mo465toSizeXkaWNTQ(long j) {
-                    return this.$$delegate_0.mo465toSizeXkaWNTQ(j);
+                public long mo406toSizeXkaWNTQ(long j) {
+                    return this.$$delegate_0.mo406toSizeXkaWNTQ(j);
                 }
 
                 @Override // androidx.compose.ui.unit.FontScaling
                 /* renamed from: toSp-0xMU5do */
-                public long mo466toSp0xMU5do(float f) {
-                    return this.$$delegate_0.mo466toSp0xMU5do(f);
+                public long mo407toSp0xMU5do(float f) {
+                    return this.$$delegate_0.mo407toSp0xMU5do(f);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toSp-kPz2Gy4 */
-                public long mo467toSpkPz2Gy4(float f) {
-                    return this.$$delegate_0.mo467toSpkPz2Gy4(f);
+                public long mo408toSpkPz2Gy4(float f) {
+                    return this.$$delegate_0.mo408toSpkPz2Gy4(f);
                 }
 
                 @Override // androidx.compose.ui.unit.Density
                 /* renamed from: toSp-kPz2Gy4 */
-                public long mo468toSpkPz2Gy4(int i) {
-                    return this.$$delegate_0.mo468toSpkPz2Gy4(i);
+                public long mo409toSpkPz2Gy4(int i) {
+                    return this.$$delegate_0.mo409toSpkPz2Gy4(i);
                 }
 
                 C00051(PointerInputScope pointerInputScope, DragAndDropModifierNode dragAndDropModifierNode, LegacyDragAndDropSourceNode legacyDragAndDropSourceNode) {
@@ -172,7 +172,7 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
                 @Override // androidx.compose.foundation.draganddrop.DragAndDropSourceScope
                 public void startTransfer(DragAndDropTransferData dragAndDropTransferData) {
-                    this.$dragAndDropModifierNode.mo4930drag12SF9DM(dragAndDropTransferData, IntSizeKt.m8441toSizeozmzZPI(mo455getSizeYbymL2g()), this.this$0.getDrawDragDecoration());
+                    this.$dragAndDropModifierNode.mo4278drag12SF9DM(dragAndDropTransferData, IntSizeKt.m7738toSizeozmzZPI(mo396getSizeYbymL2g()), this.this$0.getDrawDragDecoration());
                 }
             }
 
@@ -202,7 +202,7 @@ public final class LegacyDragAndDropSourceNode extends DelegatingNode implements
 
     @Override // androidx.compose.ui.node.LayoutAwareModifierNode
     /* renamed from: onRemeasured-ozmzZPI */
-    public void mo453onRemeasuredozmzZPI(long j) {
+    public void mo394onRemeasuredozmzZPI(long j) {
         this.size = j;
     }
 }

@@ -18,7 +18,7 @@ public final class P implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f1516a;
-    public final C0802o b;
+    public final C0801o b;
     public final String c;
     public final AppUpdateParams d;
     public final Function1<AppUpdateInfo, Unit> e;
@@ -33,7 +33,7 @@ public final class P implements ServiceConnection {
         }
     }
 
-    public P(Context context, C0802o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0813z onSuccess, A onError) {
+    public P(Context context, C0801o appUpdateInfoMapper, String applicationId, AppUpdateParams appUpdateParams, C0812z onSuccess, A onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(appUpdateInfoMapper, "appUpdateInfoMapper");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");

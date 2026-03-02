@@ -51,7 +51,7 @@ public final class DialogNavigator extends Navigator<Destination> {
 
     @Override // androidx.navigation.Navigator
     public Destination createDestination() {
-        return new Destination(this, null, ComposableSingletons$DialogNavigatorKt.INSTANCE.m9118getLambda$1092249270$navigation_compose_release(), 2, null);
+        return new Destination(this, null, ComposableSingletons$DialogNavigatorKt.INSTANCE.m8390getLambda$1092249270$navigation_compose_release(), 2, null);
     }
 
     @Override // androidx.navigation.Navigator

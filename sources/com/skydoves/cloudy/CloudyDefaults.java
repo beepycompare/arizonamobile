@@ -12,13 +12,13 @@ public final class CloudyDefaults {
     public static final float EDGES_FADE_DISTANCE = 0.2f;
     public static final float PROGRESSIVE_FADE_END = 0.5f;
     public static final CloudyDefaults INSTANCE = new CloudyDefaults();
-    private static final long DefaultScrimColor = Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null);
+    private static final long DefaultScrimColor = Color.m4771copywmQWz5c$default(Color.Companion.m4798getBlack0d7_KjU(), 0.3f, 0.0f, 0.0f, 0.0f, 14, null);
 
     private CloudyDefaults() {
     }
 
     /* renamed from: getDefaultScrimColor-0d7_KjU  reason: not valid java name */
-    public final long m10199getDefaultScrimColor0d7_KjU() {
+    public final long m9142getDefaultScrimColor0d7_KjU() {
         return DefaultScrimColor;
     }
 }

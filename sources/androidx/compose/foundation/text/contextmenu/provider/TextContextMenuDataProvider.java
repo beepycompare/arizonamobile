@@ -13,5 +13,5 @@ public interface TextContextMenuDataProvider {
     TextContextMenuData data();
 
     /* renamed from: position-tuRUvjQ */
-    long mo1514positiontuRUvjQ(LayoutCoordinates layoutCoordinates);
+    long mo1319positiontuRUvjQ(LayoutCoordinates layoutCoordinates);
 }

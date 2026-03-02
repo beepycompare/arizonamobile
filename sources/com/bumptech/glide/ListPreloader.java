@@ -66,7 +66,11 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
             this.isIncreasing = z;
             cancelAll();
         }
-        preload(i, (z ? this.maxPreload : -this.maxPreload) + i);
+        int i2 = this.maxPreload;
+        if (!z) {
+            i2 = -i2;
+        }
+        preload(i, i2 + i);
     }
 
     private void preload(int i, int i2) {

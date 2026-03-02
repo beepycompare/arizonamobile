@@ -143,10 +143,12 @@ final class zzln implements zzov {
 
     @Override // com.google.android.gms.internal.measurement.zzov
     public final void zzv(int i, Object obj) throws IOException {
-        if (obj instanceof zzlh) {
-            this.zza.zzn(i, (zzlh) obj);
+        boolean z = obj instanceof zzlh;
+        zzlm zzlmVar = this.zza;
+        if (z) {
+            zzlmVar.zzn(i, (zzlh) obj);
         } else {
-            this.zza.zzm(i, (zznm) obj);
+            zzlmVar.zzm(i, (zznm) obj);
         }
     }
 
@@ -163,10 +165,12 @@ final class zzln implements zzov {
         zzmx zzmxVar = (zzmx) list;
         while (i2 < list.size()) {
             Object zzc = zzmxVar.zzc();
-            if (zzc instanceof String) {
-                this.zza.zzh(i, (String) zzc);
+            boolean z = zzc instanceof String;
+            zzlm zzlmVar = this.zza;
+            if (z) {
+                zzlmVar.zzh(i, (String) zzc);
             } else {
-                this.zza.zzi(i, (zzlh) zzc);
+                zzlmVar.zzi(i, (zzlh) zzc);
             }
             i2++;
         }

@@ -608,10 +608,16 @@ public class TextLayer extends BaseLayer {
     }
 
     private TextSubLine ensureEnoughSubLines(int i) {
-        for (int size = this.textSubLines.size(); size < i; size++) {
-            this.textSubLines.add(new TextSubLine());
+        int size = this.textSubLines.size();
+        while (true) {
+            List<TextSubLine> list = this.textSubLines;
+            if (size < i) {
+                list.add(new TextSubLine());
+                size++;
+            } else {
+                return list.get(i - 1);
+            }
         }
-        return this.textSubLines.get(i - 1);
     }
 
     private void drawCharacterAsGlyph(FontCharacter fontCharacter, float f, DocumentData documentData, Canvas canvas, int i, int i2) {

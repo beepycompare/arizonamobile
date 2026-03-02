@@ -58,25 +58,25 @@ public final class BasicSecureTextFieldKt {
     private static final char DefaultObfuscationCharacter = 8226;
     private static final long LAST_TYPED_CHARACTER_REVEAL_DURATION_MILLIS = 1500;
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicSecureTextField_Jb9bMDk$lambda$0(TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, int i2, int i3, int i4, Composer composer, int i5) {
-        m1295BasicSecureTextFieldJb9bMDk(textFieldState, modifier, z, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1135BasicSecureTextFieldJb9bMDk(textFieldState, modifier, z, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicSecureTextField_egD4TGM$lambda$0(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, int i2, int i3, int i4, Composer composer, int i5) {
-        m1296BasicSecureTextFieldegD4TGM(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1136BasicSecureTextFieldegD4TGM(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicSecureTextField_ltb6GB4$lambda$7(TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, ScrollState scrollState, int i2, int i3, int i4, Composer composer, int i5) {
-        m1297BasicSecureTextFieldltb6GB4(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
+        m1137BasicSecureTextFieldltb6GB4(textFieldState, modifier, z, z2, inputTransformation, textStyle, keyboardOptions, keyboardActionHandler, function2, mutableInteractionSource, brush, textFieldDecorator, i, c, scrollState, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), RecomposeScopeImplKt.updateChangedFlags(i3), i4);
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit DisableCutCopy$lambda$1(Function2 function2, int i, Composer composer, int i2) {
         DisableCutCopy(function2, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
@@ -120,7 +120,7 @@ public final class BasicSecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m1297BasicSecureTextFieldltb6GB4(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, ScrollState scrollState, Composer composer, final int i2, final int i3, final int i4) {
+    public static final void m1137BasicSecureTextFieldltb6GB4(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2<? super Density, ? super Function0<TextLayoutResult>, Unit> function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, ScrollState scrollState, Composer composer, final int i2, final int i3, final int i4) {
         int i5;
         Object obj;
         int i6;
@@ -339,7 +339,7 @@ public final class BasicSecureTextFieldKt {
                                         if (i17 != 0) {
                                             keyboardOptions2 = obj4;
                                             z7 = z3;
-                                            solidColor = new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null);
+                                            solidColor = new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null);
                                         } else {
                                             keyboardOptions2 = obj4;
                                             z7 = z3;
@@ -404,7 +404,7 @@ public final class BasicSecureTextFieldKt {
                                     }
                                     ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                                     EffectsKt.LaunchedEffect(secureTextFieldController, (Function2) rememberedValue2, startRestartGroup, 0);
-                                    if (TextObfuscationMode.m1555equalsimpl0(i24, TextObfuscationMode.Companion.m1560getRevealLastTypedvTwcZD0())) {
+                                    if (TextObfuscationMode.m1354equalsimpl0(i24, TextObfuscationMode.Companion.m1359getRevealLastTypedvTwcZD0())) {
                                         startRestartGroup.startReplaceGroup(74207180);
                                         ComposerKt.sourceInformation(startRestartGroup, "152@8922L31");
                                         z10 = BasicSecureTextField_androidKt.platformAllowsRevealLastTyped(startRestartGroup, 0);
@@ -432,10 +432,10 @@ public final class BasicSecureTextFieldKt {
                                     boolean z11 = (((i25 & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && startRestartGroup.changed(i24)) || (i25 & RendererCapabilities.DECODER_SUPPORT_MASK) == 256;
                                     Object rememberedValue4 = startRestartGroup.rememberedValue();
                                     if (z11 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                                        if (TextObfuscationMode.m1555equalsimpl0(i24, TextObfuscationMode.Companion.m1560getRevealLastTypedvTwcZD0())) {
+                                        if (TextObfuscationMode.m1354equalsimpl0(i24, TextObfuscationMode.Companion.m1359getRevealLastTypedvTwcZD0())) {
                                             codepointTransformation = secureTextFieldController.getCodepointTransformation();
                                         } else {
-                                            codepointTransformation = TextObfuscationMode.m1555equalsimpl0(i24, TextObfuscationMode.Companion.m1559getHiddenvTwcZD0()) ? new CodepointTransformation() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda3
+                                            codepointTransformation = TextObfuscationMode.m1354equalsimpl0(i24, TextObfuscationMode.Companion.m1358getHiddenvTwcZD0()) ? new CodepointTransformation() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda3
                                                 @Override // androidx.compose.foundation.text.input.internal.CodepointTransformation
                                                 public final int transform(int i31, int i32) {
                                                     int BasicSecureTextField_ltb6GB4$lambda$3$0;
@@ -470,13 +470,13 @@ public final class BasicSecureTextFieldKt {
                                         rememberedValue6 = new Function1<KeyEvent, Boolean>() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$BasicSecureTextField$secureTextFieldModifier$2$1
                                             @Override // kotlin.jvm.functions.Function1
                                             public /* bridge */ /* synthetic */ Boolean invoke(KeyEvent keyEvent) {
-                                                return m1298invokeZmokQxo(keyEvent.m6576unboximpl());
+                                                return m1138invokeZmokQxo(keyEvent.m5917unboximpl());
                                             }
 
                                             /* renamed from: invoke-ZmokQxo  reason: not valid java name */
-                                            public final Boolean m1298invokeZmokQxo(android.view.KeyEvent keyEvent) {
-                                                KeyCommand mo1373mapZmokQxo = KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1373mapZmokQxo(keyEvent);
-                                                return Boolean.valueOf(mo1373mapZmokQxo == KeyCommand.COPY || mo1373mapZmokQxo == KeyCommand.CUT);
+                                            public final Boolean m1138invokeZmokQxo(android.view.KeyEvent keyEvent) {
+                                                KeyCommand mo1200mapZmokQxo = KeyMapping_androidKt.getPlatformDefaultKeyMapping().mo1200mapZmokQxo(keyEvent);
+                                                return Boolean.valueOf(mo1200mapZmokQxo == KeyCommand.COPY || mo1200mapZmokQxo == KeyCommand.CUT);
                                             }
                                         };
                                         startRestartGroup.updateRememberedValue(rememberedValue6);
@@ -494,9 +494,7 @@ public final class BasicSecureTextFieldKt {
                                     DisableCutCopy(ComposableLambdaKt.rememberComposableLambda(135148049, true, new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda5
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj5, Object obj6) {
-                                            Unit BasicSecureTextField_ltb6GB4$lambda$6;
-                                            BasicSecureTextField_ltb6GB4$lambda$6 = BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$6(z12, obj2, secureTextFieldController, textFieldState, then, z8, z9, textStyle4, keyboardOptions3, keyboardActionHandler3, function23, mutableInteractionSource3, brush3, codepointTransformation2, textFieldDecorator3, scrollState3, (Composer) obj5, ((Integer) obj6).intValue());
-                                            return BasicSecureTextField_ltb6GB4$lambda$6;
+                                            return BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$6(z12, obj2, secureTextFieldController, textFieldState, then, z8, z9, textStyle4, keyboardOptions3, keyboardActionHandler3, function23, mutableInteractionSource3, brush3, codepointTransformation2, textFieldDecorator3, scrollState3, (Composer) obj5, ((Integer) obj6).intValue());
                                         }
                                     }, startRestartGroup, 54), startRestartGroup, 6);
                                     if (ComposerKt.isTraceInProgress()) {
@@ -539,9 +537,7 @@ public final class BasicSecureTextFieldKt {
                                     endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda6
                                         @Override // kotlin.jvm.functions.Function2
                                         public final Object invoke(Object obj5, Object obj6) {
-                                            Unit BasicSecureTextField_ltb6GB4$lambda$7;
-                                            BasicSecureTextField_ltb6GB4$lambda$7 = BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$7(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, obj4, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, scrollState2, i2, i3, i4, (Composer) obj5, ((Integer) obj6).intValue());
-                                            return BasicSecureTextField_ltb6GB4$lambda$7;
+                                            return BasicSecureTextFieldKt.BasicSecureTextField_ltb6GB4$lambda$7(TextFieldState.this, modifier2, z5, z6, inputTransformation2, textStyle2, obj4, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, scrollState2, i2, i3, i4, (Composer) obj5, ((Integer) obj6).intValue());
                                         }
                                     });
                                     return;
@@ -791,7 +787,7 @@ public final class BasicSecureTextFieldKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BasicSecureTextField_ltb6GB4$lambda$6(boolean z, InputTransformation inputTransformation, SecureTextFieldController secureTextFieldController, TextFieldState textFieldState, Modifier modifier, boolean z2, boolean z3, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, CodepointTransformation codepointTransformation, TextFieldDecorator textFieldDecorator, ScrollState scrollState, Composer composer, int i) {
         ComposerKt.sourceInformation(composer, "C192@10377L875:BasicSecureTextField.kt#423gt5");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
@@ -876,9 +872,7 @@ public final class BasicSecureTextFieldKt {
             endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit DisableCutCopy$lambda$1;
-                    DisableCutCopy$lambda$1 = BasicSecureTextFieldKt.DisableCutCopy$lambda$1(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
-                    return DisableCutCopy$lambda$1;
+                    return BasicSecureTextFieldKt.DisableCutCopy$lambda$1(Function2.this, i, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }
@@ -916,7 +910,7 @@ public final class BasicSecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1295BasicSecureTextFieldJb9bMDk(final TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1135BasicSecureTextFieldJb9bMDk(final TextFieldState textFieldState, Modifier modifier, boolean z, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
         Object obj;
         int i5;
         Object obj2;
@@ -1094,9 +1088,9 @@ public final class BasicSecureTextFieldKt {
                                         KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : obj6;
                                         Function2 function23 = i12 != 0 ? null : function2;
                                         MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
-                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null) : brush;
+                                        SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null) : brush;
                                         TextFieldDecorator textFieldDecorator3 = i17 != 0 ? null : textFieldDecorator;
-                                        int m1560getRevealLastTypedvTwcZD0 = i20 != 0 ? TextObfuscationMode.Companion.m1560getRevealLastTypedvTwcZD0() : i;
+                                        int m1359getRevealLastTypedvTwcZD0 = i20 != 0 ? TextObfuscationMode.Companion.m1359getRevealLastTypedvTwcZD0() : i;
                                         char c3 = i21 != 0 ? (char) 8226 : c;
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventStart(1399310985, i5, i22, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:363)");
@@ -1104,7 +1098,7 @@ public final class BasicSecureTextFieldKt {
                                         int i28 = i5 << 3;
                                         int i29 = i22 << 3;
                                         composer2 = startRestartGroup;
-                                        m1297BasicSecureTextFieldltb6GB4(obj, companion, z4, false, inputTransformation3, textStyle3, secureTextField$foundation, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1560getRevealLastTypedvTwcZD0, c3, null, composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i28) | (458752 & i28) | (3670016 & i28) | (29360128 & i28) | (234881024 & i28) | (i28 & 1879048192), ((i5 >> 27) & 14) | (i29 & 112) | (i29 & 896) | (i29 & 7168), 16384);
+                                        m1137BasicSecureTextFieldltb6GB4(obj, companion, z4, false, inputTransformation3, textStyle3, secureTextField$foundation, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1359getRevealLastTypedvTwcZD0, c3, null, composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i28) | (458752 & i28) | (3670016 & i28) | (29360128 & i28) | (234881024 & i28) | (i28 & 1879048192), ((i5 >> 27) & 14) | (i29 & 112) | (i29 & 896) | (i29 & 7168), 16384);
                                         if (ComposerKt.isTraceInProgress()) {
                                             ComposerKt.traceEventEnd();
                                         }
@@ -1118,7 +1112,7 @@ public final class BasicSecureTextFieldKt {
                                         mutableInteractionSource2 = mutableInteractionSource3;
                                         brush2 = solidColor;
                                         textFieldDecorator2 = textFieldDecorator3;
-                                        i23 = m1560getRevealLastTypedvTwcZD0;
+                                        i23 = m1359getRevealLastTypedvTwcZD0;
                                         c2 = c3;
                                     }
                                     endRestartGroup = composer2.endRestartGroup();
@@ -1126,9 +1120,7 @@ public final class BasicSecureTextFieldKt {
                                         endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda2
                                             @Override // kotlin.jvm.functions.Function2
                                             public final Object invoke(Object obj7, Object obj8) {
-                                                Unit BasicSecureTextField_Jb9bMDk$lambda$0;
-                                                BasicSecureTextField_Jb9bMDk$lambda$0 = BasicSecureTextFieldKt.BasicSecureTextField_Jb9bMDk$lambda$0(TextFieldState.this, modifier2, z3, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj7, ((Integer) obj8).intValue());
-                                                return BasicSecureTextField_Jb9bMDk$lambda$0;
+                                                return BasicSecureTextFieldKt.BasicSecureTextField_Jb9bMDk$lambda$0(TextFieldState.this, modifier2, z3, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj7, ((Integer) obj8).intValue());
                                             }
                                         });
                                         return;
@@ -1395,7 +1387,7 @@ public final class BasicSecureTextFieldKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final /* synthetic */ void m1296BasicSecureTextFieldegD4TGM(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
+    public static final /* synthetic */ void m1136BasicSecureTextFieldegD4TGM(final TextFieldState textFieldState, Modifier modifier, boolean z, boolean z2, InputTransformation inputTransformation, TextStyle textStyle, KeyboardOptions keyboardOptions, KeyboardActionHandler keyboardActionHandler, Function2 function2, MutableInteractionSource mutableInteractionSource, Brush brush, TextFieldDecorator textFieldDecorator, int i, char c, Composer composer, final int i2, final int i3, final int i4) {
         Object obj;
         int i5;
         Object obj2;
@@ -1586,15 +1578,15 @@ public final class BasicSecureTextFieldKt {
                                 KeyboardActionHandler keyboardActionHandler3 = i10 != 0 ? null : keyboardActionHandler;
                                 Function2 function23 = i12 != 0 ? null : function2;
                                 MutableInteractionSource mutableInteractionSource3 = i14 != 0 ? null : mutableInteractionSource;
-                                SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m5450getBlack0d7_KjU(), null) : brush;
+                                SolidColor solidColor = i16 != 0 ? new SolidColor(Color.Companion.m4798getBlack0d7_KjU(), null) : brush;
                                 TextFieldDecorator textFieldDecorator3 = i18 != 0 ? null : textFieldDecorator;
-                                int m1560getRevealLastTypedvTwcZD0 = i19 != 0 ? TextObfuscationMode.Companion.m1560getRevealLastTypedvTwcZD0() : i;
+                                int m1359getRevealLastTypedvTwcZD0 = i19 != 0 ? TextObfuscationMode.Companion.m1359getRevealLastTypedvTwcZD0() : i;
                                 char c3 = i25 != 0 ? (char) 8226 : c;
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventStart(-817513499, i5, i22, "androidx.compose.foundation.text.BasicSecureTextField (BasicSecureTextField.kt:405)");
                                 }
                                 composer2 = startRestartGroup;
-                                m1297BasicSecureTextFieldltb6GB4(obj, companion, z6, false, inputTransformation3, textStyle3, secureTextField$foundation, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1560getRevealLastTypedvTwcZD0, c3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (1879048192 & i5), i22 & 8190, 0);
+                                m1137BasicSecureTextFieldltb6GB4(obj, companion, z6, false, inputTransformation3, textStyle3, secureTextField$foundation, keyboardActionHandler3, function23, mutableInteractionSource3, solidColor, textFieldDecorator3, m1359getRevealLastTypedvTwcZD0, c3, ScrollKt.rememberScrollState(0, startRestartGroup, 0, 1), composer2, (i5 & 14) | 3072 | (i5 & 112) | (i5 & 896) | (57344 & i5) | (458752 & i5) | (3670016 & i5) | (29360128 & i5) | (234881024 & i5) | (1879048192 & i5), i22 & 8190, 0);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }
@@ -1609,7 +1601,7 @@ public final class BasicSecureTextFieldKt {
                                 mutableInteractionSource2 = mutableInteractionSource3;
                                 brush2 = solidColor;
                                 textFieldDecorator2 = textFieldDecorator3;
-                                i23 = m1560getRevealLastTypedvTwcZD0;
+                                i23 = m1359getRevealLastTypedvTwcZD0;
                                 c2 = c3;
                             }
                             endRestartGroup = composer2.endRestartGroup();
@@ -1617,9 +1609,7 @@ public final class BasicSecureTextFieldKt {
                                 endRestartGroup.updateScope(new Function2() { // from class: androidx.compose.foundation.text.BasicSecureTextFieldKt$$ExternalSyntheticLambda0
                                     @Override // kotlin.jvm.functions.Function2
                                     public final Object invoke(Object obj6, Object obj7) {
-                                        Unit BasicSecureTextField_egD4TGM$lambda$0;
-                                        BasicSecureTextField_egD4TGM$lambda$0 = BasicSecureTextFieldKt.BasicSecureTextField_egD4TGM$lambda$0(TextFieldState.this, modifier2, z5, z4, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
-                                        return BasicSecureTextField_egD4TGM$lambda$0;
+                                        return BasicSecureTextFieldKt.BasicSecureTextField_egD4TGM$lambda$0(TextFieldState.this, modifier2, z5, z4, inputTransformation2, textStyle2, keyboardOptions2, keyboardActionHandler2, function22, mutableInteractionSource2, brush2, textFieldDecorator2, i23, c2, i2, i3, i4, (Composer) obj6, ((Integer) obj7).intValue());
                                     }
                                 });
                                 return;

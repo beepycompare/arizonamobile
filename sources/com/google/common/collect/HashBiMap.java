@@ -303,26 +303,27 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         int bucket = bucket(keyHash);
         int[] iArr = this.hashTableKToV;
         int i = iArr[bucket];
+        int[] iArr2 = this.nextInBucketKToV;
         if (i == entry) {
-            int[] iArr2 = this.nextInBucketKToV;
             iArr[bucket] = iArr2[entry];
             iArr2[entry] = -1;
             return;
         }
-        int i2 = this.nextInBucketKToV[i];
+        int i2 = iArr2[i];
         while (true) {
             int i3 = i;
             i = i2;
-            if (i == -1) {
-                throw new AssertionError("Expected to find entry with key " + this.keys[entry]);
-            }
-            if (i != entry) {
-                i2 = this.nextInBucketKToV[i];
-            } else {
+            if (i != -1) {
                 int[] iArr3 = this.nextInBucketKToV;
-                iArr3[i3] = iArr3[entry];
-                iArr3[entry] = -1;
-                return;
+                if (i != entry) {
+                    i2 = iArr3[i];
+                } else {
+                    iArr3[i3] = iArr3[entry];
+                    iArr3[entry] = -1;
+                    return;
+                }
+            } else {
+                throw new AssertionError("Expected to find entry with key " + this.keys[entry]);
             }
         }
     }
@@ -332,26 +333,27 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         int bucket = bucket(valueHash);
         int[] iArr = this.hashTableVToK;
         int i = iArr[bucket];
+        int[] iArr2 = this.nextInBucketVToK;
         if (i == entry) {
-            int[] iArr2 = this.nextInBucketVToK;
             iArr[bucket] = iArr2[entry];
             iArr2[entry] = -1;
             return;
         }
-        int i2 = this.nextInBucketVToK[i];
+        int i2 = iArr2[i];
         while (true) {
             int i3 = i;
             i = i2;
-            if (i == -1) {
-                throw new AssertionError("Expected to find entry with value " + this.values[entry]);
-            }
-            if (i != entry) {
-                i2 = this.nextInBucketVToK[i];
-            } else {
+            if (i != -1) {
                 int[] iArr3 = this.nextInBucketVToK;
-                iArr3[i3] = iArr3[entry];
-                iArr3[entry] = -1;
-                return;
+                if (i != entry) {
+                    i2 = iArr3[i];
+                } else {
+                    iArr3[i3] = iArr3[entry];
+                    iArr3[entry] = -1;
+                    return;
+                }
+            } else {
+                throw new AssertionError("Expected to find entry with value " + this.values[entry]);
             }
         }
     }
@@ -466,7 +468,9 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
 
     private void moveEntryToIndex(int src, int dest) {
         int i;
+        int[] iArr;
         int i2;
+        int[] iArr2;
         if (src == dest) {
             return;
         }
@@ -481,45 +485,47 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         kArr[dest] = k;
         vArr[dest] = v;
         int bucket = bucket(Hashing.smearedHash(k));
-        int[] iArr = this.hashTableKToV;
-        int i5 = iArr[bucket];
+        int[] iArr3 = this.hashTableKToV;
+        int i5 = iArr3[bucket];
         if (i5 == src) {
-            iArr[bucket] = dest;
+            iArr3[bucket] = dest;
         } else {
             int i6 = this.nextInBucketKToV[i5];
             while (true) {
                 i = i5;
                 i5 = i6;
+                iArr = this.nextInBucketKToV;
                 if (i5 == src) {
                     break;
                 }
-                i6 = this.nextInBucketKToV[i5];
+                i6 = iArr[i5];
             }
-            this.nextInBucketKToV[i] = dest;
+            iArr[i] = dest;
         }
-        int[] iArr2 = this.nextInBucketKToV;
-        iArr2[dest] = iArr2[src];
-        iArr2[src] = -1;
+        int[] iArr4 = this.nextInBucketKToV;
+        iArr4[dest] = iArr4[src];
+        iArr4[src] = -1;
         int bucket2 = bucket(Hashing.smearedHash(v));
-        int[] iArr3 = this.hashTableVToK;
-        int i7 = iArr3[bucket2];
+        int[] iArr5 = this.hashTableVToK;
+        int i7 = iArr5[bucket2];
         if (i7 == src) {
-            iArr3[bucket2] = dest;
+            iArr5[bucket2] = dest;
         } else {
             int i8 = this.nextInBucketVToK[i7];
             while (true) {
                 i2 = i7;
                 i7 = i8;
+                iArr2 = this.nextInBucketVToK;
                 if (i7 == src) {
                     break;
                 }
-                i8 = this.nextInBucketVToK[i7];
+                i8 = iArr2[i7];
             }
-            this.nextInBucketVToK[i2] = dest;
+            iArr2[i2] = dest;
         }
-        int[] iArr4 = this.nextInBucketVToK;
-        iArr4[dest] = iArr4[src];
-        iArr4[src] = -1;
+        int[] iArr6 = this.nextInBucketVToK;
+        iArr6[dest] = iArr6[src];
+        iArr6[src] = -1;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -787,11 +793,13 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         @ParametricNullness
         public V setValue(@ParametricNullness V value) {
             updateIndex();
-            if (this.index == -1) {
-                HashBiMap.this.put(this.key, value);
+            int i = this.index;
+            HashBiMap hashBiMap = HashBiMap.this;
+            if (i == -1) {
+                hashBiMap.put(this.key, value);
                 return (V) NullnessCasts.unsafeNull();
             }
-            V v = (V) NullnessCasts.uncheckedCastNullableTToT(HashBiMap.this.values[this.index]);
+            V v = (V) NullnessCasts.uncheckedCastNullableTToT(hashBiMap.values[this.index]);
             if (Objects.equal(v, value)) {
                 return value;
             }
@@ -978,11 +986,13 @@ public final class HashBiMap<K, V> extends AbstractMap<K, V> implements BiMap<K,
         @ParametricNullness
         public K setValue(@ParametricNullness K key) {
             updateIndex();
-            if (this.index == -1) {
-                this.biMap.putInverse(this.value, key, false);
+            int i = this.index;
+            HashBiMap<K, V> hashBiMap = this.biMap;
+            if (i == -1) {
+                hashBiMap.putInverse(this.value, key, false);
                 return (K) NullnessCasts.unsafeNull();
             }
-            K k = (K) NullnessCasts.uncheckedCastNullableTToT(this.biMap.keys[this.index]);
+            K k = (K) NullnessCasts.uncheckedCastNullableTToT(hashBiMap.keys[this.index]);
             if (Objects.equal(k, key)) {
                 return key;
             }

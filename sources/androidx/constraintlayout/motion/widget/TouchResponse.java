@@ -477,6 +477,7 @@ public class TouchResponse {
         float f;
         ?? r24;
         float f2;
+        float f3;
         if (this.mIsRotateMode) {
             processTouchRotateEvent(motionEvent, motionTracker, i, motionScene);
             return;
@@ -494,41 +495,42 @@ public class TouchResponse {
             float yVelocity = motionTracker.getYVelocity();
             float progress = this.mMotionLayout.getProgress();
             int i3 = this.mTouchAnchorId;
+            MotionLayout motionLayout = this.mMotionLayout;
             if (i3 != -1) {
-                this.mMotionLayout.getAnchorDpDt(i3, progress, this.mTouchAnchorX, this.mTouchAnchorY, this.mAnchorDpDt);
+                motionLayout.getAnchorDpDt(i3, progress, this.mTouchAnchorX, this.mTouchAnchorY, this.mAnchorDpDt);
                 c = 0;
             } else {
-                float min = Math.min(this.mMotionLayout.getWidth(), this.mMotionLayout.getHeight());
+                float min = Math.min(motionLayout.getWidth(), this.mMotionLayout.getHeight());
                 float[] fArr = this.mAnchorDpDt;
                 fArr[1] = this.mTouchDirectionY * min;
                 c = 0;
                 fArr[0] = min * this.mTouchDirectionX;
             }
-            float f3 = this.mTouchDirectionX;
+            float f4 = this.mTouchDirectionX;
             float[] fArr2 = this.mAnchorDpDt;
-            float f4 = f3 != 0.0f ? xVelocity / fArr2[c] : yVelocity / fArr2[1];
-            float f5 = !Float.isNaN(f4) ? (f4 / 3.0f) + progress : progress;
-            if (f5 == 0.0f || f5 == 1.0f || (i2 = this.mOnTouchUp) == 3) {
-                if (0.0f >= f5 || 1.0f <= f5) {
+            float f5 = f4 != 0.0f ? xVelocity / fArr2[c] : yVelocity / fArr2[1];
+            float f6 = !Float.isNaN(f5) ? (f5 / 3.0f) + progress : progress;
+            if (f6 == 0.0f || f6 == 1.0f || (i2 = this.mOnTouchUp) == 3) {
+                if (0.0f >= f6 || 1.0f <= f6) {
                     this.mMotionLayout.setState(MotionLayout.TransitionState.FINISHED);
                     return;
                 }
                 return;
             }
-            float f6 = ((double) f5) < 0.5d ? 0.0f : 1.0f;
+            float f7 = ((double) f6) < 0.5d ? 0.0f : 1.0f;
             if (i2 == 6) {
-                if (progress + f4 < 0.0f) {
-                    f4 = Math.abs(f4);
+                if (progress + f5 < 0.0f) {
+                    f5 = Math.abs(f5);
                 }
-                f6 = 1.0f;
+                f7 = 1.0f;
             }
             if (this.mOnTouchUp == 7) {
-                if (progress + f4 > 1.0f) {
-                    f4 = -Math.abs(f4);
+                if (progress + f5 > 1.0f) {
+                    f5 = -Math.abs(f5);
                 }
-                f6 = 0.0f;
+                f7 = 0.0f;
             }
-            this.mMotionLayout.touchAnimateTo(this.mOnTouchUp, f6, f4);
+            this.mMotionLayout.touchAnimateTo(this.mOnTouchUp, f7, f5);
             if (0.0f >= progress || 1.0f <= progress) {
                 this.mMotionLayout.setState(MotionLayout.TransitionState.FINISHED);
             }
@@ -543,31 +545,34 @@ public class TouchResponse {
                     this.mMotionLayout.setProgress(progress2);
                 }
                 int i4 = this.mTouchAnchorId;
+                MotionLayout motionLayout2 = this.mMotionLayout;
                 if (i4 != -1) {
                     r23 = 1;
                     r24 = 0;
                     f = progress2;
-                    this.mMotionLayout.getAnchorDpDt(i4, f, this.mTouchAnchorX, this.mTouchAnchorY, this.mAnchorDpDt);
+                    motionLayout2.getAnchorDpDt(i4, f, this.mTouchAnchorX, this.mTouchAnchorY, this.mAnchorDpDt);
                 } else {
                     r23 = 1;
                     f = progress2;
                     r24 = 0;
-                    float min2 = Math.min(this.mMotionLayout.getWidth(), this.mMotionLayout.getHeight());
+                    float min2 = Math.min(motionLayout2.getWidth(), this.mMotionLayout.getHeight());
                     float[] fArr3 = this.mAnchorDpDt;
                     fArr3[1] = this.mTouchDirectionY * min2;
                     fArr3[0] = min2 * this.mTouchDirectionX;
                 }
-                float f7 = this.mTouchDirectionX;
+                float f8 = this.mTouchDirectionX;
                 float[] fArr4 = this.mAnchorDpDt;
-                if (Math.abs(((f7 * fArr4[r24]) + (this.mTouchDirectionY * fArr4[r23])) * this.mDragScale) < 0.01d) {
+                if (Math.abs(((f8 * fArr4[r24]) + (this.mTouchDirectionY * fArr4[r23])) * this.mDragScale) < 0.01d) {
                     float[] fArr5 = this.mAnchorDpDt;
                     fArr5[r24] = 0.01f;
                     fArr5[r23] = 0.01f;
                 }
-                if (this.mTouchDirectionX != 0.0f) {
-                    f2 = rawX / this.mAnchorDpDt[r24];
+                int i5 = (this.mTouchDirectionX > 0.0f ? 1 : (this.mTouchDirectionX == 0.0f ? 0 : -1));
+                float[] fArr6 = this.mAnchorDpDt;
+                if (i5 != 0) {
+                    f2 = rawX / fArr6[r24];
                 } else {
-                    f2 = rawY / this.mAnchorDpDt[r23];
+                    f2 = rawY / fArr6[r23];
                 }
                 float max = Math.max(Math.min(f + f2, 1.0f), 0.0f);
                 if (this.mOnTouchUp == 6) {
@@ -578,13 +583,22 @@ public class TouchResponse {
                 }
                 float progress3 = this.mMotionLayout.getProgress();
                 if (max != progress3) {
-                    int i5 = (progress3 > 0.0f ? 1 : (progress3 == 0.0f ? 0 : -1));
-                    if (i5 == 0 || progress3 == 1.0f) {
-                        this.mMotionLayout.endTrigger(i5 == 0 ? r23 : r24);
+                    int i6 = (progress3 > 0.0f ? 1 : (progress3 == 0.0f ? 0 : -1));
+                    if (i6 == 0 || progress3 == 1.0f) {
+                        this.mMotionLayout.endTrigger(i6 == 0 ? r23 : r24);
                     }
                     this.mMotionLayout.setProgress(max);
                     motionTracker.computeCurrentVelocity(1000);
-                    this.mMotionLayout.mLastVelocity = this.mTouchDirectionX != 0.0f ? motionTracker.getXVelocity() / this.mAnchorDpDt[r24] : motionTracker.getYVelocity() / this.mAnchorDpDt[r23];
+                    float xVelocity2 = motionTracker.getXVelocity();
+                    float yVelocity2 = motionTracker.getYVelocity();
+                    int i7 = (this.mTouchDirectionX > 0.0f ? 1 : (this.mTouchDirectionX == 0.0f ? 0 : -1));
+                    float[] fArr7 = this.mAnchorDpDt;
+                    if (i7 != 0) {
+                        f3 = xVelocity2 / fArr7[r24];
+                    } else {
+                        f3 = yVelocity2 / fArr7[r23];
+                    }
+                    this.mMotionLayout.mLastVelocity = f3;
                 } else {
                     this.mMotionLayout.mLastVelocity = 0.0f;
                 }
@@ -604,18 +618,18 @@ public class TouchResponse {
     public float getProgressDirection(float f, float f2) {
         this.mMotionLayout.getAnchorDpDt(this.mTouchAnchorId, this.mMotionLayout.getProgress(), this.mTouchAnchorX, this.mTouchAnchorY, this.mAnchorDpDt);
         float f3 = this.mTouchDirectionX;
-        if (f3 != 0.0f) {
-            float[] fArr = this.mAnchorDpDt;
+        int i = (f3 > 0.0f ? 1 : (f3 == 0.0f ? 0 : -1));
+        float[] fArr = this.mAnchorDpDt;
+        if (i != 0) {
             if (fArr[0] == 0.0f) {
                 fArr[0] = 1.0E-7f;
             }
             return (f * f3) / fArr[0];
         }
-        float[] fArr2 = this.mAnchorDpDt;
-        if (fArr2[1] == 0.0f) {
-            fArr2[1] = 1.0E-7f;
+        if (fArr[1] == 0.0f) {
+            fArr[1] = 1.0E-7f;
         }
-        return (f2 * this.mTouchDirectionY) / fArr2[1];
+        return (f2 * this.mTouchDirectionY) / fArr[1];
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

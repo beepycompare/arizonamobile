@@ -17,7 +17,7 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.datetime.internal.DateCalculationsKt;
 /* compiled from: String.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u001e\u0010\u0003\u001a\u0002H\u0004\"\n\b\u0000\u0010\u0004\u0018\u0001*\u00020\u0002*\u00020\u0001H\u0086\b¢\u0006\u0002\u0010\u0005\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\b\u001a\u00020\u0007*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\u0012\u0010\u000b\u001a\u00020\f*\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e\u001a\n\u0010\u000f\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0011¨\u0006\u0012"}, d2 = {"toStringJson", "", "", "fromStringJson", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/String;)Ljava/lang/Object;", "getEmojiByUnicode", "", "emojiWithTextLength", "emojiToUnicodeFormat", "unicodeFormatToEmoji", "openLink", "", "context", "Landroid/content/Context;", "formatSecondsToHhMmSs", "thousandsCut", "", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u001e\u0010\u0003\u001a\u0002H\u0004\"\n\b\u0000\u0010\u0004\u0018\u0001*\u00020\u0002*\u00020\u0001H\u0086\b¢\u0006\u0002\u0010\u0005\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\b\u001a\u00020\u0007*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\u0012\u0010\u000b\u001a\u00020\f*\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e\u001a\n\u0010\u000f\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0011¨\u0006\u0012"}, d2 = {"toStringJson", "", "", "fromStringJson", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/String;)Ljava/lang/Object;", "getEmojiByUnicode", "", "emojiWithTextLength", "emojiToUnicodeFormat", "unicodeFormatToEmoji", "openLink", "", "context", "Landroid/content/Context;", "formatSecondsToHhMmSs", "thousandsCut", "", "CommonUI"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class StringKt {
     public static final String toStringJson(Object obj) {
@@ -87,14 +87,12 @@ public final class StringKt {
         return new Regex(":u([0-9a-fA-F]{4,6}):").replace(str, new Function1() { // from class: ru.mrlargha.commonui.utils.StringKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                CharSequence unicodeFormatToEmoji$lambda$0;
-                unicodeFormatToEmoji$lambda$0 = StringKt.unicodeFormatToEmoji$lambda$0((MatchResult) obj);
-                return unicodeFormatToEmoji$lambda$0;
+                return StringKt.unicodeFormatToEmoji$lambda$0((MatchResult) obj);
             }
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence unicodeFormatToEmoji$lambda$0(MatchResult matchResult) {
         Intrinsics.checkNotNullParameter(matchResult, "matchResult");
         try {

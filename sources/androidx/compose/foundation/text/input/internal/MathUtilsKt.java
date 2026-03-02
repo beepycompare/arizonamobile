@@ -21,8 +21,8 @@ public final class MathUtilsKt {
     }
 
     /* renamed from: findClosestRect-9KIMszo  reason: not valid java name */
-    public static final int m1620findClosestRect9KIMszo(long j, Rect rect, Rect rect2) {
-        int i = (m1619distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect) > m1619distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect2) ? 1 : (m1619distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect) == m1619distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect2) ? 0 : -1));
+    public static final int m1406findClosestRect9KIMszo(long j, Rect rect, Rect rect2) {
+        int i = (m1405distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect) > m1405distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect2) ? 1 : (m1405distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect) == m1405distanceSquaredToClosestCornerFromOutside3MmeM6k(j, rect2) ? 0 : -1));
         if (i == 0) {
             return 0;
         }
@@ -30,23 +30,23 @@ public final class MathUtilsKt {
     }
 
     /* renamed from: distanceSquaredToClosestCornerFromOutside-3MmeM6k  reason: not valid java name */
-    private static final float m1619distanceSquaredToClosestCornerFromOutside3MmeM6k(long j, Rect rect) {
-        if (SelectionManagerKt.m1892containsInclusiveUv8p0NA(rect, j)) {
+    private static final float m1405distanceSquaredToClosestCornerFromOutside3MmeM6k(long j, Rect rect) {
+        if (SelectionManagerKt.m1635containsInclusiveUv8p0NA(rect, j)) {
             return 0.0f;
         }
-        float m5178getDistanceSquaredimpl = Offset.m5178getDistanceSquaredimpl(Offset.m5183minusMKHz9U(rect.m5214getTopLeftF1C5BW0(), j));
-        if (m5178getDistanceSquaredimpl >= Float.MAX_VALUE) {
-            m5178getDistanceSquaredimpl = Float.MAX_VALUE;
+        float m4526getDistanceSquaredimpl = Offset.m4526getDistanceSquaredimpl(Offset.m4531minusMKHz9U(rect.m4562getTopLeftF1C5BW0(), j));
+        if (m4526getDistanceSquaredimpl >= Float.MAX_VALUE) {
+            m4526getDistanceSquaredimpl = Float.MAX_VALUE;
         }
-        float m5178getDistanceSquaredimpl2 = Offset.m5178getDistanceSquaredimpl(Offset.m5183minusMKHz9U(rect.m5215getTopRightF1C5BW0(), j));
-        if (m5178getDistanceSquaredimpl2 < m5178getDistanceSquaredimpl) {
-            m5178getDistanceSquaredimpl = m5178getDistanceSquaredimpl2;
+        float m4526getDistanceSquaredimpl2 = Offset.m4526getDistanceSquaredimpl(Offset.m4531minusMKHz9U(rect.m4563getTopRightF1C5BW0(), j));
+        if (m4526getDistanceSquaredimpl2 < m4526getDistanceSquaredimpl) {
+            m4526getDistanceSquaredimpl = m4526getDistanceSquaredimpl2;
         }
-        float m5178getDistanceSquaredimpl3 = Offset.m5178getDistanceSquaredimpl(Offset.m5183minusMKHz9U(rect.m5207getBottomLeftF1C5BW0(), j));
-        if (m5178getDistanceSquaredimpl3 < m5178getDistanceSquaredimpl) {
-            m5178getDistanceSquaredimpl = m5178getDistanceSquaredimpl3;
+        float m4526getDistanceSquaredimpl3 = Offset.m4526getDistanceSquaredimpl(Offset.m4531minusMKHz9U(rect.m4555getBottomLeftF1C5BW0(), j));
+        if (m4526getDistanceSquaredimpl3 < m4526getDistanceSquaredimpl) {
+            m4526getDistanceSquaredimpl = m4526getDistanceSquaredimpl3;
         }
-        float m5178getDistanceSquaredimpl4 = Offset.m5178getDistanceSquaredimpl(Offset.m5183minusMKHz9U(rect.m5208getBottomRightF1C5BW0(), j));
-        return m5178getDistanceSquaredimpl4 < m5178getDistanceSquaredimpl ? m5178getDistanceSquaredimpl4 : m5178getDistanceSquaredimpl;
+        float m4526getDistanceSquaredimpl4 = Offset.m4526getDistanceSquaredimpl(Offset.m4531minusMKHz9U(rect.m4556getBottomRightF1C5BW0(), j));
+        return m4526getDistanceSquaredimpl4 < m4526getDistanceSquaredimpl ? m4526getDistanceSquaredimpl4 : m4526getDistanceSquaredimpl;
     }
 }
